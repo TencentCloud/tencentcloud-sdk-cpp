@@ -130,6 +130,48 @@ namespace TencentCloud
                      */
                     bool ResultHasBeenSet() const;
 
+                    /**
+                     * 获取结果描述
+                     * @return ResultDescription 结果描述
+                     * 
+                     */
+                    std::string GetResultDescription() const;
+
+                    /**
+                     * 设置结果描述
+                     * @param _resultDescription 结果描述
+                     * 
+                     */
+                    void SetResultDescription(const std::string& _resultDescription);
+
+                    /**
+                     * 判断参数 ResultDescription 是否已赋值
+                     * @return ResultDescription 是否已赋值
+                     * 
+                     */
+                    bool ResultDescriptionHasBeenSet() const;
+
+                    /**
+                     * 获取结果建议
+                     * @return Suggestion 结果建议
+                     * 
+                     */
+                    std::string GetSuggestion() const;
+
+                    /**
+                     * 设置结果建议
+                     * @param _suggestion 结果建议
+                     * 
+                     */
+                    void SetSuggestion(const std::string& _suggestion);
+
+                    /**
+                     * 判断参数 Suggestion 是否已赋值
+                     * @return Suggestion 是否已赋值
+                     * 
+                     */
+                    bool SuggestionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -155,6 +197,18 @@ namespace TencentCloud
                      */
                     std::string m_result;
                     bool m_resultHasBeenSet;
+
+                    /**
+                     * 结果描述
+                     */
+                    std::string m_resultDescription;
+                    bool m_resultDescriptionHasBeenSet;
+
+                    /**
+                     * 结果建议
+                     */
+                    std::string m_suggestion;
+                    bool m_suggestionHasBeenSet;
 
                 };
             }

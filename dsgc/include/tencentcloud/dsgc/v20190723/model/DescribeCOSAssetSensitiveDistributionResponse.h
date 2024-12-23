@@ -48,9 +48,7 @@ namespace TencentCloud
 
                     /**
                      * 获取cos的涉敏资产
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CosAsset cos的涉敏资产
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CosAsset GetCosAsset() const;
@@ -64,9 +62,7 @@ namespace TencentCloud
 
                     /**
                      * 获取涉敏top
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopAsset 涉敏top
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TopAsset> GetTopAsset() const;
@@ -80,9 +76,7 @@ namespace TencentCloud
 
                     /**
                      * 获取cos资产详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CosDetail cos资产详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AssetCosDetail> GetCosDetail() const;
@@ -98,21 +92,18 @@ namespace TencentCloud
 
                     /**
                      * cos的涉敏资产
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CosAsset m_cosAsset;
                     bool m_cosAssetHasBeenSet;
 
                     /**
                      * 涉敏top
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TopAsset> m_topAsset;
                     bool m_topAssetHasBeenSet;
 
                     /**
                      * cos资产详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AssetCosDetail> m_cosDetail;
                     bool m_cosDetailHasBeenSet;

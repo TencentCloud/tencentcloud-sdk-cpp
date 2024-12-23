@@ -321,15 +321,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取包年包月计费的续费模式。<ul><li>0：默认状态，指手动续费。</li><li>1：自动续费。</li><li>2：到期不再续费。</ul>
-                     * @return AutoRenew 包年包月计费的续费模式。<ul><li>0：默认状态，指手动续费。</li><li>1：自动续费。</li><li>2：到期不再续费。</ul>
+                     * 获取续费模式。- 0：手动续费。- 1：自动续费。- 2：到期不再续费。
+                     * @return AutoRenew 续费模式。- 0：手动续费。- 1：自动续费。- 2：到期不再续费。
                      * 
                      */
                     std::vector<int64_t> GetAutoRenew() const;
 
                     /**
-                     * 设置包年包月计费的续费模式。<ul><li>0：默认状态，指手动续费。</li><li>1：自动续费。</li><li>2：到期不再续费。</ul>
-                     * @param _autoRenew 包年包月计费的续费模式。<ul><li>0：默认状态，指手动续费。</li><li>1：自动续费。</li><li>2：到期不再续费。</ul>
+                     * 设置续费模式。- 0：手动续费。- 1：自动续费。- 2：到期不再续费。
+                     * @param _autoRenew 续费模式。- 0：手动续费。- 1：自动续费。- 2：到期不再续费。
                      * 
                      */
                     void SetAutoRenew(const std::vector<int64_t>& _autoRenew);
@@ -570,7 +570,7 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 包年包月计费的续费模式。<ul><li>0：默认状态，指手动续费。</li><li>1：自动续费。</li><li>2：到期不再续费。</ul>
+                     * 续费模式。- 0：手动续费。- 1：自动续费。- 2：到期不再续费。
                      */
                     std::vector<int64_t> m_autoRenew;
                     bool m_autoRenewHasBeenSet;

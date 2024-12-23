@@ -72,10 +72,8 @@ namespace TencentCloud
                     /**
                      * 获取评估任务的自增ID
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskUid 评估任务的自增ID
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTaskUid() const;
@@ -83,10 +81,8 @@ namespace TencentCloud
                     /**
                      * 设置评估任务的自增ID
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskUid 评估任务的自增ID
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskUid(const int64_t& _taskUid);
@@ -310,18 +306,14 @@ namespace TencentCloud
 
                     /**
                      * 获取评估任务完成时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FinishedTime 评估任务完成时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFinishedTime() const;
 
                     /**
                      * 设置评估任务完成时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _finishedTime 评估任务完成时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFinishedTime(const std::string& _finishedTime);
@@ -398,18 +390,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据源信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiscoveryCondition 数据源信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DiscoveryCondition GetDiscoveryCondition() const;
 
                     /**
                      * 设置数据源信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _discoveryCondition 数据源信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiscoveryCondition(const DiscoveryCondition& _discoveryCondition);
@@ -444,18 +432,14 @@ namespace TencentCloud
 
                     /**
                      * 获取模板主键id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TemplateUid 模板主键id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTemplateUid() const;
 
                     /**
                      * 设置模板主键id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _templateUid 模板主键id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTemplateUid(const int64_t& _templateUid);
@@ -469,18 +453,14 @@ namespace TencentCloud
 
                     /**
                      * 获取进度百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProgressPercent 进度百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetProgressPercent() const;
 
                     /**
                      * 设置进度百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _progressPercent 进度百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProgressPercent(const int64_t& _progressPercent);
@@ -503,7 +483,6 @@ namespace TencentCloud
                     /**
                      * 评估任务的自增ID
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_taskUid;
                     bool m_taskUidHasBeenSet;
@@ -570,7 +549,6 @@ namespace TencentCloud
 
                     /**
                      * 评估任务完成时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_finishedTime;
                     bool m_finishedTimeHasBeenSet;
@@ -595,7 +573,6 @@ namespace TencentCloud
 
                     /**
                      * 数据源信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DiscoveryCondition m_discoveryCondition;
                     bool m_discoveryConditionHasBeenSet;
@@ -608,14 +585,12 @@ namespace TencentCloud
 
                     /**
                      * 模板主键id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_templateUid;
                     bool m_templateUidHasBeenSet;
 
                     /**
                      * 进度百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_progressPercent;
                     bool m_progressPercentHasBeenSet;

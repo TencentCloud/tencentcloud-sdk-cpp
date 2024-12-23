@@ -530,6 +530,27 @@ namespace TencentCloud
                      */
                     bool FlightItemsHasBeenSet() const;
 
+                    /**
+                     * 获取机票开具状态
+                     * @return InvoiceStatus 机票开具状态
+                     * 
+                     */
+                    std::string GetInvoiceStatus() const;
+
+                    /**
+                     * 设置机票开具状态
+                     * @param _invoiceStatus 机票开具状态
+                     * 
+                     */
+                    void SetInvoiceStatus(const std::string& _invoiceStatus);
+
+                    /**
+                     * 判断参数 InvoiceStatus 是否已赋值
+                     * @return InvoiceStatus 是否已赋值
+                     * 
+                     */
+                    bool InvoiceStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -669,6 +690,12 @@ namespace TencentCloud
                      */
                     std::vector<FlightItemInfo> m_flightItems;
                     bool m_flightItemsHasBeenSet;
+
+                    /**
+                     * 机票开具状态
+                     */
+                    std::string m_invoiceStatus;
+                    bool m_invoiceStatusHasBeenSet;
 
                 };
             }

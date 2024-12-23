@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取绑定的DB列表（已废弃）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BindDBList 绑定的DB列表（已废弃）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetBindDBList() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取绑定信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BindList 绑定信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DBInstanceInfo> GetBindList() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 绑定的DB列表（已废弃）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_bindDBList;
                     bool m_bindDBListHasBeenSet;
 
                     /**
                      * 绑定信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DBInstanceInfo> m_bindList;
                     bool m_bindListHasBeenSet;

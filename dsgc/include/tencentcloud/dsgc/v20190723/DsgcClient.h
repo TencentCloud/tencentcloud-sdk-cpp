@@ -1285,7 +1285,7 @@ namespace TencentCloud
                 DescribeDSPAAssessmentRiskOverviewOutcomeCallable DescribeDSPAAssessmentRiskOverviewCallable(const Model::DescribeDSPAAssessmentRiskOverviewRequest& request);
 
                 /**
-                 *修改最新评估风险项状态
+                 *查询风险的处理历史
                  * @param req DescribeDSPAAssessmentRiskProcessHistoryRequest
                  * @return DescribeDSPAAssessmentRiskProcessHistoryOutcome
                  */
@@ -1782,8 +1782,6 @@ namespace TencentCloud
                 /**
                  *打开或者关闭分类分级规则
 注：此API同时对该规则下的RDB跟COS规则操作。
-
-
                  * @param req EnableDSPADiscoveryRuleRequest
                  * @return EnableDSPADiscoveryRuleOutcome
                  */
@@ -1923,7 +1921,6 @@ namespace TencentCloud
 2 扫描终止， 
 3 扫描成功，
 4 扫描失败
-
                  * @param req ModifyDSPACOSDiscoveryTaskRequest
                  * @return ModifyDSPACOSDiscoveryTaskOutcome
                  */
@@ -1992,7 +1989,6 @@ namespace TencentCloud
 2 扫描终止， 
 3 扫描成功，
 4 扫描失败
-
                  * @param req ModifyDSPADiscoveryTaskRequest
                  * @return ModifyDSPADiscoveryTaskOutcome
                  */

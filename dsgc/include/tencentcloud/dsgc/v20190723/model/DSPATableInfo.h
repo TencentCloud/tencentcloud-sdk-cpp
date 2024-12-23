@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取表名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableName 表名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTableName() const;
 
                     /**
                      * 设置表名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tableName 表名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTableName(const std::string& _tableName);
@@ -75,7 +71,6 @@ namespace TencentCloud
 
                     /**
                      * 表名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tableName;
                     bool m_tableNameHasBeenSet;

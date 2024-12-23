@@ -45,10 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取无
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Items 无
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取风险结果
+                     * @return Items 风险结果
                      * 
                      */
                     std::vector<RiskItem> GetItems() const;
@@ -63,8 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 无
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 风险结果
                      */
                     std::vector<RiskItem> m_items;
                     bool m_itemsHasBeenSet;

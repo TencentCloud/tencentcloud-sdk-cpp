@@ -47,9 +47,7 @@ namespace TencentCloud
 
                     /**
                      * 获取分级分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LevelDistribution 分级分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Note> GetLevelDistribution() const;
@@ -63,9 +61,7 @@ namespace TencentCloud
 
                     /**
                      * 获取分类分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CategoryDistribution 分类分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Note> GetCategoryDistribution() const;
@@ -79,9 +75,7 @@ namespace TencentCloud
 
                     /**
                      * 获取规则分布详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleDistribution 规则分布详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RuleDistribution> GetRuleDistribution() const;
@@ -95,9 +89,7 @@ namespace TencentCloud
 
                     /**
                      * 获取计算占比
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SensitiveDataNum 计算占比
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSensitiveDataNum() const;
@@ -113,28 +105,24 @@ namespace TencentCloud
 
                     /**
                      * 分级分布
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Note> m_levelDistribution;
                     bool m_levelDistributionHasBeenSet;
 
                     /**
                      * 分类分布
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Note> m_categoryDistribution;
                     bool m_categoryDistributionHasBeenSet;
 
                     /**
                      * 规则分布详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RuleDistribution> m_ruleDistribution;
                     bool m_ruleDistributionHasBeenSet;
 
                     /**
                      * 计算占比
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sensitiveDataNum;
                     bool m_sensitiveDataNumHasBeenSet;

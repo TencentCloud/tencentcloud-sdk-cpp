@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tdmq/v20200217/model/SecurityPolicy.h>
 
 
 namespace TencentCloud
@@ -42,7 +43,61 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取集群id
+                     * @return InstanceId 集群id
+                     * 
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置集群id
+                     * @param _instanceId 集群id
+                     * 
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取策略列表
+                     * @return PolicyList 策略列表
+                     * 
+                     */
+                    std::vector<SecurityPolicy> GetPolicyList() const;
+
+                    /**
+                     * 设置策略列表
+                     * @param _policyList 策略列表
+                     * 
+                     */
+                    void SetPolicyList(const std::vector<SecurityPolicy>& _policyList);
+
+                    /**
+                     * 判断参数 PolicyList 是否已赋值
+                     * @return PolicyList 是否已赋值
+                     * 
+                     */
+                    bool PolicyListHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 集群id
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 策略列表
+                     */
+                    std::vector<SecurityPolicy> m_policyList;
+                    bool m_policyListHasBeenSet;
 
                 };
             }

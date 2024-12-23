@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取风险id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 风险id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置风险id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id 风险id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取风险等级列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskLevelName 风险等级列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRiskLevelName() const;
 
                     /**
                      * 设置风险等级列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _riskLevelName 风险等级列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRiskLevelName(const std::string& _riskLevelName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取风险级别描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskLevelDescription 风险级别描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRiskLevelDescription() const;
 
                     /**
                      * 设置风险级别描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _riskLevelDescription 风险级别描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRiskLevelDescription(const std::string& _riskLevelDescription);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取引用的分类分级模板
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IdentifyComplianceName 引用的分类分级模板
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIdentifyComplianceName() const;
 
                     /**
                      * 设置引用的分类分级模板
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _identifyComplianceName 引用的分类分级模板
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIdentifyComplianceName(const std::string& _identifyComplianceName);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取类型，区分自定义还是系统内置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 类型，区分自定义还是系统内置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置类型，区分自定义还是系统内置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 类型，区分自定义还是系统内置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -175,35 +155,30 @@ namespace TencentCloud
 
                     /**
                      * 风险id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * 风险等级列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_riskLevelName;
                     bool m_riskLevelNameHasBeenSet;
 
                     /**
                      * 风险级别描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_riskLevelDescription;
                     bool m_riskLevelDescriptionHasBeenSet;
 
                     /**
                      * 引用的分类分级模板
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_identifyComplianceName;
                     bool m_identifyComplianceNameHasBeenSet;
 
                     /**
                      * 类型，区分自定义还是系统内置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

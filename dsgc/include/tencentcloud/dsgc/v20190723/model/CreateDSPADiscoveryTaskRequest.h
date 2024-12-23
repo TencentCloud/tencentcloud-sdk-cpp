@@ -127,27 +127,6 @@ namespace TencentCloud
                     bool EnableHasBeenSet() const;
 
                     /**
-                     * 获取通用规则集开关，0 关闭，1 启用
-                     * @return GeneralRuleSetEnable 通用规则集开关，0 关闭，1 启用
-                     * 
-                     */
-                    int64_t GetGeneralRuleSetEnable() const;
-
-                    /**
-                     * 设置通用规则集开关，0 关闭，1 启用
-                     * @param _generalRuleSetEnable 通用规则集开关，0 关闭，1 启用
-                     * 
-                     */
-                    void SetGeneralRuleSetEnable(const int64_t& _generalRuleSetEnable);
-
-                    /**
-                     * 判断参数 GeneralRuleSetEnable 是否已赋值
-                     * @return GeneralRuleSetEnable 是否已赋值
-                     * 
-                     */
-                    bool GeneralRuleSetEnableHasBeenSet() const;
-
-                    /**
                      * 获取执行计划， 0立即 1定时，选择“立即”时，扫描周期只能选择单次
                      * @return Plan 执行计划， 0立即 1定时，选择“立即”时，扫描周期只能选择单次
                      * 
@@ -258,6 +237,27 @@ selfbuilt-db 表示自建数据库
                      * 
                      */
                     bool DataSourceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取通用规则集开关，0 关闭，1 启用
+                     * @return GeneralRuleSetEnable 通用规则集开关，0 关闭，1 启用
+                     * @deprecated
+                     */
+                    int64_t GetGeneralRuleSetEnable() const;
+
+                    /**
+                     * 设置通用规则集开关，0 关闭，1 启用
+                     * @param _generalRuleSetEnable 通用规则集开关，0 关闭，1 启用
+                     * @deprecated
+                     */
+                    void SetGeneralRuleSetEnable(const int64_t& _generalRuleSetEnable);
+
+                    /**
+                     * 判断参数 GeneralRuleSetEnable 是否已赋值
+                     * @return GeneralRuleSetEnable 是否已赋值
+                     * @deprecated
+                     */
+                    bool GeneralRuleSetEnableHasBeenSet() const;
 
                     /**
                      * 获取任务描述，最大长度为1024个字符
@@ -437,12 +437,6 @@ selfbuilt-db 表示自建数据库
                     bool m_enableHasBeenSet;
 
                     /**
-                     * 通用规则集开关，0 关闭，1 启用
-                     */
-                    int64_t m_generalRuleSetEnable;
-                    bool m_generalRuleSetEnableHasBeenSet;
-
-                    /**
                      * 执行计划， 0立即 1定时，选择“立即”时，扫描周期只能选择单次
                      */
                     int64_t m_plan;
@@ -472,6 +466,12 @@ selfbuilt-db 表示自建数据库
                      */
                     std::string m_dataSourceType;
                     bool m_dataSourceTypeHasBeenSet;
+
+                    /**
+                     * 通用规则集开关，0 关闭，1 启用
+                     */
+                    int64_t m_generalRuleSetEnable;
+                    bool m_generalRuleSetEnableHasBeenSet;
 
                     /**
                      * 任务描述，最大长度为1024个字符

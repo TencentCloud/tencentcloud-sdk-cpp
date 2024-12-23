@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取风险等级名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskLevelName 风险等级名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRiskLevelName() const;
 
                     /**
                      * 设置风险等级名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _riskLevelName 风险等级名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRiskLevelName(const std::string& _riskLevelName);
@@ -129,7 +125,6 @@ namespace TencentCloud
 
                     /**
                      * 风险等级名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_riskLevelName;
                     bool m_riskLevelNameHasBeenSet;

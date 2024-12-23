@@ -237,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataSourceName 数据源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDataSourceName() const;
 
                     /**
                      * 设置数据源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataSourceName 数据源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataSourceName(const std::string& _dataSourceName);
@@ -283,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Bucket扫描结果错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorInfo Bucket扫描结果错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetErrorInfo() const;
 
                     /**
                      * 设置Bucket扫描结果错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _errorInfo Bucket扫描结果错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetErrorInfo(const std::string& _errorInfo);
@@ -308,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceRegion 资源所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceRegion() const;
 
                     /**
                      * 设置资源所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceRegion 资源所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceRegion(const std::string& _resourceRegion);
@@ -333,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否超额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OverSize 是否超额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOverSize() const;
 
                     /**
                      * 设置是否超额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _overSize 是否超额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOverSize(const std::string& _overSize);
@@ -414,7 +398,6 @@ namespace TencentCloud
 
                     /**
                      * 数据源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataSourceName;
                     bool m_dataSourceNameHasBeenSet;
@@ -427,21 +410,18 @@ namespace TencentCloud
 
                     /**
                      * Bucket扫描结果错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errorInfo;
                     bool m_errorInfoHasBeenSet;
 
                     /**
                      * 资源所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceRegion;
                     bool m_resourceRegionHasBeenSet;
 
                     /**
                      * 是否超额
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_overSize;
                     bool m_overSizeHasBeenSet;

@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取报表信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ItemSet 报表信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ReportInfo> GetItemSet() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
                      * 报表信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ReportInfo> m_itemSet;
                     bool m_itemSetHasBeenSet;

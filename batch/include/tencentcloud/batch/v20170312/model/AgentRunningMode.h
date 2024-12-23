@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取场景类型，支持WINDOWS
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Scene 场景类型，支持WINDOWS
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetScene() const;
 
                     /**
                      * 设置场景类型，支持WINDOWS
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scene 场景类型，支持WINDOWS
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScene(const std::string& _scene);
@@ -69,14 +73,18 @@ namespace TencentCloud
 
                     /**
                      * 获取运行Agent的User
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return User 运行Agent的User
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUser() const;
 
                     /**
                      * 设置运行Agent的User
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _user 运行Agent的User
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUser(const std::string& _user);
@@ -90,14 +98,18 @@ namespace TencentCloud
 
                     /**
                      * 获取运行Agent的Session
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Session 运行Agent的Session
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSession() const;
 
                     /**
                      * 设置运行Agent的Session
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _session 运行Agent的Session
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSession(const std::string& _session);
@@ -113,18 +125,21 @@ namespace TencentCloud
 
                     /**
                      * 场景类型，支持WINDOWS
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scene;
                     bool m_sceneHasBeenSet;
 
                     /**
                      * 运行Agent的User
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_user;
                     bool m_userHasBeenSet;
 
                     /**
                      * 运行Agent的Session
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_session;
                     bool m_sessionHasBeenSet;

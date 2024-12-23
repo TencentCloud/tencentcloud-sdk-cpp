@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取AK编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AK AK编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAK() const;
 
                     /**
                      * 设置AK编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _aK AK编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAK(const std::string& _aK);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取SK编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SK SK编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSK() const;
 
                     /**
                      * 设置SK编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sK SK编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSK(const std::string& _sK);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取URL编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return URL URL编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetURL() const;
 
                     /**
                      * 设置URL编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uRL URL编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetURL(const std::string& _uRL);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * AK编码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_aK;
                     bool m_aKHasBeenSet;
 
                     /**
                      * SK编码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sK;
                     bool m_sKHasBeenSet;
 
                     /**
                      * URL编码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uRL;
                     bool m_uRLHasBeenSet;

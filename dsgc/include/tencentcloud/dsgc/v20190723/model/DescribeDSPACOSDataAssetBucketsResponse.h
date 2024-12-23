@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取COS对象存储敏感数据资产已扫描的桶集合。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Buckets COS对象存储敏感数据资产已扫描的桶集合。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetBuckets() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * COS对象存储敏感数据资产已扫描的桶集合。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_buckets;
                     bool m_bucketsHasBeenSet;

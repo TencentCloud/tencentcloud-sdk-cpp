@@ -50,10 +50,8 @@ namespace TencentCloud
                     /**
                      * 获取只能取and 、or两个值其中之一，and：字段和内容同时满足，or：字段和内容满足其一.
 默认值为or
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Operator 只能取and 、or两个值其中之一，and：字段和内容同时满足，or：字段和内容满足其一.
 默认值为or
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOperator() const;
@@ -61,10 +59,8 @@ namespace TencentCloud
                     /**
                      * 设置只能取and 、or两个值其中之一，and：字段和内容同时满足，or：字段和内容满足其一.
 默认值为or
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _operator 只能取and 、or两个值其中之一，and：字段和内容同时满足，or：字段和内容满足其一.
 默认值为or
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOperator(const std::string& _operator);
@@ -78,18 +74,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Contents 规则内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DspaDiscoveryDataContent> GetContents() const;
 
                     /**
                      * 设置规则内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _contents 规则内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContents(const std::vector<DspaDiscoveryDataContent>& _contents);
@@ -106,14 +98,12 @@ namespace TencentCloud
                     /**
                      * 只能取and 、or两个值其中之一，and：字段和内容同时满足，or：字段和内容满足其一.
 默认值为or
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
                      * 规则内容
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DspaDiscoveryDataContent> m_contents;
                     bool m_contentsHasBeenSet;

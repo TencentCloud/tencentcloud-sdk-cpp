@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取桶的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BucketNums 桶的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBucketNums() const;
 
                     /**
                      * 设置桶的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bucketNums 桶的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBucketNums(const int64_t& _bucketNums);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取敏感桶的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SensitiveBucketNums 敏感桶的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSensitiveBucketNums() const;
 
                     /**
                      * 设置敏感桶的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sensitiveBucketNums 敏感桶的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSensitiveBucketNums(const int64_t& _sensitiveBucketNums);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileNums 文件个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFileNums() const;
 
                     /**
                      * 设置文件个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileNums 文件个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileNums(const int64_t& _fileNums);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取敏感文件的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SensitiveFileNums 敏感文件的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSensitiveFileNums() const;
 
                     /**
                      * 设置敏感文件的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sensitiveFileNums 敏感文件的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSensitiveFileNums(const int64_t& _sensitiveFileNums);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 桶的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_bucketNums;
                     bool m_bucketNumsHasBeenSet;
 
                     /**
                      * 敏感桶的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sensitiveBucketNums;
                     bool m_sensitiveBucketNumsHasBeenSet;
 
                     /**
                      * 文件个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_fileNums;
                     bool m_fileNumsHasBeenSet;
 
                     /**
                      * 敏感文件的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sensitiveFileNums;
                     bool m_sensitiveFileNumsHasBeenSet;

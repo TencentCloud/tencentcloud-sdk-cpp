@@ -470,6 +470,49 @@ TeoClient::CreateConfigGroupVersionOutcomeCallable TeoClient::CreateConfigGroupV
     return task->get_future();
 }
 
+TeoClient::CreateContentIdentifierOutcome TeoClient::CreateContentIdentifier(const CreateContentIdentifierRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateContentIdentifier");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateContentIdentifierResponse rsp = CreateContentIdentifierResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateContentIdentifierOutcome(rsp);
+        else
+            return CreateContentIdentifierOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateContentIdentifierOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::CreateContentIdentifierAsync(const CreateContentIdentifierRequest& request, const CreateContentIdentifierAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateContentIdentifier(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::CreateContentIdentifierOutcomeCallable TeoClient::CreateContentIdentifierCallable(const CreateContentIdentifierRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateContentIdentifierOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateContentIdentifier(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TeoClient::CreateCustomizeErrorPageOutcome TeoClient::CreateCustomizeErrorPage(const CreateCustomizeErrorPageRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCustomizeErrorPage");
@@ -506,6 +549,49 @@ TeoClient::CreateCustomizeErrorPageOutcomeCallable TeoClient::CreateCustomizeErr
         [this, request]()
         {
             return this->CreateCustomizeErrorPage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::CreateDnsRecordOutcome TeoClient::CreateDnsRecord(const CreateDnsRecordRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDnsRecord");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDnsRecordResponse rsp = CreateDnsRecordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDnsRecordOutcome(rsp);
+        else
+            return CreateDnsRecordOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDnsRecordOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::CreateDnsRecordAsync(const CreateDnsRecordRequest& request, const CreateDnsRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateDnsRecord(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::CreateDnsRecordOutcomeCallable TeoClient::CreateDnsRecordCallable(const CreateDnsRecordRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateDnsRecordOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateDnsRecord(request);
         }
     );
 
@@ -1330,6 +1416,49 @@ TeoClient::DeleteApplicationProxyRuleOutcomeCallable TeoClient::DeleteApplicatio
     return task->get_future();
 }
 
+TeoClient::DeleteContentIdentifierOutcome TeoClient::DeleteContentIdentifier(const DeleteContentIdentifierRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteContentIdentifier");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteContentIdentifierResponse rsp = DeleteContentIdentifierResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteContentIdentifierOutcome(rsp);
+        else
+            return DeleteContentIdentifierOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteContentIdentifierOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DeleteContentIdentifierAsync(const DeleteContentIdentifierRequest& request, const DeleteContentIdentifierAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteContentIdentifier(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DeleteContentIdentifierOutcomeCallable TeoClient::DeleteContentIdentifierCallable(const DeleteContentIdentifierRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteContentIdentifierOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteContentIdentifier(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TeoClient::DeleteCustomErrorPageOutcome TeoClient::DeleteCustomErrorPage(const DeleteCustomErrorPageRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteCustomErrorPage");
@@ -1366,6 +1495,49 @@ TeoClient::DeleteCustomErrorPageOutcomeCallable TeoClient::DeleteCustomErrorPage
         [this, request]()
         {
             return this->DeleteCustomErrorPage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::DeleteDnsRecordsOutcome TeoClient::DeleteDnsRecords(const DeleteDnsRecordsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteDnsRecords");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteDnsRecordsResponse rsp = DeleteDnsRecordsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteDnsRecordsOutcome(rsp);
+        else
+            return DeleteDnsRecordsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteDnsRecordsOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DeleteDnsRecordsAsync(const DeleteDnsRecordsRequest& request, const DeleteDnsRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteDnsRecords(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DeleteDnsRecordsOutcomeCallable TeoClient::DeleteDnsRecordsCallable(const DeleteDnsRecordsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteDnsRecordsOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteDnsRecords(request);
         }
     );
 
@@ -2190,6 +2362,49 @@ TeoClient::DescribeConfigGroupVersionsOutcomeCallable TeoClient::DescribeConfigG
     return task->get_future();
 }
 
+TeoClient::DescribeContentIdentifiersOutcome TeoClient::DescribeContentIdentifiers(const DescribeContentIdentifiersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeContentIdentifiers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeContentIdentifiersResponse rsp = DescribeContentIdentifiersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeContentIdentifiersOutcome(rsp);
+        else
+            return DescribeContentIdentifiersOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeContentIdentifiersOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeContentIdentifiersAsync(const DescribeContentIdentifiersRequest& request, const DescribeContentIdentifiersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeContentIdentifiers(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DescribeContentIdentifiersOutcomeCallable TeoClient::DescribeContentIdentifiersCallable(const DescribeContentIdentifiersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeContentIdentifiersOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeContentIdentifiers(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TeoClient::DescribeContentQuotaOutcome TeoClient::DescribeContentQuota(const DescribeContentQuotaRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeContentQuota");
@@ -2484,6 +2699,49 @@ TeoClient::DescribeDeployHistoryOutcomeCallable TeoClient::DescribeDeployHistory
         [this, request]()
         {
             return this->DescribeDeployHistory(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::DescribeDnsRecordsOutcome TeoClient::DescribeDnsRecords(const DescribeDnsRecordsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDnsRecords");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDnsRecordsResponse rsp = DescribeDnsRecordsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDnsRecordsOutcome(rsp);
+        else
+            return DescribeDnsRecordsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDnsRecordsOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeDnsRecordsAsync(const DescribeDnsRecordsRequest& request, const DescribeDnsRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDnsRecords(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DescribeDnsRecordsOutcomeCallable TeoClient::DescribeDnsRecordsCallable(const DescribeDnsRecordsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDnsRecordsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDnsRecords(request);
         }
     );
 
@@ -4469,6 +4727,49 @@ TeoClient::ModifyApplicationProxyStatusOutcomeCallable TeoClient::ModifyApplicat
     return task->get_future();
 }
 
+TeoClient::ModifyContentIdentifierOutcome TeoClient::ModifyContentIdentifier(const ModifyContentIdentifierRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyContentIdentifier");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyContentIdentifierResponse rsp = ModifyContentIdentifierResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyContentIdentifierOutcome(rsp);
+        else
+            return ModifyContentIdentifierOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyContentIdentifierOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::ModifyContentIdentifierAsync(const ModifyContentIdentifierRequest& request, const ModifyContentIdentifierAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyContentIdentifier(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::ModifyContentIdentifierOutcomeCallable TeoClient::ModifyContentIdentifierCallable(const ModifyContentIdentifierRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyContentIdentifierOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyContentIdentifier(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TeoClient::ModifyCustomErrorPageOutcome TeoClient::ModifyCustomErrorPage(const ModifyCustomErrorPageRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyCustomErrorPage");
@@ -4505,6 +4806,92 @@ TeoClient::ModifyCustomErrorPageOutcomeCallable TeoClient::ModifyCustomErrorPage
         [this, request]()
         {
             return this->ModifyCustomErrorPage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::ModifyDnsRecordsOutcome TeoClient::ModifyDnsRecords(const ModifyDnsRecordsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDnsRecords");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDnsRecordsResponse rsp = ModifyDnsRecordsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDnsRecordsOutcome(rsp);
+        else
+            return ModifyDnsRecordsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDnsRecordsOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::ModifyDnsRecordsAsync(const ModifyDnsRecordsRequest& request, const ModifyDnsRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDnsRecords(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::ModifyDnsRecordsOutcomeCallable TeoClient::ModifyDnsRecordsCallable(const ModifyDnsRecordsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDnsRecordsOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDnsRecords(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::ModifyDnsRecordsStatusOutcome TeoClient::ModifyDnsRecordsStatus(const ModifyDnsRecordsStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDnsRecordsStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDnsRecordsStatusResponse rsp = ModifyDnsRecordsStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDnsRecordsStatusOutcome(rsp);
+        else
+            return ModifyDnsRecordsStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDnsRecordsStatusOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::ModifyDnsRecordsStatusAsync(const ModifyDnsRecordsStatusRequest& request, const ModifyDnsRecordsStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDnsRecordsStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::ModifyDnsRecordsStatusOutcomeCallable TeoClient::ModifyDnsRecordsStatusCallable(const ModifyDnsRecordsStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDnsRecordsStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDnsRecordsStatus(request);
         }
     );
 

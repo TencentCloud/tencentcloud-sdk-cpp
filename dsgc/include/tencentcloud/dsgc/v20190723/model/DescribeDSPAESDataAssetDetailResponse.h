@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取总的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 总的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取概览详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Details 概览详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ESDataAssetDetail> GetDetails() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 总的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
                      * 概览详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ESDataAssetDetail> m_details;
                     bool m_detailsHasBeenSet;

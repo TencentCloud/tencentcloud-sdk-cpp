@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取regex规则内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegexRule regex规则内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     COSDataRule GetRegexRule() const;
 
                     /**
                      * 设置regex规则内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _regexRule regex规则内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegexRule(const COSDataRule& _regexRule);
@@ -95,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取关键词规则内容组，最大支持5个关键词。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return KeywordRule 关键词规则内容组，最大支持5个关键词。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     COSDataRule GetKeywordRule() const;
 
                     /**
                      * 设置关键词规则内容组，最大支持5个关键词。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _keywordRule 关键词规则内容组，最大支持5个关键词。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKeywordRule(const COSDataRule& _keywordRule);
@@ -120,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取忽略词规则内容组，最大支持5个忽略词。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IgnoreStringRule 忽略词规则内容组，最大支持5个忽略词。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     COSDataRule GetIgnoreStringRule() const;
 
                     /**
                      * 设置忽略词规则内容组，最大支持5个忽略词。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ignoreStringRule 忽略词规则内容组，最大支持5个忽略词。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIgnoreStringRule(const COSDataRule& _ignoreStringRule);
@@ -168,7 +156,6 @@ namespace TencentCloud
 
                     /**
                      * regex规则内容
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     COSDataRule m_regexRule;
                     bool m_regexRuleHasBeenSet;
@@ -181,14 +168,12 @@ namespace TencentCloud
 
                     /**
                      * 关键词规则内容组，最大支持5个关键词。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     COSDataRule m_keywordRule;
                     bool m_keywordRuleHasBeenSet;
 
                     /**
                      * 忽略词规则内容组，最大支持5个忽略词。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     COSDataRule m_ignoreStringRule;
                     bool m_ignoreStringRuleHasBeenSet;

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取处理时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Time 处理时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTime() const;
 
                     /**
                      * 设置处理时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _time 处理时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTime(const std::string& _time);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取处理人
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Handler 处理人
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHandler() const;
 
                     /**
                      * 设置处理人
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _handler 处理人
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHandler(const std::string& _handler);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Note 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNote() const;
 
                     /**
                      * 设置备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _note 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNote(const std::string& _note);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 处理时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_time;
                     bool m_timeHasBeenSet;
 
                     /**
                      * 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 处理人
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_handler;
                     bool m_handlerHasBeenSet;
 
                     /**
                      * 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_note;
                     bool m_noteHasBeenSet;

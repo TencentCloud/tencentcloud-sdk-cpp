@@ -51,11 +51,9 @@ namespace TencentCloud
                      * 获取规则类型；取值：
 keyword 关键字, 
 regex 正则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleType 规则类型；取值：
 keyword 关键字, 
 regex 正则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuleType() const;
@@ -64,11 +62,9 @@ regex 正则
                      * 设置规则类型；取值：
 keyword 关键字, 
 regex 正则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleType 规则类型；取值：
 keyword 关键字, 
 regex 正则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleType(const std::string& _ruleType);
@@ -82,18 +78,14 @@ regex 正则
 
                     /**
                      * 获取内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleContent 内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuleContent() const;
 
                     /**
                      * 设置内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleContent 内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleContent(const std::string& _ruleContent);
@@ -107,18 +99,14 @@ regex 正则
 
                     /**
                      * 获取该字段是针对规则类型RuleType为keyword类型时的一个扩展属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExtendParameters 该字段是针对规则类型RuleType为keyword类型时的一个扩展属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DatagovRuleExtendParameter> GetExtendParameters() const;
 
                     /**
                      * 设置该字段是针对规则类型RuleType为keyword类型时的一个扩展属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _extendParameters 该字段是针对规则类型RuleType为keyword类型时的一个扩展属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExtendParameters(const std::vector<DatagovRuleExtendParameter>& _extendParameters);
@@ -136,21 +124,18 @@ regex 正则
                      * 规则类型；取值：
 keyword 关键字, 
 regex 正则
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ruleType;
                     bool m_ruleTypeHasBeenSet;
 
                     /**
                      * 内容
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ruleContent;
                     bool m_ruleContentHasBeenSet;
 
                     /**
                      * 该字段是针对规则类型RuleType为keyword类型时的一个扩展属性
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DatagovRuleExtendParameter> m_extendParameters;
                     bool m_extendParametersHasBeenSet;

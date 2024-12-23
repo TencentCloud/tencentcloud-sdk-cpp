@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取任务列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Items 任务列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DspaCOSDiscoveryTask> GetItems() const;
@@ -78,7 +76,6 @@ namespace TencentCloud
 
                     /**
                      * 任务列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DspaCOSDiscoveryTask> m_items;
                     bool m_itemsHasBeenSet;

@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取扫描结果详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Items 扫描结果详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DspaDiscoveryTaskResultDetail> GetItems() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取符合条件的扫描结果详情记录数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 符合条件的扫描结果详情记录数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 扫描结果详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DspaDiscoveryTaskResultDetail> m_items;
                     bool m_itemsHasBeenSet;
 
                     /**
                      * 符合条件的扫描结果详情记录数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

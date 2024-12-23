@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取规则集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Items 规则集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DspaDiscoveryRuleDetail> GetItems() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 规则集合
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DspaDiscoveryRuleDetail> m_items;
                     bool m_itemsHasBeenSet;

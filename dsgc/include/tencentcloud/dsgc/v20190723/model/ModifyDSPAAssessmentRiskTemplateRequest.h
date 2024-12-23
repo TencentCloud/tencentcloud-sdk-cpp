@@ -85,27 +85,6 @@ namespace TencentCloud
                     bool TemplateNameHasBeenSet() const;
 
                     /**
-                     * 获取模板的描述
-                     * @return TemplateDescription 模板的描述
-                     * 
-                     */
-                    std::string GetTemplateDescription() const;
-
-                    /**
-                     * 设置模板的描述
-                     * @param _templateDescription 模板的描述
-                     * 
-                     */
-                    void SetTemplateDescription(const std::string& _templateDescription);
-
-                    /**
-                     * 判断参数 TemplateDescription 是否已赋值
-                     * @return TemplateDescription 是否已赋值
-                     * 
-                     */
-                    bool TemplateDescriptionHasBeenSet() const;
-
-                    /**
                      * 获取模板id
                      * @return TemplateId 模板id
                      * 
@@ -148,6 +127,27 @@ namespace TencentCloud
                     bool RiskLevelIdHasBeenSet() const;
 
                     /**
+                     * 获取模板的描述
+                     * @return TemplateDescription 模板的描述
+                     * 
+                     */
+                    std::string GetTemplateDescription() const;
+
+                    /**
+                     * 设置模板的描述
+                     * @param _templateDescription 模板的描述
+                     * 
+                     */
+                    void SetTemplateDescription(const std::string& _templateDescription);
+
+                    /**
+                     * 判断参数 TemplateDescription 是否已赋值
+                     * @return TemplateDescription 是否已赋值
+                     * 
+                     */
+                    bool TemplateDescriptionHasBeenSet() const;
+
+                    /**
                      * 获取脆弱项列表
                      * @return RiskIdList 脆弱项列表
                      * 
@@ -183,12 +183,6 @@ namespace TencentCloud
                     bool m_templateNameHasBeenSet;
 
                     /**
-                     * 模板的描述
-                     */
-                    std::string m_templateDescription;
-                    bool m_templateDescriptionHasBeenSet;
-
-                    /**
                      * 模板id
                      */
                     int64_t m_templateId;
@@ -199,6 +193,12 @@ namespace TencentCloud
                      */
                     int64_t m_riskLevelId;
                     bool m_riskLevelIdHasBeenSet;
+
+                    /**
+                     * 模板的描述
+                     */
+                    std::string m_templateDescription;
+                    bool m_templateDescriptionHasBeenSet;
 
                     /**
                      * 脆弱项列表

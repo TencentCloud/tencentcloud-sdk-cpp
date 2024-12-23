@@ -237,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataSourceName 数据源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDataSourceName() const;
 
                     /**
                      * 设置数据源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataSourceName 数据源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataSourceName(const std::string& _dataSourceName);
@@ -283,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取DB扫描结果错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorInfo DB扫描结果错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetErrorInfo() const;
 
                     /**
                      * 设置DB扫描结果错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _errorInfo DB扫描结果错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetErrorInfo(const std::string& _errorInfo);
@@ -308,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceRegion 资源所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceRegion() const;
 
                     /**
                      * 设置资源所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceRegion 资源所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceRegion(const std::string& _resourceRegion);
@@ -333,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取敏感字段数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SensitiveField 敏感字段数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSensitiveField() const;
 
                     /**
                      * 设置敏感字段数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sensitiveField 敏感字段数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSensitiveField(const int64_t& _sensitiveField);
@@ -358,18 +342,14 @@ namespace TencentCloud
 
                     /**
                      * 获取总的字段数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalField 总的字段数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalField() const;
 
                     /**
                      * 设置总的字段数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalField 总的字段数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalField(const int64_t& _totalField);
@@ -439,7 +419,6 @@ namespace TencentCloud
 
                     /**
                      * 数据源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataSourceName;
                     bool m_dataSourceNameHasBeenSet;
@@ -452,28 +431,24 @@ namespace TencentCloud
 
                     /**
                      * DB扫描结果错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errorInfo;
                     bool m_errorInfoHasBeenSet;
 
                     /**
                      * 资源所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceRegion;
                     bool m_resourceRegionHasBeenSet;
 
                     /**
                      * 敏感字段数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sensitiveField;
                     bool m_sensitiveFieldHasBeenSet;
 
                     /**
                      * 总的字段数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalField;
                     bool m_totalFieldHasBeenSet;

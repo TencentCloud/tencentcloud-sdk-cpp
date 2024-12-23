@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取数据样本列表，最多10条数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Items 数据样本列表，最多10条数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DspaFieldResultDataSample> GetItems() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 数据样本列表，最多10条数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DspaFieldResultDataSample> m_items;
                     bool m_itemsHasBeenSet;

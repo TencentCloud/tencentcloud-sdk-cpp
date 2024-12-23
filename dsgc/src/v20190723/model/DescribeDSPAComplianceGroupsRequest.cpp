@@ -28,7 +28,8 @@ DescribeDSPAComplianceGroupsRequest::DescribeDSPAComplianceGroupsRequest() :
     m_nameHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_complianceGroupTypeListHasBeenSet(false)
+    m_complianceGroupTypeListHasBeenSet(false),
+    m_isFilterCloseComplianceGroupHasBeenSet(false)
 {
 }
 
@@ -90,6 +91,14 @@ string DescribeDSPAComplianceGroupsRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_isFilterCloseComplianceGroupHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsFilterCloseComplianceGroup";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isFilterCloseComplianceGroup, allocator);
     }
 
 
@@ -194,6 +203,22 @@ void DescribeDSPAComplianceGroupsRequest::SetComplianceGroupTypeList(const vecto
 bool DescribeDSPAComplianceGroupsRequest::ComplianceGroupTypeListHasBeenSet() const
 {
     return m_complianceGroupTypeListHasBeenSet;
+}
+
+bool DescribeDSPAComplianceGroupsRequest::GetIsFilterCloseComplianceGroup() const
+{
+    return m_isFilterCloseComplianceGroup;
+}
+
+void DescribeDSPAComplianceGroupsRequest::SetIsFilterCloseComplianceGroup(const bool& _isFilterCloseComplianceGroup)
+{
+    m_isFilterCloseComplianceGroup = _isFilterCloseComplianceGroup;
+    m_isFilterCloseComplianceGroupHasBeenSet = true;
+}
+
+bool DescribeDSPAComplianceGroupsRequest::IsFilterCloseComplianceGroupHasBeenSet() const
+{
+    return m_isFilterCloseComplianceGroupHasBeenSet;
 }
 
 

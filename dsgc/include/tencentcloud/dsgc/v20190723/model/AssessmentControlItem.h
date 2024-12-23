@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取评估项描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 评估项描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置评估项描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 评估项描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -220,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取评估项关联的模板数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TemplateCount 评估项关联的模板数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTemplateCount() const;
 
                     /**
                      * 设置评估项关联的模板数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _templateCount 评估项关联的模板数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTemplateCount(const int64_t& _templateCount);
@@ -259,7 +251,6 @@ namespace TencentCloud
 
                     /**
                      * 评估项描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
@@ -296,7 +287,6 @@ namespace TencentCloud
 
                     /**
                      * 评估项关联的模板数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_templateCount;
                     bool m_templateCountHasBeenSet;

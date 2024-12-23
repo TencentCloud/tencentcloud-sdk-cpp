@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取元数据类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MetaType 元数据类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMetaType() const;
 
                     /**
                      * 设置元数据类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _metaType 元数据类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMetaType(const std::string& _metaType);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取支持的此元数据类型的地域列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Regions 支持的此元数据类型的地域列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetRegions() const;
 
                     /**
                      * 设置支持的此元数据类型的地域列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _regions 支持的此元数据类型的地域列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegions(const std::vector<std::string>& _regions);
@@ -101,12 +93,10 @@ namespace TencentCloud
 account    -- 账户名密码授权，账户的最高只读权限需要由用户自行赋予；
 automatic -- 一键授权，由DSPA自动生成账户名密码并自动在实例中给账户名赋予最高只读权限；
 如果此列表为空，表明此类资源不支持以上的授权机制，无法通过后台进行授权。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SupportedAuthTypes 此元数据类型支持的授权类型：
 account    -- 账户名密码授权，账户的最高只读权限需要由用户自行赋予；
 automatic -- 一键授权，由DSPA自动生成账户名密码并自动在实例中给账户名赋予最高只读权限；
 如果此列表为空，表明此类资源不支持以上的授权机制，无法通过后台进行授权。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetSupportedAuthTypes() const;
@@ -116,12 +106,10 @@ automatic -- 一键授权，由DSPA自动生成账户名密码并自动在实例
 account    -- 账户名密码授权，账户的最高只读权限需要由用户自行赋予；
 automatic -- 一键授权，由DSPA自动生成账户名密码并自动在实例中给账户名赋予最高只读权限；
 如果此列表为空，表明此类资源不支持以上的授权机制，无法通过后台进行授权。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _supportedAuthTypes 此元数据类型支持的授权类型：
 account    -- 账户名密码授权，账户的最高只读权限需要由用户自行赋予；
 automatic -- 一键授权，由DSPA自动生成账户名密码并自动在实例中给账户名赋予最高只读权限；
 如果此列表为空，表明此类资源不支持以上的授权机制，无法通过后台进行授权。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSupportedAuthTypes(const std::vector<std::string>& _supportedAuthTypes);
@@ -137,14 +125,12 @@ automatic -- 一键授权，由DSPA自动生成账户名密码并自动在实例
 
                     /**
                      * 元数据类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_metaType;
                     bool m_metaTypeHasBeenSet;
 
                     /**
                      * 支持的此元数据类型的地域列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_regions;
                     bool m_regionsHasBeenSet;
@@ -154,7 +140,6 @@ automatic -- 一键授权，由DSPA自动生成账户名密码并自动在实例
 account    -- 账户名密码授权，账户的最高只读权限需要由用户自行赋予；
 automatic -- 一键授权，由DSPA自动生成账户名密码并自动在实例中给账户名赋予最高只读权限；
 如果此列表为空，表明此类资源不支持以上的授权机制，无法通过后台进行授权。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_supportedAuthTypes;
                     bool m_supportedAuthTypesHasBeenSet;

@@ -104,15 +104,23 @@ namespace TencentCloud
                     bool CallerHasBeenSet() const;
 
                     /**
-                     * 获取上传文件内容数组，最多支持上传20个文件。
-                     * @return FileInfos 上传文件内容数组，最多支持上传20个文件。
+                     * 获取请上传文件内容数组，最多可上传20个文件。
+
+<b>所有文件必须符合<font color="red">FileType</font>指定的文件类型。</b>
+                     * @return FileInfos 请上传文件内容数组，最多可上传20个文件。
+
+<b>所有文件必须符合<font color="red">FileType</font>指定的文件类型。</b>
                      * 
                      */
                     std::vector<UploadFile> GetFileInfos() const;
 
                     /**
-                     * 设置上传文件内容数组，最多支持上传20个文件。
-                     * @param _fileInfos 上传文件内容数组，最多支持上传20个文件。
+                     * 设置请上传文件内容数组，最多可上传20个文件。
+
+<b>所有文件必须符合<font color="red">FileType</font>指定的文件类型。</b>
+                     * @param _fileInfos 请上传文件内容数组，最多可上传20个文件。
+
+<b>所有文件必须符合<font color="red">FileType</font>指定的文件类型。</b>
                      * 
                      */
                     void SetFileInfos(const std::vector<UploadFile>& _fileInfos);
@@ -320,7 +328,9 @@ namespace TencentCloud
                     bool m_callerHasBeenSet;
 
                     /**
-                     * 上传文件内容数组，最多支持上传20个文件。
+                     * 请上传文件内容数组，最多可上传20个文件。
+
+<b>所有文件必须符合<font color="red">FileType</font>指定的文件类型。</b>
                      */
                     std::vector<UploadFile> m_fileInfos;
                     bool m_fileInfosHasBeenSet;

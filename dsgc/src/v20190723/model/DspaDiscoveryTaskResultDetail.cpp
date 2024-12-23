@@ -33,7 +33,8 @@ DspaDiscoveryTaskResultDetail::DspaDiscoveryTaskResultDetail() :
     m_ruleIdHasBeenSet(false),
     m_levelRiskScoreHasBeenSet(false),
     m_safeGuardHasBeenSet(false),
-    m_categoryFullPathHasBeenSet(false)
+    m_categoryFullPathHasBeenSet(false),
+    m_schemaNameHasBeenSet(false)
 {
 }
 
@@ -179,6 +180,16 @@ CoreInternalOutcome DspaDiscoveryTaskResultDetail::Deserialize(const rapidjson::
         m_categoryFullPathHasBeenSet = true;
     }
 
+    if (value.HasMember("SchemaName") && !value["SchemaName"].IsNull())
+    {
+        if (!value["SchemaName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DspaDiscoveryTaskResultDetail.SchemaName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_schemaName = string(value["SchemaName"].GetString());
+        m_schemaNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -289,6 +300,14 @@ void DspaDiscoveryTaskResultDetail::ToJsonObject(rapidjson::Value &value, rapidj
         string key = "CategoryFullPath";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_categoryFullPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_schemaNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SchemaName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_schemaName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -500,5 +519,21 @@ void DspaDiscoveryTaskResultDetail::SetCategoryFullPath(const string& _categoryF
 bool DspaDiscoveryTaskResultDetail::CategoryFullPathHasBeenSet() const
 {
     return m_categoryFullPathHasBeenSet;
+}
+
+string DspaDiscoveryTaskResultDetail::GetSchemaName() const
+{
+    return m_schemaName;
+}
+
+void DspaDiscoveryTaskResultDetail::SetSchemaName(const string& _schemaName)
+{
+    m_schemaName = _schemaName;
+    m_schemaNameHasBeenSet = true;
+}
+
+bool DspaDiscoveryTaskResultDetail::SchemaNameHasBeenSet() const
+{
+    return m_schemaNameHasBeenSet;
 }
 

@@ -447,18 +447,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceType 实例类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
                      * 设置实例类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceType 实例类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -472,18 +468,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceValue 实例值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceValue() const;
 
                     /**
                      * 设置实例值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceValue 实例值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceValue(const std::string& _instanceValue);
@@ -518,18 +510,14 @@ namespace TencentCloud
 
                     /**
                      * 获取授权范围：all - 授权整个数据源 manual:手动指定数据源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuthRange 授权范围：all - 授权整个数据源 manual:手动指定数据源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAuthRange() const;
 
                     /**
                      * 设置授权范围：all - 授权整个数据源 manual:手动指定数据源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _authRange 授权范围：all - 授权整个数据源 manual:手动指定数据源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAuthRange(const std::string& _authRange);
@@ -659,14 +647,12 @@ namespace TencentCloud
 
                     /**
                      * 实例类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**
                      * 实例值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceValue;
                     bool m_instanceValueHasBeenSet;
@@ -679,7 +665,6 @@ namespace TencentCloud
 
                     /**
                      * 授权范围：all - 授权整个数据源 manual:手动指定数据源
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_authRange;
                     bool m_authRangeHasBeenSet;

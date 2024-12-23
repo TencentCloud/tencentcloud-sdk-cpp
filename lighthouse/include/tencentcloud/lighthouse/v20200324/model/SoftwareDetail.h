@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取详情唯一键。
-                     * @return Key 详情唯一键。
+                     * 获取软件的属性标识
+                     * @return Key 软件的属性标识
                      * 
                      */
                     std::string GetKey() const;
 
                     /**
-                     * 设置详情唯一键。
-                     * @param _key 详情唯一键。
+                     * 设置软件的属性标识
+                     * @param _key 软件的属性标识
                      * 
                      */
                     void SetKey(const std::string& _key);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool KeyHasBeenSet() const;
 
                     /**
-                     * 获取详情标题。
-                     * @return Title 详情标题。
+                     * 获取软件的属性标识描述
+                     * @return Title 软件的属性标识描述
                      * 
                      */
                     std::string GetTitle() const;
 
                     /**
-                     * 设置详情标题。
-                     * @param _title 详情标题。
+                     * 设置软件的属性标识描述
+                     * @param _title 软件的属性标识描述
                      * 
                      */
                     void SetTitle(const std::string& _title);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool TitleHasBeenSet() const;
 
                     /**
-                     * 获取详情值。
-                     * @return Value 详情值。
+                     * 获取软件的属性值
+                     * @return Value 软件的属性值
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
-                     * 设置详情值。
-                     * @param _value 详情值。
+                     * 设置软件的属性值
+                     * @param _value 软件的属性值
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -112,19 +112,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 详情唯一键。
+                     * 软件的属性标识
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
 
                     /**
-                     * 详情标题。
+                     * 软件的属性标识描述
                      */
                     std::string m_title;
                     bool m_titleHasBeenSet;
 
                     /**
-                     * 详情值。
+                     * 软件的属性值
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;

@@ -107,39 +107,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取过滤项。
-支持模糊搜索：TaskId，TaskName
-支持过滤：
-BusinessName：业务名称
-BusinessDept：业务部门名称
-TemplateName：评估模版名称
-Status：评估状态 (waiting待评估，processing评估中, , finished已评估, failed评估失败)
-                     * @return Filters 过滤项。
-支持模糊搜索：TaskId，TaskName
-支持过滤：
-BusinessName：业务名称
-BusinessDept：业务部门名称
-TemplateName：评估模版名称
-Status：评估状态 (waiting待评估，processing评估中, , finished已评估, failed评估失败)
+                     * 获取过滤项。支持模糊搜索：TaskId，TaskName支持过滤：BusinessName：业务名称BusinessDept：业务部门名称TemplateName：评估模板名称Status：评估状态 (waiting待评估，processing评估中, , finished已评估, failed评估失败)
+                     * @return Filters 过滤项。支持模糊搜索：TaskId，TaskName支持过滤：BusinessName：业务名称BusinessDept：业务部门名称TemplateName：评估模板名称Status：评估状态 (waiting待评估，processing评估中, , finished已评估, failed评估失败)
                      * 
                      */
                     std::vector<DspaAssessmentFilter> GetFilters() const;
 
                     /**
-                     * 设置过滤项。
-支持模糊搜索：TaskId，TaskName
-支持过滤：
-BusinessName：业务名称
-BusinessDept：业务部门名称
-TemplateName：评估模版名称
-Status：评估状态 (waiting待评估，processing评估中, , finished已评估, failed评估失败)
-                     * @param _filters 过滤项。
-支持模糊搜索：TaskId，TaskName
-支持过滤：
-BusinessName：业务名称
-BusinessDept：业务部门名称
-TemplateName：评估模版名称
-Status：评估状态 (waiting待评估，processing评估中, , finished已评估, failed评估失败)
+                     * 设置过滤项。支持模糊搜索：TaskId，TaskName支持过滤：BusinessName：业务名称BusinessDept：业务部门名称TemplateName：评估模板名称Status：评估状态 (waiting待评估，processing评估中, , finished已评估, failed评估失败)
+                     * @param _filters 过滤项。支持模糊搜索：TaskId，TaskName支持过滤：BusinessName：业务名称BusinessDept：业务部门名称TemplateName：评估模板名称Status：评估状态 (waiting待评估，processing评估中, , finished已评估, failed评估失败)
                      * 
                      */
                     void SetFilters(const std::vector<DspaAssessmentFilter>& _filters);
@@ -172,13 +148,7 @@ Status：评估状态 (waiting待评估，processing评估中, , finished已评�
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 过滤项。
-支持模糊搜索：TaskId，TaskName
-支持过滤：
-BusinessName：业务名称
-BusinessDept：业务部门名称
-TemplateName：评估模版名称
-Status：评估状态 (waiting待评估，processing评估中, , finished已评估, failed评估失败)
+                     * 过滤项。支持模糊搜索：TaskId，TaskName支持过滤：BusinessName：业务名称BusinessDept：业务部门名称TemplateName：评估模板名称Status：评估状态 (waiting待评估，processing评估中, , finished已评估, failed评估失败)
                      */
                     std::vector<DspaAssessmentFilter> m_filters;
                     bool m_filtersHasBeenSet;

@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取返回标签数组。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Labels 返回标签数组。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DetectLabelItem> GetLabels() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 返回标签数组。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DetectLabelItem> m_labels;
                     bool m_labelsHasBeenSet;

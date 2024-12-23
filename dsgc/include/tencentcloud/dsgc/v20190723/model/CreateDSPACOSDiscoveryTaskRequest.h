@@ -148,27 +148,6 @@ namespace TencentCloud
                     bool BucketHasBeenSet() const;
 
                     /**
-                     * 获取通用规则集开关，0 关闭，1 启用
-                     * @return GeneralRuleSetEnable 通用规则集开关，0 关闭，1 启用
-                     * 
-                     */
-                    int64_t GetGeneralRuleSetEnable() const;
-
-                    /**
-                     * 设置通用规则集开关，0 关闭，1 启用
-                     * @param _generalRuleSetEnable 通用规则集开关，0 关闭，1 启用
-                     * 
-                     */
-                    void SetGeneralRuleSetEnable(const int64_t& _generalRuleSetEnable);
-
-                    /**
-                     * 判断参数 GeneralRuleSetEnable 是否已赋值
-                     * @return GeneralRuleSetEnable 是否已赋值
-                     * 
-                     */
-                    bool GeneralRuleSetEnableHasBeenSet() const;
-
-                    /**
                      * 获取执行计划， 0立即 1定时，选择“立即”时，扫描周期只能选择单次。
                      * @return Plan 执行计划， 0立即 1定时，选择“立即”时，扫描周期只能选择单次。
                      * 
@@ -295,6 +274,27 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
+                     * 获取通用规则集开关，0 关闭，1 启用
+                     * @return GeneralRuleSetEnable 通用规则集开关，0 关闭，1 启用
+                     * 
+                     */
+                    int64_t GetGeneralRuleSetEnable() const;
+
+                    /**
+                     * 设置通用规则集开关，0 关闭，1 启用
+                     * @param _generalRuleSetEnable 通用规则集开关，0 关闭，1 启用
+                     * 
+                     */
+                    void SetGeneralRuleSetEnable(const int64_t& _generalRuleSetEnable);
+
+                    /**
+                     * 判断参数 GeneralRuleSetEnable 是否已赋值
+                     * @return GeneralRuleSetEnable 是否已赋值
+                     * 
+                     */
+                    bool GeneralRuleSetEnableHasBeenSet() const;
+
+                    /**
                      * 获取合规组ID列表，最多支持添加5个
                      * @return ComplianceGroupIds 合规组ID列表，最多支持添加5个
                      * 
@@ -373,12 +373,6 @@ namespace TencentCloud
                     bool m_bucketHasBeenSet;
 
                     /**
-                     * 通用规则集开关，0 关闭，1 启用
-                     */
-                    int64_t m_generalRuleSetEnable;
-                    bool m_generalRuleSetEnableHasBeenSet;
-
-                    /**
                      * 执行计划， 0立即 1定时，选择“立即”时，扫描周期只能选择单次。
                      */
                     int64_t m_plan;
@@ -413,6 +407,12 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 通用规则集开关，0 关闭，1 启用
+                     */
+                    int64_t m_generalRuleSetEnable;
+                    bool m_generalRuleSetEnableHasBeenSet;
 
                     /**
                      * 合规组ID列表，最多支持添加5个

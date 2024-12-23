@@ -49,9 +49,7 @@ namespace TencentCloud
 
                     /**
                      * 获取数据源id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataSourceId 数据源id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDataSourceId() const;
@@ -65,9 +63,7 @@ namespace TencentCloud
 
                     /**
                      * 获取数据源name
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataSourceName 数据源name
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDataSourceName() const;
@@ -81,9 +77,7 @@ namespace TencentCloud
 
                     /**
                      * 获取资产对象名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssetName 资产对象名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAssetName() const;
@@ -97,9 +91,7 @@ namespace TencentCloud
 
                     /**
                      * 获取风险评估模板id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssessmentTemplateId 风险评估模板id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAssessmentTemplateId() const;
@@ -113,9 +105,7 @@ namespace TencentCloud
 
                     /**
                      * 获取分类分级的模板id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IdentifyTemplateId 分类分级的模板id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIdentifyTemplateId() const;
@@ -129,9 +119,7 @@ namespace TencentCloud
 
                     /**
                      * 获取风险类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskType 风险类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRiskType() const;
@@ -145,9 +133,7 @@ namespace TencentCloud
 
                     /**
                      * 获取风险项
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskName 风险项
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRiskName() const;
@@ -161,9 +147,7 @@ namespace TencentCloud
 
                     /**
                      * 获取风险的描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskDescription 风险的描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRiskDescription() const;
@@ -177,9 +161,7 @@ namespace TencentCloud
 
                     /**
                      * 获取风险的级别
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskLevel 风险的级别
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRiskLevel() const;
@@ -193,9 +175,7 @@ namespace TencentCloud
 
                     /**
                      * 获取处置的建议
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SuggestAction 处置的建议
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSuggestAction() const;
@@ -209,9 +189,7 @@ namespace TencentCloud
 
                     /**
                      * 获取处置状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 处置状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
@@ -225,9 +203,7 @@ namespace TencentCloud
 
                     /**
                      * 获取备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemark() const;
@@ -241,9 +217,7 @@ namespace TencentCloud
 
                     /**
                      * 获取安全产品
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecurityProduct 安全产品
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SecurityProduct> GetSecurityProduct() const;
@@ -257,9 +231,7 @@ namespace TencentCloud
 
                     /**
                      * 获取风险归属
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskDimension 风险归属
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRiskDimension() const;
@@ -273,9 +245,7 @@ namespace TencentCloud
 
                     /**
                      * 获取关联数据库（如果风险归属是instance）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RelationAsset 关联数据库（如果风险归属是instance）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetRelationAsset() const;
@@ -289,9 +259,7 @@ namespace TencentCloud
 
                     /**
                      * 获取风险账号详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccountRiskDetail 风险账号详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AccountRisk> GetAccountRiskDetail() const;
@@ -305,9 +273,7 @@ namespace TencentCloud
 
                     /**
                      * 获取权限风险详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PrivilegeRiskDetail 权限风险详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<PrivilegeRisk> GetPrivilegeRiskDetail() const;
@@ -321,9 +287,7 @@ namespace TencentCloud
 
                     /**
                      * 获取策略风险的cos风险文件列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolicyRiskCosFileList 策略风险的cos风险文件列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetPolicyRiskCosFileList() const;
@@ -337,9 +301,7 @@ namespace TencentCloud
 
                     /**
                      * 获取AKSK泄漏列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AKSKLeak AKSK泄漏列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AKSKLeak> GetAKSKLeak() const;
@@ -355,133 +317,114 @@ namespace TencentCloud
 
                     /**
                      * 数据源id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataSourceId;
                     bool m_dataSourceIdHasBeenSet;
 
                     /**
                      * 数据源name
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataSourceName;
                     bool m_dataSourceNameHasBeenSet;
 
                     /**
                      * 资产对象名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_assetName;
                     bool m_assetNameHasBeenSet;
 
                     /**
                      * 风险评估模板id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_assessmentTemplateId;
                     bool m_assessmentTemplateIdHasBeenSet;
 
                     /**
                      * 分类分级的模板id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_identifyTemplateId;
                     bool m_identifyTemplateIdHasBeenSet;
 
                     /**
                      * 风险类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_riskType;
                     bool m_riskTypeHasBeenSet;
 
                     /**
                      * 风险项
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_riskName;
                     bool m_riskNameHasBeenSet;
 
                     /**
                      * 风险的描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_riskDescription;
                     bool m_riskDescriptionHasBeenSet;
 
                     /**
                      * 风险的级别
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_riskLevel;
                     bool m_riskLevelHasBeenSet;
 
                     /**
                      * 处置的建议
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_suggestAction;
                     bool m_suggestActionHasBeenSet;
 
                     /**
                      * 处置状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
                      * 安全产品
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SecurityProduct> m_securityProduct;
                     bool m_securityProductHasBeenSet;
 
                     /**
                      * 风险归属
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_riskDimension;
                     bool m_riskDimensionHasBeenSet;
 
                     /**
                      * 关联数据库（如果风险归属是instance）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_relationAsset;
                     bool m_relationAssetHasBeenSet;
 
                     /**
                      * 风险账号详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AccountRisk> m_accountRiskDetail;
                     bool m_accountRiskDetailHasBeenSet;
 
                     /**
                      * 权限风险详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<PrivilegeRisk> m_privilegeRiskDetail;
                     bool m_privilegeRiskDetailHasBeenSet;
 
                     /**
                      * 策略风险的cos风险文件列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_policyRiskCosFileList;
                     bool m_policyRiskCosFileListHasBeenSet;
 
                     /**
                      * AKSK泄漏列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AKSKLeak> m_aKSKLeak;
                     bool m_aKSKLeakHasBeenSet;

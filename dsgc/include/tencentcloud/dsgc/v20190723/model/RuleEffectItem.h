@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 规则描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置规则描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 规则描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 规则值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetValue() const;
 
                     /**
                      * 设置规则值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _value 规则值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValue(const int64_t& _value);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 规则描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 规则值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_value;
                     bool m_valueHasBeenSet;

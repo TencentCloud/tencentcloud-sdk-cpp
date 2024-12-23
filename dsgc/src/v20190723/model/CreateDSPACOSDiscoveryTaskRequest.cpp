@@ -28,13 +28,13 @@ CreateDSPACOSDiscoveryTaskRequest::CreateDSPACOSDiscoveryTaskRequest() :
     m_dataSourceIdHasBeenSet(false),
     m_enableHasBeenSet(false),
     m_bucketHasBeenSet(false),
-    m_generalRuleSetEnableHasBeenSet(false),
     m_planHasBeenSet(false),
     m_periodHasBeenSet(false),
     m_fileTypesHasBeenSet(false),
     m_fileSizeLimitHasBeenSet(false),
     m_resourceRegionHasBeenSet(false),
     m_descriptionHasBeenSet(false),
+    m_generalRuleSetEnableHasBeenSet(false),
     m_complianceGroupIdsHasBeenSet(false),
     m_timingStartTimeHasBeenSet(false)
 {
@@ -85,14 +85,6 @@ string CreateDSPACOSDiscoveryTaskRequest::ToJsonString() const
         string key = "Bucket";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_bucket.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_generalRuleSetEnableHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "GeneralRuleSetEnable";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_generalRuleSetEnable, allocator);
     }
 
     if (m_planHasBeenSet)
@@ -146,6 +138,14 @@ string CreateDSPACOSDiscoveryTaskRequest::ToJsonString() const
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_generalRuleSetEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GeneralRuleSetEnable";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_generalRuleSetEnable, allocator);
     }
 
     if (m_complianceGroupIdsHasBeenSet)
@@ -257,22 +257,6 @@ bool CreateDSPACOSDiscoveryTaskRequest::BucketHasBeenSet() const
     return m_bucketHasBeenSet;
 }
 
-int64_t CreateDSPACOSDiscoveryTaskRequest::GetGeneralRuleSetEnable() const
-{
-    return m_generalRuleSetEnable;
-}
-
-void CreateDSPACOSDiscoveryTaskRequest::SetGeneralRuleSetEnable(const int64_t& _generalRuleSetEnable)
-{
-    m_generalRuleSetEnable = _generalRuleSetEnable;
-    m_generalRuleSetEnableHasBeenSet = true;
-}
-
-bool CreateDSPACOSDiscoveryTaskRequest::GeneralRuleSetEnableHasBeenSet() const
-{
-    return m_generalRuleSetEnableHasBeenSet;
-}
-
 int64_t CreateDSPACOSDiscoveryTaskRequest::GetPlan() const
 {
     return m_plan;
@@ -367,6 +351,22 @@ void CreateDSPACOSDiscoveryTaskRequest::SetDescription(const string& _descriptio
 bool CreateDSPACOSDiscoveryTaskRequest::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+int64_t CreateDSPACOSDiscoveryTaskRequest::GetGeneralRuleSetEnable() const
+{
+    return m_generalRuleSetEnable;
+}
+
+void CreateDSPACOSDiscoveryTaskRequest::SetGeneralRuleSetEnable(const int64_t& _generalRuleSetEnable)
+{
+    m_generalRuleSetEnable = _generalRuleSetEnable;
+    m_generalRuleSetEnableHasBeenSet = true;
+}
+
+bool CreateDSPACOSDiscoveryTaskRequest::GeneralRuleSetEnableHasBeenSet() const
+{
+    return m_generalRuleSetEnableHasBeenSet;
 }
 
 vector<int64_t> CreateDSPACOSDiscoveryTaskRequest::GetComplianceGroupIds() const

@@ -132,15 +132,23 @@ namespace TencentCloud
                     bool BusinessTypeHasBeenSet() const;
 
                     /**
-                     * 获取上传文件内容数组，最多支持上传20个文件。
-                     * @return FileInfos 上传文件内容数组，最多支持上传20个文件。
+                     * 获取上传文件内容数组，一次最多可上传20个文件。
+
+<b>若上传多个文件，所有文件必须为相同类型</b>，例如全部为PDF或全部为Word文件。不支持混合文件类型的上传。
+                     * @return FileInfos 上传文件内容数组，一次最多可上传20个文件。
+
+<b>若上传多个文件，所有文件必须为相同类型</b>，例如全部为PDF或全部为Word文件。不支持混合文件类型的上传。
                      * 
                      */
                     std::vector<UploadFile> GetFileInfos() const;
 
                     /**
-                     * 设置上传文件内容数组，最多支持上传20个文件。
-                     * @param _fileInfos 上传文件内容数组，最多支持上传20个文件。
+                     * 设置上传文件内容数组，一次最多可上传20个文件。
+
+<b>若上传多个文件，所有文件必须为相同类型</b>，例如全部为PDF或全部为Word文件。不支持混合文件类型的上传。
+                     * @param _fileInfos 上传文件内容数组，一次最多可上传20个文件。
+
+<b>若上传多个文件，所有文件必须为相同类型</b>，例如全部为PDF或全部为Word文件。不支持混合文件类型的上传。
                      * 
                      */
                     void SetFileInfos(const std::vector<UploadFile>& _fileInfos);
@@ -199,7 +207,9 @@ namespace TencentCloud
                     bool m_businessTypeHasBeenSet;
 
                     /**
-                     * 上传文件内容数组，最多支持上传20个文件。
+                     * 上传文件内容数组，一次最多可上传20个文件。
+
+<b>若上传多个文件，所有文件必须为相同类型</b>，例如全部为PDF或全部为Word文件。不支持混合文件类型的上传。
                      */
                     std::vector<UploadFile> m_fileInfos;
                     bool m_fileInfosHasBeenSet;

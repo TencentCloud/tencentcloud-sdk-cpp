@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据样本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataSample 数据样本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDataSample() const;
 
                     /**
                      * 设置数据样本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataSample 数据样本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataSample(const std::string& _dataSample);
@@ -75,7 +71,6 @@ namespace TencentCloud
 
                     /**
                      * 数据样本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataSample;
                     bool m_dataSampleHasBeenSet;

@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取分类规则信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CategoryRules 分类规则信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CategoryRule> GetCategoryRules() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 分类规则信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CategoryRule> m_categoryRules;
                     bool m_categoryRulesHasBeenSet;

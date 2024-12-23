@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取报告类型（AssetSorting:资产梳理）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReportType 报告类型（AssetSorting:资产梳理）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReportType() const;
 
                     /**
                      * 设置报告类型（AssetSorting:资产梳理）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _reportType 报告类型（AssetSorting:资产梳理）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReportType(const std::string& _reportType);
@@ -115,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取报告周期（0单次 1每天 2每周 3每月）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReportPeriod 报告周期（0单次 1每天 2每周 3每月）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetReportPeriod() const;
 
                     /**
                      * 设置报告周期（0单次 1每天 2每周 3每月）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _reportPeriod 报告周期（0单次 1每天 2每周 3每月）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReportPeriod(const uint64_t& _reportPeriod);
@@ -140,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取执行计划 （0:单次报告 1:定时报告）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReportPlan 执行计划 （0:单次报告 1:定时报告）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetReportPlan() const;
 
                     /**
                      * 设置执行计划 （0:单次报告 1:定时报告）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _reportPlan 执行计划 （0:单次报告 1:定时报告）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReportPlan(const uint64_t& _reportPlan);
@@ -165,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取报告导出状态（Success 成功, Failed 失败, InProgress 进行中）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReportStatus 报告导出状态（Success 成功, Failed 失败, InProgress 进行中）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReportStatus() const;
 
                     /**
                      * 设置报告导出状态（Success 成功, Failed 失败, InProgress 进行中）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _reportStatus 报告导出状态（Success 成功, Failed 失败, InProgress 进行中）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReportStatus(const std::string& _reportStatus);
@@ -190,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务下次启动时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimingStartTime 任务下次启动时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTimingStartTime() const;
 
                     /**
                      * 设置任务下次启动时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timingStartTime 任务下次启动时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimingStartTime(const std::string& _timingStartTime);
@@ -215,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -240,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取完成时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FinishedTime 完成时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFinishedTime() const;
 
                     /**
                      * 设置完成时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _finishedTime 完成时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFinishedTime(const std::string& _finishedTime);
@@ -265,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子账号uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubUin 子账号uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubUin() const;
 
                     /**
                      * 设置子账号uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subUin 子账号uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubUin(const std::string& _subUin);
@@ -290,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取失败信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailedMessage 失败信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFailedMessage() const;
 
                     /**
                      * 设置失败信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _failedMessage 失败信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFailedMessage(const std::string& _failedMessage);
@@ -315,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否启用（0：否 1：是）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Enable 是否启用（0：否 1：是）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetEnable() const;
 
                     /**
                      * 设置是否启用（0：否 1：是）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enable 是否启用（0：否 1：是）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnable(const uint64_t& _enable);
@@ -340,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取识别模板名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ComplianceName 识别模板名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetComplianceName() const;
 
                     /**
                      * 设置识别模板名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _complianceName 识别模板名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetComplianceName(const std::string& _complianceName);
@@ -365,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取进度百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProgressPercent 进度百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetProgressPercent() const;
 
                     /**
                      * 设置进度百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _progressPercent 进度百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProgressPercent(const uint64_t& _progressPercent);
@@ -390,18 +342,14 @@ namespace TencentCloud
 
                     /**
                      * 获取报告模版名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReportTemplateName 报告模版名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReportTemplateName() const;
 
                     /**
                      * 设置报告模版名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _reportTemplateName 报告模版名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReportTemplateName(const std::string& _reportTemplateName);
@@ -429,91 +377,78 @@ namespace TencentCloud
 
                     /**
                      * 报告类型（AssetSorting:资产梳理）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reportType;
                     bool m_reportTypeHasBeenSet;
 
                     /**
                      * 报告周期（0单次 1每天 2每周 3每月）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_reportPeriod;
                     bool m_reportPeriodHasBeenSet;
 
                     /**
                      * 执行计划 （0:单次报告 1:定时报告）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_reportPlan;
                     bool m_reportPlanHasBeenSet;
 
                     /**
                      * 报告导出状态（Success 成功, Failed 失败, InProgress 进行中）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reportStatus;
                     bool m_reportStatusHasBeenSet;
 
                     /**
                      * 任务下次启动时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_timingStartTime;
                     bool m_timingStartTimeHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 完成时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_finishedTime;
                     bool m_finishedTimeHasBeenSet;
 
                     /**
                      * 子账号uin
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subUin;
                     bool m_subUinHasBeenSet;
 
                     /**
                      * 失败信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_failedMessage;
                     bool m_failedMessageHasBeenSet;
 
                     /**
                      * 是否启用（0：否 1：是）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_enable;
                     bool m_enableHasBeenSet;
 
                     /**
                      * 识别模板名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_complianceName;
                     bool m_complianceNameHasBeenSet;
 
                     /**
                      * 进度百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_progressPercent;
                     bool m_progressPercentHasBeenSet;
 
                     /**
                      * 报告模版名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reportTemplateName;
                     bool m_reportTemplateNameHasBeenSet;

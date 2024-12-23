@@ -70,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Contents 规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DataRule> GetContents() const;
 
                     /**
                      * 设置规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _contents 规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContents(const std::vector<DataRule>& _contents);
@@ -103,7 +99,6 @@ namespace TencentCloud
 
                     /**
                      * 规则
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DataRule> m_contents;
                     bool m_contentsHasBeenSet;

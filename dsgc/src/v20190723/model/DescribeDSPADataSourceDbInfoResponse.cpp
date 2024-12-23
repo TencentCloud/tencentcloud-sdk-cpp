@@ -24,7 +24,8 @@ using namespace TencentCloud::Dsgc::V20190723::Model;
 using namespace std;
 
 DescribeDSPADataSourceDbInfoResponse::DescribeDSPADataSourceDbInfoResponse() :
-    m_itemsHasBeenSet(false)
+    m_itemsHasBeenSet(false),
+    m_dataSourceIdHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,16 @@ CoreInternalOutcome DescribeDSPADataSourceDbInfoResponse::Deserialize(const stri
         m_itemsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DataSourceId") && !rsp["DataSourceId"].IsNull())
+    {
+        if (!rsp["DataSourceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataSourceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dataSourceId = string(rsp["DataSourceId"].GetString());
+        m_dataSourceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +118,14 @@ string DescribeDSPADataSourceDbInfoResponse::ToJsonString() const
         }
     }
 
+    if (m_dataSourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataSourceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dataSourceId.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -127,6 +146,16 @@ vector<DSPADataSourceDbInfo> DescribeDSPADataSourceDbInfoResponse::GetItems() co
 bool DescribeDSPADataSourceDbInfoResponse::ItemsHasBeenSet() const
 {
     return m_itemsHasBeenSet;
+}
+
+string DescribeDSPADataSourceDbInfoResponse::GetDataSourceId() const
+{
+    return m_dataSourceId;
+}
+
+bool DescribeDSPADataSourceDbInfoResponse::DataSourceIdHasBeenSet() const
+{
+    return m_dataSourceIdHasBeenSet;
 }
 
 

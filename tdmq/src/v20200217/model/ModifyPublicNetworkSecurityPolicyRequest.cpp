@@ -22,7 +22,9 @@
 using namespace TencentCloud::Tdmq::V20200217::Model;
 using namespace std;
 
-ModifyPublicNetworkSecurityPolicyRequest::ModifyPublicNetworkSecurityPolicyRequest()
+ModifyPublicNetworkSecurityPolicyRequest::ModifyPublicNetworkSecurityPolicyRequest() :
+    m_instanceIdHasBeenSet(false),
+    m_policyListHasBeenSet(false)
 {
 }
 
@@ -33,6 +35,29 @@ string ModifyPublicNetworkSecurityPolicyRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_policyListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PolicyList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_policyList.begin(); itr != m_policyList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +65,37 @@ string ModifyPublicNetworkSecurityPolicyRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string ModifyPublicNetworkSecurityPolicyRequest::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void ModifyPublicNetworkSecurityPolicyRequest::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool ModifyPublicNetworkSecurityPolicyRequest::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
+
+vector<SecurityPolicy> ModifyPublicNetworkSecurityPolicyRequest::GetPolicyList() const
+{
+    return m_policyList;
+}
+
+void ModifyPublicNetworkSecurityPolicyRequest::SetPolicyList(const vector<SecurityPolicy>& _policyList)
+{
+    m_policyList = _policyList;
+    m_policyListHasBeenSet = true;
+}
+
+bool ModifyPublicNetworkSecurityPolicyRequest::PolicyListHasBeenSet() const
+{
+    return m_policyListHasBeenSet;
+}
 
 

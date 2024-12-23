@@ -170,7 +170,7 @@ namespace TencentCloud
                 AddSpecifyPrivateZoneVpcOutcomeCallable AddSpecifyPrivateZoneVpcCallable(const Model::AddSpecifyPrivateZoneVpcRequest& request);
 
                 /**
-                 *创建私有域解析账号
+                 *跨账号关联VPC时绑定其他账号
                  * @param req CreatePrivateDNSAccountRequest
                  * @return CreatePrivateDNSAccountOutcome
                  */

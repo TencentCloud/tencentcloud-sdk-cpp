@@ -156,15 +156,15 @@ namespace TencentCloud
                     bool ComputeNodeCountHasBeenSet() const;
 
                     /**
-                     * 获取调度器类型。默认取值：SLURM。<br><li>SGE：SGE调度器。<br><li>SLURM：SLURM调度器。
-                     * @return SchedulerType 调度器类型。默认取值：SLURM。<br><li>SGE：SGE调度器。<br><li>SLURM：SLURM调度器。
+                     * 获取调度器类型。默认取值：SLURM。<br><li>SGE：SGE调度器。</li><br><li>SLURM：SLURM调度器。</li>
+                     * @return SchedulerType 调度器类型。默认取值：SLURM。<br><li>SGE：SGE调度器。</li><br><li>SLURM：SLURM调度器。</li>
                      * 
                      */
                     std::string GetSchedulerType() const;
 
                     /**
-                     * 设置调度器类型。默认取值：SLURM。<br><li>SGE：SGE调度器。<br><li>SLURM：SLURM调度器。
-                     * @param _schedulerType 调度器类型。默认取值：SLURM。<br><li>SGE：SGE调度器。<br><li>SLURM：SLURM调度器。
+                     * 设置调度器类型。默认取值：SLURM。<br><li>SGE：SGE调度器。</li><br><li>SLURM：SLURM调度器。</li>
+                     * @param _schedulerType 调度器类型。默认取值：SLURM。<br><li>SGE：SGE调度器。</li><br><li>SLURM：SLURM调度器。</li>
                      * 
                      */
                     void SetSchedulerType(const std::string& _schedulerType);
@@ -319,19 +319,15 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                     bool DryRunHasBeenSet() const;
 
                     /**
-                     * 获取域名字服务类型。默认取值：NIS。
-<li>NIS：NIS域名字服务。
-                     * @return AccountType 域名字服务类型。默认取值：NIS。
-<li>NIS：NIS域名字服务。
+                     * 获取域名字服务类型。默认取值：NIS。<li>NIS：NIS域名字服务。</li>
+                     * @return AccountType 域名字服务类型。默认取值：NIS。<li>NIS：NIS域名字服务。</li>
                      * 
                      */
                     std::string GetAccountType() const;
 
                     /**
-                     * 设置域名字服务类型。默认取值：NIS。
-<li>NIS：NIS域名字服务。
-                     * @param _accountType 域名字服务类型。默认取值：NIS。
-<li>NIS：NIS域名字服务。
+                     * 设置域名字服务类型。默认取值：NIS。<li>NIS：NIS域名字服务。</li>
+                     * @param _accountType 域名字服务类型。默认取值：NIS。<li>NIS：NIS域名字服务。</li>
                      * 
                      */
                     void SetAccountType(const std::string& _accountType);
@@ -449,15 +445,15 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取弹性伸缩类型。<br><li>AS：集群自动扩缩容由[弹性伸缩](https://cloud.tencent.com/document/product/377/3154)产品实现。<br><li>THPC_AS：集群自动扩缩容由THPC产品内部实现。
-                     * @return AutoScalingType 弹性伸缩类型。<br><li>AS：集群自动扩缩容由[弹性伸缩](https://cloud.tencent.com/document/product/377/3154)产品实现。<br><li>THPC_AS：集群自动扩缩容由THPC产品内部实现。
+                     * 获取弹性伸缩类型。<br><li>AS：集群自动扩缩容由[弹性伸缩](https://cloud.tencent.com/document/product/377/3154)产品实现。</li><br><li>THPC_AS：集群自动扩缩容由THPC产品内部实现。</li>
+                     * @return AutoScalingType 弹性伸缩类型。<br><li>AS：集群自动扩缩容由[弹性伸缩](https://cloud.tencent.com/document/product/377/3154)产品实现。</li><br><li>THPC_AS：集群自动扩缩容由THPC产品内部实现。</li>
                      * 
                      */
                     std::string GetAutoScalingType() const;
 
                     /**
-                     * 设置弹性伸缩类型。<br><li>AS：集群自动扩缩容由[弹性伸缩](https://cloud.tencent.com/document/product/377/3154)产品实现。<br><li>THPC_AS：集群自动扩缩容由THPC产品内部实现。
-                     * @param _autoScalingType 弹性伸缩类型。<br><li>AS：集群自动扩缩容由[弹性伸缩](https://cloud.tencent.com/document/product/377/3154)产品实现。<br><li>THPC_AS：集群自动扩缩容由THPC产品内部实现。
+                     * 设置弹性伸缩类型。<br><li>AS：集群自动扩缩容由[弹性伸缩](https://cloud.tencent.com/document/product/377/3154)产品实现。</li><br><li>THPC_AS：集群自动扩缩容由THPC产品内部实现。</li>
+                     * @param _autoScalingType 弹性伸缩类型。<br><li>AS：集群自动扩缩容由[弹性伸缩](https://cloud.tencent.com/document/product/377/3154)产品实现。</li><br><li>THPC_AS：集群自动扩缩容由THPC产品内部实现。</li>
                      * 
                      */
                     void SetAutoScalingType(const std::string& _autoScalingType);
@@ -502,7 +498,7 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                     bool m_computeNodeCountHasBeenSet;
 
                     /**
-                     * 调度器类型。默认取值：SLURM。<br><li>SGE：SGE调度器。<br><li>SLURM：SLURM调度器。
+                     * 调度器类型。默认取值：SLURM。<br><li>SGE：SGE调度器。</li><br><li>SLURM：SLURM调度器。</li>
                      */
                     std::string m_schedulerType;
                     bool m_schedulerTypeHasBeenSet;
@@ -548,8 +544,7 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                     bool m_dryRunHasBeenSet;
 
                     /**
-                     * 域名字服务类型。默认取值：NIS。
-<li>NIS：NIS域名字服务。
+                     * 域名字服务类型。默认取值：NIS。<li>NIS：NIS域名字服务。</li>
                      */
                     std::string m_accountType;
                     bool m_accountTypeHasBeenSet;
@@ -585,7 +580,7 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 弹性伸缩类型。<br><li>AS：集群自动扩缩容由[弹性伸缩](https://cloud.tencent.com/document/product/377/3154)产品实现。<br><li>THPC_AS：集群自动扩缩容由THPC产品内部实现。
+                     * 弹性伸缩类型。<br><li>AS：集群自动扩缩容由[弹性伸缩](https://cloud.tencent.com/document/product/377/3154)产品实现。</li><br><li>THPC_AS：集群自动扩缩容由THPC产品内部实现。</li>
                      */
                     std::string m_autoScalingType;
                     bool m_autoScalingTypeHasBeenSet;

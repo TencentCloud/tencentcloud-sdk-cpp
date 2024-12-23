@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取风险等级列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskLevelList 风险等级列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RiskLevelRisk> GetRiskLevelList() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 风险等级列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RiskLevelRisk> m_riskLevelList;
                     bool m_riskLevelListHasBeenSet;

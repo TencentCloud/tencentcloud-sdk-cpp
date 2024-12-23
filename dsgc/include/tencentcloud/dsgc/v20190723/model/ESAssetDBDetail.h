@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据源id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataSourceId 数据源id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDataSourceId() const;
 
                     /**
                      * 设置数据源id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataSourceId 数据源id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataSourceId(const std::string& _dataSourceId);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取索引名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IndexName 索引名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIndexName() const;
 
                     /**
                      * 设置索引名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _indexName 索引名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIndexName(const std::string& _indexName);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataType 数据库类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDataType() const;
 
                     /**
                      * 设置数据库类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataType 数据库类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataType(const std::string& _dataType);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取字段的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FieldNums 字段的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFieldNums() const;
 
                     /**
                      * 设置字段的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fieldNums 字段的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFieldNums(const int64_t& _fieldNums);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取敏感字段的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SensitiveFieldNums 敏感字段的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSensitiveFieldNums() const;
 
                     /**
                      * 设置敏感字段的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sensitiveFieldNums 敏感字段的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSensitiveFieldNums(const int64_t& _sensitiveFieldNums);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取敏感数据分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DistributionData 敏感数据分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Note> GetDistributionData() const;
 
                     /**
                      * 设置敏感数据分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _distributionData 敏感数据分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDistributionData(const std::vector<Note>& _distributionData);
@@ -201,42 +177,36 @@ namespace TencentCloud
 
                     /**
                      * 数据源id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataSourceId;
                     bool m_dataSourceIdHasBeenSet;
 
                     /**
                      * 索引名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_indexName;
                     bool m_indexNameHasBeenSet;
 
                     /**
                      * 数据库类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataType;
                     bool m_dataTypeHasBeenSet;
 
                     /**
                      * 字段的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_fieldNums;
                     bool m_fieldNumsHasBeenSet;
 
                     /**
                      * 敏感字段的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sensitiveFieldNums;
                     bool m_sensitiveFieldNumsHasBeenSet;
 
                     /**
                      * 敏感数据分布
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Note> m_distributionData;
                     bool m_distributionDataHasBeenSet;

@@ -91,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取错误信息描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrDescription 错误信息描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ErrDescription GetErrDescription() const;
 
                     /**
                      * 设置错误信息描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _errDescription 错误信息描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetErrDescription(const ErrDescription& _errDescription);
@@ -172,7 +168,6 @@ namespace TencentCloud
 
                     /**
                      * 错误信息描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ErrDescription m_errDescription;
                     bool m_errDescriptionHasBeenSet;

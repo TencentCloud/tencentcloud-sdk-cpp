@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取报表任务id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReportTaskId 报表任务id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetReportTaskId() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取提示信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 提示信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemark() const;
@@ -79,14 +75,12 @@ namespace TencentCloud
 
                     /**
                      * 报表任务id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_reportTaskId;
                     bool m_reportTaskIdHasBeenSet;
 
                     /**
                      * 提示信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;

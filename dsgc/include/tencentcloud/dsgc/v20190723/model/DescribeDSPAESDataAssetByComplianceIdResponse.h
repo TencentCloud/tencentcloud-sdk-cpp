@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取概览统计结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Stats 概览统计结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ESDataAssetCountDto GetStats() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 概览统计结果
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ESDataAssetCountDto m_stats;
                     bool m_statsHasBeenSet;

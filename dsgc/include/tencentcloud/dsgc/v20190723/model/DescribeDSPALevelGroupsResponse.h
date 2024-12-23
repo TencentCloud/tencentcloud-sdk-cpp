@@ -47,9 +47,7 @@ namespace TencentCloud
                     /**
                      * 获取符合条件的敏感数据分级标识记录
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Items 符合条件的敏感数据分级标识记录
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -65,9 +63,7 @@ namespace TencentCloud
                     /**
                      * 获取符合条件的敏感数据分级标识记录数
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 符合条件的敏感数据分级标识记录数
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -85,14 +81,12 @@ namespace TencentCloud
                     /**
                      * 符合条件的敏感数据分级标识记录
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DspaDiscoveryLevelDetail> m_items;
                     bool m_itemsHasBeenSet;
 
                     /**
                      * 符合条件的敏感数据分级标识记录数
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;

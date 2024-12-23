@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取风险级别描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskLevelDescription 风险级别描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRiskLevelDescription() const;
@@ -76,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取分类分级id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IdentifyComplianceId 分类分级id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIdentifyComplianceId() const;
@@ -106,9 +102,7 @@ namespace TencentCloud
 
                     /**
                      * 获取风险数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskLevelMatrix 风险数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RiskLevelMatrix> GetRiskLevelMatrix() const;
@@ -130,14 +124,12 @@ namespace TencentCloud
 
                     /**
                      * 风险级别描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_riskLevelDescription;
                     bool m_riskLevelDescriptionHasBeenSet;
 
                     /**
                      * 分类分级id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_identifyComplianceId;
                     bool m_identifyComplianceIdHasBeenSet;
@@ -150,7 +142,6 @@ namespace TencentCloud
 
                     /**
                      * 风险数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RiskLevelMatrix> m_riskLevelMatrix;
                     bool m_riskLevelMatrixHasBeenSet;

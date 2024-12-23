@@ -4426,6 +4426,49 @@ MonitorClient::DescribeRecordingRulesOutcomeCallable MonitorClient::DescribeReco
     return task->get_future();
 }
 
+MonitorClient::DescribeRemoteURLsOutcome MonitorClient::DescribeRemoteURLs(const DescribeRemoteURLsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRemoteURLs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRemoteURLsResponse rsp = DescribeRemoteURLsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRemoteURLsOutcome(rsp);
+        else
+            return DescribeRemoteURLsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRemoteURLsOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribeRemoteURLsAsync(const DescribeRemoteURLsRequest& request, const DescribeRemoteURLsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRemoteURLs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DescribeRemoteURLsOutcomeCallable MonitorClient::DescribeRemoteURLsCallable(const DescribeRemoteURLsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRemoteURLsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRemoteURLs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::DescribeSSOAccountOutcome MonitorClient::DescribeSSOAccount(const DescribeSSOAccountRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSSOAccount");
@@ -5537,6 +5580,49 @@ MonitorClient::ModifyPrometheusTempOutcomeCallable MonitorClient::ModifyPromethe
         [this, request]()
         {
             return this->ModifyPrometheusTemp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MonitorClient::ModifyRemoteURLsOutcome MonitorClient::ModifyRemoteURLs(const ModifyRemoteURLsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyRemoteURLs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyRemoteURLsResponse rsp = ModifyRemoteURLsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyRemoteURLsOutcome(rsp);
+        else
+            return ModifyRemoteURLsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyRemoteURLsOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::ModifyRemoteURLsAsync(const ModifyRemoteURLsRequest& request, const ModifyRemoteURLsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyRemoteURLs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::ModifyRemoteURLsOutcomeCallable MonitorClient::ModifyRemoteURLsCallable(const ModifyRemoteURLsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyRemoteURLsOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyRemoteURLs(request);
         }
     );
 

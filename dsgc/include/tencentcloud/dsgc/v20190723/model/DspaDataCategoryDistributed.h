@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据分类ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CategoryId 数据分类ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCategoryId() const;
 
                     /**
                      * 设置数据分类ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _categoryId 数据分类ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCategoryId(const int64_t& _categoryId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据分类名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CategoryName 数据分类名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCategoryName() const;
 
                     /**
                      * 设置数据分类名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _categoryName 数据分类名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCategoryName(const std::string& _categoryName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据分类统计个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Count 数据分类统计个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCount() const;
 
                     /**
                      * 设置数据分类统计个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _count 数据分类统计个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCount(const uint64_t& _count);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分类路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CategoryFullPath 分类路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCategoryFullPath() const;
 
                     /**
                      * 设置分类路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _categoryFullPath 分类路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCategoryFullPath(const std::string& _categoryFullPath);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 数据分类ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_categoryId;
                     bool m_categoryIdHasBeenSet;
 
                     /**
                      * 数据分类名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_categoryName;
                     bool m_categoryNameHasBeenSet;
 
                     /**
                      * 数据分类统计个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_count;
                     bool m_countHasBeenSet;
 
                     /**
                      * 分类路径
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_categoryFullPath;
                     bool m_categoryFullPathHasBeenSet;

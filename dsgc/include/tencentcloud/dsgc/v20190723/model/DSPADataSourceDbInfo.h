@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DbName 数据库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDbName() const;
 
                     /**
                      * 设置数据库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dbName 数据库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDbName(const std::string& _dbName);
@@ -75,7 +71,6 @@ namespace TencentCloud
 
                     /**
                      * 数据库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dbName;
                     bool m_dbNameHasBeenSet;

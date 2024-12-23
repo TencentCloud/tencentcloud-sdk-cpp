@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取含高风险资产TOP10的列表数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssetsList 含高风险资产TOP10的列表数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<HighRiskAssetsDetail> GetAssetsList() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 含高风险资产TOP10的列表数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<HighRiskAssetsDetail> m_assetsList;
                     bool m_assetsListHasBeenSet;

@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取操作符；只能取and, or的其中一种
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Operator 操作符；只能取and, or的其中一种
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOperator() const;
 
                     /**
                      * 设置操作符；只能取and, or的其中一种
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _operator 操作符；只能取and, or的其中一种
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOperator(const std::string& _operator);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Contents 规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DspaDiscoveryDataRule> GetContents() const;
 
                     /**
                      * 设置规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _contents 规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContents(const std::vector<DspaDiscoveryDataRule>& _contents);
@@ -101,14 +93,12 @@ namespace TencentCloud
 
                     /**
                      * 操作符；只能取and, or的其中一种
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
                      * 规则
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DspaDiscoveryDataRule> m_contents;
                     bool m_contentsHasBeenSet;

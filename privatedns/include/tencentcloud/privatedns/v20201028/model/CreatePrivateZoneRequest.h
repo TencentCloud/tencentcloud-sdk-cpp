@@ -153,21 +153,21 @@ namespace TencentCloud
                     /**
                      * 获取创建私有域的同时，将其关联至VPC
                      * @return Vpcs 创建私有域的同时，将其关联至VPC
-                     * 
+                     * @deprecated
                      */
                     std::vector<VpcInfo> GetVpcs() const;
 
                     /**
                      * 设置创建私有域的同时，将其关联至VPC
                      * @param _vpcs 创建私有域的同时，将其关联至VPC
-                     * 
+                     * @deprecated
                      */
                     void SetVpcs(const std::vector<VpcInfo>& _vpcs);
 
                     /**
                      * 判断参数 Vpcs 是否已赋值
                      * @return Vpcs 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool VpcsHasBeenSet() const;
 

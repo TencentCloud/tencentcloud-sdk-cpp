@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据源id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceId 数据源id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置数据源id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceId 数据源id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据源绑定的db信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DbInfos 数据源绑定的db信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DbInfo> GetDbInfos() const;
 
                     /**
                      * 设置数据源绑定的db信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dbInfos 数据源绑定的db信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDbInfos(const std::vector<DbInfo>& _dbInfos);
@@ -101,14 +93,12 @@ namespace TencentCloud
 
                     /**
                      * 数据源id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
                      * 数据源绑定的db信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DbInfo> m_dbInfos;
                     bool m_dbInfosHasBeenSet;

@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取新发现
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NewDiscoveryHandled 新发现
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetNewDiscoveryHandled() const;
 
                     /**
                      * 设置新发现
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _newDiscoveryHandled 新发现
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNewDiscoveryHandled(const uint64_t& _newDiscoveryHandled);
@@ -156,7 +152,6 @@ namespace TencentCloud
 
                     /**
                      * 新发现
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_newDiscoveryHandled;
                     bool m_newDiscoveryHandledHasBeenSet;

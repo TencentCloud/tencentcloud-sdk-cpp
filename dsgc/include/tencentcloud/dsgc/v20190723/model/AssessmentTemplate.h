@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -115,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -266,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取支持的数据源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SupportDataSource 支持的数据源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetSupportDataSource() const;
 
                     /**
                      * 设置支持的数据源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _supportDataSource 支持的数据源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSupportDataSource(const std::vector<std::string>& _supportDataSource);
@@ -291,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否包含攻击面风险
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsASMTemplate 是否包含攻击面风险
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsASMTemplate() const;
 
                     /**
                      * 设置是否包含攻击面风险
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isASMTemplate 是否包含攻击面风险
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsASMTemplate(const bool& _isASMTemplate);
@@ -316,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取合规组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IdentifyComplianceId 合规组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIdentifyComplianceId() const;
 
                     /**
                      * 设置合规组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _identifyComplianceId 合规组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIdentifyComplianceId(const int64_t& _identifyComplianceId);
@@ -343,7 +323,6 @@ namespace TencentCloud
 
                     /**
                      * id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
@@ -362,7 +341,6 @@ namespace TencentCloud
 
                     /**
                      * 描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
@@ -405,21 +383,18 @@ namespace TencentCloud
 
                     /**
                      * 支持的数据源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_supportDataSource;
                     bool m_supportDataSourceHasBeenSet;
 
                     /**
                      * 是否包含攻击面风险
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isASMTemplate;
                     bool m_isASMTemplateHasBeenSet;
 
                     /**
                      * 合规组id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_identifyComplianceId;
                     bool m_identifyComplianceIdHasBeenSet;

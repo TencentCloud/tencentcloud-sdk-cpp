@@ -27,7 +27,9 @@ CreateDSPAComplianceGroupRequest::CreateDSPAComplianceGroupRequest() :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_complianceGroupRulesHasBeenSet(false),
-    m_levelGroupIdHasBeenSet(false)
+    m_levelGroupIdHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_closeComplianceIdHasBeenSet(false)
 {
 }
 
@@ -83,6 +85,22 @@ string CreateDSPAComplianceGroupRequest::ToJsonString() const
         string key = "LevelGroupId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_levelGroupId, allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_closeComplianceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CloseComplianceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_closeComplianceId, allocator);
     }
 
 
@@ -171,6 +189,38 @@ void CreateDSPAComplianceGroupRequest::SetLevelGroupId(const uint64_t& _levelGro
 bool CreateDSPAComplianceGroupRequest::LevelGroupIdHasBeenSet() const
 {
     return m_levelGroupIdHasBeenSet;
+}
+
+int64_t CreateDSPAComplianceGroupRequest::GetStatus() const
+{
+    return m_status;
+}
+
+void CreateDSPAComplianceGroupRequest::SetStatus(const int64_t& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool CreateDSPAComplianceGroupRequest::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+int64_t CreateDSPAComplianceGroupRequest::GetCloseComplianceId() const
+{
+    return m_closeComplianceId;
+}
+
+void CreateDSPAComplianceGroupRequest::SetCloseComplianceId(const int64_t& _closeComplianceId)
+{
+    m_closeComplianceId = _closeComplianceId;
+    m_closeComplianceIdHasBeenSet = true;
+}
+
+bool CreateDSPAComplianceGroupRequest::CloseComplianceIdHasBeenSet() const
+{
+    return m_closeComplianceIdHasBeenSet;
 }
 
 

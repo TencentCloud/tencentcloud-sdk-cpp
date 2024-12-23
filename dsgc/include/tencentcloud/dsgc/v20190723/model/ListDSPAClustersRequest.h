@@ -87,30 +87,34 @@ namespace TencentCloud
 
                     /**
                      * 获取过滤项。
-支持的过滤项包括：DspaId、Status、Version、DspaName。
+支持的过滤项包括：DspaId、Status、Version、DspaName、Channel。
 DspaId和DspaName支持模糊搜索。
 Status支持的可选值：enabled、disabled。
 Version支持的可选值：trial、official。
+Channel支持的可选值：sp_cds_dsgc_pre（代表dsgc实例）、sp_cds_dsgc_wedata_dc（代表wedata实例）
                      * @return Filters 过滤项。
-支持的过滤项包括：DspaId、Status、Version、DspaName。
+支持的过滤项包括：DspaId、Status、Version、DspaName、Channel。
 DspaId和DspaName支持模糊搜索。
 Status支持的可选值：enabled、disabled。
 Version支持的可选值：trial、official。
+Channel支持的可选值：sp_cds_dsgc_pre（代表dsgc实例）、sp_cds_dsgc_wedata_dc（代表wedata实例）
                      * 
                      */
                     std::vector<DspaDataSourceMngFilter> GetFilters() const;
 
                     /**
                      * 设置过滤项。
-支持的过滤项包括：DspaId、Status、Version、DspaName。
+支持的过滤项包括：DspaId、Status、Version、DspaName、Channel。
 DspaId和DspaName支持模糊搜索。
 Status支持的可选值：enabled、disabled。
 Version支持的可选值：trial、official。
+Channel支持的可选值：sp_cds_dsgc_pre（代表dsgc实例）、sp_cds_dsgc_wedata_dc（代表wedata实例）
                      * @param _filters 过滤项。
-支持的过滤项包括：DspaId、Status、Version、DspaName。
+支持的过滤项包括：DspaId、Status、Version、DspaName、Channel。
 DspaId和DspaName支持模糊搜索。
 Status支持的可选值：enabled、disabled。
 Version支持的可选值：trial、official。
+Channel支持的可选值：sp_cds_dsgc_pre（代表dsgc实例）、sp_cds_dsgc_wedata_dc（代表wedata实例）
                      * 
                      */
                     void SetFilters(const std::vector<DspaDataSourceMngFilter>& _filters);
@@ -124,14 +128,38 @@ Version支持的可选值：trial、official。
 
                     /**
                      * 获取展示模式。
+
+目前只有两个值的处理逻辑：
+
+空值：需要查询每个实例的配额信息，因为是串行查询，所以速度很慢，limit最大为100
+
+"simple"：不需要查询每个实例的配额信息，速度快，limit最大为1000
                      * @return ListMode 展示模式。
+
+目前只有两个值的处理逻辑：
+
+空值：需要查询每个实例的配额信息，因为是串行查询，所以速度很慢，limit最大为100
+
+"simple"：不需要查询每个实例的配额信息，速度快，limit最大为1000
                      * 
                      */
                     std::string GetListMode() const;
 
                     /**
                      * 设置展示模式。
+
+目前只有两个值的处理逻辑：
+
+空值：需要查询每个实例的配额信息，因为是串行查询，所以速度很慢，limit最大为100
+
+"simple"：不需要查询每个实例的配额信息，速度快，limit最大为1000
                      * @param _listMode 展示模式。
+
+目前只有两个值的处理逻辑：
+
+空值：需要查询每个实例的配额信息，因为是串行查询，所以速度很慢，limit最大为100
+
+"simple"：不需要查询每个实例的配额信息，速度快，limit最大为1000
                      * 
                      */
                     void SetListMode(const std::string& _listMode);
@@ -159,16 +187,23 @@ Version支持的可选值：trial、official。
 
                     /**
                      * 过滤项。
-支持的过滤项包括：DspaId、Status、Version、DspaName。
+支持的过滤项包括：DspaId、Status、Version、DspaName、Channel。
 DspaId和DspaName支持模糊搜索。
 Status支持的可选值：enabled、disabled。
 Version支持的可选值：trial、official。
+Channel支持的可选值：sp_cds_dsgc_pre（代表dsgc实例）、sp_cds_dsgc_wedata_dc（代表wedata实例）
                      */
                     std::vector<DspaDataSourceMngFilter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
                      * 展示模式。
+
+目前只有两个值的处理逻辑：
+
+空值：需要查询每个实例的配额信息，因为是串行查询，所以速度很慢，limit最大为100
+
+"simple"：不需要查询每个实例的配额信息，速度快，limit最大为1000
                      */
                     std::string m_listMode;
                     bool m_listModeHasBeenSet;

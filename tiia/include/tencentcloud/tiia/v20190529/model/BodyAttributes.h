@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取属性值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Label 属性值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLabel() const;
 
                     /**
                      * 设置属性值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _label 属性值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLabel(const std::string& _label);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取置信度，取值0-1之间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Confidence 置信度，取值0-1之间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetConfidence() const;
 
                     /**
                      * 设置置信度，取值0-1之间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _confidence 置信度，取值0-1之间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConfidence(const double& _confidence);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取属性名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 属性名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置属性名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 属性名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 属性值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_label;
                     bool m_labelHasBeenSet;
 
                     /**
                      * 置信度，取值0-1之间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_confidence;
                     bool m_confidenceHasBeenSet;
 
                     /**
                      * 属性名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

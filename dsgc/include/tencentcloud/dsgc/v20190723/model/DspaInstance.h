@@ -371,18 +371,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例渠道
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Channel 实例渠道
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetChannel() const;
 
                     /**
                      * 设置实例渠道
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _channel 实例渠道
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChannel(const std::string& _channel);
@@ -396,18 +392,14 @@ namespace TencentCloud
 
                     /**
                      * 获取已授权的实例数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InsAuthCount 已授权的实例数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetInsAuthCount() const;
 
                     /**
                      * 设置已授权的实例数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _insAuthCount 已授权的实例数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInsAuthCount(const int64_t& _insAuthCount);
@@ -421,18 +413,14 @@ namespace TencentCloud
 
                     /**
                      * 获取已购买的实例数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InsTotalQuota 已购买的实例数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetInsTotalQuota() const;
 
                     /**
                      * 设置已购买的实例数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _insTotalQuota 已购买的实例数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInsTotalQuota(const int64_t& _insTotalQuota);
@@ -540,21 +528,18 @@ namespace TencentCloud
 
                     /**
                      * 实例渠道
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_channel;
                     bool m_channelHasBeenSet;
 
                     /**
                      * 已授权的实例数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_insAuthCount;
                     bool m_insAuthCountHasBeenSet;
 
                     /**
                      * 已购买的实例数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_insTotalQuota;
                     bool m_insTotalQuotaHasBeenSet;

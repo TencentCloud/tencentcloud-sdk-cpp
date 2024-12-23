@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取模板详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Detail 模板详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ComplianceGroupDetail GetDetail() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 模板详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ComplianceGroupDetail m_detail;
                     bool m_detailHasBeenSet;

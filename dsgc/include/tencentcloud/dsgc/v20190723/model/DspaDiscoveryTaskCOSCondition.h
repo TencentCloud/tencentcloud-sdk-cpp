@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据桶名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Bucket 数据桶名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBucket() const;
 
                     /**
                      * 设置数据桶名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bucket 数据桶名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBucket(const std::string& _bucket);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileTypes 文件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetFileTypes() const;
 
                     /**
                      * 设置文件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileTypes 文件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileTypes(const std::vector<std::string>& _fileTypes);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件大小上限，单位为KB，如1000, 目前单个文件最大只支持1GB（1048576KB）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileSizeLimit 文件大小上限，单位为KB，如1000, 目前单个文件最大只支持1GB（1048576KB）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFileSizeLimit() const;
 
                     /**
                      * 设置文件大小上限，单位为KB，如1000, 目前单个文件最大只支持1GB（1048576KB）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileSizeLimit 文件大小上限，单位为KB，如1000, 目前单个文件最大只支持1GB（1048576KB）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileSizeLimit(const int64_t& _fileSizeLimit);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 数据桶名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bucket;
                     bool m_bucketHasBeenSet;
 
                     /**
                      * 文件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_fileTypes;
                     bool m_fileTypesHasBeenSet;
 
                     /**
                      * 文件大小上限，单位为KB，如1000, 目前单个文件最大只支持1GB（1048576KB）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_fileSizeLimit;
                     bool m_fileSizeLimitHasBeenSet;

@@ -227,6 +227,8 @@
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusZonesResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeRecordingRulesRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeRecordingRulesResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeRemoteURLsRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribeRemoteURLsResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeSSOAccountRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeSSOAccountResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeServiceDiscoveryRequest.h>
@@ -279,6 +281,8 @@
 #include <tencentcloud/monitor/v20180724/model/ModifyPrometheusRecordRuleYamlResponse.h>
 #include <tencentcloud/monitor/v20180724/model/ModifyPrometheusTempRequest.h>
 #include <tencentcloud/monitor/v20180724/model/ModifyPrometheusTempResponse.h>
+#include <tencentcloud/monitor/v20180724/model/ModifyRemoteURLsRequest.h>
+#include <tencentcloud/monitor/v20180724/model/ModifyRemoteURLsResponse.h>
 #include <tencentcloud/monitor/v20180724/model/ResumeGrafanaInstanceRequest.h>
 #include <tencentcloud/monitor/v20180724/model/ResumeGrafanaInstanceResponse.h>
 #include <tencentcloud/monitor/v20180724/model/RunPrometheusInstanceRequest.h>
@@ -655,6 +659,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRecordingRulesResponse> DescribeRecordingRulesOutcome;
                 typedef std::future<DescribeRecordingRulesOutcome> DescribeRecordingRulesOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribeRecordingRulesRequest&, DescribeRecordingRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordingRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRemoteURLsResponse> DescribeRemoteURLsOutcome;
+                typedef std::future<DescribeRemoteURLsOutcome> DescribeRemoteURLsOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribeRemoteURLsRequest&, DescribeRemoteURLsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRemoteURLsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSSOAccountResponse> DescribeSSOAccountOutcome;
                 typedef std::future<DescribeSSOAccountOutcome> DescribeSSOAccountOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribeSSOAccountRequest&, DescribeSSOAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSSOAccountAsyncHandler;
@@ -733,6 +740,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyPrometheusTempResponse> ModifyPrometheusTempOutcome;
                 typedef std::future<ModifyPrometheusTempOutcome> ModifyPrometheusTempOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::ModifyPrometheusTempRequest&, ModifyPrometheusTempOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPrometheusTempAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyRemoteURLsResponse> ModifyRemoteURLsOutcome;
+                typedef std::future<ModifyRemoteURLsOutcome> ModifyRemoteURLsOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::ModifyRemoteURLsRequest&, ModifyRemoteURLsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRemoteURLsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ResumeGrafanaInstanceResponse> ResumeGrafanaInstanceOutcome;
                 typedef std::future<ResumeGrafanaInstanceOutcome> ResumeGrafanaInstanceOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::ResumeGrafanaInstanceRequest&, ResumeGrafanaInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResumeGrafanaInstanceAsyncHandler;
@@ -1754,6 +1764,15 @@ namespace TencentCloud
                 DescribeRecordingRulesOutcomeCallable DescribeRecordingRulesCallable(const Model::DescribeRecordingRulesRequest& request);
 
                 /**
+                 *获取多写配置详情
+                 * @param req DescribeRemoteURLsRequest
+                 * @return DescribeRemoteURLsOutcome
+                 */
+                DescribeRemoteURLsOutcome DescribeRemoteURLs(const Model::DescribeRemoteURLsRequest &request);
+                void DescribeRemoteURLsAsync(const Model::DescribeRemoteURLsRequest& request, const DescribeRemoteURLsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRemoteURLsOutcomeCallable DescribeRemoteURLsCallable(const Model::DescribeRemoteURLsRequest& request);
+
+                /**
                  *列出当前grafana实例的所有授权账号
                  * @param req DescribeSSOAccountRequest
                  * @return DescribeSSOAccountOutcome
@@ -1997,6 +2016,15 @@ namespace TencentCloud
                 ModifyPrometheusTempOutcome ModifyPrometheusTemp(const Model::ModifyPrometheusTempRequest &request);
                 void ModifyPrometheusTempAsync(const Model::ModifyPrometheusTempRequest& request, const ModifyPrometheusTempAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyPrometheusTempOutcomeCallable ModifyPrometheusTempCallable(const Model::ModifyPrometheusTempRequest& request);
+
+                /**
+                 *修改多写配置
+                 * @param req ModifyRemoteURLsRequest
+                 * @return ModifyRemoteURLsOutcome
+                 */
+                ModifyRemoteURLsOutcome ModifyRemoteURLs(const Model::ModifyRemoteURLsRequest &request);
+                void ModifyRemoteURLsAsync(const Model::ModifyRemoteURLsRequest& request, const ModifyRemoteURLsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyRemoteURLsOutcomeCallable ModifyRemoteURLsCallable(const Model::ModifyRemoteURLsRequest& request);
 
                 /**
                  *本接口（ResumeGrafanaInstance）用于 Grafana 包年包月实例的停服续费，调用后按原版本续费一个月。仍在运行中的实例无法使用该接口进行续费。

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据源id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataSourceId 数据源id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDataSourceId() const;
 
                     /**
                      * 设置数据源id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataSourceId 数据源id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataSourceId(const std::string& _dataSourceId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取db_name
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubData db_name
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubData() const;
 
                     /**
                      * 设置db_name
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subData db_name
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubData(const std::string& _subData);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取敏感个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SensitiveCnt 敏感个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSensitiveCnt() const;
 
                     /**
                      * 设置敏感个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sensitiveCnt 敏感个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSensitiveCnt(const int64_t& _sensitiveCnt);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 数据源id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataSourceId;
                     bool m_dataSourceIdHasBeenSet;
 
                     /**
                      * db_name
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subData;
                     bool m_subDataHasBeenSet;
 
                     /**
                      * 敏感个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sensitiveCnt;
                     bool m_sensitiveCntHasBeenSet;

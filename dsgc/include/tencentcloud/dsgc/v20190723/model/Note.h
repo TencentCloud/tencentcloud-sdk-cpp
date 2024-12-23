@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取通用key，例如分类名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Key 通用key，例如分类名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置通用key，例如分类名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _key 通用key，例如分类名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKey(const std::string& _key);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取通用value，例如分类个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 通用value，例如分类个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetValue() const;
 
                     /**
                      * 设置通用value，例如分类个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _value 通用value，例如分类个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValue(const int64_t& _value);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 通用key，例如分类名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
 
                     /**
                      * 通用value，例如分类个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_value;
                     bool m_valueHasBeenSet;

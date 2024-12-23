@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取任务详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Task 任务详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DspaCOSDiscoveryTaskDetail GetTask() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 任务详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DspaCOSDiscoveryTaskDetail m_task;
                     bool m_taskHasBeenSet;

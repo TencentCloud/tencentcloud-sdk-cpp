@@ -59,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取扫描结果ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResultId 扫描结果ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetResultId() const;
@@ -83,7 +81,6 @@ namespace TencentCloud
 
                     /**
                      * 扫描结果ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_resultId;
                     bool m_resultIdHasBeenSet;

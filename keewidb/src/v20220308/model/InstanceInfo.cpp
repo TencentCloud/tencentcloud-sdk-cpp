@@ -71,7 +71,8 @@ InstanceInfo::InstanceInfo() :
     m_machineMemoryHasBeenSet(false),
     m_diskShardSizeHasBeenSet(false),
     m_diskShardNumHasBeenSet(false),
-    m_diskReplicasNumHasBeenSet(false)
+    m_diskReplicasNumHasBeenSet(false),
+    m_compressionHasBeenSet(false)
 {
 }
 
@@ -613,6 +614,16 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_diskReplicasNumHasBeenSet = true;
     }
 
+    if (value.HasMember("Compression") && !value["Compression"].IsNull())
+    {
+        if (!value["Compression"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.Compression` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_compression = string(value["Compression"].GetString());
+        m_compressionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1045,6 +1056,14 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "DiskReplicasNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_diskReplicasNum, allocator);
+    }
+
+    if (m_compressionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Compression";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_compression.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1864,5 +1883,21 @@ void InstanceInfo::SetDiskReplicasNum(const int64_t& _diskReplicasNum)
 bool InstanceInfo::DiskReplicasNumHasBeenSet() const
 {
     return m_diskReplicasNumHasBeenSet;
+}
+
+string InstanceInfo::GetCompression() const
+{
+    return m_compression;
+}
+
+void InstanceInfo::SetCompression(const string& _compression)
+{
+    m_compression = _compression;
+    m_compressionHasBeenSet = true;
+}
+
+bool InstanceInfo::CompressionHasBeenSet() const
+{
+    return m_compressionHasBeenSet;
 }
 

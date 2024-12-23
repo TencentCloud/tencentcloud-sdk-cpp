@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取风险类型分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskTypeDistribution 风险类型分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Note> GetRiskTypeDistribution() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取风险详情分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskDetailDistribution 风险详情分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Note> GetRiskDetailDistribution() const;
@@ -78,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取风险资产详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskAssetsDistribution 风险资产详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Note> GetRiskAssetsDistribution() const;
@@ -96,21 +90,18 @@ namespace TencentCloud
 
                     /**
                      * 风险类型分布
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Note> m_riskTypeDistribution;
                     bool m_riskTypeDistributionHasBeenSet;
 
                     /**
                      * 风险详情分布
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Note> m_riskDetailDistribution;
                     bool m_riskDetailDistributionHasBeenSet;
 
                     /**
                      * 风险资产详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Note> m_riskAssetsDistribution;
                     bool m_riskAssetsDistributionHasBeenSet;

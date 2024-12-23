@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取分类规则统计信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StatisticSet 分类规则统计信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CategoryRuleStatistic> GetStatisticSet() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 分类规则统计信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CategoryRuleStatistic> m_statisticSet;
                     bool m_statisticSetHasBeenSet;

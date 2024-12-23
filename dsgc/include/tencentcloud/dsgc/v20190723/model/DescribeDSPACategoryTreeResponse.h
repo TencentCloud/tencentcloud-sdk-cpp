@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取分类树json
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResultJson 分类树json
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResultJson() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 分类树json
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resultJson;
                     bool m_resultJsonHasBeenSet;

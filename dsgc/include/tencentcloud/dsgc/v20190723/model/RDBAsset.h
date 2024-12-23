@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取DB总数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DbNums DB总数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDbNums() const;
 
                     /**
                      * 设置DB总数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dbNums DB总数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDbNums(const int64_t& _dbNums);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取敏感DB数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SensitiveDbNums 敏感DB数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSensitiveDbNums() const;
 
                     /**
                      * 设置敏感DB数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sensitiveDbNums 敏感DB数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSensitiveDbNums(const int64_t& _sensitiveDbNums);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取表数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableNums 表数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTableNums() const;
 
                     /**
                      * 设置表数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tableNums 表数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTableNums(const int64_t& _tableNums);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取敏感表的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SensitiveTableNums 敏感表的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSensitiveTableNums() const;
 
                     /**
                      * 设置敏感表的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sensitiveTableNums 敏感表的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSensitiveTableNums(const int64_t& _sensitiveTableNums);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取字段数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FieldNums 字段数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFieldNums() const;
 
                     /**
                      * 设置字段数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fieldNums 字段数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFieldNums(const int64_t& _fieldNums);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取敏感的字段数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SensitiveFieldNums 敏感的字段数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSensitiveFieldNums() const;
 
                     /**
                      * 设置敏感的字段数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sensitiveFieldNums 敏感的字段数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSensitiveFieldNums(const int64_t& _sensitiveFieldNums);
@@ -200,42 +176,36 @@ namespace TencentCloud
 
                     /**
                      * DB总数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_dbNums;
                     bool m_dbNumsHasBeenSet;
 
                     /**
                      * 敏感DB数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sensitiveDbNums;
                     bool m_sensitiveDbNumsHasBeenSet;
 
                     /**
                      * 表数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_tableNums;
                     bool m_tableNumsHasBeenSet;
 
                     /**
                      * 敏感表的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sensitiveTableNums;
                     bool m_sensitiveTableNumsHasBeenSet;
 
                     /**
                      * 字段数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_fieldNums;
                     bool m_fieldNumsHasBeenSet;
 
                     /**
                      * 敏感的字段数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sensitiveFieldNums;
                     bool m_sensitiveFieldNumsHasBeenSet;

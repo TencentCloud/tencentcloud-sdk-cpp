@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取模板是否更新
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsUpdated 模板是否更新
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsUpdated() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取任务名称集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskNameSet 任务名称集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetTaskNameSet() const;
@@ -79,14 +75,12 @@ namespace TencentCloud
 
                     /**
                      * 模板是否更新
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isUpdated;
                     bool m_isUpdatedHasBeenSet;
 
                     /**
                      * 任务名称集合
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_taskNameSet;
                     bool m_taskNameSetHasBeenSet;

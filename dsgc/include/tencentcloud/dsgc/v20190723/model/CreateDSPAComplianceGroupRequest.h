@@ -148,6 +148,48 @@ namespace TencentCloud
                      */
                     bool LevelGroupIdHasBeenSet() const;
 
+                    /**
+                     * 获取1代表模版开启，0代表模版关闭
+                     * @return Status 1代表模版开启，0代表模版关闭
+                     * 
+                     */
+                    int64_t GetStatus() const;
+
+                    /**
+                     * 设置1代表模版开启，0代表模版关闭
+                     * @param _status 1代表模版开启，0代表模版关闭
+                     * 
+                     */
+                    void SetStatus(const int64_t& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取该complianceId的开启状态将被关闭
+                     * @return CloseComplianceId 该complianceId的开启状态将被关闭
+                     * 
+                     */
+                    int64_t GetCloseComplianceId() const;
+
+                    /**
+                     * 设置该complianceId的开启状态将被关闭
+                     * @param _closeComplianceId 该complianceId的开启状态将被关闭
+                     * 
+                     */
+                    void SetCloseComplianceId(const int64_t& _closeComplianceId);
+
+                    /**
+                     * 判断参数 CloseComplianceId 是否已赋值
+                     * @return CloseComplianceId 是否已赋值
+                     * 
+                     */
+                    bool CloseComplianceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -179,6 +221,18 @@ namespace TencentCloud
                      */
                     uint64_t m_levelGroupId;
                     bool m_levelGroupIdHasBeenSet;
+
+                    /**
+                     * 1代表模版开启，0代表模版关闭
+                     */
+                    int64_t m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * 该complianceId的开启状态将被关闭
+                     */
+                    int64_t m_closeComplianceId;
+                    bool m_closeComplianceIdHasBeenSet;
 
                 };
             }

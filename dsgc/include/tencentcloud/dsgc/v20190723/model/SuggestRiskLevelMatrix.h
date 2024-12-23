@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取矩阵
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskLevelMatrix 矩阵
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SuggestRiskLevelMatrixItem> GetRiskLevelMatrix() const;
 
                     /**
                      * 设置矩阵
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _riskLevelMatrix 矩阵
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRiskLevelMatrix(const std::vector<SuggestRiskLevelMatrixItem>& _riskLevelMatrix);
@@ -76,7 +72,6 @@ namespace TencentCloud
 
                     /**
                      * 矩阵
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SuggestRiskLevelMatrixItem> m_riskLevelMatrix;
                     bool m_riskLevelMatrixHasBeenSet;

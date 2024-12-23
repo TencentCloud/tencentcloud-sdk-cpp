@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取风险面列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskSideItmeList 风险面列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Note> GetRiskSideItmeList() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 风险面列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Note> m_riskSideItmeList;
                     bool m_riskSideItmeListHasBeenSet;

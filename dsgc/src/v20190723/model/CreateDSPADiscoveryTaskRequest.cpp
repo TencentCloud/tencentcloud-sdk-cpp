@@ -27,11 +27,11 @@ CreateDSPADiscoveryTaskRequest::CreateDSPADiscoveryTaskRequest() :
     m_nameHasBeenSet(false),
     m_dataSourceIdHasBeenSet(false),
     m_enableHasBeenSet(false),
-    m_generalRuleSetEnableHasBeenSet(false),
     m_planHasBeenSet(false),
     m_periodHasBeenSet(false),
     m_resourceRegionHasBeenSet(false),
     m_dataSourceTypeHasBeenSet(false),
+    m_generalRuleSetEnableHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_conditionHasBeenSet(false),
     m_complianceGroupIdsHasBeenSet(false),
@@ -81,14 +81,6 @@ string CreateDSPADiscoveryTaskRequest::ToJsonString() const
         d.AddMember(iKey, m_enable, allocator);
     }
 
-    if (m_generalRuleSetEnableHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "GeneralRuleSetEnable";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_generalRuleSetEnable, allocator);
-    }
-
     if (m_planHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -119,6 +111,14 @@ string CreateDSPADiscoveryTaskRequest::ToJsonString() const
         string key = "DataSourceType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dataSourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_generalRuleSetEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GeneralRuleSetEnable";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_generalRuleSetEnable, allocator);
     }
 
     if (m_descriptionHasBeenSet)
@@ -254,22 +254,6 @@ bool CreateDSPADiscoveryTaskRequest::EnableHasBeenSet() const
     return m_enableHasBeenSet;
 }
 
-int64_t CreateDSPADiscoveryTaskRequest::GetGeneralRuleSetEnable() const
-{
-    return m_generalRuleSetEnable;
-}
-
-void CreateDSPADiscoveryTaskRequest::SetGeneralRuleSetEnable(const int64_t& _generalRuleSetEnable)
-{
-    m_generalRuleSetEnable = _generalRuleSetEnable;
-    m_generalRuleSetEnableHasBeenSet = true;
-}
-
-bool CreateDSPADiscoveryTaskRequest::GeneralRuleSetEnableHasBeenSet() const
-{
-    return m_generalRuleSetEnableHasBeenSet;
-}
-
 int64_t CreateDSPADiscoveryTaskRequest::GetPlan() const
 {
     return m_plan;
@@ -332,6 +316,22 @@ void CreateDSPADiscoveryTaskRequest::SetDataSourceType(const string& _dataSource
 bool CreateDSPADiscoveryTaskRequest::DataSourceTypeHasBeenSet() const
 {
     return m_dataSourceTypeHasBeenSet;
+}
+
+int64_t CreateDSPADiscoveryTaskRequest::GetGeneralRuleSetEnable() const
+{
+    return m_generalRuleSetEnable;
+}
+
+void CreateDSPADiscoveryTaskRequest::SetGeneralRuleSetEnable(const int64_t& _generalRuleSetEnable)
+{
+    m_generalRuleSetEnable = _generalRuleSetEnable;
+    m_generalRuleSetEnableHasBeenSet = true;
+}
+
+bool CreateDSPADiscoveryTaskRequest::GeneralRuleSetEnableHasBeenSet() const
+{
+    return m_generalRuleSetEnableHasBeenSet;
 }
 
 string CreateDSPADiscoveryTaskRequest::GetDescription() const

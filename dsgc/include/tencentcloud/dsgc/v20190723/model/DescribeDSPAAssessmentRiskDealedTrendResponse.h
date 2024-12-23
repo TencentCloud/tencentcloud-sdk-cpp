@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取趋势统计结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Items 趋势统计结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RiskDealedTrendItem> GetItems() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 趋势统计结果
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RiskDealedTrendItem> m_items;
                     bool m_itemsHasBeenSet;

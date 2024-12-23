@@ -260,8 +260,10 @@ ImageUrl和ImageBase64必须提供一个，如果都提供，只使用ImageUrl�
                     /**
                      * 获取标签过滤条件。
 针对创建图片时提交的Tags信息进行条件过滤。支持>、>=、 <、 <=、=，!=，多个条件之间支持AND和OR进行连接。
+最大支持64字符。
                      * @return Filter 标签过滤条件。
 针对创建图片时提交的Tags信息进行条件过滤。支持>、>=、 <、 <=、=，!=，多个条件之间支持AND和OR进行连接。
+最大支持64字符。
                      * 
                      */
                     std::string GetFilter() const;
@@ -269,8 +271,10 @@ ImageUrl和ImageBase64必须提供一个，如果都提供，只使用ImageUrl�
                     /**
                      * 设置标签过滤条件。
 针对创建图片时提交的Tags信息进行条件过滤。支持>、>=、 <、 <=、=，!=，多个条件之间支持AND和OR进行连接。
+最大支持64字符。
                      * @param _filter 标签过滤条件。
 针对创建图片时提交的Tags信息进行条件过滤。支持>、>=、 <、 <=、=，!=，多个条件之间支持AND和OR进行连接。
+最大支持64字符。
                      * 
                      */
                     void SetFilter(const std::string& _filter);
@@ -460,6 +464,7 @@ ImageUrl和ImageBase64必须提供一个，如果都提供，只使用ImageUrl�
                     /**
                      * 标签过滤条件。
 针对创建图片时提交的Tags信息进行条件过滤。支持>、>=、 <、 <=、=，!=，多个条件之间支持AND和OR进行连接。
+最大支持64字符。
                      */
                     std::string m_filter;
                     bool m_filterHasBeenSet;

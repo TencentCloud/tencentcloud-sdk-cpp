@@ -24,7 +24,9 @@ ScanTaskResult::ScanTaskResult() :
     m_idHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_resultHasBeenSet(false)
+    m_resultHasBeenSet(false),
+    m_resultDescriptionHasBeenSet(false),
+    m_suggestionHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,26 @@ CoreInternalOutcome ScanTaskResult::Deserialize(const rapidjson::Value &value)
         m_resultHasBeenSet = true;
     }
 
+    if (value.HasMember("ResultDescription") && !value["ResultDescription"].IsNull())
+    {
+        if (!value["ResultDescription"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScanTaskResult.ResultDescription` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resultDescription = string(value["ResultDescription"].GetString());
+        m_resultDescriptionHasBeenSet = true;
+    }
+
+    if (value.HasMember("Suggestion") && !value["Suggestion"].IsNull())
+    {
+        if (!value["Suggestion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScanTaskResult.Suggestion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_suggestion = string(value["Suggestion"].GetString());
+        m_suggestionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +132,22 @@ void ScanTaskResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Result";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_result.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resultDescriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResultDescription";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resultDescription.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_suggestionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Suggestion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_suggestion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +215,37 @@ void ScanTaskResult::SetResult(const string& _result)
 bool ScanTaskResult::ResultHasBeenSet() const
 {
     return m_resultHasBeenSet;
+}
+
+string ScanTaskResult::GetResultDescription() const
+{
+    return m_resultDescription;
+}
+
+void ScanTaskResult::SetResultDescription(const string& _resultDescription)
+{
+    m_resultDescription = _resultDescription;
+    m_resultDescriptionHasBeenSet = true;
+}
+
+bool ScanTaskResult::ResultDescriptionHasBeenSet() const
+{
+    return m_resultDescriptionHasBeenSet;
+}
+
+string ScanTaskResult::GetSuggestion() const
+{
+    return m_suggestion;
+}
+
+void ScanTaskResult::SetSuggestion(const string& _suggestion)
+{
+    m_suggestion = _suggestion;
+    m_suggestionHasBeenSet = true;
+}
+
+bool ScanTaskResult::SuggestionHasBeenSet() const
+{
+    return m_suggestionHasBeenSet;
 }
 

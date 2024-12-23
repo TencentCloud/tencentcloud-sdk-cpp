@@ -43,8 +43,12 @@
 #include <tencentcloud/teo/v20220901/model/CreateCLSIndexResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateConfigGroupVersionRequest.h>
 #include <tencentcloud/teo/v20220901/model/CreateConfigGroupVersionResponse.h>
+#include <tencentcloud/teo/v20220901/model/CreateContentIdentifierRequest.h>
+#include <tencentcloud/teo/v20220901/model/CreateContentIdentifierResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateCustomizeErrorPageRequest.h>
 #include <tencentcloud/teo/v20220901/model/CreateCustomizeErrorPageResponse.h>
+#include <tencentcloud/teo/v20220901/model/CreateDnsRecordRequest.h>
+#include <tencentcloud/teo/v20220901/model/CreateDnsRecordResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateFunctionRequest.h>
 #include <tencentcloud/teo/v20220901/model/CreateFunctionResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateFunctionRuleRequest.h>
@@ -83,8 +87,12 @@
 #include <tencentcloud/teo/v20220901/model/DeleteApplicationProxyResponse.h>
 #include <tencentcloud/teo/v20220901/model/DeleteApplicationProxyRuleRequest.h>
 #include <tencentcloud/teo/v20220901/model/DeleteApplicationProxyRuleResponse.h>
+#include <tencentcloud/teo/v20220901/model/DeleteContentIdentifierRequest.h>
+#include <tencentcloud/teo/v20220901/model/DeleteContentIdentifierResponse.h>
 #include <tencentcloud/teo/v20220901/model/DeleteCustomErrorPageRequest.h>
 #include <tencentcloud/teo/v20220901/model/DeleteCustomErrorPageResponse.h>
+#include <tencentcloud/teo/v20220901/model/DeleteDnsRecordsRequest.h>
+#include <tencentcloud/teo/v20220901/model/DeleteDnsRecordsResponse.h>
 #include <tencentcloud/teo/v20220901/model/DeleteFunctionRequest.h>
 #include <tencentcloud/teo/v20220901/model/DeleteFunctionResponse.h>
 #include <tencentcloud/teo/v20220901/model/DeleteFunctionRulesRequest.h>
@@ -123,6 +131,8 @@
 #include <tencentcloud/teo/v20220901/model/DescribeConfigGroupVersionDetailResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeConfigGroupVersionsRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeConfigGroupVersionsResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeContentIdentifiersRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeContentIdentifiersResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeContentQuotaRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeContentQuotaResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeCustomErrorPagesRequest.h>
@@ -137,6 +147,8 @@
 #include <tencentcloud/teo/v20220901/model/DescribeDefaultCertificatesResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeDeployHistoryRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeDeployHistoryResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeDnsRecordsRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeDnsRecordsResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeEnvironmentsRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeEnvironmentsResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeFunctionRulesRequest.h>
@@ -229,8 +241,14 @@
 #include <tencentcloud/teo/v20220901/model/ModifyApplicationProxyRuleStatusResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyApplicationProxyStatusRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyApplicationProxyStatusResponse.h>
+#include <tencentcloud/teo/v20220901/model/ModifyContentIdentifierRequest.h>
+#include <tencentcloud/teo/v20220901/model/ModifyContentIdentifierResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyCustomErrorPageRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyCustomErrorPageResponse.h>
+#include <tencentcloud/teo/v20220901/model/ModifyDnsRecordsRequest.h>
+#include <tencentcloud/teo/v20220901/model/ModifyDnsRecordsResponse.h>
+#include <tencentcloud/teo/v20220901/model/ModifyDnsRecordsStatusRequest.h>
+#include <tencentcloud/teo/v20220901/model/ModifyDnsRecordsStatusResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyFunctionRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyFunctionResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyFunctionRuleRequest.h>
@@ -317,9 +335,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateConfigGroupVersionResponse> CreateConfigGroupVersionOutcome;
                 typedef std::future<CreateConfigGroupVersionOutcome> CreateConfigGroupVersionOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::CreateConfigGroupVersionRequest&, CreateConfigGroupVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateConfigGroupVersionAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateContentIdentifierResponse> CreateContentIdentifierOutcome;
+                typedef std::future<CreateContentIdentifierOutcome> CreateContentIdentifierOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::CreateContentIdentifierRequest&, CreateContentIdentifierOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateContentIdentifierAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCustomizeErrorPageResponse> CreateCustomizeErrorPageOutcome;
                 typedef std::future<CreateCustomizeErrorPageOutcome> CreateCustomizeErrorPageOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::CreateCustomizeErrorPageRequest&, CreateCustomizeErrorPageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCustomizeErrorPageAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDnsRecordResponse> CreateDnsRecordOutcome;
+                typedef std::future<CreateDnsRecordOutcome> CreateDnsRecordOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::CreateDnsRecordRequest&, CreateDnsRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDnsRecordAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateFunctionResponse> CreateFunctionOutcome;
                 typedef std::future<CreateFunctionOutcome> CreateFunctionOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::CreateFunctionRequest&, CreateFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFunctionAsyncHandler;
@@ -377,9 +401,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteApplicationProxyRuleResponse> DeleteApplicationProxyRuleOutcome;
                 typedef std::future<DeleteApplicationProxyRuleOutcome> DeleteApplicationProxyRuleOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DeleteApplicationProxyRuleRequest&, DeleteApplicationProxyRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteApplicationProxyRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteContentIdentifierResponse> DeleteContentIdentifierOutcome;
+                typedef std::future<DeleteContentIdentifierOutcome> DeleteContentIdentifierOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DeleteContentIdentifierRequest&, DeleteContentIdentifierOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteContentIdentifierAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteCustomErrorPageResponse> DeleteCustomErrorPageOutcome;
                 typedef std::future<DeleteCustomErrorPageOutcome> DeleteCustomErrorPageOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DeleteCustomErrorPageRequest&, DeleteCustomErrorPageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCustomErrorPageAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDnsRecordsResponse> DeleteDnsRecordsOutcome;
+                typedef std::future<DeleteDnsRecordsOutcome> DeleteDnsRecordsOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DeleteDnsRecordsRequest&, DeleteDnsRecordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDnsRecordsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteFunctionResponse> DeleteFunctionOutcome;
                 typedef std::future<DeleteFunctionOutcome> DeleteFunctionOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DeleteFunctionRequest&, DeleteFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFunctionAsyncHandler;
@@ -437,6 +467,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeConfigGroupVersionsResponse> DescribeConfigGroupVersionsOutcome;
                 typedef std::future<DescribeConfigGroupVersionsOutcome> DescribeConfigGroupVersionsOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeConfigGroupVersionsRequest&, DescribeConfigGroupVersionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConfigGroupVersionsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeContentIdentifiersResponse> DescribeContentIdentifiersOutcome;
+                typedef std::future<DescribeContentIdentifiersOutcome> DescribeContentIdentifiersOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeContentIdentifiersRequest&, DescribeContentIdentifiersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeContentIdentifiersAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeContentQuotaResponse> DescribeContentQuotaOutcome;
                 typedef std::future<DescribeContentQuotaOutcome> DescribeContentQuotaOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeContentQuotaRequest&, DescribeContentQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeContentQuotaAsyncHandler;
@@ -458,6 +491,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDeployHistoryResponse> DescribeDeployHistoryOutcome;
                 typedef std::future<DescribeDeployHistoryOutcome> DescribeDeployHistoryOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeDeployHistoryRequest&, DescribeDeployHistoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeployHistoryAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDnsRecordsResponse> DescribeDnsRecordsOutcome;
+                typedef std::future<DescribeDnsRecordsOutcome> DescribeDnsRecordsOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeDnsRecordsRequest&, DescribeDnsRecordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDnsRecordsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeEnvironmentsResponse> DescribeEnvironmentsOutcome;
                 typedef std::future<DescribeEnvironmentsOutcome> DescribeEnvironmentsOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeEnvironmentsRequest&, DescribeEnvironmentsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEnvironmentsAsyncHandler;
@@ -596,9 +632,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyApplicationProxyStatusResponse> ModifyApplicationProxyStatusOutcome;
                 typedef std::future<ModifyApplicationProxyStatusOutcome> ModifyApplicationProxyStatusOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifyApplicationProxyStatusRequest&, ModifyApplicationProxyStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyApplicationProxyStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyContentIdentifierResponse> ModifyContentIdentifierOutcome;
+                typedef std::future<ModifyContentIdentifierOutcome> ModifyContentIdentifierOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::ModifyContentIdentifierRequest&, ModifyContentIdentifierOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyContentIdentifierAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyCustomErrorPageResponse> ModifyCustomErrorPageOutcome;
                 typedef std::future<ModifyCustomErrorPageOutcome> ModifyCustomErrorPageOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifyCustomErrorPageRequest&, ModifyCustomErrorPageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCustomErrorPageAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDnsRecordsResponse> ModifyDnsRecordsOutcome;
+                typedef std::future<ModifyDnsRecordsOutcome> ModifyDnsRecordsOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::ModifyDnsRecordsRequest&, ModifyDnsRecordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDnsRecordsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDnsRecordsStatusResponse> ModifyDnsRecordsStatusOutcome;
+                typedef std::future<ModifyDnsRecordsStatusOutcome> ModifyDnsRecordsStatusOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::ModifyDnsRecordsStatusRequest&, ModifyDnsRecordsStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDnsRecordsStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyFunctionResponse> ModifyFunctionOutcome;
                 typedef std::future<ModifyFunctionOutcome> ModifyFunctionOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifyFunctionRequest&, ModifyFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyFunctionAsyncHandler;
@@ -759,6 +804,15 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 CreateConfigGroupVersionOutcomeCallable CreateConfigGroupVersionCallable(const Model::CreateConfigGroupVersionRequest& request);
 
                 /**
+                 *创建内容标识符，可以设置描述、标签等信息，同时需要绑定企业版套餐用于统计计费数据；一个内容标识符只能绑定一个计费套餐，一个计费套餐可以绑定多个内容标识符。该功能仅限白名单开放。
+                 * @param req CreateContentIdentifierRequest
+                 * @return CreateContentIdentifierOutcome
+                 */
+                CreateContentIdentifierOutcome CreateContentIdentifier(const Model::CreateContentIdentifierRequest &request);
+                void CreateContentIdentifierAsync(const Model::CreateContentIdentifierRequest& request, const CreateContentIdentifierAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateContentIdentifierOutcomeCallable CreateContentIdentifierCallable(const Model::CreateContentIdentifierRequest& request);
+
+                /**
                  *创建自定义错误页面。
                  * @param req CreateCustomizeErrorPageRequest
                  * @return CreateCustomizeErrorPageOutcome
@@ -766,6 +820,15 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 CreateCustomizeErrorPageOutcome CreateCustomizeErrorPage(const Model::CreateCustomizeErrorPageRequest &request);
                 void CreateCustomizeErrorPageAsync(const Model::CreateCustomizeErrorPageRequest& request, const CreateCustomizeErrorPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateCustomizeErrorPageOutcomeCallable CreateCustomizeErrorPageCallable(const Model::CreateCustomizeErrorPageRequest& request);
+
+                /**
+                 *在创建完站点后，并且站点为 NS 模式接入时，您可以通过本接口创建 DNS 记录。
+                 * @param req CreateDnsRecordRequest
+                 * @return CreateDnsRecordOutcome
+                 */
+                CreateDnsRecordOutcome CreateDnsRecord(const Model::CreateDnsRecordRequest &request);
+                void CreateDnsRecordAsync(const Model::CreateDnsRecordRequest& request, const CreateDnsRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDnsRecordOutcomeCallable CreateDnsRecordCallable(const Model::CreateDnsRecordRequest& request);
 
                 /**
                  *创建并部署边缘函数至 EdgeOne 的边缘节点。
@@ -946,6 +1009,15 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 DeleteApplicationProxyRuleOutcomeCallable DeleteApplicationProxyRuleCallable(const Model::DeleteApplicationProxyRuleRequest& request);
 
                 /**
+                 *删除指定的内容标识符。该功能仅白名单开放。
+                 * @param req DeleteContentIdentifierRequest
+                 * @return DeleteContentIdentifierOutcome
+                 */
+                DeleteContentIdentifierOutcome DeleteContentIdentifier(const Model::DeleteContentIdentifierRequest &request);
+                void DeleteContentIdentifierAsync(const Model::DeleteContentIdentifierRequest& request, const DeleteContentIdentifierAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteContentIdentifierOutcomeCallable DeleteContentIdentifierCallable(const Model::DeleteContentIdentifierRequest& request);
+
+                /**
                  *删除自定义错误页面。
                  * @param req DeleteCustomErrorPageRequest
                  * @return DeleteCustomErrorPageOutcome
@@ -953,6 +1025,15 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 DeleteCustomErrorPageOutcome DeleteCustomErrorPage(const Model::DeleteCustomErrorPageRequest &request);
                 void DeleteCustomErrorPageAsync(const Model::DeleteCustomErrorPageRequest& request, const DeleteCustomErrorPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteCustomErrorPageOutcomeCallable DeleteCustomErrorPageCallable(const Model::DeleteCustomErrorPageRequest& request);
+
+                /**
+                 *您可以用本接口批量删除 DNS 记录。
+                 * @param req DeleteDnsRecordsRequest
+                 * @return DeleteDnsRecordsOutcome
+                 */
+                DeleteDnsRecordsOutcome DeleteDnsRecords(const Model::DeleteDnsRecordsRequest &request);
+                void DeleteDnsRecordsAsync(const Model::DeleteDnsRecordsRequest& request, const DeleteDnsRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDnsRecordsOutcomeCallable DeleteDnsRecordsCallable(const Model::DeleteDnsRecordsRequest& request);
 
                 /**
                  *删除边缘函数，删除后函数无法恢复，关联的触发规则会一并删除。
@@ -1126,6 +1207,15 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 DescribeConfigGroupVersionsOutcomeCallable DescribeConfigGroupVersionsCallable(const Model::DescribeConfigGroupVersionsRequest& request);
 
                 /**
+                 *批量查询内容标识符，可以根据 ID、描述、状态或者标签过滤。按照状态查询被删除的内容标识符仅保留三个月。该功能仅白名单开放。
+                 * @param req DescribeContentIdentifiersRequest
+                 * @return DescribeContentIdentifiersOutcome
+                 */
+                DescribeContentIdentifiersOutcome DescribeContentIdentifiers(const Model::DescribeContentIdentifiersRequest &request);
+                void DescribeContentIdentifiersAsync(const Model::DescribeContentIdentifiersRequest& request, const DescribeContentIdentifiersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeContentIdentifiersOutcomeCallable DescribeContentIdentifiersCallable(const Model::DescribeContentIdentifiersRequest& request);
+
+                /**
                  *查询内容管理接口配额
                  * @param req DescribeContentQuotaRequest
                  * @return DescribeContentQuotaOutcome
@@ -1187,6 +1277,15 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 DescribeDeployHistoryOutcome DescribeDeployHistory(const Model::DescribeDeployHistoryRequest &request);
                 void DescribeDeployHistoryAsync(const Model::DescribeDeployHistoryRequest& request, const DescribeDeployHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDeployHistoryOutcomeCallable DescribeDeployHistoryCallable(const Model::DescribeDeployHistoryRequest& request);
+
+                /**
+                 *您可以用过本接口查看站点下的 DNS 记录信息，包括 DNS 记录名、记录类型以及记录内容等信息。您可以查看站点下全部 DNS 记录的信息，也可以指定过滤条件查询对应的 DNS 记录信息。
+                 * @param req DescribeDnsRecordsRequest
+                 * @return DescribeDnsRecordsOutcome
+                 */
+                DescribeDnsRecordsOutcome DescribeDnsRecords(const Model::DescribeDnsRecordsRequest &request);
+                void DescribeDnsRecordsAsync(const Model::DescribeDnsRecordsRequest& request, const DescribeDnsRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDnsRecordsOutcomeCallable DescribeDnsRecordsCallable(const Model::DescribeDnsRecordsRequest& request);
 
                 /**
                  *在版本管理模式下，用于查询环境信息，可获取环境 ID、类型、当前生效版本等。版本管理功能内测中，当前仅白名单开放。
@@ -1618,6 +1717,15 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 ModifyApplicationProxyStatusOutcomeCallable ModifyApplicationProxyStatusCallable(const Model::ModifyApplicationProxyStatusRequest& request);
 
                 /**
+                 *修改内容标识符，仅支持修改描述。该功能仅白名单开放。
+                 * @param req ModifyContentIdentifierRequest
+                 * @return ModifyContentIdentifierOutcome
+                 */
+                ModifyContentIdentifierOutcome ModifyContentIdentifier(const Model::ModifyContentIdentifierRequest &request);
+                void ModifyContentIdentifierAsync(const Model::ModifyContentIdentifierRequest& request, const ModifyContentIdentifierAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyContentIdentifierOutcomeCallable ModifyContentIdentifierCallable(const Model::ModifyContentIdentifierRequest& request);
+
+                /**
                  *修改自定义错误页面。
                  * @param req ModifyCustomErrorPageRequest
                  * @return ModifyCustomErrorPageOutcome
@@ -1625,6 +1733,24 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 ModifyCustomErrorPageOutcome ModifyCustomErrorPage(const Model::ModifyCustomErrorPageRequest &request);
                 void ModifyCustomErrorPageAsync(const Model::ModifyCustomErrorPageRequest& request, const ModifyCustomErrorPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyCustomErrorPageOutcomeCallable ModifyCustomErrorPageCallable(const Model::ModifyCustomErrorPageRequest& request);
+
+                /**
+                 *您可以通过本接口批量修改 DNS 记录。
+                 * @param req ModifyDnsRecordsRequest
+                 * @return ModifyDnsRecordsOutcome
+                 */
+                ModifyDnsRecordsOutcome ModifyDnsRecords(const Model::ModifyDnsRecordsRequest &request);
+                void ModifyDnsRecordsAsync(const Model::ModifyDnsRecordsRequest& request, const ModifyDnsRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDnsRecordsOutcomeCallable ModifyDnsRecordsCallable(const Model::ModifyDnsRecordsRequest& request);
+
+                /**
+                 *您可以通过本接口批量修改 DNS 记录的状态，批量对记录进行开启和停用。
+                 * @param req ModifyDnsRecordsStatusRequest
+                 * @return ModifyDnsRecordsStatusOutcome
+                 */
+                ModifyDnsRecordsStatusOutcome ModifyDnsRecordsStatus(const Model::ModifyDnsRecordsStatusRequest &request);
+                void ModifyDnsRecordsStatusAsync(const Model::ModifyDnsRecordsStatusRequest& request, const ModifyDnsRecordsStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDnsRecordsStatusOutcomeCallable ModifyDnsRecordsStatusCallable(const Model::ModifyDnsRecordsStatusRequest& request);
 
                 /**
                  *修改边缘函数，支持修改函数的内容及描述信息，修改且重新部署后，函数立刻生效。

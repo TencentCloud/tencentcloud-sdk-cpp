@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取扫描结果详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Items 扫描结果详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DspaDiscoveryCOSTaskResultDetail> GetItems() const;
@@ -78,7 +76,6 @@ namespace TencentCloud
 
                     /**
                      * 扫描结果详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DspaDiscoveryCOSTaskResultDetail> m_items;
                     bool m_itemsHasBeenSet;

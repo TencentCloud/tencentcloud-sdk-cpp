@@ -280,18 +280,14 @@ namespace TencentCloud
 
                     /**
                      * 获取保护措施
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SafeGuard 保护措施
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DspaSafeGuard GetSafeGuard() const;
 
                     /**
                      * 设置保护措施
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _safeGuard 保护措施
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSafeGuard(const DspaSafeGuard& _safeGuard);
@@ -305,18 +301,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分类路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CategoryFullPath 分类路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCategoryFullPath() const;
 
                     /**
                      * 设置分类路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _categoryFullPath 分类路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCategoryFullPath(const std::string& _categoryFullPath);
@@ -327,6 +319,27 @@ namespace TencentCloud
                      * 
                      */
                     bool CategoryFullPathHasBeenSet() const;
+
+                    /**
+                     * 获取模式名
+                     * @return SchemaName 模式名
+                     * 
+                     */
+                    std::string GetSchemaName() const;
+
+                    /**
+                     * 设置模式名
+                     * @param _schemaName 模式名
+                     * 
+                     */
+                    void SetSchemaName(const std::string& _schemaName);
+
+                    /**
+                     * 判断参数 SchemaName 是否已赋值
+                     * @return SchemaName 是否已赋值
+                     * 
+                     */
+                    bool SchemaNameHasBeenSet() const;
 
                 private:
 
@@ -398,17 +411,21 @@ namespace TencentCloud
 
                     /**
                      * 保护措施
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DspaSafeGuard m_safeGuard;
                     bool m_safeGuardHasBeenSet;
 
                     /**
                      * 分类路径
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_categoryFullPath;
                     bool m_categoryFullPathHasBeenSet;
+
+                    /**
+                     * 模式名
+                     */
+                    std::string m_schemaName;
+                    bool m_schemaNameHasBeenSet;
 
                 };
             }

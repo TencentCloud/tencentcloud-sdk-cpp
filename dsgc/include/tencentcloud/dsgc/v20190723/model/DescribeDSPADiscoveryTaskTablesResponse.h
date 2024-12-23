@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取分类分级扫描表集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Items 分类分级扫描表集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DSPATableInfo> GetItems() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 分类分级扫描表集合
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DSPATableInfo> m_items;
                     bool m_itemsHasBeenSet;

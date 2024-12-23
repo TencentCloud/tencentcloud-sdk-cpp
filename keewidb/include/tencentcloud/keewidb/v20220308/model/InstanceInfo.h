@@ -1187,6 +1187,31 @@ namespace TencentCloud
                      */
                     bool DiskReplicasNumHasBeenSet() const;
 
+                    /**
+                     * 获取数据压缩开关。<ul><li>ON：开启。</li><li>OFF：关闭。</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Compression 数据压缩开关。<ul><li>ON：开启。</li><li>OFF：关闭。</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCompression() const;
+
+                    /**
+                     * 设置数据压缩开关。<ul><li>ON：开启。</li><li>OFF：关闭。</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _compression 数据压缩开关。<ul><li>ON：开启。</li><li>OFF：关闭。</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCompression(const std::string& _compression);
+
+                    /**
+                     * 判断参数 Compression 是否已赋值
+                     * @return Compression 是否已赋值
+                     * 
+                     */
+                    bool CompressionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1511,6 +1536,13 @@ namespace TencentCloud
                      */
                     int64_t m_diskReplicasNum;
                     bool m_diskReplicasNumHasBeenSet;
+
+                    /**
+                     * 数据压缩开关。<ul><li>ON：开启。</li><li>OFF：关闭。</li></ul>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_compression;
+                    bool m_compressionHasBeenSet;
 
                 };
             }

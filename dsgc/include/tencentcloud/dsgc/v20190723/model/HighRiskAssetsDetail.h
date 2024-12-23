@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceId 实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataSourceType 数据源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDataSourceType() const;
 
                     /**
                      * 设置数据源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataSourceType 数据源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataSourceType(const std::string& _dataSourceType);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataSourceName 数据源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDataSourceName() const;
 
                     /**
                      * 设置数据源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataSourceName 数据源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataSourceName(const std::string& _dataSourceName);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资产对象名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssetsName 资产对象名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAssetsName() const;
 
                     /**
                      * 设置资产对象名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _assetsName 资产对象名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAssetsName(const std::string& _assetsName);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取高风险个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HighRiskCount 高风险个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetHighRiskCount() const;
 
                     /**
                      * 设置高风险个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _highRiskCount 高风险个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHighRiskCount(const int64_t& _highRiskCount);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取风险类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskType 风险类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRiskType() const;
 
                     /**
                      * 设置风险类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _riskType 风险类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRiskType(const std::string& _riskType);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取总的风险个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalRiskCount 总的风险个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalRiskCount() const;
 
                     /**
                      * 设置总的风险个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalRiskCount 总的风险个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalRiskCount(const int64_t& _totalRiskCount);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取风险面
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskSide 风险面
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRiskSide() const;
 
                     /**
                      * 设置风险面
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _riskSide 风险面
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRiskSide(const std::string& _riskSide);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceRegion 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceRegion() const;
 
                     /**
                      * 设置地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceRegion 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceRegion(const std::string& _resourceRegion);
@@ -275,63 +239,54 @@ namespace TencentCloud
 
                     /**
                      * 实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
                      * 数据源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataSourceType;
                     bool m_dataSourceTypeHasBeenSet;
 
                     /**
                      * 数据源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataSourceName;
                     bool m_dataSourceNameHasBeenSet;
 
                     /**
                      * 资产对象名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_assetsName;
                     bool m_assetsNameHasBeenSet;
 
                     /**
                      * 高风险个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_highRiskCount;
                     bool m_highRiskCountHasBeenSet;
 
                     /**
                      * 风险类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_riskType;
                     bool m_riskTypeHasBeenSet;
 
                     /**
                      * 总的风险个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalRiskCount;
                     bool m_totalRiskCountHasBeenSet;
 
                     /**
                      * 风险面
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_riskSide;
                     bool m_riskSideHasBeenSet;
 
                     /**
                      * 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceRegion;
                     bool m_resourceRegionHasBeenSet;

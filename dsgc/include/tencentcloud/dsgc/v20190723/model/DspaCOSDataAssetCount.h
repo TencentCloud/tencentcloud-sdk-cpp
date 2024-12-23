@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数组资产类型，0代表关系型数据库资产，1代表对象存储COS资产
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataAssetType 数组资产类型，0代表关系型数据库资产，1代表对象存储COS资产
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDataAssetType() const;
 
                     /**
                      * 设置数组资产类型，0代表关系型数据库资产，1代表对象存储COS资产
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataAssetType 数组资产类型，0代表关系型数据库资产，1代表对象存储COS资产
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataAssetType(const int64_t& _dataAssetType);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取已扫描的存储桶的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalBucketCnt 已扫描的存储桶的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalBucketCnt() const;
 
                     /**
                      * 设置已扫描的存储桶的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalBucketCnt 已扫描的存储桶的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalBucketCnt(const int64_t& _totalBucketCnt);
@@ -100,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取对象总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalObjectCnt 对象总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalObjectCnt() const;
 
                     /**
                      * 设置对象总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalObjectCnt 对象总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalObjectCnt(const int64_t& _totalObjectCnt);
@@ -125,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取敏感数据类型个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SensitiveCategoryCnt 敏感数据类型个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSensitiveCategoryCnt() const;
 
                     /**
                      * 设置敏感数据类型个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sensitiveCategoryCnt 敏感数据类型个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSensitiveCategoryCnt(const int64_t& _sensitiveCategoryCnt);
@@ -150,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取敏感数据条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SensitiveDataCnt 敏感数据条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSensitiveDataCnt() const;
 
                     /**
                      * 设置敏感数据条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sensitiveDataCnt 敏感数据条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSensitiveDataCnt(const int64_t& _sensitiveDataCnt);
@@ -175,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取敏感等级分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SensitiveLevel 敏感等级分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SensitiveLevel> GetSensitiveLevel() const;
 
                     /**
                      * 设置敏感等级分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sensitiveLevel 敏感等级分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSensitiveLevel(const std::vector<SensitiveLevel>& _sensitiveLevel);
@@ -200,18 +176,14 @@ namespace TencentCloud
 
                     /**
                      * 获取敏感存储桶个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SensitiveBucketCnt 敏感存储桶个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSensitiveBucketCnt() const;
 
                     /**
                      * 设置敏感存储桶个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sensitiveBucketCnt 敏感存储桶个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSensitiveBucketCnt(const int64_t& _sensitiveBucketCnt);
@@ -225,18 +197,14 @@ namespace TencentCloud
 
                     /**
                      * 获取敏感对象个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SensitiveObjectCnt 敏感对象个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSensitiveObjectCnt() const;
 
                     /**
                      * 设置敏感对象个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sensitiveObjectCnt 敏感对象个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSensitiveObjectCnt(const int64_t& _sensitiveObjectCnt);
@@ -250,18 +218,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据分类分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CategoryDistributed 数据分类分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DspaDataCategoryDistributed> GetCategoryDistributed() const;
 
                     /**
                      * 设置数据分类分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _categoryDistributed 数据分类分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCategoryDistributed(const std::vector<DspaDataCategoryDistributed>& _categoryDistributed);
@@ -277,63 +241,54 @@ namespace TencentCloud
 
                     /**
                      * 数组资产类型，0代表关系型数据库资产，1代表对象存储COS资产
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_dataAssetType;
                     bool m_dataAssetTypeHasBeenSet;
 
                     /**
                      * 已扫描的存储桶的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalBucketCnt;
                     bool m_totalBucketCntHasBeenSet;
 
                     /**
                      * 对象总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalObjectCnt;
                     bool m_totalObjectCntHasBeenSet;
 
                     /**
                      * 敏感数据类型个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sensitiveCategoryCnt;
                     bool m_sensitiveCategoryCntHasBeenSet;
 
                     /**
                      * 敏感数据条数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sensitiveDataCnt;
                     bool m_sensitiveDataCntHasBeenSet;
 
                     /**
                      * 敏感等级分布
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SensitiveLevel> m_sensitiveLevel;
                     bool m_sensitiveLevelHasBeenSet;
 
                     /**
                      * 敏感存储桶个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sensitiveBucketCnt;
                     bool m_sensitiveBucketCntHasBeenSet;
 
                     /**
                      * 敏感对象个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sensitiveObjectCnt;
                     bool m_sensitiveObjectCntHasBeenSet;
 
                     /**
                      * 数据分类分布
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DspaDataCategoryDistributed> m_categoryDistributed;
                     bool m_categoryDistributedHasBeenSet;

@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取桶的名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Bucket 桶的名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBucket() const;
 
                     /**
                      * 设置桶的名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bucket 桶的名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBucket(const std::string& _bucket);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataType 数据源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDataType() const;
 
                     /**
                      * 设置数据源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataType 数据源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataType(const std::string& _dataType);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileNums 文件的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFileNums() const;
 
                     /**
                      * 设置文件的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileNums 文件的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileNums(const int64_t& _fileNums);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取敏感的文件个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SensitiveFileNums 敏感的文件个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSensitiveFileNums() const;
 
                     /**
                      * 设置敏感的文件个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sensitiveFileNums 敏感的文件个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSensitiveFileNums(const int64_t& _sensitiveFileNums);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取敏感分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DistributionData 敏感分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Note> GetDistributionData() const;
 
                     /**
                      * 设置敏感分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _distributionData 敏感分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDistributionData(const std::vector<Note>& _distributionData);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取cos文件的敏感数据个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MatchedNum cos文件的敏感数据个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMatchedNum() const;
 
                     /**
                      * 设置cos文件的敏感数据个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _matchedNum cos文件的敏感数据个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMatchedNum(const int64_t& _matchedNum);
@@ -201,42 +177,36 @@ namespace TencentCloud
 
                     /**
                      * 桶的名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bucket;
                     bool m_bucketHasBeenSet;
 
                     /**
                      * 数据源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataType;
                     bool m_dataTypeHasBeenSet;
 
                     /**
                      * 文件的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_fileNums;
                     bool m_fileNumsHasBeenSet;
 
                     /**
                      * 敏感的文件个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sensitiveFileNums;
                     bool m_sensitiveFileNumsHasBeenSet;
 
                     /**
                      * 敏感分布
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Note> m_distributionData;
                     bool m_distributionDataHasBeenSet;
 
                     /**
                      * cos文件的敏感数据个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_matchedNum;
                     bool m_matchedNumHasBeenSet;

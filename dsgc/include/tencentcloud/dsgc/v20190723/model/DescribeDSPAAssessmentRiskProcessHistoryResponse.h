@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取处理的历史
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProcessHistory 处理的历史
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ProcessHistory> GetProcessHistory() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 处理的历史
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ProcessHistory> m_processHistory;
                     bool m_processHistoryHasBeenSet;

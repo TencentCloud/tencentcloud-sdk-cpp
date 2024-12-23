@@ -168,6 +168,27 @@ namespace TencentCloud
                      */
                     bool ComplianceGroupTypeListHasBeenSet() const;
 
+                    /**
+                     * 获取是否仅显示已开启模版
+                     * @return IsFilterCloseComplianceGroup 是否仅显示已开启模版
+                     * 
+                     */
+                    bool GetIsFilterCloseComplianceGroup() const;
+
+                    /**
+                     * 设置是否仅显示已开启模版
+                     * @param _isFilterCloseComplianceGroup 是否仅显示已开启模版
+                     * 
+                     */
+                    void SetIsFilterCloseComplianceGroup(const bool& _isFilterCloseComplianceGroup);
+
+                    /**
+                     * 判断参数 IsFilterCloseComplianceGroup 是否已赋值
+                     * @return IsFilterCloseComplianceGroup 是否已赋值
+                     * 
+                     */
+                    bool IsFilterCloseComplianceGroupHasBeenSet() const;
+
                 private:
 
                     /**
@@ -205,6 +226,12 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_complianceGroupTypeList;
                     bool m_complianceGroupTypeListHasBeenSet;
+
+                    /**
+                     * 是否仅显示已开启模版
+                     */
+                    bool m_isFilterCloseComplianceGroup;
+                    bool m_isFilterCloseComplianceGroupHasBeenSet;
 
                 };
             }

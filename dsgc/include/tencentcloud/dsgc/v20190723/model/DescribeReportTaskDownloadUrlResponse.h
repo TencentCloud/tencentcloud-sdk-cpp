@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取下载链接集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DownloadUrlSet 下载链接集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetDownloadUrlSet() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 下载链接集合
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_downloadUrlSet;
                     bool m_downloadUrlSetHasBeenSet;

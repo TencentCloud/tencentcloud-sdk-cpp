@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取存储id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 存储id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置存储id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id 存储id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分类分级levelID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SensitiveLevelId 分类分级levelID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSensitiveLevelId() const;
 
                     /**
                      * 设置分类分级levelID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sensitiveLevelId 分类分级levelID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSensitiveLevelId(const int64_t& _sensitiveLevelId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分类分级名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SensitiveLevelName 分类分级名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSensitiveLevelName() const;
 
                     /**
                      * 设置分类分级名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sensitiveLevelName 分类分级名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSensitiveLevelName(const std::string& _sensitiveLevelName);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞级别
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VulnerabilityLevel 漏洞级别
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVulnerabilityLevel() const;
 
                     /**
                      * 设置漏洞级别
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vulnerabilityLevel 漏洞级别
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVulnerabilityLevel(const std::string& _vulnerabilityLevel);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取风险级别
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskLevel 风险级别
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRiskLevel() const;
 
                     /**
                      * 设置风险级别
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _riskLevel 风险级别
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRiskLevel(const std::string& _riskLevel);
@@ -175,35 +155,30 @@ namespace TencentCloud
 
                     /**
                      * 存储id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * 分类分级levelID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sensitiveLevelId;
                     bool m_sensitiveLevelIdHasBeenSet;
 
                     /**
                      * 分类分级名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sensitiveLevelName;
                     bool m_sensitiveLevelNameHasBeenSet;
 
                     /**
                      * 漏洞级别
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vulnerabilityLevel;
                     bool m_vulnerabilityLevelHasBeenSet;
 
                     /**
                      * 风险级别
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_riskLevel;
                     bool m_riskLevelHasBeenSet;

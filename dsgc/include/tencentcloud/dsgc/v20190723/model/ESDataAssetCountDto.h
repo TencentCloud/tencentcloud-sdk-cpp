@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取es
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataAssetType es
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDataAssetType() const;
 
                     /**
                      * 设置es
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataAssetType es
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataAssetType(const int64_t& _dataAssetType);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取敏感索引个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SensitiveIndexCnt 敏感索引个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSensitiveIndexCnt() const;
 
                     /**
                      * 设置敏感索引个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sensitiveIndexCnt 敏感索引个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSensitiveIndexCnt(const int64_t& _sensitiveIndexCnt);
@@ -100,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取总的索引个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalIndexCnt 总的索引个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalIndexCnt() const;
 
                     /**
                      * 设置总的索引个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalIndexCnt 总的索引个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalIndexCnt(const int64_t& _totalIndexCnt);
@@ -125,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取敏感字段个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SensitiveFieldCnt 敏感字段个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSensitiveFieldCnt() const;
 
                     /**
                      * 设置敏感字段个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sensitiveFieldCnt 敏感字段个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSensitiveFieldCnt(const int64_t& _sensitiveFieldCnt);
@@ -150,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取总的字段个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalFieldCnt 总的字段个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalFieldCnt() const;
 
                     /**
                      * 设置总的字段个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalFieldCnt 总的字段个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalFieldCnt(const int64_t& _totalFieldCnt);
@@ -175,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取敏感分类的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SensitiveCategoryCnt 敏感分类的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSensitiveCategoryCnt() const;
 
                     /**
                      * 设置敏感分类的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sensitiveCategoryCnt 敏感分类的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSensitiveCategoryCnt(const int64_t& _sensitiveCategoryCnt);
@@ -200,18 +176,14 @@ namespace TencentCloud
 
                     /**
                      * 获取敏感分级的分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SensitiveLevel 敏感分级的分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SensitiveLevel> GetSensitiveLevel() const;
 
                     /**
                      * 设置敏感分级的分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sensitiveLevel 敏感分级的分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSensitiveLevel(const std::vector<SensitiveLevel>& _sensitiveLevel);
@@ -225,18 +197,14 @@ namespace TencentCloud
 
                     /**
                      * 获取敏感分类的分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CategoryDistributed 敏感分类的分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DspaDataCategoryDistributed> GetCategoryDistributed() const;
 
                     /**
                      * 设置敏感分类的分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _categoryDistributed 敏感分类的分布
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCategoryDistributed(const std::vector<DspaDataCategoryDistributed>& _categoryDistributed);
@@ -252,56 +220,48 @@ namespace TencentCloud
 
                     /**
                      * es
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_dataAssetType;
                     bool m_dataAssetTypeHasBeenSet;
 
                     /**
                      * 敏感索引个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sensitiveIndexCnt;
                     bool m_sensitiveIndexCntHasBeenSet;
 
                     /**
                      * 总的索引个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalIndexCnt;
                     bool m_totalIndexCntHasBeenSet;
 
                     /**
                      * 敏感字段个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sensitiveFieldCnt;
                     bool m_sensitiveFieldCntHasBeenSet;
 
                     /**
                      * 总的字段个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalFieldCnt;
                     bool m_totalFieldCntHasBeenSet;
 
                     /**
                      * 敏感分类的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sensitiveCategoryCnt;
                     bool m_sensitiveCategoryCntHasBeenSet;
 
                     /**
                      * 敏感分级的分布
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SensitiveLevel> m_sensitiveLevel;
                     bool m_sensitiveLevelHasBeenSet;
 
                     /**
                      * 敏感分类的分布
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DspaDataCategoryDistributed> m_categoryDistributed;
                     bool m_categoryDistributedHasBeenSet;

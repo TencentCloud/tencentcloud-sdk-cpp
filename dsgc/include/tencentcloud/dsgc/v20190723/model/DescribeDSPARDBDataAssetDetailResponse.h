@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取RDB关系数据库敏感数据资产详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Details RDB关系数据库敏感数据资产详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DspaRDBDataAssetDetail> GetDetails() const;
@@ -78,7 +76,6 @@ namespace TencentCloud
 
                     /**
                      * RDB关系数据库敏感数据资产详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DspaRDBDataAssetDetail> m_details;
                     bool m_detailsHasBeenSet;

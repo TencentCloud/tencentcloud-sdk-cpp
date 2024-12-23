@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取最新风险详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LatestRiskList 最新风险详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RiskItemInfo> GetLatestRiskList() const;
@@ -78,7 +76,6 @@ namespace TencentCloud
 
                     /**
                      * 最新风险详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RiskItemInfo> m_latestRiskList;
                     bool m_latestRiskListHasBeenSet;

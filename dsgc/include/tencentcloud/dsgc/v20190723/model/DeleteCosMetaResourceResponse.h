@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取结果集合。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Results 结果集合。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DspaTaskResult> GetResults() const;
@@ -78,7 +76,6 @@ namespace TencentCloud
 
                     /**
                      * 结果集合。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DspaTaskResult> m_results;
                     bool m_resultsHasBeenSet;

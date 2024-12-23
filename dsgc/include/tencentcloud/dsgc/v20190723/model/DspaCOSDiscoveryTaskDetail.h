@@ -197,18 +197,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当创建任务时，用户打开了通用规则集开关，则该字段就会保存默认合规组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefaultComplianceInfo 当创建任务时，用户打开了通用规则集开关，则该字段就会保存默认合规组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ScanTaskComplianceInfo> GetDefaultComplianceInfo() const;
 
                     /**
                      * 设置当创建任务时，用户打开了通用规则集开关，则该字段就会保存默认合规组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _defaultComplianceInfo 当创建任务时，用户打开了通用规则集开关，则该字段就会保存默认合规组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDefaultComplianceInfo(const std::vector<ScanTaskComplianceInfo>& _defaultComplianceInfo);
@@ -222,18 +218,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该任务中用户选择的合规组信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CustomComplianceInfo 该任务中用户选择的合规组信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ScanTaskComplianceInfo> GetCustomComplianceInfo() const;
 
                     /**
                      * 设置该任务中用户选择的合规组信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _customComplianceInfo 该任务中用户选择的合规组信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCustomComplianceInfo(const std::vector<ScanTaskComplianceInfo>& _customComplianceInfo);
@@ -247,18 +239,14 @@ namespace TencentCloud
 
                     /**
                      * 获取定时开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimingStartTime 定时开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTimingStartTime() const;
 
                     /**
                      * 设置定时开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timingStartTime 定时开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimingStartTime(const std::string& _timingStartTime);
@@ -316,21 +304,18 @@ namespace TencentCloud
 
                     /**
                      * 当创建任务时，用户打开了通用规则集开关，则该字段就会保存默认合规组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ScanTaskComplianceInfo> m_defaultComplianceInfo;
                     bool m_defaultComplianceInfoHasBeenSet;
 
                     /**
                      * 该任务中用户选择的合规组信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ScanTaskComplianceInfo> m_customComplianceInfo;
                     bool m_customComplianceInfoHasBeenSet;
 
                     /**
                      * 定时开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_timingStartTime;
                     bool m_timingStartTimeHasBeenSet;

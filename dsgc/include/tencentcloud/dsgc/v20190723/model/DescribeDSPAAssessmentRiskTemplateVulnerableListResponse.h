@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取脆弱项列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskItemList 脆弱项列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AssessmentRiskItem> GetRiskItemList() const;
@@ -78,7 +76,6 @@ namespace TencentCloud
 
                     /**
                      * 脆弱项列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AssessmentRiskItem> m_riskItemList;
                     bool m_riskItemListHasBeenSet;

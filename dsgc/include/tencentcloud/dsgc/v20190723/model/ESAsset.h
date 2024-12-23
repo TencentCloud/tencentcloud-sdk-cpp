@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取索引总数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IndexNums 索引总数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIndexNums() const;
 
                     /**
                      * 设置索引总数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _indexNums 索引总数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIndexNums(const int64_t& _indexNums);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取敏感索引的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SensitiveIndexNums 敏感索引的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSensitiveIndexNums() const;
 
                     /**
                      * 设置敏感索引的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sensitiveIndexNums 敏感索引的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSensitiveIndexNums(const int64_t& _sensitiveIndexNums);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取字段数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FieldNums 字段数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFieldNums() const;
 
                     /**
                      * 设置字段数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fieldNums 字段数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFieldNums(const int64_t& _fieldNums);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取敏感的字段数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SensitiveFieldNums 敏感的字段数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSensitiveFieldNums() const;
 
                     /**
                      * 设置敏感的字段数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sensitiveFieldNums 敏感的字段数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSensitiveFieldNums(const int64_t& _sensitiveFieldNums);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 索引总数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_indexNums;
                     bool m_indexNumsHasBeenSet;
 
                     /**
                      * 敏感索引的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sensitiveIndexNums;
                     bool m_sensitiveIndexNumsHasBeenSet;
 
                     /**
                      * 字段数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_fieldNums;
                     bool m_fieldNumsHasBeenSet;
 
                     /**
                      * 敏感的字段数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sensitiveFieldNums;
                     bool m_sensitiveFieldNumsHasBeenSet;

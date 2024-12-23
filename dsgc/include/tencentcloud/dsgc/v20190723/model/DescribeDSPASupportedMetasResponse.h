@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取支持的元数据类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Metas 支持的元数据类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DSPAMetaType> GetMetas() const;
@@ -78,7 +76,6 @@ namespace TencentCloud
 
                     /**
                      * 支持的元数据类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DSPAMetaType> m_metas;
                     bool m_metasHasBeenSet;

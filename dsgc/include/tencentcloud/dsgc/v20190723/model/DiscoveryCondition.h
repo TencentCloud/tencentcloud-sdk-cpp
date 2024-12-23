@@ -52,18 +52,14 @@ namespace TencentCloud
 
                     /**
                      * 获取RDB实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RDBInstances RDB实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RDBInstance> GetRDBInstances() const;
 
                     /**
                      * 设置RDB实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rDBInstances RDB实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRDBInstances(const std::vector<RDBInstance>& _rDBInstances);
@@ -77,18 +73,14 @@ namespace TencentCloud
 
                     /**
                      * 获取COS实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return COSInstances COS实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<COSInstance> GetCOSInstances() const;
 
                     /**
                      * 设置COS实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cOSInstances COS实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCOSInstances(const std::vector<COSInstance>& _cOSInstances);
@@ -102,18 +94,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Mongo实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NOSQLInstances Mongo实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<NOSQLInstance> GetNOSQLInstances() const;
 
                     /**
                      * 设置Mongo实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nOSQLInstances Mongo实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNOSQLInstances(const std::vector<NOSQLInstance>& _nOSQLInstances);
@@ -127,18 +115,14 @@ namespace TencentCloud
 
                     /**
                      * 获取ES实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ESInstances ES实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ESInstance> GetESInstances() const;
 
                     /**
                      * 设置ES实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _eSInstances ES实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetESInstances(const std::vector<ESInstance>& _eSInstances);
@@ -154,28 +138,24 @@ namespace TencentCloud
 
                     /**
                      * RDB实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RDBInstance> m_rDBInstances;
                     bool m_rDBInstancesHasBeenSet;
 
                     /**
                      * COS实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<COSInstance> m_cOSInstances;
                     bool m_cOSInstancesHasBeenSet;
 
                     /**
                      * Mongo实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<NOSQLInstance> m_nOSQLInstances;
                     bool m_nOSQLInstancesHasBeenSet;
 
                     /**
                      * ES实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ESInstance> m_eSInstances;
                     bool m_eSInstancesHasBeenSet;

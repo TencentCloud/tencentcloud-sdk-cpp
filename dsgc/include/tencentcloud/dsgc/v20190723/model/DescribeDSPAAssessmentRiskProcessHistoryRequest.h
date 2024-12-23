@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DspaIdHasBeenSet() const;
 
                     /**
-                     * 获取xxx
-                     * @return RiskId xxx
+                     * 获取风险id
+                     * @return RiskId 风险id
                      * 
                      */
                     int64_t GetRiskId() const;
 
                     /**
-                     * 设置xxx
-                     * @param _riskId xxx
+                     * 设置风险id
+                     * @param _riskId 风险id
                      * 
                      */
                     void SetRiskId(const int64_t& _riskId);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_dspaIdHasBeenSet;
 
                     /**
-                     * xxx
+                     * 风险id
                      */
                     int64_t m_riskId;
                     bool m_riskIdHasBeenSet;

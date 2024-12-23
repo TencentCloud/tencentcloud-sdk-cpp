@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取COS对象存储敏感数据资产详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Details COS对象存储敏感数据资产详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DspaCOSDataAssetDetail> GetDetails() const;
@@ -78,7 +76,6 @@ namespace TencentCloud
 
                     /**
                      * COS对象存储敏感数据资产详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DspaCOSDataAssetDetail> m_details;
                     bool m_detailsHasBeenSet;
