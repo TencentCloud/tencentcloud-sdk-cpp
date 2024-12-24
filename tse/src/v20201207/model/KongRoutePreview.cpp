@@ -35,7 +35,9 @@ KongRoutePreview::KongRoutePreview() :
     m_serviceNameHasBeenSet(false),
     m_serviceIDHasBeenSet(false),
     m_destinationPortsHasBeenSet(false),
-    m_headersHasBeenSet(false)
+    m_headersHasBeenSet(false),
+    m_requestBufferingHasBeenSet(false),
+    m_responseBufferingHasBeenSet(false)
 {
 }
 
@@ -219,6 +221,26 @@ CoreInternalOutcome KongRoutePreview::Deserialize(const rapidjson::Value &value)
         m_headersHasBeenSet = true;
     }
 
+    if (value.HasMember("RequestBuffering") && !value["RequestBuffering"].IsNull())
+    {
+        if (!value["RequestBuffering"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `KongRoutePreview.RequestBuffering` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_requestBuffering = value["RequestBuffering"].GetBool();
+        m_requestBufferingHasBeenSet = true;
+    }
+
+    if (value.HasMember("ResponseBuffering") && !value["ResponseBuffering"].IsNull())
+    {
+        if (!value["ResponseBuffering"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `KongRoutePreview.ResponseBuffering` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_responseBuffering = value["ResponseBuffering"].GetBool();
+        m_responseBufferingHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -376,6 +398,22 @@ void KongRoutePreview::ToJsonObject(rapidjson::Value &value, rapidjson::Document
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_requestBufferingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RequestBuffering";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_requestBuffering, allocator);
+    }
+
+    if (m_responseBufferingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResponseBuffering";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_responseBuffering, allocator);
     }
 
 }
@@ -619,5 +657,37 @@ void KongRoutePreview::SetHeaders(const vector<KVMapping>& _headers)
 bool KongRoutePreview::HeadersHasBeenSet() const
 {
     return m_headersHasBeenSet;
+}
+
+bool KongRoutePreview::GetRequestBuffering() const
+{
+    return m_requestBuffering;
+}
+
+void KongRoutePreview::SetRequestBuffering(const bool& _requestBuffering)
+{
+    m_requestBuffering = _requestBuffering;
+    m_requestBufferingHasBeenSet = true;
+}
+
+bool KongRoutePreview::RequestBufferingHasBeenSet() const
+{
+    return m_requestBufferingHasBeenSet;
+}
+
+bool KongRoutePreview::GetResponseBuffering() const
+{
+    return m_responseBuffering;
+}
+
+void KongRoutePreview::SetResponseBuffering(const bool& _responseBuffering)
+{
+    m_responseBuffering = _responseBuffering;
+    m_responseBufferingHasBeenSet = true;
+}
+
+bool KongRoutePreview::ResponseBufferingHasBeenSet() const
+{
+    return m_responseBufferingHasBeenSet;
 }
 

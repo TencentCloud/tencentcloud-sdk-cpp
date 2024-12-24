@@ -94,6 +94,31 @@ namespace TencentCloud
                     bool PromptHasBeenSet() const;
 
                     /**
+                     * 获取反向提示词。
+最多支持256个 utf-8 字符，支持中、英文。
+                     * @return NegativePrompt 反向提示词。
+最多支持256个 utf-8 字符，支持中、英文。
+                     * 
+                     */
+                    std::string GetNegativePrompt() const;
+
+                    /**
+                     * 设置反向提示词。
+最多支持256个 utf-8 字符，支持中、英文。
+                     * @param _negativePrompt 反向提示词。
+最多支持256个 utf-8 字符，支持中、英文。
+                     * 
+                     */
+                    void SetNegativePrompt(const std::string& _negativePrompt);
+
+                    /**
+                     * 判断参数 NegativePrompt 是否已赋值
+                     * @return NegativePrompt 是否已赋值
+                     * 
+                     */
+                    bool NegativePromptHasBeenSet() const;
+
+                    /**
                      * 获取商品图中的商品主体名称。
 建议说明商品主体，否则影响生成效果。
                      * @return Product 商品图中的商品主体名称。
@@ -282,6 +307,13 @@ namespace TencentCloud
                      */
                     std::string m_prompt;
                     bool m_promptHasBeenSet;
+
+                    /**
+                     * 反向提示词。
+最多支持256个 utf-8 字符，支持中、英文。
+                     */
+                    std::string m_negativePrompt;
+                    bool m_negativePromptHasBeenSet;
 
                     /**
                      * 商品图中的商品主体名称。

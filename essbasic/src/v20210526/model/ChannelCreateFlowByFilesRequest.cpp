@@ -44,7 +44,8 @@ ChannelCreateFlowByFilesRequest::ChannelCreateFlowByFilesRequest() :
     m_operatorHasBeenSet(false),
     m_flowDisplayTypeHasBeenSet(false),
     m_needPreviewHasBeenSet(false),
-    m_previewTypeHasBeenSet(false)
+    m_previewTypeHasBeenSet(false),
+    m_openDynamicFlowHasBeenSet(false)
 {
 }
 
@@ -257,6 +258,14 @@ string ChannelCreateFlowByFilesRequest::ToJsonString() const
         string key = "PreviewType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_previewType, allocator);
+    }
+
+    if (m_openDynamicFlowHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OpenDynamicFlow";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_openDynamicFlow, allocator);
     }
 
 
@@ -617,6 +626,22 @@ void ChannelCreateFlowByFilesRequest::SetPreviewType(const int64_t& _previewType
 bool ChannelCreateFlowByFilesRequest::PreviewTypeHasBeenSet() const
 {
     return m_previewTypeHasBeenSet;
+}
+
+bool ChannelCreateFlowByFilesRequest::GetOpenDynamicFlow() const
+{
+    return m_openDynamicFlow;
+}
+
+void ChannelCreateFlowByFilesRequest::SetOpenDynamicFlow(const bool& _openDynamicFlow)
+{
+    m_openDynamicFlow = _openDynamicFlow;
+    m_openDynamicFlowHasBeenSet = true;
+}
+
+bool ChannelCreateFlowByFilesRequest::OpenDynamicFlowHasBeenSet() const
+{
+    return m_openDynamicFlowHasBeenSet;
 }
 
 

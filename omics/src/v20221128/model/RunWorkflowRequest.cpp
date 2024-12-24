@@ -34,7 +34,8 @@ RunWorkflowRequest::RunWorkflowRequest() :
     m_inputCosUriHasBeenSet(false),
     m_cacheClearDelayHasBeenSet(false),
     m_workDirHasBeenSet(false),
-    m_volumeIdsHasBeenSet(false)
+    m_volumeIdsHasBeenSet(false),
+    m_entrypointHasBeenSet(false)
 {
 }
 
@@ -146,6 +147,14 @@ string RunWorkflowRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_entrypointHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Entrypoint";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_entrypoint.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -346,6 +355,22 @@ void RunWorkflowRequest::SetVolumeIds(const vector<string>& _volumeIds)
 bool RunWorkflowRequest::VolumeIdsHasBeenSet() const
 {
     return m_volumeIdsHasBeenSet;
+}
+
+string RunWorkflowRequest::GetEntrypoint() const
+{
+    return m_entrypoint;
+}
+
+void RunWorkflowRequest::SetEntrypoint(const string& _entrypoint)
+{
+    m_entrypoint = _entrypoint;
+    m_entrypointHasBeenSet = true;
+}
+
+bool RunWorkflowRequest::EntrypointHasBeenSet() const
+{
+    return m_entrypointHasBeenSet;
 }
 
 

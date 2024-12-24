@@ -35,7 +35,9 @@ CreateCloudNativeAPIGatewayRouteRequest::CreateCloudNativeAPIGatewayRouteRequest
     m_stripPathHasBeenSet(false),
     m_forceHttpsHasBeenSet(false),
     m_destinationPortsHasBeenSet(false),
-    m_headersHasBeenSet(false)
+    m_headersHasBeenSet(false),
+    m_requestBufferingHasBeenSet(false),
+    m_responseBufferingHasBeenSet(false)
 {
 }
 
@@ -180,6 +182,22 @@ string CreateCloudNativeAPIGatewayRouteRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_requestBufferingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RequestBuffering";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_requestBuffering, allocator);
+    }
+
+    if (m_responseBufferingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResponseBuffering";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_responseBuffering, allocator);
     }
 
 
@@ -396,6 +414,38 @@ void CreateCloudNativeAPIGatewayRouteRequest::SetHeaders(const vector<KVMapping>
 bool CreateCloudNativeAPIGatewayRouteRequest::HeadersHasBeenSet() const
 {
     return m_headersHasBeenSet;
+}
+
+bool CreateCloudNativeAPIGatewayRouteRequest::GetRequestBuffering() const
+{
+    return m_requestBuffering;
+}
+
+void CreateCloudNativeAPIGatewayRouteRequest::SetRequestBuffering(const bool& _requestBuffering)
+{
+    m_requestBuffering = _requestBuffering;
+    m_requestBufferingHasBeenSet = true;
+}
+
+bool CreateCloudNativeAPIGatewayRouteRequest::RequestBufferingHasBeenSet() const
+{
+    return m_requestBufferingHasBeenSet;
+}
+
+bool CreateCloudNativeAPIGatewayRouteRequest::GetResponseBuffering() const
+{
+    return m_responseBuffering;
+}
+
+void CreateCloudNativeAPIGatewayRouteRequest::SetResponseBuffering(const bool& _responseBuffering)
+{
+    m_responseBuffering = _responseBuffering;
+    m_responseBufferingHasBeenSet = true;
+}
+
+bool CreateCloudNativeAPIGatewayRouteRequest::ResponseBufferingHasBeenSet() const
+{
+    return m_responseBufferingHasBeenSet;
 }
 
 

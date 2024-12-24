@@ -388,6 +388,48 @@ namespace TencentCloud
                      */
                     bool HeadersHasBeenSet() const;
 
+                    /**
+                     * 获取是否缓存请求body，默认true
+                     * @return RequestBuffering 是否缓存请求body，默认true
+                     * 
+                     */
+                    bool GetRequestBuffering() const;
+
+                    /**
+                     * 设置是否缓存请求body，默认true
+                     * @param _requestBuffering 是否缓存请求body，默认true
+                     * 
+                     */
+                    void SetRequestBuffering(const bool& _requestBuffering);
+
+                    /**
+                     * 判断参数 RequestBuffering 是否已赋值
+                     * @return RequestBuffering 是否已赋值
+                     * 
+                     */
+                    bool RequestBufferingHasBeenSet() const;
+
+                    /**
+                     * 获取是否缓存响应body，默认true
+                     * @return ResponseBuffering 是否缓存响应body，默认true
+                     * 
+                     */
+                    bool GetResponseBuffering() const;
+
+                    /**
+                     * 设置是否缓存响应body，默认true
+                     * @param _responseBuffering 是否缓存响应body，默认true
+                     * 
+                     */
+                    void SetResponseBuffering(const bool& _responseBuffering);
+
+                    /**
+                     * 判断参数 ResponseBuffering 是否已赋值
+                     * @return ResponseBuffering 是否已赋值
+                     * 
+                     */
+                    bool ResponseBufferingHasBeenSet() const;
+
                 private:
 
                     /**
@@ -485,6 +527,18 @@ namespace TencentCloud
                      */
                     std::vector<KVMapping> m_headers;
                     bool m_headersHasBeenSet;
+
+                    /**
+                     * 是否缓存请求body，默认true
+                     */
+                    bool m_requestBuffering;
+                    bool m_requestBufferingHasBeenSet;
+
+                    /**
+                     * 是否缓存响应body，默认true
+                     */
+                    bool m_responseBuffering;
+                    bool m_responseBufferingHasBeenSet;
 
                 };
             }

@@ -196,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取付费类型，PREPAID为预付费，POSTPAID为后付费。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceChargeType 付费类型，PREPAID为预付费，POSTPAID为后付费。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceChargeType() const;
 
                     /**
                      * 设置付费类型，PREPAID为预付费，POSTPAID为后付费。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceChargeType 付费类型，PREPAID为预付费，POSTPAID为后付费。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceChargeType(const std::string& _instanceChargeType);
@@ -221,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取限速类型，`INTER_REGION_LIMIT` 为地域间限速；`OUTER_REGION_LIMIT` 为地域出口限速。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BandwidthLimitType 限速类型，`INTER_REGION_LIMIT` 为地域间限速；`OUTER_REGION_LIMIT` 为地域出口限速。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBandwidthLimitType() const;
 
                     /**
                      * 设置限速类型，`INTER_REGION_LIMIT` 为地域间限速；`OUTER_REGION_LIMIT` 为地域出口限速。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bandwidthLimitType 限速类型，`INTER_REGION_LIMIT` 为地域间限速；`OUTER_REGION_LIMIT` 为地域出口限速。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBandwidthLimitType(const std::string& _bandwidthLimitType);
@@ -288,18 +280,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例关联的路由表个数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RouteTableCount 实例关联的路由表个数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRouteTableCount() const;
 
                     /**
                      * 设置实例关联的路由表个数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _routeTableCount 实例关联的路由表个数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRouteTableCount(const uint64_t& _routeTableCount);
@@ -313,18 +301,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启云联网多路由表特性。`False`：未开启，`True`：开启。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RouteTableFlag 是否开启云联网多路由表特性。`False`：未开启，`True`：开启。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetRouteTableFlag() const;
 
                     /**
                      * 设置是否开启云联网多路由表特性。`False`：未开启，`True`：开启。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _routeTableFlag 是否开启云联网多路由表特性。`False`：未开启，`True`：开启。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRouteTableFlag(const bool& _routeTableFlag);
@@ -338,18 +322,14 @@ namespace TencentCloud
 
                     /**
                      * 获取`true`：实例已被封禁，流量不通，`false`:解封禁。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsSecurityLock `true`：实例已被封禁，流量不通，`false`:解封禁。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsSecurityLock() const;
 
                     /**
                      * 设置`true`：实例已被封禁，流量不通，`false`:解封禁。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isSecurityLock `true`：实例已被封禁，流量不通，`false`:解封禁。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsSecurityLock(const bool& _isSecurityLock);
@@ -363,18 +343,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启云联网路由传播策略。`False` 未开启，`True` 开启。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RouteBroadcastPolicyFlag 是否开启云联网路由传播策略。`False` 未开启，`True` 开启。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetRouteBroadcastPolicyFlag() const;
 
                     /**
                      * 设置是否开启云联网路由传播策略。`False` 未开启，`True` 开启。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _routeBroadcastPolicyFlag 是否开启云联网路由传播策略。`False` 未开启，`True` 开启。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRouteBroadcastPolicyFlag(const bool& _routeBroadcastPolicyFlag);
@@ -388,18 +364,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启等价路由功能。`False` 未开启，`True` 开启。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RouteECMPFlag 是否开启等价路由功能。`False` 未开启，`True` 开启。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetRouteECMPFlag() const;
 
                     /**
                      * 设置是否开启等价路由功能。`False` 未开启，`True` 开启。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _routeECMPFlag 是否开启等价路由功能。`False` 未开启，`True` 开启。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRouteECMPFlag(const bool& _routeECMPFlag);
@@ -413,18 +385,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启路由重叠功能。`False` 未开启，`True` 开启。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RouteOverlapFlag 是否开启路由重叠功能。`False` 未开启，`True` 开启。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetRouteOverlapFlag() const;
 
                     /**
                      * 设置是否开启路由重叠功能。`False` 未开启，`True` 开启。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _routeOverlapFlag 是否开启路由重叠功能。`False` 未开启，`True` 开启。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRouteOverlapFlag(const bool& _routeOverlapFlag);
@@ -438,18 +406,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启QOS。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TrafficMarkingPolicyFlag 是否开启QOS。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetTrafficMarkingPolicyFlag() const;
 
                     /**
                      * 设置是否开启QOS。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _trafficMarkingPolicyFlag 是否开启QOS。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTrafficMarkingPolicyFlag(const bool& _trafficMarkingPolicyFlag);
@@ -463,18 +427,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启路由表选择策略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RouteSelectPolicyFlag 是否开启路由表选择策略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetRouteSelectPolicyFlag() const;
 
                     /**
                      * 设置是否开启路由表选择策略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _routeSelectPolicyFlag 是否开启路由表选择策略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRouteSelectPolicyFlag(const bool& _routeSelectPolicyFlag);
@@ -488,18 +448,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启二层云联网通道。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DirectConnectAccelerateChannelFlag 是否开启二层云联网通道。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetDirectConnectAccelerateChannelFlag() const;
 
                     /**
                      * 设置是否开启二层云联网通道。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _directConnectAccelerateChannelFlag 是否开启二层云联网通道。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDirectConnectAccelerateChannelFlag(const bool& _directConnectAccelerateChannelFlag);
@@ -513,18 +469,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否支持ipv6路由表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ipv6Flag 是否支持ipv6路由表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIpv6Flag() const;
 
                     /**
                      * 设置是否支持ipv6路由表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ipv6Flag 是否支持ipv6路由表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIpv6Flag(const bool& _ipv6Flag);
@@ -538,18 +490,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否支持路由表聚合策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MrtbAggregatePolicyFlag 是否支持路由表聚合策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetMrtbAggregatePolicyFlag() const;
 
                     /**
                      * 设置是否支持路由表聚合策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mrtbAggregatePolicyFlag 是否支持路由表聚合策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMrtbAggregatePolicyFlag(const bool& _mrtbAggregatePolicyFlag);
@@ -563,18 +511,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否支持策略值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MrtbPolicyValueFlag 是否支持策略值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetMrtbPolicyValueFlag() const;
 
                     /**
                      * 设置是否支持策略值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mrtbPolicyValueFlag 是否支持策略值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMrtbPolicyValueFlag(const bool& _mrtbPolicyValueFlag);
@@ -632,14 +576,12 @@ namespace TencentCloud
 
                     /**
                      * 付费类型，PREPAID为预付费，POSTPAID为后付费。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceChargeType;
                     bool m_instanceChargeTypeHasBeenSet;
 
                     /**
                      * 限速类型，`INTER_REGION_LIMIT` 为地域间限速；`OUTER_REGION_LIMIT` 为地域出口限速。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bandwidthLimitType;
                     bool m_bandwidthLimitTypeHasBeenSet;
@@ -658,84 +600,72 @@ namespace TencentCloud
 
                     /**
                      * 实例关联的路由表个数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_routeTableCount;
                     bool m_routeTableCountHasBeenSet;
 
                     /**
                      * 是否开启云联网多路由表特性。`False`：未开启，`True`：开启。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_routeTableFlag;
                     bool m_routeTableFlagHasBeenSet;
 
                     /**
                      * `true`：实例已被封禁，流量不通，`false`:解封禁。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isSecurityLock;
                     bool m_isSecurityLockHasBeenSet;
 
                     /**
                      * 是否开启云联网路由传播策略。`False` 未开启，`True` 开启。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_routeBroadcastPolicyFlag;
                     bool m_routeBroadcastPolicyFlagHasBeenSet;
 
                     /**
                      * 是否开启等价路由功能。`False` 未开启，`True` 开启。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_routeECMPFlag;
                     bool m_routeECMPFlagHasBeenSet;
 
                     /**
                      * 是否开启路由重叠功能。`False` 未开启，`True` 开启。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_routeOverlapFlag;
                     bool m_routeOverlapFlagHasBeenSet;
 
                     /**
                      * 是否开启QOS。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_trafficMarkingPolicyFlag;
                     bool m_trafficMarkingPolicyFlagHasBeenSet;
 
                     /**
                      * 是否开启路由表选择策略。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_routeSelectPolicyFlag;
                     bool m_routeSelectPolicyFlagHasBeenSet;
 
                     /**
                      * 是否开启二层云联网通道。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_directConnectAccelerateChannelFlag;
                     bool m_directConnectAccelerateChannelFlagHasBeenSet;
 
                     /**
                      * 是否支持ipv6路由表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_ipv6Flag;
                     bool m_ipv6FlagHasBeenSet;
 
                     /**
                      * 是否支持路由表聚合策略
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_mrtbAggregatePolicyFlag;
                     bool m_mrtbAggregatePolicyFlagHasBeenSet;
 
                     /**
                      * 是否支持策略值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_mrtbPolicyValueFlag;
                     bool m_mrtbPolicyValueFlagHasBeenSet;

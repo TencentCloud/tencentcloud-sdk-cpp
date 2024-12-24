@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool SubscribeNameHasBeenSet() const;
 
                     /**
-                     * 获取数据订阅实例绑定的通道ID
-                     * @return ChannelId 数据订阅实例绑定的通道ID
+                     * 获取数据订阅实例绑定的通道ID。kafka版订阅就是kafka topic
+                     * @return ChannelId 数据订阅实例绑定的通道ID。kafka版订阅就是kafka topic
                      * 
                      */
                     std::string GetChannelId() const;
 
                     /**
-                     * 设置数据订阅实例绑定的通道ID
-                     * @param _channelId 数据订阅实例绑定的通道ID
+                     * 设置数据订阅实例绑定的通道ID。kafka版订阅就是kafka topic
+                     * @param _channelId 数据订阅实例绑定的通道ID。kafka版订阅就是kafka topic
                      * 
                      */
                     void SetChannelId(const std::string& _channelId);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool ChannelIdHasBeenSet() const;
 
                     /**
-                     * 获取数据订阅绑定实例对应的产品名称
-                     * @return Product 数据订阅绑定实例对应的产品名称
+                     * 获取订阅实例的类型，目前支持 cynosdbmysql,mariadb,mongodb,mysql,percona,tdpg,tdsqlpercona(tdsqlmysql)
+                     * @return Product 订阅实例的类型，目前支持 cynosdbmysql,mariadb,mongodb,mysql,percona,tdpg,tdsqlpercona(tdsqlmysql)
                      * 
                      */
                     std::string GetProduct() const;
 
                     /**
-                     * 设置数据订阅绑定实例对应的产品名称
-                     * @param _product 数据订阅绑定实例对应的产品名称
+                     * 设置订阅实例的类型，目前支持 cynosdbmysql,mariadb,mongodb,mysql,percona,tdpg,tdsqlpercona(tdsqlmysql)
+                     * @param _product 订阅实例的类型，目前支持 cynosdbmysql,mariadb,mongodb,mysql,percona,tdpg,tdsqlpercona(tdsqlmysql)
                      * 
                      */
                     void SetProduct(const std::string& _product);
@@ -153,15 +153,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取数据订阅实例绑定的数据库实例状态
-                     * @return InstanceStatus 数据订阅实例绑定的数据库实例状态
+                     * 获取云数据库状态：running 运行中，isolated 已隔离，offline 已下线。如果不是云上，此值为空
+                     * @return InstanceStatus 云数据库状态：running 运行中，isolated 已隔离，offline 已下线。如果不是云上，此值为空
                      * 
                      */
                     std::string GetInstanceStatus() const;
 
                     /**
-                     * 设置数据订阅实例绑定的数据库实例状态
-                     * @param _instanceStatus 数据订阅实例绑定的数据库实例状态
+                     * 设置云数据库状态：running 运行中，isolated 已隔离，offline 已下线。如果不是云上，此值为空
+                     * @param _instanceStatus 云数据库状态：running 运行中，isolated 已隔离，offline 已下线。如果不是云上，此值为空
                      * 
                      */
                     void SetInstanceStatus(const std::string& _instanceStatus);
@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool InstanceStatusHasBeenSet() const;
 
                     /**
-                     * 获取数据订阅实例的配置状态，unconfigure - 未配置， configuring - 配置中，configured - 已配置
-                     * @return SubsStatus 数据订阅实例的配置状态，unconfigure - 未配置， configuring - 配置中，configured - 已配置
+                     * 获取数据订阅状态，可能的值为：未启动 notStarted, 校验中 checking, 校验不通过 checkNotPass, 校验通过 checkPass, 启动中 starting, 运行中 running, 异常出错 error
+                     * @return SubsStatus 数据订阅状态，可能的值为：未启动 notStarted, 校验中 checking, 校验不通过 checkNotPass, 校验通过 checkPass, 启动中 starting, 运行中 running, 异常出错 error
                      * 
                      */
                     std::string GetSubsStatus() const;
 
                     /**
-                     * 设置数据订阅实例的配置状态，unconfigure - 未配置， configuring - 配置中，configured - 已配置
-                     * @param _subsStatus 数据订阅实例的配置状态，unconfigure - 未配置， configuring - 配置中，configured - 已配置
+                     * 设置数据订阅状态，可能的值为：未启动 notStarted, 校验中 checking, 校验不通过 checkNotPass, 校验通过 checkPass, 启动中 starting, 运行中 running, 异常出错 error
+                     * @param _subsStatus 数据订阅状态，可能的值为：未启动 notStarted, 校验中 checking, 校验不通过 checkNotPass, 校验通过 checkPass, 启动中 starting, 运行中 running, 异常出错 error
                      * 
                      */
                     void SetSubsStatus(const std::string& _subsStatus);
@@ -195,15 +195,15 @@ namespace TencentCloud
                     bool SubsStatusHasBeenSet() const;
 
                     /**
-                     * 获取上次修改时间
-                     * @return ModifyTime 上次修改时间
+                     * 获取上次修改时间，时间格式如：Y-m-d h:m:s
+                     * @return ModifyTime 上次修改时间，时间格式如：Y-m-d h:m:s
                      * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
-                     * 设置上次修改时间
-                     * @param _modifyTime 上次修改时间
+                     * 设置上次修改时间，时间格式如：Y-m-d h:m:s
+                     * @param _modifyTime 上次修改时间，时间格式如：Y-m-d h:m:s
                      * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
@@ -237,15 +237,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取隔离时间
-                     * @return IsolateTime 隔离时间
+                     * 获取隔离时间，时间格式如：Y-m-d h:m:s
+                     * @return IsolateTime 隔离时间，时间格式如：Y-m-d h:m:s
                      * 
                      */
                     std::string GetIsolateTime() const;
 
                     /**
-                     * 设置隔离时间
-                     * @param _isolateTime 隔离时间
+                     * 设置隔离时间，时间格式如：Y-m-d h:m:s
+                     * @param _isolateTime 隔离时间，时间格式如：Y-m-d h:m:s
                      * 
                      */
                     void SetIsolateTime(const std::string& _isolateTime);
@@ -258,15 +258,15 @@ namespace TencentCloud
                     bool IsolateTimeHasBeenSet() const;
 
                     /**
-                     * 获取到期时间
-                     * @return ExpireTime 到期时间
+                     * 获取包年包月任务的到期时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00
+                     * @return ExpireTime 包年包月任务的到期时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00
                      * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
-                     * 设置到期时间
-                     * @param _expireTime 到期时间
+                     * 设置包年包月任务的到期时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00
+                     * @param _expireTime 包年包月任务的到期时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00
                      * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
@@ -321,18 +321,18 @@ namespace TencentCloud
                     bool ConsumeStartTimeHasBeenSet() const;
 
                     /**
-                     * 获取自动续费标识。0-不自动续费，1-自动续费
+                     * 获取自动续费标识。只有当 PayType=0，该值才有意义。枚举值：0-不自动续费，1-自动续费
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AutoRenewFlag 自动续费标识。0-不自动续费，1-自动续费
+                     * @return AutoRenewFlag 自动续费标识。只有当 PayType=0，该值才有意义。枚举值：0-不自动续费，1-自动续费
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAutoRenewFlag() const;
 
                     /**
-                     * 设置自动续费标识。0-不自动续费，1-自动续费
+                     * 设置自动续费标识。只有当 PayType=0，该值才有意义。枚举值：0-不自动续费，1-自动续费
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _autoRenewFlag 自动续费标识。0-不自动续费，1-自动续费
+                     * @param _autoRenewFlag 自动续费标识。只有当 PayType=0，该值才有意义。枚举值：0-不自动续费，1-自动续费
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -388,15 +388,15 @@ namespace TencentCloud
                     bool PayTypeHasBeenSet() const;
 
                     /**
-                     * 获取数据订阅实例的Vip
-                     * @return Vip 数据订阅实例的Vip
+                     * 获取旧版订阅通道的vip
+                     * @return Vip 旧版订阅通道的vip
                      * 
                      */
                     std::string GetVip() const;
 
                     /**
-                     * 设置数据订阅实例的Vip
-                     * @param _vip 数据订阅实例的Vip
+                     * 设置旧版订阅通道的vip
+                     * @param _vip 旧版订阅通道的vip
                      * 
                      */
                     void SetVip(const std::string& _vip);
@@ -472,15 +472,15 @@ namespace TencentCloud
                     bool UniqSubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取数据订阅实例的状态，creating - 创建中，normal - 正常运行，isolating - 隔离中，isolated - 已隔离，offlining - 下线中，offline - 已下线
-                     * @return Status 数据订阅实例的状态，creating - 创建中，normal - 正常运行，isolating - 隔离中，isolated - 已隔离，offlining - 下线中，offline - 已下线
+                     * 获取数据订阅生命周期状态，可能的值为：正常 normal, 隔离中 isolating, 已隔离 isolated, 下线中 offlining, 按量转包年包月中 post2PrePayIng
+                     * @return Status 数据订阅生命周期状态，可能的值为：正常 normal, 隔离中 isolating, 已隔离 isolated, 下线中 offlining, 按量转包年包月中 post2PrePayIng
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置数据订阅实例的状态，creating - 创建中，normal - 正常运行，isolating - 隔离中，isolated - 已隔离，offlining - 下线中，offline - 已下线
-                     * @param _status 数据订阅实例的状态，creating - 创建中，normal - 正常运行，isolating - 隔离中，isolated - 已隔离，offlining - 下线中，offline - 已下线
+                     * 设置数据订阅生命周期状态，可能的值为：正常 normal, 隔离中 isolating, 已隔离 isolated, 下线中 offlining, 按量转包年包月中 post2PrePayIng
+                     * @param _status 数据订阅生命周期状态，可能的值为：正常 normal, 隔离中 isolating, 已隔离 isolated, 下线中 offlining, 按量转包年包月中 post2PrePayIng
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -578,13 +578,13 @@ namespace TencentCloud
                     bool m_subscribeNameHasBeenSet;
 
                     /**
-                     * 数据订阅实例绑定的通道ID
+                     * 数据订阅实例绑定的通道ID。kafka版订阅就是kafka topic
                      */
                     std::string m_channelId;
                     bool m_channelIdHasBeenSet;
 
                     /**
-                     * 数据订阅绑定实例对应的产品名称
+                     * 订阅实例的类型，目前支持 cynosdbmysql,mariadb,mongodb,mysql,percona,tdpg,tdsqlpercona(tdsqlmysql)
                      */
                     std::string m_product;
                     bool m_productHasBeenSet;
@@ -596,19 +596,19 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 数据订阅实例绑定的数据库实例状态
+                     * 云数据库状态：running 运行中，isolated 已隔离，offline 已下线。如果不是云上，此值为空
                      */
                     std::string m_instanceStatus;
                     bool m_instanceStatusHasBeenSet;
 
                     /**
-                     * 数据订阅实例的配置状态，unconfigure - 未配置， configuring - 配置中，configured - 已配置
+                     * 数据订阅状态，可能的值为：未启动 notStarted, 校验中 checking, 校验不通过 checkNotPass, 校验通过 checkPass, 启动中 starting, 运行中 running, 异常出错 error
                      */
                     std::string m_subsStatus;
                     bool m_subsStatusHasBeenSet;
 
                     /**
-                     * 上次修改时间
+                     * 上次修改时间，时间格式如：Y-m-d h:m:s
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
@@ -620,13 +620,13 @@ namespace TencentCloud
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 隔离时间
+                     * 隔离时间，时间格式如：Y-m-d h:m:s
                      */
                     std::string m_isolateTime;
                     bool m_isolateTimeHasBeenSet;
 
                     /**
-                     * 到期时间
+                     * 包年包月任务的到期时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
@@ -644,7 +644,7 @@ namespace TencentCloud
                     bool m_consumeStartTimeHasBeenSet;
 
                     /**
-                     * 自动续费标识。0-不自动续费，1-自动续费
+                     * 自动续费标识。只有当 PayType=0，该值才有意义。枚举值：0-不自动续费，1-自动续费
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_autoRenewFlag;
@@ -663,7 +663,7 @@ namespace TencentCloud
                     bool m_payTypeHasBeenSet;
 
                     /**
-                     * 数据订阅实例的Vip
+                     * 旧版订阅通道的vip
                      */
                     std::string m_vip;
                     bool m_vipHasBeenSet;
@@ -687,7 +687,7 @@ namespace TencentCloud
                     bool m_uniqSubnetIdHasBeenSet;
 
                     /**
-                     * 数据订阅实例的状态，creating - 创建中，normal - 正常运行，isolating - 隔离中，isolated - 已隔离，offlining - 下线中，offline - 已下线
+                     * 数据订阅生命周期状态，可能的值为：正常 normal, 隔离中 isolating, 已隔离 isolated, 下线中 offlining, 按量转包年包月中 post2PrePayIng
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

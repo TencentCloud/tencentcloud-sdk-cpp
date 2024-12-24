@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/essbasic/v20210526/model/ArchiveDynamicFlowRequest.h>
+#include <tencentcloud/essbasic/v20210526/model/ArchiveDynamicFlowResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelBatchCancelFlowsRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelBatchCancelFlowsResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCancelFlowRequest.h>
@@ -41,6 +43,8 @@
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateBoundFlowsResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateConvertTaskApiRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateConvertTaskApiResponse.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelCreateDynamicFlowApproverRequest.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelCreateDynamicFlowApproverResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateEmbedWebUrlRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateEmbedWebUrlResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateFlowApproversRequest.h>
@@ -203,6 +207,9 @@ namespace TencentCloud
                 EssbasicClient(const Credential &credential, const std::string &region);
                 EssbasicClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::ArchiveDynamicFlowResponse> ArchiveDynamicFlowOutcome;
+                typedef std::future<ArchiveDynamicFlowOutcome> ArchiveDynamicFlowOutcomeCallable;
+                typedef std::function<void(const EssbasicClient*, const Model::ArchiveDynamicFlowRequest&, ArchiveDynamicFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ArchiveDynamicFlowAsyncHandler;
                 typedef Outcome<Core::Error, Model::ChannelBatchCancelFlowsResponse> ChannelBatchCancelFlowsOutcome;
                 typedef std::future<ChannelBatchCancelFlowsOutcome> ChannelBatchCancelFlowsOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::ChannelBatchCancelFlowsRequest&, ChannelBatchCancelFlowsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelBatchCancelFlowsAsyncHandler;
@@ -230,6 +237,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ChannelCreateConvertTaskApiResponse> ChannelCreateConvertTaskApiOutcome;
                 typedef std::future<ChannelCreateConvertTaskApiOutcome> ChannelCreateConvertTaskApiOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::ChannelCreateConvertTaskApiRequest&, ChannelCreateConvertTaskApiOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelCreateConvertTaskApiAsyncHandler;
+                typedef Outcome<Core::Error, Model::ChannelCreateDynamicFlowApproverResponse> ChannelCreateDynamicFlowApproverOutcome;
+                typedef std::future<ChannelCreateDynamicFlowApproverOutcome> ChannelCreateDynamicFlowApproverOutcomeCallable;
+                typedef std::function<void(const EssbasicClient*, const Model::ChannelCreateDynamicFlowApproverRequest&, ChannelCreateDynamicFlowApproverOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelCreateDynamicFlowApproverAsyncHandler;
                 typedef Outcome<Core::Error, Model::ChannelCreateEmbedWebUrlResponse> ChannelCreateEmbedWebUrlOutcome;
                 typedef std::future<ChannelCreateEmbedWebUrlOutcome> ChannelCreateEmbedWebUrlOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::ChannelCreateEmbedWebUrlRequest&, ChannelCreateEmbedWebUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelCreateEmbedWebUrlAsyncHandler;
@@ -456,6 +466,22 @@ namespace TencentCloud
 
 
                 /**
+                 *该接口用于结束动态签署方2.0的合同流程。
+
+
+**功能开通**
+- 动态签署方2.0功能的使用需要先<font color="red">联系产品经理开通模块化计费功能</font>，然后到控制台中打开此功能。详细的使用说明请参考<a href="https://qian.tencent.com/developers/company/dynamic_signer_v2" target="_blank">动态签署方2.0</a>文档。
+
+**使用条件**
+- 此接口只能在<font color="red">合同处于非终态且<b>所有的签署方都已经完成签署</b></font>。一旦合同进入终态（例如：过期、拒签、撤销或者调用过此接口成功过），将无法通过此接口结束合同流程。
+                 * @param req ArchiveDynamicFlowRequest
+                 * @return ArchiveDynamicFlowOutcome
+                 */
+                ArchiveDynamicFlowOutcome ArchiveDynamicFlow(const Model::ArchiveDynamicFlowRequest &request);
+                void ArchiveDynamicFlowAsync(const Model::ArchiveDynamicFlowRequest& request, const ArchiveDynamicFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ArchiveDynamicFlowOutcomeCallable ArchiveDynamicFlowCallable(const Model::ArchiveDynamicFlowRequest& request);
+
+                /**
                  *通过合同编号批量撤销合同，单次最多支持撤销100份合同。
 
 适用场景：如果某个合同当前**至少还有一方没有签署**，则可通过该接口取消该合同流程。常用于合同发错、内容填错，需要及时撤销的场景。
@@ -618,6 +644,22 @@ namespace TencentCloud
                 ChannelCreateConvertTaskApiOutcome ChannelCreateConvertTaskApi(const Model::ChannelCreateConvertTaskApiRequest &request);
                 void ChannelCreateConvertTaskApiAsync(const Model::ChannelCreateConvertTaskApiRequest& request, const ChannelCreateConvertTaskApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ChannelCreateConvertTaskApiOutcomeCallable ChannelCreateConvertTaskApiCallable(const Model::ChannelCreateConvertTaskApiRequest& request);
+
+                /**
+                 *接口（ChannelCreateDynamicFlowApprover）用来补充<a href="https://qian.tencent.com/developers/partnerApis/startFlows/ChannelCreateFlowByFiles" target="_blank">用PDF文件创建签署流程</a>发起的动态合同的签署人信息
+**注**: 
+<ul>
+<li>此接口需要保证：渠道企业已开启：模块化计费能力，</li>
+<li>此接口需要保证：渠道应用已开启：动态签署人2.0能力</li>
+<li>此接口需要保证：合同发起时指定开启了动态合同</li>
+<li>此接口补充的动态签署人传参规则，请参考接口：<a href="https://qian.tencent.com/developers/partnerApis/startFlows/ChannelCreateFlowByFiles" target="_blank">用PDF文件创建签署流程</a>的签署人传参规则</li>
+</ul>
+                 * @param req ChannelCreateDynamicFlowApproverRequest
+                 * @return ChannelCreateDynamicFlowApproverOutcome
+                 */
+                ChannelCreateDynamicFlowApproverOutcome ChannelCreateDynamicFlowApprover(const Model::ChannelCreateDynamicFlowApproverRequest &request);
+                void ChannelCreateDynamicFlowApproverAsync(const Model::ChannelCreateDynamicFlowApproverRequest& request, const ChannelCreateDynamicFlowApproverAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ChannelCreateDynamicFlowApproverOutcomeCallable ChannelCreateDynamicFlowApproverCallable(const Model::ChannelCreateDynamicFlowApproverRequest& request);
 
                 /**
                  *本接口（ChannelCreateEmbedWebUrl）用于创建可嵌入web页面的URL（此web页面可以通过iframe方式嵌入到贵方系统的网页中），支持以下类型的Web链接创建：

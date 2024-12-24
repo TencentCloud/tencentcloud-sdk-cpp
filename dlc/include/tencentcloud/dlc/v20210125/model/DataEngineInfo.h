@@ -1349,6 +1349,131 @@ namespace TencentCloud
                      */
                     bool IsPoolModeHasBeenSet() const;
 
+                    /**
+                     * 获取是否支持AI，false: 不支持；true：支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsSupportAI 是否支持AI，false: 不支持；true：支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetIsSupportAI() const;
+
+                    /**
+                     * 设置是否支持AI，false: 不支持；true：支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isSupportAI 是否支持AI，false: 不支持；true：支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsSupportAI(const bool& _isSupportAI);
+
+                    /**
+                     * 判断参数 IsSupportAI 是否已赋值
+                     * @return IsSupportAI 是否已赋值
+                     * 
+                     */
+                    bool IsSupportAIHasBeenSet() const;
+
+                    /**
+                     * 获取网关id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GatewayId 网关id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetGatewayId() const;
+
+                    /**
+                     * 设置网关id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _gatewayId 网关id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetGatewayId(const std::string& _gatewayId);
+
+                    /**
+                     * 判断参数 GatewayId 是否已赋值
+                     * @return GatewayId 是否已赋值
+                     * 
+                     */
+                    bool GatewayIdHasBeenSet() const;
+
+                    /**
+                     * 获取网关状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GatewayState 网关状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetGatewayState() const;
+
+                    /**
+                     * 设置网关状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _gatewayState 网关状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetGatewayState(const int64_t& _gatewayState);
+
+                    /**
+                     * 判断参数 GatewayState 是否已赋值
+                     * @return GatewayState 是否已赋值
+                     * 
+                     */
+                    bool GatewayStateHasBeenSet() const;
+
+                    /**
+                     * 获取是否能执行AI任务
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsAIGateway 是否能执行AI任务
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetIsAIGateway() const;
+
+                    /**
+                     * 设置是否能执行AI任务
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isAIGateway 是否能执行AI任务
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsAIGateway(const bool& _isAIGateway);
+
+                    /**
+                     * 判断参数 IsAIGateway 是否已赋值
+                     * @return IsAIGateway 是否已赋值
+                     * 
+                     */
+                    bool IsAIGatewayHasBeenSet() const;
+
+                    /**
+                     * 获取1:AI引擎，0:非AI引擎
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsAIEngine 1:AI引擎，0:非AI引擎
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetIsAIEngine() const;
+
+                    /**
+                     * 设置1:AI引擎，0:非AI引擎
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isAIEngine 1:AI引擎，0:非AI引擎
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsAIEngine(const int64_t& _isAIEngine);
+
+                    /**
+                     * 判断参数 IsAIEngine 是否已赋值
+                     * @return IsAIEngine 是否已赋值
+                     * 
+                     */
+                    bool IsAIEngineHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1715,6 +1840,41 @@ namespace TencentCloud
                      */
                     std::string m_isPoolMode;
                     bool m_isPoolModeHasBeenSet;
+
+                    /**
+                     * 是否支持AI，false: 不支持；true：支持
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isSupportAI;
+                    bool m_isSupportAIHasBeenSet;
+
+                    /**
+                     * 网关id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_gatewayId;
+                    bool m_gatewayIdHasBeenSet;
+
+                    /**
+                     * 网关状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_gatewayState;
+                    bool m_gatewayStateHasBeenSet;
+
+                    /**
+                     * 是否能执行AI任务
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isAIGateway;
+                    bool m_isAIGatewayHasBeenSet;
+
+                    /**
+                     * 1:AI引擎，0:非AI引擎
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_isAIEngine;
+                    bool m_isAIEngineHasBeenSet;
 
                 };
             }

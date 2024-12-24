@@ -401,15 +401,15 @@ namespace TencentCloud
                     bool FilterInstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取按实例状态筛选
-                     * @return Status 按实例状态筛选
+                     * 获取按实例状态筛选。状态值 -2：已删除； -1：已隔离；0：创建中；1：流程处理中；2：运行中
+                     * @return Status 按实例状态筛选。状态值 -2：已删除； -1：已隔离；0：创建中；1：流程处理中；2：运行中
                      * 
                      */
                     std::vector<int64_t> GetStatus() const;
 
                     /**
-                     * 设置按实例状态筛选
-                     * @param _status 按实例状态筛选
+                     * 设置按实例状态筛选。状态值 -2：已删除； -1：已隔离；0：创建中；1：流程处理中；2：运行中
+                     * @param _status 按实例状态筛选。状态值 -2：已删除； -1：已隔离；0：创建中；1：流程处理中；2：运行中
                      * 
                      */
                     void SetStatus(const std::vector<int64_t>& _status);
@@ -422,15 +422,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取排除实例状态
-                     * @return ExcludeStatus 排除实例状态
+                     * 获取排除实例状态。状态值 -2：已删除； -1：已隔离；0：创建中；1：流程处理中；2：运行中
+                     * @return ExcludeStatus 排除实例状态。状态值 -2：已删除； -1：已隔离；0：创建中；1：流程处理中；2：运行中
                      * 
                      */
                     std::vector<int64_t> GetExcludeStatus() const;
 
                     /**
-                     * 设置排除实例状态
-                     * @param _excludeStatus 排除实例状态
+                     * 设置排除实例状态。状态值 -2：已删除； -1：已隔离；0：创建中；1：流程处理中；2：运行中
+                     * @param _excludeStatus 排除实例状态。状态值 -2：已删除； -1：已隔离；0：创建中；1：流程处理中；2：运行中
                      * 
                      */
                     void SetExcludeStatus(const std::vector<int64_t>& _excludeStatus);
@@ -547,13 +547,13 @@ namespace TencentCloud
                     bool m_filterInstanceTypeHasBeenSet;
 
                     /**
-                     * 按实例状态筛选
+                     * 按实例状态筛选。状态值 -2：已删除； -1：已隔离；0：创建中；1：流程处理中；2：运行中
                      */
                     std::vector<int64_t> m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 排除实例状态
+                     * 排除实例状态。状态值 -2：已删除； -1：已隔离；0：创建中；1：流程处理中；2：运行中
                      */
                     std::vector<int64_t> m_excludeStatus;
                     bool m_excludeStatusHasBeenSet;

@@ -131,18 +131,26 @@ namespace TencentCloud
 
                     /**
                      * 获取搜索条件，本字段用于指定模板Id进行查询。
-Key：template-id Values：需要查询的模板Id列表
+- Key：template-id Values：需要查询的模板Id列表
+- Key：template-name Values：需要查询的模板名称列表
+
                      * @return Filters 搜索条件，本字段用于指定模板Id进行查询。
-Key：template-id Values：需要查询的模板Id列表
+- Key：template-id Values：需要查询的模板Id列表
+- Key：template-name Values：需要查询的模板名称列表
+
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置搜索条件，本字段用于指定模板Id进行查询。
-Key：template-id Values：需要查询的模板Id列表
+- Key：template-id Values：需要查询的模板Id列表
+- Key：template-name Values：需要查询的模板名称列表
+
                      * @param _filters 搜索条件，本字段用于指定模板Id进行查询。
-Key：template-id Values：需要查询的模板Id列表
+- Key：template-id Values：需要查询的模板Id列表
+- Key：template-name Values：需要查询的模板名称列表
+
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -360,7 +368,9 @@ Key：template-id Values：需要查询的模板Id列表
 
                     /**
                      * 搜索条件，本字段用于指定模板Id进行查询。
-Key：template-id Values：需要查询的模板Id列表
+- Key：template-id Values：需要查询的模板Id列表
+- Key：template-name Values：需要查询的模板名称列表
+
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

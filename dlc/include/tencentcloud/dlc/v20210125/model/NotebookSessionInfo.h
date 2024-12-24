@@ -523,6 +523,156 @@ namespace TencentCloud
                      */
                     bool ExecutorMaxNumbersHasBeenSet() const;
 
+                    /**
+                     * 获取session类型，group：资源组下session independent：独立资源session， 不依赖资源组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SessionType session类型，group：资源组下session independent：独立资源session， 不依赖资源组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSessionType() const;
+
+                    /**
+                     * 设置session类型，group：资源组下session independent：独立资源session， 不依赖资源组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _sessionType session类型，group：资源组下session independent：独立资源session， 不依赖资源组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSessionType(const std::string& _sessionType);
+
+                    /**
+                     * 判断参数 SessionType 是否已赋值
+                     * @return SessionType 是否已赋值
+                     * 
+                     */
+                    bool SessionTypeHasBeenSet() const;
+
+                    /**
+                     * 获取引擎id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DataEngineId 引擎id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDataEngineId() const;
+
+                    /**
+                     * 设置引擎id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dataEngineId 引擎id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDataEngineId(const std::string& _dataEngineId);
+
+                    /**
+                     * 判断参数 DataEngineId 是否已赋值
+                     * @return DataEngineId 是否已赋值
+                     * 
+                     */
+                    bool DataEngineIdHasBeenSet() const;
+
+                    /**
+                     * 获取资源组id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResourceGroupId 资源组id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetResourceGroupId() const;
+
+                    /**
+                     * 设置资源组id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _resourceGroupId 资源组id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetResourceGroupId(const std::string& _resourceGroupId);
+
+                    /**
+                     * 判断参数 ResourceGroupId 是否已赋值
+                     * @return ResourceGroupId 是否已赋值
+                     * 
+                     */
+                    bool ResourceGroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取资源组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResourceGroupName 资源组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetResourceGroupName() const;
+
+                    /**
+                     * 设置资源组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _resourceGroupName 资源组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetResourceGroupName(const std::string& _resourceGroupName);
+
+                    /**
+                     * 判断参数 ResourceGroupName 是否已赋值
+                     * @return ResourceGroupName 是否已赋值
+                     * 
+                     */
+                    bool ResourceGroupNameHasBeenSet() const;
+
+                    /**
+                     * 获取session，pod大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PodSize session，pod大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetPodSize() const;
+
+                    /**
+                     * 设置session，pod大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _podSize session，pod大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPodSize(const int64_t& _podSize);
+
+                    /**
+                     * 判断参数 PodSize 是否已赋值
+                     * @return PodSize 是否已赋值
+                     * 
+                     */
+                    bool PodSizeHasBeenSet() const;
+
+                    /**
+                     * 获取pod数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PodNumbers pod数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetPodNumbers() const;
+
+                    /**
+                     * 设置pod数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _podNumbers pod数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPodNumbers(const int64_t& _podNumbers);
+
+                    /**
+                     * 判断参数 PodNumbers 是否已赋值
+                     * @return PodNumbers 是否已赋值
+                     * 
+                     */
+                    bool PodNumbersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -658,6 +808,48 @@ namespace TencentCloud
                      */
                     uint64_t m_executorMaxNumbers;
                     bool m_executorMaxNumbersHasBeenSet;
+
+                    /**
+                     * session类型，group：资源组下session independent：独立资源session， 不依赖资源组
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sessionType;
+                    bool m_sessionTypeHasBeenSet;
+
+                    /**
+                     * 引擎id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dataEngineId;
+                    bool m_dataEngineIdHasBeenSet;
+
+                    /**
+                     * 资源组id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_resourceGroupId;
+                    bool m_resourceGroupIdHasBeenSet;
+
+                    /**
+                     * 资源组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_resourceGroupName;
+                    bool m_resourceGroupNameHasBeenSet;
+
+                    /**
+                     * session，pod大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_podSize;
+                    bool m_podSizeHasBeenSet;
+
+                    /**
+                     * pod数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_podNumbers;
+                    bool m_podNumbersHasBeenSet;
 
                 };
             }

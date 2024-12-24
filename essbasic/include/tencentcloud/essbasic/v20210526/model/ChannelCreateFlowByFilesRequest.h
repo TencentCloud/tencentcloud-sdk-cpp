@@ -753,6 +753,39 @@ MobileCheck：手机号验证，用户手机号和参与方手机号（ApproverM
                      */
                     bool PreviewTypeHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启动态合同（动态签署人2.0）
+<ul><li> **false** :(默认) 不开启动态合同（动态签署人2.0）</li>
+<li> **true** :开启动态合同（动态签署人2.0）,发起后可继续追加合同签署人</li></ul>
+
+                     * @return OpenDynamicFlow 是否开启动态合同（动态签署人2.0）
+<ul><li> **false** :(默认) 不开启动态合同（动态签署人2.0）</li>
+<li> **true** :开启动态合同（动态签署人2.0）,发起后可继续追加合同签署人</li></ul>
+
+                     * 
+                     */
+                    bool GetOpenDynamicFlow() const;
+
+                    /**
+                     * 设置是否开启动态合同（动态签署人2.0）
+<ul><li> **false** :(默认) 不开启动态合同（动态签署人2.0）</li>
+<li> **true** :开启动态合同（动态签署人2.0）,发起后可继续追加合同签署人</li></ul>
+
+                     * @param _openDynamicFlow 是否开启动态合同（动态签署人2.0）
+<ul><li> **false** :(默认) 不开启动态合同（动态签署人2.0）</li>
+<li> **true** :开启动态合同（动态签署人2.0）,发起后可继续追加合同签署人</li></ul>
+
+                     * 
+                     */
+                    void SetOpenDynamicFlow(const bool& _openDynamicFlow);
+
+                    /**
+                     * 判断参数 OpenDynamicFlow 是否已赋值
+                     * @return OpenDynamicFlow 是否已赋值
+                     * 
+                     */
+                    bool OpenDynamicFlowHasBeenSet() const;
+
                 private:
 
                     /**
@@ -947,6 +980,15 @@ MobileCheck：手机号验证，用户手机号和参与方手机号（ApproverM
                      */
                     int64_t m_previewType;
                     bool m_previewTypeHasBeenSet;
+
+                    /**
+                     * 是否开启动态合同（动态签署人2.0）
+<ul><li> **false** :(默认) 不开启动态合同（动态签署人2.0）</li>
+<li> **true** :开启动态合同（动态签署人2.0）,发起后可继续追加合同签署人</li></ul>
+
+                     */
+                    bool m_openDynamicFlow;
+                    bool m_openDynamicFlowHasBeenSet;
 
                 };
             }

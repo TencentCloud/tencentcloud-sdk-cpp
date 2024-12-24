@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取过滤方式（=, !=, in）
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 过滤方式（=, !=, in）
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置过滤方式（=, !=, in）
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 过滤方式（=, !=, in）
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -69,14 +73,18 @@ namespace TencentCloud
 
                     /**
                      * 获取过滤维度名
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Key 过滤维度名
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置过滤维度名
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _key 过滤维度名
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKey(const std::string& _key);
@@ -90,14 +98,18 @@ namespace TencentCloud
 
                     /**
                      * 获取过滤值，in过滤方式用逗号分割多个值
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 过滤值，in过滤方式用逗号分割多个值
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置过滤值，in过滤方式用逗号分割多个值
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _value 过滤值，in过滤方式用逗号分割多个值
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -113,18 +125,21 @@ namespace TencentCloud
 
                     /**
                      * 过滤方式（=, !=, in）
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 过滤维度名
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
 
                     /**
                      * 过滤值，in过滤方式用逗号分割多个值
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;

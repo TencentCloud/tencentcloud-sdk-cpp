@@ -181,19 +181,23 @@ namespace TencentCloud
                     bool EnableBodyJoinsHasBeenSet() const;
 
                     /**
-                     * 获取最终视频是否保留原图的背景，默认不保留。
-
-                     * @return EnableSegment 最终视频是否保留原图的背景，默认不保留。
-
+                     * 获取是否对结果视频背景进行分割，默认值为false。
+true：分割结果视频，结果视频（ResultVideoUrl）将为去除背景的绿幕视频，并返回掩码视频（MaskVideoUrl）；
+false：不分割结果视频，结果视频（ResultVideoUrl）为带背景的视频，掩码视频（MaskVideoUrl）为空字符串。
+                     * @return EnableSegment 是否对结果视频背景进行分割，默认值为false。
+true：分割结果视频，结果视频（ResultVideoUrl）将为去除背景的绿幕视频，并返回掩码视频（MaskVideoUrl）；
+false：不分割结果视频，结果视频（ResultVideoUrl）为带背景的视频，掩码视频（MaskVideoUrl）为空字符串。
                      * 
                      */
                     bool GetEnableSegment() const;
 
                     /**
-                     * 设置最终视频是否保留原图的背景，默认不保留。
-
-                     * @param _enableSegment 最终视频是否保留原图的背景，默认不保留。
-
+                     * 设置是否对结果视频背景进行分割，默认值为false。
+true：分割结果视频，结果视频（ResultVideoUrl）将为去除背景的绿幕视频，并返回掩码视频（MaskVideoUrl）；
+false：不分割结果视频，结果视频（ResultVideoUrl）为带背景的视频，掩码视频（MaskVideoUrl）为空字符串。
+                     * @param _enableSegment 是否对结果视频背景进行分割，默认值为false。
+true：分割结果视频，结果视频（ResultVideoUrl）将为去除背景的绿幕视频，并返回掩码视频（MaskVideoUrl）；
+false：不分割结果视频，结果视频（ResultVideoUrl）为带背景的视频，掩码视频（MaskVideoUrl）为空字符串。
                      * 
                      */
                     void SetEnableSegment(const bool& _enableSegment);
@@ -308,8 +312,9 @@ namespace TencentCloud
                     bool m_enableBodyJoinsHasBeenSet;
 
                     /**
-                     * 最终视频是否保留原图的背景，默认不保留。
-
+                     * 是否对结果视频背景进行分割，默认值为false。
+true：分割结果视频，结果视频（ResultVideoUrl）将为去除背景的绿幕视频，并返回掩码视频（MaskVideoUrl）；
+false：不分割结果视频，结果视频（ResultVideoUrl）为带背景的视频，掩码视频（MaskVideoUrl）为空字符串。
                      */
                     bool m_enableSegment;
                     bool m_enableSegmentHasBeenSet;

@@ -320,6 +320,27 @@ namespace TencentCloud
                      */
                     bool VolumeIdsHasBeenSet() const;
 
+                    /**
+                     * 获取工作流入口文件，不填使用默认入口文件。
+                     * @return Entrypoint 工作流入口文件，不填使用默认入口文件。
+                     * 
+                     */
+                    std::string GetEntrypoint() const;
+
+                    /**
+                     * 设置工作流入口文件，不填使用默认入口文件。
+                     * @param _entrypoint 工作流入口文件，不填使用默认入口文件。
+                     * 
+                     */
+                    void SetEntrypoint(const std::string& _entrypoint);
+
+                    /**
+                     * 判断参数 Entrypoint 是否已赋值
+                     * @return Entrypoint 是否已赋值
+                     * 
+                     */
+                    bool EntrypointHasBeenSet() const;
+
                 private:
 
                     /**
@@ -399,6 +420,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_volumeIds;
                     bool m_volumeIdsHasBeenSet;
+
+                    /**
+                     * 工作流入口文件，不填使用默认入口文件。
+                     */
+                    std::string m_entrypoint;
+                    bool m_entrypointHasBeenSet;
 
                 };
             }

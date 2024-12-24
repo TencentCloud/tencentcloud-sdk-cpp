@@ -25,6 +25,7 @@ using namespace std;
 ReplaceBackgroundRequest::ReplaceBackgroundRequest() :
     m_productUrlHasBeenSet(false),
     m_promptHasBeenSet(false),
+    m_negativePromptHasBeenSet(false),
     m_productHasBeenSet(false),
     m_maskUrlHasBeenSet(false),
     m_resolutionHasBeenSet(false),
@@ -55,6 +56,14 @@ string ReplaceBackgroundRequest::ToJsonString() const
         string key = "Prompt";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_prompt.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_negativePromptHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NegativePrompt";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_negativePrompt.c_str(), allocator).Move(), allocator);
     }
 
     if (m_productHasBeenSet)
@@ -144,6 +153,22 @@ void ReplaceBackgroundRequest::SetPrompt(const string& _prompt)
 bool ReplaceBackgroundRequest::PromptHasBeenSet() const
 {
     return m_promptHasBeenSet;
+}
+
+string ReplaceBackgroundRequest::GetNegativePrompt() const
+{
+    return m_negativePrompt;
+}
+
+void ReplaceBackgroundRequest::SetNegativePrompt(const string& _negativePrompt)
+{
+    m_negativePrompt = _negativePrompt;
+    m_negativePromptHasBeenSet = true;
+}
+
+bool ReplaceBackgroundRequest::NegativePromptHasBeenSet() const
+{
+    return m_negativePromptHasBeenSet;
 }
 
 string ReplaceBackgroundRequest::GetProduct() const
