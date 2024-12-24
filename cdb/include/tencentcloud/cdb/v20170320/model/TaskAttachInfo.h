@@ -49,10 +49,8 @@ namespace TencentCloud
                     /**
                      * 获取升级任务：
 ”FastUpgradeStatus“：表示升级类型。1-原地升级；0-普通升级。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AttachKey 升级任务：
 ”FastUpgradeStatus“：表示升级类型。1-原地升级；0-普通升级。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAttachKey() const;
@@ -60,10 +58,8 @@ namespace TencentCloud
                     /**
                      * 设置升级任务：
 ”FastUpgradeStatus“：表示升级类型。1-原地升级；0-普通升级。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _attachKey 升级任务：
 ”FastUpgradeStatus“：表示升级类型。1-原地升级；0-普通升级。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAttachKey(const std::string& _attachKey);
@@ -78,10 +74,8 @@ namespace TencentCloud
                     /**
                      * 获取升级任务：
 ”FastUpgradeStatus“：表示升级类型。1-原地升级；0-普通升级。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AttachValue 升级任务：
 ”FastUpgradeStatus“：表示升级类型。1-原地升级；0-普通升级。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAttachValue() const;
@@ -89,10 +83,8 @@ namespace TencentCloud
                     /**
                      * 设置升级任务：
 ”FastUpgradeStatus“：表示升级类型。1-原地升级；0-普通升级。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _attachValue 升级任务：
 ”FastUpgradeStatus“：表示升级类型。1-原地升级；0-普通升级。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAttachValue(const std::string& _attachValue);
@@ -109,7 +101,6 @@ namespace TencentCloud
                     /**
                      * 升级任务：
 ”FastUpgradeStatus“：表示升级类型。1-原地升级；0-普通升级。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_attachKey;
                     bool m_attachKeyHasBeenSet;
@@ -117,7 +108,6 @@ namespace TencentCloud
                     /**
                      * 升级任务：
 ”FastUpgradeStatus“：表示升级类型。1-原地升级；0-普通升级。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_attachValue;
                     bool m_attachValueHasBeenSet;

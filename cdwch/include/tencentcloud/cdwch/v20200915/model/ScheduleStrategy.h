@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取备份桶列表
+                     * 获取备份桶名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CosBucketName 备份桶列表
+                     * @return CosBucketName 备份桶名称
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCosBucketName() const;
 
                     /**
-                     * 设置备份桶列表
+                     * 设置备份桶名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cosBucketName 备份桶列表
+                     * @param _cosBucketName 备份桶名称
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -183,7 +183,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 备份桶列表
+                     * 备份桶名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cosBucketName;

@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Vpc所属地区: ap-guangzhou, ap-shanghai
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region Vpc所属地区: ap-guangzhou, ap-shanghai
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置Vpc所属地区: ap-guangzhou, ap-shanghai
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _region Vpc所属地区: ap-guangzhou, ap-shanghai
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -94,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Vpc所属账号: 123456789
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uin Vpc所属账号: 123456789
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
                      * 设置Vpc所属账号: 123456789
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uin Vpc所属账号: 123456789
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -119,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取vpc资源名称：testname
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcName vpc资源名称：testname
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcName() const;
 
                     /**
                      * 设置vpc资源名称：testname
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcName vpc资源名称：testname
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcName(const std::string& _vpcName);
@@ -152,21 +140,18 @@ namespace TencentCloud
 
                     /**
                      * Vpc所属地区: ap-guangzhou, ap-shanghai
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
                      * Vpc所属账号: 123456789
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
                      * vpc资源名称：testname
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcName;
                     bool m_vpcNameHasBeenSet;

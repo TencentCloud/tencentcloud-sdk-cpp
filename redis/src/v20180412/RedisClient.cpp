@@ -2663,6 +2663,49 @@ RedisClient::DescribeSSLStatusOutcomeCallable RedisClient::DescribeSSLStatusCall
     return task->get_future();
 }
 
+RedisClient::DescribeSecondLevelBackupInfoOutcome RedisClient::DescribeSecondLevelBackupInfo(const DescribeSecondLevelBackupInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSecondLevelBackupInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSecondLevelBackupInfoResponse rsp = DescribeSecondLevelBackupInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSecondLevelBackupInfoOutcome(rsp);
+        else
+            return DescribeSecondLevelBackupInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSecondLevelBackupInfoOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::DescribeSecondLevelBackupInfoAsync(const DescribeSecondLevelBackupInfoRequest& request, const DescribeSecondLevelBackupInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSecondLevelBackupInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RedisClient::DescribeSecondLevelBackupInfoOutcomeCallable RedisClient::DescribeSecondLevelBackupInfoCallable(const DescribeSecondLevelBackupInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSecondLevelBackupInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSecondLevelBackupInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 RedisClient::DescribeSlowLogOutcome RedisClient::DescribeSlowLog(const DescribeSlowLogRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSlowLog");
@@ -3602,6 +3645,49 @@ RedisClient::ModifyInstanceAvailabilityZonesOutcomeCallable RedisClient::ModifyI
         [this, request]()
         {
             return this->ModifyInstanceAvailabilityZones(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+RedisClient::ModifyInstanceBackupModeOutcome RedisClient::ModifyInstanceBackupMode(const ModifyInstanceBackupModeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInstanceBackupMode");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInstanceBackupModeResponse rsp = ModifyInstanceBackupModeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInstanceBackupModeOutcome(rsp);
+        else
+            return ModifyInstanceBackupModeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInstanceBackupModeOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::ModifyInstanceBackupModeAsync(const ModifyInstanceBackupModeRequest& request, const ModifyInstanceBackupModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyInstanceBackupMode(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RedisClient::ModifyInstanceBackupModeOutcomeCallable RedisClient::ModifyInstanceBackupModeCallable(const ModifyInstanceBackupModeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyInstanceBackupModeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyInstanceBackupMode(request);
         }
     );
 

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取低频存储容量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TieringSizeInBytes 低频存储容量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTieringSizeInBytes() const;
 
                     /**
                      * 设置低频存储容量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tieringSizeInBytes 低频存储容量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTieringSizeInBytes(const int64_t& _tieringSizeInBytes);
@@ -96,7 +92,6 @@ namespace TencentCloud
 
                     /**
                      * 低频存储容量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_tieringSizeInBytes;
                     bool m_tieringSizeInBytesHasBeenSet;

@@ -79,6 +79,7 @@ set(trocket_public_header_model
   include/tencentcloud/trocket/v20230308/model/DescribeMQTTUserListResponse.h
   include/tencentcloud/trocket/v20230308/model/ModifyMQTTUserResponse.h
   include/tencentcloud/trocket/v20230308/model/PriceTag.h
+  include/tencentcloud/trocket/v20230308/model/DescribeMessageTraceResponse.h
   include/tencentcloud/trocket/v20230308/model/MQTTUserItem.h
   include/tencentcloud/trocket/v20230308/model/ModifyMQTTInsPublicEndpointRequest.h
   include/tencentcloud/trocket/v20230308/model/ModifyMQTTInstanceCertBindingResponse.h
@@ -86,6 +87,7 @@ set(trocket_public_header_model
   include/tencentcloud/trocket/v20230308/model/DeleteMQTTInstanceResponse.h
   include/tencentcloud/trocket/v20230308/model/DescribeTopicRequest.h
   include/tencentcloud/trocket/v20230308/model/DeleteMQTTInstanceRequest.h
+  include/tencentcloud/trocket/v20230308/model/DescribeMessageTraceRequest.h
   include/tencentcloud/trocket/v20230308/model/CreateTopicResponse.h
   include/tencentcloud/trocket/v20230308/model/DescribeMQTTInstanceListRequest.h
   include/tencentcloud/trocket/v20230308/model/CreateMQTTInstanceResponse.h
@@ -109,6 +111,7 @@ set(trocket_public_header_model
   include/tencentcloud/trocket/v20230308/model/ModifyMQTTTopicResponse.h
   include/tencentcloud/trocket/v20230308/model/DescribeMQTTTopicListRequest.h
   include/tencentcloud/trocket/v20230308/model/MQTTClientSubscription.h
+  include/tencentcloud/trocket/v20230308/model/MessageTraceItem.h
   include/tencentcloud/trocket/v20230308/model/ModifyTopicRequest.h
   include/tencentcloud/trocket/v20230308/model/DescribeInstanceResponse.h
   include/tencentcloud/trocket/v20230308/model/PacketStatistics.h
@@ -209,6 +212,7 @@ set(trocket_src
   src/v20230308/model/DescribeMQTTUserListResponse.cpp
   src/v20230308/model/ModifyMQTTUserResponse.cpp
   src/v20230308/model/PriceTag.cpp
+  src/v20230308/model/DescribeMessageTraceResponse.cpp
   src/v20230308/model/MQTTUserItem.cpp
   src/v20230308/model/ModifyMQTTInsPublicEndpointRequest.cpp
   src/v20230308/model/ModifyMQTTInstanceCertBindingResponse.cpp
@@ -216,6 +220,7 @@ set(trocket_src
   src/v20230308/model/DeleteMQTTInstanceResponse.cpp
   src/v20230308/model/DescribeTopicRequest.cpp
   src/v20230308/model/DeleteMQTTInstanceRequest.cpp
+  src/v20230308/model/DescribeMessageTraceRequest.cpp
   src/v20230308/model/CreateTopicResponse.cpp
   src/v20230308/model/DescribeMQTTInstanceListRequest.cpp
   src/v20230308/model/CreateMQTTInstanceResponse.cpp
@@ -239,6 +244,7 @@ set(trocket_src
   src/v20230308/model/ModifyMQTTTopicResponse.cpp
   src/v20230308/model/DescribeMQTTTopicListRequest.cpp
   src/v20230308/model/MQTTClientSubscription.cpp
+  src/v20230308/model/MessageTraceItem.cpp
   src/v20230308/model/ModifyTopicRequest.cpp
   src/v20230308/model/DescribeInstanceResponse.cpp
   src/v20230308/model/PacketStatistics.cpp

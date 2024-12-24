@@ -91,6 +91,8 @@
 #include <tencentcloud/trocket/v20230308/model/DescribeMQTTTopicListResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeMQTTUserListRequest.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeMQTTUserListResponse.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeMessageTraceRequest.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeMessageTraceResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeProductSKUsRequest.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeProductSKUsResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeRoleListRequest.h>
@@ -237,6 +239,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeMQTTUserListResponse> DescribeMQTTUserListOutcome;
                 typedef std::future<DescribeMQTTUserListOutcome> DescribeMQTTUserListOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::DescribeMQTTUserListRequest&, DescribeMQTTUserListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMQTTUserListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMessageTraceResponse> DescribeMessageTraceOutcome;
+                typedef std::future<DescribeMessageTraceOutcome> DescribeMessageTraceOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::DescribeMessageTraceRequest&, DescribeMessageTraceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMessageTraceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeProductSKUsResponse> DescribeProductSKUsOutcome;
                 typedef std::future<DescribeProductSKUsOutcome> DescribeProductSKUsOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::DescribeProductSKUsRequest&, DescribeProductSKUsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProductSKUsAsyncHandler;
@@ -615,6 +620,15 @@ namespace TencentCloud
                 DescribeMQTTUserListOutcome DescribeMQTTUserList(const Model::DescribeMQTTUserListRequest &request);
                 void DescribeMQTTUserListAsync(const Model::DescribeMQTTUserListRequest& request, const DescribeMQTTUserListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeMQTTUserListOutcomeCallable DescribeMQTTUserListCallable(const Model::DescribeMQTTUserListRequest& request);
+
+                /**
+                 *根据消息 ID 查询消息轨迹。
+                 * @param req DescribeMessageTraceRequest
+                 * @return DescribeMessageTraceOutcome
+                 */
+                DescribeMessageTraceOutcome DescribeMessageTrace(const Model::DescribeMessageTraceRequest &request);
+                void DescribeMessageTraceAsync(const Model::DescribeMessageTraceRequest& request, const DescribeMessageTraceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMessageTraceOutcomeCallable DescribeMessageTraceCallable(const Model::DescribeMessageTraceRequest& request);
 
                 /**
                  *查询产品售卖规格，针对 RocketMQ 5.x 集群。

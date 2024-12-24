@@ -27,7 +27,9 @@ ScaleOutClusterResponse::ScaleOutClusterResponse() :
     m_instanceIdHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
     m_flowIdHasBeenSet(false),
-    m_traceIdHasBeenSet(false)
+    m_traceIdHasBeenSet(false),
+    m_dealNamesHasBeenSet(false),
+    m_billIdHasBeenSet(false)
 {
 }
 
@@ -105,6 +107,29 @@ CoreInternalOutcome ScaleOutClusterResponse::Deserialize(const string &payload)
         m_traceIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DealNames") && !rsp["DealNames"].IsNull())
+    {
+        if (!rsp["DealNames"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DealNames` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["DealNames"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_dealNames.push_back((*itr).GetString());
+        }
+        m_dealNamesHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("BillId") && !rsp["BillId"].IsNull())
+    {
+        if (!rsp["BillId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BillId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_billId = string(rsp["BillId"].GetString());
+        m_billIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -145,6 +170,27 @@ string ScaleOutClusterResponse::ToJsonString() const
         string key = "TraceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_traceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dealNamesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DealNames";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_dealNames.begin(); itr != m_dealNames.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_billIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BillId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_billId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -197,6 +243,26 @@ string ScaleOutClusterResponse::GetTraceId() const
 bool ScaleOutClusterResponse::TraceIdHasBeenSet() const
 {
     return m_traceIdHasBeenSet;
+}
+
+vector<string> ScaleOutClusterResponse::GetDealNames() const
+{
+    return m_dealNames;
+}
+
+bool ScaleOutClusterResponse::DealNamesHasBeenSet() const
+{
+    return m_dealNamesHasBeenSet;
+}
+
+string ScaleOutClusterResponse::GetBillId() const
+{
+    return m_billId;
+}
+
+bool ScaleOutClusterResponse::BillIdHasBeenSet() const
+{
+    return m_billIdHasBeenSet;
 }
 
 

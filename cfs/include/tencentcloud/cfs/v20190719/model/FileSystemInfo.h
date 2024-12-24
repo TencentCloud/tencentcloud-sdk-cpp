@@ -571,18 +571,14 @@ Available:可用
 
                     /**
                      * 获取分层存储详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TieringDetail 分层存储详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TieringDetailInfo GetTieringDetail() const;
 
                     /**
                      * 设置分层存储详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tieringDetail 分层存储详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTieringDetail(const TieringDetailInfo& _tieringDetail);
@@ -596,18 +592,14 @@ Available:可用
 
                     /**
                      * 获取文件系统自动扩容策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoScaleUpRule 文件系统自动扩容策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AutoScaleUpRule GetAutoScaleUpRule() const;
 
                     /**
                      * 设置文件系统自动扩容策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _autoScaleUpRule 文件系统自动扩容策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAutoScaleUpRule(const AutoScaleUpRule& _autoScaleUpRule);
@@ -621,18 +613,14 @@ Available:可用
 
                     /**
                      * 获取文件系统版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Version 文件系统版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置文件系统版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _version 文件系统版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVersion(const std::string& _version);
@@ -795,21 +783,18 @@ Available:可用
 
                     /**
                      * 分层存储详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TieringDetailInfo m_tieringDetail;
                     bool m_tieringDetailHasBeenSet;
 
                     /**
                      * 文件系统自动扩容策略
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AutoScaleUpRule m_autoScaleUpRule;
                     bool m_autoScaleUpRuleHasBeenSet;
 
                     /**
                      * 文件系统版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;

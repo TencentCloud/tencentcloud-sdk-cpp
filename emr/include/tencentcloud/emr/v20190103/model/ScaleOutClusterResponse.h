@@ -105,6 +105,38 @@ namespace TencentCloud
                      */
                     bool TraceIdHasBeenSet() const;
 
+                    /**
+                     * 获取订单号。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DealNames 订单号。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetDealNames() const;
+
+                    /**
+                     * 判断参数 DealNames 是否已赋值
+                     * @return DealNames 是否已赋值
+                     * 
+                     */
+                    bool DealNamesHasBeenSet() const;
+
+                    /**
+                     * 获取大订单号。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BillId 大订单号。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetBillId() const;
+
+                    /**
+                     * 判断参数 BillId 是否已赋值
+                     * @return BillId 是否已赋值
+                     * 
+                     */
+                    bool BillIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -133,6 +165,20 @@ namespace TencentCloud
                      */
                     std::string m_traceId;
                     bool m_traceIdHasBeenSet;
+
+                    /**
+                     * 订单号。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_dealNames;
+                    bool m_dealNamesHasBeenSet;
+
+                    /**
+                     * 大订单号。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_billId;
+                    bool m_billIdHasBeenSet;
 
                 };
             }

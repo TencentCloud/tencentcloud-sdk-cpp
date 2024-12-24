@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/emr/v20190103/model/PriceDetail.h>
 
 
 namespace TencentCloud
@@ -109,6 +110,22 @@ namespace TencentCloud
                      */
                     bool TimeSpanHasBeenSet() const;
 
+                    /**
+                     * 获取价格详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PriceDetail 价格详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<PriceDetail> GetPriceDetail() const;
+
+                    /**
+                     * 判断参数 PriceDetail 是否已赋值
+                     * @return PriceDetail 是否已赋值
+                     * 
+                     */
+                    bool PriceDetailHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +156,13 @@ namespace TencentCloud
                      */
                     int64_t m_timeSpan;
                     bool m_timeSpanHasBeenSet;
+
+                    /**
+                     * 价格详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<PriceDetail> m_priceDetail;
+                    bool m_priceDetailHasBeenSet;
 
                 };
             }

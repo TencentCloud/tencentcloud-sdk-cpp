@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取分页偏移量。
-                     * @return Offset 分页偏移量。
+                     * 获取日志偏移量，最多支持偏移查询65535条日志。可填写范围：0 - 65535。
+                     * @return Offset 日志偏移量，最多支持偏移查询65535条日志。可填写范围：0 - 65535。
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置分页偏移量。
-                     * @param _offset 分页偏移量。
+                     * 设置日志偏移量，最多支持偏移查询65535条日志。可填写范围：0 - 65535。
+                     * @param _offset 日志偏移量，最多支持偏移查询65535条日志。可填写范围：0 - 65535。
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -250,7 +250,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 分页偏移量。
+                     * 日志偏移量，最多支持偏移查询65535条日志。可填写范围：0 - 65535。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;

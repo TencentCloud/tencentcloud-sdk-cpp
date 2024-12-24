@@ -427,6 +427,49 @@ MpsClient::CreateImageSpriteTemplateOutcomeCallable MpsClient::CreateImageSprite
     return task->get_future();
 }
 
+MpsClient::CreateLiveRecordTemplateOutcome MpsClient::CreateLiveRecordTemplate(const CreateLiveRecordTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateLiveRecordTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateLiveRecordTemplateResponse rsp = CreateLiveRecordTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateLiveRecordTemplateOutcome(rsp);
+        else
+            return CreateLiveRecordTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateLiveRecordTemplateOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::CreateLiveRecordTemplateAsync(const CreateLiveRecordTemplateRequest& request, const CreateLiveRecordTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateLiveRecordTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::CreateLiveRecordTemplateOutcomeCallable MpsClient::CreateLiveRecordTemplateCallable(const CreateLiveRecordTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateLiveRecordTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateLiveRecordTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MpsClient::CreatePersonSampleOutcome MpsClient::CreatePersonSample(const CreatePersonSampleRequest &request)
 {
     auto outcome = MakeRequest(request, "CreatePersonSample");
@@ -1330,6 +1373,49 @@ MpsClient::DeleteImageSpriteTemplateOutcomeCallable MpsClient::DeleteImageSprite
     return task->get_future();
 }
 
+MpsClient::DeleteLiveRecordTemplateOutcome MpsClient::DeleteLiveRecordTemplate(const DeleteLiveRecordTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteLiveRecordTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteLiveRecordTemplateResponse rsp = DeleteLiveRecordTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteLiveRecordTemplateOutcome(rsp);
+        else
+            return DeleteLiveRecordTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteLiveRecordTemplateOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DeleteLiveRecordTemplateAsync(const DeleteLiveRecordTemplateRequest& request, const DeleteLiveRecordTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteLiveRecordTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::DeleteLiveRecordTemplateOutcomeCallable MpsClient::DeleteLiveRecordTemplateCallable(const DeleteLiveRecordTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteLiveRecordTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteLiveRecordTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MpsClient::DeletePersonSampleOutcome MpsClient::DeletePersonSample(const DeletePersonSampleRequest &request)
 {
     auto outcome = MakeRequest(request, "DeletePersonSample");
@@ -2097,6 +2183,49 @@ MpsClient::DescribeImageSpriteTemplatesOutcomeCallable MpsClient::DescribeImageS
         [this, request]()
         {
             return this->DescribeImageSpriteTemplates(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::DescribeLiveRecordTemplatesOutcome MpsClient::DescribeLiveRecordTemplates(const DescribeLiveRecordTemplatesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLiveRecordTemplates");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLiveRecordTemplatesResponse rsp = DescribeLiveRecordTemplatesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLiveRecordTemplatesOutcome(rsp);
+        else
+            return DescribeLiveRecordTemplatesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLiveRecordTemplatesOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DescribeLiveRecordTemplatesAsync(const DescribeLiveRecordTemplatesRequest& request, const DescribeLiveRecordTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLiveRecordTemplates(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::DescribeLiveRecordTemplatesOutcomeCallable MpsClient::DescribeLiveRecordTemplatesCallable(const DescribeLiveRecordTemplatesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLiveRecordTemplatesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLiveRecordTemplates(request);
         }
     );
 
@@ -3774,6 +3903,49 @@ MpsClient::ModifyImageSpriteTemplateOutcomeCallable MpsClient::ModifyImageSprite
         [this, request]()
         {
             return this->ModifyImageSpriteTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::ModifyLiveRecordTemplateOutcome MpsClient::ModifyLiveRecordTemplate(const ModifyLiveRecordTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyLiveRecordTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyLiveRecordTemplateResponse rsp = ModifyLiveRecordTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyLiveRecordTemplateOutcome(rsp);
+        else
+            return ModifyLiveRecordTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyLiveRecordTemplateOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::ModifyLiveRecordTemplateAsync(const ModifyLiveRecordTemplateRequest& request, const ModifyLiveRecordTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyLiveRecordTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::ModifyLiveRecordTemplateOutcomeCallable MpsClient::ModifyLiveRecordTemplateCallable(const ModifyLiveRecordTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyLiveRecordTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyLiveRecordTemplate(request);
         }
     );
 

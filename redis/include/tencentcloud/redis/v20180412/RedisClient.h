@@ -145,6 +145,8 @@
 #include <tencentcloud/redis/v20180412/model/DescribeReplicationGroupInstanceResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeSSLStatusRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeSSLStatusResponse.h>
+#include <tencentcloud/redis/v20180412/model/DescribeSecondLevelBackupInfoRequest.h>
+#include <tencentcloud/redis/v20180412/model/DescribeSecondLevelBackupInfoResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeSlowLogRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeSlowLogResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeTaskInfoRequest.h>
@@ -189,6 +191,8 @@
 #include <tencentcloud/redis/v20180412/model/ModifyInstanceAccountResponse.h>
 #include <tencentcloud/redis/v20180412/model/ModifyInstanceAvailabilityZonesRequest.h>
 #include <tencentcloud/redis/v20180412/model/ModifyInstanceAvailabilityZonesResponse.h>
+#include <tencentcloud/redis/v20180412/model/ModifyInstanceBackupModeRequest.h>
+#include <tencentcloud/redis/v20180412/model/ModifyInstanceBackupModeResponse.h>
 #include <tencentcloud/redis/v20180412/model/ModifyInstanceEventRequest.h>
 #include <tencentcloud/redis/v20180412/model/ModifyInstanceEventResponse.h>
 #include <tencentcloud/redis/v20180412/model/ModifyInstanceLogDeliveryRequest.h>
@@ -434,6 +438,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSSLStatusResponse> DescribeSSLStatusOutcome;
                 typedef std::future<DescribeSSLStatusOutcome> DescribeSSLStatusOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeSSLStatusRequest&, DescribeSSLStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSSLStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSecondLevelBackupInfoResponse> DescribeSecondLevelBackupInfoOutcome;
+                typedef std::future<DescribeSecondLevelBackupInfoOutcome> DescribeSecondLevelBackupInfoOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::DescribeSecondLevelBackupInfoRequest&, DescribeSecondLevelBackupInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecondLevelBackupInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSlowLogResponse> DescribeSlowLogOutcome;
                 typedef std::future<DescribeSlowLogOutcome> DescribeSlowLogOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeSlowLogRequest&, DescribeSlowLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSlowLogAsyncHandler;
@@ -500,6 +507,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyInstanceAvailabilityZonesResponse> ModifyInstanceAvailabilityZonesOutcome;
                 typedef std::future<ModifyInstanceAvailabilityZonesOutcome> ModifyInstanceAvailabilityZonesOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::ModifyInstanceAvailabilityZonesRequest&, ModifyInstanceAvailabilityZonesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceAvailabilityZonesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyInstanceBackupModeResponse> ModifyInstanceBackupModeOutcome;
+                typedef std::future<ModifyInstanceBackupModeOutcome> ModifyInstanceBackupModeOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::ModifyInstanceBackupModeRequest&, ModifyInstanceBackupModeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceBackupModeAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyInstanceEventResponse> ModifyInstanceEventOutcome;
                 typedef std::future<ModifyInstanceEventOutcome> ModifyInstanceEventOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::ModifyInstanceEventRequest&, ModifyInstanceEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceEventAsyncHandler;
@@ -1125,6 +1135,15 @@ namespace TencentCloud
                 DescribeSSLStatusOutcomeCallable DescribeSSLStatusCallable(const Model::DescribeSSLStatusRequest& request);
 
                 /**
+                 *查询实例秒级备份信息
+                 * @param req DescribeSecondLevelBackupInfoRequest
+                 * @return DescribeSecondLevelBackupInfoOutcome
+                 */
+                DescribeSecondLevelBackupInfoOutcome DescribeSecondLevelBackupInfo(const Model::DescribeSecondLevelBackupInfoRequest &request);
+                void DescribeSecondLevelBackupInfoAsync(const Model::DescribeSecondLevelBackupInfoRequest& request, const DescribeSecondLevelBackupInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSecondLevelBackupInfoOutcomeCallable DescribeSecondLevelBackupInfoCallable(const Model::DescribeSecondLevelBackupInfoRequest& request);
+
+                /**
                  *本接口（DescribeSlowLog）查询实例慢查询记录。
                  * @param req DescribeSlowLogRequest
                  * @return DescribeSlowLogOutcome
@@ -1323,6 +1342,15 @@ namespace TencentCloud
                 ModifyInstanceAvailabilityZonesOutcome ModifyInstanceAvailabilityZones(const Model::ModifyInstanceAvailabilityZonesRequest &request);
                 void ModifyInstanceAvailabilityZonesAsync(const Model::ModifyInstanceAvailabilityZonesRequest& request, const ModifyInstanceAvailabilityZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyInstanceAvailabilityZonesOutcomeCallable ModifyInstanceAvailabilityZonesCallable(const Model::ModifyInstanceAvailabilityZonesRequest& request);
+
+                /**
+                 *修改实例的备份模式
+                 * @param req ModifyInstanceBackupModeRequest
+                 * @return ModifyInstanceBackupModeOutcome
+                 */
+                ModifyInstanceBackupModeOutcome ModifyInstanceBackupMode(const Model::ModifyInstanceBackupModeRequest &request);
+                void ModifyInstanceBackupModeAsync(const Model::ModifyInstanceBackupModeRequest& request, const ModifyInstanceBackupModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInstanceBackupModeOutcomeCallable ModifyInstanceBackupModeCallable(const Model::ModifyInstanceBackupModeRequest& request);
 
                 /**
                  *本接口（ModifyInstanceEvent）用于修改实例的运维事件的执行计划。

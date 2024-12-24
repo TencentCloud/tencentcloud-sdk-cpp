@@ -968,7 +968,7 @@ namespace TencentCloud
                 CloseAuditServiceOutcomeCallable CloseAuditServiceCallable(const Model::CloseAuditServiceRequest& request);
 
                 /**
-                 *关闭数据库代理
+                 *本接口（CloseCDBProxy）用于关闭数据库代理。
                  * @param req CloseCDBProxyRequest
                  * @return CloseCDBProxyOutcome
                  */
@@ -1140,7 +1140,7 @@ namespace TencentCloud
                 CreateDatabaseOutcomeCallable CreateDatabaseCallable(const Model::CreateDatabaseRequest& request);
 
                 /**
-                 *本接口(CreateDeployGroup)用于创建放置实例的置放群组
+                 *本接口（CreateDeployGroup）用于创建放置实例的置放群组。
                  * @param req CreateDeployGroupRequest
                  * @return CreateDeployGroupOutcome
                  */
@@ -1331,7 +1331,7 @@ namespace TencentCloud
                 DescribeAuditLogFilesOutcomeCallable DescribeAuditLogFilesCallable(const Model::DescribeAuditLogFilesRequest& request);
 
                 /**
-                 *本接口(DescribeAuditLogs)用于查询数据库审计日志。
+                 *本接口（DescribeAuditLogs）用于查询数据库审计日志。
                  * @param req DescribeAuditLogsRequest
                  * @return DescribeAuditLogsOutcome
                  */

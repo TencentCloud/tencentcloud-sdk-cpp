@@ -38,7 +38,8 @@ ApiGroupInfo::ApiGroupInfo() :
     m_namespaceNameKeyHasBeenSet(false),
     m_serviceNameKeyHasBeenSet(false),
     m_namespaceNameKeyPositionHasBeenSet(false),
-    m_serviceNameKeyPositionHasBeenSet(false)
+    m_serviceNameKeyPositionHasBeenSet(false),
+    m_gatewayInstanceIdListHasBeenSet(false)
 {
 }
 
@@ -237,6 +238,19 @@ CoreInternalOutcome ApiGroupInfo::Deserialize(const rapidjson::Value &value)
         m_serviceNameKeyPositionHasBeenSet = true;
     }
 
+    if (value.HasMember("GatewayInstanceIdList") && !value["GatewayInstanceIdList"].IsNull())
+    {
+        if (!value["GatewayInstanceIdList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ApiGroupInfo.GatewayInstanceIdList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["GatewayInstanceIdList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_gatewayInstanceIdList.push_back((*itr).GetString());
+        }
+        m_gatewayInstanceIdListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -393,6 +407,19 @@ void ApiGroupInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "ServiceNameKeyPosition";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_serviceNameKeyPosition.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gatewayInstanceIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GatewayInstanceIdList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_gatewayInstanceIdList.begin(); itr != m_gatewayInstanceIdList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -684,5 +711,21 @@ void ApiGroupInfo::SetServiceNameKeyPosition(const string& _serviceNameKeyPositi
 bool ApiGroupInfo::ServiceNameKeyPositionHasBeenSet() const
 {
     return m_serviceNameKeyPositionHasBeenSet;
+}
+
+vector<string> ApiGroupInfo::GetGatewayInstanceIdList() const
+{
+    return m_gatewayInstanceIdList;
+}
+
+void ApiGroupInfo::SetGatewayInstanceIdList(const vector<string>& _gatewayInstanceIdList)
+{
+    m_gatewayInstanceIdList = _gatewayInstanceIdList;
+    m_gatewayInstanceIdListHasBeenSet = true;
+}
+
+bool ApiGroupInfo::GatewayInstanceIdListHasBeenSet() const
+{
+    return m_gatewayInstanceIdListHasBeenSet;
 }
 

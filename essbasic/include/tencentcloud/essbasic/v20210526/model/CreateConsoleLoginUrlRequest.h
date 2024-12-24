@@ -510,18 +510,18 @@ namespace TencentCloud
 
                     /**
                      * 获取子客经办人身份证
-注意：`如果已同步，这里非空会更新同步的经办人身份证号，暂时只支持居民身份证类型`。
+注意：`如果已同步，这里非空会更新同步的经办人身份证号，暂时只支持中国大陆居民身份证类型`。
                      * @return ProxyOperatorIdCardNumber 子客经办人身份证
-注意：`如果已同步，这里非空会更新同步的经办人身份证号，暂时只支持居民身份证类型`。
+注意：`如果已同步，这里非空会更新同步的经办人身份证号，暂时只支持中国大陆居民身份证类型`。
                      * 
                      */
                     std::string GetProxyOperatorIdCardNumber() const;
 
                     /**
                      * 设置子客经办人身份证
-注意：`如果已同步，这里非空会更新同步的经办人身份证号，暂时只支持居民身份证类型`。
+注意：`如果已同步，这里非空会更新同步的经办人身份证号，暂时只支持中国大陆居民身份证类型`。
                      * @param _proxyOperatorIdCardNumber 子客经办人身份证
-注意：`如果已同步，这里非空会更新同步的经办人身份证号，暂时只支持居民身份证类型`。
+注意：`如果已同步，这里非空会更新同步的经办人身份证号，暂时只支持中国大陆居民身份证类型`。
                      * 
                      */
                     void SetProxyOperatorIdCardNumber(const std::string& _proxyOperatorIdCardNumber);
@@ -765,7 +765,7 @@ namespace TencentCloud
 
                     /**
                      * 子客经办人身份证
-注意：`如果已同步，这里非空会更新同步的经办人身份证号，暂时只支持居民身份证类型`。
+注意：`如果已同步，这里非空会更新同步的经办人身份证号，暂时只支持中国大陆居民身份证类型`。
                      */
                     std::string m_proxyOperatorIdCardNumber;
                     bool m_proxyOperatorIdCardNumberHasBeenSet;

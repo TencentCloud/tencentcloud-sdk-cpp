@@ -65,27 +65,6 @@ namespace TencentCloud
                     bool TimeSpanHasBeenSet() const;
 
                     /**
-                     * 获取待续费节点的资源ID列表。资源ID形如：emr-vm-xxxxxxxx。有效的资源ID可通过登录[控制台](https://console.cloud.tencent.com/emr)查询。
-                     * @return ResourceIds 待续费节点的资源ID列表。资源ID形如：emr-vm-xxxxxxxx。有效的资源ID可通过登录[控制台](https://console.cloud.tencent.com/emr)查询。
-                     * 
-                     */
-                    std::vector<std::string> GetResourceIds() const;
-
-                    /**
-                     * 设置待续费节点的资源ID列表。资源ID形如：emr-vm-xxxxxxxx。有效的资源ID可通过登录[控制台](https://console.cloud.tencent.com/emr)查询。
-                     * @param _resourceIds 待续费节点的资源ID列表。资源ID形如：emr-vm-xxxxxxxx。有效的资源ID可通过登录[控制台](https://console.cloud.tencent.com/emr)查询。
-                     * 
-                     */
-                    void SetResourceIds(const std::vector<std::string>& _resourceIds);
-
-                    /**
-                     * 判断参数 ResourceIds 是否已赋值
-                     * @return ResourceIds 是否已赋值
-                     * 
-                     */
-                    bool ResourceIdsHasBeenSet() const;
-
-                    /**
                      * 获取实例计费模式。此处只支持取值为1，表示包年包月。
                      * @return PayMode 实例计费模式。此处只支持取值为1，表示包年包月。
                      * 
@@ -105,6 +84,27 @@ namespace TencentCloud
                      * 
                      */
                     bool PayModeHasBeenSet() const;
+
+                    /**
+                     * 获取待续费节点的资源ID列表。资源ID形如：emr-vm-xxxxxxxx。有效的资源ID可通过登录[控制台](https://console.cloud.tencent.com/emr)查询。
+                     * @return ResourceIds 待续费节点的资源ID列表。资源ID形如：emr-vm-xxxxxxxx。有效的资源ID可通过登录[控制台](https://console.cloud.tencent.com/emr)查询。
+                     * 
+                     */
+                    std::vector<std::string> GetResourceIds() const;
+
+                    /**
+                     * 设置待续费节点的资源ID列表。资源ID形如：emr-vm-xxxxxxxx。有效的资源ID可通过登录[控制台](https://console.cloud.tencent.com/emr)查询。
+                     * @param _resourceIds 待续费节点的资源ID列表。资源ID形如：emr-vm-xxxxxxxx。有效的资源ID可通过登录[控制台](https://console.cloud.tencent.com/emr)查询。
+                     * 
+                     */
+                    void SetResourceIds(const std::vector<std::string>& _resourceIds);
+
+                    /**
+                     * 判断参数 ResourceIds 是否已赋值
+                     * @return ResourceIds 是否已赋值
+                     * 
+                     */
+                    bool ResourceIdsHasBeenSet() const;
 
                     /**
                      * 获取实例续费的时间单位。取值范围：
@@ -198,6 +198,48 @@ namespace TencentCloud
                      */
                     bool ModifyPayModeHasBeenSet() const;
 
+                    /**
+                     * 获取是否需要每个节点续费价格
+                     * @return NeedDetail 是否需要每个节点续费价格
+                     * 
+                     */
+                    bool GetNeedDetail() const;
+
+                    /**
+                     * 设置是否需要每个节点续费价格
+                     * @param _needDetail 是否需要每个节点续费价格
+                     * 
+                     */
+                    void SetNeedDetail(const bool& _needDetail);
+
+                    /**
+                     * 判断参数 NeedDetail 是否已赋值
+                     * @return NeedDetail 是否已赋值
+                     * 
+                     */
+                    bool NeedDetailHasBeenSet() const;
+
+                    /**
+                     * 获取集群id，如果需要集群所有包年包月节点续费信息，可以填写该参数
+                     * @return InstanceId 集群id，如果需要集群所有包年包月节点续费信息，可以填写该参数
+                     * 
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置集群id，如果需要集群所有包年包月节点续费信息，可以填写该参数
+                     * @param _instanceId 集群id，如果需要集群所有包年包月节点续费信息，可以填写该参数
+                     * 
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -207,16 +249,16 @@ namespace TencentCloud
                     bool m_timeSpanHasBeenSet;
 
                     /**
-                     * 待续费节点的资源ID列表。资源ID形如：emr-vm-xxxxxxxx。有效的资源ID可通过登录[控制台](https://console.cloud.tencent.com/emr)查询。
-                     */
-                    std::vector<std::string> m_resourceIds;
-                    bool m_resourceIdsHasBeenSet;
-
-                    /**
                      * 实例计费模式。此处只支持取值为1，表示包年包月。
                      */
                     int64_t m_payMode;
                     bool m_payModeHasBeenSet;
+
+                    /**
+                     * 待续费节点的资源ID列表。资源ID形如：emr-vm-xxxxxxxx。有效的资源ID可通过登录[控制台](https://console.cloud.tencent.com/emr)查询。
+                     */
+                    std::vector<std::string> m_resourceIds;
+                    bool m_resourceIdsHasBeenSet;
 
                     /**
                      * 实例续费的时间单位。取值范围：
@@ -243,6 +285,18 @@ namespace TencentCloud
                      */
                     int64_t m_modifyPayMode;
                     bool m_modifyPayModeHasBeenSet;
+
+                    /**
+                     * 是否需要每个节点续费价格
+                     */
+                    bool m_needDetail;
+                    bool m_needDetailHasBeenSet;
+
+                    /**
+                     * 集群id，如果需要集群所有包年包月节点续费信息，可以填写该参数
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
 
                 };
             }

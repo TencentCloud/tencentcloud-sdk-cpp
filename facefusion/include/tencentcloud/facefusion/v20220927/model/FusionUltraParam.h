@@ -215,6 +215,43 @@ namespace TencentCloud
                      */
                     bool TeethEnhanceRadioHasBeenSet() const;
 
+                    /**
+                     * 获取妆容迁移开关，默认取值为0。
+将素材模板的妆容迁移到融合结果上。即：如果希望妆容效果与模板图保持一致，可以打开此开关。
+0：妆容迁移关闭
+1：妆容迁移打开
+该参数仅对SwapModelType（模型类型）取值1-5生效
+                     * @return MakeupTransferRadio 妆容迁移开关，默认取值为0。
+将素材模板的妆容迁移到融合结果上。即：如果希望妆容效果与模板图保持一致，可以打开此开关。
+0：妆容迁移关闭
+1：妆容迁移打开
+该参数仅对SwapModelType（模型类型）取值1-5生效
+                     * 
+                     */
+                    double GetMakeupTransferRadio() const;
+
+                    /**
+                     * 设置妆容迁移开关，默认取值为0。
+将素材模板的妆容迁移到融合结果上。即：如果希望妆容效果与模板图保持一致，可以打开此开关。
+0：妆容迁移关闭
+1：妆容迁移打开
+该参数仅对SwapModelType（模型类型）取值1-5生效
+                     * @param _makeupTransferRadio 妆容迁移开关，默认取值为0。
+将素材模板的妆容迁移到融合结果上。即：如果希望妆容效果与模板图保持一致，可以打开此开关。
+0：妆容迁移关闭
+1：妆容迁移打开
+该参数仅对SwapModelType（模型类型）取值1-5生效
+                     * 
+                     */
+                    void SetMakeupTransferRadio(const double& _makeupTransferRadio);
+
+                    /**
+                     * 判断参数 MakeupTransferRadio 是否已赋值
+                     * @return MakeupTransferRadio 是否已赋值
+                     * 
+                     */
+                    bool MakeupTransferRadioHasBeenSet() const;
+
                 private:
 
                     /**
@@ -262,6 +299,16 @@ namespace TencentCloud
                      */
                     double m_teethEnhanceRadio;
                     bool m_teethEnhanceRadioHasBeenSet;
+
+                    /**
+                     * 妆容迁移开关，默认取值为0。
+将素材模板的妆容迁移到融合结果上。即：如果希望妆容效果与模板图保持一致，可以打开此开关。
+0：妆容迁移关闭
+1：妆容迁移打开
+该参数仅对SwapModelType（模型类型）取值1-5生效
+                     */
+                    double m_makeupTransferRadio;
+                    bool m_makeupTransferRadioHasBeenSet;
 
                 };
             }

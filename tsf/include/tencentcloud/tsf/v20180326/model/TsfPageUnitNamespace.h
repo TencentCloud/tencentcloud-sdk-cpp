@@ -37,7 +37,6 @@ namespace TencentCloud
             {
                 /**
                 * 单元化命名空间翻页对象
-
                 */
                 class TsfPageUnitNamespace : public AbstractModel
                 {

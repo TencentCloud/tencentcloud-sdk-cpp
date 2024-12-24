@@ -451,18 +451,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志命中规则模板的基本信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TemplateInfo 日志命中规则模板的基本信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<LogRuleTemplateInfo> GetTemplateInfo() const;
 
                     /**
                      * 设置日志命中规则模板的基本信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _templateInfo 日志命中规则模板的基本信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTemplateInfo(const std::vector<LogRuleTemplateInfo>& _templateInfo);
@@ -473,6 +469,27 @@ namespace TencentCloud
                      * 
                      */
                     bool TemplateInfoHasBeenSet() const;
+
+                    /**
+                     * 获取 事务ID
+                     * @return TrxId  事务ID
+                     * 
+                     */
+                    int64_t GetTrxId() const;
+
+                    /**
+                     * 设置 事务ID
+                     * @param _trxId  事务ID
+                     * 
+                     */
+                    void SetTrxId(const int64_t& _trxId);
+
+                    /**
+                     * 判断参数 TrxId 是否已赋值
+                     * @return TrxId 是否已赋值
+                     * 
+                     */
+                    bool TrxIdHasBeenSet() const;
 
                 private:
 
@@ -592,10 +609,15 @@ namespace TencentCloud
 
                     /**
                      * 日志命中规则模板的基本信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<LogRuleTemplateInfo> m_templateInfo;
                     bool m_templateInfoHasBeenSet;
+
+                    /**
+                     *  事务ID
+                     */
+                    int64_t m_trxId;
+                    bool m_trxIdHasBeenSet;
 
                 };
             }

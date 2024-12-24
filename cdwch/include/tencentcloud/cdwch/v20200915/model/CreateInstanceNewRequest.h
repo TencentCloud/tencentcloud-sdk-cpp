@@ -130,15 +130,15 @@ namespace TencentCloud
                     bool UserSubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取版本
-                     * @return ProductVersion 版本
+                     * 获取系统版本
+                     * @return ProductVersion 系统版本
                      * 
                      */
                     std::string GetProductVersion() const;
 
                     /**
-                     * 设置版本
-                     * @param _productVersion 版本
+                     * 设置系统版本
+                     * @param _productVersion 系统版本
                      * 
                      */
                     void SetProductVersion(const std::string& _productVersion);
@@ -281,15 +281,15 @@ SpecName从DescribeSpec接口中返回的DataSpec.Name获取
                     bool CosBucketNameHasBeenSet() const;
 
                     /**
-                     * 获取是否是裸盘挂载
-                     * @return MountDiskType 是否是裸盘挂载
+                     * 获取是否是裸盘挂载，默认值 0 为 未挂载，1 为挂载。
+                     * @return MountDiskType 是否是裸盘挂载，默认值 0 为 未挂载，1 为挂载。
                      * 
                      */
                     int64_t GetMountDiskType() const;
 
                     /**
-                     * 设置是否是裸盘挂载
-                     * @param _mountDiskType 是否是裸盘挂载
+                     * 设置是否是裸盘挂载，默认值 0 为 未挂载，1 为挂载。
+                     * @param _mountDiskType 是否是裸盘挂载，默认值 0 为 未挂载，1 为挂载。
                      * 
                      */
                     void SetMountDiskType(const int64_t& _mountDiskType);
@@ -395,7 +395,7 @@ SpecName从DescribeSpec接口中返回的CommonSpec.Name（ZK节点）获取
                     bool m_userSubnetIdHasBeenSet;
 
                     /**
-                     * 版本
+                     * 系统版本
                      */
                     std::string m_productVersion;
                     bool m_productVersionHasBeenSet;
@@ -438,7 +438,7 @@ SpecName从DescribeSpec接口中返回的DataSpec.Name获取
                     bool m_cosBucketNameHasBeenSet;
 
                     /**
-                     * 是否是裸盘挂载
+                     * 是否是裸盘挂载，默认值 0 为 未挂载，1 为挂载。
                      */
                     int64_t m_mountDiskType;
                     bool m_mountDiskTypeHasBeenSet;

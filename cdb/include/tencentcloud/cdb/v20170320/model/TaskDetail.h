@@ -347,18 +347,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务的附加信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskAttachInfo 任务的附加信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TaskAttachInfo> GetTaskAttachInfo() const;
 
                     /**
                      * 设置任务的附加信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskAttachInfo 任务的附加信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskAttachInfo(const std::vector<TaskAttachInfo>& _taskAttachInfo);
@@ -456,7 +452,6 @@ namespace TencentCloud
 
                     /**
                      * 任务的附加信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TaskAttachInfo> m_taskAttachInfo;
                     bool m_taskAttachInfoHasBeenSet;

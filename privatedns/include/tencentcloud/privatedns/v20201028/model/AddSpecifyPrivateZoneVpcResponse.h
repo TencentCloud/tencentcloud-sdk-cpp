@@ -89,9 +89,7 @@ namespace TencentCloud
 
                     /**
                      * 获取唯一id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UniqId 唯一id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUniqId() const;
@@ -125,7 +123,6 @@ namespace TencentCloud
 
                     /**
                      * 唯一id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uniqId;
                     bool m_uniqIdHasBeenSet;

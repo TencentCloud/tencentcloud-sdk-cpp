@@ -410,6 +410,48 @@ namespace TencentCloud
                      */
                     bool ExtPackageTypeHasBeenSet() const;
 
+                    /**
+                     * 获取是否付费期环境，可取值：yes/no。
+                     * @return EnvCharged 是否付费期环境，可取值：yes/no。
+                     * 
+                     */
+                    std::string GetEnvCharged() const;
+
+                    /**
+                     * 设置是否付费期环境，可取值：yes/no。
+                     * @param _envCharged 是否付费期环境，可取值：yes/no。
+                     * 
+                     */
+                    void SetEnvCharged(const std::string& _envCharged);
+
+                    /**
+                     * 判断参数 EnvCharged 是否已赋值
+                     * @return EnvCharged 是否已赋值
+                     * 
+                     */
+                    bool EnvChargedHasBeenSet() const;
+
+                    /**
+                     * 获取是否已激活，可取值：yes/no。
+                     * @return EnvActivated 是否已激活，可取值：yes/no。
+                     * 
+                     */
+                    std::string GetEnvActivated() const;
+
+                    /**
+                     * 设置是否已激活，可取值：yes/no。
+                     * @param _envActivated 是否已激活，可取值：yes/no。
+                     * 
+                     */
+                    void SetEnvActivated(const std::string& _envActivated);
+
+                    /**
+                     * 判断参数 EnvActivated 是否已赋值
+                     * @return EnvActivated 是否已赋值
+                     * 
+                     */
+                    bool EnvActivatedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -513,6 +555,18 @@ namespace TencentCloud
                      */
                     std::string m_extPackageType;
                     bool m_extPackageTypeHasBeenSet;
+
+                    /**
+                     * 是否付费期环境，可取值：yes/no。
+                     */
+                    std::string m_envCharged;
+                    bool m_envChargedHasBeenSet;
+
+                    /**
+                     * 是否已激活，可取值：yes/no。
+                     */
+                    std::string m_envActivated;
+                    bool m_envActivatedHasBeenSet;
 
                 };
             }

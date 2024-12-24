@@ -28,7 +28,8 @@ NodeInfos::NodeInfos() :
     m_componentNameHasBeenSet(false),
     m_lastRestartTimeHasBeenSet(false),
     m_idHasBeenSet(false),
-    m_zoneHasBeenSet(false)
+    m_zoneHasBeenSet(false),
+    m_createTimeHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome NodeInfos::Deserialize(const rapidjson::Value &value)
         m_zoneHasBeenSet = true;
     }
 
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeInfos.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void NodeInfos::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "Zone";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void NodeInfos::SetZone(const string& _zone)
 bool NodeInfos::ZoneHasBeenSet() const
 {
     return m_zoneHasBeenSet;
+}
+
+string NodeInfos::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void NodeInfos::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool NodeInfos::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
 }
 

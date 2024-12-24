@@ -497,6 +497,31 @@ namespace TencentCloud
                      */
                     bool ServiceNameKeyPositionHasBeenSet() const;
 
+                    /**
+                     * 获取网关实例ID列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GatewayInstanceIdList 网关实例ID列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetGatewayInstanceIdList() const;
+
+                    /**
+                     * 设置网关实例ID列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _gatewayInstanceIdList 网关实例ID列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetGatewayInstanceIdList(const std::vector<std::string>& _gatewayInstanceIdList);
+
+                    /**
+                     * 判断参数 GatewayInstanceIdList 是否已赋值
+                     * @return GatewayInstanceIdList 是否已赋值
+                     * 
+                     */
+                    bool GatewayInstanceIdListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -624,6 +649,13 @@ namespace TencentCloud
                      */
                     std::string m_serviceNameKeyPosition;
                     bool m_serviceNameKeyPositionHasBeenSet;
+
+                    /**
+                     * 网关实例ID列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_gatewayInstanceIdList;
+                    bool m_gatewayInstanceIdListHasBeenSet;
 
                 };
             }

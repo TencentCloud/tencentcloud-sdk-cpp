@@ -1502,6 +1502,49 @@ TrocketClient::DescribeMQTTUserListOutcomeCallable TrocketClient::DescribeMQTTUs
     return task->get_future();
 }
 
+TrocketClient::DescribeMessageTraceOutcome TrocketClient::DescribeMessageTrace(const DescribeMessageTraceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMessageTrace");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMessageTraceResponse rsp = DescribeMessageTraceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMessageTraceOutcome(rsp);
+        else
+            return DescribeMessageTraceOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMessageTraceOutcome(outcome.GetError());
+    }
+}
+
+void TrocketClient::DescribeMessageTraceAsync(const DescribeMessageTraceRequest& request, const DescribeMessageTraceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMessageTrace(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrocketClient::DescribeMessageTraceOutcomeCallable TrocketClient::DescribeMessageTraceCallable(const DescribeMessageTraceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMessageTraceOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMessageTrace(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrocketClient::DescribeProductSKUsOutcome TrocketClient::DescribeProductSKUs(const DescribeProductSKUsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeProductSKUs");

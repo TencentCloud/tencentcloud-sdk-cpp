@@ -132,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据源桶名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BucketName 数据源桶名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBucketName() const;
 
                     /**
                      * 设置数据源桶名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bucketName 数据源桶名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBucketName(const std::string& _bucketName);
@@ -157,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据源桶地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BucketRegion 数据源桶地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBucketRegion() const;
 
                     /**
                      * 设置数据源桶地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bucketRegion 数据源桶地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBucketRegion(const std::string& _bucketRegion);
@@ -182,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据源桶地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BucketAddress 数据源桶地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBucketAddress() const;
 
                     /**
                      * 设置数据源桶地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bucketAddress 数据源桶地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBucketAddress(const std::string& _bucketAddress);
@@ -207,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取清单地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ListAddress 清单地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetListAddress() const;
 
                     /**
                      * 设置清单地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _listAddress 清单地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetListAddress(const std::string& _listAddress);
@@ -232,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件系统实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FsName 文件系统实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFsName() const;
 
                     /**
                      * 设置文件系统实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fsName 文件系统实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFsName(const std::string& _fsName);
@@ -341,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取完成/终止时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 完成/终止时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
                      * 设置完成/终止时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endTime 完成/终止时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndTime(const int64_t& _endTime);
@@ -387,18 +363,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileTotalCount 文件数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetFileTotalCount() const;
 
                     /**
                      * 设置文件数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileTotalCount 文件数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileTotalCount(const uint64_t& _fileTotalCount);
@@ -412,18 +384,14 @@ namespace TencentCloud
 
                     /**
                      * 获取已迁移文件数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileMigratedCount 已迁移文件数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetFileMigratedCount() const;
 
                     /**
                      * 设置已迁移文件数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileMigratedCount 已迁移文件数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileMigratedCount(const uint64_t& _fileMigratedCount);
@@ -437,18 +405,14 @@ namespace TencentCloud
 
                     /**
                      * 获取迁移失败文件数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileFailedCount 迁移失败文件数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetFileFailedCount() const;
 
                     /**
                      * 设置迁移失败文件数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileFailedCount 迁移失败文件数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileFailedCount(const uint64_t& _fileFailedCount);
@@ -462,18 +426,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件容量，单位Byte
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileTotalSize 文件容量，单位Byte
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFileTotalSize() const;
 
                     /**
                      * 设置文件容量，单位Byte
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileTotalSize 文件容量，单位Byte
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileTotalSize(const int64_t& _fileTotalSize);
@@ -487,18 +447,14 @@ namespace TencentCloud
 
                     /**
                      * 获取已迁移文件容量，单位Byte
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileMigratedSize 已迁移文件容量，单位Byte
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFileMigratedSize() const;
 
                     /**
                      * 设置已迁移文件容量，单位Byte
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileMigratedSize 已迁移文件容量，单位Byte
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileMigratedSize(const int64_t& _fileMigratedSize);
@@ -512,18 +468,14 @@ namespace TencentCloud
 
                     /**
                      * 获取迁移失败文件容量，单位Byte
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileFailedSize 迁移失败文件容量，单位Byte
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFileFailedSize() const;
 
                     /**
                      * 设置迁移失败文件容量，单位Byte
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileFailedSize 迁移失败文件容量，单位Byte
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileFailedSize(const int64_t& _fileFailedSize);
@@ -537,18 +489,14 @@ namespace TencentCloud
 
                     /**
                      * 获取全部清单
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileTotalList 全部清单
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileTotalList() const;
 
                     /**
                      * 设置全部清单
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileTotalList 全部清单
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileTotalList(const std::string& _fileTotalList);
@@ -562,18 +510,14 @@ namespace TencentCloud
 
                     /**
                      * 获取已完成文件清单
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileCompletedList 已完成文件清单
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileCompletedList() const;
 
                     /**
                      * 设置已完成文件清单
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileCompletedList 已完成文件清单
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileCompletedList(const std::string& _fileCompletedList);
@@ -587,18 +531,14 @@ namespace TencentCloud
 
                     /**
                      * 获取失败文件清单
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileFailedList 失败文件清单
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileFailedList() const;
 
                     /**
                      * 设置失败文件清单
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileFailedList 失败文件清单
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileFailedList(const std::string& _fileFailedList);
@@ -612,18 +552,14 @@ namespace TencentCloud
 
                     /**
                      * 获取源桶路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BucketPath 源桶路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBucketPath() const;
 
                     /**
                      * 设置源桶路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bucketPath 源桶路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBucketPath(const std::string& _bucketPath);
@@ -684,35 +620,30 @@ namespace TencentCloud
 
                     /**
                      * 数据源桶名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bucketName;
                     bool m_bucketNameHasBeenSet;
 
                     /**
                      * 数据源桶地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bucketRegion;
                     bool m_bucketRegionHasBeenSet;
 
                     /**
                      * 数据源桶地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bucketAddress;
                     bool m_bucketAddressHasBeenSet;
 
                     /**
                      * 清单地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_listAddress;
                     bool m_listAddressHasBeenSet;
 
                     /**
                      * 文件系统实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fsName;
                     bool m_fsNameHasBeenSet;
@@ -743,7 +674,6 @@ namespace TencentCloud
 
                     /**
                      * 完成/终止时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_endTime;
                     bool m_endTimeHasBeenSet;
@@ -756,70 +686,60 @@ namespace TencentCloud
 
                     /**
                      * 文件数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_fileTotalCount;
                     bool m_fileTotalCountHasBeenSet;
 
                     /**
                      * 已迁移文件数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_fileMigratedCount;
                     bool m_fileMigratedCountHasBeenSet;
 
                     /**
                      * 迁移失败文件数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_fileFailedCount;
                     bool m_fileFailedCountHasBeenSet;
 
                     /**
                      * 文件容量，单位Byte
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_fileTotalSize;
                     bool m_fileTotalSizeHasBeenSet;
 
                     /**
                      * 已迁移文件容量，单位Byte
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_fileMigratedSize;
                     bool m_fileMigratedSizeHasBeenSet;
 
                     /**
                      * 迁移失败文件容量，单位Byte
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_fileFailedSize;
                     bool m_fileFailedSizeHasBeenSet;
 
                     /**
                      * 全部清单
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileTotalList;
                     bool m_fileTotalListHasBeenSet;
 
                     /**
                      * 已完成文件清单
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileCompletedList;
                     bool m_fileCompletedListHasBeenSet;
 
                     /**
                      * 失败文件清单
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileFailedList;
                     bool m_fileFailedListHasBeenSet;
 
                     /**
                      * 源桶路径
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bucketPath;
                     bool m_bucketPathHasBeenSet;

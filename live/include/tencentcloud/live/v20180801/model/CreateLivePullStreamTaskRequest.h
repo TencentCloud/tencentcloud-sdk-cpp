@@ -661,6 +661,68 @@ rtmp、rtmps、rtsp、rtp、srt。
                     bool ToUrlHasBeenSet() const;
 
                     /**
+                     * 获取指定播放文件索引。
+注意： 1. 从1开始，不大于SourceUrls中文件个数。
+2. 该偏移仅在首次轮播时有效。
+3. 提前创建的任务指定的偏移最长有效期为24小时，24小时后未开始的任务偏移失效。
+                     * @return FileIndex 指定播放文件索引。
+注意： 1. 从1开始，不大于SourceUrls中文件个数。
+2. 该偏移仅在首次轮播时有效。
+3. 提前创建的任务指定的偏移最长有效期为24小时，24小时后未开始的任务偏移失效。
+                     * 
+                     */
+                    int64_t GetFileIndex() const;
+
+                    /**
+                     * 设置指定播放文件索引。
+注意： 1. 从1开始，不大于SourceUrls中文件个数。
+2. 该偏移仅在首次轮播时有效。
+3. 提前创建的任务指定的偏移最长有效期为24小时，24小时后未开始的任务偏移失效。
+                     * @param _fileIndex 指定播放文件索引。
+注意： 1. 从1开始，不大于SourceUrls中文件个数。
+2. 该偏移仅在首次轮播时有效。
+3. 提前创建的任务指定的偏移最长有效期为24小时，24小时后未开始的任务偏移失效。
+                     * 
+                     */
+                    void SetFileIndex(const int64_t& _fileIndex);
+
+                    /**
+                     * 判断参数 FileIndex 是否已赋值
+                     * @return FileIndex 是否已赋值
+                     * 
+                     */
+                    bool FileIndexHasBeenSet() const;
+
+                    /**
+                     * 获取指定播放文件偏移。
+注意：
+1. 单位：秒，配合FileIndex使用。
+                     * @return OffsetTime 指定播放文件偏移。
+注意：
+1. 单位：秒，配合FileIndex使用。
+                     * 
+                     */
+                    int64_t GetOffsetTime() const;
+
+                    /**
+                     * 设置指定播放文件偏移。
+注意：
+1. 单位：秒，配合FileIndex使用。
+                     * @param _offsetTime 指定播放文件偏移。
+注意：
+1. 单位：秒，配合FileIndex使用。
+                     * 
+                     */
+                    void SetOffsetTime(const int64_t& _offsetTime);
+
+                    /**
+                     * 判断参数 OffsetTime 是否已赋值
+                     * @return OffsetTime 是否已赋值
+                     * 
+                     */
+                    bool OffsetTimeHasBeenSet() const;
+
+                    /**
                      * 获取备源的类型：
 PullLivePushLive -直播，
 PullVodPushLive -点播。
@@ -1031,6 +1093,23 @@ rtmp、rtmps、rtsp、rtp、srt。
                      */
                     std::string m_toUrl;
                     bool m_toUrlHasBeenSet;
+
+                    /**
+                     * 指定播放文件索引。
+注意： 1. 从1开始，不大于SourceUrls中文件个数。
+2. 该偏移仅在首次轮播时有效。
+3. 提前创建的任务指定的偏移最长有效期为24小时，24小时后未开始的任务偏移失效。
+                     */
+                    int64_t m_fileIndex;
+                    bool m_fileIndexHasBeenSet;
+
+                    /**
+                     * 指定播放文件偏移。
+注意：
+1. 单位：秒，配合FileIndex使用。
+                     */
+                    int64_t m_offsetTime;
+                    bool m_offsetTimeHasBeenSet;
 
                     /**
                      * 备源的类型：
