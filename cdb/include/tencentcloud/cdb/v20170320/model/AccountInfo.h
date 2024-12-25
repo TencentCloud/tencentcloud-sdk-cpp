@@ -193,6 +193,27 @@ namespace TencentCloud
                      */
                     bool MaxUserConnectionsHasBeenSet() const;
 
+                    /**
+                     * 获取用户账号是否开启了密码轮转
+                     * @return OpenCam 用户账号是否开启了密码轮转
+                     * 
+                     */
+                    bool GetOpenCam() const;
+
+                    /**
+                     * 设置用户账号是否开启了密码轮转
+                     * @param _openCam 用户账号是否开启了密码轮转
+                     * 
+                     */
+                    void SetOpenCam(const bool& _openCam);
+
+                    /**
+                     * 判断参数 OpenCam 是否已赋值
+                     * @return OpenCam 是否已赋值
+                     * 
+                     */
+                    bool OpenCamHasBeenSet() const;
+
                 private:
 
                     /**
@@ -236,6 +257,12 @@ namespace TencentCloud
                      */
                     int64_t m_maxUserConnections;
                     bool m_maxUserConnectionsHasBeenSet;
+
+                    /**
+                     * 用户账号是否开启了密码轮转
+                     */
+                    bool m_openCam;
+                    bool m_openCamHasBeenSet;
 
                 };
             }

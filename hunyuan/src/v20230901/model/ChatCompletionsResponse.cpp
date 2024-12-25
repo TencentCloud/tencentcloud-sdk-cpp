@@ -32,7 +32,8 @@ ChatCompletionsResponse::ChatCompletionsResponse() :
     m_errorMsgHasBeenSet(false),
     m_moderationLevelHasBeenSet(false),
     m_searchInfoHasBeenSet(false),
-    m_replacesHasBeenSet(false)
+    m_replacesHasBeenSet(false),
+    m_recommendedQuestionsHasBeenSet(false)
 {
 }
 
@@ -201,6 +202,19 @@ CoreInternalOutcome ChatCompletionsResponse::Deserialize(const string &payload)
         m_replacesHasBeenSet = true;
     }
 
+    if (rsp.HasMember("RecommendedQuestions") && !rsp["RecommendedQuestions"].IsNull())
+    {
+        if (!rsp["RecommendedQuestions"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RecommendedQuestions` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["RecommendedQuestions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_recommendedQuestions.push_back((*itr).GetString());
+        }
+        m_recommendedQuestionsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -297,6 +311,19 @@ string ChatCompletionsResponse::ToJsonString() const
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_recommendedQuestionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecommendedQuestions";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_recommendedQuestions.begin(); itr != m_recommendedQuestions.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -400,6 +427,16 @@ vector<Replace> ChatCompletionsResponse::GetReplaces() const
 bool ChatCompletionsResponse::ReplacesHasBeenSet() const
 {
     return m_replacesHasBeenSet;
+}
+
+vector<string> ChatCompletionsResponse::GetRecommendedQuestions() const
+{
+    return m_recommendedQuestions;
+}
+
+bool ChatCompletionsResponse::RecommendedQuestionsHasBeenSet() const
+{
+    return m_recommendedQuestionsHasBeenSet;
 }
 
 

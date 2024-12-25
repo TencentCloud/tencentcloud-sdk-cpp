@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取无
-                     * @return ProtectMode 无
+                     * 获取数据复制方式，默认为 0，支持值包括：0 - 表示异步复制，1 - 表示半同步复制，2 - 表示强同步复制。
+                     * @return ProtectMode 数据复制方式，默认为 0，支持值包括：0 - 表示异步复制，1 - 表示半同步复制，2 - 表示强同步复制。
                      * 
                      */
                     int64_t GetProtectMode() const;
 
                     /**
-                     * 设置无
-                     * @param _protectMode 无
+                     * 设置数据复制方式，默认为 0，支持值包括：0 - 表示异步复制，1 - 表示半同步复制，2 - 表示强同步复制。
+                     * @param _protectMode 数据复制方式，默认为 0，支持值包括：0 - 表示异步复制，1 - 表示半同步复制，2 - 表示强同步复制。
                      * 
                      */
                     void SetProtectMode(const int64_t& _protectMode);
@@ -87,7 +87,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 无
+                     * 数据复制方式，默认为 0，支持值包括：0 - 表示异步复制，1 - 表示半同步复制，2 - 表示强同步复制。
                      */
                     int64_t m_protectMode;
                     bool m_protectModeHasBeenSet;

@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取只读vip状态
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return RoVipStatus 只读vip状态
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRoVipStatus() const;
 
                     /**
                      * 设置只读vip状态
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _roVipStatus 只读vip状态
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRoVipStatus(const int64_t& _roVipStatus);
@@ -69,14 +73,18 @@ namespace TencentCloud
 
                     /**
                      * 获取只读vip的子网
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return RoSubnetId 只读vip的子网
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRoSubnetId() const;
 
                     /**
                      * 设置只读vip的子网
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _roSubnetId 只读vip的子网
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRoSubnetId(const int64_t& _roSubnetId);
@@ -90,14 +98,18 @@ namespace TencentCloud
 
                     /**
                      * 获取只读vip的私有网络
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return RoVpcId 只读vip的私有网络
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRoVpcId() const;
 
                     /**
                      * 设置只读vip的私有网络
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _roVpcId 只读vip的私有网络
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRoVpcId(const int64_t& _roVpcId);
@@ -111,14 +123,18 @@ namespace TencentCloud
 
                     /**
                      * 获取只读vip的端口号
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return RoVport 只读vip的端口号
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRoVport() const;
 
                     /**
                      * 设置只读vip的端口号
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _roVport 只读vip的端口号
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRoVport(const int64_t& _roVport);
@@ -132,14 +148,18 @@ namespace TencentCloud
 
                     /**
                      * 获取只读vip
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return RoVip 只读vip
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRoVip() const;
 
                     /**
                      * 设置只读vip
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _roVip 只读vip
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRoVip(const std::string& _roVip);
@@ -155,30 +175,35 @@ namespace TencentCloud
 
                     /**
                      * 只读vip状态
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_roVipStatus;
                     bool m_roVipStatusHasBeenSet;
 
                     /**
                      * 只读vip的子网
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_roSubnetId;
                     bool m_roSubnetIdHasBeenSet;
 
                     /**
                      * 只读vip的私有网络
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_roVpcId;
                     bool m_roVpcIdHasBeenSet;
 
                     /**
                      * 只读vip的端口号
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_roVport;
                     bool m_roVportHasBeenSet;
 
                     /**
                      * 只读vip
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_roVip;
                     bool m_roVipHasBeenSet;

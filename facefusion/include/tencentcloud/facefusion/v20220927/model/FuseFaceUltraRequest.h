@@ -158,23 +158,15 @@ namespace TencentCloud
                     bool ModelImageHasBeenSet() const;
 
                     /**
-                     * 获取图片人脸融合（专业版）效果参数。
-可用于设置拉脸、人脸增强、磨皮、牙齿增强等融合效果参数，生成理想的融合效果。不传默认使用接口推荐值。具体见FusionUltraParam说明
-
-                     * @return FusionUltraParam 图片人脸融合（专业版）效果参数。
-可用于设置拉脸、人脸增强、磨皮、牙齿增强等融合效果参数，生成理想的融合效果。不传默认使用接口推荐值。具体见FusionUltraParam说明
-
+                     * 获取图片人脸融合（专业版）效果参数。可用于设置拉脸、人脸增强、磨皮、牙齿增强、妆容迁移等融合效果参数，生成理想的融合效果。不传默认使用接口推荐值。具体见FusionUltraParam说明
+                     * @return FusionUltraParam 图片人脸融合（专业版）效果参数。可用于设置拉脸、人脸增强、磨皮、牙齿增强、妆容迁移等融合效果参数，生成理想的融合效果。不传默认使用接口推荐值。具体见FusionUltraParam说明
                      * 
                      */
                     FusionUltraParam GetFusionUltraParam() const;
 
                     /**
-                     * 设置图片人脸融合（专业版）效果参数。
-可用于设置拉脸、人脸增强、磨皮、牙齿增强等融合效果参数，生成理想的融合效果。不传默认使用接口推荐值。具体见FusionUltraParam说明
-
-                     * @param _fusionUltraParam 图片人脸融合（专业版）效果参数。
-可用于设置拉脸、人脸增强、磨皮、牙齿增强等融合效果参数，生成理想的融合效果。不传默认使用接口推荐值。具体见FusionUltraParam说明
-
+                     * 设置图片人脸融合（专业版）效果参数。可用于设置拉脸、人脸增强、磨皮、牙齿增强、妆容迁移等融合效果参数，生成理想的融合效果。不传默认使用接口推荐值。具体见FusionUltraParam说明
+                     * @param _fusionUltraParam 图片人脸融合（专业版）效果参数。可用于设置拉脸、人脸增强、磨皮、牙齿增强、妆容迁移等融合效果参数，生成理想的融合效果。不传默认使用接口推荐值。具体见FusionUltraParam说明
                      * 
                      */
                     void SetFusionUltraParam(const FusionUltraParam& _fusionUltraParam);
@@ -327,9 +319,7 @@ namespace TencentCloud
                     bool m_modelImageHasBeenSet;
 
                     /**
-                     * 图片人脸融合（专业版）效果参数。
-可用于设置拉脸、人脸增强、磨皮、牙齿增强等融合效果参数，生成理想的融合效果。不传默认使用接口推荐值。具体见FusionUltraParam说明
-
+                     * 图片人脸融合（专业版）效果参数。可用于设置拉脸、人脸增强、磨皮、牙齿增强、妆容迁移等融合效果参数，生成理想的融合效果。不传默认使用接口推荐值。具体见FusionUltraParam说明
                      */
                     FusionUltraParam m_fusionUltraParam;
                     bool m_fusionUltraParamHasBeenSet;

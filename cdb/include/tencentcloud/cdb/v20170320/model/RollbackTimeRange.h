@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取实例可回档开始时间，时间格式：2016-10-29 01:06:04
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Begin 实例可回档开始时间，时间格式：2016-10-29 01:06:04
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBegin() const;
 
                     /**
                      * 设置实例可回档开始时间，时间格式：2016-10-29 01:06:04
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _begin 实例可回档开始时间，时间格式：2016-10-29 01:06:04
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBegin(const std::string& _begin);
@@ -69,14 +73,18 @@ namespace TencentCloud
 
                     /**
                      * 获取实例可回档结束时间，时间格式：2016-11-02 11:44:47
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return End 实例可回档结束时间，时间格式：2016-11-02 11:44:47
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEnd() const;
 
                     /**
                      * 设置实例可回档结束时间，时间格式：2016-11-02 11:44:47
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _end 实例可回档结束时间，时间格式：2016-11-02 11:44:47
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnd(const std::string& _end);
@@ -92,12 +100,14 @@ namespace TencentCloud
 
                     /**
                      * 实例可回档开始时间，时间格式：2016-10-29 01:06:04
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_begin;
                     bool m_beginHasBeenSet;
 
                     /**
                      * 实例可回档结束时间，时间格式：2016-11-02 11:44:47
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_end;
                     bool m_endHasBeenSet;

@@ -32,7 +32,8 @@ DescribeInquiryPriceParameterRequest::DescribeInquiryPriceParameterRequest() :
     m_periodHasBeenSet(false),
     m_goodsNumHasBeenSet(false),
     m_dBVersionHasBeenSet(false),
-    m_machineTypeHasBeenSet(false)
+    m_machineTypeHasBeenSet(false),
+    m_drZonesHasBeenSet(false)
 {
 }
 
@@ -121,6 +122,19 @@ string DescribeInquiryPriceParameterRequest::ToJsonString() const
         string key = "MachineType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_machineType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_drZonesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DrZones";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_drZones.begin(); itr != m_drZones.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -289,6 +303,22 @@ void DescribeInquiryPriceParameterRequest::SetMachineType(const string& _machine
 bool DescribeInquiryPriceParameterRequest::MachineTypeHasBeenSet() const
 {
     return m_machineTypeHasBeenSet;
+}
+
+vector<string> DescribeInquiryPriceParameterRequest::GetDrZones() const
+{
+    return m_drZones;
+}
+
+void DescribeInquiryPriceParameterRequest::SetDrZones(const vector<string>& _drZones)
+{
+    m_drZones = _drZones;
+    m_drZonesHasBeenSet = true;
+}
+
+bool DescribeInquiryPriceParameterRequest::DrZonesHasBeenSet() const
+{
+    return m_drZonesHasBeenSet;
 }
 
 

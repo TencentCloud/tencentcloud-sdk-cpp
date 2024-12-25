@@ -130,126 +130,126 @@ namespace TencentCloud
                     /**
                      * 获取0默认 1cos恢复
                      * @return RecoverType 0默认 1cos恢复
-                     * 
+                     * @deprecated
                      */
                     int64_t GetRecoverType() const;
 
                     /**
                      * 设置0默认 1cos恢复
                      * @param _recoverType 0默认 1cos恢复
-                     * 
+                     * @deprecated
                      */
                     void SetRecoverType(const int64_t& _recoverType);
 
                     /**
                      * 判断参数 RecoverType 是否已赋值
                      * @return RecoverType 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool RecoverTypeHasBeenSet() const;
 
                     /**
                      * 获取CosSourceInfo对象
                      * @return CosSourceInfo CosSourceInfo对象
-                     * 
+                     * @deprecated
                      */
                     CosSourceInfo GetCosSourceInfo() const;
 
                     /**
                      * 设置CosSourceInfo对象
                      * @param _cosSourceInfo CosSourceInfo对象
-                     * 
+                     * @deprecated
                      */
                     void SetCosSourceInfo(const CosSourceInfo& _cosSourceInfo);
 
                     /**
                      * 判断参数 CosSourceInfo 是否已赋值
                      * @return CosSourceInfo 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool CosSourceInfoHasBeenSet() const;
 
                     /**
                      * 获取0默认 1定期执行
                      * @return ScheduleType 0默认 1定期执行
-                     * 
+                     * @deprecated
                      */
                     int64_t GetScheduleType() const;
 
                     /**
                      * 设置0默认 1定期执行
                      * @param _scheduleType 0默认 1定期执行
-                     * 
+                     * @deprecated
                      */
                     void SetScheduleType(const int64_t& _scheduleType);
 
                     /**
                      * 判断参数 ScheduleType 是否已赋值
                      * @return ScheduleType 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ScheduleTypeHasBeenSet() const;
 
                     /**
                      * 获取年-月-日 时:分:秒
                      * @return NextTime 年-月-日 时:分:秒
-                     * 
+                     * @deprecated
                      */
                     std::string GetNextTime() const;
 
                     /**
                      * 设置年-月-日 时:分:秒
                      * @param _nextTime 年-月-日 时:分:秒
-                     * 
+                     * @deprecated
                      */
                     void SetNextTime(const std::string& _nextTime);
 
                     /**
                      * 判断参数 NextTime 是否已赋值
                      * @return NextTime 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool NextTimeHasBeenSet() const;
 
                     /**
                      * 获取调度名称
                      * @return ScheduleName 调度名称
-                     * 
+                     * @deprecated
                      */
                     std::string GetScheduleName() const;
 
                     /**
                      * 设置调度名称
                      * @param _scheduleName 调度名称
-                     * 
+                     * @deprecated
                      */
                     void SetScheduleName(const std::string& _scheduleName);
 
                     /**
                      * 判断参数 ScheduleName 是否已赋值
                      * @return ScheduleName 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ScheduleNameHasBeenSet() const;
 
                     /**
                      * 获取create update
                      * @return OperationType create update
-                     * 
+                     * @deprecated
                      */
                     std::string GetOperationType() const;
 
                     /**
                      * 设置create update
                      * @param _operationType create update
-                     * 
+                     * @deprecated
                      */
                     void SetOperationType(const std::string& _operationType);
 
                     /**
                      * 判断参数 OperationType 是否已赋值
                      * @return OperationType 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool OperationTypeHasBeenSet() const;
 
@@ -294,6 +294,35 @@ namespace TencentCloud
                      * 
                      */
                     bool RecoverDatabaseHasBeenSet() const;
+
+                    /**
+                     * 获取1:恢复后，不保留降冷策略，数据变为热数据；
+2:恢复后，沿用备份表的降冷策略；
+0:默认值，该版本没有这个配置（2.1版本2.1.8之前；2.0版本2.0.16之前）
+                     * @return ReserveStoragePolicy 1:恢复后，不保留降冷策略，数据变为热数据；
+2:恢复后，沿用备份表的降冷策略；
+0:默认值，该版本没有这个配置（2.1版本2.1.8之前；2.0版本2.0.16之前）
+                     * 
+                     */
+                    int64_t GetReserveStoragePolicy() const;
+
+                    /**
+                     * 设置1:恢复后，不保留降冷策略，数据变为热数据；
+2:恢复后，沿用备份表的降冷策略；
+0:默认值，该版本没有这个配置（2.1版本2.1.8之前；2.0版本2.0.16之前）
+                     * @param _reserveStoragePolicy 1:恢复后，不保留降冷策略，数据变为热数据；
+2:恢复后，沿用备份表的降冷策略；
+0:默认值，该版本没有这个配置（2.1版本2.1.8之前；2.0版本2.0.16之前）
+                     * 
+                     */
+                    void SetReserveStoragePolicy(const int64_t& _reserveStoragePolicy);
+
+                    /**
+                     * 判断参数 ReserveStoragePolicy 是否已赋值
+                     * @return ReserveStoragePolicy 是否已赋值
+                     * 
+                     */
+                    bool ReserveStoragePolicyHasBeenSet() const;
 
                 private:
 
@@ -368,6 +397,14 @@ namespace TencentCloud
                      */
                     std::string m_recoverDatabase;
                     bool m_recoverDatabaseHasBeenSet;
+
+                    /**
+                     * 1:恢复后，不保留降冷策略，数据变为热数据；
+2:恢复后，沿用备份表的降冷策略；
+0:默认值，该版本没有这个配置（2.1版本2.1.8之前；2.0版本2.0.16之前）
+                     */
+                    int64_t m_reserveStoragePolicy;
+                    bool m_reserveStoragePolicyHasBeenSet;
 
                 };
             }

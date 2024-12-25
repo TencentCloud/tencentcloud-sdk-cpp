@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取回档数据异步任务 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowId 回档数据异步任务 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFlowId() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 回档数据异步任务 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_flowId;
                     bool m_flowIdHasBeenSet;

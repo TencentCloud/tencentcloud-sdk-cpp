@@ -40,7 +40,8 @@ ChatCompletionsRequest::ChatCompletionsRequest() :
     m_enableDeepSearchHasBeenSet(false),
     m_seedHasBeenSet(false),
     m_forceSearchEnhancementHasBeenSet(false),
-    m_stopHasBeenSet(false)
+    m_stopHasBeenSet(false),
+    m_enableRecommendedQuestionsHasBeenSet(false)
 {
 }
 
@@ -213,6 +214,14 @@ string ChatCompletionsRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_enableRecommendedQuestionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableRecommendedQuestions";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableRecommendedQuestions, allocator);
     }
 
 
@@ -509,6 +518,22 @@ void ChatCompletionsRequest::SetStop(const vector<string>& _stop)
 bool ChatCompletionsRequest::StopHasBeenSet() const
 {
     return m_stopHasBeenSet;
+}
+
+bool ChatCompletionsRequest::GetEnableRecommendedQuestions() const
+{
+    return m_enableRecommendedQuestions;
+}
+
+void ChatCompletionsRequest::SetEnableRecommendedQuestions(const bool& _enableRecommendedQuestions)
+{
+    m_enableRecommendedQuestions = _enableRecommendedQuestions;
+    m_enableRecommendedQuestionsHasBeenSet = true;
+}
+
+bool ChatCompletionsRequest::EnableRecommendedQuestionsHasBeenSet() const
+{
+    return m_enableRecommendedQuestionsHasBeenSet;
 }
 
 

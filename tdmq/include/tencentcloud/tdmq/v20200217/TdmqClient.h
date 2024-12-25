@@ -295,6 +295,8 @@
 #include <tencentcloud/tdmq/v20200217/model/ResetMsgSubOffsetByTimestampResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/ResetRocketMQConsumerOffSetRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/ResetRocketMQConsumerOffSetResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/RetryRocketMQDlqMessageRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/RetryRocketMQDlqMessageResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/RewindCmqQueueRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/RewindCmqQueueResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/SendBatchMessagesRequest.h>
@@ -735,6 +737,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ResetRocketMQConsumerOffSetResponse> ResetRocketMQConsumerOffSetOutcome;
                 typedef std::future<ResetRocketMQConsumerOffSetOutcome> ResetRocketMQConsumerOffSetOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::ResetRocketMQConsumerOffSetRequest&, ResetRocketMQConsumerOffSetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetRocketMQConsumerOffSetAsyncHandler;
+                typedef Outcome<Core::Error, Model::RetryRocketMQDlqMessageResponse> RetryRocketMQDlqMessageOutcome;
+                typedef std::future<RetryRocketMQDlqMessageOutcome> RetryRocketMQDlqMessageOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::RetryRocketMQDlqMessageRequest&, RetryRocketMQDlqMessageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RetryRocketMQDlqMessageAsyncHandler;
                 typedef Outcome<Core::Error, Model::RewindCmqQueueResponse> RewindCmqQueueOutcome;
                 typedef std::future<RewindCmqQueueOutcome> RewindCmqQueueOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::RewindCmqQueueRequest&, RewindCmqQueueOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RewindCmqQueueAsyncHandler;
@@ -2013,6 +2018,15 @@ BatchReceivePolicy 的接口会一次性返回多条消息：
                 ResetRocketMQConsumerOffSetOutcome ResetRocketMQConsumerOffSet(const Model::ResetRocketMQConsumerOffSetRequest &request);
                 void ResetRocketMQConsumerOffSetAsync(const Model::ResetRocketMQConsumerOffSetRequest& request, const ResetRocketMQConsumerOffSetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ResetRocketMQConsumerOffSetOutcomeCallable ResetRocketMQConsumerOffSetCallable(const Model::ResetRocketMQConsumerOffSetRequest& request);
+
+                /**
+                 *重发RocketMQ死信消息
+                 * @param req RetryRocketMQDlqMessageRequest
+                 * @return RetryRocketMQDlqMessageOutcome
+                 */
+                RetryRocketMQDlqMessageOutcome RetryRocketMQDlqMessage(const Model::RetryRocketMQDlqMessageRequest &request);
+                void RetryRocketMQDlqMessageAsync(const Model::RetryRocketMQDlqMessageRequest& request, const RetryRocketMQDlqMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RetryRocketMQDlqMessageOutcomeCallable RetryRocketMQDlqMessageCallable(const Model::RetryRocketMQDlqMessageRequest& request);
 
                 /**
                  *回溯cmq队列

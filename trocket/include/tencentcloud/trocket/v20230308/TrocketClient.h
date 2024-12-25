@@ -91,6 +91,10 @@
 #include <tencentcloud/trocket/v20230308/model/DescribeMQTTTopicListResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeMQTTUserListRequest.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeMQTTUserListResponse.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeMessageRequest.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeMessageResponse.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeMessageListRequest.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeMessageListResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeMessageTraceRequest.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeMessageTraceResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeProductSKUsRequest.h>
@@ -123,6 +127,8 @@
 #include <tencentcloud/trocket/v20230308/model/ModifyRoleResponse.h>
 #include <tencentcloud/trocket/v20230308/model/ModifyTopicRequest.h>
 #include <tencentcloud/trocket/v20230308/model/ModifyTopicResponse.h>
+#include <tencentcloud/trocket/v20230308/model/ResendDeadLetterMessageRequest.h>
+#include <tencentcloud/trocket/v20230308/model/ResendDeadLetterMessageResponse.h>
 
 
 namespace TencentCloud
@@ -239,6 +245,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeMQTTUserListResponse> DescribeMQTTUserListOutcome;
                 typedef std::future<DescribeMQTTUserListOutcome> DescribeMQTTUserListOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::DescribeMQTTUserListRequest&, DescribeMQTTUserListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMQTTUserListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMessageResponse> DescribeMessageOutcome;
+                typedef std::future<DescribeMessageOutcome> DescribeMessageOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::DescribeMessageRequest&, DescribeMessageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMessageAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMessageListResponse> DescribeMessageListOutcome;
+                typedef std::future<DescribeMessageListOutcome> DescribeMessageListOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::DescribeMessageListRequest&, DescribeMessageListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMessageListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeMessageTraceResponse> DescribeMessageTraceOutcome;
                 typedef std::future<DescribeMessageTraceOutcome> DescribeMessageTraceOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::DescribeMessageTraceRequest&, DescribeMessageTraceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMessageTraceAsyncHandler;
@@ -287,6 +299,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyTopicResponse> ModifyTopicOutcome;
                 typedef std::future<ModifyTopicOutcome> ModifyTopicOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::ModifyTopicRequest&, ModifyTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTopicAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResendDeadLetterMessageResponse> ResendDeadLetterMessageOutcome;
+                typedef std::future<ResendDeadLetterMessageOutcome> ResendDeadLetterMessageOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::ResendDeadLetterMessageRequest&, ResendDeadLetterMessageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResendDeadLetterMessageAsyncHandler;
 
 
 
@@ -622,6 +637,24 @@ namespace TencentCloud
                 DescribeMQTTUserListOutcomeCallable DescribeMQTTUserListCallable(const Model::DescribeMQTTUserListRequest& request);
 
                 /**
+                 *查询消息详情
+                 * @param req DescribeMessageRequest
+                 * @return DescribeMessageOutcome
+                 */
+                DescribeMessageOutcome DescribeMessage(const Model::DescribeMessageRequest &request);
+                void DescribeMessageAsync(const Model::DescribeMessageRequest& request, const DescribeMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMessageOutcomeCallable DescribeMessageCallable(const Model::DescribeMessageRequest& request);
+
+                /**
+                 *查询消息列表。如果查询死信消息，请设置ConsumerGroup参数。
+                 * @param req DescribeMessageListRequest
+                 * @return DescribeMessageListOutcome
+                 */
+                DescribeMessageListOutcome DescribeMessageList(const Model::DescribeMessageListRequest &request);
+                void DescribeMessageListAsync(const Model::DescribeMessageListRequest& request, const DescribeMessageListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMessageListOutcomeCallable DescribeMessageListCallable(const Model::DescribeMessageListRequest& request);
+
+                /**
                  *根据消息 ID 查询消息轨迹。
                  * @param req DescribeMessageTraceRequest
                  * @return DescribeMessageTraceOutcome
@@ -772,6 +805,15 @@ ConsumerGroup，消费组名称过滤
                 ModifyTopicOutcome ModifyTopic(const Model::ModifyTopicRequest &request);
                 void ModifyTopicAsync(const Model::ModifyTopicRequest& request, const ModifyTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyTopicOutcomeCallable ModifyTopicCallable(const Model::ModifyTopicRequest& request);
+
+                /**
+                 *重新发送死信消息
+                 * @param req ResendDeadLetterMessageRequest
+                 * @return ResendDeadLetterMessageOutcome
+                 */
+                ResendDeadLetterMessageOutcome ResendDeadLetterMessage(const Model::ResendDeadLetterMessageRequest &request);
+                void ResendDeadLetterMessageAsync(const Model::ResendDeadLetterMessageRequest& request, const ResendDeadLetterMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResendDeadLetterMessageOutcomeCallable ResendDeadLetterMessageCallable(const Model::ResendDeadLetterMessageRequest& request);
 
             };
         }

@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取可用区部署方式，可能的值为：0-单可用区；1-多可用区
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeployMode 可用区部署方式，可能的值为：0-单可用区；1-多可用区
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetDeployMode() const;
 
                     /**
                      * 设置可用区部署方式，可能的值为：0-单可用区；1-多可用区
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deployMode 可用区部署方式，可能的值为：0-单可用区；1-多可用区
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeployMode(const std::vector<int64_t>& _deployMode);
@@ -69,14 +73,18 @@ namespace TencentCloud
 
                     /**
                      * 获取主实例所在的可用区
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return MasterZone 主实例所在的可用区
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetMasterZone() const;
 
                     /**
                      * 设置主实例所在的可用区
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _masterZone 主实例所在的可用区
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMasterZone(const std::vector<std::string>& _masterZone);
@@ -90,14 +98,18 @@ namespace TencentCloud
 
                     /**
                      * 获取实例为多可用区部署时，备库1所在的可用区
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return SlaveZone 实例为多可用区部署时，备库1所在的可用区
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetSlaveZone() const;
 
                     /**
                      * 设置实例为多可用区部署时，备库1所在的可用区
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _slaveZone 实例为多可用区部署时，备库1所在的可用区
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSlaveZone(const std::vector<std::string>& _slaveZone);
@@ -111,14 +123,18 @@ namespace TencentCloud
 
                     /**
                      * 获取实例为多可用区部署时，备库2所在的可用区
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackupZone 实例为多可用区部署时，备库2所在的可用区
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetBackupZone() const;
 
                     /**
                      * 设置实例为多可用区部署时，备库2所在的可用区
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _backupZone 实例为多可用区部署时，备库2所在的可用区
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBackupZone(const std::vector<std::string>& _backupZone);
@@ -134,24 +150,28 @@ namespace TencentCloud
 
                     /**
                      * 可用区部署方式，可能的值为：0-单可用区；1-多可用区
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_deployMode;
                     bool m_deployModeHasBeenSet;
 
                     /**
                      * 主实例所在的可用区
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_masterZone;
                     bool m_masterZoneHasBeenSet;
 
                     /**
                      * 实例为多可用区部署时，备库1所在的可用区
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_slaveZone;
                     bool m_slaveZoneHasBeenSet;
 
                     /**
                      * 实例为多可用区部署时，备库2所在的可用区
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_backupZone;
                     bool m_backupZoneHasBeenSet;

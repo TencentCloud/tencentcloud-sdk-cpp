@@ -196,6 +196,27 @@ namespace TencentCloud
                      */
                     bool KeyOriginHasBeenSet() const;
 
+                    /**
+                     * 获取kms所在地域。
+                     * @return KmsRegion kms所在地域。
+                     * 
+                     */
+                    std::string GetKmsRegion() const;
+
+                    /**
+                     * 设置kms所在地域。
+                     * @param _kmsRegion kms所在地域。
+                     * 
+                     */
+                    void SetKmsRegion(const std::string& _kmsRegion);
+
+                    /**
+                     * 判断参数 KmsRegion 是否已赋值
+                     * @return KmsRegion 是否已赋值
+                     * 
+                     */
+                    bool KmsRegionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -239,6 +260,12 @@ namespace TencentCloud
                      */
                     std::string m_keyOrigin;
                     bool m_keyOriginHasBeenSet;
+
+                    /**
+                     * kms所在地域。
+                     */
+                    std::string m_kmsRegion;
+                    bool m_kmsRegionHasBeenSet;
 
                 };
             }

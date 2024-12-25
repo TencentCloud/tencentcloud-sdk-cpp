@@ -37,7 +37,8 @@ CreateSchemeUrlRequest::CreateSchemeUrlRequest() :
     m_agentHasBeenSet(false),
     m_hidesHasBeenSet(false),
     m_recipientIdHasBeenSet(false),
-    m_flowGroupUrlInfoHasBeenSet(false)
+    m_flowGroupUrlInfoHasBeenSet(false),
+    m_urlUseEnvHasBeenSet(false)
 {
 }
 
@@ -174,6 +175,14 @@ string CreateSchemeUrlRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_flowGroupUrlInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_urlUseEnvHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UrlUseEnv";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_urlUseEnv.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -422,6 +431,22 @@ void CreateSchemeUrlRequest::SetFlowGroupUrlInfo(const FlowGroupUrlInfo& _flowGr
 bool CreateSchemeUrlRequest::FlowGroupUrlInfoHasBeenSet() const
 {
     return m_flowGroupUrlInfoHasBeenSet;
+}
+
+string CreateSchemeUrlRequest::GetUrlUseEnv() const
+{
+    return m_urlUseEnv;
+}
+
+void CreateSchemeUrlRequest::SetUrlUseEnv(const string& _urlUseEnv)
+{
+    m_urlUseEnv = _urlUseEnv;
+    m_urlUseEnvHasBeenSet = true;
+}
+
+bool CreateSchemeUrlRequest::UrlUseEnvHasBeenSet() const
+{
+    return m_urlUseEnvHasBeenSet;
 }
 
 

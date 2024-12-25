@@ -31,7 +31,8 @@ AccessPoint::AccessPoint() :
     m_coordinateHasBeenSet(false),
     m_cityHasBeenSet(false),
     m_areaHasBeenSet(false),
-    m_accessPointTypeHasBeenSet(false)
+    m_accessPointTypeHasBeenSet(false),
+    m_availablePortInfoHasBeenSet(false)
 {
 }
 
@@ -163,6 +164,26 @@ CoreInternalOutcome AccessPoint::Deserialize(const rapidjson::Value &value)
         m_accessPointTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("AvailablePortInfo") && !value["AvailablePortInfo"].IsNull())
+    {
+        if (!value["AvailablePortInfo"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AccessPoint.AvailablePortInfo` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AvailablePortInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            PortSpecification item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_availablePortInfo.push_back(item);
+        }
+        m_availablePortInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -267,6 +288,21 @@ void AccessPoint::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "AccessPointType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_accessPointType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_availablePortInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AvailablePortInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_availablePortInfo.begin(); itr != m_availablePortInfo.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -446,5 +482,21 @@ void AccessPoint::SetAccessPointType(const string& _accessPointType)
 bool AccessPoint::AccessPointTypeHasBeenSet() const
 {
     return m_accessPointTypeHasBeenSet;
+}
+
+vector<PortSpecification> AccessPoint::GetAvailablePortInfo() const
+{
+    return m_availablePortInfo;
+}
+
+void AccessPoint::SetAvailablePortInfo(const vector<PortSpecification>& _availablePortInfo)
+{
+    m_availablePortInfo = _availablePortInfo;
+    m_availablePortInfoHasBeenSet = true;
+}
+
+bool AccessPoint::AvailablePortInfoHasBeenSet() const
+{
+    return m_availablePortInfoHasBeenSet;
 }
 

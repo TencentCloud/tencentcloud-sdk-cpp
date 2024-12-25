@@ -145,6 +145,69 @@ wait_doing-等待维护时间内执行
                      */
                     bool SSLValidityHasBeenSet() const;
 
+                    /**
+                     * 获取是否是KMS的CMK证书
+                     * @return IsKMS 是否是KMS的CMK证书
+                     * 
+                     */
+                    int64_t GetIsKMS() const;
+
+                    /**
+                     * 设置是否是KMS的CMK证书
+                     * @param _isKMS 是否是KMS的CMK证书
+                     * 
+                     */
+                    void SetIsKMS(const int64_t& _isKMS);
+
+                    /**
+                     * 判断参数 IsKMS 是否已赋值
+                     * @return IsKMS 是否已赋值
+                     * 
+                     */
+                    bool IsKMSHasBeenSet() const;
+
+                    /**
+                     * 获取KMS中购买的用户主密钥ID（CMK）
+                     * @return CMKId KMS中购买的用户主密钥ID（CMK）
+                     * 
+                     */
+                    std::string GetCMKId() const;
+
+                    /**
+                     * 设置KMS中购买的用户主密钥ID（CMK）
+                     * @param _cMKId KMS中购买的用户主密钥ID（CMK）
+                     * 
+                     */
+                    void SetCMKId(const std::string& _cMKId);
+
+                    /**
+                     * 判断参数 CMKId 是否已赋值
+                     * @return CMKId 是否已赋值
+                     * 
+                     */
+                    bool CMKIdHasBeenSet() const;
+
+                    /**
+                     * 获取CMK所属的地域，不同地域的CMK数据不互通
+                     * @return CMKRegion CMK所属的地域，不同地域的CMK数据不互通
+                     * 
+                     */
+                    std::string GetCMKRegion() const;
+
+                    /**
+                     * 设置CMK所属的地域，不同地域的CMK数据不互通
+                     * @param _cMKRegion CMK所属的地域，不同地域的CMK数据不互通
+                     * 
+                     */
+                    void SetCMKRegion(const std::string& _cMKRegion);
+
+                    /**
+                     * 判断参数 CMKRegion 是否已赋值
+                     * @return CMKRegion 是否已赋值
+                     * 
+                     */
+                    bool CMKRegionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -173,6 +236,24 @@ wait_doing-等待维护时间内执行
                      */
                     uint64_t m_sSLValidity;
                     bool m_sSLValidityHasBeenSet;
+
+                    /**
+                     * 是否是KMS的CMK证书
+                     */
+                    int64_t m_isKMS;
+                    bool m_isKMSHasBeenSet;
+
+                    /**
+                     * KMS中购买的用户主密钥ID（CMK）
+                     */
+                    std::string m_cMKId;
+                    bool m_cMKIdHasBeenSet;
+
+                    /**
+                     * CMK所属的地域，不同地域的CMK数据不互通
+                     */
+                    std::string m_cMKRegion;
+                    bool m_cMKRegionHasBeenSet;
 
                 };
             }

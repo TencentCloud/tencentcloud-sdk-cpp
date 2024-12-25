@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/dc/v20180410/model/Coordinate.h>
+#include <tencentcloud/dc/v20180410/model/PortSpecification.h>
 
 
 namespace TencentCloud
@@ -174,19 +175,15 @@ namespace TencentCloud
                     bool RegionIdHasBeenSet() const;
 
                     /**
-                     * 获取接入点可用的端口类型列表。1000BASE-T代表千兆电口，1000BASE-LX代表千兆单模光口10km，1000BASE-ZX代表千兆单模光口80km,10GBASE-LR代表万兆单模光口10km,10GBASE-ZR代表万兆单模光口80km,10GBASE-LH代表万兆单模光口40km,100GBASE-LR4代表100G单模光口10km
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AvailablePortType 接入点可用的端口类型列表。1000BASE-T代表千兆电口，1000BASE-LX代表千兆单模光口10km，1000BASE-ZX代表千兆单模光口80km,10GBASE-LR代表万兆单模光口10km,10GBASE-ZR代表万兆单模光口80km,10GBASE-LH代表万兆单模光口40km,100GBASE-LR4代表100G单模光口10km
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取接入点可用的端口类型列表。1000BASE-T代表千兆电口，1000BASE-LX代表千兆单模光口10km，1000BASE-ZX代表千兆单模光口80km,10GBASE-LR代表万兆单模光口10km,10GBASE-ZR代表万兆单模光口80km,10GBASE-LH代表万兆单模光口40km,100GBASE-LR4代表100G单模光口10km。
+                     * @return AvailablePortType 接入点可用的端口类型列表。1000BASE-T代表千兆电口，1000BASE-LX代表千兆单模光口10km，1000BASE-ZX代表千兆单模光口80km,10GBASE-LR代表万兆单模光口10km,10GBASE-ZR代表万兆单模光口80km,10GBASE-LH代表万兆单模光口40km,100GBASE-LR4代表100G单模光口10km。
                      * 
                      */
                     std::vector<std::string> GetAvailablePortType() const;
 
                     /**
-                     * 设置接入点可用的端口类型列表。1000BASE-T代表千兆电口，1000BASE-LX代表千兆单模光口10km，1000BASE-ZX代表千兆单模光口80km,10GBASE-LR代表万兆单模光口10km,10GBASE-ZR代表万兆单模光口80km,10GBASE-LH代表万兆单模光口40km,100GBASE-LR4代表100G单模光口10km
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _availablePortType 接入点可用的端口类型列表。1000BASE-T代表千兆电口，1000BASE-LX代表千兆单模光口10km，1000BASE-ZX代表千兆单模光口80km,10GBASE-LR代表万兆单模光口10km,10GBASE-ZR代表万兆单模光口80km,10GBASE-LH代表万兆单模光口40km,100GBASE-LR4代表100G单模光口10km
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置接入点可用的端口类型列表。1000BASE-T代表千兆电口，1000BASE-LX代表千兆单模光口10km，1000BASE-ZX代表千兆单模光口80km,10GBASE-LR代表万兆单模光口10km,10GBASE-ZR代表万兆单模光口80km,10GBASE-LH代表万兆单模光口40km,100GBASE-LR4代表100G单模光口10km。
+                     * @param _availablePortType 接入点可用的端口类型列表。1000BASE-T代表千兆电口，1000BASE-LX代表千兆单模光口10km，1000BASE-ZX代表千兆单模光口80km,10GBASE-LR代表万兆单模光口10km,10GBASE-ZR代表万兆单模光口80km,10GBASE-LH代表万兆单模光口40km,100GBASE-LR4代表100G单模光口10km。
                      * 
                      */
                     void SetAvailablePortType(const std::vector<std::string>& _availablePortType);
@@ -199,19 +196,15 @@ namespace TencentCloud
                     bool AvailablePortTypeHasBeenSet() const;
 
                     /**
-                     * 获取接入点经纬度
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Coordinate 接入点经纬度
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取接入点经纬度。
+                     * @return Coordinate 接入点经纬度。
                      * 
                      */
                     Coordinate GetCoordinate() const;
 
                     /**
-                     * 设置接入点经纬度
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _coordinate 接入点经纬度
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置接入点经纬度。
+                     * @param _coordinate 接入点经纬度。
                      * 
                      */
                     void SetCoordinate(const Coordinate& _coordinate);
@@ -224,19 +217,15 @@ namespace TencentCloud
                     bool CoordinateHasBeenSet() const;
 
                     /**
-                     * 获取接入点所在城市
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return City 接入点所在城市
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取接入点所在城市。
+                     * @return City 接入点所在城市。
                      * 
                      */
                     std::string GetCity() const;
 
                     /**
-                     * 设置接入点所在城市
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _city 接入点所在城市
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置接入点所在城市。
+                     * @param _city 接入点所在城市。
                      * 
                      */
                     void SetCity(const std::string& _city);
@@ -249,19 +238,15 @@ namespace TencentCloud
                     bool CityHasBeenSet() const;
 
                     /**
-                     * 获取接入点地域名称
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Area 接入点地域名称
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取接入点地域名称。
+                     * @return Area 接入点地域名称。
                      * 
                      */
                     std::string GetArea() const;
 
                     /**
-                     * 设置接入点地域名称
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _area 接入点地域名称
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置接入点地域名称。
+                     * @param _area 接入点地域名称。
                      * 
                      */
                     void SetArea(const std::string& _area);
@@ -275,18 +260,14 @@ namespace TencentCloud
 
                     /**
                      * 获取接入点类型。VXLAN/QCPL/QCAR
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccessPointType 接入点类型。VXLAN/QCPL/QCAR
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAccessPointType() const;
 
                     /**
                      * 设置接入点类型。VXLAN/QCPL/QCAR
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _accessPointType 接入点类型。VXLAN/QCPL/QCAR
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAccessPointType(const std::string& _accessPointType);
@@ -297,6 +278,27 @@ namespace TencentCloud
                      * 
                      */
                     bool AccessPointTypeHasBeenSet() const;
+
+                    /**
+                     * 获取端口规格信息。
+                     * @return AvailablePortInfo 端口规格信息。
+                     * 
+                     */
+                    std::vector<PortSpecification> GetAvailablePortInfo() const;
+
+                    /**
+                     * 设置端口规格信息。
+                     * @param _availablePortInfo 端口规格信息。
+                     * 
+                     */
+                    void SetAvailablePortInfo(const std::vector<PortSpecification>& _availablePortInfo);
+
+                    /**
+                     * 判断参数 AvailablePortInfo 是否已赋值
+                     * @return AvailablePortInfo 是否已赋值
+                     * 
+                     */
+                    bool AvailablePortInfoHasBeenSet() const;
 
                 private:
 
@@ -337,39 +339,40 @@ namespace TencentCloud
                     bool m_regionIdHasBeenSet;
 
                     /**
-                     * 接入点可用的端口类型列表。1000BASE-T代表千兆电口，1000BASE-LX代表千兆单模光口10km，1000BASE-ZX代表千兆单模光口80km,10GBASE-LR代表万兆单模光口10km,10GBASE-ZR代表万兆单模光口80km,10GBASE-LH代表万兆单模光口40km,100GBASE-LR4代表100G单模光口10km
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 接入点可用的端口类型列表。1000BASE-T代表千兆电口，1000BASE-LX代表千兆单模光口10km，1000BASE-ZX代表千兆单模光口80km,10GBASE-LR代表万兆单模光口10km,10GBASE-ZR代表万兆单模光口80km,10GBASE-LH代表万兆单模光口40km,100GBASE-LR4代表100G单模光口10km。
                      */
                     std::vector<std::string> m_availablePortType;
                     bool m_availablePortTypeHasBeenSet;
 
                     /**
-                     * 接入点经纬度
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 接入点经纬度。
                      */
                     Coordinate m_coordinate;
                     bool m_coordinateHasBeenSet;
 
                     /**
-                     * 接入点所在城市
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 接入点所在城市。
                      */
                     std::string m_city;
                     bool m_cityHasBeenSet;
 
                     /**
-                     * 接入点地域名称
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 接入点地域名称。
                      */
                     std::string m_area;
                     bool m_areaHasBeenSet;
 
                     /**
                      * 接入点类型。VXLAN/QCPL/QCAR
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_accessPointType;
                     bool m_accessPointTypeHasBeenSet;
+
+                    /**
+                     * 端口规格信息。
+                     */
+                    std::vector<PortSpecification> m_availablePortInfo;
+                    bool m_availablePortInfoHasBeenSet;
 
                 };
             }

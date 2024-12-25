@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取错误日志投递CLS配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorLog 错误日志投递CLS配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     LogToCLSConfig GetErrorLog() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取慢日志投递CLS配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SlowLog 慢日志投递CLS配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     LogToCLSConfig GetSlowLog() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 错误日志投递CLS配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     LogToCLSConfig m_errorLog;
                     bool m_errorLogHasBeenSet;
 
                     /**
                      * 慢日志投递CLS配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     LogToCLSConfig m_slowLog;
                     bool m_slowLogHasBeenSet;

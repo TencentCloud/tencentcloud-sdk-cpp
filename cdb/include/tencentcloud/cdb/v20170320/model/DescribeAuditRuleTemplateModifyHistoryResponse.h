@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取总的条数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 总的条数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取变更详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Items 变更详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RuleTemplateRecordInfo> GetItems() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 总的条数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
                      * 变更详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RuleTemplateRecordInfo> m_items;
                     bool m_itemsHasBeenSet;

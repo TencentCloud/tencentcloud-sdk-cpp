@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取投递状态打开或者关闭
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 投递状态打开或者关闭
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置投递状态打开或者关闭
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 投递状态打开或者关闭
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取CLS日志集ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogSetId CLS日志集ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLogSetId() const;
 
                     /**
                      * 设置CLS日志集ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logSetId CLS日志集ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogSetId(const std::string& _logSetId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogTopicId 日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLogTopicId() const;
 
                     /**
                      * 设置日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logTopicId 日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogTopicId(const std::string& _logTopicId);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取CLS服务所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClsRegion CLS服务所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClsRegion() const;
 
                     /**
                      * 设置CLS服务所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clsRegion CLS服务所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClsRegion(const std::string& _clsRegion);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 投递状态打开或者关闭
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * CLS日志集ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logSetId;
                     bool m_logSetIdHasBeenSet;
 
                     /**
                      * 日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logTopicId;
                     bool m_logTopicIdHasBeenSet;
 
                     /**
                      * CLS服务所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clsRegion;
                     bool m_clsRegionHasBeenSet;

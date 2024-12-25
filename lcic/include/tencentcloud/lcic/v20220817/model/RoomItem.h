@@ -222,11 +222,13 @@ namespace TencentCloud
                     bool RealEndTimeHasBeenSet() const;
 
                     /**
-                     * 获取分辨率。1 标清
+                     * 获取头像区域，摄像头视频画面的分辨率。可以有如下取值：
+1 标清
 2 高清
 3 全高清
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Resolution 分辨率。1 标清
+                     * @return Resolution 头像区域，摄像头视频画面的分辨率。可以有如下取值：
+1 标清
 2 高清
 3 全高清
 注意：此字段可能返回 null，表示取不到有效值。
@@ -235,11 +237,13 @@ namespace TencentCloud
                     uint64_t GetResolution() const;
 
                     /**
-                     * 设置分辨率。1 标清
+                     * 设置头像区域，摄像头视频画面的分辨率。可以有如下取值：
+1 标清
 2 高清
 3 全高清
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _resolution 分辨率。1 标清
+                     * @param _resolution 头像区域，摄像头视频画面的分辨率。可以有如下取值：
+1 标清
 2 高清
 3 全高清
 注意：此字段可能返回 null，表示取不到有效值。
@@ -706,7 +710,8 @@ namespace TencentCloud
                     bool m_realEndTimeHasBeenSet;
 
                     /**
-                     * 分辨率。1 标清
+                     * 头像区域，摄像头视频画面的分辨率。可以有如下取值：
+1 标清
 2 高清
 3 全高清
 注意：此字段可能返回 null，表示取不到有效值。

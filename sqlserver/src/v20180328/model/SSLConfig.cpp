@@ -23,7 +23,10 @@ using namespace std;
 SSLConfig::SSLConfig() :
     m_encryptionHasBeenSet(false),
     m_sSLValidityPeriodHasBeenSet(false),
-    m_sSLValidityHasBeenSet(false)
+    m_sSLValidityHasBeenSet(false),
+    m_isKMSHasBeenSet(false),
+    m_cMKIdHasBeenSet(false),
+    m_cMKRegionHasBeenSet(false)
 {
 }
 
@@ -62,6 +65,36 @@ CoreInternalOutcome SSLConfig::Deserialize(const rapidjson::Value &value)
         m_sSLValidityHasBeenSet = true;
     }
 
+    if (value.HasMember("IsKMS") && !value["IsKMS"].IsNull())
+    {
+        if (!value["IsKMS"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SSLConfig.IsKMS` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isKMS = value["IsKMS"].GetInt64();
+        m_isKMSHasBeenSet = true;
+    }
+
+    if (value.HasMember("CMKId") && !value["CMKId"].IsNull())
+    {
+        if (!value["CMKId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SSLConfig.CMKId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cMKId = string(value["CMKId"].GetString());
+        m_cMKIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("CMKRegion") && !value["CMKRegion"].IsNull())
+    {
+        if (!value["CMKRegion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SSLConfig.CMKRegion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cMKRegion = string(value["CMKRegion"].GetString());
+        m_cMKRegionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +124,30 @@ void SSLConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "SSLValidity";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sSLValidity, allocator);
+    }
+
+    if (m_isKMSHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsKMS";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isKMS, allocator);
+    }
+
+    if (m_cMKIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CMKId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cMKId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cMKRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CMKRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cMKRegion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +199,53 @@ void SSLConfig::SetSSLValidity(const uint64_t& _sSLValidity)
 bool SSLConfig::SSLValidityHasBeenSet() const
 {
     return m_sSLValidityHasBeenSet;
+}
+
+int64_t SSLConfig::GetIsKMS() const
+{
+    return m_isKMS;
+}
+
+void SSLConfig::SetIsKMS(const int64_t& _isKMS)
+{
+    m_isKMS = _isKMS;
+    m_isKMSHasBeenSet = true;
+}
+
+bool SSLConfig::IsKMSHasBeenSet() const
+{
+    return m_isKMSHasBeenSet;
+}
+
+string SSLConfig::GetCMKId() const
+{
+    return m_cMKId;
+}
+
+void SSLConfig::SetCMKId(const string& _cMKId)
+{
+    m_cMKId = _cMKId;
+    m_cMKIdHasBeenSet = true;
+}
+
+bool SSLConfig::CMKIdHasBeenSet() const
+{
+    return m_cMKIdHasBeenSet;
+}
+
+string SSLConfig::GetCMKRegion() const
+{
+    return m_cMKRegion;
+}
+
+void SSLConfig::SetCMKRegion(const string& _cMKRegion)
+{
+    m_cMKRegion = _cMKRegion;
+    m_cMKRegionHasBeenSet = true;
+}
+
+bool SSLConfig::CMKRegionHasBeenSet() const
+{
+    return m_cMKRegionHasBeenSet;
 }
 

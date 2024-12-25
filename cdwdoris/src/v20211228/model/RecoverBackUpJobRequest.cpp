@@ -34,7 +34,8 @@ RecoverBackUpJobRequest::RecoverBackUpJobRequest() :
     m_scheduleNameHasBeenSet(false),
     m_operationTypeHasBeenSet(false),
     m_recoverScopeHasBeenSet(false),
-    m_recoverDatabaseHasBeenSet(false)
+    m_recoverDatabaseHasBeenSet(false),
+    m_reserveStoragePolicyHasBeenSet(false)
 {
 }
 
@@ -140,6 +141,14 @@ string RecoverBackUpJobRequest::ToJsonString() const
         string key = "RecoverDatabase";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_recoverDatabase.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_reserveStoragePolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReserveStoragePolicy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_reserveStoragePolicy, allocator);
     }
 
 
@@ -340,6 +349,22 @@ void RecoverBackUpJobRequest::SetRecoverDatabase(const string& _recoverDatabase)
 bool RecoverBackUpJobRequest::RecoverDatabaseHasBeenSet() const
 {
     return m_recoverDatabaseHasBeenSet;
+}
+
+int64_t RecoverBackUpJobRequest::GetReserveStoragePolicy() const
+{
+    return m_reserveStoragePolicy;
+}
+
+void RecoverBackUpJobRequest::SetReserveStoragePolicy(const int64_t& _reserveStoragePolicy)
+{
+    m_reserveStoragePolicy = _reserveStoragePolicy;
+    m_reserveStoragePolicyHasBeenSet = true;
+}
+
+bool RecoverBackUpJobRequest::ReserveStoragePolicyHasBeenSet() const
+{
+    return m_reserveStoragePolicyHasBeenSet;
 }
 
 

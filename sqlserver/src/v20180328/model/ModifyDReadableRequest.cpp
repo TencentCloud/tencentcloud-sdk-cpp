@@ -27,7 +27,8 @@ ModifyDReadableRequest::ModifyDReadableRequest() :
     m_typeHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
-    m_vipHasBeenSet(false)
+    m_vipHasBeenSet(false),
+    m_readModeHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string ModifyDReadableRequest::ToJsonString() const
         string key = "Vip";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_vip.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_readModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReadMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_readMode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +173,22 @@ void ModifyDReadableRequest::SetVip(const string& _vip)
 bool ModifyDReadableRequest::VipHasBeenSet() const
 {
     return m_vipHasBeenSet;
+}
+
+string ModifyDReadableRequest::GetReadMode() const
+{
+    return m_readMode;
+}
+
+void ModifyDReadableRequest::SetReadMode(const string& _readMode)
+{
+    m_readMode = _readMode;
+    m_readModeHasBeenSet = true;
+}
+
+bool ModifyDReadableRequest::ReadModeHasBeenSet() const
+{
+    return m_readModeHasBeenSet;
 }
 
 

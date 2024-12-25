@@ -61,9 +61,7 @@ namespace TencentCloud
 
                     /**
                      * 获取注：该字段已废弃，请结合腾讯云直播播放地址生成策略生成cdn播放地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CdnPlayUrl 注：该字段已废弃，请结合腾讯云直播播放地址生成策略生成cdn播放地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCdnPlayUrl() const;
@@ -120,7 +118,6 @@ namespace TencentCloud
 
                     /**
                      * 注：该字段已废弃，请结合腾讯云直播播放地址生成策略生成cdn播放地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cdnPlayUrl;
                     bool m_cdnPlayUrlHasBeenSet;

@@ -638,6 +638,39 @@ namespace TencentCloud
                      */
                     bool StopHasBeenSet() const;
 
+                    /**
+                     * 获取推荐问答开关。
+说明：
+1. 未传值时默认关闭。
+2. 开启后，返回值里将增加 RecommendedQuestions 字段返回推荐问答， 最多只返回3条。
+                     * @return EnableRecommendedQuestions 推荐问答开关。
+说明：
+1. 未传值时默认关闭。
+2. 开启后，返回值里将增加 RecommendedQuestions 字段返回推荐问答， 最多只返回3条。
+                     * 
+                     */
+                    bool GetEnableRecommendedQuestions() const;
+
+                    /**
+                     * 设置推荐问答开关。
+说明：
+1. 未传值时默认关闭。
+2. 开启后，返回值里将增加 RecommendedQuestions 字段返回推荐问答， 最多只返回3条。
+                     * @param _enableRecommendedQuestions 推荐问答开关。
+说明：
+1. 未传值时默认关闭。
+2. 开启后，返回值里将增加 RecommendedQuestions 字段返回推荐问答， 最多只返回3条。
+                     * 
+                     */
+                    void SetEnableRecommendedQuestions(const bool& _enableRecommendedQuestions);
+
+                    /**
+                     * 判断参数 EnableRecommendedQuestions 是否已赋值
+                     * @return EnableRecommendedQuestions 是否已赋值
+                     * 
+                     */
+                    bool EnableRecommendedQuestionsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -801,6 +834,15 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_stop;
                     bool m_stopHasBeenSet;
+
+                    /**
+                     * 推荐问答开关。
+说明：
+1. 未传值时默认关闭。
+2. 开启后，返回值里将增加 RecommendedQuestions 字段返回推荐问答， 最多只返回3条。
+                     */
+                    bool m_enableRecommendedQuestions;
+                    bool m_enableRecommendedQuestionsHasBeenSet;
 
                 };
             }

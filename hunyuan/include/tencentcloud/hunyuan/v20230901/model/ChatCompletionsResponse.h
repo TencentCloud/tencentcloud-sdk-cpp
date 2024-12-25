@@ -186,6 +186,20 @@ namespace TencentCloud
                      */
                     bool ReplacesHasBeenSet() const;
 
+                    /**
+                     * 获取推荐问答。
+                     * @return RecommendedQuestions 推荐问答。
+                     * 
+                     */
+                    std::vector<std::string> GetRecommendedQuestions() const;
+
+                    /**
+                     * 判断参数 RecommendedQuestions 是否已赋值
+                     * @return RecommendedQuestions 是否已赋值
+                     * 
+                     */
+                    bool RecommendedQuestionsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -247,6 +261,12 @@ namespace TencentCloud
                      */
                     std::vector<Replace> m_replaces;
                     bool m_replacesHasBeenSet;
+
+                    /**
+                     * 推荐问答。
+                     */
+                    std::vector<std::string> m_recommendedQuestions;
+                    bool m_recommendedQuestionsHasBeenSet;
 
                 };
             }

@@ -232,15 +232,15 @@ namespace TencentCloud
                     bool OrderByHasBeenSet() const;
 
                     /**
-                     * 获取ASC或DESC
-                     * @return OrderByType ASC或DESC
+                     * 获取排序类型，ASC 或 DESC。
+                     * @return OrderByType 排序类型，ASC 或 DESC。
                      * 
                      */
                     std::string GetOrderByType() const;
 
                     /**
-                     * 设置ASC或DESC
-                     * @param _orderByType ASC或DESC
+                     * 设置排序类型，ASC 或 DESC。
+                     * @param _orderByType 排序类型，ASC 或 DESC。
                      * 
                      */
                     void SetOrderByType(const std::string& _orderByType);
@@ -309,7 +309,7 @@ namespace TencentCloud
                     bool m_orderByHasBeenSet;
 
                     /**
-                     * ASC或DESC
+                     * 排序类型，ASC 或 DESC。
                      */
                     std::string m_orderByType;
                     bool m_orderByTypeHasBeenSet;

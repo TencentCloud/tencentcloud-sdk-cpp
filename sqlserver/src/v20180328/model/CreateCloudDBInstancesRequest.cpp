@@ -45,7 +45,9 @@ CreateCloudDBInstancesRequest::CreateCloudDBInstancesRequest() :
     m_multiZonesHasBeenSet(false),
     m_resourceTagsHasBeenSet(false),
     m_collationHasBeenSet(false),
-    m_timeZoneHasBeenSet(false)
+    m_timeZoneHasBeenSet(false),
+    m_multiNodesHasBeenSet(false),
+    m_drZonesHasBeenSet(false)
 {
 }
 
@@ -260,6 +262,27 @@ string CreateCloudDBInstancesRequest::ToJsonString() const
         string key = "TimeZone";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_timeZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_multiNodesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MultiNodes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_multiNodes, allocator);
+    }
+
+    if (m_drZonesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DrZones";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_drZones.begin(); itr != m_drZones.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -636,6 +659,38 @@ void CreateCloudDBInstancesRequest::SetTimeZone(const string& _timeZone)
 bool CreateCloudDBInstancesRequest::TimeZoneHasBeenSet() const
 {
     return m_timeZoneHasBeenSet;
+}
+
+bool CreateCloudDBInstancesRequest::GetMultiNodes() const
+{
+    return m_multiNodes;
+}
+
+void CreateCloudDBInstancesRequest::SetMultiNodes(const bool& _multiNodes)
+{
+    m_multiNodes = _multiNodes;
+    m_multiNodesHasBeenSet = true;
+}
+
+bool CreateCloudDBInstancesRequest::MultiNodesHasBeenSet() const
+{
+    return m_multiNodesHasBeenSet;
+}
+
+vector<string> CreateCloudDBInstancesRequest::GetDrZones() const
+{
+    return m_drZones;
+}
+
+void CreateCloudDBInstancesRequest::SetDrZones(const vector<string>& _drZones)
+{
+    m_drZones = _drZones;
+    m_drZonesHasBeenSet = true;
+}
+
+bool CreateCloudDBInstancesRequest::DrZonesHasBeenSet() const
+{
+    return m_drZonesHasBeenSet;
 }
 
 

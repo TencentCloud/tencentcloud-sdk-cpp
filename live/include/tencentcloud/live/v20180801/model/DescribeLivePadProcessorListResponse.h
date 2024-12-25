@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取当前正在拉取垫片的流名称列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StreamNameList 当前正在拉取垫片的流名称列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetStreamNameList() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 当前正在拉取垫片的流名称列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_streamNameList;
                     bool m_streamNameListHasBeenSet;

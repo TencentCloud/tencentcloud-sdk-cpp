@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取统计数据列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataInfoList 统计数据列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TranscodeTotalInfo> GetDataInfoList() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 统计数据列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TranscodeTotalInfo> m_dataInfoList;
                     bool m_dataInfoListHasBeenSet;

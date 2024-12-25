@@ -5888,6 +5888,49 @@ TdmqClient::ResetRocketMQConsumerOffSetOutcomeCallable TdmqClient::ResetRocketMQ
     return task->get_future();
 }
 
+TdmqClient::RetryRocketMQDlqMessageOutcome TdmqClient::RetryRocketMQDlqMessage(const RetryRocketMQDlqMessageRequest &request)
+{
+    auto outcome = MakeRequest(request, "RetryRocketMQDlqMessage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RetryRocketMQDlqMessageResponse rsp = RetryRocketMQDlqMessageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RetryRocketMQDlqMessageOutcome(rsp);
+        else
+            return RetryRocketMQDlqMessageOutcome(o.GetError());
+    }
+    else
+    {
+        return RetryRocketMQDlqMessageOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::RetryRocketMQDlqMessageAsync(const RetryRocketMQDlqMessageRequest& request, const RetryRocketMQDlqMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RetryRocketMQDlqMessage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::RetryRocketMQDlqMessageOutcomeCallable TdmqClient::RetryRocketMQDlqMessageCallable(const RetryRocketMQDlqMessageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RetryRocketMQDlqMessageOutcome()>>(
+        [this, request]()
+        {
+            return this->RetryRocketMQDlqMessage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TdmqClient::RewindCmqQueueOutcome TdmqClient::RewindCmqQueue(const RewindCmqQueueRequest &request)
 {
     auto outcome = MakeRequest(request, "RewindCmqQueue");

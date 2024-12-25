@@ -151,15 +151,39 @@ namespace TencentCloud
                     bool HealthCheckHasBeenSet() const;
 
                     /**
-                     * 获取证书相关信息，此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。此参数和MultiCertInfo不能同时传入。
-                     * @return Certificate 证书相关信息，此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。此参数和MultiCertInfo不能同时传入。
+                     * 获取证书相关信息。参数限制如下：
+<li>
+此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。
+</li>
+<li>
+创建TCP_SSL监听器和未开启SNI特性的HTTPS监听器时，此参数和参数MultiCertInfo至少需要传一个， 但不能同时传入。
+</li>
+                     * @return Certificate 证书相关信息。参数限制如下：
+<li>
+此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。
+</li>
+<li>
+创建TCP_SSL监听器和未开启SNI特性的HTTPS监听器时，此参数和参数MultiCertInfo至少需要传一个， 但不能同时传入。
+</li>
                      * 
                      */
                     CertificateInput GetCertificate() const;
 
                     /**
-                     * 设置证书相关信息，此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。此参数和MultiCertInfo不能同时传入。
-                     * @param _certificate 证书相关信息，此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。此参数和MultiCertInfo不能同时传入。
+                     * 设置证书相关信息。参数限制如下：
+<li>
+此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。
+</li>
+<li>
+创建TCP_SSL监听器和未开启SNI特性的HTTPS监听器时，此参数和参数MultiCertInfo至少需要传一个， 但不能同时传入。
+</li>
+                     * @param _certificate 证书相关信息。参数限制如下：
+<li>
+此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。
+</li>
+<li>
+创建TCP_SSL监听器和未开启SNI特性的HTTPS监听器时，此参数和参数MultiCertInfo至少需要传一个， 但不能同时传入。
+</li>
                      * 
                      */
                     void SetCertificate(const CertificateInput& _certificate);
@@ -344,15 +368,39 @@ namespace TencentCloud
                     bool DeregisterTargetRstHasBeenSet() const;
 
                     /**
-                     * 获取证书信息，支持同时传入不同算法类型的多本服务端证书；此参数仅适用于未开启SNI特性的HTTPS监听器。此参数和Certificate不能同时传入。
-                     * @return MultiCertInfo 证书信息，支持同时传入不同算法类型的多本服务端证书；此参数仅适用于未开启SNI特性的HTTPS监听器。此参数和Certificate不能同时传入。
+                     * 获取证书信息，支持同时传入不同算法类型的多本服务端证书，参数限制如下：
+<li>
+此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。
+</li>
+<li>
+创建TCP_SSL监听器和未开启SNI特性的HTTPS监听器时，此参数和参数Certificate至少需要传一个， 但不能同时传入。
+</li>
+                     * @return MultiCertInfo 证书信息，支持同时传入不同算法类型的多本服务端证书，参数限制如下：
+<li>
+此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。
+</li>
+<li>
+创建TCP_SSL监听器和未开启SNI特性的HTTPS监听器时，此参数和参数Certificate至少需要传一个， 但不能同时传入。
+</li>
                      * 
                      */
                     MultiCertInfo GetMultiCertInfo() const;
 
                     /**
-                     * 设置证书信息，支持同时传入不同算法类型的多本服务端证书；此参数仅适用于未开启SNI特性的HTTPS监听器。此参数和Certificate不能同时传入。
-                     * @param _multiCertInfo 证书信息，支持同时传入不同算法类型的多本服务端证书；此参数仅适用于未开启SNI特性的HTTPS监听器。此参数和Certificate不能同时传入。
+                     * 设置证书信息，支持同时传入不同算法类型的多本服务端证书，参数限制如下：
+<li>
+此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。
+</li>
+<li>
+创建TCP_SSL监听器和未开启SNI特性的HTTPS监听器时，此参数和参数Certificate至少需要传一个， 但不能同时传入。
+</li>
+                     * @param _multiCertInfo 证书信息，支持同时传入不同算法类型的多本服务端证书，参数限制如下：
+<li>
+此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。
+</li>
+<li>
+创建TCP_SSL监听器和未开启SNI特性的HTTPS监听器时，此参数和参数Certificate至少需要传一个， 但不能同时传入。
+</li>
                      * 
                      */
                     void SetMultiCertInfo(const MultiCertInfo& _multiCertInfo);
@@ -544,7 +592,13 @@ namespace TencentCloud
                     bool m_healthCheckHasBeenSet;
 
                     /**
-                     * 证书相关信息，此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。此参数和MultiCertInfo不能同时传入。
+                     * 证书相关信息。参数限制如下：
+<li>
+此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。
+</li>
+<li>
+创建TCP_SSL监听器和未开启SNI特性的HTTPS监听器时，此参数和参数MultiCertInfo至少需要传一个， 但不能同时传入。
+</li>
                      */
                     CertificateInput m_certificate;
                     bool m_certificateHasBeenSet;
@@ -599,7 +653,13 @@ namespace TencentCloud
                     bool m_deregisterTargetRstHasBeenSet;
 
                     /**
-                     * 证书信息，支持同时传入不同算法类型的多本服务端证书；此参数仅适用于未开启SNI特性的HTTPS监听器。此参数和Certificate不能同时传入。
+                     * 证书信息，支持同时传入不同算法类型的多本服务端证书，参数限制如下：
+<li>
+此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。
+</li>
+<li>
+创建TCP_SSL监听器和未开启SNI特性的HTTPS监听器时，此参数和参数Certificate至少需要传一个， 但不能同时传入。
+</li>
                      */
                     MultiCertInfo m_multiCertInfo;
                     bool m_multiCertInfoHasBeenSet;

@@ -433,18 +433,14 @@ namespace TencentCloud
 
                     /**
                      * 获取接入模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccessMode 接入模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAccessMode() const;
 
                     /**
                      * 设置接入模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _accessMode 接入模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAccessMode(const std::string& _accessMode);
@@ -458,18 +454,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启自动负载均衡
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoLoadBalance 是否开启自动负载均衡
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetAutoLoadBalance() const;
 
                     /**
                      * 设置是否开启自动负载均衡
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _autoLoadBalance 是否开启自动负载均衡
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAutoLoadBalance(const bool& _autoLoadBalance);
@@ -593,14 +585,12 @@ namespace TencentCloud
 
                     /**
                      * 接入模式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_accessMode;
                     bool m_accessModeHasBeenSet;
 
                     /**
                      * 是否开启自动负载均衡
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_autoLoadBalance;
                     bool m_autoLoadBalanceHasBeenSet;

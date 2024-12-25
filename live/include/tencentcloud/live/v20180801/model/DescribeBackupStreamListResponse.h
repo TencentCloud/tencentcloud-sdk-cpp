@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取主备流分组信息列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StreamInfoList 主备流分组信息列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BackupStreamGroupInfo> GetStreamInfoList() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 主备流分组信息列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BackupStreamGroupInfo> m_streamInfoList;
                     bool m_streamInfoListHasBeenSet;

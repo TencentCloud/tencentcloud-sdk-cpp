@@ -391,18 +391,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例所应用的规则模板。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleTemplateIds 实例所应用的规则模板。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetRuleTemplateIds() const;
 
                     /**
                      * 设置实例所应用的规则模板。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleTemplateIds 实例所应用的规则模板。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleTemplateIds(const std::vector<std::string>& _ruleTemplateIds);
@@ -514,7 +510,6 @@ namespace TencentCloud
 
                     /**
                      * 实例所应用的规则模板。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_ruleTemplateIds;
                     bool m_ruleTemplateIdsHasBeenSet;

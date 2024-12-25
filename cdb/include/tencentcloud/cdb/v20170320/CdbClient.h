@@ -923,7 +923,7 @@ namespace TencentCloud
                 AdjustCdbProxyAddressOutcomeCallable AdjustCdbProxyAddressCallable(const Model::AdjustCdbProxyAddressRequest& request);
 
                 /**
-                 *在不同过滤条件下的审计日志结果集中，选定特定的数据列进行聚合统计。
+                 *本接口（AnalyzeAuditLogs）用于在不同过滤条件下的审计日志结果集中，选定特定的数据列进行聚合统计。
                  * @param req AnalyzeAuditLogsRequest
                  * @return AnalyzeAuditLogsOutcome
                  */
@@ -1042,7 +1042,7 @@ namespace TencentCloud
                 CreateAuditRuleOutcomeCallable CreateAuditRuleCallable(const Model::CreateAuditRuleRequest& request);
 
                 /**
-                 *创建审计规则模板
+                 *本接口（CreateAuditRuleTemplate）用于创建审计规则模板。
                  * @param req CreateAuditRuleTemplateRequest
                  * @return CreateAuditRuleTemplateOutcome
                  */
@@ -1051,7 +1051,7 @@ namespace TencentCloud
                 CreateAuditRuleTemplateOutcomeCallable CreateAuditRuleTemplateCallable(const Model::CreateAuditRuleTemplateRequest& request);
 
                 /**
-                 *本接口(CreateBackup)用于创建数据库备份。
+                 *本接口（CreateBackup）用于创建数据库备份。
                  * @param req CreateBackupRequest
                  * @return CreateBackupOutcome
                  */
@@ -1069,7 +1069,7 @@ namespace TencentCloud
                 CreateCdbProxyOutcomeCallable CreateCdbProxyCallable(const Model::CreateCdbProxyRequest& request);
 
                 /**
-                 *数据库代理增加代理地址
+                 *本接口（CreateCdbProxyAddress）用于数据库代理增加代理地址。
                  * @param req CreateCdbProxyAddressRequest
                  * @return CreateCdbProxyAddressOutcome
                  */
@@ -1078,7 +1078,7 @@ namespace TencentCloud
                 CreateCdbProxyAddressOutcomeCallable CreateCdbProxyAddressCallable(const Model::CreateCdbProxyAddressRequest& request);
 
                 /**
-                 *本接口(CreateCloneInstance) 用于从目标源实例创建一个克隆实例，可以指定克隆实例回档到源实例的指定物理备份文件或者指定的回档时间点。
+                 *本接口（CreateCloneInstance）用于从目标源实例创建一个克隆实例，可以指定克隆实例回档到源实例的指定物理备份文件或者指定的回档时间点。
                  * @param req CreateCloneInstanceRequest
                  * @return CreateCloneInstanceOutcome
                  */
@@ -1087,8 +1087,7 @@ namespace TencentCloud
                 CreateCloneInstanceOutcomeCallable CreateCloneInstanceCallable(const Model::CreateCloneInstanceRequest& request);
 
                 /**
-                 *本接口(CreateDBImportJob)用于创建云数据库数据导入任务。
-
+                 *本接口（CreateDBImportJob）用于创建云数据库数据导入任务。
 注意，用户进行数据导入任务的文件，必须提前上传到腾讯云。用户须在控制台进行文件导入。
                  * @param req CreateDBImportJobRequest
                  * @return CreateDBImportJobOutcome
@@ -1149,7 +1148,7 @@ namespace TencentCloud
                 CreateDeployGroupOutcomeCallable CreateDeployGroupCallable(const Model::CreateDeployGroupRequest& request);
 
                 /**
-                 *该接口（CreateParamTemplate）用于创建参数模板，全地域公共参数Region均为ap-guangzhou。
+                 *该接口（CreateParamTemplate）用于创建参数模板，全地域公共参数 Region 均为 ap-guangzhou。
                  * @param req CreateParamTemplateRequest
                  * @return CreateParamTemplateOutcome
                  */
@@ -1167,7 +1166,7 @@ namespace TencentCloud
                 CreateRoInstanceIpOutcomeCallable CreateRoInstanceIpCallable(const Model::CreateRoInstanceIpRequest& request);
 
                 /**
-                 *开启密码轮转
+                 *本接口（CreateRotationPassword）用于开启密码轮转。
                  * @param req CreateRotationPasswordRequest
                  * @return CreateRotationPasswordOutcome
                  */
@@ -1176,7 +1175,7 @@ namespace TencentCloud
                 CreateRotationPasswordOutcomeCallable CreateRotationPasswordCallable(const Model::CreateRotationPasswordRequest& request);
 
                 /**
-                 *本接口(DeleteAccounts)用于删除云数据库的账户。
+                 *本接口（DeleteAccounts）用于删除云数据库的账户。
                  * @param req DeleteAccountsRequest
                  * @return DeleteAccountsOutcome
                  */
@@ -1250,7 +1249,7 @@ namespace TencentCloud
                 DeleteDeployGroupsOutcomeCallable DeleteDeployGroupsCallable(const Model::DeleteDeployGroupsRequest& request);
 
                 /**
-                 *该接口（DeleteParamTemplate）用于删除参数模板，全地域公共参数Region均为ap-guangzhou。
+                 *该接口（DeleteParamTemplate）用于删除参数模板，全地域公共参数 Region 均为 ap-guangzhou。
                  * @param req DeleteParamTemplateRequest
                  * @return DeleteParamTemplateOutcome
                  */
@@ -1259,7 +1258,7 @@ namespace TencentCloud
                 DeleteParamTemplateOutcomeCallable DeleteParamTemplateCallable(const Model::DeleteParamTemplateRequest& request);
 
                 /**
-                 *关闭实例账户密码轮转
+                 *本接口（DeleteRotationPassword）用于关闭实例账户密码轮转。
                  * @param req DeleteRotationPasswordRequest
                  * @return DeleteRotationPasswordOutcome
                  */
@@ -1286,7 +1285,7 @@ namespace TencentCloud
                 DescribeAccountPrivilegesOutcomeCallable DescribeAccountPrivilegesCallable(const Model::DescribeAccountPrivilegesRequest& request);
 
                 /**
-                 *本接口(DescribeAccounts)用于查询云数据库的所有账户信息。
+                 *本接口（DescribeAccounts）用于查询云数据库的所有账户信息。
                  * @param req DescribeAccountsRequest
                  * @return DescribeAccountsOutcome
                  */
@@ -1313,7 +1312,7 @@ namespace TencentCloud
                 DescribeAuditConfigOutcomeCallable DescribeAuditConfigCallable(const Model::DescribeAuditConfigRequest& request);
 
                 /**
-                 *获取审计实例列表
+                 *本接口（DescribeAuditInstanceList）用于获取审计实例列表。
                  * @param req DescribeAuditInstanceListRequest
                  * @return DescribeAuditInstanceListOutcome
                  */
@@ -1322,7 +1321,7 @@ namespace TencentCloud
                 DescribeAuditInstanceListOutcomeCallable DescribeAuditInstanceListCallable(const Model::DescribeAuditInstanceListRequest& request);
 
                 /**
-                 *本接口(DescribeAuditLogFiles)用于查询云数据库实例的审计日志文件。
+                 *本接口（DescribeAuditLogFiles）用于查询云数据库实例的审计日志文件。
                  * @param req DescribeAuditLogFilesRequest
                  * @return DescribeAuditLogFilesOutcome
                  */
@@ -1340,7 +1339,7 @@ namespace TencentCloud
                 DescribeAuditLogsOutcomeCallable DescribeAuditLogsCallable(const Model::DescribeAuditLogsRequest& request);
 
                 /**
-                 *本接口(DescribeAuditPolicies)用于查询云数据库实例的审计策略。
+                 *本接口（DescribeAuditPolicies）用于查询云数据库实例的审计策略。
                  * @param req DescribeAuditPoliciesRequest
                  * @return DescribeAuditPoliciesOutcome
                  */
@@ -1349,7 +1348,7 @@ namespace TencentCloud
                 DescribeAuditPoliciesOutcomeCallable DescribeAuditPoliciesCallable(const Model::DescribeAuditPoliciesRequest& request);
 
                 /**
-                 *查询规则模板变更记录
+                 *本接口（DescribeAuditRuleTemplateModifyHistory）用于查询规则模板变更记录。
                  * @param req DescribeAuditRuleTemplateModifyHistoryRequest
                  * @return DescribeAuditRuleTemplateModifyHistoryOutcome
                  */
@@ -1358,7 +1357,7 @@ namespace TencentCloud
                 DescribeAuditRuleTemplateModifyHistoryOutcomeCallable DescribeAuditRuleTemplateModifyHistoryCallable(const Model::DescribeAuditRuleTemplateModifyHistoryRequest& request);
 
                 /**
-                 *查询审计规则模板信息
+                 *本接口（DescribeAuditRuleTemplates）用于查询审计规则模板信息。
                  * @param req DescribeAuditRuleTemplatesRequest
                  * @return DescribeAuditRuleTemplatesOutcome
                  */
@@ -1387,7 +1386,7 @@ namespace TencentCloud
                 DescribeBackupConfigOutcomeCallable DescribeBackupConfigCallable(const Model::DescribeBackupConfigRequest& request);
 
                 /**
-                 *本接口(DescribeBackupDecryptionKey)用于查询备份文件解密密钥。
+                 *本接口（DescribeBackupDecryptionKey）用于查询备份文件解密密钥。
                  * @param req DescribeBackupDecryptionKeyRequest
                  * @return DescribeBackupDecryptionKeyOutcome
                  */
@@ -1459,7 +1458,7 @@ namespace TencentCloud
                 DescribeBinlogsOutcomeCallable DescribeBinlogsCallable(const Model::DescribeBinlogsRequest& request);
 
                 /**
-                 *查询数据库代理详情信息
+                 *本接口（DescribeCdbProxyInfo）用于查询数据库代理详情信息。
                  * @param req DescribeCdbProxyInfoRequest
                  * @return DescribeCdbProxyInfoOutcome
                  */
@@ -1477,7 +1476,7 @@ namespace TencentCloud
                 DescribeCdbZoneConfigOutcomeCallable DescribeCdbZoneConfigCallable(const Model::DescribeCdbZoneConfigRequest& request);
 
                 /**
-                 *本接口(DescribeCloneList) 用于查询用户实例的克隆任务列表。
+                 *本接口（DescribeCloneList）用于查询用户实例的克隆任务列表。
                  * @param req DescribeCloneListRequest
                  * @return DescribeCloneListOutcome
                  */
@@ -1822,7 +1821,7 @@ namespace TencentCloud
                 DescribeSSLStatusOutcomeCallable DescribeSSLStatusCallable(const Model::DescribeSSLStatusRequest& request);
 
                 /**
-                 *条件检索实例的慢日志。只允许查看一个月之内的慢日志。
+                 *本接口（DescribeSlowLogData）用于使用条件检索实例的慢日志。只允许查看一个月之内的慢日志。
 使用时需要注意：可能存在单条慢日志太大，导致整个http请求的回包太大，进而引发接口超时。一旦发生超时，建议您缩小查询时的Limit参数值，从而降低包的大小，让接口能够及时返回内容。
                  * @param req DescribeSlowLogDataRequest
                  * @return DescribeSlowLogDataOutcome
@@ -2134,7 +2133,7 @@ namespace TencentCloud
                 ModifyInstanceParamOutcomeCallable ModifyInstanceParamCallable(const Model::ModifyInstanceParamRequest& request);
 
                 /**
-                 *本接口(ModifyInstancePasswordComplexity)用于修改云数据库实例的密码复杂度。
+                 *本接口（ModifyInstancePasswordComplexity）用于修改云数据库实例的密码复杂度。
                  * @param req ModifyInstancePasswordComplexityRequest
                  * @return ModifyInstancePasswordComplexityOutcome
                  */

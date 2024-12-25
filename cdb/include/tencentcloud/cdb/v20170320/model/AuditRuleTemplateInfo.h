@@ -158,18 +158,14 @@ namespace TencentCloud
 
                     /**
                      * 获取告警等级。1-低风险，2-中风险，3-高风险。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlarmLevel 告警等级。1-低风险，2-中风险，3-高风险。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetAlarmLevel() const;
 
                     /**
                      * 设置告警等级。1-低风险，2-中风险，3-高风险。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _alarmLevel 告警等级。1-低风险，2-中风险，3-高风险。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAlarmLevel(const uint64_t& _alarmLevel);
@@ -183,18 +179,14 @@ namespace TencentCloud
 
                     /**
                      * 获取告警策略。0-不告警，1-告警。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlarmPolicy 告警策略。0-不告警，1-告警。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetAlarmPolicy() const;
 
                     /**
                      * 设置告警策略。0-不告警，1-告警。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _alarmPolicy 告警策略。0-不告警，1-告警。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAlarmPolicy(const uint64_t& _alarmPolicy);
@@ -208,18 +200,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则模板应用在哪些在实例。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AffectedInstances 规则模板应用在哪些在实例。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetAffectedInstances() const;
 
                     /**
                      * 设置规则模板应用在哪些在实例。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _affectedInstances 规则模板应用在哪些在实例。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAffectedInstances(const std::vector<std::string>& _affectedInstances);
@@ -233,18 +221,14 @@ namespace TencentCloud
 
                     /**
                      * 获取模板状态。0-无任务 ，1-修改中。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 模板状态。0-无任务 ，1-修改中。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置模板状态。0-无任务 ，1-修改中。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 模板状态。0-无任务 ，1-修改中。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -258,18 +242,14 @@ namespace TencentCloud
 
                     /**
                      * 获取模板更新时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateAt 模板更新时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateAt() const;
 
                     /**
                      * 设置模板更新时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updateAt 模板更新时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdateAt(const std::string& _updateAt);
@@ -316,35 +296,30 @@ namespace TencentCloud
 
                     /**
                      * 告警等级。1-低风险，2-中风险，3-高风险。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_alarmLevel;
                     bool m_alarmLevelHasBeenSet;
 
                     /**
                      * 告警策略。0-不告警，1-告警。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_alarmPolicy;
                     bool m_alarmPolicyHasBeenSet;
 
                     /**
                      * 规则模板应用在哪些在实例。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_affectedInstances;
                     bool m_affectedInstancesHasBeenSet;
 
                     /**
                      * 模板状态。0-无任务 ，1-修改中。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 模板更新时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateAt;
                     bool m_updateAtHasBeenSet;

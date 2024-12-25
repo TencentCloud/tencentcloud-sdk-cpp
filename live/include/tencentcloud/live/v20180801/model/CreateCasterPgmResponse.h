@@ -46,10 +46,8 @@ namespace TencentCloud
                     /**
                      * 获取主监任务的rtmp协议预览地址。
 注：该地址仅供预览，不可分发。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PgmPlayUrl 主监任务的rtmp协议预览地址。
 注：该地址仅供预览，不可分发。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPgmPlayUrl() const;
@@ -63,9 +61,7 @@ namespace TencentCloud
 
                     /**
                      * 获取注：该字段已废弃，请结合腾讯云直播播放地址生成策略生成cdn播放地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CdnPlayUrl 注：该字段已废弃，请结合腾讯云直播播放地址生成策略生成cdn播放地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCdnPlayUrl() const;
@@ -79,9 +75,7 @@ namespace TencentCloud
 
                     /**
                      * 获取主监任务在腾讯云直播侧的流ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CdnStreamId 主监任务在腾讯云直播侧的流ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCdnStreamId() const;
@@ -98,12 +92,10 @@ namespace TencentCloud
 注：
 1. 该预览地址仅作为预览，不可分发。
 2. webrtc播放地址需配合腾讯云快直播播放sdk使用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PgmWebRTCPlayUrl 主监任务的webrtc协议播放地址。
 注：
 1. 该预览地址仅作为预览，不可分发。
 2. webrtc播放地址需配合腾讯云快直播播放sdk使用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPgmWebRTCPlayUrl() const;
@@ -120,21 +112,18 @@ namespace TencentCloud
                     /**
                      * 主监任务的rtmp协议预览地址。
 注：该地址仅供预览，不可分发。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pgmPlayUrl;
                     bool m_pgmPlayUrlHasBeenSet;
 
                     /**
                      * 注：该字段已废弃，请结合腾讯云直播播放地址生成策略生成cdn播放地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cdnPlayUrl;
                     bool m_cdnPlayUrlHasBeenSet;
 
                     /**
                      * 主监任务在腾讯云直播侧的流ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cdnStreamId;
                     bool m_cdnStreamIdHasBeenSet;
@@ -144,7 +133,6 @@ namespace TencentCloud
 注：
 1. 该预览地址仅作为预览，不可分发。
 2. webrtc播放地址需配合腾讯云快直播播放sdk使用。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pgmWebRTCPlayUrl;
                     bool m_pgmWebRTCPlayUrlHasBeenSet;

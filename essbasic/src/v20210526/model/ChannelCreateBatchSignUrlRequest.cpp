@@ -36,7 +36,8 @@ ChannelCreateBatchSignUrlRequest::ChannelCreateBatchSignUrlRequest() :
     m_flowBatchUrlInfoHasBeenSet(false),
     m_openIdHasBeenSet(false),
     m_organizationOpenIdHasBeenSet(false),
-    m_autoJumpBackHasBeenSet(false)
+    m_autoJumpBackHasBeenSet(false),
+    m_urlUseEnvHasBeenSet(false)
 {
 }
 
@@ -165,6 +166,14 @@ string ChannelCreateBatchSignUrlRequest::ToJsonString() const
         string key = "AutoJumpBack";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_autoJumpBack, allocator);
+    }
+
+    if (m_urlUseEnvHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UrlUseEnv";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_urlUseEnv.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -397,6 +406,22 @@ void ChannelCreateBatchSignUrlRequest::SetAutoJumpBack(const bool& _autoJumpBack
 bool ChannelCreateBatchSignUrlRequest::AutoJumpBackHasBeenSet() const
 {
     return m_autoJumpBackHasBeenSet;
+}
+
+string ChannelCreateBatchSignUrlRequest::GetUrlUseEnv() const
+{
+    return m_urlUseEnv;
+}
+
+void ChannelCreateBatchSignUrlRequest::SetUrlUseEnv(const string& _urlUseEnv)
+{
+    m_urlUseEnv = _urlUseEnv;
+    m_urlUseEnvHasBeenSet = true;
+}
+
+bool ChannelCreateBatchSignUrlRequest::UrlUseEnvHasBeenSet() const
+{
+    return m_urlUseEnvHasBeenSet;
 }
 
 

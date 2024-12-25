@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取机器实例ID
-                     * @return InstanceId 机器实例ID
+                     * 获取机器实例ID， 和  实例 ID 二者必选其一，不能同时为空
+                     * @return InstanceId 机器实例ID， 和  实例 ID 二者必选其一，不能同时为空
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置机器实例ID
-                     * @param _instanceId 机器实例ID
+                     * 设置机器实例ID， 和  实例 ID 二者必选其一，不能同时为空
+                     * @param _instanceId 机器实例ID， 和  实例 ID 二者必选其一，不能同时为空
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取部署组ID
-                     * @return GroupId 部署组ID
+                     * 获取部署组ID，和 InstanceId 二者必选其一，不能同时为空
+                     * @return GroupId 部署组ID，和 InstanceId 二者必选其一，不能同时为空
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置部署组ID
-                     * @param _groupId 部署组ID
+                     * 设置部署组ID，和 InstanceId 二者必选其一，不能同时为空
+                     * @param _groupId 部署组ID，和 InstanceId 二者必选其一，不能同时为空
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -313,7 +313,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 机器实例ID
+                     * 机器实例ID， 和  实例 ID 二者必选其一，不能同时为空
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -337,7 +337,7 @@ namespace TencentCloud
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 部署组ID
+                     * 部署组ID，和 InstanceId 二者必选其一，不能同时为空
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;

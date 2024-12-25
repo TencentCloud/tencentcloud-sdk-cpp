@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取处理结果信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResultMessage 处理结果信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResultMessage() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 处理结果信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resultMessage;
                     bool m_resultMessageHasBeenSet;

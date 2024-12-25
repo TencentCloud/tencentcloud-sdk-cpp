@@ -1502,6 +1502,92 @@ TrocketClient::DescribeMQTTUserListOutcomeCallable TrocketClient::DescribeMQTTUs
     return task->get_future();
 }
 
+TrocketClient::DescribeMessageOutcome TrocketClient::DescribeMessage(const DescribeMessageRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMessage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMessageResponse rsp = DescribeMessageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMessageOutcome(rsp);
+        else
+            return DescribeMessageOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMessageOutcome(outcome.GetError());
+    }
+}
+
+void TrocketClient::DescribeMessageAsync(const DescribeMessageRequest& request, const DescribeMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMessage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrocketClient::DescribeMessageOutcomeCallable TrocketClient::DescribeMessageCallable(const DescribeMessageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMessageOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMessage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrocketClient::DescribeMessageListOutcome TrocketClient::DescribeMessageList(const DescribeMessageListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMessageList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMessageListResponse rsp = DescribeMessageListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMessageListOutcome(rsp);
+        else
+            return DescribeMessageListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMessageListOutcome(outcome.GetError());
+    }
+}
+
+void TrocketClient::DescribeMessageListAsync(const DescribeMessageListRequest& request, const DescribeMessageListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMessageList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrocketClient::DescribeMessageListOutcomeCallable TrocketClient::DescribeMessageListCallable(const DescribeMessageListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMessageListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMessageList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrocketClient::DescribeMessageTraceOutcome TrocketClient::DescribeMessageTrace(const DescribeMessageTraceRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeMessageTrace");
@@ -2183,6 +2269,49 @@ TrocketClient::ModifyTopicOutcomeCallable TrocketClient::ModifyTopicCallable(con
         [this, request]()
         {
             return this->ModifyTopic(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrocketClient::ResendDeadLetterMessageOutcome TrocketClient::ResendDeadLetterMessage(const ResendDeadLetterMessageRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResendDeadLetterMessage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResendDeadLetterMessageResponse rsp = ResendDeadLetterMessageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResendDeadLetterMessageOutcome(rsp);
+        else
+            return ResendDeadLetterMessageOutcome(o.GetError());
+    }
+    else
+    {
+        return ResendDeadLetterMessageOutcome(outcome.GetError());
+    }
+}
+
+void TrocketClient::ResendDeadLetterMessageAsync(const ResendDeadLetterMessageRequest& request, const ResendDeadLetterMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ResendDeadLetterMessage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrocketClient::ResendDeadLetterMessageOutcomeCallable TrocketClient::ResendDeadLetterMessageCallable(const ResendDeadLetterMessageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ResendDeadLetterMessageOutcome()>>(
+        [this, request]()
+        {
+            return this->ResendDeadLetterMessage(request);
         }
     );
 

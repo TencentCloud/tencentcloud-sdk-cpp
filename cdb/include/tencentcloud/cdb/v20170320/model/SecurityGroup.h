@@ -50,14 +50,18 @@ namespace TencentCloud
 
                     /**
                      * 获取项目ID
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectId 项目ID
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetProjectId() const;
 
                     /**
                      * 设置项目ID
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _projectId 项目ID
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProjectId(const int64_t& _projectId);
@@ -71,14 +75,18 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间，时间格式：yyyy-mm-dd hh:mm:ss
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间，时间格式：yyyy-mm-dd hh:mm:ss
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间，时间格式：yyyy-mm-dd hh:mm:ss
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间，时间格式：yyyy-mm-dd hh:mm:ss
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -92,14 +100,18 @@ namespace TencentCloud
 
                     /**
                      * 获取入站规则
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Inbound 入站规则
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Inbound> GetInbound() const;
 
                     /**
                      * 设置入站规则
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _inbound 入站规则
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInbound(const std::vector<Inbound>& _inbound);
@@ -113,14 +125,18 @@ namespace TencentCloud
 
                     /**
                      * 获取出站规则
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Outbound 出站规则
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Outbound> GetOutbound() const;
 
                     /**
                      * 设置出站规则
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _outbound 出站规则
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutbound(const std::vector<Outbound>& _outbound);
@@ -134,14 +150,18 @@ namespace TencentCloud
 
                     /**
                      * 获取安全组ID
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecurityGroupId 安全组ID
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSecurityGroupId() const;
 
                     /**
                      * 设置安全组ID
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _securityGroupId 安全组ID
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSecurityGroupId(const std::string& _securityGroupId);
@@ -155,14 +175,18 @@ namespace TencentCloud
 
                     /**
                      * 获取安全组名称
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecurityGroupName 安全组名称
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSecurityGroupName() const;
 
                     /**
                      * 设置安全组名称
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _securityGroupName 安全组名称
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSecurityGroupName(const std::string& _securityGroupName);
@@ -176,14 +200,18 @@ namespace TencentCloud
 
                     /**
                      * 获取安全组备注
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecurityGroupRemark 安全组备注
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSecurityGroupRemark() const;
 
                     /**
                      * 设置安全组备注
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _securityGroupRemark 安全组备注
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSecurityGroupRemark(const std::string& _securityGroupRemark);
@@ -199,42 +227,49 @@ namespace TencentCloud
 
                     /**
                      * 项目ID
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
                      * 创建时间，时间格式：yyyy-mm-dd hh:mm:ss
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 入站规则
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Inbound> m_inbound;
                     bool m_inboundHasBeenSet;
 
                     /**
                      * 出站规则
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Outbound> m_outbound;
                     bool m_outboundHasBeenSet;
 
                     /**
                      * 安全组ID
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_securityGroupId;
                     bool m_securityGroupIdHasBeenSet;
 
                     /**
                      * 安全组名称
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_securityGroupName;
                     bool m_securityGroupNameHasBeenSet;
 
                     /**
                      * 安全组备注
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_securityGroupRemark;
                     bool m_securityGroupRemarkHasBeenSet;

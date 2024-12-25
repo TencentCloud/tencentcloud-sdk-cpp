@@ -106,27 +106,6 @@ namespace TencentCloud
                     bool ConsumerGroupNameHasBeenSet() const;
 
                     /**
-                     * 获取旧密码
-                     * @return OldPassword 旧密码
-                     * 
-                     */
-                    std::string GetOldPassword() const;
-
-                    /**
-                     * 设置旧密码
-                     * @param _oldPassword 旧密码
-                     * 
-                     */
-                    void SetOldPassword(const std::string& _oldPassword);
-
-                    /**
-                     * 判断参数 OldPassword 是否已赋值
-                     * @return OldPassword 是否已赋值
-                     * 
-                     */
-                    bool OldPasswordHasBeenSet() const;
-
-                    /**
                      * 获取新密码。字符长度不小于3，不大于32
                      * @return NewPassword 新密码。字符长度不小于3，不大于32
                      * 
@@ -146,6 +125,27 @@ namespace TencentCloud
                      * 
                      */
                     bool NewPasswordHasBeenSet() const;
+
+                    /**
+                     * 获取旧密码，非必选
+                     * @return OldPassword 旧密码，非必选
+                     * 
+                     */
+                    std::string GetOldPassword() const;
+
+                    /**
+                     * 设置旧密码，非必选
+                     * @param _oldPassword 旧密码，非必选
+                     * 
+                     */
+                    void SetOldPassword(const std::string& _oldPassword);
+
+                    /**
+                     * 判断参数 OldPassword 是否已赋值
+                     * @return OldPassword 是否已赋值
+                     * 
+                     */
+                    bool OldPasswordHasBeenSet() const;
 
                 private:
 
@@ -168,16 +168,16 @@ namespace TencentCloud
                     bool m_consumerGroupNameHasBeenSet;
 
                     /**
-                     * 旧密码
-                     */
-                    std::string m_oldPassword;
-                    bool m_oldPasswordHasBeenSet;
-
-                    /**
                      * 新密码。字符长度不小于3，不大于32
                      */
                     std::string m_newPassword;
                     bool m_newPasswordHasBeenSet;
+
+                    /**
+                     * 旧密码，非必选
+                     */
+                    std::string m_oldPassword;
+                    bool m_oldPasswordHasBeenSet;
 
                 };
             }

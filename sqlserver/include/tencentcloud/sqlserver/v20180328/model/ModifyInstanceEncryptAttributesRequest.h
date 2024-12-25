@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取证书归属。self-表示使用该账号自身的证书，others-表示引用其他账号的证书，默认取值self。
-                     * @return CertificateAttribution 证书归属。self-表示使用该账号自身的证书，others-表示引用其他账号的证书，默认取值self。
+                     * 获取证书归属。self-表示使用该账号自身的证书，others-表示引用其他账号的证书，kms-表示使用kms的CMK证书，默认取值self。
+                     * @return CertificateAttribution 证书归属。self-表示使用该账号自身的证书，others-表示引用其他账号的证书，kms-表示使用kms的CMK证书，默认取值self。
                      * 
                      */
                     std::string GetCertificateAttribution() const;
 
                     /**
-                     * 设置证书归属。self-表示使用该账号自身的证书，others-表示引用其他账号的证书，默认取值self。
-                     * @param _certificateAttribution 证书归属。self-表示使用该账号自身的证书，others-表示引用其他账号的证书，默认取值self。
+                     * 设置证书归属。self-表示使用该账号自身的证书，others-表示引用其他账号的证书，kms-表示使用kms的CMK证书，默认取值self。
+                     * @param _certificateAttribution 证书归属。self-表示使用该账号自身的证书，others-表示引用其他账号的证书，kms-表示使用kms的CMK证书，默认取值self。
                      * 
                      */
                     void SetCertificateAttribution(const std::string& _certificateAttribution);
@@ -105,6 +105,48 @@ namespace TencentCloud
                      */
                     bool QuoteUinHasBeenSet() const;
 
+                    /**
+                     * 获取CertificateAttribution为kms时必填
+                     * @return KeyId CertificateAttribution为kms时必填
+                     * 
+                     */
+                    std::string GetKeyId() const;
+
+                    /**
+                     * 设置CertificateAttribution为kms时必填
+                     * @param _keyId CertificateAttribution为kms时必填
+                     * 
+                     */
+                    void SetKeyId(const std::string& _keyId);
+
+                    /**
+                     * 判断参数 KeyId 是否已赋值
+                     * @return KeyId 是否已赋值
+                     * 
+                     */
+                    bool KeyIdHasBeenSet() const;
+
+                    /**
+                     * 获取CertificateAttribution为kms时必填
+                     * @return KeyRegion CertificateAttribution为kms时必填
+                     * 
+                     */
+                    std::string GetKeyRegion() const;
+
+                    /**
+                     * 设置CertificateAttribution为kms时必填
+                     * @param _keyRegion CertificateAttribution为kms时必填
+                     * 
+                     */
+                    void SetKeyRegion(const std::string& _keyRegion);
+
+                    /**
+                     * 判断参数 KeyRegion 是否已赋值
+                     * @return KeyRegion 是否已赋值
+                     * 
+                     */
+                    bool KeyRegionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -114,7 +156,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 证书归属。self-表示使用该账号自身的证书，others-表示引用其他账号的证书，默认取值self。
+                     * 证书归属。self-表示使用该账号自身的证书，others-表示引用其他账号的证书，kms-表示使用kms的CMK证书，默认取值self。
                      */
                     std::string m_certificateAttribution;
                     bool m_certificateAttributionHasBeenSet;
@@ -124,6 +166,18 @@ namespace TencentCloud
                      */
                     std::string m_quoteUin;
                     bool m_quoteUinHasBeenSet;
+
+                    /**
+                     * CertificateAttribution为kms时必填
+                     */
+                    std::string m_keyId;
+                    bool m_keyIdHasBeenSet;
+
+                    /**
+                     * CertificateAttribution为kms时必填
+                     */
+                    std::string m_keyRegion;
+                    bool m_keyRegionHasBeenSet;
 
                 };
             }

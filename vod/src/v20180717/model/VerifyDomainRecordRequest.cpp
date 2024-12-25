@@ -24,6 +24,7 @@ using namespace std;
 
 VerifyDomainRecordRequest::VerifyDomainRecordRequest() :
     m_domainHasBeenSet(false),
+    m_subAppIdHasBeenSet(false),
     m_verifyTypeHasBeenSet(false)
 {
 }
@@ -41,6 +42,14 @@ string VerifyDomainRecordRequest::ToJsonString() const
         string key = "Domain";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
     }
 
     if (m_verifyTypeHasBeenSet)
@@ -73,6 +82,22 @@ void VerifyDomainRecordRequest::SetDomain(const string& _domain)
 bool VerifyDomainRecordRequest::DomainHasBeenSet() const
 {
     return m_domainHasBeenSet;
+}
+
+uint64_t VerifyDomainRecordRequest::GetSubAppId() const
+{
+    return m_subAppId;
+}
+
+void VerifyDomainRecordRequest::SetSubAppId(const uint64_t& _subAppId)
+{
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
+}
+
+bool VerifyDomainRecordRequest::SubAppIdHasBeenSet() const
+{
+    return m_subAppIdHasBeenSet;
 }
 
 string VerifyDomainRecordRequest::GetVerifyType() const

@@ -261,6 +261,7 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/VerifyRocketMQConsumeResponse.h
   include/tencentcloud/tdmq/v20200217/model/DescribeRocketMQConsumerConnectionDetailRequest.h
   include/tencentcloud/tdmq/v20200217/model/DeleteRolesResponse.h
+  include/tencentcloud/tdmq/v20200217/model/RetryRocketMQDlqMessageResponse.h
   include/tencentcloud/tdmq/v20200217/model/DescribeRabbitMQBindingsRequest.h
   include/tencentcloud/tdmq/v20200217/model/ModifyRocketMQTopicRequest.h
   include/tencentcloud/tdmq/v20200217/model/RocketMQClusterInfo.h
@@ -322,6 +323,7 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/RocketMQClusterRecentStats.h
   include/tencentcloud/tdmq/v20200217/model/DescribeRocketMQPublicAccessPointRequest.h
   include/tencentcloud/tdmq/v20200217/model/RabbitMQPrivateNode.h
+  include/tencentcloud/tdmq/v20200217/model/RetryRocketMQDlqMessageRequest.h
   include/tencentcloud/tdmq/v20200217/model/ModifyPublicNetworkAccessPointRequest.h
   include/tencentcloud/tdmq/v20200217/model/DescribeRocketMQSourceClusterGroupListResponse.h
   include/tencentcloud/tdmq/v20200217/model/DescribeRocketMQTopicsByGroupRequest.h
@@ -645,6 +647,7 @@ set(tdmq_src
   src/v20200217/model/VerifyRocketMQConsumeResponse.cpp
   src/v20200217/model/DescribeRocketMQConsumerConnectionDetailRequest.cpp
   src/v20200217/model/DeleteRolesResponse.cpp
+  src/v20200217/model/RetryRocketMQDlqMessageResponse.cpp
   src/v20200217/model/DescribeRabbitMQBindingsRequest.cpp
   src/v20200217/model/ModifyRocketMQTopicRequest.cpp
   src/v20200217/model/RocketMQClusterInfo.cpp
@@ -706,6 +709,7 @@ set(tdmq_src
   src/v20200217/model/RocketMQClusterRecentStats.cpp
   src/v20200217/model/DescribeRocketMQPublicAccessPointRequest.cpp
   src/v20200217/model/RabbitMQPrivateNode.cpp
+  src/v20200217/model/RetryRocketMQDlqMessageRequest.cpp
   src/v20200217/model/ModifyPublicNetworkAccessPointRequest.cpp
   src/v20200217/model/DescribeRocketMQSourceClusterGroupListResponse.cpp
   src/v20200217/model/DescribeRocketMQTopicsByGroupRequest.cpp

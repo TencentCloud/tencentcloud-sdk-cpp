@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeId 节点id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNodeId() const;
 
                     /**
                      * 设置节点id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nodeId 节点id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNodeId(const std::string& _nodeId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点类型：主节点，从节点
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Role 节点类型：主节点，从节点
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRole() const;
 
                     /**
                      * 设置节点类型：主节点，从节点
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _role 节点类型：主节点，从节点
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRole(const std::string& _role);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zone 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zone 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 节点id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nodeId;
                     bool m_nodeIdHasBeenSet;
 
                     /**
                      * 节点类型：主节点，从节点
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_role;
                     bool m_roleHasBeenSet;
 
                     /**
                      * 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;

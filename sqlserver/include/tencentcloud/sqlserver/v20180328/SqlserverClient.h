@@ -961,7 +961,7 @@ namespace TencentCloud
                 CreateReadOnlyDBInstancesOutcomeCallable CreateReadOnlyDBInstancesCallable(const Model::CreateReadOnlyDBInstancesRequest& request);
 
                 /**
-                 *本接口(CutXEvents)用于手动切割阻塞日志和死锁日志。
+                 *本接口（CutXEvents）用于手动切割阻塞日志和死锁日志。
                  * @param req CutXEventsRequest
                  * @return CutXEventsOutcome
                  */
@@ -1087,7 +1087,7 @@ namespace TencentCloud
                 DescribeBackupCommandOutcomeCallable DescribeBackupCommandCallable(const Model::DescribeBackupCommandRequest& request);
 
                 /**
-                 *本接口(DescribeBackupFiles)用于查询单库备份明细
+                 *本接口（DescribeBackupFiles）用于查询单库备份明细。
                  * @param req DescribeBackupFilesRequest
                  * @return DescribeBackupFilesOutcome
                  */
