@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 添加模板参数响应 
+                * 添加模板参数响应
                 */
                 class AddTemplateStatus : public AbstractModel
                 {

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 修改签名响应 
+                * 修改签名响应
                 */
                 class ModifySignStatus : public AbstractModel
                 {

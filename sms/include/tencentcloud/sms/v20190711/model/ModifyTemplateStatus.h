@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 修改模板参数响应 
+                * 修改模板参数响应
                 */
                 class ModifyTemplateStatus : public AbstractModel
                 {

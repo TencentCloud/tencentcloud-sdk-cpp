@@ -470,6 +470,49 @@ CsipClient::DescribeCVMAssetsOutcomeCallable CsipClient::DescribeCVMAssetsCallab
     return task->get_future();
 }
 
+CsipClient::DescribeClusterAssetsOutcome CsipClient::DescribeClusterAssets(const DescribeClusterAssetsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterAssets");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterAssetsResponse rsp = DescribeClusterAssetsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterAssetsOutcome(rsp);
+        else
+            return DescribeClusterAssetsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterAssetsOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeClusterAssetsAsync(const DescribeClusterAssetsRequest& request, const DescribeClusterAssetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClusterAssets(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DescribeClusterAssetsOutcomeCallable CsipClient::DescribeClusterAssetsCallable(const DescribeClusterAssetsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClusterAssetsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClusterAssets(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CsipClient::DescribeClusterPodAssetsOutcome CsipClient::DescribeClusterPodAssets(const DescribeClusterPodAssetsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeClusterPodAssets");
@@ -764,6 +807,49 @@ CsipClient::DescribeNICAssetsOutcomeCallable CsipClient::DescribeNICAssetsCallab
         [this, request]()
         {
             return this->DescribeNICAssets(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CsipClient::DescribeOrganizationInfoOutcome CsipClient::DescribeOrganizationInfo(const DescribeOrganizationInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOrganizationInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOrganizationInfoResponse rsp = DescribeOrganizationInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOrganizationInfoOutcome(rsp);
+        else
+            return DescribeOrganizationInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOrganizationInfoOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeOrganizationInfoAsync(const DescribeOrganizationInfoRequest& request, const DescribeOrganizationInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeOrganizationInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DescribeOrganizationInfoOutcomeCallable CsipClient::DescribeOrganizationInfoCallable(const DescribeOrganizationInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeOrganizationInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeOrganizationInfo(request);
         }
     );
 
@@ -1330,6 +1416,49 @@ CsipClient::DescribeSearchBugInfoOutcomeCallable CsipClient::DescribeSearchBugIn
     return task->get_future();
 }
 
+CsipClient::DescribeSubUserInfoOutcome CsipClient::DescribeSubUserInfo(const DescribeSubUserInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSubUserInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSubUserInfoResponse rsp = DescribeSubUserInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSubUserInfoOutcome(rsp);
+        else
+            return DescribeSubUserInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSubUserInfoOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeSubUserInfoAsync(const DescribeSubUserInfoRequest& request, const DescribeSubUserInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSubUserInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DescribeSubUserInfoOutcomeCallable CsipClient::DescribeSubUserInfoCallable(const DescribeSubUserInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSubUserInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSubUserInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CsipClient::DescribeSubnetAssetsOutcome CsipClient::DescribeSubnetAssets(const DescribeSubnetAssetsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSubnetAssets");
@@ -1495,6 +1624,49 @@ CsipClient::DescribeTopAttackInfoOutcomeCallable CsipClient::DescribeTopAttackIn
         [this, request]()
         {
             return this->DescribeTopAttackInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CsipClient::DescribeUebaRuleOutcome CsipClient::DescribeUebaRule(const DescribeUebaRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUebaRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUebaRuleResponse rsp = DescribeUebaRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUebaRuleOutcome(rsp);
+        else
+            return DescribeUebaRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUebaRuleOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::DescribeUebaRuleAsync(const DescribeUebaRuleRequest& request, const DescribeUebaRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUebaRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::DescribeUebaRuleOutcomeCallable CsipClient::DescribeUebaRuleCallable(const DescribeUebaRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUebaRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUebaRule(request);
         }
     );
 
@@ -1796,6 +1968,49 @@ CsipClient::ModifyRiskCenterScanTaskOutcomeCallable CsipClient::ModifyRiskCenter
         [this, request]()
         {
             return this->ModifyRiskCenterScanTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CsipClient::ModifyUebaRuleSwitchOutcome CsipClient::ModifyUebaRuleSwitch(const ModifyUebaRuleSwitchRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyUebaRuleSwitch");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyUebaRuleSwitchResponse rsp = ModifyUebaRuleSwitchResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyUebaRuleSwitchOutcome(rsp);
+        else
+            return ModifyUebaRuleSwitchOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyUebaRuleSwitchOutcome(outcome.GetError());
+    }
+}
+
+void CsipClient::ModifyUebaRuleSwitchAsync(const ModifyUebaRuleSwitchRequest& request, const ModifyUebaRuleSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyUebaRuleSwitch(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CsipClient::ModifyUebaRuleSwitchOutcomeCallable CsipClient::ModifyUebaRuleSwitchCallable(const ModifyUebaRuleSwitchRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyUebaRuleSwitchOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyUebaRuleSwitch(request);
         }
     );
 

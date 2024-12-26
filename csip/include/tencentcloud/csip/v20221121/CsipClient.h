@@ -43,6 +43,8 @@
 #include <tencentcloud/csip/v20221121/model/DescribeCVMAssetInfoResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeCVMAssetsRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeCVMAssetsResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeClusterAssetsRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeClusterAssetsResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeClusterPodAssetsRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeClusterPodAssetsResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeDbAssetInfoRequest.h>
@@ -57,6 +59,8 @@
 #include <tencentcloud/csip/v20221121/model/DescribeListenerListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeNICAssetsRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeNICAssetsResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeOrganizationInfoRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeOrganizationInfoResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeOrganizationUserInfoRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeOrganizationUserInfoResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribePublicIpAssetsRequest.h>
@@ -83,6 +87,8 @@
 #include <tencentcloud/csip/v20221121/model/DescribeScanTaskListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeSearchBugInfoRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeSearchBugInfoResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeSubUserInfoRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeSubUserInfoResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeSubnetAssetsRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeSubnetAssetsResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeTaskLogListRequest.h>
@@ -91,6 +97,8 @@
 #include <tencentcloud/csip/v20221121/model/DescribeTaskLogURLResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeTopAttackInfoRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeTopAttackInfoResponse.h>
+#include <tencentcloud/csip/v20221121/model/DescribeUebaRuleRequest.h>
+#include <tencentcloud/csip/v20221121/model/DescribeUebaRuleResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeVULRiskAdvanceCFGListRequest.h>
 #include <tencentcloud/csip/v20221121/model/DescribeVULRiskAdvanceCFGListResponse.h>
 #include <tencentcloud/csip/v20221121/model/DescribeVULRiskDetailRequest.h>
@@ -105,6 +113,8 @@
 #include <tencentcloud/csip/v20221121/model/ModifyRiskCenterRiskStatusResponse.h>
 #include <tencentcloud/csip/v20221121/model/ModifyRiskCenterScanTaskRequest.h>
 #include <tencentcloud/csip/v20221121/model/ModifyRiskCenterScanTaskResponse.h>
+#include <tencentcloud/csip/v20221121/model/ModifyUebaRuleSwitchRequest.h>
+#include <tencentcloud/csip/v20221121/model/ModifyUebaRuleSwitchResponse.h>
 #include <tencentcloud/csip/v20221121/model/StopRiskCenterTaskRequest.h>
 #include <tencentcloud/csip/v20221121/model/StopRiskCenterTaskResponse.h>
 #include <tencentcloud/csip/v20221121/model/UpdateAlertStatusListRequest.h>
@@ -153,6 +163,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCVMAssetsResponse> DescribeCVMAssetsOutcome;
                 typedef std::future<DescribeCVMAssetsOutcome> DescribeCVMAssetsOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeCVMAssetsRequest&, DescribeCVMAssetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCVMAssetsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeClusterAssetsResponse> DescribeClusterAssetsOutcome;
+                typedef std::future<DescribeClusterAssetsOutcome> DescribeClusterAssetsOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeClusterAssetsRequest&, DescribeClusterAssetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterAssetsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeClusterPodAssetsResponse> DescribeClusterPodAssetsOutcome;
                 typedef std::future<DescribeClusterPodAssetsOutcome> DescribeClusterPodAssetsOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeClusterPodAssetsRequest&, DescribeClusterPodAssetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterPodAssetsAsyncHandler;
@@ -174,6 +187,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeNICAssetsResponse> DescribeNICAssetsOutcome;
                 typedef std::future<DescribeNICAssetsOutcome> DescribeNICAssetsOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeNICAssetsRequest&, DescribeNICAssetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNICAssetsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeOrganizationInfoResponse> DescribeOrganizationInfoOutcome;
+                typedef std::future<DescribeOrganizationInfoOutcome> DescribeOrganizationInfoOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeOrganizationInfoRequest&, DescribeOrganizationInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOrganizationInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeOrganizationUserInfoResponse> DescribeOrganizationUserInfoOutcome;
                 typedef std::future<DescribeOrganizationUserInfoOutcome> DescribeOrganizationUserInfoOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeOrganizationUserInfoRequest&, DescribeOrganizationUserInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOrganizationUserInfoAsyncHandler;
@@ -213,6 +229,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSearchBugInfoResponse> DescribeSearchBugInfoOutcome;
                 typedef std::future<DescribeSearchBugInfoOutcome> DescribeSearchBugInfoOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeSearchBugInfoRequest&, DescribeSearchBugInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSearchBugInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSubUserInfoResponse> DescribeSubUserInfoOutcome;
+                typedef std::future<DescribeSubUserInfoOutcome> DescribeSubUserInfoOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeSubUserInfoRequest&, DescribeSubUserInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSubUserInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSubnetAssetsResponse> DescribeSubnetAssetsOutcome;
                 typedef std::future<DescribeSubnetAssetsOutcome> DescribeSubnetAssetsOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeSubnetAssetsRequest&, DescribeSubnetAssetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSubnetAssetsAsyncHandler;
@@ -225,6 +244,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTopAttackInfoResponse> DescribeTopAttackInfoOutcome;
                 typedef std::future<DescribeTopAttackInfoOutcome> DescribeTopAttackInfoOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeTopAttackInfoRequest&, DescribeTopAttackInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopAttackInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUebaRuleResponse> DescribeUebaRuleOutcome;
+                typedef std::future<DescribeUebaRuleOutcome> DescribeUebaRuleOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::DescribeUebaRuleRequest&, DescribeUebaRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUebaRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeVULRiskAdvanceCFGListResponse> DescribeVULRiskAdvanceCFGListOutcome;
                 typedef std::future<DescribeVULRiskAdvanceCFGListOutcome> DescribeVULRiskAdvanceCFGListOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::DescribeVULRiskAdvanceCFGListRequest&, DescribeVULRiskAdvanceCFGListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVULRiskAdvanceCFGListAsyncHandler;
@@ -246,6 +268,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyRiskCenterScanTaskResponse> ModifyRiskCenterScanTaskOutcome;
                 typedef std::future<ModifyRiskCenterScanTaskOutcome> ModifyRiskCenterScanTaskOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::ModifyRiskCenterScanTaskRequest&, ModifyRiskCenterScanTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRiskCenterScanTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyUebaRuleSwitchResponse> ModifyUebaRuleSwitchOutcome;
+                typedef std::future<ModifyUebaRuleSwitchOutcome> ModifyUebaRuleSwitchOutcomeCallable;
+                typedef std::function<void(const CsipClient*, const Model::ModifyUebaRuleSwitchRequest&, ModifyUebaRuleSwitchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUebaRuleSwitchAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopRiskCenterTaskResponse> StopRiskCenterTaskOutcome;
                 typedef std::future<StopRiskCenterTaskOutcome> StopRiskCenterTaskOutcomeCallable;
                 typedef std::function<void(const CsipClient*, const Model::StopRiskCenterTaskRequest&, StopRiskCenterTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopRiskCenterTaskAsyncHandler;
@@ -346,6 +371,15 @@ namespace TencentCloud
                 DescribeCVMAssetsOutcomeCallable DescribeCVMAssetsCallable(const Model::DescribeCVMAssetsRequest& request);
 
                 /**
+                 *集群列表
+                 * @param req DescribeClusterAssetsRequest
+                 * @return DescribeClusterAssetsOutcome
+                 */
+                DescribeClusterAssetsOutcome DescribeClusterAssets(const Model::DescribeClusterAssetsRequest &request);
+                void DescribeClusterAssetsAsync(const Model::DescribeClusterAssetsRequest& request, const DescribeClusterAssetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClusterAssetsOutcomeCallable DescribeClusterAssetsCallable(const Model::DescribeClusterAssetsRequest& request);
+
+                /**
                  *集群pod列表
                  * @param req DescribeClusterPodAssetsRequest
                  * @return DescribeClusterPodAssetsOutcome
@@ -407,6 +441,15 @@ namespace TencentCloud
                 DescribeNICAssetsOutcome DescribeNICAssets(const Model::DescribeNICAssetsRequest &request);
                 void DescribeNICAssetsAsync(const Model::DescribeNICAssetsRequest& request, const DescribeNICAssetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeNICAssetsOutcomeCallable DescribeNICAssetsCallable(const Model::DescribeNICAssetsRequest& request);
+
+                /**
+                 *查询集团账号详情
+                 * @param req DescribeOrganizationInfoRequest
+                 * @return DescribeOrganizationInfoOutcome
+                 */
+                DescribeOrganizationInfoOutcome DescribeOrganizationInfo(const Model::DescribeOrganizationInfoRequest &request);
+                void DescribeOrganizationInfoAsync(const Model::DescribeOrganizationInfoRequest& request, const DescribeOrganizationInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeOrganizationInfoOutcomeCallable DescribeOrganizationInfoCallable(const Model::DescribeOrganizationInfoRequest& request);
 
                 /**
                  *查询集团账号用户列表
@@ -526,6 +569,15 @@ namespace TencentCloud
                 DescribeSearchBugInfoOutcomeCallable DescribeSearchBugInfoCallable(const Model::DescribeSearchBugInfoRequest& request);
 
                 /**
+                 *查询集团的子账号列表
+                 * @param req DescribeSubUserInfoRequest
+                 * @return DescribeSubUserInfoOutcome
+                 */
+                DescribeSubUserInfoOutcome DescribeSubUserInfo(const Model::DescribeSubUserInfoRequest &request);
+                void DescribeSubUserInfoAsync(const Model::DescribeSubUserInfoRequest& request, const DescribeSubUserInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSubUserInfoOutcomeCallable DescribeSubUserInfoCallable(const Model::DescribeSubUserInfoRequest& request);
+
+                /**
                  *获取子网列表
                  * @param req DescribeSubnetAssetsRequest
                  * @return DescribeSubnetAssetsOutcome
@@ -560,6 +612,15 @@ namespace TencentCloud
                 DescribeTopAttackInfoOutcome DescribeTopAttackInfo(const Model::DescribeTopAttackInfoRequest &request);
                 void DescribeTopAttackInfoAsync(const Model::DescribeTopAttackInfoRequest& request, const DescribeTopAttackInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTopAttackInfoOutcomeCallable DescribeTopAttackInfoCallable(const Model::DescribeTopAttackInfoRequest& request);
+
+                /**
+                 *查询用户行为分析策略列表
+                 * @param req DescribeUebaRuleRequest
+                 * @return DescribeUebaRuleOutcome
+                 */
+                DescribeUebaRuleOutcome DescribeUebaRule(const Model::DescribeUebaRuleRequest &request);
+                void DescribeUebaRuleAsync(const Model::DescribeUebaRuleRequest& request, const DescribeUebaRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUebaRuleOutcomeCallable DescribeUebaRuleCallable(const Model::DescribeUebaRuleRequest& request);
 
                 /**
                  *查询漏洞风险高级配置
@@ -623,6 +684,15 @@ namespace TencentCloud
                 ModifyRiskCenterScanTaskOutcome ModifyRiskCenterScanTask(const Model::ModifyRiskCenterScanTaskRequest &request);
                 void ModifyRiskCenterScanTaskAsync(const Model::ModifyRiskCenterScanTaskRequest& request, const ModifyRiskCenterScanTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyRiskCenterScanTaskOutcomeCallable ModifyRiskCenterScanTaskCallable(const Model::ModifyRiskCenterScanTaskRequest& request);
+
+                /**
+                 *更新自定义策略的开关
+                 * @param req ModifyUebaRuleSwitchRequest
+                 * @return ModifyUebaRuleSwitchOutcome
+                 */
+                ModifyUebaRuleSwitchOutcome ModifyUebaRuleSwitch(const Model::ModifyUebaRuleSwitchRequest &request);
+                void ModifyUebaRuleSwitchAsync(const Model::ModifyUebaRuleSwitchRequest& request, const ModifyUebaRuleSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyUebaRuleSwitchOutcomeCallable ModifyUebaRuleSwitchCallable(const Model::ModifyUebaRuleSwitchRequest& request);
 
                 /**
                  *停止扫风险中心扫描任务
