@@ -87,9 +87,7 @@ namespace TencentCloud
 
                     /**
                      * 获取加密使用的密钥 ID 。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return KeyId 加密使用的密钥 ID 。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKeyId() const;
@@ -103,9 +101,7 @@ namespace TencentCloud
 
                     /**
                      * 获取密钥所在地域。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return KeyRegion 密钥所在地域。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKeyRegion() const;
@@ -119,9 +115,7 @@ namespace TencentCloud
 
                     /**
                      * 获取当前 CDB 后端服务使用的 KMS 服务的默认地域。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefaultKmsRegion 当前 CDB 后端服务使用的 KMS 服务的默认地域。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDefaultKmsRegion() const;
@@ -155,21 +149,18 @@ namespace TencentCloud
 
                     /**
                      * 加密使用的密钥 ID 。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_keyId;
                     bool m_keyIdHasBeenSet;
 
                     /**
                      * 密钥所在地域。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_keyRegion;
                     bool m_keyRegionHasBeenSet;
 
                     /**
                      * 当前 CDB 后端服务使用的 KMS 服务的默认地域。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_defaultKmsRegion;
                     bool m_defaultKmsRegionHasBeenSet;

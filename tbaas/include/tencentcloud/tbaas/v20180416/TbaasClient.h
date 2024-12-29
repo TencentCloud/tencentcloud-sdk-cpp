@@ -220,7 +220,7 @@ namespace TencentCloud
                 GetBlockListOutcomeCallable GetBlockListCallable(const Model::GetBlockListRequest& request);
 
                 /**
-                 *获取区块内的交易列表
+                 *获取区块内交易列表
                  * @param req GetBlockTransactionListForUserRequest
                  * @return GetBlockTransactionListForUserOutcome
                  */
@@ -265,7 +265,7 @@ namespace TencentCloud
                 GetLatestTransactionListOutcomeCallable GetLatestTransactionListCallable(const Model::GetLatestTransactionListRequest& request);
 
                 /**
-                 *获取交易详情
+                 *获取交易的详情
                  * @param req GetTransactionDetailForUserRequest
                  * @return GetTransactionDetailForUserOutcome
                  */

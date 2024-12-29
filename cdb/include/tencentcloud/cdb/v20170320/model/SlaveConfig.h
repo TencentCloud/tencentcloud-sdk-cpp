@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取从库复制方式，可能的返回值：aysnc-异步，semisync-半同步
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReplicationMode 从库复制方式，可能的返回值：aysnc-异步，semisync-半同步
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReplicationMode() const;
 
                     /**
                      * 设置从库复制方式，可能的返回值：aysnc-异步，semisync-半同步
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _replicationMode 从库复制方式，可能的返回值：aysnc-异步，semisync-半同步
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReplicationMode(const std::string& _replicationMode);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取从库可用区的正式名称，如ap-shanghai-1
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zone 从库可用区的正式名称，如ap-shanghai-1
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置从库可用区的正式名称，如ap-shanghai-1
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zone 从库可用区的正式名称，如ap-shanghai-1
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 从库复制方式，可能的返回值：aysnc-异步，semisync-半同步
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_replicationMode;
                     bool m_replicationModeHasBeenSet;
 
                     /**
                      * 从库可用区的正式名称，如ap-shanghai-1
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;

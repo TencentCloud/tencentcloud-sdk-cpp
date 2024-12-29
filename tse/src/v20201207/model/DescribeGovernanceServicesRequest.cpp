@@ -32,7 +32,8 @@ DescribeGovernanceServicesRequest::DescribeGovernanceServicesRequest() :
     m_departmentHasBeenSet(false),
     m_businessHasBeenSet(false),
     m_hostHasBeenSet(false),
-    m_onlyExistHealthyInstanceHasBeenSet(false)
+    m_onlyExistHealthyInstanceHasBeenSet(false),
+    m_syncToGlobalRegistryHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,14 @@ string DescribeGovernanceServicesRequest::ToJsonString() const
         string key = "OnlyExistHealthyInstance";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_onlyExistHealthyInstance, allocator);
+    }
+
+    if (m_syncToGlobalRegistryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncToGlobalRegistry";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_syncToGlobalRegistry.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -296,6 +305,22 @@ void DescribeGovernanceServicesRequest::SetOnlyExistHealthyInstance(const bool& 
 bool DescribeGovernanceServicesRequest::OnlyExistHealthyInstanceHasBeenSet() const
 {
     return m_onlyExistHealthyInstanceHasBeenSet;
+}
+
+string DescribeGovernanceServicesRequest::GetSyncToGlobalRegistry() const
+{
+    return m_syncToGlobalRegistry;
+}
+
+void DescribeGovernanceServicesRequest::SetSyncToGlobalRegistry(const string& _syncToGlobalRegistry)
+{
+    m_syncToGlobalRegistry = _syncToGlobalRegistry;
+    m_syncToGlobalRegistryHasBeenSet = true;
+}
+
+bool DescribeGovernanceServicesRequest::SyncToGlobalRegistryHasBeenSet() const
+{
+    return m_syncToGlobalRegistryHasBeenSet;
 }
 
 

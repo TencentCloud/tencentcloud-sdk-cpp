@@ -28,7 +28,8 @@ DescribeSystemResourcesRequest::DescribeSystemResourcesRequest() :
     m_limitHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
-    m_flinkVersionHasBeenSet(false)
+    m_flinkVersionHasBeenSet(false),
+    m_workSpaceIdHasBeenSet(false)
 {
 }
 
@@ -97,6 +98,14 @@ string DescribeSystemResourcesRequest::ToJsonString() const
         string key = "FlinkVersion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_flinkVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_workSpaceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkSpaceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_workSpaceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -201,6 +210,22 @@ void DescribeSystemResourcesRequest::SetFlinkVersion(const string& _flinkVersion
 bool DescribeSystemResourcesRequest::FlinkVersionHasBeenSet() const
 {
     return m_flinkVersionHasBeenSet;
+}
+
+string DescribeSystemResourcesRequest::GetWorkSpaceId() const
+{
+    return m_workSpaceId;
+}
+
+void DescribeSystemResourcesRequest::SetWorkSpaceId(const string& _workSpaceId)
+{
+    m_workSpaceId = _workSpaceId;
+    m_workSpaceIdHasBeenSet = true;
+}
+
+bool DescribeSystemResourcesRequest::WorkSpaceIdHasBeenSet() const
+{
+    return m_workSpaceIdHasBeenSet;
 }
 
 

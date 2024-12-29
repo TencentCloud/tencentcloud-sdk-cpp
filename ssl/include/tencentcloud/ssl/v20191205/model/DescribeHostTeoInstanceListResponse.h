@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取teo实例列表
+                     * 获取teo实例列表，如取不到值返回空数组
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceList teo实例列表
+                     * @return InstanceList teo实例列表，如取不到值返回空数组
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -77,7 +77,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * teo实例列表
+                     * teo实例列表，如取不到值返回空数组
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TeoInstanceDetail> m_instanceList;

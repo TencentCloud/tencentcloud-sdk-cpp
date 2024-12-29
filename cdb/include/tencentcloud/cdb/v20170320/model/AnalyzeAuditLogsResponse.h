@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取返回的聚合桶信息集
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Items 返回的聚合桶信息集
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AuditLogAggregationResult> GetItems() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取扫描的日志条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 扫描的日志条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 返回的聚合桶信息集
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AuditLogAggregationResult> m_items;
                     bool m_itemsHasBeenSet;
 
                     /**
                      * 扫描的日志条数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

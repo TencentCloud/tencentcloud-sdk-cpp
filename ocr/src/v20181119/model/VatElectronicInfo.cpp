@@ -37,7 +37,12 @@ VatElectronicInfo::VatElectronicInfo() :
     m_subTotalHasBeenSet(false),
     m_subTaxHasBeenSet(false),
     m_vatElectronicItemsHasBeenSet(false),
-    m_serviceTypeLabelHasBeenSet(false)
+    m_serviceTypeLabelHasBeenSet(false),
+    m_totalCnMarkHasBeenSet(false),
+    m_totalMarkHasBeenSet(false),
+    m_pretaxAmountMarkHasBeenSet(false),
+    m_taxMarkHasBeenSet(false),
+    m_companySealMarkHasBeenSet(false)
 {
 }
 
@@ -226,6 +231,56 @@ CoreInternalOutcome VatElectronicInfo::Deserialize(const rapidjson::Value &value
         m_serviceTypeLabelHasBeenSet = true;
     }
 
+    if (value.HasMember("TotalCnMark") && !value["TotalCnMark"].IsNull())
+    {
+        if (!value["TotalCnMark"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VatElectronicInfo.TotalCnMark` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCnMark = string(value["TotalCnMark"].GetString());
+        m_totalCnMarkHasBeenSet = true;
+    }
+
+    if (value.HasMember("TotalMark") && !value["TotalMark"].IsNull())
+    {
+        if (!value["TotalMark"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VatElectronicInfo.TotalMark` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalMark = string(value["TotalMark"].GetString());
+        m_totalMarkHasBeenSet = true;
+    }
+
+    if (value.HasMember("PretaxAmountMark") && !value["PretaxAmountMark"].IsNull())
+    {
+        if (!value["PretaxAmountMark"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VatElectronicInfo.PretaxAmountMark` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_pretaxAmountMark = string(value["PretaxAmountMark"].GetString());
+        m_pretaxAmountMarkHasBeenSet = true;
+    }
+
+    if (value.HasMember("TaxMark") && !value["TaxMark"].IsNull())
+    {
+        if (!value["TaxMark"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VatElectronicInfo.TaxMark` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taxMark = string(value["TaxMark"].GetString());
+        m_taxMarkHasBeenSet = true;
+    }
+
+    if (value.HasMember("CompanySealMark") && !value["CompanySealMark"].IsNull())
+    {
+        if (!value["CompanySealMark"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VatElectronicInfo.CompanySealMark` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_companySealMark = value["CompanySealMark"].GetInt64();
+        m_companySealMarkHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -374,6 +429,46 @@ void VatElectronicInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "ServiceTypeLabel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_serviceTypeLabel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_totalCnMarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCnMark";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_totalCnMark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_totalMarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalMark";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_totalMark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pretaxAmountMarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PretaxAmountMark";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pretaxAmountMark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taxMarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaxMark";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taxMark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_companySealMarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CompanySealMark";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_companySealMark, allocator);
     }
 
 }
@@ -649,5 +744,85 @@ void VatElectronicInfo::SetServiceTypeLabel(const string& _serviceTypeLabel)
 bool VatElectronicInfo::ServiceTypeLabelHasBeenSet() const
 {
     return m_serviceTypeLabelHasBeenSet;
+}
+
+string VatElectronicInfo::GetTotalCnMark() const
+{
+    return m_totalCnMark;
+}
+
+void VatElectronicInfo::SetTotalCnMark(const string& _totalCnMark)
+{
+    m_totalCnMark = _totalCnMark;
+    m_totalCnMarkHasBeenSet = true;
+}
+
+bool VatElectronicInfo::TotalCnMarkHasBeenSet() const
+{
+    return m_totalCnMarkHasBeenSet;
+}
+
+string VatElectronicInfo::GetTotalMark() const
+{
+    return m_totalMark;
+}
+
+void VatElectronicInfo::SetTotalMark(const string& _totalMark)
+{
+    m_totalMark = _totalMark;
+    m_totalMarkHasBeenSet = true;
+}
+
+bool VatElectronicInfo::TotalMarkHasBeenSet() const
+{
+    return m_totalMarkHasBeenSet;
+}
+
+string VatElectronicInfo::GetPretaxAmountMark() const
+{
+    return m_pretaxAmountMark;
+}
+
+void VatElectronicInfo::SetPretaxAmountMark(const string& _pretaxAmountMark)
+{
+    m_pretaxAmountMark = _pretaxAmountMark;
+    m_pretaxAmountMarkHasBeenSet = true;
+}
+
+bool VatElectronicInfo::PretaxAmountMarkHasBeenSet() const
+{
+    return m_pretaxAmountMarkHasBeenSet;
+}
+
+string VatElectronicInfo::GetTaxMark() const
+{
+    return m_taxMark;
+}
+
+void VatElectronicInfo::SetTaxMark(const string& _taxMark)
+{
+    m_taxMark = _taxMark;
+    m_taxMarkHasBeenSet = true;
+}
+
+bool VatElectronicInfo::TaxMarkHasBeenSet() const
+{
+    return m_taxMarkHasBeenSet;
+}
+
+int64_t VatElectronicInfo::GetCompanySealMark() const
+{
+    return m_companySealMark;
+}
+
+void VatElectronicInfo::SetCompanySealMark(const int64_t& _companySealMark)
+{
+    m_companySealMark = _companySealMark;
+    m_companySealMarkHasBeenSet = true;
+}
+
+bool VatElectronicInfo::CompanySealMarkHasBeenSet() const
+{
+    return m_companySealMarkHasBeenSet;
 }
 

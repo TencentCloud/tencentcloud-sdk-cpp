@@ -404,6 +404,111 @@ namespace TencentCloud
                      */
                     bool ServiceTypeLabelHasBeenSet() const;
 
+                    /**
+                     * 获取价税合计(大写)前符号
+                     * @return TotalCnMark 价税合计(大写)前符号
+                     * 
+                     */
+                    std::string GetTotalCnMark() const;
+
+                    /**
+                     * 设置价税合计(大写)前符号
+                     * @param _totalCnMark 价税合计(大写)前符号
+                     * 
+                     */
+                    void SetTotalCnMark(const std::string& _totalCnMark);
+
+                    /**
+                     * 判断参数 TotalCnMark 是否已赋值
+                     * @return TotalCnMark 是否已赋值
+                     * 
+                     */
+                    bool TotalCnMarkHasBeenSet() const;
+
+                    /**
+                     * 获取价税合计(小写)前字样
+                     * @return TotalMark 价税合计(小写)前字样
+                     * 
+                     */
+                    std::string GetTotalMark() const;
+
+                    /**
+                     * 设置价税合计(小写)前字样
+                     * @param _totalMark 价税合计(小写)前字样
+                     * 
+                     */
+                    void SetTotalMark(const std::string& _totalMark);
+
+                    /**
+                     * 判断参数 TotalMark 是否已赋值
+                     * @return TotalMark 是否已赋值
+                     * 
+                     */
+                    bool TotalMarkHasBeenSet() const;
+
+                    /**
+                     * 获取合计金额前字样
+                     * @return PretaxAmountMark 合计金额前字样
+                     * 
+                     */
+                    std::string GetPretaxAmountMark() const;
+
+                    /**
+                     * 设置合计金额前字样
+                     * @param _pretaxAmountMark 合计金额前字样
+                     * 
+                     */
+                    void SetPretaxAmountMark(const std::string& _pretaxAmountMark);
+
+                    /**
+                     * 判断参数 PretaxAmountMark 是否已赋值
+                     * @return PretaxAmountMark 是否已赋值
+                     * 
+                     */
+                    bool PretaxAmountMarkHasBeenSet() const;
+
+                    /**
+                     * 获取合计税额前字样
+                     * @return TaxMark 合计税额前字样
+                     * 
+                     */
+                    std::string GetTaxMark() const;
+
+                    /**
+                     * 设置合计税额前字样
+                     * @param _taxMark 合计税额前字样
+                     * 
+                     */
+                    void SetTaxMark(const std::string& _taxMark);
+
+                    /**
+                     * 判断参数 TaxMark 是否已赋值
+                     * @return TaxMark 是否已赋值
+                     * 
+                     */
+                    bool TaxMarkHasBeenSet() const;
+
+                    /**
+                     * 获取是否有公司印章（0：没有，1：有）
+                     * @return CompanySealMark 是否有公司印章（0：没有，1：有）
+                     * 
+                     */
+                    int64_t GetCompanySealMark() const;
+
+                    /**
+                     * 设置是否有公司印章（0：没有，1：有）
+                     * @param _companySealMark 是否有公司印章（0：没有，1：有）
+                     * 
+                     */
+                    void SetCompanySealMark(const int64_t& _companySealMark);
+
+                    /**
+                     * 判断参数 CompanySealMark 是否已赋值
+                     * @return CompanySealMark 是否已赋值
+                     * 
+                     */
+                    bool CompanySealMarkHasBeenSet() const;
+
                 private:
 
                     /**
@@ -507,6 +612,36 @@ namespace TencentCloud
                      */
                     std::string m_serviceTypeLabel;
                     bool m_serviceTypeLabelHasBeenSet;
+
+                    /**
+                     * 价税合计(大写)前符号
+                     */
+                    std::string m_totalCnMark;
+                    bool m_totalCnMarkHasBeenSet;
+
+                    /**
+                     * 价税合计(小写)前字样
+                     */
+                    std::string m_totalMark;
+                    bool m_totalMarkHasBeenSet;
+
+                    /**
+                     * 合计金额前字样
+                     */
+                    std::string m_pretaxAmountMark;
+                    bool m_pretaxAmountMarkHasBeenSet;
+
+                    /**
+                     * 合计税额前字样
+                     */
+                    std::string m_taxMark;
+                    bool m_taxMarkHasBeenSet;
+
+                    /**
+                     * 是否有公司印章（0：没有，1：有）
+                     */
+                    int64_t m_companySealMark;
+                    bool m_companySealMarkHasBeenSet;
 
                 };
             }

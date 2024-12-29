@@ -72,18 +72,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备份导入名称，增量导入任务该字段为空
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MigrationName 备份导入名称，增量导入任务该字段为空
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMigrationName() const;
 
                     /**
                      * 设置备份导入名称，增量导入任务该字段为空
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _migrationName 备份导入名称，增量导入任务该字段为空
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMigrationName(const std::string& _migrationName);
@@ -370,18 +366,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否是最终恢复，全量导入任务该字段为空
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsRecovery 是否是最终恢复，全量导入任务该字段为空
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIsRecovery() const;
 
                     /**
                      * 设置是否是最终恢复，全量导入任务该字段为空
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isRecovery 是否是最终恢复，全量导入任务该字段为空
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsRecovery(const std::string& _isRecovery);
@@ -428,7 +420,6 @@ namespace TencentCloud
 
                     /**
                      * 备份导入名称，增量导入任务该字段为空
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_migrationName;
                     bool m_migrationNameHasBeenSet;
@@ -513,7 +504,6 @@ namespace TencentCloud
 
                     /**
                      * 是否是最终恢复，全量导入任务该字段为空
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_isRecovery;
                     bool m_isRecoveryHasBeenSet;

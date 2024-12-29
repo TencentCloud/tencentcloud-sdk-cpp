@@ -126,7 +126,9 @@ namespace TencentCloud
 
 
                 /**
-                 *清除queue中的所有消息
+                 *下线老cmq云API 3.0 无调用量接口
+
+清除queue中的所有消息
                  * @param req ClearQueueRequest
                  * @return ClearQueueOutcome
                  */
@@ -135,7 +137,9 @@ namespace TencentCloud
                 ClearQueueOutcomeCallable ClearQueueCallable(const Model::ClearQueueRequest& request);
 
                 /**
-                 *清空订阅者消息标签
+                 *下线老cmq云API 3.0 无调用量接口
+
+清空订阅者消息标签
                  * @param req ClearSubscriptionFilterTagsRequest
                  * @return ClearSubscriptionFilterTagsOutcome
                  */
@@ -154,7 +158,9 @@ namespace TencentCloud
                 CreateQueueOutcomeCallable CreateQueueCallable(const Model::CreateQueueRequest& request);
 
                 /**
-                 *创建订阅接口
+                 *下线老cmq云API 3.0 无调用量接口
+
+创建订阅接口
                  * @param req CreateSubscribeRequest
                  * @return CreateSubscribeOutcome
                  */
@@ -181,7 +187,9 @@ namespace TencentCloud
                 DeleteQueueOutcomeCallable DeleteQueueCallable(const Model::DeleteQueueRequest& request);
 
                 /**
-                 *删除订阅
+                 *下线老cmq云API 3.0 无调用量接口
+
+删除订阅
                  * @param req DeleteSubscribeRequest
                  * @return DeleteSubscribeOutcome
                  */
@@ -190,7 +198,9 @@ namespace TencentCloud
                 DeleteSubscribeOutcomeCallable DeleteSubscribeCallable(const Model::DeleteSubscribeRequest& request);
 
                 /**
-                 *删除主题
+                 *下线老cmq云API 3.0 无调用量接口
+
+删除主题
                  * @param req DeleteTopicRequest
                  * @return DeleteTopicOutcome
                  */
@@ -199,7 +209,9 @@ namespace TencentCloud
                 DeleteTopicOutcomeCallable DeleteTopicCallable(const Model::DeleteTopicRequest& request);
 
                 /**
-                 *枚举死信队列源队列
+                 *下线老cmq云API 3.0 无调用量接口
+
+枚举死信队列源队列
                  * @param req DescribeDeadLetterSourceQueuesRequest
                  * @return DescribeDeadLetterSourceQueuesOutcome
                  */
@@ -244,7 +256,9 @@ namespace TencentCloud
                 ModifyQueueAttributeOutcomeCallable ModifyQueueAttributeCallable(const Model::ModifyQueueAttributeRequest& request);
 
                 /**
-                 *修改订阅属性
+                 *下线老cmq云API 3.0 无调用量接口
+
+修改订阅属性
                  * @param req ModifySubscriptionAttributeRequest
                  * @return ModifySubscriptionAttributeOutcome
                  */
@@ -253,7 +267,9 @@ namespace TencentCloud
                 ModifySubscriptionAttributeOutcomeCallable ModifySubscriptionAttributeCallable(const Model::ModifySubscriptionAttributeRequest& request);
 
                 /**
-                 *修改主题属性
+                 *下线老cmq云API 3.0 无调用量接口
+
+修改主题属性
                  * @param req ModifyTopicAttributeRequest
                  * @return ModifyTopicAttributeOutcome
                  */
@@ -262,7 +278,9 @@ namespace TencentCloud
                 ModifyTopicAttributeOutcomeCallable ModifyTopicAttributeCallable(const Model::ModifyTopicAttributeRequest& request);
 
                 /**
-                 *回溯队列
+                 *下线老cmq云API 3.0 无调用量接口
+
+回溯队列
                  * @param req RewindQueueRequest
                  * @return RewindQueueOutcome
                  */
@@ -271,7 +289,9 @@ namespace TencentCloud
                 RewindQueueOutcomeCallable RewindQueueCallable(const Model::RewindQueueRequest& request);
 
                 /**
-                 *解绑死信队列
+                 *下线老cmq云API 3.0 无调用量接口
+
+解绑死信队列
                  * @param req UnbindDeadLetterRequest
                  * @return UnbindDeadLetterOutcome
                  */

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取代理节点ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyId 代理节点ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProxyId() const;
 
                     /**
                      * 设置代理节点ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _proxyId 代理节点ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProxyId(const std::string& _proxyId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取CPU核数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cpu CPU核数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCpu() const;
 
                     /**
                      * 设置CPU核数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cpu CPU核数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCpu(const uint64_t& _cpu);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内存大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Mem 内存大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMem() const;
 
                     /**
                      * 设置内存大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mem 内存大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMem(const uint64_t& _mem);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 节点状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置节点状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 节点状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取代理节点可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zone 代理节点可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置代理节点可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zone 代理节点可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取代理节点地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 代理节点地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置代理节点地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _region 代理节点地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取连接数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Connection 连接数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetConnection() const;
 
                     /**
                      * 设置连接数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _connection 连接数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConnection(const uint64_t& _connection);
@@ -225,49 +197,42 @@ namespace TencentCloud
 
                     /**
                      * 代理节点ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_proxyId;
                     bool m_proxyIdHasBeenSet;
 
                     /**
                      * CPU核数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_cpu;
                     bool m_cpuHasBeenSet;
 
                     /**
                      * 内存大小
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_mem;
                     bool m_memHasBeenSet;
 
                     /**
                      * 节点状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 代理节点可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
                      * 代理节点地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
                      * 连接数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_connection;
                     bool m_connectionHasBeenSet;

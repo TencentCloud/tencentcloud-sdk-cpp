@@ -29,7 +29,9 @@ SqlGatewayItem::SqlGatewayItem() :
     m_cuSpecHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
-    m_propertiesHasBeenSet(false)
+    m_propertiesHasBeenSet(false),
+    m_cpuHasBeenSet(false),
+    m_memHasBeenSet(false)
 {
 }
 
@@ -148,6 +150,26 @@ CoreInternalOutcome SqlGatewayItem::Deserialize(const rapidjson::Value &value)
         m_propertiesHasBeenSet = true;
     }
 
+    if (value.HasMember("Cpu") && !value["Cpu"].IsNull())
+    {
+        if (!value["Cpu"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `SqlGatewayItem.Cpu` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_cpu = value["Cpu"].GetDouble();
+        m_cpuHasBeenSet = true;
+    }
+
+    if (value.HasMember("Mem") && !value["Mem"].IsNull())
+    {
+        if (!value["Mem"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `SqlGatewayItem.Mem` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_mem = value["Mem"].GetDouble();
+        m_memHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -239,6 +261,22 @@ void SqlGatewayItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_cpuHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Cpu";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cpu, allocator);
+    }
+
+    if (m_memHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Mem";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_mem, allocator);
     }
 
 }
@@ -386,5 +424,37 @@ void SqlGatewayItem::SetProperties(const vector<Property>& _properties)
 bool SqlGatewayItem::PropertiesHasBeenSet() const
 {
     return m_propertiesHasBeenSet;
+}
+
+double SqlGatewayItem::GetCpu() const
+{
+    return m_cpu;
+}
+
+void SqlGatewayItem::SetCpu(const double& _cpu)
+{
+    m_cpu = _cpu;
+    m_cpuHasBeenSet = true;
+}
+
+bool SqlGatewayItem::CpuHasBeenSet() const
+{
+    return m_cpuHasBeenSet;
+}
+
+double SqlGatewayItem::GetMem() const
+{
+    return m_mem;
+}
+
+void SqlGatewayItem::SetMem(const double& _mem)
+{
+    m_mem = _mem;
+    m_memHasBeenSet = true;
+}
+
+bool SqlGatewayItem::MemHasBeenSet() const
+{
+    return m_memHasBeenSet;
 }
 

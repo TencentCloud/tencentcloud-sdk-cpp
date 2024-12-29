@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取审计日志保存时长。目前支持的值包括：[0，7，30，180，365，1095，1825]。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogExpireDay 审计日志保存时长。目前支持的值包括：[0，7，30，180，365，1095，1825]。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLogExpireDay() const;
@@ -89,9 +87,7 @@ namespace TencentCloud
 
                     /**
                      * 获取审计服务开通时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 审计服务开通时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
@@ -107,7 +103,6 @@ namespace TencentCloud
 
                     /**
                      * 审计日志保存时长。目前支持的值包括：[0，7，30，180，365，1095，1825]。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_logExpireDay;
                     bool m_logExpireDayHasBeenSet;
@@ -126,7 +121,6 @@ namespace TencentCloud
 
                     /**
                      * 审计服务开通时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;

@@ -54,7 +54,6 @@ enable_doing-开启中
 disable_doing-关闭中
 renew_doing-更新中
 wait_doing-等待维护时间内执行
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Encryption SSL加密状态，
 enable-已开启
 disable-未开启
@@ -62,7 +61,6 @@ enable_doing-开启中
 disable_doing-关闭中
 renew_doing-更新中
 wait_doing-等待维护时间内执行
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEncryption() const;
@@ -75,7 +73,6 @@ enable_doing-开启中
 disable_doing-关闭中
 renew_doing-更新中
 wait_doing-等待维护时间内执行
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _encryption SSL加密状态，
 enable-已开启
 disable-未开启
@@ -83,7 +80,6 @@ enable_doing-开启中
 disable_doing-关闭中
 renew_doing-更新中
 wait_doing-等待维护时间内执行
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEncryption(const std::string& _encryption);
@@ -97,18 +93,14 @@ wait_doing-等待维护时间内执行
 
                     /**
                      * 获取SSL证书有效期，时间格式 YYYY-MM-DD HH:MM:SS
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SSLValidityPeriod SSL证书有效期，时间格式 YYYY-MM-DD HH:MM:SS
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSSLValidityPeriod() const;
 
                     /**
                      * 设置SSL证书有效期，时间格式 YYYY-MM-DD HH:MM:SS
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sSLValidityPeriod SSL证书有效期，时间格式 YYYY-MM-DD HH:MM:SS
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSSLValidityPeriod(const std::string& _sSLValidityPeriod);
@@ -122,18 +114,14 @@ wait_doing-等待维护时间内执行
 
                     /**
                      * 获取SSL证书有效性，0-无效，1-有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SSLValidity SSL证书有效性，0-无效，1-有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetSSLValidity() const;
 
                     /**
                      * 设置SSL证书有效性，0-无效，1-有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sSLValidity SSL证书有效性，0-无效，1-有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSSLValidity(const uint64_t& _sSLValidity);
@@ -218,21 +206,18 @@ enable_doing-开启中
 disable_doing-关闭中
 renew_doing-更新中
 wait_doing-等待维护时间内执行
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_encryption;
                     bool m_encryptionHasBeenSet;
 
                     /**
                      * SSL证书有效期，时间格式 YYYY-MM-DD HH:MM:SS
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sSLValidityPeriod;
                     bool m_sSLValidityPeriodHasBeenSet;
 
                     /**
                      * SSL证书有效性，0-无效，1-有效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_sSLValidity;
                     bool m_sSLValidityHasBeenSet;

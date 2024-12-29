@@ -878,6 +878,31 @@ namespace TencentCloud
                     bool OfflineTimeHasBeenSet() const;
 
                     /**
+                     * 获取动态修改对象，修改任务的状态等
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OptObjStatus 动态修改对象，修改任务的状态等
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetOptObjStatus() const;
+
+                    /**
+                     * 设置动态修改对象，修改任务的状态等
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _optObjStatus 动态修改对象，修改任务的状态等
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOptObjStatus(const std::string& _optObjStatus);
+
+                    /**
+                     * 判断参数 OptObjStatus 是否已赋值
+                     * @return OptObjStatus 是否已赋值
+                     * 
+                     */
+                    bool OptObjStatusHasBeenSet() const;
+
+                    /**
                      * 获取自动重试时间段设置
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoRetryTimeRangeMinutes 自动重试时间段设置
@@ -1159,6 +1184,13 @@ namespace TencentCloud
                      */
                     std::string m_offlineTime;
                     bool m_offlineTimeHasBeenSet;
+
+                    /**
+                     * 动态修改对象，修改任务的状态等
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_optObjStatus;
+                    bool m_optObjStatusHasBeenSet;
 
                     /**
                      * 自动重试时间段设置

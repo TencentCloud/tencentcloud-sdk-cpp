@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件所有分片数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AllSliceNum 文件所有分片数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAllSliceNum() const;
 
                     /**
                      * 设置文件所有分片数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _allSliceNum 文件所有分片数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAllSliceNum(const int64_t& _allSliceNum);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取已完成分片数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CompleteNum 已完成分片数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCompleteNum() const;
 
                     /**
                      * 设置已完成分片数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _completeNum 已完成分片数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCompleteNum(const int64_t& _completeNum);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 文件所有分片数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_allSliceNum;
                     bool m_allSliceNumHasBeenSet;
 
                     /**
                      * 已完成分片数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_completeNum;
                     bool m_completeNumHasBeenSet;

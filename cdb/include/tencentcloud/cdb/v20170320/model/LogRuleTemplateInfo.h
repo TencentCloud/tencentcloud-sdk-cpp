@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取模板ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleTemplateId 模板ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuleTemplateId() const;
 
                     /**
                      * 设置模板ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleTemplateId 模板ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleTemplateId(const std::string& _ruleTemplateId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则模板名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleTemplateName 规则模板名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuleTemplateName() const;
 
                     /**
                      * 设置规则模板名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleTemplateName 规则模板名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleTemplateName(const std::string& _ruleTemplateName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取告警等级。1-低风险，2-中风险，3-高风险。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlarmLevel 告警等级。1-低风险，2-中风险，3-高风险。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAlarmLevel() const;
 
                     /**
                      * 设置告警等级。1-低风险，2-中风险，3-高风险。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _alarmLevel 告警等级。1-低风险，2-中风险，3-高风险。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAlarmLevel(const std::string& _alarmLevel);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则模板变更状态：0-未变更；1-已变更；2-已删除
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleTemplateStatus 规则模板变更状态：0-未变更；1-已变更；2-已删除
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRuleTemplateStatus() const;
 
                     /**
                      * 设置规则模板变更状态：0-未变更；1-已变更；2-已删除
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleTemplateStatus 规则模板变更状态：0-未变更；1-已变更；2-已删除
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleTemplateStatus(const int64_t& _ruleTemplateStatus);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 模板ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ruleTemplateId;
                     bool m_ruleTemplateIdHasBeenSet;
 
                     /**
                      * 规则模板名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ruleTemplateName;
                     bool m_ruleTemplateNameHasBeenSet;
 
                     /**
                      * 告警等级。1-低风险，2-中风险，3-高风险。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_alarmLevel;
                     bool m_alarmLevelHasBeenSet;
 
                     /**
                      * 规则模板变更状态：0-未变更；1-已变更；2-已删除
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_ruleTemplateStatus;
                     bool m_ruleTemplateStatusHasBeenSet;

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取状态值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 状态值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置状态值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 状态值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取状态值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Code 状态值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCode() const;
 
                     /**
                      * 设置状态值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _code 状态值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCode(const int64_t& _code);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取执行时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CostTime 执行时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCostTime() const;
 
                     /**
                      * 设置执行时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _costTime 执行时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCostTime(const int64_t& _costTime);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceId 实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取后端任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WorkId 后端任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWorkId() const;
 
                     /**
                      * 设置后端任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _workId 后端任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWorkId(const std::string& _workId);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取导入文件名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileName 导入文件名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileName() const;
 
                     /**
                      * 设置导入文件名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileName 导入文件名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileName(const std::string& _fileName);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取执行进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Process 执行进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetProcess() const;
 
                     /**
                      * 设置执行进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _process 执行进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProcess(const int64_t& _process);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 任务创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置任务创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 任务创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileSize 文件大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileSize() const;
 
                     /**
                      * 设置文件大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileSize 文件大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileSize(const std::string& _fileSize);
@@ -273,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务执行信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 任务执行信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置任务执行信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _message 任务执行信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMessage(const std::string& _message);
@@ -298,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return JobId 任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetJobId() const;
 
                     /**
                      * 设置任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _jobId 任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetJobId(const int64_t& _jobId);
@@ -323,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取导入库表名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DbName 导入库表名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDbName() const;
 
                     /**
                      * 设置导入库表名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dbName 导入库表名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDbName(const std::string& _dbName);
@@ -348,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取异步任务的请求ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AsyncRequestId 异步任务的请求ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAsyncRequestId() const;
 
                     /**
                      * 设置异步任务的请求ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _asyncRequestId 异步任务的请求ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAsyncRequestId(const std::string& _asyncRequestId);
@@ -375,91 +323,78 @@ namespace TencentCloud
 
                     /**
                      * 状态值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 状态值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_code;
                     bool m_codeHasBeenSet;
 
                     /**
                      * 执行时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_costTime;
                     bool m_costTimeHasBeenSet;
 
                     /**
                      * 实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
                      * 后端任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_workId;
                     bool m_workIdHasBeenSet;
 
                     /**
                      * 导入文件名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileName;
                     bool m_fileNameHasBeenSet;
 
                     /**
                      * 执行进度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_process;
                     bool m_processHasBeenSet;
 
                     /**
                      * 任务创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 文件大小
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileSize;
                     bool m_fileSizeHasBeenSet;
 
                     /**
                      * 任务执行信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
 
                     /**
                      * 任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_jobId;
                     bool m_jobIdHasBeenSet;
 
                     /**
                      * 导入库表名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dbName;
                     bool m_dbNameHasBeenSet;
 
                     /**
                      * 异步任务的请求ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_asyncRequestId;
                     bool m_asyncRequestIdHasBeenSet;

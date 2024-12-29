@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取包年包月参考价格，单位-分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PrepaidPrice 包年包月参考价格，单位-分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPrepaidPrice() const;
 
                     /**
                      * 设置包年包月参考价格，单位-分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _prepaidPrice 包年包月参考价格，单位-分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPrepaidPrice(const uint64_t& _prepaidPrice);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取包年包月价格单位，M-月
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PrepaidPriceUnit 包年包月价格单位，M-月
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPrepaidPriceUnit() const;
 
                     /**
                      * 设置包年包月价格单位，M-月
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _prepaidPriceUnit 包年包月价格单位，M-月
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPrepaidPriceUnit(const std::string& _prepaidPriceUnit);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取按量付费价格，单位-分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PostpaidPrice 按量付费价格，单位-分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPostpaidPrice() const;
 
                     /**
                      * 设置按量付费价格，单位-分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _postpaidPrice 按量付费价格，单位-分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPostpaidPrice(const uint64_t& _postpaidPrice);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取按量付费价格单位，H-小时
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PostpaidPriceUnit 按量付费价格单位，H-小时
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPostpaidPriceUnit() const;
 
                     /**
                      * 设置按量付费价格单位，H-小时
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _postpaidPriceUnit 按量付费价格单位，H-小时
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPostpaidPriceUnit(const std::string& _postpaidPriceUnit);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 包年包月参考价格，单位-分
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_prepaidPrice;
                     bool m_prepaidPriceHasBeenSet;
 
                     /**
                      * 包年包月价格单位，M-月
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_prepaidPriceUnit;
                     bool m_prepaidPriceUnitHasBeenSet;
 
                     /**
                      * 按量付费价格，单位-分
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_postpaidPrice;
                     bool m_postpaidPriceHasBeenSet;
 
                     /**
                      * 按量付费价格单位，H-小时
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_postpaidPriceUnit;
                     bool m_postpaidPriceUnitHasBeenSet;

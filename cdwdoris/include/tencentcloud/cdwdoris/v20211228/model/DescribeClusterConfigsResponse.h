@@ -88,6 +88,20 @@ namespace TencentCloud
                      */
                     bool ErrorMsgHasBeenSet() const;
 
+                    /**
+                     * 获取是否包含CN节点
+                     * @return HasCN 是否包含CN节点
+                     * 
+                     */
+                    bool GetHasCN() const;
+
+                    /**
+                     * 判断参数 HasCN 是否已赋值
+                     * @return HasCN 是否已赋值
+                     * 
+                     */
+                    bool HasCNHasBeenSet() const;
+
                 private:
 
                     /**
@@ -108,6 +122,12 @@ namespace TencentCloud
                      */
                     std::string m_errorMsg;
                     bool m_errorMsgHasBeenSet;
+
+                    /**
+                     * 是否包含CN节点
+                     */
+                    bool m_hasCN;
+                    bool m_hasCNHasBeenSet;
 
                 };
             }

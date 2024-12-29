@@ -51,6 +51,8 @@
 #include <tencentcloud/iai/v20200303/model/DetectFaceResponse.h>
 #include <tencentcloud/iai/v20200303/model/DetectFaceAttributesRequest.h>
 #include <tencentcloud/iai/v20200303/model/DetectFaceAttributesResponse.h>
+#include <tencentcloud/iai/v20200303/model/DetectFaceSimilarityRequest.h>
+#include <tencentcloud/iai/v20200303/model/DetectFaceSimilarityResponse.h>
 #include <tencentcloud/iai/v20200303/model/DetectLiveFaceRequest.h>
 #include <tencentcloud/iai/v20200303/model/DetectLiveFaceResponse.h>
 #include <tencentcloud/iai/v20200303/model/DetectLiveFaceAccurateRequest.h>
@@ -149,6 +151,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DetectFaceAttributesResponse> DetectFaceAttributesOutcome;
                 typedef std::future<DetectFaceAttributesOutcome> DetectFaceAttributesOutcomeCallable;
                 typedef std::function<void(const IaiClient*, const Model::DetectFaceAttributesRequest&, DetectFaceAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectFaceAttributesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DetectFaceSimilarityResponse> DetectFaceSimilarityOutcome;
+                typedef std::future<DetectFaceSimilarityOutcome> DetectFaceSimilarityOutcomeCallable;
+                typedef std::function<void(const IaiClient*, const Model::DetectFaceSimilarityRequest&, DetectFaceSimilarityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectFaceSimilarityAsyncHandler;
                 typedef Outcome<Core::Error, Model::DetectLiveFaceResponse> DetectLiveFaceOutcome;
                 typedef std::future<DetectLiveFaceOutcome> DetectLiveFaceOutcomeCallable;
                 typedef std::function<void(const IaiClient*, const Model::DetectLiveFaceRequest&, DetectLiveFaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectLiveFaceAsyncHandler;
@@ -399,6 +404,20 @@ namespace TencentCloud
                 DetectFaceAttributesOutcome DetectFaceAttributes(const Model::DetectFaceAttributesRequest &request);
                 void DetectFaceAttributesAsync(const Model::DetectFaceAttributesRequest& request, const DetectFaceAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DetectFaceAttributesOutcomeCallable DetectFaceAttributesCallable(const Model::DetectFaceAttributesRequest& request);
+
+                /**
+                 *对两张图片中的人脸进行相似度比对，返回人脸相似度分数。
+
+若您需要判断 “此人是否是某人”，即验证某张图片中的人是否是已知身份的某人，如常见的人脸登录场景，建议使用[人脸验证](https://www.tencentcloud.com/document/product/1059/36972)或[人员验证](https://www.tencentcloud.com/document/product/1059/36971)接口。
+
+>     
+- 公共参数中的签名方式请使用V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。
+                 * @param req DetectFaceSimilarityRequest
+                 * @return DetectFaceSimilarityOutcome
+                 */
+                DetectFaceSimilarityOutcome DetectFaceSimilarity(const Model::DetectFaceSimilarityRequest &request);
+                void DetectFaceSimilarityAsync(const Model::DetectFaceSimilarityRequest& request, const DetectFaceSimilarityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DetectFaceSimilarityOutcomeCallable DetectFaceSimilarityCallable(const Model::DetectFaceSimilarityRequest& request);
 
                 /**
                  *用于对用户上传的静态图片进行人脸活体检测。与动态活体检测的区别是：静态活体检测中，用户不需要通过唇语或摇头眨眼等动作来识别。

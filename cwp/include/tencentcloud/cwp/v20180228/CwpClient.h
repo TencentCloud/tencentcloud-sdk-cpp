@@ -423,8 +423,6 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeIgnoreRuleEffectHostListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeImportMachineInfoRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeImportMachineInfoResponse.h>
-#include <tencentcloud/cwp/v20180228/model/DescribeIndexListRequest.h>
-#include <tencentcloud/cwp/v20180228/model/DescribeIndexListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeJavaMemShellInfoRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeJavaMemShellInfoResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeJavaMemShellListRequest.h>
@@ -1677,9 +1675,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeImportMachineInfoResponse> DescribeImportMachineInfoOutcome;
                 typedef std::future<DescribeImportMachineInfoOutcome> DescribeImportMachineInfoOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeImportMachineInfoRequest&, DescribeImportMachineInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImportMachineInfoAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeIndexListResponse> DescribeIndexListOutcome;
-                typedef std::future<DescribeIndexListOutcome> DescribeIndexListOutcomeCallable;
-                typedef std::function<void(const CwpClient*, const Model::DescribeIndexListRequest&, DescribeIndexListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIndexListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeJavaMemShellInfoResponse> DescribeJavaMemShellInfoOutcome;
                 typedef std::future<DescribeJavaMemShellInfoOutcome> DescribeJavaMemShellInfoOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeJavaMemShellInfoRequest&, DescribeJavaMemShellInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJavaMemShellInfoAsyncHandler;
@@ -4450,17 +4445,6 @@ namespace TencentCloud
                 DescribeImportMachineInfoOutcome DescribeImportMachineInfo(const Model::DescribeImportMachineInfoRequest &request);
                 void DescribeImportMachineInfoAsync(const Model::DescribeImportMachineInfoRequest& request, const DescribeImportMachineInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeImportMachineInfoOutcomeCallable DescribeImportMachineInfoCallable(const Model::DescribeImportMachineInfoRequest& request);
-
-                /**
-                 *接口已废弃
-
-获取索引列表
-                 * @param req DescribeIndexListRequest
-                 * @return DescribeIndexListOutcome
-                 */
-                DescribeIndexListOutcome DescribeIndexList(const Model::DescribeIndexListRequest &request);
-                void DescribeIndexListAsync(const Model::DescribeIndexListRequest& request, const DescribeIndexListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeIndexListOutcomeCallable DescribeIndexListCallable(const Model::DescribeIndexListRequest& request);
 
                 /**
                  *查询java内存马事件详细信息

@@ -25,7 +25,11 @@ SubEks::SubEks() :
     m_cuNumHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_statusDescHasBeenSet(false),
-    m_runningCuHasBeenSet(false)
+    m_runningCuHasBeenSet(false),
+    m_totalCpuHasBeenSet(false),
+    m_totalMemHasBeenSet(false),
+    m_runningCpuHasBeenSet(false),
+    m_runningMemHasBeenSet(false)
 {
 }
 
@@ -84,6 +88,46 @@ CoreInternalOutcome SubEks::Deserialize(const rapidjson::Value &value)
         m_runningCuHasBeenSet = true;
     }
 
+    if (value.HasMember("TotalCpu") && !value["TotalCpu"].IsNull())
+    {
+        if (!value["TotalCpu"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubEks.TotalCpu` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCpu = value["TotalCpu"].GetDouble();
+        m_totalCpuHasBeenSet = true;
+    }
+
+    if (value.HasMember("TotalMem") && !value["TotalMem"].IsNull())
+    {
+        if (!value["TotalMem"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubEks.TotalMem` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalMem = value["TotalMem"].GetDouble();
+        m_totalMemHasBeenSet = true;
+    }
+
+    if (value.HasMember("RunningCpu") && !value["RunningCpu"].IsNull())
+    {
+        if (!value["RunningCpu"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubEks.RunningCpu` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_runningCpu = value["RunningCpu"].GetDouble();
+        m_runningCpuHasBeenSet = true;
+    }
+
+    if (value.HasMember("RunningMem") && !value["RunningMem"].IsNull())
+    {
+        if (!value["RunningMem"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubEks.RunningMem` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_runningMem = value["RunningMem"].GetDouble();
+        m_runningMemHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +173,38 @@ void SubEks::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "RunningCu";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_runningCu, allocator);
+    }
+
+    if (m_totalCpuHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCpu";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCpu, allocator);
+    }
+
+    if (m_totalMemHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalMem";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalMem, allocator);
+    }
+
+    if (m_runningCpuHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RunningCpu";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_runningCpu, allocator);
+    }
+
+    if (m_runningMemHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RunningMem";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_runningMem, allocator);
     }
 
 }
@@ -212,5 +288,69 @@ void SubEks::SetRunningCu(const double& _runningCu)
 bool SubEks::RunningCuHasBeenSet() const
 {
     return m_runningCuHasBeenSet;
+}
+
+double SubEks::GetTotalCpu() const
+{
+    return m_totalCpu;
+}
+
+void SubEks::SetTotalCpu(const double& _totalCpu)
+{
+    m_totalCpu = _totalCpu;
+    m_totalCpuHasBeenSet = true;
+}
+
+bool SubEks::TotalCpuHasBeenSet() const
+{
+    return m_totalCpuHasBeenSet;
+}
+
+double SubEks::GetTotalMem() const
+{
+    return m_totalMem;
+}
+
+void SubEks::SetTotalMem(const double& _totalMem)
+{
+    m_totalMem = _totalMem;
+    m_totalMemHasBeenSet = true;
+}
+
+bool SubEks::TotalMemHasBeenSet() const
+{
+    return m_totalMemHasBeenSet;
+}
+
+double SubEks::GetRunningCpu() const
+{
+    return m_runningCpu;
+}
+
+void SubEks::SetRunningCpu(const double& _runningCpu)
+{
+    m_runningCpu = _runningCpu;
+    m_runningCpuHasBeenSet = true;
+}
+
+bool SubEks::RunningCpuHasBeenSet() const
+{
+    return m_runningCpuHasBeenSet;
+}
+
+double SubEks::GetRunningMem() const
+{
+    return m_runningMem;
+}
+
+void SubEks::SetRunningMem(const double& _runningMem)
+{
+    m_runningMem = _runningMem;
+    m_runningMemHasBeenSet = true;
+}
+
+bool SubEks::RunningMemHasBeenSet() const
+{
+    return m_runningMemHasBeenSet;
 }
 

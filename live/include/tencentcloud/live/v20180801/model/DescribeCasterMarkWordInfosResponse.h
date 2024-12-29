@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取导播台的文本信息列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MarkWordInfos 导播台的文本信息列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CasterMarkWordInfo> GetMarkWordInfos() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 导播台的文本信息列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CasterMarkWordInfo> m_markWordInfos;
                     bool m_markWordInfosHasBeenSet;

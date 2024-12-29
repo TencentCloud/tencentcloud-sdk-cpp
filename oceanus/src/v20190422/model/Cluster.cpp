@@ -68,7 +68,11 @@ Cluster::Cluster() :
     m_resourceTypeHasBeenSet(false),
     m_billingResourceModeHasBeenSet(false),
     m_memRatioHasBeenSet(false),
-    m_crossTenantEniModeHasBeenSet(false)
+    m_crossTenantEniModeHasBeenSet(false),
+    m_totalCpuHasBeenSet(false),
+    m_totalMemHasBeenSet(false),
+    m_runningCpuHasBeenSet(false),
+    m_runningMemHasBeenSet(false)
 {
 }
 
@@ -631,6 +635,46 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
         m_crossTenantEniModeHasBeenSet = true;
     }
 
+    if (value.HasMember("TotalCpu") && !value["TotalCpu"].IsNull())
+    {
+        if (!value["TotalCpu"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cluster.TotalCpu` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCpu = value["TotalCpu"].GetDouble();
+        m_totalCpuHasBeenSet = true;
+    }
+
+    if (value.HasMember("TotalMem") && !value["TotalMem"].IsNull())
+    {
+        if (!value["TotalMem"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cluster.TotalMem` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalMem = value["TotalMem"].GetDouble();
+        m_totalMemHasBeenSet = true;
+    }
+
+    if (value.HasMember("RunningCpu") && !value["RunningCpu"].IsNull())
+    {
+        if (!value["RunningCpu"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cluster.RunningCpu` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_runningCpu = value["RunningCpu"].GetDouble();
+        m_runningCpuHasBeenSet = true;
+    }
+
+    if (value.HasMember("RunningMem") && !value["RunningMem"].IsNull())
+    {
+        if (!value["RunningMem"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cluster.RunningMem` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_runningMem = value["RunningMem"].GetDouble();
+        m_runningMemHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1064,6 +1108,38 @@ void Cluster::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "CrossTenantEniMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_crossTenantEniMode, allocator);
+    }
+
+    if (m_totalCpuHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCpu";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCpu, allocator);
+    }
+
+    if (m_totalMemHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalMem";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalMem, allocator);
+    }
+
+    if (m_runningCpuHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RunningCpu";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_runningCpu, allocator);
+    }
+
+    if (m_runningMemHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RunningMem";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_runningMem, allocator);
     }
 
 }
@@ -1835,5 +1911,69 @@ void Cluster::SetCrossTenantEniMode(const int64_t& _crossTenantEniMode)
 bool Cluster::CrossTenantEniModeHasBeenSet() const
 {
     return m_crossTenantEniModeHasBeenSet;
+}
+
+double Cluster::GetTotalCpu() const
+{
+    return m_totalCpu;
+}
+
+void Cluster::SetTotalCpu(const double& _totalCpu)
+{
+    m_totalCpu = _totalCpu;
+    m_totalCpuHasBeenSet = true;
+}
+
+bool Cluster::TotalCpuHasBeenSet() const
+{
+    return m_totalCpuHasBeenSet;
+}
+
+double Cluster::GetTotalMem() const
+{
+    return m_totalMem;
+}
+
+void Cluster::SetTotalMem(const double& _totalMem)
+{
+    m_totalMem = _totalMem;
+    m_totalMemHasBeenSet = true;
+}
+
+bool Cluster::TotalMemHasBeenSet() const
+{
+    return m_totalMemHasBeenSet;
+}
+
+double Cluster::GetRunningCpu() const
+{
+    return m_runningCpu;
+}
+
+void Cluster::SetRunningCpu(const double& _runningCpu)
+{
+    m_runningCpu = _runningCpu;
+    m_runningCpuHasBeenSet = true;
+}
+
+bool Cluster::RunningCpuHasBeenSet() const
+{
+    return m_runningCpuHasBeenSet;
+}
+
+double Cluster::GetRunningMem() const
+{
+    return m_runningMem;
+}
+
+void Cluster::SetRunningMem(const double& _runningMem)
+{
+    m_runningMem = _runningMem;
+    m_runningMemHasBeenSet = true;
+}
+
+bool Cluster::RunningMemHasBeenSet() const
+{
+    return m_runningMemHasBeenSet;
 }
 

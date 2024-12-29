@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取错误发生时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Timestamp 错误发生时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTimestamp() const;
 
                     /**
                      * 设置错误发生时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timestamp 错误发生时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimestamp(const uint64_t& _timestamp);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取错误详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Content 错误详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContent() const;
 
                     /**
                      * 设置错误详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _content 错误详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContent(const std::string& _content);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 错误发生时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_timestamp;
                     bool m_timestampHasBeenSet;
 
                     /**
                      * 错误详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;

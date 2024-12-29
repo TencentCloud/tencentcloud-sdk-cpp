@@ -770,18 +770,14 @@ pause
 
                     /**
                      * 获取Db类型:<li>NORMAL</li><li>SERVERLESS</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DbMode Db类型:<li>NORMAL</li><li>SERVERLESS</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDbMode() const;
 
                     /**
                      * 设置Db类型:<li>NORMAL</li><li>SERVERLESS</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dbMode Db类型:<li>NORMAL</li><li>SERVERLESS</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDbMode(const std::string& _dbMode);
@@ -1003,7 +999,6 @@ pause
 
                     /**
                      * Db类型:<li>NORMAL</li><li>SERVERLESS</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dbMode;
                     bool m_dbModeHasBeenSet;

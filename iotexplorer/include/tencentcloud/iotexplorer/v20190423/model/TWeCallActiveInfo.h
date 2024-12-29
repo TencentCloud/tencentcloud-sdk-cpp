@@ -121,6 +121,27 @@ namespace TencentCloud
                      */
                     bool ExpireTimeHasBeenSet() const;
 
+                    /**
+                     * 获取类型
+                     * @return PkgType 类型
+                     * 
+                     */
+                    int64_t GetPkgType() const;
+
+                    /**
+                     * 设置类型
+                     * @param _pkgType 类型
+                     * 
+                     */
+                    void SetPkgType(const int64_t& _pkgType);
+
+                    /**
+                     * 判断参数 PkgType 是否已赋值
+                     * @return PkgType 是否已赋值
+                     * 
+                     */
+                    bool PkgTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +164,12 @@ namespace TencentCloud
                      */
                     int64_t m_expireTime;
                     bool m_expireTimeHasBeenSet;
+
+                    /**
+                     * 类型
+                     */
+                    int64_t m_pkgType;
+                    bool m_pkgTypeHasBeenSet;
 
                 };
             }

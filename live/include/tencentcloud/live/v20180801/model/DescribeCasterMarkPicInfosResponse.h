@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取导播台的水印信息列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MarkPicInfos 导播台的水印信息列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CasterMarkPicInfo> GetMarkPicInfos() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 导播台的水印信息列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CasterMarkPicInfo> m_markPicInfos;
                     bool m_markPicInfosHasBeenSet;

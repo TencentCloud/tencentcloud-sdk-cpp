@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取策略类型。可选值 auto、manual。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 策略类型。可选值 auto、manual。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取手动扩容的 CPU 。Type为 manual 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpandCpu 手动扩容的 CPU 。Type为 manual 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExpandCpu() const;
@@ -77,17 +73,15 @@ namespace TencentCloud
 
                     /**
                      * 获取自动扩容策略。Type 为 auto 时有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoStrategy 自动扩容策略。Type 为 auto 时有效
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     std::string GetAutoStrategy() const;
 
                     /**
                      * 判断参数 AutoStrategy 是否已赋值
                      * @return AutoStrategy 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool AutoStrategyHasBeenSet() const;
 
@@ -95,21 +89,18 @@ namespace TencentCloud
 
                     /**
                      * 策略类型。可选值 auto、manual。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 手动扩容的 CPU 。Type为 manual 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_expandCpu;
                     bool m_expandCpuHasBeenSet;
 
                     /**
                      * 自动扩容策略。Type 为 auto 时有效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_autoStrategy;
                     bool m_autoStrategyHasBeenSet;

@@ -74,6 +74,7 @@ set(iai_public_header_model
   include/tencentcloud/iai/v20200303/model/UpgradeGroupFaceModelVersionResponse.h
   include/tencentcloud/iai/v20200303/model/SearchFacesReturnsByGroupRequest.h
   include/tencentcloud/iai/v20200303/model/AnalyzeDenseLandmarksResponse.h
+  include/tencentcloud/iai/v20200303/model/DetectFaceSimilarityResponse.h
   include/tencentcloud/iai/v20200303/model/ModifyPersonBaseInfoResponse.h
   include/tencentcloud/iai/v20200303/model/ModifyPersonGroupInfoRequest.h
   include/tencentcloud/iai/v20200303/model/RevertGroupFaceModelVersionRequest.h
@@ -82,6 +83,7 @@ set(iai_public_header_model
   include/tencentcloud/iai/v20200303/model/VerifyPersonRequest.h
   include/tencentcloud/iai/v20200303/model/CompareMaskFaceResponse.h
   include/tencentcloud/iai/v20200303/model/ModifyPersonBaseInfoRequest.h
+  include/tencentcloud/iai/v20200303/model/DetectFaceSimilarityRequest.h
   include/tencentcloud/iai/v20200303/model/DetectLiveFaceAccurateRequest.h
   include/tencentcloud/iai/v20200303/model/VerifyFaceResponse.h
   include/tencentcloud/iai/v20200303/model/FaceDetailInfo.h
@@ -271,6 +273,7 @@ set(iai_src
   src/v20200303/model/UpgradeGroupFaceModelVersionResponse.cpp
   src/v20200303/model/SearchFacesReturnsByGroupRequest.cpp
   src/v20200303/model/AnalyzeDenseLandmarksResponse.cpp
+  src/v20200303/model/DetectFaceSimilarityResponse.cpp
   src/v20200303/model/ModifyPersonBaseInfoResponse.cpp
   src/v20200303/model/ModifyPersonGroupInfoRequest.cpp
   src/v20200303/model/RevertGroupFaceModelVersionRequest.cpp
@@ -279,6 +282,7 @@ set(iai_src
   src/v20200303/model/VerifyPersonRequest.cpp
   src/v20200303/model/CompareMaskFaceResponse.cpp
   src/v20200303/model/ModifyPersonBaseInfoRequest.cpp
+  src/v20200303/model/DetectFaceSimilarityRequest.cpp
   src/v20200303/model/DetectLiveFaceAccurateRequest.cpp
   src/v20200303/model/VerifyFaceResponse.cpp
   src/v20200303/model/FaceDetailInfo.cpp

@@ -47,9 +47,7 @@ namespace TencentCloud
 
                     /**
                      * 获取媒体处理结果信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MPSResult 媒体处理结果信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MPSResult GetMPSResult() const;
@@ -63,9 +61,7 @@ namespace TencentCloud
 
                     /**
                      * 获取媒体诊断结果信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiagnoseResult 媒体诊断结果信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DiagnoseResult GetDiagnoseResult() const;
@@ -81,14 +77,12 @@ namespace TencentCloud
 
                     /**
                      * 媒体处理结果信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MPSResult m_mPSResult;
                     bool m_mPSResultHasBeenSet;
 
                     /**
                      * 媒体诊断结果信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DiagnoseResult m_diagnoseResult;
                     bool m_diagnoseResultHasBeenSet;

@@ -171,6 +171,77 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取0:代表没开启调优任务，1:开启智能调优，2:代表定时调优
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ScalingType 0:代表没开启调优任务，1:开启智能调优，2:代表定时调优
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetScalingType() const;
+
+                    /**
+                     * 设置0:代表没开启调优任务，1:开启智能调优，2:代表定时调优
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _scalingType 0:代表没开启调优任务，1:开启智能调优，2:代表定时调优
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetScalingType(const int64_t& _scalingType);
+
+                    /**
+                     * 判断参数 ScalingType 是否已赋值
+                     * @return ScalingType 是否已赋值
+                     * 
+                     */
+                    bool ScalingTypeHasBeenSet() const;
+
+                    /**
+                     * 获取RunningCpu
+                     * @return RunningCpu RunningCpu
+                     * 
+                     */
+                    double GetRunningCpu() const;
+
+                    /**
+                     * 设置RunningCpu
+                     * @param _runningCpu RunningCpu
+                     * 
+                     */
+                    void SetRunningCpu(const double& _runningCpu);
+
+                    /**
+                     * 判断参数 RunningCpu 是否已赋值
+                     * @return RunningCpu 是否已赋值
+                     * 
+                     */
+                    bool RunningCpuHasBeenSet() const;
+
+                    /**
+                     * 获取RunningMem
+                     * @return RunningMem RunningMem
+                     * 
+                     */
+                    double GetRunningMem() const;
+
+                    /**
+                     * 设置RunningMem
+                     * @param _runningMem RunningMem
+                     * 
+                     */
+                    void SetRunningMem(const double& _runningMem);
+
+                    /**
+                     * 判断参数 RunningMem 是否已赋值
+                     * @return RunningMem 是否已赋值
+                     * 
+                     */
+                    bool RunningMemHasBeenSet() const;
+
                 private:
 
                     /**
@@ -207,6 +278,26 @@ namespace TencentCloud
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 0:代表没开启调优任务，1:开启智能调优，2:代表定时调优
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_scalingType;
+                    bool m_scalingTypeHasBeenSet;
+
+                    /**
+                     * RunningCpu
+                     */
+                    double m_runningCpu;
+                    bool m_runningCpuHasBeenSet;
+
+                    /**
+                     * RunningMem
+                     */
+                    double m_runningMem;
+                    bool m_runningMemHasBeenSet;
 
                 };
             }

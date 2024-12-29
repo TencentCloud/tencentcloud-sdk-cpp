@@ -46,10 +46,8 @@ namespace TencentCloud
                     /**
                      * 获取播放url。
 当导播台不存在预监或主监时，若请求预监或主监的播放地址，该字段为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PlayUrl 播放url。
 当导播台不存在预监或主监时，若请求预监或主监的播放地址，该字段为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPlayUrl() const;
@@ -65,11 +63,9 @@ namespace TencentCloud
                      * 获取webrtc协议播放地址。
 当导播台不存在预监或主监时，若请求预监或主监的webrtc播放地址，该字段为空。
 注：webrtc协议播放地址需配合腾讯云快直播播放sdk方可使用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WebRTCPlayUrl webrtc协议播放地址。
 当导播台不存在预监或主监时，若请求预监或主监的webrtc播放地址，该字段为空。
 注：webrtc协议播放地址需配合腾讯云快直播播放sdk方可使用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWebRTCPlayUrl() const;
@@ -86,7 +82,6 @@ namespace TencentCloud
                     /**
                      * 播放url。
 当导播台不存在预监或主监时，若请求预监或主监的播放地址，该字段为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_playUrl;
                     bool m_playUrlHasBeenSet;
@@ -95,7 +90,6 @@ namespace TencentCloud
                      * webrtc协议播放地址。
 当导播台不存在预监或主监时，若请求预监或主监的webrtc播放地址，该字段为空。
 注：webrtc协议播放地址需配合腾讯云快直播播放sdk方可使用。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_webRTCPlayUrl;
                     bool m_webRTCPlayUrlHasBeenSet;

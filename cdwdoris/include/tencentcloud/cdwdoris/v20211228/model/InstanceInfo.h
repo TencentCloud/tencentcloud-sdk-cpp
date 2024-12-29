@@ -1327,6 +1327,52 @@ Modify 集群变更中；
                      */
                     bool AccountTypeHasBeenSet() const;
 
+                    /**
+                     * 获取监控模式 0: 老监控 1：新监控
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MonitorMode 监控模式 0: 老监控 1：新监控
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetMonitorMode() const;
+
+                    /**
+                     * 设置监控模式 0: 老监控 1：新监控
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _monitorMode 监控模式 0: 老监控 1：新监控
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMonitorMode(const int64_t& _monitorMode);
+
+                    /**
+                     * 判断参数 MonitorMode 是否已赋值
+                     * @return MonitorMode 是否已赋值
+                     * 
+                     */
+                    bool MonitorModeHasBeenSet() const;
+
+                    /**
+                     * 获取cn节点信息
+                     * @return CNSummary cn节点信息
+                     * 
+                     */
+                    NodesSummary GetCNSummary() const;
+
+                    /**
+                     * 设置cn节点信息
+                     * @param _cNSummary cn节点信息
+                     * 
+                     */
+                    void SetCNSummary(const NodesSummary& _cNSummary);
+
+                    /**
+                     * 判断参数 CNSummary 是否已赋值
+                     * @return CNSummary 是否已赋值
+                     * 
+                     */
+                    bool CNSummaryHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1685,6 +1731,19 @@ Modify 集群变更中；
                      */
                     int64_t m_accountType;
                     bool m_accountTypeHasBeenSet;
+
+                    /**
+                     * 监控模式 0: 老监控 1：新监控
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_monitorMode;
+                    bool m_monitorModeHasBeenSet;
+
+                    /**
+                     * cn节点信息
+                     */
+                    NodesSummary m_cNSummary;
+                    bool m_cNSummaryHasBeenSet;
 
                 };
             }

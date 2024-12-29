@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取查询数据库错误码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Code 查询数据库错误码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCode() const;
 
                     /**
                      * 设置查询数据库错误码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _code 查询数据库错误码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCode(const int64_t& _code);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取查询数据库错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 查询数据库错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置查询数据库错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _message 查询数据库错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMessage(const std::string& _message);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例ID列表，单个实例Id的格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例ID相同
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 实例ID列表，单个实例Id的格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例ID相同
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID列表，单个实例Id的格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例ID相同
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceId 实例ID列表，单个实例Id的格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例ID相同
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取可回档时间范围
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Times 可回档时间范围
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RollbackTimeRange> GetTimes() const;
 
                     /**
                      * 设置可回档时间范围
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _times 可回档时间范围
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimes(const std::vector<RollbackTimeRange>& _times);
@@ -151,28 +135,24 @@ namespace TencentCloud
 
                     /**
                      * 查询数据库错误码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_code;
                     bool m_codeHasBeenSet;
 
                     /**
                      * 查询数据库错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
 
                     /**
                      * 实例ID列表，单个实例Id的格式如：cdb-c1nl9rpv。与云数据库控制台页面中显示的实例ID相同
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
                      * 可回档时间范围
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RollbackTimeRange> m_times;
                     bool m_timesHasBeenSet;

@@ -8640,49 +8640,6 @@ CwpClient::DescribeImportMachineInfoOutcomeCallable CwpClient::DescribeImportMac
     return task->get_future();
 }
 
-CwpClient::DescribeIndexListOutcome CwpClient::DescribeIndexList(const DescribeIndexListRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeIndexList");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeIndexListResponse rsp = DescribeIndexListResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeIndexListOutcome(rsp);
-        else
-            return DescribeIndexListOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeIndexListOutcome(outcome.GetError());
-    }
-}
-
-void CwpClient::DescribeIndexListAsync(const DescribeIndexListRequest& request, const DescribeIndexListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeIndexList(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CwpClient::DescribeIndexListOutcomeCallable CwpClient::DescribeIndexListCallable(const DescribeIndexListRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeIndexListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeIndexList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 CwpClient::DescribeJavaMemShellInfoOutcome CwpClient::DescribeJavaMemShellInfo(const DescribeJavaMemShellInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeJavaMemShellInfo");

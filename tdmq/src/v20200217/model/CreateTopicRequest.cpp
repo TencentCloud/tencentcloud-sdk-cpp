@@ -30,7 +30,8 @@ CreateTopicRequest::CreateTopicRequest() :
     m_remarkHasBeenSet(false),
     m_topicTypeHasBeenSet(false),
     m_pulsarTopicTypeHasBeenSet(false),
-    m_msgTTLHasBeenSet(false)
+    m_msgTTLHasBeenSet(false),
+    m_unackPolicyHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,14 @@ string CreateTopicRequest::ToJsonString() const
         string key = "MsgTTL";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_msgTTL, allocator);
+    }
+
+    if (m_unackPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UnackPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_unackPolicy.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -239,6 +248,22 @@ void CreateTopicRequest::SetMsgTTL(const uint64_t& _msgTTL)
 bool CreateTopicRequest::MsgTTLHasBeenSet() const
 {
     return m_msgTTLHasBeenSet;
+}
+
+string CreateTopicRequest::GetUnackPolicy() const
+{
+    return m_unackPolicy;
+}
+
+void CreateTopicRequest::SetUnackPolicy(const string& _unackPolicy)
+{
+    m_unackPolicy = _unackPolicy;
+    m_unackPolicyHasBeenSet = true;
+}
+
+bool CreateTopicRequest::UnackPolicyHasBeenSet() const
+{
+    return m_unackPolicyHasBeenSet;
 }
 
 

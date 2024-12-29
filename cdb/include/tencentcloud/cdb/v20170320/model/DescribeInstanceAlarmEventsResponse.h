@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取事件信息。查询不到信息时，Items为null。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Items 事件信息。查询不到信息时，Items为null。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<InstEventInfo> GetItems() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 事件信息。查询不到信息时，Items为null。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<InstEventInfo> m_items;
                     bool m_itemsHasBeenSet;

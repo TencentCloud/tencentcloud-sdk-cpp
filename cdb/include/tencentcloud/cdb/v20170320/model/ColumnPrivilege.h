@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Database 数据库名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDatabase() const;
 
                     /**
                      * 设置数据库名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _database 数据库名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDatabase(const std::string& _database);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库表名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Table 数据库表名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTable() const;
 
                     /**
                      * 设置数据库表名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _table 数据库表名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTable(const std::string& _table);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库列名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Column 数据库列名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetColumn() const;
 
                     /**
                      * 设置数据库列名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _column 数据库列名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetColumn(const std::string& _column);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取权限信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Privileges 权限信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetPrivileges() const;
 
                     /**
                      * 设置权限信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _privileges 权限信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPrivileges(const std::vector<std::string>& _privileges);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 数据库名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_database;
                     bool m_databaseHasBeenSet;
 
                     /**
                      * 数据库表名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_table;
                     bool m_tableHasBeenSet;
 
                     /**
                      * 数据库列名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_column;
                     bool m_columnHasBeenSet;
 
                     /**
                      * 权限信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_privileges;
                     bool m_privilegesHasBeenSet;

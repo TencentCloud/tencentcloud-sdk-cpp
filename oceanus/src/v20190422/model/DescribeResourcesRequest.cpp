@@ -27,7 +27,8 @@ DescribeResourcesRequest::DescribeResourcesRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_filtersHasBeenSet(false),
-    m_workSpaceIdHasBeenSet(false)
+    m_workSpaceIdHasBeenSet(false),
+    m_systemResourceHasBeenSet(false)
 {
 }
 
@@ -88,6 +89,14 @@ string DescribeResourcesRequest::ToJsonString() const
         string key = "WorkSpaceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_workSpaceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_systemResourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SystemResource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_systemResource, allocator);
     }
 
 
@@ -176,6 +185,22 @@ void DescribeResourcesRequest::SetWorkSpaceId(const string& _workSpaceId)
 bool DescribeResourcesRequest::WorkSpaceIdHasBeenSet() const
 {
     return m_workSpaceIdHasBeenSet;
+}
+
+uint64_t DescribeResourcesRequest::GetSystemResource() const
+{
+    return m_systemResource;
+}
+
+void DescribeResourcesRequest::SetSystemResource(const uint64_t& _systemResource)
+{
+    m_systemResource = _systemResource;
+    m_systemResourceHasBeenSet = true;
+}
+
+bool DescribeResourcesRequest::SystemResourceHasBeenSet() const
+{
+    return m_systemResourceHasBeenSet;
 }
 
 

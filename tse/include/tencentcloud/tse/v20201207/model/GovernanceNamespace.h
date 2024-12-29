@@ -371,6 +371,31 @@ namespace TencentCloud
                      */
                     bool RemoveGroupIdsHasBeenSet() const;
 
+                    /**
+                     * 获取该命名空间下的服务对哪些命名空间可见
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ServiceExportTo 该命名空间下的服务对哪些命名空间可见
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetServiceExportTo() const;
+
+                    /**
+                     * 设置该命名空间下的服务对哪些命名空间可见
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _serviceExportTo 该命名空间下的服务对哪些命名空间可见
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetServiceExportTo(const std::vector<std::string>& _serviceExportTo);
+
+                    /**
+                     * 判断参数 ServiceExportTo 是否已赋值
+                     * @return ServiceExportTo 是否已赋值
+                     * 
+                     */
+                    bool ServiceExportToHasBeenSet() const;
+
                 private:
 
                     /**
@@ -463,6 +488,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_removeGroupIds;
                     bool m_removeGroupIdsHasBeenSet;
+
+                    /**
+                     * 该命名空间下的服务对哪些命名空间可见
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_serviceExportTo;
+                    bool m_serviceExportToHasBeenSet;
 
                 };
             }

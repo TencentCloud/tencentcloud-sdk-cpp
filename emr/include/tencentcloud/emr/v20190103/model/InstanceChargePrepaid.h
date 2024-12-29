@@ -36,7 +36,6 @@ namespace TencentCloud
             {
                 /**
                 * 实例预付费参数，只有在付费类型为PREPAID时生效。
-
                 */
                 class InstanceChargePrepaid : public AbstractModel
                 {

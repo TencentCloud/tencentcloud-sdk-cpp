@@ -54,6 +54,7 @@ SyncJobInfo::SyncJobInfo() :
     m_instanceClassHasBeenSet(false),
     m_autoRenewHasBeenSet(false),
     m_offlineTimeHasBeenSet(false),
+    m_optObjStatusHasBeenSet(false),
     m_autoRetryTimeRangeMinutesHasBeenSet(false),
     m_dumperResumeCtrlHasBeenSet(false)
 {
@@ -459,6 +460,16 @@ CoreInternalOutcome SyncJobInfo::Deserialize(const rapidjson::Value &value)
         m_offlineTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("OptObjStatus") && !value["OptObjStatus"].IsNull())
+    {
+        if (!value["OptObjStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SyncJobInfo.OptObjStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_optObjStatus = string(value["OptObjStatus"].GetString());
+        m_optObjStatusHasBeenSet = true;
+    }
+
     if (value.HasMember("AutoRetryTimeRangeMinutes") && !value["AutoRetryTimeRangeMinutes"].IsNull())
     {
         if (!value["AutoRetryTimeRangeMinutes"].IsInt64())
@@ -772,6 +783,14 @@ void SyncJobInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "OfflineTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_offlineTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_optObjStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OptObjStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_optObjStatus.c_str(), allocator).Move(), allocator);
     }
 
     if (m_autoRetryTimeRangeMinutesHasBeenSet)
@@ -1319,6 +1338,22 @@ void SyncJobInfo::SetOfflineTime(const string& _offlineTime)
 bool SyncJobInfo::OfflineTimeHasBeenSet() const
 {
     return m_offlineTimeHasBeenSet;
+}
+
+string SyncJobInfo::GetOptObjStatus() const
+{
+    return m_optObjStatus;
+}
+
+void SyncJobInfo::SetOptObjStatus(const string& _optObjStatus)
+{
+    m_optObjStatus = _optObjStatus;
+    m_optObjStatusHasBeenSet = true;
+}
+
+bool SyncJobInfo::OptObjStatusHasBeenSet() const
+{
+    return m_optObjStatusHasBeenSet;
 }
 
 int64_t SyncJobInfo::GetAutoRetryTimeRangeMinutes() const

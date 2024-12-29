@@ -163,6 +163,27 @@ namespace TencentCloud
                      */
                     bool ReasonHasBeenSet() const;
 
+                    /**
+                     * 获取addon的创建时间
+                     * @return CreateTime addon的创建时间
+                     * 
+                     */
+                    std::string GetCreateTime() const;
+
+                    /**
+                     * 设置addon的创建时间
+                     * @param _createTime addon的创建时间
+                     * 
+                     */
+                    void SetCreateTime(const std::string& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     * 
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -197,6 +218,12 @@ namespace TencentCloud
                      */
                     std::string m_reason;
                     bool m_reasonHasBeenSet;
+
+                    /**
+                     * addon的创建时间
+                     */
+                    std::string m_createTime;
+                    bool m_createTimeHasBeenSet;
 
                 };
             }

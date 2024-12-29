@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取切换事件ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EventId 切换事件ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEventId() const;
 
                     /**
                      * 设置切换事件ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _eventId 切换事件ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEventId(const std::string& _eventId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取切换模式 0-系统自动切换，1-手动切换
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SwitchType 切换模式 0-系统自动切换，1-手动切换
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetSwitchType() const;
 
                     /**
                      * 设置切换模式 0-系统自动切换，1-手动切换
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _switchType 切换模式 0-系统自动切换，1-手动切换
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSwitchType(const uint64_t& _switchType);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取切换开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 切换开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置切换开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _startTime 切换开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取切换结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 切换结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置切换结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endTime 切换结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取机器故障导致自动切换
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Reason 机器故障导致自动切换
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReason() const;
 
                     /**
                      * 设置机器故障导致自动切换
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _reason 机器故障导致自动切换
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReason(const std::string& _reason);
@@ -175,35 +155,30 @@ namespace TencentCloud
 
                     /**
                      * 切换事件ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_eventId;
                     bool m_eventIdHasBeenSet;
 
                     /**
                      * 切换模式 0-系统自动切换，1-手动切换
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_switchType;
                     bool m_switchTypeHasBeenSet;
 
                     /**
                      * 切换开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
                      * 切换结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
                      * 机器故障导致自动切换
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reason;
                     bool m_reasonHasBeenSet;

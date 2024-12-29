@@ -172,6 +172,39 @@ namespace TencentCloud
                      */
                     bool RemoveGroupIdsHasBeenSet() const;
 
+                    /**
+                     * 获取该命名空间下的服务对哪些命名空间下可见，
+1、为空或者不填写，表示仅当前命名空间可见
+2、列表内容仅一个元素，且为字符 *，表示所有命名空间可见（包括新增）
+3、列表内容为部份命名空间名称，则只对这些命名空间下可见
+                     * @return ServiceExportTo 该命名空间下的服务对哪些命名空间下可见，
+1、为空或者不填写，表示仅当前命名空间可见
+2、列表内容仅一个元素，且为字符 *，表示所有命名空间可见（包括新增）
+3、列表内容为部份命名空间名称，则只对这些命名空间下可见
+                     * 
+                     */
+                    std::vector<std::string> GetServiceExportTo() const;
+
+                    /**
+                     * 设置该命名空间下的服务对哪些命名空间下可见，
+1、为空或者不填写，表示仅当前命名空间可见
+2、列表内容仅一个元素，且为字符 *，表示所有命名空间可见（包括新增）
+3、列表内容为部份命名空间名称，则只对这些命名空间下可见
+                     * @param _serviceExportTo 该命名空间下的服务对哪些命名空间下可见，
+1、为空或者不填写，表示仅当前命名空间可见
+2、列表内容仅一个元素，且为字符 *，表示所有命名空间可见（包括新增）
+3、列表内容为部份命名空间名称，则只对这些命名空间下可见
+                     * 
+                     */
+                    void SetServiceExportTo(const std::vector<std::string>& _serviceExportTo);
+
+                    /**
+                     * 判断参数 ServiceExportTo 是否已赋值
+                     * @return ServiceExportTo 是否已赋值
+                     * 
+                     */
+                    bool ServiceExportToHasBeenSet() const;
+
                 private:
 
                     /**
@@ -209,6 +242,15 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_removeGroupIds;
                     bool m_removeGroupIdsHasBeenSet;
+
+                    /**
+                     * 该命名空间下的服务对哪些命名空间下可见，
+1、为空或者不填写，表示仅当前命名空间可见
+2、列表内容仅一个元素，且为字符 *，表示所有命名空间可见（包括新增）
+3、列表内容为部份命名空间名称，则只对这些命名空间下可见
+                     */
+                    std::vector<std::string> m_serviceExportTo;
+                    bool m_serviceExportToHasBeenSet;
 
                 };
             }

@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool OrderHasBeenSet() const;
 
                     /**
-                     * 获取目前支持根据ts排序
-                     * @return By 目前支持根据ts排序
+                     * 获取目前支持根据create_time、modify_time、id排序
+                     * @return By 目前支持根据create_time、modify_time、id排序
                      * 
                      */
                     std::string GetBy() const;
 
                     /**
-                     * 设置目前支持根据ts排序
-                     * @param _by 目前支持根据ts排序
+                     * 设置目前支持根据create_time、modify_time、id排序
+                     * @param _by 目前支持根据create_time、modify_time、id排序
                      * 
                      */
                     void SetBy(const std::string& _by);
@@ -202,7 +202,7 @@ namespace TencentCloud
                     bool m_orderHasBeenSet;
 
                     /**
-                     * 目前支持根据ts排序
+                     * 目前支持根据create_time、modify_time、id排序
                      */
                     std::string m_by;
                     bool m_byHasBeenSet;

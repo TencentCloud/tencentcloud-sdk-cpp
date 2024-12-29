@@ -132,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点状态。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 节点状态。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置节点状态。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 节点状态。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -183,7 +179,6 @@ namespace TencentCloud
 
                     /**
                      * 节点状态。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

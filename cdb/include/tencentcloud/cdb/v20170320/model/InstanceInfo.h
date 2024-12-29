@@ -118,18 +118,14 @@ namespace TencentCloud
 
                     /**
                      * 获取只读vip信息。单独开通只读实例访问的只读实例才有该字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RoVipInfo 只读vip信息。单独开通只读实例访问的只读实例才有该字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RoVipInfo GetRoVipInfo() const;
 
                     /**
                      * 设置只读vip信息。单独开通只读实例访问的只读实例才有该字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _roVipInfo 只读vip信息。单独开通只读实例访问的只读实例才有该字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRoVipInfo(const RoVipInfo& _roVipInfo);
@@ -206,18 +202,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备机信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SlaveInfo 备机信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SlaveInfo GetSlaveInfo() const;
 
                     /**
                      * 设置备机信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _slaveInfo 备机信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSlaveInfo(const SlaveInfo& _slaveInfo);
@@ -315,18 +307,14 @@ namespace TencentCloud
 
                     /**
                      * 获取只读组详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RoGroups 只读组详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RoGroup> GetRoGroups() const;
 
                     /**
                      * 设置只读组详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _roGroups 只读组详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRoGroups(const std::vector<RoGroup>& _roGroups);
@@ -487,18 +475,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主实例详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MasterInfo 主实例详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MasterInfo GetMasterInfo() const;
 
                     /**
                      * 设置主实例详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _masterInfo 主实例详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMasterInfo(const MasterInfo& _masterInfo);
@@ -575,18 +559,14 @@ namespace TencentCloud
 
                     /**
                      * 获取灾备实例详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DrInfo 灾备实例详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DrInfo> GetDrInfo() const;
 
                     /**
                      * 设置灾备实例详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _drInfo 灾备实例详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDrInfo(const std::vector<DrInfo>& _drInfo);
@@ -873,18 +853,14 @@ namespace TencentCloud
 
                     /**
                      * 获取物理机型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceClass 物理机型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeviceClass() const;
 
                     /**
                      * 设置物理机型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceClass 物理机型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceClass(const std::string& _deviceClass);
@@ -898,18 +874,14 @@ namespace TencentCloud
 
                     /**
                      * 获取置放群组 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeployGroupId 置放群组 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeployGroupId() const;
 
                     /**
                      * 设置置放群组 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deployGroupId 置放群组 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeployGroupId(const std::string& _deployGroupId);
@@ -923,18 +895,14 @@ namespace TencentCloud
 
                     /**
                      * 获取可用区 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZoneId 可用区 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetZoneId() const;
 
                     /**
                      * 设置可用区 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zoneId 可用区 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZoneId(const int64_t& _zoneId);
@@ -969,18 +937,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagList 标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TagInfoItem> GetTagList() const;
 
                     /**
                      * 设置标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tagList 标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTagList(const std::vector<TagInfoItem>& _tagList);
@@ -994,18 +958,14 @@ namespace TencentCloud
 
                     /**
                      * 获取引擎类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EngineType 引擎类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEngineType() const;
 
                     /**
                      * 设置引擎类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _engineType 引擎类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEngineType(const std::string& _engineType);
@@ -1019,18 +979,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最大延迟阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxDelayTime 最大延迟阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxDelayTime() const;
 
                     /**
                      * 设置最大延迟阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxDelayTime 最大延迟阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxDelayTime(const int64_t& _maxDelayTime);
@@ -1065,18 +1021,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当前扩容的CPU核心数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpandCpu 当前扩容的CPU核心数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetExpandCpu() const;
 
                     /**
                      * 设置当前扩容的CPU核心数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _expandCpu 当前扩容的CPU核心数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExpandCpu(const int64_t& _expandCpu);
@@ -1090,18 +1042,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例集群版节点信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterInfo 实例集群版节点信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ClusterInfo> GetClusterInfo() const;
 
                     /**
                      * 设置实例集群版节点信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterInfo 实例集群版节点信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterInfo(const std::vector<ClusterInfo>& _clusterInfo);
@@ -1135,7 +1083,6 @@ namespace TencentCloud
 
                     /**
                      * 只读vip信息。单独开通只读实例访问的只读实例才有该字段
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RoVipInfo m_roVipInfo;
                     bool m_roVipInfoHasBeenSet;
@@ -1160,7 +1107,6 @@ namespace TencentCloud
 
                     /**
                      * 备机信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SlaveInfo m_slaveInfo;
                     bool m_slaveInfoHasBeenSet;
@@ -1191,7 +1137,6 @@ namespace TencentCloud
 
                     /**
                      * 只读组详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RoGroup> m_roGroups;
                     bool m_roGroupsHasBeenSet;
@@ -1240,7 +1185,6 @@ namespace TencentCloud
 
                     /**
                      * 主实例详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MasterInfo m_masterInfo;
                     bool m_masterInfoHasBeenSet;
@@ -1265,7 +1209,6 @@ namespace TencentCloud
 
                     /**
                      * 灾备实例详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DrInfo> m_drInfo;
                     bool m_drInfoHasBeenSet;
@@ -1350,21 +1293,18 @@ namespace TencentCloud
 
                     /**
                      * 物理机型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceClass;
                     bool m_deviceClassHasBeenSet;
 
                     /**
                      * 置放群组 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deployGroupId;
                     bool m_deployGroupIdHasBeenSet;
 
                     /**
                      * 可用区 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_zoneId;
                     bool m_zoneIdHasBeenSet;
@@ -1377,21 +1317,18 @@ namespace TencentCloud
 
                     /**
                      * 标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TagInfoItem> m_tagList;
                     bool m_tagListHasBeenSet;
 
                     /**
                      * 引擎类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_engineType;
                     bool m_engineTypeHasBeenSet;
 
                     /**
                      * 最大延迟阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxDelayTime;
                     bool m_maxDelayTimeHasBeenSet;
@@ -1404,14 +1341,12 @@ namespace TencentCloud
 
                     /**
                      * 当前扩容的CPU核心数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_expandCpu;
                     bool m_expandCpuHasBeenSet;
 
                     /**
                      * 实例集群版节点信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ClusterInfo> m_clusterInfo;
                     bool m_clusterInfoHasBeenSet;

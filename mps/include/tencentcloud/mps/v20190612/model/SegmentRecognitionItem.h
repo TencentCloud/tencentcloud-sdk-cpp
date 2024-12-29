@@ -280,6 +280,90 @@ namespace TencentCloud
                      */
                     bool EndTimeHasBeenSet() const;
 
+                    /**
+                     * 获取直播拆条用，音频url。
+                     * @return AudioUrl 直播拆条用，音频url。
+                     * 
+                     */
+                    std::string GetAudioUrl() const;
+
+                    /**
+                     * 设置直播拆条用，音频url。
+                     * @param _audioUrl 直播拆条用，音频url。
+                     * 
+                     */
+                    void SetAudioUrl(const std::string& _audioUrl);
+
+                    /**
+                     * 判断参数 AudioUrl 是否已赋值
+                     * @return AudioUrl 是否已赋值
+                     * 
+                     */
+                    bool AudioUrlHasBeenSet() const;
+
+                    /**
+                     * 获取直播拆条用，音频对应起始时间戳；
+                     * @return AudioBeginTime 直播拆条用，音频对应起始时间戳；
+                     * 
+                     */
+                    double GetAudioBeginTime() const;
+
+                    /**
+                     * 设置直播拆条用，音频对应起始时间戳；
+                     * @param _audioBeginTime 直播拆条用，音频对应起始时间戳；
+                     * 
+                     */
+                    void SetAudioBeginTime(const double& _audioBeginTime);
+
+                    /**
+                     * 判断参数 AudioBeginTime 是否已赋值
+                     * @return AudioBeginTime 是否已赋值
+                     * 
+                     */
+                    bool AudioBeginTimeHasBeenSet() const;
+
+                    /**
+                     * 获取直播拆条用，音频对应结束时间戳。
+                     * @return AudioEndTime 直播拆条用，音频对应结束时间戳。
+                     * 
+                     */
+                    double GetAudioEndTime() const;
+
+                    /**
+                     * 设置直播拆条用，音频对应结束时间戳。
+                     * @param _audioEndTime 直播拆条用，音频对应结束时间戳。
+                     * 
+                     */
+                    void SetAudioEndTime(const double& _audioEndTime);
+
+                    /**
+                     * 判断参数 AudioEndTime 是否已赋值
+                     * @return AudioEndTime 是否已赋值
+                     * 
+                     */
+                    bool AudioEndTimeHasBeenSet() const;
+
+                    /**
+                     * 获取直播拆条用，人物位置参考信息用于横转竖。
+                     * @return PersonPositionUrl 直播拆条用，人物位置参考信息用于横转竖。
+                     * 
+                     */
+                    std::string GetPersonPositionUrl() const;
+
+                    /**
+                     * 设置直播拆条用，人物位置参考信息用于横转竖。
+                     * @param _personPositionUrl 直播拆条用，人物位置参考信息用于横转竖。
+                     * 
+                     */
+                    void SetPersonPositionUrl(const std::string& _personPositionUrl);
+
+                    /**
+                     * 判断参数 PersonPositionUrl 是否已赋值
+                     * @return PersonPositionUrl 是否已赋值
+                     * 
+                     */
+                    bool PersonPositionUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -347,6 +431,30 @@ namespace TencentCloud
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
+
+                    /**
+                     * 直播拆条用，音频url。
+                     */
+                    std::string m_audioUrl;
+                    bool m_audioUrlHasBeenSet;
+
+                    /**
+                     * 直播拆条用，音频对应起始时间戳；
+                     */
+                    double m_audioBeginTime;
+                    bool m_audioBeginTimeHasBeenSet;
+
+                    /**
+                     * 直播拆条用，音频对应结束时间戳。
+                     */
+                    double m_audioEndTime;
+                    bool m_audioEndTimeHasBeenSet;
+
+                    /**
+                     * 直播拆条用，人物位置参考信息用于横转竖。
+                     */
+                    std::string m_personPositionUrl;
+                    bool m_personPositionUrlHasBeenSet;
 
                 };
             }

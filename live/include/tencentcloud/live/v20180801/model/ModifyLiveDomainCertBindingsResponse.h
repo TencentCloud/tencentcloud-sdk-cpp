@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取操作失败的域名及错误码，错误信息，包括MismatchedDomainNames中的域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Errors 操作失败的域名及错误码，错误信息，包括MismatchedDomainNames中的域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BatchDomainOperateErrors> GetErrors() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 操作失败的域名及错误码，错误信息，包括MismatchedDomainNames中的域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BatchDomainOperateErrors> m_errors;
                     bool m_errorsHasBeenSet;

@@ -488,7 +488,6 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/DescribeRansomDefenseMachineStrategyInfoRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeAssetCoreModuleInfoRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeProductStatusResponse.h
-  include/tencentcloud/cwp/v20180228/model/DescribeIndexListResponse.h
   include/tencentcloud/cwp/v20180228/model/ModifyJavaMemShellPluginSwitchRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeIgnoreHostAndItemConfigResponse.h
   include/tencentcloud/cwp/v20180228/model/RemoveLocalStorageItemResponse.h
@@ -515,7 +514,6 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/AssetUserBaseInfo.h
   include/tencentcloud/cwp/v20180228/model/ModifyRiskEventsStatusRequest.h
   include/tencentcloud/cwp/v20180228/model/ExportBaselineEffectHostListRequest.h
-  include/tencentcloud/cwp/v20180228/model/ExportMaliciousRequestsResponse.h
   include/tencentcloud/cwp/v20180228/model/ScanBaselineRequest.h
   include/tencentcloud/cwp/v20180228/model/RansomDefenseRollbackRequest.h
   include/tencentcloud/cwp/v20180228/model/EffectiveMachineInfo.h
@@ -526,7 +524,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/DescribeVulDefenceEventRequest.h
   include/tencentcloud/cwp/v20180228/model/ModifyBaselineRuleResponse.h
   include/tencentcloud/cwp/v20180228/model/AttackSource.h
-  include/tencentcloud/cwp/v20180228/model/DescribeIndexListRequest.h
+  include/tencentcloud/cwp/v20180228/model/ExportMaliciousRequestsResponse.h
   include/tencentcloud/cwp/v20180228/model/RetryVulFixRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeRiskDnsEventListRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeLogKafkaDeliverInfoResponse.h
@@ -1795,7 +1793,6 @@ set(cwp_src
   src/v20180228/model/DescribeRansomDefenseMachineStrategyInfoRequest.cpp
   src/v20180228/model/DescribeAssetCoreModuleInfoRequest.cpp
   src/v20180228/model/DescribeProductStatusResponse.cpp
-  src/v20180228/model/DescribeIndexListResponse.cpp
   src/v20180228/model/ModifyJavaMemShellPluginSwitchRequest.cpp
   src/v20180228/model/DescribeIgnoreHostAndItemConfigResponse.cpp
   src/v20180228/model/RemoveLocalStorageItemResponse.cpp
@@ -1822,7 +1819,6 @@ set(cwp_src
   src/v20180228/model/AssetUserBaseInfo.cpp
   src/v20180228/model/ModifyRiskEventsStatusRequest.cpp
   src/v20180228/model/ExportBaselineEffectHostListRequest.cpp
-  src/v20180228/model/ExportMaliciousRequestsResponse.cpp
   src/v20180228/model/ScanBaselineRequest.cpp
   src/v20180228/model/RansomDefenseRollbackRequest.cpp
   src/v20180228/model/EffectiveMachineInfo.cpp
@@ -1833,7 +1829,7 @@ set(cwp_src
   src/v20180228/model/DescribeVulDefenceEventRequest.cpp
   src/v20180228/model/ModifyBaselineRuleResponse.cpp
   src/v20180228/model/AttackSource.cpp
-  src/v20180228/model/DescribeIndexListRequest.cpp
+  src/v20180228/model/ExportMaliciousRequestsResponse.cpp
   src/v20180228/model/RetryVulFixRequest.cpp
   src/v20180228/model/DescribeRiskDnsEventListRequest.cpp
   src/v20180228/model/DescribeLogKafkaDeliverInfoResponse.cpp

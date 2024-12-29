@@ -657,6 +657,90 @@ namespace TencentCloud
                      */
                     bool FlinkVersionHasBeenSet() const;
 
+                    /**
+                     * 获取JobManager cpu
+                     * @return JobManagerCpu JobManager cpu
+                     * 
+                     */
+                    double GetJobManagerCpu() const;
+
+                    /**
+                     * 设置JobManager cpu
+                     * @param _jobManagerCpu JobManager cpu
+                     * 
+                     */
+                    void SetJobManagerCpu(const double& _jobManagerCpu);
+
+                    /**
+                     * 判断参数 JobManagerCpu 是否已赋值
+                     * @return JobManagerCpu 是否已赋值
+                     * 
+                     */
+                    bool JobManagerCpuHasBeenSet() const;
+
+                    /**
+                     * 获取JobManager 内存
+                     * @return JobManagerMem JobManager 内存
+                     * 
+                     */
+                    double GetJobManagerMem() const;
+
+                    /**
+                     * 设置JobManager 内存
+                     * @param _jobManagerMem JobManager 内存
+                     * 
+                     */
+                    void SetJobManagerMem(const double& _jobManagerMem);
+
+                    /**
+                     * 判断参数 JobManagerMem 是否已赋值
+                     * @return JobManagerMem 是否已赋值
+                     * 
+                     */
+                    bool JobManagerMemHasBeenSet() const;
+
+                    /**
+                     * 获取TaskManager cpu
+                     * @return TaskManagerCpu TaskManager cpu
+                     * 
+                     */
+                    double GetTaskManagerCpu() const;
+
+                    /**
+                     * 设置TaskManager cpu
+                     * @param _taskManagerCpu TaskManager cpu
+                     * 
+                     */
+                    void SetTaskManagerCpu(const double& _taskManagerCpu);
+
+                    /**
+                     * 判断参数 TaskManagerCpu 是否已赋值
+                     * @return TaskManagerCpu 是否已赋值
+                     * 
+                     */
+                    bool TaskManagerCpuHasBeenSet() const;
+
+                    /**
+                     * 获取TaskManager 内存
+                     * @return TaskManagerMem TaskManager 内存
+                     * 
+                     */
+                    double GetTaskManagerMem() const;
+
+                    /**
+                     * 设置TaskManager 内存
+                     * @param _taskManagerMem TaskManager 内存
+                     * 
+                     */
+                    void SetTaskManagerMem(const double& _taskManagerMem);
+
+                    /**
+                     * 判断参数 TaskManagerMem 是否已赋值
+                     * @return TaskManagerMem 是否已赋值
+                     * 
+                     */
+                    bool TaskManagerMemHasBeenSet() const;
+
                 private:
 
                     /**
@@ -832,6 +916,30 @@ namespace TencentCloud
                      */
                     std::string m_flinkVersion;
                     bool m_flinkVersionHasBeenSet;
+
+                    /**
+                     * JobManager cpu
+                     */
+                    double m_jobManagerCpu;
+                    bool m_jobManagerCpuHasBeenSet;
+
+                    /**
+                     * JobManager 内存
+                     */
+                    double m_jobManagerMem;
+                    bool m_jobManagerMemHasBeenSet;
+
+                    /**
+                     * TaskManager cpu
+                     */
+                    double m_taskManagerCpu;
+                    bool m_taskManagerCpuHasBeenSet;
+
+                    /**
+                     * TaskManager 内存
+                     */
+                    double m_taskManagerMem;
+                    bool m_taskManagerMemHasBeenSet;
 
                 };
             }

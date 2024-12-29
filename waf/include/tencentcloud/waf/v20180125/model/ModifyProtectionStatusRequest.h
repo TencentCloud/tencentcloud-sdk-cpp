@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取状态
-                     * @return Status 状态
+                     * 获取1：开启WAF开关，0：关闭WAF开关
+                     * @return Status 1：开启WAF开关，0：关闭WAF开关
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置状态
-                     * @param _status 状态
+                     * 设置1：开启WAF开关，0：关闭WAF开关
+                     * @param _status 1：开启WAF开关，0：关闭WAF开关
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -114,7 +114,7 @@ namespace TencentCloud
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 状态
+                     * 1：开启WAF开关，0：关闭WAF开关
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;

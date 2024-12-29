@@ -1023,7 +1023,7 @@ namespace TencentCloud
                 DeleteAccountsOutcomeCallable DeleteAccountsCallable(const Model::DeleteAccountsRequest& request);
 
                 /**
-                 *本接口(DeleteAuditLogFile)用于删除云数据库实例的审计日志文件。
+                 *本接口（DeleteAuditLogFile）用于删除云数据库实例的审计日志文件。
                  * @param req DeleteAuditLogFileRequest
                  * @return DeleteAuditLogFileOutcome
                  */
@@ -1122,7 +1122,7 @@ namespace TencentCloud
                 DescribeAuditLogFilesOutcomeCallable DescribeAuditLogFilesCallable(const Model::DescribeAuditLogFilesRequest& request);
 
                 /**
-                 *本接口(DescribeAuditLogs)用于查询数据库审计日志。
+                 *本接口（DescribeAuditLogs）用于查询数据库审计日志。
                  * @param req DescribeAuditLogsRequest
                  * @return DescribeAuditLogsOutcome
                  */
@@ -1410,7 +1410,7 @@ namespace TencentCloud
                 DescribeInstancesWithinSameClusterOutcomeCallable DescribeInstancesWithinSameClusterCallable(const Model::DescribeInstancesWithinSameClusterRequest& request);
 
                 /**
-                 *本接口(DescribeIsolatedInstances)用于查询回收站实例列表。
+                 *本接口（DescribeIsolatedInstances）用于查询回收站实例列表。
                  * @param req DescribeIsolatedInstancesRequest
                  * @return DescribeIsolatedInstancesOutcome
                  */

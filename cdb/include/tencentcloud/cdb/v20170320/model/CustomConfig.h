@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Device 设备
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDevice() const;
 
                     /**
                      * 设置设备
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _device 设备
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDevice(const std::string& _device);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceType 设备类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeviceType() const;
 
                     /**
                      * 设置设备类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceType 设备类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceType(const std::string& _deviceType);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内存
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Memory 内存
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMemory() const;
 
                     /**
                      * 设置内存
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _memory 内存
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMemory(const uint64_t& _memory);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取核数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cpu 核数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCpu() const;
 
                     /**
                      * 设置核数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cpu 核数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCpu(const uint64_t& _cpu);
@@ -175,35 +155,30 @@ namespace TencentCloud
 
                     /**
                      * 设备
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_device;
                     bool m_deviceHasBeenSet;
 
                     /**
                      * 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 设备类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceType;
                     bool m_deviceTypeHasBeenSet;
 
                     /**
                      * 内存
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_memory;
                     bool m_memoryHasBeenSet;
 
                     /**
                      * 核数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_cpu;
                     bool m_cpuHasBeenSet;

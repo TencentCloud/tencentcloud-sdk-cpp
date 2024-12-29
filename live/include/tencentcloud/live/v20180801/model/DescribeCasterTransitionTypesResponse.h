@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取转场信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TransitionTypes 转场信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TransitionTypeInfo> GetTransitionTypes() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 转场信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TransitionTypeInfo> m_transitionTypes;
                     bool m_transitionTypesHasBeenSet;

@@ -169,6 +169,27 @@ namespace TencentCloud
                      */
                     bool FlinkVersionHasBeenSet() const;
 
+                    /**
+                     * 获取空间
+                     * @return WorkSpaceId 空间
+                     * 
+                     */
+                    std::string GetWorkSpaceId() const;
+
+                    /**
+                     * 设置空间
+                     * @param _workSpaceId 空间
+                     * 
+                     */
+                    void SetWorkSpaceId(const std::string& _workSpaceId);
+
+                    /**
+                     * 判断参数 WorkSpaceId 是否已赋值
+                     * @return WorkSpaceId 是否已赋值
+                     * 
+                     */
+                    bool WorkSpaceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -206,6 +227,12 @@ namespace TencentCloud
                      */
                     std::string m_flinkVersion;
                     bool m_flinkVersionHasBeenSet;
+
+                    /**
+                     * 空间
+                     */
+                    std::string m_workSpaceId;
+                    bool m_workSpaceIdHasBeenSet;
 
                 };
             }

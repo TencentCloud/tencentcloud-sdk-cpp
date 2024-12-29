@@ -300,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取此规格对应的按量计费Pid列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PostPid 此规格对应的按量计费Pid列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetPostPid() const;
 
                     /**
                      * 设置此规格对应的按量计费Pid列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _postPid 此规格对应的按量计费Pid列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPostPid(const std::vector<int64_t>& _postPid);
@@ -466,7 +462,6 @@ namespace TencentCloud
 
                     /**
                      * 此规格对应的按量计费Pid列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_postPid;
                     bool m_postPidHasBeenSet;

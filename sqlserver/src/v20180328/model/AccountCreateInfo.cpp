@@ -28,7 +28,8 @@ AccountCreateInfo::AccountCreateInfo() :
     m_isAdminHasBeenSet(false),
     m_authenticationHasBeenSet(false),
     m_accountTypeHasBeenSet(false),
-    m_isCamHasBeenSet(false)
+    m_isCamHasBeenSet(false),
+    m_encryptedVersionHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,16 @@ CoreInternalOutcome AccountCreateInfo::Deserialize(const rapidjson::Value &value
         m_isCamHasBeenSet = true;
     }
 
+    if (value.HasMember("EncryptedVersion") && !value["EncryptedVersion"].IsNull())
+    {
+        if (!value["EncryptedVersion"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccountCreateInfo.EncryptedVersion` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_encryptedVersion = value["EncryptedVersion"].GetInt64();
+        m_encryptedVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -203,6 +214,14 @@ void AccountCreateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "IsCam";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isCam, allocator);
+    }
+
+    if (m_encryptedVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncryptedVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_encryptedVersion, allocator);
     }
 
 }
@@ -334,5 +353,21 @@ void AccountCreateInfo::SetIsCam(const bool& _isCam)
 bool AccountCreateInfo::IsCamHasBeenSet() const
 {
     return m_isCamHasBeenSet;
+}
+
+int64_t AccountCreateInfo::GetEncryptedVersion() const
+{
+    return m_encryptedVersion;
+}
+
+void AccountCreateInfo::SetEncryptedVersion(const int64_t& _encryptedVersion)
+{
+    m_encryptedVersion = _encryptedVersion;
+    m_encryptedVersionHasBeenSet = true;
+}
+
+bool AccountCreateInfo::EncryptedVersionHasBeenSet() const
+{
+    return m_encryptedVersionHasBeenSet;
 }
 

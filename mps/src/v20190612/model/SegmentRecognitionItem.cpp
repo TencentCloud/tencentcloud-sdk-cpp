@@ -30,7 +30,11 @@ SegmentRecognitionItem::SegmentRecognitionItem() :
     m_summaryHasBeenSet(false),
     m_keywordsHasBeenSet(false),
     m_beginTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+    m_endTimeHasBeenSet(false),
+    m_audioUrlHasBeenSet(false),
+    m_audioBeginTimeHasBeenSet(false),
+    m_audioEndTimeHasBeenSet(false),
+    m_personPositionUrlHasBeenSet(false)
 {
 }
 
@@ -142,6 +146,46 @@ CoreInternalOutcome SegmentRecognitionItem::Deserialize(const rapidjson::Value &
         m_endTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("AudioUrl") && !value["AudioUrl"].IsNull())
+    {
+        if (!value["AudioUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SegmentRecognitionItem.AudioUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_audioUrl = string(value["AudioUrl"].GetString());
+        m_audioUrlHasBeenSet = true;
+    }
+
+    if (value.HasMember("AudioBeginTime") && !value["AudioBeginTime"].IsNull())
+    {
+        if (!value["AudioBeginTime"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `SegmentRecognitionItem.AudioBeginTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_audioBeginTime = value["AudioBeginTime"].GetDouble();
+        m_audioBeginTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("AudioEndTime") && !value["AudioEndTime"].IsNull())
+    {
+        if (!value["AudioEndTime"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `SegmentRecognitionItem.AudioEndTime` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_audioEndTime = value["AudioEndTime"].GetDouble();
+        m_audioEndTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("PersonPositionUrl") && !value["PersonPositionUrl"].IsNull())
+    {
+        if (!value["PersonPositionUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SegmentRecognitionItem.PersonPositionUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_personPositionUrl = string(value["PersonPositionUrl"].GetString());
+        m_personPositionUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -232,6 +276,38 @@ void SegmentRecognitionItem::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_audioUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AudioUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_audioUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_audioBeginTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AudioBeginTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_audioBeginTime, allocator);
+    }
+
+    if (m_audioEndTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AudioEndTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_audioEndTime, allocator);
+    }
+
+    if (m_personPositionUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PersonPositionUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_personPositionUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -395,5 +471,69 @@ void SegmentRecognitionItem::SetEndTime(const string& _endTime)
 bool SegmentRecognitionItem::EndTimeHasBeenSet() const
 {
     return m_endTimeHasBeenSet;
+}
+
+string SegmentRecognitionItem::GetAudioUrl() const
+{
+    return m_audioUrl;
+}
+
+void SegmentRecognitionItem::SetAudioUrl(const string& _audioUrl)
+{
+    m_audioUrl = _audioUrl;
+    m_audioUrlHasBeenSet = true;
+}
+
+bool SegmentRecognitionItem::AudioUrlHasBeenSet() const
+{
+    return m_audioUrlHasBeenSet;
+}
+
+double SegmentRecognitionItem::GetAudioBeginTime() const
+{
+    return m_audioBeginTime;
+}
+
+void SegmentRecognitionItem::SetAudioBeginTime(const double& _audioBeginTime)
+{
+    m_audioBeginTime = _audioBeginTime;
+    m_audioBeginTimeHasBeenSet = true;
+}
+
+bool SegmentRecognitionItem::AudioBeginTimeHasBeenSet() const
+{
+    return m_audioBeginTimeHasBeenSet;
+}
+
+double SegmentRecognitionItem::GetAudioEndTime() const
+{
+    return m_audioEndTime;
+}
+
+void SegmentRecognitionItem::SetAudioEndTime(const double& _audioEndTime)
+{
+    m_audioEndTime = _audioEndTime;
+    m_audioEndTimeHasBeenSet = true;
+}
+
+bool SegmentRecognitionItem::AudioEndTimeHasBeenSet() const
+{
+    return m_audioEndTimeHasBeenSet;
+}
+
+string SegmentRecognitionItem::GetPersonPositionUrl() const
+{
+    return m_personPositionUrl;
+}
+
+void SegmentRecognitionItem::SetPersonPositionUrl(const string& _personPositionUrl)
+{
+    m_personPositionUrl = _personPositionUrl;
+    m_personPositionUrlHasBeenSet = true;
+}
+
+bool SegmentRecognitionItem::PersonPositionUrlHasBeenSet() const
+{
+    return m_personPositionUrlHasBeenSet;
 }
 

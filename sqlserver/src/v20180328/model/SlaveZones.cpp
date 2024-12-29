@@ -22,7 +22,8 @@ using namespace std;
 
 SlaveZones::SlaveZones() :
     m_slaveZoneHasBeenSet(false),
-    m_slaveZoneNameHasBeenSet(false)
+    m_slaveZoneNameHasBeenSet(false),
+    m_drInstanceIdHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome SlaveZones::Deserialize(const rapidjson::Value &value)
         m_slaveZoneNameHasBeenSet = true;
     }
 
+    if (value.HasMember("DrInstanceId") && !value["DrInstanceId"].IsNull())
+    {
+        if (!value["DrInstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SlaveZones.DrInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_drInstanceId = string(value["DrInstanceId"].GetString());
+        m_drInstanceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void SlaveZones::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "SlaveZoneName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_slaveZoneName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_drInstanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DrInstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_drInstanceId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void SlaveZones::SetSlaveZoneName(const string& _slaveZoneName)
 bool SlaveZones::SlaveZoneNameHasBeenSet() const
 {
     return m_slaveZoneNameHasBeenSet;
+}
+
+string SlaveZones::GetDrInstanceId() const
+{
+    return m_drInstanceId;
+}
+
+void SlaveZones::SetDrInstanceId(const string& _drInstanceId)
+{
+    m_drInstanceId = _drInstanceId;
+    m_drInstanceIdHasBeenSet = true;
+}
+
+bool SlaveZones::DrInstanceIdHasBeenSet() const
+{
+    return m_drInstanceIdHasBeenSet;
 }
 

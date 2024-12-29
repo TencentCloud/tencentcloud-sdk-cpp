@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Timestamp 日志时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTimestamp() const;
 
                     /**
                      * 设置日志时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timestamp 日志时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimestamp(const int64_t& _timestamp);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Level 日志等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLevel() const;
 
                     /**
                      * 设置日志等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _level 日志等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLevel(const std::string& _level);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Content 日志内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContent() const;
 
                     /**
                      * 设置日志内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _content 日志内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContent(const std::string& _content);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 日志时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_timestamp;
                     bool m_timestampHasBeenSet;
 
                     /**
                      * 日志等级
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_level;
                     bool m_levelHasBeenSet;
 
                     /**
                      * 日志内容
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;

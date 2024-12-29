@@ -25,7 +25,10 @@ TreeJobSets::TreeJobSets() :
     m_nameHasBeenSet(false),
     m_jobTypeHasBeenSet(false),
     m_runningCuHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_scalingTypeHasBeenSet(false),
+    m_runningCpuHasBeenSet(false),
+    m_runningMemHasBeenSet(false)
 {
 }
 
@@ -84,6 +87,36 @@ CoreInternalOutcome TreeJobSets::Deserialize(const rapidjson::Value &value)
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("ScalingType") && !value["ScalingType"].IsNull())
+    {
+        if (!value["ScalingType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TreeJobSets.ScalingType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_scalingType = value["ScalingType"].GetInt64();
+        m_scalingTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RunningCpu") && !value["RunningCpu"].IsNull())
+    {
+        if (!value["RunningCpu"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `TreeJobSets.RunningCpu` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_runningCpu = value["RunningCpu"].GetDouble();
+        m_runningCpuHasBeenSet = true;
+    }
+
+    if (value.HasMember("RunningMem") && !value["RunningMem"].IsNull())
+    {
+        if (!value["RunningMem"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `TreeJobSets.RunningMem` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_runningMem = value["RunningMem"].GetDouble();
+        m_runningMemHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +162,30 @@ void TreeJobSets::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_scalingTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScalingType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_scalingType, allocator);
+    }
+
+    if (m_runningCpuHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RunningCpu";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_runningCpu, allocator);
+    }
+
+    if (m_runningMemHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RunningMem";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_runningMem, allocator);
     }
 
 }
@@ -212,5 +269,53 @@ void TreeJobSets::SetStatus(const int64_t& _status)
 bool TreeJobSets::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+int64_t TreeJobSets::GetScalingType() const
+{
+    return m_scalingType;
+}
+
+void TreeJobSets::SetScalingType(const int64_t& _scalingType)
+{
+    m_scalingType = _scalingType;
+    m_scalingTypeHasBeenSet = true;
+}
+
+bool TreeJobSets::ScalingTypeHasBeenSet() const
+{
+    return m_scalingTypeHasBeenSet;
+}
+
+double TreeJobSets::GetRunningCpu() const
+{
+    return m_runningCpu;
+}
+
+void TreeJobSets::SetRunningCpu(const double& _runningCpu)
+{
+    m_runningCpu = _runningCpu;
+    m_runningCpuHasBeenSet = true;
+}
+
+bool TreeJobSets::RunningCpuHasBeenSet() const
+{
+    return m_runningCpuHasBeenSet;
+}
+
+double TreeJobSets::GetRunningMem() const
+{
+    return m_runningMem;
+}
+
+void TreeJobSets::SetRunningMem(const double& _runningMem)
+{
+    m_runningMem = _runningMem;
+    m_runningMemHasBeenSet = true;
+}
+
+bool TreeJobSets::RunningMemHasBeenSet() const
+{
+    return m_runningMemHasBeenSet;
 }
 

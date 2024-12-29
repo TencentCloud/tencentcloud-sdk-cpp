@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取审计策略详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Items 审计策略详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AuditPolicy> GetItems() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 审计策略详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AuditPolicy> m_items;
                     bool m_itemsHasBeenSet;

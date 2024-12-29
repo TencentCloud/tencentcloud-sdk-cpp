@@ -172,6 +172,27 @@ namespace TencentCloud
                      */
                     bool LatestResourceConfigVersionHasBeenSet() const;
 
+                    /**
+                     * 获取1 是系统提供资源 2 用户提供CONNECTOR
+                     * @return SystemProvide 1 是系统提供资源 2 用户提供CONNECTOR
+                     * 
+                     */
+                    int64_t GetSystemProvide() const;
+
+                    /**
+                     * 设置1 是系统提供资源 2 用户提供CONNECTOR
+                     * @param _systemProvide 1 是系统提供资源 2 用户提供CONNECTOR
+                     * 
+                     */
+                    void SetSystemProvide(const int64_t& _systemProvide);
+
+                    /**
+                     * 判断参数 SystemProvide 是否已赋值
+                     * @return SystemProvide 是否已赋值
+                     * 
+                     */
+                    bool SystemProvideHasBeenSet() const;
+
                 private:
 
                     /**
@@ -209,6 +230,12 @@ namespace TencentCloud
                      */
                     int64_t m_latestResourceConfigVersion;
                     bool m_latestResourceConfigVersionHasBeenSet;
+
+                    /**
+                     * 1 是系统提供资源 2 用户提供CONNECTOR
+                     */
+                    int64_t m_systemProvide;
+                    bool m_systemProvideHasBeenSet;
 
                 };
             }

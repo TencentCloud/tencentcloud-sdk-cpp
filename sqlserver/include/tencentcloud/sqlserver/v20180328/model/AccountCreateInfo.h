@@ -215,6 +215,27 @@ namespace TencentCloud
                      */
                     bool IsCamHasBeenSet() const;
 
+                    /**
+                     * 获取加密密钥版本号，0表示不使用加密
+                     * @return EncryptedVersion 加密密钥版本号，0表示不使用加密
+                     * 
+                     */
+                    int64_t GetEncryptedVersion() const;
+
+                    /**
+                     * 设置加密密钥版本号，0表示不使用加密
+                     * @param _encryptedVersion 加密密钥版本号，0表示不使用加密
+                     * 
+                     */
+                    void SetEncryptedVersion(const int64_t& _encryptedVersion);
+
+                    /**
+                     * 判断参数 EncryptedVersion 是否已赋值
+                     * @return EncryptedVersion 是否已赋值
+                     * 
+                     */
+                    bool EncryptedVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -264,6 +285,12 @@ namespace TencentCloud
                      */
                     bool m_isCam;
                     bool m_isCamHasBeenSet;
+
+                    /**
+                     * 加密密钥版本号，0表示不使用加密
+                     */
+                    int64_t m_encryptedVersion;
+                    bool m_encryptedVersionHasBeenSet;
 
                 };
             }

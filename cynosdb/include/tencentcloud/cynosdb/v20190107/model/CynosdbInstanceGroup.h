@@ -176,15 +176,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取实例组类型。ha-ha组；ro-只读组
-                     * @return Type 实例组类型。ha-ha组；ro-只读组
+                     * 获取实例组（网络）类型。ha-ha组；ro-只读组；proxy-代理；singleRo-只读实例独占
+                     * @return Type 实例组（网络）类型。ha-ha组；ro-只读组；proxy-代理；singleRo-只读实例独占
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置实例组类型。ha-ha组；ro-只读组
-                     * @param _type 实例组类型。ha-ha组；ro-只读组
+                     * 设置实例组（网络）类型。ha-ha组；ro-只读组；proxy-代理；singleRo-只读实例独占
+                     * @param _type 实例组（网络）类型。ha-ha组；ro-只读组；proxy-代理；singleRo-只读实例独占
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -541,7 +541,7 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 实例组类型。ha-ha组；ro-只读组
+                     * 实例组（网络）类型。ha-ha组；ro-只读组；proxy-代理；singleRo-只读实例独占
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

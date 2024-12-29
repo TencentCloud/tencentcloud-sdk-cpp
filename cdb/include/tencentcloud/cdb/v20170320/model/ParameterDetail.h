@@ -279,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取参数是否不支持修改
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsNotSupportEdit 参数是否不支持修改
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsNotSupportEdit() const;
 
                     /**
                      * 设置参数是否不支持修改
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isNotSupportEdit 参数是否不支持修改
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsNotSupportEdit(const bool& _isNotSupportEdit);
@@ -372,7 +368,6 @@ namespace TencentCloud
 
                     /**
                      * 参数是否不支持修改
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isNotSupportEdit;
                     bool m_isNotSupportEditHasBeenSet;

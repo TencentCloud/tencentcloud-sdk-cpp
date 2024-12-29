@@ -185,10 +185,10 @@ namespace TencentCloud
                     bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取- 要检索分析的日志主题列表，最大支持20个日志主题。
+                     * 获取- 要检索分析的日志主题列表，最大支持50个日志主题。
 - 检索单个日志主题时请使用TopicId。
 - TopicId 和 Topics 不能同时使用，在一次请求中有且只能选择一个。
-                     * @return Topics - 要检索分析的日志主题列表，最大支持20个日志主题。
+                     * @return Topics - 要检索分析的日志主题列表，最大支持50个日志主题。
 - 检索单个日志主题时请使用TopicId。
 - TopicId 和 Topics 不能同时使用，在一次请求中有且只能选择一个。
                      * 
@@ -196,10 +196,10 @@ namespace TencentCloud
                     std::vector<MultiTopicSearchInformation> GetTopics() const;
 
                     /**
-                     * 设置- 要检索分析的日志主题列表，最大支持20个日志主题。
+                     * 设置- 要检索分析的日志主题列表，最大支持50个日志主题。
 - 检索单个日志主题时请使用TopicId。
 - TopicId 和 Topics 不能同时使用，在一次请求中有且只能选择一个。
-                     * @param _topics - 要检索分析的日志主题列表，最大支持20个日志主题。
+                     * @param _topics - 要检索分析的日志主题列表，最大支持50个日志主题。
 - 检索单个日志主题时请使用TopicId。
 - TopicId 和 Topics 不能同时使用，在一次请求中有且只能选择一个。
                      * 
@@ -477,7 +477,7 @@ namespace TencentCloud
                     bool m_topicIdHasBeenSet;
 
                     /**
-                     * - 要检索分析的日志主题列表，最大支持20个日志主题。
+                     * - 要检索分析的日志主题列表，最大支持50个日志主题。
 - 检索单个日志主题时请使用TopicId。
 - TopicId 和 Topics 不能同时使用，在一次请求中有且只能选择一个。
                      */

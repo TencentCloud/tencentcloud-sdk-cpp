@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取直播监播任务相关信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LiveStreamMonitor 直播监播任务相关信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     LiveStreamMonitorInfo GetLiveStreamMonitor() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 直播监播任务相关信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     LiveStreamMonitorInfo m_liveStreamMonitor;
                     bool m_liveStreamMonitorHasBeenSet;

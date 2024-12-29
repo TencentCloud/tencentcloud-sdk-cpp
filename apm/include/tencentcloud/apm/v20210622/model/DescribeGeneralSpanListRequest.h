@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取实例名
-                     * @return InstanceId 实例名
+                     * 获取业务系统ID
+                     * @return InstanceId 业务系统ID
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例名
-                     * @param _instanceId 实例名
+                     * 设置业务系统ID
+                     * @param _instanceId 业务系统ID
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -239,7 +239,7 @@ namespace TencentCloud
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 实例名
+                     * 业务系统ID
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

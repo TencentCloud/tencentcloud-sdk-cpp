@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取支持最大代理版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyVersion 支持最大代理版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProxyVersion() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取是否支持连接池
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SupportPool 是否支持连接池
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetSupportPool() const;
@@ -77,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取连接池最小值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PoolMin 连接池最小值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPoolMin() const;
@@ -93,9 +87,7 @@ namespace TencentCloud
 
                     /**
                      * 获取连接池最大值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PoolMax 连接池最大值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPoolMax() const;
@@ -109,9 +101,7 @@ namespace TencentCloud
 
                     /**
                      * 获取是否支持事务拆分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SupportTransSplit 是否支持事务拆分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetSupportTransSplit() const;
@@ -125,9 +115,7 @@ namespace TencentCloud
 
                     /**
                      * 获取支持连接池的最小代理版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SupportPoolMinVersion 支持连接池的最小代理版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSupportPoolMinVersion() const;
@@ -141,9 +129,7 @@ namespace TencentCloud
 
                     /**
                      * 获取支持事务拆分的最小代理版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SupportTransSplitMinVersion 支持事务拆分的最小代理版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSupportTransSplitMinVersion() const;
@@ -157,9 +143,7 @@ namespace TencentCloud
 
                     /**
                      * 获取是否支持设置只读
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SupportReadOnly 是否支持设置只读
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetSupportReadOnly() const;
@@ -173,9 +157,7 @@ namespace TencentCloud
 
                     /**
                      * 获取是否自动均衡负载
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SupportAutoLoadBalance 是否自动均衡负载
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetSupportAutoLoadBalance() const;
@@ -189,9 +171,7 @@ namespace TencentCloud
 
                     /**
                      * 获取是否支持接入模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SupportAccessMode 是否支持接入模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetSupportAccessMode() const;
@@ -207,70 +187,60 @@ namespace TencentCloud
 
                     /**
                      * 支持最大代理版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_proxyVersion;
                     bool m_proxyVersionHasBeenSet;
 
                     /**
                      * 是否支持连接池
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_supportPool;
                     bool m_supportPoolHasBeenSet;
 
                     /**
                      * 连接池最小值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_poolMin;
                     bool m_poolMinHasBeenSet;
 
                     /**
                      * 连接池最大值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_poolMax;
                     bool m_poolMaxHasBeenSet;
 
                     /**
                      * 是否支持事务拆分
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_supportTransSplit;
                     bool m_supportTransSplitHasBeenSet;
 
                     /**
                      * 支持连接池的最小代理版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_supportPoolMinVersion;
                     bool m_supportPoolMinVersionHasBeenSet;
 
                     /**
                      * 支持事务拆分的最小代理版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_supportTransSplitMinVersion;
                     bool m_supportTransSplitMinVersionHasBeenSet;
 
                     /**
                      * 是否支持设置只读
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_supportReadOnly;
                     bool m_supportReadOnlyHasBeenSet;
 
                     /**
                      * 是否自动均衡负载
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_supportAutoLoadBalance;
                     bool m_supportAutoLoadBalanceHasBeenSet;
 
                     /**
                      * 是否支持接入模式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_supportAccessMode;
                     bool m_supportAccessModeHasBeenSet;

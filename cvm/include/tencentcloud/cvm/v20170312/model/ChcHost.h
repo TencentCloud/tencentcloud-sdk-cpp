@@ -27,6 +27,7 @@
 #include <tencentcloud/cvm/v20170312/model/Placement.h>
 #include <tencentcloud/cvm/v20170312/model/VirtualPrivateCloud.h>
 #include <tencentcloud/cvm/v20170312/model/ChcDeployExtraConfig.h>
+#include <tencentcloud/cvm/v20170312/model/Tag.h>
 
 
 namespace TencentCloud
@@ -591,18 +592,18 @@ TENANT: 租赁
                     bool TenantTypeHasBeenSet() const;
 
                     /**
-                     * 获取chc dhcp选项，用于minios调试
+                     * 获取chc dhcp选项，用于minios调试。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DeployExtraConfig chc dhcp选项，用于minios调试
+                     * @return DeployExtraConfig chc dhcp选项，用于minios调试。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ChcDeployExtraConfig GetDeployExtraConfig() const;
 
                     /**
-                     * 设置chc dhcp选项，用于minios调试
+                     * 设置chc dhcp选项，用于minios调试。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _deployExtraConfig chc dhcp选项，用于minios调试
+                     * @param _deployExtraConfig chc dhcp选项，用于minios调试。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -614,6 +615,385 @@ TENANT: 租赁
                      * 
                      */
                     bool DeployExtraConfigHasBeenSet() const;
+
+                    /**
+                     * 获取GPU型号。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Gpu GPU型号。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetGpu() const;
+
+                    /**
+                     * 设置GPU型号。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _gpu GPU型号。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetGpu(const std::string& _gpu);
+
+                    /**
+                     * 判断参数 Gpu 是否已赋值
+                     * @return Gpu 是否已赋值
+                     * 
+                     */
+                    bool GpuHasBeenSet() const;
+
+                    /**
+                     * 获取网卡型号。主要指RDMA网卡。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NetworkCard 网卡型号。主要指RDMA网卡。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetNetworkCard() const;
+
+                    /**
+                     * 设置网卡型号。主要指RDMA网卡。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _networkCard 网卡型号。主要指RDMA网卡。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNetworkCard(const std::string& _networkCard);
+
+                    /**
+                     * 判断参数 NetworkCard 是否已赋值
+                     * @return NetworkCard 是否已赋值
+                     * 
+                     */
+                    bool NetworkCardHasBeenSet() const;
+
+                    /**
+                     * 获取是否是预定义机型。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsPredefinedType 是否是预定义机型。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetIsPredefinedType() const;
+
+                    /**
+                     * 设置是否是预定义机型。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isPredefinedType 是否是预定义机型。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsPredefinedType(const bool& _isPredefinedType);
+
+                    /**
+                     * 判断参数 IsPredefinedType 是否已赋值
+                     * @return IsPredefinedType 是否已赋值
+                     * 
+                     */
+                    bool IsPredefinedTypeHasBeenSet() const;
+
+                    /**
+                     * 获取CHC云主机机型。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ChcInstanceType CHC云主机机型。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetChcInstanceType() const;
+
+                    /**
+                     * 设置CHC云主机机型。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _chcInstanceType CHC云主机机型。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetChcInstanceType(const std::string& _chcInstanceType);
+
+                    /**
+                     * 判断参数 ChcInstanceType 是否已赋值
+                     * @return ChcInstanceType 是否已赋值
+                     * 
+                     */
+                    bool ChcInstanceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取CHC云主机机型簇。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ChcInstanceFamily CHC云主机机型簇。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetChcInstanceFamily() const;
+
+                    /**
+                     * 设置CHC云主机机型簇。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _chcInstanceFamily CHC云主机机型簇。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetChcInstanceFamily(const std::string& _chcInstanceFamily);
+
+                    /**
+                     * 判断参数 ChcInstanceFamily 是否已赋值
+                     * @return ChcInstanceFamily 是否已赋值
+                     * 
+                     */
+                    bool ChcInstanceFamilyHasBeenSet() const;
+
+                    /**
+                     * 获取CHC云主机机型簇名称。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ChcInstanceFamilyName CHC云主机机型簇名称。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetChcInstanceFamilyName() const;
+
+                    /**
+                     * 设置CHC云主机机型簇名称。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _chcInstanceFamilyName CHC云主机机型簇名称。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetChcInstanceFamilyName(const std::string& _chcInstanceFamilyName);
+
+                    /**
+                     * 判断参数 ChcInstanceFamilyName 是否已赋值
+                     * @return ChcInstanceFamilyName 是否已赋值
+                     * 
+                     */
+                    bool ChcInstanceFamilyNameHasBeenSet() const;
+
+                    /**
+                     * 获取转售客户的AppId。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResaleAppId 转售客户的AppId。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetResaleAppId() const;
+
+                    /**
+                     * 设置转售客户的AppId。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _resaleAppId 转售客户的AppId。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetResaleAppId(const std::string& _resaleAppId);
+
+                    /**
+                     * 判断参数 ResaleAppId 是否已赋值
+                     * @return ResaleAppId 是否已赋值
+                     * 
+                     */
+                    bool ResaleAppIdHasBeenSet() const;
+
+                    /**
+                     * 获取转售客户的账号ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResaleAccountId 转售客户的账号ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetResaleAccountId() const;
+
+                    /**
+                     * 设置转售客户的账号ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _resaleAccountId 转售客户的账号ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetResaleAccountId(const std::string& _resaleAccountId);
+
+                    /**
+                     * 判断参数 ResaleAccountId 是否已赋值
+                     * @return ResaleAccountId 是否已赋值
+                     * 
+                     */
+                    bool ResaleAccountIdHasBeenSet() const;
+
+                    /**
+                     * 获取售卖状态。<br/>
+<ul>
+<li>NOT_FOR_SALE:不可售卖</li>
+<li>AVAILABLE: 可售卖</li>
+<li>SOLD: 已售卖</li>
+</ul>
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SaleStatus 售卖状态。<br/>
+<ul>
+<li>NOT_FOR_SALE:不可售卖</li>
+<li>AVAILABLE: 可售卖</li>
+<li>SOLD: 已售卖</li>
+</ul>
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSaleStatus() const;
+
+                    /**
+                     * 设置售卖状态。<br/>
+<ul>
+<li>NOT_FOR_SALE:不可售卖</li>
+<li>AVAILABLE: 可售卖</li>
+<li>SOLD: 已售卖</li>
+</ul>
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _saleStatus 售卖状态。<br/>
+<ul>
+<li>NOT_FOR_SALE:不可售卖</li>
+<li>AVAILABLE: 可售卖</li>
+<li>SOLD: 已售卖</li>
+</ul>
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSaleStatus(const std::string& _saleStatus);
+
+                    /**
+                     * 判断参数 SaleStatus 是否已赋值
+                     * @return SaleStatus 是否已赋值
+                     * 
+                     */
+                    bool SaleStatusHasBeenSet() const;
+
+                    /**
+                     * 获取CHC物理服务器关联的标签列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tags CHC物理服务器关联的标签列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置CHC物理服务器关联的标签列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tags CHC物理服务器关联的标签列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
+                    /**
+                     * 获取最近操作
+                     * @return LatestOperation 最近操作
+                     * 
+                     */
+                    std::string GetLatestOperation() const;
+
+                    /**
+                     * 设置最近操作
+                     * @param _latestOperation 最近操作
+                     * 
+                     */
+                    void SetLatestOperation(const std::string& _latestOperation);
+
+                    /**
+                     * 判断参数 LatestOperation 是否已赋值
+                     * @return LatestOperation 是否已赋值
+                     * 
+                     */
+                    bool LatestOperationHasBeenSet() const;
+
+                    /**
+                     * 获取最近操作错误码
+                     * @return LatestOperationErrorCode 最近操作错误码
+                     * 
+                     */
+                    std::string GetLatestOperationErrorCode() const;
+
+                    /**
+                     * 设置最近操作错误码
+                     * @param _latestOperationErrorCode 最近操作错误码
+                     * 
+                     */
+                    void SetLatestOperationErrorCode(const std::string& _latestOperationErrorCode);
+
+                    /**
+                     * 判断参数 LatestOperationErrorCode 是否已赋值
+                     * @return LatestOperationErrorCode 是否已赋值
+                     * 
+                     */
+                    bool LatestOperationErrorCodeHasBeenSet() const;
+
+                    /**
+                     * 获取最近操作错误详情和建议项
+                     * @return LatestOperationErrorMsg 最近操作错误详情和建议项
+                     * 
+                     */
+                    std::string GetLatestOperationErrorMsg() const;
+
+                    /**
+                     * 设置最近操作错误详情和建议项
+                     * @param _latestOperationErrorMsg 最近操作错误详情和建议项
+                     * 
+                     */
+                    void SetLatestOperationErrorMsg(const std::string& _latestOperationErrorMsg);
+
+                    /**
+                     * 判断参数 LatestOperationErrorMsg 是否已赋值
+                     * @return LatestOperationErrorMsg 是否已赋值
+                     * 
+                     */
+                    bool LatestOperationErrorMsgHasBeenSet() const;
+
+                    /**
+                     * 获取最近操作名称
+                     * @return LatestOperationName 最近操作名称
+                     * 
+                     */
+                    std::string GetLatestOperationName() const;
+
+                    /**
+                     * 设置最近操作名称
+                     * @param _latestOperationName 最近操作名称
+                     * 
+                     */
+                    void SetLatestOperationName(const std::string& _latestOperationName);
+
+                    /**
+                     * 判断参数 LatestOperationName 是否已赋值
+                     * @return LatestOperationName 是否已赋值
+                     * 
+                     */
+                    bool LatestOperationNameHasBeenSet() const;
+
+                    /**
+                     * 获取最近操作状态
+                     * @return LatestOperationState 最近操作状态
+                     * 
+                     */
+                    std::string GetLatestOperationState() const;
+
+                    /**
+                     * 设置最近操作状态
+                     * @param _latestOperationState 最近操作状态
+                     * 
+                     */
+                    void SetLatestOperationState(const std::string& _latestOperationState);
+
+                    /**
+                     * 判断参数 LatestOperationState 是否已赋值
+                     * @return LatestOperationState 是否已赋值
+                     * 
+                     */
+                    bool LatestOperationStateHasBeenSet() const;
 
                 private:
 
@@ -769,11 +1149,117 @@ TENANT: 租赁
                     bool m_tenantTypeHasBeenSet;
 
                     /**
-                     * chc dhcp选项，用于minios调试
+                     * chc dhcp选项，用于minios调试。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ChcDeployExtraConfig m_deployExtraConfig;
                     bool m_deployExtraConfigHasBeenSet;
+
+                    /**
+                     * GPU型号。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_gpu;
+                    bool m_gpuHasBeenSet;
+
+                    /**
+                     * 网卡型号。主要指RDMA网卡。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_networkCard;
+                    bool m_networkCardHasBeenSet;
+
+                    /**
+                     * 是否是预定义机型。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isPredefinedType;
+                    bool m_isPredefinedTypeHasBeenSet;
+
+                    /**
+                     * CHC云主机机型。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_chcInstanceType;
+                    bool m_chcInstanceTypeHasBeenSet;
+
+                    /**
+                     * CHC云主机机型簇。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_chcInstanceFamily;
+                    bool m_chcInstanceFamilyHasBeenSet;
+
+                    /**
+                     * CHC云主机机型簇名称。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_chcInstanceFamilyName;
+                    bool m_chcInstanceFamilyNameHasBeenSet;
+
+                    /**
+                     * 转售客户的AppId。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_resaleAppId;
+                    bool m_resaleAppIdHasBeenSet;
+
+                    /**
+                     * 转售客户的账号ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_resaleAccountId;
+                    bool m_resaleAccountIdHasBeenSet;
+
+                    /**
+                     * 售卖状态。<br/>
+<ul>
+<li>NOT_FOR_SALE:不可售卖</li>
+<li>AVAILABLE: 可售卖</li>
+<li>SOLD: 已售卖</li>
+</ul>
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_saleStatus;
+                    bool m_saleStatusHasBeenSet;
+
+                    /**
+                     * CHC物理服务器关联的标签列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
+
+                    /**
+                     * 最近操作
+                     */
+                    std::string m_latestOperation;
+                    bool m_latestOperationHasBeenSet;
+
+                    /**
+                     * 最近操作错误码
+                     */
+                    std::string m_latestOperationErrorCode;
+                    bool m_latestOperationErrorCodeHasBeenSet;
+
+                    /**
+                     * 最近操作错误详情和建议项
+                     */
+                    std::string m_latestOperationErrorMsg;
+                    bool m_latestOperationErrorMsgHasBeenSet;
+
+                    /**
+                     * 最近操作名称
+                     */
+                    std::string m_latestOperationName;
+                    bool m_latestOperationNameHasBeenSet;
+
+                    /**
+                     * 最近操作状态
+                     */
+                    std::string m_latestOperationState;
+                    bool m_latestOperationStateHasBeenSet;
 
                 };
             }

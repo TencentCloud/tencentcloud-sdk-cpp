@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取开通TDE加密时引用的其他主账号ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return QuoteUin 开通TDE加密时引用的其他主账号ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetQuoteUin() const;
 
                     /**
                      * 设置开通TDE加密时引用的其他主账号ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _quoteUin 开通TDE加密时引用的其他主账号ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQuoteUin(const std::string& _quoteUin);
@@ -171,7 +167,6 @@ namespace TencentCloud
 
                     /**
                      * 开通TDE加密时引用的其他主账号ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_quoteUin;
                     bool m_quoteUinHasBeenSet;

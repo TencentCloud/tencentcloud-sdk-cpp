@@ -26,7 +26,8 @@ using namespace std;
 DescribeClusterConfigsResponse::DescribeClusterConfigsResponse() :
     m_clusterConfListHasBeenSet(false),
     m_buildVersionHasBeenSet(false),
-    m_errorMsgHasBeenSet(false)
+    m_errorMsgHasBeenSet(false),
+    m_hasCNHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,16 @@ CoreInternalOutcome DescribeClusterConfigsResponse::Deserialize(const string &pa
         m_errorMsgHasBeenSet = true;
     }
 
+    if (rsp.HasMember("HasCN") && !rsp["HasCN"].IsNull())
+    {
+        if (!rsp["HasCN"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `HasCN` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_hasCN = rsp["HasCN"].GetBool();
+        m_hasCNHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -143,6 +154,14 @@ string DescribeClusterConfigsResponse::ToJsonString() const
         string key = "ErrorMsg";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_errorMsg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hasCNHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HasCN";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_hasCN, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -185,6 +204,16 @@ string DescribeClusterConfigsResponse::GetErrorMsg() const
 bool DescribeClusterConfigsResponse::ErrorMsgHasBeenSet() const
 {
     return m_errorMsgHasBeenSet;
+}
+
+bool DescribeClusterConfigsResponse::GetHasCN() const
+{
+    return m_hasCN;
+}
+
+bool DescribeClusterConfigsResponse::HasCNHasBeenSet() const
+{
+    return m_hasCNHasBeenSet;
 }
 
 

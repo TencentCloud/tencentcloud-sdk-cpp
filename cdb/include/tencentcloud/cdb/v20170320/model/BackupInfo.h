@@ -448,18 +448,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备份文件是否加密， on-加密， off-未加密
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EncryptionFlag 备份文件是否加密， on-加密， off-未加密
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEncryptionFlag() const;
 
                     /**
                      * 设置备份文件是否加密， on-加密， off-未加密
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _encryptionFlag 备份文件是否加密， on-加密， off-未加密
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEncryptionFlag(const std::string& _encryptionFlag);
@@ -610,7 +606,6 @@ namespace TencentCloud
 
                     /**
                      * 备份文件是否加密， on-加密， off-未加密
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_encryptionFlag;
                     bool m_encryptionFlagHasBeenSet;

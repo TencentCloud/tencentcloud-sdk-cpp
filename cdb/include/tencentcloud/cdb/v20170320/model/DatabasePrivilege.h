@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取权限信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Privileges 权限信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetPrivileges() const;
 
                     /**
                      * 设置权限信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _privileges 权限信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPrivileges(const std::vector<std::string>& _privileges);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Database 数据库名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDatabase() const;
 
                     /**
                      * 设置数据库名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _database 数据库名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDatabase(const std::string& _database);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 权限信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_privileges;
                     bool m_privilegesHasBeenSet;
 
                     /**
                      * 数据库名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_database;
                     bool m_databaseHasBeenSet;

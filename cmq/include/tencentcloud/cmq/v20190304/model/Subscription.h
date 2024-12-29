@@ -47,81 +47,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取订阅名字，在单个地域同一帐号的同一主题下唯一。订阅名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SubscriptionName 订阅名字，在单个地域同一帐号的同一主题下唯一。订阅名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetSubscriptionName() const;
-
-                    /**
-                     * 设置订阅名字，在单个地域同一帐号的同一主题下唯一。订阅名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _subscriptionName 订阅名字，在单个地域同一帐号的同一主题下唯一。订阅名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetSubscriptionName(const std::string& _subscriptionName);
-
-                    /**
-                     * 判断参数 SubscriptionName 是否已赋值
-                     * @return SubscriptionName 是否已赋值
-                     * 
-                     */
-                    bool SubscriptionNameHasBeenSet() const;
-
-                    /**
-                     * 获取订阅 ID。订阅 ID 在拉取监控数据时会用到。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SubscriptionId 订阅 ID。订阅 ID 在拉取监控数据时会用到。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetSubscriptionId() const;
-
-                    /**
-                     * 设置订阅 ID。订阅 ID 在拉取监控数据时会用到。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _subscriptionId 订阅 ID。订阅 ID 在拉取监控数据时会用到。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetSubscriptionId(const std::string& _subscriptionId);
-
-                    /**
-                     * 判断参数 SubscriptionId 是否已赋值
-                     * @return SubscriptionId 是否已赋值
-                     * 
-                     */
-                    bool SubscriptionIdHasBeenSet() const;
-
-                    /**
-                     * 获取订阅拥有者的 APPID。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TopicOwner 订阅拥有者的 APPID。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    uint64_t GetTopicOwner() const;
-
-                    /**
-                     * 设置订阅拥有者的 APPID。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _topicOwner 订阅拥有者的 APPID。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetTopicOwner(const uint64_t& _topicOwner);
-
-                    /**
-                     * 判断参数 TopicOwner 是否已赋值
-                     * @return TopicOwner 是否已赋值
-                     * 
-                     */
-                    bool TopicOwnerHasBeenSet() const;
-
-                    /**
                      * 获取该订阅待投递的消息数。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MsgCount 该订阅待投递的消息数。
@@ -145,56 +70,6 @@ namespace TencentCloud
                      * 
                      */
                     bool MsgCountHasBeenSet() const;
-
-                    /**
-                     * 获取最后一次修改订阅属性的时间。返回 Unix 时间戳，精确到秒。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LastModifyTime 最后一次修改订阅属性的时间。返回 Unix 时间戳，精确到秒。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    uint64_t GetLastModifyTime() const;
-
-                    /**
-                     * 设置最后一次修改订阅属性的时间。返回 Unix 时间戳，精确到秒。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _lastModifyTime 最后一次修改订阅属性的时间。返回 Unix 时间戳，精确到秒。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetLastModifyTime(const uint64_t& _lastModifyTime);
-
-                    /**
-                     * 判断参数 LastModifyTime 是否已赋值
-                     * @return LastModifyTime 是否已赋值
-                     * 
-                     */
-                    bool LastModifyTimeHasBeenSet() const;
-
-                    /**
-                     * 获取订阅的创建时间。返回 Unix 时间戳，精确到秒。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateTime 订阅的创建时间。返回 Unix 时间戳，精确到秒。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    uint64_t GetCreateTime() const;
-
-                    /**
-                     * 设置订阅的创建时间。返回 Unix 时间戳，精确到秒。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createTime 订阅的创建时间。返回 Unix 时间戳，精确到秒。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetCreateTime(const uint64_t& _createTime);
-
-                    /**
-                     * 判断参数 CreateTime 是否已赋值
-                     * @return CreateTime 是否已赋值
-                     * 
-                     */
-                    bool CreateTimeHasBeenSet() const;
 
                     /**
                      * 获取表示订阅接收消息的过滤策略。
@@ -247,62 +122,29 @@ namespace TencentCloud
                     bool EndpointHasBeenSet() const;
 
                     /**
-                     * 获取描述用户创建订阅时选择的过滤策略：
-filterType = 1表示用户使用 filterTag 标签过滤
-filterType = 2表示用户使用 bindingKey 过滤。
+                     * 获取订阅拥有者的 APPID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FilterTags 描述用户创建订阅时选择的过滤策略：
-filterType = 1表示用户使用 filterTag 标签过滤
-filterType = 2表示用户使用 bindingKey 过滤。
+                     * @return TopicOwner 订阅拥有者的 APPID。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::vector<std::string> GetFilterTags() const;
+                    uint64_t GetTopicOwner() const;
 
                     /**
-                     * 设置描述用户创建订阅时选择的过滤策略：
-filterType = 1表示用户使用 filterTag 标签过滤
-filterType = 2表示用户使用 bindingKey 过滤。
+                     * 设置订阅拥有者的 APPID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _filterTags 描述用户创建订阅时选择的过滤策略：
-filterType = 1表示用户使用 filterTag 标签过滤
-filterType = 2表示用户使用 bindingKey 过滤。
+                     * @param _topicOwner 订阅拥有者的 APPID。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetFilterTags(const std::vector<std::string>& _filterTags);
+                    void SetTopicOwner(const uint64_t& _topicOwner);
 
                     /**
-                     * 判断参数 FilterTags 是否已赋值
-                     * @return FilterTags 是否已赋值
+                     * 判断参数 TopicOwner 是否已赋值
+                     * @return TopicOwner 是否已赋值
                      * 
                      */
-                    bool FilterTagsHasBeenSet() const;
-
-                    /**
-                     * 获取订阅的协议，目前支持两种协议：HTTP、queue。使用 HTTP 协议，用户需自己搭建接受消息的 Web Server。使用 queue，消息会自动推送到 CMQ queue，用户可以并发地拉取消息。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Protocol 订阅的协议，目前支持两种协议：HTTP、queue。使用 HTTP 协议，用户需自己搭建接受消息的 Web Server。使用 queue，消息会自动推送到 CMQ queue，用户可以并发地拉取消息。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetProtocol() const;
-
-                    /**
-                     * 设置订阅的协议，目前支持两种协议：HTTP、queue。使用 HTTP 协议，用户需自己搭建接受消息的 Web Server。使用 queue，消息会自动推送到 CMQ queue，用户可以并发地拉取消息。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _protocol 订阅的协议，目前支持两种协议：HTTP、queue。使用 HTTP 协议，用户需自己搭建接受消息的 Web Server。使用 queue，消息会自动推送到 CMQ queue，用户可以并发地拉取消息。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetProtocol(const std::string& _protocol);
-
-                    /**
-                     * 判断参数 Protocol 是否已赋值
-                     * @return Protocol 是否已赋值
-                     * 
-                     */
-                    bool ProtocolHasBeenSet() const;
+                    bool TopicOwnerHasBeenSet() const;
 
                     /**
                      * 获取向 endpoint 推送消息出现错误时，CMQ 推送服务器的重试策略。取值有：
@@ -362,28 +204,165 @@ filterType = 2表示用户使用 bindingKey 过滤。
                      */
                     bool NotifyContentFormatHasBeenSet() const;
 
+                    /**
+                     * 获取最后一次修改订阅属性的时间。返回 Unix 时间戳，精确到秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LastModifyTime 最后一次修改订阅属性的时间。返回 Unix 时间戳，精确到秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetLastModifyTime() const;
+
+                    /**
+                     * 设置最后一次修改订阅属性的时间。返回 Unix 时间戳，精确到秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _lastModifyTime 最后一次修改订阅属性的时间。返回 Unix 时间戳，精确到秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLastModifyTime(const uint64_t& _lastModifyTime);
+
+                    /**
+                     * 判断参数 LastModifyTime 是否已赋值
+                     * @return LastModifyTime 是否已赋值
+                     * 
+                     */
+                    bool LastModifyTimeHasBeenSet() const;
+
+                    /**
+                     * 获取描述用户创建订阅时选择的过滤策略：
+filterType = 1表示用户使用 filterTag 标签过滤
+filterType = 2表示用户使用 bindingKey 过滤。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FilterTags 描述用户创建订阅时选择的过滤策略：
+filterType = 1表示用户使用 filterTag 标签过滤
+filterType = 2表示用户使用 bindingKey 过滤。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetFilterTags() const;
+
+                    /**
+                     * 设置描述用户创建订阅时选择的过滤策略：
+filterType = 1表示用户使用 filterTag 标签过滤
+filterType = 2表示用户使用 bindingKey 过滤。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _filterTags 描述用户创建订阅时选择的过滤策略：
+filterType = 1表示用户使用 filterTag 标签过滤
+filterType = 2表示用户使用 bindingKey 过滤。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFilterTags(const std::vector<std::string>& _filterTags);
+
+                    /**
+                     * 判断参数 FilterTags 是否已赋值
+                     * @return FilterTags 是否已赋值
+                     * 
+                     */
+                    bool FilterTagsHasBeenSet() const;
+
+                    /**
+                     * 获取订阅名字，在单个地域同一账号的同一主题下唯一。订阅名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubscriptionName 订阅名字，在单个地域同一账号的同一主题下唯一。订阅名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSubscriptionName() const;
+
+                    /**
+                     * 设置订阅名字，在单个地域同一账号的同一主题下唯一。订阅名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _subscriptionName 订阅名字，在单个地域同一账号的同一主题下唯一。订阅名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSubscriptionName(const std::string& _subscriptionName);
+
+                    /**
+                     * 判断参数 SubscriptionName 是否已赋值
+                     * @return SubscriptionName 是否已赋值
+                     * 
+                     */
+                    bool SubscriptionNameHasBeenSet() const;
+
+                    /**
+                     * 获取订阅的协议，目前支持两种协议：HTTP、queue。使用 HTTP 协议，用户需自己搭建接受消息的 Web Server。使用 queue，消息会自动推送到 CMQ queue，用户可以并发地拉取消息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Protocol 订阅的协议，目前支持两种协议：HTTP、queue。使用 HTTP 协议，用户需自己搭建接受消息的 Web Server。使用 queue，消息会自动推送到 CMQ queue，用户可以并发地拉取消息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetProtocol() const;
+
+                    /**
+                     * 设置订阅的协议，目前支持两种协议：HTTP、queue。使用 HTTP 协议，用户需自己搭建接受消息的 Web Server。使用 queue，消息会自动推送到 CMQ queue，用户可以并发地拉取消息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _protocol 订阅的协议，目前支持两种协议：HTTP、queue。使用 HTTP 协议，用户需自己搭建接受消息的 Web Server。使用 queue，消息会自动推送到 CMQ queue，用户可以并发地拉取消息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetProtocol(const std::string& _protocol);
+
+                    /**
+                     * 判断参数 Protocol 是否已赋值
+                     * @return Protocol 是否已赋值
+                     * 
+                     */
+                    bool ProtocolHasBeenSet() const;
+
+                    /**
+                     * 获取订阅 ID。订阅 ID 在拉取监控数据时会用到。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubscriptionId 订阅 ID。订阅 ID 在拉取监控数据时会用到。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSubscriptionId() const;
+
+                    /**
+                     * 设置订阅 ID。订阅 ID 在拉取监控数据时会用到。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _subscriptionId 订阅 ID。订阅 ID 在拉取监控数据时会用到。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSubscriptionId(const std::string& _subscriptionId);
+
+                    /**
+                     * 判断参数 SubscriptionId 是否已赋值
+                     * @return SubscriptionId 是否已赋值
+                     * 
+                     */
+                    bool SubscriptionIdHasBeenSet() const;
+
+                    /**
+                     * 获取订阅的创建时间。返回 Unix 时间戳，精确到秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreateTime 订阅的创建时间。返回 Unix 时间戳，精确到秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetCreateTime() const;
+
+                    /**
+                     * 设置订阅的创建时间。返回 Unix 时间戳，精确到秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _createTime 订阅的创建时间。返回 Unix 时间戳，精确到秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCreateTime(const uint64_t& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     * 
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
                 private:
-
-                    /**
-                     * 订阅名字，在单个地域同一帐号的同一主题下唯一。订阅名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_subscriptionName;
-                    bool m_subscriptionNameHasBeenSet;
-
-                    /**
-                     * 订阅 ID。订阅 ID 在拉取监控数据时会用到。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_subscriptionId;
-                    bool m_subscriptionIdHasBeenSet;
-
-                    /**
-                     * 订阅拥有者的 APPID。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    uint64_t m_topicOwner;
-                    bool m_topicOwnerHasBeenSet;
 
                     /**
                      * 该订阅待投递的消息数。
@@ -391,20 +370,6 @@ filterType = 2表示用户使用 bindingKey 过滤。
                      */
                     uint64_t m_msgCount;
                     bool m_msgCountHasBeenSet;
-
-                    /**
-                     * 最后一次修改订阅属性的时间。返回 Unix 时间戳，精确到秒。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    uint64_t m_lastModifyTime;
-                    bool m_lastModifyTimeHasBeenSet;
-
-                    /**
-                     * 订阅的创建时间。返回 Unix 时间戳，精确到秒。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    uint64_t m_createTime;
-                    bool m_createTimeHasBeenSet;
 
                     /**
                      * 表示订阅接收消息的过滤策略。
@@ -421,20 +386,11 @@ filterType = 2表示用户使用 bindingKey 过滤。
                     bool m_endpointHasBeenSet;
 
                     /**
-                     * 描述用户创建订阅时选择的过滤策略：
-filterType = 1表示用户使用 filterTag 标签过滤
-filterType = 2表示用户使用 bindingKey 过滤。
+                     * 订阅拥有者的 APPID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<std::string> m_filterTags;
-                    bool m_filterTagsHasBeenSet;
-
-                    /**
-                     * 订阅的协议，目前支持两种协议：HTTP、queue。使用 HTTP 协议，用户需自己搭建接受消息的 Web Server。使用 queue，消息会自动推送到 CMQ queue，用户可以并发地拉取消息。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_protocol;
-                    bool m_protocolHasBeenSet;
+                    uint64_t m_topicOwner;
+                    bool m_topicOwnerHasBeenSet;
 
                     /**
                      * 向 endpoint 推送消息出现错误时，CMQ 推送服务器的重试策略。取值有：
@@ -451,6 +407,50 @@ filterType = 2表示用户使用 bindingKey 过滤。
                      */
                     std::string m_notifyContentFormat;
                     bool m_notifyContentFormatHasBeenSet;
+
+                    /**
+                     * 最后一次修改订阅属性的时间。返回 Unix 时间戳，精确到秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_lastModifyTime;
+                    bool m_lastModifyTimeHasBeenSet;
+
+                    /**
+                     * 描述用户创建订阅时选择的过滤策略：
+filterType = 1表示用户使用 filterTag 标签过滤
+filterType = 2表示用户使用 bindingKey 过滤。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_filterTags;
+                    bool m_filterTagsHasBeenSet;
+
+                    /**
+                     * 订阅名字，在单个地域同一账号的同一主题下唯一。订阅名称是一个不超过64个字符的字符串，必须以字母为首字符，剩余部分可以包含字母、数字和横划线(-)。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_subscriptionName;
+                    bool m_subscriptionNameHasBeenSet;
+
+                    /**
+                     * 订阅的协议，目前支持两种协议：HTTP、queue。使用 HTTP 协议，用户需自己搭建接受消息的 Web Server。使用 queue，消息会自动推送到 CMQ queue，用户可以并发地拉取消息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_protocol;
+                    bool m_protocolHasBeenSet;
+
+                    /**
+                     * 订阅 ID。订阅 ID 在拉取监控数据时会用到。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_subscriptionId;
+                    bool m_subscriptionIdHasBeenSet;
+
+                    /**
+                     * 订阅的创建时间。返回 Unix 时间戳，精确到秒。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_createTime;
+                    bool m_createTimeHasBeenSet;
 
                 };
             }

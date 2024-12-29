@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取用户对应的导播台简要信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CasterList 用户对应的导播台简要信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CasterBriefInfo> GetCasterList() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 用户对应的导播台简要信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CasterBriefInfo> m_casterList;
                     bool m_casterListHasBeenSet;

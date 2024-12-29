@@ -300,7 +300,9 @@ namespace TencentCloud
                 CreateEncryptedKeyOutcomeCallable CreateEncryptedKeyCallable(const Model::CreateEncryptedKeyRequest& request);
 
                 /**
-                 *移动网络发起Qos加速过程
+                 *产品下线
+
+移动网络发起Qos加速过程
                  * @param req CreateQosRequest
                  * @return CreateQosOutcome
                  */
@@ -336,7 +338,9 @@ namespace TencentCloud
                 DeleteL3ConnOutcomeCallable DeleteL3ConnCallable(const Model::DeleteL3ConnRequest& request);
 
                 /**
-                 *移动网络停止Qos加速过程
+                 *产品下线
+
+移动网络停止Qos加速过程
                  * @param req DeleteQosRequest
                  * @return DeleteQosOutcome
                  */
@@ -345,7 +349,9 @@ namespace TencentCloud
                 DeleteQosOutcomeCallable DeleteQosCallable(const Model::DeleteQosRequest& request);
 
                 /**
-                 *获取Qos加速状态
+                 *产品下线
+
+获取Qos加速状态
                  * @param req DescribeQosRequest
                  * @return DescribeQosOutcome
                  */

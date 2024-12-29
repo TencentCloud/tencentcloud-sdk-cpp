@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取步骤id
-                     * @return Stage 步骤id
+                     * 获取步骤
+                     * @return Stage 步骤
                      * 
                      */
                     std::string GetStage() const;
 
                     /**
-                     * 设置步骤id
-                     * @param _stage 步骤id
+                     * 设置步骤
+                     * @param _stage 步骤
                      * 
                      */
                     void SetStage(const std::string& _stage);
@@ -408,7 +408,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 步骤id
+                     * 步骤
                      */
                     std::string m_stage;
                     bool m_stageHasBeenSet;

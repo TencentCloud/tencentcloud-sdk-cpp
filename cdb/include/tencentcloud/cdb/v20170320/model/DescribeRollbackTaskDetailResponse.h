@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取回档任务详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Items 回档任务详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RollbackTask> GetItems() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 回档任务详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RollbackTask> m_items;
                     bool m_itemsHasBeenSet;

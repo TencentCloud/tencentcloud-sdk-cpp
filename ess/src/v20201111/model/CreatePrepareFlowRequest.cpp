@@ -188,8 +188,14 @@ string CreatePrepareFlowRequest::ToJsonString() const
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "CcInfos";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_ccInfos.ToJsonObject(d[key.c_str()], allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_ccInfos.begin(); itr != m_ccInfos.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
     if (m_flowIdHasBeenSet)
@@ -480,12 +486,12 @@ bool CreatePrepareFlowRequest::UserDataHasBeenSet() const
     return m_userDataHasBeenSet;
 }
 
-CcInfo CreatePrepareFlowRequest::GetCcInfos() const
+vector<CcInfo> CreatePrepareFlowRequest::GetCcInfos() const
 {
     return m_ccInfos;
 }
 
-void CreatePrepareFlowRequest::SetCcInfos(const CcInfo& _ccInfos)
+void CreatePrepareFlowRequest::SetCcInfos(const vector<CcInfo>& _ccInfos)
 {
     m_ccInfos = _ccInfos;
     m_ccInfosHasBeenSet = true;

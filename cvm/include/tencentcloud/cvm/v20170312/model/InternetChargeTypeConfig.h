@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取网络计费模式。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return InternetChargeType 网络计费模式。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInternetChargeType() const;
 
                     /**
                      * 设置网络计费模式。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _internetChargeType 网络计费模式。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInternetChargeType(const std::string& _internetChargeType);
@@ -69,14 +73,18 @@ namespace TencentCloud
 
                     /**
                      * 获取网络计费模式描述信息。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 网络计费模式描述信息。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置网络计费模式描述信息。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 网络计费模式描述信息。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -92,12 +100,14 @@ namespace TencentCloud
 
                     /**
                      * 网络计费模式。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_internetChargeType;
                     bool m_internetChargeTypeHasBeenSet;
 
                     /**
                      * 网络计费模式描述信息。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

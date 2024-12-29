@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取返回列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Items 返回列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DeployGroupInfo> GetItems() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 返回列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DeployGroupInfo> m_items;
                     bool m_itemsHasBeenSet;

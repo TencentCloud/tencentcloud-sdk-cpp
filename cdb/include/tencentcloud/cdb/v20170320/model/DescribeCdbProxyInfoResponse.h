@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取代理组数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Count 代理组数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCount() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取代理组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyInfos 代理组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ProxyGroupInfo> GetProxyInfos() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 代理组数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_count;
                     bool m_countHasBeenSet;
 
                     /**
                      * 代理组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ProxyGroupInfo> m_proxyInfos;
                     bool m_proxyInfosHasBeenSet;

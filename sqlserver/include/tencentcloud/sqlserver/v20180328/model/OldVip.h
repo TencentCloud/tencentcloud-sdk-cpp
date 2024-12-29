@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取旧IP保留时间小时数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OldIpRetainTime 旧IP保留时间小时数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetOldIpRetainTime() const;
 
                     /**
                      * 设置旧IP保留时间小时数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _oldIpRetainTime 旧IP保留时间小时数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOldIpRetainTime(const int64_t& _oldIpRetainTime);
@@ -129,7 +125,6 @@ namespace TencentCloud
 
                     /**
                      * 旧IP保留时间小时数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_oldIpRetainTime;
                     bool m_oldIpRetainTimeHasBeenSet;

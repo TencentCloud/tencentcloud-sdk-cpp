@@ -131,6 +131,27 @@ namespace TencentCloud
                      */
                     bool FiltersHasBeenSet() const;
 
+                    /**
+                     * 获取是否同步删除事件
+                     * @return Deletion 是否同步删除事件
+                     * 
+                     */
+                    bool GetDeletion() const;
+
+                    /**
+                     * 设置是否同步删除事件
+                     * @param _deletion 是否同步删除事件
+                     * 
+                     */
+                    void SetDeletion(const bool& _deletion);
+
+                    /**
+                     * 判断参数 Deletion 是否已赋值
+                     * @return Deletion 是否已赋值
+                     * 
+                     */
+                    bool DeletionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -156,6 +177,12 @@ namespace TencentCloud
                      */
                     std::vector<ReplicationFilter> m_filters;
                     bool m_filtersHasBeenSet;
+
+                    /**
+                     * 是否同步删除事件
+                     */
+                    bool m_deletion;
+                    bool m_deletionHasBeenSet;
 
                 };
             }

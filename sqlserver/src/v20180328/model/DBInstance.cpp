@@ -74,7 +74,8 @@ DBInstance::DBInstance() :
     m_isDrZoneHasBeenSet(false),
     m_slaveZonesHasBeenSet(false),
     m_architectureHasBeenSet(false),
-    m_styleHasBeenSet(false)
+    m_styleHasBeenSet(false),
+    m_multiSlaveZonesHasBeenSet(false)
 {
 }
 
@@ -646,6 +647,26 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
         m_styleHasBeenSet = true;
     }
 
+    if (value.HasMember("MultiSlaveZones") && !value["MultiSlaveZones"].IsNull())
+    {
+        if (!value["MultiSlaveZones"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DBInstance.MultiSlaveZones` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["MultiSlaveZones"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SlaveZones item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_multiSlaveZones.push_back(item);
+        }
+        m_multiSlaveZonesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1101,6 +1122,21 @@ void DBInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "Style";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_style.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_multiSlaveZonesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MultiSlaveZones";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_multiSlaveZones.begin(); itr != m_multiSlaveZones.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1968,5 +2004,21 @@ void DBInstance::SetStyle(const string& _style)
 bool DBInstance::StyleHasBeenSet() const
 {
     return m_styleHasBeenSet;
+}
+
+vector<SlaveZones> DBInstance::GetMultiSlaveZones() const
+{
+    return m_multiSlaveZones;
+}
+
+void DBInstance::SetMultiSlaveZones(const vector<SlaveZones>& _multiSlaveZones)
+{
+    m_multiSlaveZones = _multiSlaveZones;
+    m_multiSlaveZonesHasBeenSet = true;
+}
+
+bool DBInstance::MultiSlaveZonesHasBeenSet() const
+{
+    return m_multiSlaveZonesHasBeenSet;
 }
 

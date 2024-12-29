@@ -144,9 +144,7 @@ namespace TencentCloud
 
                     /**
                      * 获取参数模板引擎。支持值包括："InnoDB"，"RocksDB"。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EngineType 参数模板引擎。支持值包括："InnoDB"，"RocksDB"。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEngineType() const;
@@ -204,7 +202,6 @@ namespace TencentCloud
 
                     /**
                      * 参数模板引擎。支持值包括："InnoDB"，"RocksDB"。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_engineType;
                     bool m_engineTypeHasBeenSet;

@@ -171,6 +171,90 @@ namespace TencentCloud
                      */
                     bool RunningCuHasBeenSet() const;
 
+                    /**
+                     * 获取总的CPU
+                     * @return TotalCpu 总的CPU
+                     * 
+                     */
+                    double GetTotalCpu() const;
+
+                    /**
+                     * 设置总的CPU
+                     * @param _totalCpu 总的CPU
+                     * 
+                     */
+                    void SetTotalCpu(const double& _totalCpu);
+
+                    /**
+                     * 判断参数 TotalCpu 是否已赋值
+                     * @return TotalCpu 是否已赋值
+                     * 
+                     */
+                    bool TotalCpuHasBeenSet() const;
+
+                    /**
+                     * 获取总的内存
+                     * @return TotalMem 总的内存
+                     * 
+                     */
+                    double GetTotalMem() const;
+
+                    /**
+                     * 设置总的内存
+                     * @param _totalMem 总的内存
+                     * 
+                     */
+                    void SetTotalMem(const double& _totalMem);
+
+                    /**
+                     * 判断参数 TotalMem 是否已赋值
+                     * @return TotalMem 是否已赋值
+                     * 
+                     */
+                    bool TotalMemHasBeenSet() const;
+
+                    /**
+                     * 获取运行的CPU
+                     * @return RunningCpu 运行的CPU
+                     * 
+                     */
+                    double GetRunningCpu() const;
+
+                    /**
+                     * 设置运行的CPU
+                     * @param _runningCpu 运行的CPU
+                     * 
+                     */
+                    void SetRunningCpu(const double& _runningCpu);
+
+                    /**
+                     * 判断参数 RunningCpu 是否已赋值
+                     * @return RunningCpu 是否已赋值
+                     * 
+                     */
+                    bool RunningCpuHasBeenSet() const;
+
+                    /**
+                     * 获取运行的内存
+                     * @return RunningMem 运行的内存
+                     * 
+                     */
+                    double GetRunningMem() const;
+
+                    /**
+                     * 设置运行的内存
+                     * @param _runningMem 运行的内存
+                     * 
+                     */
+                    void SetRunningMem(const double& _runningMem);
+
+                    /**
+                     * 判断参数 RunningMem 是否已赋值
+                     * @return RunningMem 是否已赋值
+                     * 
+                     */
+                    bool RunningMemHasBeenSet() const;
+
                 private:
 
                     /**
@@ -207,6 +291,30 @@ namespace TencentCloud
                      */
                     double m_runningCu;
                     bool m_runningCuHasBeenSet;
+
+                    /**
+                     * 总的CPU
+                     */
+                    double m_totalCpu;
+                    bool m_totalCpuHasBeenSet;
+
+                    /**
+                     * 总的内存
+                     */
+                    double m_totalMem;
+                    bool m_totalMemHasBeenSet;
+
+                    /**
+                     * 运行的CPU
+                     */
+                    double m_runningCpu;
+                    bool m_runningCpuHasBeenSet;
+
+                    /**
+                     * 运行的内存
+                     */
+                    double m_runningMem;
+                    bool m_runningMemHasBeenSet;
 
                 };
             }

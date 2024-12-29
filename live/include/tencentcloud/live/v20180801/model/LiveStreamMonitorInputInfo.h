@@ -171,6 +171,48 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取导播台输入源索引（10000 pvw， 10001 pgm， 其余代表输入下标）
+                     * @return CasterInputIndex 导播台输入源索引（10000 pvw， 10001 pgm， 其余代表输入下标）
+                     * 
+                     */
+                    uint64_t GetCasterInputIndex() const;
+
+                    /**
+                     * 设置导播台输入源索引（10000 pvw， 10001 pgm， 其余代表输入下标）
+                     * @param _casterInputIndex 导播台输入源索引（10000 pvw， 10001 pgm， 其余代表输入下标）
+                     * 
+                     */
+                    void SetCasterInputIndex(const uint64_t& _casterInputIndex);
+
+                    /**
+                     * 判断参数 CasterInputIndex 是否已赋值
+                     * @return CasterInputIndex 是否已赋值
+                     * 
+                     */
+                    bool CasterInputIndexHasBeenSet() const;
+
+                    /**
+                     * 获取该输入源是否正在监播
+                     * @return NeedMonitor 该输入源是否正在监播
+                     * 
+                     */
+                    bool GetNeedMonitor() const;
+
+                    /**
+                     * 设置该输入源是否正在监播
+                     * @param _needMonitor 该输入源是否正在监播
+                     * 
+                     */
+                    void SetNeedMonitor(const bool& _needMonitor);
+
+                    /**
+                     * 判断参数 NeedMonitor 是否已赋值
+                     * @return NeedMonitor 是否已赋值
+                     * 
+                     */
+                    bool NeedMonitorHasBeenSet() const;
+
                 private:
 
                     /**
@@ -207,6 +249,18 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 导播台输入源索引（10000 pvw， 10001 pgm， 其余代表输入下标）
+                     */
+                    uint64_t m_casterInputIndex;
+                    bool m_casterInputIndexHasBeenSet;
+
+                    /**
+                     * 该输入源是否正在监播
+                     */
+                    bool m_needMonitor;
+                    bool m_needMonitorHasBeenSet;
 
                 };
             }

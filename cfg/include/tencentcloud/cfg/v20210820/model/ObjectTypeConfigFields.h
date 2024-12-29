@@ -138,6 +138,27 @@ namespace TencentCloud
                      */
                     bool JsonParseHasBeenSet() const;
 
+                    /**
+                     * 获取字段类型 0:str 1:list
+                     * @return Type 字段类型 0:str 1:list
+                     * 
+                     */
+                    int64_t GetType() const;
+
+                    /**
+                     * 设置字段类型 0:str 1:list
+                     * @param _type 字段类型 0:str 1:list
+                     * 
+                     */
+                    void SetType(const int64_t& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     * 
+                     */
+                    bool TypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -165,6 +186,12 @@ namespace TencentCloud
                      */
                     std::string m_jsonParse;
                     bool m_jsonParseHasBeenSet;
+
+                    /**
+                     * 字段类型 0:str 1:list
+                     */
+                    int64_t m_type;
+                    bool m_typeHasBeenSet;
 
                 };
             }

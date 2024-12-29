@@ -569,8 +569,14 @@
 #include <tencentcloud/vpc/v20170312/model/HaVipDisassociateAddressIpResponse.h>
 #include <tencentcloud/vpc/v20170312/model/InquirePriceCreateDirectConnectGatewayRequest.h>
 #include <tencentcloud/vpc/v20170312/model/InquirePriceCreateDirectConnectGatewayResponse.h>
+#include <tencentcloud/vpc/v20170312/model/InquiryPriceAllocateAddressesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/InquiryPriceAllocateAddressesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/InquiryPriceCreateVpnGatewayRequest.h>
 #include <tencentcloud/vpc/v20170312/model/InquiryPriceCreateVpnGatewayResponse.h>
+#include <tencentcloud/vpc/v20170312/model/InquiryPriceModifyAddressesBandwidthRequest.h>
+#include <tencentcloud/vpc/v20170312/model/InquiryPriceModifyAddressesBandwidthResponse.h>
+#include <tencentcloud/vpc/v20170312/model/InquiryPriceRenewAddressesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/InquiryPriceRenewAddressesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/InquiryPriceRenewVpnGatewayRequest.h>
 #include <tencentcloud/vpc/v20170312/model/InquiryPriceRenewVpnGatewayResponse.h>
 #include <tencentcloud/vpc/v20170312/model/InquiryPriceResetVpnGatewayInternetMaxBandwidthRequest.h>
@@ -1624,9 +1630,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::InquirePriceCreateDirectConnectGatewayResponse> InquirePriceCreateDirectConnectGatewayOutcome;
                 typedef std::future<InquirePriceCreateDirectConnectGatewayOutcome> InquirePriceCreateDirectConnectGatewayOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::InquirePriceCreateDirectConnectGatewayRequest&, InquirePriceCreateDirectConnectGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquirePriceCreateDirectConnectGatewayAsyncHandler;
+                typedef Outcome<Core::Error, Model::InquiryPriceAllocateAddressesResponse> InquiryPriceAllocateAddressesOutcome;
+                typedef std::future<InquiryPriceAllocateAddressesOutcome> InquiryPriceAllocateAddressesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::InquiryPriceAllocateAddressesRequest&, InquiryPriceAllocateAddressesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquiryPriceAllocateAddressesAsyncHandler;
                 typedef Outcome<Core::Error, Model::InquiryPriceCreateVpnGatewayResponse> InquiryPriceCreateVpnGatewayOutcome;
                 typedef std::future<InquiryPriceCreateVpnGatewayOutcome> InquiryPriceCreateVpnGatewayOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::InquiryPriceCreateVpnGatewayRequest&, InquiryPriceCreateVpnGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquiryPriceCreateVpnGatewayAsyncHandler;
+                typedef Outcome<Core::Error, Model::InquiryPriceModifyAddressesBandwidthResponse> InquiryPriceModifyAddressesBandwidthOutcome;
+                typedef std::future<InquiryPriceModifyAddressesBandwidthOutcome> InquiryPriceModifyAddressesBandwidthOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::InquiryPriceModifyAddressesBandwidthRequest&, InquiryPriceModifyAddressesBandwidthOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquiryPriceModifyAddressesBandwidthAsyncHandler;
+                typedef Outcome<Core::Error, Model::InquiryPriceRenewAddressesResponse> InquiryPriceRenewAddressesOutcome;
+                typedef std::future<InquiryPriceRenewAddressesOutcome> InquiryPriceRenewAddressesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::InquiryPriceRenewAddressesRequest&, InquiryPriceRenewAddressesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquiryPriceRenewAddressesAsyncHandler;
                 typedef Outcome<Core::Error, Model::InquiryPriceRenewVpnGatewayResponse> InquiryPriceRenewVpnGatewayOutcome;
                 typedef std::future<InquiryPriceRenewVpnGatewayOutcome> InquiryPriceRenewVpnGatewayOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::InquiryPriceRenewVpnGatewayRequest&, InquiryPriceRenewVpnGatewayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquiryPriceRenewVpnGatewayAsyncHandler;
@@ -4657,6 +4672,15 @@ LimitTypes取值范围：
                 InquirePriceCreateDirectConnectGatewayOutcomeCallable InquirePriceCreateDirectConnectGatewayCallable(const Model::InquirePriceCreateDirectConnectGatewayRequest& request);
 
                 /**
+                 *本接口（InquiryPriceAllocateAddresses）用于新购弹性公网IP询价。
+                 * @param req InquiryPriceAllocateAddressesRequest
+                 * @return InquiryPriceAllocateAddressesOutcome
+                 */
+                InquiryPriceAllocateAddressesOutcome InquiryPriceAllocateAddresses(const Model::InquiryPriceAllocateAddressesRequest &request);
+                void InquiryPriceAllocateAddressesAsync(const Model::InquiryPriceAllocateAddressesRequest& request, const InquiryPriceAllocateAddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InquiryPriceAllocateAddressesOutcomeCallable InquiryPriceAllocateAddressesCallable(const Model::InquiryPriceAllocateAddressesRequest& request);
+
+                /**
                  *本接口（InquiryPriceCreateVpnGateway）用于创建VPN网关询价。
                  * @param req InquiryPriceCreateVpnGatewayRequest
                  * @return InquiryPriceCreateVpnGatewayOutcome
@@ -4664,6 +4688,24 @@ LimitTypes取值范围：
                 InquiryPriceCreateVpnGatewayOutcome InquiryPriceCreateVpnGateway(const Model::InquiryPriceCreateVpnGatewayRequest &request);
                 void InquiryPriceCreateVpnGatewayAsync(const Model::InquiryPriceCreateVpnGatewayRequest& request, const InquiryPriceCreateVpnGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 InquiryPriceCreateVpnGatewayOutcomeCallable InquiryPriceCreateVpnGatewayCallable(const Model::InquiryPriceCreateVpnGatewayRequest& request);
+
+                /**
+                 *EIP修改带宽询价
+                 * @param req InquiryPriceModifyAddressesBandwidthRequest
+                 * @return InquiryPriceModifyAddressesBandwidthOutcome
+                 */
+                InquiryPriceModifyAddressesBandwidthOutcome InquiryPriceModifyAddressesBandwidth(const Model::InquiryPriceModifyAddressesBandwidthRequest &request);
+                void InquiryPriceModifyAddressesBandwidthAsync(const Model::InquiryPriceModifyAddressesBandwidthRequest& request, const InquiryPriceModifyAddressesBandwidthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InquiryPriceModifyAddressesBandwidthOutcomeCallable InquiryPriceModifyAddressesBandwidthCallable(const Model::InquiryPriceModifyAddressesBandwidthRequest& request);
+
+                /**
+                 *本接口（InquiryPriceRenewAddresses）用于续费预付费弹性公网IP询价。
+                 * @param req InquiryPriceRenewAddressesRequest
+                 * @return InquiryPriceRenewAddressesOutcome
+                 */
+                InquiryPriceRenewAddressesOutcome InquiryPriceRenewAddresses(const Model::InquiryPriceRenewAddressesRequest &request);
+                void InquiryPriceRenewAddressesAsync(const Model::InquiryPriceRenewAddressesRequest& request, const InquiryPriceRenewAddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InquiryPriceRenewAddressesOutcomeCallable InquiryPriceRenewAddressesCallable(const Model::InquiryPriceRenewAddressesRequest& request);
 
                 /**
                  *本接口（InquiryPriceRenewVpnGateway）用于续费VPN网关询价。目前仅支持IPSEC类型网关的询价。

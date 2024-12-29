@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务ID，根据任务ID查询绑定云资源结果
-                     * @return TaskId 任务ID，根据任务ID查询绑定云资源结果
+                     * 获取任务ID，根据CreateCertificateBindResourceSyncTask得到的任务ID查询绑定云资源结果
+                     * @return TaskId 任务ID，根据CreateCertificateBindResourceSyncTask得到的任务ID查询绑定云资源结果
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置任务ID，根据任务ID查询绑定云资源结果
-                     * @param _taskId 任务ID，根据任务ID查询绑定云资源结果
+                     * 设置任务ID，根据CreateCertificateBindResourceSyncTask得到的任务ID查询绑定云资源结果
+                     * @param _taskId 任务ID，根据CreateCertificateBindResourceSyncTask得到的任务ID查询绑定云资源结果
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -150,7 +150,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务ID，根据任务ID查询绑定云资源结果
+                     * 任务ID，根据CreateCertificateBindResourceSyncTask得到的任务ID查询绑定云资源结果
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;

@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取计费参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Parameter 计费参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetParameter() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 计费参数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_parameter;
                     bool m_parameterHasBeenSet;

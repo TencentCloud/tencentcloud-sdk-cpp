@@ -151,6 +151,27 @@ namespace TencentCloud
                      */
                     bool SystemProvideHasBeenSet() const;
 
+                    /**
+                     * 获取Connector
+                     * @return Connector Connector
+                     * 
+                     */
+                    std::string GetConnector() const;
+
+                    /**
+                     * 设置Connector
+                     * @param _connector Connector
+                     * 
+                     */
+                    void SetConnector(const std::string& _connector);
+
+                    /**
+                     * 判断参数 Connector 是否已赋值
+                     * @return Connector 是否已赋值
+                     * 
+                     */
+                    bool ConnectorHasBeenSet() const;
+
                 private:
 
                     /**
@@ -182,6 +203,12 @@ namespace TencentCloud
                      */
                     int64_t m_systemProvide;
                     bool m_systemProvideHasBeenSet;
+
+                    /**
+                     * Connector
+                     */
+                    std::string m_connector;
+                    bool m_connectorHasBeenSet;
 
                 };
             }

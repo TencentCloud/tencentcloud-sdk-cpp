@@ -33,7 +33,8 @@ GovernanceNamespace::GovernanceNamespace() :
     m_userIdsHasBeenSet(false),
     m_groupIdsHasBeenSet(false),
     m_removeUserIdsHasBeenSet(false),
-    m_removeGroupIdsHasBeenSet(false)
+    m_removeGroupIdsHasBeenSet(false),
+    m_serviceExportToHasBeenSet(false)
 {
 }
 
@@ -184,6 +185,19 @@ CoreInternalOutcome GovernanceNamespace::Deserialize(const rapidjson::Value &val
         m_removeGroupIdsHasBeenSet = true;
     }
 
+    if (value.HasMember("ServiceExportTo") && !value["ServiceExportTo"].IsNull())
+    {
+        if (!value["ServiceExportTo"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `GovernanceNamespace.ServiceExportTo` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ServiceExportTo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_serviceExportTo.push_back((*itr).GetString());
+        }
+        m_serviceExportToHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -310,6 +324,19 @@ void GovernanceNamespace::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_removeGroupIds.begin(); itr != m_removeGroupIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_serviceExportToHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceExportTo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_serviceExportTo.begin(); itr != m_serviceExportTo.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -524,5 +551,21 @@ void GovernanceNamespace::SetRemoveGroupIds(const vector<string>& _removeGroupId
 bool GovernanceNamespace::RemoveGroupIdsHasBeenSet() const
 {
     return m_removeGroupIdsHasBeenSet;
+}
+
+vector<string> GovernanceNamespace::GetServiceExportTo() const
+{
+    return m_serviceExportTo;
+}
+
+void GovernanceNamespace::SetServiceExportTo(const vector<string>& _serviceExportTo)
+{
+    m_serviceExportTo = _serviceExportTo;
+    m_serviceExportToHasBeenSet = true;
+}
+
+bool GovernanceNamespace::ServiceExportToHasBeenSet() const
+{
+    return m_serviceExportToHasBeenSet;
 }
 

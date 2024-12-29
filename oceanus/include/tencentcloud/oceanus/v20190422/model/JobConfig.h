@@ -30,6 +30,7 @@
 #include <tencentcloud/oceanus/v20190422/model/ExpertModeConfiguration.h>
 #include <tencentcloud/oceanus/v20190422/model/TraceModeConfiguration.h>
 #include <tencentcloud/oceanus/v20190422/model/JobGraph.h>
+#include <tencentcloud/oceanus/v20190422/model/JobConfig.h>
 
 
 namespace TencentCloud
@@ -865,6 +866,131 @@ namespace TencentCloud
                      */
                     bool FlinkVersionHasBeenSet() const;
 
+                    /**
+                     * 获取jm使用cpu数目
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return JobManagerCpu jm使用cpu数目
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetJobManagerCpu() const;
+
+                    /**
+                     * 设置jm使用cpu数目
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _jobManagerCpu jm使用cpu数目
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetJobManagerCpu(const double& _jobManagerCpu);
+
+                    /**
+                     * 判断参数 JobManagerCpu 是否已赋值
+                     * @return JobManagerCpu 是否已赋值
+                     * 
+                     */
+                    bool JobManagerCpuHasBeenSet() const;
+
+                    /**
+                     * 获取jm使用内存数目
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return JobManagerMem jm使用内存数目
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetJobManagerMem() const;
+
+                    /**
+                     * 设置jm使用内存数目
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _jobManagerMem jm使用内存数目
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetJobManagerMem(const double& _jobManagerMem);
+
+                    /**
+                     * 判断参数 JobManagerMem 是否已赋值
+                     * @return JobManagerMem 是否已赋值
+                     * 
+                     */
+                    bool JobManagerMemHasBeenSet() const;
+
+                    /**
+                     * 获取tm使用cpu数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskManagerCpu tm使用cpu数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetTaskManagerCpu() const;
+
+                    /**
+                     * 设置tm使用cpu数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _taskManagerCpu tm使用cpu数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTaskManagerCpu(const double& _taskManagerCpu);
+
+                    /**
+                     * 判断参数 TaskManagerCpu 是否已赋值
+                     * @return TaskManagerCpu 是否已赋值
+                     * 
+                     */
+                    bool TaskManagerCpuHasBeenSet() const;
+
+                    /**
+                     * 获取tm使用mem数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskManagerMem tm使用mem数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    double GetTaskManagerMem() const;
+
+                    /**
+                     * 设置tm使用mem数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _taskManagerMem tm使用mem数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTaskManagerMem(const double& _taskManagerMem);
+
+                    /**
+                     * 判断参数 TaskManagerMem 是否已赋值
+                     * @return TaskManagerMem 是否已赋值
+                     * 
+                     */
+                    bool TaskManagerMemHasBeenSet() const;
+
+                    /**
+                     * 获取运行中配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return JobConfigItem 运行中配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    JobConfig GetJobConfigItem() const;
+
+                    /**
+                     * 设置运行中配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _jobConfigItem 运行中配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetJobConfigItem(const JobConfig& _jobConfigItem);
+
+                    /**
+                     * 判断参数 JobConfigItem 是否已赋值
+                     * @return JobConfigItem 是否已赋值
+                     * 
+                     */
+                    bool JobConfigItemHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1094,6 +1220,41 @@ namespace TencentCloud
                      */
                     std::string m_flinkVersion;
                     bool m_flinkVersionHasBeenSet;
+
+                    /**
+                     * jm使用cpu数目
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_jobManagerCpu;
+                    bool m_jobManagerCpuHasBeenSet;
+
+                    /**
+                     * jm使用内存数目
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_jobManagerMem;
+                    bool m_jobManagerMemHasBeenSet;
+
+                    /**
+                     * tm使用cpu数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_taskManagerCpu;
+                    bool m_taskManagerCpuHasBeenSet;
+
+                    /**
+                     * tm使用mem数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_taskManagerMem;
+                    bool m_taskManagerMemHasBeenSet;
+
+                    /**
+                     * 运行中配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    JobConfig m_jobConfigItem;
+                    bool m_jobConfigItemHasBeenSet;
 
                 };
             }

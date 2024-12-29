@@ -211,6 +211,47 @@ true：隐藏，每个签署区要单独选择印章或者签名
                      */
                     bool FlowReadLimitHasBeenSet() const;
 
+                    /**
+                     * 获取禁止在签署过程中添加签署日期控件
+ <br/>前置条件：文件发起合同时，指定SignBeanTag=1（可以在签署过程中添加签署控件）：
+<ul>
+<li> 默认值：false，在开启：签署过程中添加签署控件时，添加签署控件会默认自带签署日期控件</li>
+<li> 可选值：true，在开启：签署过程中添加签署控件时，添加签署控件不会自带签署日期控件</li>
+</ul>
+                     * @return ForbidAddSignDate 禁止在签署过程中添加签署日期控件
+ <br/>前置条件：文件发起合同时，指定SignBeanTag=1（可以在签署过程中添加签署控件）：
+<ul>
+<li> 默认值：false，在开启：签署过程中添加签署控件时，添加签署控件会默认自带签署日期控件</li>
+<li> 可选值：true，在开启：签署过程中添加签署控件时，添加签署控件不会自带签署日期控件</li>
+</ul>
+                     * 
+                     */
+                    bool GetForbidAddSignDate() const;
+
+                    /**
+                     * 设置禁止在签署过程中添加签署日期控件
+ <br/>前置条件：文件发起合同时，指定SignBeanTag=1（可以在签署过程中添加签署控件）：
+<ul>
+<li> 默认值：false，在开启：签署过程中添加签署控件时，添加签署控件会默认自带签署日期控件</li>
+<li> 可选值：true，在开启：签署过程中添加签署控件时，添加签署控件不会自带签署日期控件</li>
+</ul>
+                     * @param _forbidAddSignDate 禁止在签署过程中添加签署日期控件
+ <br/>前置条件：文件发起合同时，指定SignBeanTag=1（可以在签署过程中添加签署控件）：
+<ul>
+<li> 默认值：false，在开启：签署过程中添加签署控件时，添加签署控件会默认自带签署日期控件</li>
+<li> 可选值：true，在开启：签署过程中添加签署控件时，添加签署控件不会自带签署日期控件</li>
+</ul>
+                     * 
+                     */
+                    void SetForbidAddSignDate(const bool& _forbidAddSignDate);
+
+                    /**
+                     * 判断参数 ForbidAddSignDate 是否已赋值
+                     * @return ForbidAddSignDate 是否已赋值
+                     * 
+                     */
+                    bool ForbidAddSignDateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -257,6 +298,17 @@ true：隐藏，每个签署区要单独选择印章或者签名
                      */
                     std::string m_flowReadLimit;
                     bool m_flowReadLimitHasBeenSet;
+
+                    /**
+                     * 禁止在签署过程中添加签署日期控件
+ <br/>前置条件：文件发起合同时，指定SignBeanTag=1（可以在签署过程中添加签署控件）：
+<ul>
+<li> 默认值：false，在开启：签署过程中添加签署控件时，添加签署控件会默认自带签署日期控件</li>
+<li> 可选值：true，在开启：签署过程中添加签署控件时，添加签署控件不会自带签署日期控件</li>
+</ul>
+                     */
+                    bool m_forbidAddSignDate;
+                    bool m_forbidAddSignDateHasBeenSet;
 
                 };
             }

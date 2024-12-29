@@ -154,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取回档任务详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Detail 回档任务详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RollbackInstancesInfo> GetDetail() const;
 
                     /**
                      * 设置回档任务详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _detail 回档任务详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDetail(const std::vector<RollbackInstancesInfo>& _detail);
@@ -211,7 +207,6 @@ namespace TencentCloud
 
                     /**
                      * 回档任务详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RollbackInstancesInfo> m_detail;
                     bool m_detailHasBeenSet;

@@ -514,7 +514,7 @@ namespace TencentCloud
 
                      * 
                      */
-                    CcInfo GetCcInfos() const;
+                    std::vector<CcInfo> GetCcInfos() const;
 
                     /**
                      * 设置合同流程的抄送人列表，最多可支持50个抄送人，抄送人可查看合同内容及签署进度，但无需参与合同签署。
@@ -523,7 +523,7 @@ namespace TencentCloud
 
                      * 
                      */
-                    void SetCcInfos(const CcInfo& _ccInfos);
+                    void SetCcInfos(const std::vector<CcInfo>& _ccInfos);
 
                     /**
                      * 判断参数 CcInfos 是否已赋值
@@ -760,7 +760,7 @@ namespace TencentCloud
                      * 合同流程的抄送人列表，最多可支持50个抄送人，抄送人可查看合同内容及签署进度，但无需参与合同签署。
 
                      */
-                    CcInfo m_ccInfos;
+                    std::vector<CcInfo> m_ccInfos;
                     bool m_ccInfosHasBeenSet;
 
                     /**

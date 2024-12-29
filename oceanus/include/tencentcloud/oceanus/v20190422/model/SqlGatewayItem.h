@@ -273,6 +273,48 @@ namespace TencentCloud
                      */
                     bool PropertiesHasBeenSet() const;
 
+                    /**
+                     * 获取Cpu
+                     * @return Cpu Cpu
+                     * 
+                     */
+                    double GetCpu() const;
+
+                    /**
+                     * 设置Cpu
+                     * @param _cpu Cpu
+                     * 
+                     */
+                    void SetCpu(const double& _cpu);
+
+                    /**
+                     * 判断参数 Cpu 是否已赋值
+                     * @return Cpu 是否已赋值
+                     * 
+                     */
+                    bool CpuHasBeenSet() const;
+
+                    /**
+                     * 获取Mem
+                     * @return Mem Mem
+                     * 
+                     */
+                    double GetMem() const;
+
+                    /**
+                     * 设置Mem
+                     * @param _mem Mem
+                     * 
+                     */
+                    void SetMem(const double& _mem);
+
+                    /**
+                     * 判断参数 Mem 是否已赋值
+                     * @return Mem 是否已赋值
+                     * 
+                     */
+                    bool MemHasBeenSet() const;
+
                 private:
 
                     /**
@@ -337,6 +379,18 @@ namespace TencentCloud
                      */
                     std::vector<Property> m_properties;
                     bool m_propertiesHasBeenSet;
+
+                    /**
+                     * Cpu
+                     */
+                    double m_cpu;
+                    bool m_cpuHasBeenSet;
+
+                    /**
+                     * Mem
+                     */
+                    double m_mem;
+                    bool m_memHasBeenSet;
 
                 };
             }

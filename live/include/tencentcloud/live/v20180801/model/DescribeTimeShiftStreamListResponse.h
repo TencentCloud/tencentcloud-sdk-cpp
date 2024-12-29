@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取流列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StreamList 流列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TimeShiftStreamInfo> GetStreamList() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 流列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TimeShiftStreamInfo> m_streamList;
                     bool m_streamListHasBeenSet;

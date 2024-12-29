@@ -301,18 +301,14 @@ namespace TencentCloud
 
                     /**
                      * 获取扫描行数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CheckRows 扫描行数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCheckRows() const;
 
                     /**
                      * 设置扫描行数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _checkRows 扫描行数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCheckRows(const int64_t& _checkRows);
@@ -326,18 +322,14 @@ namespace TencentCloud
 
                     /**
                      * 获取cpu执行时间，微秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CpuTime cpu执行时间，微秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetCpuTime() const;
 
                     /**
                      * 设置cpu执行时间，微秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cpuTime cpu执行时间，微秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCpuTime(const double& _cpuTime);
@@ -351,18 +343,14 @@ namespace TencentCloud
 
                     /**
                      * 获取IO等待时间，微秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IoWaitTime IO等待时间，微秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIoWaitTime() const;
 
                     /**
                      * 设置IO等待时间，微秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ioWaitTime IO等待时间，微秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIoWaitTime(const uint64_t& _ioWaitTime);
@@ -376,18 +364,14 @@ namespace TencentCloud
 
                     /**
                      * 获取锁等待时间，微秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LockWaitTime 锁等待时间，微秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetLockWaitTime() const;
 
                     /**
                      * 设置锁等待时间，微秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lockWaitTime 锁等待时间，微秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLockWaitTime(const uint64_t& _lockWaitTime);
@@ -401,18 +385,14 @@ namespace TencentCloud
 
                     /**
                      * 获取开始时间，与timestamp构成一个精确到纳秒的时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NsTime 开始时间，与timestamp构成一个精确到纳秒的时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetNsTime() const;
 
                     /**
                      * 设置开始时间，与timestamp构成一个精确到纳秒的时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nsTime 开始时间，与timestamp构成一个精确到纳秒的时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNsTime(const uint64_t& _nsTime);
@@ -426,18 +406,14 @@ namespace TencentCloud
 
                     /**
                      * 获取事物持续时间，微秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TrxLivingTime 事物持续时间，微秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTrxLivingTime() const;
 
                     /**
                      * 设置事物持续时间，微秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _trxLivingTime 事物持续时间，微秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTrxLivingTime(const uint64_t& _trxLivingTime);
@@ -567,42 +543,36 @@ namespace TencentCloud
 
                     /**
                      * 扫描行数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_checkRows;
                     bool m_checkRowsHasBeenSet;
 
                     /**
                      * cpu执行时间，微秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_cpuTime;
                     bool m_cpuTimeHasBeenSet;
 
                     /**
                      * IO等待时间，微秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_ioWaitTime;
                     bool m_ioWaitTimeHasBeenSet;
 
                     /**
                      * 锁等待时间，微秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_lockWaitTime;
                     bool m_lockWaitTimeHasBeenSet;
 
                     /**
                      * 开始时间，与timestamp构成一个精确到纳秒的时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_nsTime;
                     bool m_nsTimeHasBeenSet;
 
                     /**
                      * 事物持续时间，微秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_trxLivingTime;
                     bool m_trxLivingTimeHasBeenSet;

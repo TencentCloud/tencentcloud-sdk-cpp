@@ -21,12 +21,16 @@ using namespace TencentCloud::Sqlserver::V20180328::Model;
 using namespace std;
 
 DrReadableInfo::DrReadableInfo() :
+    m_drInstanceIdHasBeenSet(false),
+    m_zoneHasBeenSet(false),
     m_slaveStatusHasBeenSet(false),
     m_readableStatusHasBeenSet(false),
     m_vipHasBeenSet(false),
     m_vPortHasBeenSet(false),
     m_uniqVpcIdHasBeenSet(false),
-    m_uniqSubnetIdHasBeenSet(false)
+    m_uniqSubnetIdHasBeenSet(false),
+    m_roWeightHasBeenSet(false),
+    m_readModeHasBeenSet(false)
 {
 }
 
@@ -34,6 +38,26 @@ CoreInternalOutcome DrReadableInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("DrInstanceId") && !value["DrInstanceId"].IsNull())
+    {
+        if (!value["DrInstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DrReadableInfo.DrInstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_drInstanceId = string(value["DrInstanceId"].GetString());
+        m_drInstanceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Zone") && !value["Zone"].IsNull())
+    {
+        if (!value["Zone"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DrReadableInfo.Zone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_zone = string(value["Zone"].GetString());
+        m_zoneHasBeenSet = true;
+    }
 
     if (value.HasMember("SlaveStatus") && !value["SlaveStatus"].IsNull())
     {
@@ -95,12 +119,48 @@ CoreInternalOutcome DrReadableInfo::Deserialize(const rapidjson::Value &value)
         m_uniqSubnetIdHasBeenSet = true;
     }
 
+    if (value.HasMember("RoWeight") && !value["RoWeight"].IsNull())
+    {
+        if (!value["RoWeight"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DrReadableInfo.RoWeight` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_roWeight = value["RoWeight"].GetUint64();
+        m_roWeightHasBeenSet = true;
+    }
+
+    if (value.HasMember("ReadMode") && !value["ReadMode"].IsNull())
+    {
+        if (!value["ReadMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DrReadableInfo.ReadMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_readMode = string(value["ReadMode"].GetString());
+        m_readModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void DrReadableInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
+
+    if (m_drInstanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DrInstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_drInstanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_zoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Zone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_slaveStatusHasBeenSet)
     {
@@ -150,8 +210,56 @@ void DrReadableInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         value.AddMember(iKey, rapidjson::Value(m_uniqSubnetId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_roWeightHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RoWeight";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_roWeight, allocator);
+    }
+
+    if (m_readModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReadMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_readMode.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
+
+string DrReadableInfo::GetDrInstanceId() const
+{
+    return m_drInstanceId;
+}
+
+void DrReadableInfo::SetDrInstanceId(const string& _drInstanceId)
+{
+    m_drInstanceId = _drInstanceId;
+    m_drInstanceIdHasBeenSet = true;
+}
+
+bool DrReadableInfo::DrInstanceIdHasBeenSet() const
+{
+    return m_drInstanceIdHasBeenSet;
+}
+
+string DrReadableInfo::GetZone() const
+{
+    return m_zone;
+}
+
+void DrReadableInfo::SetZone(const string& _zone)
+{
+    m_zone = _zone;
+    m_zoneHasBeenSet = true;
+}
+
+bool DrReadableInfo::ZoneHasBeenSet() const
+{
+    return m_zoneHasBeenSet;
+}
 
 string DrReadableInfo::GetSlaveStatus() const
 {
@@ -247,5 +355,37 @@ void DrReadableInfo::SetUniqSubnetId(const string& _uniqSubnetId)
 bool DrReadableInfo::UniqSubnetIdHasBeenSet() const
 {
     return m_uniqSubnetIdHasBeenSet;
+}
+
+uint64_t DrReadableInfo::GetRoWeight() const
+{
+    return m_roWeight;
+}
+
+void DrReadableInfo::SetRoWeight(const uint64_t& _roWeight)
+{
+    m_roWeight = _roWeight;
+    m_roWeightHasBeenSet = true;
+}
+
+bool DrReadableInfo::RoWeightHasBeenSet() const
+{
+    return m_roWeightHasBeenSet;
+}
+
+string DrReadableInfo::GetReadMode() const
+{
+    return m_readMode;
+}
+
+void DrReadableInfo::SetReadMode(const string& _readMode)
+{
+    m_readMode = _readMode;
+    m_readModeHasBeenSet = true;
+}
+
+bool DrReadableInfo::ReadModeHasBeenSet() const
+{
+    return m_readModeHasBeenSet;
 }
 

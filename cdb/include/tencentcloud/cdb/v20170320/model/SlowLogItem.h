@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Sql的执行时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Timestamp Sql的执行时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTimestamp() const;
 
                     /**
                      * 设置Sql的执行时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timestamp Sql的执行时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimestamp(const uint64_t& _timestamp);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Sql的执行时长（秒）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return QueryTime Sql的执行时长（秒）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetQueryTime() const;
 
                     /**
                      * 设置Sql的执行时长（秒）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _queryTime Sql的执行时长（秒）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQueryTime(const double& _queryTime);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Sql语句。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SqlText Sql语句。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSqlText() const;
 
                     /**
                      * 设置Sql语句。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sqlText Sql语句。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSqlText(const std::string& _sqlText);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取客户端地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserHost 客户端地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserHost() const;
 
                     /**
                      * 设置客户端地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userHost 客户端地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserHost(const std::string& _userHost);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserName 用户名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置用户名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userName 用户名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserName(const std::string& _userName);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Database 数据库名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDatabase() const;
 
                     /**
                      * 设置数据库名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _database 数据库名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDatabase(const std::string& _database);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取锁时长（秒）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LockTime 锁时长（秒）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetLockTime() const;
 
                     /**
                      * 设置锁时长（秒）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lockTime 锁时长（秒）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLockTime(const double& _lockTime);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取扫描行数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RowsExamined 扫描行数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRowsExamined() const;
 
                     /**
                      * 设置扫描行数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rowsExamined 扫描行数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRowsExamined(const int64_t& _rowsExamined);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取结果集行数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RowsSent 结果集行数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRowsSent() const;
 
                     /**
                      * 设置结果集行数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rowsSent 结果集行数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRowsSent(const int64_t& _rowsSent);
@@ -273,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Sql模板。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SqlTemplate Sql模板。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSqlTemplate() const;
 
                     /**
                      * 设置Sql模板。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sqlTemplate Sql模板。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSqlTemplate(const std::string& _sqlTemplate);
@@ -298,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Sql语句的md5。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Md5 Sql语句的md5。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMd5() const;
 
                     /**
                      * 设置Sql语句的md5。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _md5 Sql语句的md5。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMd5(const std::string& _md5);
@@ -325,77 +281,66 @@ namespace TencentCloud
 
                     /**
                      * Sql的执行时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_timestamp;
                     bool m_timestampHasBeenSet;
 
                     /**
                      * Sql的执行时长（秒）。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_queryTime;
                     bool m_queryTimeHasBeenSet;
 
                     /**
                      * Sql语句。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sqlText;
                     bool m_sqlTextHasBeenSet;
 
                     /**
                      * 客户端地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userHost;
                     bool m_userHostHasBeenSet;
 
                     /**
                      * 用户名。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;
 
                     /**
                      * 数据库名。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_database;
                     bool m_databaseHasBeenSet;
 
                     /**
                      * 锁时长（秒）。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_lockTime;
                     bool m_lockTimeHasBeenSet;
 
                     /**
                      * 扫描行数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_rowsExamined;
                     bool m_rowsExaminedHasBeenSet;
 
                     /**
                      * 结果集行数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_rowsSent;
                     bool m_rowsSentHasBeenSet;
 
                     /**
                      * Sql模板。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sqlTemplate;
                     bool m_sqlTemplateHasBeenSet;
 
                     /**
                      * Sql语句的md5。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_md5;
                     bool m_md5HasBeenSet;

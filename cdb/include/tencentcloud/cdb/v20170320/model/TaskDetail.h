@@ -301,18 +301,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务关联的实例 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceIds 任务关联的实例 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置任务关联的实例 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceIds 任务关联的实例 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -439,7 +435,6 @@ namespace TencentCloud
 
                     /**
                      * 任务关联的实例 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;

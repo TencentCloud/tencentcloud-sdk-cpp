@@ -11779,6 +11779,49 @@ VpcClient::InquirePriceCreateDirectConnectGatewayOutcomeCallable VpcClient::Inqu
     return task->get_future();
 }
 
+VpcClient::InquiryPriceAllocateAddressesOutcome VpcClient::InquiryPriceAllocateAddresses(const InquiryPriceAllocateAddressesRequest &request)
+{
+    auto outcome = MakeRequest(request, "InquiryPriceAllocateAddresses");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InquiryPriceAllocateAddressesResponse rsp = InquiryPriceAllocateAddressesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InquiryPriceAllocateAddressesOutcome(rsp);
+        else
+            return InquiryPriceAllocateAddressesOutcome(o.GetError());
+    }
+    else
+    {
+        return InquiryPriceAllocateAddressesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::InquiryPriceAllocateAddressesAsync(const InquiryPriceAllocateAddressesRequest& request, const InquiryPriceAllocateAddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->InquiryPriceAllocateAddresses(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::InquiryPriceAllocateAddressesOutcomeCallable VpcClient::InquiryPriceAllocateAddressesCallable(const InquiryPriceAllocateAddressesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<InquiryPriceAllocateAddressesOutcome()>>(
+        [this, request]()
+        {
+            return this->InquiryPriceAllocateAddresses(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::InquiryPriceCreateVpnGatewayOutcome VpcClient::InquiryPriceCreateVpnGateway(const InquiryPriceCreateVpnGatewayRequest &request)
 {
     auto outcome = MakeRequest(request, "InquiryPriceCreateVpnGateway");
@@ -11815,6 +11858,92 @@ VpcClient::InquiryPriceCreateVpnGatewayOutcomeCallable VpcClient::InquiryPriceCr
         [this, request]()
         {
             return this->InquiryPriceCreateVpnGateway(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::InquiryPriceModifyAddressesBandwidthOutcome VpcClient::InquiryPriceModifyAddressesBandwidth(const InquiryPriceModifyAddressesBandwidthRequest &request)
+{
+    auto outcome = MakeRequest(request, "InquiryPriceModifyAddressesBandwidth");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InquiryPriceModifyAddressesBandwidthResponse rsp = InquiryPriceModifyAddressesBandwidthResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InquiryPriceModifyAddressesBandwidthOutcome(rsp);
+        else
+            return InquiryPriceModifyAddressesBandwidthOutcome(o.GetError());
+    }
+    else
+    {
+        return InquiryPriceModifyAddressesBandwidthOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::InquiryPriceModifyAddressesBandwidthAsync(const InquiryPriceModifyAddressesBandwidthRequest& request, const InquiryPriceModifyAddressesBandwidthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->InquiryPriceModifyAddressesBandwidth(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::InquiryPriceModifyAddressesBandwidthOutcomeCallable VpcClient::InquiryPriceModifyAddressesBandwidthCallable(const InquiryPriceModifyAddressesBandwidthRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<InquiryPriceModifyAddressesBandwidthOutcome()>>(
+        [this, request]()
+        {
+            return this->InquiryPriceModifyAddressesBandwidth(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::InquiryPriceRenewAddressesOutcome VpcClient::InquiryPriceRenewAddresses(const InquiryPriceRenewAddressesRequest &request)
+{
+    auto outcome = MakeRequest(request, "InquiryPriceRenewAddresses");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InquiryPriceRenewAddressesResponse rsp = InquiryPriceRenewAddressesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InquiryPriceRenewAddressesOutcome(rsp);
+        else
+            return InquiryPriceRenewAddressesOutcome(o.GetError());
+    }
+    else
+    {
+        return InquiryPriceRenewAddressesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::InquiryPriceRenewAddressesAsync(const InquiryPriceRenewAddressesRequest& request, const InquiryPriceRenewAddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->InquiryPriceRenewAddresses(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::InquiryPriceRenewAddressesOutcomeCallable VpcClient::InquiryPriceRenewAddressesCallable(const InquiryPriceRenewAddressesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<InquiryPriceRenewAddressesOutcome()>>(
+        [this, request]()
+        {
+            return this->InquiryPriceRenewAddresses(request);
         }
     );
 

@@ -47,9 +47,7 @@ namespace TencentCloud
 
                     /**
                      * 获取代理配置数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Count 代理配置数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCount() const;
@@ -63,9 +61,7 @@ namespace TencentCloud
 
                     /**
                      * 获取代理配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CustomConf 代理配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CustomConfig GetCustomConf() const;
@@ -79,9 +75,7 @@ namespace TencentCloud
 
                     /**
                      * 获取权重限制
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WeightRule 权重限制
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Rule GetWeightRule() const;
@@ -97,21 +91,18 @@ namespace TencentCloud
 
                     /**
                      * 代理配置数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_count;
                     bool m_countHasBeenSet;
 
                     /**
                      * 代理配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CustomConfig m_customConf;
                     bool m_customConfHasBeenSet;
 
                     /**
                      * 权重限制
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Rule m_weightRule;
                     bool m_weightRuleHasBeenSet;

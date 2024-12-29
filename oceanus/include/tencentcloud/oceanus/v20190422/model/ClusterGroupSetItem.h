@@ -496,6 +496,90 @@ namespace TencentCloud
                      */
                     bool BillingResourceModeHasBeenSet() const;
 
+                    /**
+                     * 获取TotalCpu
+                     * @return TotalCpu TotalCpu
+                     * 
+                     */
+                    double GetTotalCpu() const;
+
+                    /**
+                     * 设置TotalCpu
+                     * @param _totalCpu TotalCpu
+                     * 
+                     */
+                    void SetTotalCpu(const double& _totalCpu);
+
+                    /**
+                     * 判断参数 TotalCpu 是否已赋值
+                     * @return TotalCpu 是否已赋值
+                     * 
+                     */
+                    bool TotalCpuHasBeenSet() const;
+
+                    /**
+                     * 获取TotalMem
+                     * @return TotalMem TotalMem
+                     * 
+                     */
+                    double GetTotalMem() const;
+
+                    /**
+                     * 设置TotalMem
+                     * @param _totalMem TotalMem
+                     * 
+                     */
+                    void SetTotalMem(const double& _totalMem);
+
+                    /**
+                     * 判断参数 TotalMem 是否已赋值
+                     * @return TotalMem 是否已赋值
+                     * 
+                     */
+                    bool TotalMemHasBeenSet() const;
+
+                    /**
+                     * 获取RunningCpu
+                     * @return RunningCpu RunningCpu
+                     * 
+                     */
+                    double GetRunningCpu() const;
+
+                    /**
+                     * 设置RunningCpu
+                     * @param _runningCpu RunningCpu
+                     * 
+                     */
+                    void SetRunningCpu(const double& _runningCpu);
+
+                    /**
+                     * 判断参数 RunningCpu 是否已赋值
+                     * @return RunningCpu 是否已赋值
+                     * 
+                     */
+                    bool RunningCpuHasBeenSet() const;
+
+                    /**
+                     * 获取RunningMem
+                     * @return RunningMem RunningMem
+                     * 
+                     */
+                    double GetRunningMem() const;
+
+                    /**
+                     * 设置RunningMem
+                     * @param _runningMem RunningMem
+                     * 
+                     */
+                    void SetRunningMem(const double& _runningMem);
+
+                    /**
+                     * 判断参数 RunningMem 是否已赋值
+                     * @return RunningMem 是否已赋值
+                     * 
+                     */
+                    bool RunningMemHasBeenSet() const;
+
                 private:
 
                     /**
@@ -625,6 +709,30 @@ namespace TencentCloud
                      */
                     std::string m_billingResourceMode;
                     bool m_billingResourceModeHasBeenSet;
+
+                    /**
+                     * TotalCpu
+                     */
+                    double m_totalCpu;
+                    bool m_totalCpuHasBeenSet;
+
+                    /**
+                     * TotalMem
+                     */
+                    double m_totalMem;
+                    bool m_totalMemHasBeenSet;
+
+                    /**
+                     * RunningCpu
+                     */
+                    double m_runningCpu;
+                    bool m_runningCpuHasBeenSet;
+
+                    /**
+                     * RunningMem
+                     */
+                    double m_runningMem;
+                    bool m_runningMemHasBeenSet;
 
                 };
             }

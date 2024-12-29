@@ -338,6 +338,48 @@ namespace TencentCloud
                      */
                     bool AiQualityControlHasBeenSet() const;
 
+                    /**
+                     * 获取导播台监播对应的导播台场次id。
+                     * @return CasterId 导播台监播对应的导播台场次id。
+                     * 
+                     */
+                    std::string GetCasterId() const;
+
+                    /**
+                     * 设置导播台监播对应的导播台场次id。
+                     * @param _casterId 导播台监播对应的导播台场次id。
+                     * 
+                     */
+                    void SetCasterId(const std::string& _casterId);
+
+                    /**
+                     * 判断参数 CasterId 是否已赋值
+                     * @return CasterId 是否已赋值
+                     * 
+                     */
+                    bool CasterIdHasBeenSet() const;
+
+                    /**
+                     * 获取拉流转推监播任务对应的拉流转推场次id
+                     * @return PullPushTaskId 拉流转推监播任务对应的拉流转推场次id
+                     * 
+                     */
+                    std::string GetPullPushTaskId() const;
+
+                    /**
+                     * 设置拉流转推监播任务对应的拉流转推场次id
+                     * @param _pullPushTaskId 拉流转推监播任务对应的拉流转推场次id
+                     * 
+                     */
+                    void SetPullPushTaskId(const std::string& _pullPushTaskId);
+
+                    /**
+                     * 判断参数 PullPushTaskId 是否已赋值
+                     * @return PullPushTaskId 是否已赋值
+                     * 
+                     */
+                    bool PullPushTaskIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -422,6 +464,18 @@ namespace TencentCloud
                      */
                     uint64_t m_aiQualityControl;
                     bool m_aiQualityControlHasBeenSet;
+
+                    /**
+                     * 导播台监播对应的导播台场次id。
+                     */
+                    std::string m_casterId;
+                    bool m_casterIdHasBeenSet;
+
+                    /**
+                     * 拉流转推监播任务对应的拉流转推场次id
+                     */
+                    std::string m_pullPushTaskId;
+                    bool m_pullPushTaskIdHasBeenSet;
 
                 };
             }

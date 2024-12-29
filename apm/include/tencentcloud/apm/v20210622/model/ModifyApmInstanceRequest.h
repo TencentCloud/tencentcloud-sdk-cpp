@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取业务系统ID
+                     * @return InstanceId 业务系统ID
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置业务系统ID
+                     * @param _instanceId 业务系统ID
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例名
-                     * @return Name 实例名
+                     * 获取业务系统名
+                     * @return Name 业务系统名
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置实例名
-                     * @param _name 实例名
+                     * 设置业务系统名
+                     * @param _name 业务系统名
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取实例详情
-                     * @return Description 实例详情
+                     * 获取业务系统详情
+                     * @return Description 业务系统详情
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置实例详情
-                     * @param _description 实例详情
+                     * 设置业务系统详情
+                     * @param _description 业务系统详情
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool OpenBillingHasBeenSet() const;
 
                     /**
-                     * 获取实例上报额度
-                     * @return SpanDailyCounters 实例上报额度
+                     * 获取业务系统上报额度
+                     * @return SpanDailyCounters 业务系统上报额度
                      * 
                      */
                     uint64_t GetSpanDailyCounters() const;
 
                     /**
-                     * 设置实例上报额度
-                     * @param _spanDailyCounters 实例上报额度
+                     * 设置业务系统上报额度
+                     * @param _spanDailyCounters 业务系统上报额度
                      * 
                      */
                     void SetSpanDailyCounters(const uint64_t& _spanDailyCounters);
@@ -558,13 +558,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID
+                     * 业务系统ID
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例名
+                     * 业务系统名
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -576,7 +576,7 @@ namespace TencentCloud
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 实例详情
+                     * 业务系统详情
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
@@ -594,7 +594,7 @@ namespace TencentCloud
                     bool m_openBillingHasBeenSet;
 
                     /**
-                     * 实例上报额度
+                     * 业务系统上报额度
                      */
                     uint64_t m_spanDailyCounters;
                     bool m_spanDailyCountersHasBeenSet;

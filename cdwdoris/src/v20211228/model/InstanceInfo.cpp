@@ -70,7 +70,9 @@ InstanceInfo::InstanceInfo() :
     m_coolDownBucketHasBeenSet(false),
     m_detailsHasBeenSet(false),
     m_enableDlcHasBeenSet(false),
-    m_accountTypeHasBeenSet(false)
+    m_accountTypeHasBeenSet(false),
+    m_monitorModeHasBeenSet(false),
+    m_cNSummaryHasBeenSet(false)
 {
 }
 
@@ -616,6 +618,33 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_accountTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("MonitorMode") && !value["MonitorMode"].IsNull())
+    {
+        if (!value["MonitorMode"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.MonitorMode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_monitorMode = value["MonitorMode"].GetInt64();
+        m_monitorModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("CNSummary") && !value["CNSummary"].IsNull())
+    {
+        if (!value["CNSummary"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.CNSummary` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_cNSummary.Deserialize(value["CNSummary"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_cNSummaryHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1041,6 +1070,23 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "AccountType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_accountType, allocator);
+    }
+
+    if (m_monitorModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MonitorMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_monitorMode, allocator);
+    }
+
+    if (m_cNSummaryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CNSummary";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_cNSummary.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1844,5 +1890,37 @@ void InstanceInfo::SetAccountType(const int64_t& _accountType)
 bool InstanceInfo::AccountTypeHasBeenSet() const
 {
     return m_accountTypeHasBeenSet;
+}
+
+int64_t InstanceInfo::GetMonitorMode() const
+{
+    return m_monitorMode;
+}
+
+void InstanceInfo::SetMonitorMode(const int64_t& _monitorMode)
+{
+    m_monitorMode = _monitorMode;
+    m_monitorModeHasBeenSet = true;
+}
+
+bool InstanceInfo::MonitorModeHasBeenSet() const
+{
+    return m_monitorModeHasBeenSet;
+}
+
+NodesSummary InstanceInfo::GetCNSummary() const
+{
+    return m_cNSummary;
+}
+
+void InstanceInfo::SetCNSummary(const NodesSummary& _cNSummary)
+{
+    m_cNSummary = _cNSummary;
+    m_cNSummaryHasBeenSet = true;
+}
+
+bool InstanceInfo::CNSummaryHasBeenSet() const
+{
+    return m_cNSummaryHasBeenSet;
 }
 

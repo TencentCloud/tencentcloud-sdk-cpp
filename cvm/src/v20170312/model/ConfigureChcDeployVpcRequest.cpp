@@ -25,7 +25,8 @@ using namespace std;
 ConfigureChcDeployVpcRequest::ConfigureChcDeployVpcRequest() :
     m_chcIdsHasBeenSet(false),
     m_deployVirtualPrivateCloudHasBeenSet(false),
-    m_deploySecurityGroupIdsHasBeenSet(false)
+    m_deploySecurityGroupIdsHasBeenSet(false),
+    m_chcDeployExtraConfigHasBeenSet(false)
 {
 }
 
@@ -69,6 +70,15 @@ string ConfigureChcDeployVpcRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_chcDeployExtraConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChcDeployExtraConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_chcDeployExtraConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -125,6 +135,22 @@ void ConfigureChcDeployVpcRequest::SetDeploySecurityGroupIds(const vector<string
 bool ConfigureChcDeployVpcRequest::DeploySecurityGroupIdsHasBeenSet() const
 {
     return m_deploySecurityGroupIdsHasBeenSet;
+}
+
+ChcDeployExtraConfig ConfigureChcDeployVpcRequest::GetChcDeployExtraConfig() const
+{
+    return m_chcDeployExtraConfig;
+}
+
+void ConfigureChcDeployVpcRequest::SetChcDeployExtraConfig(const ChcDeployExtraConfig& _chcDeployExtraConfig)
+{
+    m_chcDeployExtraConfig = _chcDeployExtraConfig;
+    m_chcDeployExtraConfigHasBeenSet = true;
+}
+
+bool ConfigureChcDeployVpcRequest::ChcDeployExtraConfigHasBeenSet() const
+{
+    return m_chcDeployExtraConfigHasBeenSet;
 }
 
 

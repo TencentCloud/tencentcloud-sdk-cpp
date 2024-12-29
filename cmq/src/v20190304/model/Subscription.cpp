@@ -21,18 +21,18 @@ using namespace TencentCloud::Cmq::V20190304::Model;
 using namespace std;
 
 Subscription::Subscription() :
-    m_subscriptionNameHasBeenSet(false),
-    m_subscriptionIdHasBeenSet(false),
-    m_topicOwnerHasBeenSet(false),
     m_msgCountHasBeenSet(false),
-    m_lastModifyTimeHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
     m_bindingKeyHasBeenSet(false),
     m_endpointHasBeenSet(false),
-    m_filterTagsHasBeenSet(false),
-    m_protocolHasBeenSet(false),
+    m_topicOwnerHasBeenSet(false),
     m_notifyStrategyHasBeenSet(false),
-    m_notifyContentFormatHasBeenSet(false)
+    m_notifyContentFormatHasBeenSet(false),
+    m_lastModifyTimeHasBeenSet(false),
+    m_filterTagsHasBeenSet(false),
+    m_subscriptionNameHasBeenSet(false),
+    m_protocolHasBeenSet(false),
+    m_subscriptionIdHasBeenSet(false),
+    m_createTimeHasBeenSet(false)
 {
 }
 
@@ -40,36 +40,6 @@ CoreInternalOutcome Subscription::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("SubscriptionName") && !value["SubscriptionName"].IsNull())
-    {
-        if (!value["SubscriptionName"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Subscription.SubscriptionName` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_subscriptionName = string(value["SubscriptionName"].GetString());
-        m_subscriptionNameHasBeenSet = true;
-    }
-
-    if (value.HasMember("SubscriptionId") && !value["SubscriptionId"].IsNull())
-    {
-        if (!value["SubscriptionId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Subscription.SubscriptionId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_subscriptionId = string(value["SubscriptionId"].GetString());
-        m_subscriptionIdHasBeenSet = true;
-    }
-
-    if (value.HasMember("TopicOwner") && !value["TopicOwner"].IsNull())
-    {
-        if (!value["TopicOwner"].IsUint64())
-        {
-            return CoreInternalOutcome(Core::Error("response `Subscription.TopicOwner` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_topicOwner = value["TopicOwner"].GetUint64();
-        m_topicOwnerHasBeenSet = true;
-    }
 
     if (value.HasMember("MsgCount") && !value["MsgCount"].IsNull())
     {
@@ -79,26 +49,6 @@ CoreInternalOutcome Subscription::Deserialize(const rapidjson::Value &value)
         }
         m_msgCount = value["MsgCount"].GetUint64();
         m_msgCountHasBeenSet = true;
-    }
-
-    if (value.HasMember("LastModifyTime") && !value["LastModifyTime"].IsNull())
-    {
-        if (!value["LastModifyTime"].IsUint64())
-        {
-            return CoreInternalOutcome(Core::Error("response `Subscription.LastModifyTime` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_lastModifyTime = value["LastModifyTime"].GetUint64();
-        m_lastModifyTimeHasBeenSet = true;
-    }
-
-    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
-    {
-        if (!value["CreateTime"].IsUint64())
-        {
-            return CoreInternalOutcome(Core::Error("response `Subscription.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_createTime = value["CreateTime"].GetUint64();
-        m_createTimeHasBeenSet = true;
     }
 
     if (value.HasMember("BindingKey") && !value["BindingKey"].IsNull())
@@ -124,27 +74,14 @@ CoreInternalOutcome Subscription::Deserialize(const rapidjson::Value &value)
         m_endpointHasBeenSet = true;
     }
 
-    if (value.HasMember("FilterTags") && !value["FilterTags"].IsNull())
+    if (value.HasMember("TopicOwner") && !value["TopicOwner"].IsNull())
     {
-        if (!value["FilterTags"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `Subscription.FilterTags` is not array type"));
-
-        const rapidjson::Value &tmpValue = value["FilterTags"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!value["TopicOwner"].IsUint64())
         {
-            m_filterTags.push_back((*itr).GetString());
+            return CoreInternalOutcome(Core::Error("response `Subscription.TopicOwner` IsUint64=false incorrectly").SetRequestId(requestId));
         }
-        m_filterTagsHasBeenSet = true;
-    }
-
-    if (value.HasMember("Protocol") && !value["Protocol"].IsNull())
-    {
-        if (!value["Protocol"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Subscription.Protocol` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_protocol = string(value["Protocol"].GetString());
-        m_protocolHasBeenSet = true;
+        m_topicOwner = value["TopicOwner"].GetUint64();
+        m_topicOwnerHasBeenSet = true;
     }
 
     if (value.HasMember("NotifyStrategy") && !value["NotifyStrategy"].IsNull())
@@ -167,6 +104,69 @@ CoreInternalOutcome Subscription::Deserialize(const rapidjson::Value &value)
         m_notifyContentFormatHasBeenSet = true;
     }
 
+    if (value.HasMember("LastModifyTime") && !value["LastModifyTime"].IsNull())
+    {
+        if (!value["LastModifyTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Subscription.LastModifyTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_lastModifyTime = value["LastModifyTime"].GetUint64();
+        m_lastModifyTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("FilterTags") && !value["FilterTags"].IsNull())
+    {
+        if (!value["FilterTags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Subscription.FilterTags` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["FilterTags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_filterTags.push_back((*itr).GetString());
+        }
+        m_filterTagsHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubscriptionName") && !value["SubscriptionName"].IsNull())
+    {
+        if (!value["SubscriptionName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Subscription.SubscriptionName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subscriptionName = string(value["SubscriptionName"].GetString());
+        m_subscriptionNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Protocol") && !value["Protocol"].IsNull())
+    {
+        if (!value["Protocol"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Subscription.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_protocol = string(value["Protocol"].GetString());
+        m_protocolHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubscriptionId") && !value["SubscriptionId"].IsNull())
+    {
+        if (!value["SubscriptionId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Subscription.SubscriptionId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subscriptionId = string(value["SubscriptionId"].GetString());
+        m_subscriptionIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Subscription.CreateTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = value["CreateTime"].GetUint64();
+        m_createTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -174,52 +174,12 @@ CoreInternalOutcome Subscription::Deserialize(const rapidjson::Value &value)
 void Subscription::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
-    if (m_subscriptionNameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SubscriptionName";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_subscriptionName.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_subscriptionIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SubscriptionId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_subscriptionId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_topicOwnerHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TopicOwner";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_topicOwner, allocator);
-    }
-
     if (m_msgCountHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "MsgCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_msgCount, allocator);
-    }
-
-    if (m_lastModifyTimeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "LastModifyTime";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_lastModifyTime, allocator);
-    }
-
-    if (m_createTimeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CreateTime";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_createTime, allocator);
     }
 
     if (m_bindingKeyHasBeenSet)
@@ -243,25 +203,12 @@ void Subscription::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         value.AddMember(iKey, rapidjson::Value(m_endpoint.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_filterTagsHasBeenSet)
+    if (m_topicOwnerHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "FilterTags";
+        string key = "TopicOwner";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_filterTags.begin(); itr != m_filterTags.end(); ++itr)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
-    }
-
-    if (m_protocolHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Protocol";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_topicOwner, allocator);
     }
 
     if (m_notifyStrategyHasBeenSet)
@@ -280,56 +227,61 @@ void Subscription::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         value.AddMember(iKey, rapidjson::Value(m_notifyContentFormat.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_lastModifyTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LastModifyTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_lastModifyTime, allocator);
+    }
+
+    if (m_filterTagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilterTags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_filterTags.begin(); itr != m_filterTags.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_subscriptionNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubscriptionName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subscriptionName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_protocolHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Protocol";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subscriptionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubscriptionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subscriptionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_createTime, allocator);
+    }
+
 }
 
-
-string Subscription::GetSubscriptionName() const
-{
-    return m_subscriptionName;
-}
-
-void Subscription::SetSubscriptionName(const string& _subscriptionName)
-{
-    m_subscriptionName = _subscriptionName;
-    m_subscriptionNameHasBeenSet = true;
-}
-
-bool Subscription::SubscriptionNameHasBeenSet() const
-{
-    return m_subscriptionNameHasBeenSet;
-}
-
-string Subscription::GetSubscriptionId() const
-{
-    return m_subscriptionId;
-}
-
-void Subscription::SetSubscriptionId(const string& _subscriptionId)
-{
-    m_subscriptionId = _subscriptionId;
-    m_subscriptionIdHasBeenSet = true;
-}
-
-bool Subscription::SubscriptionIdHasBeenSet() const
-{
-    return m_subscriptionIdHasBeenSet;
-}
-
-uint64_t Subscription::GetTopicOwner() const
-{
-    return m_topicOwner;
-}
-
-void Subscription::SetTopicOwner(const uint64_t& _topicOwner)
-{
-    m_topicOwner = _topicOwner;
-    m_topicOwnerHasBeenSet = true;
-}
-
-bool Subscription::TopicOwnerHasBeenSet() const
-{
-    return m_topicOwnerHasBeenSet;
-}
 
 uint64_t Subscription::GetMsgCount() const
 {
@@ -345,38 +297,6 @@ void Subscription::SetMsgCount(const uint64_t& _msgCount)
 bool Subscription::MsgCountHasBeenSet() const
 {
     return m_msgCountHasBeenSet;
-}
-
-uint64_t Subscription::GetLastModifyTime() const
-{
-    return m_lastModifyTime;
-}
-
-void Subscription::SetLastModifyTime(const uint64_t& _lastModifyTime)
-{
-    m_lastModifyTime = _lastModifyTime;
-    m_lastModifyTimeHasBeenSet = true;
-}
-
-bool Subscription::LastModifyTimeHasBeenSet() const
-{
-    return m_lastModifyTimeHasBeenSet;
-}
-
-uint64_t Subscription::GetCreateTime() const
-{
-    return m_createTime;
-}
-
-void Subscription::SetCreateTime(const uint64_t& _createTime)
-{
-    m_createTime = _createTime;
-    m_createTimeHasBeenSet = true;
-}
-
-bool Subscription::CreateTimeHasBeenSet() const
-{
-    return m_createTimeHasBeenSet;
 }
 
 vector<string> Subscription::GetBindingKey() const
@@ -411,36 +331,20 @@ bool Subscription::EndpointHasBeenSet() const
     return m_endpointHasBeenSet;
 }
 
-vector<string> Subscription::GetFilterTags() const
+uint64_t Subscription::GetTopicOwner() const
 {
-    return m_filterTags;
+    return m_topicOwner;
 }
 
-void Subscription::SetFilterTags(const vector<string>& _filterTags)
+void Subscription::SetTopicOwner(const uint64_t& _topicOwner)
 {
-    m_filterTags = _filterTags;
-    m_filterTagsHasBeenSet = true;
+    m_topicOwner = _topicOwner;
+    m_topicOwnerHasBeenSet = true;
 }
 
-bool Subscription::FilterTagsHasBeenSet() const
+bool Subscription::TopicOwnerHasBeenSet() const
 {
-    return m_filterTagsHasBeenSet;
-}
-
-string Subscription::GetProtocol() const
-{
-    return m_protocol;
-}
-
-void Subscription::SetProtocol(const string& _protocol)
-{
-    m_protocol = _protocol;
-    m_protocolHasBeenSet = true;
-}
-
-bool Subscription::ProtocolHasBeenSet() const
-{
-    return m_protocolHasBeenSet;
+    return m_topicOwnerHasBeenSet;
 }
 
 string Subscription::GetNotifyStrategy() const
@@ -473,5 +377,101 @@ void Subscription::SetNotifyContentFormat(const string& _notifyContentFormat)
 bool Subscription::NotifyContentFormatHasBeenSet() const
 {
     return m_notifyContentFormatHasBeenSet;
+}
+
+uint64_t Subscription::GetLastModifyTime() const
+{
+    return m_lastModifyTime;
+}
+
+void Subscription::SetLastModifyTime(const uint64_t& _lastModifyTime)
+{
+    m_lastModifyTime = _lastModifyTime;
+    m_lastModifyTimeHasBeenSet = true;
+}
+
+bool Subscription::LastModifyTimeHasBeenSet() const
+{
+    return m_lastModifyTimeHasBeenSet;
+}
+
+vector<string> Subscription::GetFilterTags() const
+{
+    return m_filterTags;
+}
+
+void Subscription::SetFilterTags(const vector<string>& _filterTags)
+{
+    m_filterTags = _filterTags;
+    m_filterTagsHasBeenSet = true;
+}
+
+bool Subscription::FilterTagsHasBeenSet() const
+{
+    return m_filterTagsHasBeenSet;
+}
+
+string Subscription::GetSubscriptionName() const
+{
+    return m_subscriptionName;
+}
+
+void Subscription::SetSubscriptionName(const string& _subscriptionName)
+{
+    m_subscriptionName = _subscriptionName;
+    m_subscriptionNameHasBeenSet = true;
+}
+
+bool Subscription::SubscriptionNameHasBeenSet() const
+{
+    return m_subscriptionNameHasBeenSet;
+}
+
+string Subscription::GetProtocol() const
+{
+    return m_protocol;
+}
+
+void Subscription::SetProtocol(const string& _protocol)
+{
+    m_protocol = _protocol;
+    m_protocolHasBeenSet = true;
+}
+
+bool Subscription::ProtocolHasBeenSet() const
+{
+    return m_protocolHasBeenSet;
+}
+
+string Subscription::GetSubscriptionId() const
+{
+    return m_subscriptionId;
+}
+
+void Subscription::SetSubscriptionId(const string& _subscriptionId)
+{
+    m_subscriptionId = _subscriptionId;
+    m_subscriptionIdHasBeenSet = true;
+}
+
+bool Subscription::SubscriptionIdHasBeenSet() const
+{
+    return m_subscriptionIdHasBeenSet;
+}
+
+uint64_t Subscription::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void Subscription::SetCreateTime(const uint64_t& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool Subscription::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
 }
 

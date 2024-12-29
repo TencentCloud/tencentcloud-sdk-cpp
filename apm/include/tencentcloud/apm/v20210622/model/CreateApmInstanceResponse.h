@@ -44,9 +44,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
+                     * 获取业务系统ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceId 实例ID
+                     * @return InstanceId 业务系统ID
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -62,7 +62,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID
+                     * 业务系统ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;

@@ -43,6 +43,8 @@
 #include <tencentcloud/waf/v20180125/model/BatchOperateUserSignatureRulesResponse.h>
 #include <tencentcloud/waf/v20180125/model/CreateAccessExportRequest.h>
 #include <tencentcloud/waf/v20180125/model/CreateAccessExportResponse.h>
+#include <tencentcloud/waf/v20180125/model/CreateAreaBanRuleRequest.h>
+#include <tencentcloud/waf/v20180125/model/CreateAreaBanRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/CreateDealsRequest.h>
 #include <tencentcloud/waf/v20180125/model/CreateDealsResponse.h>
 #include <tencentcloud/waf/v20180125/model/CreateHostRequest.h>
@@ -95,6 +97,8 @@
 #include <tencentcloud/waf/v20180125/model/DescribeApiListVersionTwoResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAreaBanAreasRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAreaBanAreasResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeAreaBanRuleRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeAreaBanRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAreaBanSupportAreasRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAreaBanSupportAreasResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAttackOverviewRequest.h>
@@ -231,6 +235,8 @@
 #include <tencentcloud/waf/v20180125/model/ModifyApiSecEventChangeResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyAreaBanAreasRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyAreaBanAreasResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyAreaBanRuleRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyAreaBanRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyAreaBanStatusRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyAreaBanStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyAttackWhiteRuleRequest.h>
@@ -359,6 +365,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAccessExportResponse> CreateAccessExportOutcome;
                 typedef std::future<CreateAccessExportOutcome> CreateAccessExportOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::CreateAccessExportRequest&, CreateAccessExportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAccessExportAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAreaBanRuleResponse> CreateAreaBanRuleOutcome;
+                typedef std::future<CreateAreaBanRuleOutcome> CreateAreaBanRuleOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::CreateAreaBanRuleRequest&, CreateAreaBanRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAreaBanRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDealsResponse> CreateDealsOutcome;
                 typedef std::future<CreateDealsOutcome> CreateDealsOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::CreateDealsRequest&, CreateDealsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDealsAsyncHandler;
@@ -437,6 +446,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAreaBanAreasResponse> DescribeAreaBanAreasOutcome;
                 typedef std::future<DescribeAreaBanAreasOutcome> DescribeAreaBanAreasOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeAreaBanAreasRequest&, DescribeAreaBanAreasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAreaBanAreasAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAreaBanRuleResponse> DescribeAreaBanRuleOutcome;
+                typedef std::future<DescribeAreaBanRuleOutcome> DescribeAreaBanRuleOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeAreaBanRuleRequest&, DescribeAreaBanRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAreaBanRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAreaBanSupportAreasResponse> DescribeAreaBanSupportAreasOutcome;
                 typedef std::future<DescribeAreaBanSupportAreasOutcome> DescribeAreaBanSupportAreasOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeAreaBanSupportAreasRequest&, DescribeAreaBanSupportAreasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAreaBanSupportAreasAsyncHandler;
@@ -641,6 +653,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyAreaBanAreasResponse> ModifyAreaBanAreasOutcome;
                 typedef std::future<ModifyAreaBanAreasOutcome> ModifyAreaBanAreasOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyAreaBanAreasRequest&, ModifyAreaBanAreasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAreaBanAreasAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAreaBanRuleResponse> ModifyAreaBanRuleOutcome;
+                typedef std::future<ModifyAreaBanRuleOutcome> ModifyAreaBanRuleOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyAreaBanRuleRequest&, ModifyAreaBanRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAreaBanRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAreaBanStatusResponse> ModifyAreaBanStatusOutcome;
                 typedef std::future<ModifyAreaBanStatusOutcome> ModifyAreaBanStatusOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyAreaBanStatusRequest&, ModifyAreaBanStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAreaBanStatusAsyncHandler;
@@ -859,6 +874,15 @@ namespace TencentCloud
                 CreateAccessExportOutcome CreateAccessExport(const Model::CreateAccessExportRequest &request);
                 void CreateAccessExportAsync(const Model::CreateAccessExportRequest& request, const CreateAccessExportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAccessExportOutcomeCallable CreateAccessExportCallable(const Model::CreateAccessExportRequest& request);
+
+                /**
+                 *添加（编辑）地域封禁中的地域信息
+                 * @param req CreateAreaBanRuleRequest
+                 * @return CreateAreaBanRuleOutcome
+                 */
+                CreateAreaBanRuleOutcome CreateAreaBanRule(const Model::CreateAreaBanRuleRequest &request);
+                void CreateAreaBanRuleAsync(const Model::CreateAreaBanRuleRequest& request, const CreateAreaBanRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAreaBanRuleOutcomeCallable CreateAreaBanRuleCallable(const Model::CreateAreaBanRuleRequest& request);
 
                 /**
                  *计费资源购买、续费下单接口
@@ -1093,6 +1117,15 @@ namespace TencentCloud
                 DescribeAreaBanAreasOutcome DescribeAreaBanAreas(const Model::DescribeAreaBanAreasRequest &request);
                 void DescribeAreaBanAreasAsync(const Model::DescribeAreaBanAreasRequest& request, const DescribeAreaBanAreasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAreaBanAreasOutcomeCallable DescribeAreaBanAreasCallable(const Model::DescribeAreaBanAreasRequest& request);
+
+                /**
+                 *获取地域封禁规则配置
+                 * @param req DescribeAreaBanRuleRequest
+                 * @return DescribeAreaBanRuleOutcome
+                 */
+                DescribeAreaBanRuleOutcome DescribeAreaBanRule(const Model::DescribeAreaBanRuleRequest &request);
+                void DescribeAreaBanRuleAsync(const Model::DescribeAreaBanRuleRequest& request, const DescribeAreaBanRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAreaBanRuleOutcomeCallable DescribeAreaBanRuleCallable(const Model::DescribeAreaBanRuleRequest& request);
 
                 /**
                  *获取WAF地域封禁支持的地域列表
@@ -1707,6 +1740,15 @@ namespace TencentCloud
                 ModifyAreaBanAreasOutcomeCallable ModifyAreaBanAreasCallable(const Model::ModifyAreaBanAreasRequest& request);
 
                 /**
+                 *添加（编辑）地域封禁中的地域信息
+                 * @param req ModifyAreaBanRuleRequest
+                 * @return ModifyAreaBanRuleOutcome
+                 */
+                ModifyAreaBanRuleOutcome ModifyAreaBanRule(const Model::ModifyAreaBanRuleRequest &request);
+                void ModifyAreaBanRuleAsync(const Model::ModifyAreaBanRuleRequest& request, const ModifyAreaBanRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAreaBanRuleOutcomeCallable ModifyAreaBanRuleCallable(const Model::ModifyAreaBanRuleRequest& request);
+
+                /**
                  *修改防护域名的地域封禁状态
                  * @param req ModifyAreaBanStatusRequest
                  * @return ModifyAreaBanStatusOutcome
@@ -1915,7 +1957,7 @@ namespace TencentCloud
                 ModifyObjectOutcomeCallable ModifyObjectCallable(const Model::ModifyObjectRequest& request);
 
                 /**
-                 *获取基础安全防护（WAF开关）状态
+                 *开启、关闭WAF开关
                  * @param req ModifyProtectionStatusRequest
                  * @return ModifyProtectionStatusOutcome
                  */

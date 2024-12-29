@@ -280,18 +280,14 @@ namespace TencentCloud
 
                     /**
                      * 获取私有网络 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UniqVpcId 私有网络 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUniqVpcId() const;
 
                     /**
                      * 设置私有网络 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uniqVpcId 私有网络 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUniqVpcId(const std::string& _uniqVpcId);
@@ -305,18 +301,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子网 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UniqSubnetId 子网 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUniqSubnetId() const;
 
                     /**
                      * 设置子网 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uniqSubnetId 子网 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUniqSubnetId(const std::string& _uniqSubnetId);
@@ -330,18 +322,14 @@ namespace TencentCloud
 
                     /**
                      * 获取只读组所在的地域。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RoGroupRegion 只读组所在的地域。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRoGroupRegion() const;
 
                     /**
                      * 设置只读组所在的地域。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _roGroupRegion 只读组所在的地域。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRoGroupRegion(const std::string& _roGroupRegion);
@@ -355,18 +343,14 @@ namespace TencentCloud
 
                     /**
                      * 获取只读组所在的可用区。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RoGroupZone 只读组所在的可用区。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRoGroupZone() const;
 
                     /**
                      * 设置只读组所在的可用区。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _roGroupZone 只读组所在的可用区。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRoGroupZone(const std::string& _roGroupZone);
@@ -380,18 +364,14 @@ namespace TencentCloud
 
                     /**
                      * 获取延迟复制时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DelayReplicationTime 延迟复制时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDelayReplicationTime() const;
 
                     /**
                      * 设置延迟复制时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _delayReplicationTime 延迟复制时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDelayReplicationTime(const int64_t& _delayReplicationTime);
@@ -473,35 +453,30 @@ namespace TencentCloud
 
                     /**
                      * 私有网络 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uniqVpcId;
                     bool m_uniqVpcIdHasBeenSet;
 
                     /**
                      * 子网 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uniqSubnetId;
                     bool m_uniqSubnetIdHasBeenSet;
 
                     /**
                      * 只读组所在的地域。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_roGroupRegion;
                     bool m_roGroupRegionHasBeenSet;
 
                     /**
                      * 只读组所在的可用区。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_roGroupZone;
                     bool m_roGroupZoneHasBeenSet;
 
                     /**
                      * 延迟复制时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_delayReplicationTime;
                     bool m_delayReplicationTimeHasBeenSet;

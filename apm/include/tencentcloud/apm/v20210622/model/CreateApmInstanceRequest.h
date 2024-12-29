@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例名
-                     * @return Name 实例名
+                     * 获取业务系统名
+                     * @return Name 业务系统名
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置实例名
-                     * @param _name 实例名
+                     * 设置业务系统名
+                     * @param _name 业务系统名
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取实例描述信息
-                     * @return Description 实例描述信息
+                     * 获取业务系统描述信息
+                     * @return Description 业务系统描述信息
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置实例描述信息
-                     * @param _description 实例描述信息
+                     * 设置业务系统描述信息
+                     * @param _description 业务系统描述信息
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取实例上报额度值，默认赋值为0表示不限制上报额度
-                     * @return SpanDailyCounters 实例上报额度值，默认赋值为0表示不限制上报额度
+                     * 获取业务系统上报额度值，默认赋值为0表示不限制上报额度
+                     * @return SpanDailyCounters 业务系统上报额度值，默认赋值为0表示不限制上报额度
                      * 
                      */
                     uint64_t GetSpanDailyCounters() const;
 
                     /**
-                     * 设置实例上报额度值，默认赋值为0表示不限制上报额度
-                     * @param _spanDailyCounters 实例上报额度值，默认赋值为0表示不限制上报额度
+                     * 设置业务系统上报额度值，默认赋值为0表示不限制上报额度
+                     * @param _spanDailyCounters 业务系统上报额度值，默认赋值为0表示不限制上报额度
                      * 
                      */
                     void SetSpanDailyCounters(const uint64_t& _spanDailyCounters);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool SpanDailyCountersHasBeenSet() const;
 
                     /**
-                     * 获取实例的计费模式
-                     * @return PayMode 实例的计费模式
+                     * 获取业务系统的计费模式
+                     * @return PayMode 业务系统的计费模式
                      * 
                      */
                     int64_t GetPayMode() const;
 
                     /**
-                     * 设置实例的计费模式
-                     * @param _payMode 实例的计费模式
+                     * 设置业务系统的计费模式
+                     * @param _payMode 业务系统的计费模式
                      * 
                      */
                     void SetPayMode(const int64_t& _payMode);
@@ -193,13 +193,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例名
+                     * 业务系统名
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 实例描述信息
+                     * 业务系统描述信息
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
@@ -217,13 +217,13 @@ namespace TencentCloud
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 实例上报额度值，默认赋值为0表示不限制上报额度
+                     * 业务系统上报额度值，默认赋值为0表示不限制上报额度
                      */
                     uint64_t m_spanDailyCounters;
                     bool m_spanDailyCountersHasBeenSet;
 
                     /**
-                     * 实例的计费模式
+                     * 业务系统的计费模式
                      */
                     int64_t m_payMode;
                     bool m_payModeHasBeenSet;

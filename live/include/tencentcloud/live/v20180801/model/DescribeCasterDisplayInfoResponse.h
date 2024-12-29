@@ -50,13 +50,11 @@ namespace TencentCloud
 1：无预监，有主监 
 2：有预监，无主监 
 3：有预监，有主监
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 导播台状态
 0：停止状态，无预监，无主监 
 1：无预监，有主监 
 2：有预监，无主监 
 3：有预监，有主监
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStatus() const;
@@ -70,9 +68,7 @@ namespace TencentCloud
 
                     /**
                      * 获取预监使用的展示参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PvwDisplayInfo 预监使用的展示参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CasterDisplayInfo GetPvwDisplayInfo() const;
@@ -86,9 +82,7 @@ namespace TencentCloud
 
                     /**
                      * 获取主监使用的展示参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PgmDisplayInfo 主监使用的展示参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CasterDisplayInfo GetPgmDisplayInfo() const;
@@ -102,9 +96,7 @@ namespace TencentCloud
 
                     /**
                      * 获取启动直播的时间，值为unix时间戳。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartLiveTime 启动直播的时间，值为unix时间戳。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStartLiveTime() const;
@@ -124,28 +116,24 @@ namespace TencentCloud
 1：无预监，有主监 
 2：有预监，无主监 
 3：有预监，有主监
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 预监使用的展示参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CasterDisplayInfo m_pvwDisplayInfo;
                     bool m_pvwDisplayInfoHasBeenSet;
 
                     /**
                      * 主监使用的展示参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CasterDisplayInfo m_pgmDisplayInfo;
                     bool m_pgmDisplayInfoHasBeenSet;
 
                     /**
                      * 启动直播的时间，值为unix时间戳。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_startLiveTime;
                     bool m_startLiveTimeHasBeenSet;

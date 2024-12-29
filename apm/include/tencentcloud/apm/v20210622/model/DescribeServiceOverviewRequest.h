@@ -130,15 +130,15 @@ namespace TencentCloud
                     bool OrderByHasBeenSet() const;
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取业务系统ID
+                     * @return InstanceId 业务系统ID
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置业务系统ID
+                     * @param _instanceId 业务系统ID
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -261,7 +261,7 @@ namespace TencentCloud
                     bool m_orderByHasBeenSet;
 
                     /**
-                     * 实例ID
+                     * 业务系统ID
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

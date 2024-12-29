@@ -51,7 +51,11 @@ CreateJobConfigRequest::CreateJobConfigRequest() :
     m_jobGraphHasBeenSet(false),
     m_esServerlessIndexHasBeenSet(false),
     m_esServerlessSpaceHasBeenSet(false),
-    m_flinkVersionHasBeenSet(false)
+    m_flinkVersionHasBeenSet(false),
+    m_jobManagerCpuHasBeenSet(false),
+    m_jobManagerMemHasBeenSet(false),
+    m_taskManagerCpuHasBeenSet(false),
+    m_taskManagerMemHasBeenSet(false)
 {
 }
 
@@ -316,6 +320,38 @@ string CreateJobConfigRequest::ToJsonString() const
         string key = "FlinkVersion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_flinkVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jobManagerCpuHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobManagerCpu";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_jobManagerCpu, allocator);
+    }
+
+    if (m_jobManagerMemHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobManagerMem";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_jobManagerMem, allocator);
+    }
+
+    if (m_taskManagerCpuHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskManagerCpu";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_taskManagerCpu, allocator);
+    }
+
+    if (m_taskManagerMemHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskManagerMem";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_taskManagerMem, allocator);
     }
 
 
@@ -788,6 +824,70 @@ void CreateJobConfigRequest::SetFlinkVersion(const string& _flinkVersion)
 bool CreateJobConfigRequest::FlinkVersionHasBeenSet() const
 {
     return m_flinkVersionHasBeenSet;
+}
+
+double CreateJobConfigRequest::GetJobManagerCpu() const
+{
+    return m_jobManagerCpu;
+}
+
+void CreateJobConfigRequest::SetJobManagerCpu(const double& _jobManagerCpu)
+{
+    m_jobManagerCpu = _jobManagerCpu;
+    m_jobManagerCpuHasBeenSet = true;
+}
+
+bool CreateJobConfigRequest::JobManagerCpuHasBeenSet() const
+{
+    return m_jobManagerCpuHasBeenSet;
+}
+
+double CreateJobConfigRequest::GetJobManagerMem() const
+{
+    return m_jobManagerMem;
+}
+
+void CreateJobConfigRequest::SetJobManagerMem(const double& _jobManagerMem)
+{
+    m_jobManagerMem = _jobManagerMem;
+    m_jobManagerMemHasBeenSet = true;
+}
+
+bool CreateJobConfigRequest::JobManagerMemHasBeenSet() const
+{
+    return m_jobManagerMemHasBeenSet;
+}
+
+double CreateJobConfigRequest::GetTaskManagerCpu() const
+{
+    return m_taskManagerCpu;
+}
+
+void CreateJobConfigRequest::SetTaskManagerCpu(const double& _taskManagerCpu)
+{
+    m_taskManagerCpu = _taskManagerCpu;
+    m_taskManagerCpuHasBeenSet = true;
+}
+
+bool CreateJobConfigRequest::TaskManagerCpuHasBeenSet() const
+{
+    return m_taskManagerCpuHasBeenSet;
+}
+
+double CreateJobConfigRequest::GetTaskManagerMem() const
+{
+    return m_taskManagerMem;
+}
+
+void CreateJobConfigRequest::SetTaskManagerMem(const double& _taskManagerMem)
+{
+    m_taskManagerMem = _taskManagerMem;
+    m_taskManagerMemHasBeenSet = true;
+}
+
+bool CreateJobConfigRequest::TaskManagerMemHasBeenSet() const
+{
+    return m_taskManagerMemHasBeenSet;
 }
 
 

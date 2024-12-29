@@ -46,7 +46,135 @@ namespace TencentCloud
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
+                    /**
+                     * 获取minos类型。是使用腾讯云的minios，还是客户自己的minios。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MiniOsType minos类型。是使用腾讯云的minios，还是客户自己的minios。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetMiniOsType() const;
+
+                    /**
+                     * 设置minos类型。是使用腾讯云的minios，还是客户自己的minios。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _miniOsType minos类型。是使用腾讯云的minios，还是客户自己的minios。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetMiniOsType(const std::string& _miniOsType);
+
+                    /**
+                     * 判断参数 MiniOsType 是否已赋值
+                     * @return MiniOsType 是否已赋值
+                     * 
+                     */
+                    bool MiniOsTypeHasBeenSet() const;
+
+                    /**
+                     * 获取服务器的架构和启动方式。取值为x86_legacy, arm_uefi。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BootType 服务器的架构和启动方式。取值为x86_legacy, arm_uefi。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetBootType() const;
+
+                    /**
+                     * 设置服务器的架构和启动方式。取值为x86_legacy, arm_uefi。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _bootType 服务器的架构和启动方式。取值为x86_legacy, arm_uefi。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBootType(const std::string& _bootType);
+
+                    /**
+                     * 判断参数 BootType 是否已赋值
+                     * @return BootType 是否已赋值
+                     * 
+                     */
+                    bool BootTypeHasBeenSet() const;
+
+                    /**
+                     * 获取PXE使用的引导文件。默认为pxelinux.0。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BootFile PXE使用的引导文件。默认为pxelinux.0。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetBootFile() const;
+
+                    /**
+                     * 设置PXE使用的引导文件。默认为pxelinux.0。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _bootFile PXE使用的引导文件。默认为pxelinux.0。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBootFile(const std::string& _bootFile);
+
+                    /**
+                     * 判断参数 BootFile 是否已赋值
+                     * @return BootFile 是否已赋值
+                     * 
+                     */
+                    bool BootFileHasBeenSet() const;
+
+                    /**
+                     * 获取tftp服务器的ip地址。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NextServerAddress tftp服务器的ip地址。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetNextServerAddress() const;
+
+                    /**
+                     * 设置tftp服务器的ip地址。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _nextServerAddress tftp服务器的ip地址。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNextServerAddress(const std::string& _nextServerAddress);
+
+                    /**
+                     * 判断参数 NextServerAddress 是否已赋值
+                     * @return NextServerAddress 是否已赋值
+                     * 
+                     */
+                    bool NextServerAddressHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * minos类型。是使用腾讯云的minios，还是客户自己的minios。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_miniOsType;
+                    bool m_miniOsTypeHasBeenSet;
+
+                    /**
+                     * 服务器的架构和启动方式。取值为x86_legacy, arm_uefi。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_bootType;
+                    bool m_bootTypeHasBeenSet;
+
+                    /**
+                     * PXE使用的引导文件。默认为pxelinux.0。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_bootFile;
+                    bool m_bootFileHasBeenSet;
+
+                    /**
+                     * tftp服务器的ip地址。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_nextServerAddress;
+                    bool m_nextServerAddressHasBeenSet;
 
                 };
             }

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return ClusterId 集群ID
+                     * 获取集群ID（仅支持标准tke集群）
+                     * @return ClusterId 集群ID（仅支持标准tke集群）
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _clusterId 集群ID
+                     * 设置集群ID（仅支持标准tke集群）
+                     * @param _clusterId 集群ID（仅支持标准tke集群）
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -129,7 +129,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群ID
+                     * 集群ID（仅支持标准tke集群）
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;

@@ -442,18 +442,18 @@ namespace TencentCloud
                     bool LockWaitTimeHasBeenSet() const;
 
                     /**
-                     * 获取事物持续等待时间，微秒。
+                     * 获取事务持续等待时间，微秒。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TrxLivingTime 事物持续等待时间，微秒。
+                     * @return TrxLivingTime 事务持续等待时间，微秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTrxLivingTime() const;
 
                     /**
-                     * 设置事物持续等待时间，微秒。
+                     * 设置事务持续等待时间，微秒。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _trxLivingTime 事物持续等待时间，微秒。
+                     * @param _trxLivingTime 事务持续等待时间，微秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -656,7 +656,7 @@ namespace TencentCloud
                     bool m_lockWaitTimeHasBeenSet;
 
                     /**
-                     * 事物持续等待时间，微秒。
+                     * 事务持续等待时间，微秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_trxLivingTime;

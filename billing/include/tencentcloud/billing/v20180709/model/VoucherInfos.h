@@ -279,6 +279,48 @@ namespace TencentCloud
                      */
                     bool ExcludedProductsHasBeenSet() const;
 
+                    /**
+                     * 获取使用说明/批次备注
+                     * @return PolicyRemark 使用说明/批次备注
+                     * 
+                     */
+                    std::string GetPolicyRemark() const;
+
+                    /**
+                     * 设置使用说明/批次备注
+                     * @param _policyRemark 使用说明/批次备注
+                     * 
+                     */
+                    void SetPolicyRemark(const std::string& _policyRemark);
+
+                    /**
+                     * 判断参数 PolicyRemark 是否已赋值
+                     * @return PolicyRemark 是否已赋值
+                     * 
+                     */
+                    bool PolicyRemarkHasBeenSet() const;
+
+                    /**
+                     * 获取发券时间
+                     * @return CreateTime 发券时间
+                     * 
+                     */
+                    std::string GetCreateTime() const;
+
+                    /**
+                     * 设置发券时间
+                     * @param _createTime 发券时间
+                     * 
+                     */
+                    void SetCreateTime(const std::string& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     * 
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -346,6 +388,18 @@ namespace TencentCloud
                      */
                     std::vector<ExcludedProducts> m_excludedProducts;
                     bool m_excludedProductsHasBeenSet;
+
+                    /**
+                     * 使用说明/批次备注
+                     */
+                    std::string m_policyRemark;
+                    bool m_policyRemarkHasBeenSet;
+
+                    /**
+                     * 发券时间
+                     */
+                    std::string m_createTime;
+                    bool m_createTimeHasBeenSet;
 
                 };
             }

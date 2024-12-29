@@ -85,6 +85,27 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
+                     * 获取是否开启同步到全局注册中心	
+                     * @return SyncToGlobalRegistry 是否开启同步到全局注册中心	
+                     * 
+                     */
+                    std::string GetSyncToGlobalRegistry() const;
+
+                    /**
+                     * 设置是否开启同步到全局注册中心	
+                     * @param _syncToGlobalRegistry 是否开启同步到全局注册中心	
+                     * 
+                     */
+                    void SetSyncToGlobalRegistry(const std::string& _syncToGlobalRegistry);
+
+                    /**
+                     * 判断参数 SyncToGlobalRegistry 是否已赋值
+                     * @return SyncToGlobalRegistry 是否已赋值
+                     * 
+                     */
+                    bool SyncToGlobalRegistryHasBeenSet() const;
+
+                    /**
                      * 获取偏移量，默认为0。
                      * @return Offset 偏移量，默认为0。
                      * 
@@ -139,6 +160,12 @@ namespace TencentCloud
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
+
+                    /**
+                     * 是否开启同步到全局注册中心	
+                     */
+                    std::string m_syncToGlobalRegistry;
+                    bool m_syncToGlobalRegistryHasBeenSet;
 
                     /**
                      * 偏移量，默认为0。
