@@ -88,6 +88,27 @@ namespace TencentCloud
                      */
                     bool TargetGroupNameHasBeenSet() const;
 
+                    /**
+                     * 获取权重
+                     * @return Weight 权重
+                     * 
+                     */
+                    uint64_t GetWeight() const;
+
+                    /**
+                     * 设置权重
+                     * @param _weight 权重
+                     * 
+                     */
+                    void SetWeight(const uint64_t& _weight);
+
+                    /**
+                     * 判断参数 Weight 是否已赋值
+                     * @return Weight 是否已赋值
+                     * 
+                     */
+                    bool WeightHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +122,12 @@ namespace TencentCloud
                      */
                     std::string m_targetGroupName;
                     bool m_targetGroupNameHasBeenSet;
+
+                    /**
+                     * 权重
+                     */
+                    uint64_t m_weight;
+                    bool m_weightHasBeenSet;
 
                 };
             }

@@ -233,6 +233,27 @@ namespace TencentCloud
                     bool DepartmentIdHasBeenSet() const;
 
                     /**
+                     * 获取是否根据AuthorizedDeviceIdSet,对资产账号进行精确匹配，默认false, 设置true时，确保AuthorizedDeviceIdSet只有一个元素
+                     * @return ExactAccount 是否根据AuthorizedDeviceIdSet,对资产账号进行精确匹配，默认false, 设置true时，确保AuthorizedDeviceIdSet只有一个元素
+                     * 
+                     */
+                    bool GetExactAccount() const;
+
+                    /**
+                     * 设置是否根据AuthorizedDeviceIdSet,对资产账号进行精确匹配，默认false, 设置true时，确保AuthorizedDeviceIdSet只有一个元素
+                     * @param _exactAccount 是否根据AuthorizedDeviceIdSet,对资产账号进行精确匹配，默认false, 设置true时，确保AuthorizedDeviceIdSet只有一个元素
+                     * 
+                     */
+                    void SetExactAccount(const bool& _exactAccount);
+
+                    /**
+                     * 判断参数 ExactAccount 是否已赋值
+                     * @return ExactAccount 是否已赋值
+                     * 
+                     */
+                    bool ExactAccountHasBeenSet() const;
+
+                    /**
                      * 获取过滤数组
                      * @return Filters 过滤数组
                      * 
@@ -308,6 +329,12 @@ namespace TencentCloud
                      */
                     std::string m_departmentId;
                     bool m_departmentIdHasBeenSet;
+
+                    /**
+                     * 是否根据AuthorizedDeviceIdSet,对资产账号进行精确匹配，默认false, 设置true时，确保AuthorizedDeviceIdSet只有一个元素
+                     */
+                    bool m_exactAccount;
+                    bool m_exactAccountHasBeenSet;
 
                     /**
                      * 过滤数组

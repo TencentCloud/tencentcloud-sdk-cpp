@@ -316,10 +316,10 @@ namespace TencentCloud
                     bool ContainerStdoutHasBeenSet() const;
 
                     /**
-                     * 获取日志格式化方式，用于容器采集场景。
+                     * 获取日志格式化方式，用于容器采集场景。 - 已废弃
 - stdout-docker-json：用于docker容器采集场景
 - stdout-containerd：用于containerd容器采集场景
-                     * @return LogFormat 日志格式化方式，用于容器采集场景。
+                     * @return LogFormat 日志格式化方式，用于容器采集场景。 - 已废弃
 - stdout-docker-json：用于docker容器采集场景
 - stdout-containerd：用于containerd容器采集场景
                      * 
@@ -327,10 +327,10 @@ namespace TencentCloud
                     std::string GetLogFormat() const;
 
                     /**
-                     * 设置日志格式化方式，用于容器采集场景。
+                     * 设置日志格式化方式，用于容器采集场景。 - 已废弃
 - stdout-docker-json：用于docker容器采集场景
 - stdout-containerd：用于containerd容器采集场景
-                     * @param _logFormat 日志格式化方式，用于容器采集场景。
+                     * @param _logFormat 日志格式化方式，用于容器采集场景。 - 已废弃
 - stdout-docker-json：用于docker容器采集场景
 - stdout-containerd：用于containerd容器采集场景
                      * 
@@ -597,7 +597,7 @@ namespace TencentCloud
                     bool m_containerStdoutHasBeenSet;
 
                     /**
-                     * 日志格式化方式，用于容器采集场景。
+                     * 日志格式化方式，用于容器采集场景。 - 已废弃
 - stdout-docker-json：用于docker容器采集场景
 - stdout-containerd：用于containerd容器采集场景
                      */

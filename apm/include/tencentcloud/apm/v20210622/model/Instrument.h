@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取组件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 组件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置组件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 组件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取组件开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Enable 组件开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnable() const;
 
                     /**
                      * 设置组件开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enable 组件开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnable(const bool& _enable);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 组件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 组件开关
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enable;
                     bool m_enableHasBeenSet;

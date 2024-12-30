@@ -365,14 +365,22 @@ namespace TencentCloud
 
                     /**
                      * 获取对方打开链接认证时，法人姓名是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+
+p.s. 仅在法人姓名不为空时有效
                      * @return LegalNameSame 对方打开链接认证时，法人姓名是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+
+p.s. 仅在法人姓名不为空时有效
                      * 
                      */
                     bool GetLegalNameSame() const;
 
                     /**
                      * 设置对方打开链接认证时，法人姓名是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+
+p.s. 仅在法人姓名不为空时有效
                      * @param _legalNameSame 对方打开链接认证时，法人姓名是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+
+p.s. 仅在法人姓名不为空时有效
                      * 
                      */
                     void SetLegalNameSame(const bool& _legalNameSame);
@@ -386,14 +394,22 @@ namespace TencentCloud
 
                     /**
                      * 获取对方打开链接认证时，认证人姓名是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+
+p.s. 仅在认证人姓名不为空时有效
                      * @return AdminNameSame 对方打开链接认证时，认证人姓名是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+
+p.s. 仅在认证人姓名不为空时有效
                      * 
                      */
                     bool GetAdminNameSame() const;
 
                     /**
                      * 设置对方打开链接认证时，认证人姓名是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+
+p.s. 仅在认证人姓名不为空时有效
                      * @param _adminNameSame 对方打开链接认证时，认证人姓名是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+
+p.s. 仅在认证人姓名不为空时有效
                      * 
                      */
                     void SetAdminNameSame(const bool& _adminNameSame);
@@ -407,14 +423,26 @@ namespace TencentCloud
 
                     /**
                      * 获取对方打开链接认证时，认证人居民身份证件号是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+
+p.s. 仅在认证人身份证号不为空时有效
+
                      * @return AdminIdCardNumberSame 对方打开链接认证时，认证人居民身份证件号是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+
+p.s. 仅在认证人身份证号不为空时有效
+
                      * 
                      */
                     bool GetAdminIdCardNumberSame() const;
 
                     /**
                      * 设置对方打开链接认证时，认证人居民身份证件号是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+
+p.s. 仅在认证人身份证号不为空时有效
+
                      * @param _adminIdCardNumberSame 对方打开链接认证时，认证人居民身份证件号是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+
+p.s. 仅在认证人身份证号不为空时有效
+
                      * 
                      */
                     void SetAdminIdCardNumberSame(const bool& _adminIdCardNumberSame);
@@ -431,10 +459,14 @@ namespace TencentCloud
 <li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li>
 <li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li>
 </ul>
+
+p.s. 仅在认证人手机号不为空时有效
                      * @return AdminMobileSame 对方打开链接认证时，认证人手机号是否要与接口传递上来的保持一致。<ul>
 <li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li>
 <li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li>
 </ul>
+
+p.s. 仅在认证人手机号不为空时有效
                      * 
                      */
                     bool GetAdminMobileSame() const;
@@ -444,10 +476,14 @@ namespace TencentCloud
 <li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li>
 <li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li>
 </ul>
+
+p.s. 仅在认证人手机号不为空时有效
                      * @param _adminMobileSame 对方打开链接认证时，认证人手机号是否要与接口传递上来的保持一致。<ul>
 <li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li>
 <li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li>
 </ul>
+
+p.s. 仅在认证人手机号不为空时有效
                      * 
                      */
                     void SetAdminMobileSame(const bool& _adminMobileSame);
@@ -461,14 +497,26 @@ namespace TencentCloud
 
                     /**
                      * 获取对方打开链接认证时，企业名称是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+
+
+p.s. 仅在企业名称不为空时有效
                      * @return OrganizationNameSame 对方打开链接认证时，企业名称是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+
+
+p.s. 仅在企业名称不为空时有效
                      * 
                      */
                     bool GetOrganizationNameSame() const;
 
                     /**
                      * 设置对方打开链接认证时，企业名称是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+
+
+p.s. 仅在企业名称不为空时有效
                      * @param _organizationNameSame 对方打开链接认证时，企业名称是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+
+
+p.s. 仅在企业名称不为空时有效
                      * 
                      */
                     void SetOrganizationNameSame(const bool& _organizationNameSame);
@@ -591,6 +639,43 @@ namespace TencentCloud
                      */
                     bool InitializationHasBeenSet() const;
 
+                    /**
+                     * 获取授权书(PNG或JPG或PDF) base64格式, 大小不超过8M 。 
+授权书可以通过接口[生成企业授权书](https://qian.tencent.com/developers/companyApis/organizations/CreateOrganizationAuthFile) 来获得。
+p.s. 如果上传授权书 ，需遵循以下条件 
+1.  超管的信息（超管姓名，超管手机号）必须为必填参数。
+2.  认证方式AuthorizationTypes必须只能是上传授权书方式 
+                     * @return PowerOfAttorneys 授权书(PNG或JPG或PDF) base64格式, 大小不超过8M 。 
+授权书可以通过接口[生成企业授权书](https://qian.tencent.com/developers/companyApis/organizations/CreateOrganizationAuthFile) 来获得。
+p.s. 如果上传授权书 ，需遵循以下条件 
+1.  超管的信息（超管姓名，超管手机号）必须为必填参数。
+2.  认证方式AuthorizationTypes必须只能是上传授权书方式 
+                     * 
+                     */
+                    std::vector<std::string> GetPowerOfAttorneys() const;
+
+                    /**
+                     * 设置授权书(PNG或JPG或PDF) base64格式, 大小不超过8M 。 
+授权书可以通过接口[生成企业授权书](https://qian.tencent.com/developers/companyApis/organizations/CreateOrganizationAuthFile) 来获得。
+p.s. 如果上传授权书 ，需遵循以下条件 
+1.  超管的信息（超管姓名，超管手机号）必须为必填参数。
+2.  认证方式AuthorizationTypes必须只能是上传授权书方式 
+                     * @param _powerOfAttorneys 授权书(PNG或JPG或PDF) base64格式, 大小不超过8M 。 
+授权书可以通过接口[生成企业授权书](https://qian.tencent.com/developers/companyApis/organizations/CreateOrganizationAuthFile) 来获得。
+p.s. 如果上传授权书 ，需遵循以下条件 
+1.  超管的信息（超管姓名，超管手机号）必须为必填参数。
+2.  认证方式AuthorizationTypes必须只能是上传授权书方式 
+                     * 
+                     */
+                    void SetPowerOfAttorneys(const std::vector<std::string>& _powerOfAttorneys);
+
+                    /**
+                     * 判断参数 PowerOfAttorneys 是否已赋值
+                     * @return PowerOfAttorneys 是否已赋值
+                     * 
+                     */
+                    bool PowerOfAttorneysHasBeenSet() const;
+
                 private:
 
                     /**
@@ -684,18 +769,25 @@ namespace TencentCloud
 
                     /**
                      * 对方打开链接认证时，法人姓名是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+
+p.s. 仅在法人姓名不为空时有效
                      */
                     bool m_legalNameSame;
                     bool m_legalNameSameHasBeenSet;
 
                     /**
                      * 对方打开链接认证时，认证人姓名是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+
+p.s. 仅在认证人姓名不为空时有效
                      */
                     bool m_adminNameSame;
                     bool m_adminNameSameHasBeenSet;
 
                     /**
                      * 对方打开链接认证时，认证人居民身份证件号是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+
+p.s. 仅在认证人身份证号不为空时有效
+
                      */
                     bool m_adminIdCardNumberSame;
                     bool m_adminIdCardNumberSameHasBeenSet;
@@ -705,12 +797,17 @@ namespace TencentCloud
 <li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li>
 <li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li>
 </ul>
+
+p.s. 仅在认证人手机号不为空时有效
                      */
                     bool m_adminMobileSame;
                     bool m_adminMobileSameHasBeenSet;
 
                     /**
                      * 对方打开链接认证时，企业名称是否要与接口传递上来的保持一致。<ul><li><b>false（默认值）</b>：关闭状态，实际认证时允许与接口传递的信息存在不一致。</li><li><b>true</b>：启用状态，实际认证时必须与接口传递的信息完全相符。</li></ul>
+
+
+p.s. 仅在企业名称不为空时有效
                      */
                     bool m_organizationNameSame;
                     bool m_organizationNameSameHasBeenSet;
@@ -744,6 +841,16 @@ namespace TencentCloud
                      */
                     std::vector<uint64_t> m_initialization;
                     bool m_initializationHasBeenSet;
+
+                    /**
+                     * 授权书(PNG或JPG或PDF) base64格式, 大小不超过8M 。 
+授权书可以通过接口[生成企业授权书](https://qian.tencent.com/developers/companyApis/organizations/CreateOrganizationAuthFile) 来获得。
+p.s. 如果上传授权书 ，需遵循以下条件 
+1.  超管的信息（超管姓名，超管手机号）必须为必填参数。
+2.  认证方式AuthorizationTypes必须只能是上传授权书方式 
+                     */
+                    std::vector<std::string> m_powerOfAttorneys;
+                    bool m_powerOfAttorneysHasBeenSet;
 
                 };
             }

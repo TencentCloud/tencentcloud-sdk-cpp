@@ -1587,7 +1587,9 @@ namespace TencentCloud
                 DescribeWafAutoDenyRulesOutcomeCallable DescribeWafAutoDenyRulesCallable(const Model::DescribeWafAutoDenyRulesRequest& request);
 
                 /**
-                 *描述WAF自动封禁模块详情
+                 *废弃接口
+
+描述WAF自动封禁模块详情
                  * @param req DescribeWafAutoDenyStatusRequest
                  * @return DescribeWafAutoDenyStatusOutcome
                  */

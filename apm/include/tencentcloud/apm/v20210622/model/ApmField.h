@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取昨日同比指标值，已弃用，不建议使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CompareVal 昨日同比指标值，已弃用，不建议使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCompareVal() const;
 
                     /**
                      * 设置昨日同比指标值，已弃用，不建议使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _compareVal 昨日同比指标值，已弃用，不建议使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCompareVal(const std::string& _compareVal);
@@ -100,18 +96,14 @@ namespace TencentCloud
 
                     /**
                      * 获取指标值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 指标值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetValue() const;
 
                     /**
                      * 设置指标值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _value 指标值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValue(const double& _value);
@@ -125,18 +117,14 @@ namespace TencentCloud
 
                     /**
                      * 获取指标所对应的单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Unit 指标所对应的单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUnit() const;
 
                     /**
                      * 设置指标所对应的单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _unit 指标所对应的单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUnit(const std::string& _unit);
@@ -198,7 +186,6 @@ namespace TencentCloud
 
                     /**
                      * 昨日同比指标值，已弃用，不建议使用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_compareVal;
                     bool m_compareValHasBeenSet;
@@ -212,14 +199,12 @@ namespace TencentCloud
 
                     /**
                      * 指标值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_value;
                     bool m_valueHasBeenSet;
 
                     /**
                      * 指标所对应的单位
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_unit;
                     bool m_unitHasBeenSet;

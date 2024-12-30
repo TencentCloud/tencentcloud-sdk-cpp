@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取指标结果集
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Records 指标结果集
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Line> GetRecords() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 指标结果集
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Line> m_records;
                     bool m_recordsHasBeenSet;

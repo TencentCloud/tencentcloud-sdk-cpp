@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取Span分页列表
-                     * @return Spans Span分页列表
+                     * 获取Span 分页列表
+                     * @return Spans Span 分页列表
                      * 
                      */
                     std::vector<Span> GetSpans() const;
@@ -81,7 +81,7 @@ namespace TencentCloud
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * Span分页列表
+                     * Span 分页列表
                      */
                     std::vector<Span> m_spans;
                     bool m_spansHasBeenSet;

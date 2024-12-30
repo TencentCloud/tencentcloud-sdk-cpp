@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取目的地域，例如：ap-shanghai
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DstRegion 目的地域，例如：ap-shanghai
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDstRegion() const;
 
                     /**
                      * 设置目的地域，例如：ap-shanghai
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dstRegion 目的地域，例如：ap-shanghai
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDstRegion(const std::string& _dstRegion);
@@ -177,7 +173,6 @@ namespace TencentCloud
 
                     /**
                      * 目的地域，例如：ap-shanghai
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dstRegion;
                     bool m_dstRegionHasBeenSet;

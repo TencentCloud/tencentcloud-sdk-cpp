@@ -29,7 +29,8 @@ AssociationItem::AssociationItem() :
     m_domainHasBeenSet(false),
     m_urlHasBeenSet(false),
     m_loadBalancerNameHasBeenSet(false),
-    m_listenerNameHasBeenSet(false)
+    m_listenerNameHasBeenSet(false),
+    m_weightHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,16 @@ CoreInternalOutcome AssociationItem::Deserialize(const rapidjson::Value &value)
         m_listenerNameHasBeenSet = true;
     }
 
+    if (value.HasMember("Weight") && !value["Weight"].IsNull())
+    {
+        if (!value["Weight"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssociationItem.Weight` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_weight = value["Weight"].GetUint64();
+        m_weightHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +216,14 @@ void AssociationItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "ListenerName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_listenerName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_weightHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Weight";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_weight, allocator);
     }
 
 }
@@ -352,5 +371,21 @@ void AssociationItem::SetListenerName(const string& _listenerName)
 bool AssociationItem::ListenerNameHasBeenSet() const
 {
     return m_listenerNameHasBeenSet;
+}
+
+uint64_t AssociationItem::GetWeight() const
+{
+    return m_weight;
+}
+
+void AssociationItem::SetWeight(const uint64_t& _weight)
+{
+    m_weight = _weight;
+    m_weightHasBeenSet = true;
+}
+
+bool AssociationItem::WeightHasBeenSet() const
+{
+    return m_weightHasBeenSet;
 }
 

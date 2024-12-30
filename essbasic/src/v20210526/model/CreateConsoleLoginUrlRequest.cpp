@@ -38,7 +38,12 @@ CreateConsoleLoginUrlRequest::CreateConsoleLoginUrlRequest() :
     m_proxyOperatorIdCardNumberHasBeenSet(false),
     m_autoJumpUrlHasBeenSet(false),
     m_topNavigationStatusHasBeenSet(false),
-    m_autoActiveHasBeenSet(false)
+    m_autoActiveHasBeenSet(false),
+    m_businessLicenseHasBeenSet(false),
+    m_proxyAddressHasBeenSet(false),
+    m_proxyLegalNameHasBeenSet(false),
+    m_powerOfAttorneysHasBeenSet(false),
+    m_organizationAuthorizationOptionsHasBeenSet(false)
 {
 }
 
@@ -182,6 +187,52 @@ string CreateConsoleLoginUrlRequest::ToJsonString() const
         string key = "AutoActive";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_autoActive, allocator);
+    }
+
+    if (m_businessLicenseHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BusinessLicense";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_businessLicense.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_proxyAddressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxyAddress";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_proxyAddress.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_proxyLegalNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxyLegalName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_proxyLegalName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_powerOfAttorneysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PowerOfAttorneys";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_powerOfAttorneys.begin(); itr != m_powerOfAttorneys.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_organizationAuthorizationOptionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrganizationAuthorizationOptions";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_organizationAuthorizationOptions.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -446,6 +497,86 @@ void CreateConsoleLoginUrlRequest::SetAutoActive(const bool& _autoActive)
 bool CreateConsoleLoginUrlRequest::AutoActiveHasBeenSet() const
 {
     return m_autoActiveHasBeenSet;
+}
+
+string CreateConsoleLoginUrlRequest::GetBusinessLicense() const
+{
+    return m_businessLicense;
+}
+
+void CreateConsoleLoginUrlRequest::SetBusinessLicense(const string& _businessLicense)
+{
+    m_businessLicense = _businessLicense;
+    m_businessLicenseHasBeenSet = true;
+}
+
+bool CreateConsoleLoginUrlRequest::BusinessLicenseHasBeenSet() const
+{
+    return m_businessLicenseHasBeenSet;
+}
+
+string CreateConsoleLoginUrlRequest::GetProxyAddress() const
+{
+    return m_proxyAddress;
+}
+
+void CreateConsoleLoginUrlRequest::SetProxyAddress(const string& _proxyAddress)
+{
+    m_proxyAddress = _proxyAddress;
+    m_proxyAddressHasBeenSet = true;
+}
+
+bool CreateConsoleLoginUrlRequest::ProxyAddressHasBeenSet() const
+{
+    return m_proxyAddressHasBeenSet;
+}
+
+string CreateConsoleLoginUrlRequest::GetProxyLegalName() const
+{
+    return m_proxyLegalName;
+}
+
+void CreateConsoleLoginUrlRequest::SetProxyLegalName(const string& _proxyLegalName)
+{
+    m_proxyLegalName = _proxyLegalName;
+    m_proxyLegalNameHasBeenSet = true;
+}
+
+bool CreateConsoleLoginUrlRequest::ProxyLegalNameHasBeenSet() const
+{
+    return m_proxyLegalNameHasBeenSet;
+}
+
+vector<string> CreateConsoleLoginUrlRequest::GetPowerOfAttorneys() const
+{
+    return m_powerOfAttorneys;
+}
+
+void CreateConsoleLoginUrlRequest::SetPowerOfAttorneys(const vector<string>& _powerOfAttorneys)
+{
+    m_powerOfAttorneys = _powerOfAttorneys;
+    m_powerOfAttorneysHasBeenSet = true;
+}
+
+bool CreateConsoleLoginUrlRequest::PowerOfAttorneysHasBeenSet() const
+{
+    return m_powerOfAttorneysHasBeenSet;
+}
+
+OrganizationAuthorizationOptions CreateConsoleLoginUrlRequest::GetOrganizationAuthorizationOptions() const
+{
+    return m_organizationAuthorizationOptions;
+}
+
+void CreateConsoleLoginUrlRequest::SetOrganizationAuthorizationOptions(const OrganizationAuthorizationOptions& _organizationAuthorizationOptions)
+{
+    m_organizationAuthorizationOptions = _organizationAuthorizationOptions;
+    m_organizationAuthorizationOptionsHasBeenSet = true;
+}
+
+bool CreateConsoleLoginUrlRequest::OrganizationAuthorizationOptionsHasBeenSet() const
+{
+    return m_organizationAuthorizationOptionsHasBeenSet;
 }
 
 

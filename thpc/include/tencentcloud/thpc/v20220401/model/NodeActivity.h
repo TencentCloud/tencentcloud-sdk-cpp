@@ -72,15 +72,15 @@ namespace TencentCloud
                     bool NodeInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取节点活动状态。取值范围：<br><li>RUNNING：运行中<br><li>SUCCESSFUL：活动成功<br><li>FAILED：活动失败
-                     * @return NodeActivityStatus 节点活动状态。取值范围：<br><li>RUNNING：运行中<br><li>SUCCESSFUL：活动成功<br><li>FAILED：活动失败
+                     * 获取节点活动状态。取值范围：<br><li>RUNNING：运行中</li><br><li>SUCCESSFUL：活动成功</li><br><li>FAILED：活动失败</li>	
+                     * @return NodeActivityStatus 节点活动状态。取值范围：<br><li>RUNNING：运行中</li><br><li>SUCCESSFUL：活动成功</li><br><li>FAILED：活动失败</li>	
                      * 
                      */
                     std::string GetNodeActivityStatus() const;
 
                     /**
-                     * 设置节点活动状态。取值范围：<br><li>RUNNING：运行中<br><li>SUCCESSFUL：活动成功<br><li>FAILED：活动失败
-                     * @param _nodeActivityStatus 节点活动状态。取值范围：<br><li>RUNNING：运行中<br><li>SUCCESSFUL：活动成功<br><li>FAILED：活动失败
+                     * 设置节点活动状态。取值范围：<br><li>RUNNING：运行中</li><br><li>SUCCESSFUL：活动成功</li><br><li>FAILED：活动失败</li>	
+                     * @param _nodeActivityStatus 节点活动状态。取值范围：<br><li>RUNNING：运行中</li><br><li>SUCCESSFUL：活动成功</li><br><li>FAILED：活动失败</li>	
                      * 
                      */
                     void SetNodeActivityStatus(const std::string& _nodeActivityStatus);
@@ -152,7 +152,7 @@ namespace TencentCloud
                     bool m_nodeInstanceIdHasBeenSet;
 
                     /**
-                     * 节点活动状态。取值范围：<br><li>RUNNING：运行中<br><li>SUCCESSFUL：活动成功<br><li>FAILED：活动失败
+                     * 节点活动状态。取值范围：<br><li>RUNNING：运行中</li><br><li>SUCCESSFUL：活动成功</li><br><li>FAILED：活动失败</li>	
                      */
                     std::string m_nodeActivityStatus;
                     bool m_nodeActivityStatusHasBeenSet;

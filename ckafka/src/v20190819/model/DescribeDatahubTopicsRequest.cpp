@@ -25,7 +25,10 @@ using namespace std;
 DescribeDatahubTopicsRequest::DescribeDatahubTopicsRequest() :
     m_searchWordHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_queryFromConnectResourceHasBeenSet(false),
+    m_connectResourceIdHasBeenSet(false),
+    m_topicRegularExpressionHasBeenSet(false)
 {
 }
 
@@ -58,6 +61,30 @@ string DescribeDatahubTopicsRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_queryFromConnectResourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueryFromConnectResource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_queryFromConnectResource, allocator);
+    }
+
+    if (m_connectResourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConnectResourceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_connectResourceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_topicRegularExpressionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TopicRegularExpression";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_topicRegularExpression.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +141,54 @@ void DescribeDatahubTopicsRequest::SetLimit(const uint64_t& _limit)
 bool DescribeDatahubTopicsRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+bool DescribeDatahubTopicsRequest::GetQueryFromConnectResource() const
+{
+    return m_queryFromConnectResource;
+}
+
+void DescribeDatahubTopicsRequest::SetQueryFromConnectResource(const bool& _queryFromConnectResource)
+{
+    m_queryFromConnectResource = _queryFromConnectResource;
+    m_queryFromConnectResourceHasBeenSet = true;
+}
+
+bool DescribeDatahubTopicsRequest::QueryFromConnectResourceHasBeenSet() const
+{
+    return m_queryFromConnectResourceHasBeenSet;
+}
+
+string DescribeDatahubTopicsRequest::GetConnectResourceId() const
+{
+    return m_connectResourceId;
+}
+
+void DescribeDatahubTopicsRequest::SetConnectResourceId(const string& _connectResourceId)
+{
+    m_connectResourceId = _connectResourceId;
+    m_connectResourceIdHasBeenSet = true;
+}
+
+bool DescribeDatahubTopicsRequest::ConnectResourceIdHasBeenSet() const
+{
+    return m_connectResourceIdHasBeenSet;
+}
+
+string DescribeDatahubTopicsRequest::GetTopicRegularExpression() const
+{
+    return m_topicRegularExpression;
+}
+
+void DescribeDatahubTopicsRequest::SetTopicRegularExpression(const string& _topicRegularExpression)
+{
+    m_topicRegularExpression = _topicRegularExpression;
+    m_topicRegularExpressionHasBeenSet = true;
+}
+
+bool DescribeDatahubTopicsRequest::TopicRegularExpressionHasBeenSet() const
+{
+    return m_topicRegularExpressionHasBeenSet;
 }
 
 

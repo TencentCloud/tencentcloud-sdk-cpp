@@ -34,7 +34,8 @@ GovernanceNamespace::GovernanceNamespace() :
     m_groupIdsHasBeenSet(false),
     m_removeUserIdsHasBeenSet(false),
     m_removeGroupIdsHasBeenSet(false),
-    m_serviceExportToHasBeenSet(false)
+    m_serviceExportToHasBeenSet(false),
+    m_syncToGlobalRegistryHasBeenSet(false)
 {
 }
 
@@ -198,6 +199,16 @@ CoreInternalOutcome GovernanceNamespace::Deserialize(const rapidjson::Value &val
         m_serviceExportToHasBeenSet = true;
     }
 
+    if (value.HasMember("SyncToGlobalRegistry") && !value["SyncToGlobalRegistry"].IsNull())
+    {
+        if (!value["SyncToGlobalRegistry"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `GovernanceNamespace.SyncToGlobalRegistry` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_syncToGlobalRegistry = value["SyncToGlobalRegistry"].GetBool();
+        m_syncToGlobalRegistryHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -340,6 +351,14 @@ void GovernanceNamespace::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_syncToGlobalRegistryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncToGlobalRegistry";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_syncToGlobalRegistry, allocator);
     }
 
 }
@@ -567,5 +586,21 @@ void GovernanceNamespace::SetServiceExportTo(const vector<string>& _serviceExpor
 bool GovernanceNamespace::ServiceExportToHasBeenSet() const
 {
     return m_serviceExportToHasBeenSet;
+}
+
+bool GovernanceNamespace::GetSyncToGlobalRegistry() const
+{
+    return m_syncToGlobalRegistry;
+}
+
+void GovernanceNamespace::SetSyncToGlobalRegistry(const bool& _syncToGlobalRegistry)
+{
+    m_syncToGlobalRegistry = _syncToGlobalRegistry;
+    m_syncToGlobalRegistryHasBeenSet = true;
+}
+
+bool GovernanceNamespace::SyncToGlobalRegistryHasBeenSet() const
+{
+    return m_syncToGlobalRegistryHasBeenSet;
 }
 

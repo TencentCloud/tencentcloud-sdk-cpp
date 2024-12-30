@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取云联网跨境带宽监控数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CrossBorderFlowMonitorData 云联网跨境带宽监控数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CrossBorderFlowMonitorData> GetCrossBorderFlowMonitorData() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 云联网跨境带宽监控数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CrossBorderFlowMonitorData> m_crossBorderFlowMonitorData;
                     bool m_crossBorderFlowMonitorDataHasBeenSet;

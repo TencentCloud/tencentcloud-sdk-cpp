@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取VPN路由信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Routes VPN路由信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<VpnGatewayRoute> GetRoutes() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * VPN路由信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<VpnGatewayRoute> m_routes;
                     bool m_routesHasBeenSet;

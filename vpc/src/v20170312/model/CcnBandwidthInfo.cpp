@@ -28,7 +28,9 @@ CcnBandwidthInfo::CcnBandwidthInfo() :
     m_renewFlagHasBeenSet(false),
     m_ccnRegionBandwidthLimitHasBeenSet(false),
     m_marketIdHasBeenSet(false),
-    m_tagSetHasBeenSet(false)
+    m_tagSetHasBeenSet(false),
+    m_defaultQosBandwidthFlagHasBeenSet(false),
+    m_qosLevelHasBeenSet(false)
 {
 }
 
@@ -134,6 +136,26 @@ CoreInternalOutcome CcnBandwidthInfo::Deserialize(const rapidjson::Value &value)
         m_tagSetHasBeenSet = true;
     }
 
+    if (value.HasMember("DefaultQosBandwidthFlag") && !value["DefaultQosBandwidthFlag"].IsNull())
+    {
+        if (!value["DefaultQosBandwidthFlag"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CcnBandwidthInfo.DefaultQosBandwidthFlag` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_defaultQosBandwidthFlag = value["DefaultQosBandwidthFlag"].GetBool();
+        m_defaultQosBandwidthFlagHasBeenSet = true;
+    }
+
+    if (value.HasMember("QosLevel") && !value["QosLevel"].IsNull())
+    {
+        if (!value["QosLevel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CcnBandwidthInfo.QosLevel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_qosLevel = string(value["QosLevel"].GetString());
+        m_qosLevelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -211,6 +233,22 @@ void CcnBandwidthInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_defaultQosBandwidthFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DefaultQosBandwidthFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_defaultQosBandwidthFlag, allocator);
+    }
+
+    if (m_qosLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QosLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_qosLevel.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -342,5 +380,37 @@ void CcnBandwidthInfo::SetTagSet(const vector<Tag>& _tagSet)
 bool CcnBandwidthInfo::TagSetHasBeenSet() const
 {
     return m_tagSetHasBeenSet;
+}
+
+bool CcnBandwidthInfo::GetDefaultQosBandwidthFlag() const
+{
+    return m_defaultQosBandwidthFlag;
+}
+
+void CcnBandwidthInfo::SetDefaultQosBandwidthFlag(const bool& _defaultQosBandwidthFlag)
+{
+    m_defaultQosBandwidthFlag = _defaultQosBandwidthFlag;
+    m_defaultQosBandwidthFlagHasBeenSet = true;
+}
+
+bool CcnBandwidthInfo::DefaultQosBandwidthFlagHasBeenSet() const
+{
+    return m_defaultQosBandwidthFlagHasBeenSet;
+}
+
+string CcnBandwidthInfo::GetQosLevel() const
+{
+    return m_qosLevel;
+}
+
+void CcnBandwidthInfo::SetQosLevel(const string& _qosLevel)
+{
+    m_qosLevel = _qosLevel;
+    m_qosLevelHasBeenSet = true;
+}
+
+bool CcnBandwidthInfo::QosLevelHasBeenSet() const
+{
+    return m_qosLevelHasBeenSet;
 }
 

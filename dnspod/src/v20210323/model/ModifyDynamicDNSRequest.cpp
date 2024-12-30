@@ -26,10 +26,10 @@ ModifyDynamicDNSRequest::ModifyDynamicDNSRequest() :
     m_domainHasBeenSet(false),
     m_recordIdHasBeenSet(false),
     m_recordLineHasBeenSet(false),
-    m_valueHasBeenSet(false),
     m_domainIdHasBeenSet(false),
     m_subDomainHasBeenSet(false),
     m_recordLineIdHasBeenSet(false),
+    m_valueHasBeenSet(false),
     m_ttlHasBeenSet(false)
 {
 }
@@ -65,14 +65,6 @@ string ModifyDynamicDNSRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_recordLine.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_valueHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Value";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_value.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_domainIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -95,6 +87,14 @@ string ModifyDynamicDNSRequest::ToJsonString() const
         string key = "RecordLineId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_recordLineId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_valueHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Value";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_value.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ttlHasBeenSet)
@@ -161,22 +161,6 @@ bool ModifyDynamicDNSRequest::RecordLineHasBeenSet() const
     return m_recordLineHasBeenSet;
 }
 
-string ModifyDynamicDNSRequest::GetValue() const
-{
-    return m_value;
-}
-
-void ModifyDynamicDNSRequest::SetValue(const string& _value)
-{
-    m_value = _value;
-    m_valueHasBeenSet = true;
-}
-
-bool ModifyDynamicDNSRequest::ValueHasBeenSet() const
-{
-    return m_valueHasBeenSet;
-}
-
 uint64_t ModifyDynamicDNSRequest::GetDomainId() const
 {
     return m_domainId;
@@ -223,6 +207,22 @@ void ModifyDynamicDNSRequest::SetRecordLineId(const string& _recordLineId)
 bool ModifyDynamicDNSRequest::RecordLineIdHasBeenSet() const
 {
     return m_recordLineIdHasBeenSet;
+}
+
+string ModifyDynamicDNSRequest::GetValue() const
+{
+    return m_value;
+}
+
+void ModifyDynamicDNSRequest::SetValue(const string& _value)
+{
+    m_value = _value;
+    m_valueHasBeenSet = true;
+}
+
+bool ModifyDynamicDNSRequest::ValueHasBeenSet() const
+{
+    return m_valueHasBeenSet;
 }
 
 uint64_t ModifyDynamicDNSRequest::GetTtl() const

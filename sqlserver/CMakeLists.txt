@@ -287,6 +287,7 @@ set(sqlserver_public_header_model
   include/tencentcloud/sqlserver/v20180328/model/CreateDBInstancesRequest.h
   include/tencentcloud/sqlserver/v20180328/model/ModifyCrossBackupStrategyRequest.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeReadOnlyGroupAutoWeightResponse.h
+  include/tencentcloud/sqlserver/v20180328/model/DrZoneInfo.h
   include/tencentcloud/sqlserver/v20180328/model/ModifyBackupStrategyRequest.h
   include/tencentcloud/sqlserver/v20180328/model/CreatePublishSubscribeRequest.h
   include/tencentcloud/sqlserver/v20180328/model/CreateBusinessIntelligenceFileRequest.h
@@ -664,6 +665,7 @@ set(sqlserver_src
   src/v20180328/model/CreateDBInstancesRequest.cpp
   src/v20180328/model/ModifyCrossBackupStrategyRequest.cpp
   src/v20180328/model/DescribeReadOnlyGroupAutoWeightResponse.cpp
+  src/v20180328/model/DrZoneInfo.cpp
   src/v20180328/model/ModifyBackupStrategyRequest.cpp
   src/v20180328/model/CreatePublishSubscribeRequest.cpp
   src/v20180328/model/CreateBusinessIntelligenceFileRequest.cpp

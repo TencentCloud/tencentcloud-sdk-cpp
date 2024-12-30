@@ -28,7 +28,8 @@ AgentConfig::AgentConfig() :
     m_welcomeMessageHasBeenSet(false),
     m_interruptModeHasBeenSet(false),
     m_interruptSpeechDurationHasBeenSet(false),
-    m_turnDetectionModeHasBeenSet(false)
+    m_turnDetectionModeHasBeenSet(false),
+    m_filterOneWordHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome AgentConfig::Deserialize(const rapidjson::Value &value)
         m_turnDetectionModeHasBeenSet = true;
     }
 
+    if (value.HasMember("FilterOneWord") && !value["FilterOneWord"].IsNull())
+    {
+        if (!value["FilterOneWord"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentConfig.FilterOneWord` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_filterOneWord = value["FilterOneWord"].GetBool();
+        m_filterOneWordHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void AgentConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "TurnDetectionMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_turnDetectionMode, allocator);
+    }
+
+    if (m_filterOneWordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilterOneWord";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_filterOneWord, allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void AgentConfig::SetTurnDetectionMode(const uint64_t& _turnDetectionMode)
 bool AgentConfig::TurnDetectionModeHasBeenSet() const
 {
     return m_turnDetectionModeHasBeenSet;
+}
+
+bool AgentConfig::GetFilterOneWord() const
+{
+    return m_filterOneWord;
+}
+
+void AgentConfig::SetFilterOneWord(const bool& _filterOneWord)
+{
+    m_filterOneWord = _filterOneWord;
+    m_filterOneWordHasBeenSet = true;
+}
+
+bool AgentConfig::FilterOneWordHasBeenSet() const
+{
+    return m_filterOneWordHasBeenSet;
 }
 

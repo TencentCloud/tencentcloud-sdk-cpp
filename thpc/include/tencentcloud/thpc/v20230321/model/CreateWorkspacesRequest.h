@@ -115,15 +115,15 @@ namespace TencentCloud
                     bool SpaceChargePrepaidHasBeenSet() const;
 
                     /**
-                     * 获取工作空间计费类型
-                     * @return SpaceChargeType 工作空间计费类型
+                     * 获取工作空间计费类型，包括：PREPAID，UNDERWRITE。工作空间计费类型，包括：PREPAID，UNDERWRITE。
+                     * @return SpaceChargeType 工作空间计费类型，包括：PREPAID，UNDERWRITE。工作空间计费类型，包括：PREPAID，UNDERWRITE。
                      * 
                      */
                     std::string GetSpaceChargeType() const;
 
                     /**
-                     * 设置工作空间计费类型
-                     * @param _spaceChargeType 工作空间计费类型
+                     * 设置工作空间计费类型，包括：PREPAID，UNDERWRITE。工作空间计费类型，包括：PREPAID，UNDERWRITE。
+                     * @param _spaceChargeType 工作空间计费类型，包括：PREPAID，UNDERWRITE。工作空间计费类型，包括：PREPAID，UNDERWRITE。
                      * 
                      */
                     void SetSpaceChargeType(const std::string& _spaceChargeType);
@@ -534,7 +534,7 @@ namespace TencentCloud
                     bool m_spaceChargePrepaidHasBeenSet;
 
                     /**
-                     * 工作空间计费类型
+                     * 工作空间计费类型，包括：PREPAID，UNDERWRITE。工作空间计费类型，包括：PREPAID，UNDERWRITE。
                      */
                     std::string m_spaceChargeType;
                     bool m_spaceChargeTypeHasBeenSet;

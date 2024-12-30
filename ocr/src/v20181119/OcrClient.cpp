@@ -1158,6 +1158,92 @@ OcrClient::GeneralHandwritingOCROutcomeCallable OcrClient::GeneralHandwritingOCR
     return task->get_future();
 }
 
+OcrClient::GetOCRResultOutcome OcrClient::GetOCRResult(const GetOCRResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetOCRResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetOCRResultResponse rsp = GetOCRResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetOCRResultOutcome(rsp);
+        else
+            return GetOCRResultOutcome(o.GetError());
+    }
+    else
+    {
+        return GetOCRResultOutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::GetOCRResultAsync(const GetOCRResultRequest& request, const GetOCRResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetOCRResult(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OcrClient::GetOCRResultOutcomeCallable OcrClient::GetOCRResultCallable(const GetOCRResultRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetOCRResultOutcome()>>(
+        [this, request]()
+        {
+            return this->GetOCRResult(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OcrClient::GetOCRTokenOutcome OcrClient::GetOCRToken(const GetOCRTokenRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetOCRToken");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetOCRTokenResponse rsp = GetOCRTokenResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetOCRTokenOutcome(rsp);
+        else
+            return GetOCRTokenOutcome(o.GetError());
+    }
+    else
+    {
+        return GetOCRTokenOutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::GetOCRTokenAsync(const GetOCRTokenRequest& request, const GetOCRTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetOCRToken(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OcrClient::GetOCRTokenOutcomeCallable OcrClient::GetOCRTokenCallable(const GetOCRTokenRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetOCRTokenOutcome()>>(
+        [this, request]()
+        {
+            return this->GetOCRToken(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OcrClient::GetTaskStateOutcome OcrClient::GetTaskState(const GetTaskStateRequest &request)
 {
     auto outcome = MakeRequest(request, "GetTaskState");

@@ -55,6 +55,8 @@
 #include <tencentcloud/trocket/v20230308/model/DeleteRoleResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DeleteTopicRequest.h>
 #include <tencentcloud/trocket/v20230308/model/DeleteTopicResponse.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeConsumerClientRequest.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeConsumerClientResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeConsumerGroupRequest.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeConsumerGroupResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeConsumerGroupListRequest.h>
@@ -191,6 +193,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteTopicResponse> DeleteTopicOutcome;
                 typedef std::future<DeleteTopicOutcome> DeleteTopicOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::DeleteTopicRequest&, DeleteTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTopicAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeConsumerClientResponse> DescribeConsumerClientOutcome;
+                typedef std::future<DescribeConsumerClientOutcome> DescribeConsumerClientOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::DescribeConsumerClientRequest&, DescribeConsumerClientOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConsumerClientAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeConsumerGroupResponse> DescribeConsumerGroupOutcome;
                 typedef std::future<DescribeConsumerGroupOutcome> DescribeConsumerGroupOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::DescribeConsumerGroupRequest&, DescribeConsumerGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConsumerGroupAsyncHandler;
@@ -448,6 +453,15 @@ namespace TencentCloud
                 DeleteTopicOutcome DeleteTopic(const Model::DeleteTopicRequest &request);
                 void DeleteTopicAsync(const Model::DeleteTopicRequest& request, const DeleteTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteTopicOutcomeCallable DeleteTopicCallable(const Model::DeleteTopicRequest& request);
+
+                /**
+                 *查询消费者客户端详情
+                 * @param req DescribeConsumerClientRequest
+                 * @return DescribeConsumerClientOutcome
+                 */
+                DescribeConsumerClientOutcome DescribeConsumerClient(const Model::DescribeConsumerClientRequest &request);
+                void DescribeConsumerClientAsync(const Model::DescribeConsumerClientRequest& request, const DescribeConsumerClientAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeConsumerClientOutcomeCallable DescribeConsumerClientCallable(const Model::DescribeConsumerClientRequest& request);
 
                 /**
                  *查询消费组详情

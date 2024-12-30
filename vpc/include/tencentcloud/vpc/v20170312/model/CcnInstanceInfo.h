@@ -46,7 +46,34 @@ namespace TencentCloud
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
+                    /**
+                     * 获取云联网唯一ID。
+                     * @return CcnId 云联网唯一ID。
+                     * 
+                     */
+                    std::string GetCcnId() const;
+
+                    /**
+                     * 设置云联网唯一ID。
+                     * @param _ccnId 云联网唯一ID。
+                     * 
+                     */
+                    void SetCcnId(const std::string& _ccnId);
+
+                    /**
+                     * 判断参数 CcnId 是否已赋值
+                     * @return CcnId 是否已赋值
+                     * 
+                     */
+                    bool CcnIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 云联网唯一ID。
+                     */
+                    std::string m_ccnId;
+                    bool m_ccnIdHasBeenSet;
 
                 };
             }

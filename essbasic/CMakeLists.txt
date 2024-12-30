@@ -168,6 +168,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/CreateSignUrlsRequest.h
   include/tencentcloud/essbasic/v20210526/model/RegistrationOrganizationInfo.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateMultiFlowSignQRCodeRequest.h
+  include/tencentcloud/essbasic/v20210526/model/OrganizationAuthorizationOptions.h
   include/tencentcloud/essbasic/v20210526/model/SignQrCode.h
   include/tencentcloud/essbasic/v20210526/model/FlowApproverInfo.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateUserAutoSignEnableUrlResponse.h
@@ -556,6 +557,7 @@ set(essbasic_src
   src/v20210526/model/CreateSignUrlsRequest.cpp
   src/v20210526/model/RegistrationOrganizationInfo.cpp
   src/v20210526/model/ChannelCreateMultiFlowSignQRCodeRequest.cpp
+  src/v20210526/model/OrganizationAuthorizationOptions.cpp
   src/v20210526/model/SignQrCode.cpp
   src/v20210526/model/FlowApproverInfo.cpp
   src/v20210526/model/ChannelCreateUserAutoSignEnableUrlResponse.cpp

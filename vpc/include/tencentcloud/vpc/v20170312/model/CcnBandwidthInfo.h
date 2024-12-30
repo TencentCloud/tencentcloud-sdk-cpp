@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取带宽所属的云联网ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CcnId 带宽所属的云联网ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCcnId() const;
 
                     /**
                      * 设置带宽所属的云联网ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ccnId 带宽所属的云联网ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCcnId(const std::string& _ccnId);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例的创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedTime 实例的创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置实例的创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createdTime 实例的创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -100,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例的过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpiredTime 实例的过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExpiredTime() const;
 
                     /**
                      * 设置实例的过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _expiredTime 实例的过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExpiredTime(const std::string& _expiredTime);
@@ -125,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取带宽实例的唯一ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionFlowControlId 带宽实例的唯一ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegionFlowControlId() const;
 
                     /**
                      * 设置带宽实例的唯一ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _regionFlowControlId 带宽实例的唯一ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegionFlowControlId(const std::string& _regionFlowControlId);
@@ -150,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取带宽是否自动续费的标记。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RenewFlag 带宽是否自动续费的标记。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRenewFlag() const;
 
                     /**
                      * 设置带宽是否自动续费的标记。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _renewFlag 带宽是否自动续费的标记。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRenewFlag(const std::string& _renewFlag);
@@ -175,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取描述带宽的地域和限速上限信息。在地域间限速的情况下才会返回参数，出口限速模式不返回。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CcnRegionBandwidthLimit 描述带宽的地域和限速上限信息。在地域间限速的情况下才会返回参数，出口限速模式不返回。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CcnRegionBandwidthLimit GetCcnRegionBandwidthLimit() const;
 
                     /**
                      * 设置描述带宽的地域和限速上限信息。在地域间限速的情况下才会返回参数，出口限速模式不返回。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ccnRegionBandwidthLimit 描述带宽的地域和限速上限信息。在地域间限速的情况下才会返回参数，出口限速模式不返回。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCcnRegionBandwidthLimit(const CcnRegionBandwidthLimit& _ccnRegionBandwidthLimit);
@@ -200,18 +176,14 @@ namespace TencentCloud
 
                     /**
                      * 获取云市场实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MarketId 云市场实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMarketId() const;
 
                     /**
                      * 设置云市场实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _marketId 云市场实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMarketId(const std::string& _marketId);
@@ -225,18 +197,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源绑定的标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagSet 资源绑定的标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTagSet() const;
 
                     /**
                      * 设置资源绑定的标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tagSet 资源绑定的标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTagSet(const std::vector<Tag>& _tagSet);
@@ -248,63 +216,109 @@ namespace TencentCloud
                      */
                     bool TagSetHasBeenSet() const;
 
+                    /**
+                     * 获取`true表示`Qos默认带宽；`false`表示非Qos默认带宽；
+                     * @return DefaultQosBandwidthFlag `true表示`Qos默认带宽；`false`表示非Qos默认带宽；
+                     * 
+                     */
+                    bool GetDefaultQosBandwidthFlag() const;
+
+                    /**
+                     * 设置`true表示`Qos默认带宽；`false`表示非Qos默认带宽；
+                     * @param _defaultQosBandwidthFlag `true表示`Qos默认带宽；`false`表示非Qos默认带宽；
+                     * 
+                     */
+                    void SetDefaultQosBandwidthFlag(const bool& _defaultQosBandwidthFlag);
+
+                    /**
+                     * 判断参数 DefaultQosBandwidthFlag 是否已赋值
+                     * @return DefaultQosBandwidthFlag 是否已赋值
+                     * 
+                     */
+                    bool DefaultQosBandwidthFlagHasBeenSet() const;
+
+                    /**
+                     * 获取服务等级信息。
+                     * @return QosLevel 服务等级信息。
+                     * 
+                     */
+                    std::string GetQosLevel() const;
+
+                    /**
+                     * 设置服务等级信息。
+                     * @param _qosLevel 服务等级信息。
+                     * 
+                     */
+                    void SetQosLevel(const std::string& _qosLevel);
+
+                    /**
+                     * 判断参数 QosLevel 是否已赋值
+                     * @return QosLevel 是否已赋值
+                     * 
+                     */
+                    bool QosLevelHasBeenSet() const;
+
                 private:
 
                     /**
                      * 带宽所属的云联网ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ccnId;
                     bool m_ccnIdHasBeenSet;
 
                     /**
                      * 实例的创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
 
                     /**
                      * 实例的过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_expiredTime;
                     bool m_expiredTimeHasBeenSet;
 
                     /**
                      * 带宽实例的唯一ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_regionFlowControlId;
                     bool m_regionFlowControlIdHasBeenSet;
 
                     /**
                      * 带宽是否自动续费的标记。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_renewFlag;
                     bool m_renewFlagHasBeenSet;
 
                     /**
                      * 描述带宽的地域和限速上限信息。在地域间限速的情况下才会返回参数，出口限速模式不返回。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CcnRegionBandwidthLimit m_ccnRegionBandwidthLimit;
                     bool m_ccnRegionBandwidthLimitHasBeenSet;
 
                     /**
                      * 云市场实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_marketId;
                     bool m_marketIdHasBeenSet;
 
                     /**
                      * 资源绑定的标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tagSet;
                     bool m_tagSetHasBeenSet;
+
+                    /**
+                     * `true表示`Qos默认带宽；`false`表示非Qos默认带宽；
+                     */
+                    bool m_defaultQosBandwidthFlag;
+                    bool m_defaultQosBandwidthFlagHasBeenSet;
+
+                    /**
+                     * 服务等级信息。
+                     */
+                    std::string m_qosLevel;
+                    bool m_qosLevelHasBeenSet;
 
                 };
             }

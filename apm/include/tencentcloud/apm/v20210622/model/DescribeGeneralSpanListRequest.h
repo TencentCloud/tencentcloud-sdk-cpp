@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool OrderByHasBeenSet() const;
 
                     /**
-                     * 获取span查询开始时间戳（单位:秒）
-                     * @return StartTime span查询开始时间戳（单位:秒）
+                     * 获取Span查询开始时间戳（单位:秒）
+                     * @return StartTime Span查询开始时间戳（单位:秒）
                      * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
-                     * 设置span查询开始时间戳（单位:秒）
-                     * @param _startTime span查询开始时间戳（单位:秒）
+                     * 设置Span查询开始时间戳（单位:秒）
+                     * @param _startTime Span查询开始时间戳（单位:秒）
                      * 
                      */
                     void SetStartTime(const int64_t& _startTime);
@@ -129,15 +129,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取业务系统ID
-                     * @return InstanceId 业务系统ID
+                     * 获取业务系统 ID
+                     * @return InstanceId 业务系统 ID
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置业务系统ID
-                     * @param _instanceId 业务系统ID
+                     * 设置业务系统 ID
+                     * @param _instanceId 业务系统 ID
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -192,15 +192,15 @@ namespace TencentCloud
                     bool BusinessNameHasBeenSet() const;
 
                     /**
-                     * 获取span查询结束时间戳（单位:秒）
-                     * @return EndTime span查询结束时间戳（单位:秒）
+                     * 获取Span查询结束时间戳（单位:秒）
+                     * @return EndTime Span查询结束时间戳（单位:秒）
                      * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
-                     * 设置span查询结束时间戳（单位:秒）
-                     * @param _endTime span查询结束时间戳（单位:秒）
+                     * 设置Span查询结束时间戳（单位:秒）
+                     * @param _endTime Span查询结束时间戳（单位:秒）
                      * 
                      */
                     void SetEndTime(const int64_t& _endTime);
@@ -233,13 +233,13 @@ namespace TencentCloud
                     bool m_orderByHasBeenSet;
 
                     /**
-                     * span查询开始时间戳（单位:秒）
+                     * Span查询开始时间戳（单位:秒）
                      */
                     int64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 业务系统ID
+                     * 业务系统 ID
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -257,7 +257,7 @@ namespace TencentCloud
                     bool m_businessNameHasBeenSet;
 
                     /**
-                     * span查询结束时间戳（单位:秒）
+                     * Span查询结束时间戳（单位:秒）
                      */
                     int64_t m_endTime;
                     bool m_endTimeHasBeenSet;

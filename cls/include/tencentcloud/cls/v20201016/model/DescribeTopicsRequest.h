@@ -173,22 +173,22 @@ namespace TencentCloud
 
                     /**
                      * 获取主题类型
-<ul><li>0:日志主题，默认值</li>
-<li>1:指标主题</li></ul>
+- 0:日志主题，默认值
+- 1:指标主题
                      * @return BizType 主题类型
-<ul><li>0:日志主题，默认值</li>
-<li>1:指标主题</li></ul>
+- 0:日志主题，默认值
+- 1:指标主题
                      * 
                      */
                     uint64_t GetBizType() const;
 
                     /**
                      * 设置主题类型
-<ul><li>0:日志主题，默认值</li>
-<li>1:指标主题</li></ul>
+- 0:日志主题，默认值
+- 1:指标主题
                      * @param _bizType 主题类型
-<ul><li>0:日志主题，默认值</li>
-<li>1:指标主题</li></ul>
+- 0:日志主题，默认值
+- 1:指标主题
                      * 
                      */
                     void SetBizType(const uint64_t& _bizType);
@@ -239,8 +239,8 @@ namespace TencentCloud
 
                     /**
                      * 主题类型
-<ul><li>0:日志主题，默认值</li>
-<li>1:指标主题</li></ul>
+- 0:日志主题，默认值
+- 1:指标主题
                      */
                     uint64_t m_bizType;
                     bool m_bizTypeHasBeenSet;

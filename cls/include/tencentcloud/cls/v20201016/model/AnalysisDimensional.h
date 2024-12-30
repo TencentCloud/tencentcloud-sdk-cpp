@@ -164,7 +164,6 @@ namespace TencentCloud
     "Key": "SyntaxRule", // 查不到这个字段也是老语法
     "Value": "0"//0:Lucene, 1:CQL
 }
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigInfo 多维分析配置。
 
 当Analysis的Type字段为query（自定义）时，支持
@@ -206,7 +205,6 @@ namespace TencentCloud
     "Key": "SyntaxRule", // 查不到这个字段也是老语法
     "Value": "0"//0:Lucene, 1:CQL
 }
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AlarmAnalysisConfig> GetConfigInfo() const;
@@ -253,7 +251,6 @@ namespace TencentCloud
     "Key": "SyntaxRule", // 查不到这个字段也是老语法
     "Value": "0"//0:Lucene, 1:CQL
 }
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _configInfo 多维分析配置。
 
 当Analysis的Type字段为query（自定义）时，支持
@@ -295,7 +292,6 @@ namespace TencentCloud
     "Key": "SyntaxRule", // 查不到这个字段也是老语法
     "Value": "0"//0:Lucene, 1:CQL
 }
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConfigInfo(const std::vector<AlarmAnalysisConfig>& _configInfo);
@@ -372,7 +368,6 @@ namespace TencentCloud
     "Key": "SyntaxRule", // 查不到这个字段也是老语法
     "Value": "0"//0:Lucene, 1:CQL
 }
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AlarmAnalysisConfig> m_configInfo;
                     bool m_configInfoHasBeenSet;

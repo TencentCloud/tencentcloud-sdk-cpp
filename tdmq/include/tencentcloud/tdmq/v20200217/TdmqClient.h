@@ -87,6 +87,8 @@
 #include <tencentcloud/tdmq/v20200217/model/DeleteProClusterResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DeleteRabbitMQBindingRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DeleteRabbitMQBindingResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DeleteRabbitMQPermissionRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DeleteRabbitMQPermissionResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DeleteRabbitMQUserRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DeleteRabbitMQUserResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DeleteRabbitMQVipInstanceRequest.h>
@@ -165,6 +167,8 @@
 #include <tencentcloud/tdmq/v20200217/model/DescribeRabbitMQExchangesResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRabbitMQNodeListRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRabbitMQNodeListResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRabbitMQPermissionRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRabbitMQPermissionResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRabbitMQQueueDetailRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRabbitMQQueueDetailResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRabbitMQQueuesRequest.h>
@@ -261,6 +265,8 @@
 #include <tencentcloud/tdmq/v20200217/model/ModifyPublicNetworkAccessPointResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyPublicNetworkSecurityPolicyRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyPublicNetworkSecurityPolicyResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/ModifyRabbitMQPermissionRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/ModifyRabbitMQPermissionResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyRabbitMQUserRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyRabbitMQUserResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyRabbitMQVipInstanceRequest.h>
@@ -425,6 +431,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteRabbitMQBindingResponse> DeleteRabbitMQBindingOutcome;
                 typedef std::future<DeleteRabbitMQBindingOutcome> DeleteRabbitMQBindingOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DeleteRabbitMQBindingRequest&, DeleteRabbitMQBindingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRabbitMQBindingAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteRabbitMQPermissionResponse> DeleteRabbitMQPermissionOutcome;
+                typedef std::future<DeleteRabbitMQPermissionOutcome> DeleteRabbitMQPermissionOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DeleteRabbitMQPermissionRequest&, DeleteRabbitMQPermissionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRabbitMQPermissionAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteRabbitMQUserResponse> DeleteRabbitMQUserOutcome;
                 typedef std::future<DeleteRabbitMQUserOutcome> DeleteRabbitMQUserOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DeleteRabbitMQUserRequest&, DeleteRabbitMQUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRabbitMQUserAsyncHandler;
@@ -542,6 +551,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRabbitMQNodeListResponse> DescribeRabbitMQNodeListOutcome;
                 typedef std::future<DescribeRabbitMQNodeListOutcome> DescribeRabbitMQNodeListOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeRabbitMQNodeListRequest&, DescribeRabbitMQNodeListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRabbitMQNodeListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRabbitMQPermissionResponse> DescribeRabbitMQPermissionOutcome;
+                typedef std::future<DescribeRabbitMQPermissionOutcome> DescribeRabbitMQPermissionOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeRabbitMQPermissionRequest&, DescribeRabbitMQPermissionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRabbitMQPermissionAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRabbitMQQueueDetailResponse> DescribeRabbitMQQueueDetailOutcome;
                 typedef std::future<DescribeRabbitMQQueueDetailOutcome> DescribeRabbitMQQueueDetailOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeRabbitMQQueueDetailRequest&, DescribeRabbitMQQueueDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRabbitMQQueueDetailAsyncHandler;
@@ -686,6 +698,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyPublicNetworkSecurityPolicyResponse> ModifyPublicNetworkSecurityPolicyOutcome;
                 typedef std::future<ModifyPublicNetworkSecurityPolicyOutcome> ModifyPublicNetworkSecurityPolicyOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::ModifyPublicNetworkSecurityPolicyRequest&, ModifyPublicNetworkSecurityPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPublicNetworkSecurityPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyRabbitMQPermissionResponse> ModifyRabbitMQPermissionOutcome;
+                typedef std::future<ModifyRabbitMQPermissionOutcome> ModifyRabbitMQPermissionOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::ModifyRabbitMQPermissionRequest&, ModifyRabbitMQPermissionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRabbitMQPermissionAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyRabbitMQUserResponse> ModifyRabbitMQUserOutcome;
                 typedef std::future<ModifyRabbitMQUserOutcome> ModifyRabbitMQUserOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::ModifyRabbitMQUserRequest&, ModifyRabbitMQUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRabbitMQUserAsyncHandler;
@@ -1059,6 +1074,15 @@ namespace TencentCloud
                 DeleteRabbitMQBindingOutcomeCallable DeleteRabbitMQBindingCallable(const Model::DeleteRabbitMQBindingRequest& request);
 
                 /**
+                 *删除RabbitMQ的权限
+                 * @param req DeleteRabbitMQPermissionRequest
+                 * @return DeleteRabbitMQPermissionOutcome
+                 */
+                DeleteRabbitMQPermissionOutcome DeleteRabbitMQPermission(const Model::DeleteRabbitMQPermissionRequest &request);
+                void DeleteRabbitMQPermissionAsync(const Model::DeleteRabbitMQPermissionRequest& request, const DeleteRabbitMQPermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteRabbitMQPermissionOutcomeCallable DeleteRabbitMQPermissionCallable(const Model::DeleteRabbitMQPermissionRequest& request);
+
+                /**
                  *删除RabbitMQ的用户
                  * @param req DeleteRabbitMQUserRequest
                  * @return DeleteRabbitMQUserOutcome
@@ -1410,6 +1434,15 @@ namespace TencentCloud
                 DescribeRabbitMQNodeListOutcome DescribeRabbitMQNodeList(const Model::DescribeRabbitMQNodeListRequest &request);
                 void DescribeRabbitMQNodeListAsync(const Model::DescribeRabbitMQNodeListRequest& request, const DescribeRabbitMQNodeListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRabbitMQNodeListOutcomeCallable DescribeRabbitMQNodeListCallable(const Model::DescribeRabbitMQNodeListRequest& request);
+
+                /**
+                 *查询RabbitMQ权限列表
+                 * @param req DescribeRabbitMQPermissionRequest
+                 * @return DescribeRabbitMQPermissionOutcome
+                 */
+                DescribeRabbitMQPermissionOutcome DescribeRabbitMQPermission(const Model::DescribeRabbitMQPermissionRequest &request);
+                void DescribeRabbitMQPermissionAsync(const Model::DescribeRabbitMQPermissionRequest& request, const DescribeRabbitMQPermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRabbitMQPermissionOutcomeCallable DescribeRabbitMQPermissionCallable(const Model::DescribeRabbitMQPermissionRequest& request);
 
                 /**
                  *查询RabbitMQ队列详情
@@ -1846,6 +1879,15 @@ RabbitMQ专享版查询虚拟主机列表
                 ModifyPublicNetworkSecurityPolicyOutcome ModifyPublicNetworkSecurityPolicy(const Model::ModifyPublicNetworkSecurityPolicyRequest &request);
                 void ModifyPublicNetworkSecurityPolicyAsync(const Model::ModifyPublicNetworkSecurityPolicyRequest& request, const ModifyPublicNetworkSecurityPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyPublicNetworkSecurityPolicyOutcomeCallable ModifyPublicNetworkSecurityPolicyCallable(const Model::ModifyPublicNetworkSecurityPolicyRequest& request);
+
+                /**
+                 *修改RabbitMQ的权限
+                 * @param req ModifyRabbitMQPermissionRequest
+                 * @return ModifyRabbitMQPermissionOutcome
+                 */
+                ModifyRabbitMQPermissionOutcome ModifyRabbitMQPermission(const Model::ModifyRabbitMQPermissionRequest &request);
+                void ModifyRabbitMQPermissionAsync(const Model::ModifyRabbitMQPermissionRequest& request, const ModifyRabbitMQPermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyRabbitMQPermissionOutcomeCallable ModifyRabbitMQPermissionCallable(const Model::ModifyRabbitMQPermissionRequest& request);
 
                 /**
                  *修改RabbitMQ的用户

@@ -1158,6 +1158,49 @@ ClsClient::CreateTopicOutcomeCallable ClsClient::CreateTopicCallable(const Creat
     return task->get_future();
 }
 
+ClsClient::CreateWebCallbackOutcome ClsClient::CreateWebCallback(const CreateWebCallbackRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateWebCallback");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateWebCallbackResponse rsp = CreateWebCallbackResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateWebCallbackOutcome(rsp);
+        else
+            return CreateWebCallbackOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateWebCallbackOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::CreateWebCallbackAsync(const CreateWebCallbackRequest& request, const CreateWebCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateWebCallback(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::CreateWebCallbackOutcomeCallable ClsClient::CreateWebCallbackCallable(const CreateWebCallbackRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateWebCallbackOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateWebCallback(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClsClient::DeleteAlarmOutcome ClsClient::DeleteAlarm(const DeleteAlarmRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteAlarm");
@@ -2054,6 +2097,49 @@ ClsClient::DeleteTopicOutcomeCallable ClsClient::DeleteTopicCallable(const Delet
         [this, request]()
         {
             return this->DeleteTopic(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClsClient::DeleteWebCallbackOutcome ClsClient::DeleteWebCallback(const DeleteWebCallbackRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteWebCallback");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteWebCallbackResponse rsp = DeleteWebCallbackResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteWebCallbackOutcome(rsp);
+        else
+            return DeleteWebCallbackOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteWebCallbackOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DeleteWebCallbackAsync(const DeleteWebCallbackRequest& request, const DeleteWebCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteWebCallback(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::DeleteWebCallbackOutcomeCallable ClsClient::DeleteWebCallbackCallable(const DeleteWebCallbackRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteWebCallbackOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteWebCallback(request);
         }
     );
 
@@ -3351,6 +3437,49 @@ ClsClient::DescribeTopicsOutcomeCallable ClsClient::DescribeTopicsCallable(const
     return task->get_future();
 }
 
+ClsClient::DescribeWebCallbacksOutcome ClsClient::DescribeWebCallbacks(const DescribeWebCallbacksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeWebCallbacks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeWebCallbacksResponse rsp = DescribeWebCallbacksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeWebCallbacksOutcome(rsp);
+        else
+            return DescribeWebCallbacksOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeWebCallbacksOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DescribeWebCallbacksAsync(const DescribeWebCallbacksRequest& request, const DescribeWebCallbacksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeWebCallbacks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::DescribeWebCallbacksOutcomeCallable ClsClient::DescribeWebCallbacksCallable(const DescribeWebCallbacksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeWebCallbacksOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeWebCallbacks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClsClient::GetAlarmLogOutcome ClsClient::GetAlarmLog(const GetAlarmLogRequest &request)
 {
     auto outcome = MakeRequest(request, "GetAlarmLog");
@@ -4290,6 +4419,49 @@ ClsClient::ModifyTopicOutcomeCallable ClsClient::ModifyTopicCallable(const Modif
         [this, request]()
         {
             return this->ModifyTopic(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClsClient::ModifyWebCallbackOutcome ClsClient::ModifyWebCallback(const ModifyWebCallbackRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyWebCallback");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyWebCallbackResponse rsp = ModifyWebCallbackResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyWebCallbackOutcome(rsp);
+        else
+            return ModifyWebCallbackOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyWebCallbackOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::ModifyWebCallbackAsync(const ModifyWebCallbackRequest& request, const ModifyWebCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyWebCallback(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::ModifyWebCallbackOutcomeCallable ClsClient::ModifyWebCallbackCallable(const ModifyWebCallbackRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyWebCallbackOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyWebCallback(request);
         }
     );
 

@@ -106,27 +106,6 @@ namespace TencentCloud
                     bool RecordLineHasBeenSet() const;
 
                     /**
-                     * 获取记录值，如 IP : 200.200.200.200， CNAME : cname.dnspod.com.， MX : mail.dnspod.com.。
-                     * @return Value 记录值，如 IP : 200.200.200.200， CNAME : cname.dnspod.com.， MX : mail.dnspod.com.。
-                     * 
-                     */
-                    std::string GetValue() const;
-
-                    /**
-                     * 设置记录值，如 IP : 200.200.200.200， CNAME : cname.dnspod.com.， MX : mail.dnspod.com.。
-                     * @param _value 记录值，如 IP : 200.200.200.200， CNAME : cname.dnspod.com.， MX : mail.dnspod.com.。
-                     * 
-                     */
-                    void SetValue(const std::string& _value);
-
-                    /**
-                     * 判断参数 Value 是否已赋值
-                     * @return Value 是否已赋值
-                     * 
-                     */
-                    bool ValueHasBeenSet() const;
-
-                    /**
                      * 获取域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
                      * @return DomainId 域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
                      * 
@@ -190,6 +169,27 @@ namespace TencentCloud
                     bool RecordLineIdHasBeenSet() const;
 
                     /**
+                     * 获取IP 地址，支持 IPv4、IPv6，例如 119.29.29.29 或者 2402:4e00::
+                     * @return Value IP 地址，支持 IPv4、IPv6，例如 119.29.29.29 或者 2402:4e00::
+                     * 
+                     */
+                    std::string GetValue() const;
+
+                    /**
+                     * 设置IP 地址，支持 IPv4、IPv6，例如 119.29.29.29 或者 2402:4e00::
+                     * @param _value IP 地址，支持 IPv4、IPv6，例如 119.29.29.29 或者 2402:4e00::
+                     * 
+                     */
+                    void SetValue(const std::string& _value);
+
+                    /**
+                     * 判断参数 Value 是否已赋值
+                     * @return Value 是否已赋值
+                     * 
+                     */
+                    bool ValueHasBeenSet() const;
+
+                    /**
                      * 获取TTL值，如果不传，默认为域名的TTL值。
                      * @return Ttl TTL值，如果不传，默认为域名的TTL值。
                      * 
@@ -231,12 +231,6 @@ namespace TencentCloud
                     bool m_recordLineHasBeenSet;
 
                     /**
-                     * 记录值，如 IP : 200.200.200.200， CNAME : cname.dnspod.com.， MX : mail.dnspod.com.。
-                     */
-                    std::string m_value;
-                    bool m_valueHasBeenSet;
-
-                    /**
                      * 域名 ID 。参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain 。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
                      */
                     uint64_t m_domainId;
@@ -253,6 +247,12 @@ namespace TencentCloud
                      */
                     std::string m_recordLineId;
                     bool m_recordLineIdHasBeenSet;
+
+                    /**
+                     * IP 地址，支持 IPv4、IPv6，例如 119.29.29.29 或者 2402:4e00::
+                     */
+                    std::string m_value;
+                    bool m_valueHasBeenSet;
 
                     /**
                      * TTL值，如果不传，默认为域名的TTL值。

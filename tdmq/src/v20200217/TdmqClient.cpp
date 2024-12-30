@@ -1416,6 +1416,49 @@ TdmqClient::DeleteRabbitMQBindingOutcomeCallable TdmqClient::DeleteRabbitMQBindi
     return task->get_future();
 }
 
+TdmqClient::DeleteRabbitMQPermissionOutcome TdmqClient::DeleteRabbitMQPermission(const DeleteRabbitMQPermissionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteRabbitMQPermission");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteRabbitMQPermissionResponse rsp = DeleteRabbitMQPermissionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteRabbitMQPermissionOutcome(rsp);
+        else
+            return DeleteRabbitMQPermissionOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteRabbitMQPermissionOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DeleteRabbitMQPermissionAsync(const DeleteRabbitMQPermissionRequest& request, const DeleteRabbitMQPermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteRabbitMQPermission(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::DeleteRabbitMQPermissionOutcomeCallable TdmqClient::DeleteRabbitMQPermissionCallable(const DeleteRabbitMQPermissionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteRabbitMQPermissionOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteRabbitMQPermission(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TdmqClient::DeleteRabbitMQUserOutcome TdmqClient::DeleteRabbitMQUser(const DeleteRabbitMQUserRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteRabbitMQUser");
@@ -3086,6 +3129,49 @@ TdmqClient::DescribeRabbitMQNodeListOutcomeCallable TdmqClient::DescribeRabbitMQ
         [this, request]()
         {
             return this->DescribeRabbitMQNodeList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TdmqClient::DescribeRabbitMQPermissionOutcome TdmqClient::DescribeRabbitMQPermission(const DescribeRabbitMQPermissionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRabbitMQPermission");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRabbitMQPermissionResponse rsp = DescribeRabbitMQPermissionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRabbitMQPermissionOutcome(rsp);
+        else
+            return DescribeRabbitMQPermissionOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRabbitMQPermissionOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DescribeRabbitMQPermissionAsync(const DescribeRabbitMQPermissionRequest& request, const DescribeRabbitMQPermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRabbitMQPermission(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::DescribeRabbitMQPermissionOutcomeCallable TdmqClient::DescribeRabbitMQPermissionCallable(const DescribeRabbitMQPermissionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRabbitMQPermissionOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRabbitMQPermission(request);
         }
     );
 
@@ -5150,6 +5236,49 @@ TdmqClient::ModifyPublicNetworkSecurityPolicyOutcomeCallable TdmqClient::ModifyP
         [this, request]()
         {
             return this->ModifyPublicNetworkSecurityPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TdmqClient::ModifyRabbitMQPermissionOutcome TdmqClient::ModifyRabbitMQPermission(const ModifyRabbitMQPermissionRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyRabbitMQPermission");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyRabbitMQPermissionResponse rsp = ModifyRabbitMQPermissionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyRabbitMQPermissionOutcome(rsp);
+        else
+            return ModifyRabbitMQPermissionOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyRabbitMQPermissionOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::ModifyRabbitMQPermissionAsync(const ModifyRabbitMQPermissionRequest& request, const ModifyRabbitMQPermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyRabbitMQPermission(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::ModifyRabbitMQPermissionOutcomeCallable TdmqClient::ModifyRabbitMQPermissionCallable(const ModifyRabbitMQPermissionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyRabbitMQPermissionOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyRabbitMQPermission(request);
         }
     );
 

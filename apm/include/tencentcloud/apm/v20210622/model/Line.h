@@ -112,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据序列
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataSerial 数据序列
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<double> GetDataSerial() const;
 
                     /**
                      * 设置数据序列
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataSerial 数据序列
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataSerial(const std::vector<double>& _dataSerial);
@@ -137,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取维度列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 维度列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ApmTag> GetTags() const;
 
                     /**
                      * 设置维度列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 维度列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::vector<ApmTag>& _tags);
@@ -182,14 +174,12 @@ namespace TencentCloud
 
                     /**
                      * 数据序列
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<double> m_dataSerial;
                     bool m_dataSerialHasBeenSet;
 
                     /**
                      * 维度列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ApmTag> m_tags;
                     bool m_tagsHasBeenSet;

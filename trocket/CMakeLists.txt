@@ -94,6 +94,7 @@ set(trocket_public_header_model
   include/tencentcloud/trocket/v20230308/model/DescribeMessageTraceRequest.h
   include/tencentcloud/trocket/v20230308/model/CreateTopicResponse.h
   include/tencentcloud/trocket/v20230308/model/DescribeMQTTInstanceListRequest.h
+  include/tencentcloud/trocket/v20230308/model/ModifyConsumerGroupResponse.h
   include/tencentcloud/trocket/v20230308/model/CreateMQTTInstanceResponse.h
   include/tencentcloud/trocket/v20230308/model/DescribeMQTTInstanceResponse.h
   include/tencentcloud/trocket/v20230308/model/MQTTEndpointItem.h
@@ -107,7 +108,9 @@ set(trocket_public_header_model
   include/tencentcloud/trocket/v20230308/model/TopicItem.h
   include/tencentcloud/trocket/v20230308/model/SubscriptionData.h
   include/tencentcloud/trocket/v20230308/model/CreateInstanceRequest.h
+  include/tencentcloud/trocket/v20230308/model/ConsumerClient.h
   include/tencentcloud/trocket/v20230308/model/DescribeConsumerGroupResponse.h
+  include/tencentcloud/trocket/v20230308/model/DescribeConsumerClientRequest.h
   include/tencentcloud/trocket/v20230308/model/ModifyTopicResponse.h
   include/tencentcloud/trocket/v20230308/model/DescribeConsumerLagResponse.h
   include/tencentcloud/trocket/v20230308/model/DescribeMQTTInsPublicEndpointsRequest.h
@@ -121,7 +124,7 @@ set(trocket_public_header_model
   include/tencentcloud/trocket/v20230308/model/DescribeInstanceResponse.h
   include/tencentcloud/trocket/v20230308/model/PacketStatistics.h
   include/tencentcloud/trocket/v20230308/model/DeleteMQTTTopicResponse.h
-  include/tencentcloud/trocket/v20230308/model/ModifyConsumerGroupResponse.h
+  include/tencentcloud/trocket/v20230308/model/DescribeConsumerClientResponse.h
   include/tencentcloud/trocket/v20230308/model/DescribeMQTTInstanceCertRequest.h
   include/tencentcloud/trocket/v20230308/model/MessageTrackItem.h
   include/tencentcloud/trocket/v20230308/model/ModifyMQTTInsPublicEndpointResponse.h
@@ -136,6 +139,7 @@ set(trocket_public_header_model
   include/tencentcloud/trocket/v20230308/model/ModifyMQTTInstanceResponse.h
   include/tencentcloud/trocket/v20230308/model/CreateMQTTInstanceRequest.h
   include/tencentcloud/trocket/v20230308/model/DescribeTopicListResponse.h
+  include/tencentcloud/trocket/v20230308/model/TopicConsumeStats.h
   include/tencentcloud/trocket/v20230308/model/DescribeMQTTTopicRequest.h
   include/tencentcloud/trocket/v20230308/model/CreateRoleRequest.h
   include/tencentcloud/trocket/v20230308/model/DeleteConsumerGroupResponse.h
@@ -235,6 +239,7 @@ set(trocket_src
   src/v20230308/model/DescribeMessageTraceRequest.cpp
   src/v20230308/model/CreateTopicResponse.cpp
   src/v20230308/model/DescribeMQTTInstanceListRequest.cpp
+  src/v20230308/model/ModifyConsumerGroupResponse.cpp
   src/v20230308/model/CreateMQTTInstanceResponse.cpp
   src/v20230308/model/DescribeMQTTInstanceResponse.cpp
   src/v20230308/model/MQTTEndpointItem.cpp
@@ -248,7 +253,9 @@ set(trocket_src
   src/v20230308/model/TopicItem.cpp
   src/v20230308/model/SubscriptionData.cpp
   src/v20230308/model/CreateInstanceRequest.cpp
+  src/v20230308/model/ConsumerClient.cpp
   src/v20230308/model/DescribeConsumerGroupResponse.cpp
+  src/v20230308/model/DescribeConsumerClientRequest.cpp
   src/v20230308/model/ModifyTopicResponse.cpp
   src/v20230308/model/DescribeConsumerLagResponse.cpp
   src/v20230308/model/DescribeMQTTInsPublicEndpointsRequest.cpp
@@ -262,7 +269,7 @@ set(trocket_src
   src/v20230308/model/DescribeInstanceResponse.cpp
   src/v20230308/model/PacketStatistics.cpp
   src/v20230308/model/DeleteMQTTTopicResponse.cpp
-  src/v20230308/model/ModifyConsumerGroupResponse.cpp
+  src/v20230308/model/DescribeConsumerClientResponse.cpp
   src/v20230308/model/DescribeMQTTInstanceCertRequest.cpp
   src/v20230308/model/MessageTrackItem.cpp
   src/v20230308/model/ModifyMQTTInsPublicEndpointResponse.cpp
@@ -277,6 +284,7 @@ set(trocket_src
   src/v20230308/model/ModifyMQTTInstanceResponse.cpp
   src/v20230308/model/CreateMQTTInstanceRequest.cpp
   src/v20230308/model/DescribeTopicListResponse.cpp
+  src/v20230308/model/TopicConsumeStats.cpp
   src/v20230308/model/DescribeMQTTTopicRequest.cpp
   src/v20230308/model/CreateRoleRequest.cpp
   src/v20230308/model/DeleteConsumerGroupResponse.cpp

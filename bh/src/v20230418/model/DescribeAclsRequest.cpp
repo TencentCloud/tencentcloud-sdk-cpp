@@ -32,6 +32,7 @@ DescribeAclsRequest::DescribeAclsRequest() :
     m_authorizedDeviceIdSetHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_departmentIdHasBeenSet(false),
+    m_exactAccountHasBeenSet(false),
     m_filtersHasBeenSet(false)
 {
 }
@@ -128,6 +129,14 @@ string DescribeAclsRequest::ToJsonString() const
         string key = "DepartmentId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_departmentId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_exactAccountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExactAccount";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_exactAccount, allocator);
     }
 
     if (m_filtersHasBeenSet)
@@ -295,6 +304,22 @@ void DescribeAclsRequest::SetDepartmentId(const string& _departmentId)
 bool DescribeAclsRequest::DepartmentIdHasBeenSet() const
 {
     return m_departmentIdHasBeenSet;
+}
+
+bool DescribeAclsRequest::GetExactAccount() const
+{
+    return m_exactAccount;
+}
+
+void DescribeAclsRequest::SetExactAccount(const bool& _exactAccount)
+{
+    m_exactAccount = _exactAccount;
+    m_exactAccountHasBeenSet = true;
+}
+
+bool DescribeAclsRequest::ExactAccountHasBeenSet() const
+{
+    return m_exactAccountHasBeenSet;
 }
 
 vector<Filter> DescribeAclsRequest::GetFilters() const

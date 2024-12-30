@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/essbasic/v20210526/model/Agent.h>
 #include <tencentcloud/essbasic/v20210526/model/UserInfo.h>
+#include <tencentcloud/essbasic/v20210526/model/OrganizationAuthorizationOptions.h>
 
 
 namespace TencentCloud
@@ -636,6 +637,123 @@ namespace TencentCloud
                      */
                     bool AutoActiveHasBeenSet() const;
 
+                    /**
+                     * 获取营业执照正面照（支持PNG或JPG格式）需以base64格式提供，且文件大小不得超过5MB。
+                     * @return BusinessLicense 营业执照正面照（支持PNG或JPG格式）需以base64格式提供，且文件大小不得超过5MB。
+                     * 
+                     */
+                    std::string GetBusinessLicense() const;
+
+                    /**
+                     * 设置营业执照正面照（支持PNG或JPG格式）需以base64格式提供，且文件大小不得超过5MB。
+                     * @param _businessLicense 营业执照正面照（支持PNG或JPG格式）需以base64格式提供，且文件大小不得超过5MB。
+                     * 
+                     */
+                    void SetBusinessLicense(const std::string& _businessLicense);
+
+                    /**
+                     * 判断参数 BusinessLicense 是否已赋值
+                     * @return BusinessLicense 是否已赋值
+                     * 
+                     */
+                    bool BusinessLicenseHasBeenSet() const;
+
+                    /**
+                     * 获取组织机构企业注册地址。 请确认该企业注册地址与企业营业执照中注册的地址一致。	
+                     * @return ProxyAddress 组织机构企业注册地址。 请确认该企业注册地址与企业营业执照中注册的地址一致。	
+                     * 
+                     */
+                    std::string GetProxyAddress() const;
+
+                    /**
+                     * 设置组织机构企业注册地址。 请确认该企业注册地址与企业营业执照中注册的地址一致。	
+                     * @param _proxyAddress 组织机构企业注册地址。 请确认该企业注册地址与企业营业执照中注册的地址一致。	
+                     * 
+                     */
+                    void SetProxyAddress(const std::string& _proxyAddress);
+
+                    /**
+                     * 判断参数 ProxyAddress 是否已赋值
+                     * @return ProxyAddress 是否已赋值
+                     * 
+                     */
+                    bool ProxyAddressHasBeenSet() const;
+
+                    /**
+                     * 获取组织机构法人的姓名。 请确认该企业统一社会信用代码与企业营业执照中注册的法人姓名一致。	
+                     * @return ProxyLegalName 组织机构法人的姓名。 请确认该企业统一社会信用代码与企业营业执照中注册的法人姓名一致。	
+                     * 
+                     */
+                    std::string GetProxyLegalName() const;
+
+                    /**
+                     * 设置组织机构法人的姓名。 请确认该企业统一社会信用代码与企业营业执照中注册的法人姓名一致。	
+                     * @param _proxyLegalName 组织机构法人的姓名。 请确认该企业统一社会信用代码与企业营业执照中注册的法人姓名一致。	
+                     * 
+                     */
+                    void SetProxyLegalName(const std::string& _proxyLegalName);
+
+                    /**
+                     * 判断参数 ProxyLegalName 是否已赋值
+                     * @return ProxyLegalName 是否已赋值
+                     * 
+                     */
+                    bool ProxyLegalNameHasBeenSet() const;
+
+                    /**
+                     * 获取授权书(PNG或JPG或PDF) base64格式, 大小不超过8M 。
+ p.s. 如果上传授权书 ，需遵循以下条件 
+1. 超管的信息（超管姓名，超管手机号）必须为必填参数。 
+2. 认证方式AuthorizationTypes必须只能是上传授权书方式	
+                     * @return PowerOfAttorneys 授权书(PNG或JPG或PDF) base64格式, 大小不超过8M 。
+ p.s. 如果上传授权书 ，需遵循以下条件 
+1. 超管的信息（超管姓名，超管手机号）必须为必填参数。 
+2. 认证方式AuthorizationTypes必须只能是上传授权书方式	
+                     * 
+                     */
+                    std::vector<std::string> GetPowerOfAttorneys() const;
+
+                    /**
+                     * 设置授权书(PNG或JPG或PDF) base64格式, 大小不超过8M 。
+ p.s. 如果上传授权书 ，需遵循以下条件 
+1. 超管的信息（超管姓名，超管手机号）必须为必填参数。 
+2. 认证方式AuthorizationTypes必须只能是上传授权书方式	
+                     * @param _powerOfAttorneys 授权书(PNG或JPG或PDF) base64格式, 大小不超过8M 。
+ p.s. 如果上传授权书 ，需遵循以下条件 
+1. 超管的信息（超管姓名，超管手机号）必须为必填参数。 
+2. 认证方式AuthorizationTypes必须只能是上传授权书方式	
+                     * 
+                     */
+                    void SetPowerOfAttorneys(const std::vector<std::string>& _powerOfAttorneys);
+
+                    /**
+                     * 判断参数 PowerOfAttorneys 是否已赋值
+                     * @return PowerOfAttorneys 是否已赋值
+                     * 
+                     */
+                    bool PowerOfAttorneysHasBeenSet() const;
+
+                    /**
+                     * 获取企业认证时个性化能力信息
+                     * @return OrganizationAuthorizationOptions 企业认证时个性化能力信息
+                     * 
+                     */
+                    OrganizationAuthorizationOptions GetOrganizationAuthorizationOptions() const;
+
+                    /**
+                     * 设置企业认证时个性化能力信息
+                     * @param _organizationAuthorizationOptions 企业认证时个性化能力信息
+                     * 
+                     */
+                    void SetOrganizationAuthorizationOptions(const OrganizationAuthorizationOptions& _organizationAuthorizationOptions);
+
+                    /**
+                     * 判断参数 OrganizationAuthorizationOptions 是否已赋值
+                     * @return OrganizationAuthorizationOptions 是否已赋值
+                     * 
+                     */
+                    bool OrganizationAuthorizationOptionsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -797,6 +915,39 @@ namespace TencentCloud
                      */
                     bool m_autoActive;
                     bool m_autoActiveHasBeenSet;
+
+                    /**
+                     * 营业执照正面照（支持PNG或JPG格式）需以base64格式提供，且文件大小不得超过5MB。
+                     */
+                    std::string m_businessLicense;
+                    bool m_businessLicenseHasBeenSet;
+
+                    /**
+                     * 组织机构企业注册地址。 请确认该企业注册地址与企业营业执照中注册的地址一致。	
+                     */
+                    std::string m_proxyAddress;
+                    bool m_proxyAddressHasBeenSet;
+
+                    /**
+                     * 组织机构法人的姓名。 请确认该企业统一社会信用代码与企业营业执照中注册的法人姓名一致。	
+                     */
+                    std::string m_proxyLegalName;
+                    bool m_proxyLegalNameHasBeenSet;
+
+                    /**
+                     * 授权书(PNG或JPG或PDF) base64格式, 大小不超过8M 。
+ p.s. 如果上传授权书 ，需遵循以下条件 
+1. 超管的信息（超管姓名，超管手机号）必须为必填参数。 
+2. 认证方式AuthorizationTypes必须只能是上传授权书方式	
+                     */
+                    std::vector<std::string> m_powerOfAttorneys;
+                    bool m_powerOfAttorneysHasBeenSet;
+
+                    /**
+                     * 企业认证时个性化能力信息
+                     */
+                    OrganizationAuthorizationOptions m_organizationAuthorizationOptions;
+                    bool m_organizationAuthorizationOptionsHasBeenSet;
 
                 };
             }

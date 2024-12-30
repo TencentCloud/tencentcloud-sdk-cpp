@@ -156,15 +156,15 @@ namespace TencentCloud
                     bool ComputeNodeCountHasBeenSet() const;
 
                     /**
-                     * 获取调度器类型。<br><li>SGE：SGE调度器。<br><li>SLURM：SLURM调度器。
-                     * @return SchedulerType 调度器类型。<br><li>SGE：SGE调度器。<br><li>SLURM：SLURM调度器。
+                     * 获取调度器类型。<br><li>SGE：SGE调度器。</li><br><li>SLURM：SLURM调度器。</li>
+                     * @return SchedulerType 调度器类型。<br><li>SGE：SGE调度器。</li><br><li>SLURM：SLURM调度器。</li>
                      * 
                      */
                     std::string GetSchedulerType() const;
 
                     /**
-                     * 设置调度器类型。<br><li>SGE：SGE调度器。<br><li>SLURM：SLURM调度器。
-                     * @param _schedulerType 调度器类型。<br><li>SGE：SGE调度器。<br><li>SLURM：SLURM调度器。
+                     * 设置调度器类型。<br><li>SGE：SGE调度器。</li><br><li>SLURM：SLURM调度器。</li>
+                     * @param _schedulerType 调度器类型。<br><li>SGE：SGE调度器。</li><br><li>SLURM：SLURM调度器。</li>
                      * 
                      */
                     void SetSchedulerType(const std::string& _schedulerType);
@@ -319,19 +319,15 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                     bool DryRunHasBeenSet() const;
 
                     /**
-                     * 获取域名字服务类型。默认值：NIS
-<li>NIS：NIS域名字服务。
-                     * @return AccountType 域名字服务类型。默认值：NIS
-<li>NIS：NIS域名字服务。
+                     * 获取域名字服务类型。默认值：NIS<li>NIS：NIS域名字服务。</li>
+                     * @return AccountType 域名字服务类型。默认值：NIS<li>NIS：NIS域名字服务。</li>
                      * 
                      */
                     std::string GetAccountType() const;
 
                     /**
-                     * 设置域名字服务类型。默认值：NIS
-<li>NIS：NIS域名字服务。
-                     * @param _accountType 域名字服务类型。默认值：NIS
-<li>NIS：NIS域名字服务。
+                     * 设置域名字服务类型。默认值：NIS<li>NIS：NIS域名字服务。</li>
+                     * @param _accountType 域名字服务类型。默认值：NIS<li>NIS：NIS域名字服务。</li>
                      * 
                      */
                     void SetAccountType(const std::string& _accountType);
@@ -489,7 +485,7 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                     bool m_computeNodeCountHasBeenSet;
 
                     /**
-                     * 调度器类型。<br><li>SGE：SGE调度器。<br><li>SLURM：SLURM调度器。
+                     * 调度器类型。<br><li>SGE：SGE调度器。</li><br><li>SLURM：SLURM调度器。</li>
                      */
                     std::string m_schedulerType;
                     bool m_schedulerTypeHasBeenSet;
@@ -535,8 +531,7 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                     bool m_dryRunHasBeenSet;
 
                     /**
-                     * 域名字服务类型。默认值：NIS
-<li>NIS：NIS域名字服务。
+                     * 域名字服务类型。默认值：NIS<li>NIS：NIS域名字服务。</li>
                      */
                     std::string m_accountType;
                     bool m_accountTypeHasBeenSet;

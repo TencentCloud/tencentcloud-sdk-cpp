@@ -222,6 +222,27 @@ namespace TencentCloud
                      */
                     bool TurnDetectionModeHasBeenSet() const;
 
+                    /**
+                     * 获取是否过滤掉用户只说了一个字的句子，true表示过滤，false表示不过滤，默认值为true
+                     * @return FilterOneWord 是否过滤掉用户只说了一个字的句子，true表示过滤，false表示不过滤，默认值为true
+                     * 
+                     */
+                    bool GetFilterOneWord() const;
+
+                    /**
+                     * 设置是否过滤掉用户只说了一个字的句子，true表示过滤，false表示不过滤，默认值为true
+                     * @param _filterOneWord 是否过滤掉用户只说了一个字的句子，true表示过滤，false表示不过滤，默认值为true
+                     * 
+                     */
+                    void SetFilterOneWord(const bool& _filterOneWord);
+
+                    /**
+                     * 判断参数 FilterOneWord 是否已赋值
+                     * @return FilterOneWord 是否已赋值
+                     * 
+                     */
+                    bool FilterOneWordHasBeenSet() const;
+
                 private:
 
                     /**
@@ -273,6 +294,12 @@ namespace TencentCloud
                      */
                     uint64_t m_turnDetectionMode;
                     bool m_turnDetectionModeHasBeenSet;
+
+                    /**
+                     * 是否过滤掉用户只说了一个字的句子，true表示过滤，false表示不过滤，默认值为true
+                     */
+                    bool m_filterOneWord;
+                    bool m_filterOneWordHasBeenSet;
 
                 };
             }

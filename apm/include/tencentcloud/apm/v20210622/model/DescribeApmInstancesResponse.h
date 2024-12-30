@@ -45,10 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取apm实例列表
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Instances apm实例列表
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取APM 业务系统列表
+                     * @return Instances APM 业务系统列表
                      * 
                      */
                     std::vector<ApmInstanceDetail> GetInstances() const;
@@ -63,8 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * apm实例列表
-注意：此字段可能返回 null，表示取不到有效值。
+                     * APM 业务系统列表
                      */
                     std::vector<ApmInstanceDetail> m_instances;
                     bool m_instancesHasBeenSet;

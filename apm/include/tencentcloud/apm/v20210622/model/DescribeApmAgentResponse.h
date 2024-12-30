@@ -45,10 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Agent信息
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ApmAgent Agent信息
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取Agent 信息
+                     * @return ApmAgent Agent 信息
                      * 
                      */
                     ApmAgentInfo GetApmAgent() const;
@@ -63,8 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Agent信息
-注意：此字段可能返回 null，表示取不到有效值。
+                     * Agent 信息
                      */
                     ApmAgentInfo m_apmAgent;
                     bool m_apmAgentHasBeenSet;

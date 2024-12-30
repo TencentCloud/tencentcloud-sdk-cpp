@@ -510,18 +510,14 @@ namespace TencentCloud
 
                     /**
                      * 获取法定代表人身份证号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LegalPersonId 法定代表人身份证号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLegalPersonId() const;
 
                     /**
                      * 设置法定代表人身份证号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _legalPersonId 法定代表人身份证号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLegalPersonId(const std::string& _legalPersonId);
@@ -535,18 +531,14 @@ namespace TencentCloud
 
                     /**
                      * 获取法定代表人身份证。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LegalPersonIdCard 法定代表人身份证。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLegalPersonIdCard() const;
 
                     /**
                      * 设置法定代表人身份证。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _legalPersonIdCard 法定代表人身份证。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLegalPersonIdCard(const std::string& _legalPersonIdCard);
@@ -694,14 +686,12 @@ namespace TencentCloud
 
                     /**
                      * 法定代表人身份证号。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_legalPersonId;
                     bool m_legalPersonIdHasBeenSet;
 
                     /**
                      * 法定代表人身份证。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_legalPersonIdCard;
                     bool m_legalPersonIdCardHasBeenSet;

@@ -148,18 +148,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例关联的路由表ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RouteTableId 实例关联的路由表ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRouteTableId() const;
 
                     /**
                      * 设置实例关联的路由表ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _routeTableId 实例关联的路由表ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRouteTableId(const std::string& _routeTableId);
@@ -173,18 +169,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例付费方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrderType 实例付费方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOrderType() const;
 
                     /**
                      * 设置实例付费方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _orderType 实例付费方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOrderType(const std::string& _orderType);
@@ -228,14 +220,12 @@ namespace TencentCloud
 
                     /**
                      * 实例关联的路由表ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_routeTableId;
                     bool m_routeTableIdHasBeenSet;
 
                     /**
                      * 实例付费方式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_orderType;
                     bool m_orderTypeHasBeenSet;

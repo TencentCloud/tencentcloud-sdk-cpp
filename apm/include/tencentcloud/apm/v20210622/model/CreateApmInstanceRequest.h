@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取Trace数据保存时长，单位为天默认存储为3天
-                     * @return TraceDuration Trace数据保存时长，单位为天默认存储为3天
+                     * 获取Trace 数据保存时长，单位为天默认存储为3天
+                     * @return TraceDuration Trace 数据保存时长，单位为天默认存储为3天
                      * 
                      */
                     int64_t GetTraceDuration() const;
 
                     /**
-                     * 设置Trace数据保存时长，单位为天默认存储为3天
-                     * @param _traceDuration Trace数据保存时长，单位为天默认存储为3天
+                     * 设置Trace 数据保存时长，单位为天默认存储为3天
+                     * @param _traceDuration Trace 数据保存时长，单位为天默认存储为3天
                      * 
                      */
                     void SetTraceDuration(const int64_t& _traceDuration);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取（0=付费版；1=tsf受限免费版；2=免费版）
-                     * @return Free （0=付费版；1=tsf受限免费版；2=免费版）
+                     * 获取（0=付费版；1=tsf 受限免费版；2=免费版）
+                     * @return Free （0=付费版；1=tsf 受限免费版；2=免费版）
                      * 
                      */
                     int64_t GetFree() const;
 
                     /**
-                     * 设置（0=付费版；1=tsf受限免费版；2=免费版）
-                     * @param _free （0=付费版；1=tsf受限免费版；2=免费版）
+                     * 设置（0=付费版；1=tsf 受限免费版；2=免费版）
+                     * @param _free （0=付费版；1=tsf 受限免费版；2=免费版）
                      * 
                      */
                     void SetFree(const int64_t& _free);
@@ -205,7 +205,7 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * Trace数据保存时长，单位为天默认存储为3天
+                     * Trace 数据保存时长，单位为天默认存储为3天
                      */
                     int64_t m_traceDuration;
                     bool m_traceDurationHasBeenSet;
@@ -229,7 +229,7 @@ namespace TencentCloud
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * （0=付费版；1=tsf受限免费版；2=免费版）
+                     * （0=付费版；1=tsf 受限免费版；2=免费版）
                      */
                     int64_t m_free;
                     bool m_freeHasBeenSet;

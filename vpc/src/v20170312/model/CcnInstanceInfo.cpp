@@ -20,7 +20,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vpc::V20170312::Model;
 using namespace std;
 
-CcnInstanceInfo::CcnInstanceInfo()
+CcnInstanceInfo::CcnInstanceInfo() :
+    m_ccnIdHasBeenSet(false)
 {
 }
 
@@ -29,6 +30,16 @@ CoreInternalOutcome CcnInstanceInfo::Deserialize(const rapidjson::Value &value)
     string requestId = "";
 
 
+    if (value.HasMember("CcnId") && !value["CcnId"].IsNull())
+    {
+        if (!value["CcnId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CcnInstanceInfo.CcnId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ccnId = string(value["CcnId"].GetString());
+        m_ccnIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -36,6 +47,30 @@ CoreInternalOutcome CcnInstanceInfo::Deserialize(const rapidjson::Value &value)
 void CcnInstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
+    if (m_ccnIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CcnId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ccnId.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
+
+string CcnInstanceInfo::GetCcnId() const
+{
+    return m_ccnId;
+}
+
+void CcnInstanceInfo::SetCcnId(const string& _ccnId)
+{
+    m_ccnId = _ccnId;
+    m_ccnIdHasBeenSet = true;
+}
+
+bool CcnInstanceInfo::CcnIdHasBeenSet() const
+{
+    return m_ccnIdHasBeenSet;
+}
 

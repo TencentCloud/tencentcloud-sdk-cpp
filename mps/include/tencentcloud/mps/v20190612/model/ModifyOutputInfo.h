@@ -306,6 +306,27 @@ namespace TencentCloud
                      */
                     bool RISTSettingsHasBeenSet() const;
 
+                    /**
+                     * 获取输出类型：Internet/TencentCSS/StreamLive
+                     * @return OutputType 输出类型：Internet/TencentCSS/StreamLive
+                     * 
+                     */
+                    std::string GetOutputType() const;
+
+                    /**
+                     * 设置输出类型：Internet/TencentCSS/StreamLive
+                     * @param _outputType 输出类型：Internet/TencentCSS/StreamLive
+                     * 
+                     */
+                    void SetOutputType(const std::string& _outputType);
+
+                    /**
+                     * 判断参数 OutputType 是否已赋值
+                     * @return OutputType 是否已赋值
+                     * 
+                     */
+                    bool OutputTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -380,6 +401,12 @@ namespace TencentCloud
                      */
                     CreateOutputRistSettings m_rISTSettings;
                     bool m_rISTSettingsHasBeenSet;
+
+                    /**
+                     * 输出类型：Internet/TencentCSS/StreamLive
+                     */
+                    std::string m_outputType;
+                    bool m_outputTypeHasBeenSet;
 
                 };
             }

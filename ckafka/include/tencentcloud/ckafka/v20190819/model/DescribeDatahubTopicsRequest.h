@@ -105,6 +105,69 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取是否从连接查询topic列表
+                     * @return QueryFromConnectResource 是否从连接查询topic列表
+                     * 
+                     */
+                    bool GetQueryFromConnectResource() const;
+
+                    /**
+                     * 设置是否从连接查询topic列表
+                     * @param _queryFromConnectResource 是否从连接查询topic列表
+                     * 
+                     */
+                    void SetQueryFromConnectResource(const bool& _queryFromConnectResource);
+
+                    /**
+                     * 判断参数 QueryFromConnectResource 是否已赋值
+                     * @return QueryFromConnectResource 是否已赋值
+                     * 
+                     */
+                    bool QueryFromConnectResourceHasBeenSet() const;
+
+                    /**
+                     * 获取连接的ID
+                     * @return ConnectResourceId 连接的ID
+                     * 
+                     */
+                    std::string GetConnectResourceId() const;
+
+                    /**
+                     * 设置连接的ID
+                     * @param _connectResourceId 连接的ID
+                     * 
+                     */
+                    void SetConnectResourceId(const std::string& _connectResourceId);
+
+                    /**
+                     * 判断参数 ConnectResourceId 是否已赋值
+                     * @return ConnectResourceId 是否已赋值
+                     * 
+                     */
+                    bool ConnectResourceIdHasBeenSet() const;
+
+                    /**
+                     * 获取topic资源表达式
+                     * @return TopicRegularExpression topic资源表达式
+                     * 
+                     */
+                    std::string GetTopicRegularExpression() const;
+
+                    /**
+                     * 设置topic资源表达式
+                     * @param _topicRegularExpression topic资源表达式
+                     * 
+                     */
+                    void SetTopicRegularExpression(const std::string& _topicRegularExpression);
+
+                    /**
+                     * 判断参数 TopicRegularExpression 是否已赋值
+                     * @return TopicRegularExpression 是否已赋值
+                     * 
+                     */
+                    bool TopicRegularExpressionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +187,24 @@ namespace TencentCloud
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 是否从连接查询topic列表
+                     */
+                    bool m_queryFromConnectResource;
+                    bool m_queryFromConnectResourceHasBeenSet;
+
+                    /**
+                     * 连接的ID
+                     */
+                    std::string m_connectResourceId;
+                    bool m_connectResourceIdHasBeenSet;
+
+                    /**
+                     * topic资源表达式
+                     */
+                    std::string m_topicRegularExpression;
+                    bool m_topicRegularExpressionHasBeenSet;
 
                 };
             }

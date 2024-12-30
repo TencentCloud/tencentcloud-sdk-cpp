@@ -22,7 +22,8 @@ using namespace std;
 
 BasicTargetGroupInfo::BasicTargetGroupInfo() :
     m_targetGroupIdHasBeenSet(false),
-    m_targetGroupNameHasBeenSet(false)
+    m_targetGroupNameHasBeenSet(false),
+    m_weightHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome BasicTargetGroupInfo::Deserialize(const rapidjson::Value &va
         m_targetGroupNameHasBeenSet = true;
     }
 
+    if (value.HasMember("Weight") && !value["Weight"].IsNull())
+    {
+        if (!value["Weight"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BasicTargetGroupInfo.Weight` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_weight = value["Weight"].GetUint64();
+        m_weightHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void BasicTargetGroupInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "TargetGroupName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_targetGroupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_weightHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Weight";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_weight, allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void BasicTargetGroupInfo::SetTargetGroupName(const string& _targetGroupName)
 bool BasicTargetGroupInfo::TargetGroupNameHasBeenSet() const
 {
     return m_targetGroupNameHasBeenSet;
+}
+
+uint64_t BasicTargetGroupInfo::GetWeight() const
+{
+    return m_weight;
+}
+
+void BasicTargetGroupInfo::SetWeight(const uint64_t& _weight)
+{
+    m_weight = _weight;
+    m_weightHasBeenSet = true;
+}
+
+bool BasicTargetGroupInfo::WeightHasBeenSet() const
+{
+    return m_weightHasBeenSet;
 }
 

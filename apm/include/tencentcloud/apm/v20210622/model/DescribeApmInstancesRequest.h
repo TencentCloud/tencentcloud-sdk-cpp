@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Tag列表
-                     * @return Tags Tag列表
+                     * 获取Tag 列表
+                     * @return Tags Tag 列表
                      * 
                      */
                     std::vector<ApmTag> GetTags() const;
 
                     /**
-                     * 设置Tag列表
-                     * @param _tags Tag列表
+                     * 设置Tag 列表
+                     * @param _tags Tag 列表
                      * 
                      */
                     void SetTags(const std::vector<ApmTag>& _tags);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取搜索实例名
-                     * @return InstanceName 搜索实例名
+                     * 获取搜索业务系统名
+                     * @return InstanceName 搜索业务系统名
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置搜索实例名
-                     * @param _instanceName 搜索实例名
+                     * 设置搜索业务系统名
+                     * @param _instanceName 搜索业务系统名
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取过滤实例ID
-                     * @return InstanceIds 过滤实例ID
+                     * 获取过滤业务系统 ID
+                     * @return InstanceIds 过滤业务系统 ID
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置过滤实例ID
-                     * @param _instanceIds 过滤实例ID
+                     * 设置过滤业务系统 ID
+                     * @param _instanceIds 过滤业务系统 ID
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取是否查询官方demo实例
-                     * @return DemoInstanceFlag 是否查询官方demo实例
+                     * 获取是否查询官方 Demo 业务系统
+                     * @return DemoInstanceFlag 是否查询官方 Demo 业务系统
                      * 
                      */
                     int64_t GetDemoInstanceFlag() const;
 
                     /**
-                     * 设置是否查询官方demo实例
-                     * @param _demoInstanceFlag 是否查询官方demo实例
+                     * 设置是否查询官方 Demo 业务系统
+                     * @param _demoInstanceFlag 是否查询官方 Demo 业务系统
                      * 
                      */
                     void SetDemoInstanceFlag(const int64_t& _demoInstanceFlag);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool DemoInstanceFlagHasBeenSet() const;
 
                     /**
-                     * 获取是否查询全地域实例
-                     * @return AllRegionsFlag 是否查询全地域实例
+                     * 获取是否查询全地域业务系统
+                     * @return AllRegionsFlag 是否查询全地域业务系统
                      * 
                      */
                     int64_t GetAllRegionsFlag() const;
 
                     /**
-                     * 设置是否查询全地域实例
-                     * @param _allRegionsFlag 是否查询全地域实例
+                     * 设置是否查询全地域业务系统
+                     * @param _allRegionsFlag 是否查询全地域业务系统
                      * 
                      */
                     void SetAllRegionsFlag(const int64_t& _allRegionsFlag);
@@ -151,31 +151,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Tag列表
+                     * Tag 列表
                      */
                     std::vector<ApmTag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 搜索实例名
+                     * 搜索业务系统名
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 过滤实例ID
+                     * 过滤业务系统 ID
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * 是否查询官方demo实例
+                     * 是否查询官方 Demo 业务系统
                      */
                     int64_t m_demoInstanceFlag;
                     bool m_demoInstanceFlagHasBeenSet;
 
                     /**
-                     * 是否查询全地域实例
+                     * 是否查询全地域业务系统
                      */
                     int64_t m_allRegionsFlag;
                     bool m_allRegionsFlagHasBeenSet;

@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取平台。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Platform 平台。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPlatform() const;
 
                     /**
                      * 设置平台。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _platform 平台。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPlatform(const std::string& _platform);
@@ -69,14 +73,18 @@ namespace TencentCloud
 
                     /**
                      * 获取软件版本。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return SoftwareVersion 软件版本。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSoftwareVersion() const;
 
                     /**
                      * 设置软件版本。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _softwareVersion 软件版本。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSoftwareVersion(const std::string& _softwareVersion);
@@ -90,14 +98,18 @@ namespace TencentCloud
 
                     /**
                      * 获取供应商名称。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return VendorName 供应商名称。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVendorName() const;
 
                     /**
                      * 设置供应商名称。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vendorName 供应商名称。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVendorName(const std::string& _vendorName);
@@ -113,18 +125,21 @@ namespace TencentCloud
 
                     /**
                      * 平台。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_platform;
                     bool m_platformHasBeenSet;
 
                     /**
                      * 软件版本。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_softwareVersion;
                     bool m_softwareVersionHasBeenSet;
 
                     /**
                      * 供应商名称。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vendorName;
                     bool m_vendorNameHasBeenSet;

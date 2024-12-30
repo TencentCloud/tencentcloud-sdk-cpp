@@ -247,6 +247,31 @@ namespace TencentCloud
                      */
                     bool ListenerNameHasBeenSet() const;
 
+                    /**
+                     * 获取关联目标组的权重， 该参数只有v2新版目标组生效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Weight 关联目标组的权重， 该参数只有v2新版目标组生效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetWeight() const;
+
+                    /**
+                     * 设置关联目标组的权重， 该参数只有v2新版目标组生效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _weight 关联目标组的权重， 该参数只有v2新版目标组生效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetWeight(const uint64_t& _weight);
+
+                    /**
+                     * 判断参数 Weight 是否已赋值
+                     * @return Weight 是否已赋值
+                     * 
+                     */
+                    bool WeightHasBeenSet() const;
+
                 private:
 
                     /**
@@ -305,6 +330,13 @@ namespace TencentCloud
                      */
                     std::string m_listenerName;
                     bool m_listenerNameHasBeenSet;
+
+                    /**
+                     * 关联目标组的权重， 该参数只有v2新版目标组生效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_weight;
+                    bool m_weightHasBeenSet;
 
                 };
             }

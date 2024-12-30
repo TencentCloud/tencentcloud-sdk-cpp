@@ -32,7 +32,8 @@ ModifyOutputInfo::ModifyOutputInfo() :
     m_maxConcurrentHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
     m_zonesHasBeenSet(false),
-    m_rISTSettingsHasBeenSet(false)
+    m_rISTSettingsHasBeenSet(false),
+    m_outputTypeHasBeenSet(false)
 {
 }
 
@@ -198,6 +199,16 @@ CoreInternalOutcome ModifyOutputInfo::Deserialize(const rapidjson::Value &value)
         m_rISTSettingsHasBeenSet = true;
     }
 
+    if (value.HasMember("OutputType") && !value["OutputType"].IsNull())
+    {
+        if (!value["OutputType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModifyOutputInfo.OutputType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_outputType = string(value["OutputType"].GetString());
+        m_outputTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -318,6 +329,14 @@ void ModifyOutputInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_rISTSettings.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_outputTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutputType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_outputType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -513,5 +532,21 @@ void ModifyOutputInfo::SetRISTSettings(const CreateOutputRistSettings& _rISTSett
 bool ModifyOutputInfo::RISTSettingsHasBeenSet() const
 {
     return m_rISTSettingsHasBeenSet;
+}
+
+string ModifyOutputInfo::GetOutputType() const
+{
+    return m_outputType;
+}
+
+void ModifyOutputInfo::SetOutputType(const string& _outputType)
+{
+    m_outputType = _outputType;
+    m_outputTypeHasBeenSet = true;
+}
+
+bool ModifyOutputInfo::OutputTypeHasBeenSet() const
+{
+    return m_outputTypeHasBeenSet;
 }
 

@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取云联网（CCN）对象。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CcnSet 云联网（CCN）对象。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CcnInstanceInfo> GetCcnSet() const;
@@ -78,7 +76,6 @@ namespace TencentCloud
 
                     /**
                      * 云联网（CCN）对象。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CcnInstanceInfo> m_ccnSet;
                     bool m_ccnSetHasBeenSet;

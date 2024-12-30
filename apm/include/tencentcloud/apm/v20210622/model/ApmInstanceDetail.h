@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * apm实例信息
+                * APM 业务系统信息
                 */
                 class ApmInstanceDetail : public AbstractModel
                 {
@@ -48,19 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取存储使用量(MB)
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AmountOfUsedStorage 存储使用量(MB)
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取存储使用量( MB )
+                     * @return AmountOfUsedStorage 存储使用量( MB )
                      * 
                      */
                     double GetAmountOfUsedStorage() const;
 
                     /**
-                     * 设置存储使用量(MB)
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _amountOfUsedStorage 存储使用量(MB)
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置存储使用量( MB )
+                     * @param _amountOfUsedStorage 存储使用量( MB )
                      * 
                      */
                     void SetAmountOfUsedStorage(const double& _amountOfUsedStorage);
@@ -73,19 +69,15 @@ namespace TencentCloud
                     bool AmountOfUsedStorageHasBeenSet() const;
 
                     /**
-                     * 获取实例名
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Name 实例名
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取业务系统名
+                     * @return Name 业务系统名
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置实例名
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _name 实例名
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置业务系统名
+                     * @param _name 业务系统名
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -98,19 +90,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取实例所属tag列表
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Tags 实例所属tag列表
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取业务系统所属 Tag 列表
+                     * @return Tags 业务系统所属 Tag 列表
                      * 
                      */
                     std::vector<ApmTag> GetTags() const;
 
                     /**
-                     * 设置实例所属tag列表
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tags 实例所属tag列表
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置业务系统所属 Tag 列表
+                     * @param _tags 业务系统所属 Tag 列表
                      * 
                      */
                     void SetTags(const std::vector<ApmTag>& _tags);
@@ -123,15 +111,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取业务系统 ID
+                     * @return InstanceId 业务系统 ID
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置业务系统 ID
+                     * @param _instanceId 业务系统 ID
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -144,19 +132,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取创建人Uin
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateUin 创建人Uin
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取创建人 Uin
+                     * @return CreateUin 创建人 Uin
                      * 
                      */
                     std::string GetCreateUin() const;
 
                     /**
-                     * 设置创建人Uin
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createUin 创建人Uin
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置创建人 Uin
+                     * @param _createUin 创建人 Uin
                      * 
                      */
                     void SetCreateUin(const std::string& _createUin);
@@ -169,19 +153,15 @@ namespace TencentCloud
                     bool CreateUinHasBeenSet() const;
 
                     /**
-                     * 获取该实例已上报的服务端应用数量
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ServiceCount 该实例已上报的服务端应用数量
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取该业务系统已上报的服务端应用数量
+                     * @return ServiceCount 该业务系统已上报的服务端应用数量
                      * 
                      */
                     int64_t GetServiceCount() const;
 
                     /**
-                     * 设置该实例已上报的服务端应用数量
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _serviceCount 该实例已上报的服务端应用数量
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置该业务系统已上报的服务端应用数量
+                     * @param _serviceCount 该业务系统已上报的服务端应用数量
                      * 
                      */
                     void SetServiceCount(const int64_t& _serviceCount);
@@ -194,19 +174,15 @@ namespace TencentCloud
                     bool ServiceCountHasBeenSet() const;
 
                     /**
-                     * 获取日均上报Span数
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CountOfReportSpanPerDay 日均上报Span数
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取日均上报 Span 数
+                     * @return CountOfReportSpanPerDay 日均上报 Span 数
                      * 
                      */
                     int64_t GetCountOfReportSpanPerDay() const;
 
                     /**
-                     * 设置日均上报Span数
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _countOfReportSpanPerDay 日均上报Span数
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置日均上报 Span 数
+                     * @param _countOfReportSpanPerDay 日均上报 Span 数
                      * 
                      */
                     void SetCountOfReportSpanPerDay(const int64_t& _countOfReportSpanPerDay);
@@ -219,15 +195,15 @@ namespace TencentCloud
                     bool CountOfReportSpanPerDayHasBeenSet() const;
 
                     /**
-                     * 获取AppId信息
-                     * @return AppId AppId信息
+                     * 获取AppID 信息
+                     * @return AppId AppID 信息
                      * 
                      */
                     int64_t GetAppId() const;
 
                     /**
-                     * 设置AppId信息
-                     * @param _appId AppId信息
+                     * 设置AppID 信息
+                     * @param _appId AppID 信息
                      * 
                      */
                     void SetAppId(const int64_t& _appId);
@@ -240,19 +216,15 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取Trace数据保存时长
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TraceDuration Trace数据保存时长
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取Trace 数据保存时长
+                     * @return TraceDuration Trace 数据保存时长
                      * 
                      */
                     int64_t GetTraceDuration() const;
 
                     /**
-                     * 设置Trace数据保存时长
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _traceDuration Trace数据保存时长
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置Trace 数据保存时长
+                     * @param _traceDuration Trace 数据保存时长
                      * 
                      */
                     void SetTraceDuration(const int64_t& _traceDuration);
@@ -265,19 +237,15 @@ namespace TencentCloud
                     bool TraceDurationHasBeenSet() const;
 
                     /**
-                     * 获取实例描述信息
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Description 实例描述信息
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取业务系统描述信息
+                     * @return Description 业务系统描述信息
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置实例描述信息
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _description 实例描述信息
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置业务系统描述信息
+                     * @param _description 业务系统描述信息
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -290,19 +258,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取实例状态
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 实例状态
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取业务系统状态
+                     * @return Status 业务系统状态
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置实例状态
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _status 实例状态
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置业务系统状态
+                     * @param _status 业务系统状态
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -315,19 +279,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取实例所属地域
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Region 实例所属地域
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取业务系统所属地域
+                     * @return Region 业务系统所属地域
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置实例所属地域
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _region 实例所属地域
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置业务系统所属地域
+                     * @param _region 业务系统所属地域
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -340,19 +300,15 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取实例上报额度
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SpanDailyCounters 实例上报额度
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取业务系统上报额度
+                     * @return SpanDailyCounters 业务系统上报额度
                      * 
                      */
                     int64_t GetSpanDailyCounters() const;
 
                     /**
-                     * 设置实例上报额度
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _spanDailyCounters 实例上报额度
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置业务系统上报额度
+                     * @param _spanDailyCounters 业务系统上报额度
                      * 
                      */
                     void SetSpanDailyCounters(const int64_t& _spanDailyCounters);
@@ -365,19 +321,15 @@ namespace TencentCloud
                     bool SpanDailyCountersHasBeenSet() const;
 
                     /**
-                     * 获取实例是否开通计费
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BillingInstance 实例是否开通计费
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取业务系统是否开通计费
+                     * @return BillingInstance 业务系统是否开通计费
                      * 
                      */
                     int64_t GetBillingInstance() const;
 
                     /**
-                     * 设置实例是否开通计费
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _billingInstance 实例是否开通计费
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置业务系统是否开通计费
+                     * @param _billingInstance 业务系统是否开通计费
                      * 
                      */
                     void SetBillingInstance(const int64_t& _billingInstance);
@@ -391,18 +343,14 @@ namespace TencentCloud
 
                     /**
                      * 获取错误率阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrRateThreshold 错误率阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetErrRateThreshold() const;
 
                     /**
                      * 设置错误率阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _errRateThreshold 错误率阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetErrRateThreshold(const int64_t& _errRateThreshold);
@@ -416,18 +364,14 @@ namespace TencentCloud
 
                     /**
                      * 获取采样率阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SampleRate 采样率阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSampleRate() const;
 
                     /**
                      * 设置采样率阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sampleRate 采样率阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSampleRate(const int64_t& _sampleRate);
@@ -441,18 +385,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启错误采样 0  关 1 开
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorSample 是否开启错误采样 0  关 1 开
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetErrorSample() const;
 
                     /**
                      * 设置是否开启错误采样 0  关 1 开
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _errorSample 是否开启错误采样 0  关 1 开
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetErrorSample(const int64_t& _errorSample);
@@ -466,18 +406,14 @@ namespace TencentCloud
 
                     /**
                      * 获取慢调用保存阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SlowRequestSavedThreshold 慢调用保存阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSlowRequestSavedThreshold() const;
 
                     /**
                      * 设置慢调用保存阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _slowRequestSavedThreshold 慢调用保存阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSlowRequestSavedThreshold(const int64_t& _slowRequestSavedThreshold);
@@ -490,19 +426,15 @@ namespace TencentCloud
                     bool SlowRequestSavedThresholdHasBeenSet() const;
 
                     /**
-                     * 获取cls日志所在地域
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LogRegion cls日志所在地域
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取CLS 日志所在地域
+                     * @return LogRegion CLS 日志所在地域
                      * 
                      */
                     std::string GetLogRegion() const;
 
                     /**
-                     * 设置cls日志所在地域
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _logRegion cls日志所在地域
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置CLS 日志所在地域
+                     * @param _logRegion CLS 日志所在地域
                      * 
                      */
                     void SetLogRegion(const std::string& _logRegion);
@@ -516,18 +448,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogSource 日志来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLogSource() const;
 
                     /**
                      * 设置日志来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logSource 日志来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogSource(const std::string& _logSource);
@@ -541,18 +469,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志功能开关 0 关 | 1 开
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsRelatedLog 日志功能开关 0 关 | 1 开
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIsRelatedLog() const;
 
                     /**
                      * 设置日志功能开关 0 关 | 1 开
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isRelatedLog 日志功能开关 0 关 | 1 开
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsRelatedLog(const int64_t& _isRelatedLog);
@@ -566,18 +490,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogTopicID 日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLogTopicID() const;
 
                     /**
                      * 设置日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logTopicID 日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogTopicID(const std::string& _logTopicID);
@@ -591,18 +511,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该实例已上报的客户端应用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClientCount 该实例已上报的客户端应用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetClientCount() const;
 
                     /**
                      * 设置该实例已上报的客户端应用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clientCount 该实例已上报的客户端应用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClientCount(const int64_t& _clientCount);
@@ -616,18 +532,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该实例已上报的总应用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 该实例已上报的总应用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置该实例已上报的总应用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalCount 该实例已上报的总应用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
@@ -640,19 +552,15 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取CLS日志集 | ES集群ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LogSet CLS日志集 | ES集群ID
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取CLS 日志集 | ES 集群ID
+                     * @return LogSet CLS 日志集 | ES 集群ID
                      * 
                      */
                     std::string GetLogSet() const;
 
                     /**
-                     * 设置CLS日志集 | ES集群ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _logSet CLS日志集 | ES集群ID
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置CLS 日志集 | ES 集群ID
+                     * @param _logSet CLS 日志集 | ES 集群ID
                      * 
                      */
                     void SetLogSet(const std::string& _logSet);
@@ -665,19 +573,15 @@ namespace TencentCloud
                     bool LogSetHasBeenSet() const;
 
                     /**
-                     * 获取Metric数据保存时长
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MetricDuration Metric数据保存时长
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取Metric 数据保存时长
+                     * @return MetricDuration Metric 数据保存时长
                      * 
                      */
                     int64_t GetMetricDuration() const;
 
                     /**
-                     * 设置Metric数据保存时长
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _metricDuration Metric数据保存时长
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置Metric 数据保存时长
+                     * @param _metricDuration Metric 数据保存时长
                      * 
                      */
                     void SetMetricDuration(const int64_t& _metricDuration);
@@ -691,18 +595,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户自定义展示标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CustomShowTags 用户自定义展示标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetCustomShowTags() const;
 
                     /**
                      * 设置用户自定义展示标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _customShowTags 用户自定义展示标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCustomShowTags(const std::vector<std::string>& _customShowTags);
@@ -715,27 +615,23 @@ namespace TencentCloud
                     bool CustomShowTagsHasBeenSet() const;
 
                     /**
-                     * 获取实例计费模式
+                     * 获取业务系统计费模式
 1为预付费
 0为按量付费
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PayMode 实例计费模式
+                     * @return PayMode 业务系统计费模式
 1为预付费
 0为按量付费
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPayMode() const;
 
                     /**
-                     * 设置实例计费模式
+                     * 设置业务系统计费模式
 1为预付费
 0为按量付费
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _payMode 实例计费模式
+                     * @param _payMode 业务系统计费模式
 1为预付费
 0为按量付费
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPayMode(const int64_t& _payMode);
@@ -748,19 +644,15 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取实例计费模式是否生效
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PayModeEffective 实例计费模式是否生效
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取业务系统计费模式是否生效
+                     * @return PayModeEffective 业务系统计费模式是否生效
                      * 
                      */
                     bool GetPayModeEffective() const;
 
                     /**
-                     * 设置实例计费模式是否生效
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _payModeEffective 实例计费模式是否生效
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置业务系统计费模式是否生效
+                     * @param _payModeEffective 业务系统计费模式是否生效
                      * 
                      */
                     void SetPayModeEffective(const bool& _payModeEffective);
@@ -774,18 +666,14 @@ namespace TencentCloud
 
                     /**
                      * 获取响应时间满意阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResponseDurationWarningThreshold 响应时间满意阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetResponseDurationWarningThreshold() const;
 
                     /**
                      * 设置响应时间满意阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _responseDurationWarningThreshold 响应时间满意阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResponseDurationWarningThreshold(const int64_t& _responseDurationWarningThreshold);
@@ -799,18 +687,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否免费（0=否，1=限额免费，2=完全免费），默认0
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Free 是否免费（0=否，1=限额免费，2=完全免费），默认0
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFree() const;
 
                     /**
                      * 设置是否免费（0=否，1=限额免费，2=完全免费），默认0
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _free 是否免费（0=否，1=限额免费，2=完全免费），默认0
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFree(const int64_t& _free);
@@ -823,19 +707,15 @@ namespace TencentCloud
                     bool FreeHasBeenSet() const;
 
                     /**
-                     * 获取是否tsf默认业务系统（0=否，1-是）
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DefaultTSF 是否tsf默认业务系统（0=否，1-是）
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取是否 tsf 默认业务系统（0=否，1-是）
+                     * @return DefaultTSF 是否 tsf 默认业务系统（0=否，1-是）
                      * 
                      */
                     int64_t GetDefaultTSF() const;
 
                     /**
-                     * 设置是否tsf默认业务系统（0=否，1-是）
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _defaultTSF 是否tsf默认业务系统（0=否，1-是）
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置是否 tsf 默认业务系统（0=否，1-是）
+                     * @param _defaultTSF 是否 tsf 默认业务系统（0=否，1-是）
                      * 
                      */
                     void SetDefaultTSF(const int64_t& _defaultTSF);
@@ -848,19 +728,15 @@ namespace TencentCloud
                     bool DefaultTSFHasBeenSet() const;
 
                     /**
-                     * 获取是否关联dashboard： 0 关 1 开
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsRelatedDashboard 是否关联dashboard： 0 关 1 开
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取是否关联 Dashboard： 0 关 1 开
+                     * @return IsRelatedDashboard 是否关联 Dashboard： 0 关 1 开
                      * 
                      */
                     int64_t GetIsRelatedDashboard() const;
 
                     /**
-                     * 设置是否关联dashboard： 0 关 1 开
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _isRelatedDashboard 是否关联dashboard： 0 关 1 开
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置是否关联 Dashboard： 0 关 1 开
+                     * @param _isRelatedDashboard 是否关联 Dashboard： 0 关 1 开
                      * 
                      */
                     void SetIsRelatedDashboard(const int64_t& _isRelatedDashboard);
@@ -873,19 +749,15 @@ namespace TencentCloud
                     bool IsRelatedDashboardHasBeenSet() const;
 
                     /**
-                     * 获取dashboard ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DashboardTopicID dashboard ID
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取Dashboard ID
+                     * @return DashboardTopicID Dashboard ID
                      * 
                      */
                     std::string GetDashboardTopicID() const;
 
                     /**
-                     * 设置dashboard ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _dashboardTopicID dashboard ID
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置Dashboard ID
+                     * @param _dashboardTopicID Dashboard ID
                      * 
                      */
                     void SetDashboardTopicID(const std::string& _dashboardTopicID);
@@ -899,18 +771,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启组件漏洞检测
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsInstrumentationVulnerabilityScan 是否开启组件漏洞检测
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIsInstrumentationVulnerabilityScan() const;
 
                     /**
                      * 设置是否开启组件漏洞检测
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isInstrumentationVulnerabilityScan 是否开启组件漏洞检测
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsInstrumentationVulnerabilityScan(const int64_t& _isInstrumentationVulnerabilityScan);
@@ -923,19 +791,15 @@ namespace TencentCloud
                     bool IsInstrumentationVulnerabilityScanHasBeenSet() const;
 
                     /**
-                     * 获取是否开启SQL注入分析
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsSqlInjectionAnalysis 是否开启SQL注入分析
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取是否开启 SQL 注入分析
+                     * @return IsSqlInjectionAnalysis 是否开启 SQL 注入分析
                      * 
                      */
                     int64_t GetIsSqlInjectionAnalysis() const;
 
                     /**
-                     * 设置是否开启SQL注入分析
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _isSqlInjectionAnalysis 是否开启SQL注入分析
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置是否开启 SQL 注入分析
+                     * @param _isSqlInjectionAnalysis 是否开启 SQL 注入分析
                      * 
                      */
                     void SetIsSqlInjectionAnalysis(const int64_t& _isSqlInjectionAnalysis);
@@ -950,253 +814,219 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 存储使用量(MB)
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 存储使用量( MB )
                      */
                     double m_amountOfUsedStorage;
                     bool m_amountOfUsedStorageHasBeenSet;
 
                     /**
-                     * 实例名
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 业务系统名
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 实例所属tag列表
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 业务系统所属 Tag 列表
                      */
                     std::vector<ApmTag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 实例ID
+                     * 业务系统 ID
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 创建人Uin
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 创建人 Uin
                      */
                     std::string m_createUin;
                     bool m_createUinHasBeenSet;
 
                     /**
-                     * 该实例已上报的服务端应用数量
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 该业务系统已上报的服务端应用数量
                      */
                     int64_t m_serviceCount;
                     bool m_serviceCountHasBeenSet;
 
                     /**
-                     * 日均上报Span数
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 日均上报 Span 数
                      */
                     int64_t m_countOfReportSpanPerDay;
                     bool m_countOfReportSpanPerDayHasBeenSet;
 
                     /**
-                     * AppId信息
+                     * AppID 信息
                      */
                     int64_t m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * Trace数据保存时长
-注意：此字段可能返回 null，表示取不到有效值。
+                     * Trace 数据保存时长
                      */
                     int64_t m_traceDuration;
                     bool m_traceDurationHasBeenSet;
 
                     /**
-                     * 实例描述信息
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 业务系统描述信息
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 实例状态
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 业务系统状态
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 实例所属地域
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 业务系统所属地域
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 实例上报额度
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 业务系统上报额度
                      */
                     int64_t m_spanDailyCounters;
                     bool m_spanDailyCountersHasBeenSet;
 
                     /**
-                     * 实例是否开通计费
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 业务系统是否开通计费
                      */
                     int64_t m_billingInstance;
                     bool m_billingInstanceHasBeenSet;
 
                     /**
                      * 错误率阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_errRateThreshold;
                     bool m_errRateThresholdHasBeenSet;
 
                     /**
                      * 采样率阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sampleRate;
                     bool m_sampleRateHasBeenSet;
 
                     /**
                      * 是否开启错误采样 0  关 1 开
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_errorSample;
                     bool m_errorSampleHasBeenSet;
 
                     /**
                      * 慢调用保存阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_slowRequestSavedThreshold;
                     bool m_slowRequestSavedThresholdHasBeenSet;
 
                     /**
-                     * cls日志所在地域
-注意：此字段可能返回 null，表示取不到有效值。
+                     * CLS 日志所在地域
                      */
                     std::string m_logRegion;
                     bool m_logRegionHasBeenSet;
 
                     /**
                      * 日志来源
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logSource;
                     bool m_logSourceHasBeenSet;
 
                     /**
                      * 日志功能开关 0 关 | 1 开
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isRelatedLog;
                     bool m_isRelatedLogHasBeenSet;
 
                     /**
                      * 日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logTopicID;
                     bool m_logTopicIDHasBeenSet;
 
                     /**
                      * 该实例已上报的客户端应用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_clientCount;
                     bool m_clientCountHasBeenSet;
 
                     /**
                      * 该实例已上报的总应用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * CLS日志集 | ES集群ID
-注意：此字段可能返回 null，表示取不到有效值。
+                     * CLS 日志集 | ES 集群ID
                      */
                     std::string m_logSet;
                     bool m_logSetHasBeenSet;
 
                     /**
-                     * Metric数据保存时长
-注意：此字段可能返回 null，表示取不到有效值。
+                     * Metric 数据保存时长
                      */
                     int64_t m_metricDuration;
                     bool m_metricDurationHasBeenSet;
 
                     /**
                      * 用户自定义展示标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_customShowTags;
                     bool m_customShowTagsHasBeenSet;
 
                     /**
-                     * 实例计费模式
+                     * 业务系统计费模式
 1为预付费
 0为按量付费
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 实例计费模式是否生效
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 业务系统计费模式是否生效
                      */
                     bool m_payModeEffective;
                     bool m_payModeEffectiveHasBeenSet;
 
                     /**
                      * 响应时间满意阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_responseDurationWarningThreshold;
                     bool m_responseDurationWarningThresholdHasBeenSet;
 
                     /**
                      * 是否免费（0=否，1=限额免费，2=完全免费），默认0
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_free;
                     bool m_freeHasBeenSet;
 
                     /**
-                     * 是否tsf默认业务系统（0=否，1-是）
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 是否 tsf 默认业务系统（0=否，1-是）
                      */
                     int64_t m_defaultTSF;
                     bool m_defaultTSFHasBeenSet;
 
                     /**
-                     * 是否关联dashboard： 0 关 1 开
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 是否关联 Dashboard： 0 关 1 开
                      */
                     int64_t m_isRelatedDashboard;
                     bool m_isRelatedDashboardHasBeenSet;
 
                     /**
-                     * dashboard ID
-注意：此字段可能返回 null，表示取不到有效值。
+                     * Dashboard ID
                      */
                     std::string m_dashboardTopicID;
                     bool m_dashboardTopicIDHasBeenSet;
 
                     /**
                      * 是否开启组件漏洞检测
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isInstrumentationVulnerabilityScan;
                     bool m_isInstrumentationVulnerabilityScanHasBeenSet;
 
                     /**
-                     * 是否开启SQL注入分析
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 是否开启 SQL 注入分析
                      */
                     int64_t m_isSqlInjectionAnalysis;
                     bool m_isSqlInjectionAnalysisHasBeenSet;

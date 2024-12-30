@@ -396,6 +396,31 @@ namespace TencentCloud
                      */
                     bool ServiceExportToHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启同步到全局注册中心	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SyncToGlobalRegistry 是否开启同步到全局注册中心	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetSyncToGlobalRegistry() const;
+
+                    /**
+                     * 设置是否开启同步到全局注册中心	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _syncToGlobalRegistry 是否开启同步到全局注册中心	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSyncToGlobalRegistry(const bool& _syncToGlobalRegistry);
+
+                    /**
+                     * 判断参数 SyncToGlobalRegistry 是否已赋值
+                     * @return SyncToGlobalRegistry 是否已赋值
+                     * 
+                     */
+                    bool SyncToGlobalRegistryHasBeenSet() const;
+
                 private:
 
                     /**
@@ -495,6 +520,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_serviceExportTo;
                     bool m_serviceExportToHasBeenSet;
+
+                    /**
+                     * 是否开启同步到全局注册中心	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_syncToGlobalRegistry;
+                    bool m_syncToGlobalRegistryHasBeenSet;
 
                 };
             }

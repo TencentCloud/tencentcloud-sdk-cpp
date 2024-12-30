@@ -75,6 +75,8 @@
 #include <tencentcloud/cls/v20201016/model/CreateShipperResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateTopicRequest.h>
 #include <tencentcloud/cls/v20201016/model/CreateTopicResponse.h>
+#include <tencentcloud/cls/v20201016/model/CreateWebCallbackRequest.h>
+#include <tencentcloud/cls/v20201016/model/CreateWebCallbackResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteAlarmRequest.h>
 #include <tencentcloud/cls/v20201016/model/DeleteAlarmResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteAlarmNoticeRequest.h>
@@ -117,6 +119,8 @@
 #include <tencentcloud/cls/v20201016/model/DeleteShipperResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteTopicRequest.h>
 #include <tencentcloud/cls/v20201016/model/DeleteTopicResponse.h>
+#include <tencentcloud/cls/v20201016/model/DeleteWebCallbackRequest.h>
+#include <tencentcloud/cls/v20201016/model/DeleteWebCallbackResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeAlarmNoticesRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribeAlarmNoticesResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeAlarmShieldsRequest.h>
@@ -177,6 +181,8 @@
 #include <tencentcloud/cls/v20201016/model/DescribeShippersResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeTopicsRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribeTopicsResponse.h>
+#include <tencentcloud/cls/v20201016/model/DescribeWebCallbacksRequest.h>
+#include <tencentcloud/cls/v20201016/model/DescribeWebCallbacksResponse.h>
 #include <tencentcloud/cls/v20201016/model/GetAlarmLogRequest.h>
 #include <tencentcloud/cls/v20201016/model/GetAlarmLogResponse.h>
 #include <tencentcloud/cls/v20201016/model/MergePartitionRequest.h>
@@ -221,6 +227,8 @@
 #include <tencentcloud/cls/v20201016/model/ModifyShipperResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyTopicRequest.h>
 #include <tencentcloud/cls/v20201016/model/ModifyTopicResponse.h>
+#include <tencentcloud/cls/v20201016/model/ModifyWebCallbackRequest.h>
+#include <tencentcloud/cls/v20201016/model/ModifyWebCallbackResponse.h>
 #include <tencentcloud/cls/v20201016/model/OpenKafkaConsumerRequest.h>
 #include <tencentcloud/cls/v20201016/model/OpenKafkaConsumerResponse.h>
 #include <tencentcloud/cls/v20201016/model/PreviewKafkaRechargeRequest.h>
@@ -333,6 +341,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateTopicResponse> CreateTopicOutcome;
                 typedef std::future<CreateTopicOutcome> CreateTopicOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::CreateTopicRequest&, CreateTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTopicAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateWebCallbackResponse> CreateWebCallbackOutcome;
+                typedef std::future<CreateWebCallbackOutcome> CreateWebCallbackOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::CreateWebCallbackRequest&, CreateWebCallbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateWebCallbackAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteAlarmResponse> DeleteAlarmOutcome;
                 typedef std::future<DeleteAlarmOutcome> DeleteAlarmOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DeleteAlarmRequest&, DeleteAlarmOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAlarmAsyncHandler;
@@ -396,6 +407,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteTopicResponse> DeleteTopicOutcome;
                 typedef std::future<DeleteTopicOutcome> DeleteTopicOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DeleteTopicRequest&, DeleteTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTopicAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteWebCallbackResponse> DeleteWebCallbackOutcome;
+                typedef std::future<DeleteWebCallbackOutcome> DeleteWebCallbackOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DeleteWebCallbackRequest&, DeleteWebCallbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteWebCallbackAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAlarmNoticesResponse> DescribeAlarmNoticesOutcome;
                 typedef std::future<DescribeAlarmNoticesOutcome> DescribeAlarmNoticesOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribeAlarmNoticesRequest&, DescribeAlarmNoticesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlarmNoticesAsyncHandler;
@@ -486,6 +500,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTopicsResponse> DescribeTopicsOutcome;
                 typedef std::future<DescribeTopicsOutcome> DescribeTopicsOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribeTopicsRequest&, DescribeTopicsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopicsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeWebCallbacksResponse> DescribeWebCallbacksOutcome;
+                typedef std::future<DescribeWebCallbacksOutcome> DescribeWebCallbacksOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DescribeWebCallbacksRequest&, DescribeWebCallbacksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWebCallbacksAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetAlarmLogResponse> GetAlarmLogOutcome;
                 typedef std::future<GetAlarmLogOutcome> GetAlarmLogOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::GetAlarmLogRequest&, GetAlarmLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetAlarmLogAsyncHandler;
@@ -552,6 +569,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyTopicResponse> ModifyTopicOutcome;
                 typedef std::future<ModifyTopicOutcome> ModifyTopicOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::ModifyTopicRequest&, ModifyTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTopicAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyWebCallbackResponse> ModifyWebCallbackOutcome;
+                typedef std::future<ModifyWebCallbackOutcome> ModifyWebCallbackOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::ModifyWebCallbackRequest&, ModifyWebCallbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyWebCallbackAsyncHandler;
                 typedef Outcome<Core::Error, Model::OpenKafkaConsumerResponse> OpenKafkaConsumerOutcome;
                 typedef std::future<OpenKafkaConsumerOutcome> OpenKafkaConsumerOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::OpenKafkaConsumerRequest&, OpenKafkaConsumerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenKafkaConsumerAsyncHandler;
@@ -827,6 +847,15 @@ namespace TencentCloud
                 CreateTopicOutcomeCallable CreateTopicCallable(const Model::CreateTopicRequest& request);
 
                 /**
+                 *该接口用于创建告警渠道回调配置。
+                 * @param req CreateWebCallbackRequest
+                 * @return CreateWebCallbackOutcome
+                 */
+                CreateWebCallbackOutcome CreateWebCallback(const Model::CreateWebCallbackRequest &request);
+                void CreateWebCallbackAsync(const Model::CreateWebCallbackRequest& request, const CreateWebCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateWebCallbackOutcomeCallable CreateWebCallbackCallable(const Model::CreateWebCallbackRequest& request);
+
+                /**
                  *本接口用于删除告警策略。
                  * @param req DeleteAlarmRequest
                  * @return DeleteAlarmOutcome
@@ -1014,6 +1043,15 @@ namespace TencentCloud
                 DeleteTopicOutcome DeleteTopic(const Model::DeleteTopicRequest &request);
                 void DeleteTopicAsync(const Model::DeleteTopicRequest& request, const DeleteTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteTopicOutcomeCallable DeleteTopicCallable(const Model::DeleteTopicRequest& request);
+
+                /**
+                 *该接口用于删除告警渠道回调配置。
+                 * @param req DeleteWebCallbackRequest
+                 * @return DeleteWebCallbackOutcome
+                 */
+                DeleteWebCallbackOutcome DeleteWebCallback(const Model::DeleteWebCallbackRequest &request);
+                void DeleteWebCallbackAsync(const Model::DeleteWebCallbackRequest& request, const DeleteWebCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteWebCallbackOutcomeCallable DeleteWebCallbackCallable(const Model::DeleteWebCallbackRequest& request);
 
                 /**
                  *该接口用于获取通知渠道组列表
@@ -1287,6 +1325,15 @@ API返回数据包最大49MB，建议启用 gzip 压缩（HTTP Request Header Ac
                 DescribeTopicsOutcomeCallable DescribeTopicsCallable(const Model::DescribeTopicsRequest& request);
 
                 /**
+                 *获取告警渠道回调配置列表。
+                 * @param req DescribeWebCallbacksRequest
+                 * @return DescribeWebCallbacksOutcome
+                 */
+                DescribeWebCallbacksOutcome DescribeWebCallbacks(const Model::DescribeWebCallbacksRequest &request);
+                void DescribeWebCallbacksAsync(const Model::DescribeWebCallbacksRequest& request, const DescribeWebCallbacksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeWebCallbacksOutcomeCallable DescribeWebCallbacksCallable(const Model::DescribeWebCallbacksRequest& request);
+
+                /**
                  *本接口用于获取告警策略执行详情
                  * @param req GetAlarmLogRequest
                  * @return GetAlarmLogOutcome
@@ -1483,6 +1530,15 @@ API返回数据包最大49MB，建议启用 gzip 压缩（HTTP Request Header Ac
                 ModifyTopicOutcome ModifyTopic(const Model::ModifyTopicRequest &request);
                 void ModifyTopicAsync(const Model::ModifyTopicRequest& request, const ModifyTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyTopicOutcomeCallable ModifyTopicCallable(const Model::ModifyTopicRequest& request);
+
+                /**
+                 *该接口用于修改告警渠道回调配置。
+                 * @param req ModifyWebCallbackRequest
+                 * @return ModifyWebCallbackOutcome
+                 */
+                ModifyWebCallbackOutcome ModifyWebCallback(const Model::ModifyWebCallbackRequest &request);
+                void ModifyWebCallbackAsync(const Model::ModifyWebCallbackRequest& request, const ModifyWebCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyWebCallbackOutcomeCallable ModifyWebCallbackCallable(const Model::ModifyWebCallbackRequest& request);
 
                 /**
                  *打开Kafka协议消费功能

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * APM浮点数类型键值对
+                * APM 浮点数类型键值对
                 */
                 class APMKV : public AbstractModel
                 {
@@ -47,19 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Key值定义
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Key Key值定义
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取Key 值定义
+                     * @return Key Key 值定义
                      * 
                      */
                     std::string GetKey() const;
 
                     /**
-                     * 设置Key值定义
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _key Key值定义
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置Key 值定义
+                     * @param _key Key 值定义
                      * 
                      */
                     void SetKey(const std::string& _key);
@@ -72,19 +68,15 @@ namespace TencentCloud
                     bool KeyHasBeenSet() const;
 
                     /**
-                     * 获取Value值定义
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Value Value值定义
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取Value 值定义
+                     * @return Value Value 值定义
                      * 
                      */
                     double GetValue() const;
 
                     /**
-                     * 设置Value值定义
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _value Value值定义
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置Value 值定义
+                     * @param _value Value 值定义
                      * 
                      */
                     void SetValue(const double& _value);
@@ -99,15 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Key值定义
-注意：此字段可能返回 null，表示取不到有效值。
+                     * Key 值定义
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
 
                     /**
-                     * Value值定义
-注意：此字段可能返回 null，表示取不到有效值。
+                     * Value 值定义
                      */
                     double m_value;
                     bool m_valueHasBeenSet;

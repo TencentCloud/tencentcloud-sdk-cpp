@@ -119,7 +119,7 @@ namespace TencentCloud
                 DescribeApmAgentOutcomeCallable DescribeApmAgentCallable(const Model::DescribeApmAgentRequest& request);
 
                 /**
-                 *APM实例列表拉取
+                 *拉取 APM 业务系统列表
                  * @param req DescribeApmInstancesRequest
                  * @return DescribeApmInstancesOutcome
                  */
