@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点类型，Master/Core/Task/Router/Common
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeType 节点类型，Master/Core/Task/Router/Common
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNodeType() const;
 
                     /**
                      * 设置节点类型，Master/Core/Task/Router/Common
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nodeType 节点类型，Master/Core/Task/Router/Common
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNodeType(const std::string& _nodeType);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeSize 节点数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetNodeSize() const;
 
                     /**
                      * 设置节点数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nodeSize 节点数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNodeSize(const uint64_t& _nodeSize);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 节点类型，Master/Core/Task/Router/Common
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nodeType;
                     bool m_nodeTypeHasBeenSet;
 
                     /**
                      * 节点数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_nodeSize;
                     bool m_nodeSizeHasBeenSet;

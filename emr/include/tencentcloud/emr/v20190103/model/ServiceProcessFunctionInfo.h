@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取探测告警级别
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DetectAlert 探测告警级别
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDetectAlert() const;
 
                     /**
                      * 设置探测告警级别
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _detectAlert 探测告警级别
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDetectAlert(const std::string& _detectAlert);
@@ -148,18 +144,14 @@ namespace TencentCloud
 
                     /**
                      * 获取探测功能描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DetectFunctionKey 探测功能描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDetectFunctionKey() const;
 
                     /**
                      * 设置探测功能描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _detectFunctionKey 探测功能描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDetectFunctionKey(const std::string& _detectFunctionKey);
@@ -173,18 +165,14 @@ namespace TencentCloud
 
                     /**
                      * 获取探测功能结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DetectFunctionValue 探测功能结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDetectFunctionValue() const;
 
                     /**
                      * 设置探测功能结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _detectFunctionValue 探测功能结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDetectFunctionValue(const std::string& _detectFunctionValue);
@@ -198,18 +186,14 @@ namespace TencentCloud
 
                     /**
                      * 获取探测结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DetectTime 探测结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDetectTime() const;
 
                     /**
                      * 设置探测结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _detectTime 探测结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDetectTime(const std::string& _detectTime);
@@ -225,7 +209,6 @@ namespace TencentCloud
 
                     /**
                      * 探测告警级别
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_detectAlert;
                     bool m_detectAlertHasBeenSet;
@@ -253,21 +236,18 @@ namespace TencentCloud
 
                     /**
                      * 探测功能描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_detectFunctionKey;
                     bool m_detectFunctionKeyHasBeenSet;
 
                     /**
                      * 探测功能结果
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_detectFunctionValue;
                     bool m_detectFunctionValueHasBeenSet;
 
                     /**
                      * 探测结果
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_detectTime;
                     bool m_detectTimeHasBeenSet;

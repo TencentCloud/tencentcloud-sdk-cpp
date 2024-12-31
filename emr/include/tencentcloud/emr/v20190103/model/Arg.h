@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取key
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Key key
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置key
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _key key
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKey(const std::string& _key);
@@ -100,7 +96,6 @@ namespace TencentCloud
 
                     /**
                      * key
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;

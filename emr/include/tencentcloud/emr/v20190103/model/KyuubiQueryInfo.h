@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取提交IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClientIP 提交IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClientIP() const;
 
                     /**
                      * 设置提交IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clientIP 提交IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClientIP(const std::string& _clientIP);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取执行时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Duration 执行时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDuration() const;
 
                     /**
                      * 设置执行时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _duration 执行时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDuration(const int64_t& _duration);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
                      * 设置结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endTime 结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndTime(const int64_t& _endTime);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Engine Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EngineID Engine Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEngineID() const;
 
                     /**
                      * 设置Engine Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _engineID Engine Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEngineID(const std::string& _engineID);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取计算引擎
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EngineType 计算引擎
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEngineType() const;
 
                     /**
                      * 设置计算引擎
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _engineType 计算引擎
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEngineType(const std::string& _engineType);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Session Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SessionID Session Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSessionID() const;
 
                     /**
                      * 设置Session Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sessionID Session Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSessionID(const std::string& _sessionID);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BeginTime 开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBeginTime() const;
 
                     /**
                      * 设置开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _beginTime 开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBeginTime(const int64_t& _beginTime);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取执行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExecutionState 执行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExecutionState() const;
 
                     /**
                      * 设置执行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _executionState 执行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExecutionState(const std::string& _executionState);
@@ -273,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取执行语句
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExecutionStatement 执行语句
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExecutionStatement() const;
 
                     /**
                      * 设置执行语句
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _executionStatement 执行语句
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExecutionStatement(const std::string& _executionStatement);
@@ -298,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Statement Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StatementID Statement Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatementID() const;
 
                     /**
                      * 设置Statement Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _statementID Statement Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatementID(const std::string& _statementID);
@@ -323,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取提交用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return User 提交用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUser() const;
 
                     /**
                      * 设置提交用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _user 提交用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUser(const std::string& _user);
@@ -350,84 +302,72 @@ namespace TencentCloud
 
                     /**
                      * 提交IP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clientIP;
                     bool m_clientIPHasBeenSet;
 
                     /**
                      * 执行时长
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_duration;
                     bool m_durationHasBeenSet;
 
                     /**
                      * 结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
                      * Engine Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_engineID;
                     bool m_engineIDHasBeenSet;
 
                     /**
                      * 计算引擎
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_engineType;
                     bool m_engineTypeHasBeenSet;
 
                     /**
                      * ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * Session Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sessionID;
                     bool m_sessionIDHasBeenSet;
 
                     /**
                      * 开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_beginTime;
                     bool m_beginTimeHasBeenSet;
 
                     /**
                      * 执行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_executionState;
                     bool m_executionStateHasBeenSet;
 
                     /**
                      * 执行语句
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_executionStatement;
                     bool m_executionStatementHasBeenSet;
 
                     /**
                      * Statement Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_statementID;
                     bool m_statementIDHasBeenSet;
 
                     /**
                      * 提交用户
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_user;
                     bool m_userHasBeenSet;

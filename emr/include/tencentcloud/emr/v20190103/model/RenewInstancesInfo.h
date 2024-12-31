@@ -242,18 +242,14 @@ namespace TencentCloud
 
                     /**
                      * 获取系统盘大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RootSize 系统盘大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRootSize() const;
 
                     /**
                      * 设置系统盘大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rootSize 系统盘大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRootSize(const int64_t& _rootSize);
@@ -267,18 +263,14 @@ namespace TencentCloud
 
                     /**
                      * 获取系统盘类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RootStorageType 系统盘类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRootStorageType() const;
 
                     /**
                      * 设置系统盘类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rootStorageType 系统盘类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRootStorageType(const int64_t& _rootStorageType);
@@ -374,14 +366,12 @@ namespace TencentCloud
 
                     /**
                      * 系统盘大小
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_rootSize;
                     bool m_rootSizeHasBeenSet;
 
                     /**
                      * 系统盘类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_rootStorageType;
                     bool m_rootStorageTypeHasBeenSet;

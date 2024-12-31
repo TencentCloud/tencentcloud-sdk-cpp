@@ -28,7 +28,8 @@ SmartStructuralProRequest::SmartStructuralProRequest() :
     m_pdfPageNumberHasBeenSet(false),
     m_itemNamesHasBeenSet(false),
     m_returnFullTextHasBeenSet(false),
-    m_configIdHasBeenSet(false)
+    m_configIdHasBeenSet(false),
+    m_enableCoordHasBeenSet(false)
 {
 }
 
@@ -90,6 +91,14 @@ string SmartStructuralProRequest::ToJsonString() const
         string key = "ConfigId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_configId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableCoordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableCoord";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableCoord, allocator);
     }
 
 
@@ -194,6 +203,22 @@ void SmartStructuralProRequest::SetConfigId(const string& _configId)
 bool SmartStructuralProRequest::ConfigIdHasBeenSet() const
 {
     return m_configIdHasBeenSet;
+}
+
+bool SmartStructuralProRequest::GetEnableCoord() const
+{
+    return m_enableCoord;
+}
+
+void SmartStructuralProRequest::SetEnableCoord(const bool& _enableCoord)
+{
+    m_enableCoord = _enableCoord;
+    m_enableCoordHasBeenSet = true;
+}
+
+bool SmartStructuralProRequest::EnableCoordHasBeenSet() const
+{
+    return m_enableCoordHasBeenSet;
 }
 
 

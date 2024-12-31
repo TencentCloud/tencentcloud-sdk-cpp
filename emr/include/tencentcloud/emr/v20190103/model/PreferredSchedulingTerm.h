@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取权重，范围1-100
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Weight 权重，范围1-100
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetWeight() const;
 
                     /**
                      * 设置权重，范围1-100
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _weight 权重，范围1-100
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWeight(const int64_t& _weight);
@@ -101,7 +97,6 @@ namespace TencentCloud
 
                     /**
                      * 权重，范围1-100
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_weight;
                     bool m_weightHasBeenSet;

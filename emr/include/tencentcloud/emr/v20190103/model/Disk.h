@@ -50,11 +50,9 @@ namespace TencentCloud
                      * 获取数据盘类型，创建EMR容器集群实例可选
 <li> SSD云盘: CLOUD_SSD</li>
 <li>高效云盘: CLOUD_PREMIUM</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiskType 数据盘类型，创建EMR容器集群实例可选
 <li> SSD云盘: CLOUD_SSD</li>
 <li>高效云盘: CLOUD_PREMIUM</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDiskType() const;
@@ -63,11 +61,9 @@ namespace TencentCloud
                      * 设置数据盘类型，创建EMR容器集群实例可选
 <li> SSD云盘: CLOUD_SSD</li>
 <li>高效云盘: CLOUD_PREMIUM</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _diskType 数据盘类型，创建EMR容器集群实例可选
 <li> SSD云盘: CLOUD_SSD</li>
 <li>高效云盘: CLOUD_PREMIUM</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiskType(const std::string& _diskType);
@@ -81,18 +77,14 @@ namespace TencentCloud
 
                     /**
                      * 获取单块大小GB
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiskCapacity 单块大小GB
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDiskCapacity() const;
 
                     /**
                      * 设置单块大小GB
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _diskCapacity 单块大小GB
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiskCapacity(const int64_t& _diskCapacity);
@@ -106,18 +98,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据盘数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiskNumber 数据盘数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDiskNumber() const;
 
                     /**
                      * 设置数据盘数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _diskNumber 数据盘数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiskNumber(const int64_t& _diskNumber);
@@ -135,21 +123,18 @@ namespace TencentCloud
                      * 数据盘类型，创建EMR容器集群实例可选
 <li> SSD云盘: CLOUD_SSD</li>
 <li>高效云盘: CLOUD_PREMIUM</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_diskType;
                     bool m_diskTypeHasBeenSet;
 
                     /**
                      * 单块大小GB
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_diskCapacity;
                     bool m_diskCapacityHasBeenSet;
 
                     /**
                      * 数据盘数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_diskNumber;
                     bool m_diskNumberHasBeenSet;

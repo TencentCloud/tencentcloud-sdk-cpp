@@ -168,6 +168,27 @@ namespace TencentCloud
                      */
                     bool ConfigIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启全文字段坐标值的识别
+                     * @return EnableCoord 是否开启全文字段坐标值的识别
+                     * 
+                     */
+                    bool GetEnableCoord() const;
+
+                    /**
+                     * 设置是否开启全文字段坐标值的识别
+                     * @param _enableCoord 是否开启全文字段坐标值的识别
+                     * 
+                     */
+                    void SetEnableCoord(const bool& _enableCoord);
+
+                    /**
+                     * 判断参数 EnableCoord 是否已赋值
+                     * @return EnableCoord 是否已赋值
+                     * 
+                     */
+                    bool EnableCoordHasBeenSet() const;
+
                 private:
 
                     /**
@@ -205,6 +226,12 @@ namespace TencentCloud
                      */
                     std::string m_configId;
                     bool m_configIdHasBeenSet;
+
+                    /**
+                     * 是否开启全文字段坐标值的识别
+                     */
+                    bool m_enableCoord;
+                    bool m_enableCoordHasBeenSet;
 
                 };
             }

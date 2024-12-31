@@ -21,7 +21,8 @@ using namespace TencentCloud::Emr::V20190103::Model;
 using namespace std;
 
 UserManagerFilter::UserManagerFilter() :
-    m_userNameHasBeenSet(false)
+    m_userNameHasBeenSet(false),
+    m_userTypeHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,16 @@ CoreInternalOutcome UserManagerFilter::Deserialize(const rapidjson::Value &value
         m_userNameHasBeenSet = true;
     }
 
+    if (value.HasMember("UserType") && !value["UserType"].IsNull())
+    {
+        if (!value["UserType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserManagerFilter.UserType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userType = string(value["UserType"].GetString());
+        m_userTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +64,14 @@ void UserManagerFilter::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "UserName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_userName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -72,5 +91,21 @@ void UserManagerFilter::SetUserName(const string& _userName)
 bool UserManagerFilter::UserNameHasBeenSet() const
 {
     return m_userNameHasBeenSet;
+}
+
+string UserManagerFilter::GetUserType() const
+{
+    return m_userType;
+}
+
+void UserManagerFilter::SetUserType(const string& _userType)
+{
+    m_userType = _userType;
+    m_userTypeHasBeenSet = true;
+}
+
+bool UserManagerFilter::UserTypeHasBeenSet() const
+{
+    return m_userTypeHasBeenSet;
 }
 

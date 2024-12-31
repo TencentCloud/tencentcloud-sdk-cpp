@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置集名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigSet 配置集名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConfigSet() const;
 
                     /**
                      * 设置配置集名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _configSet 配置集名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConfigSet(const std::string& _configSet);
@@ -239,7 +235,6 @@ key的取值信息如下：
 
                     /**
                      * 配置集名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_configSet;
                     bool m_configSetHasBeenSet;

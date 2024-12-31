@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取硬件id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HardwareId 硬件id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHardwareId() const;
 
                     /**
                      * 设置硬件id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hardwareId 硬件id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHardwareId(const std::string& _hardwareId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取硬件序列号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SN 硬件序列号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSN() const;
 
                     /**
                      * 设置硬件序列号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sN 硬件序列号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSN(const std::string& _sN);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取激活状态， 空：全部； 1:待激活； 2:已激活
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 激活状态， 空：全部； 1:待激活； 2:已激活
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置激活状态， 空：全部； 1:待激活； 2:已激活
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 激活状态， 空：全部； 1:待激活； 2:已激活
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -173,18 +157,14 @@ namespace TencentCloud
 
                     /**
                      * 获取厂商备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 厂商备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置厂商备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 厂商备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -198,18 +178,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceId 设备id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
                      * 设置设备id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceId 设备id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
@@ -224,10 +200,8 @@ namespace TencentCloud
                     /**
                      * 获取license计费模式： 1，租户月付费 2，厂商月付费 3，license永久授权
 注：设备为租户付费且未激活（未选择月付还是永久付费）时，此参数返回1，仅代表租户付费。后续将废弃此参数，新接入请使用LicensePayMode和Payer
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LicenseChargingMode license计费模式： 1，租户月付费 2，厂商月付费 3，license永久授权
 注：设备为租户付费且未激活（未选择月付还是永久付费）时，此参数返回1，仅代表租户付费。后续将废弃此参数，新接入请使用LicensePayMode和Payer
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLicenseChargingMode() const;
@@ -235,10 +209,8 @@ namespace TencentCloud
                     /**
                      * 设置license计费模式： 1，租户月付费 2，厂商月付费 3，license永久授权
 注：设备为租户付费且未激活（未选择月付还是永久付费）时，此参数返回1，仅代表租户付费。后续将废弃此参数，新接入请使用LicensePayMode和Payer
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _licenseChargingMode license计费模式： 1，租户月付费 2，厂商月付费 3，license永久授权
 注：设备为租户付费且未激活（未选择月付还是永久付费）时，此参数返回1，仅代表租户付费。后续将废弃此参数，新接入请使用LicensePayMode和Payer
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLicenseChargingMode(const int64_t& _licenseChargingMode);
@@ -280,12 +252,10 @@ namespace TencentCloud
 0：月度授权
 1：永久授权
 -1：未知
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LicensePayMode license授权有效期
 0：月度授权
 1：永久授权
 -1：未知
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLicensePayMode() const;
@@ -295,12 +265,10 @@ namespace TencentCloud
 0：月度授权
 1：永久授权
 -1：未知
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _licensePayMode license授权有效期
 0：月度授权
 1：永久授权
 -1：未知
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLicensePayMode(const int64_t& _licensePayMode);
@@ -316,11 +284,9 @@ namespace TencentCloud
                      * 获取付费方
 0：客户付费
 1：厂商付费
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Payer 付费方
 0：客户付费
 1：厂商付费
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPayer() const;
@@ -329,11 +295,9 @@ namespace TencentCloud
                      * 设置付费方
 0：客户付费
 1：厂商付费
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _payer 付费方
 0：客户付费
 1：厂商付费
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPayer(const int64_t& _payer);
@@ -349,28 +313,24 @@ namespace TencentCloud
 
                     /**
                      * 硬件id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hardwareId;
                     bool m_hardwareIdHasBeenSet;
 
                     /**
                      * 硬件序列号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sN;
                     bool m_sNHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 激活状态， 空：全部； 1:待激活； 2:已激活
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
@@ -384,14 +344,12 @@ namespace TencentCloud
 
                     /**
                      * 厂商备注
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
                      * 设备id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceId;
                     bool m_deviceIdHasBeenSet;
@@ -399,7 +357,6 @@ namespace TencentCloud
                     /**
                      * license计费模式： 1，租户月付费 2，厂商月付费 3，license永久授权
 注：设备为租户付费且未激活（未选择月付还是永久付费）时，此参数返回1，仅代表租户付费。后续将废弃此参数，新接入请使用LicensePayMode和Payer
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_licenseChargingMode;
                     bool m_licenseChargingModeHasBeenSet;
@@ -416,7 +373,6 @@ namespace TencentCloud
 0：月度授权
 1：永久授权
 -1：未知
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_licensePayMode;
                     bool m_licensePayModeHasBeenSet;
@@ -425,7 +381,6 @@ namespace TencentCloud
                      * 付费方
 0：客户付费
 1：厂商付费
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_payer;
                     bool m_payerHasBeenSet;

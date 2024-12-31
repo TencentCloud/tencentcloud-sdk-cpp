@@ -36,7 +36,6 @@ namespace TencentCloud
             {
                 /**
                 * 拉流地址，只有在推流情况下才有
-
                 */
                 class StreamAddress : public AbstractModel
                 {

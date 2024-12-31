@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取已使用配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UsedQuota 已使用配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetUsedQuota() const;
 
                     /**
                      * 设置已使用配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _usedQuota 已使用配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUsedQuota(const int64_t& _usedQuota);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取剩余配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RemainingQuota 剩余配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRemainingQuota() const;
 
                     /**
                      * 设置剩余配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remainingQuota 剩余配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemainingQuota(const int64_t& _remainingQuota);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取总配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalQuota 总配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalQuota() const;
 
                     /**
                      * 设置总配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalQuota 总配额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalQuota(const int64_t& _totalQuota);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zone 可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zone 可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 已使用配额
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_usedQuota;
                     bool m_usedQuotaHasBeenSet;
 
                     /**
                      * 剩余配额
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_remainingQuota;
                     bool m_remainingQuotaHasBeenSet;
 
                     /**
                      * 总配额
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalQuota;
                     bool m_totalQuotaHasBeenSet;
 
                     /**
                      * 可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;

@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取CLB类型，PUBLIC_IP表示支持公网CLB和INTERNAL_IP表示支持内网CLB字段 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CLBType CLB类型，PUBLIC_IP表示支持公网CLB和INTERNAL_IP表示支持内网CLB字段 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCLBType() const;
 
                     /**
                      * 设置CLB类型，PUBLIC_IP表示支持公网CLB和INTERNAL_IP表示支持内网CLB字段 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cLBType CLB类型，PUBLIC_IP表示支持公网CLB和INTERNAL_IP表示支持内网CLB字段 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCLBType(const std::string& _cLBType);
@@ -101,7 +97,6 @@ namespace TencentCloud
 
                     /**
                      * CLB类型，PUBLIC_IP表示支持公网CLB和INTERNAL_IP表示支持内网CLB字段 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cLBType;
                     bool m_cLBTypeHasBeenSet;

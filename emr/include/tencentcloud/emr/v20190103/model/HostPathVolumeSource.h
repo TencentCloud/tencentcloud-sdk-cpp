@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Path 主机路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPath() const;
 
                     /**
                      * 设置主机路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _path 主机路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPath(const std::string& _path);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机路径类型，当前默认DirectoryOrCreate
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 主机路径类型，当前默认DirectoryOrCreate
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置主机路径类型，当前默认DirectoryOrCreate
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 主机路径类型，当前默认DirectoryOrCreate
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 主机路径
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_path;
                     bool m_pathHasBeenSet;
 
                     /**
                      * 主机路径类型，当前默认DirectoryOrCreate
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

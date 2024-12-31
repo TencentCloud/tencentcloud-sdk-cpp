@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取参数value
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PValue 参数value
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPValue() const;
 
                     /**
                      * 设置参数value
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pValue 参数value
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPValue(const std::string& _pValue);
@@ -102,7 +98,6 @@ namespace TencentCloud
 
                     /**
                      * 参数value
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pValue;
                     bool m_pValueHasBeenSet;

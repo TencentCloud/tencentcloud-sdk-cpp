@@ -328,18 +328,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeFlagFilter 节点类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNodeFlagFilter() const;
 
                     /**
                      * 设置节点类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nodeFlagFilter 节点类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNodeFlagFilter(const std::string& _nodeFlagFilter);
@@ -378,18 +374,14 @@ namespace TencentCloud
 
                     /**
                      * 获取角色是否支持监控
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsSupportRoleMonitor 角色是否支持监控
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsSupportRoleMonitor() const;
 
                     /**
                      * 设置角色是否支持监控
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isSupportRoleMonitor 角色是否支持监控
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsSupportRoleMonitor(const bool& _isSupportRoleMonitor);
@@ -428,18 +420,14 @@ namespace TencentCloud
 
                     /**
                      * 获取测试环境api强校验，现网没有，emrcc接口返回有。不加会报错
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HAState 测试环境api强校验，现网没有，emrcc接口返回有。不加会报错
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHAState() const;
 
                     /**
                      * 设置测试环境api强校验，现网没有，emrcc接口返回有。不加会报错
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hAState 测试环境api强校验，现网没有，emrcc接口返回有。不加会报错
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHAState(const std::string& _hAState);
@@ -453,18 +441,14 @@ namespace TencentCloud
 
                     /**
                      * 获取NameService名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NameService NameService名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNameService() const;
 
                     /**
                      * 设置NameService名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nameService NameService名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNameService(const std::string& _nameService);
@@ -478,18 +462,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否支持联邦
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsFederation 是否支持联邦
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsFederation() const;
 
                     /**
                      * 设置是否支持联邦
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isFederation 是否支持联邦
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsFederation(const bool& _isFederation);
@@ -503,18 +483,14 @@ namespace TencentCloud
 
                     /**
                      * 获取datanode是否是维护状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataNodeMaintenanceState datanode是否是维护状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDataNodeMaintenanceState() const;
 
                     /**
                      * 设置datanode是否是维护状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataNodeMaintenanceState datanode是否是维护状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataNodeMaintenanceState(const int64_t& _dataNodeMaintenanceState);
@@ -609,7 +585,6 @@ namespace TencentCloud
 
                     /**
                      * 节点类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nodeFlagFilter;
                     bool m_nodeFlagFilterHasBeenSet;
@@ -623,7 +598,6 @@ namespace TencentCloud
 
                     /**
                      * 角色是否支持监控
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isSupportRoleMonitor;
                     bool m_isSupportRoleMonitorHasBeenSet;
@@ -637,28 +611,24 @@ namespace TencentCloud
 
                     /**
                      * 测试环境api强校验，现网没有，emrcc接口返回有。不加会报错
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hAState;
                     bool m_hAStateHasBeenSet;
 
                     /**
                      * NameService名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nameService;
                     bool m_nameServiceHasBeenSet;
 
                     /**
                      * 是否支持联邦
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isFederation;
                     bool m_isFederationHasBeenSet;
 
                     /**
                      * datanode是否是维护状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_dataNodeMaintenanceState;
                     bool m_dataNodeMaintenanceStateHasBeenSet;

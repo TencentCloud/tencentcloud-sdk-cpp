@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Timestamp 时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTimestamp() const;
 
                     /**
                      * 设置时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timestamp 时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimestamp(const std::string& _timestamp);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取采样值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 采样值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置采样值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _value 采样值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_timestamp;
                     bool m_timestampHasBeenSet;
 
                     /**
                      * 采样值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;

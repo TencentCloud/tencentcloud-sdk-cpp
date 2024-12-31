@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取外部访问类型，当前仅支持CLB字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 外部访问类型，当前仅支持CLB字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置外部访问类型，当前仅支持CLB字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 外部访问类型，当前仅支持CLB字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -101,7 +97,6 @@ namespace TencentCloud
 
                     /**
                      * 外部访问类型，当前仅支持CLB字段
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

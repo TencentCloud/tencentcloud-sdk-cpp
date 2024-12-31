@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取统计类型 新增NEWUSER 和登录 LOGIN
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StatisticalType 统计类型 新增NEWUSER 和登录 LOGIN
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatisticalType() const;
 
                     /**
                      * 设置统计类型 新增NEWUSER 和登录 LOGIN
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _statisticalType 统计类型 新增NEWUSER 和登录 LOGIN
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatisticalType(const std::string& _statisticalType);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取统计周期：日DAY，周WEEK，月MONTH
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StatisticalCycle 统计周期：日DAY，周WEEK，月MONTH
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatisticalCycle() const;
 
                     /**
                      * 设置统计周期：日DAY，周WEEK，月MONTH
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _statisticalCycle 统计周期：日DAY，周WEEK，月MONTH
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatisticalCycle(const std::string& _statisticalCycle);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取统计总量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Count 统计总量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCount() const;
 
                     /**
                      * 设置统计总量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _count 统计总量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCount(const uint64_t& _count);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updateTime 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 统计类型 新增NEWUSER 和登录 LOGIN
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_statisticalType;
                     bool m_statisticalTypeHasBeenSet;
 
                     /**
                      * 统计周期：日DAY，周WEEK，月MONTH
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_statisticalCycle;
                     bool m_statisticalCycleHasBeenSet;
 
                     /**
                      * 统计总量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_count;
                     bool m_countHasBeenSet;
 
                     /**
                      * 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;

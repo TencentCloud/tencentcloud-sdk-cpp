@@ -251,18 +251,14 @@ namespace TencentCloud
 
                     /**
                      * 获取代表vpc网络唯一id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId 代表vpc网络唯一id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置代表vpc网络唯一id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcId 代表vpc网络唯一id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -276,18 +272,14 @@ namespace TencentCloud
 
                     /**
                      * 获取代表vpc子网唯一id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetId 代表vpc子网唯一id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置代表vpc子网唯一id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subnetId 代表vpc子网唯一id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -301,18 +293,14 @@ namespace TencentCloud
 
                     /**
                      * 获取pod name
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PodName pod name
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPodName() const;
 
                     /**
                      * 设置pod name
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _podName pod name
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPodName(const std::string& _podName);
@@ -385,21 +373,18 @@ namespace TencentCloud
 
                     /**
                      * 代表vpc网络唯一id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
                      * 代表vpc子网唯一id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
                      * pod name
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_podName;
                     bool m_podNameHasBeenSet;

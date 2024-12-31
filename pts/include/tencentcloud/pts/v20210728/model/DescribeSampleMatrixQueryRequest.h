@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取分组
-                     * @return GroupBy 分组
+                     * 获取分组；取值范围参见 DescribeMetricLabelWithValues 接口返回的指标及其支持的标签名
+                     * @return GroupBy 分组；取值范围参见 DescribeMetricLabelWithValues 接口返回的指标及其支持的标签名
                      * 
                      */
                     std::vector<std::string> GetGroupBy() const;
 
                     /**
-                     * 设置分组
-                     * @param _groupBy 分组
+                     * 设置分组；取值范围参见 DescribeMetricLabelWithValues 接口返回的指标及其支持的标签名
+                     * @param _groupBy 分组；取值范围参见 DescribeMetricLabelWithValues 接口返回的指标及其支持的标签名
                      * 
                      */
                     void SetGroupBy(const std::vector<std::string>& _groupBy);
@@ -229,7 +229,7 @@ namespace TencentCloud
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 分组
+                     * 分组；取值范围参见 DescribeMetricLabelWithValues 接口返回的指标及其支持的标签名
                      */
                     std::vector<std::string> m_groupBy;
                     bool m_groupByHasBeenSet;

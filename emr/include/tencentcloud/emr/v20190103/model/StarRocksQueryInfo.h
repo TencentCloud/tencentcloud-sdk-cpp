@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取提交IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClientIP 提交IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClientIP() const;
 
                     /**
                      * 设置提交IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clientIP 提交IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClientIP(const std::string& _clientIP);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取CPU总时间(ns)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CPUCost CPU总时间(ns)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCPUCost() const;
 
                     /**
                      * 设置CPU总时间(ns)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cPUCost CPU总时间(ns)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCPUCost(const int64_t& _cPUCost);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取默认DB
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefaultDB 默认DB
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDefaultDB() const;
 
                     /**
                      * 设置默认DB
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _defaultDB 默认DB
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDefaultDB(const std::string& _defaultDB);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
                      * 设置结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endTime 结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndTime(const int64_t& _endTime);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取执行IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExecutionIP 执行IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExecutionIP() const;
 
                     /**
                      * 设置执行IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _executionIP 执行IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExecutionIP(const std::string& _executionIP);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取查询ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return QueryID 查询ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetQueryID() const;
 
                     /**
                      * 设置查询ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _queryID 查询ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQueryID(const std::string& _queryID);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取查询类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return QueryType 查询类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetQueryType() const;
 
                     /**
                      * 设置查询类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _queryType 查询类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQueryType(const std::string& _queryType);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取消耗总内存(bytes)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MemCost 消耗总内存(bytes)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMemCost() const;
 
                     /**
                      * 设置消耗总内存(bytes)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _memCost 消耗总内存(bytes)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMemCost(const int64_t& _memCost);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取plan阶段CPU占用(ns)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PlanCpuCosts plan阶段CPU占用(ns)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPlanCpuCosts() const;
 
                     /**
                      * 设置plan阶段CPU占用(ns)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _planCpuCosts plan阶段CPU占用(ns)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPlanCpuCosts(const int64_t& _planCpuCosts);
@@ -273,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取plan阶段内存占用(bytes)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PlanMemCosts plan阶段内存占用(bytes)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPlanMemCosts() const;
 
                     /**
                      * 设置plan阶段内存占用(bytes)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _planMemCosts plan阶段内存占用(bytes)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPlanMemCosts(const int64_t& _planMemCosts);
@@ -298,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取执行时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return QueryTime 执行时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetQueryTime() const;
 
                     /**
                      * 设置执行时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _queryTime 执行时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQueryTime(const int64_t& _queryTime);
@@ -323,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceGroup 资源组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceGroup() const;
 
                     /**
                      * 设置资源组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceGroup 资源组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceGroup(const std::string& _resourceGroup);
@@ -348,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取获取行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReturnRows 获取行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetReturnRows() const;
 
                     /**
                      * 设置获取行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _returnRows 获取行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReturnRows(const int64_t& _returnRows);
@@ -373,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取扫描数据量(bytes)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanBytes 扫描数据量(bytes)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetScanBytes() const;
 
                     /**
                      * 设置扫描数据量(bytes)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scanBytes 扫描数据量(bytes)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScanBytes(const int64_t& _scanBytes);
@@ -398,18 +342,14 @@ namespace TencentCloud
 
                     /**
                      * 获取扫描行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanRows 扫描行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetScanRows() const;
 
                     /**
                      * 设置扫描行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scanRows 扫描行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScanRows(const int64_t& _scanRows);
@@ -423,18 +363,14 @@ namespace TencentCloud
 
                     /**
                      * 获取开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BeginTime 开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBeginTime() const;
 
                     /**
                      * 设置开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _beginTime 开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBeginTime(const int64_t& _beginTime);
@@ -448,18 +384,14 @@ namespace TencentCloud
 
                     /**
                      * 获取执行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExecutionState 执行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExecutionState() const;
 
                     /**
                      * 设置执行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _executionState 执行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExecutionState(const std::string& _executionState);
@@ -473,18 +405,14 @@ namespace TencentCloud
 
                     /**
                      * 获取执行语句
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExecutionStatement 执行语句
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExecutionStatement() const;
 
                     /**
                      * 设置执行语句
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _executionStatement 执行语句
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExecutionStatement(const std::string& _executionStatement);
@@ -498,18 +426,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return User 用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUser() const;
 
                     /**
                      * 设置用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _user 用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUser(const std::string& _user);
@@ -525,133 +449,114 @@ namespace TencentCloud
 
                     /**
                      * 提交IP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clientIP;
                     bool m_clientIPHasBeenSet;
 
                     /**
                      * CPU总时间(ns)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_cPUCost;
                     bool m_cPUCostHasBeenSet;
 
                     /**
                      * 默认DB
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_defaultDB;
                     bool m_defaultDBHasBeenSet;
 
                     /**
                      * 结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
                      * 执行IP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_executionIP;
                     bool m_executionIPHasBeenSet;
 
                     /**
                      * 查询ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_queryID;
                     bool m_queryIDHasBeenSet;
 
                     /**
                      * 查询类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_queryType;
                     bool m_queryTypeHasBeenSet;
 
                     /**
                      * 消耗总内存(bytes)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_memCost;
                     bool m_memCostHasBeenSet;
 
                     /**
                      * plan阶段CPU占用(ns)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_planCpuCosts;
                     bool m_planCpuCostsHasBeenSet;
 
                     /**
                      * plan阶段内存占用(bytes)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_planMemCosts;
                     bool m_planMemCostsHasBeenSet;
 
                     /**
                      * 执行时长
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_queryTime;
                     bool m_queryTimeHasBeenSet;
 
                     /**
                      * 资源组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceGroup;
                     bool m_resourceGroupHasBeenSet;
 
                     /**
                      * 获取行数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_returnRows;
                     bool m_returnRowsHasBeenSet;
 
                     /**
                      * 扫描数据量(bytes)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_scanBytes;
                     bool m_scanBytesHasBeenSet;
 
                     /**
                      * 扫描行数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_scanRows;
                     bool m_scanRowsHasBeenSet;
 
                     /**
                      * 开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_beginTime;
                     bool m_beginTimeHasBeenSet;
 
                     /**
                      * 执行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_executionState;
                     bool m_executionStateHasBeenSet;
 
                     /**
                      * 执行语句
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_executionStatement;
                     bool m_executionStatementHasBeenSet;
 
                     /**
                      * 用户
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_user;
                     bool m_userHasBeenSet;

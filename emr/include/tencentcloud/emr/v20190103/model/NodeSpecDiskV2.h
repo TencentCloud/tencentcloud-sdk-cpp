@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Count 数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCount() const;
 
                     /**
                      * 设置数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _count 数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCount(const int64_t& _count);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取磁盘类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiskType 磁盘类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDiskType() const;
 
                     /**
                      * 设置磁盘类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _diskType 磁盘类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiskType(const std::string& _diskType);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取指定磁盘大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefaultDiskSize 指定磁盘大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDefaultDiskSize() const;
 
                     /**
                      * 设置指定磁盘大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _defaultDiskSize 指定磁盘大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDefaultDiskSize(const int64_t& _defaultDiskSize);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_count;
                     bool m_countHasBeenSet;
 
                     /**
                      * 名字
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 磁盘类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_diskType;
                     bool m_diskTypeHasBeenSet;
 
                     /**
                      * 指定磁盘大小
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_defaultDiskSize;
                     bool m_defaultDiskSizeHasBeenSet;

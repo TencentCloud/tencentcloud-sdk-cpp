@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取可用区Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZoneId 可用区Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetZoneId() const;
 
                     /**
                      * 设置可用区Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zoneId 可用区Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZoneId(const std::string& _zoneId);
@@ -97,7 +93,6 @@ namespace TencentCloud
 
                     /**
                      * 可用区Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zoneId;
                     bool m_zoneIdHasBeenSet;

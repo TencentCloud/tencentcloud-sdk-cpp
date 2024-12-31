@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取重复任务执行的具体时刻，例如"01:02:00"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExecuteAtTimeOfDay 重复任务执行的具体时刻，例如"01:02:00"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExecuteAtTimeOfDay() const;
 
                     /**
                      * 设置重复任务执行的具体时刻，例如"01:02:00"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _executeAtTimeOfDay 重复任务执行的具体时刻，例如"01:02:00"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExecuteAtTimeOfDay(const std::string& _executeAtTimeOfDay);
@@ -100,7 +96,6 @@ namespace TencentCloud
 
                     /**
                      * 重复任务执行的具体时刻，例如"01:02:00"
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_executeAtTimeOfDay;
                     bool m_executeAtTimeOfDayHasBeenSet;

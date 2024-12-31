@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取进程名，必填，如NameNode
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ComponentName 进程名，必填，如NameNode
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetComponentName() const;
 
                     /**
                      * 设置进程名，必填，如NameNode
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _componentName 进程名，必填，如NameNode
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetComponentName(const std::string& _componentName);
@@ -100,7 +96,6 @@ namespace TencentCloud
 
                     /**
                      * 进程名，必填，如NameNode
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_componentName;
                     bool m_componentNameHasBeenSet;

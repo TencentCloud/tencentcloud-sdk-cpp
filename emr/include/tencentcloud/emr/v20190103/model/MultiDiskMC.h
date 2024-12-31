@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该类型云盘个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Count 该类型云盘个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCount() const;
 
                     /**
                      * 设置该类型云盘个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _count 该类型云盘个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCount(const int64_t& _count);
@@ -85,7 +81,6 @@ namespace TencentCloud
 14 : 大数据型云硬盘
 15 : 高IO型云硬盘
 16 : 远端SSD盘
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 磁盘类型
 1  :本地盘
 2  :云硬盘
@@ -99,7 +94,6 @@ namespace TencentCloud
 14 : 大数据型云硬盘
 15 : 高IO型云硬盘
 16 : 远端SSD盘
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetType() const;
@@ -118,7 +112,6 @@ namespace TencentCloud
 14 : 大数据型云硬盘
 15 : 高IO型云硬盘
 16 : 远端SSD盘
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 磁盘类型
 1  :本地盘
 2  :云硬盘
@@ -132,7 +125,6 @@ namespace TencentCloud
 14 : 大数据型云硬盘
 15 : 高IO型云硬盘
 16 : 远端SSD盘
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const int64_t& _type);
@@ -146,18 +138,14 @@ namespace TencentCloud
 
                     /**
                      * 获取磁盘大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Size 磁盘大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSize() const;
 
                     /**
                      * 设置磁盘大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _size 磁盘大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSize(const std::string& _size);
@@ -171,18 +159,14 @@ namespace TencentCloud
 
                     /**
                      * 获取云盘大小,单位b
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Volume 云盘大小,单位b
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetVolume() const;
 
                     /**
                      * 设置云盘大小,单位b
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _volume 云盘大小,单位b
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVolume(const int64_t& _volume);
@@ -198,7 +182,6 @@ namespace TencentCloud
 
                     /**
                      * 该类型云盘个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_count;
                     bool m_countHasBeenSet;
@@ -217,21 +200,18 @@ namespace TencentCloud
 14 : 大数据型云硬盘
 15 : 高IO型云硬盘
 16 : 远端SSD盘
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 磁盘大小
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_size;
                     bool m_sizeHasBeenSet;
 
                     /**
                      * 云盘大小,单位b
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_volume;
                     bool m_volumeHasBeenSet;

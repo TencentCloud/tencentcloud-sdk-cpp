@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取执行语句
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Statement 执行语句
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatement() const;
 
                     /**
                      * 设置执行语句
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _statement 执行语句
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatement(const std::string& _statement);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取查询ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 查询ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置查询ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id 查询ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
                      * 设置开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _startTime 开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStartTime(const int64_t& _startTime);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取运行时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Duration 运行时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDuration() const;
 
                     /**
                      * 设置运行时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _duration 运行时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDuration(const std::string& _duration);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
                      * 设置结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endTime 结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndTime(const int64_t& _endTime);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取执行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return State 执行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetState() const;
 
                     /**
                      * 设置执行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _state 执行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetState(const std::string& _state);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取获取行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RowsFetched 获取行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRowsFetched() const;
 
                     /**
                      * 设置获取行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rowsFetched 获取行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRowsFetched(const int64_t& _rowsFetched);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return User 用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUser() const;
 
                     /**
                      * 设置用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _user 用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUser(const std::string& _user);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取默认DB
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefaultDB 默认DB
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDefaultDB() const;
 
                     /**
                      * 设置默认DB
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _defaultDB 默认DB
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDefaultDB(const std::string& _defaultDB);
@@ -273,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取执行的Coordinator节点
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Coordinator 执行的Coordinator节点
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCoordinator() const;
 
                     /**
                      * 设置执行的Coordinator节点
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _coordinator 执行的Coordinator节点
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCoordinator(const std::string& _coordinator);
@@ -298,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取单节点内存峰值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxNodePeakMemoryUsage 单节点内存峰值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMaxNodePeakMemoryUsage() const;
 
                     /**
                      * 设置单节点内存峰值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxNodePeakMemoryUsage 单节点内存峰值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxNodePeakMemoryUsage(const std::string& _maxNodePeakMemoryUsage);
@@ -323,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取查询类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return QueryType 查询类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetQueryType() const;
 
                     /**
                      * 设置查询类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _queryType 查询类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQueryType(const std::string& _queryType);
@@ -348,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取扫描的HDFS行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanHDFSRows 扫描的HDFS行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetScanHDFSRows() const;
 
                     /**
                      * 设置扫描的HDFS行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scanHDFSRows 扫描的HDFS行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScanHDFSRows(const int64_t& _scanHDFSRows);
@@ -373,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取扫描的Kudu行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanKUDURows 扫描的Kudu行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetScanKUDURows() const;
 
                     /**
                      * 设置扫描的Kudu行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scanKUDURows 扫描的Kudu行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScanKUDURows(const int64_t& _scanKUDURows);
@@ -398,18 +342,14 @@ namespace TencentCloud
 
                     /**
                      * 获取扫描的总行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanRowsTotal 扫描的总行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetScanRowsTotal() const;
 
                     /**
                      * 设置扫描的总行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scanRowsTotal 扫描的总行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScanRowsTotal(const int64_t& _scanRowsTotal);
@@ -423,18 +363,14 @@ namespace TencentCloud
 
                     /**
                      * 获取读取的总字节数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalBytesRead 读取的总字节数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalBytesRead() const;
 
                     /**
                      * 设置读取的总字节数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalBytesRead 读取的总字节数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalBytesRead(const int64_t& _totalBytesRead);
@@ -448,18 +384,14 @@ namespace TencentCloud
 
                     /**
                      * 获取发送的总字节数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalBytesSent 发送的总字节数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalBytesSent() const;
 
                     /**
                      * 设置发送的总字节数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalBytesSent 发送的总字节数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalBytesSent(const int64_t& _totalBytesSent);
@@ -473,18 +405,14 @@ namespace TencentCloud
 
                     /**
                      * 获取CPU总时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCpuTime CPU总时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCpuTime() const;
 
                     /**
                      * 设置CPU总时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalCpuTime CPU总时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalCpuTime(const int64_t& _totalCpuTime);
@@ -498,18 +426,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内部数据发送总量(Bytes)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalInnerBytesSent 内部数据发送总量(Bytes)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalInnerBytesSent() const;
 
                     /**
                      * 设置内部数据发送总量(Bytes)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalInnerBytesSent 内部数据发送总量(Bytes)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalInnerBytesSent(const int64_t& _totalInnerBytesSent);
@@ -523,18 +447,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内部扫描数据发送总量(Bytes)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalScanBytesSent 内部扫描数据发送总量(Bytes)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalScanBytesSent() const;
 
                     /**
                      * 设置内部扫描数据发送总量(Bytes)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalScanBytesSent 内部扫描数据发送总量(Bytes)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalScanBytesSent(const int64_t& _totalScanBytesSent);
@@ -548,18 +468,14 @@ namespace TencentCloud
 
                     /**
                      * 获取预估单节点内存
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EstimatedPerHostMemBytes 预估单节点内存
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEstimatedPerHostMemBytes() const;
 
                     /**
                      * 设置预估单节点内存
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _estimatedPerHostMemBytes 预估单节点内存
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEstimatedPerHostMemBytes(const int64_t& _estimatedPerHostMemBytes);
@@ -573,18 +489,14 @@ namespace TencentCloud
 
                     /**
                      * 获取从缓存中获取的数据行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NumRowsFetchedFromCache 从缓存中获取的数据行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetNumRowsFetchedFromCache() const;
 
                     /**
                      * 设置从缓存中获取的数据行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _numRowsFetchedFromCache 从缓存中获取的数据行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNumRowsFetchedFromCache(const int64_t& _numRowsFetchedFromCache);
@@ -598,18 +510,14 @@ namespace TencentCloud
 
                     /**
                      * 获取会话ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SessionId 会话ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSessionId() const;
 
                     /**
                      * 设置会话ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sessionId 会话ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSessionId(const std::string& _sessionId);
@@ -623,18 +531,14 @@ namespace TencentCloud
 
                     /**
                      * 获取单节点内存峰值和(Bytes)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PerNodePeakMemoryBytesSum 单节点内存峰值和(Bytes)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPerNodePeakMemoryBytesSum() const;
 
                     /**
                      * 设置单节点内存峰值和(Bytes)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _perNodePeakMemoryBytesSum 单节点内存峰值和(Bytes)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPerNodePeakMemoryBytesSum(const int64_t& _perNodePeakMemoryBytesSum);
@@ -648,18 +552,14 @@ namespace TencentCloud
 
                     /**
                      * 获取后端个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackendsCount 后端个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBackendsCount() const;
 
                     /**
                      * 设置后端个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _backendsCount 后端个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBackendsCount(const int64_t& _backendsCount);
@@ -673,18 +573,14 @@ namespace TencentCloud
 
                     /**
                      * 获取fragment数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FragmentInstancesCount fragment数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFragmentInstancesCount() const;
 
                     /**
                      * 设置fragment数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fragmentInstancesCount fragment数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFragmentInstancesCount(const int64_t& _fragmentInstancesCount);
@@ -698,18 +594,14 @@ namespace TencentCloud
 
                     /**
                      * 获取剩余未完成Fragment数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RemainingFragmentCount 剩余未完成Fragment数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRemainingFragmentCount() const;
 
                     /**
                      * 设置剩余未完成Fragment数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remainingFragmentCount 剩余未完成Fragment数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemainingFragmentCount(const int64_t& _remainingFragmentCount);
@@ -725,189 +617,162 @@ namespace TencentCloud
 
                     /**
                      * 执行语句
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_statement;
                     bool m_statementHasBeenSet;
 
                     /**
                      * 查询ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * 开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
                      * 运行时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_duration;
                     bool m_durationHasBeenSet;
 
                     /**
                      * 结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
                      * 执行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_state;
                     bool m_stateHasBeenSet;
 
                     /**
                      * 获取行数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_rowsFetched;
                     bool m_rowsFetchedHasBeenSet;
 
                     /**
                      * 用户
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_user;
                     bool m_userHasBeenSet;
 
                     /**
                      * 默认DB
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_defaultDB;
                     bool m_defaultDBHasBeenSet;
 
                     /**
                      * 执行的Coordinator节点
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_coordinator;
                     bool m_coordinatorHasBeenSet;
 
                     /**
                      * 单节点内存峰值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_maxNodePeakMemoryUsage;
                     bool m_maxNodePeakMemoryUsageHasBeenSet;
 
                     /**
                      * 查询类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_queryType;
                     bool m_queryTypeHasBeenSet;
 
                     /**
                      * 扫描的HDFS行数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_scanHDFSRows;
                     bool m_scanHDFSRowsHasBeenSet;
 
                     /**
                      * 扫描的Kudu行数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_scanKUDURows;
                     bool m_scanKUDURowsHasBeenSet;
 
                     /**
                      * 扫描的总行数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_scanRowsTotal;
                     bool m_scanRowsTotalHasBeenSet;
 
                     /**
                      * 读取的总字节数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalBytesRead;
                     bool m_totalBytesReadHasBeenSet;
 
                     /**
                      * 发送的总字节数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalBytesSent;
                     bool m_totalBytesSentHasBeenSet;
 
                     /**
                      * CPU总时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCpuTime;
                     bool m_totalCpuTimeHasBeenSet;
 
                     /**
                      * 内部数据发送总量(Bytes)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalInnerBytesSent;
                     bool m_totalInnerBytesSentHasBeenSet;
 
                     /**
                      * 内部扫描数据发送总量(Bytes)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalScanBytesSent;
                     bool m_totalScanBytesSentHasBeenSet;
 
                     /**
                      * 预估单节点内存
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_estimatedPerHostMemBytes;
                     bool m_estimatedPerHostMemBytesHasBeenSet;
 
                     /**
                      * 从缓存中获取的数据行数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_numRowsFetchedFromCache;
                     bool m_numRowsFetchedFromCacheHasBeenSet;
 
                     /**
                      * 会话ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;
 
                     /**
                      * 单节点内存峰值和(Bytes)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_perNodePeakMemoryBytesSum;
                     bool m_perNodePeakMemoryBytesSumHasBeenSet;
 
                     /**
                      * 后端个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_backendsCount;
                     bool m_backendsCountHasBeenSet;
 
                     /**
                      * fragment数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_fragmentInstancesCount;
                     bool m_fragmentInstancesCountHasBeenSet;
 
                     /**
                      * 剩余未完成Fragment数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_remainingFragmentCount;
                     bool m_remainingFragmentCountHasBeenSet;

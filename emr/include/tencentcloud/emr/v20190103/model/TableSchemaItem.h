@@ -136,18 +136,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否可点击
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Clickable 是否可点击
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetClickable() const;
 
                     /**
                      * 设置是否可点击
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clickable 是否可点击
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClickable(const bool& _clickable);
@@ -161,18 +157,14 @@ namespace TencentCloud
 
                     /**
                      * 获取展示的名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Title 展示的名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTitle() const;
 
                     /**
                      * 设置展示的名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _title 展示的名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTitle(const std::string& _title);
@@ -213,14 +205,12 @@ namespace TencentCloud
 
                     /**
                      * 是否可点击
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_clickable;
                     bool m_clickableHasBeenSet;
 
                     /**
                      * 展示的名字
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_title;
                     bool m_titleHasBeenSet;

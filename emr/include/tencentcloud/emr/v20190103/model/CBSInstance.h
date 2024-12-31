@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取云硬盘ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiskId 云硬盘ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDiskId() const;
 
                     /**
                      * 设置云硬盘ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _diskId 云硬盘ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiskId(const std::string& _diskId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取云硬盘类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiskUsage 云硬盘类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDiskUsage() const;
 
                     /**
                      * 设置云硬盘类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _diskUsage 云硬盘类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiskUsage(const std::string& _diskUsage);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取云硬盘名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiskName 云硬盘名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDiskName() const;
 
                     /**
                      * 设置云硬盘名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _diskName 云硬盘名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiskName(const std::string& _diskName);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取云硬盘大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiskSize 云硬盘大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDiskSize() const;
 
                     /**
                      * 设置云硬盘大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _diskSize 云硬盘大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiskSize(const int64_t& _diskSize);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取云盘介质类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiskType 云盘介质类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDiskType() const;
 
                     /**
                      * 设置云盘介质类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _diskType 云盘介质类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiskType(const std::string& _diskType);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否跟随实例删除
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeleteWithInstance 是否跟随实例删除
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetDeleteWithInstance() const;
 
                     /**
                      * 设置是否跟随实例删除
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deleteWithInstance 是否跟随实例删除
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeleteWithInstance(const bool& _deleteWithInstance);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取云硬盘收费类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiskChargeType 云硬盘收费类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDiskChargeType() const;
 
                     /**
                      * 设置云硬盘收费类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _diskChargeType 云硬盘收费类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiskChargeType(const std::string& _diskChargeType);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取云硬盘运行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiskState 云硬盘运行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDiskState() const;
 
                     /**
                      * 设置云硬盘运行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _diskState 云硬盘运行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiskState(const std::string& _diskState);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否自动续费
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RenewFlag 是否自动续费
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRenewFlag() const;
 
                     /**
                      * 设置是否自动续费
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _renewFlag 是否自动续费
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRenewFlag(const std::string& _renewFlag);
@@ -273,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取到期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeadlineTime 到期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeadlineTime() const;
 
                     /**
                      * 设置到期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deadlineTime 到期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeadlineTime(const std::string& _deadlineTime);
@@ -298,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取云盘是否挂载到云主机上
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Attached 云盘是否挂载到云主机上
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetAttached() const;
 
                     /**
                      * 设置云盘是否挂载到云主机上
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _attached 云盘是否挂载到云主机上
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAttached(const bool& _attached);
@@ -323,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当前时间距离盘到期的天数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DifferDaysOfDeadline 当前时间距离盘到期的天数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDifferDaysOfDeadline() const;
 
                     /**
                      * 设置当前时间距离盘到期的天数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _differDaysOfDeadline 当前时间距离盘到期的天数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDifferDaysOfDeadline(const int64_t& _differDaysOfDeadline);
@@ -373,18 +325,14 @@ namespace TencentCloud
 
                     /**
                      * 获取云硬盘挂载的云主机ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 云硬盘挂载的云主机ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置云硬盘挂载的云主机ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceId 云硬盘挂载的云主机ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -398,18 +346,14 @@ namespace TencentCloud
 
                     /**
                      * 获取云盘是否为共享型云盘。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Shareable 云盘是否为共享型云盘。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetShareable() const;
 
                     /**
                      * 设置云盘是否为共享型云盘。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _shareable 云盘是否为共享型云盘。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetShareable(const bool& _shareable);
@@ -425,84 +369,72 @@ namespace TencentCloud
 
                     /**
                      * 云硬盘ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_diskId;
                     bool m_diskIdHasBeenSet;
 
                     /**
                      * 云硬盘类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_diskUsage;
                     bool m_diskUsageHasBeenSet;
 
                     /**
                      * 云硬盘名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_diskName;
                     bool m_diskNameHasBeenSet;
 
                     /**
                      * 云硬盘大小
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_diskSize;
                     bool m_diskSizeHasBeenSet;
 
                     /**
                      * 云盘介质类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_diskType;
                     bool m_diskTypeHasBeenSet;
 
                     /**
                      * 是否跟随实例删除
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_deleteWithInstance;
                     bool m_deleteWithInstanceHasBeenSet;
 
                     /**
                      * 云硬盘收费类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_diskChargeType;
                     bool m_diskChargeTypeHasBeenSet;
 
                     /**
                      * 云硬盘运行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_diskState;
                     bool m_diskStateHasBeenSet;
 
                     /**
                      * 是否自动续费
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_renewFlag;
                     bool m_renewFlagHasBeenSet;
 
                     /**
                      * 到期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deadlineTime;
                     bool m_deadlineTimeHasBeenSet;
 
                     /**
                      * 云盘是否挂载到云主机上
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_attached;
                     bool m_attachedHasBeenSet;
 
                     /**
                      * 当前时间距离盘到期的天数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_differDaysOfDeadline;
                     bool m_differDaysOfDeadlineHasBeenSet;
@@ -516,14 +448,12 @@ namespace TencentCloud
 
                     /**
                      * 云硬盘挂载的云主机ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
                      * 云盘是否为共享型云盘。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_shareable;
                     bool m_shareableHasBeenSet;

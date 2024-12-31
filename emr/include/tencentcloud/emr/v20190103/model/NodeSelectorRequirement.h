@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点选择项Key值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Key 节点选择项Key值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置节点选择项Key值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _key 节点选择项Key值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKey(const std::string& _key);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点选择项Operator值，支持In, NotIn, Exists, DoesNotExist. Gt, and Lt.
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Operator 节点选择项Operator值，支持In, NotIn, Exists, DoesNotExist. Gt, and Lt.
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOperator() const;
 
                     /**
                      * 设置节点选择项Operator值，支持In, NotIn, Exists, DoesNotExist. Gt, and Lt.
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _operator 节点选择项Operator值，支持In, NotIn, Exists, DoesNotExist. Gt, and Lt.
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOperator(const std::string& _operator);
@@ -125,14 +117,12 @@ namespace TencentCloud
 
                     /**
                      * 节点选择项Key值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
 
                     /**
                      * 节点选择项Operator值，支持In, NotIn, Exists, DoesNotExist. Gt, and Lt.
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_operator;
                     bool m_operatorHasBeenSet;

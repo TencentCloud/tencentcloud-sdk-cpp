@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取指标名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Metric 指标名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMetric() const;
 
                     /**
                      * 设置指标名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _metric 指标名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMetric(const std::string& _metric);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取第一个数据时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return First 第一个数据时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFirst() const;
 
                     /**
                      * 设置第一个数据时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _first 第一个数据时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFirst(const int64_t& _first);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最后一个数据时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Last 最后一个数据时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLast() const;
 
                     /**
                      * 设置最后一个数据时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _last 最后一个数据时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLast(const int64_t& _last);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取采样点时间间隔
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Interval 采样点时间间隔
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetInterval() const;
 
                     /**
                      * 设置采样点时间间隔
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _interval 采样点时间间隔
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInterval(const int64_t& _interval);
@@ -201,28 +185,24 @@ namespace TencentCloud
 
                     /**
                      * 指标名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_metric;
                     bool m_metricHasBeenSet;
 
                     /**
                      * 第一个数据时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_first;
                     bool m_firstHasBeenSet;
 
                     /**
                      * 最后一个数据时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_last;
                     bool m_lastHasBeenSet;
 
                     /**
                      * 采样点时间间隔
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_interval;
                     bool m_intervalHasBeenSet;

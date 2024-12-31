@@ -36,7 +36,9 @@ ReadOnlyGroup::ReadOnlyGroup() :
     m_masterInstanceIdHasBeenSet(false),
     m_readOnlyInstanceSetHasBeenSet(false),
     m_dnsPodDomainHasBeenSet(false),
-    m_tgwWanVPortHasBeenSet(false)
+    m_tgwWanVPortHasBeenSet(false),
+    m_readOnlyGroupTypeHasBeenSet(false),
+    m_readOnlyGroupForcedUpgradeHasBeenSet(false)
 {
 }
 
@@ -215,6 +217,26 @@ CoreInternalOutcome ReadOnlyGroup::Deserialize(const rapidjson::Value &value)
         m_tgwWanVPortHasBeenSet = true;
     }
 
+    if (value.HasMember("ReadOnlyGroupType") && !value["ReadOnlyGroupType"].IsNull())
+    {
+        if (!value["ReadOnlyGroupType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReadOnlyGroup.ReadOnlyGroupType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_readOnlyGroupType = value["ReadOnlyGroupType"].GetInt64();
+        m_readOnlyGroupTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ReadOnlyGroupForcedUpgrade") && !value["ReadOnlyGroupForcedUpgrade"].IsNull())
+    {
+        if (!value["ReadOnlyGroupForcedUpgrade"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReadOnlyGroup.ReadOnlyGroupForcedUpgrade` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_readOnlyGroupForcedUpgrade = value["ReadOnlyGroupForcedUpgrade"].GetInt64();
+        m_readOnlyGroupForcedUpgradeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -355,6 +377,22 @@ void ReadOnlyGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "TgwWanVPort";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_tgwWanVPort, allocator);
+    }
+
+    if (m_readOnlyGroupTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReadOnlyGroupType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_readOnlyGroupType, allocator);
+    }
+
+    if (m_readOnlyGroupForcedUpgradeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReadOnlyGroupForcedUpgrade";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_readOnlyGroupForcedUpgrade, allocator);
     }
 
 }
@@ -614,5 +652,37 @@ void ReadOnlyGroup::SetTgwWanVPort(const uint64_t& _tgwWanVPort)
 bool ReadOnlyGroup::TgwWanVPortHasBeenSet() const
 {
     return m_tgwWanVPortHasBeenSet;
+}
+
+int64_t ReadOnlyGroup::GetReadOnlyGroupType() const
+{
+    return m_readOnlyGroupType;
+}
+
+void ReadOnlyGroup::SetReadOnlyGroupType(const int64_t& _readOnlyGroupType)
+{
+    m_readOnlyGroupType = _readOnlyGroupType;
+    m_readOnlyGroupTypeHasBeenSet = true;
+}
+
+bool ReadOnlyGroup::ReadOnlyGroupTypeHasBeenSet() const
+{
+    return m_readOnlyGroupTypeHasBeenSet;
+}
+
+int64_t ReadOnlyGroup::GetReadOnlyGroupForcedUpgrade() const
+{
+    return m_readOnlyGroupForcedUpgrade;
+}
+
+void ReadOnlyGroup::SetReadOnlyGroupForcedUpgrade(const int64_t& _readOnlyGroupForcedUpgrade)
+{
+    m_readOnlyGroupForcedUpgrade = _readOnlyGroupForcedUpgrade;
+    m_readOnlyGroupForcedUpgradeHasBeenSet = true;
+}
+
+bool ReadOnlyGroup::ReadOnlyGroupForcedUpgradeHasBeenSet() const
+{
+    return m_readOnlyGroupForcedUpgradeHasBeenSet;
 }
 

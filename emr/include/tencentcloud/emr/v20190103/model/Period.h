@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取时间跨度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeSpan 时间跨度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTimeSpan() const;
 
                     /**
                      * 设置时间跨度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timeSpan 时间跨度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimeSpan(const int64_t& _timeSpan);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取时间单位，"m"代表月。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeUnit 时间单位，"m"代表月。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTimeUnit() const;
 
                     /**
                      * 设置时间单位，"m"代表月。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timeUnit 时间单位，"m"代表月。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimeUnit(const std::string& _timeUnit);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 时间跨度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_timeSpan;
                     bool m_timeSpanHasBeenSet;
 
                     /**
                      * 时间单位，"m"代表月。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_timeUnit;
                     bool m_timeUnitHasBeenSet;

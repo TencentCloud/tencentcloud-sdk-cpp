@@ -32,7 +32,8 @@ InquiryPriceCreateDBInstancesRequest::InquiryPriceCreateDBInstancesRequest() :
     m_dBVersionHasBeenSet(false),
     m_cpuHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
-    m_machineTypeHasBeenSet(false)
+    m_machineTypeHasBeenSet(false),
+    m_drZonesHasBeenSet(false)
 {
 }
 
@@ -121,6 +122,19 @@ string InquiryPriceCreateDBInstancesRequest::ToJsonString() const
         string key = "MachineType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_machineType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_drZonesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DrZones";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_drZones.begin(); itr != m_drZones.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -289,6 +303,22 @@ void InquiryPriceCreateDBInstancesRequest::SetMachineType(const string& _machine
 bool InquiryPriceCreateDBInstancesRequest::MachineTypeHasBeenSet() const
 {
     return m_machineTypeHasBeenSet;
+}
+
+vector<string> InquiryPriceCreateDBInstancesRequest::GetDrZones() const
+{
+    return m_drZones;
+}
+
+void InquiryPriceCreateDBInstancesRequest::SetDrZones(const vector<string>& _drZones)
+{
+    m_drZones = _drZones;
+    m_drZonesHasBeenSet = true;
+}
+
+bool InquiryPriceCreateDBInstancesRequest::DrZonesHasBeenSet() const
+{
+    return m_drZonesHasBeenSet;
 }
 
 

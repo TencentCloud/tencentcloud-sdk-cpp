@@ -485,6 +485,31 @@ namespace TencentCloud
                      */
                     bool KeepPartitionHasBeenSet() const;
 
+                    /**
+                     * 获取正则匹配Topic列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TopicRegularExpression 正则匹配Topic列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTopicRegularExpression() const;
+
+                    /**
+                     * 设置正则匹配Topic列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _topicRegularExpression 正则匹配Topic列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTopicRegularExpression(const std::string& _topicRegularExpression);
+
+                    /**
+                     * 判断参数 TopicRegularExpression 是否已赋值
+                     * @return TopicRegularExpression 是否已赋值
+                     * 
+                     */
+                    bool TopicRegularExpressionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -609,6 +634,13 @@ namespace TencentCloud
                      */
                     bool m_keepPartition;
                     bool m_keepPartitionHasBeenSet;
+
+                    /**
+                     * 正则匹配Topic列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_topicRegularExpression;
+                    bool m_topicRegularExpressionHasBeenSet;
 
                 };
             }

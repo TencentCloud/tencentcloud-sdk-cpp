@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 配置ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置配置ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id 配置ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -157,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取下次能可扩容时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NextTimeCanScale 下次能可扩容时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetNextTimeCanScale() const;
 
                     /**
                      * 设置下次能可扩容时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nextTimeCanScale 下次能可扩容时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNextTimeCanScale(const uint64_t& _nextTimeCanScale);
@@ -182,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取优雅缩容开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GraceDownFlag 优雅缩容开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetGraceDownFlag() const;
 
                     /**
                      * 设置优雅缩容开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _graceDownFlag 优雅缩容开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGraceDownFlag(const bool& _graceDownFlag);
@@ -207,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取"CVM"表示规格全部使用CVM相关类型，"POD"表示规格使用容器相关类型,默认为"CVM"。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HardwareType "CVM"表示规格全部使用CVM相关类型，"POD"表示规格使用容器相关类型,默认为"CVM"。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHardwareType() const;
 
                     /**
                      * 设置"CVM"表示规格全部使用CVM相关类型，"POD"表示规格使用容器相关类型,默认为"CVM"。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hardwareType "CVM"表示规格全部使用CVM相关类型，"POD"表示规格使用容器相关类型,默认为"CVM"。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHardwareType(const std::string& _hardwareType);
@@ -232,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取"POSTPAY"表示只使用按量计费，"SPOT_FIRST"表示竞价实例优先，只有HardwareType为"HOST"时支持竞价实例优先，"POD"只支持纯按量计费。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayMode "POSTPAY"表示只使用按量计费，"SPOT_FIRST"表示竞价实例优先，只有HardwareType为"HOST"时支持竞价实例优先，"POD"只支持纯按量计费。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPayMode() const;
 
                     /**
                      * 设置"POSTPAY"表示只使用按量计费，"SPOT_FIRST"表示竞价实例优先，只有HardwareType为"HOST"时支持竞价实例优先，"POD"只支持纯按量计费。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _payMode "POSTPAY"表示只使用按量计费，"SPOT_FIRST"表示竞价实例优先，只有HardwareType为"HOST"时支持竞价实例优先，"POD"只支持纯按量计费。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPayMode(const std::string& _payMode);
@@ -257,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取竞价实例优先的场景下，按量计费资源数量的最低百分比，整数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PostPayPercentMin 竞价实例优先的场景下，按量计费资源数量的最低百分比，整数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPostPayPercentMin() const;
 
                     /**
                      * 设置竞价实例优先的场景下，按量计费资源数量的最低百分比，整数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _postPayPercentMin 竞价实例优先的场景下，按量计费资源数量的最低百分比，整数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPostPayPercentMin(const int64_t& _postPayPercentMin);
@@ -282,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取预设资源类型为HOST时，支持勾选“资源不足时切换POD”；支持取消勾选；默认不勾选（0），勾选（1)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChangeToPod 预设资源类型为HOST时，支持勾选“资源不足时切换POD”；支持取消勾选；默认不勾选（0），勾选（1)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetChangeToPod() const;
 
                     /**
                      * 设置预设资源类型为HOST时，支持勾选“资源不足时切换POD”；支持取消勾选；默认不勾选（0），勾选（1)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _changeToPod 预设资源类型为HOST时，支持勾选“资源不足时切换POD”；支持取消勾选；默认不勾选（0），勾选（1)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChangeToPod(const int64_t& _changeToPod);
@@ -307,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取伸缩组名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupName 伸缩组名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置伸缩组名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupName 伸缩组名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -332,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return YarnNodeLabel 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetYarnNodeLabel() const;
 
                     /**
                      * 设置标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _yarnNodeLabel 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetYarnNodeLabel(const std::string& _yarnNodeLabel);
@@ -357,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取伸缩组状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupStatus 伸缩组状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetGroupStatus() const;
 
                     /**
                      * 设置伸缩组状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupStatus 伸缩组状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupStatus(const int64_t& _groupStatus);
@@ -382,18 +342,14 @@ namespace TencentCloud
 
                     /**
                      * 获取并行伸缩 0关闭；1开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Parallel 并行伸缩 0关闭；1开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetParallel() const;
 
                     /**
                      * 设置并行伸缩 0关闭；1开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _parallel 并行伸缩 0关闭；1开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetParallel(const int64_t& _parallel);
@@ -407,18 +363,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否支持MNode
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableMNode 是否支持MNode
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEnableMNode() const;
 
                     /**
                      * 设置是否支持MNode
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enableMNode 是否支持MNode
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnableMNode(const int64_t& _enableMNode);
@@ -434,7 +386,6 @@ namespace TencentCloud
 
                     /**
                      * 配置ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
@@ -465,77 +416,66 @@ namespace TencentCloud
 
                     /**
                      * 下次能可扩容时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_nextTimeCanScale;
                     bool m_nextTimeCanScaleHasBeenSet;
 
                     /**
                      * 优雅缩容开关
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_graceDownFlag;
                     bool m_graceDownFlagHasBeenSet;
 
                     /**
                      * "CVM"表示规格全部使用CVM相关类型，"POD"表示规格使用容器相关类型,默认为"CVM"。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hardwareType;
                     bool m_hardwareTypeHasBeenSet;
 
                     /**
                      * "POSTPAY"表示只使用按量计费，"SPOT_FIRST"表示竞价实例优先，只有HardwareType为"HOST"时支持竞价实例优先，"POD"只支持纯按量计费。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
                      * 竞价实例优先的场景下，按量计费资源数量的最低百分比，整数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_postPayPercentMin;
                     bool m_postPayPercentMinHasBeenSet;
 
                     /**
                      * 预设资源类型为HOST时，支持勾选“资源不足时切换POD”；支持取消勾选；默认不勾选（0），勾选（1)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_changeToPod;
                     bool m_changeToPodHasBeenSet;
 
                     /**
                      * 伸缩组名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
 
                     /**
                      * 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_yarnNodeLabel;
                     bool m_yarnNodeLabelHasBeenSet;
 
                     /**
                      * 伸缩组状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_groupStatus;
                     bool m_groupStatusHasBeenSet;
 
                     /**
                      * 并行伸缩 0关闭；1开启
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_parallel;
                     bool m_parallelHasBeenSet;
 
                     /**
                      * 是否支持MNode
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_enableMNode;
                     bool m_enableMNodeHasBeenSet;

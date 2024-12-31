@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Attribute 属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAttribute() const;
 
                     /**
                      * 设置属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _attribute 属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAttribute(const std::string& _attribute);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当前生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InEffect 当前生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInEffect() const;
 
                     /**
                      * 设置当前生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _inEffect 当前生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInEffect(const std::string& _inEffect);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取待生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PendingEffectiveness 待生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPendingEffectiveness() const;
 
                     /**
                      * 设置待生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pendingEffectiveness 待生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPendingEffectiveness(const std::string& _pendingEffectiveness);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取操作
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Operation 操作
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOperation() const;
 
                     /**
                      * 设置操作
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _operation 操作
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOperation(const std::string& _operation);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取队列
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Queue 队列
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetQueue() const;
 
                     /**
                      * 设置队列
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _queue 队列
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQueue(const std::string& _queue);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置集
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigSet 配置集
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConfigSet() const;
 
                     /**
                      * 设置配置集
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _configSet 配置集
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConfigSet(const std::string& _configSet);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LabelName 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLabelName() const;
 
                     /**
                      * 设置标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _labelName 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLabelName(const std::string& _labelName);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当前所在位置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InEffectIndex 当前所在位置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInEffectIndex() const;
 
                     /**
                      * 设置当前所在位置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _inEffectIndex 当前所在位置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInEffectIndex(const std::string& _inEffectIndex);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取待生效的位置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PendingEffectIndex 待生效的位置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPendingEffectIndex() const;
 
                     /**
                      * 设置待生效的位置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pendingEffectIndex 待生效的位置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPendingEffectIndex(const std::string& _pendingEffectIndex);
@@ -273,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取计划模式名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PlanName 计划模式名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPlanName() const;
 
                     /**
                      * 设置计划模式名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _planName 计划模式名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPlanName(const std::string& _planName);
@@ -298,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Label 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLabel() const;
 
                     /**
                      * 设置标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _label 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLabel(const std::string& _label);
@@ -323,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取放置规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleName 放置规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuleName() const;
 
                     /**
                      * 设置放置规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleName 放置规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleName(const std::string& _ruleName);
@@ -348,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserName 用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userName 用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserName(const std::string& _userName);
@@ -375,91 +323,78 @@ namespace TencentCloud
 
                     /**
                      * 属性
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_attribute;
                     bool m_attributeHasBeenSet;
 
                     /**
                      * 当前生效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_inEffect;
                     bool m_inEffectHasBeenSet;
 
                     /**
                      * 待生效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pendingEffectiveness;
                     bool m_pendingEffectivenessHasBeenSet;
 
                     /**
                      * 操作
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_operation;
                     bool m_operationHasBeenSet;
 
                     /**
                      * 队列
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_queue;
                     bool m_queueHasBeenSet;
 
                     /**
                      * 配置集
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_configSet;
                     bool m_configSetHasBeenSet;
 
                     /**
                      * 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_labelName;
                     bool m_labelNameHasBeenSet;
 
                     /**
                      * 当前所在位置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_inEffectIndex;
                     bool m_inEffectIndexHasBeenSet;
 
                     /**
                      * 待生效的位置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pendingEffectIndex;
                     bool m_pendingEffectIndexHasBeenSet;
 
                     /**
                      * 计划模式名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_planName;
                     bool m_planNameHasBeenSet;
 
                     /**
                      * 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_label;
                     bool m_labelHasBeenSet;
 
                     /**
                      * 放置规则
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ruleName;
                     bool m_ruleNameHasBeenSet;
 
                     /**
                      * 用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;

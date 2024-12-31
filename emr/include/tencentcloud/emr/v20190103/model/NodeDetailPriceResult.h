@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点类型 master core task common router mysql
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeType 节点类型 master core task common router mysql
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNodeType() const;
 
                     /**
                      * 设置节点类型 master core task common router mysql
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nodeType 节点类型 master core task common router mysql
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNodeType(const std::string& _nodeType);
@@ -97,7 +93,6 @@ namespace TencentCloud
 
                     /**
                      * 节点类型 master core task common router mysql
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nodeType;
                     bool m_nodeTypeHasBeenSet;

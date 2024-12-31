@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取终端用户各平台统计
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PlatformStatistics 终端用户各平台统计
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<PlatformStatistic> GetPlatformStatistics() const;
@@ -78,7 +76,6 @@ namespace TencentCloud
 
                     /**
                      * 终端用户各平台统计
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<PlatformStatistic> m_platformStatistics;
                     bool m_platformStatisticsHasBeenSet;

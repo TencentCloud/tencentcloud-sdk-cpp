@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取catalog
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Catalog catalog
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCatalog() const;
 
                     /**
                      * 设置catalog
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _catalog catalog
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCatalog(const std::string& _catalog);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取提交IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClientIpAddr 提交IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClientIpAddr() const;
 
                     /**
                      * 设置提交IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clientIpAddr 提交IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClientIpAddr(const std::string& _clientIpAddr);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取切片数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CompletedSplits 切片数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCompletedSplits() const;
 
                     /**
                      * 设置切片数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _completedSplits 切片数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCompletedSplits(const std::string& _completedSplits);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取CPU时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CpuTime CPU时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCpuTime() const;
 
                     /**
                      * 设置CPU时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cpuTime CPU时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCpuTime(const int64_t& _cpuTime);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取累计内存
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CumulativeMemory 累计内存
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCumulativeMemory() const;
 
                     /**
                      * 设置累计内存
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cumulativeMemory 累计内存
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCumulativeMemory(const int64_t& _cumulativeMemory);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取执行时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DurationMillis 执行时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDurationMillis() const;
 
                     /**
                      * 设置执行时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _durationMillis 执行时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDurationMillis(const int64_t& _durationMillis);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取结束时间 (s)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 结束时间 (s)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
                      * 设置结束时间 (s)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endTime 结束时间 (s)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndTime(const int64_t& _endTime);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取查询ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 查询ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置查询ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id 查询ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内部传输量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InternalNetworkBytes 内部传输量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetInternalNetworkBytes() const;
 
                     /**
                      * 设置内部传输量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _internalNetworkBytes 内部传输量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInternalNetworkBytes(const int64_t& _internalNetworkBytes);
@@ -273,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取输出字节数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OutputBytes 输出字节数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetOutputBytes() const;
 
                     /**
                      * 设置输出字节数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _outputBytes 输出字节数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutputBytes(const int64_t& _outputBytes);
@@ -298,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取峰值内存量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PeakUserMemoryBytes 峰值内存量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPeakUserMemoryBytes() const;
 
                     /**
                      * 设置峰值内存量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _peakUserMemoryBytes 峰值内存量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPeakUserMemoryBytes(const int64_t& _peakUserMemoryBytes);
@@ -323,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取物理输入量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PhysicalInputBytes 物理输入量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPhysicalInputBytes() const;
 
                     /**
                      * 设置物理输入量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _physicalInputBytes 物理输入量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPhysicalInputBytes(const int64_t& _physicalInputBytes);
@@ -348,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取处理输入量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProcessedInputBytes 处理输入量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetProcessedInputBytes() const;
 
                     /**
                      * 设置处理输入量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _processedInputBytes 处理输入量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProcessedInputBytes(const int64_t& _processedInputBytes);
@@ -373,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取编译时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SqlCompileTime 编译时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSqlCompileTime() const;
 
                     /**
                      * 设置编译时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sqlCompileTime 编译时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSqlCompileTime(const int64_t& _sqlCompileTime);
@@ -398,18 +342,14 @@ namespace TencentCloud
 
                     /**
                      * 获取开始时间 (s)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 开始时间 (s)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
                      * 设置开始时间 (s)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _startTime 开始时间 (s)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStartTime(const int64_t& _startTime);
@@ -423,18 +363,14 @@ namespace TencentCloud
 
                     /**
                      * 获取执行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return State 执行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetState() const;
 
                     /**
                      * 设置执行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _state 执行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetState(const std::string& _state);
@@ -448,18 +384,14 @@ namespace TencentCloud
 
                     /**
                      * 获取执行语句
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Statement 执行语句
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatement() const;
 
                     /**
                      * 设置执行语句
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _statement 执行语句
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatement(const std::string& _statement);
@@ -473,18 +405,14 @@ namespace TencentCloud
 
                     /**
                      * 获取提交用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return User 提交用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUser() const;
 
                     /**
                      * 设置提交用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _user 提交用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUser(const std::string& _user);
@@ -498,18 +426,14 @@ namespace TencentCloud
 
                     /**
                      * 获取写入字节数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WrittenBytes 写入字节数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetWrittenBytes() const;
 
                     /**
                      * 设置写入字节数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _writtenBytes 写入字节数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWrittenBytes(const int64_t& _writtenBytes);
@@ -525,133 +449,114 @@ namespace TencentCloud
 
                     /**
                      * catalog
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_catalog;
                     bool m_catalogHasBeenSet;
 
                     /**
                      * 提交IP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clientIpAddr;
                     bool m_clientIpAddrHasBeenSet;
 
                     /**
                      * 切片数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_completedSplits;
                     bool m_completedSplitsHasBeenSet;
 
                     /**
                      * CPU时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_cpuTime;
                     bool m_cpuTimeHasBeenSet;
 
                     /**
                      * 累计内存
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_cumulativeMemory;
                     bool m_cumulativeMemoryHasBeenSet;
 
                     /**
                      * 执行时长
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_durationMillis;
                     bool m_durationMillisHasBeenSet;
 
                     /**
                      * 结束时间 (s)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
                      * 查询ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * 内部传输量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_internalNetworkBytes;
                     bool m_internalNetworkBytesHasBeenSet;
 
                     /**
                      * 输出字节数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_outputBytes;
                     bool m_outputBytesHasBeenSet;
 
                     /**
                      * 峰值内存量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_peakUserMemoryBytes;
                     bool m_peakUserMemoryBytesHasBeenSet;
 
                     /**
                      * 物理输入量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_physicalInputBytes;
                     bool m_physicalInputBytesHasBeenSet;
 
                     /**
                      * 处理输入量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_processedInputBytes;
                     bool m_processedInputBytesHasBeenSet;
 
                     /**
                      * 编译时长
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sqlCompileTime;
                     bool m_sqlCompileTimeHasBeenSet;
 
                     /**
                      * 开始时间 (s)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
                      * 执行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_state;
                     bool m_stateHasBeenSet;
 
                     /**
                      * 执行语句
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_statement;
                     bool m_statementHasBeenSet;
 
                     /**
                      * 提交用户
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_user;
                     bool m_userHasBeenSet;
 
                     /**
                      * 写入字节数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_writtenBytes;
                     bool m_writtenBytesHasBeenSet;

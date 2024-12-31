@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterId 集群id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterId 集群id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取流程id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowId 流程id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetFlowId() const;
 
                     /**
                      * 设置流程id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _flowId 流程id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFlowId(const uint64_t& _flowId);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 集群id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
                      * 流程id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_flowId;
                     bool m_flowIdHasBeenSet;
