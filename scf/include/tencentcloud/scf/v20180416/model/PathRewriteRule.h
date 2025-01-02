@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取需要重路由的路径，取值规范：/，/*，/xxx，/xxx/a，/xxx/*
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Path 需要重路由的路径，取值规范：/，/*，/xxx，/xxx/a，/xxx/*
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPath() const;
 
                     /**
                      * 设置需要重路由的路径，取值规范：/，/*，/xxx，/xxx/a，/xxx/*
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _path 需要重路由的路径，取值规范：/，/*，/xxx，/xxx/a，/xxx/*
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPath(const std::string& _path);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取匹配规，取值范围： WildcardRules 通配符匹配， ExactRules 精确匹配
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 匹配规，取值范围： WildcardRules 通配符匹配， ExactRules 精确匹配
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置匹配规，取值范围： WildcardRules 通配符匹配， ExactRules 精确匹配
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 匹配规，取值范围： WildcardRules 通配符匹配， ExactRules 精确匹配
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取替换值：比如/, /$
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Rewrite 替换值：比如/, /$
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRewrite() const;
 
                     /**
                      * 设置替换值：比如/, /$
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rewrite 替换值：比如/, /$
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRewrite(const std::string& _rewrite);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 需要重路由的路径，取值规范：/，/*，/xxx，/xxx/a，/xxx/*
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_path;
                     bool m_pathHasBeenSet;
 
                     /**
                      * 匹配规，取值范围： WildcardRules 通配符匹配， ExactRules 精确匹配
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 替换值：比如/, /$
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_rewrite;
                     bool m_rewriteHasBeenSet;

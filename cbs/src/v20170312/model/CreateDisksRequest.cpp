@@ -39,7 +39,8 @@ CreateDisksRequest::CreateDisksRequest() :
     m_deleteSnapshotHasBeenSet(false),
     m_autoMountConfigurationHasBeenSet(false),
     m_diskBackupQuotaHasBeenSet(false),
-    m_burstPerformanceHasBeenSet(false)
+    m_burstPerformanceHasBeenSet(false),
+    m_encryptTypeHasBeenSet(false)
 {
 }
 
@@ -194,6 +195,14 @@ string CreateDisksRequest::ToJsonString() const
         string key = "BurstPerformance";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_burstPerformance, allocator);
+    }
+
+    if (m_encryptTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncryptType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_encryptType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -474,6 +483,22 @@ void CreateDisksRequest::SetBurstPerformance(const bool& _burstPerformance)
 bool CreateDisksRequest::BurstPerformanceHasBeenSet() const
 {
     return m_burstPerformanceHasBeenSet;
+}
+
+string CreateDisksRequest::GetEncryptType() const
+{
+    return m_encryptType;
+}
+
+void CreateDisksRequest::SetEncryptType(const string& _encryptType)
+{
+    m_encryptType = _encryptType;
+    m_encryptTypeHasBeenSet = true;
+}
+
+bool CreateDisksRequest::EncryptTypeHasBeenSet() const
+{
+    return m_encryptTypeHasBeenSet;
 }
 
 

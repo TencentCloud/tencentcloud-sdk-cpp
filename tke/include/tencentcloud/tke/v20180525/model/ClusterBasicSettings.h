@@ -133,15 +133,15 @@ namespace TencentCloud
                     bool ClusterDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取私有网络ID，形如vpc-xxx。创建托管空集群时必传。
-                     * @return VpcId 私有网络ID，形如vpc-xxx。创建托管空集群时必传。
+                     * 获取私有网络ID，形如vpc-e55paxnt。创建托管空集群时必传。
+                     * @return VpcId 私有网络ID，形如vpc-e55paxnt。创建托管空集群时必传。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置私有网络ID，形如vpc-xxx。创建托管空集群时必传。
-                     * @param _vpcId 私有网络ID，形如vpc-xxx。创建托管空集群时必传。
+                     * 设置私有网络ID，形如vpc-e55paxnt。创建托管空集群时必传。
+                     * @param _vpcId 私有网络ID，形如vpc-e55paxnt。创建托管空集群时必传。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -327,7 +327,7 @@ namespace TencentCloud
                     bool m_clusterDescriptionHasBeenSet;
 
                     /**
-                     * 私有网络ID，形如vpc-xxx。创建托管空集群时必传。
+                     * 私有网络ID，形如vpc-e55paxnt。创建托管空集群时必传。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;

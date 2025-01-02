@@ -259,42 +259,42 @@ namespace TencentCloud
                     /**
                      * 获取日志等级
                      * @return Level 日志等级
-                     * 
+                     * @deprecated
                      */
                     std::string GetLevel() const;
 
                     /**
                      * 设置日志等级
                      * @param _level 日志等级
-                     * 
+                     * @deprecated
                      */
                     void SetLevel(const std::string& _level);
 
                     /**
                      * 判断参数 Level 是否已赋值
                      * @return Level 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool LevelHasBeenSet() const;
 
                     /**
                      * 获取日志来源
                      * @return Source 日志来源
-                     * 
+                     * @deprecated
                      */
                     std::string GetSource() const;
 
                     /**
                      * 设置日志来源
                      * @param _source 日志来源
-                     * 
+                     * @deprecated
                      */
                     void SetSource(const std::string& _source);
 
                     /**
                      * 判断参数 Source 是否已赋值
                      * @return Source 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool SourceHasBeenSet() const;
 

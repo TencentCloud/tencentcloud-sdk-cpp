@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取函数命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Namespace 函数命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置函数命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _namespace 函数命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNamespace(const std::string& _namespace);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取函数名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FunctionName 函数名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFunctionName() const;
 
                     /**
                      * 设置函数名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _functionName 函数名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFunctionName(const std::string& _functionName);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取函数别名或版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Qualifier 函数别名或版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetQualifier() const;
 
                     /**
                      * 设置函数别名或版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _qualifier 函数别名或版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQualifier(const std::string& _qualifier);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取路径,取值规范：/，/*，/xxx，/xxx/a，/xxx/*"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PathMatch 路径,取值规范：/，/*，/xxx，/xxx/a，/xxx/*"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPathMatch() const;
 
                     /**
                      * 设置路径,取值规范：/，/*，/xxx，/xxx/a，/xxx/*"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pathMatch 路径,取值规范：/，/*，/xxx，/xxx/a，/xxx/*"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPathMatch(const std::string& _pathMatch);
@@ -176,28 +160,24 @@ namespace TencentCloud
 
                     /**
                      * 函数命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;
 
                     /**
                      * 函数名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_functionName;
                     bool m_functionNameHasBeenSet;
 
                     /**
                      * 函数别名或版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_qualifier;
                     bool m_qualifierHasBeenSet;
 
                     /**
                      * 路径,取值规范：/，/*，/xxx，/xxx/a，/xxx/*"
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pathMatch;
                     bool m_pathMatchHasBeenSet;

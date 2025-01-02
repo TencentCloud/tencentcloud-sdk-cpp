@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取CCN实例ID。形如：ccn-f49l6u0z。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CcnId CCN实例ID。形如：ccn-f49l6u0z。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCcnId() const;
 
                     /**
                      * 设置CCN实例ID。形如：ccn-f49l6u0z。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ccnId CCN实例ID。形如：ccn-f49l6u0z。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCcnId(const std::string& _ccnId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取qos id。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return QosId qos id。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetQosId() const;
 
                     /**
                      * 设置qos id。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _qosId qos id。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQosId(const uint64_t& _qosId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return QosPolicyDescription 描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetQosPolicyDescription() const;
 
                     /**
                      * 设置描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _qosPolicyDescription 描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQosPolicyDescription(const std::string& _qosPolicyDescription);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return QosPolicyName 名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetQosPolicyName() const;
 
                     /**
                      * 设置名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _qosPolicyName 名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQosPolicyName(const std::string& _qosPolicyName);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取带宽。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Bandwidth 带宽。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetBandwidth() const;
 
                     /**
                      * 设置带宽。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bandwidth 带宽。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBandwidth(const uint64_t& _bandwidth);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取流量调度策略ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return QosPolicyId 流量调度策略ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetQosPolicyId() const;
 
                     /**
                      * 设置流量调度策略ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _qosPolicyId 流量调度策略ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQosPolicyId(const std::string& _qosPolicyId);
@@ -200,42 +176,36 @@ namespace TencentCloud
 
                     /**
                      * CCN实例ID。形如：ccn-f49l6u0z。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ccnId;
                     bool m_ccnIdHasBeenSet;
 
                     /**
                      * qos id。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_qosId;
                     bool m_qosIdHasBeenSet;
 
                     /**
                      * 描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_qosPolicyDescription;
                     bool m_qosPolicyDescriptionHasBeenSet;
 
                     /**
                      * 名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_qosPolicyName;
                     bool m_qosPolicyNameHasBeenSet;
 
                     /**
                      * 带宽。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_bandwidth;
                     bool m_bandwidthHasBeenSet;
 
                     /**
                      * 流量调度策略ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_qosPolicyId;
                     bool m_qosPolicyIdHasBeenSet;

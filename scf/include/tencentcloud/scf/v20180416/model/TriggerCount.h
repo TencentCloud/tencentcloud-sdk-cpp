@@ -279,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Eb触发器数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Eb Eb触发器数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEb() const;
 
                     /**
                      * 设置Eb触发器数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _eb Eb触发器数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEb(const int64_t& _eb);
@@ -372,7 +368,6 @@ namespace TencentCloud
 
                     /**
                      * Eb触发器数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_eb;
                     bool m_ebHasBeenSet;

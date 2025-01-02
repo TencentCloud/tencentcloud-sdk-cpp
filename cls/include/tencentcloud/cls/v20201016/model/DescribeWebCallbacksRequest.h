@@ -44,29 +44,33 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<li> name
+                     * 获取- name
 按照【告警渠道回调配置名称】进行过滤。
 类型：String
 必选：否
-<li> webCallbackId
+
+- webCallbackId
 按照【告警渠道回调配置ID】进行过滤。
 类型：String
 必选：否
-<li> type
+
+- type
 按照【告警渠道回调配置渠道类型】进行过滤。
 类型：String
 必选：否
 
 每次请求的Filters的上限为10，Filter.Values的上限为100。
-                     * @return Filters <li> name
+                     * @return Filters - name
 按照【告警渠道回调配置名称】进行过滤。
 类型：String
 必选：否
-<li> webCallbackId
+
+- webCallbackId
 按照【告警渠道回调配置ID】进行过滤。
 类型：String
 必选：否
-<li> type
+
+- type
 按照【告警渠道回调配置渠道类型】进行过滤。
 类型：String
 必选：否
@@ -77,29 +81,33 @@ namespace TencentCloud
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置<li> name
+                     * 设置- name
 按照【告警渠道回调配置名称】进行过滤。
 类型：String
 必选：否
-<li> webCallbackId
+
+- webCallbackId
 按照【告警渠道回调配置ID】进行过滤。
 类型：String
 必选：否
-<li> type
+
+- type
 按照【告警渠道回调配置渠道类型】进行过滤。
 类型：String
 必选：否
 
 每次请求的Filters的上限为10，Filter.Values的上限为100。
-                     * @param _filters <li> name
+                     * @param _filters - name
 按照【告警渠道回调配置名称】进行过滤。
 类型：String
 必选：否
-<li> webCallbackId
+
+- webCallbackId
 按照【告警渠道回调配置ID】进行过滤。
 类型：String
 必选：否
-<li> type
+
+- type
 按照【告警渠道回调配置渠道类型】进行过滤。
 类型：String
 必选：否
@@ -161,15 +169,17 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <li> name
+                     * - name
 按照【告警渠道回调配置名称】进行过滤。
 类型：String
 必选：否
-<li> webCallbackId
+
+- webCallbackId
 按照【告警渠道回调配置ID】进行过滤。
 类型：String
 必选：否
-<li> type
+
+- type
 按照【告警渠道回调配置渠道类型】进行过滤。
 类型：String
 必选：否

@@ -74,6 +74,20 @@ namespace TencentCloud
                      */
                     bool InstanceNodesListHasBeenSet() const;
 
+                    /**
+                     * 获取节点类型
+                     * @return NodeRoles 节点类型
+                     * 
+                     */
+                    std::vector<std::string> GetNodeRoles() const;
+
+                    /**
+                     * 判断参数 NodeRoles 是否已赋值
+                     * @return NodeRoles 是否已赋值
+                     * 
+                     */
+                    bool NodeRolesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -88,6 +102,12 @@ namespace TencentCloud
                      */
                     std::vector<InstanceNode> m_instanceNodesList;
                     bool m_instanceNodesListHasBeenSet;
+
+                    /**
+                     * 节点类型
+                     */
+                    std::vector<std::string> m_nodeRoles;
+                    bool m_nodeRolesHasBeenSet;
 
                 };
             }

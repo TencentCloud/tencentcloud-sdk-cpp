@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取IP列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EipAddress IP列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetEipAddress() const;
 
                     /**
                      * 设置IP列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _eipAddress IP列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEipAddress(const std::vector<std::string>& _eipAddress);
@@ -102,7 +98,6 @@ namespace TencentCloud
 
                     /**
                      * IP列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_eipAddress;
                     bool m_eipAddressHasBeenSet;

@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool HospitalIdHasBeenSet() const;
 
                     /**
-                     * 获取合作方ID
-                     * @return Token 合作方ID
+                     * 获取token
+                     * @return Token token
                      * 
                      */
                     std::string GetToken() const;
 
                     /**
-                     * 设置合作方ID
-                     * @param _token 合作方ID
+                     * 设置token
+                     * @param _token token
                      * 
                      */
                     void SetToken(const std::string& _token);
@@ -97,7 +97,7 @@ namespace TencentCloud
                     bool m_hospitalIdHasBeenSet;
 
                     /**
-                     * 合作方ID
+                     * token
                      */
                     std::string m_token;
                     bool m_tokenHasBeenSet;

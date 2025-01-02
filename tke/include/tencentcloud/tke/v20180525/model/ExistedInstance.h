@@ -122,15 +122,15 @@ namespace TencentCloud
                     bool AlreadyInClusterHasBeenSet() const;
 
                     /**
-                     * 获取实例ID形如：ins-xxxxxxxx。
-                     * @return InstanceId 实例ID形如：ins-xxxxxxxx。
+                     * 获取实例ID形如：ins-e55paxnt。
+                     * @return InstanceId 实例ID形如：ins-e55paxnt。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID形如：ins-xxxxxxxx。
-                     * @param _instanceId 实例ID形如：ins-xxxxxxxx。
+                     * 设置实例ID形如：ins-e55paxnt。
+                     * @param _instanceId 实例ID形如：ins-e55paxnt。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -449,7 +449,7 @@ namespace TencentCloud
                     bool m_alreadyInClusterHasBeenSet;
 
                     /**
-                     * 实例ID形如：ins-xxxxxxxx。
+                     * 实例ID形如：ins-e55paxnt。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

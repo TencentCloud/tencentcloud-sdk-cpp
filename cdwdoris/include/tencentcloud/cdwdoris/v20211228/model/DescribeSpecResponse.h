@@ -46,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取zookeeper节点规格描述
-                     * @return MasterSpec zookeeper节点规格描述
+                     * 获取fe节点规格描述
+                     * @return MasterSpec fe节点规格描述
                      * 
                      */
                     std::vector<ResourceSpec> GetMasterSpec() const;
@@ -60,8 +60,8 @@ namespace TencentCloud
                     bool MasterSpecHasBeenSet() const;
 
                     /**
-                     * 获取数据节点规格描述
-                     * @return CoreSpec 数据节点规格描述
+                     * 获取be节点规格描述
+                     * @return CoreSpec be节点规格描述
                      * 
                      */
                     std::vector<ResourceSpec> GetCoreSpec() const;
@@ -89,16 +89,30 @@ namespace TencentCloud
                      */
                     bool AttachCBSSpecHasBeenSet() const;
 
+                    /**
+                     * 获取cn节点列表
+                     * @return CNSpec cn节点列表
+                     * 
+                     */
+                    std::vector<ResourceSpec> GetCNSpec() const;
+
+                    /**
+                     * 判断参数 CNSpec 是否已赋值
+                     * @return CNSpec 是否已赋值
+                     * 
+                     */
+                    bool CNSpecHasBeenSet() const;
+
                 private:
 
                     /**
-                     * zookeeper节点规格描述
+                     * fe节点规格描述
                      */
                     std::vector<ResourceSpec> m_masterSpec;
                     bool m_masterSpecHasBeenSet;
 
                     /**
-                     * 数据节点规格描述
+                     * be节点规格描述
                      */
                     std::vector<ResourceSpec> m_coreSpec;
                     bool m_coreSpecHasBeenSet;
@@ -109,6 +123,12 @@ namespace TencentCloud
                      */
                     std::vector<DiskSpec> m_attachCBSSpec;
                     bool m_attachCBSSpecHasBeenSet;
+
+                    /**
+                     * cn节点列表
+                     */
+                    std::vector<ResourceSpec> m_cNSpec;
+                    bool m_cNSpecHasBeenSet;
 
                 };
             }

@@ -170,6 +170,27 @@ namespace TencentCloud
                     bool SpecificationHasBeenSet() const;
 
                     /**
+                     * 获取购买时长（单位：月），当PayMode值为PrePay则此项配置有意义，默认为1月，取值范围为[1,100]
+                     * @return TimeSpan 购买时长（单位：月），当PayMode值为PrePay则此项配置有意义，默认为1月，取值范围为[1,100]
+                     * 
+                     */
+                    uint64_t GetTimeSpan() const;
+
+                    /**
+                     * 设置购买时长（单位：月），当PayMode值为PrePay则此项配置有意义，默认为1月，取值范围为[1,100]
+                     * @param _timeSpan 购买时长（单位：月），当PayMode值为PrePay则此项配置有意义，默认为1月，取值范围为[1,100]
+                     * 
+                     */
+                    void SetTimeSpan(const uint64_t& _timeSpan);
+
+                    /**
+                     * 判断参数 TimeSpan 是否已赋值
+                     * @return TimeSpan 是否已赋值
+                     * 
+                     */
+                    bool TimeSpanHasBeenSet() const;
+
+                    /**
                      * 获取标签信息
                      * @return Tags 标签信息
                      * 
@@ -332,6 +353,12 @@ namespace TencentCloud
                      */
                     std::string m_specification;
                     bool m_specificationHasBeenSet;
+
+                    /**
+                     * 购买时长（单位：月），当PayMode值为PrePay则此项配置有意义，默认为1月，取值范围为[1,100]
+                     */
+                    uint64_t m_timeSpan;
+                    bool m_timeSpanHasBeenSet;
 
                     /**
                      * 标签信息

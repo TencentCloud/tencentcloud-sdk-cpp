@@ -427,6 +427,49 @@ ScfClient::DeleteFunctionOutcomeCallable ScfClient::DeleteFunctionCallable(const
     return task->get_future();
 }
 
+ScfClient::DeleteFunctionVersionOutcome ScfClient::DeleteFunctionVersion(const DeleteFunctionVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteFunctionVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteFunctionVersionResponse rsp = DeleteFunctionVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteFunctionVersionOutcome(rsp);
+        else
+            return DeleteFunctionVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteFunctionVersionOutcome(outcome.GetError());
+    }
+}
+
+void ScfClient::DeleteFunctionVersionAsync(const DeleteFunctionVersionRequest& request, const DeleteFunctionVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteFunctionVersion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ScfClient::DeleteFunctionVersionOutcomeCallable ScfClient::DeleteFunctionVersionCallable(const DeleteFunctionVersionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteFunctionVersionOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteFunctionVersion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ScfClient::DeleteLayerVersionOutcome ScfClient::DeleteLayerVersion(const DeleteLayerVersionRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteLayerVersion");

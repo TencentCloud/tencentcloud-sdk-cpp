@@ -28,7 +28,8 @@ WebhookTrigger::WebhookTrigger() :
     m_enabledHasBeenSet(false),
     m_idHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_namespaceIdHasBeenSet(false)
+    m_namespaceIdHasBeenSet(false),
+    m_namespaceNameHasBeenSet(false)
 {
 }
 
@@ -130,6 +131,16 @@ CoreInternalOutcome WebhookTrigger::Deserialize(const rapidjson::Value &value)
         m_namespaceIdHasBeenSet = true;
     }
 
+    if (value.HasMember("NamespaceName") && !value["NamespaceName"].IsNull())
+    {
+        if (!value["NamespaceName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WebhookTrigger.NamespaceName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_namespaceName = string(value["NamespaceName"].GetString());
+        m_namespaceNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -211,6 +222,14 @@ void WebhookTrigger::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "NamespaceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_namespaceId, allocator);
+    }
+
+    if (m_namespaceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NamespaceName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_namespaceName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -342,5 +361,21 @@ void WebhookTrigger::SetNamespaceId(const int64_t& _namespaceId)
 bool WebhookTrigger::NamespaceIdHasBeenSet() const
 {
     return m_namespaceIdHasBeenSet;
+}
+
+string WebhookTrigger::GetNamespaceName() const
+{
+    return m_namespaceName;
+}
+
+void WebhookTrigger::SetNamespaceName(const string& _namespaceName)
+{
+    m_namespaceName = _namespaceName;
+    m_namespaceNameHasBeenSet = true;
+}
+
+bool WebhookTrigger::NamespaceNameHasBeenSet() const
+{
+    return m_namespaceNameHasBeenSet;
 }
 

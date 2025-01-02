@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vpc/v20170312/model/Tag.h>
 
 
 namespace TencentCloud
@@ -168,6 +169,27 @@ namespace TencentCloud
                     bool ModeTypeHasBeenSet() const;
 
                     /**
+                     * 获取专线网关自定义ASN，范围：45090，64512-65534 和4200000000-4294967294
+                     * @return GatewayAsn 专线网关自定义ASN，范围：45090，64512-65534 和4200000000-4294967294
+                     * 
+                     */
+                    uint64_t GetGatewayAsn() const;
+
+                    /**
+                     * 设置专线网关自定义ASN，范围：45090，64512-65534 和4200000000-4294967294
+                     * @param _gatewayAsn 专线网关自定义ASN，范围：45090，64512-65534 和4200000000-4294967294
+                     * 
+                     */
+                    void SetGatewayAsn(const uint64_t& _gatewayAsn);
+
+                    /**
+                     * 判断参数 GatewayAsn 是否已赋值
+                     * @return GatewayAsn 是否已赋值
+                     * 
+                     */
+                    bool GatewayAsnHasBeenSet() const;
+
+                    /**
                      * 获取专线网关可用区
                      * @return Zone 专线网关可用区
                      * 
@@ -209,6 +231,27 @@ namespace TencentCloud
                      */
                     bool HaZoneGroupIdHasBeenSet() const;
 
+                    /**
+                     * 获取标签
+                     * @return Tags 标签
+                     * 
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置标签
+                     * @param _tags 标签
+                     * 
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -247,6 +290,12 @@ namespace TencentCloud
                     bool m_modeTypeHasBeenSet;
 
                     /**
+                     * 专线网关自定义ASN，范围：45090，64512-65534 和4200000000-4294967294
+                     */
+                    uint64_t m_gatewayAsn;
+                    bool m_gatewayAsnHasBeenSet;
+
+                    /**
                      * 专线网关可用区
                      */
                     std::string m_zone;
@@ -257,6 +306,12 @@ namespace TencentCloud
                      */
                     std::string m_haZoneGroupId;
                     bool m_haZoneGroupIdHasBeenSet;
+
+                    /**
+                     * 标签
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

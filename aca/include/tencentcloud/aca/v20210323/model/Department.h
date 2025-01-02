@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取科室ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 科室ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置科室ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id 科室ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取科室名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 科室名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置科室名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 科室名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取科室类型 0:门诊  1:住院  2:门诊+住院
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Scope 科室类型 0:门诊  1:住院  2:门诊+住院
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetScope() const;
 
                     /**
                      * 设置科室类型 0:门诊  1:住院  2:门诊+住院
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scope 科室类型 0:门诊  1:住院  2:门诊+住院
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScope(const int64_t& _scope);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取门诊区开关 true:此科室对应的门诊区开启智能审方功能, false:此科室对应的门诊区关闭智能审方功能; 仅对scope为0/2的科室生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OutpatientOn 门诊区开关 true:此科室对应的门诊区开启智能审方功能, false:此科室对应的门诊区关闭智能审方功能; 仅对scope为0/2的科室生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetOutpatientOn() const;
 
                     /**
                      * 设置门诊区开关 true:此科室对应的门诊区开启智能审方功能, false:此科室对应的门诊区关闭智能审方功能; 仅对scope为0/2的科室生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _outpatientOn 门诊区开关 true:此科室对应的门诊区开启智能审方功能, false:此科室对应的门诊区关闭智能审方功能; 仅对scope为0/2的科室生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutpatientOn(const bool& _outpatientOn);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取住院区开关 true:此科室对应的住院区开启智能审方功能, false:此科室对应的住院区关闭智能审方功能; 仅对scope为1/2的科室生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InHospitalOn 住院区开关 true:此科室对应的住院区开启智能审方功能, false:此科室对应的住院区关闭智能审方功能; 仅对scope为1/2的科室生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetInHospitalOn() const;
 
                     /**
                      * 设置住院区开关 true:此科室对应的住院区开启智能审方功能, false:此科室对应的住院区关闭智能审方功能; 仅对scope为1/2的科室生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _inHospitalOn 住院区开关 true:此科室对应的住院区开启智能审方功能, false:此科室对应的住院区关闭智能审方功能; 仅对scope为1/2的科室生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInHospitalOn(const bool& _inHospitalOn);
@@ -175,35 +155,30 @@ namespace TencentCloud
 
                     /**
                      * 科室ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * 科室名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 科室类型 0:门诊  1:住院  2:门诊+住院
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_scope;
                     bool m_scopeHasBeenSet;
 
                     /**
                      * 门诊区开关 true:此科室对应的门诊区开启智能审方功能, false:此科室对应的门诊区关闭智能审方功能; 仅对scope为0/2的科室生效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_outpatientOn;
                     bool m_outpatientOnHasBeenSet;
 
                     /**
                      * 住院区开关 true:此科室对应的住院区开启智能审方功能, false:此科室对应的住院区关闭智能审方功能; 仅对scope为1/2的科室生效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_inHospitalOn;
                     bool m_inHospitalOnHasBeenSet;

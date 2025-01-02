@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取web应用防火墙是否打开， 取值范围:OPEN, CLOSE
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WafOpen web应用防火墙是否打开， 取值范围:OPEN, CLOSE
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWafOpen() const;
 
                     /**
                      * 设置web应用防火墙是否打开， 取值范围:OPEN, CLOSE
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _wafOpen web应用防火墙是否打开， 取值范围:OPEN, CLOSE
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWafOpen(const std::string& _wafOpen);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取web应用防火墙实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WafInstanceId web应用防火墙实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWafInstanceId() const;
 
                     /**
                      * 设置web应用防火墙实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _wafInstanceId web应用防火墙实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWafInstanceId(const std::string& _wafInstanceId);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * web应用防火墙是否打开， 取值范围:OPEN, CLOSE
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_wafOpen;
                     bool m_wafOpenHasBeenSet;
 
                     /**
                      * web应用防火墙实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_wafInstanceId;
                     bool m_wafInstanceIdHasBeenSet;

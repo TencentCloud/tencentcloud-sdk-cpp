@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeInstanceNodesResponse::DescribeInstanceNodesResponse() :
     m_totalCountHasBeenSet(false),
-    m_instanceNodesListHasBeenSet(false)
+    m_instanceNodesListHasBeenSet(false),
+    m_nodeRolesHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,19 @@ CoreInternalOutcome DescribeInstanceNodesResponse::Deserialize(const string &pay
         m_instanceNodesListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("NodeRoles") && !rsp["NodeRoles"].IsNull())
+    {
+        if (!rsp["NodeRoles"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `NodeRoles` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["NodeRoles"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_nodeRoles.push_back((*itr).GetString());
+        }
+        m_nodeRolesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +140,19 @@ string DescribeInstanceNodesResponse::ToJsonString() const
         }
     }
 
+    if (m_nodeRolesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeRoles";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_nodeRoles.begin(); itr != m_nodeRoles.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -156,6 +183,16 @@ vector<InstanceNode> DescribeInstanceNodesResponse::GetInstanceNodesList() const
 bool DescribeInstanceNodesResponse::InstanceNodesListHasBeenSet() const
 {
     return m_instanceNodesListHasBeenSet;
+}
+
+vector<string> DescribeInstanceNodesResponse::GetNodeRoles() const
+{
+    return m_nodeRoles;
+}
+
+bool DescribeInstanceNodesResponse::NodeRolesHasBeenSet() const
+{
+    return m_nodeRolesHasBeenSet;
 }
 
 

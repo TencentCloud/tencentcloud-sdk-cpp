@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool EmbedPermissionHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件
-                     * @return Filters 过滤条件
+                     * 获取过滤条件，key 目前只支持ServiceAccountName
+                     * @return Filters 过滤条件，key 目前只支持ServiceAccountName
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件
-                     * @param _filters 过滤条件
+                     * 设置过滤条件，key 目前只支持ServiceAccountName
+                     * @param _filters 过滤条件，key 目前只支持ServiceAccountName
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -190,7 +190,7 @@ namespace TencentCloud
                     bool m_embedPermissionHasBeenSet;
 
                     /**
-                     * 过滤条件
+                     * 过滤条件，key 目前只支持ServiceAccountName
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

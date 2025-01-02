@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取版本适用的运行时
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CompatibleRuntimes 版本适用的运行时
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetCompatibleRuntimes() const;
 
                     /**
                      * 设置版本适用的运行时
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _compatibleRuntimes 版本适用的运行时
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCompatibleRuntimes(const std::vector<std::string>& _compatibleRuntimes);
@@ -95,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取版本描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 版本描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置版本描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 版本描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -208,18 +200,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Stamp
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Stamp Stamp
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStamp() const;
 
                     /**
                      * 设置Stamp
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _stamp Stamp
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStamp(const std::string& _stamp);
@@ -260,7 +248,6 @@ namespace TencentCloud
 
                     /**
                      * 版本适用的运行时
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_compatibleRuntimes;
                     bool m_compatibleRuntimesHasBeenSet;
@@ -273,7 +260,6 @@ namespace TencentCloud
 
                     /**
                      * 版本描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
@@ -305,7 +291,6 @@ namespace TencentCloud
 
                     /**
                      * Stamp
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_stamp;
                     bool m_stampHasBeenSet;

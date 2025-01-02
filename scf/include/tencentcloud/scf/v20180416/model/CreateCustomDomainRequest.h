@@ -109,15 +109,15 @@ namespace TencentCloud
                     bool EndpointsConfigHasBeenSet() const;
 
                     /**
-                     * 获取证书配置信息，HTTPS协议必穿
-                     * @return CertConfig 证书配置信息，HTTPS协议必穿
+                     * 获取证书配置信息，有使用HTTPS协议时候必须传
+                     * @return CertConfig 证书配置信息，有使用HTTPS协议时候必须传
                      * 
                      */
                     CertConf GetCertConfig() const;
 
                     /**
-                     * 设置证书配置信息，HTTPS协议必穿
-                     * @param _certConfig 证书配置信息，HTTPS协议必穿
+                     * 设置证书配置信息，有使用HTTPS协议时候必须传
+                     * @param _certConfig 证书配置信息，有使用HTTPS协议时候必须传
                      * 
                      */
                     void SetCertConfig(const CertConf& _certConfig);
@@ -171,7 +171,7 @@ namespace TencentCloud
                     bool m_endpointsConfigHasBeenSet;
 
                     /**
-                     * 证书配置信息，HTTPS协议必穿
+                     * 证书配置信息，有使用HTTPS协议时候必须传
                      */
                     CertConf m_certConfig;
                     bool m_certConfigHasBeenSet;

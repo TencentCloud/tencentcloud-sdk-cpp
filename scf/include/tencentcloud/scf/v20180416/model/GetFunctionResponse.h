@@ -555,9 +555,7 @@ namespace TencentCloud
 
                     /**
                      * 获取文件系统配置参数，用于云函数挂载文件系统
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CfsConfig 文件系统配置参数，用于云函数挂载文件系统
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CfsConfig GetCfsConfig() const;
@@ -571,9 +569,7 @@ namespace TencentCloud
 
                     /**
                      * 获取函数的计费状态，状态值[参考此处](https://cloud.tencent.com/document/product/583/47175#.E5.87.BD.E6.95.B0.E8.AE.A1.E8.B4.B9.E7.8A.B6.E6.80.81)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AvailableStatus 函数的计费状态，状态值[参考此处](https://cloud.tencent.com/document/product/583/47175#.E5.87.BD.E6.95.B0.E8.AE.A1.E8.B4.B9.E7.8A.B6.E6.80.81)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAvailableStatus() const;
@@ -587,9 +583,7 @@ namespace TencentCloud
 
                     /**
                      * 获取函数版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Qualifier 函数版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetQualifier() const;
@@ -617,9 +611,7 @@ namespace TencentCloud
 
                     /**
                      * 获取函数状态失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StatusReasons 函数状态失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<StatusReason> GetStatusReasons() const;
@@ -633,9 +625,7 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启异步属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AsyncRunEnable 是否开启异步属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAsyncRunEnable() const;
@@ -649,9 +639,7 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启事件追踪
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TraceEnable 是否开启事件追踪
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTraceEnable() const;
@@ -713,9 +701,7 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启DNS缓存
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DnsCache 是否开启DNS缓存
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDnsCache() const;
@@ -960,21 +946,18 @@ namespace TencentCloud
 
                     /**
                      * 文件系统配置参数，用于云函数挂载文件系统
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CfsConfig m_cfsConfig;
                     bool m_cfsConfigHasBeenSet;
 
                     /**
                      * 函数的计费状态，状态值[参考此处](https://cloud.tencent.com/document/product/583/47175#.E5.87.BD.E6.95.B0.E8.AE.A1.E8.B4.B9.E7.8A.B6.E6.80.81)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_availableStatus;
                     bool m_availableStatusHasBeenSet;
 
                     /**
                      * 函数版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_qualifier;
                     bool m_qualifierHasBeenSet;
@@ -987,21 +970,18 @@ namespace TencentCloud
 
                     /**
                      * 函数状态失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<StatusReason> m_statusReasons;
                     bool m_statusReasonsHasBeenSet;
 
                     /**
                      * 是否开启异步属性
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_asyncRunEnable;
                     bool m_asyncRunEnableHasBeenSet;
 
                     /**
                      * 是否开启事件追踪
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_traceEnable;
                     bool m_traceEnableHasBeenSet;
@@ -1029,7 +1009,6 @@ namespace TencentCloud
 
                     /**
                      * 是否开启DNS缓存
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dnsCache;
                     bool m_dnsCacheHasBeenSet;

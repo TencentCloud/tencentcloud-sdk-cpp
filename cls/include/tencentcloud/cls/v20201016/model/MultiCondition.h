@@ -73,10 +73,12 @@ namespace TencentCloud
 
                     /**
                      * 获取告警级别。0:警告(Warn); 1:提醒(Info); 2:紧急 (Critical)。
-<li> 不填则默认为0。
+
+- 不填则默认为0。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlarmLevel 告警级别。0:警告(Warn); 1:提醒(Info); 2:紧急 (Critical)。
-<li> 不填则默认为0。
+
+- 不填则默认为0。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -84,10 +86,12 @@ namespace TencentCloud
 
                     /**
                      * 设置告警级别。0:警告(Warn); 1:提醒(Info); 2:紧急 (Critical)。
-<li> 不填则默认为0。
+
+- 不填则默认为0。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _alarmLevel 告警级别。0:警告(Warn); 1:提醒(Info); 2:紧急 (Critical)。
-<li> 不填则默认为0。
+
+- 不填则默认为0。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -111,7 +115,8 @@ namespace TencentCloud
 
                     /**
                      * 告警级别。0:警告(Warn); 1:提醒(Info); 2:紧急 (Critical)。
-<li> 不填则默认为0。
+
+- 不填则默认为0。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_alarmLevel;

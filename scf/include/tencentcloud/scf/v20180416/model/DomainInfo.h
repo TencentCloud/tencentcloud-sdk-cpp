@@ -93,18 +93,14 @@ namespace TencentCloud
 
                     /**
                      * 获取路由配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndpointsConfig 路由配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<EndpointsConf> GetEndpointsConfig() const;
 
                     /**
                      * 设置路由配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endpointsConfig 路由配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndpointsConfig(const std::vector<EndpointsConf>& _endpointsConfig);
@@ -118,18 +114,14 @@ namespace TencentCloud
 
                     /**
                      * 获取证书配置信息，HTTPS协议必传路由配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CertConfig 证书配置信息，HTTPS协议必传路由配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CertConf GetCertConfig() const;
 
                     /**
                      * 设置证书配置信息，HTTPS协议必传路由配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _certConfig 证书配置信息，HTTPS协议必传路由配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCertConfig(const CertConf& _certConfig);
@@ -143,18 +135,14 @@ namespace TencentCloud
 
                     /**
                      * 获取web 应用防火墙配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WafConfig web 应用防火墙配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     WafConf GetWafConfig() const;
 
                     /**
                      * 设置web 应用防火墙配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _wafConfig web 应用防火墙配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWafConfig(const WafConf& _wafConfig);
@@ -182,21 +170,18 @@ namespace TencentCloud
 
                     /**
                      * 路由配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<EndpointsConf> m_endpointsConfig;
                     bool m_endpointsConfigHasBeenSet;
 
                     /**
                      * 证书配置信息，HTTPS协议必传路由配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CertConf m_certConfig;
                     bool m_certConfigHasBeenSet;
 
                     /**
                      * web 应用防火墙配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     WafConf m_wafConfig;
                     bool m_wafConfigHasBeenSet;

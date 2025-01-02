@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取定时预置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TriggerName 定时预置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTriggerName() const;
 
                     /**
                      * 设置定时预置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _triggerName 定时预置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTriggerName(const std::string& _triggerName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取定时预置并发数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TriggerProvisionedConcurrencyNum 定时预置并发数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTriggerProvisionedConcurrencyNum() const;
 
                     /**
                      * 设置定时预置并发数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _triggerProvisionedConcurrencyNum 定时预置并发数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTriggerProvisionedConcurrencyNum(const uint64_t& _triggerProvisionedConcurrencyNum);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设置定时触发器的时间配置，cron表达式。Cron 表达式有七个必需字段，按空格分隔。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TriggerCronConfig 设置定时触发器的时间配置，cron表达式。Cron 表达式有七个必需字段，按空格分隔。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTriggerCronConfig() const;
 
                     /**
                      * 设置设置定时触发器的时间配置，cron表达式。Cron 表达式有七个必需字段，按空格分隔。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _triggerCronConfig 设置定时触发器的时间配置，cron表达式。Cron 表达式有七个必需字段，按空格分隔。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTriggerCronConfig(const std::string& _triggerCronConfig);
@@ -150,21 +138,18 @@ namespace TencentCloud
 
                     /**
                      * 定时预置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_triggerName;
                     bool m_triggerNameHasBeenSet;
 
                     /**
                      * 定时预置并发数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_triggerProvisionedConcurrencyNum;
                     bool m_triggerProvisionedConcurrencyNumHasBeenSet;
 
                     /**
                      * 设置定时触发器的时间配置，cron表达式。Cron 表达式有七个必需字段，按空格分隔。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_triggerCronConfig;
                     bool m_triggerCronConfigHasBeenSet;

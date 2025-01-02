@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取ssl证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CertificateId ssl证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCertificateId() const;
 
                     /**
                      * 设置ssl证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _certificateId ssl证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCertificateId(const std::string& _certificateId);
@@ -75,7 +71,6 @@ namespace TencentCloud
 
                     /**
                      * ssl证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_certificateId;
                     bool m_certificateIdHasBeenSet;

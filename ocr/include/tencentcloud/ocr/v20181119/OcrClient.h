@@ -27,8 +27,6 @@
 #include <tencentcloud/ocr/v20181119/model/AdvertiseOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/ArithmeticOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/ArithmeticOCRResponse.h>
-#include <tencentcloud/ocr/v20181119/model/BankCardOCRRequest.h>
-#include <tencentcloud/ocr/v20181119/model/BankCardOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/BankSlipOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/BankSlipOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/BizLicenseOCRRequest.h>
@@ -213,9 +211,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ArithmeticOCRResponse> ArithmeticOCROutcome;
                 typedef std::future<ArithmeticOCROutcome> ArithmeticOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::ArithmeticOCRRequest&, ArithmeticOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> ArithmeticOCRAsyncHandler;
-                typedef Outcome<Core::Error, Model::BankCardOCRResponse> BankCardOCROutcome;
-                typedef std::future<BankCardOCROutcome> BankCardOCROutcomeCallable;
-                typedef std::function<void(const OcrClient*, const Model::BankCardOCRRequest&, BankCardOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> BankCardOCRAsyncHandler;
                 typedef Outcome<Core::Error, Model::BankSlipOCRResponse> BankSlipOCROutcome;
                 typedef std::future<BankSlipOCROutcome> BankSlipOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::BankSlipOCRRequest&, BankSlipOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> BankSlipOCRAsyncHandler;
@@ -488,17 +483,6 @@ namespace TencentCloud
                 ArithmeticOCROutcome ArithmeticOCR(const Model::ArithmeticOCRRequest &request);
                 void ArithmeticOCRAsync(const Model::ArithmeticOCRRequest& request, const ArithmeticOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ArithmeticOCROutcomeCallable ArithmeticOCRCallable(const Model::ArithmeticOCRRequest& request);
-
-                /**
-                 *本接口支持对中国大陆主流银行卡正反面关键字段的检测与识别，包括卡号、卡类型、卡名字、银行信息、有效期。支持竖排异形卡识别、多角度旋转图片识别。支持对复印件、翻拍件、边框遮挡的银行卡进行告警，可应用于各种银行卡信息有效性校验场景，如金融行业身份认证、第三方支付绑卡等场景。
-
-默认接口请求频率限制：10次/秒。
-                 * @param req BankCardOCRRequest
-                 * @return BankCardOCROutcome
-                 */
-                BankCardOCROutcome BankCardOCR(const Model::BankCardOCRRequest &request);
-                void BankCardOCRAsync(const Model::BankCardOCRRequest& request, const BankCardOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                BankCardOCROutcomeCallable BankCardOCRCallable(const Model::BankCardOCRRequest& request);
 
                 /**
                  *本接口支持银行回单全字段的识别，包括付款开户行、收款开户行、付款账号、收款账号、回单类型、回单编号、币种、流水号、凭证号码、交易机构、交易金额、手续费、日期等字段信息。

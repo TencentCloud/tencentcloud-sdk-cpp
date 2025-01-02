@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取探测模式，默认值NQA，不可修改。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProbeType 探测模式，默认值NQA，不可修改。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProbeType() const;
 
                     /**
                      * 设置探测模式，默认值NQA，不可修改。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _probeType 探测模式，默认值NQA，不可修改。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProbeType(const std::string& _probeType);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取探测间隔，腾讯云两次健康检查间隔时间，范围【1000-5000】，单位ms。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProbeInterval 探测间隔，腾讯云两次健康检查间隔时间，范围【1000-5000】，单位ms。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetProbeInterval() const;
 
                     /**
                      * 设置探测间隔，腾讯云两次健康检查间隔时间，范围【1000-5000】，单位ms。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _probeInterval 探测间隔，腾讯云两次健康检查间隔时间，范围【1000-5000】，单位ms。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProbeInterval(const int64_t& _probeInterval);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取探测次数，连续N次健康检查失败后执行路由切换，范围【3-8】，单位次。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProbeThreshold 探测次数，连续N次健康检查失败后执行路由切换，范围【3-8】，单位次。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetProbeThreshold() const;
 
                     /**
                      * 设置探测次数，连续N次健康检查失败后执行路由切换，范围【3-8】，单位次。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _probeThreshold 探测次数，连续N次健康检查失败后执行路由切换，范围【3-8】，单位次。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProbeThreshold(const int64_t& _probeThreshold);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取探测超时时间，范围【10-5000】，单位ms。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProbeTimeout 探测超时时间，范围【10-5000】，单位ms。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetProbeTimeout() const;
 
                     /**
                      * 设置探测超时时间，范围【10-5000】，单位ms。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _probeTimeout 探测超时时间，范围【10-5000】，单位ms。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProbeTimeout(const int64_t& _probeTimeout);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 探测模式，默认值NQA，不可修改。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_probeType;
                     bool m_probeTypeHasBeenSet;
 
                     /**
                      * 探测间隔，腾讯云两次健康检查间隔时间，范围【1000-5000】，单位ms。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_probeInterval;
                     bool m_probeIntervalHasBeenSet;
 
                     /**
                      * 探测次数，连续N次健康检查失败后执行路由切换，范围【3-8】，单位次。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_probeThreshold;
                     bool m_probeThresholdHasBeenSet;
 
                     /**
                      * 探测超时时间，范围【10-5000】，单位ms。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_probeTimeout;
                     bool m_probeTimeoutHasBeenSet;
