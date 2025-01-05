@@ -49,15 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return Region 集群ID
+                     * 获取地域
+                     * @return Region 地域
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _region 集群ID
+                     * 设置地域
+                     * @param _region 地域
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -219,7 +219,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群ID
+                     * 地域
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;

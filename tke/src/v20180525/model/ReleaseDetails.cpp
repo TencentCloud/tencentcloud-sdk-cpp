@@ -35,7 +35,10 @@ ReleaseDetails::ReleaseDetails() :
     m_appVersionHasBeenSet(false),
     m_firstDeployedTimeHasBeenSet(false),
     m_lastDeployedTimeHasBeenSet(false),
-    m_computedValuesHasBeenSet(false)
+    m_computedValuesHasBeenSet(false),
+    m_chartFromHasBeenSet(false),
+    m_chartURLHasBeenSet(false),
+    m_resourcesHasBeenSet(false)
 {
 }
 
@@ -194,6 +197,36 @@ CoreInternalOutcome ReleaseDetails::Deserialize(const rapidjson::Value &value)
         m_computedValuesHasBeenSet = true;
     }
 
+    if (value.HasMember("ChartFrom") && !value["ChartFrom"].IsNull())
+    {
+        if (!value["ChartFrom"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReleaseDetails.ChartFrom` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_chartFrom = string(value["ChartFrom"].GetString());
+        m_chartFromHasBeenSet = true;
+    }
+
+    if (value.HasMember("ChartURL") && !value["ChartURL"].IsNull())
+    {
+        if (!value["ChartURL"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReleaseDetails.ChartURL` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_chartURL = string(value["ChartURL"].GetString());
+        m_chartURLHasBeenSet = true;
+    }
+
+    if (value.HasMember("Resources") && !value["Resources"].IsNull())
+    {
+        if (!value["Resources"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReleaseDetails.Resources` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resources = string(value["Resources"].GetString());
+        m_resourcesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -319,6 +352,30 @@ void ReleaseDetails::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "ComputedValues";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_computedValues.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_chartFromHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChartFrom";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_chartFrom.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_chartURLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChartURL";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_chartURL.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourcesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Resources";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resources.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -562,5 +619,53 @@ void ReleaseDetails::SetComputedValues(const string& _computedValues)
 bool ReleaseDetails::ComputedValuesHasBeenSet() const
 {
     return m_computedValuesHasBeenSet;
+}
+
+string ReleaseDetails::GetChartFrom() const
+{
+    return m_chartFrom;
+}
+
+void ReleaseDetails::SetChartFrom(const string& _chartFrom)
+{
+    m_chartFrom = _chartFrom;
+    m_chartFromHasBeenSet = true;
+}
+
+bool ReleaseDetails::ChartFromHasBeenSet() const
+{
+    return m_chartFromHasBeenSet;
+}
+
+string ReleaseDetails::GetChartURL() const
+{
+    return m_chartURL;
+}
+
+void ReleaseDetails::SetChartURL(const string& _chartURL)
+{
+    m_chartURL = _chartURL;
+    m_chartURLHasBeenSet = true;
+}
+
+bool ReleaseDetails::ChartURLHasBeenSet() const
+{
+    return m_chartURLHasBeenSet;
+}
+
+string ReleaseDetails::GetResources() const
+{
+    return m_resources;
+}
+
+void ReleaseDetails::SetResources(const string& _resources)
+{
+    m_resources = _resources;
+    m_resourcesHasBeenSet = true;
+}
+
+bool ReleaseDetails::ResourcesHasBeenSet() const
+{
+    return m_resourcesHasBeenSet;
 }
 

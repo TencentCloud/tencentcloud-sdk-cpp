@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/monitor/v20180724/model/AlarmHierarchicalNotice.h>
+#include <tencentcloud/monitor/v20180724/model/NoticeContentTmplBindInfo.h>
 
 
 namespace TencentCloud
@@ -148,6 +149,27 @@ namespace TencentCloud
                      */
                     bool HierarchicalNoticesHasBeenSet() const;
 
+                    /**
+                     * 获取通知内容模板绑定信息
+                     * @return NoticeContentTmplBindInfos 通知内容模板绑定信息
+                     * 
+                     */
+                    std::vector<NoticeContentTmplBindInfo> GetNoticeContentTmplBindInfos() const;
+
+                    /**
+                     * 设置通知内容模板绑定信息
+                     * @param _noticeContentTmplBindInfos 通知内容模板绑定信息
+                     * 
+                     */
+                    void SetNoticeContentTmplBindInfos(const std::vector<NoticeContentTmplBindInfo>& _noticeContentTmplBindInfos);
+
+                    /**
+                     * 判断参数 NoticeContentTmplBindInfos 是否已赋值
+                     * @return NoticeContentTmplBindInfos 是否已赋值
+                     * 
+                     */
+                    bool NoticeContentTmplBindInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -179,6 +201,12 @@ namespace TencentCloud
                      */
                     std::vector<AlarmHierarchicalNotice> m_hierarchicalNotices;
                     bool m_hierarchicalNoticesHasBeenSet;
+
+                    /**
+                     * 通知内容模板绑定信息
+                     */
+                    std::vector<NoticeContentTmplBindInfo> m_noticeContentTmplBindInfos;
+                    bool m_noticeContentTmplBindInfosHasBeenSet;
 
                 };
             }

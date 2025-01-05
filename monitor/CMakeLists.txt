@@ -145,6 +145,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/DescribeServiceDiscoveryResponse.h
   include/tencentcloud/monitor/v20180724/model/PrometheusTag.h
   include/tencentcloud/monitor/v20180724/model/DescribePolicyConditionListMetric.h
+  include/tencentcloud/monitor/v20180724/model/NoticeContentTmplBindInfo.h
   include/tencentcloud/monitor/v20180724/model/BindingPolicyObjectRequest.h
   include/tencentcloud/monitor/v20180724/model/CreateServiceDiscoveryResponse.h
   include/tencentcloud/monitor/v20180724/model/DescribeClusterAgentCreatingProgressRequest.h
@@ -600,6 +601,7 @@ set(monitor_src
   src/v20180724/model/DescribeServiceDiscoveryResponse.cpp
   src/v20180724/model/PrometheusTag.cpp
   src/v20180724/model/DescribePolicyConditionListMetric.cpp
+  src/v20180724/model/NoticeContentTmplBindInfo.cpp
   src/v20180724/model/BindingPolicyObjectRequest.cpp
   src/v20180724/model/CreateServiceDiscoveryResponse.cpp
   src/v20180724/model/DescribeClusterAgentCreatingProgressRequest.cpp

@@ -126,6 +126,49 @@ OcrClient::ArithmeticOCROutcomeCallable OcrClient::ArithmeticOCRCallable(const A
     return task->get_future();
 }
 
+OcrClient::BankCardOCROutcome OcrClient::BankCardOCR(const BankCardOCRRequest &request)
+{
+    auto outcome = MakeRequest(request, "BankCardOCR");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BankCardOCRResponse rsp = BankCardOCRResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BankCardOCROutcome(rsp);
+        else
+            return BankCardOCROutcome(o.GetError());
+    }
+    else
+    {
+        return BankCardOCROutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::BankCardOCRAsync(const BankCardOCRRequest& request, const BankCardOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BankCardOCR(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OcrClient::BankCardOCROutcomeCallable OcrClient::BankCardOCRCallable(const BankCardOCRRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BankCardOCROutcome()>>(
+        [this, request]()
+        {
+            return this->BankCardOCR(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OcrClient::BankSlipOCROutcome OcrClient::BankSlipOCR(const BankSlipOCRRequest &request)
 {
     auto outcome = MakeRequest(request, "BankSlipOCR");

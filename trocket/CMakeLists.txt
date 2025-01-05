@@ -83,6 +83,7 @@ set(trocket_public_header_model
   include/tencentcloud/trocket/v20230308/model/DescribeMQTTUserListResponse.h
   include/tencentcloud/trocket/v20230308/model/ModifyMQTTUserResponse.h
   include/tencentcloud/trocket/v20230308/model/PriceTag.h
+  include/tencentcloud/trocket/v20230308/model/DescribeTopicListByGroupResponse.h
   include/tencentcloud/trocket/v20230308/model/DescribeMessageTraceResponse.h
   include/tencentcloud/trocket/v20230308/model/MQTTUserItem.h
   include/tencentcloud/trocket/v20230308/model/ModifyMQTTInsPublicEndpointRequest.h
@@ -115,6 +116,7 @@ set(trocket_public_header_model
   include/tencentcloud/trocket/v20230308/model/DescribeConsumerLagResponse.h
   include/tencentcloud/trocket/v20230308/model/DescribeMQTTInsPublicEndpointsRequest.h
   include/tencentcloud/trocket/v20230308/model/DeleteRoleResponse.h
+  include/tencentcloud/trocket/v20230308/model/DescribeTopicListByGroupRequest.h
   include/tencentcloud/trocket/v20230308/model/Filter.h
   include/tencentcloud/trocket/v20230308/model/ModifyMQTTTopicResponse.h
   include/tencentcloud/trocket/v20230308/model/DescribeMQTTTopicListRequest.h
@@ -228,6 +230,7 @@ set(trocket_src
   src/v20230308/model/DescribeMQTTUserListResponse.cpp
   src/v20230308/model/ModifyMQTTUserResponse.cpp
   src/v20230308/model/PriceTag.cpp
+  src/v20230308/model/DescribeTopicListByGroupResponse.cpp
   src/v20230308/model/DescribeMessageTraceResponse.cpp
   src/v20230308/model/MQTTUserItem.cpp
   src/v20230308/model/ModifyMQTTInsPublicEndpointRequest.cpp
@@ -260,6 +263,7 @@ set(trocket_src
   src/v20230308/model/DescribeConsumerLagResponse.cpp
   src/v20230308/model/DescribeMQTTInsPublicEndpointsRequest.cpp
   src/v20230308/model/DeleteRoleResponse.cpp
+  src/v20230308/model/DescribeTopicListByGroupRequest.cpp
   src/v20230308/model/Filter.cpp
   src/v20230308/model/ModifyMQTTTopicResponse.cpp
   src/v20230308/model/DescribeMQTTTopicListRequest.cpp

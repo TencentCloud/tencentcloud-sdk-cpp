@@ -1760,6 +1760,49 @@ DbbrainClient::DescribeRedisTopBigKeysOutcomeCallable DbbrainClient::DescribeRed
     return task->get_future();
 }
 
+DbbrainClient::DescribeRedisTopHotKeysOutcome DbbrainClient::DescribeRedisTopHotKeys(const DescribeRedisTopHotKeysRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRedisTopHotKeys");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRedisTopHotKeysResponse rsp = DescribeRedisTopHotKeysResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRedisTopHotKeysOutcome(rsp);
+        else
+            return DescribeRedisTopHotKeysOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRedisTopHotKeysOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeRedisTopHotKeysAsync(const DescribeRedisTopHotKeysRequest& request, const DescribeRedisTopHotKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRedisTopHotKeys(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeRedisTopHotKeysOutcomeCallable DbbrainClient::DescribeRedisTopHotKeysCallable(const DescribeRedisTopHotKeysRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRedisTopHotKeysOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRedisTopHotKeys(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DbbrainClient::DescribeRedisTopKeyPrefixListOutcome DbbrainClient::DescribeRedisTopKeyPrefixList(const DescribeRedisTopKeyPrefixListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRedisTopKeyPrefixList");

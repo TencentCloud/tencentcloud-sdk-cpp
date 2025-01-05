@@ -413,6 +413,81 @@ namespace TencentCloud
                      */
                     bool ComputedValuesHasBeenSet() const;
 
+                    /**
+                     * 获取chart 的来源， tke-market, others
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ChartFrom chart 的来源， tke-market, others
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetChartFrom() const;
+
+                    /**
+                     * 设置chart 的来源， tke-market, others
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _chartFrom chart 的来源， tke-market, others
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetChartFrom(const std::string& _chartFrom);
+
+                    /**
+                     * 判断参数 ChartFrom 是否已赋值
+                     * @return ChartFrom 是否已赋值
+                     * 
+                     */
+                    bool ChartFromHasBeenSet() const;
+
+                    /**
+                     * 获取第三方chart 的安装地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ChartURL 第三方chart 的安装地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetChartURL() const;
+
+                    /**
+                     * 设置第三方chart 的安装地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _chartURL 第三方chart 的安装地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetChartURL(const std::string& _chartURL);
+
+                    /**
+                     * 判断参数 ChartURL 是否已赋值
+                     * @return ChartURL 是否已赋值
+                     * 
+                     */
+                    bool ChartURLHasBeenSet() const;
+
+                    /**
+                     * 获取通过chart 创建的资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Resources 通过chart 创建的资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetResources() const;
+
+                    /**
+                     * 设置通过chart 创建的资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _resources 通过chart 创建的资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetResources(const std::string& _resources);
+
+                    /**
+                     * 判断参数 Resources 是否已赋值
+                     * @return Resources 是否已赋值
+                     * 
+                     */
+                    bool ResourcesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -517,6 +592,27 @@ namespace TencentCloud
                      */
                     std::string m_computedValues;
                     bool m_computedValuesHasBeenSet;
+
+                    /**
+                     * chart 的来源， tke-market, others
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_chartFrom;
+                    bool m_chartFromHasBeenSet;
+
+                    /**
+                     * 第三方chart 的安装地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_chartURL;
+                    bool m_chartURLHasBeenSet;
+
+                    /**
+                     * 通过chart 创建的资源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_resources;
+                    bool m_resourcesHasBeenSet;
 
                 };
             }

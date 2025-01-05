@@ -103,6 +103,8 @@
 #include <tencentcloud/dbbrain/v20210527/model/DescribeRedisProcessListResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeRedisTopBigKeysRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeRedisTopBigKeysResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeRedisTopHotKeysRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeRedisTopHotKeysResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeRedisTopKeyPrefixListRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeRedisTopKeyPrefixListResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeSecurityAuditLogDownloadUrlsRequest.h>
@@ -283,6 +285,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRedisTopBigKeysResponse> DescribeRedisTopBigKeysOutcome;
                 typedef std::future<DescribeRedisTopBigKeysOutcome> DescribeRedisTopBigKeysOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeRedisTopBigKeysRequest&, DescribeRedisTopBigKeysOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRedisTopBigKeysAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRedisTopHotKeysResponse> DescribeRedisTopHotKeysOutcome;
+                typedef std::future<DescribeRedisTopHotKeysOutcome> DescribeRedisTopHotKeysOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeRedisTopHotKeysRequest&, DescribeRedisTopHotKeysOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRedisTopHotKeysAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRedisTopKeyPrefixListResponse> DescribeRedisTopKeyPrefixListOutcome;
                 typedef std::future<DescribeRedisTopKeyPrefixListOutcome> DescribeRedisTopKeyPrefixListOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeRedisTopKeyPrefixListRequest&, DescribeRedisTopKeyPrefixListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRedisTopKeyPrefixListAsyncHandler;
@@ -714,6 +719,15 @@ namespace TencentCloud
                 DescribeRedisTopBigKeysOutcome DescribeRedisTopBigKeys(const Model::DescribeRedisTopBigKeysRequest &request);
                 void DescribeRedisTopBigKeysAsync(const Model::DescribeRedisTopBigKeysRequest& request, const DescribeRedisTopBigKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRedisTopBigKeysOutcomeCallable DescribeRedisTopBigKeysCallable(const Model::DescribeRedisTopBigKeysRequest& request);
+
+                /**
+                 *热Key分析
+                 * @param req DescribeRedisTopHotKeysRequest
+                 * @return DescribeRedisTopHotKeysOutcome
+                 */
+                DescribeRedisTopHotKeysOutcome DescribeRedisTopHotKeys(const Model::DescribeRedisTopHotKeysRequest &request);
+                void DescribeRedisTopHotKeysAsync(const Model::DescribeRedisTopHotKeysRequest& request, const DescribeRedisTopHotKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRedisTopHotKeysOutcomeCallable DescribeRedisTopHotKeysCallable(const Model::DescribeRedisTopHotKeysRequest& request);
 
                 /**
                  *查询redis实例top key前缀列表。

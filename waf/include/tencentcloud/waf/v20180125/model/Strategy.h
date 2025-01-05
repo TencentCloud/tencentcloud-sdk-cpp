@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 自定义规则的匹配条件结构体
+                * 规则的匹配条件结构体
                 */
                 class Strategy : public AbstractModel
                 {

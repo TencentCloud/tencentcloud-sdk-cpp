@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取弹性公网 IPV6 的唯一 ID 列表。
-                     * @return AddressSet 弹性公网 IPV6 的唯一 ID 列表。
+                     * 获取传统弹性公网 IPv6 的唯一 ID 列表。
+                     * @return AddressSet 传统弹性公网 IPv6 的唯一 ID 列表。
                      * 
                      */
                     std::vector<std::string> GetAddressSet() const;
@@ -74,7 +74,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 弹性公网 IPV6 的唯一 ID 列表。
+                     * 传统弹性公网 IPv6 的唯一 ID 列表。
                      */
                     std::vector<std::string> m_addressSet;
                     bool m_addressSetHasBeenSet;

@@ -29,7 +29,9 @@ DescribeTokenUsageResponse::DescribeTokenUsageResponse() :
     m_outputTokenUsageHasBeenSet(false),
     m_apiCallStatsHasBeenSet(false),
     m_searchUsageHasBeenSet(false),
-    m_pageUsageHasBeenSet(false)
+    m_pageUsageHasBeenSet(false),
+    m_splitTokenUsageHasBeenSet(false),
+    m_ragSearchUsageHasBeenSet(false)
 {
 }
 
@@ -127,6 +129,26 @@ CoreInternalOutcome DescribeTokenUsageResponse::Deserialize(const string &payloa
         m_pageUsageHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SplitTokenUsage") && !rsp["SplitTokenUsage"].IsNull())
+    {
+        if (!rsp["SplitTokenUsage"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `SplitTokenUsage` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_splitTokenUsage = rsp["SplitTokenUsage"].GetDouble();
+        m_splitTokenUsageHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("RagSearchUsage") && !rsp["RagSearchUsage"].IsNull())
+    {
+        if (!rsp["RagSearchUsage"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `RagSearchUsage` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_ragSearchUsage = rsp["RagSearchUsage"].GetDouble();
+        m_ragSearchUsageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -183,6 +205,22 @@ string DescribeTokenUsageResponse::ToJsonString() const
         string key = "PageUsage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pageUsage, allocator);
+    }
+
+    if (m_splitTokenUsageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SplitTokenUsage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_splitTokenUsage, allocator);
+    }
+
+    if (m_ragSearchUsageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RagSearchUsage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ragSearchUsage, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -255,6 +293,26 @@ uint64_t DescribeTokenUsageResponse::GetPageUsage() const
 bool DescribeTokenUsageResponse::PageUsageHasBeenSet() const
 {
     return m_pageUsageHasBeenSet;
+}
+
+double DescribeTokenUsageResponse::GetSplitTokenUsage() const
+{
+    return m_splitTokenUsage;
+}
+
+bool DescribeTokenUsageResponse::SplitTokenUsageHasBeenSet() const
+{
+    return m_splitTokenUsageHasBeenSet;
+}
+
+double DescribeTokenUsageResponse::GetRagSearchUsage() const
+{
+    return m_ragSearchUsage;
+}
+
+bool DescribeTokenUsageResponse::RagSearchUsageHasBeenSet() const
+{
+    return m_ragSearchUsageHasBeenSet;
 }
 
 

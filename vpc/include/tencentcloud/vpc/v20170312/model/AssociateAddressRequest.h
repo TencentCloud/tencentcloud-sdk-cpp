@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool EipDirectConnectionHasBeenSet() const;
 
                     /**
-                     * 获取要绑定的实例所在的地域
-                     * @return InstanceRegion 要绑定的实例所在的地域
+                     * 获取要绑定的实例所在地域。默认无需填写，仅限GAAP特殊场景需指定实例所在地域。
+                     * @return InstanceRegion 要绑定的实例所在地域。默认无需填写，仅限GAAP特殊场景需指定实例所在地域。
                      * 
                      */
                     std::string GetInstanceRegion() const;
 
                     /**
-                     * 设置要绑定的实例所在的地域
-                     * @param _instanceRegion 要绑定的实例所在的地域
+                     * 设置要绑定的实例所在地域。默认无需填写，仅限GAAP特殊场景需指定实例所在地域。
+                     * @param _instanceRegion 要绑定的实例所在地域。默认无需填写，仅限GAAP特殊场景需指定实例所在地域。
                      * 
                      */
                     void SetInstanceRegion(const std::string& _instanceRegion);
@@ -201,7 +201,7 @@ namespace TencentCloud
                     bool m_eipDirectConnectionHasBeenSet;
 
                     /**
-                     * 要绑定的实例所在的地域
+                     * 要绑定的实例所在地域。默认无需填写，仅限GAAP特殊场景需指定实例所在地域。
                      */
                     std::string m_instanceRegion;
                     bool m_instanceRegionHasBeenSet;

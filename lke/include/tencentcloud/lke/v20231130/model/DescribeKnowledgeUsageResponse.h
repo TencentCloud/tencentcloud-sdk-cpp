@@ -71,6 +71,20 @@ namespace TencentCloud
                      */
                     bool ExceedCharSizeHasBeenSet() const;
 
+                    /**
+                     * 获取知识库使用字符总数
+                     * @return UsedCharSize 知识库使用字符总数
+                     * 
+                     */
+                    std::string GetUsedCharSize() const;
+
+                    /**
+                     * 判断参数 UsedCharSize 是否已赋值
+                     * @return UsedCharSize 是否已赋值
+                     * 
+                     */
+                    bool UsedCharSizeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -84,6 +98,12 @@ namespace TencentCloud
                      */
                     std::string m_exceedCharSize;
                     bool m_exceedCharSizeHasBeenSet;
+
+                    /**
+                     * 知识库使用字符总数
+                     */
+                    std::string m_usedCharSize;
+                    bool m_usedCharSizeHasBeenSet;
 
                 };
             }

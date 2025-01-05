@@ -127,6 +127,34 @@ namespace TencentCloud
                      */
                     bool PageUsageHasBeenSet() const;
 
+                    /**
+                     * 获取拆分token消耗量
+                     * @return SplitTokenUsage 拆分token消耗量
+                     * 
+                     */
+                    double GetSplitTokenUsage() const;
+
+                    /**
+                     * 判断参数 SplitTokenUsage 是否已赋值
+                     * @return SplitTokenUsage 是否已赋值
+                     * 
+                     */
+                    bool SplitTokenUsageHasBeenSet() const;
+
+                    /**
+                     * 获取Rag检索次数
+                     * @return RagSearchUsage Rag检索次数
+                     * 
+                     */
+                    double GetRagSearchUsage() const;
+
+                    /**
+                     * 判断参数 RagSearchUsage 是否已赋值
+                     * @return RagSearchUsage 是否已赋值
+                     * 
+                     */
+                    bool RagSearchUsageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -164,6 +192,18 @@ namespace TencentCloud
                      */
                     uint64_t m_pageUsage;
                     bool m_pageUsageHasBeenSet;
+
+                    /**
+                     * 拆分token消耗量
+                     */
+                    double m_splitTokenUsage;
+                    bool m_splitTokenUsageHasBeenSet;
+
+                    /**
+                     * Rag检索次数
+                     */
+                    double m_ragSearchUsage;
+                    bool m_ragSearchUsageHasBeenSet;
 
                 };
             }

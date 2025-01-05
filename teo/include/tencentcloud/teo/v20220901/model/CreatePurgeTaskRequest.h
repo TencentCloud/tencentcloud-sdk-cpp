@@ -45,14 +45,18 @@ namespace TencentCloud
 
                     /**
                      * 获取站点 ID。
+若您希望快速提交不同站点下的 Targets Url，可以将其填写为 *，但前提是调用该 API 的账号必须具备主账号下全部站点资源的权限。
                      * @return ZoneId 站点 ID。
+若您希望快速提交不同站点下的 Targets Url，可以将其填写为 *，但前提是调用该 API 的账号必须具备主账号下全部站点资源的权限。
                      * 
                      */
                     std::string GetZoneId() const;
 
                     /**
                      * 设置站点 ID。
+若您希望快速提交不同站点下的 Targets Url，可以将其填写为 *，但前提是调用该 API 的账号必须具备主账号下全部站点资源的权限。
                      * @param _zoneId 站点 ID。
+若您希望快速提交不同站点下的 Targets Url，可以将其填写为 *，但前提是调用该 API 的账号必须具备主账号下全部站点资源的权限。
                      * 
                      */
                     void SetZoneId(const std::string& _zoneId);
@@ -197,6 +201,7 @@ namespace TencentCloud
 
                     /**
                      * 站点 ID。
+若您希望快速提交不同站点下的 Targets Url，可以将其填写为 *，但前提是调用该 API 的账号必须具备主账号下全部站点资源的权限。
                      */
                     std::string m_zoneId;
                     bool m_zoneIdHasBeenSet;

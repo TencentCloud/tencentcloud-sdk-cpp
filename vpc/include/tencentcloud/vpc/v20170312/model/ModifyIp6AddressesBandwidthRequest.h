@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InternetMaxBandwidthOutHasBeenSet() const;
 
                     /**
-                     * 获取IPV6地址。Ip6Addresses和Ip6AddressId必须且只能传一个
-                     * @return Ip6Addresses IPV6地址。Ip6Addresses和Ip6AddressId必须且只能传一个
+                     * 获取IPv6地址。Ip6Addresses和Ip6AddressId必须且只能传一个
+                     * @return Ip6Addresses IPv6地址。Ip6Addresses和Ip6AddressId必须且只能传一个
                      * 
                      */
                     std::vector<std::string> GetIp6Addresses() const;
 
                     /**
-                     * 设置IPV6地址。Ip6Addresses和Ip6AddressId必须且只能传一个
-                     * @param _ip6Addresses IPV6地址。Ip6Addresses和Ip6AddressId必须且只能传一个
+                     * 设置IPv6地址。Ip6Addresses和Ip6AddressId必须且只能传一个
+                     * @param _ip6Addresses IPv6地址。Ip6Addresses和Ip6AddressId必须且只能传一个
                      * 
                      */
                     void SetIp6Addresses(const std::vector<std::string>& _ip6Addresses);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool Ip6AddressesHasBeenSet() const;
 
                     /**
-                     * 获取IPV6地址对应的唯一ID，形如eip-xxxxxxxx。Ip6Addresses和Ip6AddressId必须且只能传一个
-                     * @return Ip6AddressIds IPV6地址对应的唯一ID，形如eip-xxxxxxxx。Ip6Addresses和Ip6AddressId必须且只能传一个
+                     * 获取IPv6地址对应的唯一ID，形如eip-xxxxxxxx。Ip6Addresses和Ip6AddressId必须且只能传一个
+                     * @return Ip6AddressIds IPv6地址对应的唯一ID，形如eip-xxxxxxxx。Ip6Addresses和Ip6AddressId必须且只能传一个
                      * 
                      */
                     std::vector<std::string> GetIp6AddressIds() const;
 
                     /**
-                     * 设置IPV6地址对应的唯一ID，形如eip-xxxxxxxx。Ip6Addresses和Ip6AddressId必须且只能传一个
-                     * @param _ip6AddressIds IPV6地址对应的唯一ID，形如eip-xxxxxxxx。Ip6Addresses和Ip6AddressId必须且只能传一个
+                     * 设置IPv6地址对应的唯一ID，形如eip-xxxxxxxx。Ip6Addresses和Ip6AddressId必须且只能传一个
+                     * @param _ip6AddressIds IPv6地址对应的唯一ID，形如eip-xxxxxxxx。Ip6Addresses和Ip6AddressId必须且只能传一个
                      * 
                      */
                     void SetIp6AddressIds(const std::vector<std::string>& _ip6AddressIds);
@@ -114,13 +114,13 @@ namespace TencentCloud
                     bool m_internetMaxBandwidthOutHasBeenSet;
 
                     /**
-                     * IPV6地址。Ip6Addresses和Ip6AddressId必须且只能传一个
+                     * IPv6地址。Ip6Addresses和Ip6AddressId必须且只能传一个
                      */
                     std::vector<std::string> m_ip6Addresses;
                     bool m_ip6AddressesHasBeenSet;
 
                     /**
-                     * IPV6地址对应的唯一ID，形如eip-xxxxxxxx。Ip6Addresses和Ip6AddressId必须且只能传一个
+                     * IPv6地址对应的唯一ID，形如eip-xxxxxxxx。Ip6Addresses和Ip6AddressId必须且只能传一个
                      */
                     std::vector<std::string> m_ip6AddressIds;
                     bool m_ip6AddressIdsHasBeenSet;

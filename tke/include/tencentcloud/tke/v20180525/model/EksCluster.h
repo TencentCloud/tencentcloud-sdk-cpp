@@ -154,15 +154,15 @@ namespace TencentCloud
                     bool K8SVersionHasBeenSet() const;
 
                     /**
-                     * 获取集群状态(running运行中，initializing 初始化中，failed异常)
-                     * @return Status 集群状态(running运行中，initializing 初始化中，failed异常)
+                     * 获取集群状态(running 运行中，initializing 初始化中，Failed 异常，Idling 空闲中，Activating 激活中，Terminating 删除中)
+                     * @return Status 集群状态(running 运行中，initializing 初始化中，Failed 异常，Idling 空闲中，Activating 激活中，Terminating 删除中)
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置集群状态(running运行中，initializing 初始化中，failed异常)
-                     * @param _status 集群状态(running运行中，initializing 初始化中，failed异常)
+                     * 设置集群状态(running 运行中，initializing 初始化中，Failed 异常，Idling 空闲中，Activating 激活中，Terminating 删除中)
+                     * @param _status 集群状态(running 运行中，initializing 初始化中，Failed 异常，Idling 空闲中，Activating 激活中，Terminating 删除中)
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -358,7 +358,7 @@ namespace TencentCloud
                     bool m_k8SVersionHasBeenSet;
 
                     /**
-                     * 集群状态(running运行中，initializing 初始化中，failed异常)
+                     * 集群状态(running 运行中，initializing 初始化中，Failed 异常，Idling 空闲中，Activating 激活中，Terminating 删除中)
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

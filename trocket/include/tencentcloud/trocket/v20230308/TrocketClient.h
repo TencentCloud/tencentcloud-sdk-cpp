@@ -107,6 +107,8 @@
 #include <tencentcloud/trocket/v20230308/model/DescribeTopicResponse.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeTopicListRequest.h>
 #include <tencentcloud/trocket/v20230308/model/DescribeTopicListResponse.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeTopicListByGroupRequest.h>
+#include <tencentcloud/trocket/v20230308/model/DescribeTopicListByGroupResponse.h>
 #include <tencentcloud/trocket/v20230308/model/ImportSourceClusterConsumerGroupsRequest.h>
 #include <tencentcloud/trocket/v20230308/model/ImportSourceClusterConsumerGroupsResponse.h>
 #include <tencentcloud/trocket/v20230308/model/ImportSourceClusterTopicsRequest.h>
@@ -271,6 +273,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTopicListResponse> DescribeTopicListOutcome;
                 typedef std::future<DescribeTopicListOutcome> DescribeTopicListOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::DescribeTopicListRequest&, DescribeTopicListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopicListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTopicListByGroupResponse> DescribeTopicListByGroupOutcome;
+                typedef std::future<DescribeTopicListByGroupOutcome> DescribeTopicListByGroupOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::DescribeTopicListByGroupRequest&, DescribeTopicListByGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopicListByGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::ImportSourceClusterConsumerGroupsResponse> ImportSourceClusterConsumerGroupsOutcome;
                 typedef std::future<ImportSourceClusterConsumerGroupsOutcome> ImportSourceClusterConsumerGroupsOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::ImportSourceClusterConsumerGroupsRequest&, ImportSourceClusterConsumerGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImportSourceClusterConsumerGroupsAsyncHandler;
@@ -719,6 +724,17 @@ ConsumerGroup，消费组名称过滤
                 DescribeTopicListOutcome DescribeTopicList(const Model::DescribeTopicListRequest &request);
                 void DescribeTopicListAsync(const Model::DescribeTopicListRequest& request, const DescribeTopicListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTopicListOutcomeCallable DescribeTopicListCallable(const Model::DescribeTopicListRequest& request);
+
+                /**
+                 *根据消费组获取主题列表，Filter参数使用说明如下：
+
+TopicName，主题名称过滤
+                 * @param req DescribeTopicListByGroupRequest
+                 * @return DescribeTopicListByGroupOutcome
+                 */
+                DescribeTopicListByGroupOutcome DescribeTopicListByGroup(const Model::DescribeTopicListByGroupRequest &request);
+                void DescribeTopicListByGroupAsync(const Model::DescribeTopicListByGroupRequest& request, const DescribeTopicListByGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTopicListByGroupOutcomeCallable DescribeTopicListByGroupCallable(const Model::DescribeTopicListByGroupRequest& request);
 
                 /**
                  *导入消费者组列表
