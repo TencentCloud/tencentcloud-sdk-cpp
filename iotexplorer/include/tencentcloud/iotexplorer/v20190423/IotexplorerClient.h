@@ -283,6 +283,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyTopicPolicyResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyTopicRuleRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ModifyTopicRuleResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/PauseTWeCallDeviceRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/PauseTWeCallDeviceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/PublishBroadcastMessageRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/PublishBroadcastMessageResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/PublishFirmwareUpdateMessageRequest.h>
@@ -301,6 +303,10 @@
 #include <tencentcloud/iotexplorer/v20190423/model/ResetCloudStorageAIServiceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ResetCloudStorageEventRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ResetCloudStorageEventResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ResetTWeCallDeviceRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ResetTWeCallDeviceResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ResumeWeCallDeviceRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/ResumeWeCallDeviceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/SearchPositionSpaceRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/SearchPositionSpaceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/SearchStudioProductRequest.h>
@@ -309,6 +315,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/SearchTopicRuleResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/TransferCloudStorageRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/TransferCloudStorageResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/TransferTWeCallDeviceRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/TransferTWeCallDeviceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/UnbindDevicesRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/UnbindDevicesResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/UnbindProductsRequest.h>
@@ -725,6 +733,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyTopicRuleResponse> ModifyTopicRuleOutcome;
                 typedef std::future<ModifyTopicRuleOutcome> ModifyTopicRuleOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ModifyTopicRuleRequest&, ModifyTopicRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTopicRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::PauseTWeCallDeviceResponse> PauseTWeCallDeviceOutcome;
+                typedef std::future<PauseTWeCallDeviceOutcome> PauseTWeCallDeviceOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::PauseTWeCallDeviceRequest&, PauseTWeCallDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PauseTWeCallDeviceAsyncHandler;
                 typedef Outcome<Core::Error, Model::PublishBroadcastMessageResponse> PublishBroadcastMessageOutcome;
                 typedef std::future<PublishBroadcastMessageOutcome> PublishBroadcastMessageOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::PublishBroadcastMessageRequest&, PublishBroadcastMessageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PublishBroadcastMessageAsyncHandler;
@@ -752,6 +763,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ResetCloudStorageEventResponse> ResetCloudStorageEventOutcome;
                 typedef std::future<ResetCloudStorageEventOutcome> ResetCloudStorageEventOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ResetCloudStorageEventRequest&, ResetCloudStorageEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetCloudStorageEventAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResetTWeCallDeviceResponse> ResetTWeCallDeviceOutcome;
+                typedef std::future<ResetTWeCallDeviceOutcome> ResetTWeCallDeviceOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::ResetTWeCallDeviceRequest&, ResetTWeCallDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetTWeCallDeviceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResumeWeCallDeviceResponse> ResumeWeCallDeviceOutcome;
+                typedef std::future<ResumeWeCallDeviceOutcome> ResumeWeCallDeviceOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::ResumeWeCallDeviceRequest&, ResumeWeCallDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResumeWeCallDeviceAsyncHandler;
                 typedef Outcome<Core::Error, Model::SearchPositionSpaceResponse> SearchPositionSpaceOutcome;
                 typedef std::future<SearchPositionSpaceOutcome> SearchPositionSpaceOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::SearchPositionSpaceRequest&, SearchPositionSpaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchPositionSpaceAsyncHandler;
@@ -764,6 +781,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::TransferCloudStorageResponse> TransferCloudStorageOutcome;
                 typedef std::future<TransferCloudStorageOutcome> TransferCloudStorageOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::TransferCloudStorageRequest&, TransferCloudStorageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TransferCloudStorageAsyncHandler;
+                typedef Outcome<Core::Error, Model::TransferTWeCallDeviceResponse> TransferTWeCallDeviceOutcome;
+                typedef std::future<TransferTWeCallDeviceOutcome> TransferTWeCallDeviceOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::TransferTWeCallDeviceRequest&, TransferTWeCallDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TransferTWeCallDeviceAsyncHandler;
                 typedef Outcome<Core::Error, Model::UnbindDevicesResponse> UnbindDevicesOutcome;
                 typedef std::future<UnbindDevicesOutcome> UnbindDevicesOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::UnbindDevicesRequest&, UnbindDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnbindDevicesAsyncHandler;
@@ -1960,6 +1980,15 @@ namespace TencentCloud
                 ModifyTopicRuleOutcomeCallable ModifyTopicRuleCallable(const Model::ModifyTopicRuleRequest& request);
 
                 /**
+                 *暂停设备
+                 * @param req PauseTWeCallDeviceRequest
+                 * @return PauseTWeCallDeviceOutcome
+                 */
+                PauseTWeCallDeviceOutcome PauseTWeCallDevice(const Model::PauseTWeCallDeviceRequest &request);
+                void PauseTWeCallDeviceAsync(const Model::PauseTWeCallDeviceRequest& request, const PauseTWeCallDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PauseTWeCallDeviceOutcomeCallable PauseTWeCallDeviceCallable(const Model::PauseTWeCallDeviceRequest& request);
+
+                /**
                  *发布广播消息、发布RRPC消息属于早期服务，目前已停止维护，需要从官网下线。
 
 发布广播消息
@@ -2045,6 +2074,24 @@ namespace TencentCloud
                 ResetCloudStorageEventOutcomeCallable ResetCloudStorageEventCallable(const Model::ResetCloudStorageEventRequest& request);
 
                 /**
+                 *重置设备
+                 * @param req ResetTWeCallDeviceRequest
+                 * @return ResetTWeCallDeviceOutcome
+                 */
+                ResetTWeCallDeviceOutcome ResetTWeCallDevice(const Model::ResetTWeCallDeviceRequest &request);
+                void ResetTWeCallDeviceAsync(const Model::ResetTWeCallDeviceRequest& request, const ResetTWeCallDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResetTWeCallDeviceOutcomeCallable ResetTWeCallDeviceCallable(const Model::ResetTWeCallDeviceRequest& request);
+
+                /**
+                 *恢复设备
+                 * @param req ResumeWeCallDeviceRequest
+                 * @return ResumeWeCallDeviceOutcome
+                 */
+                ResumeWeCallDeviceOutcome ResumeWeCallDevice(const Model::ResumeWeCallDeviceRequest &request);
+                void ResumeWeCallDeviceAsync(const Model::ResumeWeCallDeviceRequest& request, const ResumeWeCallDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResumeWeCallDeviceOutcomeCallable ResumeWeCallDeviceCallable(const Model::ResumeWeCallDeviceRequest& request);
+
+                /**
                  *搜索位置空间
                  * @param req SearchPositionSpaceRequest
                  * @return SearchPositionSpaceOutcome
@@ -2079,6 +2126,15 @@ namespace TencentCloud
                 TransferCloudStorageOutcome TransferCloudStorage(const Model::TransferCloudStorageRequest &request);
                 void TransferCloudStorageAsync(const Model::TransferCloudStorageRequest& request, const TransferCloudStorageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 TransferCloudStorageOutcomeCallable TransferCloudStorageCallable(const Model::TransferCloudStorageRequest& request);
+
+                /**
+                 *转移设备
+                 * @param req TransferTWeCallDeviceRequest
+                 * @return TransferTWeCallDeviceOutcome
+                 */
+                TransferTWeCallDeviceOutcome TransferTWeCallDevice(const Model::TransferTWeCallDeviceRequest &request);
+                void TransferTWeCallDeviceAsync(const Model::TransferTWeCallDeviceRequest& request, const TransferTWeCallDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TransferTWeCallDeviceOutcomeCallable TransferTWeCallDeviceCallable(const Model::TransferTWeCallDeviceRequest& request);
 
                 /**
                  *批量解绑子设备

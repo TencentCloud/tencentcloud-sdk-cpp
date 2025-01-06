@@ -33,6 +33,7 @@
 #include <tencentcloud/monitor/v20180724/model/AlarmConditionFilter.h>
 #include <tencentcloud/monitor/v20180724/model/AlarmGroupByItem.h>
 #include <tencentcloud/monitor/v20180724/model/Tag.h>
+#include <tencentcloud/monitor/v20180724/model/NoticeContentTmplBindInfo.h>
 
 
 namespace TencentCloud
@@ -1042,6 +1043,27 @@ namespace TencentCloud
                      */
                     bool TagOperationHasBeenSet() const;
 
+                    /**
+                     * 获取通知模板绑定内容模板信息
+                     * @return NoticeTmplBindInfos 通知模板绑定内容模板信息
+                     * 
+                     */
+                    std::vector<NoticeContentTmplBindInfo> GetNoticeTmplBindInfos() const;
+
+                    /**
+                     * 设置通知模板绑定内容模板信息
+                     * @param _noticeTmplBindInfos 通知模板绑定内容模板信息
+                     * 
+                     */
+                    void SetNoticeTmplBindInfos(const std::vector<NoticeContentTmplBindInfo>& _noticeTmplBindInfos);
+
+                    /**
+                     * 判断参数 NoticeTmplBindInfos 是否已赋值
+                     * @return NoticeTmplBindInfos 是否已赋值
+                     * 
+                     */
+                    bool NoticeTmplBindInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1319,6 +1341,12 @@ namespace TencentCloud
                      */
                     std::string m_tagOperation;
                     bool m_tagOperationHasBeenSet;
+
+                    /**
+                     * 通知模板绑定内容模板信息
+                     */
+                    std::vector<NoticeContentTmplBindInfo> m_noticeTmplBindInfos;
+                    bool m_noticeTmplBindInfosHasBeenSet;
 
                 };
             }

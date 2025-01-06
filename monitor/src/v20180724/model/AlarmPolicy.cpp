@@ -59,7 +59,8 @@ AlarmPolicy::AlarmPolicy() :
     m_isBindAllHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_isSupportAlarmTagHasBeenSet(false),
-    m_tagOperationHasBeenSet(false)
+    m_tagOperationHasBeenSet(false),
+    m_noticeTmplBindInfosHasBeenSet(false)
 {
 }
 
@@ -542,6 +543,26 @@ CoreInternalOutcome AlarmPolicy::Deserialize(const rapidjson::Value &value)
         m_tagOperationHasBeenSet = true;
     }
 
+    if (value.HasMember("NoticeTmplBindInfos") && !value["NoticeTmplBindInfos"].IsNull())
+    {
+        if (!value["NoticeTmplBindInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicy.NoticeTmplBindInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["NoticeTmplBindInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            NoticeContentTmplBindInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_noticeTmplBindInfos.push_back(item);
+        }
+        m_noticeTmplBindInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -908,6 +929,21 @@ void AlarmPolicy::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "TagOperation";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_tagOperation.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_noticeTmplBindInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NoticeTmplBindInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_noticeTmplBindInfos.begin(); itr != m_noticeTmplBindInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1535,5 +1571,21 @@ void AlarmPolicy::SetTagOperation(const string& _tagOperation)
 bool AlarmPolicy::TagOperationHasBeenSet() const
 {
     return m_tagOperationHasBeenSet;
+}
+
+vector<NoticeContentTmplBindInfo> AlarmPolicy::GetNoticeTmplBindInfos() const
+{
+    return m_noticeTmplBindInfos;
+}
+
+void AlarmPolicy::SetNoticeTmplBindInfos(const vector<NoticeContentTmplBindInfo>& _noticeTmplBindInfos)
+{
+    m_noticeTmplBindInfos = _noticeTmplBindInfos;
+    m_noticeTmplBindInfosHasBeenSet = true;
+}
+
+bool AlarmPolicy::NoticeTmplBindInfosHasBeenSet() const
+{
+    return m_noticeTmplBindInfosHasBeenSet;
 }
 

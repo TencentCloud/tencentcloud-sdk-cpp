@@ -229,6 +229,8 @@
 #include <tencentcloud/cdb/v20170320/model/DescribeSlowLogsResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeSupportedPrivilegesRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeSupportedPrivilegesResponse.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeTableColumnsRequest.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeTableColumnsResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeTablesRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeTablesResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeTagsOfInstanceIdsRequest.h>
@@ -688,6 +690,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSupportedPrivilegesResponse> DescribeSupportedPrivilegesOutcome;
                 typedef std::future<DescribeSupportedPrivilegesOutcome> DescribeSupportedPrivilegesOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeSupportedPrivilegesRequest&, DescribeSupportedPrivilegesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSupportedPrivilegesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTableColumnsResponse> DescribeTableColumnsOutcome;
+                typedef std::future<DescribeTableColumnsOutcome> DescribeTableColumnsOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::DescribeTableColumnsRequest&, DescribeTableColumnsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTableColumnsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTablesResponse> DescribeTablesOutcome;
                 typedef std::future<DescribeTablesOutcome> DescribeTablesOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeTablesRequest&, DescribeTablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTablesAsyncHandler;
@@ -1847,6 +1852,15 @@ namespace TencentCloud
                 DescribeSupportedPrivilegesOutcome DescribeSupportedPrivileges(const Model::DescribeSupportedPrivilegesRequest &request);
                 void DescribeSupportedPrivilegesAsync(const Model::DescribeSupportedPrivilegesRequest& request, const DescribeSupportedPrivilegesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSupportedPrivilegesOutcomeCallable DescribeSupportedPrivilegesCallable(const Model::DescribeSupportedPrivilegesRequest& request);
+
+                /**
+                 *本接口(DescribeTableColumns)用于查询云数据库实例的指定数据库表的列信息，仅支持主实例和灾备实例。
+                 * @param req DescribeTableColumnsRequest
+                 * @return DescribeTableColumnsOutcome
+                 */
+                DescribeTableColumnsOutcome DescribeTableColumns(const Model::DescribeTableColumnsRequest &request);
+                void DescribeTableColumnsAsync(const Model::DescribeTableColumnsRequest& request, const DescribeTableColumnsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTableColumnsOutcomeCallable DescribeTableColumnsCallable(const Model::DescribeTableColumnsRequest& request);
 
                 /**
                  *本接口(DescribeTables)用于查询云数据库实例的数据库表信息，仅支持主实例和灾备实例，不支持只读实例。

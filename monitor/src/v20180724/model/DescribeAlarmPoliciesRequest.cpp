@@ -48,7 +48,8 @@ DescribeAlarmPoliciesRequest::DescribeAlarmPoliciesRequest() :
     m_notInstanceGroupHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_promInsIdHasBeenSet(false),
-    m_receiverOnCallFormIDsHasBeenSet(false)
+    m_receiverOnCallFormIDsHasBeenSet(false),
+    m_noticeContentTmplIDsHasBeenSet(false)
 {
 }
 
@@ -331,6 +332,19 @@ string DescribeAlarmPoliciesRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_receiverOnCallFormIDs.begin(); itr != m_receiverOnCallFormIDs.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_noticeContentTmplIDsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NoticeContentTmplIDs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_noticeContentTmplIDs.begin(); itr != m_noticeContentTmplIDs.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -758,6 +772,22 @@ void DescribeAlarmPoliciesRequest::SetReceiverOnCallFormIDs(const vector<string>
 bool DescribeAlarmPoliciesRequest::ReceiverOnCallFormIDsHasBeenSet() const
 {
     return m_receiverOnCallFormIDsHasBeenSet;
+}
+
+vector<string> DescribeAlarmPoliciesRequest::GetNoticeContentTmplIDs() const
+{
+    return m_noticeContentTmplIDs;
+}
+
+void DescribeAlarmPoliciesRequest::SetNoticeContentTmplIDs(const vector<string>& _noticeContentTmplIDs)
+{
+    m_noticeContentTmplIDs = _noticeContentTmplIDs;
+    m_noticeContentTmplIDsHasBeenSet = true;
+}
+
+bool DescribeAlarmPoliciesRequest::NoticeContentTmplIDsHasBeenSet() const
+{
+    return m_noticeContentTmplIDsHasBeenSet;
 }
 
 

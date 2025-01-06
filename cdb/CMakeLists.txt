@@ -20,6 +20,7 @@ set(cdb_public_header
 
 set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/TaskDetail.h
+  include/tencentcloud/cdb/v20170320/model/DescribeTableColumnsResponse.h
   include/tencentcloud/cdb/v20170320/model/CdbZoneSellConf.h
   include/tencentcloud/cdb/v20170320/model/CreateDBImportJobRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeDatabasesRequest.h
@@ -202,7 +203,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/ResetRootAccountRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeDBInstanceConfigRequest.h
   include/tencentcloud/cdb/v20170320/model/ClusterNodeInfo.h
-  include/tencentcloud/cdb/v20170320/model/ModifyAuditServiceRequest.h
+  include/tencentcloud/cdb/v20170320/model/DescribeTableColumnsRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeProxyCustomConfResponse.h
   include/tencentcloud/cdb/v20170320/model/ModifyAuditConfigResponse.h
   include/tencentcloud/cdb/v20170320/model/SwitchDrInstanceToMasterResponse.h
@@ -242,6 +243,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/DescribeBackupConfigRequest.h
   include/tencentcloud/cdb/v20170320/model/RoVipInfo.h
   include/tencentcloud/cdb/v20170320/model/DescribeAccountsRequest.h
+  include/tencentcloud/cdb/v20170320/model/ModifyAuditServiceRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeErrorLogDataRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeAuditLogFilesResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeDBInstanceRebootTimeRequest.h
@@ -477,6 +479,7 @@ set(cdb_public_header_model
 set(cdb_src
   src/v20170320/CdbClient.cpp
   src/v20170320/model/TaskDetail.cpp
+  src/v20170320/model/DescribeTableColumnsResponse.cpp
   src/v20170320/model/CdbZoneSellConf.cpp
   src/v20170320/model/CreateDBImportJobRequest.cpp
   src/v20170320/model/DescribeDatabasesRequest.cpp
@@ -659,7 +662,7 @@ set(cdb_src
   src/v20170320/model/ResetRootAccountRequest.cpp
   src/v20170320/model/DescribeDBInstanceConfigRequest.cpp
   src/v20170320/model/ClusterNodeInfo.cpp
-  src/v20170320/model/ModifyAuditServiceRequest.cpp
+  src/v20170320/model/DescribeTableColumnsRequest.cpp
   src/v20170320/model/DescribeProxyCustomConfResponse.cpp
   src/v20170320/model/ModifyAuditConfigResponse.cpp
   src/v20170320/model/SwitchDrInstanceToMasterResponse.cpp
@@ -699,6 +702,7 @@ set(cdb_src
   src/v20170320/model/DescribeBackupConfigRequest.cpp
   src/v20170320/model/RoVipInfo.cpp
   src/v20170320/model/DescribeAccountsRequest.cpp
+  src/v20170320/model/ModifyAuditServiceRequest.cpp
   src/v20170320/model/DescribeErrorLogDataRequest.cpp
   src/v20170320/model/DescribeAuditLogFilesResponse.cpp
   src/v20170320/model/DescribeDBInstanceRebootTimeRequest.cpp

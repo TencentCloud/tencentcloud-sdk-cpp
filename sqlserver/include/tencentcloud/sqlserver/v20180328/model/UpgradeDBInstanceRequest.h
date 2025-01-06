@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/sqlserver/v20180328/model/DrZoneInfo.h>
 
 
 namespace TencentCloud
@@ -252,6 +253,31 @@ namespace TencentCloud
                      */
                     bool WaitSwitchHasBeenSet() const;
 
+                    /**
+                     * 获取多节点架构实例的备节点可用区，默认为空。如果需要在变配的同时修改指定备节点的可用区时必传，当MultiZones = MultiZones时主节点和备节点可用区不能全部相同。备机可用区集合最小为2个，最大不超过5个。
+
+                     * @return DrZones 多节点架构实例的备节点可用区，默认为空。如果需要在变配的同时修改指定备节点的可用区时必传，当MultiZones = MultiZones时主节点和备节点可用区不能全部相同。备机可用区集合最小为2个，最大不超过5个。
+
+                     * 
+                     */
+                    std::vector<DrZoneInfo> GetDrZones() const;
+
+                    /**
+                     * 设置多节点架构实例的备节点可用区，默认为空。如果需要在变配的同时修改指定备节点的可用区时必传，当MultiZones = MultiZones时主节点和备节点可用区不能全部相同。备机可用区集合最小为2个，最大不超过5个。
+
+                     * @param _drZones 多节点架构实例的备节点可用区，默认为空。如果需要在变配的同时修改指定备节点的可用区时必传，当MultiZones = MultiZones时主节点和备节点可用区不能全部相同。备机可用区集合最小为2个，最大不超过5个。
+
+                     * 
+                     */
+                    void SetDrZones(const std::vector<DrZoneInfo>& _drZones);
+
+                    /**
+                     * 判断参数 DrZones 是否已赋值
+                     * @return DrZones 是否已赋值
+                     * 
+                     */
+                    bool DrZonesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -313,6 +339,13 @@ namespace TencentCloud
                      */
                     int64_t m_waitSwitch;
                     bool m_waitSwitchHasBeenSet;
+
+                    /**
+                     * 多节点架构实例的备节点可用区，默认为空。如果需要在变配的同时修改指定备节点的可用区时必传，当MultiZones = MultiZones时主节点和备节点可用区不能全部相同。备机可用区集合最小为2个，最大不超过5个。
+
+                     */
+                    std::vector<DrZoneInfo> m_drZones;
+                    bool m_drZonesHasBeenSet;
 
                 };
             }

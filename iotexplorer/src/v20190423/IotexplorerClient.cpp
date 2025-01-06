@@ -5630,6 +5630,49 @@ IotexplorerClient::ModifyTopicRuleOutcomeCallable IotexplorerClient::ModifyTopic
     return task->get_future();
 }
 
+IotexplorerClient::PauseTWeCallDeviceOutcome IotexplorerClient::PauseTWeCallDevice(const PauseTWeCallDeviceRequest &request)
+{
+    auto outcome = MakeRequest(request, "PauseTWeCallDevice");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PauseTWeCallDeviceResponse rsp = PauseTWeCallDeviceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PauseTWeCallDeviceOutcome(rsp);
+        else
+            return PauseTWeCallDeviceOutcome(o.GetError());
+    }
+    else
+    {
+        return PauseTWeCallDeviceOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::PauseTWeCallDeviceAsync(const PauseTWeCallDeviceRequest& request, const PauseTWeCallDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->PauseTWeCallDevice(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::PauseTWeCallDeviceOutcomeCallable IotexplorerClient::PauseTWeCallDeviceCallable(const PauseTWeCallDeviceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<PauseTWeCallDeviceOutcome()>>(
+        [this, request]()
+        {
+            return this->PauseTWeCallDevice(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::PublishBroadcastMessageOutcome IotexplorerClient::PublishBroadcastMessage(const PublishBroadcastMessageRequest &request)
 {
     auto outcome = MakeRequest(request, "PublishBroadcastMessage");
@@ -6017,6 +6060,92 @@ IotexplorerClient::ResetCloudStorageEventOutcomeCallable IotexplorerClient::Rese
     return task->get_future();
 }
 
+IotexplorerClient::ResetTWeCallDeviceOutcome IotexplorerClient::ResetTWeCallDevice(const ResetTWeCallDeviceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResetTWeCallDevice");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResetTWeCallDeviceResponse rsp = ResetTWeCallDeviceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResetTWeCallDeviceOutcome(rsp);
+        else
+            return ResetTWeCallDeviceOutcome(o.GetError());
+    }
+    else
+    {
+        return ResetTWeCallDeviceOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::ResetTWeCallDeviceAsync(const ResetTWeCallDeviceRequest& request, const ResetTWeCallDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ResetTWeCallDevice(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::ResetTWeCallDeviceOutcomeCallable IotexplorerClient::ResetTWeCallDeviceCallable(const ResetTWeCallDeviceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ResetTWeCallDeviceOutcome()>>(
+        [this, request]()
+        {
+            return this->ResetTWeCallDevice(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::ResumeWeCallDeviceOutcome IotexplorerClient::ResumeWeCallDevice(const ResumeWeCallDeviceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResumeWeCallDevice");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResumeWeCallDeviceResponse rsp = ResumeWeCallDeviceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResumeWeCallDeviceOutcome(rsp);
+        else
+            return ResumeWeCallDeviceOutcome(o.GetError());
+    }
+    else
+    {
+        return ResumeWeCallDeviceOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::ResumeWeCallDeviceAsync(const ResumeWeCallDeviceRequest& request, const ResumeWeCallDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ResumeWeCallDevice(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::ResumeWeCallDeviceOutcomeCallable IotexplorerClient::ResumeWeCallDeviceCallable(const ResumeWeCallDeviceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ResumeWeCallDeviceOutcome()>>(
+        [this, request]()
+        {
+            return this->ResumeWeCallDevice(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::SearchPositionSpaceOutcome IotexplorerClient::SearchPositionSpace(const SearchPositionSpaceRequest &request)
 {
     auto outcome = MakeRequest(request, "SearchPositionSpace");
@@ -6182,6 +6311,49 @@ IotexplorerClient::TransferCloudStorageOutcomeCallable IotexplorerClient::Transf
         [this, request]()
         {
             return this->TransferCloudStorage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::TransferTWeCallDeviceOutcome IotexplorerClient::TransferTWeCallDevice(const TransferTWeCallDeviceRequest &request)
+{
+    auto outcome = MakeRequest(request, "TransferTWeCallDevice");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TransferTWeCallDeviceResponse rsp = TransferTWeCallDeviceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TransferTWeCallDeviceOutcome(rsp);
+        else
+            return TransferTWeCallDeviceOutcome(o.GetError());
+    }
+    else
+    {
+        return TransferTWeCallDeviceOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::TransferTWeCallDeviceAsync(const TransferTWeCallDeviceRequest& request, const TransferTWeCallDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->TransferTWeCallDevice(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::TransferTWeCallDeviceOutcomeCallable IotexplorerClient::TransferTWeCallDeviceCallable(const TransferTWeCallDeviceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<TransferTWeCallDeviceOutcome()>>(
+        [this, request]()
+        {
+            return this->TransferTWeCallDevice(request);
         }
     );
 

@@ -172,6 +172,27 @@ namespace TencentCloud
                      */
                     bool DRNetworkHasBeenSet() const;
 
+                    /**
+                     * 获取备机资源ID。当DRNetwork = 1时必填
+                     * @return DrInstanceId 备机资源ID。当DRNetwork = 1时必填
+                     * 
+                     */
+                    std::string GetDrInstanceId() const;
+
+                    /**
+                     * 设置备机资源ID。当DRNetwork = 1时必填
+                     * @param _drInstanceId 备机资源ID。当DRNetwork = 1时必填
+                     * 
+                     */
+                    void SetDrInstanceId(const std::string& _drInstanceId);
+
+                    /**
+                     * 判断参数 DrInstanceId 是否已赋值
+                     * @return DrInstanceId 是否已赋值
+                     * 
+                     */
+                    bool DrInstanceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -210,6 +231,12 @@ namespace TencentCloud
                      */
                     uint64_t m_dRNetwork;
                     bool m_dRNetworkHasBeenSet;
+
+                    /**
+                     * 备机资源ID。当DRNetwork = 1时必填
+                     */
+                    std::string m_drInstanceId;
+                    bool m_drInstanceIdHasBeenSet;
 
                 };
             }

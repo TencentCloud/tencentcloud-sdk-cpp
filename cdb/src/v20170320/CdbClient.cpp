@@ -4469,6 +4469,49 @@ CdbClient::DescribeSupportedPrivilegesOutcomeCallable CdbClient::DescribeSupport
     return task->get_future();
 }
 
+CdbClient::DescribeTableColumnsOutcome CdbClient::DescribeTableColumns(const DescribeTableColumnsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTableColumns");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTableColumnsResponse rsp = DescribeTableColumnsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTableColumnsOutcome(rsp);
+        else
+            return DescribeTableColumnsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTableColumnsOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::DescribeTableColumnsAsync(const DescribeTableColumnsRequest& request, const DescribeTableColumnsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTableColumns(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::DescribeTableColumnsOutcomeCallable CdbClient::DescribeTableColumnsCallable(const DescribeTableColumnsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTableColumnsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTableColumns(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::DescribeTablesOutcome CdbClient::DescribeTables(const DescribeTablesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTables");

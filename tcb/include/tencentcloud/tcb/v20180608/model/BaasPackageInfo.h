@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 新套餐套餐详情
+                * 云开发新套餐详情
                 */
                 class BaasPackageInfo : public AbstractModel
                 {

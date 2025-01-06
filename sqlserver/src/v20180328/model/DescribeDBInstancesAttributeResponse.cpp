@@ -35,7 +35,9 @@ DescribeDBInstancesAttributeResponse::DescribeDBInstancesAttributeResponse() :
     m_tDEConfigHasBeenSet(false),
     m_sSLConfigHasBeenSet(false),
     m_drReadableInfoHasBeenSet(false),
-    m_oldVipListHasBeenSet(false)
+    m_oldVipListHasBeenSet(false),
+    m_xEventStatusHasBeenSet(false),
+    m_multiDrReadableInfoHasBeenSet(false)
 {
 }
 
@@ -224,6 +226,36 @@ CoreInternalOutcome DescribeDBInstancesAttributeResponse::Deserialize(const stri
         m_oldVipListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("XEventStatus") && !rsp["XEventStatus"].IsNull())
+    {
+        if (!rsp["XEventStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `XEventStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_xEventStatus = string(rsp["XEventStatus"].GetString());
+        m_xEventStatusHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("MultiDrReadableInfo") && !rsp["MultiDrReadableInfo"].IsNull())
+    {
+        if (!rsp["MultiDrReadableInfo"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `MultiDrReadableInfo` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["MultiDrReadableInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DrReadableInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_multiDrReadableInfo.push_back(item);
+        }
+        m_multiDrReadableInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -334,6 +366,29 @@ string DescribeDBInstancesAttributeResponse::ToJsonString() const
 
         int i=0;
         for (auto itr = m_oldVipList.begin(); itr != m_oldVipList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_xEventStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "XEventStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_xEventStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_multiDrReadableInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MultiDrReadableInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_multiDrReadableInfo.begin(); itr != m_multiDrReadableInfo.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -470,6 +525,26 @@ vector<OldVip> DescribeDBInstancesAttributeResponse::GetOldVipList() const
 bool DescribeDBInstancesAttributeResponse::OldVipListHasBeenSet() const
 {
     return m_oldVipListHasBeenSet;
+}
+
+string DescribeDBInstancesAttributeResponse::GetXEventStatus() const
+{
+    return m_xEventStatus;
+}
+
+bool DescribeDBInstancesAttributeResponse::XEventStatusHasBeenSet() const
+{
+    return m_xEventStatusHasBeenSet;
+}
+
+vector<DrReadableInfo> DescribeDBInstancesAttributeResponse::GetMultiDrReadableInfo() const
+{
+    return m_multiDrReadableInfo;
+}
+
+bool DescribeDBInstancesAttributeResponse::MultiDrReadableInfoHasBeenSet() const
+{
+    return m_multiDrReadableInfoHasBeenSet;
 }
 
 

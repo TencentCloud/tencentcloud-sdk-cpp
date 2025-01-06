@@ -127,15 +127,51 @@ namespace TencentCloud
                     bool ParentFolderIdHasBeenSet() const;
 
                     /**
-                     * 获取目录分类
-                     * @return TaskNodeType 目录分类
+                     * 获取目录分类，该值必传，枚举值如下：
+ETL：数据集成
+EMR：EMR
+TBDS：TBDS
+DLC：DLC
+TDSQL：TDSQL
+TCHOUSE：TCHOUSE
+GENERAL：通用
+TI_ONE：TI-ONE机器学习
+ACROSS_WORKFLOWS：跨工作流
+                     * @return TaskNodeType 目录分类，该值必传，枚举值如下：
+ETL：数据集成
+EMR：EMR
+TBDS：TBDS
+DLC：DLC
+TDSQL：TDSQL
+TCHOUSE：TCHOUSE
+GENERAL：通用
+TI_ONE：TI-ONE机器学习
+ACROSS_WORKFLOWS：跨工作流
                      * 
                      */
                     std::string GetTaskNodeType() const;
 
                     /**
-                     * 设置目录分类
-                     * @param _taskNodeType 目录分类
+                     * 设置目录分类，该值必传，枚举值如下：
+ETL：数据集成
+EMR：EMR
+TBDS：TBDS
+DLC：DLC
+TDSQL：TDSQL
+TCHOUSE：TCHOUSE
+GENERAL：通用
+TI_ONE：TI-ONE机器学习
+ACROSS_WORKFLOWS：跨工作流
+                     * @param _taskNodeType 目录分类，该值必传，枚举值如下：
+ETL：数据集成
+EMR：EMR
+TBDS：TBDS
+DLC：DLC
+TDSQL：TDSQL
+TCHOUSE：TCHOUSE
+GENERAL：通用
+TI_ONE：TI-ONE机器学习
+ACROSS_WORKFLOWS：跨工作流
                      * 
                      */
                     void SetTaskNodeType(const std::string& _taskNodeType);
@@ -174,7 +210,16 @@ namespace TencentCloud
                     bool m_parentFolderIdHasBeenSet;
 
                     /**
-                     * 目录分类
+                     * 目录分类，该值必传，枚举值如下：
+ETL：数据集成
+EMR：EMR
+TBDS：TBDS
+DLC：DLC
+TDSQL：TDSQL
+TCHOUSE：TCHOUSE
+GENERAL：通用
+TI_ONE：TI-ONE机器学习
+ACROSS_WORKFLOWS：跨工作流
                      */
                     std::string m_taskNodeType;
                     bool m_taskNodeTypeHasBeenSet;

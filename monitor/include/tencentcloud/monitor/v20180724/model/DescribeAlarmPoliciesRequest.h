@@ -626,6 +626,27 @@ namespace TencentCloud
                      */
                     bool ReceiverOnCallFormIDsHasBeenSet() const;
 
+                    /**
+                     * 获取通知内容模板ID筛选
+                     * @return NoticeContentTmplIDs 通知内容模板ID筛选
+                     * 
+                     */
+                    std::vector<std::string> GetNoticeContentTmplIDs() const;
+
+                    /**
+                     * 设置通知内容模板ID筛选
+                     * @param _noticeContentTmplIDs 通知内容模板ID筛选
+                     * 
+                     */
+                    void SetNoticeContentTmplIDs(const std::vector<std::string>& _noticeContentTmplIDs);
+
+                    /**
+                     * 判断参数 NoticeContentTmplIDs 是否已赋值
+                     * @return NoticeContentTmplIDs 是否已赋值
+                     * 
+                     */
+                    bool NoticeContentTmplIDsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -792,6 +813,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_receiverOnCallFormIDs;
                     bool m_receiverOnCallFormIDsHasBeenSet;
+
+                    /**
+                     * 通知内容模板ID筛选
+                     */
+                    std::vector<std::string> m_noticeContentTmplIDs;
+                    bool m_noticeContentTmplIDsHasBeenSet;
 
                 };
             }

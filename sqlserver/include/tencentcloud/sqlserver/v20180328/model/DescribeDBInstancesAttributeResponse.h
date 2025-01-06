@@ -188,8 +188,8 @@ namespace TencentCloud
                     bool SSLConfigHasBeenSet() const;
 
                     /**
-                     * 获取备机只读信息
-                     * @return DrReadableInfo 备机只读信息
+                     * 获取双节点备机只读信息
+                     * @return DrReadableInfo 双节点备机只读信息
                      * 
                      */
                     DrReadableInfo GetDrReadableInfo() const;
@@ -214,6 +214,34 @@ namespace TencentCloud
                      * 
                      */
                     bool OldVipListHasBeenSet() const;
+
+                    /**
+                     * 获取操作日志采集状态，enable-采集中，disable-不可用，renew_doing-配置开启或关闭中
+                     * @return XEventStatus 操作日志采集状态，enable-采集中，disable-不可用，renew_doing-配置开启或关闭中
+                     * 
+                     */
+                    std::string GetXEventStatus() const;
+
+                    /**
+                     * 判断参数 XEventStatus 是否已赋值
+                     * @return XEventStatus 是否已赋值
+                     * 
+                     */
+                    bool XEventStatusHasBeenSet() const;
+
+                    /**
+                     * 获取多节点备机只读信息
+                     * @return MultiDrReadableInfo 多节点备机只读信息
+                     * 
+                     */
+                    std::vector<DrReadableInfo> GetMultiDrReadableInfo() const;
+
+                    /**
+                     * 判断参数 MultiDrReadableInfo 是否已赋值
+                     * @return MultiDrReadableInfo 是否已赋值
+                     * 
+                     */
+                    bool MultiDrReadableInfoHasBeenSet() const;
 
                 private:
 
@@ -278,7 +306,7 @@ namespace TencentCloud
                     bool m_sSLConfigHasBeenSet;
 
                     /**
-                     * 备机只读信息
+                     * 双节点备机只读信息
                      */
                     DrReadableInfo m_drReadableInfo;
                     bool m_drReadableInfoHasBeenSet;
@@ -288,6 +316,18 @@ namespace TencentCloud
                      */
                     std::vector<OldVip> m_oldVipList;
                     bool m_oldVipListHasBeenSet;
+
+                    /**
+                     * 操作日志采集状态，enable-采集中，disable-不可用，renew_doing-配置开启或关闭中
+                     */
+                    std::string m_xEventStatus;
+                    bool m_xEventStatusHasBeenSet;
+
+                    /**
+                     * 多节点备机只读信息
+                     */
+                    std::vector<DrReadableInfo> m_multiDrReadableInfo;
+                    bool m_multiDrReadableInfoHasBeenSet;
 
                 };
             }
