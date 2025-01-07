@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点Tag key
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagKey 节点Tag key
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTagKey() const;
 
                     /**
                      * 设置节点Tag key
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tagKey 节点Tag key
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTagKey(const std::string& _tagKey);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点Tag Value
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagValue 节点Tag Value
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTagValue() const;
 
                     /**
                      * 设置节点Tag Value
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tagValue 节点Tag Value
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTagValue(const std::string& _tagValue);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 节点Tag key
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tagKey;
                     bool m_tagKeyHasBeenSet;
 
                     /**
                      * 节点Tag Value
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tagValue;
                     bool m_tagValueHasBeenSet;

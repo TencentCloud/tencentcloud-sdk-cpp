@@ -27,7 +27,8 @@ ServerBaseInfo::ServerBaseInfo() :
     m_statusHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_accessTypesHasBeenSet(false),
-    m_customDomainNamesHasBeenSet(false)
+    m_customDomainNamesHasBeenSet(false),
+    m_serverTypeHasBeenSet(false)
 {
 }
 
@@ -112,6 +113,16 @@ CoreInternalOutcome ServerBaseInfo::Deserialize(const rapidjson::Value &value)
         m_customDomainNamesHasBeenSet = true;
     }
 
+    if (value.HasMember("ServerType") && !value["ServerType"].IsNull())
+    {
+        if (!value["ServerType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServerBaseInfo.ServerType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_serverType = string(value["ServerType"].GetString());
+        m_serverTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -183,6 +194,14 @@ void ServerBaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_serverTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServerType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_serverType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -298,5 +317,21 @@ void ServerBaseInfo::SetCustomDomainNames(const vector<string>& _customDomainNam
 bool ServerBaseInfo::CustomDomainNamesHasBeenSet() const
 {
     return m_customDomainNamesHasBeenSet;
+}
+
+string ServerBaseInfo::GetServerType() const
+{
+    return m_serverType;
+}
+
+void ServerBaseInfo::SetServerType(const string& _serverType)
+{
+    m_serverType = _serverType;
+    m_serverTypeHasBeenSet = true;
+}
+
+bool ServerBaseInfo::ServerTypeHasBeenSet() const
+{
+    return m_serverTypeHasBeenSet;
 }
 

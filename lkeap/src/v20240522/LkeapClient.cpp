@@ -857,6 +857,49 @@ LkeapClient::ModifyQAOutcomeCallable LkeapClient::ModifyQACallable(const ModifyQ
     return task->get_future();
 }
 
+LkeapClient::QueryRewriteOutcome LkeapClient::QueryRewrite(const QueryRewriteRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryRewrite");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryRewriteResponse rsp = QueryRewriteResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryRewriteOutcome(rsp);
+        else
+            return QueryRewriteOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryRewriteOutcome(outcome.GetError());
+    }
+}
+
+void LkeapClient::QueryRewriteAsync(const QueryRewriteRequest& request, const QueryRewriteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryRewrite(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeapClient::QueryRewriteOutcomeCallable LkeapClient::QueryRewriteCallable(const QueryRewriteRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryRewriteOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryRewrite(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LkeapClient::ReconstructDocumentSSEOutcome LkeapClient::ReconstructDocumentSSE(const ReconstructDocumentSSERequest &request)
 {
     auto outcome = MakeRequest(request, "ReconstructDocumentSSE");

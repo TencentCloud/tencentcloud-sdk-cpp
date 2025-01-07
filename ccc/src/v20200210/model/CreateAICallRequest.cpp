@@ -40,10 +40,13 @@ CreateAICallRequest::CreateAICallRequest() :
     m_interruptSpeechDurationHasBeenSet(false),
     m_endFunctionEnableHasBeenSet(false),
     m_endFunctionDescHasBeenSet(false),
+    m_transferFunctionEnableHasBeenSet(false),
+    m_transferItemsHasBeenSet(false),
     m_notifyDurationHasBeenSet(false),
     m_notifyMessageHasBeenSet(false),
     m_notifyMaxCountHasBeenSet(false),
-    m_customTTSConfigHasBeenSet(false)
+    m_customTTSConfigHasBeenSet(false),
+    m_promptVariablesHasBeenSet(false)
 {
 }
 
@@ -200,6 +203,29 @@ string CreateAICallRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_endFunctionDesc.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_transferFunctionEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TransferFunctionEnable";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_transferFunctionEnable, allocator);
+    }
+
+    if (m_transferItemsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TransferItems";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_transferItems.begin(); itr != m_transferItems.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
     if (m_notifyDurationHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -230,6 +256,21 @@ string CreateAICallRequest::ToJsonString() const
         string key = "CustomTTSConfig";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_customTTSConfig.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_promptVariablesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PromptVariables";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_promptVariables.begin(); itr != m_promptVariables.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -512,6 +553,38 @@ bool CreateAICallRequest::EndFunctionDescHasBeenSet() const
     return m_endFunctionDescHasBeenSet;
 }
 
+bool CreateAICallRequest::GetTransferFunctionEnable() const
+{
+    return m_transferFunctionEnable;
+}
+
+void CreateAICallRequest::SetTransferFunctionEnable(const bool& _transferFunctionEnable)
+{
+    m_transferFunctionEnable = _transferFunctionEnable;
+    m_transferFunctionEnableHasBeenSet = true;
+}
+
+bool CreateAICallRequest::TransferFunctionEnableHasBeenSet() const
+{
+    return m_transferFunctionEnableHasBeenSet;
+}
+
+vector<AITransferItem> CreateAICallRequest::GetTransferItems() const
+{
+    return m_transferItems;
+}
+
+void CreateAICallRequest::SetTransferItems(const vector<AITransferItem>& _transferItems)
+{
+    m_transferItems = _transferItems;
+    m_transferItemsHasBeenSet = true;
+}
+
+bool CreateAICallRequest::TransferItemsHasBeenSet() const
+{
+    return m_transferItemsHasBeenSet;
+}
+
 int64_t CreateAICallRequest::GetNotifyDuration() const
 {
     return m_notifyDuration;
@@ -574,6 +647,22 @@ void CreateAICallRequest::SetCustomTTSConfig(const string& _customTTSConfig)
 bool CreateAICallRequest::CustomTTSConfigHasBeenSet() const
 {
     return m_customTTSConfigHasBeenSet;
+}
+
+vector<Variable> CreateAICallRequest::GetPromptVariables() const
+{
+    return m_promptVariables;
+}
+
+void CreateAICallRequest::SetPromptVariables(const vector<Variable>& _promptVariables)
+{
+    m_promptVariables = _promptVariables;
+    m_promptVariablesHasBeenSet = true;
+}
+
+bool CreateAICallRequest::PromptVariablesHasBeenSet() const
+{
+    return m_promptVariablesHasBeenSet;
 }
 
 

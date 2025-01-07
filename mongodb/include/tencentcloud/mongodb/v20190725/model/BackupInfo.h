@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备份备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackupDesc 备份备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBackupDesc() const;
 
                     /**
                      * 设置备份备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _backupDesc 备份备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBackupDesc(const std::string& _backupDesc);
@@ -136,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备份文件大小，单位KB
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackupSize 备份文件大小，单位KB
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetBackupSize() const;
 
                     /**
                      * 设置备份文件大小，单位KB
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _backupSize 备份文件大小，单位KB
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBackupSize(const uint64_t& _backupSize);
@@ -161,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备份开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 备份开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置备份开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _startTime 备份开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -186,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备份结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 备份结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置备份结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endTime 备份结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -295,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取异地备份地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackupRegion 异地备份地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBackupRegion() const;
 
                     /**
                      * 设置异地备份地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _backupRegion 异地备份地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBackupRegion(const std::string& _backupRegion);
@@ -340,28 +320,24 @@ namespace TencentCloud
 
                     /**
                      * 备份备注
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_backupDesc;
                     bool m_backupDescHasBeenSet;
 
                     /**
                      * 备份文件大小，单位KB
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_backupSize;
                     bool m_backupSizeHasBeenSet;
 
                     /**
                      * 备份开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
                      * 备份结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
@@ -392,7 +368,6 @@ namespace TencentCloud
 
                     /**
                      * 异地备份地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_backupRegion;
                     bool m_backupRegionHasBeenSet;

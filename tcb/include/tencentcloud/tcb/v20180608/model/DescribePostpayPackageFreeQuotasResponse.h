@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取免费量资源信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackageFreeQuotaInfos 免费量资源信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<PackageFreeQuotaInfo> GetPackageFreeQuotaInfos() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 免费量资源信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<PackageFreeQuotaInfo> m_packageFreeQuotaInfos;
                     bool m_packageFreeQuotaInfosHasBeenSet;

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取TRTC的SDKAppId，和TRTC的房间所对应的SDKAppId相同。
-                     * @return SdkAppId TRTC的SDKAppId，和TRTC的房间所对应的SDKAppId相同。
+                     * 获取TRTC的SDKAppId，和TRTC的房间所使用的SDKAppId相同。
+                     * @return SdkAppId TRTC的SDKAppId，和TRTC的房间所使用的SDKAppId相同。
                      * 
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
-                     * 设置TRTC的SDKAppId，和TRTC的房间所对应的SDKAppId相同。
-                     * @param _sdkAppId TRTC的SDKAppId，和TRTC的房间所对应的SDKAppId相同。
+                     * 设置TRTC的SDKAppId，和TRTC的房间所使用的SDKAppId相同。
+                     * @param _sdkAppId TRTC的SDKAppId，和TRTC的房间所使用的SDKAppId相同。
                      * 
                      */
                     void SetSdkAppId(const uint64_t& _sdkAppId);
@@ -87,7 +87,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * TRTC的SDKAppId，和TRTC的房间所对应的SDKAppId相同。
+                     * TRTC的SDKAppId，和TRTC的房间所使用的SDKAppId相同。
                      */
                     uint64_t m_sdkAppId;
                     bool m_sdkAppIdHasBeenSet;

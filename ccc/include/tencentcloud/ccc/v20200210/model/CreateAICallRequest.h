@@ -21,6 +21,8 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ccc/v20200210/model/AITransferItem.h>
+#include <tencentcloud/ccc/v20200210/model/Variable.h>
 
 
 namespace TencentCloud
@@ -752,6 +754,48 @@ HoaiMy
                     bool EndFunctionDescHasBeenSet() const;
 
                     /**
+                     * 获取模型是否支持(或者开启)transfer_to_human function calling
+                     * @return TransferFunctionEnable 模型是否支持(或者开启)transfer_to_human function calling
+                     * 
+                     */
+                    bool GetTransferFunctionEnable() const;
+
+                    /**
+                     * 设置模型是否支持(或者开启)transfer_to_human function calling
+                     * @param _transferFunctionEnable 模型是否支持(或者开启)transfer_to_human function calling
+                     * 
+                     */
+                    void SetTransferFunctionEnable(const bool& _transferFunctionEnable);
+
+                    /**
+                     * 判断参数 TransferFunctionEnable 是否已赋值
+                     * @return TransferFunctionEnable 是否已赋值
+                     * 
+                     */
+                    bool TransferFunctionEnableHasBeenSet() const;
+
+                    /**
+                     * 获取TransferFunctionEnable为true的时候生效: 转人工配置
+                     * @return TransferItems TransferFunctionEnable为true的时候生效: 转人工配置
+                     * 
+                     */
+                    std::vector<AITransferItem> GetTransferItems() const;
+
+                    /**
+                     * 设置TransferFunctionEnable为true的时候生效: 转人工配置
+                     * @param _transferItems TransferFunctionEnable为true的时候生效: 转人工配置
+                     * 
+                     */
+                    void SetTransferItems(const std::vector<AITransferItem>& _transferItems);
+
+                    /**
+                     * 判断参数 TransferItems 是否已赋值
+                     * @return TransferItems 是否已赋值
+                     * 
+                     */
+                    bool TransferItemsHasBeenSet() const;
+
+                    /**
                      * 获取用户多久没说话提示时长,最小10秒,默认10秒
                      * @return NotifyDuration 用户多久没说话提示时长,最小10秒,默认10秒
                      * 
@@ -1147,6 +1191,27 @@ HoaiMy
                      */
                     bool CustomTTSConfigHasBeenSet() const;
 
+                    /**
+                     * 获取提示词变量
+                     * @return PromptVariables 提示词变量
+                     * 
+                     */
+                    std::vector<Variable> GetPromptVariables() const;
+
+                    /**
+                     * 设置提示词变量
+                     * @param _promptVariables 提示词变量
+                     * 
+                     */
+                    void SetPromptVariables(const std::vector<Variable>& _promptVariables);
+
+                    /**
+                     * 判断参数 PromptVariables 是否已赋值
+                     * @return PromptVariables 是否已赋值
+                     * 
+                     */
+                    bool PromptVariablesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1340,6 +1405,18 @@ HoaiMy
                     bool m_endFunctionDescHasBeenSet;
 
                     /**
+                     * 模型是否支持(或者开启)transfer_to_human function calling
+                     */
+                    bool m_transferFunctionEnable;
+                    bool m_transferFunctionEnableHasBeenSet;
+
+                    /**
+                     * TransferFunctionEnable为true的时候生效: 转人工配置
+                     */
+                    std::vector<AITransferItem> m_transferItems;
+                    bool m_transferItemsHasBeenSet;
+
+                    /**
                      * 用户多久没说话提示时长,最小10秒,默认10秒
                      */
                     int64_t m_notifyDuration;
@@ -1440,6 +1517,12 @@ HoaiMy
                      */
                     std::string m_customTTSConfig;
                     bool m_customTTSConfigHasBeenSet;
+
+                    /**
+                     * 提示词变量
+                     */
+                    std::vector<Variable> m_promptVariables;
+                    bool m_promptVariablesHasBeenSet;
 
                 };
             }

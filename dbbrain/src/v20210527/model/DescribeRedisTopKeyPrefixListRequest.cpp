@@ -26,7 +26,8 @@ DescribeRedisTopKeyPrefixListRequest::DescribeRedisTopKeyPrefixListRequest() :
     m_instanceIdHasBeenSet(false),
     m_dateHasBeenSet(false),
     m_productHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_shardIdsHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,19 @@ string DescribeRedisTopKeyPrefixListRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_shardIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShardIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_shardIds.begin(); itr != m_shardIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
 
@@ -139,6 +153,22 @@ void DescribeRedisTopKeyPrefixListRequest::SetLimit(const int64_t& _limit)
 bool DescribeRedisTopKeyPrefixListRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+vector<int64_t> DescribeRedisTopKeyPrefixListRequest::GetShardIds() const
+{
+    return m_shardIds;
+}
+
+void DescribeRedisTopKeyPrefixListRequest::SetShardIds(const vector<int64_t>& _shardIds)
+{
+    m_shardIds = _shardIds;
+    m_shardIdsHasBeenSet = true;
+}
+
+bool DescribeRedisTopKeyPrefixListRequest::ShardIdsHasBeenSet() const
+{
+    return m_shardIdsHasBeenSet;
 }
 
 

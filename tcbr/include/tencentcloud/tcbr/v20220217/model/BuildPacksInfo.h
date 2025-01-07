@@ -130,6 +130,27 @@ namespace TencentCloud
                      */
                     bool UploadFilenameHasBeenSet() const;
 
+                    /**
+                     * 获取语言版本
+                     * @return LanguageVersion 语言版本
+                     * 
+                     */
+                    std::string GetLanguageVersion() const;
+
+                    /**
+                     * 设置语言版本
+                     * @param _languageVersion 语言版本
+                     * 
+                     */
+                    void SetLanguageVersion(const std::string& _languageVersion);
+
+                    /**
+                     * 判断参数 LanguageVersion 是否已赋值
+                     * @return LanguageVersion 是否已赋值
+                     * 
+                     */
+                    bool LanguageVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -155,6 +176,12 @@ namespace TencentCloud
                      */
                     std::string m_uploadFilename;
                     bool m_uploadFilenameHasBeenSet;
+
+                    /**
+                     * 语言版本
+                     */
+                    std::string m_languageVersion;
+                    bool m_languageVersionHasBeenSet;
 
                 };
             }

@@ -92,6 +92,10 @@ namespace TencentCloud
 <li> TkeMemUsedPkgDay: 当天容器托管内存使用量，单位MB*秒 </li>
 <li> CodingBuildTimePkgDay: 当天容器托管构建时间使用量，单位毫秒 </li>
 <li> TkeHttpServiceNatPkgDay: 当天容器托管流量使用量，单位B </li>
+<li> CynosdbCcupkg: 当月微信云托管MySQL CCU使用量，单位个  （需要除以1000）</li>
+<li> CynosdbStoragepkg: 当月微信云托管MySQL 存储使用量，单位MB  （需要除以1000）</li>
+<li> CynosdbCcupkgDay: 当天微信云托管MySQL 存储使用量，单位个 （需要除以1000） </li>
+<li> CynosdbStoragepkgDay: 当天微信云托管MySQL 存储使用量，单位MB （需要除以1000） </li>
                      * @return MetricName <li> 指标名: </li>
 <li> StorageSizepkg: 当月存储空间容量, 单位MB </li>
 <li> StorageReadpkg: 当月存储读请求次数 </li>
@@ -120,6 +124,10 @@ namespace TencentCloud
 <li> TkeMemUsedPkgDay: 当天容器托管内存使用量，单位MB*秒 </li>
 <li> CodingBuildTimePkgDay: 当天容器托管构建时间使用量，单位毫秒 </li>
 <li> TkeHttpServiceNatPkgDay: 当天容器托管流量使用量，单位B </li>
+<li> CynosdbCcupkg: 当月微信云托管MySQL CCU使用量，单位个  （需要除以1000）</li>
+<li> CynosdbStoragepkg: 当月微信云托管MySQL 存储使用量，单位MB  （需要除以1000）</li>
+<li> CynosdbCcupkgDay: 当天微信云托管MySQL 存储使用量，单位个 （需要除以1000） </li>
+<li> CynosdbStoragepkgDay: 当天微信云托管MySQL 存储使用量，单位MB （需要除以1000） </li>
                      * 
                      */
                     std::string GetMetricName() const;
@@ -153,6 +161,10 @@ namespace TencentCloud
 <li> TkeMemUsedPkgDay: 当天容器托管内存使用量，单位MB*秒 </li>
 <li> CodingBuildTimePkgDay: 当天容器托管构建时间使用量，单位毫秒 </li>
 <li> TkeHttpServiceNatPkgDay: 当天容器托管流量使用量，单位B </li>
+<li> CynosdbCcupkg: 当月微信云托管MySQL CCU使用量，单位个  （需要除以1000）</li>
+<li> CynosdbStoragepkg: 当月微信云托管MySQL 存储使用量，单位MB  （需要除以1000）</li>
+<li> CynosdbCcupkgDay: 当天微信云托管MySQL 存储使用量，单位个 （需要除以1000） </li>
+<li> CynosdbStoragepkgDay: 当天微信云托管MySQL 存储使用量，单位MB （需要除以1000） </li>
                      * @param _metricName <li> 指标名: </li>
 <li> StorageSizepkg: 当月存储空间容量, 单位MB </li>
 <li> StorageReadpkg: 当月存储读请求次数 </li>
@@ -181,6 +193,10 @@ namespace TencentCloud
 <li> TkeMemUsedPkgDay: 当天容器托管内存使用量，单位MB*秒 </li>
 <li> CodingBuildTimePkgDay: 当天容器托管构建时间使用量，单位毫秒 </li>
 <li> TkeHttpServiceNatPkgDay: 当天容器托管流量使用量，单位B </li>
+<li> CynosdbCcupkg: 当月微信云托管MySQL CCU使用量，单位个  （需要除以1000）</li>
+<li> CynosdbStoragepkg: 当月微信云托管MySQL 存储使用量，单位MB  （需要除以1000）</li>
+<li> CynosdbCcupkgDay: 当天微信云托管MySQL 存储使用量，单位个 （需要除以1000） </li>
+<li> CynosdbStoragepkgDay: 当天微信云托管MySQL 存储使用量，单位MB （需要除以1000） </li>
                      * 
                      */
                     void SetMetricName(const std::string& _metricName);
@@ -250,6 +266,10 @@ namespace TencentCloud
 <li> TkeMemUsedPkgDay: 当天容器托管内存使用量，单位MB*秒 </li>
 <li> CodingBuildTimePkgDay: 当天容器托管构建时间使用量，单位毫秒 </li>
 <li> TkeHttpServiceNatPkgDay: 当天容器托管流量使用量，单位B </li>
+<li> CynosdbCcupkg: 当月微信云托管MySQL CCU使用量，单位个  （需要除以1000）</li>
+<li> CynosdbStoragepkg: 当月微信云托管MySQL 存储使用量，单位MB  （需要除以1000）</li>
+<li> CynosdbCcupkgDay: 当天微信云托管MySQL 存储使用量，单位个 （需要除以1000） </li>
+<li> CynosdbStoragepkgDay: 当天微信云托管MySQL 存储使用量，单位MB （需要除以1000） </li>
                      */
                     std::string m_metricName;
                     bool m_metricNameHasBeenSet;

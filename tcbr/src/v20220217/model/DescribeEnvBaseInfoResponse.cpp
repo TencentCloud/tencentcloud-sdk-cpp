@@ -24,7 +24,8 @@ using namespace TencentCloud::Tcbr::V20220217::Model;
 using namespace std;
 
 DescribeEnvBaseInfoResponse::DescribeEnvBaseInfoResponse() :
-    m_envBaseInfoHasBeenSet(false)
+    m_envBaseInfoHasBeenSet(false),
+    m_isExistHasBeenSet(false)
 {
 }
 
@@ -79,6 +80,16 @@ CoreInternalOutcome DescribeEnvBaseInfoResponse::Deserialize(const string &paylo
         m_envBaseInfoHasBeenSet = true;
     }
 
+    if (rsp.HasMember("IsExist") && !rsp["IsExist"].IsNull())
+    {
+        if (!rsp["IsExist"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `IsExist` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isExist = rsp["IsExist"].GetBool();
+        m_isExistHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -96,6 +107,14 @@ string DescribeEnvBaseInfoResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_envBaseInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_isExistHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsExist";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isExist, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -118,6 +137,16 @@ EnvBaseInfo DescribeEnvBaseInfoResponse::GetEnvBaseInfo() const
 bool DescribeEnvBaseInfoResponse::EnvBaseInfoHasBeenSet() const
 {
     return m_envBaseInfoHasBeenSet;
+}
+
+bool DescribeEnvBaseInfoResponse::GetIsExist() const
+{
+    return m_isExist;
+}
+
+bool DescribeEnvBaseInfoResponse::IsExistHasBeenSet() const
+{
+    return m_isExistHasBeenSet;
 }
 
 

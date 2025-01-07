@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Nodes 节点属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<NodeProperty> GetNodes() const;
 
                     /**
                      * 设置节点属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nodes 节点属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNodes(const std::vector<NodeProperty>& _nodes);
@@ -76,7 +72,6 @@ namespace TencentCloud
 
                     /**
                      * 节点属性
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<NodeProperty> m_nodes;
                     bool m_nodesHasBeenSet;

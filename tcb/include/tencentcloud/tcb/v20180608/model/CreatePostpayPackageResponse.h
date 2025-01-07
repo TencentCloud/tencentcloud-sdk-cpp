@@ -59,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取环境ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnvId 环境ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEnvId() const;
@@ -83,7 +81,6 @@ namespace TencentCloud
 
                     /**
                      * 环境ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_envId;
                     bool m_envIdHasBeenSet;

@@ -123,6 +123,7 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/CreateExtensionRequest.h
   include/tencentcloud/ccc/v20200210/model/StaffSkillGroupList.h
   include/tencentcloud/ccc/v20200210/model/CreateCarrierPrivilegeNumberApplicantRequest.h
+  include/tencentcloud/ccc/v20200210/model/AITransferItem.h
   include/tencentcloud/ccc/v20200210/model/Filter.h
   include/tencentcloud/ccc/v20200210/model/UnbindStaffSkillGroupListRequest.h
   include/tencentcloud/ccc/v20200210/model/CreateOwnNumberApplyResponse.h
@@ -292,6 +293,7 @@ set(ccc_src
   src/v20200210/model/CreateExtensionRequest.cpp
   src/v20200210/model/StaffSkillGroupList.cpp
   src/v20200210/model/CreateCarrierPrivilegeNumberApplicantRequest.cpp
+  src/v20200210/model/AITransferItem.cpp
   src/v20200210/model/Filter.cpp
   src/v20200210/model/UnbindStaffSkillGroupListRequest.cpp
   src/v20200210/model/CreateOwnNumberApplyResponse.cpp

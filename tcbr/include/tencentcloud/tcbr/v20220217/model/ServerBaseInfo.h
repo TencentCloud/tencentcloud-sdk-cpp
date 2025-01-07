@@ -193,6 +193,27 @@ namespace TencentCloud
                      */
                     bool CustomDomainNamesHasBeenSet() const;
 
+                    /**
+                     * 获取服务类型: function 云函数2.0；container 容器服务
+                     * @return ServerType 服务类型: function 云函数2.0；container 容器服务
+                     * 
+                     */
+                    std::string GetServerType() const;
+
+                    /**
+                     * 设置服务类型: function 云函数2.0；container 容器服务
+                     * @param _serverType 服务类型: function 云函数2.0；container 容器服务
+                     * 
+                     */
+                    void SetServerType(const std::string& _serverType);
+
+                    /**
+                     * 判断参数 ServerType 是否已赋值
+                     * @return ServerType 是否已赋值
+                     * 
+                     */
+                    bool ServerTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -236,6 +257,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_customDomainNames;
                     bool m_customDomainNamesHasBeenSet;
+
+                    /**
+                     * 服务类型: function 云函数2.0；container 容器服务
+                     */
+                    std::string m_serverType;
+                    bool m_serverTypeHasBeenSet;
 
                 };
             }

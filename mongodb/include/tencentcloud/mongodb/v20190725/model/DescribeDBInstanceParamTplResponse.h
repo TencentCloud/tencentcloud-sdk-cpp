@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取参数模板列表信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParamTpls 参数模板列表信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ParamTpl> GetParamTpls() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取参数模板总数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 参数模板总数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 参数模板列表信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ParamTpl> m_paramTpls;
                     bool m_paramTplsHasBeenSet;
 
                     /**
                      * 参数模板总数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

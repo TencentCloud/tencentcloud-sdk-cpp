@@ -73,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取指标的附加值信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubValue 指标的附加值信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubValue() const;
@@ -103,7 +101,6 @@ namespace TencentCloud
 
                     /**
                      * 指标的附加值信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subValue;
                     bool m_subValueHasBeenSet;

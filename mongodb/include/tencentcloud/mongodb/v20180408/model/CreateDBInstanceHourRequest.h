@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool EngineVersionHasBeenSet() const;
 
                     /**
-                     * 获取实例类型，GIO：高IO版；TGIO：高IO万兆
-                     * @return Machine 实例类型，GIO：高IO版；TGIO：高IO万兆
+                     * 获取实例类型，HIO10G：高IO万兆。
+                     * @return Machine 实例类型，HIO10G：高IO万兆。
                      * 
                      */
                     std::string GetMachine() const;
 
                     /**
-                     * 设置实例类型，GIO：高IO版；TGIO：高IO万兆
-                     * @param _machine 实例类型，GIO：高IO版；TGIO：高IO万兆
+                     * 设置实例类型，HIO10G：高IO万兆。
+                     * @param _machine 实例类型，HIO10G：高IO万兆。
                      * 
                      */
                     void SetMachine(const std::string& _machine);
@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取实例角色，支持值包括：MASTER-表示主实例，DR-表示灾备实例，RO-表示只读实例
-                     * @return InstanceRole 实例角色，支持值包括：MASTER-表示主实例，DR-表示灾备实例，RO-表示只读实例
+                     * 获取实例角色，默认传MASTER即可
+                     * @return InstanceRole 实例角色，默认传MASTER即可
                      * 
                      */
                     std::string GetInstanceRole() const;
 
                     /**
-                     * 设置实例角色，支持值包括：MASTER-表示主实例，DR-表示灾备实例，RO-表示只读实例
-                     * @param _instanceRole 实例角色，支持值包括：MASTER-表示主实例，DR-表示灾备实例，RO-表示只读实例
+                     * 设置实例角色，默认传MASTER即可
+                     * @param _instanceRole 实例角色，默认传MASTER即可
                      * 
                      */
                     void SetInstanceRole(const std::string& _instanceRole);
@@ -357,6 +357,48 @@ namespace TencentCloud
                      */
                     bool SecurityGroupHasBeenSet() const;
 
+                    /**
+                     * 获取私有网络ID，如果不传则默认选择基础网络
+                     * @return UniqVpcId 私有网络ID，如果不传则默认选择基础网络
+                     * 
+                     */
+                    std::string GetUniqVpcId() const;
+
+                    /**
+                     * 设置私有网络ID，如果不传则默认选择基础网络
+                     * @param _uniqVpcId 私有网络ID，如果不传则默认选择基础网络
+                     * 
+                     */
+                    void SetUniqVpcId(const std::string& _uniqVpcId);
+
+                    /**
+                     * 判断参数 UniqVpcId 是否已赋值
+                     * @return UniqVpcId 是否已赋值
+                     * 
+                     */
+                    bool UniqVpcIdHasBeenSet() const;
+
+                    /**
+                     * 获取私有网络下的子网ID，如果设置了 VpcId，则 SubnetId必填
+                     * @return UniqSubnetId 私有网络下的子网ID，如果设置了 VpcId，则 SubnetId必填
+                     * 
+                     */
+                    std::string GetUniqSubnetId() const;
+
+                    /**
+                     * 设置私有网络下的子网ID，如果设置了 VpcId，则 SubnetId必填
+                     * @param _uniqSubnetId 私有网络下的子网ID，如果设置了 VpcId，则 SubnetId必填
+                     * 
+                     */
+                    void SetUniqSubnetId(const std::string& _uniqSubnetId);
+
+                    /**
+                     * 判断参数 UniqSubnetId 是否已赋值
+                     * @return UniqSubnetId 是否已赋值
+                     * 
+                     */
+                    bool UniqSubnetIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -390,7 +432,7 @@ namespace TencentCloud
                     bool m_engineVersionHasBeenSet;
 
                     /**
-                     * 实例类型，GIO：高IO版；TGIO：高IO万兆
+                     * 实例类型，HIO10G：高IO万兆。
                      */
                     std::string m_machine;
                     bool m_machineHasBeenSet;
@@ -408,7 +450,7 @@ namespace TencentCloud
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 实例角色，支持值包括：MASTER-表示主实例，DR-表示灾备实例，RO-表示只读实例
+                     * 实例角色，默认传MASTER即可
                      */
                     std::string m_instanceRole;
                     bool m_instanceRoleHasBeenSet;
@@ -448,6 +490,18 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_securityGroup;
                     bool m_securityGroupHasBeenSet;
+
+                    /**
+                     * 私有网络ID，如果不传则默认选择基础网络
+                     */
+                    std::string m_uniqVpcId;
+                    bool m_uniqVpcIdHasBeenSet;
+
+                    /**
+                     * 私有网络下的子网ID，如果设置了 VpcId，则 SubnetId必填
+                     */
+                    std::string m_uniqSubnetId;
+                    bool m_uniqSubnetIdHasBeenSet;
 
                 };
             }

@@ -89,15 +89,23 @@ namespace TencentCloud
                     bool UploadUrlHasBeenSet() const;
 
                     /**
-                     * 获取自定义密钥。如果为空，则表示不需要加密
-                     * @return CustomKey 自定义密钥。如果为空，则表示不需要加密
+                     * 获取自定义密钥。如果为空，则表示不需要加密。
+参考cos预签名url上传https://cloud.tencent.com/document/product/436/36121
+上传的时候要按照 SSE-C 的方式设置header：https://cloud.tencent.com/document/product/436/7728
+                     * @return CustomKey 自定义密钥。如果为空，则表示不需要加密。
+参考cos预签名url上传https://cloud.tencent.com/document/product/436/36121
+上传的时候要按照 SSE-C 的方式设置header：https://cloud.tencent.com/document/product/436/7728
                      * 
                      */
                     std::string GetCustomKey() const;
 
                     /**
-                     * 设置自定义密钥。如果为空，则表示不需要加密
-                     * @param _customKey 自定义密钥。如果为空，则表示不需要加密
+                     * 设置自定义密钥。如果为空，则表示不需要加密。
+参考cos预签名url上传https://cloud.tencent.com/document/product/436/36121
+上传的时候要按照 SSE-C 的方式设置header：https://cloud.tencent.com/document/product/436/7728
+                     * @param _customKey 自定义密钥。如果为空，则表示不需要加密。
+参考cos预签名url上传https://cloud.tencent.com/document/product/436/36121
+上传的时候要按照 SSE-C 的方式设置header：https://cloud.tencent.com/document/product/436/7728
                      * 
                      */
                     void SetCustomKey(const std::string& _customKey);
@@ -145,7 +153,9 @@ namespace TencentCloud
                     bool m_uploadUrlHasBeenSet;
 
                     /**
-                     * 自定义密钥。如果为空，则表示不需要加密
+                     * 自定义密钥。如果为空，则表示不需要加密。
+参考cos预签名url上传https://cloud.tencent.com/document/product/436/36121
+上传的时候要按照 SSE-C 的方式设置header：https://cloud.tencent.com/document/product/436/7728
                      */
                     std::string m_customKey;
                     bool m_customKeyHasBeenSet;

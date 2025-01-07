@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取1分钱抵扣详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SpecialCostItems 1分钱抵扣详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SpecialCostItem> GetSpecialCostItems() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 1分钱抵扣详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SpecialCostItem> m_specialCostItems;
                     bool m_specialCostItemsHasBeenSet;

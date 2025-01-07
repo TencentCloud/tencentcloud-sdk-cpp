@@ -61,6 +61,8 @@
 #include <tencentcloud/lkeap/v20240522/model/ModifyAttributeLabelResponse.h>
 #include <tencentcloud/lkeap/v20240522/model/ModifyQARequest.h>
 #include <tencentcloud/lkeap/v20240522/model/ModifyQAResponse.h>
+#include <tencentcloud/lkeap/v20240522/model/QueryRewriteRequest.h>
+#include <tencentcloud/lkeap/v20240522/model/QueryRewriteResponse.h>
 #include <tencentcloud/lkeap/v20240522/model/ReconstructDocumentSSERequest.h>
 #include <tencentcloud/lkeap/v20240522/model/ReconstructDocumentSSEResponse.h>
 #include <tencentcloud/lkeap/v20240522/model/RetrieveKnowledgeRequest.h>
@@ -142,6 +144,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyQAResponse> ModifyQAOutcome;
                 typedef std::future<ModifyQAOutcome> ModifyQAOutcomeCallable;
                 typedef std::function<void(const LkeapClient*, const Model::ModifyQARequest&, ModifyQAOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyQAAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryRewriteResponse> QueryRewriteOutcome;
+                typedef std::future<QueryRewriteOutcome> QueryRewriteOutcomeCallable;
+                typedef std::function<void(const LkeapClient*, const Model::QueryRewriteRequest&, QueryRewriteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryRewriteAsyncHandler;
                 typedef Outcome<Core::Error, Model::ReconstructDocumentSSEResponse> ReconstructDocumentSSEOutcome;
                 typedef std::future<ReconstructDocumentSSEOutcome> ReconstructDocumentSSEOutcomeCallable;
                 typedef std::function<void(const LkeapClient*, const Model::ReconstructDocumentSSERequest&, ReconstructDocumentSSEOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReconstructDocumentSSEAsyncHandler;
@@ -334,6 +339,16 @@ namespace TencentCloud
                 ModifyQAOutcome ModifyQA(const Model::ModifyQARequest &request);
                 void ModifyQAAsync(const Model::ModifyQARequest& request, const ModifyQAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyQAOutcomeCallable ModifyQACallable(const Model::ModifyQARequest& request);
+
+                /**
+                 *多轮改写（QueryRewrite）主要用于多轮对话中，进行指代消解和省略补全。使用本接口，无需输入prompt描述，根据对话历史即可生成更精确的用户查询。在应用场景上，本接口可应用于智能问答、对话式搜索等多种场景。
+开通[产品体验](https://lke.cloud.tencent.com/lke/#/trialProduct)后可获得50wtoken体验额度。本接口（QueryRewrite）有单账号调用上限控制，如您有提高并发限制的需求请 [联系我们](https://cloud.tencent.com/act/event/Online_service) 。
+                 * @param req QueryRewriteRequest
+                 * @return QueryRewriteOutcome
+                 */
+                QueryRewriteOutcome QueryRewrite(const Model::QueryRewriteRequest &request);
+                void QueryRewriteAsync(const Model::QueryRewriteRequest& request, const QueryRewriteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryRewriteOutcomeCallable QueryRewriteCallable(const Model::QueryRewriteRequest& request);
 
                 /**
                  *准实时文档解析接口，使用HTTP SSE 协议通信。

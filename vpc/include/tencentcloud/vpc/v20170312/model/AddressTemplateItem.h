@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool AddressTemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取IP模板名称
-                     * @return AddressTemplateName IP模板名称
+                     * 获取IP模板名称。
+                     * @return AddressTemplateName IP模板名称。
                      * 
                      */
                     std::string GetAddressTemplateName() const;
 
                     /**
-                     * 设置IP模板名称
-                     * @param _addressTemplateName IP模板名称
+                     * 设置IP模板名称。
+                     * @param _addressTemplateName IP模板名称。
                      * 
                      */
                     void SetAddressTemplateName(const std::string& _addressTemplateName);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool AddressTemplateNameHasBeenSet() const;
 
                     /**
-                     * 获取废弃字段
-                     * @return From 废弃字段
+                     * 获取废弃字段。
+                     * @return From 废弃字段。
                      * 
                      */
                     std::string GetFrom() const;
 
                     /**
-                     * 设置废弃字段
-                     * @param _from 废弃字段
+                     * 设置废弃字段。
+                     * @param _from 废弃字段。
                      * 
                      */
                     void SetFrom(const std::string& _from);
@@ -139,13 +139,13 @@ namespace TencentCloud
                     bool m_addressTemplateIdHasBeenSet;
 
                     /**
-                     * IP模板名称
+                     * IP模板名称。
                      */
                     std::string m_addressTemplateName;
                     bool m_addressTemplateNameHasBeenSet;
 
                     /**
-                     * 废弃字段
+                     * 废弃字段。
                      */
                     std::string m_from;
                     bool m_fromHasBeenSet;

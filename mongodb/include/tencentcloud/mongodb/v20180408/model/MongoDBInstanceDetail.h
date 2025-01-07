@@ -618,18 +618,14 @@ namespace TencentCloud
 
                     /**
                      * 获取只读实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReadonlyInstances 只读实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<MongoDBInstance> GetReadonlyInstances() const;
 
                     /**
                      * 设置只读实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _readonlyInstances 只读实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReadonlyInstances(const std::vector<MongoDBInstance>& _readonlyInstances);
@@ -643,18 +639,14 @@ namespace TencentCloud
 
                     /**
                      * 获取灾备实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StandbyInstances 灾备实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<MongoDBInstance> GetStandbyInstances() const;
 
                     /**
                      * 设置灾备实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _standbyInstances 灾备实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStandbyInstances(const std::vector<MongoDBInstance>& _standbyInstances);
@@ -668,18 +660,14 @@ namespace TencentCloud
 
                     /**
                      * 获取临时实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CloneInstances 临时实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<MongoDBInstance> GetCloneInstances() const;
 
                     /**
                      * 设置临时实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cloneInstances 临时实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCloneInstances(const std::vector<MongoDBInstance>& _cloneInstances);
@@ -693,18 +681,14 @@ namespace TencentCloud
 
                     /**
                      * 获取关联实例信息，对于正式实例，该字段表示它的临时实例信息；对于临时实例，则表示它的正式实例信息;如果为只读/灾备实例,则表示他的主实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RelatedInstance 关联实例信息，对于正式实例，该字段表示它的临时实例信息；对于临时实例，则表示它的正式实例信息;如果为只读/灾备实例,则表示他的主实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MongoDBInstance GetRelatedInstance() const;
 
                     /**
                      * 设置关联实例信息，对于正式实例，该字段表示它的临时实例信息；对于临时实例，则表示它的正式实例信息;如果为只读/灾备实例,则表示他的主实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _relatedInstance 关联实例信息，对于正式实例，该字段表示它的临时实例信息；对于临时实例，则表示它的正式实例信息;如果为只读/灾备实例,则表示他的主实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRelatedInstance(const MongoDBInstance& _relatedInstance);
@@ -718,18 +702,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例标签信息集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 实例标签信息集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TagInfo> GetTags() const;
 
                     /**
                      * 设置实例标签信息集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 实例标签信息集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::vector<TagInfo>& _tags);
@@ -1033,35 +1013,30 @@ namespace TencentCloud
 
                     /**
                      * 只读实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MongoDBInstance> m_readonlyInstances;
                     bool m_readonlyInstancesHasBeenSet;
 
                     /**
                      * 灾备实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MongoDBInstance> m_standbyInstances;
                     bool m_standbyInstancesHasBeenSet;
 
                     /**
                      * 临时实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MongoDBInstance> m_cloneInstances;
                     bool m_cloneInstancesHasBeenSet;
 
                     /**
                      * 关联实例信息，对于正式实例，该字段表示它的临时实例信息；对于临时实例，则表示它的正式实例信息;如果为只读/灾备实例,则表示他的主实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MongoDBInstance m_relatedInstance;
                     bool m_relatedInstanceHasBeenSet;
 
                     /**
                      * 实例标签信息集合
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TagInfo> m_tags;
                     bool m_tagsHasBeenSet;

@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取审核任务的唯一Id，在启动审核任务成功后会返回。
-                     * @return TaskId 审核任务的唯一Id，在启动审核任务成功后会返回。
+                     * 获取审核任务的唯一Id。
+                     * @return TaskId 审核任务的唯一Id。
                      * 
                      */
                     std::string GetTaskId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 审核任务的唯一Id，在启动审核任务成功后会返回。
+                     * 审核任务的唯一Id。
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;

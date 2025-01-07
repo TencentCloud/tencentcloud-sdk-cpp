@@ -70,18 +70,21 @@ set(lkeap_public_header_model
   include/tencentcloud/lkeap/v20240522/model/UploadDocRealtimeResponse.h
   include/tencentcloud/lkeap/v20240522/model/SplitDocumentFailedPage.h
   include/tencentcloud/lkeap/v20240522/model/ModifyAttributeLabelResponse.h
+  include/tencentcloud/lkeap/v20240522/model/UploadDocRequest.h
   include/tencentcloud/lkeap/v20240522/model/DeleteQAsResponse.h
   include/tencentcloud/lkeap/v20240522/model/CreateKnowledgeBaseResponse.h
   include/tencentcloud/lkeap/v20240522/model/GetEmbeddingResponse.h
+  include/tencentcloud/lkeap/v20240522/model/QueryRewriteRequest.h
   include/tencentcloud/lkeap/v20240522/model/QaItem.h
   include/tencentcloud/lkeap/v20240522/model/CreateSplitDocumentFlowConfig.h
   include/tencentcloud/lkeap/v20240522/model/RunRerankResponse.h
   include/tencentcloud/lkeap/v20240522/model/CreateReconstructDocumentFlowResponse.h
+  include/tencentcloud/lkeap/v20240522/model/QueryRewriteResponse.h
   include/tencentcloud/lkeap/v20240522/model/CreateQARequest.h
   include/tencentcloud/lkeap/v20240522/model/UploadDocResponse.h
   include/tencentcloud/lkeap/v20240522/model/AttributeItem.h
   include/tencentcloud/lkeap/v20240522/model/EmbeddingObject.h
-  include/tencentcloud/lkeap/v20240522/model/UploadDocRequest.h
+  include/tencentcloud/lkeap/v20240522/model/Message.h
   include/tencentcloud/lkeap/v20240522/model/CreateKnowledgeBaseRequest.h
   include/tencentcloud/lkeap/v20240522/model/DeleteKnowledgeBaseRequest.h
   include/tencentcloud/lkeap/v20240522/model/DeleteDocsRequest.h
@@ -140,18 +143,21 @@ set(lkeap_src
   src/v20240522/model/UploadDocRealtimeResponse.cpp
   src/v20240522/model/SplitDocumentFailedPage.cpp
   src/v20240522/model/ModifyAttributeLabelResponse.cpp
+  src/v20240522/model/UploadDocRequest.cpp
   src/v20240522/model/DeleteQAsResponse.cpp
   src/v20240522/model/CreateKnowledgeBaseResponse.cpp
   src/v20240522/model/GetEmbeddingResponse.cpp
+  src/v20240522/model/QueryRewriteRequest.cpp
   src/v20240522/model/QaItem.cpp
   src/v20240522/model/CreateSplitDocumentFlowConfig.cpp
   src/v20240522/model/RunRerankResponse.cpp
   src/v20240522/model/CreateReconstructDocumentFlowResponse.cpp
+  src/v20240522/model/QueryRewriteResponse.cpp
   src/v20240522/model/CreateQARequest.cpp
   src/v20240522/model/UploadDocResponse.cpp
   src/v20240522/model/AttributeItem.cpp
   src/v20240522/model/EmbeddingObject.cpp
-  src/v20240522/model/UploadDocRequest.cpp
+  src/v20240522/model/Message.cpp
   src/v20240522/model/CreateKnowledgeBaseRequest.cpp
   src/v20240522/model/DeleteKnowledgeBaseRequest.cpp
   src/v20240522/model/DeleteDocsRequest.cpp

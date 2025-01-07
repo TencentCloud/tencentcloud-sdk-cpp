@@ -49,9 +49,7 @@ namespace TencentCloud
 
                     /**
                      * 获取枚举类参数详情列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceEnumParams 枚举类参数详情列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<InstanceEnumParam> GetInstanceEnumParams() const;
@@ -65,9 +63,7 @@ namespace TencentCloud
 
                     /**
                      * 获取整形参数详情列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceIntegerParams 整形参数详情列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<InstanceIntegerParam> GetInstanceIntegerParams() const;
@@ -81,9 +77,7 @@ namespace TencentCloud
 
                     /**
                      * 获取文本参数详情列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceTextParams 文本参数详情列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<InstanceTextParam> GetInstanceTextParams() const;
@@ -97,9 +91,7 @@ namespace TencentCloud
 
                     /**
                      * 获取多值参数详情列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceMultiParams 多值参数详情列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<InstanceMultiParam> GetInstanceMultiParams() const;
@@ -113,9 +105,7 @@ namespace TencentCloud
 
                     /**
                      * 获取参数总个数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 参数总个数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -129,9 +119,7 @@ namespace TencentCloud
 
                     /**
                      * 获取模板适配实例版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MongoVersion 模板适配实例版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMongoVersion() const;
@@ -145,9 +133,7 @@ namespace TencentCloud
 
                     /**
                      * 获取模板适配集群类型，副本集或分片。。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterType 模板适配集群类型，副本集或分片。。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterType() const;
@@ -161,9 +147,7 @@ namespace TencentCloud
 
                     /**
                      * 获取参数模板名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TplName 参数模板名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTplName() const;
@@ -179,56 +163,48 @@ namespace TencentCloud
 
                     /**
                      * 枚举类参数详情列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<InstanceEnumParam> m_instanceEnumParams;
                     bool m_instanceEnumParamsHasBeenSet;
 
                     /**
                      * 整形参数详情列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<InstanceIntegerParam> m_instanceIntegerParams;
                     bool m_instanceIntegerParamsHasBeenSet;
 
                     /**
                      * 文本参数详情列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<InstanceTextParam> m_instanceTextParams;
                     bool m_instanceTextParamsHasBeenSet;
 
                     /**
                      * 多值参数详情列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<InstanceMultiParam> m_instanceMultiParams;
                     bool m_instanceMultiParamsHasBeenSet;
 
                     /**
                      * 参数总个数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
                      * 模板适配实例版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mongoVersion;
                     bool m_mongoVersionHasBeenSet;
 
                     /**
                      * 模板适配集群类型，副本集或分片。。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterType;
                     bool m_clusterTypeHasBeenSet;
 
                     /**
                      * 参数模板名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tplName;
                     bool m_tplNameHasBeenSet;

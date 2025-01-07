@@ -37,7 +37,9 @@ CreateDBInstanceHourRequest::CreateDBInstanceHourRequest() :
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_projectIdHasBeenSet(false),
-    m_securityGroupHasBeenSet(false)
+    m_securityGroupHasBeenSet(false),
+    m_uniqVpcIdHasBeenSet(false),
+    m_uniqSubnetIdHasBeenSet(false)
 {
 }
 
@@ -171,6 +173,22 @@ string CreateDBInstanceHourRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_uniqVpcIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UniqVpcId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_uniqVpcId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_uniqSubnetIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UniqSubnetId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_uniqSubnetId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -419,6 +437,38 @@ void CreateDBInstanceHourRequest::SetSecurityGroup(const vector<string>& _securi
 bool CreateDBInstanceHourRequest::SecurityGroupHasBeenSet() const
 {
     return m_securityGroupHasBeenSet;
+}
+
+string CreateDBInstanceHourRequest::GetUniqVpcId() const
+{
+    return m_uniqVpcId;
+}
+
+void CreateDBInstanceHourRequest::SetUniqVpcId(const string& _uniqVpcId)
+{
+    m_uniqVpcId = _uniqVpcId;
+    m_uniqVpcIdHasBeenSet = true;
+}
+
+bool CreateDBInstanceHourRequest::UniqVpcIdHasBeenSet() const
+{
+    return m_uniqVpcIdHasBeenSet;
+}
+
+string CreateDBInstanceHourRequest::GetUniqSubnetId() const
+{
+    return m_uniqSubnetId;
+}
+
+void CreateDBInstanceHourRequest::SetUniqSubnetId(const string& _uniqSubnetId)
+{
+    m_uniqSubnetId = _uniqSubnetId;
+    m_uniqSubnetIdHasBeenSet = true;
+}
+
+bool CreateDBInstanceHourRequest::UniqSubnetIdHasBeenSet() const
+{
+    return m_uniqSubnetIdHasBeenSet;
 }
 
 

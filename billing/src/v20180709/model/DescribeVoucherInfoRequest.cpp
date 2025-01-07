@@ -39,7 +39,13 @@ DescribeVoucherInfoRequest::DescribeVoucherInfoRequest() :
     m_paySceneHasBeenSet(false),
     m_operatorHasBeenSet(false),
     m_voucherMainTypeHasBeenSet(false),
-    m_voucherSubTypeHasBeenSet(false)
+    m_voucherSubTypeHasBeenSet(false),
+    m_startTimeFromHasBeenSet(false),
+    m_startTimeToHasBeenSet(false),
+    m_endTimeFromHasBeenSet(false),
+    m_endTimeToHasBeenSet(false),
+    m_createTimeFromHasBeenSet(false),
+    m_createTimeToHasBeenSet(false)
 {
 }
 
@@ -184,6 +190,54 @@ string DescribeVoucherInfoRequest::ToJsonString() const
         string key = "VoucherSubType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_voucherSubType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_startTimeFromHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartTimeFrom";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_startTimeFrom.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_startTimeToHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartTimeTo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_startTimeTo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_endTimeFromHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndTimeFrom";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_endTimeFrom.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_endTimeToHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndTimeTo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_endTimeTo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createTimeFromHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTimeFrom";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_createTimeFrom.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createTimeToHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTimeTo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_createTimeTo.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -464,6 +518,102 @@ void DescribeVoucherInfoRequest::SetVoucherSubType(const string& _voucherSubType
 bool DescribeVoucherInfoRequest::VoucherSubTypeHasBeenSet() const
 {
     return m_voucherSubTypeHasBeenSet;
+}
+
+string DescribeVoucherInfoRequest::GetStartTimeFrom() const
+{
+    return m_startTimeFrom;
+}
+
+void DescribeVoucherInfoRequest::SetStartTimeFrom(const string& _startTimeFrom)
+{
+    m_startTimeFrom = _startTimeFrom;
+    m_startTimeFromHasBeenSet = true;
+}
+
+bool DescribeVoucherInfoRequest::StartTimeFromHasBeenSet() const
+{
+    return m_startTimeFromHasBeenSet;
+}
+
+string DescribeVoucherInfoRequest::GetStartTimeTo() const
+{
+    return m_startTimeTo;
+}
+
+void DescribeVoucherInfoRequest::SetStartTimeTo(const string& _startTimeTo)
+{
+    m_startTimeTo = _startTimeTo;
+    m_startTimeToHasBeenSet = true;
+}
+
+bool DescribeVoucherInfoRequest::StartTimeToHasBeenSet() const
+{
+    return m_startTimeToHasBeenSet;
+}
+
+string DescribeVoucherInfoRequest::GetEndTimeFrom() const
+{
+    return m_endTimeFrom;
+}
+
+void DescribeVoucherInfoRequest::SetEndTimeFrom(const string& _endTimeFrom)
+{
+    m_endTimeFrom = _endTimeFrom;
+    m_endTimeFromHasBeenSet = true;
+}
+
+bool DescribeVoucherInfoRequest::EndTimeFromHasBeenSet() const
+{
+    return m_endTimeFromHasBeenSet;
+}
+
+string DescribeVoucherInfoRequest::GetEndTimeTo() const
+{
+    return m_endTimeTo;
+}
+
+void DescribeVoucherInfoRequest::SetEndTimeTo(const string& _endTimeTo)
+{
+    m_endTimeTo = _endTimeTo;
+    m_endTimeToHasBeenSet = true;
+}
+
+bool DescribeVoucherInfoRequest::EndTimeToHasBeenSet() const
+{
+    return m_endTimeToHasBeenSet;
+}
+
+string DescribeVoucherInfoRequest::GetCreateTimeFrom() const
+{
+    return m_createTimeFrom;
+}
+
+void DescribeVoucherInfoRequest::SetCreateTimeFrom(const string& _createTimeFrom)
+{
+    m_createTimeFrom = _createTimeFrom;
+    m_createTimeFromHasBeenSet = true;
+}
+
+bool DescribeVoucherInfoRequest::CreateTimeFromHasBeenSet() const
+{
+    return m_createTimeFromHasBeenSet;
+}
+
+string DescribeVoucherInfoRequest::GetCreateTimeTo() const
+{
+    return m_createTimeTo;
+}
+
+void DescribeVoucherInfoRequest::SetCreateTimeTo(const string& _createTimeTo)
+{
+    m_createTimeTo = _createTimeTo;
+    m_createTimeToHasBeenSet = true;
+}
+
+bool DescribeVoucherInfoRequest::CreateTimeToHasBeenSet() const
+{
+    return m_createTimeToHasBeenSet;
 }
 
 

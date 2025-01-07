@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取免费抵扣配额详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return QuotaItems 免费抵扣配额详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<PostpayEnvQuota> GetQuotaItems() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 免费抵扣配额详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<PostpayEnvQuota> m_quotaItems;
                     bool m_quotaItemsHasBeenSet;

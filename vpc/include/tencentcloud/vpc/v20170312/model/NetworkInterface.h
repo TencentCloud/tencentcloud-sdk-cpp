@@ -260,6 +260,51 @@ namespace TencentCloud
                     bool StateHasBeenSet() const;
 
                     /**
+                     * 获取弹性网卡状态：
+<li>`PENDING`：创建中</li>
+<li>`AVAILABLE`：可用的</li>
+<li>`ATTACHING`：绑定中</li>
+<li>`DETACHING`：解绑中</li>
+<li>`DELETING`：删除中</li>
+<li>`INUSE`：已绑定</li>
+                     * @return NetworkInterfaceState 弹性网卡状态：
+<li>`PENDING`：创建中</li>
+<li>`AVAILABLE`：可用的</li>
+<li>`ATTACHING`：绑定中</li>
+<li>`DETACHING`：解绑中</li>
+<li>`DELETING`：删除中</li>
+<li>`INUSE`：已绑定</li>
+                     * 
+                     */
+                    std::string GetNetworkInterfaceState() const;
+
+                    /**
+                     * 设置弹性网卡状态：
+<li>`PENDING`：创建中</li>
+<li>`AVAILABLE`：可用的</li>
+<li>`ATTACHING`：绑定中</li>
+<li>`DETACHING`：解绑中</li>
+<li>`DELETING`：删除中</li>
+<li>`INUSE`：已绑定</li>
+                     * @param _networkInterfaceState 弹性网卡状态：
+<li>`PENDING`：创建中</li>
+<li>`AVAILABLE`：可用的</li>
+<li>`ATTACHING`：绑定中</li>
+<li>`DETACHING`：解绑中</li>
+<li>`DELETING`：删除中</li>
+<li>`INUSE`：已绑定</li>
+                     * 
+                     */
+                    void SetNetworkInterfaceState(const std::string& _networkInterfaceState);
+
+                    /**
+                     * 判断参数 NetworkInterfaceState 是否已赋值
+                     * @return NetworkInterfaceState 是否已赋值
+                     * 
+                     */
+                    bool NetworkInterfaceStateHasBeenSet() const;
+
+                    /**
                      * 获取内网IP信息。
                      * @return PrivateIpAddressSet 内网IP信息。
                      * 
@@ -611,6 +656,18 @@ namespace TencentCloud
                      */
                     std::string m_state;
                     bool m_stateHasBeenSet;
+
+                    /**
+                     * 弹性网卡状态：
+<li>`PENDING`：创建中</li>
+<li>`AVAILABLE`：可用的</li>
+<li>`ATTACHING`：绑定中</li>
+<li>`DETACHING`：解绑中</li>
+<li>`DELETING`：删除中</li>
+<li>`INUSE`：已绑定</li>
+                     */
+                    std::string m_networkInterfaceState;
+                    bool m_networkInterfaceStateHasBeenSet;
 
                     /**
                      * 内网IP信息。

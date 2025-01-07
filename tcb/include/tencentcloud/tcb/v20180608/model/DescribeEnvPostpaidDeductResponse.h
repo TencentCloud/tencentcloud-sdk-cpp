@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取指标抵扣详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PostPaidEnvDeductInfoList 指标抵扣详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<PostPaidEnvDeductInfo> GetPostPaidEnvDeductInfoList() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 指标抵扣详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<PostPaidEnvDeductInfo> m_postPaidEnvDeductInfoList;
                     bool m_postPaidEnvDeductInfoListHasBeenSet;

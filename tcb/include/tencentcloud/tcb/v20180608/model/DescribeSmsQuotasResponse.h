@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取短信免费量信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SmsFreeQuotaList 短信免费量信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SmsFreeQuota> GetSmsFreeQuotaList() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 短信免费量信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SmsFreeQuota> m_smsFreeQuotaList;
                     bool m_smsFreeQuotaListHasBeenSet;

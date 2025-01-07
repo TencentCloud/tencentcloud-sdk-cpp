@@ -849,18 +849,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例当前可用区信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZoneList 实例当前可用区信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetZoneList() const;
 
                     /**
                      * 设置实例当前可用区信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zoneList 实例当前可用区信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZoneList(const std::vector<std::string>& _zoneList);
@@ -874,18 +870,14 @@ namespace TencentCloud
 
                     /**
                      * 获取mongos节点个数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MongosNodeNum mongos节点个数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMongosNodeNum() const;
 
                     /**
                      * 设置mongos节点个数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mongosNodeNum mongos节点个数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMongosNodeNum(const uint64_t& _mongosNodeNum);
@@ -899,18 +891,14 @@ namespace TencentCloud
 
                     /**
                      * 获取mongos节点内存。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MongosMemory mongos节点内存。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMongosMemory() const;
 
                     /**
                      * 设置mongos节点内存。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mongosMemory mongos节点内存。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMongosMemory(const uint64_t& _mongosMemory);
@@ -924,18 +912,14 @@ namespace TencentCloud
 
                     /**
                      * 获取mongos节点CPU核数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MongosCpuNum mongos节点CPU核数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMongosCpuNum() const;
 
                     /**
                      * 设置mongos节点CPU核数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mongosCpuNum mongos节点CPU核数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMongosCpuNum(const uint64_t& _mongosCpuNum);
@@ -949,18 +933,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Config Server节点个数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigServerNodeNum Config Server节点个数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetConfigServerNodeNum() const;
 
                     /**
                      * 设置Config Server节点个数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _configServerNodeNum Config Server节点个数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConfigServerNodeNum(const uint64_t& _configServerNodeNum);
@@ -974,18 +954,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Config Server节点内存。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigServerMemory Config Server节点内存。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetConfigServerMemory() const;
 
                     /**
                      * 设置Config Server节点内存。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _configServerMemory Config Server节点内存。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConfigServerMemory(const uint64_t& _configServerMemory);
@@ -999,18 +975,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Config Server节点磁盘大小。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigServerVolume Config Server节点磁盘大小。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetConfigServerVolume() const;
 
                     /**
                      * 设置Config Server节点磁盘大小。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _configServerVolume Config Server节点磁盘大小。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConfigServerVolume(const uint64_t& _configServerVolume);
@@ -1024,18 +996,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Config Server节点CPU核数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigServerCpuNum Config Server节点CPU核数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetConfigServerCpuNum() const;
 
                     /**
                      * 设置Config Server节点CPU核数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _configServerCpuNum Config Server节点CPU核数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConfigServerCpuNum(const uint64_t& _configServerCpuNum);
@@ -1049,18 +1017,14 @@ namespace TencentCloud
 
                     /**
                      * 获取readonly节点个数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReadonlyNodeNum readonly节点个数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetReadonlyNodeNum() const;
 
                     /**
                      * 设置readonly节点个数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _readonlyNodeNum readonly节点个数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReadonlyNodeNum(const uint64_t& _readonlyNodeNum);
@@ -1304,63 +1268,54 @@ namespace TencentCloud
 
                     /**
                      * 实例当前可用区信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_zoneList;
                     bool m_zoneListHasBeenSet;
 
                     /**
                      * mongos节点个数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_mongosNodeNum;
                     bool m_mongosNodeNumHasBeenSet;
 
                     /**
                      * mongos节点内存。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_mongosMemory;
                     bool m_mongosMemoryHasBeenSet;
 
                     /**
                      * mongos节点CPU核数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_mongosCpuNum;
                     bool m_mongosCpuNumHasBeenSet;
 
                     /**
                      * Config Server节点个数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_configServerNodeNum;
                     bool m_configServerNodeNumHasBeenSet;
 
                     /**
                      * Config Server节点内存。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_configServerMemory;
                     bool m_configServerMemoryHasBeenSet;
 
                     /**
                      * Config Server节点磁盘大小。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_configServerVolume;
                     bool m_configServerVolumeHasBeenSet;
 
                     /**
                      * Config Server节点CPU核数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_configServerCpuNum;
                     bool m_configServerCpuNumHasBeenSet;
 
                     /**
                      * readonly节点个数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_readonlyNodeNum;
                     bool m_readonlyNodeNumHasBeenSet;

@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取规格信息标识
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return SpecCode 规格信息标识
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSpecCode() const;
 
                     /**
                      * 设置规格信息标识
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _specCode 规格信息标识
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSpecCode(const std::string& _specCode);
@@ -69,14 +73,18 @@ namespace TencentCloud
 
                     /**
                      * 获取规格有效标志，取值：0-停止售卖，1-开放售卖
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 规格有效标志，取值：0-停止售卖，1-开放售卖
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置规格有效标志，取值：0-停止售卖，1-开放售卖
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 规格有效标志，取值：0-停止售卖，1-开放售卖
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -90,14 +98,18 @@ namespace TencentCloud
 
                     /**
                      * 获取机器类型，取值：0-HIO，4-HIO10G
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return MachineType 机器类型，取值：0-HIO，4-HIO10G
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMachineType() const;
 
                     /**
                      * 设置机器类型，取值：0-HIO，4-HIO10G
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _machineType 机器类型，取值：0-HIO，4-HIO10G
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMachineType(const std::string& _machineType);
@@ -111,14 +123,18 @@ namespace TencentCloud
 
                     /**
                      * 获取cpu核心数
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cpu cpu核心数
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCpu() const;
 
                     /**
                      * 设置cpu核心数
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cpu cpu核心数
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCpu(const uint64_t& _cpu);
@@ -132,14 +148,18 @@ namespace TencentCloud
 
                     /**
                      * 获取内存规格，单位为MB
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Memory 内存规格，单位为MB
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMemory() const;
 
                     /**
                      * 设置内存规格，单位为MB
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _memory 内存规格，单位为MB
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMemory(const uint64_t& _memory);
@@ -153,14 +173,18 @@ namespace TencentCloud
 
                     /**
                      * 获取默认磁盘规格，单位MB
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefaultStorage 默认磁盘规格，单位MB
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDefaultStorage() const;
 
                     /**
                      * 设置默认磁盘规格，单位MB
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _defaultStorage 默认磁盘规格，单位MB
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDefaultStorage(const uint64_t& _defaultStorage);
@@ -174,14 +198,18 @@ namespace TencentCloud
 
                     /**
                      * 获取最大磁盘规格，单位MB
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxStorage 最大磁盘规格，单位MB
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMaxStorage() const;
 
                     /**
                      * 设置最大磁盘规格，单位MB
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxStorage 最大磁盘规格，单位MB
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxStorage(const uint64_t& _maxStorage);
@@ -195,14 +223,18 @@ namespace TencentCloud
 
                     /**
                      * 获取最小磁盘规格，单位MB
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return MinStorage 最小磁盘规格，单位MB
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMinStorage() const;
 
                     /**
                      * 设置最小磁盘规格，单位MB
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _minStorage 最小磁盘规格，单位MB
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMinStorage(const uint64_t& _minStorage);
@@ -216,14 +248,18 @@ namespace TencentCloud
 
                     /**
                      * 获取可承载qps信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Qps 可承载qps信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetQps() const;
 
                     /**
                      * 设置可承载qps信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _qps 可承载qps信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQps(const uint64_t& _qps);
@@ -237,14 +273,18 @@ namespace TencentCloud
 
                     /**
                      * 获取连接数限制
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Conns 连接数限制
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetConns() const;
 
                     /**
                      * 设置连接数限制
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _conns 连接数限制
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConns(const uint64_t& _conns);
@@ -258,14 +298,18 @@ namespace TencentCloud
 
                     /**
                      * 获取实例mongodb版本信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return MongoVersionCode 实例mongodb版本信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMongoVersionCode() const;
 
                     /**
                      * 设置实例mongodb版本信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mongoVersionCode 实例mongodb版本信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMongoVersionCode(const std::string& _mongoVersionCode);
@@ -279,14 +323,18 @@ namespace TencentCloud
 
                     /**
                      * 获取实例mongodb版本号
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return MongoVersionValue 实例mongodb版本号
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMongoVersionValue() const;
 
                     /**
                      * 设置实例mongodb版本号
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mongoVersionValue 实例mongodb版本号
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMongoVersionValue(const uint64_t& _mongoVersionValue);
@@ -300,14 +348,18 @@ namespace TencentCloud
 
                     /**
                      * 获取实例mongodb版本号（短）
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Version 实例mongodb版本号（短）
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置实例mongodb版本号（短）
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _version 实例mongodb版本号（短）
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVersion(const std::string& _version);
@@ -321,14 +373,18 @@ namespace TencentCloud
 
                     /**
                      * 获取存储引擎
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return EngineName 存储引擎
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEngineName() const;
 
                     /**
                      * 设置存储引擎
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _engineName 存储引擎
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEngineName(const std::string& _engineName);
@@ -342,14 +398,18 @@ namespace TencentCloud
 
                     /**
                      * 获取集群类型，取值：1-分片集群，0-副本集集群
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterType 集群类型，取值：1-分片集群，0-副本集集群
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetClusterType() const;
 
                     /**
                      * 设置集群类型，取值：1-分片集群，0-副本集集群
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterType 集群类型，取值：1-分片集群，0-副本集集群
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterType(const uint64_t& _clusterType);
@@ -363,14 +423,18 @@ namespace TencentCloud
 
                     /**
                      * 获取最小副本集从节点数
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return MinNodeNum 最小副本集从节点数
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMinNodeNum() const;
 
                     /**
                      * 设置最小副本集从节点数
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _minNodeNum 最小副本集从节点数
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMinNodeNum(const uint64_t& _minNodeNum);
@@ -384,14 +448,18 @@ namespace TencentCloud
 
                     /**
                      * 获取最大副本集从节点数
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxNodeNum 最大副本集从节点数
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMaxNodeNum() const;
 
                     /**
                      * 设置最大副本集从节点数
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxNodeNum 最大副本集从节点数
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxNodeNum(const uint64_t& _maxNodeNum);
@@ -405,14 +473,18 @@ namespace TencentCloud
 
                     /**
                      * 获取最小分片数
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return MinReplicateSetNum 最小分片数
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMinReplicateSetNum() const;
 
                     /**
                      * 设置最小分片数
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _minReplicateSetNum 最小分片数
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMinReplicateSetNum(const uint64_t& _minReplicateSetNum);
@@ -426,14 +498,18 @@ namespace TencentCloud
 
                     /**
                      * 获取最大分片数
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxReplicateSetNum 最大分片数
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMaxReplicateSetNum() const;
 
                     /**
                      * 设置最大分片数
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxReplicateSetNum 最大分片数
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxReplicateSetNum(const uint64_t& _maxReplicateSetNum);
@@ -447,14 +523,18 @@ namespace TencentCloud
 
                     /**
                      * 获取最小分片从节点数
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return MinReplicateSetNodeNum 最小分片从节点数
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMinReplicateSetNodeNum() const;
 
                     /**
                      * 设置最小分片从节点数
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _minReplicateSetNodeNum 最小分片从节点数
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMinReplicateSetNodeNum(const uint64_t& _minReplicateSetNodeNum);
@@ -468,14 +548,18 @@ namespace TencentCloud
 
                     /**
                      * 获取最大分片从节点数
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxReplicateSetNodeNum 最大分片从节点数
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMaxReplicateSetNodeNum() const;
 
                     /**
                      * 设置最大分片从节点数
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxReplicateSetNodeNum 最大分片从节点数
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxReplicateSetNodeNum(const uint64_t& _maxReplicateSetNodeNum);
@@ -491,126 +575,147 @@ namespace TencentCloud
 
                     /**
                      * 规格信息标识
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_specCode;
                     bool m_specCodeHasBeenSet;
 
                     /**
                      * 规格有效标志，取值：0-停止售卖，1-开放售卖
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 机器类型，取值：0-HIO，4-HIO10G
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_machineType;
                     bool m_machineTypeHasBeenSet;
 
                     /**
                      * cpu核心数
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_cpu;
                     bool m_cpuHasBeenSet;
 
                     /**
                      * 内存规格，单位为MB
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_memory;
                     bool m_memoryHasBeenSet;
 
                     /**
                      * 默认磁盘规格，单位MB
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_defaultStorage;
                     bool m_defaultStorageHasBeenSet;
 
                     /**
                      * 最大磁盘规格，单位MB
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_maxStorage;
                     bool m_maxStorageHasBeenSet;
 
                     /**
                      * 最小磁盘规格，单位MB
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_minStorage;
                     bool m_minStorageHasBeenSet;
 
                     /**
                      * 可承载qps信息
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_qps;
                     bool m_qpsHasBeenSet;
 
                     /**
                      * 连接数限制
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_conns;
                     bool m_connsHasBeenSet;
 
                     /**
                      * 实例mongodb版本信息
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mongoVersionCode;
                     bool m_mongoVersionCodeHasBeenSet;
 
                     /**
                      * 实例mongodb版本号
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_mongoVersionValue;
                     bool m_mongoVersionValueHasBeenSet;
 
                     /**
                      * 实例mongodb版本号（短）
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;
 
                     /**
                      * 存储引擎
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_engineName;
                     bool m_engineNameHasBeenSet;
 
                     /**
                      * 集群类型，取值：1-分片集群，0-副本集集群
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_clusterType;
                     bool m_clusterTypeHasBeenSet;
 
                     /**
                      * 最小副本集从节点数
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_minNodeNum;
                     bool m_minNodeNumHasBeenSet;
 
                     /**
                      * 最大副本集从节点数
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_maxNodeNum;
                     bool m_maxNodeNumHasBeenSet;
 
                     /**
                      * 最小分片数
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_minReplicateSetNum;
                     bool m_minReplicateSetNumHasBeenSet;
 
                     /**
                      * 最大分片数
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_maxReplicateSetNum;
                     bool m_maxReplicateSetNumHasBeenSet;
 
                     /**
                      * 最小分片从节点数
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_minReplicateSetNodeNum;
                     bool m_minReplicateSetNodeNumHasBeenSet;
 
                     /**
                      * 最大分片从节点数
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_maxReplicateSetNodeNum;
                     bool m_maxReplicateSetNodeNumHasBeenSet;

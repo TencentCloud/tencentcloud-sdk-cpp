@@ -30,6 +30,7 @@ NetworkInterface::NetworkInterface() :
     m_primaryHasBeenSet(false),
     m_macAddressHasBeenSet(false),
     m_stateHasBeenSet(false),
+    m_networkInterfaceStateHasBeenSet(false),
     m_privateIpAddressSetHasBeenSet(false),
     m_attachmentHasBeenSet(false),
     m_zoneHasBeenSet(false),
@@ -141,6 +142,16 @@ CoreInternalOutcome NetworkInterface::Deserialize(const rapidjson::Value &value)
         }
         m_state = string(value["State"].GetString());
         m_stateHasBeenSet = true;
+    }
+
+    if (value.HasMember("NetworkInterfaceState") && !value["NetworkInterfaceState"].IsNull())
+    {
+        if (!value["NetworkInterfaceState"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NetworkInterface.NetworkInterfaceState` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_networkInterfaceState = string(value["NetworkInterfaceState"].GetString());
+        m_networkInterfaceStateHasBeenSet = true;
     }
 
     if (value.HasMember("PrivateIpAddressSet") && !value["PrivateIpAddressSet"].IsNull())
@@ -382,6 +393,14 @@ void NetworkInterface::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "State";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_state.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_networkInterfaceStateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkInterfaceState";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_networkInterfaceState.c_str(), allocator).Move(), allocator);
     }
 
     if (m_privateIpAddressSetHasBeenSet)
@@ -647,6 +666,22 @@ void NetworkInterface::SetState(const string& _state)
 bool NetworkInterface::StateHasBeenSet() const
 {
     return m_stateHasBeenSet;
+}
+
+string NetworkInterface::GetNetworkInterfaceState() const
+{
+    return m_networkInterfaceState;
+}
+
+void NetworkInterface::SetNetworkInterfaceState(const string& _networkInterfaceState)
+{
+    m_networkInterfaceState = _networkInterfaceState;
+    m_networkInterfaceStateHasBeenSet = true;
+}
+
+bool NetworkInterface::NetworkInterfaceStateHasBeenSet() const
+{
+    return m_networkInterfaceStateHasBeenSet;
 }
 
 vector<PrivateIpAddressSpecification> NetworkInterface::GetPrivateIpAddressSet() const

@@ -101,9 +101,7 @@ namespace TencentCloud
 
                     /**
                      * 获取昵称列表,通过","拼接， 1元钱裂变活动中与Notes中uin一一对应
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NickNameList 昵称列表,通过","拼接， 1元钱裂变活动中与Notes中uin一一对应
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNickNameList() const;
@@ -143,7 +141,6 @@ namespace TencentCloud
 
                     /**
                      * 昵称列表,通过","拼接， 1元钱裂变活动中与Notes中uin一一对应
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nickNameList;
                     bool m_nickNameListHasBeenSet;

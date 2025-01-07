@@ -30,7 +30,9 @@ BackupDownloadTask::BackupDownloadTask() :
     m_timeSpendHasBeenSet(false),
     m_urlHasBeenSet(false),
     m_backupMethodHasBeenSet(false),
-    m_backupDescHasBeenSet(false)
+    m_backupDescHasBeenSet(false),
+    m_regionHasBeenSet(false),
+    m_bucketHasBeenSet(false)
 {
 }
 
@@ -139,6 +141,26 @@ CoreInternalOutcome BackupDownloadTask::Deserialize(const rapidjson::Value &valu
         m_backupDescHasBeenSet = true;
     }
 
+    if (value.HasMember("Region") && !value["Region"].IsNull())
+    {
+        if (!value["Region"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupDownloadTask.Region` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_region = string(value["Region"].GetString());
+        m_regionHasBeenSet = true;
+    }
+
+    if (value.HasMember("Bucket") && !value["Bucket"].IsNull())
+    {
+        if (!value["Bucket"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupDownloadTask.Bucket` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_bucket = string(value["Bucket"].GetString());
+        m_bucketHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +246,22 @@ void BackupDownloadTask::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "BackupDesc";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_backupDesc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Region";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bucketHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Bucket";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_bucket.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -387,5 +425,37 @@ void BackupDownloadTask::SetBackupDesc(const string& _backupDesc)
 bool BackupDownloadTask::BackupDescHasBeenSet() const
 {
     return m_backupDescHasBeenSet;
+}
+
+string BackupDownloadTask::GetRegion() const
+{
+    return m_region;
+}
+
+void BackupDownloadTask::SetRegion(const string& _region)
+{
+    m_region = _region;
+    m_regionHasBeenSet = true;
+}
+
+bool BackupDownloadTask::RegionHasBeenSet() const
+{
+    return m_regionHasBeenSet;
+}
+
+string BackupDownloadTask::GetBucket() const
+{
+    return m_bucket;
+}
+
+void BackupDownloadTask::SetBucket(const string& _bucket)
+{
+    m_bucket = _bucket;
+    m_bucketHasBeenSet = true;
+}
+
+bool BackupDownloadTask::BucketHasBeenSet() const
+{
+    return m_bucketHasBeenSet;
 }
 

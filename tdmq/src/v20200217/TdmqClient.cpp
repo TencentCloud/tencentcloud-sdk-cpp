@@ -4770,6 +4770,49 @@ TdmqClient::ExportRocketMQMessageDetailOutcomeCallable TdmqClient::ExportRocketM
     return task->get_future();
 }
 
+TdmqClient::GetTopicListOutcome TdmqClient::GetTopicList(const GetTopicListRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetTopicList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetTopicListResponse rsp = GetTopicListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetTopicListOutcome(rsp);
+        else
+            return GetTopicListOutcome(o.GetError());
+    }
+    else
+    {
+        return GetTopicListOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::GetTopicListAsync(const GetTopicListRequest& request, const GetTopicListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetTopicList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::GetTopicListOutcomeCallable TdmqClient::GetTopicListCallable(const GetTopicListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetTopicListOutcome()>>(
+        [this, request]()
+        {
+            return this->GetTopicList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TdmqClient::ImportRocketMQConsumerGroupsOutcome TdmqClient::ImportRocketMQConsumerGroups(const ImportRocketMQConsumerGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "ImportRocketMQConsumerGroups");

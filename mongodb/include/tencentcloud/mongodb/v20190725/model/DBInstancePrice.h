@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取单价
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnitPrice 单价
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetUnitPrice() const;
 
                     /**
                      * 设置单价
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _unitPrice 单价
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUnitPrice(const double& _unitPrice);
@@ -117,7 +113,6 @@ namespace TencentCloud
 
                     /**
                      * 单价
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_unitPrice;
                     bool m_unitPriceHasBeenSet;

@@ -47,9 +47,7 @@ namespace TencentCloud
 
                     /**
                      * 获取Mongos节点属性。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Mongos Mongos节点属性。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<NodeProperty> GetMongos() const;
@@ -79,7 +77,6 @@ namespace TencentCloud
 
                     /**
                      * Mongos节点属性。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<NodeProperty> m_mongos;
                     bool m_mongosHasBeenSet;

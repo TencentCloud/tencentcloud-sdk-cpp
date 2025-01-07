@@ -243,6 +243,8 @@
 #include <tencentcloud/tdmq/v20200217/model/DescribeTopicsResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/ExportRocketMQMessageDetailRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/ExportRocketMQMessageDetailResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/GetTopicListRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/GetTopicListResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/ImportRocketMQConsumerGroupsRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/ImportRocketMQConsumerGroupsResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/ImportRocketMQTopicsRequest.h>
@@ -665,6 +667,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ExportRocketMQMessageDetailResponse> ExportRocketMQMessageDetailOutcome;
                 typedef std::future<ExportRocketMQMessageDetailOutcome> ExportRocketMQMessageDetailOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::ExportRocketMQMessageDetailRequest&, ExportRocketMQMessageDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportRocketMQMessageDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetTopicListResponse> GetTopicListOutcome;
+                typedef std::future<GetTopicListOutcome> GetTopicListOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::GetTopicListRequest&, GetTopicListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTopicListAsyncHandler;
                 typedef Outcome<Core::Error, Model::ImportRocketMQConsumerGroupsResponse> ImportRocketMQConsumerGroupsOutcome;
                 typedef std::future<ImportRocketMQConsumerGroupsOutcome> ImportRocketMQConsumerGroupsOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::ImportRocketMQConsumerGroupsRequest&, ImportRocketMQConsumerGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImportRocketMQConsumerGroupsAsyncHandler;
@@ -1778,6 +1783,15 @@ RabbitMQ专享版查询虚拟主机列表
                 ExportRocketMQMessageDetailOutcome ExportRocketMQMessageDetail(const Model::ExportRocketMQMessageDetailRequest &request);
                 void ExportRocketMQMessageDetailAsync(const Model::ExportRocketMQMessageDetailRequest& request, const ExportRocketMQMessageDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ExportRocketMQMessageDetailOutcomeCallable ExportRocketMQMessageDetailCallable(const Model::ExportRocketMQMessageDetailRequest& request);
+
+                /**
+                 *获取环境下主题列表
+                 * @param req GetTopicListRequest
+                 * @return GetTopicListOutcome
+                 */
+                GetTopicListOutcome GetTopicList(const Model::GetTopicListRequest &request);
+                void GetTopicListAsync(const Model::GetTopicListRequest& request, const GetTopicListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetTopicListOutcomeCallable GetTopicListCallable(const Model::GetTopicListRequest& request);
 
                 /**
                  *输入迁移任务id和要导入的Group，导入后台

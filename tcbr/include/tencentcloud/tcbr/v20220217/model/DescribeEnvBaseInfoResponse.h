@@ -58,6 +58,20 @@ namespace TencentCloud
                      */
                     bool EnvBaseInfoHasBeenSet() const;
 
+                    /**
+                     * 获取是否存在
+                     * @return IsExist 是否存在
+                     * 
+                     */
+                    bool GetIsExist() const;
+
+                    /**
+                     * 判断参数 IsExist 是否已赋值
+                     * @return IsExist 是否已赋值
+                     * 
+                     */
+                    bool IsExistHasBeenSet() const;
+
                 private:
 
                     /**
@@ -65,6 +79,12 @@ namespace TencentCloud
                      */
                     EnvBaseInfo m_envBaseInfo;
                     bool m_envBaseInfoHasBeenSet;
+
+                    /**
+                     * 是否存在
+                     */
+                    bool m_isExist;
+                    bool m_isExistHasBeenSet;
 
                 };
             }
