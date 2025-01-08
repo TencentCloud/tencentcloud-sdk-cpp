@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取类型, 可能的枚举: "coding","package","package_url","github","gitlab","gitee","rawcode"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 类型, 可能的枚举: "coding","package","package_url","github","gitlab","gitee","rawcode"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置类型, 可能的枚举: "coding","package","package_url","github","gitlab","gitee","rawcode"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 类型, 可能的枚举: "coding","package","package_url","github","gitlab","gitee","rawcode"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取下载链接
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Url 下载链接
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置下载链接
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _url 下载链接
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取工作目录
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WorkDir 工作目录
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWorkDir() const;
 
                     /**
                      * 设置工作目录
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _workDir 工作目录
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWorkDir(const std::string& _workDir);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取code包名, type为coding的时候需要填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CodingPackageName code包名, type为coding的时候需要填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCodingPackageName() const;
 
                     /**
                      * 设置code包名, type为coding的时候需要填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _codingPackageName code包名, type为coding的时候需要填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCodingPackageName(const std::string& _codingPackageName);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取coding版本名, type为coding的时候需要填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CodingPackageVersion coding版本名, type为coding的时候需要填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCodingPackageVersion() const;
 
                     /**
                      * 设置coding版本名, type为coding的时候需要填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _codingPackageVersion coding版本名, type为coding的时候需要填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCodingPackageVersion(const std::string& _codingPackageVersion);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取源码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RawCode 源码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRawCode() const;
 
                     /**
                      * 设置源码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rawCode 源码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRawCode(const std::string& _rawCode);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取代码分支
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Branch 代码分支
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBranch() const;
 
                     /**
                      * 设置代码分支
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _branch 代码分支
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBranch(const std::string& _branch);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取coding项目ID，type为coding时需要填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectId coding项目ID，type为coding时需要填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetProjectId() const;
 
                     /**
                      * 设置coding项目ID，type为coding时需要填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _projectId coding项目ID，type为coding时需要填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProjectId(const int64_t& _projectId);
@@ -273,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取coding项目
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectName coding项目
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProjectName() const;
 
                     /**
                      * 设置coding项目
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _projectName coding项目
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProjectName(const std::string& _projectName);
@@ -300,70 +260,60 @@ namespace TencentCloud
 
                     /**
                      * 类型, 可能的枚举: "coding","package","package_url","github","gitlab","gitee","rawcode"
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 下载链接
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
 
                     /**
                      * 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 工作目录
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_workDir;
                     bool m_workDirHasBeenSet;
 
                     /**
                      * code包名, type为coding的时候需要填写
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_codingPackageName;
                     bool m_codingPackageNameHasBeenSet;
 
                     /**
                      * coding版本名, type为coding的时候需要填写
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_codingPackageVersion;
                     bool m_codingPackageVersionHasBeenSet;
 
                     /**
                      * 源码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_rawCode;
                     bool m_rawCodeHasBeenSet;
 
                     /**
                      * 代码分支
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_branch;
                     bool m_branchHasBeenSet;
 
                     /**
                      * coding项目ID，type为coding时需要填写
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
                      * coding项目
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_projectName;
                     bool m_projectNameHasBeenSet;

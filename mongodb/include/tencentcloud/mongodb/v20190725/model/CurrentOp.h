@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取操作序号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OpId 操作序号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetOpId() const;
 
                     /**
                      * 设置操作序号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _opId 操作序号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOpId(const int64_t& _opId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取操作所在的命名空间，形式如db.collection。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ns 操作所在的命名空间，形式如db.collection。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNs() const;
 
                     /**
                      * 设置操作所在的命名空间，形式如db.collection。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ns 操作所在的命名空间，形式如db.collection。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNs(const std::string& _ns);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取操作执行语句。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Query 操作执行语句。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetQuery() const;
 
                     /**
                      * 设置操作执行语句。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _query 操作执行语句。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQuery(const std::string& _query);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取操作类型，可能的取值：aggregate、count、delete、distinct、find、findAndModify、getMore、insert、mapReduce、update和command。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Op 操作类型，可能的取值：aggregate、count、delete、distinct、find、findAndModify、getMore、insert、mapReduce、update和command。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOp() const;
 
                     /**
                      * 设置操作类型，可能的取值：aggregate、count、delete、distinct、find、findAndModify、getMore、insert、mapReduce、update和command。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _op 操作类型，可能的取值：aggregate、count、delete、distinct、find、findAndModify、getMore、insert、mapReduce、update和command。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOp(const std::string& _op);
@@ -190,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取操作详细信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Operation 操作详细信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOperation() const;
 
                     /**
                      * 设置操作详细信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _operation 操作详细信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOperation(const std::string& _operation);
@@ -215,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取筛选条件，节点状态，可能的取值为：Primary、Secondary。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return State 筛选条件，节点状态，可能的取值为：Primary、Secondary。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetState() const;
 
                     /**
                      * 设置筛选条件，节点状态，可能的取值为：Primary、Secondary。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _state 筛选条件，节点状态，可能的取值为：Primary、Secondary。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetState(const std::string& _state);
@@ -240,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取操作已执行时间（ms）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MicrosecsRunning 操作已执行时间（ms）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMicrosecsRunning() const;
 
                     /**
                      * 设置操作已执行时间（ms）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _microsecsRunning 操作已执行时间（ms）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMicrosecsRunning(const uint64_t& _microsecsRunning);
@@ -265,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当前操作所在节点信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExecNode 当前操作所在节点信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExecNode() const;
 
                     /**
                      * 设置当前操作所在节点信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _execNode 当前操作所在节点信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExecNode(const std::string& _execNode);
@@ -292,28 +260,24 @@ namespace TencentCloud
 
                     /**
                      * 操作序号。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_opId;
                     bool m_opIdHasBeenSet;
 
                     /**
                      * 操作所在的命名空间，形式如db.collection。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ns;
                     bool m_nsHasBeenSet;
 
                     /**
                      * 操作执行语句。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_query;
                     bool m_queryHasBeenSet;
 
                     /**
                      * 操作类型，可能的取值：aggregate、count、delete、distinct、find、findAndModify、getMore、insert、mapReduce、update和command。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_op;
                     bool m_opHasBeenSet;
@@ -332,28 +296,24 @@ namespace TencentCloud
 
                     /**
                      * 操作详细信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_operation;
                     bool m_operationHasBeenSet;
 
                     /**
                      * 筛选条件，节点状态，可能的取值为：Primary、Secondary。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_state;
                     bool m_stateHasBeenSet;
 
                     /**
                      * 操作已执行时间（ms）。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_microsecsRunning;
                     bool m_microsecsRunningHasBeenSet;
 
                     /**
                      * 当前操作所在节点信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_execNode;
                     bool m_execNodeHasBeenSet;

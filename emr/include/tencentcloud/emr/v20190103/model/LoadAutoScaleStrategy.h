@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StrategyId 规则ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStrategyId() const;
 
                     /**
                      * 设置规则ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _strategyId 规则ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStrategyId(const int64_t& _strategyId);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StrategyName 规则名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStrategyName() const;
 
                     /**
                      * 设置规则名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _strategyName 规则名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStrategyName(const std::string& _strategyName);
@@ -100,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则生效冷却时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CalmDownTime 规则生效冷却时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCalmDownTime() const;
 
                     /**
                      * 设置规则生效冷却时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _calmDownTime 规则生效冷却时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCalmDownTime(const int64_t& _calmDownTime);
@@ -125,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取扩缩容动作，1表示扩容，2表示缩容。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScaleAction 扩缩容动作，1表示扩容，2表示缩容。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetScaleAction() const;
 
                     /**
                      * 设置扩缩容动作，1表示扩容，2表示缩容。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scaleAction 扩缩容动作，1表示扩容，2表示缩容。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScaleAction(const int64_t& _scaleAction);
@@ -150,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取每次规则生效时的扩缩容数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScaleNum 每次规则生效时的扩缩容数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetScaleNum() const;
 
                     /**
                      * 设置每次规则生效时的扩缩容数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scaleNum 每次规则生效时的扩缩容数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScaleNum(const int64_t& _scaleNum);
@@ -175,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取指标处理方法，1表示MAX，2表示MIN，3表示AVG。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProcessMethod 指标处理方法，1表示MAX，2表示MIN，3表示AVG。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetProcessMethod() const;
 
                     /**
                      * 设置指标处理方法，1表示MAX，2表示MIN，3表示AVG。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _processMethod 指标处理方法，1表示MAX，2表示MIN，3表示AVG。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProcessMethod(const int64_t& _processMethod);
@@ -200,18 +176,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则优先级，添加时无效，默认为自增。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Priority 规则优先级，添加时无效，默认为自增。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPriority() const;
 
                     /**
                      * 设置规则优先级，添加时无效，默认为自增。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _priority 规则优先级，添加时无效，默认为自增。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPriority(const int64_t& _priority);
@@ -225,18 +197,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则状态，1表示启动，3表示禁用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StrategyStatus 规则状态，1表示启动，3表示禁用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStrategyStatus() const;
 
                     /**
                      * 设置规则状态，1表示启动，3表示禁用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _strategyStatus 规则状态，1表示启动，3表示禁用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStrategyStatus(const int64_t& _strategyStatus);
@@ -250,18 +218,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则扩容指定 yarn node label
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return YarnNodeLabel 规则扩容指定 yarn node label
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetYarnNodeLabel() const;
 
                     /**
                      * 设置规则扩容指定 yarn node label
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _yarnNodeLabel 规则扩容指定 yarn node label
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetYarnNodeLabel(const std::string& _yarnNodeLabel);
@@ -363,18 +327,14 @@ namespace TencentCloud
 
                     /**
                      * 获取预设配置组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigGroupAssigned 预设配置组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConfigGroupAssigned() const;
 
                     /**
                      * 设置预设配置组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _configGroupAssigned 预设配置组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConfigGroupAssigned(const std::string& _configGroupAssigned);
@@ -392,13 +352,11 @@ namespace TencentCloud
 "INSTANCE"表示按照节点计算，默认方式。
 "CPU"表示按照机器的核数计算。
 "MEMORYGB"表示按照机器内存数计算。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MeasureMethod 扩容资源计算方法，"DEFAULT","INSTANCE", "CPU", "MEMORYGB"。
 "DEFAULT"表示默认方式，与"INSTANCE"意义相同。
 "INSTANCE"表示按照节点计算，默认方式。
 "CPU"表示按照机器的核数计算。
 "MEMORYGB"表示按照机器内存数计算。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMeasureMethod() const;
@@ -409,13 +367,11 @@ namespace TencentCloud
 "INSTANCE"表示按照节点计算，默认方式。
 "CPU"表示按照机器的核数计算。
 "MEMORYGB"表示按照机器内存数计算。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _measureMethod 扩容资源计算方法，"DEFAULT","INSTANCE", "CPU", "MEMORYGB"。
 "DEFAULT"表示默认方式，与"INSTANCE"意义相同。
 "INSTANCE"表示按照节点计算，默认方式。
 "CPU"表示按照机器的核数计算。
 "MEMORYGB"表示按照机器内存数计算。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMeasureMethod(const std::string& _measureMethod);
@@ -456,63 +412,54 @@ namespace TencentCloud
 
                     /**
                      * 规则ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_strategyId;
                     bool m_strategyIdHasBeenSet;
 
                     /**
                      * 规则名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_strategyName;
                     bool m_strategyNameHasBeenSet;
 
                     /**
                      * 规则生效冷却时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_calmDownTime;
                     bool m_calmDownTimeHasBeenSet;
 
                     /**
                      * 扩缩容动作，1表示扩容，2表示缩容。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_scaleAction;
                     bool m_scaleActionHasBeenSet;
 
                     /**
                      * 每次规则生效时的扩缩容数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_scaleNum;
                     bool m_scaleNumHasBeenSet;
 
                     /**
                      * 指标处理方法，1表示MAX，2表示MIN，3表示AVG。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_processMethod;
                     bool m_processMethodHasBeenSet;
 
                     /**
                      * 规则优先级，添加时无效，默认为自增。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_priority;
                     bool m_priorityHasBeenSet;
 
                     /**
                      * 规则状态，1表示启动，3表示禁用。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_strategyStatus;
                     bool m_strategyStatusHasBeenSet;
 
                     /**
                      * 规则扩容指定 yarn node label
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_yarnNodeLabel;
                     bool m_yarnNodeLabelHasBeenSet;
@@ -544,7 +491,6 @@ namespace TencentCloud
 
                     /**
                      * 预设配置组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_configGroupAssigned;
                     bool m_configGroupAssignedHasBeenSet;
@@ -555,7 +501,6 @@ namespace TencentCloud
 "INSTANCE"表示按照节点计算，默认方式。
 "CPU"表示按照机器的核数计算。
 "MEMORYGB"表示按照机器内存数计算。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_measureMethod;
                     bool m_measureMethodHasBeenSet;

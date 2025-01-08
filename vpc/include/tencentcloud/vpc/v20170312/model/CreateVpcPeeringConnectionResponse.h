@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取对等连接ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PeeringConnectionId 对等连接ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPeeringConnectionId() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 对等连接ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_peeringConnectionId;
                     bool m_peeringConnectionIdHasBeenSet;

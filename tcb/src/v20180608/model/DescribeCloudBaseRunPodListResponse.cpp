@@ -23,7 +23,11 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tcb::V20180608::Model;
 using namespace std;
 
-DescribeCloudBaseRunPodListResponse::DescribeCloudBaseRunPodListResponse()
+DescribeCloudBaseRunPodListResponse::DescribeCloudBaseRunPodListResponse() :
+    m_offsetHasBeenSet(false),
+    m_limitHasBeenSet(false),
+    m_totalCountHasBeenSet(false),
+    m_podListHasBeenSet(false)
 {
 }
 
@@ -61,6 +65,56 @@ CoreInternalOutcome DescribeCloudBaseRunPodListResponse::Deserialize(const strin
     }
 
 
+    if (rsp.HasMember("Offset") && !rsp["Offset"].IsNull())
+    {
+        if (!rsp["Offset"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Offset` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_offset = rsp["Offset"].GetInt64();
+        m_offsetHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Limit") && !rsp["Limit"].IsNull())
+    {
+        if (!rsp["Limit"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Limit` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_limit = rsp["Limit"].GetInt64();
+        m_limitHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetInt64();
+        m_totalCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("PodList") && !rsp["PodList"].IsNull())
+    {
+        if (!rsp["PodList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `PodList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["PodList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CloudBaseRunVersionPod item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_podList.push_back(item);
+        }
+        m_podListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +124,45 @@ string DescribeCloudBaseRunPodListResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_totalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
+    }
+
+    if (m_podListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PodList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_podList.begin(); itr != m_podList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +175,45 @@ string DescribeCloudBaseRunPodListResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+int64_t DescribeCloudBaseRunPodListResponse::GetOffset() const
+{
+    return m_offset;
+}
+
+bool DescribeCloudBaseRunPodListResponse::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
+
+int64_t DescribeCloudBaseRunPodListResponse::GetLimit() const
+{
+    return m_limit;
+}
+
+bool DescribeCloudBaseRunPodListResponse::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
+}
+
+int64_t DescribeCloudBaseRunPodListResponse::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool DescribeCloudBaseRunPodListResponse::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
+}
+
+vector<CloudBaseRunVersionPod> DescribeCloudBaseRunPodListResponse::GetPodList() const
+{
+    return m_podList;
+}
+
+bool DescribeCloudBaseRunPodListResponse::PodListHasBeenSet() const
+{
+    return m_podListHasBeenSet;
+}
 
 

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取终端用户从属平台
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Platform 终端用户从属平台
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPlatform() const;
 
                     /**
                      * 设置终端用户从属平台
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _platform 终端用户从属平台
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPlatform(const std::string& _platform);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取平台终端用户数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Count 平台终端用户数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCount() const;
 
                     /**
                      * 设置平台终端用户数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _count 平台终端用户数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCount(const uint64_t& _count);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updateTime 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 终端用户从属平台
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_platform;
                     bool m_platformHasBeenSet;
 
                     /**
                      * 平台终端用户数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_count;
                     bool m_countHasBeenSet;
 
                     /**
                      * 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;

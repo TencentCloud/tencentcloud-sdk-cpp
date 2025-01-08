@@ -65,6 +65,27 @@ namespace TencentCloud
                     bool SubscribeIdHasBeenSet() const;
 
                     /**
+                     * 获取订阅 ID 筛选，精确匹配
+                     * @return SubscribeIds 订阅 ID 筛选，精确匹配
+                     * 
+                     */
+                    std::vector<std::string> GetSubscribeIds() const;
+
+                    /**
+                     * 设置订阅 ID 筛选，精确匹配
+                     * @param _subscribeIds 订阅 ID 筛选，精确匹配
+                     * 
+                     */
+                    void SetSubscribeIds(const std::vector<std::string>& _subscribeIds);
+
+                    /**
+                     * 判断参数 SubscribeIds 是否已赋值
+                     * @return SubscribeIds 是否已赋值
+                     * 
+                     */
+                    bool SubscribeIdsHasBeenSet() const;
+
+                    /**
                      * 获取订阅名称，前缀模糊匹配
                      * @return SubscribeName 订阅名称，前缀模糊匹配
                      * 
@@ -302,6 +323,12 @@ namespace TencentCloud
                      */
                     std::string m_subscribeId;
                     bool m_subscribeIdHasBeenSet;
+
+                    /**
+                     * 订阅 ID 筛选，精确匹配
+                     */
+                    std::vector<std::string> m_subscribeIds;
+                    bool m_subscribeIdsHasBeenSet;
 
                     /**
                      * 订阅名称，前缀模糊匹配

@@ -168,21 +168,21 @@ namespace TencentCloud
                     /**
                      * 获取模板配置中的参与方ID,与控件绑定
                      * @return ReceiptId 模板配置中的参与方ID,与控件绑定
-                     * 
+                     * @deprecated
                      */
                     std::string GetReceiptId() const;
 
                     /**
                      * 设置模板配置中的参与方ID,与控件绑定
                      * @param _receiptId 模板配置中的参与方ID,与控件绑定
-                     * 
+                     * @deprecated
                      */
                     void SetReceiptId(const std::string& _receiptId);
 
                     /**
                      * 判断参数 ReceiptId 是否已赋值
                      * @return ReceiptId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ReceiptIdHasBeenSet() const;
 
@@ -449,6 +449,27 @@ namespace TencentCloud
                      */
                     bool ApproverRoleNameHasBeenSet() const;
 
+                    /**
+                     * 获取模板配置中的参与方ID,与控件绑定
+                     * @return RecipientId 模板配置中的参与方ID,与控件绑定
+                     * 
+                     */
+                    std::string GetRecipientId() const;
+
+                    /**
+                     * 设置模板配置中的参与方ID,与控件绑定
+                     * @param _recipientId 模板配置中的参与方ID,与控件绑定
+                     * 
+                     */
+                    void SetRecipientId(const std::string& _recipientId);
+
+                    /**
+                     * 判断参数 RecipientId 是否已赋值
+                     * @return RecipientId 是否已赋值
+                     * 
+                     */
+                    bool RecipientIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -562,6 +583,12 @@ namespace TencentCloud
                      */
                     std::string m_approverRoleName;
                     bool m_approverRoleNameHasBeenSet;
+
+                    /**
+                     * 模板配置中的参与方ID,与控件绑定
+                     */
+                    std::string m_recipientId;
+                    bool m_recipientIdHasBeenSet;
 
                 };
             }

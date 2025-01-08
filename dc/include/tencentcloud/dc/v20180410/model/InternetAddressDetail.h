@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取互联网地址ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 互联网地址ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置互联网地址ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceId 互联网地址ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取互联网网络地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Subnet 互联网网络地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubnet() const;
 
                     /**
                      * 设置互联网网络地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subnet 互联网网络地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubnet(const std::string& _subnet);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网络地址掩码长度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaskLen 网络地址掩码长度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaskLen() const;
 
                     /**
                      * 设置网络地址掩码长度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maskLen 网络地址掩码长度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaskLen(const int64_t& _maskLen);
@@ -126,12 +114,10 @@ namespace TencentCloud
 1:电信
 2:移动
 3:联通
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AddrType 0:BGP
 1:电信
 2:移动
 3:联通
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAddrType() const;
@@ -141,12 +127,10 @@ namespace TencentCloud
 1:电信
 2:移动
 3:联通
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _addrType 0:BGP
 1:电信
 2:移动
 3:联通
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAddrType(const int64_t& _addrType);
@@ -189,18 +173,14 @@ namespace TencentCloud
 
                     /**
                      * 获取申请时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplyTime 申请时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApplyTime() const;
 
                     /**
                      * 设置申请时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _applyTime 申请时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApplyTime(const std::string& _applyTime);
@@ -214,18 +194,14 @@ namespace TencentCloud
 
                     /**
                      * 获取停用时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StopTime 停用时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStopTime() const;
 
                     /**
                      * 设置停用时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _stopTime 停用时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStopTime(const std::string& _stopTime);
@@ -239,18 +215,14 @@ namespace TencentCloud
 
                     /**
                      * 获取退还时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReleaseTime 退还时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReleaseTime() const;
 
                     /**
                      * 设置退还时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _releaseTime 退还时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReleaseTime(const std::string& _releaseTime);
@@ -264,18 +236,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 地域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _region 地域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -289,18 +257,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppId 用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAppId() const;
 
                     /**
                      * 设置用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appId 用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppId(const int64_t& _appId);
@@ -314,18 +278,14 @@ namespace TencentCloud
 
                     /**
                      * 获取0:IPv4 1:IPv6
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AddrProto 0:IPv4 1:IPv6
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAddrProto() const;
 
                     /**
                      * 设置0:IPv4 1:IPv6
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _addrProto 0:IPv4 1:IPv6
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAddrProto(const int64_t& _addrProto);
@@ -339,18 +299,14 @@ namespace TencentCloud
 
                     /**
                      * 获取释放状态的IP地址保留的天数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReserveTime 释放状态的IP地址保留的天数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetReserveTime() const;
 
                     /**
                      * 设置释放状态的IP地址保留的天数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _reserveTime 释放状态的IP地址保留的天数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReserveTime(const int64_t& _reserveTime);
@@ -366,21 +322,18 @@ namespace TencentCloud
 
                     /**
                      * 互联网地址ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
                      * 互联网网络地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subnet;
                     bool m_subnetHasBeenSet;
 
                     /**
                      * 网络地址掩码长度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maskLen;
                     bool m_maskLenHasBeenSet;
@@ -390,7 +343,6 @@ namespace TencentCloud
 1:电信
 2:移动
 3:联通
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_addrType;
                     bool m_addrTypeHasBeenSet;
@@ -405,49 +357,42 @@ namespace TencentCloud
 
                     /**
                      * 申请时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_applyTime;
                     bool m_applyTimeHasBeenSet;
 
                     /**
                      * 停用时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_stopTime;
                     bool m_stopTimeHasBeenSet;
 
                     /**
                      * 退还时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_releaseTime;
                     bool m_releaseTimeHasBeenSet;
 
                     /**
                      * 地域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
                      * 用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
                      * 0:IPv4 1:IPv6
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_addrProto;
                     bool m_addrProtoHasBeenSet;
 
                     /**
                      * 释放状态的IP地址保留的天数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_reserveTime;
                     bool m_reserveTimeHasBeenSet;

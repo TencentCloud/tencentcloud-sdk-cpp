@@ -59,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取校验错误信息，如果不为空，则说明校验失败，配置没有成功
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorMsg 校验错误信息，如果不为空，则说明校验失败，配置没有成功
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetErrorMsg() const;
@@ -75,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取返回数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 返回数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetData() const;
@@ -99,14 +95,12 @@ namespace TencentCloud
 
                     /**
                      * 校验错误信息，如果不为空，则说明校验失败，配置没有成功
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errorMsg;
                     bool m_errorMsgHasBeenSet;
 
                     /**
                      * 返回数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_data;
                     bool m_dataHasBeenSet;

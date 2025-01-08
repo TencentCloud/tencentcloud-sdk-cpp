@@ -258,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地区信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 地区信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地区信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _region 地区信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -283,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Bucket信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Bucket Bucket信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBucket() const;
 
                     /**
                      * 设置Bucket信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bucket Bucket信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBucket(const std::string& _bucket);
@@ -370,14 +362,12 @@ namespace TencentCloud
 
                     /**
                      * 地区信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
                      * Bucket信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bucket;
                     bool m_bucketHasBeenSet;

@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/hai/v20230812/model/CreateMuskPromptRequest.h>
+#include <tencentcloud/hai/v20230812/model/CreateMuskPromptResponse.h>
 #include <tencentcloud/hai/v20230812/model/DescribeApplicationsRequest.h>
 #include <tencentcloud/hai/v20230812/model/DescribeApplicationsResponse.h>
 #include <tencentcloud/hai/v20230812/model/DescribeInstanceNetworkStatusRequest.h>
@@ -59,6 +61,9 @@ namespace TencentCloud
                 HaiClient(const Credential &credential, const std::string &region);
                 HaiClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::CreateMuskPromptResponse> CreateMuskPromptOutcome;
+                typedef std::future<CreateMuskPromptOutcome> CreateMuskPromptOutcomeCallable;
+                typedef std::function<void(const HaiClient*, const Model::CreateMuskPromptRequest&, CreateMuskPromptOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMuskPromptAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeApplicationsResponse> DescribeApplicationsOutcome;
                 typedef std::future<DescribeApplicationsOutcome> DescribeApplicationsOutcomeCallable;
                 typedef std::function<void(const HaiClient*, const Model::DescribeApplicationsRequest&, DescribeApplicationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApplicationsAsyncHandler;
@@ -94,6 +99,15 @@ namespace TencentCloud
                 typedef std::function<void(const HaiClient*, const Model::TerminateInstancesRequest&, TerminateInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TerminateInstancesAsyncHandler;
 
 
+
+                /**
+                 *创建musk prompt 任务
+                 * @param req CreateMuskPromptRequest
+                 * @return CreateMuskPromptOutcome
+                 */
+                CreateMuskPromptOutcome CreateMuskPrompt(const Model::CreateMuskPromptRequest &request);
+                void CreateMuskPromptAsync(const Model::CreateMuskPromptRequest& request, const CreateMuskPromptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateMuskPromptOutcomeCallable CreateMuskPromptCallable(const Model::CreateMuskPromptRequest& request);
 
                 /**
                  *查询应用

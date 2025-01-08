@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool RealNameHasBeenSet() const;
 
                     /**
-                     * 获取大陆手机号直接填写，如果是其他国家、地区号码， 按照"国家地区代码|手机号"的格式输入。如: "+852|xxxxxxxx"
-                     * @return Phone 大陆手机号直接填写，如果是其他国家、地区号码， 按照"国家地区代码|手机号"的格式输入。如: "+852|xxxxxxxx"
+                     * 获取按照"国家地区代码|手机号"的格式输入，如: "+86|xxxxxxxx"。手机号和邮箱参数至少传一项
+                     * @return Phone 按照"国家地区代码|手机号"的格式输入，如: "+86|xxxxxxxx"。手机号和邮箱参数至少传一项
                      * 
                      */
                     std::string GetPhone() const;
 
                     /**
-                     * 设置大陆手机号直接填写，如果是其他国家、地区号码， 按照"国家地区代码|手机号"的格式输入。如: "+852|xxxxxxxx"
-                     * @param _phone 大陆手机号直接填写，如果是其他国家、地区号码， 按照"国家地区代码|手机号"的格式输入。如: "+852|xxxxxxxx"
+                     * 设置按照"国家地区代码|手机号"的格式输入，如: "+86|xxxxxxxx"。手机号和邮箱参数至少传一项
+                     * @param _phone 按照"国家地区代码|手机号"的格式输入，如: "+86|xxxxxxxx"。手机号和邮箱参数至少传一项
                      * 
                      */
                     void SetPhone(const std::string& _phone);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool PhoneHasBeenSet() const;
 
                     /**
-                     * 获取电子邮件
-                     * @return Email 电子邮件
+                     * 获取电子邮件。手机号和邮箱参数至少传一项
+                     * @return Email 电子邮件。手机号和邮箱参数至少传一项
                      * 
                      */
                     std::string GetEmail() const;
 
                     /**
-                     * 设置电子邮件
-                     * @param _email 电子邮件
+                     * 设置电子邮件。手机号和邮箱参数至少传一项
+                     * @param _email 电子邮件。手机号和邮箱参数至少传一项
                      * 
                      */
                     void SetEmail(const std::string& _email);
@@ -275,13 +275,13 @@ namespace TencentCloud
                     bool m_realNameHasBeenSet;
 
                     /**
-                     * 大陆手机号直接填写，如果是其他国家、地区号码， 按照"国家地区代码|手机号"的格式输入。如: "+852|xxxxxxxx"
+                     * 按照"国家地区代码|手机号"的格式输入，如: "+86|xxxxxxxx"。手机号和邮箱参数至少传一项
                      */
                     std::string m_phone;
                     bool m_phoneHasBeenSet;
 
                     /**
-                     * 电子邮件
+                     * 电子邮件。手机号和邮箱参数至少传一项
                      */
                     std::string m_email;
                     bool m_emailHasBeenSet;

@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取启用emptydir数据卷
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableEmptyDirVolume 启用emptydir数据卷
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnableEmptyDirVolume() const;
 
                     /**
                      * 设置启用emptydir数据卷
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enableEmptyDirVolume 启用emptydir数据卷
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnableEmptyDirVolume(const bool& _enableEmptyDirVolume);
@@ -69,14 +73,18 @@ namespace TencentCloud
 
                     /**
                      * 获取"","Memory","HugePages"
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Medium "","Memory","HugePages"
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMedium() const;
 
                     /**
                      * 设置"","Memory","HugePages"
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _medium "","Memory","HugePages"
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMedium(const std::string& _medium);
@@ -90,14 +98,18 @@ namespace TencentCloud
 
                     /**
                      * 获取emptydir数据卷大小
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return SizeLimit emptydir数据卷大小
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSizeLimit() const;
 
                     /**
                      * 设置emptydir数据卷大小
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sizeLimit emptydir数据卷大小
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSizeLimit(const std::string& _sizeLimit);
@@ -113,18 +125,21 @@ namespace TencentCloud
 
                     /**
                      * 启用emptydir数据卷
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enableEmptyDirVolume;
                     bool m_enableEmptyDirVolumeHasBeenSet;
 
                     /**
                      * "","Memory","HugePages"
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_medium;
                     bool m_mediumHasBeenSet;
 
                     /**
                      * emptydir数据卷大小
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sizeLimit;
                     bool m_sizeLimitHasBeenSet;

@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取条件阈值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Threshold 条件阈值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetThreshold() const;
 
                     /**
                      * 设置条件阈值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _threshold 条件阈值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetThreshold(const double& _threshold);
@@ -102,7 +98,6 @@ namespace TencentCloud
 
                     /**
                      * 条件阈值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_threshold;
                     bool m_thresholdHasBeenSet;

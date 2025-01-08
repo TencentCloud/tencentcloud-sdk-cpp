@@ -123,6 +123,8 @@
 #include <tencentcloud/postgres/v20170312/model/DescribeEncryptionKeysResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeLogBackupsRequest.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeLogBackupsResponse.h>
+#include <tencentcloud/postgres/v20170312/model/DescribeMaintainTimeWindowRequest.h>
+#include <tencentcloud/postgres/v20170312/model/DescribeMaintainTimeWindowResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeOrdersRequest.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeOrdersResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeParameterTemplateAttributesRequest.h>
@@ -191,6 +193,8 @@
 #include <tencentcloud/postgres/v20170312/model/ModifyDBInstancesProjectResponse.h>
 #include <tencentcloud/postgres/v20170312/model/ModifyDatabaseOwnerRequest.h>
 #include <tencentcloud/postgres/v20170312/model/ModifyDatabaseOwnerResponse.h>
+#include <tencentcloud/postgres/v20170312/model/ModifyMaintainTimeWindowRequest.h>
+#include <tencentcloud/postgres/v20170312/model/ModifyMaintainTimeWindowResponse.h>
 #include <tencentcloud/postgres/v20170312/model/ModifyParameterTemplateRequest.h>
 #include <tencentcloud/postgres/v20170312/model/ModifyParameterTemplateResponse.h>
 #include <tencentcloud/postgres/v20170312/model/ModifyReadOnlyGroupConfigRequest.h>
@@ -389,6 +393,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLogBackupsResponse> DescribeLogBackupsOutcome;
                 typedef std::future<DescribeLogBackupsOutcome> DescribeLogBackupsOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DescribeLogBackupsRequest&, DescribeLogBackupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogBackupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMaintainTimeWindowResponse> DescribeMaintainTimeWindowOutcome;
+                typedef std::future<DescribeMaintainTimeWindowOutcome> DescribeMaintainTimeWindowOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::DescribeMaintainTimeWindowRequest&, DescribeMaintainTimeWindowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMaintainTimeWindowAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeOrdersResponse> DescribeOrdersOutcome;
                 typedef std::future<DescribeOrdersOutcome> DescribeOrdersOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DescribeOrdersRequest&, DescribeOrdersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOrdersAsyncHandler;
@@ -491,6 +498,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDatabaseOwnerResponse> ModifyDatabaseOwnerOutcome;
                 typedef std::future<ModifyDatabaseOwnerOutcome> ModifyDatabaseOwnerOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::ModifyDatabaseOwnerRequest&, ModifyDatabaseOwnerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDatabaseOwnerAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyMaintainTimeWindowResponse> ModifyMaintainTimeWindowOutcome;
+                typedef std::future<ModifyMaintainTimeWindowOutcome> ModifyMaintainTimeWindowOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::ModifyMaintainTimeWindowRequest&, ModifyMaintainTimeWindowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMaintainTimeWindowAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyParameterTemplateResponse> ModifyParameterTemplateOutcome;
                 typedef std::future<ModifyParameterTemplateOutcome> ModifyParameterTemplateOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::ModifyParameterTemplateRequest&, ModifyParameterTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyParameterTemplateAsyncHandler;
@@ -1000,6 +1010,15 @@ namespace TencentCloud
                 DescribeLogBackupsOutcomeCallable DescribeLogBackupsCallable(const Model::DescribeLogBackupsRequest& request);
 
                 /**
+                 *本接口 (DescribeMaintainTimeWindow) 用于查询实例的维护时间窗口
+                 * @param req DescribeMaintainTimeWindowRequest
+                 * @return DescribeMaintainTimeWindowOutcome
+                 */
+                DescribeMaintainTimeWindowOutcome DescribeMaintainTimeWindow(const Model::DescribeMaintainTimeWindowRequest &request);
+                void DescribeMaintainTimeWindowAsync(const Model::DescribeMaintainTimeWindowRequest& request, const DescribeMaintainTimeWindowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMaintainTimeWindowOutcomeCallable DescribeMaintainTimeWindowCallable(const Model::DescribeMaintainTimeWindowRequest& request);
+
+                /**
                  *本接口（DescribeOrders）用于查询订单信息。
                  * @param req DescribeOrdersRequest
                  * @return DescribeOrdersOutcome
@@ -1306,6 +1325,15 @@ namespace TencentCloud
                 ModifyDatabaseOwnerOutcome ModifyDatabaseOwner(const Model::ModifyDatabaseOwnerRequest &request);
                 void ModifyDatabaseOwnerAsync(const Model::ModifyDatabaseOwnerRequest& request, const ModifyDatabaseOwnerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDatabaseOwnerOutcomeCallable ModifyDatabaseOwnerCallable(const Model::ModifyDatabaseOwnerRequest& request);
+
+                /**
+                 *本接口 (ModifyMaintainTimeWindow) 用于实例维护时间窗口的修改。
+                 * @param req ModifyMaintainTimeWindowRequest
+                 * @return ModifyMaintainTimeWindowOutcome
+                 */
+                ModifyMaintainTimeWindowOutcome ModifyMaintainTimeWindow(const Model::ModifyMaintainTimeWindowRequest &request);
+                void ModifyMaintainTimeWindowAsync(const Model::ModifyMaintainTimeWindowRequest& request, const ModifyMaintainTimeWindowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyMaintainTimeWindowOutcomeCallable ModifyMaintainTimeWindowCallable(const Model::ModifyMaintainTimeWindowRequest& request);
 
                 /**
                  *本接口（ModifyParameterTemplate）主要用于修改参数模板名称，描述等配置，也可用于管理参数模板中的参数列表。

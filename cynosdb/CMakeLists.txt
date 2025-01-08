@@ -398,6 +398,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/ModifyClusterPasswordComplexityRequest.h
   include/tencentcloud/cynosdb/v20190107/model/UnbindClusterResourcePackagesRequest.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyInstanceParamResponse.h
+  include/tencentcloud/cynosdb/v20190107/model/TaskProgressInfo.h
   include/tencentcloud/cynosdb/v20190107/model/TemplateParamInfo.h
   include/tencentcloud/cynosdb/v20190107/model/CreateBackupResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeInstancesWithinSameClusterResponse.h
@@ -825,6 +826,7 @@ set(cynosdb_src
   src/v20190107/model/ModifyClusterPasswordComplexityRequest.cpp
   src/v20190107/model/UnbindClusterResourcePackagesRequest.cpp
   src/v20190107/model/ModifyInstanceParamResponse.cpp
+  src/v20190107/model/TaskProgressInfo.cpp
   src/v20190107/model/TemplateParamInfo.cpp
   src/v20190107/model/CreateBackupResponse.cpp
   src/v20190107/model/DescribeInstancesWithinSameClusterResponse.cpp

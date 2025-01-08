@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 实例枚举类型参数描述
+                * 实例枚举类型参数描述，keewidb暂无枚举值
                 */
                 class InstanceEnumParam : public AbstractModel
                 {

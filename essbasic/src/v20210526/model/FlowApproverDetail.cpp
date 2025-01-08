@@ -33,7 +33,8 @@ FlowApproverDetail::FlowApproverDetail() :
     m_approveTimeHasBeenSet(false),
     m_approveTypeHasBeenSet(false),
     m_approverRoleNameHasBeenSet(false),
-    m_signIdHasBeenSet(false)
+    m_signIdHasBeenSet(false),
+    m_recipientIdHasBeenSet(false)
 {
 }
 
@@ -172,6 +173,16 @@ CoreInternalOutcome FlowApproverDetail::Deserialize(const rapidjson::Value &valu
         m_signIdHasBeenSet = true;
     }
 
+    if (value.HasMember("RecipientId") && !value["RecipientId"].IsNull())
+    {
+        if (!value["RecipientId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowApproverDetail.RecipientId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_recipientId = string(value["RecipientId"].GetString());
+        m_recipientIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -281,6 +292,14 @@ void FlowApproverDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "SignId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_signId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recipientIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecipientId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_recipientId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -492,5 +511,21 @@ void FlowApproverDetail::SetSignId(const string& _signId)
 bool FlowApproverDetail::SignIdHasBeenSet() const
 {
     return m_signIdHasBeenSet;
+}
+
+string FlowApproverDetail::GetRecipientId() const
+{
+    return m_recipientId;
+}
+
+void FlowApproverDetail::SetRecipientId(const string& _recipientId)
+{
+    m_recipientId = _recipientId;
+    m_recipientIdHasBeenSet = true;
+}
+
+bool FlowApproverDetail::RecipientIdHasBeenSet() const
+{
+    return m_recipientIdHasBeenSet;
 }
 

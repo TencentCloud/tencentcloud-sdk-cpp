@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取es的id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id es的id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置es的id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id es的id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取secret名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecretName secret名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSecretName() const;
 
                     /**
                      * 设置secret名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _secretName secret名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSecretName(const std::string& _secretName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取ip地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ip ip地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置ip地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ip ip地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIp(const std::string& _ip);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Port 端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _port 端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPort(const int64_t& _port);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取索引
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Index 索引
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIndex() const;
 
                     /**
                      * 设置索引
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _index 索引
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIndex(const std::string& _index);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Account 用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAccount() const;
 
                     /**
                      * 设置用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _account 用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAccount(const std::string& _account);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Password 密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPassword() const;
 
                     /**
                      * 设置密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _password 密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPassword(const std::string& _password);
@@ -225,49 +197,42 @@ namespace TencentCloud
 
                     /**
                      * es的id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * secret名字
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_secretName;
                     bool m_secretNameHasBeenSet;
 
                     /**
                      * ip地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;
 
                     /**
                      * 端口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
                      * 索引
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_index;
                     bool m_indexHasBeenSet;
 
                     /**
                      * 用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_account;
                     bool m_accountHasBeenSet;
 
                     /**
                      * 密码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;

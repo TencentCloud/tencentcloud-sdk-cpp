@@ -26,7 +26,9 @@ CreateTargetGroupRequest::CreateTargetGroupRequest() :
     m_targetGroupNameHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_portHasBeenSet(false),
-    m_targetGroupInstancesHasBeenSet(false)
+    m_targetGroupInstancesHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_weightHasBeenSet(false)
 {
 }
 
@@ -74,6 +76,29 @@ string CreateTargetGroupRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_weightHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Weight";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_weight, allocator);
     }
 
 
@@ -146,6 +171,38 @@ void CreateTargetGroupRequest::SetTargetGroupInstances(const vector<TargetGroupI
 bool CreateTargetGroupRequest::TargetGroupInstancesHasBeenSet() const
 {
     return m_targetGroupInstancesHasBeenSet;
+}
+
+vector<TagInfo> CreateTargetGroupRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateTargetGroupRequest::SetTags(const vector<TagInfo>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateTargetGroupRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
+}
+
+uint64_t CreateTargetGroupRequest::GetWeight() const
+{
+    return m_weight;
+}
+
+void CreateTargetGroupRequest::SetWeight(const uint64_t& _weight)
+{
+    m_weight = _weight;
+    m_weightHasBeenSet = true;
+}
+
+bool CreateTargetGroupRequest::WeightHasBeenSet() const
+{
+    return m_weightHasBeenSet;
 }
 
 

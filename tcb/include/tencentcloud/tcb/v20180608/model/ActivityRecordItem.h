@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uin 用户uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
                      * 设置用户uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uin 用户uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取活动id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActivityId 活动id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetActivityId() const;
 
                     /**
                      * 设置活动id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _activityId 活动id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetActivityId(const int64_t& _activityId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自定义状态码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 自定义状态码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置自定义状态码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 自定义状态码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自定义子状态码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubStatus 自定义子状态码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubStatus() const;
 
                     /**
                      * 设置自定义子状态码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subStatus 自定义子状态码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubStatus(const std::string& _subStatus);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取整型子状态码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubStatusInt 整型子状态码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSubStatusInt() const;
 
                     /**
                      * 设置整型子状态码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subStatusInt 整型子状态码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubStatusInt(const int64_t& _subStatusInt);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否软删除
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsDeleted 是否软删除
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsDeleted() const;
 
                     /**
                      * 设置是否软删除
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isDeleted 是否软删除
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsDeleted(const bool& _isDeleted);
@@ -200,42 +176,36 @@ namespace TencentCloud
 
                     /**
                      * 用户uin
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
                      * 活动id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_activityId;
                     bool m_activityIdHasBeenSet;
 
                     /**
                      * 自定义状态码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 自定义子状态码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subStatus;
                     bool m_subStatusHasBeenSet;
 
                     /**
                      * 整型子状态码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_subStatusInt;
                     bool m_subStatusIntHasBeenSet;
 
                     /**
                      * 是否软删除
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isDeleted;
                     bool m_isDeletedHasBeenSet;

@@ -63,7 +63,8 @@ NotebookDetail::NotebookDetail() :
     m_subUinHasBeenSet(false),
     m_resourceGroupInstanceIdHasBeenSet(false),
     m_subUinNameHasBeenSet(false),
-    m_jobCreateTimeHasBeenSet(false)
+    m_jobCreateTimeHasBeenSet(false),
+    m_appIdHasBeenSet(false)
 {
 }
 
@@ -570,6 +571,16 @@ CoreInternalOutcome NotebookDetail::Deserialize(const rapidjson::Value &value)
         m_jobCreateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("AppId") && !value["AppId"].IsNull())
+    {
+        if (!value["AppId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NotebookDetail.AppId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_appId = string(value["AppId"].GetString());
+        m_appIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -949,6 +960,14 @@ void NotebookDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "JobCreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_jobCreateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_appId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1640,5 +1659,21 @@ void NotebookDetail::SetJobCreateTime(const string& _jobCreateTime)
 bool NotebookDetail::JobCreateTimeHasBeenSet() const
 {
     return m_jobCreateTimeHasBeenSet;
+}
+
+string NotebookDetail::GetAppId() const
+{
+    return m_appId;
+}
+
+void NotebookDetail::SetAppId(const string& _appId)
+{
+    m_appId = _appId;
+    m_appIdHasBeenSet = true;
+}
+
+bool NotebookDetail::AppIdHasBeenSet() const
+{
+    return m_appIdHasBeenSet;
 }
 

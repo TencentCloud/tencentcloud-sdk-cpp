@@ -65,6 +65,27 @@ namespace TencentCloud
                     bool JobIdHasBeenSet() const;
 
                     /**
+                     * 获取同步任务id列表，如sync-werwfs23
+                     * @return JobIds 同步任务id列表，如sync-werwfs23
+                     * 
+                     */
+                    std::vector<std::string> GetJobIds() const;
+
+                    /**
+                     * 设置同步任务id列表，如sync-werwfs23
+                     * @param _jobIds 同步任务id列表，如sync-werwfs23
+                     * 
+                     */
+                    void SetJobIds(const std::vector<std::string>& _jobIds);
+
+                    /**
+                     * 判断参数 JobIds 是否已赋值
+                     * @return JobIds 是否已赋值
+                     * 
+                     */
+                    bool JobIdsHasBeenSet() const;
+
+                    /**
                      * 获取同步任务名
                      * @return JobName 同步任务名
                      * 
@@ -274,6 +295,48 @@ namespace TencentCloud
                      */
                     bool TagFiltersHasBeenSet() const;
 
+                    /**
+                     * 获取源端数据库连接信息，可以输入实例ID或者IP等
+                     * @return SrcInfoPattern 源端数据库连接信息，可以输入实例ID或者IP等
+                     * 
+                     */
+                    std::string GetSrcInfoPattern() const;
+
+                    /**
+                     * 设置源端数据库连接信息，可以输入实例ID或者IP等
+                     * @param _srcInfoPattern 源端数据库连接信息，可以输入实例ID或者IP等
+                     * 
+                     */
+                    void SetSrcInfoPattern(const std::string& _srcInfoPattern);
+
+                    /**
+                     * 判断参数 SrcInfoPattern 是否已赋值
+                     * @return SrcInfoPattern 是否已赋值
+                     * 
+                     */
+                    bool SrcInfoPatternHasBeenSet() const;
+
+                    /**
+                     * 获取目标端数据库连接信息，可以输入实例ID或者IP等
+                     * @return DstInfoPattern 目标端数据库连接信息，可以输入实例ID或者IP等
+                     * 
+                     */
+                    std::string GetDstInfoPattern() const;
+
+                    /**
+                     * 设置目标端数据库连接信息，可以输入实例ID或者IP等
+                     * @param _dstInfoPattern 目标端数据库连接信息，可以输入实例ID或者IP等
+                     * 
+                     */
+                    void SetDstInfoPattern(const std::string& _dstInfoPattern);
+
+                    /**
+                     * 判断参数 DstInfoPattern 是否已赋值
+                     * @return DstInfoPattern 是否已赋值
+                     * 
+                     */
+                    bool DstInfoPatternHasBeenSet() const;
+
                 private:
 
                     /**
@@ -281,6 +344,12 @@ namespace TencentCloud
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;
+
+                    /**
+                     * 同步任务id列表，如sync-werwfs23
+                     */
+                    std::vector<std::string> m_jobIds;
+                    bool m_jobIdsHasBeenSet;
 
                     /**
                      * 同步任务名
@@ -341,6 +410,18 @@ namespace TencentCloud
                      */
                     std::vector<TagFilter> m_tagFilters;
                     bool m_tagFiltersHasBeenSet;
+
+                    /**
+                     * 源端数据库连接信息，可以输入实例ID或者IP等
+                     */
+                    std::string m_srcInfoPattern;
+                    bool m_srcInfoPatternHasBeenSet;
+
+                    /**
+                     * 目标端数据库连接信息，可以输入实例ID或者IP等
+                     */
+                    std::string m_dstInfoPattern;
+                    bool m_dstInfoPatternHasBeenSet;
 
                 };
             }

@@ -291,18 +291,14 @@ namespace TencentCloud
 
                     /**
                      * 获取运营商或者服务商为物理专线提供的电路编码。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CircuitCode 运营商或者服务商为物理专线提供的电路编码。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCircuitCode() const;
 
                     /**
                      * 设置运营商或者服务商为物理专线提供的电路编码。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _circuitCode 运营商或者服务商为物理专线提供的电路编码。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCircuitCode(const std::string& _circuitCode);
@@ -337,18 +333,14 @@ namespace TencentCloud
 
                     /**
                      * 获取物理专线调试VLAN。默认开启VLAN，自动分配VLAN。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vlan 物理专线调试VLAN。默认开启VLAN，自动分配VLAN。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetVlan() const;
 
                     /**
                      * 设置物理专线调试VLAN。默认开启VLAN，自动分配VLAN。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vlan 物理专线调试VLAN。默认开启VLAN，自动分配VLAN。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVlan(const int64_t& _vlan);
@@ -362,18 +354,14 @@ namespace TencentCloud
 
                     /**
                      * 获取物理专线调试腾讯侧互联IP。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TencentAddress 物理专线调试腾讯侧互联IP。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTencentAddress() const;
 
                     /**
                      * 设置物理专线调试腾讯侧互联IP。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tencentAddress 物理专线调试腾讯侧互联IP。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTencentAddress(const std::string& _tencentAddress);
@@ -387,18 +375,14 @@ namespace TencentCloud
 
                     /**
                      * 获取物理专线调试用户侧互联IP。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CustomerAddress 物理专线调试用户侧互联IP。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCustomerAddress() const;
 
                     /**
                      * 设置物理专线调试用户侧互联IP。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _customerAddress 物理专线调试用户侧互联IP。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCustomerAddress(const std::string& _customerAddress);
@@ -412,18 +396,14 @@ namespace TencentCloud
 
                     /**
                      * 获取物理专线申请者姓名。默认从账户体系获取。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CustomerName 物理专线申请者姓名。默认从账户体系获取。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCustomerName() const;
 
                     /**
                      * 设置物理专线申请者姓名。默认从账户体系获取。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _customerName 物理专线申请者姓名。默认从账户体系获取。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCustomerName(const std::string& _customerName);
@@ -437,18 +417,14 @@ namespace TencentCloud
 
                     /**
                      * 获取物理专线申请者联系邮箱。默认从账户体系获取。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CustomerContactMail 物理专线申请者联系邮箱。默认从账户体系获取。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCustomerContactMail() const;
 
                     /**
                      * 设置物理专线申请者联系邮箱。默认从账户体系获取。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _customerContactMail 物理专线申请者联系邮箱。默认从账户体系获取。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCustomerContactMail(const std::string& _customerContactMail);
@@ -462,18 +438,14 @@ namespace TencentCloud
 
                     /**
                      * 获取物理专线申请者联系号码。默认从账户体系获取。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CustomerContactNumber 物理专线申请者联系号码。默认从账户体系获取。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCustomerContactNumber() const;
 
                     /**
                      * 设置物理专线申请者联系号码。默认从账户体系获取。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _customerContactNumber 物理专线申请者联系号码。默认从账户体系获取。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCustomerContactNumber(const std::string& _customerContactNumber);
@@ -487,18 +459,14 @@ namespace TencentCloud
 
                     /**
                      * 获取物理专线的过期时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpiredTime 物理专线的过期时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExpiredTime() const;
 
                     /**
                      * 设置物理专线的过期时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _expiredTime 物理专线的过期时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExpiredTime(const std::string& _expiredTime);
@@ -512,18 +480,14 @@ namespace TencentCloud
 
                     /**
                      * 获取物理专线计费类型。 NON_RECURRING_CHARGE：一次性接入费用；PREPAID_BY_YEAR：按年预付费。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChargeType 物理专线计费类型。 NON_RECURRING_CHARGE：一次性接入费用；PREPAID_BY_YEAR：按年预付费。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetChargeType() const;
 
                     /**
                      * 设置物理专线计费类型。 NON_RECURRING_CHARGE：一次性接入费用；PREPAID_BY_YEAR：按年预付费。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _chargeType 物理专线计费类型。 NON_RECURRING_CHARGE：一次性接入费用；PREPAID_BY_YEAR：按年预付费。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChargeType(const std::string& _chargeType);
@@ -537,18 +501,14 @@ namespace TencentCloud
 
                     /**
                      * 获取报障联系人。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FaultReportContactPerson 报障联系人。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFaultReportContactPerson() const;
 
                     /**
                      * 设置报障联系人。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _faultReportContactPerson 报障联系人。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFaultReportContactPerson(const std::string& _faultReportContactPerson);
@@ -562,18 +522,14 @@ namespace TencentCloud
 
                     /**
                      * 获取报障联系电话。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FaultReportContactNumber 报障联系电话。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFaultReportContactNumber() const;
 
                     /**
                      * 设置报障联系电话。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _faultReportContactNumber 报障联系电话。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFaultReportContactNumber(const std::string& _faultReportContactNumber);
@@ -587,18 +543,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标签键值对
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagSet 标签键值对
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTagSet() const;
 
                     /**
                      * 设置标签键值对
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tagSet 标签键值对
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTagSet(const std::vector<Tag>& _tagSet);
@@ -633,18 +585,14 @@ namespace TencentCloud
 
                     /**
                      * 获取IDC所在城市
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IdcCity IDC所在城市
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIdcCity() const;
 
                     /**
                      * 设置IDC所在城市
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _idcCity IDC所在城市
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIdcCity(const std::string& _idcCity);
@@ -658,18 +606,14 @@ namespace TencentCloud
 
                     /**
                      * 获取计费状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChargeState 计费状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetChargeState() const;
 
                     /**
                      * 设置计费状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _chargeState 计费状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChargeState(const std::string& _chargeState);
@@ -683,18 +627,14 @@ namespace TencentCloud
 
                     /**
                      * 获取物理专线开通时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 物理专线开通时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置物理专线开通时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _startTime 物理专线开通时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -708,18 +648,14 @@ namespace TencentCloud
 
                     /**
                      * 获取物理专线是否已签署用户协议
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SignLaw 物理专线是否已签署用户协议
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetSignLaw() const;
 
                     /**
                      * 设置物理专线是否已签署用户协议
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _signLaw 物理专线是否已签署用户协议
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSignLaw(const bool& _signLaw);
@@ -733,18 +669,14 @@ namespace TencentCloud
 
                     /**
                      * 获取物理专线是否为LocalZone
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LocalZone 物理专线是否为LocalZone
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetLocalZone() const;
 
                     /**
                      * 设置物理专线是否为LocalZone
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _localZone 物理专线是否为LocalZone
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLocalZone(const bool& _localZone);
@@ -758,18 +690,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该物理专线下vlan 0的专用通道数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VlanZeroDirectConnectTunnelCount 该物理专线下vlan 0的专用通道数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetVlanZeroDirectConnectTunnelCount() const;
 
                     /**
                      * 设置该物理专线下vlan 0的专用通道数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vlanZeroDirectConnectTunnelCount 该物理专线下vlan 0的专用通道数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVlanZeroDirectConnectTunnelCount(const uint64_t& _vlanZeroDirectConnectTunnelCount);
@@ -783,18 +711,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该物理专线下非vlan 0的专用通道数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OtherVlanDirectConnectTunnelCount 该物理专线下非vlan 0的专用通道数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetOtherVlanDirectConnectTunnelCount() const;
 
                     /**
                      * 设置该物理专线下非vlan 0的专用通道数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _otherVlanDirectConnectTunnelCount 该物理专线下非vlan 0的专用通道数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOtherVlanDirectConnectTunnelCount(const uint64_t& _otherVlanDirectConnectTunnelCount);
@@ -808,18 +732,14 @@ namespace TencentCloud
 
                     /**
                      * 获取物理专线最小带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MinBandwidth 物理专线最小带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMinBandwidth() const;
 
                     /**
                      * 设置物理专线最小带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _minBandwidth 物理专线最小带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMinBandwidth(const uint64_t& _minBandwidth);
@@ -833,18 +753,14 @@ namespace TencentCloud
 
                     /**
                      * 获取建设模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Construct 建设模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetConstruct() const;
 
                     /**
                      * 设置建设模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _construct 建设模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConstruct(const uint64_t& _construct);
@@ -858,18 +774,14 @@ namespace TencentCloud
 
                     /**
                      * 获取物理专线的接入点名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccessPointName 物理专线的接入点名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAccessPointName() const;
 
                     /**
                      * 设置物理专线的接入点名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _accessPointName 物理专线的接入点名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAccessPointName(const std::string& _accessPointName);
@@ -953,7 +865,6 @@ namespace TencentCloud
 
                     /**
                      * 运营商或者服务商为物理专线提供的电路编码。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_circuitCode;
                     bool m_circuitCodeHasBeenSet;
@@ -966,77 +877,66 @@ namespace TencentCloud
 
                     /**
                      * 物理专线调试VLAN。默认开启VLAN，自动分配VLAN。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_vlan;
                     bool m_vlanHasBeenSet;
 
                     /**
                      * 物理专线调试腾讯侧互联IP。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tencentAddress;
                     bool m_tencentAddressHasBeenSet;
 
                     /**
                      * 物理专线调试用户侧互联IP。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_customerAddress;
                     bool m_customerAddressHasBeenSet;
 
                     /**
                      * 物理专线申请者姓名。默认从账户体系获取。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_customerName;
                     bool m_customerNameHasBeenSet;
 
                     /**
                      * 物理专线申请者联系邮箱。默认从账户体系获取。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_customerContactMail;
                     bool m_customerContactMailHasBeenSet;
 
                     /**
                      * 物理专线申请者联系号码。默认从账户体系获取。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_customerContactNumber;
                     bool m_customerContactNumberHasBeenSet;
 
                     /**
                      * 物理专线的过期时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_expiredTime;
                     bool m_expiredTimeHasBeenSet;
 
                     /**
                      * 物理专线计费类型。 NON_RECURRING_CHARGE：一次性接入费用；PREPAID_BY_YEAR：按年预付费。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_chargeType;
                     bool m_chargeTypeHasBeenSet;
 
                     /**
                      * 报障联系人。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_faultReportContactPerson;
                     bool m_faultReportContactPersonHasBeenSet;
 
                     /**
                      * 报障联系电话。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_faultReportContactNumber;
                     bool m_faultReportContactNumberHasBeenSet;
 
                     /**
                      * 标签键值对
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tagSet;
                     bool m_tagSetHasBeenSet;
@@ -1049,70 +949,60 @@ namespace TencentCloud
 
                     /**
                      * IDC所在城市
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_idcCity;
                     bool m_idcCityHasBeenSet;
 
                     /**
                      * 计费状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_chargeState;
                     bool m_chargeStateHasBeenSet;
 
                     /**
                      * 物理专线开通时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
                      * 物理专线是否已签署用户协议
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_signLaw;
                     bool m_signLawHasBeenSet;
 
                     /**
                      * 物理专线是否为LocalZone
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_localZone;
                     bool m_localZoneHasBeenSet;
 
                     /**
                      * 该物理专线下vlan 0的专用通道数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_vlanZeroDirectConnectTunnelCount;
                     bool m_vlanZeroDirectConnectTunnelCountHasBeenSet;
 
                     /**
                      * 该物理专线下非vlan 0的专用通道数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_otherVlanDirectConnectTunnelCount;
                     bool m_otherVlanDirectConnectTunnelCountHasBeenSet;
 
                     /**
                      * 物理专线最小带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_minBandwidth;
                     bool m_minBandwidthHasBeenSet;
 
                     /**
                      * 建设模式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_construct;
                     bool m_constructHasBeenSet;
 
                     /**
                      * 物理专线的接入点名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_accessPointName;
                     bool m_accessPointNameHasBeenSet;

@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则统计周期，提供1min,3min,5min。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StatisticPeriod 规则统计周期，提供1min,3min,5min。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatisticPeriod() const;
 
                     /**
                      * 设置规则统计周期，提供1min,3min,5min。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _statisticPeriod 规则统计周期，提供1min,3min,5min。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatisticPeriod(const int64_t& _statisticPeriod);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取触发次数，当连续触发超过TriggerThreshold次后才开始扩缩容。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TriggerThreshold 触发次数，当连续触发超过TriggerThreshold次后才开始扩缩容。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTriggerThreshold() const;
 
                     /**
                      * 设置触发次数，当连续触发超过TriggerThreshold次后才开始扩缩容。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _triggerThreshold 触发次数，当连续触发超过TriggerThreshold次后才开始扩缩容。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTriggerThreshold(const int64_t& _triggerThreshold);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取扩缩容负载指标。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LoadMetrics 扩缩容负载指标。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLoadMetrics() const;
 
                     /**
                      * 设置扩缩容负载指标。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _loadMetrics 扩缩容负载指标。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLoadMetrics(const std::string& _loadMetrics);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则元数据记录ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MetricId 规则元数据记录ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMetricId() const;
 
                     /**
                      * 设置规则元数据记录ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _metricId 规则元数据记录ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMetricId(const int64_t& _metricId);
@@ -176,28 +160,24 @@ namespace TencentCloud
 
                     /**
                      * 规则统计周期，提供1min,3min,5min。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_statisticPeriod;
                     bool m_statisticPeriodHasBeenSet;
 
                     /**
                      * 触发次数，当连续触发超过TriggerThreshold次后才开始扩缩容。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_triggerThreshold;
                     bool m_triggerThresholdHasBeenSet;
 
                     /**
                      * 扩缩容负载指标。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_loadMetrics;
                     bool m_loadMetricsHasBeenSet;
 
                     /**
                      * 规则元数据记录ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_metricId;
                     bool m_metricIdHasBeenSet;

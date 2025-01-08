@@ -136,18 +136,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务名称，如HIVE
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Service 服务名称，如HIVE
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetService() const;
 
                     /**
                      * 设置服务名称，如HIVE
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _service 服务名称，如HIVE
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetService(const std::string& _service);
@@ -287,7 +283,6 @@ namespace TencentCloud
 
                     /**
                      * 服务名称，如HIVE
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_service;
                     bool m_serviceHasBeenSet;

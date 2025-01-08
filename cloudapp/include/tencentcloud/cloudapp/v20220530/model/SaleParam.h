@@ -68,27 +68,6 @@ namespace TencentCloud
                     bool ParamKeyHasBeenSet() const;
 
                     /**
-                     * 获取售卖参数值
-                     * @return ParamValue 售卖参数值
-                     * 
-                     */
-                    std::string GetParamValue() const;
-
-                    /**
-                     * 设置售卖参数值
-                     * @param _paramValue 售卖参数值
-                     * 
-                     */
-                    void SetParamValue(const std::string& _paramValue);
-
-                    /**
-                     * 判断参数 ParamValue 是否已赋值
-                     * @return ParamValue 是否已赋值
-                     * 
-                     */
-                    bool ParamValueHasBeenSet() const;
-
-                    /**
                      * 获取售卖参数的展示名称
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParamKeyName 售卖参数的展示名称
@@ -112,6 +91,31 @@ namespace TencentCloud
                      * 
                      */
                     bool ParamKeyNameHasBeenSet() const;
+
+                    /**
+                     * 获取售卖参数值，当ParamType=Quant时，该值有可能为Null
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ParamValue 售卖参数值，当ParamType=Quant时，该值有可能为Null
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetParamValue() const;
+
+                    /**
+                     * 设置售卖参数值，当ParamType=Quant时，该值有可能为Null
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _paramValue 售卖参数值，当ParamType=Quant时，该值有可能为Null
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetParamValue(const std::string& _paramValue);
+
+                    /**
+                     * 判断参数 ParamValue 是否已赋值
+                     * @return ParamValue 是否已赋值
+                     * 
+                     */
+                    bool ParamValueHasBeenSet() const;
 
                     /**
                      * 获取售卖参数值的展示名称
@@ -138,6 +142,31 @@ namespace TencentCloud
                      */
                     bool ParamValueNameHasBeenSet() const;
 
+                    /**
+                     * 获取售卖参数的类型，目前支持枚举类Enum/数量类Quant
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ParamType 售卖参数的类型，目前支持枚举类Enum/数量类Quant
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetParamType() const;
+
+                    /**
+                     * 设置售卖参数的类型，目前支持枚举类Enum/数量类Quant
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _paramType 售卖参数的类型，目前支持枚举类Enum/数量类Quant
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetParamType(const std::string& _paramType);
+
+                    /**
+                     * 判断参数 ParamType 是否已赋值
+                     * @return ParamType 是否已赋值
+                     * 
+                     */
+                    bool ParamTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -147,12 +176,6 @@ namespace TencentCloud
                     bool m_paramKeyHasBeenSet;
 
                     /**
-                     * 售卖参数值
-                     */
-                    std::string m_paramValue;
-                    bool m_paramValueHasBeenSet;
-
-                    /**
                      * 售卖参数的展示名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -160,11 +183,25 @@ namespace TencentCloud
                     bool m_paramKeyNameHasBeenSet;
 
                     /**
+                     * 售卖参数值，当ParamType=Quant时，该值有可能为Null
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_paramValue;
+                    bool m_paramValueHasBeenSet;
+
+                    /**
                      * 售卖参数值的展示名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_paramValueName;
                     bool m_paramValueNameHasBeenSet;
+
+                    /**
+                     * 售卖参数的类型，目前支持枚举类Enum/数量类Quant
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_paramType;
+                    bool m_paramTypeHasBeenSet;
 
                 };
             }

@@ -51,6 +51,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/CreateWxCloudBaseRunServerDBClusterResponse.h
   include/tencentcloud/tcb/v20180608/model/ReplaceActivityRecordResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeSpecialCostItemsRequest.h
+  include/tencentcloud/tcb/v20180608/model/TurnOnStandaloneGatewayRequest.h
   include/tencentcloud/tcb/v20180608/model/CreatePostpayPackageRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeWxCloudBaseRunSubNetsRequest.h
   include/tencentcloud/tcb/v20180608/model/ModifyEndUserRequest.h
@@ -214,7 +215,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/StorageInfo.h
   include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunVersionSnapshotRequest.h
   include/tencentcloud/tcb/v20180608/model/FreequotaInfo.h
-  include/tencentcloud/tcb/v20180608/model/TurnOnStandaloneGatewayRequest.h
+  include/tencentcloud/tcb/v20180608/model/CloudBaseRunVersionPod.h
   include/tencentcloud/tcb/v20180608/model/DescribeUserActivityInfoResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribePostpayFreeQuotasResponse.h
   include/tencentcloud/tcb/v20180608/model/ModifyGatewayVersionTrafficResponse.h
@@ -302,6 +303,7 @@ set(tcb_src
   src/v20180608/model/CreateWxCloudBaseRunServerDBClusterResponse.cpp
   src/v20180608/model/ReplaceActivityRecordResponse.cpp
   src/v20180608/model/DescribeSpecialCostItemsRequest.cpp
+  src/v20180608/model/TurnOnStandaloneGatewayRequest.cpp
   src/v20180608/model/CreatePostpayPackageRequest.cpp
   src/v20180608/model/DescribeWxCloudBaseRunSubNetsRequest.cpp
   src/v20180608/model/ModifyEndUserRequest.cpp
@@ -465,7 +467,7 @@ set(tcb_src
   src/v20180608/model/StorageInfo.cpp
   src/v20180608/model/DescribeCloudBaseRunVersionSnapshotRequest.cpp
   src/v20180608/model/FreequotaInfo.cpp
-  src/v20180608/model/TurnOnStandaloneGatewayRequest.cpp
+  src/v20180608/model/CloudBaseRunVersionPod.cpp
   src/v20180608/model/DescribeUserActivityInfoResponse.cpp
   src/v20180608/model/DescribePostpayFreeQuotasResponse.cpp
   src/v20180608/model/ModifyGatewayVersionTrafficResponse.cpp

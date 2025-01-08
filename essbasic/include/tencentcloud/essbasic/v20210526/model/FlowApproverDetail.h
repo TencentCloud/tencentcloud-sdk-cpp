@@ -49,21 +49,21 @@ namespace TencentCloud
                     /**
                      * 获取模板配置时候的签署人角色ID(用PDF文件发起也可以指定,如果不指定则自动生成此角色ID), 所有的填写控件和签署控件都归属不同的角色
                      * @return ReceiptId 模板配置时候的签署人角色ID(用PDF文件发起也可以指定,如果不指定则自动生成此角色ID), 所有的填写控件和签署控件都归属不同的角色
-                     * 
+                     * @deprecated
                      */
                     std::string GetReceiptId() const;
 
                     /**
                      * 设置模板配置时候的签署人角色ID(用PDF文件发起也可以指定,如果不指定则自动生成此角色ID), 所有的填写控件和签署控件都归属不同的角色
                      * @param _receiptId 模板配置时候的签署人角色ID(用PDF文件发起也可以指定,如果不指定则自动生成此角色ID), 所有的填写控件和签署控件都归属不同的角色
-                     * 
+                     * @deprecated
                      */
                     void SetReceiptId(const std::string& _receiptId);
 
                     /**
                      * 判断参数 ReceiptId 是否已赋值
                      * @return ReceiptId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ReceiptIdHasBeenSet() const;
 
@@ -407,6 +407,27 @@ namespace TencentCloud
                      */
                     bool SignIdHasBeenSet() const;
 
+                    /**
+                     * 获取模板配置时候的签署人角色ID(用PDF文件发起也可以指定,如果不指定则自动生成此角色ID), 所有的填写控件和签署控件都归属不同的角色
+                     * @return RecipientId 模板配置时候的签署人角色ID(用PDF文件发起也可以指定,如果不指定则自动生成此角色ID), 所有的填写控件和签署控件都归属不同的角色
+                     * 
+                     */
+                    std::string GetRecipientId() const;
+
+                    /**
+                     * 设置模板配置时候的签署人角色ID(用PDF文件发起也可以指定,如果不指定则自动生成此角色ID), 所有的填写控件和签署控件都归属不同的角色
+                     * @param _recipientId 模板配置时候的签署人角色ID(用PDF文件发起也可以指定,如果不指定则自动生成此角色ID), 所有的填写控件和签署控件都归属不同的角色
+                     * 
+                     */
+                    void SetRecipientId(const std::string& _recipientId);
+
+                    /**
+                     * 判断参数 RecipientId 是否已赋值
+                     * @return RecipientId 是否已赋值
+                     * 
+                     */
+                    bool RecipientIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -508,6 +529,12 @@ namespace TencentCloud
                      */
                     std::string m_signId;
                     bool m_signIdHasBeenSet;
+
+                    /**
+                     * 模板配置时候的签署人角色ID(用PDF文件发起也可以指定,如果不指定则自动生成此角色ID), 所有的填写控件和签署控件都归属不同的角色
+                     */
+                    std::string m_recipientId;
+                    bool m_recipientIdHasBeenSet;
 
                 };
             }

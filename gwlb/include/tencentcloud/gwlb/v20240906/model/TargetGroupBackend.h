@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool TargetGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取后端服务的类型，可取：CVM、ENI（即将支持）
-                     * @return Type 后端服务的类型，可取：CVM、ENI（即将支持）
+                     * 获取后端服务的类型，可取：CVM、ENI
+                     * @return Type 后端服务的类型，可取：CVM、ENI
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置后端服务的类型，可取：CVM、ENI（即将支持）
-                     * @param _type 后端服务的类型，可取：CVM、ENI（即将支持）
+                     * 设置后端服务的类型，可取：CVM、ENI
+                     * @param _type 后端服务的类型，可取：CVM、ENI
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -310,7 +310,7 @@ namespace TencentCloud
                     bool m_targetGroupIdHasBeenSet;
 
                     /**
-                     * 后端服务的类型，可取：CVM、ENI（即将支持）
+                     * 后端服务的类型，可取：CVM、ENI
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

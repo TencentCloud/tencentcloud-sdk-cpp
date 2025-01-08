@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取返回的数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScaleList 返回的数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ScaleInfomation> GetScaleList() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 返回的数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ScaleInfomation> m_scaleList;
                     bool m_scaleListHasBeenSet;

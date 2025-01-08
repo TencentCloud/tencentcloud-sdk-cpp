@@ -24,7 +24,9 @@ using namespace TencentCloud::Cloudapp::V20220530::Model;
 using namespace std;
 
 VerifyLicenseResponse::VerifyLicenseResponse() :
-    m_licenseHasBeenSet(false)
+    m_licenseHasBeenSet(false),
+    m_timestampHasBeenSet(false),
+    m_signatureHasBeenSet(false)
 {
 }
 
@@ -79,6 +81,26 @@ CoreInternalOutcome VerifyLicenseResponse::Deserialize(const string &payload)
         m_licenseHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Timestamp") && !rsp["Timestamp"].IsNull())
+    {
+        if (!rsp["Timestamp"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Timestamp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_timestamp = string(rsp["Timestamp"].GetString());
+        m_timestampHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Signature") && !rsp["Signature"].IsNull())
+    {
+        if (!rsp["Signature"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Signature` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_signature = string(rsp["Signature"].GetString());
+        m_signatureHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -96,6 +118,22 @@ string VerifyLicenseResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_license.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_timestampHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Timestamp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_timestamp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_signatureHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Signature";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_signature.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -118,6 +156,26 @@ License VerifyLicenseResponse::GetLicense() const
 bool VerifyLicenseResponse::LicenseHasBeenSet() const
 {
     return m_licenseHasBeenSet;
+}
+
+string VerifyLicenseResponse::GetTimestamp() const
+{
+    return m_timestamp;
+}
+
+bool VerifyLicenseResponse::TimestampHasBeenSet() const
+{
+    return m_timestampHasBeenSet;
+}
+
+string VerifyLicenseResponse::GetSignature() const
+{
+    return m_signature;
+}
+
+bool VerifyLicenseResponse::SignatureHasBeenSet() const
+{
+    return m_signatureHasBeenSet;
 }
 
 

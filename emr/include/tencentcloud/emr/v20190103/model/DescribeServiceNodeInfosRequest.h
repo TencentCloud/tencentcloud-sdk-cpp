@@ -335,15 +335,15 @@ namespace TencentCloud
                     bool DataNodeMaintenanceIdHasBeenSet() const;
 
                     /**
-                     * 获取支持搜索的字段
-                     * @return SearchFields 支持搜索的字段
+                     * 获取支持搜索的字段，目前支持 SearchType	：ipv4
+                     * @return SearchFields 支持搜索的字段，目前支持 SearchType	：ipv4
                      * 
                      */
                     std::vector<SearchItem> GetSearchFields() const;
 
                     /**
-                     * 设置支持搜索的字段
-                     * @param _searchFields 支持搜索的字段
+                     * 设置支持搜索的字段，目前支持 SearchType	：ipv4
+                     * @param _searchFields 支持搜索的字段，目前支持 SearchType	：ipv4
                      * 
                      */
                     void SetSearchFields(const std::vector<SearchItem>& _searchFields);
@@ -439,7 +439,7 @@ namespace TencentCloud
                     bool m_dataNodeMaintenanceIdHasBeenSet;
 
                     /**
-                     * 支持搜索的字段
+                     * 支持搜索的字段，目前支持 SearchType	：ipv4
                      */
                     std::vector<SearchItem> m_searchFields;
                     bool m_searchFieldsHasBeenSet;

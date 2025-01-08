@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户侧网段地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cidr 用户侧网段地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCidr() const;
 
                     /**
                      * 设置用户侧网段地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cidr 用户侧网段地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCidr(const std::string& _cidr);
@@ -75,7 +71,6 @@ namespace TencentCloud
 
                     /**
                      * 用户侧网段地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cidr;
                     bool m_cidrHasBeenSet;

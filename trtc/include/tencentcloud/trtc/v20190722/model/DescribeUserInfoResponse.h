@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取用户信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserList 用户信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<UserInformation> GetUserList() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 用户信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<UserInformation> m_userList;
                     bool m_userListHasBeenSet;

@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool PageHasBeenSet() const;
 
                     /**
-                     * 获取每页个数。keyword为空时有效。一次性最多200条。
-                     * @return Limit 每页个数。keyword为空时有效。一次性最多200条。
+                     * 获取每页个数。keyword为空时有效。一次性最多100条。
+                     * @return Limit 每页个数。keyword为空时有效。一次性最多100条。
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置每页个数。keyword为空时有效。一次性最多200条。
-                     * @param _limit 每页个数。keyword为空时有效。一次性最多200条。
+                     * 设置每页个数。keyword为空时有效。一次性最多100条。
+                     * @param _limit 每页个数。keyword为空时有效。一次性最多100条。
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -220,7 +220,7 @@ VisibleOff: 页面不可见
                     bool m_pageHasBeenSet;
 
                     /**
-                     * 每页个数。keyword为空时有效。一次性最多200条。
+                     * 每页个数。keyword为空时有效。一次性最多100条。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

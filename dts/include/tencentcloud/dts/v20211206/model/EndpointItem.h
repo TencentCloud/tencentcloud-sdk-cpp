@@ -423,18 +423,30 @@ namespace TencentCloud
                     bool CcnOwnerUinHasBeenSet() const;
 
                     /**
-                     * 获取为业务添加的额外信息。参数名作key，参数值作value。 tdpg必填参数：PgDatabase-订阅的库名。
+                     * 获取为业务添加的额外信息。参数名作key，参数值作value。 
+tdpg必填参数：PgDatabase-订阅的库名；
+mongo选填参数：InstanceType-实例类型：replicaset-副本集，cluster-分片集，主要用于控制台跳转到mongo实例页面，如不填不影响任务运行；
+全业务选填参数：EngineVersion-内核版本。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExtraAttr 为业务添加的额外信息。参数名作key，参数值作value。 tdpg必填参数：PgDatabase-订阅的库名。
+                     * @return ExtraAttr 为业务添加的额外信息。参数名作key，参数值作value。 
+tdpg必填参数：PgDatabase-订阅的库名；
+mongo选填参数：InstanceType-实例类型：replicaset-副本集，cluster-分片集，主要用于控制台跳转到mongo实例页面，如不填不影响任务运行；
+全业务选填参数：EngineVersion-内核版本。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<KeyValuePairOption> GetExtraAttr() const;
 
                     /**
-                     * 设置为业务添加的额外信息。参数名作key，参数值作value。 tdpg必填参数：PgDatabase-订阅的库名。
+                     * 设置为业务添加的额外信息。参数名作key，参数值作value。 
+tdpg必填参数：PgDatabase-订阅的库名；
+mongo选填参数：InstanceType-实例类型：replicaset-副本集，cluster-分片集，主要用于控制台跳转到mongo实例页面，如不填不影响任务运行；
+全业务选填参数：EngineVersion-内核版本。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _extraAttr 为业务添加的额外信息。参数名作key，参数值作value。 tdpg必填参数：PgDatabase-订阅的库名。
+                     * @param _extraAttr 为业务添加的额外信息。参数名作key，参数值作value。 
+tdpg必填参数：PgDatabase-订阅的库名；
+mongo选填参数：InstanceType-实例类型：replicaset-副本集，cluster-分片集，主要用于控制台跳转到mongo实例页面，如不填不影响任务运行；
+全业务选填参数：EngineVersion-内核版本。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -605,7 +617,10 @@ namespace TencentCloud
                     bool m_ccnOwnerUinHasBeenSet;
 
                     /**
-                     * 为业务添加的额外信息。参数名作key，参数值作value。 tdpg必填参数：PgDatabase-订阅的库名。
+                     * 为业务添加的额外信息。参数名作key，参数值作value。 
+tdpg必填参数：PgDatabase-订阅的库名；
+mongo选填参数：InstanceType-实例类型：replicaset-副本集，cluster-分片集，主要用于控制台跳转到mongo实例页面，如不填不影响任务运行；
+全业务选填参数：EngineVersion-内核版本。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<KeyValuePairOption> m_extraAttr;

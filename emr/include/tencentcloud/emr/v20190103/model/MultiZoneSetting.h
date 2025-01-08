@@ -51,18 +51,14 @@ namespace TencentCloud
 
                     /**
                      * 获取"master"、"standby"、"third-party"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZoneTag "master"、"standby"、"third-party"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetZoneTag() const;
 
                     /**
                      * 设置"master"、"standby"、"third-party"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zoneTag "master"、"standby"、"third-party"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZoneTag(const std::string& _zoneTag);
@@ -141,7 +137,6 @@ namespace TencentCloud
 
                     /**
                      * "master"、"standby"、"third-party"
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zoneTag;
                     bool m_zoneTagHasBeenSet;

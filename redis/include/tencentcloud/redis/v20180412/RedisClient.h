@@ -703,7 +703,7 @@ namespace TencentCloud
                 CreateInstancesOutcomeCallable CreateInstancesCallable(const Model::CreateInstancesRequest& request);
 
                 /**
-                 *创建参数模板。
+                 *该接口（CreateParamTemplate）用于创建参数模板。
                  * @param req CreateParamTemplateRequest
                  * @return CreateParamTemplateOutcome
                  */
@@ -730,7 +730,7 @@ namespace TencentCloud
                 DeleteInstanceAccountOutcomeCallable DeleteInstanceAccountCallable(const Model::DeleteInstanceAccountRequest& request);
 
                 /**
-                 *删除参数模板
+                 *本接口（DeleteParamTemplate）用于删除参数模板。
                  * @param req DeleteParamTemplateRequest
                  * @return DeleteParamTemplateOutcome
                  */
@@ -811,7 +811,7 @@ namespace TencentCloud
                 DescribeDBSecurityGroupsOutcomeCallable DescribeDBSecurityGroupsCallable(const Model::DescribeDBSecurityGroupsRequest& request);
 
                 /**
-                 *查询全球复制支持地域信息
+                 *本接口（DescribeGlobalReplicationArea）用于查询全球复制支持地域信息。
                  * @param req DescribeGlobalReplicationAreaRequest
                  * @return DescribeGlobalReplicationAreaOutcome
                  */
@@ -910,7 +910,7 @@ namespace TencentCloud
                 DescribeInstanceMonitorHotKeyOutcomeCallable DescribeInstanceMonitorHotKeyCallable(const Model::DescribeInstanceMonitorHotKeyRequest& request);
 
                 /**
-                 *该接口已下线，请使用数据库智能管家 DBbrain 接口 [DescribeProxyProcessStatistics] (https://cloud.tencent.com/document/product/1130/84544) 获取实例访问来源。
+                 *该接口已下线，请使用数据库智能管家 DBbrain 接口 [DescribeProxyProcessStatistics](https://cloud.tencent.com/document/product/1130/84544) 获取实例访问来源。
                  * @param req DescribeInstanceMonitorSIPRequest
                  * @return DescribeInstanceMonitorSIPOutcome
                  */
@@ -928,7 +928,7 @@ namespace TencentCloud
                 DescribeInstanceMonitorTookDistOutcomeCallable DescribeInstanceMonitorTookDistCallable(const Model::DescribeInstanceMonitorTookDistRequest& request);
 
                 /**
-                 *查询实例访问命令
+                 *本接口（DescribeInstanceMonitorTopNCmd）用于查询实例访问命令。
                  * @param req DescribeInstanceMonitorTopNCmdRequest
                  * @return DescribeInstanceMonitorTopNCmdOutcome
                  */
@@ -955,7 +955,7 @@ namespace TencentCloud
                 DescribeInstanceNodeInfoOutcomeCallable DescribeInstanceNodeInfoCallable(const Model::DescribeInstanceNodeInfoRequest& request);
 
                 /**
-                 *查询参数修改历史列表
+                 *本接口（DescribeInstanceParamRecords）用于查询参数修改历史列表。
                  * @param req DescribeInstanceParamRecordsRequest
                  * @return DescribeInstanceParamRecordsOutcome
                  */
@@ -1045,7 +1045,7 @@ namespace TencentCloud
                 DescribeParamTemplateInfoOutcomeCallable DescribeParamTemplateInfoCallable(const Model::DescribeParamTemplateInfoRequest& request);
 
                 /**
-                 *查询参数模板列表
+                 *本接口（DescribeParamTemplates）用于查询参数模板列表。
                  * @param req DescribeParamTemplatesRequest
                  * @return DescribeParamTemplatesOutcome
                  */
@@ -1479,7 +1479,7 @@ namespace TencentCloud
                 ResetPasswordOutcomeCallable ResetPasswordCallable(const Model::ResetPasswordRequest& request);
 
                 /**
-                 *恢复 CRS 实例
+                 *本接口（RestoreInstance）用于恢复实例。
                  * @param req RestoreInstanceRequest
                  * @return RestoreInstanceOutcome
                  */

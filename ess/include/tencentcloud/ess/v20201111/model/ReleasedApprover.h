@@ -98,21 +98,21 @@ namespace TencentCloud
                     /**
                      * 获取要更换的原合同参与人RecipientId编号。(可通过接口<a href="https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br/>
                      * @return RelievedApproverReceiptId 要更换的原合同参与人RecipientId编号。(可通过接口<a href="https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br/>
-                     * 
+                     * @deprecated
                      */
                     std::string GetRelievedApproverReceiptId() const;
 
                     /**
                      * 设置要更换的原合同参与人RecipientId编号。(可通过接口<a href="https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br/>
                      * @param _relievedApproverReceiptId 要更换的原合同参与人RecipientId编号。(可通过接口<a href="https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br/>
-                     * 
+                     * @deprecated
                      */
                     void SetRelievedApproverReceiptId(const std::string& _relievedApproverReceiptId);
 
                     /**
                      * 判断参数 RelievedApproverReceiptId 是否已赋值
                      * @return RelievedApproverReceiptId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool RelievedApproverReceiptIdHasBeenSet() const;
 
@@ -236,6 +236,27 @@ namespace TencentCloud
                      */
                     bool ApproverSignSealIdHasBeenSet() const;
 
+                    /**
+                     * 获取要更换的原合同参与人RecipientId编号。(可通过接口<a href="https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br/>
+                     * @return RelievedApproverRecipientId 要更换的原合同参与人RecipientId编号。(可通过接口<a href="https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br/>
+                     * 
+                     */
+                    std::string GetRelievedApproverRecipientId() const;
+
+                    /**
+                     * 设置要更换的原合同参与人RecipientId编号。(可通过接口<a href="https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br/>
+                     * @param _relievedApproverRecipientId 要更换的原合同参与人RecipientId编号。(可通过接口<a href="https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br/>
+                     * 
+                     */
+                    void SetRelievedApproverRecipientId(const std::string& _relievedApproverRecipientId);
+
+                    /**
+                     * 判断参数 RelievedApproverRecipientId 是否已赋值
+                     * @return RelievedApproverRecipientId 是否已赋值
+                     * 
+                     */
+                    bool RelievedApproverRecipientIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -289,6 +310,12 @@ namespace TencentCloud
                      */
                     std::string m_approverSignSealId;
                     bool m_approverSignSealIdHasBeenSet;
+
+                    /**
+                     * 要更换的原合同参与人RecipientId编号。(可通过接口<a href="https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br/>
+                     */
+                    std::string m_relievedApproverRecipientId;
+                    bool m_relievedApproverRecipientIdHasBeenSet;
 
                 };
             }

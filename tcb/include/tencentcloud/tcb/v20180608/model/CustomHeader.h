@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取请求添加头部配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RequestToAddList 请求添加头部配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CustomRequestToAdd> GetRequestToAddList() const;
 
                     /**
                      * 设置请求添加头部配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _requestToAddList 请求添加头部配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRequestToAddList(const std::vector<CustomRequestToAdd>& _requestToAddList);
@@ -76,7 +72,6 @@ namespace TencentCloud
 
                     /**
                      * 请求添加头部配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CustomRequestToAdd> m_requestToAddList;
                     bool m_requestToAddListHasBeenSet;

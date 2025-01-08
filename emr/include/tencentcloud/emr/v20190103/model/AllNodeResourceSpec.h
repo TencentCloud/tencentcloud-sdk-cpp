@@ -149,18 +149,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Master节点数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MasterCount Master节点数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMasterCount() const;
 
                     /**
                      * 设置Master节点数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _masterCount Master节点数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMasterCount(const int64_t& _masterCount);
@@ -174,18 +170,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Corer节点数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CoreCount Corer节点数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCoreCount() const;
 
                     /**
                      * 设置Corer节点数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _coreCount Corer节点数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCoreCount(const int64_t& _coreCount);
@@ -199,18 +191,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Task节点数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskCount Task节点数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTaskCount() const;
 
                     /**
                      * 设置Task节点数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskCount Task节点数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskCount(const int64_t& _taskCount);
@@ -224,18 +212,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Common节点数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CommonCount Common节点数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCommonCount() const;
 
                     /**
                      * 设置Common节点数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _commonCount Common节点数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCommonCount(const int64_t& _commonCount);
@@ -279,28 +263,24 @@ namespace TencentCloud
 
                     /**
                      * Master节点数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_masterCount;
                     bool m_masterCountHasBeenSet;
 
                     /**
                      * Corer节点数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_coreCount;
                     bool m_coreCountHasBeenSet;
 
                     /**
                      * Task节点数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_taskCount;
                     bool m_taskCountHasBeenSet;
 
                     /**
                      * Common节点数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_commonCount;
                     bool m_commonCountHasBeenSet;

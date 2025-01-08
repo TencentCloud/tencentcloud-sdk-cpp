@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取免费量总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FreeQuota 免费量总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetFreeQuota() const;
 
                     /**
                      * 设置免费量总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _freeQuota 免费量总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFreeQuota(const uint64_t& _freeQuota);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取共计已使用总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalUsedQuota 共计已使用总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTotalUsedQuota() const;
 
                     /**
                      * 设置共计已使用总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalUsedQuota 共计已使用总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalUsedQuota(const uint64_t& _totalUsedQuota);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取免费周期起点，0000-00-00 00:00:00 形式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CycleStart 免费周期起点，0000-00-00 00:00:00 形式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCycleStart() const;
 
                     /**
                      * 设置免费周期起点，0000-00-00 00:00:00 形式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cycleStart 免费周期起点，0000-00-00 00:00:00 形式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCycleStart(const std::string& _cycleStart);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取免费周期终点，0000-00-00 00:00:00 形式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CycleEnd 免费周期终点，0000-00-00 00:00:00 形式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCycleEnd() const;
 
                     /**
                      * 设置免费周期终点，0000-00-00 00:00:00 形式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cycleEnd 免费周期终点，0000-00-00 00:00:00 形式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCycleEnd(const std::string& _cycleEnd);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取今天已使用总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TodayUsedQuota 今天已使用总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTodayUsedQuota() const;
 
                     /**
                      * 设置今天已使用总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _todayUsedQuota 今天已使用总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTodayUsedQuota(const uint64_t& _todayUsedQuota);
@@ -175,35 +155,30 @@ namespace TencentCloud
 
                     /**
                      * 免费量总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_freeQuota;
                     bool m_freeQuotaHasBeenSet;
 
                     /**
                      * 共计已使用总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_totalUsedQuota;
                     bool m_totalUsedQuotaHasBeenSet;
 
                     /**
                      * 免费周期起点，0000-00-00 00:00:00 形式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cycleStart;
                     bool m_cycleStartHasBeenSet;
 
                     /**
                      * 免费周期终点，0000-00-00 00:00:00 形式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cycleEnd;
                     bool m_cycleEndHasBeenSet;
 
                     /**
                      * 今天已使用总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_todayUsedQuota;
                     bool m_todayUsedQuotaHasBeenSet;

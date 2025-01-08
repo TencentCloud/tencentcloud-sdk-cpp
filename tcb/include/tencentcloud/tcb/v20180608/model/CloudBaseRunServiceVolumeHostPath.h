@@ -46,7 +46,39 @@ namespace TencentCloud
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
+                    /**
+                     * 获取主机路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Path 主机路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPath() const;
+
+                    /**
+                     * 设置主机路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _path 主机路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPath(const std::string& _path);
+
+                    /**
+                     * 判断参数 Path 是否已赋值
+                     * @return Path 是否已赋值
+                     * 
+                     */
+                    bool PathHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 主机路径
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_path;
+                    bool m_pathHasBeenSet;
 
                 };
             }

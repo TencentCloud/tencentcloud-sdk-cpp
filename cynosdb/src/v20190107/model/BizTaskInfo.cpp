@@ -56,7 +56,8 @@ BizTaskInfo::BizTaskInfo() :
     m_switchClusterLogBinHasBeenSet(false),
     m_modifyInstanceParamsDataHasBeenSet(false),
     m_taskMaintainInfoHasBeenSet(false),
-    m_instanceCLSDeliveryInfosHasBeenSet(false)
+    m_instanceCLSDeliveryInfosHasBeenSet(false),
+    m_taskProgressInfoHasBeenSet(false)
 {
 }
 
@@ -508,6 +509,23 @@ CoreInternalOutcome BizTaskInfo::Deserialize(const rapidjson::Value &value)
         m_instanceCLSDeliveryInfosHasBeenSet = true;
     }
 
+    if (value.HasMember("TaskProgressInfo") && !value["TaskProgressInfo"].IsNull())
+    {
+        if (!value["TaskProgressInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `BizTaskInfo.TaskProgressInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_taskProgressInfo.Deserialize(value["TaskProgressInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_taskProgressInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -824,6 +842,15 @@ void BizTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_taskProgressInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskProgressInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_taskProgressInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1403,5 +1430,21 @@ void BizTaskInfo::SetInstanceCLSDeliveryInfos(const vector<InstanceCLSDeliveryIn
 bool BizTaskInfo::InstanceCLSDeliveryInfosHasBeenSet() const
 {
     return m_instanceCLSDeliveryInfosHasBeenSet;
+}
+
+TaskProgressInfo BizTaskInfo::GetTaskProgressInfo() const
+{
+    return m_taskProgressInfo;
+}
+
+void BizTaskInfo::SetTaskProgressInfo(const TaskProgressInfo& _taskProgressInfo)
+{
+    m_taskProgressInfo = _taskProgressInfo;
+    m_taskProgressInfoHasBeenSet = true;
+}
+
+bool BizTaskInfo::TaskProgressInfoHasBeenSet() const
+{
+    return m_taskProgressInfoHasBeenSet;
 }
 

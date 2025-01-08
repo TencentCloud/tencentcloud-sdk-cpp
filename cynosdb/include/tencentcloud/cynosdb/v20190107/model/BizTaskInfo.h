@@ -35,6 +35,7 @@
 #include <tencentcloud/cynosdb/v20190107/model/BizTaskModifyParamsData.h>
 #include <tencentcloud/cynosdb/v20190107/model/TaskMaintainInfo.h>
 #include <tencentcloud/cynosdb/v20190107/model/InstanceCLSDeliveryInfo.h>
+#include <tencentcloud/cynosdb/v20190107/model/TaskProgressInfo.h>
 
 
 namespace TencentCloud
@@ -873,6 +874,27 @@ namespace TencentCloud
                      */
                     bool InstanceCLSDeliveryInfosHasBeenSet() const;
 
+                    /**
+                     * 获取任务进度信息
+                     * @return TaskProgressInfo 任务进度信息
+                     * 
+                     */
+                    TaskProgressInfo GetTaskProgressInfo() const;
+
+                    /**
+                     * 设置任务进度信息
+                     * @param _taskProgressInfo 任务进度信息
+                     * 
+                     */
+                    void SetTaskProgressInfo(const TaskProgressInfo& _taskProgressInfo);
+
+                    /**
+                     * 判断参数 TaskProgressInfo 是否已赋值
+                     * @return TaskProgressInfo 是否已赋值
+                     * 
+                     */
+                    bool TaskProgressInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1105,6 +1127,12 @@ namespace TencentCloud
                      */
                     std::vector<InstanceCLSDeliveryInfo> m_instanceCLSDeliveryInfos;
                     bool m_instanceCLSDeliveryInfosHasBeenSet;
+
+                    /**
+                     * 任务进度信息
+                     */
+                    TaskProgressInfo m_taskProgressInfo;
+                    bool m_taskProgressInfoHasBeenSet;
 
                 };
             }

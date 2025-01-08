@@ -39,6 +39,7 @@ AlarmInfo::AlarmInfo() :
     m_groupTriggerConditionHasBeenSet(false),
     m_monitorObjectTypeHasBeenSet(false),
     m_alarmLevelHasBeenSet(false),
+    m_classificationsHasBeenSet(false),
     m_multiConditionsHasBeenSet(false)
 {
 }
@@ -268,6 +269,26 @@ CoreInternalOutcome AlarmInfo::Deserialize(const rapidjson::Value &value)
         m_alarmLevelHasBeenSet = true;
     }
 
+    if (value.HasMember("Classifications") && !value["Classifications"].IsNull())
+    {
+        if (!value["Classifications"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AlarmInfo.Classifications` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Classifications"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AlarmClassification item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_classifications.push_back(item);
+        }
+        m_classificationsHasBeenSet = true;
+    }
+
     if (value.HasMember("MultiConditions") && !value["MultiConditions"].IsNull())
     {
         if (!value["MultiConditions"].IsArray())
@@ -463,6 +484,21 @@ void AlarmInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "AlarmLevel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_alarmLevel, allocator);
+    }
+
+    if (m_classificationsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Classifications";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_classifications.begin(); itr != m_classifications.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     if (m_multiConditionsHasBeenSet)
@@ -769,6 +805,22 @@ void AlarmInfo::SetAlarmLevel(const uint64_t& _alarmLevel)
 bool AlarmInfo::AlarmLevelHasBeenSet() const
 {
     return m_alarmLevelHasBeenSet;
+}
+
+vector<AlarmClassification> AlarmInfo::GetClassifications() const
+{
+    return m_classifications;
+}
+
+void AlarmInfo::SetClassifications(const vector<AlarmClassification>& _classifications)
+{
+    m_classifications = _classifications;
+    m_classificationsHasBeenSet = true;
+}
+
+bool AlarmInfo::ClassificationsHasBeenSet() const
+{
+    return m_classificationsHasBeenSet;
 }
 
 vector<MultiCondition> AlarmInfo::GetMultiConditions() const

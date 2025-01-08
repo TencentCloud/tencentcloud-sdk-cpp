@@ -153,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取topic保存时长 默认7天
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Period topic保存时长 默认7天
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPeriod() const;
 
                     /**
                      * 设置topic保存时长 默认7天
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _period topic保存时长 默认7天
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPeriod(const int64_t& _period);
@@ -210,7 +206,6 @@ namespace TencentCloud
 
                     /**
                      * topic保存时长 默认7天
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_period;
                     bool m_periodHasBeenSet;

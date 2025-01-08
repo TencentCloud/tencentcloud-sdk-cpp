@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取项目列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectList 项目列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CloudBaseProjectVersion> GetProjectList() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 项目列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CloudBaseProjectVersion> m_projectList;
                     bool m_projectListHasBeenSet;
 
                     /**
                      * 总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

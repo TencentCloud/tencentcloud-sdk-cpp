@@ -125,6 +125,39 @@ namespace TencentCloud
                      */
                     bool MaxSurgeHasBeenSet() const;
 
+                    /**
+                     * 获取失败处理策略。默认值为 AUTO_PAUSE，取值范围如下：
+<li>AUTO_PAUSE：刷新失败后暂停</li>
+<li>AUTO_ROLLBACK：刷新失败后回滚。回滚时每批次回滚一台实例，CheckInstanceTargetHealth 参数值与原刷新活动一致。MaxSurge参数引入的扩缩容流程失败无需回滚，会用取消动作代替回滚</li>
+<li>AUTO_CANCEL：刷新失败后取消</li>
+                     * @return FailProcess 失败处理策略。默认值为 AUTO_PAUSE，取值范围如下：
+<li>AUTO_PAUSE：刷新失败后暂停</li>
+<li>AUTO_ROLLBACK：刷新失败后回滚。回滚时每批次回滚一台实例，CheckInstanceTargetHealth 参数值与原刷新活动一致。MaxSurge参数引入的扩缩容流程失败无需回滚，会用取消动作代替回滚</li>
+<li>AUTO_CANCEL：刷新失败后取消</li>
+                     * 
+                     */
+                    std::string GetFailProcess() const;
+
+                    /**
+                     * 设置失败处理策略。默认值为 AUTO_PAUSE，取值范围如下：
+<li>AUTO_PAUSE：刷新失败后暂停</li>
+<li>AUTO_ROLLBACK：刷新失败后回滚。回滚时每批次回滚一台实例，CheckInstanceTargetHealth 参数值与原刷新活动一致。MaxSurge参数引入的扩缩容流程失败无需回滚，会用取消动作代替回滚</li>
+<li>AUTO_CANCEL：刷新失败后取消</li>
+                     * @param _failProcess 失败处理策略。默认值为 AUTO_PAUSE，取值范围如下：
+<li>AUTO_PAUSE：刷新失败后暂停</li>
+<li>AUTO_ROLLBACK：刷新失败后回滚。回滚时每批次回滚一台实例，CheckInstanceTargetHealth 参数值与原刷新活动一致。MaxSurge参数引入的扩缩容流程失败无需回滚，会用取消动作代替回滚</li>
+<li>AUTO_CANCEL：刷新失败后取消</li>
+                     * 
+                     */
+                    void SetFailProcess(const std::string& _failProcess);
+
+                    /**
+                     * 判断参数 FailProcess 是否已赋值
+                     * @return FailProcess 是否已赋值
+                     * 
+                     */
+                    bool FailProcessHasBeenSet() const;
+
                 private:
 
                     /**
@@ -148,6 +181,15 @@ namespace TencentCloud
                      */
                     int64_t m_maxSurge;
                     bool m_maxSurgeHasBeenSet;
+
+                    /**
+                     * 失败处理策略。默认值为 AUTO_PAUSE，取值范围如下：
+<li>AUTO_PAUSE：刷新失败后暂停</li>
+<li>AUTO_ROLLBACK：刷新失败后回滚。回滚时每批次回滚一台实例，CheckInstanceTargetHealth 参数值与原刷新活动一致。MaxSurge参数引入的扩缩容流程失败无需回滚，会用取消动作代替回滚</li>
+<li>AUTO_CANCEL：刷新失败后取消</li>
+                     */
+                    std::string m_failProcess;
+                    bool m_failProcessHasBeenSet;
 
                 };
             }

@@ -109,6 +109,27 @@ namespace TencentCloud
                      */
                     bool DiskNumHasBeenSet() const;
 
+                    /**
+                     * 获取云盘额外性能
+                     * @return ExtraPerformance 云盘额外性能
+                     * 
+                     */
+                    int64_t GetExtraPerformance() const;
+
+                    /**
+                     * 设置云盘额外性能
+                     * @param _extraPerformance 云盘额外性能
+                     * 
+                     */
+                    void SetExtraPerformance(const int64_t& _extraPerformance);
+
+                    /**
+                     * 判断参数 ExtraPerformance 是否已赋值
+                     * @return ExtraPerformance 是否已赋值
+                     * 
+                     */
+                    bool ExtraPerformanceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -128,6 +149,12 @@ namespace TencentCloud
                      */
                     int64_t m_diskNum;
                     bool m_diskNumHasBeenSet;
+
+                    /**
+                     * 云盘额外性能
+                     */
+                    int64_t m_extraPerformance;
+                    bool m_extraPerformanceHasBeenSet;
 
                 };
             }

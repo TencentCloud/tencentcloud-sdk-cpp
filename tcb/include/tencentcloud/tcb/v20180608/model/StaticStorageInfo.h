@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取静态CDN域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StaticDomain 静态CDN域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStaticDomain() const;
 
                     /**
                      * 设置静态CDN域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _staticDomain 静态CDN域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStaticDomain(const std::string& _staticDomain);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取静态CDN默认文件夹，当前为根目录
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefaultDirName 静态CDN默认文件夹，当前为根目录
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDefaultDirName() const;
 
                     /**
                      * 设置静态CDN默认文件夹，当前为根目录
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _defaultDirName 静态CDN默认文件夹，当前为根目录
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDefaultDirName(const std::string& _defaultDirName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源状态(process/online/offline/init)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 资源状态(process/online/offline/init)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置资源状态(process/online/offline/init)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 资源状态(process/online/offline/init)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取cos所属区域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region cos所属区域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置cos所属区域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _region cos所属区域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取bucket信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Bucket bucket信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBucket() const;
 
                     /**
                      * 设置bucket信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bucket bucket信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBucket(const std::string& _bucket);
@@ -175,35 +155,30 @@ namespace TencentCloud
 
                     /**
                      * 静态CDN域名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_staticDomain;
                     bool m_staticDomainHasBeenSet;
 
                     /**
                      * 静态CDN默认文件夹，当前为根目录
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_defaultDirName;
                     bool m_defaultDirNameHasBeenSet;
 
                     /**
                      * 资源状态(process/online/offline/init)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * cos所属区域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
                      * bucket信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bucket;
                     bool m_bucketHasBeenSet;

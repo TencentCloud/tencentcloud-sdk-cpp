@@ -23,7 +23,8 @@ using namespace std;
 PersistentVolumeContext::PersistentVolumeContext() :
     m_diskSizeHasBeenSet(false),
     m_diskTypeHasBeenSet(false),
-    m_diskNumHasBeenSet(false)
+    m_diskNumHasBeenSet(false),
+    m_extraPerformanceHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome PersistentVolumeContext::Deserialize(const rapidjson::Value 
         m_diskNumHasBeenSet = true;
     }
 
+    if (value.HasMember("ExtraPerformance") && !value["ExtraPerformance"].IsNull())
+    {
+        if (!value["ExtraPerformance"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PersistentVolumeContext.ExtraPerformance` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_extraPerformance = value["ExtraPerformance"].GetInt64();
+        m_extraPerformanceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void PersistentVolumeContext::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "DiskNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_diskNum, allocator);
+    }
+
+    if (m_extraPerformanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtraPerformance";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_extraPerformance, allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void PersistentVolumeContext::SetDiskNum(const int64_t& _diskNum)
 bool PersistentVolumeContext::DiskNumHasBeenSet() const
 {
     return m_diskNumHasBeenSet;
+}
+
+int64_t PersistentVolumeContext::GetExtraPerformance() const
+{
+    return m_extraPerformance;
+}
+
+void PersistentVolumeContext::SetExtraPerformance(const int64_t& _extraPerformance)
+{
+    m_extraPerformance = _extraPerformance;
+    m_extraPerformanceHasBeenSet = true;
+}
+
+bool PersistentVolumeContext::ExtraPerformanceHasBeenSet() const
+{
+    return m_extraPerformanceHasBeenSet;
 }
 

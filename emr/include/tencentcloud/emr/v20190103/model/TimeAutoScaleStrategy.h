@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略名字，集群内唯一。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StrategyName 策略名字，集群内唯一。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStrategyName() const;
 
                     /**
                      * 设置策略名字，集群内唯一。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _strategyName 策略名字，集群内唯一。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStrategyName(const std::string& _strategyName);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略触发后的冷却时间，该段时间内，将不能触发弹性扩缩容。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IntervalTime 策略触发后的冷却时间，该段时间内，将不能触发弹性扩缩容。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIntervalTime() const;
 
                     /**
                      * 设置策略触发后的冷却时间，该段时间内，将不能触发弹性扩缩容。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _intervalTime 策略触发后的冷却时间，该段时间内，将不能触发弹性扩缩容。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIntervalTime(const uint64_t& _intervalTime);
@@ -100,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取扩缩容动作，1表示扩容，2表示缩容。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScaleAction 扩缩容动作，1表示扩容，2表示缩容。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetScaleAction() const;
 
                     /**
                      * 设置扩缩容动作，1表示扩容，2表示缩容。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scaleAction 扩缩容动作，1表示扩容，2表示缩容。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScaleAction(const uint64_t& _scaleAction);
@@ -125,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取扩缩容数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScaleNum 扩缩容数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetScaleNum() const;
 
                     /**
                      * 设置扩缩容数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scaleNum 扩缩容数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScaleNum(const uint64_t& _scaleNum);
@@ -150,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则状态，1表示有效，2表示无效，3表示暂停。必须填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StrategyStatus 规则状态，1表示有效，2表示无效，3表示暂停。必须填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStrategyStatus() const;
 
                     /**
                      * 设置规则状态，1表示有效，2表示无效，3表示暂停。必须填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _strategyStatus 规则状态，1表示有效，2表示无效，3表示暂停。必须填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStrategyStatus(const uint64_t& _strategyStatus);
@@ -175,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则优先级，越小越高。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Priority 规则优先级，越小越高。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPriority() const;
 
                     /**
                      * 设置规则优先级，越小越高。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _priority 规则优先级，越小越高。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPriority(const uint64_t& _priority);
@@ -200,18 +176,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当多条规则同时触发，其中某些未真正执行时，在该时间范围内，将会重试。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RetryValidTime 当多条规则同时触发，其中某些未真正执行时，在该时间范围内，将会重试。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRetryValidTime() const;
 
                     /**
                      * 设置当多条规则同时触发，其中某些未真正执行时，在该时间范围内，将会重试。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _retryValidTime 当多条规则同时触发，其中某些未真正执行时，在该时间范围内，将会重试。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRetryValidTime(const uint64_t& _retryValidTime);
@@ -250,18 +222,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略唯一ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StrategyId 策略唯一ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStrategyId() const;
 
                     /**
                      * 设置策略唯一ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _strategyId 策略唯一ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStrategyId(const uint64_t& _strategyId);
@@ -275,18 +243,14 @@ namespace TencentCloud
 
                     /**
                      * 获取优雅缩容开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GraceDownFlag 优雅缩容开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetGraceDownFlag() const;
 
                     /**
                      * 设置优雅缩容开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _graceDownFlag 优雅缩容开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGraceDownFlag(const bool& _graceDownFlag);
@@ -300,18 +264,14 @@ namespace TencentCloud
 
                     /**
                      * 获取优雅缩容等待时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GraceDownTime 优雅缩容等待时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetGraceDownTime() const;
 
                     /**
                      * 设置优雅缩容等待时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _graceDownTime 优雅缩容等待时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGraceDownTime(const int64_t& _graceDownTime);
@@ -350,18 +310,14 @@ namespace TencentCloud
 
                     /**
                      * 获取预设配置组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigGroupAssigned 预设配置组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConfigGroupAssigned() const;
 
                     /**
                      * 设置预设配置组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _configGroupAssigned 预设配置组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConfigGroupAssigned(const std::string& _configGroupAssigned);
@@ -379,13 +335,11 @@ namespace TencentCloud
 "INSTANCE"表示按照节点计算，默认方式。
 "CPU"表示按照机器的核数计算。
 "MEMORYGB"表示按照机器内存数计算。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MeasureMethod 扩容资源计算方法，"DEFAULT","INSTANCE", "CPU", "MEMORYGB"。
 "DEFAULT"表示默认方式，与"INSTANCE"意义相同。
 "INSTANCE"表示按照节点计算，默认方式。
 "CPU"表示按照机器的核数计算。
 "MEMORYGB"表示按照机器内存数计算。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMeasureMethod() const;
@@ -396,13 +350,11 @@ namespace TencentCloud
 "INSTANCE"表示按照节点计算，默认方式。
 "CPU"表示按照机器的核数计算。
 "MEMORYGB"表示按照机器内存数计算。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _measureMethod 扩容资源计算方法，"DEFAULT","INSTANCE", "CPU", "MEMORYGB"。
 "DEFAULT"表示默认方式，与"INSTANCE"意义相同。
 "INSTANCE"表示按照节点计算，默认方式。
 "CPU"表示按照机器的核数计算。
 "MEMORYGB"表示按照机器内存数计算。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMeasureMethod(const std::string& _measureMethod);
@@ -416,18 +368,14 @@ namespace TencentCloud
 
                     /**
                      * 获取销毁策略, "DEFAULT",默认销毁策略，由缩容规则触发缩容，"TIMING"表示定时销毁
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TerminatePolicy 销毁策略, "DEFAULT",默认销毁策略，由缩容规则触发缩容，"TIMING"表示定时销毁
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTerminatePolicy() const;
 
                     /**
                      * 设置销毁策略, "DEFAULT",默认销毁策略，由缩容规则触发缩容，"TIMING"表示定时销毁
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _terminatePolicy 销毁策略, "DEFAULT",默认销毁策略，由缩容规则触发缩容，"TIMING"表示定时销毁
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTerminatePolicy(const std::string& _terminatePolicy);
@@ -441,18 +389,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最长使用时间， 秒数，最短1小时，最长24小时
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxUse 最长使用时间， 秒数，最短1小时，最长24小时
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxUse() const;
 
                     /**
                      * 设置最长使用时间， 秒数，最短1小时，最长24小时
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxUse 最长使用时间， 秒数，最短1小时，最长24小时
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxUse(const int64_t& _maxUse);
@@ -516,18 +460,14 @@ namespace TencentCloud
 
                     /**
                      * 获取补偿扩容，0表示不开启，1表示开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CompensateFlag 补偿扩容，0表示不开启，1表示开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCompensateFlag() const;
 
                     /**
                      * 设置补偿扩容，0表示不开启，1表示开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _compensateFlag 补偿扩容，0表示不开启，1表示开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCompensateFlag(const int64_t& _compensateFlag);
@@ -541,18 +481,14 @@ namespace TencentCloud
 
                     /**
                      * 获取伸缩组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupId 伸缩组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetGroupId() const;
 
                     /**
                      * 设置伸缩组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupId 伸缩组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupId(const int64_t& _groupId);
@@ -568,49 +504,42 @@ namespace TencentCloud
 
                     /**
                      * 策略名字，集群内唯一。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_strategyName;
                     bool m_strategyNameHasBeenSet;
 
                     /**
                      * 策略触发后的冷却时间，该段时间内，将不能触发弹性扩缩容。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_intervalTime;
                     bool m_intervalTimeHasBeenSet;
 
                     /**
                      * 扩缩容动作，1表示扩容，2表示缩容。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_scaleAction;
                     bool m_scaleActionHasBeenSet;
 
                     /**
                      * 扩缩容数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_scaleNum;
                     bool m_scaleNumHasBeenSet;
 
                     /**
                      * 规则状态，1表示有效，2表示无效，3表示暂停。必须填写
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_strategyStatus;
                     bool m_strategyStatusHasBeenSet;
 
                     /**
                      * 规则优先级，越小越高。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_priority;
                     bool m_priorityHasBeenSet;
 
                     /**
                      * 当多条规则同时触发，其中某些未真正执行时，在该时间范围内，将会重试。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_retryValidTime;
                     bool m_retryValidTimeHasBeenSet;
@@ -624,21 +553,18 @@ namespace TencentCloud
 
                     /**
                      * 策略唯一ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_strategyId;
                     bool m_strategyIdHasBeenSet;
 
                     /**
                      * 优雅缩容开关
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_graceDownFlag;
                     bool m_graceDownFlagHasBeenSet;
 
                     /**
                      * 优雅缩容等待时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_graceDownTime;
                     bool m_graceDownTimeHasBeenSet;
@@ -652,7 +578,6 @@ namespace TencentCloud
 
                     /**
                      * 预设配置组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_configGroupAssigned;
                     bool m_configGroupAssignedHasBeenSet;
@@ -663,21 +588,18 @@ namespace TencentCloud
 "INSTANCE"表示按照节点计算，默认方式。
 "CPU"表示按照机器的核数计算。
 "MEMORYGB"表示按照机器内存数计算。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_measureMethod;
                     bool m_measureMethodHasBeenSet;
 
                     /**
                      * 销毁策略, "DEFAULT",默认销毁策略，由缩容规则触发缩容，"TIMING"表示定时销毁
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_terminatePolicy;
                     bool m_terminatePolicyHasBeenSet;
 
                     /**
                      * 最长使用时间， 秒数，最短1小时，最长24小时
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxUse;
                     bool m_maxUseHasBeenSet;
@@ -698,14 +620,12 @@ namespace TencentCloud
 
                     /**
                      * 补偿扩容，0表示不开启，1表示开启
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_compensateFlag;
                     bool m_compensateFlagHasBeenSet;
 
                     /**
                      * 伸缩组id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_groupId;
                     bool m_groupIdHasBeenSet;

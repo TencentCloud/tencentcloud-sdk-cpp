@@ -26,7 +26,8 @@ RepeatStrategy::RepeatStrategy() :
     m_weekRepeatHasBeenSet(false),
     m_monthRepeatHasBeenSet(false),
     m_notRepeatHasBeenSet(false),
-    m_expireHasBeenSet(false)
+    m_expireHasBeenSet(false),
+    m_startTimeHasBeenSet(false)
 {
 }
 
@@ -123,6 +124,16 @@ CoreInternalOutcome RepeatStrategy::Deserialize(const rapidjson::Value &value)
         m_expireHasBeenSet = true;
     }
 
+    if (value.HasMember("StartTime") && !value["StartTime"].IsNull())
+    {
+        if (!value["StartTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RepeatStrategy.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_startTime = string(value["StartTime"].GetString());
+        m_startTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -180,6 +191,14 @@ void RepeatStrategy::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Expire";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_expire.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_startTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -279,5 +298,21 @@ void RepeatStrategy::SetExpire(const string& _expire)
 bool RepeatStrategy::ExpireHasBeenSet() const
 {
     return m_expireHasBeenSet;
+}
+
+string RepeatStrategy::GetStartTime() const
+{
+    return m_startTime;
+}
+
+void RepeatStrategy::SetStartTime(const string& _startTime)
+{
+    m_startTime = _startTime;
+    m_startTimeHasBeenSet = true;
+}
+
+bool RepeatStrategy::StartTimeHasBeenSet() const
+{
+    return m_startTimeHasBeenSet;
 }
 

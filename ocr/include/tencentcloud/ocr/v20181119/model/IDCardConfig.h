@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取默认为false
-                     * @return CopyWarn 默认为false
+                     * 获取复印件告警，默认为false
+                     * @return CopyWarn 复印件告警，默认为false
                      * 
                      */
                     bool GetCopyWarn() const;
 
                     /**
-                     * 设置默认为false
-                     * @param _copyWarn 默认为false
+                     * 设置复印件告警，默认为false
+                     * @param _copyWarn 复印件告警，默认为false
                      * 
                      */
                     void SetCopyWarn(const bool& _copyWarn);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool CopyWarnHasBeenSet() const;
 
                     /**
-                     * 获取默认为false
-                     * @return BorderCheckWarn 默认为false
+                     * 获取边框和框内遮挡告警，默认为false
+                     * @return BorderCheckWarn 边框和框内遮挡告警，默认为false
                      * 
                      */
                     bool GetBorderCheckWarn() const;
 
                     /**
-                     * 设置默认为false
-                     * @param _borderCheckWarn 默认为false
+                     * 设置边框和框内遮挡告警，默认为false
+                     * @param _borderCheckWarn 边框和框内遮挡告警，默认为false
                      * 
                      */
                     void SetBorderCheckWarn(const bool& _borderCheckWarn);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool BorderCheckWarnHasBeenSet() const;
 
                     /**
-                     * 获取默认为false
-                     * @return ReshootWarn 默认为false
+                     * 获取翻拍告警，默认为false
+                     * @return ReshootWarn 翻拍告警，默认为false
                      * 
                      */
                     bool GetReshootWarn() const;
 
                     /**
-                     * 设置默认为false
-                     * @param _reshootWarn 默认为false
+                     * 设置翻拍告警，默认为false
+                     * @param _reshootWarn 翻拍告警，默认为false
                      * 
                      */
                     void SetReshootWarn(const bool& _reshootWarn);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool ReshootWarnHasBeenSet() const;
 
                     /**
-                     * 获取默认为false
-                     * @return DetectPsWarn 默认为false
+                     * 获取疑似存在PS痕迹告警，默认为false
+                     * @return DetectPsWarn 疑似存在PS痕迹告警，默认为false
                      * 
                      */
                     bool GetDetectPsWarn() const;
 
                     /**
-                     * 设置默认为false
-                     * @param _detectPsWarn 默认为false
+                     * 设置疑似存在PS痕迹告警，默认为false
+                     * @param _detectPsWarn 疑似存在PS痕迹告警，默认为false
                      * 
                      */
                     void SetDetectPsWarn(const bool& _detectPsWarn);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool DetectPsWarnHasBeenSet() const;
 
                     /**
-                     * 获取默认为false
-                     * @return TempIdWarn 默认为false
+                     * 获取临时身份证告警，默认为false
+                     * @return TempIdWarn 临时身份证告警，默认为false
                      * 
                      */
                     bool GetTempIdWarn() const;
 
                     /**
-                     * 设置默认为false
-                     * @param _tempIdWarn 默认为false
+                     * 设置临时身份证告警，默认为false
+                     * @param _tempIdWarn 临时身份证告警，默认为false
                      * 
                      */
                     void SetTempIdWarn(const bool& _tempIdWarn);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool TempIdWarnHasBeenSet() const;
 
                     /**
-                     * 获取默认为false
-                     * @return InvalidDateWarn 默认为false
+                     * 获取身份证有效日期不合法告警，默认为false
+                     * @return InvalidDateWarn 身份证有效日期不合法告警，默认为false
                      * 
                      */
                     bool GetInvalidDateWarn() const;
 
                     /**
-                     * 设置默认为false
-                     * @param _invalidDateWarn 默认为false
+                     * 设置身份证有效日期不合法告警，默认为false
+                     * @param _invalidDateWarn 身份证有效日期不合法告警，默认为false
                      * 
                      */
                     void SetInvalidDateWarn(const bool& _invalidDateWarn);
@@ -173,15 +173,15 @@ namespace TencentCloud
                     bool InvalidDateWarnHasBeenSet() const;
 
                     /**
-                     * 获取默认为false
-                     * @return ReflectWarn 默认为false
+                     * 获取是否开启反光检测，默认为false
+                     * @return ReflectWarn 是否开启反光检测，默认为false
                      * 
                      */
                     bool GetReflectWarn() const;
 
                     /**
-                     * 设置默认为false
-                     * @param _reflectWarn 默认为false
+                     * 设置是否开启反光检测，默认为false
+                     * @param _reflectWarn 是否开启反光检测，默认为false
                      * 
                      */
                     void SetReflectWarn(const bool& _reflectWarn);
@@ -196,43 +196,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 默认为false
+                     * 复印件告警，默认为false
                      */
                     bool m_copyWarn;
                     bool m_copyWarnHasBeenSet;
 
                     /**
-                     * 默认为false
+                     * 边框和框内遮挡告警，默认为false
                      */
                     bool m_borderCheckWarn;
                     bool m_borderCheckWarnHasBeenSet;
 
                     /**
-                     * 默认为false
+                     * 翻拍告警，默认为false
                      */
                     bool m_reshootWarn;
                     bool m_reshootWarnHasBeenSet;
 
                     /**
-                     * 默认为false
+                     * 疑似存在PS痕迹告警，默认为false
                      */
                     bool m_detectPsWarn;
                     bool m_detectPsWarnHasBeenSet;
 
                     /**
-                     * 默认为false
+                     * 临时身份证告警，默认为false
                      */
                     bool m_tempIdWarn;
                     bool m_tempIdWarnHasBeenSet;
 
                     /**
-                     * 默认为false
+                     * 身份证有效日期不合法告警，默认为false
                      */
                     bool m_invalidDateWarn;
                     bool m_invalidDateWarnHasBeenSet;
 
                     /**
-                     * 默认为false
+                     * 是否开启反光检测，默认为false
                      */
                     bool m_reflectWarn;
                     bool m_reflectWarnHasBeenSet;

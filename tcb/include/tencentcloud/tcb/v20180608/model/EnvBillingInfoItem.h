@@ -281,11 +281,9 @@ namespace TencentCloud
                      * 获取付费渠道。
 <li> miniapp：小程序</li>
 <li> qcloud：腾讯云</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PaymentChannel 付费渠道。
 <li> miniapp：小程序</li>
 <li> qcloud：腾讯云</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPaymentChannel() const;
@@ -294,11 +292,9 @@ namespace TencentCloud
                      * 设置付费渠道。
 <li> miniapp：小程序</li>
 <li> qcloud：腾讯云</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _paymentChannel 付费渠道。
 <li> miniapp：小程序</li>
 <li> qcloud：腾讯云</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPaymentChannel(const std::string& _paymentChannel);
@@ -312,18 +308,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最新的订单信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrderInfo 最新的订单信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     OrderInfo GetOrderInfo() const;
 
                     /**
                      * 设置最新的订单信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _orderInfo 最新的订单信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOrderInfo(const OrderInfo& _orderInfo);
@@ -337,18 +329,14 @@ namespace TencentCloud
 
                     /**
                      * 获取免费配额信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FreeQuota 免费配额信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFreeQuota() const;
 
                     /**
                      * 设置免费配额信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _freeQuota 免费配额信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFreeQuota(const std::string& _freeQuota);
@@ -362,18 +350,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启 `超过套餐额度部分转按量付费`
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableOverrun 是否开启 `超过套餐额度部分转按量付费`
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnableOverrun() const;
 
                     /**
                      * 设置是否开启 `超过套餐额度部分转按量付费`
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enableOverrun 是否开启 `超过套餐额度部分转按量付费`
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnableOverrun(const bool& _enableOverrun);
@@ -387,18 +371,14 @@ namespace TencentCloud
 
                     /**
                      * 获取环境套餐类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExtPackageType 环境套餐类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExtPackageType() const;
 
                     /**
                      * 设置环境套餐类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _extPackageType 环境套餐类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExtPackageType(const std::string& _extPackageType);
@@ -523,35 +503,30 @@ namespace TencentCloud
                      * 付费渠道。
 <li> miniapp：小程序</li>
 <li> qcloud：腾讯云</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_paymentChannel;
                     bool m_paymentChannelHasBeenSet;
 
                     /**
                      * 最新的订单信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     OrderInfo m_orderInfo;
                     bool m_orderInfoHasBeenSet;
 
                     /**
                      * 免费配额信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_freeQuota;
                     bool m_freeQuotaHasBeenSet;
 
                     /**
                      * 是否开启 `超过套餐额度部分转按量付费`
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enableOverrun;
                     bool m_enableOverrunHasBeenSet;
 
                     /**
                      * 环境套餐类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_extPackageType;
                     bool m_extPackageTypeHasBeenSet;

@@ -24,6 +24,7 @@ using namespace std;
 
 DescribeSyncJobsRequest::DescribeSyncJobsRequest() :
     m_jobIdHasBeenSet(false),
+    m_jobIdsHasBeenSet(false),
     m_jobNameHasBeenSet(false),
     m_orderHasBeenSet(false),
     m_orderSeqHasBeenSet(false),
@@ -33,7 +34,9 @@ DescribeSyncJobsRequest::DescribeSyncJobsRequest() :
     m_runModeHasBeenSet(false),
     m_jobTypeHasBeenSet(false),
     m_payModeHasBeenSet(false),
-    m_tagFiltersHasBeenSet(false)
+    m_tagFiltersHasBeenSet(false),
+    m_srcInfoPatternHasBeenSet(false),
+    m_dstInfoPatternHasBeenSet(false)
 {
 }
 
@@ -50,6 +53,19 @@ string DescribeSyncJobsRequest::ToJsonString() const
         string key = "JobId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_jobId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jobIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_jobIds.begin(); itr != m_jobIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     if (m_jobNameHasBeenSet)
@@ -144,6 +160,22 @@ string DescribeSyncJobsRequest::ToJsonString() const
         }
     }
 
+    if (m_srcInfoPatternHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SrcInfoPattern";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_srcInfoPattern.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dstInfoPatternHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DstInfoPattern";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dstInfoPattern.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -166,6 +198,22 @@ void DescribeSyncJobsRequest::SetJobId(const string& _jobId)
 bool DescribeSyncJobsRequest::JobIdHasBeenSet() const
 {
     return m_jobIdHasBeenSet;
+}
+
+vector<string> DescribeSyncJobsRequest::GetJobIds() const
+{
+    return m_jobIds;
+}
+
+void DescribeSyncJobsRequest::SetJobIds(const vector<string>& _jobIds)
+{
+    m_jobIds = _jobIds;
+    m_jobIdsHasBeenSet = true;
+}
+
+bool DescribeSyncJobsRequest::JobIdsHasBeenSet() const
+{
+    return m_jobIdsHasBeenSet;
 }
 
 string DescribeSyncJobsRequest::GetJobName() const
@@ -326,6 +374,38 @@ void DescribeSyncJobsRequest::SetTagFilters(const vector<TagFilter>& _tagFilters
 bool DescribeSyncJobsRequest::TagFiltersHasBeenSet() const
 {
     return m_tagFiltersHasBeenSet;
+}
+
+string DescribeSyncJobsRequest::GetSrcInfoPattern() const
+{
+    return m_srcInfoPattern;
+}
+
+void DescribeSyncJobsRequest::SetSrcInfoPattern(const string& _srcInfoPattern)
+{
+    m_srcInfoPattern = _srcInfoPattern;
+    m_srcInfoPatternHasBeenSet = true;
+}
+
+bool DescribeSyncJobsRequest::SrcInfoPatternHasBeenSet() const
+{
+    return m_srcInfoPatternHasBeenSet;
+}
+
+string DescribeSyncJobsRequest::GetDstInfoPattern() const
+{
+    return m_dstInfoPattern;
+}
+
+void DescribeSyncJobsRequest::SetDstInfoPattern(const string& _dstInfoPattern)
+{
+    m_dstInfoPattern = _dstInfoPattern;
+    m_dstInfoPatternHasBeenSet = true;
+}
+
+bool DescribeSyncJobsRequest::DstInfoPatternHasBeenSet() const
+{
+    return m_dstInfoPatternHasBeenSet;
 }
 
 

@@ -2190,6 +2190,49 @@ PostgresClient::DescribeLogBackupsOutcomeCallable PostgresClient::DescribeLogBac
     return task->get_future();
 }
 
+PostgresClient::DescribeMaintainTimeWindowOutcome PostgresClient::DescribeMaintainTimeWindow(const DescribeMaintainTimeWindowRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMaintainTimeWindow");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMaintainTimeWindowResponse rsp = DescribeMaintainTimeWindowResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMaintainTimeWindowOutcome(rsp);
+        else
+            return DescribeMaintainTimeWindowOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMaintainTimeWindowOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::DescribeMaintainTimeWindowAsync(const DescribeMaintainTimeWindowRequest& request, const DescribeMaintainTimeWindowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMaintainTimeWindow(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::DescribeMaintainTimeWindowOutcomeCallable PostgresClient::DescribeMaintainTimeWindowCallable(const DescribeMaintainTimeWindowRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMaintainTimeWindowOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMaintainTimeWindow(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PostgresClient::DescribeOrdersOutcome PostgresClient::DescribeOrders(const DescribeOrdersRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeOrders");
@@ -3645,6 +3688,49 @@ PostgresClient::ModifyDatabaseOwnerOutcomeCallable PostgresClient::ModifyDatabas
         [this, request]()
         {
             return this->ModifyDatabaseOwner(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PostgresClient::ModifyMaintainTimeWindowOutcome PostgresClient::ModifyMaintainTimeWindow(const ModifyMaintainTimeWindowRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyMaintainTimeWindow");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyMaintainTimeWindowResponse rsp = ModifyMaintainTimeWindowResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyMaintainTimeWindowOutcome(rsp);
+        else
+            return ModifyMaintainTimeWindowOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyMaintainTimeWindowOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::ModifyMaintainTimeWindowAsync(const ModifyMaintainTimeWindowRequest& request, const ModifyMaintainTimeWindowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyMaintainTimeWindow(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::ModifyMaintainTimeWindowOutcomeCallable PostgresClient::ModifyMaintainTimeWindowCallable(const ModifyMaintainTimeWindowRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyMaintainTimeWindowOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyMaintainTimeWindow(request);
         }
     );
 

@@ -731,6 +731,31 @@ namespace TencentCloud
                      */
                     bool SubUinNameHasBeenSet() const;
 
+                    /**
+                     * 获取AppId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AppId AppId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAppId() const;
+
+                    /**
+                     * 设置AppId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _appId AppId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAppId(const std::string& _appId);
+
+                    /**
+                     * 判断参数 AppId 是否已赋值
+                     * @return AppId 是否已赋值
+                     * 
+                     */
+                    bool AppIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -923,6 +948,13 @@ namespace TencentCloud
                      */
                     std::string m_subUinName;
                     bool m_subUinNameHasBeenSet;
+
+                    /**
+                     * AppId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_appId;
+                    bool m_appIdHasBeenSet;
 
                 };
             }

@@ -48,7 +48,8 @@ RollbackToNewClusterRequest::RollbackToNewClusterRequest() :
     m_timeUnitHasBeenSet(false),
     m_rollbackDatabasesHasBeenSet(false),
     m_rollbackTablesHasBeenSet(false),
-    m_originalROInstanceListHasBeenSet(false)
+    m_originalROInstanceListHasBeenSet(false),
+    m_projectIdHasBeenSet(false)
 {
 }
 
@@ -315,6 +316,14 @@ string RollbackToNewClusterRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_projectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_projectId, allocator);
     }
 
 
@@ -739,6 +748,22 @@ void RollbackToNewClusterRequest::SetOriginalROInstanceList(const vector<string>
 bool RollbackToNewClusterRequest::OriginalROInstanceListHasBeenSet() const
 {
     return m_originalROInstanceListHasBeenSet;
+}
+
+int64_t RollbackToNewClusterRequest::GetProjectId() const
+{
+    return m_projectId;
+}
+
+void RollbackToNewClusterRequest::SetProjectId(const int64_t& _projectId)
+{
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
+}
+
+bool RollbackToNewClusterRequest::ProjectIdHasBeenSet() const
+{
+    return m_projectIdHasBeenSet;
 }
 
 

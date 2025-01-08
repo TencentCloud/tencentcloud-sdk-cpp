@@ -993,15 +993,15 @@ namespace TencentCloud
                     bool DrugBasicCodeHasBeenSet() const;
 
                     /**
-                     * 获取OCT标签
-                     * @return OctTag OCT标签
+                     * 获取OTC标签
+                     * @return OctTag OTC标签
                      * 
                      */
                     std::string GetOctTag() const;
 
                     /**
-                     * 设置OCT标签
-                     * @param _octTag OCT标签
+                     * 设置OTC标签
+                     * @param _octTag OTC标签
                      * 
                      */
                     void SetOctTag(const std::string& _octTag);
@@ -1286,7 +1286,7 @@ namespace TencentCloud
                     bool m_drugBasicCodeHasBeenSet;
 
                     /**
-                     * OCT标签
+                     * OTC标签
                      */
                     std::string m_octTag;
                     bool m_octTagHasBeenSet;

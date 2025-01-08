@@ -765,7 +765,7 @@ namespace TencentCloud
                 DescribeCloudBaseRunOperationTypesOutcomeCallable DescribeCloudBaseRunOperationTypesCallable(const Model::DescribeCloudBaseRunOperationTypesRequest& request);
 
                 /**
-                 *查询云应用服务版本容器列表
+                 *查询云托管服务版本容器列表
                  * @param req DescribeCloudBaseRunPodListRequest
                  * @return DescribeCloudBaseRunPodListOutcome
                  */

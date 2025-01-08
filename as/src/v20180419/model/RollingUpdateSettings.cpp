@@ -23,7 +23,8 @@ using namespace std;
 RollingUpdateSettings::RollingUpdateSettings() :
     m_batchNumberHasBeenSet(false),
     m_batchPauseHasBeenSet(false),
-    m_maxSurgeHasBeenSet(false)
+    m_maxSurgeHasBeenSet(false),
+    m_failProcessHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome RollingUpdateSettings::Deserialize(const rapidjson::Value &v
         m_maxSurgeHasBeenSet = true;
     }
 
+    if (value.HasMember("FailProcess") && !value["FailProcess"].IsNull())
+    {
+        if (!value["FailProcess"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RollingUpdateSettings.FailProcess` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_failProcess = string(value["FailProcess"].GetString());
+        m_failProcessHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void RollingUpdateSettings::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "MaxSurge";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxSurge, allocator);
+    }
+
+    if (m_failProcessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FailProcess";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_failProcess.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void RollingUpdateSettings::SetMaxSurge(const int64_t& _maxSurge)
 bool RollingUpdateSettings::MaxSurgeHasBeenSet() const
 {
     return m_maxSurgeHasBeenSet;
+}
+
+string RollingUpdateSettings::GetFailProcess() const
+{
+    return m_failProcess;
+}
+
+void RollingUpdateSettings::SetFailProcess(const string& _failProcess)
+{
+    m_failProcess = _failProcess;
+    m_failProcessHasBeenSet = true;
+}
+
+bool RollingUpdateSettings::FailProcessHasBeenSet() const
+{
+    return m_failProcessHasBeenSet;
 }
 

@@ -300,15 +300,15 @@ REJECTED:拒绝
                     bool RouteTypeHasBeenSet() const;
 
                     /**
-                     * 获取用户侧BGP，Asn，AuthKey
-                     * @return BgpPeer 用户侧BGP，Asn，AuthKey
+                     * 获取用户侧BGP，包括： CloudAsn，Asn，AuthKey
+                     * @return BgpPeer 用户侧BGP，包括： CloudAsn，Asn，AuthKey
                      * 
                      */
                     BgpPeer GetBgpPeer() const;
 
                     /**
-                     * 设置用户侧BGP，Asn，AuthKey
-                     * @param _bgpPeer 用户侧BGP，Asn，AuthKey
+                     * 设置用户侧BGP，包括： CloudAsn，Asn，AuthKey
+                     * @param _bgpPeer 用户侧BGP，包括： CloudAsn，Asn，AuthKey
                      * 
                      */
                     void SetBgpPeer(const BgpPeer& _bgpPeer);
@@ -490,18 +490,14 @@ REJECTED:拒绝
 
                     /**
                      * 获取关联的网络自定义探测ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NetDetectId 关联的网络自定义探测ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNetDetectId() const;
 
                     /**
                      * 设置关联的网络自定义探测ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _netDetectId 关联的网络自定义探测ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNetDetectId(const std::string& _netDetectId);
@@ -515,18 +511,14 @@ REJECTED:拒绝
 
                     /**
                      * 获取BGP community开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableBGPCommunity BGP community开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnableBGPCommunity() const;
 
                     /**
                      * 设置BGP community开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enableBGPCommunity BGP community开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnableBGPCommunity(const bool& _enableBGPCommunity);
@@ -540,18 +532,14 @@ REJECTED:拒绝
 
                     /**
                      * 获取是否为Nat通道
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NatType 是否为Nat通道
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetNatType() const;
 
                     /**
                      * 设置是否为Nat通道
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _natType 是否为Nat通道
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNatType(const int64_t& _natType);
@@ -565,18 +553,14 @@ REJECTED:拒绝
 
                     /**
                      * 获取VPC地域简码，如gz、cd
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcRegion VPC地域简码，如gz、cd
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcRegion() const;
 
                     /**
                      * 设置VPC地域简码，如gz、cd
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcRegion VPC地域简码，如gz、cd
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcRegion(const std::string& _vpcRegion);
@@ -590,18 +574,14 @@ REJECTED:拒绝
 
                     /**
                      * 获取是否开启BFD
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BfdEnable 是否开启BFD
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBfdEnable() const;
 
                     /**
                      * 设置是否开启BFD
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bfdEnable 是否开启BFD
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBfdEnable(const int64_t& _bfdEnable);
@@ -615,18 +595,14 @@ REJECTED:拒绝
 
                     /**
                      * 获取专用通道接入点类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccessPointType 专用通道接入点类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAccessPointType() const;
 
                     /**
                      * 设置专用通道接入点类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _accessPointType 专用通道接入点类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAccessPointType(const std::string& _accessPointType);
@@ -640,18 +616,14 @@ REJECTED:拒绝
 
                     /**
                      * 获取专线网关名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DirectConnectGatewayName 专线网关名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDirectConnectGatewayName() const;
 
                     /**
                      * 设置专线网关名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _directConnectGatewayName 专线网关名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDirectConnectGatewayName(const std::string& _directConnectGatewayName);
@@ -665,18 +637,14 @@ REJECTED:拒绝
 
                     /**
                      * 获取VPC名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcName VPC名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcName() const;
 
                     /**
                      * 设置VPC名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcName VPC名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcName(const std::string& _vpcName);
@@ -690,18 +658,14 @@ REJECTED:拒绝
 
                     /**
                      * 获取TencentBackupAddress，腾讯侧备用互联 IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TencentBackupAddress TencentBackupAddress，腾讯侧备用互联 IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTencentBackupAddress() const;
 
                     /**
                      * 设置TencentBackupAddress，腾讯侧备用互联 IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tencentBackupAddress TencentBackupAddress，腾讯侧备用互联 IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTencentBackupAddress(const std::string& _tencentBackupAddress);
@@ -715,18 +679,14 @@ REJECTED:拒绝
 
                     /**
                      * 获取专用通道关联的物理专线是否签署了用户协议
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SignLaw 专用通道关联的物理专线是否签署了用户协议
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetSignLaw() const;
 
                     /**
                      * 设置专用通道关联的物理专线是否签署了用户协议
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _signLaw 专用通道关联的物理专线是否签署了用户协议
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSignLaw(const bool& _signLaw);
@@ -740,18 +700,14 @@ REJECTED:拒绝
 
                     /**
                      * 获取高速上云服务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CloudAttachId 高速上云服务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCloudAttachId() const;
 
                     /**
                      * 设置高速上云服务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cloudAttachId 高速上云服务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCloudAttachId(const std::string& _cloudAttachId);
@@ -765,18 +721,14 @@ REJECTED:拒绝
 
                     /**
                      * 获取是否共享通道
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ShareOrNot 是否共享通道
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetShareOrNot() const;
 
                     /**
                      * 设置是否共享通道
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _shareOrNot 是否共享通道
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetShareOrNot(const uint64_t& _shareOrNot);
@@ -861,7 +813,7 @@ REJECTED:拒绝
                     bool m_routeTypeHasBeenSet;
 
                     /**
-                     * 用户侧BGP，Asn，AuthKey
+                     * 用户侧BGP，包括： CloudAsn，Asn，AuthKey
                      */
                     BgpPeer m_bgpPeer;
                     bool m_bgpPeerHasBeenSet;
@@ -916,84 +868,72 @@ REJECTED:拒绝
 
                     /**
                      * 关联的网络自定义探测ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_netDetectId;
                     bool m_netDetectIdHasBeenSet;
 
                     /**
                      * BGP community开关
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enableBGPCommunity;
                     bool m_enableBGPCommunityHasBeenSet;
 
                     /**
                      * 是否为Nat通道
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_natType;
                     bool m_natTypeHasBeenSet;
 
                     /**
                      * VPC地域简码，如gz、cd
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcRegion;
                     bool m_vpcRegionHasBeenSet;
 
                     /**
                      * 是否开启BFD
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_bfdEnable;
                     bool m_bfdEnableHasBeenSet;
 
                     /**
                      * 专用通道接入点类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_accessPointType;
                     bool m_accessPointTypeHasBeenSet;
 
                     /**
                      * 专线网关名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_directConnectGatewayName;
                     bool m_directConnectGatewayNameHasBeenSet;
 
                     /**
                      * VPC名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcName;
                     bool m_vpcNameHasBeenSet;
 
                     /**
                      * TencentBackupAddress，腾讯侧备用互联 IP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tencentBackupAddress;
                     bool m_tencentBackupAddressHasBeenSet;
 
                     /**
                      * 专用通道关联的物理专线是否签署了用户协议
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_signLaw;
                     bool m_signLawHasBeenSet;
 
                     /**
                      * 高速上云服务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cloudAttachId;
                     bool m_cloudAttachIdHasBeenSet;
 
                     /**
                      * 是否共享通道
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_shareOrNot;
                     bool m_shareOrNotHasBeenSet;

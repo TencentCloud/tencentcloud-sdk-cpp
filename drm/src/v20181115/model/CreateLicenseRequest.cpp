@@ -27,7 +27,8 @@ CreateLicenseRequest::CreateLicenseRequest() :
     m_licenseRequestHasBeenSet(false),
     m_contentTypeHasBeenSet(false),
     m_tracksHasBeenSet(false),
-    m_playbackPolicyHasBeenSet(false)
+    m_playbackPolicyHasBeenSet(false),
+    m_widevineSecurityLevelHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,14 @@ string CreateLicenseRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_playbackPolicy.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_widevineSecurityLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WidevineSecurityLevel";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_widevineSecurityLevel.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -170,6 +179,22 @@ void CreateLicenseRequest::SetPlaybackPolicy(const PlaybackPolicy& _playbackPoli
 bool CreateLicenseRequest::PlaybackPolicyHasBeenSet() const
 {
     return m_playbackPolicyHasBeenSet;
+}
+
+string CreateLicenseRequest::GetWidevineSecurityLevel() const
+{
+    return m_widevineSecurityLevel;
+}
+
+void CreateLicenseRequest::SetWidevineSecurityLevel(const string& _widevineSecurityLevel)
+{
+    m_widevineSecurityLevel = _widevineSecurityLevel;
+    m_widevineSecurityLevelHasBeenSet = true;
+}
+
+bool CreateLicenseRequest::WidevineSecurityLevelHasBeenSet() const
+{
+    return m_widevineSecurityLevelHasBeenSet;
 }
 
 

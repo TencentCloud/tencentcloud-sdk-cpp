@@ -80,9 +80,7 @@ namespace TencentCloud
 
                     /**
                      * 获取任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowName 任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFlowName() const;
@@ -97,10 +95,8 @@ namespace TencentCloud
                     /**
                      * 获取总任务流程进度：
 例如：0.8
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowTotalProgress 总任务流程进度：
 例如：0.8
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetFlowTotalProgress() const;
@@ -120,7 +116,6 @@ namespace TencentCloud
 3:完成（存在跳过步骤），
 -1:失败，
 -3:阻塞，
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowTotalStatus 定义流程总状态：
 0:初始化，
 1:运行中，
@@ -128,7 +123,6 @@ namespace TencentCloud
 3:完成（存在跳过步骤），
 -1:失败，
 -3:阻塞，
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFlowTotalStatus() const;
@@ -176,7 +170,6 @@ NeedExtraDetail为true时返回
 
                     /**
                      * 任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_flowName;
                     bool m_flowNameHasBeenSet;
@@ -184,7 +177,6 @@ NeedExtraDetail为true时返回
                     /**
                      * 总任务流程进度：
 例如：0.8
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_flowTotalProgress;
                     bool m_flowTotalProgressHasBeenSet;
@@ -197,7 +189,6 @@ NeedExtraDetail为true时返回
 3:完成（存在跳过步骤），
 -1:失败，
 -3:阻塞，
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_flowTotalStatus;
                     bool m_flowTotalStatusHasBeenSet;

@@ -65,7 +65,8 @@ ClusterInstancesInfo::ClusterInstancesInfo() :
     m_isCvmReplaceHasBeenSet(false),
     m_clusterTitleHasBeenSet(false),
     m_configDetailHasBeenSet(false),
-    m_bindFileSystemNumHasBeenSet(false)
+    m_bindFileSystemNumHasBeenSet(false),
+    m_clusterRelationInfoListHasBeenSet(false)
 {
 }
 
@@ -568,6 +569,26 @@ CoreInternalOutcome ClusterInstancesInfo::Deserialize(const rapidjson::Value &va
         m_bindFileSystemNumHasBeenSet = true;
     }
 
+    if (value.HasMember("ClusterRelationInfoList") && !value["ClusterRelationInfoList"].IsNull())
+    {
+        if (!value["ClusterRelationInfoList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ClusterInstancesInfo.ClusterRelationInfoList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ClusterRelationInfoList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ClusterRelationMeta item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_clusterRelationInfoList.push_back(item);
+        }
+        m_clusterRelationInfoListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -956,6 +977,21 @@ void ClusterInstancesInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "BindFileSystemNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bindFileSystemNum, allocator);
+    }
+
+    if (m_clusterRelationInfoListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterRelationInfoList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_clusterRelationInfoList.begin(); itr != m_clusterRelationInfoList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1679,5 +1715,21 @@ void ClusterInstancesInfo::SetBindFileSystemNum(const int64_t& _bindFileSystemNu
 bool ClusterInstancesInfo::BindFileSystemNumHasBeenSet() const
 {
     return m_bindFileSystemNumHasBeenSet;
+}
+
+vector<ClusterRelationMeta> ClusterInstancesInfo::GetClusterRelationInfoList() const
+{
+    return m_clusterRelationInfoList;
+}
+
+void ClusterInstancesInfo::SetClusterRelationInfoList(const vector<ClusterRelationMeta>& _clusterRelationInfoList)
+{
+    m_clusterRelationInfoList = _clusterRelationInfoList;
+    m_clusterRelationInfoListHasBeenSet = true;
+}
+
+bool ClusterInstancesInfo::ClusterRelationInfoListHasBeenSet() const
+{
+    return m_clusterRelationInfoListHasBeenSet;
 }
 

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取代码包名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackageName 代码包名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPackageName() const;
 
                     /**
                      * 设置代码包名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _packageName 代码包名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPackageName(const std::string& _packageName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取代码包版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackageVersion 代码包版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPackageVersion() const;
 
                     /**
                      * 设置代码包版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _packageVersion 代码包版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPackageVersion(const std::string& _packageVersion);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 代码包名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_packageName;
                     bool m_packageNameHasBeenSet;
 
                     /**
                      * 代码包版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_packageVersion;
                     bool m_packageVersionHasBeenSet;

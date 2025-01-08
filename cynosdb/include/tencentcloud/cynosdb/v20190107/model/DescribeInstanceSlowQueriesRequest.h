@@ -252,6 +252,27 @@ namespace TencentCloud
                      */
                     bool OrderByTypeHasBeenSet() const;
 
+                    /**
+                     * 获取sql语句
+                     * @return SqlText sql语句
+                     * 
+                     */
+                    std::string GetSqlText() const;
+
+                    /**
+                     * 设置sql语句
+                     * @param _sqlText sql语句
+                     * 
+                     */
+                    void SetSqlText(const std::string& _sqlText);
+
+                    /**
+                     * 判断参数 SqlText 是否已赋值
+                     * @return SqlText 是否已赋值
+                     * 
+                     */
+                    bool SqlTextHasBeenSet() const;
+
                 private:
 
                     /**
@@ -313,6 +334,12 @@ namespace TencentCloud
                      */
                     std::string m_orderByType;
                     bool m_orderByTypeHasBeenSet;
+
+                    /**
+                     * sql语句
+                     */
+                    std::string m_sqlText;
+                    bool m_sqlTextHasBeenSet;
 
                 };
             }

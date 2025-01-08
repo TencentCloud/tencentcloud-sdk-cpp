@@ -60,8 +60,8 @@ namespace TencentCloud
                     bool DeployRecordIdHasBeenSet() const;
 
                     /**
-                     * 获取部署状态，1表示部署成功，0表示部署失败
-                     * @return DeployStatus 部署状态，1表示部署成功，0表示部署失败
+                     * 获取部署任务创建状态；1表示创建成功； 0表示当前存在部署中的任务，未创建新的部署任务；返回值DeployRecordId为部署中的任务ID
+                     * @return DeployStatus 部署任务创建状态；1表示创建成功； 0表示当前存在部署中的任务，未创建新的部署任务；返回值DeployRecordId为部署中的任务ID
                      * 
                      */
                     int64_t GetDeployStatus() const;
@@ -83,7 +83,7 @@ namespace TencentCloud
                     bool m_deployRecordIdHasBeenSet;
 
                     /**
-                     * 部署状态，1表示部署成功，0表示部署失败
+                     * 部署任务创建状态；1表示创建成功； 0表示当前存在部署中的任务，未创建新的部署任务；返回值DeployRecordId为部署中的任务ID
                      */
                     int64_t m_deployStatus;
                     bool m_deployStatusHasBeenSet;

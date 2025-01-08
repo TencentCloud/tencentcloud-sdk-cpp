@@ -196,6 +196,27 @@ namespace TencentCloud
                      */
                     bool ExpireHasBeenSet() const;
 
+                    /**
+                     * 获取周期性规则开始时间
+                     * @return StartTime 周期性规则开始时间
+                     * 
+                     */
+                    std::string GetStartTime() const;
+
+                    /**
+                     * 设置周期性规则开始时间
+                     * @param _startTime 周期性规则开始时间
+                     * 
+                     */
+                    void SetStartTime(const std::string& _startTime);
+
+                    /**
+                     * 判断参数 StartTime 是否已赋值
+                     * @return StartTime 是否已赋值
+                     * 
+                     */
+                    bool StartTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -238,6 +259,12 @@ namespace TencentCloud
                      */
                     std::string m_expire;
                     bool m_expireHasBeenSet;
+
+                    /**
+                     * 周期性规则开始时间
+                     */
+                    std::string m_startTime;
+                    bool m_startTimeHasBeenSet;
 
                 };
             }

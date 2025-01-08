@@ -95,18 +95,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -120,18 +116,14 @@ namespace TencentCloud
 
                     /**
                      * 获取更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updateTime 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -145,18 +137,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否默认配置,DEFAULT,BACKUP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsDefault 是否默认配置,DEFAULT,BACKUP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIsDefault() const;
 
                     /**
                      * 设置是否默认配置,DEFAULT,BACKUP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isDefault 是否默认配置,DEFAULT,BACKUP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsDefault(const std::string& _isDefault);
@@ -170,18 +158,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该类型剩余
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxResourceNum 该类型剩余
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMaxResourceNum() const;
 
                     /**
                      * 设置该类型剩余
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxResourceNum 该类型剩余
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxResourceNum(const uint64_t& _maxResourceNum);
@@ -235,28 +219,24 @@ namespace TencentCloud
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
                      * 是否默认配置,DEFAULT,BACKUP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_isDefault;
                     bool m_isDefaultHasBeenSet;
 
                     /**
                      * 该类型剩余
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_maxResourceNum;
                     bool m_maxResourceNumHasBeenSet;

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tcb/v20180608/model/CloudBaseRunVersionPod.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,90 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取偏移量
+                     * @return Offset 偏移量
+                     * 
+                     */
+                    int64_t GetOffset() const;
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     * 
+                     */
+                    bool OffsetHasBeenSet() const;
+
+                    /**
+                     * 获取分页大小
+                     * @return Limit 分页大小
+                     * 
+                     */
+                    int64_t GetLimit() const;
+
+                    /**
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
+                     * 
+                     */
+                    bool LimitHasBeenSet() const;
+
+                    /**
+                     * 获取总数
+                     * @return TotalCount 总数
+                     * 
+                     */
+                    int64_t GetTotalCount() const;
+
+                    /**
+                     * 判断参数 TotalCount 是否已赋值
+                     * @return TotalCount 是否已赋值
+                     * 
+                     */
+                    bool TotalCountHasBeenSet() const;
+
+                    /**
+                     * 获取容器列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PodList 容器列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<CloudBaseRunVersionPod> GetPodList() const;
+
+                    /**
+                     * 判断参数 PodList 是否已赋值
+                     * @return PodList 是否已赋值
+                     * 
+                     */
+                    bool PodListHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 偏移量
+                     */
+                    int64_t m_offset;
+                    bool m_offsetHasBeenSet;
+
+                    /**
+                     * 分页大小
+                     */
+                    int64_t m_limit;
+                    bool m_limitHasBeenSet;
+
+                    /**
+                     * 总数
+                     */
+                    int64_t m_totalCount;
+                    bool m_totalCountHasBeenSet;
+
+                    /**
+                     * 容器列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<CloudBaseRunVersionPod> m_podList;
+                    bool m_podListHasBeenSet;
 
                 };
             }

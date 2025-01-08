@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取原价，单位为元。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OriginalCost 原价，单位为元。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetOriginalCost() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取折扣价，单位为元。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiscountCost 折扣价，单位为元。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetDiscountCost() const;
@@ -79,10 +75,8 @@ namespace TencentCloud
                     /**
                      * 获取实例续费的时间单位。取值范围：
 <li>m：表示月份。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeUnit 实例续费的时间单位。取值范围：
 <li>m：表示月份。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTimeUnit() const;
@@ -96,9 +90,7 @@ namespace TencentCloud
 
                     /**
                      * 获取实例续费的时长。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeSpan 实例续费的时长。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTimeSpan() const;
@@ -130,14 +122,12 @@ namespace TencentCloud
 
                     /**
                      * 原价，单位为元。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_originalCost;
                     bool m_originalCostHasBeenSet;
 
                     /**
                      * 折扣价，单位为元。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_discountCost;
                     bool m_discountCostHasBeenSet;
@@ -145,14 +135,12 @@ namespace TencentCloud
                     /**
                      * 实例续费的时间单位。取值范围：
 <li>m：表示月份。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_timeUnit;
                     bool m_timeUnitHasBeenSet;
 
                     /**
                      * 实例续费的时长。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_timeSpan;
                     bool m_timeSpanHasBeenSet;

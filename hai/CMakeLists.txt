@@ -44,9 +44,11 @@ set(hai_public_header_model
   include/tencentcloud/hai/v20230812/model/DescribeRegionsResponse.h
   include/tencentcloud/hai/v20230812/model/InquirePriceRunInstancesRequest.h
   include/tencentcloud/hai/v20230812/model/StartInstanceResponse.h
+  include/tencentcloud/hai/v20230812/model/CreateMuskPromptResponse.h
   include/tencentcloud/hai/v20230812/model/DescribeServiceLoginSettingsRequest.h
   include/tencentcloud/hai/v20230812/model/ApplicationInfo.h
   include/tencentcloud/hai/v20230812/model/ItemPriceDetail.h
+  include/tencentcloud/hai/v20230812/model/CreateMuskPromptRequest.h
   include/tencentcloud/hai/v20230812/model/DescribeApplicationsResponse.h
   include/tencentcloud/hai/v20230812/model/ItemPrice.h
   include/tencentcloud/hai/v20230812/model/DescribeInstanceNetworkStatusRequest.h
@@ -83,9 +85,11 @@ set(hai_src
   src/v20230812/model/DescribeRegionsResponse.cpp
   src/v20230812/model/InquirePriceRunInstancesRequest.cpp
   src/v20230812/model/StartInstanceResponse.cpp
+  src/v20230812/model/CreateMuskPromptResponse.cpp
   src/v20230812/model/DescribeServiceLoginSettingsRequest.cpp
   src/v20230812/model/ApplicationInfo.cpp
   src/v20230812/model/ItemPriceDetail.cpp
+  src/v20230812/model/CreateMuskPromptRequest.cpp
   src/v20230812/model/DescribeApplicationsResponse.cpp
   src/v20230812/model/ItemPrice.cpp
   src/v20230812/model/DescribeInstanceNetworkStatusRequest.cpp

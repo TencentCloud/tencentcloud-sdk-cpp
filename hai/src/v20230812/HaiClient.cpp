@@ -40,6 +40,49 @@ HaiClient::HaiClient(const Credential &credential, const string &region, const C
 }
 
 
+HaiClient::CreateMuskPromptOutcome HaiClient::CreateMuskPrompt(const CreateMuskPromptRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateMuskPrompt");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateMuskPromptResponse rsp = CreateMuskPromptResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateMuskPromptOutcome(rsp);
+        else
+            return CreateMuskPromptOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateMuskPromptOutcome(outcome.GetError());
+    }
+}
+
+void HaiClient::CreateMuskPromptAsync(const CreateMuskPromptRequest& request, const CreateMuskPromptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateMuskPrompt(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+HaiClient::CreateMuskPromptOutcomeCallable HaiClient::CreateMuskPromptCallable(const CreateMuskPromptRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateMuskPromptOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateMuskPrompt(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 HaiClient::DescribeApplicationsOutcome HaiClient::DescribeApplications(const DescribeApplicationsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeApplications");

@@ -1081,6 +1081,31 @@ namespace TencentCloud
                      */
                     bool JobCreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取Appid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AppId Appid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAppId() const;
+
+                    /**
+                     * 设置Appid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _appId Appid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAppId(const std::string& _appId);
+
+                    /**
+                     * 判断参数 AppId 是否已赋值
+                     * @return AppId 是否已赋值
+                     * 
+                     */
+                    bool AppIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1371,6 +1396,13 @@ namespace TencentCloud
                      */
                     std::string m_jobCreateTime;
                     bool m_jobCreateTimeHasBeenSet;
+
+                    /**
+                     * Appid
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_appId;
+                    bool m_appIdHasBeenSet;
 
                 };
             }

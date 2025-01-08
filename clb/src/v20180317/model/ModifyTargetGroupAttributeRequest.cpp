@@ -25,7 +25,8 @@ using namespace std;
 ModifyTargetGroupAttributeRequest::ModifyTargetGroupAttributeRequest() :
     m_targetGroupIdHasBeenSet(false),
     m_targetGroupNameHasBeenSet(false),
-    m_portHasBeenSet(false)
+    m_portHasBeenSet(false),
+    m_weightHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string ModifyTargetGroupAttributeRequest::ToJsonString() const
         string key = "Port";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_port, allocator);
+    }
+
+    if (m_weightHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Weight";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_weight, allocator);
     }
 
 
@@ -114,6 +123,22 @@ void ModifyTargetGroupAttributeRequest::SetPort(const uint64_t& _port)
 bool ModifyTargetGroupAttributeRequest::PortHasBeenSet() const
 {
     return m_portHasBeenSet;
+}
+
+uint64_t ModifyTargetGroupAttributeRequest::GetWeight() const
+{
+    return m_weight;
+}
+
+void ModifyTargetGroupAttributeRequest::SetWeight(const uint64_t& _weight)
+{
+    m_weight = _weight;
+    m_weightHasBeenSet = true;
+}
+
+bool ModifyTargetGroupAttributeRequest::WeightHasBeenSet() const
+{
+    return m_weightHasBeenSet;
 }
 
 

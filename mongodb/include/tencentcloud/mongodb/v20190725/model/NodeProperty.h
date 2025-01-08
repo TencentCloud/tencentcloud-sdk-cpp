@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool AddressHasBeenSet() const;
 
                     /**
-                     * 获取节点公网访问地址(IP或域名)。
-                     * @return WanServiceAddress 节点公网访问地址(IP或域名)。
+                     * 获取节点公网访问外网地址(IP或域名，示例为IP方式)。
+                     * @return WanServiceAddress 节点公网访问外网地址(IP或域名，示例为IP方式)。
                      * 
                      */
                     std::string GetWanServiceAddress() const;
 
                     /**
-                     * 设置节点公网访问地址(IP或域名)。
-                     * @param _wanServiceAddress 节点公网访问地址(IP或域名)。
+                     * 设置节点公网访问外网地址(IP或域名，示例为IP方式)。
+                     * @param _wanServiceAddress 节点公网访问外网地址(IP或域名，示例为IP方式)。
                      * 
                      */
                     void SetWanServiceAddress(const std::string& _wanServiceAddress);
@@ -320,7 +320,7 @@ namespace TencentCloud
                     bool m_addressHasBeenSet;
 
                     /**
-                     * 节点公网访问地址(IP或域名)。
+                     * 节点公网访问外网地址(IP或域名，示例为IP方式)。
                      */
                     std::string m_wanServiceAddress;
                     bool m_wanServiceAddressHasBeenSet;

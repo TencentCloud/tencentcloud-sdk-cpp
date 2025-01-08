@@ -32,7 +32,8 @@ DescribeInstanceSlowQueriesRequest::DescribeInstanceSlowQueriesRequest() :
     m_hostHasBeenSet(false),
     m_databaseHasBeenSet(false),
     m_orderByHasBeenSet(false),
-    m_orderByTypeHasBeenSet(false)
+    m_orderByTypeHasBeenSet(false),
+    m_sqlTextHasBeenSet(false)
 {
 }
 
@@ -121,6 +122,14 @@ string DescribeInstanceSlowQueriesRequest::ToJsonString() const
         string key = "OrderByType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_orderByType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sqlTextHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SqlText";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sqlText.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -289,6 +298,22 @@ void DescribeInstanceSlowQueriesRequest::SetOrderByType(const string& _orderByTy
 bool DescribeInstanceSlowQueriesRequest::OrderByTypeHasBeenSet() const
 {
     return m_orderByTypeHasBeenSet;
+}
+
+string DescribeInstanceSlowQueriesRequest::GetSqlText() const
+{
+    return m_sqlText;
+}
+
+void DescribeInstanceSlowQueriesRequest::SetSqlText(const string& _sqlText)
+{
+    m_sqlText = _sqlText;
+    m_sqlTextHasBeenSet = true;
+}
+
+bool DescribeInstanceSlowQueriesRequest::SqlTextHasBeenSet() const
+{
+    return m_sqlTextHasBeenSet;
 }
 
 

@@ -136,15 +136,15 @@ namespace TencentCloud
                     bool TimeoutHasBeenSet() const;
 
                     /**
-                     * 获取函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10，Nodejs8.9，Nodejs10.15，Nodejs12.16， PHP5， PHP7，Go1 ， Java8和CustomRuntime
-                     * @return Runtime 函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10，Nodejs8.9，Nodejs10.15，Nodejs12.16， PHP5， PHP7，Go1 ， Java8和CustomRuntime
+                     * 获取函数运行环境，创建时指定，目前不支持修改。
+                     * @return Runtime 函数运行环境，创建时指定，目前不支持修改。
                      * 
                      */
                     std::string GetRuntime() const;
 
                     /**
-                     * 设置函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10，Nodejs8.9，Nodejs10.15，Nodejs12.16， PHP5， PHP7，Go1 ， Java8和CustomRuntime
-                     * @param _runtime 函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10，Nodejs8.9，Nodejs10.15，Nodejs12.16， PHP5， PHP7，Go1 ， Java8和CustomRuntime
+                     * 设置函数运行环境，创建时指定，目前不支持修改。
+                     * @param _runtime 函数运行环境，创建时指定，目前不支持修改。
                      * 
                      */
                     void SetRuntime(const std::string& _runtime);
@@ -586,7 +586,7 @@ namespace TencentCloud
                     bool m_timeoutHasBeenSet;
 
                     /**
-                     * 函数运行环境，目前仅支持 Python2.7，Python3.6，Nodejs6.10，Nodejs8.9，Nodejs10.15，Nodejs12.16， PHP5， PHP7，Go1 ， Java8和CustomRuntime
+                     * 函数运行环境，创建时指定，目前不支持修改。
                      */
                     std::string m_runtime;
                     bool m_runtimeHasBeenSet;

@@ -28,6 +28,7 @@
 #include <tencentcloud/cls/v20201016/model/MonitorTime.h>
 #include <tencentcloud/cls/v20201016/model/CallBackInfo.h>
 #include <tencentcloud/cls/v20201016/model/AnalysisDimensional.h>
+#include <tencentcloud/cls/v20201016/model/AlarmClassification.h>
 #include <tencentcloud/cls/v20201016/model/MultiCondition.h>
 
 
@@ -458,6 +459,31 @@ namespace TencentCloud
                     bool AlarmLevelHasBeenSet() const;
 
                     /**
+                     * 获取告警附加分类字段。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Classifications 告警附加分类字段。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<AlarmClassification> GetClassifications() const;
+
+                    /**
+                     * 设置告警附加分类字段。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _classifications 告警附加分类字段。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetClassifications(const std::vector<AlarmClassification>& _classifications);
+
+                    /**
+                     * 判断参数 Classifications 是否已赋值
+                     * @return Classifications 是否已赋值
+                     * 
+                     */
+                    bool ClassificationsHasBeenSet() const;
+
+                    /**
                      * 获取多触发条件。与
 Condition互斥。
 注意：此字段可能返回 null，表示取不到有效值。
@@ -602,6 +628,13 @@ Condition互斥。
                      */
                     uint64_t m_alarmLevel;
                     bool m_alarmLevelHasBeenSet;
+
+                    /**
+                     * 告警附加分类字段。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AlarmClassification> m_classifications;
+                    bool m_classificationsHasBeenSet;
 
                     /**
                      * 多触发条件。与
