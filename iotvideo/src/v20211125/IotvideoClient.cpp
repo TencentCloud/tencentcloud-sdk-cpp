@@ -2878,6 +2878,49 @@ IotvideoClient::DescribeForwardRuleOutcomeCallable IotvideoClient::DescribeForwa
     return task->get_future();
 }
 
+IotvideoClient::DescribeFreeCloudStorageNumOutcome IotvideoClient::DescribeFreeCloudStorageNum(const DescribeFreeCloudStorageNumRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFreeCloudStorageNum");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFreeCloudStorageNumResponse rsp = DescribeFreeCloudStorageNumResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFreeCloudStorageNumOutcome(rsp);
+        else
+            return DescribeFreeCloudStorageNumOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFreeCloudStorageNumOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::DescribeFreeCloudStorageNumAsync(const DescribeFreeCloudStorageNumRequest& request, const DescribeFreeCloudStorageNumAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFreeCloudStorageNum(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::DescribeFreeCloudStorageNumOutcomeCallable IotvideoClient::DescribeFreeCloudStorageNumCallable(const DescribeFreeCloudStorageNumRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFreeCloudStorageNumOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFreeCloudStorageNum(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotvideoClient::DescribeMessageDataStatsOutcome IotvideoClient::DescribeMessageDataStats(const DescribeMessageDataStatsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeMessageDataStats");

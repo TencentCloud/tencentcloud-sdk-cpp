@@ -31,7 +31,9 @@ CreateHiveTableByDDLRequest::CreateHiveTableByDDLRequest() :
     m_typeHasBeenSet(false),
     m_inchargeHasBeenSet(false),
     m_schemaNameHasBeenSet(false),
-    m_asyncHasBeenSet(false)
+    m_asyncHasBeenSet(false),
+    m_dataOptimizationResourceHasBeenSet(false),
+    m_smartOptimizerWrittenHasBeenSet(false)
 {
 }
 
@@ -112,6 +114,22 @@ string CreateHiveTableByDDLRequest::ToJsonString() const
         string key = "Async";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_async, allocator);
+    }
+
+    if (m_dataOptimizationResourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataOptimizationResource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dataOptimizationResource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_smartOptimizerWrittenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SmartOptimizerWritten";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_smartOptimizerWritten.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -264,6 +282,38 @@ void CreateHiveTableByDDLRequest::SetAsync(const bool& _async)
 bool CreateHiveTableByDDLRequest::AsyncHasBeenSet() const
 {
     return m_asyncHasBeenSet;
+}
+
+string CreateHiveTableByDDLRequest::GetDataOptimizationResource() const
+{
+    return m_dataOptimizationResource;
+}
+
+void CreateHiveTableByDDLRequest::SetDataOptimizationResource(const string& _dataOptimizationResource)
+{
+    m_dataOptimizationResource = _dataOptimizationResource;
+    m_dataOptimizationResourceHasBeenSet = true;
+}
+
+bool CreateHiveTableByDDLRequest::DataOptimizationResourceHasBeenSet() const
+{
+    return m_dataOptimizationResourceHasBeenSet;
+}
+
+string CreateHiveTableByDDLRequest::GetSmartOptimizerWritten() const
+{
+    return m_smartOptimizerWritten;
+}
+
+void CreateHiveTableByDDLRequest::SetSmartOptimizerWritten(const string& _smartOptimizerWritten)
+{
+    m_smartOptimizerWritten = _smartOptimizerWritten;
+    m_smartOptimizerWrittenHasBeenSet = true;
+}
+
+bool CreateHiveTableByDDLRequest::SmartOptimizerWrittenHasBeenSet() const
+{
+    return m_smartOptimizerWrittenHasBeenSet;
 }
 
 

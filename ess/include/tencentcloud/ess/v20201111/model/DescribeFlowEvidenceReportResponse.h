@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取出证报告PDF的下载 URL，`有效期为5分钟`，超过有效期后将无法再下载。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReportUrl 出证报告PDF的下载 URL，`有效期为5分钟`，超过有效期后将无法再下载。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReportUrl() const;
@@ -85,7 +83,6 @@ namespace TencentCloud
 
                     /**
                      * 出证报告PDF的下载 URL，`有效期为5分钟`，超过有效期后将无法再下载。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reportUrl;
                     bool m_reportUrlHasBeenSet;

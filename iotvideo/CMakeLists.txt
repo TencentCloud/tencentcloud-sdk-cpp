@@ -370,6 +370,7 @@ set(iotvideo_public_header_model
   include/tencentcloud/iotvideo/v20211125/model/PackageConsumeStat.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeCloudStoragePackageConsumeDetailsResponse.h
   include/tencentcloud/iotvideo/v20211125/model/CreateCloudStorageRequest.h
+  include/tencentcloud/iotvideo/v20211125/model/CloudStoragePackageInfo.h
   include/tencentcloud/iotvideo/v20211125/model/MessageCntStats.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeDeviceDataStatsRequest.h
   include/tencentcloud/iotvideo/v20211125/model/ThumbnailURLInfoList.h
@@ -529,6 +530,7 @@ set(iotvideo_public_header_model
   include/tencentcloud/iotvideo/v20211125/model/CloudStorageEvent.h
   include/tencentcloud/iotvideo/v20211125/model/DeviceDataHistoryItem.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeCloudStorageDateResponse.h
+  include/tencentcloud/iotvideo/v20211125/model/DescribeFreeCloudStorageNumResponse.h
   include/tencentcloud/iotvideo/v20211125/model/TransferCloudStorageResponse.h
   include/tencentcloud/iotvideo/v20211125/model/ModifyDataForwardStatusResponse.h
   include/tencentcloud/iotvideo/v20211125/model/CloudStorageTimeInfo.h
@@ -539,6 +541,7 @@ set(iotvideo_public_header_model
   include/tencentcloud/iotvideo/v20211125/model/DescribeDeviceRequest.h
   include/tencentcloud/iotvideo/v20211125/model/CreateCloudStorageResponse.h
   include/tencentcloud/iotvideo/v20211125/model/BindCloudStorageUserResponse.h
+  include/tencentcloud/iotvideo/v20211125/model/DescribeFreeCloudStorageNumRequest.h
   include/tencentcloud/iotvideo/v20211125/model/CancelDeviceFirmwareTaskRequest.h
   include/tencentcloud/iotvideo/v20211125/model/CancelDeviceFirmwareTaskResponse.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeBatchsRequest.h
@@ -962,6 +965,7 @@ set(iotvideo_src
   src/v20211125/model/PackageConsumeStat.cpp
   src/v20211125/model/DescribeCloudStoragePackageConsumeDetailsResponse.cpp
   src/v20211125/model/CreateCloudStorageRequest.cpp
+  src/v20211125/model/CloudStoragePackageInfo.cpp
   src/v20211125/model/MessageCntStats.cpp
   src/v20211125/model/DescribeDeviceDataStatsRequest.cpp
   src/v20211125/model/ThumbnailURLInfoList.cpp
@@ -1121,6 +1125,7 @@ set(iotvideo_src
   src/v20211125/model/CloudStorageEvent.cpp
   src/v20211125/model/DeviceDataHistoryItem.cpp
   src/v20211125/model/DescribeCloudStorageDateResponse.cpp
+  src/v20211125/model/DescribeFreeCloudStorageNumResponse.cpp
   src/v20211125/model/TransferCloudStorageResponse.cpp
   src/v20211125/model/ModifyDataForwardStatusResponse.cpp
   src/v20211125/model/CloudStorageTimeInfo.cpp
@@ -1131,6 +1136,7 @@ set(iotvideo_src
   src/v20211125/model/DescribeDeviceRequest.cpp
   src/v20211125/model/CreateCloudStorageResponse.cpp
   src/v20211125/model/BindCloudStorageUserResponse.cpp
+  src/v20211125/model/DescribeFreeCloudStorageNumRequest.cpp
   src/v20211125/model/CancelDeviceFirmwareTaskRequest.cpp
   src/v20211125/model/CancelDeviceFirmwareTaskResponse.cpp
   src/v20211125/model/DescribeBatchsRequest.cpp

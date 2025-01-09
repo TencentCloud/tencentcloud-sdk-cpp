@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool IsForceHasBeenSet() const;
 
                     /**
-                     * 获取操作记录
-                     * @return OperatorRemark 操作记录
+                     * 获取操作者记录
+                     * @return OperatorRemark 操作者记录
                      * 
                      */
                     std::string GetOperatorRemark() const;
 
                     /**
-                     * 设置操作记录
-                     * @param _operatorRemark 操作记录
+                     * 设置操作者记录
+                     * @param _operatorRemark 操作者记录
                      * 
                      */
                     void SetOperatorRemark(const std::string& _operatorRemark);
@@ -228,7 +228,7 @@ namespace TencentCloud
                     bool m_isForceHasBeenSet;
 
                     /**
-                     * 操作记录
+                     * 操作者记录
                      */
                     std::string m_operatorRemark;
                     bool m_operatorRemarkHasBeenSet;

@@ -61,9 +61,7 @@ namespace TencentCloud
 
                     /**
                      * 获取集团子企业套餐使用情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubOrgSummary 集团子企业套餐使用情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SubOrgBillSummary> GetSubOrgSummary() const;
@@ -85,7 +83,6 @@ namespace TencentCloud
 
                     /**
                      * 集团子企业套餐使用情况
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SubOrgBillSummary> m_subOrgSummary;
                     bool m_subOrgSummaryHasBeenSet;

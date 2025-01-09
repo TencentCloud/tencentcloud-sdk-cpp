@@ -231,6 +231,48 @@ namespace TencentCloud
                      */
                     bool AsyncHasBeenSet() const;
 
+                    /**
+                     * 获取数据优化使用的资源
+                     * @return DataOptimizationResource 数据优化使用的资源
+                     * 
+                     */
+                    std::string GetDataOptimizationResource() const;
+
+                    /**
+                     * 设置数据优化使用的资源
+                     * @param _dataOptimizationResource 数据优化使用的资源
+                     * 
+                     */
+                    void SetDataOptimizationResource(const std::string& _dataOptimizationResource);
+
+                    /**
+                     * 判断参数 DataOptimizationResource 是否已赋值
+                     * @return DataOptimizationResource 是否已赋值
+                     * 
+                     */
+                    bool DataOptimizationResourceHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启数据优化
+                     * @return SmartOptimizerWritten 是否开启数据优化
+                     * 
+                     */
+                    std::string GetSmartOptimizerWritten() const;
+
+                    /**
+                     * 设置是否开启数据优化
+                     * @param _smartOptimizerWritten 是否开启数据优化
+                     * 
+                     */
+                    void SetSmartOptimizerWritten(const std::string& _smartOptimizerWritten);
+
+                    /**
+                     * 判断参数 SmartOptimizerWritten 是否已赋值
+                     * @return SmartOptimizerWritten 是否已赋值
+                     * 
+                     */
+                    bool SmartOptimizerWrittenHasBeenSet() const;
+
                 private:
 
                     /**
@@ -286,6 +328,18 @@ namespace TencentCloud
                      */
                     bool m_async;
                     bool m_asyncHasBeenSet;
+
+                    /**
+                     * 数据优化使用的资源
+                     */
+                    std::string m_dataOptimizationResource;
+                    bool m_dataOptimizationResourceHasBeenSet;
+
+                    /**
+                     * 是否开启数据优化
+                     */
+                    std::string m_smartOptimizerWritten;
+                    bool m_smartOptimizerWrittenHasBeenSet;
 
                 };
             }

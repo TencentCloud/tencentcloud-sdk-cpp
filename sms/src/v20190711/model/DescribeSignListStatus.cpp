@@ -26,7 +26,10 @@ DescribeSignListStatus::DescribeSignListStatus() :
     m_statusCodeHasBeenSet(false),
     m_reviewReplyHasBeenSet(false),
     m_signNameHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_qualificationIdHasBeenSet(false),
+    m_qualificationNameHasBeenSet(false),
+    m_qualificationStatusCodeHasBeenSet(false)
 {
 }
 
@@ -95,6 +98,36 @@ CoreInternalOutcome DescribeSignListStatus::Deserialize(const rapidjson::Value &
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("QualificationId") && !value["QualificationId"].IsNull())
+    {
+        if (!value["QualificationId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeSignListStatus.QualificationId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_qualificationId = value["QualificationId"].GetUint64();
+        m_qualificationIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("QualificationName") && !value["QualificationName"].IsNull())
+    {
+        if (!value["QualificationName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeSignListStatus.QualificationName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_qualificationName = string(value["QualificationName"].GetString());
+        m_qualificationNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("QualificationStatusCode") && !value["QualificationStatusCode"].IsNull())
+    {
+        if (!value["QualificationStatusCode"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeSignListStatus.QualificationStatusCode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_qualificationStatusCode = value["QualificationStatusCode"].GetInt64();
+        m_qualificationStatusCodeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +181,30 @@ void DescribeSignListStatus::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createTime, allocator);
+    }
+
+    if (m_qualificationIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QualificationId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_qualificationId, allocator);
+    }
+
+    if (m_qualificationNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QualificationName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_qualificationName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_qualificationStatusCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QualificationStatusCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_qualificationStatusCode, allocator);
     }
 
 }
@@ -247,5 +304,53 @@ void DescribeSignListStatus::SetCreateTime(const uint64_t& _createTime)
 bool DescribeSignListStatus::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+uint64_t DescribeSignListStatus::GetQualificationId() const
+{
+    return m_qualificationId;
+}
+
+void DescribeSignListStatus::SetQualificationId(const uint64_t& _qualificationId)
+{
+    m_qualificationId = _qualificationId;
+    m_qualificationIdHasBeenSet = true;
+}
+
+bool DescribeSignListStatus::QualificationIdHasBeenSet() const
+{
+    return m_qualificationIdHasBeenSet;
+}
+
+string DescribeSignListStatus::GetQualificationName() const
+{
+    return m_qualificationName;
+}
+
+void DescribeSignListStatus::SetQualificationName(const string& _qualificationName)
+{
+    m_qualificationName = _qualificationName;
+    m_qualificationNameHasBeenSet = true;
+}
+
+bool DescribeSignListStatus::QualificationNameHasBeenSet() const
+{
+    return m_qualificationNameHasBeenSet;
+}
+
+int64_t DescribeSignListStatus::GetQualificationStatusCode() const
+{
+    return m_qualificationStatusCode;
+}
+
+void DescribeSignListStatus::SetQualificationStatusCode(const int64_t& _qualificationStatusCode)
+{
+    m_qualificationStatusCode = _qualificationStatusCode;
+    m_qualificationStatusCodeHasBeenSet = true;
+}
+
+bool DescribeSignListStatus::QualificationStatusCodeHasBeenSet() const
+{
+    return m_qualificationStatusCodeHasBeenSet;
 }
 

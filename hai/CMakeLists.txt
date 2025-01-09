@@ -26,20 +26,23 @@ set(hai_public_header_model
   include/tencentcloud/hai/v20230812/model/DescribeInstanceNetworkStatusResponse.h
   include/tencentcloud/hai/v20230812/model/Instance.h
   include/tencentcloud/hai/v20230812/model/TerminateInstancesResponse.h
-  include/tencentcloud/hai/v20230812/model/DescribeRegionsRequest.h
+  include/tencentcloud/hai/v20230812/model/DescribeApplicationsResponse.h
   include/tencentcloud/hai/v20230812/model/StartInstanceRequest.h
   include/tencentcloud/hai/v20230812/model/LoginSetting.h
+  include/tencentcloud/hai/v20230812/model/RegionInfo.h
   include/tencentcloud/hai/v20230812/model/Price.h
   include/tencentcloud/hai/v20230812/model/TerminateInstancesRequest.h
-  include/tencentcloud/hai/v20230812/model/RegionInfo.h
+  include/tencentcloud/hai/v20230812/model/DescribeMuskPromptsRequest.h
   include/tencentcloud/hai/v20230812/model/DescribeScenesResponse.h
   include/tencentcloud/hai/v20230812/model/DescribeApplicationsRequest.h
+  include/tencentcloud/hai/v20230812/model/SceneInfo.h
   include/tencentcloud/hai/v20230812/model/RunInstancesRequest.h
   include/tencentcloud/hai/v20230812/model/DescribeInstancesResponse.h
   include/tencentcloud/hai/v20230812/model/SystemDisk.h
   include/tencentcloud/hai/v20230812/model/RunInstancesResponse.h
   include/tencentcloud/hai/v20230812/model/DescribeInstancesRequest.h
   include/tencentcloud/hai/v20230812/model/Filter.h
+  include/tencentcloud/hai/v20230812/model/MuskPromptInfo.h
   include/tencentcloud/hai/v20230812/model/DescribeScenesRequest.h
   include/tencentcloud/hai/v20230812/model/DescribeRegionsResponse.h
   include/tencentcloud/hai/v20230812/model/InquirePriceRunInstancesRequest.h
@@ -49,13 +52,13 @@ set(hai_public_header_model
   include/tencentcloud/hai/v20230812/model/ApplicationInfo.h
   include/tencentcloud/hai/v20230812/model/ItemPriceDetail.h
   include/tencentcloud/hai/v20230812/model/CreateMuskPromptRequest.h
-  include/tencentcloud/hai/v20230812/model/DescribeApplicationsResponse.h
+  include/tencentcloud/hai/v20230812/model/DescribeRegionsRequest.h
   include/tencentcloud/hai/v20230812/model/ItemPrice.h
   include/tencentcloud/hai/v20230812/model/DescribeInstanceNetworkStatusRequest.h
   include/tencentcloud/hai/v20230812/model/LoginService.h
   include/tencentcloud/hai/v20230812/model/StopInstanceResponse.h
   include/tencentcloud/hai/v20230812/model/InstanceChargePrepaid.h
-  include/tencentcloud/hai/v20230812/model/SceneInfo.h
+  include/tencentcloud/hai/v20230812/model/DescribeMuskPromptsResponse.h
   )
 
 set(hai_src
@@ -67,20 +70,23 @@ set(hai_src
   src/v20230812/model/DescribeInstanceNetworkStatusResponse.cpp
   src/v20230812/model/Instance.cpp
   src/v20230812/model/TerminateInstancesResponse.cpp
-  src/v20230812/model/DescribeRegionsRequest.cpp
+  src/v20230812/model/DescribeApplicationsResponse.cpp
   src/v20230812/model/StartInstanceRequest.cpp
   src/v20230812/model/LoginSetting.cpp
+  src/v20230812/model/RegionInfo.cpp
   src/v20230812/model/Price.cpp
   src/v20230812/model/TerminateInstancesRequest.cpp
-  src/v20230812/model/RegionInfo.cpp
+  src/v20230812/model/DescribeMuskPromptsRequest.cpp
   src/v20230812/model/DescribeScenesResponse.cpp
   src/v20230812/model/DescribeApplicationsRequest.cpp
+  src/v20230812/model/SceneInfo.cpp
   src/v20230812/model/RunInstancesRequest.cpp
   src/v20230812/model/DescribeInstancesResponse.cpp
   src/v20230812/model/SystemDisk.cpp
   src/v20230812/model/RunInstancesResponse.cpp
   src/v20230812/model/DescribeInstancesRequest.cpp
   src/v20230812/model/Filter.cpp
+  src/v20230812/model/MuskPromptInfo.cpp
   src/v20230812/model/DescribeScenesRequest.cpp
   src/v20230812/model/DescribeRegionsResponse.cpp
   src/v20230812/model/InquirePriceRunInstancesRequest.cpp
@@ -90,13 +96,13 @@ set(hai_src
   src/v20230812/model/ApplicationInfo.cpp
   src/v20230812/model/ItemPriceDetail.cpp
   src/v20230812/model/CreateMuskPromptRequest.cpp
-  src/v20230812/model/DescribeApplicationsResponse.cpp
+  src/v20230812/model/DescribeRegionsRequest.cpp
   src/v20230812/model/ItemPrice.cpp
   src/v20230812/model/DescribeInstanceNetworkStatusRequest.cpp
   src/v20230812/model/LoginService.cpp
   src/v20230812/model/StopInstanceResponse.cpp
   src/v20230812/model/InstanceChargePrepaid.cpp
-  src/v20230812/model/SceneInfo.cpp
+  src/v20230812/model/DescribeMuskPromptsResponse.cpp
   )
 
 set(hai_include

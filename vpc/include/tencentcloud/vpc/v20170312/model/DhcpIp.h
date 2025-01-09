@@ -267,18 +267,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标签键值对。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagSet 标签键值对。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTagSet() const;
 
                     /**
                      * 设置标签键值对。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tagSet 标签键值对。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTagSet(const std::vector<Tag>& _tagSet);
@@ -356,7 +352,6 @@ namespace TencentCloud
 
                     /**
                      * 标签键值对。	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tagSet;
                     bool m_tagSetHasBeenSet;

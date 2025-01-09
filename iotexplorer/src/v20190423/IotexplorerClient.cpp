@@ -1760,6 +1760,92 @@ IotexplorerClient::DeleteTopicRuleOutcomeCallable IotexplorerClient::DeleteTopic
     return task->get_future();
 }
 
+IotexplorerClient::DescribeActivateDeviceOutcome IotexplorerClient::DescribeActivateDevice(const DescribeActivateDeviceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeActivateDevice");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeActivateDeviceResponse rsp = DescribeActivateDeviceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeActivateDeviceOutcome(rsp);
+        else
+            return DescribeActivateDeviceOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeActivateDeviceOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeActivateDeviceAsync(const DescribeActivateDeviceRequest& request, const DescribeActivateDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeActivateDevice(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DescribeActivateDeviceOutcomeCallable IotexplorerClient::DescribeActivateDeviceCallable(const DescribeActivateDeviceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeActivateDeviceOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeActivateDevice(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::DescribeActivateLicenseServiceOutcome IotexplorerClient::DescribeActivateLicenseService(const DescribeActivateLicenseServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeActivateLicenseService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeActivateLicenseServiceResponse rsp = DescribeActivateLicenseServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeActivateLicenseServiceOutcome(rsp);
+        else
+            return DescribeActivateLicenseServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeActivateLicenseServiceOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeActivateLicenseServiceAsync(const DescribeActivateLicenseServiceRequest& request, const DescribeActivateLicenseServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeActivateLicenseService(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DescribeActivateLicenseServiceOutcomeCallable IotexplorerClient::DescribeActivateLicenseServiceCallable(const DescribeActivateLicenseServiceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeActivateLicenseServiceOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeActivateLicenseService(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::DescribeBatchProductionOutcome IotexplorerClient::DescribeBatchProduction(const DescribeBatchProductionRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBatchProduction");
@@ -3136,6 +3222,49 @@ IotexplorerClient::DescribeFirmwareUpdateStatusOutcomeCallable IotexplorerClient
     return task->get_future();
 }
 
+IotexplorerClient::DescribeFreeCloudStorageNumOutcome IotexplorerClient::DescribeFreeCloudStorageNum(const DescribeFreeCloudStorageNumRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFreeCloudStorageNum");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFreeCloudStorageNumResponse rsp = DescribeFreeCloudStorageNumResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFreeCloudStorageNumOutcome(rsp);
+        else
+            return DescribeFreeCloudStorageNumOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFreeCloudStorageNumOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeFreeCloudStorageNumAsync(const DescribeFreeCloudStorageNumRequest& request, const DescribeFreeCloudStorageNumAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFreeCloudStorageNum(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DescribeFreeCloudStorageNumOutcomeCallable IotexplorerClient::DescribeFreeCloudStorageNumCallable(const DescribeFreeCloudStorageNumRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFreeCloudStorageNumOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFreeCloudStorageNum(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::DescribeGatewayBindDevicesOutcome IotexplorerClient::DescribeGatewayBindDevices(const DescribeGatewayBindDevicesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeGatewayBindDevices");
@@ -3774,6 +3903,49 @@ IotexplorerClient::DescribeTopicRuleOutcomeCallable IotexplorerClient::DescribeT
         [this, request]()
         {
             return this->DescribeTopicRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::DescribeVideoLicenseOutcome IotexplorerClient::DescribeVideoLicense(const DescribeVideoLicenseRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVideoLicense");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVideoLicenseResponse rsp = DescribeVideoLicenseResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVideoLicenseOutcome(rsp);
+        else
+            return DescribeVideoLicenseOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVideoLicenseOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeVideoLicenseAsync(const DescribeVideoLicenseRequest& request, const DescribeVideoLicenseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVideoLicense(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DescribeVideoLicenseOutcomeCallable IotexplorerClient::DescribeVideoLicenseCallable(const DescribeVideoLicenseRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVideoLicenseOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVideoLicense(request);
         }
     );
 

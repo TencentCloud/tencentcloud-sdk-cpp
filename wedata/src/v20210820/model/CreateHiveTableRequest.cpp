@@ -28,7 +28,9 @@ CreateHiveTableRequest::CreateHiveTableRequest() :
     m_dDLSqlHasBeenSet(false),
     m_privilegeHasBeenSet(false),
     m_projectIdHasBeenSet(false),
-    m_inchargeHasBeenSet(false)
+    m_inchargeHasBeenSet(false),
+    m_dataOptimizationResourceHasBeenSet(false),
+    m_smartOptimizerWrittenHasBeenSet(false)
 {
 }
 
@@ -85,6 +87,22 @@ string CreateHiveTableRequest::ToJsonString() const
         string key = "Incharge";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_incharge.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dataOptimizationResourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataOptimizationResource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dataOptimizationResource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_smartOptimizerWrittenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SmartOptimizerWritten";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_smartOptimizerWritten.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -189,6 +207,38 @@ void CreateHiveTableRequest::SetIncharge(const string& _incharge)
 bool CreateHiveTableRequest::InchargeHasBeenSet() const
 {
     return m_inchargeHasBeenSet;
+}
+
+string CreateHiveTableRequest::GetDataOptimizationResource() const
+{
+    return m_dataOptimizationResource;
+}
+
+void CreateHiveTableRequest::SetDataOptimizationResource(const string& _dataOptimizationResource)
+{
+    m_dataOptimizationResource = _dataOptimizationResource;
+    m_dataOptimizationResourceHasBeenSet = true;
+}
+
+bool CreateHiveTableRequest::DataOptimizationResourceHasBeenSet() const
+{
+    return m_dataOptimizationResourceHasBeenSet;
+}
+
+string CreateHiveTableRequest::GetSmartOptimizerWritten() const
+{
+    return m_smartOptimizerWritten;
+}
+
+void CreateHiveTableRequest::SetSmartOptimizerWritten(const string& _smartOptimizerWritten)
+{
+    m_smartOptimizerWritten = _smartOptimizerWritten;
+    m_smartOptimizerWrittenHasBeenSet = true;
+}
+
+bool CreateHiveTableRequest::SmartOptimizerWrittenHasBeenSet() const
+{
+    return m_smartOptimizerWrittenHasBeenSet;
 }
 
 

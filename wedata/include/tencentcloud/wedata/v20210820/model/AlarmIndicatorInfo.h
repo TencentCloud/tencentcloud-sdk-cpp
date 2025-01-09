@@ -309,6 +309,56 @@ namespace TencentCloud
                      */
                     bool ThresholdHasBeenSet() const;
 
+                    /**
+                     * 获取时间范围单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IndicatorTimeRangeUnit 时间范围单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetIndicatorTimeRangeUnit() const;
+
+                    /**
+                     * 设置时间范围单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _indicatorTimeRangeUnit 时间范围单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIndicatorTimeRangeUnit(const std::string& _indicatorTimeRangeUnit);
+
+                    /**
+                     * 判断参数 IndicatorTimeRangeUnit 是否已赋值
+                     * @return IndicatorTimeRangeUnit 是否已赋值
+                     * 
+                     */
+                    bool IndicatorTimeRangeUnitHasBeenSet() const;
+
+                    /**
+                     * 获取时间范围值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IndicatorTimeRangeValue 时间范围值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetIndicatorTimeRangeValue() const;
+
+                    /**
+                     * 设置时间范围值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _indicatorTimeRangeValue 时间范围值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIndicatorTimeRangeValue(const int64_t& _indicatorTimeRangeValue);
+
+                    /**
+                     * 判断参数 IndicatorTimeRangeValue 是否已赋值
+                     * @return IndicatorTimeRangeValue 是否已赋值
+                     * 
+                     */
+                    bool IndicatorTimeRangeValueHasBeenSet() const;
+
                 private:
 
                     /**
@@ -384,6 +434,20 @@ namespace TencentCloud
                      */
                     double m_threshold;
                     bool m_thresholdHasBeenSet;
+
+                    /**
+                     * 时间范围单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_indicatorTimeRangeUnit;
+                    bool m_indicatorTimeRangeUnitHasBeenSet;
+
+                    /**
+                     * 时间范围值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_indicatorTimeRangeValue;
+                    bool m_indicatorTimeRangeValueHasBeenSet;
 
                 };
             }

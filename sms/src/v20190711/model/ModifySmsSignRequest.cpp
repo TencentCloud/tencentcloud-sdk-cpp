@@ -31,7 +31,8 @@ ModifySmsSignRequest::ModifySmsSignRequest() :
     m_usedMethodHasBeenSet(false),
     m_proofImageHasBeenSet(false),
     m_commissionImageHasBeenSet(false),
-    m_remarkHasBeenSet(false)
+    m_remarkHasBeenSet(false),
+    m_qualificationIdHasBeenSet(false)
 {
 }
 
@@ -112,6 +113,14 @@ string ModifySmsSignRequest::ToJsonString() const
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_qualificationIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QualificationId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_qualificationId, allocator);
     }
 
 
@@ -264,6 +273,22 @@ void ModifySmsSignRequest::SetRemark(const string& _remark)
 bool ModifySmsSignRequest::RemarkHasBeenSet() const
 {
     return m_remarkHasBeenSet;
+}
+
+uint64_t ModifySmsSignRequest::GetQualificationId() const
+{
+    return m_qualificationId;
+}
+
+void ModifySmsSignRequest::SetQualificationId(const uint64_t& _qualificationId)
+{
+    m_qualificationId = _qualificationId;
+    m_qualificationIdHasBeenSet = true;
+}
+
+bool ModifySmsSignRequest::QualificationIdHasBeenSet() const
+{
+    return m_qualificationIdHasBeenSet;
 }
 
 

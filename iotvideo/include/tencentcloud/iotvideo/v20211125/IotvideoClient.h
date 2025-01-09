@@ -155,6 +155,8 @@
 #include <tencentcloud/iotvideo/v20211125/model/DescribeFirmwareTasksResponse.h>
 #include <tencentcloud/iotvideo/v20211125/model/DescribeForwardRuleRequest.h>
 #include <tencentcloud/iotvideo/v20211125/model/DescribeForwardRuleResponse.h>
+#include <tencentcloud/iotvideo/v20211125/model/DescribeFreeCloudStorageNumRequest.h>
+#include <tencentcloud/iotvideo/v20211125/model/DescribeFreeCloudStorageNumResponse.h>
 #include <tencentcloud/iotvideo/v20211125/model/DescribeMessageDataStatsRequest.h>
 #include <tencentcloud/iotvideo/v20211125/model/DescribeMessageDataStatsResponse.h>
 #include <tencentcloud/iotvideo/v20211125/model/DescribeModelDefinitionRequest.h>
@@ -443,6 +445,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeForwardRuleResponse> DescribeForwardRuleOutcome;
                 typedef std::future<DescribeForwardRuleOutcome> DescribeForwardRuleOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::DescribeForwardRuleRequest&, DescribeForwardRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeForwardRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFreeCloudStorageNumResponse> DescribeFreeCloudStorageNumOutcome;
+                typedef std::future<DescribeFreeCloudStorageNumOutcome> DescribeFreeCloudStorageNumOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::DescribeFreeCloudStorageNumRequest&, DescribeFreeCloudStorageNumOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFreeCloudStorageNumAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeMessageDataStatsResponse> DescribeMessageDataStatsOutcome;
                 typedef std::future<DescribeMessageDataStatsOutcome> DescribeMessageDataStatsOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::DescribeMessageDataStatsRequest&, DescribeMessageDataStatsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMessageDataStatsAsyncHandler;
@@ -1153,6 +1158,15 @@ namespace TencentCloud
                 DescribeForwardRuleOutcome DescribeForwardRule(const Model::DescribeForwardRuleRequest &request);
                 void DescribeForwardRuleAsync(const Model::DescribeForwardRuleRequest& request, const DescribeForwardRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeForwardRuleOutcomeCallable DescribeForwardRuleCallable(const Model::DescribeForwardRuleRequest& request);
+
+                /**
+                 *查询云存卡套餐信息
+                 * @param req DescribeFreeCloudStorageNumRequest
+                 * @return DescribeFreeCloudStorageNumOutcome
+                 */
+                DescribeFreeCloudStorageNumOutcome DescribeFreeCloudStorageNum(const Model::DescribeFreeCloudStorageNumRequest &request);
+                void DescribeFreeCloudStorageNumAsync(const Model::DescribeFreeCloudStorageNumRequest& request, const DescribeFreeCloudStorageNumAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFreeCloudStorageNumOutcomeCallable DescribeFreeCloudStorageNumCallable(const Model::DescribeFreeCloudStorageNumRequest& request);
 
                 /**
                  *查询设备消息数量统计

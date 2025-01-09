@@ -72,11 +72,9 @@ namespace TencentCloud
                      * 获取合同预览链接URL。
 
 注：如果是预览模式(即NeedPreview设置为true)时, 才会有此预览链接URL
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PreviewUrl 合同预览链接URL。
 
 注：如果是预览模式(即NeedPreview设置为true)时, 才会有此预览链接URL
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPreviewUrl() const;
@@ -90,9 +88,7 @@ namespace TencentCloud
 
                     /**
                      * 获取签署方信息，如角色ID、角色名称等
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Approvers 签署方信息，如角色ID、角色名称等
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ApproverItem> GetApprovers() const;
@@ -121,14 +117,12 @@ namespace TencentCloud
                      * 合同预览链接URL。
 
 注：如果是预览模式(即NeedPreview设置为true)时, 才会有此预览链接URL
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_previewUrl;
                     bool m_previewUrlHasBeenSet;
 
                     /**
                      * 签署方信息，如角色ID、角色名称等
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ApproverItem> m_approvers;
                     bool m_approversHasBeenSet;

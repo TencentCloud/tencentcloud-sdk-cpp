@@ -31,6 +31,8 @@
 #include <tencentcloud/hai/v20230812/model/DescribeInstanceNetworkStatusResponse.h>
 #include <tencentcloud/hai/v20230812/model/DescribeInstancesRequest.h>
 #include <tencentcloud/hai/v20230812/model/DescribeInstancesResponse.h>
+#include <tencentcloud/hai/v20230812/model/DescribeMuskPromptsRequest.h>
+#include <tencentcloud/hai/v20230812/model/DescribeMuskPromptsResponse.h>
 #include <tencentcloud/hai/v20230812/model/DescribeRegionsRequest.h>
 #include <tencentcloud/hai/v20230812/model/DescribeRegionsResponse.h>
 #include <tencentcloud/hai/v20230812/model/DescribeScenesRequest.h>
@@ -73,6 +75,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInstancesResponse> DescribeInstancesOutcome;
                 typedef std::future<DescribeInstancesOutcome> DescribeInstancesOutcomeCallable;
                 typedef std::function<void(const HaiClient*, const Model::DescribeInstancesRequest&, DescribeInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMuskPromptsResponse> DescribeMuskPromptsOutcome;
+                typedef std::future<DescribeMuskPromptsOutcome> DescribeMuskPromptsOutcomeCallable;
+                typedef std::function<void(const HaiClient*, const Model::DescribeMuskPromptsRequest&, DescribeMuskPromptsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMuskPromptsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRegionsResponse> DescribeRegionsOutcome;
                 typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
                 typedef std::function<void(const HaiClient*, const Model::DescribeRegionsRequest&, DescribeRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
@@ -135,6 +140,15 @@ namespace TencentCloud
                 DescribeInstancesOutcome DescribeInstances(const Model::DescribeInstancesRequest &request);
                 void DescribeInstancesAsync(const Model::DescribeInstancesRequest& request, const DescribeInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInstancesOutcomeCallable DescribeInstancesCallable(const Model::DescribeInstancesRequest& request);
+
+                /**
+                 *获取prompt任务列表
+                 * @param req DescribeMuskPromptsRequest
+                 * @return DescribeMuskPromptsOutcome
+                 */
+                DescribeMuskPromptsOutcome DescribeMuskPrompts(const Model::DescribeMuskPromptsRequest &request);
+                void DescribeMuskPromptsAsync(const Model::DescribeMuskPromptsRequest& request, const DescribeMuskPromptsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMuskPromptsOutcomeCallable DescribeMuskPromptsCallable(const Model::DescribeMuskPromptsRequest& request);
 
                 /**
                  *查询地域列表

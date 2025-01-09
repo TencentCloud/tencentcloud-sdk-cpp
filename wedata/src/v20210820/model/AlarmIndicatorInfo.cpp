@@ -31,7 +31,9 @@ AlarmIndicatorInfo::AlarmIndicatorInfo() :
     m_durationHasBeenSet(false),
     m_durationUnitHasBeenSet(false),
     m_maxTimesHasBeenSet(false),
-    m_thresholdHasBeenSet(false)
+    m_thresholdHasBeenSet(false),
+    m_indicatorTimeRangeUnitHasBeenSet(false),
+    m_indicatorTimeRangeValueHasBeenSet(false)
 {
 }
 
@@ -150,6 +152,26 @@ CoreInternalOutcome AlarmIndicatorInfo::Deserialize(const rapidjson::Value &valu
         m_thresholdHasBeenSet = true;
     }
 
+    if (value.HasMember("IndicatorTimeRangeUnit") && !value["IndicatorTimeRangeUnit"].IsNull())
+    {
+        if (!value["IndicatorTimeRangeUnit"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmIndicatorInfo.IndicatorTimeRangeUnit` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_indicatorTimeRangeUnit = string(value["IndicatorTimeRangeUnit"].GetString());
+        m_indicatorTimeRangeUnitHasBeenSet = true;
+    }
+
+    if (value.HasMember("IndicatorTimeRangeValue") && !value["IndicatorTimeRangeValue"].IsNull())
+    {
+        if (!value["IndicatorTimeRangeValue"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmIndicatorInfo.IndicatorTimeRangeValue` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_indicatorTimeRangeValue = value["IndicatorTimeRangeValue"].GetInt64();
+        m_indicatorTimeRangeValueHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +265,22 @@ void AlarmIndicatorInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "Threshold";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_threshold, allocator);
+    }
+
+    if (m_indicatorTimeRangeUnitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IndicatorTimeRangeUnit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_indicatorTimeRangeUnit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_indicatorTimeRangeValueHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IndicatorTimeRangeValue";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_indicatorTimeRangeValue, allocator);
     }
 
 }
@@ -422,5 +460,37 @@ void AlarmIndicatorInfo::SetThreshold(const double& _threshold)
 bool AlarmIndicatorInfo::ThresholdHasBeenSet() const
 {
     return m_thresholdHasBeenSet;
+}
+
+string AlarmIndicatorInfo::GetIndicatorTimeRangeUnit() const
+{
+    return m_indicatorTimeRangeUnit;
+}
+
+void AlarmIndicatorInfo::SetIndicatorTimeRangeUnit(const string& _indicatorTimeRangeUnit)
+{
+    m_indicatorTimeRangeUnit = _indicatorTimeRangeUnit;
+    m_indicatorTimeRangeUnitHasBeenSet = true;
+}
+
+bool AlarmIndicatorInfo::IndicatorTimeRangeUnitHasBeenSet() const
+{
+    return m_indicatorTimeRangeUnitHasBeenSet;
+}
+
+int64_t AlarmIndicatorInfo::GetIndicatorTimeRangeValue() const
+{
+    return m_indicatorTimeRangeValue;
+}
+
+void AlarmIndicatorInfo::SetIndicatorTimeRangeValue(const int64_t& _indicatorTimeRangeValue)
+{
+    m_indicatorTimeRangeValue = _indicatorTimeRangeValue;
+    m_indicatorTimeRangeValueHasBeenSet = true;
+}
+
+bool AlarmIndicatorInfo::IndicatorTimeRangeValueHasBeenSet() const
+{
+    return m_indicatorTimeRangeValueHasBeenSet;
 }
 

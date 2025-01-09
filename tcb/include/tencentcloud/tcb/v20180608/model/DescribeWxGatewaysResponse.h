@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取返回的服务列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Gateways 返回的服务列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<GatewayItem> GetGateways() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取网关总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 网关总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 返回的服务列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<GatewayItem> m_gateways;
                     bool m_gatewaysHasBeenSet;
 
                     /**
                      * 网关总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

@@ -550,6 +550,27 @@ namespace TencentCloud
                      */
                     bool SinkSchemaNameHasBeenSet() const;
 
+                    /**
+                     * 获取获取源信息的环境
+                     * @return Env 获取源信息的环境
+                     * 
+                     */
+                    std::string GetEnv() const;
+
+                    /**
+                     * 设置获取源信息的环境
+                     * @param _env 获取源信息的环境
+                     * 
+                     */
+                    void SetEnv(const std::string& _env);
+
+                    /**
+                     * 判断参数 Env 是否已赋值
+                     * @return Env 是否已赋值
+                     * 
+                     */
+                    bool EnvHasBeenSet() const;
+
                 private:
 
                     /**
@@ -695,6 +716,12 @@ namespace TencentCloud
                      */
                     std::string m_sinkSchemaName;
                     bool m_sinkSchemaNameHasBeenSet;
+
+                    /**
+                     * 获取源信息的环境
+                     */
+                    std::string m_env;
+                    bool m_envHasBeenSet;
 
                 };
             }

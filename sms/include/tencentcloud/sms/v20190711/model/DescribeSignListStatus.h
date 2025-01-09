@@ -180,6 +180,81 @@ namespace TencentCloud
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取国内短信的资质 ID。资质 ID 信息可前往国内短信的 [实名资质管理](https://console.cloud.tencent.com/smsv2/enterprise) 页查看。
+注：国际短信不涉及，默认为0。
+                     * @return QualificationId 国内短信的资质 ID。资质 ID 信息可前往国内短信的 [实名资质管理](https://console.cloud.tencent.com/smsv2/enterprise) 页查看。
+注：国际短信不涉及，默认为0。
+                     * 
+                     */
+                    uint64_t GetQualificationId() const;
+
+                    /**
+                     * 设置国内短信的资质 ID。资质 ID 信息可前往国内短信的 [实名资质管理](https://console.cloud.tencent.com/smsv2/enterprise) 页查看。
+注：国际短信不涉及，默认为0。
+                     * @param _qualificationId 国内短信的资质 ID。资质 ID 信息可前往国内短信的 [实名资质管理](https://console.cloud.tencent.com/smsv2/enterprise) 页查看。
+注：国际短信不涉及，默认为0。
+                     * 
+                     */
+                    void SetQualificationId(const uint64_t& _qualificationId);
+
+                    /**
+                     * 判断参数 QualificationId 是否已赋值
+                     * @return QualificationId 是否已赋值
+                     * 
+                     */
+                    bool QualificationIdHasBeenSet() const;
+
+                    /**
+                     * 获取国内短信的资质名称。
+注：国际短信不涉及，默认为空。
+                     * @return QualificationName 国内短信的资质名称。
+注：国际短信不涉及，默认为空。
+                     * 
+                     */
+                    std::string GetQualificationName() const;
+
+                    /**
+                     * 设置国内短信的资质名称。
+注：国际短信不涉及，默认为空。
+                     * @param _qualificationName 国内短信的资质名称。
+注：国际短信不涉及，默认为空。
+                     * 
+                     */
+                    void SetQualificationName(const std::string& _qualificationName);
+
+                    /**
+                     * 判断参数 QualificationName 是否已赋值
+                     * @return QualificationName 是否已赋值
+                     * 
+                     */
+                    bool QualificationNameHasBeenSet() const;
+
+                    /**
+                     * 获取国内短信的资质状态。其中0表示待审核，1表示已通过，2表示已拒绝，3表示待补充后提交，4表示变更后待审核，5表示变更后被驳回。可参考 [实名资质审核状态说明](https://cloud.tencent.com/document/product/382/13444#.E5.AE.A1.E6.A0.B8.E7.8A.B6.E6.80.81.E8.AF.B4.E6.98.8E) 。
+注：国际短信不涉及，默认为0。
+                     * @return QualificationStatusCode 国内短信的资质状态。其中0表示待审核，1表示已通过，2表示已拒绝，3表示待补充后提交，4表示变更后待审核，5表示变更后被驳回。可参考 [实名资质审核状态说明](https://cloud.tencent.com/document/product/382/13444#.E5.AE.A1.E6.A0.B8.E7.8A.B6.E6.80.81.E8.AF.B4.E6.98.8E) 。
+注：国际短信不涉及，默认为0。
+                     * 
+                     */
+                    int64_t GetQualificationStatusCode() const;
+
+                    /**
+                     * 设置国内短信的资质状态。其中0表示待审核，1表示已通过，2表示已拒绝，3表示待补充后提交，4表示变更后待审核，5表示变更后被驳回。可参考 [实名资质审核状态说明](https://cloud.tencent.com/document/product/382/13444#.E5.AE.A1.E6.A0.B8.E7.8A.B6.E6.80.81.E8.AF.B4.E6.98.8E) 。
+注：国际短信不涉及，默认为0。
+                     * @param _qualificationStatusCode 国内短信的资质状态。其中0表示待审核，1表示已通过，2表示已拒绝，3表示待补充后提交，4表示变更后待审核，5表示变更后被驳回。可参考 [实名资质审核状态说明](https://cloud.tencent.com/document/product/382/13444#.E5.AE.A1.E6.A0.B8.E7.8A.B6.E6.80.81.E8.AF.B4.E6.98.8E) 。
+注：国际短信不涉及，默认为0。
+                     * 
+                     */
+                    void SetQualificationStatusCode(const int64_t& _qualificationStatusCode);
+
+                    /**
+                     * 判断参数 QualificationStatusCode 是否已赋值
+                     * @return QualificationStatusCode 是否已赋值
+                     * 
+                     */
+                    bool QualificationStatusCodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -219,6 +294,27 @@ namespace TencentCloud
                      */
                     uint64_t m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 国内短信的资质 ID。资质 ID 信息可前往国内短信的 [实名资质管理](https://console.cloud.tencent.com/smsv2/enterprise) 页查看。
+注：国际短信不涉及，默认为0。
+                     */
+                    uint64_t m_qualificationId;
+                    bool m_qualificationIdHasBeenSet;
+
+                    /**
+                     * 国内短信的资质名称。
+注：国际短信不涉及，默认为空。
+                     */
+                    std::string m_qualificationName;
+                    bool m_qualificationNameHasBeenSet;
+
+                    /**
+                     * 国内短信的资质状态。其中0表示待审核，1表示已通过，2表示已拒绝，3表示待补充后提交，4表示变更后待审核，5表示变更后被驳回。可参考 [实名资质审核状态说明](https://cloud.tencent.com/document/product/382/13444#.E5.AE.A1.E6.A0.B8.E7.8A.B6.E6.80.81.E8.AF.B4.E6.98.8E) 。
+注：国际短信不涉及，默认为0。
+                     */
+                    int64_t m_qualificationStatusCode;
+                    bool m_qualificationStatusCodeHasBeenSet;
 
                 };
             }

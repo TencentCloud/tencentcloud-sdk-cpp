@@ -27,7 +27,8 @@ GovernanceNamespaceInput::GovernanceNamespaceInput() :
     m_groupIdsHasBeenSet(false),
     m_removeUserIdsHasBeenSet(false),
     m_removeGroupIdsHasBeenSet(false),
-    m_serviceExportToHasBeenSet(false)
+    m_serviceExportToHasBeenSet(false),
+    m_syncToGlobalRegistryHasBeenSet(false)
 {
 }
 
@@ -121,6 +122,16 @@ CoreInternalOutcome GovernanceNamespaceInput::Deserialize(const rapidjson::Value
         m_serviceExportToHasBeenSet = true;
     }
 
+    if (value.HasMember("SyncToGlobalRegistry") && !value["SyncToGlobalRegistry"].IsNull())
+    {
+        if (!value["SyncToGlobalRegistry"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `GovernanceNamespaceInput.SyncToGlobalRegistry` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_syncToGlobalRegistry = value["SyncToGlobalRegistry"].GetBool();
+        m_syncToGlobalRegistryHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -207,6 +218,14 @@ void GovernanceNamespaceInput::ToJsonObject(rapidjson::Value &value, rapidjson::
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_syncToGlobalRegistryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncToGlobalRegistry";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_syncToGlobalRegistry, allocator);
     }
 
 }
@@ -322,5 +341,21 @@ void GovernanceNamespaceInput::SetServiceExportTo(const vector<string>& _service
 bool GovernanceNamespaceInput::ServiceExportToHasBeenSet() const
 {
     return m_serviceExportToHasBeenSet;
+}
+
+bool GovernanceNamespaceInput::GetSyncToGlobalRegistry() const
+{
+    return m_syncToGlobalRegistry;
+}
+
+void GovernanceNamespaceInput::SetSyncToGlobalRegistry(const bool& _syncToGlobalRegistry)
+{
+    m_syncToGlobalRegistry = _syncToGlobalRegistry;
+    m_syncToGlobalRegistryHasBeenSet = true;
+}
+
+bool GovernanceNamespaceInput::SyncToGlobalRegistryHasBeenSet() const
+{
+    return m_syncToGlobalRegistryHasBeenSet;
 }
 

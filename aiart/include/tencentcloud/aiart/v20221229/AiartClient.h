@@ -35,6 +35,8 @@
 #include <tencentcloud/aiart/v20221229/model/ImageToImageResponse.h>
 #include <tencentcloud/aiart/v20221229/model/QueryDrawPortraitJobRequest.h>
 #include <tencentcloud/aiart/v20221229/model/QueryDrawPortraitJobResponse.h>
+#include <tencentcloud/aiart/v20221229/model/QueryMemeJobRequest.h>
+#include <tencentcloud/aiart/v20221229/model/QueryMemeJobResponse.h>
 #include <tencentcloud/aiart/v20221229/model/QueryTextToImageProJobRequest.h>
 #include <tencentcloud/aiart/v20221229/model/QueryTextToImageProJobResponse.h>
 #include <tencentcloud/aiart/v20221229/model/QueryTrainPortraitModelJobRequest.h>
@@ -45,6 +47,8 @@
 #include <tencentcloud/aiart/v20221229/model/SketchToImageResponse.h>
 #include <tencentcloud/aiart/v20221229/model/SubmitDrawPortraitJobRequest.h>
 #include <tencentcloud/aiart/v20221229/model/SubmitDrawPortraitJobResponse.h>
+#include <tencentcloud/aiart/v20221229/model/SubmitMemeJobRequest.h>
+#include <tencentcloud/aiart/v20221229/model/SubmitMemeJobResponse.h>
 #include <tencentcloud/aiart/v20221229/model/SubmitTextToImageProJobRequest.h>
 #include <tencentcloud/aiart/v20221229/model/SubmitTextToImageProJobResponse.h>
 #include <tencentcloud/aiart/v20221229/model/SubmitTrainPortraitModelJobRequest.h>
@@ -85,6 +89,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QueryDrawPortraitJobResponse> QueryDrawPortraitJobOutcome;
                 typedef std::future<QueryDrawPortraitJobOutcome> QueryDrawPortraitJobOutcomeCallable;
                 typedef std::function<void(const AiartClient*, const Model::QueryDrawPortraitJobRequest&, QueryDrawPortraitJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryDrawPortraitJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryMemeJobResponse> QueryMemeJobOutcome;
+                typedef std::future<QueryMemeJobOutcome> QueryMemeJobOutcomeCallable;
+                typedef std::function<void(const AiartClient*, const Model::QueryMemeJobRequest&, QueryMemeJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryMemeJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryTextToImageProJobResponse> QueryTextToImageProJobOutcome;
                 typedef std::future<QueryTextToImageProJobOutcome> QueryTextToImageProJobOutcomeCallable;
                 typedef std::function<void(const AiartClient*, const Model::QueryTextToImageProJobRequest&, QueryTextToImageProJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryTextToImageProJobAsyncHandler;
@@ -100,6 +107,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SubmitDrawPortraitJobResponse> SubmitDrawPortraitJobOutcome;
                 typedef std::future<SubmitDrawPortraitJobOutcome> SubmitDrawPortraitJobOutcomeCallable;
                 typedef std::function<void(const AiartClient*, const Model::SubmitDrawPortraitJobRequest&, SubmitDrawPortraitJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitDrawPortraitJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::SubmitMemeJobResponse> SubmitMemeJobOutcome;
+                typedef std::future<SubmitMemeJobOutcome> SubmitMemeJobOutcomeCallable;
+                typedef std::function<void(const AiartClient*, const Model::SubmitMemeJobRequest&, SubmitMemeJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitMemeJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::SubmitTextToImageProJobResponse> SubmitTextToImageProJobOutcome;
                 typedef std::future<SubmitTextToImageProJobOutcome> SubmitTextToImageProJobOutcomeCallable;
                 typedef std::function<void(const AiartClient*, const Model::SubmitTextToImageProJobRequest&, SubmitTextToImageProJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitTextToImageProJobAsyncHandler;
@@ -182,6 +192,19 @@ namespace TencentCloud
                 QueryDrawPortraitJobOutcomeCallable QueryDrawPortraitJobCallable(const Model::QueryDrawPortraitJobRequest& request);
 
                 /**
+                 *表情动图生成接口将静态照片制作成动态的表情包。分为提交任务和查询任务2个接口。
+- 提交任务：提交一个表情动图生成异步任务，获得任务 ID。
+- 查询任务：根据任务 ID 查询任务的处理状态、处理结果，任务处理完成后可获得生成图像结果。
+
+表情动图生成默认提供1个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后才能开始处理下一个任务。
+                 * @param req QueryMemeJobRequest
+                 * @return QueryMemeJobOutcome
+                 */
+                QueryMemeJobOutcome QueryMemeJob(const Model::QueryMemeJobRequest &request);
+                void QueryMemeJobAsync(const Model::QueryMemeJobRequest& request, const QueryMemeJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryMemeJobOutcomeCallable QueryMemeJobCallable(const Model::QueryMemeJobRequest& request);
+
+                /**
                  *本接口已迁移至腾讯混元大模型-混元生图，即将停止此处维护，可切换至 [混元生图 API](https://cloud.tencent.com/document/product/1729/105970) 继续使用。
 文生图（高级版）接口基于高级版文生图大模型，将根据输入的文本描述，智能生成与之相关的结果图。分为提交任务和查询任务2个接口。
 提交任务：输入文本等，提交一个文生图（高级版）异步任务，获得任务 ID。
@@ -246,6 +269,20 @@ namespace TencentCloud
                 SubmitDrawPortraitJobOutcome SubmitDrawPortraitJob(const Model::SubmitDrawPortraitJobRequest &request);
                 void SubmitDrawPortraitJobAsync(const Model::SubmitDrawPortraitJobRequest& request, const SubmitDrawPortraitJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SubmitDrawPortraitJobOutcomeCallable SubmitDrawPortraitJobCallable(const Model::SubmitDrawPortraitJobRequest& request);
+
+                /**
+                 *表情动图生成接口将静态照片制作成动态的表情包。分为提交任务和查询任务2个接口。
+
+- 提交任务：提交一个表情动图生成异步任务，获得任务 ID。
+- 查询任务：根据任务 ID 查询任务的处理状态、处理结果，任务处理完成后可获得生成图像结果。
+
+表情动图生成默认提供1个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后才能开始处理下一个任务。
+                 * @param req SubmitMemeJobRequest
+                 * @return SubmitMemeJobOutcome
+                 */
+                SubmitMemeJobOutcome SubmitMemeJob(const Model::SubmitMemeJobRequest &request);
+                void SubmitMemeJobAsync(const Model::SubmitMemeJobRequest& request, const SubmitMemeJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SubmitMemeJobOutcomeCallable SubmitMemeJobCallable(const Model::SubmitMemeJobRequest& request);
 
                 /**
                  *本接口已迁移至腾讯混元大模型-混元生图，即将停止此处维护，可切换至 [混元生图 API](https://cloud.tencent.com/document/product/1729/105969) 继续使用。

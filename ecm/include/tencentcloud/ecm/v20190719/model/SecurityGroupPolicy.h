@@ -239,18 +239,14 @@ namespace TencentCloud
 
                     /**
                      * 获取修改时间，例如 2020-07-22 19：27：23
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifyTime 修改时间，例如 2020-07-22 19：27：23
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
                      * 设置修改时间，例如 2020-07-22 19：27：23
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modifyTime 修改时间，例如 2020-07-22 19：27：23
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
@@ -345,7 +341,6 @@ namespace TencentCloud
 
                     /**
                      * 修改时间，例如 2020-07-22 19：27：23
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;

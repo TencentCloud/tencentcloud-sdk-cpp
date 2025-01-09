@@ -246,6 +246,27 @@ namespace TencentCloud
                      */
                     bool MonthlyRemainTimeHasBeenSet() const;
 
+                    /**
+                     * 获取月封顶时长（分钟)
+                     * @return LimitedTime 月封顶时长（分钟)
+                     * 
+                     */
+                    int64_t GetLimitedTime() const;
+
+                    /**
+                     * 设置月封顶时长（分钟)
+                     * @param _limitedTime 月封顶时长（分钟)
+                     * 
+                     */
+                    void SetLimitedTime(const int64_t& _limitedTime);
+
+                    /**
+                     * 判断参数 LimitedTime 是否已赋值
+                     * @return LimitedTime 是否已赋值
+                     * 
+                     */
+                    bool LimitedTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -303,6 +324,12 @@ namespace TencentCloud
                      */
                     int64_t m_monthlyRemainTime;
                     bool m_monthlyRemainTimeHasBeenSet;
+
+                    /**
+                     * 月封顶时长（分钟)
+                     */
+                    int64_t m_limitedTime;
+                    bool m_limitedTimeHasBeenSet;
 
                 };
             }

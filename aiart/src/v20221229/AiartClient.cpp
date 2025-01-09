@@ -298,6 +298,49 @@ AiartClient::QueryDrawPortraitJobOutcomeCallable AiartClient::QueryDrawPortraitJ
     return task->get_future();
 }
 
+AiartClient::QueryMemeJobOutcome AiartClient::QueryMemeJob(const QueryMemeJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryMemeJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryMemeJobResponse rsp = QueryMemeJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryMemeJobOutcome(rsp);
+        else
+            return QueryMemeJobOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryMemeJobOutcome(outcome.GetError());
+    }
+}
+
+void AiartClient::QueryMemeJobAsync(const QueryMemeJobRequest& request, const QueryMemeJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryMemeJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AiartClient::QueryMemeJobOutcomeCallable AiartClient::QueryMemeJobCallable(const QueryMemeJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryMemeJobOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryMemeJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AiartClient::QueryTextToImageProJobOutcome AiartClient::QueryTextToImageProJob(const QueryTextToImageProJobRequest &request)
 {
     auto outcome = MakeRequest(request, "QueryTextToImageProJob");
@@ -506,6 +549,49 @@ AiartClient::SubmitDrawPortraitJobOutcomeCallable AiartClient::SubmitDrawPortrai
         [this, request]()
         {
             return this->SubmitDrawPortraitJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AiartClient::SubmitMemeJobOutcome AiartClient::SubmitMemeJob(const SubmitMemeJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "SubmitMemeJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SubmitMemeJobResponse rsp = SubmitMemeJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SubmitMemeJobOutcome(rsp);
+        else
+            return SubmitMemeJobOutcome(o.GetError());
+    }
+    else
+    {
+        return SubmitMemeJobOutcome(outcome.GetError());
+    }
+}
+
+void AiartClient::SubmitMemeJobAsync(const SubmitMemeJobRequest& request, const SubmitMemeJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SubmitMemeJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AiartClient::SubmitMemeJobOutcomeCallable AiartClient::SubmitMemeJobCallable(const SubmitMemeJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SubmitMemeJobOutcome()>>(
+        [this, request]()
+        {
+            return this->SubmitMemeJob(request);
         }
     );
 

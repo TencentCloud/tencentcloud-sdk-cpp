@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否是主IP。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Primary 是否是主IP。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetPrimary() const;
 
                     /**
                      * 设置是否是主IP。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _primary 是否是主IP。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPrimary(const bool& _primary);
@@ -157,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取公网IP是否被封堵。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsWanIpBlocked 公网IP是否被封堵。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsWanIpBlocked() const;
 
                     /**
                      * 设置公网IP是否被封堵。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isWanIpBlocked 公网IP是否被封堵。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsWanIpBlocked(const bool& _isWanIpBlocked);
@@ -227,7 +219,6 @@ AVAILABLE：可用的
 
                     /**
                      * 是否是主IP。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_primary;
                     bool m_primaryHasBeenSet;
@@ -252,7 +243,6 @@ AVAILABLE：可用的
 
                     /**
                      * 公网IP是否被封堵。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isWanIpBlocked;
                     bool m_isWanIpBlockedHasBeenSet;

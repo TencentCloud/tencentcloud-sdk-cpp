@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取子网对象。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetSet 子网对象。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Subnet> GetSubnetSet() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 子网对象。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Subnet> m_subnetSet;
                     bool m_subnetSetHasBeenSet;

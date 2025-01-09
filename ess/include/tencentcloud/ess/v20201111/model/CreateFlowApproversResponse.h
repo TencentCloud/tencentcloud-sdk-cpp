@@ -48,11 +48,9 @@ namespace TencentCloud
                      * 获取批量补充签署人时，补充失败的报错说明
 
 注:`目前仅补充动态签署人时会返回补充失败的原因`
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FillError 批量补充签署人时，补充失败的报错说明
 
 注:`目前仅补充动态签署人时会返回补充失败的原因`
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<FillError> GetFillError() const;
@@ -70,7 +68,6 @@ namespace TencentCloud
                      * 批量补充签署人时，补充失败的报错说明
 
 注:`目前仅补充动态签署人时会返回补充失败的原因`
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FillError> m_fillError;
                     bool m_fillErrorHasBeenSet;

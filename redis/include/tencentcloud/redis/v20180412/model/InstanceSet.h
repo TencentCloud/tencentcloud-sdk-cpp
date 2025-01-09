@@ -606,15 +606,23 @@ namespace TencentCloud
                     bool OfflineTimeHasBeenSet() const;
 
                     /**
-                     * 获取流程中的实例，返回子状态。
-                     * @return SubStatus 流程中的实例，返回子状态。
+                     * 获取流程中的实例返回的子状态。
+- 0：磁盘读写状态。
+- 1：磁盘超限只读状态。
+                     * @return SubStatus 流程中的实例返回的子状态。
+- 0：磁盘读写状态。
+- 1：磁盘超限只读状态。
                      * 
                      */
                     int64_t GetSubStatus() const;
 
                     /**
-                     * 设置流程中的实例，返回子状态。
-                     * @param _subStatus 流程中的实例，返回子状态。
+                     * 设置流程中的实例返回的子状态。
+- 0：磁盘读写状态。
+- 1：磁盘超限只读状态。
+                     * @param _subStatus 流程中的实例返回的子状态。
+- 0：磁盘读写状态。
+- 1：磁盘超限只读状态。
                      * 
                      */
                     void SetSubStatus(const int64_t& _subStatus);
@@ -1629,7 +1637,9 @@ namespace TencentCloud
                     bool m_offlineTimeHasBeenSet;
 
                     /**
-                     * 流程中的实例，返回子状态。
+                     * 流程中的实例返回的子状态。
+- 0：磁盘读写状态。
+- 1：磁盘超限只读状态。
                      */
                     int64_t m_subStatus;
                     bool m_subStatusHasBeenSet;

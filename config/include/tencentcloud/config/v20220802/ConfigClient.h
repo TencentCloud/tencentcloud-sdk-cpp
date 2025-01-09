@@ -23,10 +23,14 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/config/v20220802/model/DescribeAggregateDiscoveredResourceRequest.h>
+#include <tencentcloud/config/v20220802/model/DescribeAggregateDiscoveredResourceResponse.h>
 #include <tencentcloud/config/v20220802/model/DescribeDiscoveredResourceRequest.h>
 #include <tencentcloud/config/v20220802/model/DescribeDiscoveredResourceResponse.h>
 #include <tencentcloud/config/v20220802/model/ListAggregateConfigRulesRequest.h>
 #include <tencentcloud/config/v20220802/model/ListAggregateConfigRulesResponse.h>
+#include <tencentcloud/config/v20220802/model/ListAggregateDiscoveredResourcesRequest.h>
+#include <tencentcloud/config/v20220802/model/ListAggregateDiscoveredResourcesResponse.h>
 #include <tencentcloud/config/v20220802/model/ListConfigRulesRequest.h>
 #include <tencentcloud/config/v20220802/model/ListConfigRulesResponse.h>
 #include <tencentcloud/config/v20220802/model/ListDiscoveredResourcesRequest.h>
@@ -47,12 +51,18 @@ namespace TencentCloud
                 ConfigClient(const Credential &credential, const std::string &region);
                 ConfigClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::DescribeAggregateDiscoveredResourceResponse> DescribeAggregateDiscoveredResourceOutcome;
+                typedef std::future<DescribeAggregateDiscoveredResourceOutcome> DescribeAggregateDiscoveredResourceOutcomeCallable;
+                typedef std::function<void(const ConfigClient*, const Model::DescribeAggregateDiscoveredResourceRequest&, DescribeAggregateDiscoveredResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAggregateDiscoveredResourceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDiscoveredResourceResponse> DescribeDiscoveredResourceOutcome;
                 typedef std::future<DescribeDiscoveredResourceOutcome> DescribeDiscoveredResourceOutcomeCallable;
                 typedef std::function<void(const ConfigClient*, const Model::DescribeDiscoveredResourceRequest&, DescribeDiscoveredResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDiscoveredResourceAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListAggregateConfigRulesResponse> ListAggregateConfigRulesOutcome;
                 typedef std::future<ListAggregateConfigRulesOutcome> ListAggregateConfigRulesOutcomeCallable;
                 typedef std::function<void(const ConfigClient*, const Model::ListAggregateConfigRulesRequest&, ListAggregateConfigRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListAggregateConfigRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListAggregateDiscoveredResourcesResponse> ListAggregateDiscoveredResourcesOutcome;
+                typedef std::future<ListAggregateDiscoveredResourcesOutcome> ListAggregateDiscoveredResourcesOutcomeCallable;
+                typedef std::function<void(const ConfigClient*, const Model::ListAggregateDiscoveredResourcesRequest&, ListAggregateDiscoveredResourcesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListAggregateDiscoveredResourcesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListConfigRulesResponse> ListConfigRulesOutcome;
                 typedef std::future<ListConfigRulesOutcome> ListConfigRulesOutcomeCallable;
                 typedef std::function<void(const ConfigClient*, const Model::ListConfigRulesRequest&, ListConfigRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListConfigRulesAsyncHandler;
@@ -64,6 +74,15 @@ namespace TencentCloud
                 typedef std::function<void(const ConfigClient*, const Model::PutEvaluationsRequest&, PutEvaluationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PutEvaluationsAsyncHandler;
 
 
+
+                /**
+                 *账号组资源详情
+                 * @param req DescribeAggregateDiscoveredResourceRequest
+                 * @return DescribeAggregateDiscoveredResourceOutcome
+                 */
+                DescribeAggregateDiscoveredResourceOutcome DescribeAggregateDiscoveredResource(const Model::DescribeAggregateDiscoveredResourceRequest &request);
+                void DescribeAggregateDiscoveredResourceAsync(const Model::DescribeAggregateDiscoveredResourceRequest& request, const DescribeAggregateDiscoveredResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAggregateDiscoveredResourceOutcomeCallable DescribeAggregateDiscoveredResourceCallable(const Model::DescribeAggregateDiscoveredResourceRequest& request);
 
                 /**
                  *资源详情
@@ -82,6 +101,15 @@ namespace TencentCloud
                 ListAggregateConfigRulesOutcome ListAggregateConfigRules(const Model::ListAggregateConfigRulesRequest &request);
                 void ListAggregateConfigRulesAsync(const Model::ListAggregateConfigRulesRequest& request, const ListAggregateConfigRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListAggregateConfigRulesOutcomeCallable ListAggregateConfigRulesCallable(const Model::ListAggregateConfigRulesRequest& request);
+
+                /**
+                 *账号组获取资源列表
+                 * @param req ListAggregateDiscoveredResourcesRequest
+                 * @return ListAggregateDiscoveredResourcesOutcome
+                 */
+                ListAggregateDiscoveredResourcesOutcome ListAggregateDiscoveredResources(const Model::ListAggregateDiscoveredResourcesRequest &request);
+                void ListAggregateDiscoveredResourcesAsync(const Model::ListAggregateDiscoveredResourcesRequest& request, const ListAggregateDiscoveredResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListAggregateDiscoveredResourcesOutcomeCallable ListAggregateDiscoveredResourcesCallable(const Model::ListAggregateDiscoveredResourcesRequest& request);
 
                 /**
                  *获取规则列表

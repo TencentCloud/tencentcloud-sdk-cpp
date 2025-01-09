@@ -40,6 +40,49 @@ ConfigClient::ConfigClient(const Credential &credential, const string &region, c
 }
 
 
+ConfigClient::DescribeAggregateDiscoveredResourceOutcome ConfigClient::DescribeAggregateDiscoveredResource(const DescribeAggregateDiscoveredResourceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAggregateDiscoveredResource");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAggregateDiscoveredResourceResponse rsp = DescribeAggregateDiscoveredResourceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAggregateDiscoveredResourceOutcome(rsp);
+        else
+            return DescribeAggregateDiscoveredResourceOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAggregateDiscoveredResourceOutcome(outcome.GetError());
+    }
+}
+
+void ConfigClient::DescribeAggregateDiscoveredResourceAsync(const DescribeAggregateDiscoveredResourceRequest& request, const DescribeAggregateDiscoveredResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAggregateDiscoveredResource(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ConfigClient::DescribeAggregateDiscoveredResourceOutcomeCallable ConfigClient::DescribeAggregateDiscoveredResourceCallable(const DescribeAggregateDiscoveredResourceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAggregateDiscoveredResourceOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAggregateDiscoveredResource(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ConfigClient::DescribeDiscoveredResourceOutcome ConfigClient::DescribeDiscoveredResource(const DescribeDiscoveredResourceRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDiscoveredResource");
@@ -119,6 +162,49 @@ ConfigClient::ListAggregateConfigRulesOutcomeCallable ConfigClient::ListAggregat
         [this, request]()
         {
             return this->ListAggregateConfigRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ConfigClient::ListAggregateDiscoveredResourcesOutcome ConfigClient::ListAggregateDiscoveredResources(const ListAggregateDiscoveredResourcesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListAggregateDiscoveredResources");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListAggregateDiscoveredResourcesResponse rsp = ListAggregateDiscoveredResourcesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListAggregateDiscoveredResourcesOutcome(rsp);
+        else
+            return ListAggregateDiscoveredResourcesOutcome(o.GetError());
+    }
+    else
+    {
+        return ListAggregateDiscoveredResourcesOutcome(outcome.GetError());
+    }
+}
+
+void ConfigClient::ListAggregateDiscoveredResourcesAsync(const ListAggregateDiscoveredResourcesRequest& request, const ListAggregateDiscoveredResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListAggregateDiscoveredResources(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ConfigClient::ListAggregateDiscoveredResourcesOutcomeCallable ConfigClient::ListAggregateDiscoveredResourcesCallable(const ListAggregateDiscoveredResourcesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListAggregateDiscoveredResourcesOutcome()>>(
+        [this, request]()
+        {
+            return this->ListAggregateDiscoveredResources(request);
         }
     );
 

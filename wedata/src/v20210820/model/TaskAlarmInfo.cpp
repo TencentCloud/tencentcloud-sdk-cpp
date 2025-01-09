@@ -53,7 +53,8 @@ TaskAlarmInfo::TaskAlarmInfo() :
     m_latestAlarmTimeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_larkWebHooksHasBeenSet(false),
-    m_dingDingWebHooksHasBeenSet(false)
+    m_dingDingWebHooksHasBeenSet(false),
+    m_businessTypeHasBeenSet(false)
 {
 }
 
@@ -415,6 +416,16 @@ CoreInternalOutcome TaskAlarmInfo::Deserialize(const rapidjson::Value &value)
         m_dingDingWebHooksHasBeenSet = true;
     }
 
+    if (value.HasMember("BusinessType") && !value["BusinessType"].IsNull())
+    {
+        if (!value["BusinessType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskAlarmInfo.BusinessType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_businessType = value["BusinessType"].GetInt64();
+        m_businessTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -703,6 +714,14 @@ void TaskAlarmInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "DingDingWebHooks";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dingDingWebHooks.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_businessTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BusinessType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_businessType, allocator);
     }
 
 }
@@ -1234,5 +1253,21 @@ void TaskAlarmInfo::SetDingDingWebHooks(const string& _dingDingWebHooks)
 bool TaskAlarmInfo::DingDingWebHooksHasBeenSet() const
 {
     return m_dingDingWebHooksHasBeenSet;
+}
+
+int64_t TaskAlarmInfo::GetBusinessType() const
+{
+    return m_businessType;
+}
+
+void TaskAlarmInfo::SetBusinessType(const int64_t& _businessType)
+{
+    m_businessType = _businessType;
+    m_businessTypeHasBeenSet = true;
+}
+
+bool TaskAlarmInfo::BusinessTypeHasBeenSet() const
+{
+    return m_businessTypeHasBeenSet;
 }
 

@@ -46,7 +46,8 @@ GenHiveTableDDLSqlRequest::GenHiveTableDDLSqlRequest() :
     m_targetDatasourceIdHasBeenSet(false),
     m_upsertKeysHasBeenSet(false),
     m_tableBaseInfoHasBeenSet(false),
-    m_sinkSchemaNameHasBeenSet(false)
+    m_sinkSchemaNameHasBeenSet(false),
+    m_envHasBeenSet(false)
 {
 }
 
@@ -274,6 +275,14 @@ string GenHiveTableDDLSqlRequest::ToJsonString() const
         string key = "SinkSchemaName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_sinkSchemaName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_envHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Env";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_env.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -666,6 +675,22 @@ void GenHiveTableDDLSqlRequest::SetSinkSchemaName(const string& _sinkSchemaName)
 bool GenHiveTableDDLSqlRequest::SinkSchemaNameHasBeenSet() const
 {
     return m_sinkSchemaNameHasBeenSet;
+}
+
+string GenHiveTableDDLSqlRequest::GetEnv() const
+{
+    return m_env;
+}
+
+void GenHiveTableDDLSqlRequest::SetEnv(const string& _env)
+{
+    m_env = _env;
+    m_envHasBeenSet = true;
+}
+
+bool GenHiveTableDDLSqlRequest::EnvHasBeenSet() const
+{
+    return m_envHasBeenSet;
 }
 
 

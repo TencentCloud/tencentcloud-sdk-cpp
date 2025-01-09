@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取私有网络对象。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcSet 私有网络对象。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<VpcInfo> GetVpcSet() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 私有网络对象。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<VpcInfo> m_vpcSet;
                     bool m_vpcSetHasBeenSet;

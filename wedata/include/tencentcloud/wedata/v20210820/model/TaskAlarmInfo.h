@@ -841,6 +841,31 @@ namespace TencentCloud
                      */
                     bool DingDingWebHooksHasBeenSet() const;
 
+                    /**
+                     * 获取业务类型, 0-非默认, 1-默认
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BusinessType 业务类型, 0-非默认, 1-默认
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetBusinessType() const;
+
+                    /**
+                     * 设置业务类型, 0-非默认, 1-默认
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _businessType 业务类型, 0-非默认, 1-默认
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBusinessType(const int64_t& _businessType);
+
+                    /**
+                     * 判断参数 BusinessType 是否已赋值
+                     * @return BusinessType 是否已赋值
+                     * 
+                     */
+                    bool BusinessTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1065,6 +1090,13 @@ namespace TencentCloud
                      */
                     std::string m_dingDingWebHooks;
                     bool m_dingDingWebHooksHasBeenSet;
+
+                    /**
+                     * 业务类型, 0-非默认, 1-默认
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_businessType;
+                    bool m_businessTypeHasBeenSet;
 
                 };
             }

@@ -44,8 +44,10 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务唯一id。30天内可以通过GetSplitDocumentResult接口查询TaskId对应的处理结果。
-                     * @return TaskId 任务唯一id。30天内可以通过GetSplitDocumentResult接口查询TaskId对应的处理结果。
+                     * 获取拆分任务唯一ID。
+30天内可以通过`GetSplitDocumentResult`接口查询TaskId对应的拆分结果。
+                     * @return TaskId 拆分任务唯一ID。
+30天内可以通过`GetSplitDocumentResult`接口查询TaskId对应的拆分结果。
                      * 
                      */
                     std::string GetTaskId() const;
@@ -60,7 +62,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务唯一id。30天内可以通过GetSplitDocumentResult接口查询TaskId对应的处理结果。
+                     * 拆分任务唯一ID。
+30天内可以通过`GetSplitDocumentResult`接口查询TaskId对应的拆分结果。
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;

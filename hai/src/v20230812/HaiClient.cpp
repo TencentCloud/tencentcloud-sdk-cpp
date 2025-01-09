@@ -212,6 +212,49 @@ HaiClient::DescribeInstancesOutcomeCallable HaiClient::DescribeInstancesCallable
     return task->get_future();
 }
 
+HaiClient::DescribeMuskPromptsOutcome HaiClient::DescribeMuskPrompts(const DescribeMuskPromptsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMuskPrompts");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMuskPromptsResponse rsp = DescribeMuskPromptsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMuskPromptsOutcome(rsp);
+        else
+            return DescribeMuskPromptsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMuskPromptsOutcome(outcome.GetError());
+    }
+}
+
+void HaiClient::DescribeMuskPromptsAsync(const DescribeMuskPromptsRequest& request, const DescribeMuskPromptsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMuskPrompts(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+HaiClient::DescribeMuskPromptsOutcomeCallable HaiClient::DescribeMuskPromptsCallable(const DescribeMuskPromptsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMuskPromptsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMuskPrompts(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 HaiClient::DescribeRegionsOutcome HaiClient::DescribeRegions(const DescribeRegionsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRegions");

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取厂商名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vendor 厂商名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVendor() const;
 
                     /**
                      * 设置厂商名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vendor 厂商名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVendor(const std::string& _vendor);
@@ -94,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceName 设备名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置设备名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceName 设备名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
@@ -119,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -191,14 +179,12 @@ namespace TencentCloud
 若不传则默认为月度授权。
 当付费方为厂商时，此参数无效
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LicensePayMode 当付费方为租户时，可选择租户license付费方式：
 0，月度授权
 1，永久授权
 若不传则默认为月度授权。
 当付费方为厂商时，此参数无效
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLicensePayMode() const;
@@ -210,14 +196,12 @@ namespace TencentCloud
 若不传则默认为月度授权。
 当付费方为厂商时，此参数无效
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _licensePayMode 当付费方为租户时，可选择租户license付费方式：
 0，月度授权
 1，永久授权
 若不传则默认为月度授权。
 当付费方为厂商时，此参数无效
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLicensePayMode(const int64_t& _licensePayMode);
@@ -231,18 +215,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupId 设备分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置设备分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupId 设备分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -256,18 +236,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备分组名称，预留参数，需要分组时传入GroupId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupName 设备分组名称，预留参数，需要分组时传入GroupId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置设备分组名称，预留参数，需要分组时传入GroupId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupName 设备分组名称，预留参数，需要分组时传入GroupId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -281,18 +257,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备无流量包处理方式，0: 按量付费，1: 截断加速
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowTrunc 设备无流量包处理方式，0: 按量付费，1: 截断加速
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFlowTrunc() const;
 
                     /**
                      * 设置设备无流量包处理方式，0: 按量付费，1: 截断加速
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _flowTrunc 设备无流量包处理方式，0: 按量付费，1: 截断加速
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFlowTrunc(const int64_t& _flowTrunc);
@@ -306,18 +278,14 @@ namespace TencentCloud
 
                     /**
                      * 获取激活后的设备ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceId 激活后的设备ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
                      * 设置激活后的设备ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceId 激活后的设备ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
@@ -333,7 +301,6 @@ namespace TencentCloud
 
                     /**
                      * 厂商名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vendor;
                     bool m_vendorHasBeenSet;
@@ -346,14 +313,12 @@ namespace TencentCloud
 
                     /**
                      * 设备名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceName;
                     bool m_deviceNameHasBeenSet;
 
                     /**
                      * 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
@@ -377,35 +342,30 @@ namespace TencentCloud
 若不传则默认为月度授权。
 当付费方为厂商时，此参数无效
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_licensePayMode;
                     bool m_licensePayModeHasBeenSet;
 
                     /**
                      * 设备分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
                      * 设备分组名称，预留参数，需要分组时传入GroupId
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
 
                     /**
                      * 设备无流量包处理方式，0: 按量付费，1: 截断加速
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_flowTrunc;
                     bool m_flowTruncHasBeenSet;
 
                     /**
                      * 激活后的设备ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceId;
                     bool m_deviceIdHasBeenSet;

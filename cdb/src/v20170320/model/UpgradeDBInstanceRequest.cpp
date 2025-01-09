@@ -41,7 +41,8 @@ UpgradeDBInstanceRequest::UpgradeDBInstanceRequest() :
     m_zoneIdHasBeenSet(false),
     m_roTransTypeHasBeenSet(false),
     m_clusterTopologyHasBeenSet(false),
-    m_checkFastUpgradeRebootHasBeenSet(false)
+    m_checkFastUpgradeRebootHasBeenSet(false),
+    m_dataCheckSensitiveHasBeenSet(false)
 {
 }
 
@@ -203,6 +204,14 @@ string UpgradeDBInstanceRequest::ToJsonString() const
         string key = "CheckFastUpgradeReboot";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_checkFastUpgradeReboot, allocator);
+    }
+
+    if (m_dataCheckSensitiveHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataCheckSensitive";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dataCheckSensitive.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -515,6 +524,22 @@ void UpgradeDBInstanceRequest::SetCheckFastUpgradeReboot(const int64_t& _checkFa
 bool UpgradeDBInstanceRequest::CheckFastUpgradeRebootHasBeenSet() const
 {
     return m_checkFastUpgradeRebootHasBeenSet;
+}
+
+string UpgradeDBInstanceRequest::GetDataCheckSensitive() const
+{
+    return m_dataCheckSensitive;
+}
+
+void UpgradeDBInstanceRequest::SetDataCheckSensitive(const string& _dataCheckSensitive)
+{
+    m_dataCheckSensitive = _dataCheckSensitive;
+    m_dataCheckSensitiveHasBeenSet = true;
+}
+
+bool UpgradeDBInstanceRequest::DataCheckSensitiveHasBeenSet() const
+{
+    return m_dataCheckSensitiveHasBeenSet;
 }
 
 

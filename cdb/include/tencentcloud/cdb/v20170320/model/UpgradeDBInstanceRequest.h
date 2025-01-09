@@ -454,6 +454,51 @@ namespace TencentCloud
                      */
                     bool CheckFastUpgradeRebootHasBeenSet() const;
 
+                    /**
+                     * 获取数据校验敏感度，非极速变配时使用此参数，敏感度根据当前实例规格计算迁移过程中的数据对比使用的cpu资源
+对应的选项为: "high"、"normal"、"low"，默认为空
+参数详解，：
+"high": 对应控制台中的高，数据库负载过高不建议使用
+"normal"：对应控制台中的标准
+"low"：对应控制台中的低
+
+                     * @return DataCheckSensitive 数据校验敏感度，非极速变配时使用此参数，敏感度根据当前实例规格计算迁移过程中的数据对比使用的cpu资源
+对应的选项为: "high"、"normal"、"low"，默认为空
+参数详解，：
+"high": 对应控制台中的高，数据库负载过高不建议使用
+"normal"：对应控制台中的标准
+"low"：对应控制台中的低
+
+                     * 
+                     */
+                    std::string GetDataCheckSensitive() const;
+
+                    /**
+                     * 设置数据校验敏感度，非极速变配时使用此参数，敏感度根据当前实例规格计算迁移过程中的数据对比使用的cpu资源
+对应的选项为: "high"、"normal"、"low"，默认为空
+参数详解，：
+"high": 对应控制台中的高，数据库负载过高不建议使用
+"normal"：对应控制台中的标准
+"low"：对应控制台中的低
+
+                     * @param _dataCheckSensitive 数据校验敏感度，非极速变配时使用此参数，敏感度根据当前实例规格计算迁移过程中的数据对比使用的cpu资源
+对应的选项为: "high"、"normal"、"low"，默认为空
+参数详解，：
+"high": 对应控制台中的高，数据库负载过高不建议使用
+"normal"：对应控制台中的标准
+"low"：对应控制台中的低
+
+                     * 
+                     */
+                    void SetDataCheckSensitive(const std::string& _dataCheckSensitive);
+
+                    /**
+                     * 判断参数 DataCheckSensitive 是否已赋值
+                     * @return DataCheckSensitive 是否已赋值
+                     * 
+                     */
+                    bool DataCheckSensitiveHasBeenSet() const;
+
                 private:
 
                     /**
@@ -572,6 +617,18 @@ namespace TencentCloud
                      */
                     int64_t m_checkFastUpgradeReboot;
                     bool m_checkFastUpgradeRebootHasBeenSet;
+
+                    /**
+                     * 数据校验敏感度，非极速变配时使用此参数，敏感度根据当前实例规格计算迁移过程中的数据对比使用的cpu资源
+对应的选项为: "high"、"normal"、"low"，默认为空
+参数详解，：
+"high": 对应控制台中的高，数据库负载过高不建议使用
+"normal"：对应控制台中的标准
+"low"：对应控制台中的低
+
+                     */
+                    std::string m_dataCheckSensitive;
+                    bool m_dataCheckSensitiveHasBeenSet;
 
                 };
             }
