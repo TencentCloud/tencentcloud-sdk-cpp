@@ -74,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取用户名下物理专线是否都签署了用户协议。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AllSignLaw 用户名下物理专线是否都签署了用户协议。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetAllSignLaw() const;
@@ -104,7 +102,6 @@ namespace TencentCloud
 
                     /**
                      * 用户名下物理专线是否都签署了用户协议。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_allSignLaw;
                     bool m_allSignLawHasBeenSet;

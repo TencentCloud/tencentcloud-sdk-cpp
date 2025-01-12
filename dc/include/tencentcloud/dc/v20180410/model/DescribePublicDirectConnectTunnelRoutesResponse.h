@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取互联网通道路由列表
-                     * @return Routes 互联网通道路由列表
+                     * 获取互联网通道路由列表。
+                     * @return Routes 互联网通道路由列表。
                      * 
                      */
                     std::vector<DirectConnectTunnelRoute> GetRoutes() const;
@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool RoutesHasBeenSet() const;
 
                     /**
-                     * 获取记录总数
-                     * @return TotalCount 记录总数
+                     * 获取路由总数量。
+                     * @return TotalCount 路由总数量。
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -75,13 +75,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 互联网通道路由列表
+                     * 互联网通道路由列表。
                      */
                     std::vector<DirectConnectTunnelRoute> m_routes;
                     bool m_routesHasBeenSet;
 
                     /**
-                     * 记录总数
+                     * 路由总数量。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

@@ -34,6 +34,7 @@ IndexMetaField::IndexMetaField() :
     m_indexPolicyFieldHasBeenSet(false),
     m_indexOptionsFieldHasBeenSet(false),
     m_indexSettingsFieldHasBeenSet(false),
+    m_indexAliasesFieldHasBeenSet(false),
     m_appIdHasBeenSet(false),
     m_indexDocsHasBeenSet(false)
 {
@@ -205,6 +206,19 @@ CoreInternalOutcome IndexMetaField::Deserialize(const rapidjson::Value &value)
         m_indexSettingsFieldHasBeenSet = true;
     }
 
+    if (value.HasMember("IndexAliasesField") && !value["IndexAliasesField"].IsNull())
+    {
+        if (!value["IndexAliasesField"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `IndexMetaField.IndexAliasesField` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["IndexAliasesField"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_indexAliasesField.push_back((*itr).GetString());
+        }
+        m_indexAliasesFieldHasBeenSet = true;
+    }
+
     if (value.HasMember("AppId") && !value["AppId"].IsNull())
     {
         if (!value["AppId"].IsUint64())
@@ -344,6 +358,19 @@ void IndexMetaField::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_indexSettingsField.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_indexAliasesFieldHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IndexAliasesField";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_indexAliasesField.begin(); itr != m_indexAliasesField.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     if (m_appIdHasBeenSet)
@@ -571,6 +598,22 @@ void IndexMetaField::SetIndexSettingsField(const IndexSettingsField& _indexSetti
 bool IndexMetaField::IndexSettingsFieldHasBeenSet() const
 {
     return m_indexSettingsFieldHasBeenSet;
+}
+
+vector<string> IndexMetaField::GetIndexAliasesField() const
+{
+    return m_indexAliasesField;
+}
+
+void IndexMetaField::SetIndexAliasesField(const vector<string>& _indexAliasesField)
+{
+    m_indexAliasesField = _indexAliasesField;
+    m_indexAliasesFieldHasBeenSet = true;
+}
+
+bool IndexMetaField::IndexAliasesFieldHasBeenSet() const
+{
+    return m_indexAliasesFieldHasBeenSet;
 }
 
 uint64_t IndexMetaField::GetAppId() const

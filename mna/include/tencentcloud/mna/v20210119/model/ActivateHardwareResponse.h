@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取完成激活的设备信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HardwareInfo 完成激活的设备信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ActivateHardware> GetHardwareInfo() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 完成激活的设备信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ActivateHardware> m_hardwareInfo;
                     bool m_hardwareInfoHasBeenSet;

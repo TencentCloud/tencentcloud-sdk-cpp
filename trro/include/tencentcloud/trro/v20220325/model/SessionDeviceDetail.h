@@ -343,18 +343,14 @@ namespace TencentCloud
 
                     /**
                      * 获取sdk版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ver sdk版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVer() const;
 
                     /**
                      * 设置sdk版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ver sdk版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVer(const std::string& _ver);
@@ -368,18 +364,14 @@ namespace TencentCloud
 
                     /**
                      * 获取模式(p2p/server)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SdkMode 模式(p2p/server)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSdkMode() const;
 
                     /**
                      * 设置模式(p2p/server)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sdkMode 模式(p2p/server)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSdkMode(const std::string& _sdkMode);
@@ -393,18 +385,14 @@ namespace TencentCloud
 
                     /**
                      * 获取解码耗时，单位：ms
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DecodeCost 解码耗时，单位：ms
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetDecodeCost() const;
 
                     /**
                      * 设置解码耗时，单位：ms
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _decodeCost 解码耗时，单位：ms
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDecodeCost(const std::vector<int64_t>& _decodeCost);
@@ -443,18 +431,14 @@ namespace TencentCloud
 
                     /**
                      * 获取卡顿k100
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return K100 卡顿k100
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<double> GetK100() const;
 
                     /**
                      * 设置卡顿k100
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _k100 卡顿k100
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetK100(const std::vector<double>& _k100);
@@ -468,18 +452,14 @@ namespace TencentCloud
 
                     /**
                      * 获取卡顿k150
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return K150 卡顿k150
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<double> GetK150() const;
 
                     /**
                      * 设置卡顿k150
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _k150 卡顿k150
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetK150(const std::vector<double>& _k150);
@@ -493,18 +473,14 @@ namespace TencentCloud
 
                     /**
                      * 获取nack请求数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NACK nack请求数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetNACK() const;
 
                     /**
                      * 设置nack请求数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nACK nack请求数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNACK(const std::vector<int64_t>& _nACK);
@@ -518,18 +494,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务端调控码率,单位：kbps
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BitRateEstimate 服务端调控码率,单位：kbps
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetBitRateEstimate() const;
 
                     /**
                      * 设置服务端调控码率,单位：kbps
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bitRateEstimate 服务端调控码率,单位：kbps
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBitRateEstimate(const std::vector<int64_t>& _bitRateEstimate);
@@ -543,18 +515,14 @@ namespace TencentCloud
 
                     /**
                      * 获取宽度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Width 宽度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetWidth() const;
 
                     /**
                      * 设置宽度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _width 宽度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWidth(const int64_t& _width);
@@ -568,18 +536,14 @@ namespace TencentCloud
 
                     /**
                      * 获取高度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Height 高度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetHeight() const;
 
                     /**
                      * 设置高度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _height 高度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHeight(const int64_t& _height);
@@ -593,18 +557,14 @@ namespace TencentCloud
 
                     /**
                      * 获取编码耗时，单位：ms
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EncodeCost 编码耗时，单位：ms
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetEncodeCost() const;
 
                     /**
                      * 设置编码耗时，单位：ms
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _encodeCost 编码耗时，单位：ms
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEncodeCost(const std::vector<int64_t>& _encodeCost);
@@ -618,18 +578,14 @@ namespace TencentCloud
 
                     /**
                      * 获取采集耗时，单位：ms
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CaptureCost 采集耗时，单位：ms
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetCaptureCost() const;
 
                     /**
                      * 设置采集耗时，单位：ms
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _captureCost 采集耗时，单位：ms
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCaptureCost(const std::vector<int64_t>& _captureCost);
@@ -643,18 +599,14 @@ namespace TencentCloud
 
                     /**
                      * 获取渲染耗时，单位：ms
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RenderCost 渲染耗时，单位：ms
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetRenderCost() const;
 
                     /**
                      * 设置渲染耗时，单位：ms
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _renderCost 渲染耗时，单位：ms
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRenderCost(const std::vector<int64_t>& _renderCost);
@@ -668,18 +620,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置宽度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigWidth 配置宽度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetConfigWidth() const;
 
                     /**
                      * 设置配置宽度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _configWidth 配置宽度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConfigWidth(const int64_t& _configWidth);
@@ -693,18 +641,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置高度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigHeight 配置高度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetConfigHeight() const;
 
                     /**
                      * 设置配置高度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _configHeight 配置高度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConfigHeight(const int64_t& _configHeight);
@@ -718,18 +662,14 @@ namespace TencentCloud
 
                     /**
                      * 获取平均帧间隔
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FrameDelta 平均帧间隔
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetFrameDelta() const;
 
                     /**
                      * 设置平均帧间隔
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _frameDelta 平均帧间隔
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFrameDelta(const std::vector<int64_t>& _frameDelta);
@@ -743,18 +683,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最大帧间隔
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxFrameDelta 最大帧间隔
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetMaxFrameDelta() const;
 
                     /**
                      * 设置最大帧间隔
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxFrameDelta 最大帧间隔
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxFrameDelta(const std::vector<int64_t>& _maxFrameDelta);
@@ -768,18 +704,14 @@ namespace TencentCloud
 
                     /**
                      * 获取总码率评估,单位：kbps
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalBitrateEstimate 总码率评估,单位：kbps
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetTotalBitrateEstimate() const;
 
                     /**
                      * 设置总码率评估,单位：kbps
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalBitrateEstimate 总码率评估,单位：kbps
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalBitrateEstimate(const std::vector<int64_t>& _totalBitrateEstimate);
@@ -793,18 +725,14 @@ namespace TencentCloud
 
                     /**
                      * 获取帧间隔大于100ms的卡顿时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Lag100Duration 帧间隔大于100ms的卡顿时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetLag100Duration() const;
 
                     /**
                      * 设置帧间隔大于100ms的卡顿时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lag100Duration 帧间隔大于100ms的卡顿时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLag100Duration(const std::vector<int64_t>& _lag100Duration);
@@ -818,18 +746,14 @@ namespace TencentCloud
 
                     /**
                      * 获取帧间隔大于150ms的卡顿时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Lag150Duration 帧间隔大于150ms的卡顿时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetLag150Duration() const;
 
                     /**
                      * 设置帧间隔大于150ms的卡顿时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lag150Duration 帧间隔大于150ms的卡顿时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLag150Duration(const std::vector<int64_t>& _lag150Duration);
@@ -843,18 +767,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启多网：0 单网，1 多网
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MultiMode 是否开启多网：0 单网，1 多网
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMultiMode() const;
 
                     /**
                      * 设置是否开启多网：0 单网，1 多网
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _multiMode 是否开启多网：0 单网，1 多网
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMultiMode(const int64_t& _multiMode);
@@ -868,18 +788,14 @@ namespace TencentCloud
 
                     /**
                      * 获取多网卡信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MultiNet 多网卡信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<MultiNet> GetMultiNet() const;
 
                     /**
                      * 设置多网卡信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _multiNet 多网卡信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMultiNet(const std::vector<MultiNet>& _multiNet);
@@ -979,21 +895,18 @@ namespace TencentCloud
 
                     /**
                      * sdk版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ver;
                     bool m_verHasBeenSet;
 
                     /**
                      * 模式(p2p/server)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sdkMode;
                     bool m_sdkModeHasBeenSet;
 
                     /**
                      * 解码耗时，单位：ms
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_decodeCost;
                     bool m_decodeCostHasBeenSet;
@@ -1007,126 +920,108 @@ namespace TencentCloud
 
                     /**
                      * 卡顿k100
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<double> m_k100;
                     bool m_k100HasBeenSet;
 
                     /**
                      * 卡顿k150
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<double> m_k150;
                     bool m_k150HasBeenSet;
 
                     /**
                      * nack请求数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_nACK;
                     bool m_nACKHasBeenSet;
 
                     /**
                      * 服务端调控码率,单位：kbps
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_bitRateEstimate;
                     bool m_bitRateEstimateHasBeenSet;
 
                     /**
                      * 宽度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_width;
                     bool m_widthHasBeenSet;
 
                     /**
                      * 高度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_height;
                     bool m_heightHasBeenSet;
 
                     /**
                      * 编码耗时，单位：ms
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_encodeCost;
                     bool m_encodeCostHasBeenSet;
 
                     /**
                      * 采集耗时，单位：ms
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_captureCost;
                     bool m_captureCostHasBeenSet;
 
                     /**
                      * 渲染耗时，单位：ms
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_renderCost;
                     bool m_renderCostHasBeenSet;
 
                     /**
                      * 配置宽度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_configWidth;
                     bool m_configWidthHasBeenSet;
 
                     /**
                      * 配置高度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_configHeight;
                     bool m_configHeightHasBeenSet;
 
                     /**
                      * 平均帧间隔
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_frameDelta;
                     bool m_frameDeltaHasBeenSet;
 
                     /**
                      * 最大帧间隔
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_maxFrameDelta;
                     bool m_maxFrameDeltaHasBeenSet;
 
                     /**
                      * 总码率评估,单位：kbps
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_totalBitrateEstimate;
                     bool m_totalBitrateEstimateHasBeenSet;
 
                     /**
                      * 帧间隔大于100ms的卡顿时长
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_lag100Duration;
                     bool m_lag100DurationHasBeenSet;
 
                     /**
                      * 帧间隔大于150ms的卡顿时长
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_lag150Duration;
                     bool m_lag150DurationHasBeenSet;
 
                     /**
                      * 是否开启多网：0 单网，1 多网
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_multiMode;
                     bool m_multiModeHasBeenSet;
 
                     /**
                      * 多网卡信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MultiNet> m_multiNet;
                     bool m_multiNetHasBeenSet;
