@@ -24,6 +24,7 @@
 #include <iomanip>
 #include <sstream>
 #include <random>
+#include <string>
 
 #if _MSC_VER
 #define snprintf _snprintf
@@ -34,9 +35,7 @@ using namespace std;
 
 string Utils::int2str(int64_t n)
 {
-    stringstream ss;
-    ss << n;
-    return ss.str();
+    return std::to_string(n);
 }
 
 void Utils::GetCurrentTimeAndUtcDate(int64_t &timestamp, string &utcDate)
