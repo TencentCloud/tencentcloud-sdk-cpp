@@ -62,12 +62,12 @@ namespace TencentCloud
 
 <ul><li>**EvidenceStatusExecuting**：  出证任务在执行中</li>
 <li>**EvidenceStatusSuccess**：  出证任务执行成功</li>
-<li>**EvidenceStatusFailed** ： 出征任务执行失败</li></ul>
+<li>**EvidenceStatusFailed** ： 出证任务执行失败</li></ul>
                      * @return Status 出证任务执行的状态, 状态含义如下：
 
 <ul><li>**EvidenceStatusExecuting**：  出证任务在执行中</li>
 <li>**EvidenceStatusSuccess**：  出证任务执行成功</li>
-<li>**EvidenceStatusFailed** ： 出征任务执行失败</li></ul>
+<li>**EvidenceStatusFailed** ： 出证任务执行失败</li></ul>
                      * 
                      */
                     std::string GetStatus() const;
@@ -82,10 +82,8 @@ namespace TencentCloud
                     /**
                      * 获取此字段已经废除,不再使用.
 出证的PDF下载地址请调用DescribeChannelFlowEvidenceReport接口获取
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReportUrl 此字段已经废除,不再使用.
 出证的PDF下载地址请调用DescribeChannelFlowEvidenceReport接口获取
-注意：此字段可能返回 null，表示取不到有效值。
                      * @deprecated
                      */
                     std::string GetReportUrl() const;
@@ -110,7 +108,7 @@ namespace TencentCloud
 
 <ul><li>**EvidenceStatusExecuting**：  出证任务在执行中</li>
 <li>**EvidenceStatusSuccess**：  出证任务执行成功</li>
-<li>**EvidenceStatusFailed** ： 出征任务执行失败</li></ul>
+<li>**EvidenceStatusFailed** ： 出证任务执行失败</li></ul>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
@@ -118,7 +116,6 @@ namespace TencentCloud
                     /**
                      * 此字段已经废除,不再使用.
 出证的PDF下载地址请调用DescribeChannelFlowEvidenceReport接口获取
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reportUrl;
                     bool m_reportUrlHasBeenSet;

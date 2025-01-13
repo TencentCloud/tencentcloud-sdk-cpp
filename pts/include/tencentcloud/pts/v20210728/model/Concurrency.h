@@ -74,18 +74,14 @@ namespace TencentCloud
 
                     /**
                      * 获取运行次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IterationCount 运行次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIterationCount() const;
 
                     /**
                      * 设置运行次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _iterationCount 运行次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIterationCount(const int64_t& _iterationCount);
@@ -99,18 +95,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最大RPS
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxRequestsPerSecond 最大RPS
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxRequestsPerSecond() const;
 
                     /**
                      * 设置最大RPS
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxRequestsPerSecond 最大RPS
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxRequestsPerSecond(const int64_t& _maxRequestsPerSecond);
@@ -124,18 +116,14 @@ namespace TencentCloud
 
                     /**
                      * 获取优雅终止任务的等待时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GracefulStopSeconds 优雅终止任务的等待时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetGracefulStopSeconds() const;
 
                     /**
                      * 设置优雅终止任务的等待时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gracefulStopSeconds 优雅终止任务的等待时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGracefulStopSeconds(const int64_t& _gracefulStopSeconds);
@@ -149,18 +137,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Resources 资源数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetResources() const;
 
                     /**
                      * 设置资源数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resources 资源数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResources(const int64_t& _resources);
@@ -183,28 +167,24 @@ namespace TencentCloud
 
                     /**
                      * 运行次数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_iterationCount;
                     bool m_iterationCountHasBeenSet;
 
                     /**
                      * 最大RPS
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxRequestsPerSecond;
                     bool m_maxRequestsPerSecondHasBeenSet;
 
                     /**
                      * 优雅终止任务的等待时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_gracefulStopSeconds;
                     bool m_gracefulStopSecondsHasBeenSet;
 
                     /**
                      * 资源数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_resources;
                     bool m_resourcesHasBeenSet;

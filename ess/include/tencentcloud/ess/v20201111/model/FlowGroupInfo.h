@@ -154,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取签署流程的类型(如销售合同/入职合同等)，最大长度200个字符
-示例值：劳务合同
                      * @return FlowType 签署流程的类型(如销售合同/入职合同等)，最大长度200个字符
-示例值：劳务合同
                      * 
                      */
                     std::string GetFlowType() const;
 
                     /**
                      * 设置签署流程的类型(如销售合同/入职合同等)，最大长度200个字符
-示例值：劳务合同
                      * @param _flowType 签署流程的类型(如销售合同/入职合同等)，最大长度200个字符
-示例值：劳务合同
                      * 
                      */
                     void SetFlowType(const std::string& _flowType);
@@ -402,18 +398,18 @@ false：有序签
 
                     /**
                      * 获取个人自动签场景。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN
-示例值：E_PRESCRIPTION_AUTO_SIGN
+
                      * @return AutoSignScene 个人自动签场景。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN
-示例值：E_PRESCRIPTION_AUTO_SIGN
+
                      * 
                      */
                     std::string GetAutoSignScene() const;
 
                     /**
                      * 设置个人自动签场景。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN
-示例值：E_PRESCRIPTION_AUTO_SIGN
+
                      * @param _autoSignScene 个人自动签场景。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN
-示例值：E_PRESCRIPTION_AUTO_SIGN
+
                      * 
                      */
                     void SetAutoSignScene(const std::string& _autoSignScene);
@@ -479,7 +475,6 @@ false：有序签
 
                     /**
                      * 签署流程的类型(如销售合同/入职合同等)，最大长度200个字符
-示例值：劳务合同
                      */
                     std::string m_flowType;
                     bool m_flowTypeHasBeenSet;
@@ -547,7 +542,7 @@ false：有序签
 
                     /**
                      * 个人自动签场景。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN
-示例值：E_PRESCRIPTION_AUTO_SIGN
+
                      */
                     std::string m_autoSignScene;
                     bool m_autoSignSceneHasBeenSet;

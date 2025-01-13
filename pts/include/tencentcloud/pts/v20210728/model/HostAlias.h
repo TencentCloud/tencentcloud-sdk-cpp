@@ -73,18 +73,14 @@ namespace TencentCloud
 
                     /**
                      * 获取需绑定的 IP 地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IP 需绑定的 IP 地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIP() const;
 
                     /**
                      * 设置需绑定的 IP 地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _iP 需绑定的 IP 地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIP(const std::string& _iP);
@@ -107,7 +103,6 @@ namespace TencentCloud
 
                     /**
                      * 需绑定的 IP 地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_iP;
                     bool m_iPHasBeenSet;

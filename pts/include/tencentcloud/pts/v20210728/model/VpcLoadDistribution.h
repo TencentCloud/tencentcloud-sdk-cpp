@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取VPC ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId VPC ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置VPC ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcId VPC ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -154,7 +150,6 @@ namespace TencentCloud
 
                     /**
                      * VPC ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;

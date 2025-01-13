@@ -62,9 +62,7 @@ namespace TencentCloud
 
                     /**
                      * 获取告警历史记录的总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 告警历史记录的总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTotal() const;
@@ -87,7 +85,6 @@ namespace TencentCloud
 
                     /**
                      * 告警历史记录的总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_total;
                     bool m_totalHasBeenSet;

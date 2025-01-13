@@ -49,12 +49,10 @@ namespace TencentCloud
 
 <ul><li> **1** :全部成功</li>
 <li> **2** :部分成功</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status  同步的状态,  全部同步失败接口是接口会直接报错
 
 <ul><li> **1** :全部成功</li>
 <li> **2** :部分成功</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
@@ -68,9 +66,7 @@ namespace TencentCloud
 
                     /**
                      * 获取同步失败员工ID及其失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailedList 同步失败员工ID及其失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SyncFailReason> GetFailedList() const;
@@ -89,14 +85,12 @@ namespace TencentCloud
 
 <ul><li> **1** :全部成功</li>
 <li> **2** :部分成功</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 同步失败员工ID及其失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SyncFailReason> m_failedList;
                     bool m_failedListHasBeenSet;

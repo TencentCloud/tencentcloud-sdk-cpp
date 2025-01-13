@@ -117,10 +117,8 @@ namespace TencentCloud
 
                     /**
                      * 获取H5端员工实名链接
-
 只有入参 InvitationNotifyType = H5的时候才会进行返回。
                      * @return Url H5端员工实名链接
-
 只有入参 InvitationNotifyType = H5的时候才会进行返回。
                      * 
                      */
@@ -128,10 +126,8 @@ namespace TencentCloud
 
                     /**
                      * 设置H5端员工实名链接
-
 只有入参 InvitationNotifyType = H5的时候才会进行返回。
                      * @param _url H5端员工实名链接
-
 只有入参 InvitationNotifyType = H5的时候才会进行返回。
                      * 
                      */
@@ -167,7 +163,6 @@ namespace TencentCloud
 
                     /**
                      * H5端员工实名链接
-
 只有入参 InvitationNotifyType = H5的时候才会进行返回。
                      */
                     std::string m_url;

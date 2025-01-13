@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取协议详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 协议详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置协议详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 协议详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Size 文件大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSize() const;
 
                     /**
                      * 设置文件大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _size 文件大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSize(const int64_t& _size);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 文件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置文件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 文件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -148,18 +136,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileId 文件 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileId() const;
 
                     /**
                      * 设置文件 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileId 文件 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileId(const std::string& _fileId);
@@ -175,21 +159,18 @@ namespace TencentCloud
 
                     /**
                      * 协议详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 文件大小
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_size;
                     bool m_sizeHasBeenSet;
 
                     /**
                      * 文件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -203,7 +184,6 @@ namespace TencentCloud
 
                     /**
                      * 文件 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileId;
                     bool m_fileIdHasBeenSet;

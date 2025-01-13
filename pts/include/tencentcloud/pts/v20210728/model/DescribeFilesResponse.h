@@ -62,9 +62,7 @@ namespace TencentCloud
 
                     /**
                      * 获取文件总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 文件总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotal() const;
@@ -87,7 +85,6 @@ namespace TencentCloud
 
                     /**
                      * 文件总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;

@@ -51,18 +51,14 @@ namespace TencentCloud
 
                     /**
                      * 获取施压配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LoadSpec 施压配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     LoadSpec GetLoadSpec() const;
 
                     /**
                      * 设置施压配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _loadSpec 施压配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLoadSpec(const LoadSpec& _loadSpec);
@@ -128,7 +124,6 @@ namespace TencentCloud
 
                     /**
                      * 施压配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     LoadSpec m_loadSpec;
                     bool m_loadSpecHasBeenSet;

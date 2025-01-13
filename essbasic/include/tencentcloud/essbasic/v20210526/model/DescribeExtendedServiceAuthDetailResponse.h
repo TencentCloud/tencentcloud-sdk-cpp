@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取服务授权的信息列表，根据查询类型返回特定扩展服务的开通和授权状况。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuthInfoDetail 服务授权的信息列表，根据查询类型返回特定扩展服务的开通和授权状况。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AuthInfoDetail GetAuthInfoDetail() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 服务授权的信息列表，根据查询类型返回特定扩展服务的开通和授权状况。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AuthInfoDetail m_authInfoDetail;
                     bool m_authInfoDetailHasBeenSet;

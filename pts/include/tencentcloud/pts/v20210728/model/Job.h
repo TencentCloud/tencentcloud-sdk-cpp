@@ -81,18 +81,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务的场景ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScenarioId 任务的场景ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetScenarioId() const;
 
                     /**
                      * 设置任务的场景ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scenarioId 任务的场景ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScenarioId(const std::string& _scenarioId);
@@ -106,18 +102,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务的施压配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Load 任务的施压配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Load GetLoad() const;
 
                     /**
                      * 设置任务的施压配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _load 任务的施压配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLoad(const Load& _load);
@@ -208,11 +200,9 @@ namespace TencentCloud
                      * 获取任务的运行状态, JobUnknown: 0,JobCreated:1,JobPending:2, JobPreparing:3,JobSelectClustering:4,JobCreateTasking:5,JobSyncTasking:6
 JobRunning:11,JobFinished:12,JobPrepareException:13,JobFinishException:14,JobAborting:15,JobAborted:16,JobAbortException:17,JobDeleted:18,
 JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 任务的运行状态, JobUnknown: 0,JobCreated:1,JobPending:2, JobPreparing:3,JobSelectClustering:4,JobCreateTasking:5,JobSyncTasking:6
 JobRunning:11,JobFinished:12,JobPrepareException:13,JobFinishException:14,JobAborting:15,JobAborted:16,JobAbortException:17,JobDeleted:18,
 JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
@@ -221,11 +211,9 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
                      * 设置任务的运行状态, JobUnknown: 0,JobCreated:1,JobPending:2, JobPreparing:3,JobSelectClustering:4,JobCreateTasking:5,JobSyncTasking:6
 JobRunning:11,JobFinished:12,JobPrepareException:13,JobFinishException:14,JobAborting:15,JobAborted:16,JobAbortException:17,JobDeleted:18,
 JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 任务的运行状态, JobUnknown: 0,JobCreated:1,JobPending:2, JobPreparing:3,JobSelectClustering:4,JobCreateTasking:5,JobSyncTasking:6
 JobRunning:11,JobFinished:12,JobPrepareException:13,JobFinishException:14,JobAborting:15,JobAborted:16,JobAbortException:17,JobDeleted:18,
 JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -289,18 +277,14 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 
                     /**
                      * 获取任务的最大VU数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxVirtualUserCount 任务的最大VU数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxVirtualUserCount() const;
 
                     /**
                      * 设置任务的最大VU数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxVirtualUserCount 任务的最大VU数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxVirtualUserCount(const int64_t& _maxVirtualUserCount);
@@ -314,18 +298,14 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 
                     /**
                      * 获取任务的备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Note 任务的备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNote() const;
 
                     /**
                      * 设置任务的备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _note 任务的备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNote(const std::string& _note);
@@ -339,18 +319,14 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 
                     /**
                      * 获取错误率百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorRate 错误率百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetErrorRate() const;
 
                     /**
                      * 设置错误率百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _errorRate 错误率百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetErrorRate(const double& _errorRate);
@@ -364,18 +340,14 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 
                     /**
                      * 获取任务发起人
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return JobOwner 任务发起人
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetJobOwner() const;
 
                     /**
                      * 设置任务发起人
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _jobOwner 任务发起人
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetJobOwner(const std::string& _jobOwner);
@@ -414,18 +386,14 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 
                     /**
                      * 获取任务时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Duration 任务时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDuration() const;
 
                     /**
                      * 设置任务时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _duration 任务时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDuration(const int64_t& _duration);
@@ -439,18 +407,14 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 
                     /**
                      * 获取最大每秒请求数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxRequestsPerSecond 最大每秒请求数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxRequestsPerSecond() const;
 
                     /**
                      * 设置最大每秒请求数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxRequestsPerSecond 最大每秒请求数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxRequestsPerSecond(const int64_t& _maxRequestsPerSecond);
@@ -464,18 +428,14 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 
                     /**
                      * 获取总请求数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RequestTotal 总请求数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetRequestTotal() const;
 
                     /**
                      * 设置总请求数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _requestTotal 总请求数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRequestTotal(const double& _requestTotal);
@@ -489,18 +449,14 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 
                     /**
                      * 获取平均每秒请求数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RequestsPerSecond 平均每秒请求数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetRequestsPerSecond() const;
 
                     /**
                      * 设置平均每秒请求数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _requestsPerSecond 平均每秒请求数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRequestsPerSecond(const double& _requestsPerSecond);
@@ -514,18 +470,14 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 
                     /**
                      * 获取平均响应时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResponseTimeAverage 平均响应时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetResponseTimeAverage() const;
 
                     /**
                      * 设置平均响应时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _responseTimeAverage 平均响应时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResponseTimeAverage(const double& _responseTimeAverage);
@@ -539,18 +491,14 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 
                     /**
                      * 获取响应时间第99百分位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResponseTimeP99 响应时间第99百分位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetResponseTimeP99() const;
 
                     /**
                      * 设置响应时间第99百分位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _responseTimeP99 响应时间第99百分位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResponseTimeP99(const double& _responseTimeP99);
@@ -564,18 +512,14 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 
                     /**
                      * 获取响应时间第95百分位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResponseTimeP95 响应时间第95百分位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetResponseTimeP95() const;
 
                     /**
                      * 设置响应时间第95百分位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _responseTimeP95 响应时间第95百分位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResponseTimeP95(const double& _responseTimeP95);
@@ -589,18 +533,14 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 
                     /**
                      * 获取响应时间第90百分位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResponseTimeP90 响应时间第90百分位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetResponseTimeP90() const;
 
                     /**
                      * 设置响应时间第90百分位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _responseTimeP90 响应时间第90百分位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResponseTimeP90(const double& _responseTimeP90);
@@ -639,18 +579,14 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 
                     /**
                      * 获取最大响应时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResponseTimeMax 最大响应时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetResponseTimeMax() const;
 
                     /**
                      * 设置最大响应时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _responseTimeMax 最大响应时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResponseTimeMax(const double& _responseTimeMax);
@@ -664,18 +600,14 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 
                     /**
                      * 获取最小响应时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResponseTimeMin 最小响应时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetResponseTimeMin() const;
 
                     /**
                      * 设置最小响应时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _responseTimeMin 最小响应时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResponseTimeMin(const double& _responseTimeMin);
@@ -814,18 +746,14 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 
                     /**
                      * 获取定时任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CronId 定时任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCronId() const;
 
                     /**
                      * 设置定时任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cronId 定时任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCronId(const std::string& _cronId);
@@ -839,18 +767,14 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 
                     /**
                      * 获取场景类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 场景类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置场景类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 场景类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -864,18 +788,14 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 
                     /**
                      * 获取域名绑定配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DomainNameConfig 域名绑定配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DomainNameConfig GetDomainNameConfig() const;
 
                     /**
                      * 设置域名绑定配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _domainNameConfig 域名绑定配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDomainNameConfig(const DomainNameConfig& _domainNameConfig);
@@ -889,18 +809,14 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 
                     /**
                      * 获取false
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Debug false
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetDebug() const;
 
                     /**
                      * 设置false
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _debug false
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDebug(const bool& _debug);
@@ -914,18 +830,14 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 
                     /**
                      * 获取中断原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AbortReason 中断原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAbortReason() const;
 
                     /**
                      * 设置中断原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _abortReason 中断原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAbortReason(const int64_t& _abortReason);
@@ -964,18 +876,14 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 
                     /**
                      * 获取项目ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectId 项目ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _projectId 项目ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -1014,18 +922,14 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 
                     /**
                      * 获取每秒接收字节数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NetworkReceiveRate 每秒接收字节数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetNetworkReceiveRate() const;
 
                     /**
                      * 设置每秒接收字节数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _networkReceiveRate 每秒接收字节数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNetworkReceiveRate(const double& _networkReceiveRate);
@@ -1039,18 +943,14 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 
                     /**
                      * 获取每秒发送字节数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NetworkSendRate 每秒发送字节数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetNetworkSendRate() const;
 
                     /**
                      * 设置每秒发送字节数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _networkSendRate 每秒发送字节数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNetworkSendRate(const double& _networkSendRate);
@@ -1064,18 +964,14 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 
                     /**
                      * 获取任务状态描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 任务状态描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置任务状态描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _message 任务状态描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMessage(const std::string& _message);
@@ -1089,18 +985,14 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 
                     /**
                      * 获取test-project
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectName test-project
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProjectName() const;
 
                     /**
                      * 设置test-project
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _projectName test-project
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProjectName(const std::string& _projectName);
@@ -1114,18 +1006,14 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 
                     /**
                      * 获取test-scenario
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScenarioName test-scenario
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetScenarioName() const;
 
                     /**
                      * 设置test-scenario
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scenarioName test-scenario
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScenarioName(const std::string& _scenarioName);
@@ -1139,18 +1027,14 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 
                     /**
                      * 获取付费类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayMode 付费类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPayMode() const;
 
                     /**
                      * 设置付费类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _payMode 付费类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPayMode(const int64_t& _payMode);
@@ -1164,18 +1048,14 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 
                     /**
                      * 获取job VUM用量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Usage job VUM用量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetUsage() const;
 
                     /**
                      * 设置job VUM用量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _usage job VUM用量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUsage(const int64_t& _usage);
@@ -1198,14 +1078,12 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 
                     /**
                      * 任务的场景ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scenarioId;
                     bool m_scenarioIdHasBeenSet;
 
                     /**
                      * 任务的施压配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Load m_load;
                     bool m_loadHasBeenSet;
@@ -1235,7 +1113,6 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
                      * 任务的运行状态, JobUnknown: 0,JobCreated:1,JobPending:2, JobPreparing:3,JobSelectClustering:4,JobCreateTasking:5,JobSyncTasking:6
 JobRunning:11,JobFinished:12,JobPrepareException:13,JobFinishException:14,JobAborting:15,JobAborted:16,JobAbortException:17,JobDeleted:18,
 JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
@@ -1256,28 +1133,24 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 
                     /**
                      * 任务的最大VU数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxVirtualUserCount;
                     bool m_maxVirtualUserCountHasBeenSet;
 
                     /**
                      * 任务的备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_note;
                     bool m_noteHasBeenSet;
 
                     /**
                      * 错误率百分比
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_errorRate;
                     bool m_errorRateHasBeenSet;
 
                     /**
                      * 任务发起人
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_jobOwner;
                     bool m_jobOwnerHasBeenSet;
@@ -1291,56 +1164,48 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 
                     /**
                      * 任务时长
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_duration;
                     bool m_durationHasBeenSet;
 
                     /**
                      * 最大每秒请求数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxRequestsPerSecond;
                     bool m_maxRequestsPerSecondHasBeenSet;
 
                     /**
                      * 总请求数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_requestTotal;
                     bool m_requestTotalHasBeenSet;
 
                     /**
                      * 平均每秒请求数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_requestsPerSecond;
                     bool m_requestsPerSecondHasBeenSet;
 
                     /**
                      * 平均响应时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_responseTimeAverage;
                     bool m_responseTimeAverageHasBeenSet;
 
                     /**
                      * 响应时间第99百分位
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_responseTimeP99;
                     bool m_responseTimeP99HasBeenSet;
 
                     /**
                      * 响应时间第95百分位
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_responseTimeP95;
                     bool m_responseTimeP95HasBeenSet;
 
                     /**
                      * 响应时间第90百分位
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_responseTimeP90;
                     bool m_responseTimeP90HasBeenSet;
@@ -1354,14 +1219,12 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 
                     /**
                      * 最大响应时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_responseTimeMax;
                     bool m_responseTimeMaxHasBeenSet;
 
                     /**
                      * 最小响应时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_responseTimeMin;
                     bool m_responseTimeMinHasBeenSet;
@@ -1403,35 +1266,30 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 
                     /**
                      * 定时任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cronId;
                     bool m_cronIdHasBeenSet;
 
                     /**
                      * 场景类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 域名绑定配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DomainNameConfig m_domainNameConfig;
                     bool m_domainNameConfigHasBeenSet;
 
                     /**
                      * false
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_debug;
                     bool m_debugHasBeenSet;
 
                     /**
                      * 中断原因
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_abortReason;
                     bool m_abortReasonHasBeenSet;
@@ -1445,7 +1303,6 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 
                     /**
                      * 项目ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
@@ -1459,49 +1316,42 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
 
                     /**
                      * 每秒接收字节数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_networkReceiveRate;
                     bool m_networkReceiveRateHasBeenSet;
 
                     /**
                      * 每秒发送字节数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_networkSendRate;
                     bool m_networkSendRateHasBeenSet;
 
                     /**
                      * 任务状态描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
 
                     /**
                      * test-project
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_projectName;
                     bool m_projectNameHasBeenSet;
 
                     /**
                      * test-scenario
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scenarioName;
                     bool m_scenarioNameHasBeenSet;
 
                     /**
                      * 付费类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
                      * job VUM用量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_usage;
                     bool m_usageHasBeenSet;

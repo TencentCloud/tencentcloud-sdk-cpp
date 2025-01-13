@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取用量明细
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Details 用量明细
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<UsageDetail> GetDetails() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 用量明细
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<UsageDetail> m_details;
                     bool m_detailsHasBeenSet;

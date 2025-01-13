@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取互联网公网地址列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Subnets 互联网公网地址列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<InternetAddressDetail> GetSubnets() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 互联网公网地址列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<InternetAddressDetail> m_subnets;
                     bool m_subnetsHasBeenSet;

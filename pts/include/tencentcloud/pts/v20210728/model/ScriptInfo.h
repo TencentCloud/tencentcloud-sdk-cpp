@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 文件名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置文件名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 文件名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Size 文件大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSize() const;
 
                     /**
                      * 设置文件大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _size 文件大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSize(const int64_t& _size);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 文件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置文件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 文件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -148,18 +136,14 @@ namespace TencentCloud
 
                     /**
                      * 获取base64编码后的文件内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EncodedContent base64编码后的文件内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEncodedContent() const;
 
                     /**
                      * 设置base64编码后的文件内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _encodedContent base64编码后的文件内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEncodedContent(const std::string& _encodedContent);
@@ -173,18 +157,14 @@ namespace TencentCloud
 
                     /**
                      * 获取base64编码后的har结构体
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EncodedHttpArchive base64编码后的har结构体
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEncodedHttpArchive() const;
 
                     /**
                      * 设置base64编码后的har结构体
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _encodedHttpArchive base64编码后的har结构体
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEncodedHttpArchive(const std::string& _encodedHttpArchive);
@@ -198,18 +178,14 @@ namespace TencentCloud
 
                     /**
                      * 获取脚本权重，范围 1-100
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LoadWeight 脚本权重，范围 1-100
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLoadWeight() const;
 
                     /**
                      * 设置脚本权重，范围 1-100
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _loadWeight 脚本权重，范围 1-100
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLoadWeight(const int64_t& _loadWeight);
@@ -223,18 +199,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileId 文件 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileId() const;
 
                     /**
                      * 设置文件 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileId 文件 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileId(const std::string& _fileId);
@@ -250,21 +222,18 @@ namespace TencentCloud
 
                     /**
                      * 文件名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 文件大小
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_size;
                     bool m_sizeHasBeenSet;
 
                     /**
                      * 文件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -278,28 +247,24 @@ namespace TencentCloud
 
                     /**
                      * base64编码后的文件内容
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_encodedContent;
                     bool m_encodedContentHasBeenSet;
 
                     /**
                      * base64编码后的har结构体
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_encodedHttpArchive;
                     bool m_encodedHttpArchiveHasBeenSet;
 
                     /**
                      * 脚本权重，范围 1-100
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_loadWeight;
                     bool m_loadWeightHasBeenSet;
 
                     /**
                      * 文件 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileId;
                     bool m_fileIdHasBeenSet;

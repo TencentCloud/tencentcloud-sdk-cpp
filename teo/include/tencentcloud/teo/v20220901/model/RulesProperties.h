@@ -121,13 +121,13 @@ namespace TencentCloud
 <li> TOGGLE：参数值为开关类型，可在 ChoicesValue 中选择；</li>
 <li> OBJECT：参数值为对象类型，ChoiceProperties 为改对象类型关联的属性；</li>
 <li> CUSTOM_NUM：参数值用户自定义，整型类型；</li>
-<li> CUSTOM_STRING：参数值用户自定义，字符串类型。</li>注意：当参数类型为 OBJECT 类型时，请注意参考 [示例2 参数为 OBJECT 类型的创建](https://cloud.tencent.com/document/product/1552/80622#.E7.A4.BA.E4.BE.8B2-.E5.8F.82.E6.95.B0.E4.B8.BA-OBJECT-.E7.B1.BB.E5.9E.8B.E7.9A.84.E5.88.9B.E5.BB.BA)
+<li> CUSTOM_STRING：参数值用户自定义，字符串类型。</li>注意：当参数类型为 OBJECT 类型时，请注意参考 [示例2 参数为 OBJECT 类型的创建](https://cloud.tencent.com/document/product/1552/80622#.E7.A4.BA.E4.BE.8B2-.E4.BF.AE.E6.94.B9.E6.BA.90.E7.AB.99.E4.B8.BAIP.E5.9F.9F.E5.90.8D)
                      * @return Type 参数值类型。
 <li> CHOICE：参数值只能在 ChoicesValue 中选择； </li>
 <li> TOGGLE：参数值为开关类型，可在 ChoicesValue 中选择；</li>
 <li> OBJECT：参数值为对象类型，ChoiceProperties 为改对象类型关联的属性；</li>
 <li> CUSTOM_NUM：参数值用户自定义，整型类型；</li>
-<li> CUSTOM_STRING：参数值用户自定义，字符串类型。</li>注意：当参数类型为 OBJECT 类型时，请注意参考 [示例2 参数为 OBJECT 类型的创建](https://cloud.tencent.com/document/product/1552/80622#.E7.A4.BA.E4.BE.8B2-.E5.8F.82.E6.95.B0.E4.B8.BA-OBJECT-.E7.B1.BB.E5.9E.8B.E7.9A.84.E5.88.9B.E5.BB.BA)
+<li> CUSTOM_STRING：参数值用户自定义，字符串类型。</li>注意：当参数类型为 OBJECT 类型时，请注意参考 [示例2 参数为 OBJECT 类型的创建](https://cloud.tencent.com/document/product/1552/80622#.E7.A4.BA.E4.BE.8B2-.E4.BF.AE.E6.94.B9.E6.BA.90.E7.AB.99.E4.B8.BAIP.E5.9F.9F.E5.90.8D)
                      * 
                      */
                     std::string GetType() const;
@@ -138,13 +138,13 @@ namespace TencentCloud
 <li> TOGGLE：参数值为开关类型，可在 ChoicesValue 中选择；</li>
 <li> OBJECT：参数值为对象类型，ChoiceProperties 为改对象类型关联的属性；</li>
 <li> CUSTOM_NUM：参数值用户自定义，整型类型；</li>
-<li> CUSTOM_STRING：参数值用户自定义，字符串类型。</li>注意：当参数类型为 OBJECT 类型时，请注意参考 [示例2 参数为 OBJECT 类型的创建](https://cloud.tencent.com/document/product/1552/80622#.E7.A4.BA.E4.BE.8B2-.E5.8F.82.E6.95.B0.E4.B8.BA-OBJECT-.E7.B1.BB.E5.9E.8B.E7.9A.84.E5.88.9B.E5.BB.BA)
+<li> CUSTOM_STRING：参数值用户自定义，字符串类型。</li>注意：当参数类型为 OBJECT 类型时，请注意参考 [示例2 参数为 OBJECT 类型的创建](https://cloud.tencent.com/document/product/1552/80622#.E7.A4.BA.E4.BE.8B2-.E4.BF.AE.E6.94.B9.E6.BA.90.E7.AB.99.E4.B8.BAIP.E5.9F.9F.E5.90.8D)
                      * @param _type 参数值类型。
 <li> CHOICE：参数值只能在 ChoicesValue 中选择； </li>
 <li> TOGGLE：参数值为开关类型，可在 ChoicesValue 中选择；</li>
 <li> OBJECT：参数值为对象类型，ChoiceProperties 为改对象类型关联的属性；</li>
 <li> CUSTOM_NUM：参数值用户自定义，整型类型；</li>
-<li> CUSTOM_STRING：参数值用户自定义，字符串类型。</li>注意：当参数类型为 OBJECT 类型时，请注意参考 [示例2 参数为 OBJECT 类型的创建](https://cloud.tencent.com/document/product/1552/80622#.E7.A4.BA.E4.BE.8B2-.E5.8F.82.E6.95.B0.E4.B8.BA-OBJECT-.E7.B1.BB.E5.9E.8B.E7.9A.84.E5.88.9B.E5.BB.BA)
+<li> CUSTOM_STRING：参数值用户自定义，字符串类型。</li>注意：当参数类型为 OBJECT 类型时，请注意参考 [示例2 参数为 OBJECT 类型的创建](https://cloud.tencent.com/document/product/1552/80622#.E7.A4.BA.E4.BE.8B2-.E4.BF.AE.E6.94.B9.E6.BA.90.E7.AB.99.E4.B8.BAIP.E5.9F.9F.E5.90.8D)
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -296,7 +296,7 @@ namespace TencentCloud
 <li> TOGGLE：参数值为开关类型，可在 ChoicesValue 中选择；</li>
 <li> OBJECT：参数值为对象类型，ChoiceProperties 为改对象类型关联的属性；</li>
 <li> CUSTOM_NUM：参数值用户自定义，整型类型；</li>
-<li> CUSTOM_STRING：参数值用户自定义，字符串类型。</li>注意：当参数类型为 OBJECT 类型时，请注意参考 [示例2 参数为 OBJECT 类型的创建](https://cloud.tencent.com/document/product/1552/80622#.E7.A4.BA.E4.BE.8B2-.E5.8F.82.E6.95.B0.E4.B8.BA-OBJECT-.E7.B1.BB.E5.9E.8B.E7.9A.84.E5.88.9B.E5.BB.BA)
+<li> CUSTOM_STRING：参数值用户自定义，字符串类型。</li>注意：当参数类型为 OBJECT 类型时，请注意参考 [示例2 参数为 OBJECT 类型的创建](https://cloud.tencent.com/document/product/1552/80622#.E7.A4.BA.E4.BE.8B2-.E4.BF.AE.E6.94.B9.E6.BA.90.E7.AB.99.E4.B8.BAIP.E5.9F.9F.E5.90.8D)
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

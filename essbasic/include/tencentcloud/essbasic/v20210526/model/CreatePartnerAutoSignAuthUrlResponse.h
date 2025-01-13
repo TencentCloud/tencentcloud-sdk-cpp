@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取授权链接，以短链形式返回，短链的有效期参考回参中的 ExpiredTime。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Url 授权链接，以短链形式返回，短链的有效期参考回参中的 ExpiredTime。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUrl() const;
@@ -93,7 +91,6 @@ namespace TencentCloud
 
                     /**
                      * 授权链接，以短链形式返回，短链的有效期参考回参中的 ExpiredTime。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;

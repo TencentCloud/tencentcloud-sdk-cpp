@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取压测指标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Metric 压测指标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMetric() const;
 
                     /**
                      * 设置压测指标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _metric 压测指标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMetric(const std::string& _metric);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取压测指标聚合方法
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Aggregation 压测指标聚合方法
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAggregation() const;
 
                     /**
                      * 设置压测指标聚合方法
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _aggregation 压测指标聚合方法
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAggregation(const std::string& _aggregation);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取压测指标条件判断符号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Condition 压测指标条件判断符号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCondition() const;
 
                     /**
                      * 设置压测指标条件判断符号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _condition 压测指标条件判断符号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCondition(const std::string& _condition);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetValue() const;
 
                     /**
                      * 设置阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _value 阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValue(const double& _value);
@@ -174,18 +158,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否停止压测任务
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AbortFlag 是否停止压测任务
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetAbortFlag() const;
 
                     /**
                      * 设置是否停止压测任务
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _abortFlag 是否停止压测任务
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAbortFlag(const bool& _abortFlag);
@@ -199,18 +179,14 @@ namespace TencentCloud
 
                     /**
                      * 获取持续时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return For 持续时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFor() const;
 
                     /**
                      * 设置持续时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _for 持续时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFor(const std::string& _for);
@@ -226,28 +202,24 @@ namespace TencentCloud
 
                     /**
                      * 压测指标
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_metric;
                     bool m_metricHasBeenSet;
 
                     /**
                      * 压测指标聚合方法
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_aggregation;
                     bool m_aggregationHasBeenSet;
 
                     /**
                      * 压测指标条件判断符号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_condition;
                     bool m_conditionHasBeenSet;
 
                     /**
                      * 阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_value;
                     bool m_valueHasBeenSet;
@@ -261,14 +233,12 @@ namespace TencentCloud
 
                     /**
                      * 是否停止压测任务
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_abortFlag;
                     bool m_abortFlagHasBeenSet;
 
                     /**
                      * 持续时长
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_for;
                     bool m_forHasBeenSet;

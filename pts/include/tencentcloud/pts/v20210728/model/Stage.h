@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取施压时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DurationSeconds 施压时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDurationSeconds() const;
 
                     /**
                      * 设置施压时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _durationSeconds 施压时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDurationSeconds(const int64_t& _durationSeconds);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取虚拟用户数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TargetVirtualUsers 虚拟用户数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTargetVirtualUsers() const;
 
                     /**
                      * 设置虚拟用户数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _targetVirtualUsers 虚拟用户数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTargetVirtualUsers(const int64_t& _targetVirtualUsers);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 施压时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_durationSeconds;
                     bool m_durationSecondsHasBeenSet;
 
                     /**
                      * 虚拟用户数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_targetVirtualUsers;
                     bool m_targetVirtualUsersHasBeenSet;

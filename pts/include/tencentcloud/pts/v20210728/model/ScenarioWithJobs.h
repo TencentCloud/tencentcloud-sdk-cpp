@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取scecario结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Scenario scecario结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Scenario GetScenario() const;
 
                     /**
                      * 设置scecario结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scenario scecario结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScenario(const Scenario& _scenario);
@@ -102,7 +98,6 @@ namespace TencentCloud
 
                     /**
                      * scecario结果
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Scenario m_scenario;
                     bool m_scenarioHasBeenSet;

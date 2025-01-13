@@ -176,18 +176,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LineCount 文件行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLineCount() const;
 
                     /**
                      * 设置文件行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lineCount 文件行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLineCount(const int64_t& _lineCount);
@@ -251,18 +247,14 @@ namespace TencentCloud
 
                     /**
                      * 获取首行是否为参数名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HeaderInFile 首行是否为参数名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetHeaderInFile() const;
 
                     /**
                      * 设置首行是否为参数名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _headerInFile 首行是否为参数名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHeaderInFile(const bool& _headerInFile);
@@ -351,18 +343,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 文件状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置文件状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 文件状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -401,18 +389,14 @@ namespace TencentCloud
 
                     /**
                      * 获取项目 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectId 项目 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _projectId 项目 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -426,18 +410,14 @@ namespace TencentCloud
 
                     /**
                      * 获取此字段不再使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppID 此字段不再使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAppID() const;
 
                     /**
                      * 设置此字段不再使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appID 此字段不再使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppID(const int64_t& _appID);
@@ -451,18 +431,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户主账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uin 用户主账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
                      * 设置用户主账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uin 用户主账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -476,18 +452,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户子账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubAccountUin 用户子账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubAccountUin() const;
 
                     /**
                      * 设置用户子账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subAccountUin 用户子账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubAccountUin(const std::string& _subAccountUin);
@@ -501,18 +473,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户账号的 App ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppId 用户账号的 App ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAppId() const;
 
                     /**
                      * 设置用户账号的 App ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appId 用户账号的 App ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppId(const int64_t& _appId);
@@ -564,7 +532,6 @@ namespace TencentCloud
 
                     /**
                      * 文件行数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_lineCount;
                     bool m_lineCountHasBeenSet;
@@ -585,7 +552,6 @@ namespace TencentCloud
 
                     /**
                      * 首行是否为参数名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_headerInFile;
                     bool m_headerInFileHasBeenSet;
@@ -613,7 +579,6 @@ namespace TencentCloud
 
                     /**
                      * 文件状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
@@ -627,35 +592,30 @@ namespace TencentCloud
 
                     /**
                      * 项目 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
                      * 此字段不再使用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_appID;
                     bool m_appIDHasBeenSet;
 
                     /**
                      * 用户主账号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
                      * 用户子账号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subAccountUin;
                     bool m_subAccountUinHasBeenSet;
 
                     /**
                      * 用户账号的 App ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_appId;
                     bool m_appIdHasBeenSet;

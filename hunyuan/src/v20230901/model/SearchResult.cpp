@@ -23,7 +23,9 @@ using namespace std;
 SearchResult::SearchResult() :
     m_indexHasBeenSet(false),
     m_titleHasBeenSet(false),
-    m_urlHasBeenSet(false)
+    m_urlHasBeenSet(false),
+    m_textHasBeenSet(false),
+    m_iconHasBeenSet(false)
 {
 }
 
@@ -62,6 +64,26 @@ CoreInternalOutcome SearchResult::Deserialize(const rapidjson::Value &value)
         m_urlHasBeenSet = true;
     }
 
+    if (value.HasMember("Text") && !value["Text"].IsNull())
+    {
+        if (!value["Text"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SearchResult.Text` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_text = string(value["Text"].GetString());
+        m_textHasBeenSet = true;
+    }
+
+    if (value.HasMember("Icon") && !value["Icon"].IsNull())
+    {
+        if (!value["Icon"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SearchResult.Icon` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_icon = string(value["Icon"].GetString());
+        m_iconHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +113,22 @@ void SearchResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_textHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Text";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_text.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_iconHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Icon";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_icon.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +180,37 @@ void SearchResult::SetUrl(const string& _url)
 bool SearchResult::UrlHasBeenSet() const
 {
     return m_urlHasBeenSet;
+}
+
+string SearchResult::GetText() const
+{
+    return m_text;
+}
+
+void SearchResult::SetText(const string& _text)
+{
+    m_text = _text;
+    m_textHasBeenSet = true;
+}
+
+bool SearchResult::TextHasBeenSet() const
+{
+    return m_textHasBeenSet;
+}
+
+string SearchResult::GetIcon() const
+{
+    return m_icon;
+}
+
+void SearchResult::SetIcon(const string& _icon)
+{
+    m_icon = _icon;
+    m_iconHasBeenSet = true;
+}
+
+bool SearchResult::IconHasBeenSet() const
+{
+    return m_iconHasBeenSet;
 }
 

@@ -62,9 +62,7 @@ namespace TencentCloud
 
                     /**
                      * 获取任务数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 任务数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotal() const;
@@ -87,7 +85,6 @@ namespace TencentCloud
 
                     /**
                      * 任务数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;

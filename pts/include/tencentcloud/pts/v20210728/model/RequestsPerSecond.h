@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最大RPS
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxRequestsPerSecond 最大RPS
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxRequestsPerSecond() const;
 
                     /**
                      * 设置最大RPS
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxRequestsPerSecond 最大RPS
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxRequestsPerSecond(const int64_t& _maxRequestsPerSecond);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取施压时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DurationSeconds 施压时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDurationSeconds() const;
 
                     /**
                      * 设置施压时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _durationSeconds 施压时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDurationSeconds(const int64_t& _durationSeconds);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取deprecated
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TargetVirtualUsers deprecated
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTargetVirtualUsers() const;
 
                     /**
                      * 设置deprecated
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _targetVirtualUsers deprecated
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTargetVirtualUsers(const int64_t& _targetVirtualUsers);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Resources 资源数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetResources() const;
 
                     /**
                      * 设置资源数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resources 资源数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResources(const int64_t& _resources);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取起始RPS
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartRequestsPerSecond 起始RPS
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStartRequestsPerSecond() const;
 
                     /**
                      * 设置起始RPS
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _startRequestsPerSecond 起始RPS
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStartRequestsPerSecond(const int64_t& _startRequestsPerSecond);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取目标RPS，入参无效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TargetRequestsPerSecond 目标RPS，入参无效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTargetRequestsPerSecond() const;
 
                     /**
                      * 设置目标RPS，入参无效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _targetRequestsPerSecond 目标RPS，入参无效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTargetRequestsPerSecond(const int64_t& _targetRequestsPerSecond);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取优雅关停的等待时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GracefulStopSeconds 优雅关停的等待时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetGracefulStopSeconds() const;
 
                     /**
                      * 设置优雅关停的等待时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gracefulStopSeconds 优雅关停的等待时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGracefulStopSeconds(const int64_t& _gracefulStopSeconds);
@@ -225,49 +197,42 @@ namespace TencentCloud
 
                     /**
                      * 最大RPS
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxRequestsPerSecond;
                     bool m_maxRequestsPerSecondHasBeenSet;
 
                     /**
                      * 施压时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_durationSeconds;
                     bool m_durationSecondsHasBeenSet;
 
                     /**
                      * deprecated
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_targetVirtualUsers;
                     bool m_targetVirtualUsersHasBeenSet;
 
                     /**
                      * 资源数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_resources;
                     bool m_resourcesHasBeenSet;
 
                     /**
                      * 起始RPS
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_startRequestsPerSecond;
                     bool m_startRequestsPerSecondHasBeenSet;
 
                     /**
                      * 目标RPS，入参无效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_targetRequestsPerSecond;
                     bool m_targetRequestsPerSecondHasBeenSet;
 
                     /**
                      * 优雅关停的等待时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_gracefulStopSeconds;
                     bool m_gracefulStopSecondsHasBeenSet;

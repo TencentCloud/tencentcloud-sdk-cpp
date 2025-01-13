@@ -63,11 +63,9 @@ namespace TencentCloud
                      * 获取电子印章预览链接地址，地址默认失效时间为24小时。
 
 注:`图片上传生成的电子印章无预览链接地址`
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageUrl 电子印章预览链接地址，地址默认失效时间为24小时。
 
 注:`图片上传生成的电子印章无预览链接地址`
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetImageUrl() const;
@@ -92,7 +90,6 @@ namespace TencentCloud
                      * 电子印章预览链接地址，地址默认失效时间为24小时。
 
 注:`图片上传生成的电子印章无预览链接地址`
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_imageUrl;
                     bool m_imageUrlHasBeenSet;

@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取日志上下文，加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容。过期时间1小时
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Context 日志上下文，加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容。过期时间1小时
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContext() const;
@@ -80,7 +78,6 @@ namespace TencentCloud
 
                     /**
                      * 日志上下文，加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容。过期时间1小时
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_context;
                     bool m_contextHasBeenSet;

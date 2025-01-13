@@ -88,9 +88,7 @@ namespace TencentCloud
 
                     /**
                      * 获取查询的角色信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChannelRoles 查询的角色信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ChannelRole> GetChannelRoles() const;
@@ -124,7 +122,6 @@ namespace TencentCloud
 
                     /**
                      * 查询的角色信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ChannelRole> m_channelRoles;
                     bool m_channelRolesHasBeenSet;

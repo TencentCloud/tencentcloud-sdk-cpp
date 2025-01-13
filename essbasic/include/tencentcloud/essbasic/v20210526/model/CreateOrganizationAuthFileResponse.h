@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取授权书链接，有效期5分钟。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileUrl 授权书链接，有效期5分钟。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileUrl() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 授权书链接，有效期5分钟。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileUrl;
                     bool m_fileUrlHasBeenSet;

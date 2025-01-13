@@ -34,7 +34,13 @@ ScoreInfo::ScoreInfo() :
     m_staticNumHasBeenSet(false),
     m_recordNumHasBeenSet(false),
     m_pageDurationHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_pagePerformanceScoreHasBeenSet(false),
+    m_jsErrorScoreHasBeenSet(false),
+    m_apiPerformanceScoreHasBeenSet(false),
+    m_apiAvaliableScoreHasBeenSet(false),
+    m_staticPerformanceScoreHasBeenSet(false),
+    m_staticAvaliableScoreHasBeenSet(false)
 {
 }
 
@@ -183,6 +189,66 @@ CoreInternalOutcome ScoreInfo::Deserialize(const rapidjson::Value &value)
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("PagePerformanceScore") && !value["PagePerformanceScore"].IsNull())
+    {
+        if (!value["PagePerformanceScore"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScoreInfo.PagePerformanceScore` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_pagePerformanceScore = string(value["PagePerformanceScore"].GetString());
+        m_pagePerformanceScoreHasBeenSet = true;
+    }
+
+    if (value.HasMember("JsErrorScore") && !value["JsErrorScore"].IsNull())
+    {
+        if (!value["JsErrorScore"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScoreInfo.JsErrorScore` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_jsErrorScore = string(value["JsErrorScore"].GetString());
+        m_jsErrorScoreHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApiPerformanceScore") && !value["ApiPerformanceScore"].IsNull())
+    {
+        if (!value["ApiPerformanceScore"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScoreInfo.ApiPerformanceScore` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_apiPerformanceScore = string(value["ApiPerformanceScore"].GetString());
+        m_apiPerformanceScoreHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApiAvaliableScore") && !value["ApiAvaliableScore"].IsNull())
+    {
+        if (!value["ApiAvaliableScore"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScoreInfo.ApiAvaliableScore` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_apiAvaliableScore = string(value["ApiAvaliableScore"].GetString());
+        m_apiAvaliableScoreHasBeenSet = true;
+    }
+
+    if (value.HasMember("StaticPerformanceScore") && !value["StaticPerformanceScore"].IsNull())
+    {
+        if (!value["StaticPerformanceScore"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScoreInfo.StaticPerformanceScore` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_staticPerformanceScore = string(value["StaticPerformanceScore"].GetString());
+        m_staticPerformanceScoreHasBeenSet = true;
+    }
+
+    if (value.HasMember("StaticAvaliableScore") && !value["StaticAvaliableScore"].IsNull())
+    {
+        if (!value["StaticAvaliableScore"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScoreInfo.StaticAvaliableScore` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_staticAvaliableScore = string(value["StaticAvaliableScore"].GetString());
+        m_staticAvaliableScoreHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -300,6 +366,54 @@ void ScoreInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pagePerformanceScoreHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PagePerformanceScore";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pagePerformanceScore.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_jsErrorScoreHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JsErrorScore";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_jsErrorScore.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_apiPerformanceScoreHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApiPerformanceScore";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_apiPerformanceScore.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_apiAvaliableScoreHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApiAvaliableScore";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_apiAvaliableScore.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_staticPerformanceScoreHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StaticPerformanceScore";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_staticPerformanceScore.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_staticAvaliableScoreHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StaticAvaliableScore";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_staticAvaliableScore.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -527,5 +641,101 @@ void ScoreInfo::SetCreateTime(const string& _createTime)
 bool ScoreInfo::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+string ScoreInfo::GetPagePerformanceScore() const
+{
+    return m_pagePerformanceScore;
+}
+
+void ScoreInfo::SetPagePerformanceScore(const string& _pagePerformanceScore)
+{
+    m_pagePerformanceScore = _pagePerformanceScore;
+    m_pagePerformanceScoreHasBeenSet = true;
+}
+
+bool ScoreInfo::PagePerformanceScoreHasBeenSet() const
+{
+    return m_pagePerformanceScoreHasBeenSet;
+}
+
+string ScoreInfo::GetJsErrorScore() const
+{
+    return m_jsErrorScore;
+}
+
+void ScoreInfo::SetJsErrorScore(const string& _jsErrorScore)
+{
+    m_jsErrorScore = _jsErrorScore;
+    m_jsErrorScoreHasBeenSet = true;
+}
+
+bool ScoreInfo::JsErrorScoreHasBeenSet() const
+{
+    return m_jsErrorScoreHasBeenSet;
+}
+
+string ScoreInfo::GetApiPerformanceScore() const
+{
+    return m_apiPerformanceScore;
+}
+
+void ScoreInfo::SetApiPerformanceScore(const string& _apiPerformanceScore)
+{
+    m_apiPerformanceScore = _apiPerformanceScore;
+    m_apiPerformanceScoreHasBeenSet = true;
+}
+
+bool ScoreInfo::ApiPerformanceScoreHasBeenSet() const
+{
+    return m_apiPerformanceScoreHasBeenSet;
+}
+
+string ScoreInfo::GetApiAvaliableScore() const
+{
+    return m_apiAvaliableScore;
+}
+
+void ScoreInfo::SetApiAvaliableScore(const string& _apiAvaliableScore)
+{
+    m_apiAvaliableScore = _apiAvaliableScore;
+    m_apiAvaliableScoreHasBeenSet = true;
+}
+
+bool ScoreInfo::ApiAvaliableScoreHasBeenSet() const
+{
+    return m_apiAvaliableScoreHasBeenSet;
+}
+
+string ScoreInfo::GetStaticPerformanceScore() const
+{
+    return m_staticPerformanceScore;
+}
+
+void ScoreInfo::SetStaticPerformanceScore(const string& _staticPerformanceScore)
+{
+    m_staticPerformanceScore = _staticPerformanceScore;
+    m_staticPerformanceScoreHasBeenSet = true;
+}
+
+bool ScoreInfo::StaticPerformanceScoreHasBeenSet() const
+{
+    return m_staticPerformanceScoreHasBeenSet;
+}
+
+string ScoreInfo::GetStaticAvaliableScore() const
+{
+    return m_staticAvaliableScore;
+}
+
+void ScoreInfo::SetStaticAvaliableScore(const string& _staticAvaliableScore)
+{
+    m_staticAvaliableScore = _staticAvaliableScore;
+    m_staticAvaliableScoreHasBeenSet = true;
+}
+
+bool ScoreInfo::StaticAvaliableScoreHasBeenSet() const
+{
+    return m_staticAvaliableScoreHasBeenSet;
 }
 
