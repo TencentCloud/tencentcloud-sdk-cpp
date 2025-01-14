@@ -76,10 +76,8 @@ namespace TencentCloud
                     /**
                      * 获取签署连接过期时间字符串：年月日-时分秒
 
-例如:2023-07-28 17:25:59
                      * @return UrlExpireOn 签署连接过期时间字符串：年月日-时分秒
 
-例如:2023-07-28 17:25:59
                      * 
                      */
                     std::string GetUrlExpireOn() const;
@@ -123,7 +121,6 @@ namespace TencentCloud
                     /**
                      * 签署连接过期时间字符串：年月日-时分秒
 
-例如:2023-07-28 17:25:59
                      */
                     std::string m_urlExpireOn;
                     bool m_urlExpireOnHasBeenSet;

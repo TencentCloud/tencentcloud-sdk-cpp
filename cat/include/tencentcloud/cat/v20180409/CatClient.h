@@ -183,7 +183,7 @@ namespace TencentCloud
                 ResumeProbeTaskOutcomeCallable ResumeProbeTaskCallable(const Model::ResumeProbeTaskRequest& request);
 
                 /**
-                 *暂停拨测任务
+                 *暂停任务
                  * @param req SuspendProbeTaskRequest
                  * @return SuspendProbeTaskOutcome
                  */

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取cos认证中的Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecretId cos认证中的Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSecretId() const;
 
                     /**
                      * 设置cos认证中的Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _secretId cos认证中的Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSecretId(const std::string& _secretId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取cos认证中的key
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecretKey cos认证中的key
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSecretKey() const;
 
                     /**
                      * 设置cos认证中的key
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _secretKey cos认证中的key
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSecretKey(const std::string& _secretKey);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取cos认证中的路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CosPath cos认证中的路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCosPath() const;
 
                     /**
                      * 设置cos认证中的路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cosPath cos认证中的路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCosPath(const std::string& _cosPath);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * cos认证中的Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_secretId;
                     bool m_secretIdHasBeenSet;
 
                     /**
                      * cos认证中的key
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_secretKey;
                     bool m_secretKeyHasBeenSet;
 
                     /**
                      * cos认证中的路径
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cosPath;
                     bool m_cosPathHasBeenSet;

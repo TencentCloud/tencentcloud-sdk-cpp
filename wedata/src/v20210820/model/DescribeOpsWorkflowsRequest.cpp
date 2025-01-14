@@ -36,7 +36,9 @@ DescribeOpsWorkflowsRequest::DescribeOpsWorkflowsRequest() :
     m_pageSizeHasBeenSet(false),
     m_sortItemHasBeenSet(false),
     m_sortTypeHasBeenSet(false),
-    m_projectIdsHasBeenSet(false)
+    m_projectIdsHasBeenSet(false),
+    m_workflowTypeListHasBeenSet(false),
+    m_keyWordHasBeenSet(false)
 {
 }
 
@@ -162,6 +164,27 @@ string DescribeOpsWorkflowsRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_workflowTypeListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkflowTypeList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_workflowTypeList.begin(); itr != m_workflowTypeList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_keyWordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeyWord";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_keyWord.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -394,6 +417,38 @@ void DescribeOpsWorkflowsRequest::SetProjectIds(const vector<string>& _projectId
 bool DescribeOpsWorkflowsRequest::ProjectIdsHasBeenSet() const
 {
     return m_projectIdsHasBeenSet;
+}
+
+vector<string> DescribeOpsWorkflowsRequest::GetWorkflowTypeList() const
+{
+    return m_workflowTypeList;
+}
+
+void DescribeOpsWorkflowsRequest::SetWorkflowTypeList(const vector<string>& _workflowTypeList)
+{
+    m_workflowTypeList = _workflowTypeList;
+    m_workflowTypeListHasBeenSet = true;
+}
+
+bool DescribeOpsWorkflowsRequest::WorkflowTypeListHasBeenSet() const
+{
+    return m_workflowTypeListHasBeenSet;
+}
+
+string DescribeOpsWorkflowsRequest::GetKeyWord() const
+{
+    return m_keyWord;
+}
+
+void DescribeOpsWorkflowsRequest::SetKeyWord(const string& _keyWord)
+{
+    m_keyWord = _keyWord;
+    m_keyWordHasBeenSet = true;
+}
+
+bool DescribeOpsWorkflowsRequest::KeyWordHasBeenSet() const
+{
+    return m_keyWordHasBeenSet;
 }
 
 

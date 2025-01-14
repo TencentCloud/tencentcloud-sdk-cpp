@@ -33,7 +33,8 @@ NativeGatewayServerGroup::NativeGatewayServerGroup() :
     m_internetMaxBandwidthOutHasBeenSet(false),
     m_modifyTimeHasBeenSet(false),
     m_subnetIdsHasBeenSet(false),
-    m_defaultWeightHasBeenSet(false)
+    m_defaultWeightHasBeenSet(false),
+    m_elasticNumberHasBeenSet(false)
 {
 }
 
@@ -186,6 +187,16 @@ CoreInternalOutcome NativeGatewayServerGroup::Deserialize(const rapidjson::Value
         m_defaultWeightHasBeenSet = true;
     }
 
+    if (value.HasMember("ElasticNumber") && !value["ElasticNumber"].IsNull())
+    {
+        if (!value["ElasticNumber"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NativeGatewayServerGroup.ElasticNumber` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_elasticNumber = value["ElasticNumber"].GetUint64();
+        m_elasticNumberHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -297,6 +308,14 @@ void NativeGatewayServerGroup::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "DefaultWeight";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_defaultWeight, allocator);
+    }
+
+    if (m_elasticNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ElasticNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_elasticNumber, allocator);
     }
 
 }
@@ -508,5 +527,21 @@ void NativeGatewayServerGroup::SetDefaultWeight(const int64_t& _defaultWeight)
 bool NativeGatewayServerGroup::DefaultWeightHasBeenSet() const
 {
     return m_defaultWeightHasBeenSet;
+}
+
+uint64_t NativeGatewayServerGroup::GetElasticNumber() const
+{
+    return m_elasticNumber;
+}
+
+void NativeGatewayServerGroup::SetElasticNumber(const uint64_t& _elasticNumber)
+{
+    m_elasticNumber = _elasticNumber;
+    m_elasticNumberHasBeenSet = true;
+}
+
+bool NativeGatewayServerGroup::ElasticNumberHasBeenSet() const
+{
+    return m_elasticNumberHasBeenSet;
 }
 

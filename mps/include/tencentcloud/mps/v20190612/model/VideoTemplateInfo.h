@@ -230,12 +230,14 @@ namespace TencentCloud
 <li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>
 <li>当 Width、Height 均非 0，则分辨率按用户指定。</li>
 默认值：0。
+注意：Codec为MV-HEVC时可以支持到7680
                      * @return Width 视频流宽度（或长边）的最大值，取值范围：0 和 [128, 4096]，单位：px。
 <li>当 Width、Height 均为 0，则分辨率同源；</li>
 <li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>
 <li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>
 <li>当 Width、Height 均非 0，则分辨率按用户指定。</li>
 默认值：0。
+注意：Codec为MV-HEVC时可以支持到7680
                      * 
                      */
                     uint64_t GetWidth() const;
@@ -247,12 +249,14 @@ namespace TencentCloud
 <li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>
 <li>当 Width、Height 均非 0，则分辨率按用户指定。</li>
 默认值：0。
+注意：Codec为MV-HEVC时可以支持到7680
                      * @param _width 视频流宽度（或长边）的最大值，取值范围：0 和 [128, 4096]，单位：px。
 <li>当 Width、Height 均为 0，则分辨率同源；</li>
 <li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>
 <li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>
 <li>当 Width、Height 均非 0，则分辨率按用户指定。</li>
 默认值：0。
+注意：Codec为MV-HEVC时可以支持到7680
                      * 
                      */
                     void SetWidth(const uint64_t& _width);
@@ -271,12 +275,14 @@ namespace TencentCloud
 <li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>
 <li>当 Width、Height 均非 0，则分辨率按用户指定。</li>
 默认值：0。
+注意：Codec为MV-HEVC时可以支持到7680
                      * @return Height 视频流高度（或短边）的最大值，取值范围：0 和 [128, 4096]，单位：px。
 <li>当 Width、Height 均为 0，则分辨率同源；</li>
 <li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>
 <li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>
 <li>当 Width、Height 均非 0，则分辨率按用户指定。</li>
 默认值：0。
+注意：Codec为MV-HEVC时可以支持到7680
                      * 
                      */
                     uint64_t GetHeight() const;
@@ -288,12 +294,14 @@ namespace TencentCloud
 <li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>
 <li>当 Width、Height 均非 0，则分辨率按用户指定。</li>
 默认值：0。
+注意：Codec为MV-HEVC时可以支持到7680
                      * @param _height 视频流高度（或短边）的最大值，取值范围：0 和 [128, 4096]，单位：px。
 <li>当 Width、Height 均为 0，则分辨率同源；</li>
 <li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>
 <li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>
 <li>当 Width、Height 均非 0，则分辨率按用户指定。</li>
 默认值：0。
+注意：Codec为MV-HEVC时可以支持到7680
                      * 
                      */
                     void SetHeight(const uint64_t& _height);
@@ -1142,6 +1150,7 @@ low_compress：画质优先：优先保证画质，压缩出来的文件体积�
 <li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>
 <li>当 Width、Height 均非 0，则分辨率按用户指定。</li>
 默认值：0。
+注意：Codec为MV-HEVC时可以支持到7680
                      */
                     uint64_t m_width;
                     bool m_widthHasBeenSet;
@@ -1153,6 +1162,7 @@ low_compress：画质优先：优先保证画质，压缩出来的文件体积�
 <li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>
 <li>当 Width、Height 均非 0，则分辨率按用户指定。</li>
 默认值：0。
+注意：Codec为MV-HEVC时可以支持到7680
                      */
                     uint64_t m_height;
                     bool m_heightHasBeenSet;

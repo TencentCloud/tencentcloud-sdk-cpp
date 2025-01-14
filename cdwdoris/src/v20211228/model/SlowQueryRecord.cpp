@@ -37,7 +37,8 @@ SlowQueryRecord::SlowQueryRecord() :
     m_memoryUsageMBHasBeenSet(false),
     m_durationSecHasBeenSet(false),
     m_stateHasBeenSet(false),
-    m_catalogNameHasBeenSet(false)
+    m_catalogNameHasBeenSet(false),
+    m_cpuTimeMsHasBeenSet(false)
 {
 }
 
@@ -216,6 +217,16 @@ CoreInternalOutcome SlowQueryRecord::Deserialize(const rapidjson::Value &value)
         m_catalogNameHasBeenSet = true;
     }
 
+    if (value.HasMember("CpuTimeMs") && !value["CpuTimeMs"].IsNull())
+    {
+        if (!value["CpuTimeMs"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SlowQueryRecord.CpuTimeMs` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cpuTimeMs = value["CpuTimeMs"].GetInt64();
+        m_cpuTimeMsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -357,6 +368,14 @@ void SlowQueryRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "CatalogName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_catalogName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cpuTimeMsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CpuTimeMs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cpuTimeMs, allocator);
     }
 
 }
@@ -632,5 +651,21 @@ void SlowQueryRecord::SetCatalogName(const string& _catalogName)
 bool SlowQueryRecord::CatalogNameHasBeenSet() const
 {
     return m_catalogNameHasBeenSet;
+}
+
+int64_t SlowQueryRecord::GetCpuTimeMs() const
+{
+    return m_cpuTimeMs;
+}
+
+void SlowQueryRecord::SetCpuTimeMs(const int64_t& _cpuTimeMs)
+{
+    m_cpuTimeMs = _cpuTimeMs;
+    m_cpuTimeMsHasBeenSet = true;
+}
+
+bool SlowQueryRecord::CpuTimeMsHasBeenSet() const
+{
+    return m_cpuTimeMsHasBeenSet;
 }
 

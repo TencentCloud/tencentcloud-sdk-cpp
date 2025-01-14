@@ -210,6 +210,27 @@ namespace TencentCloud
                      */
                     bool SmartOptimizerWrittenHasBeenSet() const;
 
+                    /**
+                     * 获取数据优化针对的表
+                     * @return TableName 数据优化针对的表
+                     * 
+                     */
+                    std::string GetTableName() const;
+
+                    /**
+                     * 设置数据优化针对的表
+                     * @param _tableName 数据优化针对的表
+                     * 
+                     */
+                    void SetTableName(const std::string& _tableName);
+
+                    /**
+                     * 判断参数 TableName 是否已赋值
+                     * @return TableName 是否已赋值
+                     * 
+                     */
+                    bool TableNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -259,6 +280,12 @@ namespace TencentCloud
                      */
                     std::string m_smartOptimizerWritten;
                     bool m_smartOptimizerWrittenHasBeenSet;
+
+                    /**
+                     * 数据优化针对的表
+                     */
+                    std::string m_tableName;
+                    bool m_tableNameHasBeenSet;
 
                 };
             }

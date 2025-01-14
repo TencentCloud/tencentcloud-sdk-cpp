@@ -271,6 +271,27 @@ namespace TencentCloud
                      */
                     bool FileSizeHasBeenSet() const;
 
+                    /**
+                     * 获取日志匹配节点信息
+                     * @return MatchedBrokerIp 日志匹配节点信息
+                     * 
+                     */
+                    std::string GetMatchedBrokerIp() const;
+
+                    /**
+                     * 设置日志匹配节点信息
+                     * @param _matchedBrokerIp 日志匹配节点信息
+                     * 
+                     */
+                    void SetMatchedBrokerIp(const std::string& _matchedBrokerIp);
+
+                    /**
+                     * 判断参数 MatchedBrokerIp 是否已赋值
+                     * @return MatchedBrokerIp 是否已赋值
+                     * 
+                     */
+                    bool MatchedBrokerIpHasBeenSet() const;
+
                 private:
 
                     /**
@@ -335,6 +356,12 @@ namespace TencentCloud
                      */
                     std::string m_fileSize;
                     bool m_fileSizeHasBeenSet;
+
+                    /**
+                     * 日志匹配节点信息
+                     */
+                    std::string m_matchedBrokerIp;
+                    bool m_matchedBrokerIpHasBeenSet;
 
                 };
             }

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Database 数据库
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDatabase() const;
 
                     /**
                      * 设置数据库
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _database 数据库
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDatabase(const std::string& _database);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Table 表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTable() const;
 
                     /**
                      * 设置表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _table 表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTable(const std::string& _table);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取表总字节数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalBytes 表总字节数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalBytes() const;
 
                     /**
                      * 设置表总字节数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalBytes 表总字节数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalBytes(const int64_t& _totalBytes);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取表单个副本的大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SingleReplicaBytes 表单个副本的大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSingleReplicaBytes() const;
 
                     /**
                      * 设置表单个副本的大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _singleReplicaBytes 表单个副本的大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSingleReplicaBytes(const std::string& _singleReplicaBytes);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备份状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackupStatus 备份状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBackupStatus() const;
 
                     /**
                      * 设置备份状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _backupStatus 备份状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBackupStatus(const int64_t& _backupStatus);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备份的错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackupErrorMsg 备份的错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBackupErrorMsg() const;
 
                     /**
                      * 设置备份的错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _backupErrorMsg 备份的错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBackupErrorMsg(const std::string& _backupErrorMsg);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该库表是否绑定降冷策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsOpenCoolDown 该库表是否绑定降冷策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsOpenCoolDown() const;
 
                     /**
                      * 设置该库表是否绑定降冷策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isOpenCoolDown 该库表是否绑定降冷策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsOpenCoolDown(const bool& _isOpenCoolDown);
@@ -225,49 +197,42 @@ namespace TencentCloud
 
                     /**
                      * 数据库
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_database;
                     bool m_databaseHasBeenSet;
 
                     /**
                      * 表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_table;
                     bool m_tableHasBeenSet;
 
                     /**
                      * 表总字节数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalBytes;
                     bool m_totalBytesHasBeenSet;
 
                     /**
                      * 表单个副本的大小
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_singleReplicaBytes;
                     bool m_singleReplicaBytesHasBeenSet;
 
                     /**
                      * 备份状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_backupStatus;
                     bool m_backupStatusHasBeenSet;
 
                     /**
                      * 备份的错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_backupErrorMsg;
                     bool m_backupErrorMsgHasBeenSet;
 
                     /**
                      * 该库表是否绑定降冷策略
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isOpenCoolDown;
                     bool m_isOpenCoolDownHasBeenSet;

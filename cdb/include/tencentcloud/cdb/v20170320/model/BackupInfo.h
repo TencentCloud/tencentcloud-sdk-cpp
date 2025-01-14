@@ -488,6 +488,27 @@ namespace TencentCloud
                      */
                     bool ExecutedGTIDSetHasBeenSet() const;
 
+                    /**
+                     * 获取备份文件MD5值
+                     * @return MD5 备份文件MD5值
+                     * 
+                     */
+                    std::string GetMD5() const;
+
+                    /**
+                     * 设置备份文件MD5值
+                     * @param _mD5 备份文件MD5值
+                     * 
+                     */
+                    void SetMD5(const std::string& _mD5);
+
+                    /**
+                     * 判断参数 MD5 是否已赋值
+                     * @return MD5 是否已赋值
+                     * 
+                     */
+                    bool MD5HasBeenSet() const;
+
                 private:
 
                     /**
@@ -615,6 +636,12 @@ namespace TencentCloud
                      */
                     std::string m_executedGTIDSet;
                     bool m_executedGTIDSetHasBeenSet;
+
+                    /**
+                     * 备份文件MD5值
+                     */
+                    std::string m_mD5;
+                    bool m_mD5HasBeenSet;
 
                 };
             }

@@ -34,7 +34,8 @@ WorkflowExtOpsDto::WorkflowExtOpsDto() :
     m_folderIdHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_modifyTimeHasBeenSet(false)
+    m_modifyTimeHasBeenSet(false),
+    m_workflowTypeHasBeenSet(false)
 {
 }
 
@@ -183,6 +184,16 @@ CoreInternalOutcome WorkflowExtOpsDto::Deserialize(const rapidjson::Value &value
         m_modifyTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("WorkflowType") && !value["WorkflowType"].IsNull())
+    {
+        if (!value["WorkflowType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkflowExtOpsDto.WorkflowType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_workflowType = string(value["WorkflowType"].GetString());
+        m_workflowTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -300,6 +311,14 @@ void WorkflowExtOpsDto::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "ModifyTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_modifyTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_workflowTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkflowType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_workflowType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -527,5 +546,21 @@ void WorkflowExtOpsDto::SetModifyTime(const string& _modifyTime)
 bool WorkflowExtOpsDto::ModifyTimeHasBeenSet() const
 {
     return m_modifyTimeHasBeenSet;
+}
+
+string WorkflowExtOpsDto::GetWorkflowType() const
+{
+    return m_workflowType;
+}
+
+void WorkflowExtOpsDto::SetWorkflowType(const string& _workflowType)
+{
+    m_workflowType = _workflowType;
+    m_workflowTypeHasBeenSet = true;
+}
+
+bool WorkflowExtOpsDto::WorkflowTypeHasBeenSet() const
+{
+    return m_workflowTypeHasBeenSet;
 }
 

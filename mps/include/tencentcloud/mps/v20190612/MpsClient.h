@@ -61,6 +61,8 @@
 #include <tencentcloud/mps/v20190612/model/CreateStreamLinkInputResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateStreamLinkOutputInfoRequest.h>
 #include <tencentcloud/mps/v20190612/model/CreateStreamLinkOutputInfoResponse.h>
+#include <tencentcloud/mps/v20190612/model/CreateStreamLinkSecurityGroupRequest.h>
+#include <tencentcloud/mps/v20190612/model/CreateStreamLinkSecurityGroupResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateTranscodeTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/CreateTranscodeTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateVideoDatabaseEntryTaskRequest.h>
@@ -103,6 +105,8 @@
 #include <tencentcloud/mps/v20190612/model/DeleteStreamLinkFlowResponse.h>
 #include <tencentcloud/mps/v20190612/model/DeleteStreamLinkOutputRequest.h>
 #include <tencentcloud/mps/v20190612/model/DeleteStreamLinkOutputResponse.h>
+#include <tencentcloud/mps/v20190612/model/DeleteStreamLinkSecurityGroupRequest.h>
+#include <tencentcloud/mps/v20190612/model/DeleteStreamLinkSecurityGroupResponse.h>
 #include <tencentcloud/mps/v20190612/model/DeleteTranscodeTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/DeleteTranscodeTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/DeleteWatermarkTemplateRequest.h>
@@ -121,6 +125,8 @@
 #include <tencentcloud/mps/v20190612/model/DescribeAnimatedGraphicsTemplatesResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeContentReviewTemplatesRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribeContentReviewTemplatesResponse.h>
+#include <tencentcloud/mps/v20190612/model/DescribeGroupAttachFlowsByIdRequest.h>
+#include <tencentcloud/mps/v20190612/model/DescribeGroupAttachFlowsByIdResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeImageSpriteTemplatesRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribeImageSpriteTemplatesResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeLiveRecordTemplatesRequest.h>
@@ -161,6 +167,8 @@
 #include <tencentcloud/mps/v20190612/model/DescribeStreamLinkFlowsResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeStreamLinkRegionsRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribeStreamLinkRegionsResponse.h>
+#include <tencentcloud/mps/v20190612/model/DescribeStreamLinkSecurityGroupsRequest.h>
+#include <tencentcloud/mps/v20190612/model/DescribeStreamLinkSecurityGroupsResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeTaskDetailRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribeTaskDetailResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeTasksRequest.h>
@@ -181,6 +189,8 @@
 #include <tencentcloud/mps/v20190612/model/DisableScheduleResponse.h>
 #include <tencentcloud/mps/v20190612/model/DisableWorkflowRequest.h>
 #include <tencentcloud/mps/v20190612/model/DisableWorkflowResponse.h>
+#include <tencentcloud/mps/v20190612/model/DisassociateSecurityGroupRequest.h>
+#include <tencentcloud/mps/v20190612/model/DisassociateSecurityGroupResponse.h>
 #include <tencentcloud/mps/v20190612/model/EditMediaRequest.h>
 #include <tencentcloud/mps/v20190612/model/EditMediaResponse.h>
 #include <tencentcloud/mps/v20190612/model/EnableScheduleRequest.h>
@@ -223,6 +233,8 @@
 #include <tencentcloud/mps/v20190612/model/ModifyStreamLinkInputResponse.h>
 #include <tencentcloud/mps/v20190612/model/ModifyStreamLinkOutputInfoRequest.h>
 #include <tencentcloud/mps/v20190612/model/ModifyStreamLinkOutputInfoResponse.h>
+#include <tencentcloud/mps/v20190612/model/ModifyStreamLinkSecurityGroupRequest.h>
+#include <tencentcloud/mps/v20190612/model/ModifyStreamLinkSecurityGroupResponse.h>
 #include <tencentcloud/mps/v20190612/model/ModifyTranscodeTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/ModifyTranscodeTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/ModifyWatermarkTemplateRequest.h>
@@ -320,6 +332,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateStreamLinkOutputInfoResponse> CreateStreamLinkOutputInfoOutcome;
                 typedef std::future<CreateStreamLinkOutputInfoOutcome> CreateStreamLinkOutputInfoOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::CreateStreamLinkOutputInfoRequest&, CreateStreamLinkOutputInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateStreamLinkOutputInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateStreamLinkSecurityGroupResponse> CreateStreamLinkSecurityGroupOutcome;
+                typedef std::future<CreateStreamLinkSecurityGroupOutcome> CreateStreamLinkSecurityGroupOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::CreateStreamLinkSecurityGroupRequest&, CreateStreamLinkSecurityGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateStreamLinkSecurityGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateTranscodeTemplateResponse> CreateTranscodeTemplateOutcome;
                 typedef std::future<CreateTranscodeTemplateOutcome> CreateTranscodeTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::CreateTranscodeTemplateRequest&, CreateTranscodeTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTranscodeTemplateAsyncHandler;
@@ -383,6 +398,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteStreamLinkOutputResponse> DeleteStreamLinkOutputOutcome;
                 typedef std::future<DeleteStreamLinkOutputOutcome> DeleteStreamLinkOutputOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DeleteStreamLinkOutputRequest&, DeleteStreamLinkOutputOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteStreamLinkOutputAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteStreamLinkSecurityGroupResponse> DeleteStreamLinkSecurityGroupOutcome;
+                typedef std::future<DeleteStreamLinkSecurityGroupOutcome> DeleteStreamLinkSecurityGroupOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DeleteStreamLinkSecurityGroupRequest&, DeleteStreamLinkSecurityGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteStreamLinkSecurityGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteTranscodeTemplateResponse> DeleteTranscodeTemplateOutcome;
                 typedef std::future<DeleteTranscodeTemplateOutcome> DeleteTranscodeTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DeleteTranscodeTemplateRequest&, DeleteTranscodeTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTranscodeTemplateAsyncHandler;
@@ -410,6 +428,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeContentReviewTemplatesResponse> DescribeContentReviewTemplatesOutcome;
                 typedef std::future<DescribeContentReviewTemplatesOutcome> DescribeContentReviewTemplatesOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribeContentReviewTemplatesRequest&, DescribeContentReviewTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeContentReviewTemplatesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeGroupAttachFlowsByIdResponse> DescribeGroupAttachFlowsByIdOutcome;
+                typedef std::future<DescribeGroupAttachFlowsByIdOutcome> DescribeGroupAttachFlowsByIdOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DescribeGroupAttachFlowsByIdRequest&, DescribeGroupAttachFlowsByIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGroupAttachFlowsByIdAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeImageSpriteTemplatesResponse> DescribeImageSpriteTemplatesOutcome;
                 typedef std::future<DescribeImageSpriteTemplatesOutcome> DescribeImageSpriteTemplatesOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribeImageSpriteTemplatesRequest&, DescribeImageSpriteTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageSpriteTemplatesAsyncHandler;
@@ -470,6 +491,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeStreamLinkRegionsResponse> DescribeStreamLinkRegionsOutcome;
                 typedef std::future<DescribeStreamLinkRegionsOutcome> DescribeStreamLinkRegionsOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribeStreamLinkRegionsRequest&, DescribeStreamLinkRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStreamLinkRegionsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeStreamLinkSecurityGroupsResponse> DescribeStreamLinkSecurityGroupsOutcome;
+                typedef std::future<DescribeStreamLinkSecurityGroupsOutcome> DescribeStreamLinkSecurityGroupsOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DescribeStreamLinkSecurityGroupsRequest&, DescribeStreamLinkSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStreamLinkSecurityGroupsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTaskDetailResponse> DescribeTaskDetailOutcome;
                 typedef std::future<DescribeTaskDetailOutcome> DescribeTaskDetailOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribeTaskDetailRequest&, DescribeTaskDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskDetailAsyncHandler;
@@ -500,6 +524,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DisableWorkflowResponse> DisableWorkflowOutcome;
                 typedef std::future<DisableWorkflowOutcome> DisableWorkflowOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DisableWorkflowRequest&, DisableWorkflowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableWorkflowAsyncHandler;
+                typedef Outcome<Core::Error, Model::DisassociateSecurityGroupResponse> DisassociateSecurityGroupOutcome;
+                typedef std::future<DisassociateSecurityGroupOutcome> DisassociateSecurityGroupOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DisassociateSecurityGroupRequest&, DisassociateSecurityGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisassociateSecurityGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::EditMediaResponse> EditMediaOutcome;
                 typedef std::future<EditMediaOutcome> EditMediaOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::EditMediaRequest&, EditMediaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EditMediaAsyncHandler;
@@ -563,6 +590,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyStreamLinkOutputInfoResponse> ModifyStreamLinkOutputInfoOutcome;
                 typedef std::future<ModifyStreamLinkOutputInfoOutcome> ModifyStreamLinkOutputInfoOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::ModifyStreamLinkOutputInfoRequest&, ModifyStreamLinkOutputInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyStreamLinkOutputInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyStreamLinkSecurityGroupResponse> ModifyStreamLinkSecurityGroupOutcome;
+                typedef std::future<ModifyStreamLinkSecurityGroupOutcome> ModifyStreamLinkSecurityGroupOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::ModifyStreamLinkSecurityGroupRequest&, ModifyStreamLinkSecurityGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyStreamLinkSecurityGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyTranscodeTemplateResponse> ModifyTranscodeTemplateOutcome;
                 typedef std::future<ModifyTranscodeTemplateOutcome> ModifyTranscodeTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::ModifyTranscodeTemplateRequest&, ModifyTranscodeTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTranscodeTemplateAsyncHandler;
@@ -788,6 +818,15 @@ namespace TencentCloud
                 CreateStreamLinkOutputInfoOutcomeCallable CreateStreamLinkOutputInfoCallable(const Model::CreateStreamLinkOutputInfoRequest& request);
 
                 /**
+                 *创建安全组，数量限制5个。
+                 * @param req CreateStreamLinkSecurityGroupRequest
+                 * @return CreateStreamLinkSecurityGroupOutcome
+                 */
+                CreateStreamLinkSecurityGroupOutcome CreateStreamLinkSecurityGroup(const Model::CreateStreamLinkSecurityGroupRequest &request);
+                void CreateStreamLinkSecurityGroupAsync(const Model::CreateStreamLinkSecurityGroupRequest& request, const CreateStreamLinkSecurityGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateStreamLinkSecurityGroupOutcomeCallable CreateStreamLinkSecurityGroupCallable(const Model::CreateStreamLinkSecurityGroupRequest& request);
+
+                /**
                  *创建用户自定义转码模板，数量上限：1000
                  * @param req CreateTranscodeTemplateRequest
                  * @return CreateTranscodeTemplateOutcome
@@ -991,6 +1030,15 @@ namespace TencentCloud
                 DeleteStreamLinkOutputOutcomeCallable DeleteStreamLinkOutputCallable(const Model::DeleteStreamLinkOutputRequest& request);
 
                 /**
+                 *删除安全组。
+                 * @param req DeleteStreamLinkSecurityGroupRequest
+                 * @return DeleteStreamLinkSecurityGroupOutcome
+                 */
+                DeleteStreamLinkSecurityGroupOutcome DeleteStreamLinkSecurityGroup(const Model::DeleteStreamLinkSecurityGroupRequest &request);
+                void DeleteStreamLinkSecurityGroupAsync(const Model::DeleteStreamLinkSecurityGroupRequest& request, const DeleteStreamLinkSecurityGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteStreamLinkSecurityGroupOutcomeCallable DeleteStreamLinkSecurityGroupCallable(const Model::DeleteStreamLinkSecurityGroupRequest& request);
+
+                /**
                  *删除用户自定义转码模板。
                  * @param req DeleteTranscodeTemplateRequest
                  * @return DeleteTranscodeTemplateOutcome
@@ -1070,6 +1118,15 @@ namespace TencentCloud
                 DescribeContentReviewTemplatesOutcome DescribeContentReviewTemplates(const Model::DescribeContentReviewTemplatesRequest &request);
                 void DescribeContentReviewTemplatesAsync(const Model::DescribeContentReviewTemplatesRequest& request, const DescribeContentReviewTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeContentReviewTemplatesOutcomeCallable DescribeContentReviewTemplatesCallable(const Model::DescribeContentReviewTemplatesRequest& request);
+
+                /**
+                 *根据安全组反差关联的Flow信息。
+                 * @param req DescribeGroupAttachFlowsByIdRequest
+                 * @return DescribeGroupAttachFlowsByIdOutcome
+                 */
+                DescribeGroupAttachFlowsByIdOutcome DescribeGroupAttachFlowsById(const Model::DescribeGroupAttachFlowsByIdRequest &request);
+                void DescribeGroupAttachFlowsByIdAsync(const Model::DescribeGroupAttachFlowsByIdRequest& request, const DescribeGroupAttachFlowsByIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGroupAttachFlowsByIdOutcomeCallable DescribeGroupAttachFlowsByIdCallable(const Model::DescribeGroupAttachFlowsByIdRequest& request);
 
                 /**
                  *查询雪碧图模板，支持根据条件，分页查询。
@@ -1254,6 +1311,15 @@ namespace TencentCloud
                 DescribeStreamLinkRegionsOutcomeCallable DescribeStreamLinkRegionsCallable(const Model::DescribeStreamLinkRegionsRequest& request);
 
                 /**
+                 *批量查询安全组信息。
+                 * @param req DescribeStreamLinkSecurityGroupsRequest
+                 * @return DescribeStreamLinkSecurityGroupsOutcome
+                 */
+                DescribeStreamLinkSecurityGroupsOutcome DescribeStreamLinkSecurityGroups(const Model::DescribeStreamLinkSecurityGroupsRequest &request);
+                void DescribeStreamLinkSecurityGroupsAsync(const Model::DescribeStreamLinkSecurityGroupsRequest& request, const DescribeStreamLinkSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeStreamLinkSecurityGroupsOutcomeCallable DescribeStreamLinkSecurityGroupsCallable(const Model::DescribeStreamLinkSecurityGroupsRequest& request);
+
+                /**
                  *通过任务 ID 查询任务的执行状态和结果的详细信息（最多可以查询7天之内提交的任务）。
                  * @param req DescribeTaskDetailRequest
                  * @return DescribeTaskDetailOutcome
@@ -1344,6 +1410,15 @@ namespace TencentCloud
                 DisableWorkflowOutcome DisableWorkflow(const Model::DisableWorkflowRequest &request);
                 void DisableWorkflowAsync(const Model::DisableWorkflowRequest& request, const DisableWorkflowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DisableWorkflowOutcomeCallable DisableWorkflowCallable(const Model::DisableWorkflowRequest& request);
+
+                /**
+                 *批量解绑安全组下面关联的输入输出。
+                 * @param req DisassociateSecurityGroupRequest
+                 * @return DisassociateSecurityGroupOutcome
+                 */
+                DisassociateSecurityGroupOutcome DisassociateSecurityGroup(const Model::DisassociateSecurityGroupRequest &request);
+                void DisassociateSecurityGroupAsync(const Model::DisassociateSecurityGroupRequest& request, const DisassociateSecurityGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DisassociateSecurityGroupOutcomeCallable DisassociateSecurityGroupCallable(const Model::DisassociateSecurityGroupRequest& request);
 
                 /**
                  *对视频进行编辑，生成一个新的视频。编辑的功能包括：
@@ -1547,6 +1622,15 @@ namespace TencentCloud
                 ModifyStreamLinkOutputInfoOutcome ModifyStreamLinkOutputInfo(const Model::ModifyStreamLinkOutputInfoRequest &request);
                 void ModifyStreamLinkOutputInfoAsync(const Model::ModifyStreamLinkOutputInfoRequest& request, const ModifyStreamLinkOutputInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyStreamLinkOutputInfoOutcomeCallable ModifyStreamLinkOutputInfoCallable(const Model::ModifyStreamLinkOutputInfoRequest& request);
+
+                /**
+                 *更新安全组。
+                 * @param req ModifyStreamLinkSecurityGroupRequest
+                 * @return ModifyStreamLinkSecurityGroupOutcome
+                 */
+                ModifyStreamLinkSecurityGroupOutcome ModifyStreamLinkSecurityGroup(const Model::ModifyStreamLinkSecurityGroupRequest &request);
+                void ModifyStreamLinkSecurityGroupAsync(const Model::ModifyStreamLinkSecurityGroupRequest& request, const ModifyStreamLinkSecurityGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyStreamLinkSecurityGroupOutcomeCallable ModifyStreamLinkSecurityGroupCallable(const Model::ModifyStreamLinkSecurityGroupRequest& request);
 
                 /**
                  *修改用户自定义转码模板信息。

@@ -35,7 +35,8 @@ DescribeDsFolderTreeRequest::DescribeDsFolderTreeRequest() :
     m_displayTypeHasBeenSet(false),
     m_includeTaskFolderHasBeenSet(false),
     m_newFolderTreeModeHasBeenSet(false),
-    m_taskNodeIdHasBeenSet(false)
+    m_taskNodeIdHasBeenSet(false),
+    m_workflowTypeHasBeenSet(false)
 {
 }
 
@@ -148,6 +149,14 @@ string DescribeDsFolderTreeRequest::ToJsonString() const
         string key = "TaskNodeId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_taskNodeId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_workflowTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkflowType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_workflowType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -364,6 +373,22 @@ void DescribeDsFolderTreeRequest::SetTaskNodeId(const string& _taskNodeId)
 bool DescribeDsFolderTreeRequest::TaskNodeIdHasBeenSet() const
 {
     return m_taskNodeIdHasBeenSet;
+}
+
+string DescribeDsFolderTreeRequest::GetWorkflowType() const
+{
+    return m_workflowType;
+}
+
+void DescribeDsFolderTreeRequest::SetWorkflowType(const string& _workflowType)
+{
+    m_workflowType = _workflowType;
+    m_workflowTypeHasBeenSet = true;
+}
+
+bool DescribeDsFolderTreeRequest::WorkflowTypeHasBeenSet() const
+{
+    return m_workflowTypeHasBeenSet;
 }
 
 

@@ -27,6 +27,7 @@ ReplaceBackgroundRequest::ReplaceBackgroundRequest() :
     m_promptHasBeenSet(false),
     m_negativePromptHasBeenSet(false),
     m_productHasBeenSet(false),
+    m_backgroundTemplateHasBeenSet(false),
     m_maskUrlHasBeenSet(false),
     m_resolutionHasBeenSet(false),
     m_logoAddHasBeenSet(false),
@@ -72,6 +73,14 @@ string ReplaceBackgroundRequest::ToJsonString() const
         string key = "Product";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_product.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_backgroundTemplateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackgroundTemplate";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_backgroundTemplate.c_str(), allocator).Move(), allocator);
     }
 
     if (m_maskUrlHasBeenSet)
@@ -185,6 +194,22 @@ void ReplaceBackgroundRequest::SetProduct(const string& _product)
 bool ReplaceBackgroundRequest::ProductHasBeenSet() const
 {
     return m_productHasBeenSet;
+}
+
+string ReplaceBackgroundRequest::GetBackgroundTemplate() const
+{
+    return m_backgroundTemplate;
+}
+
+void ReplaceBackgroundRequest::SetBackgroundTemplate(const string& _backgroundTemplate)
+{
+    m_backgroundTemplate = _backgroundTemplate;
+    m_backgroundTemplateHasBeenSet = true;
+}
+
+bool ReplaceBackgroundRequest::BackgroundTemplateHasBeenSet() const
+{
+    return m_backgroundTemplateHasBeenSet;
 }
 
 string ReplaceBackgroundRequest::GetMaskUrl() const

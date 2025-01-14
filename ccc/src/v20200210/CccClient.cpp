@@ -169,6 +169,49 @@ CccClient::BindStaffSkillGroupListOutcomeCallable CccClient::BindStaffSkillGroup
     return task->get_future();
 }
 
+CccClient::CreateAIAgentCallOutcome CccClient::CreateAIAgentCall(const CreateAIAgentCallRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAIAgentCall");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAIAgentCallResponse rsp = CreateAIAgentCallResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAIAgentCallOutcome(rsp);
+        else
+            return CreateAIAgentCallOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAIAgentCallOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::CreateAIAgentCallAsync(const CreateAIAgentCallRequest& request, const CreateAIAgentCallAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAIAgentCall(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::CreateAIAgentCallOutcomeCallable CccClient::CreateAIAgentCallCallable(const CreateAIAgentCallRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAIAgentCallOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAIAgentCall(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CccClient::CreateAICallOutcome CccClient::CreateAICall(const CreateAICallRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAICall");

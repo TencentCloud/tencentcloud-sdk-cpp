@@ -331,6 +331,39 @@ false 否
                      */
                     bool TaskNodeIdHasBeenSet() const;
 
+                    /**
+                     * 获取工作流类型, 使用场景: 任务复制,选择工作流. 取值范围
+
+- cycle    周期工作流
+- manual    手动工作流
+                     * @return WorkflowType 工作流类型, 使用场景: 任务复制,选择工作流. 取值范围
+
+- cycle    周期工作流
+- manual    手动工作流
+                     * 
+                     */
+                    std::string GetWorkflowType() const;
+
+                    /**
+                     * 设置工作流类型, 使用场景: 任务复制,选择工作流. 取值范围
+
+- cycle    周期工作流
+- manual    手动工作流
+                     * @param _workflowType 工作流类型, 使用场景: 任务复制,选择工作流. 取值范围
+
+- cycle    周期工作流
+- manual    手动工作流
+                     * 
+                     */
+                    void SetWorkflowType(const std::string& _workflowType);
+
+                    /**
+                     * 判断参数 WorkflowType 是否已赋值
+                     * @return WorkflowType 是否已赋值
+                     * 
+                     */
+                    bool WorkflowTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -414,6 +447,15 @@ false 否
                      */
                     std::string m_taskNodeId;
                     bool m_taskNodeIdHasBeenSet;
+
+                    /**
+                     * 工作流类型, 使用场景: 任务复制,选择工作流. 取值范围
+
+- cycle    周期工作流
+- manual    手动工作流
+                     */
+                    std::string m_workflowType;
+                    bool m_workflowTypeHasBeenSet;
 
                 };
             }

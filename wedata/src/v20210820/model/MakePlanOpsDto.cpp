@@ -47,7 +47,8 @@ MakePlanOpsDto::MakePlanOpsDto() :
     m_successPercentHasBeenSet(false),
     m_checkParentTypeHasBeenSet(false),
     m_sameSelfWorkflowDependTypeHasBeenSet(false),
-    m_selfWorkflowDependencyHasBeenSet(false)
+    m_selfWorkflowDependencyHasBeenSet(false),
+    m_makeDataTimeOrderHasBeenSet(false)
 {
 }
 
@@ -349,6 +350,16 @@ CoreInternalOutcome MakePlanOpsDto::Deserialize(const rapidjson::Value &value)
         m_selfWorkflowDependencyHasBeenSet = true;
     }
 
+    if (value.HasMember("MakeDataTimeOrder") && !value["MakeDataTimeOrder"].IsNull())
+    {
+        if (!value["MakeDataTimeOrder"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MakePlanOpsDto.MakeDataTimeOrder` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_makeDataTimeOrder = string(value["MakeDataTimeOrder"].GetString());
+        m_makeDataTimeOrderHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -589,6 +600,14 @@ void MakePlanOpsDto::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "SelfWorkflowDependency";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_selfWorkflowDependency.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_makeDataTimeOrderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MakeDataTimeOrder";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_makeDataTimeOrder.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1024,5 +1043,21 @@ void MakePlanOpsDto::SetSelfWorkflowDependency(const string& _selfWorkflowDepend
 bool MakePlanOpsDto::SelfWorkflowDependencyHasBeenSet() const
 {
     return m_selfWorkflowDependencyHasBeenSet;
+}
+
+string MakePlanOpsDto::GetMakeDataTimeOrder() const
+{
+    return m_makeDataTimeOrder;
+}
+
+void MakePlanOpsDto::SetMakeDataTimeOrder(const string& _makeDataTimeOrder)
+{
+    m_makeDataTimeOrder = _makeDataTimeOrder;
+    m_makeDataTimeOrderHasBeenSet = true;
+}
+
+bool MakePlanOpsDto::MakeDataTimeOrderHasBeenSet() const
+{
+    return m_makeDataTimeOrderHasBeenSet;
 }
 

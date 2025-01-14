@@ -258,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DbName 数据库名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDbName() const;
 
                     /**
                      * 设置数据库名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dbName 数据库名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDbName(const std::string& _dbName);
@@ -283,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否是查询，0：否，1：查询语句
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsQuery 是否是查询，0：否，1：查询语句
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIsQuery() const;
 
                     /**
                      * 设置是否是查询，0：否，1：查询语句
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isQuery 是否是查询，0：否，1：查询语句
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsQuery(const int64_t& _isQuery);
@@ -308,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取ResultBytes的MB格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResultBytesMB ResultBytes的MB格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetResultBytesMB() const;
 
                     /**
                      * 设置ResultBytes的MB格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resultBytesMB ResultBytes的MB格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResultBytesMB(const double& _resultBytesMB);
@@ -333,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取MemoryUsage的MB表示
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MemoryUsageMB MemoryUsage的MB表示
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetMemoryUsageMB() const;
 
                     /**
                      * 设置MemoryUsage的MB表示
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _memoryUsageMB MemoryUsage的MB表示
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMemoryUsageMB(const double& _memoryUsageMB);
@@ -358,18 +342,14 @@ namespace TencentCloud
 
                     /**
                      * 获取DurationMs的秒表示
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DurationSec DurationMs的秒表示
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetDurationSec() const;
 
                     /**
                      * 设置DurationMs的秒表示
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _durationSec DurationMs的秒表示
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDurationSec(const double& _durationSec);
@@ -383,18 +363,14 @@ namespace TencentCloud
 
                     /**
                      * 获取状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return State 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetState() const;
 
                     /**
                      * 设置状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _state 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetState(const std::string& _state);
@@ -408,18 +384,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Catalog  Name
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CatalogName Catalog  Name
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCatalogName() const;
 
                     /**
                      * 设置Catalog  Name
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _catalogName Catalog  Name
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCatalogName(const std::string& _catalogName);
@@ -430,6 +402,27 @@ namespace TencentCloud
                      * 
                      */
                     bool CatalogNameHasBeenSet() const;
+
+                    /**
+                     * 获取cpu执行时间 
+                     * @return CpuTimeMs cpu执行时间 
+                     * 
+                     */
+                    int64_t GetCpuTimeMs() const;
+
+                    /**
+                     * 设置cpu执行时间 
+                     * @param _cpuTimeMs cpu执行时间 
+                     * 
+                     */
+                    void SetCpuTimeMs(const int64_t& _cpuTimeMs);
+
+                    /**
+                     * 判断参数 CpuTimeMs 是否已赋值
+                     * @return CpuTimeMs 是否已赋值
+                     * 
+                     */
+                    bool CpuTimeMsHasBeenSet() const;
 
                 private:
 
@@ -495,52 +488,51 @@ namespace TencentCloud
 
                     /**
                      * 数据库名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dbName;
                     bool m_dbNameHasBeenSet;
 
                     /**
                      * 是否是查询，0：否，1：查询语句
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isQuery;
                     bool m_isQueryHasBeenSet;
 
                     /**
                      * ResultBytes的MB格式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_resultBytesMB;
                     bool m_resultBytesMBHasBeenSet;
 
                     /**
                      * MemoryUsage的MB表示
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_memoryUsageMB;
                     bool m_memoryUsageMBHasBeenSet;
 
                     /**
                      * DurationMs的秒表示
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_durationSec;
                     bool m_durationSecHasBeenSet;
 
                     /**
                      * 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_state;
                     bool m_stateHasBeenSet;
 
                     /**
                      * Catalog  Name
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_catalogName;
                     bool m_catalogNameHasBeenSet;
+
+                    /**
+                     * cpu执行时间 
+                     */
+                    int64_t m_cpuTimeMs;
+                    bool m_cpuTimeMsHasBeenSet;
 
                 };
             }

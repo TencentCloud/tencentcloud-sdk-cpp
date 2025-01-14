@@ -34,7 +34,8 @@ DataBaseAuditRecord::DataBaseAuditRecord() :
     m_dbNameHasBeenSet(false),
     m_sqlTypeHasBeenSet(false),
     m_catalogHasBeenSet(false),
-    m_stateHasBeenSet(false)
+    m_stateHasBeenSet(false),
+    m_isQueryHasBeenSet(false)
 {
 }
 
@@ -183,6 +184,16 @@ CoreInternalOutcome DataBaseAuditRecord::Deserialize(const rapidjson::Value &val
         m_stateHasBeenSet = true;
     }
 
+    if (value.HasMember("IsQuery") && !value["IsQuery"].IsNull())
+    {
+        if (!value["IsQuery"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataBaseAuditRecord.IsQuery` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isQuery = value["IsQuery"].GetBool();
+        m_isQueryHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -300,6 +311,14 @@ void DataBaseAuditRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "State";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_state.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isQueryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsQuery";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isQuery, allocator);
     }
 
 }
@@ -527,5 +546,21 @@ void DataBaseAuditRecord::SetState(const string& _state)
 bool DataBaseAuditRecord::StateHasBeenSet() const
 {
     return m_stateHasBeenSet;
+}
+
+bool DataBaseAuditRecord::GetIsQuery() const
+{
+    return m_isQuery;
+}
+
+void DataBaseAuditRecord::SetIsQuery(const bool& _isQuery)
+{
+    m_isQuery = _isQuery;
+    m_isQueryHasBeenSet = true;
+}
+
+bool DataBaseAuditRecord::IsQueryHasBeenSet() const
+{
+    return m_isQueryHasBeenSet;
 }
 

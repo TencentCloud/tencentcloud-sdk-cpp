@@ -29,7 +29,8 @@ InstanceLogInfoOpsDto::InstanceLogInfoOpsDto() :
     m_lineCountHasBeenSet(false),
     m_extInfoHasBeenSet(false),
     m_isEndHasBeenSet(false),
-    m_fileSizeHasBeenSet(false)
+    m_fileSizeHasBeenSet(false),
+    m_matchedBrokerIpHasBeenSet(false)
 {
 }
 
@@ -131,6 +132,16 @@ CoreInternalOutcome InstanceLogInfoOpsDto::Deserialize(const rapidjson::Value &v
         m_fileSizeHasBeenSet = true;
     }
 
+    if (value.HasMember("MatchedBrokerIp") && !value["MatchedBrokerIp"].IsNull())
+    {
+        if (!value["MatchedBrokerIp"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceLogInfoOpsDto.MatchedBrokerIp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_matchedBrokerIp = string(value["MatchedBrokerIp"].GetString());
+        m_matchedBrokerIpHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -213,6 +224,14 @@ void InstanceLogInfoOpsDto::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "FileSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_fileSize.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_matchedBrokerIpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MatchedBrokerIp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_matchedBrokerIp.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -360,5 +379,21 @@ void InstanceLogInfoOpsDto::SetFileSize(const string& _fileSize)
 bool InstanceLogInfoOpsDto::FileSizeHasBeenSet() const
 {
     return m_fileSizeHasBeenSet;
+}
+
+string InstanceLogInfoOpsDto::GetMatchedBrokerIp() const
+{
+    return m_matchedBrokerIp;
+}
+
+void InstanceLogInfoOpsDto::SetMatchedBrokerIp(const string& _matchedBrokerIp)
+{
+    m_matchedBrokerIp = _matchedBrokerIp;
+    m_matchedBrokerIpHasBeenSet = true;
+}
+
+bool InstanceLogInfoOpsDto::MatchedBrokerIpHasBeenSet() const
+{
+    return m_matchedBrokerIpHasBeenSet;
 }
 

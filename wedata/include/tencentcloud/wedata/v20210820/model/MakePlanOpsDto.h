@@ -735,6 +735,39 @@ namespace TencentCloud
                      */
                     bool SelfWorkflowDependencyHasBeenSet() const;
 
+                    /**
+                     * 获取补录时间顺序
+NORMAL： 正常
+ORDER ： 按照实例时间顺序执行
+REVERSE： 实例数据时间逆序
+                     * @return MakeDataTimeOrder 补录时间顺序
+NORMAL： 正常
+ORDER ： 按照实例时间顺序执行
+REVERSE： 实例数据时间逆序
+                     * 
+                     */
+                    std::string GetMakeDataTimeOrder() const;
+
+                    /**
+                     * 设置补录时间顺序
+NORMAL： 正常
+ORDER ： 按照实例时间顺序执行
+REVERSE： 实例数据时间逆序
+                     * @param _makeDataTimeOrder 补录时间顺序
+NORMAL： 正常
+ORDER ： 按照实例时间顺序执行
+REVERSE： 实例数据时间逆序
+                     * 
+                     */
+                    void SetMakeDataTimeOrder(const std::string& _makeDataTimeOrder);
+
+                    /**
+                     * 判断参数 MakeDataTimeOrder 是否已赋值
+                     * @return MakeDataTimeOrder 是否已赋值
+                     * 
+                     */
+                    bool MakeDataTimeOrderHasBeenSet() const;
+
                 private:
 
                     /**
@@ -928,6 +961,15 @@ namespace TencentCloud
                      */
                     std::string m_selfWorkflowDependency;
                     bool m_selfWorkflowDependencyHasBeenSet;
+
+                    /**
+                     * 补录时间顺序
+NORMAL： 正常
+ORDER ： 按照实例时间顺序执行
+REVERSE： 实例数据时间逆序
+                     */
+                    std::string m_makeDataTimeOrder;
+                    bool m_makeDataTimeOrderHasBeenSet;
 
                 };
             }

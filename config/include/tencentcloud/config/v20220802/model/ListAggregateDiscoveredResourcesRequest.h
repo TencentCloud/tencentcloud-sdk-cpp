@@ -87,15 +87,15 @@ namespace TencentCloud
                     bool AccountGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取resourceName：资源名  resourceId ：资源ID
-                     * @return Filters resourceName：资源名  resourceId ：资源ID
+                     * 获取resourceName：资源名  resourceId ：资源ID resourceType：资源类型
+                     * @return Filters resourceName：资源名  resourceId ：资源ID resourceType：资源类型
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置resourceName：资源名  resourceId ：资源ID
-                     * @param _filters resourceName：资源名  resourceId ：资源ID
+                     * 设置resourceName：资源名  resourceId ：资源ID resourceType：资源类型
+                     * @param _filters resourceName：资源名  resourceId ：资源ID resourceType：资源类型
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -185,7 +185,7 @@ namespace TencentCloud
                     bool m_accountGroupIdHasBeenSet;
 
                     /**
-                     * resourceName：资源名  resourceId ：资源ID
+                     * resourceName：资源名  resourceId ：资源ID resourceType：资源类型
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

@@ -250,6 +250,27 @@ namespace TencentCloud
                      */
                     bool VadSilenceTimeHasBeenSet() const;
 
+                    /**
+                     * 获取热词表：该参数用于提升识别准确率。 单个热词限制："热词|权重"，单个热词不超过30个字符（最多10个汉字），权重[1-11]或者100，如：“腾讯云|5” 或 “ASR|11”； 热词表限制：多个热词用英文逗号分割，最多支持128个热词，如：“腾讯云|10,语音识别|5,ASR|11”；
+                     * @return HotWordList 热词表：该参数用于提升识别准确率。 单个热词限制："热词|权重"，单个热词不超过30个字符（最多10个汉字），权重[1-11]或者100，如：“腾讯云|5” 或 “ASR|11”； 热词表限制：多个热词用英文逗号分割，最多支持128个热词，如：“腾讯云|10,语音识别|5,ASR|11”；
+                     * 
+                     */
+                    std::string GetHotWordList() const;
+
+                    /**
+                     * 设置热词表：该参数用于提升识别准确率。 单个热词限制："热词|权重"，单个热词不超过30个字符（最多10个汉字），权重[1-11]或者100，如：“腾讯云|5” 或 “ASR|11”； 热词表限制：多个热词用英文逗号分割，最多支持128个热词，如：“腾讯云|10,语音识别|5,ASR|11”；
+                     * @param _hotWordList 热词表：该参数用于提升识别准确率。 单个热词限制："热词|权重"，单个热词不超过30个字符（最多10个汉字），权重[1-11]或者100，如：“腾讯云|5” 或 “ASR|11”； 热词表限制：多个热词用英文逗号分割，最多支持128个热词，如：“腾讯云|10,语音识别|5,ASR|11”；
+                     * 
+                     */
+                    void SetHotWordList(const std::string& _hotWordList);
+
+                    /**
+                     * 判断参数 HotWordList 是否已赋值
+                     * @return HotWordList 是否已赋值
+                     * 
+                     */
+                    bool HotWordListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -305,6 +326,12 @@ namespace TencentCloud
                      */
                     uint64_t m_vadSilenceTime;
                     bool m_vadSilenceTimeHasBeenSet;
+
+                    /**
+                     * 热词表：该参数用于提升识别准确率。 单个热词限制："热词|权重"，单个热词不超过30个字符（最多10个汉字），权重[1-11]或者100，如：“腾讯云|5” 或 “ASR|11”； 热词表限制：多个热词用英文逗号分割，最多支持128个热词，如：“腾讯云|10,语音识别|5,ASR|11”；
+                     */
+                    std::string m_hotWordList;
+                    bool m_hotWordListHasBeenSet;
 
                 };
             }

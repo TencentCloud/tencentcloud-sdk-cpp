@@ -857,6 +857,49 @@ MpsClient::CreateStreamLinkOutputInfoOutcomeCallable MpsClient::CreateStreamLink
     return task->get_future();
 }
 
+MpsClient::CreateStreamLinkSecurityGroupOutcome MpsClient::CreateStreamLinkSecurityGroup(const CreateStreamLinkSecurityGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateStreamLinkSecurityGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateStreamLinkSecurityGroupResponse rsp = CreateStreamLinkSecurityGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateStreamLinkSecurityGroupOutcome(rsp);
+        else
+            return CreateStreamLinkSecurityGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateStreamLinkSecurityGroupOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::CreateStreamLinkSecurityGroupAsync(const CreateStreamLinkSecurityGroupRequest& request, const CreateStreamLinkSecurityGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateStreamLinkSecurityGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::CreateStreamLinkSecurityGroupOutcomeCallable MpsClient::CreateStreamLinkSecurityGroupCallable(const CreateStreamLinkSecurityGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateStreamLinkSecurityGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateStreamLinkSecurityGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MpsClient::CreateTranscodeTemplateOutcome MpsClient::CreateTranscodeTemplate(const CreateTranscodeTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateTranscodeTemplate");
@@ -1760,6 +1803,49 @@ MpsClient::DeleteStreamLinkOutputOutcomeCallable MpsClient::DeleteStreamLinkOutp
     return task->get_future();
 }
 
+MpsClient::DeleteStreamLinkSecurityGroupOutcome MpsClient::DeleteStreamLinkSecurityGroup(const DeleteStreamLinkSecurityGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteStreamLinkSecurityGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteStreamLinkSecurityGroupResponse rsp = DeleteStreamLinkSecurityGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteStreamLinkSecurityGroupOutcome(rsp);
+        else
+            return DeleteStreamLinkSecurityGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteStreamLinkSecurityGroupOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DeleteStreamLinkSecurityGroupAsync(const DeleteStreamLinkSecurityGroupRequest& request, const DeleteStreamLinkSecurityGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteStreamLinkSecurityGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::DeleteStreamLinkSecurityGroupOutcomeCallable MpsClient::DeleteStreamLinkSecurityGroupCallable(const DeleteStreamLinkSecurityGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteStreamLinkSecurityGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteStreamLinkSecurityGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MpsClient::DeleteTranscodeTemplateOutcome MpsClient::DeleteTranscodeTemplate(const DeleteTranscodeTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteTranscodeTemplate");
@@ -2140,6 +2226,49 @@ MpsClient::DescribeContentReviewTemplatesOutcomeCallable MpsClient::DescribeCont
         [this, request]()
         {
             return this->DescribeContentReviewTemplates(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::DescribeGroupAttachFlowsByIdOutcome MpsClient::DescribeGroupAttachFlowsById(const DescribeGroupAttachFlowsByIdRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGroupAttachFlowsById");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGroupAttachFlowsByIdResponse rsp = DescribeGroupAttachFlowsByIdResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGroupAttachFlowsByIdOutcome(rsp);
+        else
+            return DescribeGroupAttachFlowsByIdOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGroupAttachFlowsByIdOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DescribeGroupAttachFlowsByIdAsync(const DescribeGroupAttachFlowsByIdRequest& request, const DescribeGroupAttachFlowsByIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGroupAttachFlowsById(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::DescribeGroupAttachFlowsByIdOutcomeCallable MpsClient::DescribeGroupAttachFlowsByIdCallable(const DescribeGroupAttachFlowsByIdRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGroupAttachFlowsByIdOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGroupAttachFlowsById(request);
         }
     );
 
@@ -3007,6 +3136,49 @@ MpsClient::DescribeStreamLinkRegionsOutcomeCallable MpsClient::DescribeStreamLin
     return task->get_future();
 }
 
+MpsClient::DescribeStreamLinkSecurityGroupsOutcome MpsClient::DescribeStreamLinkSecurityGroups(const DescribeStreamLinkSecurityGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeStreamLinkSecurityGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeStreamLinkSecurityGroupsResponse rsp = DescribeStreamLinkSecurityGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeStreamLinkSecurityGroupsOutcome(rsp);
+        else
+            return DescribeStreamLinkSecurityGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeStreamLinkSecurityGroupsOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DescribeStreamLinkSecurityGroupsAsync(const DescribeStreamLinkSecurityGroupsRequest& request, const DescribeStreamLinkSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeStreamLinkSecurityGroups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::DescribeStreamLinkSecurityGroupsOutcomeCallable MpsClient::DescribeStreamLinkSecurityGroupsCallable(const DescribeStreamLinkSecurityGroupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeStreamLinkSecurityGroupsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeStreamLinkSecurityGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MpsClient::DescribeTaskDetailOutcome MpsClient::DescribeTaskDetail(const DescribeTaskDetailRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTaskDetail");
@@ -3430,6 +3602,49 @@ MpsClient::DisableWorkflowOutcomeCallable MpsClient::DisableWorkflowCallable(con
         [this, request]()
         {
             return this->DisableWorkflow(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::DisassociateSecurityGroupOutcome MpsClient::DisassociateSecurityGroup(const DisassociateSecurityGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisassociateSecurityGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisassociateSecurityGroupResponse rsp = DisassociateSecurityGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisassociateSecurityGroupOutcome(rsp);
+        else
+            return DisassociateSecurityGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DisassociateSecurityGroupOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DisassociateSecurityGroupAsync(const DisassociateSecurityGroupRequest& request, const DisassociateSecurityGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DisassociateSecurityGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::DisassociateSecurityGroupOutcomeCallable MpsClient::DisassociateSecurityGroupCallable(const DisassociateSecurityGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DisassociateSecurityGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->DisassociateSecurityGroup(request);
         }
     );
 
@@ -4333,6 +4548,49 @@ MpsClient::ModifyStreamLinkOutputInfoOutcomeCallable MpsClient::ModifyStreamLink
         [this, request]()
         {
             return this->ModifyStreamLinkOutputInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::ModifyStreamLinkSecurityGroupOutcome MpsClient::ModifyStreamLinkSecurityGroup(const ModifyStreamLinkSecurityGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyStreamLinkSecurityGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyStreamLinkSecurityGroupResponse rsp = ModifyStreamLinkSecurityGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyStreamLinkSecurityGroupOutcome(rsp);
+        else
+            return ModifyStreamLinkSecurityGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyStreamLinkSecurityGroupOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::ModifyStreamLinkSecurityGroupAsync(const ModifyStreamLinkSecurityGroupRequest& request, const ModifyStreamLinkSecurityGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyStreamLinkSecurityGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::ModifyStreamLinkSecurityGroupOutcomeCallable MpsClient::ModifyStreamLinkSecurityGroupCallable(const ModifyStreamLinkSecurityGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyStreamLinkSecurityGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyStreamLinkSecurityGroup(request);
         }
     );
 

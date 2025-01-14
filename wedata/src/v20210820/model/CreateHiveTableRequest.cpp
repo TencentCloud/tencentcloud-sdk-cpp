@@ -30,7 +30,8 @@ CreateHiveTableRequest::CreateHiveTableRequest() :
     m_projectIdHasBeenSet(false),
     m_inchargeHasBeenSet(false),
     m_dataOptimizationResourceHasBeenSet(false),
-    m_smartOptimizerWrittenHasBeenSet(false)
+    m_smartOptimizerWrittenHasBeenSet(false),
+    m_tableNameHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,14 @@ string CreateHiveTableRequest::ToJsonString() const
         string key = "SmartOptimizerWritten";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_smartOptimizerWritten.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tableNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TableName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tableName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -239,6 +248,22 @@ void CreateHiveTableRequest::SetSmartOptimizerWritten(const string& _smartOptimi
 bool CreateHiveTableRequest::SmartOptimizerWrittenHasBeenSet() const
 {
     return m_smartOptimizerWrittenHasBeenSet;
+}
+
+string CreateHiveTableRequest::GetTableName() const
+{
+    return m_tableName;
+}
+
+void CreateHiveTableRequest::SetTableName(const string& _tableName)
+{
+    m_tableName = _tableName;
+    m_tableNameHasBeenSet = true;
+}
+
+bool CreateHiveTableRequest::TableNameHasBeenSet() const
+{
+    return m_tableNameHasBeenSet;
 }
 
 

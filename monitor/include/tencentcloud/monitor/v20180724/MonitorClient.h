@@ -2000,7 +2000,7 @@ namespace TencentCloud
                 ModifyPrometheusInstanceAttributesOutcomeCallable ModifyPrometheusInstanceAttributesCallable(const Model::ModifyPrometheusInstanceAttributesRequest& request);
 
                 /**
-                 *通过yaml的方式修改Prometheus聚合实例
+                 *通过yaml的方式修改Prometheus预聚合规则
                  * @param req ModifyPrometheusRecordRuleYamlRequest
                  * @return ModifyPrometheusRecordRuleYamlOutcome
                  */

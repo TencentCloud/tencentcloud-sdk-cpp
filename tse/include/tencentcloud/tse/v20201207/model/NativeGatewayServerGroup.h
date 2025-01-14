@@ -353,6 +353,31 @@ namespace TencentCloud
                      */
                     bool DefaultWeightHasBeenSet() const;
 
+                    /**
+                     * 获取弹性节点
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ElasticNumber 弹性节点
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetElasticNumber() const;
+
+                    /**
+                     * 设置弹性节点
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _elasticNumber 弹性节点
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetElasticNumber(const uint64_t& _elasticNumber);
+
+                    /**
+                     * 判断参数 ElasticNumber 是否已赋值
+                     * @return ElasticNumber 是否已赋值
+                     * 
+                     */
+                    bool ElasticNumberHasBeenSet() const;
+
                 private:
 
                     /**
@@ -440,6 +465,13 @@ namespace TencentCloud
                      */
                     int64_t m_defaultWeight;
                     bool m_defaultWeightHasBeenSet;
+
+                    /**
+                     * 弹性节点
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_elasticNumber;
+                    bool m_elasticNumberHasBeenSet;
 
                 };
             }

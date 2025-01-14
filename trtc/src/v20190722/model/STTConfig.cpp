@@ -24,7 +24,8 @@ STTConfig::STTConfig() :
     m_languageHasBeenSet(false),
     m_alternativeLanguageHasBeenSet(false),
     m_customParamHasBeenSet(false),
-    m_vadSilenceTimeHasBeenSet(false)
+    m_vadSilenceTimeHasBeenSet(false),
+    m_hotWordListHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,16 @@ CoreInternalOutcome STTConfig::Deserialize(const rapidjson::Value &value)
         m_vadSilenceTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("HotWordList") && !value["HotWordList"].IsNull())
+    {
+        if (!value["HotWordList"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `STTConfig.HotWordList` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hotWordList = string(value["HotWordList"].GetString());
+        m_hotWordListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -118,6 +129,14 @@ void STTConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "VadSilenceTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_vadSilenceTime, allocator);
+    }
+
+    if (m_hotWordListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HotWordList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hotWordList.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -185,5 +204,21 @@ void STTConfig::SetVadSilenceTime(const uint64_t& _vadSilenceTime)
 bool STTConfig::VadSilenceTimeHasBeenSet() const
 {
     return m_vadSilenceTimeHasBeenSet;
+}
+
+string STTConfig::GetHotWordList() const
+{
+    return m_hotWordList;
+}
+
+void STTConfig::SetHotWordList(const string& _hotWordList)
+{
+    m_hotWordList = _hotWordList;
+    m_hotWordListHasBeenSet = true;
+}
+
+bool STTConfig::HotWordListHasBeenSet() const
+{
+    return m_hotWordListHasBeenSet;
 }
 

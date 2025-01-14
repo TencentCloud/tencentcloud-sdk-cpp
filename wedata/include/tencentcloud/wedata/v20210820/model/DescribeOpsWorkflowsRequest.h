@@ -336,6 +336,48 @@ namespace TencentCloud
                      */
                     bool ProjectIdsHasBeenSet() const;
 
+                    /**
+                     * 获取工作流类型列表 多个用英文逗号连接 cycle,manual. 默认只查询 cycle
+                     * @return WorkflowTypeList 工作流类型列表 多个用英文逗号连接 cycle,manual. 默认只查询 cycle
+                     * 
+                     */
+                    std::vector<std::string> GetWorkflowTypeList() const;
+
+                    /**
+                     * 设置工作流类型列表 多个用英文逗号连接 cycle,manual. 默认只查询 cycle
+                     * @param _workflowTypeList 工作流类型列表 多个用英文逗号连接 cycle,manual. 默认只查询 cycle
+                     * 
+                     */
+                    void SetWorkflowTypeList(const std::vector<std::string>& _workflowTypeList);
+
+                    /**
+                     * 判断参数 WorkflowTypeList 是否已赋值
+                     * @return WorkflowTypeList 是否已赋值
+                     * 
+                     */
+                    bool WorkflowTypeListHasBeenSet() const;
+
+                    /**
+                     * 获取工作流过滤keyword，支持工作流 id/name 模糊匹配， 多个用|分割
+                     * @return KeyWord 工作流过滤keyword，支持工作流 id/name 模糊匹配， 多个用|分割
+                     * 
+                     */
+                    std::string GetKeyWord() const;
+
+                    /**
+                     * 设置工作流过滤keyword，支持工作流 id/name 模糊匹配， 多个用|分割
+                     * @param _keyWord 工作流过滤keyword，支持工作流 id/name 模糊匹配， 多个用|分割
+                     * 
+                     */
+                    void SetKeyWord(const std::string& _keyWord);
+
+                    /**
+                     * 判断参数 KeyWord 是否已赋值
+                     * @return KeyWord 是否已赋值
+                     * 
+                     */
+                    bool KeyWordHasBeenSet() const;
+
                 private:
 
                     /**
@@ -421,6 +463,18 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_projectIds;
                     bool m_projectIdsHasBeenSet;
+
+                    /**
+                     * 工作流类型列表 多个用英文逗号连接 cycle,manual. 默认只查询 cycle
+                     */
+                    std::vector<std::string> m_workflowTypeList;
+                    bool m_workflowTypeListHasBeenSet;
+
+                    /**
+                     * 工作流过滤keyword，支持工作流 id/name 模糊匹配， 多个用|分割
+                     */
+                    std::string m_keyWord;
+                    bool m_keyWordHasBeenSet;
 
                 };
             }

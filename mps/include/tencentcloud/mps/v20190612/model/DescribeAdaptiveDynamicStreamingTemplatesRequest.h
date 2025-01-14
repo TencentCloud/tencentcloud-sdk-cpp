@@ -136,14 +136,18 @@ namespace TencentCloud
 
                     /**
                      * 获取是否为纯音频，0表示视频，1表示纯音频
+默认值：0
                      * @return PureAudio 是否为纯音频，0表示视频，1表示纯音频
+默认值：0
                      * 
                      */
                     uint64_t GetPureAudio() const;
 
                     /**
                      * 设置是否为纯音频，0表示视频，1表示纯音频
+默认值：0
                      * @param _pureAudio 是否为纯音频，0表示视频，1表示纯音频
+默认值：0
                      * 
                      */
                     void SetPureAudio(const uint64_t& _pureAudio);
@@ -206,6 +210,7 @@ namespace TencentCloud
 
                     /**
                      * 是否为纯音频，0表示视频，1表示纯音频
+默认值：0
                      */
                     uint64_t m_pureAudio;
                     bool m_pureAudioHasBeenSet;

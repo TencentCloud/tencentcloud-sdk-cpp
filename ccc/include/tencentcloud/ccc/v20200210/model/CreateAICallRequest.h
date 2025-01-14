@@ -1212,6 +1212,27 @@ HoaiMy
                      */
                     bool PromptVariablesHasBeenSet() const;
 
+                    /**
+                     * 获取语音识别vad的时间，范围为240-2000，默认为1000，单位为ms。更小的值会让语音识别分句更快。
+                     * @return VadSilenceTime 语音识别vad的时间，范围为240-2000，默认为1000，单位为ms。更小的值会让语音识别分句更快。
+                     * 
+                     */
+                    int64_t GetVadSilenceTime() const;
+
+                    /**
+                     * 设置语音识别vad的时间，范围为240-2000，默认为1000，单位为ms。更小的值会让语音识别分句更快。
+                     * @param _vadSilenceTime 语音识别vad的时间，范围为240-2000，默认为1000，单位为ms。更小的值会让语音识别分句更快。
+                     * 
+                     */
+                    void SetVadSilenceTime(const int64_t& _vadSilenceTime);
+
+                    /**
+                     * 判断参数 VadSilenceTime 是否已赋值
+                     * @return VadSilenceTime 是否已赋值
+                     * 
+                     */
+                    bool VadSilenceTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1523,6 +1544,12 @@ HoaiMy
                      */
                     std::vector<Variable> m_promptVariables;
                     bool m_promptVariablesHasBeenSet;
+
+                    /**
+                     * 语音识别vad的时间，范围为240-2000，默认为1000，单位为ms。更小的值会让语音识别分句更快。
+                     */
+                    int64_t m_vadSilenceTime;
+                    bool m_vadSilenceTimeHasBeenSet;
 
                 };
             }

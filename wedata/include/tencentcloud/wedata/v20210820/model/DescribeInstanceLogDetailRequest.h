@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/wedata/v20210820/model/InstanceLifeDetailDto.h>
 
 
 namespace TencentCloud
@@ -294,6 +295,111 @@ namespace TencentCloud
                      */
                     bool RequestFromSourceHasBeenSet() const;
 
+                    /**
+                     * 获取生命周期为基础数据进行日志匹配
+                     * @return InstanceLifeDetailDtoList 生命周期为基础数据进行日志匹配
+                     * 
+                     */
+                    std::vector<InstanceLifeDetailDto> GetInstanceLifeDetailDtoList() const;
+
+                    /**
+                     * 设置生命周期为基础数据进行日志匹配
+                     * @param _instanceLifeDetailDtoList 生命周期为基础数据进行日志匹配
+                     * 
+                     */
+                    void SetInstanceLifeDetailDtoList(const std::vector<InstanceLifeDetailDto>& _instanceLifeDetailDtoList);
+
+                    /**
+                     * 判断参数 InstanceLifeDetailDtoList 是否已赋值
+                     * @return InstanceLifeDetailDtoList 是否已赋值
+                     * 
+                     */
+                    bool InstanceLifeDetailDtoListHasBeenSet() const;
+
+                    /**
+                     * 获取当前生命周期
+                     * @return CurrentLifeRound 当前生命周期
+                     * 
+                     */
+                    int64_t GetCurrentLifeRound() const;
+
+                    /**
+                     * 设置当前生命周期
+                     * @param _currentLifeRound 当前生命周期
+                     * 
+                     */
+                    void SetCurrentLifeRound(const int64_t& _currentLifeRound);
+
+                    /**
+                     * 判断参数 CurrentLifeRound 是否已赋值
+                     * @return CurrentLifeRound 是否已赋值
+                     * 
+                     */
+                    bool CurrentLifeRoundHasBeenSet() const;
+
+                    /**
+                     * 获取生命周期总数
+                     * @return MaxLifeRound 生命周期总数
+                     * 
+                     */
+                    int64_t GetMaxLifeRound() const;
+
+                    /**
+                     * 设置生命周期总数
+                     * @param _maxLifeRound 生命周期总数
+                     * 
+                     */
+                    void SetMaxLifeRound(const int64_t& _maxLifeRound);
+
+                    /**
+                     * 判断参数 MaxLifeRound 是否已赋值
+                     * @return MaxLifeRound 是否已赋值
+                     * 
+                     */
+                    bool MaxLifeRoundHasBeenSet() const;
+
+                    /**
+                     * 获取当前生命周期重试次数
+                     * @return Tries 当前生命周期重试次数
+                     * 
+                     */
+                    int64_t GetTries() const;
+
+                    /**
+                     * 设置当前生命周期重试次数
+                     * @param _tries 当前生命周期重试次数
+                     * 
+                     */
+                    void SetTries(const int64_t& _tries);
+
+                    /**
+                     * 判断参数 Tries 是否已赋值
+                     * @return Tries 是否已赋值
+                     * 
+                     */
+                    bool TriesHasBeenSet() const;
+
+                    /**
+                     * 获取动态加载日志
+                     * @return Dynamic 动态加载日志
+                     * 
+                     */
+                    bool GetDynamic() const;
+
+                    /**
+                     * 设置动态加载日志
+                     * @param _dynamic 动态加载日志
+                     * 
+                     */
+                    void SetDynamic(const bool& _dynamic);
+
+                    /**
+                     * 判断参数 Dynamic 是否已赋值
+                     * @return Dynamic 是否已赋值
+                     * 
+                     */
+                    bool DynamicHasBeenSet() const;
+
                 private:
 
                     /**
@@ -367,6 +473,36 @@ namespace TencentCloud
                      */
                     std::string m_requestFromSource;
                     bool m_requestFromSourceHasBeenSet;
+
+                    /**
+                     * 生命周期为基础数据进行日志匹配
+                     */
+                    std::vector<InstanceLifeDetailDto> m_instanceLifeDetailDtoList;
+                    bool m_instanceLifeDetailDtoListHasBeenSet;
+
+                    /**
+                     * 当前生命周期
+                     */
+                    int64_t m_currentLifeRound;
+                    bool m_currentLifeRoundHasBeenSet;
+
+                    /**
+                     * 生命周期总数
+                     */
+                    int64_t m_maxLifeRound;
+                    bool m_maxLifeRoundHasBeenSet;
+
+                    /**
+                     * 当前生命周期重试次数
+                     */
+                    int64_t m_tries;
+                    bool m_triesHasBeenSet;
+
+                    /**
+                     * 动态加载日志
+                     */
+                    bool m_dynamic;
+                    bool m_dynamicHasBeenSet;
 
                 };
             }

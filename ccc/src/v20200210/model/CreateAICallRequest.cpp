@@ -46,7 +46,8 @@ CreateAICallRequest::CreateAICallRequest() :
     m_notifyMessageHasBeenSet(false),
     m_notifyMaxCountHasBeenSet(false),
     m_customTTSConfigHasBeenSet(false),
-    m_promptVariablesHasBeenSet(false)
+    m_promptVariablesHasBeenSet(false),
+    m_vadSilenceTimeHasBeenSet(false)
 {
 }
 
@@ -271,6 +272,14 @@ string CreateAICallRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_vadSilenceTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VadSilenceTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_vadSilenceTime, allocator);
     }
 
 
@@ -663,6 +672,22 @@ void CreateAICallRequest::SetPromptVariables(const vector<Variable>& _promptVari
 bool CreateAICallRequest::PromptVariablesHasBeenSet() const
 {
     return m_promptVariablesHasBeenSet;
+}
+
+int64_t CreateAICallRequest::GetVadSilenceTime() const
+{
+    return m_vadSilenceTime;
+}
+
+void CreateAICallRequest::SetVadSilenceTime(const int64_t& _vadSilenceTime)
+{
+    m_vadSilenceTime = _vadSilenceTime;
+    m_vadSilenceTimeHasBeenSet = true;
+}
+
+bool CreateAICallRequest::VadSilenceTimeHasBeenSet() const
+{
+    return m_vadSilenceTimeHasBeenSet;
 }
 
 

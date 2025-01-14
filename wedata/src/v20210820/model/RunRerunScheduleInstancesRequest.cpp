@@ -41,7 +41,14 @@ RunRerunScheduleInstancesRequest::RunRerunScheduleInstancesRequest() :
     m_countHasBeenSet(false),
     m_requestBaseInfoHasBeenSet(false),
     m_isCountHasBeenSet(false),
-    m_asyncModeHasBeenSet(false)
+    m_asyncModeHasBeenSet(false),
+    m_checkParentTypeHasBeenSet(false),
+    m_sameSelfDependTypeHasBeenSet(false),
+    m_parallelNumHasBeenSet(false),
+    m_sameSelfWorkflowDependTypeHasBeenSet(false),
+    m_selfWorkflowDependencyHasBeenSet(false),
+    m_dataTimeOrderHasBeenSet(false),
+    m_reDoParamsHasBeenSet(false)
 {
 }
 
@@ -211,6 +218,62 @@ string RunRerunScheduleInstancesRequest::ToJsonString() const
         string key = "AsyncMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_asyncMode, allocator);
+    }
+
+    if (m_checkParentTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CheckParentType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_checkParentType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sameSelfDependTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SameSelfDependType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_sameSelfDependType, allocator);
+    }
+
+    if (m_parallelNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParallelNum";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_parallelNum, allocator);
+    }
+
+    if (m_sameSelfWorkflowDependTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SameSelfWorkflowDependType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_sameSelfWorkflowDependType, allocator);
+    }
+
+    if (m_selfWorkflowDependencyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SelfWorkflowDependency";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_selfWorkflowDependency.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dataTimeOrderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataTimeOrder";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_dataTimeOrder, allocator);
+    }
+
+    if (m_reDoParamsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReDoParams";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_reDoParams.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -523,6 +586,118 @@ void RunRerunScheduleInstancesRequest::SetAsyncMode(const bool& _asyncMode)
 bool RunRerunScheduleInstancesRequest::AsyncModeHasBeenSet() const
 {
     return m_asyncModeHasBeenSet;
+}
+
+string RunRerunScheduleInstancesRequest::GetCheckParentType() const
+{
+    return m_checkParentType;
+}
+
+void RunRerunScheduleInstancesRequest::SetCheckParentType(const string& _checkParentType)
+{
+    m_checkParentType = _checkParentType;
+    m_checkParentTypeHasBeenSet = true;
+}
+
+bool RunRerunScheduleInstancesRequest::CheckParentTypeHasBeenSet() const
+{
+    return m_checkParentTypeHasBeenSet;
+}
+
+bool RunRerunScheduleInstancesRequest::GetSameSelfDependType() const
+{
+    return m_sameSelfDependType;
+}
+
+void RunRerunScheduleInstancesRequest::SetSameSelfDependType(const bool& _sameSelfDependType)
+{
+    m_sameSelfDependType = _sameSelfDependType;
+    m_sameSelfDependTypeHasBeenSet = true;
+}
+
+bool RunRerunScheduleInstancesRequest::SameSelfDependTypeHasBeenSet() const
+{
+    return m_sameSelfDependTypeHasBeenSet;
+}
+
+int64_t RunRerunScheduleInstancesRequest::GetParallelNum() const
+{
+    return m_parallelNum;
+}
+
+void RunRerunScheduleInstancesRequest::SetParallelNum(const int64_t& _parallelNum)
+{
+    m_parallelNum = _parallelNum;
+    m_parallelNumHasBeenSet = true;
+}
+
+bool RunRerunScheduleInstancesRequest::ParallelNumHasBeenSet() const
+{
+    return m_parallelNumHasBeenSet;
+}
+
+bool RunRerunScheduleInstancesRequest::GetSameSelfWorkflowDependType() const
+{
+    return m_sameSelfWorkflowDependType;
+}
+
+void RunRerunScheduleInstancesRequest::SetSameSelfWorkflowDependType(const bool& _sameSelfWorkflowDependType)
+{
+    m_sameSelfWorkflowDependType = _sameSelfWorkflowDependType;
+    m_sameSelfWorkflowDependTypeHasBeenSet = true;
+}
+
+bool RunRerunScheduleInstancesRequest::SameSelfWorkflowDependTypeHasBeenSet() const
+{
+    return m_sameSelfWorkflowDependTypeHasBeenSet;
+}
+
+string RunRerunScheduleInstancesRequest::GetSelfWorkflowDependency() const
+{
+    return m_selfWorkflowDependency;
+}
+
+void RunRerunScheduleInstancesRequest::SetSelfWorkflowDependency(const string& _selfWorkflowDependency)
+{
+    m_selfWorkflowDependency = _selfWorkflowDependency;
+    m_selfWorkflowDependencyHasBeenSet = true;
+}
+
+bool RunRerunScheduleInstancesRequest::SelfWorkflowDependencyHasBeenSet() const
+{
+    return m_selfWorkflowDependencyHasBeenSet;
+}
+
+int64_t RunRerunScheduleInstancesRequest::GetDataTimeOrder() const
+{
+    return m_dataTimeOrder;
+}
+
+void RunRerunScheduleInstancesRequest::SetDataTimeOrder(const int64_t& _dataTimeOrder)
+{
+    m_dataTimeOrder = _dataTimeOrder;
+    m_dataTimeOrderHasBeenSet = true;
+}
+
+bool RunRerunScheduleInstancesRequest::DataTimeOrderHasBeenSet() const
+{
+    return m_dataTimeOrderHasBeenSet;
+}
+
+string RunRerunScheduleInstancesRequest::GetReDoParams() const
+{
+    return m_reDoParams;
+}
+
+void RunRerunScheduleInstancesRequest::SetReDoParams(const string& _reDoParams)
+{
+    m_reDoParams = _reDoParams;
+    m_reDoParamsHasBeenSet = true;
+}
+
+bool RunRerunScheduleInstancesRequest::ReDoParamsHasBeenSet() const
+{
+    return m_reDoParamsHasBeenSet;
 }
 
 

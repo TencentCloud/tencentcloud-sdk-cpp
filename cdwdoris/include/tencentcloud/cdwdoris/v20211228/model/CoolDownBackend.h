@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取字段：Host
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Host 字段：Host
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHost() const;
 
                     /**
                      * 设置字段：Host
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _host 字段：Host
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHost(const std::string& _host);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取字段：DataUsedCapacity
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataUsedCapacity 字段：DataUsedCapacity
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDataUsedCapacity() const;
 
                     /**
                      * 设置字段：DataUsedCapacity
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataUsedCapacity 字段：DataUsedCapacity
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataUsedCapacity(const std::string& _dataUsedCapacity);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取字段：TotalCapacity
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCapacity 字段：TotalCapacity
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTotalCapacity() const;
 
                     /**
                      * 设置字段：TotalCapacity
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalCapacity 字段：TotalCapacity
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalCapacity(const std::string& _totalCapacity);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取字段：RemoteUsedCapacity
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RemoteUsedCapacity 字段：RemoteUsedCapacity
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemoteUsedCapacity() const;
 
                     /**
                      * 设置字段：RemoteUsedCapacity
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remoteUsedCapacity 字段：RemoteUsedCapacity
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemoteUsedCapacity(const std::string& _remoteUsedCapacity);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 字段：Host
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_host;
                     bool m_hostHasBeenSet;
 
                     /**
                      * 字段：DataUsedCapacity
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataUsedCapacity;
                     bool m_dataUsedCapacityHasBeenSet;
 
                     /**
                      * 字段：TotalCapacity
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_totalCapacity;
                     bool m_totalCapacityHasBeenSet;
 
                     /**
                      * 字段：RemoteUsedCapacity
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remoteUsedCapacity;
                     bool m_remoteUsedCapacityHasBeenSet;

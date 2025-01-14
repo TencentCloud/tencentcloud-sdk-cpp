@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取key
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return KeyName key
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKeyName() const;
 
                     /**
                      * 设置key
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _keyName key
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKeyName(const std::string& _keyName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _value 值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _message 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMessage(const std::string& _message);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取1-只读，2-可修改但不可删除，3-可删除
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Display 1-只读，2-可修改但不可删除，3-可删除
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDisplay() const;
 
                     /**
                      * 设置1-只读，2-可修改但不可删除，3-可删除
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _display 1-只读，2-可修改但不可删除，3-可删除
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDisplay(const int64_t& _display);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取0不支持 1支持热更新
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SupportHotUpdate 0不支持 1支持热更新
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSupportHotUpdate() const;
 
                     /**
                      * 设置0不支持 1支持热更新
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _supportHotUpdate 0不支持 1支持热更新
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSupportHotUpdate(const int64_t& _supportHotUpdate);
@@ -175,35 +155,30 @@ namespace TencentCloud
 
                     /**
                      * key
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_keyName;
                     bool m_keyNameHasBeenSet;
 
                     /**
                      * 值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;
 
                     /**
                      * 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
 
                     /**
                      * 1-只读，2-可修改但不可删除，3-可删除
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_display;
                     bool m_displayHasBeenSet;
 
                     /**
                      * 0不支持 1支持热更新
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_supportHotUpdate;
                     bool m_supportHotUpdateHasBeenSet;

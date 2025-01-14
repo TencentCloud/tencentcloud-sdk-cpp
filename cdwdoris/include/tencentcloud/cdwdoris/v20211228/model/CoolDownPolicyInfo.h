@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolicyName 策略名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPolicyName() const;
 
                     /**
                      * 设置策略名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _policyName 策略名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPolicyName(const std::string& _policyName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取cooldown_ttl
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CooldownDatetime cooldown_ttl
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCooldownDatetime() const;
 
                     /**
                      * 设置cooldown_ttl
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cooldownDatetime cooldown_ttl
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCooldownDatetime(const std::string& _cooldownDatetime);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取cooldown_datetime
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CooldownTtl cooldown_datetime
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCooldownTtl() const;
 
                     /**
                      * 设置cooldown_datetime
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cooldownTtl cooldown_datetime
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCooldownTtl(const std::string& _cooldownTtl);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 策略名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_policyName;
                     bool m_policyNameHasBeenSet;
 
                     /**
                      * cooldown_ttl
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cooldownDatetime;
                     bool m_cooldownDatetimeHasBeenSet;
 
                     /**
                      * cooldown_datetime
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cooldownTtl;
                     bool m_cooldownTtlHasBeenSet;

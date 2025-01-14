@@ -26,7 +26,8 @@ CreateWorkflowDsRequest::CreateWorkflowDsRequest() :
     m_projectIdHasBeenSet(false),
     m_workflowNameHasBeenSet(false),
     m_folderIdHasBeenSet(false),
-    m_workflowDescHasBeenSet(false)
+    m_workflowDescHasBeenSet(false),
+    m_workflowTypeHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string CreateWorkflowDsRequest::ToJsonString() const
         string key = "WorkflowDesc";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_workflowDesc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_workflowTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkflowType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_workflowType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void CreateWorkflowDsRequest::SetWorkflowDesc(const string& _workflowDesc)
 bool CreateWorkflowDsRequest::WorkflowDescHasBeenSet() const
 {
     return m_workflowDescHasBeenSet;
+}
+
+string CreateWorkflowDsRequest::GetWorkflowType() const
+{
+    return m_workflowType;
+}
+
+void CreateWorkflowDsRequest::SetWorkflowType(const string& _workflowType)
+{
+    m_workflowType = _workflowType;
+    m_workflowTypeHasBeenSet = true;
+}
+
+bool CreateWorkflowDsRequest::WorkflowTypeHasBeenSet() const
+{
+    return m_workflowTypeHasBeenSet;
 }
 
 

@@ -444,6 +444,153 @@ namespace TencentCloud
                      */
                     bool AsyncModeHasBeenSet() const;
 
+                    /**
+                     * 获取是否检查上游任务： ALL（全部）、 MAKE_SCOPE（选中）、NONE （全部不检查）
+                     * @return CheckParentType 是否检查上游任务： ALL（全部）、 MAKE_SCOPE（选中）、NONE （全部不检查）
+                     * 
+                     */
+                    std::string GetCheckParentType() const;
+
+                    /**
+                     * 设置是否检查上游任务： ALL（全部）、 MAKE_SCOPE（选中）、NONE （全部不检查）
+                     * @param _checkParentType 是否检查上游任务： ALL（全部）、 MAKE_SCOPE（选中）、NONE （全部不检查）
+                     * 
+                     */
+                    void SetCheckParentType(const std::string& _checkParentType);
+
+                    /**
+                     * 判断参数 CheckParentType 是否已赋值
+                     * @return CheckParentType 是否已赋值
+                     * 
+                     */
+                    bool CheckParentTypeHasBeenSet() const;
+
+                    /**
+                     * 获取任务原有自依赖配置 true（是）、false（否）
+                     * @return SameSelfDependType 任务原有自依赖配置 true（是）、false（否）
+                     * 
+                     */
+                    bool GetSameSelfDependType() const;
+
+                    /**
+                     * 设置任务原有自依赖配置 true（是）、false（否）
+                     * @param _sameSelfDependType 任务原有自依赖配置 true（是）、false（否）
+                     * 
+                     */
+                    void SetSameSelfDependType(const bool& _sameSelfDependType);
+
+                    /**
+                     * 判断参数 SameSelfDependType 是否已赋值
+                     * @return SameSelfDependType 是否已赋值
+                     * 
+                     */
+                    bool SameSelfDependTypeHasBeenSet() const;
+
+                    /**
+                     * 获取实例运行并发度
+                     * @return ParallelNum 实例运行并发度
+                     * 
+                     */
+                    int64_t GetParallelNum() const;
+
+                    /**
+                     * 设置实例运行并发度
+                     * @param _parallelNum 实例运行并发度
+                     * 
+                     */
+                    void SetParallelNum(const int64_t& _parallelNum);
+
+                    /**
+                     * 判断参数 ParallelNum 是否已赋值
+                     * @return ParallelNum 是否已赋值
+                     * 
+                     */
+                    bool ParallelNumHasBeenSet() const;
+
+                    /**
+                     * 获取任务原有自依赖配置 true（是）、false（否）
+                     * @return SameSelfWorkflowDependType 任务原有自依赖配置 true（是）、false（否）
+                     * 
+                     */
+                    bool GetSameSelfWorkflowDependType() const;
+
+                    /**
+                     * 设置任务原有自依赖配置 true（是）、false（否）
+                     * @param _sameSelfWorkflowDependType 任务原有自依赖配置 true（是）、false（否）
+                     * 
+                     */
+                    void SetSameSelfWorkflowDependType(const bool& _sameSelfWorkflowDependType);
+
+                    /**
+                     * 判断参数 SameSelfWorkflowDependType 是否已赋值
+                     * @return SameSelfWorkflowDependType 是否已赋值
+                     * 
+                     */
+                    bool SameSelfWorkflowDependTypeHasBeenSet() const;
+
+                    /**
+                     * 获取代表重新指定 的  是 或者 否  yes、 no
+                     * @return SelfWorkflowDependency 代表重新指定 的  是 或者 否  yes、 no
+                     * 
+                     */
+                    std::string GetSelfWorkflowDependency() const;
+
+                    /**
+                     * 设置代表重新指定 的  是 或者 否  yes、 no
+                     * @param _selfWorkflowDependency 代表重新指定 的  是 或者 否  yes、 no
+                     * 
+                     */
+                    void SetSelfWorkflowDependency(const std::string& _selfWorkflowDependency);
+
+                    /**
+                     * 判断参数 SelfWorkflowDependency 是否已赋值
+                     * @return SelfWorkflowDependency 是否已赋值
+                     * 
+                     */
+                    bool SelfWorkflowDependencyHasBeenSet() const;
+
+                    /**
+                     * 获取运行实例数据时间排序 0---正常  1--正序  2 – 逆序
+                     * @return DataTimeOrder 运行实例数据时间排序 0---正常  1--正序  2 – 逆序
+                     * 
+                     */
+                    int64_t GetDataTimeOrder() const;
+
+                    /**
+                     * 设置运行实例数据时间排序 0---正常  1--正序  2 – 逆序
+                     * @param _dataTimeOrder 运行实例数据时间排序 0---正常  1--正序  2 – 逆序
+                     * 
+                     */
+                    void SetDataTimeOrder(const int64_t& _dataTimeOrder);
+
+                    /**
+                     * 判断参数 DataTimeOrder 是否已赋值
+                     * @return DataTimeOrder 是否已赋值
+                     * 
+                     */
+                    bool DataTimeOrderHasBeenSet() const;
+
+                    /**
+                     * 获取重跑参数
+                     * @return ReDoParams 重跑参数
+                     * 
+                     */
+                    std::string GetReDoParams() const;
+
+                    /**
+                     * 设置重跑参数
+                     * @param _reDoParams 重跑参数
+                     * 
+                     */
+                    void SetReDoParams(const std::string& _reDoParams);
+
+                    /**
+                     * 判断参数 ReDoParams 是否已赋值
+                     * @return ReDoParams 是否已赋值
+                     * 
+                     */
+                    bool ReDoParamsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -559,6 +706,48 @@ namespace TencentCloud
                      */
                     bool m_asyncMode;
                     bool m_asyncModeHasBeenSet;
+
+                    /**
+                     * 是否检查上游任务： ALL（全部）、 MAKE_SCOPE（选中）、NONE （全部不检查）
+                     */
+                    std::string m_checkParentType;
+                    bool m_checkParentTypeHasBeenSet;
+
+                    /**
+                     * 任务原有自依赖配置 true（是）、false（否）
+                     */
+                    bool m_sameSelfDependType;
+                    bool m_sameSelfDependTypeHasBeenSet;
+
+                    /**
+                     * 实例运行并发度
+                     */
+                    int64_t m_parallelNum;
+                    bool m_parallelNumHasBeenSet;
+
+                    /**
+                     * 任务原有自依赖配置 true（是）、false（否）
+                     */
+                    bool m_sameSelfWorkflowDependType;
+                    bool m_sameSelfWorkflowDependTypeHasBeenSet;
+
+                    /**
+                     * 代表重新指定 的  是 或者 否  yes、 no
+                     */
+                    std::string m_selfWorkflowDependency;
+                    bool m_selfWorkflowDependencyHasBeenSet;
+
+                    /**
+                     * 运行实例数据时间排序 0---正常  1--正序  2 – 逆序
+                     */
+                    int64_t m_dataTimeOrder;
+                    bool m_dataTimeOrderHasBeenSet;
+
+                    /**
+                     * 重跑参数
+                     */
+                    std::string m_reDoParams;
+                    bool m_reDoParamsHasBeenSet;
 
                 };
             }

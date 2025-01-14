@@ -34,7 +34,8 @@ WorkflowCanvasOpsDto::WorkflowCanvasOpsDto() :
     m_projectIdentHasBeenSet(false),
     m_projectNameHasBeenSet(false),
     m_ownerHasBeenSet(false),
-    m_ownerIdHasBeenSet(false)
+    m_ownerIdHasBeenSet(false),
+    m_workflowTypeHasBeenSet(false)
 {
 }
 
@@ -206,6 +207,16 @@ CoreInternalOutcome WorkflowCanvasOpsDto::Deserialize(const rapidjson::Value &va
         m_ownerIdHasBeenSet = true;
     }
 
+    if (value.HasMember("WorkflowType") && !value["WorkflowType"].IsNull())
+    {
+        if (!value["WorkflowType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkflowCanvasOpsDto.WorkflowType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_workflowType = string(value["WorkflowType"].GetString());
+        m_workflowTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -342,6 +353,14 @@ void WorkflowCanvasOpsDto::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "OwnerId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_ownerId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_workflowTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkflowType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_workflowType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -569,5 +588,21 @@ void WorkflowCanvasOpsDto::SetOwnerId(const string& _ownerId)
 bool WorkflowCanvasOpsDto::OwnerIdHasBeenSet() const
 {
     return m_ownerIdHasBeenSet;
+}
+
+string WorkflowCanvasOpsDto::GetWorkflowType() const
+{
+    return m_workflowType;
+}
+
+void WorkflowCanvasOpsDto::SetWorkflowType(const string& _workflowType)
+{
+    m_workflowType = _workflowType;
+    m_workflowTypeHasBeenSet = true;
+}
+
+bool WorkflowCanvasOpsDto::WorkflowTypeHasBeenSet() const
+{
+    return m_workflowTypeHasBeenSet;
 }
 
