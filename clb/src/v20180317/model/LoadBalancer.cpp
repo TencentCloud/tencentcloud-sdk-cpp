@@ -76,7 +76,8 @@ LoadBalancer::LoadBalancer() :
     m_attributeFlagsHasBeenSet(false),
     m_loadBalancerDomainHasBeenSet(false),
     m_egressHasBeenSet(false),
-    m_exclusiveHasBeenSet(false)
+    m_exclusiveHasBeenSet(false),
+    m_targetCountHasBeenSet(false)
 {
 }
 
@@ -732,6 +733,16 @@ CoreInternalOutcome LoadBalancer::Deserialize(const rapidjson::Value &value)
         m_exclusiveHasBeenSet = true;
     }
 
+    if (value.HasMember("TargetCount") && !value["TargetCount"].IsNull())
+    {
+        if (!value["TargetCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoadBalancer.TargetCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_targetCount = value["TargetCount"].GetUint64();
+        m_targetCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1237,6 +1248,14 @@ void LoadBalancer::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Exclusive";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_exclusive, allocator);
+    }
+
+    if (m_targetCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_targetCount, allocator);
     }
 
 }
@@ -2136,5 +2155,21 @@ void LoadBalancer::SetExclusive(const uint64_t& _exclusive)
 bool LoadBalancer::ExclusiveHasBeenSet() const
 {
     return m_exclusiveHasBeenSet;
+}
+
+uint64_t LoadBalancer::GetTargetCount() const
+{
+    return m_targetCount;
+}
+
+void LoadBalancer::SetTargetCount(const uint64_t& _targetCount)
+{
+    m_targetCount = _targetCount;
+    m_targetCountHasBeenSet = true;
+}
+
+bool LoadBalancer::TargetCountHasBeenSet() const
+{
+    return m_targetCountHasBeenSet;
 }
 

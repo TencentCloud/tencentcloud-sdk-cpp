@@ -22,7 +22,8 @@ using namespace std;
 
 AddressInfo::AddressInfo() :
     m_addressHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_updatedTimeHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome AddressInfo::Deserialize(const rapidjson::Value &value)
         m_descriptionHasBeenSet = true;
     }
 
+    if (value.HasMember("UpdatedTime") && !value["UpdatedTime"].IsNull())
+    {
+        if (!value["UpdatedTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AddressInfo.UpdatedTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updatedTime = string(value["UpdatedTime"].GetString());
+        m_updatedTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void AddressInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updatedTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdatedTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updatedTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void AddressInfo::SetDescription(const string& _description)
 bool AddressInfo::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+string AddressInfo::GetUpdatedTime() const
+{
+    return m_updatedTime;
+}
+
+void AddressInfo::SetUpdatedTime(const string& _updatedTime)
+{
+    m_updatedTime = _updatedTime;
+    m_updatedTimeHasBeenSet = true;
+}
+
+bool AddressInfo::UpdatedTimeHasBeenSet() const
+{
+    return m_updatedTimeHasBeenSet;
 }
 

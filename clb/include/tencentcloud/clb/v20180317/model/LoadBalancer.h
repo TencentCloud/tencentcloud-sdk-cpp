@@ -1442,6 +1442,27 @@ OPEN：公网属性， INTERNAL：内网属性；对于内网属性的负载均�
                      */
                     bool ExclusiveHasBeenSet() const;
 
+                    /**
+                     * 获取已绑定的后端服务数量。
+                     * @return TargetCount 已绑定的后端服务数量。
+                     * 
+                     */
+                    uint64_t GetTargetCount() const;
+
+                    /**
+                     * 设置已绑定的后端服务数量。
+                     * @param _targetCount 已绑定的后端服务数量。
+                     * 
+                     */
+                    void SetTargetCount(const uint64_t& _targetCount);
+
+                    /**
+                     * 判断参数 TargetCount 是否已赋值
+                     * @return TargetCount 是否已赋值
+                     * 
+                     */
+                    bool TargetCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1832,6 +1853,12 @@ OPEN：公网属性， INTERNAL：内网属性；对于内网属性的负载均�
                      */
                     uint64_t m_exclusive;
                     bool m_exclusiveHasBeenSet;
+
+                    /**
+                     * 已绑定的后端服务数量。
+                     */
+                    uint64_t m_targetCount;
+                    bool m_targetCountHasBeenSet;
 
                 };
             }

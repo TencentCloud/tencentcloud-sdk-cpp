@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zone 可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zone 可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetId 子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subnetId 子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当前子网可用ip数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetIpNum 当前子网可用ip数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSubnetIpNum() const;
 
                     /**
                      * 设置当前子网可用ip数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subnetIpNum 当前子网可用ip数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubnetIpNum(const int64_t& _subnetIpNum);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
                      * 子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
                      * 当前子网可用ip数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_subnetIpNum;
                     bool m_subnetIpNumHasBeenSet;

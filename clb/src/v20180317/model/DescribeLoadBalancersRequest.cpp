@@ -41,7 +41,8 @@ DescribeLoadBalancersRequest::DescribeLoadBalancersRequest() :
     m_vpcIdHasBeenSet(false),
     m_securityGroupHasBeenSet(false),
     m_masterZoneHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_additionalFieldsHasBeenSet(false)
 {
 }
 
@@ -228,6 +229,19 @@ string DescribeLoadBalancersRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_additionalFieldsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdditionalFields";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_additionalFields.begin(); itr != m_additionalFields.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -541,6 +555,22 @@ void DescribeLoadBalancersRequest::SetFilters(const vector<Filter>& _filters)
 bool DescribeLoadBalancersRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+vector<string> DescribeLoadBalancersRequest::GetAdditionalFields() const
+{
+    return m_additionalFields;
+}
+
+void DescribeLoadBalancersRequest::SetAdditionalFields(const vector<string>& _additionalFields)
+{
+    m_additionalFields = _additionalFields;
+    m_additionalFieldsHasBeenSet = true;
+}
+
+bool DescribeLoadBalancersRequest::AdditionalFieldsHasBeenSet() const
+{
+    return m_additionalFieldsHasBeenSet;
 }
 
 

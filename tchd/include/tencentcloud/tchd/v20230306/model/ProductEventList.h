@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取事件详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EventList 事件详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<EventDetail> GetEventList() const;
 
                     /**
                      * 设置事件详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _eventList 事件详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEventList(const std::vector<EventDetail>& _eventList);
@@ -76,7 +72,6 @@ namespace TencentCloud
 
                     /**
                      * 事件详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<EventDetail> m_eventList;
                     bool m_eventListHasBeenSet;

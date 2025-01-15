@@ -31,7 +31,8 @@ QAQuery::QAQuery() :
     m_docBizIdHasBeenSet(false),
     m_qaBizIdHasBeenSet(false),
     m_sourceHasBeenSet(false),
-    m_queryAnswerHasBeenSet(false)
+    m_queryAnswerHasBeenSet(false),
+    m_queryTypeHasBeenSet(false)
 {
 }
 
@@ -156,6 +157,16 @@ CoreInternalOutcome QAQuery::Deserialize(const rapidjson::Value &value)
         m_queryAnswerHasBeenSet = true;
     }
 
+    if (value.HasMember("QueryType") && !value["QueryType"].IsNull())
+    {
+        if (!value["QueryType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QAQuery.QueryType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_queryType = string(value["QueryType"].GetString());
+        m_queryTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -259,6 +270,14 @@ void QAQuery::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "QueryAnswer";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_queryAnswer.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_queryTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueryType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_queryType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -438,5 +457,21 @@ void QAQuery::SetQueryAnswer(const string& _queryAnswer)
 bool QAQuery::QueryAnswerHasBeenSet() const
 {
     return m_queryAnswerHasBeenSet;
+}
+
+string QAQuery::GetQueryType() const
+{
+    return m_queryType;
+}
+
+void QAQuery::SetQueryType(const string& _queryType)
+{
+    m_queryType = _queryType;
+    m_queryTypeHasBeenSet = true;
+}
+
+bool QAQuery::QueryTypeHasBeenSet() const
+{
+    return m_queryTypeHasBeenSet;
 }
 

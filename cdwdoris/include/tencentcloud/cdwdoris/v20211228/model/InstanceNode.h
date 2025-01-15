@@ -195,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -220,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取rip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Rip rip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRip() const;
 
                     /**
                      * 设置rip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rip rip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRip(const std::string& _rip);
@@ -245,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取FE节点角色
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FeRole FE节点角色
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFeRole() const;
 
                     /**
                      * 设置FE节点角色
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _feRole FE节点角色
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFeRole(const std::string& _feRole);
@@ -270,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取UUID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UUID UUID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUUID() const;
 
                     /**
                      * 设置UUID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uUID UUID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUUID(const std::string& _uUID);
@@ -295,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zone 可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zone 可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -385,35 +365,30 @@ namespace TencentCloud
 
                     /**
                      * 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * rip
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_rip;
                     bool m_ripHasBeenSet;
 
                     /**
                      * FE节点角色
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_feRole;
                     bool m_feRoleHasBeenSet;
 
                     /**
                      * UUID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uUID;
                     bool m_uUIDHasBeenSet;
 
                     /**
                      * 可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;

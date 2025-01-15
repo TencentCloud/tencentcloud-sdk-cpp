@@ -46,15 +46,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取调用方用户信息，userId 必填。支持填入集团子公司经办人 userId代发合同。
-                     * @return Operator 调用方用户信息，userId 必填。支持填入集团子公司经办人 userId代发合同。
+                     * 获取本合同的发起人，<a href="https://qcloudimg.tencent-cloud.cn/raw/f850cfbe163a1cb38439a9f551c2505c.png" target="_blank">点击查看合同发起人展示的位置</a>
+
+注：支持填入集团子公司经办人 userId代发合同。
+                     * @return Operator 本合同的发起人，<a href="https://qcloudimg.tencent-cloud.cn/raw/f850cfbe163a1cb38439a9f551c2505c.png" target="_blank">点击查看合同发起人展示的位置</a>
+
+注：支持填入集团子公司经办人 userId代发合同。
                      * 
                      */
                     UserInfo GetOperator() const;
 
                     /**
-                     * 设置调用方用户信息，userId 必填。支持填入集团子公司经办人 userId代发合同。
-                     * @param _operator 调用方用户信息，userId 必填。支持填入集团子公司经办人 userId代发合同。
+                     * 设置本合同的发起人，<a href="https://qcloudimg.tencent-cloud.cn/raw/f850cfbe163a1cb38439a9f551c2505c.png" target="_blank">点击查看合同发起人展示的位置</a>
+
+注：支持填入集团子公司经办人 userId代发合同。
+                     * @param _operator 本合同的发起人，<a href="https://qcloudimg.tencent-cloud.cn/raw/f850cfbe163a1cb38439a9f551c2505c.png" target="_blank">点击查看合同发起人展示的位置</a>
+
+注：支持填入集团子公司经办人 userId代发合同。
                      * 
                      */
                     void SetOperator(const UserInfo& _operator);
@@ -305,7 +313,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 调用方用户信息，userId 必填。支持填入集团子公司经办人 userId代发合同。
+                     * 本合同的发起人，<a href="https://qcloudimg.tencent-cloud.cn/raw/f850cfbe163a1cb38439a9f551c2505c.png" target="_blank">点击查看合同发起人展示的位置</a>
+
+注：支持填入集团子公司经办人 userId代发合同。
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;

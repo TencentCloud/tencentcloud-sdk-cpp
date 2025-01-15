@@ -315,6 +315,31 @@ namespace TencentCloud
                      */
                     bool SmartPolicyHasBeenSet() const;
 
+                    /**
+                     * 获取T-ICEBERG表的主键
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PrimaryKeys T-ICEBERG表的主键
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetPrimaryKeys() const;
+
+                    /**
+                     * 设置T-ICEBERG表的主键
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _primaryKeys T-ICEBERG表的主键
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPrimaryKeys(const std::vector<std::string>& _primaryKeys);
+
+                    /**
+                     * 判断参数 PrimaryKeys 是否已赋值
+                     * @return PrimaryKeys 是否已赋值
+                     * 
+                     */
+                    bool PrimaryKeysHasBeenSet() const;
+
                 private:
 
                     /**
@@ -391,6 +416,13 @@ namespace TencentCloud
                      */
                     SmartPolicy m_smartPolicy;
                     bool m_smartPolicyHasBeenSet;
+
+                    /**
+                     * T-ICEBERG表的主键
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_primaryKeys;
+                    bool m_primaryKeysHasBeenSet;
 
                 };
             }

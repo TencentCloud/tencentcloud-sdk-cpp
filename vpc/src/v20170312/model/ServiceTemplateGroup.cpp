@@ -25,6 +25,7 @@ ServiceTemplateGroup::ServiceTemplateGroup() :
     m_serviceTemplateGroupNameHasBeenSet(false),
     m_serviceTemplateIdSetHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
+    m_updatedTimeHasBeenSet(false),
     m_serviceTemplateSetHasBeenSet(false),
     m_tagSetHasBeenSet(false)
 {
@@ -76,6 +77,16 @@ CoreInternalOutcome ServiceTemplateGroup::Deserialize(const rapidjson::Value &va
         }
         m_createdTime = string(value["CreatedTime"].GetString());
         m_createdTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpdatedTime") && !value["UpdatedTime"].IsNull())
+    {
+        if (!value["UpdatedTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceTemplateGroup.UpdatedTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updatedTime = string(value["UpdatedTime"].GetString());
+        m_updatedTimeHasBeenSet = true;
     }
 
     if (value.HasMember("ServiceTemplateSet") && !value["ServiceTemplateSet"].IsNull())
@@ -160,6 +171,14 @@ void ServiceTemplateGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "CreatedTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createdTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updatedTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdatedTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updatedTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_serviceTemplateSetHasBeenSet)
@@ -257,6 +276,22 @@ void ServiceTemplateGroup::SetCreatedTime(const string& _createdTime)
 bool ServiceTemplateGroup::CreatedTimeHasBeenSet() const
 {
     return m_createdTimeHasBeenSet;
+}
+
+string ServiceTemplateGroup::GetUpdatedTime() const
+{
+    return m_updatedTime;
+}
+
+void ServiceTemplateGroup::SetUpdatedTime(const string& _updatedTime)
+{
+    m_updatedTime = _updatedTime;
+    m_updatedTimeHasBeenSet = true;
+}
+
+bool ServiceTemplateGroup::UpdatedTimeHasBeenSet() const
+{
+    return m_updatedTimeHasBeenSet;
 }
 
 vector<ServiceTemplate> ServiceTemplateGroup::GetServiceTemplateSet() const

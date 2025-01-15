@@ -26,7 +26,8 @@ CreateCasInput::CreateCasInput() :
     m_idcTypeHasBeenSet(false),
     m_bandwidthHasBeenSet(false),
     m_telephoneHasBeenSet(false),
-    m_remarksHasBeenSet(false)
+    m_remarksHasBeenSet(false),
+    m_arRegionHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome CreateCasInput::Deserialize(const rapidjson::Value &value)
         m_remarksHasBeenSet = true;
     }
 
+    if (value.HasMember("ArRegion") && !value["ArRegion"].IsNull())
+    {
+        if (!value["ArRegion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateCasInput.ArRegion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_arRegion = string(value["ArRegion"].GetString());
+        m_arRegionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void CreateCasInput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Remarks";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_remarks.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_arRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ArRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_arRegion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void CreateCasInput::SetRemarks(const string& _remarks)
 bool CreateCasInput::RemarksHasBeenSet() const
 {
     return m_remarksHasBeenSet;
+}
+
+string CreateCasInput::GetArRegion() const
+{
+    return m_arRegion;
+}
+
+void CreateCasInput::SetArRegion(const string& _arRegion)
+{
+    m_arRegion = _arRegion;
+    m_arRegionHasBeenSet = true;
+}
+
+bool CreateCasInput::ArRegionHasBeenSet() const
+{
+    return m_arRegionHasBeenSet;
 }
 

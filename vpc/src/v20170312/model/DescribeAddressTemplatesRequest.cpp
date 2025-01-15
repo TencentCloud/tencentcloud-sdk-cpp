@@ -26,7 +26,11 @@ DescribeAddressTemplatesRequest::DescribeAddressTemplatesRequest() :
     m_filtersHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_needMemberInfoHasBeenSet(false)
+    m_needMemberInfoHasBeenSet(false),
+    m_orderFieldHasBeenSet(false),
+    m_orderDirectionHasBeenSet(false),
+    m_memberOrderFieldHasBeenSet(false),
+    m_memberOrderDirectionHasBeenSet(false)
 {
 }
 
@@ -74,6 +78,38 @@ string DescribeAddressTemplatesRequest::ToJsonString() const
         string key = "NeedMemberInfo";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_needMemberInfo, allocator);
+    }
+
+    if (m_orderFieldHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderField";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_orderField.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderDirectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderDirection";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_orderDirection.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_memberOrderFieldHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MemberOrderField";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_memberOrderField.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_memberOrderDirectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MemberOrderDirection";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_memberOrderDirection.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -146,6 +182,70 @@ void DescribeAddressTemplatesRequest::SetNeedMemberInfo(const bool& _needMemberI
 bool DescribeAddressTemplatesRequest::NeedMemberInfoHasBeenSet() const
 {
     return m_needMemberInfoHasBeenSet;
+}
+
+string DescribeAddressTemplatesRequest::GetOrderField() const
+{
+    return m_orderField;
+}
+
+void DescribeAddressTemplatesRequest::SetOrderField(const string& _orderField)
+{
+    m_orderField = _orderField;
+    m_orderFieldHasBeenSet = true;
+}
+
+bool DescribeAddressTemplatesRequest::OrderFieldHasBeenSet() const
+{
+    return m_orderFieldHasBeenSet;
+}
+
+string DescribeAddressTemplatesRequest::GetOrderDirection() const
+{
+    return m_orderDirection;
+}
+
+void DescribeAddressTemplatesRequest::SetOrderDirection(const string& _orderDirection)
+{
+    m_orderDirection = _orderDirection;
+    m_orderDirectionHasBeenSet = true;
+}
+
+bool DescribeAddressTemplatesRequest::OrderDirectionHasBeenSet() const
+{
+    return m_orderDirectionHasBeenSet;
+}
+
+string DescribeAddressTemplatesRequest::GetMemberOrderField() const
+{
+    return m_memberOrderField;
+}
+
+void DescribeAddressTemplatesRequest::SetMemberOrderField(const string& _memberOrderField)
+{
+    m_memberOrderField = _memberOrderField;
+    m_memberOrderFieldHasBeenSet = true;
+}
+
+bool DescribeAddressTemplatesRequest::MemberOrderFieldHasBeenSet() const
+{
+    return m_memberOrderFieldHasBeenSet;
+}
+
+string DescribeAddressTemplatesRequest::GetMemberOrderDirection() const
+{
+    return m_memberOrderDirection;
+}
+
+void DescribeAddressTemplatesRequest::SetMemberOrderDirection(const string& _memberOrderDirection)
+{
+    m_memberOrderDirection = _memberOrderDirection;
+    m_memberOrderDirectionHasBeenSet = true;
+}
+
+bool DescribeAddressTemplatesRequest::MemberOrderDirectionHasBeenSet() const
+{
+    return m_memberOrderDirectionHasBeenSet;
 }
 
 

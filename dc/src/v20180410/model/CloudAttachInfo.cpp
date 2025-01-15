@@ -39,7 +39,8 @@ CloudAttachInfo::CloudAttachInfo() :
     m_customerAuthNameHasBeenSet(false),
     m_directConnectIdHasBeenSet(false),
     m_cloudAttachServiceGatewaysSupportHasBeenSet(false),
-    m_bUpdateBandwidthHasBeenSet(false)
+    m_bUpdateBandwidthHasBeenSet(false),
+    m_arRegionHasBeenSet(false)
 {
 }
 
@@ -238,6 +239,16 @@ CoreInternalOutcome CloudAttachInfo::Deserialize(const rapidjson::Value &value)
         m_bUpdateBandwidthHasBeenSet = true;
     }
 
+    if (value.HasMember("ArRegion") && !value["ArRegion"].IsNull())
+    {
+        if (!value["ArRegion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudAttachInfo.ArRegion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_arRegion = string(value["ArRegion"].GetString());
+        m_arRegionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -395,6 +406,14 @@ void CloudAttachInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "BUpdateBandwidth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_bUpdateBandwidth, allocator);
+    }
+
+    if (m_arRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ArRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_arRegion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -702,5 +721,21 @@ void CloudAttachInfo::SetBUpdateBandwidth(const bool& _bUpdateBandwidth)
 bool CloudAttachInfo::BUpdateBandwidthHasBeenSet() const
 {
     return m_bUpdateBandwidthHasBeenSet;
+}
+
+string CloudAttachInfo::GetArRegion() const
+{
+    return m_arRegion;
+}
+
+void CloudAttachInfo::SetArRegion(const string& _arRegion)
+{
+    m_arRegion = _arRegion;
+    m_arRegionHasBeenSet = true;
+}
+
+bool CloudAttachInfo::ArRegionHasBeenSet() const
+{
+    return m_arRegionHasBeenSet;
 }
 

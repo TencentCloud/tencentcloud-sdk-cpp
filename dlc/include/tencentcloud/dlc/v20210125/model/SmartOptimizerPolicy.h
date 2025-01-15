@@ -28,6 +28,7 @@
 #include <tencentcloud/dlc/v20210125/model/SmartOptimizerWrittenPolicy.h>
 #include <tencentcloud/dlc/v20210125/model/SmartOptimizerLifecyclePolicy.h>
 #include <tencentcloud/dlc/v20210125/model/SmartOptimizerIndexPolicy.h>
+#include <tencentcloud/dlc/v20210125/model/SmartOptimizerChangeTablePolicy.h>
 
 
 namespace TencentCloud
@@ -175,6 +176,31 @@ namespace TencentCloud
                      */
                     bool IndexHasBeenSet() const;
 
+                    /**
+                     * 获取SmartOptimizerChangeTablePolicy
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ChangeTable SmartOptimizerChangeTablePolicy
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    SmartOptimizerChangeTablePolicy GetChangeTable() const;
+
+                    /**
+                     * 设置SmartOptimizerChangeTablePolicy
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _changeTable SmartOptimizerChangeTablePolicy
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetChangeTable(const SmartOptimizerChangeTablePolicy& _changeTable);
+
+                    /**
+                     * 判断参数 ChangeTable 是否已赋值
+                     * @return ChangeTable 是否已赋值
+                     * 
+                     */
+                    bool ChangeTableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -211,6 +237,13 @@ namespace TencentCloud
                      */
                     SmartOptimizerIndexPolicy m_index;
                     bool m_indexHasBeenSet;
+
+                    /**
+                     * SmartOptimizerChangeTablePolicy
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SmartOptimizerChangeTablePolicy m_changeTable;
+                    bool m_changeTableHasBeenSet;
 
                 };
             }

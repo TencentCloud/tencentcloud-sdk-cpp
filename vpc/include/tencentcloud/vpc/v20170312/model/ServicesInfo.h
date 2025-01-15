@@ -88,6 +88,27 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取更新时间。
+                     * @return UpdatedTime 更新时间。
+                     * 
+                     */
+                    std::string GetUpdatedTime() const;
+
+                    /**
+                     * 设置更新时间。
+                     * @param _updatedTime 更新时间。
+                     * 
+                     */
+                    void SetUpdatedTime(const std::string& _updatedTime);
+
+                    /**
+                     * 判断参数 UpdatedTime 是否已赋值
+                     * @return UpdatedTime 是否已赋值
+                     * 
+                     */
+                    bool UpdatedTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +122,12 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 更新时间。
+                     */
+                    std::string m_updatedTime;
+                    bool m_updatedTimeHasBeenSet;
 
                 };
             }

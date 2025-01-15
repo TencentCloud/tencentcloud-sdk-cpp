@@ -32,7 +32,8 @@ TableResponseInfo::TableResponseInfo() :
     m_storageSizeHasBeenSet(false),
     m_recordCountHasBeenSet(false),
     m_mapMaterializedViewNameHasBeenSet(false),
-    m_heatValueHasBeenSet(false)
+    m_heatValueHasBeenSet(false),
+    m_inputFormatShortHasBeenSet(false)
 {
 }
 
@@ -198,6 +199,16 @@ CoreInternalOutcome TableResponseInfo::Deserialize(const rapidjson::Value &value
         m_heatValueHasBeenSet = true;
     }
 
+    if (value.HasMember("InputFormatShort") && !value["InputFormatShort"].IsNull())
+    {
+        if (!value["InputFormatShort"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableResponseInfo.InputFormatShort` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_inputFormatShort = string(value["InputFormatShort"].GetString());
+        m_inputFormatShortHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -321,6 +332,14 @@ void TableResponseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "HeatValue";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_heatValue, allocator);
+    }
+
+    if (m_inputFormatShortHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InputFormatShort";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_inputFormatShort.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -516,5 +535,21 @@ void TableResponseInfo::SetHeatValue(const int64_t& _heatValue)
 bool TableResponseInfo::HeatValueHasBeenSet() const
 {
     return m_heatValueHasBeenSet;
+}
+
+string TableResponseInfo::GetInputFormatShort() const
+{
+    return m_inputFormatShort;
+}
+
+void TableResponseInfo::SetInputFormatShort(const string& _inputFormatShort)
+{
+    m_inputFormatShort = _inputFormatShort;
+    m_inputFormatShortHasBeenSet = true;
+}
+
+bool TableResponseInfo::InputFormatShortHasBeenSet() const
+{
+    return m_inputFormatShortHasBeenSet;
 }
 

@@ -37,6 +37,7 @@ RecognizeThaiIDCardOCRResponse::RecognizeThaiIDCardOCRResponse() :
     m_religionHasBeenSet(false),
     m_serialNumberHasBeenSet(false),
     m_addressHasBeenSet(false),
+    m_laserIDHasBeenSet(false),
     m_portraitImageHasBeenSet(false),
     m_warnCardInfosHasBeenSet(false),
     m_advancedInfoHasBeenSet(false)
@@ -207,6 +208,16 @@ CoreInternalOutcome RecognizeThaiIDCardOCRResponse::Deserialize(const string &pa
         m_addressHasBeenSet = true;
     }
 
+    if (rsp.HasMember("LaserID") && !rsp["LaserID"].IsNull())
+    {
+        if (!rsp["LaserID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LaserID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_laserID = string(rsp["LaserID"].GetString());
+        m_laserIDHasBeenSet = true;
+    }
+
     if (rsp.HasMember("PortraitImage") && !rsp["PortraitImage"].IsNull())
     {
         if (!rsp["PortraitImage"].IsString())
@@ -352,6 +363,14 @@ string RecognizeThaiIDCardOCRResponse::ToJsonString() const
         string key = "Address";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_address.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_laserIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LaserID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_laserID.c_str(), allocator).Move(), allocator);
     }
 
     if (m_portraitImageHasBeenSet)
@@ -523,6 +542,16 @@ string RecognizeThaiIDCardOCRResponse::GetAddress() const
 bool RecognizeThaiIDCardOCRResponse::AddressHasBeenSet() const
 {
     return m_addressHasBeenSet;
+}
+
+string RecognizeThaiIDCardOCRResponse::GetLaserID() const
+{
+    return m_laserID;
+}
+
+bool RecognizeThaiIDCardOCRResponse::LaserIDHasBeenSet() const
+{
+    return m_laserIDHasBeenSet;
 }
 
 string RecognizeThaiIDCardOCRResponse::GetPortraitImage() const

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ip 用户IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置用户IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ip 用户IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIp(const std::string& _ip);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 节点状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置节点状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 节点状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点角色名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeName 节点角色名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNodeName() const;
 
                     /**
                      * 设置节点角色名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nodeName 节点角色名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNodeName(const std::string& _nodeName);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取组件名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ComponentName 组件名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetComponentName() const;
 
                     /**
                      * 设置组件名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _componentName 组件名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetComponentName(const std::string& _componentName);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点角色
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeRole 节点角色
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNodeRole() const;
 
                     /**
                      * 设置节点角色
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nodeRole 节点角色
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNodeRole(const std::string& _nodeRole);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点上次重启的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastRestartTime 节点上次重启的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLastRestartTime() const;
 
                     /**
                      * 设置节点上次重启的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lastRestartTime 节点上次重启的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLastRestartTime(const std::string& _lastRestartTime);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zone 节点所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置节点所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zone 节点所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -250,56 +218,48 @@ namespace TencentCloud
 
                     /**
                      * 用户IP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;
 
                     /**
                      * 节点状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 节点角色名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nodeName;
                     bool m_nodeNameHasBeenSet;
 
                     /**
                      * 组件名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_componentName;
                     bool m_componentNameHasBeenSet;
 
                     /**
                      * 节点角色
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nodeRole;
                     bool m_nodeRoleHasBeenSet;
 
                     /**
                      * 节点上次重启的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastRestartTime;
                     bool m_lastRestartTimeHasBeenSet;
 
                     /**
                      * 节点所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
                      * Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;

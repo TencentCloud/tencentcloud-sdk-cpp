@@ -24,7 +24,9 @@ AddressTemplateItem::AddressTemplateItem() :
     m_addressTemplateIdHasBeenSet(false),
     m_addressTemplateNameHasBeenSet(false),
     m_fromHasBeenSet(false),
-    m_toHasBeenSet(false)
+    m_toHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_updatedTimeHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,26 @@ CoreInternalOutcome AddressTemplateItem::Deserialize(const rapidjson::Value &val
         m_toHasBeenSet = true;
     }
 
+    if (value.HasMember("Description") && !value["Description"].IsNull())
+    {
+        if (!value["Description"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AddressTemplateItem.Description` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_description = string(value["Description"].GetString());
+        m_descriptionHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpdatedTime") && !value["UpdatedTime"].IsNull())
+    {
+        if (!value["UpdatedTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AddressTemplateItem.UpdatedTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updatedTime = string(value["UpdatedTime"].GetString());
+        m_updatedTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +132,22 @@ void AddressTemplateItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "To";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_to.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updatedTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdatedTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updatedTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +215,37 @@ void AddressTemplateItem::SetTo(const string& _to)
 bool AddressTemplateItem::ToHasBeenSet() const
 {
     return m_toHasBeenSet;
+}
+
+string AddressTemplateItem::GetDescription() const
+{
+    return m_description;
+}
+
+void AddressTemplateItem::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool AddressTemplateItem::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
+}
+
+string AddressTemplateItem::GetUpdatedTime() const
+{
+    return m_updatedTime;
+}
+
+void AddressTemplateItem::SetUpdatedTime(const string& _updatedTime)
+{
+    m_updatedTime = _updatedTime;
+    m_updatedTimeHasBeenSet = true;
+}
+
+bool AddressTemplateItem::UpdatedTimeHasBeenSet() const
+{
+    return m_updatedTimeHasBeenSet;
 }
 

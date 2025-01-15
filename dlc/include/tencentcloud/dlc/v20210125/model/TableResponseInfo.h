@@ -346,6 +346,27 @@ namespace TencentCloud
                      */
                     bool HeatValueHasBeenSet() const;
 
+                    /**
+                     * 获取InputFormat的缩写
+                     * @return InputFormatShort InputFormat的缩写
+                     * 
+                     */
+                    std::string GetInputFormatShort() const;
+
+                    /**
+                     * 设置InputFormat的缩写
+                     * @param _inputFormatShort InputFormat的缩写
+                     * 
+                     */
+                    void SetInputFormatShort(const std::string& _inputFormatShort);
+
+                    /**
+                     * 判断参数 InputFormatShort 是否已赋值
+                     * @return InputFormatShort 是否已赋值
+                     * 
+                     */
+                    bool InputFormatShortHasBeenSet() const;
+
                 private:
 
                     /**
@@ -430,6 +451,12 @@ namespace TencentCloud
                      */
                     int64_t m_heatValue;
                     bool m_heatValueHasBeenSet;
+
+                    /**
+                     * InputFormat的缩写
+                     */
+                    std::string m_inputFormatShort;
+                    bool m_inputFormatShortHasBeenSet;
 
                 };
             }

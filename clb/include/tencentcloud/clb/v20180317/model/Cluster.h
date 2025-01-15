@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/clb/v20180317/model/ClustersZone.h>
+#include <tencentcloud/clb/v20180317/model/TagInfo.h>
 
 
 namespace TencentCloud
@@ -648,6 +649,31 @@ namespace TencentCloud
                      */
                     bool IPVersionHasBeenSet() const;
 
+                    /**
+                     * 获取标签信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tag 标签信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<TagInfo> GetTag() const;
+
+                    /**
+                     * 设置标签信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _tag 标签信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTag(const std::vector<TagInfo>& _tag);
+
+                    /**
+                     * 判断参数 Tag 是否已赋值
+                     * @return Tag 是否已赋值
+                     * 
+                     */
+                    bool TagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -818,6 +844,13 @@ namespace TencentCloud
                      */
                     std::string m_iPVersion;
                     bool m_iPVersionHasBeenSet;
+
+                    /**
+                     * 标签信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TagInfo> m_tag;
+                    bool m_tagHasBeenSet;
 
                 };
             }

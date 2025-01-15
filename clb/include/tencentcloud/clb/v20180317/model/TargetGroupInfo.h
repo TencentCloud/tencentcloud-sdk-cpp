@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/clb/v20180317/model/AssociationItem.h>
+#include <tencentcloud/clb/v20180317/model/TagInfo.h>
 
 
 namespace TencentCloud
@@ -202,6 +203,127 @@ namespace TencentCloud
                      */
                     bool AssociatedRuleHasBeenSet() const;
 
+                    /**
+                     * 获取目标组类型，当前支持v1(旧版目标组), v2(新版目标组), gwlb(全局负载均衡目标组)。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TargetGroupType 目标组类型，当前支持v1(旧版目标组), v2(新版目标组), gwlb(全局负载均衡目标组)。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTargetGroupType() const;
+
+                    /**
+                     * 设置目标组类型，当前支持v1(旧版目标组), v2(新版目标组), gwlb(全局负载均衡目标组)。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _targetGroupType 目标组类型，当前支持v1(旧版目标组), v2(新版目标组), gwlb(全局负载均衡目标组)。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTargetGroupType(const std::string& _targetGroupType);
+
+                    /**
+                     * 判断参数 TargetGroupType 是否已赋值
+                     * @return TargetGroupType 是否已赋值
+                     * 
+                     */
+                    bool TargetGroupTypeHasBeenSet() const;
+
+                    /**
+                     * 获取目标组已关联的规则数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AssociatedRuleCount 目标组已关联的规则数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetAssociatedRuleCount() const;
+
+                    /**
+                     * 设置目标组已关联的规则数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _associatedRuleCount 目标组已关联的规则数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAssociatedRuleCount(const int64_t& _associatedRuleCount);
+
+                    /**
+                     * 判断参数 AssociatedRuleCount 是否已赋值
+                     * @return AssociatedRuleCount 是否已赋值
+                     * 
+                     */
+                    bool AssociatedRuleCountHasBeenSet() const;
+
+                    /**
+                     * 获取目标组内的实例数量。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RegisteredInstancesCount 目标组内的实例数量。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetRegisteredInstancesCount() const;
+
+                    /**
+                     * 设置目标组内的实例数量。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _registeredInstancesCount 目标组内的实例数量。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRegisteredInstancesCount(const int64_t& _registeredInstancesCount);
+
+                    /**
+                     * 判断参数 RegisteredInstancesCount 是否已赋值
+                     * @return RegisteredInstancesCount 是否已赋值
+                     * 
+                     */
+                    bool RegisteredInstancesCountHasBeenSet() const;
+
+                    /**
+                     * 获取标签。
+                     * @return Tag 标签。
+                     * 
+                     */
+                    std::vector<TagInfo> GetTag() const;
+
+                    /**
+                     * 设置标签。
+                     * @param _tag 标签。
+                     * 
+                     */
+                    void SetTag(const std::vector<TagInfo>& _tag);
+
+                    /**
+                     * 判断参数 Tag 是否已赋值
+                     * @return Tag 是否已赋值
+                     * 
+                     */
+                    bool TagHasBeenSet() const;
+
+                    /**
+                     * 获取默认权重。只有v2类型目标组返回该字段。当返回为NULL时， 表示未设置默认权重。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Weight 默认权重。只有v2类型目标组返回该字段。当返回为NULL时， 表示未设置默认权重。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetWeight() const;
+
+                    /**
+                     * 设置默认权重。只有v2类型目标组返回该字段。当返回为NULL时， 表示未设置默认权重。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _weight 默认权重。只有v2类型目标组返回该字段。当返回为NULL时， 表示未设置默认权重。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetWeight(const uint64_t& _weight);
+
+                    /**
+                     * 判断参数 Weight 是否已赋值
+                     * @return Weight 是否已赋值
+                     * 
+                     */
+                    bool WeightHasBeenSet() const;
+
                 private:
 
                     /**
@@ -247,6 +369,40 @@ namespace TencentCloud
                      */
                     std::vector<AssociationItem> m_associatedRule;
                     bool m_associatedRuleHasBeenSet;
+
+                    /**
+                     * 目标组类型，当前支持v1(旧版目标组), v2(新版目标组), gwlb(全局负载均衡目标组)。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_targetGroupType;
+                    bool m_targetGroupTypeHasBeenSet;
+
+                    /**
+                     * 目标组已关联的规则数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_associatedRuleCount;
+                    bool m_associatedRuleCountHasBeenSet;
+
+                    /**
+                     * 目标组内的实例数量。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_registeredInstancesCount;
+                    bool m_registeredInstancesCountHasBeenSet;
+
+                    /**
+                     * 标签。
+                     */
+                    std::vector<TagInfo> m_tag;
+                    bool m_tagHasBeenSet;
+
+                    /**
+                     * 默认权重。只有v2类型目标组返回该字段。当返回为NULL时， 表示未设置默认权重。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_weight;
+                    bool m_weightHasBeenSet;
 
                 };
             }

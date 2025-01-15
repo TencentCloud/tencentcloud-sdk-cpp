@@ -74,7 +74,9 @@ NodeHardwareInfo::NodeHardwareInfo() :
     m_servicesStatusHasBeenSet(false),
     m_remarkHasBeenSet(false),
     m_sharedClusterIdHasBeenSet(false),
-    m_sharedClusterIdDescHasBeenSet(false)
+    m_sharedClusterIdDescHasBeenSet(false),
+    m_timingResourceHasBeenSet(false),
+    m_tkeClusterIdHasBeenSet(false)
 {
 }
 
@@ -657,6 +659,26 @@ CoreInternalOutcome NodeHardwareInfo::Deserialize(const rapidjson::Value &value)
         m_sharedClusterIdDescHasBeenSet = true;
     }
 
+    if (value.HasMember("TimingResource") && !value["TimingResource"].IsNull())
+    {
+        if (!value["TimingResource"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeHardwareInfo.TimingResource` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_timingResource = value["TimingResource"].GetBool();
+        m_timingResourceHasBeenSet = true;
+    }
+
+    if (value.HasMember("TkeClusterId") && !value["TkeClusterId"].IsNull())
+    {
+        if (!value["TkeClusterId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeHardwareInfo.TkeClusterId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tkeClusterId = string(value["TkeClusterId"].GetString());
+        m_tkeClusterIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1110,6 +1132,22 @@ void NodeHardwareInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "SharedClusterIdDesc";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_sharedClusterIdDesc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_timingResourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimingResource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_timingResource, allocator);
+    }
+
+    if (m_tkeClusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TkeClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tkeClusterId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1977,5 +2015,37 @@ void NodeHardwareInfo::SetSharedClusterIdDesc(const string& _sharedClusterIdDesc
 bool NodeHardwareInfo::SharedClusterIdDescHasBeenSet() const
 {
     return m_sharedClusterIdDescHasBeenSet;
+}
+
+bool NodeHardwareInfo::GetTimingResource() const
+{
+    return m_timingResource;
+}
+
+void NodeHardwareInfo::SetTimingResource(const bool& _timingResource)
+{
+    m_timingResource = _timingResource;
+    m_timingResourceHasBeenSet = true;
+}
+
+bool NodeHardwareInfo::TimingResourceHasBeenSet() const
+{
+    return m_timingResourceHasBeenSet;
+}
+
+string NodeHardwareInfo::GetTkeClusterId() const
+{
+    return m_tkeClusterId;
+}
+
+void NodeHardwareInfo::SetTkeClusterId(const string& _tkeClusterId)
+{
+    m_tkeClusterId = _tkeClusterId;
+    m_tkeClusterIdHasBeenSet = true;
+}
+
+bool NodeHardwareInfo::TkeClusterIdHasBeenSet() const
+{
+    return m_tkeClusterIdHasBeenSet;
 }
 

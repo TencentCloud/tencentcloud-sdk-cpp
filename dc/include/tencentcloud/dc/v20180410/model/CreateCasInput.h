@@ -172,6 +172,27 @@ namespace TencentCloud
                      */
                     bool RemarksHasBeenSet() const;
 
+                    /**
+                     * 获取接入地域
+                     * @return ArRegion 接入地域
+                     * 
+                     */
+                    std::string GetArRegion() const;
+
+                    /**
+                     * 设置接入地域
+                     * @param _arRegion 接入地域
+                     * 
+                     */
+                    void SetArRegion(const std::string& _arRegion);
+
+                    /**
+                     * 判断参数 ArRegion 是否已赋值
+                     * @return ArRegion 是否已赋值
+                     * 
+                     */
+                    bool ArRegionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -209,6 +230,12 @@ namespace TencentCloud
                      */
                     std::string m_remarks;
                     bool m_remarksHasBeenSet;
+
+                    /**
+                     * 接入地域
+                     */
+                    std::string m_arRegion;
+                    bool m_arRegionHasBeenSet;
 
                 };
             }

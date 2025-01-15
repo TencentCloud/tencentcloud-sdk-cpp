@@ -265,18 +265,14 @@ stoped：终止状态
 
                     /**
                      * 获取敏捷上云建设完成的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReadyTime 敏捷上云建设完成的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReadyTime() const;
 
                     /**
                      * 设置敏捷上云建设完成的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _readyTime 敏捷上云建设完成的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReadyTime(const std::string& _readyTime);
@@ -485,6 +481,27 @@ cross-region：跨地域
                      */
                     bool BUpdateBandwidthHasBeenSet() const;
 
+                    /**
+                     * 获取接入地域
+                     * @return ArRegion 接入地域
+                     * 
+                     */
+                    std::string GetArRegion() const;
+
+                    /**
+                     * 设置接入地域
+                     * @param _arRegion 接入地域
+                     * 
+                     */
+                    void SetArRegion(const std::string& _arRegion);
+
+                    /**
+                     * 判断参数 ArRegion 是否已赋值
+                     * @return ArRegion 是否已赋值
+                     * 
+                     */
+                    bool ArRegionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -550,7 +567,6 @@ stoped：终止状态
 
                     /**
                      * 敏捷上云建设完成的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_readyTime;
                     bool m_readyTimeHasBeenSet;
@@ -610,6 +626,12 @@ cross-region：跨地域
                      */
                     bool m_bUpdateBandwidth;
                     bool m_bUpdateBandwidthHasBeenSet;
+
+                    /**
+                     * 接入地域
+                     */
+                    std::string m_arRegion;
+                    bool m_arRegionHasBeenSet;
 
                 };
             }

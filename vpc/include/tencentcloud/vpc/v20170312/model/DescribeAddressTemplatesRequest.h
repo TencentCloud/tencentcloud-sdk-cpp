@@ -139,6 +139,90 @@ namespace TencentCloud
                      */
                     bool NeedMemberInfoHasBeenSet() const;
 
+                    /**
+                     * 获取排序字段。支持：`AddressTemplateId` `CreatedTime` `UpdateTime`。注意：该字段没有默认值。
+                     * @return OrderField 排序字段。支持：`AddressTemplateId` `CreatedTime` `UpdateTime`。注意：该字段没有默认值。
+                     * 
+                     */
+                    std::string GetOrderField() const;
+
+                    /**
+                     * 设置排序字段。支持：`AddressTemplateId` `CreatedTime` `UpdateTime`。注意：该字段没有默认值。
+                     * @param _orderField 排序字段。支持：`AddressTemplateId` `CreatedTime` `UpdateTime`。注意：该字段没有默认值。
+                     * 
+                     */
+                    void SetOrderField(const std::string& _orderField);
+
+                    /**
+                     * 判断参数 OrderField 是否已赋值
+                     * @return OrderField 是否已赋值
+                     * 
+                     */
+                    bool OrderFieldHasBeenSet() const;
+
+                    /**
+                     * 获取排序方法。升序：`ASC`，倒序：`DESC`。注意：该字段没有默认值。
+                     * @return OrderDirection 排序方法。升序：`ASC`，倒序：`DESC`。注意：该字段没有默认值。
+                     * 
+                     */
+                    std::string GetOrderDirection() const;
+
+                    /**
+                     * 设置排序方法。升序：`ASC`，倒序：`DESC`。注意：该字段没有默认值。
+                     * @param _orderDirection 排序方法。升序：`ASC`，倒序：`DESC`。注意：该字段没有默认值。
+                     * 
+                     */
+                    void SetOrderDirection(const std::string& _orderDirection);
+
+                    /**
+                     * 判断参数 OrderDirection 是否已赋值
+                     * @return OrderDirection 是否已赋值
+                     * 
+                     */
+                    bool OrderDirectionHasBeenSet() const;
+
+                    /**
+                     * 获取IP成员排序字段。支持：`Address` `UpdateTime`。注意：该字段没有默认值。
+                     * @return MemberOrderField IP成员排序字段。支持：`Address` `UpdateTime`。注意：该字段没有默认值。
+                     * 
+                     */
+                    std::string GetMemberOrderField() const;
+
+                    /**
+                     * 设置IP成员排序字段。支持：`Address` `UpdateTime`。注意：该字段没有默认值。
+                     * @param _memberOrderField IP成员排序字段。支持：`Address` `UpdateTime`。注意：该字段没有默认值。
+                     * 
+                     */
+                    void SetMemberOrderField(const std::string& _memberOrderField);
+
+                    /**
+                     * 判断参数 MemberOrderField 是否已赋值
+                     * @return MemberOrderField 是否已赋值
+                     * 
+                     */
+                    bool MemberOrderFieldHasBeenSet() const;
+
+                    /**
+                     * 获取IP成员排序方法。升序：`ASC`，倒序：`DESC`。注意：该字段没有默认值。
+                     * @return MemberOrderDirection IP成员排序方法。升序：`ASC`，倒序：`DESC`。注意：该字段没有默认值。
+                     * 
+                     */
+                    std::string GetMemberOrderDirection() const;
+
+                    /**
+                     * 设置IP成员排序方法。升序：`ASC`，倒序：`DESC`。注意：该字段没有默认值。
+                     * @param _memberOrderDirection IP成员排序方法。升序：`ASC`，倒序：`DESC`。注意：该字段没有默认值。
+                     * 
+                     */
+                    void SetMemberOrderDirection(const std::string& _memberOrderDirection);
+
+                    /**
+                     * 判断参数 MemberOrderDirection 是否已赋值
+                     * @return MemberOrderDirection 是否已赋值
+                     * 
+                     */
+                    bool MemberOrderDirectionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -167,6 +251,30 @@ namespace TencentCloud
                      */
                     bool m_needMemberInfo;
                     bool m_needMemberInfoHasBeenSet;
+
+                    /**
+                     * 排序字段。支持：`AddressTemplateId` `CreatedTime` `UpdateTime`。注意：该字段没有默认值。
+                     */
+                    std::string m_orderField;
+                    bool m_orderFieldHasBeenSet;
+
+                    /**
+                     * 排序方法。升序：`ASC`，倒序：`DESC`。注意：该字段没有默认值。
+                     */
+                    std::string m_orderDirection;
+                    bool m_orderDirectionHasBeenSet;
+
+                    /**
+                     * IP成员排序字段。支持：`Address` `UpdateTime`。注意：该字段没有默认值。
+                     */
+                    std::string m_memberOrderField;
+                    bool m_memberOrderFieldHasBeenSet;
+
+                    /**
+                     * IP成员排序方法。升序：`ASC`，倒序：`DESC`。注意：该字段没有默认值。
+                     */
+                    std::string m_memberOrderDirection;
+                    bool m_memberOrderDirectionHasBeenSet;
 
                 };
             }

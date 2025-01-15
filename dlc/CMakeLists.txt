@@ -45,6 +45,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DescribeTablesNameResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeAdvancedStoreLocationRequest.h
   include/tencentcloud/dlc/v20210125/model/CancelNotebookSessionStatementBatchResponse.h
+  include/tencentcloud/dlc/v20210125/model/SmartOptimizerChangeTablePolicy.h
   include/tencentcloud/dlc/v20210125/model/BatchSqlTask.h
   include/tencentcloud/dlc/v20210125/model/CreateNotebookSessionRequest.h
   include/tencentcloud/dlc/v20210125/model/UpdateDataEngineRequest.h
@@ -449,6 +450,7 @@ set(dlc_src
   src/v20210125/model/DescribeTablesNameResponse.cpp
   src/v20210125/model/DescribeAdvancedStoreLocationRequest.cpp
   src/v20210125/model/CancelNotebookSessionStatementBatchResponse.cpp
+  src/v20210125/model/SmartOptimizerChangeTablePolicy.cpp
   src/v20210125/model/BatchSqlTask.cpp
   src/v20210125/model/CreateNotebookSessionRequest.cpp
   src/v20210125/model/UpdateDataEngineRequest.cpp

@@ -196,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取挂载云盘信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AttachCBSSpec 挂载云盘信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AttachCBSSpec GetAttachCBSSpec() const;
 
                     /**
                      * 设置挂载云盘信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _attachCBSSpec 挂载云盘信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAttachCBSSpec(const AttachCBSSpec& _attachCBSSpec);
@@ -221,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubProductType 子产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubProductType() const;
 
                     /**
                      * 设置子产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subProductType 子产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubProductType(const std::string& _subProductType);
@@ -246,18 +238,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规格核数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SpecCore 规格核数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSpecCore() const;
 
                     /**
                      * 设置规格核数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _specCore 规格核数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSpecCore(const int64_t& _specCore);
@@ -271,18 +259,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规格内存
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SpecMemory 规格内存
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSpecMemory() const;
 
                     /**
                      * 设置规格内存
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _specMemory 规格内存
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSpecMemory(const int64_t& _specMemory);
@@ -296,18 +280,14 @@ namespace TencentCloud
 
                     /**
                      * 获取磁盘大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiskCount 磁盘大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDiskCount() const;
 
                     /**
                      * 设置磁盘大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _diskCount 磁盘大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiskCount(const int64_t& _diskCount);
@@ -321,18 +301,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否加密
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Encrypt 是否加密
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEncrypt() const;
 
                     /**
                      * 设置是否加密
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _encrypt 是否加密
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEncrypt(const int64_t& _encrypt);
@@ -346,18 +322,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最大磁盘
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxDiskSize 最大磁盘
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxDiskSize() const;
 
                     /**
                      * 设置最大磁盘
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxDiskSize 最大磁盘
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxDiskSize(const int64_t& _maxDiskSize);
@@ -415,49 +387,42 @@ namespace TencentCloud
 
                     /**
                      * 挂载云盘信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AttachCBSSpec m_attachCBSSpec;
                     bool m_attachCBSSpecHasBeenSet;
 
                     /**
                      * 子产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subProductType;
                     bool m_subProductTypeHasBeenSet;
 
                     /**
                      * 规格核数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_specCore;
                     bool m_specCoreHasBeenSet;
 
                     /**
                      * 规格内存
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_specMemory;
                     bool m_specMemoryHasBeenSet;
 
                     /**
                      * 磁盘大小
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_diskCount;
                     bool m_diskCountHasBeenSet;
 
                     /**
                      * 是否加密
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_encrypt;
                     bool m_encryptHasBeenSet;
 
                     /**
                      * 最大磁盘
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxDiskSize;
                     bool m_maxDiskSizeHasBeenSet;

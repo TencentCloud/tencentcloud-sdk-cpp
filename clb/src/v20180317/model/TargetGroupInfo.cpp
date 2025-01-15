@@ -27,7 +27,12 @@ TargetGroupInfo::TargetGroupInfo() :
     m_portHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
     m_updatedTimeHasBeenSet(false),
-    m_associatedRuleHasBeenSet(false)
+    m_associatedRuleHasBeenSet(false),
+    m_targetGroupTypeHasBeenSet(false),
+    m_associatedRuleCountHasBeenSet(false),
+    m_registeredInstancesCountHasBeenSet(false),
+    m_tagHasBeenSet(false),
+    m_weightHasBeenSet(false)
 {
 }
 
@@ -116,6 +121,66 @@ CoreInternalOutcome TargetGroupInfo::Deserialize(const rapidjson::Value &value)
         m_associatedRuleHasBeenSet = true;
     }
 
+    if (value.HasMember("TargetGroupType") && !value["TargetGroupType"].IsNull())
+    {
+        if (!value["TargetGroupType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TargetGroupInfo.TargetGroupType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_targetGroupType = string(value["TargetGroupType"].GetString());
+        m_targetGroupTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("AssociatedRuleCount") && !value["AssociatedRuleCount"].IsNull())
+    {
+        if (!value["AssociatedRuleCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TargetGroupInfo.AssociatedRuleCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_associatedRuleCount = value["AssociatedRuleCount"].GetInt64();
+        m_associatedRuleCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("RegisteredInstancesCount") && !value["RegisteredInstancesCount"].IsNull())
+    {
+        if (!value["RegisteredInstancesCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TargetGroupInfo.RegisteredInstancesCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_registeredInstancesCount = value["RegisteredInstancesCount"].GetInt64();
+        m_registeredInstancesCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("Tag") && !value["Tag"].IsNull())
+    {
+        if (!value["Tag"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TargetGroupInfo.Tag` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Tag"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TagInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tag.push_back(item);
+        }
+        m_tagHasBeenSet = true;
+    }
+
+    if (value.HasMember("Weight") && !value["Weight"].IsNull())
+    {
+        if (!value["Weight"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TargetGroupInfo.Weight` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_weight = value["Weight"].GetUint64();
+        m_weightHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -184,6 +249,53 @@ void TargetGroupInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_targetGroupTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetGroupType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_targetGroupType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_associatedRuleCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssociatedRuleCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_associatedRuleCount, allocator);
+    }
+
+    if (m_registeredInstancesCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegisteredInstancesCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_registeredInstancesCount, allocator);
+    }
+
+    if (m_tagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tag.begin(); itr != m_tag.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_weightHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Weight";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_weight, allocator);
     }
 
 }
@@ -299,5 +411,85 @@ void TargetGroupInfo::SetAssociatedRule(const vector<AssociationItem>& _associat
 bool TargetGroupInfo::AssociatedRuleHasBeenSet() const
 {
     return m_associatedRuleHasBeenSet;
+}
+
+string TargetGroupInfo::GetTargetGroupType() const
+{
+    return m_targetGroupType;
+}
+
+void TargetGroupInfo::SetTargetGroupType(const string& _targetGroupType)
+{
+    m_targetGroupType = _targetGroupType;
+    m_targetGroupTypeHasBeenSet = true;
+}
+
+bool TargetGroupInfo::TargetGroupTypeHasBeenSet() const
+{
+    return m_targetGroupTypeHasBeenSet;
+}
+
+int64_t TargetGroupInfo::GetAssociatedRuleCount() const
+{
+    return m_associatedRuleCount;
+}
+
+void TargetGroupInfo::SetAssociatedRuleCount(const int64_t& _associatedRuleCount)
+{
+    m_associatedRuleCount = _associatedRuleCount;
+    m_associatedRuleCountHasBeenSet = true;
+}
+
+bool TargetGroupInfo::AssociatedRuleCountHasBeenSet() const
+{
+    return m_associatedRuleCountHasBeenSet;
+}
+
+int64_t TargetGroupInfo::GetRegisteredInstancesCount() const
+{
+    return m_registeredInstancesCount;
+}
+
+void TargetGroupInfo::SetRegisteredInstancesCount(const int64_t& _registeredInstancesCount)
+{
+    m_registeredInstancesCount = _registeredInstancesCount;
+    m_registeredInstancesCountHasBeenSet = true;
+}
+
+bool TargetGroupInfo::RegisteredInstancesCountHasBeenSet() const
+{
+    return m_registeredInstancesCountHasBeenSet;
+}
+
+vector<TagInfo> TargetGroupInfo::GetTag() const
+{
+    return m_tag;
+}
+
+void TargetGroupInfo::SetTag(const vector<TagInfo>& _tag)
+{
+    m_tag = _tag;
+    m_tagHasBeenSet = true;
+}
+
+bool TargetGroupInfo::TagHasBeenSet() const
+{
+    return m_tagHasBeenSet;
+}
+
+uint64_t TargetGroupInfo::GetWeight() const
+{
+    return m_weight;
+}
+
+void TargetGroupInfo::SetWeight(const uint64_t& _weight)
+{
+    m_weight = _weight;
+    m_weightHasBeenSet = true;
+}
+
+bool TargetGroupInfo::WeightHasBeenSet() const
+{
+    return m_weightHasBeenSet;
 }
 
