@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * sql排序字段
+                * 排序字段
                 */
                 class OrderBy : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取需要排序的字段
-                     * @return Key 需要排序的字段
+                     * 获取需要排序的字段，现支持 startTIme, endTime, duration
+                     * @return Key 需要排序的字段，现支持 startTIme, endTime, duration
                      * 
                      */
                     std::string GetKey() const;
 
                     /**
-                     * 设置需要排序的字段
-                     * @param _key 需要排序的字段
+                     * 设置需要排序的字段，现支持 startTIme, endTime, duration
+                     * @param _key 需要排序的字段，现支持 startTIme, endTime, duration
                      * 
                      */
                     void SetKey(const std::string& _key);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool KeyHasBeenSet() const;
 
                     /**
-                     * 获取顺序排序/倒序排序
-                     * @return Value 顺序排序/倒序排序
+                     * 获取asc 顺序排序 / desc 倒序排序
+                     * @return Value asc 顺序排序 / desc 倒序排序
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
-                     * 设置顺序排序/倒序排序
-                     * @param _value 顺序排序/倒序排序
+                     * 设置asc 顺序排序 / desc 倒序排序
+                     * @param _value asc 顺序排序 / desc 倒序排序
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 需要排序的字段
+                     * 需要排序的字段，现支持 startTIme, endTime, duration
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
 
                     /**
-                     * 顺序排序/倒序排序
+                     * asc 顺序排序 / desc 倒序排序
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;

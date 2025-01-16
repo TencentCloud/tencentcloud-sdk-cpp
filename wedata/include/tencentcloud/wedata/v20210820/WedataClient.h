@@ -359,6 +359,8 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskRunHistoryResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskScriptRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskScriptResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeTaskTableMetricOverviewRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeTaskTableMetricOverviewResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTemplateDimCountRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTemplateDimCountResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeThirdTaskRunLogRequest.h>
@@ -1019,6 +1021,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTaskScriptResponse> DescribeTaskScriptOutcome;
                 typedef std::future<DescribeTaskScriptOutcome> DescribeTaskScriptOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeTaskScriptRequest&, DescribeTaskScriptOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskScriptAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTaskTableMetricOverviewResponse> DescribeTaskTableMetricOverviewOutcome;
+                typedef std::future<DescribeTaskTableMetricOverviewOutcome> DescribeTaskTableMetricOverviewOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeTaskTableMetricOverviewRequest&, DescribeTaskTableMetricOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskTableMetricOverviewAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTemplateDimCountResponse> DescribeTemplateDimCountOutcome;
                 typedef std::future<DescribeTemplateDimCountOutcome> DescribeTemplateDimCountOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeTemplateDimCountRequest&, DescribeTemplateDimCountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTemplateDimCountAsyncHandler;
@@ -2749,6 +2754,15 @@ namespace TencentCloud
                 DescribeTaskScriptOutcome DescribeTaskScript(const Model::DescribeTaskScriptRequest &request);
                 void DescribeTaskScriptAsync(const Model::DescribeTaskScriptRequest& request, const DescribeTaskScriptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTaskScriptOutcomeCallable DescribeTaskScriptCallable(const Model::DescribeTaskScriptRequest& request);
+
+                /**
+                 *查询实时任务表粒度指标概览
+                 * @param req DescribeTaskTableMetricOverviewRequest
+                 * @return DescribeTaskTableMetricOverviewOutcome
+                 */
+                DescribeTaskTableMetricOverviewOutcome DescribeTaskTableMetricOverview(const Model::DescribeTaskTableMetricOverviewRequest &request);
+                void DescribeTaskTableMetricOverviewAsync(const Model::DescribeTaskTableMetricOverviewRequest& request, const DescribeTaskTableMetricOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTaskTableMetricOverviewOutcomeCallable DescribeTaskTableMetricOverviewCallable(const Model::DescribeTaskTableMetricOverviewRequest& request);
 
                 /**
                  *查询规则模板维度分布情况

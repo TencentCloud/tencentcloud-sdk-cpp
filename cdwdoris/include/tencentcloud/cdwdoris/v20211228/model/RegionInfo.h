@@ -112,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地域下所有可用区列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zones 地域下所有可用区列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ZoneInfo> GetZones() const;
 
                     /**
                      * 设置地域下所有可用区列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zones 地域下所有可用区列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZones(const std::vector<ZoneInfo>& _zones);
@@ -158,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取0代表是国际站 1代表不是
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsInternationalSite 0代表是国际站 1代表不是
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIsInternationalSite() const;
 
                     /**
                      * 设置0代表是国际站 1代表不是
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isInternationalSite 0代表是国际站 1代表不是
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsInternationalSite(const uint64_t& _isInternationalSite);
@@ -183,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取桶
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Bucket 桶
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBucket() const;
 
                     /**
                      * 设置桶
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bucket 桶
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBucket(const std::string& _bucket);
@@ -228,7 +216,6 @@ namespace TencentCloud
 
                     /**
                      * 地域下所有可用区列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ZoneInfo> m_zones;
                     bool m_zonesHasBeenSet;
@@ -241,14 +228,12 @@ namespace TencentCloud
 
                     /**
                      * 0代表是国际站 1代表不是
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_isInternationalSite;
                     bool m_isInternationalSiteHasBeenSet;
 
                     /**
                      * 桶
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bucket;
                     bool m_bucketHasBeenSet;

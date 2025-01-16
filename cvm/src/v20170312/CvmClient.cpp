@@ -3222,6 +3222,49 @@ CvmClient::ModifyInstancesChargeTypeOutcomeCallable CvmClient::ModifyInstancesCh
     return task->get_future();
 }
 
+CvmClient::ModifyInstancesDisasterRecoverGroupOutcome CvmClient::ModifyInstancesDisasterRecoverGroup(const ModifyInstancesDisasterRecoverGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInstancesDisasterRecoverGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInstancesDisasterRecoverGroupResponse rsp = ModifyInstancesDisasterRecoverGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInstancesDisasterRecoverGroupOutcome(rsp);
+        else
+            return ModifyInstancesDisasterRecoverGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInstancesDisasterRecoverGroupOutcome(outcome.GetError());
+    }
+}
+
+void CvmClient::ModifyInstancesDisasterRecoverGroupAsync(const ModifyInstancesDisasterRecoverGroupRequest& request, const ModifyInstancesDisasterRecoverGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyInstancesDisasterRecoverGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CvmClient::ModifyInstancesDisasterRecoverGroupOutcomeCallable CvmClient::ModifyInstancesDisasterRecoverGroupCallable(const ModifyInstancesDisasterRecoverGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyInstancesDisasterRecoverGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyInstancesDisasterRecoverGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CvmClient::ModifyInstancesProjectOutcome CvmClient::ModifyInstancesProject(const ModifyInstancesProjectRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyInstancesProject");

@@ -379,6 +379,27 @@ namespace TencentCloud
                      */
                     bool IsPendingIssueHasBeenSet() const;
 
+                    /**
+                     * 获取筛选指定证书ID的证书，只支持有权限的证书ID
+                     * @return CertIds 筛选指定证书ID的证书，只支持有权限的证书ID
+                     * 
+                     */
+                    std::vector<std::string> GetCertIds() const;
+
+                    /**
+                     * 设置筛选指定证书ID的证书，只支持有权限的证书ID
+                     * @param _certIds 筛选指定证书ID的证书，只支持有权限的证书ID
+                     * 
+                     */
+                    void SetCertIds(const std::vector<std::string>& _certIds);
+
+                    /**
+                     * 判断参数 CertIds 是否已赋值
+                     * @return CertIds 是否已赋值
+                     * 
+                     */
+                    bool CertIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -476,6 +497,12 @@ namespace TencentCloud
                      */
                     int64_t m_isPendingIssue;
                     bool m_isPendingIssueHasBeenSet;
+
+                    /**
+                     * 筛选指定证书ID的证书，只支持有权限的证书ID
+                     */
+                    std::vector<std::string> m_certIds;
+                    bool m_certIdsHasBeenSet;
 
                 };
             }

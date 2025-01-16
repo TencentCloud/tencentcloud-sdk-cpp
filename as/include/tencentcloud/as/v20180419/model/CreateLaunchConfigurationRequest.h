@@ -33,6 +33,7 @@
 #include <tencentcloud/as/v20180419/model/InstanceNameSettings.h>
 #include <tencentcloud/as/v20180419/model/InstanceChargePrepaid.h>
 #include <tencentcloud/as/v20180419/model/IPv6InternetAccessible.h>
+#include <tencentcloud/as/v20180419/model/Metadata.h>
 
 
 namespace TencentCloud
@@ -685,6 +686,27 @@ namespace TencentCloud
                      */
                     bool DedicatedClusterIdHasBeenSet() const;
 
+                    /**
+                     * 获取自定义metadata。
+                     * @return Metadata 自定义metadata。
+                     * 
+                     */
+                    Metadata GetMetadata() const;
+
+                    /**
+                     * 设置自定义metadata。
+                     * @param _metadata 自定义metadata。
+                     * 
+                     */
+                    void SetMetadata(const Metadata& _metadata);
+
+                    /**
+                     * 判断参数 Metadata 是否已赋值
+                     * @return Metadata 是否已赋值
+                     * 
+                     */
+                    bool MetadataHasBeenSet() const;
+
                 private:
 
                     /**
@@ -864,6 +886,12 @@ namespace TencentCloud
                      */
                     std::string m_dedicatedClusterId;
                     bool m_dedicatedClusterIdHasBeenSet;
+
+                    /**
+                     * 自定义metadata。
+                     */
+                    Metadata m_metadata;
+                    bool m_metadataHasBeenSet;
 
                 };
             }

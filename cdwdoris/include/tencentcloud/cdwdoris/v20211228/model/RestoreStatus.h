@@ -489,18 +489,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备份实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackupJobId 备份实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBackupJobId() const;
 
                     /**
                      * 设置备份实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _backupJobId 备份实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBackupJobId(const int64_t& _backupJobId);
@@ -514,18 +510,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例对应snapshot的id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskId 实例对应snapshot的id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTaskId() const;
 
                     /**
                      * 设置实例对应snapshot的id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskId 实例对应snapshot的id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskId(const int64_t& _taskId);
@@ -667,14 +659,12 @@ namespace TencentCloud
 
                     /**
                      * 备份实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_backupJobId;
                     bool m_backupJobIdHasBeenSet;
 
                     /**
                      * 实例对应snapshot的id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_taskId;
                     bool m_taskIdHasBeenSet;

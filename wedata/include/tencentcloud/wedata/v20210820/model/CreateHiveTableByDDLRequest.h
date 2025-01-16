@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool DatabaseHasBeenSet() const;
 
                     /**
-                     * 获取建hive表ddl
-                     * @return DDLSql 建hive表ddl
+                     * 获取建hive表ddl的base64编码
+                     * @return DDLSql 建hive表ddl的base64编码
                      * 
                      */
                     std::string GetDDLSql() const;
 
                     /**
-                     * 设置建hive表ddl
-                     * @param _dDLSql 建hive表ddl
+                     * 设置建hive表ddl的base64编码
+                     * @param _dDLSql 建hive表ddl的base64编码
                      * 
                      */
                     void SetDDLSql(const std::string& _dDLSql);
@@ -309,7 +309,7 @@ namespace TencentCloud
                     bool m_databaseHasBeenSet;
 
                     /**
-                     * 建hive表ddl
+                     * 建hive表ddl的base64编码
                      */
                     std::string m_dDLSql;
                     bool m_dDLSqlHasBeenSet;

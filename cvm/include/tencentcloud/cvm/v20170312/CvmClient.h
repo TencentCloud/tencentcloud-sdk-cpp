@@ -171,6 +171,8 @@
 #include <tencentcloud/cvm/v20170312/model/ModifyInstancesAttributeResponse.h>
 #include <tencentcloud/cvm/v20170312/model/ModifyInstancesChargeTypeRequest.h>
 #include <tencentcloud/cvm/v20170312/model/ModifyInstancesChargeTypeResponse.h>
+#include <tencentcloud/cvm/v20170312/model/ModifyInstancesDisasterRecoverGroupRequest.h>
+#include <tencentcloud/cvm/v20170312/model/ModifyInstancesDisasterRecoverGroupResponse.h>
 #include <tencentcloud/cvm/v20170312/model/ModifyInstancesProjectRequest.h>
 #include <tencentcloud/cvm/v20170312/model/ModifyInstancesProjectResponse.h>
 #include <tencentcloud/cvm/v20170312/model/ModifyInstancesRenewFlagRequest.h>
@@ -451,6 +453,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyInstancesChargeTypeResponse> ModifyInstancesChargeTypeOutcome;
                 typedef std::future<ModifyInstancesChargeTypeOutcome> ModifyInstancesChargeTypeOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::ModifyInstancesChargeTypeRequest&, ModifyInstancesChargeTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstancesChargeTypeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyInstancesDisasterRecoverGroupResponse> ModifyInstancesDisasterRecoverGroupOutcome;
+                typedef std::future<ModifyInstancesDisasterRecoverGroupOutcome> ModifyInstancesDisasterRecoverGroupOutcomeCallable;
+                typedef std::function<void(const CvmClient*, const Model::ModifyInstancesDisasterRecoverGroupRequest&, ModifyInstancesDisasterRecoverGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstancesDisasterRecoverGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyInstancesProjectResponse> ModifyInstancesProjectOutcome;
                 typedef std::future<ModifyInstancesProjectOutcome> ModifyInstancesProjectOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::ModifyInstancesProjectRequest&, ModifyInstancesProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstancesProjectAsyncHandler;
@@ -1312,6 +1317,16 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
                 ModifyInstancesChargeTypeOutcome ModifyInstancesChargeType(const Model::ModifyInstancesChargeTypeRequest &request);
                 void ModifyInstancesChargeTypeAsync(const Model::ModifyInstancesChargeTypeRequest& request, const ModifyInstancesChargeTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyInstancesChargeTypeOutcomeCallable ModifyInstancesChargeTypeCallable(const Model::ModifyInstancesChargeTypeRequest& request);
+
+                /**
+                 *本接口 (ModifyInstancesDisasterRecoverGroup) 用于调整实例所在置放群组。
+* 目前只支持基础网络或私有网络实例。
+                 * @param req ModifyInstancesDisasterRecoverGroupRequest
+                 * @return ModifyInstancesDisasterRecoverGroupOutcome
+                 */
+                ModifyInstancesDisasterRecoverGroupOutcome ModifyInstancesDisasterRecoverGroup(const Model::ModifyInstancesDisasterRecoverGroupRequest &request);
+                void ModifyInstancesDisasterRecoverGroupAsync(const Model::ModifyInstancesDisasterRecoverGroupRequest& request, const ModifyInstancesDisasterRecoverGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInstancesDisasterRecoverGroupOutcomeCallable ModifyInstancesDisasterRecoverGroupCallable(const Model::ModifyInstancesDisasterRecoverGroupRequest& request);
 
                 /**
                  *本接口 (ModifyInstancesProject) 用于修改实例所属项目。

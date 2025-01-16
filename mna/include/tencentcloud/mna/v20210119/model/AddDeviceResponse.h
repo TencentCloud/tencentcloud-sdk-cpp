@@ -73,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取签名字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Signature 签名字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSignature() const;
@@ -103,7 +101,6 @@ namespace TencentCloud
 
                     /**
                      * 签名字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_signature;
                     bool m_signatureHasBeenSet;

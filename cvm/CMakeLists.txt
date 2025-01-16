@@ -50,7 +50,7 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/DescribeHostsResponse.h
   include/tencentcloud/cvm/v20170312/model/DeleteKeyPairsRequest.h
   include/tencentcloud/cvm/v20170312/model/SystemDisk.h
-  include/tencentcloud/cvm/v20170312/model/ResetInstanceRequest.h
+  include/tencentcloud/cvm/v20170312/model/ModifyInstancesDisasterRecoverGroupRequest.h
   include/tencentcloud/cvm/v20170312/model/ModifyHpcClusterAttributeRequest.h
   include/tencentcloud/cvm/v20170312/model/ExitRescueModeResponse.h
   include/tencentcloud/cvm/v20170312/model/DescribeChcHostsResponse.h
@@ -219,6 +219,7 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/TerminateInstancesRequest.h
   include/tencentcloud/cvm/v20170312/model/SharePermission.h
   include/tencentcloud/cvm/v20170312/model/DeleteImagesResponse.h
+  include/tencentcloud/cvm/v20170312/model/ResetInstanceRequest.h
   include/tencentcloud/cvm/v20170312/model/ImportImageResponse.h
   include/tencentcloud/cvm/v20170312/model/ModifyDisasterRecoverGroupAttributeRequest.h
   include/tencentcloud/cvm/v20170312/model/ConfigureChcAssistVpcResponse.h
@@ -259,6 +260,7 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/ResetInstanceResponse.h
   include/tencentcloud/cvm/v20170312/model/ProgramFpgaImageRequest.h
   include/tencentcloud/cvm/v20170312/model/DisasterRecoverGroup.h
+  include/tencentcloud/cvm/v20170312/model/ModifyInstancesDisasterRecoverGroupResponse.h
   include/tencentcloud/cvm/v20170312/model/VirtualPrivateCloud.h
   include/tencentcloud/cvm/v20170312/model/InternetBandwidthConfig.h
   include/tencentcloud/cvm/v20170312/model/ModifyDisasterRecoverGroupAttributeResponse.h
@@ -312,7 +314,7 @@ set(cvm_src
   src/v20170312/model/DescribeHostsResponse.cpp
   src/v20170312/model/DeleteKeyPairsRequest.cpp
   src/v20170312/model/SystemDisk.cpp
-  src/v20170312/model/ResetInstanceRequest.cpp
+  src/v20170312/model/ModifyInstancesDisasterRecoverGroupRequest.cpp
   src/v20170312/model/ModifyHpcClusterAttributeRequest.cpp
   src/v20170312/model/ExitRescueModeResponse.cpp
   src/v20170312/model/DescribeChcHostsResponse.cpp
@@ -481,6 +483,7 @@ set(cvm_src
   src/v20170312/model/TerminateInstancesRequest.cpp
   src/v20170312/model/SharePermission.cpp
   src/v20170312/model/DeleteImagesResponse.cpp
+  src/v20170312/model/ResetInstanceRequest.cpp
   src/v20170312/model/ImportImageResponse.cpp
   src/v20170312/model/ModifyDisasterRecoverGroupAttributeRequest.cpp
   src/v20170312/model/ConfigureChcAssistVpcResponse.cpp
@@ -521,6 +524,7 @@ set(cvm_src
   src/v20170312/model/ResetInstanceResponse.cpp
   src/v20170312/model/ProgramFpgaImageRequest.cpp
   src/v20170312/model/DisasterRecoverGroup.cpp
+  src/v20170312/model/ModifyInstancesDisasterRecoverGroupResponse.cpp
   src/v20170312/model/VirtualPrivateCloud.cpp
   src/v20170312/model/InternetBandwidthConfig.cpp
   src/v20170312/model/ModifyDisasterRecoverGroupAttributeResponse.cpp

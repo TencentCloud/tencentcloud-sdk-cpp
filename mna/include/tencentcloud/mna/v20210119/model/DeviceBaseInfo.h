@@ -216,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupId 设备分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置设备分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupId 设备分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -241,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备分组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupName 设备分组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置设备分组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupName 设备分组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -266,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备无流量包处理方式，0: 按量付费，1: 截断加速
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowTrunc 设备无流量包处理方式，0: 按量付费，1: 截断加速
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFlowTrunc() const;
 
                     /**
                      * 设置设备无流量包处理方式，0: 按量付费，1: 截断加速
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _flowTrunc 设备无流量包处理方式，0: 按量付费，1: 截断加速
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFlowTrunc(const int64_t& _flowTrunc);
@@ -291,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备sn
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Sn 设备sn
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSn() const;
 
                     /**
                      * 设置设备sn
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sn 设备sn
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSn(const std::string& _sn);
@@ -316,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取厂商
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vendor 厂商
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVendor() const;
 
                     /**
                      * 设置厂商
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vendor 厂商
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVendor(const std::string& _vendor);
@@ -391,35 +371,30 @@ namespace TencentCloud
 
                     /**
                      * 设备分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
                      * 设备分组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
 
                     /**
                      * 设备无流量包处理方式，0: 按量付费，1: 截断加速
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_flowTrunc;
                     bool m_flowTruncHasBeenSet;
 
                     /**
                      * 设备sn
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sn;
                     bool m_snHasBeenSet;
 
                     /**
                      * 厂商
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vendor;
                     bool m_vendorHasBeenSet;

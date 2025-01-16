@@ -22,8 +22,8 @@ using namespace std;
 
 QueryMetricItem::QueryMetricItem() :
     m_metricNameHasBeenSet(false),
-    m_compareHasBeenSet(false),
-    m_comparesHasBeenSet(false)
+    m_comparesHasBeenSet(false),
+    m_compareHasBeenSet(false)
 {
 }
 
@@ -42,16 +42,6 @@ CoreInternalOutcome QueryMetricItem::Deserialize(const rapidjson::Value &value)
         m_metricNameHasBeenSet = true;
     }
 
-    if (value.HasMember("Compare") && !value["Compare"].IsNull())
-    {
-        if (!value["Compare"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `QueryMetricItem.Compare` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_compare = string(value["Compare"].GetString());
-        m_compareHasBeenSet = true;
-    }
-
     if (value.HasMember("Compares") && !value["Compares"].IsNull())
     {
         if (!value["Compares"].IsArray())
@@ -63,6 +53,16 @@ CoreInternalOutcome QueryMetricItem::Deserialize(const rapidjson::Value &value)
             m_compares.push_back((*itr).GetString());
         }
         m_comparesHasBeenSet = true;
+    }
+
+    if (value.HasMember("Compare") && !value["Compare"].IsNull())
+    {
+        if (!value["Compare"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QueryMetricItem.Compare` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_compare = string(value["Compare"].GetString());
+        m_compareHasBeenSet = true;
     }
 
 
@@ -80,14 +80,6 @@ void QueryMetricItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         value.AddMember(iKey, rapidjson::Value(m_metricName.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_compareHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Compare";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_compare.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_comparesHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -99,6 +91,14 @@ void QueryMetricItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_compareHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Compare";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_compare.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -120,22 +120,6 @@ bool QueryMetricItem::MetricNameHasBeenSet() const
     return m_metricNameHasBeenSet;
 }
 
-string QueryMetricItem::GetCompare() const
-{
-    return m_compare;
-}
-
-void QueryMetricItem::SetCompare(const string& _compare)
-{
-    m_compare = _compare;
-    m_compareHasBeenSet = true;
-}
-
-bool QueryMetricItem::CompareHasBeenSet() const
-{
-    return m_compareHasBeenSet;
-}
-
 vector<string> QueryMetricItem::GetCompares() const
 {
     return m_compares;
@@ -150,5 +134,21 @@ void QueryMetricItem::SetCompares(const vector<string>& _compares)
 bool QueryMetricItem::ComparesHasBeenSet() const
 {
     return m_comparesHasBeenSet;
+}
+
+string QueryMetricItem::GetCompare() const
+{
+    return m_compare;
+}
+
+void QueryMetricItem::SetCompare(const string& _compare)
+{
+    m_compare = _compare;
+    m_compareHasBeenSet = true;
+}
+
+bool QueryMetricItem::CompareHasBeenSet() const
+{
+    return m_compareHasBeenSet;
 }
 

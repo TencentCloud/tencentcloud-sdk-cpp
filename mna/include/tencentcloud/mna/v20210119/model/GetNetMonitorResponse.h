@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取监控数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MonitorData 监控数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<MonitorData> GetMonitorData() const;
@@ -86,7 +84,6 @@ AM=美洲
 
                     /**
                      * 监控数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MonitorData> m_monitorData;
                     bool m_monitorDataHasBeenSet;

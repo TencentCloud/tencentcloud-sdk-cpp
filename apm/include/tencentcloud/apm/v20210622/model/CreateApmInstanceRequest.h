@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取Trace 数据保存时长，单位为天默认存储为3天
-                     * @return TraceDuration Trace 数据保存时长，单位为天默认存储为3天
+                     * 获取Trace 数据保存时长（单位：天，默认存储时长为3天）
+                     * @return TraceDuration Trace 数据保存时长（单位：天，默认存储时长为3天）
                      * 
                      */
                     int64_t GetTraceDuration() const;
 
                     /**
-                     * 设置Trace 数据保存时长，单位为天默认存储为3天
-                     * @param _traceDuration Trace 数据保存时长，单位为天默认存储为3天
+                     * 设置Trace 数据保存时长（单位：天，默认存储时长为3天）
+                     * @param _traceDuration Trace 数据保存时长（单位：天，默认存储时长为3天）
                      * 
                      */
                     void SetTraceDuration(const int64_t& _traceDuration);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool TraceDurationHasBeenSet() const;
 
                     /**
-                     * 获取标签列表
-                     * @return Tags 标签列表
+                     * 获取业务系统 Tag 列表
+                     * @return Tags 业务系统 Tag 列表
                      * 
                      */
                     std::vector<ApmTag> GetTags() const;
 
                     /**
-                     * 设置标签列表
-                     * @param _tags 标签列表
+                     * 设置业务系统 Tag 列表
+                     * @param _tags 业务系统 Tag 列表
                      * 
                      */
                     void SetTags(const std::vector<ApmTag>& _tags);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取业务系统上报额度值，默认赋值为0表示不限制上报额度
-                     * @return SpanDailyCounters 业务系统上报额度值，默认赋值为0表示不限制上报额度
+                     * 获取业务系统上报额度值，默认赋值为0表示不限制上报额度，已废弃
+                     * @return SpanDailyCounters 业务系统上报额度值，默认赋值为0表示不限制上报额度，已废弃
                      * 
                      */
                     uint64_t GetSpanDailyCounters() const;
 
                     /**
-                     * 设置业务系统上报额度值，默认赋值为0表示不限制上报额度
-                     * @param _spanDailyCounters 业务系统上报额度值，默认赋值为0表示不限制上报额度
+                     * 设置业务系统上报额度值，默认赋值为0表示不限制上报额度，已废弃
+                     * @param _spanDailyCounters 业务系统上报额度值，默认赋值为0表示不限制上报额度，已废弃
                      * 
                      */
                     void SetSpanDailyCounters(const uint64_t& _spanDailyCounters);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool SpanDailyCountersHasBeenSet() const;
 
                     /**
-                     * 获取业务系统的计费模式
-                     * @return PayMode 业务系统的计费模式
+                     * 获取业务系统的计费模式（0=按量付费，1=预付费）
+                     * @return PayMode 业务系统的计费模式（0=按量付费，1=预付费）
                      * 
                      */
                     int64_t GetPayMode() const;
 
                     /**
-                     * 设置业务系统的计费模式
-                     * @param _payMode 业务系统的计费模式
+                     * 设置业务系统的计费模式（0=按量付费，1=预付费）
+                     * @param _payMode 业务系统的计费模式（0=按量付费，1=预付费）
                      * 
                      */
                     void SetPayMode(const int64_t& _payMode);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取（0=付费版；1=tsf 受限免费版；2=免费版）
-                     * @return Free （0=付费版；1=tsf 受限免费版；2=免费版）
+                     * 获取是否为免费版业务系统（0=付费版；1=TSF 受限免费版；2=免费版）
+                     * @return Free 是否为免费版业务系统（0=付费版；1=TSF 受限免费版；2=免费版）
                      * 
                      */
                     int64_t GetFree() const;
 
                     /**
-                     * 设置（0=付费版；1=tsf 受限免费版；2=免费版）
-                     * @param _free （0=付费版；1=tsf 受限免费版；2=免费版）
+                     * 设置是否为免费版业务系统（0=付费版；1=TSF 受限免费版；2=免费版）
+                     * @param _free 是否为免费版业务系统（0=付费版；1=TSF 受限免费版；2=免费版）
                      * 
                      */
                     void SetFree(const int64_t& _free);
@@ -205,31 +205,31 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * Trace 数据保存时长，单位为天默认存储为3天
+                     * Trace 数据保存时长（单位：天，默认存储时长为3天）
                      */
                     int64_t m_traceDuration;
                     bool m_traceDurationHasBeenSet;
 
                     /**
-                     * 标签列表
+                     * 业务系统 Tag 列表
                      */
                     std::vector<ApmTag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 业务系统上报额度值，默认赋值为0表示不限制上报额度
+                     * 业务系统上报额度值，默认赋值为0表示不限制上报额度，已废弃
                      */
                     uint64_t m_spanDailyCounters;
                     bool m_spanDailyCountersHasBeenSet;
 
                     /**
-                     * 业务系统的计费模式
+                     * 业务系统的计费模式（0=按量付费，1=预付费）
                      */
                     int64_t m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * （0=付费版；1=tsf 受限免费版；2=免费版）
+                     * 是否为免费版业务系统（0=付费版；1=TSF 受限免费版；2=免费版）
                      */
                     int64_t m_free;
                     bool m_freeHasBeenSet;

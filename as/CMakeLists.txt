@@ -29,6 +29,7 @@ set(as_public_header_model
   include/tencentcloud/as/v20180419/model/ModifyScheduledActionRequest.h
   include/tencentcloud/as/v20180419/model/DescribeAutoScalingGroupsRequest.h
   include/tencentcloud/as/v20180419/model/LaunchConfiguration.h
+  include/tencentcloud/as/v20180419/model/Metadata.h
   include/tencentcloud/as/v20180419/model/DescribeAccountLimitsResponse.h
   include/tencentcloud/as/v20180419/model/CreateLaunchConfigurationResponse.h
   include/tencentcloud/as/v20180419/model/RelatedInstance.h
@@ -172,6 +173,7 @@ set(as_public_header_model
   include/tencentcloud/as/v20180419/model/ModifyDesiredCapacityResponse.h
   include/tencentcloud/as/v20180419/model/StopAutoScalingInstancesRequest.h
   include/tencentcloud/as/v20180419/model/RunMonitorServiceEnabled.h
+  include/tencentcloud/as/v20180419/model/MetadataItem.h
   include/tencentcloud/as/v20180419/model/CancelInstanceRefreshResponse.h
   include/tencentcloud/as/v20180419/model/ActivtyRelatedInstance.h
   include/tencentcloud/as/v20180419/model/CreateAutoScalingGroupFromInstanceRequest.h
@@ -195,6 +197,7 @@ set(as_src
   src/v20180419/model/ModifyScheduledActionRequest.cpp
   src/v20180419/model/DescribeAutoScalingGroupsRequest.cpp
   src/v20180419/model/LaunchConfiguration.cpp
+  src/v20180419/model/Metadata.cpp
   src/v20180419/model/DescribeAccountLimitsResponse.cpp
   src/v20180419/model/CreateLaunchConfigurationResponse.cpp
   src/v20180419/model/RelatedInstance.cpp
@@ -338,6 +341,7 @@ set(as_src
   src/v20180419/model/ModifyDesiredCapacityResponse.cpp
   src/v20180419/model/StopAutoScalingInstancesRequest.cpp
   src/v20180419/model/RunMonitorServiceEnabled.cpp
+  src/v20180419/model/MetadataItem.cpp
   src/v20180419/model/CancelInstanceRefreshResponse.cpp
   src/v20180419/model/ActivtyRelatedInstance.cpp
   src/v20180419/model/CreateAutoScalingGroupFromInstanceRequest.cpp

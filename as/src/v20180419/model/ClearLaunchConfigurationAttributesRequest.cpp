@@ -28,7 +28,8 @@ ClearLaunchConfigurationAttributesRequest::ClearLaunchConfigurationAttributesReq
     m_clearHostNameSettingsHasBeenSet(false),
     m_clearInstanceNameSettingsHasBeenSet(false),
     m_clearDisasterRecoverGroupIdsHasBeenSet(false),
-    m_clearInstanceTagsHasBeenSet(false)
+    m_clearInstanceTagsHasBeenSet(false),
+    m_clearMetadataHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string ClearLaunchConfigurationAttributesRequest::ToJsonString() const
         string key = "ClearInstanceTags";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_clearInstanceTags, allocator);
+    }
+
+    if (m_clearMetadataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClearMetadata";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_clearMetadata, allocator);
     }
 
 
@@ -189,6 +198,22 @@ void ClearLaunchConfigurationAttributesRequest::SetClearInstanceTags(const bool&
 bool ClearLaunchConfigurationAttributesRequest::ClearInstanceTagsHasBeenSet() const
 {
     return m_clearInstanceTagsHasBeenSet;
+}
+
+bool ClearLaunchConfigurationAttributesRequest::GetClearMetadata() const
+{
+    return m_clearMetadata;
+}
+
+void ClearLaunchConfigurationAttributesRequest::SetClearMetadata(const bool& _clearMetadata)
+{
+    m_clearMetadata = _clearMetadata;
+    m_clearMetadataHasBeenSet = true;
+}
+
+bool ClearLaunchConfigurationAttributesRequest::ClearMetadataHasBeenSet() const
+{
+    return m_clearMetadataHasBeenSet;
 }
 
 

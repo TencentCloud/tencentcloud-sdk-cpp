@@ -188,6 +188,27 @@ namespace TencentCloud
                      */
                     bool ClearInstanceTagsHasBeenSet() const;
 
+                    /**
+                     * 获取是否清空 MetaData，非必填，默认为 false。填 true 代表清空 MetaData，清空后基于此新创建的云主机将不会关联自定义的 Metadata。
+                     * @return ClearMetadata 是否清空 MetaData，非必填，默认为 false。填 true 代表清空 MetaData，清空后基于此新创建的云主机将不会关联自定义的 Metadata。
+                     * 
+                     */
+                    bool GetClearMetadata() const;
+
+                    /**
+                     * 设置是否清空 MetaData，非必填，默认为 false。填 true 代表清空 MetaData，清空后基于此新创建的云主机将不会关联自定义的 Metadata。
+                     * @param _clearMetadata 是否清空 MetaData，非必填，默认为 false。填 true 代表清空 MetaData，清空后基于此新创建的云主机将不会关联自定义的 Metadata。
+                     * 
+                     */
+                    void SetClearMetadata(const bool& _clearMetadata);
+
+                    /**
+                     * 判断参数 ClearMetadata 是否已赋值
+                     * @return ClearMetadata 是否已赋值
+                     * 
+                     */
+                    bool ClearMetadataHasBeenSet() const;
+
                 private:
 
                     /**
@@ -230,6 +251,12 @@ namespace TencentCloud
                      */
                     bool m_clearInstanceTags;
                     bool m_clearInstanceTagsHasBeenSet;
+
+                    /**
+                     * 是否清空 MetaData，非必填，默认为 false。填 true 代表清空 MetaData，清空后基于此新创建的云主机将不会关联自定义的 Metadata。
+                     */
+                    bool m_clearMetadata;
+                    bool m_clearMetadataHasBeenSet;
 
                 };
             }

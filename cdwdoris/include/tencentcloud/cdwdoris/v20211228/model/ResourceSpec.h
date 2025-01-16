@@ -133,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取系统盘描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SystemDisk 系统盘描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DiskSpec GetSystemDisk() const;
 
                     /**
                      * 设置系统盘描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _systemDisk 系统盘描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSystemDisk(const DiskSpec& _systemDisk);
@@ -158,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据盘描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataDisk 数据盘描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DiskSpec GetDataDisk() const;
 
                     /**
                      * 设置数据盘描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataDisk 数据盘描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataDisk(const DiskSpec& _dataDisk);
@@ -183,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最大节点数目限制
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxNodeSize 最大节点数目限制
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxNodeSize() const;
 
                     /**
                      * 设置最大节点数目限制
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxNodeSize 最大节点数目限制
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxNodeSize(const int64_t& _maxNodeSize);
@@ -208,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否可用，false代表售罄
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Available 是否可用，false代表售罄
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetAvailable() const;
 
                     /**
                      * 设置是否可用，false代表售罄
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _available 是否可用，false代表售罄
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAvailable(const bool& _available);
@@ -233,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规格描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ComputeSpecDesc 规格描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetComputeSpecDesc() const;
 
                     /**
                      * 设置规格描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _computeSpecDesc 规格描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetComputeSpecDesc(const std::string& _computeSpecDesc);
@@ -258,18 +238,14 @@ namespace TencentCloud
 
                     /**
                      * 获取cvm库存
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceQuota cvm库存
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetInstanceQuota() const;
 
                     /**
                      * 设置cvm库存
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceQuota cvm库存
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceQuota(const int64_t& _instanceQuota);
@@ -309,42 +285,36 @@ namespace TencentCloud
 
                     /**
                      * 系统盘描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DiskSpec m_systemDisk;
                     bool m_systemDiskHasBeenSet;
 
                     /**
                      * 数据盘描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DiskSpec m_dataDisk;
                     bool m_dataDiskHasBeenSet;
 
                     /**
                      * 最大节点数目限制
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxNodeSize;
                     bool m_maxNodeSizeHasBeenSet;
 
                     /**
                      * 是否可用，false代表售罄
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_available;
                     bool m_availableHasBeenSet;
 
                     /**
                      * 规格描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_computeSpecDesc;
                     bool m_computeSpecDescHasBeenSet;
 
                     /**
                      * cvm库存
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_instanceQuota;
                     bool m_instanceQuotaHasBeenSet;

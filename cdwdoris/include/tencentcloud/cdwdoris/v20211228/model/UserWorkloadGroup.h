@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取test
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserName test
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置test
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userName test
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserName(const std::string& _userName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取normal
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WorkloadGroupName normal
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWorkloadGroupName() const;
 
                     /**
                      * 设置normal
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _workloadGroupName normal
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWorkloadGroupName(const std::string& _workloadGroupName);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * test
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;
 
                     /**
                      * normal
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_workloadGroupName;
                     bool m_workloadGroupNameHasBeenSet;

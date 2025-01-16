@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取搜索业务系统名
-                     * @return InstanceName 搜索业务系统名
+                     * 获取按业务系统名过滤
+                     * @return InstanceName 按业务系统名过滤
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置搜索业务系统名
-                     * @param _instanceName 搜索业务系统名
+                     * 设置按业务系统名过滤
+                     * @param _instanceName 按业务系统名过滤
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取过滤业务系统 ID
-                     * @return InstanceIds 过滤业务系统 ID
+                     * 获取按业务系统 ID 过滤
+                     * @return InstanceIds 按业务系统 ID 过滤
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置过滤业务系统 ID
-                     * @param _instanceIds 过滤业务系统 ID
+                     * 设置按业务系统 ID 过滤
+                     * @param _instanceIds 按业务系统 ID 过滤
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取是否查询官方 Demo 业务系统
-                     * @return DemoInstanceFlag 是否查询官方 Demo 业务系统
+                     * 获取是否查询官方 Demo 业务系统（0=非 Demo 业务系统，1=Demo 业务系统，默认为0）
+                     * @return DemoInstanceFlag 是否查询官方 Demo 业务系统（0=非 Demo 业务系统，1=Demo 业务系统，默认为0）
                      * 
                      */
                     int64_t GetDemoInstanceFlag() const;
 
                     /**
-                     * 设置是否查询官方 Demo 业务系统
-                     * @param _demoInstanceFlag 是否查询官方 Demo 业务系统
+                     * 设置是否查询官方 Demo 业务系统（0=非 Demo 业务系统，1=Demo 业务系统，默认为0）
+                     * @param _demoInstanceFlag 是否查询官方 Demo 业务系统（0=非 Demo 业务系统，1=Demo 业务系统，默认为0）
                      * 
                      */
                     void SetDemoInstanceFlag(const int64_t& _demoInstanceFlag);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool DemoInstanceFlagHasBeenSet() const;
 
                     /**
-                     * 获取是否查询全地域业务系统
-                     * @return AllRegionsFlag 是否查询全地域业务系统
+                     * 获取是否查询全地域业务系统（0=不查询全地域，1=查询全地域，默认为0）
+                     * @return AllRegionsFlag 是否查询全地域业务系统（0=不查询全地域，1=查询全地域，默认为0）
                      * 
                      */
                     int64_t GetAllRegionsFlag() const;
 
                     /**
-                     * 设置是否查询全地域业务系统
-                     * @param _allRegionsFlag 是否查询全地域业务系统
+                     * 设置是否查询全地域业务系统（0=不查询全地域，1=查询全地域，默认为0）
+                     * @param _allRegionsFlag 是否查询全地域业务系统（0=不查询全地域，1=查询全地域，默认为0）
                      * 
                      */
                     void SetAllRegionsFlag(const int64_t& _allRegionsFlag);
@@ -157,25 +157,25 @@ namespace TencentCloud
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 搜索业务系统名
+                     * 按业务系统名过滤
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 过滤业务系统 ID
+                     * 按业务系统 ID 过滤
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * 是否查询官方 Demo 业务系统
+                     * 是否查询官方 Demo 业务系统（0=非 Demo 业务系统，1=Demo 业务系统，默认为0）
                      */
                     int64_t m_demoInstanceFlag;
                     bool m_demoInstanceFlagHasBeenSet;
 
                     /**
-                     * 是否查询全地域业务系统
+                     * 是否查询全地域业务系统（0=不查询全地域，1=查询全地域，默认为0）
                      */
                     int64_t m_allRegionsFlag;
                     bool m_allRegionsFlagHasBeenSet;

@@ -49,7 +49,8 @@ CreateLaunchConfigurationRequest::CreateLaunchConfigurationRequest() :
     m_iPv6InternetAccessibleHasBeenSet(false),
     m_disasterRecoverGroupIdsHasBeenSet(false),
     m_imageFamilyHasBeenSet(false),
-    m_dedicatedClusterIdHasBeenSet(false)
+    m_dedicatedClusterIdHasBeenSet(false),
+    m_metadataHasBeenSet(false)
 {
 }
 
@@ -319,6 +320,15 @@ string CreateLaunchConfigurationRequest::ToJsonString() const
         string key = "DedicatedClusterId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dedicatedClusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_metadataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Metadata";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_metadata.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -759,6 +769,22 @@ void CreateLaunchConfigurationRequest::SetDedicatedClusterId(const string& _dedi
 bool CreateLaunchConfigurationRequest::DedicatedClusterIdHasBeenSet() const
 {
     return m_dedicatedClusterIdHasBeenSet;
+}
+
+Metadata CreateLaunchConfigurationRequest::GetMetadata() const
+{
+    return m_metadata;
+}
+
+void CreateLaunchConfigurationRequest::SetMetadata(const Metadata& _metadata)
+{
+    m_metadata = _metadata;
+    m_metadataHasBeenSet = true;
+}
+
+bool CreateLaunchConfigurationRequest::MetadataHasBeenSet() const
+{
+    return m_metadataHasBeenSet;
 }
 
 

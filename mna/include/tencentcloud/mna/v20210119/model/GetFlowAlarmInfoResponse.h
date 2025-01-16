@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取流量包的告警阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlarmValue 流量包的告警阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAlarmValue() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取告警通知回调url
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NotifyUrl 告警通知回调url
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNotifyUrl() const;
@@ -77,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取告警通知回调key
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CallbackKey 告警通知回调key
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCallbackKey() const;
@@ -95,21 +89,18 @@ namespace TencentCloud
 
                     /**
                      * 流量包的告警阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_alarmValue;
                     bool m_alarmValueHasBeenSet;
 
                     /**
                      * 告警通知回调url
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_notifyUrl;
                     bool m_notifyUrlHasBeenSet;
 
                     /**
                      * 告警通知回调key
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_callbackKey;
                     bool m_callbackKeyHasBeenSet;

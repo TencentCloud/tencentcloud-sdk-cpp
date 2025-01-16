@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Encryptid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Encrypt Encryptid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEncrypt() const;
 
                     /**
                      * 设置Encryptid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _encrypt Encryptid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEncrypt(const int64_t& _encrypt);
@@ -136,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否为主力园区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Main 是否为主力园区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetMain() const;
 
                     /**
                      * 设置是否为主力园区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _main 是否为主力园区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMain(const bool& _main);
@@ -181,14 +173,12 @@ namespace TencentCloud
 
                     /**
                      * Encryptid
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_encrypt;
                     bool m_encryptHasBeenSet;
 
                     /**
                      * 是否为主力园区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_main;
                     bool m_mainHasBeenSet;

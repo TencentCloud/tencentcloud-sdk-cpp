@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取用户名称。
-                     * @return Name 用户名称。
+                     * 获取对应用户昵称。对应修改用户信息下“nickname“字段，在修改用户信息时，可以对该字段进行调整，从而更改用户的昵称。
+                     * @return Name 对应用户昵称。对应修改用户信息下“nickname“字段，在修改用户信息时，可以对该字段进行调整，从而更改用户的昵称。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置用户名称。
-                     * @param _name 用户名称。
+                     * 设置对应用户昵称。对应修改用户信息下“nickname“字段，在修改用户信息时，可以对该字段进行调整，从而更改用户的昵称。
+                     * @param _name 对应用户昵称。对应修改用户信息下“nickname“字段，在修改用户信息时，可以对该字段进行调整，从而更改用户的昵称。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -85,19 +85,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取用户在客户系统的Id，需要在同一应用下唯一。入参为空时默认赋值为UserId
-。
-                     * @return OriginId 用户在客户系统的Id，需要在同一应用下唯一。入参为空时默认赋值为UserId
-。
+                     * 获取用户在客户系统的Id，需要在同一应用下唯一。入参为空时默认赋值为UserId。
+                     * @return OriginId 用户在客户系统的Id，需要在同一应用下唯一。入参为空时默认赋值为UserId。
                      * 
                      */
                     std::string GetOriginId() const;
 
                     /**
-                     * 设置用户在客户系统的Id，需要在同一应用下唯一。入参为空时默认赋值为UserId
-。
-                     * @param _originId 用户在客户系统的Id，需要在同一应用下唯一。入参为空时默认赋值为UserId
-。
+                     * 设置用户在客户系统的Id，需要在同一应用下唯一。入参为空时默认赋值为UserId。
+                     * @param _originId 用户在客户系统的Id，需要在同一应用下唯一。入参为空时默认赋值为UserId。
                      * 
                      */
                     void SetOriginId(const std::string& _originId);
@@ -139,14 +135,13 @@ namespace TencentCloud
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
-                     * 用户名称。
+                     * 对应用户昵称。对应修改用户信息下“nickname“字段，在修改用户信息时，可以对该字段进行调整，从而更改用户的昵称。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 用户在客户系统的Id，需要在同一应用下唯一。入参为空时默认赋值为UserId
-。
+                     * 用户在客户系统的Id，需要在同一应用下唯一。入参为空时默认赋值为UserId。
                      */
                     std::string m_originId;
                     bool m_originIdHasBeenSet;

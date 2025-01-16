@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取业务系统ID
-                     * @return InstanceId 业务系统ID
+                     * 获取业务系统 ID
+                     * @return InstanceId 业务系统 ID
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置业务系统ID
-                     * @param _instanceId 业务系统ID
+                     * 设置业务系统 ID
+                     * @param _instanceId 业务系统 ID
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取标签列表
-                     * @return Tags 标签列表
+                     * 获取Tag 列表
+                     * @return Tags Tag 列表
                      * 
                      */
                     std::vector<ApmTag> GetTags() const;
 
                     /**
-                     * 设置标签列表
-                     * @param _tags 标签列表
+                     * 设置Tag 列表
+                     * @param _tags Tag 列表
                      * 
                      */
                     void SetTags(const std::vector<ApmTag>& _tags);
@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取业务系统详情
-                     * @return Description 业务系统详情
+                     * 获取业务系统描述
+                     * @return Description 业务系统描述
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置业务系统详情
-                     * @param _description 业务系统详情
+                     * 设置业务系统描述
+                     * @param _description 业务系统描述
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取Trace数据保存时长
-                     * @return TraceDuration Trace数据保存时长
+                     * 获取Trace 数据保存时长（单位：天）
+                     * @return TraceDuration Trace 数据保存时长（单位：天）
                      * 
                      */
                     int64_t GetTraceDuration() const;
 
                     /**
-                     * 设置Trace数据保存时长
-                     * @param _traceDuration Trace数据保存时长
+                     * 设置Trace 数据保存时长（单位：天）
+                     * @param _traceDuration Trace 数据保存时长（单位：天）
                      * 
                      */
                     void SetTraceDuration(const int64_t& _traceDuration);
@@ -191,15 +191,15 @@ namespace TencentCloud
                     bool SpanDailyCountersHasBeenSet() const;
 
                     /**
-                     * 获取错误率阈值
-                     * @return ErrRateThreshold 错误率阈值
+                     * 获取错误率警示线，当应用的平均错误率超出该阈值时，系统会给出异常提示。
+                     * @return ErrRateThreshold 错误率警示线，当应用的平均错误率超出该阈值时，系统会给出异常提示。
                      * 
                      */
                     int64_t GetErrRateThreshold() const;
 
                     /**
-                     * 设置错误率阈值
-                     * @param _errRateThreshold 错误率阈值
+                     * 设置错误率警示线，当应用的平均错误率超出该阈值时，系统会给出异常提示。
+                     * @param _errRateThreshold 错误率警示线，当应用的平均错误率超出该阈值时，系统会给出异常提示。
                      * 
                      */
                     void SetErrRateThreshold(const int64_t& _errRateThreshold);
@@ -212,15 +212,15 @@ namespace TencentCloud
                     bool ErrRateThresholdHasBeenSet() const;
 
                     /**
-                     * 获取采样率
-                     * @return SampleRate 采样率
+                     * 获取采样率（单位：%）
+                     * @return SampleRate 采样率（单位：%）
                      * 
                      */
                     int64_t GetSampleRate() const;
 
                     /**
-                     * 设置采样率
-                     * @param _sampleRate 采样率
+                     * 设置采样率（单位：%）
+                     * @param _sampleRate 采样率（单位：%）
                      * 
                      */
                     void SetSampleRate(const int64_t& _sampleRate);
@@ -233,15 +233,15 @@ namespace TencentCloud
                     bool SampleRateHasBeenSet() const;
 
                     /**
-                     * 获取是否开启错误采样 0 关 1 开
-                     * @return ErrorSample 是否开启错误采样 0 关 1 开
+                     * 获取是否开启错误采样（0=关, 1=开）
+                     * @return ErrorSample 是否开启错误采样（0=关, 1=开）
                      * 
                      */
                     int64_t GetErrorSample() const;
 
                     /**
-                     * 设置是否开启错误采样 0 关 1 开
-                     * @param _errorSample 是否开启错误采样 0 关 1 开
+                     * 设置是否开启错误采样（0=关, 1=开）
+                     * @param _errorSample 是否开启错误采样（0=关, 1=开）
                      * 
                      */
                     void SetErrorSample(const int64_t& _errorSample);
@@ -254,15 +254,15 @@ namespace TencentCloud
                     bool ErrorSampleHasBeenSet() const;
 
                     /**
-                     * 获取慢请求阈值
-                     * @return SlowRequestSavedThreshold 慢请求阈值
+                     * 获取采样慢调用保存阈值（单位：ms）
+                     * @return SlowRequestSavedThreshold 采样慢调用保存阈值（单位：ms）
                      * 
                      */
                     int64_t GetSlowRequestSavedThreshold() const;
 
                     /**
-                     * 设置慢请求阈值
-                     * @param _slowRequestSavedThreshold 慢请求阈值
+                     * 设置采样慢调用保存阈值（单位：ms）
+                     * @param _slowRequestSavedThreshold 采样慢调用保存阈值（单位：ms）
                      * 
                      */
                     void SetSlowRequestSavedThreshold(const int64_t& _slowRequestSavedThreshold);
@@ -275,15 +275,15 @@ namespace TencentCloud
                     bool SlowRequestSavedThresholdHasBeenSet() const;
 
                     /**
-                     * 获取是否开启日志功能 0 关 1 开
-                     * @return IsRelatedLog 是否开启日志功能 0 关 1 开
+                     * 获取是否开启日志功能（0=关, 1=开）
+                     * @return IsRelatedLog 是否开启日志功能（0=关, 1=开）
                      * 
                      */
                     int64_t GetIsRelatedLog() const;
 
                     /**
-                     * 设置是否开启日志功能 0 关 1 开
-                     * @param _isRelatedLog 是否开启日志功能 0 关 1 开
+                     * 设置是否开启日志功能（0=关, 1=开）
+                     * @param _isRelatedLog 是否开启日志功能（0=关, 1=开）
                      * 
                      */
                     void SetIsRelatedLog(const int64_t& _isRelatedLog);
@@ -296,15 +296,15 @@ namespace TencentCloud
                     bool IsRelatedLogHasBeenSet() const;
 
                     /**
-                     * 获取日志地域
-                     * @return LogRegion 日志地域
+                     * 获取日志地域，开启日志功能后才会生效
+                     * @return LogRegion 日志地域，开启日志功能后才会生效
                      * 
                      */
                     std::string GetLogRegion() const;
 
                     /**
-                     * 设置日志地域
-                     * @param _logRegion 日志地域
+                     * 设置日志地域，开启日志功能后才会生效
+                     * @param _logRegion 日志地域，开启日志功能后才会生效
                      * 
                      */
                     void SetLogRegion(const std::string& _logRegion);
@@ -317,15 +317,15 @@ namespace TencentCloud
                     bool LogRegionHasBeenSet() const;
 
                     /**
-                     * 获取CLS日志主题ID | ES 索引名
-                     * @return LogTopicID CLS日志主题ID | ES 索引名
+                     * 获取CLS 日志主题 ID，开启日志功能后才会生效
+                     * @return LogTopicID CLS 日志主题 ID，开启日志功能后才会生效
                      * 
                      */
                     std::string GetLogTopicID() const;
 
                     /**
-                     * 设置CLS日志主题ID | ES 索引名
-                     * @param _logTopicID CLS日志主题ID | ES 索引名
+                     * 设置CLS 日志主题 ID，开启日志功能后才会生效
+                     * @param _logTopicID CLS 日志主题 ID，开启日志功能后才会生效
                      * 
                      */
                     void SetLogTopicID(const std::string& _logTopicID);
@@ -338,15 +338,15 @@ namespace TencentCloud
                     bool LogTopicIDHasBeenSet() const;
 
                     /**
-                     * 获取CLS日志集 | ES集群ID
-                     * @return LogSet CLS日志集 | ES集群ID
+                     * 获取日志集，开启日志功能后才会生效
+                     * @return LogSet 日志集，开启日志功能后才会生效
                      * 
                      */
                     std::string GetLogSet() const;
 
                     /**
-                     * 设置CLS日志集 | ES集群ID
-                     * @param _logSet CLS日志集 | ES集群ID
+                     * 设置日志集，开启日志功能后才会生效
+                     * @param _logSet 日志集，开启日志功能后才会生效
                      * 
                      */
                     void SetLogSet(const std::string& _logSet);
@@ -359,15 +359,15 @@ namespace TencentCloud
                     bool LogSetHasBeenSet() const;
 
                     /**
-                     * 获取CLS | ES
-                     * @return LogSource CLS | ES
+                     * 获取日志源，开启日志功能后才会生效
+                     * @return LogSource 日志源，开启日志功能后才会生效
                      * 
                      */
                     std::string GetLogSource() const;
 
                     /**
-                     * 设置CLS | ES
-                     * @param _logSource CLS | ES
+                     * 设置日志源，开启日志功能后才会生效
+                     * @param _logSource 日志源，开启日志功能后才会生效
                      * 
                      */
                     void SetLogSource(const std::string& _logSource);
@@ -401,23 +401,15 @@ namespace TencentCloud
                     bool CustomShowTagsHasBeenSet() const;
 
                     /**
-                     * 获取修改计费模式
-1为预付费
-0为按量付费
-                     * @return PayMode 修改计费模式
-1为预付费
-0为按量付费
+                     * 获取修改计费模式（1为预付费，0为按量付费）
+                     * @return PayMode 修改计费模式（1为预付费，0为按量付费）
                      * 
                      */
                     int64_t GetPayMode() const;
 
                     /**
-                     * 设置修改计费模式
-1为预付费
-0为按量付费
-                     * @param _payMode 修改计费模式
-1为预付费
-0为按量付费
+                     * 设置修改计费模式（1为预付费，0为按量付费）
+                     * @param _payMode 修改计费模式（1为预付费，0为按量付费）
                      * 
                      */
                     void SetPayMode(const int64_t& _payMode);
@@ -430,15 +422,15 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取响应时间满意阈值
-                     * @return ResponseDurationWarningThreshold 响应时间满意阈值
+                     * 获取响应时间警示线
+                     * @return ResponseDurationWarningThreshold 响应时间警示线
                      * 
                      */
                     int64_t GetResponseDurationWarningThreshold() const;
 
                     /**
-                     * 设置响应时间满意阈值
-                     * @param _responseDurationWarningThreshold 响应时间满意阈值
+                     * 设置响应时间警示线
+                     * @param _responseDurationWarningThreshold 响应时间警示线
                      * 
                      */
                     void SetResponseDurationWarningThreshold(const int64_t& _responseDurationWarningThreshold);
@@ -451,15 +443,15 @@ namespace TencentCloud
                     bool ResponseDurationWarningThresholdHasBeenSet() const;
 
                     /**
-                     * 获取（0=付费版；1=tsf受限免费版；2=免费版）
-                     * @return Free （0=付费版；1=tsf受限免费版；2=免费版）
+                     * 获取是否免费（0=付费版；1=TSF 受限免费版；2=免费版），默认0
+                     * @return Free 是否免费（0=付费版；1=TSF 受限免费版；2=免费版），默认0
                      * 
                      */
                     int64_t GetFree() const;
 
                     /**
-                     * 设置（0=付费版；1=tsf受限免费版；2=免费版）
-                     * @param _free （0=付费版；1=tsf受限免费版；2=免费版）
+                     * 设置是否免费（0=付费版；1=TSF 受限免费版；2=免费版），默认0
+                     * @param _free 是否免费（0=付费版；1=TSF 受限免费版；2=免费版），默认0
                      * 
                      */
                     void SetFree(const int64_t& _free);
@@ -472,15 +464,15 @@ namespace TencentCloud
                     bool FreeHasBeenSet() const;
 
                     /**
-                     * 获取是否关联dashboard： 0 关 1 开
-                     * @return IsRelatedDashboard 是否关联dashboard： 0 关 1 开
+                     * 获取是否关联 Dashboard（0=关,1=开）
+                     * @return IsRelatedDashboard 是否关联 Dashboard（0=关,1=开）
                      * 
                      */
                     int64_t GetIsRelatedDashboard() const;
 
                     /**
-                     * 设置是否关联dashboard： 0 关 1 开
-                     * @param _isRelatedDashboard 是否关联dashboard： 0 关 1 开
+                     * 设置是否关联 Dashboard（0=关,1=开）
+                     * @param _isRelatedDashboard 是否关联 Dashboard（0=关,1=开）
                      * 
                      */
                     void SetIsRelatedDashboard(const int64_t& _isRelatedDashboard);
@@ -493,15 +485,15 @@ namespace TencentCloud
                     bool IsRelatedDashboardHasBeenSet() const;
 
                     /**
-                     * 获取dashboard ID
-                     * @return DashboardTopicID dashboard ID
+                     * 获取关联的 Dashboard ID，开启关联 Dashboard 后才会生效
+                     * @return DashboardTopicID 关联的 Dashboard ID，开启关联 Dashboard 后才会生效
                      * 
                      */
                     std::string GetDashboardTopicID() const;
 
                     /**
-                     * 设置dashboard ID
-                     * @param _dashboardTopicID dashboard ID
+                     * 设置关联的 Dashboard ID，开启关联 Dashboard 后才会生效
+                     * @param _dashboardTopicID 关联的 Dashboard ID，开启关联 Dashboard 后才会生效
                      * 
                      */
                     void SetDashboardTopicID(const std::string& _dashboardTopicID);
@@ -514,15 +506,15 @@ namespace TencentCloud
                     bool DashboardTopicIDHasBeenSet() const;
 
                     /**
-                     * 获取是否开启SQL注入检测
-                     * @return IsSqlInjectionAnalysis 是否开启SQL注入检测
+                     * 获取是否开启 SQL 注入检测（0=关,1=开）
+                     * @return IsSqlInjectionAnalysis 是否开启 SQL 注入检测（0=关,1=开）
                      * 
                      */
                     int64_t GetIsSqlInjectionAnalysis() const;
 
                     /**
-                     * 设置是否开启SQL注入检测
-                     * @param _isSqlInjectionAnalysis 是否开启SQL注入检测
+                     * 设置是否开启 SQL 注入检测（0=关,1=开）
+                     * @param _isSqlInjectionAnalysis 是否开启 SQL 注入检测（0=关,1=开）
                      * 
                      */
                     void SetIsSqlInjectionAnalysis(const int64_t& _isSqlInjectionAnalysis);
@@ -535,15 +527,15 @@ namespace TencentCloud
                     bool IsSqlInjectionAnalysisHasBeenSet() const;
 
                     /**
-                     * 获取是否开启组件漏洞检测
-                     * @return IsInstrumentationVulnerabilityScan 是否开启组件漏洞检测
+                     * 获取是否开启组件漏洞检测（0=关,1=开）
+                     * @return IsInstrumentationVulnerabilityScan 是否开启组件漏洞检测（0=关,1=开）
                      * 
                      */
                     int64_t GetIsInstrumentationVulnerabilityScan() const;
 
                     /**
-                     * 设置是否开启组件漏洞检测
-                     * @param _isInstrumentationVulnerabilityScan 是否开启组件漏洞检测
+                     * 设置是否开启组件漏洞检测（0=关,1=开）
+                     * @param _isInstrumentationVulnerabilityScan 是否开启组件漏洞检测（0=关,1=开）
                      * 
                      */
                     void SetIsInstrumentationVulnerabilityScan(const int64_t& _isInstrumentationVulnerabilityScan);
@@ -558,7 +550,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 业务系统ID
+                     * 业务系统 ID
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -570,19 +562,19 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 标签列表
+                     * Tag 列表
                      */
                     std::vector<ApmTag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 业务系统详情
+                     * 业务系统描述
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * Trace数据保存时长
+                     * Trace 数据保存时长（单位：天）
                      */
                     int64_t m_traceDuration;
                     bool m_traceDurationHasBeenSet;
@@ -600,55 +592,55 @@ namespace TencentCloud
                     bool m_spanDailyCountersHasBeenSet;
 
                     /**
-                     * 错误率阈值
+                     * 错误率警示线，当应用的平均错误率超出该阈值时，系统会给出异常提示。
                      */
                     int64_t m_errRateThreshold;
                     bool m_errRateThresholdHasBeenSet;
 
                     /**
-                     * 采样率
+                     * 采样率（单位：%）
                      */
                     int64_t m_sampleRate;
                     bool m_sampleRateHasBeenSet;
 
                     /**
-                     * 是否开启错误采样 0 关 1 开
+                     * 是否开启错误采样（0=关, 1=开）
                      */
                     int64_t m_errorSample;
                     bool m_errorSampleHasBeenSet;
 
                     /**
-                     * 慢请求阈值
+                     * 采样慢调用保存阈值（单位：ms）
                      */
                     int64_t m_slowRequestSavedThreshold;
                     bool m_slowRequestSavedThresholdHasBeenSet;
 
                     /**
-                     * 是否开启日志功能 0 关 1 开
+                     * 是否开启日志功能（0=关, 1=开）
                      */
                     int64_t m_isRelatedLog;
                     bool m_isRelatedLogHasBeenSet;
 
                     /**
-                     * 日志地域
+                     * 日志地域，开启日志功能后才会生效
                      */
                     std::string m_logRegion;
                     bool m_logRegionHasBeenSet;
 
                     /**
-                     * CLS日志主题ID | ES 索引名
+                     * CLS 日志主题 ID，开启日志功能后才会生效
                      */
                     std::string m_logTopicID;
                     bool m_logTopicIDHasBeenSet;
 
                     /**
-                     * CLS日志集 | ES集群ID
+                     * 日志集，开启日志功能后才会生效
                      */
                     std::string m_logSet;
                     bool m_logSetHasBeenSet;
 
                     /**
-                     * CLS | ES
+                     * 日志源，开启日志功能后才会生效
                      */
                     std::string m_logSource;
                     bool m_logSourceHasBeenSet;
@@ -660,45 +652,43 @@ namespace TencentCloud
                     bool m_customShowTagsHasBeenSet;
 
                     /**
-                     * 修改计费模式
-1为预付费
-0为按量付费
+                     * 修改计费模式（1为预付费，0为按量付费）
                      */
                     int64_t m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 响应时间满意阈值
+                     * 响应时间警示线
                      */
                     int64_t m_responseDurationWarningThreshold;
                     bool m_responseDurationWarningThresholdHasBeenSet;
 
                     /**
-                     * （0=付费版；1=tsf受限免费版；2=免费版）
+                     * 是否免费（0=付费版；1=TSF 受限免费版；2=免费版），默认0
                      */
                     int64_t m_free;
                     bool m_freeHasBeenSet;
 
                     /**
-                     * 是否关联dashboard： 0 关 1 开
+                     * 是否关联 Dashboard（0=关,1=开）
                      */
                     int64_t m_isRelatedDashboard;
                     bool m_isRelatedDashboardHasBeenSet;
 
                     /**
-                     * dashboard ID
+                     * 关联的 Dashboard ID，开启关联 Dashboard 后才会生效
                      */
                     std::string m_dashboardTopicID;
                     bool m_dashboardTopicIDHasBeenSet;
 
                     /**
-                     * 是否开启SQL注入检测
+                     * 是否开启 SQL 注入检测（0=关,1=开）
                      */
                     int64_t m_isSqlInjectionAnalysis;
                     bool m_isSqlInjectionAnalysisHasBeenSet;
 
                     /**
-                     * 是否开启组件漏洞检测
+                     * 是否开启组件漏洞检测（0=关,1=开）
                      */
                     int64_t m_isInstrumentationVulnerabilityScan;
                     bool m_isInstrumentationVulnerabilityScanHasBeenSet;

@@ -7264,6 +7264,49 @@ WedataClient::DescribeTaskScriptOutcomeCallable WedataClient::DescribeTaskScript
     return task->get_future();
 }
 
+WedataClient::DescribeTaskTableMetricOverviewOutcome WedataClient::DescribeTaskTableMetricOverview(const DescribeTaskTableMetricOverviewRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTaskTableMetricOverview");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTaskTableMetricOverviewResponse rsp = DescribeTaskTableMetricOverviewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTaskTableMetricOverviewOutcome(rsp);
+        else
+            return DescribeTaskTableMetricOverviewOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTaskTableMetricOverviewOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DescribeTaskTableMetricOverviewAsync(const DescribeTaskTableMetricOverviewRequest& request, const DescribeTaskTableMetricOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTaskTableMetricOverview(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::DescribeTaskTableMetricOverviewOutcomeCallable WedataClient::DescribeTaskTableMetricOverviewCallable(const DescribeTaskTableMetricOverviewRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTaskTableMetricOverviewOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTaskTableMetricOverview(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WedataClient::DescribeTemplateDimCountOutcome WedataClient::DescribeTemplateDimCount(const DescribeTemplateDimCountRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTemplateDimCount");

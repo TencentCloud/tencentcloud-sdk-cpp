@@ -25,9 +25,9 @@ using namespace std;
 DescribeTagValuesRequest::DescribeTagValuesRequest() :
     m_tagKeyHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_startTimeHasBeenSet(false),
+    m_endTimeHasBeenSet(false),
     m_orFiltersHasBeenSet(false),
     m_typeHasBeenSet(false)
 {
@@ -56,14 +56,6 @@ string DescribeTagValuesRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_endTimeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "EndTime";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_endTime, allocator);
-    }
-
     if (m_filtersHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -85,6 +77,14 @@ string DescribeTagValuesRequest::ToJsonString() const
         string key = "StartTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_startTime, allocator);
+    }
+
+    if (m_endTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_endTime, allocator);
     }
 
     if (m_orFiltersHasBeenSet)
@@ -150,22 +150,6 @@ bool DescribeTagValuesRequest::InstanceIdHasBeenSet() const
     return m_instanceIdHasBeenSet;
 }
 
-int64_t DescribeTagValuesRequest::GetEndTime() const
-{
-    return m_endTime;
-}
-
-void DescribeTagValuesRequest::SetEndTime(const int64_t& _endTime)
-{
-    m_endTime = _endTime;
-    m_endTimeHasBeenSet = true;
-}
-
-bool DescribeTagValuesRequest::EndTimeHasBeenSet() const
-{
-    return m_endTimeHasBeenSet;
-}
-
 vector<Filter> DescribeTagValuesRequest::GetFilters() const
 {
     return m_filters;
@@ -196,6 +180,22 @@ void DescribeTagValuesRequest::SetStartTime(const int64_t& _startTime)
 bool DescribeTagValuesRequest::StartTimeHasBeenSet() const
 {
     return m_startTimeHasBeenSet;
+}
+
+int64_t DescribeTagValuesRequest::GetEndTime() const
+{
+    return m_endTime;
+}
+
+void DescribeTagValuesRequest::SetEndTime(const int64_t& _endTime)
+{
+    m_endTime = _endTime;
+    m_endTimeHasBeenSet = true;
+}
+
+bool DescribeTagValuesRequest::EndTimeHasBeenSet() const
+{
+    return m_endTimeHasBeenSet;
 }
 
 vector<Filter> DescribeTagValuesRequest::GetOrFilters() const

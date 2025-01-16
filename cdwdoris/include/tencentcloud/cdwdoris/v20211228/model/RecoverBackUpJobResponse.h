@@ -43,7 +43,67 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取恢复任务总数量
+                     * @return TotalCount 恢复任务总数量
+                     * 
+                     */
+                    int64_t GetTotalCount() const;
+
+                    /**
+                     * 判断参数 TotalCount 是否已赋值
+                     * @return TotalCount 是否已赋值
+                     * 
+                     */
+                    bool TotalCountHasBeenSet() const;
+
+                    /**
+                     * 获取重复的表名
+                     * @return DuplicateTables 重复的表名
+                     * 
+                     */
+                    std::vector<std::string> GetDuplicateTables() const;
+
+                    /**
+                     * 判断参数 DuplicateTables 是否已赋值
+                     * @return DuplicateTables 是否已赋值
+                     * 
+                     */
+                    bool DuplicateTablesHasBeenSet() const;
+
+                    /**
+                     * 获取错误信息
+                     * @return ErrorMsg 错误信息
+                     * 
+                     */
+                    std::string GetErrorMsg() const;
+
+                    /**
+                     * 判断参数 ErrorMsg 是否已赋值
+                     * @return ErrorMsg 是否已赋值
+                     * 
+                     */
+                    bool ErrorMsgHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 恢复任务总数量
+                     */
+                    int64_t m_totalCount;
+                    bool m_totalCountHasBeenSet;
+
+                    /**
+                     * 重复的表名
+                     */
+                    std::vector<std::string> m_duplicateTables;
+                    bool m_duplicateTablesHasBeenSet;
+
+                    /**
+                     * 错误信息
+                     */
+                    std::string m_errorMsg;
+                    bool m_errorMsgHasBeenSet;
 
                 };
             }

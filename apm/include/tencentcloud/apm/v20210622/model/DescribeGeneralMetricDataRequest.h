@@ -66,15 +66,15 @@ namespace TencentCloud
                     bool MetricsHasBeenSet() const;
 
                     /**
-                     * 获取业务系统ID
-                     * @return InstanceId 业务系统ID
+                     * 获取业务系统 ID
+                     * @return InstanceId 业务系统 ID
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置业务系统ID
-                     * @param _instanceId 业务系统ID
+                     * 设置业务系统 ID
+                     * @param _instanceId 业务系统 ID
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -150,15 +150,15 @@ namespace TencentCloud
                     bool GroupByHasBeenSet() const;
 
                     /**
-                     * 获取起始时间的时间戳，单位为秒，只支持查询2天内最多1小时的指标数据。
-                     * @return StartTime 起始时间的时间戳，单位为秒，只支持查询2天内最多1小时的指标数据。
+                     * 获取起始时间的时间戳，支持查询30天内的指标数据。（单位：秒）
+                     * @return StartTime 起始时间的时间戳，支持查询30天内的指标数据。（单位：秒）
                      * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
-                     * 设置起始时间的时间戳，单位为秒，只支持查询2天内最多1小时的指标数据。
-                     * @param _startTime 起始时间的时间戳，单位为秒，只支持查询2天内最多1小时的指标数据。
+                     * 设置起始时间的时间戳，支持查询30天内的指标数据。（单位：秒）
+                     * @param _startTime 起始时间的时间戳，支持查询30天内的指标数据。（单位：秒）
                      * 
                      */
                     void SetStartTime(const int64_t& _startTime);
@@ -171,15 +171,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间的时间戳，单位为秒，只支持查询2天内最多1小时的指标数据。
-                     * @return EndTime 结束时间的时间戳，单位为秒，只支持查询2天内最多1小时的指标数据。
+                     * 获取结束时间的时间戳，支持查询30天内的指标数据。（单位：秒）
+                     * @return EndTime 结束时间的时间戳，支持查询30天内的指标数据。（单位：秒）
                      * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
-                     * 设置结束时间的时间戳，单位为秒，只支持查询2天内最多1小时的指标数据。
-                     * @param _endTime 结束时间的时间戳，单位为秒，只支持查询2天内最多1小时的指标数据。
+                     * 设置结束时间的时间戳，支持查询30天内的指标数据。（单位：秒）
+                     * @param _endTime 结束时间的时间戳，支持查询30天内的指标数据。（单位：秒）
                      * 
                      */
                     void SetEndTime(const int64_t& _endTime);
@@ -192,15 +192,35 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取聚合粒度，单位为秒，最小为60s，即一分钟的聚合粒度；如果为空或0则计算开始时间到截止时间的指标数据，上报其他值会报错。
-                     * @return Period 聚合粒度，单位为秒，最小为60s，即一分钟的聚合粒度；如果为空或0则计算开始时间到截止时间的指标数据，上报其他值会报错。
+                     * 获取是否按固定时间跨度聚合，填入1及大于1的值按1处理，不填按0处理。
+- 填入0，则计算开始时间到截止时间的指标数据。
+- 填入1，则会按照开始时间到截止时间的时间跨度选择聚合粒度：
+ - 时间跨度 (0,12) 小时，则按一分钟粒度聚合。
+ - 时间跨度 [12,48] 小时，则按五分钟粒度聚合。
+ - 时间跨度 (48, +∞) 小时，则按一小时粒度聚合。
+                     * @return Period 是否按固定时间跨度聚合，填入1及大于1的值按1处理，不填按0处理。
+- 填入0，则计算开始时间到截止时间的指标数据。
+- 填入1，则会按照开始时间到截止时间的时间跨度选择聚合粒度：
+ - 时间跨度 (0,12) 小时，则按一分钟粒度聚合。
+ - 时间跨度 [12,48] 小时，则按五分钟粒度聚合。
+ - 时间跨度 (48, +∞) 小时，则按一小时粒度聚合。
                      * 
                      */
                     int64_t GetPeriod() const;
 
                     /**
-                     * 设置聚合粒度，单位为秒，最小为60s，即一分钟的聚合粒度；如果为空或0则计算开始时间到截止时间的指标数据，上报其他值会报错。
-                     * @param _period 聚合粒度，单位为秒，最小为60s，即一分钟的聚合粒度；如果为空或0则计算开始时间到截止时间的指标数据，上报其他值会报错。
+                     * 设置是否按固定时间跨度聚合，填入1及大于1的值按1处理，不填按0处理。
+- 填入0，则计算开始时间到截止时间的指标数据。
+- 填入1，则会按照开始时间到截止时间的时间跨度选择聚合粒度：
+ - 时间跨度 (0,12) 小时，则按一分钟粒度聚合。
+ - 时间跨度 [12,48] 小时，则按五分钟粒度聚合。
+ - 时间跨度 (48, +∞) 小时，则按一小时粒度聚合。
+                     * @param _period 是否按固定时间跨度聚合，填入1及大于1的值按1处理，不填按0处理。
+- 填入0，则计算开始时间到截止时间的指标数据。
+- 填入1，则会按照开始时间到截止时间的时间跨度选择聚合粒度：
+ - 时间跨度 (0,12) 小时，则按一分钟粒度聚合。
+ - 时间跨度 [12,48] 小时，则按五分钟粒度聚合。
+ - 时间跨度 (48, +∞) 小时，则按一小时粒度聚合。
                      * 
                      */
                     void SetPeriod(const int64_t& _period);
@@ -216,12 +236,12 @@ namespace TencentCloud
                      * 获取对查询指标进行排序：
 Key 填写云 API 指标名称，[详情请见。](https://cloud.tencent.com/document/product/248/101681)
 Value 填写排序方式：     
-- asc:对查询指标进行升序排序
+- asc：对查询指标进行升序排序
 - desc：对查询指标进行降序排序
                      * @return OrderBy 对查询指标进行排序：
 Key 填写云 API 指标名称，[详情请见。](https://cloud.tencent.com/document/product/248/101681)
 Value 填写排序方式：     
-- asc:对查询指标进行升序排序
+- asc：对查询指标进行升序排序
 - desc：对查询指标进行降序排序
                      * 
                      */
@@ -231,12 +251,12 @@ Value 填写排序方式：
                      * 设置对查询指标进行排序：
 Key 填写云 API 指标名称，[详情请见。](https://cloud.tencent.com/document/product/248/101681)
 Value 填写排序方式：     
-- asc:对查询指标进行升序排序
+- asc：对查询指标进行升序排序
 - desc：对查询指标进行降序排序
                      * @param _orderBy 对查询指标进行排序：
 Key 填写云 API 指标名称，[详情请见。](https://cloud.tencent.com/document/product/248/101681)
 Value 填写排序方式：     
-- asc:对查询指标进行升序排序
+- asc：对查询指标进行升序排序
 - desc：对查询指标进行降序排序
                      * 
                      */
@@ -279,7 +299,7 @@ Value 填写排序方式：
                     bool m_metricsHasBeenSet;
 
                     /**
-                     * 业务系统ID
+                     * 业务系统 ID
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -303,19 +323,24 @@ Value 填写排序方式：
                     bool m_groupByHasBeenSet;
 
                     /**
-                     * 起始时间的时间戳，单位为秒，只支持查询2天内最多1小时的指标数据。
+                     * 起始时间的时间戳，支持查询30天内的指标数据。（单位：秒）
                      */
                     int64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间的时间戳，单位为秒，只支持查询2天内最多1小时的指标数据。
+                     * 结束时间的时间戳，支持查询30天内的指标数据。（单位：秒）
                      */
                     int64_t m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 聚合粒度，单位为秒，最小为60s，即一分钟的聚合粒度；如果为空或0则计算开始时间到截止时间的指标数据，上报其他值会报错。
+                     * 是否按固定时间跨度聚合，填入1及大于1的值按1处理，不填按0处理。
+- 填入0，则计算开始时间到截止时间的指标数据。
+- 填入1，则会按照开始时间到截止时间的时间跨度选择聚合粒度：
+ - 时间跨度 (0,12) 小时，则按一分钟粒度聚合。
+ - 时间跨度 [12,48] 小时，则按五分钟粒度聚合。
+ - 时间跨度 (48, +∞) 小时，则按一小时粒度聚合。
                      */
                     int64_t m_period;
                     bool m_periodHasBeenSet;
@@ -324,7 +349,7 @@ Value 填写排序方式：
                      * 对查询指标进行排序：
 Key 填写云 API 指标名称，[详情请见。](https://cloud.tencent.com/document/product/248/101681)
 Value 填写排序方式：     
-- asc:对查询指标进行升序排序
+- asc：对查询指标进行升序排序
 - desc：对查询指标进行降序排序
                      */
                     OrderBy m_orderBy;

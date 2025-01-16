@@ -21,18 +21,18 @@ using namespace TencentCloud::Apm::V20210622::Model;
 using namespace std;
 
 ApmInstanceDetail::ApmInstanceDetail() :
-    m_amountOfUsedStorageHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
-    m_createUinHasBeenSet(false),
-    m_serviceCountHasBeenSet(false),
-    m_countOfReportSpanPerDayHasBeenSet(false),
-    m_appIdHasBeenSet(false),
-    m_traceDurationHasBeenSet(false),
+    m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_regionHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_appIdHasBeenSet(false),
+    m_createUinHasBeenSet(false),
+    m_amountOfUsedStorageHasBeenSet(false),
+    m_serviceCountHasBeenSet(false),
+    m_countOfReportSpanPerDayHasBeenSet(false),
+    m_traceDurationHasBeenSet(false),
     m_spanDailyCountersHasBeenSet(false),
     m_billingInstanceHasBeenSet(false),
     m_errRateThresholdHasBeenSet(false),
@@ -65,46 +65,6 @@ CoreInternalOutcome ApmInstanceDetail::Deserialize(const rapidjson::Value &value
     string requestId = "";
 
 
-    if (value.HasMember("AmountOfUsedStorage") && !value["AmountOfUsedStorage"].IsNull())
-    {
-        if (!value["AmountOfUsedStorage"].IsLosslessDouble())
-        {
-            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.AmountOfUsedStorage` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
-        }
-        m_amountOfUsedStorage = value["AmountOfUsedStorage"].GetDouble();
-        m_amountOfUsedStorageHasBeenSet = true;
-    }
-
-    if (value.HasMember("Name") && !value["Name"].IsNull())
-    {
-        if (!value["Name"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.Name` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_name = string(value["Name"].GetString());
-        m_nameHasBeenSet = true;
-    }
-
-    if (value.HasMember("Tags") && !value["Tags"].IsNull())
-    {
-        if (!value["Tags"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.Tags` is not array type"));
-
-        const rapidjson::Value &tmpValue = value["Tags"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            ApmTag item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_tags.push_back(item);
-        }
-        m_tagsHasBeenSet = true;
-    }
-
     if (value.HasMember("InstanceId") && !value["InstanceId"].IsNull())
     {
         if (!value["InstanceId"].IsString())
@@ -115,54 +75,14 @@ CoreInternalOutcome ApmInstanceDetail::Deserialize(const rapidjson::Value &value
         m_instanceIdHasBeenSet = true;
     }
 
-    if (value.HasMember("CreateUin") && !value["CreateUin"].IsNull())
+    if (value.HasMember("Name") && !value["Name"].IsNull())
     {
-        if (!value["CreateUin"].IsString())
+        if (!value["Name"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.CreateUin` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.Name` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_createUin = string(value["CreateUin"].GetString());
-        m_createUinHasBeenSet = true;
-    }
-
-    if (value.HasMember("ServiceCount") && !value["ServiceCount"].IsNull())
-    {
-        if (!value["ServiceCount"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.ServiceCount` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_serviceCount = value["ServiceCount"].GetInt64();
-        m_serviceCountHasBeenSet = true;
-    }
-
-    if (value.HasMember("CountOfReportSpanPerDay") && !value["CountOfReportSpanPerDay"].IsNull())
-    {
-        if (!value["CountOfReportSpanPerDay"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.CountOfReportSpanPerDay` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_countOfReportSpanPerDay = value["CountOfReportSpanPerDay"].GetInt64();
-        m_countOfReportSpanPerDayHasBeenSet = true;
-    }
-
-    if (value.HasMember("AppId") && !value["AppId"].IsNull())
-    {
-        if (!value["AppId"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.AppId` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_appId = value["AppId"].GetInt64();
-        m_appIdHasBeenSet = true;
-    }
-
-    if (value.HasMember("TraceDuration") && !value["TraceDuration"].IsNull())
-    {
-        if (!value["TraceDuration"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.TraceDuration` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_traceDuration = value["TraceDuration"].GetInt64();
-        m_traceDurationHasBeenSet = true;
+        m_name = string(value["Name"].GetString());
+        m_nameHasBeenSet = true;
     }
 
     if (value.HasMember("Description") && !value["Description"].IsNull())
@@ -193,6 +113,86 @@ CoreInternalOutcome ApmInstanceDetail::Deserialize(const rapidjson::Value &value
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
+    }
+
+    if (value.HasMember("Tags") && !value["Tags"].IsNull())
+    {
+        if (!value["Tags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.Tags` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Tags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ApmTag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tags.push_back(item);
+        }
+        m_tagsHasBeenSet = true;
+    }
+
+    if (value.HasMember("AppId") && !value["AppId"].IsNull())
+    {
+        if (!value["AppId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.AppId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_appId = value["AppId"].GetInt64();
+        m_appIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateUin") && !value["CreateUin"].IsNull())
+    {
+        if (!value["CreateUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.CreateUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createUin = string(value["CreateUin"].GetString());
+        m_createUinHasBeenSet = true;
+    }
+
+    if (value.HasMember("AmountOfUsedStorage") && !value["AmountOfUsedStorage"].IsNull())
+    {
+        if (!value["AmountOfUsedStorage"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.AmountOfUsedStorage` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_amountOfUsedStorage = value["AmountOfUsedStorage"].GetDouble();
+        m_amountOfUsedStorageHasBeenSet = true;
+    }
+
+    if (value.HasMember("ServiceCount") && !value["ServiceCount"].IsNull())
+    {
+        if (!value["ServiceCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.ServiceCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_serviceCount = value["ServiceCount"].GetInt64();
+        m_serviceCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("CountOfReportSpanPerDay") && !value["CountOfReportSpanPerDay"].IsNull())
+    {
+        if (!value["CountOfReportSpanPerDay"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.CountOfReportSpanPerDay` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_countOfReportSpanPerDay = value["CountOfReportSpanPerDay"].GetInt64();
+        m_countOfReportSpanPerDayHasBeenSet = true;
+    }
+
+    if (value.HasMember("TraceDuration") && !value["TraceDuration"].IsNull())
+    {
+        if (!value["TraceDuration"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.TraceDuration` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_traceDuration = value["TraceDuration"].GetInt64();
+        m_traceDurationHasBeenSet = true;
     }
 
     if (value.HasMember("SpanDailyCounters") && !value["SpanDailyCounters"].IsNull())
@@ -445,37 +445,6 @@ CoreInternalOutcome ApmInstanceDetail::Deserialize(const rapidjson::Value &value
 void ApmInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
-    if (m_amountOfUsedStorageHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AmountOfUsedStorage";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_amountOfUsedStorage, allocator);
-    }
-
-    if (m_nameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Name";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_tagsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Tags";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
-    }
-
     if (m_instanceIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -484,44 +453,12 @@ void ApmInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_createUinHasBeenSet)
+    if (m_nameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CreateUin";
+        string key = "Name";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_createUin.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_serviceCountHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ServiceCount";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_serviceCount, allocator);
-    }
-
-    if (m_countOfReportSpanPerDayHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CountOfReportSpanPerDay";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_countOfReportSpanPerDay, allocator);
-    }
-
-    if (m_appIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AppId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_appId, allocator);
-    }
-
-    if (m_traceDurationHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TraceDuration";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_traceDuration, allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
     if (m_descriptionHasBeenSet)
@@ -546,6 +483,69 @@ void ApmInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "Region";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_appIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_appId, allocator);
+    }
+
+    if (m_createUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_amountOfUsedStorageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AmountOfUsedStorage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_amountOfUsedStorage, allocator);
+    }
+
+    if (m_serviceCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_serviceCount, allocator);
+    }
+
+    if (m_countOfReportSpanPerDayHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CountOfReportSpanPerDay";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_countOfReportSpanPerDay, allocator);
+    }
+
+    if (m_traceDurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TraceDuration";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_traceDuration, allocator);
     }
 
     if (m_spanDailyCountersHasBeenSet)
@@ -748,54 +748,6 @@ void ApmInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
 }
 
 
-double ApmInstanceDetail::GetAmountOfUsedStorage() const
-{
-    return m_amountOfUsedStorage;
-}
-
-void ApmInstanceDetail::SetAmountOfUsedStorage(const double& _amountOfUsedStorage)
-{
-    m_amountOfUsedStorage = _amountOfUsedStorage;
-    m_amountOfUsedStorageHasBeenSet = true;
-}
-
-bool ApmInstanceDetail::AmountOfUsedStorageHasBeenSet() const
-{
-    return m_amountOfUsedStorageHasBeenSet;
-}
-
-string ApmInstanceDetail::GetName() const
-{
-    return m_name;
-}
-
-void ApmInstanceDetail::SetName(const string& _name)
-{
-    m_name = _name;
-    m_nameHasBeenSet = true;
-}
-
-bool ApmInstanceDetail::NameHasBeenSet() const
-{
-    return m_nameHasBeenSet;
-}
-
-vector<ApmTag> ApmInstanceDetail::GetTags() const
-{
-    return m_tags;
-}
-
-void ApmInstanceDetail::SetTags(const vector<ApmTag>& _tags)
-{
-    m_tags = _tags;
-    m_tagsHasBeenSet = true;
-}
-
-bool ApmInstanceDetail::TagsHasBeenSet() const
-{
-    return m_tagsHasBeenSet;
-}
-
 string ApmInstanceDetail::GetInstanceId() const
 {
     return m_instanceId;
@@ -812,84 +764,20 @@ bool ApmInstanceDetail::InstanceIdHasBeenSet() const
     return m_instanceIdHasBeenSet;
 }
 
-string ApmInstanceDetail::GetCreateUin() const
+string ApmInstanceDetail::GetName() const
 {
-    return m_createUin;
+    return m_name;
 }
 
-void ApmInstanceDetail::SetCreateUin(const string& _createUin)
+void ApmInstanceDetail::SetName(const string& _name)
 {
-    m_createUin = _createUin;
-    m_createUinHasBeenSet = true;
+    m_name = _name;
+    m_nameHasBeenSet = true;
 }
 
-bool ApmInstanceDetail::CreateUinHasBeenSet() const
+bool ApmInstanceDetail::NameHasBeenSet() const
 {
-    return m_createUinHasBeenSet;
-}
-
-int64_t ApmInstanceDetail::GetServiceCount() const
-{
-    return m_serviceCount;
-}
-
-void ApmInstanceDetail::SetServiceCount(const int64_t& _serviceCount)
-{
-    m_serviceCount = _serviceCount;
-    m_serviceCountHasBeenSet = true;
-}
-
-bool ApmInstanceDetail::ServiceCountHasBeenSet() const
-{
-    return m_serviceCountHasBeenSet;
-}
-
-int64_t ApmInstanceDetail::GetCountOfReportSpanPerDay() const
-{
-    return m_countOfReportSpanPerDay;
-}
-
-void ApmInstanceDetail::SetCountOfReportSpanPerDay(const int64_t& _countOfReportSpanPerDay)
-{
-    m_countOfReportSpanPerDay = _countOfReportSpanPerDay;
-    m_countOfReportSpanPerDayHasBeenSet = true;
-}
-
-bool ApmInstanceDetail::CountOfReportSpanPerDayHasBeenSet() const
-{
-    return m_countOfReportSpanPerDayHasBeenSet;
-}
-
-int64_t ApmInstanceDetail::GetAppId() const
-{
-    return m_appId;
-}
-
-void ApmInstanceDetail::SetAppId(const int64_t& _appId)
-{
-    m_appId = _appId;
-    m_appIdHasBeenSet = true;
-}
-
-bool ApmInstanceDetail::AppIdHasBeenSet() const
-{
-    return m_appIdHasBeenSet;
-}
-
-int64_t ApmInstanceDetail::GetTraceDuration() const
-{
-    return m_traceDuration;
-}
-
-void ApmInstanceDetail::SetTraceDuration(const int64_t& _traceDuration)
-{
-    m_traceDuration = _traceDuration;
-    m_traceDurationHasBeenSet = true;
-}
-
-bool ApmInstanceDetail::TraceDurationHasBeenSet() const
-{
-    return m_traceDurationHasBeenSet;
+    return m_nameHasBeenSet;
 }
 
 string ApmInstanceDetail::GetDescription() const
@@ -938,6 +826,118 @@ void ApmInstanceDetail::SetRegion(const string& _region)
 bool ApmInstanceDetail::RegionHasBeenSet() const
 {
     return m_regionHasBeenSet;
+}
+
+vector<ApmTag> ApmInstanceDetail::GetTags() const
+{
+    return m_tags;
+}
+
+void ApmInstanceDetail::SetTags(const vector<ApmTag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetAppId() const
+{
+    return m_appId;
+}
+
+void ApmInstanceDetail::SetAppId(const int64_t& _appId)
+{
+    m_appId = _appId;
+    m_appIdHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::AppIdHasBeenSet() const
+{
+    return m_appIdHasBeenSet;
+}
+
+string ApmInstanceDetail::GetCreateUin() const
+{
+    return m_createUin;
+}
+
+void ApmInstanceDetail::SetCreateUin(const string& _createUin)
+{
+    m_createUin = _createUin;
+    m_createUinHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::CreateUinHasBeenSet() const
+{
+    return m_createUinHasBeenSet;
+}
+
+double ApmInstanceDetail::GetAmountOfUsedStorage() const
+{
+    return m_amountOfUsedStorage;
+}
+
+void ApmInstanceDetail::SetAmountOfUsedStorage(const double& _amountOfUsedStorage)
+{
+    m_amountOfUsedStorage = _amountOfUsedStorage;
+    m_amountOfUsedStorageHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::AmountOfUsedStorageHasBeenSet() const
+{
+    return m_amountOfUsedStorageHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetServiceCount() const
+{
+    return m_serviceCount;
+}
+
+void ApmInstanceDetail::SetServiceCount(const int64_t& _serviceCount)
+{
+    m_serviceCount = _serviceCount;
+    m_serviceCountHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::ServiceCountHasBeenSet() const
+{
+    return m_serviceCountHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetCountOfReportSpanPerDay() const
+{
+    return m_countOfReportSpanPerDay;
+}
+
+void ApmInstanceDetail::SetCountOfReportSpanPerDay(const int64_t& _countOfReportSpanPerDay)
+{
+    m_countOfReportSpanPerDay = _countOfReportSpanPerDay;
+    m_countOfReportSpanPerDayHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::CountOfReportSpanPerDayHasBeenSet() const
+{
+    return m_countOfReportSpanPerDayHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetTraceDuration() const
+{
+    return m_traceDuration;
+}
+
+void ApmInstanceDetail::SetTraceDuration(const int64_t& _traceDuration)
+{
+    m_traceDuration = _traceDuration;
+    m_traceDurationHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::TraceDurationHasBeenSet() const
+{
+    return m_traceDurationHasBeenSet;
 }
 
 int64_t ApmInstanceDetail::GetSpanDailyCounters() const

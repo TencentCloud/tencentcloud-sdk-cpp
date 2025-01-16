@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WorkloadGroupName 资源组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWorkloadGroupName() const;
 
                     /**
                      * 设置资源组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _workloadGroupName 资源组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWorkloadGroupName(const std::string& _workloadGroupName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取CPU权重
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CpuShare CPU权重
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCpuShare() const;
 
                     /**
                      * 设置CPU权重
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cpuShare CPU权重
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCpuShare(const int64_t& _cpuShare);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内存限制，所有资源组的内存限制值之和应该小于等于100
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MemoryLimit 内存限制，所有资源组的内存限制值之和应该小于等于100
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMemoryLimit() const;
 
                     /**
                      * 设置内存限制，所有资源组的内存限制值之和应该小于等于100
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _memoryLimit 内存限制，所有资源组的内存限制值之和应该小于等于100
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMemoryLimit(const int64_t& _memoryLimit);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否允许超配分配
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableMemoryOverCommit 是否允许超配分配
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnableMemoryOverCommit() const;
 
                     /**
                      * 设置是否允许超配分配
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enableMemoryOverCommit 是否允许超配分配
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnableMemoryOverCommit(const bool& _enableMemoryOverCommit);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取cpu硬限制
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CpuHardLimit cpu硬限制
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCpuHardLimit() const;
 
                     /**
                      * 设置cpu硬限制
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cpuHardLimit cpu硬限制
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCpuHardLimit(const std::string& _cpuHardLimit);
@@ -175,35 +155,30 @@ namespace TencentCloud
 
                     /**
                      * 资源组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_workloadGroupName;
                     bool m_workloadGroupNameHasBeenSet;
 
                     /**
                      * CPU权重
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_cpuShare;
                     bool m_cpuShareHasBeenSet;
 
                     /**
                      * 内存限制，所有资源组的内存限制值之和应该小于等于100
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_memoryLimit;
                     bool m_memoryLimitHasBeenSet;
 
                     /**
                      * 是否允许超配分配
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enableMemoryOverCommit;
                     bool m_enableMemoryOverCommitHasBeenSet;
 
                     /**
                      * cpu硬限制
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cpuHardLimit;
                     bool m_cpuHardLimitHasBeenSet;

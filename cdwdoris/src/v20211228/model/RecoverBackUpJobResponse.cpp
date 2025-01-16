@@ -23,7 +23,10 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cdwdoris::V20211228::Model;
 using namespace std;
 
-RecoverBackUpJobResponse::RecoverBackUpJobResponse()
+RecoverBackUpJobResponse::RecoverBackUpJobResponse() :
+    m_totalCountHasBeenSet(false),
+    m_duplicateTablesHasBeenSet(false),
+    m_errorMsgHasBeenSet(false)
 {
 }
 
@@ -61,6 +64,39 @@ CoreInternalOutcome RecoverBackUpJobResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetInt64();
+        m_totalCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("DuplicateTables") && !rsp["DuplicateTables"].IsNull())
+    {
+        if (!rsp["DuplicateTables"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DuplicateTables` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["DuplicateTables"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_duplicateTables.push_back((*itr).GetString());
+        }
+        m_duplicateTablesHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ErrorMsg") && !rsp["ErrorMsg"].IsNull())
+    {
+        if (!rsp["ErrorMsg"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ErrorMsg` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_errorMsg = string(rsp["ErrorMsg"].GetString());
+        m_errorMsgHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +106,35 @@ string RecoverBackUpJobResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_totalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
+    }
+
+    if (m_duplicateTablesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DuplicateTables";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_duplicateTables.begin(); itr != m_duplicateTables.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_errorMsgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrorMsg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errorMsg.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +147,35 @@ string RecoverBackUpJobResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+int64_t RecoverBackUpJobResponse::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool RecoverBackUpJobResponse::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
+}
+
+vector<string> RecoverBackUpJobResponse::GetDuplicateTables() const
+{
+    return m_duplicateTables;
+}
+
+bool RecoverBackUpJobResponse::DuplicateTablesHasBeenSet() const
+{
+    return m_duplicateTablesHasBeenSet;
+}
+
+string RecoverBackUpJobResponse::GetErrorMsg() const
+{
+    return m_errorMsg;
+}
+
+bool RecoverBackUpJobResponse::ErrorMsgHasBeenSet() const
+{
+    return m_errorMsgHasBeenSet;
+}
 
 

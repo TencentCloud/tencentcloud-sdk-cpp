@@ -110,7 +110,7 @@ namespace TencentCloud
                 CreateApmInstanceOutcomeCallable CreateApmInstanceCallable(const Model::CreateApmInstanceRequest& request);
 
                 /**
-                 *获取 APM Agent信息
+                 *获取 APM 接入点
                  * @param req DescribeApmAgentRequest
                  * @return DescribeApmAgentOutcome
                  */
@@ -119,7 +119,7 @@ namespace TencentCloud
                 DescribeApmAgentOutcomeCallable DescribeApmAgentCallable(const Model::DescribeApmAgentRequest& request);
 
                 /**
-                 *拉取 APM 业务系统列表
+                 *获取 APM 业务系统列表
                  * @param req DescribeApmInstancesRequest
                  * @return DescribeApmInstancesOutcome
                  */
@@ -156,7 +156,7 @@ namespace TencentCloud
                 DescribeGeneralSpanListOutcomeCallable DescribeGeneralSpanListCallable(const Model::DescribeGeneralSpanListRequest& request);
 
                 /**
-                 *拉取通用指标列表
+                 *查询指标列表接口，查询指标更推荐使用DescribeGeneralMetricData接口
                  * @param req DescribeMetricRecordsRequest
                  * @return DescribeMetricRecordsOutcome
                  */

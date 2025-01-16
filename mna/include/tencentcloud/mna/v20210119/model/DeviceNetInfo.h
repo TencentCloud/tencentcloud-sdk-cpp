@@ -51,12 +51,10 @@ namespace TencentCloud
 0:数据
 1:Wi-Fi
 2:有线
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 网络类型：
 0:数据
 1:Wi-Fi
 2:有线
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetType() const;
@@ -66,12 +64,10 @@ namespace TencentCloud
 0:数据
 1:Wi-Fi
 2:有线
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 网络类型：
 0:数据
 1:Wi-Fi
 2:有线
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const int64_t& _type);
@@ -459,7 +455,6 @@ namespace TencentCloud
 0:数据
 1:Wi-Fi
 2:有线
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;
