@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cvm/v20170312/model/TagSpecification.h>
 
 
 namespace TencentCloud
@@ -147,6 +148,27 @@ namespace TencentCloud
                      */
                     bool HpcClusterBusinessIdHasBeenSet() const;
 
+                    /**
+                     * 获取标签描述列表。通过指定该参数可以同时绑定标签到相应的HPC高性能集群。
+                     * @return TagSpecification 标签描述列表。通过指定该参数可以同时绑定标签到相应的HPC高性能集群。
+                     * 
+                     */
+                    std::vector<TagSpecification> GetTagSpecification() const;
+
+                    /**
+                     * 设置标签描述列表。通过指定该参数可以同时绑定标签到相应的HPC高性能集群。
+                     * @param _tagSpecification 标签描述列表。通过指定该参数可以同时绑定标签到相应的HPC高性能集群。
+                     * 
+                     */
+                    void SetTagSpecification(const std::vector<TagSpecification>& _tagSpecification);
+
+                    /**
+                     * 判断参数 TagSpecification 是否已赋值
+                     * @return TagSpecification 是否已赋值
+                     * 
+                     */
+                    bool TagSpecificationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +200,12 @@ namespace TencentCloud
                      */
                     std::string m_hpcClusterBusinessId;
                     bool m_hpcClusterBusinessIdHasBeenSet;
+
+                    /**
+                     * 标签描述列表。通过指定该参数可以同时绑定标签到相应的HPC高性能集群。
+                     */
+                    std::vector<TagSpecification> m_tagSpecification;
+                    bool m_tagSpecificationHasBeenSet;
 
                 };
             }

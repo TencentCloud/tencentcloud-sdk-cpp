@@ -125,6 +125,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageDateResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageEventsRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageEventsResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageEventsWithAITasksRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageEventsWithAITasksResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageMultiThumbnailRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageMultiThumbnailResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageOrderRequest.h>
@@ -504,6 +506,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCloudStorageEventsResponse> DescribeCloudStorageEventsOutcome;
                 typedef std::future<DescribeCloudStorageEventsOutcome> DescribeCloudStorageEventsOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeCloudStorageEventsRequest&, DescribeCloudStorageEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudStorageEventsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCloudStorageEventsWithAITasksResponse> DescribeCloudStorageEventsWithAITasksOutcome;
+                typedef std::future<DescribeCloudStorageEventsWithAITasksOutcome> DescribeCloudStorageEventsWithAITasksOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeCloudStorageEventsWithAITasksRequest&, DescribeCloudStorageEventsWithAITasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudStorageEventsWithAITasksAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCloudStorageMultiThumbnailResponse> DescribeCloudStorageMultiThumbnailOutcome;
                 typedef std::future<DescribeCloudStorageMultiThumbnailOutcome> DescribeCloudStorageMultiThumbnailOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeCloudStorageMultiThumbnailRequest&, DescribeCloudStorageMultiThumbnailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudStorageMultiThumbnailAsyncHandler;
@@ -1285,6 +1290,15 @@ namespace TencentCloud
                 DescribeCloudStorageEventsOutcome DescribeCloudStorageEvents(const Model::DescribeCloudStorageEventsRequest &request);
                 void DescribeCloudStorageEventsAsync(const Model::DescribeCloudStorageEventsRequest& request, const DescribeCloudStorageEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCloudStorageEventsOutcomeCallable DescribeCloudStorageEventsCallable(const Model::DescribeCloudStorageEventsRequest& request);
+
+                /**
+                 *拉取云存事件列表
+                 * @param req DescribeCloudStorageEventsWithAITasksRequest
+                 * @return DescribeCloudStorageEventsWithAITasksOutcome
+                 */
+                DescribeCloudStorageEventsWithAITasksOutcome DescribeCloudStorageEventsWithAITasks(const Model::DescribeCloudStorageEventsWithAITasksRequest &request);
+                void DescribeCloudStorageEventsWithAITasksAsync(const Model::DescribeCloudStorageEventsWithAITasksRequest& request, const DescribeCloudStorageEventsWithAITasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudStorageEventsWithAITasksOutcomeCallable DescribeCloudStorageEventsWithAITasksCallable(const Model::DescribeCloudStorageEventsWithAITasksRequest& request);
 
                 /**
                  *拉取多个云存事件缩略图

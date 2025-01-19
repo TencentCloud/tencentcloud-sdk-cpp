@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cvm/v20170312/model/Tag.h>
 
 
 namespace TencentCloud
@@ -280,6 +281,48 @@ namespace TencentCloud
                      */
                     bool HpcClusterBusinessIdHasBeenSet() const;
 
+                    /**
+                     * 获取高性能计算集群网络模式
+                     * @return HpcClusterNetMode 高性能计算集群网络模式
+                     * 
+                     */
+                    uint64_t GetHpcClusterNetMode() const;
+
+                    /**
+                     * 设置高性能计算集群网络模式
+                     * @param _hpcClusterNetMode 高性能计算集群网络模式
+                     * 
+                     */
+                    void SetHpcClusterNetMode(const uint64_t& _hpcClusterNetMode);
+
+                    /**
+                     * 判断参数 HpcClusterNetMode 是否已赋值
+                     * @return HpcClusterNetMode 是否已赋值
+                     * 
+                     */
+                    bool HpcClusterNetModeHasBeenSet() const;
+
+                    /**
+                     * 获取高性能计算集群关联的标签列表
+                     * @return Tags 高性能计算集群关联的标签列表
+                     * 
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置高性能计算集群关联的标签列表
+                     * @param _tags 高性能计算集群关联的标签列表
+                     * 
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -347,6 +390,18 @@ namespace TencentCloud
                      */
                     std::string m_hpcClusterBusinessId;
                     bool m_hpcClusterBusinessIdHasBeenSet;
+
+                    /**
+                     * 高性能计算集群网络模式
+                     */
+                    uint64_t m_hpcClusterNetMode;
+                    bool m_hpcClusterNetModeHasBeenSet;
+
+                    /**
+                     * 高性能计算集群关联的标签列表
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

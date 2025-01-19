@@ -29,7 +29,9 @@ DescribeHpcClustersRequest::DescribeHpcClustersRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_hpcClusterTypeHasBeenSet(false),
-    m_hpcClusterBusinessIdHasBeenSet(false)
+    m_hpcClusterBusinessIdHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -99,6 +101,29 @@ string DescribeHpcClustersRequest::ToJsonString() const
         string key = "HpcClusterBusinessId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_hpcClusterBusinessId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -219,6 +244,38 @@ void DescribeHpcClustersRequest::SetHpcClusterBusinessId(const string& _hpcClust
 bool DescribeHpcClustersRequest::HpcClusterBusinessIdHasBeenSet() const
 {
     return m_hpcClusterBusinessIdHasBeenSet;
+}
+
+string DescribeHpcClustersRequest::GetInstanceType() const
+{
+    return m_instanceType;
+}
+
+void DescribeHpcClustersRequest::SetInstanceType(const string& _instanceType)
+{
+    m_instanceType = _instanceType;
+    m_instanceTypeHasBeenSet = true;
+}
+
+bool DescribeHpcClustersRequest::InstanceTypeHasBeenSet() const
+{
+    return m_instanceTypeHasBeenSet;
+}
+
+vector<Filter> DescribeHpcClustersRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeHpcClustersRequest::SetFilters(const vector<Filter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeHpcClustersRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
 }
 
 

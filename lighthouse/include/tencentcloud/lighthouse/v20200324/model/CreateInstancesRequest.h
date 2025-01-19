@@ -377,6 +377,48 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                      */
                     bool InitCommandHasBeenSet() const;
 
+                    /**
+                     * 获取主域名。
+                     * @return DomainName 主域名。
+                     * 
+                     */
+                    std::string GetDomainName() const;
+
+                    /**
+                     * 设置主域名。
+                     * @param _domainName 主域名。
+                     * 
+                     */
+                    void SetDomainName(const std::string& _domainName);
+
+                    /**
+                     * 判断参数 DomainName 是否已赋值
+                     * @return DomainName 是否已赋值
+                     * 
+                     */
+                    bool DomainNameHasBeenSet() const;
+
+                    /**
+                     * 获取子域名。
+                     * @return Subdomain 子域名。
+                     * 
+                     */
+                    std::string GetSubdomain() const;
+
+                    /**
+                     * 设置子域名。
+                     * @param _subdomain 子域名。
+                     * 
+                     */
+                    void SetSubdomain(const std::string& _subdomain);
+
+                    /**
+                     * 判断参数 Subdomain 是否已赋值
+                     * @return Subdomain 是否已赋值
+                     * 
+                     */
+                    bool SubdomainHasBeenSet() const;
+
                 private:
 
                     /**
@@ -471,6 +513,18 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                      */
                     Command m_initCommand;
                     bool m_initCommandHasBeenSet;
+
+                    /**
+                     * 主域名。
+                     */
+                    std::string m_domainName;
+                    bool m_domainNameHasBeenSet;
+
+                    /**
+                     * 子域名。
+                     */
+                    std::string m_subdomain;
+                    bool m_subdomainHasBeenSet;
 
                 };
             }

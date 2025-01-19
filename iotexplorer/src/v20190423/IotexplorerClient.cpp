@@ -2233,6 +2233,49 @@ IotexplorerClient::DescribeCloudStorageEventsOutcomeCallable IotexplorerClient::
     return task->get_future();
 }
 
+IotexplorerClient::DescribeCloudStorageEventsWithAITasksOutcome IotexplorerClient::DescribeCloudStorageEventsWithAITasks(const DescribeCloudStorageEventsWithAITasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudStorageEventsWithAITasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudStorageEventsWithAITasksResponse rsp = DescribeCloudStorageEventsWithAITasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudStorageEventsWithAITasksOutcome(rsp);
+        else
+            return DescribeCloudStorageEventsWithAITasksOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudStorageEventsWithAITasksOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeCloudStorageEventsWithAITasksAsync(const DescribeCloudStorageEventsWithAITasksRequest& request, const DescribeCloudStorageEventsWithAITasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudStorageEventsWithAITasks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DescribeCloudStorageEventsWithAITasksOutcomeCallable IotexplorerClient::DescribeCloudStorageEventsWithAITasksCallable(const DescribeCloudStorageEventsWithAITasksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudStorageEventsWithAITasksOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudStorageEventsWithAITasks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::DescribeCloudStorageMultiThumbnailOutcome IotexplorerClient::DescribeCloudStorageMultiThumbnail(const DescribeCloudStorageMultiThumbnailRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCloudStorageMultiThumbnail");

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取SDK人脸核身流程的标识，调用GetFaceidRiskInfoToken接口时生成。
-                     * @return FaceIdToken SDK人脸核身流程的标识，调用GetFaceidRiskInfoToken接口时生成。
+                     * 获取SDK人脸核身流程的标识，调用[GetFaceidRiskInfoToken](https://cloud.tencent.com/document/product/1007/104581)接口时生成。
+                     * @return FaceIdToken SDK人脸核身流程的标识，调用[GetFaceidRiskInfoToken](https://cloud.tencent.com/document/product/1007/104581)接口时生成。
                      * 
                      */
                     std::string GetFaceIdToken() const;
 
                     /**
-                     * 设置SDK人脸核身流程的标识，调用GetFaceidRiskInfoToken接口时生成。
-                     * @param _faceIdToken SDK人脸核身流程的标识，调用GetFaceidRiskInfoToken接口时生成。
+                     * 设置SDK人脸核身流程的标识，调用[GetFaceidRiskInfoToken](https://cloud.tencent.com/document/product/1007/104581)接口时生成。
+                     * @param _faceIdToken SDK人脸核身流程的标识，调用[GetFaceidRiskInfoToken](https://cloud.tencent.com/document/product/1007/104581)接口时生成。
                      * 
                      */
                     void SetFaceIdToken(const std::string& _faceIdToken);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * SDK人脸核身流程的标识，调用GetFaceidRiskInfoToken接口时生成。
+                     * SDK人脸核身流程的标识，调用[GetFaceidRiskInfoToken](https://cloud.tencent.com/document/product/1007/104581)接口时生成。
                      */
                     std::string m_faceIdToken;
                     bool m_faceIdTokenHasBeenSet;

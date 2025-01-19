@@ -88,9 +88,11 @@ namespace TencentCloud
                      * 获取云存 AI 服务类型。可选值：
 - `RealtimeObjectDetect`：目标检测
 - `Highlight`：视频浓缩
+- `VideoToText`：视频语义理解
                      * @return ServiceType 云存 AI 服务类型。可选值：
 - `RealtimeObjectDetect`：目标检测
 - `Highlight`：视频浓缩
+- `VideoToText`：视频语义理解
                      * 
                      */
                     std::string GetServiceType() const;
@@ -99,9 +101,11 @@ namespace TencentCloud
                      * 设置云存 AI 服务类型。可选值：
 - `RealtimeObjectDetect`：目标检测
 - `Highlight`：视频浓缩
+- `VideoToText`：视频语义理解
                      * @param _serviceType 云存 AI 服务类型。可选值：
 - `RealtimeObjectDetect`：目标检测
 - `Highlight`：视频浓缩
+- `VideoToText`：视频语义理解
                      * 
                      */
                     void SetServiceType(const std::string& _serviceType);
@@ -256,6 +260,7 @@ namespace TencentCloud
                      * 云存 AI 服务类型。可选值：
 - `RealtimeObjectDetect`：目标检测
 - `Highlight`：视频浓缩
+- `VideoToText`：视频语义理解
                      */
                     std::string m_serviceType;
                     bool m_serviceTypeHasBeenSet;

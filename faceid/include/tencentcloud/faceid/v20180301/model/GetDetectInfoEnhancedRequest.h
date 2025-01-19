@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取人脸核身流程的标识，调用DetectAuth接口时生成。
-                     * @return BizToken 人脸核身流程的标识，调用DetectAuth接口时生成。
+                     * 获取人脸核身流程的标识，调用[DetectAuth](https://cloud.tencent.com/document/product/1007/31816)接口时生成。
+                     * @return BizToken 人脸核身流程的标识，调用[DetectAuth](https://cloud.tencent.com/document/product/1007/31816)接口时生成。
                      * 
                      */
                     std::string GetBizToken() const;
 
                     /**
-                     * 设置人脸核身流程的标识，调用DetectAuth接口时生成。
-                     * @param _bizToken 人脸核身流程的标识，调用DetectAuth接口时生成。
+                     * 设置人脸核身流程的标识，调用[DetectAuth](https://cloud.tencent.com/document/product/1007/31816)接口时生成。
+                     * @param _bizToken 人脸核身流程的标识，调用[DetectAuth](https://cloud.tencent.com/document/product/1007/31816)接口时生成。
                      * 
                      */
                     void SetBizToken(const std::string& _bizToken);
@@ -283,7 +283,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 人脸核身流程的标识，调用DetectAuth接口时生成。
+                     * 人脸核身流程的标识，调用[DetectAuth](https://cloud.tencent.com/document/product/1007/31816)接口时生成。
                      */
                     std::string m_bizToken;
                     bool m_bizTokenHasBeenSet;

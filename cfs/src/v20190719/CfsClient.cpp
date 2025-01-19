@@ -83,6 +83,49 @@ CfsClient::BindAutoSnapshotPolicyOutcomeCallable CfsClient::BindAutoSnapshotPoli
     return task->get_future();
 }
 
+CfsClient::CreateAccessCertOutcome CfsClient::CreateAccessCert(const CreateAccessCertRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAccessCert");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAccessCertResponse rsp = CreateAccessCertResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAccessCertOutcome(rsp);
+        else
+            return CreateAccessCertOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAccessCertOutcome(outcome.GetError());
+    }
+}
+
+void CfsClient::CreateAccessCertAsync(const CreateAccessCertRequest& request, const CreateAccessCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAccessCert(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfsClient::CreateAccessCertOutcomeCallable CfsClient::CreateAccessCertCallable(const CreateAccessCertRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAccessCertOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAccessCert(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CfsClient::CreateAutoSnapshotPolicyOutcome CfsClient::CreateAutoSnapshotPolicy(const CreateAutoSnapshotPolicyRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAutoSnapshotPolicy");

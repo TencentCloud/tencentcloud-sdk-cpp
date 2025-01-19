@@ -336,6 +336,27 @@ namespace TencentCloud
                      */
                     bool CatalogsHasBeenSet() const;
 
+                    /**
+                     * 获取是否是查询	
+                     * @return IsQuery 是否是查询	
+                     * 
+                     */
+                    std::vector<bool> GetIsQuery() const;
+
+                    /**
+                     * 设置是否是查询	
+                     * @param _isQuery 是否是查询	
+                     * 
+                     */
+                    void SetIsQuery(const std::vector<bool>& _isQuery);
+
+                    /**
+                     * 判断参数 IsQuery 是否已赋值
+                     * @return IsQuery 是否已赋值
+                     * 
+                     */
+                    bool IsQueryHasBeenSet() const;
+
                 private:
 
                     /**
@@ -421,6 +442,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_catalogs;
                     bool m_catalogsHasBeenSet;
+
+                    /**
+                     * 是否是查询	
+                     */
+                    std::vector<bool> m_isQuery;
+                    bool m_isQueryHasBeenSet;
 
                 };
             }

@@ -64,15 +64,23 @@ namespace TencentCloud
                     bool DBInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取续费多少个月
-                     * @return Period 续费多少个月
+                     * 获取购买时长，单位：月。
+<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36</li>
+<li>后付费：只支持1</li>
+                     * @return Period 购买时长，单位：月。
+<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36</li>
+<li>后付费：只支持1</li>
                      * 
                      */
                     int64_t GetPeriod() const;
 
                     /**
-                     * 设置续费多少个月
-                     * @param _period 续费多少个月
+                     * 设置购买时长，单位：月。
+<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36</li>
+<li>后付费：只支持1</li>
+                     * @param _period 购买时长，单位：月。
+<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36</li>
+<li>后付费：只支持1</li>
                      * 
                      */
                     void SetPeriod(const int64_t& _period);
@@ -85,15 +93,27 @@ namespace TencentCloud
                     bool PeriodHasBeenSet() const;
 
                     /**
-                     * 获取是否自动使用代金券,1是,0否，默认不使用
-                     * @return AutoVoucher 是否自动使用代金券,1是,0否，默认不使用
+                     * 获取是否自动使用代金券：
+<li>0：否</li>
+<li>1：是</li>
+默认值：0
+                     * @return AutoVoucher 是否自动使用代金券：
+<li>0：否</li>
+<li>1：是</li>
+默认值：0
                      * 
                      */
                     int64_t GetAutoVoucher() const;
 
                     /**
-                     * 设置是否自动使用代金券,1是,0否，默认不使用
-                     * @param _autoVoucher 是否自动使用代金券,1是,0否，默认不使用
+                     * 设置是否自动使用代金券：
+<li>0：否</li>
+<li>1：是</li>
+默认值：0
+                     * @param _autoVoucher 是否自动使用代金券：
+<li>0：否</li>
+<li>1：是</li>
+默认值：0
                      * 
                      */
                     void SetAutoVoucher(const int64_t& _autoVoucher);
@@ -135,13 +155,18 @@ namespace TencentCloud
                     bool m_dBInstanceIdHasBeenSet;
 
                     /**
-                     * 续费多少个月
+                     * 购买时长，单位：月。
+<li>预付费：支持1,2,3,4,5,6,7,8,9,10,11,12,24,36</li>
+<li>后付费：只支持1</li>
                      */
                     int64_t m_period;
                     bool m_periodHasBeenSet;
 
                     /**
-                     * 是否自动使用代金券,1是,0否，默认不使用
+                     * 是否自动使用代金券：
+<li>0：否</li>
+<li>1：是</li>
+默认值：0
                      */
                     int64_t m_autoVoucher;
                     bool m_autoVoucherHasBeenSet;

@@ -74,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取所有数据库名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DBNameList 所有数据库名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetDBNameList() const;
@@ -90,9 +88,7 @@ namespace TencentCloud
 
                     /**
                      * 获取所有catalog名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CatalogNameList 所有catalog名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetCatalogNameList() const;
@@ -120,14 +116,12 @@ namespace TencentCloud
 
                     /**
                      * 所有数据库名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_dBNameList;
                     bool m_dBNameListHasBeenSet;
 
                     /**
                      * 所有catalog名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_catalogNameList;
                     bool m_catalogNameListHasBeenSet;

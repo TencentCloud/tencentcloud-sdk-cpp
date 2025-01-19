@@ -46,6 +46,7 @@ set(cfs_public_header_model
   include/tencentcloud/cfs/v20190719/model/UpdateCfsFileSystemNameRequest.h
   include/tencentcloud/cfs/v20190719/model/DeleteCfsPGroupRequest.h
   include/tencentcloud/cfs/v20190719/model/UpdateCfsPGroupResponse.h
+  include/tencentcloud/cfs/v20190719/model/SnapshotOperateLog.h
   include/tencentcloud/cfs/v20190719/model/DeleteAutoSnapshotPolicyRequest.h
   include/tencentcloud/cfs/v20190719/model/DeleteCfsFileSystemResponse.h
   include/tencentcloud/cfs/v20190719/model/UpdateCfsRuleRequest.h
@@ -77,7 +78,7 @@ set(cfs_public_header_model
   include/tencentcloud/cfs/v20190719/model/DeleteMountTargetRequest.h
   include/tencentcloud/cfs/v20190719/model/CreateCfsRuleRequest.h
   include/tencentcloud/cfs/v20190719/model/BucketInfo.h
-  include/tencentcloud/cfs/v20190719/model/SnapshotOperateLog.h
+  include/tencentcloud/cfs/v20190719/model/CreateAccessCertRequest.h
   include/tencentcloud/cfs/v20190719/model/DescribeUserQuotaRequest.h
   include/tencentcloud/cfs/v20190719/model/DescribeBucketListResponse.h
   include/tencentcloud/cfs/v20190719/model/UpdateCfsFileSystemNameResponse.h
@@ -112,6 +113,7 @@ set(cfs_public_header_model
   include/tencentcloud/cfs/v20190719/model/DeleteCfsRuleResponse.h
   include/tencentcloud/cfs/v20190719/model/UpdateCfsSnapshotAttributeResponse.h
   include/tencentcloud/cfs/v20190719/model/UpdateCfsPGroupRequest.h
+  include/tencentcloud/cfs/v20190719/model/CreateAccessCertResponse.h
   include/tencentcloud/cfs/v20190719/model/SetUserQuotaResponse.h
   include/tencentcloud/cfs/v20190719/model/TagInfo.h
   include/tencentcloud/cfs/v20190719/model/DescribeCfsPGroupsRequest.h
@@ -158,6 +160,7 @@ set(cfs_src
   src/v20190719/model/UpdateCfsFileSystemNameRequest.cpp
   src/v20190719/model/DeleteCfsPGroupRequest.cpp
   src/v20190719/model/UpdateCfsPGroupResponse.cpp
+  src/v20190719/model/SnapshotOperateLog.cpp
   src/v20190719/model/DeleteAutoSnapshotPolicyRequest.cpp
   src/v20190719/model/DeleteCfsFileSystemResponse.cpp
   src/v20190719/model/UpdateCfsRuleRequest.cpp
@@ -189,7 +192,7 @@ set(cfs_src
   src/v20190719/model/DeleteMountTargetRequest.cpp
   src/v20190719/model/CreateCfsRuleRequest.cpp
   src/v20190719/model/BucketInfo.cpp
-  src/v20190719/model/SnapshotOperateLog.cpp
+  src/v20190719/model/CreateAccessCertRequest.cpp
   src/v20190719/model/DescribeUserQuotaRequest.cpp
   src/v20190719/model/DescribeBucketListResponse.cpp
   src/v20190719/model/UpdateCfsFileSystemNameResponse.cpp
@@ -224,6 +227,7 @@ set(cfs_src
   src/v20190719/model/DeleteCfsRuleResponse.cpp
   src/v20190719/model/UpdateCfsSnapshotAttributeResponse.cpp
   src/v20190719/model/UpdateCfsPGroupRequest.cpp
+  src/v20190719/model/CreateAccessCertResponse.cpp
   src/v20190719/model/SetUserQuotaResponse.cpp
   src/v20190719/model/TagInfo.cpp
   src/v20190719/model/DescribeCfsPGroupsRequest.cpp

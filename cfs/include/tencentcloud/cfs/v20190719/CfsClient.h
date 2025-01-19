@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/cfs/v20190719/model/BindAutoSnapshotPolicyRequest.h>
 #include <tencentcloud/cfs/v20190719/model/BindAutoSnapshotPolicyResponse.h>
+#include <tencentcloud/cfs/v20190719/model/CreateAccessCertRequest.h>
+#include <tencentcloud/cfs/v20190719/model/CreateAccessCertResponse.h>
 #include <tencentcloud/cfs/v20190719/model/CreateAutoSnapshotPolicyRequest.h>
 #include <tencentcloud/cfs/v20190719/model/CreateAutoSnapshotPolicyResponse.h>
 #include <tencentcloud/cfs/v20190719/model/CreateCfsFileSystemRequest.h>
@@ -126,6 +128,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::BindAutoSnapshotPolicyResponse> BindAutoSnapshotPolicyOutcome;
                 typedef std::future<BindAutoSnapshotPolicyOutcome> BindAutoSnapshotPolicyOutcomeCallable;
                 typedef std::function<void(const CfsClient*, const Model::BindAutoSnapshotPolicyRequest&, BindAutoSnapshotPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindAutoSnapshotPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAccessCertResponse> CreateAccessCertOutcome;
+                typedef std::future<CreateAccessCertOutcome> CreateAccessCertOutcomeCallable;
+                typedef std::function<void(const CfsClient*, const Model::CreateAccessCertRequest&, CreateAccessCertOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAccessCertAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAutoSnapshotPolicyResponse> CreateAutoSnapshotPolicyOutcome;
                 typedef std::future<CreateAutoSnapshotPolicyOutcome> CreateAutoSnapshotPolicyOutcomeCallable;
                 typedef std::function<void(const CfsClient*, const Model::CreateAutoSnapshotPolicyRequest&, CreateAutoSnapshotPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAutoSnapshotPolicyAsyncHandler;
@@ -263,6 +268,15 @@ namespace TencentCloud
                 BindAutoSnapshotPolicyOutcome BindAutoSnapshotPolicy(const Model::BindAutoSnapshotPolicyRequest &request);
                 void BindAutoSnapshotPolicyAsync(const Model::BindAutoSnapshotPolicyRequest& request, const BindAutoSnapshotPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 BindAutoSnapshotPolicyOutcomeCallable BindAutoSnapshotPolicyCallable(const Model::BindAutoSnapshotPolicyRequest& request);
+
+                /**
+                 *创建用于访问文件系统的凭证
+                 * @param req CreateAccessCertRequest
+                 * @return CreateAccessCertOutcome
+                 */
+                CreateAccessCertOutcome CreateAccessCert(const Model::CreateAccessCertRequest &request);
+                void CreateAccessCertAsync(const Model::CreateAccessCertRequest& request, const CreateAccessCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAccessCertOutcomeCallable CreateAccessCertCallable(const Model::CreateAccessCertRequest& request);
 
                 /**
                  *创建定期快照策略

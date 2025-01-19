@@ -44,18 +44,18 @@ namespace TencentCloud
 
                     /**
                      * 获取SDK人脸核身流程的标识。
-- 调用GetFaceIdToken接口时生成。
+- 调用[GetFaceIdToken](https://cloud.tencent.com/document/product/1007/49198)接口时生成。
                      * @return FaceIdToken SDK人脸核身流程的标识。
-- 调用GetFaceIdToken接口时生成。
+- 调用[GetFaceIdToken](https://cloud.tencent.com/document/product/1007/49198)接口时生成。
                      * 
                      */
                     std::string GetFaceIdToken() const;
 
                     /**
                      * 设置SDK人脸核身流程的标识。
-- 调用GetFaceIdToken接口时生成。
+- 调用[GetFaceIdToken](https://cloud.tencent.com/document/product/1007/49198)接口时生成。
                      * @param _faceIdToken SDK人脸核身流程的标识。
-- 调用GetFaceIdToken接口时生成。
+- 调用[GetFaceIdToken](https://cloud.tencent.com/document/product/1007/49198)接口时生成。
                      * 
                      */
                     void SetFaceIdToken(const std::string& _faceIdToken);
@@ -121,7 +121,7 @@ namespace TencentCloud
 
                     /**
                      * SDK人脸核身流程的标识。
-- 调用GetFaceIdToken接口时生成。
+- 调用[GetFaceIdToken](https://cloud.tencent.com/document/product/1007/49198)接口时生成。
                      */
                     std::string m_faceIdToken;
                     bool m_faceIdTokenHasBeenSet;

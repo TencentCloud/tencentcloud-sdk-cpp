@@ -28,7 +28,9 @@ ModifyBackupPlanRequest::ModifyBackupPlanRequest() :
     m_maxBackupStartTimeHasBeenSet(false),
     m_baseBackupRetentionPeriodHasBeenSet(false),
     m_backupPeriodHasBeenSet(false),
-    m_logBackupRetentionPeriodHasBeenSet(false)
+    m_logBackupRetentionPeriodHasBeenSet(false),
+    m_planIdHasBeenSet(false),
+    m_planNameHasBeenSet(false)
 {
 }
 
@@ -90,6 +92,22 @@ string ModifyBackupPlanRequest::ToJsonString() const
         string key = "LogBackupRetentionPeriod";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_logBackupRetentionPeriod, allocator);
+    }
+
+    if (m_planIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PlanId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_planId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_planNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PlanName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_planName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -194,6 +212,38 @@ void ModifyBackupPlanRequest::SetLogBackupRetentionPeriod(const uint64_t& _logBa
 bool ModifyBackupPlanRequest::LogBackupRetentionPeriodHasBeenSet() const
 {
     return m_logBackupRetentionPeriodHasBeenSet;
+}
+
+string ModifyBackupPlanRequest::GetPlanId() const
+{
+    return m_planId;
+}
+
+void ModifyBackupPlanRequest::SetPlanId(const string& _planId)
+{
+    m_planId = _planId;
+    m_planIdHasBeenSet = true;
+}
+
+bool ModifyBackupPlanRequest::PlanIdHasBeenSet() const
+{
+    return m_planIdHasBeenSet;
+}
+
+string ModifyBackupPlanRequest::GetPlanName() const
+{
+    return m_planName;
+}
+
+void ModifyBackupPlanRequest::SetPlanName(const string& _planName)
+{
+    m_planName = _planName;
+    m_planNameHasBeenSet = true;
+}
+
+bool ModifyBackupPlanRequest::PlanNameHasBeenSet() const
+{
+    return m_planNameHasBeenSet;
 }
 
 

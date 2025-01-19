@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备份文件所在的cos桶
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CosBucket 备份文件所在的cos桶
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCosBucket() const;
 
                     /**
                      * 设置备份文件所在的cos桶
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cosBucket 备份文件所在的cos桶
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCosBucket(const std::string& _cosBucket);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备份文件所在的完整cos路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CosPath 备份文件所在的完整cos路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCosPath() const;
 
                     /**
                      * 设置备份文件所在的完整cos路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cosPath 备份文件所在的完整cos路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCosPath(const std::string& _cosPath);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备份文件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SnapShotPath 备份文件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSnapShotPath() const;
 
                     /**
                      * 设置备份文件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _snapShotPath 备份文件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSnapShotPath(const std::string& _snapShotPath);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 备份文件所在的cos桶
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cosBucket;
                     bool m_cosBucketHasBeenSet;
 
                     /**
                      * 备份文件所在的完整cos路径
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cosPath;
                     bool m_cosPathHasBeenSet;
 
                     /**
                      * 备份文件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_snapShotPath;
                     bool m_snapShotPathHasBeenSet;

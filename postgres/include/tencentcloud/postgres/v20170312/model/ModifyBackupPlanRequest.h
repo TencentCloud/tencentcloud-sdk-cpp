@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool BaseBackupRetentionPeriodHasBeenSet() const;
 
                     /**
-                     * 获取实例备份周期，按照星期维度，格式为小写星期英文单词
-                     * @return BackupPeriod 实例备份周期，按照星期维度，格式为小写星期英文单词
+                     * 获取实例备份周期，若是星期维度，格式为小写星期英文单词；若是按月维度，格式为数字字符，如["1","2"]。
+                     * @return BackupPeriod 实例备份周期，若是星期维度，格式为小写星期英文单词；若是按月维度，格式为数字字符，如["1","2"]。
                      * 
                      */
                     std::vector<std::string> GetBackupPeriod() const;
 
                     /**
-                     * 设置实例备份周期，按照星期维度，格式为小写星期英文单词
-                     * @param _backupPeriod 实例备份周期，按照星期维度，格式为小写星期英文单词
+                     * 设置实例备份周期，若是星期维度，格式为小写星期英文单词；若是按月维度，格式为数字字符，如["1","2"]。
+                     * @param _backupPeriod 实例备份周期，若是星期维度，格式为小写星期英文单词；若是按月维度，格式为数字字符，如["1","2"]。
                      * 
                      */
                     void SetBackupPeriod(const std::vector<std::string>& _backupPeriod);
@@ -168,6 +168,48 @@ namespace TencentCloud
                      */
                     bool LogBackupRetentionPeriodHasBeenSet() const;
 
+                    /**
+                     * 获取备份计划ID，用于指明要修改哪个备份计划，不传则是修改默认备份计划。
+                     * @return PlanId 备份计划ID，用于指明要修改哪个备份计划，不传则是修改默认备份计划。
+                     * 
+                     */
+                    std::string GetPlanId() const;
+
+                    /**
+                     * 设置备份计划ID，用于指明要修改哪个备份计划，不传则是修改默认备份计划。
+                     * @param _planId 备份计划ID，用于指明要修改哪个备份计划，不传则是修改默认备份计划。
+                     * 
+                     */
+                    void SetPlanId(const std::string& _planId);
+
+                    /**
+                     * 判断参数 PlanId 是否已赋值
+                     * @return PlanId 是否已赋值
+                     * 
+                     */
+                    bool PlanIdHasBeenSet() const;
+
+                    /**
+                     * 获取要修改的备份计划名称。
+                     * @return PlanName 要修改的备份计划名称。
+                     * 
+                     */
+                    std::string GetPlanName() const;
+
+                    /**
+                     * 设置要修改的备份计划名称。
+                     * @param _planName 要修改的备份计划名称。
+                     * 
+                     */
+                    void SetPlanName(const std::string& _planName);
+
+                    /**
+                     * 判断参数 PlanName 是否已赋值
+                     * @return PlanName 是否已赋值
+                     * 
+                     */
+                    bool PlanNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -195,7 +237,7 @@ namespace TencentCloud
                     bool m_baseBackupRetentionPeriodHasBeenSet;
 
                     /**
-                     * 实例备份周期，按照星期维度，格式为小写星期英文单词
+                     * 实例备份周期，若是星期维度，格式为小写星期英文单词；若是按月维度，格式为数字字符，如["1","2"]。
                      */
                     std::vector<std::string> m_backupPeriod;
                     bool m_backupPeriodHasBeenSet;
@@ -205,6 +247,18 @@ namespace TencentCloud
                      */
                     uint64_t m_logBackupRetentionPeriod;
                     bool m_logBackupRetentionPeriodHasBeenSet;
+
+                    /**
+                     * 备份计划ID，用于指明要修改哪个备份计划，不传则是修改默认备份计划。
+                     */
+                    std::string m_planId;
+                    bool m_planIdHasBeenSet;
+
+                    /**
+                     * 要修改的备份计划名称。
+                     */
+                    std::string m_planName;
+                    bool m_planNameHasBeenSet;
 
                 };
             }

@@ -34,7 +34,9 @@ DescribeSlowQueryRecordsDownloadRequest::DescribeSlowQueryRecordsDownloadRequest
     m_memoryUsageHasBeenSet(false),
     m_isQueryHasBeenSet(false),
     m_dbNameHasBeenSet(false),
-    m_catalogNameHasBeenSet(false)
+    m_catalogNameHasBeenSet(false),
+    m_sortFieldHasBeenSet(false),
+    m_sortOrderHasBeenSet(false)
 {
 }
 
@@ -149,6 +151,22 @@ string DescribeSlowQueryRecordsDownloadRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_sortFieldHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SortField";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sortField.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sortOrderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SortOrder";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sortOrder.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -349,6 +367,38 @@ void DescribeSlowQueryRecordsDownloadRequest::SetCatalogName(const vector<string
 bool DescribeSlowQueryRecordsDownloadRequest::CatalogNameHasBeenSet() const
 {
     return m_catalogNameHasBeenSet;
+}
+
+string DescribeSlowQueryRecordsDownloadRequest::GetSortField() const
+{
+    return m_sortField;
+}
+
+void DescribeSlowQueryRecordsDownloadRequest::SetSortField(const string& _sortField)
+{
+    m_sortField = _sortField;
+    m_sortFieldHasBeenSet = true;
+}
+
+bool DescribeSlowQueryRecordsDownloadRequest::SortFieldHasBeenSet() const
+{
+    return m_sortFieldHasBeenSet;
+}
+
+string DescribeSlowQueryRecordsDownloadRequest::GetSortOrder() const
+{
+    return m_sortOrder;
+}
+
+void DescribeSlowQueryRecordsDownloadRequest::SetSortOrder(const string& _sortOrder)
+{
+    m_sortOrder = _sortOrder;
+    m_sortOrderHasBeenSet = true;
+}
+
+bool DescribeSlowQueryRecordsDownloadRequest::SortOrderHasBeenSet() const
+{
+    return m_sortOrderHasBeenSet;
 }
 
 

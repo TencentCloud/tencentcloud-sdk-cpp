@@ -180,27 +180,15 @@ namespace TencentCloud
                     bool RTPSettingsHasBeenSet() const;
 
                     /**
-                     * 获取输入的协议，可选[SRT|RTP|RTMP|RTMP_PULL|RTSP_PULL|RIST]。
-当输出包含RTP时，输入只能是RTP。
-当输出包含RTMP时，输入可以是SRT/RTMP。
-当输出包含SRT时，输入只能是SRT。
-                     * @return Protocol 输入的协议，可选[SRT|RTP|RTMP|RTMP_PULL|RTSP_PULL|RIST]。
-当输出包含RTP时，输入只能是RTP。
-当输出包含RTMP时，输入可以是SRT/RTMP。
-当输出包含SRT时，输入只能是SRT。
+                     * 获取输入的协议，可选[SRT|RTP|RTMP_PUSH|RTMP_PULL|RTSP_PULL|RIST]。	-
+                     * @return Protocol 输入的协议，可选[SRT|RTP|RTMP_PUSH|RTMP_PULL|RTSP_PULL|RIST]。	-
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置输入的协议，可选[SRT|RTP|RTMP|RTMP_PULL|RTSP_PULL|RIST]。
-当输出包含RTP时，输入只能是RTP。
-当输出包含RTMP时，输入可以是SRT/RTMP。
-当输出包含SRT时，输入只能是SRT。
-                     * @param _protocol 输入的协议，可选[SRT|RTP|RTMP|RTMP_PULL|RTSP_PULL|RIST]。
-当输出包含RTP时，输入只能是RTP。
-当输出包含RTMP时，输入可以是SRT/RTMP。
-当输出包含SRT时，输入只能是SRT。
+                     * 设置输入的协议，可选[SRT|RTP|RTMP_PUSH|RTMP_PULL|RTSP_PULL|RIST]。	-
+                     * @param _protocol 输入的协议，可选[SRT|RTP|RTMP_PUSH|RTMP_PULL|RTSP_PULL|RIST]。	-
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -440,10 +428,7 @@ namespace TencentCloud
                     bool m_rTPSettingsHasBeenSet;
 
                     /**
-                     * 输入的协议，可选[SRT|RTP|RTMP|RTMP_PULL|RTSP_PULL|RIST]。
-当输出包含RTP时，输入只能是RTP。
-当输出包含RTMP时，输入可以是SRT/RTMP。
-当输出包含SRT时，输入只能是SRT。
+                     * 输入的协议，可选[SRT|RTP|RTMP_PUSH|RTMP_PULL|RTSP_PULL|RIST]。	-
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;

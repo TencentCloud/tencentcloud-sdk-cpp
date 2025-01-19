@@ -294,6 +294,48 @@ namespace TencentCloud
                      */
                     bool CatalogNameHasBeenSet() const;
 
+                    /**
+                     * 获取排序字段
+                     * @return SortField 排序字段
+                     * 
+                     */
+                    std::string GetSortField() const;
+
+                    /**
+                     * 设置排序字段
+                     * @param _sortField 排序字段
+                     * 
+                     */
+                    void SetSortField(const std::string& _sortField);
+
+                    /**
+                     * 判断参数 SortField 是否已赋值
+                     * @return SortField 是否已赋值
+                     * 
+                     */
+                    bool SortFieldHasBeenSet() const;
+
+                    /**
+                     * 获取排序方式
+                     * @return SortOrder 排序方式
+                     * 
+                     */
+                    std::string GetSortOrder() const;
+
+                    /**
+                     * 设置排序方式
+                     * @param _sortOrder 排序方式
+                     * 
+                     */
+                    void SetSortOrder(const std::string& _sortOrder);
+
+                    /**
+                     * 判断参数 SortOrder 是否已赋值
+                     * @return SortOrder 是否已赋值
+                     * 
+                     */
+                    bool SortOrderHasBeenSet() const;
+
                 private:
 
                     /**
@@ -367,6 +409,18 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_catalogName;
                     bool m_catalogNameHasBeenSet;
+
+                    /**
+                     * 排序字段
+                     */
+                    std::string m_sortField;
+                    bool m_sortFieldHasBeenSet;
+
+                    /**
+                     * 排序方式
+                     */
+                    std::string m_sortOrder;
+                    bool m_sortOrderHasBeenSet;
 
                 };
             }

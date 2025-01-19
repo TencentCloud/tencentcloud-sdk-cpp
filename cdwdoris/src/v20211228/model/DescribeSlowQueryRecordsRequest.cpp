@@ -36,7 +36,9 @@ DescribeSlowQueryRecordsRequest::DescribeSlowQueryRecordsRequest() :
     m_sqlHasBeenSet(false),
     m_readRowsHasBeenSet(false),
     m_resultBytesHasBeenSet(false),
-    m_memoryUsageHasBeenSet(false)
+    m_memoryUsageHasBeenSet(false),
+    m_sortFieldHasBeenSet(false),
+    m_sortOrderHasBeenSet(false)
 {
 }
 
@@ -167,6 +169,22 @@ string DescribeSlowQueryRecordsRequest::ToJsonString() const
         string key = "MemoryUsage";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_memoryUsage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sortFieldHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SortField";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sortField.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sortOrderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SortOrder";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sortOrder.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -399,6 +417,38 @@ void DescribeSlowQueryRecordsRequest::SetMemoryUsage(const string& _memoryUsage)
 bool DescribeSlowQueryRecordsRequest::MemoryUsageHasBeenSet() const
 {
     return m_memoryUsageHasBeenSet;
+}
+
+string DescribeSlowQueryRecordsRequest::GetSortField() const
+{
+    return m_sortField;
+}
+
+void DescribeSlowQueryRecordsRequest::SetSortField(const string& _sortField)
+{
+    m_sortField = _sortField;
+    m_sortFieldHasBeenSet = true;
+}
+
+bool DescribeSlowQueryRecordsRequest::SortFieldHasBeenSet() const
+{
+    return m_sortFieldHasBeenSet;
+}
+
+string DescribeSlowQueryRecordsRequest::GetSortOrder() const
+{
+    return m_sortOrder;
+}
+
+void DescribeSlowQueryRecordsRequest::SetSortOrder(const string& _sortOrder)
+{
+    m_sortOrder = _sortOrder;
+    m_sortOrderHasBeenSet = true;
+}
+
+bool DescribeSlowQueryRecordsRequest::SortOrderHasBeenSet() const
+{
+    return m_sortOrderHasBeenSet;
 }
 
 

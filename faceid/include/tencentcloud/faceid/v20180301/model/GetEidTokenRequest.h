@@ -45,18 +45,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取EID商户id。
+                     * 获取EID商户ID。通过人脸核身控制台[自助接入](https://console.cloud.tencent.com/faceid/access)申请。
 - 字段长度最长50位。
-                     * @return MerchantId EID商户id。
+                     * @return MerchantId EID商户ID。通过人脸核身控制台[自助接入](https://console.cloud.tencent.com/faceid/access)申请。
 - 字段长度最长50位。
                      * 
                      */
                     std::string GetMerchantId() const;
 
                     /**
-                     * 设置EID商户id。
+                     * 设置EID商户ID。通过人脸核身控制台[自助接入](https://console.cloud.tencent.com/faceid/access)申请。
 - 字段长度最长50位。
-                     * @param _merchantId EID商户id。
+                     * @param _merchantId EID商户ID。通过人脸核身控制台[自助接入](https://console.cloud.tencent.com/faceid/access)申请。
 - 字段长度最长50位。
                      * 
                      */
@@ -238,7 +238,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * EID商户id。
+                     * EID商户ID。通过人脸核身控制台[自助接入](https://console.cloud.tencent.com/faceid/access)申请。
 - 字段长度最长50位。
                      */
                     std::string m_merchantId;

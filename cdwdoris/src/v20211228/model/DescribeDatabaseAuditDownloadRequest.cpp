@@ -36,7 +36,8 @@ DescribeDatabaseAuditDownloadRequest::DescribeDatabaseAuditDownloadRequest() :
     m_usersHasBeenSet(false),
     m_dbNamesHasBeenSet(false),
     m_sqlTypesHasBeenSet(false),
-    m_catalogsHasBeenSet(false)
+    m_catalogsHasBeenSet(false),
+    m_isQueryHasBeenSet(false)
 {
 }
 
@@ -176,6 +177,19 @@ string DescribeDatabaseAuditDownloadRequest::ToJsonString() const
         for (auto itr = m_catalogs.begin(); itr != m_catalogs.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_isQueryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsQuery";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_isQuery.begin(); itr != m_isQuery.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetBool(*itr), allocator);
         }
     }
 
@@ -409,6 +423,22 @@ void DescribeDatabaseAuditDownloadRequest::SetCatalogs(const vector<string>& _ca
 bool DescribeDatabaseAuditDownloadRequest::CatalogsHasBeenSet() const
 {
     return m_catalogsHasBeenSet;
+}
+
+vector<bool> DescribeDatabaseAuditDownloadRequest::GetIsQuery() const
+{
+    return m_isQuery;
+}
+
+void DescribeDatabaseAuditDownloadRequest::SetIsQuery(const vector<bool>& _isQuery)
+{
+    m_isQuery = _isQuery;
+    m_isQueryHasBeenSet = true;
+}
+
+bool DescribeDatabaseAuditDownloadRequest::IsQueryHasBeenSet() const
+{
+    return m_isQueryHasBeenSet;
 }
 
 

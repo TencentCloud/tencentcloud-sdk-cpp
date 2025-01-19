@@ -36,7 +36,9 @@ CreateInstancesRequest::CreateInstancesRequest() :
     m_autoVoucherHasBeenSet(false),
     m_firewallTemplateIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_initCommandHasBeenSet(false)
+    m_initCommandHasBeenSet(false),
+    m_domainNameHasBeenSet(false),
+    m_subdomainHasBeenSet(false)
 {
 }
 
@@ -179,6 +181,22 @@ string CreateInstancesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_initCommand.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_domainNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DomainName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_domainName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subdomainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Subdomain";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_subdomain.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -411,6 +429,38 @@ void CreateInstancesRequest::SetInitCommand(const Command& _initCommand)
 bool CreateInstancesRequest::InitCommandHasBeenSet() const
 {
     return m_initCommandHasBeenSet;
+}
+
+string CreateInstancesRequest::GetDomainName() const
+{
+    return m_domainName;
+}
+
+void CreateInstancesRequest::SetDomainName(const string& _domainName)
+{
+    m_domainName = _domainName;
+    m_domainNameHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::DomainNameHasBeenSet() const
+{
+    return m_domainNameHasBeenSet;
+}
+
+string CreateInstancesRequest::GetSubdomain() const
+{
+    return m_subdomain;
+}
+
+void CreateInstancesRequest::SetSubdomain(const string& _subdomain)
+{
+    m_subdomain = _subdomain;
+    m_subdomainHasBeenSet = true;
+}
+
+bool CreateInstancesRequest::SubdomainHasBeenSet() const
+{
+    return m_subdomainHasBeenSet;
 }
 
 
