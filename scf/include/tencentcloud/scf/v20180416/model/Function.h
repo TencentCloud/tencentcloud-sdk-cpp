@@ -179,15 +179,15 @@ namespace TencentCloud
                     bool NamespaceHasBeenSet() const;
 
                     /**
-                     * 获取函数状态，状态值及流转[参考此处](https://cloud.tencent.com/document/product/583/47175)
-                     * @return Status 函数状态，状态值及流转[参考此处](https://cloud.tencent.com/document/product/583/47175)
+                     * 获取函数状态，状态值及流转[参考此处](https://cloud.tencent.com/document/product/583/17244)
+                     * @return Status 函数状态，状态值及流转[参考此处](https://cloud.tencent.com/document/product/583/17244)
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置函数状态，状态值及流转[参考此处](https://cloud.tencent.com/document/product/583/47175)
-                     * @param _status 函数状态，状态值及流转[参考此处](https://cloud.tencent.com/document/product/583/47175)
+                     * 设置函数状态，状态值及流转[参考此处](https://cloud.tencent.com/document/product/583/17244)
+                     * @param _status 函数状态，状态值及流转[参考此处](https://cloud.tencent.com/document/product/583/17244)
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -436,7 +436,7 @@ namespace TencentCloud
                     bool m_namespaceHasBeenSet;
 
                     /**
-                     * 函数状态，状态值及流转[参考此处](https://cloud.tencent.com/document/product/583/47175)
+                     * 函数状态，状态值及流转[参考此处](https://cloud.tencent.com/document/product/583/17244)
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

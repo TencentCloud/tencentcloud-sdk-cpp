@@ -243,6 +243,27 @@ namespace TencentCloud
                      */
                     bool FilterOneWordHasBeenSet() const;
 
+                    /**
+                     * 获取欢迎消息优先级，0默认，1高优，高优不能被打断。
+                     * @return WelcomeMessagePriority 欢迎消息优先级，0默认，1高优，高优不能被打断。
+                     * 
+                     */
+                    uint64_t GetWelcomeMessagePriority() const;
+
+                    /**
+                     * 设置欢迎消息优先级，0默认，1高优，高优不能被打断。
+                     * @param _welcomeMessagePriority 欢迎消息优先级，0默认，1高优，高优不能被打断。
+                     * 
+                     */
+                    void SetWelcomeMessagePriority(const uint64_t& _welcomeMessagePriority);
+
+                    /**
+                     * 判断参数 WelcomeMessagePriority 是否已赋值
+                     * @return WelcomeMessagePriority 是否已赋值
+                     * 
+                     */
+                    bool WelcomeMessagePriorityHasBeenSet() const;
+
                 private:
 
                     /**
@@ -300,6 +321,12 @@ namespace TencentCloud
                      */
                     bool m_filterOneWord;
                     bool m_filterOneWordHasBeenSet;
+
+                    /**
+                     * 欢迎消息优先级，0默认，1高优，高优不能被打断。
+                     */
+                    uint64_t m_welcomeMessagePriority;
+                    bool m_welcomeMessagePriorityHasBeenSet;
 
                 };
             }

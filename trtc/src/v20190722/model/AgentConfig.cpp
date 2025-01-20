@@ -29,7 +29,8 @@ AgentConfig::AgentConfig() :
     m_interruptModeHasBeenSet(false),
     m_interruptSpeechDurationHasBeenSet(false),
     m_turnDetectionModeHasBeenSet(false),
-    m_filterOneWordHasBeenSet(false)
+    m_filterOneWordHasBeenSet(false),
+    m_welcomeMessagePriorityHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,16 @@ CoreInternalOutcome AgentConfig::Deserialize(const rapidjson::Value &value)
         m_filterOneWordHasBeenSet = true;
     }
 
+    if (value.HasMember("WelcomeMessagePriority") && !value["WelcomeMessagePriority"].IsNull())
+    {
+        if (!value["WelcomeMessagePriority"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentConfig.WelcomeMessagePriority` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_welcomeMessagePriority = value["WelcomeMessagePriority"].GetUint64();
+        m_welcomeMessagePriorityHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +216,14 @@ void AgentConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "FilterOneWord";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_filterOneWord, allocator);
+    }
+
+    if (m_welcomeMessagePriorityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WelcomeMessagePriority";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_welcomeMessagePriority, allocator);
     }
 
 }
@@ -352,5 +371,21 @@ void AgentConfig::SetFilterOneWord(const bool& _filterOneWord)
 bool AgentConfig::FilterOneWordHasBeenSet() const
 {
     return m_filterOneWordHasBeenSet;
+}
+
+uint64_t AgentConfig::GetWelcomeMessagePriority() const
+{
+    return m_welcomeMessagePriority;
+}
+
+void AgentConfig::SetWelcomeMessagePriority(const uint64_t& _welcomeMessagePriority)
+{
+    m_welcomeMessagePriority = _welcomeMessagePriority;
+    m_welcomeMessagePriorityHasBeenSet = true;
+}
+
+bool AgentConfig::WelcomeMessagePriorityHasBeenSet() const
+{
+    return m_welcomeMessagePriorityHasBeenSet;
 }
 

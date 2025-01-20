@@ -125,6 +125,8 @@
 #include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayCertificatesResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayConfigRequest.h>
 #include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayConfigResponse.h>
+#include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayInfoByIpRequest.h>
+#include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayInfoByIpResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayNodesRequest.h>
 #include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayNodesResponse.h>
 #include <tencentcloud/tse/v20201207/model/DescribeCloudNativeAPIGatewayPortsRequest.h>
@@ -426,6 +428,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCloudNativeAPIGatewayConfigResponse> DescribeCloudNativeAPIGatewayConfigOutcome;
                 typedef std::future<DescribeCloudNativeAPIGatewayConfigOutcome> DescribeCloudNativeAPIGatewayConfigOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DescribeCloudNativeAPIGatewayConfigRequest&, DescribeCloudNativeAPIGatewayConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudNativeAPIGatewayConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCloudNativeAPIGatewayInfoByIpResponse> DescribeCloudNativeAPIGatewayInfoByIpOutcome;
+                typedef std::future<DescribeCloudNativeAPIGatewayInfoByIpOutcome> DescribeCloudNativeAPIGatewayInfoByIpOutcomeCallable;
+                typedef std::function<void(const TseClient*, const Model::DescribeCloudNativeAPIGatewayInfoByIpRequest&, DescribeCloudNativeAPIGatewayInfoByIpOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudNativeAPIGatewayInfoByIpAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCloudNativeAPIGatewayNodesResponse> DescribeCloudNativeAPIGatewayNodesOutcome;
                 typedef std::future<DescribeCloudNativeAPIGatewayNodesOutcome> DescribeCloudNativeAPIGatewayNodesOutcomeCallable;
                 typedef std::function<void(const TseClient*, const Model::DescribeCloudNativeAPIGatewayNodesRequest&, DescribeCloudNativeAPIGatewayNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudNativeAPIGatewayNodesAsyncHandler;
@@ -1088,6 +1093,15 @@ namespace TencentCloud
                 DescribeCloudNativeAPIGatewayConfigOutcome DescribeCloudNativeAPIGatewayConfig(const Model::DescribeCloudNativeAPIGatewayConfigRequest &request);
                 void DescribeCloudNativeAPIGatewayConfigAsync(const Model::DescribeCloudNativeAPIGatewayConfigRequest& request, const DescribeCloudNativeAPIGatewayConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCloudNativeAPIGatewayConfigOutcomeCallable DescribeCloudNativeAPIGatewayConfigCallable(const Model::DescribeCloudNativeAPIGatewayConfigRequest& request);
+
+                /**
+                 *根据公网IP查询云原生网关实例信息
+                 * @param req DescribeCloudNativeAPIGatewayInfoByIpRequest
+                 * @return DescribeCloudNativeAPIGatewayInfoByIpOutcome
+                 */
+                DescribeCloudNativeAPIGatewayInfoByIpOutcome DescribeCloudNativeAPIGatewayInfoByIp(const Model::DescribeCloudNativeAPIGatewayInfoByIpRequest &request);
+                void DescribeCloudNativeAPIGatewayInfoByIpAsync(const Model::DescribeCloudNativeAPIGatewayInfoByIpRequest& request, const DescribeCloudNativeAPIGatewayInfoByIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCloudNativeAPIGatewayInfoByIpOutcomeCallable DescribeCloudNativeAPIGatewayInfoByIpCallable(const Model::DescribeCloudNativeAPIGatewayInfoByIpRequest& request);
 
                 /**
                  *获取云原生网关节点列表

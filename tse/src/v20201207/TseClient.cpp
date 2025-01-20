@@ -2233,6 +2233,49 @@ TseClient::DescribeCloudNativeAPIGatewayConfigOutcomeCallable TseClient::Describ
     return task->get_future();
 }
 
+TseClient::DescribeCloudNativeAPIGatewayInfoByIpOutcome TseClient::DescribeCloudNativeAPIGatewayInfoByIp(const DescribeCloudNativeAPIGatewayInfoByIpRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudNativeAPIGatewayInfoByIp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudNativeAPIGatewayInfoByIpResponse rsp = DescribeCloudNativeAPIGatewayInfoByIpResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudNativeAPIGatewayInfoByIpOutcome(rsp);
+        else
+            return DescribeCloudNativeAPIGatewayInfoByIpOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudNativeAPIGatewayInfoByIpOutcome(outcome.GetError());
+    }
+}
+
+void TseClient::DescribeCloudNativeAPIGatewayInfoByIpAsync(const DescribeCloudNativeAPIGatewayInfoByIpRequest& request, const DescribeCloudNativeAPIGatewayInfoByIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudNativeAPIGatewayInfoByIp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TseClient::DescribeCloudNativeAPIGatewayInfoByIpOutcomeCallable TseClient::DescribeCloudNativeAPIGatewayInfoByIpCallable(const DescribeCloudNativeAPIGatewayInfoByIpRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudNativeAPIGatewayInfoByIpOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudNativeAPIGatewayInfoByIp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TseClient::DescribeCloudNativeAPIGatewayNodesOutcome TseClient::DescribeCloudNativeAPIGatewayNodes(const DescribeCloudNativeAPIGatewayNodesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCloudNativeAPIGatewayNodes");

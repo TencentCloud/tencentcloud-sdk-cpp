@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取待修改的用户名
-                     * @return Nickname 待修改的用户名
+                     * 获取待修改的用户名。对应注册用户下“Name“字段，本次修改是对此内容进行修改。
+                     * @return Nickname 待修改的用户名。对应注册用户下“Name“字段，本次修改是对此内容进行修改。
                      * 
                      */
                     std::string GetNickname() const;
 
                     /**
-                     * 设置待修改的用户名
-                     * @param _nickname 待修改的用户名
+                     * 设置待修改的用户名。对应注册用户下“Name“字段，本次修改是对此内容进行修改。
+                     * @param _nickname 待修改的用户名。对应注册用户下“Name“字段，本次修改是对此内容进行修改。
                      * 
                      */
                     void SetNickname(const std::string& _nickname);
@@ -114,7 +114,7 @@ namespace TencentCloud
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * 待修改的用户名
+                     * 待修改的用户名。对应注册用户下“Name“字段，本次修改是对此内容进行修改。
                      */
                     std::string m_nickname;
                     bool m_nicknameHasBeenSet;
