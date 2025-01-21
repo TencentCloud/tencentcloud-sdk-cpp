@@ -21,7 +21,8 @@ using namespace TencentCloud::Lke::V20231130::Model;
 using namespace std;
 
 KnowledgeWorkflow::KnowledgeWorkflow() :
-    m_isEnabledHasBeenSet(false)
+    m_isEnabledHasBeenSet(false),
+    m_usePdlHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,16 @@ CoreInternalOutcome KnowledgeWorkflow::Deserialize(const rapidjson::Value &value
         m_isEnabledHasBeenSet = true;
     }
 
+    if (value.HasMember("UsePdl") && !value["UsePdl"].IsNull())
+    {
+        if (!value["UsePdl"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `KnowledgeWorkflow.UsePdl` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_usePdl = value["UsePdl"].GetBool();
+        m_usePdlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +64,14 @@ void KnowledgeWorkflow::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "IsEnabled";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isEnabled, allocator);
+    }
+
+    if (m_usePdlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UsePdl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_usePdl, allocator);
     }
 
 }
@@ -72,5 +91,21 @@ void KnowledgeWorkflow::SetIsEnabled(const bool& _isEnabled)
 bool KnowledgeWorkflow::IsEnabledHasBeenSet() const
 {
     return m_isEnabledHasBeenSet;
+}
+
+bool KnowledgeWorkflow::GetUsePdl() const
+{
+    return m_usePdl;
+}
+
+void KnowledgeWorkflow::SetUsePdl(const bool& _usePdl)
+{
+    m_usePdl = _usePdl;
+    m_usePdlHasBeenSet = true;
+}
+
+bool KnowledgeWorkflow::UsePdlHasBeenSet() const
+{
+    return m_usePdlHasBeenSet;
 }
 

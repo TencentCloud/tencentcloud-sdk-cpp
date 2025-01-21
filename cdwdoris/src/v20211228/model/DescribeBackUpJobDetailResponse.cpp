@@ -24,7 +24,10 @@ using namespace TencentCloud::Cdwdoris::V20211228::Model;
 using namespace std;
 
 DescribeBackUpJobDetailResponse::DescribeBackUpJobDetailResponse() :
-    m_tableContentsHasBeenSet(false)
+    m_tableContentsHasBeenSet(false),
+    m_errorMsgHasBeenSet(false),
+    m_isUnknownVersionHasBeenSet(false),
+    m_msgHasBeenSet(false)
 {
 }
 
@@ -82,6 +85,36 @@ CoreInternalOutcome DescribeBackUpJobDetailResponse::Deserialize(const string &p
         m_tableContentsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ErrorMsg") && !rsp["ErrorMsg"].IsNull())
+    {
+        if (!rsp["ErrorMsg"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ErrorMsg` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_errorMsg = string(rsp["ErrorMsg"].GetString());
+        m_errorMsgHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("IsUnknownVersion") && !rsp["IsUnknownVersion"].IsNull())
+    {
+        if (!rsp["IsUnknownVersion"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `IsUnknownVersion` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isUnknownVersion = rsp["IsUnknownVersion"].GetBool();
+        m_isUnknownVersionHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Msg") && !rsp["Msg"].IsNull())
+    {
+        if (!rsp["Msg"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Msg` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_msg = string(rsp["Msg"].GetString());
+        m_msgHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +140,30 @@ string DescribeBackUpJobDetailResponse::ToJsonString() const
         }
     }
 
+    if (m_errorMsgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrorMsg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errorMsg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isUnknownVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsUnknownVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isUnknownVersion, allocator);
+    }
+
+    if (m_msgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Msg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_msg.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -127,6 +184,36 @@ vector<BackupTableContent> DescribeBackUpJobDetailResponse::GetTableContents() c
 bool DescribeBackUpJobDetailResponse::TableContentsHasBeenSet() const
 {
     return m_tableContentsHasBeenSet;
+}
+
+string DescribeBackUpJobDetailResponse::GetErrorMsg() const
+{
+    return m_errorMsg;
+}
+
+bool DescribeBackUpJobDetailResponse::ErrorMsgHasBeenSet() const
+{
+    return m_errorMsgHasBeenSet;
+}
+
+bool DescribeBackUpJobDetailResponse::GetIsUnknownVersion() const
+{
+    return m_isUnknownVersion;
+}
+
+bool DescribeBackUpJobDetailResponse::IsUnknownVersionHasBeenSet() const
+{
+    return m_isUnknownVersionHasBeenSet;
+}
+
+string DescribeBackUpJobDetailResponse::GetMsg() const
+{
+    return m_msg;
+}
+
+bool DescribeBackUpJobDetailResponse::MsgHasBeenSet() const
+{
+    return m_msgHasBeenSet;
 }
 
 

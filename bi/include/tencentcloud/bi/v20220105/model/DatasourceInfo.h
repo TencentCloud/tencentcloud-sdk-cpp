@@ -908,6 +908,31 @@ namespace TencentCloud
                      */
                     bool DbTypeNameHasBeenSet() const;
 
+                    /**
+                     * 获取开启vpc
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UseVPC 开启vpc
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetUseVPC() const;
+
+                    /**
+                     * 设置开启vpc
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _useVPC 开启vpc
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUseVPC(const bool& _useVPC);
+
+                    /**
+                     * 判断参数 UseVPC 是否已赋值
+                     * @return UseVPC 是否已赋值
+                     * 
+                     */
+                    bool UseVPCHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1151,6 +1176,13 @@ namespace TencentCloud
                      */
                     std::string m_dbTypeName;
                     bool m_dbTypeNameHasBeenSet;
+
+                    /**
+                     * 开启vpc
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_useVPC;
+                    bool m_useVPCHasBeenSet;
 
                 };
             }

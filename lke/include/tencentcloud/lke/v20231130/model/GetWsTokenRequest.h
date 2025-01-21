@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool VisitorBizIdHasBeenSet() const;
 
                     /**
-                     * 获取知识标签（用于知识库中知识的检索过滤）
-                     * @return VisitorLabels 知识标签（用于知识库中知识的检索过滤）
+                     * 获取知识标签，用于知识库中知识的检索过滤。该字段即将下线，请使用对话端接口中的 custom_variables 字段替代该字段。
+                     * @return VisitorLabels 知识标签，用于知识库中知识的检索过滤。该字段即将下线，请使用对话端接口中的 custom_variables 字段替代该字段。
                      * 
                      */
                     std::vector<GetWsTokenReq_Label> GetVisitorLabels() const;
 
                     /**
-                     * 设置知识标签（用于知识库中知识的检索过滤）
-                     * @param _visitorLabels 知识标签（用于知识库中知识的检索过滤）
+                     * 设置知识标签，用于知识库中知识的检索过滤。该字段即将下线，请使用对话端接口中的 custom_variables 字段替代该字段。
+                     * @param _visitorLabels 知识标签，用于知识库中知识的检索过滤。该字段即将下线，请使用对话端接口中的 custom_variables 字段替代该字段。
                      * 
                      */
                     void SetVisitorLabels(const std::vector<GetWsTokenReq_Label>& _visitorLabels);
@@ -148,7 +148,7 @@ namespace TencentCloud
                     bool m_visitorBizIdHasBeenSet;
 
                     /**
-                     * 知识标签（用于知识库中知识的检索过滤）
+                     * 知识标签，用于知识库中知识的检索过滤。该字段即将下线，请使用对话端接口中的 custom_variables 字段替代该字段。
                      */
                     std::vector<GetWsTokenReq_Label> m_visitorLabels;
                     bool m_visitorLabelsHasBeenSet;

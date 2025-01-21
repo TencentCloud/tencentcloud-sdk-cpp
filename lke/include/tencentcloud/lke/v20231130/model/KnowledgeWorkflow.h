@@ -71,6 +71,31 @@ namespace TencentCloud
                      */
                     bool IsEnabledHasBeenSet() const;
 
+                    /**
+                     * 获取是否启用PDL
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UsePdl 是否启用PDL
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetUsePdl() const;
+
+                    /**
+                     * 设置是否启用PDL
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _usePdl 是否启用PDL
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUsePdl(const bool& _usePdl);
+
+                    /**
+                     * 判断参数 UsePdl 是否已赋值
+                     * @return UsePdl 是否已赋值
+                     * 
+                     */
+                    bool UsePdlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -79,6 +104,13 @@ namespace TencentCloud
                      */
                     bool m_isEnabled;
                     bool m_isEnabledHasBeenSet;
+
+                    /**
+                     * 是否启用PDL
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_usePdl;
+                    bool m_usePdlHasBeenSet;
 
                 };
             }

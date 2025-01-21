@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取msg
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Msg msg
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMsg() const;
@@ -76,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取未知version
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsUnknownVersion 未知version
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsUnknownVersion() const;
@@ -92,9 +88,7 @@ namespace TencentCloud
 
                     /**
                      * 获取错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorMsg 错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetErrorMsg() const;
@@ -116,21 +110,18 @@ namespace TencentCloud
 
                     /**
                      * msg
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_msg;
                     bool m_msgHasBeenSet;
 
                     /**
                      * 未知version
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isUnknownVersion;
                     bool m_isUnknownVersionHasBeenSet;
 
                     /**
                      * 错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errorMsg;
                     bool m_errorMsgHasBeenSet;

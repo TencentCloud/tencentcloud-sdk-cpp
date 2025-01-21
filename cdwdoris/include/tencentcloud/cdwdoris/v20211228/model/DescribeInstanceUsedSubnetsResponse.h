@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取集群使用的vpc信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId 集群使用的vpc信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcId() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取集群使用的subnet信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UsedSubnets 集群使用的subnet信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetUsedSubnets() const;
@@ -79,14 +75,12 @@ namespace TencentCloud
 
                     /**
                      * 集群使用的vpc信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
                      * 集群使用的subnet信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_usedSubnets;
                     bool m_usedSubnetsHasBeenSet;

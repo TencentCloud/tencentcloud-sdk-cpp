@@ -267,10 +267,6 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeAttackEventsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAttackLogsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAttackLogsResponse.h>
-#include <tencentcloud/cwp/v20180228/model/DescribeAttackSourceRequest.h>
-#include <tencentcloud/cwp/v20180228/model/DescribeAttackSourceResponse.h>
-#include <tencentcloud/cwp/v20180228/model/DescribeAttackSourceEventsRequest.h>
-#include <tencentcloud/cwp/v20180228/model/DescribeAttackSourceEventsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAttackStatisticsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAttackStatisticsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAttackTopRequest.h>
@@ -1441,12 +1437,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAttackLogsResponse> DescribeAttackLogsOutcome;
                 typedef std::future<DescribeAttackLogsOutcome> DescribeAttackLogsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeAttackLogsRequest&, DescribeAttackLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAttackLogsAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeAttackSourceResponse> DescribeAttackSourceOutcome;
-                typedef std::future<DescribeAttackSourceOutcome> DescribeAttackSourceOutcomeCallable;
-                typedef std::function<void(const CwpClient*, const Model::DescribeAttackSourceRequest&, DescribeAttackSourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAttackSourceAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeAttackSourceEventsResponse> DescribeAttackSourceEventsOutcome;
-                typedef std::future<DescribeAttackSourceEventsOutcome> DescribeAttackSourceEventsOutcomeCallable;
-                typedef std::function<void(const CwpClient*, const Model::DescribeAttackSourceEventsRequest&, DescribeAttackSourceEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAttackSourceEventsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAttackStatisticsResponse> DescribeAttackStatisticsOutcome;
                 typedef std::future<DescribeAttackStatisticsOutcome> DescribeAttackStatisticsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeAttackStatisticsRequest&, DescribeAttackStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAttackStatisticsAsyncHandler;
@@ -3737,28 +3727,6 @@ namespace TencentCloud
                 DescribeAttackLogsOutcome DescribeAttackLogs(const Model::DescribeAttackLogsRequest &request);
                 void DescribeAttackLogsAsync(const Model::DescribeAttackLogsRequest& request, const DescribeAttackLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAttackLogsOutcomeCallable DescribeAttackLogsCallable(const Model::DescribeAttackLogsRequest& request);
-
-                /**
-                 *已废弃
-
-查询攻击溯源
-                 * @param req DescribeAttackSourceRequest
-                 * @return DescribeAttackSourceOutcome
-                 */
-                DescribeAttackSourceOutcome DescribeAttackSource(const Model::DescribeAttackSourceRequest &request);
-                void DescribeAttackSourceAsync(const Model::DescribeAttackSourceRequest& request, const DescribeAttackSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeAttackSourceOutcomeCallable DescribeAttackSourceCallable(const Model::DescribeAttackSourceRequest& request);
-
-                /**
-                 *已废弃
-
-查询攻击溯源事件
-                 * @param req DescribeAttackSourceEventsRequest
-                 * @return DescribeAttackSourceEventsOutcome
-                 */
-                DescribeAttackSourceEventsOutcome DescribeAttackSourceEvents(const Model::DescribeAttackSourceEventsRequest &request);
-                void DescribeAttackSourceEventsAsync(const Model::DescribeAttackSourceEventsRequest& request, const DescribeAttackSourceEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeAttackSourceEventsOutcomeCallable DescribeAttackSourceEventsCallable(const Model::DescribeAttackSourceEventsRequest& request);
 
                 /**
                  *网络攻击数据统计

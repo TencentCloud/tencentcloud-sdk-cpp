@@ -27,7 +27,12 @@ KnowledgeQaConfig::KnowledgeQaConfig() :
     m_searchHasBeenSet(false),
     m_outputHasBeenSet(false),
     m_workflowHasBeenSet(false),
-    m_searchRangeHasBeenSet(false)
+    m_searchRangeHasBeenSet(false),
+    m_patternHasBeenSet(false),
+    m_searchStrategyHasBeenSet(false),
+    m_singleWorkflowHasBeenSet(false),
+    m_pluginsHasBeenSet(false),
+    m_thoughtModelHasBeenSet(false)
 {
 }
 
@@ -144,6 +149,87 @@ CoreInternalOutcome KnowledgeQaConfig::Deserialize(const rapidjson::Value &value
         m_searchRangeHasBeenSet = true;
     }
 
+    if (value.HasMember("Pattern") && !value["Pattern"].IsNull())
+    {
+        if (!value["Pattern"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `KnowledgeQaConfig.Pattern` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_pattern = string(value["Pattern"].GetString());
+        m_patternHasBeenSet = true;
+    }
+
+    if (value.HasMember("SearchStrategy") && !value["SearchStrategy"].IsNull())
+    {
+        if (!value["SearchStrategy"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `KnowledgeQaConfig.SearchStrategy` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_searchStrategy.Deserialize(value["SearchStrategy"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_searchStrategyHasBeenSet = true;
+    }
+
+    if (value.HasMember("SingleWorkflow") && !value["SingleWorkflow"].IsNull())
+    {
+        if (!value["SingleWorkflow"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `KnowledgeQaConfig.SingleWorkflow` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_singleWorkflow.Deserialize(value["SingleWorkflow"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_singleWorkflowHasBeenSet = true;
+    }
+
+    if (value.HasMember("Plugins") && !value["Plugins"].IsNull())
+    {
+        if (!value["Plugins"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `KnowledgeQaConfig.Plugins` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Plugins"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            KnowledgeQaPlugin item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_plugins.push_back(item);
+        }
+        m_pluginsHasBeenSet = true;
+    }
+
+    if (value.HasMember("ThoughtModel") && !value["ThoughtModel"].IsNull())
+    {
+        if (!value["ThoughtModel"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `KnowledgeQaConfig.ThoughtModel` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_thoughtModel.Deserialize(value["ThoughtModel"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_thoughtModelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -216,6 +302,56 @@ void KnowledgeQaConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_searchRange.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_patternHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Pattern";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pattern.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_searchStrategyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SearchStrategy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_searchStrategy.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_singleWorkflowHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SingleWorkflow";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_singleWorkflow.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_pluginsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Plugins";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_plugins.begin(); itr != m_plugins.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_thoughtModelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ThoughtModel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_thoughtModel.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -331,5 +467,85 @@ void KnowledgeQaConfig::SetSearchRange(const SearchRange& _searchRange)
 bool KnowledgeQaConfig::SearchRangeHasBeenSet() const
 {
     return m_searchRangeHasBeenSet;
+}
+
+string KnowledgeQaConfig::GetPattern() const
+{
+    return m_pattern;
+}
+
+void KnowledgeQaConfig::SetPattern(const string& _pattern)
+{
+    m_pattern = _pattern;
+    m_patternHasBeenSet = true;
+}
+
+bool KnowledgeQaConfig::PatternHasBeenSet() const
+{
+    return m_patternHasBeenSet;
+}
+
+SearchStrategy KnowledgeQaConfig::GetSearchStrategy() const
+{
+    return m_searchStrategy;
+}
+
+void KnowledgeQaConfig::SetSearchStrategy(const SearchStrategy& _searchStrategy)
+{
+    m_searchStrategy = _searchStrategy;
+    m_searchStrategyHasBeenSet = true;
+}
+
+bool KnowledgeQaConfig::SearchStrategyHasBeenSet() const
+{
+    return m_searchStrategyHasBeenSet;
+}
+
+KnowledgeQaSingleWorkflow KnowledgeQaConfig::GetSingleWorkflow() const
+{
+    return m_singleWorkflow;
+}
+
+void KnowledgeQaConfig::SetSingleWorkflow(const KnowledgeQaSingleWorkflow& _singleWorkflow)
+{
+    m_singleWorkflow = _singleWorkflow;
+    m_singleWorkflowHasBeenSet = true;
+}
+
+bool KnowledgeQaConfig::SingleWorkflowHasBeenSet() const
+{
+    return m_singleWorkflowHasBeenSet;
+}
+
+vector<KnowledgeQaPlugin> KnowledgeQaConfig::GetPlugins() const
+{
+    return m_plugins;
+}
+
+void KnowledgeQaConfig::SetPlugins(const vector<KnowledgeQaPlugin>& _plugins)
+{
+    m_plugins = _plugins;
+    m_pluginsHasBeenSet = true;
+}
+
+bool KnowledgeQaConfig::PluginsHasBeenSet() const
+{
+    return m_pluginsHasBeenSet;
+}
+
+AppModel KnowledgeQaConfig::GetThoughtModel() const
+{
+    return m_thoughtModel;
+}
+
+void KnowledgeQaConfig::SetThoughtModel(const AppModel& _thoughtModel)
+{
+    m_thoughtModel = _thoughtModel;
+    m_thoughtModelHasBeenSet = true;
+}
+
+bool KnowledgeQaConfig::ThoughtModelHasBeenSet() const
+{
+    return m_thoughtModelHasBeenSet;
 }
 

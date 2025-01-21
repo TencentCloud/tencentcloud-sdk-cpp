@@ -41,7 +41,8 @@ ListQaItem::ListQaItem() :
     m_expireEndHasBeenSet(false),
     m_attrRangeHasBeenSet(false),
     m_attrLabelsHasBeenSet(false),
-    m_similarQuestionNumHasBeenSet(false)
+    m_similarQuestionNumHasBeenSet(false),
+    m_similarQuestionTipsHasBeenSet(false)
 {
 }
 
@@ -270,6 +271,16 @@ CoreInternalOutcome ListQaItem::Deserialize(const rapidjson::Value &value)
         m_similarQuestionNumHasBeenSet = true;
     }
 
+    if (value.HasMember("SimilarQuestionTips") && !value["SimilarQuestionTips"].IsNull())
+    {
+        if (!value["SimilarQuestionTips"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ListQaItem.SimilarQuestionTips` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_similarQuestionTips = string(value["SimilarQuestionTips"].GetString());
+        m_similarQuestionTipsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -450,6 +461,14 @@ void ListQaItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "SimilarQuestionNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_similarQuestionNum, allocator);
+    }
+
+    if (m_similarQuestionTipsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SimilarQuestionTips";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_similarQuestionTips.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -789,5 +808,21 @@ void ListQaItem::SetSimilarQuestionNum(const uint64_t& _similarQuestionNum)
 bool ListQaItem::SimilarQuestionNumHasBeenSet() const
 {
     return m_similarQuestionNumHasBeenSet;
+}
+
+string ListQaItem::GetSimilarQuestionTips() const
+{
+    return m_similarQuestionTips;
+}
+
+void ListQaItem::SetSimilarQuestionTips(const string& _similarQuestionTips)
+{
+    m_similarQuestionTips = _similarQuestionTips;
+    m_similarQuestionTipsHasBeenSet = true;
+}
+
+bool ListQaItem::SimilarQuestionTipsHasBeenSet() const
+{
+    return m_similarQuestionTipsHasBeenSet;
 }
 

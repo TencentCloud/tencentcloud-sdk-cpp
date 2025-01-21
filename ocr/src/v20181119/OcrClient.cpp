@@ -2233,6 +2233,49 @@ OcrClient::RecognizeForeignPermanentResidentIdCardOutcomeCallable OcrClient::Rec
     return task->get_future();
 }
 
+OcrClient::RecognizeGeneralCardWarnOutcome OcrClient::RecognizeGeneralCardWarn(const RecognizeGeneralCardWarnRequest &request)
+{
+    auto outcome = MakeRequest(request, "RecognizeGeneralCardWarn");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RecognizeGeneralCardWarnResponse rsp = RecognizeGeneralCardWarnResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RecognizeGeneralCardWarnOutcome(rsp);
+        else
+            return RecognizeGeneralCardWarnOutcome(o.GetError());
+    }
+    else
+    {
+        return RecognizeGeneralCardWarnOutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::RecognizeGeneralCardWarnAsync(const RecognizeGeneralCardWarnRequest& request, const RecognizeGeneralCardWarnAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RecognizeGeneralCardWarn(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OcrClient::RecognizeGeneralCardWarnOutcomeCallable OcrClient::RecognizeGeneralCardWarnCallable(const RecognizeGeneralCardWarnRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RecognizeGeneralCardWarnOutcome()>>(
+        [this, request]()
+        {
+            return this->RecognizeGeneralCardWarn(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OcrClient::RecognizeGeneralInvoiceOutcome OcrClient::RecognizeGeneralInvoice(const RecognizeGeneralInvoiceRequest &request)
 {
     auto outcome = MakeRequest(request, "RecognizeGeneralInvoice");

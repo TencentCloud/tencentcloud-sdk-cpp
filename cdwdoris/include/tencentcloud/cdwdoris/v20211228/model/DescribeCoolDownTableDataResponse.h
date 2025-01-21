@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorMsg 错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetErrorMsg() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取冷热分层Table数据列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return List 冷热分层Table数据列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CoolDownTableDataInfo> GetList() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errorMsg;
                     bool m_errorMsgHasBeenSet;
 
                     /**
                      * 冷热分层Table数据列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CoolDownTableDataInfo> m_list;
                     bool m_listHasBeenSet;

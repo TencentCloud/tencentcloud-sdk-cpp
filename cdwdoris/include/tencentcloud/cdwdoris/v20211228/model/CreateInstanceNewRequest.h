@@ -355,23 +355,44 @@ namespace TencentCloud
                     /**
                      * 获取开启多可用区后，用户的所有可用区和子网信息
                      * @return UserMultiZoneInfos 开启多可用区后，用户的所有可用区和子网信息
-                     * 
+                     * @deprecated
                      */
                     NetworkInfo GetUserMultiZoneInfos() const;
 
                     /**
                      * 设置开启多可用区后，用户的所有可用区和子网信息
                      * @param _userMultiZoneInfos 开启多可用区后，用户的所有可用区和子网信息
-                     * 
+                     * @deprecated
                      */
                     void SetUserMultiZoneInfos(const NetworkInfo& _userMultiZoneInfos);
 
                     /**
                      * 判断参数 UserMultiZoneInfos 是否已赋值
                      * @return UserMultiZoneInfos 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool UserMultiZoneInfosHasBeenSet() const;
+
+                    /**
+                     * 获取开启多可用区后，用户的所有可用区和子网信息
+                     * @return UserMultiZoneInfoArr 开启多可用区后，用户的所有可用区和子网信息
+                     * 
+                     */
+                    std::vector<NetworkInfo> GetUserMultiZoneInfoArr() const;
+
+                    /**
+                     * 设置开启多可用区后，用户的所有可用区和子网信息
+                     * @param _userMultiZoneInfoArr 开启多可用区后，用户的所有可用区和子网信息
+                     * 
+                     */
+                    void SetUserMultiZoneInfoArr(const std::vector<NetworkInfo>& _userMultiZoneInfoArr);
+
+                    /**
+                     * 判断参数 UserMultiZoneInfoArr 是否已赋值
+                     * @return UserMultiZoneInfoArr 是否已赋值
+                     * 
+                     */
+                    bool UserMultiZoneInfoArrHasBeenSet() const;
 
                 private:
 
@@ -467,6 +488,12 @@ namespace TencentCloud
                      */
                     NetworkInfo m_userMultiZoneInfos;
                     bool m_userMultiZoneInfosHasBeenSet;
+
+                    /**
+                     * 开启多可用区后，用户的所有可用区和子网信息
+                     */
+                    std::vector<NetworkInfo> m_userMultiZoneInfoArr;
+                    bool m_userMultiZoneInfoArrHasBeenSet;
 
                 };
             }

@@ -32,7 +32,9 @@ AppInfo::AppInfo() :
     m_updateTimeHasBeenSet(false),
     m_operatorHasBeenSet(false),
     m_modelNameHasBeenSet(false),
-    m_modelAliasNameHasBeenSet(false)
+    m_modelAliasNameHasBeenSet(false),
+    m_patternHasBeenSet(false),
+    m_thoughtModelAliasNameHasBeenSet(false)
 {
 }
 
@@ -161,6 +163,26 @@ CoreInternalOutcome AppInfo::Deserialize(const rapidjson::Value &value)
         m_modelAliasNameHasBeenSet = true;
     }
 
+    if (value.HasMember("Pattern") && !value["Pattern"].IsNull())
+    {
+        if (!value["Pattern"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppInfo.Pattern` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_pattern = string(value["Pattern"].GetString());
+        m_patternHasBeenSet = true;
+    }
+
+    if (value.HasMember("ThoughtModelAliasName") && !value["ThoughtModelAliasName"].IsNull())
+    {
+        if (!value["ThoughtModelAliasName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppInfo.ThoughtModelAliasName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_thoughtModelAliasName = string(value["ThoughtModelAliasName"].GetString());
+        m_thoughtModelAliasNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +284,22 @@ void AppInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "ModelAliasName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_modelAliasName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_patternHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Pattern";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pattern.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_thoughtModelAliasNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ThoughtModelAliasName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_thoughtModelAliasName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -457,5 +495,37 @@ void AppInfo::SetModelAliasName(const string& _modelAliasName)
 bool AppInfo::ModelAliasNameHasBeenSet() const
 {
     return m_modelAliasNameHasBeenSet;
+}
+
+string AppInfo::GetPattern() const
+{
+    return m_pattern;
+}
+
+void AppInfo::SetPattern(const string& _pattern)
+{
+    m_pattern = _pattern;
+    m_patternHasBeenSet = true;
+}
+
+bool AppInfo::PatternHasBeenSet() const
+{
+    return m_patternHasBeenSet;
+}
+
+string AppInfo::GetThoughtModelAliasName() const
+{
+    return m_thoughtModelAliasName;
+}
+
+void AppInfo::SetThoughtModelAliasName(const string& _thoughtModelAliasName)
+{
+    m_thoughtModelAliasName = _thoughtModelAliasName;
+    m_thoughtModelAliasNameHasBeenSet = true;
+}
+
+bool AppInfo::ThoughtModelAliasNameHasBeenSet() const
+{
+    return m_thoughtModelAliasNameHasBeenSet;
 }
 

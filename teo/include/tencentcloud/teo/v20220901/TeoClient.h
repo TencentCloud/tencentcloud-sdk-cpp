@@ -57,6 +57,8 @@
 #include <tencentcloud/teo/v20220901/model/CreateL4ProxyResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateL4ProxyRulesRequest.h>
 #include <tencentcloud/teo/v20220901/model/CreateL4ProxyRulesResponse.h>
+#include <tencentcloud/teo/v20220901/model/CreateL7AccRulesRequest.h>
+#include <tencentcloud/teo/v20220901/model/CreateL7AccRulesResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateLoadBalancerRequest.h>
 #include <tencentcloud/teo/v20220901/model/CreateLoadBalancerResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateOriginGroupRequest.h>
@@ -101,6 +103,8 @@
 #include <tencentcloud/teo/v20220901/model/DeleteL4ProxyResponse.h>
 #include <tencentcloud/teo/v20220901/model/DeleteL4ProxyRulesRequest.h>
 #include <tencentcloud/teo/v20220901/model/DeleteL4ProxyRulesResponse.h>
+#include <tencentcloud/teo/v20220901/model/DeleteL7AccRulesRequest.h>
+#include <tencentcloud/teo/v20220901/model/DeleteL7AccRulesResponse.h>
 #include <tencentcloud/teo/v20220901/model/DeleteLoadBalancerRequest.h>
 #include <tencentcloud/teo/v20220901/model/DeleteLoadBalancerResponse.h>
 #include <tencentcloud/teo/v20220901/model/DeleteOriginGroupRequest.h>
@@ -167,6 +171,10 @@
 #include <tencentcloud/teo/v20220901/model/DescribeL4ProxyResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeL4ProxyRulesRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeL4ProxyRulesResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeL7AccRulesRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeL7AccRulesResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeL7AccSettingRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeL7AccSettingResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeLoadBalancerListRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeLoadBalancerListResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeOriginGroupRequest.h>
@@ -265,6 +273,10 @@
 #include <tencentcloud/teo/v20220901/model/ModifyL4ProxyRulesStatusResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyL4ProxyStatusRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyL4ProxyStatusResponse.h>
+#include <tencentcloud/teo/v20220901/model/ModifyL7AccRuleRequest.h>
+#include <tencentcloud/teo/v20220901/model/ModifyL7AccRuleResponse.h>
+#include <tencentcloud/teo/v20220901/model/ModifyL7AccSettingRequest.h>
+#include <tencentcloud/teo/v20220901/model/ModifyL7AccSettingResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyLoadBalancerRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyLoadBalancerResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyOriginGroupRequest.h>
@@ -356,6 +368,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateL4ProxyRulesResponse> CreateL4ProxyRulesOutcome;
                 typedef std::future<CreateL4ProxyRulesOutcome> CreateL4ProxyRulesOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::CreateL4ProxyRulesRequest&, CreateL4ProxyRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateL4ProxyRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateL7AccRulesResponse> CreateL7AccRulesOutcome;
+                typedef std::future<CreateL7AccRulesOutcome> CreateL7AccRulesOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::CreateL7AccRulesRequest&, CreateL7AccRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateL7AccRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateLoadBalancerResponse> CreateLoadBalancerOutcome;
                 typedef std::future<CreateLoadBalancerOutcome> CreateLoadBalancerOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::CreateLoadBalancerRequest&, CreateLoadBalancerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateLoadBalancerAsyncHandler;
@@ -422,6 +437,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteL4ProxyRulesResponse> DeleteL4ProxyRulesOutcome;
                 typedef std::future<DeleteL4ProxyRulesOutcome> DeleteL4ProxyRulesOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DeleteL4ProxyRulesRequest&, DeleteL4ProxyRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteL4ProxyRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteL7AccRulesResponse> DeleteL7AccRulesOutcome;
+                typedef std::future<DeleteL7AccRulesOutcome> DeleteL7AccRulesOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DeleteL7AccRulesRequest&, DeleteL7AccRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteL7AccRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteLoadBalancerResponse> DeleteLoadBalancerOutcome;
                 typedef std::future<DeleteLoadBalancerOutcome> DeleteLoadBalancerOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DeleteLoadBalancerRequest&, DeleteLoadBalancerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLoadBalancerAsyncHandler;
@@ -521,6 +539,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeL4ProxyRulesResponse> DescribeL4ProxyRulesOutcome;
                 typedef std::future<DescribeL4ProxyRulesOutcome> DescribeL4ProxyRulesOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeL4ProxyRulesRequest&, DescribeL4ProxyRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeL4ProxyRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeL7AccRulesResponse> DescribeL7AccRulesOutcome;
+                typedef std::future<DescribeL7AccRulesOutcome> DescribeL7AccRulesOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeL7AccRulesRequest&, DescribeL7AccRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeL7AccRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeL7AccSettingResponse> DescribeL7AccSettingOutcome;
+                typedef std::future<DescribeL7AccSettingOutcome> DescribeL7AccSettingOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeL7AccSettingRequest&, DescribeL7AccSettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeL7AccSettingAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLoadBalancerListResponse> DescribeLoadBalancerListOutcome;
                 typedef std::future<DescribeLoadBalancerListOutcome> DescribeLoadBalancerListOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeLoadBalancerListRequest&, DescribeLoadBalancerListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLoadBalancerListAsyncHandler;
@@ -668,6 +692,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyL4ProxyStatusResponse> ModifyL4ProxyStatusOutcome;
                 typedef std::future<ModifyL4ProxyStatusOutcome> ModifyL4ProxyStatusOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifyL4ProxyStatusRequest&, ModifyL4ProxyStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyL4ProxyStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyL7AccRuleResponse> ModifyL7AccRuleOutcome;
+                typedef std::future<ModifyL7AccRuleOutcome> ModifyL7AccRuleOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::ModifyL7AccRuleRequest&, ModifyL7AccRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyL7AccRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyL7AccSettingResponse> ModifyL7AccSettingOutcome;
+                typedef std::future<ModifyL7AccSettingOutcome> ModifyL7AccSettingOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::ModifyL7AccSettingRequest&, ModifyL7AccSettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyL7AccSettingAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyLoadBalancerResponse> ModifyLoadBalancerOutcome;
                 typedef std::future<ModifyLoadBalancerOutcome> ModifyLoadBalancerOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifyLoadBalancerRequest&, ModifyLoadBalancerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLoadBalancerAsyncHandler;
@@ -865,6 +895,15 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 CreateL4ProxyRulesOutcome CreateL4ProxyRules(const Model::CreateL4ProxyRulesRequest &request);
                 void CreateL4ProxyRulesAsync(const Model::CreateL4ProxyRulesRequest& request, const CreateL4ProxyRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateL4ProxyRulesOutcomeCallable CreateL4ProxyRulesCallable(const Model::CreateL4ProxyRulesRequest& request);
+
+                /**
+                 *本接口用于在[规则引擎](https://cloud.tencent.com/document/product/1552/70901)中创建规则，支持批量创建。
+                 * @param req CreateL7AccRulesRequest
+                 * @return CreateL7AccRulesOutcome
+                 */
+                CreateL7AccRulesOutcome CreateL7AccRules(const Model::CreateL7AccRulesRequest &request);
+                void CreateL7AccRulesAsync(const Model::CreateL7AccRulesRequest& request, const CreateL7AccRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateL7AccRulesOutcomeCallable CreateL7AccRulesCallable(const Model::CreateL7AccRulesRequest& request);
 
                 /**
                  *创建负载均衡实例。详情请参考 [快速创建负载均衡实例](https://cloud.tencent.com/document/product/1552/104223)。负载均衡功能内测中，如您需要使用请 [联系我们](https://cloud.tencent.com/online-service)。
@@ -1072,6 +1111,15 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 DeleteL4ProxyRulesOutcomeCallable DeleteL4ProxyRulesCallable(const Model::DeleteL4ProxyRulesRequest& request);
 
                 /**
+                 *本接口用于删除[规则引擎](https://cloud.tencent.com/document/product/1552/70901)的规则，支持批量删除。
+                 * @param req DeleteL7AccRulesRequest
+                 * @return DeleteL7AccRulesOutcome
+                 */
+                DeleteL7AccRulesOutcome DeleteL7AccRules(const Model::DeleteL7AccRulesRequest &request);
+                void DeleteL7AccRulesAsync(const Model::DeleteL7AccRulesRequest& request, const DeleteL7AccRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteL7AccRulesOutcomeCallable DeleteL7AccRulesCallable(const Model::DeleteL7AccRulesRequest& request);
+
+                /**
                  *删除负载均衡实例，若负载均衡示例被其他服务（例如：四层代理等）引用的时候，示例无法被删除，需要先解除引用关系。负载均衡功能内测中，如您需要使用请 [联系我们](https://cloud.tencent.com/online-service)。
                  * @param req DeleteLoadBalancerRequest
                  * @return DeleteLoadBalancerOutcome
@@ -1099,7 +1147,7 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 DeleteRealtimeLogDeliveryTaskOutcomeCallable DeleteRealtimeLogDeliveryTaskCallable(const Model::DeleteRealtimeLogDeliveryTaskRequest& request);
 
                 /**
-                 *批量删除规则引擎规则。
+                 *本接口为旧版，EdgeOne 已对规则引擎相关接口全面升级，详情请参考 [DeleteL7AccRules](https://cloud.tencent.com/document/product/1552/115821)。
                  * @param req DeleteRulesRequest
                  * @return DeleteRulesOutcome
                  */
@@ -1324,7 +1372,7 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 DescribeFunctionsOutcomeCallable DescribeFunctionsCallable(const Model::DescribeFunctionsRequest& request);
 
                 /**
-                 *用于查询域名配置信息
+                 *本接口为旧版，EdgeOne 已对规则引擎相关接口全面升级，可通过 [DescribeL7AccSetting](https://cloud.tencent.com/document/product/1552/115819) 和 [DescribeL7AccRules](https://cloud.tencent.com/document/product/1552/115820) 来获取域名的详细配置。
                  * @param req DescribeHostsSettingRequest
                  * @return DescribeHostsSettingOutcome
                  */
@@ -1367,6 +1415,24 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 DescribeL4ProxyRulesOutcome DescribeL4ProxyRules(const Model::DescribeL4ProxyRulesRequest &request);
                 void DescribeL4ProxyRulesAsync(const Model::DescribeL4ProxyRulesRequest& request, const DescribeL4ProxyRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeL4ProxyRulesOutcomeCallable DescribeL4ProxyRulesCallable(const Model::DescribeL4ProxyRulesRequest& request);
+
+                /**
+                 *本接口用于查询[规则引擎](https://cloud.tencent.com/document/product/1552/70901)的规则列表。
+                 * @param req DescribeL7AccRulesRequest
+                 * @return DescribeL7AccRulesOutcome
+                 */
+                DescribeL7AccRulesOutcome DescribeL7AccRules(const Model::DescribeL7AccRulesRequest &request);
+                void DescribeL7AccRulesAsync(const Model::DescribeL7AccRulesRequest& request, const DescribeL7AccRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeL7AccRulesOutcomeCallable DescribeL7AccRulesCallable(const Model::DescribeL7AccRulesRequest& request);
+
+                /**
+                 *本接口用于查询[站点加速](https://cloud.tencent.com/document/product/1552/96193)全局配置。
+                 * @param req DescribeL7AccSettingRequest
+                 * @return DescribeL7AccSettingOutcome
+                 */
+                DescribeL7AccSettingOutcome DescribeL7AccSetting(const Model::DescribeL7AccSettingRequest &request);
+                void DescribeL7AccSettingAsync(const Model::DescribeL7AccSettingRequest& request, const DescribeL7AccSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeL7AccSettingOutcomeCallable DescribeL7AccSettingCallable(const Model::DescribeL7AccSettingRequest& request);
 
                 /**
                  *查询负载均衡实例列表。负载均衡功能内测中，如您需要使用请 [联系我们](https://cloud.tencent.com/online-service)。
@@ -1441,7 +1507,7 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 DescribeRealtimeLogDeliveryTasksOutcomeCallable DescribeRealtimeLogDeliveryTasksCallable(const Model::DescribeRealtimeLogDeliveryTasksRequest& request);
 
                 /**
-                 *查询规则引擎规则。
+                 *本接口为旧版，EdgeOne 已对规则引擎相关接口全面升级，详情请参考 [DescribeL7AccRules](https://cloud.tencent.com/document/product/1552/115820)。
                  * @param req DescribeRulesRequest
                  * @return DescribeRulesOutcome
                  */
@@ -1450,7 +1516,7 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 DescribeRulesOutcomeCallable DescribeRulesCallable(const Model::DescribeRulesRequest& request);
 
                 /**
-                 *返回规则引擎可应用匹配请求的设置列表及其详细建议配置信息
+                 *本接口为旧版，EdgeOne 已对规则引擎相关接口全面升级，详情请参考 [RuleEngineAction](https://cloud.tencent.com/document/product/1552/80721#RuleEngineAction)。
                  * @param req DescribeRulesSettingRequest
                  * @return DescribeRulesSettingOutcome
                  */
@@ -1543,7 +1609,7 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 DescribeZoneConfigImportResultOutcomeCallable DescribeZoneConfigImportResultCallable(const Model::DescribeZoneConfigImportResultRequest& request);
 
                 /**
-                 *用于查询站点的所有配置信息。
+                 *本接口为旧版，EdgeOne 已对规则引擎相关接口全面升级，详情请参考 [DescribeL7AccSetting](https://cloud.tencent.com/document/product/1552/115819)。
                  * @param req DescribeZoneSettingRequest
                  * @return DescribeZoneSettingOutcome
                  */
@@ -1827,6 +1893,24 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 ModifyL4ProxyStatusOutcomeCallable ModifyL4ProxyStatusCallable(const Model::ModifyL4ProxyStatusRequest& request);
 
                 /**
+                 *本接口用于修改[规则引擎](https://cloud.tencent.com/document/product/1552/70901)中的规则，单次仅支持修改单条规则。
+                 * @param req ModifyL7AccRuleRequest
+                 * @return ModifyL7AccRuleOutcome
+                 */
+                ModifyL7AccRuleOutcome ModifyL7AccRule(const Model::ModifyL7AccRuleRequest &request);
+                void ModifyL7AccRuleAsync(const Model::ModifyL7AccRuleRequest& request, const ModifyL7AccRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyL7AccRuleOutcomeCallable ModifyL7AccRuleCallable(const Model::ModifyL7AccRuleRequest& request);
+
+                /**
+                 *本接口用于修改[站点加速](https://cloud.tencent.com/document/product/1552/96193)全局配置。
+                 * @param req ModifyL7AccSettingRequest
+                 * @return ModifyL7AccSettingOutcome
+                 */
+                ModifyL7AccSettingOutcome ModifyL7AccSetting(const Model::ModifyL7AccSettingRequest &request);
+                void ModifyL7AccSettingAsync(const Model::ModifyL7AccSettingRequest& request, const ModifyL7AccSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyL7AccSettingOutcomeCallable ModifyL7AccSettingCallable(const Model::ModifyL7AccSettingRequest& request);
+
+                /**
                  *修改负载均衡实例配置。负载均衡功能内测中，如您需要使用请 [联系我们](https://cloud.tencent.com/online-service)。
                  * @param req ModifyLoadBalancerRequest
                  * @return ModifyLoadBalancerOutcome
@@ -1899,7 +1983,7 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 ModifyZoneOutcomeCallable ModifyZoneCallable(const Model::ModifyZoneRequest& request);
 
                 /**
-                 *用于修改站点配置
+                 *本接口为旧版，EdgeOne 已对规则引擎相关接口全面升级，详情请参考 [ModifyL7AccSetting](https://cloud.tencent.com/document/product/1552/115817)。
                  * @param req ModifyZoneSettingRequest
                  * @return ModifyZoneSettingOutcome
                  */

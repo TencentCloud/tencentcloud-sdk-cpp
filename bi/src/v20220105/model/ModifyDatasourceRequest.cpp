@@ -42,7 +42,9 @@ ModifyDatasourceRequest::ModifyDatasourceRequest() :
     m_uniqVpcIdHasBeenSet(false),
     m_vipHasBeenSet(false),
     m_vportHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+    m_vpcIdHasBeenSet(false),
+    m_useVPCHasBeenSet(false),
+    m_regionIdHasBeenSet(false)
 {
 }
 
@@ -211,6 +213,22 @@ string ModifyDatasourceRequest::ToJsonString() const
         string key = "VpcId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_useVPCHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UseVPC";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_useVPC, allocator);
+    }
+
+    if (m_regionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegionId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_regionId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -539,6 +557,38 @@ void ModifyDatasourceRequest::SetVpcId(const string& _vpcId)
 bool ModifyDatasourceRequest::VpcIdHasBeenSet() const
 {
     return m_vpcIdHasBeenSet;
+}
+
+bool ModifyDatasourceRequest::GetUseVPC() const
+{
+    return m_useVPC;
+}
+
+void ModifyDatasourceRequest::SetUseVPC(const bool& _useVPC)
+{
+    m_useVPC = _useVPC;
+    m_useVPCHasBeenSet = true;
+}
+
+bool ModifyDatasourceRequest::UseVPCHasBeenSet() const
+{
+    return m_useVPCHasBeenSet;
+}
+
+string ModifyDatasourceRequest::GetRegionId() const
+{
+    return m_regionId;
+}
+
+void ModifyDatasourceRequest::SetRegionId(const string& _regionId)
+{
+    m_regionId = _regionId;
+    m_regionIdHasBeenSet = true;
+}
+
+bool ModifyDatasourceRequest::RegionIdHasBeenSet() const
+{
+    return m_regionIdHasBeenSet;
 }
 
 

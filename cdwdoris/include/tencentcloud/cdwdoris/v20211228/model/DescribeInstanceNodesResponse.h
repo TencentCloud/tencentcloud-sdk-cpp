@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取实例节点总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceNodesList 实例节点总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<InstanceNode> GetInstanceNodesList() const;
@@ -98,7 +96,6 @@ namespace TencentCloud
 
                     /**
                      * 实例节点总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<InstanceNode> m_instanceNodesList;
                     bool m_instanceNodesListHasBeenSet;

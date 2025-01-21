@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取操作记录具体数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Operations 操作记录具体数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<InstanceOperation> GetOperations() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 操作记录具体数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<InstanceOperation> m_operations;
                     bool m_operationsHasBeenSet;

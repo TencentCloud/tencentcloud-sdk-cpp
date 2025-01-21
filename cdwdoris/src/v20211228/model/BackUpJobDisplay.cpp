@@ -33,7 +33,8 @@ BackUpJobDisplay::BackUpJobDisplay() :
     m_dorisSourceInfoHasBeenSet(false),
     m_jobStatusNumHasBeenSet(false),
     m_backupCosInfoHasBeenSet(false),
-    m_isUserDefineBucketHasBeenSet(false)
+    m_isUserDefineBucketHasBeenSet(false),
+    m_errorReasonHasBeenSet(false)
 {
 }
 
@@ -186,6 +187,16 @@ CoreInternalOutcome BackUpJobDisplay::Deserialize(const rapidjson::Value &value)
         m_isUserDefineBucketHasBeenSet = true;
     }
 
+    if (value.HasMember("ErrorReason") && !value["ErrorReason"].IsNull())
+    {
+        if (!value["ErrorReason"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackUpJobDisplay.ErrorReason` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_errorReason = string(value["ErrorReason"].GetString());
+        m_errorReasonHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -297,6 +308,14 @@ void BackUpJobDisplay::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "IsUserDefineBucket";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isUserDefineBucket, allocator);
+    }
+
+    if (m_errorReasonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrorReason";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errorReason.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -508,5 +527,21 @@ void BackUpJobDisplay::SetIsUserDefineBucket(const bool& _isUserDefineBucket)
 bool BackUpJobDisplay::IsUserDefineBucketHasBeenSet() const
 {
     return m_isUserDefineBucketHasBeenSet;
+}
+
+string BackUpJobDisplay::GetErrorReason() const
+{
+    return m_errorReason;
+}
+
+void BackUpJobDisplay::SetErrorReason(const string& _errorReason)
+{
+    m_errorReason = _errorReason;
+    m_errorReasonHasBeenSet = true;
+}
+
+bool BackUpJobDisplay::ErrorReasonHasBeenSet() const
+{
+    return m_errorReasonHasBeenSet;
 }
 

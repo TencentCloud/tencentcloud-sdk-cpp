@@ -26,7 +26,9 @@ using namespace std;
 GetWsTokenResponse::GetWsTokenResponse() :
     m_tokenHasBeenSet(false),
     m_balanceHasBeenSet(false),
-    m_inputLenLimitHasBeenSet(false)
+    m_inputLenLimitHasBeenSet(false),
+    m_patternHasBeenSet(false),
+    m_singleWorkflowHasBeenSet(false)
 {
 }
 
@@ -94,6 +96,33 @@ CoreInternalOutcome GetWsTokenResponse::Deserialize(const string &payload)
         m_inputLenLimitHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Pattern") && !rsp["Pattern"].IsNull())
+    {
+        if (!rsp["Pattern"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Pattern` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_pattern = string(rsp["Pattern"].GetString());
+        m_patternHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SingleWorkflow") && !rsp["SingleWorkflow"].IsNull())
+    {
+        if (!rsp["SingleWorkflow"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SingleWorkflow` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_singleWorkflow.Deserialize(rsp["SingleWorkflow"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_singleWorkflowHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +155,23 @@ string GetWsTokenResponse::ToJsonString() const
         string key = "InputLenLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_inputLenLimit, allocator);
+    }
+
+    if (m_patternHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Pattern";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pattern.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_singleWorkflowHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SingleWorkflow";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_singleWorkflow.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -168,6 +214,26 @@ int64_t GetWsTokenResponse::GetInputLenLimit() const
 bool GetWsTokenResponse::InputLenLimitHasBeenSet() const
 {
     return m_inputLenLimitHasBeenSet;
+}
+
+string GetWsTokenResponse::GetPattern() const
+{
+    return m_pattern;
+}
+
+bool GetWsTokenResponse::PatternHasBeenSet() const
+{
+    return m_patternHasBeenSet;
+}
+
+KnowledgeQaSingleWorkflow GetWsTokenResponse::GetSingleWorkflow() const
+{
+    return m_singleWorkflow;
+}
+
+bool GetWsTokenResponse::SingleWorkflowHasBeenSet() const
+{
+    return m_singleWorkflowHasBeenSet;
 }
 
 

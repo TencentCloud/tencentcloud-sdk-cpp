@@ -29,6 +29,7 @@
 #include <tencentcloud/lke/v20231130/model/TaskFlowInfo.h>
 #include <tencentcloud/lke/v20231130/model/FileInfo.h>
 #include <tencentcloud/lke/v20231130/model/QuoteInfo.h>
+#include <tencentcloud/lke/v20231130/model/AgentThought.h>
 
 
 namespace TencentCloud
@@ -626,6 +627,31 @@ namespace TencentCloud
                      */
                     bool QuoteInfosHasBeenSet() const;
 
+                    /**
+                     * 获取Agent的思考过程信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AgentThought Agent的思考过程信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    AgentThought GetAgentThought() const;
+
+                    /**
+                     * 设置Agent的思考过程信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _agentThought Agent的思考过程信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAgentThought(const AgentThought& _agentThought);
+
+                    /**
+                     * 判断参数 AgentThought 是否已赋值
+                     * @return AgentThought 是否已赋值
+                     * 
+                     */
+                    bool AgentThoughtHasBeenSet() const;
+
                 private:
 
                     /**
@@ -788,6 +814,13 @@ namespace TencentCloud
                      */
                     std::vector<QuoteInfo> m_quoteInfos;
                     bool m_quoteInfosHasBeenSet;
+
+                    /**
+                     * Agent的思考过程信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AgentThought m_agentThought;
+                    bool m_agentThoughtHasBeenSet;
 
                 };
             }

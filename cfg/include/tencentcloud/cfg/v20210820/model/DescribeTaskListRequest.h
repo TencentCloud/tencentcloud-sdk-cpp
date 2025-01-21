@@ -359,6 +359,27 @@ namespace TencentCloud
                      */
                     bool ArchIdHasBeenSet() const;
 
+                    /**
+                     * 获取架构名称
+                     * @return ArchName 架构名称
+                     * 
+                     */
+                    std::string GetArchName() const;
+
+                    /**
+                     * 设置架构名称
+                     * @param _archName 架构名称
+                     * 
+                     */
+                    void SetArchName(const std::string& _archName);
+
+                    /**
+                     * 判断参数 ArchName 是否已赋值
+                     * @return ArchName 是否已赋值
+                     * 
+                     */
+                    bool ArchNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -450,6 +471,12 @@ namespace TencentCloud
                      */
                     std::string m_archId;
                     bool m_archIdHasBeenSet;
+
+                    /**
+                     * 架构名称
+                     */
+                    std::string m_archName;
+                    bool m_archNameHasBeenSet;
 
                 };
             }

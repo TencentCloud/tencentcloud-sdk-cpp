@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool CommentHasBeenSet() const;
 
                     /**
-                     * 获取分区类型
-                     * @return PartitionType 分区类型
+                     * 获取分区类型（已废弃）
+                     * @return PartitionType 分区类型（已废弃）
                      * 
                      */
                     std::string GetPartitionType() const;
 
                     /**
-                     * 设置分区类型
-                     * @param _partitionType 分区类型
+                     * 设置分区类型（已废弃）
+                     * @param _partitionType 分区类型（已废弃）
                      * 
                      */
                     void SetPartitionType(const std::string& _partitionType);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool PartitionTypeHasBeenSet() const;
 
                     /**
-                     * 获取分区格式
-                     * @return PartitionFormat 分区格式
+                     * 获取分区格式（已废弃）
+                     * @return PartitionFormat 分区格式（已废弃）
                      * 
                      */
                     std::string GetPartitionFormat() const;
 
                     /**
-                     * 设置分区格式
-                     * @param _partitionFormat 分区格式
+                     * 设置分区格式（已废弃）
+                     * @param _partitionFormat 分区格式（已废弃）
                      * 
                      */
                     void SetPartitionFormat(const std::string& _partitionFormat);
@@ -152,15 +152,15 @@ namespace TencentCloud
                     bool PartitionFormatHasBeenSet() const;
 
                     /**
-                     * 获取分区分隔数
-                     * @return PartitionDot 分区分隔数
+                     * 获取分区分隔数（已废弃）
+                     * @return PartitionDot 分区分隔数（已废弃）
                      * 
                      */
                     int64_t GetPartitionDot() const;
 
                     /**
-                     * 设置分区分隔数
-                     * @param _partitionDot 分区分隔数
+                     * 设置分区分隔数（已废弃）
+                     * @param _partitionDot 分区分隔数（已废弃）
                      * 
                      */
                     void SetPartitionDot(const int64_t& _partitionDot);
@@ -235,19 +235,19 @@ namespace TencentCloud
                     bool m_commentHasBeenSet;
 
                     /**
-                     * 分区类型
+                     * 分区类型（已废弃）
                      */
                     std::string m_partitionType;
                     bool m_partitionTypeHasBeenSet;
 
                     /**
-                     * 分区格式
+                     * 分区格式（已废弃）
                      */
                     std::string m_partitionFormat;
                     bool m_partitionFormatHasBeenSet;
 
                     /**
-                     * 分区分隔数
+                     * 分区分隔数（已废弃）
                      */
                     int64_t m_partitionDot;
                     bool m_partitionDotHasBeenSet;

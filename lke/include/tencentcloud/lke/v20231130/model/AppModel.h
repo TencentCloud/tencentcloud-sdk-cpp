@@ -246,6 +246,56 @@ namespace TencentCloud
                      */
                     bool UsageTypeHasBeenSet() const;
 
+                    /**
+                     * 获取模型温度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Temperature 模型温度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTemperature() const;
+
+                    /**
+                     * 设置模型温度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _temperature 模型温度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTemperature(const std::string& _temperature);
+
+                    /**
+                     * 判断参数 Temperature 是否已赋值
+                     * @return Temperature 是否已赋值
+                     * 
+                     */
+                    bool TemperatureHasBeenSet() const;
+
+                    /**
+                     * 获取模型TopP
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TopP 模型TopP
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTopP() const;
+
+                    /**
+                     * 设置模型TopP
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _topP 模型TopP
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTopP(const std::string& _topP);
+
+                    /**
+                     * 判断参数 TopP 是否已赋值
+                     * @return TopP 是否已赋值
+                     * 
+                     */
+                    bool TopPHasBeenSet() const;
+
                 private:
 
                     /**
@@ -303,6 +353,20 @@ namespace TencentCloud
                      */
                     std::string m_usageType;
                     bool m_usageTypeHasBeenSet;
+
+                    /**
+                     * 模型温度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_temperature;
+                    bool m_temperatureHasBeenSet;
+
+                    /**
+                     * 模型TopP
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_topP;
+                    bool m_topPHasBeenSet;
 
                 };
             }

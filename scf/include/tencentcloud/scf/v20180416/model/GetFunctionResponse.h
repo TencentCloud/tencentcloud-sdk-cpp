@@ -340,8 +340,8 @@ namespace TencentCloud
                     bool InstallDependencyHasBeenSet() const;
 
                     /**
-                     * 获取函数状态，状态值及流转[参考说明](https://cloud.tencent.com/document/product/583/47175)
-                     * @return Status 函数状态，状态值及流转[参考说明](https://cloud.tencent.com/document/product/583/47175)
+                     * 获取函数状态，状态值及流转[参考说明](https://cloud.tencent.com/document/product/583/115197)
+                     * @return Status 函数状态，状态值及流转[参考说明](https://cloud.tencent.com/document/product/583/115197)
                      * 
                      */
                     std::string GetStatus() const;
@@ -853,7 +853,7 @@ namespace TencentCloud
                     bool m_installDependencyHasBeenSet;
 
                     /**
-                     * 函数状态，状态值及流转[参考说明](https://cloud.tencent.com/document/product/583/47175)
+                     * 函数状态，状态值及流转[参考说明](https://cloud.tencent.com/document/product/583/115197)
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

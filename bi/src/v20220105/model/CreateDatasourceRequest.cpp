@@ -42,7 +42,9 @@ CreateDatasourceRequest::CreateDatasourceRequest() :
     m_vipHasBeenSet(false),
     m_vportHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
-    m_operationAuthLimitHasBeenSet(false)
+    m_operationAuthLimitHasBeenSet(false),
+    m_useVPCHasBeenSet(false),
+    m_regionIdHasBeenSet(false)
 {
 }
 
@@ -216,6 +218,22 @@ string CreateDatasourceRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_useVPCHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UseVPC";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_useVPC, allocator);
+    }
+
+    if (m_regionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegionId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_regionId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -544,6 +562,38 @@ void CreateDatasourceRequest::SetOperationAuthLimit(const vector<string>& _opera
 bool CreateDatasourceRequest::OperationAuthLimitHasBeenSet() const
 {
     return m_operationAuthLimitHasBeenSet;
+}
+
+bool CreateDatasourceRequest::GetUseVPC() const
+{
+    return m_useVPC;
+}
+
+void CreateDatasourceRequest::SetUseVPC(const bool& _useVPC)
+{
+    m_useVPC = _useVPC;
+    m_useVPCHasBeenSet = true;
+}
+
+bool CreateDatasourceRequest::UseVPCHasBeenSet() const
+{
+    return m_useVPCHasBeenSet;
+}
+
+string CreateDatasourceRequest::GetRegionId() const
+{
+    return m_regionId;
+}
+
+void CreateDatasourceRequest::SetRegionId(const string& _regionId)
+{
+    m_regionId = _regionId;
+    m_regionIdHasBeenSet = true;
+}
+
+bool CreateDatasourceRequest::RegionIdHasBeenSet() const
+{
+    return m_regionIdHasBeenSet;
 }
 
 

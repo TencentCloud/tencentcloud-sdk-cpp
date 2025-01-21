@@ -771,6 +771,49 @@ TeoClient::CreateL4ProxyRulesOutcomeCallable TeoClient::CreateL4ProxyRulesCallab
     return task->get_future();
 }
 
+TeoClient::CreateL7AccRulesOutcome TeoClient::CreateL7AccRules(const CreateL7AccRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateL7AccRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateL7AccRulesResponse rsp = CreateL7AccRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateL7AccRulesOutcome(rsp);
+        else
+            return CreateL7AccRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateL7AccRulesOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::CreateL7AccRulesAsync(const CreateL7AccRulesRequest& request, const CreateL7AccRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateL7AccRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::CreateL7AccRulesOutcomeCallable TeoClient::CreateL7AccRulesCallable(const CreateL7AccRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateL7AccRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateL7AccRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TeoClient::CreateLoadBalancerOutcome TeoClient::CreateLoadBalancer(const CreateLoadBalancerRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateLoadBalancer");
@@ -1710,6 +1753,49 @@ TeoClient::DeleteL4ProxyRulesOutcomeCallable TeoClient::DeleteL4ProxyRulesCallab
         [this, request]()
         {
             return this->DeleteL4ProxyRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::DeleteL7AccRulesOutcome TeoClient::DeleteL7AccRules(const DeleteL7AccRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteL7AccRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteL7AccRulesResponse rsp = DeleteL7AccRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteL7AccRulesOutcome(rsp);
+        else
+            return DeleteL7AccRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteL7AccRulesOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DeleteL7AccRulesAsync(const DeleteL7AccRulesRequest& request, const DeleteL7AccRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteL7AccRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DeleteL7AccRulesOutcomeCallable TeoClient::DeleteL7AccRulesCallable(const DeleteL7AccRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteL7AccRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteL7AccRules(request);
         }
     );
 
@@ -3129,6 +3215,92 @@ TeoClient::DescribeL4ProxyRulesOutcomeCallable TeoClient::DescribeL4ProxyRulesCa
         [this, request]()
         {
             return this->DescribeL4ProxyRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::DescribeL7AccRulesOutcome TeoClient::DescribeL7AccRules(const DescribeL7AccRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeL7AccRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeL7AccRulesResponse rsp = DescribeL7AccRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeL7AccRulesOutcome(rsp);
+        else
+            return DescribeL7AccRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeL7AccRulesOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeL7AccRulesAsync(const DescribeL7AccRulesRequest& request, const DescribeL7AccRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeL7AccRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DescribeL7AccRulesOutcomeCallable TeoClient::DescribeL7AccRulesCallable(const DescribeL7AccRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeL7AccRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeL7AccRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::DescribeL7AccSettingOutcome TeoClient::DescribeL7AccSetting(const DescribeL7AccSettingRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeL7AccSetting");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeL7AccSettingResponse rsp = DescribeL7AccSettingResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeL7AccSettingOutcome(rsp);
+        else
+            return DescribeL7AccSettingOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeL7AccSettingOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeL7AccSettingAsync(const DescribeL7AccSettingRequest& request, const DescribeL7AccSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeL7AccSetting(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DescribeL7AccSettingOutcomeCallable TeoClient::DescribeL7AccSettingCallable(const DescribeL7AccSettingRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeL7AccSettingOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeL7AccSetting(request);
         }
     );
 
@@ -5236,6 +5408,92 @@ TeoClient::ModifyL4ProxyStatusOutcomeCallable TeoClient::ModifyL4ProxyStatusCall
         [this, request]()
         {
             return this->ModifyL4ProxyStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::ModifyL7AccRuleOutcome TeoClient::ModifyL7AccRule(const ModifyL7AccRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyL7AccRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyL7AccRuleResponse rsp = ModifyL7AccRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyL7AccRuleOutcome(rsp);
+        else
+            return ModifyL7AccRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyL7AccRuleOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::ModifyL7AccRuleAsync(const ModifyL7AccRuleRequest& request, const ModifyL7AccRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyL7AccRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::ModifyL7AccRuleOutcomeCallable TeoClient::ModifyL7AccRuleCallable(const ModifyL7AccRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyL7AccRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyL7AccRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::ModifyL7AccSettingOutcome TeoClient::ModifyL7AccSetting(const ModifyL7AccSettingRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyL7AccSetting");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyL7AccSettingResponse rsp = ModifyL7AccSettingResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyL7AccSettingOutcome(rsp);
+        else
+            return ModifyL7AccSettingOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyL7AccSettingOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::ModifyL7AccSettingAsync(const ModifyL7AccSettingRequest& request, const ModifyL7AccSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyL7AccSetting(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::ModifyL7AccSettingOutcomeCallable TeoClient::ModifyL7AccSettingCallable(const ModifyL7AccSettingRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyL7AccSettingOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyL7AccSetting(request);
         }
     );
 

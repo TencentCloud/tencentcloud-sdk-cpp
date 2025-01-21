@@ -28,7 +28,9 @@ AppModel::AppModel() :
     m_tokenBalanceHasBeenSet(false),
     m_isUseContextHasBeenSet(false),
     m_historyLimitHasBeenSet(false),
-    m_usageTypeHasBeenSet(false)
+    m_usageTypeHasBeenSet(false),
+    m_temperatureHasBeenSet(false),
+    m_topPHasBeenSet(false)
 {
 }
 
@@ -117,6 +119,26 @@ CoreInternalOutcome AppModel::Deserialize(const rapidjson::Value &value)
         m_usageTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("Temperature") && !value["Temperature"].IsNull())
+    {
+        if (!value["Temperature"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppModel.Temperature` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_temperature = string(value["Temperature"].GetString());
+        m_temperatureHasBeenSet = true;
+    }
+
+    if (value.HasMember("TopP") && !value["TopP"].IsNull())
+    {
+        if (!value["TopP"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppModel.TopP` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_topP = string(value["TopP"].GetString());
+        m_topPHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +208,22 @@ void AppModel::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "UsageType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_usageType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_temperatureHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Temperature";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_temperature.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_topPHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TopP";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_topP.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +355,37 @@ void AppModel::SetUsageType(const string& _usageType)
 bool AppModel::UsageTypeHasBeenSet() const
 {
     return m_usageTypeHasBeenSet;
+}
+
+string AppModel::GetTemperature() const
+{
+    return m_temperature;
+}
+
+void AppModel::SetTemperature(const string& _temperature)
+{
+    m_temperature = _temperature;
+    m_temperatureHasBeenSet = true;
+}
+
+bool AppModel::TemperatureHasBeenSet() const
+{
+    return m_temperatureHasBeenSet;
+}
+
+string AppModel::GetTopP() const
+{
+    return m_topP;
+}
+
+void AppModel::SetTopP(const string& _topP)
+{
+    m_topP = _topP;
+    m_topPHasBeenSet = true;
+}
+
+bool AppModel::TopPHasBeenSet() const
+{
+    return m_topPHasBeenSet;
 }
 

@@ -132,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件 id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ID 文件 id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetID() const;
 
                     /**
                      * 设置文件 id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _iD 文件 id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetID(const int64_t& _iD);
@@ -183,7 +179,6 @@ namespace TencentCloud
 
                     /**
                      * 文件 id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_iD;
                     bool m_iDHasBeenSet;

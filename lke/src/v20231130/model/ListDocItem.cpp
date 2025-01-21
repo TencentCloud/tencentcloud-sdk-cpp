@@ -23,6 +23,7 @@ using namespace std;
 ListDocItem::ListDocItem() :
     m_docBizIdHasBeenSet(false),
     m_fileNameHasBeenSet(false),
+    m_newNameHasBeenSet(false),
     m_fileTypeHasBeenSet(false),
     m_cosUrlHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
@@ -75,6 +76,16 @@ CoreInternalOutcome ListDocItem::Deserialize(const rapidjson::Value &value)
         }
         m_fileName = string(value["FileName"].GetString());
         m_fileNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("NewName") && !value["NewName"].IsNull())
+    {
+        if (!value["NewName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ListDocItem.NewName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_newName = string(value["NewName"].GetString());
+        m_newNameHasBeenSet = true;
     }
 
     if (value.HasMember("FileType") && !value["FileType"].IsNull())
@@ -370,6 +381,14 @@ void ListDocItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         value.AddMember(iKey, rapidjson::Value(m_fileName.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_newNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NewName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_newName.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_fileTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -618,6 +637,22 @@ void ListDocItem::SetFileName(const string& _fileName)
 bool ListDocItem::FileNameHasBeenSet() const
 {
     return m_fileNameHasBeenSet;
+}
+
+string ListDocItem::GetNewName() const
+{
+    return m_newName;
+}
+
+void ListDocItem::SetNewName(const string& _newName)
+{
+    m_newName = _newName;
+    m_newNameHasBeenSet = true;
+}
+
+bool ListDocItem::NewNameHasBeenSet() const
+{
+    return m_newNameHasBeenSet;
 }
 
 string ListDocItem::GetFileType() const

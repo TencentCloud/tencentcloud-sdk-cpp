@@ -44,10 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文件名
-
-                     * @return FileName 文件名
-
+                     * 获取文件名, 发布端固定使用这个名称
+                     * @return FileName 文件名, 发布端固定使用这个名称
                      * 
                      */
                     std::string GetFileName() const;
@@ -121,11 +119,24 @@ namespace TencentCloud
                      */
                     bool BucketHasBeenSet() const;
 
+                    /**
+                     * 获取存在文档重命名情况下的新名称, 评测端优先使用这个名称
+                     * @return NewName 存在文档重命名情况下的新名称, 评测端优先使用这个名称
+                     * 
+                     */
+                    std::string GetNewName() const;
+
+                    /**
+                     * 判断参数 NewName 是否已赋值
+                     * @return NewName 是否已赋值
+                     * 
+                     */
+                    bool NewNameHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 文件名
-
+                     * 文件名, 发布端固定使用这个名称
                      */
                     std::string m_fileName;
                     bool m_fileNameHasBeenSet;
@@ -156,6 +167,12 @@ namespace TencentCloud
                      */
                     std::string m_bucket;
                     bool m_bucketHasBeenSet;
+
+                    /**
+                     * 存在文档重命名情况下的新名称, 评测端优先使用这个名称
+                     */
+                    std::string m_newName;
+                    bool m_newNameHasBeenSet;
 
                 };
             }

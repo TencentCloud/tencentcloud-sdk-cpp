@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取base64编码后的数据，包含了集群的健康信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data base64编码后的数据，包含了集群的健康信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetData() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * base64编码后的数据，包含了集群的健康信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_data;
                     bool m_dataHasBeenSet;

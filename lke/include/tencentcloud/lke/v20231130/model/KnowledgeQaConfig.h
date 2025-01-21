@@ -29,6 +29,9 @@
 #include <tencentcloud/lke/v20231130/model/KnowledgeQaOutput.h>
 #include <tencentcloud/lke/v20231130/model/KnowledgeWorkflow.h>
 #include <tencentcloud/lke/v20231130/model/SearchRange.h>
+#include <tencentcloud/lke/v20231130/model/SearchStrategy.h>
+#include <tencentcloud/lke/v20231130/model/KnowledgeQaSingleWorkflow.h>
+#include <tencentcloud/lke/v20231130/model/KnowledgeQaPlugin.h>
 
 
 namespace TencentCloud
@@ -102,18 +105,18 @@ namespace TencentCloud
                     bool RoleDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取模型配置
+                     * 获取生成模型配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Model 模型配置
+                     * @return Model 生成模型配置
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AppModel GetModel() const;
 
                     /**
-                     * 设置模型配置
+                     * 设置生成模型配置
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _model 模型配置
+                     * @param _model 生成模型配置
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -226,6 +229,131 @@ namespace TencentCloud
                      */
                     bool SearchRangeHasBeenSet() const;
 
+                    /**
+                     * 获取应用模式，standard:标准模式, agent: agent模式，single_workflow：单工作流模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Pattern 应用模式，standard:标准模式, agent: agent模式，single_workflow：单工作流模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPattern() const;
+
+                    /**
+                     * 设置应用模式，standard:标准模式, agent: agent模式，single_workflow：单工作流模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _pattern 应用模式，standard:标准模式, agent: agent模式，single_workflow：单工作流模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPattern(const std::string& _pattern);
+
+                    /**
+                     * 判断参数 Pattern 是否已赋值
+                     * @return Pattern 是否已赋值
+                     * 
+                     */
+                    bool PatternHasBeenSet() const;
+
+                    /**
+                     * 获取检索策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SearchStrategy 检索策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    SearchStrategy GetSearchStrategy() const;
+
+                    /**
+                     * 设置检索策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _searchStrategy 检索策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSearchStrategy(const SearchStrategy& _searchStrategy);
+
+                    /**
+                     * 判断参数 SearchStrategy 是否已赋值
+                     * @return SearchStrategy 是否已赋值
+                     * 
+                     */
+                    bool SearchStrategyHasBeenSet() const;
+
+                    /**
+                     * 获取单工作流ID，Pattern为single_workflow时传入
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SingleWorkflow 单工作流ID，Pattern为single_workflow时传入
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    KnowledgeQaSingleWorkflow GetSingleWorkflow() const;
+
+                    /**
+                     * 设置单工作流ID，Pattern为single_workflow时传入
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _singleWorkflow 单工作流ID，Pattern为single_workflow时传入
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSingleWorkflow(const KnowledgeQaSingleWorkflow& _singleWorkflow);
+
+                    /**
+                     * 判断参数 SingleWorkflow 是否已赋值
+                     * @return SingleWorkflow 是否已赋值
+                     * 
+                     */
+                    bool SingleWorkflowHasBeenSet() const;
+
+                    /**
+                     * 获取应用关联插件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Plugins 应用关联插件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<KnowledgeQaPlugin> GetPlugins() const;
+
+                    /**
+                     * 设置应用关联插件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _plugins 应用关联插件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPlugins(const std::vector<KnowledgeQaPlugin>& _plugins);
+
+                    /**
+                     * 判断参数 Plugins 是否已赋值
+                     * @return Plugins 是否已赋值
+                     * 
+                     */
+                    bool PluginsHasBeenSet() const;
+
+                    /**
+                     * 获取思考模型配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ThoughtModel 思考模型配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    AppModel GetThoughtModel() const;
+
+                    /**
+                     * 设置思考模型配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _thoughtModel 思考模型配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetThoughtModel(const AppModel& _thoughtModel);
+
+                    /**
+                     * 判断参数 ThoughtModel 是否已赋值
+                     * @return ThoughtModel 是否已赋值
+                     * 
+                     */
+                    bool ThoughtModelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -243,7 +371,7 @@ namespace TencentCloud
                     bool m_roleDescriptionHasBeenSet;
 
                     /**
-                     * 模型配置
+                     * 生成模型配置
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AppModel m_model;
@@ -276,6 +404,41 @@ namespace TencentCloud
                      */
                     SearchRange m_searchRange;
                     bool m_searchRangeHasBeenSet;
+
+                    /**
+                     * 应用模式，standard:标准模式, agent: agent模式，single_workflow：单工作流模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_pattern;
+                    bool m_patternHasBeenSet;
+
+                    /**
+                     * 检索策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SearchStrategy m_searchStrategy;
+                    bool m_searchStrategyHasBeenSet;
+
+                    /**
+                     * 单工作流ID，Pattern为single_workflow时传入
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    KnowledgeQaSingleWorkflow m_singleWorkflow;
+                    bool m_singleWorkflowHasBeenSet;
+
+                    /**
+                     * 应用关联插件
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<KnowledgeQaPlugin> m_plugins;
+                    bool m_pluginsHasBeenSet;
+
+                    /**
+                     * 思考模型配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AppModel m_thoughtModel;
+                    bool m_thoughtModelHasBeenSet;
 
                 };
             }

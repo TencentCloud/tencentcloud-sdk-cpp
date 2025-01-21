@@ -152,6 +152,27 @@ tool_calls 标识函数调用。
                      */
                     bool IndexHasBeenSet() const;
 
+                    /**
+                     * 获取多轮会话风险审核，值为1时，表明存在信息安全风险，建议终止客户多轮会话。
+                     * @return ModerationLevel 多轮会话风险审核，值为1时，表明存在信息安全风险，建议终止客户多轮会话。
+                     * 
+                     */
+                    std::string GetModerationLevel() const;
+
+                    /**
+                     * 设置多轮会话风险审核，值为1时，表明存在信息安全风险，建议终止客户多轮会话。
+                     * @param _moderationLevel 多轮会话风险审核，值为1时，表明存在信息安全风险，建议终止客户多轮会话。
+                     * 
+                     */
+                    void SetModerationLevel(const std::string& _moderationLevel);
+
+                    /**
+                     * 判断参数 ModerationLevel 是否已赋值
+                     * @return ModerationLevel 是否已赋值
+                     * 
+                     */
+                    bool ModerationLevelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -182,6 +203,12 @@ tool_calls 标识函数调用。
                      */
                     int64_t m_index;
                     bool m_indexHasBeenSet;
+
+                    /**
+                     * 多轮会话风险审核，值为1时，表明存在信息安全风险，建议终止客户多轮会话。
+                     */
+                    std::string m_moderationLevel;
+                    bool m_moderationLevelHasBeenSet;
 
                 };
             }

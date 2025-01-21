@@ -125,6 +125,8 @@
 #include <tencentcloud/ocr/v20181119/model/RecognizeEncryptedIDCardOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeForeignPermanentResidentIdCardRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeForeignPermanentResidentIdCardResponse.h>
+#include <tencentcloud/ocr/v20181119/model/RecognizeGeneralCardWarnRequest.h>
+#include <tencentcloud/ocr/v20181119/model/RecognizeGeneralCardWarnResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeGeneralInvoiceRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeGeneralInvoiceResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeGeneralTextImageWarnRequest.h>
@@ -360,6 +362,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RecognizeForeignPermanentResidentIdCardResponse> RecognizeForeignPermanentResidentIdCardOutcome;
                 typedef std::future<RecognizeForeignPermanentResidentIdCardOutcome> RecognizeForeignPermanentResidentIdCardOutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RecognizeForeignPermanentResidentIdCardRequest&, RecognizeForeignPermanentResidentIdCardOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeForeignPermanentResidentIdCardAsyncHandler;
+                typedef Outcome<Core::Error, Model::RecognizeGeneralCardWarnResponse> RecognizeGeneralCardWarnOutcome;
+                typedef std::future<RecognizeGeneralCardWarnOutcome> RecognizeGeneralCardWarnOutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::RecognizeGeneralCardWarnRequest&, RecognizeGeneralCardWarnOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeGeneralCardWarnAsyncHandler;
                 typedef Outcome<Core::Error, Model::RecognizeGeneralInvoiceResponse> RecognizeGeneralInvoiceOutcome;
                 typedef std::future<RecognizeGeneralInvoiceOutcome> RecognizeGeneralInvoiceOutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RecognizeGeneralInvoiceRequest&, RecognizeGeneralInvoiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeGeneralInvoiceAsyncHandler;
@@ -1305,6 +1310,15 @@ namespace TencentCloud
                 RecognizeForeignPermanentResidentIdCardOutcome RecognizeForeignPermanentResidentIdCard(const Model::RecognizeForeignPermanentResidentIdCardRequest &request);
                 void RecognizeForeignPermanentResidentIdCardAsync(const Model::RecognizeForeignPermanentResidentIdCardRequest& request, const RecognizeForeignPermanentResidentIdCardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RecognizeForeignPermanentResidentIdCardOutcomeCallable RecognizeForeignPermanentResidentIdCardCallable(const Model::RecognizeForeignPermanentResidentIdCardRequest& request);
+
+                /**
+                 *支持通用证照的有效性检测告警，包括卡证复印件告警、卡证翻拍告警等功能，支持通用证照的ps伪造检测，可以应用于各种证件信息有效性校验场景。
+                 * @param req RecognizeGeneralCardWarnRequest
+                 * @return RecognizeGeneralCardWarnOutcome
+                 */
+                RecognizeGeneralCardWarnOutcome RecognizeGeneralCardWarn(const Model::RecognizeGeneralCardWarnRequest &request);
+                void RecognizeGeneralCardWarnAsync(const Model::RecognizeGeneralCardWarnRequest& request, const RecognizeGeneralCardWarnAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RecognizeGeneralCardWarnOutcomeCallable RecognizeGeneralCardWarnCallable(const Model::RecognizeGeneralCardWarnRequest& request);
 
                 /**
                  *本接口支持 PDF多页（最多30页）、一页中单张、多张、类型票据的混合识别，同时支持单选识别某类票据，已支持票种包括：增值税发票（专票、普票、卷票、区块链发票、通行费发票）、全电发票（专票、普票）、非税发票（通用票据、统一缴纳书）、定额发票、通用机打发票、购车发票（机动车销售发票、二手车发票）、火车票、出租车发票、机票行程单、汽车票、轮船票、过路过桥费发票共14种标准报销发票，支持OFD格式的 增值税电子普通发票、增值税电子专用发票、电子发票（普通发票）、电子发票（增值税专用发票）、电子发票（机票行程单）、电子发票（铁路电子客票）的第一页识别，并支持非上述类型的其他发票的智能识别，点击[立即试用](https://cloud.tencent.com/product/ocr)。

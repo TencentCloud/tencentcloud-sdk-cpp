@@ -58,10 +58,8 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取预付费订单 id
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DealName 预付费订单 id
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取预付费订单 ，预付费不为null，后付费为null
+                     * @return DealName 预付费订单 ，预付费不为null，后付费为null
                      * 
                      */
                     std::string GetDealName() const;
@@ -82,8 +80,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 预付费订单 id
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 预付费订单 ，预付费不为null，后付费为null
                      */
                     std::string m_dealName;
                     bool m_dealNameHasBeenSet;

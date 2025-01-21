@@ -462,6 +462,48 @@ namespace TencentCloud
                      */
                     bool OperationAuthLimitHasBeenSet() const;
 
+                    /**
+                     * 获取开启vpc
+                     * @return UseVPC 开启vpc
+                     * 
+                     */
+                    bool GetUseVPC() const;
+
+                    /**
+                     * 设置开启vpc
+                     * @param _useVPC 开启vpc
+                     * 
+                     */
+                    void SetUseVPC(const bool& _useVPC);
+
+                    /**
+                     * 判断参数 UseVPC 是否已赋值
+                     * @return UseVPC 是否已赋值
+                     * 
+                     */
+                    bool UseVPCHasBeenSet() const;
+
+                    /**
+                     * 获取地域
+                     * @return RegionId 地域
+                     * 
+                     */
+                    std::string GetRegionId() const;
+
+                    /**
+                     * 设置地域
+                     * @param _regionId 地域
+                     * 
+                     */
+                    void SetRegionId(const std::string& _regionId);
+
+                    /**
+                     * 判断参数 RegionId 是否已赋值
+                     * @return RegionId 是否已赋值
+                     * 
+                     */
+                    bool RegionIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -583,6 +625,18 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_operationAuthLimit;
                     bool m_operationAuthLimitHasBeenSet;
+
+                    /**
+                     * 开启vpc
+                     */
+                    bool m_useVPC;
+                    bool m_useVPCHasBeenSet;
+
+                    /**
+                     * 地域
+                     */
+                    std::string m_regionId;
+                    bool m_regionIdHasBeenSet;
 
                 };
             }

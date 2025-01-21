@@ -98,6 +98,27 @@ namespace TencentCloud
                     bool FileNameHasBeenSet() const;
 
                     /**
+                     * 获取重命名的新文档名称，在重命名提交之后，文档发布之前都是这个名称
+                     * @return NewName 重命名的新文档名称，在重命名提交之后，文档发布之前都是这个名称
+                     * 
+                     */
+                    std::string GetNewName() const;
+
+                    /**
+                     * 设置重命名的新文档名称，在重命名提交之后，文档发布之前都是这个名称
+                     * @param _newName 重命名的新文档名称，在重命名提交之后，文档发布之前都是这个名称
+                     * 
+                     */
+                    void SetNewName(const std::string& _newName);
+
+                    /**
+                     * 判断参数 NewName 是否已赋值
+                     * @return NewName 是否已赋值
+                     * 
+                     */
+                    bool NewNameHasBeenSet() const;
+
+                    /**
                      * 获取文件类型
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileType 文件类型
@@ -766,6 +787,12 @@ namespace TencentCloud
                      */
                     std::string m_fileName;
                     bool m_fileNameHasBeenSet;
+
+                    /**
+                     * 重命名的新文档名称，在重命名提交之后，文档发布之前都是这个名称
+                     */
+                    std::string m_newName;
+                    bool m_newNameHasBeenSet;
 
                     /**
                      * 文件类型

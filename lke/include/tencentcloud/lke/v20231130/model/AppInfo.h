@@ -322,18 +322,18 @@ namespace TencentCloud
                     bool ModelNameHasBeenSet() const;
 
                     /**
-                     * 获取模型别名
+                     * 获取生成模型别名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ModelAliasName 模型别名
+                     * @return ModelAliasName 生成模型别名
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModelAliasName() const;
 
                     /**
-                     * 设置模型别名
+                     * 设置生成模型别名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _modelAliasName 模型别名
+                     * @param _modelAliasName 生成模型别名
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -345,6 +345,56 @@ namespace TencentCloud
                      * 
                      */
                     bool ModelAliasNameHasBeenSet() const;
+
+                    /**
+                     * 获取应用模式 standard:标准模式, agent: agent模式，single_workflow：单工作流模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Pattern 应用模式 standard:标准模式, agent: agent模式，single_workflow：单工作流模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPattern() const;
+
+                    /**
+                     * 设置应用模式 standard:标准模式, agent: agent模式，single_workflow：单工作流模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _pattern 应用模式 standard:标准模式, agent: agent模式，single_workflow：单工作流模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPattern(const std::string& _pattern);
+
+                    /**
+                     * 判断参数 Pattern 是否已赋值
+                     * @return Pattern 是否已赋值
+                     * 
+                     */
+                    bool PatternHasBeenSet() const;
+
+                    /**
+                     * 获取思考模型别名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ThoughtModelAliasName 思考模型别名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetThoughtModelAliasName() const;
+
+                    /**
+                     * 设置思考模型别名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _thoughtModelAliasName 思考模型别名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetThoughtModelAliasName(const std::string& _thoughtModelAliasName);
+
+                    /**
+                     * 判断参数 ThoughtModelAliasName 是否已赋值
+                     * @return ThoughtModelAliasName 是否已赋值
+                     * 
+                     */
+                    bool ThoughtModelAliasNameHasBeenSet() const;
 
                 private:
 
@@ -426,11 +476,25 @@ namespace TencentCloud
                     bool m_modelNameHasBeenSet;
 
                     /**
-                     * 模型别名
+                     * 生成模型别名
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modelAliasName;
                     bool m_modelAliasNameHasBeenSet;
+
+                    /**
+                     * 应用模式 standard:标准模式, agent: agent模式，single_workflow：单工作流模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_pattern;
+                    bool m_patternHasBeenSet;
+
+                    /**
+                     * 思考模型别名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_thoughtModelAliasName;
+                    bool m_thoughtModelAliasNameHasBeenSet;
 
                 };
             }

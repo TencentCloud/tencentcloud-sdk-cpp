@@ -24,7 +24,8 @@ Choice::Choice() :
     m_finishReasonHasBeenSet(false),
     m_deltaHasBeenSet(false),
     m_messageHasBeenSet(false),
-    m_indexHasBeenSet(false)
+    m_indexHasBeenSet(false),
+    m_moderationLevelHasBeenSet(false)
 {
 }
 
@@ -87,6 +88,16 @@ CoreInternalOutcome Choice::Deserialize(const rapidjson::Value &value)
         m_indexHasBeenSet = true;
     }
 
+    if (value.HasMember("ModerationLevel") && !value["ModerationLevel"].IsNull())
+    {
+        if (!value["ModerationLevel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Choice.ModerationLevel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_moderationLevel = string(value["ModerationLevel"].GetString());
+        m_moderationLevelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +137,14 @@ void Choice::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "Index";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_index, allocator);
+    }
+
+    if (m_moderationLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModerationLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_moderationLevel.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -193,5 +212,21 @@ void Choice::SetIndex(const int64_t& _index)
 bool Choice::IndexHasBeenSet() const
 {
     return m_indexHasBeenSet;
+}
+
+string Choice::GetModerationLevel() const
+{
+    return m_moderationLevel;
+}
+
+void Choice::SetModerationLevel(const string& _moderationLevel)
+{
+    m_moderationLevel = _moderationLevel;
+    m_moderationLevelHasBeenSet = true;
+}
+
+bool Choice::ModerationLevelHasBeenSet() const
+{
+    return m_moderationLevelHasBeenSet;
 }
 

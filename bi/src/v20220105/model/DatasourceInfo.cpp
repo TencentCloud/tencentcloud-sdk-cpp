@@ -56,7 +56,8 @@ DatasourceInfo::DatasourceInfo() :
     m_dataOriginProjectIdHasBeenSet(false),
     m_dataOriginDatasourceIdHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
-    m_dbTypeNameHasBeenSet(false)
+    m_dbTypeNameHasBeenSet(false),
+    m_useVPCHasBeenSet(false)
 {
 }
 
@@ -445,6 +446,16 @@ CoreInternalOutcome DatasourceInfo::Deserialize(const rapidjson::Value &value)
         m_dbTypeNameHasBeenSet = true;
     }
 
+    if (value.HasMember("UseVPC") && !value["UseVPC"].IsNull())
+    {
+        if (!value["UseVPC"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatasourceInfo.UseVPC` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_useVPC = value["UseVPC"].GetBool();
+        m_useVPCHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -751,6 +762,14 @@ void DatasourceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "DbTypeName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dbTypeName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_useVPCHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UseVPC";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_useVPC, allocator);
     }
 
 }
@@ -1330,5 +1349,21 @@ void DatasourceInfo::SetDbTypeName(const string& _dbTypeName)
 bool DatasourceInfo::DbTypeNameHasBeenSet() const
 {
     return m_dbTypeNameHasBeenSet;
+}
+
+bool DatasourceInfo::GetUseVPC() const
+{
+    return m_useVPC;
+}
+
+void DatasourceInfo::SetUseVPC(const bool& _useVPC)
+{
+    m_useVPC = _useVPC;
+    m_useVPCHasBeenSet = true;
+}
+
+bool DatasourceInfo::UseVPCHasBeenSet() const
+{
+    return m_useVPCHasBeenSet;
 }
 

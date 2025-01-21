@@ -141,14 +141,14 @@ namespace TencentCloud
                     /**
                      * 获取多轮会话风险审核，值为1时，表明存在信息安全风险，建议终止客户多轮会话。
                      * @return ModerationLevel 多轮会话风险审核，值为1时，表明存在信息安全风险，建议终止客户多轮会话。
-                     * 
+                     * @deprecated
                      */
                     std::string GetModerationLevel() const;
 
                     /**
                      * 判断参数 ModerationLevel 是否已赋值
                      * @return ModerationLevel 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ModerationLevelHasBeenSet() const;
 

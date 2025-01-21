@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/lke/v20231130/model/KnowledgeQaSingleWorkflow.h>
 
 
 namespace TencentCloud
@@ -44,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取token值（有效期60s）
-                     * @return Token token值（有效期60s）
+                     * 获取token值（有效期60s，仅一次有效，多次校验会报错）
+                     * @return Token token值（有效期60s，仅一次有效，多次校验会报错）
                      * 
                      */
                     std::string GetToken() const;
@@ -87,10 +88,38 @@ namespace TencentCloud
                      */
                     bool InputLenLimitHasBeenSet() const;
 
+                    /**
+                     * 获取应用模式，standard:标准模式, agent: agent模式，single_workflow：单工作流模式
+                     * @return Pattern 应用模式，standard:标准模式, agent: agent模式，single_workflow：单工作流模式
+                     * 
+                     */
+                    std::string GetPattern() const;
+
+                    /**
+                     * 判断参数 Pattern 是否已赋值
+                     * @return Pattern 是否已赋值
+                     * 
+                     */
+                    bool PatternHasBeenSet() const;
+
+                    /**
+                     * 获取SingleWorkflow
+                     * @return SingleWorkflow SingleWorkflow
+                     * 
+                     */
+                    KnowledgeQaSingleWorkflow GetSingleWorkflow() const;
+
+                    /**
+                     * 判断参数 SingleWorkflow 是否已赋值
+                     * @return SingleWorkflow 是否已赋值
+                     * 
+                     */
+                    bool SingleWorkflowHasBeenSet() const;
+
                 private:
 
                     /**
-                     * token值（有效期60s）
+                     * token值（有效期60s，仅一次有效，多次校验会报错）
                      */
                     std::string m_token;
                     bool m_tokenHasBeenSet;
@@ -107,6 +136,18 @@ namespace TencentCloud
                      */
                     int64_t m_inputLenLimit;
                     bool m_inputLenLimitHasBeenSet;
+
+                    /**
+                     * 应用模式，standard:标准模式, agent: agent模式，single_workflow：单工作流模式
+                     */
+                    std::string m_pattern;
+                    bool m_patternHasBeenSet;
+
+                    /**
+                     * SingleWorkflow
+                     */
+                    KnowledgeQaSingleWorkflow m_singleWorkflow;
+                    bool m_singleWorkflowHasBeenSet;
 
                 };
             }

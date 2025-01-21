@@ -37,7 +37,8 @@ DescribeTaskListRequest::DescribeTaskListRequest() :
     m_applicationIdHasBeenSet(false),
     m_applicationNameHasBeenSet(false),
     m_taskStatusListHasBeenSet(false),
-    m_archIdHasBeenSet(false)
+    m_archIdHasBeenSet(false),
+    m_archNameHasBeenSet(false)
 {
 }
 
@@ -205,6 +206,14 @@ string DescribeTaskListRequest::ToJsonString() const
         string key = "ArchId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_archId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_archNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ArchName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_archName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -453,6 +462,22 @@ void DescribeTaskListRequest::SetArchId(const string& _archId)
 bool DescribeTaskListRequest::ArchIdHasBeenSet() const
 {
     return m_archIdHasBeenSet;
+}
+
+string DescribeTaskListRequest::GetArchName() const
+{
+    return m_archName;
+}
+
+void DescribeTaskListRequest::SetArchName(const string& _archName)
+{
+    m_archName = _archName;
+    m_archNameHasBeenSet = true;
+}
+
+bool DescribeTaskListRequest::ArchNameHasBeenSet() const
+{
+    return m_archNameHasBeenSet;
 }
 
 

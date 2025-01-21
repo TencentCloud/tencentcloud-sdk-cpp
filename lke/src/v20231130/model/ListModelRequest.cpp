@@ -24,6 +24,8 @@ using namespace std;
 
 ListModelRequest::ListModelRequest() :
     m_appTypeHasBeenSet(false),
+    m_patternHasBeenSet(false),
+    m_modelCategoryHasBeenSet(false),
     m_loginUinHasBeenSet(false),
     m_loginSubAccountUinHasBeenSet(false)
 {
@@ -42,6 +44,22 @@ string ListModelRequest::ToJsonString() const
         string key = "AppType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_appType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_patternHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Pattern";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_pattern.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modelCategoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelCategory";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_modelCategory.c_str(), allocator).Move(), allocator);
     }
 
     if (m_loginUinHasBeenSet)
@@ -82,6 +100,38 @@ void ListModelRequest::SetAppType(const string& _appType)
 bool ListModelRequest::AppTypeHasBeenSet() const
 {
     return m_appTypeHasBeenSet;
+}
+
+string ListModelRequest::GetPattern() const
+{
+    return m_pattern;
+}
+
+void ListModelRequest::SetPattern(const string& _pattern)
+{
+    m_pattern = _pattern;
+    m_patternHasBeenSet = true;
+}
+
+bool ListModelRequest::PatternHasBeenSet() const
+{
+    return m_patternHasBeenSet;
+}
+
+string ListModelRequest::GetModelCategory() const
+{
+    return m_modelCategory;
+}
+
+void ListModelRequest::SetModelCategory(const string& _modelCategory)
+{
+    m_modelCategory = _modelCategory;
+    m_modelCategoryHasBeenSet = true;
+}
+
+bool ListModelRequest::ModelCategoryHasBeenSet() const
+{
+    return m_modelCategoryHasBeenSet;
 }
 
 string ListModelRequest::GetLoginUin() const

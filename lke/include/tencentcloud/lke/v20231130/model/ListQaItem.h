@@ -488,6 +488,27 @@ namespace TencentCloud
                      */
                     bool SimilarQuestionNumHasBeenSet() const;
 
+                    /**
+                     * 获取返回问答关联的相似问,联动搜索,仅展示一条
+                     * @return SimilarQuestionTips 返回问答关联的相似问,联动搜索,仅展示一条
+                     * 
+                     */
+                    std::string GetSimilarQuestionTips() const;
+
+                    /**
+                     * 设置返回问答关联的相似问,联动搜索,仅展示一条
+                     * @param _similarQuestionTips 返回问答关联的相似问,联动搜索,仅展示一条
+                     * 
+                     */
+                    void SetSimilarQuestionTips(const std::string& _similarQuestionTips);
+
+                    /**
+                     * 判断参数 SimilarQuestionTips 是否已赋值
+                     * @return SimilarQuestionTips 是否已赋值
+                     * 
+                     */
+                    bool SimilarQuestionTipsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -615,6 +636,12 @@ namespace TencentCloud
                      */
                     uint64_t m_similarQuestionNum;
                     bool m_similarQuestionNumHasBeenSet;
+
+                    /**
+                     * 返回问答关联的相似问,联动搜索,仅展示一条
+                     */
+                    std::string m_similarQuestionTips;
+                    bool m_similarQuestionTipsHasBeenSet;
 
                 };
             }

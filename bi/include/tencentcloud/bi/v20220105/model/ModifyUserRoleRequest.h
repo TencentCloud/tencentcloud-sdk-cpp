@@ -210,6 +210,69 @@ namespace TencentCloud
                      */
                     bool LoginSecurityStatusHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启密码过期提醒（0 关闭，1 开启
+                     * @return ResetPassWordTip 是否开启密码过期提醒（0 关闭，1 开启
+                     * 
+                     */
+                    int64_t GetResetPassWordTip() const;
+
+                    /**
+                     * 设置是否开启密码过期提醒（0 关闭，1 开启
+                     * @param _resetPassWordTip 是否开启密码过期提醒（0 关闭，1 开启
+                     * 
+                     */
+                    void SetResetPassWordTip(const int64_t& _resetPassWordTip);
+
+                    /**
+                     * 判断参数 ResetPassWordTip 是否已赋值
+                     * @return ResetPassWordTip 是否已赋值
+                     * 
+                     */
+                    bool ResetPassWordTipHasBeenSet() const;
+
+                    /**
+                     * 获取强制修改密码（0 关闭，1 开启）
+                     * @return ForceResetPassWord 强制修改密码（0 关闭，1 开启）
+                     * 
+                     */
+                    int64_t GetForceResetPassWord() const;
+
+                    /**
+                     * 设置强制修改密码（0 关闭，1 开启）
+                     * @param _forceResetPassWord 强制修改密码（0 关闭，1 开启）
+                     * 
+                     */
+                    void SetForceResetPassWord(const int64_t& _forceResetPassWord);
+
+                    /**
+                     * 判断参数 ForceResetPassWord 是否已赋值
+                     * @return ForceResetPassWord 是否已赋值
+                     * 
+                     */
+                    bool ForceResetPassWordHasBeenSet() const;
+
+                    /**
+                     * 获取密码过期提醒时间，30、60、90（默认）、180天
+                     * @return PasswordExpired 密码过期提醒时间，30、60、90（默认）、180天
+                     * 
+                     */
+                    int64_t GetPasswordExpired() const;
+
+                    /**
+                     * 设置密码过期提醒时间，30、60、90（默认）、180天
+                     * @param _passwordExpired 密码过期提醒时间，30、60、90（默认）、180天
+                     * 
+                     */
+                    void SetPasswordExpired(const int64_t& _passwordExpired);
+
+                    /**
+                     * 判断参数 PasswordExpired 是否已赋值
+                     * @return PasswordExpired 是否已赋值
+                     * 
+                     */
+                    bool PasswordExpiredHasBeenSet() const;
+
                 private:
 
                     /**
@@ -259,6 +322,24 @@ namespace TencentCloud
                      */
                     int64_t m_loginSecurityStatus;
                     bool m_loginSecurityStatusHasBeenSet;
+
+                    /**
+                     * 是否开启密码过期提醒（0 关闭，1 开启
+                     */
+                    int64_t m_resetPassWordTip;
+                    bool m_resetPassWordTipHasBeenSet;
+
+                    /**
+                     * 强制修改密码（0 关闭，1 开启）
+                     */
+                    int64_t m_forceResetPassWord;
+                    bool m_forceResetPassWordHasBeenSet;
+
+                    /**
+                     * 密码过期提醒时间，30、60、90（默认）、180天
+                     */
+                    int64_t m_passwordExpired;
+                    bool m_passwordExpiredHasBeenSet;
 
                 };
             }

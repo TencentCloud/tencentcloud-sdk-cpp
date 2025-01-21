@@ -301,18 +301,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例类型 1:原web相关类型 2:app端类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceType 实例类型 1:原web相关类型 2:app端类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetInstanceType() const;
 
                     /**
                      * 设置实例类型 1:原web相关类型 2:app端类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceType 实例类型 1:原web相关类型 2:app端类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceType(const int64_t& _instanceType);
@@ -400,7 +396,6 @@ namespace TencentCloud
 
                     /**
                      * 实例类型 1:原web相关类型 2:app端类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_instanceType;
                     bool m_instanceTypeHasBeenSet;

@@ -61,9 +61,7 @@ namespace TencentCloud
 
                     /**
                      * 获取前端规则描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FrontEndRules 前端规则描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<FrontEndRule> GetFrontEndRules() const;
@@ -77,9 +75,7 @@ namespace TencentCloud
 
                     /**
                      * 获取返回可用的白名单名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AvailableWhiteListNames 返回可用的白名单名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetAvailableWhiteListNames() const;
@@ -101,14 +97,12 @@ namespace TencentCloud
 
                     /**
                      * 前端规则描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FrontEndRule> m_frontEndRules;
                     bool m_frontEndRulesHasBeenSet;
 
                     /**
                      * 返回可用的白名单名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_availableWhiteListNames;
                     bool m_availableWhiteListNamesHasBeenSet;

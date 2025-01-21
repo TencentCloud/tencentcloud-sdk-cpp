@@ -43,7 +43,8 @@ MsgRecord::MsgRecord() :
     m_optionCardsHasBeenSet(false),
     m_taskFlowHasBeenSet(false),
     m_fileInfosHasBeenSet(false),
-    m_quoteInfosHasBeenSet(false)
+    m_quoteInfosHasBeenSet(false),
+    m_agentThoughtHasBeenSet(false)
 {
 }
 
@@ -335,6 +336,23 @@ CoreInternalOutcome MsgRecord::Deserialize(const rapidjson::Value &value)
         m_quoteInfosHasBeenSet = true;
     }
 
+    if (value.HasMember("AgentThought") && !value["AgentThought"].IsNull())
+    {
+        if (!value["AgentThought"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `MsgRecord.AgentThought` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_agentThought.Deserialize(value["AgentThought"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_agentThoughtHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -562,6 +580,15 @@ void MsgRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_agentThoughtHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgentThought";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_agentThought.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -933,5 +960,21 @@ void MsgRecord::SetQuoteInfos(const vector<QuoteInfo>& _quoteInfos)
 bool MsgRecord::QuoteInfosHasBeenSet() const
 {
     return m_quoteInfosHasBeenSet;
+}
+
+AgentThought MsgRecord::GetAgentThought() const
+{
+    return m_agentThought;
+}
+
+void MsgRecord::SetAgentThought(const AgentThought& _agentThought)
+{
+    m_agentThought = _agentThought;
+    m_agentThoughtHasBeenSet = true;
+}
+
+bool MsgRecord::AgentThoughtHasBeenSet() const
+{
+    return m_agentThoughtHasBeenSet;
 }
 

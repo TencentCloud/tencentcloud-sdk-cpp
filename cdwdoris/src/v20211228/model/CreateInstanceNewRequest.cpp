@@ -37,7 +37,8 @@ CreateInstanceNewRequest::CreateInstanceNewRequest() :
     m_haTypeHasBeenSet(false),
     m_caseSensitiveHasBeenSet(false),
     m_enableMultiZonesHasBeenSet(false),
-    m_userMultiZoneInfosHasBeenSet(false)
+    m_userMultiZoneInfosHasBeenSet(false),
+    m_userMultiZoneInfoArrHasBeenSet(false)
 {
 }
 
@@ -177,6 +178,21 @@ string CreateInstanceNewRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_userMultiZoneInfos.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_userMultiZoneInfoArrHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserMultiZoneInfoArr";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_userMultiZoneInfoArr.begin(); itr != m_userMultiZoneInfoArr.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -425,6 +441,22 @@ void CreateInstanceNewRequest::SetUserMultiZoneInfos(const NetworkInfo& _userMul
 bool CreateInstanceNewRequest::UserMultiZoneInfosHasBeenSet() const
 {
     return m_userMultiZoneInfosHasBeenSet;
+}
+
+vector<NetworkInfo> CreateInstanceNewRequest::GetUserMultiZoneInfoArr() const
+{
+    return m_userMultiZoneInfoArr;
+}
+
+void CreateInstanceNewRequest::SetUserMultiZoneInfoArr(const vector<NetworkInfo>& _userMultiZoneInfoArr)
+{
+    m_userMultiZoneInfoArr = _userMultiZoneInfoArr;
+    m_userMultiZoneInfoArrHasBeenSet = true;
+}
+
+bool CreateInstanceNewRequest::UserMultiZoneInfoArrHasBeenSet() const
+{
+    return m_userMultiZoneInfoArrHasBeenSet;
 }
 
 

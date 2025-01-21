@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取任务列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackUpJobs 任务列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BackUpJobDisplay> GetBackUpJobs() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorMsg 错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetErrorMsg() const;
@@ -78,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -96,21 +90,18 @@ namespace TencentCloud
 
                     /**
                      * 任务列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BackUpJobDisplay> m_backUpJobs;
                     bool m_backUpJobsHasBeenSet;
 
                     /**
                      * 错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errorMsg;
                     bool m_errorMsgHasBeenSet;
 
                     /**
                      * 总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

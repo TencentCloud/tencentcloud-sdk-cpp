@@ -30,7 +30,10 @@ ModifyUserRoleRequest::ModifyUserRoleRequest() :
     m_phoneNumberHasBeenSet(false),
     m_areaCodeHasBeenSet(false),
     m_appUserIdHasBeenSet(false),
-    m_loginSecurityStatusHasBeenSet(false)
+    m_loginSecurityStatusHasBeenSet(false),
+    m_resetPassWordTipHasBeenSet(false),
+    m_forceResetPassWordHasBeenSet(false),
+    m_passwordExpiredHasBeenSet(false)
 {
 }
 
@@ -108,6 +111,30 @@ string ModifyUserRoleRequest::ToJsonString() const
         string key = "LoginSecurityStatus";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_loginSecurityStatus, allocator);
+    }
+
+    if (m_resetPassWordTipHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResetPassWordTip";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_resetPassWordTip, allocator);
+    }
+
+    if (m_forceResetPassWordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ForceResetPassWord";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_forceResetPassWord, allocator);
+    }
+
+    if (m_passwordExpiredHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PasswordExpired";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_passwordExpired, allocator);
     }
 
 
@@ -244,6 +271,54 @@ void ModifyUserRoleRequest::SetLoginSecurityStatus(const int64_t& _loginSecurity
 bool ModifyUserRoleRequest::LoginSecurityStatusHasBeenSet() const
 {
     return m_loginSecurityStatusHasBeenSet;
+}
+
+int64_t ModifyUserRoleRequest::GetResetPassWordTip() const
+{
+    return m_resetPassWordTip;
+}
+
+void ModifyUserRoleRequest::SetResetPassWordTip(const int64_t& _resetPassWordTip)
+{
+    m_resetPassWordTip = _resetPassWordTip;
+    m_resetPassWordTipHasBeenSet = true;
+}
+
+bool ModifyUserRoleRequest::ResetPassWordTipHasBeenSet() const
+{
+    return m_resetPassWordTipHasBeenSet;
+}
+
+int64_t ModifyUserRoleRequest::GetForceResetPassWord() const
+{
+    return m_forceResetPassWord;
+}
+
+void ModifyUserRoleRequest::SetForceResetPassWord(const int64_t& _forceResetPassWord)
+{
+    m_forceResetPassWord = _forceResetPassWord;
+    m_forceResetPassWordHasBeenSet = true;
+}
+
+bool ModifyUserRoleRequest::ForceResetPassWordHasBeenSet() const
+{
+    return m_forceResetPassWordHasBeenSet;
+}
+
+int64_t ModifyUserRoleRequest::GetPasswordExpired() const
+{
+    return m_passwordExpired;
+}
+
+void ModifyUserRoleRequest::SetPasswordExpired(const int64_t& _passwordExpired)
+{
+    m_passwordExpired = _passwordExpired;
+    m_passwordExpiredHasBeenSet = true;
+}
+
+bool ModifyUserRoleRequest::PasswordExpiredHasBeenSet() const
+{
+    return m_passwordExpiredHasBeenSet;
 }
 
 

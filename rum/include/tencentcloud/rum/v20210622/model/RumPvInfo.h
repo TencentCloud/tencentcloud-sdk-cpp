@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取pv访问量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Pv pv访问量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPv() const;
 
                     /**
                      * 设置pv访问量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pv pv访问量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPv(const std::string& _pv);
@@ -123,7 +119,6 @@ namespace TencentCloud
 
                     /**
                      * pv访问量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pv;
                     bool m_pvHasBeenSet;
