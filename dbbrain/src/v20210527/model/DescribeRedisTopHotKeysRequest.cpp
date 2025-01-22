@@ -28,7 +28,8 @@ DescribeRedisTopHotKeysRequest::DescribeRedisTopHotKeysRequest() :
     m_endTimeHasBeenSet(false),
     m_productHasBeenSet(false),
     m_instanceNodeIdsHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_offsetHasBeenSet(false)
 {
 }
 
@@ -90,6 +91,14 @@ string DescribeRedisTopHotKeysRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
     }
 
 
@@ -194,6 +203,22 @@ void DescribeRedisTopHotKeysRequest::SetLimit(const int64_t& _limit)
 bool DescribeRedisTopHotKeysRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+int64_t DescribeRedisTopHotKeysRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeRedisTopHotKeysRequest::SetOffset(const int64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeRedisTopHotKeysRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
 }
 
 

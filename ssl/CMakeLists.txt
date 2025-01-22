@@ -155,6 +155,7 @@ set(ssl_public_header_model
   include/tencentcloud/ssl/v20191205/model/VerifyManagerRequest.h
   include/tencentcloud/ssl/v20191205/model/CertTaskId.h
   include/tencentcloud/ssl/v20191205/model/DescribeHostLiveInstanceListResponse.h
+  include/tencentcloud/ssl/v20191205/model/CheckCertificateExistResponse.h
   include/tencentcloud/ssl/v20191205/model/DescribeHostApiGatewayInstanceListRequest.h
   include/tencentcloud/ssl/v20191205/model/TCBAccessService.h
   include/tencentcloud/ssl/v20191205/model/DdosInstanceList.h
@@ -203,6 +204,7 @@ set(ssl_public_header_model
   include/tencentcloud/ssl/v20191205/model/DescribePackagesRequest.h
   include/tencentcloud/ssl/v20191205/model/TCBHostService.h
   include/tencentcloud/ssl/v20191205/model/CheckCertificateChainRequest.h
+  include/tencentcloud/ssl/v20191205/model/CheckCertificateExistRequest.h
   include/tencentcloud/ssl/v20191205/model/DescribeCompaniesRequest.h
   include/tencentcloud/ssl/v20191205/model/ManagerStatusInfo.h
   include/tencentcloud/ssl/v20191205/model/CancelAuditCertificateResponse.h
@@ -353,6 +355,7 @@ set(ssl_src
   src/v20191205/model/VerifyManagerRequest.cpp
   src/v20191205/model/CertTaskId.cpp
   src/v20191205/model/DescribeHostLiveInstanceListResponse.cpp
+  src/v20191205/model/CheckCertificateExistResponse.cpp
   src/v20191205/model/DescribeHostApiGatewayInstanceListRequest.cpp
   src/v20191205/model/TCBAccessService.cpp
   src/v20191205/model/DdosInstanceList.cpp
@@ -401,6 +404,7 @@ set(ssl_src
   src/v20191205/model/DescribePackagesRequest.cpp
   src/v20191205/model/TCBHostService.cpp
   src/v20191205/model/CheckCertificateChainRequest.cpp
+  src/v20191205/model/CheckCertificateExistRequest.cpp
   src/v20191205/model/DescribeCompaniesRequest.cpp
   src/v20191205/model/ManagerStatusInfo.cpp
   src/v20191205/model/CancelAuditCertificateResponse.cpp

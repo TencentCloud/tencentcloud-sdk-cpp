@@ -255,6 +255,49 @@ SslClient::CheckCertificateDomainVerificationOutcomeCallable SslClient::CheckCer
     return task->get_future();
 }
 
+SslClient::CheckCertificateExistOutcome SslClient::CheckCertificateExist(const CheckCertificateExistRequest &request)
+{
+    auto outcome = MakeRequest(request, "CheckCertificateExist");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CheckCertificateExistResponse rsp = CheckCertificateExistResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CheckCertificateExistOutcome(rsp);
+        else
+            return CheckCertificateExistOutcome(o.GetError());
+    }
+    else
+    {
+        return CheckCertificateExistOutcome(outcome.GetError());
+    }
+}
+
+void SslClient::CheckCertificateExistAsync(const CheckCertificateExistRequest& request, const CheckCertificateExistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CheckCertificateExist(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SslClient::CheckCertificateExistOutcomeCallable SslClient::CheckCertificateExistCallable(const CheckCertificateExistRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CheckCertificateExistOutcome()>>(
+        [this, request]()
+        {
+            return this->CheckCertificateExist(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SslClient::CommitCertificateInformationOutcome SslClient::CommitCertificateInformation(const CommitCertificateInformationRequest &request)
 {
     auto outcome = MakeRequest(request, "CommitCertificateInformation");

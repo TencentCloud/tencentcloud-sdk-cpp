@@ -62,9 +62,9 @@ namespace TencentCloud
                     bool ErrorInfoHasBeenSet() const;
 
                     /**
-                     * 获取扩展
+                     * 获取扩展描述信息(提供更多异常信息,用于辅助判断)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Extra 扩展
+                     * @return Extra 扩展描述信息(提供更多异常信息,用于辅助判断)
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -119,7 +119,7 @@ namespace TencentCloud
                     bool m_errorInfoHasBeenSet;
 
                     /**
-                     * 扩展
+                     * 扩展描述信息(提供更多异常信息,用于辅助判断)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_extra;

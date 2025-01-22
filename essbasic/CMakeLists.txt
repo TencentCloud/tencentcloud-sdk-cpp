@@ -201,6 +201,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/ChannelDeleteRoleRequest.h
   include/tencentcloud/essbasic/v20210526/model/CreateBatchOrganizationRegistrationTasksRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateBatchQuickSignUrlResponse.h
+  include/tencentcloud/essbasic/v20210526/model/CreateBatchOrganizationAuthorizationUrlResponse.h
   include/tencentcloud/essbasic/v20210526/model/CreatePartnerAutoSignAuthUrlRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateBatchCancelFlowUrlRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelDescribeAccountBillDetailResponse.h
@@ -258,6 +259,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/DescribeChannelOrganizationsResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateOrganizationBatchSignUrlResponse.h
   include/tencentcloud/essbasic/v20210526/model/EmbedUrlOption.h
+  include/tencentcloud/essbasic/v20210526/model/CreateBatchOrganizationAuthorizationUrlRequest.h
   include/tencentcloud/essbasic/v20210526/model/UsageDetail.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateBatchCancelFlowUrlResponse.h
   include/tencentcloud/essbasic/v20210526/model/OperateChannelTemplateRequest.h
@@ -590,6 +592,7 @@ set(essbasic_src
   src/v20210526/model/ChannelDeleteRoleRequest.cpp
   src/v20210526/model/CreateBatchOrganizationRegistrationTasksRequest.cpp
   src/v20210526/model/ChannelCreateBatchQuickSignUrlResponse.cpp
+  src/v20210526/model/CreateBatchOrganizationAuthorizationUrlResponse.cpp
   src/v20210526/model/CreatePartnerAutoSignAuthUrlRequest.cpp
   src/v20210526/model/ChannelCreateBatchCancelFlowUrlRequest.cpp
   src/v20210526/model/ChannelDescribeAccountBillDetailResponse.cpp
@@ -647,6 +650,7 @@ set(essbasic_src
   src/v20210526/model/DescribeChannelOrganizationsResponse.cpp
   src/v20210526/model/ChannelCreateOrganizationBatchSignUrlResponse.cpp
   src/v20210526/model/EmbedUrlOption.cpp
+  src/v20210526/model/CreateBatchOrganizationAuthorizationUrlRequest.cpp
   src/v20210526/model/UsageDetail.cpp
   src/v20210526/model/ChannelCreateBatchCancelFlowUrlResponse.cpp
   src/v20210526/model/OperateChannelTemplateRequest.cpp

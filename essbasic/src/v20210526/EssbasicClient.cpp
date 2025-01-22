@@ -2147,6 +2147,49 @@ EssbasicClient::CreateBatchInitOrganizationUrlOutcomeCallable EssbasicClient::Cr
     return task->get_future();
 }
 
+EssbasicClient::CreateBatchOrganizationAuthorizationUrlOutcome EssbasicClient::CreateBatchOrganizationAuthorizationUrl(const CreateBatchOrganizationAuthorizationUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateBatchOrganizationAuthorizationUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateBatchOrganizationAuthorizationUrlResponse rsp = CreateBatchOrganizationAuthorizationUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateBatchOrganizationAuthorizationUrlOutcome(rsp);
+        else
+            return CreateBatchOrganizationAuthorizationUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateBatchOrganizationAuthorizationUrlOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::CreateBatchOrganizationAuthorizationUrlAsync(const CreateBatchOrganizationAuthorizationUrlRequest& request, const CreateBatchOrganizationAuthorizationUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateBatchOrganizationAuthorizationUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::CreateBatchOrganizationAuthorizationUrlOutcomeCallable EssbasicClient::CreateBatchOrganizationAuthorizationUrlCallable(const CreateBatchOrganizationAuthorizationUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateBatchOrganizationAuthorizationUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateBatchOrganizationAuthorizationUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::CreateBatchOrganizationRegistrationTasksOutcome EssbasicClient::CreateBatchOrganizationRegistrationTasks(const CreateBatchOrganizationRegistrationTasksRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateBatchOrganizationRegistrationTasks");

@@ -121,6 +121,8 @@
 #include <tencentcloud/essbasic/v20210526/model/ChannelVerifyPdfResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateBatchInitOrganizationUrlRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateBatchInitOrganizationUrlResponse.h>
+#include <tencentcloud/essbasic/v20210526/model/CreateBatchOrganizationAuthorizationUrlRequest.h>
+#include <tencentcloud/essbasic/v20210526/model/CreateBatchOrganizationAuthorizationUrlResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateBatchOrganizationRegistrationTasksRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateBatchOrganizationRegistrationTasksResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateChannelFlowEvidenceReportRequest.h>
@@ -354,6 +356,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateBatchInitOrganizationUrlResponse> CreateBatchInitOrganizationUrlOutcome;
                 typedef std::future<CreateBatchInitOrganizationUrlOutcome> CreateBatchInitOrganizationUrlOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::CreateBatchInitOrganizationUrlRequest&, CreateBatchInitOrganizationUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBatchInitOrganizationUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateBatchOrganizationAuthorizationUrlResponse> CreateBatchOrganizationAuthorizationUrlOutcome;
+                typedef std::future<CreateBatchOrganizationAuthorizationUrlOutcome> CreateBatchOrganizationAuthorizationUrlOutcomeCallable;
+                typedef std::function<void(const EssbasicClient*, const Model::CreateBatchOrganizationAuthorizationUrlRequest&, CreateBatchOrganizationAuthorizationUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBatchOrganizationAuthorizationUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateBatchOrganizationRegistrationTasksResponse> CreateBatchOrganizationRegistrationTasksOutcome;
                 typedef std::future<CreateBatchOrganizationRegistrationTasksOutcome> CreateBatchOrganizationRegistrationTasksOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::CreateBatchOrganizationRegistrationTasksRequest&, CreateBatchOrganizationRegistrationTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBatchOrganizationRegistrationTasksAsyncHandler;
@@ -1407,6 +1412,20 @@ namespace TencentCloud
                 CreateBatchInitOrganizationUrlOutcome CreateBatchInitOrganizationUrl(const Model::CreateBatchInitOrganizationUrlRequest &request);
                 void CreateBatchInitOrganizationUrlAsync(const Model::CreateBatchInitOrganizationUrlRequest& request, const CreateBatchInitOrganizationUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateBatchInitOrganizationUrlOutcomeCallable CreateBatchInitOrganizationUrlCallable(const Model::CreateBatchInitOrganizationUrlRequest& request);
+
+                /**
+                 *此接口用于获取企业批量认证链接-单链接包含多条认证流。
+
+前提条件：已调用 [CreateBatchOrganizationRegistrationTasks创建子企业批量认证链接任务接口](https://qian.tencent.com/developers/partnerApis/accounts/CreateBatchOrganizationRegistrationTasks) 和[查询子企业批量认证链接DescribeBatchOrganizationRegistrationUrls](https://qian.tencent.com/developers/partnerApis/accounts/DescribeBatchOrganizationRegistrationUrls) 确保认证任务已经完成。
+
+异步任务的处理完成时间视当前已提交的任务量、任务的复杂程度等因素决定，正常情况下 3~5 秒即可完成，但也可能需要更长的时间。
+此链接包含多条认证流程，使用该链接可以批量的对企业进行认证。
+                 * @param req CreateBatchOrganizationAuthorizationUrlRequest
+                 * @return CreateBatchOrganizationAuthorizationUrlOutcome
+                 */
+                CreateBatchOrganizationAuthorizationUrlOutcome CreateBatchOrganizationAuthorizationUrl(const Model::CreateBatchOrganizationAuthorizationUrlRequest &request);
+                void CreateBatchOrganizationAuthorizationUrlAsync(const Model::CreateBatchOrganizationAuthorizationUrlRequest& request, const CreateBatchOrganizationAuthorizationUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateBatchOrganizationAuthorizationUrlOutcomeCallable CreateBatchOrganizationAuthorizationUrlCallable(const Model::CreateBatchOrganizationAuthorizationUrlRequest& request);
 
                 /**
                  *该接口用于批量创建企业认证链接， 可以支持PC浏览器，H5和小程序三种途径。
