@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ccc/v20200210/model/AITransferItem.h>
 #include <tencentcloud/ccc/v20200210/model/Variable.h>
+#include <tencentcloud/ccc/v20200210/model/AICallExtractConfigElement.h>
 
 
 namespace TencentCloud
@@ -536,6 +537,27 @@ HoaiMy
                     bool WelcomeTypeHasBeenSet() const;
 
                     /**
+                     * 获取0: 默认可打断， 1：高优先不可打断
+                     * @return WelcomeMessagePriority 0: 默认可打断， 1：高优先不可打断
+                     * 
+                     */
+                    int64_t GetWelcomeMessagePriority() const;
+
+                    /**
+                     * 设置0: 默认可打断， 1：高优先不可打断
+                     * @param _welcomeMessagePriority 0: 默认可打断， 1：高优先不可打断
+                     * 
+                     */
+                    void SetWelcomeMessagePriority(const int64_t& _welcomeMessagePriority);
+
+                    /**
+                     * 判断参数 WelcomeMessagePriority 是否已赋值
+                     * @return WelcomeMessagePriority 是否已赋值
+                     * 
+                     */
+                    bool WelcomeMessagePriorityHasBeenSet() const;
+
+                    /**
                      * 获取最大等待时长(毫秒)，默认60秒，超过这个时间用户没说话，自动挂断
                      * @return MaxDuration 最大等待时长(毫秒)，默认60秒，超过这个时间用户没说话，自动挂断
                      * 
@@ -670,15 +692,15 @@ HoaiMy
                     bool LanguagesHasBeenSet() const;
 
                     /**
-                     * 获取打断AI说话模式，默认为0，0表示服务端自动打断，1表示服务端不打断，由端上发送打断信令进行打断
-                     * @return InterruptMode 打断AI说话模式，默认为0，0表示服务端自动打断，1表示服务端不打断，由端上发送打断信令进行打断
+                     * 获取打断AI说话模式，默认为0，0表示自动打断，1表示不打断。
+                     * @return InterruptMode 打断AI说话模式，默认为0，0表示自动打断，1表示不打断。
                      * 
                      */
                     int64_t GetInterruptMode() const;
 
                     /**
-                     * 设置打断AI说话模式，默认为0，0表示服务端自动打断，1表示服务端不打断，由端上发送打断信令进行打断
-                     * @param _interruptMode 打断AI说话模式，默认为0，0表示服务端自动打断，1表示服务端不打断，由端上发送打断信令进行打断
+                     * 设置打断AI说话模式，默认为0，0表示自动打断，1表示不打断。
+                     * @param _interruptMode 打断AI说话模式，默认为0，0表示自动打断，1表示不打断。
                      * 
                      */
                     void SetInterruptMode(const int64_t& _interruptMode);
@@ -1233,6 +1255,27 @@ HoaiMy
                      */
                     bool VadSilenceTimeHasBeenSet() const;
 
+                    /**
+                     * 获取通话内容提取配置
+                     * @return ExtractConfig 通话内容提取配置
+                     * 
+                     */
+                    std::vector<AICallExtractConfigElement> GetExtractConfig() const;
+
+                    /**
+                     * 设置通话内容提取配置
+                     * @param _extractConfig 通话内容提取配置
+                     * 
+                     */
+                    void SetExtractConfig(const std::vector<AICallExtractConfigElement>& _extractConfig);
+
+                    /**
+                     * 判断参数 ExtractConfig 是否已赋值
+                     * @return ExtractConfig 是否已赋值
+                     * 
+                     */
+                    bool ExtractConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1367,6 +1410,12 @@ HoaiMy
                     bool m_welcomeTypeHasBeenSet;
 
                     /**
+                     * 0: 默认可打断， 1：高优先不可打断
+                     */
+                    int64_t m_welcomeMessagePriority;
+                    bool m_welcomeMessagePriorityHasBeenSet;
+
+                    /**
                      * 最大等待时长(毫秒)，默认60秒，超过这个时间用户没说话，自动挂断
                      */
                     int64_t m_maxDuration;
@@ -1402,7 +1451,7 @@ HoaiMy
                     bool m_languagesHasBeenSet;
 
                     /**
-                     * 打断AI说话模式，默认为0，0表示服务端自动打断，1表示服务端不打断，由端上发送打断信令进行打断
+                     * 打断AI说话模式，默认为0，0表示自动打断，1表示不打断。
                      */
                     int64_t m_interruptMode;
                     bool m_interruptModeHasBeenSet;
@@ -1550,6 +1599,12 @@ HoaiMy
                      */
                     int64_t m_vadSilenceTime;
                     bool m_vadSilenceTimeHasBeenSet;
+
+                    /**
+                     * 通话内容提取配置
+                     */
+                    std::vector<AICallExtractConfigElement> m_extractConfig;
+                    bool m_extractConfigHasBeenSet;
 
                 };
             }

@@ -943,6 +943,49 @@ CccClient::DeleteStaffOutcomeCallable CccClient::DeleteStaffCallable(const Delet
     return task->get_future();
 }
 
+CccClient::DescribeAICallExtractResultOutcome CccClient::DescribeAICallExtractResult(const DescribeAICallExtractResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAICallExtractResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAICallExtractResultResponse rsp = DescribeAICallExtractResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAICallExtractResultOutcome(rsp);
+        else
+            return DescribeAICallExtractResultOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAICallExtractResultOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::DescribeAICallExtractResultAsync(const DescribeAICallExtractResultRequest& request, const DescribeAICallExtractResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAICallExtractResult(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::DescribeAICallExtractResultOutcomeCallable CccClient::DescribeAICallExtractResultCallable(const DescribeAICallExtractResultRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAICallExtractResultOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAICallExtractResult(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CccClient::DescribeActiveCarrierPrivilegeNumberOutcome CccClient::DescribeActiveCarrierPrivilegeNumber(const DescribeActiveCarrierPrivilegeNumberRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeActiveCarrierPrivilegeNumber");

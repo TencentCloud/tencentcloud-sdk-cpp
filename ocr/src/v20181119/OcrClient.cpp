@@ -2061,6 +2061,92 @@ OcrClient::QrcodeOCROutcomeCallable OcrClient::QrcodeOCRCallable(const QrcodeOCR
     return task->get_future();
 }
 
+OcrClient::QuestionOCROutcome OcrClient::QuestionOCR(const QuestionOCRRequest &request)
+{
+    auto outcome = MakeRequest(request, "QuestionOCR");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QuestionOCRResponse rsp = QuestionOCRResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QuestionOCROutcome(rsp);
+        else
+            return QuestionOCROutcome(o.GetError());
+    }
+    else
+    {
+        return QuestionOCROutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::QuestionOCRAsync(const QuestionOCRRequest& request, const QuestionOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QuestionOCR(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OcrClient::QuestionOCROutcomeCallable OcrClient::QuestionOCRCallable(const QuestionOCRRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QuestionOCROutcome()>>(
+        [this, request]()
+        {
+            return this->QuestionOCR(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OcrClient::QuestionSplitOCROutcome OcrClient::QuestionSplitOCR(const QuestionSplitOCRRequest &request)
+{
+    auto outcome = MakeRequest(request, "QuestionSplitOCR");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QuestionSplitOCRResponse rsp = QuestionSplitOCRResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QuestionSplitOCROutcome(rsp);
+        else
+            return QuestionSplitOCROutcome(o.GetError());
+    }
+    else
+    {
+        return QuestionSplitOCROutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::QuestionSplitOCRAsync(const QuestionSplitOCRRequest& request, const QuestionSplitOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QuestionSplitOCR(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OcrClient::QuestionSplitOCROutcomeCallable OcrClient::QuestionSplitOCRCallable(const QuestionSplitOCRRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QuestionSplitOCROutcome()>>(
+        [this, request]()
+        {
+            return this->QuestionSplitOCR(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OcrClient::QuotaInvoiceOCROutcome OcrClient::QuotaInvoiceOCR(const QuotaInvoiceOCRRequest &request)
 {
     auto outcome = MakeRequest(request, "QuotaInvoiceOCR");
@@ -2233,42 +2319,42 @@ OcrClient::RecognizeForeignPermanentResidentIdCardOutcomeCallable OcrClient::Rec
     return task->get_future();
 }
 
-OcrClient::RecognizeGeneralCardWarnOutcome OcrClient::RecognizeGeneralCardWarn(const RecognizeGeneralCardWarnRequest &request)
+OcrClient::RecognizeFormulaOCROutcome OcrClient::RecognizeFormulaOCR(const RecognizeFormulaOCRRequest &request)
 {
-    auto outcome = MakeRequest(request, "RecognizeGeneralCardWarn");
+    auto outcome = MakeRequest(request, "RecognizeFormulaOCR");
     if (outcome.IsSuccess())
     {
         auto r = outcome.GetResult();
         string payload = string(r.Body(), r.BodySize());
-        RecognizeGeneralCardWarnResponse rsp = RecognizeGeneralCardWarnResponse();
+        RecognizeFormulaOCRResponse rsp = RecognizeFormulaOCRResponse();
         auto o = rsp.Deserialize(payload);
         if (o.IsSuccess())
-            return RecognizeGeneralCardWarnOutcome(rsp);
+            return RecognizeFormulaOCROutcome(rsp);
         else
-            return RecognizeGeneralCardWarnOutcome(o.GetError());
+            return RecognizeFormulaOCROutcome(o.GetError());
     }
     else
     {
-        return RecognizeGeneralCardWarnOutcome(outcome.GetError());
+        return RecognizeFormulaOCROutcome(outcome.GetError());
     }
 }
 
-void OcrClient::RecognizeGeneralCardWarnAsync(const RecognizeGeneralCardWarnRequest& request, const RecognizeGeneralCardWarnAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+void OcrClient::RecognizeFormulaOCRAsync(const RecognizeFormulaOCRRequest& request, const RecognizeFormulaOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
 {
     auto fn = [this, request, handler, context]()
     {
-        handler(this, request, this->RecognizeGeneralCardWarn(request), context);
+        handler(this, request, this->RecognizeFormulaOCR(request), context);
     };
 
     Executor::GetInstance()->Submit(new Runnable(fn));
 }
 
-OcrClient::RecognizeGeneralCardWarnOutcomeCallable OcrClient::RecognizeGeneralCardWarnCallable(const RecognizeGeneralCardWarnRequest &request)
+OcrClient::RecognizeFormulaOCROutcomeCallable OcrClient::RecognizeFormulaOCRCallable(const RecognizeFormulaOCRRequest &request)
 {
-    auto task = std::make_shared<std::packaged_task<RecognizeGeneralCardWarnOutcome()>>(
+    auto task = std::make_shared<std::packaged_task<RecognizeFormulaOCROutcome()>>(
         [this, request]()
         {
-            return this->RecognizeGeneralCardWarn(request);
+            return this->RecognizeFormulaOCR(request);
         }
     );
 

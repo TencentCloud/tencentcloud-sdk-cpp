@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取发信地址列表详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EmailSenders 发信地址列表详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<EmailSender> GetEmailSenders() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 发信地址列表详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<EmailSender> m_emailSenders;
                     bool m_emailSendersHasBeenSet;

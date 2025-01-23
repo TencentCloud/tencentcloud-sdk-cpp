@@ -23,7 +23,8 @@ using namespace std;
 EmailSender::EmailSender() :
     m_emailAddressHasBeenSet(false),
     m_emailSenderNameHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false)
+    m_createdTimestampHasBeenSet(false),
+    m_smtpPwdTypeHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome EmailSender::Deserialize(const rapidjson::Value &value)
         m_createdTimestampHasBeenSet = true;
     }
 
+    if (value.HasMember("SmtpPwdType") && !value["SmtpPwdType"].IsNull())
+    {
+        if (!value["SmtpPwdType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `EmailSender.SmtpPwdType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_smtpPwdType = value["SmtpPwdType"].GetUint64();
+        m_smtpPwdTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void EmailSender::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "CreatedTimestamp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createdTimestamp, allocator);
+    }
+
+    if (m_smtpPwdTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SmtpPwdType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_smtpPwdType, allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void EmailSender::SetCreatedTimestamp(const uint64_t& _createdTimestamp)
 bool EmailSender::CreatedTimestampHasBeenSet() const
 {
     return m_createdTimestampHasBeenSet;
+}
+
+uint64_t EmailSender::GetSmtpPwdType() const
+{
+    return m_smtpPwdType;
+}
+
+void EmailSender::SetSmtpPwdType(const uint64_t& _smtpPwdType)
+{
+    m_smtpPwdType = _smtpPwdType;
+    m_smtpPwdTypeHasBeenSet = true;
+}
+
+bool EmailSender::SmtpPwdTypeHasBeenSet() const
+{
+    return m_smtpPwdTypeHasBeenSet;
 }
 

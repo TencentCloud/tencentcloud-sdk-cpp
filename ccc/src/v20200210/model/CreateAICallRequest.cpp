@@ -34,6 +34,7 @@ CreateAICallRequest::CreateAICallRequest() :
     m_callersHasBeenSet(false),
     m_welcomeMessageHasBeenSet(false),
     m_welcomeTypeHasBeenSet(false),
+    m_welcomeMessagePriorityHasBeenSet(false),
     m_maxDurationHasBeenSet(false),
     m_languagesHasBeenSet(false),
     m_interruptModeHasBeenSet(false),
@@ -47,7 +48,8 @@ CreateAICallRequest::CreateAICallRequest() :
     m_notifyMaxCountHasBeenSet(false),
     m_customTTSConfigHasBeenSet(false),
     m_promptVariablesHasBeenSet(false),
-    m_vadSilenceTimeHasBeenSet(false)
+    m_vadSilenceTimeHasBeenSet(false),
+    m_extractConfigHasBeenSet(false)
 {
 }
 
@@ -149,6 +151,14 @@ string CreateAICallRequest::ToJsonString() const
         string key = "WelcomeType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_welcomeType, allocator);
+    }
+
+    if (m_welcomeMessagePriorityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WelcomeMessagePriority";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_welcomeMessagePriority, allocator);
     }
 
     if (m_maxDurationHasBeenSet)
@@ -280,6 +290,21 @@ string CreateAICallRequest::ToJsonString() const
         string key = "VadSilenceTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_vadSilenceTime, allocator);
+    }
+
+    if (m_extractConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtractConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_extractConfig.begin(); itr != m_extractConfig.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -464,6 +489,22 @@ void CreateAICallRequest::SetWelcomeType(const int64_t& _welcomeType)
 bool CreateAICallRequest::WelcomeTypeHasBeenSet() const
 {
     return m_welcomeTypeHasBeenSet;
+}
+
+int64_t CreateAICallRequest::GetWelcomeMessagePriority() const
+{
+    return m_welcomeMessagePriority;
+}
+
+void CreateAICallRequest::SetWelcomeMessagePriority(const int64_t& _welcomeMessagePriority)
+{
+    m_welcomeMessagePriority = _welcomeMessagePriority;
+    m_welcomeMessagePriorityHasBeenSet = true;
+}
+
+bool CreateAICallRequest::WelcomeMessagePriorityHasBeenSet() const
+{
+    return m_welcomeMessagePriorityHasBeenSet;
 }
 
 int64_t CreateAICallRequest::GetMaxDuration() const
@@ -688,6 +729,22 @@ void CreateAICallRequest::SetVadSilenceTime(const int64_t& _vadSilenceTime)
 bool CreateAICallRequest::VadSilenceTimeHasBeenSet() const
 {
     return m_vadSilenceTimeHasBeenSet;
+}
+
+vector<AICallExtractConfigElement> CreateAICallRequest::GetExtractConfig() const
+{
+    return m_extractConfig;
+}
+
+void CreateAICallRequest::SetExtractConfig(const vector<AICallExtractConfigElement>& _extractConfig)
+{
+    m_extractConfig = _extractConfig;
+    m_extractConfigHasBeenSet = true;
+}
+
+bool CreateAICallRequest::ExtractConfigHasBeenSet() const
+{
+    return m_extractConfigHasBeenSet;
 }
 
 

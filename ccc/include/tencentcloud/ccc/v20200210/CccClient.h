@@ -65,6 +65,8 @@
 #include <tencentcloud/ccc/v20200210/model/DeletePredictiveDialingCampaignResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DeleteStaffRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DeleteStaffResponse.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeAICallExtractResultRequest.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeAICallExtractResultResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeActiveCarrierPrivilegeNumberRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeActiveCarrierPrivilegeNumberResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeAutoCalloutTaskRequest.h>
@@ -226,6 +228,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteStaffResponse> DeleteStaffOutcome;
                 typedef std::future<DeleteStaffOutcome> DeleteStaffOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DeleteStaffRequest&, DeleteStaffOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteStaffAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAICallExtractResultResponse> DescribeAICallExtractResultOutcome;
+                typedef std::future<DescribeAICallExtractResultOutcome> DescribeAICallExtractResultOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::DescribeAICallExtractResultRequest&, DescribeAICallExtractResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAICallExtractResultAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeActiveCarrierPrivilegeNumberResponse> DescribeActiveCarrierPrivilegeNumberOutcome;
                 typedef std::future<DescribeActiveCarrierPrivilegeNumberOutcome> DescribeActiveCarrierPrivilegeNumberOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DescribeActiveCarrierPrivilegeNumberRequest&, DescribeActiveCarrierPrivilegeNumberOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeActiveCarrierPrivilegeNumberAsyncHandler;
@@ -547,6 +552,15 @@ namespace TencentCloud
                 DeleteStaffOutcome DeleteStaff(const Model::DeleteStaffRequest &request);
                 void DeleteStaffAsync(const Model::DeleteStaffRequest& request, const DeleteStaffAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteStaffOutcomeCallable DeleteStaffCallable(const Model::DeleteStaffRequest& request);
+
+                /**
+                 *获取 AI 通话内容提取结果。
+                 * @param req DescribeAICallExtractResultRequest
+                 * @return DescribeAICallExtractResultOutcome
+                 */
+                DescribeAICallExtractResultOutcome DescribeAICallExtractResult(const Model::DescribeAICallExtractResultRequest &request);
+                void DescribeAICallExtractResultAsync(const Model::DescribeAICallExtractResultRequest& request, const DescribeAICallExtractResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAICallExtractResultOutcomeCallable DescribeAICallExtractResultCallable(const Model::DescribeAICallExtractResultRequest& request);
 
                 /**
                  *查询生效运营商白名单规则

@@ -151,15 +151,15 @@ namespace TencentCloud
                     bool CcHasBeenSet() const;
 
                     /**
-                     * 获取密送人邮箱地址，最多支持抄送20人。
-                     * @return Bcc 密送人邮箱地址，最多支持抄送20人。
+                     * 获取密送人邮箱地址，最多支持抄送20人,Bcc和Destination不能重复。
+                     * @return Bcc 密送人邮箱地址，最多支持抄送20人,Bcc和Destination不能重复。
                      * 
                      */
                     std::vector<std::string> GetBcc() const;
 
                     /**
-                     * 设置密送人邮箱地址，最多支持抄送20人。
-                     * @param _bcc 密送人邮箱地址，最多支持抄送20人。
+                     * 设置密送人邮箱地址，最多支持抄送20人,Bcc和Destination不能重复。
+                     * @param _bcc 密送人邮箱地址，最多支持抄送20人,Bcc和Destination不能重复。
                      * 
                      */
                     void SetBcc(const std::vector<std::string>& _bcc);
@@ -359,7 +359,7 @@ namespace TencentCloud
                     bool m_ccHasBeenSet;
 
                     /**
-                     * 密送人邮箱地址，最多支持抄送20人。
+                     * 密送人邮箱地址，最多支持抄送20人,Bcc和Destination不能重复。
                      */
                     std::vector<std::string> m_bcc;
                     bool m_bccHasBeenSet;

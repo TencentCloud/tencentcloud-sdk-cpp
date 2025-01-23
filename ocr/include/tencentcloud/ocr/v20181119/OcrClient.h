@@ -117,6 +117,10 @@
 #include <tencentcloud/ocr/v20181119/model/PropOwnerCertOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/QrcodeOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/QrcodeOCRResponse.h>
+#include <tencentcloud/ocr/v20181119/model/QuestionOCRRequest.h>
+#include <tencentcloud/ocr/v20181119/model/QuestionOCRResponse.h>
+#include <tencentcloud/ocr/v20181119/model/QuestionSplitOCRRequest.h>
+#include <tencentcloud/ocr/v20181119/model/QuestionSplitOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/QuotaInvoiceOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/QuotaInvoiceOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeContainerOCRRequest.h>
@@ -125,8 +129,8 @@
 #include <tencentcloud/ocr/v20181119/model/RecognizeEncryptedIDCardOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeForeignPermanentResidentIdCardRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeForeignPermanentResidentIdCardResponse.h>
-#include <tencentcloud/ocr/v20181119/model/RecognizeGeneralCardWarnRequest.h>
-#include <tencentcloud/ocr/v20181119/model/RecognizeGeneralCardWarnResponse.h>
+#include <tencentcloud/ocr/v20181119/model/RecognizeFormulaOCRRequest.h>
+#include <tencentcloud/ocr/v20181119/model/RecognizeFormulaOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeGeneralInvoiceRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeGeneralInvoiceResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeGeneralTextImageWarnRequest.h>
@@ -350,6 +354,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QrcodeOCRResponse> QrcodeOCROutcome;
                 typedef std::future<QrcodeOCROutcome> QrcodeOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::QrcodeOCRRequest&, QrcodeOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> QrcodeOCRAsyncHandler;
+                typedef Outcome<Core::Error, Model::QuestionOCRResponse> QuestionOCROutcome;
+                typedef std::future<QuestionOCROutcome> QuestionOCROutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::QuestionOCRRequest&, QuestionOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> QuestionOCRAsyncHandler;
+                typedef Outcome<Core::Error, Model::QuestionSplitOCRResponse> QuestionSplitOCROutcome;
+                typedef std::future<QuestionSplitOCROutcome> QuestionSplitOCROutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::QuestionSplitOCRRequest&, QuestionSplitOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> QuestionSplitOCRAsyncHandler;
                 typedef Outcome<Core::Error, Model::QuotaInvoiceOCRResponse> QuotaInvoiceOCROutcome;
                 typedef std::future<QuotaInvoiceOCROutcome> QuotaInvoiceOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::QuotaInvoiceOCRRequest&, QuotaInvoiceOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> QuotaInvoiceOCRAsyncHandler;
@@ -362,9 +372,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RecognizeForeignPermanentResidentIdCardResponse> RecognizeForeignPermanentResidentIdCardOutcome;
                 typedef std::future<RecognizeForeignPermanentResidentIdCardOutcome> RecognizeForeignPermanentResidentIdCardOutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RecognizeForeignPermanentResidentIdCardRequest&, RecognizeForeignPermanentResidentIdCardOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeForeignPermanentResidentIdCardAsyncHandler;
-                typedef Outcome<Core::Error, Model::RecognizeGeneralCardWarnResponse> RecognizeGeneralCardWarnOutcome;
-                typedef std::future<RecognizeGeneralCardWarnOutcome> RecognizeGeneralCardWarnOutcomeCallable;
-                typedef std::function<void(const OcrClient*, const Model::RecognizeGeneralCardWarnRequest&, RecognizeGeneralCardWarnOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeGeneralCardWarnAsyncHandler;
+                typedef Outcome<Core::Error, Model::RecognizeFormulaOCRResponse> RecognizeFormulaOCROutcome;
+                typedef std::future<RecognizeFormulaOCROutcome> RecognizeFormulaOCROutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::RecognizeFormulaOCRRequest&, RecognizeFormulaOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeFormulaOCRAsyncHandler;
                 typedef Outcome<Core::Error, Model::RecognizeGeneralInvoiceResponse> RecognizeGeneralInvoiceOutcome;
                 typedef std::future<RecognizeGeneralInvoiceOutcome> RecognizeGeneralInvoiceOutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RecognizeGeneralInvoiceRequest&, RecognizeGeneralInvoiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeGeneralInvoiceAsyncHandler;
@@ -1222,6 +1232,28 @@ namespace TencentCloud
                 QrcodeOCROutcomeCallable QrcodeOCRCallable(const Model::QrcodeOCRRequest& request);
 
                 /**
+                 *题目识别是教育的基础OCR识别能力。可支持扫描、拍照场景的单题题目识别。接口支持印刷体文本、手写体文本及公式的OCR识别和坐标返回，此外，接口还可对题目中的配图位置进行检测并返回坐标位置。适用于智能批改等场景的题目内容识别作为检索输入。
+
+默认接口请求频率限制：2次/秒。
+                 * @param req QuestionOCRRequest
+                 * @return QuestionOCROutcome
+                 */
+                QuestionOCROutcome QuestionOCR(const Model::QuestionOCRRequest &request);
+                void QuestionOCRAsync(const Model::QuestionOCRRequest& request, const QuestionOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QuestionOCROutcomeCallable QuestionOCRCallable(const Model::QuestionOCRRequest& request);
+
+                /**
+                 *试卷切题识别可将整页练习册、试卷或教辅中的题目进行自动切题，并识别出其中的文字内容和坐标位置。
+
+默认接口请求频率限制：2次/秒。
+                 * @param req QuestionSplitOCRRequest
+                 * @return QuestionSplitOCROutcome
+                 */
+                QuestionSplitOCROutcome QuestionSplitOCR(const Model::QuestionSplitOCRRequest &request);
+                void QuestionSplitOCRAsync(const Model::QuestionSplitOCRRequest& request, const QuestionSplitOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QuestionSplitOCROutcomeCallable QuestionSplitOCRCallable(const Model::QuestionSplitOCRRequest& request);
+
+                /**
                  *本接口支持定额发票的发票号码、发票代码、金额(大小写)、发票消费类型、地区及是否有公司印章等关键字段的识别。
 
 默认接口请求频率限制：5次/秒。
@@ -1312,13 +1344,15 @@ namespace TencentCloud
                 RecognizeForeignPermanentResidentIdCardOutcomeCallable RecognizeForeignPermanentResidentIdCardCallable(const Model::RecognizeForeignPermanentResidentIdCardRequest& request);
 
                 /**
-                 *支持通用证照的有效性检测告警，包括卡证复印件告警、卡证翻拍告警等功能，支持通用证照的ps伪造检测，可以应用于各种证件信息有效性校验场景。
-                 * @param req RecognizeGeneralCardWarnRequest
-                 * @return RecognizeGeneralCardWarnOutcome
+                 *公式识别是教育的基础OCR识别能力，可支持理科（数学、物理、化学、生物）的印刷体和手写体的公式识别。
+
+默认接口请求频率限制：2次/秒。
+                 * @param req RecognizeFormulaOCRRequest
+                 * @return RecognizeFormulaOCROutcome
                  */
-                RecognizeGeneralCardWarnOutcome RecognizeGeneralCardWarn(const Model::RecognizeGeneralCardWarnRequest &request);
-                void RecognizeGeneralCardWarnAsync(const Model::RecognizeGeneralCardWarnRequest& request, const RecognizeGeneralCardWarnAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                RecognizeGeneralCardWarnOutcomeCallable RecognizeGeneralCardWarnCallable(const Model::RecognizeGeneralCardWarnRequest& request);
+                RecognizeFormulaOCROutcome RecognizeFormulaOCR(const Model::RecognizeFormulaOCRRequest &request);
+                void RecognizeFormulaOCRAsync(const Model::RecognizeFormulaOCRRequest& request, const RecognizeFormulaOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RecognizeFormulaOCROutcomeCallable RecognizeFormulaOCRCallable(const Model::RecognizeFormulaOCRRequest& request);
 
                 /**
                  *本接口支持 PDF多页（最多30页）、一页中单张、多张、类型票据的混合识别，同时支持单选识别某类票据，已支持票种包括：增值税发票（专票、普票、卷票、区块链发票、通行费发票）、全电发票（专票、普票）、非税发票（通用票据、统一缴纳书）、定额发票、通用机打发票、购车发票（机动车销售发票、二手车发票）、火车票、出租车发票、机票行程单、汽车票、轮船票、过路过桥费发票共14种标准报销发票，支持OFD格式的 增值税电子普通发票、增值税电子专用发票、电子发票（普通发票）、电子发票（增值税专用发票）、电子发票（机票行程单）、电子发票（铁路电子客票）的第一页识别，并支持非上述类型的其他发票的智能识别，点击[立即试用](https://cloud.tencent.com/product/ocr)。
