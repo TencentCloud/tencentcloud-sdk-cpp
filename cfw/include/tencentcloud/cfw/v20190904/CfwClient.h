@@ -173,8 +173,6 @@
 #include <tencentcloud/cfw/v20190904/model/ModifyAllPublicIPSwitchStatusResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyAllRuleStatusRequest.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyAllRuleStatusResponse.h>
-#include <tencentcloud/cfw/v20190904/model/ModifyAllVPCSwitchStatusRequest.h>
-#include <tencentcloud/cfw/v20190904/model/ModifyAllVPCSwitchStatusResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyAssetScanRequest.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyAssetScanResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyAssetSyncRequest.h>
@@ -490,9 +488,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyAllRuleStatusResponse> ModifyAllRuleStatusOutcome;
                 typedef std::future<ModifyAllRuleStatusOutcome> ModifyAllRuleStatusOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::ModifyAllRuleStatusRequest&, ModifyAllRuleStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAllRuleStatusAsyncHandler;
-                typedef Outcome<Core::Error, Model::ModifyAllVPCSwitchStatusResponse> ModifyAllVPCSwitchStatusOutcome;
-                typedef std::future<ModifyAllVPCSwitchStatusOutcome> ModifyAllVPCSwitchStatusOutcomeCallable;
-                typedef std::function<void(const CfwClient*, const Model::ModifyAllVPCSwitchStatusRequest&, ModifyAllVPCSwitchStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAllVPCSwitchStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAssetScanResponse> ModifyAssetScanOutcome;
                 typedef std::future<ModifyAssetScanOutcome> ModifyAssetScanOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::ModifyAssetScanRequest&, ModifyAssetScanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAssetScanAsyncHandler;
@@ -1286,17 +1281,6 @@ namespace TencentCloud
                 ModifyAllRuleStatusOutcome ModifyAllRuleStatus(const Model::ModifyAllRuleStatusRequest &request);
                 void ModifyAllRuleStatusAsync(const Model::ModifyAllRuleStatusRequest& request, const ModifyAllRuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyAllRuleStatusOutcomeCallable ModifyAllRuleStatusCallable(const Model::ModifyAllRuleStatusRequest& request);
-
-                /**
-                 *该接口已不再使用
-
-VPC防火墙一键开关
-                 * @param req ModifyAllVPCSwitchStatusRequest
-                 * @return ModifyAllVPCSwitchStatusOutcome
-                 */
-                ModifyAllVPCSwitchStatusOutcome ModifyAllVPCSwitchStatus(const Model::ModifyAllVPCSwitchStatusRequest &request);
-                void ModifyAllVPCSwitchStatusAsync(const Model::ModifyAllVPCSwitchStatusRequest& request, const ModifyAllVPCSwitchStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ModifyAllVPCSwitchStatusOutcomeCallable ModifyAllVPCSwitchStatusCallable(const Model::ModifyAllVPCSwitchStatusRequest& request);
 
                 /**
                  *资产扫描

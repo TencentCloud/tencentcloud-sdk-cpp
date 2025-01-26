@@ -3265,49 +3265,6 @@ CfwClient::ModifyAllRuleStatusOutcomeCallable CfwClient::ModifyAllRuleStatusCall
     return task->get_future();
 }
 
-CfwClient::ModifyAllVPCSwitchStatusOutcome CfwClient::ModifyAllVPCSwitchStatus(const ModifyAllVPCSwitchStatusRequest &request)
-{
-    auto outcome = MakeRequest(request, "ModifyAllVPCSwitchStatus");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ModifyAllVPCSwitchStatusResponse rsp = ModifyAllVPCSwitchStatusResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ModifyAllVPCSwitchStatusOutcome(rsp);
-        else
-            return ModifyAllVPCSwitchStatusOutcome(o.GetError());
-    }
-    else
-    {
-        return ModifyAllVPCSwitchStatusOutcome(outcome.GetError());
-    }
-}
-
-void CfwClient::ModifyAllVPCSwitchStatusAsync(const ModifyAllVPCSwitchStatusRequest& request, const ModifyAllVPCSwitchStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAllVPCSwitchStatus(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CfwClient::ModifyAllVPCSwitchStatusOutcomeCallable CfwClient::ModifyAllVPCSwitchStatusCallable(const ModifyAllVPCSwitchStatusRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<ModifyAllVPCSwitchStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAllVPCSwitchStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 CfwClient::ModifyAssetScanOutcome CfwClient::ModifyAssetScan(const ModifyAssetScanRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyAssetScan");

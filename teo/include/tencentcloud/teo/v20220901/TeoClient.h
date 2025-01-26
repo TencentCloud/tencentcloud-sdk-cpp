@@ -973,7 +973,7 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 CreateRealtimeLogDeliveryTaskOutcomeCallable CreateRealtimeLogDeliveryTaskCallable(const Model::CreateRealtimeLogDeliveryTaskRequest& request);
 
                 /**
-                 *规则引擎创建规则。
+                 *本接口为旧版，EdgeOne 已对规则引擎相关接口全面升级，详情请参考 [CreateL7AccRules](https://cloud.tencent.com/document/product/1552/115822)。
                  * @param req CreateRuleRequest
                  * @return CreateRuleOutcome
                  */
@@ -1947,7 +1947,7 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 ModifyRealtimeLogDeliveryTaskOutcomeCallable ModifyRealtimeLogDeliveryTaskCallable(const Model::ModifyRealtimeLogDeliveryTaskRequest& request);
 
                 /**
-                 *修改规则引擎规则。
+                 *本接口为旧版，EdgeOne 已对规则引擎相关接口全面升级，详情请参考 [ModifyL7AccRule](https://cloud.tencent.com/document/product/1552/115818)。
                  * @param req ModifyRuleRequest
                  * @return ModifyRuleOutcome
                  */

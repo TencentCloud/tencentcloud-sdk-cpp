@@ -56,7 +56,6 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/DeleteBlockIgnoreRuleNewResponse.h
   include/tencentcloud/cfw/v20190904/model/DeleteAllAccessControlRuleRequest.h
   include/tencentcloud/cfw/v20190904/model/ModifyEdgeIpSwitchRequest.h
-  include/tencentcloud/cfw/v20190904/model/ModifyAllVPCSwitchStatusResponse.h
   include/tencentcloud/cfw/v20190904/model/VpcZoneData.h
   include/tencentcloud/cfw/v20190904/model/DatabaseWhiteListRuleData.h
   include/tencentcloud/cfw/v20190904/model/DescribeNatFwVpcDnsLstRequest.h
@@ -244,7 +243,6 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/ModifyNatFwReSelectRequest.h
   include/tencentcloud/cfw/v20190904/model/ModifyVpcFwSequenceRulesResponse.h
   include/tencentcloud/cfw/v20190904/model/SetNatFwDnatRuleRequest.h
-  include/tencentcloud/cfw/v20190904/model/ModifyAllVPCSwitchStatusRequest.h
   include/tencentcloud/cfw/v20190904/model/SecurityGroupBothWayInfo.h
   include/tencentcloud/cfw/v20190904/model/ModifyAllRuleStatusResponse.h
   include/tencentcloud/cfw/v20190904/model/StopSecurityGroupRuleDispatchRequest.h
@@ -352,7 +350,6 @@ set(cfw_src
   src/v20190904/model/DeleteBlockIgnoreRuleNewResponse.cpp
   src/v20190904/model/DeleteAllAccessControlRuleRequest.cpp
   src/v20190904/model/ModifyEdgeIpSwitchRequest.cpp
-  src/v20190904/model/ModifyAllVPCSwitchStatusResponse.cpp
   src/v20190904/model/VpcZoneData.cpp
   src/v20190904/model/DatabaseWhiteListRuleData.cpp
   src/v20190904/model/DescribeNatFwVpcDnsLstRequest.cpp
@@ -540,7 +537,6 @@ set(cfw_src
   src/v20190904/model/ModifyNatFwReSelectRequest.cpp
   src/v20190904/model/ModifyVpcFwSequenceRulesResponse.cpp
   src/v20190904/model/SetNatFwDnatRuleRequest.cpp
-  src/v20190904/model/ModifyAllVPCSwitchStatusRequest.cpp
   src/v20190904/model/SecurityGroupBothWayInfo.cpp
   src/v20190904/model/ModifyAllRuleStatusResponse.cpp
   src/v20190904/model/StopSecurityGroupRuleDispatchRequest.cpp
