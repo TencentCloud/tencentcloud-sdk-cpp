@@ -81,13 +81,14 @@ vcpkg install openssl:x64-windows
 
 # 从源代码构建 SDK
 
+## 安装指定产品 SDK（推荐）
 1. 前往 [Github 仓库](https://github.com/tencentcloud/tencentcloud-sdk-cpp) 或者 [Gitee 仓库](https://gitee.com/tencentcloud/tencentcloud-sdk-cpp) 下载最新代码
 2. 进入 SDK 创建生成必要的构建文件
 
 - linux / macos
 ```bash
 # build
-# 通过 BUILD_MODULES 指定产品编译，使用分号;分隔（可选）
+# 通过 BUILD_MODULES 指定产品编译，使用分号;分隔（可选），以cvm和cbs为例
 ./build.sh build -DBUILD_MODULES="cvm;cbs"
 
 # install
@@ -100,7 +101,7 @@ vcpkg install openssl:x64-windows
 Set-ExecutionPolicy Bypass -Scope Process
 
 # 64位build
-# 通过 BUILD_MODULES 指定产品编译，使用分号;分隔（可选）
+# 通过 BUILD_MODULES 指定产品编译，使用分号;分隔（可选），以cvm和cbs为例
 # 通过 CMAKE_TOOLCHAIN_FILE 指定 vcpkg 目录（必须）
 .\build.ps1 build -DBUILD_MODULES="cvm;cbs" -DCMAKE_TOOLCHAIN_FILE='[path to vcpkg]/scripts/buildsystems/vcpkg.cmake'
 
@@ -113,15 +114,21 @@ Set-ExecutionPolicy Bypass -Scope Process
 # install，需要 Administrator 权限
 .\build.ps1 install
 ```
+具体产品的包名缩写请参考 [products.md](./products.md) 中的包名字段。
 
-注意：从3.0.387版本开始，默认将不再编译所有产品。因为对于低版本编译器将需要约 8GB 内存才能编译完成，且未来随着产品和接口的增长，内存需求会逐渐增加。
+## 安装全产品 SDK
+指定参数 `-DBUILD_MODULES_ALL=on`。
 
-通过指定编译选项，可以控制部分编译行为。注意：某些选项的变更需要删除 `sdk_build` 目录后才会生效。更多选项可以参考 `CMakeLists.txt` 文件：
+全产品 SDK 包含了所有云产品的调用代码，体积偏大，对体积敏感的场景，推荐安装指定产品 SDK。
 
-1. 生成静态库文件：`cmake -DBUILD_SHARED_LIBS=off ..`。
-2. 指定产品编译，分号;分隔：`cmake -DBUILD_MODULES="cvm;vpc;cdb" ..`
-3. 编译所有产品：`cmake -DBUILD_MODULES_ALL=on ..`
-4. 如果产品列表过长，以上参数都不方便使用，可以直接编辑根路径下的 `CMakeLists.txt` 文件，关闭不需要产品的编译，例如云服务器 cvm，用 `#` 符号注释掉 `add_subdirectory(cvm)` 及附近相关代码，改为 `#add_subdirectory(cvm)`。
+从3.0.387版本开始，默认将不再编译所有产品。因为对于低版本编译器将需要约 8GB 内存才能编译完成，且未来随着产品和接口的增长，内存需求会逐渐增加。
+
+## 注意事项
+- 安装全产品 SDK 和安装指定产品的 SDK 两种方式只能选择其中一种。
+- 如果同时安装多个产品的包，建议多个产品的包和 common 包保持在同一个版本
+- 通过指定编译选项，可以控制部分编译行为。注意：某些选项的变更需要删除 `sdk_build` 目录后才会生效。更多选项可以参考 `CMakeLists.txt` 文件：
+- 生成静态库文件：`cmake -DBUILD_SHARED_LIBS=off ..`。
+- 如果产品列表过长，以上参数都不方便使用，可以直接编辑根路径下的 `CMakeLists.txt` 文件，关闭不需要产品的编译，例如云服务器 cvm，用 `#` 符号注释掉 `add_subdirectory(cvm)` 及附近相关代码，改为 `#add_subdirectory(cvm)`。
 
 # 使用 C++ SDK 示例
 下文以 cvm 产品的 DescribeInstances 接口为例：
