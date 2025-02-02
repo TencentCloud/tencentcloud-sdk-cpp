@@ -124,6 +124,8 @@ Set-ExecutionPolicy Bypass -Scope Process
 从3.0.387版本开始，默认将不再编译所有产品。因为对于低版本编译器将需要约 8GB 内存才能编译完成，且未来随着产品和接口的增长，内存需求会逐渐增加。
 
 ## 注意事项
+- 安装全产品 SDK 和安装指定产品的 SDK 两种方式只能选择其中一种。
+- 如果同时安装多个产品的包，建议多个产品的包和 common 包保持在同一个版本
 - 通过指定编译选项，可以控制部分编译行为。注意：某些选项的变更需要删除 `sdk_build` 目录后才会生效。更多选项可以参考 `CMakeLists.txt` 文件：
 - 生成静态库文件：`cmake -DBUILD_SHARED_LIBS=off ..`。
 - 如果产品列表过长，以上参数都不方便使用，可以直接编辑根路径下的 `CMakeLists.txt` 文件，关闭不需要产品的编译，例如云服务器 cvm，用 `#` 符号注释掉 `add_subdirectory(cvm)` 及附近相关代码，改为 `#add_subdirectory(cvm)`。
