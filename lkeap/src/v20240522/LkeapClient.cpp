@@ -40,6 +40,49 @@ LkeapClient::LkeapClient(const Credential &credential, const string &region, con
 }
 
 
+LkeapClient::ChatCompletionsOutcome LkeapClient::ChatCompletions(const ChatCompletionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChatCompletions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChatCompletionsResponse rsp = ChatCompletionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChatCompletionsOutcome(rsp);
+        else
+            return ChatCompletionsOutcome(o.GetError());
+    }
+    else
+    {
+        return ChatCompletionsOutcome(outcome.GetError());
+    }
+}
+
+void LkeapClient::ChatCompletionsAsync(const ChatCompletionsRequest& request, const ChatCompletionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChatCompletions(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeapClient::ChatCompletionsOutcomeCallable LkeapClient::ChatCompletionsCallable(const ChatCompletionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChatCompletionsOutcome()>>(
+        [this, request]()
+        {
+            return this->ChatCompletions(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LkeapClient::CreateAttributeLabelOutcome LkeapClient::CreateAttributeLabel(const CreateAttributeLabelRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAttributeLabel");

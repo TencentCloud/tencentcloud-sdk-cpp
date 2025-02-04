@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/lkeap/v20240522/model/ChatCompletionsRequest.h>
+#include <tencentcloud/lkeap/v20240522/model/ChatCompletionsResponse.h>
 #include <tencentcloud/lkeap/v20240522/model/CreateAttributeLabelRequest.h>
 #include <tencentcloud/lkeap/v20240522/model/CreateAttributeLabelResponse.h>
 #include <tencentcloud/lkeap/v20240522/model/CreateKnowledgeBaseRequest.h>
@@ -87,6 +89,9 @@ namespace TencentCloud
                 LkeapClient(const Credential &credential, const std::string &region);
                 LkeapClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::ChatCompletionsResponse> ChatCompletionsOutcome;
+                typedef std::future<ChatCompletionsOutcome> ChatCompletionsOutcomeCallable;
+                typedef std::function<void(const LkeapClient*, const Model::ChatCompletionsRequest&, ChatCompletionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChatCompletionsAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAttributeLabelResponse> CreateAttributeLabelOutcome;
                 typedef std::future<CreateAttributeLabelOutcome> CreateAttributeLabelOutcomeCallable;
                 typedef std::function<void(const LkeapClient*, const Model::CreateAttributeLabelRequest&, CreateAttributeLabelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAttributeLabelAsyncHandler;
@@ -164,6 +169,15 @@ namespace TencentCloud
                 typedef std::function<void(const LkeapClient*, const Model::UploadDocRealtimeRequest&, UploadDocRealtimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadDocRealtimeAsyncHandler;
 
 
+
+                /**
+                 *对话
+                 * @param req ChatCompletionsRequest
+                 * @return ChatCompletionsOutcome
+                 */
+                ChatCompletionsOutcome ChatCompletions(const Model::ChatCompletionsRequest &request);
+                void ChatCompletionsAsync(const Model::ChatCompletionsRequest& request, const ChatCompletionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ChatCompletionsOutcomeCallable ChatCompletionsCallable(const Model::ChatCompletionsRequest& request);
 
                 /**
                  *用于为问答对创建属性标签，以便对内容进行分类和管理。 使用场景：当需要为问答对添加分类标签和属性标记时使用，比如为问答对添加“售后”标签。

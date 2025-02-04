@@ -1,0 +1,135 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_LKEAP_V20240522_MODEL_CHATCOMPLETIONSREQUEST_H_
+#define TENCENTCLOUD_LKEAP_V20240522_MODEL_CHATCOMPLETIONSREQUEST_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/lkeap/v20240522/model/Message.h>
+
+
+namespace TencentCloud
+{
+    namespace Lkeap
+    {
+        namespace V20240522
+        {
+            namespace Model
+            {
+                /**
+                * ChatCompletions请求参数结构体
+                */
+                class ChatCompletionsRequest : public AbstractModel
+                {
+                public:
+                    ChatCompletionsRequest();
+                    ~ChatCompletionsRequest() = default;
+                    std::string ToJsonString() const;
+
+
+                    /**
+                     * 获取模型名称
+                     * @return Model 模型名称
+                     * 
+                     */
+                    std::string GetModel() const;
+
+                    /**
+                     * 设置模型名称
+                     * @param _model 模型名称
+                     * 
+                     */
+                    void SetModel(const std::string& _model);
+
+                    /**
+                     * 判断参数 Model 是否已赋值
+                     * @return Model 是否已赋值
+                     * 
+                     */
+                    bool ModelHasBeenSet() const;
+
+                    /**
+                     * 获取会话列表
+                     * @return Messages 会话列表
+                     * 
+                     */
+                    std::vector<Message> GetMessages() const;
+
+                    /**
+                     * 设置会话列表
+                     * @param _messages 会话列表
+                     * 
+                     */
+                    void SetMessages(const std::vector<Message>& _messages);
+
+                    /**
+                     * 判断参数 Messages 是否已赋值
+                     * @return Messages 是否已赋值
+                     * 
+                     */
+                    bool MessagesHasBeenSet() const;
+
+                    /**
+                     * 获取是否流式输出
+                     * @return Stream 是否流式输出
+                     * 
+                     */
+                    bool GetStream() const;
+
+                    /**
+                     * 设置是否流式输出
+                     * @param _stream 是否流式输出
+                     * 
+                     */
+                    void SetStream(const bool& _stream);
+
+                    /**
+                     * 判断参数 Stream 是否已赋值
+                     * @return Stream 是否已赋值
+                     * 
+                     */
+                    bool StreamHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 模型名称
+                     */
+                    std::string m_model;
+                    bool m_modelHasBeenSet;
+
+                    /**
+                     * 会话列表
+                     */
+                    std::vector<Message> m_messages;
+                    bool m_messagesHasBeenSet;
+
+                    /**
+                     * 是否流式输出
+                     */
+                    bool m_stream;
+                    bool m_streamHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_LKEAP_V20240522_MODEL_CHATCOMPLETIONSREQUEST_H_
