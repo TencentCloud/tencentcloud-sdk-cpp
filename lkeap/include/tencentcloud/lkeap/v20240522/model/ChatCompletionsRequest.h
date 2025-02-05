@@ -106,6 +106,48 @@ namespace TencentCloud
                      */
                     bool StreamHasBeenSet() const;
 
+                    /**
+                     * 获取控制生成的随机性，较高的值会产生更多样化的输出。
+                     * @return Temperature 控制生成的随机性，较高的值会产生更多样化的输出。
+                     * 
+                     */
+                    double GetTemperature() const;
+
+                    /**
+                     * 设置控制生成的随机性，较高的值会产生更多样化的输出。
+                     * @param _temperature 控制生成的随机性，较高的值会产生更多样化的输出。
+                     * 
+                     */
+                    void SetTemperature(const double& _temperature);
+
+                    /**
+                     * 判断参数 Temperature 是否已赋值
+                     * @return Temperature 是否已赋值
+                     * 
+                     */
+                    bool TemperatureHasBeenSet() const;
+
+                    /**
+                     * 获取最大生成的token数量
+                     * @return MaxTokens 最大生成的token数量
+                     * 
+                     */
+                    int64_t GetMaxTokens() const;
+
+                    /**
+                     * 设置最大生成的token数量
+                     * @param _maxTokens 最大生成的token数量
+                     * 
+                     */
+                    void SetMaxTokens(const int64_t& _maxTokens);
+
+                    /**
+                     * 判断参数 MaxTokens 是否已赋值
+                     * @return MaxTokens 是否已赋值
+                     * 
+                     */
+                    bool MaxTokensHasBeenSet() const;
+
                 private:
 
                     /**
@@ -125,6 +167,18 @@ namespace TencentCloud
                      */
                     bool m_stream;
                     bool m_streamHasBeenSet;
+
+                    /**
+                     * 控制生成的随机性，较高的值会产生更多样化的输出。
+                     */
+                    double m_temperature;
+                    bool m_temperatureHasBeenSet;
+
+                    /**
+                     * 最大生成的token数量
+                     */
+                    int64_t m_maxTokens;
+                    bool m_maxTokensHasBeenSet;
 
                 };
             }

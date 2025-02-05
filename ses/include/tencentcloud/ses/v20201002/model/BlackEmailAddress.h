@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取被拉黑的理由
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IspDesc 被拉黑的理由
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIspDesc() const;
 
                     /**
                      * 设置被拉黑的理由
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ispDesc 被拉黑的理由
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIspDesc(const std::string& _ispDesc);
@@ -129,7 +125,6 @@ namespace TencentCloud
 
                     /**
                      * 被拉黑的理由
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ispDesc;
                     bool m_ispDescHasBeenSet;

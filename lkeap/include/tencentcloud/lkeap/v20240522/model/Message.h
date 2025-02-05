@@ -88,6 +88,31 @@ namespace TencentCloud
                      */
                     bool ContentHasBeenSet() const;
 
+                    /**
+                     * 获取思维链内容。
+ReasoningConent参数仅支持出参，且只有deepseek-r1模型会返回。
+                     * @return ReasoningContent 思维链内容。
+ReasoningConent参数仅支持出参，且只有deepseek-r1模型会返回。
+                     * 
+                     */
+                    std::string GetReasoningContent() const;
+
+                    /**
+                     * 设置思维链内容。
+ReasoningConent参数仅支持出参，且只有deepseek-r1模型会返回。
+                     * @param _reasoningContent 思维链内容。
+ReasoningConent参数仅支持出参，且只有deepseek-r1模型会返回。
+                     * 
+                     */
+                    void SetReasoningContent(const std::string& _reasoningContent);
+
+                    /**
+                     * 判断参数 ReasoningContent 是否已赋值
+                     * @return ReasoningContent 是否已赋值
+                     * 
+                     */
+                    bool ReasoningContentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +126,13 @@ namespace TencentCloud
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;
+
+                    /**
+                     * 思维链内容。
+ReasoningConent参数仅支持出参，且只有deepseek-r1模型会返回。
+                     */
+                    std::string m_reasoningContent;
+                    bool m_reasoningContentHasBeenSet;
 
                 };
             }

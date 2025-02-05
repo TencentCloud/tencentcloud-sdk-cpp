@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取收件人列表描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Desc 收件人列表描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDesc() const;
 
                     /**
                      * 设置收件人列表描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _desc 收件人列表描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDesc(const std::string& _desc);
@@ -136,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取列表状态(1 待上传 2 上传中 3 上传完成)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReceiversStatus 列表状态(1 待上传 2 上传中 3 上传完成)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetReceiversStatus() const;
 
                     /**
                      * 设置列表状态(1 待上传 2 上传中 3 上传完成)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _receiversStatus 列表状态(1 待上传 2 上传中 3 上传完成)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReceiversStatus(const uint64_t& _receiversStatus);
@@ -182,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取无效收件人数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InvalidCount 无效收件人数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetInvalidCount() const;
 
                     /**
                      * 设置无效收件人数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _invalidCount 无效收件人数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInvalidCount(const uint64_t& _invalidCount);
@@ -227,14 +215,12 @@ namespace TencentCloud
 
                     /**
                      * 收件人列表描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_desc;
                     bool m_descHasBeenSet;
 
                     /**
                      * 列表状态(1 待上传 2 上传中 3 上传完成)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_receiversStatus;
                     bool m_receiversStatusHasBeenSet;
@@ -247,7 +233,6 @@ namespace TencentCloud
 
                     /**
                      * 无效收件人数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_invalidCount;
                     bool m_invalidCountHasBeenSet;

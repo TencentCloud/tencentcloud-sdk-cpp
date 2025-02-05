@@ -25,7 +25,9 @@ using namespace std;
 ChatCompletionsRequest::ChatCompletionsRequest() :
     m_modelHasBeenSet(false),
     m_messagesHasBeenSet(false),
-    m_streamHasBeenSet(false)
+    m_streamHasBeenSet(false),
+    m_temperatureHasBeenSet(false),
+    m_maxTokensHasBeenSet(false)
 {
 }
 
@@ -65,6 +67,22 @@ string ChatCompletionsRequest::ToJsonString() const
         string key = "Stream";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_stream, allocator);
+    }
+
+    if (m_temperatureHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Temperature";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_temperature, allocator);
+    }
+
+    if (m_maxTokensHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxTokens";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_maxTokens, allocator);
     }
 
 
@@ -121,6 +139,38 @@ void ChatCompletionsRequest::SetStream(const bool& _stream)
 bool ChatCompletionsRequest::StreamHasBeenSet() const
 {
     return m_streamHasBeenSet;
+}
+
+double ChatCompletionsRequest::GetTemperature() const
+{
+    return m_temperature;
+}
+
+void ChatCompletionsRequest::SetTemperature(const double& _temperature)
+{
+    m_temperature = _temperature;
+    m_temperatureHasBeenSet = true;
+}
+
+bool ChatCompletionsRequest::TemperatureHasBeenSet() const
+{
+    return m_temperatureHasBeenSet;
+}
+
+int64_t ChatCompletionsRequest::GetMaxTokens() const
+{
+    return m_maxTokens;
+}
+
+void ChatCompletionsRequest::SetMaxTokens(const int64_t& _maxTokens)
+{
+    m_maxTokens = _maxTokens;
+    m_maxTokensHasBeenSet = true;
+}
+
+bool ChatCompletionsRequest::MaxTokensHasBeenSet() const
+{
+    return m_maxTokensHasBeenSet;
 }
 
 

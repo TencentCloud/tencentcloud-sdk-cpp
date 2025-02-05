@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取收件人总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 收件人总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取实际上传数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ValidCount 实际上传数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetValidCount() const;
@@ -77,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取数据过长数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TooLongCount 数据过长数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTooLongCount() const;
@@ -93,9 +87,7 @@ namespace TencentCloud
 
                     /**
                      * 获取邮件地址为空数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EmptyEmailCount 邮件地址为空数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetEmptyEmailCount() const;
@@ -109,9 +101,7 @@ namespace TencentCloud
 
                     /**
                      * 获取重复数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RepeatCount 重复数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRepeatCount() const;
@@ -127,35 +117,30 @@ namespace TencentCloud
 
                     /**
                      * 收件人总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
                      * 实际上传数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_validCount;
                     bool m_validCountHasBeenSet;
 
                     /**
                      * 数据过长数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_tooLongCount;
                     bool m_tooLongCountHasBeenSet;
 
                     /**
                      * 邮件地址为空数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_emptyEmailCount;
                     bool m_emptyEmailCountHasBeenSet;
 
                     /**
                      * 重复数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_repeatCount;
                     bool m_repeatCountHasBeenSet;

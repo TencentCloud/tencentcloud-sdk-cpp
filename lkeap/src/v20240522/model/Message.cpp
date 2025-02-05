@@ -22,7 +22,8 @@ using namespace std;
 
 Message::Message() :
     m_roleHasBeenSet(false),
-    m_contentHasBeenSet(false)
+    m_contentHasBeenSet(false),
+    m_reasoningContentHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome Message::Deserialize(const rapidjson::Value &value)
         m_contentHasBeenSet = true;
     }
 
+    if (value.HasMember("ReasoningContent") && !value["ReasoningContent"].IsNull())
+    {
+        if (!value["ReasoningContent"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Message.ReasoningContent` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_reasoningContent = string(value["ReasoningContent"].GetString());
+        m_reasoningContentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void Message::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "Content";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_content.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_reasoningContentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReasoningContent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_reasoningContent.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void Message::SetContent(const string& _content)
 bool Message::ContentHasBeenSet() const
 {
     return m_contentHasBeenSet;
+}
+
+string Message::GetReasoningContent() const
+{
+    return m_reasoningContent;
+}
+
+void Message::SetReasoningContent(const string& _reasoningContent)
+{
+    m_reasoningContent = _reasoningContent;
+    m_reasoningContentHasBeenSet = true;
+}
+
+bool Message::ReasoningContentHasBeenSet() const
+{
+    return m_reasoningContentHasBeenSet;
 }
 

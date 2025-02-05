@@ -44,16 +44,19 @@ set(lkeap_public_header_model
   include/tencentcloud/lkeap/v20240522/model/SegmentationConfig.h
   include/tencentcloud/lkeap/v20240522/model/CreateQAResponse.h
   include/tencentcloud/lkeap/v20240522/model/ModifyAttributeLabelRequest.h
+  include/tencentcloud/lkeap/v20240522/model/GetReconstructDocumentResultResponse.h
   include/tencentcloud/lkeap/v20240522/model/ReconstructDocumentSSEConfig.h
   include/tencentcloud/lkeap/v20240522/model/ListDocsResponse.h
   include/tencentcloud/lkeap/v20240522/model/DocumentUsage.h
   include/tencentcloud/lkeap/v20240522/model/ListAttributeLabelsRequest.h
   include/tencentcloud/lkeap/v20240522/model/DeleteAttributeLabelsRequest.h
   include/tencentcloud/lkeap/v20240522/model/RetrieveKnowledgeRequest.h
-  include/tencentcloud/lkeap/v20240522/model/GetReconstructDocumentResultResponse.h
+  include/tencentcloud/lkeap/v20240522/model/Choice.h
   include/tencentcloud/lkeap/v20240522/model/CreateReconstructDocumentFlowConfig.h
   include/tencentcloud/lkeap/v20240522/model/RunRerankRequest.h
+  include/tencentcloud/lkeap/v20240522/model/ChatUsage.h
   include/tencentcloud/lkeap/v20240522/model/GetSplitDocumentResultRequest.h
+  include/tencentcloud/lkeap/v20240522/model/Delta.h
   include/tencentcloud/lkeap/v20240522/model/ReconstructDocumentSSERequest.h
   include/tencentcloud/lkeap/v20240522/model/ListAttributeLabelsResponse.h
   include/tencentcloud/lkeap/v20240522/model/RetrievalRecord.h
@@ -81,14 +84,14 @@ set(lkeap_public_header_model
   include/tencentcloud/lkeap/v20240522/model/CreateSplitDocumentFlowConfig.h
   include/tencentcloud/lkeap/v20240522/model/RunRerankResponse.h
   include/tencentcloud/lkeap/v20240522/model/CreateReconstructDocumentFlowResponse.h
-  include/tencentcloud/lkeap/v20240522/model/ChatCompletionsResponse.h
+  include/tencentcloud/lkeap/v20240522/model/DeleteKnowledgeBaseRequest.h
   include/tencentcloud/lkeap/v20240522/model/CreateQARequest.h
   include/tencentcloud/lkeap/v20240522/model/UploadDocResponse.h
   include/tencentcloud/lkeap/v20240522/model/AttributeItem.h
   include/tencentcloud/lkeap/v20240522/model/EmbeddingObject.h
   include/tencentcloud/lkeap/v20240522/model/Message.h
   include/tencentcloud/lkeap/v20240522/model/CreateKnowledgeBaseRequest.h
-  include/tencentcloud/lkeap/v20240522/model/DeleteKnowledgeBaseRequest.h
+  include/tencentcloud/lkeap/v20240522/model/ChatCompletionsResponse.h
   include/tencentcloud/lkeap/v20240522/model/DeleteDocsRequest.h
   )
 
@@ -119,16 +122,19 @@ set(lkeap_src
   src/v20240522/model/SegmentationConfig.cpp
   src/v20240522/model/CreateQAResponse.cpp
   src/v20240522/model/ModifyAttributeLabelRequest.cpp
+  src/v20240522/model/GetReconstructDocumentResultResponse.cpp
   src/v20240522/model/ReconstructDocumentSSEConfig.cpp
   src/v20240522/model/ListDocsResponse.cpp
   src/v20240522/model/DocumentUsage.cpp
   src/v20240522/model/ListAttributeLabelsRequest.cpp
   src/v20240522/model/DeleteAttributeLabelsRequest.cpp
   src/v20240522/model/RetrieveKnowledgeRequest.cpp
-  src/v20240522/model/GetReconstructDocumentResultResponse.cpp
+  src/v20240522/model/Choice.cpp
   src/v20240522/model/CreateReconstructDocumentFlowConfig.cpp
   src/v20240522/model/RunRerankRequest.cpp
+  src/v20240522/model/ChatUsage.cpp
   src/v20240522/model/GetSplitDocumentResultRequest.cpp
+  src/v20240522/model/Delta.cpp
   src/v20240522/model/ReconstructDocumentSSERequest.cpp
   src/v20240522/model/ListAttributeLabelsResponse.cpp
   src/v20240522/model/RetrievalRecord.cpp
@@ -156,14 +162,14 @@ set(lkeap_src
   src/v20240522/model/CreateSplitDocumentFlowConfig.cpp
   src/v20240522/model/RunRerankResponse.cpp
   src/v20240522/model/CreateReconstructDocumentFlowResponse.cpp
-  src/v20240522/model/ChatCompletionsResponse.cpp
+  src/v20240522/model/DeleteKnowledgeBaseRequest.cpp
   src/v20240522/model/CreateQARequest.cpp
   src/v20240522/model/UploadDocResponse.cpp
   src/v20240522/model/AttributeItem.cpp
   src/v20240522/model/EmbeddingObject.cpp
   src/v20240522/model/Message.cpp
   src/v20240522/model/CreateKnowledgeBaseRequest.cpp
-  src/v20240522/model/DeleteKnowledgeBaseRequest.cpp
+  src/v20240522/model/ChatCompletionsResponse.cpp
   src/v20240522/model/DeleteDocsRequest.cpp
   )
 
