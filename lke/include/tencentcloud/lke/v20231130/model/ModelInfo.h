@@ -247,6 +247,69 @@ namespace TencentCloud
                      */
                     bool MaxTokensHasBeenSet() const;
 
+                    /**
+                     * 获取模型来源 Hunyuan：腾讯混元大模型,Industry：腾讯云行业大模型,Experience：新模型体验
+                     * @return Source 模型来源 Hunyuan：腾讯混元大模型,Industry：腾讯云行业大模型,Experience：新模型体验
+                     * 
+                     */
+                    std::string GetSource() const;
+
+                    /**
+                     * 设置模型来源 Hunyuan：腾讯混元大模型,Industry：腾讯云行业大模型,Experience：新模型体验
+                     * @param _source 模型来源 Hunyuan：腾讯混元大模型,Industry：腾讯云行业大模型,Experience：新模型体验
+                     * 
+                     */
+                    void SetSource(const std::string& _source);
+
+                    /**
+                     * 判断参数 Source 是否已赋值
+                     * @return Source 是否已赋值
+                     * 
+                     */
+                    bool SourceHasBeenSet() const;
+
+                    /**
+                     * 获取模型图标
+                     * @return Icon 模型图标
+                     * 
+                     */
+                    std::string GetIcon() const;
+
+                    /**
+                     * 设置模型图标
+                     * @param _icon 模型图标
+                     * 
+                     */
+                    void SetIcon(const std::string& _icon);
+
+                    /**
+                     * 判断参数 Icon 是否已赋值
+                     * @return Icon 是否已赋值
+                     * 
+                     */
+                    bool IconHasBeenSet() const;
+
+                    /**
+                     * 获取是否免费
+                     * @return IsFree 是否免费
+                     * 
+                     */
+                    bool GetIsFree() const;
+
+                    /**
+                     * 设置是否免费
+                     * @param _isFree 是否免费
+                     * 
+                     */
+                    void SetIsFree(const bool& _isFree);
+
+                    /**
+                     * 判断参数 IsFree 是否已赋值
+                     * @return IsFree 是否已赋值
+                     * 
+                     */
+                    bool IsFreeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -304,6 +367,24 @@ namespace TencentCloud
                      */
                     ModelParameter m_maxTokens;
                     bool m_maxTokensHasBeenSet;
+
+                    /**
+                     * 模型来源 Hunyuan：腾讯混元大模型,Industry：腾讯云行业大模型,Experience：新模型体验
+                     */
+                    std::string m_source;
+                    bool m_sourceHasBeenSet;
+
+                    /**
+                     * 模型图标
+                     */
+                    std::string m_icon;
+                    bool m_iconHasBeenSet;
+
+                    /**
+                     * 是否免费
+                     */
+                    bool m_isFree;
+                    bool m_isFreeHasBeenSet;
 
                 };
             }

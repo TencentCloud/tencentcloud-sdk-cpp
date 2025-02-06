@@ -117,6 +117,8 @@
 #include <tencentcloud/trocket/v20230308/model/ModifyConsumerGroupResponse.h>
 #include <tencentcloud/trocket/v20230308/model/ModifyInstanceRequest.h>
 #include <tencentcloud/trocket/v20230308/model/ModifyInstanceResponse.h>
+#include <tencentcloud/trocket/v20230308/model/ModifyInstanceEndpointRequest.h>
+#include <tencentcloud/trocket/v20230308/model/ModifyInstanceEndpointResponse.h>
 #include <tencentcloud/trocket/v20230308/model/ModifyMQTTInsPublicEndpointRequest.h>
 #include <tencentcloud/trocket/v20230308/model/ModifyMQTTInsPublicEndpointResponse.h>
 #include <tencentcloud/trocket/v20230308/model/ModifyMQTTInstanceRequest.h>
@@ -288,6 +290,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyInstanceResponse> ModifyInstanceOutcome;
                 typedef std::future<ModifyInstanceOutcome> ModifyInstanceOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::ModifyInstanceRequest&, ModifyInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyInstanceEndpointResponse> ModifyInstanceEndpointOutcome;
+                typedef std::future<ModifyInstanceEndpointOutcome> ModifyInstanceEndpointOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::ModifyInstanceEndpointRequest&, ModifyInstanceEndpointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceEndpointAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyMQTTInsPublicEndpointResponse> ModifyMQTTInsPublicEndpointOutcome;
                 typedef std::future<ModifyMQTTInsPublicEndpointOutcome> ModifyMQTTInsPublicEndpointOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::ModifyMQTTInsPublicEndpointRequest&, ModifyMQTTInsPublicEndpointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMQTTInsPublicEndpointAsyncHandler;
@@ -771,6 +776,15 @@ TopicName，主题名称过滤
                 ModifyInstanceOutcome ModifyInstance(const Model::ModifyInstanceRequest &request);
                 void ModifyInstanceAsync(const Model::ModifyInstanceRequest& request, const ModifyInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyInstanceOutcomeCallable ModifyInstanceCallable(const Model::ModifyInstanceRequest& request);
+
+                /**
+                 *修改 RocketMQ 5.x 集群接入点。
+                 * @param req ModifyInstanceEndpointRequest
+                 * @return ModifyInstanceEndpointOutcome
+                 */
+                ModifyInstanceEndpointOutcome ModifyInstanceEndpoint(const Model::ModifyInstanceEndpointRequest &request);
+                void ModifyInstanceEndpointAsync(const Model::ModifyInstanceEndpointRequest& request, const ModifyInstanceEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInstanceEndpointOutcomeCallable ModifyInstanceEndpointCallable(const Model::ModifyInstanceEndpointRequest& request);
 
                 /**
                  *更新MQTT实例公网接入点

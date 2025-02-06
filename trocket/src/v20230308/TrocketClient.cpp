@@ -2061,6 +2061,49 @@ TrocketClient::ModifyInstanceOutcomeCallable TrocketClient::ModifyInstanceCallab
     return task->get_future();
 }
 
+TrocketClient::ModifyInstanceEndpointOutcome TrocketClient::ModifyInstanceEndpoint(const ModifyInstanceEndpointRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInstanceEndpoint");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInstanceEndpointResponse rsp = ModifyInstanceEndpointResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInstanceEndpointOutcome(rsp);
+        else
+            return ModifyInstanceEndpointOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInstanceEndpointOutcome(outcome.GetError());
+    }
+}
+
+void TrocketClient::ModifyInstanceEndpointAsync(const ModifyInstanceEndpointRequest& request, const ModifyInstanceEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyInstanceEndpoint(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrocketClient::ModifyInstanceEndpointOutcomeCallable TrocketClient::ModifyInstanceEndpointCallable(const ModifyInstanceEndpointRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyInstanceEndpointOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyInstanceEndpoint(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrocketClient::ModifyMQTTInsPublicEndpointOutcome TrocketClient::ModifyMQTTInsPublicEndpoint(const ModifyMQTTInsPublicEndpointRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyMQTTInsPublicEndpoint");

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取注册码描述。
-                     * @return Description 注册码描述。
+                     * 获取注册码描述。最大长度为 128 字符。
+                     * @return Description 注册码描述。最大长度为 128 字符。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置注册码描述。
-                     * @param _description 注册码描述。
+                     * 设置注册码描述。最大长度为 128 字符。
+                     * @param _description 注册码描述。最大长度为 128 字符。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取注册实例名称前缀。
-                     * @return InstanceNamePrefix 注册实例名称前缀。
+                     * 获取注册实例名称前缀。最大长度为 32 字符。
+                     * @return InstanceNamePrefix 注册实例名称前缀。最大长度为 32 字符。
                      * 
                      */
                     std::string GetInstanceNamePrefix() const;
 
                     /**
-                     * 设置注册实例名称前缀。
-                     * @param _instanceNamePrefix 注册实例名称前缀。
+                     * 设置注册实例名称前缀。最大长度为 32 字符。
+                     * @param _instanceNamePrefix 注册实例名称前缀。最大长度为 32 字符。
                      * 
                      */
                     void SetInstanceNamePrefix(const std::string& _instanceNamePrefix);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool InstanceNamePrefixHasBeenSet() const;
 
                     /**
-                     * 获取该注册码允许注册的实例数目。默认限制为10个。
-                     * @return RegisterLimit 该注册码允许注册的实例数目。默认限制为10个。
+                     * 获取该注册码允许注册的实例数目。默认值为 10，最小值为 1，最大值为 10000。
+                     * @return RegisterLimit 该注册码允许注册的实例数目。默认值为 10，最小值为 1，最大值为 10000。
                      * 
                      */
                     int64_t GetRegisterLimit() const;
 
                     /**
-                     * 设置该注册码允许注册的实例数目。默认限制为10个。
-                     * @param _registerLimit 该注册码允许注册的实例数目。默认限制为10个。
+                     * 设置该注册码允许注册的实例数目。默认值为 10，最小值为 1，最大值为 10000。
+                     * @param _registerLimit 该注册码允许注册的实例数目。默认值为 10，最小值为 1，最大值为 10000。
                      * 
                      */
                     void SetRegisterLimit(const int64_t& _registerLimit);
@@ -106,15 +106,27 @@ namespace TencentCloud
                     bool RegisterLimitHasBeenSet() const;
 
                     /**
-                     * 获取该注册码的有效时间，单位为小时。默认为4小时。
-                     * @return EffectiveTime 该注册码的有效时间，单位为小时。默认为4小时。
+                     * 获取该注册码的有效时间，单位为小时。默认值为 4。
+
+- 若传入值小于等于 99999，则以小时为单位设置有效时间。
+- 若传入值大于 99999，则设置为长期有效。
+                     * @return EffectiveTime 该注册码的有效时间，单位为小时。默认值为 4。
+
+- 若传入值小于等于 99999，则以小时为单位设置有效时间。
+- 若传入值大于 99999，则设置为长期有效。
                      * 
                      */
                     int64_t GetEffectiveTime() const;
 
                     /**
-                     * 设置该注册码的有效时间，单位为小时。默认为4小时。
-                     * @param _effectiveTime 该注册码的有效时间，单位为小时。默认为4小时。
+                     * 设置该注册码的有效时间，单位为小时。默认值为 4。
+
+- 若传入值小于等于 99999，则以小时为单位设置有效时间。
+- 若传入值大于 99999，则设置为长期有效。
+                     * @param _effectiveTime 该注册码的有效时间，单位为小时。默认值为 4。
+
+- 若传入值小于等于 99999，则以小时为单位设置有效时间。
+- 若传入值大于 99999，则设置为长期有效。
                      * 
                      */
                     void SetEffectiveTime(const int64_t& _effectiveTime);
@@ -150,25 +162,28 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 注册码描述。
+                     * 注册码描述。最大长度为 128 字符。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 注册实例名称前缀。
+                     * 注册实例名称前缀。最大长度为 32 字符。
                      */
                     std::string m_instanceNamePrefix;
                     bool m_instanceNamePrefixHasBeenSet;
 
                     /**
-                     * 该注册码允许注册的实例数目。默认限制为10个。
+                     * 该注册码允许注册的实例数目。默认值为 10，最小值为 1，最大值为 10000。
                      */
                     int64_t m_registerLimit;
                     bool m_registerLimitHasBeenSet;
 
                     /**
-                     * 该注册码的有效时间，单位为小时。默认为4小时。
+                     * 该注册码的有效时间，单位为小时。默认值为 4。
+
+- 若传入值小于等于 99999，则以小时为单位设置有效时间。
+- 若传入值大于 99999，则设置为长期有效。
                      */
                     int64_t m_effectiveTime;
                     bool m_effectiveTimeHasBeenSet;

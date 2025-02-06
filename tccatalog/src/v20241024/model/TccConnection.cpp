@@ -23,7 +23,10 @@ using namespace std;
 TccConnection::TccConnection() :
     m_endpointServiceIdHasBeenSet(false),
     m_metaStoreUrlHasBeenSet(false),
-    m_netWorkHasBeenSet(false)
+    m_netWorkHasBeenSet(false),
+    m_hiveVersionHasBeenSet(false),
+    m_locationHasBeenSet(false),
+    m_hmsEndpointServiceIdHasBeenSet(false)
 {
 }
 
@@ -69,6 +72,36 @@ CoreInternalOutcome TccConnection::Deserialize(const rapidjson::Value &value)
         m_netWorkHasBeenSet = true;
     }
 
+    if (value.HasMember("HiveVersion") && !value["HiveVersion"].IsNull())
+    {
+        if (!value["HiveVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TccConnection.HiveVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hiveVersion = string(value["HiveVersion"].GetString());
+        m_hiveVersionHasBeenSet = true;
+    }
+
+    if (value.HasMember("Location") && !value["Location"].IsNull())
+    {
+        if (!value["Location"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TccConnection.Location` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_location = string(value["Location"].GetString());
+        m_locationHasBeenSet = true;
+    }
+
+    if (value.HasMember("HmsEndpointServiceId") && !value["HmsEndpointServiceId"].IsNull())
+    {
+        if (!value["HmsEndpointServiceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TccConnection.HmsEndpointServiceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hmsEndpointServiceId = string(value["HmsEndpointServiceId"].GetString());
+        m_hmsEndpointServiceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -99,6 +132,30 @@ void TccConnection::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_netWork.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_hiveVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HiveVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hiveVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_locationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Location";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_location.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hmsEndpointServiceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HmsEndpointServiceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hmsEndpointServiceId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -150,5 +207,53 @@ void TccConnection::SetNetWork(const NetWork& _netWork)
 bool TccConnection::NetWorkHasBeenSet() const
 {
     return m_netWorkHasBeenSet;
+}
+
+string TccConnection::GetHiveVersion() const
+{
+    return m_hiveVersion;
+}
+
+void TccConnection::SetHiveVersion(const string& _hiveVersion)
+{
+    m_hiveVersion = _hiveVersion;
+    m_hiveVersionHasBeenSet = true;
+}
+
+bool TccConnection::HiveVersionHasBeenSet() const
+{
+    return m_hiveVersionHasBeenSet;
+}
+
+string TccConnection::GetLocation() const
+{
+    return m_location;
+}
+
+void TccConnection::SetLocation(const string& _location)
+{
+    m_location = _location;
+    m_locationHasBeenSet = true;
+}
+
+bool TccConnection::LocationHasBeenSet() const
+{
+    return m_locationHasBeenSet;
+}
+
+string TccConnection::GetHmsEndpointServiceId() const
+{
+    return m_hmsEndpointServiceId;
+}
+
+void TccConnection::SetHmsEndpointServiceId(const string& _hmsEndpointServiceId)
+{
+    m_hmsEndpointServiceId = _hmsEndpointServiceId;
+    m_hmsEndpointServiceIdHasBeenSet = true;
+}
+
+bool TccConnection::HmsEndpointServiceIdHasBeenSet() const
+{
+    return m_hmsEndpointServiceIdHasBeenSet;
 }
 

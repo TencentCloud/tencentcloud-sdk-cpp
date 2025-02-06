@@ -28,7 +28,10 @@ ModelInfo::ModelInfo() :
     m_promptWordsLimitHasBeenSet(false),
     m_topPHasBeenSet(false),
     m_temperatureHasBeenSet(false),
-    m_maxTokensHasBeenSet(false)
+    m_maxTokensHasBeenSet(false),
+    m_sourceHasBeenSet(false),
+    m_iconHasBeenSet(false),
+    m_isFreeHasBeenSet(false)
 {
 }
 
@@ -138,6 +141,36 @@ CoreInternalOutcome ModelInfo::Deserialize(const rapidjson::Value &value)
         m_maxTokensHasBeenSet = true;
     }
 
+    if (value.HasMember("Source") && !value["Source"].IsNull())
+    {
+        if (!value["Source"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelInfo.Source` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_source = string(value["Source"].GetString());
+        m_sourceHasBeenSet = true;
+    }
+
+    if (value.HasMember("Icon") && !value["Icon"].IsNull())
+    {
+        if (!value["Icon"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelInfo.Icon` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_icon = string(value["Icon"].GetString());
+        m_iconHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsFree") && !value["IsFree"].IsNull())
+    {
+        if (!value["IsFree"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelInfo.IsFree` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isFree = value["IsFree"].GetBool();
+        m_isFreeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -210,6 +243,30 @@ void ModelInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_maxTokens.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_sourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Source";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_source.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_iconHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Icon";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_icon.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isFreeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsFree";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isFree, allocator);
     }
 
 }
@@ -341,5 +398,53 @@ void ModelInfo::SetMaxTokens(const ModelParameter& _maxTokens)
 bool ModelInfo::MaxTokensHasBeenSet() const
 {
     return m_maxTokensHasBeenSet;
+}
+
+string ModelInfo::GetSource() const
+{
+    return m_source;
+}
+
+void ModelInfo::SetSource(const string& _source)
+{
+    m_source = _source;
+    m_sourceHasBeenSet = true;
+}
+
+bool ModelInfo::SourceHasBeenSet() const
+{
+    return m_sourceHasBeenSet;
+}
+
+string ModelInfo::GetIcon() const
+{
+    return m_icon;
+}
+
+void ModelInfo::SetIcon(const string& _icon)
+{
+    m_icon = _icon;
+    m_iconHasBeenSet = true;
+}
+
+bool ModelInfo::IconHasBeenSet() const
+{
+    return m_iconHasBeenSet;
+}
+
+bool ModelInfo::GetIsFree() const
+{
+    return m_isFree;
+}
+
+void ModelInfo::SetIsFree(const bool& _isFree)
+{
+    m_isFree = _isFree;
+    m_isFreeHasBeenSet = true;
+}
+
+bool ModelInfo::IsFreeHasBeenSet() const
+{
+    return m_isFreeHasBeenSet;
 }
 

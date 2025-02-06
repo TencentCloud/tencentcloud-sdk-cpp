@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取终端节点服务Id
-                     * @return EndpointServiceId 终端节点服务Id
+                     * 获取引擎终端节点服务Id
+                     * @return EndpointServiceId 引擎终端节点服务Id
                      * 
                      */
                     std::string GetEndpointServiceId() const;
 
                     /**
-                     * 设置终端节点服务Id
-                     * @param _endpointServiceId 终端节点服务Id
+                     * 设置引擎终端节点服务Id
+                     * @param _endpointServiceId 引擎终端节点服务Id
                      * 
                      */
                     void SetEndpointServiceId(const std::string& _endpointServiceId);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool MetaStoreUrlHasBeenSet() const;
 
                     /**
-                     * 获取	网络信息
-                     * @return NetWork 	网络信息
+                     * 获取网络信息
+                     * @return NetWork 网络信息
                      * 
                      */
                     NetWork GetNetWork() const;
 
                     /**
-                     * 设置	网络信息
-                     * @param _netWork 	网络信息
+                     * 设置网络信息
+                     * @param _netWork 网络信息
                      * 
                      */
                     void SetNetWork(const NetWork& _netWork);
@@ -110,10 +110,73 @@ namespace TencentCloud
                      */
                     bool NetWorkHasBeenSet() const;
 
+                    /**
+                     * 获取hive版本
+                     * @return HiveVersion hive版本
+                     * 
+                     */
+                    std::string GetHiveVersion() const;
+
+                    /**
+                     * 设置hive版本
+                     * @param _hiveVersion hive版本
+                     * 
+                     */
+                    void SetHiveVersion(const std::string& _hiveVersion);
+
+                    /**
+                     * 判断参数 HiveVersion 是否已赋值
+                     * @return HiveVersion 是否已赋值
+                     * 
+                     */
+                    bool HiveVersionHasBeenSet() const;
+
+                    /**
+                     * 获取hive location
+                     * @return Location hive location
+                     * 
+                     */
+                    std::string GetLocation() const;
+
+                    /**
+                     * 设置hive location
+                     * @param _location hive location
+                     * 
+                     */
+                    void SetLocation(const std::string& _location);
+
+                    /**
+                     * 判断参数 Location 是否已赋值
+                     * @return Location 是否已赋值
+                     * 
+                     */
+                    bool LocationHasBeenSet() const;
+
+                    /**
+                     * 获取HMS终端节点服务
+                     * @return HmsEndpointServiceId HMS终端节点服务
+                     * 
+                     */
+                    std::string GetHmsEndpointServiceId() const;
+
+                    /**
+                     * 设置HMS终端节点服务
+                     * @param _hmsEndpointServiceId HMS终端节点服务
+                     * 
+                     */
+                    void SetHmsEndpointServiceId(const std::string& _hmsEndpointServiceId);
+
+                    /**
+                     * 判断参数 HmsEndpointServiceId 是否已赋值
+                     * @return HmsEndpointServiceId 是否已赋值
+                     * 
+                     */
+                    bool HmsEndpointServiceIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 终端节点服务Id
+                     * 引擎终端节点服务Id
                      */
                     std::string m_endpointServiceId;
                     bool m_endpointServiceIdHasBeenSet;
@@ -125,10 +188,28 @@ namespace TencentCloud
                     bool m_metaStoreUrlHasBeenSet;
 
                     /**
-                     * 	网络信息
+                     * 网络信息
                      */
                     NetWork m_netWork;
                     bool m_netWorkHasBeenSet;
+
+                    /**
+                     * hive版本
+                     */
+                    std::string m_hiveVersion;
+                    bool m_hiveVersionHasBeenSet;
+
+                    /**
+                     * hive location
+                     */
+                    std::string m_location;
+                    bool m_locationHasBeenSet;
+
+                    /**
+                     * HMS终端节点服务
+                     */
+                    std::string m_hmsEndpointServiceId;
+                    bool m_hmsEndpointServiceIdHasBeenSet;
 
                 };
             }
