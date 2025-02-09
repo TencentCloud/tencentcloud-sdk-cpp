@@ -265,8 +265,6 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeAttackEventInfoResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAttackEventsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAttackEventsResponse.h>
-#include <tencentcloud/cwp/v20180228/model/DescribeAttackLogsRequest.h>
-#include <tencentcloud/cwp/v20180228/model/DescribeAttackLogsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAttackStatisticsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAttackStatisticsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAttackTopRequest.h>
@@ -367,8 +365,6 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeCanNotSeparateMachineResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeClientExceptionRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeClientExceptionResponse.h>
-#include <tencentcloud/cwp/v20180228/model/DescribeComponentStatisticsRequest.h>
-#include <tencentcloud/cwp/v20180228/model/DescribeComponentStatisticsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeDefenceEventDetailRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeDefenceEventDetailResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeDirectConnectInstallCommandRequest.h>
@@ -1434,9 +1430,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAttackEventsResponse> DescribeAttackEventsOutcome;
                 typedef std::future<DescribeAttackEventsOutcome> DescribeAttackEventsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeAttackEventsRequest&, DescribeAttackEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAttackEventsAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeAttackLogsResponse> DescribeAttackLogsOutcome;
-                typedef std::future<DescribeAttackLogsOutcome> DescribeAttackLogsOutcomeCallable;
-                typedef std::function<void(const CwpClient*, const Model::DescribeAttackLogsRequest&, DescribeAttackLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAttackLogsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAttackStatisticsResponse> DescribeAttackStatisticsOutcome;
                 typedef std::future<DescribeAttackStatisticsOutcome> DescribeAttackStatisticsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeAttackStatisticsRequest&, DescribeAttackStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAttackStatisticsAsyncHandler;
@@ -1587,9 +1580,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeClientExceptionResponse> DescribeClientExceptionOutcome;
                 typedef std::future<DescribeClientExceptionOutcome> DescribeClientExceptionOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeClientExceptionRequest&, DescribeClientExceptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClientExceptionAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeComponentStatisticsResponse> DescribeComponentStatisticsOutcome;
-                typedef std::future<DescribeComponentStatisticsOutcome> DescribeComponentStatisticsOutcomeCallable;
-                typedef std::function<void(const CwpClient*, const Model::DescribeComponentStatisticsRequest&, DescribeComponentStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeComponentStatisticsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDefenceEventDetailResponse> DescribeDefenceEventDetailOutcome;
                 typedef std::future<DescribeDefenceEventDetailOutcome> DescribeDefenceEventDetailOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeDefenceEventDetailRequest&, DescribeDefenceEventDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDefenceEventDetailAsyncHandler;
@@ -3718,17 +3708,6 @@ namespace TencentCloud
                 DescribeAttackEventsOutcomeCallable DescribeAttackEventsCallable(const Model::DescribeAttackEventsRequest& request);
 
                 /**
-                 *DescribeAttackEvents 代替
-
-按分页形式展示网络攻击日志列表
-                 * @param req DescribeAttackLogsRequest
-                 * @return DescribeAttackLogsOutcome
-                 */
-                DescribeAttackLogsOutcome DescribeAttackLogs(const Model::DescribeAttackLogsRequest &request);
-                void DescribeAttackLogsAsync(const Model::DescribeAttackLogsRequest& request, const DescribeAttackLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeAttackLogsOutcomeCallable DescribeAttackLogsCallable(const Model::DescribeAttackLogsRequest& request);
-
-                /**
                  *网络攻击数据统计
                  * @param req DescribeAttackStatisticsRequest
                  * @return DescribeAttackStatisticsOutcome
@@ -4177,17 +4156,6 @@ namespace TencentCloud
                 DescribeClientExceptionOutcome DescribeClientException(const Model::DescribeClientExceptionRequest &request);
                 void DescribeClientExceptionAsync(const Model::DescribeClientExceptionRequest& request, const DescribeClientExceptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeClientExceptionOutcomeCallable DescribeClientExceptionCallable(const Model::DescribeClientExceptionRequest& request);
-
-                /**
-                 *接口已无效
-
-本接口 (DescribeComponentStatistics) 用于获取组件统计列表数据。
-                 * @param req DescribeComponentStatisticsRequest
-                 * @return DescribeComponentStatisticsOutcome
-                 */
-                DescribeComponentStatisticsOutcome DescribeComponentStatistics(const Model::DescribeComponentStatisticsRequest &request);
-                void DescribeComponentStatisticsAsync(const Model::DescribeComponentStatisticsRequest& request, const DescribeComponentStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeComponentStatisticsOutcomeCallable DescribeComponentStatisticsCallable(const Model::DescribeComponentStatisticsRequest& request);
 
                 /**
                  *获取漏洞防御事件详情

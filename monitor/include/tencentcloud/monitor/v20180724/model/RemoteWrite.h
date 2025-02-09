@@ -124,7 +124,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxBlockSize 最大block
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     std::string GetMaxBlockSize() const;
 
@@ -133,14 +133,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxBlockSize 最大block
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetMaxBlockSize(const std::string& _maxBlockSize);
 
                     /**
                      * 判断参数 MaxBlockSize 是否已赋值
                      * @return MaxBlockSize 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool MaxBlockSizeHasBeenSet() const;
 
@@ -149,7 +149,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Label Label
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     std::string GetLabel() const;
 
@@ -158,14 +158,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _label Label
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetLabel(const std::string& _label);
 
                     /**
                      * 判断参数 Label 是否已赋值
                      * @return Label 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool LabelHasBeenSet() const;
 

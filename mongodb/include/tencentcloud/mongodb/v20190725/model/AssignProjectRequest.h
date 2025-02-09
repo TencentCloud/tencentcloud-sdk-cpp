@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID列表，格式如：cmgo-p8vn****。与云数据库控制台页面中显示的实例ID相同
-                     * @return InstanceIds 实例ID列表，格式如：cmgo-p8vn****。与云数据库控制台页面中显示的实例ID相同
+                     * 获取实例 ID 列表，请登录[MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
+                     * @return InstanceIds 实例 ID 列表，请登录[MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置实例ID列表，格式如：cmgo-p8vn****。与云数据库控制台页面中显示的实例ID相同
-                     * @param _instanceIds 实例ID列表，格式如：cmgo-p8vn****。与云数据库控制台页面中显示的实例ID相同
+                     * 设置实例 ID 列表，请登录[MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
+                     * @param _instanceIds 实例 ID 列表，请登录[MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -87,7 +87,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID列表，格式如：cmgo-p8vn****。与云数据库控制台页面中显示的实例ID相同
+                     * 实例 ID 列表，请登录[MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;

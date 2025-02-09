@@ -24,7 +24,9 @@ NetWork::NetWork() :
     m_vpcIdHasBeenSet(false),
     m_vpcCidrBlockHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
-    m_subnetCidrBlockHasBeenSet(false)
+    m_subnetCidrBlockHasBeenSet(false),
+    m_clbIpHasBeenSet(false),
+    m_clbPortHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,26 @@ CoreInternalOutcome NetWork::Deserialize(const rapidjson::Value &value)
         m_subnetCidrBlockHasBeenSet = true;
     }
 
+    if (value.HasMember("ClbIp") && !value["ClbIp"].IsNull())
+    {
+        if (!value["ClbIp"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NetWork.ClbIp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clbIp = string(value["ClbIp"].GetString());
+        m_clbIpHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClbPort") && !value["ClbPort"].IsNull())
+    {
+        if (!value["ClbPort"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NetWork.ClbPort` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clbPort = string(value["ClbPort"].GetString());
+        m_clbPortHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +132,22 @@ void NetWork::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "SubnetCidrBlock";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subnetCidrBlock.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clbIpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClbIp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clbIp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clbPortHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClbPort";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clbPort.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +215,37 @@ void NetWork::SetSubnetCidrBlock(const string& _subnetCidrBlock)
 bool NetWork::SubnetCidrBlockHasBeenSet() const
 {
     return m_subnetCidrBlockHasBeenSet;
+}
+
+string NetWork::GetClbIp() const
+{
+    return m_clbIp;
+}
+
+void NetWork::SetClbIp(const string& _clbIp)
+{
+    m_clbIp = _clbIp;
+    m_clbIpHasBeenSet = true;
+}
+
+bool NetWork::ClbIpHasBeenSet() const
+{
+    return m_clbIpHasBeenSet;
+}
+
+string NetWork::GetClbPort() const
+{
+    return m_clbPort;
+}
+
+void NetWork::SetClbPort(const string& _clbPort)
+{
+    m_clbPort = _clbPort;
+    m_clbPortHasBeenSet = true;
+}
+
+bool NetWork::ClbPortHasBeenSet() const
+{
+    return m_clbPortHasBeenSet;
 }
 

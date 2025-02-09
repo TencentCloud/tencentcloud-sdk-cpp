@@ -159,6 +159,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/DescribeBlueprintsResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeKeyPairsRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeCcnAttachedInstancesRequest.h
+  include/tencentcloud/lighthouse/v20200324/model/SupportIpv6Detail.h
   include/tencentcloud/lighthouse/v20200324/model/ApplyDiskBackupRequest.h
   include/tencentcloud/lighthouse/v20200324/model/ResetInstancesPasswordResponse.h
   include/tencentcloud/lighthouse/v20200324/model/StartInstancesResponse.h
@@ -446,6 +447,7 @@ set(lighthouse_src
   src/v20200324/model/DescribeBlueprintsResponse.cpp
   src/v20200324/model/DescribeKeyPairsRequest.cpp
   src/v20200324/model/DescribeCcnAttachedInstancesRequest.cpp
+  src/v20200324/model/SupportIpv6Detail.cpp
   src/v20200324/model/ApplyDiskBackupRequest.cpp
   src/v20200324/model/ResetInstancesPasswordResponse.cpp
   src/v20200324/model/StartInstancesResponse.cpp

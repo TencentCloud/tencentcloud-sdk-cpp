@@ -23,8 +23,6 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
-#include <tencentcloud/cfw/v20190904/model/AddAcRuleRequest.h>
-#include <tencentcloud/cfw/v20190904/model/AddAcRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/AddAclRuleRequest.h>
 #include <tencentcloud/cfw/v20190904/model/AddAclRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/AddEnterpriseSecurityGroupRulesRequest.h>
@@ -263,9 +261,6 @@ namespace TencentCloud
                 CfwClient(const Credential &credential, const std::string &region);
                 CfwClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Core::Error, Model::AddAcRuleResponse> AddAcRuleOutcome;
-                typedef std::future<AddAcRuleOutcome> AddAcRuleOutcomeCallable;
-                typedef std::function<void(const CfwClient*, const Model::AddAcRuleRequest&, AddAcRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddAcRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::AddAclRuleResponse> AddAclRuleOutcome;
                 typedef std::future<AddAclRuleOutcome> AddAclRuleOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::AddAclRuleRequest&, AddAclRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddAclRuleAsyncHandler;
@@ -604,17 +599,6 @@ namespace TencentCloud
                 typedef std::function<void(const CfwClient*, const Model::SyncFwOperateRequest&, SyncFwOperateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SyncFwOperateAsyncHandler;
 
 
-
-                /**
-                 *接口不再使用，已有新接口AddAclRule
-
-添加互联网边界规则
-                 * @param req AddAcRuleRequest
-                 * @return AddAcRuleOutcome
-                 */
-                AddAcRuleOutcome AddAcRule(const Model::AddAcRuleRequest &request);
-                void AddAcRuleAsync(const Model::AddAcRuleRequest& request, const AddAcRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                AddAcRuleOutcomeCallable AddAcRuleCallable(const Model::AddAcRuleRequest& request);
 
                 /**
                  *添加互联网边界访问控制规则

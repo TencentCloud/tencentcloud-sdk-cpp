@@ -28,6 +28,7 @@
 #include <tencentcloud/lighthouse/v20200324/model/InternetAccessible.h>
 #include <tencentcloud/lighthouse/v20200324/model/LoginSettings.h>
 #include <tencentcloud/lighthouse/v20200324/model/Tag.h>
+#include <tencentcloud/lighthouse/v20200324/model/SupportIpv6Detail.h>
 #include <tencentcloud/lighthouse/v20200324/model/InstanceViolationDetail.h>
 
 
@@ -716,6 +717,48 @@ FAILED：表示操作失败
                     bool InstanceRestrictStateHasBeenSet() const;
 
                     /**
+                     * 获取描述实例是否支持IPv6。
+                     * @return SupportIpv6Detail 描述实例是否支持IPv6。
+                     * 
+                     */
+                    SupportIpv6Detail GetSupportIpv6Detail() const;
+
+                    /**
+                     * 设置描述实例是否支持IPv6。
+                     * @param _supportIpv6Detail 描述实例是否支持IPv6。
+                     * 
+                     */
+                    void SetSupportIpv6Detail(const SupportIpv6Detail& _supportIpv6Detail);
+
+                    /**
+                     * 判断参数 SupportIpv6Detail 是否已赋值
+                     * @return SupportIpv6Detail 是否已赋值
+                     * 
+                     */
+                    bool SupportIpv6DetailHasBeenSet() const;
+
+                    /**
+                     * 获取公网IPv6地址列表。
+                     * @return PublicIpv6Addresses 公网IPv6地址列表。
+                     * 
+                     */
+                    std::vector<std::string> GetPublicIpv6Addresses() const;
+
+                    /**
+                     * 设置公网IPv6地址列表。
+                     * @param _publicIpv6Addresses 公网IPv6地址列表。
+                     * 
+                     */
+                    void SetPublicIpv6Addresses(const std::vector<std::string>& _publicIpv6Addresses);
+
+                    /**
+                     * 判断参数 PublicIpv6Addresses 是否已赋值
+                     * @return PublicIpv6Addresses 是否已赋值
+                     * 
+                     */
+                    bool PublicIpv6AddressesHasBeenSet() const;
+
+                    /**
                      * 获取创建实例后自动执行TAT命令的调用ID。
                      * @return InitInvocationId 创建实例后自动执行TAT命令的调用ID。
                      * 
@@ -949,6 +992,18 @@ FAILED：表示操作失败
                      */
                     std::string m_instanceRestrictState;
                     bool m_instanceRestrictStateHasBeenSet;
+
+                    /**
+                     * 描述实例是否支持IPv6。
+                     */
+                    SupportIpv6Detail m_supportIpv6Detail;
+                    bool m_supportIpv6DetailHasBeenSet;
+
+                    /**
+                     * 公网IPv6地址列表。
+                     */
+                    std::vector<std::string> m_publicIpv6Addresses;
+                    bool m_publicIpv6AddressesHasBeenSet;
 
                     /**
                      * 创建实例后自动执行TAT命令的调用ID。

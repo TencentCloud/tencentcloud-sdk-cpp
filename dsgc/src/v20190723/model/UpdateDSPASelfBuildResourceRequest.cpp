@@ -28,7 +28,8 @@ UpdateDSPASelfBuildResourceRequest::UpdateDSPASelfBuildResourceRequest() :
     m_resourceVPortHasBeenSet(false),
     m_userNameHasBeenSet(false),
     m_passwordHasBeenSet(false),
-    m_authRangeHasBeenSet(false)
+    m_authRangeHasBeenSet(false),
+    m_resourceNameHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string UpdateDSPASelfBuildResourceRequest::ToJsonString() const
         string key = "AuthRange";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_authRange.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resourceName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -189,6 +198,22 @@ void UpdateDSPASelfBuildResourceRequest::SetAuthRange(const string& _authRange)
 bool UpdateDSPASelfBuildResourceRequest::AuthRangeHasBeenSet() const
 {
     return m_authRangeHasBeenSet;
+}
+
+string UpdateDSPASelfBuildResourceRequest::GetResourceName() const
+{
+    return m_resourceName;
+}
+
+void UpdateDSPASelfBuildResourceRequest::SetResourceName(const string& _resourceName)
+{
+    m_resourceName = _resourceName;
+    m_resourceNameHasBeenSet = true;
+}
+
+bool UpdateDSPASelfBuildResourceRequest::ResourceNameHasBeenSet() const
+{
+    return m_resourceNameHasBeenSet;
 }
 
 

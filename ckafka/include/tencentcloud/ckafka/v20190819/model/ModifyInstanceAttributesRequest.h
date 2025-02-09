@@ -151,15 +151,15 @@ namespace TencentCloud
                     bool DynamicRetentionConfigHasBeenSet() const;
 
                     /**
-                     * 获取升配Rebalance时间 参数已废弃,忽略不填!!!
-                     * @return RebalanceTime 升配Rebalance时间 参数已废弃,忽略不填!!!
+                     * 获取用于修改升级版本或升配定时任务的执行时间，Unix时间戳，精确到秒
+                     * @return RebalanceTime 用于修改升级版本或升配定时任务的执行时间，Unix时间戳，精确到秒
                      * 
                      */
                     int64_t GetRebalanceTime() const;
 
                     /**
-                     * 设置升配Rebalance时间 参数已废弃,忽略不填!!!
-                     * @param _rebalanceTime 升配Rebalance时间 参数已废弃,忽略不填!!!
+                     * 设置用于修改升级版本或升配定时任务的执行时间，Unix时间戳，精确到秒
+                     * @param _rebalanceTime 用于修改升级版本或升配定时任务的执行时间，Unix时间戳，精确到秒
                      * 
                      */
                     void SetRebalanceTime(const int64_t& _rebalanceTime);
@@ -234,6 +234,27 @@ namespace TencentCloud
                      */
                     bool MaxMessageByteHasBeenSet() const;
 
+                    /**
+                     * 获取集群topic默认 unclean.leader.election.enable配置: 1 开启  0 关闭
+                     * @return UncleanLeaderElectionEnable 集群topic默认 unclean.leader.election.enable配置: 1 开启  0 关闭
+                     * 
+                     */
+                    int64_t GetUncleanLeaderElectionEnable() const;
+
+                    /**
+                     * 设置集群topic默认 unclean.leader.election.enable配置: 1 开启  0 关闭
+                     * @param _uncleanLeaderElectionEnable 集群topic默认 unclean.leader.election.enable配置: 1 开启  0 关闭
+                     * 
+                     */
+                    void SetUncleanLeaderElectionEnable(const int64_t& _uncleanLeaderElectionEnable);
+
+                    /**
+                     * 判断参数 UncleanLeaderElectionEnable 是否已赋值
+                     * @return UncleanLeaderElectionEnable 是否已赋值
+                     * 
+                     */
+                    bool UncleanLeaderElectionEnableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -267,7 +288,7 @@ namespace TencentCloud
                     bool m_dynamicRetentionConfigHasBeenSet;
 
                     /**
-                     * 升配Rebalance时间 参数已废弃,忽略不填!!!
+                     * 用于修改升级版本或升配定时任务的执行时间，Unix时间戳，精确到秒
                      */
                     int64_t m_rebalanceTime;
                     bool m_rebalanceTimeHasBeenSet;
@@ -289,6 +310,12 @@ namespace TencentCloud
                      */
                     uint64_t m_maxMessageByte;
                     bool m_maxMessageByteHasBeenSet;
+
+                    /**
+                     * 集群topic默认 unclean.leader.election.enable配置: 1 开启  0 关闭
+                     */
+                    int64_t m_uncleanLeaderElectionEnable;
+                    bool m_uncleanLeaderElectionEnableHasBeenSet;
 
                 };
             }

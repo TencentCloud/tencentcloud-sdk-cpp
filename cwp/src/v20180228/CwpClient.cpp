@@ -5243,49 +5243,6 @@ CwpClient::DescribeAttackEventsOutcomeCallable CwpClient::DescribeAttackEventsCa
     return task->get_future();
 }
 
-CwpClient::DescribeAttackLogsOutcome CwpClient::DescribeAttackLogs(const DescribeAttackLogsRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeAttackLogs");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeAttackLogsResponse rsp = DescribeAttackLogsResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeAttackLogsOutcome(rsp);
-        else
-            return DescribeAttackLogsOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeAttackLogsOutcome(outcome.GetError());
-    }
-}
-
-void CwpClient::DescribeAttackLogsAsync(const DescribeAttackLogsRequest& request, const DescribeAttackLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAttackLogs(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CwpClient::DescribeAttackLogsOutcomeCallable CwpClient::DescribeAttackLogsCallable(const DescribeAttackLogsRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeAttackLogsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAttackLogs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 CwpClient::DescribeAttackStatisticsOutcome CwpClient::DescribeAttackStatistics(const DescribeAttackStatisticsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAttackStatistics");
@@ -7429,49 +7386,6 @@ CwpClient::DescribeClientExceptionOutcomeCallable CwpClient::DescribeClientExcep
         [this, request]()
         {
             return this->DescribeClientException(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-CwpClient::DescribeComponentStatisticsOutcome CwpClient::DescribeComponentStatistics(const DescribeComponentStatisticsRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeComponentStatistics");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeComponentStatisticsResponse rsp = DescribeComponentStatisticsResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeComponentStatisticsOutcome(rsp);
-        else
-            return DescribeComponentStatisticsOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeComponentStatisticsOutcome(outcome.GetError());
-    }
-}
-
-void CwpClient::DescribeComponentStatisticsAsync(const DescribeComponentStatisticsRequest& request, const DescribeComponentStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeComponentStatistics(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CwpClient::DescribeComponentStatisticsOutcomeCallable CwpClient::DescribeComponentStatisticsCallable(const DescribeComponentStatisticsRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeComponentStatisticsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeComponentStatistics(request);
         }
     );
 

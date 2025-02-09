@@ -130,6 +130,48 @@ namespace TencentCloud
                      */
                     bool SubnetCidrBlockHasBeenSet() const;
 
+                    /**
+                     * 获取服务clbip
+                     * @return ClbIp 服务clbip
+                     * 
+                     */
+                    std::string GetClbIp() const;
+
+                    /**
+                     * 设置服务clbip
+                     * @param _clbIp 服务clbip
+                     * 
+                     */
+                    void SetClbIp(const std::string& _clbIp);
+
+                    /**
+                     * 判断参数 ClbIp 是否已赋值
+                     * @return ClbIp 是否已赋值
+                     * 
+                     */
+                    bool ClbIpHasBeenSet() const;
+
+                    /**
+                     * 获取服务clbPort
+                     * @return ClbPort 服务clbPort
+                     * 
+                     */
+                    std::string GetClbPort() const;
+
+                    /**
+                     * 设置服务clbPort
+                     * @param _clbPort 服务clbPort
+                     * 
+                     */
+                    void SetClbPort(const std::string& _clbPort);
+
+                    /**
+                     * 判断参数 ClbPort 是否已赋值
+                     * @return ClbPort 是否已赋值
+                     * 
+                     */
+                    bool ClbPortHasBeenSet() const;
+
                 private:
 
                     /**
@@ -155,6 +197,18 @@ namespace TencentCloud
                      */
                     std::string m_subnetCidrBlock;
                     bool m_subnetCidrBlockHasBeenSet;
+
+                    /**
+                     * 服务clbip
+                     */
+                    std::string m_clbIp;
+                    bool m_clbIpHasBeenSet;
+
+                    /**
+                     * 服务clbPort
+                     */
+                    std::string m_clbPort;
+                    bool m_clbPortHasBeenSet;
 
                 };
             }

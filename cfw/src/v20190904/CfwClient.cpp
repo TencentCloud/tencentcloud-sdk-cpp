@@ -40,49 +40,6 @@ CfwClient::CfwClient(const Credential &credential, const string &region, const C
 }
 
 
-CfwClient::AddAcRuleOutcome CfwClient::AddAcRule(const AddAcRuleRequest &request)
-{
-    auto outcome = MakeRequest(request, "AddAcRule");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        AddAcRuleResponse rsp = AddAcRuleResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return AddAcRuleOutcome(rsp);
-        else
-            return AddAcRuleOutcome(o.GetError());
-    }
-    else
-    {
-        return AddAcRuleOutcome(outcome.GetError());
-    }
-}
-
-void CfwClient::AddAcRuleAsync(const AddAcRuleRequest& request, const AddAcRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AddAcRule(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CfwClient::AddAcRuleOutcomeCallable CfwClient::AddAcRuleCallable(const AddAcRuleRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<AddAcRuleOutcome()>>(
-        [this, request]()
-        {
-            return this->AddAcRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 CfwClient::AddAclRuleOutcome CfwClient::AddAclRule(const AddAclRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "AddAclRule");

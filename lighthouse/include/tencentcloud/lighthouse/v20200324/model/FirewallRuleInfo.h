@@ -143,6 +143,39 @@ namespace TencentCloud
                     bool CidrBlockHasBeenSet() const;
 
                     /**
+                     * 获取IPv6网段或IPv6地址(互斥)。
+示例值：::/0。
+
+和CidrBlock互斥，两者都不指定时，如果Protocol是ICMPv6，则取默认值::/0。
+                     * @return Ipv6CidrBlock IPv6网段或IPv6地址(互斥)。
+示例值：::/0。
+
+和CidrBlock互斥，两者都不指定时，如果Protocol是ICMPv6，则取默认值::/0。
+                     * 
+                     */
+                    std::string GetIpv6CidrBlock() const;
+
+                    /**
+                     * 设置IPv6网段或IPv6地址(互斥)。
+示例值：::/0。
+
+和CidrBlock互斥，两者都不指定时，如果Protocol是ICMPv6，则取默认值::/0。
+                     * @param _ipv6CidrBlock IPv6网段或IPv6地址(互斥)。
+示例值：::/0。
+
+和CidrBlock互斥，两者都不指定时，如果Protocol是ICMPv6，则取默认值::/0。
+                     * 
+                     */
+                    void SetIpv6CidrBlock(const std::string& _ipv6CidrBlock);
+
+                    /**
+                     * 判断参数 Ipv6CidrBlock 是否已赋值
+                     * @return Ipv6CidrBlock 是否已赋值
+                     * 
+                     */
+                    bool Ipv6CidrBlockHasBeenSet() const;
+
+                    /**
                      * 获取取值：ACCEPT，DROP。默认为 ACCEPT。
                      * @return Action 取值：ACCEPT，DROP。默认为 ACCEPT。
                      * 
@@ -212,6 +245,15 @@ namespace TencentCloud
                      */
                     std::string m_cidrBlock;
                     bool m_cidrBlockHasBeenSet;
+
+                    /**
+                     * IPv6网段或IPv6地址(互斥)。
+示例值：::/0。
+
+和CidrBlock互斥，两者都不指定时，如果Protocol是ICMPv6，则取默认值::/0。
+                     */
+                    std::string m_ipv6CidrBlock;
+                    bool m_ipv6CidrBlockHasBeenSet;
 
                     /**
                      * 取值：ACCEPT，DROP。默认为 ACCEPT。

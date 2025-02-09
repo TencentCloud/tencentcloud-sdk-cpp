@@ -176,6 +176,27 @@ UserName和Password必须同时填写或同时为空。
                      */
                     bool AuthRangeHasBeenSet() const;
 
+                    /**
+                     * 获取自建数据资产的名称，支持修改
+                     * @return ResourceName 自建数据资产的名称，支持修改
+                     * 
+                     */
+                    std::string GetResourceName() const;
+
+                    /**
+                     * 设置自建数据资产的名称，支持修改
+                     * @param _resourceName 自建数据资产的名称，支持修改
+                     * 
+                     */
+                    void SetResourceName(const std::string& _resourceName);
+
+                    /**
+                     * 判断参数 ResourceName 是否已赋值
+                     * @return ResourceName 是否已赋值
+                     * 
+                     */
+                    bool ResourceNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -215,6 +236,12 @@ UserName和Password必须同时填写或同时为空。
                      */
                     std::string m_authRange;
                     bool m_authRangeHasBeenSet;
+
+                    /**
+                     * 自建数据资产的名称，支持修改
+                     */
+                    std::string m_resourceName;
+                    bool m_resourceNameHasBeenSet;
 
                 };
             }
