@@ -238,11 +238,12 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/AsrFullTextConfigureInfoForUpdate.h
   include/tencentcloud/mps/v20190612/model/LiveRecordFile.h
   include/tencentcloud/mps/v20190612/model/ComposeSourceMedia.h
+  include/tencentcloud/mps/v20190612/model/TagConfigureInfoForUpdate.h
   include/tencentcloud/mps/v20190612/model/CreatePersonSampleResponse.h
   include/tencentcloud/mps/v20190612/model/CreateContentReviewTemplateResponse.h
   include/tencentcloud/mps/v20190612/model/ProhibitedConfigureInfoForUpdate.h
   include/tencentcloud/mps/v20190612/model/ComposeEmptyItem.h
-  include/tencentcloud/mps/v20190612/model/TagConfigureInfoForUpdate.h
+  include/tencentcloud/mps/v20190612/model/PidSelector.h
   include/tencentcloud/mps/v20190612/model/DeleteWordSamplesRequest.h
   include/tencentcloud/mps/v20190612/model/SRTSourceAddressReq.h
   include/tencentcloud/mps/v20190612/model/DescribeLiveRecordTemplatesResponse.h
@@ -908,11 +909,12 @@ set(mps_src
   src/v20190612/model/AsrFullTextConfigureInfoForUpdate.cpp
   src/v20190612/model/LiveRecordFile.cpp
   src/v20190612/model/ComposeSourceMedia.cpp
+  src/v20190612/model/TagConfigureInfoForUpdate.cpp
   src/v20190612/model/CreatePersonSampleResponse.cpp
   src/v20190612/model/CreateContentReviewTemplateResponse.cpp
   src/v20190612/model/ProhibitedConfigureInfoForUpdate.cpp
   src/v20190612/model/ComposeEmptyItem.cpp
-  src/v20190612/model/TagConfigureInfoForUpdate.cpp
+  src/v20190612/model/PidSelector.cpp
   src/v20190612/model/DeleteWordSamplesRequest.cpp
   src/v20190612/model/SRTSourceAddressReq.cpp
   src/v20190612/model/DescribeLiveRecordTemplatesResponse.cpp

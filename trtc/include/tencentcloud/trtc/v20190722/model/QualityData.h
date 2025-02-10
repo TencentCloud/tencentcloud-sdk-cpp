@@ -91,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取对端Id,为空时表示上行数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PeerId 对端Id,为空时表示上行数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPeerId() const;
 
                     /**
                      * 设置对端Id,为空时表示上行数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _peerId 对端Id,为空时表示上行数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPeerId(const std::string& _peerId);
@@ -151,7 +147,6 @@ namespace TencentCloud
 
                     /**
                      * 对端Id,为空时表示上行数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_peerId;
                     bool m_peerIdHasBeenSet;

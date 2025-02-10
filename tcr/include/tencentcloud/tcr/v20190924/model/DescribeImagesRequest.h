@@ -149,14 +149,22 @@ namespace TencentCloud
 
                     /**
                      * 获取页数，默认值为1
+补充说明：limit指的是每页的大小，offset指的是具体第几页。
+举例：limit 20 offset 1指的是1-20；limit 20 offset 2 指的是21-40；limit 30 offset 4 是指 90-120。
                      * @return Offset 页数，默认值为1
+补充说明：limit指的是每页的大小，offset指的是具体第几页。
+举例：limit 20 offset 1指的是1-20；limit 20 offset 2 指的是21-40；limit 30 offset 4 是指 90-120。
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置页数，默认值为1
+补充说明：limit指的是每页的大小，offset指的是具体第几页。
+举例：limit 20 offset 1指的是1-20；limit 20 offset 2 指的是21-40；limit 30 offset 4 是指 90-120。
                      * @param _offset 页数，默认值为1
+补充说明：limit指的是每页的大小，offset指的是具体第几页。
+举例：limit 20 offset 1指的是1-20；limit 20 offset 2 指的是21-40；limit 30 offset 4 是指 90-120。
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -244,6 +252,8 @@ namespace TencentCloud
 
                     /**
                      * 页数，默认值为1
+补充说明：limit指的是每页的大小，offset指的是具体第几页。
+举例：limit 20 offset 1指的是1-20；limit 20 offset 2 指的是21-40；limit 30 offset 4 是指 90-120。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;

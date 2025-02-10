@@ -30,6 +30,7 @@ DescribeDeviceGroupMembersRequest::DescribeDeviceGroupMembersRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_kindHasBeenSet(false),
+    m_kindSetHasBeenSet(false),
     m_departmentIdHasBeenSet(false),
     m_tagFiltersHasBeenSet(false)
 {
@@ -101,6 +102,19 @@ string DescribeDeviceGroupMembersRequest::ToJsonString() const
         string key = "Kind";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_kind, allocator);
+    }
+
+    if (m_kindSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KindSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_kindSet.begin(); itr != m_kindSet.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
     }
 
     if (m_departmentIdHasBeenSet)
@@ -244,6 +258,22 @@ void DescribeDeviceGroupMembersRequest::SetKind(const uint64_t& _kind)
 bool DescribeDeviceGroupMembersRequest::KindHasBeenSet() const
 {
     return m_kindHasBeenSet;
+}
+
+vector<uint64_t> DescribeDeviceGroupMembersRequest::GetKindSet() const
+{
+    return m_kindSet;
+}
+
+void DescribeDeviceGroupMembersRequest::SetKindSet(const vector<uint64_t>& _kindSet)
+{
+    m_kindSet = _kindSet;
+    m_kindSetHasBeenSet = true;
+}
+
+bool DescribeDeviceGroupMembersRequest::KindSetHasBeenSet() const
+{
+    return m_kindSetHasBeenSet;
 }
 
 string DescribeDeviceGroupMembersRequest::GetDepartmentId() const

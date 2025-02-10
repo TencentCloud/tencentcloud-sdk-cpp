@@ -28,7 +28,9 @@ DescribeFlow::DescribeFlow() :
     m_inputGroupHasBeenSet(false),
     m_outputGroupHasBeenSet(false),
     m_eventIdHasBeenSet(false),
-    m_regionHasBeenSet(false)
+    m_regionHasBeenSet(false),
+    m_allowedInputProtocolsHasBeenSet(false),
+    m_allowedOutputProtocolsHasBeenSet(false)
 {
 }
 
@@ -137,6 +139,32 @@ CoreInternalOutcome DescribeFlow::Deserialize(const rapidjson::Value &value)
         m_regionHasBeenSet = true;
     }
 
+    if (value.HasMember("AllowedInputProtocols") && !value["AllowedInputProtocols"].IsNull())
+    {
+        if (!value["AllowedInputProtocols"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DescribeFlow.AllowedInputProtocols` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AllowedInputProtocols"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_allowedInputProtocols.push_back((*itr).GetString());
+        }
+        m_allowedInputProtocolsHasBeenSet = true;
+    }
+
+    if (value.HasMember("AllowedOutputProtocols") && !value["AllowedOutputProtocols"].IsNull())
+    {
+        if (!value["AllowedOutputProtocols"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DescribeFlow.AllowedOutputProtocols` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AllowedOutputProtocols"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_allowedOutputProtocols.push_back((*itr).GetString());
+        }
+        m_allowedOutputProtocolsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -220,6 +248,32 @@ void DescribeFlow::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Region";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_allowedInputProtocolsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AllowedInputProtocols";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_allowedInputProtocols.begin(); itr != m_allowedInputProtocols.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_allowedOutputProtocolsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AllowedOutputProtocols";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_allowedOutputProtocols.begin(); itr != m_allowedOutputProtocols.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -351,5 +405,37 @@ void DescribeFlow::SetRegion(const string& _region)
 bool DescribeFlow::RegionHasBeenSet() const
 {
     return m_regionHasBeenSet;
+}
+
+vector<string> DescribeFlow::GetAllowedInputProtocols() const
+{
+    return m_allowedInputProtocols;
+}
+
+void DescribeFlow::SetAllowedInputProtocols(const vector<string>& _allowedInputProtocols)
+{
+    m_allowedInputProtocols = _allowedInputProtocols;
+    m_allowedInputProtocolsHasBeenSet = true;
+}
+
+bool DescribeFlow::AllowedInputProtocolsHasBeenSet() const
+{
+    return m_allowedInputProtocolsHasBeenSet;
+}
+
+vector<string> DescribeFlow::GetAllowedOutputProtocols() const
+{
+    return m_allowedOutputProtocols;
+}
+
+void DescribeFlow::SetAllowedOutputProtocols(const vector<string>& _allowedOutputProtocols)
+{
+    m_allowedOutputProtocols = _allowedOutputProtocols;
+    m_allowedOutputProtocolsHasBeenSet = true;
+}
+
+bool DescribeFlow::AllowedOutputProtocolsHasBeenSet() const
+{
+    return m_allowedOutputProtocolsHasBeenSet;
 }
 

@@ -36,7 +36,9 @@ SearchSessionRequest::SearchSessionRequest() :
     m_realNameHasBeenSet(false),
     m_deviceNameHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_idHasBeenSet(false)
+    m_idHasBeenSet(false),
+    m_appAssetKindSetHasBeenSet(false),
+    m_appAssetUrlHasBeenSet(false)
 {
 }
 
@@ -157,6 +159,27 @@ string SearchSessionRequest::ToJsonString() const
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appAssetKindSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppAssetKindSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_appAssetKindSet.begin(); itr != m_appAssetKindSet.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
+    }
+
+    if (m_appAssetUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppAssetUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_appAssetUrl.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -389,6 +412,38 @@ void SearchSessionRequest::SetId(const string& _id)
 bool SearchSessionRequest::IdHasBeenSet() const
 {
     return m_idHasBeenSet;
+}
+
+vector<uint64_t> SearchSessionRequest::GetAppAssetKindSet() const
+{
+    return m_appAssetKindSet;
+}
+
+void SearchSessionRequest::SetAppAssetKindSet(const vector<uint64_t>& _appAssetKindSet)
+{
+    m_appAssetKindSet = _appAssetKindSet;
+    m_appAssetKindSetHasBeenSet = true;
+}
+
+bool SearchSessionRequest::AppAssetKindSetHasBeenSet() const
+{
+    return m_appAssetKindSetHasBeenSet;
+}
+
+string SearchSessionRequest::GetAppAssetUrl() const
+{
+    return m_appAssetUrl;
+}
+
+void SearchSessionRequest::SetAppAssetUrl(const string& _appAssetUrl)
+{
+    m_appAssetUrl = _appAssetUrl;
+    m_appAssetUrlHasBeenSet = true;
+}
+
+bool SearchSessionRequest::AppAssetUrlHasBeenSet() const
+{
+    return m_appAssetUrlHasBeenSet;
 }
 
 

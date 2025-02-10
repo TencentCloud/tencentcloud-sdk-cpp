@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取流量数据点
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NetDetails 流量数据点
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<NetDetails> GetNetDetails() const;
 
                     /**
                      * 设置流量数据点
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _netDetails 流量数据点
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNetDetails(const std::vector<NetDetails>& _netDetails);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceId 设备ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
                      * 设置设备ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceId 设备ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取流量最大值（单位：bytes）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxValue 流量最大值（单位：bytes）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetMaxValue() const;
 
                     /**
                      * 设置流量最大值（单位：bytes）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxValue 流量最大值（单位：bytes）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxValue(const double& _maxValue);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取流量平均值（单位：bytes）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AvgValue 流量平均值（单位：bytes）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetAvgValue() const;
 
                     /**
                      * 设置流量平均值（单位：bytes）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _avgValue 流量平均值（单位：bytes）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAvgValue(const double& _avgValue);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取流量总值（单位：bytes）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalValue 流量总值（单位：bytes）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetTotalValue() const;
 
                     /**
                      * 设置流量总值（单位：bytes）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalValue 流量总值（单位：bytes）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalValue(const double& _totalValue);
@@ -176,35 +156,30 @@ namespace TencentCloud
 
                     /**
                      * 流量数据点
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<NetDetails> m_netDetails;
                     bool m_netDetailsHasBeenSet;
 
                     /**
                      * 设备ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceId;
                     bool m_deviceIdHasBeenSet;
 
                     /**
                      * 流量最大值（单位：bytes）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_maxValue;
                     bool m_maxValueHasBeenSet;
 
                     /**
                      * 流量平均值（单位：bytes）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_avgValue;
                     bool m_avgValueHasBeenSet;
 
                     /**
                      * 流量总值（单位：bytes）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_totalValue;
                     bool m_totalValueHasBeenSet;

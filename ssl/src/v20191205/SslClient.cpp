@@ -169,6 +169,92 @@ SslClient::CancelCertificateOrderOutcomeCallable SslClient::CancelCertificateOrd
     return task->get_future();
 }
 
+SslClient::CertificateInfoSubmitOutcome SslClient::CertificateInfoSubmit(const CertificateInfoSubmitRequest &request)
+{
+    auto outcome = MakeRequest(request, "CertificateInfoSubmit");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CertificateInfoSubmitResponse rsp = CertificateInfoSubmitResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CertificateInfoSubmitOutcome(rsp);
+        else
+            return CertificateInfoSubmitOutcome(o.GetError());
+    }
+    else
+    {
+        return CertificateInfoSubmitOutcome(outcome.GetError());
+    }
+}
+
+void SslClient::CertificateInfoSubmitAsync(const CertificateInfoSubmitRequest& request, const CertificateInfoSubmitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CertificateInfoSubmit(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SslClient::CertificateInfoSubmitOutcomeCallable SslClient::CertificateInfoSubmitCallable(const CertificateInfoSubmitRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CertificateInfoSubmitOutcome()>>(
+        [this, request]()
+        {
+            return this->CertificateInfoSubmit(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+SslClient::CertificateOrderSubmitOutcome SslClient::CertificateOrderSubmit(const CertificateOrderSubmitRequest &request)
+{
+    auto outcome = MakeRequest(request, "CertificateOrderSubmit");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CertificateOrderSubmitResponse rsp = CertificateOrderSubmitResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CertificateOrderSubmitOutcome(rsp);
+        else
+            return CertificateOrderSubmitOutcome(o.GetError());
+    }
+    else
+    {
+        return CertificateOrderSubmitOutcome(outcome.GetError());
+    }
+}
+
+void SslClient::CertificateOrderSubmitAsync(const CertificateOrderSubmitRequest& request, const CertificateOrderSubmitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CertificateOrderSubmit(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SslClient::CertificateOrderSubmitOutcomeCallable SslClient::CertificateOrderSubmitCallable(const CertificateOrderSubmitRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CertificateOrderSubmitOutcome()>>(
+        [this, request]()
+        {
+            return this->CertificateOrderSubmit(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SslClient::CheckCertificateChainOutcome SslClient::CheckCertificateChain(const CheckCertificateChainRequest &request)
 {
     auto outcome = MakeRequest(request, "CheckCertificateChain");

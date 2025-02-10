@@ -191,6 +191,27 @@ namespace TencentCloud
                     bool AuthorizedDeviceIdSetHasBeenSet() const;
 
                     /**
+                     * 获取有访问权限的应用资产ID集合
+                     * @return AuthorizedAppAssetIdSet 有访问权限的应用资产ID集合
+                     * 
+                     */
+                    std::vector<uint64_t> GetAuthorizedAppAssetIdSet() const;
+
+                    /**
+                     * 设置有访问权限的应用资产ID集合
+                     * @param _authorizedAppAssetIdSet 有访问权限的应用资产ID集合
+                     * 
+                     */
+                    void SetAuthorizedAppAssetIdSet(const std::vector<uint64_t>& _authorizedAppAssetIdSet);
+
+                    /**
+                     * 判断参数 AuthorizedAppAssetIdSet 是否已赋值
+                     * @return AuthorizedAppAssetIdSet 是否已赋值
+                     * 
+                     */
+                    bool AuthorizedAppAssetIdSetHasBeenSet() const;
+
+                    /**
                      * 获取访问权限状态，1 - 已生效，2 - 未生效，3 - 已过期
                      * @return Status 访问权限状态，1 - 已生效，2 - 未生效，3 - 已过期
                      * 
@@ -317,6 +338,12 @@ namespace TencentCloud
                      */
                     std::vector<uint64_t> m_authorizedDeviceIdSet;
                     bool m_authorizedDeviceIdSetHasBeenSet;
+
+                    /**
+                     * 有访问权限的应用资产ID集合
+                     */
+                    std::vector<uint64_t> m_authorizedAppAssetIdSet;
+                    bool m_authorizedAppAssetIdSetHasBeenSet;
 
                     /**
                      * 访问权限状态，1 - 已生效，2 - 未生效，3 - 已过期

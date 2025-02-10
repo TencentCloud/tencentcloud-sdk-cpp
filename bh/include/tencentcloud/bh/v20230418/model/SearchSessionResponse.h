@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/bh/v20230418/model/SessionResult.h>
 
 
 namespace TencentCloud
@@ -57,6 +58,20 @@ namespace TencentCloud
                      */
                     bool TotalCountHasBeenSet() const;
 
+                    /**
+                     * 获取会话信息列表
+                     * @return SessionSet 会话信息列表
+                     * 
+                     */
+                    std::vector<SessionResult> GetSessionSet() const;
+
+                    /**
+                     * 判断参数 SessionSet 是否已赋值
+                     * @return SessionSet 是否已赋值
+                     * 
+                     */
+                    bool SessionSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -64,6 +79,12 @@ namespace TencentCloud
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
+
+                    /**
+                     * 会话信息列表
+                     */
+                    std::vector<SessionResult> m_sessionSet;
+                    bool m_sessionSetHasBeenSet;
 
                 };
             }

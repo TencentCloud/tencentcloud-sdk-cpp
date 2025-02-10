@@ -32,6 +32,7 @@
 #include <tencentcloud/mps/v20190612/model/DescribeOutputRTSPPullSettings.h>
 #include <tencentcloud/mps/v20190612/model/DescribeOutputHLSPullSettings.h>
 #include <tencentcloud/mps/v20190612/model/DescribeOutputRISTSettings.h>
+#include <tencentcloud/mps/v20190612/model/PidSelector.h>
 
 
 namespace TencentCloud
@@ -480,6 +481,27 @@ namespace TencentCloud
                      */
                     bool RISTSettingsHasBeenSet() const;
 
+                    /**
+                     * 获取对于含有多个音/视频轨的流，可以指定需要使用的轨道
+                     * @return PidSelector 对于含有多个音/视频轨的流，可以指定需要使用的轨道
+                     * 
+                     */
+                    PidSelector GetPidSelector() const;
+
+                    /**
+                     * 设置对于含有多个音/视频轨的流，可以指定需要使用的轨道
+                     * @param _pidSelector 对于含有多个音/视频轨的流，可以指定需要使用的轨道
+                     * 
+                     */
+                    void SetPidSelector(const PidSelector& _pidSelector);
+
+                    /**
+                     * 判断参数 PidSelector 是否已赋值
+                     * @return PidSelector 是否已赋值
+                     * 
+                     */
+                    bool PidSelectorHasBeenSet() const;
+
                 private:
 
                     /**
@@ -601,6 +623,12 @@ namespace TencentCloud
                      */
                     DescribeOutputRISTSettings m_rISTSettings;
                     bool m_rISTSettingsHasBeenSet;
+
+                    /**
+                     * 对于含有多个音/视频轨的流，可以指定需要使用的轨道
+                     */
+                    PidSelector m_pidSelector;
+                    bool m_pidSelectorHasBeenSet;
 
                 };
             }

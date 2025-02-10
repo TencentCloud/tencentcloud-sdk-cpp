@@ -29,6 +29,10 @@
 #include <tencentcloud/ssl/v20191205/model/CancelAuditCertificateResponse.h>
 #include <tencentcloud/ssl/v20191205/model/CancelCertificateOrderRequest.h>
 #include <tencentcloud/ssl/v20191205/model/CancelCertificateOrderResponse.h>
+#include <tencentcloud/ssl/v20191205/model/CertificateInfoSubmitRequest.h>
+#include <tencentcloud/ssl/v20191205/model/CertificateInfoSubmitResponse.h>
+#include <tencentcloud/ssl/v20191205/model/CertificateOrderSubmitRequest.h>
+#include <tencentcloud/ssl/v20191205/model/CertificateOrderSubmitResponse.h>
 #include <tencentcloud/ssl/v20191205/model/CheckCertificateChainRequest.h>
 #include <tencentcloud/ssl/v20191205/model/CheckCertificateChainResponse.h>
 #include <tencentcloud/ssl/v20191205/model/CheckCertificateDomainVerificationRequest.h>
@@ -168,6 +172,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CancelCertificateOrderResponse> CancelCertificateOrderOutcome;
                 typedef std::future<CancelCertificateOrderOutcome> CancelCertificateOrderOutcomeCallable;
                 typedef std::function<void(const SslClient*, const Model::CancelCertificateOrderRequest&, CancelCertificateOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelCertificateOrderAsyncHandler;
+                typedef Outcome<Core::Error, Model::CertificateInfoSubmitResponse> CertificateInfoSubmitOutcome;
+                typedef std::future<CertificateInfoSubmitOutcome> CertificateInfoSubmitOutcomeCallable;
+                typedef std::function<void(const SslClient*, const Model::CertificateInfoSubmitRequest&, CertificateInfoSubmitOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CertificateInfoSubmitAsyncHandler;
+                typedef Outcome<Core::Error, Model::CertificateOrderSubmitResponse> CertificateOrderSubmitOutcome;
+                typedef std::future<CertificateOrderSubmitOutcome> CertificateOrderSubmitOutcomeCallable;
+                typedef std::function<void(const SslClient*, const Model::CertificateOrderSubmitRequest&, CertificateOrderSubmitOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CertificateOrderSubmitAsyncHandler;
                 typedef Outcome<Core::Error, Model::CheckCertificateChainResponse> CheckCertificateChainOutcome;
                 typedef std::future<CheckCertificateChainOutcome> CheckCertificateChainOutcomeCallable;
                 typedef std::function<void(const SslClient*, const Model::CheckCertificateChainRequest&, CheckCertificateChainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckCertificateChainAsyncHandler;
@@ -371,6 +381,24 @@ namespace TencentCloud
                 CancelCertificateOrderOutcome CancelCertificateOrder(const Model::CancelCertificateOrderRequest &request);
                 void CancelCertificateOrderAsync(const Model::CancelCertificateOrderRequest& request, const CancelCertificateOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CancelCertificateOrderOutcomeCallable CancelCertificateOrderCallable(const Model::CancelCertificateOrderRequest& request);
+
+                /**
+                 *付费提交证书资料
+                 * @param req CertificateInfoSubmitRequest
+                 * @return CertificateInfoSubmitOutcome
+                 */
+                CertificateInfoSubmitOutcome CertificateInfoSubmit(const Model::CertificateInfoSubmitRequest &request);
+                void CertificateInfoSubmitAsync(const Model::CertificateInfoSubmitRequest& request, const CertificateInfoSubmitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CertificateInfoSubmitOutcomeCallable CertificateInfoSubmitCallable(const Model::CertificateInfoSubmitRequest& request);
+
+                /**
+                 *提交付费证书订单
+                 * @param req CertificateOrderSubmitRequest
+                 * @return CertificateOrderSubmitOutcome
+                 */
+                CertificateOrderSubmitOutcome CertificateOrderSubmit(const Model::CertificateOrderSubmitRequest &request);
+                void CertificateOrderSubmitAsync(const Model::CertificateOrderSubmitRequest& request, const CertificateOrderSubmitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CertificateOrderSubmitOutcomeCallable CertificateOrderSubmitCallable(const Model::CertificateOrderSubmitRequest& request);
 
                 /**
                  *本接口（CheckCertificateChain）用于检查证书链是否完整。

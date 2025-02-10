@@ -336,6 +336,48 @@ namespace TencentCloud
                      */
                     bool IdHasBeenSet() const;
 
+                    /**
+                     * 获取应用资产类型, 1-web
+                     * @return AppAssetKindSet 应用资产类型, 1-web
+                     * 
+                     */
+                    std::vector<uint64_t> GetAppAssetKindSet() const;
+
+                    /**
+                     * 设置应用资产类型, 1-web
+                     * @param _appAssetKindSet 应用资产类型, 1-web
+                     * 
+                     */
+                    void SetAppAssetKindSet(const std::vector<uint64_t>& _appAssetKindSet);
+
+                    /**
+                     * 判断参数 AppAssetKindSet 是否已赋值
+                     * @return AppAssetKindSet 是否已赋值
+                     * 
+                     */
+                    bool AppAssetKindSetHasBeenSet() const;
+
+                    /**
+                     * 获取应用资产Url
+                     * @return AppAssetUrl 应用资产Url
+                     * 
+                     */
+                    std::string GetAppAssetUrl() const;
+
+                    /**
+                     * 设置应用资产Url
+                     * @param _appAssetUrl 应用资产Url
+                     * 
+                     */
+                    void SetAppAssetUrl(const std::string& _appAssetUrl);
+
+                    /**
+                     * 判断参数 AppAssetUrl 是否已赋值
+                     * @return AppAssetUrl 是否已赋值
+                     * 
+                     */
+                    bool AppAssetUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -421,6 +463,18 @@ namespace TencentCloud
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
+
+                    /**
+                     * 应用资产类型, 1-web
+                     */
+                    std::vector<uint64_t> m_appAssetKindSet;
+                    bool m_appAssetKindSetHasBeenSet;
+
+                    /**
+                     * 应用资产Url
+                     */
+                    std::string m_appAssetUrl;
+                    bool m_appAssetUrlHasBeenSet;
 
                 };
             }

@@ -568,15 +568,15 @@ namespace TencentCloud
                     bool AttachedHasBeenSet() const;
 
                     /**
-                     * 获取云硬盘大小，单位GB。
-                     * @return DiskSize 云硬盘大小，单位GB。
+                     * 获取云硬盘大小，单位GiB。
+                     * @return DiskSize 云硬盘大小，单位GiB。
                      * 
                      */
                     uint64_t GetDiskSize() const;
 
                     /**
-                     * 设置云硬盘大小，单位GB。
-                     * @param _diskSize 云硬盘大小，单位GB。
+                     * 设置云硬盘大小，单位GiB。
+                     * @param _diskSize 云硬盘大小，单位GiB。
                      * 
                      */
                     void SetDiskSize(const uint64_t& _diskSize);
@@ -994,6 +994,31 @@ namespace TencentCloud
                      */
                     bool BurstPerformanceHasBeenSet() const;
 
+                    /**
+                     * 获取云硬盘加密类型，值为ENCRYPT_V1和ENCRYPT_V2，分别表示第一代和第二代加密技术，两种加密技术互不兼容
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EncryptType 云硬盘加密类型，值为ENCRYPT_V1和ENCRYPT_V2，分别表示第一代和第二代加密技术，两种加密技术互不兼容
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetEncryptType() const;
+
+                    /**
+                     * 设置云硬盘加密类型，值为ENCRYPT_V1和ENCRYPT_V2，分别表示第一代和第二代加密技术，两种加密技术互不兼容
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _encryptType 云硬盘加密类型，值为ENCRYPT_V1和ENCRYPT_V2，分别表示第一代和第二代加密技术，两种加密技术互不兼容
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEncryptType(const std::string& _encryptType);
+
+                    /**
+                     * 判断参数 EncryptType 是否已赋值
+                     * @return EncryptType 是否已赋值
+                     * 
+                     */
+                    bool EncryptTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1144,7 +1169,7 @@ namespace TencentCloud
                     bool m_attachedHasBeenSet;
 
                     /**
-                     * 云硬盘大小，单位GB。
+                     * 云硬盘大小，单位GiB。
                      */
                     uint64_t m_diskSize;
                     bool m_diskSizeHasBeenSet;
@@ -1263,6 +1288,13 @@ namespace TencentCloud
                      */
                     bool m_burstPerformance;
                     bool m_burstPerformanceHasBeenSet;
+
+                    /**
+                     * 云硬盘加密类型，值为ENCRYPT_V1和ENCRYPT_V2，分别表示第一代和第二代加密技术，两种加密技术互不兼容
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_encryptType;
+                    bool m_encryptTypeHasBeenSet;
 
                 };
             }

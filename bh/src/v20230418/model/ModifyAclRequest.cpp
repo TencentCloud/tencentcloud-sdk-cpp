@@ -38,6 +38,7 @@ ModifyAclRequest::ModifyAclRequest() :
     m_userIdSetHasBeenSet(false),
     m_userGroupIdSetHasBeenSet(false),
     m_deviceIdSetHasBeenSet(false),
+    m_appAssetIdSetHasBeenSet(false),
     m_deviceGroupIdSetHasBeenSet(false),
     m_accountSetHasBeenSet(false),
     m_cmdTemplateIdSetHasBeenSet(false),
@@ -192,6 +193,19 @@ string ModifyAclRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_deviceIdSet.begin(); itr != m_deviceIdSet.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
+    }
+
+    if (m_appAssetIdSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppAssetIdSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_appAssetIdSet.begin(); itr != m_appAssetIdSet.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
@@ -575,6 +589,22 @@ void ModifyAclRequest::SetDeviceIdSet(const vector<uint64_t>& _deviceIdSet)
 bool ModifyAclRequest::DeviceIdSetHasBeenSet() const
 {
     return m_deviceIdSetHasBeenSet;
+}
+
+vector<uint64_t> ModifyAclRequest::GetAppAssetIdSet() const
+{
+    return m_appAssetIdSet;
+}
+
+void ModifyAclRequest::SetAppAssetIdSet(const vector<uint64_t>& _appAssetIdSet)
+{
+    m_appAssetIdSet = _appAssetIdSet;
+    m_appAssetIdSetHasBeenSet = true;
+}
+
+bool ModifyAclRequest::AppAssetIdSetHasBeenSet() const
+{
+    return m_appAssetIdSetHasBeenSet;
 }
 
 vector<uint64_t> ModifyAclRequest::GetDeviceGroupIdSet() const

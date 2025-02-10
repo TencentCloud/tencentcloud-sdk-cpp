@@ -62,7 +62,8 @@ Disk::Disk() :
     m_instanceTypeHasBeenSet(false),
     m_lastAttachInsIdHasBeenSet(false),
     m_errorPromptHasBeenSet(false),
-    m_burstPerformanceHasBeenSet(false)
+    m_burstPerformanceHasBeenSet(false),
+    m_encryptTypeHasBeenSet(false)
 {
 }
 
@@ -514,6 +515,16 @@ CoreInternalOutcome Disk::Deserialize(const rapidjson::Value &value)
         m_burstPerformanceHasBeenSet = true;
     }
 
+    if (value.HasMember("EncryptType") && !value["EncryptType"].IsNull())
+    {
+        if (!value["EncryptType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Disk.EncryptType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_encryptType = string(value["EncryptType"].GetString());
+        m_encryptTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -873,6 +884,14 @@ void Disk::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "BurstPerformance";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_burstPerformance, allocator);
+    }
+
+    if (m_encryptTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncryptType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_encryptType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1548,5 +1567,21 @@ void Disk::SetBurstPerformance(const bool& _burstPerformance)
 bool Disk::BurstPerformanceHasBeenSet() const
 {
     return m_burstPerformanceHasBeenSet;
+}
+
+string Disk::GetEncryptType() const
+{
+    return m_encryptType;
+}
+
+void Disk::SetEncryptType(const string& _encryptType)
+{
+    m_encryptType = _encryptType;
+    m_encryptTypeHasBeenSet = true;
+}
+
+bool Disk::EncryptTypeHasBeenSet() const
+{
+    return m_encryptTypeHasBeenSet;
 }
 

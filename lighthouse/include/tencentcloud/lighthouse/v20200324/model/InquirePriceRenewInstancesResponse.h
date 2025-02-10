@@ -63,9 +63,7 @@ namespace TencentCloud
 
                     /**
                      * 获取数据盘价格信息列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataDiskPriceSet 数据盘价格信息列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DataDiskPrice> GetDataDiskPriceSet() const;
@@ -79,9 +77,7 @@ namespace TencentCloud
 
                     /**
                      * 获取待续费实例价格列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstancePriceDetailSet 待续费实例价格列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<InstancePriceDetail> GetInstancePriceDetailSet() const;
@@ -117,14 +113,12 @@ namespace TencentCloud
 
                     /**
                      * 数据盘价格信息列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DataDiskPrice> m_dataDiskPriceSet;
                     bool m_dataDiskPriceSetHasBeenSet;
 
                     /**
                      * 待续费实例价格列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<InstancePriceDetail> m_instancePriceDetailSet;
                     bool m_instancePriceDetailSetHasBeenSet;

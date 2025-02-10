@@ -33,7 +33,8 @@ CreateOutputInfo::CreateOutputInfo() :
     m_securityGroupIdsHasBeenSet(false),
     m_zonesHasBeenSet(false),
     m_outputTypeHasBeenSet(false),
-    m_rISTSettingsHasBeenSet(false)
+    m_rISTSettingsHasBeenSet(false),
+    m_pidSelectorHasBeenSet(false)
 {
 }
 
@@ -209,6 +210,23 @@ CoreInternalOutcome CreateOutputInfo::Deserialize(const rapidjson::Value &value)
         m_rISTSettingsHasBeenSet = true;
     }
 
+    if (value.HasMember("PidSelector") && !value["PidSelector"].IsNull())
+    {
+        if (!value["PidSelector"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateOutputInfo.PidSelector` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_pidSelector.Deserialize(value["PidSelector"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_pidSelectorHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -337,6 +355,15 @@ void CreateOutputInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_rISTSettings.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_pidSelectorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PidSelector";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_pidSelector.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -548,5 +575,21 @@ void CreateOutputInfo::SetRISTSettings(const CreateOutputRistSettings& _rISTSett
 bool CreateOutputInfo::RISTSettingsHasBeenSet() const
 {
     return m_rISTSettingsHasBeenSet;
+}
+
+PidSelector CreateOutputInfo::GetPidSelector() const
+{
+    return m_pidSelector;
+}
+
+void CreateOutputInfo::SetPidSelector(const PidSelector& _pidSelector)
+{
+    m_pidSelector = _pidSelector;
+    m_pidSelectorHasBeenSet = true;
+}
+
+bool CreateOutputInfo::PidSelectorHasBeenSet() const
+{
+    return m_pidSelectorHasBeenSet;
 }
 

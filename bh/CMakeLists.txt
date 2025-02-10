@@ -64,7 +64,9 @@ set(bh_public_header_model
   include/tencentcloud/bh/v20230418/model/OperationEvent.h
   include/tencentcloud/bh/v20230418/model/Department.h
   include/tencentcloud/bh/v20230418/model/ModifyCmdTemplateRequest.h
+  include/tencentcloud/bh/v20230418/model/SessionResult.h
   include/tencentcloud/bh/v20230418/model/CreateUserResponse.h
+  include/tencentcloud/bh/v20230418/model/AppAsset.h
   include/tencentcloud/bh/v20230418/model/DescribeAssetSyncStatusResponse.h
   include/tencentcloud/bh/v20230418/model/ModifyChangePwdTaskResponse.h
   include/tencentcloud/bh/v20230418/model/DescribeUserGroupsRequest.h
@@ -216,7 +218,9 @@ set(bh_src
   src/v20230418/model/OperationEvent.cpp
   src/v20230418/model/Department.cpp
   src/v20230418/model/ModifyCmdTemplateRequest.cpp
+  src/v20230418/model/SessionResult.cpp
   src/v20230418/model/CreateUserResponse.cpp
+  src/v20230418/model/AppAsset.cpp
   src/v20230418/model/DescribeAssetSyncStatusResponse.cpp
   src/v20230418/model/ModifyChangePwdTaskResponse.cpp
   src/v20230418/model/DescribeUserGroupsRequest.cpp

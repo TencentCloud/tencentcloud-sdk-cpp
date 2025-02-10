@@ -358,6 +358,27 @@ namespace TencentCloud
                     bool DeviceIdSetHasBeenSet() const;
 
                     /**
+                     * 获取关联的应用资产ID集合
+                     * @return AppAssetIdSet 关联的应用资产ID集合
+                     * 
+                     */
+                    std::vector<uint64_t> GetAppAssetIdSet() const;
+
+                    /**
+                     * 设置关联的应用资产ID集合
+                     * @param _appAssetIdSet 关联的应用资产ID集合
+                     * 
+                     */
+                    void SetAppAssetIdSet(const std::vector<uint64_t>& _appAssetIdSet);
+
+                    /**
+                     * 判断参数 AppAssetIdSet 是否已赋值
+                     * @return AppAssetIdSet 是否已赋值
+                     * 
+                     */
+                    bool AppAssetIdSetHasBeenSet() const;
+
+                    /**
                      * 获取关联的资产组ID
                      * @return DeviceGroupIdSet 关联的资产组ID
                      * 
@@ -750,6 +771,12 @@ namespace TencentCloud
                      */
                     std::vector<uint64_t> m_deviceIdSet;
                     bool m_deviceIdSetHasBeenSet;
+
+                    /**
+                     * 关联的应用资产ID集合
+                     */
+                    std::vector<uint64_t> m_appAssetIdSet;
+                    bool m_appAssetIdSetHasBeenSet;
 
                     /**
                      * 关联的资产组ID

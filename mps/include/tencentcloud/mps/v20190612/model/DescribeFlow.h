@@ -220,6 +220,48 @@ namespace TencentCloud
                      */
                     bool RegionHasBeenSet() const;
 
+                    /**
+                     * 获取该Flow允许创建的输入协议
+                     * @return AllowedInputProtocols 该Flow允许创建的输入协议
+                     * 
+                     */
+                    std::vector<std::string> GetAllowedInputProtocols() const;
+
+                    /**
+                     * 设置该Flow允许创建的输入协议
+                     * @param _allowedInputProtocols 该Flow允许创建的输入协议
+                     * 
+                     */
+                    void SetAllowedInputProtocols(const std::vector<std::string>& _allowedInputProtocols);
+
+                    /**
+                     * 判断参数 AllowedInputProtocols 是否已赋值
+                     * @return AllowedInputProtocols 是否已赋值
+                     * 
+                     */
+                    bool AllowedInputProtocolsHasBeenSet() const;
+
+                    /**
+                     * 获取该Flow允许创建的输出协议
+                     * @return AllowedOutputProtocols 该Flow允许创建的输出协议
+                     * 
+                     */
+                    std::vector<std::string> GetAllowedOutputProtocols() const;
+
+                    /**
+                     * 设置该Flow允许创建的输出协议
+                     * @param _allowedOutputProtocols 该Flow允许创建的输出协议
+                     * 
+                     */
+                    void SetAllowedOutputProtocols(const std::vector<std::string>& _allowedOutputProtocols);
+
+                    /**
+                     * 判断参数 AllowedOutputProtocols 是否已赋值
+                     * @return AllowedOutputProtocols 是否已赋值
+                     * 
+                     */
+                    bool AllowedOutputProtocolsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -270,6 +312,18 @@ namespace TencentCloud
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
+
+                    /**
+                     * 该Flow允许创建的输入协议
+                     */
+                    std::vector<std::string> m_allowedInputProtocols;
+                    bool m_allowedInputProtocolsHasBeenSet;
+
+                    /**
+                     * 该Flow允许创建的输出协议
+                     */
+                    std::vector<std::string> m_allowedOutputProtocols;
+                    bool m_allowedOutputProtocolsHasBeenSet;
 
                 };
             }

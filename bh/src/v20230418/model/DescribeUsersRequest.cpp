@@ -31,6 +31,7 @@ DescribeUsersRequest::DescribeUsersRequest() :
     m_phoneHasBeenSet(false),
     m_emailHasBeenSet(false),
     m_authorizedDeviceIdSetHasBeenSet(false),
+    m_authorizedAppAssetIdSetHasBeenSet(false),
     m_authTypeSetHasBeenSet(false),
     m_departmentIdHasBeenSet(false),
     m_filtersHasBeenSet(false)
@@ -113,6 +114,19 @@ string DescribeUsersRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_authorizedDeviceIdSet.begin(); itr != m_authorizedDeviceIdSet.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
+    }
+
+    if (m_authorizedAppAssetIdSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuthorizedAppAssetIdSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_authorizedAppAssetIdSet.begin(); itr != m_authorizedAppAssetIdSet.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
@@ -288,6 +302,22 @@ void DescribeUsersRequest::SetAuthorizedDeviceIdSet(const vector<uint64_t>& _aut
 bool DescribeUsersRequest::AuthorizedDeviceIdSetHasBeenSet() const
 {
     return m_authorizedDeviceIdSetHasBeenSet;
+}
+
+vector<uint64_t> DescribeUsersRequest::GetAuthorizedAppAssetIdSet() const
+{
+    return m_authorizedAppAssetIdSet;
+}
+
+void DescribeUsersRequest::SetAuthorizedAppAssetIdSet(const vector<uint64_t>& _authorizedAppAssetIdSet)
+{
+    m_authorizedAppAssetIdSet = _authorizedAppAssetIdSet;
+    m_authorizedAppAssetIdSetHasBeenSet = true;
+}
+
+bool DescribeUsersRequest::AuthorizedAppAssetIdSetHasBeenSet() const
+{
+    return m_authorizedAppAssetIdSetHasBeenSet;
 }
 
 vector<uint64_t> DescribeUsersRequest::GetAuthTypeSet() const

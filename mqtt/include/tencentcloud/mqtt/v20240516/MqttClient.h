@@ -27,12 +27,18 @@
 #include <tencentcloud/mqtt/v20240516/model/ActivateDeviceCertificateResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/CreateAuthorizationPolicyRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/CreateAuthorizationPolicyResponse.h>
+#include <tencentcloud/mqtt/v20240516/model/CreateInsPublicEndpointRequest.h>
+#include <tencentcloud/mqtt/v20240516/model/CreateInsPublicEndpointResponse.h>
+#include <tencentcloud/mqtt/v20240516/model/CreateInstanceRequest.h>
+#include <tencentcloud/mqtt/v20240516/model/CreateInstanceResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/CreateJWKSAuthenticatorRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/CreateJWKSAuthenticatorResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/CreateJWTAuthenticatorRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/CreateJWTAuthenticatorResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/CreateTopicRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/CreateTopicResponse.h>
+#include <tencentcloud/mqtt/v20240516/model/CreateUserRequest.h>
+#include <tencentcloud/mqtt/v20240516/model/CreateUserResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DeactivateDeviceCertificateRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/DeactivateDeviceCertificateResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DeleteAuthenticatorRequest.h>
@@ -41,8 +47,14 @@
 #include <tencentcloud/mqtt/v20240516/model/DeleteAuthorizationPolicyResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DeleteDeviceCertificateRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/DeleteDeviceCertificateResponse.h>
+#include <tencentcloud/mqtt/v20240516/model/DeleteInsPublicEndpointRequest.h>
+#include <tencentcloud/mqtt/v20240516/model/DeleteInsPublicEndpointResponse.h>
+#include <tencentcloud/mqtt/v20240516/model/DeleteInstanceRequest.h>
+#include <tencentcloud/mqtt/v20240516/model/DeleteInstanceResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DeleteTopicRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/DeleteTopicResponse.h>
+#include <tencentcloud/mqtt/v20240516/model/DeleteUserRequest.h>
+#include <tencentcloud/mqtt/v20240516/model/DeleteUserResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeAuthenticatorRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeAuthenticatorResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeAuthorizationPoliciesRequest.h>
@@ -51,6 +63,8 @@
 #include <tencentcloud/mqtt/v20240516/model/DescribeDeviceCertificateResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeDeviceCertificatesRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeDeviceCertificatesResponse.h>
+#include <tencentcloud/mqtt/v20240516/model/DescribeInsPublicEndpointsRequest.h>
+#include <tencentcloud/mqtt/v20240516/model/DescribeInsPublicEndpointsResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeInstanceRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeInstanceResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeInstanceListRequest.h>
@@ -59,14 +73,22 @@
 #include <tencentcloud/mqtt/v20240516/model/DescribeTopicResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeTopicListRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeTopicListResponse.h>
+#include <tencentcloud/mqtt/v20240516/model/DescribeUserListRequest.h>
+#include <tencentcloud/mqtt/v20240516/model/DescribeUserListResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/ModifyAuthorizationPolicyRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/ModifyAuthorizationPolicyResponse.h>
+#include <tencentcloud/mqtt/v20240516/model/ModifyInsPublicEndpointRequest.h>
+#include <tencentcloud/mqtt/v20240516/model/ModifyInsPublicEndpointResponse.h>
+#include <tencentcloud/mqtt/v20240516/model/ModifyInstanceRequest.h>
+#include <tencentcloud/mqtt/v20240516/model/ModifyInstanceResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/ModifyJWKSAuthenticatorRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/ModifyJWKSAuthenticatorResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/ModifyJWTAuthenticatorRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/ModifyJWTAuthenticatorResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/ModifyTopicRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/ModifyTopicResponse.h>
+#include <tencentcloud/mqtt/v20240516/model/ModifyUserRequest.h>
+#include <tencentcloud/mqtt/v20240516/model/ModifyUserResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/RegisterDeviceCertificateRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/RegisterDeviceCertificateResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/RevokedDeviceCertificateRequest.h>
@@ -93,6 +115,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAuthorizationPolicyResponse> CreateAuthorizationPolicyOutcome;
                 typedef std::future<CreateAuthorizationPolicyOutcome> CreateAuthorizationPolicyOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::CreateAuthorizationPolicyRequest&, CreateAuthorizationPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAuthorizationPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateInsPublicEndpointResponse> CreateInsPublicEndpointOutcome;
+                typedef std::future<CreateInsPublicEndpointOutcome> CreateInsPublicEndpointOutcomeCallable;
+                typedef std::function<void(const MqttClient*, const Model::CreateInsPublicEndpointRequest&, CreateInsPublicEndpointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInsPublicEndpointAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateInstanceResponse> CreateInstanceOutcome;
+                typedef std::future<CreateInstanceOutcome> CreateInstanceOutcomeCallable;
+                typedef std::function<void(const MqttClient*, const Model::CreateInstanceRequest&, CreateInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateJWKSAuthenticatorResponse> CreateJWKSAuthenticatorOutcome;
                 typedef std::future<CreateJWKSAuthenticatorOutcome> CreateJWKSAuthenticatorOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::CreateJWKSAuthenticatorRequest&, CreateJWKSAuthenticatorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateJWKSAuthenticatorAsyncHandler;
@@ -102,6 +130,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateTopicResponse> CreateTopicOutcome;
                 typedef std::future<CreateTopicOutcome> CreateTopicOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::CreateTopicRequest&, CreateTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTopicAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateUserResponse> CreateUserOutcome;
+                typedef std::future<CreateUserOutcome> CreateUserOutcomeCallable;
+                typedef std::function<void(const MqttClient*, const Model::CreateUserRequest&, CreateUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeactivateDeviceCertificateResponse> DeactivateDeviceCertificateOutcome;
                 typedef std::future<DeactivateDeviceCertificateOutcome> DeactivateDeviceCertificateOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::DeactivateDeviceCertificateRequest&, DeactivateDeviceCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeactivateDeviceCertificateAsyncHandler;
@@ -114,9 +145,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteDeviceCertificateResponse> DeleteDeviceCertificateOutcome;
                 typedef std::future<DeleteDeviceCertificateOutcome> DeleteDeviceCertificateOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::DeleteDeviceCertificateRequest&, DeleteDeviceCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDeviceCertificateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteInsPublicEndpointResponse> DeleteInsPublicEndpointOutcome;
+                typedef std::future<DeleteInsPublicEndpointOutcome> DeleteInsPublicEndpointOutcomeCallable;
+                typedef std::function<void(const MqttClient*, const Model::DeleteInsPublicEndpointRequest&, DeleteInsPublicEndpointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInsPublicEndpointAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteInstanceResponse> DeleteInstanceOutcome;
+                typedef std::future<DeleteInstanceOutcome> DeleteInstanceOutcomeCallable;
+                typedef std::function<void(const MqttClient*, const Model::DeleteInstanceRequest&, DeleteInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteTopicResponse> DeleteTopicOutcome;
                 typedef std::future<DeleteTopicOutcome> DeleteTopicOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::DeleteTopicRequest&, DeleteTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTopicAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteUserResponse> DeleteUserOutcome;
+                typedef std::future<DeleteUserOutcome> DeleteUserOutcomeCallable;
+                typedef std::function<void(const MqttClient*, const Model::DeleteUserRequest&, DeleteUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAuthenticatorResponse> DescribeAuthenticatorOutcome;
                 typedef std::future<DescribeAuthenticatorOutcome> DescribeAuthenticatorOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::DescribeAuthenticatorRequest&, DescribeAuthenticatorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuthenticatorAsyncHandler;
@@ -129,6 +169,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDeviceCertificatesResponse> DescribeDeviceCertificatesOutcome;
                 typedef std::future<DescribeDeviceCertificatesOutcome> DescribeDeviceCertificatesOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::DescribeDeviceCertificatesRequest&, DescribeDeviceCertificatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceCertificatesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInsPublicEndpointsResponse> DescribeInsPublicEndpointsOutcome;
+                typedef std::future<DescribeInsPublicEndpointsOutcome> DescribeInsPublicEndpointsOutcomeCallable;
+                typedef std::function<void(const MqttClient*, const Model::DescribeInsPublicEndpointsRequest&, DescribeInsPublicEndpointsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInsPublicEndpointsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstanceResponse> DescribeInstanceOutcome;
                 typedef std::future<DescribeInstanceOutcome> DescribeInstanceOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::DescribeInstanceRequest&, DescribeInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceAsyncHandler;
@@ -141,9 +184,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTopicListResponse> DescribeTopicListOutcome;
                 typedef std::future<DescribeTopicListOutcome> DescribeTopicListOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::DescribeTopicListRequest&, DescribeTopicListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopicListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUserListResponse> DescribeUserListOutcome;
+                typedef std::future<DescribeUserListOutcome> DescribeUserListOutcomeCallable;
+                typedef std::function<void(const MqttClient*, const Model::DescribeUserListRequest&, DescribeUserListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserListAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAuthorizationPolicyResponse> ModifyAuthorizationPolicyOutcome;
                 typedef std::future<ModifyAuthorizationPolicyOutcome> ModifyAuthorizationPolicyOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::ModifyAuthorizationPolicyRequest&, ModifyAuthorizationPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAuthorizationPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyInsPublicEndpointResponse> ModifyInsPublicEndpointOutcome;
+                typedef std::future<ModifyInsPublicEndpointOutcome> ModifyInsPublicEndpointOutcomeCallable;
+                typedef std::function<void(const MqttClient*, const Model::ModifyInsPublicEndpointRequest&, ModifyInsPublicEndpointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInsPublicEndpointAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyInstanceResponse> ModifyInstanceOutcome;
+                typedef std::future<ModifyInstanceOutcome> ModifyInstanceOutcomeCallable;
+                typedef std::function<void(const MqttClient*, const Model::ModifyInstanceRequest&, ModifyInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyJWKSAuthenticatorResponse> ModifyJWKSAuthenticatorOutcome;
                 typedef std::future<ModifyJWKSAuthenticatorOutcome> ModifyJWKSAuthenticatorOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::ModifyJWKSAuthenticatorRequest&, ModifyJWKSAuthenticatorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyJWKSAuthenticatorAsyncHandler;
@@ -153,6 +205,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyTopicResponse> ModifyTopicOutcome;
                 typedef std::future<ModifyTopicOutcome> ModifyTopicOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::ModifyTopicRequest&, ModifyTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTopicAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyUserResponse> ModifyUserOutcome;
+                typedef std::future<ModifyUserOutcome> ModifyUserOutcomeCallable;
+                typedef std::function<void(const MqttClient*, const Model::ModifyUserRequest&, ModifyUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserAsyncHandler;
                 typedef Outcome<Core::Error, Model::RegisterDeviceCertificateResponse> RegisterDeviceCertificateOutcome;
                 typedef std::future<RegisterDeviceCertificateOutcome> RegisterDeviceCertificateOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::RegisterDeviceCertificateRequest&, RegisterDeviceCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RegisterDeviceCertificateAsyncHandler;
@@ -184,6 +239,24 @@ namespace TencentCloud
                 CreateAuthorizationPolicyOutcomeCallable CreateAuthorizationPolicyCallable(const Model::CreateAuthorizationPolicyRequest& request);
 
                 /**
+                 *为MQTT实例创建公网接入点
+                 * @param req CreateInsPublicEndpointRequest
+                 * @return CreateInsPublicEndpointOutcome
+                 */
+                CreateInsPublicEndpointOutcome CreateInsPublicEndpoint(const Model::CreateInsPublicEndpointRequest &request);
+                void CreateInsPublicEndpointAsync(const Model::CreateInsPublicEndpointRequest& request, const CreateInsPublicEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateInsPublicEndpointOutcomeCallable CreateInsPublicEndpointCallable(const Model::CreateInsPublicEndpointRequest& request);
+
+                /**
+                 *购买新的MQTT实例
+                 * @param req CreateInstanceRequest
+                 * @return CreateInstanceOutcome
+                 */
+                CreateInstanceOutcome CreateInstance(const Model::CreateInstanceRequest &request);
+                void CreateInstanceAsync(const Model::CreateInstanceRequest& request, const CreateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateInstanceOutcomeCallable CreateInstanceCallable(const Model::CreateInstanceRequest& request);
+
+                /**
                  *创建一个jwks的认证
                  * @param req CreateJWKSAuthenticatorRequest
                  * @return CreateJWKSAuthenticatorOutcome
@@ -209,6 +282,15 @@ namespace TencentCloud
                 CreateTopicOutcome CreateTopic(const Model::CreateTopicRequest &request);
                 void CreateTopicAsync(const Model::CreateTopicRequest& request, const CreateTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateTopicOutcomeCallable CreateTopicCallable(const Model::CreateTopicRequest& request);
+
+                /**
+                 *添加mqtt角色
+                 * @param req CreateUserRequest
+                 * @return CreateUserOutcome
+                 */
+                CreateUserOutcome CreateUser(const Model::CreateUserRequest &request);
+                void CreateUserAsync(const Model::CreateUserRequest& request, const CreateUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateUserOutcomeCallable CreateUserCallable(const Model::CreateUserRequest& request);
 
                 /**
                  *失效Ca证书
@@ -247,6 +329,24 @@ namespace TencentCloud
                 DeleteDeviceCertificateOutcomeCallable DeleteDeviceCertificateCallable(const Model::DeleteDeviceCertificateRequest& request);
 
                 /**
+                 *删除MQTT实例的公网接入点
+                 * @param req DeleteInsPublicEndpointRequest
+                 * @return DeleteInsPublicEndpointOutcome
+                 */
+                DeleteInsPublicEndpointOutcome DeleteInsPublicEndpoint(const Model::DeleteInsPublicEndpointRequest &request);
+                void DeleteInsPublicEndpointAsync(const Model::DeleteInsPublicEndpointRequest& request, const DeleteInsPublicEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteInsPublicEndpointOutcomeCallable DeleteInsPublicEndpointCallable(const Model::DeleteInsPublicEndpointRequest& request);
+
+                /**
+                 *删除MQTT实例
+                 * @param req DeleteInstanceRequest
+                 * @return DeleteInstanceOutcome
+                 */
+                DeleteInstanceOutcome DeleteInstance(const Model::DeleteInstanceRequest &request);
+                void DeleteInstanceAsync(const Model::DeleteInstanceRequest& request, const DeleteInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteInstanceOutcomeCallable DeleteInstanceCallable(const Model::DeleteInstanceRequest& request);
+
+                /**
                  *删除MQTT主题
                  * @param req DeleteTopicRequest
                  * @return DeleteTopicOutcome
@@ -254,6 +354,15 @@ namespace TencentCloud
                 DeleteTopicOutcome DeleteTopic(const Model::DeleteTopicRequest &request);
                 void DeleteTopicAsync(const Model::DeleteTopicRequest& request, const DeleteTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteTopicOutcomeCallable DeleteTopicCallable(const Model::DeleteTopicRequest& request);
+
+                /**
+                 *删除MQTT访问用户
+                 * @param req DeleteUserRequest
+                 * @return DeleteUserOutcome
+                 */
+                DeleteUserOutcome DeleteUser(const Model::DeleteUserRequest &request);
+                void DeleteUserAsync(const Model::DeleteUserRequest& request, const DeleteUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteUserOutcomeCallable DeleteUserCallable(const Model::DeleteUserRequest& request);
 
                 /**
                  *查询MQTT认证器
@@ -290,6 +399,15 @@ namespace TencentCloud
                 DescribeDeviceCertificatesOutcome DescribeDeviceCertificates(const Model::DescribeDeviceCertificatesRequest &request);
                 void DescribeDeviceCertificatesAsync(const Model::DescribeDeviceCertificatesRequest& request, const DescribeDeviceCertificatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDeviceCertificatesOutcomeCallable DescribeDeviceCertificatesCallable(const Model::DescribeDeviceCertificatesRequest& request);
+
+                /**
+                 *查询MQTT实例公网接入点
+                 * @param req DescribeInsPublicEndpointsRequest
+                 * @return DescribeInsPublicEndpointsOutcome
+                 */
+                DescribeInsPublicEndpointsOutcome DescribeInsPublicEndpoints(const Model::DescribeInsPublicEndpointsRequest &request);
+                void DescribeInsPublicEndpointsAsync(const Model::DescribeInsPublicEndpointsRequest& request, const DescribeInsPublicEndpointsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInsPublicEndpointsOutcomeCallable DescribeInsPublicEndpointsCallable(const Model::DescribeInsPublicEndpointsRequest& request);
 
                 /**
                  *查询实例信息
@@ -336,6 +454,17 @@ namespace TencentCloud
                 DescribeTopicListOutcomeCallable DescribeTopicListCallable(const Model::DescribeTopicListRequest& request);
 
                 /**
+                 *查询用户列表，Filter参数使用说明如下：
+
+1. Username，用户名称模糊搜索
+                 * @param req DescribeUserListRequest
+                 * @return DescribeUserListOutcome
+                 */
+                DescribeUserListOutcome DescribeUserList(const Model::DescribeUserListRequest &request);
+                void DescribeUserListAsync(const Model::DescribeUserListRequest& request, const DescribeUserListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUserListOutcomeCallable DescribeUserListCallable(const Model::DescribeUserListRequest& request);
+
+                /**
                  *修改策略规则
                  * @param req ModifyAuthorizationPolicyRequest
                  * @return ModifyAuthorizationPolicyOutcome
@@ -343,6 +472,24 @@ namespace TencentCloud
                 ModifyAuthorizationPolicyOutcome ModifyAuthorizationPolicy(const Model::ModifyAuthorizationPolicyRequest &request);
                 void ModifyAuthorizationPolicyAsync(const Model::ModifyAuthorizationPolicyRequest& request, const ModifyAuthorizationPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyAuthorizationPolicyOutcomeCallable ModifyAuthorizationPolicyCallable(const Model::ModifyAuthorizationPolicyRequest& request);
+
+                /**
+                 *更新MQTT实例公网接入点
+                 * @param req ModifyInsPublicEndpointRequest
+                 * @return ModifyInsPublicEndpointOutcome
+                 */
+                ModifyInsPublicEndpointOutcome ModifyInsPublicEndpoint(const Model::ModifyInsPublicEndpointRequest &request);
+                void ModifyInsPublicEndpointAsync(const Model::ModifyInsPublicEndpointRequest& request, const ModifyInsPublicEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInsPublicEndpointOutcomeCallable ModifyInsPublicEndpointCallable(const Model::ModifyInsPublicEndpointRequest& request);
+
+                /**
+                 *修改实例属性
+                 * @param req ModifyInstanceRequest
+                 * @return ModifyInstanceOutcome
+                 */
+                ModifyInstanceOutcome ModifyInstance(const Model::ModifyInstanceRequest &request);
+                void ModifyInstanceAsync(const Model::ModifyInstanceRequest& request, const ModifyInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInstanceOutcomeCallable ModifyInstanceCallable(const Model::ModifyInstanceRequest& request);
 
                 /**
                  *修改MQTT JWKS 认证器
@@ -370,6 +517,15 @@ namespace TencentCloud
                 ModifyTopicOutcome ModifyTopic(const Model::ModifyTopicRequest &request);
                 void ModifyTopicAsync(const Model::ModifyTopicRequest& request, const ModifyTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyTopicOutcomeCallable ModifyTopicCallable(const Model::ModifyTopicRequest& request);
+
+                /**
+                 *修改MQTT角色
+                 * @param req ModifyUserRequest
+                 * @return ModifyUserOutcome
+                 */
+                ModifyUserOutcome ModifyUser(const Model::ModifyUserRequest &request);
+                void ModifyUserAsync(const Model::ModifyUserRequest& request, const ModifyUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyUserOutcomeCallable ModifyUserCallable(const Model::ModifyUserRequest& request);
 
                 /**
                  *注册设备证书

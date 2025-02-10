@@ -51,7 +51,8 @@ Acl::Acl() :
     m_allowAccessCredentialHasBeenSet(false),
     m_aCTemplateSetHasBeenSet(false),
     m_whiteCmdsHasBeenSet(false),
-    m_allowKeyboardLoggerHasBeenSet(false)
+    m_allowKeyboardLoggerHasBeenSet(false),
+    m_appAssetSetHasBeenSet(false)
 {
 }
 
@@ -443,6 +444,26 @@ CoreInternalOutcome Acl::Deserialize(const rapidjson::Value &value)
         m_allowKeyboardLoggerHasBeenSet = true;
     }
 
+    if (value.HasMember("AppAssetSet") && !value["AppAssetSet"].IsNull())
+    {
+        if (!value["AppAssetSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Acl.AppAssetSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AppAssetSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AppAsset item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_appAssetSet.push_back(item);
+        }
+        m_appAssetSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -749,6 +770,21 @@ void Acl::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorTy
         string key = "AllowKeyboardLogger";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_allowKeyboardLogger, allocator);
+    }
+
+    if (m_appAssetSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppAssetSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_appAssetSet.begin(); itr != m_appAssetSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1248,5 +1284,21 @@ void Acl::SetAllowKeyboardLogger(const bool& _allowKeyboardLogger)
 bool Acl::AllowKeyboardLoggerHasBeenSet() const
 {
     return m_allowKeyboardLoggerHasBeenSet;
+}
+
+vector<AppAsset> Acl::GetAppAssetSet() const
+{
+    return m_appAssetSet;
+}
+
+void Acl::SetAppAssetSet(const vector<AppAsset>& _appAssetSet)
+{
+    m_appAssetSet = _appAssetSet;
+    m_appAssetSetHasBeenSet = true;
+}
+
+bool Acl::AppAssetSetHasBeenSet() const
+{
+    return m_appAssetSetHasBeenSet;
 }
 

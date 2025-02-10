@@ -335,18 +335,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网卡名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NetInfoName 网卡名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNetInfoName() const;
 
                     /**
                      * 设置网卡名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _netInfoName 网卡名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNetInfoName(const std::string& _netInfoName);
@@ -360,18 +356,14 @@ namespace TencentCloud
 
                     /**
                      * 获取下行实时速率（浮点数类型代替上一版本DataRx的整型）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DownRate 下行实时速率（浮点数类型代替上一版本DataRx的整型）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetDownRate() const;
 
                     /**
                      * 设置下行实时速率（浮点数类型代替上一版本DataRx的整型）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _downRate 下行实时速率（浮点数类型代替上一版本DataRx的整型）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDownRate(const double& _downRate);
@@ -385,18 +377,14 @@ namespace TencentCloud
 
                     /**
                      * 获取上行实时速率（浮点数类型代替上一版本TxRate的整型）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpRate 上行实时速率（浮点数类型代替上一版本TxRate的整型）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetUpRate() const;
 
                     /**
                      * 设置上行实时速率（浮点数类型代替上一版本TxRate的整型）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _upRate 上行实时速率（浮点数类型代替上一版本TxRate的整型）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpRate(const double& _upRate);
@@ -492,21 +480,18 @@ namespace TencentCloud
 
                     /**
                      * 网卡名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_netInfoName;
                     bool m_netInfoNameHasBeenSet;
 
                     /**
                      * 下行实时速率（浮点数类型代替上一版本DataRx的整型）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_downRate;
                     bool m_downRateHasBeenSet;
 
                     /**
                      * 上行实时速率（浮点数类型代替上一版本TxRate的整型）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_upRate;
                     bool m_upRateHasBeenSet;

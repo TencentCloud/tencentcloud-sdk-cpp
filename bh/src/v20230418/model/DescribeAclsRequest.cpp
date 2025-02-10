@@ -30,6 +30,7 @@ DescribeAclsRequest::DescribeAclsRequest() :
     m_exactHasBeenSet(false),
     m_authorizedUserIdSetHasBeenSet(false),
     m_authorizedDeviceIdSetHasBeenSet(false),
+    m_authorizedAppAssetIdSetHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_departmentIdHasBeenSet(false),
     m_exactAccountHasBeenSet(false),
@@ -110,6 +111,19 @@ string DescribeAclsRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_authorizedDeviceIdSet.begin(); itr != m_authorizedDeviceIdSet.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
+    }
+
+    if (m_authorizedAppAssetIdSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuthorizedAppAssetIdSet";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_authorizedAppAssetIdSet.begin(); itr != m_authorizedAppAssetIdSet.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
@@ -272,6 +286,22 @@ void DescribeAclsRequest::SetAuthorizedDeviceIdSet(const vector<uint64_t>& _auth
 bool DescribeAclsRequest::AuthorizedDeviceIdSetHasBeenSet() const
 {
     return m_authorizedDeviceIdSetHasBeenSet;
+}
+
+vector<uint64_t> DescribeAclsRequest::GetAuthorizedAppAssetIdSet() const
+{
+    return m_authorizedAppAssetIdSet;
+}
+
+void DescribeAclsRequest::SetAuthorizedAppAssetIdSet(const vector<uint64_t>& _authorizedAppAssetIdSet)
+{
+    m_authorizedAppAssetIdSet = _authorizedAppAssetIdSet;
+    m_authorizedAppAssetIdSetHasBeenSet = true;
+}
+
+bool DescribeAclsRequest::AuthorizedAppAssetIdSetHasBeenSet() const
+{
+    return m_authorizedAppAssetIdSetHasBeenSet;
 }
 
 uint64_t DescribeAclsRequest::GetStatus() const

@@ -30,6 +30,7 @@
 #include <tencentcloud/bh/v20230418/model/CmdTemplate.h>
 #include <tencentcloud/bh/v20230418/model/Department.h>
 #include <tencentcloud/bh/v20230418/model/ACTemplate.h>
+#include <tencentcloud/bh/v20230418/model/AppAsset.h>
 
 
 namespace TencentCloud
@@ -711,6 +712,27 @@ namespace TencentCloud
                      */
                     bool AllowKeyboardLoggerHasBeenSet() const;
 
+                    /**
+                     * 获取关联的应用资产列表
+                     * @return AppAssetSet 关联的应用资产列表
+                     * 
+                     */
+                    std::vector<AppAsset> GetAppAssetSet() const;
+
+                    /**
+                     * 设置关联的应用资产列表
+                     * @param _appAssetSet 关联的应用资产列表
+                     * 
+                     */
+                    void SetAppAssetSet(const std::vector<AppAsset>& _appAssetSet);
+
+                    /**
+                     * 判断参数 AppAssetSet 是否已赋值
+                     * @return AppAssetSet 是否已赋值
+                     * 
+                     */
+                    bool AppAssetSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -900,6 +922,12 @@ namespace TencentCloud
                      */
                     bool m_allowKeyboardLogger;
                     bool m_allowKeyboardLoggerHasBeenSet;
+
+                    /**
+                     * 关联的应用资产列表
+                     */
+                    std::vector<AppAsset> m_appAssetSet;
+                    bool m_appAssetSetHasBeenSet;
 
                 };
             }

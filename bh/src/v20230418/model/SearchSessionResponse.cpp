@@ -24,7 +24,8 @@ using namespace TencentCloud::Bh::V20230418::Model;
 using namespace std;
 
 SearchSessionResponse::SearchSessionResponse() :
-    m_totalCountHasBeenSet(false)
+    m_totalCountHasBeenSet(false),
+    m_sessionSetHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,26 @@ CoreInternalOutcome SearchSessionResponse::Deserialize(const string &payload)
         m_totalCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SessionSet") && !rsp["SessionSet"].IsNull())
+    {
+        if (!rsp["SessionSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SessionSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["SessionSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SessionResult item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_sessionSet.push_back(item);
+        }
+        m_sessionSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +109,21 @@ string SearchSessionResponse::ToJsonString() const
         string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalCount, allocator);
+    }
+
+    if (m_sessionSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_sessionSet.begin(); itr != m_sessionSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +146,16 @@ uint64_t SearchSessionResponse::GetTotalCount() const
 bool SearchSessionResponse::TotalCountHasBeenSet() const
 {
     return m_totalCountHasBeenSet;
+}
+
+vector<SessionResult> SearchSessionResponse::GetSessionSet() const
+{
+    return m_sessionSet;
+}
+
+bool SearchSessionResponse::SessionSetHasBeenSet() const
+{
+    return m_sessionSetHasBeenSet;
 }
 
 

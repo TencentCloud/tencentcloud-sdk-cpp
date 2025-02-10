@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取权限规则列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccessRules 权限规则列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AccessRule> GetAccessRules() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 权限规则列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AccessRule> m_accessRules;
                     bool m_accessRulesHasBeenSet;

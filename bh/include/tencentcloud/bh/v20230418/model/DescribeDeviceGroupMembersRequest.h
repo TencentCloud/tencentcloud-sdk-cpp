@@ -191,6 +191,27 @@ namespace TencentCloud
                     bool KindHasBeenSet() const;
 
                     /**
+                     * 获取资产类型集合，1 - Linux，2 - Windows，3 - MySQL，4 - SQLServer
+                     * @return KindSet 资产类型集合，1 - Linux，2 - Windows，3 - MySQL，4 - SQLServer
+                     * 
+                     */
+                    std::vector<uint64_t> GetKindSet() const;
+
+                    /**
+                     * 设置资产类型集合，1 - Linux，2 - Windows，3 - MySQL，4 - SQLServer
+                     * @param _kindSet 资产类型集合，1 - Linux，2 - Windows，3 - MySQL，4 - SQLServer
+                     * 
+                     */
+                    void SetKindSet(const std::vector<uint64_t>& _kindSet);
+
+                    /**
+                     * 判断参数 KindSet 是否已赋值
+                     * @return KindSet 是否已赋值
+                     * 
+                     */
+                    bool KindSetHasBeenSet() const;
+
+                    /**
                      * 获取所属部门ID
                      * @return DepartmentId 所属部门ID
                      * 
@@ -275,6 +296,12 @@ namespace TencentCloud
                      */
                     uint64_t m_kind;
                     bool m_kindHasBeenSet;
+
+                    /**
+                     * 资产类型集合，1 - Linux，2 - Windows，3 - MySQL，4 - SQLServer
+                     */
+                    std::vector<uint64_t> m_kindSet;
+                    bool m_kindSetHasBeenSet;
 
                     /**
                      * 所属部门ID

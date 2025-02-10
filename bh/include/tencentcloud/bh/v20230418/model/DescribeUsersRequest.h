@@ -216,6 +216,27 @@ namespace TencentCloud
                     bool AuthorizedDeviceIdSetHasBeenSet() const;
 
                     /**
+                     * 获取查询具有指定应用资产ID访问权限的用户
+                     * @return AuthorizedAppAssetIdSet 查询具有指定应用资产ID访问权限的用户
+                     * 
+                     */
+                    std::vector<uint64_t> GetAuthorizedAppAssetIdSet() const;
+
+                    /**
+                     * 设置查询具有指定应用资产ID访问权限的用户
+                     * @param _authorizedAppAssetIdSet 查询具有指定应用资产ID访问权限的用户
+                     * 
+                     */
+                    void SetAuthorizedAppAssetIdSet(const std::vector<uint64_t>& _authorizedAppAssetIdSet);
+
+                    /**
+                     * 判断参数 AuthorizedAppAssetIdSet 是否已赋值
+                     * @return AuthorizedAppAssetIdSet 是否已赋值
+                     * 
+                     */
+                    bool AuthorizedAppAssetIdSetHasBeenSet() const;
+
+                    /**
                      * 获取认证方式，0 - 本地, 1 - LDAP, 2 - OAuth, 不传为全部
                      * @return AuthTypeSet 认证方式，0 - 本地, 1 - LDAP, 2 - OAuth, 不传为全部
                      * 
@@ -332,6 +353,12 @@ namespace TencentCloud
                      */
                     std::vector<uint64_t> m_authorizedDeviceIdSet;
                     bool m_authorizedDeviceIdSetHasBeenSet;
+
+                    /**
+                     * 查询具有指定应用资产ID访问权限的用户
+                     */
+                    std::vector<uint64_t> m_authorizedAppAssetIdSet;
+                    bool m_authorizedAppAssetIdSetHasBeenSet;
 
                     /**
                      * 认证方式，0 - 本地, 1 - LDAP, 2 - OAuth, 不传为全部

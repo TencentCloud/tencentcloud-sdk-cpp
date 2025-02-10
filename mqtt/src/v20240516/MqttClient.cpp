@@ -126,6 +126,92 @@ MqttClient::CreateAuthorizationPolicyOutcomeCallable MqttClient::CreateAuthoriza
     return task->get_future();
 }
 
+MqttClient::CreateInsPublicEndpointOutcome MqttClient::CreateInsPublicEndpoint(const CreateInsPublicEndpointRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateInsPublicEndpoint");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateInsPublicEndpointResponse rsp = CreateInsPublicEndpointResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateInsPublicEndpointOutcome(rsp);
+        else
+            return CreateInsPublicEndpointOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateInsPublicEndpointOutcome(outcome.GetError());
+    }
+}
+
+void MqttClient::CreateInsPublicEndpointAsync(const CreateInsPublicEndpointRequest& request, const CreateInsPublicEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateInsPublicEndpoint(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MqttClient::CreateInsPublicEndpointOutcomeCallable MqttClient::CreateInsPublicEndpointCallable(const CreateInsPublicEndpointRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateInsPublicEndpointOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateInsPublicEndpoint(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MqttClient::CreateInstanceOutcome MqttClient::CreateInstance(const CreateInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateInstanceResponse rsp = CreateInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateInstanceOutcome(rsp);
+        else
+            return CreateInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateInstanceOutcome(outcome.GetError());
+    }
+}
+
+void MqttClient::CreateInstanceAsync(const CreateInstanceRequest& request, const CreateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MqttClient::CreateInstanceOutcomeCallable MqttClient::CreateInstanceCallable(const CreateInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MqttClient::CreateJWKSAuthenticatorOutcome MqttClient::CreateJWKSAuthenticator(const CreateJWKSAuthenticatorRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateJWKSAuthenticator");
@@ -248,6 +334,49 @@ MqttClient::CreateTopicOutcomeCallable MqttClient::CreateTopicCallable(const Cre
         [this, request]()
         {
             return this->CreateTopic(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MqttClient::CreateUserOutcome MqttClient::CreateUser(const CreateUserRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateUser");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateUserResponse rsp = CreateUserResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateUserOutcome(rsp);
+        else
+            return CreateUserOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateUserOutcome(outcome.GetError());
+    }
+}
+
+void MqttClient::CreateUserAsync(const CreateUserRequest& request, const CreateUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateUser(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MqttClient::CreateUserOutcomeCallable MqttClient::CreateUserCallable(const CreateUserRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateUserOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateUser(request);
         }
     );
 
@@ -427,6 +556,92 @@ MqttClient::DeleteDeviceCertificateOutcomeCallable MqttClient::DeleteDeviceCerti
     return task->get_future();
 }
 
+MqttClient::DeleteInsPublicEndpointOutcome MqttClient::DeleteInsPublicEndpoint(const DeleteInsPublicEndpointRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteInsPublicEndpoint");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteInsPublicEndpointResponse rsp = DeleteInsPublicEndpointResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteInsPublicEndpointOutcome(rsp);
+        else
+            return DeleteInsPublicEndpointOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteInsPublicEndpointOutcome(outcome.GetError());
+    }
+}
+
+void MqttClient::DeleteInsPublicEndpointAsync(const DeleteInsPublicEndpointRequest& request, const DeleteInsPublicEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteInsPublicEndpoint(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MqttClient::DeleteInsPublicEndpointOutcomeCallable MqttClient::DeleteInsPublicEndpointCallable(const DeleteInsPublicEndpointRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteInsPublicEndpointOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteInsPublicEndpoint(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MqttClient::DeleteInstanceOutcome MqttClient::DeleteInstance(const DeleteInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteInstanceResponse rsp = DeleteInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteInstanceOutcome(rsp);
+        else
+            return DeleteInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteInstanceOutcome(outcome.GetError());
+    }
+}
+
+void MqttClient::DeleteInstanceAsync(const DeleteInstanceRequest& request, const DeleteInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MqttClient::DeleteInstanceOutcomeCallable MqttClient::DeleteInstanceCallable(const DeleteInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MqttClient::DeleteTopicOutcome MqttClient::DeleteTopic(const DeleteTopicRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteTopic");
@@ -463,6 +678,49 @@ MqttClient::DeleteTopicOutcomeCallable MqttClient::DeleteTopicCallable(const Del
         [this, request]()
         {
             return this->DeleteTopic(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MqttClient::DeleteUserOutcome MqttClient::DeleteUser(const DeleteUserRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteUser");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteUserResponse rsp = DeleteUserResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteUserOutcome(rsp);
+        else
+            return DeleteUserOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteUserOutcome(outcome.GetError());
+    }
+}
+
+void MqttClient::DeleteUserAsync(const DeleteUserRequest& request, const DeleteUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteUser(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MqttClient::DeleteUserOutcomeCallable MqttClient::DeleteUserCallable(const DeleteUserRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteUserOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteUser(request);
         }
     );
 
@@ -642,6 +900,49 @@ MqttClient::DescribeDeviceCertificatesOutcomeCallable MqttClient::DescribeDevice
     return task->get_future();
 }
 
+MqttClient::DescribeInsPublicEndpointsOutcome MqttClient::DescribeInsPublicEndpoints(const DescribeInsPublicEndpointsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInsPublicEndpoints");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInsPublicEndpointsResponse rsp = DescribeInsPublicEndpointsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInsPublicEndpointsOutcome(rsp);
+        else
+            return DescribeInsPublicEndpointsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInsPublicEndpointsOutcome(outcome.GetError());
+    }
+}
+
+void MqttClient::DescribeInsPublicEndpointsAsync(const DescribeInsPublicEndpointsRequest& request, const DescribeInsPublicEndpointsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInsPublicEndpoints(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MqttClient::DescribeInsPublicEndpointsOutcomeCallable MqttClient::DescribeInsPublicEndpointsCallable(const DescribeInsPublicEndpointsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInsPublicEndpointsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInsPublicEndpoints(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MqttClient::DescribeInstanceOutcome MqttClient::DescribeInstance(const DescribeInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeInstance");
@@ -814,6 +1115,49 @@ MqttClient::DescribeTopicListOutcomeCallable MqttClient::DescribeTopicListCallab
     return task->get_future();
 }
 
+MqttClient::DescribeUserListOutcome MqttClient::DescribeUserList(const DescribeUserListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUserList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUserListResponse rsp = DescribeUserListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUserListOutcome(rsp);
+        else
+            return DescribeUserListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUserListOutcome(outcome.GetError());
+    }
+}
+
+void MqttClient::DescribeUserListAsync(const DescribeUserListRequest& request, const DescribeUserListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUserList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MqttClient::DescribeUserListOutcomeCallable MqttClient::DescribeUserListCallable(const DescribeUserListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUserListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUserList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MqttClient::ModifyAuthorizationPolicyOutcome MqttClient::ModifyAuthorizationPolicy(const ModifyAuthorizationPolicyRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyAuthorizationPolicy");
@@ -850,6 +1194,92 @@ MqttClient::ModifyAuthorizationPolicyOutcomeCallable MqttClient::ModifyAuthoriza
         [this, request]()
         {
             return this->ModifyAuthorizationPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MqttClient::ModifyInsPublicEndpointOutcome MqttClient::ModifyInsPublicEndpoint(const ModifyInsPublicEndpointRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInsPublicEndpoint");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInsPublicEndpointResponse rsp = ModifyInsPublicEndpointResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInsPublicEndpointOutcome(rsp);
+        else
+            return ModifyInsPublicEndpointOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInsPublicEndpointOutcome(outcome.GetError());
+    }
+}
+
+void MqttClient::ModifyInsPublicEndpointAsync(const ModifyInsPublicEndpointRequest& request, const ModifyInsPublicEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyInsPublicEndpoint(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MqttClient::ModifyInsPublicEndpointOutcomeCallable MqttClient::ModifyInsPublicEndpointCallable(const ModifyInsPublicEndpointRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyInsPublicEndpointOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyInsPublicEndpoint(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MqttClient::ModifyInstanceOutcome MqttClient::ModifyInstance(const ModifyInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInstanceResponse rsp = ModifyInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInstanceOutcome(rsp);
+        else
+            return ModifyInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInstanceOutcome(outcome.GetError());
+    }
+}
+
+void MqttClient::ModifyInstanceAsync(const ModifyInstanceRequest& request, const ModifyInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MqttClient::ModifyInstanceOutcomeCallable MqttClient::ModifyInstanceCallable(const ModifyInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyInstance(request);
         }
     );
 
@@ -979,6 +1409,49 @@ MqttClient::ModifyTopicOutcomeCallable MqttClient::ModifyTopicCallable(const Mod
         [this, request]()
         {
             return this->ModifyTopic(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MqttClient::ModifyUserOutcome MqttClient::ModifyUser(const ModifyUserRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyUser");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyUserResponse rsp = ModifyUserResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyUserOutcome(rsp);
+        else
+            return ModifyUserOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyUserOutcome(outcome.GetError());
+    }
+}
+
+void MqttClient::ModifyUserAsync(const ModifyUserRequest& request, const ModifyUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyUser(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MqttClient::ModifyUserOutcomeCallable MqttClient::ModifyUserCallable(const ModifyUserRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyUserOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyUser(request);
         }
     );
 
