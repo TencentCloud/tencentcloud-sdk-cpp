@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取注册成功的用户列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Users 注册成功的用户列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BatchUserInfo> GetUsers() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 注册成功的用户列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BatchUserInfo> m_users;
                     bool m_usersHasBeenSet;

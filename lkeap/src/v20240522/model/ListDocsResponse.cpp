@@ -24,6 +24,7 @@ using namespace TencentCloud::Lkeap::V20240522::Model;
 using namespace std;
 
 ListDocsResponse::ListDocsResponse() :
+    m_totalCountHasBeenSet(false),
     m_listHasBeenSet(false)
 {
 }
@@ -62,6 +63,16 @@ CoreInternalOutcome ListDocsResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetInt64();
+        m_totalCountHasBeenSet = true;
+    }
+
     if (rsp.HasMember("List") && !rsp["List"].IsNull())
     {
         if (!rsp["List"].IsArray())
@@ -92,6 +103,14 @@ string ListDocsResponse::ToJsonString() const
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
+    if (m_totalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
+    }
+
     if (m_listHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -118,6 +137,16 @@ string ListDocsResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+int64_t ListDocsResponse::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool ListDocsResponse::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
+}
 
 vector<DocItem> ListDocsResponse::GetList() const
 {

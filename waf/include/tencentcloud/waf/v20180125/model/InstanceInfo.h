@@ -957,6 +957,48 @@ namespace TencentCloud
                      */
                     bool FreeDelayFlagHasBeenSet() const;
 
+                    /**
+                     * 获取最近3天最大qps
+                     * @return Last3MaxQPS 最近3天最大qps
+                     * 
+                     */
+                    uint64_t GetLast3MaxQPS() const;
+
+                    /**
+                     * 设置最近3天最大qps
+                     * @param _last3MaxQPS 最近3天最大qps
+                     * 
+                     */
+                    void SetLast3MaxQPS(const uint64_t& _last3MaxQPS);
+
+                    /**
+                     * 判断参数 Last3MaxQPS 是否已赋值
+                     * @return Last3MaxQPS 是否已赋值
+                     * 
+                     */
+                    bool Last3MaxQPSHasBeenSet() const;
+
+                    /**
+                     * 获取最近3天最大带宽
+                     * @return Last3MaxBandwidth 最近3天最大带宽
+                     * 
+                     */
+                    uint64_t GetLast3MaxBandwidth() const;
+
+                    /**
+                     * 设置最近3天最大带宽
+                     * @param _last3MaxBandwidth 最近3天最大带宽
+                     * 
+                     */
+                    void SetLast3MaxBandwidth(const uint64_t& _last3MaxBandwidth);
+
+                    /**
+                     * 判断参数 Last3MaxBandwidth 是否已赋值
+                     * @return Last3MaxBandwidth 是否已赋值
+                     * 
+                     */
+                    bool Last3MaxBandwidthHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1214,6 +1256,18 @@ namespace TencentCloud
                      */
                     uint64_t m_freeDelayFlag;
                     bool m_freeDelayFlagHasBeenSet;
+
+                    /**
+                     * 最近3天最大qps
+                     */
+                    uint64_t m_last3MaxQPS;
+                    bool m_last3MaxQPSHasBeenSet;
+
+                    /**
+                     * 最近3天最大带宽
+                     */
+                    uint64_t m_last3MaxBandwidth;
+                    bool m_last3MaxBandwidthHasBeenSet;
 
                 };
             }

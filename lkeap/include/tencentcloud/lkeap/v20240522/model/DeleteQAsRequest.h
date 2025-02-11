@@ -42,7 +42,61 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取知识库ID
+                     * @return KnowledgeBaseId 知识库ID
+                     * 
+                     */
+                    std::string GetKnowledgeBaseId() const;
+
+                    /**
+                     * 设置知识库ID
+                     * @param _knowledgeBaseId 知识库ID
+                     * 
+                     */
+                    void SetKnowledgeBaseId(const std::string& _knowledgeBaseId);
+
+                    /**
+                     * 判断参数 KnowledgeBaseId 是否已赋值
+                     * @return KnowledgeBaseId 是否已赋值
+                     * 
+                     */
+                    bool KnowledgeBaseIdHasBeenSet() const;
+
+                    /**
+                     * 获取问答对ID列表。支持批量删除，数量不超过100
+                     * @return QaIds 问答对ID列表。支持批量删除，数量不超过100
+                     * 
+                     */
+                    std::vector<std::string> GetQaIds() const;
+
+                    /**
+                     * 设置问答对ID列表。支持批量删除，数量不超过100
+                     * @param _qaIds 问答对ID列表。支持批量删除，数量不超过100
+                     * 
+                     */
+                    void SetQaIds(const std::vector<std::string>& _qaIds);
+
+                    /**
+                     * 判断参数 QaIds 是否已赋值
+                     * @return QaIds 是否已赋值
+                     * 
+                     */
+                    bool QaIdsHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 知识库ID
+                     */
+                    std::string m_knowledgeBaseId;
+                    bool m_knowledgeBaseIdHasBeenSet;
+
+                    /**
+                     * 问答对ID列表。支持批量删除，数量不超过100
+                     */
+                    std::vector<std::string> m_qaIds;
+                    bool m_qaIdsHasBeenSet;
 
                 };
             }

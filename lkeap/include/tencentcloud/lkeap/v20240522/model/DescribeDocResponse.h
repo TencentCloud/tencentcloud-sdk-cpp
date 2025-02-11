@@ -45,6 +45,80 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取文档ID
+                     * @return DocId 文档ID
+                     * 
+                     */
+                    std::string GetDocId() const;
+
+                    /**
+                     * 判断参数 DocId 是否已赋值
+                     * @return DocId 是否已赋值
+                     * 
+                     */
+                    bool DocIdHasBeenSet() const;
+
+                    /**
+                     * 获取状态，
+
+- Uploading  上传中  
+- Auditing 审核中
+- Parsing 解析中  
+- ParseFailed 解析失败
+- Indexing 创建索引中  
+- IndexFailed 创建索引失败
+- Success  发布成功
+- Failed  失败
+                     * @return Status 状态，
+
+- Uploading  上传中  
+- Auditing 审核中
+- Parsing 解析中  
+- ParseFailed 解析失败
+- Indexing 创建索引中  
+- IndexFailed 创建索引失败
+- Success  发布成功
+- Failed  失败
+                     * 
+                     */
+                    std::string GetStatus() const;
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取文件名
+                     * @return FileName 文件名
+                     * 
+                     */
+                    std::string GetFileName() const;
+
+                    /**
+                     * 判断参数 FileName 是否已赋值
+                     * @return FileName 是否已赋值
+                     * 
+                     */
+                    bool FileNameHasBeenSet() const;
+
+                    /**
+                     * 获取更新时间
+                     * @return UpdateTime 更新时间
+                     * 
+                     */
+                    std::string GetUpdateTime() const;
+
+                    /**
+                     * 判断参数 UpdateTime 是否已赋值
+                     * @return UpdateTime 是否已赋值
+                     * 
+                     */
+                    bool UpdateTimeHasBeenSet() const;
+
+                    /**
                      * 获取属性标签
                      * @return AttributeLabels 属性标签
                      * 
@@ -59,6 +133,39 @@ namespace TencentCloud
                     bool AttributeLabelsHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 文档ID
+                     */
+                    std::string m_docId;
+                    bool m_docIdHasBeenSet;
+
+                    /**
+                     * 状态，
+
+- Uploading  上传中  
+- Auditing 审核中
+- Parsing 解析中  
+- ParseFailed 解析失败
+- Indexing 创建索引中  
+- IndexFailed 创建索引失败
+- Success  发布成功
+- Failed  失败
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * 文件名
+                     */
+                    std::string m_fileName;
+                    bool m_fileNameHasBeenSet;
+
+                    /**
+                     * 更新时间
+                     */
+                    std::string m_updateTime;
+                    bool m_updateTimeHasBeenSet;
 
                     /**
                      * 属性标签

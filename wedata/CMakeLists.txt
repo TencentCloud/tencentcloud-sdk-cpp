@@ -80,6 +80,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/ThresholdValue.h
   include/tencentcloud/wedata/v20210820/model/DescribeFunctionKindsRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeFunctionKindsResponse.h
+  include/tencentcloud/wedata/v20210820/model/DescribeInstanceDetailInfoResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeTemplateDimCountRequest.h
   include/tencentcloud/wedata/v20210820/model/ModifyIntegrationTaskResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeDataSourceListRequest.h
@@ -724,6 +725,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/OpsTaskCanvasDto.h
   include/tencentcloud/wedata/v20210820/model/DescribeRuleTemplatesRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeDataCheckStatResponse.h
+  include/tencentcloud/wedata/v20210820/model/DescribeInstanceDetailInfoRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeIntegrationStatisticsInstanceTrendRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeDsFolderTreeResponse.h
   include/tencentcloud/wedata/v20210820/model/PathNodeDsVO.h
@@ -832,6 +834,7 @@ set(wedata_src
   src/v20210820/model/ThresholdValue.cpp
   src/v20210820/model/DescribeFunctionKindsRequest.cpp
   src/v20210820/model/DescribeFunctionKindsResponse.cpp
+  src/v20210820/model/DescribeInstanceDetailInfoResponse.cpp
   src/v20210820/model/DescribeTemplateDimCountRequest.cpp
   src/v20210820/model/ModifyIntegrationTaskResponse.cpp
   src/v20210820/model/DescribeDataSourceListRequest.cpp
@@ -1476,6 +1479,7 @@ set(wedata_src
   src/v20210820/model/OpsTaskCanvasDto.cpp
   src/v20210820/model/DescribeRuleTemplatesRequest.cpp
   src/v20210820/model/DescribeDataCheckStatResponse.cpp
+  src/v20210820/model/DescribeInstanceDetailInfoRequest.cpp
   src/v20210820/model/DescribeIntegrationStatisticsInstanceTrendRequest.cpp
   src/v20210820/model/DescribeDsFolderTreeResponse.cpp
   src/v20210820/model/PathNodeDsVO.cpp

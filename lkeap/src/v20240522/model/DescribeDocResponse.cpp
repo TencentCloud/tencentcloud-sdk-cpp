@@ -24,6 +24,10 @@ using namespace TencentCloud::Lkeap::V20240522::Model;
 using namespace std;
 
 DescribeDocResponse::DescribeDocResponse() :
+    m_docIdHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_fileNameHasBeenSet(false),
+    m_updateTimeHasBeenSet(false),
     m_attributeLabelsHasBeenSet(false)
 {
 }
@@ -62,6 +66,46 @@ CoreInternalOutcome DescribeDocResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("DocId") && !rsp["DocId"].IsNull())
+    {
+        if (!rsp["DocId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DocId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_docId = string(rsp["DocId"].GetString());
+        m_docIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Status") && !rsp["Status"].IsNull())
+    {
+        if (!rsp["Status"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = string(rsp["Status"].GetString());
+        m_statusHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("FileName") && !rsp["FileName"].IsNull())
+    {
+        if (!rsp["FileName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FileName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileName = string(rsp["FileName"].GetString());
+        m_fileNameHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("UpdateTime") && !rsp["UpdateTime"].IsNull())
+    {
+        if (!rsp["UpdateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateTime = string(rsp["UpdateTime"].GetString());
+        m_updateTimeHasBeenSet = true;
+    }
+
     if (rsp.HasMember("AttributeLabels") && !rsp["AttributeLabels"].IsNull())
     {
         if (!rsp["AttributeLabels"].IsArray())
@@ -92,6 +136,38 @@ string DescribeDocResponse::ToJsonString() const
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
+    if (m_docIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DocId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_docId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_attributeLabelsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -118,6 +194,46 @@ string DescribeDocResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeDocResponse::GetDocId() const
+{
+    return m_docId;
+}
+
+bool DescribeDocResponse::DocIdHasBeenSet() const
+{
+    return m_docIdHasBeenSet;
+}
+
+string DescribeDocResponse::GetStatus() const
+{
+    return m_status;
+}
+
+bool DescribeDocResponse::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+string DescribeDocResponse::GetFileName() const
+{
+    return m_fileName;
+}
+
+bool DescribeDocResponse::FileNameHasBeenSet() const
+{
+    return m_fileNameHasBeenSet;
+}
+
+string DescribeDocResponse::GetUpdateTime() const
+{
+    return m_updateTime;
+}
+
+bool DescribeDocResponse::UpdateTimeHasBeenSet() const
+{
+    return m_updateTimeHasBeenSet;
+}
 
 vector<AttributeLabelReferItem> DescribeDocResponse::GetAttributeLabels() const
 {

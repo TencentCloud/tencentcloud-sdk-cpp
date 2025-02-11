@@ -43,7 +43,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取问答对ID
+                     * @return QaId 问答对ID
+                     * 
+                     */
+                    std::string GetQaId() const;
+
+                    /**
+                     * 判断参数 QaId 是否已赋值
+                     * @return QaId 是否已赋值
+                     * 
+                     */
+                    bool QaIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 问答对ID
+                     */
+                    std::string m_qaId;
+                    bool m_qaIdHasBeenSet;
 
                 };
             }

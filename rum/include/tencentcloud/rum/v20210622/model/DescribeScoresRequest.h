@@ -108,21 +108,21 @@ namespace TencentCloud
                     /**
                      * 获取该参数已废弃
                      * @return IsDemo 该参数已废弃
-                     * 
+                     * @deprecated
                      */
                     int64_t GetIsDemo() const;
 
                     /**
                      * 设置该参数已废弃
                      * @param _isDemo 该参数已废弃
-                     * 
+                     * @deprecated
                      */
                     void SetIsDemo(const int64_t& _isDemo);
 
                     /**
                      * 判断参数 IsDemo 是否已赋值
                      * @return IsDemo 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool IsDemoHasBeenSet() const;
 

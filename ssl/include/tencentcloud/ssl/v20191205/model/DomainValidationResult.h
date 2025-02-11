@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 域名验证结果
+                * 证书域名验证结果
                 */
                 class DomainValidationResult : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取域名。
-                     * @return Domain 域名。
+                     * 获取证书绑定的域名。
+                     * @return Domain 证书绑定的域名。
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置域名。
-                     * @param _domain 域名。
+                     * 设置证书绑定的域名。
+                     * @param _domain 证书绑定的域名。
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -68,18 +68,18 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取验证类型。
+                     * 获取域名验证类型。 取值为：DNS、FILE、DNS_AUTO、DNS_PROXY、FILE_PROXY
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VerifyType 验证类型。
+                     * @return VerifyType 域名验证类型。 取值为：DNS、FILE、DNS_AUTO、DNS_PROXY、FILE_PROXY
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVerifyType() const;
 
                     /**
-                     * 设置验证类型。
+                     * 设置域名验证类型。 取值为：DNS、FILE、DNS_AUTO、DNS_PROXY、FILE_PROXY
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _verifyType 验证类型。
+                     * @param _verifyType 域名验证类型。 取值为：DNS、FILE、DNS_AUTO、DNS_PROXY、FILE_PROXY
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -93,15 +93,19 @@ namespace TencentCloud
                     bool VerifyTypeHasBeenSet() const;
 
                     /**
-                     * 获取本地检查结果。
-                     * @return LocalCheck 本地检查结果。
+                     * 获取腾讯云检测结果，取值：1（验证通过）； -1（被限频或者 txt record not found）；-2（txt record not match）；-3（ns record not found）；-4（file not found）；-5（file not match）；-6（cname record not found）；-7（cname record not match）；-8（ns record not found）-9（file not found）；-10（file not match）
+
+                     * @return LocalCheck 腾讯云检测结果，取值：1（验证通过）； -1（被限频或者 txt record not found）；-2（txt record not match）；-3（ns record not found）；-4（file not found）；-5（file not match）；-6（cname record not found）；-7（cname record not match）；-8（ns record not found）-9（file not found）；-10（file not match）
+
                      * 
                      */
                     int64_t GetLocalCheck() const;
 
                     /**
-                     * 设置本地检查结果。
-                     * @param _localCheck 本地检查结果。
+                     * 设置腾讯云检测结果，取值：1（验证通过）； -1（被限频或者 txt record not found）；-2（txt record not match）；-3（ns record not found）；-4（file not found）；-5（file not match）；-6（cname record not found）；-7（cname record not match）；-8（ns record not found）-9（file not found）；-10（file not match）
+
+                     * @param _localCheck 腾讯云检测结果，取值：1（验证通过）； -1（被限频或者 txt record not found）；-2（txt record not match）；-3（ns record not found）；-4（file not found）；-5（file not match）；-6（cname record not found）；-7（cname record not match）；-8（ns record not found）-9（file not found）；-10（file not match）
+
                      * 
                      */
                     void SetLocalCheck(const int64_t& _localCheck);
@@ -114,15 +118,15 @@ namespace TencentCloud
                     bool LocalCheckHasBeenSet() const;
 
                     /**
-                     * 获取CA检查结果。
-                     * @return CaCheck CA检查结果。
+                     * 获取CA检查结果。取值： -1（未检测通过）；2（检测通过）
+                     * @return CaCheck CA检查结果。取值： -1（未检测通过）；2（检测通过）
                      * 
                      */
                     int64_t GetCaCheck() const;
 
                     /**
-                     * 设置CA检查结果。
-                     * @param _caCheck CA检查结果。
+                     * 设置CA检查结果。取值： -1（未检测通过）；2（检测通过）
+                     * @param _caCheck CA检查结果。取值： -1（未检测通过）；2（检测通过）
                      * 
                      */
                     void SetCaCheck(const int64_t& _caCheck);
@@ -135,18 +139,18 @@ namespace TencentCloud
                     bool CaCheckHasBeenSet() const;
 
                     /**
-                     * 获取检查失败原因。
+                     * 获取检查失败原因。状态LocalCheck的具体描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LocalCheckFailReason 检查失败原因。
+                     * @return LocalCheckFailReason 检查失败原因。状态LocalCheck的具体描述
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLocalCheckFailReason() const;
 
                     /**
-                     * 设置检查失败原因。
+                     * 设置检查失败原因。状态LocalCheck的具体描述
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _localCheckFailReason 检查失败原因。
+                     * @param _localCheckFailReason 检查失败原因。状态LocalCheck的具体描述
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -185,15 +189,15 @@ namespace TencentCloud
                     bool CheckValueHasBeenSet() const;
 
                     /**
-                     * 获取是否频繁请求。
-                     * @return Frequently 是否频繁请求。
+                     * 获取是否被限频拦截， 取值：false（未被限频）；true（被限频）
+                     * @return Frequently 是否被限频拦截， 取值：false（未被限频）；true（被限频）
                      * 
                      */
                     bool GetFrequently() const;
 
                     /**
-                     * 设置是否频繁请求。
-                     * @param _frequently 是否频繁请求。
+                     * 设置是否被限频拦截， 取值：false（未被限频）；true（被限频）
+                     * @param _frequently 是否被限频拦截， 取值：false（未被限频）；true（被限频）
                      * 
                      */
                     void SetFrequently(const bool& _frequently);
@@ -206,15 +210,15 @@ namespace TencentCloud
                     bool FrequentlyHasBeenSet() const;
 
                     /**
-                     * 获取是否已经签发。
-                     * @return Issued 是否已经签发。
+                     * 获取证书是否已经签发。取值： false（未签发）；true（已签发）
+                     * @return Issued 证书是否已经签发。取值： false（未签发）；true（已签发）
                      * 
                      */
                     bool GetIssued() const;
 
                     /**
-                     * 设置是否已经签发。
-                     * @param _issued 是否已经签发。
+                     * 设置证书是否已经签发。取值： false（未签发）；true（已签发）
+                     * @param _issued 证书是否已经签发。取值： false（未签发）；true（已签发）
                      * 
                      */
                     void SetIssued(const bool& _issued);
@@ -229,32 +233,33 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 域名。
+                     * 证书绑定的域名。
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 验证类型。
+                     * 域名验证类型。 取值为：DNS、FILE、DNS_AUTO、DNS_PROXY、FILE_PROXY
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_verifyType;
                     bool m_verifyTypeHasBeenSet;
 
                     /**
-                     * 本地检查结果。
+                     * 腾讯云检测结果，取值：1（验证通过）； -1（被限频或者 txt record not found）；-2（txt record not match）；-3（ns record not found）；-4（file not found）；-5（file not match）；-6（cname record not found）；-7（cname record not match）；-8（ns record not found）-9（file not found）；-10（file not match）
+
                      */
                     int64_t m_localCheck;
                     bool m_localCheckHasBeenSet;
 
                     /**
-                     * CA检查结果。
+                     * CA检查结果。取值： -1（未检测通过）；2（检测通过）
                      */
                     int64_t m_caCheck;
                     bool m_caCheckHasBeenSet;
 
                     /**
-                     * 检查失败原因。
+                     * 检查失败原因。状态LocalCheck的具体描述
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_localCheckFailReason;
@@ -268,13 +273,13 @@ namespace TencentCloud
                     bool m_checkValueHasBeenSet;
 
                     /**
-                     * 是否频繁请求。
+                     * 是否被限频拦截， 取值：false（未被限频）；true（被限频）
                      */
                     bool m_frequently;
                     bool m_frequentlyHasBeenSet;
 
                     /**
-                     * 是否已经签发。
+                     * 证书是否已经签发。取值： false（未签发）；true（已签发）
                      */
                     bool m_issued;
                     bool m_issuedHasBeenSet;

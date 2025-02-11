@@ -23,6 +23,10 @@ using namespace TencentCloud::Lkeap::V20240522::Model;
 using namespace std;
 
 ModifyQARequest::ModifyQARequest() :
+    m_knowledgeBaseIdHasBeenSet(false),
+    m_qaIdHasBeenSet(false),
+    m_questionHasBeenSet(false),
+    m_answerHasBeenSet(false),
     m_attributeLabelsHasBeenSet(false)
 {
 }
@@ -33,6 +37,38 @@ string ModifyQARequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_knowledgeBaseIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KnowledgeBaseId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_knowledgeBaseId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_qaIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QaId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_qaId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_questionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Question";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_question.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_answerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Answer";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_answer.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_attributeLabelsHasBeenSet)
     {
@@ -56,6 +92,70 @@ string ModifyQARequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string ModifyQARequest::GetKnowledgeBaseId() const
+{
+    return m_knowledgeBaseId;
+}
+
+void ModifyQARequest::SetKnowledgeBaseId(const string& _knowledgeBaseId)
+{
+    m_knowledgeBaseId = _knowledgeBaseId;
+    m_knowledgeBaseIdHasBeenSet = true;
+}
+
+bool ModifyQARequest::KnowledgeBaseIdHasBeenSet() const
+{
+    return m_knowledgeBaseIdHasBeenSet;
+}
+
+string ModifyQARequest::GetQaId() const
+{
+    return m_qaId;
+}
+
+void ModifyQARequest::SetQaId(const string& _qaId)
+{
+    m_qaId = _qaId;
+    m_qaIdHasBeenSet = true;
+}
+
+bool ModifyQARequest::QaIdHasBeenSet() const
+{
+    return m_qaIdHasBeenSet;
+}
+
+string ModifyQARequest::GetQuestion() const
+{
+    return m_question;
+}
+
+void ModifyQARequest::SetQuestion(const string& _question)
+{
+    m_question = _question;
+    m_questionHasBeenSet = true;
+}
+
+bool ModifyQARequest::QuestionHasBeenSet() const
+{
+    return m_questionHasBeenSet;
+}
+
+string ModifyQARequest::GetAnswer() const
+{
+    return m_answer;
+}
+
+void ModifyQARequest::SetAnswer(const string& _answer)
+{
+    m_answer = _answer;
+    m_answerHasBeenSet = true;
+}
+
+bool ModifyQARequest::AnswerHasBeenSet() const
+{
+    return m_answerHasBeenSet;
+}
 
 vector<AttributeLabelReferItem> ModifyQARequest::GetAttributeLabels() const
 {

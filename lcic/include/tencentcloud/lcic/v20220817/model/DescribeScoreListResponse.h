@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取课堂评分列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Scores 课堂评分列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ClassScoreItem> GetScores() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 课堂评分列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ClassScoreItem> m_scores;
                     bool m_scoresHasBeenSet;

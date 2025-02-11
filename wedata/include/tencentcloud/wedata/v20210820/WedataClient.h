@@ -211,6 +211,8 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeFunctionTypesResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeInstanceByCycleRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeInstanceByCycleResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeInstanceDetailInfoRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeInstanceDetailInfoResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeInstanceLastLogRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeInstanceLastLogResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeInstanceListRequest.h>
@@ -799,6 +801,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInstanceByCycleResponse> DescribeInstanceByCycleOutcome;
                 typedef std::future<DescribeInstanceByCycleOutcome> DescribeInstanceByCycleOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeInstanceByCycleRequest&, DescribeInstanceByCycleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceByCycleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstanceDetailInfoResponse> DescribeInstanceDetailInfoOutcome;
+                typedef std::future<DescribeInstanceDetailInfoOutcome> DescribeInstanceDetailInfoOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeInstanceDetailInfoRequest&, DescribeInstanceDetailInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceDetailInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstanceLastLogResponse> DescribeInstanceLastLogOutcome;
                 typedef std::future<DescribeInstanceLastLogOutcome> DescribeInstanceLastLogOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeInstanceLastLogRequest&, DescribeInstanceLastLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceLastLogAsyncHandler;
@@ -2085,6 +2090,15 @@ namespace TencentCloud
                 DescribeInstanceByCycleOutcome DescribeInstanceByCycle(const Model::DescribeInstanceByCycleRequest &request);
                 void DescribeInstanceByCycleAsync(const Model::DescribeInstanceByCycleRequest& request, const DescribeInstanceByCycleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInstanceByCycleOutcomeCallable DescribeInstanceByCycleCallable(const Model::DescribeInstanceByCycleRequest& request);
+
+                /**
+                 *实例详情页，返回某个实例所有生命周期信息
+                 * @param req DescribeInstanceDetailInfoRequest
+                 * @return DescribeInstanceDetailInfoOutcome
+                 */
+                DescribeInstanceDetailInfoOutcome DescribeInstanceDetailInfo(const Model::DescribeInstanceDetailInfoRequest &request);
+                void DescribeInstanceDetailInfoAsync(const Model::DescribeInstanceDetailInfoRequest& request, const DescribeInstanceDetailInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceDetailInfoOutcomeCallable DescribeInstanceDetailInfoCallable(const Model::DescribeInstanceDetailInfoRequest& request);
 
                 /**
                  *日志获取详情页面

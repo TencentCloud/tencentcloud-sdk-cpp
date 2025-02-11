@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取符合查询条件的资源实例总数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 符合查询条件的资源实例总数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTotal() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取已授权待激活的子企业总数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return JoinedTotal 已授权待激活的子企业总数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetJoinedTotal() const;
@@ -78,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取已加入的企业数量(废弃,请使用ActivatedTotal)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActivedTotal 已加入的企业数量(废弃,请使用ActivatedTotal)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @deprecated
                      */
                     uint64_t GetActivedTotal() const;
@@ -94,9 +88,7 @@ namespace TencentCloud
 
                     /**
                      * 获取如果入参Export为 true 时使用，表示导出Excel的url
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExportUrl 如果入参Export为 true 时使用，表示导出Excel的url
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExportUrl() const;
@@ -110,9 +102,7 @@ namespace TencentCloud
 
                     /**
                      * 获取成员企业信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return List 成员企业信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<GroupOrganization> GetList() const;
@@ -126,9 +116,7 @@ namespace TencentCloud
 
                     /**
                      * 获取已加入的子企业总数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActivatedTotal 已加入的子企业总数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetActivatedTotal() const;
@@ -144,42 +132,36 @@ namespace TencentCloud
 
                     /**
                      * 符合查询条件的资源实例总数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
                      * 已授权待激活的子企业总数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_joinedTotal;
                     bool m_joinedTotalHasBeenSet;
 
                     /**
                      * 已加入的企业数量(废弃,请使用ActivatedTotal)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_activedTotal;
                     bool m_activedTotalHasBeenSet;
 
                     /**
                      * 如果入参Export为 true 时使用，表示导出Excel的url
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_exportUrl;
                     bool m_exportUrlHasBeenSet;
 
                     /**
                      * 成员企业信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<GroupOrganization> m_list;
                     bool m_listHasBeenSet;
 
                     /**
                      * 已加入的子企业总数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_activatedTotal;
                     bool m_activatedTotalHasBeenSet;

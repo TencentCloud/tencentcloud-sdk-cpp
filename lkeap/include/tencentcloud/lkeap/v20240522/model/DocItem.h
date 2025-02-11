@@ -75,6 +75,7 @@ namespace TencentCloud
                     /**
                      * 获取 状态，
 - Uploading  上传中  
+- Auditing 审核中
 - Parsing 解析中  
 - ParseFailed 解析失败
 - Indexing 创建索引中  
@@ -84,6 +85,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status  状态，
 - Uploading  上传中  
+- Auditing 审核中
 - Parsing 解析中  
 - ParseFailed 解析失败
 - Indexing 创建索引中  
@@ -98,6 +100,7 @@ namespace TencentCloud
                     /**
                      * 设置 状态，
 - Uploading  上传中  
+- Auditing 审核中
 - Parsing 解析中  
 - ParseFailed 解析失败
 - Indexing 创建索引中  
@@ -107,6 +110,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status  状态，
 - Uploading  上传中  
+- Auditing 审核中
 - Parsing 解析中  
 - ParseFailed 解析失败
 - Indexing 创建索引中  
@@ -212,6 +216,7 @@ namespace TencentCloud
                     /**
                      *  状态，
 - Uploading  上传中  
+- Auditing 审核中
 - Parsing 解析中  
 - ParseFailed 解析失败
 - Indexing 创建索引中  

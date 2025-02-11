@@ -84,8 +84,14 @@ string CloneSecurityGroupRequest::ToJsonString() const
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Tags";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_tags.ToJsonObject(d[key.c_str()], allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -176,12 +182,12 @@ bool CloneSecurityGroupRequest::RemoteRegionHasBeenSet() const
     return m_remoteRegionHasBeenSet;
 }
 
-Tag CloneSecurityGroupRequest::GetTags() const
+vector<Tag> CloneSecurityGroupRequest::GetTags() const
 {
     return m_tags;
 }
 
-void CloneSecurityGroupRequest::SetTags(const Tag& _tags)
+void CloneSecurityGroupRequest::SetTags(const vector<Tag>& _tags)
 {
     m_tags = _tags;
     m_tagsHasBeenSet = true;

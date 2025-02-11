@@ -22,7 +22,10 @@
 using namespace TencentCloud::Lkeap::V20240522::Model;
 using namespace std;
 
-ListQAsRequest::ListQAsRequest()
+ListQAsRequest::ListQAsRequest() :
+    m_knowledgeBaseIdHasBeenSet(false),
+    m_pageNumberHasBeenSet(false),
+    m_pageSizeHasBeenSet(false)
 {
 }
 
@@ -33,6 +36,30 @@ string ListQAsRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_knowledgeBaseIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KnowledgeBaseId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_knowledgeBaseId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pageNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PageNumber";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_pageNumber, allocator);
+    }
+
+    if (m_pageSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PageSize";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_pageSize, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +67,53 @@ string ListQAsRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string ListQAsRequest::GetKnowledgeBaseId() const
+{
+    return m_knowledgeBaseId;
+}
+
+void ListQAsRequest::SetKnowledgeBaseId(const string& _knowledgeBaseId)
+{
+    m_knowledgeBaseId = _knowledgeBaseId;
+    m_knowledgeBaseIdHasBeenSet = true;
+}
+
+bool ListQAsRequest::KnowledgeBaseIdHasBeenSet() const
+{
+    return m_knowledgeBaseIdHasBeenSet;
+}
+
+int64_t ListQAsRequest::GetPageNumber() const
+{
+    return m_pageNumber;
+}
+
+void ListQAsRequest::SetPageNumber(const int64_t& _pageNumber)
+{
+    m_pageNumber = _pageNumber;
+    m_pageNumberHasBeenSet = true;
+}
+
+bool ListQAsRequest::PageNumberHasBeenSet() const
+{
+    return m_pageNumberHasBeenSet;
+}
+
+int64_t ListQAsRequest::GetPageSize() const
+{
+    return m_pageSize;
+}
+
+void ListQAsRequest::SetPageSize(const int64_t& _pageSize)
+{
+    m_pageSize = _pageSize;
+    m_pageSizeHasBeenSet = true;
+}
+
+bool ListQAsRequest::PageSizeHasBeenSet() const
+{
+    return m_pageSizeHasBeenSet;
+}
 
 

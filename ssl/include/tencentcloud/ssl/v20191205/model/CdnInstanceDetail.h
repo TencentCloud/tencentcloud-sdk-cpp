@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool CertIdHasBeenSet() const;
 
                     /**
-                     * 获取域名状态
-                     * @return Status 域名状态
+                     * 获取域名状态 rejected：域名审核未通过，域名备案过期/被注销导致，processing：部署中，online：已启动，offline：已关闭
+                     * @return Status 域名状态 rejected：域名审核未通过，域名备案过期/被注销导致，processing：部署中，online：已启动，offline：已关闭
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置域名状态
-                     * @param _status 域名状态
+                     * 设置域名状态 rejected：域名审核未通过，域名备案过期/被注销导致，processing：部署中，online：已启动，offline：已关闭
+                     * @param _status 域名状态 rejected：域名审核未通过，域名备案过期/被注销导致，processing：部署中，online：已启动，offline：已关闭
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -145,7 +145,7 @@ namespace TencentCloud
                     bool m_certIdHasBeenSet;
 
                     /**
-                     * 域名状态
+                     * 域名状态 rejected：域名审核未通过，域名备案过期/被注销导致，processing：部署中，online：已启动，offline：已关闭
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

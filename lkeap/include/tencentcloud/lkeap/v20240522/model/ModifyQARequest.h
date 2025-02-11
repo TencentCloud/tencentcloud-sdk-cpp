@@ -44,6 +44,90 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取知识库ID
+                     * @return KnowledgeBaseId 知识库ID
+                     * 
+                     */
+                    std::string GetKnowledgeBaseId() const;
+
+                    /**
+                     * 设置知识库ID
+                     * @param _knowledgeBaseId 知识库ID
+                     * 
+                     */
+                    void SetKnowledgeBaseId(const std::string& _knowledgeBaseId);
+
+                    /**
+                     * 判断参数 KnowledgeBaseId 是否已赋值
+                     * @return KnowledgeBaseId 是否已赋值
+                     * 
+                     */
+                    bool KnowledgeBaseIdHasBeenSet() const;
+
+                    /**
+                     * 获取问答对ID
+                     * @return QaId 问答对ID
+                     * 
+                     */
+                    std::string GetQaId() const;
+
+                    /**
+                     * 设置问答对ID
+                     * @param _qaId 问答对ID
+                     * 
+                     */
+                    void SetQaId(const std::string& _qaId);
+
+                    /**
+                     * 判断参数 QaId 是否已赋值
+                     * @return QaId 是否已赋值
+                     * 
+                     */
+                    bool QaIdHasBeenSet() const;
+
+                    /**
+                     * 获取问题，最大1000个英文字符
+                     * @return Question 问题，最大1000个英文字符
+                     * 
+                     */
+                    std::string GetQuestion() const;
+
+                    /**
+                     * 设置问题，最大1000个英文字符
+                     * @param _question 问题，最大1000个英文字符
+                     * 
+                     */
+                    void SetQuestion(const std::string& _question);
+
+                    /**
+                     * 判断参数 Question 是否已赋值
+                     * @return Question 是否已赋值
+                     * 
+                     */
+                    bool QuestionHasBeenSet() const;
+
+                    /**
+                     * 获取答案，最大4000个英文字符
+                     * @return Answer 答案，最大4000个英文字符
+                     * 
+                     */
+                    std::string GetAnswer() const;
+
+                    /**
+                     * 设置答案，最大4000个英文字符
+                     * @param _answer 答案，最大4000个英文字符
+                     * 
+                     */
+                    void SetAnswer(const std::string& _answer);
+
+                    /**
+                     * 判断参数 Answer 是否已赋值
+                     * @return Answer 是否已赋值
+                     * 
+                     */
+                    bool AnswerHasBeenSet() const;
+
+                    /**
                      * 获取属性标签
                      * @return AttributeLabels 属性标签
                      * 
@@ -65,6 +149,30 @@ namespace TencentCloud
                     bool AttributeLabelsHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 知识库ID
+                     */
+                    std::string m_knowledgeBaseId;
+                    bool m_knowledgeBaseIdHasBeenSet;
+
+                    /**
+                     * 问答对ID
+                     */
+                    std::string m_qaId;
+                    bool m_qaIdHasBeenSet;
+
+                    /**
+                     * 问题，最大1000个英文字符
+                     */
+                    std::string m_question;
+                    bool m_questionHasBeenSet;
+
+                    /**
+                     * 答案，最大4000个英文字符
+                     */
+                    std::string m_answer;
+                    bool m_answerHasBeenSet;
 
                     /**
                      * 属性标签

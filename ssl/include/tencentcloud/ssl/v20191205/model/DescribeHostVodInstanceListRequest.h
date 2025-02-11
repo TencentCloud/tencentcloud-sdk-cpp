@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool IsCacheHasBeenSet() const;
 
                     /**
-                     * 获取过滤参数列表
-                     * @return Filters 过滤参数列表
+                     * 获取过滤参数列表； FilterKey：domainMatch（查询域名是否匹配的实例列表） FilterValue：1，表示查询匹配； 0，表示查询不匹配； 默认查询匹配
+                     * @return Filters 过滤参数列表； FilterKey：domainMatch（查询域名是否匹配的实例列表） FilterValue：1，表示查询匹配； 0，表示查询不匹配； 默认查询匹配
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤参数列表
-                     * @param _filters 过滤参数列表
+                     * 设置过滤参数列表； FilterKey：domainMatch（查询域名是否匹配的实例列表） FilterValue：1，表示查询匹配； 0，表示查询不匹配； 默认查询匹配
+                     * @param _filters 过滤参数列表； FilterKey：domainMatch（查询域名是否匹配的实例列表） FilterValue：1，表示查询匹配； 0，表示查询不匹配； 默认查询匹配
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -163,7 +163,7 @@ namespace TencentCloud
                     bool m_isCacheHasBeenSet;
 
                     /**
-                     * 过滤参数列表
+                     * 过滤参数列表； FilterKey：domainMatch（查询域名是否匹配的实例列表） FilterValue：1，表示查询匹配； 0，表示查询不匹配； 默认查询匹配
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

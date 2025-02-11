@@ -23,6 +23,9 @@ using namespace TencentCloud::Lkeap::V20240522::Model;
 using namespace std;
 
 CreateAttributeLabelRequest::CreateAttributeLabelRequest() :
+    m_knowledgeBaseIdHasBeenSet(false),
+    m_attributeKeyHasBeenSet(false),
+    m_attributeNameHasBeenSet(false),
     m_labelsHasBeenSet(false)
 {
 }
@@ -33,6 +36,30 @@ string CreateAttributeLabelRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_knowledgeBaseIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KnowledgeBaseId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_knowledgeBaseId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_attributeKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AttributeKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_attributeKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_attributeNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AttributeName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_attributeName.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_labelsHasBeenSet)
     {
@@ -56,6 +83,54 @@ string CreateAttributeLabelRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string CreateAttributeLabelRequest::GetKnowledgeBaseId() const
+{
+    return m_knowledgeBaseId;
+}
+
+void CreateAttributeLabelRequest::SetKnowledgeBaseId(const string& _knowledgeBaseId)
+{
+    m_knowledgeBaseId = _knowledgeBaseId;
+    m_knowledgeBaseIdHasBeenSet = true;
+}
+
+bool CreateAttributeLabelRequest::KnowledgeBaseIdHasBeenSet() const
+{
+    return m_knowledgeBaseIdHasBeenSet;
+}
+
+string CreateAttributeLabelRequest::GetAttributeKey() const
+{
+    return m_attributeKey;
+}
+
+void CreateAttributeLabelRequest::SetAttributeKey(const string& _attributeKey)
+{
+    m_attributeKey = _attributeKey;
+    m_attributeKeyHasBeenSet = true;
+}
+
+bool CreateAttributeLabelRequest::AttributeKeyHasBeenSet() const
+{
+    return m_attributeKeyHasBeenSet;
+}
+
+string CreateAttributeLabelRequest::GetAttributeName() const
+{
+    return m_attributeName;
+}
+
+void CreateAttributeLabelRequest::SetAttributeName(const string& _attributeName)
+{
+    m_attributeName = _attributeName;
+    m_attributeNameHasBeenSet = true;
+}
+
+bool CreateAttributeLabelRequest::AttributeNameHasBeenSet() const
+{
+    return m_attributeNameHasBeenSet;
+}
 
 vector<AttributeLabelItem> CreateAttributeLabelRequest::GetLabels() const
 {

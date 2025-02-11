@@ -42,7 +42,61 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取知识库ID
+                     * @return KnowledgeBaseId 知识库ID
+                     * 
+                     */
+                    std::string GetKnowledgeBaseId() const;
+
+                    /**
+                     * 设置知识库ID
+                     * @param _knowledgeBaseId 知识库ID
+                     * 
+                     */
+                    void SetKnowledgeBaseId(const std::string& _knowledgeBaseId);
+
+                    /**
+                     * 判断参数 KnowledgeBaseId 是否已赋值
+                     * @return KnowledgeBaseId 是否已赋值
+                     * 
+                     */
+                    bool KnowledgeBaseIdHasBeenSet() const;
+
+                    /**
+                     * 获取文档ID
+                     * @return DocId 文档ID
+                     * 
+                     */
+                    std::string GetDocId() const;
+
+                    /**
+                     * 设置文档ID
+                     * @param _docId 文档ID
+                     * 
+                     */
+                    void SetDocId(const std::string& _docId);
+
+                    /**
+                     * 判断参数 DocId 是否已赋值
+                     * @return DocId 是否已赋值
+                     * 
+                     */
+                    bool DocIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 知识库ID
+                     */
+                    std::string m_knowledgeBaseId;
+                    bool m_knowledgeBaseIdHasBeenSet;
+
+                    /**
+                     * 文档ID
+                     */
+                    std::string m_docId;
+                    bool m_docIdHasBeenSet;
 
                 };
             }

@@ -115,14 +115,34 @@ namespace TencentCloud
 
                     /**
                      * 获取域名状态
+deployed：已部署；
+processing：部署中；
+applying：申请中；
+failed：申请失败；
+issued：绑定失败。
                      * @return Status 域名状态
+deployed：已部署；
+processing：部署中；
+applying：申请中；
+failed：申请失败；
+issued：绑定失败。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置域名状态
+deployed：已部署；
+processing：部署中；
+applying：申请中；
+failed：申请失败；
+issued：绑定失败。
                      * @param _status 域名状态
+deployed：已部署；
+processing：部署中；
+applying：申请中；
+failed：申请失败；
+issued：绑定失败。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -157,6 +177,11 @@ namespace TencentCloud
 
                     /**
                      * 域名状态
+deployed：已部署；
+processing：部署中；
+applying：申请中；
+failed：申请失败；
+issued：绑定失败。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

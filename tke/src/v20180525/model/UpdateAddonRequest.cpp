@@ -27,7 +27,8 @@ UpdateAddonRequest::UpdateAddonRequest() :
     m_addonNameHasBeenSet(false),
     m_addonVersionHasBeenSet(false),
     m_rawValuesHasBeenSet(false),
-    m_updateStrategyHasBeenSet(false)
+    m_updateStrategyHasBeenSet(false),
+    m_dryRunHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string UpdateAddonRequest::ToJsonString() const
         string key = "UpdateStrategy";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_updateStrategy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dryRunHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DryRun";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_dryRun, allocator);
     }
 
 
@@ -164,6 +173,22 @@ void UpdateAddonRequest::SetUpdateStrategy(const string& _updateStrategy)
 bool UpdateAddonRequest::UpdateStrategyHasBeenSet() const
 {
     return m_updateStrategyHasBeenSet;
+}
+
+bool UpdateAddonRequest::GetDryRun() const
+{
+    return m_dryRun;
+}
+
+void UpdateAddonRequest::SetDryRun(const bool& _dryRun)
+{
+    m_dryRun = _dryRun;
+    m_dryRunHasBeenSet = true;
+}
+
+bool UpdateAddonRequest::DryRunHasBeenSet() const
+{
+    return m_dryRunHasBeenSet;
 }
 
 

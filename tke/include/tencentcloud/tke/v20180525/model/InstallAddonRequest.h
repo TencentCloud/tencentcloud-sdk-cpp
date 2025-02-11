@@ -126,6 +126,27 @@ namespace TencentCloud
                      */
                     bool RawValuesHasBeenSet() const;
 
+                    /**
+                     * 获取是否仅做安装检查，设置为true时仅做检查，不会安装组件
+                     * @return DryRun 是否仅做安装检查，设置为true时仅做检查，不会安装组件
+                     * 
+                     */
+                    bool GetDryRun() const;
+
+                    /**
+                     * 设置是否仅做安装检查，设置为true时仅做检查，不会安装组件
+                     * @param _dryRun 是否仅做安装检查，设置为true时仅做检查，不会安装组件
+                     * 
+                     */
+                    void SetDryRun(const bool& _dryRun);
+
+                    /**
+                     * 判断参数 DryRun 是否已赋值
+                     * @return DryRun 是否已赋值
+                     * 
+                     */
+                    bool DryRunHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +172,12 @@ namespace TencentCloud
                      */
                     std::string m_rawValues;
                     bool m_rawValuesHasBeenSet;
+
+                    /**
+                     * 是否仅做安装检查，设置为true时仅做检查，不会安装组件
+                     */
+                    bool m_dryRun;
+                    bool m_dryRunHasBeenSet;
 
                 };
             }

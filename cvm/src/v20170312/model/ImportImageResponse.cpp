@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cvm::V20170312::Model;
 using namespace std;
 
-ImportImageResponse::ImportImageResponse()
+ImportImageResponse::ImportImageResponse() :
+    m_imageIdHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome ImportImageResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("ImageId") && !rsp["ImageId"].IsNull())
+    {
+        if (!rsp["ImageId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_imageId = string(rsp["ImageId"].GetString());
+        m_imageIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string ImportImageResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_imageIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_imageId.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string ImportImageResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string ImportImageResponse::GetImageId() const
+{
+    return m_imageId;
+}
+
+bool ImportImageResponse::ImageIdHasBeenSet() const
+{
+    return m_imageIdHasBeenSet;
+}
 
 

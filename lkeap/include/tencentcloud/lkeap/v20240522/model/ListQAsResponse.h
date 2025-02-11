@@ -45,6 +45,20 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取问答对总数量
+                     * @return TotalCount 问答对总数量
+                     * 
+                     */
+                    int64_t GetTotalCount() const;
+
+                    /**
+                     * 判断参数 TotalCount 是否已赋值
+                     * @return TotalCount 是否已赋值
+                     * 
+                     */
+                    bool TotalCountHasBeenSet() const;
+
+                    /**
                      * 获取问答对信息
                      * @return List 问答对信息
                      * 
@@ -59,6 +73,12 @@ namespace TencentCloud
                     bool ListHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 问答对总数量
+                     */
+                    int64_t m_totalCount;
+                    bool m_totalCountHasBeenSet;
 
                     /**
                      * 问答对信息

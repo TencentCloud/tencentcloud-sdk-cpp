@@ -857,6 +857,49 @@ MongodbClient::DescribeDBInstanceParamTplDetailOutcomeCallable MongodbClient::De
     return task->get_future();
 }
 
+MongodbClient::DescribeDBInstanceURLOutcome MongodbClient::DescribeDBInstanceURL(const DescribeDBInstanceURLRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBInstanceURL");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBInstanceURLResponse rsp = DescribeDBInstanceURLResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBInstanceURLOutcome(rsp);
+        else
+            return DescribeDBInstanceURLOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBInstanceURLOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::DescribeDBInstanceURLAsync(const DescribeDBInstanceURLRequest& request, const DescribeDBInstanceURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDBInstanceURL(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MongodbClient::DescribeDBInstanceURLOutcomeCallable MongodbClient::DescribeDBInstanceURLCallable(const DescribeDBInstanceURLRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDBInstanceURLOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDBInstanceURL(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MongodbClient::DescribeDBInstancesOutcome MongodbClient::DescribeDBInstances(const DescribeDBInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDBInstances");

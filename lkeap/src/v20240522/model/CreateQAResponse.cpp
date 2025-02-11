@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Lkeap::V20240522::Model;
 using namespace std;
 
-CreateQAResponse::CreateQAResponse()
+CreateQAResponse::CreateQAResponse() :
+    m_qaIdHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome CreateQAResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("QaId") && !rsp["QaId"].IsNull())
+    {
+        if (!rsp["QaId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QaId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_qaId = string(rsp["QaId"].GetString());
+        m_qaIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string CreateQAResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_qaIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QaId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_qaId.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string CreateQAResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string CreateQAResponse::GetQaId() const
+{
+    return m_qaId;
+}
+
+bool CreateQAResponse::QaIdHasBeenSet() const
+{
+    return m_qaIdHasBeenSet;
+}
 
 

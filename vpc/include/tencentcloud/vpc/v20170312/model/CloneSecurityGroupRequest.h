@@ -155,7 +155,7 @@ namespace TencentCloud
 若指定Tags入参且指定IsCloneTags为true，会合并源安全组的标签和新增的标签。
                      * 
                      */
-                    Tag GetTags() const;
+                    std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]。
@@ -164,7 +164,7 @@ namespace TencentCloud
 若指定Tags入参且指定IsCloneTags为true，会合并源安全组的标签和新增的标签。
                      * 
                      */
-                    void SetTags(const Tag& _tags);
+                    void SetTags(const std::vector<Tag>& _tags);
 
                     /**
                      * 判断参数 Tags 是否已赋值
@@ -209,7 +209,7 @@ namespace TencentCloud
                      * 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]。
 若指定Tags入参且指定IsCloneTags为true，会合并源安全组的标签和新增的标签。
                      */
-                    Tag m_tags;
+                    std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                 };

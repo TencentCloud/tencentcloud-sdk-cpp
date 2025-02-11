@@ -49,19 +49,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取[匹配条件
-](https://cloud.tencent.com/document/product/1552/90438#33f65828-c6c6-4b66-a011-25a20b548d5d)。
-                     * @return Condition [匹配条件
-](https://cloud.tencent.com/document/product/1552/90438#33f65828-c6c6-4b66-a011-25a20b548d5d)。
+                     * 获取[匹配条件](https://cloud.tencent.com/document/product/1552/90438#33f65828-c6c6-4b66-a011-25a20b548d5d)。
+                     * @return Condition [匹配条件](https://cloud.tencent.com/document/product/1552/90438#33f65828-c6c6-4b66-a011-25a20b548d5d)。
                      * 
                      */
                     std::string GetCondition() const;
 
                     /**
-                     * 设置[匹配条件
-](https://cloud.tencent.com/document/product/1552/90438#33f65828-c6c6-4b66-a011-25a20b548d5d)。
-                     * @param _condition [匹配条件
-](https://cloud.tencent.com/document/product/1552/90438#33f65828-c6c6-4b66-a011-25a20b548d5d)。
+                     * 设置[匹配条件](https://cloud.tencent.com/document/product/1552/90438#33f65828-c6c6-4b66-a011-25a20b548d5d)。
+                     * @param _condition [匹配条件](https://cloud.tencent.com/document/product/1552/90438#33f65828-c6c6-4b66-a011-25a20b548d5d)。
                      * 
                      */
                     void SetCondition(const std::string& _condition);
@@ -126,8 +122,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * [匹配条件
-](https://cloud.tencent.com/document/product/1552/90438#33f65828-c6c6-4b66-a011-25a20b548d5d)。
+                     * [匹配条件](https://cloud.tencent.com/document/product/1552/90438#33f65828-c6c6-4b66-a011-25a20b548d5d)。
                      */
                     std::string m_condition;
                     bool m_conditionHasBeenSet;

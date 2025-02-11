@@ -43,7 +43,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取镜像 ID
+                     * @return ImageId 镜像 ID
+                     * 
+                     */
+                    std::string GetImageId() const;
+
+                    /**
+                     * 判断参数 ImageId 是否已赋值
+                     * @return ImageId 是否已赋值
+                     * 
+                     */
+                    bool ImageIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 镜像 ID
+                     */
+                    std::string m_imageId;
+                    bool m_imageIdHasBeenSet;
 
                 };
             }

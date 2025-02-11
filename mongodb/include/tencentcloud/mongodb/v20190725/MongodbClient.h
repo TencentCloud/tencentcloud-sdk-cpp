@@ -61,6 +61,8 @@
 #include <tencentcloud/mongodb/v20190725/model/DescribeDBInstanceParamTplResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeDBInstanceParamTplDetailRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeDBInstanceParamTplDetailResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeDBInstanceURLRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/DescribeDBInstanceURLResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeDBInstancesRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeDBInstancesResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeInstanceParamsRequest.h>
@@ -192,6 +194,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDBInstanceParamTplDetailResponse> DescribeDBInstanceParamTplDetailOutcome;
                 typedef std::future<DescribeDBInstanceParamTplDetailOutcome> DescribeDBInstanceParamTplDetailOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::DescribeDBInstanceParamTplDetailRequest&, DescribeDBInstanceParamTplDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstanceParamTplDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDBInstanceURLResponse> DescribeDBInstanceURLOutcome;
+                typedef std::future<DescribeDBInstanceURLOutcome> DescribeDBInstanceURLOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::DescribeDBInstanceURLRequest&, DescribeDBInstanceURLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstanceURLAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDBInstancesResponse> DescribeDBInstancesOutcome;
                 typedef std::future<DescribeDBInstancesOutcome> DescribeDBInstancesOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::DescribeDBInstancesRequest&, DescribeDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstancesAsyncHandler;
@@ -458,6 +463,15 @@ namespace TencentCloud
                 DescribeDBInstanceParamTplDetailOutcome DescribeDBInstanceParamTplDetail(const Model::DescribeDBInstanceParamTplDetailRequest &request);
                 void DescribeDBInstanceParamTplDetailAsync(const Model::DescribeDBInstanceParamTplDetailRequest& request, const DescribeDBInstanceParamTplDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDBInstanceParamTplDetailOutcomeCallable DescribeDBInstanceParamTplDetailCallable(const Model::DescribeDBInstanceParamTplDetailRequest& request);
+
+                /**
+                 *本接口（DescribeDBInstanceURL）用于获取指定实例的 URI 形式的连接串访问地址示例。
+                 * @param req DescribeDBInstanceURLRequest
+                 * @return DescribeDBInstanceURLOutcome
+                 */
+                DescribeDBInstanceURLOutcome DescribeDBInstanceURL(const Model::DescribeDBInstanceURLRequest &request);
+                void DescribeDBInstanceURLAsync(const Model::DescribeDBInstanceURLRequest& request, const DescribeDBInstanceURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBInstanceURLOutcomeCallable DescribeDBInstanceURLCallable(const Model::DescribeDBInstanceURLRequest& request);
 
                 /**
                  *本接口（DescribeDBInstances）用于查询云数据库实例列表，支持通过项目ID、实例ID、实例状态等过滤条件来筛选主实例、灾备实例和只读实例信息列表。

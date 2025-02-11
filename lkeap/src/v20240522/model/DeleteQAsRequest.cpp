@@ -22,7 +22,9 @@
 using namespace TencentCloud::Lkeap::V20240522::Model;
 using namespace std;
 
-DeleteQAsRequest::DeleteQAsRequest()
+DeleteQAsRequest::DeleteQAsRequest() :
+    m_knowledgeBaseIdHasBeenSet(false),
+    m_qaIdsHasBeenSet(false)
 {
 }
 
@@ -33,6 +35,27 @@ string DeleteQAsRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_knowledgeBaseIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KnowledgeBaseId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_knowledgeBaseId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_qaIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QaIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_qaIds.begin(); itr != m_qaIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +63,37 @@ string DeleteQAsRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DeleteQAsRequest::GetKnowledgeBaseId() const
+{
+    return m_knowledgeBaseId;
+}
+
+void DeleteQAsRequest::SetKnowledgeBaseId(const string& _knowledgeBaseId)
+{
+    m_knowledgeBaseId = _knowledgeBaseId;
+    m_knowledgeBaseIdHasBeenSet = true;
+}
+
+bool DeleteQAsRequest::KnowledgeBaseIdHasBeenSet() const
+{
+    return m_knowledgeBaseIdHasBeenSet;
+}
+
+vector<string> DeleteQAsRequest::GetQaIds() const
+{
+    return m_qaIds;
+}
+
+void DeleteQAsRequest::SetQaIds(const vector<string>& _qaIds)
+{
+    m_qaIds = _qaIds;
+    m_qaIdsHasBeenSet = true;
+}
+
+bool DeleteQAsRequest::QaIdsHasBeenSet() const
+{
+    return m_qaIdsHasBeenSet;
+}
 
 

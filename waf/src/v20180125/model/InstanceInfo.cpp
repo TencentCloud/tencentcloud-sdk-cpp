@@ -61,7 +61,9 @@ InstanceInfo::InstanceInfo() :
     m_lastQpsExceedTimeHasBeenSet(false),
     m_miniExtendPkgHasBeenSet(false),
     m_billingItemHasBeenSet(false),
-    m_freeDelayFlagHasBeenSet(false)
+    m_freeDelayFlagHasBeenSet(false),
+    m_last3MaxQPSHasBeenSet(false),
+    m_last3MaxBandwidthHasBeenSet(false)
 {
 }
 
@@ -550,6 +552,26 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_freeDelayFlagHasBeenSet = true;
     }
 
+    if (value.HasMember("Last3MaxQPS") && !value["Last3MaxQPS"].IsNull())
+    {
+        if (!value["Last3MaxQPS"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.Last3MaxQPS` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_last3MaxQPS = value["Last3MaxQPS"].GetUint64();
+        m_last3MaxQPSHasBeenSet = true;
+    }
+
+    if (value.HasMember("Last3MaxBandwidth") && !value["Last3MaxBandwidth"].IsNull())
+    {
+        if (!value["Last3MaxBandwidth"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.Last3MaxBandwidth` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_last3MaxBandwidth = value["Last3MaxBandwidth"].GetUint64();
+        m_last3MaxBandwidthHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -893,6 +915,22 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "FreeDelayFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_freeDelayFlag, allocator);
+    }
+
+    if (m_last3MaxQPSHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Last3MaxQPS";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_last3MaxQPS, allocator);
+    }
+
+    if (m_last3MaxBandwidthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Last3MaxBandwidth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_last3MaxBandwidth, allocator);
     }
 
 }
@@ -1552,5 +1590,37 @@ void InstanceInfo::SetFreeDelayFlag(const uint64_t& _freeDelayFlag)
 bool InstanceInfo::FreeDelayFlagHasBeenSet() const
 {
     return m_freeDelayFlagHasBeenSet;
+}
+
+uint64_t InstanceInfo::GetLast3MaxQPS() const
+{
+    return m_last3MaxQPS;
+}
+
+void InstanceInfo::SetLast3MaxQPS(const uint64_t& _last3MaxQPS)
+{
+    m_last3MaxQPS = _last3MaxQPS;
+    m_last3MaxQPSHasBeenSet = true;
+}
+
+bool InstanceInfo::Last3MaxQPSHasBeenSet() const
+{
+    return m_last3MaxQPSHasBeenSet;
+}
+
+uint64_t InstanceInfo::GetLast3MaxBandwidth() const
+{
+    return m_last3MaxBandwidth;
+}
+
+void InstanceInfo::SetLast3MaxBandwidth(const uint64_t& _last3MaxBandwidth)
+{
+    m_last3MaxBandwidth = _last3MaxBandwidth;
+    m_last3MaxBandwidthHasBeenSet = true;
+}
+
+bool InstanceInfo::Last3MaxBandwidthHasBeenSet() const
+{
+    return m_last3MaxBandwidthHasBeenSet;
 }
 

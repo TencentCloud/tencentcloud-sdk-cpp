@@ -45,6 +45,20 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取属性总数
+                     * @return TotalCount 属性总数
+                     * 
+                     */
+                    int64_t GetTotalCount() const;
+
+                    /**
+                     * 判断参数 TotalCount 是否已赋值
+                     * @return TotalCount 是否已赋值
+                     * 
+                     */
+                    bool TotalCountHasBeenSet() const;
+
+                    /**
                      * 获取属性标签列表
                      * @return List 属性标签列表
                      * 
@@ -59,6 +73,12 @@ namespace TencentCloud
                     bool ListHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 属性总数
+                     */
+                    int64_t m_totalCount;
+                    bool m_totalCountHasBeenSet;
 
                     /**
                      * 属性标签列表

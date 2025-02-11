@@ -45,6 +45,20 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取文档总数
+                     * @return TotalCount 文档总数
+                     * 
+                     */
+                    int64_t GetTotalCount() const;
+
+                    /**
+                     * 判断参数 TotalCount 是否已赋值
+                     * @return TotalCount 是否已赋值
+                     * 
+                     */
+                    bool TotalCountHasBeenSet() const;
+
+                    /**
                      * 获取文档信息
                      * @return List 文档信息
                      * 
@@ -59,6 +73,12 @@ namespace TencentCloud
                     bool ListHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 文档总数
+                     */
+                    int64_t m_totalCount;
+                    bool m_totalCountHasBeenSet;
 
                     /**
                      * 文档信息
