@@ -23,6 +23,8 @@ using namespace std;
 MediaAiAnalysisDescriptionItem::MediaAiAnalysisDescriptionItem() :
     m_descriptionHasBeenSet(false),
     m_confidenceHasBeenSet(false),
+    m_titleHasBeenSet(false),
+    m_keywordsHasBeenSet(false),
     m_paragraphsHasBeenSet(false)
 {
 }
@@ -50,6 +52,29 @@ CoreInternalOutcome MediaAiAnalysisDescriptionItem::Deserialize(const rapidjson:
         }
         m_confidence = value["Confidence"].GetDouble();
         m_confidenceHasBeenSet = true;
+    }
+
+    if (value.HasMember("Title") && !value["Title"].IsNull())
+    {
+        if (!value["Title"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaAiAnalysisDescriptionItem.Title` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_title = string(value["Title"].GetString());
+        m_titleHasBeenSet = true;
+    }
+
+    if (value.HasMember("Keywords") && !value["Keywords"].IsNull())
+    {
+        if (!value["Keywords"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `MediaAiAnalysisDescriptionItem.Keywords` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Keywords"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_keywords.push_back((*itr).GetString());
+        }
+        m_keywordsHasBeenSet = true;
     }
 
     if (value.HasMember("Paragraphs") && !value["Paragraphs"].IsNull())
@@ -93,6 +118,27 @@ void MediaAiAnalysisDescriptionItem::ToJsonObject(rapidjson::Value &value, rapid
         string key = "Confidence";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_confidence, allocator);
+    }
+
+    if (m_titleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Title";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_title.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_keywordsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Keywords";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_keywords.begin(); itr != m_keywords.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     if (m_paragraphsHasBeenSet)
@@ -143,6 +189,38 @@ void MediaAiAnalysisDescriptionItem::SetConfidence(const double& _confidence)
 bool MediaAiAnalysisDescriptionItem::ConfidenceHasBeenSet() const
 {
     return m_confidenceHasBeenSet;
+}
+
+string MediaAiAnalysisDescriptionItem::GetTitle() const
+{
+    return m_title;
+}
+
+void MediaAiAnalysisDescriptionItem::SetTitle(const string& _title)
+{
+    m_title = _title;
+    m_titleHasBeenSet = true;
+}
+
+bool MediaAiAnalysisDescriptionItem::TitleHasBeenSet() const
+{
+    return m_titleHasBeenSet;
+}
+
+vector<string> MediaAiAnalysisDescriptionItem::GetKeywords() const
+{
+    return m_keywords;
+}
+
+void MediaAiAnalysisDescriptionItem::SetKeywords(const vector<string>& _keywords)
+{
+    m_keywords = _keywords;
+    m_keywordsHasBeenSet = true;
+}
+
+bool MediaAiAnalysisDescriptionItem::KeywordsHasBeenSet() const
+{
+    return m_keywordsHasBeenSet;
 }
 
 vector<AiParagraphInfo> MediaAiAnalysisDescriptionItem::GetParagraphs() const

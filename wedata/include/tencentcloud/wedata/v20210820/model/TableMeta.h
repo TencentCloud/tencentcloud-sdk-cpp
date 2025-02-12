@@ -29,6 +29,7 @@
 #include <tencentcloud/wedata/v20210820/model/SearchColumnDocVO.h>
 #include <tencentcloud/wedata/v20210820/model/TableMetaProperty.h>
 #include <tencentcloud/wedata/v20210820/model/GovDatasourceInfo.h>
+#include <tencentcloud/wedata/v20210820/model/CreateAndDDLSupport.h>
 
 
 namespace TencentCloud
@@ -1580,6 +1581,81 @@ TABLE, VIEW, MANAGED_TABLE(Hive管理表), EXTERNAL_TABLE(Hive外部表), VIRTUA
                      */
                     bool HasBizPermissionHasBeenSet() const;
 
+                    /**
+                     * 获取引擎侧创建人
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OwnerByEngine 引擎侧创建人
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetOwnerByEngine() const;
+
+                    /**
+                     * 设置引擎侧创建人
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ownerByEngine 引擎侧创建人
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOwnerByEngine(const std::string& _ownerByEngine);
+
+                    /**
+                     * 判断参数 OwnerByEngine 是否已赋值
+                     * @return OwnerByEngine 是否已赋值
+                     * 
+                     */
+                    bool OwnerByEngineHasBeenSet() const;
+
+                    /**
+                     * 获取用户无映射账户，请先完成账户映射后再来申请。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ErrorTips 用户无映射账户，请先完成账户映射后再来申请。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetErrorTips() const;
+
+                    /**
+                     * 设置用户无映射账户，请先完成账户映射后再来申请。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _errorTips 用户无映射账户，请先完成账户映射后再来申请。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetErrorTips(const std::string& _errorTips);
+
+                    /**
+                     * 判断参数 ErrorTips 是否已赋值
+                     * @return ErrorTips 是否已赋值
+                     * 
+                     */
+                    bool ErrorTipsHasBeenSet() const;
+
+                    /**
+                     * 获取是否支持select or ddl
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IfSupportCreateAndDDL 是否支持select or ddl
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    CreateAndDDLSupport GetIfSupportCreateAndDDL() const;
+
+                    /**
+                     * 设置是否支持select or ddl
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ifSupportCreateAndDDL 是否支持select or ddl
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIfSupportCreateAndDDL(const CreateAndDDLSupport& _ifSupportCreateAndDDL);
+
+                    /**
+                     * 判断参数 IfSupportCreateAndDDL 是否已赋值
+                     * @return IfSupportCreateAndDDL 是否已赋值
+                     * 
+                     */
+                    bool IfSupportCreateAndDDLHasBeenSet() const;
+
                 private:
 
                     /**
@@ -2009,6 +2085,27 @@ TABLE, VIEW, MANAGED_TABLE(Hive管理表), EXTERNAL_TABLE(Hive外部表), VIRTUA
                      */
                     bool m_hasBizPermission;
                     bool m_hasBizPermissionHasBeenSet;
+
+                    /**
+                     * 引擎侧创建人
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ownerByEngine;
+                    bool m_ownerByEngineHasBeenSet;
+
+                    /**
+                     * 用户无映射账户，请先完成账户映射后再来申请。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_errorTips;
+                    bool m_errorTipsHasBeenSet;
+
+                    /**
+                     * 是否支持select or ddl
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CreateAndDDLSupport m_ifSupportCreateAndDDL;
+                    bool m_ifSupportCreateAndDDLHasBeenSet;
 
                 };
             }

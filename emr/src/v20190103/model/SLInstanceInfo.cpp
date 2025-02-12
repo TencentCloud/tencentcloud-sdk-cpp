@@ -24,6 +24,7 @@ SLInstanceInfo::SLInstanceInfo() :
     m_clusterIdHasBeenSet(false),
     m_idHasBeenSet(false),
     m_statusDescHasBeenSet(false),
+    m_healthStatusHasBeenSet(false),
     m_clusterNameHasBeenSet(false),
     m_regionIdHasBeenSet(false),
     m_zoneIdHasBeenSet(false),
@@ -75,6 +76,16 @@ CoreInternalOutcome SLInstanceInfo::Deserialize(const rapidjson::Value &value)
         }
         m_statusDesc = string(value["StatusDesc"].GetString());
         m_statusDescHasBeenSet = true;
+    }
+
+    if (value.HasMember("HealthStatus") && !value["HealthStatus"].IsNull())
+    {
+        if (!value["HealthStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SLInstanceInfo.HealthStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_healthStatus = string(value["HealthStatus"].GetString());
+        m_healthStatusHasBeenSet = true;
     }
 
     if (value.HasMember("ClusterName") && !value["ClusterName"].IsNull())
@@ -278,6 +289,14 @@ void SLInstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         value.AddMember(iKey, rapidjson::Value(m_statusDesc.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_healthStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HealthStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_healthStatus.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_clusterNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -461,6 +480,22 @@ void SLInstanceInfo::SetStatusDesc(const string& _statusDesc)
 bool SLInstanceInfo::StatusDescHasBeenSet() const
 {
     return m_statusDescHasBeenSet;
+}
+
+string SLInstanceInfo::GetHealthStatus() const
+{
+    return m_healthStatus;
+}
+
+void SLInstanceInfo::SetHealthStatus(const string& _healthStatus)
+{
+    m_healthStatus = _healthStatus;
+    m_healthStatusHasBeenSet = true;
+}
+
+bool SLInstanceInfo::HealthStatusHasBeenSet() const
+{
+    return m_healthStatusHasBeenSet;
 }
 
 string SLInstanceInfo::GetClusterName() const

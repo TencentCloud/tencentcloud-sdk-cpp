@@ -45,7 +45,9 @@ DatabaseMeta::DatabaseMeta() :
     m_collectJobIdHasBeenSet(false),
     m_collectJobNameHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
-    m_clusterNameHasBeenSet(false)
+    m_clusterNameHasBeenSet(false),
+    m_modifiedTimeByTablesHasBeenSet(false),
+    m_lastAccessTimeByTablesHasBeenSet(false)
 {
 }
 
@@ -314,6 +316,26 @@ CoreInternalOutcome DatabaseMeta::Deserialize(const rapidjson::Value &value)
         m_clusterNameHasBeenSet = true;
     }
 
+    if (value.HasMember("ModifiedTimeByTables") && !value["ModifiedTimeByTables"].IsNull())
+    {
+        if (!value["ModifiedTimeByTables"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatabaseMeta.ModifiedTimeByTables` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_modifiedTimeByTables = value["ModifiedTimeByTables"].GetUint64();
+        m_modifiedTimeByTablesHasBeenSet = true;
+    }
+
+    if (value.HasMember("LastAccessTimeByTables") && !value["LastAccessTimeByTables"].IsNull())
+    {
+        if (!value["LastAccessTimeByTables"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatabaseMeta.LastAccessTimeByTables` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_lastAccessTimeByTables = value["LastAccessTimeByTables"].GetUint64();
+        m_lastAccessTimeByTablesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -526,6 +548,22 @@ void DatabaseMeta::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "ClusterName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_clusterName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modifiedTimeByTablesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModifiedTimeByTables";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_modifiedTimeByTables, allocator);
+    }
+
+    if (m_lastAccessTimeByTablesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LastAccessTimeByTables";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_lastAccessTimeByTables, allocator);
     }
 
 }
@@ -929,5 +967,37 @@ void DatabaseMeta::SetClusterName(const string& _clusterName)
 bool DatabaseMeta::ClusterNameHasBeenSet() const
 {
     return m_clusterNameHasBeenSet;
+}
+
+uint64_t DatabaseMeta::GetModifiedTimeByTables() const
+{
+    return m_modifiedTimeByTables;
+}
+
+void DatabaseMeta::SetModifiedTimeByTables(const uint64_t& _modifiedTimeByTables)
+{
+    m_modifiedTimeByTables = _modifiedTimeByTables;
+    m_modifiedTimeByTablesHasBeenSet = true;
+}
+
+bool DatabaseMeta::ModifiedTimeByTablesHasBeenSet() const
+{
+    return m_modifiedTimeByTablesHasBeenSet;
+}
+
+uint64_t DatabaseMeta::GetLastAccessTimeByTables() const
+{
+    return m_lastAccessTimeByTables;
+}
+
+void DatabaseMeta::SetLastAccessTimeByTables(const uint64_t& _lastAccessTimeByTables)
+{
+    m_lastAccessTimeByTables = _lastAccessTimeByTables;
+    m_lastAccessTimeByTablesHasBeenSet = true;
+}
+
+bool DatabaseMeta::LastAccessTimeByTablesHasBeenSet() const
+{
+    return m_lastAccessTimeByTablesHasBeenSet;
 }
 

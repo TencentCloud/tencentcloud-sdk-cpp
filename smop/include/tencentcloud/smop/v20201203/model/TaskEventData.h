@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取状态码，0为成功，-1为失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Code 状态码，0为成功，-1为失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCode() const;
 
                     /**
                      * 设置状态码，0为成功，-1为失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _code 状态码，0为成功，-1为失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCode(const int64_t& _code);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取提示信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 提示信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置提示信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _message 提示信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMessage(const std::string& _message);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskId 任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTaskId() const;
 
                     /**
                      * 设置任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskId 任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskId(const int64_t& _taskId);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当前完成或正在完成的安心用户运营平台的任务订单ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskOrderId 当前完成或正在完成的安心用户运营平台的任务订单ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskOrderId() const;
 
                     /**
                      * 设置当前完成或正在完成的安心用户运营平台的任务订单ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskOrderId 当前完成或正在完成的安心用户运营平台的任务订单ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskOrderId(const std::string& _taskOrderId);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当前任务订单状态码。1代表未完成；2代表已完成但未提交任务；3表示已完成，且已提交获得积分任务；4表示过期任务，提交后不获得积分。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskCode 当前任务订单状态码。1代表未完成；2代表已完成但未提交任务；3表示已完成，且已提交获得积分任务；4表示过期任务，提交后不获得积分。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTaskCode() const;
 
                     /**
                      * 设置当前任务订单状态码。1代表未完成；2代表已完成但未提交任务；3表示已完成，且已提交获得积分任务；4表示过期任务，提交后不获得积分。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskCode 当前任务订单状态码。1代表未完成；2代表已完成但未提交任务；3表示已完成，且已提交获得积分任务；4表示过期任务，提交后不获得积分。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskCode(const int64_t& _taskCode);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取获得积分数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskCoinNumber 获得积分数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTaskCoinNumber() const;
 
                     /**
                      * 设置获得积分数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskCoinNumber 获得积分数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskCoinNumber(const int64_t& _taskCoinNumber);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务类型后台代码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskType 任务类型后台代码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTaskType() const;
 
                     /**
                      * 设置任务类型后台代码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskType 任务类型后台代码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskType(const int64_t& _taskType);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户的当前积分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCoin 用户的当前积分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCoin() const;
 
                     /**
                      * 设置用户的当前积分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalCoin 用户的当前积分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalCoin(const int64_t& _totalCoin);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户透传的附加数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Attach 用户透传的附加数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAttach() const;
 
                     /**
                      * 设置用户透传的附加数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _attach 用户透传的附加数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAttach(const std::string& _attach);
@@ -273,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取计次任务当前完成次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DoneTimes 计次任务当前完成次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDoneTimes() const;
 
                     /**
                      * 设置计次任务当前完成次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _doneTimes 计次任务当前完成次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDoneTimes(const int64_t& _doneTimes);
@@ -298,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取计次任务当前所需完成次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalTimes 计次任务当前所需完成次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalTimes() const;
 
                     /**
                      * 设置计次任务当前所需完成次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalTimes 计次任务当前所需完成次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalTimes(const int64_t& _totalTimes);
@@ -323,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskName 任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskName() const;
 
                     /**
                      * 设置任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskName 任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskName(const std::string& _taskName);
@@ -348,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户当前成长值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GrowScore 用户当前成长值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetGrowScore() const;
 
                     /**
                      * 设置用户当前成长值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _growScore 用户当前成长值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGrowScore(const int64_t& _growScore);
@@ -375,91 +323,78 @@ namespace TencentCloud
 
                     /**
                      * 状态码，0为成功，-1为失败
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_code;
                     bool m_codeHasBeenSet;
 
                     /**
                      * 提示信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
 
                     /**
                      * 任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
                      * 当前完成或正在完成的安心用户运营平台的任务订单ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskOrderId;
                     bool m_taskOrderIdHasBeenSet;
 
                     /**
                      * 当前任务订单状态码。1代表未完成；2代表已完成但未提交任务；3表示已完成，且已提交获得积分任务；4表示过期任务，提交后不获得积分。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_taskCode;
                     bool m_taskCodeHasBeenSet;
 
                     /**
                      * 获得积分数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_taskCoinNumber;
                     bool m_taskCoinNumberHasBeenSet;
 
                     /**
                      * 任务类型后台代码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_taskType;
                     bool m_taskTypeHasBeenSet;
 
                     /**
                      * 用户的当前积分
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCoin;
                     bool m_totalCoinHasBeenSet;
 
                     /**
                      * 用户透传的附加数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_attach;
                     bool m_attachHasBeenSet;
 
                     /**
                      * 计次任务当前完成次数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_doneTimes;
                     bool m_doneTimesHasBeenSet;
 
                     /**
                      * 计次任务当前所需完成次数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalTimes;
                     bool m_totalTimesHasBeenSet;
 
                     /**
                      * 任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskName;
                     bool m_taskNameHasBeenSet;
 
                     /**
                      * 用户当前成长值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_growScore;
                     bool m_growScoreHasBeenSet;

@@ -271,7 +271,7 @@ namespace TencentCloud
 电话呼出	        210	           notInService	不在服务区
 
 电话呼入&呼出	211    clientError    客户端错误
-
+电话呼出        212     carrierBlocked      运营商拦截
                      * @return EndStatus EndStatus与EndStatusString一一对应，具体枚举如下：
 
 **场景	         EndStatus	EndStatusString	状态说明**
@@ -325,7 +325,7 @@ namespace TencentCloud
 电话呼出	        210	           notInService	不在服务区
 
 电话呼入&呼出	211    clientError    客户端错误
-
+电话呼出        212     carrierBlocked      运营商拦截
                      * 
                      */
                     int64_t GetEndStatus() const;
@@ -384,7 +384,7 @@ namespace TencentCloud
 电话呼出	        210	           notInService	不在服务区
 
 电话呼入&呼出	211    clientError    客户端错误
-
+电话呼出        212     carrierBlocked      运营商拦截
                      * @param _endStatus EndStatus与EndStatusString一一对应，具体枚举如下：
 
 **场景	         EndStatus	EndStatusString	状态说明**
@@ -438,7 +438,7 @@ namespace TencentCloud
 电话呼出	        210	           notInService	不在服务区
 
 电话呼入&呼出	211    clientError    客户端错误
-
+电话呼出        212     carrierBlocked      运营商拦截
                      * 
                      */
                     void SetEndStatus(const int64_t& _endStatus);
@@ -714,7 +714,7 @@ namespace TencentCloud
 电话呼出	        210	           notInService	不在服务区
 
 电话呼入&呼出	211    clientError    客户端错误
-
+电话呼出        212     carrierBlocked      运营商拦截
                      * @return EndStatusString EndStatus与EndStatusString一一对应，具体枚举如下：
 
 **场景	         EndStatus	EndStatusString	状态说明**
@@ -768,7 +768,7 @@ namespace TencentCloud
 电话呼出	        210	           notInService	不在服务区
 
 电话呼入&呼出	211    clientError    客户端错误
-
+电话呼出        212     carrierBlocked      运营商拦截
                      * 
                      */
                     std::string GetEndStatusString() const;
@@ -827,7 +827,7 @@ namespace TencentCloud
 电话呼出	        210	           notInService	不在服务区
 
 电话呼入&呼出	211    clientError    客户端错误
-
+电话呼出        212     carrierBlocked      运营商拦截
                      * @param _endStatusString EndStatus与EndStatusString一一对应，具体枚举如下：
 
 **场景	         EndStatus	EndStatusString	状态说明**
@@ -881,7 +881,7 @@ namespace TencentCloud
 电话呼出	        210	           notInService	不在服务区
 
 电话呼入&呼出	211    clientError    客户端错误
-
+电话呼出        212     carrierBlocked      运营商拦截
                      * 
                      */
                     void SetEndStatusString(const std::string& _endStatusString);
@@ -1378,7 +1378,7 @@ NotExists
 电话呼出	        210	           notInService	不在服务区
 
 电话呼入&呼出	211    clientError    客户端错误
-
+电话呼出        212     carrierBlocked      运营商拦截
                      */
                     int64_t m_endStatus;
                     bool m_endStatusHasBeenSet;
@@ -1497,7 +1497,7 @@ NotExists
 电话呼出	        210	           notInService	不在服务区
 
 电话呼入&呼出	211    clientError    客户端错误
-
+电话呼出        212     carrierBlocked      运营商拦截
                      */
                     std::string m_endStatusString;
                     bool m_endStatusStringHasBeenSet;

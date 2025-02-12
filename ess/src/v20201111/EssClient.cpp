@@ -771,6 +771,49 @@ EssClient::CreateExtendedServiceAuthInfosOutcomeCallable EssClient::CreateExtend
     return task->get_future();
 }
 
+EssClient::CreateFileCounterSignOutcome EssClient::CreateFileCounterSign(const CreateFileCounterSignRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateFileCounterSign");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateFileCounterSignResponse rsp = CreateFileCounterSignResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateFileCounterSignOutcome(rsp);
+        else
+            return CreateFileCounterSignOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateFileCounterSignOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreateFileCounterSignAsync(const CreateFileCounterSignRequest& request, const CreateFileCounterSignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateFileCounterSign(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::CreateFileCounterSignOutcomeCallable EssClient::CreateFileCounterSignCallable(const CreateFileCounterSignRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateFileCounterSignOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateFileCounterSign(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::CreateFlowOutcome EssClient::CreateFlow(const CreateFlowRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateFlow");
@@ -2835,6 +2878,49 @@ EssClient::DescribeExtendedServiceAuthInfosOutcomeCallable EssClient::DescribeEx
     return task->get_future();
 }
 
+EssClient::DescribeFileCounterSignResultOutcome EssClient::DescribeFileCounterSignResult(const DescribeFileCounterSignResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFileCounterSignResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFileCounterSignResultResponse rsp = DescribeFileCounterSignResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFileCounterSignResultOutcome(rsp);
+        else
+            return DescribeFileCounterSignResultOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFileCounterSignResultOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::DescribeFileCounterSignResultAsync(const DescribeFileCounterSignResultRequest& request, const DescribeFileCounterSignResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFileCounterSignResult(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::DescribeFileCounterSignResultOutcomeCallable EssClient::DescribeFileCounterSignResultCallable(const DescribeFileCounterSignResultRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFileCounterSignResultOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFileCounterSignResult(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::DescribeFileUrlsOutcome EssClient::DescribeFileUrls(const DescribeFileUrlsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeFileUrls");
@@ -4118,6 +4204,49 @@ EssClient::UploadFilesOutcomeCallable EssClient::UploadFilesCallable(const Uploa
         [this, request]()
         {
             return this->UploadFiles(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssClient::VerifyDigitFileOutcome EssClient::VerifyDigitFile(const VerifyDigitFileRequest &request)
+{
+    auto outcome = MakeRequest(request, "VerifyDigitFile");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        VerifyDigitFileResponse rsp = VerifyDigitFileResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return VerifyDigitFileOutcome(rsp);
+        else
+            return VerifyDigitFileOutcome(o.GetError());
+    }
+    else
+    {
+        return VerifyDigitFileOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::VerifyDigitFileAsync(const VerifyDigitFileRequest& request, const VerifyDigitFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->VerifyDigitFile(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::VerifyDigitFileOutcomeCallable EssClient::VerifyDigitFileCallable(const VerifyDigitFileRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<VerifyDigitFileOutcome()>>(
+        [this, request]()
+        {
+            return this->VerifyDigitFile(request);
         }
     );
 

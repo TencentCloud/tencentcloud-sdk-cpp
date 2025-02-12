@@ -22,6 +22,8 @@ using namespace std;
 
 AiParagraphInfo::AiParagraphInfo() :
     m_summaryHasBeenSet(false),
+    m_titleHasBeenSet(false),
+    m_keywordsHasBeenSet(false),
     m_startTimeOffsetHasBeenSet(false),
     m_endTimeOffsetHasBeenSet(false)
 {
@@ -40,6 +42,29 @@ CoreInternalOutcome AiParagraphInfo::Deserialize(const rapidjson::Value &value)
         }
         m_summary = string(value["Summary"].GetString());
         m_summaryHasBeenSet = true;
+    }
+
+    if (value.HasMember("Title") && !value["Title"].IsNull())
+    {
+        if (!value["Title"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiParagraphInfo.Title` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_title = string(value["Title"].GetString());
+        m_titleHasBeenSet = true;
+    }
+
+    if (value.HasMember("Keywords") && !value["Keywords"].IsNull())
+    {
+        if (!value["Keywords"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AiParagraphInfo.Keywords` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Keywords"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_keywords.push_back((*itr).GetString());
+        }
+        m_keywordsHasBeenSet = true;
     }
 
     if (value.HasMember("StartTimeOffset") && !value["StartTimeOffset"].IsNull())
@@ -77,6 +102,27 @@ void AiParagraphInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         value.AddMember(iKey, rapidjson::Value(m_summary.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_titleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Title";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_title.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_keywordsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Keywords";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_keywords.begin(); itr != m_keywords.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
     if (m_startTimeOffsetHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +156,38 @@ void AiParagraphInfo::SetSummary(const string& _summary)
 bool AiParagraphInfo::SummaryHasBeenSet() const
 {
     return m_summaryHasBeenSet;
+}
+
+string AiParagraphInfo::GetTitle() const
+{
+    return m_title;
+}
+
+void AiParagraphInfo::SetTitle(const string& _title)
+{
+    m_title = _title;
+    m_titleHasBeenSet = true;
+}
+
+bool AiParagraphInfo::TitleHasBeenSet() const
+{
+    return m_titleHasBeenSet;
+}
+
+vector<string> AiParagraphInfo::GetKeywords() const
+{
+    return m_keywords;
+}
+
+void AiParagraphInfo::SetKeywords(const vector<string>& _keywords)
+{
+    m_keywords = _keywords;
+    m_keywordsHasBeenSet = true;
+}
+
+bool AiParagraphInfo::KeywordsHasBeenSet() const
+{
+    return m_keywordsHasBeenSet;
 }
 
 double AiParagraphInfo::GetStartTimeOffset() const

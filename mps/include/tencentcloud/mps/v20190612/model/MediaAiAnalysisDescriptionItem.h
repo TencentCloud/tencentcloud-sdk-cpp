@@ -90,6 +90,48 @@ namespace TencentCloud
                     bool ConfidenceHasBeenSet() const;
 
                     /**
+                     * 获取智能描述标题
+                     * @return Title 智能描述标题
+                     * 
+                     */
+                    std::string GetTitle() const;
+
+                    /**
+                     * 设置智能描述标题
+                     * @param _title 智能描述标题
+                     * 
+                     */
+                    void SetTitle(const std::string& _title);
+
+                    /**
+                     * 判断参数 Title 是否已赋值
+                     * @return Title 是否已赋值
+                     * 
+                     */
+                    bool TitleHasBeenSet() const;
+
+                    /**
+                     * 获取智能描述关键词
+                     * @return Keywords 智能描述关键词
+                     * 
+                     */
+                    std::vector<std::string> GetKeywords() const;
+
+                    /**
+                     * 设置智能描述关键词
+                     * @param _keywords 智能描述关键词
+                     * 
+                     */
+                    void SetKeywords(const std::vector<std::string>& _keywords);
+
+                    /**
+                     * 判断参数 Keywords 是否已赋值
+                     * @return Keywords 是否已赋值
+                     * 
+                     */
+                    bool KeywordsHasBeenSet() const;
+
+                    /**
                      * 获取分段结果。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Paragraphs 分段结果。
@@ -127,6 +169,18 @@ namespace TencentCloud
                      */
                     double m_confidence;
                     bool m_confidenceHasBeenSet;
+
+                    /**
+                     * 智能描述标题
+                     */
+                    std::string m_title;
+                    bool m_titleHasBeenSet;
+
+                    /**
+                     * 智能描述关键词
+                     */
+                    std::vector<std::string> m_keywords;
+                    bool m_keywordsHasBeenSet;
 
                     /**
                      * 分段结果。

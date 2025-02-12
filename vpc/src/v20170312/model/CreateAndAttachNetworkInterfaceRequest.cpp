@@ -34,6 +34,7 @@ CreateAndAttachNetworkInterfaceRequest::CreateAndAttachNetworkInterfaceRequest()
     m_networkInterfaceDescriptionHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_attachTypeHasBeenSet(false),
+    m_isRdmaHasBeenSet(false),
     m_clientTokenHasBeenSet(false)
 {
 }
@@ -150,6 +151,14 @@ string CreateAndAttachNetworkInterfaceRequest::ToJsonString() const
         string key = "AttachType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_attachType, allocator);
+    }
+
+    if (m_isRdmaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsRdma";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isRdma, allocator);
     }
 
     if (m_clientTokenHasBeenSet)
@@ -342,6 +351,22 @@ void CreateAndAttachNetworkInterfaceRequest::SetAttachType(const uint64_t& _atta
 bool CreateAndAttachNetworkInterfaceRequest::AttachTypeHasBeenSet() const
 {
     return m_attachTypeHasBeenSet;
+}
+
+bool CreateAndAttachNetworkInterfaceRequest::GetIsRdma() const
+{
+    return m_isRdma;
+}
+
+void CreateAndAttachNetworkInterfaceRequest::SetIsRdma(const bool& _isRdma)
+{
+    m_isRdma = _isRdma;
+    m_isRdmaHasBeenSet = true;
+}
+
+bool CreateAndAttachNetworkInterfaceRequest::IsRdmaHasBeenSet() const
+{
+    return m_isRdmaHasBeenSet;
 }
 
 string CreateAndAttachNetworkInterfaceRequest::GetClientToken() const

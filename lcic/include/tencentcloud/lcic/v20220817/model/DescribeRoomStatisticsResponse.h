@@ -102,9 +102,7 @@ namespace TencentCloud
 
                     /**
                      * 获取秒级unix时间戳，实际房间开始时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RealStartTime 秒级unix时间戳，实际房间开始时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRealStartTime() const;
@@ -118,9 +116,7 @@ namespace TencentCloud
 
                     /**
                      * 获取秒级unix时间戳，实际房间结束时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RealEndTime 秒级unix时间戳，实际房间结束时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRealEndTime() const;
@@ -188,14 +184,12 @@ namespace TencentCloud
 
                     /**
                      * 秒级unix时间戳，实际房间开始时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_realStartTime;
                     bool m_realStartTimeHasBeenSet;
 
                     /**
                      * 秒级unix时间戳，实际房间结束时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_realEndTime;
                     bool m_realEndTimeHasBeenSet;

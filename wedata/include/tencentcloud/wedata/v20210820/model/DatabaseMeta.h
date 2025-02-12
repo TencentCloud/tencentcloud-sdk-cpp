@@ -672,6 +672,56 @@ namespace TencentCloud
                      */
                     bool ClusterNameHasBeenSet() const;
 
+                    /**
+                     * 获取库下表的最新更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ModifiedTimeByTables 库下表的最新更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetModifiedTimeByTables() const;
+
+                    /**
+                     * 设置库下表的最新更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _modifiedTimeByTables 库下表的最新更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetModifiedTimeByTables(const uint64_t& _modifiedTimeByTables);
+
+                    /**
+                     * 判断参数 ModifiedTimeByTables 是否已赋值
+                     * @return ModifiedTimeByTables 是否已赋值
+                     * 
+                     */
+                    bool ModifiedTimeByTablesHasBeenSet() const;
+
+                    /**
+                     * 获取库下表的最新访问时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LastAccessTimeByTables 库下表的最新访问时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetLastAccessTimeByTables() const;
+
+                    /**
+                     * 设置库下表的最新访问时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _lastAccessTimeByTables 库下表的最新访问时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetLastAccessTimeByTables(const uint64_t& _lastAccessTimeByTables);
+
+                    /**
+                     * 判断参数 LastAccessTimeByTables 是否已赋值
+                     * @return LastAccessTimeByTables 是否已赋值
+                     * 
+                     */
+                    bool LastAccessTimeByTablesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -848,6 +898,20 @@ namespace TencentCloud
                      */
                     std::string m_clusterName;
                     bool m_clusterNameHasBeenSet;
+
+                    /**
+                     * 库下表的最新更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_modifiedTimeByTables;
+                    bool m_modifiedTimeByTablesHasBeenSet;
+
+                    /**
+                     * 库下表的最新访问时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_lastAccessTimeByTables;
+                    bool m_lastAccessTimeByTablesHasBeenSet;
 
                 };
             }

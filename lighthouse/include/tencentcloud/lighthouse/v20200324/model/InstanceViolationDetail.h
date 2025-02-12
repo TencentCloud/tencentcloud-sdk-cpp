@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取 来源：RESTRICT：封禁、FREEZW：冻结
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Source  来源：RESTRICT：封禁、FREEZW：冻结
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSource() const;
 
                     /**
                      * 设置 来源：RESTRICT：封禁、FREEZW：冻结
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _source  来源：RESTRICT：封禁、FREEZW：冻结
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSource(const std::string& _source);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否允许自助解封：1是，2否
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return State 是否允许自助解封：1是，2否
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetState() const;
 
                     /**
                      * 设置是否允许自助解封：1是，2否
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _state 是否允许自助解封：1是，2否
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetState(const std::string& _state);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取违规类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Reason 违规类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReason() const;
 
                     /**
                      * 设置违规类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _reason 违规类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReason(const std::string& _reason);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取违规内容（URL、关联域名）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Content 违规内容（URL、关联域名）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContent() const;
 
                     /**
                      * 设置违规内容（URL、关联域名）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _content 违规内容（URL、关联域名）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContent(const std::string& _content);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      *  来源：RESTRICT：封禁、FREEZW：冻结
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_source;
                     bool m_sourceHasBeenSet;
 
                     /**
                      * 是否允许自助解封：1是，2否
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_state;
                     bool m_stateHasBeenSet;
 
                     /**
                      * 违规类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reason;
                     bool m_reasonHasBeenSet;
 
                     /**
                      * 违规内容（URL、关联域名）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;

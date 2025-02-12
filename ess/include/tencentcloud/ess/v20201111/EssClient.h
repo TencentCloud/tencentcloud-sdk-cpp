@@ -57,6 +57,8 @@
 #include <tencentcloud/ess/v20201111/model/CreateEmployeeQualificationSealQrCodeResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateExtendedServiceAuthInfosRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateExtendedServiceAuthInfosResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateFileCounterSignRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreateFileCounterSignResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateFlowRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateFlowResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateFlowApproversRequest.h>
@@ -153,6 +155,8 @@
 #include <tencentcloud/ess/v20201111/model/DescribeExtendedServiceAuthDetailResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeExtendedServiceAuthInfosRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeExtendedServiceAuthInfosResponse.h>
+#include <tencentcloud/ess/v20201111/model/DescribeFileCounterSignResultRequest.h>
+#include <tencentcloud/ess/v20201111/model/DescribeFileCounterSignResultResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeFileUrlsRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeFileUrlsResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeFlowBriefsRequest.h>
@@ -213,6 +217,8 @@
 #include <tencentcloud/ess/v20201111/model/UpdateIntegrationEmployeesResponse.h>
 #include <tencentcloud/ess/v20201111/model/UploadFilesRequest.h>
 #include <tencentcloud/ess/v20201111/model/UploadFilesResponse.h>
+#include <tencentcloud/ess/v20201111/model/VerifyDigitFileRequest.h>
+#include <tencentcloud/ess/v20201111/model/VerifyDigitFileResponse.h>
 #include <tencentcloud/ess/v20201111/model/VerifyPdfRequest.h>
 #include <tencentcloud/ess/v20201111/model/VerifyPdfResponse.h>
 
@@ -280,6 +286,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateExtendedServiceAuthInfosResponse> CreateExtendedServiceAuthInfosOutcome;
                 typedef std::future<CreateExtendedServiceAuthInfosOutcome> CreateExtendedServiceAuthInfosOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateExtendedServiceAuthInfosRequest&, CreateExtendedServiceAuthInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateExtendedServiceAuthInfosAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateFileCounterSignResponse> CreateFileCounterSignOutcome;
+                typedef std::future<CreateFileCounterSignOutcome> CreateFileCounterSignOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreateFileCounterSignRequest&, CreateFileCounterSignOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFileCounterSignAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateFlowResponse> CreateFlowOutcome;
                 typedef std::future<CreateFlowOutcome> CreateFlowOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateFlowRequest&, CreateFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFlowAsyncHandler;
@@ -424,6 +433,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeExtendedServiceAuthInfosResponse> DescribeExtendedServiceAuthInfosOutcome;
                 typedef std::future<DescribeExtendedServiceAuthInfosOutcome> DescribeExtendedServiceAuthInfosOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeExtendedServiceAuthInfosRequest&, DescribeExtendedServiceAuthInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExtendedServiceAuthInfosAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFileCounterSignResultResponse> DescribeFileCounterSignResultOutcome;
+                typedef std::future<DescribeFileCounterSignResultOutcome> DescribeFileCounterSignResultOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::DescribeFileCounterSignResultRequest&, DescribeFileCounterSignResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFileCounterSignResultAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeFileUrlsResponse> DescribeFileUrlsOutcome;
                 typedef std::future<DescribeFileUrlsOutcome> DescribeFileUrlsOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeFileUrlsRequest&, DescribeFileUrlsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFileUrlsAsyncHandler;
@@ -514,6 +526,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UploadFilesResponse> UploadFilesOutcome;
                 typedef std::future<UploadFilesOutcome> UploadFilesOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::UploadFilesRequest&, UploadFilesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadFilesAsyncHandler;
+                typedef Outcome<Core::Error, Model::VerifyDigitFileResponse> VerifyDigitFileOutcome;
+                typedef std::future<VerifyDigitFileOutcome> VerifyDigitFileOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::VerifyDigitFileRequest&, VerifyDigitFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyDigitFileAsyncHandler;
                 typedef Outcome<Core::Error, Model::VerifyPdfResponse> VerifyPdfOutcome;
                 typedef std::future<VerifyPdfOutcome> VerifyPdfOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::VerifyPdfRequest&, VerifyPdfOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyPdfAsyncHandler;
@@ -855,6 +870,17 @@ namespace TencentCloud
                 CreateExtendedServiceAuthInfosOutcome CreateExtendedServiceAuthInfos(const Model::CreateExtendedServiceAuthInfosRequest &request);
                 void CreateExtendedServiceAuthInfosAsync(const Model::CreateExtendedServiceAuthInfosRequest& request, const CreateExtendedServiceAuthInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateExtendedServiceAuthInfosOutcomeCallable CreateExtendedServiceAuthInfosCallable(const Model::CreateExtendedServiceAuthInfosRequest& request);
+
+                /**
+                 *此接口用于发起数字文件CA加签操作。可以使用同步或者异步模式进行。
+
+**注意： 1. 文件类型暂时仅支持PDF类型文件。2. 此接口为『数字文件CA加签服务』白名单功能，使用前请联系对接的客户经理沟通。**
+                 * @param req CreateFileCounterSignRequest
+                 * @return CreateFileCounterSignOutcome
+                 */
+                CreateFileCounterSignOutcome CreateFileCounterSign(const Model::CreateFileCounterSignRequest &request);
+                void CreateFileCounterSignAsync(const Model::CreateFileCounterSignRequest& request, const CreateFileCounterSignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateFileCounterSignOutcomeCallable CreateFileCounterSignCallable(const Model::CreateFileCounterSignRequest& request);
 
                 /**
                  *通过模板创建签署流程<br/>
@@ -1795,6 +1821,17 @@ namespace TencentCloud
                 DescribeExtendedServiceAuthInfosOutcomeCallable DescribeExtendedServiceAuthInfosCallable(const Model::DescribeExtendedServiceAuthInfosRequest& request);
 
                 /**
+                 *文件CA加签任务结果查询接口，用于查询 CreateFileCounterSign接口 发起的异步加签任务。
+
+注意：`此接口为『数字文件CA加签服务』白名单功能，使用前请联系对接的客户经理沟通。`
+                 * @param req DescribeFileCounterSignResultRequest
+                 * @return DescribeFileCounterSignResultOutcome
+                 */
+                DescribeFileCounterSignResultOutcome DescribeFileCounterSignResult(const Model::DescribeFileCounterSignResultRequest &request);
+                void DescribeFileCounterSignResultAsync(const Model::DescribeFileCounterSignResultRequest& request, const DescribeFileCounterSignResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFileCounterSignResultOutcomeCallable DescribeFileCounterSignResultCallable(const Model::DescribeFileCounterSignResultRequest& request);
+
+                /**
                  *本接口（DescribeFileUrls）用于查询文件的下载URL。
 适用场景：通过传参合同流程编号，下载对应的合同PDF文件流到本地。
 
@@ -2265,6 +2302,15 @@ httpProfile.setEndpoint("file.test.ess.tencent.cn");
                 UploadFilesOutcome UploadFiles(const Model::UploadFilesRequest &request);
                 void UploadFilesAsync(const Model::UploadFilesRequest& request, const UploadFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UploadFilesOutcomeCallable UploadFilesCallable(const Model::UploadFilesRequest& request);
+
+                /**
+                 *对加签后的文件进行数字签名验证，判断数字签名是否有效。
+                 * @param req VerifyDigitFileRequest
+                 * @return VerifyDigitFileOutcome
+                 */
+                VerifyDigitFileOutcome VerifyDigitFile(const Model::VerifyDigitFileRequest &request);
+                void VerifyDigitFileAsync(const Model::VerifyDigitFileRequest& request, const VerifyDigitFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                VerifyDigitFileOutcomeCallable VerifyDigitFileCallable(const Model::VerifyDigitFileRequest& request);
 
                 /**
                  *对合同流程文件进行数字签名验证，判断数字签名是否有效，合同文件内容是否被篡改。

@@ -89,10 +89,10 @@ namespace TencentCloud
                     bool ConfidenceHasBeenSet() const;
 
                     /**
-                     * 获取字段是否不完整
+                     * 获取字段是否不完整（value内容）
 0 字段正常
 1 字段不完整
-                     * @return IsInComplete 字段是否不完整
+                     * @return IsInComplete 字段是否不完整（value内容）
 0 字段正常
 1 字段不完整
                      * 
@@ -100,10 +100,10 @@ namespace TencentCloud
                     int64_t GetIsInComplete() const;
 
                     /**
-                     * 设置字段是否不完整
+                     * 设置字段是否不完整（value内容）
 0 字段正常
 1 字段不完整
-                     * @param _isInComplete 字段是否不完整
+                     * @param _isInComplete 字段是否不完整（value内容）
 0 字段正常
 1 字段不完整
                      * 
@@ -118,10 +118,10 @@ namespace TencentCloud
                     bool IsInCompleteHasBeenSet() const;
 
                     /**
-                     * 获取字段反光
+                     * 获取字段反光（value内容）
 0 字段正常
 1 字段有反光
-                     * @return IsReflect 字段反光
+                     * @return IsReflect 字段反光（value内容）
 0 字段正常
 1 字段有反光
                      * 
@@ -129,10 +129,10 @@ namespace TencentCloud
                     int64_t GetIsReflect() const;
 
                     /**
-                     * 设置字段反光
+                     * 设置字段反光（value内容）
 0 字段正常
 1 字段有反光
-                     * @param _isReflect 字段反光
+                     * @param _isReflect 字段反光（value内容）
 0 字段正常
 1 字段有反光
                      * 
@@ -145,6 +145,64 @@ namespace TencentCloud
                      * 
                      */
                     bool IsReflectHasBeenSet() const;
+
+                    /**
+                     * 获取字段是否不完整（key内容）
+0 字段正常
+1 字段不完整
+                     * @return IsKeyInComplete 字段是否不完整（key内容）
+0 字段正常
+1 字段不完整
+                     * 
+                     */
+                    int64_t GetIsKeyInComplete() const;
+
+                    /**
+                     * 设置字段是否不完整（key内容）
+0 字段正常
+1 字段不完整
+                     * @param _isKeyInComplete 字段是否不完整（key内容）
+0 字段正常
+1 字段不完整
+                     * 
+                     */
+                    void SetIsKeyInComplete(const int64_t& _isKeyInComplete);
+
+                    /**
+                     * 判断参数 IsKeyInComplete 是否已赋值
+                     * @return IsKeyInComplete 是否已赋值
+                     * 
+                     */
+                    bool IsKeyInCompleteHasBeenSet() const;
+
+                    /**
+                     * 获取字段反光（key内容）
+0 字段正常
+1 字段有反光
+                     * @return IsKeyReflect 字段反光（key内容）
+0 字段正常
+1 字段有反光
+                     * 
+                     */
+                    int64_t GetIsKeyReflect() const;
+
+                    /**
+                     * 设置字段反光（key内容）
+0 字段正常
+1 字段有反光
+                     * @param _isKeyReflect 字段反光（key内容）
+0 字段正常
+1 字段有反光
+                     * 
+                     */
+                    void SetIsKeyReflect(const int64_t& _isKeyReflect);
+
+                    /**
+                     * 判断参数 IsKeyReflect 是否已赋值
+                     * @return IsKeyReflect 是否已赋值
+                     * 
+                     */
+                    bool IsKeyReflectHasBeenSet() const;
 
                 private:
 
@@ -161,7 +219,7 @@ namespace TencentCloud
                     bool m_confidenceHasBeenSet;
 
                     /**
-                     * 字段是否不完整
+                     * 字段是否不完整（value内容）
 0 字段正常
 1 字段不完整
                      */
@@ -169,12 +227,28 @@ namespace TencentCloud
                     bool m_isInCompleteHasBeenSet;
 
                     /**
-                     * 字段反光
+                     * 字段反光（value内容）
 0 字段正常
 1 字段有反光
                      */
                     int64_t m_isReflect;
                     bool m_isReflectHasBeenSet;
+
+                    /**
+                     * 字段是否不完整（key内容）
+0 字段正常
+1 字段不完整
+                     */
+                    int64_t m_isKeyInComplete;
+                    bool m_isKeyInCompleteHasBeenSet;
+
+                    /**
+                     * 字段反光（key内容）
+0 字段正常
+1 字段有反光
+                     */
+                    int64_t m_isKeyReflect;
+                    bool m_isKeyReflectHasBeenSet;
 
                 };
             }

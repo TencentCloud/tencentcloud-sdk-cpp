@@ -81,7 +81,10 @@ TableMeta::TableMeta() :
     m_collectJobIdHasBeenSet(false),
     m_collectJobNameHasBeenSet(false),
     m_urnHasBeenSet(false),
-    m_hasBizPermissionHasBeenSet(false)
+    m_hasBizPermissionHasBeenSet(false),
+    m_ownerByEngineHasBeenSet(false),
+    m_errorTipsHasBeenSet(false),
+    m_ifSupportCreateAndDDLHasBeenSet(false)
 {
 }
 
@@ -753,6 +756,43 @@ CoreInternalOutcome TableMeta::Deserialize(const rapidjson::Value &value)
         m_hasBizPermissionHasBeenSet = true;
     }
 
+    if (value.HasMember("OwnerByEngine") && !value["OwnerByEngine"].IsNull())
+    {
+        if (!value["OwnerByEngine"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableMeta.OwnerByEngine` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ownerByEngine = string(value["OwnerByEngine"].GetString());
+        m_ownerByEngineHasBeenSet = true;
+    }
+
+    if (value.HasMember("ErrorTips") && !value["ErrorTips"].IsNull())
+    {
+        if (!value["ErrorTips"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableMeta.ErrorTips` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_errorTips = string(value["ErrorTips"].GetString());
+        m_errorTipsHasBeenSet = true;
+    }
+
+    if (value.HasMember("IfSupportCreateAndDDL") && !value["IfSupportCreateAndDDL"].IsNull())
+    {
+        if (!value["IfSupportCreateAndDDL"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableMeta.IfSupportCreateAndDDL` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_ifSupportCreateAndDDL.Deserialize(value["IfSupportCreateAndDDL"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_ifSupportCreateAndDDLHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1284,6 +1324,31 @@ void TableMeta::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "HasBizPermission";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_hasBizPermission, allocator);
+    }
+
+    if (m_ownerByEngineHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OwnerByEngine";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ownerByEngine.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_errorTipsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrorTips";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errorTips.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ifSupportCreateAndDDLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IfSupportCreateAndDDL";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_ifSupportCreateAndDDL.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -2263,5 +2328,53 @@ void TableMeta::SetHasBizPermission(const bool& _hasBizPermission)
 bool TableMeta::HasBizPermissionHasBeenSet() const
 {
     return m_hasBizPermissionHasBeenSet;
+}
+
+string TableMeta::GetOwnerByEngine() const
+{
+    return m_ownerByEngine;
+}
+
+void TableMeta::SetOwnerByEngine(const string& _ownerByEngine)
+{
+    m_ownerByEngine = _ownerByEngine;
+    m_ownerByEngineHasBeenSet = true;
+}
+
+bool TableMeta::OwnerByEngineHasBeenSet() const
+{
+    return m_ownerByEngineHasBeenSet;
+}
+
+string TableMeta::GetErrorTips() const
+{
+    return m_errorTips;
+}
+
+void TableMeta::SetErrorTips(const string& _errorTips)
+{
+    m_errorTips = _errorTips;
+    m_errorTipsHasBeenSet = true;
+}
+
+bool TableMeta::ErrorTipsHasBeenSet() const
+{
+    return m_errorTipsHasBeenSet;
+}
+
+CreateAndDDLSupport TableMeta::GetIfSupportCreateAndDDL() const
+{
+    return m_ifSupportCreateAndDDL;
+}
+
+void TableMeta::SetIfSupportCreateAndDDL(const CreateAndDDLSupport& _ifSupportCreateAndDDL)
+{
+    m_ifSupportCreateAndDDL = _ifSupportCreateAndDDL;
+    m_ifSupportCreateAndDDLHasBeenSet = true;
+}
+
+bool TableMeta::IfSupportCreateAndDDLHasBeenSet() const
+{
+    return m_ifSupportCreateAndDDLHasBeenSet;
 }
 

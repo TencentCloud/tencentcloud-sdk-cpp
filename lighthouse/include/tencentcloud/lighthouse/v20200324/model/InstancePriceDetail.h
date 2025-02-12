@@ -100,18 +100,14 @@ namespace TencentCloud
 
                     /**
                      * 获取折扣梯度详情，每个梯度包含的信息有：时长，折扣数，总价，折扣价，折扣详情（用户折扣、官网折扣、最终折扣）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiscountDetail 折扣梯度详情，每个梯度包含的信息有：时长，折扣数，总价，折扣价，折扣详情（用户折扣、官网折扣、最终折扣）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DiscountDetail> GetDiscountDetail() const;
 
                     /**
                      * 设置折扣梯度详情，每个梯度包含的信息有：时长，折扣数，总价，折扣价，折扣详情（用户折扣、官网折扣、最终折扣）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _discountDetail 折扣梯度详情，每个梯度包含的信息有：时长，折扣数，总价，折扣价，折扣详情（用户折扣、官网折扣、最终折扣）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiscountDetail(const std::vector<DiscountDetail>& _discountDetail);
@@ -141,7 +137,6 @@ namespace TencentCloud
 
                     /**
                      * 折扣梯度详情，每个梯度包含的信息有：时长，折扣数，总价，折扣价，折扣详情（用户折扣、官网折扣、最终折扣）。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DiscountDetail> m_discountDetail;
                     bool m_discountDetailHasBeenSet;

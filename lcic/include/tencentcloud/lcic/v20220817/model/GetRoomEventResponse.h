@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取详细事件内容。包含相应的类型、发生的时间戳。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Events 详细事件内容。包含相应的类型、发生的时间戳。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<EventInfo> GetEvents() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 详细事件内容。包含相应的类型、发生的时间戳。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<EventInfo> m_events;
                     bool m_eventsHasBeenSet;

@@ -81,6 +81,8 @@
 #include <tencentcloud/vpc/v20170312/model/CheckDefaultSubnetResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CheckNetDetectStateRequest.h>
 #include <tencentcloud/vpc/v20170312/model/CheckNetDetectStateResponse.h>
+#include <tencentcloud/vpc/v20170312/model/CheckTrafficMirrorRequest.h>
+#include <tencentcloud/vpc/v20170312/model/CheckTrafficMirrorResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ClearRouteTableSelectionPoliciesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ClearRouteTableSelectionPoliciesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CloneSecurityGroupRequest.h>
@@ -173,6 +175,8 @@
 #include <tencentcloud/vpc/v20170312/model/CreateSubnetResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateSubnetsRequest.h>
 #include <tencentcloud/vpc/v20170312/model/CreateSubnetsResponse.h>
+#include <tencentcloud/vpc/v20170312/model/CreateTrafficMirrorRequest.h>
+#include <tencentcloud/vpc/v20170312/model/CreateTrafficMirrorResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateTrafficPackagesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/CreateTrafficPackagesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateVpcRequest.h>
@@ -275,6 +279,8 @@
 #include <tencentcloud/vpc/v20170312/model/DeleteSubnetResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteTemplateMemberRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteTemplateMemberResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DeleteTrafficMirrorRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DeleteTrafficMirrorResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteTrafficPackagesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteTrafficPackagesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteVpcRequest.h>
@@ -467,6 +473,8 @@
 #include <tencentcloud/vpc/v20170312/model/DescribeTemplateLimitsResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeTenantCcnsRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeTenantCcnsResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeTrafficMirrorsRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeTrafficMirrorsResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeTrafficPackagesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeTrafficPackagesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeTrafficQosPolicyRequest.h>
@@ -701,6 +709,8 @@
 #include <tencentcloud/vpc/v20170312/model/ModifySubnetAttributeResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyTemplateMemberRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyTemplateMemberResponse.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyTrafficMirrorAttributeRequest.h>
+#include <tencentcloud/vpc/v20170312/model/ModifyTrafficMirrorAttributeResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyVpcAttributeRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyVpcAttributeResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyVpcEndPointAttributeRequest.h>
@@ -771,6 +781,12 @@
 #include <tencentcloud/vpc/v20170312/model/ResetNatGatewayConnectionResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ResetRoutesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ResetRoutesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/ResetTrafficMirrorFilterRequest.h>
+#include <tencentcloud/vpc/v20170312/model/ResetTrafficMirrorFilterResponse.h>
+#include <tencentcloud/vpc/v20170312/model/ResetTrafficMirrorSrcsRequest.h>
+#include <tencentcloud/vpc/v20170312/model/ResetTrafficMirrorSrcsResponse.h>
+#include <tencentcloud/vpc/v20170312/model/ResetTrafficMirrorTargetRequest.h>
+#include <tencentcloud/vpc/v20170312/model/ResetTrafficMirrorTargetResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ResetVpnConnectionRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ResetVpnConnectionResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ResetVpnGatewayInternetMaxBandwidthRequest.h>
@@ -783,6 +799,10 @@
 #include <tencentcloud/vpc/v20170312/model/SetCcnRegionBandwidthLimitsResponse.h>
 #include <tencentcloud/vpc/v20170312/model/SetVpnGatewaysRenewFlagRequest.h>
 #include <tencentcloud/vpc/v20170312/model/SetVpnGatewaysRenewFlagResponse.h>
+#include <tencentcloud/vpc/v20170312/model/StartTrafficMirrorRequest.h>
+#include <tencentcloud/vpc/v20170312/model/StartTrafficMirrorResponse.h>
+#include <tencentcloud/vpc/v20170312/model/StopTrafficMirrorRequest.h>
+#include <tencentcloud/vpc/v20170312/model/StopTrafficMirrorResponse.h>
 #include <tencentcloud/vpc/v20170312/model/TransformAddressRequest.h>
 #include <tencentcloud/vpc/v20170312/model/TransformAddressResponse.h>
 #include <tencentcloud/vpc/v20170312/model/UnassignIpv6AddressesRequest.h>
@@ -797,6 +817,10 @@
 #include <tencentcloud/vpc/v20170312/model/UnlockCcnBandwidthsResponse.h>
 #include <tencentcloud/vpc/v20170312/model/UnlockCcnsRequest.h>
 #include <tencentcloud/vpc/v20170312/model/UnlockCcnsResponse.h>
+#include <tencentcloud/vpc/v20170312/model/UpdateTrafficMirrorAllFilterRequest.h>
+#include <tencentcloud/vpc/v20170312/model/UpdateTrafficMirrorAllFilterResponse.h>
+#include <tencentcloud/vpc/v20170312/model/UpdateTrafficMirrorDirectionRequest.h>
+#include <tencentcloud/vpc/v20170312/model/UpdateTrafficMirrorDirectionResponse.h>
 #include <tencentcloud/vpc/v20170312/model/WithdrawNotifyRoutesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/WithdrawNotifyRoutesResponse.h>
 
@@ -900,6 +924,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CheckNetDetectStateResponse> CheckNetDetectStateOutcome;
                 typedef std::future<CheckNetDetectStateOutcome> CheckNetDetectStateOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::CheckNetDetectStateRequest&, CheckNetDetectStateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckNetDetectStateAsyncHandler;
+                typedef Outcome<Core::Error, Model::CheckTrafficMirrorResponse> CheckTrafficMirrorOutcome;
+                typedef std::future<CheckTrafficMirrorOutcome> CheckTrafficMirrorOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::CheckTrafficMirrorRequest&, CheckTrafficMirrorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckTrafficMirrorAsyncHandler;
                 typedef Outcome<Core::Error, Model::ClearRouteTableSelectionPoliciesResponse> ClearRouteTableSelectionPoliciesOutcome;
                 typedef std::future<ClearRouteTableSelectionPoliciesOutcome> ClearRouteTableSelectionPoliciesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ClearRouteTableSelectionPoliciesRequest&, ClearRouteTableSelectionPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ClearRouteTableSelectionPoliciesAsyncHandler;
@@ -1038,6 +1065,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateSubnetsResponse> CreateSubnetsOutcome;
                 typedef std::future<CreateSubnetsOutcome> CreateSubnetsOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::CreateSubnetsRequest&, CreateSubnetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSubnetsAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateTrafficMirrorResponse> CreateTrafficMirrorOutcome;
+                typedef std::future<CreateTrafficMirrorOutcome> CreateTrafficMirrorOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::CreateTrafficMirrorRequest&, CreateTrafficMirrorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTrafficMirrorAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateTrafficPackagesResponse> CreateTrafficPackagesOutcome;
                 typedef std::future<CreateTrafficPackagesOutcome> CreateTrafficPackagesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::CreateTrafficPackagesRequest&, CreateTrafficPackagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTrafficPackagesAsyncHandler;
@@ -1191,6 +1221,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteTemplateMemberResponse> DeleteTemplateMemberOutcome;
                 typedef std::future<DeleteTemplateMemberOutcome> DeleteTemplateMemberOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DeleteTemplateMemberRequest&, DeleteTemplateMemberOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTemplateMemberAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteTrafficMirrorResponse> DeleteTrafficMirrorOutcome;
+                typedef std::future<DeleteTrafficMirrorOutcome> DeleteTrafficMirrorOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DeleteTrafficMirrorRequest&, DeleteTrafficMirrorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTrafficMirrorAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteTrafficPackagesResponse> DeleteTrafficPackagesOutcome;
                 typedef std::future<DeleteTrafficPackagesOutcome> DeleteTrafficPackagesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DeleteTrafficPackagesRequest&, DeleteTrafficPackagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTrafficPackagesAsyncHandler;
@@ -1479,6 +1512,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTenantCcnsResponse> DescribeTenantCcnsOutcome;
                 typedef std::future<DescribeTenantCcnsOutcome> DescribeTenantCcnsOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeTenantCcnsRequest&, DescribeTenantCcnsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTenantCcnsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTrafficMirrorsResponse> DescribeTrafficMirrorsOutcome;
+                typedef std::future<DescribeTrafficMirrorsOutcome> DescribeTrafficMirrorsOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeTrafficMirrorsRequest&, DescribeTrafficMirrorsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTrafficMirrorsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTrafficPackagesResponse> DescribeTrafficPackagesOutcome;
                 typedef std::future<DescribeTrafficPackagesOutcome> DescribeTrafficPackagesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeTrafficPackagesRequest&, DescribeTrafficPackagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTrafficPackagesAsyncHandler;
@@ -1830,6 +1866,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyTemplateMemberResponse> ModifyTemplateMemberOutcome;
                 typedef std::future<ModifyTemplateMemberOutcome> ModifyTemplateMemberOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ModifyTemplateMemberRequest&, ModifyTemplateMemberOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTemplateMemberAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyTrafficMirrorAttributeResponse> ModifyTrafficMirrorAttributeOutcome;
+                typedef std::future<ModifyTrafficMirrorAttributeOutcome> ModifyTrafficMirrorAttributeOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::ModifyTrafficMirrorAttributeRequest&, ModifyTrafficMirrorAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTrafficMirrorAttributeAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyVpcAttributeResponse> ModifyVpcAttributeOutcome;
                 typedef std::future<ModifyVpcAttributeOutcome> ModifyVpcAttributeOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ModifyVpcAttributeRequest&, ModifyVpcAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVpcAttributeAsyncHandler;
@@ -1935,6 +1974,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ResetRoutesResponse> ResetRoutesOutcome;
                 typedef std::future<ResetRoutesOutcome> ResetRoutesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ResetRoutesRequest&, ResetRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetRoutesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResetTrafficMirrorFilterResponse> ResetTrafficMirrorFilterOutcome;
+                typedef std::future<ResetTrafficMirrorFilterOutcome> ResetTrafficMirrorFilterOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::ResetTrafficMirrorFilterRequest&, ResetTrafficMirrorFilterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetTrafficMirrorFilterAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResetTrafficMirrorSrcsResponse> ResetTrafficMirrorSrcsOutcome;
+                typedef std::future<ResetTrafficMirrorSrcsOutcome> ResetTrafficMirrorSrcsOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::ResetTrafficMirrorSrcsRequest&, ResetTrafficMirrorSrcsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetTrafficMirrorSrcsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResetTrafficMirrorTargetResponse> ResetTrafficMirrorTargetOutcome;
+                typedef std::future<ResetTrafficMirrorTargetOutcome> ResetTrafficMirrorTargetOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::ResetTrafficMirrorTargetRequest&, ResetTrafficMirrorTargetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetTrafficMirrorTargetAsyncHandler;
                 typedef Outcome<Core::Error, Model::ResetVpnConnectionResponse> ResetVpnConnectionOutcome;
                 typedef std::future<ResetVpnConnectionOutcome> ResetVpnConnectionOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ResetVpnConnectionRequest&, ResetVpnConnectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetVpnConnectionAsyncHandler;
@@ -1953,6 +2001,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SetVpnGatewaysRenewFlagResponse> SetVpnGatewaysRenewFlagOutcome;
                 typedef std::future<SetVpnGatewaysRenewFlagOutcome> SetVpnGatewaysRenewFlagOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::SetVpnGatewaysRenewFlagRequest&, SetVpnGatewaysRenewFlagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetVpnGatewaysRenewFlagAsyncHandler;
+                typedef Outcome<Core::Error, Model::StartTrafficMirrorResponse> StartTrafficMirrorOutcome;
+                typedef std::future<StartTrafficMirrorOutcome> StartTrafficMirrorOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::StartTrafficMirrorRequest&, StartTrafficMirrorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartTrafficMirrorAsyncHandler;
+                typedef Outcome<Core::Error, Model::StopTrafficMirrorResponse> StopTrafficMirrorOutcome;
+                typedef std::future<StopTrafficMirrorOutcome> StopTrafficMirrorOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::StopTrafficMirrorRequest&, StopTrafficMirrorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopTrafficMirrorAsyncHandler;
                 typedef Outcome<Core::Error, Model::TransformAddressResponse> TransformAddressOutcome;
                 typedef std::future<TransformAddressOutcome> TransformAddressOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::TransformAddressRequest&, TransformAddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TransformAddressAsyncHandler;
@@ -1974,6 +2028,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UnlockCcnsResponse> UnlockCcnsOutcome;
                 typedef std::future<UnlockCcnsOutcome> UnlockCcnsOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::UnlockCcnsRequest&, UnlockCcnsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnlockCcnsAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateTrafficMirrorAllFilterResponse> UpdateTrafficMirrorAllFilterOutcome;
+                typedef std::future<UpdateTrafficMirrorAllFilterOutcome> UpdateTrafficMirrorAllFilterOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::UpdateTrafficMirrorAllFilterRequest&, UpdateTrafficMirrorAllFilterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateTrafficMirrorAllFilterAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateTrafficMirrorDirectionResponse> UpdateTrafficMirrorDirectionOutcome;
+                typedef std::future<UpdateTrafficMirrorDirectionOutcome> UpdateTrafficMirrorDirectionOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::UpdateTrafficMirrorDirectionRequest&, UpdateTrafficMirrorDirectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateTrafficMirrorDirectionAsyncHandler;
                 typedef Outcome<Core::Error, Model::WithdrawNotifyRoutesResponse> WithdrawNotifyRoutesOutcome;
                 typedef std::future<WithdrawNotifyRoutesOutcome> WithdrawNotifyRoutesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::WithdrawNotifyRoutesRequest&, WithdrawNotifyRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> WithdrawNotifyRoutesAsyncHandler;
@@ -2295,6 +2355,15 @@ namespace TencentCloud
                 CheckNetDetectStateOutcome CheckNetDetectState(const Model::CheckNetDetectStateRequest &request);
                 void CheckNetDetectStateAsync(const Model::CheckNetDetectStateRequest& request, const CheckNetDetectStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CheckNetDetectStateOutcomeCallable CheckNetDetectStateCallable(const Model::CheckNetDetectStateRequest& request);
+
+                /**
+                 *检查流量镜像的采集端接收端（公网IP类型）
+                 * @param req CheckTrafficMirrorRequest
+                 * @return CheckTrafficMirrorOutcome
+                 */
+                CheckTrafficMirrorOutcome CheckTrafficMirror(const Model::CheckTrafficMirrorRequest &request);
+                void CheckTrafficMirrorAsync(const Model::CheckTrafficMirrorRequest& request, const CheckTrafficMirrorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CheckTrafficMirrorOutcomeCallable CheckTrafficMirrorCallable(const Model::CheckTrafficMirrorRequest& request);
 
                 /**
                  *本接口（ClearRouteTableSelectionPolicies）用于清空指定云联网的路由表选择策略。
@@ -2785,6 +2854,15 @@ namespace TencentCloud
                 CreateSubnetsOutcome CreateSubnets(const Model::CreateSubnetsRequest &request);
                 void CreateSubnetsAsync(const Model::CreateSubnetsRequest& request, const CreateSubnetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateSubnetsOutcomeCallable CreateSubnetsCallable(const Model::CreateSubnetsRequest& request);
+
+                /**
+                 *本接口（CreateTrafficMirror）用于创建流量镜像实例。
+                 * @param req CreateTrafficMirrorRequest
+                 * @return CreateTrafficMirrorOutcome
+                 */
+                CreateTrafficMirrorOutcome CreateTrafficMirror(const Model::CreateTrafficMirrorRequest &request);
+                void CreateTrafficMirrorAsync(const Model::CreateTrafficMirrorRequest& request, const CreateTrafficMirrorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateTrafficMirrorOutcomeCallable CreateTrafficMirrorCallable(const Model::CreateTrafficMirrorRequest& request);
 
                 /**
                  *本接口 (CreateTrafficPackages) 用于创建共享流量包。
@@ -3278,6 +3356,15 @@ namespace TencentCloud
                 DeleteTemplateMemberOutcome DeleteTemplateMember(const Model::DeleteTemplateMemberRequest &request);
                 void DeleteTemplateMemberAsync(const Model::DeleteTemplateMemberRequest& request, const DeleteTemplateMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteTemplateMemberOutcomeCallable DeleteTemplateMemberCallable(const Model::DeleteTemplateMemberRequest& request);
+
+                /**
+                 *本接口（DeleteTrafficMirror）用于删除流量镜像实例。
+                 * @param req DeleteTrafficMirrorRequest
+                 * @return DeleteTrafficMirrorOutcome
+                 */
+                DeleteTrafficMirrorOutcome DeleteTrafficMirror(const Model::DeleteTrafficMirrorRequest &request);
+                void DeleteTrafficMirrorAsync(const Model::DeleteTrafficMirrorRequest& request, const DeleteTrafficMirrorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteTrafficMirrorOutcomeCallable DeleteTrafficMirrorCallable(const Model::DeleteTrafficMirrorRequest& request);
 
                 /**
                  *删除共享带宽包（仅非活动状态的流量包可删除）。
@@ -4160,6 +4247,15 @@ namespace TencentCloud
                 DescribeTenantCcnsOutcome DescribeTenantCcns(const Model::DescribeTenantCcnsRequest &request);
                 void DescribeTenantCcnsAsync(const Model::DescribeTenantCcnsRequest& request, const DescribeTenantCcnsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTenantCcnsOutcomeCallable DescribeTenantCcnsCallable(const Model::DescribeTenantCcnsRequest& request);
+
+                /**
+                 *本接口（DescribeTrafficMirrors）用于查询流量镜像实例信息。
+                 * @param req DescribeTrafficMirrorsRequest
+                 * @return DescribeTrafficMirrorsOutcome
+                 */
+                DescribeTrafficMirrorsOutcome DescribeTrafficMirrors(const Model::DescribeTrafficMirrorsRequest &request);
+                void DescribeTrafficMirrorsAsync(const Model::DescribeTrafficMirrorsRequest& request, const DescribeTrafficMirrorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTrafficMirrorsOutcomeCallable DescribeTrafficMirrorsCallable(const Model::DescribeTrafficMirrorsRequest& request);
 
                 /**
                  *本接口 (DescribeTrafficPackages)  用于查询共享流量包详细信息，包括共享流量包唯一标识ID，名称，流量使用信息等
@@ -5314,6 +5410,16 @@ LimitTypes取值范围：
                 ModifyTemplateMemberOutcomeCallable ModifyTemplateMemberCallable(const Model::ModifyTemplateMemberRequest& request);
 
                 /**
+                 *本接口（ModifyTrafficMirrorAttribute）用于修改流量镜像实例属性。
+注意：只支持修改名字和描述信息
+                 * @param req ModifyTrafficMirrorAttributeRequest
+                 * @return ModifyTrafficMirrorAttributeOutcome
+                 */
+                ModifyTrafficMirrorAttributeOutcome ModifyTrafficMirrorAttribute(const Model::ModifyTrafficMirrorAttributeRequest &request);
+                void ModifyTrafficMirrorAttributeAsync(const Model::ModifyTrafficMirrorAttributeRequest& request, const ModifyTrafficMirrorAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyTrafficMirrorAttributeOutcomeCallable ModifyTrafficMirrorAttributeCallable(const Model::ModifyTrafficMirrorAttributeRequest& request);
+
+                /**
                  *本接口（ModifyVpcAttribute）用于修改私有网络（VPC）的相关属性。
                  * @param req ModifyVpcAttributeRequest
                  * @return ModifyVpcAttributeOutcome
@@ -5677,6 +5783,34 @@ LimitTypes取值范围：
                 ResetRoutesOutcomeCallable ResetRoutesCallable(const Model::ResetRoutesRequest& request);
 
                 /**
+                 *本接口（ResetTrafficMirrorFilter）用于更新流量镜像实例过滤规则。
+注意：每一个流量镜像实例，不能同时支持按nat网关和五元组两种规则过滤
+                 * @param req ResetTrafficMirrorFilterRequest
+                 * @return ResetTrafficMirrorFilterOutcome
+                 */
+                ResetTrafficMirrorFilterOutcome ResetTrafficMirrorFilter(const Model::ResetTrafficMirrorFilterRequest &request);
+                void ResetTrafficMirrorFilterAsync(const Model::ResetTrafficMirrorFilterRequest& request, const ResetTrafficMirrorFilterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResetTrafficMirrorFilterOutcomeCallable ResetTrafficMirrorFilterCallable(const Model::ResetTrafficMirrorFilterRequest& request);
+
+                /**
+                 *本接口（ResetTrafficMirrorSrcs）用于重置流量镜像实例采集对象。
+                 * @param req ResetTrafficMirrorSrcsRequest
+                 * @return ResetTrafficMirrorSrcsOutcome
+                 */
+                ResetTrafficMirrorSrcsOutcome ResetTrafficMirrorSrcs(const Model::ResetTrafficMirrorSrcsRequest &request);
+                void ResetTrafficMirrorSrcsAsync(const Model::ResetTrafficMirrorSrcsRequest& request, const ResetTrafficMirrorSrcsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResetTrafficMirrorSrcsOutcomeCallable ResetTrafficMirrorSrcsCallable(const Model::ResetTrafficMirrorSrcsRequest& request);
+
+                /**
+                 *本接口（ResetTrafficMirrorTarget）用于更新流量镜像实例的接收目的信息。
+                 * @param req ResetTrafficMirrorTargetRequest
+                 * @return ResetTrafficMirrorTargetOutcome
+                 */
+                ResetTrafficMirrorTargetOutcome ResetTrafficMirrorTarget(const Model::ResetTrafficMirrorTargetRequest &request);
+                void ResetTrafficMirrorTargetAsync(const Model::ResetTrafficMirrorTargetRequest& request, const ResetTrafficMirrorTargetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResetTrafficMirrorTargetOutcomeCallable ResetTrafficMirrorTargetCallable(const Model::ResetTrafficMirrorTargetRequest& request);
+
+                /**
                  *本接口（ResetVpnConnection）用于重置VPN通道。
                  * @param req ResetVpnConnectionRequest
                  * @return ResetVpnConnectionOutcome
@@ -5730,6 +5864,24 @@ LimitTypes取值范围：
                 SetVpnGatewaysRenewFlagOutcome SetVpnGatewaysRenewFlag(const Model::SetVpnGatewaysRenewFlagRequest &request);
                 void SetVpnGatewaysRenewFlagAsync(const Model::SetVpnGatewaysRenewFlagRequest& request, const SetVpnGatewaysRenewFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SetVpnGatewaysRenewFlagOutcomeCallable SetVpnGatewaysRenewFlagCallable(const Model::SetVpnGatewaysRenewFlagRequest& request);
+
+                /**
+                 *本接口（StartTrafficMirror）用于开启流量镜像实例。
+                 * @param req StartTrafficMirrorRequest
+                 * @return StartTrafficMirrorOutcome
+                 */
+                StartTrafficMirrorOutcome StartTrafficMirror(const Model::StartTrafficMirrorRequest &request);
+                void StartTrafficMirrorAsync(const Model::StartTrafficMirrorRequest& request, const StartTrafficMirrorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StartTrafficMirrorOutcomeCallable StartTrafficMirrorCallable(const Model::StartTrafficMirrorRequest& request);
+
+                /**
+                 *本接口（StopTrafficMirror）用于关闭流量镜像实例。
+                 * @param req StopTrafficMirrorRequest
+                 * @return StopTrafficMirrorOutcome
+                 */
+                StopTrafficMirrorOutcome StopTrafficMirror(const Model::StopTrafficMirrorRequest &request);
+                void StopTrafficMirrorAsync(const Model::StopTrafficMirrorRequest& request, const StopTrafficMirrorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopTrafficMirrorOutcomeCallable StopTrafficMirrorCallable(const Model::StopTrafficMirrorRequest& request);
 
                 /**
                  *本接口 (TransformAddress) 用于将实例的普通公网 IP 转换为[弹性公网IP](https://cloud.tencent.com/document/product/213/1941)（简称 EIP）。
@@ -5806,6 +5958,24 @@ LimitTypes取值范围：
                 UnlockCcnsOutcome UnlockCcns(const Model::UnlockCcnsRequest &request);
                 void UnlockCcnsAsync(const Model::UnlockCcnsRequest& request, const UnlockCcnsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UnlockCcnsOutcomeCallable UnlockCcnsCallable(const Model::UnlockCcnsRequest& request);
+
+                /**
+                 *本接口（UpdateTrafficMirrorAllFilter）用于更新流量镜像实例的过滤规则或者采集对象。
+                 * @param req UpdateTrafficMirrorAllFilterRequest
+                 * @return UpdateTrafficMirrorAllFilterOutcome
+                 */
+                UpdateTrafficMirrorAllFilterOutcome UpdateTrafficMirrorAllFilter(const Model::UpdateTrafficMirrorAllFilterRequest &request);
+                void UpdateTrafficMirrorAllFilterAsync(const Model::UpdateTrafficMirrorAllFilterRequest& request, const UpdateTrafficMirrorAllFilterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateTrafficMirrorAllFilterOutcomeCallable UpdateTrafficMirrorAllFilterCallable(const Model::UpdateTrafficMirrorAllFilterRequest& request);
+
+                /**
+                 *本接口（UpdateTrafficMirrorDirection）用于更新流量镜像实例的采集方向。
+                 * @param req UpdateTrafficMirrorDirectionRequest
+                 * @return UpdateTrafficMirrorDirectionOutcome
+                 */
+                UpdateTrafficMirrorDirectionOutcome UpdateTrafficMirrorDirection(const Model::UpdateTrafficMirrorDirectionRequest &request);
+                void UpdateTrafficMirrorDirectionAsync(const Model::UpdateTrafficMirrorDirectionRequest& request, const UpdateTrafficMirrorDirectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateTrafficMirrorDirectionOutcomeCallable UpdateTrafficMirrorDirectionCallable(const Model::UpdateTrafficMirrorDirectionRequest& request);
 
                 /**
                  *本接口（WithdrawNotifyRoutes）用于撤销已发布到云联网的路由。路由表列表页操作增加“从云联网撤销”。

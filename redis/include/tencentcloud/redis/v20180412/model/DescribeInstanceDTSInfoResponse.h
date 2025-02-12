@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取DTS任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return JobId DTS任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetJobId() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取DTS任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return JobName DTS任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetJobName() const;
@@ -78,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取任务状态,取值为：1-创建中(Creating),3-校验中(Checking)4-校验通过(CheckPass),5-校验不通过（CheckNotPass）,7-任务运行(Running),8-准备完成（ReadyComplete）,9-任务成功（Success）,10-任务失败（Failed）,11-撤销中（Stopping）,12-完成中（Completing）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 任务状态,取值为：1-创建中(Creating),3-校验中(Checking)4-校验通过(CheckPass),5-校验不通过（CheckNotPass）,7-任务运行(Running),8-准备完成（ReadyComplete）,9-任务成功（Success）,10-任务失败（Failed）,11-撤销中（Stopping）,12-完成中（Completing）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
@@ -94,9 +88,7 @@ namespace TencentCloud
 
                     /**
                      * 获取状态描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StatusDesc 状态描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatusDesc() const;
@@ -110,9 +102,7 @@ namespace TencentCloud
 
                     /**
                      * 获取同步时延，单位：字节
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Offset 同步时延，单位：字节
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetOffset() const;
@@ -126,9 +116,7 @@ namespace TencentCloud
 
                     /**
                      * 获取断开时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CutDownTime 断开时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCutDownTime() const;
@@ -142,9 +130,7 @@ namespace TencentCloud
 
                     /**
                      * 获取源实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SrcInfo 源实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DescribeInstanceDTSInstanceInfo GetSrcInfo() const;
@@ -158,9 +144,7 @@ namespace TencentCloud
 
                     /**
                      * 获取目标实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DstInfo 目标实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DescribeInstanceDTSInstanceInfo GetDstInfo() const;
@@ -176,56 +160,48 @@ namespace TencentCloud
 
                     /**
                      * DTS任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;
 
                     /**
                      * DTS任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_jobName;
                     bool m_jobNameHasBeenSet;
 
                     /**
                      * 任务状态,取值为：1-创建中(Creating),3-校验中(Checking)4-校验通过(CheckPass),5-校验不通过（CheckNotPass）,7-任务运行(Running),8-准备完成（ReadyComplete）,9-任务成功（Success）,10-任务失败（Failed）,11-撤销中（Stopping）,12-完成中（Completing）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 状态描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_statusDesc;
                     bool m_statusDescHasBeenSet;
 
                     /**
                      * 同步时延，单位：字节
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
                      * 断开时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cutDownTime;
                     bool m_cutDownTimeHasBeenSet;
 
                     /**
                      * 源实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DescribeInstanceDTSInstanceInfo m_srcInfo;
                     bool m_srcInfoHasBeenSet;
 
                     /**
                      * 目标实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DescribeInstanceDTSInstanceInfo m_dstInfo;
                     bool m_dstInfoHasBeenSet;

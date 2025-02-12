@@ -45,6 +45,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/BatchTaskOperateNew.h
   include/tencentcloud/wedata/v20210820/model/DescribeRuleDimStatRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeRuleTemplatesResponse.h
+  include/tencentcloud/wedata/v20210820/model/DeleteDsFolderResponse.h
   include/tencentcloud/wedata/v20210820/model/CreateIntegrationNodeResponse.h
   include/tencentcloud/wedata/v20210820/model/TaskInnerInfo.h
   include/tencentcloud/wedata/v20210820/model/GetCosTokenResponse.h
@@ -144,7 +145,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/AgentStatus.h
   include/tencentcloud/wedata/v20210820/model/DescribeInstanceLogDetailRequest.h
   include/tencentcloud/wedata/v20210820/model/BatchSuspendIntegrationTasksRequest.h
-  include/tencentcloud/wedata/v20210820/model/DeleteDsFolderResponse.h
+  include/tencentcloud/wedata/v20210820/model/CreateAndDDLSupport.h
   include/tencentcloud/wedata/v20210820/model/DescribeDrInstancePageResponse.h
   include/tencentcloud/wedata/v20210820/model/MoveTasksToFolderRequest.h
   include/tencentcloud/wedata/v20210820/model/OrderFields.h
@@ -799,6 +800,7 @@ set(wedata_src
   src/v20210820/model/BatchTaskOperateNew.cpp
   src/v20210820/model/DescribeRuleDimStatRequest.cpp
   src/v20210820/model/DescribeRuleTemplatesResponse.cpp
+  src/v20210820/model/DeleteDsFolderResponse.cpp
   src/v20210820/model/CreateIntegrationNodeResponse.cpp
   src/v20210820/model/TaskInnerInfo.cpp
   src/v20210820/model/GetCosTokenResponse.cpp
@@ -898,7 +900,7 @@ set(wedata_src
   src/v20210820/model/AgentStatus.cpp
   src/v20210820/model/DescribeInstanceLogDetailRequest.cpp
   src/v20210820/model/BatchSuspendIntegrationTasksRequest.cpp
-  src/v20210820/model/DeleteDsFolderResponse.cpp
+  src/v20210820/model/CreateAndDDLSupport.cpp
   src/v20210820/model/DescribeDrInstancePageResponse.cpp
   src/v20210820/model/MoveTasksToFolderRequest.cpp
   src/v20210820/model/OrderFields.cpp

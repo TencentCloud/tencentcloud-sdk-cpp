@@ -259,6 +259,27 @@ namespace TencentCloud
                     bool TrunkingFlagHasBeenSet() const;
 
                     /**
+                     * 获取是否创建RDMA弹性网卡，true:创建rdma弹性网卡，false:普通弹性网卡。不填默认为false
+                     * @return IsRdma 是否创建RDMA弹性网卡，true:创建rdma弹性网卡，false:普通弹性网卡。不填默认为false
+                     * 
+                     */
+                    bool GetIsRdma() const;
+
+                    /**
+                     * 设置是否创建RDMA弹性网卡，true:创建rdma弹性网卡，false:普通弹性网卡。不填默认为false
+                     * @param _isRdma 是否创建RDMA弹性网卡，true:创建rdma弹性网卡，false:普通弹性网卡。不填默认为false
+                     * 
+                     */
+                    void SetIsRdma(const bool& _isRdma);
+
+                    /**
+                     * 判断参数 IsRdma 是否已赋值
+                     * @return IsRdma 是否已赋值
+                     * 
+                     */
+                    bool IsRdmaHasBeenSet() const;
+
+                    /**
                      * 获取用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。	
                      * @return ClientToken 用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。	
                      * 
@@ -341,6 +362,12 @@ namespace TencentCloud
                      */
                     std::string m_trunkingFlag;
                     bool m_trunkingFlagHasBeenSet;
+
+                    /**
+                     * 是否创建RDMA弹性网卡，true:创建rdma弹性网卡，false:普通弹性网卡。不填默认为false
+                     */
+                    bool m_isRdma;
+                    bool m_isRdmaHasBeenSet;
 
                     /**
                      * 用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。	

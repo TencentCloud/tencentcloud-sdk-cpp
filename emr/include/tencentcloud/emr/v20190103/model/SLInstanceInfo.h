@@ -37,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Serverless HBase 实例信息
+                * Serverless HBase实例信息
                 */
                 class SLInstanceInfo : public AbstractModel
                 {
@@ -110,6 +110,27 @@ namespace TencentCloud
                      * 
                      */
                     bool StatusDescHasBeenSet() const;
+
+                    /**
+                     * 获取健康状态
+                     * @return HealthStatus 健康状态
+                     * 
+                     */
+                    std::string GetHealthStatus() const;
+
+                    /**
+                     * 设置健康状态
+                     * @param _healthStatus 健康状态
+                     * 
+                     */
+                    void SetHealthStatus(const std::string& _healthStatus);
+
+                    /**
+                     * 判断参数 HealthStatus 是否已赋值
+                     * @return HealthStatus 是否已赋值
+                     * 
+                     */
+                    bool HealthStatusHasBeenSet() const;
 
                     /**
                      * 获取实例名称
@@ -453,6 +474,12 @@ namespace TencentCloud
                      */
                     std::string m_statusDesc;
                     bool m_statusDescHasBeenSet;
+
+                    /**
+                     * 健康状态
+                     */
+                    std::string m_healthStatus;
+                    bool m_healthStatusHasBeenSet;
 
                     /**
                      * 实例名称

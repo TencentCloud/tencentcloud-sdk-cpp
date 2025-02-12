@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户的 session 内容，腾讯 server 回包中会原样返回。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SessionContext 用户的 session 内容，腾讯 server 回包中会原样返回。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSessionContext() const;
 
                     /**
                      * 设置用户的 session 内容，腾讯 server 回包中会原样返回。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sessionContext 用户的 session 内容，腾讯 server 回包中会原样返回。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSessionContext(const std::string& _sessionContext);
@@ -102,7 +98,6 @@ namespace TencentCloud
 
                     /**
                      * 用户的 session 内容，腾讯 server 回包中会原样返回。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sessionContext;
                     bool m_sessionContextHasBeenSet;
