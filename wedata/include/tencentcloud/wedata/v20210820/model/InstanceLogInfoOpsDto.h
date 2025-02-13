@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/wedata/v20210820/model/PairDto.h>
 
 
 namespace TencentCloud
@@ -292,6 +293,27 @@ namespace TencentCloud
                      */
                     bool MatchedBrokerIpHasBeenSet() const;
 
+                    /**
+                     * 获取执行平台通用协议
+                     * @return ExecutionExtendedProps 执行平台通用协议
+                     * 
+                     */
+                    std::vector<PairDto> GetExecutionExtendedProps() const;
+
+                    /**
+                     * 设置执行平台通用协议
+                     * @param _executionExtendedProps 执行平台通用协议
+                     * 
+                     */
+                    void SetExecutionExtendedProps(const std::vector<PairDto>& _executionExtendedProps);
+
+                    /**
+                     * 判断参数 ExecutionExtendedProps 是否已赋值
+                     * @return ExecutionExtendedProps 是否已赋值
+                     * 
+                     */
+                    bool ExecutionExtendedPropsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -362,6 +384,12 @@ namespace TencentCloud
                      */
                     std::string m_matchedBrokerIp;
                     bool m_matchedBrokerIpHasBeenSet;
+
+                    /**
+                     * 执行平台通用协议
+                     */
+                    std::vector<PairDto> m_executionExtendedProps;
+                    bool m_executionExtendedPropsHasBeenSet;
 
                 };
             }

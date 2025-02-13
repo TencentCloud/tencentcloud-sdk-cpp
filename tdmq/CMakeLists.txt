@@ -124,6 +124,7 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/EnvironmentRole.h
   include/tencentcloud/tdmq/v20200217/model/ImportRocketMQTopicsRequest.h
   include/tencentcloud/tdmq/v20200217/model/DeleteRabbitMQVipInstanceResponse.h
+  include/tencentcloud/tdmq/v20200217/model/DetailedRolePerm.h
   include/tencentcloud/tdmq/v20200217/model/RabbitMQClusterAccessInfo.h
   include/tencentcloud/tdmq/v20200217/model/DescribeBindClustersResponse.h
   include/tencentcloud/tdmq/v20200217/model/ModifyRabbitMQVirtualHostRequest.h
@@ -520,6 +521,7 @@ set(tdmq_src
   src/v20200217/model/EnvironmentRole.cpp
   src/v20200217/model/ImportRocketMQTopicsRequest.cpp
   src/v20200217/model/DeleteRabbitMQVipInstanceResponse.cpp
+  src/v20200217/model/DetailedRolePerm.cpp
   src/v20200217/model/RabbitMQClusterAccessInfo.cpp
   src/v20200217/model/DescribeBindClustersResponse.cpp
   src/v20200217/model/ModifyRabbitMQVirtualHostRequest.cpp

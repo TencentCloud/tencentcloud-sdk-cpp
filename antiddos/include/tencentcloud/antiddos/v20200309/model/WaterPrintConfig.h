@@ -179,18 +179,14 @@ shortfpcheckall（精简模式）
 
                     /**
                      * 获取是否开启代理，1开启则忽略IP+端口校验；0关闭则需要IP+端口校验
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CloudSdkProxy 是否开启代理，1开启则忽略IP+端口校验；0关闭则需要IP+端口校验
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCloudSdkProxy() const;
 
                     /**
                      * 设置是否开启代理，1开启则忽略IP+端口校验；0关闭则需要IP+端口校验
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cloudSdkProxy 是否开启代理，1开启则忽略IP+端口校验；0关闭则需要IP+端口校验
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCloudSdkProxy(const int64_t& _cloudSdkProxy);
@@ -242,7 +238,6 @@ shortfpcheckall（精简模式）
 
                     /**
                      * 是否开启代理，1开启则忽略IP+端口校验；0关闭则需要IP+端口校验
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_cloudSdkProxy;
                     bool m_cloudSdkProxyHasBeenSet;

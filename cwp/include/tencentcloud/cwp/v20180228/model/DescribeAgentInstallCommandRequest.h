@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool TagIdsHasBeenSet() const;
 
                     /**
-                     * 获取命令有效期，非腾讯云时必填
-                     * @return ExpireDate 命令有效期，非腾讯云时必填
+                     * 获取命令有效期，非腾讯云时必填（已废弃，命令永久生效）
+                     * @return ExpireDate 命令有效期，非腾讯云时必填（已废弃，命令永久生效）
                      * 
                      */
                     std::string GetExpireDate() const;
 
                     /**
-                     * 设置命令有效期，非腾讯云时必填
-                     * @param _expireDate 命令有效期，非腾讯云时必填
+                     * 设置命令有效期，非腾讯云时必填（已废弃，命令永久生效）
+                     * @param _expireDate 命令有效期，非腾讯云时必填（已废弃，命令永久生效）
                      * 
                      */
                     void SetExpireDate(const std::string& _expireDate);
@@ -222,7 +222,7 @@ namespace TencentCloud
                     bool m_tagIdsHasBeenSet;
 
                     /**
-                     * 命令有效期，非腾讯云时必填
+                     * 命令有效期，非腾讯云时必填（已废弃，命令永久生效）
                      */
                     std::string m_expireDate;
                     bool m_expireDateHasBeenSet;

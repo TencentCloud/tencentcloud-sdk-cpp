@@ -125,6 +125,7 @@ set(lcic_public_header_model
   include/tencentcloud/lcic/v20220817/model/DescribeAnswerListResponse.h
   include/tencentcloud/lcic/v20220817/model/DescribeRoomStatisticsResponse.h
   include/tencentcloud/lcic/v20220817/model/DeleteDocumentRequest.h
+  include/tencentcloud/lcic/v20220817/model/DescribeRecordTaskResponse.h
   include/tencentcloud/lcic/v20220817/model/DescribeSupervisorsRequest.h
   include/tencentcloud/lcic/v20220817/model/MessageList.h
   include/tencentcloud/lcic/v20220817/model/DescribeGroupRequest.h
@@ -162,6 +163,7 @@ set(lcic_public_header_model
   include/tencentcloud/lcic/v20220817/model/GetRoomsRequest.h
   include/tencentcloud/lcic/v20220817/model/ForbidSendMsgResponse.h
   include/tencentcloud/lcic/v20220817/model/SendRoomNormalMessageRequest.h
+  include/tencentcloud/lcic/v20220817/model/DescribeRecordTaskRequest.h
   include/tencentcloud/lcic/v20220817/model/DescribeDeveloperRequest.h
   include/tencentcloud/lcic/v20220817/model/AppCustomContent.h
   include/tencentcloud/lcic/v20220817/model/BatchDescribeDocumentResponse.h
@@ -296,6 +298,7 @@ set(lcic_src
   src/v20220817/model/DescribeAnswerListResponse.cpp
   src/v20220817/model/DescribeRoomStatisticsResponse.cpp
   src/v20220817/model/DeleteDocumentRequest.cpp
+  src/v20220817/model/DescribeRecordTaskResponse.cpp
   src/v20220817/model/DescribeSupervisorsRequest.cpp
   src/v20220817/model/MessageList.cpp
   src/v20220817/model/DescribeGroupRequest.cpp
@@ -333,6 +336,7 @@ set(lcic_src
   src/v20220817/model/GetRoomsRequest.cpp
   src/v20220817/model/ForbidSendMsgResponse.cpp
   src/v20220817/model/SendRoomNormalMessageRequest.cpp
+  src/v20220817/model/DescribeRecordTaskRequest.cpp
   src/v20220817/model/DescribeDeveloperRequest.cpp
   src/v20220817/model/AppCustomContent.cpp
   src/v20220817/model/BatchDescribeDocumentResponse.cpp

@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取使用状态
-                     * @return UseStatus 使用状态
+                     * 获取使用状态， 为ture 判断资源的使用状态，如果使用中则不能删除
+                     * @return UseStatus 使用状态， 为ture 判断资源的使用状态，如果使用中则不能删除
                      * 
                      */
                     bool GetUseStatus() const;
 
                     /**
-                     * 设置使用状态
-                     * @param _useStatus 使用状态
+                     * 设置使用状态， 为ture 判断资源的使用状态，如果使用中则不能删除
+                     * @param _useStatus 使用状态， 为ture 判断资源的使用状态，如果使用中则不能删除
                      * 
                      */
                     void SetUseStatus(const bool& _useStatus);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool ResourceIdsHasBeenSet() const;
 
                     /**
-                     * 获取资源路径列表
-                     * @return FilePaths 资源路径列表
+                     * 获取需要删除的资源路径列表 即资源管理中的目录结构
+                     * @return FilePaths 需要删除的资源路径列表 即资源管理中的目录结构
                      * 
                      */
                     std::vector<std::string> GetFilePaths() const;
 
                     /**
-                     * 设置资源路径列表
-                     * @param _filePaths 资源路径列表
+                     * 设置需要删除的资源路径列表 即资源管理中的目录结构
+                     * @param _filePaths 需要删除的资源路径列表 即资源管理中的目录结构
                      * 
                      */
                     void SetFilePaths(const std::vector<std::string>& _filePaths);
@@ -135,7 +135,7 @@ namespace TencentCloud
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 使用状态
+                     * 使用状态， 为ture 判断资源的使用状态，如果使用中则不能删除
                      */
                     bool m_useStatus;
                     bool m_useStatusHasBeenSet;
@@ -147,7 +147,7 @@ namespace TencentCloud
                     bool m_resourceIdsHasBeenSet;
 
                     /**
-                     * 资源路径列表
+                     * 需要删除的资源路径列表 即资源管理中的目录结构
                      */
                     std::vector<std::string> m_filePaths;
                     bool m_filePathsHasBeenSet;

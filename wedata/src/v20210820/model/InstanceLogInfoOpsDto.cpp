@@ -30,7 +30,8 @@ InstanceLogInfoOpsDto::InstanceLogInfoOpsDto() :
     m_extInfoHasBeenSet(false),
     m_isEndHasBeenSet(false),
     m_fileSizeHasBeenSet(false),
-    m_matchedBrokerIpHasBeenSet(false)
+    m_matchedBrokerIpHasBeenSet(false),
+    m_executionExtendedPropsHasBeenSet(false)
 {
 }
 
@@ -142,6 +143,26 @@ CoreInternalOutcome InstanceLogInfoOpsDto::Deserialize(const rapidjson::Value &v
         m_matchedBrokerIpHasBeenSet = true;
     }
 
+    if (value.HasMember("ExecutionExtendedProps") && !value["ExecutionExtendedProps"].IsNull())
+    {
+        if (!value["ExecutionExtendedProps"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InstanceLogInfoOpsDto.ExecutionExtendedProps` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ExecutionExtendedProps"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            PairDto item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_executionExtendedProps.push_back(item);
+        }
+        m_executionExtendedPropsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -232,6 +253,21 @@ void InstanceLogInfoOpsDto::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "MatchedBrokerIp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_matchedBrokerIp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_executionExtendedPropsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExecutionExtendedProps";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_executionExtendedProps.begin(); itr != m_executionExtendedProps.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -395,5 +431,21 @@ void InstanceLogInfoOpsDto::SetMatchedBrokerIp(const string& _matchedBrokerIp)
 bool InstanceLogInfoOpsDto::MatchedBrokerIpHasBeenSet() const
 {
     return m_matchedBrokerIpHasBeenSet;
+}
+
+vector<PairDto> InstanceLogInfoOpsDto::GetExecutionExtendedProps() const
+{
+    return m_executionExtendedProps;
+}
+
+void InstanceLogInfoOpsDto::SetExecutionExtendedProps(const vector<PairDto>& _executionExtendedProps)
+{
+    m_executionExtendedProps = _executionExtendedProps;
+    m_executionExtendedPropsHasBeenSet = true;
+}
+
+bool InstanceLogInfoOpsDto::ExecutionExtendedPropsHasBeenSet() const
+{
+    return m_executionExtendedPropsHasBeenSet;
 }
 

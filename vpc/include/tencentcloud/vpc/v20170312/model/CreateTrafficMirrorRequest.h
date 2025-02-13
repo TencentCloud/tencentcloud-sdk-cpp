@@ -151,15 +151,15 @@ namespace TencentCloud
                     bool DirectionHasBeenSet() const;
 
                     /**
-                     * 获取流量镜像的采集对象，支持eni_xxxx。
-                     * @return CollectorSrcs 流量镜像的采集对象，支持eni_xxxx。
+                     * 获取流量镜像的采集对象。
+                     * @return CollectorSrcs 流量镜像的采集对象。
                      * 
                      */
                     std::vector<std::string> GetCollectorSrcs() const;
 
                     /**
-                     * 设置流量镜像的采集对象，支持eni_xxxx。
-                     * @param _collectorSrcs 流量镜像的采集对象，支持eni_xxxx。
+                     * 设置流量镜像的采集对象。
+                     * @param _collectorSrcs 流量镜像的采集对象。
                      * 
                      */
                     void SetCollectorSrcs(const std::vector<std::string>& _collectorSrcs);
@@ -330,7 +330,7 @@ namespace TencentCloud
                     bool m_directionHasBeenSet;
 
                     /**
-                     * 流量镜像的采集对象，支持eni_xxxx。
+                     * 流量镜像的采集对象。
                      */
                     std::vector<std::string> m_collectorSrcs;
                     bool m_collectorSrcsHasBeenSet;

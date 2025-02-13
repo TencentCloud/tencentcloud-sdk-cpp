@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cwp::V20180228::Model;
 using namespace std;
 
-ModifyRiskDnsPolicyResponse::ModifyRiskDnsPolicyResponse()
+ModifyRiskDnsPolicyResponse::ModifyRiskDnsPolicyResponse() :
+    m_repeatHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome ModifyRiskDnsPolicyResponse::Deserialize(const string &paylo
     }
 
 
+    if (rsp.HasMember("Repeat") && !rsp["Repeat"].IsNull())
+    {
+        if (!rsp["Repeat"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Repeat` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_repeat = rsp["Repeat"].GetInt64();
+        m_repeatHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string ModifyRiskDnsPolicyResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_repeatHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Repeat";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_repeat, allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string ModifyRiskDnsPolicyResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+int64_t ModifyRiskDnsPolicyResponse::GetRepeat() const
+{
+    return m_repeat;
+}
+
+bool ModifyRiskDnsPolicyResponse::RepeatHasBeenSet() const
+{
+    return m_repeatHasBeenSet;
+}
 
 

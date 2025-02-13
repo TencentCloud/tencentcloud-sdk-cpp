@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool WarnCodesHasBeenSet() const;
 
                     /**
-                     * 获取地址
+                     * 获取地址（人像面）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Address 地址
+                     * @return Address 地址（人像面）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAddress() const;
 
                     /**
-                     * 设置地址
+                     * 设置地址（人像面）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _address 地址
+                     * @param _address 地址（人像面）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool AddressHasBeenSet() const;
 
                     /**
-                     * 获取签发机关
+                     * 获取发证机关（国徽面）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Authority 签发机关
+                     * @return Authority 发证机关（国徽面）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAuthority() const;
 
                     /**
-                     * 设置签发机关
+                     * 设置发证机关（国徽面）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _authority 签发机关
+                     * @param _authority 发证机关（国徽面）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool AuthorityHasBeenSet() const;
 
                     /**
-                     * 获取出生日期
+                     * 获取出生日期（人像面）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Birth 出生日期
+                     * @return Birth 出生日期（人像面）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBirth() const;
 
                     /**
-                     * 设置出生日期
+                     * 设置出生日期（人像面）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _birth 出生日期
+                     * @param _birth 出生日期（人像面）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -147,18 +147,18 @@ namespace TencentCloud
                     bool BirthHasBeenSet() const;
 
                     /**
-                     * 获取身份证号
+                     * 获取身份证号（人像面）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IdNum 身份证号
+                     * @return IdNum 身份证号（人像面）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIdNum() const;
 
                     /**
-                     * 设置身份证号
+                     * 设置身份证号（人像面）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _idNum 身份证号
+                     * @param _idNum 身份证号（人像面）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -172,18 +172,18 @@ namespace TencentCloud
                     bool IdNumHasBeenSet() const;
 
                     /**
-                     * 获取名字
+                     * 获取名字（人像面）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Name 名字
+                     * @return Name 名字（人像面）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置名字
+                     * 设置名字（人像面）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _name 名字
+                     * @param _name 名字（人像面）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -197,18 +197,18 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取地区
+                     * 获取民族（人像面）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Nation 地区
+                     * @return Nation 民族（人像面）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNation() const;
 
                     /**
-                     * 设置地区
+                     * 设置民族（人像面）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _nation 地区
+                     * @param _nation 民族（人像面）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -222,18 +222,18 @@ namespace TencentCloud
                     bool NationHasBeenSet() const;
 
                     /**
-                     * 获取性别
+                     * 获取性别（人像面）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Sex 性别
+                     * @return Sex 性别（人像面）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSex() const;
 
                     /**
-                     * 设置性别
+                     * 设置性别（人像面）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _sex 性别
+                     * @param _sex 性别（人像面）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -247,18 +247,18 @@ namespace TencentCloud
                     bool SexHasBeenSet() const;
 
                     /**
-                     * 获取到期时间
+                     * 获取证件有效期（国徽面）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ValidDate 到期时间
+                     * @return ValidDate 证件有效期（国徽面）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetValidDate() const;
 
                     /**
-                     * 设置到期时间
+                     * 设置证件有效期（国徽面）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _validDate 到期时间
+                     * @param _validDate 证件有效期（国徽面）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -367,6 +367,27 @@ namespace TencentCloud
                      */
                     bool ImageUrlHasBeenSet() const;
 
+                    /**
+                     * 获取身份证头像照片的地址（人像面）
+                     * @return PortraitUrl 身份证头像照片的地址（人像面）
+                     * 
+                     */
+                    std::string GetPortraitUrl() const;
+
+                    /**
+                     * 设置身份证头像照片的地址（人像面）
+                     * @param _portraitUrl 身份证头像照片的地址（人像面）
+                     * 
+                     */
+                    void SetPortraitUrl(const std::string& _portraitUrl);
+
+                    /**
+                     * 判断参数 PortraitUrl 是否已赋值
+                     * @return PortraitUrl 是否已赋值
+                     * 
+                     */
+                    bool PortraitUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -377,56 +398,56 @@ namespace TencentCloud
                     bool m_warnCodesHasBeenSet;
 
                     /**
-                     * 地址
+                     * 地址（人像面）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_address;
                     bool m_addressHasBeenSet;
 
                     /**
-                     * 签发机关
+                     * 发证机关（国徽面）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_authority;
                     bool m_authorityHasBeenSet;
 
                     /**
-                     * 出生日期
+                     * 出生日期（人像面）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_birth;
                     bool m_birthHasBeenSet;
 
                     /**
-                     * 身份证号
+                     * 身份证号（人像面）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_idNum;
                     bool m_idNumHasBeenSet;
 
                     /**
-                     * 名字
+                     * 名字（人像面）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 地区
+                     * 民族（人像面）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nation;
                     bool m_nationHasBeenSet;
 
                     /**
-                     * 性别
+                     * 性别（人像面）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sex;
                     bool m_sexHasBeenSet;
 
                     /**
-                     * 到期时间
+                     * 证件有效期（国徽面）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_validDate;
@@ -458,6 +479,12 @@ namespace TencentCloud
                      */
                     std::string m_imageUrl;
                     bool m_imageUrlHasBeenSet;
+
+                    /**
+                     * 身份证头像照片的地址（人像面）
+                     */
+                    std::string m_portraitUrl;
+                    bool m_portraitUrlHasBeenSet;
 
                 };
             }

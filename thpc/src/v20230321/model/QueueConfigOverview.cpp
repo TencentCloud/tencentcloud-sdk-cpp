@@ -28,6 +28,7 @@ QueueConfigOverview::QueueConfigOverview() :
     m_enableAutoShrinkHasBeenSet(false),
     m_expansionNodeConfigsHasBeenSet(false),
     m_desiredIdleNodeCapacityHasBeenSet(false),
+    m_desiredNodeCountHasBeenSet(false),
     m_scaleOutRatioHasBeenSet(false),
     m_scaleOutNodeThresholdHasBeenSet(false),
     m_maxNodesPerCycleHasBeenSet(false),
@@ -118,6 +119,16 @@ CoreInternalOutcome QueueConfigOverview::Deserialize(const rapidjson::Value &val
         }
         m_desiredIdleNodeCapacity = value["DesiredIdleNodeCapacity"].GetInt64();
         m_desiredIdleNodeCapacityHasBeenSet = true;
+    }
+
+    if (value.HasMember("DesiredNodeCount") && !value["DesiredNodeCount"].IsNull())
+    {
+        if (!value["DesiredNodeCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `QueueConfigOverview.DesiredNodeCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_desiredNodeCount = value["DesiredNodeCount"].GetInt64();
+        m_desiredNodeCountHasBeenSet = true;
     }
 
     if (value.HasMember("ScaleOutRatio") && !value["ScaleOutRatio"].IsNull())
@@ -228,6 +239,14 @@ void QueueConfigOverview::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "DesiredIdleNodeCapacity";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_desiredIdleNodeCapacity, allocator);
+    }
+
+    if (m_desiredNodeCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DesiredNodeCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_desiredNodeCount, allocator);
     }
 
     if (m_scaleOutRatioHasBeenSet)
@@ -375,6 +394,22 @@ void QueueConfigOverview::SetDesiredIdleNodeCapacity(const int64_t& _desiredIdle
 bool QueueConfigOverview::DesiredIdleNodeCapacityHasBeenSet() const
 {
     return m_desiredIdleNodeCapacityHasBeenSet;
+}
+
+int64_t QueueConfigOverview::GetDesiredNodeCount() const
+{
+    return m_desiredNodeCount;
+}
+
+void QueueConfigOverview::SetDesiredNodeCount(const int64_t& _desiredNodeCount)
+{
+    m_desiredNodeCount = _desiredNodeCount;
+    m_desiredNodeCountHasBeenSet = true;
+}
+
+bool QueueConfigOverview::DesiredNodeCountHasBeenSet() const
+{
+    return m_desiredNodeCountHasBeenSet;
 }
 
 int64_t QueueConfigOverview::GetScaleOutRatio() const

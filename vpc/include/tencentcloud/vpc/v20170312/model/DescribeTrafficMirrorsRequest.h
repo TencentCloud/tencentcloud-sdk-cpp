@@ -65,15 +65,31 @@ namespace TencentCloud
                     bool TrafficMirrorIdsHasBeenSet() const;
 
                     /**
-                     * 获取流量镜像查询过滤调节
-                     * @return Filters 流量镜像查询过滤调节
+                     * 获取流量镜像查询过滤调节。
+vpc-id ：VPC实例ID，例如：vpc-f49l6u0z。
+traffic-mirror-id：流量镜像实例ID。
+traffic-mirror-name：流量镜像名称。
+tag-key ：按照标签键进行过滤。
+                     * @return Filters 流量镜像查询过滤调节。
+vpc-id ：VPC实例ID，例如：vpc-f49l6u0z。
+traffic-mirror-id：流量镜像实例ID。
+traffic-mirror-name：流量镜像名称。
+tag-key ：按照标签键进行过滤。
                      * 
                      */
                     Filter GetFilters() const;
 
                     /**
-                     * 设置流量镜像查询过滤调节
-                     * @param _filters 流量镜像查询过滤调节
+                     * 设置流量镜像查询过滤调节。
+vpc-id ：VPC实例ID，例如：vpc-f49l6u0z。
+traffic-mirror-id：流量镜像实例ID。
+traffic-mirror-name：流量镜像名称。
+tag-key ：按照标签键进行过滤。
+                     * @param _filters 流量镜像查询过滤调节。
+vpc-id ：VPC实例ID，例如：vpc-f49l6u0z。
+traffic-mirror-id：流量镜像实例ID。
+traffic-mirror-name：流量镜像名称。
+tag-key ：按照标签键进行过滤。
                      * 
                      */
                     void SetFilters(const Filter& _filters);
@@ -136,7 +152,11 @@ namespace TencentCloud
                     bool m_trafficMirrorIdsHasBeenSet;
 
                     /**
-                     * 流量镜像查询过滤调节
+                     * 流量镜像查询过滤调节。
+vpc-id ：VPC实例ID，例如：vpc-f49l6u0z。
+traffic-mirror-id：流量镜像实例ID。
+traffic-mirror-name：流量镜像名称。
+tag-key ：按照标签键进行过滤。
                      */
                     Filter m_filters;
                     bool m_filtersHasBeenSet;

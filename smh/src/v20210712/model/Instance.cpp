@@ -30,7 +30,9 @@ Instance::Instance() :
     m_storageLimitGBHasBeenSet(false),
     m_isolatedHasBeenSet(false),
     m_autoRenewHasBeenSet(false),
-    m_superAdminAccountHasBeenSet(false)
+    m_superAdminAccountHasBeenSet(false),
+    m_bucketHasBeenSet(false),
+    m_logBucketHasBeenSet(false)
 {
 }
 
@@ -139,6 +141,26 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
         m_superAdminAccountHasBeenSet = true;
     }
 
+    if (value.HasMember("Bucket") && !value["Bucket"].IsNull())
+    {
+        if (!value["Bucket"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Instance.Bucket` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_bucket = string(value["Bucket"].GetString());
+        m_bucketHasBeenSet = true;
+    }
+
+    if (value.HasMember("LogBucket") && !value["LogBucket"].IsNull())
+    {
+        if (!value["LogBucket"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Instance.LogBucket` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_logBucket = string(value["LogBucket"].GetString());
+        m_logBucketHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +246,22 @@ void Instance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "SuperAdminAccount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_superAdminAccount.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bucketHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Bucket";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_bucket.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_logBucketHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogBucket";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_logBucket.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -387,5 +425,37 @@ void Instance::SetSuperAdminAccount(const string& _superAdminAccount)
 bool Instance::SuperAdminAccountHasBeenSet() const
 {
     return m_superAdminAccountHasBeenSet;
+}
+
+string Instance::GetBucket() const
+{
+    return m_bucket;
+}
+
+void Instance::SetBucket(const string& _bucket)
+{
+    m_bucket = _bucket;
+    m_bucketHasBeenSet = true;
+}
+
+bool Instance::BucketHasBeenSet() const
+{
+    return m_bucketHasBeenSet;
+}
+
+string Instance::GetLogBucket() const
+{
+    return m_logBucket;
+}
+
+void Instance::SetLogBucket(const string& _logBucket)
+{
+    m_logBucket = _logBucket;
+    m_logBucketHasBeenSet = true;
+}
+
+bool Instance::LogBucketHasBeenSet() const
+{
+    return m_logBucketHasBeenSet;
 }
 

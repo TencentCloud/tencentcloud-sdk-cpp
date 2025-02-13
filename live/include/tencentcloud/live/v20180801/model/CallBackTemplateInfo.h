@@ -306,6 +306,48 @@ namespace TencentCloud
                      */
                     bool AudioAuditNotifyUrlHasBeenSet() const;
 
+                    /**
+                     * 获取录制异常回调 URL。
+                     * @return RecordExceptionNotifyUrl 录制异常回调 URL。
+                     * 
+                     */
+                    std::string GetRecordExceptionNotifyUrl() const;
+
+                    /**
+                     * 设置录制异常回调 URL。
+                     * @param _recordExceptionNotifyUrl 录制异常回调 URL。
+                     * 
+                     */
+                    void SetRecordExceptionNotifyUrl(const std::string& _recordExceptionNotifyUrl);
+
+                    /**
+                     * 判断参数 RecordExceptionNotifyUrl 是否已赋值
+                     * @return RecordExceptionNotifyUrl 是否已赋值
+                     * 
+                     */
+                    bool RecordExceptionNotifyUrlHasBeenSet() const;
+
+                    /**
+                     * 获取录制异常回调级别，可选择：error: 错误。alarm: 告警。
+                     * @return RecordExceptionLevels 录制异常回调级别，可选择：error: 错误。alarm: 告警。
+                     * 
+                     */
+                    std::vector<std::string> GetRecordExceptionLevels() const;
+
+                    /**
+                     * 设置录制异常回调级别，可选择：error: 错误。alarm: 告警。
+                     * @param _recordExceptionLevels 录制异常回调级别，可选择：error: 错误。alarm: 告警。
+                     * 
+                     */
+                    void SetRecordExceptionLevels(const std::vector<std::string>& _recordExceptionLevels);
+
+                    /**
+                     * 判断参数 RecordExceptionLevels 是否已赋值
+                     * @return RecordExceptionLevels 是否已赋值
+                     * 
+                     */
+                    bool RecordExceptionLevelsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -381,6 +423,18 @@ namespace TencentCloud
                      */
                     std::string m_audioAuditNotifyUrl;
                     bool m_audioAuditNotifyUrlHasBeenSet;
+
+                    /**
+                     * 录制异常回调 URL。
+                     */
+                    std::string m_recordExceptionNotifyUrl;
+                    bool m_recordExceptionNotifyUrlHasBeenSet;
+
+                    /**
+                     * 录制异常回调级别，可选择：error: 错误。alarm: 告警。
+                     */
+                    std::vector<std::string> m_recordExceptionLevels;
+                    bool m_recordExceptionLevelsHasBeenSet;
 
                 };
             }

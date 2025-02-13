@@ -25,9 +25,11 @@ using namespace std;
 CreateRoleRequest::CreateRoleRequest() :
     m_instanceIdHasBeenSet(false),
     m_roleHasBeenSet(false),
-    m_remarkHasBeenSet(false),
     m_permWriteHasBeenSet(false),
-    m_permReadHasBeenSet(false)
+    m_permReadHasBeenSet(false),
+    m_remarkHasBeenSet(false),
+    m_permTypeHasBeenSet(false),
+    m_detailedPermsHasBeenSet(false)
 {
 }
 
@@ -54,14 +56,6 @@ string CreateRoleRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_role.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_remarkHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Remark";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_permWriteHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -76,6 +70,37 @@ string CreateRoleRequest::ToJsonString() const
         string key = "PermRead";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_permRead, allocator);
+    }
+
+    if (m_remarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Remark";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_permTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PermType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_permType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_detailedPermsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DetailedPerms";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_detailedPerms.begin(); itr != m_detailedPerms.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -118,22 +143,6 @@ bool CreateRoleRequest::RoleHasBeenSet() const
     return m_roleHasBeenSet;
 }
 
-string CreateRoleRequest::GetRemark() const
-{
-    return m_remark;
-}
-
-void CreateRoleRequest::SetRemark(const string& _remark)
-{
-    m_remark = _remark;
-    m_remarkHasBeenSet = true;
-}
-
-bool CreateRoleRequest::RemarkHasBeenSet() const
-{
-    return m_remarkHasBeenSet;
-}
-
 bool CreateRoleRequest::GetPermWrite() const
 {
     return m_permWrite;
@@ -164,6 +173,54 @@ void CreateRoleRequest::SetPermRead(const bool& _permRead)
 bool CreateRoleRequest::PermReadHasBeenSet() const
 {
     return m_permReadHasBeenSet;
+}
+
+string CreateRoleRequest::GetRemark() const
+{
+    return m_remark;
+}
+
+void CreateRoleRequest::SetRemark(const string& _remark)
+{
+    m_remark = _remark;
+    m_remarkHasBeenSet = true;
+}
+
+bool CreateRoleRequest::RemarkHasBeenSet() const
+{
+    return m_remarkHasBeenSet;
+}
+
+string CreateRoleRequest::GetPermType() const
+{
+    return m_permType;
+}
+
+void CreateRoleRequest::SetPermType(const string& _permType)
+{
+    m_permType = _permType;
+    m_permTypeHasBeenSet = true;
+}
+
+bool CreateRoleRequest::PermTypeHasBeenSet() const
+{
+    return m_permTypeHasBeenSet;
+}
+
+vector<DetailedRolePerm> CreateRoleRequest::GetDetailedPerms() const
+{
+    return m_detailedPerms;
+}
+
+void CreateRoleRequest::SetDetailedPerms(const vector<DetailedRolePerm>& _detailedPerms)
+{
+    m_detailedPerms = _detailedPerms;
+    m_detailedPermsHasBeenSet = true;
+}
+
+bool CreateRoleRequest::DetailedPermsHasBeenSet() const
+{
+    return m_detailedPermsHasBeenSet;
 }
 
 

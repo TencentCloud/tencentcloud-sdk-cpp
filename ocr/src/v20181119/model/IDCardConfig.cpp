@@ -27,7 +27,8 @@ IDCardConfig::IDCardConfig() :
     m_detectPsWarnHasBeenSet(false),
     m_tempIdWarnHasBeenSet(false),
     m_invalidDateWarnHasBeenSet(false),
-    m_reflectWarnHasBeenSet(false)
+    m_reflectWarnHasBeenSet(false),
+    m_cropPortraitHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome IDCardConfig::Deserialize(const rapidjson::Value &value)
         m_reflectWarnHasBeenSet = true;
     }
 
+    if (value.HasMember("CropPortrait") && !value["CropPortrait"].IsNull())
+    {
+        if (!value["CropPortrait"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `IDCardConfig.CropPortrait` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_cropPortrait = value["CropPortrait"].GetBool();
+        m_cropPortraitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void IDCardConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "ReflectWarn";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_reflectWarn, allocator);
+    }
+
+    if (m_cropPortraitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CropPortrait";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cropPortrait, allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void IDCardConfig::SetReflectWarn(const bool& _reflectWarn)
 bool IDCardConfig::ReflectWarnHasBeenSet() const
 {
     return m_reflectWarnHasBeenSet;
+}
+
+bool IDCardConfig::GetCropPortrait() const
+{
+    return m_cropPortrait;
+}
+
+void IDCardConfig::SetCropPortrait(const bool& _cropPortrait)
+{
+    m_cropPortrait = _cropPortrait;
+    m_cropPortraitHasBeenSet = true;
+}
+
+bool IDCardConfig::CropPortraitHasBeenSet() const
+{
+    return m_cropPortraitHasBeenSet;
 }
 

@@ -169,15 +169,15 @@ namespace TencentCloud
                     bool SslVpnPortHasBeenSet() const;
 
                     /**
-                     * 获取加密算法。可选 'AES-128-CBC', 'AES-192-CBC', 'AES-256-CBC', 'NONE'。默认NONE
-                     * @return EncryptAlgorithm 加密算法。可选 'AES-128-CBC', 'AES-192-CBC', 'AES-256-CBC', 'NONE'。默认NONE
+                     * 获取加密算法。可选 'AES-128-CBC','AES-192-CBC', 'AES-256-CBC', 默认AES-128-CBC。
+                     * @return EncryptAlgorithm 加密算法。可选 'AES-128-CBC','AES-192-CBC', 'AES-256-CBC', 默认AES-128-CBC。
                      * 
                      */
                     std::string GetEncryptAlgorithm() const;
 
                     /**
-                     * 设置加密算法。可选 'AES-128-CBC', 'AES-192-CBC', 'AES-256-CBC', 'NONE'。默认NONE
-                     * @param _encryptAlgorithm 加密算法。可选 'AES-128-CBC', 'AES-192-CBC', 'AES-256-CBC', 'NONE'。默认NONE
+                     * 设置加密算法。可选 'AES-128-CBC','AES-192-CBC', 'AES-256-CBC', 默认AES-128-CBC。
+                     * @param _encryptAlgorithm 加密算法。可选 'AES-128-CBC','AES-192-CBC', 'AES-256-CBC', 默认AES-128-CBC。
                      * 
                      */
                     void SetEncryptAlgorithm(const std::string& _encryptAlgorithm);
@@ -190,15 +190,15 @@ namespace TencentCloud
                     bool EncryptAlgorithmHasBeenSet() const;
 
                     /**
-                     * 获取认证算法。可选 'SHA1', 'MD5', 'NONE'。默认NONE
-                     * @return IntegrityAlgorithm 认证算法。可选 'SHA1', 'MD5', 'NONE'。默认NONE
+                     * 获取认证算法。可选 'SHA1'，默认SHA1。
+                     * @return IntegrityAlgorithm 认证算法。可选 'SHA1'，默认SHA1。
                      * 
                      */
                     std::string GetIntegrityAlgorithm() const;
 
                     /**
-                     * 设置认证算法。可选 'SHA1', 'MD5', 'NONE'。默认NONE
-                     * @param _integrityAlgorithm 认证算法。可选 'SHA1', 'MD5', 'NONE'。默认NONE
+                     * 设置认证算法。可选 'SHA1'，默认SHA1。
+                     * @param _integrityAlgorithm 认证算法。可选 'SHA1'，默认SHA1。
                      * 
                      */
                     void SetIntegrityAlgorithm(const std::string& _integrityAlgorithm);
@@ -312,13 +312,13 @@ namespace TencentCloud
                     bool m_sslVpnPortHasBeenSet;
 
                     /**
-                     * 加密算法。可选 'AES-128-CBC', 'AES-192-CBC', 'AES-256-CBC', 'NONE'。默认NONE
+                     * 加密算法。可选 'AES-128-CBC','AES-192-CBC', 'AES-256-CBC', 默认AES-128-CBC。
                      */
                     std::string m_encryptAlgorithm;
                     bool m_encryptAlgorithmHasBeenSet;
 
                     /**
-                     * 认证算法。可选 'SHA1', 'MD5', 'NONE'。默认NONE
+                     * 认证算法。可选 'SHA1'，默认SHA1。
                      */
                     std::string m_integrityAlgorithm;
                     bool m_integrityAlgorithmHasBeenSet;

@@ -105,6 +105,27 @@ namespace TencentCloud
                      */
                     bool RemarkHasBeenSet() const;
 
+                    /**
+                     * 获取角色授权类型（集群：Cluster; 主题或消费组：TopicAndGroup）
+                     * @return PermType 角色授权类型（集群：Cluster; 主题或消费组：TopicAndGroup）
+                     * 
+                     */
+                    std::string GetPermType() const;
+
+                    /**
+                     * 设置角色授权类型（集群：Cluster; 主题或消费组：TopicAndGroup）
+                     * @param _permType 角色授权类型（集群：Cluster; 主题或消费组：TopicAndGroup）
+                     * 
+                     */
+                    void SetPermType(const std::string& _permType);
+
+                    /**
+                     * 判断参数 PermType 是否已赋值
+                     * @return PermType 是否已赋值
+                     * 
+                     */
+                    bool PermTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +145,12 @@ namespace TencentCloud
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
+
+                    /**
+                     * 角色授权类型（集群：Cluster; 主题或消费组：TopicAndGroup）
+                     */
+                    std::string m_permType;
+                    bool m_permTypeHasBeenSet;
 
                 };
             }

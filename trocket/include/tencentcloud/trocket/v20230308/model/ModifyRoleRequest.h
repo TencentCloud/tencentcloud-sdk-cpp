@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/trocket/v20230308/model/DetailedRolePerm.h>
 
 
 namespace TencentCloud
@@ -127,6 +128,27 @@ namespace TencentCloud
                     bool PermWriteHasBeenSet() const;
 
                     /**
+                     * 获取权限类型，默认按集群授权（Cluster：集群维度；TopicAndGroup：主题和消费组维度）
+                     * @return PermType 权限类型，默认按集群授权（Cluster：集群维度；TopicAndGroup：主题和消费组维度）
+                     * 
+                     */
+                    std::string GetPermType() const;
+
+                    /**
+                     * 设置权限类型，默认按集群授权（Cluster：集群维度；TopicAndGroup：主题和消费组维度）
+                     * @param _permType 权限类型，默认按集群授权（Cluster：集群维度；TopicAndGroup：主题和消费组维度）
+                     * 
+                     */
+                    void SetPermType(const std::string& _permType);
+
+                    /**
+                     * 判断参数 PermType 是否已赋值
+                     * @return PermType 是否已赋值
+                     * 
+                     */
+                    bool PermTypeHasBeenSet() const;
+
+                    /**
                      * 获取备注
                      * @return Remark 备注
                      * 
@@ -146,6 +168,27 @@ namespace TencentCloud
                      * 
                      */
                     bool RemarkHasBeenSet() const;
+
+                    /**
+                     * 获取Topic&Group维度权限配置
+                     * @return DetailedPerms Topic&Group维度权限配置
+                     * 
+                     */
+                    std::vector<DetailedRolePerm> GetDetailedPerms() const;
+
+                    /**
+                     * 设置Topic&Group维度权限配置
+                     * @param _detailedPerms Topic&Group维度权限配置
+                     * 
+                     */
+                    void SetDetailedPerms(const std::vector<DetailedRolePerm>& _detailedPerms);
+
+                    /**
+                     * 判断参数 DetailedPerms 是否已赋值
+                     * @return DetailedPerms 是否已赋值
+                     * 
+                     */
+                    bool DetailedPermsHasBeenSet() const;
 
                 private:
 
@@ -174,10 +217,22 @@ namespace TencentCloud
                     bool m_permWriteHasBeenSet;
 
                     /**
+                     * 权限类型，默认按集群授权（Cluster：集群维度；TopicAndGroup：主题和消费组维度）
+                     */
+                    std::string m_permType;
+                    bool m_permTypeHasBeenSet;
+
+                    /**
                      * 备注
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
+
+                    /**
+                     * Topic&Group维度权限配置
+                     */
+                    std::vector<DetailedRolePerm> m_detailedPerms;
+                    bool m_detailedPermsHasBeenSet;
 
                 };
             }

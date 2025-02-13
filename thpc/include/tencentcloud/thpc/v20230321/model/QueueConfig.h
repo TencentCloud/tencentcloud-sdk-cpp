@@ -283,6 +283,27 @@ namespace TencentCloud
                     bool DesiredIdleNodeCapacityHasBeenSet() const;
 
                     /**
+                     * 获取队列中期望的总节点数。
+                     * @return DesiredNodeCount 队列中期望的总节点数。
+                     * 
+                     */
+                    int64_t GetDesiredNodeCount() const;
+
+                    /**
+                     * 设置队列中期望的总节点数。
+                     * @param _desiredNodeCount 队列中期望的总节点数。
+                     * 
+                     */
+                    void SetDesiredNodeCount(const int64_t& _desiredNodeCount);
+
+                    /**
+                     * 判断参数 DesiredNodeCount 是否已赋值
+                     * @return DesiredNodeCount 是否已赋值
+                     * 
+                     */
+                    bool DesiredNodeCountHasBeenSet() const;
+
+                    /**
                      * 获取扩容比例。默认值：100。取值范围：1～100。
 如果扩容比例为50，那么每轮只会扩容当前作业负载所需的50%数量的节点。
                      * @return ScaleOutRatio 扩容比例。默认值：100。取值范围：1～100。
@@ -482,6 +503,12 @@ namespace TencentCloud
                      */
                     int64_t m_desiredIdleNodeCapacity;
                     bool m_desiredIdleNodeCapacityHasBeenSet;
+
+                    /**
+                     * 队列中期望的总节点数。
+                     */
+                    int64_t m_desiredNodeCount;
+                    bool m_desiredNodeCountHasBeenSet;
 
                     /**
                      * 扩容比例。默认值：100。取值范围：1～100。

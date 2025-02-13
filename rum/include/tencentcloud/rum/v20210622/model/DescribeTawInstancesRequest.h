@@ -151,21 +151,21 @@ namespace TencentCloud
                     /**
                      * 获取实例状态(1=创建中，2=运行中，3=异常，4=重启中，5=停止中，6=已停止，7=销毁中，8=已销毁), 该参数已废弃，请在Filters内注明
                      * @return InstanceStatuses 实例状态(1=创建中，2=运行中，3=异常，4=重启中，5=停止中，6=已停止，7=销毁中，8=已销毁), 该参数已废弃，请在Filters内注明
-                     * 
+                     * @deprecated
                      */
                     std::vector<int64_t> GetInstanceStatuses() const;
 
                     /**
                      * 设置实例状态(1=创建中，2=运行中，3=异常，4=重启中，5=停止中，6=已停止，7=销毁中，8=已销毁), 该参数已废弃，请在Filters内注明
                      * @param _instanceStatuses 实例状态(1=创建中，2=运行中，3=异常，4=重启中，5=停止中，6=已停止，7=销毁中，8=已销毁), 该参数已废弃，请在Filters内注明
-                     * 
+                     * @deprecated
                      */
                     void SetInstanceStatuses(const std::vector<int64_t>& _instanceStatuses);
 
                     /**
                      * 判断参数 InstanceStatuses 是否已赋值
                      * @return InstanceStatuses 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool InstanceStatusesHasBeenSet() const;
 

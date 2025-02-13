@@ -22,7 +22,8 @@ using namespace std;
 
 PairDto::PairDto() :
     m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
+    m_valueHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome PairDto::Deserialize(const rapidjson::Value &value)
         m_valueHasBeenSet = true;
     }
 
+    if (value.HasMember("Description") && !value["Description"].IsNull())
+    {
+        if (!value["Description"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PairDto.Description` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_description = string(value["Description"].GetString());
+        m_descriptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void PairDto::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "Value";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_value.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void PairDto::SetValue(const string& _value)
 bool PairDto::ValueHasBeenSet() const
 {
     return m_valueHasBeenSet;
+}
+
+string PairDto::GetDescription() const
+{
+    return m_description;
+}
+
+void PairDto::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool PairDto::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
 }
 

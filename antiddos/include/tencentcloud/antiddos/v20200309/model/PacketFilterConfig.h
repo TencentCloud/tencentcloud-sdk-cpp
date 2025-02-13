@@ -198,16 +198,16 @@ namespace TencentCloud
 drop(丢弃)
 transmit(放行)
 drop_black(丢弃并拉黑)
-drop_rst(拦截)
-drop_black_rst(拦截并拉黑)
+drop_rst(拦截)（已废弃，不支持drop_rst）
+drop_black_rst(拦截并拉黑)（已废弃，不支持drop_black_rst）
 forward(继续防护)
 ]
                      * @return Action 动作，取值[
 drop(丢弃)
 transmit(放行)
 drop_black(丢弃并拉黑)
-drop_rst(拦截)
-drop_black_rst(拦截并拉黑)
+drop_rst(拦截)（已废弃，不支持drop_rst）
+drop_black_rst(拦截并拉黑)（已废弃，不支持drop_black_rst）
 forward(继续防护)
 ]
                      * 
@@ -219,16 +219,16 @@ forward(继续防护)
 drop(丢弃)
 transmit(放行)
 drop_black(丢弃并拉黑)
-drop_rst(拦截)
-drop_black_rst(拦截并拉黑)
+drop_rst(拦截)（已废弃，不支持drop_rst）
+drop_black_rst(拦截并拉黑)（已废弃，不支持drop_black_rst）
 forward(继续防护)
 ]
                      * @param _action 动作，取值[
 drop(丢弃)
 transmit(放行)
 drop_black(丢弃并拉黑)
-drop_rst(拦截)
-drop_black_rst(拦截并拉黑)
+drop_rst(拦截)（已废弃，不支持drop_rst）
+drop_black_rst(拦截并拉黑)（已废弃，不支持drop_black_rst）
 forward(继续防护)
 ]
                      * 
@@ -286,11 +286,11 @@ no_match(不匹配)
                     /**
                      * 获取检测类型，取值[
 sunday(关键字)
-pcre(正则表达式)
+pcre(正则表达式) （已废弃，仅支持sunday）
 ]
                      * @return MatchType 检测类型，取值[
 sunday(关键字)
-pcre(正则表达式)
+pcre(正则表达式) （已废弃，仅支持sunday）
 ]
                      * 
                      */
@@ -299,11 +299,11 @@ pcre(正则表达式)
                     /**
                      * 设置检测类型，取值[
 sunday(关键字)
-pcre(正则表达式)
+pcre(正则表达式) （已废弃，仅支持sunday）
 ]
                      * @param _matchType 检测类型，取值[
 sunday(关键字)
-pcre(正则表达式)
+pcre(正则表达式) （已废弃，仅支持sunday）
 ]
                      * 
                      */
@@ -317,27 +317,15 @@ pcre(正则表达式)
                     bool MatchTypeHasBeenSet() const;
 
                     /**
-                     * 获取检测值，关键字符串或正则表达式,取值[
-当检测类型为sunday时，请填写字符串或者16进制字节码，例如\x313233对应的是字符串"123"的16进制字节码;
-当检测类型为pcre时, 请填写正则表达式字符串;
-]
-                     * @return Str 检测值，关键字符串或正则表达式,取值[
-当检测类型为sunday时，请填写字符串或者16进制字节码，例如\x313233对应的是字符串"123"的16进制字节码;
-当检测类型为pcre时, 请填写正则表达式字符串;
-]
+                     * 获取检测值，关键字符串或正则表达式,取值[ 当检测类型为sunday时，请填写字符串或者16进制字节码，例如\x313233对应的是字符串"123"的16进制字节码; 最多支持63位; ]
+                     * @return Str 检测值，关键字符串或正则表达式,取值[ 当检测类型为sunday时，请填写字符串或者16进制字节码，例如\x313233对应的是字符串"123"的16进制字节码; 最多支持63位; ]
                      * 
                      */
                     std::string GetStr() const;
 
                     /**
-                     * 设置检测值，关键字符串或正则表达式,取值[
-当检测类型为sunday时，请填写字符串或者16进制字节码，例如\x313233对应的是字符串"123"的16进制字节码;
-当检测类型为pcre时, 请填写正则表达式字符串;
-]
-                     * @param _str 检测值，关键字符串或正则表达式,取值[
-当检测类型为sunday时，请填写字符串或者16进制字节码，例如\x313233对应的是字符串"123"的16进制字节码;
-当检测类型为pcre时, 请填写正则表达式字符串;
-]
+                     * 设置检测值，关键字符串或正则表达式,取值[ 当检测类型为sunday时，请填写字符串或者16进制字节码，例如\x313233对应的是字符串"123"的16进制字节码; 最多支持63位; ]
+                     * @param _str 检测值，关键字符串或正则表达式,取值[ 当检测类型为sunday时，请填写字符串或者16进制字节码，例如\x313233对应的是字符串"123"的16进制字节码; 最多支持63位; ]
                      * 
                      */
                     void SetStr(const std::string& _str);
@@ -394,11 +382,11 @@ pcre(正则表达式)
                     /**
                      * 获取是否包含检测值，取值[
 0(包含)
-1(不包含)
+1(不包含) （已废弃，仅支持0）
 ]
                      * @return IsNot 是否包含检测值，取值[
 0(包含)
-1(不包含)
+1(不包含) （已废弃，仅支持0）
 ]
                      * 
                      */
@@ -407,11 +395,11 @@ pcre(正则表达式)
                     /**
                      * 设置是否包含检测值，取值[
 0(包含)
-1(不包含)
+1(不包含) （已废弃，仅支持0）
 ]
                      * @param _isNot 是否包含检测值，取值[
 0(包含)
-1(不包含)
+1(不包含) （已废弃，仅支持0）
 ]
                      * 
                      */
@@ -425,12 +413,14 @@ pcre(正则表达式)
                     bool IsNotHasBeenSet() const;
 
                     /**
-                     * 获取当有第二个检测条件时，与第一检测条件的且或关系，取值[
-and(且的关系)
+                     * 获取
+当有第二个检测条件时，与第一检测条件的且或关系，取值[
+and(且的关系) （已废弃，仅支持none）
 none(当没有第二个检测条件时填写此值)
 ]
-                     * @return MatchLogic 当有第二个检测条件时，与第一检测条件的且或关系，取值[
-and(且的关系)
+                     * @return MatchLogic 
+当有第二个检测条件时，与第一检测条件的且或关系，取值[
+and(且的关系) （已废弃，仅支持none）
 none(当没有第二个检测条件时填写此值)
 ]
                      * 
@@ -438,12 +428,14 @@ none(当没有第二个检测条件时填写此值)
                     std::string GetMatchLogic() const;
 
                     /**
-                     * 设置当有第二个检测条件时，与第一检测条件的且或关系，取值[
-and(且的关系)
+                     * 设置
+当有第二个检测条件时，与第一检测条件的且或关系，取值[
+and(且的关系) （已废弃，仅支持none）
 none(当没有第二个检测条件时填写此值)
 ]
-                     * @param _matchLogic 当有第二个检测条件时，与第一检测条件的且或关系，取值[
-and(且的关系)
+                     * @param _matchLogic 
+当有第二个检测条件时，与第一检测条件的且或关系，取值[
+and(且的关系) （已废弃，仅支持none）
 none(当没有第二个检测条件时填写此值)
 ]
                      * 
@@ -458,27 +450,15 @@ none(当没有第二个检测条件时填写此值)
                     bool MatchLogicHasBeenSet() const;
 
                     /**
-                     * 获取第二个检测位置，取值[
-begin_l5(载荷)
-no_match(不匹配)
-]
-                     * @return MatchBegin2 第二个检测位置，取值[
-begin_l5(载荷)
-no_match(不匹配)
-]
+                     * 获取（已废弃）
+                     * @return MatchBegin2 （已废弃）
                      * 
                      */
                     std::string GetMatchBegin2() const;
 
                     /**
-                     * 设置第二个检测位置，取值[
-begin_l5(载荷)
-no_match(不匹配)
-]
-                     * @param _matchBegin2 第二个检测位置，取值[
-begin_l5(载荷)
-no_match(不匹配)
-]
+                     * 设置（已废弃）
+                     * @param _matchBegin2 （已废弃）
                      * 
                      */
                     void SetMatchBegin2(const std::string& _matchBegin2);
@@ -491,27 +471,15 @@ no_match(不匹配)
                     bool MatchBegin2HasBeenSet() const;
 
                     /**
-                     * 获取第二个检测类型，取值[
-sunday(关键字)
-pcre(正则表达式)
-]
-                     * @return MatchType2 第二个检测类型，取值[
-sunday(关键字)
-pcre(正则表达式)
-]
+                     * 获取（已废弃）
+                     * @return MatchType2 （已废弃）
                      * 
                      */
                     std::string GetMatchType2() const;
 
                     /**
-                     * 设置第二个检测类型，取值[
-sunday(关键字)
-pcre(正则表达式)
-]
-                     * @param _matchType2 第二个检测类型，取值[
-sunday(关键字)
-pcre(正则表达式)
-]
+                     * 设置（已废弃）
+                     * @param _matchType2 （已废弃）
                      * 
                      */
                     void SetMatchType2(const std::string& _matchType2);
@@ -524,27 +492,15 @@ pcre(正则表达式)
                     bool MatchType2HasBeenSet() const;
 
                     /**
-                     * 获取第二个检测值，关键字符串或正则表达式,取值[
-当检测类型为sunday时，请填写字符串或者16进制字节码，例如\x313233对应的是字符串"123"的16进制字节码;
-当检测类型为pcre时, 请填写正则表达式字符串;
-]
-                     * @return Str2 第二个检测值，关键字符串或正则表达式,取值[
-当检测类型为sunday时，请填写字符串或者16进制字节码，例如\x313233对应的是字符串"123"的16进制字节码;
-当检测类型为pcre时, 请填写正则表达式字符串;
-]
+                     * 获取（已废弃）
+                     * @return Str2 （已废弃）
                      * 
                      */
                     std::string GetStr2() const;
 
                     /**
-                     * 设置第二个检测值，关键字符串或正则表达式,取值[
-当检测类型为sunday时，请填写字符串或者16进制字节码，例如\x313233对应的是字符串"123"的16进制字节码;
-当检测类型为pcre时, 请填写正则表达式字符串;
-]
-                     * @param _str2 第二个检测值，关键字符串或正则表达式,取值[
-当检测类型为sunday时，请填写字符串或者16进制字节码，例如\x313233对应的是字符串"123"的16进制字节码;
-当检测类型为pcre时, 请填写正则表达式字符串;
-]
+                     * 设置（已废弃）
+                     * @param _str2 （已废弃）
                      * 
                      */
                     void SetStr2(const std::string& _str2);
@@ -557,15 +513,15 @@ pcre(正则表达式)
                     bool Str2HasBeenSet() const;
 
                     /**
-                     * 获取从第二个检测位置开始的第二个检测深度，取值[0,1500]
-                     * @return Depth2 从第二个检测位置开始的第二个检测深度，取值[0,1500]
+                     * 获取（已废弃）
+                     * @return Depth2 （已废弃）
                      * 
                      */
                     int64_t GetDepth2() const;
 
                     /**
-                     * 设置从第二个检测位置开始的第二个检测深度，取值[0,1500]
-                     * @param _depth2 从第二个检测位置开始的第二个检测深度，取值[0,1500]
+                     * 设置（已废弃）
+                     * @param _depth2 （已废弃）
                      * 
                      */
                     void SetDepth2(const int64_t& _depth2);
@@ -578,15 +534,15 @@ pcre(正则表达式)
                     bool Depth2HasBeenSet() const;
 
                     /**
-                     * 获取从第二个检测位置开始的偏移量，取值范围[0,Depth2]
-                     * @return Offset2 从第二个检测位置开始的偏移量，取值范围[0,Depth2]
+                     * 获取（已废弃）
+                     * @return Offset2 （已废弃）
                      * 
                      */
                     int64_t GetOffset2() const;
 
                     /**
-                     * 设置从第二个检测位置开始的偏移量，取值范围[0,Depth2]
-                     * @param _offset2 从第二个检测位置开始的偏移量，取值范围[0,Depth2]
+                     * 设置（已废弃）
+                     * @param _offset2 （已废弃）
                      * 
                      */
                     void SetOffset2(const int64_t& _offset2);
@@ -599,27 +555,15 @@ pcre(正则表达式)
                     bool Offset2HasBeenSet() const;
 
                     /**
-                     * 获取第二个检测是否包含检测值，取值[
-0(包含)
-1(不包含)
-]
-                     * @return IsNot2 第二个检测是否包含检测值，取值[
-0(包含)
-1(不包含)
-]
+                     * 获取（已废弃）
+                     * @return IsNot2 （已废弃）
                      * 
                      */
                     int64_t GetIsNot2() const;
 
                     /**
-                     * 设置第二个检测是否包含检测值，取值[
-0(包含)
-1(不包含)
-]
-                     * @param _isNot2 第二个检测是否包含检测值，取值[
-0(包含)
-1(不包含)
-]
+                     * 设置（已废弃）
+                     * @param _isNot2 （已废弃）
                      * 
                      */
                     void SetIsNot2(const int64_t& _isNot2);
@@ -632,15 +576,15 @@ pcre(正则表达式)
                     bool IsNot2HasBeenSet() const;
 
                     /**
-                     * 获取特征过滤配置添加成功后自动生成的规则ID，当添加新特征过滤配置时，此字段不用填写；
-                     * @return Id 特征过滤配置添加成功后自动生成的规则ID，当添加新特征过滤配置时，此字段不用填写；
+                     * 获取特征过滤配置添加成功后自动生成的规则ID，当添加新特征过滤配置时，此字段不用填写；当修改/删除新特征过滤配置时，此字段必填；
+                     * @return Id 特征过滤配置添加成功后自动生成的规则ID，当添加新特征过滤配置时，此字段不用填写；当修改/删除新特征过滤配置时，此字段必填；
                      * 
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置特征过滤配置添加成功后自动生成的规则ID，当添加新特征过滤配置时，此字段不用填写；
-                     * @param _id 特征过滤配置添加成功后自动生成的规则ID，当添加新特征过滤配置时，此字段不用填写；
+                     * 设置特征过滤配置添加成功后自动生成的规则ID，当添加新特征过滤配置时，此字段不用填写；当修改/删除新特征过滤配置时，此字段必填；
+                     * @param _id 特征过滤配置添加成功后自动生成的规则ID，当添加新特征过滤配置时，此字段不用填写；当修改/删除新特征过滤配置时，此字段必填；
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -722,8 +666,8 @@ pcre(正则表达式)
 drop(丢弃)
 transmit(放行)
 drop_black(丢弃并拉黑)
-drop_rst(拦截)
-drop_black_rst(拦截并拉黑)
+drop_rst(拦截)（已废弃，不支持drop_rst）
+drop_black_rst(拦截并拉黑)（已废弃，不支持drop_black_rst）
 forward(继续防护)
 ]
                      */
@@ -744,17 +688,14 @@ no_match(不匹配)
                     /**
                      * 检测类型，取值[
 sunday(关键字)
-pcre(正则表达式)
+pcre(正则表达式) （已废弃，仅支持sunday）
 ]
                      */
                     std::string m_matchType;
                     bool m_matchTypeHasBeenSet;
 
                     /**
-                     * 检测值，关键字符串或正则表达式,取值[
-当检测类型为sunday时，请填写字符串或者16进制字节码，例如\x313233对应的是字符串"123"的16进制字节码;
-当检测类型为pcre时, 请填写正则表达式字符串;
-]
+                     * 检测值，关键字符串或正则表达式,取值[ 当检测类型为sunday时，请填写字符串或者16进制字节码，例如\x313233对应的是字符串"123"的16进制字节码; 最多支持63位; ]
                      */
                     std::string m_str;
                     bool m_strHasBeenSet;
@@ -774,15 +715,16 @@ pcre(正则表达式)
                     /**
                      * 是否包含检测值，取值[
 0(包含)
-1(不包含)
+1(不包含) （已废弃，仅支持0）
 ]
                      */
                     int64_t m_isNot;
                     bool m_isNotHasBeenSet;
 
                     /**
-                     * 当有第二个检测条件时，与第一检测条件的且或关系，取值[
-and(且的关系)
+                     * 
+当有第二个检测条件时，与第一检测条件的且或关系，取值[
+and(且的关系) （已废弃，仅支持none）
 none(当没有第二个检测条件时填写此值)
 ]
                      */
@@ -790,55 +732,43 @@ none(当没有第二个检测条件时填写此值)
                     bool m_matchLogicHasBeenSet;
 
                     /**
-                     * 第二个检测位置，取值[
-begin_l5(载荷)
-no_match(不匹配)
-]
+                     * （已废弃）
                      */
                     std::string m_matchBegin2;
                     bool m_matchBegin2HasBeenSet;
 
                     /**
-                     * 第二个检测类型，取值[
-sunday(关键字)
-pcre(正则表达式)
-]
+                     * （已废弃）
                      */
                     std::string m_matchType2;
                     bool m_matchType2HasBeenSet;
 
                     /**
-                     * 第二个检测值，关键字符串或正则表达式,取值[
-当检测类型为sunday时，请填写字符串或者16进制字节码，例如\x313233对应的是字符串"123"的16进制字节码;
-当检测类型为pcre时, 请填写正则表达式字符串;
-]
+                     * （已废弃）
                      */
                     std::string m_str2;
                     bool m_str2HasBeenSet;
 
                     /**
-                     * 从第二个检测位置开始的第二个检测深度，取值[0,1500]
+                     * （已废弃）
                      */
                     int64_t m_depth2;
                     bool m_depth2HasBeenSet;
 
                     /**
-                     * 从第二个检测位置开始的偏移量，取值范围[0,Depth2]
+                     * （已废弃）
                      */
                     int64_t m_offset2;
                     bool m_offset2HasBeenSet;
 
                     /**
-                     * 第二个检测是否包含检测值，取值[
-0(包含)
-1(不包含)
-]
+                     * （已废弃）
                      */
                     int64_t m_isNot2;
                     bool m_isNot2HasBeenSet;
 
                     /**
-                     * 特征过滤配置添加成功后自动生成的规则ID，当添加新特征过滤配置时，此字段不用填写；
+                     * 特征过滤配置添加成功后自动生成的规则ID，当添加新特征过滤配置时，此字段不用填写；当修改/删除新特征过滤配置时，此字段必填；
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;

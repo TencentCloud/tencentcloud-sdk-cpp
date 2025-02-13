@@ -84,6 +84,48 @@ namespace TencentCloud
                      */
                     bool DiskIdHasBeenSet() const;
 
+                    /**
+                     * 获取回滚云硬盘备份点前是否自动关机，默认为FALSE，表示不自动关机
+                     * @return AutoStopInstance 回滚云硬盘备份点前是否自动关机，默认为FALSE，表示不自动关机
+                     * 
+                     */
+                    bool GetAutoStopInstance() const;
+
+                    /**
+                     * 设置回滚云硬盘备份点前是否自动关机，默认为FALSE，表示不自动关机
+                     * @param _autoStopInstance 回滚云硬盘备份点前是否自动关机，默认为FALSE，表示不自动关机
+                     * 
+                     */
+                    void SetAutoStopInstance(const bool& _autoStopInstance);
+
+                    /**
+                     * 判断参数 AutoStopInstance 是否已赋值
+                     * @return AutoStopInstance 是否已赋值
+                     * 
+                     */
+                    bool AutoStopInstanceHasBeenSet() const;
+
+                    /**
+                     * 获取回滚云硬盘备份点完成后是否自动开机，默认为FALSE，表示不自动开机
+                     * @return AutoStartInstance 回滚云硬盘备份点完成后是否自动开机，默认为FALSE，表示不自动开机
+                     * 
+                     */
+                    bool GetAutoStartInstance() const;
+
+                    /**
+                     * 设置回滚云硬盘备份点完成后是否自动开机，默认为FALSE，表示不自动开机
+                     * @param _autoStartInstance 回滚云硬盘备份点完成后是否自动开机，默认为FALSE，表示不自动开机
+                     * 
+                     */
+                    void SetAutoStartInstance(const bool& _autoStartInstance);
+
+                    /**
+                     * 判断参数 AutoStartInstance 是否已赋值
+                     * @return AutoStartInstance 是否已赋值
+                     * 
+                     */
+                    bool AutoStartInstanceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +139,18 @@ namespace TencentCloud
                      */
                     std::string m_diskId;
                     bool m_diskIdHasBeenSet;
+
+                    /**
+                     * 回滚云硬盘备份点前是否自动关机，默认为FALSE，表示不自动关机
+                     */
+                    bool m_autoStopInstance;
+                    bool m_autoStopInstanceHasBeenSet;
+
+                    /**
+                     * 回滚云硬盘备份点完成后是否自动开机，默认为FALSE，表示不自动开机
+                     */
+                    bool m_autoStartInstance;
+                    bool m_autoStartInstanceHasBeenSet;
 
                 };
             }

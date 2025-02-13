@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/trocket/v20230308/model/DetailedRolePerm.h>
 
 
 namespace TencentCloud
@@ -214,6 +215,52 @@ namespace TencentCloud
                      */
                     bool ModifiedTimeHasBeenSet() const;
 
+                    /**
+                     * 获取权限类型，默认按集群授权（Cluster：集群级别；TopicAndGroup：主题&消费组级别）
+                     * @return PermType 权限类型，默认按集群授权（Cluster：集群级别；TopicAndGroup：主题&消费组级别）
+                     * 
+                     */
+                    std::string GetPermType() const;
+
+                    /**
+                     * 设置权限类型，默认按集群授权（Cluster：集群级别；TopicAndGroup：主题&消费组级别）
+                     * @param _permType 权限类型，默认按集群授权（Cluster：集群级别；TopicAndGroup：主题&消费组级别）
+                     * 
+                     */
+                    void SetPermType(const std::string& _permType);
+
+                    /**
+                     * 判断参数 PermType 是否已赋值
+                     * @return PermType 是否已赋值
+                     * 
+                     */
+                    bool PermTypeHasBeenSet() const;
+
+                    /**
+                     * 获取Topic和Group维度权限配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DetailedRolePerms Topic和Group维度权限配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<DetailedRolePerm> GetDetailedRolePerms() const;
+
+                    /**
+                     * 设置Topic和Group维度权限配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _detailedRolePerms Topic和Group维度权限配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDetailedRolePerms(const std::vector<DetailedRolePerm>& _detailedRolePerms);
+
+                    /**
+                     * 判断参数 DetailedRolePerms 是否已赋值
+                     * @return DetailedRolePerms 是否已赋值
+                     * 
+                     */
+                    bool DetailedRolePermsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -263,6 +310,19 @@ namespace TencentCloud
                      */
                     int64_t m_modifiedTime;
                     bool m_modifiedTimeHasBeenSet;
+
+                    /**
+                     * 权限类型，默认按集群授权（Cluster：集群级别；TopicAndGroup：主题&消费组级别）
+                     */
+                    std::string m_permType;
+                    bool m_permTypeHasBeenSet;
+
+                    /**
+                     * Topic和Group维度权限配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DetailedRolePerm> m_detailedRolePerms;
+                    bool m_detailedRolePermsHasBeenSet;
 
                 };
             }

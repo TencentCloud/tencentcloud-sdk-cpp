@@ -33,7 +33,8 @@ IDCardInfoResult::IDCardInfoResult() :
     m_requestIdHasBeenSet(false),
     m_errorCodeHasBeenSet(false),
     m_errorMessageHasBeenSet(false),
-    m_imageUrlHasBeenSet(false)
+    m_imageUrlHasBeenSet(false),
+    m_portraitUrlHasBeenSet(false)
 {
 }
 
@@ -175,6 +176,16 @@ CoreInternalOutcome IDCardInfoResult::Deserialize(const rapidjson::Value &value)
         m_imageUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("PortraitUrl") && !value["PortraitUrl"].IsNull())
+    {
+        if (!value["PortraitUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IDCardInfoResult.PortraitUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_portraitUrl = string(value["PortraitUrl"].GetString());
+        m_portraitUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -289,6 +300,14 @@ void IDCardInfoResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "ImageUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_imageUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_portraitUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PortraitUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_portraitUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -500,5 +519,21 @@ void IDCardInfoResult::SetImageUrl(const string& _imageUrl)
 bool IDCardInfoResult::ImageUrlHasBeenSet() const
 {
     return m_imageUrlHasBeenSet;
+}
+
+string IDCardInfoResult::GetPortraitUrl() const
+{
+    return m_portraitUrl;
+}
+
+void IDCardInfoResult::SetPortraitUrl(const string& _portraitUrl)
+{
+    m_portraitUrl = _portraitUrl;
+    m_portraitUrlHasBeenSet = true;
+}
+
+bool IDCardInfoResult::PortraitUrlHasBeenSet() const
+{
+    return m_portraitUrlHasBeenSet;
 }
 

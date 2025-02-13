@@ -25,7 +25,8 @@ using namespace std;
 CreateRocketMQRoleRequest::CreateRocketMQRoleRequest() :
     m_roleNameHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
-    m_remarkHasBeenSet(false)
+    m_remarkHasBeenSet(false),
+    m_permTypeHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string CreateRocketMQRoleRequest::ToJsonString() const
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_permTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PermType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_permType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void CreateRocketMQRoleRequest::SetRemark(const string& _remark)
 bool CreateRocketMQRoleRequest::RemarkHasBeenSet() const
 {
     return m_remarkHasBeenSet;
+}
+
+string CreateRocketMQRoleRequest::GetPermType() const
+{
+    return m_permType;
+}
+
+void CreateRocketMQRoleRequest::SetPermType(const string& _permType)
+{
+    m_permType = _permType;
+    m_permTypeHasBeenSet = true;
+}
+
+bool CreateRocketMQRoleRequest::PermTypeHasBeenSet() const
+{
+    return m_permTypeHasBeenSet;
 }
 
 

@@ -19,6 +19,7 @@ set(trocket_public_header
   )
 
 set(trocket_public_header_model
+  include/tencentcloud/trocket/v20230308/model/DetailedRolePerm.h
   include/tencentcloud/trocket/v20230308/model/DescribeProductSKUsRequest.h
   include/tencentcloud/trocket/v20230308/model/ProductSKU.h
   include/tencentcloud/trocket/v20230308/model/DescribeRoleListResponse.h
@@ -168,6 +169,7 @@ set(trocket_public_header_model
 
 set(trocket_src
   src/v20230308/TrocketClient.cpp
+  src/v20230308/model/DetailedRolePerm.cpp
   src/v20230308/model/DescribeProductSKUsRequest.cpp
   src/v20230308/model/ProductSKU.cpp
   src/v20230308/model/DescribeRoleListResponse.cpp

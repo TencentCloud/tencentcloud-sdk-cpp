@@ -195,9 +195,7 @@ namespace TencentCloud
 
                     /**
                      * 获取备注。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Comment 备注。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetComment() const;
@@ -211,9 +209,7 @@ namespace TencentCloud
 
                     /**
                      * 获取昵称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Nickname 昵称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNickname() const;
@@ -227,9 +223,7 @@ namespace TencentCloud
 
                     /**
                      * 获取用户头像地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Avatar 用户头像地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAvatar() const;
@@ -243,9 +237,7 @@ namespace TencentCloud
 
                     /**
                      * 获取自定义信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Customize 自定义信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCustomize() const;
@@ -326,28 +318,24 @@ namespace TencentCloud
 
                     /**
                      * 备注。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;
 
                     /**
                      * 昵称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nickname;
                     bool m_nicknameHasBeenSet;
 
                     /**
                      * 用户头像地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_avatar;
                     bool m_avatarHasBeenSet;
 
                     /**
                      * 自定义信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_customize;
                     bool m_customizeHasBeenSet;

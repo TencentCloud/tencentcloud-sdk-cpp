@@ -193,6 +193,27 @@ namespace TencentCloud
                      */
                     bool ReflectWarnHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启头像剪切
+                     * @return CropPortrait 是否开启头像剪切
+                     * 
+                     */
+                    bool GetCropPortrait() const;
+
+                    /**
+                     * 设置是否开启头像剪切
+                     * @param _cropPortrait 是否开启头像剪切
+                     * 
+                     */
+                    void SetCropPortrait(const bool& _cropPortrait);
+
+                    /**
+                     * 判断参数 CropPortrait 是否已赋值
+                     * @return CropPortrait 是否已赋值
+                     * 
+                     */
+                    bool CropPortraitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -236,6 +257,12 @@ namespace TencentCloud
                      */
                     bool m_reflectWarn;
                     bool m_reflectWarnHasBeenSet;
+
+                    /**
+                     * 是否开启头像剪切
+                     */
+                    bool m_cropPortrait;
+                    bool m_cropPortraitHasBeenSet;
 
                 };
             }

@@ -1456,7 +1456,7 @@ namespace TencentCloud
                 SwitchDBInstancePrimaryOutcomeCallable SwitchDBInstancePrimaryCallable(const Model::SwitchDBInstancePrimaryRequest& request);
 
                 /**
-                 *解除数据库账号的锁定，解锁后账号可以登陆数据库。
+                 *解除数据库账号的锁定，解锁后账号可以登录数据库。
                  * @param req UnlockAccountRequest
                  * @return UnlockAccountOutcome
                  */

@@ -43,7 +43,27 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取0：没有重复，1：和现有策略重复
+                     * @return Repeat 0：没有重复，1：和现有策略重复
+                     * 
+                     */
+                    int64_t GetRepeat() const;
+
+                    /**
+                     * 判断参数 Repeat 是否已赋值
+                     * @return Repeat 是否已赋值
+                     * 
+                     */
+                    bool RepeatHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 0：没有重复，1：和现有策略重复
+                     */
+                    int64_t m_repeat;
+                    bool m_repeatHasBeenSet;
 
                 };
             }
