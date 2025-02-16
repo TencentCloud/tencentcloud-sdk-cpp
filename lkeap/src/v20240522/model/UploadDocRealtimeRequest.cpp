@@ -22,7 +22,12 @@
 using namespace TencentCloud::Lkeap::V20240522::Model;
 using namespace std;
 
-UploadDocRealtimeRequest::UploadDocRealtimeRequest()
+UploadDocRealtimeRequest::UploadDocRealtimeRequest() :
+    m_knowledgeBaseIdHasBeenSet(false),
+    m_fileNameHasBeenSet(false),
+    m_fileTypeHasBeenSet(false),
+    m_fileUrlHasBeenSet(false),
+    m_expireTimeHasBeenSet(false)
 {
 }
 
@@ -33,6 +38,46 @@ string UploadDocRealtimeRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_knowledgeBaseIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KnowledgeBaseId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_knowledgeBaseId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_fileName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_fileType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_fileUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_expireTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_expireTime, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +85,85 @@ string UploadDocRealtimeRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string UploadDocRealtimeRequest::GetKnowledgeBaseId() const
+{
+    return m_knowledgeBaseId;
+}
+
+void UploadDocRealtimeRequest::SetKnowledgeBaseId(const string& _knowledgeBaseId)
+{
+    m_knowledgeBaseId = _knowledgeBaseId;
+    m_knowledgeBaseIdHasBeenSet = true;
+}
+
+bool UploadDocRealtimeRequest::KnowledgeBaseIdHasBeenSet() const
+{
+    return m_knowledgeBaseIdHasBeenSet;
+}
+
+string UploadDocRealtimeRequest::GetFileName() const
+{
+    return m_fileName;
+}
+
+void UploadDocRealtimeRequest::SetFileName(const string& _fileName)
+{
+    m_fileName = _fileName;
+    m_fileNameHasBeenSet = true;
+}
+
+bool UploadDocRealtimeRequest::FileNameHasBeenSet() const
+{
+    return m_fileNameHasBeenSet;
+}
+
+string UploadDocRealtimeRequest::GetFileType() const
+{
+    return m_fileType;
+}
+
+void UploadDocRealtimeRequest::SetFileType(const string& _fileType)
+{
+    m_fileType = _fileType;
+    m_fileTypeHasBeenSet = true;
+}
+
+bool UploadDocRealtimeRequest::FileTypeHasBeenSet() const
+{
+    return m_fileTypeHasBeenSet;
+}
+
+string UploadDocRealtimeRequest::GetFileUrl() const
+{
+    return m_fileUrl;
+}
+
+void UploadDocRealtimeRequest::SetFileUrl(const string& _fileUrl)
+{
+    m_fileUrl = _fileUrl;
+    m_fileUrlHasBeenSet = true;
+}
+
+bool UploadDocRealtimeRequest::FileUrlHasBeenSet() const
+{
+    return m_fileUrlHasBeenSet;
+}
+
+int64_t UploadDocRealtimeRequest::GetExpireTime() const
+{
+    return m_expireTime;
+}
+
+void UploadDocRealtimeRequest::SetExpireTime(const int64_t& _expireTime)
+{
+    m_expireTime = _expireTime;
+    m_expireTimeHasBeenSet = true;
+}
+
+bool UploadDocRealtimeRequest::ExpireTimeHasBeenSet() const
+{
+    return m_expireTimeHasBeenSet;
+}
 
 

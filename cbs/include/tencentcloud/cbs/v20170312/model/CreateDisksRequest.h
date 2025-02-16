@@ -215,6 +215,27 @@ namespace TencentCloud
                     bool ThroughputPerformanceHasBeenSet() const;
 
                     /**
+                     * 获取可选参数。购买加密盘时自定义密钥， 当传入该参数时, Encrypt入参不为空
+                     * @return KmsKeyId 可选参数。购买加密盘时自定义密钥， 当传入该参数时, Encrypt入参不为空
+                     * 
+                     */
+                    std::string GetKmsKeyId() const;
+
+                    /**
+                     * 设置可选参数。购买加密盘时自定义密钥， 当传入该参数时, Encrypt入参不为空
+                     * @param _kmsKeyId 可选参数。购买加密盘时自定义密钥， 当传入该参数时, Encrypt入参不为空
+                     * 
+                     */
+                    void SetKmsKeyId(const std::string& _kmsKeyId);
+
+                    /**
+                     * 判断参数 KmsKeyId 是否已赋值
+                     * @return KmsKeyId 是否已赋值
+                     * 
+                     */
+                    bool KmsKeyIdHasBeenSet() const;
+
+                    /**
                      * 获取云硬盘大小，单位为GiB。<br><li>如果传入`SnapshotId`则可不传`DiskSize`，此时新建云盘的大小为快照大小</li><br><li>如果传入`SnapshotId`同时传入`DiskSize`，则云盘大小必须大于或等于快照大小</li><br><li>云盘大小取值范围参见云硬盘[产品分类](/document/product/362/2353)的说明。</li>
                      * @return DiskSize 云硬盘大小，单位为GiB。<br><li>如果传入`SnapshotId`则可不传`DiskSize`，此时新建云盘的大小为快照大小</li><br><li>如果传入`SnapshotId`同时传入`DiskSize`，则云盘大小必须大于或等于快照大小</li><br><li>云盘大小取值范围参见云硬盘[产品分类](/document/product/362/2353)的说明。</li>
                      * 
@@ -473,6 +494,12 @@ namespace TencentCloud
                      */
                     uint64_t m_throughputPerformance;
                     bool m_throughputPerformanceHasBeenSet;
+
+                    /**
+                     * 可选参数。购买加密盘时自定义密钥， 当传入该参数时, Encrypt入参不为空
+                     */
+                    std::string m_kmsKeyId;
+                    bool m_kmsKeyIdHasBeenSet;
 
                     /**
                      * 云硬盘大小，单位为GiB。<br><li>如果传入`SnapshotId`则可不传`DiskSize`，此时新建云盘的大小为快照大小</li><br><li>如果传入`SnapshotId`同时传入`DiskSize`，则云盘大小必须大于或等于快照大小</li><br><li>云盘大小取值范围参见云硬盘[产品分类](/document/product/362/2353)的说明。</li>

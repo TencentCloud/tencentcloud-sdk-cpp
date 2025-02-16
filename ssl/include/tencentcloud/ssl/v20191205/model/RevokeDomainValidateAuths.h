@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 返回参数键为 RevokeDomainValidateAuths 的内容。
+                * 吊销证书域名验证信息。
                 */
                 class RevokeDomainValidateAuths : public AbstractModel
                 {

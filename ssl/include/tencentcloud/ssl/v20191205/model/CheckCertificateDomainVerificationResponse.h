@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取域名验证结果
+                     * 获取证书域名验证结果列表， 证书若绑定了多个域名， 则返回数组有多份
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VerificationResults 域名验证结果
+                     * @return VerificationResults 证书域名验证结果列表， 证书若绑定了多个域名， 则返回数组有多份
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 域名验证结果
+                     * 证书域名验证结果列表， 证书若绑定了多个域名， 则返回数组有多份
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DomainValidationResult> m_verificationResults;

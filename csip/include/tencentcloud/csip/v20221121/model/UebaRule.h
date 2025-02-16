@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleID 策略id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuleID() const;
 
                     /**
                      * 设置策略id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleID 策略id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleID(const std::string& _ruleID);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleName 规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuleName() const;
 
                     /**
                      * 设置规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleName 规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleName(const std::string& _ruleName);
@@ -101,11 +93,9 @@ namespace TencentCloud
                      * 获取策略类型
 0:系统策略
 1:自定义策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleType 策略类型
 0:系统策略
 1:自定义策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRuleType() const;
@@ -114,11 +104,9 @@ namespace TencentCloud
                      * 设置策略类型
 0:系统策略
 1:自定义策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleType 策略类型
 0:系统策略
 1:自定义策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleType(const int64_t& _ruleType);
@@ -137,14 +125,12 @@ namespace TencentCloud
 2:中危
 3:高危
 4:严重
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleLevel 策略等级
 0:提示
 1:低危
 2:中危
 3:高危
 4:严重
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRuleLevel() const;
@@ -156,14 +142,12 @@ namespace TencentCloud
 2:中危
 3:高危
 4:严重
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleLevel 策略等级
 0:提示
 1:低危
 2:中危
 3:高危
 4:严重
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleLevel(const int64_t& _ruleLevel);
@@ -177,18 +161,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleContent 策略内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuleContent() const;
 
                     /**
                      * 设置策略内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleContent 策略内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleContent(const std::string& _ruleContent);
@@ -202,18 +182,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleStatus 策略开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetRuleStatus() const;
 
                     /**
                      * 设置策略开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleStatus 策略开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleStatus(const bool& _ruleStatus);
@@ -227,18 +203,14 @@ namespace TencentCloud
 
                     /**
                      * 获取命中次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HitCount 命中次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetHitCount() const;
 
                     /**
                      * 设置命中次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hitCount 命中次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHitCount(const uint64_t& _hitCount);
@@ -252,18 +224,14 @@ namespace TencentCloud
 
                     /**
                      * 获取所属账号Appid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppID 所属账号Appid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAppID() const;
 
                     /**
                      * 设置所属账号Appid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appID 所属账号Appid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppID(const std::string& _appID);
@@ -277,18 +245,14 @@ namespace TencentCloud
 
                     /**
                      * 获取多账号，成员ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MemberID 多账号，成员ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMemberID() const;
 
                     /**
                      * 设置多账号，成员ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _memberID 多账号，成员ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMemberID(const std::string& _memberID);
@@ -302,18 +266,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uin Uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
                      * 设置Uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uin Uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -327,18 +287,14 @@ namespace TencentCloud
 
                     /**
                      * 获取昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Nickname 昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNickname() const;
 
                     /**
                      * 设置昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nickname 昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNickname(const std::string& _nickname);
@@ -352,18 +308,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自定义规则具体内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CustomRuleDetail 自定义规则具体内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     UebaCustomRule GetCustomRuleDetail() const;
 
                     /**
                      * 设置自定义规则具体内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _customRuleDetail 自定义规则具体内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCustomRuleDetail(const UebaCustomRule& _customRuleDetail);
@@ -379,11 +331,9 @@ namespace TencentCloud
                      * 获取云类型
 腾讯云：0
 aws：1
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CloudType 云类型
 腾讯云：0
 aws：1
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCloudType() const;
@@ -392,11 +342,9 @@ aws：1
                      * 设置云类型
 腾讯云：0
 aws：1
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cloudType 云类型
 腾讯云：0
 aws：1
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCloudType(const int64_t& _cloudType);
@@ -412,14 +360,12 @@ aws：1
 
                     /**
                      * 策略id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ruleID;
                     bool m_ruleIDHasBeenSet;
 
                     /**
                      * 规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ruleName;
                     bool m_ruleNameHasBeenSet;
@@ -428,7 +374,6 @@ aws：1
                      * 策略类型
 0:系统策略
 1:自定义策略
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_ruleType;
                     bool m_ruleTypeHasBeenSet;
@@ -440,63 +385,54 @@ aws：1
 2:中危
 3:高危
 4:严重
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_ruleLevel;
                     bool m_ruleLevelHasBeenSet;
 
                     /**
                      * 策略内容
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ruleContent;
                     bool m_ruleContentHasBeenSet;
 
                     /**
                      * 策略开关
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_ruleStatus;
                     bool m_ruleStatusHasBeenSet;
 
                     /**
                      * 命中次数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_hitCount;
                     bool m_hitCountHasBeenSet;
 
                     /**
                      * 所属账号Appid
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_appID;
                     bool m_appIDHasBeenSet;
 
                     /**
                      * 多账号，成员ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_memberID;
                     bool m_memberIDHasBeenSet;
 
                     /**
                      * Uin
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
                      * 昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nickname;
                     bool m_nicknameHasBeenSet;
 
                     /**
                      * 自定义规则具体内容
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     UebaCustomRule m_customRuleDetail;
                     bool m_customRuleDetailHasBeenSet;
@@ -505,7 +441,6 @@ aws：1
                      * 云类型
 腾讯云：0
 aws：1
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_cloudType;
                     bool m_cloudTypeHasBeenSet;

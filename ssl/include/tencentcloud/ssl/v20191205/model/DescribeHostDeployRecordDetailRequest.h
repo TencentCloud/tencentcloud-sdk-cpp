@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取部署记录ID
-                     * @return DeployRecordId 部署记录ID
+                     * 获取部署记录ID，通过调用DeployCertificateInstance接口返回的记录ID， 或者通过DeployCertificateRecordRollback回滚接口返回的记录ID
+                     * @return DeployRecordId 部署记录ID，通过调用DeployCertificateInstance接口返回的记录ID， 或者通过DeployCertificateRecordRollback回滚接口返回的记录ID
                      * 
                      */
                     std::string GetDeployRecordId() const;
 
                     /**
-                     * 设置部署记录ID
-                     * @param _deployRecordId 部署记录ID
+                     * 设置部署记录ID，通过调用DeployCertificateInstance接口返回的记录ID， 或者通过DeployCertificateRecordRollback回滚接口返回的记录ID
+                     * @param _deployRecordId 部署记录ID，通过调用DeployCertificateInstance接口返回的记录ID， 或者通过DeployCertificateRecordRollback回滚接口返回的记录ID
                      * 
                      */
                     void SetDeployRecordId(const std::string& _deployRecordId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DeployRecordIdHasBeenSet() const;
 
                     /**
-                     * 获取分页偏移量，从0开始。
-                     * @return Offset 分页偏移量，从0开始。
+                     * 获取分页偏移量，从0开始。默认为0
+                     * @return Offset 分页偏移量，从0开始。默认为0
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置分页偏移量，从0开始。
-                     * @param _offset 分页偏移量，从0开始。
+                     * 设置分页偏移量，从0开始。默认为0
+                     * @param _offset 分页偏移量，从0开始。默认为0
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取每页数量，默认10。
-                     * @return Limit 每页数量，默认10。
+                     * 获取每页数量，默认10。最大值为200
+                     * @return Limit 每页数量，默认10。最大值为200
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置每页数量，默认10。
-                     * @param _limit 每页数量，默认10。
+                     * 设置每页数量，默认10。最大值为200
+                     * @param _limit 每页数量，默认10。最大值为200
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 部署记录ID
+                     * 部署记录ID，通过调用DeployCertificateInstance接口返回的记录ID， 或者通过DeployCertificateRecordRollback回滚接口返回的记录ID
                      */
                     std::string m_deployRecordId;
                     bool m_deployRecordIdHasBeenSet;
 
                     /**
-                     * 分页偏移量，从0开始。
+                     * 分页偏移量，从0开始。默认为0
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 每页数量，默认10。
+                     * 每页数量，默认10。最大值为200
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

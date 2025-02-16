@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool DomainNumberHasBeenSet() const;
 
                     /**
-                     * 获取原始证书 ID。
+                     * 获取续费原证书 ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OriginCertificateId 原始证书 ID。
+                     * @return OriginCertificateId 续费原证书 ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOriginCertificateId() const;
 
                     /**
-                     * 设置原始证书 ID。
+                     * 设置续费原证书 ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _originCertificateId 原始证书 ID。
+                     * @param _originCertificateId 续费原证书 ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool ReplacedByHasBeenSet() const;
 
                     /**
-                     * 获取重颁发证书新 ID。
+                     * 获取重颁发证书ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ReplacedFor 重颁发证书新 ID。
+                     * @return ReplacedFor 重颁发证书ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReplacedFor() const;
 
                     /**
-                     * 设置重颁发证书新 ID。
+                     * 设置重颁发证书ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _replacedFor 重颁发证书新 ID。
+                     * @param _replacedFor 重颁发证书ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -147,18 +147,18 @@ namespace TencentCloud
                     bool ReplacedForHasBeenSet() const;
 
                     /**
-                     * 获取新订单证书 ID。
+                     * 获取续费证书 ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RenewOrder 新订单证书 ID。
+                     * @return RenewOrder 续费证书 ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRenewOrder() const;
 
                     /**
-                     * 设置新订单证书 ID。
+                     * 设置续费证书 ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _renewOrder 新订单证书 ID。
+                     * @param _renewOrder 续费证书 ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -197,18 +197,18 @@ namespace TencentCloud
                     bool SMCertHasBeenSet() const;
 
                     /**
-                     * 获取公司类型
+                     * 获取公司类型，取值：1（个人）；2（公司）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CompanyType 公司类型
+                     * @return CompanyType 公司类型，取值：1（个人）；2（公司）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCompanyType() const;
 
                     /**
-                     * 设置公司类型
+                     * 设置公司类型，取值：1（个人）；2（公司）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _companyType 公司类型
+                     * @param _companyType 公司类型，取值：1（个人）；2（公司）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -231,7 +231,7 @@ namespace TencentCloud
                     bool m_domainNumberHasBeenSet;
 
                     /**
-                     * 原始证书 ID。
+                     * 续费原证书 ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_originCertificateId;
@@ -245,14 +245,14 @@ namespace TencentCloud
                     bool m_replacedByHasBeenSet;
 
                     /**
-                     * 重颁发证书新 ID。
+                     * 重颁发证书ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_replacedFor;
                     bool m_replacedForHasBeenSet;
 
                     /**
-                     * 新订单证书 ID。
+                     * 续费证书 ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_renewOrder;
@@ -266,7 +266,7 @@ namespace TencentCloud
                     bool m_sMCertHasBeenSet;
 
                     /**
-                     * 公司类型
+                     * 公司类型，取值：1（个人）；2（公司）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_companyType;

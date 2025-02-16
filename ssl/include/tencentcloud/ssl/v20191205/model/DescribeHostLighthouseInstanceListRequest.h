@@ -109,21 +109,21 @@ namespace TencentCloud
                     /**
                      * 获取部署资源类型 lighthouse
                      * @return ResourceType 部署资源类型 lighthouse
-                     * 
+                     * @deprecated
                      */
                     std::string GetResourceType() const;
 
                     /**
                      * 设置部署资源类型 lighthouse
                      * @param _resourceType 部署资源类型 lighthouse
-                     * 
+                     * @deprecated
                      */
                     void SetResourceType(const std::string& _resourceType);
 
                     /**
                      * 判断参数 ResourceType 是否已赋值
                      * @return ResourceType 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ResourceTypeHasBeenSet() const;
 

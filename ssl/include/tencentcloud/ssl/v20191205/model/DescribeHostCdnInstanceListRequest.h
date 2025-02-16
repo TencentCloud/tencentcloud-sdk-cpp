@@ -109,21 +109,21 @@ namespace TencentCloud
                     /**
                      * 获取部署资源类型cdn
                      * @return ResourceType 部署资源类型cdn
-                     * 
+                     * @deprecated
                      */
                     std::string GetResourceType() const;
 
                     /**
                      * 设置部署资源类型cdn
                      * @param _resourceType 部署资源类型cdn
-                     * 
+                     * @deprecated
                      */
                     void SetResourceType(const std::string& _resourceType);
 
                     /**
                      * 判断参数 ResourceType 是否已赋值
                      * @return ResourceType 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ResourceTypeHasBeenSet() const;
 
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool OldCertificateIdHasBeenSet() const;
 
                     /**
-                     * 获取分页偏移量，从0开始。	
-                     * @return Offset 分页偏移量，从0开始。	
+                     * 获取分页偏移量，默认值为0。	
+                     * @return Offset 分页偏移量，默认值为0。	
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置分页偏移量，从0开始。	
-                     * @param _offset 分页偏移量，从0开始。	
+                     * 设置分页偏移量，默认值为0。	
+                     * @param _offset 分页偏移量，默认值为0。	
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取每页数量，默认10。	
-                     * @return Limit 每页数量，默认10。	
+                     * 获取每页数量，默认10，最大值为200。	
+                     * @return Limit 每页数量，默认10，最大值为200。	
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置每页数量，默认10。	
-                     * @param _limit 每页数量，默认10。	
+                     * 设置每页数量，默认10，最大值为200。	
+                     * @param _limit 每页数量，默认10，最大值为200。	
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -244,13 +244,13 @@ namespace TencentCloud
                     bool m_oldCertificateIdHasBeenSet;
 
                     /**
-                     * 分页偏移量，从0开始。	
+                     * 分页偏移量，默认值为0。	
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 每页数量，默认10。	
+                     * 每页数量，默认10，最大值为200。	
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

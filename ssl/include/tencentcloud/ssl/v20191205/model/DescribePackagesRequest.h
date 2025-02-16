@@ -85,15 +85,19 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取按状态筛选。
-                     * @return Status 按状态筛选。
+                     * 获取按状态筛选。状态值包括usable(可用)，used(已用)，expired(已过期)，refund(已退款)
+
+                     * @return Status 按状态筛选。状态值包括usable(可用)，used(已用)，expired(已过期)，refund(已退款)
+
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置按状态筛选。
-                     * @param _status 按状态筛选。
+                     * 设置按状态筛选。状态值包括usable(可用)，used(已用)，expired(已过期)，refund(已退款)
+
+                     * @param _status 按状态筛选。状态值包括usable(可用)，used(已用)，expired(已过期)，refund(已退款)
+
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -106,15 +110,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取按过期时间升序或降序排列。
-                     * @return ExpireTime 按过期时间升序或降序排列。
+                     * 获取按过期时间升序或降序排列，可选值为asc(升序)和desc(降序)
+                     * @return ExpireTime 按过期时间升序或降序排列，可选值为asc(升序)和desc(降序)
                      * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
-                     * 设置按过期时间升序或降序排列。
-                     * @param _expireTime 按过期时间升序或降序排列。
+                     * 设置按过期时间升序或降序排列，可选值为asc(升序)和desc(降序)
+                     * @param _expireTime 按过期时间升序或降序排列，可选值为asc(升序)和desc(降序)
                      * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
@@ -148,15 +152,15 @@ namespace TencentCloud
                     bool PackageIdHasBeenSet() const;
 
                     /**
-                     * 获取按权益包类型搜索。
-                     * @return Type 按权益包类型搜索。
+                     * 获取按权益包类型搜索。类型包括：ssl_100(证书批量权益100点)，ssl_500(证书批量权益500点），ssl_2000(证书批量权益2000点）
+                     * @return Type 按权益包类型搜索。类型包括：ssl_100(证书批量权益100点)，ssl_500(证书批量权益500点），ssl_2000(证书批量权益2000点）
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置按权益包类型搜索。
-                     * @param _type 按权益包类型搜索。
+                     * 设置按权益包类型搜索。类型包括：ssl_100(证书批量权益100点)，ssl_500(证书批量权益500点），ssl_2000(证书批量权益2000点）
+                     * @param _type 按权益包类型搜索。类型包括：ssl_100(证书批量权益100点)，ssl_500(证书批量权益500点），ssl_2000(证书批量权益2000点）
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -204,13 +208,14 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 按状态筛选。
+                     * 按状态筛选。状态值包括usable(可用)，used(已用)，expired(已过期)，refund(已退款)
+
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 按过期时间升序或降序排列。
+                     * 按过期时间升序或降序排列，可选值为asc(升序)和desc(降序)
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
@@ -222,7 +227,7 @@ namespace TencentCloud
                     bool m_packageIdHasBeenSet;
 
                     /**
-                     * 按权益包类型搜索。
+                     * 按权益包类型搜索。类型包括：ssl_100(证书批量权益100点)，ssl_500(证书批量权益500点），ssl_2000(证书批量权益2000点）
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

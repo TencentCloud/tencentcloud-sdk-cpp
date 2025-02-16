@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取分页偏移量，从0开始。
-                     * @return Offset 分页偏移量，从0开始。
+                     * 获取分页偏移量，从0开始。 默认为0
+                     * @return Offset 分页偏移量，从0开始。 默认为0
                      * 
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置分页偏移量，从0开始。
-                     * @param _offset 分页偏移量，从0开始。
+                     * 设置分页偏移量，从0开始。 默认为0
+                     * @param _offset 分页偏移量，从0开始。 默认为0
                      * 
                      */
                     void SetOffset(const uint64_t& _offset);
@@ -86,15 +86,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取搜索关键词，可搜索证书 ID、备注名称、域名。例如： a8xHcaIs。
-                     * @return SearchKey 搜索关键词，可搜索证书 ID、备注名称、域名。例如： a8xHcaIs。
+                     * 获取搜索关键词，模糊匹配证书 ID、备注名称、证书域名
+                     * @return SearchKey 搜索关键词，模糊匹配证书 ID、备注名称、证书域名
                      * 
                      */
                     std::string GetSearchKey() const;
 
                     /**
-                     * 设置搜索关键词，可搜索证书 ID、备注名称、域名。例如： a8xHcaIs。
-                     * @param _searchKey 搜索关键词，可搜索证书 ID、备注名称、域名。例如： a8xHcaIs。
+                     * 设置搜索关键词，模糊匹配证书 ID、备注名称、证书域名
+                     * @param _searchKey 搜索关键词，模糊匹配证书 ID、备注名称、证书域名
                      * 
                      */
                     void SetSearchKey(const std::string& _searchKey);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取按到期时间排序：DESC = 降序， ASC = 升序。
-                     * @return ExpirationSort 按到期时间排序：DESC = 降序， ASC = 升序。
+                     * 获取默认按照证书申请时间降序； 若传排序则按到期时间排序：DESC = 证书到期时间降序， ASC = 证书到期时间升序。
+                     * @return ExpirationSort 默认按照证书申请时间降序； 若传排序则按到期时间排序：DESC = 证书到期时间降序， ASC = 证书到期时间升序。
                      * 
                      */
                     std::string GetExpirationSort() const;
 
                     /**
-                     * 设置按到期时间排序：DESC = 降序， ASC = 升序。
-                     * @param _expirationSort 按到期时间排序：DESC = 降序， ASC = 升序。
+                     * 设置默认按照证书申请时间降序； 若传排序则按到期时间排序：DESC = 证书到期时间降序， ASC = 证书到期时间升序。
+                     * @param _expirationSort 默认按照证书申请时间降序； 若传排序则按到期时间排序：DESC = 证书到期时间降序， ASC = 证书到期时间升序。
                      * 
                      */
                     void SetExpirationSort(const std::string& _expirationSort);
@@ -170,15 +170,15 @@ namespace TencentCloud
                     bool ExpirationSortHasBeenSet() const;
 
                     /**
-                     * 获取证书状态：0 = 审核中，1 = 已通过，2 = 审核失败，3 = 已过期，4 = 已添加DNS记录，5 = 企业证书，待提交，6 = 订单取消中，7 = 已取消，8 = 已提交资料， 待上传确认函，9 = 证书吊销中，10 = 已吊销，11 = 重颁发中，12 = 待上传吊销确认函，13 = 免费证书待提交资料。
-                     * @return CertificateStatus 证书状态：0 = 审核中，1 = 已通过，2 = 审核失败，3 = 已过期，4 = 已添加DNS记录，5 = 企业证书，待提交，6 = 订单取消中，7 = 已取消，8 = 已提交资料， 待上传确认函，9 = 证书吊销中，10 = 已吊销，11 = 重颁发中，12 = 待上传吊销确认函，13 = 免费证书待提交资料。
+                     * 获取证书状态：0 = 审核中，1 = 已通过，2 = 审核失败，3 = 已过期，4 = 已添加DNS记录，5 = 企业证书，待提交，6 = 订单取消中，7 = 已取消，8 = 已提交资料， 待上传确认函，9 = 证书吊销中，10 = 已吊销，11 = 重颁发中，12 = 待上传吊销确认函，13 = 免费证书待提交资料。14 = 已退款。 15 = 证书迁移中
+                     * @return CertificateStatus 证书状态：0 = 审核中，1 = 已通过，2 = 审核失败，3 = 已过期，4 = 已添加DNS记录，5 = 企业证书，待提交，6 = 订单取消中，7 = 已取消，8 = 已提交资料， 待上传确认函，9 = 证书吊销中，10 = 已吊销，11 = 重颁发中，12 = 待上传吊销确认函，13 = 免费证书待提交资料。14 = 已退款。 15 = 证书迁移中
                      * 
                      */
                     std::vector<uint64_t> GetCertificateStatus() const;
 
                     /**
-                     * 设置证书状态：0 = 审核中，1 = 已通过，2 = 审核失败，3 = 已过期，4 = 已添加DNS记录，5 = 企业证书，待提交，6 = 订单取消中，7 = 已取消，8 = 已提交资料， 待上传确认函，9 = 证书吊销中，10 = 已吊销，11 = 重颁发中，12 = 待上传吊销确认函，13 = 免费证书待提交资料。
-                     * @param _certificateStatus 证书状态：0 = 审核中，1 = 已通过，2 = 审核失败，3 = 已过期，4 = 已添加DNS记录，5 = 企业证书，待提交，6 = 订单取消中，7 = 已取消，8 = 已提交资料， 待上传确认函，9 = 证书吊销中，10 = 已吊销，11 = 重颁发中，12 = 待上传吊销确认函，13 = 免费证书待提交资料。
+                     * 设置证书状态：0 = 审核中，1 = 已通过，2 = 审核失败，3 = 已过期，4 = 已添加DNS记录，5 = 企业证书，待提交，6 = 订单取消中，7 = 已取消，8 = 已提交资料， 待上传确认函，9 = 证书吊销中，10 = 已吊销，11 = 重颁发中，12 = 待上传吊销确认函，13 = 免费证书待提交资料。14 = 已退款。 15 = 证书迁移中
+                     * @param _certificateStatus 证书状态：0 = 审核中，1 = 已通过，2 = 审核失败，3 = 已过期，4 = 已添加DNS记录，5 = 企业证书，待提交，6 = 订单取消中，7 = 已取消，8 = 已提交资料， 待上传确认函，9 = 证书吊销中，10 = 已吊销，11 = 重颁发中，12 = 待上传吊销确认函，13 = 免费证书待提交资料。14 = 已退款。 15 = 证书迁移中
                      * 
                      */
                     void SetCertificateStatus(const std::vector<uint64_t>& _certificateStatus);
@@ -403,7 +403,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 分页偏移量，从0开始。
+                     * 分页偏移量，从0开始。 默认为0
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
@@ -415,7 +415,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 搜索关键词，可搜索证书 ID、备注名称、域名。例如： a8xHcaIs。
+                     * 搜索关键词，模糊匹配证书 ID、备注名称、证书域名
                      */
                     std::string m_searchKey;
                     bool m_searchKeyHasBeenSet;
@@ -433,13 +433,13 @@ namespace TencentCloud
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 按到期时间排序：DESC = 降序， ASC = 升序。
+                     * 默认按照证书申请时间降序； 若传排序则按到期时间排序：DESC = 证书到期时间降序， ASC = 证书到期时间升序。
                      */
                     std::string m_expirationSort;
                     bool m_expirationSortHasBeenSet;
 
                     /**
-                     * 证书状态：0 = 审核中，1 = 已通过，2 = 审核失败，3 = 已过期，4 = 已添加DNS记录，5 = 企业证书，待提交，6 = 订单取消中，7 = 已取消，8 = 已提交资料， 待上传确认函，9 = 证书吊销中，10 = 已吊销，11 = 重颁发中，12 = 待上传吊销确认函，13 = 免费证书待提交资料。
+                     * 证书状态：0 = 审核中，1 = 已通过，2 = 审核失败，3 = 已过期，4 = 已添加DNS记录，5 = 企业证书，待提交，6 = 订单取消中，7 = 已取消，8 = 已提交资料， 待上传确认函，9 = 证书吊销中，10 = 已吊销，11 = 重颁发中，12 = 待上传吊销确认函，13 = 免费证书待提交资料。14 = 已退款。 15 = 证书迁移中
                      */
                     std::vector<uint64_t> m_certificateStatus;
                     bool m_certificateStatusHasBeenSet;

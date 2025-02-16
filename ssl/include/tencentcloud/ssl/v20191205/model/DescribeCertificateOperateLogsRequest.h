@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取请求日志数量，默认为20。
-                     * @return Limit 请求日志数量，默认为20。
+                     * 获取请求日志数量，默认为20, 最大值为1000，如超过1000按照1000处理。
+                     * @return Limit 请求日志数量，默认为20, 最大值为1000，如超过1000按照1000处理。
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置请求日志数量，默认为20。
-                     * @param _limit 请求日志数量，默认为20。
+                     * 设置请求日志数量，默认为20, 最大值为1000，如超过1000按照1000处理。
+                     * @param _limit 请求日志数量，默认为20, 最大值为1000，如超过1000按照1000处理。
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -135,7 +135,7 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 请求日志数量，默认为20。
+                     * 请求日志数量，默认为20, 最大值为1000，如超过1000按照1000处理。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

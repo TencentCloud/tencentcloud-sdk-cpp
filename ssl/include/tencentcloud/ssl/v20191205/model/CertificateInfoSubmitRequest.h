@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取证书 ID。
-                     * @return CertId 证书 ID。
+                     * 获取待提交资料的付费证书 ID。	
+                     * @return CertId 待提交资料的付费证书 ID。	
                      * 
                      */
                     std::string GetCertId() const;
 
                     /**
-                     * 设置证书 ID。
-                     * @param _certId 证书 ID。
+                     * 设置待提交资料的付费证书 ID。	
+                     * @param _certId 待提交资料的付费证书 ID。	
                      * 
                      */
                     void SetCertId(const std::string& _certId);
@@ -64,15 +64,23 @@ namespace TencentCloud
                     bool CertIdHasBeenSet() const;
 
                     /**
-                     * 获取CSR 生成方式：online = 在线生成, upload = 手动上传。
-                     * @return GenCsrType CSR 生成方式：online = 在线生成, upload = 手动上传。
+                     * 获取此字段必传。 CSR 生成方式， 取值为：
+- online：腾讯云提交的填写的参数信息生成CSR和私钥，并由腾讯云加密存储
+- parse：自行生成CSR和私钥，并通过上传CSR申请证书
+                     * @return GenCsrType 此字段必传。 CSR 生成方式， 取值为：
+- online：腾讯云提交的填写的参数信息生成CSR和私钥，并由腾讯云加密存储
+- parse：自行生成CSR和私钥，并通过上传CSR申请证书
                      * 
                      */
                     std::string GetGenCsrType() const;
 
                     /**
-                     * 设置CSR 生成方式：online = 在线生成, upload = 手动上传。
-                     * @param _genCsrType CSR 生成方式：online = 在线生成, upload = 手动上传。
+                     * 设置此字段必传。 CSR 生成方式， 取值为：
+- online：腾讯云提交的填写的参数信息生成CSR和私钥，并由腾讯云加密存储
+- parse：自行生成CSR和私钥，并通过上传CSR申请证书
+                     * @param _genCsrType 此字段必传。 CSR 生成方式， 取值为：
+- online：腾讯云提交的填写的参数信息生成CSR和私钥，并由腾讯云加密存储
+- parse：自行生成CSR和私钥，并通过上传CSR申请证书
                      * 
                      */
                     void SetGenCsrType(const std::string& _genCsrType);
@@ -85,15 +93,15 @@ namespace TencentCloud
                     bool GenCsrTypeHasBeenSet() const;
 
                     /**
-                     * 获取绑定证书的主域名。
-                     * @return CertCommonName 绑定证书的主域名。
+                     * 获取证书绑定的通用名称， 若是上传的CSR，则该域名需与CSR解析的通用名称一致
+                     * @return CertCommonName 证书绑定的通用名称， 若是上传的CSR，则该域名需与CSR解析的通用名称一致
                      * 
                      */
                     std::string GetCertCommonName() const;
 
                     /**
-                     * 设置绑定证书的主域名。
-                     * @param _certCommonName 绑定证书的主域名。
+                     * 设置证书绑定的通用名称， 若是上传的CSR，则该域名需与CSR解析的通用名称一致
+                     * @param _certCommonName 证书绑定的通用名称， 若是上传的CSR，则该域名需与CSR解析的通用名称一致
                      * 
                      */
                     void SetCertCommonName(const std::string& _certCommonName);
@@ -106,15 +114,23 @@ namespace TencentCloud
                     bool CertCommonNameHasBeenSet() const;
 
                     /**
-                     * 获取组织信息类型：1，个人； 2， 公司； 
-                     * @return CompanyType 组织信息类型：1，个人； 2， 公司； 
+                     * 获取组织信息类型， 取值范围：
+1（个人）：仅DV类型证书可设置为1， 个人类型证书组织信息字段可不传：Org开头，Admin开头，Tech开头
+2（公司）：所有类型证书都可设置为2， 按需传组织信息字段
+                     * @return CompanyType 组织信息类型， 取值范围：
+1（个人）：仅DV类型证书可设置为1， 个人类型证书组织信息字段可不传：Org开头，Admin开头，Tech开头
+2（公司）：所有类型证书都可设置为2， 按需传组织信息字段
                      * 
                      */
                     uint64_t GetCompanyType() const;
 
                     /**
-                     * 设置组织信息类型：1，个人； 2， 公司； 
-                     * @param _companyType 组织信息类型：1，个人； 2， 公司； 
+                     * 设置组织信息类型， 取值范围：
+1（个人）：仅DV类型证书可设置为1， 个人类型证书组织信息字段可不传：Org开头，Admin开头，Tech开头
+2（公司）：所有类型证书都可设置为2， 按需传组织信息字段
+                     * @param _companyType 组织信息类型， 取值范围：
+1（个人）：仅DV类型证书可设置为1， 个人类型证书组织信息字段可不传：Org开头，Admin开头，Tech开头
+2（公司）：所有类型证书都可设置为2， 按需传组织信息字段
                      * 
                      */
                     void SetCompanyType(const uint64_t& _companyType);
@@ -127,141 +143,23 @@ namespace TencentCloud
                     bool CompanyTypeHasBeenSet() const;
 
                     /**
-                     * 获取公司证件类型（）
-                     * @return OrgIdType 公司证件类型（）
-                     * 
-                     */
-                    std::string GetOrgIdType() const;
+                     * 获取公司ID，在 [腾讯云控制台](https://console.cloud.tencent.com/ssl/info) 可进行查看，若无满足的公司信息， 则本参数传0 ； 若存在满足当前订单的公司信息， 可以根据 [DescribeCompanies](https://cloud.tencent.com/document/product/400/90375) 查看公司ID； 若传了公司ID，则Org开头的参数可不传
 
-                    /**
-                     * 设置公司证件类型（）
-                     * @param _orgIdType 公司证件类型（）
-                     * 
-                     */
-                    void SetOrgIdType(const std::string& _orgIdType);
 
-                    /**
-                     * 判断参数 OrgIdType 是否已赋值
-                     * @return OrgIdType 是否已赋值
-                     * 
-                     */
-                    bool OrgIdTypeHasBeenSet() const;
+                     * @return CompanyId 公司ID，在 [腾讯云控制台](https://console.cloud.tencent.com/ssl/info) 可进行查看，若无满足的公司信息， 则本参数传0 ； 若存在满足当前订单的公司信息， 可以根据 [DescribeCompanies](https://cloud.tencent.com/document/product/400/90375) 查看公司ID； 若传了公司ID，则Org开头的参数可不传
 
-                    /**
-                     * 获取公司证件号码
-                     * @return OrgIdNumber 公司证件号码
-                     * 
-                     */
-                    std::string GetOrgIdNumber() const;
 
-                    /**
-                     * 设置公司证件号码
-                     * @param _orgIdNumber 公司证件号码
-                     * 
-                     */
-                    void SetOrgIdNumber(const std::string& _orgIdNumber);
-
-                    /**
-                     * 判断参数 OrgIdNumber 是否已赋值
-                     * @return OrgIdNumber 是否已赋值
-                     * 
-                     */
-                    bool OrgIdNumberHasBeenSet() const;
-
-                    /**
-                     * 获取管理人证件类型
-                     * @return AdminIdType 管理人证件类型
-                     * 
-                     */
-                    std::string GetAdminIdType() const;
-
-                    /**
-                     * 设置管理人证件类型
-                     * @param _adminIdType 管理人证件类型
-                     * 
-                     */
-                    void SetAdminIdType(const std::string& _adminIdType);
-
-                    /**
-                     * 判断参数 AdminIdType 是否已赋值
-                     * @return AdminIdType 是否已赋值
-                     * 
-                     */
-                    bool AdminIdTypeHasBeenSet() const;
-
-                    /**
-                     * 获取管理人证件号码
-                     * @return AdminIdNumber 管理人证件号码
-                     * 
-                     */
-                    std::string GetAdminIdNumber() const;
-
-                    /**
-                     * 设置管理人证件号码
-                     * @param _adminIdNumber 管理人证件号码
-                     * 
-                     */
-                    void SetAdminIdNumber(const std::string& _adminIdNumber);
-
-                    /**
-                     * 判断参数 AdminIdNumber 是否已赋值
-                     * @return AdminIdNumber 是否已赋值
-                     * 
-                     */
-                    bool AdminIdNumberHasBeenSet() const;
-
-                    /**
-                     * 获取联系人证件类型
-                     * @return TechIdType 联系人证件类型
-                     * 
-                     */
-                    std::string GetTechIdType() const;
-
-                    /**
-                     * 设置联系人证件类型
-                     * @param _techIdType 联系人证件类型
-                     * 
-                     */
-                    void SetTechIdType(const std::string& _techIdType);
-
-                    /**
-                     * 判断参数 TechIdType 是否已赋值
-                     * @return TechIdType 是否已赋值
-                     * 
-                     */
-                    bool TechIdTypeHasBeenSet() const;
-
-                    /**
-                     * 获取联系人证件号码
-                     * @return TechIdNumber 联系人证件号码
-                     * 
-                     */
-                    std::string GetTechIdNumber() const;
-
-                    /**
-                     * 设置联系人证件号码
-                     * @param _techIdNumber 联系人证件号码
-                     * 
-                     */
-                    void SetTechIdNumber(const std::string& _techIdNumber);
-
-                    /**
-                     * 判断参数 TechIdNumber 是否已赋值
-                     * @return TechIdNumber 是否已赋值
-                     * 
-                     */
-                    bool TechIdNumberHasBeenSet() const;
-
-                    /**
-                     * 获取公司ID
-                     * @return CompanyId 公司ID
                      * 
                      */
                     std::string GetCompanyId() const;
 
                     /**
-                     * 设置公司ID
-                     * @param _companyId 公司ID
+                     * 设置公司ID，在 [腾讯云控制台](https://console.cloud.tencent.com/ssl/info) 可进行查看，若无满足的公司信息， 则本参数传0 ； 若存在满足当前订单的公司信息， 可以根据 [DescribeCompanies](https://cloud.tencent.com/document/product/400/90375) 查看公司ID； 若传了公司ID，则Org开头的参数可不传
+
+
+                     * @param _companyId 公司ID，在 [腾讯云控制台](https://console.cloud.tencent.com/ssl/info) 可进行查看，若无满足的公司信息， 则本参数传0 ； 若存在满足当前订单的公司信息， 可以根据 [DescribeCompanies](https://cloud.tencent.com/document/product/400/90375) 查看公司ID； 若传了公司ID，则Org开头的参数可不传
+
+
                      * 
                      */
                     void SetCompanyId(const std::string& _companyId);
@@ -274,15 +172,193 @@ namespace TencentCloud
                     bool CompanyIdHasBeenSet() const;
 
                     /**
-                     * 获取上传的 CSR 内容。如果GenCsrType为upload则该字段必传
-                     * @return Csr 上传的 CSR 内容。如果GenCsrType为upload则该字段必传
+                     * 获取公司证件类型，取值范围：
+TYDMZ（统一社会信用代码 ）：仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段
+OTHERS（其他）
+                     * @return OrgIdType 公司证件类型，取值范围：
+TYDMZ（统一社会信用代码 ）：仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段
+OTHERS（其他）
+                     * 
+                     */
+                    std::string GetOrgIdType() const;
+
+                    /**
+                     * 设置公司证件类型，取值范围：
+TYDMZ（统一社会信用代码 ）：仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段
+OTHERS（其他）
+                     * @param _orgIdType 公司证件类型，取值范围：
+TYDMZ（统一社会信用代码 ）：仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段
+OTHERS（其他）
+                     * 
+                     */
+                    void SetOrgIdType(const std::string& _orgIdType);
+
+                    /**
+                     * 判断参数 OrgIdType 是否已赋值
+                     * @return OrgIdType 是否已赋值
+                     * 
+                     */
+                    bool OrgIdTypeHasBeenSet() const;
+
+                    /**
+                     * 获取公司证件号码，取值范围：
+TYDMZ（统一社会信用代码 ）：11532xxxxxxxx24820
+
+                     * @return OrgIdNumber 公司证件号码，取值范围：
+TYDMZ（统一社会信用代码 ）：11532xxxxxxxx24820
+
+                     * 
+                     */
+                    std::string GetOrgIdNumber() const;
+
+                    /**
+                     * 设置公司证件号码，取值范围：
+TYDMZ（统一社会信用代码 ）：11532xxxxxxxx24820
+
+                     * @param _orgIdNumber 公司证件号码，取值范围：
+TYDMZ（统一社会信用代码 ）：11532xxxxxxxx24820
+
+                     * 
+                     */
+                    void SetOrgIdNumber(const std::string& _orgIdNumber);
+
+                    /**
+                     * 判断参数 OrgIdNumber 是否已赋值
+                     * @return OrgIdNumber 是否已赋值
+                     * 
+                     */
+                    bool OrgIdNumberHasBeenSet() const;
+
+                    /**
+                     * 获取管理人证件类型，取值范围：
+SFZ（身份证）：仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段
+HZ（护照）：仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段
+                     * @return AdminIdType 管理人证件类型，取值范围：
+SFZ（身份证）：仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段
+HZ（护照）：仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段
+                     * 
+                     */
+                    std::string GetAdminIdType() const;
+
+                    /**
+                     * 设置管理人证件类型，取值范围：
+SFZ（身份证）：仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段
+HZ（护照）：仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段
+                     * @param _adminIdType 管理人证件类型，取值范围：
+SFZ（身份证）：仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段
+HZ（护照）：仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段
+                     * 
+                     */
+                    void SetAdminIdType(const std::string& _adminIdType);
+
+                    /**
+                     * 判断参数 AdminIdType 是否已赋值
+                     * @return AdminIdType 是否已赋值
+                     * 
+                     */
+                    bool AdminIdTypeHasBeenSet() const;
+
+                    /**
+                     * 获取管理人证件号码，仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段， 取值范围：
+SFZ（身份证）：110000xxxxxxxx1242
+HZ（护照）:EFxxxxxxx
+                     * @return AdminIdNumber 管理人证件号码，仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段， 取值范围：
+SFZ（身份证）：110000xxxxxxxx1242
+HZ（护照）:EFxxxxxxx
+                     * 
+                     */
+                    std::string GetAdminIdNumber() const;
+
+                    /**
+                     * 设置管理人证件号码，仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段， 取值范围：
+SFZ（身份证）：110000xxxxxxxx1242
+HZ（护照）:EFxxxxxxx
+                     * @param _adminIdNumber 管理人证件号码，仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段， 取值范围：
+SFZ（身份证）：110000xxxxxxxx1242
+HZ（护照）:EFxxxxxxx
+                     * 
+                     */
+                    void SetAdminIdNumber(const std::string& _adminIdNumber);
+
+                    /**
+                     * 判断参数 AdminIdNumber 是否已赋值
+                     * @return AdminIdNumber 是否已赋值
+                     * 
+                     */
+                    bool AdminIdNumberHasBeenSet() const;
+
+                    /**
+                     * 获取联系人证件类型，取值范围：
+SFZ（身份证）：仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段
+HZ（护照）：仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段
+                     * @return TechIdType 联系人证件类型，取值范围：
+SFZ（身份证）：仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段
+HZ（护照）：仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段
+                     * 
+                     */
+                    std::string GetTechIdType() const;
+
+                    /**
+                     * 设置联系人证件类型，取值范围：
+SFZ（身份证）：仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段
+HZ（护照）：仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段
+                     * @param _techIdType 联系人证件类型，取值范围：
+SFZ（身份证）：仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段
+HZ（护照）：仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段
+                     * 
+                     */
+                    void SetTechIdType(const std::string& _techIdType);
+
+                    /**
+                     * 判断参数 TechIdType 是否已赋值
+                     * @return TechIdType 是否已赋值
+                     * 
+                     */
+                    bool TechIdTypeHasBeenSet() const;
+
+                    /**
+                     * 获取联系人证件号码，仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段，取值范围：
+SFZ（身份证）：110000xxxxxxxx1242
+HZ（护照）:EFxxxxxxx
+                     * @return TechIdNumber 联系人证件号码，仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段，取值范围：
+SFZ（身份证）：110000xxxxxxxx1242
+HZ（护照）:EFxxxxxxx
+                     * 
+                     */
+                    std::string GetTechIdNumber() const;
+
+                    /**
+                     * 设置联系人证件号码，仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段，取值范围：
+SFZ（身份证）：110000xxxxxxxx1242
+HZ（护照）:EFxxxxxxx
+                     * @param _techIdNumber 联系人证件号码，仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段，取值范围：
+SFZ（身份证）：110000xxxxxxxx1242
+HZ（护照）:EFxxxxxxx
+                     * 
+                     */
+                    void SetTechIdNumber(const std::string& _techIdNumber);
+
+                    /**
+                     * 判断参数 TechIdNumber 是否已赋值
+                     * @return TechIdNumber 是否已赋值
+                     * 
+                     */
+                    bool TechIdNumberHasBeenSet() const;
+
+                    /**
+                     * 获取上传的 CSR 内容。
+若GenCsrType为parse， 则此字段必传。
+                     * @return Csr 上传的 CSR 内容。
+若GenCsrType为parse， 则此字段必传。
                      * 
                      */
                     std::string GetCsr() const;
 
                     /**
-                     * 设置上传的 CSR 内容。如果GenCsrType为upload则该字段必传
-                     * @param _csr 上传的 CSR 内容。如果GenCsrType为upload则该字段必传
+                     * 设置上传的 CSR 内容。
+若GenCsrType为parse， 则此字段必传。
+                     * @param _csr 上传的 CSR 内容。
+若GenCsrType为parse， 则此字段必传。
                      * 
                      */
                     void SetCsr(const std::string& _csr);
@@ -295,15 +371,15 @@ namespace TencentCloud
                     bool CsrHasBeenSet() const;
 
                     /**
-                     * 获取域名数组（多域名证书可以上传）。
-                     * @return DnsNames 域名数组（多域名证书可以上传）。
+                     * 获取证书绑定的其他域名， 单域名、泛域名证书无需提供。 多域名、多泛域名必填
+                     * @return DnsNames 证书绑定的其他域名， 单域名、泛域名证书无需提供。 多域名、多泛域名必填
                      * 
                      */
                     std::vector<std::string> GetDnsNames() const;
 
                     /**
-                     * 设置域名数组（多域名证书可以上传）。
-                     * @param _dnsNames 域名数组（多域名证书可以上传）。
+                     * 设置证书绑定的其他域名， 单域名、泛域名证书无需提供。 多域名、多泛域名必填
+                     * @param _dnsNames 证书绑定的其他域名， 单域名、泛域名证书无需提供。 多域名、多泛域名必填
                      * 
                      */
                     void SetDnsNames(const std::vector<std::string>& _dnsNames);
@@ -316,15 +392,15 @@ namespace TencentCloud
                     bool DnsNamesHasBeenSet() const;
 
                     /**
-                     * 获取私钥密码（非必填）。
-                     * @return KeyPass 私钥密码（非必填）。
+                     * 获取私钥密码， 目前仅使用在生成jks、pfx格式证书时密码； 其他格式私钥证书未加密	
+                     * @return KeyPass 私钥密码， 目前仅使用在生成jks、pfx格式证书时密码； 其他格式私钥证书未加密	
                      * 
                      */
                     std::string GetKeyPass() const;
 
                     /**
-                     * 设置私钥密码（非必填）。
-                     * @param _keyPass 私钥密码（非必填）。
+                     * 设置私钥密码， 目前仅使用在生成jks、pfx格式证书时密码； 其他格式私钥证书未加密	
+                     * @param _keyPass 私钥密码， 目前仅使用在生成jks、pfx格式证书时密码； 其他格式私钥证书未加密	
                      * 
                      */
                     void SetKeyPass(const std::string& _keyPass);
@@ -337,15 +413,15 @@ namespace TencentCloud
                     bool KeyPassHasBeenSet() const;
 
                     /**
-                     * 获取公司名称。
-                     * @return OrgOrganization 公司名称。
+                     * 获取公司名称。若没有传CompanyId或者ManagerId， 则此字段必传
+                     * @return OrgOrganization 公司名称。若没有传CompanyId或者ManagerId， 则此字段必传
                      * 
                      */
                     std::string GetOrgOrganization() const;
 
                     /**
-                     * 设置公司名称。
-                     * @param _orgOrganization 公司名称。
+                     * 设置公司名称。若没有传CompanyId或者ManagerId， 则此字段必传
+                     * @param _orgOrganization 公司名称。若没有传CompanyId或者ManagerId， 则此字段必传
                      * 
                      */
                     void SetOrgOrganization(const std::string& _orgOrganization);
@@ -358,15 +434,15 @@ namespace TencentCloud
                     bool OrgOrganizationHasBeenSet() const;
 
                     /**
-                     * 获取部门名称。
-                     * @return OrgDivision 部门名称。
+                     * 获取部门名称。若没有传CompanyId或者ManagerId， 则此字段必传
+                     * @return OrgDivision 部门名称。若没有传CompanyId或者ManagerId， 则此字段必传
                      * 
                      */
                     std::string GetOrgDivision() const;
 
                     /**
-                     * 设置部门名称。
-                     * @param _orgDivision 部门名称。
+                     * 设置部门名称。若没有传CompanyId或者ManagerId， 则此字段必传
+                     * @param _orgDivision 部门名称。若没有传CompanyId或者ManagerId， 则此字段必传
                      * 
                      */
                     void SetOrgDivision(const std::string& _orgDivision);
@@ -379,15 +455,15 @@ namespace TencentCloud
                     bool OrgDivisionHasBeenSet() const;
 
                     /**
-                     * 获取公司详细地址。
-                     * @return OrgAddress 公司详细地址。
+                     * 获取公司详细地址。若没有传CompanyId或者ManagerId， 则此字段必传
+                     * @return OrgAddress 公司详细地址。若没有传CompanyId或者ManagerId， 则此字段必传
                      * 
                      */
                     std::string GetOrgAddress() const;
 
                     /**
-                     * 设置公司详细地址。
-                     * @param _orgAddress 公司详细地址。
+                     * 设置公司详细地址。若没有传CompanyId或者ManagerId， 则此字段必传
+                     * @param _orgAddress 公司详细地址。若没有传CompanyId或者ManagerId， 则此字段必传
                      * 
                      */
                     void SetOrgAddress(const std::string& _orgAddress);
@@ -400,15 +476,15 @@ namespace TencentCloud
                     bool OrgAddressHasBeenSet() const;
 
                     /**
-                     * 获取国家名称，如中国：CN 。
-                     * @return OrgCountry 国家名称，如中国：CN 。
+                     * 获取国家名称，如中国：CN 。若没有传CompanyId或者ManagerId， 则此字段必传
+                     * @return OrgCountry 国家名称，如中国：CN 。若没有传CompanyId或者ManagerId， 则此字段必传
                      * 
                      */
                     std::string GetOrgCountry() const;
 
                     /**
-                     * 设置国家名称，如中国：CN 。
-                     * @param _orgCountry 国家名称，如中国：CN 。
+                     * 设置国家名称，如中国：CN 。若没有传CompanyId或者ManagerId， 则此字段必传
+                     * @param _orgCountry 国家名称，如中国：CN 。若没有传CompanyId或者ManagerId， 则此字段必传
                      * 
                      */
                     void SetOrgCountry(const std::string& _orgCountry);
@@ -421,15 +497,15 @@ namespace TencentCloud
                     bool OrgCountryHasBeenSet() const;
 
                     /**
-                     * 获取公司所在城市。
-                     * @return OrgCity 公司所在城市。
+                     * 获取公司所在城市。若没有传CompanyId或者ManagerId， 则此字段必传
+                     * @return OrgCity 公司所在城市。若没有传CompanyId或者ManagerId， 则此字段必传
                      * 
                      */
                     std::string GetOrgCity() const;
 
                     /**
-                     * 设置公司所在城市。
-                     * @param _orgCity 公司所在城市。
+                     * 设置公司所在城市。若没有传CompanyId或者ManagerId， 则此字段必传
+                     * @param _orgCity 公司所在城市。若没有传CompanyId或者ManagerId， 则此字段必传
                      * 
                      */
                     void SetOrgCity(const std::string& _orgCity);
@@ -442,15 +518,15 @@ namespace TencentCloud
                     bool OrgCityHasBeenSet() const;
 
                     /**
-                     * 获取公司所在省份。
-                     * @return OrgRegion 公司所在省份。
+                     * 获取公司所在省份。若没有传CompanyId或者ManagerId， 则此字段必传
+                     * @return OrgRegion 公司所在省份。若没有传CompanyId或者ManagerId， 则此字段必传
                      * 
                      */
                     std::string GetOrgRegion() const;
 
                     /**
-                     * 设置公司所在省份。
-                     * @param _orgRegion 公司所在省份。
+                     * 设置公司所在省份。若没有传CompanyId或者ManagerId， 则此字段必传
+                     * @param _orgRegion 公司所在省份。若没有传CompanyId或者ManagerId， 则此字段必传
                      * 
                      */
                     void SetOrgRegion(const std::string& _orgRegion);
@@ -463,15 +539,19 @@ namespace TencentCloud
                     bool OrgRegionHasBeenSet() const;
 
                     /**
-                     * 获取公司座机区号。
-                     * @return OrgPhoneArea 公司座机区号。
+                     * 获取公司所属区号。若没有传CompanyId或者ManagerId， 则此字段必传
+如：021。  手机号码传 86
+                     * @return OrgPhoneArea 公司所属区号。若没有传CompanyId或者ManagerId， 则此字段必传
+如：021。  手机号码传 86
                      * 
                      */
                     std::string GetOrgPhoneArea() const;
 
                     /**
-                     * 设置公司座机区号。
-                     * @param _orgPhoneArea 公司座机区号。
+                     * 设置公司所属区号。若没有传CompanyId或者ManagerId， 则此字段必传
+如：021。  手机号码传 86
+                     * @param _orgPhoneArea 公司所属区号。若没有传CompanyId或者ManagerId， 则此字段必传
+如：021。  手机号码传 86
                      * 
                      */
                     void SetOrgPhoneArea(const std::string& _orgPhoneArea);
@@ -484,15 +564,15 @@ namespace TencentCloud
                     bool OrgPhoneAreaHasBeenSet() const;
 
                     /**
-                     * 获取公司座机号码。
-                     * @return OrgPhoneNumber 公司座机号码。
+                     * 获取公司所属号码。若没有传CompanyId或者ManagerId， 则此字段必传
+                     * @return OrgPhoneNumber 公司所属号码。若没有传CompanyId或者ManagerId， 则此字段必传
                      * 
                      */
                     std::string GetOrgPhoneNumber() const;
 
                     /**
-                     * 设置公司座机号码。
-                     * @param _orgPhoneNumber 公司座机号码。
+                     * 设置公司所属号码。若没有传CompanyId或者ManagerId， 则此字段必传
+                     * @param _orgPhoneNumber 公司所属号码。若没有传CompanyId或者ManagerId， 则此字段必传
                      * 
                      */
                     void SetOrgPhoneNumber(const std::string& _orgPhoneNumber);
@@ -505,15 +585,27 @@ namespace TencentCloud
                     bool OrgPhoneNumberHasBeenSet() const;
 
                     /**
-                     * 获取证书验证方式。验证类型：DNS_AUTO = 自动DNS验证（仅支持在腾讯云解析且解析状态正常的域名使用该验证类型），DNS = 手动DNS验证，FILE = 文件验证。
-                     * @return VerifyType 证书验证方式。验证类型：DNS_AUTO = 自动DNS验证（仅支持在腾讯云解析且解析状态正常的域名使用该验证类型），DNS = 手动DNS验证，FILE = 文件验证。
+                     * 获取证书域名验证方式：
+DNS_AUTO： 自动添加域名DNS验证， 需用户域名解析托管在『[云解析DNS](https://console.cloud.tencent.com/cns)』，且与申请证书归属同一个腾讯云账号
+DNS：手动添加域名DNS验证，需用户手动去域名解析服务商添加验证值
+FILE：手动添加域名文件验证。 需要用户手动在域名站点根目录添加指定路径文件进行文件验证， http&https任一通过即可；且域名站点需海外CA机构能访问， 具体访问白名单为：64.78.193.238，216.168.247.9，216.168.249.9，54.189.196.217
+                     * @return VerifyType 证书域名验证方式：
+DNS_AUTO： 自动添加域名DNS验证， 需用户域名解析托管在『[云解析DNS](https://console.cloud.tencent.com/cns)』，且与申请证书归属同一个腾讯云账号
+DNS：手动添加域名DNS验证，需用户手动去域名解析服务商添加验证值
+FILE：手动添加域名文件验证。 需要用户手动在域名站点根目录添加指定路径文件进行文件验证， http&https任一通过即可；且域名站点需海外CA机构能访问， 具体访问白名单为：64.78.193.238，216.168.247.9，216.168.249.9，54.189.196.217
                      * 
                      */
                     std::string GetVerifyType() const;
 
                     /**
-                     * 设置证书验证方式。验证类型：DNS_AUTO = 自动DNS验证（仅支持在腾讯云解析且解析状态正常的域名使用该验证类型），DNS = 手动DNS验证，FILE = 文件验证。
-                     * @param _verifyType 证书验证方式。验证类型：DNS_AUTO = 自动DNS验证（仅支持在腾讯云解析且解析状态正常的域名使用该验证类型），DNS = 手动DNS验证，FILE = 文件验证。
+                     * 设置证书域名验证方式：
+DNS_AUTO： 自动添加域名DNS验证， 需用户域名解析托管在『[云解析DNS](https://console.cloud.tencent.com/cns)』，且与申请证书归属同一个腾讯云账号
+DNS：手动添加域名DNS验证，需用户手动去域名解析服务商添加验证值
+FILE：手动添加域名文件验证。 需要用户手动在域名站点根目录添加指定路径文件进行文件验证， http&https任一通过即可；且域名站点需海外CA机构能访问， 具体访问白名单为：64.78.193.238，216.168.247.9，216.168.249.9，54.189.196.217
+                     * @param _verifyType 证书域名验证方式：
+DNS_AUTO： 自动添加域名DNS验证， 需用户域名解析托管在『[云解析DNS](https://console.cloud.tencent.com/cns)』，且与申请证书归属同一个腾讯云账号
+DNS：手动添加域名DNS验证，需用户手动去域名解析服务商添加验证值
+FILE：手动添加域名文件验证。 需要用户手动在域名站点根目录添加指定路径文件进行文件验证， http&https任一通过即可；且域名站点需海外CA机构能访问， 具体访问白名单为：64.78.193.238，216.168.247.9，216.168.249.9，54.189.196.217
                      * 
                      */
                     void SetVerifyType(const std::string& _verifyType);
@@ -526,15 +618,15 @@ namespace TencentCloud
                     bool VerifyTypeHasBeenSet() const;
 
                     /**
-                     * 获取管理人名。
-                     * @return AdminFirstName 管理人名。
+                     * 获取管理人名。若没有传ManagerId， 则此字段必传
+                     * @return AdminFirstName 管理人名。若没有传ManagerId， 则此字段必传
                      * 
                      */
                     std::string GetAdminFirstName() const;
 
                     /**
-                     * 设置管理人名。
-                     * @param _adminFirstName 管理人名。
+                     * 设置管理人名。若没有传ManagerId， 则此字段必传
+                     * @param _adminFirstName 管理人名。若没有传ManagerId， 则此字段必传
                      * 
                      */
                     void SetAdminFirstName(const std::string& _adminFirstName);
@@ -547,15 +639,15 @@ namespace TencentCloud
                     bool AdminFirstNameHasBeenSet() const;
 
                     /**
-                     * 获取管理人姓。
-                     * @return AdminLastName 管理人姓。
+                     * 获取管理人姓。若没有传ManagerId， 则此字段必传
+                     * @return AdminLastName 管理人姓。若没有传ManagerId， 则此字段必传
                      * 
                      */
                     std::string GetAdminLastName() const;
 
                     /**
-                     * 设置管理人姓。
-                     * @param _adminLastName 管理人姓。
+                     * 设置管理人姓。若没有传ManagerId， 则此字段必传
+                     * @param _adminLastName 管理人姓。若没有传ManagerId， 则此字段必传
                      * 
                      */
                     void SetAdminLastName(const std::string& _adminLastName);
@@ -568,15 +660,15 @@ namespace TencentCloud
                     bool AdminLastNameHasBeenSet() const;
 
                     /**
-                     * 获取管理人手机号码。
-                     * @return AdminPhone 管理人手机号码。
+                     * 获取管理人手机号码。若没有传ManagerId， 则此字段必传
+                     * @return AdminPhone 管理人手机号码。若没有传ManagerId， 则此字段必传
                      * 
                      */
                     std::string GetAdminPhone() const;
 
                     /**
-                     * 设置管理人手机号码。
-                     * @param _adminPhone 管理人手机号码。
+                     * 设置管理人手机号码。若没有传ManagerId， 则此字段必传
+                     * @param _adminPhone 管理人手机号码。若没有传ManagerId， 则此字段必传
                      * 
                      */
                     void SetAdminPhone(const std::string& _adminPhone);
@@ -589,15 +681,15 @@ namespace TencentCloud
                     bool AdminPhoneHasBeenSet() const;
 
                     /**
-                     * 获取管理人邮箱地址。
-                     * @return AdminEmail 管理人邮箱地址。
+                     * 获取管理人邮箱地址。若没有传ManagerId， 则此字段必传
+                     * @return AdminEmail 管理人邮箱地址。若没有传ManagerId， 则此字段必传
                      * 
                      */
                     std::string GetAdminEmail() const;
 
                     /**
-                     * 设置管理人邮箱地址。
-                     * @param _adminEmail 管理人邮箱地址。
+                     * 设置管理人邮箱地址。若没有传ManagerId， 则此字段必传
+                     * @param _adminEmail 管理人邮箱地址。若没有传ManagerId， 则此字段必传
                      * 
                      */
                     void SetAdminEmail(const std::string& _adminEmail);
@@ -610,15 +702,15 @@ namespace TencentCloud
                     bool AdminEmailHasBeenSet() const;
 
                     /**
-                     * 获取管理人职位。
-                     * @return AdminTitle 管理人职位。
+                     * 获取管理人职位。若没有传ManagerId， 则此字段必传
+                     * @return AdminTitle 管理人职位。若没有传ManagerId， 则此字段必传
                      * 
                      */
                     std::string GetAdminTitle() const;
 
                     /**
-                     * 设置管理人职位。
-                     * @param _adminTitle 管理人职位。
+                     * 设置管理人职位。若没有传ManagerId， 则此字段必传
+                     * @param _adminTitle 管理人职位。若没有传ManagerId， 则此字段必传
                      * 
                      */
                     void SetAdminTitle(const std::string& _adminTitle);
@@ -631,15 +723,15 @@ namespace TencentCloud
                     bool AdminTitleHasBeenSet() const;
 
                     /**
-                     * 获取联系人名。
-                     * @return TechFirstName 联系人名。
+                     * 获取联系人名。若没有传ManagerId， 则此字段必传
+                     * @return TechFirstName 联系人名。若没有传ManagerId， 则此字段必传
                      * 
                      */
                     std::string GetTechFirstName() const;
 
                     /**
-                     * 设置联系人名。
-                     * @param _techFirstName 联系人名。
+                     * 设置联系人名。若没有传ManagerId， 则此字段必传
+                     * @param _techFirstName 联系人名。若没有传ManagerId， 则此字段必传
                      * 
                      */
                     void SetTechFirstName(const std::string& _techFirstName);
@@ -652,15 +744,15 @@ namespace TencentCloud
                     bool TechFirstNameHasBeenSet() const;
 
                     /**
-                     * 获取联系人姓。
-                     * @return TechLastName 联系人姓。
+                     * 获取联系人姓。若没有传ManagerId， 则此字段必传
+                     * @return TechLastName 联系人姓。若没有传ManagerId， 则此字段必传
                      * 
                      */
                     std::string GetTechLastName() const;
 
                     /**
-                     * 设置联系人姓。
-                     * @param _techLastName 联系人姓。
+                     * 设置联系人姓。若没有传ManagerId， 则此字段必传
+                     * @param _techLastName 联系人姓。若没有传ManagerId， 则此字段必传
                      * 
                      */
                     void SetTechLastName(const std::string& _techLastName);
@@ -673,15 +765,15 @@ namespace TencentCloud
                     bool TechLastNameHasBeenSet() const;
 
                     /**
-                     * 获取联系人邮箱地址。
-                     * @return ContactEmail 联系人邮箱地址。
+                     * 获取联系人邮箱地址。CompanyType为1时， 此字段必传
+                     * @return ContactEmail 联系人邮箱地址。CompanyType为1时， 此字段必传
                      * 
                      */
                     std::string GetContactEmail() const;
 
                     /**
-                     * 设置联系人邮箱地址。
-                     * @param _contactEmail 联系人邮箱地址。
+                     * 设置联系人邮箱地址。CompanyType为1时， 此字段必传
+                     * @param _contactEmail 联系人邮箱地址。CompanyType为1时， 此字段必传
                      * 
                      */
                     void SetContactEmail(const std::string& _contactEmail);
@@ -715,15 +807,19 @@ namespace TencentCloud
                     bool AutoRenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取证书加密参数
-                     * @return CsrKeyParameter 证书加密参数
+                     * 获取密钥对参数，RSA支持2048，4096。ECC仅支持prime256v1。加密算法选择ECC时，此参数必填
+国密证书类型本字段不用传
+                     * @return CsrKeyParameter 密钥对参数，RSA支持2048，4096。ECC仅支持prime256v1。加密算法选择ECC时，此参数必填
+国密证书类型本字段不用传
                      * 
                      */
                     std::string GetCsrKeyParameter() const;
 
                     /**
-                     * 设置证书加密参数
-                     * @param _csrKeyParameter 证书加密参数
+                     * 设置密钥对参数，RSA支持2048，4096。ECC仅支持prime256v1。加密算法选择ECC时，此参数必填
+国密证书类型本字段不用传
+                     * @param _csrKeyParameter 密钥对参数，RSA支持2048，4096。ECC仅支持prime256v1。加密算法选择ECC时，此参数必填
+国密证书类型本字段不用传
                      * 
                      */
                     void SetCsrKeyParameter(const std::string& _csrKeyParameter);
@@ -736,15 +832,19 @@ namespace TencentCloud
                     bool CsrKeyParameterHasBeenSet() const;
 
                     /**
-                     * 获取证书加密方式
-                     * @return CsrEncryptAlgo 证书加密方式
+                     * 获取加密算法，取值为ECC、RSA， 默认为RSA
+国密证书类型本字段不用传
+                     * @return CsrEncryptAlgo 加密算法，取值为ECC、RSA， 默认为RSA
+国密证书类型本字段不用传
                      * 
                      */
                     std::string GetCsrEncryptAlgo() const;
 
                     /**
-                     * 设置证书加密方式
-                     * @param _csrEncryptAlgo 证书加密方式
+                     * 设置加密算法，取值为ECC、RSA， 默认为RSA
+国密证书类型本字段不用传
+                     * @param _csrEncryptAlgo 加密算法，取值为ECC、RSA， 默认为RSA
+国密证书类型本字段不用传
                      * 
                      */
                     void SetCsrEncryptAlgo(const std::string& _csrEncryptAlgo);
@@ -757,15 +857,19 @@ namespace TencentCloud
                     bool CsrEncryptAlgoHasBeenSet() const;
 
                     /**
-                     * 获取管理人ID
-                     * @return ManagerId 管理人ID
+                     * 获取管理人ID，在 [腾讯云控制台](https://console.cloud.tencent.com/ssl/info) 可进行查看，若无满足的管理人信息， 则本参数传0 ； 若存在满足当前订单的管理人信息， 可以根据 [DescribeManagers](https://cloud.tencent.com/document/product/400/52672) 查看管理人ID； 若传了管理人ID，则Org开头、Admin开头、Tech开头的参数可不传； 管理人ID会包含公司信息
+
+                     * @return ManagerId 管理人ID，在 [腾讯云控制台](https://console.cloud.tencent.com/ssl/info) 可进行查看，若无满足的管理人信息， 则本参数传0 ； 若存在满足当前订单的管理人信息， 可以根据 [DescribeManagers](https://cloud.tencent.com/document/product/400/52672) 查看管理人ID； 若传了管理人ID，则Org开头、Admin开头、Tech开头的参数可不传； 管理人ID会包含公司信息
+
                      * 
                      */
                     std::string GetManagerId() const;
 
                     /**
-                     * 设置管理人ID
-                     * @param _managerId 管理人ID
+                     * 设置管理人ID，在 [腾讯云控制台](https://console.cloud.tencent.com/ssl/info) 可进行查看，若无满足的管理人信息， 则本参数传0 ； 若存在满足当前订单的管理人信息， 可以根据 [DescribeManagers](https://cloud.tencent.com/document/product/400/52672) 查看管理人ID； 若传了管理人ID，则Org开头、Admin开头、Tech开头的参数可不传； 管理人ID会包含公司信息
+
+                     * @param _managerId 管理人ID，在 [腾讯云控制台](https://console.cloud.tencent.com/ssl/info) 可进行查看，若无满足的管理人信息， 则本参数传0 ； 若存在满足当前订单的管理人信息， 可以根据 [DescribeManagers](https://cloud.tencent.com/document/product/400/52672) 查看管理人ID； 若传了管理人ID，则Org开头、Admin开头、Tech开头的参数可不传； 管理人ID会包含公司信息
+
                      * 
                      */
                     void SetManagerId(const std::string& _managerId);
@@ -778,15 +882,15 @@ namespace TencentCloud
                     bool ManagerIdHasBeenSet() const;
 
                     /**
-                     * 获取联系人电话
-                     * @return TechPhone 联系人电话
+                     * 获取联系人电话。若没有传ManagerId， 则此字段必传
+                     * @return TechPhone 联系人电话。若没有传ManagerId， 则此字段必传
                      * 
                      */
                     std::string GetTechPhone() const;
 
                     /**
-                     * 设置联系人电话
-                     * @param _techPhone 联系人电话
+                     * 设置联系人电话。若没有传ManagerId， 则此字段必传
+                     * @param _techPhone 联系人电话。若没有传ManagerId， 则此字段必传
                      * 
                      */
                     void SetTechPhone(const std::string& _techPhone);
@@ -820,15 +924,15 @@ namespace TencentCloud
                     bool TechEmailHasBeenSet() const;
 
                     /**
-                     * 获取联系人职位
-                     * @return TechTitle 联系人职位
+                     * 获取联系人职位。若没有传ManagerId， 则此字段必传
+                     * @return TechTitle 联系人职位。若没有传ManagerId， 则此字段必传
                      * 
                      */
                     std::string GetTechTitle() const;
 
                     /**
-                     * 设置联系人职位
-                     * @param _techTitle 联系人职位
+                     * 设置联系人职位。若没有传ManagerId， 则此字段必传
+                     * @param _techTitle 联系人职位。若没有传ManagerId， 则此字段必传
                      * 
                      */
                     void SetTechTitle(const std::string& _techTitle);
@@ -843,187 +947,210 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 证书 ID。
+                     * 待提交资料的付费证书 ID。	
                      */
                     std::string m_certId;
                     bool m_certIdHasBeenSet;
 
                     /**
-                     * CSR 生成方式：online = 在线生成, upload = 手动上传。
+                     * 此字段必传。 CSR 生成方式， 取值为：
+- online：腾讯云提交的填写的参数信息生成CSR和私钥，并由腾讯云加密存储
+- parse：自行生成CSR和私钥，并通过上传CSR申请证书
                      */
                     std::string m_genCsrType;
                     bool m_genCsrTypeHasBeenSet;
 
                     /**
-                     * 绑定证书的主域名。
+                     * 证书绑定的通用名称， 若是上传的CSR，则该域名需与CSR解析的通用名称一致
                      */
                     std::string m_certCommonName;
                     bool m_certCommonNameHasBeenSet;
 
                     /**
-                     * 组织信息类型：1，个人； 2， 公司； 
+                     * 组织信息类型， 取值范围：
+1（个人）：仅DV类型证书可设置为1， 个人类型证书组织信息字段可不传：Org开头，Admin开头，Tech开头
+2（公司）：所有类型证书都可设置为2， 按需传组织信息字段
                      */
                     uint64_t m_companyType;
                     bool m_companyTypeHasBeenSet;
 
                     /**
-                     * 公司证件类型（）
-                     */
-                    std::string m_orgIdType;
-                    bool m_orgIdTypeHasBeenSet;
+                     * 公司ID，在 [腾讯云控制台](https://console.cloud.tencent.com/ssl/info) 可进行查看，若无满足的公司信息， 则本参数传0 ； 若存在满足当前订单的公司信息， 可以根据 [DescribeCompanies](https://cloud.tencent.com/document/product/400/90375) 查看公司ID； 若传了公司ID，则Org开头的参数可不传
 
-                    /**
-                     * 公司证件号码
-                     */
-                    std::string m_orgIdNumber;
-                    bool m_orgIdNumberHasBeenSet;
 
-                    /**
-                     * 管理人证件类型
-                     */
-                    std::string m_adminIdType;
-                    bool m_adminIdTypeHasBeenSet;
-
-                    /**
-                     * 管理人证件号码
-                     */
-                    std::string m_adminIdNumber;
-                    bool m_adminIdNumberHasBeenSet;
-
-                    /**
-                     * 联系人证件类型
-                     */
-                    std::string m_techIdType;
-                    bool m_techIdTypeHasBeenSet;
-
-                    /**
-                     * 联系人证件号码
-                     */
-                    std::string m_techIdNumber;
-                    bool m_techIdNumberHasBeenSet;
-
-                    /**
-                     * 公司ID
                      */
                     std::string m_companyId;
                     bool m_companyIdHasBeenSet;
 
                     /**
-                     * 上传的 CSR 内容。如果GenCsrType为upload则该字段必传
+                     * 公司证件类型，取值范围：
+TYDMZ（统一社会信用代码 ）：仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段
+OTHERS（其他）
+                     */
+                    std::string m_orgIdType;
+                    bool m_orgIdTypeHasBeenSet;
+
+                    /**
+                     * 公司证件号码，取值范围：
+TYDMZ（统一社会信用代码 ）：11532xxxxxxxx24820
+
+                     */
+                    std::string m_orgIdNumber;
+                    bool m_orgIdNumberHasBeenSet;
+
+                    /**
+                     * 管理人证件类型，取值范围：
+SFZ（身份证）：仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段
+HZ（护照）：仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段
+                     */
+                    std::string m_adminIdType;
+                    bool m_adminIdTypeHasBeenSet;
+
+                    /**
+                     * 管理人证件号码，仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段， 取值范围：
+SFZ（身份证）：110000xxxxxxxx1242
+HZ（护照）:EFxxxxxxx
+                     */
+                    std::string m_adminIdNumber;
+                    bool m_adminIdNumberHasBeenSet;
+
+                    /**
+                     * 联系人证件类型，取值范围：
+SFZ（身份证）：仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段
+HZ（护照）：仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段
+                     */
+                    std::string m_techIdType;
+                    bool m_techIdTypeHasBeenSet;
+
+                    /**
+                     * 联系人证件号码，仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段，取值范围：
+SFZ（身份证）：110000xxxxxxxx1242
+HZ（护照）:EFxxxxxxx
+                     */
+                    std::string m_techIdNumber;
+                    bool m_techIdNumberHasBeenSet;
+
+                    /**
+                     * 上传的 CSR 内容。
+若GenCsrType为parse， 则此字段必传。
                      */
                     std::string m_csr;
                     bool m_csrHasBeenSet;
 
                     /**
-                     * 域名数组（多域名证书可以上传）。
+                     * 证书绑定的其他域名， 单域名、泛域名证书无需提供。 多域名、多泛域名必填
                      */
                     std::vector<std::string> m_dnsNames;
                     bool m_dnsNamesHasBeenSet;
 
                     /**
-                     * 私钥密码（非必填）。
+                     * 私钥密码， 目前仅使用在生成jks、pfx格式证书时密码； 其他格式私钥证书未加密	
                      */
                     std::string m_keyPass;
                     bool m_keyPassHasBeenSet;
 
                     /**
-                     * 公司名称。
+                     * 公司名称。若没有传CompanyId或者ManagerId， 则此字段必传
                      */
                     std::string m_orgOrganization;
                     bool m_orgOrganizationHasBeenSet;
 
                     /**
-                     * 部门名称。
+                     * 部门名称。若没有传CompanyId或者ManagerId， 则此字段必传
                      */
                     std::string m_orgDivision;
                     bool m_orgDivisionHasBeenSet;
 
                     /**
-                     * 公司详细地址。
+                     * 公司详细地址。若没有传CompanyId或者ManagerId， 则此字段必传
                      */
                     std::string m_orgAddress;
                     bool m_orgAddressHasBeenSet;
 
                     /**
-                     * 国家名称，如中国：CN 。
+                     * 国家名称，如中国：CN 。若没有传CompanyId或者ManagerId， 则此字段必传
                      */
                     std::string m_orgCountry;
                     bool m_orgCountryHasBeenSet;
 
                     /**
-                     * 公司所在城市。
+                     * 公司所在城市。若没有传CompanyId或者ManagerId， 则此字段必传
                      */
                     std::string m_orgCity;
                     bool m_orgCityHasBeenSet;
 
                     /**
-                     * 公司所在省份。
+                     * 公司所在省份。若没有传CompanyId或者ManagerId， 则此字段必传
                      */
                     std::string m_orgRegion;
                     bool m_orgRegionHasBeenSet;
 
                     /**
-                     * 公司座机区号。
+                     * 公司所属区号。若没有传CompanyId或者ManagerId， 则此字段必传
+如：021。  手机号码传 86
                      */
                     std::string m_orgPhoneArea;
                     bool m_orgPhoneAreaHasBeenSet;
 
                     /**
-                     * 公司座机号码。
+                     * 公司所属号码。若没有传CompanyId或者ManagerId， 则此字段必传
                      */
                     std::string m_orgPhoneNumber;
                     bool m_orgPhoneNumberHasBeenSet;
 
                     /**
-                     * 证书验证方式。验证类型：DNS_AUTO = 自动DNS验证（仅支持在腾讯云解析且解析状态正常的域名使用该验证类型），DNS = 手动DNS验证，FILE = 文件验证。
+                     * 证书域名验证方式：
+DNS_AUTO： 自动添加域名DNS验证， 需用户域名解析托管在『[云解析DNS](https://console.cloud.tencent.com/cns)』，且与申请证书归属同一个腾讯云账号
+DNS：手动添加域名DNS验证，需用户手动去域名解析服务商添加验证值
+FILE：手动添加域名文件验证。 需要用户手动在域名站点根目录添加指定路径文件进行文件验证， http&https任一通过即可；且域名站点需海外CA机构能访问， 具体访问白名单为：64.78.193.238，216.168.247.9，216.168.249.9，54.189.196.217
                      */
                     std::string m_verifyType;
                     bool m_verifyTypeHasBeenSet;
 
                     /**
-                     * 管理人名。
+                     * 管理人名。若没有传ManagerId， 则此字段必传
                      */
                     std::string m_adminFirstName;
                     bool m_adminFirstNameHasBeenSet;
 
                     /**
-                     * 管理人姓。
+                     * 管理人姓。若没有传ManagerId， 则此字段必传
                      */
                     std::string m_adminLastName;
                     bool m_adminLastNameHasBeenSet;
 
                     /**
-                     * 管理人手机号码。
+                     * 管理人手机号码。若没有传ManagerId， 则此字段必传
                      */
                     std::string m_adminPhone;
                     bool m_adminPhoneHasBeenSet;
 
                     /**
-                     * 管理人邮箱地址。
+                     * 管理人邮箱地址。若没有传ManagerId， 则此字段必传
                      */
                     std::string m_adminEmail;
                     bool m_adminEmailHasBeenSet;
 
                     /**
-                     * 管理人职位。
+                     * 管理人职位。若没有传ManagerId， 则此字段必传
                      */
                     std::string m_adminTitle;
                     bool m_adminTitleHasBeenSet;
 
                     /**
-                     * 联系人名。
+                     * 联系人名。若没有传ManagerId， 则此字段必传
                      */
                     std::string m_techFirstName;
                     bool m_techFirstNameHasBeenSet;
 
                     /**
-                     * 联系人姓。
+                     * 联系人姓。若没有传ManagerId， 则此字段必传
                      */
                     std::string m_techLastName;
                     bool m_techLastNameHasBeenSet;
 
                     /**
-                     * 联系人邮箱地址。
+                     * 联系人邮箱地址。CompanyType为1时， 此字段必传
                      */
                     std::string m_contactEmail;
                     bool m_contactEmailHasBeenSet;
@@ -1035,25 +1162,28 @@ namespace TencentCloud
                     bool m_autoRenewFlagHasBeenSet;
 
                     /**
-                     * 证书加密参数
+                     * 密钥对参数，RSA支持2048，4096。ECC仅支持prime256v1。加密算法选择ECC时，此参数必填
+国密证书类型本字段不用传
                      */
                     std::string m_csrKeyParameter;
                     bool m_csrKeyParameterHasBeenSet;
 
                     /**
-                     * 证书加密方式
+                     * 加密算法，取值为ECC、RSA， 默认为RSA
+国密证书类型本字段不用传
                      */
                     std::string m_csrEncryptAlgo;
                     bool m_csrEncryptAlgoHasBeenSet;
 
                     /**
-                     * 管理人ID
+                     * 管理人ID，在 [腾讯云控制台](https://console.cloud.tencent.com/ssl/info) 可进行查看，若无满足的管理人信息， 则本参数传0 ； 若存在满足当前订单的管理人信息， 可以根据 [DescribeManagers](https://cloud.tencent.com/document/product/400/52672) 查看管理人ID； 若传了管理人ID，则Org开头、Admin开头、Tech开头的参数可不传； 管理人ID会包含公司信息
+
                      */
                     std::string m_managerId;
                     bool m_managerIdHasBeenSet;
 
                     /**
-                     * 联系人电话
+                     * 联系人电话。若没有传ManagerId， 则此字段必传
                      */
                     std::string m_techPhone;
                     bool m_techPhoneHasBeenSet;
@@ -1065,7 +1195,7 @@ namespace TencentCloud
                     bool m_techEmailHasBeenSet;
 
                     /**
-                     * 联系人职位
+                     * 联系人职位。若没有传ManagerId， 则此字段必传
                      */
                     std::string m_techTitle;
                     bool m_techTitleHasBeenSet;

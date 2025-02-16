@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 更新记录详情列表
+                * 更新记录详情
                 */
                 class UpdateRecordDetails : public AbstractModel
                 {
@@ -48,15 +48,63 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取部署资源类型
-                     * @return ResourceType 部署资源类型
+                     * 获取新旧证书更新云资源的云资源类型：
+- clb
+- cdn
+- ddos
+- live
+- vod
+- waf
+- apigateway
+- teo
+- tke
+- cos
+- tse
+- tcb
+                     * @return ResourceType 新旧证书更新云资源的云资源类型：
+- clb
+- cdn
+- ddos
+- live
+- vod
+- waf
+- apigateway
+- teo
+- tke
+- cos
+- tse
+- tcb
                      * 
                      */
                     std::string GetResourceType() const;
 
                     /**
-                     * 设置部署资源类型
-                     * @param _resourceType 部署资源类型
+                     * 设置新旧证书更新云资源的云资源类型：
+- clb
+- cdn
+- ddos
+- live
+- vod
+- waf
+- apigateway
+- teo
+- tke
+- cos
+- tse
+- tcb
+                     * @param _resourceType 新旧证书更新云资源的云资源类型：
+- clb
+- cdn
+- ddos
+- live
+- vod
+- waf
+- apigateway
+- teo
+- tke
+- cos
+- tse
+- tcb
                      * 
                      */
                     void SetResourceType(const std::string& _resourceType);
@@ -69,15 +117,15 @@ namespace TencentCloud
                     bool ResourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取部署资源详情列表
-                     * @return List 部署资源详情列表
+                     * 获取该云资源更新详情
+                     * @return List 该云资源更新详情
                      * 
                      */
                     std::vector<UpdateRecordDetail> GetList() const;
 
                     /**
-                     * 设置部署资源详情列表
-                     * @param _list 部署资源详情列表
+                     * 设置该云资源更新详情
+                     * @param _list 该云资源更新详情
                      * 
                      */
                     void SetList(const std::vector<UpdateRecordDetail>& _list);
@@ -90,15 +138,15 @@ namespace TencentCloud
                     bool ListHasBeenSet() const;
 
                     /**
-                     * 获取该部署资源总数
-                     * @return TotalCount 该部署资源总数
+                     * 获取该云资源更新资源总数
+                     * @return TotalCount 该云资源更新资源总数
                      * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
-                     * 设置该部署资源总数
-                     * @param _totalCount 该部署资源总数
+                     * 设置该云资源更新资源总数
+                     * @param _totalCount 该云资源更新资源总数
                      * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
@@ -113,19 +161,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 部署资源类型
+                     * 新旧证书更新云资源的云资源类型：
+- clb
+- cdn
+- ddos
+- live
+- vod
+- waf
+- apigateway
+- teo
+- tke
+- cos
+- tse
+- tcb
                      */
                     std::string m_resourceType;
                     bool m_resourceTypeHasBeenSet;
 
                     /**
-                     * 部署资源详情列表
+                     * 该云资源更新详情
                      */
                     std::vector<UpdateRecordDetail> m_list;
                     bool m_listHasBeenSet;
 
                     /**
-                     * 该部署资源总数
+                     * 该云资源更新资源总数
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

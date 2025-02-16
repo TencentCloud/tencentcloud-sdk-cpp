@@ -272,6 +272,56 @@ namespace TencentCloud
                      */
                     bool ElapsedHasBeenSet() const;
 
+                    /**
+                     * 获取工作流节点名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NodeName 工作流节点名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetNodeName() const;
+
+                    /**
+                     * 设置工作流节点名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _nodeName 工作流节点名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNodeName(const std::string& _nodeName);
+
+                    /**
+                     * 判断参数 NodeName 是否已赋值
+                     * @return NodeName 是否已赋值
+                     * 
+                     */
+                    bool NodeNameHasBeenSet() const;
+
+                    /**
+                     * 获取用于展示思考放在哪个回复气泡中
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ReplyIndex 用于展示思考放在哪个回复气泡中
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetReplyIndex() const;
+
+                    /**
+                     * 设置用于展示思考放在哪个回复气泡中
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _replyIndex 用于展示思考放在哪个回复气泡中
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetReplyIndex(const uint64_t& _replyIndex);
+
+                    /**
+                     * 判断参数 ReplyIndex 是否已赋值
+                     * @return ReplyIndex 是否已赋值
+                     * 
+                     */
+                    bool ReplyIndexHasBeenSet() const;
+
                 private:
 
                     /**
@@ -336,6 +386,20 @@ namespace TencentCloud
                      */
                     uint64_t m_elapsed;
                     bool m_elapsedHasBeenSet;
+
+                    /**
+                     * 工作流节点名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_nodeName;
+                    bool m_nodeNameHasBeenSet;
+
+                    /**
+                     * 用于展示思考放在哪个回复气泡中
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_replyIndex;
+                    bool m_replyIndexHasBeenSet;
 
                 };
             }

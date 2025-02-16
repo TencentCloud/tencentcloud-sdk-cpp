@@ -195,18 +195,26 @@ namespace TencentCloud
                     bool CompanyPhoneHasBeenSet() const;
 
                     /**
-                     * 获取类型
+                     * 获取公司证件类型，取值范围：
+TYDMZ（统一社会信用代码 ）：仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段
+OTHERS（其他）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IdType 类型
+                     * @return IdType 公司证件类型，取值范围：
+TYDMZ（统一社会信用代码 ）：仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段
+OTHERS（其他）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIdType() const;
 
                     /**
-                     * 设置类型
+                     * 设置公司证件类型，取值范围：
+TYDMZ（统一社会信用代码 ）：仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段
+OTHERS（其他）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _idType 类型
+                     * @param _idType 公司证件类型，取值范围：
+TYDMZ（统一社会信用代码 ）：仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段
+OTHERS（其他）
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -220,18 +228,22 @@ namespace TencentCloud
                     bool IdTypeHasBeenSet() const;
 
                     /**
-                     * 获取ID号
+                     * 获取公司证件号码，取值范围：
+TYDMZ（统一社会信用代码 ）：11532xxxxxxxx24820
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IdNumber ID号
+                     * @return IdNumber 公司证件号码，取值范围：
+TYDMZ（统一社会信用代码 ）：11532xxxxxxxx24820
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIdNumber() const;
 
                     /**
-                     * 设置ID号
+                     * 设置公司证件号码，取值范围：
+TYDMZ（统一社会信用代码 ）：11532xxxxxxxx24820
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _idNumber ID号
+                     * @param _idNumber 公司证件号码，取值范围：
+TYDMZ（统一社会信用代码 ）：11532xxxxxxxx24820
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -314,14 +326,17 @@ namespace TencentCloud
                     bool m_companyPhoneHasBeenSet;
 
                     /**
-                     * 类型
+                     * 公司证件类型，取值范围：
+TYDMZ（统一社会信用代码 ）：仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段
+OTHERS（其他）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_idType;
                     bool m_idTypeHasBeenSet;
 
                     /**
-                     * ID号
+                     * 公司证件号码，取值范围：
+TYDMZ（统一社会信用代码 ）：11532xxxxxxxx24820
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_idNumber;

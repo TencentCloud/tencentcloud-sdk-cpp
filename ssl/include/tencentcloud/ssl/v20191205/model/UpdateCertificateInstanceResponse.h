@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取云资源部署任务ID
+                     * 获取云资源更新任务ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DeployRecordId 云资源部署任务ID
+                     * @return DeployRecordId 云资源更新任务ID
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -61,8 +61,8 @@ namespace TencentCloud
                     bool DeployRecordIdHasBeenSet() const;
 
                     /**
-                     * 获取部署状态，1表示部署成功，0表示部署失败
-                     * @return DeployStatus 部署状态，1表示部署成功，0表示部署失败
+                     * 获取更新任务创建状态；1表示创建成功； 0表示当前存在更新中的任务，未创建新的更新任务；返回值DeployRecordId为更新中的任务ID
+                     * @return DeployStatus 更新任务创建状态；1表示创建成功； 0表示当前存在更新中的任务，未创建新的更新任务；返回值DeployRecordId为更新中的任务ID
                      * 
                      */
                     int64_t GetDeployStatus() const;
@@ -93,14 +93,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 云资源部署任务ID
+                     * 云资源更新任务ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_deployRecordId;
                     bool m_deployRecordIdHasBeenSet;
 
                     /**
-                     * 部署状态，1表示部署成功，0表示部署失败
+                     * 更新任务创建状态；1表示创建成功； 0表示当前存在更新中的任务，未创建新的更新任务；返回值DeployRecordId为更新中的任务ID
                      */
                     int64_t m_deployStatus;
                     bool m_deployStatusHasBeenSet;

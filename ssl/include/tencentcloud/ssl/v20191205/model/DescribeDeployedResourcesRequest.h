@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool CertificateIdsHasBeenSet() const;
 
                     /**
-                     * 获取资源类型:clb,cdn,live,waf,antiddos
-                     * @return ResourceType 资源类型:clb,cdn,live,waf,antiddos
+                     * 获取资源类型:clb,cdn,live,waf,antiddos,teo
+                     * @return ResourceType 资源类型:clb,cdn,live,waf,antiddos,teo
                      * 
                      */
                     std::string GetResourceType() const;
 
                     /**
-                     * 设置资源类型:clb,cdn,live,waf,antiddos
-                     * @param _resourceType 资源类型:clb,cdn,live,waf,antiddos
+                     * 设置资源类型:clb,cdn,live,waf,antiddos,teo
+                     * @param _resourceType 资源类型:clb,cdn,live,waf,antiddos,teo
                      * 
                      */
                     void SetResourceType(const std::string& _resourceType);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_certificateIdsHasBeenSet;
 
                     /**
-                     * 资源类型:clb,cdn,live,waf,antiddos
+                     * 资源类型:clb,cdn,live,waf,antiddos,teo
                      */
                     std::string m_resourceType;
                     bool m_resourceTypeHasBeenSet;

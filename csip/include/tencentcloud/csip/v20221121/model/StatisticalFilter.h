@@ -51,12 +51,10 @@ namespace TencentCloud
 1:发生次数高于固定值
 2:发生次数高于周期平均值的百分之
 3:发生次数高于用户平均值的百分之
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OperatorType 0:不基于统计检测
 1:发生次数高于固定值
 2:发生次数高于周期平均值的百分之
 3:发生次数高于用户平均值的百分之
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetOperatorType() const;
@@ -66,12 +64,10 @@ namespace TencentCloud
 1:发生次数高于固定值
 2:发生次数高于周期平均值的百分之
 3:发生次数高于用户平均值的百分之
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _operatorType 0:不基于统计检测
 1:发生次数高于固定值
 2:发生次数高于周期平均值的百分之
 3:发生次数高于用户平均值的百分之
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOperatorType(const int64_t& _operatorType);
@@ -85,18 +81,14 @@ namespace TencentCloud
 
                     /**
                      * 获取统计值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 统计值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetValue() const;
 
                     /**
                      * 设置统计值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _value 统计值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValue(const double& _value);
@@ -115,14 +107,12 @@ namespace TencentCloud
 1:发生次数高于固定值
 2:发生次数高于周期平均值的百分之
 3:发生次数高于用户平均值的百分之
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_operatorType;
                     bool m_operatorTypeHasBeenSet;
 
                     /**
                      * 统计值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_value;
                     bool m_valueHasBeenSet;

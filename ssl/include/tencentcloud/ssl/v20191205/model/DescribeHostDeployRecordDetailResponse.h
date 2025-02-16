@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取总数
+                     * 获取部署记录总数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TotalCount 总数
+                     * @return TotalCount 部署记录总数
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -127,7 +127,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 总数
+                     * 部署记录总数
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;

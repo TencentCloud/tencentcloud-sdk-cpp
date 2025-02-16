@@ -31,6 +31,7 @@ CreateDisksRequest::CreateDisksRequest() :
     m_snapshotIdHasBeenSet(false),
     m_diskCountHasBeenSet(false),
     m_throughputPerformanceHasBeenSet(false),
+    m_kmsKeyIdHasBeenSet(false),
     m_diskSizeHasBeenSet(false),
     m_shareableHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
@@ -121,6 +122,14 @@ string CreateDisksRequest::ToJsonString() const
         string key = "ThroughputPerformance";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_throughputPerformance, allocator);
+    }
+
+    if (m_kmsKeyIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KmsKeyId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_kmsKeyId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_diskSizeHasBeenSet)
@@ -339,6 +348,22 @@ void CreateDisksRequest::SetThroughputPerformance(const uint64_t& _throughputPer
 bool CreateDisksRequest::ThroughputPerformanceHasBeenSet() const
 {
     return m_throughputPerformanceHasBeenSet;
+}
+
+string CreateDisksRequest::GetKmsKeyId() const
+{
+    return m_kmsKeyId;
+}
+
+void CreateDisksRequest::SetKmsKeyId(const string& _kmsKeyId)
+{
+    m_kmsKeyId = _kmsKeyId;
+    m_kmsKeyIdHasBeenSet = true;
+}
+
+bool CreateDisksRequest::KmsKeyIdHasBeenSet() const
+{
+    return m_kmsKeyIdHasBeenSet;
 }
 
 uint64_t CreateDisksRequest::GetDiskSize() const

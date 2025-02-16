@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * CPU弹性扩容的自动扩容策略
+                * CPU 弹性扩容的自动扩容策略。
                 */
                 class AutoStrategy : public AbstractModel
                 {
@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取自动扩容阈值，可选值70、80、90，代表CPU利用率达到70%、80%、90%时后台进行自动扩容
-                     * @return ExpandThreshold 自动扩容阈值，可选值70、80、90，代表CPU利用率达到70%、80%、90%时后台进行自动扩容
+                     * 获取自动扩容阈值，可选值40、50、60、70、80、90，代表 CPU 利用率达到40%、50%、60%、70%、80%、90%时后台进行自动扩容。
+                     * @return ExpandThreshold 自动扩容阈值，可选值40、50、60、70、80、90，代表 CPU 利用率达到40%、50%、60%、70%、80%、90%时后台进行自动扩容。
                      * 
                      */
                     int64_t GetExpandThreshold() const;
 
                     /**
-                     * 设置自动扩容阈值，可选值70、80、90，代表CPU利用率达到70%、80%、90%时后台进行自动扩容
-                     * @param _expandThreshold 自动扩容阈值，可选值70、80、90，代表CPU利用率达到70%、80%、90%时后台进行自动扩容
+                     * 设置自动扩容阈值，可选值40、50、60、70、80、90，代表 CPU 利用率达到40%、50%、60%、70%、80%、90%时后台进行自动扩容。
+                     * @param _expandThreshold 自动扩容阈值，可选值40、50、60、70、80、90，代表 CPU 利用率达到40%、50%、60%、70%、80%、90%时后台进行自动扩容。
                      * 
                      */
                     void SetExpandThreshold(const int64_t& _expandThreshold);
@@ -66,27 +66,6 @@ namespace TencentCloud
                      * 
                      */
                     bool ExpandThresholdHasBeenSet() const;
-
-                    /**
-                     * 获取自动扩容观测周期，单位是分钟，可选值1、3、5、10、15、30。后台会按照配置的周期进行扩容判断。
-                     * @return ExpandPeriod 自动扩容观测周期，单位是分钟，可选值1、3、5、10、15、30。后台会按照配置的周期进行扩容判断。
-                     * 
-                     */
-                    int64_t GetExpandPeriod() const;
-
-                    /**
-                     * 设置自动扩容观测周期，单位是分钟，可选值1、3、5、10、15、30。后台会按照配置的周期进行扩容判断。
-                     * @param _expandPeriod 自动扩容观测周期，单位是分钟，可选值1、3、5、10、15、30。后台会按照配置的周期进行扩容判断。
-                     * 
-                     */
-                    void SetExpandPeriod(const int64_t& _expandPeriod);
-
-                    /**
-                     * 判断参数 ExpandPeriod 是否已赋值
-                     * @return ExpandPeriod 是否已赋值
-                     * 
-                     */
-                    bool ExpandPeriodHasBeenSet() const;
 
                     /**
                      * 获取自动缩容阈值，可选值10、20、30，代表CPU利用率达到10%、20%、30%时后台进行自动缩容
@@ -110,39 +89,104 @@ namespace TencentCloud
                     bool ShrinkThresholdHasBeenSet() const;
 
                     /**
+                     * 获取自动扩容观测周期，单位是分钟，可选值1、3、5、10、15、30。后台会按照配置的周期进行扩容判断。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExpandPeriod 自动扩容观测周期，单位是分钟，可选值1、3、5、10、15、30。后台会按照配置的周期进行扩容判断。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @deprecated
+                     */
+                    int64_t GetExpandPeriod() const;
+
+                    /**
+                     * 设置自动扩容观测周期，单位是分钟，可选值1、3、5、10、15、30。后台会按照配置的周期进行扩容判断。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _expandPeriod 自动扩容观测周期，单位是分钟，可选值1、3、5、10、15、30。后台会按照配置的周期进行扩容判断。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @deprecated
+                     */
+                    void SetExpandPeriod(const int64_t& _expandPeriod);
+
+                    /**
+                     * 判断参数 ExpandPeriod 是否已赋值
+                     * @return ExpandPeriod 是否已赋值
+                     * @deprecated
+                     */
+                    bool ExpandPeriodHasBeenSet() const;
+
+                    /**
                      * 获取自动缩容观测周期，单位是分钟，可选值5、10、15、30。后台会按照配置的周期进行缩容判断。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return ShrinkPeriod 自动缩容观测周期，单位是分钟，可选值5、10、15、30。后台会按照配置的周期进行缩容判断。
-                     * 
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @deprecated
                      */
                     int64_t GetShrinkPeriod() const;
 
                     /**
                      * 设置自动缩容观测周期，单位是分钟，可选值5、10、15、30。后台会按照配置的周期进行缩容判断。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _shrinkPeriod 自动缩容观测周期，单位是分钟，可选值5、10、15、30。后台会按照配置的周期进行缩容判断。
-                     * 
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @deprecated
                      */
                     void SetShrinkPeriod(const int64_t& _shrinkPeriod);
 
                     /**
                      * 判断参数 ShrinkPeriod 是否已赋值
                      * @return ShrinkPeriod 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ShrinkPeriodHasBeenSet() const;
+
+                    /**
+                     * 获取弹性扩容观测周期（秒级）
+                     * @return ExpandSecondPeriod 弹性扩容观测周期（秒级）
+                     * 
+                     */
+                    int64_t GetExpandSecondPeriod() const;
+
+                    /**
+                     * 设置弹性扩容观测周期（秒级）
+                     * @param _expandSecondPeriod 弹性扩容观测周期（秒级）
+                     * 
+                     */
+                    void SetExpandSecondPeriod(const int64_t& _expandSecondPeriod);
+
+                    /**
+                     * 判断参数 ExpandSecondPeriod 是否已赋值
+                     * @return ExpandSecondPeriod 是否已赋值
+                     * 
+                     */
+                    bool ExpandSecondPeriodHasBeenSet() const;
+
+                    /**
+                     * 获取缩容观测周期（秒级）
+                     * @return ShrinkSecondPeriod 缩容观测周期（秒级）
+                     * 
+                     */
+                    int64_t GetShrinkSecondPeriod() const;
+
+                    /**
+                     * 设置缩容观测周期（秒级）
+                     * @param _shrinkSecondPeriod 缩容观测周期（秒级）
+                     * 
+                     */
+                    void SetShrinkSecondPeriod(const int64_t& _shrinkSecondPeriod);
+
+                    /**
+                     * 判断参数 ShrinkSecondPeriod 是否已赋值
+                     * @return ShrinkSecondPeriod 是否已赋值
+                     * 
+                     */
+                    bool ShrinkSecondPeriodHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 自动扩容阈值，可选值70、80、90，代表CPU利用率达到70%、80%、90%时后台进行自动扩容
+                     * 自动扩容阈值，可选值40、50、60、70、80、90，代表 CPU 利用率达到40%、50%、60%、70%、80%、90%时后台进行自动扩容。
                      */
                     int64_t m_expandThreshold;
                     bool m_expandThresholdHasBeenSet;
-
-                    /**
-                     * 自动扩容观测周期，单位是分钟，可选值1、3、5、10、15、30。后台会按照配置的周期进行扩容判断。
-                     */
-                    int64_t m_expandPeriod;
-                    bool m_expandPeriodHasBeenSet;
 
                     /**
                      * 自动缩容阈值，可选值10、20、30，代表CPU利用率达到10%、20%、30%时后台进行自动缩容
@@ -151,10 +195,30 @@ namespace TencentCloud
                     bool m_shrinkThresholdHasBeenSet;
 
                     /**
+                     * 自动扩容观测周期，单位是分钟，可选值1、3、5、10、15、30。后台会按照配置的周期进行扩容判断。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_expandPeriod;
+                    bool m_expandPeriodHasBeenSet;
+
+                    /**
                      * 自动缩容观测周期，单位是分钟，可选值5、10、15、30。后台会按照配置的周期进行缩容判断。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_shrinkPeriod;
                     bool m_shrinkPeriodHasBeenSet;
+
+                    /**
+                     * 弹性扩容观测周期（秒级）
+                     */
+                    int64_t m_expandSecondPeriod;
+                    bool m_expandSecondPeriodHasBeenSet;
+
+                    /**
+                     * 缩容观测周期（秒级）
+                     */
+                    int64_t m_shrinkSecondPeriod;
+                    bool m_shrinkSecondPeriodHasBeenSet;
 
                 };
             }

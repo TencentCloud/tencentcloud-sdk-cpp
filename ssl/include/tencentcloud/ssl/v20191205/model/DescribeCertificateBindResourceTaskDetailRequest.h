@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取当前偏移量
-                     * @return Offset 当前偏移量
+                     * 获取当前偏移量，默认为0
+                     * @return Offset 当前偏移量，默认为0
                      * 
                      */
                     std::string GetOffset() const;
 
                     /**
-                     * 设置当前偏移量
-                     * @param _offset 当前偏移量
+                     * 设置当前偏移量，默认为0
+                     * @param _offset 当前偏移量，默认为0
                      * 
                      */
                     void SetOffset(const std::string& _offset);
@@ -106,15 +106,63 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取查询资源类型的结果详情， 不传则查询所有
-                     * @return ResourceTypes 查询资源类型的结果详情， 不传则查询所有
+                     * 获取查询资源类型的结果详情， 不传则查询所有，取值支持：
+- clb
+- cdn
+- ddos
+- live
+- vod
+- waf
+- apigateway
+- teo
+- tke
+- cos
+- tse
+- tcb
+                     * @return ResourceTypes 查询资源类型的结果详情， 不传则查询所有，取值支持：
+- clb
+- cdn
+- ddos
+- live
+- vod
+- waf
+- apigateway
+- teo
+- tke
+- cos
+- tse
+- tcb
                      * 
                      */
                     std::vector<std::string> GetResourceTypes() const;
 
                     /**
-                     * 设置查询资源类型的结果详情， 不传则查询所有
-                     * @param _resourceTypes 查询资源类型的结果详情， 不传则查询所有
+                     * 设置查询资源类型的结果详情， 不传则查询所有，取值支持：
+- clb
+- cdn
+- ddos
+- live
+- vod
+- waf
+- apigateway
+- teo
+- tke
+- cos
+- tse
+- tcb
+                     * @param _resourceTypes 查询资源类型的结果详情， 不传则查询所有，取值支持：
+- clb
+- cdn
+- ddos
+- live
+- vod
+- waf
+- apigateway
+- teo
+- tke
+- cos
+- tse
+- tcb
                      * 
                      */
                     void SetResourceTypes(const std::vector<std::string>& _resourceTypes);
@@ -127,15 +175,15 @@ namespace TencentCloud
                     bool ResourceTypesHasBeenSet() const;
 
                     /**
-                     * 获取查询地域列表的数据，CLB、TKE、WAF、APIGATEWAY、TCB支持地域查询， 其他资源类型不支持
-                     * @return Regions 查询地域列表的数据，CLB、TKE、WAF、APIGATEWAY、TCB支持地域查询， 其他资源类型不支持
+                     * 获取查询地域列表的数据，clb、tke、waf、apigateway、tcb、cos、tse支持地域查询， 其他资源类型不支持
+                     * @return Regions 查询地域列表的数据，clb、tke、waf、apigateway、tcb、cos、tse支持地域查询， 其他资源类型不支持
                      * 
                      */
                     std::vector<std::string> GetRegions() const;
 
                     /**
-                     * 设置查询地域列表的数据，CLB、TKE、WAF、APIGATEWAY、TCB支持地域查询， 其他资源类型不支持
-                     * @param _regions 查询地域列表的数据，CLB、TKE、WAF、APIGATEWAY、TCB支持地域查询， 其他资源类型不支持
+                     * 设置查询地域列表的数据，clb、tke、waf、apigateway、tcb、cos、tse支持地域查询， 其他资源类型不支持
+                     * @param _regions 查询地域列表的数据，clb、tke、waf、apigateway、tcb、cos、tse支持地域查询， 其他资源类型不支持
                      * 
                      */
                     void SetRegions(const std::vector<std::string>& _regions);
@@ -162,19 +210,31 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 当前偏移量
+                     * 当前偏移量，默认为0
                      */
                     std::string m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 查询资源类型的结果详情， 不传则查询所有
+                     * 查询资源类型的结果详情， 不传则查询所有，取值支持：
+- clb
+- cdn
+- ddos
+- live
+- vod
+- waf
+- apigateway
+- teo
+- tke
+- cos
+- tse
+- tcb
                      */
                     std::vector<std::string> m_resourceTypes;
                     bool m_resourceTypesHasBeenSet;
 
                     /**
-                     * 查询地域列表的数据，CLB、TKE、WAF、APIGATEWAY、TCB支持地域查询， 其他资源类型不支持
+                     * 查询地域列表的数据，clb、tke、waf、apigateway、tcb、cos、tse支持地域查询， 其他资源类型不支持
                      */
                     std::vector<std::string> m_regions;
                     bool m_regionsHasBeenSet;

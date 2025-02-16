@@ -29,7 +29,9 @@ AgentProcedure::AgentProcedure() :
     m_debuggingHasBeenSet(false),
     m_switchHasBeenSet(false),
     m_workflowNameHasBeenSet(false),
-    m_elapsedHasBeenSet(false)
+    m_elapsedHasBeenSet(false),
+    m_nodeNameHasBeenSet(false),
+    m_replyIndexHasBeenSet(false)
 {
 }
 
@@ -135,6 +137,26 @@ CoreInternalOutcome AgentProcedure::Deserialize(const rapidjson::Value &value)
         m_elapsedHasBeenSet = true;
     }
 
+    if (value.HasMember("NodeName") && !value["NodeName"].IsNull())
+    {
+        if (!value["NodeName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentProcedure.NodeName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeName = string(value["NodeName"].GetString());
+        m_nodeNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ReplyIndex") && !value["ReplyIndex"].IsNull())
+    {
+        if (!value["ReplyIndex"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentProcedure.ReplyIndex` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_replyIndex = value["ReplyIndex"].GetUint64();
+        m_replyIndexHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -213,6 +235,22 @@ void AgentProcedure::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Elapsed";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_elapsed, allocator);
+    }
+
+    if (m_nodeNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_replyIndexHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReplyIndex";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_replyIndex, allocator);
     }
 
 }
@@ -360,5 +398,37 @@ void AgentProcedure::SetElapsed(const uint64_t& _elapsed)
 bool AgentProcedure::ElapsedHasBeenSet() const
 {
     return m_elapsedHasBeenSet;
+}
+
+string AgentProcedure::GetNodeName() const
+{
+    return m_nodeName;
+}
+
+void AgentProcedure::SetNodeName(const string& _nodeName)
+{
+    m_nodeName = _nodeName;
+    m_nodeNameHasBeenSet = true;
+}
+
+bool AgentProcedure::NodeNameHasBeenSet() const
+{
+    return m_nodeNameHasBeenSet;
+}
+
+uint64_t AgentProcedure::GetReplyIndex() const
+{
+    return m_replyIndex;
+}
+
+void AgentProcedure::SetReplyIndex(const uint64_t& _replyIndex)
+{
+    m_replyIndex = _replyIndex;
+    m_replyIndexHasBeenSet = true;
+}
+
+bool AgentProcedure::ReplyIndexHasBeenSet() const
+{
+    return m_replyIndexHasBeenSet;
 }
 

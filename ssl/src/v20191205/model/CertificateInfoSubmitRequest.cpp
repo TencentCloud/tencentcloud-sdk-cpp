@@ -27,13 +27,13 @@ CertificateInfoSubmitRequest::CertificateInfoSubmitRequest() :
     m_genCsrTypeHasBeenSet(false),
     m_certCommonNameHasBeenSet(false),
     m_companyTypeHasBeenSet(false),
+    m_companyIdHasBeenSet(false),
     m_orgIdTypeHasBeenSet(false),
     m_orgIdNumberHasBeenSet(false),
     m_adminIdTypeHasBeenSet(false),
     m_adminIdNumberHasBeenSet(false),
     m_techIdTypeHasBeenSet(false),
     m_techIdNumberHasBeenSet(false),
-    m_companyIdHasBeenSet(false),
     m_csrHasBeenSet(false),
     m_dnsNamesHasBeenSet(false),
     m_keyPassHasBeenSet(false),
@@ -103,6 +103,14 @@ string CertificateInfoSubmitRequest::ToJsonString() const
         d.AddMember(iKey, m_companyType, allocator);
     }
 
+    if (m_companyIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CompanyId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_companyId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_orgIdTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -149,14 +157,6 @@ string CertificateInfoSubmitRequest::ToJsonString() const
         string key = "TechIdNumber";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_techIdNumber.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_companyIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CompanyId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_companyId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_csrHasBeenSet)
@@ -452,6 +452,22 @@ bool CertificateInfoSubmitRequest::CompanyTypeHasBeenSet() const
     return m_companyTypeHasBeenSet;
 }
 
+string CertificateInfoSubmitRequest::GetCompanyId() const
+{
+    return m_companyId;
+}
+
+void CertificateInfoSubmitRequest::SetCompanyId(const string& _companyId)
+{
+    m_companyId = _companyId;
+    m_companyIdHasBeenSet = true;
+}
+
+bool CertificateInfoSubmitRequest::CompanyIdHasBeenSet() const
+{
+    return m_companyIdHasBeenSet;
+}
+
 string CertificateInfoSubmitRequest::GetOrgIdType() const
 {
     return m_orgIdType;
@@ -546,22 +562,6 @@ void CertificateInfoSubmitRequest::SetTechIdNumber(const string& _techIdNumber)
 bool CertificateInfoSubmitRequest::TechIdNumberHasBeenSet() const
 {
     return m_techIdNumberHasBeenSet;
-}
-
-string CertificateInfoSubmitRequest::GetCompanyId() const
-{
-    return m_companyId;
-}
-
-void CertificateInfoSubmitRequest::SetCompanyId(const string& _companyId)
-{
-    m_companyId = _companyId;
-    m_companyIdHasBeenSet = true;
-}
-
-bool CertificateInfoSubmitRequest::CompanyIdHasBeenSet() const
-{
-    return m_companyIdHasBeenSet;
 }
 
 string CertificateInfoSubmitRequest::GetCsr() const

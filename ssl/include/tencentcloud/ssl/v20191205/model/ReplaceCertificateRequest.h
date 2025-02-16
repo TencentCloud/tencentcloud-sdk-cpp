@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool CsrTypeHasBeenSet() const;
 
                     /**
-                     * 获取CSR 内容。
-                     * @return CsrContent CSR 内容。
+                     * 获取CSR 内容，手动上传的时候需要。
+                     * @return CsrContent CSR 内容，手动上传的时候需要。
                      * 
                      */
                     std::string GetCsrContent() const;
 
                     /**
-                     * 设置CSR 内容。
-                     * @param _csrContent CSR 内容。
+                     * 设置CSR 内容，手动上传的时候需要。
+                     * @param _csrContent CSR 内容，手动上传的时候需要。
                      * 
                      */
                     void SetCsrContent(const std::string& _csrContent);
@@ -235,7 +235,7 @@ namespace TencentCloud
                     bool m_csrTypeHasBeenSet;
 
                     /**
-                     * CSR 内容。
+                     * CSR 内容，手动上传的时候需要。
                      */
                     std::string m_csrContent;
                     bool m_csrContentHasBeenSet;

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取证书 ID。
-                     * @return CertId 证书 ID。
+                     * 获取待提交资料的付费证书 ID。	
+                     * @return CertId 待提交资料的付费证书 ID。	
                      * 
                      */
                     std::string GetCertId() const;
 
                     /**
-                     * 设置证书 ID。
-                     * @param _certId 证书 ID。
+                     * 设置待提交资料的付费证书 ID。	
+                     * @param _certId 待提交资料的付费证书 ID。	
                      * 
                      */
                     void SetCertId(const std::string& _certId);
@@ -85,15 +85,27 @@ namespace TencentCloud
                     bool DeleteDnsAutoRecordHasBeenSet() const;
 
                     /**
-                     * 获取域名验证方式：DNS_AUTO 自动DNS验证， DNS DNS验证， FILE 文件验证
-                     * @return VerifyType 域名验证方式：DNS_AUTO 自动DNS验证， DNS DNS验证， FILE 文件验证
+                     * 获取证书域名验证方式：
+DNS_AUTO： 自动添加域名DNS验证， 需用户域名解析托管在『[云解析DNS](https://console.cloud.tencent.com/cns)』，且与申请证书归属同一个腾讯云账号
+DNS：手动添加域名DNS验证，需用户手动去域名解析服务商添加验证值
+FILE：手动添加域名文件验证。 需要用户手动在域名站点根目录添加指定路径文件进行文件验证， http&https任一通过即可；且域名站点需海外CA机构能访问， 具体访问白名单见控制台页面
+                     * @return VerifyType 证书域名验证方式：
+DNS_AUTO： 自动添加域名DNS验证， 需用户域名解析托管在『[云解析DNS](https://console.cloud.tencent.com/cns)』，且与申请证书归属同一个腾讯云账号
+DNS：手动添加域名DNS验证，需用户手动去域名解析服务商添加验证值
+FILE：手动添加域名文件验证。 需要用户手动在域名站点根目录添加指定路径文件进行文件验证， http&https任一通过即可；且域名站点需海外CA机构能访问， 具体访问白名单见控制台页面
                      * 
                      */
                     std::string GetVerifyType() const;
 
                     /**
-                     * 设置域名验证方式：DNS_AUTO 自动DNS验证， DNS DNS验证， FILE 文件验证
-                     * @param _verifyType 域名验证方式：DNS_AUTO 自动DNS验证， DNS DNS验证， FILE 文件验证
+                     * 设置证书域名验证方式：
+DNS_AUTO： 自动添加域名DNS验证， 需用户域名解析托管在『[云解析DNS](https://console.cloud.tencent.com/cns)』，且与申请证书归属同一个腾讯云账号
+DNS：手动添加域名DNS验证，需用户手动去域名解析服务商添加验证值
+FILE：手动添加域名文件验证。 需要用户手动在域名站点根目录添加指定路径文件进行文件验证， http&https任一通过即可；且域名站点需海外CA机构能访问， 具体访问白名单见控制台页面
+                     * @param _verifyType 证书域名验证方式：
+DNS_AUTO： 自动添加域名DNS验证， 需用户域名解析托管在『[云解析DNS](https://console.cloud.tencent.com/cns)』，且与申请证书归属同一个腾讯云账号
+DNS：手动添加域名DNS验证，需用户手动去域名解析服务商添加验证值
+FILE：手动添加域名文件验证。 需要用户手动在域名站点根目录添加指定路径文件进行文件验证， http&https任一通过即可；且域名站点需海外CA机构能访问， 具体访问白名单见控制台页面
                      * 
                      */
                     void SetVerifyType(const std::string& _verifyType);
@@ -108,7 +120,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 证书 ID。
+                     * 待提交资料的付费证书 ID。	
                      */
                     std::string m_certId;
                     bool m_certIdHasBeenSet;
@@ -120,7 +132,10 @@ namespace TencentCloud
                     bool m_deleteDnsAutoRecordHasBeenSet;
 
                     /**
-                     * 域名验证方式：DNS_AUTO 自动DNS验证， DNS DNS验证， FILE 文件验证
+                     * 证书域名验证方式：
+DNS_AUTO： 自动添加域名DNS验证， 需用户域名解析托管在『[云解析DNS](https://console.cloud.tencent.com/cns)』，且与申请证书归属同一个腾讯云账号
+DNS：手动添加域名DNS验证，需用户手动去域名解析服务商添加验证值
+FILE：手动添加域名文件验证。 需要用户手动在域名站点根目录添加指定路径文件进行文件验证， http&https任一通过即可；且域名站点需海外CA机构能访问， 具体访问白名单见控制台页面
                      */
                     std::string m_verifyType;
                     bool m_verifyTypeHasBeenSet;

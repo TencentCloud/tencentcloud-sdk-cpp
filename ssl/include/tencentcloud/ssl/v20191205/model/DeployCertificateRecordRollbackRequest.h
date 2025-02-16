@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取待重试部署记录ID,就是通过DeployCertificateInstance返回的DeployRecordId
-                     * @return DeployRecordId 待重试部署记录ID,就是通过DeployCertificateInstance返回的DeployRecordId
+                     * 获取待重试部署记录ID, 就是通过DeployCertificateInstance返回的DeployRecordId
+                     * @return DeployRecordId 待重试部署记录ID, 就是通过DeployCertificateInstance返回的DeployRecordId
                      * 
                      */
                     int64_t GetDeployRecordId() const;
 
                     /**
-                     * 设置待重试部署记录ID,就是通过DeployCertificateInstance返回的DeployRecordId
-                     * @param _deployRecordId 待重试部署记录ID,就是通过DeployCertificateInstance返回的DeployRecordId
+                     * 设置待重试部署记录ID, 就是通过DeployCertificateInstance返回的DeployRecordId
+                     * @param _deployRecordId 待重试部署记录ID, 就是通过DeployCertificateInstance返回的DeployRecordId
                      * 
                      */
                     void SetDeployRecordId(const int64_t& _deployRecordId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 待重试部署记录ID,就是通过DeployCertificateInstance返回的DeployRecordId
+                     * 待重试部署记录ID, 就是通过DeployCertificateInstance返回的DeployRecordId
                      */
                     int64_t m_deployRecordId;
                     bool m_deployRecordIdHasBeenSet;

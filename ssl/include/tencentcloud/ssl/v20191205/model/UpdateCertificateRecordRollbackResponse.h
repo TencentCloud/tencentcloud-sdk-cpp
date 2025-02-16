@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取回滚部署记录ID
-                     * @return DeployRecordId 回滚部署记录ID
+                     * 获取新生成的回滚部署任务的记录ID
+                     * @return DeployRecordId 新生成的回滚部署任务的记录ID
                      * 
                      */
                     int64_t GetDeployRecordId() const;
@@ -60,7 +60,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 回滚部署记录ID
+                     * 新生成的回滚部署任务的记录ID
                      */
                     int64_t m_deployRecordId;
                     bool m_deployRecordIdHasBeenSet;

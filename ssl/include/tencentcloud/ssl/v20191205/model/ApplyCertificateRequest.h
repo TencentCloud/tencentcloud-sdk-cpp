@@ -43,15 +43,27 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取验证方式：DNS_AUTO = 自动DNS验证，DNS = 手动DNS验证，FILE = 文件验证。
-                     * @return DvAuthMethod 验证方式：DNS_AUTO = 自动DNS验证，DNS = 手动DNS验证，FILE = 文件验证。
+                     * 获取证书域名验证方式：
+DNS_AUTO： 自动添加域名DNS验证， 需用户域名解析托管在『[云解析DNS](https://console.cloud.tencent.com/cns)』，且与申请证书归属同一个腾讯云账号
+DNS：手动添加域名DNS验证，需用户手动去域名解析服务商添加验证值
+FILE：手动添加域名文件验证。 需要用户手动在域名站点根目录添加指定路径文件进行文件验证， http&https任一通过即可；且域名站点需海外CA机构能访问， 具体访问白名单为：64.78.193.238，216.168.247.9，216.168.249.9，54.189.196.217
+                     * @return DvAuthMethod 证书域名验证方式：
+DNS_AUTO： 自动添加域名DNS验证， 需用户域名解析托管在『[云解析DNS](https://console.cloud.tencent.com/cns)』，且与申请证书归属同一个腾讯云账号
+DNS：手动添加域名DNS验证，需用户手动去域名解析服务商添加验证值
+FILE：手动添加域名文件验证。 需要用户手动在域名站点根目录添加指定路径文件进行文件验证， http&https任一通过即可；且域名站点需海外CA机构能访问， 具体访问白名单为：64.78.193.238，216.168.247.9，216.168.249.9，54.189.196.217
                      * 
                      */
                     std::string GetDvAuthMethod() const;
 
                     /**
-                     * 设置验证方式：DNS_AUTO = 自动DNS验证，DNS = 手动DNS验证，FILE = 文件验证。
-                     * @param _dvAuthMethod 验证方式：DNS_AUTO = 自动DNS验证，DNS = 手动DNS验证，FILE = 文件验证。
+                     * 设置证书域名验证方式：
+DNS_AUTO： 自动添加域名DNS验证， 需用户域名解析托管在『[云解析DNS](https://console.cloud.tencent.com/cns)』，且与申请证书归属同一个腾讯云账号
+DNS：手动添加域名DNS验证，需用户手动去域名解析服务商添加验证值
+FILE：手动添加域名文件验证。 需要用户手动在域名站点根目录添加指定路径文件进行文件验证， http&https任一通过即可；且域名站点需海外CA机构能访问， 具体访问白名单为：64.78.193.238，216.168.247.9，216.168.249.9，54.189.196.217
+                     * @param _dvAuthMethod 证书域名验证方式：
+DNS_AUTO： 自动添加域名DNS验证， 需用户域名解析托管在『[云解析DNS](https://console.cloud.tencent.com/cns)』，且与申请证书归属同一个腾讯云账号
+DNS：手动添加域名DNS验证，需用户手动去域名解析服务商添加验证值
+FILE：手动添加域名文件验证。 需要用户手动在域名站点根目录添加指定路径文件进行文件验证， http&https任一通过即可；且域名站点需海外CA机构能访问， 具体访问白名单为：64.78.193.238，216.168.247.9，216.168.249.9，54.189.196.217
                      * 
                      */
                     void SetDvAuthMethod(const std::string& _dvAuthMethod);
@@ -64,15 +76,15 @@ namespace TencentCloud
                     bool DvAuthMethodHasBeenSet() const;
 
                     /**
-                     * 获取域名。
-                     * @return DomainName 域名。
+                     * 获取证书绑定的域名。
+                     * @return DomainName 证书绑定的域名。
                      * 
                      */
                     std::string GetDomainName() const;
 
                     /**
-                     * 设置域名。
-                     * @param _domainName 域名。
+                     * 设置证书绑定的域名。
+                     * @param _domainName 证书绑定的域名。
                      * 
                      */
                     void SetDomainName(const std::string& _domainName);
@@ -85,15 +97,15 @@ namespace TencentCloud
                     bool DomainNameHasBeenSet() const;
 
                     /**
-                     * 获取项目 ID。
-                     * @return ProjectId 项目 ID。
+                     * 获取证书关联的项目 ID。 默认为0（默认项目）
+                     * @return ProjectId 证书关联的项目 ID。 默认为0（默认项目）
                      * 
                      */
                     uint64_t GetProjectId() const;
 
                     /**
-                     * 设置项目 ID。
-                     * @param _projectId 项目 ID。
+                     * 设置证书关联的项目 ID。 默认为0（默认项目）
+                     * @param _projectId 证书关联的项目 ID。 默认为0（默认项目）
                      * 
                      */
                     void SetProjectId(const uint64_t& _projectId);
@@ -106,15 +118,15 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取证书类型，目前仅支持类型83。83 = TrustAsia C1 DV Free。
-                     * @return PackageType 证书类型，目前仅支持类型83。83 = TrustAsia C1 DV Free。
+                     * 获取证书类型， 可不传，目前仅支持类型83。83 = TrustAsia C1 DV Free。
+                     * @return PackageType 证书类型， 可不传，目前仅支持类型83。83 = TrustAsia C1 DV Free。
                      * 
                      */
                     std::string GetPackageType() const;
 
                     /**
-                     * 设置证书类型，目前仅支持类型83。83 = TrustAsia C1 DV Free。
-                     * @param _packageType 证书类型，目前仅支持类型83。83 = TrustAsia C1 DV Free。
+                     * 设置证书类型， 可不传，目前仅支持类型83。83 = TrustAsia C1 DV Free。
+                     * @param _packageType 证书类型， 可不传，目前仅支持类型83。83 = TrustAsia C1 DV Free。
                      * 
                      */
                     void SetPackageType(const std::string& _packageType);
@@ -127,15 +139,15 @@ namespace TencentCloud
                     bool PackageTypeHasBeenSet() const;
 
                     /**
-                     * 获取邮箱。
-                     * @return ContactEmail 邮箱。
+                     * 获取证书订单关联邮箱。默认为腾讯云账号邮箱， 不存在则关联固定邮箱
+                     * @return ContactEmail 证书订单关联邮箱。默认为腾讯云账号邮箱， 不存在则关联固定邮箱
                      * 
                      */
                     std::string GetContactEmail() const;
 
                     /**
-                     * 设置邮箱。
-                     * @param _contactEmail 邮箱。
+                     * 设置证书订单关联邮箱。默认为腾讯云账号邮箱， 不存在则关联固定邮箱
+                     * @param _contactEmail 证书订单关联邮箱。默认为腾讯云账号邮箱， 不存在则关联固定邮箱
                      * 
                      */
                     void SetContactEmail(const std::string& _contactEmail);
@@ -148,15 +160,15 @@ namespace TencentCloud
                     bool ContactEmailHasBeenSet() const;
 
                     /**
-                     * 获取手机。
-                     * @return ContactPhone 手机。
+                     * 获取证书关联手机号码，  不存在则关联固定手机号码
+                     * @return ContactPhone 证书关联手机号码，  不存在则关联固定手机号码
                      * 
                      */
                     std::string GetContactPhone() const;
 
                     /**
-                     * 设置手机。
-                     * @param _contactPhone 手机。
+                     * 设置证书关联手机号码，  不存在则关联固定手机号码
+                     * @param _contactPhone 证书关联手机号码，  不存在则关联固定手机号码
                      * 
                      */
                     void SetContactPhone(const std::string& _contactPhone);
@@ -169,15 +181,15 @@ namespace TencentCloud
                     bool ContactPhoneHasBeenSet() const;
 
                     /**
-                     * 获取有效期，默认3个月，目前仅支持3个月。
-                     * @return ValidityPeriod 有效期，默认3个月，目前仅支持3个月。
+                     * 获取证书有效期，默认3（月），目前仅支持3个月。
+                     * @return ValidityPeriod 证书有效期，默认3（月），目前仅支持3个月。
                      * 
                      */
                     std::string GetValidityPeriod() const;
 
                     /**
-                     * 设置有效期，默认3个月，目前仅支持3个月。
-                     * @param _validityPeriod 有效期，默认3个月，目前仅支持3个月。
+                     * 设置证书有效期，默认3（月），目前仅支持3个月。
+                     * @param _validityPeriod 证书有效期，默认3（月），目前仅支持3个月。
                      * 
                      */
                     void SetValidityPeriod(const std::string& _validityPeriod);
@@ -190,15 +202,15 @@ namespace TencentCloud
                     bool ValidityPeriodHasBeenSet() const;
 
                     /**
-                     * 获取加密算法，支持 RSA及ECC。
-                     * @return CsrEncryptAlgo 加密算法，支持 RSA及ECC。
+                     * 获取加密算法，取值为ECC、RSA， 默认为RSA
+                     * @return CsrEncryptAlgo 加密算法，取值为ECC、RSA， 默认为RSA
                      * 
                      */
                     std::string GetCsrEncryptAlgo() const;
 
                     /**
-                     * 设置加密算法，支持 RSA及ECC。
-                     * @param _csrEncryptAlgo 加密算法，支持 RSA及ECC。
+                     * 设置加密算法，取值为ECC、RSA， 默认为RSA
+                     * @param _csrEncryptAlgo 加密算法，取值为ECC、RSA， 默认为RSA
                      * 
                      */
                     void SetCsrEncryptAlgo(const std::string& _csrEncryptAlgo);
@@ -232,15 +244,15 @@ namespace TencentCloud
                     bool CsrKeyParameterHasBeenSet() const;
 
                     /**
-                     * 获取CSR 的加密密码。
-                     * @return CsrKeyPassword CSR 的加密密码。
+                     * 获取私钥密码， 目前仅使用在生成jks、pfx格式证书时密码； 其他格式私钥证书未加密
+                     * @return CsrKeyPassword 私钥密码， 目前仅使用在生成jks、pfx格式证书时密码； 其他格式私钥证书未加密
                      * 
                      */
                     std::string GetCsrKeyPassword() const;
 
                     /**
-                     * 设置CSR 的加密密码。
-                     * @param _csrKeyPassword CSR 的加密密码。
+                     * 设置私钥密码， 目前仅使用在生成jks、pfx格式证书时密码； 其他格式私钥证书未加密
+                     * @param _csrKeyPassword 私钥密码， 目前仅使用在生成jks、pfx格式证书时密码； 其他格式私钥证书未加密
                      * 
                      */
                     void SetCsrKeyPassword(const std::string& _csrKeyPassword);
@@ -253,15 +265,15 @@ namespace TencentCloud
                     bool CsrKeyPasswordHasBeenSet() const;
 
                     /**
-                     * 获取备注名称。
-                     * @return Alias 备注名称。
+                     * 获取证书别名
+                     * @return Alias 证书别名
                      * 
                      */
                     std::string GetAlias() const;
 
                     /**
-                     * 设置备注名称。
-                     * @param _alias 备注名称。
+                     * 设置证书别名
+                     * @param _alias 证书别名
                      * 
                      */
                     void SetAlias(const std::string& _alias);
@@ -274,15 +286,15 @@ namespace TencentCloud
                     bool AliasHasBeenSet() const;
 
                     /**
-                     * 获取原证书 ID，用于重新申请。
-                     * @return OldCertificateId 原证书 ID，用于重新申请。
+                     * 获取旧证书 ID，用于证书续费（证书有效期在30天内，且未过期），会建立续费关系， 可用于托管； 不传则表示新申请证书
+                     * @return OldCertificateId 旧证书 ID，用于证书续费（证书有效期在30天内，且未过期），会建立续费关系， 可用于托管； 不传则表示新申请证书
                      * 
                      */
                     std::string GetOldCertificateId() const;
 
                     /**
-                     * 设置原证书 ID，用于重新申请。
-                     * @param _oldCertificateId 原证书 ID，用于重新申请。
+                     * 设置旧证书 ID，用于证书续费（证书有效期在30天内，且未过期），会建立续费关系， 可用于托管； 不传则表示新申请证书
+                     * @param _oldCertificateId 旧证书 ID，用于证书续费（证书有效期在30天内，且未过期），会建立续费关系， 可用于托管； 不传则表示新申请证书
                      * 
                      */
                     void SetOldCertificateId(const std::string& _oldCertificateId);
@@ -295,15 +307,15 @@ namespace TencentCloud
                     bool OldCertificateIdHasBeenSet() const;
 
                     /**
-                     * 获取权益包ID，用于免费证书扩容包使用
-                     * @return PackageId 权益包ID，用于免费证书扩容包使用
+                     * 获取权益包ID，用于免费证书扩容包使用， 免费证书扩容包已下线
+                     * @return PackageId 权益包ID，用于免费证书扩容包使用， 免费证书扩容包已下线
                      * 
                      */
                     std::string GetPackageId() const;
 
                     /**
-                     * 设置权益包ID，用于免费证书扩容包使用
-                     * @param _packageId 权益包ID，用于免费证书扩容包使用
+                     * 设置权益包ID，用于免费证书扩容包使用， 免费证书扩容包已下线
+                     * @param _packageId 权益包ID，用于免费证书扩容包使用， 免费证书扩容包已下线
                      * 
                      */
                     void SetPackageId(const std::string& _packageId);
@@ -337,15 +349,15 @@ namespace TencentCloud
                     bool DeleteDnsAutoRecordHasBeenSet() const;
 
                     /**
-                     * 获取域名数组（多域名证书可以上传）。	
-                     * @return DnsNames 域名数组（多域名证书可以上传）。	
+                     * 获取证书绑定的其他域名，待开放。目前不支持此参数
+                     * @return DnsNames 证书绑定的其他域名，待开放。目前不支持此参数
                      * 
                      */
                     std::vector<std::string> GetDnsNames() const;
 
                     /**
-                     * 设置域名数组（多域名证书可以上传）。	
-                     * @param _dnsNames 域名数组（多域名证书可以上传）。	
+                     * 设置证书绑定的其他域名，待开放。目前不支持此参数
+                     * @param _dnsNames 证书绑定的其他域名，待开放。目前不支持此参数
                      * 
                      */
                     void SetDnsNames(const std::vector<std::string>& _dnsNames);
@@ -360,49 +372,52 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 验证方式：DNS_AUTO = 自动DNS验证，DNS = 手动DNS验证，FILE = 文件验证。
+                     * 证书域名验证方式：
+DNS_AUTO： 自动添加域名DNS验证， 需用户域名解析托管在『[云解析DNS](https://console.cloud.tencent.com/cns)』，且与申请证书归属同一个腾讯云账号
+DNS：手动添加域名DNS验证，需用户手动去域名解析服务商添加验证值
+FILE：手动添加域名文件验证。 需要用户手动在域名站点根目录添加指定路径文件进行文件验证， http&https任一通过即可；且域名站点需海外CA机构能访问， 具体访问白名单为：64.78.193.238，216.168.247.9，216.168.249.9，54.189.196.217
                      */
                     std::string m_dvAuthMethod;
                     bool m_dvAuthMethodHasBeenSet;
 
                     /**
-                     * 域名。
+                     * 证书绑定的域名。
                      */
                     std::string m_domainName;
                     bool m_domainNameHasBeenSet;
 
                     /**
-                     * 项目 ID。
+                     * 证书关联的项目 ID。 默认为0（默认项目）
                      */
                     uint64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 证书类型，目前仅支持类型83。83 = TrustAsia C1 DV Free。
+                     * 证书类型， 可不传，目前仅支持类型83。83 = TrustAsia C1 DV Free。
                      */
                     std::string m_packageType;
                     bool m_packageTypeHasBeenSet;
 
                     /**
-                     * 邮箱。
+                     * 证书订单关联邮箱。默认为腾讯云账号邮箱， 不存在则关联固定邮箱
                      */
                     std::string m_contactEmail;
                     bool m_contactEmailHasBeenSet;
 
                     /**
-                     * 手机。
+                     * 证书关联手机号码，  不存在则关联固定手机号码
                      */
                     std::string m_contactPhone;
                     bool m_contactPhoneHasBeenSet;
 
                     /**
-                     * 有效期，默认3个月，目前仅支持3个月。
+                     * 证书有效期，默认3（月），目前仅支持3个月。
                      */
                     std::string m_validityPeriod;
                     bool m_validityPeriodHasBeenSet;
 
                     /**
-                     * 加密算法，支持 RSA及ECC。
+                     * 加密算法，取值为ECC、RSA， 默认为RSA
                      */
                     std::string m_csrEncryptAlgo;
                     bool m_csrEncryptAlgoHasBeenSet;
@@ -414,25 +429,25 @@ namespace TencentCloud
                     bool m_csrKeyParameterHasBeenSet;
 
                     /**
-                     * CSR 的加密密码。
+                     * 私钥密码， 目前仅使用在生成jks、pfx格式证书时密码； 其他格式私钥证书未加密
                      */
                     std::string m_csrKeyPassword;
                     bool m_csrKeyPasswordHasBeenSet;
 
                     /**
-                     * 备注名称。
+                     * 证书别名
                      */
                     std::string m_alias;
                     bool m_aliasHasBeenSet;
 
                     /**
-                     * 原证书 ID，用于重新申请。
+                     * 旧证书 ID，用于证书续费（证书有效期在30天内，且未过期），会建立续费关系， 可用于托管； 不传则表示新申请证书
                      */
                     std::string m_oldCertificateId;
                     bool m_oldCertificateIdHasBeenSet;
 
                     /**
-                     * 权益包ID，用于免费证书扩容包使用
+                     * 权益包ID，用于免费证书扩容包使用， 免费证书扩容包已下线
                      */
                     std::string m_packageId;
                     bool m_packageIdHasBeenSet;
@@ -444,7 +459,7 @@ namespace TencentCloud
                     bool m_deleteDnsAutoRecordHasBeenSet;
 
                     /**
-                     * 域名数组（多域名证书可以上传）。	
+                     * 证书绑定的其他域名，待开放。目前不支持此参数
                      */
                     std::vector<std::string> m_dnsNames;
                     bool m_dnsNamesHasBeenSet;
