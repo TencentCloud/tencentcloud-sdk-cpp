@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取待部署的证书ID
-                     * @return CertificateId 待部署的证书ID
+                     * 获取待部署的证书ID,必填选项
+                     * @return CertificateId 待部署的证书ID,必填选项
                      * 
                      */
                     std::string GetCertificateId() const;
 
                     /**
-                     * 设置待部署的证书ID
-                     * @param _certificateId 待部署的证书ID
+                     * 设置待部署的证书ID,必填选项
+                     * @param _certificateId 待部署的证书ID,必填选项
                      * 
                      */
                     void SetCertificateId(const std::string& _certificateId);
@@ -151,7 +151,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 待部署的证书ID
+                     * 待部署的证书ID,必填选项
                      */
                     std::string m_certificateId;
                     bool m_certificateIdHasBeenSet;

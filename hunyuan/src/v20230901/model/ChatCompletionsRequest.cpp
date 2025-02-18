@@ -41,7 +41,8 @@ ChatCompletionsRequest::ChatCompletionsRequest() :
     m_seedHasBeenSet(false),
     m_forceSearchEnhancementHasBeenSet(false),
     m_stopHasBeenSet(false),
-    m_enableRecommendedQuestionsHasBeenSet(false)
+    m_enableRecommendedQuestionsHasBeenSet(false),
+    m_enableDeepReadHasBeenSet(false)
 {
 }
 
@@ -222,6 +223,14 @@ string ChatCompletionsRequest::ToJsonString() const
         string key = "EnableRecommendedQuestions";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableRecommendedQuestions, allocator);
+    }
+
+    if (m_enableDeepReadHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableDeepRead";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableDeepRead, allocator);
     }
 
 
@@ -534,6 +543,22 @@ void ChatCompletionsRequest::SetEnableRecommendedQuestions(const bool& _enableRe
 bool ChatCompletionsRequest::EnableRecommendedQuestionsHasBeenSet() const
 {
     return m_enableRecommendedQuestionsHasBeenSet;
+}
+
+bool ChatCompletionsRequest::GetEnableDeepRead() const
+{
+    return m_enableDeepRead;
+}
+
+void ChatCompletionsRequest::SetEnableDeepRead(const bool& _enableDeepRead)
+{
+    m_enableDeepRead = _enableDeepRead;
+    m_enableDeepReadHasBeenSet = true;
+}
+
+bool ChatCompletionsRequest::EnableDeepReadHasBeenSet() const
+{
+    return m_enableDeepReadHasBeenSet;
 }
 
 

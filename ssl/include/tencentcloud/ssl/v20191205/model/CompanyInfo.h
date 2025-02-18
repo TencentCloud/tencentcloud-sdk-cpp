@@ -198,11 +198,9 @@ namespace TencentCloud
                      * 获取公司证件类型，取值范围：
 TYDMZ（统一社会信用代码 ）：仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段
 OTHERS（其他）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IdType 公司证件类型，取值范围：
 TYDMZ（统一社会信用代码 ）：仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段
 OTHERS（其他）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIdType() const;
@@ -211,11 +209,9 @@ OTHERS（其他）
                      * 设置公司证件类型，取值范围：
 TYDMZ（统一社会信用代码 ）：仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段
 OTHERS（其他）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _idType 公司证件类型，取值范围：
 TYDMZ（统一社会信用代码 ）：仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段
 OTHERS（其他）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIdType(const std::string& _idType);
@@ -230,10 +226,8 @@ OTHERS（其他）
                     /**
                      * 获取公司证件号码，取值范围：
 TYDMZ（统一社会信用代码 ）：11532xxxxxxxx24820
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IdNumber 公司证件号码，取值范围：
 TYDMZ（统一社会信用代码 ）：11532xxxxxxxx24820
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIdNumber() const;
@@ -241,10 +235,8 @@ TYDMZ（统一社会信用代码 ）：11532xxxxxxxx24820
                     /**
                      * 设置公司证件号码，取值范围：
 TYDMZ（统一社会信用代码 ）：11532xxxxxxxx24820
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _idNumber 公司证件号码，取值范围：
 TYDMZ（统一社会信用代码 ）：11532xxxxxxxx24820
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIdNumber(const std::string& _idNumber);
@@ -258,18 +250,14 @@ TYDMZ（统一社会信用代码 ）：11532xxxxxxxx24820
 
                     /**
                      * 获取标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tags> GetTags() const;
 
                     /**
                      * 设置标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::vector<Tags>& _tags);
@@ -329,7 +317,6 @@ TYDMZ（统一社会信用代码 ）：11532xxxxxxxx24820
                      * 公司证件类型，取值范围：
 TYDMZ（统一社会信用代码 ）：仅CFCA类型证书需要使用本字段， 其他类型证书不需要使用本字段
 OTHERS（其他）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_idType;
                     bool m_idTypeHasBeenSet;
@@ -337,14 +324,12 @@ OTHERS（其他）
                     /**
                      * 公司证件号码，取值范围：
 TYDMZ（统一社会信用代码 ）：11532xxxxxxxx24820
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_idNumber;
                     bool m_idNumberHasBeenSet;
 
                     /**
                      * 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tags> m_tags;
                     bool m_tagsHasBeenSet;

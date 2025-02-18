@@ -70,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取ddos实例详情	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceList ddos实例详情	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DdosInstanceDetail> GetInstanceList() const;
 
                     /**
                      * 设置ddos实例详情	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceList ddos实例详情	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceList(const std::vector<DdosInstanceDetail>& _instanceList);
@@ -95,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否查询异常
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Error 是否查询异常
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetError() const;
 
                     /**
                      * 设置是否查询异常
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _error 是否查询异常
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetError(const std::string& _error);
@@ -128,14 +120,12 @@ namespace TencentCloud
 
                     /**
                      * ddos实例详情	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DdosInstanceDetail> m_instanceList;
                     bool m_instanceListHasBeenSet;
 
                     /**
                      * 是否查询异常
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_error;
                     bool m_errorHasBeenSet;

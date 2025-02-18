@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取原始总计价格。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OriginalPrice 原始总计价格。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetOriginalPrice() const;
 
                     /**
                      * 设置原始总计价格。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _originalPrice 原始总计价格。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOriginalPrice(const double& _originalPrice);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取折扣总计价格。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiscountPrice 折扣总计价格。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetDiscountPrice() const;
 
                     /**
                      * 设置折扣总计价格。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _discountPrice 折扣总计价格。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiscountPrice(const double& _discountPrice);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 原始总计价格。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_originalPrice;
                     bool m_originalPriceHasBeenSet;
 
                     /**
                      * 折扣总计价格。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_discountPrice;
                     bool m_discountPriceHasBeenSet;

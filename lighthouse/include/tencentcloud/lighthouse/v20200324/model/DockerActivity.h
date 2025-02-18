@@ -190,18 +190,14 @@ namespace TencentCloud
 
                     /**
                      * 获取结束时间。按照 ISO8601 标准表示，并且使用 UTC 时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 结束时间。按照 ISO8601 标准表示，并且使用 UTC 时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间。按照 ISO8601 标准表示，并且使用 UTC 时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endTime 结束时间。按照 ISO8601 标准表示，并且使用 UTC 时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -257,7 +253,6 @@ namespace TencentCloud
 
                     /**
                      * 结束时间。按照 ISO8601 标准表示，并且使用 UTC 时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

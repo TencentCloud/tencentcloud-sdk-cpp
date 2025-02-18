@@ -33,6 +33,8 @@
 #include <tencentcloud/postgres/v20170312/model/CloseServerlessDBExtranetAccessResponse.h>
 #include <tencentcloud/postgres/v20170312/model/CreateAccountRequest.h>
 #include <tencentcloud/postgres/v20170312/model/CreateAccountResponse.h>
+#include <tencentcloud/postgres/v20170312/model/CreateBackupPlanRequest.h>
+#include <tencentcloud/postgres/v20170312/model/CreateBackupPlanResponse.h>
 #include <tencentcloud/postgres/v20170312/model/CreateBaseBackupRequest.h>
 #include <tencentcloud/postgres/v20170312/model/CreateBaseBackupResponse.h>
 #include <tencentcloud/postgres/v20170312/model/CreateDBInstanceNetworkAccessRequest.h>
@@ -55,6 +57,8 @@
 #include <tencentcloud/postgres/v20170312/model/CreateServerlessDBInstanceResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DeleteAccountRequest.h>
 #include <tencentcloud/postgres/v20170312/model/DeleteAccountResponse.h>
+#include <tencentcloud/postgres/v20170312/model/DeleteBackupPlanRequest.h>
+#include <tencentcloud/postgres/v20170312/model/DeleteBackupPlanResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DeleteBaseBackupRequest.h>
 #include <tencentcloud/postgres/v20170312/model/DeleteBaseBackupResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DeleteDBInstanceNetworkAccessRequest.h>
@@ -101,6 +105,8 @@
 #include <tencentcloud/postgres/v20170312/model/DescribeDBInstanceHAConfigResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeDBInstanceParametersRequest.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeDBInstanceParametersResponse.h>
+#include <tencentcloud/postgres/v20170312/model/DescribeDBInstanceSSLConfigRequest.h>
+#include <tencentcloud/postgres/v20170312/model/DescribeDBInstanceSSLConfigResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeDBInstanceSecurityGroupsRequest.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeDBInstanceSecurityGroupsResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeDBInstancesRequest.h>
@@ -145,6 +151,8 @@
 #include <tencentcloud/postgres/v20170312/model/DescribeSlowQueryAnalysisResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeSlowQueryListRequest.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeSlowQueryListResponse.h>
+#include <tencentcloud/postgres/v20170312/model/DescribeTasksRequest.h>
+#include <tencentcloud/postgres/v20170312/model/DescribeTasksResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeZonesRequest.h>
 #include <tencentcloud/postgres/v20170312/model/DescribeZonesResponse.h>
 #include <tencentcloud/postgres/v20170312/model/DestroyDBInstanceRequest.h>
@@ -185,6 +193,8 @@
 #include <tencentcloud/postgres/v20170312/model/ModifyDBInstanceParametersResponse.h>
 #include <tencentcloud/postgres/v20170312/model/ModifyDBInstanceReadOnlyGroupRequest.h>
 #include <tencentcloud/postgres/v20170312/model/ModifyDBInstanceReadOnlyGroupResponse.h>
+#include <tencentcloud/postgres/v20170312/model/ModifyDBInstanceSSLConfigRequest.h>
+#include <tencentcloud/postgres/v20170312/model/ModifyDBInstanceSSLConfigResponse.h>
 #include <tencentcloud/postgres/v20170312/model/ModifyDBInstanceSecurityGroupsRequest.h>
 #include <tencentcloud/postgres/v20170312/model/ModifyDBInstanceSecurityGroupsResponse.h>
 #include <tencentcloud/postgres/v20170312/model/ModifyDBInstanceSpecRequest.h>
@@ -197,6 +207,8 @@
 #include <tencentcloud/postgres/v20170312/model/ModifyMaintainTimeWindowResponse.h>
 #include <tencentcloud/postgres/v20170312/model/ModifyParameterTemplateRequest.h>
 #include <tencentcloud/postgres/v20170312/model/ModifyParameterTemplateResponse.h>
+#include <tencentcloud/postgres/v20170312/model/ModifyReadOnlyDBInstanceWeightRequest.h>
+#include <tencentcloud/postgres/v20170312/model/ModifyReadOnlyDBInstanceWeightResponse.h>
 #include <tencentcloud/postgres/v20170312/model/ModifyReadOnlyGroupConfigRequest.h>
 #include <tencentcloud/postgres/v20170312/model/ModifyReadOnlyGroupConfigResponse.h>
 #include <tencentcloud/postgres/v20170312/model/ModifySwitchTimePeriodRequest.h>
@@ -258,6 +270,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAccountResponse> CreateAccountOutcome;
                 typedef std::future<CreateAccountOutcome> CreateAccountOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::CreateAccountRequest&, CreateAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAccountAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateBackupPlanResponse> CreateBackupPlanOutcome;
+                typedef std::future<CreateBackupPlanOutcome> CreateBackupPlanOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::CreateBackupPlanRequest&, CreateBackupPlanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBackupPlanAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateBaseBackupResponse> CreateBaseBackupOutcome;
                 typedef std::future<CreateBaseBackupOutcome> CreateBaseBackupOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::CreateBaseBackupRequest&, CreateBaseBackupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBaseBackupAsyncHandler;
@@ -291,6 +306,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteAccountResponse> DeleteAccountOutcome;
                 typedef std::future<DeleteAccountOutcome> DeleteAccountOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DeleteAccountRequest&, DeleteAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAccountAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteBackupPlanResponse> DeleteBackupPlanOutcome;
+                typedef std::future<DeleteBackupPlanOutcome> DeleteBackupPlanOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::DeleteBackupPlanRequest&, DeleteBackupPlanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBackupPlanAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteBaseBackupResponse> DeleteBaseBackupOutcome;
                 typedef std::future<DeleteBaseBackupOutcome> DeleteBaseBackupOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DeleteBaseBackupRequest&, DeleteBaseBackupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBaseBackupAsyncHandler;
@@ -360,6 +378,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDBInstanceParametersResponse> DescribeDBInstanceParametersOutcome;
                 typedef std::future<DescribeDBInstanceParametersOutcome> DescribeDBInstanceParametersOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DescribeDBInstanceParametersRequest&, DescribeDBInstanceParametersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstanceParametersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDBInstanceSSLConfigResponse> DescribeDBInstanceSSLConfigOutcome;
+                typedef std::future<DescribeDBInstanceSSLConfigOutcome> DescribeDBInstanceSSLConfigOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::DescribeDBInstanceSSLConfigRequest&, DescribeDBInstanceSSLConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstanceSSLConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDBInstanceSecurityGroupsResponse> DescribeDBInstanceSecurityGroupsOutcome;
                 typedef std::future<DescribeDBInstanceSecurityGroupsOutcome> DescribeDBInstanceSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DescribeDBInstanceSecurityGroupsRequest&, DescribeDBInstanceSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstanceSecurityGroupsAsyncHandler;
@@ -426,6 +447,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSlowQueryListResponse> DescribeSlowQueryListOutcome;
                 typedef std::future<DescribeSlowQueryListOutcome> DescribeSlowQueryListOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DescribeSlowQueryListRequest&, DescribeSlowQueryListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSlowQueryListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTasksResponse> DescribeTasksOutcome;
+                typedef std::future<DescribeTasksOutcome> DescribeTasksOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::DescribeTasksRequest&, DescribeTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTasksAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeZonesResponse> DescribeZonesOutcome;
                 typedef std::future<DescribeZonesOutcome> DescribeZonesOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::DescribeZonesRequest&, DescribeZonesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeZonesAsyncHandler;
@@ -486,6 +510,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDBInstanceReadOnlyGroupResponse> ModifyDBInstanceReadOnlyGroupOutcome;
                 typedef std::future<ModifyDBInstanceReadOnlyGroupOutcome> ModifyDBInstanceReadOnlyGroupOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::ModifyDBInstanceReadOnlyGroupRequest&, ModifyDBInstanceReadOnlyGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceReadOnlyGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDBInstanceSSLConfigResponse> ModifyDBInstanceSSLConfigOutcome;
+                typedef std::future<ModifyDBInstanceSSLConfigOutcome> ModifyDBInstanceSSLConfigOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::ModifyDBInstanceSSLConfigRequest&, ModifyDBInstanceSSLConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceSSLConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDBInstanceSecurityGroupsResponse> ModifyDBInstanceSecurityGroupsOutcome;
                 typedef std::future<ModifyDBInstanceSecurityGroupsOutcome> ModifyDBInstanceSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::ModifyDBInstanceSecurityGroupsRequest&, ModifyDBInstanceSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceSecurityGroupsAsyncHandler;
@@ -504,6 +531,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyParameterTemplateResponse> ModifyParameterTemplateOutcome;
                 typedef std::future<ModifyParameterTemplateOutcome> ModifyParameterTemplateOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::ModifyParameterTemplateRequest&, ModifyParameterTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyParameterTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyReadOnlyDBInstanceWeightResponse> ModifyReadOnlyDBInstanceWeightOutcome;
+                typedef std::future<ModifyReadOnlyDBInstanceWeightOutcome> ModifyReadOnlyDBInstanceWeightOutcomeCallable;
+                typedef std::function<void(const PostgresClient*, const Model::ModifyReadOnlyDBInstanceWeightRequest&, ModifyReadOnlyDBInstanceWeightOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyReadOnlyDBInstanceWeightAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyReadOnlyGroupConfigResponse> ModifyReadOnlyGroupConfigOutcome;
                 typedef std::future<ModifyReadOnlyGroupConfigOutcome> ModifyReadOnlyGroupConfigOutcomeCallable;
                 typedef std::function<void(const PostgresClient*, const Model::ModifyReadOnlyGroupConfigRequest&, ModifyReadOnlyGroupConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyReadOnlyGroupConfigAsyncHandler;
@@ -599,6 +629,15 @@ namespace TencentCloud
                 CreateAccountOutcome CreateAccount(const Model::CreateAccountRequest &request);
                 void CreateAccountAsync(const Model::CreateAccountRequest& request, const CreateAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAccountOutcomeCallable CreateAccountCallable(const Model::CreateAccountRequest& request);
+
+                /**
+                 *此接口用于创建备份策略。
+                 * @param req CreateBackupPlanRequest
+                 * @return CreateBackupPlanOutcome
+                 */
+                CreateBackupPlanOutcome CreateBackupPlan(const Model::CreateBackupPlanRequest &request);
+                void CreateBackupPlanAsync(const Model::CreateBackupPlanRequest& request, const CreateBackupPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateBackupPlanOutcomeCallable CreateBackupPlanCallable(const Model::CreateBackupPlanRequest& request);
 
                 /**
                  *本接口（CreateBaseBackup）用于创建实例的数据备份。
@@ -700,6 +739,15 @@ namespace TencentCloud
                 DeleteAccountOutcome DeleteAccount(const Model::DeleteAccountRequest &request);
                 void DeleteAccountAsync(const Model::DeleteAccountRequest& request, const DeleteAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteAccountOutcomeCallable DeleteAccountCallable(const Model::DeleteAccountRequest& request);
+
+                /**
+                 *删除备份策略
+                 * @param req DeleteBackupPlanRequest
+                 * @return DeleteBackupPlanOutcome
+                 */
+                DeleteBackupPlanOutcome DeleteBackupPlan(const Model::DeleteBackupPlanRequest &request);
+                void DeleteBackupPlanAsync(const Model::DeleteBackupPlanRequest& request, const DeleteBackupPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteBackupPlanOutcomeCallable DeleteBackupPlanCallable(const Model::DeleteBackupPlanRequest& request);
 
                 /**
                  *本接口（DeleteBaseBackup）用于删除实例指定数据备份。
@@ -911,6 +959,15 @@ namespace TencentCloud
                 DescribeDBInstanceParametersOutcomeCallable DescribeDBInstanceParametersCallable(const Model::DescribeDBInstanceParametersRequest& request);
 
                 /**
+                 *本接口用于查询实例SSL状态
+                 * @param req DescribeDBInstanceSSLConfigRequest
+                 * @return DescribeDBInstanceSSLConfigOutcome
+                 */
+                DescribeDBInstanceSSLConfigOutcome DescribeDBInstanceSSLConfig(const Model::DescribeDBInstanceSSLConfigRequest &request);
+                void DescribeDBInstanceSSLConfigAsync(const Model::DescribeDBInstanceSSLConfigRequest& request, const DescribeDBInstanceSSLConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBInstanceSSLConfigOutcomeCallable DescribeDBInstanceSSLConfigCallable(const Model::DescribeDBInstanceSSLConfigRequest& request);
+
+                /**
                  *本接口（DescribeDBInstanceSecurityGroups）用于查询实例安全组。
                  * @param req DescribeDBInstanceSecurityGroupsRequest
                  * @return DescribeDBInstanceSecurityGroupsOutcome
@@ -1109,6 +1166,16 @@ namespace TencentCloud
                 DescribeSlowQueryListOutcomeCallable DescribeSlowQueryListCallable(const Model::DescribeSlowQueryListRequest& request);
 
                 /**
+                 *本接口（DescribeTasks）用于查询任务列表，展示异步任务的执行进度。
+注：本接口中展示的步骤为总结性步骤，可能伴随着版本迭代进行调整，不建议作为关键逻辑使用
+                 * @param req DescribeTasksRequest
+                 * @return DescribeTasksOutcome
+                 */
+                DescribeTasksOutcome DescribeTasks(const Model::DescribeTasksRequest &request);
+                void DescribeTasksAsync(const Model::DescribeTasksRequest& request, const DescribeTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTasksOutcomeCallable DescribeTasksCallable(const Model::DescribeTasksRequest& request);
+
+                /**
                  *本接口 (DescribeZones) 用于查询支持的可用区信息。
                  * @param req DescribeZonesRequest
                  * @return DescribeZonesOutcome
@@ -1291,6 +1358,15 @@ namespace TencentCloud
                 ModifyDBInstanceReadOnlyGroupOutcomeCallable ModifyDBInstanceReadOnlyGroupCallable(const Model::ModifyDBInstanceReadOnlyGroupRequest& request);
 
                 /**
+                 *本接口用于修改实例SSL配置，功能包含开启、关闭、修改SSL证书保护的连接地址。
+                 * @param req ModifyDBInstanceSSLConfigRequest
+                 * @return ModifyDBInstanceSSLConfigOutcome
+                 */
+                ModifyDBInstanceSSLConfigOutcome ModifyDBInstanceSSLConfig(const Model::ModifyDBInstanceSSLConfigRequest &request);
+                void ModifyDBInstanceSSLConfigAsync(const Model::ModifyDBInstanceSSLConfigRequest& request, const ModifyDBInstanceSSLConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDBInstanceSSLConfigOutcomeCallable ModifyDBInstanceSSLConfigCallable(const Model::ModifyDBInstanceSSLConfigRequest& request);
+
+                /**
                  *本接口（ModifyDBInstanceSecurityGroups）用于修改实例安全组。
                  * @param req ModifyDBInstanceSecurityGroupsRequest
                  * @return ModifyDBInstanceSecurityGroupsOutcome
@@ -1343,6 +1419,15 @@ namespace TencentCloud
                 ModifyParameterTemplateOutcome ModifyParameterTemplate(const Model::ModifyParameterTemplateRequest &request);
                 void ModifyParameterTemplateAsync(const Model::ModifyParameterTemplateRequest& request, const ModifyParameterTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyParameterTemplateOutcomeCallable ModifyParameterTemplateCallable(const Model::ModifyParameterTemplateRequest& request);
+
+                /**
+                 *本接口（ModifyReadOnlyDBInstanceWeight）用于修改只读实例权重
+                 * @param req ModifyReadOnlyDBInstanceWeightRequest
+                 * @return ModifyReadOnlyDBInstanceWeightOutcome
+                 */
+                ModifyReadOnlyDBInstanceWeightOutcome ModifyReadOnlyDBInstanceWeight(const Model::ModifyReadOnlyDBInstanceWeightRequest &request);
+                void ModifyReadOnlyDBInstanceWeightAsync(const Model::ModifyReadOnlyDBInstanceWeightRequest& request, const ModifyReadOnlyDBInstanceWeightAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyReadOnlyDBInstanceWeightOutcomeCallable ModifyReadOnlyDBInstanceWeightCallable(const Model::ModifyReadOnlyDBInstanceWeightRequest& request);
 
                 /**
                  *本接口(ModifyReadOnlyGroupConfig)用于更新只读组配置信息

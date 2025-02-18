@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取证书可配置域名数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DomainNumber 证书可配置域名数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDomainNumber() const;
 
                     /**
                      * 设置证书可配置域名数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _domainNumber 证书可配置域名数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDomainNumber(const std::string& _domainNumber);
@@ -173,18 +169,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否是国密证书
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SMCert 是否是国密证书
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSMCert() const;
 
                     /**
                      * 设置是否是国密证书
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sMCert 是否是国密证书
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSMCert(const int64_t& _sMCert);
@@ -198,18 +190,14 @@ namespace TencentCloud
 
                     /**
                      * 获取公司类型，取值：1（个人）；2（公司）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CompanyType 公司类型，取值：1（个人）；2（公司）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCompanyType() const;
 
                     /**
                      * 设置公司类型，取值：1（个人）；2（公司）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _companyType 公司类型，取值：1（个人）；2（公司）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCompanyType(const int64_t& _companyType);
@@ -225,7 +213,6 @@ namespace TencentCloud
 
                     /**
                      * 证书可配置域名数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_domainNumber;
                     bool m_domainNumberHasBeenSet;
@@ -260,14 +247,12 @@ namespace TencentCloud
 
                     /**
                      * 是否是国密证书
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sMCert;
                     bool m_sMCertHasBeenSet;
 
                     /**
                      * 公司类型，取值：1（个人）；2（公司）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_companyType;
                     bool m_companyTypeHasBeenSet;

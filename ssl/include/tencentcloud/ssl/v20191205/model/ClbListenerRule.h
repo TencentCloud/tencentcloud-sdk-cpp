@@ -112,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则已绑定的证书数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Certificate 规则已绑定的证书数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Certificate GetCertificate() const;
 
                     /**
                      * 设置规则已绑定的证书数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _certificate 规则已绑定的证书数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCertificate(const Certificate& _certificate);
@@ -137,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取不匹配域名列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NoMatchDomains 不匹配域名列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetNoMatchDomains() const;
 
                     /**
                      * 设置不匹配域名列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _noMatchDomains 不匹配域名列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNoMatchDomains(const std::vector<std::string>& _noMatchDomains);
@@ -162,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则绑定的路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Url 规则绑定的路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置规则绑定的路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _url 规则绑定的路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -207,21 +195,18 @@ namespace TencentCloud
 
                     /**
                      * 规则已绑定的证书数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Certificate m_certificate;
                     bool m_certificateHasBeenSet;
 
                     /**
                      * 不匹配域名列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_noMatchDomains;
                     bool m_noMatchDomainsHasBeenSet;
 
                     /**
                      * 规则绑定的路径
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;

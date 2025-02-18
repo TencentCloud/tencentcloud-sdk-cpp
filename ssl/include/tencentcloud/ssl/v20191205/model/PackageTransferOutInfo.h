@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取转入的PackageID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReceivePackageId 转入的PackageID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReceivePackageId() const;
 
                     /**
                      * 设置转入的PackageID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _receivePackageId 转入的PackageID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReceivePackageId(const std::string& _receivePackageId);
@@ -220,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取接收者uin。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReceiverUin 接收者uin。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetReceiverUin() const;
 
                     /**
                      * 设置接收者uin。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _receiverUin 接收者uin。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReceiverUin(const uint64_t& _receiverUin);
@@ -245,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取接收时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReceiveTime 接收时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReceiveTime() const;
 
                     /**
                      * 设置接收时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _receiveTime 接收时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReceiveTime(const std::string& _receiveTime);
@@ -290,7 +278,6 @@ namespace TencentCloud
 
                     /**
                      * 转入的PackageID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_receivePackageId;
                     bool m_receivePackageIdHasBeenSet;
@@ -321,14 +308,12 @@ namespace TencentCloud
 
                     /**
                      * 接收者uin。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_receiverUin;
                     bool m_receiverUinHasBeenSet;
 
                     /**
                      * 接收时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_receiveTime;
                     bool m_receiveTimeHasBeenSet;

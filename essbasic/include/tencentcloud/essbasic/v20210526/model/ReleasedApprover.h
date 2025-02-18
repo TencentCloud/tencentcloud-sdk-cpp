@@ -282,18 +282,18 @@ namespace TencentCloud
 
                     /**
                      * 获取第三方平台子客企业的唯一标识，定义Agent中的ProxyOrganizationOpenId一样, 可以参考<a href="https://qian.tencent.com/developers/partnerApis/dataTypes/#agent" target="_blank">Agent结构体</a>。
-当为子客企业指定经办人时，此OrganizationOpenId必传。
+<font color="red">当为子客企业指定经办人时，此OrganizationOpenId必传。</font>
                      * @return OrganizationOpenId 第三方平台子客企业的唯一标识，定义Agent中的ProxyOrganizationOpenId一样, 可以参考<a href="https://qian.tencent.com/developers/partnerApis/dataTypes/#agent" target="_blank">Agent结构体</a>。
-当为子客企业指定经办人时，此OrganizationOpenId必传。
+<font color="red">当为子客企业指定经办人时，此OrganizationOpenId必传。</font>
                      * 
                      */
                     std::string GetOrganizationOpenId() const;
 
                     /**
                      * 设置第三方平台子客企业的唯一标识，定义Agent中的ProxyOrganizationOpenId一样, 可以参考<a href="https://qian.tencent.com/developers/partnerApis/dataTypes/#agent" target="_blank">Agent结构体</a>。
-当为子客企业指定经办人时，此OrganizationOpenId必传。
+<font color="red">当为子客企业指定经办人时，此OrganizationOpenId必传。</font>
                      * @param _organizationOpenId 第三方平台子客企业的唯一标识，定义Agent中的ProxyOrganizationOpenId一样, 可以参考<a href="https://qian.tencent.com/developers/partnerApis/dataTypes/#agent" target="_blank">Agent结构体</a>。
-当为子客企业指定经办人时，此OrganizationOpenId必传。
+<font color="red">当为子客企业指定经办人时，此OrganizationOpenId必传。</font>
                      * 
                      */
                     void SetOrganizationOpenId(const std::string& _organizationOpenId);
@@ -307,18 +307,18 @@ namespace TencentCloud
 
                     /**
                      * 获取第三方平台子客企业员工的唯一标识，长度不能超过64，只能由字母和数字组成。
-当签署方为同一第三方平台下的员工时，此OpenId必传。
+<font color="red">当签署方为同一第三方平台下的员工时，此OpenId必传。</font>
                      * @return OpenId 第三方平台子客企业员工的唯一标识，长度不能超过64，只能由字母和数字组成。
-当签署方为同一第三方平台下的员工时，此OpenId必传。
+<font color="red">当签署方为同一第三方平台下的员工时，此OpenId必传。</font>
                      * 
                      */
                     std::string GetOpenId() const;
 
                     /**
                      * 设置第三方平台子客企业员工的唯一标识，长度不能超过64，只能由字母和数字组成。
-当签署方为同一第三方平台下的员工时，此OpenId必传。
+<font color="red">当签署方为同一第三方平台下的员工时，此OpenId必传。</font>
                      * @param _openId 第三方平台子客企业员工的唯一标识，长度不能超过64，只能由字母和数字组成。
-当签署方为同一第三方平台下的员工时，此OpenId必传。
+<font color="red">当签署方为同一第三方平台下的员工时，此OpenId必传。</font>
                      * 
                      */
                     void SetOpenId(const std::string& _openId);
@@ -479,14 +479,14 @@ namespace TencentCloud
 
                     /**
                      * 第三方平台子客企业的唯一标识，定义Agent中的ProxyOrganizationOpenId一样, 可以参考<a href="https://qian.tencent.com/developers/partnerApis/dataTypes/#agent" target="_blank">Agent结构体</a>。
-当为子客企业指定经办人时，此OrganizationOpenId必传。
+<font color="red">当为子客企业指定经办人时，此OrganizationOpenId必传。</font>
                      */
                     std::string m_organizationOpenId;
                     bool m_organizationOpenIdHasBeenSet;
 
                     /**
                      * 第三方平台子客企业员工的唯一标识，长度不能超过64，只能由字母和数字组成。
-当签署方为同一第三方平台下的员工时，此OpenId必传。
+<font color="red">当签署方为同一第三方平台下的员工时，此OpenId必传。</font>
                      */
                     std::string m_openId;
                     bool m_openIdHasBeenSet;

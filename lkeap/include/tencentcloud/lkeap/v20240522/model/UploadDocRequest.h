@@ -66,19 +66,19 @@ namespace TencentCloud
                     bool KnowledgeBaseIdHasBeenSet() const;
 
                     /**
-                     * 获取文件名，可选。
-**需带文件类型后缀**，当文件名无法从传入的`FileUrl`获取时需要通过该字段来明确。
-                     * @return FileName 文件名，可选。
-**需带文件类型后缀**，当文件名无法从传入的`FileUrl`获取时需要通过该字段来明确。
+                     * 获取文件名。
+**需带文件类型后缀**
+                     * @return FileName 文件名。
+**需带文件类型后缀**
                      * 
                      */
                     std::string GetFileName() const;
 
                     /**
-                     * 设置文件名，可选。
-**需带文件类型后缀**，当文件名无法从传入的`FileUrl`获取时需要通过该字段来明确。
-                     * @param _fileName 文件名，可选。
-**需带文件类型后缀**，当文件名无法从传入的`FileUrl`获取时需要通过该字段来明确。
+                     * 设置文件名。
+**需带文件类型后缀**
+                     * @param _fileName 文件名。
+**需带文件类型后缀**
                      * 
                      */
                     void SetFileName(const std::string& _fileName);
@@ -248,8 +248,8 @@ namespace TencentCloud
                     bool m_knowledgeBaseIdHasBeenSet;
 
                     /**
-                     * 文件名，可选。
-**需带文件类型后缀**，当文件名无法从传入的`FileUrl`获取时需要通过该字段来明确。
+                     * 文件名。
+**需带文件类型后缀**
                      */
                     std::string m_fileName;
                     bool m_fileNameHasBeenSet;

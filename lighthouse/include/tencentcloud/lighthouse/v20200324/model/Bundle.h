@@ -366,18 +366,14 @@ namespace TencentCloud
 
                     /**
                      * 获取套餐类型描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BundleTypeDescription 套餐类型描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBundleTypeDescription() const;
 
                     /**
                      * 设置套餐类型描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bundleTypeDescription 套餐类型描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBundleTypeDescription(const std::string& _bundleTypeDescription);
@@ -519,7 +515,6 @@ namespace TencentCloud
 
                     /**
                      * 套餐类型描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bundleTypeDescription;
                     bool m_bundleTypeDescriptionHasBeenSet;

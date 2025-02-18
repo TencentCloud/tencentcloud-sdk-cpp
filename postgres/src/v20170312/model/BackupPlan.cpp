@@ -24,7 +24,14 @@ BackupPlan::BackupPlan() :
     m_backupPeriodHasBeenSet(false),
     m_baseBackupRetentionPeriodHasBeenSet(false),
     m_minBackupStartTimeHasBeenSet(false),
-    m_maxBackupStartTimeHasBeenSet(false)
+    m_maxBackupStartTimeHasBeenSet(false),
+    m_planIdHasBeenSet(false),
+    m_planNameHasBeenSet(false),
+    m_logBackupRetentionPeriodHasBeenSet(false),
+    m_createdTimeHasBeenSet(false),
+    m_updatedTimeHasBeenSet(false),
+    m_planTypeHasBeenSet(false),
+    m_backupPeriodTypeHasBeenSet(false)
 {
 }
 
@@ -73,6 +80,76 @@ CoreInternalOutcome BackupPlan::Deserialize(const rapidjson::Value &value)
         m_maxBackupStartTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("PlanId") && !value["PlanId"].IsNull())
+    {
+        if (!value["PlanId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupPlan.PlanId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_planId = string(value["PlanId"].GetString());
+        m_planIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("PlanName") && !value["PlanName"].IsNull())
+    {
+        if (!value["PlanName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupPlan.PlanName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_planName = string(value["PlanName"].GetString());
+        m_planNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("LogBackupRetentionPeriod") && !value["LogBackupRetentionPeriod"].IsNull())
+    {
+        if (!value["LogBackupRetentionPeriod"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupPlan.LogBackupRetentionPeriod` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_logBackupRetentionPeriod = value["LogBackupRetentionPeriod"].GetUint64();
+        m_logBackupRetentionPeriodHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreatedTime") && !value["CreatedTime"].IsNull())
+    {
+        if (!value["CreatedTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupPlan.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createdTime = string(value["CreatedTime"].GetString());
+        m_createdTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpdatedTime") && !value["UpdatedTime"].IsNull())
+    {
+        if (!value["UpdatedTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupPlan.UpdatedTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updatedTime = string(value["UpdatedTime"].GetString());
+        m_updatedTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("PlanType") && !value["PlanType"].IsNull())
+    {
+        if (!value["PlanType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupPlan.PlanType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_planType = string(value["PlanType"].GetString());
+        m_planTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("BackupPeriodType") && !value["BackupPeriodType"].IsNull())
+    {
+        if (!value["BackupPeriodType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupPlan.BackupPeriodType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_backupPeriodType = string(value["BackupPeriodType"].GetString());
+        m_backupPeriodTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +187,62 @@ void BackupPlan::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "MaxBackupStartTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_maxBackupStartTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_planIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PlanId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_planId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_planNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PlanName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_planName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_logBackupRetentionPeriodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogBackupRetentionPeriod";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_logBackupRetentionPeriod, allocator);
+    }
+
+    if (m_createdTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreatedTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createdTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updatedTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdatedTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updatedTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_planTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PlanType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_planType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_backupPeriodTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupPeriodType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_backupPeriodType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +310,117 @@ void BackupPlan::SetMaxBackupStartTime(const string& _maxBackupStartTime)
 bool BackupPlan::MaxBackupStartTimeHasBeenSet() const
 {
     return m_maxBackupStartTimeHasBeenSet;
+}
+
+string BackupPlan::GetPlanId() const
+{
+    return m_planId;
+}
+
+void BackupPlan::SetPlanId(const string& _planId)
+{
+    m_planId = _planId;
+    m_planIdHasBeenSet = true;
+}
+
+bool BackupPlan::PlanIdHasBeenSet() const
+{
+    return m_planIdHasBeenSet;
+}
+
+string BackupPlan::GetPlanName() const
+{
+    return m_planName;
+}
+
+void BackupPlan::SetPlanName(const string& _planName)
+{
+    m_planName = _planName;
+    m_planNameHasBeenSet = true;
+}
+
+bool BackupPlan::PlanNameHasBeenSet() const
+{
+    return m_planNameHasBeenSet;
+}
+
+uint64_t BackupPlan::GetLogBackupRetentionPeriod() const
+{
+    return m_logBackupRetentionPeriod;
+}
+
+void BackupPlan::SetLogBackupRetentionPeriod(const uint64_t& _logBackupRetentionPeriod)
+{
+    m_logBackupRetentionPeriod = _logBackupRetentionPeriod;
+    m_logBackupRetentionPeriodHasBeenSet = true;
+}
+
+bool BackupPlan::LogBackupRetentionPeriodHasBeenSet() const
+{
+    return m_logBackupRetentionPeriodHasBeenSet;
+}
+
+string BackupPlan::GetCreatedTime() const
+{
+    return m_createdTime;
+}
+
+void BackupPlan::SetCreatedTime(const string& _createdTime)
+{
+    m_createdTime = _createdTime;
+    m_createdTimeHasBeenSet = true;
+}
+
+bool BackupPlan::CreatedTimeHasBeenSet() const
+{
+    return m_createdTimeHasBeenSet;
+}
+
+string BackupPlan::GetUpdatedTime() const
+{
+    return m_updatedTime;
+}
+
+void BackupPlan::SetUpdatedTime(const string& _updatedTime)
+{
+    m_updatedTime = _updatedTime;
+    m_updatedTimeHasBeenSet = true;
+}
+
+bool BackupPlan::UpdatedTimeHasBeenSet() const
+{
+    return m_updatedTimeHasBeenSet;
+}
+
+string BackupPlan::GetPlanType() const
+{
+    return m_planType;
+}
+
+void BackupPlan::SetPlanType(const string& _planType)
+{
+    m_planType = _planType;
+    m_planTypeHasBeenSet = true;
+}
+
+bool BackupPlan::PlanTypeHasBeenSet() const
+{
+    return m_planTypeHasBeenSet;
+}
+
+string BackupPlan::GetBackupPeriodType() const
+{
+    return m_backupPeriodType;
+}
+
+void BackupPlan::SetBackupPeriodType(const string& _backupPeriodType)
+{
+    m_backupPeriodType = _backupPeriodType;
+    m_backupPeriodTypeHasBeenSet = true;
+}
+
+bool BackupPlan::BackupPeriodTypeHasBeenSet() const
+{
+    return m_backupPeriodTypeHasBeenSet;
 }
 

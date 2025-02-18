@@ -683,6 +683,27 @@ namespace TencentCloud
                      */
                     bool EnableRecommendedQuestionsHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启深度阅读，默认是false，在值为true时，会返回深度阅读的结果信息。说明:1.深度阅读需要开启插件增强,即设置EnableEnhancement为true,当设置EnableDeepRead为true时EnableEnhancement默认为true；2.目前暂时只支持单文档单轮的深度阅读；3.深度阅读功能的文件上传可以使用FilesUploads接口，具体参数详见FilesUploads接口文档
+                     * @return EnableDeepRead 是否开启深度阅读，默认是false，在值为true时，会返回深度阅读的结果信息。说明:1.深度阅读需要开启插件增强,即设置EnableEnhancement为true,当设置EnableDeepRead为true时EnableEnhancement默认为true；2.目前暂时只支持单文档单轮的深度阅读；3.深度阅读功能的文件上传可以使用FilesUploads接口，具体参数详见FilesUploads接口文档
+                     * 
+                     */
+                    bool GetEnableDeepRead() const;
+
+                    /**
+                     * 设置是否开启深度阅读，默认是false，在值为true时，会返回深度阅读的结果信息。说明:1.深度阅读需要开启插件增强,即设置EnableEnhancement为true,当设置EnableDeepRead为true时EnableEnhancement默认为true；2.目前暂时只支持单文档单轮的深度阅读；3.深度阅读功能的文件上传可以使用FilesUploads接口，具体参数详见FilesUploads接口文档
+                     * @param _enableDeepRead 是否开启深度阅读，默认是false，在值为true时，会返回深度阅读的结果信息。说明:1.深度阅读需要开启插件增强,即设置EnableEnhancement为true,当设置EnableDeepRead为true时EnableEnhancement默认为true；2.目前暂时只支持单文档单轮的深度阅读；3.深度阅读功能的文件上传可以使用FilesUploads接口，具体参数详见FilesUploads接口文档
+                     * 
+                     */
+                    void SetEnableDeepRead(const bool& _enableDeepRead);
+
+                    /**
+                     * 判断参数 EnableDeepRead 是否已赋值
+                     * @return EnableDeepRead 是否已赋值
+                     * 
+                     */
+                    bool EnableDeepReadHasBeenSet() const;
+
                 private:
 
                     /**
@@ -858,6 +879,12 @@ namespace TencentCloud
                      */
                     bool m_enableRecommendedQuestions;
                     bool m_enableRecommendedQuestionsHasBeenSet;
+
+                    /**
+                     * 是否开启深度阅读，默认是false，在值为true时，会返回深度阅读的结果信息。说明:1.深度阅读需要开启插件增强,即设置EnableEnhancement为true,当设置EnableDeepRead为true时EnableEnhancement默认为true；2.目前暂时只支持单文档单轮的深度阅读；3.深度阅读功能的文件上传可以使用FilesUploads接口，具体参数详见FilesUploads接口文档
+                     */
+                    bool m_enableDeepRead;
+                    bool m_enableDeepReadHasBeenSet;
 
                 };
             }

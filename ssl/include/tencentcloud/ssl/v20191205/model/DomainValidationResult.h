@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取域名验证类型。 取值为：DNS、FILE、DNS_AUTO、DNS_PROXY、FILE_PROXY
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VerifyType 域名验证类型。 取值为：DNS、FILE、DNS_AUTO、DNS_PROXY、FILE_PROXY
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVerifyType() const;
 
                     /**
                      * 设置域名验证类型。 取值为：DNS、FILE、DNS_AUTO、DNS_PROXY、FILE_PROXY
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _verifyType 域名验证类型。 取值为：DNS、FILE、DNS_AUTO、DNS_PROXY、FILE_PROXY
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVerifyType(const std::string& _verifyType);
@@ -140,18 +136,14 @@ namespace TencentCloud
 
                     /**
                      * 获取检查失败原因。状态LocalCheck的具体描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LocalCheckFailReason 检查失败原因。状态LocalCheck的具体描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLocalCheckFailReason() const;
 
                     /**
                      * 设置检查失败原因。状态LocalCheck的具体描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _localCheckFailReason 检查失败原因。状态LocalCheck的具体描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLocalCheckFailReason(const std::string& _localCheckFailReason);
@@ -165,18 +157,14 @@ namespace TencentCloud
 
                     /**
                      * 获取检查到的值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CheckValue 检查到的值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetCheckValue() const;
 
                     /**
                      * 设置检查到的值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _checkValue 检查到的值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCheckValue(const std::vector<std::string>& _checkValue);
@@ -240,7 +228,6 @@ namespace TencentCloud
 
                     /**
                      * 域名验证类型。 取值为：DNS、FILE、DNS_AUTO、DNS_PROXY、FILE_PROXY
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_verifyType;
                     bool m_verifyTypeHasBeenSet;
@@ -260,14 +247,12 @@ namespace TencentCloud
 
                     /**
                      * 检查失败原因。状态LocalCheck的具体描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_localCheckFailReason;
                     bool m_localCheckFailReasonHasBeenSet;
 
                     /**
                      * 检查到的值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_checkValue;
                     bool m_checkValueHasBeenSet;

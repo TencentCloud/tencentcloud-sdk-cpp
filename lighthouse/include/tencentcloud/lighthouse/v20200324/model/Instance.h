@@ -781,18 +781,14 @@ FAILED：表示操作失败
 
                     /**
                      * 获取实例违规详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceViolationDetail 实例违规详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     InstanceViolationDetail GetInstanceViolationDetail() const;
 
                     /**
                      * 设置实例违规详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceViolationDetail 实例违规详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceViolationDetail(const InstanceViolationDetail& _instanceViolationDetail);
@@ -1013,7 +1009,6 @@ FAILED：表示操作失败
 
                     /**
                      * 实例违规详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     InstanceViolationDetail m_instanceViolationDetail;
                     bool m_instanceViolationDetailHasBeenSet;

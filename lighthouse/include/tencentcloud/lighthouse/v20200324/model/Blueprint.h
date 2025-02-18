@@ -375,18 +375,14 @@ namespace TencentCloud
 
                     /**
                      * 获取CVM镜像共享到轻量应用服务器轻量应用服务器后的CVM镜像ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageId CVM镜像共享到轻量应用服务器轻量应用服务器后的CVM镜像ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetImageId() const;
 
                     /**
                      * 设置CVM镜像共享到轻量应用服务器轻量应用服务器后的CVM镜像ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _imageId CVM镜像共享到轻量应用服务器轻量应用服务器后的CVM镜像ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetImageId(const std::string& _imageId);
@@ -442,18 +438,14 @@ namespace TencentCloud
 
                     /**
                      * 获取镜像关联使用场景Id列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SceneIdSet 镜像关联使用场景Id列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetSceneIdSet() const;
 
                     /**
                      * 设置镜像关联使用场景Id列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sceneIdSet 镜像关联使用场景Id列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSceneIdSet(const std::vector<std::string>& _sceneIdSet);
@@ -608,7 +600,6 @@ namespace TencentCloud
 
                     /**
                      * CVM镜像共享到轻量应用服务器轻量应用服务器后的CVM镜像ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_imageId;
                     bool m_imageIdHasBeenSet;
@@ -627,7 +618,6 @@ namespace TencentCloud
 
                     /**
                      * 镜像关联使用场景Id列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_sceneIdSet;
                     bool m_sceneIdSetHasBeenSet;

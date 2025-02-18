@@ -91,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取CLB监听器列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Listeners CLB监听器列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ClbListener> GetListeners() const;
 
                     /**
                      * 设置CLB监听器列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _listeners CLB监听器列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetListeners(const std::vector<ClbListener>& _listeners);
@@ -130,7 +126,6 @@ namespace TencentCloud
 
                     /**
                      * CLB监听器列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ClbListener> m_listeners;
                     bool m_listenersHasBeenSet;

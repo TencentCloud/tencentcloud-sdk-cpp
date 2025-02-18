@@ -255,6 +255,49 @@ PostgresClient::CreateAccountOutcomeCallable PostgresClient::CreateAccountCallab
     return task->get_future();
 }
 
+PostgresClient::CreateBackupPlanOutcome PostgresClient::CreateBackupPlan(const CreateBackupPlanRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateBackupPlan");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateBackupPlanResponse rsp = CreateBackupPlanResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateBackupPlanOutcome(rsp);
+        else
+            return CreateBackupPlanOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateBackupPlanOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::CreateBackupPlanAsync(const CreateBackupPlanRequest& request, const CreateBackupPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateBackupPlan(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::CreateBackupPlanOutcomeCallable PostgresClient::CreateBackupPlanCallable(const CreateBackupPlanRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateBackupPlanOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateBackupPlan(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PostgresClient::CreateBaseBackupOutcome PostgresClient::CreateBaseBackup(const CreateBaseBackupRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateBaseBackup");
@@ -721,6 +764,49 @@ PostgresClient::DeleteAccountOutcomeCallable PostgresClient::DeleteAccountCallab
         [this, request]()
         {
             return this->DeleteAccount(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PostgresClient::DeleteBackupPlanOutcome PostgresClient::DeleteBackupPlan(const DeleteBackupPlanRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteBackupPlan");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteBackupPlanResponse rsp = DeleteBackupPlanResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteBackupPlanOutcome(rsp);
+        else
+            return DeleteBackupPlanOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteBackupPlanOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::DeleteBackupPlanAsync(const DeleteBackupPlanRequest& request, const DeleteBackupPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteBackupPlan(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::DeleteBackupPlanOutcomeCallable PostgresClient::DeleteBackupPlanCallable(const DeleteBackupPlanRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteBackupPlanOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteBackupPlan(request);
         }
     );
 
@@ -1717,6 +1803,49 @@ PostgresClient::DescribeDBInstanceParametersOutcomeCallable PostgresClient::Desc
     return task->get_future();
 }
 
+PostgresClient::DescribeDBInstanceSSLConfigOutcome PostgresClient::DescribeDBInstanceSSLConfig(const DescribeDBInstanceSSLConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBInstanceSSLConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBInstanceSSLConfigResponse rsp = DescribeDBInstanceSSLConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBInstanceSSLConfigOutcome(rsp);
+        else
+            return DescribeDBInstanceSSLConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBInstanceSSLConfigOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::DescribeDBInstanceSSLConfigAsync(const DescribeDBInstanceSSLConfigRequest& request, const DescribeDBInstanceSSLConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDBInstanceSSLConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::DescribeDBInstanceSSLConfigOutcomeCallable PostgresClient::DescribeDBInstanceSSLConfigCallable(const DescribeDBInstanceSSLConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDBInstanceSSLConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDBInstanceSSLConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PostgresClient::DescribeDBInstanceSecurityGroupsOutcome PostgresClient::DescribeDBInstanceSecurityGroups(const DescribeDBInstanceSecurityGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDBInstanceSecurityGroups");
@@ -2663,6 +2792,49 @@ PostgresClient::DescribeSlowQueryListOutcomeCallable PostgresClient::DescribeSlo
     return task->get_future();
 }
 
+PostgresClient::DescribeTasksOutcome PostgresClient::DescribeTasks(const DescribeTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTasksResponse rsp = DescribeTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTasksOutcome(rsp);
+        else
+            return DescribeTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTasksOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::DescribeTasksAsync(const DescribeTasksRequest& request, const DescribeTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTasks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::DescribeTasksOutcomeCallable PostgresClient::DescribeTasksCallable(const DescribeTasksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTasksOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTasks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PostgresClient::DescribeZonesOutcome PostgresClient::DescribeZones(const DescribeZonesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeZones");
@@ -3523,6 +3695,49 @@ PostgresClient::ModifyDBInstanceReadOnlyGroupOutcomeCallable PostgresClient::Mod
     return task->get_future();
 }
 
+PostgresClient::ModifyDBInstanceSSLConfigOutcome PostgresClient::ModifyDBInstanceSSLConfig(const ModifyDBInstanceSSLConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDBInstanceSSLConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDBInstanceSSLConfigResponse rsp = ModifyDBInstanceSSLConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDBInstanceSSLConfigOutcome(rsp);
+        else
+            return ModifyDBInstanceSSLConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDBInstanceSSLConfigOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::ModifyDBInstanceSSLConfigAsync(const ModifyDBInstanceSSLConfigRequest& request, const ModifyDBInstanceSSLConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDBInstanceSSLConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::ModifyDBInstanceSSLConfigOutcomeCallable PostgresClient::ModifyDBInstanceSSLConfigCallable(const ModifyDBInstanceSSLConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDBInstanceSSLConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDBInstanceSSLConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PostgresClient::ModifyDBInstanceSecurityGroupsOutcome PostgresClient::ModifyDBInstanceSecurityGroups(const ModifyDBInstanceSecurityGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDBInstanceSecurityGroups");
@@ -3774,6 +3989,49 @@ PostgresClient::ModifyParameterTemplateOutcomeCallable PostgresClient::ModifyPar
         [this, request]()
         {
             return this->ModifyParameterTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PostgresClient::ModifyReadOnlyDBInstanceWeightOutcome PostgresClient::ModifyReadOnlyDBInstanceWeight(const ModifyReadOnlyDBInstanceWeightRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyReadOnlyDBInstanceWeight");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyReadOnlyDBInstanceWeightResponse rsp = ModifyReadOnlyDBInstanceWeightResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyReadOnlyDBInstanceWeightOutcome(rsp);
+        else
+            return ModifyReadOnlyDBInstanceWeightOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyReadOnlyDBInstanceWeightOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::ModifyReadOnlyDBInstanceWeightAsync(const ModifyReadOnlyDBInstanceWeightRequest& request, const ModifyReadOnlyDBInstanceWeightAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyReadOnlyDBInstanceWeight(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::ModifyReadOnlyDBInstanceWeightOutcomeCallable PostgresClient::ModifyReadOnlyDBInstanceWeightCallable(const ModifyReadOnlyDBInstanceWeightRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyReadOnlyDBInstanceWeightOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyReadOnlyDBInstanceWeight(request);
         }
     );
 

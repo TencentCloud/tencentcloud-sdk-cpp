@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取对外绑定IP，默认0.0.0.0
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ip 对外绑定IP，默认0.0.0.0
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置对外绑定IP，默认0.0.0.0
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ip 对外绑定IP，默认0.0.0.0
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIp(const std::string& _ip);
@@ -115,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取协议，默认tcp，支持tcp/udp/sctp
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Protocol 协议，默认tcp，支持tcp/udp/sctp
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置协议，默认tcp，支持tcp/udp/sctp
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _protocol 协议，默认tcp，支持tcp/udp/sctp
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -154,14 +146,12 @@ namespace TencentCloud
 
                     /**
                      * 对外绑定IP，默认0.0.0.0
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;
 
                     /**
                      * 协议，默认tcp，支持tcp/udp/sctp
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;

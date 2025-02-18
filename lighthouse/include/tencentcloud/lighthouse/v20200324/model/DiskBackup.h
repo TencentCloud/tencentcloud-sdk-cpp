@@ -211,18 +211,14 @@ namespace TencentCloud
 
                     /**
                      * 获取上一次操作
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LatestOperation 上一次操作
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLatestOperation() const;
 
                     /**
                      * 设置上一次操作
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _latestOperation 上一次操作
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLatestOperation(const std::string& _latestOperation);
@@ -236,18 +232,14 @@ namespace TencentCloud
 
                     /**
                      * 获取上一次操作状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LatestOperationState 上一次操作状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLatestOperationState() const;
 
                     /**
                      * 设置上一次操作状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _latestOperationState 上一次操作状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLatestOperationState(const std::string& _latestOperationState);
@@ -261,18 +253,14 @@ namespace TencentCloud
 
                     /**
                      * 获取上一次请求ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LatestOperationRequestId 上一次请求ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLatestOperationRequestId() const;
 
                     /**
                      * 设置上一次请求ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _latestOperationRequestId 上一次请求ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLatestOperationRequestId(const std::string& _latestOperationRequestId);
@@ -359,21 +347,18 @@ namespace TencentCloud
 
                     /**
                      * 上一次操作
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_latestOperation;
                     bool m_latestOperationHasBeenSet;
 
                     /**
                      * 上一次操作状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_latestOperationState;
                     bool m_latestOperationStateHasBeenSet;
 
                     /**
                      * 上一次请求ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_latestOperationRequestId;
                     bool m_latestOperationRequestIdHasBeenSet;
