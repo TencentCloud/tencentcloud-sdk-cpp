@@ -40,6 +40,49 @@ WedataClient::WedataClient(const Credential &credential, const string &region, c
 }
 
 
+WedataClient::AddProjectUserRoleOutcome WedataClient::AddProjectUserRole(const AddProjectUserRoleRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddProjectUserRole");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddProjectUserRoleResponse rsp = AddProjectUserRoleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddProjectUserRoleOutcome(rsp);
+        else
+            return AddProjectUserRoleOutcome(o.GetError());
+    }
+    else
+    {
+        return AddProjectUserRoleOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::AddProjectUserRoleAsync(const AddProjectUserRoleRequest& request, const AddProjectUserRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddProjectUserRole(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::AddProjectUserRoleOutcomeCallable WedataClient::AddProjectUserRoleCallable(const AddProjectUserRoleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddProjectUserRoleOutcome()>>(
+        [this, request]()
+        {
+            return this->AddProjectUserRole(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WedataClient::BatchCreateIntegrationTaskAlarmsOutcome WedataClient::BatchCreateIntegrationTaskAlarms(const BatchCreateIntegrationTaskAlarmsRequest &request)
 {
     auto outcome = MakeRequest(request, "BatchCreateIntegrationTaskAlarms");

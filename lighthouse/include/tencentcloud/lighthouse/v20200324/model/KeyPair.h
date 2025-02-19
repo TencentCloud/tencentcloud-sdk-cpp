@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取密钥对关联的实例 ID 列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssociatedInstanceIds 密钥对关联的实例 ID 列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetAssociatedInstanceIds() const;
 
                     /**
                      * 设置密钥对关联的实例 ID 列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _associatedInstanceIds 密钥对关联的实例 ID 列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAssociatedInstanceIds(const std::vector<std::string>& _associatedInstanceIds);
@@ -206,7 +202,6 @@ namespace TencentCloud
 
                     /**
                      * 密钥对关联的实例 ID 列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_associatedInstanceIds;
                     bool m_associatedInstanceIdsHasBeenSet;

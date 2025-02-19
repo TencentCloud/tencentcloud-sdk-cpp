@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取云资源更新任务ID
+                     * 获取云资源更新任务ID， DeployRecordId为0表示任务进行中， 重复请求这个接口， 当返回DeployRecordId大于0则表示任务创建成功。 未创建成功则会抛出异常
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DeployRecordId 云资源更新任务ID
+                     * @return DeployRecordId 云资源更新任务ID， DeployRecordId为0表示任务进行中， 重复请求这个接口， 当返回DeployRecordId大于0则表示任务创建成功。 未创建成功则会抛出异常
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -93,7 +93,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 云资源更新任务ID
+                     * 云资源更新任务ID， DeployRecordId为0表示任务进行中， 重复请求这个接口， 当返回DeployRecordId大于0则表示任务创建成功。 未创建成功则会抛出异常
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_deployRecordId;

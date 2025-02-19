@@ -27,7 +27,8 @@ QuestionSplitOCRRequest::QuestionSplitOCRRequest() :
     m_imageBase64HasBeenSet(false),
     m_isPdfHasBeenSet(false),
     m_pdfPageNumberHasBeenSet(false),
-    m_enableImageCropHasBeenSet(false)
+    m_enableImageCropHasBeenSet(false),
+    m_enableOnlyDetectBorderHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string QuestionSplitOCRRequest::ToJsonString() const
         string key = "EnableImageCrop";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableImageCrop, allocator);
+    }
+
+    if (m_enableOnlyDetectBorderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableOnlyDetectBorder";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableOnlyDetectBorder, allocator);
     }
 
 
@@ -164,6 +173,22 @@ void QuestionSplitOCRRequest::SetEnableImageCrop(const bool& _enableImageCrop)
 bool QuestionSplitOCRRequest::EnableImageCropHasBeenSet() const
 {
     return m_enableImageCropHasBeenSet;
+}
+
+bool QuestionSplitOCRRequest::GetEnableOnlyDetectBorder() const
+{
+    return m_enableOnlyDetectBorder;
+}
+
+void QuestionSplitOCRRequest::SetEnableOnlyDetectBorder(const bool& _enableOnlyDetectBorder)
+{
+    m_enableOnlyDetectBorder = _enableOnlyDetectBorder;
+    m_enableOnlyDetectBorderHasBeenSet = true;
+}
+
+bool QuestionSplitOCRRequest::EnableOnlyDetectBorderHasBeenSet() const
+{
+    return m_enableOnlyDetectBorderHasBeenSet;
 }
 
 

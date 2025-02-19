@@ -40,6 +40,49 @@ MqttClient::MqttClient(const Credential &credential, const string &region, const
 }
 
 
+MqttClient::ActivateCaCertificateOutcome MqttClient::ActivateCaCertificate(const ActivateCaCertificateRequest &request)
+{
+    auto outcome = MakeRequest(request, "ActivateCaCertificate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ActivateCaCertificateResponse rsp = ActivateCaCertificateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ActivateCaCertificateOutcome(rsp);
+        else
+            return ActivateCaCertificateOutcome(o.GetError());
+    }
+    else
+    {
+        return ActivateCaCertificateOutcome(outcome.GetError());
+    }
+}
+
+void MqttClient::ActivateCaCertificateAsync(const ActivateCaCertificateRequest& request, const ActivateCaCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ActivateCaCertificate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MqttClient::ActivateCaCertificateOutcomeCallable MqttClient::ActivateCaCertificateCallable(const ActivateCaCertificateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ActivateCaCertificateOutcome()>>(
+        [this, request]()
+        {
+            return this->ActivateCaCertificate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MqttClient::ActivateDeviceCertificateOutcome MqttClient::ActivateDeviceCertificate(const ActivateDeviceCertificateRequest &request)
 {
     auto outcome = MakeRequest(request, "ActivateDeviceCertificate");
@@ -76,6 +119,49 @@ MqttClient::ActivateDeviceCertificateOutcomeCallable MqttClient::ActivateDeviceC
         [this, request]()
         {
             return this->ActivateDeviceCertificate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MqttClient::ApplyRegistrationCodeOutcome MqttClient::ApplyRegistrationCode(const ApplyRegistrationCodeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ApplyRegistrationCode");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ApplyRegistrationCodeResponse rsp = ApplyRegistrationCodeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ApplyRegistrationCodeOutcome(rsp);
+        else
+            return ApplyRegistrationCodeOutcome(o.GetError());
+    }
+    else
+    {
+        return ApplyRegistrationCodeOutcome(outcome.GetError());
+    }
+}
+
+void MqttClient::ApplyRegistrationCodeAsync(const ApplyRegistrationCodeRequest& request, const ApplyRegistrationCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ApplyRegistrationCode(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MqttClient::ApplyRegistrationCodeOutcomeCallable MqttClient::ApplyRegistrationCodeCallable(const ApplyRegistrationCodeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ApplyRegistrationCodeOutcome()>>(
+        [this, request]()
+        {
+            return this->ApplyRegistrationCode(request);
         }
     );
 
@@ -384,6 +470,49 @@ MqttClient::CreateUserOutcomeCallable MqttClient::CreateUserCallable(const Creat
     return task->get_future();
 }
 
+MqttClient::DeactivateCaCertificateOutcome MqttClient::DeactivateCaCertificate(const DeactivateCaCertificateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeactivateCaCertificate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeactivateCaCertificateResponse rsp = DeactivateCaCertificateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeactivateCaCertificateOutcome(rsp);
+        else
+            return DeactivateCaCertificateOutcome(o.GetError());
+    }
+    else
+    {
+        return DeactivateCaCertificateOutcome(outcome.GetError());
+    }
+}
+
+void MqttClient::DeactivateCaCertificateAsync(const DeactivateCaCertificateRequest& request, const DeactivateCaCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeactivateCaCertificate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MqttClient::DeactivateCaCertificateOutcomeCallable MqttClient::DeactivateCaCertificateCallable(const DeactivateCaCertificateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeactivateCaCertificateOutcome()>>(
+        [this, request]()
+        {
+            return this->DeactivateCaCertificate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MqttClient::DeactivateDeviceCertificateOutcome MqttClient::DeactivateDeviceCertificate(const DeactivateDeviceCertificateRequest &request)
 {
     auto outcome = MakeRequest(request, "DeactivateDeviceCertificate");
@@ -506,6 +635,49 @@ MqttClient::DeleteAuthorizationPolicyOutcomeCallable MqttClient::DeleteAuthoriza
         [this, request]()
         {
             return this->DeleteAuthorizationPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MqttClient::DeleteCaCertificateOutcome MqttClient::DeleteCaCertificate(const DeleteCaCertificateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCaCertificate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCaCertificateResponse rsp = DeleteCaCertificateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCaCertificateOutcome(rsp);
+        else
+            return DeleteCaCertificateOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCaCertificateOutcome(outcome.GetError());
+    }
+}
+
+void MqttClient::DeleteCaCertificateAsync(const DeleteCaCertificateRequest& request, const DeleteCaCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCaCertificate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MqttClient::DeleteCaCertificateOutcomeCallable MqttClient::DeleteCaCertificateCallable(const DeleteCaCertificateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCaCertificateOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCaCertificate(request);
         }
     );
 
@@ -807,6 +979,92 @@ MqttClient::DescribeAuthorizationPoliciesOutcomeCallable MqttClient::DescribeAut
         [this, request]()
         {
             return this->DescribeAuthorizationPolicies(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MqttClient::DescribeCaCertificateOutcome MqttClient::DescribeCaCertificate(const DescribeCaCertificateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCaCertificate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCaCertificateResponse rsp = DescribeCaCertificateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCaCertificateOutcome(rsp);
+        else
+            return DescribeCaCertificateOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCaCertificateOutcome(outcome.GetError());
+    }
+}
+
+void MqttClient::DescribeCaCertificateAsync(const DescribeCaCertificateRequest& request, const DescribeCaCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCaCertificate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MqttClient::DescribeCaCertificateOutcomeCallable MqttClient::DescribeCaCertificateCallable(const DescribeCaCertificateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCaCertificateOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCaCertificate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MqttClient::DescribeCaCertificatesOutcome MqttClient::DescribeCaCertificates(const DescribeCaCertificatesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCaCertificates");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCaCertificatesResponse rsp = DescribeCaCertificatesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCaCertificatesOutcome(rsp);
+        else
+            return DescribeCaCertificatesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCaCertificatesOutcome(outcome.GetError());
+    }
+}
+
+void MqttClient::DescribeCaCertificatesAsync(const DescribeCaCertificatesRequest& request, const DescribeCaCertificatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCaCertificates(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MqttClient::DescribeCaCertificatesOutcomeCallable MqttClient::DescribeCaCertificatesCallable(const DescribeCaCertificatesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCaCertificatesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCaCertificates(request);
         }
     );
 
@@ -1287,6 +1545,49 @@ MqttClient::ModifyInstanceOutcomeCallable MqttClient::ModifyInstanceCallable(con
     return task->get_future();
 }
 
+MqttClient::ModifyInstanceCertBindingOutcome MqttClient::ModifyInstanceCertBinding(const ModifyInstanceCertBindingRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInstanceCertBinding");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInstanceCertBindingResponse rsp = ModifyInstanceCertBindingResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInstanceCertBindingOutcome(rsp);
+        else
+            return ModifyInstanceCertBindingOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInstanceCertBindingOutcome(outcome.GetError());
+    }
+}
+
+void MqttClient::ModifyInstanceCertBindingAsync(const ModifyInstanceCertBindingRequest& request, const ModifyInstanceCertBindingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyInstanceCertBinding(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MqttClient::ModifyInstanceCertBindingOutcomeCallable MqttClient::ModifyInstanceCertBindingCallable(const ModifyInstanceCertBindingRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyInstanceCertBindingOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyInstanceCertBinding(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MqttClient::ModifyJWKSAuthenticatorOutcome MqttClient::ModifyJWKSAuthenticator(const ModifyJWKSAuthenticatorRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyJWKSAuthenticator");
@@ -1452,6 +1753,49 @@ MqttClient::ModifyUserOutcomeCallable MqttClient::ModifyUserCallable(const Modif
         [this, request]()
         {
             return this->ModifyUser(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MqttClient::RegisterCaCertificateOutcome MqttClient::RegisterCaCertificate(const RegisterCaCertificateRequest &request)
+{
+    auto outcome = MakeRequest(request, "RegisterCaCertificate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RegisterCaCertificateResponse rsp = RegisterCaCertificateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RegisterCaCertificateOutcome(rsp);
+        else
+            return RegisterCaCertificateOutcome(o.GetError());
+    }
+    else
+    {
+        return RegisterCaCertificateOutcome(outcome.GetError());
+    }
+}
+
+void MqttClient::RegisterCaCertificateAsync(const RegisterCaCertificateRequest& request, const RegisterCaCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RegisterCaCertificate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MqttClient::RegisterCaCertificateOutcomeCallable MqttClient::RegisterCaCertificateCallable(const RegisterCaCertificateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RegisterCaCertificateOutcome()>>(
+        [this, request]()
+        {
+            return this->RegisterCaCertificate(request);
         }
     );
 

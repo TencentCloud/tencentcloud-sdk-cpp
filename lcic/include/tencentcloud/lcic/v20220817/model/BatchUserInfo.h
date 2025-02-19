@@ -73,18 +73,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserId 用户ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userId 用户ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserId(const std::string& _userId);
@@ -98,18 +94,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户在客户系统的Id。 若用户注册时该字段为空，则默认为 UserId 值一致。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OriginId 用户在客户系统的Id。 若用户注册时该字段为空，则默认为 UserId 值一致。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOriginId() const;
 
                     /**
                      * 设置用户在客户系统的Id。 若用户注册时该字段为空，则默认为 UserId 值一致。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _originId 用户在客户系统的Id。 若用户注册时该字段为空，则默认为 UserId 值一致。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOriginId(const std::string& _originId);
@@ -132,14 +124,12 @@ namespace TencentCloud
 
                     /**
                      * 用户ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
 
                     /**
                      * 用户在客户系统的Id。 若用户注册时该字段为空，则默认为 UserId 值一致。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_originId;
                     bool m_originIdHasBeenSet;

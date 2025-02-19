@@ -147,6 +147,27 @@ namespace TencentCloud
                      */
                     bool EnableImageCropHasBeenSet() const;
 
+                    /**
+                     * 获取是否只返回检测框，默认false
+                     * @return EnableOnlyDetectBorder 是否只返回检测框，默认false
+                     * 
+                     */
+                    bool GetEnableOnlyDetectBorder() const;
+
+                    /**
+                     * 设置是否只返回检测框，默认false
+                     * @param _enableOnlyDetectBorder 是否只返回检测框，默认false
+                     * 
+                     */
+                    void SetEnableOnlyDetectBorder(const bool& _enableOnlyDetectBorder);
+
+                    /**
+                     * 判断参数 EnableOnlyDetectBorder 是否已赋值
+                     * @return EnableOnlyDetectBorder 是否已赋值
+                     * 
+                     */
+                    bool EnableOnlyDetectBorderHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +199,12 @@ namespace TencentCloud
                      */
                     bool m_enableImageCrop;
                     bool m_enableImageCropHasBeenSet;
+
+                    /**
+                     * 是否只返回检测框，默认false
+                     */
+                    bool m_enableOnlyDetectBorder;
+                    bool m_enableOnlyDetectBorderHasBeenSet;
 
                 };
             }

@@ -49,27 +49,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取结束标志位，可能为 stop、 sensitive或者tool_calls。
+                     * 获取结束标志位，可能为 stop、 content_filter。
 stop 表示输出正常结束。
-sensitive 只在开启流式输出审核时会出现，表示安全审核未通过。
-tool_calls 标识函数调用。
-                     * @return FinishReason 结束标志位，可能为 stop、 sensitive或者tool_calls。
+content_filter 只在开启流式输出审核时会出现，表示安全审核未通过。
+                     * @return FinishReason 结束标志位，可能为 stop、 content_filter。
 stop 表示输出正常结束。
-sensitive 只在开启流式输出审核时会出现，表示安全审核未通过。
-tool_calls 标识函数调用。
+content_filter 只在开启流式输出审核时会出现，表示安全审核未通过。
                      * 
                      */
                     std::string GetFinishReason() const;
 
                     /**
-                     * 设置结束标志位，可能为 stop、 sensitive或者tool_calls。
+                     * 设置结束标志位，可能为 stop、 content_filter。
 stop 表示输出正常结束。
-sensitive 只在开启流式输出审核时会出现，表示安全审核未通过。
-tool_calls 标识函数调用。
-                     * @param _finishReason 结束标志位，可能为 stop、 sensitive或者tool_calls。
+content_filter 只在开启流式输出审核时会出现，表示安全审核未通过。
+                     * @param _finishReason 结束标志位，可能为 stop、 content_filter。
 stop 表示输出正常结束。
-sensitive 只在开启流式输出审核时会出现，表示安全审核未通过。
-tool_calls 标识函数调用。
+content_filter 只在开启流式输出审核时会出现，表示安全审核未通过。
                      * 
                      */
                     void SetFinishReason(const std::string& _finishReason);
@@ -147,10 +143,9 @@ tool_calls 标识函数调用。
                 private:
 
                     /**
-                     * 结束标志位，可能为 stop、 sensitive或者tool_calls。
+                     * 结束标志位，可能为 stop、 content_filter。
 stop 表示输出正常结束。
-sensitive 只在开启流式输出审核时会出现，表示安全审核未通过。
-tool_calls 标识函数调用。
+content_filter 只在开启流式输出审核时会出现，表示安全审核未通过。
                      */
                     std::string m_finishReason;
                     bool m_finishReasonHasBeenSet;

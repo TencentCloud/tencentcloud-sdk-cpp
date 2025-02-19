@@ -47,6 +47,10 @@
 #include <tencentcloud/mna/v20210119/model/DeleteQosResponse.h>
 #include <tencentcloud/mna/v20210119/model/DescribeQosRequest.h>
 #include <tencentcloud/mna/v20210119/model/DescribeQosResponse.h>
+#include <tencentcloud/mna/v20210119/model/DownloadActiveDeviceCountRequest.h>
+#include <tencentcloud/mna/v20210119/model/DownloadActiveDeviceCountResponse.h>
+#include <tencentcloud/mna/v20210119/model/GetActiveDeviceCountRequest.h>
+#include <tencentcloud/mna/v20210119/model/GetActiveDeviceCountResponse.h>
 #include <tencentcloud/mna/v20210119/model/GetDeviceRequest.h>
 #include <tencentcloud/mna/v20210119/model/GetDeviceResponse.h>
 #include <tencentcloud/mna/v20210119/model/GetDevicePayModeRequest.h>
@@ -155,6 +159,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeQosResponse> DescribeQosOutcome;
                 typedef std::future<DescribeQosOutcome> DescribeQosOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::DescribeQosRequest&, DescribeQosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeQosAsyncHandler;
+                typedef Outcome<Core::Error, Model::DownloadActiveDeviceCountResponse> DownloadActiveDeviceCountOutcome;
+                typedef std::future<DownloadActiveDeviceCountOutcome> DownloadActiveDeviceCountOutcomeCallable;
+                typedef std::function<void(const MnaClient*, const Model::DownloadActiveDeviceCountRequest&, DownloadActiveDeviceCountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DownloadActiveDeviceCountAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetActiveDeviceCountResponse> GetActiveDeviceCountOutcome;
+                typedef std::future<GetActiveDeviceCountOutcome> GetActiveDeviceCountOutcomeCallable;
+                typedef std::function<void(const MnaClient*, const Model::GetActiveDeviceCountRequest&, GetActiveDeviceCountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetActiveDeviceCountAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetDeviceResponse> GetDeviceOutcome;
                 typedef std::future<GetDeviceOutcome> GetDeviceOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::GetDeviceRequest&, GetDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetDeviceAsyncHandler;
@@ -358,6 +368,24 @@ namespace TencentCloud
                 DescribeQosOutcome DescribeQos(const Model::DescribeQosRequest &request);
                 void DescribeQosAsync(const Model::DescribeQosRequest& request, const DescribeQosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeQosOutcomeCallable DescribeQosCallable(const Model::DescribeQosRequest& request);
+
+                /**
+                 *下载活跃设备数量统计
+                 * @param req DownloadActiveDeviceCountRequest
+                 * @return DownloadActiveDeviceCountOutcome
+                 */
+                DownloadActiveDeviceCountOutcome DownloadActiveDeviceCount(const Model::DownloadActiveDeviceCountRequest &request);
+                void DownloadActiveDeviceCountAsync(const Model::DownloadActiveDeviceCountRequest& request, const DownloadActiveDeviceCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DownloadActiveDeviceCountOutcomeCallable DownloadActiveDeviceCountCallable(const Model::DownloadActiveDeviceCountRequest& request);
+
+                /**
+                 *活跃设备数量统计
+                 * @param req GetActiveDeviceCountRequest
+                 * @return GetActiveDeviceCountOutcome
+                 */
+                GetActiveDeviceCountOutcome GetActiveDeviceCount(const Model::GetActiveDeviceCountRequest &request);
+                void GetActiveDeviceCountAsync(const Model::GetActiveDeviceCountRequest& request, const GetActiveDeviceCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetActiveDeviceCountOutcomeCallable GetActiveDeviceCountCallable(const Model::GetActiveDeviceCountRequest& request);
 
                 /**
                  *通过指定设备的ID查找设备详细信息

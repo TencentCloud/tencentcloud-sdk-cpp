@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/wedata/v20210820/model/AddProjectUserRoleRequest.h>
+#include <tencentcloud/wedata/v20210820/model/AddProjectUserRoleResponse.h>
 #include <tencentcloud/wedata/v20210820/model/BatchCreateIntegrationTaskAlarmsRequest.h>
 #include <tencentcloud/wedata/v20210820/model/BatchCreateIntegrationTaskAlarmsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/BatchCreateTaskVersionAsyncRequest.h>
@@ -519,6 +521,9 @@ namespace TencentCloud
                 WedataClient(const Credential &credential, const std::string &region);
                 WedataClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::AddProjectUserRoleResponse> AddProjectUserRoleOutcome;
+                typedef std::future<AddProjectUserRoleOutcome> AddProjectUserRoleOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::AddProjectUserRoleRequest&, AddProjectUserRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddProjectUserRoleAsyncHandler;
                 typedef Outcome<Core::Error, Model::BatchCreateIntegrationTaskAlarmsResponse> BatchCreateIntegrationTaskAlarmsOutcome;
                 typedef std::future<BatchCreateIntegrationTaskAlarmsOutcome> BatchCreateIntegrationTaskAlarmsOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::BatchCreateIntegrationTaskAlarmsRequest&, BatchCreateIntegrationTaskAlarmsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchCreateIntegrationTaskAlarmsAsyncHandler;
@@ -1244,6 +1249,15 @@ namespace TencentCloud
                 typedef std::function<void(const WedataClient*, const Model::UploadResourceRequest&, UploadResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadResourceAsyncHandler;
 
 
+
+                /**
+                 *添加项目用户角色
+                 * @param req AddProjectUserRoleRequest
+                 * @return AddProjectUserRoleOutcome
+                 */
+                AddProjectUserRoleOutcome AddProjectUserRole(const Model::AddProjectUserRoleRequest &request);
+                void AddProjectUserRoleAsync(const Model::AddProjectUserRoleRequest& request, const AddProjectUserRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddProjectUserRoleOutcomeCallable AddProjectUserRoleCallable(const Model::AddProjectUserRoleRequest& request);
 
                 /**
                  *批量创建任务告警规则

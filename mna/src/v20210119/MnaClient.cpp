@@ -556,6 +556,92 @@ MnaClient::DescribeQosOutcomeCallable MnaClient::DescribeQosCallable(const Descr
     return task->get_future();
 }
 
+MnaClient::DownloadActiveDeviceCountOutcome MnaClient::DownloadActiveDeviceCount(const DownloadActiveDeviceCountRequest &request)
+{
+    auto outcome = MakeRequest(request, "DownloadActiveDeviceCount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DownloadActiveDeviceCountResponse rsp = DownloadActiveDeviceCountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DownloadActiveDeviceCountOutcome(rsp);
+        else
+            return DownloadActiveDeviceCountOutcome(o.GetError());
+    }
+    else
+    {
+        return DownloadActiveDeviceCountOutcome(outcome.GetError());
+    }
+}
+
+void MnaClient::DownloadActiveDeviceCountAsync(const DownloadActiveDeviceCountRequest& request, const DownloadActiveDeviceCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DownloadActiveDeviceCount(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MnaClient::DownloadActiveDeviceCountOutcomeCallable MnaClient::DownloadActiveDeviceCountCallable(const DownloadActiveDeviceCountRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DownloadActiveDeviceCountOutcome()>>(
+        [this, request]()
+        {
+            return this->DownloadActiveDeviceCount(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MnaClient::GetActiveDeviceCountOutcome MnaClient::GetActiveDeviceCount(const GetActiveDeviceCountRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetActiveDeviceCount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetActiveDeviceCountResponse rsp = GetActiveDeviceCountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetActiveDeviceCountOutcome(rsp);
+        else
+            return GetActiveDeviceCountOutcome(o.GetError());
+    }
+    else
+    {
+        return GetActiveDeviceCountOutcome(outcome.GetError());
+    }
+}
+
+void MnaClient::GetActiveDeviceCountAsync(const GetActiveDeviceCountRequest& request, const GetActiveDeviceCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetActiveDeviceCount(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MnaClient::GetActiveDeviceCountOutcomeCallable MnaClient::GetActiveDeviceCountCallable(const GetActiveDeviceCountRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetActiveDeviceCountOutcome()>>(
+        [this, request]()
+        {
+            return this->GetActiveDeviceCount(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MnaClient::GetDeviceOutcome MnaClient::GetDevice(const GetDeviceRequest &request)
 {
     auto outcome = MakeRequest(request, "GetDevice");
