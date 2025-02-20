@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取微信openid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Openid 微信openid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOpenid() const;
 
                     /**
                      * 设置微信openid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _openid 微信openid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOpenid(const std::string& _openid);
@@ -94,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取微信昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Nickname 微信昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNickname() const;
 
                     /**
                      * 设置微信昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nickname 微信昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNickname(const std::string& _nickname);
@@ -119,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -144,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Code 码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCode() const;
 
                     /**
                      * 设置码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _code 码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCode(const std::string& _code);
@@ -169,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取企业ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CorpId 企业ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCorpId() const;
 
                     /**
                      * 设置企业ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _corpId 企业ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCorpId(const int64_t& _corpId);
@@ -194,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取商户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MerchantId 商户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMerchantId() const;
 
                     /**
                      * 设置商户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _merchantId 商户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMerchantId(const std::string& _merchantId);
@@ -219,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取商品ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductId 商品ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置商品ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _productId 商品ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProductId(const std::string& _productId);
@@ -244,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取ip地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ip ip地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置ip地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ip ip地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIp(const std::string& _ip);
@@ -269,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取国家
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Country 国家
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCountry() const;
 
                     /**
                      * 设置国家
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _country 国家
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCountry(const std::string& _country);
@@ -294,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取省份
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Province 省份
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProvince() const;
 
                     /**
                      * 设置省份
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _province 省份
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProvince(const std::string& _province);
@@ -319,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取城市
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return City 城市
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCity() const;
 
                     /**
                      * 设置城市
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _city 城市
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCity(const std::string& _city);
@@ -344,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取县/区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return District 县/区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDistrict() const;
 
                     /**
                      * 设置县/区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _district 县/区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDistrict(const std::string& _district);
@@ -369,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取微信 unionid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Unionid 微信 unionid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUnionid() const;
 
                     /**
                      * 设置微信 unionid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _unionid 微信 unionid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUnionid(const std::string& _unionid);
@@ -394,18 +342,14 @@ namespace TencentCloud
 
                     /**
                      * 获取首次扫码 0:否, 1:是
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return First 首次扫码 0:否, 1:是
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFirst() const;
 
                     /**
                      * 设置首次扫码 0:否, 1:是
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _first 首次扫码 0:否, 1:是
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFirst(const int64_t& _first);
@@ -419,18 +363,14 @@ namespace TencentCloud
 
                     /**
                      * 获取批次ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BatchId 批次ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBatchId() const;
 
                     /**
                      * 设置批次ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _batchId 批次ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBatchId(const std::string& _batchId);
@@ -465,18 +405,14 @@ namespace TencentCloud
 
                     /**
                      * 获取商户名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MerchantName 商户名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMerchantName() const;
 
                     /**
                      * 设置商户名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _merchantName 商户名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMerchantName(const std::string& _merchantName);
@@ -490,18 +426,14 @@ namespace TencentCloud
 
                     /**
                      * 获取产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductName 产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProductName() const;
 
                     /**
                      * 设置产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _productName 产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProductName(const std::string& _productName);
@@ -515,18 +447,14 @@ namespace TencentCloud
 
                     /**
                      * 获取产品Logo
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductLogo 产品Logo
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProductLogo() const;
 
                     /**
                      * 设置产品Logo
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _productLogo 产品Logo
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProductLogo(const std::string& _productLogo);
@@ -598,105 +526,90 @@ namespace TencentCloud
 
                     /**
                      * 微信openid
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_openid;
                     bool m_openidHasBeenSet;
 
                     /**
                      * 微信昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nickname;
                     bool m_nicknameHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_code;
                     bool m_codeHasBeenSet;
 
                     /**
                      * 企业ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_corpId;
                     bool m_corpIdHasBeenSet;
 
                     /**
                      * 商户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_merchantId;
                     bool m_merchantIdHasBeenSet;
 
                     /**
                      * 商品ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_productId;
                     bool m_productIdHasBeenSet;
 
                     /**
                      * ip地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;
 
                     /**
                      * 国家
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_country;
                     bool m_countryHasBeenSet;
 
                     /**
                      * 省份
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_province;
                     bool m_provinceHasBeenSet;
 
                     /**
                      * 城市
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_city;
                     bool m_cityHasBeenSet;
 
                     /**
                      * 县/区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_district;
                     bool m_districtHasBeenSet;
 
                     /**
                      * 微信 unionid
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_unionid;
                     bool m_unionidHasBeenSet;
 
                     /**
                      * 首次扫码 0:否, 1:是
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_first;
                     bool m_firstHasBeenSet;
 
                     /**
                      * 批次ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_batchId;
                     bool m_batchIdHasBeenSet;
@@ -709,21 +622,18 @@ namespace TencentCloud
 
                     /**
                      * 商户名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_merchantName;
                     bool m_merchantNameHasBeenSet;
 
                     /**
                      * 产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_productName;
                     bool m_productNameHasBeenSet;
 
                     /**
                      * 产品Logo
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_productLogo;
                     bool m_productLogoHasBeenSet;

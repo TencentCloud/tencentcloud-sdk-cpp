@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取录制信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecordInfo 录制信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RecordInfo> GetRecordInfo() const;
@@ -92,7 +90,6 @@ namespace TencentCloud
 
                     /**
                      * 录制信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RecordInfo> m_recordInfo;
                     bool m_recordInfoHasBeenSet;

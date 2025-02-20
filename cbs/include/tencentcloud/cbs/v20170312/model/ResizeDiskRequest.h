@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询。
-                     * @return DiskId 云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询。
+                     * 获取云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询。该字段仅供单块云硬盘扩容时传入。
+                     * @return DiskId 云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询。该字段仅供单块云硬盘扩容时传入。
                      * 
                      */
                     std::string GetDiskId() const;
 
                     /**
-                     * 设置云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询。
-                     * @param _diskId 云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询。
+                     * 设置云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询。该字段仅供单块云硬盘扩容时传入。
+                     * @param _diskId 云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询。该字段仅供单块云硬盘扩容时传入。
                      * 
                      */
                     void SetDiskId(const std::string& _diskId);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_diskSizeHasBeenSet;
 
                     /**
-                     * 云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询。
+                     * 云硬盘ID， 通过[DescribeDisks](/document/product/362/16315)接口查询。该字段仅供单块云硬盘扩容时传入。
                      */
                     std::string m_diskId;
                     bool m_diskIdHasBeenSet;

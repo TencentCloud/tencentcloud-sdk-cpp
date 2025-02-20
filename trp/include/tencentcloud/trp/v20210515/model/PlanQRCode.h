@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取二维码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Url 二维码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置二维码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _url 二维码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取状态，0:未激活 1:已激活 2:已冻结
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 状态，0:未激活 1:已激活 2:已冻结
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置状态，0:未激活 1:已激活 2:已冻结
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 状态，0:未激活 1:已激活 2:已冻结
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 二维码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
 
                     /**
                      * 状态，0:未激活 1:已激活 2:已冻结
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;

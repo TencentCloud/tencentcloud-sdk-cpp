@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取码列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Codes 码列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CodeItem> GetCodes() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 码列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CodeItem> m_codes;
                     bool m_codesHasBeenSet;

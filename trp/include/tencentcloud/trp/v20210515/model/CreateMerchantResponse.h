@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取商户标识码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MerchantId 商户标识码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMerchantId() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 商户标识码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_merchantId;
                     bool m_merchantIdHasBeenSet;

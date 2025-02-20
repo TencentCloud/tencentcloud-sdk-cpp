@@ -47,7 +47,9 @@ SingleInvoiceItem::SingleInvoiceItem() :
     m_medicalHospitalizedInvoiceHasBeenSet(false),
     m_vatSalesListHasBeenSet(false),
     m_electronicTrainTicketFullHasBeenSet(false),
-    m_electronicFlightTicketFullHasBeenSet(false)
+    m_electronicFlightTicketFullHasBeenSet(false),
+    m_taxPaymentHasBeenSet(false),
+    m_customsPaymentReceiptHasBeenSet(false)
 {
 }
 
@@ -515,6 +517,40 @@ CoreInternalOutcome SingleInvoiceItem::Deserialize(const rapidjson::Value &value
         m_electronicFlightTicketFullHasBeenSet = true;
     }
 
+    if (value.HasMember("TaxPayment") && !value["TaxPayment"].IsNull())
+    {
+        if (!value["TaxPayment"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SingleInvoiceItem.TaxPayment` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_taxPayment.Deserialize(value["TaxPayment"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_taxPaymentHasBeenSet = true;
+    }
+
+    if (value.HasMember("CustomsPaymentReceipt") && !value["CustomsPaymentReceipt"].IsNull())
+    {
+        if (!value["CustomsPaymentReceipt"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SingleInvoiceItem.CustomsPaymentReceipt` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_customsPaymentReceipt.Deserialize(value["CustomsPaymentReceipt"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_customsPaymentReceiptHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -763,6 +799,24 @@ void SingleInvoiceItem::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_electronicFlightTicketFull.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_taxPaymentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaxPayment";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_taxPayment.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_customsPaymentReceiptHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomsPaymentReceipt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_customsPaymentReceipt.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1198,5 +1252,37 @@ void SingleInvoiceItem::SetElectronicFlightTicketFull(const ElectronicFlightTick
 bool SingleInvoiceItem::ElectronicFlightTicketFullHasBeenSet() const
 {
     return m_electronicFlightTicketFullHasBeenSet;
+}
+
+TaxPayment SingleInvoiceItem::GetTaxPayment() const
+{
+    return m_taxPayment;
+}
+
+void SingleInvoiceItem::SetTaxPayment(const TaxPayment& _taxPayment)
+{
+    m_taxPayment = _taxPayment;
+    m_taxPaymentHasBeenSet = true;
+}
+
+bool SingleInvoiceItem::TaxPaymentHasBeenSet() const
+{
+    return m_taxPaymentHasBeenSet;
+}
+
+CustomsPaymentReceipt SingleInvoiceItem::GetCustomsPaymentReceipt() const
+{
+    return m_customsPaymentReceipt;
+}
+
+void SingleInvoiceItem::SetCustomsPaymentReceipt(const CustomsPaymentReceipt& _customsPaymentReceipt)
+{
+    m_customsPaymentReceipt = _customsPaymentReceipt;
+    m_customsPaymentReceiptHasBeenSet = true;
+}
+
+bool SingleInvoiceItem::CustomsPaymentReceiptHasBeenSet() const
+{
+    return m_customsPaymentReceiptHasBeenSet;
 }
 

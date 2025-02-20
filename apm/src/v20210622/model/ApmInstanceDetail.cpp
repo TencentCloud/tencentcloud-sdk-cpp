@@ -56,7 +56,8 @@ ApmInstanceDetail::ApmInstanceDetail() :
     m_isRelatedDashboardHasBeenSet(false),
     m_dashboardTopicIDHasBeenSet(false),
     m_isInstrumentationVulnerabilityScanHasBeenSet(false),
-    m_isSqlInjectionAnalysisHasBeenSet(false)
+    m_isSqlInjectionAnalysisHasBeenSet(false),
+    m_stopReasonHasBeenSet(false)
 {
 }
 
@@ -438,6 +439,16 @@ CoreInternalOutcome ApmInstanceDetail::Deserialize(const rapidjson::Value &value
         m_isSqlInjectionAnalysisHasBeenSet = true;
     }
 
+    if (value.HasMember("StopReason") && !value["StopReason"].IsNull())
+    {
+        if (!value["StopReason"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.StopReason` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_stopReason = value["StopReason"].GetInt64();
+        m_stopReasonHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -743,6 +754,14 @@ void ApmInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "IsSqlInjectionAnalysis";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isSqlInjectionAnalysis, allocator);
+    }
+
+    if (m_stopReasonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StopReason";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_stopReason, allocator);
     }
 
 }
@@ -1322,5 +1341,21 @@ void ApmInstanceDetail::SetIsSqlInjectionAnalysis(const int64_t& _isSqlInjection
 bool ApmInstanceDetail::IsSqlInjectionAnalysisHasBeenSet() const
 {
     return m_isSqlInjectionAnalysisHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetStopReason() const
+{
+    return m_stopReason;
+}
+
+void ApmInstanceDetail::SetStopReason(const int64_t& _stopReason)
+{
+    m_stopReason = _stopReason;
+    m_stopReasonHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::StopReasonHasBeenSet() const
+{
+    return m_stopReasonHasBeenSet;
 }
 

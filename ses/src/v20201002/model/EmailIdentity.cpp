@@ -25,7 +25,8 @@ EmailIdentity::EmailIdentity() :
     m_identityTypeHasBeenSet(false),
     m_sendingEnabledHasBeenSet(false),
     m_currentReputationLevelHasBeenSet(false),
-    m_dailyQuotaHasBeenSet(false)
+    m_dailyQuotaHasBeenSet(false),
+    m_sendIpHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,19 @@ CoreInternalOutcome EmailIdentity::Deserialize(const rapidjson::Value &value)
         m_dailyQuotaHasBeenSet = true;
     }
 
+    if (value.HasMember("SendIp") && !value["SendIp"].IsNull())
+    {
+        if (!value["SendIp"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `EmailIdentity.SendIp` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SendIp"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_sendIp.push_back((*itr).GetString());
+        }
+        m_sendIpHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +143,19 @@ void EmailIdentity::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "DailyQuota";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dailyQuota, allocator);
+    }
+
+    if (m_sendIpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SendIp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_sendIp.begin(); itr != m_sendIp.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -212,5 +239,21 @@ void EmailIdentity::SetDailyQuota(const uint64_t& _dailyQuota)
 bool EmailIdentity::DailyQuotaHasBeenSet() const
 {
     return m_dailyQuotaHasBeenSet;
+}
+
+vector<string> EmailIdentity::GetSendIp() const
+{
+    return m_sendIp;
+}
+
+void EmailIdentity::SetSendIp(const vector<string>& _sendIp)
+{
+    m_sendIp = _sendIp;
+    m_sendIpHasBeenSet = true;
+}
+
+bool EmailIdentity::SendIpHasBeenSet() const
+{
+    return m_sendIpHasBeenSet;
 }
 

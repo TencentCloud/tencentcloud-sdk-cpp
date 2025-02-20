@@ -111,15 +111,19 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取业务系统状态
-                     * @return Status 业务系统状态
+                     * 获取业务系统状态。{
+1: 初始化中; 2: 运行中; 4: 限流}
+                     * @return Status 业务系统状态。{
+1: 初始化中; 2: 运行中; 4: 限流}
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置业务系统状态
-                     * @param _status 业务系统状态
+                     * 设置业务系统状态。{
+1: 初始化中; 2: 运行中; 4: 限流}
+                     * @param _status 业务系统状态。{
+1: 初始化中; 2: 运行中; 4: 限流}
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -803,6 +807,47 @@ namespace TencentCloud
                      */
                     bool IsSqlInjectionAnalysisHasBeenSet() const;
 
+                    /**
+                     * 获取限流原因。{
+1: 正式版限额;
+2: 试用版限额;
+4: 试用版到期;
+8: 账号欠费
+}
+                     * @return StopReason 限流原因。{
+1: 正式版限额;
+2: 试用版限额;
+4: 试用版到期;
+8: 账号欠费
+}
+                     * 
+                     */
+                    int64_t GetStopReason() const;
+
+                    /**
+                     * 设置限流原因。{
+1: 正式版限额;
+2: 试用版限额;
+4: 试用版到期;
+8: 账号欠费
+}
+                     * @param _stopReason 限流原因。{
+1: 正式版限额;
+2: 试用版限额;
+4: 试用版到期;
+8: 账号欠费
+}
+                     * 
+                     */
+                    void SetStopReason(const int64_t& _stopReason);
+
+                    /**
+                     * 判断参数 StopReason 是否已赋值
+                     * @return StopReason 是否已赋值
+                     * 
+                     */
+                    bool StopReasonHasBeenSet() const;
+
                 private:
 
                     /**
@@ -824,7 +869,8 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 业务系统状态
+                     * 业务系统状态。{
+1: 初始化中; 2: 运行中; 4: 限流}
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
@@ -1020,6 +1066,17 @@ namespace TencentCloud
                      */
                     int64_t m_isSqlInjectionAnalysis;
                     bool m_isSqlInjectionAnalysisHasBeenSet;
+
+                    /**
+                     * 限流原因。{
+1: 正式版限额;
+2: 试用版限额;
+4: 试用版到期;
+8: 账号欠费
+}
+                     */
+                    int64_t m_stopReason;
+                    bool m_stopReasonHasBeenSet;
 
                 };
             }

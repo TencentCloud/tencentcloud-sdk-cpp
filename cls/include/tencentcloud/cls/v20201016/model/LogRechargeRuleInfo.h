@@ -380,6 +380,27 @@ namespace TencentCloud
                      */
                     bool KeysHasBeenSet() const;
 
+                    /**
+                     * 获取json解析模式，开启首层数据解析
+                     * @return ParseArray json解析模式，开启首层数据解析
+                     * 
+                     */
+                    bool GetParseArray() const;
+
+                    /**
+                     * 设置json解析模式，开启首层数据解析
+                     * @param _parseArray json解析模式，开启首层数据解析
+                     * 
+                     */
+                    void SetParseArray(const bool& _parseArray);
+
+                    /**
+                     * 判断参数 ParseArray 是否已赋值
+                     * @return ParseArray 是否已赋值
+                     * 
+                     */
+                    bool ParseArrayHasBeenSet() const;
+
                 private:
 
                     /**
@@ -475,6 +496,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_keys;
                     bool m_keysHasBeenSet;
+
+                    /**
+                     * json解析模式，开启首层数据解析
+                     */
+                    bool m_parseArray;
+                    bool m_parseArrayHasBeenSet;
 
                 };
             }

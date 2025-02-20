@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取要查询的语音检测任务的结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 要查询的语音检测任务的结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DescribeScanResult> GetData() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 要查询的语音检测任务的结果
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DescribeScanResult> m_data;
                     bool m_dataHasBeenSet;

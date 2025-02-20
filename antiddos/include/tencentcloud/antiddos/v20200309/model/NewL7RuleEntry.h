@@ -447,15 +447,15 @@ namespace TencentCloud
                     bool CCEnableHasBeenSet() const;
 
                     /**
-                     * 获取HTTPS协议的CC防护阈值
-                     * @return CCThreshold HTTPS协议的CC防护阈值
+                     * 获取HTTPS协议的CC防护阈值（已废弃）
+                     * @return CCThreshold HTTPS协议的CC防护阈值（已废弃）
                      * 
                      */
                     uint64_t GetCCThreshold() const;
 
                     /**
-                     * 设置HTTPS协议的CC防护阈值
-                     * @param _cCThreshold HTTPS协议的CC防护阈值
+                     * 设置HTTPS协议的CC防护阈值（已废弃）
+                     * @param _cCThreshold HTTPS协议的CC防护阈值（已废弃）
                      * 
                      */
                     void SetCCThreshold(const uint64_t& _cCThreshold);
@@ -466,6 +466,35 @@ namespace TencentCloud
                      * 
                      */
                     bool CCThresholdHasBeenSet() const;
+
+                    /**
+                     * 获取HTTPS协议的CC防护阈值 -1：默认防御阈值
+0: 关闭
+大于0：自定义防护阈值
+                     * @return CCThresholdNew HTTPS协议的CC防护阈值 -1：默认防御阈值
+0: 关闭
+大于0：自定义防护阈值
+                     * 
+                     */
+                    uint64_t GetCCThresholdNew() const;
+
+                    /**
+                     * 设置HTTPS协议的CC防护阈值 -1：默认防御阈值
+0: 关闭
+大于0：自定义防护阈值
+                     * @param _cCThresholdNew HTTPS协议的CC防护阈值 -1：默认防御阈值
+0: 关闭
+大于0：自定义防护阈值
+                     * 
+                     */
+                    void SetCCThresholdNew(const uint64_t& _cCThresholdNew);
+
+                    /**
+                     * 判断参数 CCThresholdNew 是否已赋值
+                     * @return CCThresholdNew 是否已赋值
+                     * 
+                     */
+                    bool CCThresholdNewHasBeenSet() const;
 
                     /**
                      * 获取HTTPS协议的CC防护等级
@@ -739,10 +768,18 @@ namespace TencentCloud
                     bool m_cCEnableHasBeenSet;
 
                     /**
-                     * HTTPS协议的CC防护阈值
+                     * HTTPS协议的CC防护阈值（已废弃）
                      */
                     uint64_t m_cCThreshold;
                     bool m_cCThresholdHasBeenSet;
+
+                    /**
+                     * HTTPS协议的CC防护阈值 -1：默认防御阈值
+0: 关闭
+大于0：自定义防护阈值
+                     */
+                    uint64_t m_cCThresholdNew;
+                    bool m_cCThresholdNewHasBeenSet;
 
                     /**
                      * HTTPS协议的CC防护等级

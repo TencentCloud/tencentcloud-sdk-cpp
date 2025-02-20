@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取返回结果码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorCode 返回结果码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetErrorCode() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 返回结果码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_errorCode;
                     bool m_errorCodeHasBeenSet;

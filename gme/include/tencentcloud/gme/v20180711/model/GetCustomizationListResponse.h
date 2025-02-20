@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取语音消息转文本热句模型配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CustomizationConfigs 语音消息转文本热句模型配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CustomizationConfigs> GetCustomizationConfigs() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 语音消息转文本热句模型配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CustomizationConfigs> m_customizationConfigs;
                     bool m_customizationConfigsHasBeenSet;

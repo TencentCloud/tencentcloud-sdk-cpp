@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取码包地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Url 码包地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUrl() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 码包地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;

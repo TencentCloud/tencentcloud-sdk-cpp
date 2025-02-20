@@ -443,19 +443,15 @@ namespace TencentCloud
                     bool FilterBasicPlusFlagHasBeenSet() const;
 
                     /**
-                     * 获取是否商业模式优化-普惠版 0: 包含商业模式优化-普惠版 1: 只查询商业模式优化-普惠版 
-
-                     * @return FilterPlanCntFlag 是否商业模式优化-普惠版 0: 包含商业模式优化-普惠版 1: 只查询商业模式优化-普惠版 
-
+                     * 获取是否标准版2.0 0: 包含标准版2.0 0 1: 只查询标准版2.0 0 2: 不查标准版2.0
+                     * @return FilterPlanCntFlag 是否标准版2.0 0: 包含标准版2.0 0 1: 只查询标准版2.0 0 2: 不查标准版2.0
                      * 
                      */
                     uint64_t GetFilterPlanCntFlag() const;
 
                     /**
-                     * 设置是否商业模式优化-普惠版 0: 包含商业模式优化-普惠版 1: 只查询商业模式优化-普惠版 
-
-                     * @param _filterPlanCntFlag 是否商业模式优化-普惠版 0: 包含商业模式优化-普惠版 1: 只查询商业模式优化-普惠版 
-
+                     * 设置是否标准版2.0 0: 包含标准版2.0 0 1: 只查询标准版2.0 0 2: 不查标准版2.0
+                     * @param _filterPlanCntFlag 是否标准版2.0 0: 包含标准版2.0 0 1: 只查询标准版2.0 0 2: 不查标准版2.0
                      * 
                      */
                     void SetFilterPlanCntFlag(const uint64_t& _filterPlanCntFlag);
@@ -626,8 +622,7 @@ namespace TencentCloud
                     bool m_filterBasicPlusFlagHasBeenSet;
 
                     /**
-                     * 是否商业模式优化-普惠版 0: 包含商业模式优化-普惠版 1: 只查询商业模式优化-普惠版 
-
+                     * 是否标准版2.0 0: 包含标准版2.0 0 1: 只查询标准版2.0 0 2: 不查标准版2.0
                      */
                     uint64_t m_filterPlanCntFlag;
                     bool m_filterPlanCntFlagHasBeenSet;

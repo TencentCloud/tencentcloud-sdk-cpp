@@ -28,7 +28,9 @@ OriginInfo::OriginInfo() :
     m_privateParametersHasBeenSet(false),
     m_vodeoSubAppIdHasBeenSet(false),
     m_vodeoDistributionRangeHasBeenSet(false),
-    m_vodeoBucketIdHasBeenSet(false)
+    m_vodeoBucketIdHasBeenSet(false),
+    m_vodOriginScopeHasBeenSet(false),
+    m_vodBucketIdHasBeenSet(false)
 {
 }
 
@@ -127,6 +129,26 @@ CoreInternalOutcome OriginInfo::Deserialize(const rapidjson::Value &value)
         m_vodeoBucketIdHasBeenSet = true;
     }
 
+    if (value.HasMember("VodOriginScope") && !value["VodOriginScope"].IsNull())
+    {
+        if (!value["VodOriginScope"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OriginInfo.VodOriginScope` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vodOriginScope = string(value["VodOriginScope"].GetString());
+        m_vodOriginScopeHasBeenSet = true;
+    }
+
+    if (value.HasMember("VodBucketId") && !value["VodBucketId"].IsNull())
+    {
+        if (!value["VodBucketId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OriginInfo.VodBucketId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vodBucketId = string(value["VodBucketId"].GetString());
+        m_vodBucketIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -203,6 +225,22 @@ void OriginInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "VodeoBucketId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_vodeoBucketId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vodOriginScopeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VodOriginScope";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vodOriginScope.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vodBucketIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VodBucketId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vodBucketId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -334,5 +372,37 @@ void OriginInfo::SetVodeoBucketId(const string& _vodeoBucketId)
 bool OriginInfo::VodeoBucketIdHasBeenSet() const
 {
     return m_vodeoBucketIdHasBeenSet;
+}
+
+string OriginInfo::GetVodOriginScope() const
+{
+    return m_vodOriginScope;
+}
+
+void OriginInfo::SetVodOriginScope(const string& _vodOriginScope)
+{
+    m_vodOriginScope = _vodOriginScope;
+    m_vodOriginScopeHasBeenSet = true;
+}
+
+bool OriginInfo::VodOriginScopeHasBeenSet() const
+{
+    return m_vodOriginScopeHasBeenSet;
+}
+
+string OriginInfo::GetVodBucketId() const
+{
+    return m_vodBucketId;
+}
+
+void OriginInfo::SetVodBucketId(const string& _vodBucketId)
+{
+    m_vodBucketId = _vodBucketId;
+    m_vodBucketIdHasBeenSet = true;
+}
+
+bool OriginInfo::VodBucketIdHasBeenSet() const
+{
+    return m_vodBucketIdHasBeenSet;
 }
 

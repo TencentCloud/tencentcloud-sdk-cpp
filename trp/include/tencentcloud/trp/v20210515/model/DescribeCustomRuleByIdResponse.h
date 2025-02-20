@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取码规则信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CustomRule 码规则信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CustomRule GetCustomRule() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 码规则信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CustomRule m_customRule;
                     bool m_customRuleHasBeenSet;

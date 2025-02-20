@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取批次ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BatchId 批次ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBatchId() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 批次ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_batchId;
                     bool m_batchIdHasBeenSet;

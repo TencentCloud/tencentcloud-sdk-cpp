@@ -42,6 +42,8 @@
 #include <tencentcloud/ocr/v20181119/model/MedicalInvoice.h>
 #include <tencentcloud/ocr/v20181119/model/ElectronicTrainTicketFull.h>
 #include <tencentcloud/ocr/v20181119/model/ElectronicFlightTicketFull.h>
+#include <tencentcloud/ocr/v20181119/model/TaxPayment.h>
+#include <tencentcloud/ocr/v20181119/model/CustomsPaymentReceipt.h>
 
 
 namespace TencentCloud
@@ -739,6 +741,56 @@ namespace TencentCloud
                      */
                     bool ElectronicFlightTicketFullHasBeenSet() const;
 
+                    /**
+                     * 获取完税凭证
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaxPayment 完税凭证
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    TaxPayment GetTaxPayment() const;
+
+                    /**
+                     * 设置完税凭证
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _taxPayment 完税凭证
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTaxPayment(const TaxPayment& _taxPayment);
+
+                    /**
+                     * 判断参数 TaxPayment 是否已赋值
+                     * @return TaxPayment 是否已赋值
+                     * 
+                     */
+                    bool TaxPaymentHasBeenSet() const;
+
+                    /**
+                     * 获取海关缴款
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CustomsPaymentReceipt 海关缴款
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    CustomsPaymentReceipt GetCustomsPaymentReceipt() const;
+
+                    /**
+                     * 设置海关缴款
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _customsPaymentReceipt 海关缴款
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCustomsPaymentReceipt(const CustomsPaymentReceipt& _customsPaymentReceipt);
+
+                    /**
+                     * 判断参数 CustomsPaymentReceipt 是否已赋值
+                     * @return CustomsPaymentReceipt 是否已赋值
+                     * 
+                     */
+                    bool CustomsPaymentReceiptHasBeenSet() const;
+
                 private:
 
                     /**
@@ -929,6 +981,20 @@ namespace TencentCloud
                      */
                     ElectronicFlightTicketFull m_electronicFlightTicketFull;
                     bool m_electronicFlightTicketFullHasBeenSet;
+
+                    /**
+                     * 完税凭证
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TaxPayment m_taxPayment;
+                    bool m_taxPaymentHasBeenSet;
+
+                    /**
+                     * 海关缴款
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CustomsPaymentReceipt m_customsPaymentReceipt;
+                    bool m_customsPaymentReceiptHasBeenSet;
 
                 };
             }

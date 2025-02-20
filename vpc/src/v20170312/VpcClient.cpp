@@ -6103,6 +6103,49 @@ VpcClient::DescribeAccountAttributesOutcomeCallable VpcClient::DescribeAccountAt
     return task->get_future();
 }
 
+VpcClient::DescribeAddressBandwidthRangeOutcome VpcClient::DescribeAddressBandwidthRange(const DescribeAddressBandwidthRangeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAddressBandwidthRange");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAddressBandwidthRangeResponse rsp = DescribeAddressBandwidthRangeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAddressBandwidthRangeOutcome(rsp);
+        else
+            return DescribeAddressBandwidthRangeOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAddressBandwidthRangeOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeAddressBandwidthRangeAsync(const DescribeAddressBandwidthRangeRequest& request, const DescribeAddressBandwidthRangeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAddressBandwidthRange(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeAddressBandwidthRangeOutcomeCallable VpcClient::DescribeAddressBandwidthRangeCallable(const DescribeAddressBandwidthRangeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAddressBandwidthRangeOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAddressBandwidthRange(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::DescribeAddressQuotaOutcome VpcClient::DescribeAddressQuota(const DescribeAddressQuotaRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAddressQuota");
@@ -6311,6 +6354,49 @@ VpcClient::DescribeAssistantCidrOutcomeCallable VpcClient::DescribeAssistantCidr
         [this, request]()
         {
             return this->DescribeAssistantCidr(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DescribeBandwidthPackageBandwidthRangeOutcome VpcClient::DescribeBandwidthPackageBandwidthRange(const DescribeBandwidthPackageBandwidthRangeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBandwidthPackageBandwidthRange");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBandwidthPackageBandwidthRangeResponse rsp = DescribeBandwidthPackageBandwidthRangeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBandwidthPackageBandwidthRangeOutcome(rsp);
+        else
+            return DescribeBandwidthPackageBandwidthRangeOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBandwidthPackageBandwidthRangeOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeBandwidthPackageBandwidthRangeAsync(const DescribeBandwidthPackageBandwidthRangeRequest& request, const DescribeBandwidthPackageBandwidthRangeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBandwidthPackageBandwidthRange(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeBandwidthPackageBandwidthRangeOutcomeCallable VpcClient::DescribeBandwidthPackageBandwidthRangeCallable(const DescribeBandwidthPackageBandwidthRangeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBandwidthPackageBandwidthRangeOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBandwidthPackageBandwidthRange(request);
         }
     );
 

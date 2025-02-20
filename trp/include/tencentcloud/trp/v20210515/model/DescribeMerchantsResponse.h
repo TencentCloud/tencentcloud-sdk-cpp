@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取商户列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Merchants 商户列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Merchant> GetMerchants() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 商户列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Merchant> m_merchants;
                     bool m_merchantsHasBeenSet;
 
                     /**
                      * 总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

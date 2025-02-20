@@ -72,9 +72,6 @@ endif()
 
 add_subdirectory(core)
 
-if(BUILD_MODULES_ALL OR ";${BUILD_MODULES};" MATCHES ";aa;")
-    add_subdirectory(aa)
-endif()
 if(BUILD_MODULES_ALL OR ";${BUILD_MODULES};" MATCHES ";aai;")
     add_subdirectory(aai)
 endif()

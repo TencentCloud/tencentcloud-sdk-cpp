@@ -132,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取返回信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 返回信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置返回信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _message 返回信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMessage(const std::string& _message);
@@ -178,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取引擎类型，有效值：PrestoSQL/SparkSQL/SparkBatch
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataEngineType 引擎类型，有效值：PrestoSQL/SparkSQL/SparkBatch
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDataEngineType() const;
 
                     /**
                      * 设置引擎类型，有效值：PrestoSQL/SparkSQL/SparkBatch
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataEngineType 引擎类型，有效值：PrestoSQL/SparkSQL/SparkBatch
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataEngineType(const std::string& _dataEngineType);
@@ -203,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppId 用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAppId() const;
 
                     /**
                      * 设置用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appId 用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppId(const int64_t& _appId);
@@ -228,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取账号ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserUin 账号ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserUin() const;
 
                     /**
                      * 设置账号ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userUin 账号ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserUin(const std::string& _userUin);
@@ -279,7 +263,6 @@ namespace TencentCloud
 
                     /**
                      * 返回信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
@@ -292,21 +275,18 @@ namespace TencentCloud
 
                     /**
                      * 引擎类型，有效值：PrestoSQL/SparkSQL/SparkBatch
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataEngineType;
                     bool m_dataEngineTypeHasBeenSet;
 
                     /**
                      * 用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
                      * 账号ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userUin;
                     bool m_userUinHasBeenSet;

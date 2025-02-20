@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取商户信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Merchant 商户信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Merchant GetMerchant() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 商户信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Merchant m_merchant;
                     bool m_merchantHasBeenSet;

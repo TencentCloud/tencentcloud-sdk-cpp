@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取企业ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CorpId 企业ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCorpId() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 企业ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_corpId;
                     bool m_corpIdHasBeenSet;

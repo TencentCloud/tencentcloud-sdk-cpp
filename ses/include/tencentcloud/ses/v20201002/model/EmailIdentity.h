@@ -151,6 +151,27 @@ namespace TencentCloud
                      */
                     bool DailyQuotaHasBeenSet() const;
 
+                    /**
+                     * 获取域名配置的独立ip
+                     * @return SendIp 域名配置的独立ip
+                     * 
+                     */
+                    std::vector<std::string> GetSendIp() const;
+
+                    /**
+                     * 设置域名配置的独立ip
+                     * @param _sendIp 域名配置的独立ip
+                     * 
+                     */
+                    void SetSendIp(const std::vector<std::string>& _sendIp);
+
+                    /**
+                     * 判断参数 SendIp 是否已赋值
+                     * @return SendIp 是否已赋值
+                     * 
+                     */
+                    bool SendIpHasBeenSet() const;
+
                 private:
 
                     /**
@@ -182,6 +203,12 @@ namespace TencentCloud
                      */
                     uint64_t m_dailyQuota;
                     bool m_dailyQuotaHasBeenSet;
+
+                    /**
+                     * 域名配置的独立ip
+                     */
+                    std::vector<std::string> m_sendIp;
+                    bool m_sendIpHasBeenSet;
 
                 };
             }

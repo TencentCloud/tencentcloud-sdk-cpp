@@ -305,6 +305,8 @@
 #include <tencentcloud/vpc/v20170312/model/DeleteVpnGatewaySslServerResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeAccountAttributesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeAccountAttributesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeAddressBandwidthRangeRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeAddressBandwidthRangeResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeAddressQuotaRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeAddressQuotaResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeAddressTemplateGroupsRequest.h>
@@ -315,6 +317,8 @@
 #include <tencentcloud/vpc/v20170312/model/DescribeAddressesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeAssistantCidrRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeAssistantCidrResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeBandwidthPackageBandwidthRangeRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeBandwidthPackageBandwidthRangeResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeBandwidthPackageBillUsageRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeBandwidthPackageBillUsageResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeBandwidthPackageQuotaRequest.h>
@@ -1260,6 +1264,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAccountAttributesResponse> DescribeAccountAttributesOutcome;
                 typedef std::future<DescribeAccountAttributesOutcome> DescribeAccountAttributesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeAccountAttributesRequest&, DescribeAccountAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountAttributesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAddressBandwidthRangeResponse> DescribeAddressBandwidthRangeOutcome;
+                typedef std::future<DescribeAddressBandwidthRangeOutcome> DescribeAddressBandwidthRangeOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeAddressBandwidthRangeRequest&, DescribeAddressBandwidthRangeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAddressBandwidthRangeAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAddressQuotaResponse> DescribeAddressQuotaOutcome;
                 typedef std::future<DescribeAddressQuotaOutcome> DescribeAddressQuotaOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeAddressQuotaRequest&, DescribeAddressQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAddressQuotaAsyncHandler;
@@ -1275,6 +1282,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAssistantCidrResponse> DescribeAssistantCidrOutcome;
                 typedef std::future<DescribeAssistantCidrOutcome> DescribeAssistantCidrOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeAssistantCidrRequest&, DescribeAssistantCidrOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssistantCidrAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBandwidthPackageBandwidthRangeResponse> DescribeBandwidthPackageBandwidthRangeOutcome;
+                typedef std::future<DescribeBandwidthPackageBandwidthRangeOutcome> DescribeBandwidthPackageBandwidthRangeOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeBandwidthPackageBandwidthRangeRequest&, DescribeBandwidthPackageBandwidthRangeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBandwidthPackageBandwidthRangeAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBandwidthPackageBillUsageResponse> DescribeBandwidthPackageBillUsageOutcome;
                 typedef std::future<DescribeBandwidthPackageBillUsageOutcome> DescribeBandwidthPackageBillUsageOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeBandwidthPackageBillUsageRequest&, DescribeBandwidthPackageBillUsageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBandwidthPackageBillUsageAsyncHandler;
@@ -3479,6 +3489,15 @@ namespace TencentCloud
                 DescribeAccountAttributesOutcomeCallable DescribeAccountAttributesCallable(const Model::DescribeAccountAttributesRequest& request);
 
                 /**
+                 *查询指定EIP的带宽上下限范围。
+                 * @param req DescribeAddressBandwidthRangeRequest
+                 * @return DescribeAddressBandwidthRangeOutcome
+                 */
+                DescribeAddressBandwidthRangeOutcome DescribeAddressBandwidthRange(const Model::DescribeAddressBandwidthRangeRequest &request);
+                void DescribeAddressBandwidthRangeAsync(const Model::DescribeAddressBandwidthRangeRequest& request, const DescribeAddressBandwidthRangeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAddressBandwidthRangeOutcomeCallable DescribeAddressBandwidthRangeCallable(const Model::DescribeAddressBandwidthRangeRequest& request);
+
+                /**
                  *本接口 (DescribeAddressQuota) 用于查询您账户的[弹性公网IP](https://cloud.tencent.com/document/product/213/1941)（简称 EIP）在当前地域的配额信息。配额详情可参见 [EIP 产品简介](https://cloud.tencent.com/document/product/213/5733)。
                  * @param req DescribeAddressQuotaRequest
                  * @return DescribeAddressQuotaOutcome
@@ -3523,6 +3542,15 @@ namespace TencentCloud
                 DescribeAssistantCidrOutcome DescribeAssistantCidr(const Model::DescribeAssistantCidrRequest &request);
                 void DescribeAssistantCidrAsync(const Model::DescribeAssistantCidrRequest& request, const DescribeAssistantCidrAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAssistantCidrOutcomeCallable DescribeAssistantCidrCallable(const Model::DescribeAssistantCidrRequest& request);
+
+                /**
+                 *查询指定带宽包的带宽上下限范围
+                 * @param req DescribeBandwidthPackageBandwidthRangeRequest
+                 * @return DescribeBandwidthPackageBandwidthRangeOutcome
+                 */
+                DescribeBandwidthPackageBandwidthRangeOutcome DescribeBandwidthPackageBandwidthRange(const Model::DescribeBandwidthPackageBandwidthRangeRequest &request);
+                void DescribeBandwidthPackageBandwidthRangeAsync(const Model::DescribeBandwidthPackageBandwidthRangeRequest& request, const DescribeBandwidthPackageBandwidthRangeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBandwidthPackageBandwidthRangeOutcomeCallable DescribeBandwidthPackageBandwidthRangeCallable(const Model::DescribeBandwidthPackageBandwidthRangeRequest& request);
 
                 /**
                  *本接口 (DescribeBandwidthPackageBillUsage) 用于查询后付费共享带宽包当前的计费用量.
