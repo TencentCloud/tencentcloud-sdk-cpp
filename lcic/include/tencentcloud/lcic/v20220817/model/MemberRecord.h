@@ -455,18 +455,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户的上台状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Stage 用户的上台状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStage() const;
 
                     /**
                      * 设置用户的上台状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _stage 用户的上台状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStage(const int64_t& _stage);
@@ -480,18 +476,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户状态。0为未到，1为在线，2为离线，3为被踢，4为永久被踢，5为暂时掉线
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CurrentState 用户状态。0为未到，1为在线，2为离线，3为被踢，4为永久被踢，5为暂时掉线
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCurrentState() const;
 
                     /**
                      * 设置用户状态。0为未到，1为在线，2为离线，3为被踢，4为永久被踢，5为暂时掉线
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _currentState 用户状态。0为未到，1为在线，2为离线，3为被踢，4为永久被踢，5为暂时掉线
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCurrentState(const uint64_t& _currentState);
@@ -623,14 +615,12 @@ namespace TencentCloud
 
                     /**
                      * 用户的上台状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_stage;
                     bool m_stageHasBeenSet;
 
                     /**
                      * 用户状态。0为未到，1为在线，2为离线，3为被踢，4为永久被踢，5为暂时掉线
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_currentState;
                     bool m_currentStateHasBeenSet;

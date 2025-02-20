@@ -203,7 +203,7 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Containers 容器列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     Container GetContainers() const;
 
@@ -212,14 +212,14 @@ namespace TencentCloud
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _containers 容器列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * 
+                     * @deprecated
                      */
                     void SetContainers(const Container& _containers);
 
                     /**
                      * 判断参数 Containers 是否已赋值
                      * @return Containers 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ContainersHasBeenSet() const;
 
@@ -272,6 +272,27 @@ namespace TencentCloud
                      * 
                      */
                     bool CrossTenantENIInfoHasBeenSet() const;
+
+                    /**
+                     * 获取实例的状态信息
+                     * @return Status 实例的状态信息
+                     * 
+                     */
+                    std::string GetStatus() const;
+
+                    /**
+                     * 设置实例的状态信息
+                     * @param _status 实例的状态信息
+                     * 
+                     */
+                    void SetStatus(const std::string& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
 
                 private:
 
@@ -337,6 +358,12 @@ namespace TencentCloud
                      */
                     CrossTenantENIInfo m_crossTenantENIInfo;
                     bool m_crossTenantENIInfoHasBeenSet;
+
+                    /**
+                     * 实例的状态信息
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }

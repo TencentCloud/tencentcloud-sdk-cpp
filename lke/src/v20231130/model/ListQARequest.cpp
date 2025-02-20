@@ -32,6 +32,7 @@ ListQARequest::ListQARequest() :
     m_docBizIdHasBeenSet(false),
     m_sourceHasBeenSet(false),
     m_queryAnswerHasBeenSet(false),
+    m_cateBizIdHasBeenSet(false),
     m_qaBizIdsHasBeenSet(false),
     m_queryTypeHasBeenSet(false)
 {
@@ -124,6 +125,14 @@ string ListQARequest::ToJsonString() const
         string key = "QueryAnswer";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_queryAnswer.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cateBizIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CateBizId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cateBizId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_qaBizIdsHasBeenSet)
@@ -297,6 +306,22 @@ void ListQARequest::SetQueryAnswer(const string& _queryAnswer)
 bool ListQARequest::QueryAnswerHasBeenSet() const
 {
     return m_queryAnswerHasBeenSet;
+}
+
+string ListQARequest::GetCateBizId() const
+{
+    return m_cateBizId;
+}
+
+void ListQARequest::SetCateBizId(const string& _cateBizId)
+{
+    m_cateBizId = _cateBizId;
+    m_cateBizIdHasBeenSet = true;
+}
+
+bool ListQARequest::CateBizIdHasBeenSet() const
+{
+    return m_cateBizIdHasBeenSet;
 }
 
 vector<string> ListQARequest::GetQaBizIds() const

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取连接名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConnectionName 连接名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConnectionName() const;
 
                     /**
                      * 设置连接名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _connectionName 连接名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConnectionName(const std::string& _connectionName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取客户端ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PeerHost 客户端ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPeerHost() const;
 
                     /**
                      * 设置客户端ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _peerHost 客户端ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPeerHost(const std::string& _peerHost);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取连接状态，包括 starting、tuning、opening、running、flow、blocking、blocked、closing 和 closed
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return State 连接状态，包括 starting、tuning、opening、running、flow、blocking、blocked、closing 和 closed
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetState() const;
 
                     /**
                      * 设置连接状态，包括 starting、tuning、opening、running、flow、blocking、blocked、closing 和 closed
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _state 连接状态，包括 starting、tuning、opening、running、flow、blocking、blocked、closing 和 closed
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetState(const std::string& _state);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取连接使用用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return User 连接使用用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUser() const;
 
                     /**
                      * 设置连接使用用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _user 连接使用用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUser(const std::string& _user);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启ssl
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SSL 是否开启ssl
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetSSL() const;
 
                     /**
                      * 设置是否开启ssl
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sSL 是否开启ssl
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSSL(const bool& _sSL);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取连接协议
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Protocol 连接协议
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置连接协议
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _protocol 连接协议
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取连接下的channel数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Channels 连接下的channel数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetChannels() const;
 
                     /**
                      * 设置连接下的channel数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _channels 连接下的channel数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChannels(const int64_t& _channels);
@@ -225,49 +197,42 @@ namespace TencentCloud
 
                     /**
                      * 连接名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_connectionName;
                     bool m_connectionNameHasBeenSet;
 
                     /**
                      * 客户端ip
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_peerHost;
                     bool m_peerHostHasBeenSet;
 
                     /**
                      * 连接状态，包括 starting、tuning、opening、running、flow、blocking、blocked、closing 和 closed
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_state;
                     bool m_stateHasBeenSet;
 
                     /**
                      * 连接使用用户
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_user;
                     bool m_userHasBeenSet;
 
                     /**
                      * 是否开启ssl
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_sSL;
                     bool m_sSLHasBeenSet;
 
                     /**
                      * 连接协议
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
                      * 连接下的channel数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_channels;
                     bool m_channelsHasBeenSet;

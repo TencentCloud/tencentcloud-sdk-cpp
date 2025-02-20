@@ -34,7 +34,8 @@ Project::Project() :
     m_clustersHasBeenSet(false),
     m_paramsHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_modelHasBeenSet(false)
+    m_modelHasBeenSet(false),
+    m_secondModuleListHasBeenSet(false)
 {
 }
 
@@ -217,6 +218,19 @@ CoreInternalOutcome Project::Deserialize(const rapidjson::Value &value)
         m_modelHasBeenSet = true;
     }
 
+    if (value.HasMember("SecondModuleList") && !value["SecondModuleList"].IsNull())
+    {
+        if (!value["SecondModuleList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Project.SecondModuleList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SecondModuleList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_secondModuleList.push_back((*itr).GetString());
+        }
+        m_secondModuleListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -350,6 +364,19 @@ void Project::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "Model";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_model.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_secondModuleListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecondModuleList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_secondModuleList.begin(); itr != m_secondModuleList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -577,5 +604,21 @@ void Project::SetModel(const string& _model)
 bool Project::ModelHasBeenSet() const
 {
     return m_modelHasBeenSet;
+}
+
+vector<string> Project::GetSecondModuleList() const
+{
+    return m_secondModuleList;
+}
+
+void Project::SetSecondModuleList(const vector<string>& _secondModuleList)
+{
+    m_secondModuleList = _secondModuleList;
+    m_secondModuleListHasBeenSet = true;
+}
+
+bool Project::SecondModuleListHasBeenSet() const
+{
+    return m_secondModuleListHasBeenSet;
 }
 

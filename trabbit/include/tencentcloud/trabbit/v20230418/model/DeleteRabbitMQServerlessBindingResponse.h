@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取队列名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 队列名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取vhost参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VirtualHost vhost参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVirtualHost() const;
@@ -77,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取路由关系Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BindingId 路由关系Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBindingId() const;
@@ -95,21 +89,18 @@ namespace TencentCloud
 
                     /**
                      * 队列名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
                      * vhost参数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_virtualHost;
                     bool m_virtualHostHasBeenSet;
 
                     /**
                      * 路由关系Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_bindingId;
                     bool m_bindingIdHasBeenSet;

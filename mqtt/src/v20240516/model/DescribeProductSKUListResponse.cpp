@@ -14,21 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/taf/v20200210/model/RecognizeCustomizedAudienceResponse.h>
+#include <tencentcloud/mqtt/v20240516/model/DescribeProductSKUListResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Taf::V20200210::Model;
+using namespace TencentCloud::Mqtt::V20240516::Model;
 using namespace std;
 
-RecognizeCustomizedAudienceResponse::RecognizeCustomizedAudienceResponse() :
-    m_dataHasBeenSet(false)
+DescribeProductSKUListResponse::DescribeProductSKUListResponse() :
+    m_totalCountHasBeenSet(false),
+    m_mQTTProductSkuListHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome RecognizeCustomizedAudienceResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeProductSKUListResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,40 +63,67 @@ CoreInternalOutcome RecognizeCustomizedAudienceResponse::Deserialize(const strin
     }
 
 
-    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
     {
-        if (!rsp["Data"].IsObject())
+        if (!rsp["TotalCount"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `Data` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
+        m_totalCount = rsp["TotalCount"].GetInt64();
+        m_totalCountHasBeenSet = true;
+    }
 
-        CoreInternalOutcome outcome = m_data.Deserialize(rsp["Data"]);
-        if (!outcome.IsSuccess())
+    if (rsp.HasMember("MQTTProductSkuList") && !rsp["MQTTProductSkuList"].IsNull())
+    {
+        if (!rsp["MQTTProductSkuList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `MQTTProductSkuList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["MQTTProductSkuList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
+            ProductSkuItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_mQTTProductSkuList.push_back(item);
         }
-
-        m_dataHasBeenSet = true;
+        m_mQTTProductSkuListHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string RecognizeCustomizedAudienceResponse::ToJsonString() const
+string DescribeProductSKUListResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_dataHasBeenSet)
+    if (m_totalCountHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Data";
+        string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_data.ToJsonObject(value[key.c_str()], allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
+    }
+
+    if (m_mQTTProductSkuListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MQTTProductSkuList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_mQTTProductSkuList.begin(); itr != m_mQTTProductSkuList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,14 +138,24 @@ string RecognizeCustomizedAudienceResponse::ToJsonString() const
 }
 
 
-OutputRecognizeTargetAudience RecognizeCustomizedAudienceResponse::GetData() const
+int64_t DescribeProductSKUListResponse::GetTotalCount() const
 {
-    return m_data;
+    return m_totalCount;
 }
 
-bool RecognizeCustomizedAudienceResponse::DataHasBeenSet() const
+bool DescribeProductSKUListResponse::TotalCountHasBeenSet() const
 {
-    return m_dataHasBeenSet;
+    return m_totalCountHasBeenSet;
+}
+
+vector<ProductSkuItem> DescribeProductSKUListResponse::GetMQTTProductSkuList() const
+{
+    return m_mQTTProductSkuList;
+}
+
+bool DescribeProductSKUListResponse::MQTTProductSkuListHasBeenSet() const
+{
+    return m_mQTTProductSkuListHasBeenSet;
 }
 
 

@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/taf/v20200210/model/RecognizePreciseTargetAudienceResponse.h>
+#include <tencentcloud/aiart/v20221229/model/SubmitGlamPicJobResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Taf::V20200210::Model;
+using namespace TencentCloud::Aiart::V20221229::Model;
 using namespace std;
 
-RecognizePreciseTargetAudienceResponse::RecognizePreciseTargetAudienceResponse() :
-    m_dataHasBeenSet(false)
+SubmitGlamPicJobResponse::SubmitGlamPicJobResponse() :
+    m_jobIdHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome RecognizePreciseTargetAudienceResponse::Deserialize(const string &payload)
+CoreInternalOutcome SubmitGlamPicJobResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,40 +62,32 @@ CoreInternalOutcome RecognizePreciseTargetAudienceResponse::Deserialize(const st
     }
 
 
-    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
+    if (rsp.HasMember("JobId") && !rsp["JobId"].IsNull())
     {
-        if (!rsp["Data"].IsObject())
+        if (!rsp["JobId"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `Data` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `JobId` IsString=false incorrectly").SetRequestId(requestId));
         }
-
-        CoreInternalOutcome outcome = m_data.Deserialize(rsp["Data"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_dataHasBeenSet = true;
+        m_jobId = string(rsp["JobId"].GetString());
+        m_jobIdHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string RecognizePreciseTargetAudienceResponse::ToJsonString() const
+string SubmitGlamPicJobResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_dataHasBeenSet)
+    if (m_jobIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Data";
+        string key = "JobId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_data.ToJsonObject(value[key.c_str()], allocator);
+        value.AddMember(iKey, rapidjson::Value(m_jobId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,14 +102,14 @@ string RecognizePreciseTargetAudienceResponse::ToJsonString() const
 }
 
 
-OutputRecognizeTargetAudience RecognizePreciseTargetAudienceResponse::GetData() const
+string SubmitGlamPicJobResponse::GetJobId() const
 {
-    return m_data;
+    return m_jobId;
 }
 
-bool RecognizePreciseTargetAudienceResponse::DataHasBeenSet() const
+bool SubmitGlamPicJobResponse::JobIdHasBeenSet() const
 {
-    return m_dataHasBeenSet;
+    return m_jobIdHasBeenSet;
 }
 
 

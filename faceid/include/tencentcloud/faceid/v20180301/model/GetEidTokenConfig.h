@@ -202,18 +202,18 @@ namespace TencentCloud
 
                     /**
                      * 获取意愿核身问答模式的配置列表。
-- 当前仅支持一个问答。
+- 问答模式支持1-10轮（不超过10轮）的意愿确认。
                      * @return IntentionQuestions 意愿核身问答模式的配置列表。
-- 当前仅支持一个问答。
+- 问答模式支持1-10轮（不超过10轮）的意愿确认。
                      * 
                      */
                     std::vector<IntentionQuestion> GetIntentionQuestions() const;
 
                     /**
                      * 设置意愿核身问答模式的配置列表。
-- 当前仅支持一个问答。
+- 问答模式支持1-10轮（不超过10轮）的意愿确认。
                      * @param _intentionQuestions 意愿核身问答模式的配置列表。
-- 当前仅支持一个问答。
+- 问答模式支持1-10轮（不超过10轮）的意愿确认。
                      * 
                      */
                     void SetIntentionQuestions(const std::vector<IntentionQuestion>& _intentionQuestions);
@@ -229,9 +229,11 @@ namespace TencentCloud
                      * 获取意愿核身（点头确认模式）使用的文案。
 - 若未使用意愿核身（点头确认模式），则该字段无需传入。
 - 默认为空，最长可接受150的字符串长度。
+- 点头确认模式支持1-10轮（不超过10轮）的意愿确认。
                      * @return IntentionActions 意愿核身（点头确认模式）使用的文案。
 - 若未使用意愿核身（点头确认模式），则该字段无需传入。
 - 默认为空，最长可接受150的字符串长度。
+- 点头确认模式支持1-10轮（不超过10轮）的意愿确认。
                      * 
                      */
                     std::vector<IntentionActionConfig> GetIntentionActions() const;
@@ -240,9 +242,11 @@ namespace TencentCloud
                      * 设置意愿核身（点头确认模式）使用的文案。
 - 若未使用意愿核身（点头确认模式），则该字段无需传入。
 - 默认为空，最长可接受150的字符串长度。
+- 点头确认模式支持1-10轮（不超过10轮）的意愿确认。
                      * @param _intentionActions 意愿核身（点头确认模式）使用的文案。
 - 若未使用意愿核身（点头确认模式），则该字段无需传入。
 - 默认为空，最长可接受150的字符串长度。
+- 点头确认模式支持1-10轮（不超过10轮）的意愿确认。
                      * 
                      */
                     void SetIntentionActions(const std::vector<IntentionActionConfig>& _intentionActions);
@@ -427,7 +431,7 @@ namespace TencentCloud
 
                     /**
                      * 意愿核身问答模式的配置列表。
-- 当前仅支持一个问答。
+- 问答模式支持1-10轮（不超过10轮）的意愿确认。
                      */
                     std::vector<IntentionQuestion> m_intentionQuestions;
                     bool m_intentionQuestionsHasBeenSet;
@@ -436,6 +440,7 @@ namespace TencentCloud
                      * 意愿核身（点头确认模式）使用的文案。
 - 若未使用意愿核身（点头确认模式），则该字段无需传入。
 - 默认为空，最长可接受150的字符串长度。
+- 点头确认模式支持1-10轮（不超过10轮）的意愿确认。
                      */
                     std::vector<IntentionActionConfig> m_intentionActions;
                     bool m_intentionActionsHasBeenSet;

@@ -238,18 +238,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remark 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -284,18 +280,14 @@ namespace TencentCloud
 
                     /**
                      * 获取异常信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExceptionInformation 异常信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExceptionInformation() const;
 
                     /**
                      * 设置异常信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _exceptionInformation 异常信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExceptionInformation(const std::string& _exceptionInformation);
@@ -309,18 +301,14 @@ namespace TencentCloud
 
                     /**
                      * 获取公网接入点
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicAccessEndpoint 公网接入点
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPublicAccessEndpoint() const;
 
                     /**
                      * 设置公网接入点
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _publicAccessEndpoint 公网接入点
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPublicAccessEndpoint(const std::string& _publicAccessEndpoint);
@@ -334,18 +322,14 @@ namespace TencentCloud
 
                     /**
                      * 获取私有网络接入点
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vpcs 私有网络接入点
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RabbitMQServerlessEndpoint> GetVpcs() const;
 
                     /**
                      * 设置私有网络接入点
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcs 私有网络接入点
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcs(const std::vector<RabbitMQServerlessEndpoint>& _vpcs);
@@ -466,6 +450,27 @@ namespace TencentCloud
                      */
                     bool MaxStorageHasBeenSet() const;
 
+                    /**
+                     * 获取隔离时间
+                     * @return IsolatedTime 隔离时间
+                     * 
+                     */
+                    uint64_t GetIsolatedTime() const;
+
+                    /**
+                     * 设置隔离时间
+                     * @param _isolatedTime 隔离时间
+                     * 
+                     */
+                    void SetIsolatedTime(const uint64_t& _isolatedTime);
+
+                    /**
+                     * 判断参数 IsolatedTime 是否已赋值
+                     * @return IsolatedTime 是否已赋值
+                     * 
+                     */
+                    bool IsolatedTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -524,7 +529,6 @@ namespace TencentCloud
 
                     /**
                      * 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
@@ -537,21 +541,18 @@ namespace TencentCloud
 
                     /**
                      * 异常信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_exceptionInformation;
                     bool m_exceptionInformationHasBeenSet;
 
                     /**
                      * 公网接入点
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_publicAccessEndpoint;
                     bool m_publicAccessEndpointHasBeenSet;
 
                     /**
                      * 私有网络接入点
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RabbitMQServerlessEndpoint> m_vpcs;
                     bool m_vpcsHasBeenSet;
@@ -586,6 +587,12 @@ namespace TencentCloud
                      */
                     int64_t m_maxStorage;
                     bool m_maxStorageHasBeenSet;
+
+                    /**
+                     * 隔离时间
+                     */
+                    uint64_t m_isolatedTime;
+                    bool m_isolatedTimeHasBeenSet;
 
                 };
             }

@@ -29,6 +29,8 @@
 #include <tencentcloud/dcdb/v20180411/model/AssociateSecurityGroupsResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/CancelDcnJobRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/CancelDcnJobResponse.h>
+#include <tencentcloud/dcdb/v20180411/model/CancelOnlineDDLJobRequest.h>
+#include <tencentcloud/dcdb/v20180411/model/CancelOnlineDDLJobResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/CloneAccountRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/CloneAccountResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/CloseDBExtranetAccessRequest.h>
@@ -103,6 +105,8 @@
 #include <tencentcloud/dcdb/v20180411/model/DescribeFlowResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeLogFileRetentionPeriodRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeLogFileRetentionPeriodResponse.h>
+#include <tencentcloud/dcdb/v20180411/model/DescribeOnlineDDLJobRequest.h>
+#include <tencentcloud/dcdb/v20180411/model/DescribeOnlineDDLJobResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeOrdersRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeOrdersResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeProjectSecurityGroupsRequest.h>
@@ -200,6 +204,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CancelDcnJobResponse> CancelDcnJobOutcome;
                 typedef std::future<CancelDcnJobOutcome> CancelDcnJobOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::CancelDcnJobRequest&, CancelDcnJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelDcnJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::CancelOnlineDDLJobResponse> CancelOnlineDDLJobOutcome;
+                typedef std::future<CancelOnlineDDLJobOutcome> CancelOnlineDDLJobOutcomeCallable;
+                typedef std::function<void(const DcdbClient*, const Model::CancelOnlineDDLJobRequest&, CancelOnlineDDLJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelOnlineDDLJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::CloneAccountResponse> CloneAccountOutcome;
                 typedef std::future<CloneAccountOutcome> CloneAccountOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::CloneAccountRequest&, CloneAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloneAccountAsyncHandler;
@@ -311,6 +318,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLogFileRetentionPeriodResponse> DescribeLogFileRetentionPeriodOutcome;
                 typedef std::future<DescribeLogFileRetentionPeriodOutcome> DescribeLogFileRetentionPeriodOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::DescribeLogFileRetentionPeriodRequest&, DescribeLogFileRetentionPeriodOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogFileRetentionPeriodAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeOnlineDDLJobResponse> DescribeOnlineDDLJobOutcome;
+                typedef std::future<DescribeOnlineDDLJobOutcome> DescribeOnlineDDLJobOutcomeCallable;
+                typedef std::function<void(const DcdbClient*, const Model::DescribeOnlineDDLJobRequest&, DescribeOnlineDDLJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOnlineDDLJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeOrdersResponse> DescribeOrdersOutcome;
                 typedef std::future<DescribeOrdersOutcome> DescribeOrdersOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::DescribeOrdersRequest&, DescribeOrdersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOrdersAsyncHandler;
@@ -451,6 +461,15 @@ namespace TencentCloud
                 CancelDcnJobOutcome CancelDcnJob(const Model::CancelDcnJobRequest &request);
                 void CancelDcnJobAsync(const Model::CancelDcnJobRequest& request, const CancelDcnJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CancelDcnJobOutcomeCallable CancelDcnJobCallable(const Model::CancelDcnJobRequest& request);
+
+                /**
+                 *取消 Online DDL 任务
+                 * @param req CancelOnlineDDLJobRequest
+                 * @return CancelOnlineDDLJobOutcome
+                 */
+                CancelOnlineDDLJobOutcome CancelOnlineDDLJob(const Model::CancelOnlineDDLJobRequest &request);
+                void CancelOnlineDDLJobAsync(const Model::CancelOnlineDDLJobRequest& request, const CancelOnlineDDLJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CancelOnlineDDLJobOutcomeCallable CancelOnlineDDLJobCallable(const Model::CancelOnlineDDLJobRequest& request);
 
                 /**
                  *本接口（CloneAccount）用于克隆实例账户。
@@ -787,6 +806,15 @@ namespace TencentCloud
                 DescribeLogFileRetentionPeriodOutcome DescribeLogFileRetentionPeriod(const Model::DescribeLogFileRetentionPeriodRequest &request);
                 void DescribeLogFileRetentionPeriodAsync(const Model::DescribeLogFileRetentionPeriodRequest& request, const DescribeLogFileRetentionPeriodAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeLogFileRetentionPeriodOutcomeCallable DescribeLogFileRetentionPeriodCallable(const Model::DescribeLogFileRetentionPeriodRequest& request);
+
+                /**
+                 *查询Online DDL 任务详情
+                 * @param req DescribeOnlineDDLJobRequest
+                 * @return DescribeOnlineDDLJobOutcome
+                 */
+                DescribeOnlineDDLJobOutcome DescribeOnlineDDLJob(const Model::DescribeOnlineDDLJobRequest &request);
+                void DescribeOnlineDDLJobAsync(const Model::DescribeOnlineDDLJobRequest& request, const DescribeOnlineDDLJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeOnlineDDLJobOutcomeCallable DescribeOnlineDDLJobCallable(const Model::DescribeOnlineDDLJobRequest& request);
 
                 /**
                  *本接口（DescribeOrders）用于查询分布式数据库订单信息。传入订单ID来查询订单关联的分布式数据库实例，和对应的任务流程ID。

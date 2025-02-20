@@ -34,7 +34,8 @@ DescribeDMSPartitionsRequest::DescribeDMSPartitionsRequest() :
     m_maxPartsHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_expressionHasBeenSet(false)
+    m_expressionHasBeenSet(false),
+    m_datasourceConnectionNameHasBeenSet(false)
 {
 }
 
@@ -154,6 +155,14 @@ string DescribeDMSPartitionsRequest::ToJsonString() const
         string key = "Expression";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_expression.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_datasourceConnectionNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatasourceConnectionName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_datasourceConnectionName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -354,6 +363,22 @@ void DescribeDMSPartitionsRequest::SetExpression(const string& _expression)
 bool DescribeDMSPartitionsRequest::ExpressionHasBeenSet() const
 {
     return m_expressionHasBeenSet;
+}
+
+string DescribeDMSPartitionsRequest::GetDatasourceConnectionName() const
+{
+    return m_datasourceConnectionName;
+}
+
+void DescribeDMSPartitionsRequest::SetDatasourceConnectionName(const string& _datasourceConnectionName)
+{
+    m_datasourceConnectionName = _datasourceConnectionName;
+    m_datasourceConnectionNameHasBeenSet = true;
+}
+
+bool DescribeDMSPartitionsRequest::DatasourceConnectionNameHasBeenSet() const
+{
+    return m_datasourceConnectionNameHasBeenSet;
 }
 
 

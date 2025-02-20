@@ -123,9 +123,7 @@ namespace TencentCloud
 
                     /**
                      * 获取网络信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterNetInfo 网络信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RabbitMQServerlessAccessInfo GetClusterNetInfo() const;
@@ -139,9 +137,7 @@ namespace TencentCloud
 
                     /**
                      * 获取公网白名单信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterWhiteListInfo 公网白名单信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RabbitMQServerlessWhiteListInfo GetClusterWhiteListInfo() const;
@@ -201,14 +197,12 @@ namespace TencentCloud
 
                     /**
                      * 网络信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RabbitMQServerlessAccessInfo m_clusterNetInfo;
                     bool m_clusterNetInfoHasBeenSet;
 
                     /**
                      * 公网白名单信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RabbitMQServerlessWhiteListInfo m_clusterWhiteListInfo;
                     bool m_clusterWhiteListInfoHasBeenSet;

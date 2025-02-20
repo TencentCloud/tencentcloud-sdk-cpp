@@ -29,7 +29,8 @@ Pod::Pod() :
     m_createTimeHasBeenSet(false),
     m_containersHasBeenSet(false),
     m_containerInfosHasBeenSet(false),
-    m_crossTenantENIInfoHasBeenSet(false)
+    m_crossTenantENIInfoHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -152,6 +153,16 @@ CoreInternalOutcome Pod::Deserialize(const rapidjson::Value &value)
         m_crossTenantENIInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Pod.Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = string(value["Status"].GetString());
+        m_statusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -238,6 +249,14 @@ void Pod::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorTy
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_crossTenantENIInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -385,5 +404,21 @@ void Pod::SetCrossTenantENIInfo(const CrossTenantENIInfo& _crossTenantENIInfo)
 bool Pod::CrossTenantENIInfoHasBeenSet() const
 {
     return m_crossTenantENIInfoHasBeenSet;
+}
+
+string Pod::GetStatus() const
+{
+    return m_status;
+}
+
+void Pod::SetStatus(const string& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool Pod::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 

@@ -232,6 +232,27 @@ namespace TencentCloud
                     bool QueryAnswerHasBeenSet() const;
 
                     /**
+                     * 获取分类ID
+                     * @return CateBizId 分类ID
+                     * 
+                     */
+                    std::string GetCateBizId() const;
+
+                    /**
+                     * 设置分类ID
+                     * @param _cateBizId 分类ID
+                     * 
+                     */
+                    void SetCateBizId(const std::string& _cateBizId);
+
+                    /**
+                     * 判断参数 CateBizId 是否已赋值
+                     * @return CateBizId 是否已赋值
+                     * 
+                     */
+                    bool CateBizIdHasBeenSet() const;
+
+                    /**
                      * 获取QA业务ID列表
                      * @return QaBizIds QA业务ID列表
                      * 
@@ -328,6 +349,12 @@ namespace TencentCloud
                      */
                     std::string m_queryAnswer;
                     bool m_queryAnswerHasBeenSet;
+
+                    /**
+                     * 分类ID
+                     */
+                    std::string m_cateBizId;
+                    bool m_cateBizIdHasBeenSet;
 
                     /**
                      * QA业务ID列表

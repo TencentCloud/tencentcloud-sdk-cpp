@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取公网数据流白名单
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicDataStreamWhiteList 公网数据流白名单
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPublicDataStreamWhiteList() const;
 
                     /**
                      * 设置公网数据流白名单
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _publicDataStreamWhiteList 公网数据流白名单
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPublicDataStreamWhiteList(const std::string& _publicDataStreamWhiteList);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取公网数据流白名单状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicDataStreamWhiteListStatus 公网数据流白名单状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPublicDataStreamWhiteListStatus() const;
 
                     /**
                      * 设置公网数据流白名单状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _publicDataStreamWhiteListStatus 公网数据流白名单状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPublicDataStreamWhiteListStatus(const std::string& _publicDataStreamWhiteListStatus);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 公网数据流白名单
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_publicDataStreamWhiteList;
                     bool m_publicDataStreamWhiteListHasBeenSet;
 
                     /**
                      * 公网数据流白名单状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_publicDataStreamWhiteListStatus;
                     bool m_publicDataStreamWhiteListStatusHasBeenSet;

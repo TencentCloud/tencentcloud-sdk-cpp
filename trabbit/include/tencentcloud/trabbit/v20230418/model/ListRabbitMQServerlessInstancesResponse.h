@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Instances 实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RabbitMQServerlessInstance> GetInstances() const;
@@ -78,7 +76,6 @@ namespace TencentCloud
 
                     /**
                      * 实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RabbitMQServerlessInstance> m_instances;
                     bool m_instancesHasBeenSet;

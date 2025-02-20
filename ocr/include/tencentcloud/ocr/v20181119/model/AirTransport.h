@@ -468,15 +468,15 @@ namespace TencentCloud
                     bool DateStartHasBeenSet() const;
 
                     /**
-                     * 获取有效截至日期
-                     * @return DateEnd 有效截至日期
+                     * 获取有效截止日期
+                     * @return DateEnd 有效截止日期
                      * 
                      */
                     std::string GetDateEnd() const;
 
                     /**
-                     * 设置有效截至日期
-                     * @param _dateEnd 有效截至日期
+                     * 设置有效截止日期
+                     * @param _dateEnd 有效截止日期
                      * 
                      */
                     void SetDateEnd(const std::string& _dateEnd);
@@ -821,7 +821,7 @@ namespace TencentCloud
                     bool m_dateStartHasBeenSet;
 
                     /**
-                     * 有效截至日期
+                     * 有效截止日期
                      */
                     std::string m_dateEnd;
                     bool m_dateEndHasBeenSet;

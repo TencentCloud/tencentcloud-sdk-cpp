@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取消费者列表信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConsumerInfoList 消费者列表信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RabbitMQConsumersListInfo> GetConsumerInfoList() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 消费者列表信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RabbitMQConsumersListInfo> m_consumerInfoList;
                     bool m_consumerInfoListHasBeenSet;
 
                     /**
                      * 数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

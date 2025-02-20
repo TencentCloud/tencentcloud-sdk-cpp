@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 用户描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置用户描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 用户描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -136,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户标签，用于决定改用户访问RabbitMQ Management的权限范围
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 用户标签，用于决定改用户访问RabbitMQ Management的权限范围
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetTags() const;
 
                     /**
                      * 设置用户标签，用于决定改用户访问RabbitMQ Management的权限范围
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 用户标签，用于决定改用户访问RabbitMQ Management的权限范围
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::vector<std::string>& _tags);
@@ -224,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该用户所能允许的最大连接数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxConnections 该用户所能允许的最大连接数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxConnections() const;
 
                     /**
                      * 设置该用户所能允许的最大连接数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxConnections 该用户所能允许的最大连接数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxConnections(const int64_t& _maxConnections);
@@ -249,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该用户所能允许的最大通道数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxChannels 该用户所能允许的最大通道数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxChannels() const;
 
                     /**
                      * 设置该用户所能允许的最大通道数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxChannels 该用户所能允许的最大通道数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxChannels(const int64_t& _maxChannels);
@@ -294,14 +278,12 @@ namespace TencentCloud
 
                     /**
                      * 用户描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
                      * 用户标签，用于决定改用户访问RabbitMQ Management的权限范围
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_tags;
                     bool m_tagsHasBeenSet;
@@ -326,14 +308,12 @@ namespace TencentCloud
 
                     /**
                      * 该用户所能允许的最大连接数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxConnections;
                     bool m_maxConnectionsHasBeenSet;
 
                     /**
                      * 该用户所能允许的最大通道数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxChannels;
                     bool m_maxChannelsHasBeenSet;

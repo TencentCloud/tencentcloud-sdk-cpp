@@ -395,6 +395,31 @@ namespace TencentCloud
                      */
                     bool ModelHasBeenSet() const;
 
+                    /**
+                     * 获取二级菜单
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SecondModuleList 二级菜单
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetSecondModuleList() const;
+
+                    /**
+                     * 设置二级菜单
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _secondModuleList 二级菜单
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSecondModuleList(const std::vector<std::string>& _secondModuleList);
+
+                    /**
+                     * 判断参数 SecondModuleList 是否已赋值
+                     * @return SecondModuleList 是否已赋值
+                     * 
+                     */
+                    bool SecondModuleListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -493,6 +518,13 @@ namespace TencentCloud
                      */
                     std::string m_model;
                     bool m_modelHasBeenSet;
+
+                    /**
+                     * 二级菜单
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_secondModuleList;
+                    bool m_secondModuleListHasBeenSet;
 
                 };
             }

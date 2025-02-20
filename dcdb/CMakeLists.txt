@@ -36,10 +36,12 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/DescribeDCDBPriceResponse.h
   include/tencentcloud/dcdb/v20180411/model/ModifyInstanceVportResponse.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDCDBInstanceDetailRequest.h
+  include/tencentcloud/dcdb/v20180411/model/DescribeFileDownloadUrlResponse.h
   include/tencentcloud/dcdb/v20180411/model/ModifyInstanceVipResponse.h
   include/tencentcloud/dcdb/v20180411/model/AssociateSecurityGroupsRequest.h
   include/tencentcloud/dcdb/v20180411/model/ShardBriefInfo.h
   include/tencentcloud/dcdb/v20180411/model/NewBackupConfig.h
+  include/tencentcloud/dcdb/v20180411/model/CancelOnlineDDLJobRequest.h
   include/tencentcloud/dcdb/v20180411/model/FlushBinlogResponse.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDBSecurityGroupsResponse.h
   include/tencentcloud/dcdb/v20180411/model/CancelDcnJobResponse.h
@@ -70,6 +72,7 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/ModifyDBInstancesProjectResponse.h
   include/tencentcloud/dcdb/v20180411/model/ModifyDBEncryptAttributesResponse.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDCDBInstanceNodeInfoRequest.h
+  include/tencentcloud/dcdb/v20180411/model/SwitchDBInstanceHAResponse.h
   include/tencentcloud/dcdb/v20180411/model/DatabaseView.h
   include/tencentcloud/dcdb/v20180411/model/ConfigValue.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDBLogFilesRequest.h
@@ -84,7 +87,7 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/ModifyInstanceNetworkResponse.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDBSecurityGroupsRequest.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDCDBPriceRequest.h
-  include/tencentcloud/dcdb/v20180411/model/SwitchDBInstanceHAResponse.h
+  include/tencentcloud/dcdb/v20180411/model/DescribeOnlineDDLJobRequest.h
   include/tencentcloud/dcdb/v20180411/model/DescribeBackupFilesResponse.h
   include/tencentcloud/dcdb/v20180411/model/ParamModifyResult.h
   include/tencentcloud/dcdb/v20180411/model/TablePrivilege.h
@@ -117,7 +120,7 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/DescribeBackupConfigsRequest.h
   include/tencentcloud/dcdb/v20180411/model/ModifyDBInstanceSecurityGroupsRequest.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDcnDetailRequest.h
-  include/tencentcloud/dcdb/v20180411/model/DescribeFileDownloadUrlResponse.h
+  include/tencentcloud/dcdb/v20180411/model/DDLDetail.h
   include/tencentcloud/dcdb/v20180411/model/ModifyDBParametersResponse.h
   include/tencentcloud/dcdb/v20180411/model/DCDBShardInfo.h
   include/tencentcloud/dcdb/v20180411/model/CopyAccountPrivilegesRequest.h
@@ -212,10 +215,12 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/DescribeDCDBRenewalPriceRequest.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDCDBInstancesRequest.h
   include/tencentcloud/dcdb/v20180411/model/DescribeLogFileRetentionPeriodRequest.h
+  include/tencentcloud/dcdb/v20180411/model/DescribeOnlineDDLJobResponse.h
   include/tencentcloud/dcdb/v20180411/model/ModifyInstanceVportRequest.h
   include/tencentcloud/dcdb/v20180411/model/ModifyDBInstanceSecurityGroupsResponse.h
   include/tencentcloud/dcdb/v20180411/model/DestroyHourDCDBInstanceRequest.h
   include/tencentcloud/dcdb/v20180411/model/FlushBinlogRequest.h
+  include/tencentcloud/dcdb/v20180411/model/CancelOnlineDDLJobResponse.h
   include/tencentcloud/dcdb/v20180411/model/ModifyDBSyncModeResponse.h
   include/tencentcloud/dcdb/v20180411/model/DisassociateSecurityGroupsResponse.h
   include/tencentcloud/dcdb/v20180411/model/DescribeUserTasksRequest.h
@@ -241,10 +246,12 @@ set(dcdb_src
   src/v20180411/model/DescribeDCDBPriceResponse.cpp
   src/v20180411/model/ModifyInstanceVportResponse.cpp
   src/v20180411/model/DescribeDCDBInstanceDetailRequest.cpp
+  src/v20180411/model/DescribeFileDownloadUrlResponse.cpp
   src/v20180411/model/ModifyInstanceVipResponse.cpp
   src/v20180411/model/AssociateSecurityGroupsRequest.cpp
   src/v20180411/model/ShardBriefInfo.cpp
   src/v20180411/model/NewBackupConfig.cpp
+  src/v20180411/model/CancelOnlineDDLJobRequest.cpp
   src/v20180411/model/FlushBinlogResponse.cpp
   src/v20180411/model/DescribeDBSecurityGroupsResponse.cpp
   src/v20180411/model/CancelDcnJobResponse.cpp
@@ -275,6 +282,7 @@ set(dcdb_src
   src/v20180411/model/ModifyDBInstancesProjectResponse.cpp
   src/v20180411/model/ModifyDBEncryptAttributesResponse.cpp
   src/v20180411/model/DescribeDCDBInstanceNodeInfoRequest.cpp
+  src/v20180411/model/SwitchDBInstanceHAResponse.cpp
   src/v20180411/model/DatabaseView.cpp
   src/v20180411/model/ConfigValue.cpp
   src/v20180411/model/DescribeDBLogFilesRequest.cpp
@@ -289,7 +297,7 @@ set(dcdb_src
   src/v20180411/model/ModifyInstanceNetworkResponse.cpp
   src/v20180411/model/DescribeDBSecurityGroupsRequest.cpp
   src/v20180411/model/DescribeDCDBPriceRequest.cpp
-  src/v20180411/model/SwitchDBInstanceHAResponse.cpp
+  src/v20180411/model/DescribeOnlineDDLJobRequest.cpp
   src/v20180411/model/DescribeBackupFilesResponse.cpp
   src/v20180411/model/ParamModifyResult.cpp
   src/v20180411/model/TablePrivilege.cpp
@@ -322,7 +330,7 @@ set(dcdb_src
   src/v20180411/model/DescribeBackupConfigsRequest.cpp
   src/v20180411/model/ModifyDBInstanceSecurityGroupsRequest.cpp
   src/v20180411/model/DescribeDcnDetailRequest.cpp
-  src/v20180411/model/DescribeFileDownloadUrlResponse.cpp
+  src/v20180411/model/DDLDetail.cpp
   src/v20180411/model/ModifyDBParametersResponse.cpp
   src/v20180411/model/DCDBShardInfo.cpp
   src/v20180411/model/CopyAccountPrivilegesRequest.cpp
@@ -417,10 +425,12 @@ set(dcdb_src
   src/v20180411/model/DescribeDCDBRenewalPriceRequest.cpp
   src/v20180411/model/DescribeDCDBInstancesRequest.cpp
   src/v20180411/model/DescribeLogFileRetentionPeriodRequest.cpp
+  src/v20180411/model/DescribeOnlineDDLJobResponse.cpp
   src/v20180411/model/ModifyInstanceVportRequest.cpp
   src/v20180411/model/ModifyDBInstanceSecurityGroupsResponse.cpp
   src/v20180411/model/DestroyHourDCDBInstanceRequest.cpp
   src/v20180411/model/FlushBinlogRequest.cpp
+  src/v20180411/model/CancelOnlineDDLJobResponse.cpp
   src/v20180411/model/ModifyDBSyncModeResponse.cpp
   src/v20180411/model/DisassociateSecurityGroupsResponse.cpp
   src/v20180411/model/DescribeUserTasksRequest.cpp

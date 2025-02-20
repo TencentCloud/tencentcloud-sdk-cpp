@@ -13241,49 +13241,6 @@ CwpClient::DescribeSecurityEventsCntOutcomeCallable CwpClient::DescribeSecurityE
     return task->get_future();
 }
 
-CwpClient::DescribeSecurityProtectionStatOutcome CwpClient::DescribeSecurityProtectionStat(const DescribeSecurityProtectionStatRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeSecurityProtectionStat");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeSecurityProtectionStatResponse rsp = DescribeSecurityProtectionStatResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeSecurityProtectionStatOutcome(rsp);
-        else
-            return DescribeSecurityProtectionStatOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeSecurityProtectionStatOutcome(outcome.GetError());
-    }
-}
-
-void CwpClient::DescribeSecurityProtectionStatAsync(const DescribeSecurityProtectionStatRequest& request, const DescribeSecurityProtectionStatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSecurityProtectionStat(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CwpClient::DescribeSecurityProtectionStatOutcomeCallable CwpClient::DescribeSecurityProtectionStatCallable(const DescribeSecurityProtectionStatRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeSecurityProtectionStatOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSecurityProtectionStat(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 CwpClient::DescribeSecurityTrendsOutcome CwpClient::DescribeSecurityTrends(const DescribeSecurityTrendsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSecurityTrends");

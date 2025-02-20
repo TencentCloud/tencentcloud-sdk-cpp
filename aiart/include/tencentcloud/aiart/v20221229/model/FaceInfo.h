@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TAF_V20200210_MODEL_DEVICE_H_
-#define TENCENTCLOUD_TAF_V20200210_MODEL_DEVICE_H_
+#ifndef TENCENTCLOUD_AIART_V20221229_MODEL_FACEINFO_H_
+#define TENCENTCLOUD_AIART_V20221229_MODEL_FACEINFO_H_
 
 #include <string>
 #include <vector>
@@ -24,83 +24,84 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/aiart/v20221229/model/Rect.h>
 
 
 namespace TencentCloud
 {
-    namespace Taf
+    namespace Aiart
     {
-        namespace V20200210
+        namespace V20221229
         {
             namespace Model
             {
                 /**
-                * 业务入参
+                * 融合信息
                 */
-                class Device : public AbstractModel
+                class FaceInfo : public AbstractModel
                 {
                 public:
-                    Device();
-                    ~Device() = default;
+                    FaceInfo();
+                    ~FaceInfo() = default;
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
                     /**
-                     * 获取业务入参id
-                     * @return DeviceId 业务入参id
+                     * 获取用户图 URL 列表
+                     * @return ImageUrls 用户图 URL 列表
                      * 
                      */
-                    std::string GetDeviceId() const;
+                    std::vector<std::string> GetImageUrls() const;
 
                     /**
-                     * 设置业务入参id
-                     * @param _deviceId 业务入参id
+                     * 设置用户图 URL 列表
+                     * @param _imageUrls 用户图 URL 列表
                      * 
                      */
-                    void SetDeviceId(const std::string& _deviceId);
+                    void SetImageUrls(const std::vector<std::string>& _imageUrls);
 
                     /**
-                     * 判断参数 DeviceId 是否已赋值
-                     * @return DeviceId 是否已赋值
+                     * 判断参数 ImageUrls 是否已赋值
+                     * @return ImageUrls 是否已赋值
                      * 
                      */
-                    bool DeviceIdHasBeenSet() const;
+                    bool ImageUrlsHasBeenSet() const;
 
                     /**
-                     * 获取业务入参类型
-                     * @return DeviceType 业务入参类型
+                     * 获取模版图人脸坐标。
+                     * @return TemplateFaceRect 模版图人脸坐标。
                      * 
                      */
-                    int64_t GetDeviceType() const;
+                    Rect GetTemplateFaceRect() const;
 
                     /**
-                     * 设置业务入参类型
-                     * @param _deviceType 业务入参类型
+                     * 设置模版图人脸坐标。
+                     * @param _templateFaceRect 模版图人脸坐标。
                      * 
                      */
-                    void SetDeviceType(const int64_t& _deviceType);
+                    void SetTemplateFaceRect(const Rect& _templateFaceRect);
 
                     /**
-                     * 判断参数 DeviceType 是否已赋值
-                     * @return DeviceType 是否已赋值
+                     * 判断参数 TemplateFaceRect 是否已赋值
+                     * @return TemplateFaceRect 是否已赋值
                      * 
                      */
-                    bool DeviceTypeHasBeenSet() const;
+                    bool TemplateFaceRectHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 业务入参id
+                     * 用户图 URL 列表
                      */
-                    std::string m_deviceId;
-                    bool m_deviceIdHasBeenSet;
+                    std::vector<std::string> m_imageUrls;
+                    bool m_imageUrlsHasBeenSet;
 
                     /**
-                     * 业务入参类型
+                     * 模版图人脸坐标。
                      */
-                    int64_t m_deviceType;
-                    bool m_deviceTypeHasBeenSet;
+                    Rect m_templateFaceRect;
+                    bool m_templateFaceRectHasBeenSet;
 
                 };
             }
@@ -108,4 +109,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TAF_V20200210_MODEL_DEVICE_H_
+#endif // !TENCENTCLOUD_AIART_V20221229_MODEL_FACEINFO_H_

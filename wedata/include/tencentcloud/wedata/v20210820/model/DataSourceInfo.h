@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/wedata/v20210820/model/DataSourceConnectStatus.h>
+#include <tencentcloud/wedata/v20210820/model/DataSourceEnvInfo.h>
 
 
 namespace TencentCloud
@@ -922,6 +923,131 @@ namespace TencentCloud
                      */
                     bool ConnectStatusHasBeenSet() const;
 
+                    /**
+                     * 获取数据源展示类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DisplayType 数据源展示类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDisplayType() const;
+
+                    /**
+                     * 设置数据源展示类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _displayType 数据源展示类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDisplayType(const std::string& _displayType);
+
+                    /**
+                     * 判断参数 DisplayType 是否已赋值
+                     * @return DisplayType 是否已赋值
+                     * 
+                     */
+                    bool DisplayTypeHasBeenSet() const;
+
+                    /**
+                     * 获取数据源环境
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Env 数据源环境
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetEnv() const;
+
+                    /**
+                     * 设置数据源环境
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _env 数据源环境
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEnv(const std::string& _env);
+
+                    /**
+                     * 判断参数 Env 是否已赋值
+                     * @return Env 是否已赋值
+                     * 
+                     */
+                    bool EnvHasBeenSet() const;
+
+                    /**
+                     * 获取数据源唯一标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DatasourceUrn 数据源唯一标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDatasourceUrn() const;
+
+                    /**
+                     * 设置数据源唯一标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _datasourceUrn 数据源唯一标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDatasourceUrn(const std::string& _datasourceUrn);
+
+                    /**
+                     * 判断参数 DatasourceUrn 是否已赋值
+                     * @return DatasourceUrn 是否已赋值
+                     * 
+                     */
+                    bool DatasourceUrnHasBeenSet() const;
+
+                    /**
+                     * 获取是否标准模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Model 是否标准模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetModel() const;
+
+                    /**
+                     * 设置是否标准模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _model 是否标准模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetModel(const std::string& _model);
+
+                    /**
+                     * 判断参数 Model 是否已赋值
+                     * @return Model 是否已赋值
+                     * 
+                     */
+                    bool ModelHasBeenSet() const;
+
+                    /**
+                     * 获取 数据源环境信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DataSourceEnvInfos  数据源环境信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<DataSourceEnvInfo> GetDataSourceEnvInfos() const;
+
+                    /**
+                     * 设置 数据源环境信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dataSourceEnvInfos  数据源环境信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDataSourceEnvInfos(const std::vector<DataSourceEnvInfo>& _dataSourceEnvInfos);
+
+                    /**
+                     * 判断参数 DataSourceEnvInfos 是否已赋值
+                     * @return DataSourceEnvInfos 是否已赋值
+                     * 
+                     */
+                    bool DataSourceEnvInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1168,6 +1294,41 @@ namespace TencentCloud
                      */
                     DataSourceConnectStatus m_connectStatus;
                     bool m_connectStatusHasBeenSet;
+
+                    /**
+                     * 数据源展示类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_displayType;
+                    bool m_displayTypeHasBeenSet;
+
+                    /**
+                     * 数据源环境
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_env;
+                    bool m_envHasBeenSet;
+
+                    /**
+                     * 数据源唯一标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_datasourceUrn;
+                    bool m_datasourceUrnHasBeenSet;
+
+                    /**
+                     * 是否标准模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_model;
+                    bool m_modelHasBeenSet;
+
+                    /**
+                     *  数据源环境信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DataSourceEnvInfo> m_dataSourceEnvInfos;
+                    bool m_dataSourceEnvInfosHasBeenSet;
 
                 };
             }

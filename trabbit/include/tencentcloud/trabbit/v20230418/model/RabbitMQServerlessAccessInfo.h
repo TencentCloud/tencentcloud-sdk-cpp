@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取公网域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicAccessEndpoint 公网域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPublicAccessEndpoint() const;
 
                     /**
                      * 设置公网域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _publicAccessEndpoint 公网域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPublicAccessEndpoint(const std::string& _publicAccessEndpoint);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取公网状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicDataStreamStatus 公网状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPublicDataStreamStatus() const;
 
                     /**
                      * 设置公网状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _publicDataStreamStatus 公网状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPublicDataStreamStatus(const std::string& _publicDataStreamStatus);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 公网域名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_publicAccessEndpoint;
                     bool m_publicAccessEndpointHasBeenSet;
 
                     /**
                      * 公网状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_publicDataStreamStatus;
                     bool m_publicDataStreamStatusHasBeenSet;

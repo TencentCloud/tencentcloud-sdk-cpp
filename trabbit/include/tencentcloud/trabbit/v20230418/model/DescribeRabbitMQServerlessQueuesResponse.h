@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取队列列表信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return QueueInfoList 队列列表信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RabbitMQQueueListInfo> GetQueueInfoList() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 队列列表信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RabbitMQQueueListInfo> m_queueInfoList;
                     bool m_queueInfoListHasBeenSet;
 
                     /**
                      * 数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

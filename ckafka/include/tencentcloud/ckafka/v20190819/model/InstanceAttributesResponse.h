@@ -963,6 +963,27 @@ namespace TencentCloud
                      */
                     bool CustomCertIdHasBeenSet() const;
 
+                    /**
+                     * 获取集群topic默认 unclean.leader.election.enable配置: 1 开启 0 关闭
+                     * @return UncleanLeaderElectionEnable 集群topic默认 unclean.leader.election.enable配置: 1 开启 0 关闭
+                     * 
+                     */
+                    int64_t GetUncleanLeaderElectionEnable() const;
+
+                    /**
+                     * 设置集群topic默认 unclean.leader.election.enable配置: 1 开启 0 关闭
+                     * @param _uncleanLeaderElectionEnable 集群topic默认 unclean.leader.election.enable配置: 1 开启 0 关闭
+                     * 
+                     */
+                    void SetUncleanLeaderElectionEnable(const int64_t& _uncleanLeaderElectionEnable);
+
+                    /**
+                     * 判断参数 UncleanLeaderElectionEnable 是否已赋值
+                     * @return UncleanLeaderElectionEnable 是否已赋值
+                     * 
+                     */
+                    bool UncleanLeaderElectionEnableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1222,6 +1243,12 @@ namespace TencentCloud
                      */
                     std::string m_customCertId;
                     bool m_customCertIdHasBeenSet;
+
+                    /**
+                     * 集群topic默认 unclean.leader.election.enable配置: 1 开启 0 关闭
+                     */
+                    int64_t m_uncleanLeaderElectionEnable;
+                    bool m_uncleanLeaderElectionEnableHasBeenSet;
 
                 };
             }

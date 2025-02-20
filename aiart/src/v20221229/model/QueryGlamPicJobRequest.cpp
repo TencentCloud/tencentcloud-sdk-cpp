@@ -14,24 +14,33 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cwp/v20180228/model/DescribeSecurityProtectionStatRequest.h>
+#include <tencentcloud/aiart/v20221229/model/QueryGlamPicJobRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Cwp::V20180228::Model;
+using namespace TencentCloud::Aiart::V20221229::Model;
 using namespace std;
 
-DescribeSecurityProtectionStatRequest::DescribeSecurityProtectionStatRequest()
+QueryGlamPicJobRequest::QueryGlamPicJobRequest() :
+    m_jobIdHasBeenSet(false)
 {
 }
 
-string DescribeSecurityProtectionStatRequest::ToJsonString() const
+string QueryGlamPicJobRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_jobIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_jobId.c_str(), allocator).Move(), allocator);
+    }
 
 
     rapidjson::StringBuffer buffer;
@@ -40,5 +49,21 @@ string DescribeSecurityProtectionStatRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string QueryGlamPicJobRequest::GetJobId() const
+{
+    return m_jobId;
+}
+
+void QueryGlamPicJobRequest::SetJobId(const string& _jobId)
+{
+    m_jobId = _jobId;
+    m_jobIdHasBeenSet = true;
+}
+
+bool QueryGlamPicJobRequest::JobIdHasBeenSet() const
+{
+    return m_jobIdHasBeenSet;
+}
 
 

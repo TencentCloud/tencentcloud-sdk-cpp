@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取logo地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogoUrl logo地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLogoUrl() const;
 
                     /**
                      * 设置logo地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logoUrl logo地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogoUrl(const std::string& _logoUrl);
@@ -94,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主页地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HomeUrl 主页地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHomeUrl() const;
 
                     /**
                      * 设置主页地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _homeUrl 主页地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHomeUrl(const std::string& _homeUrl);
@@ -119,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自定义的js
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return JSUrl 自定义的js
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetJSUrl() const;
 
                     /**
                      * 设置自定义的js
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _jSUrl 自定义的js
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetJSUrl(const std::string& _jSUrl);
@@ -144,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自定义的css
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CSSUrl 自定义的css
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCSSUrl() const;
 
                     /**
                      * 设置自定义的css
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cSSUrl 自定义的css
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCSSUrl(const std::string& _cSSUrl);
@@ -177,28 +161,24 @@ namespace TencentCloud
 
                     /**
                      * logo地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logoUrl;
                     bool m_logoUrlHasBeenSet;
 
                     /**
                      * 主页地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_homeUrl;
                     bool m_homeUrlHasBeenSet;
 
                     /**
                      * 自定义的js
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_jSUrl;
                     bool m_jSUrlHasBeenSet;
 
                     /**
                      * 自定义的css
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cSSUrl;
                     bool m_cSSUrlHasBeenSet;

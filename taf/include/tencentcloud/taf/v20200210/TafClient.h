@@ -25,12 +25,6 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/taf/v20200210/model/ManagePortraitRiskRequest.h>
 #include <tencentcloud/taf/v20200210/model/ManagePortraitRiskResponse.h>
-#include <tencentcloud/taf/v20200210/model/RecognizeCustomizedAudienceRequest.h>
-#include <tencentcloud/taf/v20200210/model/RecognizeCustomizedAudienceResponse.h>
-#include <tencentcloud/taf/v20200210/model/RecognizePreciseTargetAudienceRequest.h>
-#include <tencentcloud/taf/v20200210/model/RecognizePreciseTargetAudienceResponse.h>
-#include <tencentcloud/taf/v20200210/model/RecognizeTargetAudienceRequest.h>
-#include <tencentcloud/taf/v20200210/model/RecognizeTargetAudienceResponse.h>
 
 
 namespace TencentCloud
@@ -48,15 +42,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ManagePortraitRiskResponse> ManagePortraitRiskOutcome;
                 typedef std::future<ManagePortraitRiskOutcome> ManagePortraitRiskOutcomeCallable;
                 typedef std::function<void(const TafClient*, const Model::ManagePortraitRiskRequest&, ManagePortraitRiskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ManagePortraitRiskAsyncHandler;
-                typedef Outcome<Core::Error, Model::RecognizeCustomizedAudienceResponse> RecognizeCustomizedAudienceOutcome;
-                typedef std::future<RecognizeCustomizedAudienceOutcome> RecognizeCustomizedAudienceOutcomeCallable;
-                typedef std::function<void(const TafClient*, const Model::RecognizeCustomizedAudienceRequest&, RecognizeCustomizedAudienceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeCustomizedAudienceAsyncHandler;
-                typedef Outcome<Core::Error, Model::RecognizePreciseTargetAudienceResponse> RecognizePreciseTargetAudienceOutcome;
-                typedef std::future<RecognizePreciseTargetAudienceOutcome> RecognizePreciseTargetAudienceOutcomeCallable;
-                typedef std::function<void(const TafClient*, const Model::RecognizePreciseTargetAudienceRequest&, RecognizePreciseTargetAudienceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizePreciseTargetAudienceAsyncHandler;
-                typedef Outcome<Core::Error, Model::RecognizeTargetAudienceResponse> RecognizeTargetAudienceOutcome;
-                typedef std::future<RecognizeTargetAudienceOutcome> RecognizeTargetAudienceOutcomeCallable;
-                typedef std::function<void(const TafClient*, const Model::RecognizeTargetAudienceRequest&, RecognizeTargetAudienceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeTargetAudienceAsyncHandler;
 
 
 
@@ -68,33 +53,6 @@ namespace TencentCloud
                 ManagePortraitRiskOutcome ManagePortraitRisk(const Model::ManagePortraitRiskRequest &request);
                 void ManagePortraitRiskAsync(const Model::ManagePortraitRiskRequest& request, const ManagePortraitRiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ManagePortraitRiskOutcomeCallable ManagePortraitRiskCallable(const Model::ManagePortraitRiskRequest& request);
-
-                /**
-                 *流量反欺诈-流量验准定制版
-                 * @param req RecognizeCustomizedAudienceRequest
-                 * @return RecognizeCustomizedAudienceOutcome
-                 */
-                RecognizeCustomizedAudienceOutcome RecognizeCustomizedAudience(const Model::RecognizeCustomizedAudienceRequest &request);
-                void RecognizeCustomizedAudienceAsync(const Model::RecognizeCustomizedAudienceRequest& request, const RecognizeCustomizedAudienceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                RecognizeCustomizedAudienceOutcomeCallable RecognizeCustomizedAudienceCallable(const Model::RecognizeCustomizedAudienceRequest& request);
-
-                /**
-                 *流量反欺诈-流量验准高级版
-                 * @param req RecognizePreciseTargetAudienceRequest
-                 * @return RecognizePreciseTargetAudienceOutcome
-                 */
-                RecognizePreciseTargetAudienceOutcome RecognizePreciseTargetAudience(const Model::RecognizePreciseTargetAudienceRequest &request);
-                void RecognizePreciseTargetAudienceAsync(const Model::RecognizePreciseTargetAudienceRequest& request, const RecognizePreciseTargetAudienceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                RecognizePreciseTargetAudienceOutcomeCallable RecognizePreciseTargetAudienceCallable(const Model::RecognizePreciseTargetAudienceRequest& request);
-
-                /**
-                 *流量反欺诈-流量验准
-                 * @param req RecognizeTargetAudienceRequest
-                 * @return RecognizeTargetAudienceOutcome
-                 */
-                RecognizeTargetAudienceOutcome RecognizeTargetAudience(const Model::RecognizeTargetAudienceRequest &request);
-                void RecognizeTargetAudienceAsync(const Model::RecognizeTargetAudienceRequest& request, const RecognizeTargetAudienceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                RecognizeTargetAudienceOutcomeCallable RecognizeTargetAudienceCallable(const Model::RecognizeTargetAudienceRequest& request);
 
             };
         }

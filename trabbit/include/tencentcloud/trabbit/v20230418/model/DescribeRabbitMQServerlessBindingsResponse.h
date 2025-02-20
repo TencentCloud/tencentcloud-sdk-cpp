@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取路由关系列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BindingInfoList 路由关系列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RabbitMQBindingListInfo> GetBindingInfoList() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 路由关系列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RabbitMQBindingListInfo> m_bindingInfoList;
                     bool m_bindingInfoListHasBeenSet;
 
                     /**
                      * 数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

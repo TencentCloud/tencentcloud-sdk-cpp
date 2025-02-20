@@ -19,42 +19,20 @@ set(taf_public_header
   )
 
 set(taf_public_header_model
-  include/tencentcloud/taf/v20200210/model/ManagePortraitRiskOutput.h
-  include/tencentcloud/taf/v20200210/model/InputBusinessEncryptData.h
-  include/tencentcloud/taf/v20200210/model/RecognizeCustomizedAudienceRequest.h
-  include/tencentcloud/taf/v20200210/model/RecognizePreciseTargetAudienceRequest.h
   include/tencentcloud/taf/v20200210/model/ManagePortraitRiskResponse.h
-  include/tencentcloud/taf/v20200210/model/RecognizeTargetAudienceResponse.h
-  include/tencentcloud/taf/v20200210/model/ManagePortraitRiskValueOutput.h
-  include/tencentcloud/taf/v20200210/model/OutputRecognizeTargetAudienceValue.h
-  include/tencentcloud/taf/v20200210/model/OutputRecognizeTargetAudience.h
-  include/tencentcloud/taf/v20200210/model/RecognizeCustomizedAudienceResponse.h
-  include/tencentcloud/taf/v20200210/model/InputRecognizeTargetAudience.h
-  include/tencentcloud/taf/v20200210/model/Device.h
+  include/tencentcloud/taf/v20200210/model/ManagePortraitRiskOutput.h
   include/tencentcloud/taf/v20200210/model/ManagePortraitRiskInput.h
   include/tencentcloud/taf/v20200210/model/ManagePortraitRiskRequest.h
-  include/tencentcloud/taf/v20200210/model/RecognizeTargetAudienceRequest.h
-  include/tencentcloud/taf/v20200210/model/RecognizePreciseTargetAudienceResponse.h
+  include/tencentcloud/taf/v20200210/model/ManagePortraitRiskValueOutput.h
   )
 
 set(taf_src
   src/v20200210/TafClient.cpp
-  src/v20200210/model/ManagePortraitRiskOutput.cpp
-  src/v20200210/model/InputBusinessEncryptData.cpp
-  src/v20200210/model/RecognizeCustomizedAudienceRequest.cpp
-  src/v20200210/model/RecognizePreciseTargetAudienceRequest.cpp
   src/v20200210/model/ManagePortraitRiskResponse.cpp
-  src/v20200210/model/RecognizeTargetAudienceResponse.cpp
-  src/v20200210/model/ManagePortraitRiskValueOutput.cpp
-  src/v20200210/model/OutputRecognizeTargetAudienceValue.cpp
-  src/v20200210/model/OutputRecognizeTargetAudience.cpp
-  src/v20200210/model/RecognizeCustomizedAudienceResponse.cpp
-  src/v20200210/model/InputRecognizeTargetAudience.cpp
-  src/v20200210/model/Device.cpp
+  src/v20200210/model/ManagePortraitRiskOutput.cpp
   src/v20200210/model/ManagePortraitRiskInput.cpp
   src/v20200210/model/ManagePortraitRiskRequest.cpp
-  src/v20200210/model/RecognizeTargetAudienceRequest.cpp
-  src/v20200210/model/RecognizePreciseTargetAudienceResponse.cpp
+  src/v20200210/model/ManagePortraitRiskValueOutput.cpp
   )
 
 set(taf_include

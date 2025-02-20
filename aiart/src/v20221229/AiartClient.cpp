@@ -298,6 +298,49 @@ AiartClient::QueryDrawPortraitJobOutcomeCallable AiartClient::QueryDrawPortraitJ
     return task->get_future();
 }
 
+AiartClient::QueryGlamPicJobOutcome AiartClient::QueryGlamPicJob(const QueryGlamPicJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryGlamPicJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryGlamPicJobResponse rsp = QueryGlamPicJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryGlamPicJobOutcome(rsp);
+        else
+            return QueryGlamPicJobOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryGlamPicJobOutcome(outcome.GetError());
+    }
+}
+
+void AiartClient::QueryGlamPicJobAsync(const QueryGlamPicJobRequest& request, const QueryGlamPicJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryGlamPicJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AiartClient::QueryGlamPicJobOutcomeCallable AiartClient::QueryGlamPicJobCallable(const QueryGlamPicJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryGlamPicJobOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryGlamPicJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AiartClient::QueryMemeJobOutcome AiartClient::QueryMemeJob(const QueryMemeJobRequest &request)
 {
     auto outcome = MakeRequest(request, "QueryMemeJob");
@@ -549,6 +592,49 @@ AiartClient::SubmitDrawPortraitJobOutcomeCallable AiartClient::SubmitDrawPortrai
         [this, request]()
         {
             return this->SubmitDrawPortraitJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+AiartClient::SubmitGlamPicJobOutcome AiartClient::SubmitGlamPicJob(const SubmitGlamPicJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "SubmitGlamPicJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SubmitGlamPicJobResponse rsp = SubmitGlamPicJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SubmitGlamPicJobOutcome(rsp);
+        else
+            return SubmitGlamPicJobOutcome(o.GetError());
+    }
+    else
+    {
+        return SubmitGlamPicJobOutcome(outcome.GetError());
+    }
+}
+
+void AiartClient::SubmitGlamPicJobAsync(const SubmitGlamPicJobRequest& request, const SubmitGlamPicJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SubmitGlamPicJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AiartClient::SubmitGlamPicJobOutcomeCallable AiartClient::SubmitGlamPicJobCallable(const SubmitGlamPicJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SubmitGlamPicJobOutcome()>>(
+        [this, request]()
+        {
+            return this->SubmitGlamPicJob(request);
         }
     );
 

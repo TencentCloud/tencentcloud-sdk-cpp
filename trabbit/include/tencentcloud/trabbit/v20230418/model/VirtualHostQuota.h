@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最大虚拟主机数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxVirtualHost 最大虚拟主机数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMaxVirtualHost() const;
 
                     /**
                      * 设置最大虚拟主机数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxVirtualHost 最大虚拟主机数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxVirtualHost(const uint64_t& _maxVirtualHost);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取已经使用的虚拟主机数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UsedVirtualHost 已经使用的虚拟主机数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetUsedVirtualHost() const;
 
                     /**
                      * 设置已经使用的虚拟主机数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _usedVirtualHost 已经使用的虚拟主机数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUsedVirtualHost(const uint64_t& _usedVirtualHost);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 最大虚拟主机数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_maxVirtualHost;
                     bool m_maxVirtualHostHasBeenSet;
 
                     /**
                      * 已经使用的虚拟主机数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_usedVirtualHost;
                     bool m_usedVirtualHostHasBeenSet;

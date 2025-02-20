@@ -39,7 +39,8 @@ RabbitMQServerlessInstance::RabbitMQServerlessInstance() :
     m_instanceTypeHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_nodeCountHasBeenSet(false),
-    m_maxStorageHasBeenSet(false)
+    m_maxStorageHasBeenSet(false),
+    m_isolatedTimeHasBeenSet(false)
 {
 }
 
@@ -248,6 +249,16 @@ CoreInternalOutcome RabbitMQServerlessInstance::Deserialize(const rapidjson::Val
         m_maxStorageHasBeenSet = true;
     }
 
+    if (value.HasMember("IsolatedTime") && !value["IsolatedTime"].IsNull())
+    {
+        if (!value["IsolatedTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQServerlessInstance.IsolatedTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isolatedTime = value["IsolatedTime"].GetUint64();
+        m_isolatedTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -412,6 +423,14 @@ void RabbitMQServerlessInstance::ToJsonObject(rapidjson::Value &value, rapidjson
         string key = "MaxStorage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxStorage, allocator);
+    }
+
+    if (m_isolatedTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsolatedTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isolatedTime, allocator);
     }
 
 }
@@ -719,5 +738,21 @@ void RabbitMQServerlessInstance::SetMaxStorage(const int64_t& _maxStorage)
 bool RabbitMQServerlessInstance::MaxStorageHasBeenSet() const
 {
     return m_maxStorageHasBeenSet;
+}
+
+uint64_t RabbitMQServerlessInstance::GetIsolatedTime() const
+{
+    return m_isolatedTime;
+}
+
+void RabbitMQServerlessInstance::SetIsolatedTime(const uint64_t& _isolatedTime)
+{
+    m_isolatedTime = _isolatedTime;
+    m_isolatedTimeHasBeenSet = true;
+}
+
+bool RabbitMQServerlessInstance::IsolatedTimeHasBeenSet() const
+{
+    return m_isolatedTimeHasBeenSet;
 }
 

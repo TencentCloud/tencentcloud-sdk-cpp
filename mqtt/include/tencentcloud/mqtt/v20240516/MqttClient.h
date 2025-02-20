@@ -81,6 +81,8 @@
 #include <tencentcloud/mqtt/v20240516/model/DescribeInstanceResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeInstanceListRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeInstanceListResponse.h>
+#include <tencentcloud/mqtt/v20240516/model/DescribeProductSKUListRequest.h>
+#include <tencentcloud/mqtt/v20240516/model/DescribeProductSKUListResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeTopicRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeTopicResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeTopicListRequest.h>
@@ -212,6 +214,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInstanceListResponse> DescribeInstanceListOutcome;
                 typedef std::future<DescribeInstanceListOutcome> DescribeInstanceListOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::DescribeInstanceListRequest&, DescribeInstanceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeProductSKUListResponse> DescribeProductSKUListOutcome;
+                typedef std::future<DescribeProductSKUListOutcome> DescribeProductSKUListOutcomeCallable;
+                typedef std::function<void(const MqttClient*, const Model::DescribeProductSKUListRequest&, DescribeProductSKUListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProductSKUListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTopicResponse> DescribeTopicOutcome;
                 typedef std::future<DescribeTopicOutcome> DescribeTopicOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::DescribeTopicRequest&, DescribeTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopicAsyncHandler;
@@ -525,6 +530,15 @@ namespace TencentCloud
                 DescribeInstanceListOutcome DescribeInstanceList(const Model::DescribeInstanceListRequest &request);
                 void DescribeInstanceListAsync(const Model::DescribeInstanceListRequest& request, const DescribeInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInstanceListOutcomeCallable DescribeInstanceListCallable(const Model::DescribeInstanceListRequest& request);
+
+                /**
+                 *获取产品售卖规格
+                 * @param req DescribeProductSKUListRequest
+                 * @return DescribeProductSKUListOutcome
+                 */
+                DescribeProductSKUListOutcome DescribeProductSKUList(const Model::DescribeProductSKUListRequest &request);
+                void DescribeProductSKUListAsync(const Model::DescribeProductSKUListRequest& request, const DescribeProductSKUListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeProductSKUListOutcomeCallable DescribeProductSKUListCallable(const Model::DescribeProductSKUListRequest& request);
 
                 /**
                  *查询mqtt主题详情

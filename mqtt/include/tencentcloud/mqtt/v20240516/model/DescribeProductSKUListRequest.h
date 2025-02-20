@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CWP_V20180228_MODEL_DESCRIBESECURITYPROTECTIONSTATREQUEST_H_
-#define TENCENTCLOUD_CWP_V20180228_MODEL_DESCRIBESECURITYPROTECTIONSTATREQUEST_H_
+#ifndef TENCENTCLOUD_MQTT_V20240516_MODEL_DESCRIBEPRODUCTSKULISTREQUEST_H_
+#define TENCENTCLOUD_MQTT_V20240516_MODEL_DESCRIBEPRODUCTSKULISTREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -25,20 +25,20 @@
 
 namespace TencentCloud
 {
-    namespace Cwp
+    namespace Mqtt
     {
-        namespace V20180228
+        namespace V20240516
         {
             namespace Model
             {
                 /**
-                * DescribeSecurityProtectionStat请求参数结构体
+                * DescribeProductSKUList请求参数结构体
                 */
-                class DescribeSecurityProtectionStatRequest : public AbstractModel
+                class DescribeProductSKUListRequest : public AbstractModel
                 {
                 public:
-                    DescribeSecurityProtectionStatRequest();
-                    ~DescribeSecurityProtectionStatRequest() = default;
+                    DescribeProductSKUListRequest();
+                    ~DescribeProductSKUListRequest() = default;
                     std::string ToJsonString() const;
 
 
@@ -50,4 +50,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CWP_V20180228_MODEL_DESCRIBESECURITYPROTECTIONSTATREQUEST_H_
+#endif // !TENCENTCLOUD_MQTT_V20240516_MODEL_DESCRIBEPRODUCTSKULISTREQUEST_H_

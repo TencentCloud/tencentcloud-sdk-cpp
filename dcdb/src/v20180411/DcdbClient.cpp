@@ -169,6 +169,49 @@ DcdbClient::CancelDcnJobOutcomeCallable DcdbClient::CancelDcnJobCallable(const C
     return task->get_future();
 }
 
+DcdbClient::CancelOnlineDDLJobOutcome DcdbClient::CancelOnlineDDLJob(const CancelOnlineDDLJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "CancelOnlineDDLJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CancelOnlineDDLJobResponse rsp = CancelOnlineDDLJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CancelOnlineDDLJobOutcome(rsp);
+        else
+            return CancelOnlineDDLJobOutcome(o.GetError());
+    }
+    else
+    {
+        return CancelOnlineDDLJobOutcome(outcome.GetError());
+    }
+}
+
+void DcdbClient::CancelOnlineDDLJobAsync(const CancelOnlineDDLJobRequest& request, const CancelOnlineDDLJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CancelOnlineDDLJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DcdbClient::CancelOnlineDDLJobOutcomeCallable DcdbClient::CancelOnlineDDLJobCallable(const CancelOnlineDDLJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CancelOnlineDDLJobOutcome()>>(
+        [this, request]()
+        {
+            return this->CancelOnlineDDLJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DcdbClient::CloneAccountOutcome DcdbClient::CloneAccount(const CloneAccountRequest &request)
 {
     auto outcome = MakeRequest(request, "CloneAccount");
@@ -1753,6 +1796,49 @@ DcdbClient::DescribeLogFileRetentionPeriodOutcomeCallable DcdbClient::DescribeLo
         [this, request]()
         {
             return this->DescribeLogFileRetentionPeriod(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DcdbClient::DescribeOnlineDDLJobOutcome DcdbClient::DescribeOnlineDDLJob(const DescribeOnlineDDLJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOnlineDDLJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOnlineDDLJobResponse rsp = DescribeOnlineDDLJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOnlineDDLJobOutcome(rsp);
+        else
+            return DescribeOnlineDDLJobOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOnlineDDLJobOutcome(outcome.GetError());
+    }
+}
+
+void DcdbClient::DescribeOnlineDDLJobAsync(const DescribeOnlineDDLJobRequest& request, const DescribeOnlineDDLJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeOnlineDDLJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DcdbClient::DescribeOnlineDDLJobOutcomeCallable DcdbClient::DescribeOnlineDDLJobCallable(const DescribeOnlineDDLJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeOnlineDDLJobOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeOnlineDDLJob(request);
         }
     );
 

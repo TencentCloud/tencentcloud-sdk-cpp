@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MemberAccount 用户 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMemberAccount() const;
 
                     /**
                      * 设置用户 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _memberAccount 用户 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMemberAccount(const std::string& _memberAccount);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取禁言到的时间（使用 UTC 时间，即世界协调时间）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MutedUntil 禁言到的时间（使用 UTC 时间，即世界协调时间）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMutedUntil() const;
 
                     /**
                      * 设置禁言到的时间（使用 UTC 时间，即世界协调时间）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mutedUntil 禁言到的时间（使用 UTC 时间，即世界协调时间）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMutedUntil(const uint64_t& _mutedUntil);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 用户 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_memberAccount;
                     bool m_memberAccountHasBeenSet;
 
                     /**
                      * 禁言到的时间（使用 UTC 时间，即世界协调时间）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_mutedUntil;
                     bool m_mutedUntilHasBeenSet;

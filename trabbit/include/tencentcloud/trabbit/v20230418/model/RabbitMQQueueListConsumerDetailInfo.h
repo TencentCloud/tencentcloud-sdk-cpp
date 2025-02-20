@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取消费者数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConsumersNumber 消费者数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetConsumersNumber() const;
 
                     /**
                      * 设置消费者数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _consumersNumber 消费者数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConsumersNumber(const int64_t& _consumersNumber);
@@ -75,7 +71,6 @@ namespace TencentCloud
 
                     /**
                      * 消费者数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_consumersNumber;
                     bool m_consumersNumberHasBeenSet;

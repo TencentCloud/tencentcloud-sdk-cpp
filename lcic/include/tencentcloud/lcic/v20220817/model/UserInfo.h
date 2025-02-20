@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用Id。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SdkAppId 应用Id。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetSdkAppId() const;
 
                     /**
                      * 设置应用Id。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sdkAppId 应用Id。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSdkAppId(const uint64_t& _sdkAppId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户Id。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserId 用户Id。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户Id。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userId 用户Id。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserId(const std::string& _userId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户昵称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 用户昵称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置用户昵称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 用户昵称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户头像Url。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Avatar 用户头像Url。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAvatar() const;
 
                     /**
                      * 设置用户头像Url。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _avatar 用户头像Url。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAvatar(const std::string& _avatar);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户在客户系统的Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OriginId 用户在客户系统的Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOriginId() const;
 
                     /**
                      * 设置用户在客户系统的Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _originId 用户在客户系统的Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOriginId(const std::string& _originId);
@@ -175,35 +155,30 @@ namespace TencentCloud
 
                     /**
                      * 应用Id。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_sdkAppId;
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
                      * 用户Id。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
 
                     /**
                      * 用户昵称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 用户头像Url。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_avatar;
                     bool m_avatarHasBeenSet;
 
                     /**
                      * 用户在客户系统的Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_originId;
                     bool m_originIdHasBeenSet;

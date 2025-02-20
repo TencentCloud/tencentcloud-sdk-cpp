@@ -290,10 +290,10 @@ namespace TencentCloud
                     /**
                      * 获取意愿核身（语音播报+语音回答模式）使用的文案。
 - 包括：系统语音播报的文本、需要核验的标准文本。
-- 当前仅支持1轮问答。
+- 问答模式支持1-10轮（不超过10轮）的意愿确认。
                      * @return IntentionQuestions 意愿核身（语音播报+语音回答模式）使用的文案。
 - 包括：系统语音播报的文本、需要核验的标准文本。
-- 当前仅支持1轮问答。
+- 问答模式支持1-10轮（不超过10轮）的意愿确认。
                      * 
                      */
                     std::vector<IntentionQuestion> GetIntentionQuestions() const;
@@ -301,10 +301,10 @@ namespace TencentCloud
                     /**
                      * 设置意愿核身（语音播报+语音回答模式）使用的文案。
 - 包括：系统语音播报的文本、需要核验的标准文本。
-- 当前仅支持1轮问答。
+- 问答模式支持1-10轮（不超过10轮）的意愿确认。
                      * @param _intentionQuestions 意愿核身（语音播报+语音回答模式）使用的文案。
 - 包括：系统语音播报的文本、需要核验的标准文本。
-- 当前仅支持1轮问答。
+- 问答模式支持1-10轮（不超过10轮）的意愿确认。
                      * 
                      */
                     void SetIntentionQuestions(const std::vector<IntentionQuestion>& _intentionQuestions);
@@ -319,10 +319,10 @@ namespace TencentCloud
                     /**
                      * 获取意愿核身（点头确认模式）使用的文案。
 - 若未使用意愿核身（点头确认模式），则该字段无需传入。
-- 当前仅支持一个提示文本。
+- 点头确认模式支持1-10轮（不超过10轮）的意愿确认。
                      * @return IntentionActions 意愿核身（点头确认模式）使用的文案。
 - 若未使用意愿核身（点头确认模式），则该字段无需传入。
-- 当前仅支持一个提示文本。
+- 点头确认模式支持1-10轮（不超过10轮）的意愿确认。
                      * 
                      */
                     std::vector<IntentionActionConfig> GetIntentionActions() const;
@@ -330,10 +330,10 @@ namespace TencentCloud
                     /**
                      * 设置意愿核身（点头确认模式）使用的文案。
 - 若未使用意愿核身（点头确认模式），则该字段无需传入。
-- 当前仅支持一个提示文本。
+- 点头确认模式支持1-10轮（不超过10轮）的意愿确认。
                      * @param _intentionActions 意愿核身（点头确认模式）使用的文案。
 - 若未使用意愿核身（点头确认模式），则该字段无需传入。
-- 当前仅支持一个提示文本。
+- 点头确认模式支持1-10轮（不超过10轮）的意愿确认。
                      * 
                      */
                     void SetIntentionActions(const std::vector<IntentionActionConfig>& _intentionActions);
@@ -438,7 +438,7 @@ namespace TencentCloud
                     /**
                      * 意愿核身（语音播报+语音回答模式）使用的文案。
 - 包括：系统语音播报的文本、需要核验的标准文本。
-- 当前仅支持1轮问答。
+- 问答模式支持1-10轮（不超过10轮）的意愿确认。
                      */
                     std::vector<IntentionQuestion> m_intentionQuestions;
                     bool m_intentionQuestionsHasBeenSet;
@@ -446,7 +446,7 @@ namespace TencentCloud
                     /**
                      * 意愿核身（点头确认模式）使用的文案。
 - 若未使用意愿核身（点头确认模式），则该字段无需传入。
-- 当前仅支持一个提示文本。
+- 点头确认模式支持1-10轮（不超过10轮）的意愿确认。
                      */
                     std::vector<IntentionActionConfig> m_intentionActions;
                     bool m_intentionActionsHasBeenSet;

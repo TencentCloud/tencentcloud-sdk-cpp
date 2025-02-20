@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自定义消息数据。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 自定义消息数据。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetData() const;
 
                     /**
                      * 设置自定义消息数据。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _data 自定义消息数据。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetData(const std::string& _data);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自定义消息描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Desc 自定义消息描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDesc() const;
 
                     /**
                      * 设置自定义消息描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _desc 自定义消息描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDesc(const std::string& _desc);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取扩展字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ext 扩展字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExt() const;
 
                     /**
                      * 设置扩展字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ext 扩展字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExt(const std::string& _ext);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 自定义消息数据。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_data;
                     bool m_dataHasBeenSet;
 
                     /**
                      * 自定义消息描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_desc;
                     bool m_descHasBeenSet;
 
                     /**
                      * 扩展字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ext;
                     bool m_extHasBeenSet;

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取客户端Ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClientIp 客户端Ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClientIp() const;
 
                     /**
                      * 设置客户端Ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clientIp 客户端Ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClientIp(const std::string& _clientIp);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取消费者Tag
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConsumerTag 消费者Tag
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConsumerTag() const;
 
                     /**
                      * 设置消费者Tag
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _consumerTag 消费者Tag
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConsumerTag(const std::string& _consumerTag);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 客户端Ip
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clientIp;
                     bool m_clientIpHasBeenSet;
 
                     /**
                      * 消费者Tag
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_consumerTag;
                     bool m_consumerTagHasBeenSet;

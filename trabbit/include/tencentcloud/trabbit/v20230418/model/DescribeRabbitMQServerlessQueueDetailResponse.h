@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取Vhost参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VirtualHost Vhost参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVirtualHost() const;
@@ -77,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取队列名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return QueueName 队列名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetQueueName() const;
@@ -93,9 +87,7 @@ namespace TencentCloud
 
                     /**
                      * 获取队列类型,取值classic或quorum
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return QueueType 队列类型,取值classic或quorum
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetQueueType() const;
@@ -109,9 +101,7 @@ namespace TencentCloud
 
                     /**
                      * 获取在线消费者数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Consumers 在线消费者数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetConsumers() const;
@@ -125,9 +115,7 @@ namespace TencentCloud
 
                     /**
                      * 获取持久标记
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Durable 持久标记
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetDurable() const;
@@ -141,9 +129,7 @@ namespace TencentCloud
 
                     /**
                      * 获取自动清除
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoDelete 自动清除
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetAutoDelete() const;
@@ -157,9 +143,7 @@ namespace TencentCloud
 
                     /**
                      * 获取备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemark() const;
@@ -173,9 +157,7 @@ namespace TencentCloud
 
                     /**
                      * 获取MessageTTL参数,classic类型专用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MessageTTL MessageTTL参数,classic类型专用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMessageTTL() const;
@@ -189,9 +171,7 @@ namespace TencentCloud
 
                     /**
                      * 获取AutoExpire参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoExpire AutoExpire参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAutoExpire() const;
@@ -205,9 +185,7 @@ namespace TencentCloud
 
                     /**
                      * 获取MaxLength参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxLength MaxLength参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxLength() const;
@@ -221,9 +199,7 @@ namespace TencentCloud
 
                     /**
                      * 获取MaxLengthBytes参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxLengthBytes MaxLengthBytes参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxLengthBytes() const;
@@ -237,9 +213,7 @@ namespace TencentCloud
 
                     /**
                      * 获取DeliveryLimit参数,quorum类型专用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeliveryLimit DeliveryLimit参数,quorum类型专用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDeliveryLimit() const;
@@ -253,9 +227,7 @@ namespace TencentCloud
 
                     /**
                      * 获取OverflowBehaviour参数,取值为drop-head, reject-publish或reject-publish-dlx
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OverflowBehaviour OverflowBehaviour参数,取值为drop-head, reject-publish或reject-publish-dlx
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOverflowBehaviour() const;
@@ -269,9 +241,7 @@ namespace TencentCloud
 
                     /**
                      * 获取DeadLetterExchange参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeadLetterExchange DeadLetterExchange参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeadLetterExchange() const;
@@ -285,9 +255,7 @@ namespace TencentCloud
 
                     /**
                      * 获取DeadLetterRoutingKey参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeadLetterRoutingKey DeadLetterRoutingKey参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeadLetterRoutingKey() const;
@@ -301,9 +269,7 @@ namespace TencentCloud
 
                     /**
                      * 获取SingleActiveConsumer参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SingleActiveConsumer SingleActiveConsumer参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetSingleActiveConsumer() const;
@@ -317,9 +283,7 @@ namespace TencentCloud
 
                     /**
                      * 获取MaximumPriority参数,classic类型专用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaximumPriority MaximumPriority参数,classic类型专用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaximumPriority() const;
@@ -333,9 +297,7 @@ namespace TencentCloud
 
                     /**
                      * 获取LazyMode参数,classic类型专用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LazyMode LazyMode参数,classic类型专用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetLazyMode() const;
@@ -349,9 +311,7 @@ namespace TencentCloud
 
                     /**
                      * 获取MasterLocator参数,classic类型专用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MasterLocator MasterLocator参数,classic类型专用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMasterLocator() const;
@@ -365,9 +325,7 @@ namespace TencentCloud
 
                     /**
                      * 获取MaxInMemoryLength参数,quorum类型专用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxInMemoryLength MaxInMemoryLength参数,quorum类型专用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxInMemoryLength() const;
@@ -381,9 +339,7 @@ namespace TencentCloud
 
                     /**
                      * 获取MaxInMemoryBytes参数,quorum类型专用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxInMemoryBytes MaxInMemoryBytes参数,quorum类型专用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxInMemoryBytes() const;
@@ -397,9 +353,7 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间戳,单位秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间戳,单位秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCreateTime() const;
@@ -413,9 +367,7 @@ namespace TencentCloud
 
                     /**
                      * 获取节点
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Node 节点
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNode() const;
@@ -429,9 +381,7 @@ namespace TencentCloud
 
                     /**
                      * 获取仲裁队列死信一致性策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeadLetterStrategy 仲裁队列死信一致性策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeadLetterStrategy() const;
@@ -445,9 +395,7 @@ namespace TencentCloud
 
                     /**
                      * 获取仲裁队列的领导者选举策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return QueueLeaderLocator 仲裁队列的领导者选举策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetQueueLeaderLocator() const;
@@ -461,9 +409,7 @@ namespace TencentCloud
 
                     /**
                      * 获取仲裁队列的初始副本组大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return QuorumInitialGroupSize 仲裁队列的初始副本组大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetQuorumInitialGroupSize() const;
@@ -477,9 +423,7 @@ namespace TencentCloud
 
                     /**
                      * 获取是否为独占队列
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Exclusive 是否为独占队列
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetExclusive() const;
@@ -493,9 +437,7 @@ namespace TencentCloud
 
                     /**
                      * 获取生效的策略名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Policy 生效的策略名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPolicy() const;
@@ -509,9 +451,7 @@ namespace TencentCloud
 
                     /**
                      * 获取扩展参数 key-value
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Arguments 扩展参数 key-value
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetArguments() const;
@@ -527,210 +467,180 @@ namespace TencentCloud
 
                     /**
                      * 实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
                      * Vhost参数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_virtualHost;
                     bool m_virtualHostHasBeenSet;
 
                     /**
                      * 队列名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_queueName;
                     bool m_queueNameHasBeenSet;
 
                     /**
                      * 队列类型,取值classic或quorum
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_queueType;
                     bool m_queueTypeHasBeenSet;
 
                     /**
                      * 在线消费者数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_consumers;
                     bool m_consumersHasBeenSet;
 
                     /**
                      * 持久标记
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_durable;
                     bool m_durableHasBeenSet;
 
                     /**
                      * 自动清除
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_autoDelete;
                     bool m_autoDeleteHasBeenSet;
 
                     /**
                      * 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
                      * MessageTTL参数,classic类型专用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_messageTTL;
                     bool m_messageTTLHasBeenSet;
 
                     /**
                      * AutoExpire参数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_autoExpire;
                     bool m_autoExpireHasBeenSet;
 
                     /**
                      * MaxLength参数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxLength;
                     bool m_maxLengthHasBeenSet;
 
                     /**
                      * MaxLengthBytes参数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxLengthBytes;
                     bool m_maxLengthBytesHasBeenSet;
 
                     /**
                      * DeliveryLimit参数,quorum类型专用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_deliveryLimit;
                     bool m_deliveryLimitHasBeenSet;
 
                     /**
                      * OverflowBehaviour参数,取值为drop-head, reject-publish或reject-publish-dlx
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_overflowBehaviour;
                     bool m_overflowBehaviourHasBeenSet;
 
                     /**
                      * DeadLetterExchange参数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deadLetterExchange;
                     bool m_deadLetterExchangeHasBeenSet;
 
                     /**
                      * DeadLetterRoutingKey参数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deadLetterRoutingKey;
                     bool m_deadLetterRoutingKeyHasBeenSet;
 
                     /**
                      * SingleActiveConsumer参数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_singleActiveConsumer;
                     bool m_singleActiveConsumerHasBeenSet;
 
                     /**
                      * MaximumPriority参数,classic类型专用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maximumPriority;
                     bool m_maximumPriorityHasBeenSet;
 
                     /**
                      * LazyMode参数,classic类型专用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_lazyMode;
                     bool m_lazyModeHasBeenSet;
 
                     /**
                      * MasterLocator参数,classic类型专用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_masterLocator;
                     bool m_masterLocatorHasBeenSet;
 
                     /**
                      * MaxInMemoryLength参数,quorum类型专用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxInMemoryLength;
                     bool m_maxInMemoryLengthHasBeenSet;
 
                     /**
                      * MaxInMemoryBytes参数,quorum类型专用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxInMemoryBytes;
                     bool m_maxInMemoryBytesHasBeenSet;
 
                     /**
                      * 创建时间戳,单位秒
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 节点
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_node;
                     bool m_nodeHasBeenSet;
 
                     /**
                      * 仲裁队列死信一致性策略
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deadLetterStrategy;
                     bool m_deadLetterStrategyHasBeenSet;
 
                     /**
                      * 仲裁队列的领导者选举策略
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_queueLeaderLocator;
                     bool m_queueLeaderLocatorHasBeenSet;
 
                     /**
                      * 仲裁队列的初始副本组大小
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_quorumInitialGroupSize;
                     bool m_quorumInitialGroupSizeHasBeenSet;
 
                     /**
                      * 是否为独占队列
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_exclusive;
                     bool m_exclusiveHasBeenSet;
 
                     /**
                      * 生效的策略名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_policy;
                     bool m_policyHasBeenSet;
 
                     /**
                      * 扩展参数 key-value
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_arguments;
                     bool m_argumentsHasBeenSet;

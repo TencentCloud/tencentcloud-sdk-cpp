@@ -14,34 +14,24 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/taf/v20200210/model/RecognizeCustomizedAudienceRequest.h>
+#include <tencentcloud/mqtt/v20240516/model/DescribeProductSKUListRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Taf::V20200210::Model;
+using namespace TencentCloud::Mqtt::V20240516::Model;
 using namespace std;
 
-RecognizeCustomizedAudienceRequest::RecognizeCustomizedAudienceRequest() :
-    m_bspDataHasBeenSet(false)
+DescribeProductSKUListRequest::DescribeProductSKUListRequest()
 {
 }
 
-string RecognizeCustomizedAudienceRequest::ToJsonString() const
+string DescribeProductSKUListRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_bspDataHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "BspData";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_bspData.ToJsonObject(d[key.c_str()], allocator);
-    }
 
 
     rapidjson::StringBuffer buffer;
@@ -50,21 +40,5 @@ string RecognizeCustomizedAudienceRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-InputRecognizeTargetAudience RecognizeCustomizedAudienceRequest::GetBspData() const
-{
-    return m_bspData;
-}
-
-void RecognizeCustomizedAudienceRequest::SetBspData(const InputRecognizeTargetAudience& _bspData)
-{
-    m_bspData = _bspData;
-    m_bspDataHasBeenSet = true;
-}
-
-bool RecognizeCustomizedAudienceRequest::BspDataHasBeenSet() const
-{
-    return m_bspDataHasBeenSet;
-}
 
 

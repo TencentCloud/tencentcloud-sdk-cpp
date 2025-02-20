@@ -1287,6 +1287,49 @@ MqttClient::DescribeInstanceListOutcomeCallable MqttClient::DescribeInstanceList
     return task->get_future();
 }
 
+MqttClient::DescribeProductSKUListOutcome MqttClient::DescribeProductSKUList(const DescribeProductSKUListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeProductSKUList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeProductSKUListResponse rsp = DescribeProductSKUListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeProductSKUListOutcome(rsp);
+        else
+            return DescribeProductSKUListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeProductSKUListOutcome(outcome.GetError());
+    }
+}
+
+void MqttClient::DescribeProductSKUListAsync(const DescribeProductSKUListRequest& request, const DescribeProductSKUListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeProductSKUList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MqttClient::DescribeProductSKUListOutcomeCallable MqttClient::DescribeProductSKUListCallable(const DescribeProductSKUListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeProductSKUListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeProductSKUList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MqttClient::DescribeTopicOutcome MqttClient::DescribeTopic(const DescribeTopicRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTopic");

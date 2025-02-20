@@ -14,60 +14,56 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TAF_V20200210_MODEL_RECOGNIZEPRECISETARGETAUDIENCERESPONSE_H_
-#define TENCENTCLOUD_TAF_V20200210_MODEL_RECOGNIZEPRECISETARGETAUDIENCERESPONSE_H_
+#ifndef TENCENTCLOUD_AIART_V20221229_MODEL_SUBMITGLAMPICJOBRESPONSE_H_
+#define TENCENTCLOUD_AIART_V20221229_MODEL_SUBMITGLAMPICJOBRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/taf/v20200210/model/OutputRecognizeTargetAudience.h>
 
 
 namespace TencentCloud
 {
-    namespace Taf
+    namespace Aiart
     {
-        namespace V20200210
+        namespace V20221229
         {
             namespace Model
             {
                 /**
-                * RecognizePreciseTargetAudience返回参数结构体
+                * SubmitGlamPicJob返回参数结构体
                 */
-                class RecognizePreciseTargetAudienceResponse : public AbstractModel
+                class SubmitGlamPicJobResponse : public AbstractModel
                 {
                 public:
-                    RecognizePreciseTargetAudienceResponse();
-                    ~RecognizePreciseTargetAudienceResponse() = default;
+                    SubmitGlamPicJobResponse();
+                    ~SubmitGlamPicJobResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取回包数据
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Data 回包数据
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取任务ID。
+                     * @return JobId 任务ID。
                      * 
                      */
-                    OutputRecognizeTargetAudience GetData() const;
+                    std::string GetJobId() const;
 
                     /**
-                     * 判断参数 Data 是否已赋值
-                     * @return Data 是否已赋值
+                     * 判断参数 JobId 是否已赋值
+                     * @return JobId 是否已赋值
                      * 
                      */
-                    bool DataHasBeenSet() const;
+                    bool JobIdHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 回包数据
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 任务ID。
                      */
-                    OutputRecognizeTargetAudience m_data;
-                    bool m_dataHasBeenSet;
+                    std::string m_jobId;
+                    bool m_jobIdHasBeenSet;
 
                 };
             }
@@ -75,4 +71,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TAF_V20200210_MODEL_RECOGNIZEPRECISETARGETAUDIENCERESPONSE_H_
+#endif // !TENCENTCLOUD_AIART_V20221229_MODEL_SUBMITGLAMPICJOBRESPONSE_H_

@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取exchange 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExchangeName exchange 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExchangeName() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * exchange 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_exchangeName;
                     bool m_exchangeNameHasBeenSet;

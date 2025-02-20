@@ -33,7 +33,8 @@ DMSPartition::DMSPartition() :
     m_modifiedTimeHasBeenSet(false),
     m_lastAccessTimeHasBeenSet(false),
     m_paramsHasBeenSet(false),
-    m_sdsHasBeenSet(false)
+    m_sdsHasBeenSet(false),
+    m_datasourceConnectionNameHasBeenSet(false)
 {
 }
 
@@ -192,6 +193,16 @@ CoreInternalOutcome DMSPartition::Deserialize(const rapidjson::Value &value)
         m_sdsHasBeenSet = true;
     }
 
+    if (value.HasMember("DatasourceConnectionName") && !value["DatasourceConnectionName"].IsNull())
+    {
+        if (!value["DatasourceConnectionName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DMSPartition.DatasourceConnectionName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_datasourceConnectionName = string(value["DatasourceConnectionName"].GetString());
+        m_datasourceConnectionNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -314,6 +325,14 @@ void DMSPartition::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_sds.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_datasourceConnectionNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatasourceConnectionName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_datasourceConnectionName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -525,5 +544,21 @@ void DMSPartition::SetSds(const DMSSds& _sds)
 bool DMSPartition::SdsHasBeenSet() const
 {
     return m_sdsHasBeenSet;
+}
+
+string DMSPartition::GetDatasourceConnectionName() const
+{
+    return m_datasourceConnectionName;
+}
+
+void DMSPartition::SetDatasourceConnectionName(const string& _datasourceConnectionName)
+{
+    m_datasourceConnectionName = _datasourceConnectionName;
+    m_datasourceConnectionNameHasBeenSet = true;
+}
+
+bool DMSPartition::DatasourceConnectionNameHasBeenSet() const
+{
+    return m_datasourceConnectionNameHasBeenSet;
 }
 

@@ -87,6 +87,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/DescribeDataSourceListRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeInstanceByCycleResponse.h
   include/tencentcloud/wedata/v20210820/model/DataServiceRequestParam.h
+  include/tencentcloud/wedata/v20210820/model/DataSourceEnvInfo.h
   include/tencentcloud/wedata/v20210820/model/DescribeDataCheckStatRequest.h
   include/tencentcloud/wedata/v20210820/model/TablePropertyScore.h
   include/tencentcloud/wedata/v20210820/model/GetOfflineInstanceListRequest.h
@@ -844,6 +845,7 @@ set(wedata_src
   src/v20210820/model/DescribeDataSourceListRequest.cpp
   src/v20210820/model/DescribeInstanceByCycleResponse.cpp
   src/v20210820/model/DataServiceRequestParam.cpp
+  src/v20210820/model/DataSourceEnvInfo.cpp
   src/v20210820/model/DescribeDataCheckStatRequest.cpp
   src/v20210820/model/TablePropertyScore.cpp
   src/v20210820/model/GetOfflineInstanceListRequest.cpp

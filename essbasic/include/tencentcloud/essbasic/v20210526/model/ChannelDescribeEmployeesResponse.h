@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool EmployeesHasBeenSet() const;
 
                     /**
-                     * 获取指定分页返回第几页的数据。页码从 0 开始，即首页为 0，最大20000。
-                     * @return Offset 指定分页返回第几页的数据。页码从 0 开始，即首页为 0，最大20000。
+                     * 获取偏移量，默认为0，最大20000。关于<code>Offset</code>的更进一步介绍请参考 API <a href="https://cloud.tencent.com/document/api/213/15688" target="_blank">简介</a>中的相关小节。
+                     * @return Offset 偏移量，默认为0，最大20000。关于<code>Offset</code>的更进一步介绍请参考 API <a href="https://cloud.tencent.com/document/api/213/15688" target="_blank">简介</a>中的相关小节。
                      * 
                      */
                     int64_t GetOffset() const;
@@ -109,7 +109,7 @@ namespace TencentCloud
                     bool m_employeesHasBeenSet;
 
                     /**
-                     * 指定分页返回第几页的数据。页码从 0 开始，即首页为 0，最大20000。
+                     * 偏移量，默认为0，最大20000。关于<code>Offset</code>的更进一步介绍请参考 API <a href="https://cloud.tencent.com/document/api/213/15688" target="_blank">简介</a>中的相关小节。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;

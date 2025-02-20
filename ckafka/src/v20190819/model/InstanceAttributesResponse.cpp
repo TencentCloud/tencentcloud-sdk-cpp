@@ -60,7 +60,8 @@ InstanceAttributesResponse::InstanceAttributesResponse() :
     m_clusterTypeHasBeenSet(false),
     m_freePartitionNumberHasBeenSet(false),
     m_elasticFloatBandwidthHasBeenSet(false),
-    m_customCertIdHasBeenSet(false)
+    m_customCertIdHasBeenSet(false),
+    m_uncleanLeaderElectionEnableHasBeenSet(false)
 {
 }
 
@@ -516,6 +517,16 @@ CoreInternalOutcome InstanceAttributesResponse::Deserialize(const rapidjson::Val
         m_customCertIdHasBeenSet = true;
     }
 
+    if (value.HasMember("UncleanLeaderElectionEnable") && !value["UncleanLeaderElectionEnable"].IsNull())
+    {
+        if (!value["UncleanLeaderElectionEnable"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceAttributesResponse.UncleanLeaderElectionEnable` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_uncleanLeaderElectionEnable = value["UncleanLeaderElectionEnable"].GetInt64();
+        m_uncleanLeaderElectionEnableHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -868,6 +879,14 @@ void InstanceAttributesResponse::ToJsonObject(rapidjson::Value &value, rapidjson
         string key = "CustomCertId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_customCertId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_uncleanLeaderElectionEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UncleanLeaderElectionEnable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_uncleanLeaderElectionEnable, allocator);
     }
 
 }
@@ -1511,5 +1530,21 @@ void InstanceAttributesResponse::SetCustomCertId(const string& _customCertId)
 bool InstanceAttributesResponse::CustomCertIdHasBeenSet() const
 {
     return m_customCertIdHasBeenSet;
+}
+
+int64_t InstanceAttributesResponse::GetUncleanLeaderElectionEnable() const
+{
+    return m_uncleanLeaderElectionEnable;
+}
+
+void InstanceAttributesResponse::SetUncleanLeaderElectionEnable(const int64_t& _uncleanLeaderElectionEnable)
+{
+    m_uncleanLeaderElectionEnable = _uncleanLeaderElectionEnable;
+    m_uncleanLeaderElectionEnableHasBeenSet = true;
+}
+
+bool InstanceAttributesResponse::UncleanLeaderElectionEnableHasBeenSet() const
+{
+    return m_uncleanLeaderElectionEnableHasBeenSet;
 }
 

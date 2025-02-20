@@ -133,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取每个选项答题人数统计
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AnswerStats 每个选项答题人数统计
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AnswerStat> GetAnswerStats() const;
 
                     /**
                      * 设置每个选项答题人数统计
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _answerStats 每个选项答题人数统计
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAnswerStats(const std::vector<AnswerStat>& _answerStats);
@@ -184,7 +180,6 @@ namespace TencentCloud
 
                     /**
                      * 每个选项答题人数统计
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AnswerStat> m_answerStats;
                     bool m_answerStatsHasBeenSet;

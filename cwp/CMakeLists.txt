@@ -144,7 +144,6 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/OpenPortStatistics.h
   include/tencentcloud/cwp/v20180228/model/DescribeRansomDefenseMachineListRequest.h
   include/tencentcloud/cwp/v20180228/model/ExportAssetCoreModuleListRequest.h
-  include/tencentcloud/cwp/v20180228/model/ModifyReverseShellRulesAggregationRequest.h
   include/tencentcloud/cwp/v20180228/model/ExportAssetMachineDetailResponse.h
   include/tencentcloud/cwp/v20180228/model/ProtectDirRelatedServer.h
   include/tencentcloud/cwp/v20180228/model/ModifyNetAttackWhiteListResponse.h
@@ -1109,7 +1108,6 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/DescribeMachineListResponse.h
   include/tencentcloud/cwp/v20180228/model/MalwareInfo.h
   include/tencentcloud/cwp/v20180228/model/Place.h
-  include/tencentcloud/cwp/v20180228/model/DescribeSecurityProtectionStatRequest.h
   include/tencentcloud/cwp/v20180228/model/LogInfo.h
   include/tencentcloud/cwp/v20180228/model/DescribeHostInfoResponse.h
   include/tencentcloud/cwp/v20180228/model/ModifyWebHookPolicyStatusResponse.h
@@ -1268,7 +1266,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/UpdateMachineTagsRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeBaselineItemDetectListResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeScanTaskDetailsResponse.h
-  include/tencentcloud/cwp/v20180228/model/DescribeSecurityProtectionStatResponse.h
+  include/tencentcloud/cwp/v20180228/model/ModifyReverseShellRulesAggregationRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeHostLoginListResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribePublicProxyInstallCommandResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeAttackTopRequest.h
@@ -1435,7 +1433,6 @@ set(cwp_src
   src/v20180228/model/OpenPortStatistics.cpp
   src/v20180228/model/DescribeRansomDefenseMachineListRequest.cpp
   src/v20180228/model/ExportAssetCoreModuleListRequest.cpp
-  src/v20180228/model/ModifyReverseShellRulesAggregationRequest.cpp
   src/v20180228/model/ExportAssetMachineDetailResponse.cpp
   src/v20180228/model/ProtectDirRelatedServer.cpp
   src/v20180228/model/ModifyNetAttackWhiteListResponse.cpp
@@ -2400,7 +2397,6 @@ set(cwp_src
   src/v20180228/model/DescribeMachineListResponse.cpp
   src/v20180228/model/MalwareInfo.cpp
   src/v20180228/model/Place.cpp
-  src/v20180228/model/DescribeSecurityProtectionStatRequest.cpp
   src/v20180228/model/LogInfo.cpp
   src/v20180228/model/DescribeHostInfoResponse.cpp
   src/v20180228/model/ModifyWebHookPolicyStatusResponse.cpp
@@ -2559,7 +2555,7 @@ set(cwp_src
   src/v20180228/model/UpdateMachineTagsRequest.cpp
   src/v20180228/model/DescribeBaselineItemDetectListResponse.cpp
   src/v20180228/model/DescribeScanTaskDetailsResponse.cpp
-  src/v20180228/model/DescribeSecurityProtectionStatResponse.cpp
+  src/v20180228/model/ModifyReverseShellRulesAggregationRequest.cpp
   src/v20180228/model/DescribeHostLoginListResponse.cpp
   src/v20180228/model/DescribePublicProxyInstallCommandResponse.cpp
   src/v20180228/model/DescribeAttackTopRequest.cpp

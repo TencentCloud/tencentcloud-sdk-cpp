@@ -55,7 +55,12 @@ DataSourceInfo::DataSourceInfo() :
     m_productIdHasBeenSet(false),
     m_developmentIdHasBeenSet(false),
     m_developmentParamsHasBeenSet(false),
-    m_connectStatusHasBeenSet(false)
+    m_connectStatusHasBeenSet(false),
+    m_displayTypeHasBeenSet(false),
+    m_envHasBeenSet(false),
+    m_datasourceUrnHasBeenSet(false),
+    m_modelHasBeenSet(false),
+    m_dataSourceEnvInfosHasBeenSet(false)
 {
 }
 
@@ -421,6 +426,66 @@ CoreInternalOutcome DataSourceInfo::Deserialize(const rapidjson::Value &value)
         m_connectStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("DisplayType") && !value["DisplayType"].IsNull())
+    {
+        if (!value["DisplayType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataSourceInfo.DisplayType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_displayType = string(value["DisplayType"].GetString());
+        m_displayTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Env") && !value["Env"].IsNull())
+    {
+        if (!value["Env"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataSourceInfo.Env` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_env = string(value["Env"].GetString());
+        m_envHasBeenSet = true;
+    }
+
+    if (value.HasMember("DatasourceUrn") && !value["DatasourceUrn"].IsNull())
+    {
+        if (!value["DatasourceUrn"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataSourceInfo.DatasourceUrn` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_datasourceUrn = string(value["DatasourceUrn"].GetString());
+        m_datasourceUrnHasBeenSet = true;
+    }
+
+    if (value.HasMember("Model") && !value["Model"].IsNull())
+    {
+        if (!value["Model"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataSourceInfo.Model` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_model = string(value["Model"].GetString());
+        m_modelHasBeenSet = true;
+    }
+
+    if (value.HasMember("DataSourceEnvInfos") && !value["DataSourceEnvInfos"].IsNull())
+    {
+        if (!value["DataSourceEnvInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DataSourceInfo.DataSourceEnvInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["DataSourceEnvInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DataSourceEnvInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_dataSourceEnvInfos.push_back(item);
+        }
+        m_dataSourceEnvInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -707,6 +772,53 @@ void DataSourceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_connectStatus.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_displayTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisplayType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_displayType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_envHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Env";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_env.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_datasourceUrnHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatasourceUrn";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_datasourceUrn.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Model";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_model.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dataSourceEnvInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataSourceEnvInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_dataSourceEnvInfos.begin(); itr != m_dataSourceEnvInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1270,5 +1382,85 @@ void DataSourceInfo::SetConnectStatus(const DataSourceConnectStatus& _connectSta
 bool DataSourceInfo::ConnectStatusHasBeenSet() const
 {
     return m_connectStatusHasBeenSet;
+}
+
+string DataSourceInfo::GetDisplayType() const
+{
+    return m_displayType;
+}
+
+void DataSourceInfo::SetDisplayType(const string& _displayType)
+{
+    m_displayType = _displayType;
+    m_displayTypeHasBeenSet = true;
+}
+
+bool DataSourceInfo::DisplayTypeHasBeenSet() const
+{
+    return m_displayTypeHasBeenSet;
+}
+
+string DataSourceInfo::GetEnv() const
+{
+    return m_env;
+}
+
+void DataSourceInfo::SetEnv(const string& _env)
+{
+    m_env = _env;
+    m_envHasBeenSet = true;
+}
+
+bool DataSourceInfo::EnvHasBeenSet() const
+{
+    return m_envHasBeenSet;
+}
+
+string DataSourceInfo::GetDatasourceUrn() const
+{
+    return m_datasourceUrn;
+}
+
+void DataSourceInfo::SetDatasourceUrn(const string& _datasourceUrn)
+{
+    m_datasourceUrn = _datasourceUrn;
+    m_datasourceUrnHasBeenSet = true;
+}
+
+bool DataSourceInfo::DatasourceUrnHasBeenSet() const
+{
+    return m_datasourceUrnHasBeenSet;
+}
+
+string DataSourceInfo::GetModel() const
+{
+    return m_model;
+}
+
+void DataSourceInfo::SetModel(const string& _model)
+{
+    m_model = _model;
+    m_modelHasBeenSet = true;
+}
+
+bool DataSourceInfo::ModelHasBeenSet() const
+{
+    return m_modelHasBeenSet;
+}
+
+vector<DataSourceEnvInfo> DataSourceInfo::GetDataSourceEnvInfos() const
+{
+    return m_dataSourceEnvInfos;
+}
+
+void DataSourceInfo::SetDataSourceEnvInfos(const vector<DataSourceEnvInfo>& _dataSourceEnvInfos)
+{
+    m_dataSourceEnvInfos = _dataSourceEnvInfos;
+    m_dataSourceEnvInfosHasBeenSet = true;
+}
+
+bool DataSourceInfo::DataSourceEnvInfosHasBeenSet() const
+{
+    return m_dataSourceEnvInfosHasBeenSet;
 }
 

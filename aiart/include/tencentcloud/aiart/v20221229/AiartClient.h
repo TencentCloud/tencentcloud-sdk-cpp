@@ -35,6 +35,8 @@
 #include <tencentcloud/aiart/v20221229/model/ImageToImageResponse.h>
 #include <tencentcloud/aiart/v20221229/model/QueryDrawPortraitJobRequest.h>
 #include <tencentcloud/aiart/v20221229/model/QueryDrawPortraitJobResponse.h>
+#include <tencentcloud/aiart/v20221229/model/QueryGlamPicJobRequest.h>
+#include <tencentcloud/aiart/v20221229/model/QueryGlamPicJobResponse.h>
 #include <tencentcloud/aiart/v20221229/model/QueryMemeJobRequest.h>
 #include <tencentcloud/aiart/v20221229/model/QueryMemeJobResponse.h>
 #include <tencentcloud/aiart/v20221229/model/QueryTextToImageProJobRequest.h>
@@ -47,6 +49,8 @@
 #include <tencentcloud/aiart/v20221229/model/SketchToImageResponse.h>
 #include <tencentcloud/aiart/v20221229/model/SubmitDrawPortraitJobRequest.h>
 #include <tencentcloud/aiart/v20221229/model/SubmitDrawPortraitJobResponse.h>
+#include <tencentcloud/aiart/v20221229/model/SubmitGlamPicJobRequest.h>
+#include <tencentcloud/aiart/v20221229/model/SubmitGlamPicJobResponse.h>
 #include <tencentcloud/aiart/v20221229/model/SubmitMemeJobRequest.h>
 #include <tencentcloud/aiart/v20221229/model/SubmitMemeJobResponse.h>
 #include <tencentcloud/aiart/v20221229/model/SubmitTextToImageProJobRequest.h>
@@ -89,6 +93,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QueryDrawPortraitJobResponse> QueryDrawPortraitJobOutcome;
                 typedef std::future<QueryDrawPortraitJobOutcome> QueryDrawPortraitJobOutcomeCallable;
                 typedef std::function<void(const AiartClient*, const Model::QueryDrawPortraitJobRequest&, QueryDrawPortraitJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryDrawPortraitJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryGlamPicJobResponse> QueryGlamPicJobOutcome;
+                typedef std::future<QueryGlamPicJobOutcome> QueryGlamPicJobOutcomeCallable;
+                typedef std::function<void(const AiartClient*, const Model::QueryGlamPicJobRequest&, QueryGlamPicJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryGlamPicJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryMemeJobResponse> QueryMemeJobOutcome;
                 typedef std::future<QueryMemeJobOutcome> QueryMemeJobOutcomeCallable;
                 typedef std::function<void(const AiartClient*, const Model::QueryMemeJobRequest&, QueryMemeJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryMemeJobAsyncHandler;
@@ -107,6 +114,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SubmitDrawPortraitJobResponse> SubmitDrawPortraitJobOutcome;
                 typedef std::future<SubmitDrawPortraitJobOutcome> SubmitDrawPortraitJobOutcomeCallable;
                 typedef std::function<void(const AiartClient*, const Model::SubmitDrawPortraitJobRequest&, SubmitDrawPortraitJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitDrawPortraitJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::SubmitGlamPicJobResponse> SubmitGlamPicJobOutcome;
+                typedef std::future<SubmitGlamPicJobOutcome> SubmitGlamPicJobOutcomeCallable;
+                typedef std::function<void(const AiartClient*, const Model::SubmitGlamPicJobRequest&, SubmitGlamPicJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitGlamPicJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::SubmitMemeJobResponse> SubmitMemeJobOutcome;
                 typedef std::future<SubmitMemeJobOutcome> SubmitMemeJobOutcomeCallable;
                 typedef std::function<void(const AiartClient*, const Model::SubmitMemeJobRequest&, SubmitMemeJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubmitMemeJobAsyncHandler;
@@ -192,6 +202,19 @@ namespace TencentCloud
                 QueryDrawPortraitJobOutcomeCallable QueryDrawPortraitJobCallable(const Model::QueryDrawPortraitJobRequest& request);
 
                 /**
+                 *AI 美照接口将根据模板为用户生成精美照片。分为提交任务和查询任务2个接口。
+- 提交任务：提交一个美照生成异步任务，获得任务 ID。
+- 查询任务：根据任务 ID 查询任务的处理状态、处理结果，任务处理完成后可获得生成图像结果。
+
+AI 美照默认提供1个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后才能开始处理下一个任务。
+                 * @param req QueryGlamPicJobRequest
+                 * @return QueryGlamPicJobOutcome
+                 */
+                QueryGlamPicJobOutcome QueryGlamPicJob(const Model::QueryGlamPicJobRequest &request);
+                void QueryGlamPicJobAsync(const Model::QueryGlamPicJobRequest& request, const QueryGlamPicJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryGlamPicJobOutcomeCallable QueryGlamPicJobCallable(const Model::QueryGlamPicJobRequest& request);
+
+                /**
                  *表情动图生成接口将静态照片制作成动态的表情包。分为提交任务和查询任务2个接口。
 - 提交任务：提交一个表情动图生成异步任务，获得任务 ID。
 - 查询任务：根据任务 ID 查询任务的处理状态、处理结果，任务处理完成后可获得生成图像结果。
@@ -269,6 +292,19 @@ namespace TencentCloud
                 SubmitDrawPortraitJobOutcome SubmitDrawPortraitJob(const Model::SubmitDrawPortraitJobRequest &request);
                 void SubmitDrawPortraitJobAsync(const Model::SubmitDrawPortraitJobRequest& request, const SubmitDrawPortraitJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SubmitDrawPortraitJobOutcomeCallable SubmitDrawPortraitJobCallable(const Model::SubmitDrawPortraitJobRequest& request);
+
+                /**
+                 *AI 美照接口将根据模板为用户生成精美照片。分为提交任务和查询任务2个接口。
+- 提交任务：提交一个美照生成异步任务，获得任务 ID。
+- 查询任务：根据任务 ID 查询任务的处理状态、处理结果，任务处理完成后可获得生成图像结果。
+
+AI 美照默认提供1个并发，代表最多能同时处理1个已提交的任务，上一个任务处理完毕后才能开始处理下一个任务。
+                 * @param req SubmitGlamPicJobRequest
+                 * @return SubmitGlamPicJobOutcome
+                 */
+                SubmitGlamPicJobOutcome SubmitGlamPicJob(const Model::SubmitGlamPicJobRequest &request);
+                void SubmitGlamPicJobAsync(const Model::SubmitGlamPicJobRequest& request, const SubmitGlamPicJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SubmitGlamPicJobOutcomeCallable SubmitGlamPicJobCallable(const Model::SubmitGlamPicJobRequest& request);
 
                 /**
                  *表情动图生成接口将静态照片制作成动态的表情包。分为提交任务和查询任务2个接口。

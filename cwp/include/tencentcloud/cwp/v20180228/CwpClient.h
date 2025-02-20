@@ -637,8 +637,6 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeSecurityEventStatResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeSecurityEventsCntRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeSecurityEventsCntResponse.h>
-#include <tencentcloud/cwp/v20180228/model/DescribeSecurityProtectionStatRequest.h>
-#include <tencentcloud/cwp/v20180228/model/DescribeSecurityProtectionStatResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeSecurityTrendsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeSecurityTrendsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeServerRelatedDirInfoRequest.h>
@@ -1988,9 +1986,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSecurityEventsCntResponse> DescribeSecurityEventsCntOutcome;
                 typedef std::future<DescribeSecurityEventsCntOutcome> DescribeSecurityEventsCntOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeSecurityEventsCntRequest&, DescribeSecurityEventsCntOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityEventsCntAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeSecurityProtectionStatResponse> DescribeSecurityProtectionStatOutcome;
-                typedef std::future<DescribeSecurityProtectionStatOutcome> DescribeSecurityProtectionStatOutcomeCallable;
-                typedef std::function<void(const CwpClient*, const Model::DescribeSecurityProtectionStatRequest&, DescribeSecurityProtectionStatOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityProtectionStatAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSecurityTrendsResponse> DescribeSecurityTrendsOutcome;
                 typedef std::future<DescribeSecurityTrendsOutcome> DescribeSecurityTrendsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeSecurityTrendsRequest&, DescribeSecurityTrendsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityTrendsAsyncHandler;
@@ -5380,17 +5375,6 @@ namespace TencentCloud
                 DescribeSecurityEventsCntOutcome DescribeSecurityEventsCnt(const Model::DescribeSecurityEventsCntRequest &request);
                 void DescribeSecurityEventsCntAsync(const Model::DescribeSecurityEventsCntRequest& request, const DescribeSecurityEventsCntAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSecurityEventsCntOutcomeCallable DescribeSecurityEventsCntCallable(const Model::DescribeSecurityEventsCntRequest& request);
-
-                /**
-                 *接口已无效
-
-获取安全防护状态汇总
-                 * @param req DescribeSecurityProtectionStatRequest
-                 * @return DescribeSecurityProtectionStatOutcome
-                 */
-                DescribeSecurityProtectionStatOutcome DescribeSecurityProtectionStat(const Model::DescribeSecurityProtectionStatRequest &request);
-                void DescribeSecurityProtectionStatAsync(const Model::DescribeSecurityProtectionStatRequest& request, const DescribeSecurityProtectionStatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeSecurityProtectionStatOutcomeCallable DescribeSecurityProtectionStatCallable(const Model::DescribeSecurityProtectionStatRequest& request);
 
                 /**
                  *本接口 (DescribeSecurityTrends) 用于获取安全事件统计数据。

@@ -133,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群说明信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 集群说明信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置集群说明信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remark 集群说明信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -179,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取可用区信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZoneIds 可用区信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetZoneIds() const;
 
                     /**
                      * 设置可用区信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zoneIds 可用区信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZoneIds(const std::vector<int64_t>& _zoneIds);
@@ -393,18 +385,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群异常信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExceptionInformation 集群异常信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExceptionInformation() const;
 
                     /**
                      * 设置集群异常信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _exceptionInformation 集群异常信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExceptionInformation(const std::string& _exceptionInformation);
@@ -439,18 +427,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoRenewFlag 自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAutoRenewFlag() const;
 
                     /**
                      * 设置自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _autoRenewFlag 自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAutoRenewFlag(const int64_t& _autoRenewFlag);
@@ -464,18 +448,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启镜像队列策略。1表示开启，0表示没开启。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MirrorQueuePolicyFlag 是否开启镜像队列策略。1表示开启，0表示没开启。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMirrorQueuePolicyFlag() const;
 
                     /**
                      * 设置是否开启镜像队列策略。1表示开启，0表示没开启。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mirrorQueuePolicyFlag 是否开启镜像队列策略。1表示开启，0表示没开启。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMirrorQueuePolicyFlag(const int64_t& _mirrorQueuePolicyFlag);
@@ -489,18 +469,14 @@ namespace TencentCloud
 
                     /**
                      * 获取每秒消费消息数 单位：条/秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MessageConsumeRate 每秒消费消息数 单位：条/秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetMessageConsumeRate() const;
 
                     /**
                      * 设置每秒消费消息数 单位：条/秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _messageConsumeRate 每秒消费消息数 单位：条/秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMessageConsumeRate(const double& _messageConsumeRate);
@@ -514,18 +490,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群版本信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterVersion 集群版本信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterVersion() const;
 
                     /**
                      * 设置集群版本信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterVersion 集群版本信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterVersion(const std::string& _clusterVersion);
@@ -539,18 +511,14 @@ namespace TencentCloud
 
                     /**
                      * 获取计费模式，0-后付费，1-预付费
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayMode 计费模式，0-后付费，1-预付费
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPayMode() const;
 
                     /**
                      * 设置计费模式，0-后付费，1-预付费
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _payMode 计费模式，0-后付费，1-预付费
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPayMode(const uint64_t& _payMode);
@@ -564,18 +532,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceType 集群类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetInstanceType() const;
 
                     /**
                      * 设置集群类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceType 集群类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceType(const uint64_t& _instanceType);
@@ -589,18 +553,14 @@ namespace TencentCloud
 
                     /**
                      * 获取消息保留时间，单位小时
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MessageRetainTime 消息保留时间，单位小时
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMessageRetainTime() const;
 
                     /**
                      * 设置消息保留时间，单位小时
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _messageRetainTime 消息保留时间，单位小时
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMessageRetainTime(const uint64_t& _messageRetainTime);
@@ -640,7 +600,6 @@ namespace TencentCloud
 
                     /**
                      * 集群说明信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
@@ -653,7 +612,6 @@ namespace TencentCloud
 
                     /**
                      * 可用区信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_zoneIds;
                     bool m_zoneIdsHasBeenSet;
@@ -714,7 +672,6 @@ namespace TencentCloud
 
                     /**
                      * 集群异常信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_exceptionInformation;
                     bool m_exceptionInformationHasBeenSet;
@@ -727,49 +684,42 @@ namespace TencentCloud
 
                     /**
                      * 自动续费标记，0表示默认状态(用户未设置，即初始状态即手动续费)， 1表示自动续费，2表示明确不自动续费(用户设置)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_autoRenewFlag;
                     bool m_autoRenewFlagHasBeenSet;
 
                     /**
                      * 是否开启镜像队列策略。1表示开启，0表示没开启。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_mirrorQueuePolicyFlag;
                     bool m_mirrorQueuePolicyFlagHasBeenSet;
 
                     /**
                      * 每秒消费消息数 单位：条/秒
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_messageConsumeRate;
                     bool m_messageConsumeRateHasBeenSet;
 
                     /**
                      * 集群版本信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterVersion;
                     bool m_clusterVersionHasBeenSet;
 
                     /**
                      * 计费模式，0-后付费，1-预付费
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
                      * 集群类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**
                      * 消息保留时间，单位小时
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_messageRetainTime;
                     bool m_messageRetainTimeHasBeenSet;

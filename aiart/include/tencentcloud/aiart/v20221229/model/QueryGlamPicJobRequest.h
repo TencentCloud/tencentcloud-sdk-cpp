@@ -14,63 +14,62 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TAF_V20200210_MODEL_RECOGNIZEPRECISETARGETAUDIENCEREQUEST_H_
-#define TENCENTCLOUD_TAF_V20200210_MODEL_RECOGNIZEPRECISETARGETAUDIENCEREQUEST_H_
+#ifndef TENCENTCLOUD_AIART_V20221229_MODEL_QUERYGLAMPICJOBREQUEST_H_
+#define TENCENTCLOUD_AIART_V20221229_MODEL_QUERYGLAMPICJOBREQUEST_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/taf/v20200210/model/InputRecognizeTargetAudience.h>
 
 
 namespace TencentCloud
 {
-    namespace Taf
+    namespace Aiart
     {
-        namespace V20200210
+        namespace V20221229
         {
             namespace Model
             {
                 /**
-                * RecognizePreciseTargetAudience请求参数结构体
+                * QueryGlamPicJob请求参数结构体
                 */
-                class RecognizePreciseTargetAudienceRequest : public AbstractModel
+                class QueryGlamPicJobRequest : public AbstractModel
                 {
                 public:
-                    RecognizePreciseTargetAudienceRequest();
-                    ~RecognizePreciseTargetAudienceRequest() = default;
+                    QueryGlamPicJobRequest();
+                    ~QueryGlamPicJobRequest() = default;
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取业务数据
-                     * @return BspData 业务数据
+                     * 获取任务ID。
+                     * @return JobId 任务ID。
                      * 
                      */
-                    InputRecognizeTargetAudience GetBspData() const;
+                    std::string GetJobId() const;
 
                     /**
-                     * 设置业务数据
-                     * @param _bspData 业务数据
+                     * 设置任务ID。
+                     * @param _jobId 任务ID。
                      * 
                      */
-                    void SetBspData(const InputRecognizeTargetAudience& _bspData);
+                    void SetJobId(const std::string& _jobId);
 
                     /**
-                     * 判断参数 BspData 是否已赋值
-                     * @return BspData 是否已赋值
+                     * 判断参数 JobId 是否已赋值
+                     * @return JobId 是否已赋值
                      * 
                      */
-                    bool BspDataHasBeenSet() const;
+                    bool JobIdHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 业务数据
+                     * 任务ID。
                      */
-                    InputRecognizeTargetAudience m_bspData;
-                    bool m_bspDataHasBeenSet;
+                    std::string m_jobId;
+                    bool m_jobIdHasBeenSet;
 
                 };
             }
@@ -78,4 +77,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TAF_V20200210_MODEL_RECOGNIZEPRECISETARGETAUDIENCEREQUEST_H_
+#endif // !TENCENTCLOUD_AIART_V20221229_MODEL_QUERYGLAMPICJOBREQUEST_H_

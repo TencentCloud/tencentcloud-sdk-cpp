@@ -26,7 +26,8 @@ CreateDMSDatabaseRequest::CreateDMSDatabaseRequest() :
     m_assetHasBeenSet(false),
     m_schemaNameHasBeenSet(false),
     m_locationHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_datasourceConnectionNameHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,14 @@ string CreateDMSDatabaseRequest::ToJsonString() const
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_datasourceConnectionNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatasourceConnectionName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_datasourceConnectionName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -140,6 +149,22 @@ void CreateDMSDatabaseRequest::SetName(const string& _name)
 bool CreateDMSDatabaseRequest::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+string CreateDMSDatabaseRequest::GetDatasourceConnectionName() const
+{
+    return m_datasourceConnectionName;
+}
+
+void CreateDMSDatabaseRequest::SetDatasourceConnectionName(const string& _datasourceConnectionName)
+{
+    m_datasourceConnectionName = _datasourceConnectionName;
+    m_datasourceConnectionNameHasBeenSet = true;
+}
+
+bool CreateDMSDatabaseRequest::DatasourceConnectionNameHasBeenSet() const
+{
+    return m_datasourceConnectionNameHasBeenSet;
 }
 
 

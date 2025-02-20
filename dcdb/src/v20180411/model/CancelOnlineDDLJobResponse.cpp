@@ -14,21 +14,20 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/taf/v20200210/model/RecognizeTargetAudienceResponse.h>
+#include <tencentcloud/dcdb/v20180411/model/CancelOnlineDDLJobResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Taf::V20200210::Model;
+using namespace TencentCloud::Dcdb::V20180411::Model;
 using namespace std;
 
-RecognizeTargetAudienceResponse::RecognizeTargetAudienceResponse() :
-    m_dataHasBeenSet(false)
+CancelOnlineDDLJobResponse::CancelOnlineDDLJobResponse()
 {
 }
 
-CoreInternalOutcome RecognizeTargetAudienceResponse::Deserialize(const string &payload)
+CoreInternalOutcome CancelOnlineDDLJobResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,41 +61,15 @@ CoreInternalOutcome RecognizeTargetAudienceResponse::Deserialize(const string &p
     }
 
 
-    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
-    {
-        if (!rsp["Data"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `Data` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_data.Deserialize(rsp["Data"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_dataHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
-string RecognizeTargetAudienceResponse::ToJsonString() const
+string CancelOnlineDDLJobResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
-
-    if (m_dataHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Data";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_data.ToJsonObject(value[key.c_str()], allocator);
-    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -109,15 +82,5 @@ string RecognizeTargetAudienceResponse::ToJsonString() const
     return buffer.GetString();
 }
 
-
-OutputRecognizeTargetAudience RecognizeTargetAudienceResponse::GetData() const
-{
-    return m_data;
-}
-
-bool RecognizeTargetAudienceResponse::DataHasBeenSet() const
-{
-    return m_dataHasBeenSet;
-}
 
 

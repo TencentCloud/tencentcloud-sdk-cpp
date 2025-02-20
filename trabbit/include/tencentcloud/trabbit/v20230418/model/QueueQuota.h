@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取已创建Queue数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UsedQueue 已创建Queue数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetUsedQueue() const;
 
                     /**
                      * 设置已创建Queue数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _usedQueue 已创建Queue数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUsedQueue(const int64_t& _usedQueue);
@@ -102,7 +98,6 @@ namespace TencentCloud
 
                     /**
                      * 已创建Queue数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_usedQueue;
                     bool m_usedQueueHasBeenSet;

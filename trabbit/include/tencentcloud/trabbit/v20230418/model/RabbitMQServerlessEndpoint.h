@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取vpc id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId vpc id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置vpc id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcId vpc id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取subnet id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetId subnet id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置subnet id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subnetId subnet id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取接入地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcEndpoint 接入地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcEndpoint() const;
 
                     /**
                      * 设置接入地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcEndpoint 接入地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcEndpoint(const std::string& _vpcEndpoint);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取接入地址状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcDataStreamEndpointStatus 接入地址状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcDataStreamEndpointStatus() const;
 
                     /**
                      * 设置接入地址状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcDataStreamEndpointStatus 接入地址状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcDataStreamEndpointStatus(const std::string& _vpcDataStreamEndpointStatus);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否是公网
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicNetwork 是否是公网
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetPublicNetwork() const;
 
                     /**
                      * 设置是否是公网
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _publicNetwork 是否是公网
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPublicNetwork(const bool& _publicNetwork);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取访问策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccessStrategy 访问策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAccessStrategy() const;
 
                     /**
                      * 设置访问策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _accessStrategy 访问策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAccessStrategy(const std::string& _accessStrategy);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Bandwidth 带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBandwidth() const;
 
                     /**
                      * 设置带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bandwidth 带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBandwidth(const int64_t& _bandwidth);
@@ -225,49 +197,42 @@ namespace TencentCloud
 
                     /**
                      * vpc id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
                      * subnet id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
                      * 接入地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcEndpoint;
                     bool m_vpcEndpointHasBeenSet;
 
                     /**
                      * 接入地址状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcDataStreamEndpointStatus;
                     bool m_vpcDataStreamEndpointStatusHasBeenSet;
 
                     /**
                      * 是否是公网
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_publicNetwork;
                     bool m_publicNetworkHasBeenSet;
 
                     /**
                      * 访问策略
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_accessStrategy;
                     bool m_accessStrategyHasBeenSet;
 
                     /**
                      * 带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_bandwidth;
                     bool m_bandwidthHasBeenSet;
