@@ -255,6 +255,49 @@ ApmClient::DescribeGeneralMetricDataOutcomeCallable ApmClient::DescribeGeneralMe
     return task->get_future();
 }
 
+ApmClient::DescribeGeneralOTSpanListOutcome ApmClient::DescribeGeneralOTSpanList(const DescribeGeneralOTSpanListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGeneralOTSpanList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGeneralOTSpanListResponse rsp = DescribeGeneralOTSpanListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGeneralOTSpanListOutcome(rsp);
+        else
+            return DescribeGeneralOTSpanListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGeneralOTSpanListOutcome(outcome.GetError());
+    }
+}
+
+void ApmClient::DescribeGeneralOTSpanListAsync(const DescribeGeneralOTSpanListRequest& request, const DescribeGeneralOTSpanListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGeneralOTSpanList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApmClient::DescribeGeneralOTSpanListOutcomeCallable ApmClient::DescribeGeneralOTSpanListCallable(const DescribeGeneralOTSpanListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGeneralOTSpanListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGeneralOTSpanList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ApmClient::DescribeGeneralSpanListOutcome ApmClient::DescribeGeneralSpanList(const DescribeGeneralSpanListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeGeneralSpanList");

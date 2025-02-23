@@ -32,7 +32,8 @@ AccessPoint::AccessPoint() :
     m_cityHasBeenSet(false),
     m_areaHasBeenSet(false),
     m_accessPointTypeHasBeenSet(false),
-    m_availablePortInfoHasBeenSet(false)
+    m_availablePortInfoHasBeenSet(false),
+    m_addressHasBeenSet(false)
 {
 }
 
@@ -184,6 +185,16 @@ CoreInternalOutcome AccessPoint::Deserialize(const rapidjson::Value &value)
         m_availablePortInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("Address") && !value["Address"].IsNull())
+    {
+        if (!value["Address"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccessPoint.Address` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_address = string(value["Address"].GetString());
+        m_addressHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -303,6 +314,14 @@ void AccessPoint::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_addressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Address";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_address.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -498,5 +517,21 @@ void AccessPoint::SetAvailablePortInfo(const vector<PortSpecification>& _availab
 bool AccessPoint::AvailablePortInfoHasBeenSet() const
 {
     return m_availablePortInfoHasBeenSet;
+}
+
+string AccessPoint::GetAddress() const
+{
+    return m_address;
+}
+
+void AccessPoint::SetAddress(const string& _address)
+{
+    m_address = _address;
+    m_addressHasBeenSet = true;
+}
+
+bool AccessPoint::AddressHasBeenSet() const
+{
+    return m_addressHasBeenSet;
 }
 

@@ -384,6 +384,102 @@ namespace TencentCloud
                     bool MeasureMethodHasBeenSet() const;
 
                     /**
+                     * 获取节点部署服务列表，例如["HDFS-3.1.2","YARN-3.1.2"]。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SoftDeployDesc 节点部署服务列表，例如["HDFS-3.1.2","YARN-3.1.2"]。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetSoftDeployDesc() const;
+
+                    /**
+                     * 设置节点部署服务列表，例如["HDFS-3.1.2","YARN-3.1.2"]。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _softDeployDesc 节点部署服务列表，例如["HDFS-3.1.2","YARN-3.1.2"]。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSoftDeployDesc(const std::vector<std::string>& _softDeployDesc);
+
+                    /**
+                     * 判断参数 SoftDeployDesc 是否已赋值
+                     * @return SoftDeployDesc 是否已赋值
+                     * 
+                     */
+                    bool SoftDeployDescHasBeenSet() const;
+
+                    /**
+                     * 获取启动进程列表，例如["NodeManager"]。
+                     * @return ServiceNodeDesc 启动进程列表，例如["NodeManager"]。
+                     * 
+                     */
+                    std::string GetServiceNodeDesc() const;
+
+                    /**
+                     * 设置启动进程列表，例如["NodeManager"]。
+                     * @param _serviceNodeDesc 启动进程列表，例如["NodeManager"]。
+                     * 
+                     */
+                    void SetServiceNodeDesc(const std::string& _serviceNodeDesc);
+
+                    /**
+                     * 判断参数 ServiceNodeDesc 是否已赋值
+                     * @return ServiceNodeDesc 是否已赋值
+                     * 
+                     */
+                    bool ServiceNodeDescHasBeenSet() const;
+
+                    /**
+                     * 获取启动进程列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ServiceNodeInfo 启动进程列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<int64_t> GetServiceNodeInfo() const;
+
+                    /**
+                     * 设置启动进程列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _serviceNodeInfo 启动进程列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetServiceNodeInfo(const std::vector<int64_t>& _serviceNodeInfo);
+
+                    /**
+                     * 判断参数 ServiceNodeInfo 是否已赋值
+                     * @return ServiceNodeInfo 是否已赋值
+                     * 
+                     */
+                    bool ServiceNodeInfoHasBeenSet() const;
+
+                    /**
+                     * 获取节点部署服务列表。部署服务仅填写HDFS、YARN。[组件名对应的映射关系表](https://cloud.tencent.com/document/product/589/98760)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SoftDeployInfo 节点部署服务列表。部署服务仅填写HDFS、YARN。[组件名对应的映射关系表](https://cloud.tencent.com/document/product/589/98760)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<int64_t> GetSoftDeployInfo() const;
+
+                    /**
+                     * 设置节点部署服务列表。部署服务仅填写HDFS、YARN。[组件名对应的映射关系表](https://cloud.tencent.com/document/product/589/98760)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _softDeployInfo 节点部署服务列表。部署服务仅填写HDFS、YARN。[组件名对应的映射关系表](https://cloud.tencent.com/document/product/589/98760)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSoftDeployInfo(const std::vector<int64_t>& _softDeployInfo);
+
+                    /**
+                     * 判断参数 SoftDeployInfo 是否已赋值
+                     * @return SoftDeployInfo 是否已赋值
+                     * 
+                     */
+                    bool SoftDeployInfoHasBeenSet() const;
+
+                    /**
                      * 获取多指标触发条件
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LoadMetricsConditions 多指标触发条件
@@ -407,6 +503,48 @@ namespace TencentCloud
                      * 
                      */
                     bool LoadMetricsConditionsHasBeenSet() const;
+
+                    /**
+                     * 获取伸缩组Id
+                     * @return GroupId 伸缩组Id
+                     * 
+                     */
+                    int64_t GetGroupId() const;
+
+                    /**
+                     * 设置伸缩组Id
+                     * @param _groupId 伸缩组Id
+                     * 
+                     */
+                    void SetGroupId(const int64_t& _groupId);
+
+                    /**
+                     * 判断参数 GroupId 是否已赋值
+                     * @return GroupId 是否已赋值
+                     * 
+                     */
+                    bool GroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取soft例如yarn
+                     * @return Soft soft例如yarn
+                     * 
+                     */
+                    std::string GetSoft() const;
+
+                    /**
+                     * 设置soft例如yarn
+                     * @param _soft soft例如yarn
+                     * 
+                     */
+                    void SetSoft(const std::string& _soft);
+
+                    /**
+                     * 判断参数 Soft 是否已赋值
+                     * @return Soft 是否已赋值
+                     * 
+                     */
+                    bool SoftHasBeenSet() const;
 
                 private:
 
@@ -506,11 +644,50 @@ namespace TencentCloud
                     bool m_measureMethodHasBeenSet;
 
                     /**
+                     * 节点部署服务列表，例如["HDFS-3.1.2","YARN-3.1.2"]。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_softDeployDesc;
+                    bool m_softDeployDescHasBeenSet;
+
+                    /**
+                     * 启动进程列表，例如["NodeManager"]。
+                     */
+                    std::string m_serviceNodeDesc;
+                    bool m_serviceNodeDescHasBeenSet;
+
+                    /**
+                     * 启动进程列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<int64_t> m_serviceNodeInfo;
+                    bool m_serviceNodeInfoHasBeenSet;
+
+                    /**
+                     * 节点部署服务列表。部署服务仅填写HDFS、YARN。[组件名对应的映射关系表](https://cloud.tencent.com/document/product/589/98760)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<int64_t> m_softDeployInfo;
+                    bool m_softDeployInfoHasBeenSet;
+
+                    /**
                      * 多指标触发条件
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     LoadMetricsConditions m_loadMetricsConditions;
                     bool m_loadMetricsConditionsHasBeenSet;
+
+                    /**
+                     * 伸缩组Id
+                     */
+                    int64_t m_groupId;
+                    bool m_groupIdHasBeenSet;
+
+                    /**
+                     * soft例如yarn
+                     */
+                    std::string m_soft;
+                    bool m_softHasBeenSet;
 
                 };
             }

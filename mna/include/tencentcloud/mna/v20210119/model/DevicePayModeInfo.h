@@ -119,18 +119,14 @@ namespace TencentCloud
 
                     /**
                      * 获取流量包ID，仅当付费模式为流量包类型时才有。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceId 流量包ID，仅当付费模式为流量包类型时才有。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置流量包ID，仅当付费模式为流量包类型时才有。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceId 流量包ID，仅当付费模式为流量包类型时才有。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -166,7 +162,6 @@ namespace TencentCloud
 
                     /**
                      * 流量包ID，仅当付费模式为流量包类型时才有。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;

@@ -132,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取激活时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActiveTime 激活时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetActiveTime() const;
 
                     /**
                      * 设置激活时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _activeTime 激活时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetActiveTime(const std::string& _activeTime);
@@ -224,18 +220,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最后在线时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastOnlineTime 最后在线时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLastOnlineTime() const;
 
                     /**
                      * 设置最后在线时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lastOnlineTime 最后在线时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLastOnlineTime(const std::string& _lastOnlineTime);
@@ -337,7 +329,6 @@ namespace TencentCloud
 
                     /**
                      * 激活时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_activeTime;
                     bool m_activeTimeHasBeenSet;
@@ -363,7 +354,6 @@ namespace TencentCloud
 
                     /**
                      * 最后在线时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastOnlineTime;
                     bool m_lastOnlineTimeHasBeenSet;

@@ -300,6 +300,27 @@ namespace TencentCloud
                      */
                     bool AvailablePortInfoHasBeenSet() const;
 
+                    /**
+                     * 获取接入点地址。
+                     * @return Address 接入点地址。
+                     * 
+                     */
+                    std::string GetAddress() const;
+
+                    /**
+                     * 设置接入点地址。
+                     * @param _address 接入点地址。
+                     * 
+                     */
+                    void SetAddress(const std::string& _address);
+
+                    /**
+                     * 判断参数 Address 是否已赋值
+                     * @return Address 是否已赋值
+                     * 
+                     */
+                    bool AddressHasBeenSet() const;
+
                 private:
 
                     /**
@@ -373,6 +394,12 @@ namespace TencentCloud
                      */
                     std::vector<PortSpecification> m_availablePortInfo;
                     bool m_availablePortInfoHasBeenSet;
+
+                    /**
+                     * 接入点地址。
+                     */
+                    std::string m_address;
+                    bool m_addressHasBeenSet;
 
                 };
             }

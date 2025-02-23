@@ -44,9 +44,11 @@ set(apm_public_header_model
   include/tencentcloud/apm/v20210622/model/APMKVItem.h
   include/tencentcloud/apm/v20210622/model/OrderBy.h
   include/tencentcloud/apm/v20210622/model/DescribeMetricRecordsResponse.h
+  include/tencentcloud/apm/v20210622/model/DescribeGeneralOTSpanListResponse.h
   include/tencentcloud/apm/v20210622/model/DescribeGeneralSpanListRequest.h
   include/tencentcloud/apm/v20210622/model/Filter.h
   include/tencentcloud/apm/v20210622/model/APMKV.h
+  include/tencentcloud/apm/v20210622/model/DescribeGeneralOTSpanListRequest.h
   include/tencentcloud/apm/v20210622/model/DescribeApmAgentRequest.h
   include/tencentcloud/apm/v20210622/model/DescribeMetricRecordsRequest.h
   include/tencentcloud/apm/v20210622/model/DescribeGeneralApmApplicationConfigResponse.h
@@ -91,9 +93,11 @@ set(apm_src
   src/v20210622/model/APMKVItem.cpp
   src/v20210622/model/OrderBy.cpp
   src/v20210622/model/DescribeMetricRecordsResponse.cpp
+  src/v20210622/model/DescribeGeneralOTSpanListResponse.cpp
   src/v20210622/model/DescribeGeneralSpanListRequest.cpp
   src/v20210622/model/Filter.cpp
   src/v20210622/model/APMKV.cpp
+  src/v20210622/model/DescribeGeneralOTSpanListRequest.cpp
   src/v20210622/model/DescribeApmAgentRequest.cpp
   src/v20210622/model/DescribeMetricRecordsRequest.cpp
   src/v20210622/model/DescribeGeneralApmApplicationConfigResponse.cpp

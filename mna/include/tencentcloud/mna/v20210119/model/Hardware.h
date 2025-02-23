@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取硬件序列号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SN 硬件序列号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSN() const;
 
                     /**
                      * 设置硬件序列号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sN 硬件序列号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSN(const std::string& _sN);
@@ -76,12 +72,10 @@ namespace TencentCloud
 1，租户付费
 2，厂商月付费
 3，厂商永久授权
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LicenseChargingMode license计费模式：
 1，租户付费
 2，厂商月付费
 3，厂商永久授权
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLicenseChargingMode() const;
@@ -91,12 +85,10 @@ namespace TencentCloud
 1，租户付费
 2，厂商月付费
 3，厂商永久授权
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _licenseChargingMode license计费模式：
 1，租户付费
 2，厂商月付费
 3，厂商永久授权
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLicenseChargingMode(const int64_t& _licenseChargingMode);
@@ -110,18 +102,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 设备描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置设备描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 设备描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -135,18 +123,14 @@ namespace TencentCloud
 
                     /**
                      * 获取硬件ID，入参无需传递
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HardwareId 硬件ID，入参无需传递
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHardwareId() const;
 
                     /**
                      * 设置硬件ID，入参无需传递
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hardwareId 硬件ID，入参无需传递
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHardwareId(const std::string& _hardwareId);
@@ -162,7 +146,6 @@ namespace TencentCloud
 
                     /**
                      * 硬件序列号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sN;
                     bool m_sNHasBeenSet;
@@ -172,21 +155,18 @@ namespace TencentCloud
 1，租户付费
 2，厂商月付费
 3，厂商永久授权
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_licenseChargingMode;
                     bool m_licenseChargingModeHasBeenSet;
 
                     /**
                      * 设备描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
                      * 硬件ID，入参无需传递
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hardwareId;
                     bool m_hardwareIdHasBeenSet;

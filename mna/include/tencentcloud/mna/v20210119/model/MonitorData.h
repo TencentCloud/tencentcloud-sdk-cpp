@@ -70,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取业务指标（bps/ms/%）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BusinessMetrics 业务指标（bps/ms/%）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetBusinessMetrics() const;
 
                     /**
                      * 设置业务指标（bps/ms/%）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _businessMetrics 业务指标（bps/ms/%）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBusinessMetrics(const double& _businessMetrics);
@@ -95,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网卡状态信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SlotNetInfo 网卡状态信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SlotNetInfo> GetSlotNetInfo() const;
 
                     /**
                      * 设置网卡状态信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _slotNetInfo 网卡状态信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSlotNetInfo(const std::vector<SlotNetInfo>& _slotNetInfo);
@@ -128,14 +120,12 @@ namespace TencentCloud
 
                     /**
                      * 业务指标（bps/ms/%）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_businessMetrics;
                     bool m_businessMetricsHasBeenSet;
 
                     /**
                      * 网卡状态信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SlotNetInfo> m_slotNetInfo;
                     bool m_slotNetInfoHasBeenSet;

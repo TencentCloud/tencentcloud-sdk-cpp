@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网卡名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NetInfoName 网卡名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNetInfoName() const;
 
                     /**
                      * 设置网卡名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _netInfoName 网卡名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNetInfoName(const std::string& _netInfoName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取公网IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicIP 公网IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPublicIP() const;
 
                     /**
                      * 设置公网IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _publicIP 公网IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPublicIP(const std::string& _publicIP);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取指标数据（bps/ms/%）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Current 指标数据（bps/ms/%）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetCurrent() const;
 
                     /**
                      * 设置指标数据（bps/ms/%）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _current 指标数据（bps/ms/%）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCurrent(const double& _current);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 网卡名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_netInfoName;
                     bool m_netInfoNameHasBeenSet;
 
                     /**
                      * 公网IP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_publicIP;
                     bool m_publicIPHasBeenSet;
 
                     /**
                      * 指标数据（bps/ms/%）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_current;
                     bool m_currentHasBeenSet;
