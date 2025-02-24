@@ -35,7 +35,8 @@ BatchIpAccessControlItem::BatchIpAccessControlItem() :
     m_jobTypeHasBeenSet(false),
     m_cronTypeHasBeenSet(false),
     m_jobDateTimeHasBeenSet(false),
-    m_validStatusHasBeenSet(false)
+    m_validStatusHasBeenSet(false),
+    m_groupIdsHasBeenSet(false)
 {
 }
 
@@ -207,6 +208,19 @@ CoreInternalOutcome BatchIpAccessControlItem::Deserialize(const rapidjson::Value
         m_validStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("GroupIds") && !value["GroupIds"].IsNull())
+    {
+        if (!value["GroupIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `BatchIpAccessControlItem.GroupIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["GroupIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_groupIds.push_back((*itr).GetUint64());
+        }
+        m_groupIdsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -343,6 +357,19 @@ void BatchIpAccessControlItem::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "ValidStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_validStatus, allocator);
+    }
+
+    if (m_groupIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_groupIds.begin(); itr != m_groupIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
     }
 
 }
@@ -586,5 +613,21 @@ void BatchIpAccessControlItem::SetValidStatus(const int64_t& _validStatus)
 bool BatchIpAccessControlItem::ValidStatusHasBeenSet() const
 {
     return m_validStatusHasBeenSet;
+}
+
+vector<uint64_t> BatchIpAccessControlItem::GetGroupIds() const
+{
+    return m_groupIds;
+}
+
+void BatchIpAccessControlItem::SetGroupIds(const vector<uint64_t>& _groupIds)
+{
+    m_groupIds = _groupIds;
+    m_groupIdsHasBeenSet = true;
+}
+
+bool BatchIpAccessControlItem::GroupIdsHasBeenSet() const
+{
+    return m_groupIdsHasBeenSet;
 }
 

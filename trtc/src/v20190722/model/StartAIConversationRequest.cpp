@@ -30,7 +30,8 @@ StartAIConversationRequest::StartAIConversationRequest() :
     m_roomIdTypeHasBeenSet(false),
     m_sTTConfigHasBeenSet(false),
     m_lLMConfigHasBeenSet(false),
-    m_tTSConfigHasBeenSet(false)
+    m_tTSConfigHasBeenSet(false),
+    m_avatarConfigHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,14 @@ string StartAIConversationRequest::ToJsonString() const
         string key = "TTSConfig";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_tTSConfig.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_avatarConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AvatarConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_avatarConfig.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -241,6 +250,22 @@ void StartAIConversationRequest::SetTTSConfig(const string& _tTSConfig)
 bool StartAIConversationRequest::TTSConfigHasBeenSet() const
 {
     return m_tTSConfigHasBeenSet;
+}
+
+string StartAIConversationRequest::GetAvatarConfig() const
+{
+    return m_avatarConfig;
+}
+
+void StartAIConversationRequest::SetAvatarConfig(const string& _avatarConfig)
+{
+    m_avatarConfig = _avatarConfig;
+    m_avatarConfigHasBeenSet = true;
+}
+
+bool StartAIConversationRequest::AvatarConfigHasBeenSet() const
+{
+    return m_avatarConfigHasBeenSet;
 }
 
 

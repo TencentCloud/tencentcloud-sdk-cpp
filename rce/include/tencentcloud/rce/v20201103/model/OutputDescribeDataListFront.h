@@ -131,19 +131,15 @@ namespace TencentCloud
                     bool DataSourceHasBeenSet() const;
 
                     /**
-                     * 获取名单数据开始时间，时间格式示例"2024-05-05 12:10:15"
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StartTime 名单数据开始时间，时间格式示例"2024-05-05 12:10:15"
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取名单数据开始时间
+                     * @return StartTime 名单数据开始时间
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置名单数据开始时间，时间格式示例"2024-05-05 12:10:15"
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _startTime 名单数据开始时间，时间格式示例"2024-05-05 12:10:15"
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置名单数据开始时间
+                     * @param _startTime 名单数据开始时间
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -156,19 +152,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取名单数据结束时间，时间格式示例"2024-05-05 12:10:15"
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EndTime 名单数据结束时间，时间格式示例"2024-05-05 12:10:15"
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取名单数据结束时间
+                     * @return EndTime 名单数据结束时间
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置名单数据结束时间，时间格式示例"2024-05-05 12:10:15"
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _endTime 名单数据结束时间，时间格式示例"2024-05-05 12:10:15"
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置名单数据结束时间
+                     * @param _endTime 名单数据结束时间
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -203,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取名单数据描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 名单数据描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置名单数据描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remark 名单数据描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -227,15 +215,15 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取名单数据创建时间，时间格式示例"2024-05-05 12:10:15"
-                     * @return CreateTime 名单数据创建时间，时间格式示例"2024-05-05 12:10:15"
+                     * 获取名单数据创建时间
+                     * @return CreateTime 名单数据创建时间
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置名单数据创建时间，时间格式示例"2024-05-05 12:10:15"
-                     * @param _createTime 名单数据创建时间，时间格式示例"2024-05-05 12:10:15"
+                     * 设置名单数据创建时间
+                     * @param _createTime 名单数据创建时间
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -248,15 +236,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取名单数据更新时间，时间格式示例"2024-05-05 12:10:15"
-                     * @return UpdateTime 名单数据更新时间，时间格式示例"2024-05-05 12:10:15"
+                     * 获取名单数据更新时间
+                     * @return UpdateTime 名单数据更新时间
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置名单数据更新时间，时间格式示例"2024-05-05 12:10:15"
-                     * @param _updateTime 名单数据更新时间，时间格式示例"2024-05-05 12:10:15"
+                     * 设置名单数据更新时间
+                     * @param _updateTime 名单数据更新时间
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -270,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取加密名单数据内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EncryptDataContent 加密名单数据内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEncryptDataContent() const;
 
                     /**
                      * 设置加密名单数据内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _encryptDataContent 加密名单数据内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEncryptDataContent(const std::string& _encryptDataContent);
@@ -320,15 +304,13 @@ namespace TencentCloud
                     bool m_dataSourceHasBeenSet;
 
                     /**
-                     * 名单数据开始时间，时间格式示例"2024-05-05 12:10:15"
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 名单数据开始时间
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 名单数据结束时间，时间格式示例"2024-05-05 12:10:15"
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 名单数据结束时间
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
@@ -341,26 +323,24 @@ namespace TencentCloud
 
                     /**
                      * 名单数据描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 名单数据创建时间，时间格式示例"2024-05-05 12:10:15"
+                     * 名单数据创建时间
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 名单数据更新时间，时间格式示例"2024-05-05 12:10:15"
+                     * 名单数据更新时间
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
                      * 加密名单数据内容
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_encryptDataContent;
                     bool m_encryptDataContentHasBeenSet;

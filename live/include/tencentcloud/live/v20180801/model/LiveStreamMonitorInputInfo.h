@@ -213,6 +213,27 @@ namespace TencentCloud
                      */
                     bool NeedMonitorHasBeenSet() const;
 
+                    /**
+                     * 获取导播台pvw pgm的cdn流id
+                     * @return CdnStreamId 导播台pvw pgm的cdn流id
+                     * 
+                     */
+                    std::string GetCdnStreamId() const;
+
+                    /**
+                     * 设置导播台pvw pgm的cdn流id
+                     * @param _cdnStreamId 导播台pvw pgm的cdn流id
+                     * 
+                     */
+                    void SetCdnStreamId(const std::string& _cdnStreamId);
+
+                    /**
+                     * 判断参数 CdnStreamId 是否已赋值
+                     * @return CdnStreamId 是否已赋值
+                     * 
+                     */
+                    bool CdnStreamIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -261,6 +282,12 @@ namespace TencentCloud
                      */
                     bool m_needMonitor;
                     bool m_needMonitorHasBeenSet;
+
+                    /**
+                     * 导播台pvw pgm的cdn流id
+                     */
+                    std::string m_cdnStreamId;
+                    bool m_cdnStreamIdHasBeenSet;
 
                 };
             }

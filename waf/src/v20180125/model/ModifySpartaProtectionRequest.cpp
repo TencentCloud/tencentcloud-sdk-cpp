@@ -66,7 +66,9 @@ ModifySpartaProtectionRequest::ModifySpartaProtectionRequest() :
     m_gmPrivateKeyHasBeenSet(false),
     m_gmEncCertHasBeenSet(false),
     m_gmEncPrivateKeyHasBeenSet(false),
-    m_gmSSLIdHasBeenSet(false)
+    m_gmSSLIdHasBeenSet(false),
+    m_upstreamPolicyHasBeenSet(false),
+    m_upstreamRulesHasBeenSet(false)
 {
 }
 
@@ -454,6 +456,29 @@ string ModifySpartaProtectionRequest::ToJsonString() const
         string key = "GmSSLId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_gmSSLId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_upstreamPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpstreamPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_upstreamPolicy, allocator);
+    }
+
+    if (m_upstreamRulesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpstreamRules";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_upstreamRules.begin(); itr != m_upstreamRules.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -1166,6 +1191,38 @@ void ModifySpartaProtectionRequest::SetGmSSLId(const string& _gmSSLId)
 bool ModifySpartaProtectionRequest::GmSSLIdHasBeenSet() const
 {
     return m_gmSSLIdHasBeenSet;
+}
+
+int64_t ModifySpartaProtectionRequest::GetUpstreamPolicy() const
+{
+    return m_upstreamPolicy;
+}
+
+void ModifySpartaProtectionRequest::SetUpstreamPolicy(const int64_t& _upstreamPolicy)
+{
+    m_upstreamPolicy = _upstreamPolicy;
+    m_upstreamPolicyHasBeenSet = true;
+}
+
+bool ModifySpartaProtectionRequest::UpstreamPolicyHasBeenSet() const
+{
+    return m_upstreamPolicyHasBeenSet;
+}
+
+vector<UpstreamRule> ModifySpartaProtectionRequest::GetUpstreamRules() const
+{
+    return m_upstreamRules;
+}
+
+void ModifySpartaProtectionRequest::SetUpstreamRules(const vector<UpstreamRule>& _upstreamRules)
+{
+    m_upstreamRules = _upstreamRules;
+    m_upstreamRulesHasBeenSet = true;
+}
+
+bool ModifySpartaProtectionRequest::UpstreamRulesHasBeenSet() const
+{
+    return m_upstreamRulesHasBeenSet;
 }
 
 

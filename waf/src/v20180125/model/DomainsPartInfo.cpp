@@ -71,7 +71,9 @@ DomainsPartInfo::DomainsPartInfo() :
     m_gmEncPrivateKeyHasBeenSet(false),
     m_gmSSLIdHasBeenSet(false),
     m_labelsHasBeenSet(false),
-    m_probeStatusHasBeenSet(false)
+    m_probeStatusHasBeenSet(false),
+    m_upstreamPolicyHasBeenSet(false),
+    m_upstreamRulesHasBeenSet(false)
 {
 }
 
@@ -615,6 +617,36 @@ CoreInternalOutcome DomainsPartInfo::Deserialize(const rapidjson::Value &value)
         m_probeStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("UpstreamPolicy") && !value["UpstreamPolicy"].IsNull())
+    {
+        if (!value["UpstreamPolicy"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainsPartInfo.UpstreamPolicy` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_upstreamPolicy = value["UpstreamPolicy"].GetInt64();
+        m_upstreamPolicyHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpstreamRules") && !value["UpstreamRules"].IsNull())
+    {
+        if (!value["UpstreamRules"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DomainsPartInfo.UpstreamRules` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["UpstreamRules"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            UpstreamRule item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_upstreamRules.push_back(item);
+        }
+        m_upstreamRulesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1060,6 +1092,29 @@ void DomainsPartInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "ProbeStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_probeStatus, allocator);
+    }
+
+    if (m_upstreamPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpstreamPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_upstreamPolicy, allocator);
+    }
+
+    if (m_upstreamRulesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpstreamRules";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_upstreamRules.begin(); itr != m_upstreamRules.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1879,5 +1934,37 @@ void DomainsPartInfo::SetProbeStatus(const int64_t& _probeStatus)
 bool DomainsPartInfo::ProbeStatusHasBeenSet() const
 {
     return m_probeStatusHasBeenSet;
+}
+
+int64_t DomainsPartInfo::GetUpstreamPolicy() const
+{
+    return m_upstreamPolicy;
+}
+
+void DomainsPartInfo::SetUpstreamPolicy(const int64_t& _upstreamPolicy)
+{
+    m_upstreamPolicy = _upstreamPolicy;
+    m_upstreamPolicyHasBeenSet = true;
+}
+
+bool DomainsPartInfo::UpstreamPolicyHasBeenSet() const
+{
+    return m_upstreamPolicyHasBeenSet;
+}
+
+vector<UpstreamRule> DomainsPartInfo::GetUpstreamRules() const
+{
+    return m_upstreamRules;
+}
+
+void DomainsPartInfo::SetUpstreamRules(const vector<UpstreamRule>& _upstreamRules)
+{
+    m_upstreamRules = _upstreamRules;
+    m_upstreamRulesHasBeenSet = true;
+}
+
+bool DomainsPartInfo::UpstreamRulesHasBeenSet() const
+{
+    return m_upstreamRulesHasBeenSet;
 }
 

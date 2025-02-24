@@ -87,27 +87,6 @@ namespace TencentCloud
                     bool SortIdHasBeenSet() const;
 
                     /**
-                     * 获取过期时间
-                     * @return ExpireTime 过期时间
-                     * 
-                     */
-                    std::string GetExpireTime() const;
-
-                    /**
-                     * 设置过期时间
-                     * @param _expireTime 过期时间
-                     * 
-                     */
-                    void SetExpireTime(const std::string& _expireTime);
-
-                    /**
-                     * 判断参数 ExpireTime 是否已赋值
-                     * @return ExpireTime 是否已赋值
-                     * 
-                     */
-                    bool ExpireTimeHasBeenSet() const;
-
-                    /**
                      * 获取策略详情
                      * @return Strategies 策略详情
                      * 
@@ -150,15 +129,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取放行的详情
-                     * @return Bypass 放行的详情
+                     * 获取放行的模块，多个模块之间用逗号连接。支持的模块：acl（自定义规则）、owasp（规则引擎）、webshell（恶意文件检测）、geoip（地域封禁）、bwip（IP黑白名单）、cc、botrpc（BOT防护）、antileakage（信息防泄露）、api（API安全）、ai（AI引擎）、ip_auto_deny（IP封禁）、applet（小程序流量风控）
+                     * @return Bypass 放行的模块，多个模块之间用逗号连接。支持的模块：acl（自定义规则）、owasp（规则引擎）、webshell（恶意文件检测）、geoip（地域封禁）、bwip（IP黑白名单）、cc、botrpc（BOT防护）、antileakage（信息防泄露）、api（API安全）、ai（AI引擎）、ip_auto_deny（IP封禁）、applet（小程序流量风控）
                      * 
                      */
                     std::string GetBypass() const;
 
                     /**
-                     * 设置放行的详情
-                     * @param _bypass 放行的详情
+                     * 设置放行的模块，多个模块之间用逗号连接。支持的模块：acl（自定义规则）、owasp（规则引擎）、webshell（恶意文件检测）、geoip（地域封禁）、bwip（IP黑白名单）、cc、botrpc（BOT防护）、antileakage（信息防泄露）、api（API安全）、ai（AI引擎）、ip_auto_deny（IP封禁）、applet（小程序流量风控）
+                     * @param _bypass 放行的模块，多个模块之间用逗号连接。支持的模块：acl（自定义规则）、owasp（规则引擎）、webshell（恶意文件检测）、geoip（地域封禁）、bwip（IP黑白名单）、cc、botrpc（BOT防护）、antileakage（信息防泄露）、api（API安全）、ai（AI引擎）、ip_auto_deny（IP封禁）、applet（小程序流量风控）
                      * 
                      */
                     void SetBypass(const std::string& _bypass);
@@ -169,6 +148,27 @@ namespace TencentCloud
                      * 
                      */
                     bool BypassHasBeenSet() const;
+
+                    /**
+                     * 获取如果没有设置JobDateTime字段则用此字段，0表示永久生效，其它表示定时生效的截止时间（单位为秒）
+                     * @return ExpireTime 如果没有设置JobDateTime字段则用此字段，0表示永久生效，其它表示定时生效的截止时间（单位为秒）
+                     * 
+                     */
+                    std::string GetExpireTime() const;
+
+                    /**
+                     * 设置如果没有设置JobDateTime字段则用此字段，0表示永久生效，其它表示定时生效的截止时间（单位为秒）
+                     * @param _expireTime 如果没有设置JobDateTime字段则用此字段，0表示永久生效，其它表示定时生效的截止时间（单位为秒）
+                     * 
+                     */
+                    void SetExpireTime(const std::string& _expireTime);
+
+                    /**
+                     * 判断参数 ExpireTime 是否已赋值
+                     * @return ExpireTime 是否已赋值
+                     * 
+                     */
+                    bool ExpireTimeHasBeenSet() const;
 
                     /**
                      * 获取规则执行的方式，TimedJob为定时执行，CronJob为周期执行
@@ -227,12 +227,6 @@ namespace TencentCloud
                     bool m_sortIdHasBeenSet;
 
                     /**
-                     * 过期时间
-                     */
-                    std::string m_expireTime;
-                    bool m_expireTimeHasBeenSet;
-
-                    /**
                      * 策略详情
                      */
                     std::vector<Strategy> m_strategies;
@@ -245,10 +239,16 @@ namespace TencentCloud
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 放行的详情
+                     * 放行的模块，多个模块之间用逗号连接。支持的模块：acl（自定义规则）、owasp（规则引擎）、webshell（恶意文件检测）、geoip（地域封禁）、bwip（IP黑白名单）、cc、botrpc（BOT防护）、antileakage（信息防泄露）、api（API安全）、ai（AI引擎）、ip_auto_deny（IP封禁）、applet（小程序流量风控）
                      */
                     std::string m_bypass;
                     bool m_bypassHasBeenSet;
+
+                    /**
+                     * 如果没有设置JobDateTime字段则用此字段，0表示永久生效，其它表示定时生效的截止时间（单位为秒）
+                     */
+                    std::string m_expireTime;
+                    bool m_expireTimeHasBeenSet;
 
                     /**
                      * 规则执行的方式，TimedJob为定时执行，CronJob为周期执行

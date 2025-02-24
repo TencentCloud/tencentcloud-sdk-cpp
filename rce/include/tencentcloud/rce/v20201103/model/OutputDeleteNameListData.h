@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取错误码，0 表示成功，非0表示失败错误码。 0：成功 1002：参数错误 4300：未开通服务 6000：系统内部错误
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Code 错误码，0 表示成功，非0表示失败错误码。 0：成功 1002：参数错误 4300：未开通服务 6000：系统内部错误
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCode() const;
 
                     /**
                      * 设置错误码，0 表示成功，非0表示失败错误码。 0：成功 1002：参数错误 4300：未开通服务 6000：系统内部错误
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _code 错误码，0 表示成功，非0表示失败错误码。 0：成功 1002：参数错误 4300：未开通服务 6000：系统内部错误
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCode(const int64_t& _code);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _message 错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMessage(const std::string& _message);
@@ -125,14 +117,12 @@ namespace TencentCloud
 
                     /**
                      * 错误码，0 表示成功，非0表示失败错误码。 0：成功 1002：参数错误 4300：未开通服务 6000：系统内部错误
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_code;
                     bool m_codeHasBeenSet;
 
                     /**
                      * 错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;

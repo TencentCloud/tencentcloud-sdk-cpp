@@ -150,15 +150,15 @@ namespace TencentCloud
                     bool SortIdHasBeenSet() const;
 
                     /**
-                     * 获取规则生效截止时间，0：永久生效，其它值为对应时间的时间戳。
-                     * @return ExpireTime 规则生效截止时间，0：永久生效，其它值为对应时间的时间戳。
+                     * 获取如果没有设置JobDateTime字段则用此字段，0表示永久生效，其它表示定时生效的截止时间（单位为秒）
+                     * @return ExpireTime 如果没有设置JobDateTime字段则用此字段，0表示永久生效，其它表示定时生效的截止时间（单位为秒）
                      * 
                      */
                     uint64_t GetExpireTime() const;
 
                     /**
-                     * 设置规则生效截止时间，0：永久生效，其它值为对应时间的时间戳。
-                     * @param _expireTime 规则生效截止时间，0：永久生效，其它值为对应时间的时间戳。
+                     * 设置如果没有设置JobDateTime字段则用此字段，0表示永久生效，其它表示定时生效的截止时间（单位为秒）
+                     * @param _expireTime 如果没有设置JobDateTime字段则用此字段，0表示永久生效，其它表示定时生效的截止时间（单位为秒）
                      * 
                      */
                     void SetExpireTime(const uint64_t& _expireTime);
@@ -266,7 +266,7 @@ namespace TencentCloud
                     bool m_sortIdHasBeenSet;
 
                     /**
-                     * 规则生效截止时间，0：永久生效，其它值为对应时间的时间戳。
+                     * 如果没有设置JobDateTime字段则用此字段，0表示永久生效，其它表示定时生效的截止时间（单位为秒）
                      */
                     uint64_t m_expireTime;
                     bool m_expireTimeHasBeenSet;

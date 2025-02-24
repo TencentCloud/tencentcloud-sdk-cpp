@@ -319,6 +319,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/DescribeWafThreatenIntelligenceRequest.h
   include/tencentcloud/waf/v20180125/model/DescribeAccessExportsResponse.h
   include/tencentcloud/waf/v20180125/model/DeleteCustomRuleResponse.h
+  include/tencentcloud/waf/v20180125/model/UpstreamRule.h
   include/tencentcloud/waf/v20180125/model/DescribeHistogramRequest.h
   include/tencentcloud/waf/v20180125/model/DeleteCCRuleResponse.h
   include/tencentcloud/waf/v20180125/model/DescribeAreaBanAreasRsp.h
@@ -730,6 +731,7 @@ set(waf_src
   src/v20180125/model/DescribeWafThreatenIntelligenceRequest.cpp
   src/v20180125/model/DescribeAccessExportsResponse.cpp
   src/v20180125/model/DeleteCustomRuleResponse.cpp
+  src/v20180125/model/UpstreamRule.cpp
   src/v20180125/model/DescribeHistogramRequest.cpp
   src/v20180125/model/DeleteCCRuleResponse.cpp
   src/v20180125/model/DescribeAreaBanAreasRsp.cpp

@@ -38,7 +38,8 @@ AddCustomRuleRequest::AddCustomRuleRequest() :
     m_sourceHasBeenSet(false),
     m_labelHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_pageIdHasBeenSet(false)
+    m_pageIdHasBeenSet(false),
+    m_logicalOpHasBeenSet(false)
 {
 }
 
@@ -183,6 +184,14 @@ string AddCustomRuleRequest::ToJsonString() const
         string key = "PageId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_pageId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_logicalOpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogicalOp";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_logicalOp.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -447,6 +456,22 @@ void AddCustomRuleRequest::SetPageId(const string& _pageId)
 bool AddCustomRuleRequest::PageIdHasBeenSet() const
 {
     return m_pageIdHasBeenSet;
+}
+
+string AddCustomRuleRequest::GetLogicalOp() const
+{
+    return m_logicalOp;
+}
+
+void AddCustomRuleRequest::SetLogicalOp(const string& _logicalOp)
+{
+    m_logicalOp = _logicalOp;
+    m_logicalOpHasBeenSet = true;
+}
+
+bool AddCustomRuleRequest::LogicalOpHasBeenSet() const
+{
+    return m_logicalOpHasBeenSet;
 }
 
 

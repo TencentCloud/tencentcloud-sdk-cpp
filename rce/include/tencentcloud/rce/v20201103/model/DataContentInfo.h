@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool DataRemarkHasBeenSet() const;
 
                     /**
-                     * 获取名单数据开始时间，时间格式示例"2024-05-05 12:10:15"
-                     * @return StartTime 名单数据开始时间，时间格式示例"2024-05-05 12:10:15"
+                     * 获取名单数据开始时间
+                     * @return StartTime 名单数据开始时间
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置名单数据开始时间，时间格式示例"2024-05-05 12:10:15"
-                     * @param _startTime 名单数据开始时间，时间格式示例"2024-05-05 12:10:15"
+                     * 设置名单数据开始时间
+                     * @param _startTime 名单数据开始时间
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取名单数据结束时间，时间格式示例"2024-05-05 12:10:15"
-                     * @return EndTime 名单数据结束时间，时间格式示例"2024-05-05 12:10:15"
+                     * 获取名单数据结束时间
+                     * @return EndTime 名单数据结束时间
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置名单数据结束时间，时间格式示例"2024-05-05 12:10:15"
-                     * @param _endTime 名单数据结束时间，时间格式示例"2024-05-05 12:10:15"
+                     * 设置名单数据结束时间
+                     * @param _endTime 名单数据结束时间
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -145,13 +145,13 @@ namespace TencentCloud
                     bool m_dataRemarkHasBeenSet;
 
                     /**
-                     * 名单数据开始时间，时间格式示例"2024-05-05 12:10:15"
+                     * 名单数据开始时间
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 名单数据结束时间，时间格式示例"2024-05-05 12:10:15"
+                     * 名单数据结束时间
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

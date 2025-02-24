@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool SkipHasBeenSet() const;
 
                     /**
-                     * 获取限制数目
-                     * @return Limit 限制数目
+                     * 获取限制数目，category不等于threat_intelligence时，该值需要必传
+                     * @return Limit 限制数目，category不等于threat_intelligence时，该值需要必传
                      * 
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置限制数目
-                     * @param _limit 限制数目
+                     * 设置限制数目，category不等于threat_intelligence时，该值需要必传
+                     * @param _limit 限制数目，category不等于threat_intelligence时，该值需要必传
                      * 
                      */
                     void SetLimit(const uint64_t& _limit);
@@ -274,15 +274,15 @@ namespace TencentCloud
                     bool SortHasBeenSet() const;
 
                     /**
-                     * 获取IP
-                     * @return Ip IP
+                     * 获取IP,category传threat_intelligence的时候，该值必传
+                     * @return Ip IP,category传threat_intelligence的时候，该值必传
                      * 
                      */
                     std::string GetIp() const;
 
                     /**
-                     * 设置IP
-                     * @param _ip IP
+                     * 设置IP,category传threat_intelligence的时候，该值必传
+                     * @param _ip IP,category传threat_intelligence的时候，该值必传
                      * 
                      */
                     void SetIp(const std::string& _ip);
@@ -387,7 +387,7 @@ namespace TencentCloud
                     bool m_skipHasBeenSet;
 
                     /**
-                     * 限制数目
+                     * 限制数目，category不等于threat_intelligence时，该值需要必传
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
@@ -405,7 +405,7 @@ namespace TencentCloud
                     bool m_sortHasBeenSet;
 
                     /**
-                     * IP
+                     * IP,category传threat_intelligence的时候，该值必传
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;

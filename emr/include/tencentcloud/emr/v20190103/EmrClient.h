@@ -59,6 +59,8 @@
 #include <tencentcloud/emr/v20190103/model/DescribeClusterNodesResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeCvmQuotaRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeCvmQuotaResponse.h>
+#include <tencentcloud/emr/v20190103/model/DescribeDAGInfoRequest.h>
+#include <tencentcloud/emr/v20190103/model/DescribeDAGInfoResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeEmrApplicationStaticsRequest.h>
 #include <tencentcloud/emr/v20190103/model/DescribeEmrApplicationStaticsResponse.h>
 #include <tencentcloud/emr/v20190103/model/DescribeEmrOverviewMetricsRequest.h>
@@ -243,6 +245,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCvmQuotaResponse> DescribeCvmQuotaOutcome;
                 typedef std::future<DescribeCvmQuotaOutcome> DescribeCvmQuotaOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeCvmQuotaRequest&, DescribeCvmQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCvmQuotaAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDAGInfoResponse> DescribeDAGInfoOutcome;
+                typedef std::future<DescribeDAGInfoOutcome> DescribeDAGInfoOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::DescribeDAGInfoRequest&, DescribeDAGInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDAGInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeEmrApplicationStaticsResponse> DescribeEmrApplicationStaticsOutcome;
                 typedef std::future<DescribeEmrApplicationStaticsOutcome> DescribeEmrApplicationStaticsOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::DescribeEmrApplicationStaticsRequest&, DescribeEmrApplicationStaticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEmrApplicationStaticsAsyncHandler;
@@ -584,6 +589,15 @@ namespace TencentCloud
                 DescribeCvmQuotaOutcome DescribeCvmQuota(const Model::DescribeCvmQuotaRequest &request);
                 void DescribeCvmQuotaAsync(const Model::DescribeCvmQuotaRequest& request, const DescribeCvmQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCvmQuotaOutcomeCallable DescribeCvmQuotaCallable(const Model::DescribeCvmQuotaRequest& request);
+
+                /**
+                 *查询DAG信息
+                 * @param req DescribeDAGInfoRequest
+                 * @return DescribeDAGInfoOutcome
+                 */
+                DescribeDAGInfoOutcome DescribeDAGInfo(const Model::DescribeDAGInfoRequest &request);
+                void DescribeDAGInfoAsync(const Model::DescribeDAGInfoRequest& request, const DescribeDAGInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDAGInfoOutcomeCallable DescribeDAGInfoCallable(const Model::DescribeDAGInfoRequest& request);
 
                 /**
                  *yarn application 统计接口查询

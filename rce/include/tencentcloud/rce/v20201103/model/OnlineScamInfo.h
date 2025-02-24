@@ -126,15 +126,23 @@ namespace TencentCloud
                     bool ContentTypeHasBeenSet() const;
 
                     /**
-                     * 获取类型
-                     * @return FraudType 类型
+                     * 获取账号类型
+1：手机号
+2：uin账号
+                     * @return FraudType 账号类型
+1：手机号
+2：uin账号
                      * 
                      */
                     int64_t GetFraudType() const;
 
                     /**
-                     * 设置类型
-                     * @param _fraudType 类型
+                     * 设置账号类型
+1：手机号
+2：uin账号
+                     * @param _fraudType 账号类型
+1：手机号
+2：uin账号
                      * 
                      */
                     void SetFraudType(const int64_t& _fraudType);
@@ -192,7 +200,9 @@ namespace TencentCloud
                     bool m_contentTypeHasBeenSet;
 
                     /**
-                     * 类型
+                     * 账号类型
+1：手机号
+2：uin账号
                      */
                     int64_t m_fraudType;
                     bool m_fraudTypeHasBeenSet;

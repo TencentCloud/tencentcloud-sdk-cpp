@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/waf/v20180125/model/SpartaProtectionPort.h>
+#include <tencentcloud/waf/v20180125/model/UpstreamRule.h>
 
 
 namespace TencentCloud
@@ -991,6 +992,48 @@ https：使用https协议回源
                      */
                     bool GmSSLIdHasBeenSet() const;
 
+                    /**
+                     * 获取回源策略，支持负载均衡回源和分流回源两种方式。0：默认值，负载均衡回源；1：分流回源
+                     * @return UpstreamPolicy 回源策略，支持负载均衡回源和分流回源两种方式。0：默认值，负载均衡回源；1：分流回源
+                     * 
+                     */
+                    int64_t GetUpstreamPolicy() const;
+
+                    /**
+                     * 设置回源策略，支持负载均衡回源和分流回源两种方式。0：默认值，负载均衡回源；1：分流回源
+                     * @param _upstreamPolicy 回源策略，支持负载均衡回源和分流回源两种方式。0：默认值，负载均衡回源；1：分流回源
+                     * 
+                     */
+                    void SetUpstreamPolicy(const int64_t& _upstreamPolicy);
+
+                    /**
+                     * 判断参数 UpstreamPolicy 是否已赋值
+                     * @return UpstreamPolicy 是否已赋值
+                     * 
+                     */
+                    bool UpstreamPolicyHasBeenSet() const;
+
+                    /**
+                     * 获取分流回源时生效，分流回源的规则。
+                     * @return UpstreamRules 分流回源时生效，分流回源的规则。
+                     * 
+                     */
+                    std::vector<UpstreamRule> GetUpstreamRules() const;
+
+                    /**
+                     * 设置分流回源时生效，分流回源的规则。
+                     * @param _upstreamRules 分流回源时生效，分流回源的规则。
+                     * 
+                     */
+                    void SetUpstreamRules(const std::vector<UpstreamRule>& _upstreamRules);
+
+                    /**
+                     * 判断参数 UpstreamRules 是否已赋值
+                     * @return UpstreamRules 是否已赋值
+                     * 
+                     */
+                    bool UpstreamRulesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1262,6 +1305,18 @@ https：使用https协议回源
                      */
                     std::string m_gmSSLId;
                     bool m_gmSSLIdHasBeenSet;
+
+                    /**
+                     * 回源策略，支持负载均衡回源和分流回源两种方式。0：默认值，负载均衡回源；1：分流回源
+                     */
+                    int64_t m_upstreamPolicy;
+                    bool m_upstreamPolicyHasBeenSet;
+
+                    /**
+                     * 分流回源时生效，分流回源的规则。
+                     */
+                    std::vector<UpstreamRule> m_upstreamRules;
+                    bool m_upstreamRulesHasBeenSet;
 
                 };
             }

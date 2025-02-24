@@ -37,7 +37,8 @@ ModifyCustomRuleRequest::ModifyCustomRuleRequest() :
     m_jobDateTimeHasBeenSet(false),
     m_sourceHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_pageIdHasBeenSet(false)
+    m_pageIdHasBeenSet(false),
+    m_logicalOpHasBeenSet(false)
 {
 }
 
@@ -174,6 +175,14 @@ string ModifyCustomRuleRequest::ToJsonString() const
         string key = "PageId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_pageId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_logicalOpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogicalOp";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_logicalOp.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -422,6 +431,22 @@ void ModifyCustomRuleRequest::SetPageId(const string& _pageId)
 bool ModifyCustomRuleRequest::PageIdHasBeenSet() const
 {
     return m_pageIdHasBeenSet;
+}
+
+string ModifyCustomRuleRequest::GetLogicalOp() const
+{
+    return m_logicalOp;
+}
+
+void ModifyCustomRuleRequest::SetLogicalOp(const string& _logicalOp)
+{
+    m_logicalOp = _logicalOp;
+    m_logicalOpHasBeenSet = true;
+}
+
+bool ModifyCustomRuleRequest::LogicalOpHasBeenSet() const
+{
+    return m_logicalOpHasBeenSet;
 }
 
 

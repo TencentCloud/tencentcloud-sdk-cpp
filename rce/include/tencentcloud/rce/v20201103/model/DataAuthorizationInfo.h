@@ -48,22 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据委托方、需求方：客户主体名称。
-
-示例值：某某有限公司。
                      * @return DataProviderName 数据委托方、需求方：客户主体名称。
-
-示例值：某某有限公司。
                      * 
                      */
                     std::string GetDataProviderName() const;
 
                     /**
                      * 设置数据委托方、需求方：客户主体名称。
-
-示例值：某某有限公司。
                      * @param _dataProviderName 数据委托方、需求方：客户主体名称。
-
-示例值：某某有限公司。
                      * 
                      */
                     void SetDataProviderName(const std::string& _dataProviderName);
@@ -79,13 +71,9 @@ namespace TencentCloud
                      * 获取数据受托方、提供方：腾讯云主体名称。
 
 固定填：腾讯云计算（北京）有限责任公司
-
-示例值：腾讯云计算（北京）有限责任公司
                      * @return DataRecipientName 数据受托方、提供方：腾讯云主体名称。
 
 固定填：腾讯云计算（北京）有限责任公司
-
-示例值：腾讯云计算（北京）有限责任公司
                      * 
                      */
                     std::string GetDataRecipientName() const;
@@ -94,13 +82,9 @@ namespace TencentCloud
                      * 设置数据受托方、提供方：腾讯云主体名称。
 
 固定填：腾讯云计算（北京）有限责任公司
-
-示例值：腾讯云计算（北京）有限责任公司
                      * @param _dataRecipientName 数据受托方、提供方：腾讯云主体名称。
 
 固定填：腾讯云计算（北京）有限责任公司
-
-示例值：腾讯云计算（北京）有限责任公司
                      * 
                      */
                     void SetDataRecipientName(const std::string& _dataRecipientName);
@@ -124,8 +108,6 @@ namespace TencentCloud
 4-IP地址；
 
 999-其它；
-
-示例值：[1, 4]
                      * @return UserDataType 客户请求RCE所提供的用户数据类型，支持多选。实际以接口请求传参为准。
 
 1-手机号；
@@ -137,8 +119,6 @@ namespace TencentCloud
 4-IP地址；
 
 999-其它；
-
-示例值：[1, 4]
                      * 
                      */
                     std::vector<uint64_t> GetUserDataType() const;
@@ -155,8 +135,6 @@ namespace TencentCloud
 4-IP地址；
 
 999-其它；
-
-示例值：[1, 4]
                      * @param _userDataType 客户请求RCE所提供的用户数据类型，支持多选。实际以接口请求传参为准。
 
 1-手机号；
@@ -168,8 +146,6 @@ namespace TencentCloud
 4-IP地址；
 
 999-其它；
-
-示例值：[1, 4]
                      * 
                      */
                     void SetUserDataType(const std::vector<uint64_t>& _userDataType);
@@ -184,10 +160,8 @@ namespace TencentCloud
                     /**
                      * 获取客户是否已按[合规指南](https://rule.tencent.com/rule/202409130001)要求获取用户授权，同意客户委托腾讯云处理入参信息
 1-已授权；其它值为未授权。
-示例值：1
                      * @return IsAuthorize 客户是否已按[合规指南](https://rule.tencent.com/rule/202409130001)要求获取用户授权，同意客户委托腾讯云处理入参信息
 1-已授权；其它值为未授权。
-示例值：1
                      * 
                      */
                     uint64_t GetIsAuthorize() const;
@@ -195,10 +169,8 @@ namespace TencentCloud
                     /**
                      * 设置客户是否已按[合规指南](https://rule.tencent.com/rule/202409130001)要求获取用户授权，同意客户委托腾讯云处理入参信息
 1-已授权；其它值为未授权。
-示例值：1
                      * @param _isAuthorize 客户是否已按[合规指南](https://rule.tencent.com/rule/202409130001)要求获取用户授权，同意客户委托腾讯云处理入参信息
 1-已授权；其它值为未授权。
-示例值：1
                      * 
                      */
                     void SetIsAuthorize(const uint64_t& _isAuthorize);
@@ -213,10 +185,8 @@ namespace TencentCloud
                     /**
                      * 获取客户是否已按[合规指南](https://rule.tencent.com/rule/202409130001)要求获取用户授权，同意腾讯云结合客户提供的信息，对已合法收集的用户数据进行必要处理得出服务结果，并返回给客户。
 1-已授权；其它值为未授权。
-示例值：1
                      * @return IsOrderHandling 客户是否已按[合规指南](https://rule.tencent.com/rule/202409130001)要求获取用户授权，同意腾讯云结合客户提供的信息，对已合法收集的用户数据进行必要处理得出服务结果，并返回给客户。
 1-已授权；其它值为未授权。
-示例值：1
                      * 
                      */
                     uint64_t GetIsOrderHandling() const;
@@ -224,10 +194,8 @@ namespace TencentCloud
                     /**
                      * 设置客户是否已按[合规指南](https://rule.tencent.com/rule/202409130001)要求获取用户授权，同意腾讯云结合客户提供的信息，对已合法收集的用户数据进行必要处理得出服务结果，并返回给客户。
 1-已授权；其它值为未授权。
-示例值：1
                      * @param _isOrderHandling 客户是否已按[合规指南](https://rule.tencent.com/rule/202409130001)要求获取用户授权，同意腾讯云结合客户提供的信息，对已合法收集的用户数据进行必要处理得出服务结果，并返回给客户。
 1-已授权；其它值为未授权。
-示例值：1
                      * 
                      */
                     void SetIsOrderHandling(const uint64_t& _isOrderHandling);
@@ -243,13 +211,9 @@ namespace TencentCloud
                      * 获取客户获得的用户授权期限时间戳（单位秒）。
 
 不填默认无固定期限。
-
-示例值：1719805604
                      * @return AuthorizationTerm 客户获得的用户授权期限时间戳（单位秒）。
 
 不填默认无固定期限。
-
-示例值：1719805604
                      * 
                      */
                     uint64_t GetAuthorizationTerm() const;
@@ -258,13 +222,9 @@ namespace TencentCloud
                      * 设置客户获得的用户授权期限时间戳（单位秒）。
 
 不填默认无固定期限。
-
-示例值：1719805604
                      * @param _authorizationTerm 客户获得的用户授权期限时间戳（单位秒）。
 
 不填默认无固定期限。
-
-示例值：1719805604
                      * 
                      */
                     void SetAuthorizationTerm(const uint64_t& _authorizationTerm);
@@ -279,12 +239,8 @@ namespace TencentCloud
                     /**
                      * 获取	
 客户获得用户授权所依赖的协议地址。
-
-示例值：https://www.*****.com/*
                      * @return PrivacyPolicyLink 	
 客户获得用户授权所依赖的协议地址。
-
-示例值：https://www.*****.com/*
                      * 
                      */
                     std::string GetPrivacyPolicyLink() const;
@@ -292,12 +248,8 @@ namespace TencentCloud
                     /**
                      * 设置	
 客户获得用户授权所依赖的协议地址。
-
-示例值：https://www.*****.com/*
                      * @param _privacyPolicyLink 	
 客户获得用户授权所依赖的协议地址。
-
-示例值：https://www.*****.com/*
                      * 
                      */
                     void SetPrivacyPolicyLink(const std::string& _privacyPolicyLink);
@@ -313,13 +265,9 @@ namespace TencentCloud
                      * 获取是否是用户个人敏感数据（不推荐使用）。
 
 固定填：1。
-
-示例值：1
                      * @return IsPersonalData 是否是用户个人敏感数据（不推荐使用）。
 
 固定填：1。
-
-示例值：1
                      * 
                      */
                     uint64_t GetIsPersonalData() const;
@@ -328,13 +276,9 @@ namespace TencentCloud
                      * 设置是否是用户个人敏感数据（不推荐使用）。
 
 固定填：1。
-
-示例值：1
                      * @param _isPersonalData 是否是用户个人敏感数据（不推荐使用）。
 
 固定填：1。
-
-示例值：1
                      * 
                      */
                     void SetIsPersonalData(const uint64_t& _isPersonalData);
@@ -350,8 +294,6 @@ namespace TencentCloud
 
                     /**
                      * 数据委托方、需求方：客户主体名称。
-
-示例值：某某有限公司。
                      */
                     std::string m_dataProviderName;
                     bool m_dataProviderNameHasBeenSet;
@@ -360,8 +302,6 @@ namespace TencentCloud
                      * 数据受托方、提供方：腾讯云主体名称。
 
 固定填：腾讯云计算（北京）有限责任公司
-
-示例值：腾讯云计算（北京）有限责任公司
                      */
                     std::string m_dataRecipientName;
                     bool m_dataRecipientNameHasBeenSet;
@@ -378,8 +318,6 @@ namespace TencentCloud
 4-IP地址；
 
 999-其它；
-
-示例值：[1, 4]
                      */
                     std::vector<uint64_t> m_userDataType;
                     bool m_userDataTypeHasBeenSet;
@@ -387,7 +325,6 @@ namespace TencentCloud
                     /**
                      * 客户是否已按[合规指南](https://rule.tencent.com/rule/202409130001)要求获取用户授权，同意客户委托腾讯云处理入参信息
 1-已授权；其它值为未授权。
-示例值：1
                      */
                     uint64_t m_isAuthorize;
                     bool m_isAuthorizeHasBeenSet;
@@ -395,7 +332,6 @@ namespace TencentCloud
                     /**
                      * 客户是否已按[合规指南](https://rule.tencent.com/rule/202409130001)要求获取用户授权，同意腾讯云结合客户提供的信息，对已合法收集的用户数据进行必要处理得出服务结果，并返回给客户。
 1-已授权；其它值为未授权。
-示例值：1
                      */
                     uint64_t m_isOrderHandling;
                     bool m_isOrderHandlingHasBeenSet;
@@ -404,8 +340,6 @@ namespace TencentCloud
                      * 客户获得的用户授权期限时间戳（单位秒）。
 
 不填默认无固定期限。
-
-示例值：1719805604
                      */
                     uint64_t m_authorizationTerm;
                     bool m_authorizationTermHasBeenSet;
@@ -413,8 +347,6 @@ namespace TencentCloud
                     /**
                      * 	
 客户获得用户授权所依赖的协议地址。
-
-示例值：https://www.*****.com/*
                      */
                     std::string m_privacyPolicyLink;
                     bool m_privacyPolicyLinkHasBeenSet;
@@ -423,8 +355,6 @@ namespace TencentCloud
                      * 是否是用户个人敏感数据（不推荐使用）。
 
 固定填：1。
-
-示例值：1
                      */
                     uint64_t m_isPersonalData;
                     bool m_isPersonalDataHasBeenSet;

@@ -27,7 +27,8 @@ LiveStreamMonitorInputInfo::LiveStreamMonitorInputInfo() :
     m_inputUrlHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_casterInputIndexHasBeenSet(false),
-    m_needMonitorHasBeenSet(false)
+    m_needMonitorHasBeenSet(false),
+    m_cdnStreamIdHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome LiveStreamMonitorInputInfo::Deserialize(const rapidjson::Val
         m_needMonitorHasBeenSet = true;
     }
 
+    if (value.HasMember("CdnStreamId") && !value["CdnStreamId"].IsNull())
+    {
+        if (!value["CdnStreamId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LiveStreamMonitorInputInfo.CdnStreamId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cdnStreamId = string(value["CdnStreamId"].GetString());
+        m_cdnStreamIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void LiveStreamMonitorInputInfo::ToJsonObject(rapidjson::Value &value, rapidjson
         string key = "NeedMonitor";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_needMonitor, allocator);
+    }
+
+    if (m_cdnStreamIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CdnStreamId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cdnStreamId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void LiveStreamMonitorInputInfo::SetNeedMonitor(const bool& _needMonitor)
 bool LiveStreamMonitorInputInfo::NeedMonitorHasBeenSet() const
 {
     return m_needMonitorHasBeenSet;
+}
+
+string LiveStreamMonitorInputInfo::GetCdnStreamId() const
+{
+    return m_cdnStreamId;
+}
+
+void LiveStreamMonitorInputInfo::SetCdnStreamId(const string& _cdnStreamId)
+{
+    m_cdnStreamId = _cdnStreamId;
+    m_cdnStreamIdHasBeenSet = true;
+}
+
+bool LiveStreamMonitorInputInfo::CdnStreamIdHasBeenSet() const
+{
+    return m_cdnStreamIdHasBeenSet;
 }
 

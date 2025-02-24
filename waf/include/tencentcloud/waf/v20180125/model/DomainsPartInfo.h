@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/waf/v20180125/model/PortInfo.h>
+#include <tencentcloud/waf/v20180125/model/UpstreamRule.h>
 
 
 namespace TencentCloud
@@ -1298,6 +1299,56 @@ https：使用https协议回源
                      */
                     bool ProbeStatusHasBeenSet() const;
 
+                    /**
+                     * 获取回源策略。
+0：负载均衡回源
+1：分流回源
+                     * @return UpstreamPolicy 回源策略。
+0：负载均衡回源
+1：分流回源
+                     * 
+                     */
+                    int64_t GetUpstreamPolicy() const;
+
+                    /**
+                     * 设置回源策略。
+0：负载均衡回源
+1：分流回源
+                     * @param _upstreamPolicy 回源策略。
+0：负载均衡回源
+1：分流回源
+                     * 
+                     */
+                    void SetUpstreamPolicy(const int64_t& _upstreamPolicy);
+
+                    /**
+                     * 判断参数 UpstreamPolicy 是否已赋值
+                     * @return UpstreamPolicy 是否已赋值
+                     * 
+                     */
+                    bool UpstreamPolicyHasBeenSet() const;
+
+                    /**
+                     * 获取分流回源策略
+                     * @return UpstreamRules 分流回源策略
+                     * 
+                     */
+                    std::vector<UpstreamRule> GetUpstreamRules() const;
+
+                    /**
+                     * 设置分流回源策略
+                     * @param _upstreamRules 分流回源策略
+                     * 
+                     */
+                    void SetUpstreamRules(const std::vector<UpstreamRule>& _upstreamRules);
+
+                    /**
+                     * 判断参数 UpstreamRules 是否已赋值
+                     * @return UpstreamRules 是否已赋值
+                     * 
+                     */
+                    bool UpstreamRulesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1650,6 +1701,20 @@ https：使用https协议回源
                      */
                     int64_t m_probeStatus;
                     bool m_probeStatusHasBeenSet;
+
+                    /**
+                     * 回源策略。
+0：负载均衡回源
+1：分流回源
+                     */
+                    int64_t m_upstreamPolicy;
+                    bool m_upstreamPolicyHasBeenSet;
+
+                    /**
+                     * 分流回源策略
+                     */
+                    std::vector<UpstreamRule> m_upstreamRules;
+                    bool m_upstreamRulesHasBeenSet;
 
                 };
             }

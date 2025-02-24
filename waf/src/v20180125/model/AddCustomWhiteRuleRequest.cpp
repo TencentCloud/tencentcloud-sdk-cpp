@@ -25,10 +25,10 @@ using namespace std;
 AddCustomWhiteRuleRequest::AddCustomWhiteRuleRequest() :
     m_nameHasBeenSet(false),
     m_sortIdHasBeenSet(false),
-    m_expireTimeHasBeenSet(false),
     m_strategiesHasBeenSet(false),
     m_domainHasBeenSet(false),
     m_bypassHasBeenSet(false),
+    m_expireTimeHasBeenSet(false),
     m_jobTypeHasBeenSet(false),
     m_jobDateTimeHasBeenSet(false)
 {
@@ -55,14 +55,6 @@ string AddCustomWhiteRuleRequest::ToJsonString() const
         string key = "SortId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_sortId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_expireTimeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ExpireTime";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_expireTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_strategiesHasBeenSet)
@@ -94,6 +86,14 @@ string AddCustomWhiteRuleRequest::ToJsonString() const
         string key = "Bypass";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_bypass.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_expireTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_expireTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_jobTypeHasBeenSet)
@@ -153,22 +153,6 @@ bool AddCustomWhiteRuleRequest::SortIdHasBeenSet() const
     return m_sortIdHasBeenSet;
 }
 
-string AddCustomWhiteRuleRequest::GetExpireTime() const
-{
-    return m_expireTime;
-}
-
-void AddCustomWhiteRuleRequest::SetExpireTime(const string& _expireTime)
-{
-    m_expireTime = _expireTime;
-    m_expireTimeHasBeenSet = true;
-}
-
-bool AddCustomWhiteRuleRequest::ExpireTimeHasBeenSet() const
-{
-    return m_expireTimeHasBeenSet;
-}
-
 vector<Strategy> AddCustomWhiteRuleRequest::GetStrategies() const
 {
     return m_strategies;
@@ -215,6 +199,22 @@ void AddCustomWhiteRuleRequest::SetBypass(const string& _bypass)
 bool AddCustomWhiteRuleRequest::BypassHasBeenSet() const
 {
     return m_bypassHasBeenSet;
+}
+
+string AddCustomWhiteRuleRequest::GetExpireTime() const
+{
+    return m_expireTime;
+}
+
+void AddCustomWhiteRuleRequest::SetExpireTime(const string& _expireTime)
+{
+    m_expireTime = _expireTime;
+    m_expireTimeHasBeenSet = true;
+}
+
+bool AddCustomWhiteRuleRequest::ExpireTimeHasBeenSet() const
+{
+    return m_expireTimeHasBeenSet;
 }
 
 string AddCustomWhiteRuleRequest::GetJobType() const

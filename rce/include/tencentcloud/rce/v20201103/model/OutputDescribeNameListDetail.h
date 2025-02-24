@@ -222,18 +222,18 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取创建时间，时间格式示例"2024-05-05 12:10:15"
+                     * 获取创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateTime 创建时间，时间格式示例"2024-05-05 12:10:15"
+                     * @return CreateTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间，时间格式示例"2024-05-05 12:10:15"
+                     * 设置创建时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _createTime 创建时间，时间格式示例"2024-05-05 12:10:15"
+                     * @param _createTime 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -247,18 +247,18 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取更新时间，时间格式示例"2024-05-05 12:10:15"
+                     * 获取更新时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UpdateTime 更新时间，时间格式示例"2024-05-05 12:10:15"
+                     * @return UpdateTime 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置更新时间，时间格式示例"2024-05-05 12:10:15"
+                     * 设置更新时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _updateTime 更新时间，时间格式示例"2024-05-05 12:10:15"
+                     * @param _updateTime 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -348,14 +348,14 @@ namespace TencentCloud
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 创建时间，时间格式示例"2024-05-05 12:10:15"
+                     * 创建时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 更新时间，时间格式示例"2024-05-05 12:10:15"
+                     * 更新时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;

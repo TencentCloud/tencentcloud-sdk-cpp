@@ -50,21 +50,21 @@ namespace TencentCloud
                     /**
                      * 获取mongo表自增Id
                      * @return Id mongo表自增Id
-                     * 
+                     * @deprecated
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置mongo表自增Id
                      * @param _id mongo表自增Id
-                     * 
+                     * @deprecated
                      */
                     void SetId(const std::string& _id);
 
                     /**
                      * 判断参数 Id 是否已赋值
                      * @return Id 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool IdHasBeenSet() const;
 
@@ -92,21 +92,21 @@ namespace TencentCloud
                     /**
                      * 获取黑白名单的IP
                      * @return Ip 黑白名单的IP
-                     * 
+                     * @deprecated
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置黑白名单的IP
                      * @param _ip 黑白名单的IP
-                     * 
+                     * @deprecated
                      */
                     void SetIp(const std::string& _ip);
 
                     /**
                      * 判断参数 Ip 是否已赋值
                      * @return Ip 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool IpHasBeenSet() const;
 
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool NoteHasBeenSet() const;
 
                     /**
-                     * 获取添加路径
-                     * @return Source 添加路径
+                     * 获取batch为批量域名，batch-group为防护对象组
+                     * @return Source batch为批量域名，batch-group为防护对象组
                      * 
                      */
                     std::string GetSource() const;
 
                     /**
-                     * 设置添加路径
-                     * @param _source 添加路径
+                     * 设置batch为批量域名，batch-group为防护对象组
+                     * @param _source batch为批量域名，batch-group为防护对象组
                      * 
                      */
                     void SetSource(const std::string& _source);
@@ -362,6 +362,27 @@ namespace TencentCloud
                      */
                     bool ValidStatusHasBeenSet() const;
 
+                    /**
+                     * 获取防护对象组ID列表，如果绑定的是防护对象组
+                     * @return GroupIds 防护对象组ID列表，如果绑定的是防护对象组
+                     * 
+                     */
+                    std::vector<uint64_t> GetGroupIds() const;
+
+                    /**
+                     * 设置防护对象组ID列表，如果绑定的是防护对象组
+                     * @param _groupIds 防护对象组ID列表，如果绑定的是防护对象组
+                     * 
+                     */
+                    void SetGroupIds(const std::vector<uint64_t>& _groupIds);
+
+                    /**
+                     * 判断参数 GroupIds 是否已赋值
+                     * @return GroupIds 是否已赋值
+                     * 
+                     */
+                    bool GroupIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -389,7 +410,7 @@ namespace TencentCloud
                     bool m_noteHasBeenSet;
 
                     /**
-                     * 添加路径
+                     * batch为批量域名，batch-group为防护对象组
                      */
                     std::string m_source;
                     bool m_sourceHasBeenSet;
@@ -453,6 +474,12 @@ namespace TencentCloud
                      */
                     int64_t m_validStatus;
                     bool m_validStatusHasBeenSet;
+
+                    /**
+                     * 防护对象组ID列表，如果绑定的是防护对象组
+                     */
+                    std::vector<uint64_t> m_groupIds;
+                    bool m_groupIdsHasBeenSet;
 
                 };
             }

@@ -151,18 +151,14 @@ namespace TencentCloud
 
                     /**
                      * 获取所属的独享集群ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CdcId 所属的独享集群ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCdcId() const;
 
                     /**
                      * 设置所属的独享集群ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cdcId 所属的独享集群ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCdcId(const std::string& _cdcId);
@@ -178,11 +174,9 @@ namespace TencentCloud
                      * 获取磁盘名称，长度不超过128 个字符。
 
 该参数正在邀测中，暂未开放使用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiskName 磁盘名称，长度不超过128 个字符。
 
 该参数正在邀测中，暂未开放使用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDiskName() const;
@@ -191,11 +185,9 @@ namespace TencentCloud
                      * 设置磁盘名称，长度不超过128 个字符。
 
 该参数正在邀测中，暂未开放使用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _diskName 磁盘名称，长度不超过128 个字符。
 
 该参数正在邀测中，暂未开放使用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiskName(const std::string& _diskName);
@@ -239,7 +231,6 @@ namespace TencentCloud
 
                     /**
                      * 所属的独享集群ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cdcId;
                     bool m_cdcIdHasBeenSet;
@@ -248,7 +239,6 @@ namespace TencentCloud
                      * 磁盘名称，长度不超过128 个字符。
 
 该参数正在邀测中，暂未开放使用。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_diskName;
                     bool m_diskNameHasBeenSet;

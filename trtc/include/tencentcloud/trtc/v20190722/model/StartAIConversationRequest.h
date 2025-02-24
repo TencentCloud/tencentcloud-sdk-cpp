@@ -224,6 +224,27 @@ namespace TencentCloud
                      */
                     bool TTSConfigHasBeenSet() const;
 
+                    /**
+                     * 获取数字人配置，为JSON字符串。**数字人配置需要提工单加白后才能使用**
+                     * @return AvatarConfig 数字人配置，为JSON字符串。**数字人配置需要提工单加白后才能使用**
+                     * 
+                     */
+                    std::string GetAvatarConfig() const;
+
+                    /**
+                     * 设置数字人配置，为JSON字符串。**数字人配置需要提工单加白后才能使用**
+                     * @param _avatarConfig 数字人配置，为JSON字符串。**数字人配置需要提工单加白后才能使用**
+                     * 
+                     */
+                    void SetAvatarConfig(const std::string& _avatarConfig);
+
+                    /**
+                     * 判断参数 AvatarConfig 是否已赋值
+                     * @return AvatarConfig 是否已赋值
+                     * 
+                     */
+                    bool AvatarConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -276,6 +297,12 @@ namespace TencentCloud
                      */
                     std::string m_tTSConfig;
                     bool m_tTSConfigHasBeenSet;
+
+                    /**
+                     * 数字人配置，为JSON字符串。**数字人配置需要提工单加白后才能使用**
+                     */
+                    std::string m_avatarConfig;
+                    bool m_avatarConfigHasBeenSet;
 
                 };
             }

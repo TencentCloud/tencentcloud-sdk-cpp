@@ -814,6 +814,49 @@ EmrClient::DescribeCvmQuotaOutcomeCallable EmrClient::DescribeCvmQuotaCallable(c
     return task->get_future();
 }
 
+EmrClient::DescribeDAGInfoOutcome EmrClient::DescribeDAGInfo(const DescribeDAGInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDAGInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDAGInfoResponse rsp = DescribeDAGInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDAGInfoOutcome(rsp);
+        else
+            return DescribeDAGInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDAGInfoOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::DescribeDAGInfoAsync(const DescribeDAGInfoRequest& request, const DescribeDAGInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDAGInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::DescribeDAGInfoOutcomeCallable EmrClient::DescribeDAGInfoCallable(const DescribeDAGInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDAGInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDAGInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EmrClient::DescribeEmrApplicationStaticsOutcome EmrClient::DescribeEmrApplicationStatics(const DescribeEmrApplicationStaticsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeEmrApplicationStatics");
