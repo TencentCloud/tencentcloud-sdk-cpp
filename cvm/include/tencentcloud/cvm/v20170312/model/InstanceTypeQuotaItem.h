@@ -135,18 +135,14 @@ namespace TencentCloud
 
                     /**
                      * 获取扩展属性。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Externals 扩展属性。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Externals GetExternals() const;
 
                     /**
                      * 设置扩展属性。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _externals 扩展属性。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExternals(const Externals& _externals);
@@ -307,18 +303,14 @@ namespace TencentCloud
 
                     /**
                      * 获取售罄原因。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SoldOutReason 售罄原因。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSoldOutReason() const;
 
                     /**
                      * 设置售罄原因。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _soldOutReason 售罄原因。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSoldOutReason(const std::string& _soldOutReason);
@@ -525,13 +517,11 @@ namespace TencentCloud
 <li>NormalStock：表示对应库存供应有保障</li>
 <li> UnderStock：表示对应库存即将售罄</li> 
 <li>WithoutStock：表示对应库存已经售罄</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StatusCategory 描述库存情况。取值范围：
 <li> EnoughStock：表示对应库存非常充足</li> 
 <li>NormalStock：表示对应库存供应有保障</li>
 <li> UnderStock：表示对应库存即将售罄</li> 
 <li>WithoutStock：表示对应库存已经售罄</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatusCategory() const;
@@ -542,13 +532,11 @@ namespace TencentCloud
 <li>NormalStock：表示对应库存供应有保障</li>
 <li> UnderStock：表示对应库存即将售罄</li> 
 <li>WithoutStock：表示对应库存已经售罄</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _statusCategory 描述库存情况。取值范围：
 <li> EnoughStock：表示对应库存非常充足</li> 
 <li>NormalStock：表示对应库存供应有保障</li>
 <li> UnderStock：表示对应库存即将售罄</li> 
 <li>WithoutStock：表示对应库存已经售罄</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatusCategory(const std::string& _statusCategory);
@@ -588,7 +576,6 @@ namespace TencentCloud
 
                     /**
                      * 扩展属性。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Externals m_externals;
                     bool m_externalsHasBeenSet;
@@ -637,7 +624,6 @@ namespace TencentCloud
 
                     /**
                      * 售罄原因。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_soldOutReason;
                     bool m_soldOutReasonHasBeenSet;
@@ -702,7 +688,6 @@ namespace TencentCloud
 <li>NormalStock：表示对应库存供应有保障</li>
 <li> UnderStock：表示对应库存即将售罄</li> 
 <li>WithoutStock：表示对应库存已经售罄</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_statusCategory;
                     bool m_statusCategoryHasBeenSet;

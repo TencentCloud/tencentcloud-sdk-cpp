@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取转换到该过程的简明原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Reason 转换到该过程的简明原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReason() const;
 
                     /**
                      * 设置转换到该过程的简明原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _reason 转换到该过程的简明原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReason(const std::string& _reason);
@@ -129,7 +125,6 @@ namespace TencentCloud
 
                     /**
                      * 转换到该过程的简明原因
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reason;
                     bool m_reasonHasBeenSet;

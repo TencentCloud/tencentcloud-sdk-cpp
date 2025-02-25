@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取释放地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReleaseAddress 释放地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetReleaseAddress() const;
 
                     /**
                      * 设置释放地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _releaseAddress 释放地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReleaseAddress(const bool& _releaseAddress);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取不支持的网络类型，取值范围：<br><li>BASIC：基础网络</li><li>VPC1.0：私有网络VPC1.0</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnsupportNetworks 不支持的网络类型，取值范围：<br><li>BASIC：基础网络</li><li>VPC1.0：私有网络VPC1.0</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetUnsupportNetworks() const;
 
                     /**
                      * 设置不支持的网络类型，取值范围：<br><li>BASIC：基础网络</li><li>VPC1.0：私有网络VPC1.0</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _unsupportNetworks 不支持的网络类型，取值范围：<br><li>BASIC：基础网络</li><li>VPC1.0：私有网络VPC1.0</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUnsupportNetworks(const std::vector<std::string>& _unsupportNetworks);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取HDD本地存储属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StorageBlockAttr HDD本地存储属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     StorageBlock GetStorageBlockAttr() const;
 
                     /**
                      * 设置HDD本地存储属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _storageBlockAttr HDD本地存储属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStorageBlockAttr(const StorageBlock& _storageBlockAttr);
@@ -126,21 +114,18 @@ namespace TencentCloud
 
                     /**
                      * 释放地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_releaseAddress;
                     bool m_releaseAddressHasBeenSet;
 
                     /**
                      * 不支持的网络类型，取值范围：<br><li>BASIC：基础网络</li><li>VPC1.0：私有网络VPC1.0</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_unsupportNetworks;
                     bool m_unsupportNetworksHasBeenSet;
 
                     /**
                      * HDD本地存储属性
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     StorageBlock m_storageBlockAttr;
                     bool m_storageBlockAttrHasBeenSet;

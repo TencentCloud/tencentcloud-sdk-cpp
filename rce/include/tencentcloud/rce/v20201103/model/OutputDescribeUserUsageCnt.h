@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当前付费模式，0 后付费 1 预付费
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayMode 当前付费模式，0 后付费 1 预付费
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPayMode() const;
 
                     /**
                      * 设置当前付费模式，0 后付费 1 预付费
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _payMode 当前付费模式，0 后付费 1 预付费
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPayMode(const int64_t& _payMode);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取后付费本月使用量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AfterPayModeThisMonthUsedCnt 后付费本月使用量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAfterPayModeThisMonthUsedCnt() const;
 
                     /**
                      * 设置后付费本月使用量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _afterPayModeThisMonthUsedCnt 后付费本月使用量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAfterPayModeThisMonthUsedCnt(const int64_t& _afterPayModeThisMonthUsedCnt);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取超出时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpireTime 超出时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
                      * 设置超出时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _expireTime 超出时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取后付费上月使用量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AfterPayModeLastMonthUsedCnt 后付费上月使用量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAfterPayModeLastMonthUsedCnt() const;
 
                     /**
                      * 设置后付费上月使用量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _afterPayModeLastMonthUsedCnt 后付费上月使用量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAfterPayModeLastMonthUsedCnt(const int64_t& _afterPayModeLastMonthUsedCnt);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取预付费总量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BeforePayModeTotalUsedCnt 预付费总量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBeforePayModeTotalUsedCnt() const;
 
                     /**
                      * 设置预付费总量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _beforePayModeTotalUsedCnt 预付费总量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBeforePayModeTotalUsedCnt(const int64_t& _beforePayModeTotalUsedCnt);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取预付费剩余用量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BeforePayModeRemainUsedCnt 预付费剩余用量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBeforePayModeRemainUsedCnt() const;
 
                     /**
                      * 设置预付费剩余用量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _beforePayModeRemainUsedCnt 预付费剩余用量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBeforePayModeRemainUsedCnt(const int64_t& _beforePayModeRemainUsedCnt);
@@ -225,49 +197,42 @@ namespace TencentCloud
 
                     /**
                      * 当前付费模式，0 后付费 1 预付费
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
                      * 后付费本月使用量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_afterPayModeThisMonthUsedCnt;
                     bool m_afterPayModeThisMonthUsedCntHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 超出时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
                      * 后付费上月使用量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_afterPayModeLastMonthUsedCnt;
                     bool m_afterPayModeLastMonthUsedCntHasBeenSet;
 
                     /**
                      * 预付费总量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_beforePayModeTotalUsedCnt;
                     bool m_beforePayModeTotalUsedCntHasBeenSet;
 
                     /**
                      * 预付费剩余用量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_beforePayModeRemainUsedCnt;
                     bool m_beforePayModeRemainUsedCntHasBeenSet;

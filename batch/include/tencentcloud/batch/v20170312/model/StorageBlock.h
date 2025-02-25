@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取HDD本地存储类型，值为：LOCAL_PRO.
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type HDD本地存储类型，值为：LOCAL_PRO.
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置HDD本地存储类型，值为：LOCAL_PRO.
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type HDD本地存储类型，值为：LOCAL_PRO.
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取HDD本地存储的最小容量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MinSize HDD本地存储的最小容量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMinSize() const;
 
                     /**
                      * 设置HDD本地存储的最小容量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _minSize HDD本地存储的最小容量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMinSize(const int64_t& _minSize);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取HDD本地存储的最大容量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxSize HDD本地存储的最大容量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxSize() const;
 
                     /**
                      * 设置HDD本地存储的最大容量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxSize HDD本地存储的最大容量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxSize(const int64_t& _maxSize);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * HDD本地存储类型，值为：LOCAL_PRO.
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * HDD本地存储的最小容量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_minSize;
                     bool m_minSizeHasBeenSet;
 
                     /**
                      * HDD本地存储的最大容量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxSize;
                     bool m_maxSizeHasBeenSet;
