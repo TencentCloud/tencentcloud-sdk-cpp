@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取用户注册的所有Appid和应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 用户注册的所有Appid和应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CaptchaUserAllAppId> GetData() const;
@@ -76,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取返回操作信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CaptchaMsg 返回操作信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCaptchaMsg() const;
@@ -94,7 +90,6 @@ namespace TencentCloud
 
                     /**
                      * 用户注册的所有Appid和应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CaptchaUserAllAppId> m_data;
                     bool m_dataHasBeenSet;
@@ -107,7 +102,6 @@ namespace TencentCloud
 
                     /**
                      * 返回操作信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_captchaMsg;
                     bool m_captchaMsgHasBeenSet;

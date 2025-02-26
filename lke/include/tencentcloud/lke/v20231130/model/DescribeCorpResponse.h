@@ -60,10 +60,8 @@ namespace TencentCloud
                     bool CorpBizIdHasBeenSet() const;
 
                     /**
-                     * 获取机器人配额
-
-                     * @return RobotQuota 机器人配额
-
+                     * 获取应用配额
+                     * @return RobotQuota 应用配额
                      * 
                      */
                     uint64_t GetRobotQuota() const;
@@ -91,6 +89,62 @@ namespace TencentCloud
                      */
                     bool FullNameHasBeenSet() const;
 
+                    /**
+                     * 获取是否试用
+                     * @return IsTrial 是否试用
+                     * 
+                     */
+                    bool GetIsTrial() const;
+
+                    /**
+                     * 判断参数 IsTrial 是否已赋值
+                     * @return IsTrial 是否已赋值
+                     * 
+                     */
+                    bool IsTrialHasBeenSet() const;
+
+                    /**
+                     * 获取是否试用过期
+                     * @return IsTrialExpired 是否试用过期
+                     * 
+                     */
+                    bool GetIsTrialExpired() const;
+
+                    /**
+                     * 判断参数 IsTrialExpired 是否已赋值
+                     * @return IsTrialExpired 是否已赋值
+                     * 
+                     */
+                    bool IsTrialExpiredHasBeenSet() const;
+
+                    /**
+                     * 获取可用应用数量
+                     * @return AvailableAppQuota 可用应用数量
+                     * 
+                     */
+                    uint64_t GetAvailableAppQuota() const;
+
+                    /**
+                     * 判断参数 AvailableAppQuota 是否已赋值
+                     * @return AvailableAppQuota 是否已赋值
+                     * 
+                     */
+                    bool AvailableAppQuotaHasBeenSet() const;
+
+                    /**
+                     * 获取是否支持自定义模型配置
+                     * @return IsSupportCustomModel 是否支持自定义模型配置
+                     * 
+                     */
+                    bool GetIsSupportCustomModel() const;
+
+                    /**
+                     * 判断参数 IsSupportCustomModel 是否已赋值
+                     * @return IsSupportCustomModel 是否已赋值
+                     * 
+                     */
+                    bool IsSupportCustomModelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,8 +155,7 @@ namespace TencentCloud
                     bool m_corpBizIdHasBeenSet;
 
                     /**
-                     * 机器人配额
-
+                     * 应用配额
                      */
                     uint64_t m_robotQuota;
                     bool m_robotQuotaHasBeenSet;
@@ -113,6 +166,30 @@ namespace TencentCloud
                      */
                     std::string m_fullName;
                     bool m_fullNameHasBeenSet;
+
+                    /**
+                     * 是否试用
+                     */
+                    bool m_isTrial;
+                    bool m_isTrialHasBeenSet;
+
+                    /**
+                     * 是否试用过期
+                     */
+                    bool m_isTrialExpired;
+                    bool m_isTrialExpiredHasBeenSet;
+
+                    /**
+                     * 可用应用数量
+                     */
+                    uint64_t m_availableAppQuota;
+                    bool m_availableAppQuotaHasBeenSet;
+
+                    /**
+                     * 是否支持自定义模型配置
+                     */
+                    bool m_isSupportCustomModel;
+                    bool m_isSupportCustomModelHasBeenSet;
 
                 };
             }

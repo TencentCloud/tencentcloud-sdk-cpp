@@ -30,7 +30,12 @@ InstanceNode::InstanceNode() :
     m_clusterHasBeenSet(false),
     m_nodeGroupsHasBeenSet(false),
     m_ripHasBeenSet(false),
-    m_isCHProxyHasBeenSet(false)
+    m_isCHProxyHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_uUIDHasBeenSet(false),
+    m_zoneHasBeenSet(false),
+    m_zoneDescHasBeenSet(false),
+    m_realResourceIdHasBeenSet(false)
 {
 }
 
@@ -149,6 +154,56 @@ CoreInternalOutcome InstanceNode::Deserialize(const rapidjson::Value &value)
         m_isCHProxyHasBeenSet = true;
     }
 
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceNode.Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = string(value["Status"].GetString());
+        m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("UUID") && !value["UUID"].IsNull())
+    {
+        if (!value["UUID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceNode.UUID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_uUID = string(value["UUID"].GetString());
+        m_uUIDHasBeenSet = true;
+    }
+
+    if (value.HasMember("Zone") && !value["Zone"].IsNull())
+    {
+        if (!value["Zone"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceNode.Zone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_zone = string(value["Zone"].GetString());
+        m_zoneHasBeenSet = true;
+    }
+
+    if (value.HasMember("ZoneDesc") && !value["ZoneDesc"].IsNull())
+    {
+        if (!value["ZoneDesc"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceNode.ZoneDesc` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_zoneDesc = string(value["ZoneDesc"].GetString());
+        m_zoneDescHasBeenSet = true;
+    }
+
+    if (value.HasMember("RealResourceId") && !value["RealResourceId"].IsNull())
+    {
+        if (!value["RealResourceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceNode.RealResourceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_realResourceId = string(value["RealResourceId"].GetString());
+        m_realResourceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -241,6 +296,46 @@ void InstanceNode::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "IsCHProxy";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isCHProxy, allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_uUIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UUID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uUID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_zoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Zone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_zoneDescHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZoneDesc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zoneDesc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_realResourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RealResourceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_realResourceId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -404,5 +499,85 @@ void InstanceNode::SetIsCHProxy(const bool& _isCHProxy)
 bool InstanceNode::IsCHProxyHasBeenSet() const
 {
     return m_isCHProxyHasBeenSet;
+}
+
+string InstanceNode::GetStatus() const
+{
+    return m_status;
+}
+
+void InstanceNode::SetStatus(const string& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool InstanceNode::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+string InstanceNode::GetUUID() const
+{
+    return m_uUID;
+}
+
+void InstanceNode::SetUUID(const string& _uUID)
+{
+    m_uUID = _uUID;
+    m_uUIDHasBeenSet = true;
+}
+
+bool InstanceNode::UUIDHasBeenSet() const
+{
+    return m_uUIDHasBeenSet;
+}
+
+string InstanceNode::GetZone() const
+{
+    return m_zone;
+}
+
+void InstanceNode::SetZone(const string& _zone)
+{
+    m_zone = _zone;
+    m_zoneHasBeenSet = true;
+}
+
+bool InstanceNode::ZoneHasBeenSet() const
+{
+    return m_zoneHasBeenSet;
+}
+
+string InstanceNode::GetZoneDesc() const
+{
+    return m_zoneDesc;
+}
+
+void InstanceNode::SetZoneDesc(const string& _zoneDesc)
+{
+    m_zoneDesc = _zoneDesc;
+    m_zoneDescHasBeenSet = true;
+}
+
+bool InstanceNode::ZoneDescHasBeenSet() const
+{
+    return m_zoneDescHasBeenSet;
+}
+
+string InstanceNode::GetRealResourceId() const
+{
+    return m_realResourceId;
+}
+
+void InstanceNode::SetRealResourceId(const string& _realResourceId)
+{
+    m_realResourceId = _realResourceId;
+    m_realResourceIdHasBeenSet = true;
+}
+
+bool InstanceNode::RealResourceIdHasBeenSet() const
+{
+    return m_realResourceIdHasBeenSet;
 }
 

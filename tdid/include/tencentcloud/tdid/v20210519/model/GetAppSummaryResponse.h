@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取用户参与应用的统计指标 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppCounter 用户参与应用的统计指标 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ResourceCounterData GetAppCounter() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取用户创建资源的统计指标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserCounter 用户创建资源的统计指标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ResourceCounterData GetUserCounter() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 用户参与应用的统计指标 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ResourceCounterData m_appCounter;
                     bool m_appCounterHasBeenSet;
 
                     /**
                      * 用户创建资源的统计指标
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ResourceCounterData m_userCounter;
                     bool m_userCounterHasBeenSet;

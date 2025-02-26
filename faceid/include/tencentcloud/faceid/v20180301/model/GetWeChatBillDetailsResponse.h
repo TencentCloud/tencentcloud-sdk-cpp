@@ -45,8 +45,10 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否还有下一页。该字段为true时，需要将NextCursor的值作为入参Cursor继续调用本接口。
-                     * @return HasNextPage 是否还有下一页。该字段为true时，需要将NextCursor的值作为入参Cursor继续调用本接口。
+                     * 获取是否还有下一页。
+- 该字段为true时，需要将NextCursor的值作为入参Cursor继续调用本接口。
+                     * @return HasNextPage 是否还有下一页。
+- 该字段为true时，需要将NextCursor的值作为入参Cursor继续调用本接口。
                      * 
                      */
                     bool GetHasNextPage() const;
@@ -59,8 +61,8 @@ namespace TencentCloud
                     bool HasNextPageHasBeenSet() const;
 
                     /**
-                     * 获取下一页的游标。用于分页。
-                     * @return NextCursor 下一页的游标。用于分页。
+                     * 获取下一页的游标，用于分页。
+                     * @return NextCursor 下一页的游标，用于分页。
                      * 
                      */
                     uint64_t GetNextCursor() const;
@@ -73,8 +75,8 @@ namespace TencentCloud
                     bool NextCursorHasBeenSet() const;
 
                     /**
-                     * 获取数据
-                     * @return WeChatBillDetails 数据
+                     * 获取数据。
+                     * @return WeChatBillDetails 数据。
                      * 
                      */
                     std::vector<WeChatBillDetail> GetWeChatBillDetails() const;
@@ -89,19 +91,20 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 是否还有下一页。该字段为true时，需要将NextCursor的值作为入参Cursor继续调用本接口。
+                     * 是否还有下一页。
+- 该字段为true时，需要将NextCursor的值作为入参Cursor继续调用本接口。
                      */
                     bool m_hasNextPage;
                     bool m_hasNextPageHasBeenSet;
 
                     /**
-                     * 下一页的游标。用于分页。
+                     * 下一页的游标，用于分页。
                      */
                     uint64_t m_nextCursor;
                     bool m_nextCursorHasBeenSet;
 
                     /**
-                     * 数据
+                     * 数据。
                      */
                     std::vector<WeChatBillDetail> m_weChatBillDetails;
                     bool m_weChatBillDetailsHasBeenSet;

@@ -133,6 +133,27 @@ namespace TencentCloud
                     bool TargetGroupInstancesHasBeenSet() const;
 
                     /**
+                     * 获取目标组类型，当前支持v1(旧版目标组), v2(新版目标组), 默认为v1(旧版目标组)。
+                     * @return Type 目标组类型，当前支持v1(旧版目标组), v2(新版目标组), 默认为v1(旧版目标组)。
+                     * 
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置目标组类型，当前支持v1(旧版目标组), v2(新版目标组), 默认为v1(旧版目标组)。
+                     * @param _type 目标组类型，当前支持v1(旧版目标组), v2(新版目标组), 默认为v1(旧版目标组)。
+                     * 
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     * 
+                     */
+                    bool TypeHasBeenSet() const;
+
+                    /**
                      * 获取标签。
                      * @return Tags 标签。
                      * 
@@ -220,6 +241,12 @@ namespace TencentCloud
                      */
                     std::vector<TargetGroupInstance> m_targetGroupInstances;
                     bool m_targetGroupInstancesHasBeenSet;
+
+                    /**
+                     * 目标组类型，当前支持v1(旧版目标组), v2(新版目标组), 默认为v1(旧版目标组)。
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
 
                     /**
                      * 标签。

@@ -265,6 +265,127 @@ namespace TencentCloud
                      */
                     bool IsCHProxyHasBeenSet() const;
 
+                    /**
+                     * 获取节点状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Status 节点状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetStatus() const;
+
+                    /**
+                     * 设置节点状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _status 节点状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetStatus(const std::string& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取节点uuid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UUID 节点uuid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetUUID() const;
+
+                    /**
+                     * 设置节点uuid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _uUID 节点uuid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUUID(const std::string& _uUID);
+
+                    /**
+                     * 判断参数 UUID 是否已赋值
+                     * @return UUID 是否已赋值
+                     * 
+                     */
+                    bool UUIDHasBeenSet() const;
+
+                    /**
+                     * 获取区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Zone 区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetZone() const;
+
+                    /**
+                     * 设置区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _zone 区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetZone(const std::string& _zone);
+
+                    /**
+                     * 判断参数 Zone 是否已赋值
+                     * @return Zone 是否已赋值
+                     * 
+                     */
+                    bool ZoneHasBeenSet() const;
+
+                    /**
+                     * 获取区描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ZoneDesc 区描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetZoneDesc() const;
+
+                    /**
+                     * 设置区描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _zoneDesc 区描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetZoneDesc(const std::string& _zoneDesc);
+
+                    /**
+                     * 判断参数 ZoneDesc 是否已赋值
+                     * @return ZoneDesc 是否已赋值
+                     * 
+                     */
+                    bool ZoneDescHasBeenSet() const;
+
+                    /**
+                     * 获取真实资源id
+                     * @return RealResourceId 真实资源id
+                     * 
+                     */
+                    std::string GetRealResourceId() const;
+
+                    /**
+                     * 设置真实资源id
+                     * @param _realResourceId 真实资源id
+                     * 
+                     */
+                    void SetRealResourceId(const std::string& _realResourceId);
+
+                    /**
+                     * 判断参数 RealResourceId 是否已赋值
+                     * @return RealResourceId 是否已赋值
+                     * 
+                     */
+                    bool RealResourceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -328,6 +449,40 @@ namespace TencentCloud
                      */
                     bool m_isCHProxy;
                     bool m_isCHProxyHasBeenSet;
+
+                    /**
+                     * 节点状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * 节点uuid
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_uUID;
+                    bool m_uUIDHasBeenSet;
+
+                    /**
+                     * 区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_zone;
+                    bool m_zoneHasBeenSet;
+
+                    /**
+                     * 区描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_zoneDesc;
+                    bool m_zoneDescHasBeenSet;
+
+                    /**
+                     * 真实资源id
+                     */
+                    std::string m_realResourceId;
+                    bool m_realResourceIdHasBeenSet;
 
                 };
             }

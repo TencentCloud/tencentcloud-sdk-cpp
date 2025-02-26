@@ -28,6 +28,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20230616/model/Dimension.h
   include/tencentcloud/monitor/v20180724/model/ModifyAlarmPolicyInfoRequest.h
   include/tencentcloud/monitor/v20180724/model/AlarmPolicyTriggerTask.h
+  include/tencentcloud/monitor/v20180724/model/GetTopNMonitorDataRequest.h
   include/tencentcloud/monitor/v20180724/model/DescribePrometheusRegionsResponse.h
   include/tencentcloud/monitor/v20180724/model/DescribePolicyGroupListResponse.h
   include/tencentcloud/monitor/v20180724/model/DescribePrometheusInstancesOverviewRequest.h
@@ -77,6 +78,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/DescribePrometheusInstanceInitStatusResponse.h
   include/tencentcloud/monitor/v20180724/model/DescribeProductEventListResponse.h
   include/tencentcloud/monitor/v20180724/model/Targets.h
+  include/tencentcloud/monitor/v20180724/model/GetTopNMonitorDataResponse.h
   include/tencentcloud/monitor/v20180724/model/AlarmGroupByItem.h
   include/tencentcloud/monitor/v20180724/model/DescribeAlarmNoticeCallbacksResponse.h
   include/tencentcloud/monitor/v20180724/model/DescribePrometheusInstanceUsageRequest.h
@@ -200,6 +202,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/DescribePrometheusClusterAgentsResponse.h
   include/tencentcloud/monitor/v20180724/model/UpdatePrometheusScrapeJobRequest.h
   include/tencentcloud/monitor/v20180724/model/PrometheusAgentInfo.h
+  include/tencentcloud/monitor/v20180724/model/SingleOrderedDataPoint.h
   include/tencentcloud/monitor/v20180724/model/ServiceDiscoveryItem.h
   include/tencentcloud/monitor/v20180724/model/CreatePrometheusClusterAgentResponse.h
   include/tencentcloud/monitor/v20180724/model/PrometheusAlertAllowTimeRange.h
@@ -491,6 +494,7 @@ set(monitor_src
   src/v20230616/model/Dimension.cpp
   src/v20180724/model/ModifyAlarmPolicyInfoRequest.cpp
   src/v20180724/model/AlarmPolicyTriggerTask.cpp
+  src/v20180724/model/GetTopNMonitorDataRequest.cpp
   src/v20180724/model/DescribePrometheusRegionsResponse.cpp
   src/v20180724/model/DescribePolicyGroupListResponse.cpp
   src/v20180724/model/DescribePrometheusInstancesOverviewRequest.cpp
@@ -540,6 +544,7 @@ set(monitor_src
   src/v20180724/model/DescribePrometheusInstanceInitStatusResponse.cpp
   src/v20180724/model/DescribeProductEventListResponse.cpp
   src/v20180724/model/Targets.cpp
+  src/v20180724/model/GetTopNMonitorDataResponse.cpp
   src/v20180724/model/AlarmGroupByItem.cpp
   src/v20180724/model/DescribeAlarmNoticeCallbacksResponse.cpp
   src/v20180724/model/DescribePrometheusInstanceUsageRequest.cpp
@@ -663,6 +668,7 @@ set(monitor_src
   src/v20180724/model/DescribePrometheusClusterAgentsResponse.cpp
   src/v20180724/model/UpdatePrometheusScrapeJobRequest.cpp
   src/v20180724/model/PrometheusAgentInfo.cpp
+  src/v20180724/model/SingleOrderedDataPoint.cpp
   src/v20180724/model/ServiceDiscoveryItem.cpp
   src/v20180724/model/CreatePrometheusClusterAgentResponse.cpp
   src/v20180724/model/PrometheusAlertAllowTimeRange.cpp

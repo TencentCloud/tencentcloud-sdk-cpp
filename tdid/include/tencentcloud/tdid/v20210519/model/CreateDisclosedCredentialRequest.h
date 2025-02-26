@@ -126,6 +126,27 @@ namespace TencentCloud
                      */
                     bool DAPIdHasBeenSet() const;
 
+                    /**
+                     * 获取用户应用ID
+                     * @return UAPId 用户应用ID
+                     * 
+                     */
+                    uint64_t GetUAPId() const;
+
+                    /**
+                     * 设置用户应用ID
+                     * @param _uAPId 用户应用ID
+                     * 
+                     */
+                    void SetUAPId(const uint64_t& _uAPId);
+
+                    /**
+                     * 判断参数 UAPId 是否已赋值
+                     * @return UAPId 是否已赋值
+                     * 
+                     */
+                    bool UAPIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +172,12 @@ namespace TencentCloud
                      */
                     uint64_t m_dAPId;
                     bool m_dAPIdHasBeenSet;
+
+                    /**
+                     * 用户应用ID
+                     */
+                    uint64_t m_uAPId;
+                    bool m_uAPIdHasBeenSet;
 
                 };
             }

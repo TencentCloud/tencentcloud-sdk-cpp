@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Title 应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTitle() const;
 
                     /**
                      * 设置应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _title 应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTitle(const std::string& _title);
@@ -94,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否编辑状态使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EditStatusUse 是否编辑状态使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEditStatusUse() const;
 
                     /**
                      * 设置是否编辑状态使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _editStatusUse 是否编辑状态使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEditStatusUse(const int64_t& _editStatusUse);
@@ -119,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否预览状态使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PreviewStatusUse 是否预览状态使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPreviewStatusUse() const;
 
                     /**
                      * 设置是否预览状态使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _previewStatusUse 是否预览状态使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPreviewStatusUse(const int64_t& _previewStatusUse);
@@ -144,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否正式状态使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OnlineStatusUse 是否正式状态使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetOnlineStatusUse() const;
 
                     /**
                      * 设置是否正式状态使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _onlineStatusUse 是否正式状态使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOnlineStatusUse(const int64_t& _onlineStatusUse);
@@ -167,6 +151,27 @@ namespace TencentCloud
                      */
                     bool OnlineStatusUseHasBeenSet() const;
 
+                    /**
+                     * 获取数据源ID
+                     * @return DataSourceId 数据源ID
+                     * 
+                     */
+                    std::string GetDataSourceId() const;
+
+                    /**
+                     * 设置数据源ID
+                     * @param _dataSourceId 数据源ID
+                     * 
+                     */
+                    void SetDataSourceId(const std::string& _dataSourceId);
+
+                    /**
+                     * 判断参数 DataSourceId 是否已赋值
+                     * @return DataSourceId 是否已赋值
+                     * 
+                     */
+                    bool DataSourceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -177,31 +182,33 @@ namespace TencentCloud
 
                     /**
                      * 应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_title;
                     bool m_titleHasBeenSet;
 
                     /**
                      * 是否编辑状态使用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_editStatusUse;
                     bool m_editStatusUseHasBeenSet;
 
                     /**
                      * 是否预览状态使用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_previewStatusUse;
                     bool m_previewStatusUseHasBeenSet;
 
                     /**
                      * 是否正式状态使用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_onlineStatusUse;
                     bool m_onlineStatusUseHasBeenSet;
+
+                    /**
+                     * 数据源ID
+                     */
+                    std::string m_dataSourceId;
+                    bool m_dataSourceIdHasBeenSet;
 
                 };
             }

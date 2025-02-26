@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取events 分页列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result events 分页列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TsfPageContainerEvent GetResult() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * events 分页列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TsfPageContainerEvent m_result;
                     bool m_resultHasBeenSet;

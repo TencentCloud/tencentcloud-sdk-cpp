@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _region 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取可用区信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AvailableZones 可用区信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetAvailableZones() const;
 
                     /**
                      * 设置可用区信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _availableZones 可用区信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAvailableZones(const std::vector<std::string>& _availableZones);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
                      * 可用区信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_availableZones;
                     bool m_availableZonesHasBeenSet;

@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取DID标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Did DID标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDid() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * DID标识
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_did;
                     bool m_didHasBeenSet;

@@ -296,6 +296,31 @@ namespace TencentCloud
                      */
                     bool TopPHasBeenSet() const;
 
+                    /**
+                     * 获取模型资源状态 1：资源可用；2：资源已用尽
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResourceStatus 模型资源状态 1：资源可用；2：资源已用尽
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetResourceStatus() const;
+
+                    /**
+                     * 设置模型资源状态 1：资源可用；2：资源已用尽
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _resourceStatus 模型资源状态 1：资源可用；2：资源已用尽
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetResourceStatus(const uint64_t& _resourceStatus);
+
+                    /**
+                     * 判断参数 ResourceStatus 是否已赋值
+                     * @return ResourceStatus 是否已赋值
+                     * 
+                     */
+                    bool ResourceStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -367,6 +392,13 @@ namespace TencentCloud
                      */
                     std::string m_topP;
                     bool m_topPHasBeenSet;
+
+                    /**
+                     * 模型资源状态 1：资源可用；2：资源已用尽
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_resourceStatus;
+                    bool m_resourceStatusHasBeenSet;
 
                 };
             }

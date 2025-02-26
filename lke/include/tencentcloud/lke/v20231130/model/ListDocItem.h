@@ -772,6 +772,56 @@ namespace TencentCloud
                      */
                     bool IsAllowRetryHasBeenSet() const;
 
+                    /**
+                     * 获取0:文档比对处理 1:文档生成问答
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Processing 0:文档比对处理 1:文档生成问答
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<int64_t> GetProcessing() const;
+
+                    /**
+                     * 设置0:文档比对处理 1:文档生成问答
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _processing 0:文档比对处理 1:文档生成问答
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetProcessing(const std::vector<int64_t>& _processing);
+
+                    /**
+                     * 判断参数 Processing 是否已赋值
+                     * @return Processing 是否已赋值
+                     * 
+                     */
+                    bool ProcessingHasBeenSet() const;
+
+                    /**
+                     * 获取文档创建落库时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreateTime 文档创建落库时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCreateTime() const;
+
+                    /**
+                     * 设置文档创建落库时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _createTime 文档创建落库时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCreateTime(const std::string& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     * 
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -976,6 +1026,20 @@ namespace TencentCloud
                      */
                     bool m_isAllowRetry;
                     bool m_isAllowRetryHasBeenSet;
+
+                    /**
+                     * 0:文档比对处理 1:文档生成问答
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<int64_t> m_processing;
+                    bool m_processingHasBeenSet;
+
+                    /**
+                     * 文档创建落库时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_createTime;
+                    bool m_createTimeHasBeenSet;
 
                 };
             }

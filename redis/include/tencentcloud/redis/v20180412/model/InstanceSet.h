@@ -804,18 +804,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例关联的标签信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceTags 实例关联的标签信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<InstanceTagInfo> GetInstanceTags() const;
 
                     /**
                      * 设置实例关联的标签信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceTags 实例关联的标签信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceTags(const std::vector<InstanceTagInfo>& _instanceTags);
@@ -829,18 +825,14 @@ namespace TencentCloud
 
                     /**
                      * 获取项目名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectName 项目名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProjectName() const;
 
                     /**
                      * 设置项目名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _projectName 项目名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProjectName(const std::string& _projectName);
@@ -854,18 +846,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否为免密实例。<ul><li>true：免密实例。</li><li>false：非免密实例。</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NoAuth 是否为免密实例。<ul><li>true：免密实例。</li><li>false：非免密实例。</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetNoAuth() const;
 
                     /**
                      * 设置是否为免密实例。<ul><li>true：免密实例。</li><li>false：非免密实例。</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _noAuth 是否为免密实例。<ul><li>true：免密实例。</li><li>false：非免密实例。</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNoAuth(const bool& _noAuth);
@@ -879,18 +867,14 @@ namespace TencentCloud
 
                     /**
                      * 获取客户端连接数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClientLimit 客户端连接数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetClientLimit() const;
 
                     /**
                      * 设置客户端连接数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clientLimit 客户端连接数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClientLimit(const int64_t& _clientLimit);
@@ -904,18 +888,14 @@ namespace TencentCloud
 
                     /**
                      * 获取DTS状态（内部参数，用户可忽略）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DtsStatus DTS状态（内部参数，用户可忽略）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDtsStatus() const;
 
                     /**
                      * 设置DTS状态（内部参数，用户可忽略）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dtsStatus DTS状态（内部参数，用户可忽略）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDtsStatus(const int64_t& _dtsStatus);
@@ -929,18 +909,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分片带宽上限，单位MB。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NetLimit 分片带宽上限，单位MB。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetNetLimit() const;
 
                     /**
                      * 设置分片带宽上限，单位MB。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _netLimit 分片带宽上限，单位MB。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNetLimit(const int64_t& _netLimit);
@@ -954,18 +930,14 @@ namespace TencentCloud
 
                     /**
                      * 获取免密实例标识（内部参数，用户可忽略）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PasswordFree 免密实例标识（内部参数，用户可忽略）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPasswordFree() const;
 
                     /**
                      * 设置免密实例标识（内部参数，用户可忽略）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _passwordFree 免密实例标识（内部参数，用户可忽略）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPasswordFree(const int64_t& _passwordFree);
@@ -979,18 +951,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该参数存在命名不规范问题，建议用参数IPv6取代。内部参数，用户可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vip6 该参数存在命名不规范问题，建议用参数IPv6取代。内部参数，用户可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVip6() const;
 
                     /**
                      * 设置该参数存在命名不规范问题，建议用参数IPv6取代。内部参数，用户可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vip6 该参数存在命名不规范问题，建议用参数IPv6取代。内部参数，用户可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVip6(const std::string& _vip6);
@@ -1004,18 +972,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内部参数，用户可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IPv6 内部参数，用户可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIPv6() const;
 
                     /**
                      * 设置内部参数，用户可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _iPv6 内部参数，用户可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIPv6(const std::string& _iPv6);
@@ -1029,18 +993,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例只读标识（内部参数，用户可忽略）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReadOnly 实例只读标识（内部参数，用户可忽略）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetReadOnly() const;
 
                     /**
                      * 设置实例只读标识（内部参数，用户可忽略）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _readOnly 实例只读标识（内部参数，用户可忽略）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReadOnly(const int64_t& _readOnly);
@@ -1054,18 +1014,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内部参数，用户可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RemainBandwidthDuration 内部参数，用户可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemainBandwidthDuration() const;
 
                     /**
                      * 设置内部参数，用户可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remainBandwidthDuration 内部参数，用户可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemainBandwidthDuration(const std::string& _remainBandwidthDuration);
@@ -1079,18 +1035,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Redis实例请忽略该参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiskSize Redis实例请忽略该参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDiskSize() const;
 
                     /**
                      * 设置Redis实例请忽略该参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _diskSize Redis实例请忽略该参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiskSize(const int64_t& _diskSize);
@@ -1104,18 +1056,14 @@ namespace TencentCloud
 
                     /**
                      * 获取监控版本。<ul><li>1m：1分钟粒度监控。目前该监控粒度已下线，具体信息，请参见[云数据库 Redis 1分钟粒度下线公告](https://cloud.tencent.com/document/product/239/80653)。</li><li>5s：5秒粒度监控。</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MonitorVersion 监控版本。<ul><li>1m：1分钟粒度监控。目前该监控粒度已下线，具体信息，请参见[云数据库 Redis 1分钟粒度下线公告](https://cloud.tencent.com/document/product/239/80653)。</li><li>5s：5秒粒度监控。</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMonitorVersion() const;
 
                     /**
                      * 设置监控版本。<ul><li>1m：1分钟粒度监控。目前该监控粒度已下线，具体信息，请参见[云数据库 Redis 1分钟粒度下线公告](https://cloud.tencent.com/document/product/239/80653)。</li><li>5s：5秒粒度监控。</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _monitorVersion 监控版本。<ul><li>1m：1分钟粒度监控。目前该监控粒度已下线，具体信息，请参见[云数据库 Redis 1分钟粒度下线公告](https://cloud.tencent.com/document/product/239/80653)。</li><li>5s：5秒粒度监控。</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMonitorVersion(const std::string& _monitorVersion);
@@ -1129,18 +1077,14 @@ namespace TencentCloud
 
                     /**
                      * 获取客户端最大连接数可设置的最小值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClientLimitMin 客户端最大连接数可设置的最小值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetClientLimitMin() const;
 
                     /**
                      * 设置客户端最大连接数可设置的最小值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clientLimitMin 客户端最大连接数可设置的最小值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClientLimitMin(const int64_t& _clientLimitMin);
@@ -1154,18 +1098,14 @@ namespace TencentCloud
 
                     /**
                      * 获取客户端最大连接数可设置的最大值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClientLimitMax 客户端最大连接数可设置的最大值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetClientLimitMax() const;
 
                     /**
                      * 设置客户端最大连接数可设置的最大值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clientLimitMax 客户端最大连接数可设置的最大值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClientLimitMax(const int64_t& _clientLimitMax);
@@ -1179,18 +1119,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例的节点详细信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeSet 实例的节点详细信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RedisNodeInfo> GetNodeSet() const;
 
                     /**
                      * 设置实例的节点详细信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nodeSet 实例的节点详细信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNodeSet(const std::vector<RedisNodeInfo>& _nodeSet);
@@ -1204,18 +1140,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例所在的地域信息，比如ap-guangzhou。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 实例所在的地域信息，比如ap-guangzhou。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置实例所在的地域信息，比如ap-guangzhou。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _region 实例所在的地域信息，比如ap-guangzhou。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -1229,18 +1161,14 @@ namespace TencentCloud
 
                     /**
                      * 获取外网地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WanAddress 外网地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWanAddress() const;
 
                     /**
                      * 设置外网地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _wanAddress 外网地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWanAddress(const std::string& _wanAddress);
@@ -1254,18 +1182,14 @@ namespace TencentCloud
 
                     /**
                      * 获取北极星服务地址，内部使用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolarisServer 北极星服务地址，内部使用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPolarisServer() const;
 
                     /**
                      * 设置北极星服务地址，内部使用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _polarisServer 北极星服务地址，内部使用。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPolarisServer(const std::string& _polarisServer);
@@ -1279,18 +1203,14 @@ namespace TencentCloud
 
                     /**
                      * 获取CDC Redis集群ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RedisClusterId CDC Redis集群ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRedisClusterId() const;
 
                     /**
                      * 设置CDC Redis集群ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _redisClusterId CDC Redis集群ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRedisClusterId(const std::string& _redisClusterId);
@@ -1304,18 +1224,14 @@ namespace TencentCloud
 
                     /**
                      * 获取CDC 集群ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DedicatedClusterId CDC 集群ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDedicatedClusterId() const;
 
                     /**
                      * 设置CDC 集群ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dedicatedClusterId CDC 集群ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDedicatedClusterId(const std::string& _dedicatedClusterId);
@@ -1329,18 +1245,14 @@ namespace TencentCloud
 
                     /**
                      * 获取产品版本。<ul><li>local：本地盘。</li><li>cloud：云盘版。</li><li>cdc：CDC 集群版本。</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductVersion 产品版本。<ul><li>local：本地盘。</li><li>cloud：云盘版。</li><li>cdc：CDC 集群版本。</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProductVersion() const;
 
                     /**
                      * 设置产品版本。<ul><li>local：本地盘。</li><li>cloud：云盘版。</li><li>cdc：CDC 集群版本。</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _productVersion 产品版本。<ul><li>local：本地盘。</li><li>cloud：云盘版。</li><li>cdc：CDC 集群版本。</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProductVersion(const std::string& _productVersion);
@@ -1354,18 +1266,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例当前Proxy版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CurrentProxyVersion 实例当前Proxy版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCurrentProxyVersion() const;
 
                     /**
                      * 设置实例当前Proxy版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _currentProxyVersion 实例当前Proxy版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCurrentProxyVersion(const std::string& _currentProxyVersion);
@@ -1379,18 +1287,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例当前Cache小版本。如果实例加入全球复制组，显示全球复制的内核版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CurrentRedisVersion 实例当前Cache小版本。如果实例加入全球复制组，显示全球复制的内核版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCurrentRedisVersion() const;
 
                     /**
                      * 设置实例当前Cache小版本。如果实例加入全球复制组，显示全球复制的内核版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _currentRedisVersion 实例当前Cache小版本。如果实例加入全球复制组，显示全球复制的内核版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCurrentRedisVersion(const std::string& _currentRedisVersion);
@@ -1404,18 +1308,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例可升级Proxy版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpgradeProxyVersion 实例可升级Proxy版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpgradeProxyVersion() const;
 
                     /**
                      * 设置实例可升级Proxy版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _upgradeProxyVersion 实例可升级Proxy版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpgradeProxyVersion(const std::string& _upgradeProxyVersion);
@@ -1429,18 +1329,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例可升级Cache小版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpgradeRedisVersion 实例可升级Cache小版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpgradeRedisVersion() const;
 
                     /**
                      * 设置实例可升级Cache小版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _upgradeRedisVersion 实例可升级Cache小版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpgradeRedisVersion(const std::string& _upgradeRedisVersion);
@@ -1454,18 +1350,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备份模式：- SecondLevelBackup   秒级备份- NormalLevelBackup    普通备份
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackupMode 备份模式：- SecondLevelBackup   秒级备份- NormalLevelBackup    普通备份
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBackupMode() const;
 
                     /**
                      * 设置备份模式：- SecondLevelBackup   秒级备份- NormalLevelBackup    普通备份
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _backupMode 备份模式：- SecondLevelBackup   秒级备份- NormalLevelBackup    普通备份
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBackupMode(const std::string& _backupMode);
@@ -1694,189 +1586,162 @@ namespace TencentCloud
 
                     /**
                      * 实例关联的标签信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<InstanceTagInfo> m_instanceTags;
                     bool m_instanceTagsHasBeenSet;
 
                     /**
                      * 项目名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_projectName;
                     bool m_projectNameHasBeenSet;
 
                     /**
                      * 是否为免密实例。<ul><li>true：免密实例。</li><li>false：非免密实例。</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_noAuth;
                     bool m_noAuthHasBeenSet;
 
                     /**
                      * 客户端连接数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_clientLimit;
                     bool m_clientLimitHasBeenSet;
 
                     /**
                      * DTS状态（内部参数，用户可忽略）。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_dtsStatus;
                     bool m_dtsStatusHasBeenSet;
 
                     /**
                      * 分片带宽上限，单位MB。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_netLimit;
                     bool m_netLimitHasBeenSet;
 
                     /**
                      * 免密实例标识（内部参数，用户可忽略）。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_passwordFree;
                     bool m_passwordFreeHasBeenSet;
 
                     /**
                      * 该参数存在命名不规范问题，建议用参数IPv6取代。内部参数，用户可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vip6;
                     bool m_vip6HasBeenSet;
 
                     /**
                      * 内部参数，用户可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_iPv6;
                     bool m_iPv6HasBeenSet;
 
                     /**
                      * 实例只读标识（内部参数，用户可忽略）。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_readOnly;
                     bool m_readOnlyHasBeenSet;
 
                     /**
                      * 内部参数，用户可忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remainBandwidthDuration;
                     bool m_remainBandwidthDurationHasBeenSet;
 
                     /**
                      * Redis实例请忽略该参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_diskSize;
                     bool m_diskSizeHasBeenSet;
 
                     /**
                      * 监控版本。<ul><li>1m：1分钟粒度监控。目前该监控粒度已下线，具体信息，请参见[云数据库 Redis 1分钟粒度下线公告](https://cloud.tencent.com/document/product/239/80653)。</li><li>5s：5秒粒度监控。</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_monitorVersion;
                     bool m_monitorVersionHasBeenSet;
 
                     /**
                      * 客户端最大连接数可设置的最小值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_clientLimitMin;
                     bool m_clientLimitMinHasBeenSet;
 
                     /**
                      * 客户端最大连接数可设置的最大值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_clientLimitMax;
                     bool m_clientLimitMaxHasBeenSet;
 
                     /**
                      * 实例的节点详细信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RedisNodeInfo> m_nodeSet;
                     bool m_nodeSetHasBeenSet;
 
                     /**
                      * 实例所在的地域信息，比如ap-guangzhou。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
                      * 外网地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_wanAddress;
                     bool m_wanAddressHasBeenSet;
 
                     /**
                      * 北极星服务地址，内部使用。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_polarisServer;
                     bool m_polarisServerHasBeenSet;
 
                     /**
                      * CDC Redis集群ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_redisClusterId;
                     bool m_redisClusterIdHasBeenSet;
 
                     /**
                      * CDC 集群ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dedicatedClusterId;
                     bool m_dedicatedClusterIdHasBeenSet;
 
                     /**
                      * 产品版本。<ul><li>local：本地盘。</li><li>cloud：云盘版。</li><li>cdc：CDC 集群版本。</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_productVersion;
                     bool m_productVersionHasBeenSet;
 
                     /**
                      * 实例当前Proxy版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_currentProxyVersion;
                     bool m_currentProxyVersionHasBeenSet;
 
                     /**
                      * 实例当前Cache小版本。如果实例加入全球复制组，显示全球复制的内核版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_currentRedisVersion;
                     bool m_currentRedisVersionHasBeenSet;
 
                     /**
                      * 实例可升级Proxy版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_upgradeProxyVersion;
                     bool m_upgradeProxyVersionHasBeenSet;
 
                     /**
                      * 实例可升级Cache小版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_upgradeRedisVersion;
                     bool m_upgradeRedisVersionHasBeenSet;
 
                     /**
                      * 备份模式：- SecondLevelBackup   秒级备份- NormalLevelBackup    普通备份
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_backupMode;
                     bool m_backupModeHasBeenSet;

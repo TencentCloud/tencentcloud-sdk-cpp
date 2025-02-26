@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取凭证状态信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CredentialState 凭证状态信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CredentialState GetCredentialState() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 凭证状态信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CredentialState m_credentialState;
                     bool m_credentialStateHasBeenSet;

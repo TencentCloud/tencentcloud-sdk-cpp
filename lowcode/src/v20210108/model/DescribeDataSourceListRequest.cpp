@@ -35,7 +35,12 @@ DescribeDataSourceListRequest::DescribeDataSourceListRequest() :
     m_appLinkStatusHasBeenSet(false),
     m_queryBindToAppHasBeenSet(false),
     m_queryConnectorHasBeenSet(false),
-    m_notQuerySubTypeListHasBeenSet(false)
+    m_notQuerySubTypeListHasBeenSet(false),
+    m_channelListHasBeenSet(false),
+    m_queryDataSourceRelationListHasBeenSet(false),
+    m_dbInstanceTypeHasBeenSet(false),
+    m_databaseTableNamesHasBeenSet(false),
+    m_querySystemModelHasBeenSet(false)
 {
 }
 
@@ -174,6 +179,56 @@ string DescribeDataSourceListRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_channelListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChannelList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_channelList.begin(); itr != m_channelList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_queryDataSourceRelationListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueryDataSourceRelationList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_queryDataSourceRelationList, allocator);
+    }
+
+    if (m_dbInstanceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DbInstanceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dbInstanceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_databaseTableNamesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatabaseTableNames";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_databaseTableNames.begin(); itr != m_databaseTableNames.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_querySystemModelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QuerySystemModel";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_querySystemModel, allocator);
     }
 
 
@@ -390,6 +445,86 @@ void DescribeDataSourceListRequest::SetNotQuerySubTypeList(const vector<string>&
 bool DescribeDataSourceListRequest::NotQuerySubTypeListHasBeenSet() const
 {
     return m_notQuerySubTypeListHasBeenSet;
+}
+
+vector<string> DescribeDataSourceListRequest::GetChannelList() const
+{
+    return m_channelList;
+}
+
+void DescribeDataSourceListRequest::SetChannelList(const vector<string>& _channelList)
+{
+    m_channelList = _channelList;
+    m_channelListHasBeenSet = true;
+}
+
+bool DescribeDataSourceListRequest::ChannelListHasBeenSet() const
+{
+    return m_channelListHasBeenSet;
+}
+
+bool DescribeDataSourceListRequest::GetQueryDataSourceRelationList() const
+{
+    return m_queryDataSourceRelationList;
+}
+
+void DescribeDataSourceListRequest::SetQueryDataSourceRelationList(const bool& _queryDataSourceRelationList)
+{
+    m_queryDataSourceRelationList = _queryDataSourceRelationList;
+    m_queryDataSourceRelationListHasBeenSet = true;
+}
+
+bool DescribeDataSourceListRequest::QueryDataSourceRelationListHasBeenSet() const
+{
+    return m_queryDataSourceRelationListHasBeenSet;
+}
+
+string DescribeDataSourceListRequest::GetDbInstanceType() const
+{
+    return m_dbInstanceType;
+}
+
+void DescribeDataSourceListRequest::SetDbInstanceType(const string& _dbInstanceType)
+{
+    m_dbInstanceType = _dbInstanceType;
+    m_dbInstanceTypeHasBeenSet = true;
+}
+
+bool DescribeDataSourceListRequest::DbInstanceTypeHasBeenSet() const
+{
+    return m_dbInstanceTypeHasBeenSet;
+}
+
+vector<string> DescribeDataSourceListRequest::GetDatabaseTableNames() const
+{
+    return m_databaseTableNames;
+}
+
+void DescribeDataSourceListRequest::SetDatabaseTableNames(const vector<string>& _databaseTableNames)
+{
+    m_databaseTableNames = _databaseTableNames;
+    m_databaseTableNamesHasBeenSet = true;
+}
+
+bool DescribeDataSourceListRequest::DatabaseTableNamesHasBeenSet() const
+{
+    return m_databaseTableNamesHasBeenSet;
+}
+
+bool DescribeDataSourceListRequest::GetQuerySystemModel() const
+{
+    return m_querySystemModel;
+}
+
+void DescribeDataSourceListRequest::SetQuerySystemModel(const bool& _querySystemModel)
+{
+    m_querySystemModel = _querySystemModel;
+    m_querySystemModelHasBeenSet = true;
+}
+
+bool DescribeDataSourceListRequest::QuerySystemModelHasBeenSet() const
+{
+    return m_querySystemModelHasBeenSet;
 }
 
 

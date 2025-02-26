@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取机器列表信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 机器列表信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     InstanceEnrichedInfoPage GetResult() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 机器列表信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     InstanceEnrichedInfoPage m_result;
                     bool m_resultHasBeenSet;

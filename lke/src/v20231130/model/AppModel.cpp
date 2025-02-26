@@ -30,7 +30,8 @@ AppModel::AppModel() :
     m_historyLimitHasBeenSet(false),
     m_usageTypeHasBeenSet(false),
     m_temperatureHasBeenSet(false),
-    m_topPHasBeenSet(false)
+    m_topPHasBeenSet(false),
+    m_resourceStatusHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,16 @@ CoreInternalOutcome AppModel::Deserialize(const rapidjson::Value &value)
         m_topPHasBeenSet = true;
     }
 
+    if (value.HasMember("ResourceStatus") && !value["ResourceStatus"].IsNull())
+    {
+        if (!value["ResourceStatus"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppModel.ResourceStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceStatus = value["ResourceStatus"].GetUint64();
+        m_resourceStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +235,14 @@ void AppModel::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "TopP";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_topP.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_resourceStatus, allocator);
     }
 
 }
@@ -387,5 +406,21 @@ void AppModel::SetTopP(const string& _topP)
 bool AppModel::TopPHasBeenSet() const
 {
     return m_topPHasBeenSet;
+}
+
+uint64_t AppModel::GetResourceStatus() const
+{
+    return m_resourceStatus;
+}
+
+void AppModel::SetResourceStatus(const uint64_t& _resourceStatus)
+{
+    m_resourceStatus = _resourceStatus;
+    m_resourceStatusHasBeenSet = true;
+}
+
+bool AppModel::ResourceStatusHasBeenSet() const
+{
+    return m_resourceStatusHasBeenSet;
 }
 

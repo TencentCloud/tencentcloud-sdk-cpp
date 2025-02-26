@@ -4856,6 +4856,49 @@ MonitorClient::GetPrometheusAgentManagementCommandOutcomeCallable MonitorClient:
     return task->get_future();
 }
 
+MonitorClient::GetTopNMonitorDataOutcome MonitorClient::GetTopNMonitorData(const GetTopNMonitorDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetTopNMonitorData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetTopNMonitorDataResponse rsp = GetTopNMonitorDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetTopNMonitorDataOutcome(rsp);
+        else
+            return GetTopNMonitorDataOutcome(o.GetError());
+    }
+    else
+    {
+        return GetTopNMonitorDataOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::GetTopNMonitorDataAsync(const GetTopNMonitorDataRequest& request, const GetTopNMonitorDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetTopNMonitorData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::GetTopNMonitorDataOutcomeCallable MonitorClient::GetTopNMonitorDataCallable(const GetTopNMonitorDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetTopNMonitorDataOutcome()>>(
+        [this, request]()
+        {
+            return this->GetTopNMonitorData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::InstallPluginsOutcome MonitorClient::InstallPlugins(const InstallPluginsRequest &request)
 {
     auto outcome = MakeRequest(request, "InstallPlugins");

@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取单值指标列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 单值指标列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<MetricDataSingleValue> GetResult() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 单值指标列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MetricDataSingleValue> m_result;
                     bool m_resultHasBeenSet;

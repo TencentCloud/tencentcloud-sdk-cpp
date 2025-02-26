@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取集群机器实例分页信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 集群机器实例分页信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TsfPageInstance GetResult() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 集群机器实例分页信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TsfPageInstance m_result;
                     bool m_resultHasBeenSet;

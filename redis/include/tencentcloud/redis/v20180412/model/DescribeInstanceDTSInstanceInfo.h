@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地域 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionId 地域 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRegionId() const;
 
                     /**
                      * 设置地域 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _regionId 地域 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegionId(const int64_t& _regionId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 实例 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceId 实例 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取仓库ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SetId 仓库ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSetId() const;
 
                     /**
                      * 设置仓库ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _setId 仓库ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSetId(const int64_t& _setId);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取可用区ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZoneId 可用区ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetZoneId() const;
 
                     /**
                      * 设置可用区ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zoneId 可用区ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZoneId(const int64_t& _zoneId);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 实例类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetType() const;
 
                     /**
                      * 设置实例类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 实例类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const int64_t& _type);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceName 实例名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置实例名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceName 实例名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例访问地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vip 实例访问地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVip() const;
 
                     /**
                      * 设置实例访问地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vip 实例访问地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVip(const std::string& _vip);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取状态。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 状态。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置状态。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 状态。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -250,56 +218,48 @@ namespace TencentCloud
 
                     /**
                      * 地域 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_regionId;
                     bool m_regionIdHasBeenSet;
 
                     /**
                      * 实例 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
                      * 仓库ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_setId;
                     bool m_setIdHasBeenSet;
 
                     /**
                      * 可用区ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
                      * 实例类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 实例名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
                      * 实例访问地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vip;
                     bool m_vipHasBeenSet;
 
                     /**
                      * 状态。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;

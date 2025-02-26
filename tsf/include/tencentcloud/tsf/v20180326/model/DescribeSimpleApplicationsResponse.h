@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取简单应用分页对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 简单应用分页对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TsfPageSimpleApplication GetResult() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 简单应用分页对象
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TsfPageSimpleApplication m_result;
                     bool m_resultHasBeenSet;

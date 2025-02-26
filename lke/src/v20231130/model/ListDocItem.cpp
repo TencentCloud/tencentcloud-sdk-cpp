@@ -49,7 +49,9 @@ ListDocItem::ListDocItem() :
     m_webUrlHasBeenSet(false),
     m_expireStartHasBeenSet(false),
     m_expireEndHasBeenSet(false),
-    m_isAllowRetryHasBeenSet(false)
+    m_isAllowRetryHasBeenSet(false),
+    m_processingHasBeenSet(false),
+    m_createTimeHasBeenSet(false)
 {
 }
 
@@ -358,6 +360,29 @@ CoreInternalOutcome ListDocItem::Deserialize(const rapidjson::Value &value)
         m_isAllowRetryHasBeenSet = true;
     }
 
+    if (value.HasMember("Processing") && !value["Processing"].IsNull())
+    {
+        if (!value["Processing"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ListDocItem.Processing` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Processing"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_processing.push_back((*itr).GetInt64());
+        }
+        m_processingHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ListDocItem.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -602,6 +627,27 @@ void ListDocItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "IsAllowRetry";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isAllowRetry, allocator);
+    }
+
+    if (m_processingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Processing";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_processing.begin(); itr != m_processing.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1069,5 +1115,37 @@ void ListDocItem::SetIsAllowRetry(const bool& _isAllowRetry)
 bool ListDocItem::IsAllowRetryHasBeenSet() const
 {
     return m_isAllowRetryHasBeenSet;
+}
+
+vector<int64_t> ListDocItem::GetProcessing() const
+{
+    return m_processing;
+}
+
+void ListDocItem::SetProcessing(const vector<int64_t>& _processing)
+{
+    m_processing = _processing;
+    m_processingHasBeenSet = true;
+}
+
+bool ListDocItem::ProcessingHasBeenSet() const
+{
+    return m_processingHasBeenSet;
+}
+
+string ListDocItem::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void ListDocItem::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool ListDocItem::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
 }
 

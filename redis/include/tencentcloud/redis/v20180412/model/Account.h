@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 实例 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceId 实例 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取账号名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccountName 账号名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAccountName() const;
 
                     /**
                      * 设置账号名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _accountName 账号名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAccountName(const std::string& _accountName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取账号描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 账号描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置账号描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remark 账号描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -126,12 +114,10 @@ namespace TencentCloud
 - r：只读。
 - w：只写。
 - rw：读写。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Privilege 读写权限策略。
 - r：只读。
 - w：只写。
 - rw：读写。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPrivilege() const;
@@ -141,12 +127,10 @@ namespace TencentCloud
 - r：只读。
 - w：只写。
 - rw：读写。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _privilege 读写权限策略。
 - r：只读。
 - w：只写。
 - rw：读写。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPrivilege(const std::string& _privilege);
@@ -162,11 +146,9 @@ namespace TencentCloud
                      * 获取只读路由策略。
 - master：主节点。
 - replication：从节点。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReadonlyPolicy 只读路由策略。
 - master：主节点。
 - replication：从节点。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetReadonlyPolicy() const;
@@ -175,11 +157,9 @@ namespace TencentCloud
                      * 设置只读路由策略。
 - master：主节点。
 - replication：从节点。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _readonlyPolicy 只读路由策略。
 - master：主节点。
 - replication：从节点。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReadonlyPolicy(const std::vector<std::string>& _readonlyPolicy);
@@ -196,12 +176,10 @@ namespace TencentCloud
 - 1：账号变更中。
 - 2：账号有效。
 - 4：账号已删除。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 子账号状态.
 - 1：账号变更中。
 - 2：账号有效。
 - 4：账号已删除。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
@@ -211,12 +189,10 @@ namespace TencentCloud
 - 1：账号变更中。
 - 2：账号有效。
 - 4：账号已删除。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 子账号状态.
 - 1：账号变更中。
 - 2：账号有效。
 - 4：账号已删除。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -230,18 +206,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -257,21 +229,18 @@ namespace TencentCloud
 
                     /**
                      * 实例 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
                      * 账号名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_accountName;
                     bool m_accountNameHasBeenSet;
 
                     /**
                      * 账号描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
@@ -281,7 +250,6 @@ namespace TencentCloud
 - r：只读。
 - w：只写。
 - rw：读写。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_privilege;
                     bool m_privilegeHasBeenSet;
@@ -290,7 +258,6 @@ namespace TencentCloud
                      * 只读路由策略。
 - master：主节点。
 - replication：从节点。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_readonlyPolicy;
                     bool m_readonlyPolicyHasBeenSet;
@@ -300,14 +267,12 @@ namespace TencentCloud
 - 1：账号变更中。
 - 2：账号有效。
 - 4：账号已删除。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;

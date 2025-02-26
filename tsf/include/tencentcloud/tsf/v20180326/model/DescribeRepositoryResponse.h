@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取查询的仓库信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 查询的仓库信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RepositoryInfo GetResult() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 查询的仓库信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RepositoryInfo m_result;
                     bool m_resultHasBeenSet;

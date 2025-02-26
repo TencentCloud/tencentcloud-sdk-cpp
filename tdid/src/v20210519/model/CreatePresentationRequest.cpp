@@ -24,6 +24,7 @@ using namespace std;
 
 CreatePresentationRequest::CreatePresentationRequest() :
     m_dAPIdHasBeenSet(false),
+    m_uAPIdHasBeenSet(false),
     m_credentialsHasBeenSet(false),
     m_didHasBeenSet(false),
     m_verifyCodeHasBeenSet(false),
@@ -46,6 +47,14 @@ string CreatePresentationRequest::ToJsonString() const
         string key = "DAPId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_dAPId, allocator);
+    }
+
+    if (m_uAPIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UAPId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_uAPId, allocator);
     }
 
     if (m_credentialsHasBeenSet)
@@ -130,6 +139,22 @@ void CreatePresentationRequest::SetDAPId(const uint64_t& _dAPId)
 bool CreatePresentationRequest::DAPIdHasBeenSet() const
 {
     return m_dAPIdHasBeenSet;
+}
+
+uint64_t CreatePresentationRequest::GetUAPId() const
+{
+    return m_uAPId;
+}
+
+void CreatePresentationRequest::SetUAPId(const uint64_t& _uAPId)
+{
+    m_uAPId = _uAPId;
+    m_uAPIdHasBeenSet = true;
+}
+
+bool CreatePresentationRequest::UAPIdHasBeenSet() const
+{
+    return m_uAPIdHasBeenSet;
 }
 
 vector<string> CreatePresentationRequest::GetCredentials() const

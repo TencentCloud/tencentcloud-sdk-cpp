@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取groupId， null表示创建失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result groupId， null表示创建失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResult() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * groupId， null表示创建失败
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_result;
                     bool m_resultHasBeenSet;

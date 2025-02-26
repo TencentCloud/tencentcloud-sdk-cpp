@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取指标监控数据曲线集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 指标监控数据曲线集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<MetricDataCurve> GetResult() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 指标监控数据曲线集合
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MetricDataCurve> m_result;
                     bool m_resultHasBeenSet;

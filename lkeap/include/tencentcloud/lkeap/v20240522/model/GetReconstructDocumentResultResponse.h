@@ -45,8 +45,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务状态。- `Success`：执行完成- `Processing`：执行中- `Pause`: 暂停- `Failed`：执行失败- `WaitExecute`：等待执行
-                     * @return Status 任务状态。- `Success`：执行完成- `Processing`：执行中- `Pause`: 暂停- `Failed`：执行失败- `WaitExecute`：等待执行
+                     * 获取任务状态。
+- `Success`：执行完成
+- `Processing`：执行中
+-  `Pause`: 暂停
+-  `Failed`：执行失败
+-  `WaitExecute`：等待执行
+                     * @return Status 任务状态。
+- `Success`：执行完成
+- `Processing`：执行中
+-  `Pause`: 暂停
+-  `Failed`：执行失败
+-  `WaitExecute`：等待执行
                      * 
                      */
                     std::string GetStatus() const;
@@ -89,7 +99,12 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务状态。- `Success`：执行完成- `Processing`：执行中- `Pause`: 暂停- `Failed`：执行失败- `WaitExecute`：等待执行
+                     * 任务状态。
+- `Success`：执行完成
+- `Processing`：执行中
+-  `Pause`: 暂停
+-  `Failed`：执行失败
+-  `WaitExecute`：等待执行
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

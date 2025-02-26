@@ -243,9 +243,7 @@ namespace TencentCloud
 
                     /**
                      * 获取返回操作信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CaptchaMsg 返回操作信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCaptchaMsg() const;
@@ -346,7 +344,6 @@ namespace TencentCloud
 
                     /**
                      * 返回操作信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_captchaMsg;
                     bool m_captchaMsgHasBeenSet;

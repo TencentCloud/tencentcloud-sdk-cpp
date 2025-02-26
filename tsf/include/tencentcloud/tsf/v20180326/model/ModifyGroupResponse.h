@@ -47,11 +47,9 @@ namespace TencentCloud
                      * 获取更新部署组详情是否成功。
 true：操作成功。
 false：操作失败。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 更新部署组详情是否成功。
 true：操作成功。
 false：操作失败。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetResult() const;
@@ -69,7 +67,6 @@ false：操作失败。
                      * 更新部署组详情是否成功。
 true：操作成功。
 false：操作失败。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_result;
                     bool m_resultHasBeenSet;

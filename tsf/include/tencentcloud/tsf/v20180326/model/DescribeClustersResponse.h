@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取Cluster分页信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result Cluster分页信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TsfPageClusterV2 GetResult() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * Cluster分页信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TsfPageClusterV2 m_result;
                     bool m_resultHasBeenSet;

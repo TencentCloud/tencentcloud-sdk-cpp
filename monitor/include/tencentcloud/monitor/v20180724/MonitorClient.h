@@ -247,6 +247,8 @@
 #include <tencentcloud/monitor/v20180724/model/GetMonitorDataResponse.h>
 #include <tencentcloud/monitor/v20180724/model/GetPrometheusAgentManagementCommandRequest.h>
 #include <tencentcloud/monitor/v20180724/model/GetPrometheusAgentManagementCommandResponse.h>
+#include <tencentcloud/monitor/v20180724/model/GetTopNMonitorDataRequest.h>
+#include <tencentcloud/monitor/v20180724/model/GetTopNMonitorDataResponse.h>
 #include <tencentcloud/monitor/v20180724/model/InstallPluginsRequest.h>
 #include <tencentcloud/monitor/v20180724/model/InstallPluginsResponse.h>
 #include <tencentcloud/monitor/v20180724/model/ModifyAlarmNoticeRequest.h>
@@ -689,6 +691,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetPrometheusAgentManagementCommandResponse> GetPrometheusAgentManagementCommandOutcome;
                 typedef std::future<GetPrometheusAgentManagementCommandOutcome> GetPrometheusAgentManagementCommandOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::GetPrometheusAgentManagementCommandRequest&, GetPrometheusAgentManagementCommandOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetPrometheusAgentManagementCommandAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetTopNMonitorDataResponse> GetTopNMonitorDataOutcome;
+                typedef std::future<GetTopNMonitorDataOutcome> GetTopNMonitorDataOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::GetTopNMonitorDataRequest&, GetTopNMonitorDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTopNMonitorDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::InstallPluginsResponse> InstallPluginsOutcome;
                 typedef std::future<InstallPluginsOutcome> InstallPluginsOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::InstallPluginsRequest&, InstallPluginsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InstallPluginsAsyncHandler;
@@ -1863,6 +1868,15 @@ namespace TencentCloud
                 GetPrometheusAgentManagementCommandOutcome GetPrometheusAgentManagementCommand(const Model::GetPrometheusAgentManagementCommandRequest &request);
                 void GetPrometheusAgentManagementCommandAsync(const Model::GetPrometheusAgentManagementCommandRequest& request, const GetPrometheusAgentManagementCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetPrometheusAgentManagementCommandOutcomeCallable GetPrometheusAgentManagementCommandCallable(const Model::GetPrometheusAgentManagementCommandRequest& request);
+
+                /**
+                 *支持TopN查询，对于给定的监控指标和时间区间，按照指标大小按序返回不同维度组合及数据。
+                 * @param req GetTopNMonitorDataRequest
+                 * @return GetTopNMonitorDataOutcome
+                 */
+                GetTopNMonitorDataOutcome GetTopNMonitorData(const Model::GetTopNMonitorDataRequest &request);
+                void GetTopNMonitorDataAsync(const Model::GetTopNMonitorDataRequest& request, const GetTopNMonitorDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetTopNMonitorDataOutcomeCallable GetTopNMonitorDataCallable(const Model::GetTopNMonitorDataRequest& request);
 
                 /**
                  *安装 Grafana Plugin
