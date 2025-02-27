@@ -121,12 +121,10 @@ namespace TencentCloud
 最大允许长度512。
 当InputType为0（推流地址），2（直播拉流地址），3（图片地址）,4（webrtc推流地址）这几种类型时，URL需填入该字段。
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InputUrl 输入源的源地址。
 最大允许长度512。
 当InputType为0（推流地址），2（直播拉流地址），3（图片地址）,4（webrtc推流地址）这几种类型时，URL需填入该字段。
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInputUrl() const;
@@ -136,12 +134,10 @@ namespace TencentCloud
 最大允许长度512。
 当InputType为0（推流地址），2（直播拉流地址），3（图片地址）,4（webrtc推流地址）这几种类型时，URL需填入该字段。
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _inputUrl 输入源的源地址。
 最大允许长度512。
 当InputType为0（推流地址），2（直播拉流地址），3（图片地址）,4（webrtc推流地址）这几种类型时，URL需填入该字段。
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInputUrl(const std::string& _inputUrl);
@@ -156,10 +152,8 @@ namespace TencentCloud
                     /**
                      * 获取输入源描述。
 最大允许长度256字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 输入源描述。
 最大允许长度256字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
@@ -167,10 +161,8 @@ namespace TencentCloud
                     /**
                      * 设置输入源描述。
 最大允许长度256字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 输入源描述。
 最大允许长度256字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -187,12 +179,10 @@ namespace TencentCloud
 单个地址最大允许长度512字符。
 最多允许同时填入5个地址。
 注：此时需保持InputUrl字段为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InputUrls 点播地址列表。仅当input type为1（点播地址）时，将一个或多个点播地址，填入该字段。
 单个地址最大允许长度512字符。
 最多允许同时填入5个地址。
 注：此时需保持InputUrl字段为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetInputUrls() const;
@@ -202,12 +192,10 @@ namespace TencentCloud
 单个地址最大允许长度512字符。
 最多允许同时填入5个地址。
 注：此时需保持InputUrl字段为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _inputUrls 点播地址列表。仅当input type为1（点播地址）时，将一个或多个点播地址，填入该字段。
 单个地址最大允许长度512字符。
 最多允许同时填入5个地址。
 注：此时需保持InputUrl字段为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInputUrls(const std::vector<std::string>& _inputUrls);
@@ -222,10 +210,8 @@ namespace TencentCloud
                     /**
                      * 获取是否启用点播无限循环播放。
 注：当前该字段未生效，默认为True。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LoopEnable 是否启用点播无限循环播放。
 注：当前该字段未生效，默认为True。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetLoopEnable() const;
@@ -233,10 +219,8 @@ namespace TencentCloud
                     /**
                      * 设置是否启用点播无限循环播放。
 注：当前该字段未生效，默认为True。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _loopEnable 是否启用点播无限循环播放。
 注：当前该字段未生效，默认为True。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLoopEnable(const bool& _loopEnable);
@@ -254,13 +238,11 @@ namespace TencentCloud
 当值为-1时，表示无限循环。
 当值为其他正整数时，表示循环对应次数。
 注：该字段暂未生效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LoopNumber 点播循环次数。
 允许值-1或正整数。
 当值为-1时，表示无限循环。
 当值为其他正整数时，表示循环对应次数。
 注：该字段暂未生效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLoopNumber() const;
@@ -271,13 +253,11 @@ namespace TencentCloud
 当值为-1时，表示无限循环。
 当值为其他正整数时，表示循环对应次数。
 注：该字段暂未生效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _loopNumber 点播循环次数。
 允许值-1或正整数。
 当值为-1时，表示无限循环。
 当值为其他正整数时，表示循环对应次数。
 注：该字段暂未生效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLoopNumber(const int64_t& _loopNumber);
@@ -292,10 +272,8 @@ namespace TencentCloud
                     /**
                      * 获取是否启用拉取到导播台。
 注：该字段默认强制为true。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PullPushEnable 是否启用拉取到导播台。
 注：该字段默认强制为true。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetPullPushEnable() const;
@@ -303,10 +281,8 @@ namespace TencentCloud
                     /**
                      * 设置是否启用拉取到导播台。
 注：该字段默认强制为true。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pullPushEnable 是否启用拉取到导播台。
 注：该字段默认强制为true。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPullPushEnable(const bool& _pullPushEnable);
@@ -322,11 +298,9 @@ namespace TencentCloud
                      * 获取输入源音量百分比。
 默认为100。表示音量为原始大小。
 允许值[0,200]。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Volume 输入源音量百分比。
 默认为100。表示音量为原始大小。
 允许值[0,200]。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetVolume() const;
@@ -335,11 +309,9 @@ namespace TencentCloud
                      * 设置输入源音量百分比。
 默认为100。表示音量为原始大小。
 允许值[0,200]。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _volume 输入源音量百分比。
 默认为100。表示音量为原始大小。
 允许值[0,200]。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVolume(const uint64_t& _volume);
@@ -377,7 +349,6 @@ namespace TencentCloud
 最大允许长度512。
 当InputType为0（推流地址），2（直播拉流地址），3（图片地址）,4（webrtc推流地址）这几种类型时，URL需填入该字段。
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_inputUrl;
                     bool m_inputUrlHasBeenSet;
@@ -385,7 +356,6 @@ namespace TencentCloud
                     /**
                      * 输入源描述。
 最大允许长度256字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
@@ -395,7 +365,6 @@ namespace TencentCloud
 单个地址最大允许长度512字符。
 最多允许同时填入5个地址。
 注：此时需保持InputUrl字段为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_inputUrls;
                     bool m_inputUrlsHasBeenSet;
@@ -403,7 +372,6 @@ namespace TencentCloud
                     /**
                      * 是否启用点播无限循环播放。
 注：当前该字段未生效，默认为True。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_loopEnable;
                     bool m_loopEnableHasBeenSet;
@@ -414,7 +382,6 @@ namespace TencentCloud
 当值为-1时，表示无限循环。
 当值为其他正整数时，表示循环对应次数。
 注：该字段暂未生效。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_loopNumber;
                     bool m_loopNumberHasBeenSet;
@@ -422,7 +389,6 @@ namespace TencentCloud
                     /**
                      * 是否启用拉取到导播台。
 注：该字段默认强制为true。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_pullPushEnable;
                     bool m_pullPushEnableHasBeenSet;
@@ -431,7 +397,6 @@ namespace TencentCloud
                      * 输入源音量百分比。
 默认为100。表示音量为原始大小。
 允许值[0,200]。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_volume;
                     bool m_volumeHasBeenSet;

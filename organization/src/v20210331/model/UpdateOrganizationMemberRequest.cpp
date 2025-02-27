@@ -29,7 +29,8 @@ UpdateOrganizationMemberRequest::UpdateOrganizationMemberRequest() :
     m_policyTypeHasBeenSet(false),
     m_permissionIdsHasBeenSet(false),
     m_isAllowQuitHasBeenSet(false),
-    m_payUinHasBeenSet(false)
+    m_payUinHasBeenSet(false),
+    m_isModifyNickNameHasBeenSet(false)
 {
 }
 
@@ -99,6 +100,14 @@ string UpdateOrganizationMemberRequest::ToJsonString() const
         string key = "PayUin";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_payUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isModifyNickNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsModifyNickName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isModifyNickName, allocator);
     }
 
 
@@ -219,6 +228,22 @@ void UpdateOrganizationMemberRequest::SetPayUin(const string& _payUin)
 bool UpdateOrganizationMemberRequest::PayUinHasBeenSet() const
 {
     return m_payUinHasBeenSet;
+}
+
+uint64_t UpdateOrganizationMemberRequest::GetIsModifyNickName() const
+{
+    return m_isModifyNickName;
+}
+
+void UpdateOrganizationMemberRequest::SetIsModifyNickName(const uint64_t& _isModifyNickName)
+{
+    m_isModifyNickName = _isModifyNickName;
+    m_isModifyNickNameHasBeenSet = true;
+}
+
+bool UpdateOrganizationMemberRequest::IsModifyNickNameHasBeenSet() const
+{
+    return m_isModifyNickNameHasBeenSet;
 }
 
 

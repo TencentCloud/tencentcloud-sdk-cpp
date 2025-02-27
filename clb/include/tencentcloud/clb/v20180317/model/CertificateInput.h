@@ -68,6 +68,27 @@ namespace TencentCloud
                     bool SSLModeHasBeenSet() const;
 
                     /**
+                     * 获取双向认证时，是否开启客户端认证，ON:开启，OPTIONAL:自适应，默认ON。
+                     * @return SSLVerifyClient 双向认证时，是否开启客户端认证，ON:开启，OPTIONAL:自适应，默认ON。
+                     * 
+                     */
+                    std::string GetSSLVerifyClient() const;
+
+                    /**
+                     * 设置双向认证时，是否开启客户端认证，ON:开启，OPTIONAL:自适应，默认ON。
+                     * @param _sSLVerifyClient 双向认证时，是否开启客户端认证，ON:开启，OPTIONAL:自适应，默认ON。
+                     * 
+                     */
+                    void SetSSLVerifyClient(const std::string& _sSLVerifyClient);
+
+                    /**
+                     * 判断参数 SSLVerifyClient 是否已赋值
+                     * @return SSLVerifyClient 是否已赋值
+                     * 
+                     */
+                    bool SSLVerifyClientHasBeenSet() const;
+
+                    /**
                      * 获取服务端证书的 ID，如果不填写此项则必须上传证书，包括 CertContent，CertKey，CertName。
                      * @return CertId 服务端证书的 ID，如果不填写此项则必须上传证书，包括 CertContent，CertKey，CertName。
                      * 
@@ -221,6 +242,12 @@ namespace TencentCloud
                      */
                     std::string m_sSLMode;
                     bool m_sSLModeHasBeenSet;
+
+                    /**
+                     * 双向认证时，是否开启客户端认证，ON:开启，OPTIONAL:自适应，默认ON。
+                     */
+                    std::string m_sSLVerifyClient;
+                    bool m_sSLVerifyClientHasBeenSet;
 
                     /**
                      * 服务端证书的 ID，如果不填写此项则必须上传证书，包括 CertContent，CertKey，CertName。

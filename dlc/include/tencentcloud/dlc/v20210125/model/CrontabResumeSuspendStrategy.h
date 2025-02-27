@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取定时拉起时间：如：周一&周三8点
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResumeTime 定时拉起时间：如：周一&周三8点
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResumeTime() const;
 
                     /**
                      * 设置定时拉起时间：如：周一&周三8点
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resumeTime 定时拉起时间：如：周一&周三8点
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResumeTime(const std::string& _resumeTime);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取定时挂起时间：如：周一&周三20点
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SuspendTime 定时挂起时间：如：周一&周三20点
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSuspendTime() const;
 
                     /**
                      * 设置定时挂起时间：如：周一&周三20点
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _suspendTime 定时挂起时间：如：周一&周三20点
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSuspendTime(const std::string& _suspendTime);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取挂起配置：0（默认）：等待任务结束后挂起、1：强制挂起
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SuspendStrategy 挂起配置：0（默认）：等待任务结束后挂起、1：强制挂起
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSuspendStrategy() const;
 
                     /**
                      * 设置挂起配置：0（默认）：等待任务结束后挂起、1：强制挂起
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _suspendStrategy 挂起配置：0（默认）：等待任务结束后挂起、1：强制挂起
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSuspendStrategy(const int64_t& _suspendStrategy);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 定时拉起时间：如：周一&周三8点
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resumeTime;
                     bool m_resumeTimeHasBeenSet;
 
                     /**
                      * 定时挂起时间：如：周一&周三20点
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_suspendTime;
                     bool m_suspendTimeHasBeenSet;
 
                     /**
                      * 挂起配置：0（默认）：等待任务结束后挂起、1：强制挂起
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_suspendStrategy;
                     bool m_suspendStrategyHasBeenSet;

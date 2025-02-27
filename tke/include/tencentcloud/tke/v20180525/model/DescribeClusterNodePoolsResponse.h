@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取NodePools（节点池列表）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodePoolSet NodePools（节点池列表）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<NodePool> GetNodePoolSet() const;
@@ -78,7 +76,6 @@ namespace TencentCloud
 
                     /**
                      * NodePools（节点池列表）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<NodePool> m_nodePoolSet;
                     bool m_nodePoolSetHasBeenSet;

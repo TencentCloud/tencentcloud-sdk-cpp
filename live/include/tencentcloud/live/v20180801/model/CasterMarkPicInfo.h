@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取注：该字段已废弃。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MarkPicId 注：该字段已废弃。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMarkPicId() const;
 
                     /**
                      * 设置注：该字段已废弃。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _markPicId 注：该字段已废弃。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMarkPicId(const int64_t& _markPicId);
@@ -211,10 +207,8 @@ namespace TencentCloud
                     /**
                      * 获取水印地址。
 最大长度256字符，且url需以jpg、jpeg、png、bmp、gif后缀结尾。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MarkPicUrl 水印地址。
 最大长度256字符，且url需以jpg、jpeg、png、bmp、gif后缀结尾。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMarkPicUrl() const;
@@ -222,10 +216,8 @@ namespace TencentCloud
                     /**
                      * 设置水印地址。
 最大长度256字符，且url需以jpg、jpeg、png、bmp、gif后缀结尾。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _markPicUrl 水印地址。
 最大长度256字符，且url需以jpg、jpeg、png、bmp、gif后缀结尾。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMarkPicUrl(const std::string& _markPicUrl);
@@ -240,10 +232,8 @@ namespace TencentCloud
                     /**
                      * 获取水印描述。
 最大允许长度为256。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 水印描述。
 最大允许长度为256。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
@@ -251,10 +241,8 @@ namespace TencentCloud
                     /**
                      * 设置水印描述。
 最大允许长度为256。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 水印描述。
 最大允许长度为256。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -269,10 +257,8 @@ namespace TencentCloud
                     /**
                      * 获取是否启用了等比例缩放。
 注：该字段仅做状态保存，无实际效果。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsEqualProportion 是否启用了等比例缩放。
 注：该字段仅做状态保存，无实际效果。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsEqualProportion() const;
@@ -280,10 +266,8 @@ namespace TencentCloud
                     /**
                      * 设置是否启用了等比例缩放。
 注：该字段仅做状态保存，无实际效果。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isEqualProportion 是否启用了等比例缩放。
 注：该字段仅做状态保存，无实际效果。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsEqualProportion(const bool& _isEqualProportion);
@@ -305,7 +289,6 @@ namespace TencentCloud
 
                     /**
                      * 注：该字段已废弃。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_markPicId;
                     bool m_markPicIdHasBeenSet;
@@ -345,7 +328,6 @@ namespace TencentCloud
                     /**
                      * 水印地址。
 最大长度256字符，且url需以jpg、jpeg、png、bmp、gif后缀结尾。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_markPicUrl;
                     bool m_markPicUrlHasBeenSet;
@@ -353,7 +335,6 @@ namespace TencentCloud
                     /**
                      * 水印描述。
 最大允许长度为256。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
@@ -361,7 +342,6 @@ namespace TencentCloud
                     /**
                      * 是否启用了等比例缩放。
 注：该字段仅做状态保存，无实际效果。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isEqualProportion;
                     bool m_isEqualProportionHasBeenSet;

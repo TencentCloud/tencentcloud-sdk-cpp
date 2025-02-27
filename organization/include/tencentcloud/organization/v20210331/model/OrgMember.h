@@ -427,6 +427,27 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取腾讯云昵称
+                     * @return NickName 腾讯云昵称
+                     * 
+                     */
+                    std::string GetNickName() const;
+
+                    /**
+                     * 设置腾讯云昵称
+                     * @param _nickName 腾讯云昵称
+                     * 
+                     */
+                    void SetNickName(const std::string& _nickName);
+
+                    /**
+                     * 判断参数 NickName 是否已赋值
+                     * @return NickName 是否已赋值
+                     * 
+                     */
+                    bool NickNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -536,6 +557,12 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 腾讯云昵称
+                     */
+                    std::string m_nickName;
+                    bool m_nickNameHasBeenSet;
 
                 };
             }

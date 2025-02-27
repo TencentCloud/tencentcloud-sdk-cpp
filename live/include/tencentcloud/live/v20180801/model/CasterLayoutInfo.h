@@ -151,11 +151,9 @@ namespace TencentCloud
                      * 获取布局输出的宽度，单位为像素。
 默认为1280像素。
 注：该值仅在画中画布局，且未设置PgmWidth时生效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LayoutWidth 布局输出的宽度，单位为像素。
 默认为1280像素。
 注：该值仅在画中画布局，且未设置PgmWidth时生效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetLayoutWidth() const;
@@ -164,11 +162,9 @@ namespace TencentCloud
                      * 设置布局输出的宽度，单位为像素。
 默认为1280像素。
 注：该值仅在画中画布局，且未设置PgmWidth时生效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _layoutWidth 布局输出的宽度，单位为像素。
 默认为1280像素。
 注：该值仅在画中画布局，且未设置PgmWidth时生效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLayoutWidth(const uint64_t& _layoutWidth);
@@ -183,10 +179,8 @@ namespace TencentCloud
                     /**
                      * 获取布局输出的高度，单位为像素。
 注：该参数仅在画中画布局，且未设置PgmHeight时生效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LayoutHeight 布局输出的高度，单位为像素。
 注：该参数仅在画中画布局，且未设置PgmHeight时生效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetLayoutHeight() const;
@@ -194,10 +188,8 @@ namespace TencentCloud
                     /**
                      * 设置布局输出的高度，单位为像素。
 注：该参数仅在画中画布局，且未设置PgmHeight时生效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _layoutHeight 布局输出的高度，单位为像素。
 注：该参数仅在画中画布局，且未设置PgmHeight时生效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLayoutHeight(const uint64_t& _layoutHeight);
@@ -243,7 +235,6 @@ namespace TencentCloud
                      * 布局输出的宽度，单位为像素。
 默认为1280像素。
 注：该值仅在画中画布局，且未设置PgmWidth时生效。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_layoutWidth;
                     bool m_layoutWidthHasBeenSet;
@@ -251,7 +242,6 @@ namespace TencentCloud
                     /**
                      * 布局输出的高度，单位为像素。
 注：该参数仅在画中画布局，且未设置PgmHeight时生效。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_layoutHeight;
                     bool m_layoutHeightHasBeenSet;

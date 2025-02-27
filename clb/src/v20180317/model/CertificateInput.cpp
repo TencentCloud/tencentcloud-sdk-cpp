@@ -22,6 +22,7 @@ using namespace std;
 
 CertificateInput::CertificateInput() :
     m_sSLModeHasBeenSet(false),
+    m_sSLVerifyClientHasBeenSet(false),
     m_certIdHasBeenSet(false),
     m_certCaIdHasBeenSet(false),
     m_certNameHasBeenSet(false),
@@ -45,6 +46,16 @@ CoreInternalOutcome CertificateInput::Deserialize(const rapidjson::Value &value)
         }
         m_sSLMode = string(value["SSLMode"].GetString());
         m_sSLModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SSLVerifyClient") && !value["SSLVerifyClient"].IsNull())
+    {
+        if (!value["SSLVerifyClient"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CertificateInput.SSLVerifyClient` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sSLVerifyClient = string(value["SSLVerifyClient"].GetString());
+        m_sSLVerifyClientHasBeenSet = true;
     }
 
     if (value.HasMember("CertId") && !value["CertId"].IsNull())
@@ -132,6 +143,14 @@ void CertificateInput::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         value.AddMember(iKey, rapidjson::Value(m_sSLMode.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_sSLVerifyClientHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SSLVerifyClient";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sSLVerifyClient.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_certIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -205,6 +224,22 @@ void CertificateInput::SetSSLMode(const string& _sSLMode)
 bool CertificateInput::SSLModeHasBeenSet() const
 {
     return m_sSLModeHasBeenSet;
+}
+
+string CertificateInput::GetSSLVerifyClient() const
+{
+    return m_sSLVerifyClient;
+}
+
+void CertificateInput::SetSSLVerifyClient(const string& _sSLVerifyClient)
+{
+    m_sSLVerifyClient = _sSLVerifyClient;
+    m_sSLVerifyClientHasBeenSet = true;
+}
+
+bool CertificateInput::SSLVerifyClientHasBeenSet() const
+{
+    return m_sSLVerifyClientHasBeenSet;
 }
 
 string CertificateInput::GetCertId() const

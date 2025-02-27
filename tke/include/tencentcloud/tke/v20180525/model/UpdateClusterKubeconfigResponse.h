@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取已更新的子账户Uin列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdatedSubAccounts 已更新的子账户Uin列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetUpdatedSubAccounts() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 已更新的子账户Uin列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_updatedSubAccounts;
                     bool m_updatedSubAccountsHasBeenSet;

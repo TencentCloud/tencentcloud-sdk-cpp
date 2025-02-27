@@ -145,9 +145,7 @@ namespace TencentCloud
 
                     /**
                      * 获取集群Kubeconfig文件
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Kubeconfig 集群Kubeconfig文件
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKubeconfig() const;
@@ -222,7 +220,6 @@ namespace TencentCloud
 
                     /**
                      * 集群Kubeconfig文件
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_kubeconfig;
                     bool m_kubeconfigHasBeenSet;

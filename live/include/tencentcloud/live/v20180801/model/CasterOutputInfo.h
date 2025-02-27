@@ -103,18 +103,14 @@ namespace TencentCloud
 
                     /**
                      * 获取描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -130,11 +126,9 @@ namespace TencentCloud
                      * 获取推流到腾讯云直播源站时，使用的流ID。
 仅当OutputType为1时生效。
 最大允许128字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OutputStreamId 推流到腾讯云直播源站时，使用的流ID。
 仅当OutputType为1时生效。
 最大允许128字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOutputStreamId() const;
@@ -143,11 +137,9 @@ namespace TencentCloud
                      * 设置推流到腾讯云直播源站时，使用的流ID。
 仅当OutputType为1时生效。
 最大允许128字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _outputStreamId 推流到腾讯云直播源站时，使用的流ID。
 仅当OutputType为1时生效。
 最大允许128字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutputStreamId(const std::string& _outputStreamId);
@@ -196,11 +188,9 @@ namespace TencentCloud
                      * 获取推到腾讯云直播源站时，使用的域名。
 最大允许128字符，且域名需属于当前账号绑定的云直播推流域名。
 仅在OutputType为1时生效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OutputDomainName 推到腾讯云直播源站时，使用的域名。
 最大允许128字符，且域名需属于当前账号绑定的云直播推流域名。
 仅在OutputType为1时生效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOutputDomainName() const;
@@ -209,11 +199,9 @@ namespace TencentCloud
                      * 设置推到腾讯云直播源站时，使用的域名。
 最大允许128字符，且域名需属于当前账号绑定的云直播推流域名。
 仅在OutputType为1时生效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _outputDomainName 推到腾讯云直播源站时，使用的域名。
 最大允许128字符，且域名需属于当前账号绑定的云直播推流域名。
 仅在OutputType为1时生效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutputDomainName(const std::string& _outputDomainName);
@@ -229,11 +217,9 @@ namespace TencentCloud
                      * 获取推到腾讯云直播源站时，使用的AppName。
 最大允许64字符。
 仅在OutputType为1时生效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OutputAppName 推到腾讯云直播源站时，使用的AppName。
 最大允许64字符。
 仅在OutputType为1时生效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOutputAppName() const;
@@ -242,11 +228,9 @@ namespace TencentCloud
                      * 设置推到腾讯云直播源站时，使用的AppName。
 最大允许64字符。
 仅在OutputType为1时生效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _outputAppName 推到腾讯云直播源站时，使用的AppName。
 最大允许64字符。
 仅在OutputType为1时生效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutputAppName(const std::string& _outputAppName);
@@ -262,11 +246,9 @@ namespace TencentCloud
                      * 获取推到腾讯云直播源站时需要添加的推流参数。
 最大允许长度256字符。
 仅在OutputType为1时生效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OutputParam 推到腾讯云直播源站时需要添加的推流参数。
 最大允许长度256字符。
 仅在OutputType为1时生效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOutputParam() const;
@@ -275,11 +257,9 @@ namespace TencentCloud
                      * 设置推到腾讯云直播源站时需要添加的推流参数。
 最大允许长度256字符。
 仅在OutputType为1时生效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _outputParam 推到腾讯云直播源站时需要添加的推流参数。
 最大允许长度256字符。
 仅在OutputType为1时生效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutputParam(const std::string& _outputParam);
@@ -310,7 +290,6 @@ namespace TencentCloud
 
                     /**
                      * 描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
@@ -319,7 +298,6 @@ namespace TencentCloud
                      * 推流到腾讯云直播源站时，使用的流ID。
 仅当OutputType为1时生效。
 最大允许128字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_outputStreamId;
                     bool m_outputStreamIdHasBeenSet;
@@ -337,7 +315,6 @@ namespace TencentCloud
                      * 推到腾讯云直播源站时，使用的域名。
 最大允许128字符，且域名需属于当前账号绑定的云直播推流域名。
 仅在OutputType为1时生效。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_outputDomainName;
                     bool m_outputDomainNameHasBeenSet;
@@ -346,7 +323,6 @@ namespace TencentCloud
                      * 推到腾讯云直播源站时，使用的AppName。
 最大允许64字符。
 仅在OutputType为1时生效。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_outputAppName;
                     bool m_outputAppNameHasBeenSet;
@@ -355,7 +331,6 @@ namespace TencentCloud
                      * 推到腾讯云直播源站时需要添加的推流参数。
 最大允许长度256字符。
 仅在OutputType为1时生效。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_outputParam;
                     bool m_outputParamHasBeenSet;

@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取路由表冲突列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RouteTableConflictSet 路由表冲突列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RouteTableConflict> GetRouteTableConflictSet() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 路由表冲突列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RouteTableConflict> m_routeTableConflictSet;
                     bool m_routeTableConflictSetHasBeenSet;

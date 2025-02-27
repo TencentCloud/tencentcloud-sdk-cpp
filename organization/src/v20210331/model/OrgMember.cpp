@@ -38,7 +38,8 @@ OrgMember::OrgMember() :
     m_orgIdentityHasBeenSet(false),
     m_bindStatusHasBeenSet(false),
     m_permissionStatusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_nickNameHasBeenSet(false)
 {
 }
 
@@ -257,6 +258,16 @@ CoreInternalOutcome OrgMember::Deserialize(const rapidjson::Value &value)
         m_tagsHasBeenSet = true;
     }
 
+    if (value.HasMember("NickName") && !value["NickName"].IsNull())
+    {
+        if (!value["NickName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OrgMember.NickName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nickName = string(value["NickName"].GetString());
+        m_nickNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -427,6 +438,14 @@ void OrgMember::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_nickNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NickName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nickName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -718,5 +737,21 @@ void OrgMember::SetTags(const vector<Tag>& _tags)
 bool OrgMember::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string OrgMember::GetNickName() const
+{
+    return m_nickName;
+}
+
+void OrgMember::SetNickName(const string& _nickName)
+{
+    m_nickName = _nickName;
+    m_nickNameHasBeenSet = true;
+}
+
+bool OrgMember::NickNameHasBeenSet() const
+{
+    return m_nickNameHasBeenSet;
 }
 

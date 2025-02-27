@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取地域的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 地域的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取地域列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionInstanceSet 地域列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RegionInstance> GetRegionInstanceSet() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 地域的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
                      * 地域列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RegionInstance> m_regionInstanceSet;
                     bool m_regionInstanceSetHasBeenSet;

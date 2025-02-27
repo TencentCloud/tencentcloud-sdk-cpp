@@ -105,15 +105,15 @@ namespace TencentCloud
                     bool PostTimeHasBeenSet() const;
 
                     /**
-                     * 获取业务参数。
-                     * @return AssociateAccount 业务参数。
+                     * 获取业务预留参数（暂无实际业务含义， 无需关注返回值）
+                     * @return AssociateAccount 业务预留参数（暂无实际业务含义， 无需关注返回值）
                      * 
                      */
                     std::string GetAssociateAccount() const;
 
                     /**
-                     * 设置业务参数。
-                     * @param _associateAccount 业务参数。
+                     * 设置业务预留参数（暂无实际业务含义， 无需关注返回值）
+                     * @param _associateAccount 业务预留参数（暂无实际业务含义， 无需关注返回值）
                      * 
                      */
                     void SetAssociateAccount(const std::string& _associateAccount);
@@ -333,7 +333,7 @@ reject：高风险，建议拦截
                     bool m_postTimeHasBeenSet;
 
                     /**
-                     * 业务参数。
+                     * 业务预留参数（暂无实际业务含义， 无需关注返回值）
                      */
                     std::string m_associateAccount;
                     bool m_associateAccountHasBeenSet;

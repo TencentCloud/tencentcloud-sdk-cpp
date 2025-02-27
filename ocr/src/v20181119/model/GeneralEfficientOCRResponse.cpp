@@ -25,7 +25,8 @@ using namespace std;
 
 GeneralEfficientOCRResponse::GeneralEfficientOCRResponse() :
     m_textDetectionsHasBeenSet(false),
-    m_angelHasBeenSet(false)
+    m_angelHasBeenSet(false),
+    m_angleHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,16 @@ CoreInternalOutcome GeneralEfficientOCRResponse::Deserialize(const string &paylo
         m_angelHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Angle") && !rsp["Angle"].IsNull())
+    {
+        if (!rsp["Angle"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `Angle` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_angle = rsp["Angle"].GetDouble();
+        m_angleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +137,14 @@ string GeneralEfficientOCRResponse::ToJsonString() const
         value.AddMember(iKey, m_angel, allocator);
     }
 
+    if (m_angleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Angle";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_angle, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -156,6 +175,16 @@ double GeneralEfficientOCRResponse::GetAngel() const
 bool GeneralEfficientOCRResponse::AngelHasBeenSet() const
 {
     return m_angelHasBeenSet;
+}
+
+double GeneralEfficientOCRResponse::GetAngle() const
+{
+    return m_angle;
+}
+
+bool GeneralEfficientOCRResponse::AngleHasBeenSet() const
+{
+    return m_angleHasBeenSet;
 }
 
 

@@ -193,6 +193,27 @@ namespace TencentCloud
                      */
                     bool PayUinHasBeenSet() const;
 
+                    /**
+                     * 获取是否同步组织成员名称到成员账号昵称。取值： 1-同步 0-不同步
+                     * @return IsModifyNickName 是否同步组织成员名称到成员账号昵称。取值： 1-同步 0-不同步
+                     * 
+                     */
+                    uint64_t GetIsModifyNickName() const;
+
+                    /**
+                     * 设置是否同步组织成员名称到成员账号昵称。取值： 1-同步 0-不同步
+                     * @param _isModifyNickName 是否同步组织成员名称到成员账号昵称。取值： 1-同步 0-不同步
+                     * 
+                     */
+                    void SetIsModifyNickName(const uint64_t& _isModifyNickName);
+
+                    /**
+                     * 判断参数 IsModifyNickName 是否已赋值
+                     * @return IsModifyNickName 是否已赋值
+                     * 
+                     */
+                    bool IsModifyNickNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -237,6 +258,12 @@ namespace TencentCloud
                      */
                     std::string m_payUin;
                     bool m_payUinHasBeenSet;
+
+                    /**
+                     * 是否同步组织成员名称到成员账号昵称。取值： 1-同步 0-不同步
+                     */
+                    uint64_t m_isModifyNickName;
+                    bool m_isModifyNickNameHasBeenSet;
 
                 };
             }

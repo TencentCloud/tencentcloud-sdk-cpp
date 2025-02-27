@@ -59,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取操作失败的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorMsg 操作失败的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetErrorMsg() const;
@@ -83,7 +81,6 @@ namespace TencentCloud
 
                     /**
                      * 操作失败的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errorMsg;
                     bool m_errorMsgHasBeenSet;

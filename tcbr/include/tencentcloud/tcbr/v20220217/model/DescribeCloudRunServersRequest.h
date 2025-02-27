@@ -113,6 +113,48 @@ namespace TencentCloud
                      */
                     bool PageNumHasBeenSet() const;
 
+                    /**
+                     * 获取服务名
+                     * @return ServerName 服务名
+                     * 
+                     */
+                    std::string GetServerName() const;
+
+                    /**
+                     * 设置服务名
+                     * @param _serverName 服务名
+                     * 
+                     */
+                    void SetServerName(const std::string& _serverName);
+
+                    /**
+                     * 判断参数 ServerName 是否已赋值
+                     * @return ServerName 是否已赋值
+                     * 
+                     */
+                    bool ServerNameHasBeenSet() const;
+
+                    /**
+                     * 获取服务类型：function | container
+                     * @return ServerType 服务类型：function | container
+                     * 
+                     */
+                    std::string GetServerType() const;
+
+                    /**
+                     * 设置服务类型：function | container
+                     * @param _serverType 服务类型：function | container
+                     * 
+                     */
+                    void SetServerType(const std::string& _serverType);
+
+                    /**
+                     * 判断参数 ServerType 是否已赋值
+                     * @return ServerType 是否已赋值
+                     * 
+                     */
+                    bool ServerTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -134,6 +176,18 @@ namespace TencentCloud
                      */
                     int64_t m_pageNum;
                     bool m_pageNumHasBeenSet;
+
+                    /**
+                     * 服务名
+                     */
+                    std::string m_serverName;
+                    bool m_serverNameHasBeenSet;
+
+                    /**
+                     * 服务类型：function | container
+                     */
+                    std::string m_serverType;
+                    bool m_serverTypeHasBeenSet;
 
                 };
             }

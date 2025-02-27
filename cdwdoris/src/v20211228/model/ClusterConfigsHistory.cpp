@@ -21,6 +21,7 @@ using namespace TencentCloud::Cdwdoris::V20211228::Model;
 using namespace std;
 
 ClusterConfigsHistory::ClusterConfigsHistory() :
+    m_computeGroupIdHasBeenSet(false),
     m_fileNameHasBeenSet(false),
     m_newConfValueHasBeenSet(false),
     m_oldConfValueHasBeenSet(false),
@@ -34,6 +35,16 @@ CoreInternalOutcome ClusterConfigsHistory::Deserialize(const rapidjson::Value &v
 {
     string requestId = "";
 
+
+    if (value.HasMember("ComputeGroupId") && !value["ComputeGroupId"].IsNull())
+    {
+        if (!value["ComputeGroupId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterConfigsHistory.ComputeGroupId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_computeGroupId = string(value["ComputeGroupId"].GetString());
+        m_computeGroupIdHasBeenSet = true;
+    }
 
     if (value.HasMember("FileName") && !value["FileName"].IsNull())
     {
@@ -102,6 +113,14 @@ CoreInternalOutcome ClusterConfigsHistory::Deserialize(const rapidjson::Value &v
 void ClusterConfigsHistory::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
+    if (m_computeGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComputeGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_computeGroupId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_fileNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -152,6 +171,22 @@ void ClusterConfigsHistory::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
 
 }
 
+
+string ClusterConfigsHistory::GetComputeGroupId() const
+{
+    return m_computeGroupId;
+}
+
+void ClusterConfigsHistory::SetComputeGroupId(const string& _computeGroupId)
+{
+    m_computeGroupId = _computeGroupId;
+    m_computeGroupIdHasBeenSet = true;
+}
+
+bool ClusterConfigsHistory::ComputeGroupIdHasBeenSet() const
+{
+    return m_computeGroupIdHasBeenSet;
+}
 
 string ClusterConfigsHistory::GetFileName() const
 {

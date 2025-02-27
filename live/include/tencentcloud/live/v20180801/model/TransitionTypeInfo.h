@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取转场名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TransitionType 转场名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTransitionType() const;
 
                     /**
                      * 设置转场名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _transitionType 转场名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTransitionType(const std::string& _transitionType);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取素材url
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SourceUrl 素材url
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSourceUrl() const;
 
                     /**
                      * 设置素材url
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sourceUrl 素材url
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSourceUrl(const std::string& _sourceUrl);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取转场的下标，可用来排序，从1开始递增
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Index 转场的下标，可用来排序，从1开始递增
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIndex() const;
 
                     /**
                      * 设置转场的下标，可用来排序，从1开始递增
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _index 转场的下标，可用来排序，从1开始递增
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIndex(const uint64_t& _index);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 转场名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_transitionType;
                     bool m_transitionTypeHasBeenSet;
 
                     /**
                      * 素材url
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sourceUrl;
                     bool m_sourceUrlHasBeenSet;
 
                     /**
                      * 转场的下标，可用来排序，从1开始递增
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_index;
                     bool m_indexHasBeenSet;

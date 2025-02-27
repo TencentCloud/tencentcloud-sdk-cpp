@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取节点池总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 节点池总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取虚拟节点池列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodePoolSet 虚拟节点池列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<VirtualNodePool> GetNodePoolSet() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 节点池总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
                      * 虚拟节点池列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<VirtualNodePool> m_nodePoolSet;
                     bool m_nodePoolSetHasBeenSet;

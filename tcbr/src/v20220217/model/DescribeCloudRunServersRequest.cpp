@@ -25,7 +25,9 @@ using namespace std;
 DescribeCloudRunServersRequest::DescribeCloudRunServersRequest() :
     m_envIdHasBeenSet(false),
     m_pageSizeHasBeenSet(false),
-    m_pageNumHasBeenSet(false)
+    m_pageNumHasBeenSet(false),
+    m_serverNameHasBeenSet(false),
+    m_serverTypeHasBeenSet(false)
 {
 }
 
@@ -58,6 +60,22 @@ string DescribeCloudRunServersRequest::ToJsonString() const
         string key = "PageNum";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pageNum, allocator);
+    }
+
+    if (m_serverNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServerName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_serverName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serverTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServerType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_serverType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +132,38 @@ void DescribeCloudRunServersRequest::SetPageNum(const int64_t& _pageNum)
 bool DescribeCloudRunServersRequest::PageNumHasBeenSet() const
 {
     return m_pageNumHasBeenSet;
+}
+
+string DescribeCloudRunServersRequest::GetServerName() const
+{
+    return m_serverName;
+}
+
+void DescribeCloudRunServersRequest::SetServerName(const string& _serverName)
+{
+    m_serverName = _serverName;
+    m_serverNameHasBeenSet = true;
+}
+
+bool DescribeCloudRunServersRequest::ServerNameHasBeenSet() const
+{
+    return m_serverNameHasBeenSet;
+}
+
+string DescribeCloudRunServersRequest::GetServerType() const
+{
+    return m_serverType;
+}
+
+void DescribeCloudRunServersRequest::SetServerType(const string& _serverType)
+{
+    m_serverType = _serverType;
+    m_serverTypeHasBeenSet = true;
+}
+
+bool DescribeCloudRunServersRequest::ServerTypeHasBeenSet() const
+{
+    return m_serverTypeHasBeenSet;
 }
 
 

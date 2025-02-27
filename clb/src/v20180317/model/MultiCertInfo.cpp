@@ -22,7 +22,8 @@ using namespace std;
 
 MultiCertInfo::MultiCertInfo() :
     m_sSLModeHasBeenSet(false),
-    m_certListHasBeenSet(false)
+    m_certListHasBeenSet(false),
+    m_sSLVerifyClientHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome MultiCertInfo::Deserialize(const rapidjson::Value &value)
         m_certListHasBeenSet = true;
     }
 
+    if (value.HasMember("SSLVerifyClient") && !value["SSLVerifyClient"].IsNull())
+    {
+        if (!value["SSLVerifyClient"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MultiCertInfo.SSLVerifyClient` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sSLVerifyClient = string(value["SSLVerifyClient"].GetString());
+        m_sSLVerifyClientHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -89,6 +100,14 @@ void MultiCertInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_sSLVerifyClientHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SSLVerifyClient";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sSLVerifyClient.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -124,5 +143,21 @@ void MultiCertInfo::SetCertList(const vector<CertInfo>& _certList)
 bool MultiCertInfo::CertListHasBeenSet() const
 {
     return m_certListHasBeenSet;
+}
+
+string MultiCertInfo::GetSSLVerifyClient() const
+{
+    return m_sSLVerifyClient;
+}
+
+void MultiCertInfo::SetSSLVerifyClient(const string& _sSLVerifyClient)
+{
+    m_sSLVerifyClient = _sSLVerifyClient;
+    m_sSLVerifyClientHasBeenSet = true;
+}
+
+bool MultiCertInfo::SSLVerifyClientHasBeenSet() const
+{
+    return m_sSLVerifyClientHasBeenSet;
 }
 

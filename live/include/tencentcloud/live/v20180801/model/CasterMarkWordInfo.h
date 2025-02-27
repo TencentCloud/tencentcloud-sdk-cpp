@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文字水印内容。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MarkWordText 文字水印内容。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMarkWordText() const;
 
                     /**
                      * 设置文字水印内容。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _markWordText 文字水印内容。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMarkWordText(const std::string& _markWordText);
@@ -95,10 +91,8 @@ namespace TencentCloud
                     /**
                      * 获取文字水印的字号。
 范围[16, 60]
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MarkWordFontSize 文字水印的字号。
 范围[16, 60]
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMarkWordFontSize() const;
@@ -106,10 +100,8 @@ namespace TencentCloud
                     /**
                      * 设置文字水印的字号。
 范围[16, 60]
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _markWordFontSize 文字水印的字号。
 范围[16, 60]
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMarkWordFontSize(const uint64_t& _markWordFontSize);
@@ -123,18 +115,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文字水印的颜色，值为HEX颜色代码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MarkWordFontColor 文字水印的颜色，值为HEX颜色代码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMarkWordFontColor() const;
 
                     /**
                      * 设置文字水印的颜色，值为HEX颜色代码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _markWordFontColor 文字水印的颜色，值为HEX颜色代码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMarkWordFontColor(const std::string& _markWordFontColor);
@@ -151,12 +139,10 @@ namespace TencentCloud
 范围[1,2]。
 1. 宋体
 2. 黑体
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MarkWordFontType 文字水印的字体类型。
 范围[1,2]。
 1. 宋体
 2. 黑体
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMarkWordFontType() const;
@@ -166,12 +152,10 @@ namespace TencentCloud
 范围[1,2]。
 1. 宋体
 2. 黑体
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _markWordFontType 文字水印的字体类型。
 范围[1,2]。
 1. 宋体
 2. 黑体
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMarkWordFontType(const uint64_t& _markWordFontType);
@@ -187,11 +171,9 @@ namespace TencentCloud
                      * 获取文字水印的x坐标位置，单位百分比。
 范围[0.0, 1.0]
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MarkWordLocationX 文字水印的x坐标位置，单位百分比。
 范围[0.0, 1.0]
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetMarkWordLocationX() const;
@@ -200,11 +182,9 @@ namespace TencentCloud
                      * 设置文字水印的x坐标位置，单位百分比。
 范围[0.0, 1.0]
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _markWordLocationX 文字水印的x坐标位置，单位百分比。
 范围[0.0, 1.0]
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMarkWordLocationX(const double& _markWordLocationX);
@@ -220,11 +200,9 @@ namespace TencentCloud
                      * 获取文字水印的Y坐标位置，单位百分比。
 范围[0.0, 1.0]
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MarkWordLocationY 文字水印的Y坐标位置，单位百分比。
 范围[0.0, 1.0]
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetMarkWordLocationY() const;
@@ -233,11 +211,9 @@ namespace TencentCloud
                      * 设置文字水印的Y坐标位置，单位百分比。
 范围[0.0, 1.0]
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _markWordLocationY 文字水印的Y坐标位置，单位百分比。
 范围[0.0, 1.0]
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMarkWordLocationY(const double& _markWordLocationY);
@@ -252,10 +228,8 @@ namespace TencentCloud
                     /**
                      * 获取是否开启文字跑马灯功能。
 默认为false。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MarkWordRollEnable 是否开启文字跑马灯功能。
 默认为false。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetMarkWordRollEnable() const;
@@ -263,10 +237,8 @@ namespace TencentCloud
                     /**
                      * 设置是否开启文字跑马灯功能。
 默认为false。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _markWordRollEnable 是否开启文字跑马灯功能。
 默认为false。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMarkWordRollEnable(const bool& _markWordRollEnable);
@@ -282,11 +254,9 @@ namespace TencentCloud
                      * 获取跑马灯文字显示一遍的时间，单位为秒。
 默认为5s。
 范围[5, 600]。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MarkWordRollOnceTime 跑马灯文字显示一遍的时间，单位为秒。
 默认为5s。
 范围[5, 600]。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMarkWordRollOnceTime() const;
@@ -295,11 +265,9 @@ namespace TencentCloud
                      * 设置跑马灯文字显示一遍的时间，单位为秒。
 默认为5s。
 范围[5, 600]。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _markWordRollOnceTime 跑马灯文字显示一遍的时间，单位为秒。
 默认为5s。
 范围[5, 600]。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMarkWordRollOnceTime(const uint64_t& _markWordRollOnceTime);
@@ -317,13 +285,11 @@ namespace TencentCloud
 范围[0,1]。
 0 从左到右
 1 从右到左
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MarkWordRollDirection 跑马灯文字的方向。
 默认值为0。
 范围[0,1]。
 0 从左到右
 1 从右到左
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMarkWordRollDirection() const;
@@ -334,13 +300,11 @@ namespace TencentCloud
 范围[0,1]。
 0 从左到右
 1 从右到左
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _markWordRollDirection 跑马灯文字的方向。
 默认值为0。
 范围[0,1]。
 0 从左到右
 1 从右到左
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMarkWordRollDirection(const int64_t& _markWordRollDirection);
@@ -355,10 +319,8 @@ namespace TencentCloud
                     /**
                      * 获取跑马灯文字显示的起始x坐标，单位百分比。
 范围[0.0, 1.0]
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MarkWordRollStartLocationX 跑马灯文字显示的起始x坐标，单位百分比。
 范围[0.0, 1.0]
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetMarkWordRollStartLocationX() const;
@@ -366,10 +328,8 @@ namespace TencentCloud
                     /**
                      * 设置跑马灯文字显示的起始x坐标，单位百分比。
 范围[0.0, 1.0]
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _markWordRollStartLocationX 跑马灯文字显示的起始x坐标，单位百分比。
 范围[0.0, 1.0]
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMarkWordRollStartLocationX(const double& _markWordRollStartLocationX);
@@ -384,10 +344,8 @@ namespace TencentCloud
                     /**
                      * 获取跑马灯文字显示的截止x坐标，单位百分比。
 范围[0.0, 1.0]
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MarkWordRollEndLocationX 跑马灯文字显示的截止x坐标，单位百分比。
 范围[0.0, 1.0]
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetMarkWordRollEndLocationX() const;
@@ -395,10 +353,8 @@ namespace TencentCloud
                     /**
                      * 设置跑马灯文字显示的截止x坐标，单位百分比。
 范围[0.0, 1.0]
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _markWordRollEndLocationX 跑马灯文字显示的截止x坐标，单位百分比。
 范围[0.0, 1.0]
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMarkWordRollEndLocationX(const double& _markWordRollEndLocationX);
@@ -420,7 +376,6 @@ namespace TencentCloud
 
                     /**
                      * 文字水印内容。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_markWordText;
                     bool m_markWordTextHasBeenSet;
@@ -428,14 +383,12 @@ namespace TencentCloud
                     /**
                      * 文字水印的字号。
 范围[16, 60]
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_markWordFontSize;
                     bool m_markWordFontSizeHasBeenSet;
 
                     /**
                      * 文字水印的颜色，值为HEX颜色代码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_markWordFontColor;
                     bool m_markWordFontColorHasBeenSet;
@@ -445,7 +398,6 @@ namespace TencentCloud
 范围[1,2]。
 1. 宋体
 2. 黑体
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_markWordFontType;
                     bool m_markWordFontTypeHasBeenSet;
@@ -454,7 +406,6 @@ namespace TencentCloud
                      * 文字水印的x坐标位置，单位百分比。
 范围[0.0, 1.0]
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_markWordLocationX;
                     bool m_markWordLocationXHasBeenSet;
@@ -463,7 +414,6 @@ namespace TencentCloud
                      * 文字水印的Y坐标位置，单位百分比。
 范围[0.0, 1.0]
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_markWordLocationY;
                     bool m_markWordLocationYHasBeenSet;
@@ -471,7 +421,6 @@ namespace TencentCloud
                     /**
                      * 是否开启文字跑马灯功能。
 默认为false。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_markWordRollEnable;
                     bool m_markWordRollEnableHasBeenSet;
@@ -480,7 +429,6 @@ namespace TencentCloud
                      * 跑马灯文字显示一遍的时间，单位为秒。
 默认为5s。
 范围[5, 600]。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_markWordRollOnceTime;
                     bool m_markWordRollOnceTimeHasBeenSet;
@@ -491,7 +439,6 @@ namespace TencentCloud
 范围[0,1]。
 0 从左到右
 1 从右到左
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_markWordRollDirection;
                     bool m_markWordRollDirectionHasBeenSet;
@@ -499,7 +446,6 @@ namespace TencentCloud
                     /**
                      * 跑马灯文字显示的起始x坐标，单位百分比。
 范围[0.0, 1.0]
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_markWordRollStartLocationX;
                     bool m_markWordRollStartLocationXHasBeenSet;
@@ -507,7 +453,6 @@ namespace TencentCloud
                     /**
                      * 跑马灯文字显示的截止x坐标，单位百分比。
 范围[0.0, 1.0]
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_markWordRollEndLocationX;
                     bool m_markWordRollEndLocationXHasBeenSet;

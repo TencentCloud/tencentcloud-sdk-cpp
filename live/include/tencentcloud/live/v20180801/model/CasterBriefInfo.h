@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取导播台名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CasterName 导播台名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCasterName() const;
 
                     /**
                      * 设置导播台名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _casterName 导播台名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCasterName(const std::string& _casterName);
@@ -94,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取导播台的描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 导播台的描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置导播台的描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 导播台的描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -119,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取开始计费时间，值为unix时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartBillingTime 开始计费时间，值为unix时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStartBillingTime() const;
 
                     /**
                      * 设置开始计费时间，值为unix时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _startBillingTime 开始计费时间，值为unix时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStartBillingTime(const uint64_t& _startBillingTime);
@@ -144,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取结束计费时间，值为unix时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StopBillingTime 结束计费时间，值为unix时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStopBillingTime() const;
 
                     /**
                      * 设置结束计费时间，值为unix时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _stopBillingTime 结束计费时间，值为unix时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStopBillingTime(const uint64_t& _stopBillingTime);
@@ -169,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间，值为unix时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间，值为unix时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
                      * 设置创建时间，值为unix时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间，值为unix时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const uint64_t& _createTime);
@@ -198,13 +178,11 @@ namespace TencentCloud
 1：无预监，有主监
 2：有预监，无主监
 3：有预监，有主监
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 导播台状态
 0：停止状态，无预监，无主监
 1：无预监，有主监
 2：有预监，无主监
 3：有预监，有主监
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStatus() const;
@@ -215,13 +193,11 @@ namespace TencentCloud
 1：无预监，有主监
 2：有预监，无主监
 3：有预监，有主监
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 导播台状态
 0：停止状态，无预监，无主监
 1：无预监，有主监
 2：有预监，无主监
 3：有预监，有主监
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -237,11 +213,9 @@ namespace TencentCloud
                      * 获取导播台的过期时间，值为-1或unix时间戳。
 当值为-1时，代表永不过期。
 当值为特定unix时间戳时，代表过期时间为对应的时间，导播台在该时间自动停止。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpireTime 导播台的过期时间，值为-1或unix时间戳。
 当值为-1时，代表永不过期。
 当值为特定unix时间戳时，代表过期时间为对应的时间，导播台在该时间自动停止。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetExpireTime() const;
@@ -250,11 +224,9 @@ namespace TencentCloud
                      * 设置导播台的过期时间，值为-1或unix时间戳。
 当值为-1时，代表永不过期。
 当值为特定unix时间戳时，代表过期时间为对应的时间，导播台在该时间自动停止。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _expireTime 导播台的过期时间，值为-1或unix时间戳。
 当值为-1时，代表永不过期。
 当值为特定unix时间戳时，代表过期时间为对应的时间，导播台在该时间自动停止。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExpireTime(const int64_t& _expireTime);
@@ -268,18 +240,14 @@ namespace TencentCloud
 
                     /**
                      * 获取计费字段，该字段暂无作用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FeeType 计费字段，该字段暂无作用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFeeType() const;
 
                     /**
                      * 设置计费字段，该字段暂无作用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _feeType 计费字段，该字段暂无作用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFeeType(const int64_t& _feeType);
@@ -301,35 +269,30 @@ namespace TencentCloud
 
                     /**
                      * 导播台名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_casterName;
                     bool m_casterNameHasBeenSet;
 
                     /**
                      * 导播台的描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
                      * 开始计费时间，值为unix时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_startBillingTime;
                     bool m_startBillingTimeHasBeenSet;
 
                     /**
                      * 结束计费时间，值为unix时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_stopBillingTime;
                     bool m_stopBillingTimeHasBeenSet;
 
                     /**
                      * 创建时间，值为unix时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_createTime;
                     bool m_createTimeHasBeenSet;
@@ -340,7 +303,6 @@ namespace TencentCloud
 1：无预监，有主监
 2：有预监，无主监
 3：有预监，有主监
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
@@ -349,14 +311,12 @@ namespace TencentCloud
                      * 导播台的过期时间，值为-1或unix时间戳。
 当值为-1时，代表永不过期。
 当值为特定unix时间戳时，代表过期时间为对应的时间，导播台在该时间自动停止。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
                      * 计费字段，该字段暂无作用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_feeType;
                     bool m_feeTypeHasBeenSet;

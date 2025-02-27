@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取已经存在的实例信息数组。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExistedInstanceSet 已经存在的实例信息数组。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ExistedInstance> GetExistedInstanceSet() const;
@@ -78,7 +76,6 @@ namespace TencentCloud
 
                     /**
                      * 已经存在的实例信息数组。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ExistedInstance> m_existedInstanceSet;
                     bool m_existedInstanceSetHasBeenSet;

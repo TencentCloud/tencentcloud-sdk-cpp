@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取集群自定义参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterExtraArgs 集群自定义参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ClusterExtraArgs GetClusterExtraArgs() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 集群自定义参数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ClusterExtraArgs m_clusterExtraArgs;
                     bool m_clusterExtraArgsHasBeenSet;

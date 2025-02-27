@@ -50,11 +50,9 @@ namespace TencentCloud
                      * 获取布局Index。
 如果使用自定义布局，为自定义布局下标。
 如果使用单输入布局，如使用输入1，则LayoutIndexType=1， 且LayoutIndex=1，以此类推。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LayoutIndex 布局Index。
 如果使用自定义布局，为自定义布局下标。
 如果使用单输入布局，如使用输入1，则LayoutIndexType=1， 且LayoutIndex=1，以此类推。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetLayoutIndex() const;
@@ -63,11 +61,9 @@ namespace TencentCloud
                      * 设置布局Index。
 如果使用自定义布局，为自定义布局下标。
 如果使用单输入布局，如使用输入1，则LayoutIndexType=1， 且LayoutIndex=1，以此类推。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _layoutIndex 布局Index。
 如果使用自定义布局，为自定义布局下标。
 如果使用单输入布局，如使用输入1，则LayoutIndexType=1， 且LayoutIndex=1，以此类推。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLayoutIndex(const uint64_t& _layoutIndex);
@@ -82,10 +78,8 @@ namespace TencentCloud
                     /**
                      * 获取使用的水印Index列表。
 注：当作为入参使用时，列表中的水印Index需要已经存在。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MarkPicIndexList 使用的水印Index列表。
 注：当作为入参使用时，列表中的水印Index需要已经存在。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<uint64_t> GetMarkPicIndexList() const;
@@ -93,10 +87,8 @@ namespace TencentCloud
                     /**
                      * 设置使用的水印Index列表。
 注：当作为入参使用时，列表中的水印Index需要已经存在。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _markPicIndexList 使用的水印Index列表。
 注：当作为入参使用时，列表中的水印Index需要已经存在。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMarkPicIndexList(const std::vector<uint64_t>& _markPicIndexList);
@@ -111,10 +103,8 @@ namespace TencentCloud
                     /**
                      * 获取使用的文字水印Index列表。
 注：作为入参使用时，列表中的Index需要已经存在。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MarkWordIndexList 使用的文字水印Index列表。
 注：作为入参使用时，列表中的Index需要已经存在。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<uint64_t> GetMarkWordIndexList() const;
@@ -122,10 +112,8 @@ namespace TencentCloud
                     /**
                      * 设置使用的文字水印Index列表。
 注：作为入参使用时，列表中的Index需要已经存在。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _markWordIndexList 使用的文字水印Index列表。
 注：作为入参使用时，列表中的Index需要已经存在。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMarkWordIndexList(const std::vector<uint64_t>& _markWordIndexList);
@@ -140,10 +128,8 @@ namespace TencentCloud
                     /**
                      * 获取使用的转场类型。
 注：支持的转场类型可通过DescribeCasterTransitionTypes接口获取。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TransitionType 使用的转场类型。
 注：支持的转场类型可通过DescribeCasterTransitionTypes接口获取。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTransitionType() const;
@@ -151,10 +137,8 @@ namespace TencentCloud
                     /**
                      * 设置使用的转场类型。
 注：支持的转场类型可通过DescribeCasterTransitionTypes接口获取。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _transitionType 使用的转场类型。
 注：支持的转场类型可通过DescribeCasterTransitionTypes接口获取。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTransitionType(const std::string& _transitionType);
@@ -169,10 +153,8 @@ namespace TencentCloud
                     /**
                      * 获取使用的音频输入Index列表。
 注：当该字段非空时，表示使用布局中对应的输入源的视频，AudioIndexList中对应的输入源的音频。且这些输入源需已存在。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AudioIndexList 使用的音频输入Index列表。
 注：当该字段非空时，表示使用布局中对应的输入源的视频，AudioIndexList中对应的输入源的音频。且这些输入源需已存在。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<uint64_t> GetAudioIndexList() const;
@@ -180,10 +162,8 @@ namespace TencentCloud
                     /**
                      * 设置使用的音频输入Index列表。
 注：当该字段非空时，表示使用布局中对应的输入源的视频，AudioIndexList中对应的输入源的音频。且这些输入源需已存在。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _audioIndexList 使用的音频输入Index列表。
 注：当该字段非空时，表示使用布局中对应的输入源的视频，AudioIndexList中对应的输入源的音频。且这些输入源需已存在。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAudioIndexList(const std::vector<uint64_t>& _audioIndexList);
@@ -201,13 +181,11 @@ namespace TencentCloud
 有效值，0,1。
 0代表不从头播放
 1代表从头播放
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InputStartType 作为入参时，表示使用点播输入源，单画面输入时，点播文件是否从头开始播放。
 默认为0。
 有效值，0,1。
 0代表不从头播放
 1代表从头播放
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetInputStartType() const;
@@ -218,13 +196,11 @@ namespace TencentCloud
 有效值，0,1。
 0代表不从头播放
 1代表从头播放
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _inputStartType 作为入参时，表示使用点播输入源，单画面输入时，点播文件是否从头开始播放。
 默认为0。
 有效值，0,1。
 0代表不从头播放
 1代表从头播放
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInputStartType(const int64_t& _inputStartType);
@@ -242,13 +218,11 @@ namespace TencentCloud
 可选值[0,1]
 0:默认类型，代表普通布局
 1:单输入类型，代表单输入布局
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LayoutIndexType LayoutIndex类型，
 默认值:0
 可选值[0,1]
 0:默认类型，代表普通布局
 1:单输入类型，代表单输入布局
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLayoutIndexType() const;
@@ -259,13 +233,11 @@ namespace TencentCloud
 可选值[0,1]
 0:默认类型，代表普通布局
 1:单输入类型，代表单输入布局
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _layoutIndexType LayoutIndex类型，
 默认值:0
 可选值[0,1]
 0:默认类型，代表普通布局
 1:单输入类型，代表单输入布局
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLayoutIndexType(const int64_t& _layoutIndexType);
@@ -283,7 +255,6 @@ namespace TencentCloud
                      * 布局Index。
 如果使用自定义布局，为自定义布局下标。
 如果使用单输入布局，如使用输入1，则LayoutIndexType=1， 且LayoutIndex=1，以此类推。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_layoutIndex;
                     bool m_layoutIndexHasBeenSet;
@@ -291,7 +262,6 @@ namespace TencentCloud
                     /**
                      * 使用的水印Index列表。
 注：当作为入参使用时，列表中的水印Index需要已经存在。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<uint64_t> m_markPicIndexList;
                     bool m_markPicIndexListHasBeenSet;
@@ -299,7 +269,6 @@ namespace TencentCloud
                     /**
                      * 使用的文字水印Index列表。
 注：作为入参使用时，列表中的Index需要已经存在。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<uint64_t> m_markWordIndexList;
                     bool m_markWordIndexListHasBeenSet;
@@ -307,7 +276,6 @@ namespace TencentCloud
                     /**
                      * 使用的转场类型。
 注：支持的转场类型可通过DescribeCasterTransitionTypes接口获取。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_transitionType;
                     bool m_transitionTypeHasBeenSet;
@@ -315,7 +283,6 @@ namespace TencentCloud
                     /**
                      * 使用的音频输入Index列表。
 注：当该字段非空时，表示使用布局中对应的输入源的视频，AudioIndexList中对应的输入源的音频。且这些输入源需已存在。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<uint64_t> m_audioIndexList;
                     bool m_audioIndexListHasBeenSet;
@@ -326,7 +293,6 @@ namespace TencentCloud
 有效值，0,1。
 0代表不从头播放
 1代表从头播放
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_inputStartType;
                     bool m_inputStartTypeHasBeenSet;
@@ -337,7 +303,6 @@ namespace TencentCloud
 可选值[0,1]
 0:默认类型，代表普通布局
 1:单输入类型，代表单输入布局
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_layoutIndexType;
                     bool m_layoutIndexTypeHasBeenSet;

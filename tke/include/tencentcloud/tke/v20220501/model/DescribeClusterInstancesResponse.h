@@ -74,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取错误信息集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Errors 错误信息集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetErrors() const;
@@ -104,7 +102,6 @@ namespace TencentCloud
 
                     /**
                      * 错误信息集合
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_errors;
                     bool m_errorsHasBeenSet;

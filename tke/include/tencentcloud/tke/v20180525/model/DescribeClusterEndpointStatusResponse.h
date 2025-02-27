@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取查询集群访问端口状态（Created 开启成功，Creating 开启中，NotFound 未开启）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 查询集群访问端口状态（Created 开启成功，Creating 开启中，NotFound 未开启）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取开启访问入口失败信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorMsg 开启访问入口失败信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetErrorMsg() const;
@@ -79,14 +75,12 @@ namespace TencentCloud
 
                     /**
                      * 查询集群访问端口状态（Created 开启成功，Creating 开启中，NotFound 未开启）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 开启访问入口失败信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errorMsg;
                     bool m_errorMsgHasBeenSet;

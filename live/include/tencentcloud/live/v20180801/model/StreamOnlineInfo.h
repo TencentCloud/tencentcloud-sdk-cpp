@@ -135,11 +135,9 @@ namespace TencentCloud
                      * 获取流是否推送到延播。
 0 - 无延播，
 1 - 有延播。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PushToDelay 流是否推送到延播。
 0 - 无延播，
 1 - 有延播。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPushToDelay() const;
@@ -148,11 +146,9 @@ namespace TencentCloud
                      * 设置流是否推送到延播。
 0 - 无延播，
 1 - 有延播。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pushToDelay 流是否推送到延播。
 0 - 无延播，
 1 - 有延播。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPushToDelay(const int64_t& _pushToDelay);
@@ -194,7 +190,6 @@ namespace TencentCloud
                      * 流是否推送到延播。
 0 - 无延播，
 1 - 有延播。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_pushToDelay;
                     bool m_pushToDelayHasBeenSet;

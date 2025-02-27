@@ -62,9 +62,7 @@ namespace TencentCloud
 
                     /**
                      * 获取健康检测规则数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 健康检测规则数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -87,7 +85,6 @@ namespace TencentCloud
 
                     /**
                      * 健康检测规则数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

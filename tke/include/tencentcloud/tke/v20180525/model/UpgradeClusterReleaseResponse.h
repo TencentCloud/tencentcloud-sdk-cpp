@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取应用详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Release 应用详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     PendingRelease GetRelease() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 应用详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PendingRelease m_release;
                     bool m_releaseHasBeenSet;

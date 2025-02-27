@@ -47,9 +47,7 @@ namespace TencentCloud
 
                     /**
                      * 获取失败资源列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailedResources 失败资源列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<FailedResource> GetFailedResources() const;
@@ -66,12 +64,10 @@ namespace TencentCloud
 - running 运行中
 - failed 失败
 - done 成功
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 任务状态：
 - running 运行中
 - failed 失败
 - done 成功
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
@@ -115,7 +111,6 @@ namespace TencentCloud
 
                     /**
                      * 失败资源列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FailedResource> m_failedResources;
                     bool m_failedResourcesHasBeenSet;
@@ -125,7 +120,6 @@ namespace TencentCloud
 - running 运行中
 - failed 失败
 - done 成功
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

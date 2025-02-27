@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取删除采集规则遇到错误时返回错误原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 删除采集规则遇到错误时返回错误原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMessage() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 删除采集规则遇到错误时返回错误原因
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;

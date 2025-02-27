@@ -62,9 +62,7 @@ namespace TencentCloud
 
                     /**
                      * 获取数组总数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 数组总数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -87,7 +85,6 @@ namespace TencentCloud
 
                     /**
                      * 数组总数目
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

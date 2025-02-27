@@ -189,18 +189,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否启用抠图。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UsePortraitSegment 是否启用抠图。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetUsePortraitSegment() const;
 
                     /**
                      * 设置是否启用抠图。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _usePortraitSegment 是否启用抠图。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUsePortraitSegment(const bool& _usePortraitSegment);
@@ -255,7 +251,6 @@ namespace TencentCloud
 
                     /**
                      * 是否启用抠图。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_usePortraitSegment;
                     bool m_usePortraitSegmentHasBeenSet;
