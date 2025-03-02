@@ -92,6 +92,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/ListQaItem.h
   include/tencentcloud/lke/v20231130/model/DeleteAttributeLabelRequest.h
   include/tencentcloud/lke/v20231130/model/DescribeRobotBizIDByAppKeyResponse.h
+  include/tencentcloud/lke/v20231130/model/RenameDocResponse.h
   include/tencentcloud/lke/v20231130/model/ReconstructDocumentResponse.h
   include/tencentcloud/lke/v20231130/model/ListDocCateRequest.h
   include/tencentcloud/lke/v20231130/model/DescribeDocResponse.h
@@ -117,6 +118,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/QueryParseDocResultResponse.h
   include/tencentcloud/lke/v20231130/model/ListReleaseDocPreviewResponse.h
   include/tencentcloud/lke/v20231130/model/WordRecognizeInfo.h
+  include/tencentcloud/lke/v20231130/model/RenameDocRequest.h
   include/tencentcloud/lke/v20231130/model/SummaryConfig.h
   include/tencentcloud/lke/v20231130/model/GenerateQAResponse.h
   include/tencentcloud/lke/v20231130/model/GetTaskStatusResponse.h
@@ -382,6 +384,7 @@ set(lke_src
   src/v20231130/model/ListQaItem.cpp
   src/v20231130/model/DeleteAttributeLabelRequest.cpp
   src/v20231130/model/DescribeRobotBizIDByAppKeyResponse.cpp
+  src/v20231130/model/RenameDocResponse.cpp
   src/v20231130/model/ReconstructDocumentResponse.cpp
   src/v20231130/model/ListDocCateRequest.cpp
   src/v20231130/model/DescribeDocResponse.cpp
@@ -407,6 +410,7 @@ set(lke_src
   src/v20231130/model/QueryParseDocResultResponse.cpp
   src/v20231130/model/ListReleaseDocPreviewResponse.cpp
   src/v20231130/model/WordRecognizeInfo.cpp
+  src/v20231130/model/RenameDocRequest.cpp
   src/v20231130/model/SummaryConfig.cpp
   src/v20231130/model/GenerateQAResponse.cpp
   src/v20231130/model/GetTaskStatusResponse.cpp

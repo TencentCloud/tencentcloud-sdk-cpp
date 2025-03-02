@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取法人姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LegalName 法人姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLegalName() const;
 
                     /**
                      * 设置法人姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _legalName 法人姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLegalName(const std::string& _legalName);
@@ -98,18 +94,14 @@ namespace TencentCloud
 
                     /**
                      * 获取社会统一信用代码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnifiedSocialCreditCode 社会统一信用代码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUnifiedSocialCreditCode() const;
 
                     /**
                      * 设置社会统一信用代码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _unifiedSocialCreditCode 社会统一信用代码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUnifiedSocialCreditCode(const std::string& _unifiedSocialCreditCode);
@@ -125,7 +117,6 @@ namespace TencentCloud
 
                     /**
                      * 法人姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_legalName;
                     bool m_legalNameHasBeenSet;
@@ -139,7 +130,6 @@ namespace TencentCloud
 
                     /**
                      * 社会统一信用代码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_unifiedSocialCreditCode;
                     bool m_unifiedSocialCreditCodeHasBeenSet;

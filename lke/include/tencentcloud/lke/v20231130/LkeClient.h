@@ -201,6 +201,8 @@
 #include <tencentcloud/lke/v20231130/model/RateMsgRecordResponse.h>
 #include <tencentcloud/lke/v20231130/model/ReconstructDocumentRequest.h>
 #include <tencentcloud/lke/v20231130/model/ReconstructDocumentResponse.h>
+#include <tencentcloud/lke/v20231130/model/RenameDocRequest.h>
+#include <tencentcloud/lke/v20231130/model/RenameDocResponse.h>
 #include <tencentcloud/lke/v20231130/model/ResetSessionRequest.h>
 #include <tencentcloud/lke/v20231130/model/ResetSessionResponse.h>
 #include <tencentcloud/lke/v20231130/model/RetryDocAuditRequest.h>
@@ -500,6 +502,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ReconstructDocumentResponse> ReconstructDocumentOutcome;
                 typedef std::future<ReconstructDocumentOutcome> ReconstructDocumentOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::ReconstructDocumentRequest&, ReconstructDocumentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReconstructDocumentAsyncHandler;
+                typedef Outcome<Core::Error, Model::RenameDocResponse> RenameDocOutcome;
+                typedef std::future<RenameDocOutcome> RenameDocOutcomeCallable;
+                typedef std::function<void(const LkeClient*, const Model::RenameDocRequest&, RenameDocOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenameDocAsyncHandler;
                 typedef Outcome<Core::Error, Model::ResetSessionResponse> ResetSessionOutcome;
                 typedef std::future<ResetSessionOutcome> ResetSessionOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::ResetSessionRequest&, ResetSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetSessionAsyncHandler;
@@ -1343,6 +1348,15 @@ namespace TencentCloud
                 ReconstructDocumentOutcome ReconstructDocument(const Model::ReconstructDocumentRequest &request);
                 void ReconstructDocumentAsync(const Model::ReconstructDocumentRequest& request, const ReconstructDocumentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ReconstructDocumentOutcomeCallable ReconstructDocumentCallable(const Model::ReconstructDocumentRequest& request);
+
+                /**
+                 *文档重命名
+                 * @param req RenameDocRequest
+                 * @return RenameDocOutcome
+                 */
+                RenameDocOutcome RenameDoc(const Model::RenameDocRequest &request);
+                void RenameDocAsync(const Model::RenameDocRequest& request, const RenameDocAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RenameDocOutcomeCallable RenameDocCallable(const Model::RenameDocRequest& request);
 
                 /**
                  *重置会话

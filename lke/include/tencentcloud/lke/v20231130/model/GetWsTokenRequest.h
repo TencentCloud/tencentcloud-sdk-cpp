@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取接入类型
-                     * @return Type 接入类型
+                     * 获取接入类型，当前请填写5
+                     * @return Type 接入类型，当前请填写5
                      * 
                      */
                     int64_t GetType() const;
 
                     /**
-                     * 设置接入类型
-                     * @param _type 接入类型
+                     * 设置接入类型，当前请填写5
+                     * @param _type 接入类型，当前请填写5
                      * 
                      */
                     void SetType(const int64_t& _type);
@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取应用AppKey（应用发布后在应用页面[发布管理]-[调用信息]-[API管理]处获取）
-                     * @return BotAppKey 应用AppKey（应用发布后在应用页面[发布管理]-[调用信息]-[API管理]处获取）
+                     * 获取当Type=5时，必填；应用AppKey（应用发布后在应用页面[发布管理]-[调用信息]-[API管理]处获取）
+                     * @return BotAppKey 当Type=5时，必填；应用AppKey（应用发布后在应用页面[发布管理]-[调用信息]-[API管理]处获取）
                      * 
                      */
                     std::string GetBotAppKey() const;
 
                     /**
-                     * 设置应用AppKey（应用发布后在应用页面[发布管理]-[调用信息]-[API管理]处获取）
-                     * @param _botAppKey 应用AppKey（应用发布后在应用页面[发布管理]-[调用信息]-[API管理]处获取）
+                     * 设置当Type=5时，必填；应用AppKey（应用发布后在应用页面[发布管理]-[调用信息]-[API管理]处获取）
+                     * @param _botAppKey 当Type=5时，必填；应用AppKey（应用发布后在应用页面[发布管理]-[调用信息]-[API管理]处获取）
                      * 
                      */
                     void SetBotAppKey(const std::string& _botAppKey);
@@ -130,13 +130,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 接入类型
+                     * 接入类型，当前请填写5
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 应用AppKey（应用发布后在应用页面[发布管理]-[调用信息]-[API管理]处获取）
+                     * 当Type=5时，必填；应用AppKey（应用发布后在应用页面[发布管理]-[调用信息]-[API管理]处获取）
                      */
                     std::string m_botAppKey;
                     bool m_botAppKeyHasBeenSet;

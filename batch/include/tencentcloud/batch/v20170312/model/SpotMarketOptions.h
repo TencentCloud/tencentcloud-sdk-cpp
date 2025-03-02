@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取竞价出价
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxPrice 竞价出价
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMaxPrice() const;
 
                     /**
                      * 设置竞价出价
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxPrice 竞价出价
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxPrice(const std::string& _maxPrice);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取竞价请求类型，当前仅支持类型：one-time
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SpotInstanceType 竞价请求类型，当前仅支持类型：one-time
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSpotInstanceType() const;
 
                     /**
                      * 设置竞价请求类型，当前仅支持类型：one-time
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _spotInstanceType 竞价请求类型，当前仅支持类型：one-time
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSpotInstanceType(const std::string& _spotInstanceType);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 竞价出价
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_maxPrice;
                     bool m_maxPriceHasBeenSet;
 
                     /**
                      * 竞价请求类型，当前仅支持类型：one-time
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_spotInstanceType;
                     bool m_spotInstanceTypeHasBeenSet;

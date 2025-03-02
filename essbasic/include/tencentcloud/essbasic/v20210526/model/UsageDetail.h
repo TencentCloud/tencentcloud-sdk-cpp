@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子客企业名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyOrganizationName 子客企业名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProxyOrganizationName() const;
 
                     /**
                      * 设置子客企业名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _proxyOrganizationName 子客企业名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProxyOrganizationName(const std::string& _proxyOrganizationName);
@@ -94,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取对应的消耗日期, **如果是汇总数据则为1970-01-01**
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Date 对应的消耗日期, **如果是汇总数据则为1970-01-01**
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDate() const;
 
                     /**
                      * 设置对应的消耗日期, **如果是汇总数据则为1970-01-01**
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _date 对应的消耗日期, **如果是汇总数据则为1970-01-01**
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDate(const std::string& _date);
@@ -140,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取撤回合同数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cancel 撤回合同数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCancel() const;
 
                     /**
                      * 设置撤回合同数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cancel 撤回合同数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCancel(const uint64_t& _cancel);
@@ -165,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取消耗渠道
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowChannel 消耗渠道
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFlowChannel() const;
 
                     /**
                      * 设置消耗渠道
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _flowChannel 消耗渠道
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFlowChannel(const std::string& _flowChannel);
@@ -198,14 +182,12 @@ namespace TencentCloud
 
                     /**
                      * 子客企业名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_proxyOrganizationName;
                     bool m_proxyOrganizationNameHasBeenSet;
 
                     /**
                      * 对应的消耗日期, **如果是汇总数据则为1970-01-01**
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_date;
                     bool m_dateHasBeenSet;
@@ -218,14 +200,12 @@ namespace TencentCloud
 
                     /**
                      * 撤回合同数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_cancel;
                     bool m_cancelHasBeenSet;
 
                     /**
                      * 消耗渠道
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_flowChannel;
                     bool m_flowChannelHasBeenSet;

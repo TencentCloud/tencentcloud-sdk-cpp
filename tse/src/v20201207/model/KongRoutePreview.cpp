@@ -37,7 +37,8 @@ KongRoutePreview::KongRoutePreview() :
     m_destinationPortsHasBeenSet(false),
     m_headersHasBeenSet(false),
     m_requestBufferingHasBeenSet(false),
-    m_responseBufferingHasBeenSet(false)
+    m_responseBufferingHasBeenSet(false),
+    m_regexPriorityHasBeenSet(false)
 {
 }
 
@@ -241,6 +242,16 @@ CoreInternalOutcome KongRoutePreview::Deserialize(const rapidjson::Value &value)
         m_responseBufferingHasBeenSet = true;
     }
 
+    if (value.HasMember("RegexPriority") && !value["RegexPriority"].IsNull())
+    {
+        if (!value["RegexPriority"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `KongRoutePreview.RegexPriority` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_regexPriority = value["RegexPriority"].GetInt64();
+        m_regexPriorityHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -414,6 +425,14 @@ void KongRoutePreview::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "ResponseBuffering";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_responseBuffering, allocator);
+    }
+
+    if (m_regexPriorityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegexPriority";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_regexPriority, allocator);
     }
 
 }
@@ -689,5 +708,21 @@ void KongRoutePreview::SetResponseBuffering(const bool& _responseBuffering)
 bool KongRoutePreview::ResponseBufferingHasBeenSet() const
 {
     return m_responseBufferingHasBeenSet;
+}
+
+int64_t KongRoutePreview::GetRegexPriority() const
+{
+    return m_regexPriority;
+}
+
+void KongRoutePreview::SetRegexPriority(const int64_t& _regexPriority)
+{
+    m_regexPriority = _regexPriority;
+    m_regexPriorityHasBeenSet = true;
+}
+
+bool KongRoutePreview::RegexPriorityHasBeenSet() const
+{
+    return m_regexPriorityHasBeenSet;
 }
 

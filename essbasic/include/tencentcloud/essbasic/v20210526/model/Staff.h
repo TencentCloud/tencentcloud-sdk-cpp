@@ -121,18 +121,14 @@ namespace TencentCloud
 
                     /**
                      * 获取员工邮箱
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Email 员工邮箱
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEmail() const;
 
                     /**
                      * 设置员工邮箱
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _email 员工邮箱
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEmail(const std::string& _email);
@@ -146,18 +142,14 @@ namespace TencentCloud
 
                     /**
                      * 获取员工在第三方应用平台的用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OpenId 员工在第三方应用平台的用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOpenId() const;
 
                     /**
                      * 设置员工在第三方应用平台的用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _openId 员工在第三方应用平台的用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOpenId(const std::string& _openId);
@@ -171,18 +163,14 @@ namespace TencentCloud
 
                     /**
                      * 获取员工角色
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Roles 员工角色
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<StaffRole> GetRoles() const;
 
                     /**
                      * 设置员工角色
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _roles 员工角色
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRoles(const std::vector<StaffRole>& _roles);
@@ -196,18 +184,14 @@ namespace TencentCloud
 
                     /**
                      * 获取员工部门
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Department 员工部门
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Department GetDepartment() const;
 
                     /**
                      * 设置员工部门
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _department 员工部门
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDepartment(const Department& _department);
@@ -327,28 +311,24 @@ namespace TencentCloud
 
                     /**
                      * 员工邮箱
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_email;
                     bool m_emailHasBeenSet;
 
                     /**
                      * 员工在第三方应用平台的用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_openId;
                     bool m_openIdHasBeenSet;
 
                     /**
                      * 员工角色
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<StaffRole> m_roles;
                     bool m_rolesHasBeenSet;
 
                     /**
                      * 员工部门
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Department m_department;
                     bool m_departmentHasBeenSet;

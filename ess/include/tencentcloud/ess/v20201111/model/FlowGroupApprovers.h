@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取合同流程ID 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowId 合同流程ID 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFlowId() const;
 
                     /**
                      * 设置合同流程ID 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _flowId 合同流程ID 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFlowId(const std::string& _flowId);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取签署方信息，包含合同ID和角色ID用于定位RecipientId。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Approvers 签署方信息，包含合同ID和角色ID用于定位RecipientId。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ApproverItem> GetApprovers() const;
 
                     /**
                      * 设置签署方信息，包含合同ID和角色ID用于定位RecipientId。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _approvers 签署方信息，包含合同ID和角色ID用于定位RecipientId。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApprovers(const std::vector<ApproverItem>& _approvers);
@@ -101,14 +93,12 @@ namespace TencentCloud
 
                     /**
                      * 合同流程ID 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_flowId;
                     bool m_flowIdHasBeenSet;
 
                     /**
                      * 签署方信息，包含合同ID和角色ID用于定位RecipientId。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ApproverItem> m_approvers;
                     bool m_approversHasBeenSet;

@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取合同流程的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowId 合同流程的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFlowId() const;
 
                     /**
                      * 设置合同流程的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _flowId 合同流程的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFlowId(const std::string& _flowId);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取对应的合同流程的PDF下载链接
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceUrlInfos 对应的合同流程的PDF下载链接
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ResourceUrlInfo> GetResourceUrlInfos() const;
 
                     /**
                      * 设置对应的合同流程的PDF下载链接
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceUrlInfos 对应的合同流程的PDF下载链接
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceUrlInfos(const std::vector<ResourceUrlInfo>& _resourceUrlInfos);
@@ -101,14 +93,12 @@ namespace TencentCloud
 
                     /**
                      * 合同流程的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_flowId;
                     bool m_flowIdHasBeenSet;
 
                     /**
                      * 对应的合同流程的PDF下载链接
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ResourceUrlInfo> m_resourceUrlInfos;
                     bool m_resourceUrlInfosHasBeenSet;

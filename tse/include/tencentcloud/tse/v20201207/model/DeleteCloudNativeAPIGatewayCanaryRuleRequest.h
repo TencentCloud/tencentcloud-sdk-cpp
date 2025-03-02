@@ -105,6 +105,27 @@ namespace TencentCloud
                      */
                     bool PriorityHasBeenSet() const;
 
+                    /**
+                     * 获取优先级列表，如果配置了此参数，将以此参数为准，忽略Priority参数
+                     * @return PriorityList 优先级列表，如果配置了此参数，将以此参数为准，忽略Priority参数
+                     * 
+                     */
+                    std::vector<int64_t> GetPriorityList() const;
+
+                    /**
+                     * 设置优先级列表，如果配置了此参数，将以此参数为准，忽略Priority参数
+                     * @param _priorityList 优先级列表，如果配置了此参数，将以此参数为准，忽略Priority参数
+                     * 
+                     */
+                    void SetPriorityList(const std::vector<int64_t>& _priorityList);
+
+                    /**
+                     * 判断参数 PriorityList 是否已赋值
+                     * @return PriorityList 是否已赋值
+                     * 
+                     */
+                    bool PriorityListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +145,12 @@ namespace TencentCloud
                      */
                     int64_t m_priority;
                     bool m_priorityHasBeenSet;
+
+                    /**
+                     * 优先级列表，如果配置了此参数，将以此参数为准，忽略Priority参数
+                     */
+                    std::vector<int64_t> m_priorityList;
+                    bool m_priorityListHasBeenSet;
 
                 };
             }

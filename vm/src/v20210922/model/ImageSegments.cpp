@@ -22,7 +22,9 @@ using namespace std;
 
 ImageSegments::ImageSegments() :
     m_offsetTimeHasBeenSet(false),
-    m_resultHasBeenSet(false)
+    m_resultHasBeenSet(false),
+    m_createdAtHasBeenSet(false),
+    m_offsetusTimeHasBeenSet(false)
 {
 }
 
@@ -58,6 +60,26 @@ CoreInternalOutcome ImageSegments::Deserialize(const rapidjson::Value &value)
         m_resultHasBeenSet = true;
     }
 
+    if (value.HasMember("CreatedAt") && !value["CreatedAt"].IsNull())
+    {
+        if (!value["CreatedAt"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageSegments.CreatedAt` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createdAt = string(value["CreatedAt"].GetString());
+        m_createdAtHasBeenSet = true;
+    }
+
+    if (value.HasMember("OffsetusTime") && !value["OffsetusTime"].IsNull())
+    {
+        if (!value["OffsetusTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageSegments.OffsetusTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_offsetusTime = string(value["OffsetusTime"].GetString());
+        m_offsetusTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -80,6 +102,22 @@ void ImageSegments::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_result.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_createdAtHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreatedAt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createdAt.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_offsetusTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OffsetusTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_offsetusTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -115,5 +153,37 @@ void ImageSegments::SetResult(const ImageResult& _result)
 bool ImageSegments::ResultHasBeenSet() const
 {
     return m_resultHasBeenSet;
+}
+
+string ImageSegments::GetCreatedAt() const
+{
+    return m_createdAt;
+}
+
+void ImageSegments::SetCreatedAt(const string& _createdAt)
+{
+    m_createdAt = _createdAt;
+    m_createdAtHasBeenSet = true;
+}
+
+bool ImageSegments::CreatedAtHasBeenSet() const
+{
+    return m_createdAtHasBeenSet;
+}
+
+string ImageSegments::GetOffsetusTime() const
+{
+    return m_offsetusTime;
+}
+
+void ImageSegments::SetOffsetusTime(const string& _offsetusTime)
+{
+    m_offsetusTime = _offsetusTime;
+    m_offsetusTimeHasBeenSet = true;
+}
+
+bool ImageSegments::OffsetusTimeHasBeenSet() const
+{
+    return m_offsetusTimeHasBeenSet;
 }
 

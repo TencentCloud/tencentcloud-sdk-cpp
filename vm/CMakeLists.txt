@@ -22,20 +22,25 @@ set(vm_public_header
 
 set(vm_public_header_model
   include/tencentcloud/vm/v20210922/model/ImageSegments.h
+  include/tencentcloud/vm/v20210922/model/TextPosition.h
+  include/tencentcloud/vm/v20210922/model/SpeakerResult.h
   include/tencentcloud/vm/v20210922/model/ImageResultResult.h
   include/tencentcloud/vm/v20210922/model/StorageInfo.h
   include/tencentcloud/vm/v20210922/model/BucketInfo.h
   include/tencentcloud/vm/v20210922/model/CreateVideoModerationTaskResponse.h
+  include/tencentcloud/vm/v20210922/model/TravelResult.h
   include/tencentcloud/vm/v20210922/model/TaskResult.h
+  include/tencentcloud/vm/v20210922/model/TaskLabel.h
   include/tencentcloud/vm/v20210922/model/CancelTaskRequest.h
   include/tencentcloud/vm/v20210922/model/DescribeTaskDetailResponse.h
   include/tencentcloud/vm/v20210922/model/DescribeTasksRequest.h
   include/tencentcloud/vm/v20210922/model/TaskInput.h
   include/tencentcloud/vm/v20210922/model/DescribeTaskDetailRequest.h
   include/tencentcloud/vm/v20210922/model/User.h
-  include/tencentcloud/vm/v20210922/model/TaskLabel.h
+  include/tencentcloud/vm/v20210922/model/LabelResult.h
   include/tencentcloud/vm/v20210922/model/ImageResultsResultDetail.h
   include/tencentcloud/vm/v20210922/model/InputInfo.h
+  include/tencentcloud/vm/v20210922/model/OcrHitInfo.h
   include/tencentcloud/vm/v20210922/model/CreateVideoModerationTaskRequest.h
   include/tencentcloud/vm/v20210922/model/DescribeTasksResponse.h
   include/tencentcloud/vm/v20210922/model/AudioResultDetailLanguageResult.h
@@ -87,10 +92,14 @@ set(vm_public_header_model
   include/tencentcloud/vm/v20200709/model/ImageResultsResultDetailLocation.h
   include/tencentcloud/vm/v20200709/model/ImageResult.h
   include/tencentcloud/vm/v20201229/model/ImageSegments.h
+  include/tencentcloud/vm/v20201229/model/TextPosition.h
+  include/tencentcloud/vm/v20201229/model/AudioLabelResult.h
+  include/tencentcloud/vm/v20201229/model/SpeakerResult.h
   include/tencentcloud/vm/v20201229/model/ImageResultResult.h
   include/tencentcloud/vm/v20201229/model/StorageInfo.h
-  include/tencentcloud/vm/v20201229/model/BucketInfo.h
+  include/tencentcloud/vm/v20201229/model/HitInfo.h
   include/tencentcloud/vm/v20201229/model/CreateVideoModerationTaskResponse.h
+  include/tencentcloud/vm/v20201229/model/TravelResult.h
   include/tencentcloud/vm/v20201229/model/TaskResult.h
   include/tencentcloud/vm/v20201229/model/CancelTaskRequest.h
   include/tencentcloud/vm/v20201229/model/DescribeTaskDetailResponse.h
@@ -106,6 +115,7 @@ set(vm_public_header_model
   include/tencentcloud/vm/v20201229/model/TaskFilter.h
   include/tencentcloud/vm/v20201229/model/RecognitionResult.h
   include/tencentcloud/vm/v20201229/model/CancelTaskResponse.h
+  include/tencentcloud/vm/v20201229/model/BucketInfo.h
   include/tencentcloud/vm/v20201229/model/AudioResultDetailTextResult.h
   include/tencentcloud/vm/v20201229/model/SegmentCosUrlList.h
   include/tencentcloud/vm/v20201229/model/RcbAsr.h
@@ -124,20 +134,25 @@ set(vm_src
   src/v20200709/VmClient.cpp
   src/v20201229/VmClient.cpp
   src/v20210922/model/ImageSegments.cpp
+  src/v20210922/model/TextPosition.cpp
+  src/v20210922/model/SpeakerResult.cpp
   src/v20210922/model/ImageResultResult.cpp
   src/v20210922/model/StorageInfo.cpp
   src/v20210922/model/BucketInfo.cpp
   src/v20210922/model/CreateVideoModerationTaskResponse.cpp
+  src/v20210922/model/TravelResult.cpp
   src/v20210922/model/TaskResult.cpp
+  src/v20210922/model/TaskLabel.cpp
   src/v20210922/model/CancelTaskRequest.cpp
   src/v20210922/model/DescribeTaskDetailResponse.cpp
   src/v20210922/model/DescribeTasksRequest.cpp
   src/v20210922/model/TaskInput.cpp
   src/v20210922/model/DescribeTaskDetailRequest.cpp
   src/v20210922/model/User.cpp
-  src/v20210922/model/TaskLabel.cpp
+  src/v20210922/model/LabelResult.cpp
   src/v20210922/model/ImageResultsResultDetail.cpp
   src/v20210922/model/InputInfo.cpp
+  src/v20210922/model/OcrHitInfo.cpp
   src/v20210922/model/CreateVideoModerationTaskRequest.cpp
   src/v20210922/model/DescribeTasksResponse.cpp
   src/v20210922/model/AudioResultDetailLanguageResult.cpp
@@ -189,10 +204,14 @@ set(vm_src
   src/v20200709/model/ImageResultsResultDetailLocation.cpp
   src/v20200709/model/ImageResult.cpp
   src/v20201229/model/ImageSegments.cpp
+  src/v20201229/model/TextPosition.cpp
+  src/v20201229/model/AudioLabelResult.cpp
+  src/v20201229/model/SpeakerResult.cpp
   src/v20201229/model/ImageResultResult.cpp
   src/v20201229/model/StorageInfo.cpp
-  src/v20201229/model/BucketInfo.cpp
+  src/v20201229/model/HitInfo.cpp
   src/v20201229/model/CreateVideoModerationTaskResponse.cpp
+  src/v20201229/model/TravelResult.cpp
   src/v20201229/model/TaskResult.cpp
   src/v20201229/model/CancelTaskRequest.cpp
   src/v20201229/model/DescribeTaskDetailResponse.cpp
@@ -208,6 +227,7 @@ set(vm_src
   src/v20201229/model/TaskFilter.cpp
   src/v20201229/model/RecognitionResult.cpp
   src/v20201229/model/CancelTaskResponse.cpp
+  src/v20201229/model/BucketInfo.cpp
   src/v20201229/model/AudioResultDetailTextResult.cpp
   src/v20201229/model/SegmentCosUrlList.cpp
   src/v20201229/model/RcbAsr.cpp

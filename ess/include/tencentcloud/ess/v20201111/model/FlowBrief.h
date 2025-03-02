@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取合同流程描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowDescription 合同流程描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFlowDescription() const;
 
                     /**
                      * 设置合同流程描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _flowDescription 合同流程描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFlowDescription(const std::string& _flowDescription);
@@ -148,7 +144,6 @@ namespace TencentCloud
 <li> **9** : 部分填写</li>
 <li> **10** : 已拒填</li>
 <li> **21** : 已解除</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowStatus 合同流程当前的签署状态, 会存在下列的状态值
 <ul><li> **0** : 未开启流程(合同中不存在填写环节)</li>
 <li> **1** : 待签署</li>
@@ -162,7 +157,6 @@ namespace TencentCloud
 <li> **9** : 部分填写</li>
 <li> **10** : 已拒填</li>
 <li> **21** : 已解除</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFlowStatus() const;
@@ -181,7 +175,6 @@ namespace TencentCloud
 <li> **9** : 部分填写</li>
 <li> **10** : 已拒填</li>
 <li> **21** : 已解除</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _flowStatus 合同流程当前的签署状态, 会存在下列的状态值
 <ul><li> **0** : 未开启流程(合同中不存在填写环节)</li>
 <li> **1** : 待签署</li>
@@ -195,7 +188,6 @@ namespace TencentCloud
 <li> **9** : 部分填写</li>
 <li> **10** : 已拒填</li>
 <li> **21** : 已解除</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFlowStatus(const int64_t& _flowStatus);
@@ -209,18 +201,14 @@ namespace TencentCloud
 
                     /**
                      * 获取合同流程创建时间，格式为Unix标准时间戳（秒）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedOn 合同流程创建时间，格式为Unix标准时间戳（秒）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCreatedOn() const;
 
                     /**
                      * 设置合同流程创建时间，格式为Unix标准时间戳（秒）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createdOn 合同流程创建时间，格式为Unix标准时间戳（秒）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreatedOn(const int64_t& _createdOn);
@@ -234,18 +222,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当合同流程状态为已拒签（即 FlowStatus=3）或已撤销（即 FlowStatus=6）时，此字段 FlowMessage 为拒签或撤销原因。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowMessage 当合同流程状态为已拒签（即 FlowStatus=3）或已撤销（即 FlowStatus=6）时，此字段 FlowMessage 为拒签或撤销原因。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFlowMessage() const;
 
                     /**
                      * 设置当合同流程状态为已拒签（即 FlowStatus=3）或已撤销（即 FlowStatus=6）时，此字段 FlowMessage 为拒签或撤销原因。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _flowMessage 当合同流程状态为已拒签（即 FlowStatus=3）或已撤销（即 FlowStatus=6）时，此字段 FlowMessage 为拒签或撤销原因。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFlowMessage(const std::string& _flowMessage);
@@ -259,18 +243,14 @@ namespace TencentCloud
 
                     /**
                      * 获取 合同流程发起方的员工编号, 即员工在腾讯电子签平台的唯一身份标识。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Creator  合同流程发起方的员工编号, 即员工在腾讯电子签平台的唯一身份标识。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreator() const;
 
                     /**
                      * 设置 合同流程发起方的员工编号, 即员工在腾讯电子签平台的唯一身份标识。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _creator  合同流程发起方的员工编号, 即员工在腾讯电子签平台的唯一身份标识。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreator(const std::string& _creator);
@@ -284,18 +264,14 @@ namespace TencentCloud
 
                     /**
                      * 获取合同流程的签署截止时间，格式为Unix标准时间戳（秒）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Deadline 合同流程的签署截止时间，格式为Unix标准时间戳（秒）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDeadline() const;
 
                     /**
                      * 设置合同流程的签署截止时间，格式为Unix标准时间戳（秒）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deadline 合同流程的签署截止时间，格式为Unix标准时间戳（秒）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeadline(const int64_t& _deadline);
@@ -323,7 +299,6 @@ namespace TencentCloud
 
                     /**
                      * 合同流程描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_flowDescription;
                     bool m_flowDescriptionHasBeenSet;
@@ -348,35 +323,30 @@ namespace TencentCloud
 <li> **9** : 部分填写</li>
 <li> **10** : 已拒填</li>
 <li> **21** : 已解除</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_flowStatus;
                     bool m_flowStatusHasBeenSet;
 
                     /**
                      * 合同流程创建时间，格式为Unix标准时间戳（秒）。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_createdOn;
                     bool m_createdOnHasBeenSet;
 
                     /**
                      * 当合同流程状态为已拒签（即 FlowStatus=3）或已撤销（即 FlowStatus=6）时，此字段 FlowMessage 为拒签或撤销原因。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_flowMessage;
                     bool m_flowMessageHasBeenSet;
 
                     /**
                      *  合同流程发起方的员工编号, 即员工在腾讯电子签平台的唯一身份标识。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_creator;
                     bool m_creatorHasBeenSet;
 
                     /**
                      * 合同流程的签署截止时间，格式为Unix标准时间戳（秒）。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_deadline;
                     bool m_deadlineHasBeenSet;

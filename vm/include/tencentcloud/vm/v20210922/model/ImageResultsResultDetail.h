@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/vm/v20210922/model/ImageResultsResultDetailLocation.h>
+#include <tencentcloud/vm/v20210922/model/OcrHitInfo.h>
 
 
 namespace TencentCloud
@@ -297,6 +298,48 @@ namespace TencentCloud
                      */
                     bool SubLabelCodeHasBeenSet() const;
 
+                    /**
+                     * 获取子标签
+                     * @return SubLabel 子标签
+                     * 
+                     */
+                    std::string GetSubLabel() const;
+
+                    /**
+                     * 设置子标签
+                     * @param _subLabel 子标签
+                     * 
+                     */
+                    void SetSubLabel(const std::string& _subLabel);
+
+                    /**
+                     * 判断参数 SubLabel 是否已赋值
+                     * @return SubLabel 是否已赋值
+                     * 
+                     */
+                    bool SubLabelHasBeenSet() const;
+
+                    /**
+                     * 获取Ocr文本命中信息
+                     * @return OcrHitInfos Ocr文本命中信息
+                     * 
+                     */
+                    std::vector<OcrHitInfo> GetOcrHitInfos() const;
+
+                    /**
+                     * 设置Ocr文本命中信息
+                     * @param _ocrHitInfos Ocr文本命中信息
+                     * 
+                     */
+                    void SetOcrHitInfos(const std::vector<OcrHitInfo>& _ocrHitInfos);
+
+                    /**
+                     * 判断参数 OcrHitInfos 是否已赋值
+                     * @return OcrHitInfos 是否已赋值
+                     * 
+                     */
+                    bool OcrHitInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -368,6 +411,18 @@ namespace TencentCloud
                      */
                     std::string m_subLabelCode;
                     bool m_subLabelCodeHasBeenSet;
+
+                    /**
+                     * 子标签
+                     */
+                    std::string m_subLabel;
+                    bool m_subLabelHasBeenSet;
+
+                    /**
+                     * Ocr文本命中信息
+                     */
+                    std::vector<OcrHitInfo> m_ocrHitInfos;
+                    bool m_ocrHitInfosHasBeenSet;
 
                 };
             }

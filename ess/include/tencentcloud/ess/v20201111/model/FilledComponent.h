@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取控件Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ComponentId 控件Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetComponentId() const;
 
                     /**
                      * 设置控件Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _componentId 控件Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetComponentId(const std::string& _componentId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取控件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ComponentName 控件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetComponentName() const;
 
                     /**
                      * 设置控件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _componentName 控件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetComponentName(const std::string& _componentName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取控件填写状态；0-未填写；1-已填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ComponentFillStatus 控件填写状态；0-未填写；1-已填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetComponentFillStatus() const;
 
                     /**
                      * 设置控件填写状态；0-未填写；1-已填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _componentFillStatus 控件填写状态；0-未填写；1-已填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetComponentFillStatus(const std::string& _componentFillStatus);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取控件填写内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ComponentValue 控件填写内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetComponentValue() const;
 
                     /**
                      * 设置控件填写内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _componentValue 控件填写内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetComponentValue(const std::string& _componentValue);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取控件所属参与方Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ComponentRecipientId 控件所属参与方Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetComponentRecipientId() const;
 
                     /**
                      * 设置控件所属参与方Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _componentRecipientId 控件所属参与方Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetComponentRecipientId(const std::string& _componentRecipientId);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取图片填充控件下载链接，如果是图片填充控件时，这里返回图片的下载链接。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageUrl 图片填充控件下载链接，如果是图片填充控件时，这里返回图片的下载链接。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetImageUrl() const;
 
                     /**
                      * 设置图片填充控件下载链接，如果是图片填充控件时，这里返回图片的下载链接。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _imageUrl 图片填充控件下载链接，如果是图片填充控件时，这里返回图片的下载链接。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetImageUrl(const std::string& _imageUrl);
@@ -200,42 +176,36 @@ namespace TencentCloud
 
                     /**
                      * 控件Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_componentId;
                     bool m_componentIdHasBeenSet;
 
                     /**
                      * 控件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_componentName;
                     bool m_componentNameHasBeenSet;
 
                     /**
                      * 控件填写状态；0-未填写；1-已填写
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_componentFillStatus;
                     bool m_componentFillStatusHasBeenSet;
 
                     /**
                      * 控件填写内容
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_componentValue;
                     bool m_componentValueHasBeenSet;
 
                     /**
                      * 控件所属参与方Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_componentRecipientId;
                     bool m_componentRecipientIdHasBeenSet;
 
                     /**
                      * 图片填充控件下载链接，如果是图片填充控件时，这里返回图片的下载链接。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_imageUrl;
                     bool m_imageUrlHasBeenSet;

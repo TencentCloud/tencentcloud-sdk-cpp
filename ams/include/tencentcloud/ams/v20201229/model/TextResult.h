@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ams/v20201229/model/HitInfo.h>
 
 
 namespace TencentCloud
@@ -282,6 +283,27 @@ namespace TencentCloud
                      */
                     bool SubLabelHasBeenSet() const;
 
+                    /**
+                     * 获取该字段用于返回违规文本命中信息
+                     * @return HitInfos 该字段用于返回违规文本命中信息
+                     * 
+                     */
+                    std::vector<HitInfo> GetHitInfos() const;
+
+                    /**
+                     * 设置该字段用于返回违规文本命中信息
+                     * @param _hitInfos 该字段用于返回违规文本命中信息
+                     * 
+                     */
+                    void SetHitInfos(const std::vector<HitInfo>& _hitInfos);
+
+                    /**
+                     * 判断参数 HitInfos 是否已赋值
+                     * @return HitInfos 是否已赋值
+                     * 
+                     */
+                    bool HitInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -348,6 +370,12 @@ namespace TencentCloud
                      */
                     std::string m_subLabel;
                     bool m_subLabelHasBeenSet;
+
+                    /**
+                     * 该字段用于返回违规文本命中信息
+                     */
+                    std::vector<HitInfo> m_hitInfos;
+                    bool m_hitInfosHasBeenSet;
 
                 };
             }

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取实例ID（InstanceId与InstanceGroupId必须任选一个传入）
+                     * @return InstanceId 实例ID（InstanceId与InstanceGroupId必须任选一个传入）
                      * @deprecated
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置实例ID（InstanceId与InstanceGroupId必须任选一个传入）
+                     * @param _instanceId 实例ID（InstanceId与InstanceGroupId必须任选一个传入）
                      * @deprecated
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例组ID
-                     * @return InstanceGroupId 实例组ID
+                     * 获取实例组ID（InstanceId与InstanceGroupId必须任选一个传入）
+                     * @return InstanceGroupId 实例组ID（InstanceId与InstanceGroupId必须任选一个传入）
                      * 
                      */
                     std::string GetInstanceGroupId() const;
 
                     /**
-                     * 设置实例组ID
-                     * @param _instanceGroupId 实例组ID
+                     * 设置实例组ID（InstanceId与InstanceGroupId必须任选一个传入）
+                     * @param _instanceGroupId 实例组ID（InstanceId与InstanceGroupId必须任选一个传入）
                      * 
                      */
                     void SetInstanceGroupId(const std::string& _instanceGroupId);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID
+                     * 实例ID（InstanceId与InstanceGroupId必须任选一个传入）
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例组ID
+                     * 实例组ID（InstanceId与InstanceGroupId必须任选一个传入）
                      */
                     std::string m_instanceGroupId;
                     bool m_instanceGroupIdHasBeenSet;

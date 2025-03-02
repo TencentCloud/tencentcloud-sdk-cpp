@@ -640,6 +640,27 @@ false（默认）：发送正常请求，通过检查后直接创建实例。
                      */
                     bool DisableApiTerminationHasBeenSet() const;
 
+                    /**
+                     * 获取标签描述列表。通过指定该参数可以绑定标签到实例启动模板。
+                     * @return LaunchTemplateTagSpecification 标签描述列表。通过指定该参数可以绑定标签到实例启动模板。
+                     * 
+                     */
+                    std::vector<TagSpecification> GetLaunchTemplateTagSpecification() const;
+
+                    /**
+                     * 设置标签描述列表。通过指定该参数可以绑定标签到实例启动模板。
+                     * @param _launchTemplateTagSpecification 标签描述列表。通过指定该参数可以绑定标签到实例启动模板。
+                     * 
+                     */
+                    void SetLaunchTemplateTagSpecification(const std::vector<TagSpecification>& _launchTemplateTagSpecification);
+
+                    /**
+                     * 判断参数 LaunchTemplateTagSpecification 是否已赋值
+                     * @return LaunchTemplateTagSpecification 是否已赋值
+                     * 
+                     */
+                    bool LaunchTemplateTagSpecificationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -808,6 +829,12 @@ false（默认）：发送正常请求，通过检查后直接创建实例。
                      */
                     bool m_disableApiTermination;
                     bool m_disableApiTerminationHasBeenSet;
+
+                    /**
+                     * 标签描述列表。通过指定该参数可以绑定标签到实例启动模板。
+                     */
+                    std::vector<TagSpecification> m_launchTemplateTagSpecification;
+                    bool m_launchTemplateTagSpecificationHasBeenSet;
 
                 };
             }

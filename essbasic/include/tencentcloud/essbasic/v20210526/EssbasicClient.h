@@ -135,6 +135,8 @@
 #include <tencentcloud/essbasic/v20210526/model/CreateCloseOrganizationUrlResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateConsoleLoginUrlRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateConsoleLoginUrlResponse.h>
+#include <tencentcloud/essbasic/v20210526/model/CreateEmployeeChangeUrlRequest.h>
+#include <tencentcloud/essbasic/v20210526/model/CreateEmployeeChangeUrlResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateEmployeeQualificationSealQrCodeRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateEmployeeQualificationSealQrCodeResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/CreateFlowBlockchainEvidenceUrlRequest.h>
@@ -377,6 +379,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateConsoleLoginUrlResponse> CreateConsoleLoginUrlOutcome;
                 typedef std::future<CreateConsoleLoginUrlOutcome> CreateConsoleLoginUrlOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::CreateConsoleLoginUrlRequest&, CreateConsoleLoginUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateConsoleLoginUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateEmployeeChangeUrlResponse> CreateEmployeeChangeUrlOutcome;
+                typedef std::future<CreateEmployeeChangeUrlOutcome> CreateEmployeeChangeUrlOutcomeCallable;
+                typedef std::function<void(const EssbasicClient*, const Model::CreateEmployeeChangeUrlRequest&, CreateEmployeeChangeUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEmployeeChangeUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateEmployeeQualificationSealQrCodeResponse> CreateEmployeeQualificationSealQrCodeOutcome;
                 typedef std::future<CreateEmployeeQualificationSealQrCodeOutcome> CreateEmployeeQualificationSealQrCodeOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::CreateEmployeeQualificationSealQrCodeRequest&, CreateEmployeeQualificationSealQrCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEmployeeQualificationSealQrCodeAsyncHandler;
@@ -1614,6 +1619,19 @@ Web链接访问后，会根据子客企业(**Agent中ProxyOrganizationOpenId表�
                 CreateConsoleLoginUrlOutcome CreateConsoleLoginUrl(const Model::CreateConsoleLoginUrlRequest &request);
                 void CreateConsoleLoginUrlAsync(const Model::CreateConsoleLoginUrlRequest& request, const CreateConsoleLoginUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateConsoleLoginUrlOutcomeCallable CreateConsoleLoginUrlCallable(const Model::CreateConsoleLoginUrlRequest& request);
+
+                /**
+                 *生成员工信息变更链接，当前仅支持变更手机号
+
+注: 
+1. 目前仅支持修改员工手机号，待修改员工必须已经实名且在职
+2. 仅支持返回小程序链接
+                 * @param req CreateEmployeeChangeUrlRequest
+                 * @return CreateEmployeeChangeUrlOutcome
+                 */
+                CreateEmployeeChangeUrlOutcome CreateEmployeeChangeUrl(const Model::CreateEmployeeChangeUrlRequest &request);
+                void CreateEmployeeChangeUrlAsync(const Model::CreateEmployeeChangeUrlRequest& request, const CreateEmployeeChangeUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateEmployeeChangeUrlOutcomeCallable CreateEmployeeChangeUrlCallable(const Model::CreateEmployeeChangeUrlRequest& request);
 
                 /**
                  *该接口用于获取个人授权执业章给企业的二维码，需要个人用户通过微信扫码。

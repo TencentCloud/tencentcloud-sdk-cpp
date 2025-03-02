@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取授权企业id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrganizationId 授权企业id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOrganizationId() const;
 
                     /**
                      * 设置授权企业id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _organizationId 授权企业id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOrganizationId(const std::string& _organizationId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取授权企业名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrganizationName 授权企业名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOrganizationName() const;
 
                     /**
                      * 设置授权企业名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _organizationName 授权企业名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOrganizationName(const std::string& _organizationName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取被授权企业id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuthorizedOrganizationId 被授权企业id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAuthorizedOrganizationId() const;
 
                     /**
                      * 设置被授权企业id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _authorizedOrganizationId 被授权企业id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAuthorizedOrganizationId(const std::string& _authorizedOrganizationId);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取被授权企业名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuthorizedOrganizationName 被授权企业名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAuthorizedOrganizationName() const;
 
                     /**
                      * 设置被授权企业名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _authorizedOrganizationName 被授权企业名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAuthorizedOrganizationName(const std::string& _authorizedOrganizationName);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取授权模板id（仅当授权方式为模板授权时有值）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TemplateId 授权模板id（仅当授权方式为模板授权时有值）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTemplateId() const;
 
                     /**
                      * 设置授权模板id（仅当授权方式为模板授权时有值）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _templateId 授权模板id（仅当授权方式为模板授权时有值）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTemplateId(const std::string& _templateId);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取授权模板名称（仅当授权方式为模板授权时有值）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TemplateName 授权模板名称（仅当授权方式为模板授权时有值）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTemplateName() const;
 
                     /**
                      * 设置授权模板名称（仅当授权方式为模板授权时有值）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _templateName 授权模板名称（仅当授权方式为模板授权时有值）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTemplateName(const std::string& _templateName);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取授权时间，格式为时间戳，单位s
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuthorizeTime 授权时间，格式为时间戳，单位s
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAuthorizeTime() const;
 
                     /**
                      * 设置授权时间，格式为时间戳，单位s
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _authorizeTime 授权时间，格式为时间戳，单位s
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAuthorizeTime(const int64_t& _authorizeTime);
@@ -225,49 +197,42 @@ namespace TencentCloud
 
                     /**
                      * 授权企业id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_organizationId;
                     bool m_organizationIdHasBeenSet;
 
                     /**
                      * 授权企业名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_organizationName;
                     bool m_organizationNameHasBeenSet;
 
                     /**
                      * 被授权企业id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_authorizedOrganizationId;
                     bool m_authorizedOrganizationIdHasBeenSet;
 
                     /**
                      * 被授权企业名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_authorizedOrganizationName;
                     bool m_authorizedOrganizationNameHasBeenSet;
 
                     /**
                      * 授权模板id（仅当授权方式为模板授权时有值）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;
 
                     /**
                      * 授权模板名称（仅当授权方式为模板授权时有值）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_templateName;
                     bool m_templateNameHasBeenSet;
 
                     /**
                      * 授权时间，格式为时间戳，单位s
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_authorizeTime;
                     bool m_authorizeTimeHasBeenSet;

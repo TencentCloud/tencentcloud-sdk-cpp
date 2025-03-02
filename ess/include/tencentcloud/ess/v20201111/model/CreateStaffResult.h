@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建员工的成功列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SuccessEmployeeData 创建员工的成功列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SuccessCreateStaffData> GetSuccessEmployeeData() const;
 
                     /**
                      * 设置创建员工的成功列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _successEmployeeData 创建员工的成功列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSuccessEmployeeData(const std::vector<SuccessCreateStaffData>& _successEmployeeData);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建员工的失败列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailedEmployeeData 创建员工的失败列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<FailedCreateStaffData> GetFailedEmployeeData() const;
 
                     /**
                      * 设置创建员工的失败列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _failedEmployeeData 创建员工的失败列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFailedEmployeeData(const std::vector<FailedCreateStaffData>& _failedEmployeeData);
@@ -102,14 +94,12 @@ namespace TencentCloud
 
                     /**
                      * 创建员工的成功列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SuccessCreateStaffData> m_successEmployeeData;
                     bool m_successEmployeeDataHasBeenSet;
 
                     /**
                      * 创建员工的失败列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FailedCreateStaffData> m_failedEmployeeData;
                     bool m_failedEmployeeDataHasBeenSet;

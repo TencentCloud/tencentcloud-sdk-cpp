@@ -51,11 +51,9 @@ namespace TencentCloud
                      * 获取截帧时间。
 点播文件：该值为相对于视频偏移时间，单位为秒，例如：0，5，10
 直播流：该值为时间戳，例如：1594650717
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OffsetTime 截帧时间。
 点播文件：该值为相对于视频偏移时间，单位为秒，例如：0，5，10
 直播流：该值为时间戳，例如：1594650717
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOffsetTime() const;
@@ -64,11 +62,9 @@ namespace TencentCloud
                      * 设置截帧时间。
 点播文件：该值为相对于视频偏移时间，单位为秒，例如：0，5，10
 直播流：该值为时间戳，例如：1594650717
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _offsetTime 截帧时间。
 点播文件：该值为相对于视频偏移时间，单位为秒，例如：0，5，10
 直播流：该值为时间戳，例如：1594650717
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOffsetTime(const std::string& _offsetTime);
@@ -82,18 +78,14 @@ namespace TencentCloud
 
                     /**
                      * 获取结果集
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 结果集
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AudioResult GetResult() const;
 
                     /**
                      * 设置结果集
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _result 结果集
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResult(const AudioResult& _result);
@@ -105,23 +97,48 @@ namespace TencentCloud
                      */
                     bool ResultHasBeenSet() const;
 
+                    /**
+                     * 获取创建时间
+                     * @return CreatedAt 创建时间
+                     * 
+                     */
+                    std::string GetCreatedAt() const;
+
+                    /**
+                     * 设置创建时间
+                     * @param _createdAt 创建时间
+                     * 
+                     */
+                    void SetCreatedAt(const std::string& _createdAt);
+
+                    /**
+                     * 判断参数 CreatedAt 是否已赋值
+                     * @return CreatedAt 是否已赋值
+                     * 
+                     */
+                    bool CreatedAtHasBeenSet() const;
+
                 private:
 
                     /**
                      * 截帧时间。
 点播文件：该值为相对于视频偏移时间，单位为秒，例如：0，5，10
 直播流：该值为时间戳，例如：1594650717
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_offsetTime;
                     bool m_offsetTimeHasBeenSet;
 
                     /**
                      * 结果集
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AudioResult m_result;
                     bool m_resultHasBeenSet;
+
+                    /**
+                     * 创建时间
+                     */
+                    std::string m_createdAt;
+                    bool m_createdAtHasBeenSet;
 
                 };
             }

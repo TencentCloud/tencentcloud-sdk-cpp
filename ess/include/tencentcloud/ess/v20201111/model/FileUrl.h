@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取下载文件的附加信息。如果是pdf文件，会返回pdf文件每页的有效高宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Option 下载文件的附加信息。如果是pdf文件，会返回pdf文件每页的有效高宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOption() const;
 
                     /**
                      * 设置下载文件的附加信息。如果是pdf文件，会返回pdf文件每页的有效高宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _option 下载文件的附加信息。如果是pdf文件，会返回pdf文件每页的有效高宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOption(const std::string& _option);
@@ -102,7 +98,6 @@ namespace TencentCloud
 
                     /**
                      * 下载文件的附加信息。如果是pdf文件，会返回pdf文件每页的有效高宽
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_option;
                     bool m_optionHasBeenSet;

@@ -91,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取合同流程的类别分类（如销售合同/入职合同等）。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowType 合同流程的类别分类（如销售合同/入职合同等）。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFlowType() const;
 
                     /**
                      * 设置合同流程的类别分类（如销售合同/入职合同等）。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _flowType 合同流程的类别分类（如销售合同/入职合同等）。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFlowType(const std::string& _flowType);
@@ -137,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当合同流程状态为已拒签（即 FlowStatus=3）或已撤销（即 FlowStatus=6）时，此字段 FlowMessage 为拒签或撤销原因。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowMessage 当合同流程状态为已拒签（即 FlowStatus=3）或已撤销（即 FlowStatus=6）时，此字段 FlowMessage 为拒签或撤销原因。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFlowMessage() const;
 
                     /**
                      * 设置当合同流程状态为已拒签（即 FlowStatus=3）或已撤销（即 FlowStatus=6）时，此字段 FlowMessage 为拒签或撤销原因。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _flowMessage 当合同流程状态为已拒签（即 FlowStatus=3）或已撤销（即 FlowStatus=6）时，此字段 FlowMessage 为拒签或撤销原因。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFlowMessage(const std::string& _flowMessage);
@@ -162,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取合同流程描述信息。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowDescription 合同流程描述信息。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFlowDescription() const;
 
                     /**
                      * 设置合同流程描述信息。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _flowDescription 合同流程描述信息。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFlowDescription(const std::string& _flowDescription);
@@ -250,18 +238,14 @@ namespace TencentCloud
 
                     /**
                      * 获取合同流程发起方的员工编号, 即员工在腾讯电子签平台的唯一身份标识。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Creator 合同流程发起方的员工编号, 即员工在腾讯电子签平台的唯一身份标识。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreator() const;
 
                     /**
                      * 设置合同流程发起方的员工编号, 即员工在腾讯电子签平台的唯一身份标识。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _creator 合同流程发起方的员工编号, 即员工在腾讯电子签平台的唯一身份标识。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreator(const std::string& _creator);
@@ -289,7 +273,6 @@ namespace TencentCloud
 
                     /**
                      * 合同流程的类别分类（如销售合同/入职合同等）。	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_flowType;
                     bool m_flowTypeHasBeenSet;
@@ -302,14 +285,12 @@ namespace TencentCloud
 
                     /**
                      * 当合同流程状态为已拒签（即 FlowStatus=3）或已撤销（即 FlowStatus=6）时，此字段 FlowMessage 为拒签或撤销原因。	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_flowMessage;
                     bool m_flowMessageHasBeenSet;
 
                     /**
                      * 合同流程描述信息。	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_flowDescription;
                     bool m_flowDescriptionHasBeenSet;
@@ -334,7 +315,6 @@ namespace TencentCloud
 
                     /**
                      * 合同流程发起方的员工编号, 即员工在腾讯电子签平台的唯一身份标识。	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_creator;
                     bool m_creatorHasBeenSet;

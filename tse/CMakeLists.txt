@@ -320,6 +320,7 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/ServiceGovernanceInfo.h
   include/tencentcloud/tse/v20201207/model/DescribeNacosReplicasResponse.h
   include/tencentcloud/tse/v20201207/model/KongPassiveHealthCheck.h
+  include/tencentcloud/tse/v20201207/model/CanaryPriorityRule.h
   include/tencentcloud/tse/v20201207/model/CloudNativeAPIGatewayVpcConfig.h
   include/tencentcloud/tse/v20201207/model/DescribeGovernanceInstancesResponse.h
   include/tencentcloud/tse/v20201207/model/ModifyGovernanceNamespacesResponse.h
@@ -683,6 +684,7 @@ set(tse_src
   src/v20201207/model/ServiceGovernanceInfo.cpp
   src/v20201207/model/DescribeNacosReplicasResponse.cpp
   src/v20201207/model/KongPassiveHealthCheck.cpp
+  src/v20201207/model/CanaryPriorityRule.cpp
   src/v20201207/model/CloudNativeAPIGatewayVpcConfig.cpp
   src/v20201207/model/DescribeGovernanceInstancesResponse.cpp
   src/v20201207/model/ModifyGovernanceNamespacesResponse.cpp

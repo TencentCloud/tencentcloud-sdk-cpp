@@ -285,18 +285,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群属性(包括集群不同属性的MAP，属性字段包括NodeNameType (lan-ip模式和hostname 模式，默认无lan-ip模式))
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Property 集群属性(包括集群不同属性的MAP，属性字段包括NodeNameType (lan-ip模式和hostname 模式，默认无lan-ip模式))
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProperty() const;
 
                     /**
                      * 设置集群属性(包括集群不同属性的MAP，属性字段包括NodeNameType (lan-ip模式和hostname 模式，默认无lan-ip模式))
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _property 集群属性(包括集群不同属性的MAP，属性字段包括NodeNameType (lan-ip模式和hostname 模式，默认无lan-ip模式))
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProperty(const std::string& _property);
@@ -331,18 +327,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群使用镜像id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageId 集群使用镜像id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetImageId() const;
 
                     /**
                      * 设置集群使用镜像id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _imageId 集群使用镜像id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetImageId(const std::string& _imageId);
@@ -356,18 +348,14 @@ namespace TencentCloud
 
                     /**
                      * 获取OsCustomizeType 系统定制类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OsCustomizeType OsCustomizeType 系统定制类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOsCustomizeType() const;
 
                     /**
                      * 设置OsCustomizeType 系统定制类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _osCustomizeType OsCustomizeType 系统定制类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOsCustomizeType(const std::string& _osCustomizeType);
@@ -381,18 +369,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群运行环境docker或container
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContainerRuntime 集群运行环境docker或container
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContainerRuntime() const;
 
                     /**
                      * 设置集群运行环境docker或container
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _containerRuntime 集群运行环境docker或container
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContainerRuntime(const std::string& _containerRuntime);
@@ -406,18 +390,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createdTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -431,18 +411,14 @@ namespace TencentCloud
 
                     /**
                      * 获取删除保护开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeletionProtection 删除保护开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetDeletionProtection() const;
 
                     /**
                      * 设置删除保护开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deletionProtection 删除保护开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeletionProtection(const bool& _deletionProtection);
@@ -456,18 +432,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群是否开启第三方节点支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableExternalNode 集群是否开启第三方节点支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnableExternalNode() const;
 
                     /**
                      * 设置集群是否开启第三方节点支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enableExternalNode 集群是否开启第三方节点支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnableExternalNode(const bool& _enableExternalNode);
@@ -481,18 +453,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群等级，针对托管集群生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterLevel 集群等级，针对托管集群生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterLevel() const;
 
                     /**
                      * 设置集群等级，针对托管集群生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterLevel 集群等级，针对托管集群生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterLevel(const std::string& _clusterLevel);
@@ -506,18 +474,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自动变配集群等级，针对托管集群生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoUpgradeClusterLevel 自动变配集群等级，针对托管集群生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetAutoUpgradeClusterLevel() const;
 
                     /**
                      * 设置自动变配集群等级，针对托管集群生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _autoUpgradeClusterLevel 自动变配集群等级，针对托管集群生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAutoUpgradeClusterLevel(const bool& _autoUpgradeClusterLevel);
@@ -531,18 +495,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启QGPU共享
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return QGPUShareEnable 是否开启QGPU共享
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetQGPUShareEnable() const;
 
                     /**
                      * 设置是否开启QGPU共享
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _qGPUShareEnable 是否开启QGPU共享
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQGPUShareEnable(const bool& _qGPUShareEnable);
@@ -556,18 +516,14 @@ namespace TencentCloud
 
                     /**
                      * 获取运行时版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuntimeVersion 运行时版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuntimeVersion() const;
 
                     /**
                      * 设置运行时版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _runtimeVersion 运行时版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuntimeVersion(const std::string& _runtimeVersion);
@@ -581,18 +537,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群当前etcd数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterEtcdNodeNum 集群当前etcd数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetClusterEtcdNodeNum() const;
 
                     /**
                      * 设置集群当前etcd数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterEtcdNodeNum 集群当前etcd数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterEtcdNodeNum(const uint64_t& _clusterEtcdNodeNum);
@@ -606,18 +558,14 @@ namespace TencentCloud
 
                     /**
                      * 获取本地专用集群Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CdcId 本地专用集群Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCdcId() const;
 
                     /**
                      * 设置本地专用集群Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cdcId 本地专用集群Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCdcId(const std::string& _cdcId);
@@ -700,7 +648,6 @@ namespace TencentCloud
 
                     /**
                      * 集群属性(包括集群不同属性的MAP，属性字段包括NodeNameType (lan-ip模式和hostname 模式，默认无lan-ip模式))
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_property;
                     bool m_propertyHasBeenSet;
@@ -713,84 +660,72 @@ namespace TencentCloud
 
                     /**
                      * 集群使用镜像id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_imageId;
                     bool m_imageIdHasBeenSet;
 
                     /**
                      * OsCustomizeType 系统定制类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_osCustomizeType;
                     bool m_osCustomizeTypeHasBeenSet;
 
                     /**
                      * 集群运行环境docker或container
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_containerRuntime;
                     bool m_containerRuntimeHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
 
                     /**
                      * 删除保护开关
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_deletionProtection;
                     bool m_deletionProtectionHasBeenSet;
 
                     /**
                      * 集群是否开启第三方节点支持
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enableExternalNode;
                     bool m_enableExternalNodeHasBeenSet;
 
                     /**
                      * 集群等级，针对托管集群生效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterLevel;
                     bool m_clusterLevelHasBeenSet;
 
                     /**
                      * 自动变配集群等级，针对托管集群生效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_autoUpgradeClusterLevel;
                     bool m_autoUpgradeClusterLevelHasBeenSet;
 
                     /**
                      * 是否开启QGPU共享
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_qGPUShareEnable;
                     bool m_qGPUShareEnableHasBeenSet;
 
                     /**
                      * 运行时版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_runtimeVersion;
                     bool m_runtimeVersionHasBeenSet;
 
                     /**
                      * 集群当前etcd数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_clusterEtcdNodeNum;
                     bool m_clusterEtcdNodeNumHasBeenSet;
 
                     /**
                      * 本地专用集群Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cdcId;
                     bool m_cdcIdHasBeenSet;

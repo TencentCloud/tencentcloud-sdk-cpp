@@ -151,18 +151,14 @@ namespace TencentCloud
 
                     /**
                      * 获取操作扩展服务的操作人第三方应用平台的用户openid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OperatorOpenId 操作扩展服务的操作人第三方应用平台的用户openid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOperatorOpenId() const;
 
                     /**
                      * 设置操作扩展服务的操作人第三方应用平台的用户openid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _operatorOpenId 操作扩展服务的操作人第三方应用平台的用户openid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOperatorOpenId(const std::string& _operatorOpenId);
@@ -176,18 +172,14 @@ namespace TencentCloud
 
                     /**
                      * 获取扩展服务的操作时间，格式为Unix标准时间戳（秒）。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OperateOn 扩展服务的操作时间，格式为Unix标准时间戳（秒）。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetOperateOn() const;
 
                     /**
                      * 设置扩展服务的操作时间，格式为Unix标准时间戳（秒）。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _operateOn 扩展服务的操作时间，格式为Unix标准时间戳（秒）。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOperateOn(const int64_t& _operateOn);
@@ -231,14 +223,12 @@ namespace TencentCloud
 
                     /**
                      * 操作扩展服务的操作人第三方应用平台的用户openid
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_operatorOpenId;
                     bool m_operatorOpenIdHasBeenSet;
 
                     /**
                      * 扩展服务的操作时间，格式为Unix标准时间戳（秒）。	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_operateOn;
                     bool m_operateOnHasBeenSet;

@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cynosdb/v20190107/model/LogicBackupConfigInfo.h>
 
 
 namespace TencentCloud
@@ -133,6 +134,22 @@ namespace TencentCloud
                      */
                     bool LogicCrossRegionsConfigUpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取自动逻辑备份配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LogicBackupConfig 自动逻辑备份配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    LogicBackupConfigInfo GetLogicBackupConfig() const;
+
+                    /**
+                     * 判断参数 LogicBackupConfig 是否已赋值
+                     * @return LogicBackupConfig 是否已赋值
+                     * 
+                     */
+                    bool LogicBackupConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -173,6 +190,13 @@ namespace TencentCloud
                      */
                     std::string m_logicCrossRegionsConfigUpdateTime;
                     bool m_logicCrossRegionsConfigUpdateTimeHasBeenSet;
+
+                    /**
+                     * 自动逻辑备份配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    LogicBackupConfigInfo m_logicBackupConfig;
+                    bool m_logicBackupConfigHasBeenSet;
 
                 };
             }

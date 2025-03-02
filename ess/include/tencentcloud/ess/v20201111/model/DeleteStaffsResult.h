@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取删除员工的成功数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SuccessEmployeeData 删除员工的成功数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SuccessDeleteStaffData> GetSuccessEmployeeData() const;
 
                     /**
                      * 设置删除员工的成功数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _successEmployeeData 删除员工的成功数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSuccessEmployeeData(const std::vector<SuccessDeleteStaffData>& _successEmployeeData);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取删除员工的失败数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailedEmployeeData 删除员工的失败数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<FailedDeleteStaffData> GetFailedEmployeeData() const;
 
                     /**
                      * 设置删除员工的失败数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _failedEmployeeData 删除员工的失败数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFailedEmployeeData(const std::vector<FailedDeleteStaffData>& _failedEmployeeData);
@@ -102,14 +94,12 @@ namespace TencentCloud
 
                     /**
                      * 删除员工的成功数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SuccessDeleteStaffData> m_successEmployeeData;
                     bool m_successEmployeeDataHasBeenSet;
 
                     /**
                      * 删除员工的失败数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FailedDeleteStaffData> m_failedEmployeeData;
                     bool m_failedEmployeeDataHasBeenSet;

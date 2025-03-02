@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取印章来源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GenerateType 印章来源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGenerateType() const;
 
                     /**
                      * 设置印章来源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _generateType 印章来源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGenerateType(const std::string& _generateType);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取印章来源类型描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GenerateTypeDesc 印章来源类型描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGenerateTypeDesc() const;
 
                     /**
                      * 设置印章来源类型描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _generateTypeDesc 印章来源类型描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGenerateTypeDesc(const std::string& _generateTypeDesc);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取印章来源logo
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GenerateTypeLogo 印章来源logo
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGenerateTypeLogo() const;
 
                     /**
                      * 设置印章来源logo
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _generateTypeLogo 印章来源logo
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGenerateTypeLogo(const std::string& _generateTypeLogo);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 印章来源类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_generateType;
                     bool m_generateTypeHasBeenSet;
 
                     /**
                      * 印章来源类型描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_generateTypeDesc;
                     bool m_generateTypeDescHasBeenSet;
 
                     /**
                      * 印章来源logo
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_generateTypeLogo;
                     bool m_generateTypeLogoHasBeenSet;

@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取镜像 ID 列表。
-                     * @return BlueprintIds 镜像 ID 列表。
+                     * 获取镜像 ID 列表。可通过[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)接口返回值字段BlueprintSet获取。列表长度最大值为100。
+                     * @return BlueprintIds 镜像 ID 列表。可通过[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)接口返回值字段BlueprintSet获取。列表长度最大值为100。
                      * 
                      */
                     std::vector<std::string> GetBlueprintIds() const;
 
                     /**
-                     * 设置镜像 ID 列表。
-                     * @param _blueprintIds 镜像 ID 列表。
+                     * 设置镜像 ID 列表。可通过[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)接口返回值字段BlueprintSet获取。列表长度最大值为100。
+                     * @param _blueprintIds 镜像 ID 列表。可通过[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)接口返回值字段BlueprintSet获取。列表长度最大值为100。
                      * 
                      */
                     void SetBlueprintIds(const std::vector<std::string>& _blueprintIds);
@@ -218,7 +218,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 镜像 ID 列表。
+                     * 镜像 ID 列表。可通过[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)接口返回值字段BlueprintSet获取。列表长度最大值为100。
                      */
                     std::vector<std::string> m_blueprintIds;
                     bool m_blueprintIdsHasBeenSet;

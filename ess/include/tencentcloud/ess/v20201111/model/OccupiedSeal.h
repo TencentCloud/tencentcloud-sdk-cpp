@@ -176,18 +176,14 @@ namespace TencentCloud
 
                     /**
                      * 获取审核失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailReason 审核失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFailReason() const;
 
                     /**
                      * 设置审核失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _failReason 审核失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFailReason(const std::string& _failReason);
@@ -264,18 +260,14 @@ namespace TencentCloud
 
                     /**
                      * 获取授权人列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuthorizedUsers 授权人列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AuthorizedUser> GetAuthorizedUsers() const;
 
                     /**
                      * 设置授权人列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _authorizedUsers 授权人列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAuthorizedUsers(const std::vector<AuthorizedUser>& _authorizedUsers);
@@ -289,18 +281,14 @@ namespace TencentCloud
 
                     /**
                      * 获取印章扩展数据信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExtendScene 印章扩展数据信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ExtendScene GetExtendScene() const;
 
                     /**
                      * 设置印章扩展数据信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _extendScene 印章扩展数据信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExtendScene(const ExtendScene& _extendScene);
@@ -352,7 +340,6 @@ namespace TencentCloud
 
                     /**
                      * 审核失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_failReason;
                     bool m_failReasonHasBeenSet;
@@ -377,14 +364,12 @@ namespace TencentCloud
 
                     /**
                      * 授权人列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AuthorizedUser> m_authorizedUsers;
                     bool m_authorizedUsersHasBeenSet;
 
                     /**
                      * 印章扩展数据信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ExtendScene m_extendScene;
                     bool m_extendSceneHasBeenSet;

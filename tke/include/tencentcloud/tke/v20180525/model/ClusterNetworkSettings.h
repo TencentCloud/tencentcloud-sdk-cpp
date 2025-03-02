@@ -195,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取service的网络模式，当前参数只适用于ipvs+bpf模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return KubeProxyMode service的网络模式，当前参数只适用于ipvs+bpf模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKubeProxyMode() const;
 
                     /**
                      * 设置service的网络模式，当前参数只适用于ipvs+bpf模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _kubeProxyMode service的网络模式，当前参数只适用于ipvs+bpf模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKubeProxyMode(const std::string& _kubeProxyMode);
@@ -220,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用于分配service的IP range，不得与 VPC CIDR 冲突，也不得与同 VPC 内其他集群 CIDR 冲突
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceCIDR 用于分配service的IP range，不得与 VPC CIDR 冲突，也不得与同 VPC 内其他集群 CIDR 冲突
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetServiceCIDR() const;
 
                     /**
                      * 设置用于分配service的IP range，不得与 VPC CIDR 冲突，也不得与同 VPC 内其他集群 CIDR 冲突
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serviceCIDR 用于分配service的IP range，不得与 VPC CIDR 冲突，也不得与同 VPC 内其他集群 CIDR 冲突
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServiceCIDR(const std::string& _serviceCIDR);
@@ -270,18 +262,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否忽略 ServiceCIDR 冲突错误, 仅在 VPC-CNI 模式生效，默认不忽略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IgnoreServiceCIDRConflict 是否忽略 ServiceCIDR 冲突错误, 仅在 VPC-CNI 模式生效，默认不忽略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIgnoreServiceCIDRConflict() const;
 
                     /**
                      * 设置是否忽略 ServiceCIDR 冲突错误, 仅在 VPC-CNI 模式生效，默认不忽略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ignoreServiceCIDRConflict 是否忽略 ServiceCIDR 冲突错误, 仅在 VPC-CNI 模式生效，默认不忽略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIgnoreServiceCIDRConflict(const bool& _ignoreServiceCIDRConflict);
@@ -295,18 +283,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群VPC-CNI模式是否为非双栈集群，默认false，非双栈。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsDualStack 集群VPC-CNI模式是否为非双栈集群，默认false，非双栈。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsDualStack() const;
 
                     /**
                      * 设置集群VPC-CNI模式是否为非双栈集群，默认false，非双栈。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isDualStack 集群VPC-CNI模式是否为非双栈集群，默认false，非双栈。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsDualStack(const bool& _isDualStack);
@@ -320,18 +304,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用于分配service的IP range，由系统自动分配
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ipv6ServiceCIDR 用于分配service的IP range，由系统自动分配
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIpv6ServiceCIDR() const;
 
                     /**
                      * 设置用于分配service的IP range，由系统自动分配
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ipv6ServiceCIDR 用于分配service的IP range，由系统自动分配
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIpv6ServiceCIDR(const std::string& _ipv6ServiceCIDR);
@@ -346,10 +326,8 @@ namespace TencentCloud
                     /**
                      * 获取集群Cilium Mode配置
 - clusterIP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CiliumMode 集群Cilium Mode配置
 - clusterIP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCiliumMode() const;
@@ -357,10 +335,8 @@ namespace TencentCloud
                     /**
                      * 设置集群Cilium Mode配置
 - clusterIP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ciliumMode 集群Cilium Mode配置
 - clusterIP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCiliumMode(const std::string& _ciliumMode);
@@ -418,14 +394,12 @@ namespace TencentCloud
 
                     /**
                      * service的网络模式，当前参数只适用于ipvs+bpf模式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_kubeProxyMode;
                     bool m_kubeProxyModeHasBeenSet;
 
                     /**
                      * 用于分配service的IP range，不得与 VPC CIDR 冲突，也不得与同 VPC 内其他集群 CIDR 冲突
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serviceCIDR;
                     bool m_serviceCIDRHasBeenSet;
@@ -439,21 +413,18 @@ namespace TencentCloud
 
                     /**
                      * 是否忽略 ServiceCIDR 冲突错误, 仅在 VPC-CNI 模式生效，默认不忽略
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_ignoreServiceCIDRConflict;
                     bool m_ignoreServiceCIDRConflictHasBeenSet;
 
                     /**
                      * 集群VPC-CNI模式是否为非双栈集群，默认false，非双栈。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isDualStack;
                     bool m_isDualStackHasBeenSet;
 
                     /**
                      * 用于分配service的IP range，由系统自动分配
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ipv6ServiceCIDR;
                     bool m_ipv6ServiceCIDRHasBeenSet;
@@ -461,7 +432,6 @@ namespace TencentCloud
                     /**
                      * 集群Cilium Mode配置
 - clusterIP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ciliumMode;
                     bool m_ciliumModeHasBeenSet;

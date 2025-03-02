@@ -50,11 +50,9 @@ namespace TencentCloud
                      * 获取第三方应用平台自定义，对应第三方平台子客企业员工的唯一标识。
 
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OpenId 第三方应用平台自定义，对应第三方平台子客企业员工的唯一标识。
 
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOpenId() const;
@@ -63,11 +61,9 @@ namespace TencentCloud
                      * 设置第三方应用平台自定义，对应第三方平台子客企业员工的唯一标识。
 
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _openId 第三方应用平台自定义，对应第三方平台子客企业员工的唯一标识。
 
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOpenId(const std::string& _openId);
@@ -85,7 +81,6 @@ namespace TencentCloud
                      * 第三方应用平台自定义，对应第三方平台子客企业员工的唯一标识。
 
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_openId;
                     bool m_openIdHasBeenSet;

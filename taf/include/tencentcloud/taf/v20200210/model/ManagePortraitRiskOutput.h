@@ -70,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取返回码对应的信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 返回码对应的信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置返回码对应的信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _message 返回码对应的信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMessage(const std::string& _message);
@@ -128,7 +124,6 @@ namespace TencentCloud
 
                     /**
                      * 返回码对应的信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;

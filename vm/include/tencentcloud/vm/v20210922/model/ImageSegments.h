@@ -97,6 +97,48 @@ namespace TencentCloud
                      */
                     bool ResultHasBeenSet() const;
 
+                    /**
+                     * 获取时间
+                     * @return CreatedAt 时间
+                     * 
+                     */
+                    std::string GetCreatedAt() const;
+
+                    /**
+                     * 设置时间
+                     * @param _createdAt 时间
+                     * 
+                     */
+                    void SetCreatedAt(const std::string& _createdAt);
+
+                    /**
+                     * 判断参数 CreatedAt 是否已赋值
+                     * @return CreatedAt 是否已赋值
+                     * 
+                     */
+                    bool CreatedAtHasBeenSet() const;
+
+                    /**
+                     * 获取截帧毫秒时间
+                     * @return OffsetusTime 截帧毫秒时间
+                     * 
+                     */
+                    std::string GetOffsetusTime() const;
+
+                    /**
+                     * 设置截帧毫秒时间
+                     * @param _offsetusTime 截帧毫秒时间
+                     * 
+                     */
+                    void SetOffsetusTime(const std::string& _offsetusTime);
+
+                    /**
+                     * 判断参数 OffsetusTime 是否已赋值
+                     * @return OffsetusTime 是否已赋值
+                     * 
+                     */
+                    bool OffsetusTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -112,6 +154,18 @@ namespace TencentCloud
                      */
                     ImageResult m_result;
                     bool m_resultHasBeenSet;
+
+                    /**
+                     * 时间
+                     */
+                    std::string m_createdAt;
+                    bool m_createdAtHasBeenSet;
+
+                    /**
+                     * 截帧毫秒时间
+                     */
+                    std::string m_offsetusTime;
+                    bool m_offsetusTimeHasBeenSet;
 
                 };
             }

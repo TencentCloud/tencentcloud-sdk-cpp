@@ -356,12 +356,10 @@ style String 为字体风格设置 风格支持： font : 目前支持 黑体、
 CreateFlowsByTemplates 接口不使用此字段。
 
 <a href="https://dyn.ess.tencent.cn/guide/apivideo/channel_component_name.mp4" target="_blank">点击此处查看模板上控件ID的获取方式</a>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ComponentId 表单域或控件的ID，跟ComponentName二选一，不能全为空；
 CreateFlowsByTemplates 接口不使用此字段。
 
 <a href="https://dyn.ess.tencent.cn/guide/apivideo/channel_component_name.mp4" target="_blank">点击此处查看模板上控件ID的获取方式</a>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetComponentId() const;
@@ -371,12 +369,10 @@ CreateFlowsByTemplates 接口不使用此字段。
 CreateFlowsByTemplates 接口不使用此字段。
 
 <a href="https://dyn.ess.tencent.cn/guide/apivideo/channel_component_name.mp4" target="_blank">点击此处查看模板上控件ID的获取方式</a>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _componentId 表单域或控件的ID，跟ComponentName二选一，不能全为空；
 CreateFlowsByTemplates 接口不使用此字段。
 
 <a href="https://dyn.ess.tencent.cn/guide/apivideo/channel_component_name.mp4" target="_blank">点击此处查看模板上控件ID的获取方式</a>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetComponentId(const std::string& _componentId);
@@ -392,11 +388,9 @@ CreateFlowsByTemplates 接口不使用此字段。
                      * 获取控件的名字，跟ComponentId二选一，不能全为空
 
 <a href="https://dyn.ess.tencent.cn/guide/apivideo/channel_component_name.mp4" target="_blank">点击此处查看模板上控件名字的获取方式</a>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ComponentName 控件的名字，跟ComponentId二选一，不能全为空
 
 <a href="https://dyn.ess.tencent.cn/guide/apivideo/channel_component_name.mp4" target="_blank">点击此处查看模板上控件名字的获取方式</a>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetComponentName() const;
@@ -405,11 +399,9 @@ CreateFlowsByTemplates 接口不使用此字段。
                      * 设置控件的名字，跟ComponentId二选一，不能全为空
 
 <a href="https://dyn.ess.tencent.cn/guide/apivideo/channel_component_name.mp4" target="_blank">点击此处查看模板上控件名字的获取方式</a>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _componentName 控件的名字，跟ComponentId二选一，不能全为空
 
 <a href="https://dyn.ess.tencent.cn/guide/apivideo/channel_component_name.mp4" target="_blank">点击此处查看模板上控件名字的获取方式</a>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetComponentName(const std::string& _componentName);
@@ -423,18 +415,14 @@ CreateFlowsByTemplates 接口不使用此字段。
 
                     /**
                      * 获取是否锁定模板控件值，锁定后无法修改（用于嵌入式发起合同），true-锁定，false-不锁定
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LockComponentValue 是否锁定模板控件值，锁定后无法修改（用于嵌入式发起合同），true-锁定，false-不锁定
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetLockComponentValue() const;
 
                     /**
                      * 设置是否锁定模板控件值，锁定后无法修改（用于嵌入式发起合同），true-锁定，false-不锁定
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lockComponentValue 是否锁定模板控件值，锁定后无法修改（用于嵌入式发起合同），true-锁定，false-不锁定
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLockComponentValue(const bool& _lockComponentValue);
@@ -473,7 +461,6 @@ CreateFlowsByTemplates 接口不使用此字段。
 CreateFlowsByTemplates 接口不使用此字段。
 
 <a href="https://dyn.ess.tencent.cn/guide/apivideo/channel_component_name.mp4" target="_blank">点击此处查看模板上控件ID的获取方式</a>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_componentId;
                     bool m_componentIdHasBeenSet;
@@ -482,14 +469,12 @@ CreateFlowsByTemplates 接口不使用此字段。
                      * 控件的名字，跟ComponentId二选一，不能全为空
 
 <a href="https://dyn.ess.tencent.cn/guide/apivideo/channel_component_name.mp4" target="_blank">点击此处查看模板上控件名字的获取方式</a>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_componentName;
                     bool m_componentNameHasBeenSet;
 
                     /**
                      * 是否锁定模板控件值，锁定后无法修改（用于嵌入式发起合同），true-锁定，false-不锁定
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_lockComponentValue;
                     bool m_lockComponentValueHasBeenSet;

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部门id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DepartmentId 部门id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDepartmentId() const;
 
                     /**
                      * 设置部门id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _departmentId 部门id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDepartmentId(const std::string& _departmentId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部门名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DepartmentName 部门名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDepartmentName() const;
 
                     /**
                      * 设置部门名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _departmentName 部门名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDepartmentName(const std::string& _departmentName);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 部门id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_departmentId;
                     bool m_departmentIdHasBeenSet;
 
                     /**
                      * 部门名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_departmentName;
                     bool m_departmentNameHasBeenSet;

@@ -25,7 +25,8 @@ using namespace std;
 CreateCloudNativeAPIGatewayCanaryRuleRequest::CreateCloudNativeAPIGatewayCanaryRuleRequest() :
     m_gatewayIdHasBeenSet(false),
     m_serviceIdHasBeenSet(false),
-    m_canaryRuleHasBeenSet(false)
+    m_canaryRuleHasBeenSet(false),
+    m_canaryRuleListHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,21 @@ string CreateCloudNativeAPIGatewayCanaryRuleRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_canaryRule.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_canaryRuleListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CanaryRuleList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_canaryRuleList.begin(); itr != m_canaryRuleList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -115,6 +131,22 @@ void CreateCloudNativeAPIGatewayCanaryRuleRequest::SetCanaryRule(const CloudNati
 bool CreateCloudNativeAPIGatewayCanaryRuleRequest::CanaryRuleHasBeenSet() const
 {
     return m_canaryRuleHasBeenSet;
+}
+
+vector<CloudNativeAPIGatewayCanaryRule> CreateCloudNativeAPIGatewayCanaryRuleRequest::GetCanaryRuleList() const
+{
+    return m_canaryRuleList;
+}
+
+void CreateCloudNativeAPIGatewayCanaryRuleRequest::SetCanaryRuleList(const vector<CloudNativeAPIGatewayCanaryRule>& _canaryRuleList)
+{
+    m_canaryRuleList = _canaryRuleList;
+    m_canaryRuleListHasBeenSet = true;
+}
+
+bool CreateCloudNativeAPIGatewayCanaryRuleRequest::CanaryRuleListHasBeenSet() const
+{
+    return m_canaryRuleListHasBeenSet;
 }
 
 

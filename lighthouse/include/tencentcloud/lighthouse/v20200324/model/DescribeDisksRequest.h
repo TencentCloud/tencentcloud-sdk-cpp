@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取云硬盘ID列表。每次批量请求云硬盘的上限为 100。
-                     * @return DiskIds 云硬盘ID列表。每次批量请求云硬盘的上限为 100。
+                     * 获取云硬盘ID列表。可通过[DescribeDisks](https://cloud.tencent.com/document/product/1207/66093)接口返回值字段KeyPairSet获取。列表长度最大值为100。
+                     * @return DiskIds 云硬盘ID列表。可通过[DescribeDisks](https://cloud.tencent.com/document/product/1207/66093)接口返回值字段KeyPairSet获取。列表长度最大值为100。
                      * 
                      */
                     std::vector<std::string> GetDiskIds() const;
 
                     /**
-                     * 设置云硬盘ID列表。每次批量请求云硬盘的上限为 100。
-                     * @param _diskIds 云硬盘ID列表。每次批量请求云硬盘的上限为 100。
+                     * 设置云硬盘ID列表。可通过[DescribeDisks](https://cloud.tencent.com/document/product/1207/66093)接口返回值字段KeyPairSet获取。列表长度最大值为100。
+                     * @param _diskIds 云硬盘ID列表。可通过[DescribeDisks](https://cloud.tencent.com/document/product/1207/66093)接口返回值字段KeyPairSet获取。列表长度最大值为100。
                      * 
                      */
                     void SetDiskIds(const std::vector<std::string>& _diskIds);
@@ -280,7 +280,7 @@ disk-state
                 private:
 
                     /**
-                     * 云硬盘ID列表。每次批量请求云硬盘的上限为 100。
+                     * 云硬盘ID列表。可通过[DescribeDisks](https://cloud.tencent.com/document/product/1207/66093)接口返回值字段KeyPairSet获取。列表长度最大值为100。
                      */
                     std::vector<std::string> m_diskIds;
                     bool m_diskIdsHasBeenSet;

@@ -50,11 +50,9 @@ namespace TencentCloud
                      * 获取视频base64（其中包含全程问题和回答音频，mp4格式）
 
 注：`需进行base64解码获取视频文件`
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Video 视频base64（其中包含全程问题和回答音频，mp4格式）
 
 注：`需进行base64解码获取视频文件`
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVideo() const;
@@ -63,11 +61,9 @@ namespace TencentCloud
                      * 设置视频base64（其中包含全程问题和回答音频，mp4格式）
 
 注：`需进行base64解码获取视频文件`
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _video 视频base64（其中包含全程问题和回答音频，mp4格式）
 
 注：`需进行base64解码获取视频文件`
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVideo(const std::string& _video);
@@ -81,18 +77,14 @@ namespace TencentCloud
 
                     /**
                      * 获取 和答案匹配结果列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResultCode  和答案匹配结果列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetResultCode() const;
 
                     /**
                      * 设置 和答案匹配结果列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resultCode  和答案匹配结果列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResultCode(const std::vector<std::string>& _resultCode);
@@ -106,18 +98,14 @@ namespace TencentCloud
 
                     /**
                      * 获取回答问题语音识别结果列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AsrResult 回答问题语音识别结果列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetAsrResult() const;
 
                     /**
                      * 设置回答问题语音识别结果列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _asrResult 回答问题语音识别结果列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAsrResult(const std::vector<std::string>& _asrResult);
@@ -135,21 +123,18 @@ namespace TencentCloud
                      * 视频base64（其中包含全程问题和回答音频，mp4格式）
 
 注：`需进行base64解码获取视频文件`
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_video;
                     bool m_videoHasBeenSet;
 
                     /**
                      *  和答案匹配结果列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_resultCode;
                     bool m_resultCodeHasBeenSet;
 
                     /**
                      * 回答问题语音识别结果列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_asrResult;
                     bool m_asrResultHasBeenSet;

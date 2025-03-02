@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取合成任务Id，可以通过 ChannelGetTaskResultApi 接口获取任务信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskId 合成任务Id，可以通过 ChannelGetTaskResultApi 接口获取任务信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置合成任务Id，可以通过 ChannelGetTaskResultApi 接口获取任务信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskId 合成任务Id，可以通过 ChannelGetTaskResultApi 接口获取任务信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务状态：READY - 任务已完成；NOTREADY - 任务未完成；
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskStatus 任务状态：READY - 任务已完成；NOTREADY - 任务未完成；
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskStatus() const;
 
                     /**
                      * 设置任务状态：READY - 任务已完成；NOTREADY - 任务未完成；
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskStatus 任务状态：READY - 任务已完成；NOTREADY - 任务未完成；
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskStatus(const std::string& _taskStatus);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 合成任务Id，可以通过 ChannelGetTaskResultApi 接口获取任务信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
                      * 任务状态：READY - 任务已完成；NOTREADY - 任务未完成；
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskStatus;
                     bool m_taskStatusHasBeenSet;

@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取角色ID,为32位字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RoleId 角色ID,为32位字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRoleId() const;
 
                     /**
                      * 设置角色ID,为32位字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _roleId 角色ID,为32位字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRoleId(const std::string& _roleId);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取角色的名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RoleName 角色的名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRoleName() const;
 
                     /**
                      * 设置角色的名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _roleName 角色的名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRoleName(const std::string& _roleName);
@@ -128,18 +120,14 @@ namespace TencentCloud
 
                     /**
                      * 获取此角色对应的权限列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PermissionGroups 此角色对应的权限列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<PermissionGroup> GetPermissionGroups() const;
 
                     /**
                      * 设置此角色对应的权限列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _permissionGroups 此角色对应的权限列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPermissionGroups(const std::vector<PermissionGroup>& _permissionGroups);
@@ -155,14 +143,12 @@ namespace TencentCloud
 
                     /**
                      * 角色ID,为32位字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_roleId;
                     bool m_roleIdHasBeenSet;
 
                     /**
                      * 角色的名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_roleName;
                     bool m_roleNameHasBeenSet;
@@ -177,7 +163,6 @@ namespace TencentCloud
 
                     /**
                      * 此角色对应的权限列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<PermissionGroup> m_permissionGroups;
                     bool m_permissionGroupsHasBeenSet;

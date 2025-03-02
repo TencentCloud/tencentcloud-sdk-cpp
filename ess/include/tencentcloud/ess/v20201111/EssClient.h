@@ -53,6 +53,8 @@
 #include <tencentcloud/ess/v20201111/model/CreateDynamicFlowApproverResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateEmbedWebUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateEmbedWebUrlResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateEmployeeChangeUrlRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreateEmployeeChangeUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateEmployeeQualificationSealQrCodeRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateEmployeeQualificationSealQrCodeResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateExtendedServiceAuthInfosRequest.h>
@@ -280,6 +282,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateEmbedWebUrlResponse> CreateEmbedWebUrlOutcome;
                 typedef std::future<CreateEmbedWebUrlOutcome> CreateEmbedWebUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateEmbedWebUrlRequest&, CreateEmbedWebUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEmbedWebUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateEmployeeChangeUrlResponse> CreateEmployeeChangeUrlOutcome;
+                typedef std::future<CreateEmployeeChangeUrlOutcome> CreateEmployeeChangeUrlOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreateEmployeeChangeUrlRequest&, CreateEmployeeChangeUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEmployeeChangeUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateEmployeeQualificationSealQrCodeResponse> CreateEmployeeQualificationSealQrCodeOutcome;
                 typedef std::future<CreateEmployeeQualificationSealQrCodeOutcome> CreateEmployeeQualificationSealQrCodeOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateEmployeeQualificationSealQrCodeRequest&, CreateEmployeeQualificationSealQrCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEmployeeQualificationSealQrCodeAsyncHandler;
@@ -837,6 +842,19 @@ namespace TencentCloud
                 CreateEmbedWebUrlOutcome CreateEmbedWebUrl(const Model::CreateEmbedWebUrlRequest &request);
                 void CreateEmbedWebUrlAsync(const Model::CreateEmbedWebUrlRequest& request, const CreateEmbedWebUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateEmbedWebUrlOutcomeCallable CreateEmbedWebUrlCallable(const Model::CreateEmbedWebUrlRequest& request);
+
+                /**
+                 *生成员工信息变更链接，当前仅支持变更手机号
+
+注: 
+1. 目前仅支持修改员工手机号，待修改员工必须已经实名且在职
+2. 仅支持返回小程序链接
+                 * @param req CreateEmployeeChangeUrlRequest
+                 * @return CreateEmployeeChangeUrlOutcome
+                 */
+                CreateEmployeeChangeUrlOutcome CreateEmployeeChangeUrl(const Model::CreateEmployeeChangeUrlRequest &request);
+                void CreateEmployeeChangeUrlAsync(const Model::CreateEmployeeChangeUrlRequest& request, const CreateEmployeeChangeUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateEmployeeChangeUrlOutcomeCallable CreateEmployeeChangeUrlCallable(const Model::CreateEmployeeChangeUrlRequest& request);
 
                 /**
                  *该接口用于获取个人授权执业章给企业的微信二维码，需要个人用户通过微信扫码。

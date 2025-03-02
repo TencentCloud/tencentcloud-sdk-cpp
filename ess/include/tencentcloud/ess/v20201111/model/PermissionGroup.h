@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取权限组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupName 权限组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置权限组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupName 权限组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取权限组key
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupKey 权限组key
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupKey() const;
 
                     /**
                      * 设置权限组key
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupKey 权限组key
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupKey(const std::string& _groupKey);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否隐藏分组，0否1是
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Hide 是否隐藏分组，0否1是
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetHide() const;
 
                     /**
                      * 设置是否隐藏分组，0否1是
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hide 是否隐藏分组，0否1是
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHide(const int64_t& _hide);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取权限集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Permissions 权限集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Permission> GetPermissions() const;
 
                     /**
                      * 设置权限集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _permissions 权限集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPermissions(const std::vector<Permission>& _permissions);
@@ -151,28 +135,24 @@ namespace TencentCloud
 
                     /**
                      * 权限组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
 
                     /**
                      * 权限组key
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupKey;
                     bool m_groupKeyHasBeenSet;
 
                     /**
                      * 是否隐藏分组，0否1是
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_hide;
                     bool m_hideHasBeenSet;
 
                     /**
                      * 权限集合
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Permission> m_permissions;
                     bool m_permissionsHasBeenSet;

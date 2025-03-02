@@ -2448,6 +2448,49 @@ EssbasicClient::CreateConsoleLoginUrlOutcomeCallable EssbasicClient::CreateConso
     return task->get_future();
 }
 
+EssbasicClient::CreateEmployeeChangeUrlOutcome EssbasicClient::CreateEmployeeChangeUrl(const CreateEmployeeChangeUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateEmployeeChangeUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateEmployeeChangeUrlResponse rsp = CreateEmployeeChangeUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateEmployeeChangeUrlOutcome(rsp);
+        else
+            return CreateEmployeeChangeUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateEmployeeChangeUrlOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::CreateEmployeeChangeUrlAsync(const CreateEmployeeChangeUrlRequest& request, const CreateEmployeeChangeUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateEmployeeChangeUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::CreateEmployeeChangeUrlOutcomeCallable EssbasicClient::CreateEmployeeChangeUrlCallable(const CreateEmployeeChangeUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateEmployeeChangeUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateEmployeeChangeUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::CreateEmployeeQualificationSealQrCodeOutcome EssbasicClient::CreateEmployeeQualificationSealQrCode(const CreateEmployeeQualificationSealQrCodeRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateEmployeeQualificationSealQrCode");

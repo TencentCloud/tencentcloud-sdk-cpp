@@ -718,7 +718,9 @@ namespace TencentCloud
                 CreateDatabaseWhiteListRulesOutcomeCallable CreateDatabaseWhiteListRulesCallable(const Model::CreateDatabaseWhiteListRulesRequest& request);
 
                 /**
-                 *创建入侵防御规则白名单接口
+                 *CreateIdsWhiteRule
+
+创建入侵防御规则白名单接口
                  * @param req CreateIdsWhiteRuleRequest
                  * @return CreateIdsWhiteRuleOutcome
                  */
@@ -808,7 +810,9 @@ namespace TencentCloud
                 DeleteBlockIgnoreRuleNewOutcomeCallable DeleteBlockIgnoreRuleNewCallable(const Model::DeleteBlockIgnoreRuleNewRequest& request);
 
                 /**
-                 *删除入侵防御规则白名单接口
+                 *历史方案，业务已迁移，接口不再适用
+
+删除入侵防御规则白名单接口
                  * @param req DeleteIdsWhiteRuleRequest
                  * @return DeleteIdsWhiteRuleOutcome
                  */
@@ -1024,7 +1028,9 @@ namespace TencentCloud
                 DescribeIPStatusListOutcomeCallable DescribeIPStatusListCallable(const Model::DescribeIPStatusListRequest& request);
 
                 /**
-                 *查询入侵防御规则白名单接口
+                 *历史方案，业务已迁移，接口不再适用
+
+查询入侵防御规则白名单接口
                  * @param req DescribeIdsWhiteRuleRequest
                  * @return DescribeIdsWhiteRuleOutcome
                  */

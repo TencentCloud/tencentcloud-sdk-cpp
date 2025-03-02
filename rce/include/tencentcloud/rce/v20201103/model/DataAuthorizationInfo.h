@@ -68,23 +68,15 @@ namespace TencentCloud
                     bool DataProviderNameHasBeenSet() const;
 
                     /**
-                     * 获取数据受托方、提供方：腾讯云主体名称。
-
-固定填：腾讯云计算（北京）有限责任公司
-                     * @return DataRecipientName 数据受托方、提供方：腾讯云主体名称。
-
-固定填：腾讯云计算（北京）有限责任公司
+                     * 获取数据受托方、提供方：腾讯云主体名称。固定填：腾讯云计算（北京）有限责任公司
+                     * @return DataRecipientName 数据受托方、提供方：腾讯云主体名称。固定填：腾讯云计算（北京）有限责任公司
                      * 
                      */
                     std::string GetDataRecipientName() const;
 
                     /**
-                     * 设置数据受托方、提供方：腾讯云主体名称。
-
-固定填：腾讯云计算（北京）有限责任公司
-                     * @param _dataRecipientName 数据受托方、提供方：腾讯云主体名称。
-
-固定填：腾讯云计算（北京）有限责任公司
+                     * 设置数据受托方、提供方：腾讯云主体名称。固定填：腾讯云计算（北京）有限责任公司
+                     * @param _dataRecipientName 数据受托方、提供方：腾讯云主体名称。固定填：腾讯云计算（北京）有限责任公司
                      * 
                      */
                     void SetDataRecipientName(const std::string& _dataRecipientName);
@@ -98,26 +90,16 @@ namespace TencentCloud
 
                     /**
                      * 获取客户请求RCE所提供的用户数据类型，支持多选。实际以接口请求传参为准。
-
 1-手机号；
-
 2-微信开放账号；
-
 3-QQ开放账号；
-
 4-IP地址；
-
 999-其它；
                      * @return UserDataType 客户请求RCE所提供的用户数据类型，支持多选。实际以接口请求传参为准。
-
 1-手机号；
-
 2-微信开放账号；
-
 3-QQ开放账号；
-
 4-IP地址；
-
 999-其它；
                      * 
                      */
@@ -125,26 +107,16 @@ namespace TencentCloud
 
                     /**
                      * 设置客户请求RCE所提供的用户数据类型，支持多选。实际以接口请求传参为准。
-
 1-手机号；
-
 2-微信开放账号；
-
 3-QQ开放账号；
-
 4-IP地址；
-
 999-其它；
                      * @param _userDataType 客户请求RCE所提供的用户数据类型，支持多选。实际以接口请求传参为准。
-
 1-手机号；
-
 2-微信开放账号；
-
 3-QQ开放账号；
-
 4-IP地址；
-
 999-其它；
                      * 
                      */
@@ -208,23 +180,15 @@ namespace TencentCloud
                     bool IsOrderHandlingHasBeenSet() const;
 
                     /**
-                     * 获取客户获得的用户授权期限时间戳（单位秒）。
-
-不填默认无固定期限。
-                     * @return AuthorizationTerm 客户获得的用户授权期限时间戳（单位秒）。
-
-不填默认无固定期限。
+                     * 获取客户获得的用户授权期限时间戳（单位秒）。不填默认无固定期限。
+                     * @return AuthorizationTerm 客户获得的用户授权期限时间戳（单位秒）。不填默认无固定期限。
                      * 
                      */
                     uint64_t GetAuthorizationTerm() const;
 
                     /**
-                     * 设置客户获得的用户授权期限时间戳（单位秒）。
-
-不填默认无固定期限。
-                     * @param _authorizationTerm 客户获得的用户授权期限时间戳（单位秒）。
-
-不填默认无固定期限。
+                     * 设置客户获得的用户授权期限时间戳（单位秒）。不填默认无固定期限。
+                     * @param _authorizationTerm 客户获得的用户授权期限时间戳（单位秒）。不填默认无固定期限。
                      * 
                      */
                     void SetAuthorizationTerm(const uint64_t& _authorizationTerm);
@@ -237,19 +201,15 @@ namespace TencentCloud
                     bool AuthorizationTermHasBeenSet() const;
 
                     /**
-                     * 获取	
-客户获得用户授权所依赖的协议地址。
-                     * @return PrivacyPolicyLink 	
-客户获得用户授权所依赖的协议地址。
+                     * 获取客户获得用户授权所依赖的协议地址。
+                     * @return PrivacyPolicyLink 客户获得用户授权所依赖的协议地址。
                      * 
                      */
                     std::string GetPrivacyPolicyLink() const;
 
                     /**
-                     * 设置	
-客户获得用户授权所依赖的协议地址。
-                     * @param _privacyPolicyLink 	
-客户获得用户授权所依赖的协议地址。
+                     * 设置客户获得用户授权所依赖的协议地址。
+                     * @param _privacyPolicyLink 客户获得用户授权所依赖的协议地址。
                      * 
                      */
                     void SetPrivacyPolicyLink(const std::string& _privacyPolicyLink);
@@ -262,23 +222,15 @@ namespace TencentCloud
                     bool PrivacyPolicyLinkHasBeenSet() const;
 
                     /**
-                     * 获取是否是用户个人敏感数据（不推荐使用）。
-
-固定填：1。
-                     * @return IsPersonalData 是否是用户个人敏感数据（不推荐使用）。
-
-固定填：1。
+                     * 获取是否是用户个人敏感数据（不推荐使用）。固定填：1。
+                     * @return IsPersonalData 是否是用户个人敏感数据（不推荐使用）。固定填：1。
                      * 
                      */
                     uint64_t GetIsPersonalData() const;
 
                     /**
-                     * 设置是否是用户个人敏感数据（不推荐使用）。
-
-固定填：1。
-                     * @param _isPersonalData 是否是用户个人敏感数据（不推荐使用）。
-
-固定填：1。
+                     * 设置是否是用户个人敏感数据（不推荐使用）。固定填：1。
+                     * @param _isPersonalData 是否是用户个人敏感数据（不推荐使用）。固定填：1。
                      * 
                      */
                     void SetIsPersonalData(const uint64_t& _isPersonalData);
@@ -299,24 +251,17 @@ namespace TencentCloud
                     bool m_dataProviderNameHasBeenSet;
 
                     /**
-                     * 数据受托方、提供方：腾讯云主体名称。
-
-固定填：腾讯云计算（北京）有限责任公司
+                     * 数据受托方、提供方：腾讯云主体名称。固定填：腾讯云计算（北京）有限责任公司
                      */
                     std::string m_dataRecipientName;
                     bool m_dataRecipientNameHasBeenSet;
 
                     /**
                      * 客户请求RCE所提供的用户数据类型，支持多选。实际以接口请求传参为准。
-
 1-手机号；
-
 2-微信开放账号；
-
 3-QQ开放账号；
-
 4-IP地址；
-
 999-其它；
                      */
                     std::vector<uint64_t> m_userDataType;
@@ -337,24 +282,19 @@ namespace TencentCloud
                     bool m_isOrderHandlingHasBeenSet;
 
                     /**
-                     * 客户获得的用户授权期限时间戳（单位秒）。
-
-不填默认无固定期限。
+                     * 客户获得的用户授权期限时间戳（单位秒）。不填默认无固定期限。
                      */
                     uint64_t m_authorizationTerm;
                     bool m_authorizationTermHasBeenSet;
 
                     /**
-                     * 	
-客户获得用户授权所依赖的协议地址。
+                     * 客户获得用户授权所依赖的协议地址。
                      */
                     std::string m_privacyPolicyLink;
                     bool m_privacyPolicyLinkHasBeenSet;
 
                     /**
-                     * 是否是用户个人敏感数据（不推荐使用）。
-
-固定填：1。
+                     * 是否是用户个人敏感数据（不推荐使用）。固定填：1。
                      */
                     uint64_t m_isPersonalData;
                     bool m_isPersonalDataHasBeenSet;

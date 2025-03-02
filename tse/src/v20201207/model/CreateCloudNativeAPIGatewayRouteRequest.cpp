@@ -37,7 +37,8 @@ CreateCloudNativeAPIGatewayRouteRequest::CreateCloudNativeAPIGatewayRouteRequest
     m_destinationPortsHasBeenSet(false),
     m_headersHasBeenSet(false),
     m_requestBufferingHasBeenSet(false),
-    m_responseBufferingHasBeenSet(false)
+    m_responseBufferingHasBeenSet(false),
+    m_regexPriorityHasBeenSet(false)
 {
 }
 
@@ -198,6 +199,14 @@ string CreateCloudNativeAPIGatewayRouteRequest::ToJsonString() const
         string key = "ResponseBuffering";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_responseBuffering, allocator);
+    }
+
+    if (m_regexPriorityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegexPriority";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_regexPriority, allocator);
     }
 
 
@@ -446,6 +455,22 @@ void CreateCloudNativeAPIGatewayRouteRequest::SetResponseBuffering(const bool& _
 bool CreateCloudNativeAPIGatewayRouteRequest::ResponseBufferingHasBeenSet() const
 {
     return m_responseBufferingHasBeenSet;
+}
+
+int64_t CreateCloudNativeAPIGatewayRouteRequest::GetRegexPriority() const
+{
+    return m_regexPriority;
+}
+
+void CreateCloudNativeAPIGatewayRouteRequest::SetRegexPriority(const int64_t& _regexPriority)
+{
+    m_regexPriority = _regexPriority;
+    m_regexPriorityHasBeenSet = true;
+}
+
+bool CreateCloudNativeAPIGatewayRouteRequest::RegexPriorityHasBeenSet() const
+{
+    return m_regexPriorityHasBeenSet;
 }
 
 

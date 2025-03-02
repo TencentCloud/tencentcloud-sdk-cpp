@@ -315,12 +315,10 @@ namespace TencentCloud
 您可以通过浏览器直接打开此链接预览模板，或将其嵌入到 iframe 中进行预览。
 
 注意：只有在请求接口时将 <b>WithPreviewUrl </b>参数设置为 true，才会生成预览链接。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PreviewUrl 模板的 H5 预览链接，有效期为 5 分钟。
 您可以通过浏览器直接打开此链接预览模板，或将其嵌入到 iframe 中进行预览。
 
 注意：只有在请求接口时将 <b>WithPreviewUrl </b>参数设置为 true，才会生成预览链接。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPreviewUrl() const;
@@ -330,12 +328,10 @@ namespace TencentCloud
 您可以通过浏览器直接打开此链接预览模板，或将其嵌入到 iframe 中进行预览。
 
 注意：只有在请求接口时将 <b>WithPreviewUrl </b>参数设置为 true，才会生成预览链接。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _previewUrl 模板的 H5 预览链接，有效期为 5 分钟。
 您可以通过浏览器直接打开此链接预览模板，或将其嵌入到 iframe 中进行预览。
 
 注意：只有在请求接口时将 <b>WithPreviewUrl </b>参数设置为 true，才会生成预览链接。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPreviewUrl(const std::string& _previewUrl);
@@ -351,11 +347,9 @@ namespace TencentCloud
                      * 获取第三方应用集成-模板PDF文件链接，有效期5分钟。
 请求参数WithPdfUrl=true时返回
 （此功能开放需要联系客户经理）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PdfUrl 第三方应用集成-模板PDF文件链接，有效期5分钟。
 请求参数WithPdfUrl=true时返回
 （此功能开放需要联系客户经理）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPdfUrl() const;
@@ -364,11 +358,9 @@ namespace TencentCloud
                      * 设置第三方应用集成-模板PDF文件链接，有效期5分钟。
 请求参数WithPdfUrl=true时返回
 （此功能开放需要联系客户经理）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pdfUrl 第三方应用集成-模板PDF文件链接，有效期5分钟。
 请求参数WithPdfUrl=true时返回
 （此功能开放需要联系客户经理）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPdfUrl(const std::string& _pdfUrl);
@@ -403,18 +395,14 @@ namespace TencentCloud
 
                     /**
                      * 获取本模板关联的三方应用平台平台企业模板名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChannelTemplateName 本模板关联的三方应用平台平台企业模板名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetChannelTemplateName() const;
 
                     /**
                      * 设置本模板关联的三方应用平台平台企业模板名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _channelTemplateName 本模板关联的三方应用平台平台企业模板名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChannelTemplateName(const std::string& _channelTemplateName);
@@ -429,10 +417,8 @@ namespace TencentCloud
                     /**
                      * 获取0-需要子客企业手动领取平台企业的模板(默认); 
 1-平台自动设置子客模板
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChannelAutoSave 0-需要子客企业手动领取平台企业的模板(默认); 
 1-平台自动设置子客模板
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetChannelAutoSave() const;
@@ -440,10 +426,8 @@ namespace TencentCloud
                     /**
                      * 设置0-需要子客企业手动领取平台企业的模板(默认); 
 1-平台自动设置子客模板
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _channelAutoSave 0-需要子客企业手动领取平台企业的模板(默认); 
 1-平台自动设置子客模板
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChannelAutoSave(const int64_t& _channelAutoSave);
@@ -458,10 +442,8 @@ namespace TencentCloud
                     /**
                      * 获取模板版本，由全数字字符组成。
 默认为空，模板版本号由日期和序号组成，初始版本为yyyyMMdd001，yyyyMMdd002表示第二个版本，以此类推。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TemplateVersion 模板版本，由全数字字符组成。
 默认为空，模板版本号由日期和序号组成，初始版本为yyyyMMdd001，yyyyMMdd002表示第二个版本，以此类推。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTemplateVersion() const;
@@ -469,10 +451,8 @@ namespace TencentCloud
                     /**
                      * 设置模板版本，由全数字字符组成。
 默认为空，模板版本号由日期和序号组成，初始版本为yyyyMMdd001，yyyyMMdd002表示第二个版本，以此类推。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _templateVersion 模板版本，由全数字字符组成。
 默认为空，模板版本号由日期和序号组成，初始版本为yyyyMMdd001，yyyyMMdd002表示第二个版本，以此类推。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTemplateVersion(const std::string& _templateVersion);
@@ -489,12 +469,10 @@ namespace TencentCloud
 
 <ul><li>1：启用（默认），表示模板处于启用状态，可以被用户正常使用。</li>
 <li>2：停用，表示模板处于停用状态，禁止用户使用该模板。</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Available 模板可用状态的取值通常为以下两种：
 
 <ul><li>1：启用（默认），表示模板处于启用状态，可以被用户正常使用。</li>
 <li>2：停用，表示模板处于停用状态，禁止用户使用该模板。</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAvailable() const;
@@ -504,12 +482,10 @@ namespace TencentCloud
 
 <ul><li>1：启用（默认），表示模板处于启用状态，可以被用户正常使用。</li>
 <li>2：停用，表示模板处于停用状态，禁止用户使用该模板。</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _available 模板可用状态的取值通常为以下两种：
 
 <ul><li>1：启用（默认），表示模板处于启用状态，可以被用户正常使用。</li>
 <li>2：停用，表示模板处于停用状态，禁止用户使用该模板。</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAvailable(const int64_t& _available);
@@ -599,7 +575,6 @@ namespace TencentCloud
 您可以通过浏览器直接打开此链接预览模板，或将其嵌入到 iframe 中进行预览。
 
 注意：只有在请求接口时将 <b>WithPreviewUrl </b>参数设置为 true，才会生成预览链接。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_previewUrl;
                     bool m_previewUrlHasBeenSet;
@@ -608,7 +583,6 @@ namespace TencentCloud
                      * 第三方应用集成-模板PDF文件链接，有效期5分钟。
 请求参数WithPdfUrl=true时返回
 （此功能开放需要联系客户经理）。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pdfUrl;
                     bool m_pdfUrlHasBeenSet;
@@ -621,7 +595,6 @@ namespace TencentCloud
 
                     /**
                      * 本模板关联的三方应用平台平台企业模板名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_channelTemplateName;
                     bool m_channelTemplateNameHasBeenSet;
@@ -629,7 +602,6 @@ namespace TencentCloud
                     /**
                      * 0-需要子客企业手动领取平台企业的模板(默认); 
 1-平台自动设置子客模板
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_channelAutoSave;
                     bool m_channelAutoSaveHasBeenSet;
@@ -637,7 +609,6 @@ namespace TencentCloud
                     /**
                      * 模板版本，由全数字字符组成。
 默认为空，模板版本号由日期和序号组成，初始版本为yyyyMMdd001，yyyyMMdd002表示第二个版本，以此类推。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_templateVersion;
                     bool m_templateVersionHasBeenSet;
@@ -647,7 +618,6 @@ namespace TencentCloud
 
 <ul><li>1：启用（默认），表示模板处于启用状态，可以被用户正常使用。</li>
 <li>2：停用，表示模板处于停用状态，禁止用户使用该模板。</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_available;
                     bool m_availableHasBeenSet;

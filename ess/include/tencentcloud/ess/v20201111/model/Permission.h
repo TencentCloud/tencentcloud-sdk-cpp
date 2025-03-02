@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取权限名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 权限名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置权限名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 权限名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取权限key
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Key 权限key
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置权限key
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _key 权限key
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKey(const std::string& _key);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取权限类型 1前端，2后端
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 权限类型 1前端，2后端
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetType() const;
 
                     /**
                      * 设置权限类型 1前端，2后端
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 权限类型 1前端，2后端
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const int64_t& _type);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否隐藏
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Hide 是否隐藏
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetHide() const;
 
                     /**
                      * 设置是否隐藏
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hide 是否隐藏
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHide(const int64_t& _hide);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据权限标签 1:表示根节点，2:表示叶子结点
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataLabel 数据权限标签 1:表示根节点，2:表示叶子结点
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDataLabel() const;
 
                     /**
                      * 设置数据权限标签 1:表示根节点，2:表示叶子结点
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataLabel 数据权限标签 1:表示根节点，2:表示叶子结点
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataLabel(const int64_t& _dataLabel);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据权限独有，1:关联其他模块鉴权，2:表示关联自己模块鉴权
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataType 数据权限独有，1:关联其他模块鉴权，2:表示关联自己模块鉴权
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDataType() const;
 
                     /**
                      * 设置数据权限独有，1:关联其他模块鉴权，2:表示关联自己模块鉴权
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataType 数据权限独有，1:关联其他模块鉴权，2:表示关联自己模块鉴权
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataType(const int64_t& _dataType);
@@ -199,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据权限独有，表示数据范围，1：全公司，2:部门及下级部门，3:自己
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataRange 数据权限独有，表示数据范围，1：全公司，2:部门及下级部门，3:自己
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDataRange() const;
 
                     /**
                      * 设置数据权限独有，表示数据范围，1：全公司，2:部门及下级部门，3:自己
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataRange 数据权限独有，表示数据范围，1：全公司，2:部门及下级部门，3:自己
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataRange(const int64_t& _dataRange);
@@ -224,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取关联权限, 表示这个功能权限要受哪个数据权限管控
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataTo 关联权限, 表示这个功能权限要受哪个数据权限管控
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDataTo() const;
 
                     /**
                      * 设置关联权限, 表示这个功能权限要受哪个数据权限管控
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataTo 关联权限, 表示这个功能权限要受哪个数据权限管控
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataTo(const std::string& _dataTo);
@@ -249,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取父级权限key
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParentKey 父级权限key
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetParentKey() const;
 
                     /**
                      * 设置父级权限key
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _parentKey 父级权限key
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetParentKey(const std::string& _parentKey);
@@ -274,18 +238,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否选中
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsChecked 是否选中
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsChecked() const;
 
                     /**
                      * 设置是否选中
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isChecked 是否选中
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsChecked(const bool& _isChecked);
@@ -299,18 +259,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子权限集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Children 子权限集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Permission> GetChildren() const;
 
                     /**
                      * 设置子权限集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _children 子权限集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChildren(const std::vector<Permission>& _children);
@@ -326,77 +282,66 @@ namespace TencentCloud
 
                     /**
                      * 权限名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 权限key
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
 
                     /**
                      * 权限类型 1前端，2后端
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 是否隐藏
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_hide;
                     bool m_hideHasBeenSet;
 
                     /**
                      * 数据权限标签 1:表示根节点，2:表示叶子结点
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_dataLabel;
                     bool m_dataLabelHasBeenSet;
 
                     /**
                      * 数据权限独有，1:关联其他模块鉴权，2:表示关联自己模块鉴权
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_dataType;
                     bool m_dataTypeHasBeenSet;
 
                     /**
                      * 数据权限独有，表示数据范围，1：全公司，2:部门及下级部门，3:自己
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_dataRange;
                     bool m_dataRangeHasBeenSet;
 
                     /**
                      * 关联权限, 表示这个功能权限要受哪个数据权限管控
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataTo;
                     bool m_dataToHasBeenSet;
 
                     /**
                      * 父级权限key
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_parentKey;
                     bool m_parentKeyHasBeenSet;
 
                     /**
                      * 是否选中
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isChecked;
                     bool m_isCheckedHasBeenSet;
 
                     /**
                      * 子权限集合
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Permission> m_children;
                     bool m_childrenHasBeenSet;

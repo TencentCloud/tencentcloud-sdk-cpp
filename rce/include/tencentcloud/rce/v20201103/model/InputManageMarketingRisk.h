@@ -537,12 +537,10 @@ namespace TencentCloud
 2：iOS
 3：H5
 4：小程序
-
                      * @return Platform 1：Android
 2：iOS
 3：H5
 4：小程序
-
                      * 
                      */
                     std::string GetPlatform() const;
@@ -552,12 +550,10 @@ namespace TencentCloud
 2：iOS
 3：H5
 4：小程序
-
                      * @param _platform 1：Android
 2：iOS
 3：H5
 4：小程序
-
                      * 
                      */
                     void SetPlatform(const std::string& _platform);
@@ -733,7 +729,6 @@ namespace TencentCloud
 2：iOS
 3：H5
 4：小程序
-
                      */
                     std::string m_platform;
                     bool m_platformHasBeenSet;

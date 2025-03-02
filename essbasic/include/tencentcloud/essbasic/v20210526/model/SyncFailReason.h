@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取新增员工或者员工离职失败原因, 可能存证ID不符合规范、证件号码不合法等原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 新增员工或者员工离职失败原因, 可能存证ID不符合规范、证件号码不合法等原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置新增员工或者员工离职失败原因, 可能存证ID不符合规范、证件号码不合法等原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _message 新增员工或者员工离职失败原因, 可能存证ID不符合规范、证件号码不合法等原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMessage(const std::string& _message);
@@ -102,7 +98,6 @@ namespace TencentCloud
 
                     /**
                      * 新增员工或者员工离职失败原因, 可能存证ID不符合规范、证件号码不合法等原因
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;

@@ -31,7 +31,8 @@ ImageResultsResultDetail::ImageResultsResultDetail() :
     m_suggestionHasBeenSet(false),
     m_scoreHasBeenSet(false),
     m_subLabelCodeHasBeenSet(false),
-    m_subLabelHasBeenSet(false)
+    m_subLabelHasBeenSet(false),
+    m_ocrHitInfosHasBeenSet(false)
 {
 }
 
@@ -160,6 +161,26 @@ CoreInternalOutcome ImageResultsResultDetail::Deserialize(const rapidjson::Value
         m_subLabelHasBeenSet = true;
     }
 
+    if (value.HasMember("OcrHitInfos") && !value["OcrHitInfos"].IsNull())
+    {
+        if (!value["OcrHitInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ImageResultsResultDetail.OcrHitInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["OcrHitInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            HitInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_ocrHitInfos.push_back(item);
+        }
+        m_ocrHitInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -259,6 +280,21 @@ void ImageResultsResultDetail::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "SubLabel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subLabel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ocrHitInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OcrHitInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_ocrHitInfos.begin(); itr != m_ocrHitInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -438,5 +474,21 @@ void ImageResultsResultDetail::SetSubLabel(const string& _subLabel)
 bool ImageResultsResultDetail::SubLabelHasBeenSet() const
 {
     return m_subLabelHasBeenSet;
+}
+
+vector<HitInfo> ImageResultsResultDetail::GetOcrHitInfos() const
+{
+    return m_ocrHitInfos;
+}
+
+void ImageResultsResultDetail::SetOcrHitInfos(const vector<HitInfo>& _ocrHitInfos)
+{
+    m_ocrHitInfos = _ocrHitInfos;
+    m_ocrHitInfosHasBeenSet = true;
+}
+
+bool ImageResultsResultDetail::OcrHitInfosHasBeenSet() const
+{
+    return m_ocrHitInfosHasBeenSet;
 }
 

@@ -451,6 +451,27 @@ namespace TencentCloud
                      */
                     bool ResponseBufferingHasBeenSet() const;
 
+                    /**
+                     * 获取增加优先级
+                     * @return RegexPriority 增加优先级
+                     * 
+                     */
+                    int64_t GetRegexPriority() const;
+
+                    /**
+                     * 设置增加优先级
+                     * @param _regexPriority 增加优先级
+                     * 
+                     */
+                    void SetRegexPriority(const int64_t& _regexPriority);
+
+                    /**
+                     * 判断参数 RegexPriority 是否已赋值
+                     * @return RegexPriority 是否已赋值
+                     * 
+                     */
+                    bool RegexPriorityHasBeenSet() const;
+
                 private:
 
                     /**
@@ -566,6 +587,12 @@ namespace TencentCloud
                      */
                     bool m_responseBuffering;
                     bool m_responseBufferingHasBeenSet;
+
+                    /**
+                     * 增加优先级
+                     */
+                    int64_t m_regexPriority;
+                    bool m_regexPriorityHasBeenSet;
 
                 };
             }

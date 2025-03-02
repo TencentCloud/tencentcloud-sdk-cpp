@@ -3867,6 +3867,49 @@ LkeClient::ReconstructDocumentOutcomeCallable LkeClient::ReconstructDocumentCall
     return task->get_future();
 }
 
+LkeClient::RenameDocOutcome LkeClient::RenameDoc(const RenameDocRequest &request)
+{
+    auto outcome = MakeRequest(request, "RenameDoc");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RenameDocResponse rsp = RenameDocResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RenameDocOutcome(rsp);
+        else
+            return RenameDocOutcome(o.GetError());
+    }
+    else
+    {
+        return RenameDocOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::RenameDocAsync(const RenameDocRequest& request, const RenameDocAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RenameDoc(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::RenameDocOutcomeCallable LkeClient::RenameDocCallable(const RenameDocRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RenameDocOutcome()>>(
+        [this, request]()
+        {
+            return this->RenameDoc(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LkeClient::ResetSessionOutcome LkeClient::ResetSession(const ResetSessionRequest &request)
 {
     auto outcome = MakeRequest(request, "ResetSession");

@@ -176,6 +176,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/DescribeChannelOrganizationsRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreatePreparedPersonalEsignRequest.h
   include/tencentcloud/essbasic/v20210526/model/FillError.h
+  include/tencentcloud/essbasic/v20210526/model/CreateEmployeeChangeUrlResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelRenewAutoSignLicenseRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelDescribeBillUsageDetailResponse.h
   include/tencentcloud/essbasic/v20210526/model/IntentionActionResult.h
@@ -187,6 +188,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateRoleResponse.h
   include/tencentcloud/essbasic/v20210526/model/FormField.h
   include/tencentcloud/essbasic/v20210526/model/FailedCreateRoleData.h
+  include/tencentcloud/essbasic/v20210526/model/CreateEmployeeChangeUrlRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelDescribeUserAutoSignStatusRequest.h
   include/tencentcloud/essbasic/v20210526/model/FlowResourceUrlInfo.h
   include/tencentcloud/essbasic/v20210526/model/UploadFile.h
@@ -567,6 +569,7 @@ set(essbasic_src
   src/v20210526/model/DescribeChannelOrganizationsRequest.cpp
   src/v20210526/model/ChannelCreatePreparedPersonalEsignRequest.cpp
   src/v20210526/model/FillError.cpp
+  src/v20210526/model/CreateEmployeeChangeUrlResponse.cpp
   src/v20210526/model/ChannelRenewAutoSignLicenseRequest.cpp
   src/v20210526/model/ChannelDescribeBillUsageDetailResponse.cpp
   src/v20210526/model/IntentionActionResult.cpp
@@ -578,6 +581,7 @@ set(essbasic_src
   src/v20210526/model/ChannelCreateRoleResponse.cpp
   src/v20210526/model/FormField.cpp
   src/v20210526/model/FailedCreateRoleData.cpp
+  src/v20210526/model/CreateEmployeeChangeUrlRequest.cpp
   src/v20210526/model/ChannelDescribeUserAutoSignStatusRequest.cpp
   src/v20210526/model/FlowResourceUrlInfo.cpp
   src/v20210526/model/UploadFile.cpp

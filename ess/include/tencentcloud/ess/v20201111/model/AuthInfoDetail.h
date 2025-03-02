@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取扩展服务类型，和入参一致
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 扩展服务类型，和入参一致
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置扩展服务类型，和入参一致
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 扩展服务类型，和入参一致
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取扩展服务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 扩展服务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置扩展服务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 扩展服务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -100,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取授权员工列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HasAuthUserList 授权员工列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<HasAuthUser> GetHasAuthUserList() const;
 
                     /**
                      * 设置授权员工列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hasAuthUserList 授权员工列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHasAuthUserList(const std::vector<HasAuthUser>& _hasAuthUserList);
@@ -125,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取授权企业列表（企业自动签时，该字段有值）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HasAuthOrganizationList 授权企业列表（企业自动签时，该字段有值）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<HasAuthOrganization> GetHasAuthOrganizationList() const;
 
                     /**
                      * 设置授权企业列表（企业自动签时，该字段有值）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hasAuthOrganizationList 授权企业列表（企业自动签时，该字段有值）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHasAuthOrganizationList(const std::vector<HasAuthOrganization>& _hasAuthOrganizationList);
@@ -150,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取授权员工列表总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuthUserTotal 授权员工列表总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAuthUserTotal() const;
 
                     /**
                      * 设置授权员工列表总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _authUserTotal 授权员工列表总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAuthUserTotal(const int64_t& _authUserTotal);
@@ -175,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取授权企业列表总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuthOrganizationTotal 授权企业列表总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAuthOrganizationTotal() const;
 
                     /**
                      * 设置授权企业列表总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _authOrganizationTotal 授权企业列表总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAuthOrganizationTotal(const int64_t& _authOrganizationTotal);
@@ -202,42 +178,36 @@ namespace TencentCloud
 
                     /**
                      * 扩展服务类型，和入参一致
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 扩展服务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 授权员工列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<HasAuthUser> m_hasAuthUserList;
                     bool m_hasAuthUserListHasBeenSet;
 
                     /**
                      * 授权企业列表（企业自动签时，该字段有值）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<HasAuthOrganization> m_hasAuthOrganizationList;
                     bool m_hasAuthOrganizationListHasBeenSet;
 
                     /**
                      * 授权员工列表总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_authUserTotal;
                     bool m_authUserTotalHasBeenSet;
 
                     /**
                      * 授权企业列表总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_authOrganizationTotal;
                     bool m_authOrganizationTotalHasBeenSet;

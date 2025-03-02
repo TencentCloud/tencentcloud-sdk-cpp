@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取授权企业openid，
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrganizationOpenId 授权企业openid，
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOrganizationOpenId() const;
 
                     /**
                      * 设置授权企业openid，
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _organizationOpenId 授权企业openid，
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOrganizationOpenId(const std::string& _organizationOpenId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取授权企业名称	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrganizationName 授权企业名称	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOrganizationName() const;
 
                     /**
                      * 设置授权企业名称	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _organizationName 授权企业名称	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOrganizationName(const std::string& _organizationName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取被授权企业openid，
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuthorizedOrganizationOpenId 被授权企业openid，
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAuthorizedOrganizationOpenId() const;
 
                     /**
                      * 设置被授权企业openid，
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _authorizedOrganizationOpenId 被授权企业openid，
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAuthorizedOrganizationOpenId(const std::string& _authorizedOrganizationOpenId);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取被授权企业名称	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuthorizedOrganizationName 被授权企业名称	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAuthorizedOrganizationName() const;
 
                     /**
                      * 设置被授权企业名称	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _authorizedOrganizationName 被授权企业名称	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAuthorizedOrganizationName(const std::string& _authorizedOrganizationName);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取授权时间，格式为时间戳，单位s	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuthorizeTime 授权时间，格式为时间戳，单位s	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAuthorizeTime() const;
 
                     /**
                      * 设置授权时间，格式为时间戳，单位s	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _authorizeTime 授权时间，格式为时间戳，单位s	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAuthorizeTime(const int64_t& _authorizeTime);
@@ -175,35 +155,30 @@ namespace TencentCloud
 
                     /**
                      * 授权企业openid，
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_organizationOpenId;
                     bool m_organizationOpenIdHasBeenSet;
 
                     /**
                      * 授权企业名称	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_organizationName;
                     bool m_organizationNameHasBeenSet;
 
                     /**
                      * 被授权企业openid，
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_authorizedOrganizationOpenId;
                     bool m_authorizedOrganizationOpenIdHasBeenSet;
 
                     /**
                      * 被授权企业名称	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_authorizedOrganizationName;
                     bool m_authorizedOrganizationNameHasBeenSet;
 
                     /**
                      * 授权时间，格式为时间戳，单位s	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_authorizeTime;
                     bool m_authorizeTimeHasBeenSet;

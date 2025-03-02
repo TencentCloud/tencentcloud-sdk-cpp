@@ -143,11 +143,12 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/OrganizationAuthUrl.h
   include/tencentcloud/ess/v20201111/model/AuthRecord.h
   include/tencentcloud/ess/v20201111/model/CreateSealPolicyResponse.h
+  include/tencentcloud/ess/v20201111/model/DeleteSealPoliciesRequest.h
   include/tencentcloud/ess/v20201111/model/FlowApproverUrlInfo.h
   include/tencentcloud/ess/v20201111/model/DisableUserAutoSignRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeIntegrationEmployeesResponse.h
   include/tencentcloud/ess/v20201111/model/SuccessDeleteStaffData.h
-  include/tencentcloud/ess/v20201111/model/DeleteSealPoliciesRequest.h
+  include/tencentcloud/ess/v20201111/model/CreateEmployeeChangeUrlResponse.h
   include/tencentcloud/ess/v20201111/model/CreateConvertTaskApiResponse.h
   include/tencentcloud/ess/v20201111/model/CreateFlowSignReviewRequest.h
   include/tencentcloud/ess/v20201111/model/CreateOrganizationAuthUrlResponse.h
@@ -210,7 +211,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/Recipient.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowEvidenceReportRequest.h
   include/tencentcloud/ess/v20201111/model/FailedCreateRoleData.h
-  include/tencentcloud/ess/v20201111/model/DescribeBillUsageRequest.h
+  include/tencentcloud/ess/v20201111/model/CreateEmployeeChangeUrlRequest.h
   include/tencentcloud/ess/v20201111/model/ExtendScene.h
   include/tencentcloud/ess/v20201111/model/DescribeBillUsageResponse.h
   include/tencentcloud/ess/v20201111/model/ApproverInfo.h
@@ -241,6 +242,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/FailedUpdateStaffData.h
   include/tencentcloud/ess/v20201111/model/DescribeOrganizationVerifyStatusRequest.h
   include/tencentcloud/ess/v20201111/model/SubOrgBillSummary.h
+  include/tencentcloud/ess/v20201111/model/DescribeBillUsageRequest.h
   include/tencentcloud/ess/v20201111/model/DeleteStaffsResult.h
   include/tencentcloud/ess/v20201111/model/CancelMultiFlowSignQRCodeRequest.h
   include/tencentcloud/ess/v20201111/model/DeleteIntegrationDepartmentRequest.h
@@ -443,11 +445,12 @@ set(ess_src
   src/v20201111/model/OrganizationAuthUrl.cpp
   src/v20201111/model/AuthRecord.cpp
   src/v20201111/model/CreateSealPolicyResponse.cpp
+  src/v20201111/model/DeleteSealPoliciesRequest.cpp
   src/v20201111/model/FlowApproverUrlInfo.cpp
   src/v20201111/model/DisableUserAutoSignRequest.cpp
   src/v20201111/model/DescribeIntegrationEmployeesResponse.cpp
   src/v20201111/model/SuccessDeleteStaffData.cpp
-  src/v20201111/model/DeleteSealPoliciesRequest.cpp
+  src/v20201111/model/CreateEmployeeChangeUrlResponse.cpp
   src/v20201111/model/CreateConvertTaskApiResponse.cpp
   src/v20201111/model/CreateFlowSignReviewRequest.cpp
   src/v20201111/model/CreateOrganizationAuthUrlResponse.cpp
@@ -510,7 +513,7 @@ set(ess_src
   src/v20201111/model/Recipient.cpp
   src/v20201111/model/DescribeFlowEvidenceReportRequest.cpp
   src/v20201111/model/FailedCreateRoleData.cpp
-  src/v20201111/model/DescribeBillUsageRequest.cpp
+  src/v20201111/model/CreateEmployeeChangeUrlRequest.cpp
   src/v20201111/model/ExtendScene.cpp
   src/v20201111/model/DescribeBillUsageResponse.cpp
   src/v20201111/model/ApproverInfo.cpp
@@ -541,6 +544,7 @@ set(ess_src
   src/v20201111/model/FailedUpdateStaffData.cpp
   src/v20201111/model/DescribeOrganizationVerifyStatusRequest.cpp
   src/v20201111/model/SubOrgBillSummary.cpp
+  src/v20201111/model/DescribeBillUsageRequest.cpp
   src/v20201111/model/DeleteStaffsResult.cpp
   src/v20201111/model/CancelMultiFlowSignQRCodeRequest.cpp
   src/v20201111/model/DeleteIntegrationDepartmentRequest.cpp

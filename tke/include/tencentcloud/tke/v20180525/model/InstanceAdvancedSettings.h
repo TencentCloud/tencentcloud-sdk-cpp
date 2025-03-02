@@ -53,18 +53,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该节点属于podCIDR大小自定义模式时，可指定节点上运行的pod数量上限
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DesiredPodNumber 该节点属于podCIDR大小自定义模式时，可指定节点上运行的pod数量上限
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDesiredPodNumber() const;
 
                     /**
                      * 设置该节点属于podCIDR大小自定义模式时，可指定节点上运行的pod数量上限
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _desiredPodNumber 该节点属于podCIDR大小自定义模式时，可指定节点上运行的pod数量上限
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDesiredPodNumber(const int64_t& _desiredPodNumber);
@@ -103,18 +99,14 @@ namespace TencentCloud
 
                     /**
                      * 获取base64 编码的用户脚本，在初始化节点之前执行，目前只对添加已有节点生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PreStartUserScript base64 编码的用户脚本，在初始化节点之前执行，目前只对添加已有节点生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPreStartUserScript() const;
 
                     /**
                      * 设置base64 编码的用户脚本，在初始化节点之前执行，目前只对添加已有节点生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _preStartUserScript base64 编码的用户脚本，在初始化节点之前执行，目前只对添加已有节点生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPreStartUserScript(const std::string& _preStartUserScript);
@@ -154,10 +146,8 @@ namespace TencentCloud
                     /**
                      * 获取数据盘挂载点, 默认不挂载数据盘. 已格式化的 ext3，ext4，xfs 文件系统的数据盘将直接挂载，其他文件系统或未格式化的数据盘将自动格式化为ext4 (tlinux系统格式化成xfs)并挂载，请注意备份数据! 无数据盘或有多块数据盘的云主机此设置不生效。
 注意，注意，多盘场景请使用下方的DataDisks数据结构，设置对应的云盘类型、云盘大小、挂载路径、是否格式化等信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MountTarget 数据盘挂载点, 默认不挂载数据盘. 已格式化的 ext3，ext4，xfs 文件系统的数据盘将直接挂载，其他文件系统或未格式化的数据盘将自动格式化为ext4 (tlinux系统格式化成xfs)并挂载，请注意备份数据! 无数据盘或有多块数据盘的云主机此设置不生效。
 注意，注意，多盘场景请使用下方的DataDisks数据结构，设置对应的云盘类型、云盘大小、挂载路径、是否格式化等信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMountTarget() const;
@@ -165,10 +155,8 @@ namespace TencentCloud
                     /**
                      * 设置数据盘挂载点, 默认不挂载数据盘. 已格式化的 ext3，ext4，xfs 文件系统的数据盘将直接挂载，其他文件系统或未格式化的数据盘将自动格式化为ext4 (tlinux系统格式化成xfs)并挂载，请注意备份数据! 无数据盘或有多块数据盘的云主机此设置不生效。
 注意，注意，多盘场景请使用下方的DataDisks数据结构，设置对应的云盘类型、云盘大小、挂载路径、是否格式化等信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mountTarget 数据盘挂载点, 默认不挂载数据盘. 已格式化的 ext3，ext4，xfs 文件系统的数据盘将直接挂载，其他文件系统或未格式化的数据盘将自动格式化为ext4 (tlinux系统格式化成xfs)并挂载，请注意备份数据! 无数据盘或有多块数据盘的云主机此设置不生效。
 注意，注意，多盘场景请使用下方的DataDisks数据结构，设置对应的云盘类型、云盘大小、挂载路径、是否格式化等信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMountTarget(const std::string& _mountTarget);
@@ -182,18 +170,14 @@ namespace TencentCloud
 
                     /**
                      * 获取dockerd --graph 指定值, 默认为 /var/lib/docker
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DockerGraphPath dockerd --graph 指定值, 默认为 /var/lib/docker
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDockerGraphPath() const;
 
                     /**
                      * 设置dockerd --graph 指定值, 默认为 /var/lib/docker
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dockerGraphPath dockerd --graph 指定值, 默认为 /var/lib/docker
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDockerGraphPath(const std::string& _dockerGraphPath);
@@ -207,18 +191,14 @@ namespace TencentCloud
 
                     /**
                      * 获取base64 编码的用户脚本, 此脚本会在 k8s 组件运行后执行, 需要用户保证脚本的可重入及重试逻辑, 脚本及其生成的日志文件可在节点的 /data/ccs_userscript/ 路径查看, 如果要求节点需要在进行初始化完成后才可加入调度, 可配合 unschedulable 参数使用, 在 userScript 最后初始化完成后, 添加 kubectl uncordon nodename --kubeconfig=/root/.kube/config 命令使节点加入调度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserScript base64 编码的用户脚本, 此脚本会在 k8s 组件运行后执行, 需要用户保证脚本的可重入及重试逻辑, 脚本及其生成的日志文件可在节点的 /data/ccs_userscript/ 路径查看, 如果要求节点需要在进行初始化完成后才可加入调度, 可配合 unschedulable 参数使用, 在 userScript 最后初始化完成后, 添加 kubectl uncordon nodename --kubeconfig=/root/.kube/config 命令使节点加入调度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserScript() const;
 
                     /**
                      * 设置base64 编码的用户脚本, 此脚本会在 k8s 组件运行后执行, 需要用户保证脚本的可重入及重试逻辑, 脚本及其生成的日志文件可在节点的 /data/ccs_userscript/ 路径查看, 如果要求节点需要在进行初始化完成后才可加入调度, 可配合 unschedulable 参数使用, 在 userScript 最后初始化完成后, 添加 kubectl uncordon nodename --kubeconfig=/root/.kube/config 命令使节点加入调度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userScript base64 编码的用户脚本, 此脚本会在 k8s 组件运行后执行, 需要用户保证脚本的可重入及重试逻辑, 脚本及其生成的日志文件可在节点的 /data/ccs_userscript/ 路径查看, 如果要求节点需要在进行初始化完成后才可加入调度, 可配合 unschedulable 参数使用, 在 userScript 最后初始化完成后, 添加 kubectl uncordon nodename --kubeconfig=/root/.kube/config 命令使节点加入调度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserScript(const std::string& _userScript);
@@ -303,18 +283,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点相关的自定义参数信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExtraArgs 节点相关的自定义参数信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     InstanceExtraArgs GetExtraArgs() const;
 
                     /**
                      * 设置节点相关的自定义参数信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _extraArgs 节点相关的自定义参数信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExtraArgs(const InstanceExtraArgs& _extraArgs);
@@ -330,7 +306,6 @@ namespace TencentCloud
 
                     /**
                      * 该节点属于podCIDR大小自定义模式时，可指定节点上运行的pod数量上限
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_desiredPodNumber;
                     bool m_desiredPodNumberHasBeenSet;
@@ -344,7 +319,6 @@ namespace TencentCloud
 
                     /**
                      * base64 编码的用户脚本，在初始化节点之前执行，目前只对添加已有节点生效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_preStartUserScript;
                     bool m_preStartUserScriptHasBeenSet;
@@ -359,21 +333,18 @@ namespace TencentCloud
                     /**
                      * 数据盘挂载点, 默认不挂载数据盘. 已格式化的 ext3，ext4，xfs 文件系统的数据盘将直接挂载，其他文件系统或未格式化的数据盘将自动格式化为ext4 (tlinux系统格式化成xfs)并挂载，请注意备份数据! 无数据盘或有多块数据盘的云主机此设置不生效。
 注意，注意，多盘场景请使用下方的DataDisks数据结构，设置对应的云盘类型、云盘大小、挂载路径、是否格式化等信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mountTarget;
                     bool m_mountTargetHasBeenSet;
 
                     /**
                      * dockerd --graph 指定值, 默认为 /var/lib/docker
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dockerGraphPath;
                     bool m_dockerGraphPathHasBeenSet;
 
                     /**
                      * base64 编码的用户脚本, 此脚本会在 k8s 组件运行后执行, 需要用户保证脚本的可重入及重试逻辑, 脚本及其生成的日志文件可在节点的 /data/ccs_userscript/ 路径查看, 如果要求节点需要在进行初始化完成后才可加入调度, 可配合 unschedulable 参数使用, 在 userScript 最后初始化完成后, 添加 kubectl uncordon nodename --kubeconfig=/root/.kube/config 命令使节点加入调度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userScript;
                     bool m_userScriptHasBeenSet;
@@ -400,7 +371,6 @@ namespace TencentCloud
 
                     /**
                      * 节点相关的自定义参数信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     InstanceExtraArgs m_extraArgs;
                     bool m_extraArgsHasBeenSet;

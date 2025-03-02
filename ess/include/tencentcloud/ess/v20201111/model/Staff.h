@@ -117,18 +117,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户邮箱。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Email 用户邮箱。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEmail() const;
 
                     /**
                      * 设置用户邮箱。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _email 用户邮箱。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEmail(const std::string& _email);
@@ -143,10 +139,8 @@ namespace TencentCloud
                     /**
                      * 获取用户在第三方平台ID。
 注：`如需在此接口提醒员工实名，该参数不传。`
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OpenId 用户在第三方平台ID。
 注：`如需在此接口提醒员工实名，该参数不传。`
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOpenId() const;
@@ -154,10 +148,8 @@ namespace TencentCloud
                     /**
                      * 设置用户在第三方平台ID。
 注：`如需在此接口提醒员工实名，该参数不传。`
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _openId 用户在第三方平台ID。
 注：`如需在此接口提醒员工实名，该参数不传。`
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOpenId(const std::string& _openId);
@@ -172,10 +164,8 @@ namespace TencentCloud
                     /**
                      * 获取员工角色信息。
 注：`创建和更新场景无需填写。`
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Roles 员工角色信息。
 注：`创建和更新场景无需填写。`
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<StaffRole> GetRoles() const;
@@ -183,10 +173,8 @@ namespace TencentCloud
                     /**
                      * 设置员工角色信息。
 注：`创建和更新场景无需填写。`
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _roles 员工角色信息。
 注：`创建和更新场景无需填写。`
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRoles(const std::vector<StaffRole>& _roles);
@@ -200,18 +188,14 @@ namespace TencentCloud
 
                     /**
                      * 获取员工部门信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Department 员工部门信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Department GetDepartment() const;
 
                     /**
                      * 设置员工部门信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _department 员工部门信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDepartment(const Department& _department);
@@ -276,10 +260,8 @@ namespace TencentCloud
                     /**
                      * 获取员工实名时间戳，单位秒。
 注：`创建和更新场景无需填写。`
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VerifiedOn 员工实名时间戳，单位秒。
 注：`创建和更新场景无需填写。`
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetVerifiedOn() const;
@@ -287,10 +269,8 @@ namespace TencentCloud
                     /**
                      * 设置员工实名时间戳，单位秒。
 注：`创建和更新场景无需填写。`
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _verifiedOn 员工实名时间戳，单位秒。
 注：`创建和更新场景无需填写。`
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVerifiedOn(const int64_t& _verifiedOn);
@@ -306,11 +286,9 @@ namespace TencentCloud
                      * 获取员工是否离职：
 <ul><li>**0**：未离职</li><li>**1**：离职</li></ul>
 注：`创建和更新场景无需填写。`
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return QuiteJob 员工是否离职：
 <ul><li>**0**：未离职</li><li>**1**：离职</li></ul>
 注：`创建和更新场景无需填写。`
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetQuiteJob() const;
@@ -319,11 +297,9 @@ namespace TencentCloud
                      * 设置员工是否离职：
 <ul><li>**0**：未离职</li><li>**1**：离职</li></ul>
 注：`创建和更新场景无需填写。`
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _quiteJob 员工是否离职：
 <ul><li>**0**：未离职</li><li>**1**：离职</li></ul>
 注：`创建和更新场景无需填写。`
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQuiteJob(const int64_t& _quiteJob);
@@ -388,10 +364,8 @@ namespace TencentCloud
                     /**
                      * 获取企业微信用户账号ID。
 注：`仅企微类型的企业创建员工接口支持该字段。`
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WeworkOpenId 企业微信用户账号ID。
 注：`仅企微类型的企业创建员工接口支持该字段。`
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWeworkOpenId() const;
@@ -399,10 +373,8 @@ namespace TencentCloud
                     /**
                      * 设置企业微信用户账号ID。
 注：`仅企微类型的企业创建员工接口支持该字段。`
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _weworkOpenId 企业微信用户账号ID。
 注：`仅企微类型的企业创建员工接口支持该字段。`
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWeworkOpenId(const std::string& _weworkOpenId);
@@ -437,7 +409,6 @@ namespace TencentCloud
 
                     /**
                      * 用户邮箱。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_email;
                     bool m_emailHasBeenSet;
@@ -445,7 +416,6 @@ namespace TencentCloud
                     /**
                      * 用户在第三方平台ID。
 注：`如需在此接口提醒员工实名，该参数不传。`
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_openId;
                     bool m_openIdHasBeenSet;
@@ -453,14 +423,12 @@ namespace TencentCloud
                     /**
                      * 员工角色信息。
 注：`创建和更新场景无需填写。`
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<StaffRole> m_roles;
                     bool m_rolesHasBeenSet;
 
                     /**
                      * 员工部门信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Department m_department;
                     bool m_departmentHasBeenSet;
@@ -482,7 +450,6 @@ namespace TencentCloud
                     /**
                      * 员工实名时间戳，单位秒。
 注：`创建和更新场景无需填写。`
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_verifiedOn;
                     bool m_verifiedOnHasBeenSet;
@@ -491,7 +458,6 @@ namespace TencentCloud
                      * 员工是否离职：
 <ul><li>**0**：未离职</li><li>**1**：离职</li></ul>
 注：`创建和更新场景无需填写。`
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_quiteJob;
                     bool m_quiteJobHasBeenSet;
@@ -513,7 +479,6 @@ namespace TencentCloud
                     /**
                      * 企业微信用户账号ID。
 注：`仅企微类型的企业创建员工接口支持该字段。`
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_weworkOpenId;
                     bool m_weworkOpenIdHasBeenSet;

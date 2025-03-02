@@ -50,11 +50,9 @@ namespace TencentCloud
                      * 获取组织机构名称。
 请确认该名称与企业营业执照中注册的名称一致。
 如果名称中包含英文括号()，请使用中文括号（）代替。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrganizationName 组织机构名称。
 请确认该名称与企业营业执照中注册的名称一致。
 如果名称中包含英文括号()，请使用中文括号（）代替。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOrganizationName() const;
@@ -63,11 +61,9 @@ namespace TencentCloud
                      * 设置组织机构名称。
 请确认该名称与企业营业执照中注册的名称一致。
 如果名称中包含英文括号()，请使用中文括号（）代替。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _organizationName 组织机构名称。
 请确认该名称与企业营业执照中注册的名称一致。
 如果名称中包含英文括号()，请使用中文括号（）代替。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOrganizationName(const std::string& _organizationName);
@@ -82,10 +78,8 @@ namespace TencentCloud
                     /**
                      * 获取组织机构企业统一社会信用代码。
 请确认该企业统一社会信用代码与企业营业执照中注册的统一社会信用代码一致。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UniformSocialCreditCode 组织机构企业统一社会信用代码。
 请确认该企业统一社会信用代码与企业营业执照中注册的统一社会信用代码一致。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUniformSocialCreditCode() const;
@@ -93,10 +87,8 @@ namespace TencentCloud
                     /**
                      * 设置组织机构企业统一社会信用代码。
 请确认该企业统一社会信用代码与企业营业执照中注册的统一社会信用代码一致。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uniformSocialCreditCode 组织机构企业统一社会信用代码。
 请确认该企业统一社会信用代码与企业营业执照中注册的统一社会信用代码一致。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUniformSocialCreditCode(const std::string& _uniformSocialCreditCode);
@@ -111,10 +103,8 @@ namespace TencentCloud
                     /**
                      * 获取组织机构法人的姓名。
 请确认该企业统一社会信用代码与企业营业执照中注册的法人姓名一致。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LegalName 组织机构法人的姓名。
 请确认该企业统一社会信用代码与企业营业执照中注册的法人姓名一致。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLegalName() const;
@@ -122,10 +112,8 @@ namespace TencentCloud
                     /**
                      * 设置组织机构法人的姓名。
 请确认该企业统一社会信用代码与企业营业执照中注册的法人姓名一致。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _legalName 组织机构法人的姓名。
 请确认该企业统一社会信用代码与企业营业执照中注册的法人姓名一致。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLegalName(const std::string& _legalName);
@@ -139,18 +127,14 @@ namespace TencentCloud
 
                     /**
                      * 获取组织机构法人的证件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LegalIdCardType 组织机构法人的证件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLegalIdCardType() const;
 
                     /**
                      * 设置组织机构法人的证件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _legalIdCardType 组织机构法人的证件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLegalIdCardType(const std::string& _legalIdCardType);
@@ -164,18 +148,14 @@ namespace TencentCloud
 
                     /**
                      * 获取组织机构法人的证件号码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LegalIdCardNumber 组织机构法人的证件号码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLegalIdCardNumber() const;
 
                     /**
                      * 设置组织机构法人的证件号码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _legalIdCardNumber 组织机构法人的证件号码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLegalIdCardNumber(const std::string& _legalIdCardNumber);
@@ -190,10 +170,8 @@ namespace TencentCloud
                     /**
                      * 获取组织机构超管姓名。
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdminName 组织机构超管姓名。
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAdminName() const;
@@ -201,10 +179,8 @@ namespace TencentCloud
                     /**
                      * 设置组织机构超管姓名。
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _adminName 组织机构超管姓名。
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAdminName(const std::string& _adminName);
@@ -219,10 +195,8 @@ namespace TencentCloud
                     /**
                      * 获取组织机构超管手机号。
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdminMobile 组织机构超管手机号。
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAdminMobile() const;
@@ -230,10 +204,8 @@ namespace TencentCloud
                     /**
                      * 设置组织机构超管手机号。
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _adminMobile 组织机构超管手机号。
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAdminMobile(const std::string& _adminMobile);
@@ -248,10 +220,8 @@ namespace TencentCloud
                     /**
                      * 获取组织机构超管证件类型
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdminIdCardType 组织机构超管证件类型
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAdminIdCardType() const;
@@ -259,10 +229,8 @@ namespace TencentCloud
                     /**
                      * 设置组织机构超管证件类型
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _adminIdCardType 组织机构超管证件类型
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAdminIdCardType(const std::string& _adminIdCardType);
@@ -277,10 +245,8 @@ namespace TencentCloud
                     /**
                      * 获取组织机构超管证件号码
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdminIdCardNumber 组织机构超管证件号码
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAdminIdCardNumber() const;
@@ -288,10 +254,8 @@ namespace TencentCloud
                     /**
                      * 设置组织机构超管证件号码
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _adminIdCardNumber 组织机构超管证件号码
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAdminIdCardNumber(const std::string& _adminIdCardNumber);
@@ -305,18 +269,14 @@ namespace TencentCloud
 
                     /**
                      * 获取原超管姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OldAdminName 原超管姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOldAdminName() const;
 
                     /**
                      * 设置原超管姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _oldAdminName 原超管姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOldAdminName(const std::string& _oldAdminName);
@@ -330,18 +290,14 @@ namespace TencentCloud
 
                     /**
                      * 获取原超管手机号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OldAdminMobile 原超管手机号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOldAdminMobile() const;
 
                     /**
                      * 设置原超管手机号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _oldAdminMobile 原超管手机号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOldAdminMobile(const std::string& _oldAdminMobile);
@@ -355,18 +311,14 @@ namespace TencentCloud
 
                     /**
                      * 获取原超管证件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OldAdminIdCardType 原超管证件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOldAdminIdCardType() const;
 
                     /**
                      * 设置原超管证件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _oldAdminIdCardType 原超管证件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOldAdminIdCardType(const std::string& _oldAdminIdCardType);
@@ -380,18 +332,14 @@ namespace TencentCloud
 
                     /**
                      * 获取原超管证件号码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OldAdminIdCardNumber 原超管证件号码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOldAdminIdCardNumber() const;
 
                     /**
                      * 设置原超管证件号码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _oldAdminIdCardNumber 原超管证件号码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOldAdminIdCardNumber(const std::string& _oldAdminIdCardNumber);
@@ -409,7 +357,6 @@ namespace TencentCloud
                      * 组织机构名称。
 请确认该名称与企业营业执照中注册的名称一致。
 如果名称中包含英文括号()，请使用中文括号（）代替。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_organizationName;
                     bool m_organizationNameHasBeenSet;
@@ -417,7 +364,6 @@ namespace TencentCloud
                     /**
                      * 组织机构企业统一社会信用代码。
 请确认该企业统一社会信用代码与企业营业执照中注册的统一社会信用代码一致。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uniformSocialCreditCode;
                     bool m_uniformSocialCreditCodeHasBeenSet;
@@ -425,21 +371,18 @@ namespace TencentCloud
                     /**
                      * 组织机构法人的姓名。
 请确认该企业统一社会信用代码与企业营业执照中注册的法人姓名一致。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_legalName;
                     bool m_legalNameHasBeenSet;
 
                     /**
                      * 组织机构法人的证件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_legalIdCardType;
                     bool m_legalIdCardTypeHasBeenSet;
 
                     /**
                      * 组织机构法人的证件号码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_legalIdCardNumber;
                     bool m_legalIdCardNumberHasBeenSet;
@@ -447,7 +390,6 @@ namespace TencentCloud
                     /**
                      * 组织机构超管姓名。
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_adminName;
                     bool m_adminNameHasBeenSet;
@@ -455,7 +397,6 @@ namespace TencentCloud
                     /**
                      * 组织机构超管手机号。
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_adminMobile;
                     bool m_adminMobileHasBeenSet;
@@ -463,7 +404,6 @@ namespace TencentCloud
                     /**
                      * 组织机构超管证件类型
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_adminIdCardType;
                     bool m_adminIdCardTypeHasBeenSet;
@@ -471,35 +411,30 @@ namespace TencentCloud
                     /**
                      * 组织机构超管证件号码
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_adminIdCardNumber;
                     bool m_adminIdCardNumberHasBeenSet;
 
                     /**
                      * 原超管姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_oldAdminName;
                     bool m_oldAdminNameHasBeenSet;
 
                     /**
                      * 原超管手机号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_oldAdminMobile;
                     bool m_oldAdminMobileHasBeenSet;
 
                     /**
                      * 原超管证件类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_oldAdminIdCardType;
                     bool m_oldAdminIdCardTypeHasBeenSet;
 
                     /**
                      * 原超管证件号码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_oldAdminIdCardNumber;
                     bool m_oldAdminIdCardNumberHasBeenSet;

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取签署方唯一编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SignId 签署方唯一编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSignId() const;
 
                     /**
                      * 设置签署方唯一编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _signId 签署方唯一编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSignId(const std::string& _signId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取签署方角色编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecipientId 签署方角色编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRecipientId() const;
 
                     /**
                      * 设置签署方角色编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _recipientId 签署方角色编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRecipientId(const std::string& _recipientId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取签署方角色名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApproverRoleName 签署方角色名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApproverRoleName() const;
 
                     /**
                      * 设置签署方角色名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _approverRoleName 签署方角色名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApproverRoleName(const std::string& _approverRoleName);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 签署方唯一编号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_signId;
                     bool m_signIdHasBeenSet;
 
                     /**
                      * 签署方角色编号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_recipientId;
                     bool m_recipientIdHasBeenSet;
 
                     /**
                      * 签署方角色名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_approverRoleName;
                     bool m_approverRoleNameHasBeenSet;
