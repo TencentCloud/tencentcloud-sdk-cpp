@@ -1072,6 +1072,49 @@ EssClient::CreateFlowEvidenceReportOutcomeCallable EssClient::CreateFlowEvidence
     return task->get_future();
 }
 
+EssClient::CreateFlowForwardsOutcome EssClient::CreateFlowForwards(const CreateFlowForwardsRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateFlowForwards");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateFlowForwardsResponse rsp = CreateFlowForwardsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateFlowForwardsOutcome(rsp);
+        else
+            return CreateFlowForwardsOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateFlowForwardsOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreateFlowForwardsAsync(const CreateFlowForwardsRequest& request, const CreateFlowForwardsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateFlowForwards(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::CreateFlowForwardsOutcomeCallable EssClient::CreateFlowForwardsCallable(const CreateFlowForwardsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateFlowForwardsOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateFlowForwards(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::CreateFlowGroupByFilesOutcome EssClient::CreateFlowGroupByFiles(const CreateFlowGroupByFilesRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateFlowGroupByFiles");

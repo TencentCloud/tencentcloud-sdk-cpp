@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取智能语音识别结果。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AiAsrResults 智能语音识别结果。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetAiAsrResults() const;
 
                     /**
                      * 设置智能语音识别结果。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _aiAsrResults 智能语音识别结果。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAiAsrResults(const std::vector<std::string>& _aiAsrResults);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取智能文字识别结果。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AiOcrResults 智能文字识别结果。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetAiOcrResults() const;
 
                     /**
                      * 设置智能文字识别结果。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _aiOcrResults 智能文字识别结果。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAiOcrResults(const std::vector<std::string>& _aiOcrResults);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内容质检结果。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StreamQuaCtrlResults 内容质检结果。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetStreamQuaCtrlResults() const;
 
                     /**
                      * 设置内容质检结果。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _streamQuaCtrlResults 内容质检结果。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStreamQuaCtrlResults(const std::vector<std::string>& _streamQuaCtrlResults);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 智能语音识别结果。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_aiAsrResults;
                     bool m_aiAsrResultsHasBeenSet;
 
                     /**
                      * 智能文字识别结果。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_aiOcrResults;
                     bool m_aiOcrResultsHasBeenSet;
 
                     /**
                      * 内容质检结果。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_streamQuaCtrlResults;
                     bool m_streamQuaCtrlResultsHasBeenSet;

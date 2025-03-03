@@ -41,7 +41,8 @@ RenewWorkflowSchedulerInfoDsRequest::RenewWorkflowSchedulerInfoDsRequest() :
     m_modifyCycleValueHasBeenSet(false),
     m_calendarOpenHasBeenSet(false),
     m_calendarNameHasBeenSet(false),
-    m_calendarIdHasBeenSet(false)
+    m_calendarIdHasBeenSet(false),
+    m_scheduleTimeZoneHasBeenSet(false)
 {
 }
 
@@ -202,6 +203,14 @@ string RenewWorkflowSchedulerInfoDsRequest::ToJsonString() const
         string key = "CalendarId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_calendarId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scheduleTimeZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduleTimeZone";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_scheduleTimeZone.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -514,6 +523,22 @@ void RenewWorkflowSchedulerInfoDsRequest::SetCalendarId(const string& _calendarI
 bool RenewWorkflowSchedulerInfoDsRequest::CalendarIdHasBeenSet() const
 {
     return m_calendarIdHasBeenSet;
+}
+
+string RenewWorkflowSchedulerInfoDsRequest::GetScheduleTimeZone() const
+{
+    return m_scheduleTimeZone;
+}
+
+void RenewWorkflowSchedulerInfoDsRequest::SetScheduleTimeZone(const string& _scheduleTimeZone)
+{
+    m_scheduleTimeZone = _scheduleTimeZone;
+    m_scheduleTimeZoneHasBeenSet = true;
+}
+
+bool RenewWorkflowSchedulerInfoDsRequest::ScheduleTimeZoneHasBeenSet() const
+{
+    return m_scheduleTimeZoneHasBeenSet;
 }
 
 

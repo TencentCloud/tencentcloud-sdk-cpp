@@ -126,6 +126,27 @@ namespace TencentCloud
                      */
                     bool VolumeHasBeenSet() const;
 
+                    /**
+                     * 获取是否暂停，默认false表示不暂停。暂停期间任务仍在进行中仍会计费，如果要销毁任务请调用停止接口。
+                     * @return IsPause 是否暂停，默认false表示不暂停。暂停期间任务仍在进行中仍会计费，如果要销毁任务请调用停止接口。
+                     * 
+                     */
+                    bool GetIsPause() const;
+
+                    /**
+                     * 设置是否暂停，默认false表示不暂停。暂停期间任务仍在进行中仍会计费，如果要销毁任务请调用停止接口。
+                     * @param _isPause 是否暂停，默认false表示不暂停。暂停期间任务仍在进行中仍会计费，如果要销毁任务请调用停止接口。
+                     * 
+                     */
+                    void SetIsPause(const bool& _isPause);
+
+                    /**
+                     * 判断参数 IsPause 是否已赋值
+                     * @return IsPause 是否已赋值
+                     * 
+                     */
+                    bool IsPauseHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +172,12 @@ namespace TencentCloud
                      */
                     uint64_t m_volume;
                     bool m_volumeHasBeenSet;
+
+                    /**
+                     * 是否暂停，默认false表示不暂停。暂停期间任务仍在进行中仍会计费，如果要销毁任务请调用停止接口。
+                     */
+                    bool m_isPause;
+                    bool m_isPauseHasBeenSet;
 
                 };
             }

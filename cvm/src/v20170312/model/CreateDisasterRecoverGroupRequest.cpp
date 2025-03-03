@@ -25,7 +25,8 @@ using namespace std;
 CreateDisasterRecoverGroupRequest::CreateDisasterRecoverGroupRequest() :
     m_nameHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
+    m_clientTokenHasBeenSet(false),
+    m_affinityHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string CreateDisasterRecoverGroupRequest::ToJsonString() const
         string key = "ClientToken";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_clientToken.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_affinityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Affinity";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_affinity, allocator);
     }
 
 
@@ -114,6 +123,22 @@ void CreateDisasterRecoverGroupRequest::SetClientToken(const string& _clientToke
 bool CreateDisasterRecoverGroupRequest::ClientTokenHasBeenSet() const
 {
     return m_clientTokenHasBeenSet;
+}
+
+int64_t CreateDisasterRecoverGroupRequest::GetAffinity() const
+{
+    return m_affinity;
+}
+
+void CreateDisasterRecoverGroupRequest::SetAffinity(const int64_t& _affinity)
+{
+    m_affinity = _affinity;
+    m_affinityHasBeenSet = true;
+}
+
+bool CreateDisasterRecoverGroupRequest::AffinityHasBeenSet() const
+{
+    return m_affinityHasBeenSet;
 }
 
 

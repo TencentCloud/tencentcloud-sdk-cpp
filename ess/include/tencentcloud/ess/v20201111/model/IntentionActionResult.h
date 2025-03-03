@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取意愿核身结果详细数据，与每段点头确认过程一一对应
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Details 意愿核身结果详细数据，与每段点头确认过程一一对应
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<IntentionActionResultDetail> GetDetails() const;
 
                     /**
                      * 设置意愿核身结果详细数据，与每段点头确认过程一一对应
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _details 意愿核身结果详细数据，与每段点头确认过程一一对应
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDetails(const std::vector<IntentionActionResultDetail>& _details);
@@ -76,7 +72,6 @@ namespace TencentCloud
 
                     /**
                      * 意愿核身结果详细数据，与每段点头确认过程一一对应
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<IntentionActionResultDetail> m_details;
                     bool m_detailsHasBeenSet;

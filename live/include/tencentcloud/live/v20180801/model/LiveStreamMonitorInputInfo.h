@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取待监播的输入流名称。256字节以内，只允许包含字母、数字、‘-’，‘_’，'.'字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InputStreamName 待监播的输入流名称。256字节以内，只允许包含字母、数字、‘-’，‘_’，'.'字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInputStreamName() const;
 
                     /**
                      * 设置待监播的输入流名称。256字节以内，只允许包含字母、数字、‘-’，‘_’，'.'字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _inputStreamName 待监播的输入流名称。256字节以内，只允许包含字母、数字、‘-’，‘_’，'.'字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInputStreamName(const std::string& _inputStreamName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取待监播的输入流推流域名。128字节以内，只允许填处于启用状态的推流域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InputDomain 待监播的输入流推流域名。128字节以内，只允许填处于启用状态的推流域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInputDomain() const;
 
                     /**
                      * 设置待监播的输入流推流域名。128字节以内，只允许填处于启用状态的推流域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _inputDomain 待监播的输入流推流域名。128字节以内，只允许填处于启用状态的推流域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInputDomain(const std::string& _inputDomain);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取待监播的输入流推流路径。32字节以内，只允许包含字母、数字、‘-’，‘_’，'.'字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InputApp 待监播的输入流推流路径。32字节以内，只允许包含字母、数字、‘-’，‘_’，'.'字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInputApp() const;
 
                     /**
                      * 设置待监播的输入流推流路径。32字节以内，只允许包含字母、数字、‘-’，‘_’，'.'字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _inputApp 待监播的输入流推流路径。32字节以内，只允许包含字母、数字、‘-’，‘_’，'.'字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInputApp(const std::string& _inputApp);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取待监播的输入流推流url。一般场景下，无需该参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InputUrl 待监播的输入流推流url。一般场景下，无需该参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInputUrl() const;
 
                     /**
                      * 设置待监播的输入流推流url。一般场景下，无需该参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _inputUrl 待监播的输入流推流url。一般场景下，无需该参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInputUrl(const std::string& _inputUrl);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取描述。256字节以内。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 描述。256字节以内。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述。256字节以内。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 描述。256字节以内。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -238,35 +218,30 @@ namespace TencentCloud
 
                     /**
                      * 待监播的输入流名称。256字节以内，只允许包含字母、数字、‘-’，‘_’，'.'字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_inputStreamName;
                     bool m_inputStreamNameHasBeenSet;
 
                     /**
                      * 待监播的输入流推流域名。128字节以内，只允许填处于启用状态的推流域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_inputDomain;
                     bool m_inputDomainHasBeenSet;
 
                     /**
                      * 待监播的输入流推流路径。32字节以内，只允许包含字母、数字、‘-’，‘_’，'.'字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_inputApp;
                     bool m_inputAppHasBeenSet;
 
                     /**
                      * 待监播的输入流推流url。一般场景下，无需该参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_inputUrl;
                     bool m_inputUrlHasBeenSet;
 
                     /**
                      * 描述。256字节以内。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

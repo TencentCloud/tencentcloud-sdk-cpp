@@ -2577,6 +2577,49 @@ EssbasicClient::CreateFlowBlockchainEvidenceUrlOutcomeCallable EssbasicClient::C
     return task->get_future();
 }
 
+EssbasicClient::CreateFlowForwardsOutcome EssbasicClient::CreateFlowForwards(const CreateFlowForwardsRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateFlowForwards");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateFlowForwardsResponse rsp = CreateFlowForwardsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateFlowForwardsOutcome(rsp);
+        else
+            return CreateFlowForwardsOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateFlowForwardsOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::CreateFlowForwardsAsync(const CreateFlowForwardsRequest& request, const CreateFlowForwardsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateFlowForwards(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::CreateFlowForwardsOutcomeCallable EssbasicClient::CreateFlowForwardsCallable(const CreateFlowForwardsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateFlowForwardsOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateFlowForwards(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::CreateFlowGroupSignReviewOutcome EssbasicClient::CreateFlowGroupSignReview(const CreateFlowGroupSignReviewRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateFlowGroupSignReview");

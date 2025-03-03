@@ -425,6 +425,48 @@ namespace TencentCloud
                      */
                     bool TravelResultsHasBeenSet() const;
 
+                    /**
+                     * 获取三级标签
+                     * @return SubTag 三级标签
+                     * 
+                     */
+                    std::string GetSubTag() const;
+
+                    /**
+                     * 设置三级标签
+                     * @param _subTag 三级标签
+                     * 
+                     */
+                    void SetSubTag(const std::string& _subTag);
+
+                    /**
+                     * 判断参数 SubTag 是否已赋值
+                     * @return SubTag 是否已赋值
+                     * 
+                     */
+                    bool SubTagHasBeenSet() const;
+
+                    /**
+                     * 获取三级标签码
+                     * @return SubTagCode 三级标签码
+                     * 
+                     */
+                    std::string GetSubTagCode() const;
+
+                    /**
+                     * 设置三级标签码
+                     * @param _subTagCode 三级标签码
+                     * 
+                     */
+                    void SetSubTagCode(const std::string& _subTagCode);
+
+                    /**
+                     * 判断参数 SubTagCode 是否已赋值
+                     * @return SubTagCode 是否已赋值
+                     * 
+                     */
+                    bool SubTagCodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -531,6 +573,18 @@ namespace TencentCloud
                      */
                     std::vector<TravelResults> m_travelResults;
                     bool m_travelResultsHasBeenSet;
+
+                    /**
+                     * 三级标签
+                     */
+                    std::string m_subTag;
+                    bool m_subTagHasBeenSet;
+
+                    /**
+                     * 三级标签码
+                     */
+                    std::string m_subTagCode;
+                    bool m_subTagCodeHasBeenSet;
 
                 };
             }

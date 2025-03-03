@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ims/v20201229/model/Location.h>
+#include <tencentcloud/ims/v20201229/model/OcrHitInfo.h>
 
 
 namespace TencentCloud
@@ -236,6 +237,27 @@ namespace TencentCloud
                      */
                     bool SubLabelHasBeenSet() const;
 
+                    /**
+                     * 获取关键词命中位置信息
+                     * @return HitInfos 关键词命中位置信息
+                     * 
+                     */
+                    std::vector<OcrHitInfo> GetHitInfos() const;
+
+                    /**
+                     * 设置关键词命中位置信息
+                     * @param _hitInfos 关键词命中位置信息
+                     * 
+                     */
+                    void SetHitInfos(const std::vector<OcrHitInfo>& _hitInfos);
+
+                    /**
+                     * 判断参数 HitInfos 是否已赋值
+                     * @return HitInfos 是否已赋值
+                     * 
+                     */
+                    bool HitInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -291,6 +313,12 @@ namespace TencentCloud
                      */
                     std::string m_subLabel;
                     bool m_subLabelHasBeenSet;
+
+                    /**
+                     * 关键词命中位置信息
+                     */
+                    std::vector<OcrHitInfo> m_hitInfos;
+                    bool m_hitInfosHasBeenSet;
 
                 };
             }

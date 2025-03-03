@@ -407,7 +407,9 @@ namespace TencentCloud
                 DescribeDatasetsOutcomeCallable DescribeDatasetsCallable(const Model::DescribeDatasetsRequest& request);
 
                 /**
-                 *查询推理镜像模板
+                 *已废弃，收敛到统一接口
+
+查询推理镜像模板
                  * @param req DescribeInferTemplatesRequest
                  * @return DescribeInferTemplatesOutcome
                  */

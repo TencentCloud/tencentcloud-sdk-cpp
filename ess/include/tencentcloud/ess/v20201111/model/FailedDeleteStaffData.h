@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取员工在电子签的userId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserId 员工在电子签的userId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置员工在电子签的userId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userId 员工在电子签的userId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserId(const std::string& _userId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取员工在第三方平台的openId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OpenId 员工在第三方平台的openId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOpenId() const;
 
                     /**
                      * 设置员工在第三方平台的openId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _openId 员工在第三方平台的openId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOpenId(const std::string& _openId);
@@ -121,14 +113,12 @@ namespace TencentCloud
 
                     /**
                      * 员工在电子签的userId
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
 
                     /**
                      * 员工在第三方平台的openId
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_openId;
                     bool m_openIdHasBeenSet;

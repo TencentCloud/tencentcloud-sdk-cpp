@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取断流信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StreamBrokenResults 断流信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetStreamBrokenResults() const;
 
                     /**
                      * 设置断流信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _streamBrokenResults 断流信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStreamBrokenResults(const std::vector<std::string>& _streamBrokenResults);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取低帧率信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LowFrameRateResults 低帧率信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetLowFrameRateResults() const;
 
                     /**
                      * 设置低帧率信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lowFrameRateResults 低帧率信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLowFrameRateResults(const std::vector<std::string>& _lowFrameRateResults);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取流格式诊断信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StreamFormatResults 流格式诊断信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetStreamFormatResults() const;
 
                     /**
                      * 设置流格式诊断信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _streamFormatResults 流格式诊断信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStreamFormatResults(const std::vector<std::string>& _streamFormatResults);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 断流信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_streamBrokenResults;
                     bool m_streamBrokenResultsHasBeenSet;
 
                     /**
                      * 低帧率信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_lowFrameRateResults;
                     bool m_lowFrameRateResultsHasBeenSet;
 
                     /**
                      * 流格式诊断信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_streamFormatResults;
                     bool m_streamFormatResultsHasBeenSet;

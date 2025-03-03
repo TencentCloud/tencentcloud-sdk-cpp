@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取监播任务输出流宽度像素。范围[1,1920]。建议至少大于100像素。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OutputStreamWidth 监播任务输出流宽度像素。范围[1,1920]。建议至少大于100像素。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetOutputStreamWidth() const;
 
                     /**
                      * 设置监播任务输出流宽度像素。范围[1,1920]。建议至少大于100像素。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _outputStreamWidth 监播任务输出流宽度像素。范围[1,1920]。建议至少大于100像素。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutputStreamWidth(const uint64_t& _outputStreamWidth);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取监播任务输出流长度像素。范围[1,1080]，建议至少大于100像素。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OutputStreamHeight 监播任务输出流长度像素。范围[1,1080]，建议至少大于100像素。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetOutputStreamHeight() const;
 
                     /**
                      * 设置监播任务输出流长度像素。范围[1,1080]，建议至少大于100像素。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _outputStreamHeight 监播任务输出流长度像素。范围[1,1080]，建议至少大于100像素。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutputStreamHeight(const uint64_t& _outputStreamHeight);
@@ -100,11 +92,9 @@ namespace TencentCloud
                      * 获取监播任务输出流名称。
 不填时，系统会自动生成。
 256字节以内，只允许包含字母、数字、‘-’，‘_’，'.'字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OutputStreamName 监播任务输出流名称。
 不填时，系统会自动生成。
 256字节以内，只允许包含字母、数字、‘-’，‘_’，'.'字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOutputStreamName() const;
@@ -113,11 +103,9 @@ namespace TencentCloud
                      * 设置监播任务输出流名称。
 不填时，系统会自动生成。
 256字节以内，只允许包含字母、数字、‘-’，‘_’，'.'字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _outputStreamName 监播任务输出流名称。
 不填时，系统会自动生成。
 256字节以内，只允许包含字母、数字、‘-’，‘_’，'.'字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutputStreamName(const std::string& _outputStreamName);
@@ -131,18 +119,14 @@ namespace TencentCloud
 
                     /**
                      * 获取监播任务播放域名。128字节以内，只允许填处于启用状态的播放域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OutputDomain 监播任务播放域名。128字节以内，只允许填处于启用状态的播放域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOutputDomain() const;
 
                     /**
                      * 设置监播任务播放域名。128字节以内，只允许填处于启用状态的播放域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _outputDomain 监播任务播放域名。128字节以内，只允许填处于启用状态的播放域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutputDomain(const std::string& _outputDomain);
@@ -156,18 +140,14 @@ namespace TencentCloud
 
                     /**
                      * 获取监播任务播放路径。32字节以内，只允许包含字母、数字、‘-’，‘_’，'.'字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OutputApp 监播任务播放路径。32字节以内，只允许包含字母、数字、‘-’，‘_’，'.'字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOutputApp() const;
 
                     /**
                      * 设置监播任务播放路径。32字节以内，只允许包含字母、数字、‘-’，‘_’，'.'字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _outputApp 监播任务播放路径。32字节以内，只允许包含字母、数字、‘-’，‘_’，'.'字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutputApp(const std::string& _outputApp);
@@ -183,14 +163,12 @@ namespace TencentCloud
 
                     /**
                      * 监播任务输出流宽度像素。范围[1,1920]。建议至少大于100像素。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_outputStreamWidth;
                     bool m_outputStreamWidthHasBeenSet;
 
                     /**
                      * 监播任务输出流长度像素。范围[1,1080]，建议至少大于100像素。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_outputStreamHeight;
                     bool m_outputStreamHeightHasBeenSet;
@@ -199,21 +177,18 @@ namespace TencentCloud
                      * 监播任务输出流名称。
 不填时，系统会自动生成。
 256字节以内，只允许包含字母、数字、‘-’，‘_’，'.'字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_outputStreamName;
                     bool m_outputStreamNameHasBeenSet;
 
                     /**
                      * 监播任务播放域名。128字节以内，只允许填处于启用状态的播放域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_outputDomain;
                     bool m_outputDomainHasBeenSet;
 
                     /**
                      * 监播任务播放路径。32字节以内，只允许包含字母、数字、‘-’，‘_’，'.'字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_outputApp;
                     bool m_outputAppHasBeenSet;

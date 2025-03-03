@@ -26,7 +26,8 @@ UpdateStreamIngestRequest::UpdateStreamIngestRequest() :
     m_sdkAppIdHasBeenSet(false),
     m_taskIdHasBeenSet(false),
     m_streamUrlHasBeenSet(false),
-    m_volumeHasBeenSet(false)
+    m_volumeHasBeenSet(false),
+    m_isPauseHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string UpdateStreamIngestRequest::ToJsonString() const
         string key = "Volume";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_volume, allocator);
+    }
+
+    if (m_isPauseHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsPause";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isPause, allocator);
     }
 
 
@@ -139,6 +148,22 @@ void UpdateStreamIngestRequest::SetVolume(const uint64_t& _volume)
 bool UpdateStreamIngestRequest::VolumeHasBeenSet() const
 {
     return m_volumeHasBeenSet;
+}
+
+bool UpdateStreamIngestRequest::GetIsPause() const
+{
+    return m_isPause;
+}
+
+void UpdateStreamIngestRequest::SetIsPause(const bool& _isPause)
+{
+    m_isPause = _isPause;
+    m_isPauseHasBeenSet = true;
+}
+
+bool UpdateStreamIngestRequest::IsPauseHasBeenSet() const
+{
+    return m_isPauseHasBeenSet;
 }
 
 
