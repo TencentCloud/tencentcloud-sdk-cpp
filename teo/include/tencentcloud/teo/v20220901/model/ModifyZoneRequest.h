@@ -119,15 +119,15 @@ namespace TencentCloud
                     bool VanityNameServersHasBeenSet() const;
 
                     /**
-                     * 获取站点别名。数字、英文、-和_组合，限制20个字符。
-                     * @return AliasZoneName 站点别名。数字、英文、-和_组合，限制20个字符。
+                     * 获取同名站点标识。限制输入数字、英文、"." 、"-" 和 "_"，长度 200 个字符以内。
+                     * @return AliasZoneName 同名站点标识。限制输入数字、英文、"." 、"-" 和 "_"，长度 200 个字符以内。
                      * 
                      */
                     std::string GetAliasZoneName() const;
 
                     /**
-                     * 设置站点别名。数字、英文、-和_组合，限制20个字符。
-                     * @param _aliasZoneName 站点别名。数字、英文、-和_组合，限制20个字符。
+                     * 设置同名站点标识。限制输入数字、英文、"." 、"-" 和 "_"，长度 200 个字符以内。
+                     * @param _aliasZoneName 同名站点标识。限制输入数字、英文、"." 、"-" 和 "_"，长度 200 个字符以内。
                      * 
                      */
                     void SetAliasZoneName(const std::string& _aliasZoneName);
@@ -217,7 +217,7 @@ namespace TencentCloud
                     bool m_vanityNameServersHasBeenSet;
 
                     /**
-                     * 站点别名。数字、英文、-和_组合，限制20个字符。
+                     * 同名站点标识。限制输入数字、英文、"." 、"-" 和 "_"，长度 200 个字符以内。
                      */
                     std::string m_aliasZoneName;
                     bool m_aliasZoneNameHasBeenSet;

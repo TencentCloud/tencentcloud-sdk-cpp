@@ -147,6 +147,8 @@
 #include <tencentcloud/emr/v20190103/model/ModifyResourcesTagsResponse.h>
 #include <tencentcloud/emr/v20190103/model/ModifySLInstanceRequest.h>
 #include <tencentcloud/emr/v20190103/model/ModifySLInstanceResponse.h>
+#include <tencentcloud/emr/v20190103/model/ModifySLInstanceBasicRequest.h>
+#include <tencentcloud/emr/v20190103/model/ModifySLInstanceBasicResponse.h>
 #include <tencentcloud/emr/v20190103/model/ModifyUserManagerPwdRequest.h>
 #include <tencentcloud/emr/v20190103/model/ModifyUserManagerPwdResponse.h>
 #include <tencentcloud/emr/v20190103/model/ModifyYarnDeployRequest.h>
@@ -377,6 +379,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifySLInstanceResponse> ModifySLInstanceOutcome;
                 typedef std::future<ModifySLInstanceOutcome> ModifySLInstanceOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::ModifySLInstanceRequest&, ModifySLInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySLInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifySLInstanceBasicResponse> ModifySLInstanceBasicOutcome;
+                typedef std::future<ModifySLInstanceBasicOutcome> ModifySLInstanceBasicOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::ModifySLInstanceBasicRequest&, ModifySLInstanceBasicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySLInstanceBasicAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyUserManagerPwdResponse> ModifyUserManagerPwdOutcome;
                 typedef std::future<ModifyUserManagerPwdOutcome> ModifyUserManagerPwdOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::ModifyUserManagerPwdRequest&, ModifyUserManagerPwdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserManagerPwdAsyncHandler;
@@ -989,6 +994,15 @@ namespace TencentCloud
                 ModifySLInstanceOutcome ModifySLInstance(const Model::ModifySLInstanceRequest &request);
                 void ModifySLInstanceAsync(const Model::ModifySLInstanceRequest& request, const ModifySLInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifySLInstanceOutcomeCallable ModifySLInstanceCallable(const Model::ModifySLInstanceRequest& request);
+
+                /**
+                 *serverless hbase修改实例名称
+                 * @param req ModifySLInstanceBasicRequest
+                 * @return ModifySLInstanceBasicOutcome
+                 */
+                ModifySLInstanceBasicOutcome ModifySLInstanceBasic(const Model::ModifySLInstanceBasicRequest &request);
+                void ModifySLInstanceBasicAsync(const Model::ModifySLInstanceBasicRequest& request, const ModifySLInstanceBasicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySLInstanceBasicOutcomeCallable ModifySLInstanceBasicCallable(const Model::ModifySLInstanceBasicRequest& request);
 
                 /**
                  *修改用户密码（用户管理）

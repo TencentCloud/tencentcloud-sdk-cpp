@@ -26,7 +26,8 @@ DescribeDisasterRecoverGroupsRequest::DescribeDisasterRecoverGroupsRequest() :
     m_disasterRecoverGroupIdsHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,21 @@ string DescribeDisasterRecoverGroupsRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -144,6 +160,22 @@ void DescribeDisasterRecoverGroupsRequest::SetLimit(const int64_t& _limit)
 bool DescribeDisasterRecoverGroupsRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+vector<Filter> DescribeDisasterRecoverGroupsRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeDisasterRecoverGroupsRequest::SetFilters(const vector<Filter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeDisasterRecoverGroupsRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
 }
 
 

@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cvm/v20170312/model/Tag.h>
 
 
 namespace TencentCloud
@@ -165,18 +166,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分散置放群组内，云服务器id列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceIds 分散置放群组内，云服务器id列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
                      * 设置分散置放群组内，云服务器id列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceIds 分散置放群组内，云服务器id列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -190,18 +187,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分散置放群组创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 分散置放群组创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置分散置放群组创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 分散置放群组创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -212,6 +205,27 @@ namespace TencentCloud
                      * 
                      */
                     bool CreateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取置放群组关联的标签列表。
+                     * @return Tags 置放群组关联的标签列表。
+                     * 
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置置放群组关联的标签列表。
+                     * @param _tags 置放群组关联的标签列表。
+                     * 
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
 
                 private:
 
@@ -250,17 +264,21 @@ namespace TencentCloud
 
                     /**
                      * 分散置放群组内，云服务器id列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
 
                     /**
                      * 分散置放群组创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 置放群组关联的标签列表。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

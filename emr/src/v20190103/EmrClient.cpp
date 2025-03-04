@@ -2706,6 +2706,49 @@ EmrClient::ModifySLInstanceOutcomeCallable EmrClient::ModifySLInstanceCallable(c
     return task->get_future();
 }
 
+EmrClient::ModifySLInstanceBasicOutcome EmrClient::ModifySLInstanceBasic(const ModifySLInstanceBasicRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySLInstanceBasic");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySLInstanceBasicResponse rsp = ModifySLInstanceBasicResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySLInstanceBasicOutcome(rsp);
+        else
+            return ModifySLInstanceBasicOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySLInstanceBasicOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::ModifySLInstanceBasicAsync(const ModifySLInstanceBasicRequest& request, const ModifySLInstanceBasicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifySLInstanceBasic(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::ModifySLInstanceBasicOutcomeCallable EmrClient::ModifySLInstanceBasicCallable(const ModifySLInstanceBasicRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifySLInstanceBasicOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifySLInstanceBasic(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EmrClient::ModifyUserManagerPwdOutcome EmrClient::ModifyUserManagerPwd(const ModifyUserManagerPwdRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyUserManagerPwd");
