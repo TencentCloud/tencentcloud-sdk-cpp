@@ -69,10 +69,18 @@ namespace TencentCloud
 
                     /**
                      * 获取扩展参数，其值为序列化的 json字符串。
-注意：此参数为定制需求参数，需要线下对接。
+注意：此参数为定制需求参数，参考如下：
+智能檫除：https://cloud.tencent.com/document/product/862/101530
+智能拆条：https://cloud.tencent.com/document/product/862/112098
+高光集锦：https://cloud.tencent.com/document/product/862/107280
+智能横转竖：https://cloud.tencent.com/document/product/862/112112
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExtendedParameter 扩展参数，其值为序列化的 json字符串。
-注意：此参数为定制需求参数，需要线下对接。
+注意：此参数为定制需求参数，参考如下：
+智能檫除：https://cloud.tencent.com/document/product/862/101530
+智能拆条：https://cloud.tencent.com/document/product/862/112098
+高光集锦：https://cloud.tencent.com/document/product/862/107280
+智能横转竖：https://cloud.tencent.com/document/product/862/112112
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -80,10 +88,18 @@ namespace TencentCloud
 
                     /**
                      * 设置扩展参数，其值为序列化的 json字符串。
-注意：此参数为定制需求参数，需要线下对接。
+注意：此参数为定制需求参数，参考如下：
+智能檫除：https://cloud.tencent.com/document/product/862/101530
+智能拆条：https://cloud.tencent.com/document/product/862/112098
+高光集锦：https://cloud.tencent.com/document/product/862/107280
+智能横转竖：https://cloud.tencent.com/document/product/862/112112
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _extendedParameter 扩展参数，其值为序列化的 json字符串。
-注意：此参数为定制需求参数，需要线下对接。
+注意：此参数为定制需求参数，参考如下：
+智能檫除：https://cloud.tencent.com/document/product/862/101530
+智能拆条：https://cloud.tencent.com/document/product/862/112098
+高光集锦：https://cloud.tencent.com/document/product/862/107280
+智能横转竖：https://cloud.tencent.com/document/product/862/112112
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -106,7 +122,11 @@ namespace TencentCloud
 
                     /**
                      * 扩展参数，其值为序列化的 json字符串。
-注意：此参数为定制需求参数，需要线下对接。
+注意：此参数为定制需求参数，参考如下：
+智能檫除：https://cloud.tencent.com/document/product/862/101530
+智能拆条：https://cloud.tencent.com/document/product/862/112098
+高光集锦：https://cloud.tencent.com/document/product/862/107280
+智能横转竖：https://cloud.tencent.com/document/product/862/112112
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_extendedParameter;

@@ -27,6 +27,7 @@
 #include <tencentcloud/cdwpg/v20201230/model/InstanceStateInfo.h>
 #include <tencentcloud/cdwpg/v20201230/model/Tag.h>
 #include <tencentcloud/cdwpg/v20201230/model/InstanceNodeGroup.h>
+#include <tencentcloud/cdwpg/v20201230/model/AccessInfo.h>
 
 
 namespace TencentCloud
@@ -425,56 +426,6 @@ namespace TencentCloud
                     bool CharsetHasBeenSet() const;
 
                     /**
-                     * 获取引擎版本
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EngineVersion 引擎版本
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::string GetEngineVersion() const;
-
-                    /**
-                     * 设置引擎版本
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _engineVersion 引擎版本
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetEngineVersion(const std::string& _engineVersion);
-
-                    /**
-                     * 判断参数 EngineVersion 是否已赋值
-                     * @return EngineVersion 是否已赋值
-                     * 
-                     */
-                    bool EngineVersionHasBeenSet() const;
-
-                    /**
-                     * 获取GTM节点列表
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GTMNodes GTM节点列表
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    std::vector<InstanceNodeGroup> GetGTMNodes() const;
-
-                    /**
-                     * 设置GTM节点列表
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _gTMNodes GTM节点列表
-注意：此字段可能返回 null，表示取不到有效值。
-                     * 
-                     */
-                    void SetGTMNodes(const std::vector<InstanceNodeGroup>& _gTMNodes);
-
-                    /**
-                     * 判断参数 GTMNodes 是否已赋值
-                     * @return GTMNodes 是否已赋值
-                     * 
-                     */
-                    bool GTMNodesHasBeenSet() const;
-
-                    /**
                      * 获取CN节点列表
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CNNodes CN节点列表
@@ -525,54 +476,229 @@ namespace TencentCloud
                     bool DNNodesHasBeenSet() const;
 
                     /**
-                     * 获取备份存储
+                     * 获取1
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BackupStorage 备份存储
+                     * @return RegionId 1
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::vector<InstanceNodeGroup> GetBackupStorage() const;
+                    int64_t GetRegionId() const;
 
                     /**
-                     * 设置备份存储
+                     * 设置1
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _backupStorage 备份存储
+                     * @param _regionId 1
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetBackupStorage(const std::vector<InstanceNodeGroup>& _backupStorage);
+                    void SetRegionId(const int64_t& _regionId);
 
                     /**
-                     * 判断参数 BackupStorage 是否已赋值
-                     * @return BackupStorage 是否已赋值
+                     * 判断参数 RegionId 是否已赋值
+                     * @return RegionId 是否已赋值
                      * 
                      */
-                    bool BackupStorageHasBeenSet() const;
+                    bool RegionIdHasBeenSet() const;
 
                     /**
-                     * 获取FN节点列表
+                     * 获取1
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FNNodes FN节点列表
+                     * @return ZoneId 1
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::vector<InstanceNodeGroup> GetFNNodes() const;
+                    int64_t GetZoneId() const;
 
                     /**
-                     * 设置FN节点列表
+                     * 设置1
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _fNNodes FN节点列表
+                     * @param _zoneId 1
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetFNNodes(const std::vector<InstanceNodeGroup>& _fNNodes);
+                    void SetZoneId(const int64_t& _zoneId);
 
                     /**
-                     * 判断参数 FNNodes 是否已赋值
-                     * @return FNNodes 是否已赋值
+                     * 判断参数 ZoneId 是否已赋值
+                     * @return ZoneId 是否已赋值
                      * 
                      */
-                    bool FNNodesHasBeenSet() const;
+                    bool ZoneIdHasBeenSet() const;
+
+                    /**
+                     * 获取1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VpcId 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetVpcId() const;
+
+                    /**
+                     * 设置1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _vpcId 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetVpcId(const std::string& _vpcId);
+
+                    /**
+                     * 判断参数 VpcId 是否已赋值
+                     * @return VpcId 是否已赋值
+                     * 
+                     */
+                    bool VpcIdHasBeenSet() const;
+
+                    /**
+                     * 获取1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubnetId 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSubnetId() const;
+
+                    /**
+                     * 设置1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _subnetId 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSubnetId(const std::string& _subnetId);
+
+                    /**
+                     * 判断参数 SubnetId 是否已赋值
+                     * @return SubnetId 是否已赋值
+                     * 
+                     */
+                    bool SubnetIdHasBeenSet() const;
+
+                    /**
+                     * 获取1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExpireTime 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetExpireTime() const;
+
+                    /**
+                     * 设置1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _expireTime 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetExpireTime(const std::string& _expireTime);
+
+                    /**
+                     * 判断参数 ExpireTime 是否已赋值
+                     * @return ExpireTime 是否已赋值
+                     * 
+                     */
+                    bool ExpireTimeHasBeenSet() const;
+
+                    /**
+                     * 获取1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PayMode 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPayMode() const;
+
+                    /**
+                     * 设置1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _payMode 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPayMode(const std::string& _payMode);
+
+                    /**
+                     * 判断参数 PayMode 是否已赋值
+                     * @return PayMode 是否已赋值
+                     * 
+                     */
+                    bool PayModeHasBeenSet() const;
+
+                    /**
+                     * 获取1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RenewFlag 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetRenewFlag() const;
+
+                    /**
+                     * 设置1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _renewFlag 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetRenewFlag(const bool& _renewFlag);
+
+                    /**
+                     * 判断参数 RenewFlag 是否已赋值
+                     * @return RenewFlag 是否已赋值
+                     * 
+                     */
+                    bool RenewFlagHasBeenSet() const;
+
+                    /**
+                     * 获取1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceId 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _instanceId 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取访问信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AccessDetails 访问信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<AccessInfo> GetAccessDetails() const;
+
+                    /**
+                     * 设置访问信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _accessDetails 访问信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAccessDetails(const std::vector<AccessInfo>& _accessDetails);
+
+                    /**
+                     * 判断参数 AccessDetails 是否已赋值
+                     * @return AccessDetails 是否已赋值
+                     * 
+                     */
+                    bool AccessDetailsHasBeenSet() const;
 
                 private:
 
@@ -682,20 +808,6 @@ namespace TencentCloud
                     bool m_charsetHasBeenSet;
 
                     /**
-                     * 引擎版本
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_engineVersion;
-                    bool m_engineVersionHasBeenSet;
-
-                    /**
-                     * GTM节点列表
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::vector<InstanceNodeGroup> m_gTMNodes;
-                    bool m_gTMNodesHasBeenSet;
-
-                    /**
                      * CN节点列表
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -710,18 +822,67 @@ namespace TencentCloud
                     bool m_dNNodesHasBeenSet;
 
                     /**
-                     * 备份存储
+                     * 1
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<InstanceNodeGroup> m_backupStorage;
-                    bool m_backupStorageHasBeenSet;
+                    int64_t m_regionId;
+                    bool m_regionIdHasBeenSet;
 
                     /**
-                     * FN节点列表
+                     * 1
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<InstanceNodeGroup> m_fNNodes;
-                    bool m_fNNodesHasBeenSet;
+                    int64_t m_zoneId;
+                    bool m_zoneIdHasBeenSet;
+
+                    /**
+                     * 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_vpcId;
+                    bool m_vpcIdHasBeenSet;
+
+                    /**
+                     * 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_subnetId;
+                    bool m_subnetIdHasBeenSet;
+
+                    /**
+                     * 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_expireTime;
+                    bool m_expireTimeHasBeenSet;
+
+                    /**
+                     * 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_payMode;
+                    bool m_payModeHasBeenSet;
+
+                    /**
+                     * 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_renewFlag;
+                    bool m_renewFlagHasBeenSet;
+
+                    /**
+                     * 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 访问信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AccessInfo> m_accessDetails;
+                    bool m_accessDetailsHasBeenSet;
 
                 };
             }

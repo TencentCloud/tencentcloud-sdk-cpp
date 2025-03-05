@@ -108,15 +108,15 @@ namespace TencentCloud
                     bool NodesHasBeenSet() const;
 
                     /**
-                     * 获取拨测间隔
-                     * @return Interval 拨测间隔
+                     * 获取拨测间隔，单位为分钟
+                     * @return Interval 拨测间隔，单位为分钟
                      * 
                      */
                     int64_t GetInterval() const;
 
                     /**
-                     * 设置拨测间隔
-                     * @param _interval 拨测间隔
+                     * 设置拨测间隔，单位为分钟
+                     * @param _interval 拨测间隔，单位为分钟
                      * 
                      */
                     void SetInterval(const int64_t& _interval);
@@ -346,7 +346,7 @@ namespace TencentCloud
                     bool m_nodesHasBeenSet;
 
                     /**
-                     * 拨测间隔
+                     * 拨测间隔，单位为分钟
                      */
                     int64_t m_interval;
                     bool m_intervalHasBeenSet;

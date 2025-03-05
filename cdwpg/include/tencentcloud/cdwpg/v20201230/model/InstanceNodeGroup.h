@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cdwpg/v20201230/model/DiskSpecPlus.h>
 
 
 namespace TencentCloud
@@ -46,7 +47,103 @@ namespace TencentCloud
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
+                    /**
+                     * 获取1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SpecName 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSpecName() const;
+
+                    /**
+                     * 设置1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _specName 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSpecName(const std::string& _specName);
+
+                    /**
+                     * 判断参数 SpecName 是否已赋值
+                     * @return SpecName 是否已赋值
+                     * 
+                     */
+                    bool SpecNameHasBeenSet() const;
+
+                    /**
+                     * 获取1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DataDisk 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    DiskSpecPlus GetDataDisk() const;
+
+                    /**
+                     * 设置1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dataDisk 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDataDisk(const DiskSpecPlus& _dataDisk);
+
+                    /**
+                     * 判断参数 DataDisk 是否已赋值
+                     * @return DataDisk 是否已赋值
+                     * 
+                     */
+                    bool DataDiskHasBeenSet() const;
+
+                    /**
+                     * 获取1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CvmCount 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetCvmCount() const;
+
+                    /**
+                     * 设置1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _cvmCount 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCvmCount(const int64_t& _cvmCount);
+
+                    /**
+                     * 判断参数 CvmCount 是否已赋值
+                     * @return CvmCount 是否已赋值
+                     * 
+                     */
+                    bool CvmCountHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_specName;
+                    bool m_specNameHasBeenSet;
+
+                    /**
+                     * 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DiskSpecPlus m_dataDisk;
+                    bool m_dataDiskHasBeenSet;
+
+                    /**
+                     * 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_cvmCount;
+                    bool m_cvmCountHasBeenSet;
 
                 };
             }
