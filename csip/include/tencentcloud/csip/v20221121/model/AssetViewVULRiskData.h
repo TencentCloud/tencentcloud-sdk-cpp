@@ -886,6 +886,27 @@ namespace TencentCloud
                      */
                     bool IsOneClickHasBeenSet() const;
 
+                    /**
+                     * 获取是否POC扫描，0-非POC，1-POC
+                     * @return IsPOC 是否POC扫描，0-非POC，1-POC
+                     * 
+                     */
+                    uint64_t GetIsPOC() const;
+
+                    /**
+                     * 设置是否POC扫描，0-非POC，1-POC
+                     * @param _isPOC 是否POC扫描，0-非POC，1-POC
+                     * 
+                     */
+                    void SetIsPOC(const uint64_t& _isPOC);
+
+                    /**
+                     * 判断参数 IsPOC 是否已赋值
+                     * @return IsPOC 是否已赋值
+                     * 
+                     */
+                    bool IsPOCHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1127,6 +1148,12 @@ namespace TencentCloud
                      */
                     uint64_t m_isOneClick;
                     bool m_isOneClickHasBeenSet;
+
+                    /**
+                     * 是否POC扫描，0-非POC，1-POC
+                     */
+                    uint64_t m_isPOC;
+                    bool m_isPOCHasBeenSet;
 
                 };
             }

@@ -33,7 +33,8 @@ GatewayLoadBalancer::GatewayLoadBalancer() :
     m_createTimeHasBeenSet(false),
     m_chargeTypeHasBeenSet(false),
     m_isolationHasBeenSet(false),
-    m_isolatedTimeHasBeenSet(false)
+    m_isolatedTimeHasBeenSet(false),
+    m_operateProtectHasBeenSet(false)
 {
 }
 
@@ -185,6 +186,16 @@ CoreInternalOutcome GatewayLoadBalancer::Deserialize(const rapidjson::Value &val
         m_isolatedTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("OperateProtect") && !value["OperateProtect"].IsNull())
+    {
+        if (!value["OperateProtect"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `GatewayLoadBalancer.OperateProtect` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_operateProtect = value["OperateProtect"].GetBool();
+        m_operateProtectHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -306,6 +317,14 @@ void GatewayLoadBalancer::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "IsolatedTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_isolatedTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operateProtectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperateProtect";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_operateProtect, allocator);
     }
 
 }
@@ -517,5 +536,21 @@ void GatewayLoadBalancer::SetIsolatedTime(const string& _isolatedTime)
 bool GatewayLoadBalancer::IsolatedTimeHasBeenSet() const
 {
     return m_isolatedTimeHasBeenSet;
+}
+
+bool GatewayLoadBalancer::GetOperateProtect() const
+{
+    return m_operateProtect;
+}
+
+void GatewayLoadBalancer::SetOperateProtect(const bool& _operateProtect)
+{
+    m_operateProtect = _operateProtect;
+    m_operateProtectHasBeenSet = true;
+}
+
+bool GatewayLoadBalancer::OperateProtectHasBeenSet() const
+{
+    return m_operateProtectHasBeenSet;
 }
 

@@ -23,7 +23,8 @@ using namespace TencentCloud::Rum::V20210622::Model;
 using namespace std;
 
 ResumeInstanceRequest::ResumeInstanceRequest() :
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_isModifyAllHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string ResumeInstanceRequest::ToJsonString() const
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isModifyAllHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsModifyAll";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isModifyAll, allocator);
     }
 
 
@@ -64,6 +73,22 @@ void ResumeInstanceRequest::SetInstanceId(const string& _instanceId)
 bool ResumeInstanceRequest::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+bool ResumeInstanceRequest::GetIsModifyAll() const
+{
+    return m_isModifyAll;
+}
+
+void ResumeInstanceRequest::SetIsModifyAll(const bool& _isModifyAll)
+{
+    m_isModifyAll = _isModifyAll;
+    m_isModifyAllHasBeenSet = true;
+}
+
+bool ResumeInstanceRequest::IsModifyAllHasBeenSet() const
+{
+    return m_isModifyAllHasBeenSet;
 }
 
 

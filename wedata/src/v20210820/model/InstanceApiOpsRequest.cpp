@@ -52,7 +52,8 @@ InstanceApiOpsRequest::InstanceApiOpsRequest() :
     m_tenantIdHasBeenSet(false),
     m_dataTimeCycleHasBeenSet(false),
     m_executorGroupIdListHasBeenSet(false),
-    m_onlyRerunHasBeenSet(false)
+    m_onlyRerunHasBeenSet(false),
+    m_scheduleTimeZoneHasBeenSet(false)
 {
 }
 
@@ -431,6 +432,16 @@ CoreInternalOutcome InstanceApiOpsRequest::Deserialize(const rapidjson::Value &v
         m_onlyRerunHasBeenSet = true;
     }
 
+    if (value.HasMember("ScheduleTimeZone") && !value["ScheduleTimeZone"].IsNull())
+    {
+        if (!value["ScheduleTimeZone"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceApiOpsRequest.ScheduleTimeZone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scheduleTimeZone = string(value["ScheduleTimeZone"].GetString());
+        m_scheduleTimeZoneHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -755,6 +766,14 @@ void InstanceApiOpsRequest::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "OnlyRerun";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_onlyRerun, allocator);
+    }
+
+    if (m_scheduleTimeZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduleTimeZone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scheduleTimeZone.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1270,5 +1289,21 @@ void InstanceApiOpsRequest::SetOnlyRerun(const bool& _onlyRerun)
 bool InstanceApiOpsRequest::OnlyRerunHasBeenSet() const
 {
     return m_onlyRerunHasBeenSet;
+}
+
+string InstanceApiOpsRequest::GetScheduleTimeZone() const
+{
+    return m_scheduleTimeZone;
+}
+
+void InstanceApiOpsRequest::SetScheduleTimeZone(const string& _scheduleTimeZone)
+{
+    m_scheduleTimeZone = _scheduleTimeZone;
+    m_scheduleTimeZoneHasBeenSet = true;
+}
+
+bool InstanceApiOpsRequest::ScheduleTimeZoneHasBeenSet() const
+{
+    return m_scheduleTimeZoneHasBeenSet;
 }
 

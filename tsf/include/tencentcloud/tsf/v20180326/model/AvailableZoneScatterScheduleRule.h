@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScatterDimension -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetScatterDimension() const;
 
                     /**
                      * 设置-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scatterDimension -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScatterDimension(const std::string& _scatterDimension);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxUnbalanceQuantity -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxUnbalanceQuantity() const;
 
                     /**
                      * 设置-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxUnbalanceQuantity -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxUnbalanceQuantity(const int64_t& _maxUnbalanceQuantity);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsForceSchedule -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsForceSchedule() const;
 
                     /**
                      * 设置-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isForceSchedule -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsForceSchedule(const bool& _isForceSchedule);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * -
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scatterDimension;
                     bool m_scatterDimensionHasBeenSet;
 
                     /**
                      * -
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxUnbalanceQuantity;
                     bool m_maxUnbalanceQuantityHasBeenSet;
 
                     /**
                      * -
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isForceSchedule;
                     bool m_isForceScheduleHasBeenSet;

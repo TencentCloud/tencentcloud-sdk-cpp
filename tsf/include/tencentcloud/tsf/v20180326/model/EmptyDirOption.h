@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableMemory -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnableMemory() const;
 
                     /**
                      * 设置-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enableMemory -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnableMemory(const bool& _enableMemory);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StorageCapacity -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStorageCapacity() const;
 
                     /**
                      * 设置-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _storageCapacity -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStorageCapacity(const int64_t& _storageCapacity);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StorageUnit -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStorageUnit() const;
 
                     /**
                      * 设置-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _storageUnit -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStorageUnit(const std::string& _storageUnit);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SizeLimit -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSizeLimit() const;
 
                     /**
                      * 设置-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sizeLimit -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSizeLimit(const std::string& _sizeLimit);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * -
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enableMemory;
                     bool m_enableMemoryHasBeenSet;
 
                     /**
                      * -
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_storageCapacity;
                     bool m_storageCapacityHasBeenSet;
 
                     /**
                      * -
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_storageUnit;
                     bool m_storageUnitHasBeenSet;
 
                     /**
                      * -
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sizeLimit;
                     bool m_sizeLimitHasBeenSet;

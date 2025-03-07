@@ -105,6 +105,27 @@ namespace TencentCloud
                      */
                     bool NextTokenHasBeenSet() const;
 
+                    /**
+                     * 获取批次Id
+                     * @return BatchId 批次Id
+                     * 
+                     */
+                    std::string GetBatchId() const;
+
+                    /**
+                     * 设置批次Id
+                     * @param _batchId 批次Id
+                     * 
+                     */
+                    void SetBatchId(const std::string& _batchId);
+
+                    /**
+                     * 判断参数 BatchId 是否已赋值
+                     * @return BatchId 是否已赋值
+                     * 
+                     */
+                    bool BatchIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +145,12 @@ namespace TencentCloud
                      */
                     std::string m_nextToken;
                     bool m_nextTokenHasBeenSet;
+
+                    /**
+                     * 批次Id
+                     */
+                    std::string m_batchId;
+                    bool m_batchIdHasBeenSet;
 
                 };
             }

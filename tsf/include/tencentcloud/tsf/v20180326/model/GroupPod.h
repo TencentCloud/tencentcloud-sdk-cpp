@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例名称(对应到kubernetes的pod名称)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PodName 实例名称(对应到kubernetes的pod名称)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPodName() const;
 
                     /**
                      * 设置实例名称(对应到kubernetes的pod名称)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _podName 实例名称(对应到kubernetes的pod名称)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPodName(const std::string& _podName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例ID(对应到kubernetes的pod id)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PodId 实例ID(对应到kubernetes的pod id)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPodId() const;
 
                     /**
                      * 设置实例ID(对应到kubernetes的pod id)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _podId 实例ID(对应到kubernetes的pod id)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPodId(const std::string& _podId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例状态，请参考后面的实例以及容器的状态定义。启动中（pod 未 ready）：Starting；运行中：Running；异常：Abnormal；停止：Stopped；
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 实例状态，请参考后面的实例以及容器的状态定义。启动中（pod 未 ready）：Starting；运行中：Running；异常：Abnormal；停止：Stopped；
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置实例状态，请参考后面的实例以及容器的状态定义。启动中（pod 未 ready）：Starting；运行中：Running；异常：Abnormal；停止：Stopped；
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 实例状态，请参考后面的实例以及容器的状态定义。启动中（pod 未 ready）：Starting；运行中：Running；异常：Abnormal；停止：Stopped；
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例处于当前状态的原因，例如容器下载镜像失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Reason 实例处于当前状态的原因，例如容器下载镜像失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReason() const;
 
                     /**
                      * 设置实例处于当前状态的原因，例如容器下载镜像失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _reason 实例处于当前状态的原因，例如容器下载镜像失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReason(const std::string& _reason);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeIp 主机IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNodeIp() const;
 
                     /**
                      * 设置主机IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nodeIp 主机IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNodeIp(const std::string& _nodeIp);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ip 实例IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置实例IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ip 实例IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIp(const std::string& _ip);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例中容器的重启次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RestartCount 实例中容器的重启次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRestartCount() const;
 
                     /**
                      * 设置实例中容器的重启次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _restartCount 实例中容器的重启次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRestartCount(const int64_t& _restartCount);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例中已就绪容器的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReadyCount 实例中已就绪容器的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetReadyCount() const;
 
                     /**
                      * 设置实例中已就绪容器的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _readyCount 实例中已就绪容器的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReadyCount(const int64_t& _readyCount);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取运行时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Runtime 运行时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuntime() const;
 
                     /**
                      * 设置运行时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _runtime 运行时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuntime(const std::string& _runtime);
@@ -273,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例启动时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedAt 实例启动时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatedAt() const;
 
                     /**
                      * 设置实例启动时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createdAt 实例启动时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreatedAt(const std::string& _createdAt);
@@ -298,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务实例状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceInstanceStatus 服务实例状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetServiceInstanceStatus() const;
 
                     /**
                      * 设置服务实例状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serviceInstanceStatus 服务实例状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServiceInstanceStatus(const std::string& _serviceInstanceStatus);
@@ -323,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取机器实例可使用状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceAvailableStatus 机器实例可使用状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceAvailableStatus() const;
 
                     /**
                      * 设置机器实例可使用状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceAvailableStatus 机器实例可使用状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceAvailableStatus(const std::string& _instanceAvailableStatus);
@@ -348,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取机器实例状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceStatus 机器实例状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceStatus() const;
 
                     /**
                      * 设置机器实例状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceStatus 机器实例状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceStatus(const std::string& _instanceStatus);
@@ -373,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeInstanceId 节点实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNodeInstanceId() const;
 
                     /**
                      * 设置节点实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nodeInstanceId 节点实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNodeInstanceId(const std::string& _nodeInstanceId);
@@ -398,18 +342,14 @@ namespace TencentCloud
 
                     /**
                      * 获取预期副本数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SpecTotalCount 预期副本数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSpecTotalCount() const;
 
                     /**
                      * 设置预期副本数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _specTotalCount 预期副本数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSpecTotalCount(const std::string& _specTotalCount);
@@ -425,105 +365,90 @@ namespace TencentCloud
 
                     /**
                      * 实例名称(对应到kubernetes的pod名称)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_podName;
                     bool m_podNameHasBeenSet;
 
                     /**
                      * 实例ID(对应到kubernetes的pod id)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_podId;
                     bool m_podIdHasBeenSet;
 
                     /**
                      * 实例状态，请参考后面的实例以及容器的状态定义。启动中（pod 未 ready）：Starting；运行中：Running；异常：Abnormal；停止：Stopped；
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 实例处于当前状态的原因，例如容器下载镜像失败
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reason;
                     bool m_reasonHasBeenSet;
 
                     /**
                      * 主机IP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nodeIp;
                     bool m_nodeIpHasBeenSet;
 
                     /**
                      * 实例IP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;
 
                     /**
                      * 实例中容器的重启次数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_restartCount;
                     bool m_restartCountHasBeenSet;
 
                     /**
                      * 实例中已就绪容器的个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_readyCount;
                     bool m_readyCountHasBeenSet;
 
                     /**
                      * 运行时长
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_runtime;
                     bool m_runtimeHasBeenSet;
 
                     /**
                      * 实例启动时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createdAt;
                     bool m_createdAtHasBeenSet;
 
                     /**
                      * 服务实例状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serviceInstanceStatus;
                     bool m_serviceInstanceStatusHasBeenSet;
 
                     /**
                      * 机器实例可使用状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceAvailableStatus;
                     bool m_instanceAvailableStatusHasBeenSet;
 
                     /**
                      * 机器实例状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceStatus;
                     bool m_instanceStatusHasBeenSet;
 
                     /**
                      * 节点实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nodeInstanceId;
                     bool m_nodeInstanceIdHasBeenSet;
 
                     /**
                      * 预期副本数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_specTotalCount;
                     bool m_specTotalCountHasBeenSet;

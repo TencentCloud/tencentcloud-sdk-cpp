@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationId 应用ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
                      * 设置应用ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _applicationId 应用ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationName 应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApplicationName() const;
 
                     /**
                      * 设置应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _applicationName 应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApplicationName(const std::string& _applicationName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationType 应用类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApplicationType() const;
 
                     /**
                      * 设置应用类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _applicationType 应用类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApplicationType(const std::string& _applicationType);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用微服务类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MicroserviceType 应用微服务类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMicroserviceType() const;
 
                     /**
                      * 设置应用微服务类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _microserviceType 应用微服务类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMicroserviceType(const std::string& _microserviceType);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取ApplicationDesc
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationDesc ApplicationDesc
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApplicationDesc() const;
 
                     /**
                      * 设置ApplicationDesc
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _applicationDesc ApplicationDesc
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApplicationDesc(const std::string& _applicationDesc);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取ProgLang
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProgLang ProgLang
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProgLang() const;
 
                     /**
                      * 设置ProgLang
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _progLang ProgLang
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProgLang(const std::string& _progLang);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取ApplicationResourceType
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationResourceType ApplicationResourceType
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApplicationResourceType() const;
 
                     /**
                      * 设置ApplicationResourceType
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _applicationResourceType ApplicationResourceType
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApplicationResourceType(const std::string& _applicationResourceType);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取CreateTime
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime CreateTime
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置CreateTime
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime CreateTime
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取UpdateTime
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime UpdateTime
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置UpdateTime
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updateTime UpdateTime
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -273,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取ApigatewayServiceId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApigatewayServiceId ApigatewayServiceId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApigatewayServiceId() const;
 
                     /**
                      * 设置ApigatewayServiceId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _apigatewayServiceId ApigatewayServiceId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApigatewayServiceId(const std::string& _apigatewayServiceId);
@@ -298,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取ApplicationRuntimeType
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationRuntimeType ApplicationRuntimeType
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApplicationRuntimeType() const;
 
                     /**
                      * 设置ApplicationRuntimeType
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _applicationRuntimeType ApplicationRuntimeType
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApplicationRuntimeType(const std::string& _applicationRuntimeType);
@@ -323,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Apm业务系统id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AmpInstanceId Apm业务系统id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAmpInstanceId() const;
 
                     /**
                      * 设置Apm业务系统id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ampInstanceId Apm业务系统id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAmpInstanceId(const std::string& _ampInstanceId);
@@ -348,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Apm业务系统Name
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApmInstanceName Apm业务系统Name
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApmInstanceName() const;
 
                     /**
                      * 设置Apm业务系统Name
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _apmInstanceName Apm业务系统Name
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApmInstanceName(const std::string& _apmInstanceName);
@@ -375,91 +323,78 @@ namespace TencentCloud
 
                     /**
                      * 应用ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_applicationId;
                     bool m_applicationIdHasBeenSet;
 
                     /**
                      * 应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_applicationName;
                     bool m_applicationNameHasBeenSet;
 
                     /**
                      * 应用类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_applicationType;
                     bool m_applicationTypeHasBeenSet;
 
                     /**
                      * 应用微服务类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_microserviceType;
                     bool m_microserviceTypeHasBeenSet;
 
                     /**
                      * ApplicationDesc
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_applicationDesc;
                     bool m_applicationDescHasBeenSet;
 
                     /**
                      * ProgLang
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_progLang;
                     bool m_progLangHasBeenSet;
 
                     /**
                      * ApplicationResourceType
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_applicationResourceType;
                     bool m_applicationResourceTypeHasBeenSet;
 
                     /**
                      * CreateTime
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * UpdateTime
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
                      * ApigatewayServiceId
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_apigatewayServiceId;
                     bool m_apigatewayServiceIdHasBeenSet;
 
                     /**
                      * ApplicationRuntimeType
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_applicationRuntimeType;
                     bool m_applicationRuntimeTypeHasBeenSet;
 
                     /**
                      * Apm业务系统id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ampInstanceId;
                     bool m_ampInstanceIdHasBeenSet;
 
                     /**
                      * Apm业务系统Name
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_apmInstanceName;
                     bool m_apmInstanceNameHasBeenSet;

@@ -70,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取仓库信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Content 仓库信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RepositoryInfo> GetContent() const;
 
                     /**
                      * 设置仓库信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _content 仓库信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContent(const std::vector<RepositoryInfo>& _content);
@@ -103,7 +99,6 @@ namespace TencentCloud
 
                     /**
                      * 仓库信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RepositoryInfo> m_content;
                     bool m_contentHasBeenSet;

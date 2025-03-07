@@ -355,18 +355,14 @@ IMPORTFAILED-导入失败
 
                     /**
                      * 获取镜像是否支持cloud-init
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsSupportCloudinit 镜像是否支持cloud-init
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsSupportCloudinit() const;
 
                     /**
                      * 设置镜像是否支持cloud-init
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isSupportCloudinit 镜像是否支持cloud-init
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsSupportCloudinit(const bool& _isSupportCloudinit);
@@ -380,18 +376,14 @@ IMPORTFAILED-导入失败
 
                     /**
                      * 获取镜像关联的快照信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SnapshotSet 镜像关联的快照信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Snapshot> GetSnapshotSet() const;
 
                     /**
                      * 设置镜像关联的快照信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _snapshotSet 镜像关联的快照信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSnapshotSet(const std::vector<Snapshot>& _snapshotSet);
@@ -405,18 +397,14 @@ IMPORTFAILED-导入失败
 
                     /**
                      * 获取镜像关联的标签列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 镜像关联的标签列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置镜像关联的标签列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 镜像关联的标签列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -451,18 +439,14 @@ IMPORTFAILED-导入失败
 
                     /**
                      * 获取镜像族
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageFamily 镜像族
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetImageFamily() const;
 
                     /**
                      * 设置镜像族
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _imageFamily 镜像族
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetImageFamily(const std::string& _imageFamily);
@@ -585,21 +569,18 @@ IMPORTFAILED-导入失败
 
                     /**
                      * 镜像是否支持cloud-init
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isSupportCloudinit;
                     bool m_isSupportCloudinitHasBeenSet;
 
                     /**
                      * 镜像关联的快照信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Snapshot> m_snapshotSet;
                     bool m_snapshotSetHasBeenSet;
 
                     /**
                      * 镜像关联的标签列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
@@ -612,7 +593,6 @@ IMPORTFAILED-导入失败
 
                     /**
                      * 镜像族
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_imageFamily;
                     bool m_imageFamilyHasBeenSet;

@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分账单元ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 分账单元ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置分账单元ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id 分账单元ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const uint64_t& _id);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分账单元名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 分账单元名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置分账单元名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 分账单元名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -100,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分账单元唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TreeNodeUniqKey 分账单元唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTreeNodeUniqKey() const;
 
                     /**
                      * 设置分账单元唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _treeNodeUniqKey 分账单元唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTreeNodeUniqKey(const std::string& _treeNodeUniqKey);
@@ -129,13 +117,11 @@ namespace TencentCloud
 1 - 同时存在归集规则和公摊规则
 2 - 仅存在归集规则
 3 - 仅存在公摊规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Symbol 分账单元包含规则标志
 0 - 不存在规则
 1 - 同时存在归集规则和公摊规则
 2 - 仅存在归集规则
 3 - 仅存在公摊规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetSymbol() const;
@@ -146,13 +132,11 @@ namespace TencentCloud
 1 - 同时存在归集规则和公摊规则
 2 - 仅存在归集规则
 3 - 仅存在公摊规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _symbol 分账单元包含规则标志
 0 - 不存在规则
 1 - 同时存在归集规则和公摊规则
 2 - 仅存在归集规则
 3 - 仅存在公摊规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSymbol(const uint64_t& _symbol);
@@ -166,18 +150,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子单元月概览详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Children 子单元月概览详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AllocationOverviewNode> GetChildren() const;
 
                     /**
                      * 设置子单元月概览详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _children 子单元月概览详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChildren(const std::vector<AllocationOverviewNode>& _children);
@@ -191,18 +171,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分账账单月概览金额明细
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Detail 分账账单月概览金额明细
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AllocationMonthOverviewDetail GetDetail() const;
 
                     /**
                      * 设置分账账单月概览金额明细
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _detail 分账账单月概览金额明细
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDetail(const AllocationMonthOverviewDetail& _detail);
@@ -218,21 +194,18 @@ namespace TencentCloud
 
                     /**
                      * 分账单元ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * 分账单元名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 分账单元唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_treeNodeUniqKey;
                     bool m_treeNodeUniqKeyHasBeenSet;
@@ -243,21 +216,18 @@ namespace TencentCloud
 1 - 同时存在归集规则和公摊规则
 2 - 仅存在归集规则
 3 - 仅存在公摊规则
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_symbol;
                     bool m_symbolHasBeenSet;
 
                     /**
                      * 子单元月概览详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AllocationOverviewNode> m_children;
                     bool m_childrenHasBeenSet;
 
                     /**
                      * 分账账单月概览金额明细
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AllocationMonthOverviewDetail m_detail;
                     bool m_detailHasBeenSet;

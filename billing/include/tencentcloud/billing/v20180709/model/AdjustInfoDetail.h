@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取支付者UIN：支付者的账号 ID，账号 ID 是用户在腾讯云的唯一账号标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayerUin 支付者UIN：支付者的账号 ID，账号 ID 是用户在腾讯云的唯一账号标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPayerUin() const;
 
                     /**
                      * 设置支付者UIN：支付者的账号 ID，账号 ID 是用户在腾讯云的唯一账号标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _payerUin 支付者UIN：支付者的账号 ID，账号 ID 是用户在腾讯云的唯一账号标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPayerUin(const std::string& _payerUin);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取账单月份，格式：yyyy-MM
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Month 账单月份，格式：yyyy-MM
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMonth() const;
 
                     /**
                      * 设置账单月份，格式：yyyy-MM
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _month 账单月份，格式：yyyy-MM
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMonth(const std::string& _month);
@@ -101,12 +93,10 @@ namespace TencentCloud
 调账：manualAdjustment
 补结算：supplementarySettlement
 重结算：reSettlement
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdjustType 调整类型
 调账：manualAdjustment
 补结算：supplementarySettlement
 重结算：reSettlement
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAdjustType() const;
@@ -116,12 +106,10 @@ namespace TencentCloud
 调账：manualAdjustment
 补结算：supplementarySettlement
 重结算：reSettlement
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _adjustType 调整类型
 调账：manualAdjustment
 补结算：supplementarySettlement
 重结算：reSettlement
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAdjustType(const std::string& _adjustType);
@@ -135,18 +123,14 @@ namespace TencentCloud
 
                     /**
                      * 获取调整单号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdjustNum 调整单号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAdjustNum() const;
 
                     /**
                      * 设置调整单号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _adjustNum 调整单号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAdjustNum(const std::string& _adjustNum);
@@ -160,18 +144,14 @@ namespace TencentCloud
 
                     /**
                      * 获取异常调整完成时间，格式：yyyy-MM-dd HH:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdjustCompletionTime 异常调整完成时间，格式：yyyy-MM-dd HH:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAdjustCompletionTime() const;
 
                     /**
                      * 设置异常调整完成时间，格式：yyyy-MM-dd HH:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _adjustCompletionTime 异常调整完成时间，格式：yyyy-MM-dd HH:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAdjustCompletionTime(const std::string& _adjustCompletionTime);
@@ -185,18 +165,14 @@ namespace TencentCloud
 
                     /**
                      * 获取调整金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdjustAmount 调整金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetAdjustAmount() const;
 
                     /**
                      * 设置调整金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _adjustAmount 调整金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAdjustAmount(const double& _adjustAmount);
@@ -212,14 +188,12 @@ namespace TencentCloud
 
                     /**
                      * 支付者UIN：支付者的账号 ID，账号 ID 是用户在腾讯云的唯一账号标识
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_payerUin;
                     bool m_payerUinHasBeenSet;
 
                     /**
                      * 账单月份，格式：yyyy-MM
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_month;
                     bool m_monthHasBeenSet;
@@ -229,28 +203,24 @@ namespace TencentCloud
 调账：manualAdjustment
 补结算：supplementarySettlement
 重结算：reSettlement
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_adjustType;
                     bool m_adjustTypeHasBeenSet;
 
                     /**
                      * 调整单号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_adjustNum;
                     bool m_adjustNumHasBeenSet;
 
                     /**
                      * 异常调整完成时间，格式：yyyy-MM-dd HH:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_adjustCompletionTime;
                     bool m_adjustCompletionTimeHasBeenSet;
 
                     /**
                      * 调整金额
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_adjustAmount;
                     bool m_adjustAmountHasBeenSet;

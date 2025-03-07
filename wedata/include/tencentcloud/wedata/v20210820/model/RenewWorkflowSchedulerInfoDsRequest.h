@@ -466,6 +466,27 @@ namespace TencentCloud
                      */
                     bool ScheduleTimeZoneHasBeenSet() const;
 
+                    /**
+                     * 获取是否自动清理不支持的任务链接
+                     * @return ClearLink 是否自动清理不支持的任务链接
+                     * 
+                     */
+                    bool GetClearLink() const;
+
+                    /**
+                     * 设置是否自动清理不支持的任务链接
+                     * @param _clearLink 是否自动清理不支持的任务链接
+                     * 
+                     */
+                    void SetClearLink(const bool& _clearLink);
+
+                    /**
+                     * 判断参数 ClearLink 是否已赋值
+                     * @return ClearLink 是否已赋值
+                     * 
+                     */
+                    bool ClearLinkHasBeenSet() const;
+
                 private:
 
                     /**
@@ -588,6 +609,12 @@ namespace TencentCloud
                      */
                     std::string m_scheduleTimeZone;
                     bool m_scheduleTimeZoneHasBeenSet;
+
+                    /**
+                     * 是否自动清理不支持的任务链接
+                     */
+                    bool m_clearLink;
+                    bool m_clearLinkHasBeenSet;
 
                 };
             }

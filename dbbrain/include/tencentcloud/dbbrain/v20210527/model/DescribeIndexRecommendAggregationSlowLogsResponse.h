@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取查询实例慢查询聚合结果。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Aggregation 查询实例慢查询聚合结果。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Aggregation GetAggregation() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 查询实例慢查询聚合结果。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Aggregation m_aggregation;
                     bool m_aggregationHasBeenSet;

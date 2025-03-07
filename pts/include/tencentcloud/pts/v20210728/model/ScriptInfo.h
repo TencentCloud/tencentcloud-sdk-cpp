@@ -218,6 +218,31 @@ namespace TencentCloud
                      */
                     bool FileIdHasBeenSet() const;
 
+                    /**
+                     * 获取文件是否已上传，如果已上传，则可以不必填写 EncodedContent,EncodedHar 等内容。
+主要用于较大长度脚本上传。
+                     * @return Uploaded 文件是否已上传，如果已上传，则可以不必填写 EncodedContent,EncodedHar 等内容。
+主要用于较大长度脚本上传。
+                     * 
+                     */
+                    bool GetUploaded() const;
+
+                    /**
+                     * 设置文件是否已上传，如果已上传，则可以不必填写 EncodedContent,EncodedHar 等内容。
+主要用于较大长度脚本上传。
+                     * @param _uploaded 文件是否已上传，如果已上传，则可以不必填写 EncodedContent,EncodedHar 等内容。
+主要用于较大长度脚本上传。
+                     * 
+                     */
+                    void SetUploaded(const bool& _uploaded);
+
+                    /**
+                     * 判断参数 Uploaded 是否已赋值
+                     * @return Uploaded 是否已赋值
+                     * 
+                     */
+                    bool UploadedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -268,6 +293,13 @@ namespace TencentCloud
                      */
                     std::string m_fileId;
                     bool m_fileIdHasBeenSet;
+
+                    /**
+                     * 文件是否已上传，如果已上传，则可以不必填写 EncodedContent,EncodedHar 等内容。
+主要用于较大长度脚本上传。
+                     */
+                    bool m_uploaded;
+                    bool m_uploadedHasBeenSet;
 
                 };
             }

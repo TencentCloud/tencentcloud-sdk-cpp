@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取策略信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OpenPolicyInfoList 策略信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<OpenPolicyInfo> GetOpenPolicyInfoList() const;
@@ -78,7 +76,6 @@ namespace TencentCloud
 
                     /**
                      * 策略信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<OpenPolicyInfo> m_openPolicyInfoList;
                     bool m_openPolicyInfoListHasBeenSet;

@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool LoadBalancerNameHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启删除保护。
+                     * @return DeleteProtect 是否开启删除保护。
+                     * 
+                     */
+                    bool GetDeleteProtect() const;
+
+                    /**
+                     * 设置是否开启删除保护。
+                     * @param _deleteProtect 是否开启删除保护。
+                     * 
+                     */
+                    void SetDeleteProtect(const bool& _deleteProtect);
+
+                    /**
+                     * 判断参数 DeleteProtect 是否已赋值
+                     * @return DeleteProtect 是否已赋值
+                     * 
+                     */
+                    bool DeleteProtectHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +118,12 @@ namespace TencentCloud
                      */
                     std::string m_loadBalancerName;
                     bool m_loadBalancerNameHasBeenSet;
+
+                    /**
+                     * 是否开启删除保护。
+                     */
+                    bool m_deleteProtect;
+                    bool m_deleteProtectHasBeenSet;
 
                 };
             }

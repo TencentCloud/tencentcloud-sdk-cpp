@@ -44,27 +44,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取维度名
-                     * @return TagKey 维度名
-                     * 
-                     */
-                    std::string GetTagKey() const;
-
-                    /**
-                     * 设置维度名
-                     * @param _tagKey 维度名
-                     * 
-                     */
-                    void SetTagKey(const std::string& _tagKey);
-
-                    /**
-                     * 判断参数 TagKey 是否已赋值
-                     * @return TagKey 是否已赋值
-                     * 
-                     */
-                    bool TagKeyHasBeenSet() const;
-
-                    /**
                      * 获取业务系统 ID
                      * @return InstanceId 业务系统 ID
                      * 
@@ -86,25 +65,25 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件
-                     * @return Filters 过滤条件
+                     * 获取维度名
+                     * @return TagKey 维度名
                      * 
                      */
-                    std::vector<Filter> GetFilters() const;
+                    std::string GetTagKey() const;
 
                     /**
-                     * 设置过滤条件
-                     * @param _filters 过滤条件
+                     * 设置维度名
+                     * @param _tagKey 维度名
                      * 
                      */
-                    void SetFilters(const std::vector<Filter>& _filters);
+                    void SetTagKey(const std::string& _tagKey);
 
                     /**
-                     * 判断参数 Filters 是否已赋值
-                     * @return Filters 是否已赋值
+                     * 判断参数 TagKey 是否已赋值
+                     * @return TagKey 是否已赋值
                      * 
                      */
-                    bool FiltersHasBeenSet() const;
+                    bool TagKeyHasBeenSet() const;
 
                     /**
                      * 获取开始时间（单位为秒）
@@ -147,6 +126,27 @@ namespace TencentCloud
                      * 
                      */
                     bool EndTimeHasBeenSet() const;
+
+                    /**
+                     * 获取过滤条件
+                     * @return Filters 过滤条件
+                     * 
+                     */
+                    std::vector<Filter> GetFilters() const;
+
+                    /**
+                     * 设置过滤条件
+                     * @param _filters 过滤条件
+                     * 
+                     */
+                    void SetFilters(const std::vector<Filter>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     * 
+                     */
+                    bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取Or 过滤条件
@@ -193,22 +193,16 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 维度名
-                     */
-                    std::string m_tagKey;
-                    bool m_tagKeyHasBeenSet;
-
-                    /**
                      * 业务系统 ID
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 过滤条件
+                     * 维度名
                      */
-                    std::vector<Filter> m_filters;
-                    bool m_filtersHasBeenSet;
+                    std::string m_tagKey;
+                    bool m_tagKeyHasBeenSet;
 
                     /**
                      * 开始时间（单位为秒）
@@ -221,6 +215,12 @@ namespace TencentCloud
                      */
                     int64_t m_endTime;
                     bool m_endTimeHasBeenSet;
+
+                    /**
+                     * 过滤条件
+                     */
+                    std::vector<Filter> m_filters;
+                    bool m_filtersHasBeenSet;
 
                     /**
                      * Or 过滤条件

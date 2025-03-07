@@ -25,7 +25,8 @@ using namespace std;
 DescribeNotebookSessionStatementSqlResultRequest::DescribeNotebookSessionStatementSqlResultRequest() :
     m_taskIdHasBeenSet(false),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_batchIdHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string DescribeNotebookSessionStatementSqlResultRequest::ToJsonString() const
         string key = "NextToken";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_nextToken.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_batchIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BatchId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_batchId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void DescribeNotebookSessionStatementSqlResultRequest::SetNextToken(const string
 bool DescribeNotebookSessionStatementSqlResultRequest::NextTokenHasBeenSet() const
 {
     return m_nextTokenHasBeenSet;
+}
+
+string DescribeNotebookSessionStatementSqlResultRequest::GetBatchId() const
+{
+    return m_batchId;
+}
+
+void DescribeNotebookSessionStatementSqlResultRequest::SetBatchId(const string& _batchId)
+{
+    m_batchId = _batchId;
+    m_batchIdHasBeenSet = true;
+}
+
+bool DescribeNotebookSessionStatementSqlResultRequest::BatchIdHasBeenSet() const
+{
+    return m_batchIdHasBeenSet;
 }
 
 

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地域名称，例如，ap-guangzhou
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 地域名称，例如，ap-guangzhou
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地域名称，例如，ap-guangzhou
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _region 地域名称，例如，ap-guangzhou
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地域描述，例如，华南地区(广州)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionName 地域描述，例如，华南地区(广州)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegionName() const;
 
                     /**
                      * 设置地域描述，例如，华南地区(广州)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _regionName 地域描述，例如，华南地区(广州)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegionName(const std::string& _regionName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地域是否可用状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionState 地域是否可用状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegionState() const;
 
                     /**
                      * 设置地域是否可用状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _regionState 地域是否可用状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegionState(const std::string& _regionState);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 地域名称，例如，ap-guangzhou
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
                      * 地域描述，例如，华南地区(广州)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_regionName;
                     bool m_regionNameHasBeenSet;
 
                     /**
                      * 地域是否可用状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_regionState;
                     bool m_regionStateHasBeenSet;

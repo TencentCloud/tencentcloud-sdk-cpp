@@ -23,9 +23,9 @@ using namespace TencentCloud::Iotcloud::V20210408::Model;
 using namespace std;
 
 DeleteDeviceResourceRequest::DeleteDeviceResourceRequest() :
-    m_productIDHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_deviceNameHasBeenSet(false)
+    m_deviceNameHasBeenSet(false),
+    m_productIDHasBeenSet(false)
 {
 }
 
@@ -35,14 +35,6 @@ string DeleteDeviceResourceRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_productIDHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ProductID";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_productID.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_nameHasBeenSet)
     {
@@ -60,6 +52,14 @@ string DeleteDeviceResourceRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_deviceName.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_productIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProductID";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_productID.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -67,22 +67,6 @@ string DeleteDeviceResourceRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string DeleteDeviceResourceRequest::GetProductID() const
-{
-    return m_productID;
-}
-
-void DeleteDeviceResourceRequest::SetProductID(const string& _productID)
-{
-    m_productID = _productID;
-    m_productIDHasBeenSet = true;
-}
-
-bool DeleteDeviceResourceRequest::ProductIDHasBeenSet() const
-{
-    return m_productIDHasBeenSet;
-}
 
 string DeleteDeviceResourceRequest::GetName() const
 {
@@ -114,6 +98,22 @@ void DeleteDeviceResourceRequest::SetDeviceName(const string& _deviceName)
 bool DeleteDeviceResourceRequest::DeviceNameHasBeenSet() const
 {
     return m_deviceNameHasBeenSet;
+}
+
+string DeleteDeviceResourceRequest::GetProductID() const
+{
+    return m_productID;
+}
+
+void DeleteDeviceResourceRequest::SetProductID(const string& _productID)
+{
+    m_productID = _productID;
+    m_productIDHasBeenSet = true;
+}
+
+bool DeleteDeviceResourceRequest::ProductIDHasBeenSet() const
+{
+    return m_productIDHasBeenSet;
 }
 
 

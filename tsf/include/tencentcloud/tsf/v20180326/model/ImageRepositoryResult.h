@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取总记录数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 总记录数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置总记录数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalCount 总记录数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
@@ -99,18 +95,14 @@ namespace TencentCloud
 
                     /**
                      * 获取列表信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Content 列表信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ImageRepository> GetContent() const;
 
                     /**
                      * 设置列表信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _content 列表信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContent(const std::vector<ImageRepository>& _content);
@@ -126,7 +118,6 @@ namespace TencentCloud
 
                     /**
                      * 总记录数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
@@ -140,7 +131,6 @@ namespace TencentCloud
 
                     /**
                      * 列表信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ImageRepository> m_content;
                     bool m_contentHasBeenSet;

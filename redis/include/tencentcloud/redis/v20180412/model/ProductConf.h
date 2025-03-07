@@ -387,11 +387,9 @@ namespace TencentCloud
                      * 获取是否支持副本只读。
 - true：支持副本只读。
 - false：不支持。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableReplicaReadOnly 是否支持副本只读。
 - true：支持副本只读。
 - false：不支持。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnableReplicaReadOnly() const;
@@ -400,11 +398,9 @@ namespace TencentCloud
                      * 设置是否支持副本只读。
 - true：支持副本只读。
 - false：不支持。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enableReplicaReadOnly 是否支持副本只读。
 - true：支持副本只读。
 - false：不支持。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnableReplicaReadOnly(const bool& _enableReplicaReadOnly);
@@ -516,7 +512,6 @@ namespace TencentCloud
                      * 是否支持副本只读。
 - true：支持副本只读。
 - false：不支持。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enableReplicaReadOnly;
                     bool m_enableReplicaReadOnlyHasBeenSet;

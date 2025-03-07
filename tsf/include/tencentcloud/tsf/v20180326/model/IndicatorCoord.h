@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取指标横坐标值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CoordX 指标横坐标值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCoordX() const;
 
                     /**
                      * 设置指标横坐标值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _coordX 指标横坐标值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCoordX(const std::string& _coordX);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取指标纵坐标值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CoordY 指标纵坐标值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCoordY() const;
 
                     /**
                      * 设置指标纵坐标值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _coordY 指标纵坐标值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCoordY(const std::string& _coordY);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取指标标签，用于标识附加信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CoordTag 指标标签，用于标识附加信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCoordTag() const;
 
                     /**
                      * 设置指标标签，用于标识附加信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _coordTag 指标标签，用于标识附加信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCoordTag(const std::string& _coordTag);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 指标横坐标值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_coordX;
                     bool m_coordXHasBeenSet;
 
                     /**
                      * 指标纵坐标值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_coordY;
                     bool m_coordYHasBeenSet;
 
                     /**
                      * 指标标签，用于标识附加信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_coordTag;
                     bool m_coordTagHasBeenSet;

@@ -42,7 +42,8 @@ RenewWorkflowSchedulerInfoDsRequest::RenewWorkflowSchedulerInfoDsRequest() :
     m_calendarOpenHasBeenSet(false),
     m_calendarNameHasBeenSet(false),
     m_calendarIdHasBeenSet(false),
-    m_scheduleTimeZoneHasBeenSet(false)
+    m_scheduleTimeZoneHasBeenSet(false),
+    m_clearLinkHasBeenSet(false)
 {
 }
 
@@ -211,6 +212,14 @@ string RenewWorkflowSchedulerInfoDsRequest::ToJsonString() const
         string key = "ScheduleTimeZone";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_scheduleTimeZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clearLinkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClearLink";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_clearLink, allocator);
     }
 
 
@@ -539,6 +548,22 @@ void RenewWorkflowSchedulerInfoDsRequest::SetScheduleTimeZone(const string& _sch
 bool RenewWorkflowSchedulerInfoDsRequest::ScheduleTimeZoneHasBeenSet() const
 {
     return m_scheduleTimeZoneHasBeenSet;
+}
+
+bool RenewWorkflowSchedulerInfoDsRequest::GetClearLink() const
+{
+    return m_clearLink;
+}
+
+void RenewWorkflowSchedulerInfoDsRequest::SetClearLink(const bool& _clearLink)
+{
+    m_clearLink = _clearLink;
+    m_clearLinkHasBeenSet = true;
+}
+
+bool RenewWorkflowSchedulerInfoDsRequest::ClearLinkHasBeenSet() const
+{
+    return m_clearLinkHasBeenSet;
 }
 
 

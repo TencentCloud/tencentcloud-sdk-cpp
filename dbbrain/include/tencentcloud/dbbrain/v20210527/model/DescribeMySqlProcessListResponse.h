@@ -61,9 +61,7 @@ namespace TencentCloud
 
                     /**
                      * 获取sql会话统计信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Statistics sql会话统计信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<StatisticInfo> GetStatistics() const;
@@ -85,7 +83,6 @@ namespace TencentCloud
 
                     /**
                      * sql会话统计信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<StatisticInfo> m_statistics;
                     bool m_statisticsHasBeenSet;

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserGroupId 用户组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserGroupId() const;
 
                     /**
                      * 设置用户组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userGroupId 用户组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserGroupId(const std::string& _userGroupId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationId 应用id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
                      * 设置应用id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _applicationId 应用id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationName 应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApplicationName() const;
 
                     /**
                      * 设置应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _applicationName 应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApplicationName(const std::string& _applicationName);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 用户组id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userGroupId;
                     bool m_userGroupIdHasBeenSet;
 
                     /**
                      * 应用id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_applicationId;
                     bool m_applicationIdHasBeenSet;
 
                     /**
                      * 应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_applicationName;
                     bool m_applicationNameHasBeenSet;

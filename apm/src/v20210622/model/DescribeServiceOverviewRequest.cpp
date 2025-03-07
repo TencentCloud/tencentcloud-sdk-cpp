@@ -23,10 +23,10 @@ using namespace TencentCloud::Apm::V20210622::Model;
 using namespace std;
 
 DescribeServiceOverviewRequest::DescribeServiceOverviewRequest() :
-    m_metricsHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
-    m_filtersHasBeenSet(false),
+    m_metricsHasBeenSet(false),
     m_groupByHasBeenSet(false),
+    m_filtersHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_orderByHasBeenSet(false),
@@ -41,6 +41,14 @@ string DescribeServiceOverviewRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_metricsHasBeenSet)
     {
@@ -57,12 +65,17 @@ string DescribeServiceOverviewRequest::ToJsonString() const
         }
     }
 
-    if (m_instanceIdHasBeenSet)
+    if (m_groupByHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "InstanceId";
+        string key = "GroupBy";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_groupBy.begin(); itr != m_groupBy.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     if (m_filtersHasBeenSet)
@@ -77,19 +90,6 @@ string DescribeServiceOverviewRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
-        }
-    }
-
-    if (m_groupByHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "GroupBy";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_groupBy.begin(); itr != m_groupBy.end(); ++itr)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -142,22 +142,6 @@ string DescribeServiceOverviewRequest::ToJsonString() const
 }
 
 
-vector<QueryMetricItem> DescribeServiceOverviewRequest::GetMetrics() const
-{
-    return m_metrics;
-}
-
-void DescribeServiceOverviewRequest::SetMetrics(const vector<QueryMetricItem>& _metrics)
-{
-    m_metrics = _metrics;
-    m_metricsHasBeenSet = true;
-}
-
-bool DescribeServiceOverviewRequest::MetricsHasBeenSet() const
-{
-    return m_metricsHasBeenSet;
-}
-
 string DescribeServiceOverviewRequest::GetInstanceId() const
 {
     return m_instanceId;
@@ -174,20 +158,20 @@ bool DescribeServiceOverviewRequest::InstanceIdHasBeenSet() const
     return m_instanceIdHasBeenSet;
 }
 
-vector<Filter> DescribeServiceOverviewRequest::GetFilters() const
+vector<QueryMetricItem> DescribeServiceOverviewRequest::GetMetrics() const
 {
-    return m_filters;
+    return m_metrics;
 }
 
-void DescribeServiceOverviewRequest::SetFilters(const vector<Filter>& _filters)
+void DescribeServiceOverviewRequest::SetMetrics(const vector<QueryMetricItem>& _metrics)
 {
-    m_filters = _filters;
-    m_filtersHasBeenSet = true;
+    m_metrics = _metrics;
+    m_metricsHasBeenSet = true;
 }
 
-bool DescribeServiceOverviewRequest::FiltersHasBeenSet() const
+bool DescribeServiceOverviewRequest::MetricsHasBeenSet() const
 {
-    return m_filtersHasBeenSet;
+    return m_metricsHasBeenSet;
 }
 
 vector<string> DescribeServiceOverviewRequest::GetGroupBy() const
@@ -204,6 +188,22 @@ void DescribeServiceOverviewRequest::SetGroupBy(const vector<string>& _groupBy)
 bool DescribeServiceOverviewRequest::GroupByHasBeenSet() const
 {
     return m_groupByHasBeenSet;
+}
+
+vector<Filter> DescribeServiceOverviewRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeServiceOverviewRequest::SetFilters(const vector<Filter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeServiceOverviewRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
 }
 
 uint64_t DescribeServiceOverviewRequest::GetStartTime() const

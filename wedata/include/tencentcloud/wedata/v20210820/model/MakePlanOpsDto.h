@@ -768,6 +768,48 @@ REVERSE： 实例数据时间逆序
                      */
                     bool MakeDataTimeOrderHasBeenSet() const;
 
+                    /**
+                     * 获取补录时间范围的时区
+                     * @return ScheduleTimeZone 补录时间范围的时区
+                     * 
+                     */
+                    std::string GetScheduleTimeZone() const;
+
+                    /**
+                     * 设置补录时间范围的时区
+                     * @param _scheduleTimeZone 补录时间范围的时区
+                     * 
+                     */
+                    void SetScheduleTimeZone(const std::string& _scheduleTimeZone);
+
+                    /**
+                     * 判断参数 ScheduleTimeZone 是否已赋值
+                     * @return ScheduleTimeZone 是否已赋值
+                     * 
+                     */
+                    bool ScheduleTimeZoneHasBeenSet() const;
+
+                    /**
+                     * 获取执行应用参数
+                     * @return AppParam 执行应用参数
+                     * 
+                     */
+                    std::string GetAppParam() const;
+
+                    /**
+                     * 设置执行应用参数
+                     * @param _appParam 执行应用参数
+                     * 
+                     */
+                    void SetAppParam(const std::string& _appParam);
+
+                    /**
+                     * 判断参数 AppParam 是否已赋值
+                     * @return AppParam 是否已赋值
+                     * 
+                     */
+                    bool AppParamHasBeenSet() const;
+
                 private:
 
                     /**
@@ -970,6 +1012,18 @@ REVERSE： 实例数据时间逆序
                      */
                     std::string m_makeDataTimeOrder;
                     bool m_makeDataTimeOrderHasBeenSet;
+
+                    /**
+                     * 补录时间范围的时区
+                     */
+                    std::string m_scheduleTimeZone;
+                    bool m_scheduleTimeZoneHasBeenSet;
+
+                    /**
+                     * 执行应用参数
+                     */
+                    std::string m_appParam;
+                    bool m_appParamHasBeenSet;
 
                 };
             }

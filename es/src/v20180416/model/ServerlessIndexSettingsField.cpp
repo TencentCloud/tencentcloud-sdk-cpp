@@ -22,7 +22,8 @@ using namespace std;
 
 ServerlessIndexSettingsField::ServerlessIndexSettingsField() :
     m_numberOfShardsHasBeenSet(false),
-    m_refreshIntervalHasBeenSet(false)
+    m_refreshIntervalHasBeenSet(false),
+    m_customSettingHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome ServerlessIndexSettingsField::Deserialize(const rapidjson::V
         m_refreshIntervalHasBeenSet = true;
     }
 
+    if (value.HasMember("CustomSetting") && !value["CustomSetting"].IsNull())
+    {
+        if (!value["CustomSetting"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServerlessIndexSettingsField.CustomSetting` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_customSetting = string(value["CustomSetting"].GetString());
+        m_customSettingHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void ServerlessIndexSettingsField::ToJsonObject(rapidjson::Value &value, rapidjs
         string key = "RefreshInterval";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_refreshInterval.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_customSettingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomSetting";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_customSetting.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void ServerlessIndexSettingsField::SetRefreshInterval(const string& _refreshInte
 bool ServerlessIndexSettingsField::RefreshIntervalHasBeenSet() const
 {
     return m_refreshIntervalHasBeenSet;
+}
+
+string ServerlessIndexSettingsField::GetCustomSetting() const
+{
+    return m_customSetting;
+}
+
+void ServerlessIndexSettingsField::SetCustomSetting(const string& _customSetting)
+{
+    m_customSetting = _customSetting;
+    m_customSettingHasBeenSet = true;
+}
+
+bool ServerlessIndexSettingsField::CustomSettingHasBeenSet() const
+{
+    return m_customSettingHasBeenSet;
 }
 

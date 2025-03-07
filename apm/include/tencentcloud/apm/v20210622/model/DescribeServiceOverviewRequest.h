@@ -46,27 +46,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取指标列表
-                     * @return Metrics 指标列表
-                     * 
-                     */
-                    std::vector<QueryMetricItem> GetMetrics() const;
-
-                    /**
-                     * 设置指标列表
-                     * @param _metrics 指标列表
-                     * 
-                     */
-                    void SetMetrics(const std::vector<QueryMetricItem>& _metrics);
-
-                    /**
-                     * 判断参数 Metrics 是否已赋值
-                     * @return Metrics 是否已赋值
-                     * 
-                     */
-                    bool MetricsHasBeenSet() const;
-
-                    /**
                      * 获取业务系统 ID
                      * @return InstanceId 业务系统 ID
                      * 
@@ -88,25 +67,25 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件
-                     * @return Filters 过滤条件
+                     * 获取指标列表
+                     * @return Metrics 指标列表
                      * 
                      */
-                    std::vector<Filter> GetFilters() const;
+                    std::vector<QueryMetricItem> GetMetrics() const;
 
                     /**
-                     * 设置过滤条件
-                     * @param _filters 过滤条件
+                     * 设置指标列表
+                     * @param _metrics 指标列表
                      * 
                      */
-                    void SetFilters(const std::vector<Filter>& _filters);
+                    void SetMetrics(const std::vector<QueryMetricItem>& _metrics);
 
                     /**
-                     * 判断参数 Filters 是否已赋值
-                     * @return Filters 是否已赋值
+                     * 判断参数 Metrics 是否已赋值
+                     * @return Metrics 是否已赋值
                      * 
                      */
-                    bool FiltersHasBeenSet() const;
+                    bool MetricsHasBeenSet() const;
 
                     /**
                      * 获取聚合维度
@@ -128,6 +107,27 @@ namespace TencentCloud
                      * 
                      */
                     bool GroupByHasBeenSet() const;
+
+                    /**
+                     * 获取过滤条件
+                     * @return Filters 过滤条件
+                     * 
+                     */
+                    std::vector<Filter> GetFilters() const;
+
+                    /**
+                     * 设置过滤条件
+                     * @param _filters 过滤条件
+                     * 
+                     */
+                    void SetFilters(const std::vector<Filter>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     * 
+                     */
+                    bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取开始时间（单位：秒）
@@ -249,28 +249,28 @@ Value 填写：
                 private:
 
                     /**
-                     * 指标列表
-                     */
-                    std::vector<QueryMetricItem> m_metrics;
-                    bool m_metricsHasBeenSet;
-
-                    /**
                      * 业务系统 ID
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 过滤条件
+                     * 指标列表
                      */
-                    std::vector<Filter> m_filters;
-                    bool m_filtersHasBeenSet;
+                    std::vector<QueryMetricItem> m_metrics;
+                    bool m_metricsHasBeenSet;
 
                     /**
                      * 聚合维度
                      */
                     std::vector<std::string> m_groupBy;
                     bool m_groupByHasBeenSet;
+
+                    /**
+                     * 过滤条件
+                     */
+                    std::vector<Filter> m_filters;
+                    bool m_filtersHasBeenSet;
 
                     /**
                      * 开始时间（单位：秒）

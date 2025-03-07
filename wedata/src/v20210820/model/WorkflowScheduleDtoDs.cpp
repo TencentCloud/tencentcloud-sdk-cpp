@@ -44,7 +44,8 @@ WorkflowScheduleDtoDs::WorkflowScheduleDtoDs() :
     m_latestSubmitTimeHasBeenSet(false),
     m_calendarOpenHasBeenSet(false),
     m_calendarNameHasBeenSet(false),
-    m_calendarIdHasBeenSet(false)
+    m_calendarIdHasBeenSet(false),
+    m_scheduleTimeZoneHasBeenSet(false)
 {
 }
 
@@ -293,6 +294,16 @@ CoreInternalOutcome WorkflowScheduleDtoDs::Deserialize(const rapidjson::Value &v
         m_calendarIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ScheduleTimeZone") && !value["ScheduleTimeZone"].IsNull())
+    {
+        if (!value["ScheduleTimeZone"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkflowScheduleDtoDs.ScheduleTimeZone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scheduleTimeZone = string(value["ScheduleTimeZone"].GetString());
+        m_scheduleTimeZoneHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -490,6 +501,14 @@ void WorkflowScheduleDtoDs::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "CalendarId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_calendarId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scheduleTimeZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduleTimeZone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scheduleTimeZone.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -877,5 +896,21 @@ void WorkflowScheduleDtoDs::SetCalendarId(const string& _calendarId)
 bool WorkflowScheduleDtoDs::CalendarIdHasBeenSet() const
 {
     return m_calendarIdHasBeenSet;
+}
+
+string WorkflowScheduleDtoDs::GetScheduleTimeZone() const
+{
+    return m_scheduleTimeZone;
+}
+
+void WorkflowScheduleDtoDs::SetScheduleTimeZone(const string& _scheduleTimeZone)
+{
+    m_scheduleTimeZone = _scheduleTimeZone;
+    m_scheduleTimeZoneHasBeenSet = true;
+}
+
+bool WorkflowScheduleDtoDs::ScheduleTimeZoneHasBeenSet() const
+{
+    return m_scheduleTimeZoneHasBeenSet;
 }
 

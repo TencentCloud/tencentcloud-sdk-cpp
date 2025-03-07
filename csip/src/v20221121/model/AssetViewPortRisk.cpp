@@ -39,7 +39,9 @@ AssetViewPortRisk::AssetViewPortRisk() :
     m_appIdHasBeenSet(false),
     m_nickHasBeenSet(false),
     m_uinHasBeenSet(false),
-    m_fromHasBeenSet(false)
+    m_fromHasBeenSet(false),
+    m_serviceJudgeHasBeenSet(false),
+    m_xspmStatusHasBeenSet(false)
 {
 }
 
@@ -238,6 +240,26 @@ CoreInternalOutcome AssetViewPortRisk::Deserialize(const rapidjson::Value &value
         m_fromHasBeenSet = true;
     }
 
+    if (value.HasMember("ServiceJudge") && !value["ServiceJudge"].IsNull())
+    {
+        if (!value["ServiceJudge"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssetViewPortRisk.ServiceJudge` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_serviceJudge = string(value["ServiceJudge"].GetString());
+        m_serviceJudgeHasBeenSet = true;
+    }
+
+    if (value.HasMember("XspmStatus") && !value["XspmStatus"].IsNull())
+    {
+        if (!value["XspmStatus"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssetViewPortRisk.XspmStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_xspmStatus = value["XspmStatus"].GetUint64();
+        m_xspmStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -395,6 +417,22 @@ void AssetViewPortRisk::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "From";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_from.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serviceJudgeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceJudge";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_serviceJudge.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_xspmStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "XspmStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_xspmStatus, allocator);
     }
 
 }
@@ -702,5 +740,37 @@ void AssetViewPortRisk::SetFrom(const string& _from)
 bool AssetViewPortRisk::FromHasBeenSet() const
 {
     return m_fromHasBeenSet;
+}
+
+string AssetViewPortRisk::GetServiceJudge() const
+{
+    return m_serviceJudge;
+}
+
+void AssetViewPortRisk::SetServiceJudge(const string& _serviceJudge)
+{
+    m_serviceJudge = _serviceJudge;
+    m_serviceJudgeHasBeenSet = true;
+}
+
+bool AssetViewPortRisk::ServiceJudgeHasBeenSet() const
+{
+    return m_serviceJudgeHasBeenSet;
+}
+
+uint64_t AssetViewPortRisk::GetXspmStatus() const
+{
+    return m_xspmStatus;
+}
+
+void AssetViewPortRisk::SetXspmStatus(const uint64_t& _xspmStatus)
+{
+    m_xspmStatus = _xspmStatus;
+    m_xspmStatusHasBeenSet = true;
+}
+
+bool AssetViewPortRisk::XspmStatusHasBeenSet() const
+{
+    return m_xspmStatusHasBeenSet;
 }
 

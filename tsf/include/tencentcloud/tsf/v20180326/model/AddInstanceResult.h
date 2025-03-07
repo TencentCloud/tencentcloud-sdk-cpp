@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取添加集群失败的节点列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailedInstanceIds 添加集群失败的节点列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetFailedInstanceIds() const;
 
                     /**
                      * 设置添加集群失败的节点列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _failedInstanceIds 添加集群失败的节点列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFailedInstanceIds(const std::vector<std::string>& _failedInstanceIds);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取添加集群成功的节点列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SuccInstanceIds 添加集群成功的节点列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetSuccInstanceIds() const;
 
                     /**
                      * 设置添加集群成功的节点列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _succInstanceIds 添加集群成功的节点列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSuccInstanceIds(const std::vector<std::string>& _succInstanceIds);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取添加集群超时的节点列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeoutInstanceIds 添加集群超时的节点列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetTimeoutInstanceIds() const;
 
                     /**
                      * 设置添加集群超时的节点列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timeoutInstanceIds 添加集群超时的节点列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimeoutInstanceIds(const std::vector<std::string>& _timeoutInstanceIds);
@@ -150,21 +138,18 @@ namespace TencentCloud
 
                     /**
                      * 添加集群失败的节点列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_failedInstanceIds;
                     bool m_failedInstanceIdsHasBeenSet;
 
                     /**
                      * 添加集群成功的节点列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_succInstanceIds;
                     bool m_succInstanceIdsHasBeenSet;
 
                     /**
                      * 添加集群超时的节点列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_timeoutInstanceIds;
                     bool m_timeoutInstanceIdsHasBeenSet;

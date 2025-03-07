@@ -92,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取健康检查配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HealthCheck 健康检查配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     HealthCheckConfig GetHealthCheck() const;
 
                     /**
                      * 设置健康检查配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _healthCheck 健康检查配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHealthCheck(const HealthCheckConfig& _healthCheck);
@@ -131,7 +127,6 @@ namespace TencentCloud
 
                     /**
                      * 健康检查配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     HealthCheckConfig m_healthCheck;
                     bool m_healthCheckHasBeenSet;

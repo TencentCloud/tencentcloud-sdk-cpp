@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取机器实例总数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 机器实例总数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置机器实例总数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalCount 机器实例总数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取机器实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Content 机器实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Instance> GetContent() const;
 
                     /**
                      * 设置机器实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _content 机器实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContent(const std::vector<Instance>& _content);
@@ -101,14 +93,12 @@ namespace TencentCloud
 
                     /**
                      * 机器实例总数目
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
                      * 机器实例列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Instance> m_content;
                     bool m_contentHasBeenSet;

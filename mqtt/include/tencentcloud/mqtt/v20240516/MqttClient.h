@@ -105,6 +105,8 @@
 #include <tencentcloud/mqtt/v20240516/model/ModifyTopicResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/ModifyUserRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/ModifyUserResponse.h>
+#include <tencentcloud/mqtt/v20240516/model/PublishMessageRequest.h>
+#include <tencentcloud/mqtt/v20240516/model/PublishMessageResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/RegisterCaCertificateRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/RegisterCaCertificateResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/RegisterDeviceCertificateRequest.h>
@@ -250,6 +252,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyUserResponse> ModifyUserOutcome;
                 typedef std::future<ModifyUserOutcome> ModifyUserOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::ModifyUserRequest&, ModifyUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::PublishMessageResponse> PublishMessageOutcome;
+                typedef std::future<PublishMessageOutcome> PublishMessageOutcomeCallable;
+                typedef std::function<void(const MqttClient*, const Model::PublishMessageRequest&, PublishMessageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PublishMessageAsyncHandler;
                 typedef Outcome<Core::Error, Model::RegisterCaCertificateResponse> RegisterCaCertificateOutcome;
                 typedef std::future<RegisterCaCertificateOutcome> RegisterCaCertificateOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::RegisterCaCertificateRequest&, RegisterCaCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RegisterCaCertificateAsyncHandler;
@@ -644,6 +649,15 @@ namespace TencentCloud
                 ModifyUserOutcome ModifyUser(const Model::ModifyUserRequest &request);
                 void ModifyUserAsync(const Model::ModifyUserRequest& request, const ModifyUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyUserOutcomeCallable ModifyUserCallable(const Model::ModifyUserRequest& request);
+
+                /**
+                 *发布 MQTT 消息到消息主题或客户端
+                 * @param req PublishMessageRequest
+                 * @return PublishMessageOutcome
+                 */
+                PublishMessageOutcome PublishMessage(const Model::PublishMessageRequest &request);
+                void PublishMessageAsync(const Model::PublishMessageRequest& request, const PublishMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PublishMessageOutcomeCallable PublishMessageCallable(const Model::PublishMessageRequest& request);
 
                 /**
                  *注册ca证书

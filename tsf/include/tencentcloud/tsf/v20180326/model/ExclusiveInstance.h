@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置中心类型[Registration、Configuration]
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CenterType 配置中心类型[Registration、Configuration]
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCenterType() const;
 
                     /**
                      * 设置配置中心类型[Registration、Configuration]
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _centerType 配置中心类型[Registration、Configuration]
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCenterType(const std::string& _centerType);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceId 实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例类型[Polaris]
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceType 实例类型[Polaris]
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
                      * 设置实例类型[Polaris]
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceType 实例类型[Polaris]
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceName 实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceName 实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例地域id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionId 实例地域id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegionId() const;
 
                     /**
                      * 设置实例地域id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _regionId 实例地域id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegionId(const std::string& _regionId);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例命名空间ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceNamespaceId 实例命名空间ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceNamespaceId() const;
 
                     /**
                      * 设置实例命名空间ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceNamespaceId 实例命名空间ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceNamespaceId(const std::string& _instanceNamespaceId);
@@ -200,42 +176,36 @@ namespace TencentCloud
 
                     /**
                      * 配置中心类型[Registration、Configuration]
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_centerType;
                     bool m_centerTypeHasBeenSet;
 
                     /**
                      * 实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
                      * 实例类型[Polaris]
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**
                      * 实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
                      * 实例地域id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_regionId;
                     bool m_regionIdHasBeenSet;
 
                     /**
                      * 实例命名空间ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceNamespaceId;
                     bool m_instanceNamespaceIdHasBeenSet;

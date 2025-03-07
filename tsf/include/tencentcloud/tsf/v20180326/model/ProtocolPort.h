@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodePort 主机端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetNodePort() const;
 
                     /**
                      * 设置主机端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nodePort 主机端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNodePort(const int64_t& _nodePort);
@@ -136,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取端口名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 端口名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置端口名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 端口名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -181,14 +173,12 @@ namespace TencentCloud
 
                     /**
                      * 主机端口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_nodePort;
                     bool m_nodePortHasBeenSet;
 
                     /**
                      * 端口名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

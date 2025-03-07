@@ -75,9 +75,7 @@ namespace TencentCloud
 
                     /**
                      * 获取消耗按产品汇总详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 消耗按产品汇总详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ConsumptionBusinessSummaryDataItem> GetData() const;
@@ -91,9 +89,7 @@ namespace TencentCloud
 
                     /**
                      * 获取记录数量，NeedRecordNum为0时返回null
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecordNum 记录数量，NeedRecordNum为0时返回null
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRecordNum() const;
@@ -121,14 +117,12 @@ namespace TencentCloud
 
                     /**
                      * 消耗按产品汇总详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ConsumptionBusinessSummaryDataItem> m_data;
                     bool m_dataHasBeenSet;
 
                     /**
                      * 记录数量，NeedRecordNum为0时返回null
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_recordNum;
                     bool m_recordNumHasBeenSet;

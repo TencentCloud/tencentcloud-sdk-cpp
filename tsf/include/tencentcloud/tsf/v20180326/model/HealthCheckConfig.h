@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取健康检查路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Path 健康检查路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPath() const;
 
                     /**
                      * 设置健康检查路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _path 健康检查路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPath(const std::string& _path);
@@ -75,7 +71,6 @@ namespace TencentCloud
 
                     /**
                      * 健康检查路径
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_path;
                     bool m_pathHasBeenSet;

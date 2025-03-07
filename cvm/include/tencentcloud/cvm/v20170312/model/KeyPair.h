@@ -217,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取密钥关联的标签列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 密钥关联的标签列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置密钥关联的标签列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 密钥关联的标签列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -292,7 +288,6 @@ namespace TencentCloud
 
                     /**
                      * 密钥关联的标签列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;

@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取费用平均信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Average 费用平均信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AllocationAverageData GetAverage() const;
 
                     /**
                      * 设置费用平均信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _average 费用平均信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAverage(const AllocationAverageData& _average);
@@ -76,7 +72,6 @@ namespace TencentCloud
 
                     /**
                      * 费用平均信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AllocationAverageData m_average;
                     bool m_averageHasBeenSet;

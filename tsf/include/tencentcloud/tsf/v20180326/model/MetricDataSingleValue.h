@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取指标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MetricName 指标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMetricName() const;
 
                     /**
                      * 设置指标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _metricName 指标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMetricName(const std::string& _metricName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取统计方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MetricFunction 统计方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMetricFunction() const;
 
                     /**
                      * 设置统计方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _metricFunction 统计方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMetricFunction(const std::string& _metricFunction);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取指标值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MetricDataValue 指标值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMetricDataValue() const;
 
                     /**
                      * 设置指标值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _metricDataValue 指标值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMetricDataValue(const std::string& _metricDataValue);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日环比
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DailyPercent 日环比
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetDailyPercent() const;
 
                     /**
                      * 设置日环比
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dailyPercent 日环比
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDailyPercent(const double& _dailyPercent);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 指标
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_metricName;
                     bool m_metricNameHasBeenSet;
 
                     /**
                      * 统计方式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_metricFunction;
                     bool m_metricFunctionHasBeenSet;
 
                     /**
                      * 指标值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_metricDataValue;
                     bool m_metricDataValueHasBeenSet;
 
                     /**
                      * 日环比
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_dailyPercent;
                     bool m_dailyPercentHasBeenSet;

@@ -589,6 +589,48 @@ namespace TencentCloud
                      */
                     bool ProjectIdsHasBeenSet() const;
 
+                    /**
+                     * 获取黑名单任务ID列表，传了该值在筛选的时候会将列表中的任务ID剔除
+                     * @return BlackTaskIdList 黑名单任务ID列表，传了该值在筛选的时候会将列表中的任务ID剔除
+                     * 
+                     */
+                    std::vector<std::string> GetBlackTaskIdList() const;
+
+                    /**
+                     * 设置黑名单任务ID列表，传了该值在筛选的时候会将列表中的任务ID剔除
+                     * @param _blackTaskIdList 黑名单任务ID列表，传了该值在筛选的时候会将列表中的任务ID剔除
+                     * 
+                     */
+                    void SetBlackTaskIdList(const std::vector<std::string>& _blackTaskIdList);
+
+                    /**
+                     * 判断参数 BlackTaskIdList 是否已赋值
+                     * @return BlackTaskIdList 是否已赋值
+                     * 
+                     */
+                    bool BlackTaskIdListHasBeenSet() const;
+
+                    /**
+                     * 获取时区
+                     * @return ScheduleTimeZone 时区
+                     * 
+                     */
+                    std::string GetScheduleTimeZone() const;
+
+                    /**
+                     * 设置时区
+                     * @param _scheduleTimeZone 时区
+                     * 
+                     */
+                    void SetScheduleTimeZone(const std::string& _scheduleTimeZone);
+
+                    /**
+                     * 判断参数 ScheduleTimeZone 是否已赋值
+                     * @return ScheduleTimeZone 是否已赋值
+                     * 
+                     */
+                    bool ScheduleTimeZoneHasBeenSet() const;
+
                 private:
 
                     /**
@@ -746,6 +788,18 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_projectIds;
                     bool m_projectIdsHasBeenSet;
+
+                    /**
+                     * 黑名单任务ID列表，传了该值在筛选的时候会将列表中的任务ID剔除
+                     */
+                    std::vector<std::string> m_blackTaskIdList;
+                    bool m_blackTaskIdListHasBeenSet;
+
+                    /**
+                     * 时区
+                     */
+                    std::string m_scheduleTimeZone;
+                    bool m_scheduleTimeZoneHasBeenSet;
 
                 };
             }

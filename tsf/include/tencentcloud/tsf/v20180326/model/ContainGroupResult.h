@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部署组列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Content 部署组列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ContainGroup> GetContent() const;
 
                     /**
                      * 设置部署组列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _content 部署组列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContent(const std::vector<ContainGroup>& _content);
@@ -97,7 +93,6 @@ namespace TencentCloud
 
                     /**
                      * 部署组列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ContainGroup> m_content;
                     bool m_contentHasBeenSet;

@@ -34,7 +34,8 @@ CreateHiveTableByDDLRequest::CreateHiveTableByDDLRequest() :
     m_asyncHasBeenSet(false),
     m_dataOptimizationResourceHasBeenSet(false),
     m_smartOptimizerWrittenHasBeenSet(false),
-    m_tableNameHasBeenSet(false)
+    m_tableNameHasBeenSet(false),
+    m_resourceGroupNameHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,14 @@ string CreateHiveTableByDDLRequest::ToJsonString() const
         string key = "TableName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_tableName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceGroupNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceGroupName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resourceGroupName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -339,6 +348,22 @@ void CreateHiveTableByDDLRequest::SetTableName(const string& _tableName)
 bool CreateHiveTableByDDLRequest::TableNameHasBeenSet() const
 {
     return m_tableNameHasBeenSet;
+}
+
+string CreateHiveTableByDDLRequest::GetResourceGroupName() const
+{
+    return m_resourceGroupName;
+}
+
+void CreateHiveTableByDDLRequest::SetResourceGroupName(const string& _resourceGroupName)
+{
+    m_resourceGroupName = _resourceGroupName;
+    m_resourceGroupNameHasBeenSet = true;
+}
+
+bool CreateHiveTableByDDLRequest::ResourceGroupNameHasBeenSet() const
+{
+    return m_resourceGroupNameHasBeenSet;
 }
 
 

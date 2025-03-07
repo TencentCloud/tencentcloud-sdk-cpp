@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启服务注册治理
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableGovernance 是否开启服务注册治理
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnableGovernance() const;
 
                     /**
                      * 设置是否开启服务注册治理
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enableGovernance 是否开启服务注册治理
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnableGovernance(const bool& _enableGovernance);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务治理类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GovernanceType 服务治理类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGovernanceType() const;
 
                     /**
                      * 设置服务治理类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _governanceType 服务治理类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGovernanceType(const std::string& _governanceType);
@@ -126,14 +118,12 @@ namespace TencentCloud
 
                     /**
                      * 是否开启服务注册治理
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enableGovernance;
                     bool m_enableGovernanceHasBeenSet;
 
                     /**
                      * 服务治理类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_governanceType;
                     bool m_governanceTypeHasBeenSet;

@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取请求模板路径:type为接口时返回，服务时不返回
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Path 请求模板路径:type为接口时返回，服务时不返回
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPath() const;
 
                     /**
                      * 设置请求模板路径:type为接口时返回，服务时不返回
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _path 请求模板路径:type为接口时返回，服务时不返回
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPath(const std::string& _path);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取请求方法:type为接口时返回，服务时不返回
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Method 请求方法:type为接口时返回，服务时不返回
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMethod() const;
 
                     /**
                      * 设置请求方法:type为接口时返回，服务时不返回
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _method 请求方法:type为接口时返回，服务时不返回
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMethod(const std::string& _method);
@@ -225,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceId 实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -250,18 +238,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例name
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceName 实例name
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置实例name
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceName 实例name
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -275,18 +259,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部署组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupId 部署组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置部署组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupId 部署组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -300,18 +280,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部署组name
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupName 部署组name
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置部署组name
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupName 部署组name
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -325,18 +301,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部署组类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterType 部署组类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterType() const;
 
                     /**
                      * 设置部署组类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterType 部署组类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterType(const std::string& _clusterType);
@@ -350,18 +322,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部署组是否存在
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupExist 部署组是否存在
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetGroupExist() const;
 
                     /**
                      * 设置部署组是否存在
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupExist 部署组是否存在
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupExist(const int64_t& _groupExist);
@@ -375,18 +343,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例是否存在，仅限cvm
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceExist 实例是否存在，仅限cvm
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetInstanceExist() const;
 
                     /**
                      * 设置实例是否存在，仅限cvm
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceExist 实例是否存在，仅限cvm
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceExist(const int64_t& _instanceExist);
@@ -400,18 +364,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationId 应用id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
                      * 设置应用id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _applicationId 应用id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
@@ -425,18 +385,14 @@ namespace TencentCloud
 
                     /**
                      * 获取微服务类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MicroserviceType 微服务类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMicroserviceType() const;
 
                     /**
                      * 设置微服务类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _microserviceType 微服务类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMicroserviceType(const std::string& _microserviceType);
@@ -450,18 +406,14 @@ namespace TencentCloud
 
                     /**
                      * 获取cpu使用率
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CpuPercent cpu使用率
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCpuPercent() const;
 
                     /**
                      * 设置cpu使用率
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cpuPercent cpu使用率
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCpuPercent(const int64_t& _cpuPercent);
@@ -475,18 +427,14 @@ namespace TencentCloud
 
                     /**
                      * 获取已用堆大小,单位KB
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HeapUsed 已用堆大小,单位KB
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetHeapUsed() const;
 
                     /**
                      * 设置已用堆大小,单位KB
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _heapUsed 已用堆大小,单位KB
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHeapUsed(const int64_t& _heapUsed);
@@ -500,18 +448,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DbName 数据库
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDbName() const;
 
                     /**
                      * 设置数据库
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dbName 数据库
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDbName(const std::string& _dbName);
@@ -525,18 +469,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Script值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Script Script值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetScript() const;
 
                     /**
                      * 设置Script值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _script Script值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScript(const std::string& _script);
@@ -550,18 +490,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DbType 数据库类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDbType() const;
 
                     /**
                      * 设置数据库类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dbType 数据库类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDbType(const std::string& _dbType);
@@ -575,18 +511,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Apdex值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Apdex Apdex值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetApdex() const;
 
                     /**
                      * 设置Apdex值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _apdex Apdex值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApdex(const double& _apdex);
@@ -600,18 +532,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Qps值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Qps Qps值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetQps() const;
 
                     /**
                      * 设置Qps值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _qps Qps值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQps(const double& _qps);
@@ -625,18 +553,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例在线数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceOnlineCount 实例在线数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetInstanceOnlineCount() const;
 
                     /**
                      * 设置实例在线数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceOnlineCount 实例在线数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceOnlineCount(const int64_t& _instanceOnlineCount);
@@ -650,18 +574,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceTotalCount 实例总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetInstanceTotalCount() const;
 
                     /**
                      * 设置实例总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceTotalCount 实例总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceTotalCount(const int64_t& _instanceTotalCount);
@@ -675,18 +595,14 @@ namespace TencentCloud
 
                     /**
                      * 获取normal/error
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status normal/error
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置normal/error
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status normal/error
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -700,18 +616,14 @@ namespace TencentCloud
 
                     /**
                      * 获取normal/warn/error
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorRateLevel normal/warn/error
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetErrorRateLevel() const;
 
                     /**
                      * 设置normal/warn/error
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _errorRateLevel normal/warn/error
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetErrorRateLevel(const std::string& _errorRateLevel);
@@ -725,18 +637,14 @@ namespace TencentCloud
 
                     /**
                      * 获取normal/warn/error
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AvgTimeConsumingLevel normal/warn/error
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAvgTimeConsumingLevel() const;
 
                     /**
                      * 设置normal/warn/error
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _avgTimeConsumingLevel normal/warn/error
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAvgTimeConsumingLevel(const std::string& _avgTimeConsumingLevel);
@@ -750,18 +658,14 @@ namespace TencentCloud
 
                     /**
                      * 获取normal/warn/error
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApdexLevel normal/warn/error
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApdexLevel() const;
 
                     /**
                      * 设置normal/warn/error
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _apdexLevel normal/warn/error
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApdexLevel(const std::string& _apdexLevel);
@@ -777,14 +681,12 @@ namespace TencentCloud
 
                     /**
                      * 请求模板路径:type为接口时返回，服务时不返回
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_path;
                     bool m_pathHasBeenSet;
 
                     /**
                      * 请求方法:type为接口时返回，服务时不返回
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_method;
                     bool m_methodHasBeenSet;
@@ -827,154 +729,132 @@ namespace TencentCloud
 
                     /**
                      * 实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
                      * 实例name
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
                      * 部署组id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
                      * 部署组name
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
 
                     /**
                      * 部署组类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterType;
                     bool m_clusterTypeHasBeenSet;
 
                     /**
                      * 部署组是否存在
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_groupExist;
                     bool m_groupExistHasBeenSet;
 
                     /**
                      * 实例是否存在，仅限cvm
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_instanceExist;
                     bool m_instanceExistHasBeenSet;
 
                     /**
                      * 应用id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_applicationId;
                     bool m_applicationIdHasBeenSet;
 
                     /**
                      * 微服务类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_microserviceType;
                     bool m_microserviceTypeHasBeenSet;
 
                     /**
                      * cpu使用率
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_cpuPercent;
                     bool m_cpuPercentHasBeenSet;
 
                     /**
                      * 已用堆大小,单位KB
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_heapUsed;
                     bool m_heapUsedHasBeenSet;
 
                     /**
                      * 数据库
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dbName;
                     bool m_dbNameHasBeenSet;
 
                     /**
                      * Script值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_script;
                     bool m_scriptHasBeenSet;
 
                     /**
                      * 数据库类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dbType;
                     bool m_dbTypeHasBeenSet;
 
                     /**
                      * Apdex值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_apdex;
                     bool m_apdexHasBeenSet;
 
                     /**
                      * Qps值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_qps;
                     bool m_qpsHasBeenSet;
 
                     /**
                      * 实例在线数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_instanceOnlineCount;
                     bool m_instanceOnlineCountHasBeenSet;
 
                     /**
                      * 实例总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_instanceTotalCount;
                     bool m_instanceTotalCountHasBeenSet;
 
                     /**
                      * normal/error
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * normal/warn/error
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errorRateLevel;
                     bool m_errorRateLevelHasBeenSet;
 
                     /**
                      * normal/warn/error
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_avgTimeConsumingLevel;
                     bool m_avgTimeConsumingLevelHasBeenSet;
 
                     /**
                      * normal/warn/error
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_apdexLevel;
                     bool m_apdexLevelHasBeenSet;

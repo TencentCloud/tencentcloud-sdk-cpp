@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分账单元唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TreeNodeUniqKey 分账单元唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTreeNodeUniqKey() const;
 
                     /**
                      * 设置分账单元唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _treeNodeUniqKey 分账单元唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTreeNodeUniqKey(const std::string& _treeNodeUniqKey);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分账单元名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TreeNodeUniqKeyName 分账单元名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTreeNodeUniqKeyName() const;
 
                     /**
                      * 设置分账单元名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _treeNodeUniqKeyName 分账单元名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTreeNodeUniqKeyName(const std::string& _treeNodeUniqKeyName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日期：结算日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BillDate 日期：结算日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBillDate() const;
 
                     /**
                      * 设置日期：结算日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _billDate 日期：结算日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBillDate(const std::string& _billDate);
@@ -459,18 +447,14 @@ namespace TencentCloud
 
                     /**
                      * 获取环比(折后总额)：[本月分账单元合计费用(折后总额) - 上月分账单元合计费用(折后总额)] / 上月分账单元合计费用(折后总额) * 100%
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Trend 环比(折后总额)：[本月分账单元合计费用(折后总额) - 上月分账单元合计费用(折后总额)] / 上月分账单元合计费用(折后总额) * 100%
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTrend() const;
 
                     /**
                      * 设置环比(折后总额)：[本月分账单元合计费用(折后总额) - 上月分账单元合计费用(折后总额)] / 上月分账单元合计费用(折后总额) * 100%
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _trend 环比(折后总额)：[本月分账单元合计费用(折后总额) - 上月分账单元合计费用(折后总额)] / 上月分账单元合计费用(折后总额) * 100%
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTrend(const std::string& _trend);
@@ -487,12 +471,10 @@ namespace TencentCloud
 upward -上升
 downward - 下降
 none - 平稳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TrendType 环比箭头
 upward -上升
 downward - 下降
 none - 平稳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTrendType() const;
@@ -502,12 +484,10 @@ none - 平稳
 upward -上升
 downward - 下降
 none - 平稳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _trendType 环比箭头
 upward -上升
 downward - 下降
 none - 平稳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTrendType(const std::string& _trendType);
@@ -523,21 +503,18 @@ none - 平稳
 
                     /**
                      * 分账单元唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_treeNodeUniqKey;
                     bool m_treeNodeUniqKeyHasBeenSet;
 
                     /**
                      * 分账单元名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_treeNodeUniqKeyName;
                     bool m_treeNodeUniqKeyNameHasBeenSet;
 
                     /**
                      * 日期：结算日期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_billDate;
                     bool m_billDateHasBeenSet;
@@ -640,7 +617,6 @@ none - 平稳
 
                     /**
                      * 环比(折后总额)：[本月分账单元合计费用(折后总额) - 上月分账单元合计费用(折后总额)] / 上月分账单元合计费用(折后总额) * 100%
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_trend;
                     bool m_trendHasBeenSet;
@@ -650,7 +626,6 @@ none - 平稳
 upward -上升
 downward - 下降
 none - 平稳
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_trendType;
                     bool m_trendTypeHasBeenSet;

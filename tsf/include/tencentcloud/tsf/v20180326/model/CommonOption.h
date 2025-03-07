@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LabelName -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLabelName() const;
 
                     /**
                      * 设置-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _labelName -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLabelName(const std::string& _labelName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Operator -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOperator() const;
 
                     /**
                      * 设置-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _operator -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOperator(const std::string& _operator);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LabelValue -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLabelValue() const;
 
                     /**
                      * 设置-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _labelValue -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLabelValue(const std::string& _labelValue);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * -
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_labelName;
                     bool m_labelNameHasBeenSet;
 
                     /**
                      * -
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
                      * -
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_labelValue;
                     bool m_labelValueHasBeenSet;

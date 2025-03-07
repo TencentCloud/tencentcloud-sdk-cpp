@@ -47,9 +47,7 @@ namespace TencentCloud
 
                     /**
                      * 获取总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotal() const;
@@ -79,9 +77,7 @@ namespace TencentCloud
 
                     /**
                      * 获取用户列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Content 用户列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<User> GetContent() const;
@@ -97,7 +93,6 @@ namespace TencentCloud
 
                     /**
                      * 总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;
@@ -111,7 +106,6 @@ namespace TencentCloud
 
                     /**
                      * 用户列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<User> m_content;
                     bool m_contentHasBeenSet;

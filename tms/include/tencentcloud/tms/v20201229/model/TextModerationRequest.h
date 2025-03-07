@@ -149,6 +149,27 @@ namespace TencentCloud
                      */
                     bool DeviceHasBeenSet() const;
 
+                    /**
+                     * 获取Content的原始语种，比如en,zh
+                     * @return SourceLanguage Content的原始语种，比如en,zh
+                     * 
+                     */
+                    std::string GetSourceLanguage() const;
+
+                    /**
+                     * 设置Content的原始语种，比如en,zh
+                     * @param _sourceLanguage Content的原始语种，比如en,zh
+                     * 
+                     */
+                    void SetSourceLanguage(const std::string& _sourceLanguage);
+
+                    /**
+                     * 判断参数 SourceLanguage 是否已赋值
+                     * @return SourceLanguage 是否已赋值
+                     * 
+                     */
+                    bool SourceLanguageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -180,6 +201,12 @@ namespace TencentCloud
                      */
                     Device m_device;
                     bool m_deviceHasBeenSet;
+
+                    /**
+                     * Content的原始语种，比如en,zh
+                     */
+                    std::string m_sourceLanguage;
+                    bool m_sourceLanguageHasBeenSet;
 
                 };
             }

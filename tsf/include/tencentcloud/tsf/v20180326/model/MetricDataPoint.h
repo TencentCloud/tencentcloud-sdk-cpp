@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据点键
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Key 数据点键
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置数据点键
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _key 数据点键
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKey(const std::string& _key);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据点值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 数据点值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置数据点值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _value 数据点值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据点标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tag 数据点标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTag() const;
 
                     /**
                      * 设置数据点标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tag 数据点标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTag(const std::string& _tag);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 数据点键
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
 
                     /**
                      * 数据点值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;
 
                     /**
                      * 数据点标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tag;
                     bool m_tagHasBeenSet;

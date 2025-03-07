@@ -97,7 +97,6 @@ namespace TencentCloud
 
 周期沉降(PeriodExport)
 立即沉降(ImmediateExport)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataRepositoryTaskAutoStrategy 数据流动的自动策略, 包含加载与沉降。策略可以是多种的组合
 按需加载(OnDemandImport)
 自动加载元数据(AutoImportMeta)
@@ -106,7 +105,6 @@ namespace TencentCloud
 
 周期沉降(PeriodExport)
 立即沉降(ImmediateExport)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetDataRepositoryTaskAutoStrategy() const;
@@ -120,7 +118,6 @@ namespace TencentCloud
 
 周期沉降(PeriodExport)
 立即沉降(ImmediateExport)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataRepositoryTaskAutoStrategy 数据流动的自动策略, 包含加载与沉降。策略可以是多种的组合
 按需加载(OnDemandImport)
 自动加载元数据(AutoImportMeta)
@@ -129,7 +126,6 @@ namespace TencentCloud
 
 周期沉降(PeriodExport)
 立即沉降(ImmediateExport)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataRepositoryTaskAutoStrategy(const std::vector<std::string>& _dataRepositoryTaskAutoStrategy);
@@ -310,7 +306,6 @@ namespace TencentCloud
 
 周期沉降(PeriodExport)
 立即沉降(ImmediateExport)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_dataRepositoryTaskAutoStrategy;
                     bool m_dataRepositoryTaskAutoStrategyHasBeenSet;

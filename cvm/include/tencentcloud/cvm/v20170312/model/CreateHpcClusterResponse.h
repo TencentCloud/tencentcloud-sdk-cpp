@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取高性能计算集群信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HpcClusterSet 高性能计算集群信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<HpcClusterInfo> GetHpcClusterSet() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 高性能计算集群信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<HpcClusterInfo> m_hpcClusterSet;
                     bool m_hpcClusterSetHasBeenSet;

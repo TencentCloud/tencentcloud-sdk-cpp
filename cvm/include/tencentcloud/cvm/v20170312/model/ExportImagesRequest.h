@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool BucketNameHasBeenSet() const;
 
                     /**
-                     * 获取镜像ID列表
-                     * @return ImageIds 镜像ID列表
+                     * 获取镜像ID列表。调用 ExportImages 接口时，参数 ImageIds 和 SnapshotIds 为二选一必填参数，目前参数 SnapshotIds 暂未对外开放。
+                     * @return ImageIds 镜像ID列表。调用 ExportImages 接口时，参数 ImageIds 和 SnapshotIds 为二选一必填参数，目前参数 SnapshotIds 暂未对外开放。
                      * 
                      */
                     std::vector<std::string> GetImageIds() const;
 
                     /**
-                     * 设置镜像ID列表
-                     * @param _imageIds 镜像ID列表
+                     * 设置镜像ID列表。调用 ExportImages 接口时，参数 ImageIds 和 SnapshotIds 为二选一必填参数，目前参数 SnapshotIds 暂未对外开放。
+                     * @param _imageIds 镜像ID列表。调用 ExportImages 接口时，参数 ImageIds 和 SnapshotIds 为二选一必填参数，目前参数 SnapshotIds 暂未对外开放。
                      * 
                      */
                     void SetImageIds(const std::vector<std::string>& _imageIds);
@@ -198,7 +198,7 @@ namespace TencentCloud
                     bool m_bucketNameHasBeenSet;
 
                     /**
-                     * 镜像ID列表
+                     * 镜像ID列表。调用 ExportImages 接口时，参数 ImageIds 和 SnapshotIds 为二选一必填参数，目前参数 SnapshotIds 暂未对外开放。
                      */
                     std::vector<std::string> m_imageIds;
                     bool m_imageIdsHasBeenSet;

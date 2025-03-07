@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务的执行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskStatus 任务的执行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTaskStatus() const;
 
                     /**
                      * 设置任务的执行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskStatus 任务的执行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskStatus(const uint64_t& _taskStatus);
@@ -75,7 +71,6 @@ namespace TencentCloud
 
                     /**
                      * 任务的执行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_taskStatus;
                     bool m_taskStatusHasBeenSet;

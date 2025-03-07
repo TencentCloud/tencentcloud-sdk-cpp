@@ -89,9 +89,7 @@ namespace TencentCloud
 
                     /**
                      * 获取记录数量，NeedRecordNum为0时返回null
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecordNum 记录数量，NeedRecordNum为0时返回null
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRecordNum() const;
@@ -125,7 +123,6 @@ namespace TencentCloud
 
                     /**
                      * 记录数量，NeedRecordNum为0时返回null
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_recordNum;
                     bool m_recordNumHasBeenSet;

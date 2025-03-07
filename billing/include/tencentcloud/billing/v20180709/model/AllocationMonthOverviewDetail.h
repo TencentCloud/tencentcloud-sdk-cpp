@@ -384,18 +384,14 @@ namespace TencentCloud
 
                     /**
                      * 获取环比(折后总额)：[本月分账单元合计费用(折后总额) - 上月分账单元合计费用(折后总额)] / 上月分账单元合计费用(折后总额) * 100%
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Trend 环比(折后总额)：[本月分账单元合计费用(折后总额) - 上月分账单元合计费用(折后总额)] / 上月分账单元合计费用(折后总额) * 100%
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTrend() const;
 
                     /**
                      * 设置环比(折后总额)：[本月分账单元合计费用(折后总额) - 上月分账单元合计费用(折后总额)] / 上月分账单元合计费用(折后总额) * 100%
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _trend 环比(折后总额)：[本月分账单元合计费用(折后总额) - 上月分账单元合计费用(折后总额)] / 上月分账单元合计费用(折后总额) * 100%
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTrend(const std::string& _trend);
@@ -412,12 +408,10 @@ namespace TencentCloud
 upward -上升
 downward - 下降
 none - 平稳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TrendType 环比箭头
 upward -上升
 downward - 下降
 none - 平稳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTrendType() const;
@@ -427,12 +421,10 @@ none - 平稳
 upward -上升
 downward - 下降
 none - 平稳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _trendType 环比箭头
 upward -上升
 downward - 下降
 none - 平稳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTrendType(const std::string& _trendType);
@@ -544,7 +536,6 @@ none - 平稳
 
                     /**
                      * 环比(折后总额)：[本月分账单元合计费用(折后总额) - 上月分账单元合计费用(折后总额)] / 上月分账单元合计费用(折后总额) * 100%
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_trend;
                     bool m_trendHasBeenSet;
@@ -554,7 +545,6 @@ none - 平稳
 upward -上升
 downward - 下降
 none - 平稳
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_trendType;
                     bool m_trendTypeHasBeenSet;

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取会话Token
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SessionToken 会话Token
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSessionToken() const;
 
                     /**
                      * 设置会话Token
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sessionToken 会话Token
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSessionToken(const std::string& _sessionToken);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取临时应用ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TmpAppId 临时应用ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTmpAppId() const;
 
                     /**
                      * 设置临时应用ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tmpAppId 临时应用ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTmpAppId(const std::string& _tmpAppId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取临时调用者身份ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TmpSecretId 临时调用者身份ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTmpSecretId() const;
 
                     /**
                      * 设置临时调用者身份ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tmpSecretId 临时调用者身份ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTmpSecretId(const std::string& _tmpSecretId);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取临时密钥
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TmpSecretKey 临时密钥
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTmpSecretKey() const;
 
                     /**
                      * 设置临时密钥
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tmpSecretKey 临时密钥
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTmpSecretKey(const std::string& _tmpSecretKey);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpiredTime 过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetExpiredTime() const;
 
                     /**
                      * 设置过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _expiredTime 过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExpiredTime(const int64_t& _expiredTime);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取所在域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Domain 所在域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置所在域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _domain 所在域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -200,42 +176,36 @@ namespace TencentCloud
 
                     /**
                      * 会话Token
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sessionToken;
                     bool m_sessionTokenHasBeenSet;
 
                     /**
                      * 临时应用ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tmpAppId;
                     bool m_tmpAppIdHasBeenSet;
 
                     /**
                      * 临时调用者身份ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tmpSecretId;
                     bool m_tmpSecretIdHasBeenSet;
 
                     /**
                      * 临时密钥
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tmpSecretKey;
                     bool m_tmpSecretKeyHasBeenSet;
 
                     /**
                      * 过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_expiredTime;
                     bool m_expiredTimeHasBeenSet;
 
                     /**
                      * 所在域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取总实例个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceCount 总实例个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetInstanceCount() const;
 
                     /**
                      * 设置总实例个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceCount 总实例个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceCount(const int64_t& _instanceCount);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取运行实例个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RunInstanceCount 运行实例个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRunInstanceCount() const;
 
                     /**
                      * 设置运行实例个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _runInstanceCount 运行实例个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRunInstanceCount(const int64_t& _runInstanceCount);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用下部署组个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupCount 应用下部署组个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetGroupCount() const;
 
                     /**
                      * 设置应用下部署组个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupCount 应用下部署组个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupCount(const int64_t& _groupCount);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取运行中部署组个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RunningGroupCount 运行中部署组个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRunningGroupCount() const;
 
                     /**
                      * 设置运行中部署组个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _runningGroupCount 运行中部署组个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRunningGroupCount(const std::string& _runningGroupCount);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取异常部署组个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AbnormalCount 异常部署组个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAbnormalCount() const;
 
                     /**
                      * 设置异常部署组个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _abnormalCount 异常部署组个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAbnormalCount(const std::string& _abnormalCount);
@@ -175,35 +155,30 @@ namespace TencentCloud
 
                     /**
                      * 总实例个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_instanceCount;
                     bool m_instanceCountHasBeenSet;
 
                     /**
                      * 运行实例个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_runInstanceCount;
                     bool m_runInstanceCountHasBeenSet;
 
                     /**
                      * 应用下部署组个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_groupCount;
                     bool m_groupCountHasBeenSet;
 
                     /**
                      * 运行中部署组个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_runningGroupCount;
                     bool m_runningGroupCountHasBeenSet;
 
                     /**
                      * 异常部署组个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_abnormalCount;
                     bool m_abnormalCountHasBeenSet;

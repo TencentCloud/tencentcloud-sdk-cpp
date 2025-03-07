@@ -48,7 +48,9 @@ MakePlanOpsDto::MakePlanOpsDto() :
     m_checkParentTypeHasBeenSet(false),
     m_sameSelfWorkflowDependTypeHasBeenSet(false),
     m_selfWorkflowDependencyHasBeenSet(false),
-    m_makeDataTimeOrderHasBeenSet(false)
+    m_makeDataTimeOrderHasBeenSet(false),
+    m_scheduleTimeZoneHasBeenSet(false),
+    m_appParamHasBeenSet(false)
 {
 }
 
@@ -360,6 +362,26 @@ CoreInternalOutcome MakePlanOpsDto::Deserialize(const rapidjson::Value &value)
         m_makeDataTimeOrderHasBeenSet = true;
     }
 
+    if (value.HasMember("ScheduleTimeZone") && !value["ScheduleTimeZone"].IsNull())
+    {
+        if (!value["ScheduleTimeZone"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MakePlanOpsDto.ScheduleTimeZone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scheduleTimeZone = string(value["ScheduleTimeZone"].GetString());
+        m_scheduleTimeZoneHasBeenSet = true;
+    }
+
+    if (value.HasMember("AppParam") && !value["AppParam"].IsNull())
+    {
+        if (!value["AppParam"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MakePlanOpsDto.AppParam` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_appParam = string(value["AppParam"].GetString());
+        m_appParamHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -608,6 +630,22 @@ void MakePlanOpsDto::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "MakeDataTimeOrder";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_makeDataTimeOrder.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scheduleTimeZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduleTimeZone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scheduleTimeZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppParam";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_appParam.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1059,5 +1097,37 @@ void MakePlanOpsDto::SetMakeDataTimeOrder(const string& _makeDataTimeOrder)
 bool MakePlanOpsDto::MakeDataTimeOrderHasBeenSet() const
 {
     return m_makeDataTimeOrderHasBeenSet;
+}
+
+string MakePlanOpsDto::GetScheduleTimeZone() const
+{
+    return m_scheduleTimeZone;
+}
+
+void MakePlanOpsDto::SetScheduleTimeZone(const string& _scheduleTimeZone)
+{
+    m_scheduleTimeZone = _scheduleTimeZone;
+    m_scheduleTimeZoneHasBeenSet = true;
+}
+
+bool MakePlanOpsDto::ScheduleTimeZoneHasBeenSet() const
+{
+    return m_scheduleTimeZoneHasBeenSet;
+}
+
+string MakePlanOpsDto::GetAppParam() const
+{
+    return m_appParam;
+}
+
+void MakePlanOpsDto::SetAppParam(const string& _appParam)
+{
+    m_appParam = _appParam;
+    m_appParamHasBeenSet = true;
+}
+
+bool MakePlanOpsDto::AppParamHasBeenSet() const
+{
+    return m_appParamHasBeenSet;
 }
 

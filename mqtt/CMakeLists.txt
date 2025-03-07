@@ -19,6 +19,7 @@ set(mqtt_public_header
   )
 
 set(mqtt_public_header_model
+  include/tencentcloud/mqtt/v20240516/model/UpdateAuthorizationPolicyPriorityResponse.h
   include/tencentcloud/mqtt/v20240516/model/DeleteUserRequest.h
   include/tencentcloud/mqtt/v20240516/model/ModifyJWTAuthenticatorResponse.h
   include/tencentcloud/mqtt/v20240516/model/CaCertificateItem.h
@@ -53,6 +54,7 @@ set(mqtt_public_header_model
   include/tencentcloud/mqtt/v20240516/model/CreateInsPublicEndpointResponse.h
   include/tencentcloud/mqtt/v20240516/model/CreateUserResponse.h
   include/tencentcloud/mqtt/v20240516/model/CreateAuthorizationPolicyRequest.h
+  include/tencentcloud/mqtt/v20240516/model/PublishMessageResponse.h
   include/tencentcloud/mqtt/v20240516/model/DescribeAuthenticatorResponse.h
   include/tencentcloud/mqtt/v20240516/model/DeactivateCaCertificateResponse.h
   include/tencentcloud/mqtt/v20240516/model/DeleteCaCertificateRequest.h
@@ -77,7 +79,7 @@ set(mqtt_public_header_model
   include/tencentcloud/mqtt/v20240516/model/ActivateCaCertificateRequest.h
   include/tencentcloud/mqtt/v20240516/model/ActivateDeviceCertificateResponse.h
   include/tencentcloud/mqtt/v20240516/model/DescribeTopicRequest.h
-  include/tencentcloud/mqtt/v20240516/model/UpdateAuthorizationPolicyPriorityResponse.h
+  include/tencentcloud/mqtt/v20240516/model/PublishMessageRequest.h
   include/tencentcloud/mqtt/v20240516/model/CreateTopicResponse.h
   include/tencentcloud/mqtt/v20240516/model/DeleteInsPublicEndpointResponse.h
   include/tencentcloud/mqtt/v20240516/model/MQTTEndpointItem.h
@@ -130,6 +132,7 @@ set(mqtt_public_header_model
 
 set(mqtt_src
   src/v20240516/MqttClient.cpp
+  src/v20240516/model/UpdateAuthorizationPolicyPriorityResponse.cpp
   src/v20240516/model/DeleteUserRequest.cpp
   src/v20240516/model/ModifyJWTAuthenticatorResponse.cpp
   src/v20240516/model/CaCertificateItem.cpp
@@ -164,6 +167,7 @@ set(mqtt_src
   src/v20240516/model/CreateInsPublicEndpointResponse.cpp
   src/v20240516/model/CreateUserResponse.cpp
   src/v20240516/model/CreateAuthorizationPolicyRequest.cpp
+  src/v20240516/model/PublishMessageResponse.cpp
   src/v20240516/model/DescribeAuthenticatorResponse.cpp
   src/v20240516/model/DeactivateCaCertificateResponse.cpp
   src/v20240516/model/DeleteCaCertificateRequest.cpp
@@ -188,7 +192,7 @@ set(mqtt_src
   src/v20240516/model/ActivateCaCertificateRequest.cpp
   src/v20240516/model/ActivateDeviceCertificateResponse.cpp
   src/v20240516/model/DescribeTopicRequest.cpp
-  src/v20240516/model/UpdateAuthorizationPolicyPriorityResponse.cpp
+  src/v20240516/model/PublishMessageRequest.cpp
   src/v20240516/model/CreateTopicResponse.cpp
   src/v20240516/model/DeleteInsPublicEndpointResponse.cpp
   src/v20240516/model/MQTTEndpointItem.cpp

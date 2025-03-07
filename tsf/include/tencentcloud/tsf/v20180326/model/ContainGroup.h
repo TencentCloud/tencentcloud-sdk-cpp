@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部署组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupId 部署组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置部署组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupId 部署组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupName 分组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置分组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupName 分组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取镜像server
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Server 镜像server
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetServer() const;
 
                     /**
                      * 设置镜像server
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _server 镜像server
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServer(const std::string& _server);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取镜像名，如/tsf/nginx
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RepoName 镜像名，如/tsf/nginx
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRepoName() const;
 
                     /**
                      * 设置镜像名，如/tsf/nginx
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _repoName 镜像名，如/tsf/nginx
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRepoName(const std::string& _repoName);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取镜像版本名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagName 镜像版本名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTagName() const;
 
                     /**
                      * 设置镜像版本名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tagName 镜像版本名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTagName(const std::string& _tagName);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterId 集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterId 集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterName 集群名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterName() const;
 
                     /**
                      * 设置集群名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterName 集群名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterName(const std::string& _clusterName);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取命名空间ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NamespaceId 命名空间ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNamespaceId() const;
 
                     /**
                      * 设置命名空间ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _namespaceId 命名空间ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNamespaceId(const std::string& _namespaceId);
@@ -273,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取命名空间名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NamespaceName 命名空间名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNamespaceName() const;
 
                     /**
                      * 设置命名空间名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _namespaceName 命名空间名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNamespaceName(const std::string& _namespaceName);
@@ -298,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取初始分配的 CPU 核数，对应 K8S request
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CpuRequest 初始分配的 CPU 核数，对应 K8S request
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCpuRequest() const;
 
                     /**
                      * 设置初始分配的 CPU 核数，对应 K8S request
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cpuRequest 初始分配的 CPU 核数，对应 K8S request
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCpuRequest(const std::string& _cpuRequest);
@@ -323,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最大分配的 CPU 核数，对应 K8S limit
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CpuLimit 最大分配的 CPU 核数，对应 K8S limit
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCpuLimit() const;
 
                     /**
                      * 设置最大分配的 CPU 核数，对应 K8S limit
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cpuLimit 最大分配的 CPU 核数，对应 K8S limit
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCpuLimit(const std::string& _cpuLimit);
@@ -348,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取初始分配的内存 MiB 数，对应 K8S request
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MemRequest 初始分配的内存 MiB 数，对应 K8S request
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMemRequest() const;
 
                     /**
                      * 设置初始分配的内存 MiB 数，对应 K8S request
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _memRequest 初始分配的内存 MiB 数，对应 K8S request
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMemRequest(const std::string& _memRequest);
@@ -373,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最大分配的内存 MiB 数，对应 K8S limit
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MemLimit 最大分配的内存 MiB 数，对应 K8S limit
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMemLimit() const;
 
                     /**
                      * 设置最大分配的内存 MiB 数，对应 K8S limit
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _memLimit 最大分配的内存 MiB 数，对应 K8S limit
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMemLimit(const std::string& _memLimit);
@@ -398,18 +342,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部署组备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Alias 部署组备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAlias() const;
 
                     /**
                      * 设置部署组备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _alias 部署组备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAlias(const std::string& _alias);
@@ -423,18 +363,14 @@ namespace TencentCloud
 
                     /**
                      * 获取KubeInjectEnable值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return KubeInjectEnable KubeInjectEnable值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetKubeInjectEnable() const;
 
                     /**
                      * 设置KubeInjectEnable值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _kubeInjectEnable KubeInjectEnable值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKubeInjectEnable(const bool& _kubeInjectEnable);
@@ -448,18 +384,14 @@ namespace TencentCloud
 
                     /**
                      * 获取更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdatedTime 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdatedTime() const;
 
                     /**
                      * 设置更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updatedTime 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdatedTime(const std::string& _updatedTime);
@@ -475,119 +407,102 @@ namespace TencentCloud
 
                     /**
                      * 部署组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
                      * 分组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 镜像server
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_server;
                     bool m_serverHasBeenSet;
 
                     /**
                      * 镜像名，如/tsf/nginx
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_repoName;
                     bool m_repoNameHasBeenSet;
 
                     /**
                      * 镜像版本名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tagName;
                     bool m_tagNameHasBeenSet;
 
                     /**
                      * 集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
                      * 集群名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterName;
                     bool m_clusterNameHasBeenSet;
 
                     /**
                      * 命名空间ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_namespaceId;
                     bool m_namespaceIdHasBeenSet;
 
                     /**
                      * 命名空间名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_namespaceName;
                     bool m_namespaceNameHasBeenSet;
 
                     /**
                      * 初始分配的 CPU 核数，对应 K8S request
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cpuRequest;
                     bool m_cpuRequestHasBeenSet;
 
                     /**
                      * 最大分配的 CPU 核数，对应 K8S limit
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cpuLimit;
                     bool m_cpuLimitHasBeenSet;
 
                     /**
                      * 初始分配的内存 MiB 数，对应 K8S request
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_memRequest;
                     bool m_memRequestHasBeenSet;
 
                     /**
                      * 最大分配的内存 MiB 数，对应 K8S limit
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_memLimit;
                     bool m_memLimitHasBeenSet;
 
                     /**
                      * 部署组备注
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_alias;
                     bool m_aliasHasBeenSet;
 
                     /**
                      * KubeInjectEnable值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_kubeInjectEnable;
                     bool m_kubeInjectEnableHasBeenSet;
 
                     /**
                      * 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updatedTime;
                     bool m_updatedTimeHasBeenSet;

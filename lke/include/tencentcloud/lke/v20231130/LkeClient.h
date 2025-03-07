@@ -47,6 +47,8 @@
 #include <tencentcloud/lke/v20231130/model/CreateRejectedQuestionResponse.h>
 #include <tencentcloud/lke/v20231130/model/CreateReleaseRequest.h>
 #include <tencentcloud/lke/v20231130/model/CreateReleaseResponse.h>
+#include <tencentcloud/lke/v20231130/model/CreateVarRequest.h>
+#include <tencentcloud/lke/v20231130/model/CreateVarResponse.h>
 #include <tencentcloud/lke/v20231130/model/DeleteAppRequest.h>
 #include <tencentcloud/lke/v20231130/model/DeleteAppResponse.h>
 #include <tencentcloud/lke/v20231130/model/DeleteAttributeLabelRequest.h>
@@ -127,6 +129,8 @@
 #include <tencentcloud/lke/v20231130/model/GetReconstructDocumentResultResponse.h>
 #include <tencentcloud/lke/v20231130/model/GetTaskStatusRequest.h>
 #include <tencentcloud/lke/v20231130/model/GetTaskStatusResponse.h>
+#include <tencentcloud/lke/v20231130/model/GetVarListRequest.h>
+#include <tencentcloud/lke/v20231130/model/GetVarListResponse.h>
 #include <tencentcloud/lke/v20231130/model/GetWsTokenRequest.h>
 #include <tencentcloud/lke/v20231130/model/GetWsTokenResponse.h>
 #include <tencentcloud/lke/v20231130/model/GroupDocRequest.h>
@@ -271,6 +275,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateReleaseResponse> CreateReleaseOutcome;
                 typedef std::future<CreateReleaseOutcome> CreateReleaseOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::CreateReleaseRequest&, CreateReleaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateReleaseAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateVarResponse> CreateVarOutcome;
+                typedef std::future<CreateVarOutcome> CreateVarOutcomeCallable;
+                typedef std::function<void(const LkeClient*, const Model::CreateVarRequest&, CreateVarOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVarAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteAppResponse> DeleteAppOutcome;
                 typedef std::future<DeleteAppOutcome> DeleteAppOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::DeleteAppRequest&, DeleteAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAppAsyncHandler;
@@ -391,6 +398,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetTaskStatusResponse> GetTaskStatusOutcome;
                 typedef std::future<GetTaskStatusOutcome> GetTaskStatusOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::GetTaskStatusRequest&, GetTaskStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTaskStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetVarListResponse> GetVarListOutcome;
+                typedef std::future<GetVarListOutcome> GetVarListOutcomeCallable;
+                typedef std::function<void(const LkeClient*, const Model::GetVarListRequest&, GetVarListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetVarListAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetWsTokenResponse> GetWsTokenOutcome;
                 typedef std::future<GetWsTokenOutcome> GetWsTokenOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::GetWsTokenRequest&, GetWsTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetWsTokenAsyncHandler;
@@ -647,6 +657,15 @@ namespace TencentCloud
                 CreateReleaseOutcome CreateRelease(const Model::CreateReleaseRequest &request);
                 void CreateReleaseAsync(const Model::CreateReleaseRequest& request, const CreateReleaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateReleaseOutcomeCallable CreateReleaseCallable(const Model::CreateReleaseRequest& request);
+
+                /**
+                 *创建变量
+                 * @param req CreateVarRequest
+                 * @return CreateVarOutcome
+                 */
+                CreateVarOutcome CreateVar(const Model::CreateVarRequest &request);
+                void CreateVarAsync(const Model::CreateVarRequest& request, const CreateVarAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateVarOutcomeCallable CreateVarCallable(const Model::CreateVarRequest& request);
 
                 /**
                  *删除应用
@@ -1008,6 +1027,15 @@ namespace TencentCloud
                 GetTaskStatusOutcome GetTaskStatus(const Model::GetTaskStatusRequest &request);
                 void GetTaskStatusAsync(const Model::GetTaskStatusRequest& request, const GetTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetTaskStatusOutcomeCallable GetTaskStatusCallable(const Model::GetTaskStatusRequest& request);
+
+                /**
+                 *查询自定义变量列表
+                 * @param req GetVarListRequest
+                 * @return GetVarListOutcome
+                 */
+                GetVarListOutcome GetVarList(const Model::GetVarListRequest &request);
+                void GetVarListAsync(const Model::GetVarListRequest& request, const GetVarListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetVarListOutcomeCallable GetVarListCallable(const Model::GetVarListRequest& request);
 
                 /**
                  *获取ws token

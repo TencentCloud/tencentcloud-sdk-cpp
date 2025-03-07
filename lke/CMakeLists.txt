@@ -137,6 +137,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/ModifyAttributeLabelResponse.h
   include/tencentcloud/lke/v20231130/model/KnowledgeQaSingleWorkflow.h
   include/tencentcloud/lke/v20231130/model/ListQACateResponse.h
+  include/tencentcloud/lke/v20231130/model/GetVarListRequest.h
   include/tencentcloud/lke/v20231130/model/RetryDocParseResponse.h
   include/tencentcloud/lke/v20231130/model/CreateRejectedQuestionResponse.h
   include/tencentcloud/lke/v20231130/model/ReconstructDocumentConfig.h
@@ -217,6 +218,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/ExportQAListRequest.h
   include/tencentcloud/lke/v20231130/model/GetDocPreviewResponse.h
   include/tencentcloud/lke/v20231130/model/DescribeConcurrencyUsageResponse.h
+  include/tencentcloud/lke/v20231130/model/TaskFLowVar.h
   include/tencentcloud/lke/v20231130/model/CreateReleaseResponse.h
   include/tencentcloud/lke/v20231130/model/QueryRewriteRequest.h
   include/tencentcloud/lke/v20231130/model/ModifyAppRequest.h
@@ -264,6 +266,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/IsTransferIntentRequest.h
   include/tencentcloud/lke/v20231130/model/DescribeReferRequest.h
   include/tencentcloud/lke/v20231130/model/DeleteAppRequest.h
+  include/tencentcloud/lke/v20231130/model/GetVarListResponse.h
   include/tencentcloud/lke/v20231130/model/WorkFlowSummary.h
   include/tencentcloud/lke/v20231130/model/TaskParams.h
   include/tencentcloud/lke/v20231130/model/ListAppCategoryRspOption.h
@@ -288,10 +291,12 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/GetTaskStatusRequest.h
   include/tencentcloud/lke/v20231130/model/CheckAttributeLabelReferResponse.h
   include/tencentcloud/lke/v20231130/model/RateMsgRecordResponse.h
+  include/tencentcloud/lke/v20231130/model/CreateVarResponse.h
   include/tencentcloud/lke/v20231130/model/ModifyDocAttrRangeRequest.h
   include/tencentcloud/lke/v20231130/model/ReleaseRejectedQuestion.h
   include/tencentcloud/lke/v20231130/model/CreateQACateRequest.h
   include/tencentcloud/lke/v20231130/model/DescribeRobotBizIDByAppKeyRequest.h
+  include/tencentcloud/lke/v20231130/model/CreateVarRequest.h
   include/tencentcloud/lke/v20231130/model/DocumentRecognizeInfo.h
   include/tencentcloud/lke/v20231130/model/CreateReconstructDocumentFlowResponse.h
   include/tencentcloud/lke/v20231130/model/HistorySummary.h
@@ -429,6 +434,7 @@ set(lke_src
   src/v20231130/model/ModifyAttributeLabelResponse.cpp
   src/v20231130/model/KnowledgeQaSingleWorkflow.cpp
   src/v20231130/model/ListQACateResponse.cpp
+  src/v20231130/model/GetVarListRequest.cpp
   src/v20231130/model/RetryDocParseResponse.cpp
   src/v20231130/model/CreateRejectedQuestionResponse.cpp
   src/v20231130/model/ReconstructDocumentConfig.cpp
@@ -509,6 +515,7 @@ set(lke_src
   src/v20231130/model/ExportQAListRequest.cpp
   src/v20231130/model/GetDocPreviewResponse.cpp
   src/v20231130/model/DescribeConcurrencyUsageResponse.cpp
+  src/v20231130/model/TaskFLowVar.cpp
   src/v20231130/model/CreateReleaseResponse.cpp
   src/v20231130/model/QueryRewriteRequest.cpp
   src/v20231130/model/ModifyAppRequest.cpp
@@ -556,6 +563,7 @@ set(lke_src
   src/v20231130/model/IsTransferIntentRequest.cpp
   src/v20231130/model/DescribeReferRequest.cpp
   src/v20231130/model/DeleteAppRequest.cpp
+  src/v20231130/model/GetVarListResponse.cpp
   src/v20231130/model/WorkFlowSummary.cpp
   src/v20231130/model/TaskParams.cpp
   src/v20231130/model/ListAppCategoryRspOption.cpp
@@ -580,10 +588,12 @@ set(lke_src
   src/v20231130/model/GetTaskStatusRequest.cpp
   src/v20231130/model/CheckAttributeLabelReferResponse.cpp
   src/v20231130/model/RateMsgRecordResponse.cpp
+  src/v20231130/model/CreateVarResponse.cpp
   src/v20231130/model/ModifyDocAttrRangeRequest.cpp
   src/v20231130/model/ReleaseRejectedQuestion.cpp
   src/v20231130/model/CreateQACateRequest.cpp
   src/v20231130/model/DescribeRobotBizIDByAppKeyRequest.cpp
+  src/v20231130/model/CreateVarRequest.cpp
   src/v20231130/model/DocumentRecognizeInfo.cpp
   src/v20231130/model/CreateReconstructDocumentFlowResponse.cpp
   src/v20231130/model/HistorySummary.cpp

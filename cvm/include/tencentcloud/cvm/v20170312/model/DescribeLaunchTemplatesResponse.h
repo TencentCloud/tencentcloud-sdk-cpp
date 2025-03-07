@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取符合条件的实例模板数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 符合条件的实例模板数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取实例详细信息列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LaunchTemplateSet 实例详细信息列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<LaunchTemplateInfo> GetLaunchTemplateSet() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 符合条件的实例模板数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
                      * 实例详细信息列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<LaunchTemplateInfo> m_launchTemplateSet;
                     bool m_launchTemplateSetHasBeenSet;

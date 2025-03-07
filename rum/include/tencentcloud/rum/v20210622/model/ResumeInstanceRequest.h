@@ -63,6 +63,27 @@ namespace TencentCloud
                      */
                     bool InstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取修改是否包括白名单
+                     * @return IsModifyAll 修改是否包括白名单
+                     * 
+                     */
+                    bool GetIsModifyAll() const;
+
+                    /**
+                     * 设置修改是否包括白名单
+                     * @param _isModifyAll 修改是否包括白名单
+                     * 
+                     */
+                    void SetIsModifyAll(const bool& _isModifyAll);
+
+                    /**
+                     * 判断参数 IsModifyAll 是否已赋值
+                     * @return IsModifyAll 是否已赋值
+                     * 
+                     */
+                    bool IsModifyAllHasBeenSet() const;
+
                 private:
 
                     /**
@@ -70,6 +91,12 @@ namespace TencentCloud
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 修改是否包括白名单
+                     */
+                    bool m_isModifyAll;
+                    bool m_isModifyAllHasBeenSet;
 
                 };
             }

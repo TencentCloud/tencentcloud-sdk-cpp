@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceId 资源ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置资源ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceId 资源ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceCode 资源编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceCode() const;
 
                     /**
                      * 设置资源编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceCode 资源编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceCode(const std::string& _resourceCode);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceName 资源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceName() const;
 
                     /**
                      * 设置资源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceName 资源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceName(const std::string& _resourceName);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源所属产品编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceCode 资源所属产品编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetServiceCode() const;
 
                     /**
                      * 设置资源所属产品编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serviceCode 资源所属产品编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServiceCode(const std::string& _serviceCode);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取选取资源使用的Action
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceAction 选取资源使用的Action
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceAction() const;
 
                     /**
                      * 设置选取资源使用的Action
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceAction 选取资源使用的Action
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceAction(const std::string& _resourceAction);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源数据查询的ID字段名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IdField 资源数据查询的ID字段名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIdField() const;
 
                     /**
                      * 设置资源数据查询的ID字段名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _idField 资源数据查询的ID字段名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIdField(const std::string& _idField);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源数据查询的名称字段名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NameField 资源数据查询的名称字段名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNameField() const;
 
                     /**
                      * 设置资源数据查询的名称字段名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nameField 资源数据查询的名称字段名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNameField(const std::string& _nameField);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源数据查询的ID过滤字段名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SelectIdsField 资源数据查询的ID过滤字段名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSelectIdsField() const;
 
                     /**
                      * 设置资源数据查询的ID过滤字段名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _selectIdsField 资源数据查询的ID过滤字段名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSelectIdsField(const std::string& _selectIdsField);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreationTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCreationTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _creationTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreationTime(const int64_t& _creationTime);
@@ -273,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最后更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastUpdateTime 最后更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLastUpdateTime() const;
 
                     /**
                      * 设置最后更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lastUpdateTime 最后更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLastUpdateTime(const int64_t& _lastUpdateTime);
@@ -298,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取删除标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeleteFlag 删除标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetDeleteFlag() const;
 
                     /**
                      * 设置删除标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deleteFlag 删除标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeleteFlag(const bool& _deleteFlag);
@@ -323,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceDesc 资源描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceDesc() const;
 
                     /**
                      * 设置资源描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceDesc 资源描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceDesc(const std::string& _resourceDesc);
@@ -348,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否可以选择全部
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CanSelectAll 是否可以选择全部
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetCanSelectAll() const;
 
                     /**
                      * 设置是否可以选择全部
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _canSelectAll 是否可以选择全部
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCanSelectAll(const bool& _canSelectAll);
@@ -373,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源数据查询的模糊查询字段名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SearchWordField 资源数据查询的模糊查询字段名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSearchWordField() const;
 
                     /**
                      * 设置资源数据查询的模糊查询字段名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _searchWordField 资源数据查询的模糊查询字段名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSearchWordField(const std::string& _searchWordField);
@@ -398,18 +342,14 @@ namespace TencentCloud
 
                     /**
                      * 获取排序
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Index 排序
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIndex() const;
 
                     /**
                      * 设置排序
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _index 排序
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIndex(const int64_t& _index);
@@ -425,105 +365,90 @@ namespace TencentCloud
 
                     /**
                      * 资源ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
                      * 资源编码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceCode;
                     bool m_resourceCodeHasBeenSet;
 
                     /**
                      * 资源名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceName;
                     bool m_resourceNameHasBeenSet;
 
                     /**
                      * 资源所属产品编码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serviceCode;
                     bool m_serviceCodeHasBeenSet;
 
                     /**
                      * 选取资源使用的Action
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceAction;
                     bool m_resourceActionHasBeenSet;
 
                     /**
                      * 资源数据查询的ID字段名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_idField;
                     bool m_idFieldHasBeenSet;
 
                     /**
                      * 资源数据查询的名称字段名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nameField;
                     bool m_nameFieldHasBeenSet;
 
                     /**
                      * 资源数据查询的ID过滤字段名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_selectIdsField;
                     bool m_selectIdsFieldHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_creationTime;
                     bool m_creationTimeHasBeenSet;
 
                     /**
                      * 最后更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_lastUpdateTime;
                     bool m_lastUpdateTimeHasBeenSet;
 
                     /**
                      * 删除标识
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_deleteFlag;
                     bool m_deleteFlagHasBeenSet;
 
                     /**
                      * 资源描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceDesc;
                     bool m_resourceDescHasBeenSet;
 
                     /**
                      * 是否可以选择全部
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_canSelectAll;
                     bool m_canSelectAllHasBeenSet;
 
                     /**
                      * 资源数据查询的模糊查询字段名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_searchWordField;
                     bool m_searchWordFieldHasBeenSet;
 
                     /**
                      * 排序
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_index;
                     bool m_indexHasBeenSet;

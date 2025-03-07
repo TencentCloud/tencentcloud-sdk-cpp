@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取返回结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Content 返回结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ServiceStatisticsResult> GetContent() const;
 
                     /**
                      * 设置返回结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _content 返回结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContent(const std::vector<ServiceStatisticsResult>& _content);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 设置条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalCount 条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalCount(const uint64_t& _totalCount);
@@ -101,14 +93,12 @@ namespace TencentCloud
 
                     /**
                      * 返回结果
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ServiceStatisticsResult> m_content;
                     bool m_contentHasBeenSet;
 
                     /**
                      * 条数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

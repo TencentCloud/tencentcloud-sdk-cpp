@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取批次ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowBatchId 批次ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFlowBatchId() const;
 
                     /**
                      * 设置批次ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _flowBatchId 批次ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFlowBatchId(const std::string& _flowBatchId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取批次历史ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowBatchLogId 批次历史ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFlowBatchLogId() const;
 
                     /**
                      * 设置批次历史ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _flowBatchLogId 批次历史ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFlowBatchLogId(const std::string& _flowBatchLogId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取状态,WAITING/SUCCESS/FAILED/RUNNING/TERMINATING
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return State 状态,WAITING/SUCCESS/FAILED/RUNNING/TERMINATING
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetState() const;
 
                     /**
                      * 设置状态,WAITING/SUCCESS/FAILED/RUNNING/TERMINATING
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _state 状态,WAITING/SUCCESS/FAILED/RUNNING/TERMINATING
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetState(const std::string& _state);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 批次ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_flowBatchId;
                     bool m_flowBatchIdHasBeenSet;
 
                     /**
                      * 批次历史ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_flowBatchLogId;
                     bool m_flowBatchLogIdHasBeenSet;
 
                     /**
                      * 状态,WAITING/SUCCESS/FAILED/RUNNING/TERMINATING
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_state;
                     bool m_stateHasBeenSet;

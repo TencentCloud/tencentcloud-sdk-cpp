@@ -228,18 +228,14 @@ namespace TencentCloud
 
                     /**
                      * 获取失败详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorDetails 失败详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ErrorDetails> GetErrorDetails() const;
 
                     /**
                      * 设置失败详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _errorDetails 失败详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetErrorDetails(const std::vector<ErrorDetails>& _errorDetails);
@@ -329,7 +325,6 @@ namespace TencentCloud
 
                     /**
                      * 失败详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ErrorDetails> m_errorDetails;
                     bool m_errorDetailsHasBeenSet;

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取产品编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BusinessCode 产品编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBusinessCode() const;
 
                     /**
                      * 设置产品编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _businessCode 产品编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBusinessCode(const std::string& _businessCode);
@@ -264,7 +260,6 @@ namespace TencentCloud
 
                     /**
                      * 产品编码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_businessCode;
                     bool m_businessCodeHasBeenSet;

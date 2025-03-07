@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略分类：cluster集群策略、node节点策略、namespace命名空间策略、configuration配置相关策略、compute计算资源策略、storage存储资源策略、network网络资源策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolicyCategory 策略分类：cluster集群策略、node节点策略、namespace命名空间策略、configuration配置相关策略、compute计算资源策略、storage存储资源策略、network网络资源策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPolicyCategory() const;
 
                     /**
                      * 设置策略分类：cluster集群策略、node节点策略、namespace命名空间策略、configuration配置相关策略、compute计算资源策略、storage存储资源策略、network网络资源策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _policyCategory 策略分类：cluster集群策略、node节点策略、namespace命名空间策略、configuration配置相关策略、compute计算资源策略、storage存储资源策略、network网络资源策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPolicyCategory(const std::string& _policyCategory);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略中文名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolicyName 策略中文名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPolicyName() const;
 
                     /**
                      * 设置策略中文名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _policyName 策略中文名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPolicyName(const std::string& _policyName);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolicyDesc 策略描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPolicyDesc() const;
 
                     /**
                      * 设置策略描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _policyDesc 策略描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPolicyDesc(const std::string& _policyDesc);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略运行模式：dryrun空跑不生效，deny拦截生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnforcementAction 策略运行模式：dryrun空跑不生效，deny拦截生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEnforcementAction() const;
 
                     /**
                      * 设置策略运行模式：dryrun空跑不生效，deny拦截生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enforcementAction 策略运行模式：dryrun空跑不生效，deny拦截生效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnforcementAction(const std::string& _enforcementAction);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取关联的事件数量(最近7d)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EventNums 关联的事件数量(最近7d)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetEventNums() const;
 
                     /**
                      * 设置关联的事件数量(最近7d)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _eventNums 关联的事件数量(最近7d)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEventNums(const uint64_t& _eventNums);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略英文名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 策略英文名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置策略英文名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 策略英文名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -199,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略模板类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Kind 策略模板类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKind() const;
 
                     /**
                      * 设置策略模板类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _kind 策略模板类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKind(const std::string& _kind);
@@ -224,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略开关状态：open打开，close关闭
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnabledStatus 策略开关状态：open打开，close关闭
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEnabledStatus() const;
 
                     /**
                      * 设置策略开关状态：open打开，close关闭
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enabledStatus 策略开关状态：open打开，close关闭
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnabledStatus(const std::string& _enabledStatus);
@@ -249,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略的实例的yaml示例base64编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConstraintYamlExample 策略的实例的yaml示例base64编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConstraintYamlExample() const;
 
                     /**
                      * 设置策略的实例的yaml示例base64编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _constraintYamlExample 策略的实例的yaml示例base64编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConstraintYamlExample(const std::string& _constraintYamlExample);
@@ -301,63 +265,54 @@ namespace TencentCloud
 
                     /**
                      * 策略分类：cluster集群策略、node节点策略、namespace命名空间策略、configuration配置相关策略、compute计算资源策略、storage存储资源策略、network网络资源策略
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_policyCategory;
                     bool m_policyCategoryHasBeenSet;
 
                     /**
                      * 策略中文名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_policyName;
                     bool m_policyNameHasBeenSet;
 
                     /**
                      * 策略描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_policyDesc;
                     bool m_policyDescHasBeenSet;
 
                     /**
                      * 策略运行模式：dryrun空跑不生效，deny拦截生效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_enforcementAction;
                     bool m_enforcementActionHasBeenSet;
 
                     /**
                      * 关联的事件数量(最近7d)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_eventNums;
                     bool m_eventNumsHasBeenSet;
 
                     /**
                      * 策略英文名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 策略模板类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_kind;
                     bool m_kindHasBeenSet;
 
                     /**
                      * 策略开关状态：open打开，close关闭
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_enabledStatus;
                     bool m_enabledStatusHasBeenSet;
 
                     /**
                      * 策略的实例的yaml示例base64编码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_constraintYamlExample;
                     bool m_constraintYamlExampleHasBeenSet;

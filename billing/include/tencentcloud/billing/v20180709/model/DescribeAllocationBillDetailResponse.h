@@ -47,9 +47,7 @@ namespace TencentCloud
 
                     /**
                      * 获取总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecordNum 总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRecordNum() const;
@@ -63,9 +61,7 @@ namespace TencentCloud
 
                     /**
                      * 获取分账账单概览金额汇总
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 分账账单概览金额汇总
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AllocationOverviewTotal GetTotal() const;
@@ -95,14 +91,12 @@ namespace TencentCloud
 
                     /**
                      * 总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_recordNum;
                     bool m_recordNumHasBeenSet;
 
                     /**
                      * 分账账单概览金额汇总
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AllocationOverviewTotal m_total;
                     bool m_totalHasBeenSet;

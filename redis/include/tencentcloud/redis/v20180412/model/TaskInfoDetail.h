@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskId 任务 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTaskId() const;
 
                     /**
                      * 设置任务 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskId 任务 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskId(const int64_t& _taskId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务开始时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 任务开始时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置任务开始时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _startTime 任务开始时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -153,7 +145,6 @@ namespace TencentCloud
 - FLOW_UPGRADE_INSTANCE_CACHE_AND_PROXY： "067"，实例版本升级中。
 - FLOW_MODIFY_PROXY_NUM："069"，加（减）Proxy 节点。
 - FLOW_MODIFYBACKUPMOD："070"，变更实例备份模式。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskType 任务类型。
 - FLOW_CREATE: "001"，新建实例
 - FLOW_RESIZE ： "002"，配置变更
@@ -210,7 +201,6 @@ namespace TencentCloud
 - FLOW_UPGRADE_INSTANCE_CACHE_AND_PROXY： "067"，实例版本升级中。
 - FLOW_MODIFY_PROXY_NUM："069"，加（减）Proxy 节点。
 - FLOW_MODIFYBACKUPMOD："070"，变更实例备份模式。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskType() const;
@@ -272,7 +262,6 @@ namespace TencentCloud
 - FLOW_UPGRADE_INSTANCE_CACHE_AND_PROXY： "067"，实例版本升级中。
 - FLOW_MODIFY_PROXY_NUM："069"，加（减）Proxy 节点。
 - FLOW_MODIFYBACKUPMOD："070"，变更实例备份模式。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskType 任务类型。
 - FLOW_CREATE: "001"，新建实例
 - FLOW_RESIZE ： "002"，配置变更
@@ -329,7 +318,6 @@ namespace TencentCloud
 - FLOW_UPGRADE_INSTANCE_CACHE_AND_PROXY： "067"，实例版本升级中。
 - FLOW_MODIFY_PROXY_NUM："069"，加（减）Proxy 节点。
 - FLOW_MODIFYBACKUPMOD："070"，变更实例备份模式。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskType(const std::string& _taskType);
@@ -343,18 +331,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceName 实例名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置实例名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceName 实例名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -368,18 +352,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 实例 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceId 实例 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -393,18 +373,14 @@ namespace TencentCloud
 
                     /**
                      * 获取项目 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectId 项目 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetProjectId() const;
 
                     /**
                      * 设置项目 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _projectId 项目 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProjectId(const int64_t& _projectId);
@@ -418,18 +394,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务进度。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Progress 任务进度。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetProgress() const;
 
                     /**
                      * 设置任务进度。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _progress 任务进度。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProgress(const double& _progress);
@@ -443,18 +415,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务执行结束时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 任务执行结束时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置任务执行结束时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endTime 任务执行结束时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -473,14 +441,12 @@ namespace TencentCloud
 1：执行中。
 2：完成。
 4：失败。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 任务执行状态。
 
 0：任务初始化。
 1：执行中。
 2：完成。
 4：失败。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetResult() const;
@@ -492,14 +458,12 @@ namespace TencentCloud
 1：执行中。
 2：完成。
 4：失败。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _result 任务执行状态。
 
 0：任务初始化。
 1：执行中。
 2：完成。
 4：失败。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResult(const int64_t& _result);
@@ -515,14 +479,12 @@ namespace TencentCloud
 
                     /**
                      * 任务 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
                      * 任务开始时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
@@ -584,42 +546,36 @@ namespace TencentCloud
 - FLOW_UPGRADE_INSTANCE_CACHE_AND_PROXY： "067"，实例版本升级中。
 - FLOW_MODIFY_PROXY_NUM："069"，加（减）Proxy 节点。
 - FLOW_MODIFYBACKUPMOD："070"，变更实例备份模式。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskType;
                     bool m_taskTypeHasBeenSet;
 
                     /**
                      * 实例名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
                      * 实例 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
                      * 项目 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
                      * 任务进度。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_progress;
                     bool m_progressHasBeenSet;
 
                     /**
                      * 任务执行结束时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
@@ -631,7 +587,6 @@ namespace TencentCloud
 1：执行中。
 2：完成。
 4：失败。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_result;
                     bool m_resultHasBeenSet;

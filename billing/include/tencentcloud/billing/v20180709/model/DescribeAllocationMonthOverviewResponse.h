@@ -47,9 +47,7 @@ namespace TencentCloud
 
                     /**
                      * 获取分账账单月概览详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Detail 分账账单月概览详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AllocationOverviewNode> GetDetail() const;
@@ -63,9 +61,7 @@ namespace TencentCloud
 
                     /**
                      * 获取分账账单概览金额汇总
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 分账账单概览金额汇总
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AllocationOverviewTotal GetTotal() const;
@@ -81,14 +77,12 @@ namespace TencentCloud
 
                     /**
                      * 分账账单月概览详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AllocationOverviewNode> m_detail;
                     bool m_detailHasBeenSet;
 
                     /**
                      * 分账账单概览金额汇总
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AllocationOverviewTotal m_total;
                     bool m_totalHasBeenSet;

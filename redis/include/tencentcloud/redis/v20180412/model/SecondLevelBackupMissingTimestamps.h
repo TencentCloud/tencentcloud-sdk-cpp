@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取开始时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTimeStamp 开始时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStartTimeStamp() const;
 
                     /**
                      * 设置开始时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _startTimeStamp 开始时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStartTimeStamp(const int64_t& _startTimeStamp);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取结束时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTimeStamp 结束时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEndTimeStamp() const;
 
                     /**
                      * 设置结束时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endTimeStamp 结束时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndTimeStamp(const int64_t& _endTimeStamp);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 开始时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_startTimeStamp;
                     bool m_startTimeStampHasBeenSet;
 
                     /**
                      * 结束时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_endTimeStamp;
                     bool m_endTimeStampHasBeenSet;

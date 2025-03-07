@@ -4297,6 +4297,49 @@ TdmqClient::DescribeRocketMQSubscriptionsOutcomeCallable TdmqClient::DescribeRoc
     return task->get_future();
 }
 
+TdmqClient::DescribeRocketMQTopUsagesOutcome TdmqClient::DescribeRocketMQTopUsages(const DescribeRocketMQTopUsagesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRocketMQTopUsages");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRocketMQTopUsagesResponse rsp = DescribeRocketMQTopUsagesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRocketMQTopUsagesOutcome(rsp);
+        else
+            return DescribeRocketMQTopUsagesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRocketMQTopUsagesOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DescribeRocketMQTopUsagesAsync(const DescribeRocketMQTopUsagesRequest& request, const DescribeRocketMQTopUsagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRocketMQTopUsages(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::DescribeRocketMQTopUsagesOutcomeCallable TdmqClient::DescribeRocketMQTopUsagesCallable(const DescribeRocketMQTopUsagesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRocketMQTopUsagesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRocketMQTopUsages(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TdmqClient::DescribeRocketMQTopicMsgsOutcome TdmqClient::DescribeRocketMQTopicMsgs(const DescribeRocketMQTopicMsgsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRocketMQTopicMsgs");

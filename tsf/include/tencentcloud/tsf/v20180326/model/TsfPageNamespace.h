@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取命名空间总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 命名空间总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置命名空间总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalCount 命名空间总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取命名空间列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Content 命名空间列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Namespace> GetContent() const;
 
                     /**
                      * 设置命名空间列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _content 命名空间列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContent(const std::vector<Namespace>& _content);
@@ -101,14 +93,12 @@ namespace TencentCloud
 
                     /**
                      * 命名空间总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
                      * 命名空间列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Namespace> m_content;
                     bool m_contentHasBeenSet;

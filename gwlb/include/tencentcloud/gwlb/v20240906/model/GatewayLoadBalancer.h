@@ -304,15 +304,15 @@ namespace TencentCloud
                     bool IsolationHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡实例被隔离的时间
-                     * @return IsolatedTime 负载均衡实例被隔离的时间
+                     * 获取网关负载均衡实例被隔离的时间
+                     * @return IsolatedTime 网关负载均衡实例被隔离的时间
                      * 
                      */
                     std::string GetIsolatedTime() const;
 
                     /**
-                     * 设置负载均衡实例被隔离的时间
-                     * @param _isolatedTime 负载均衡实例被隔离的时间
+                     * 设置网关负载均衡实例被隔离的时间
+                     * @param _isolatedTime 网关负载均衡实例被隔离的时间
                      * 
                      */
                     void SetIsolatedTime(const std::string& _isolatedTime);
@@ -323,6 +323,27 @@ namespace TencentCloud
                      * 
                      */
                     bool IsolatedTimeHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启配置修改保护功能。
+                     * @return OperateProtect 是否开启配置修改保护功能。
+                     * 
+                     */
+                    bool GetOperateProtect() const;
+
+                    /**
+                     * 设置是否开启配置修改保护功能。
+                     * @param _operateProtect 是否开启配置修改保护功能。
+                     * 
+                     */
+                    void SetOperateProtect(const bool& _operateProtect);
+
+                    /**
+                     * 判断参数 OperateProtect 是否已赋值
+                     * @return OperateProtect 是否已赋值
+                     * 
+                     */
+                    bool OperateProtectHasBeenSet() const;
 
                 private:
 
@@ -400,10 +421,16 @@ namespace TencentCloud
                     bool m_isolationHasBeenSet;
 
                     /**
-                     * 负载均衡实例被隔离的时间
+                     * 网关负载均衡实例被隔离的时间
                      */
                     std::string m_isolatedTime;
                     bool m_isolatedTimeHasBeenSet;
+
+                    /**
+                     * 是否开启配置修改保护功能。
+                     */
+                    bool m_operateProtect;
+                    bool m_operateProtectHasBeenSet;
 
                 };
             }

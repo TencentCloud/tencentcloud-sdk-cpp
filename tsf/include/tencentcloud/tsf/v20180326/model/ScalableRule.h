@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取RuleId值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleId RuleId值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuleId() const;
 
                     /**
                      * 设置RuleId值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleId RuleId值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleId(const std::string& _ruleId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Name值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name Name值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置Name值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name Name值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取ExpandVmCountLimit值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpandVmCountLimit ExpandVmCountLimit值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetExpandVmCountLimit() const;
 
                     /**
                      * 设置ExpandVmCountLimit值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _expandVmCountLimit ExpandVmCountLimit值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExpandVmCountLimit(const int64_t& _expandVmCountLimit);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取ShrinkVmCountLimit值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ShrinkVmCountLimit ShrinkVmCountLimit值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetShrinkVmCountLimit() const;
 
                     /**
                      * 设置ShrinkVmCountLimit值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _shrinkVmCountLimit ShrinkVmCountLimit值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetShrinkVmCountLimit(const int64_t& _shrinkVmCountLimit);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取GroupCount值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupCount GroupCount值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetGroupCount() const;
 
                     /**
                      * 设置GroupCount值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupCount GroupCount值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupCount(const int64_t& _groupCount);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Desc 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDesc() const;
 
                     /**
                      * 设置备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _desc 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDesc(const std::string& _desc);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否关闭指标伸缩, 默认0, 0:打开指标伸缩 1:关闭指标伸缩
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DisableMetricAS 是否关闭指标伸缩, 默认0, 0:打开指标伸缩 1:关闭指标伸缩
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDisableMetricAS() const;
 
                     /**
                      * 设置是否关闭指标伸缩, 默认0, 0:打开指标伸缩 1:关闭指标伸缩
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _disableMetricAS 是否关闭指标伸缩, 默认0, 0:打开指标伸缩 1:关闭指标伸缩
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDisableMetricAS(const uint64_t& _disableMetricAS);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取开启定时伸缩规则, 默认0, 0:关闭定时伸缩 1:开启定时伸缩
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableCronAS 开启定时伸缩规则, 默认0, 0:关闭定时伸缩 1:开启定时伸缩
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetEnableCronAS() const;
 
                     /**
                      * 设置开启定时伸缩规则, 默认0, 0:关闭定时伸缩 1:开启定时伸缩
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enableCronAS 开启定时伸缩规则, 默认0, 0:关闭定时伸缩 1:开启定时伸缩
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnableCronAS(const uint64_t& _enableCronAS);
@@ -275,63 +239,54 @@ namespace TencentCloud
 
                     /**
                      * RuleId值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ruleId;
                     bool m_ruleIdHasBeenSet;
 
                     /**
                      * Name值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * ExpandVmCountLimit值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_expandVmCountLimit;
                     bool m_expandVmCountLimitHasBeenSet;
 
                     /**
                      * ShrinkVmCountLimit值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_shrinkVmCountLimit;
                     bool m_shrinkVmCountLimitHasBeenSet;
 
                     /**
                      * GroupCount值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_groupCount;
                     bool m_groupCountHasBeenSet;
 
                     /**
                      * 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_desc;
                     bool m_descHasBeenSet;
 
                     /**
                      * 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
                      * 是否关闭指标伸缩, 默认0, 0:打开指标伸缩 1:关闭指标伸缩
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_disableMetricAS;
                     bool m_disableMetricASHasBeenSet;
 
                     /**
                      * 开启定时伸缩规则, 默认0, 0:关闭定时伸缩 1:开启定时伸缩
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_enableCronAS;
                     bool m_enableCronASHasBeenSet;

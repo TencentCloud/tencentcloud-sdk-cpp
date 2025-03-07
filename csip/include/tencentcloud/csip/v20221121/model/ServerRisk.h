@@ -342,15 +342,15 @@ namespace TencentCloud
                     bool SuggestionHasBeenSet() const;
 
                     /**
-                     * 获取状态，0未处理、1已处置、2已忽略
-                     * @return Status 状态，0未处理、1已处置、2已忽略
+                     * 获取状态，0未处理、1已处置、2已忽略、3云防已防护
+                     * @return Status 状态，0未处理、1已处置、2已忽略、3云防已防护
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置状态，0未处理、1已处置、2已忽略
-                     * @param _status 状态，0未处理、1已处置、2已忽略
+                     * 设置状态，0未处理、1已处置、2已忽略、3云防已防护
+                     * @param _status 状态，0未处理、1已处置、2已忽略、3云防已防护
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -572,6 +572,48 @@ namespace TencentCloud
                      */
                     bool StatusCodeHasBeenSet() const;
 
+                    /**
+                     * 获取新风险等级,high_risk 高危 suspect 疑似 Normal 暂无风险
+                     * @return NewLevel 新风险等级,high_risk 高危 suspect 疑似 Normal 暂无风险
+                     * 
+                     */
+                    std::string GetNewLevel() const;
+
+                    /**
+                     * 设置新风险等级,high_risk 高危 suspect 疑似 Normal 暂无风险
+                     * @param _newLevel 新风险等级,high_risk 高危 suspect 疑似 Normal 暂无风险
+                     * 
+                     */
+                    void SetNewLevel(const std::string& _newLevel);
+
+                    /**
+                     * 判断参数 NewLevel 是否已赋值
+                     * @return NewLevel 是否已赋值
+                     * 
+                     */
+                    bool NewLevelHasBeenSet() const;
+
+                    /**
+                     * 获取状态，0未处理、1已处置、2已忽略、3云防已防护、4无需处理
+                     * @return XspmStatus 状态，0未处理、1已处置、2已忽略、3云防已防护、4无需处理
+                     * 
+                     */
+                    uint64_t GetXspmStatus() const;
+
+                    /**
+                     * 设置状态，0未处理、1已处置、2已忽略、3云防已防护、4无需处理
+                     * @param _xspmStatus 状态，0未处理、1已处置、2已忽略、3云防已防护、4无需处理
+                     * 
+                     */
+                    void SetXspmStatus(const uint64_t& _xspmStatus);
+
+                    /**
+                     * 判断参数 XspmStatus 是否已赋值
+                     * @return XspmStatus 是否已赋值
+                     * 
+                     */
+                    bool XspmStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -659,7 +701,7 @@ namespace TencentCloud
                     bool m_suggestionHasBeenSet;
 
                     /**
-                     * 状态，0未处理、1已处置、2已忽略
+                     * 状态，0未处理、1已处置、2已忽略、3云防已防护
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
@@ -723,6 +765,18 @@ namespace TencentCloud
                      */
                     std::string m_statusCode;
                     bool m_statusCodeHasBeenSet;
+
+                    /**
+                     * 新风险等级,high_risk 高危 suspect 疑似 Normal 暂无风险
+                     */
+                    std::string m_newLevel;
+                    bool m_newLevelHasBeenSet;
+
+                    /**
+                     * 状态，0未处理、1已处置、2已忽略、3云防已防护、4无需处理
+                     */
+                    uint64_t m_xspmStatus;
+                    bool m_xspmStatusHasBeenSet;
 
                 };
             }

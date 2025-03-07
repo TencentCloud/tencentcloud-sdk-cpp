@@ -190,6 +190,27 @@ namespace TencentCloud
                      */
                     bool GroupByHasBeenSet() const;
 
+                    /**
+                     * 获取返回的最大数据点个数
+                     * @return MaxPoint 返回的最大数据点个数
+                     * 
+                     */
+                    int64_t GetMaxPoint() const;
+
+                    /**
+                     * 设置返回的最大数据点个数
+                     * @param _maxPoint 返回的最大数据点个数
+                     * 
+                     */
+                    void SetMaxPoint(const int64_t& _maxPoint);
+
+                    /**
+                     * 判断参数 MaxPoint 是否已赋值
+                     * @return MaxPoint 是否已赋值
+                     * 
+                     */
+                    bool MaxPointHasBeenSet() const;
+
                 private:
 
                     /**
@@ -233,6 +254,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_groupBy;
                     bool m_groupByHasBeenSet;
+
+                    /**
+                     * 返回的最大数据点个数
+                     */
+                    int64_t m_maxPoint;
+                    bool m_maxPointHasBeenSet;
 
                 };
             }

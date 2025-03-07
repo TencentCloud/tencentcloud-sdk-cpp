@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取更新之后的用户信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return User 更新之后的用户信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     User GetUser() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 更新之后的用户信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     User m_user;
                     bool m_userHasBeenSet;

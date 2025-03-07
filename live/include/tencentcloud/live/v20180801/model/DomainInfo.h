@@ -332,10 +332,8 @@ namespace TencentCloud
                     /**
                      * 获取0: 标准直播。
 1: 小程序直播。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsMiniProgramLive 0: 标准直播。
 1: 小程序直播。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIsMiniProgramLive() const;
@@ -343,10 +341,8 @@ namespace TencentCloud
                     /**
                      * 设置0: 标准直播。
 1: 小程序直播。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isMiniProgramLive 0: 标准直播。
 1: 小程序直播。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsMiniProgramLive(const int64_t& _isMiniProgramLive);
@@ -442,7 +438,6 @@ namespace TencentCloud
                     /**
                      * 0: 标准直播。
 1: 小程序直播。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isMiniProgramLive;
                     bool m_isMiniProgramLiveHasBeenSet;

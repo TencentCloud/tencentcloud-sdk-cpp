@@ -126,6 +126,48 @@ namespace TencentCloud
                      */
                     bool BigDealIdsHasBeenSet() const;
 
+                    /**
+                     * 获取0非代理，1代理商代付，3集团代理，4代理商为代客下产品级代付单，默认0
+                     * @return AgentPay 0非代理，1代理商代付，3集团代理，4代理商为代客下产品级代付单，默认0
+                     * 
+                     */
+                    int64_t GetAgentPay() const;
+
+                    /**
+                     * 设置0非代理，1代理商代付，3集团代理，4代理商为代客下产品级代付单，默认0
+                     * @param _agentPay 0非代理，1代理商代付，3集团代理，4代理商为代客下产品级代付单，默认0
+                     * 
+                     */
+                    void SetAgentPay(const int64_t& _agentPay);
+
+                    /**
+                     * 判断参数 AgentPay 是否已赋值
+                     * @return AgentPay 是否已赋值
+                     * 
+                     */
+                    bool AgentPayHasBeenSet() const;
+
+                    /**
+                     * 获取推荐者，用于返利
+                     * @return CpsUin 推荐者，用于返利
+                     * 
+                     */
+                    std::string GetCpsUin() const;
+
+                    /**
+                     * 设置推荐者，用于返利
+                     * @param _cpsUin 推荐者，用于返利
+                     * 
+                     */
+                    void SetCpsUin(const std::string& _cpsUin);
+
+                    /**
+                     * 判断参数 CpsUin 是否已赋值
+                     * @return CpsUin 是否已赋值
+                     * 
+                     */
+                    bool CpsUinHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +193,18 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_bigDealIds;
                     bool m_bigDealIdsHasBeenSet;
+
+                    /**
+                     * 0非代理，1代理商代付，3集团代理，4代理商为代客下产品级代付单，默认0
+                     */
+                    int64_t m_agentPay;
+                    bool m_agentPayHasBeenSet;
+
+                    /**
+                     * 推荐者，用于返利
+                     */
+                    std::string m_cpsUin;
+                    bool m_cpsUinHasBeenSet;
 
                 };
             }

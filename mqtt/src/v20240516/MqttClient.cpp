@@ -1803,6 +1803,49 @@ MqttClient::ModifyUserOutcomeCallable MqttClient::ModifyUserCallable(const Modif
     return task->get_future();
 }
 
+MqttClient::PublishMessageOutcome MqttClient::PublishMessage(const PublishMessageRequest &request)
+{
+    auto outcome = MakeRequest(request, "PublishMessage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PublishMessageResponse rsp = PublishMessageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PublishMessageOutcome(rsp);
+        else
+            return PublishMessageOutcome(o.GetError());
+    }
+    else
+    {
+        return PublishMessageOutcome(outcome.GetError());
+    }
+}
+
+void MqttClient::PublishMessageAsync(const PublishMessageRequest& request, const PublishMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->PublishMessage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MqttClient::PublishMessageOutcomeCallable MqttClient::PublishMessageCallable(const PublishMessageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<PublishMessageOutcome()>>(
+        [this, request]()
+        {
+            return this->PublishMessage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MqttClient::RegisterCaCertificateOutcome MqttClient::RegisterCaCertificate(const RegisterCaCertificateRequest &request)
 {
     auto outcome = MakeRequest(request, "RegisterCaCertificate");

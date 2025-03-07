@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterId 集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterId 集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -949,18 +945,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启cls日志功能
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableLogCollection 是否开启cls日志功能
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnableLogCollection() const;
 
                     /**
                      * 设置是否开启cls日志功能
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enableLogCollection 是否开启cls日志功能
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnableLogCollection(const bool& _enableLogCollection);
@@ -976,7 +968,6 @@ namespace TencentCloud
 
                     /**
                      * 集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
@@ -1228,7 +1219,6 @@ namespace TencentCloud
 
                     /**
                      * 是否开启cls日志功能
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enableLogCollection;
                     bool m_enableLogCollectionHasBeenSet;

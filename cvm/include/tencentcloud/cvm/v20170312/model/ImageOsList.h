@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取支持的Windows操作系统。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Windows 支持的Windows操作系统。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetWindows() const;
 
                     /**
                      * 设置支持的Windows操作系统。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _windows 支持的Windows操作系统。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWindows(const std::vector<std::string>& _windows);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取支持的Linux操作系统
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Linux 支持的Linux操作系统
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetLinux() const;
 
                     /**
                      * 设置支持的Linux操作系统
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _linux 支持的Linux操作系统
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLinux(const std::vector<std::string>& _linux);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 支持的Windows操作系统。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_windows;
                     bool m_windowsHasBeenSet;
 
                     /**
                      * 支持的Linux操作系统
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_linux;
                     bool m_linuxHasBeenSet;

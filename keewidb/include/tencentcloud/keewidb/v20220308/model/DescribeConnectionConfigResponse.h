@@ -87,9 +87,7 @@ namespace TencentCloud
 
                     /**
                      * 获取单分片连接数限制最小值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClientLimitMin 单分片连接数限制最小值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetClientLimitMin() const;
@@ -103,9 +101,7 @@ namespace TencentCloud
 
                     /**
                      * 获取单分片连接数限制最大值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClientLimitMax 单分片连接数限制最大值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetClientLimitMax() const;
@@ -139,14 +135,12 @@ namespace TencentCloud
 
                     /**
                      * 单分片连接数限制最小值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_clientLimitMin;
                     bool m_clientLimitMinHasBeenSet;
 
                     /**
                      * 单分片连接数限制最大值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_clientLimitMax;
                     bool m_clientLimitMaxHasBeenSet;

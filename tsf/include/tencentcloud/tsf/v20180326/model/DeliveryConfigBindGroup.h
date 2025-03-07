@@ -92,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取采集路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CollectPath 采集路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetCollectPath() const;
 
                     /**
                      * 设置采集路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _collectPath 采集路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCollectPath(const std::vector<std::string>& _collectPath);
@@ -117,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取关联部署组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Groups 关联部署组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<GroupInfo> GetGroups() const;
 
                     /**
                      * 设置关联部署组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groups 关联部署组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroups(const std::vector<GroupInfo>& _groups);
@@ -142,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -242,18 +230,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Topic
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Topic Topic
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTopic() const;
 
                     /**
                      * 设置Topic
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topic Topic
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopic(const std::string& _topic);
@@ -342,18 +326,14 @@ namespace TencentCloud
 
                     /**
                      * 获取EnableAuth
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableAuth EnableAuth
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnableAuth() const;
 
                     /**
                      * 设置EnableAuth
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enableAuth EnableAuth
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnableAuth(const bool& _enableAuth);
@@ -456,21 +436,18 @@ namespace TencentCloud
 
                     /**
                      * 采集路径
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_collectPath;
                     bool m_collectPathHasBeenSet;
 
                     /**
                      * 关联部署组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<GroupInfo> m_groups;
                     bool m_groupsHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
@@ -498,7 +475,6 @@ namespace TencentCloud
 
                     /**
                      * Topic
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_topic;
                     bool m_topicHasBeenSet;
@@ -526,7 +502,6 @@ namespace TencentCloud
 
                     /**
                      * EnableAuth
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enableAuth;
                     bool m_enableAuthHasBeenSet;

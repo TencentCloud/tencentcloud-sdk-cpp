@@ -62,9 +62,7 @@ namespace TencentCloud
 
                     /**
                      * 获取消耗详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 消耗详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ConsumptionSummaryTotal GetTotal() const;
@@ -110,9 +108,7 @@ namespace TencentCloud
 
                     /**
                      * 获取资源消耗详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 资源消耗详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ConsumptionResourceSummaryDataItem> GetData() const;
@@ -134,7 +130,6 @@ namespace TencentCloud
 
                     /**
                      * 消耗详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ConsumptionSummaryTotal m_total;
                     bool m_totalHasBeenSet;
@@ -155,7 +150,6 @@ namespace TencentCloud
 
                     /**
                      * 资源消耗详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ConsumptionResourceSummaryDataItem> m_data;
                     bool m_dataHasBeenSet;

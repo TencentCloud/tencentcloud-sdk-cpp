@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取批次ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BatchId 批次ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBatchId() const;
 
                     /**
                      * 设置批次ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _batchId 批次ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBatchId(const std::string& _batchId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取运行状态，RUNNING/SUCCESS/FAIL/HALF/TERMINATED
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return State 运行状态，RUNNING/SUCCESS/FAIL/HALF/TERMINATED
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetState() const;
 
                     /**
                      * 设置运行状态，RUNNING/SUCCESS/FAIL/HALF/TERMINATED
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _state 运行状态，RUNNING/SUCCESS/FAIL/HALF/TERMINATED
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetState(const std::string& _state);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取批次历史ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BatchLogId 批次历史ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBatchLogId() const;
 
                     /**
                      * 设置批次历史ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _batchLogId 批次历史ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBatchLogId(const std::string& _batchLogId);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 批次ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_batchId;
                     bool m_batchIdHasBeenSet;
 
                     /**
                      * 运行状态，RUNNING/SUCCESS/FAIL/HALF/TERMINATED
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_state;
                     bool m_stateHasBeenSet;
 
                     /**
                      * 批次历史ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_batchLogId;
                     bool m_batchLogIdHasBeenSet;

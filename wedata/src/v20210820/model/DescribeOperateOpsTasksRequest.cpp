@@ -48,7 +48,9 @@ DescribeOperateOpsTasksRequest::DescribeOperateOpsTasksRequest() :
     m_keyWordHasBeenSet(false),
     m_initStrategyHasBeenSet(false),
     m_requestResourceTypesHasBeenSet(false),
-    m_projectIdsHasBeenSet(false)
+    m_projectIdsHasBeenSet(false),
+    m_blackTaskIdListHasBeenSet(false),
+    m_scheduleTimeZoneHasBeenSet(false)
 {
 }
 
@@ -282,6 +284,27 @@ string DescribeOperateOpsTasksRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_blackTaskIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BlackTaskIdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_blackTaskIdList.begin(); itr != m_blackTaskIdList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_scheduleTimeZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduleTimeZone";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_scheduleTimeZone.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -706,6 +729,38 @@ void DescribeOperateOpsTasksRequest::SetProjectIds(const vector<string>& _projec
 bool DescribeOperateOpsTasksRequest::ProjectIdsHasBeenSet() const
 {
     return m_projectIdsHasBeenSet;
+}
+
+vector<string> DescribeOperateOpsTasksRequest::GetBlackTaskIdList() const
+{
+    return m_blackTaskIdList;
+}
+
+void DescribeOperateOpsTasksRequest::SetBlackTaskIdList(const vector<string>& _blackTaskIdList)
+{
+    m_blackTaskIdList = _blackTaskIdList;
+    m_blackTaskIdListHasBeenSet = true;
+}
+
+bool DescribeOperateOpsTasksRequest::BlackTaskIdListHasBeenSet() const
+{
+    return m_blackTaskIdListHasBeenSet;
+}
+
+string DescribeOperateOpsTasksRequest::GetScheduleTimeZone() const
+{
+    return m_scheduleTimeZone;
+}
+
+void DescribeOperateOpsTasksRequest::SetScheduleTimeZone(const string& _scheduleTimeZone)
+{
+    m_scheduleTimeZone = _scheduleTimeZone;
+    m_scheduleTimeZoneHasBeenSet = true;
+}
+
+bool DescribeOperateOpsTasksRequest::ScheduleTimeZoneHasBeenSet() const
+{
+    return m_scheduleTimeZoneHasBeenSet;
 }
 
 

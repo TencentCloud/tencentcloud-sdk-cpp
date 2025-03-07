@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例Id。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 实例Id。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例Id。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceId 实例Id。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取退款数额。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Refunds 退款数额。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetRefunds() const;
 
                     /**
                      * 设置退款数额。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _refunds 退款数额。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRefunds(const double& _refunds);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取退款详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PriceDetail 退款详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPriceDetail() const;
 
                     /**
                      * 设置退款详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _priceDetail 退款详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPriceDetail(const std::string& _priceDetail);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 实例Id。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
                      * 退款数额。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_refunds;
                     bool m_refundsHasBeenSet;
 
                     /**
                      * 退款详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_priceDetail;
                     bool m_priceDetailHasBeenSet;

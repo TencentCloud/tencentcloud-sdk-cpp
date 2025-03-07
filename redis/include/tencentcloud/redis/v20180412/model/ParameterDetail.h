@@ -182,18 +182,14 @@ namespace TencentCloud
 
                     /**
                      * 获取参数允许的最大值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Max 参数允许的最大值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMax() const;
 
                     /**
                      * 设置参数允许的最大值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _max 参数允许的最大值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMax(const std::string& _max);
@@ -207,18 +203,14 @@ namespace TencentCloud
 
                     /**
                      * 获取参数允许的最小值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Min 参数允许的最小值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMin() const;
 
                     /**
                      * 设置参数允许的最小值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _min 参数允许的最小值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMin(const std::string& _min);
@@ -232,18 +224,14 @@ namespace TencentCloud
 
                     /**
                      * 获取参数可选枚举值。如果为非枚举参数，则为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnumValue 参数可选枚举值。如果为非枚举参数，则为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetEnumValue() const;
 
                     /**
                      * 设置参数可选枚举值。如果为非枚举参数，则为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enumValue 参数可选枚举值。如果为非枚举参数，则为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnumValue(const std::vector<std::string>& _enumValue);
@@ -297,21 +285,18 @@ namespace TencentCloud
 
                     /**
                      * 参数允许的最大值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_max;
                     bool m_maxHasBeenSet;
 
                     /**
                      * 参数允许的最小值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_min;
                     bool m_minHasBeenSet;
 
                     /**
                      * 参数可选枚举值。如果为非枚举参数，则为空。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_enumValue;
                     bool m_enumValueHasBeenSet;

@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterId 集群id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterId 集群id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -136,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterName 集群名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterName() const;
 
                     /**
                      * 设置集群名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterName 集群名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterName(const std::string& _clusterName);
@@ -161,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取命名空间名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NamespaceName 命名空间名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNamespaceName() const;
 
                     /**
                      * 设置命名空间名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _namespaceName 命名空间名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNamespaceName(const std::string& _namespaceName);
@@ -186,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取绑定时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssociateTime 绑定时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAssociateTime() const;
 
                     /**
                      * 设置绑定时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _associateTime 绑定时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAssociateTime(const std::string& _associateTime);
@@ -231,28 +215,24 @@ namespace TencentCloud
 
                     /**
                      * 集群id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
                      * 集群名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterName;
                     bool m_clusterNameHasBeenSet;
 
                     /**
                      * 命名空间名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_namespaceName;
                     bool m_namespaceNameHasBeenSet;
 
                     /**
                      * 绑定时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_associateTime;
                     bool m_associateTimeHasBeenSet;

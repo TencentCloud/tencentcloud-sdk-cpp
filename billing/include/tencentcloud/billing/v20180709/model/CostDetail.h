@@ -238,18 +238,14 @@ namespace TencentCloud
 
                     /**
                      * 获取类型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActionTypeName 类型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetActionTypeName() const;
 
                     /**
                      * 设置类型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _actionTypeName 类型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetActionTypeName(const std::string& _actionTypeName);
@@ -445,7 +441,6 @@ namespace TencentCloud
 
                     /**
                      * 类型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_actionTypeName;
                     bool m_actionTypeNameHasBeenSet;

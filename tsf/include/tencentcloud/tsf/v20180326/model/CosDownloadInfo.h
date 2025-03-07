@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取桶名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Bucket 桶名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBucket() const;
 
                     /**
                      * 设置桶名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bucket 桶名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBucket(const std::string& _bucket);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _region 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Path 路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPath() const;
 
                     /**
                      * 设置路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _path 路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPath(const std::string& _path);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取鉴权信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Credentials 鉴权信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CosCredentials GetCredentials() const;
 
                     /**
                      * 设置鉴权信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _credentials 鉴权信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCredentials(const CosCredentials& _credentials);
@@ -151,28 +135,24 @@ namespace TencentCloud
 
                     /**
                      * 桶名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bucket;
                     bool m_bucketHasBeenSet;
 
                     /**
                      * 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
                      * 路径
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_path;
                     bool m_pathHasBeenSet;
 
                     /**
                      * 鉴权信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CosCredentials m_credentials;
                     bool m_credentialsHasBeenSet;

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取API 路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApiPath API 路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApiPath() const;
 
                     /**
                      * 设置API 路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _apiPath API 路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApiPath(const std::string& _apiPath);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceName 服务名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetServiceName() const;
 
                     /**
                      * 设置服务名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serviceName 服务名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServiceName(const std::string& _serviceName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取统计值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 统计值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置统计值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _value 统计值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取API ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApiId API ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApiId() const;
 
                     /**
                      * 设置API ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _apiId API ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApiId(const std::string& _apiId);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * API 路径
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_apiPath;
                     bool m_apiPathHasBeenSet;
 
                     /**
                      * 服务名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serviceName;
                     bool m_serviceNameHasBeenSet;
 
                     /**
                      * 统计值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;
 
                     /**
                      * API ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_apiId;
                     bool m_apiIdHasBeenSet;

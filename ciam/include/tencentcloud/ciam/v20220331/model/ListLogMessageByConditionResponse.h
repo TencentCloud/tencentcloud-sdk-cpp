@@ -75,9 +75,7 @@ namespace TencentCloud
 
                     /**
                      * 获取日志列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Content 日志列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<LogMessage> GetContent() const;
@@ -105,7 +103,6 @@ namespace TencentCloud
 
                     /**
                      * 日志列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<LogMessage> m_content;
                     bool m_contentHasBeenSet;

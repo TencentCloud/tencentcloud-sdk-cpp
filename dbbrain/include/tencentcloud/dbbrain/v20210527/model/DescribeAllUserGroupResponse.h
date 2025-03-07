@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取组信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Groups 组信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<GroupItem> GetGroups() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 组信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<GroupItem> m_groups;
                     bool m_groupsHasBeenSet;

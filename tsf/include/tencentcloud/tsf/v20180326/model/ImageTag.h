@@ -259,18 +259,14 @@ namespace TencentCloud
 
                     /**
                      * 获取操作系统
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Os 操作系统
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOs() const;
 
                     /**
                      * 设置操作系统
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _os 操作系统
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOs(const std::string& _os);
@@ -326,18 +322,14 @@ namespace TencentCloud
 
                     /**
                      * 获取TcrRepoInfo值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TcrRepoInfo TcrRepoInfo值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TcrRepoInfo GetTcrRepoInfo() const;
 
                     /**
                      * 设置TcrRepoInfo值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tcrRepoInfo TcrRepoInfo值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTcrRepoInfo(const TcrRepoInfo& _tcrRepoInfo);
@@ -413,7 +405,6 @@ namespace TencentCloud
 
                     /**
                      * 操作系统
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_os;
                     bool m_osHasBeenSet;
@@ -432,7 +423,6 @@ namespace TencentCloud
 
                     /**
                      * TcrRepoInfo值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TcrRepoInfo m_tcrRepoInfo;
                     bool m_tcrRepoInfoHasBeenSet;

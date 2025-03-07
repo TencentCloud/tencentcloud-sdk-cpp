@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据集ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProgramId 数据集ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProgramId() const;
 
                     /**
                      * 设置数据集ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _programId 数据集ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProgramId(const std::string& _programId);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据集名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProgramName 数据集名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProgramName() const;
 
                     /**
                      * 设置数据集名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _programName 数据集名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProgramName(const std::string& _programName);
@@ -149,18 +141,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreationTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCreationTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _creationTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreationTime(const int64_t& _creationTime);
@@ -174,18 +162,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最后更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastUpdateTime 最后更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLastUpdateTime() const;
 
                     /**
                      * 设置最后更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lastUpdateTime 最后更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLastUpdateTime(const int64_t& _lastUpdateTime);
@@ -199,18 +183,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据项列表，无值时返回空数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProgramItemList 数据项列表，无值时返回空数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ProgramItem> GetProgramItemList() const;
 
                     /**
                      * 设置数据项列表，无值时返回空数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _programItemList 数据项列表，无值时返回空数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProgramItemList(const std::vector<ProgramItem>& _programItemList);
@@ -226,14 +206,12 @@ namespace TencentCloud
 
                     /**
                      * 数据集ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_programId;
                     bool m_programIdHasBeenSet;
 
                     /**
                      * 数据集名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_programName;
                     bool m_programNameHasBeenSet;
@@ -254,21 +232,18 @@ namespace TencentCloud
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_creationTime;
                     bool m_creationTimeHasBeenSet;
 
                     /**
                      * 最后更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_lastUpdateTime;
                     bool m_lastUpdateTimeHasBeenSet;
 
                     /**
                      * 数据项列表，无值时返回空数组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ProgramItem> m_programItemList;
                     bool m_programItemListHasBeenSet;

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationCount 应用总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetApplicationCount() const;
 
                     /**
                      * 设置应用总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _applicationCount 应用总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApplicationCount(const int64_t& _applicationCount);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取命名空间总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NamespaceCount 命名空间总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetNamespaceCount() const;
 
                     /**
                      * 设置命名空间总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _namespaceCount 命名空间总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNamespaceCount(const int64_t& _namespaceCount);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部署组个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupCount 部署组个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetGroupCount() const;
 
                     /**
                      * 设置部署组个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupCount 部署组个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupCount(const int64_t& _groupCount);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取程序包存储空间用量，单位字节
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackageSpaceUsed 程序包存储空间用量，单位字节
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPackageSpaceUsed() const;
 
                     /**
                      * 设置程序包存储空间用量，单位字节
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _packageSpaceUsed 程序包存储空间用量，单位字节
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPackageSpaceUsed(const int64_t& _packageSpaceUsed);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取已注册实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConsulInstanceCount 已注册实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetConsulInstanceCount() const;
 
                     /**
                      * 设置已注册实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _consulInstanceCount 已注册实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConsulInstanceCount(const int64_t& _consulInstanceCount);
@@ -175,35 +155,30 @@ namespace TencentCloud
 
                     /**
                      * 应用总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_applicationCount;
                     bool m_applicationCountHasBeenSet;
 
                     /**
                      * 命名空间总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_namespaceCount;
                     bool m_namespaceCountHasBeenSet;
 
                     /**
                      * 部署组个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_groupCount;
                     bool m_groupCountHasBeenSet;
 
                     /**
                      * 程序包存储空间用量，单位字节
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_packageSpaceUsed;
                     bool m_packageSpaceUsedHasBeenSet;
 
                     /**
                      * 已注册实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_consulInstanceCount;
                     bool m_consulInstanceCountHasBeenSet;

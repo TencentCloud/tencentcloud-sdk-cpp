@@ -2278,6 +2278,39 @@ namespace TencentCloud
                      */
                     bool NewParentTaskInfosHasBeenSet() const;
 
+                    /**
+                     * 获取任务自依赖类型：
+yes： 任务需满足自依赖
+no：任务无需满足自依赖
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SelfWorkFlowDependType 任务自依赖类型：
+yes： 任务需满足自依赖
+no：任务无需满足自依赖
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetSelfWorkFlowDependType() const;
+
+                    /**
+                     * 设置任务自依赖类型：
+yes： 任务需满足自依赖
+no：任务无需满足自依赖
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _selfWorkFlowDependType 任务自依赖类型：
+yes： 任务需满足自依赖
+no：任务无需满足自依赖
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSelfWorkFlowDependType(const std::string& _selfWorkFlowDependType);
+
+                    /**
+                     * 判断参数 SelfWorkFlowDependType 是否已赋值
+                     * @return SelfWorkFlowDependType 是否已赋值
+                     * 
+                     */
+                    bool SelfWorkFlowDependTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -2902,6 +2935,15 @@ namespace TencentCloud
                      */
                     std::vector<AiopsSimpleTaskDto> m_newParentTaskInfos;
                     bool m_newParentTaskInfosHasBeenSet;
+
+                    /**
+                     * 任务自依赖类型：
+yes： 任务需满足自依赖
+no：任务无需满足自依赖
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_selfWorkFlowDependType;
+                    bool m_selfWorkFlowDependTypeHasBeenSet;
 
                 };
             }

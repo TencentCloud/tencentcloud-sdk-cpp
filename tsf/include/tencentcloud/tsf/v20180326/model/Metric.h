@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取指标名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 指标名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置指标名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 指标名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取指标计算方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Function 指标计算方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFunction() const;
 
                     /**
                      * 设置指标计算方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _function 指标计算方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFunction(const std::string& _function);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 指标名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 指标计算方式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_function;
                     bool m_functionHasBeenSet;

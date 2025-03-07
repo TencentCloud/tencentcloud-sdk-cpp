@@ -410,6 +410,31 @@ TEZ-TezTaskGC:TasksGC
                      */
                     bool JobConfHasBeenSet() const;
 
+                    /**
+                     * 获取洞察结构化信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Context 洞察结构化信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetContext() const;
+
+                    /**
+                     * 设置洞察结构化信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _context 洞察结构化信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetContext(const std::string& _context);
+
+                    /**
+                     * 判断参数 Context 是否已赋值
+                     * @return Context 是否已赋值
+                     * 
+                     */
+                    bool ContextHasBeenSet() const;
+
                 private:
 
                     /**
@@ -511,6 +536,13 @@ TEZ-TezTaskGC:TasksGC
                      */
                     std::string m_jobConf;
                     bool m_jobConfHasBeenSet;
+
+                    /**
+                     * 洞察结构化信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_context;
+                    bool m_contextHasBeenSet;
 
                 };
             }

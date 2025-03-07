@@ -487,6 +487,27 @@ namespace TencentCloud
                      */
                     bool PayloadHasBeenSet() const;
 
+                    /**
+                     * 获取端口
+                     * @return Port 端口
+                     * 
+                     */
+                    int64_t GetPort() const;
+
+                    /**
+                     * 设置端口
+                     * @param _port 端口
+                     * 
+                     */
+                    void SetPort(const int64_t& _port);
+
+                    /**
+                     * 判断参数 Port 是否已赋值
+                     * @return Port 是否已赋值
+                     * 
+                     */
+                    bool PortHasBeenSet() const;
+
                 private:
 
                     /**
@@ -614,6 +635,12 @@ namespace TencentCloud
                      */
                     std::string m_payload;
                     bool m_payloadHasBeenSet;
+
+                    /**
+                     * 端口
+                     */
+                    int64_t m_port;
+                    bool m_portHasBeenSet;
 
                 };
             }

@@ -166,6 +166,22 @@ namespace TencentCloud
                      */
                     bool DataAmountHasBeenSet() const;
 
+                    /**
+                     * 获取spark ui地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UiUrl spark ui地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetUiUrl() const;
+
+                    /**
+                     * 判断参数 UiUrl 是否已赋值
+                     * @return UiUrl 是否已赋值
+                     * 
+                     */
+                    bool UiUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -220,6 +236,13 @@ namespace TencentCloud
                      */
                     int64_t m_dataAmount;
                     bool m_dataAmountHasBeenSet;
+
+                    /**
+                     * spark ui地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_uiUrl;
+                    bool m_uiUrlHasBeenSet;
 
                 };
             }

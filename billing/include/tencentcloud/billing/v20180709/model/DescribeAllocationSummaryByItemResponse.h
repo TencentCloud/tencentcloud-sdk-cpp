@@ -48,10 +48,8 @@ namespace TencentCloud
                     /**
                      * 获取总条数
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecordNum 总条数
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRecordNum() const;
@@ -65,9 +63,7 @@ namespace TencentCloud
 
                     /**
                      * 获取分账账单概览金额汇总
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 分账账单概览金额汇总
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AllocationOverviewTotal GetTotal() const;
@@ -82,10 +78,8 @@ namespace TencentCloud
                     /**
                      * 获取分账账单按组件汇总明细
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Detail 分账账单按组件汇总明细
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AllocationSummaryByItem> GetDetail() const;
@@ -102,14 +96,12 @@ namespace TencentCloud
                     /**
                      * 总条数
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_recordNum;
                     bool m_recordNumHasBeenSet;
 
                     /**
                      * 分账账单概览金额汇总
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AllocationOverviewTotal m_total;
                     bool m_totalHasBeenSet;
@@ -117,7 +109,6 @@ namespace TencentCloud
                     /**
                      * 分账账单按组件汇总明细
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AllocationSummaryByItem> m_detail;
                     bool m_detailHasBeenSet;

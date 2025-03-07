@@ -113,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigMapOptions -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ConfigMapOption> GetConfigMapOptions() const;
 
                     /**
                      * 设置-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _configMapOptions -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConfigMapOptions(const std::vector<ConfigMapOption>& _configMapOptions);
@@ -138,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EmptyDirOption -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     EmptyDirOption GetEmptyDirOption() const;
 
                     /**
                      * 设置-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _emptyDirOption -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEmptyDirOption(const EmptyDirOption& _emptyDirOption);
@@ -183,14 +175,12 @@ namespace TencentCloud
 
                     /**
                      * -
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ConfigMapOption> m_configMapOptions;
                     bool m_configMapOptionsHasBeenSet;
 
                     /**
                      * -
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     EmptyDirOption m_emptyDirOption;
                     bool m_emptyDirOptionHasBeenSet;

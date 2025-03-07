@@ -43,27 +43,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取产品ID
-                     * @return ProductID 产品ID
-                     * 
-                     */
-                    std::string GetProductID() const;
-
-                    /**
-                     * 设置产品ID
-                     * @param _productID 产品ID
-                     * 
-                     */
-                    void SetProductID(const std::string& _productID);
-
-                    /**
-                     * 判断参数 ProductID 是否已赋值
-                     * @return ProductID 是否已赋值
-                     * 
-                     */
-                    bool ProductIDHasBeenSet() const;
-
-                    /**
                      * 获取资源名称
                      * @return Name 资源名称
                      * 
@@ -105,13 +84,28 @@ namespace TencentCloud
                      */
                     bool DeviceNameHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取产品ID
+                     * @return ProductID 产品ID
+                     * 
+                     */
+                    std::string GetProductID() const;
 
                     /**
-                     * 产品ID
+                     * 设置产品ID
+                     * @param _productID 产品ID
+                     * 
                      */
-                    std::string m_productID;
-                    bool m_productIDHasBeenSet;
+                    void SetProductID(const std::string& _productID);
+
+                    /**
+                     * 判断参数 ProductID 是否已赋值
+                     * @return ProductID 是否已赋值
+                     * 
+                     */
+                    bool ProductIDHasBeenSet() const;
+
+                private:
 
                     /**
                      * 资源名称
@@ -124,6 +118,12 @@ namespace TencentCloud
                      */
                     std::string m_deviceName;
                     bool m_deviceNameHasBeenSet;
+
+                    /**
+                     * 产品ID
+                     */
+                    std::string m_productID;
+                    bool m_productIDHasBeenSet;
 
                 };
             }

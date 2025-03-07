@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据项ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProgramItemId 数据项ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProgramItemId() const;
 
                     /**
                      * 设置数据项ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _programItemId 数据项ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProgramItemId(const std::string& _programItemId);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Resource 资源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Resource GetResource() const;
 
                     /**
                      * 设置资源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resource 资源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResource(const Resource& _resource);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据值列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ValueList 数据值列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetValueList() const;
 
                     /**
                      * 设置数据值列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _valueList 数据值列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValueList(const std::vector<std::string>& _valueList);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取全选标识，true: 全选；false: 非全选
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsAll 全选标识，true: 全选；false: 非全选
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsAll() const;
 
                     /**
                      * 设置全选标识，true: 全选；false: 非全选
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isAll 全选标识，true: 全选；false: 非全选
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsAll(const bool& _isAll);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreationTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCreationTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _creationTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreationTime(const int64_t& _creationTime);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最后更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastUpdateTime 最后更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLastUpdateTime() const;
 
                     /**
                      * 设置最后更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lastUpdateTime 最后更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLastUpdateTime(const int64_t& _lastUpdateTime);
@@ -199,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取删除标识，true: 可删除；false: 不可删除
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeleteFlag 删除标识，true: 可删除；false: 不可删除
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetDeleteFlag() const;
 
                     /**
                      * 设置删除标识，true: 可删除；false: 不可删除
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deleteFlag 删除标识，true: 可删除；false: 不可删除
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeleteFlag(const bool& _deleteFlag);
@@ -224,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据集ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProgramId 数据集ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProgramId() const;
 
                     /**
                      * 设置数据集ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _programId 数据集ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProgramId(const std::string& _programId);
@@ -251,56 +219,48 @@ namespace TencentCloud
 
                     /**
                      * 数据项ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_programItemId;
                     bool m_programItemIdHasBeenSet;
 
                     /**
                      * 资源
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Resource m_resource;
                     bool m_resourceHasBeenSet;
 
                     /**
                      * 数据值列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_valueList;
                     bool m_valueListHasBeenSet;
 
                     /**
                      * 全选标识，true: 全选；false: 非全选
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isAll;
                     bool m_isAllHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_creationTime;
                     bool m_creationTimeHasBeenSet;
 
                     /**
                      * 最后更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_lastUpdateTime;
                     bool m_lastUpdateTimeHasBeenSet;
 
                     /**
                      * 删除标识，true: 可删除；false: 不可删除
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_deleteFlag;
                     bool m_deleteFlagHasBeenSet;
 
                     /**
                      * 数据集ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_programId;
                     bool m_programIdHasBeenSet;

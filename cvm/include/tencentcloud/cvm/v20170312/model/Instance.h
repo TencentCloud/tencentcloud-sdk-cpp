@@ -668,18 +668,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分散置放群组ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DisasterRecoverGroupId 分散置放群组ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDisasterRecoverGroupId() const;
 
                     /**
                      * 设置分散置放群组ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _disasterRecoverGroupId 分散置放群组ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDisasterRecoverGroupId(const std::string& _disasterRecoverGroupId);
@@ -743,18 +739,14 @@ namespace TencentCloud
 
                     /**
                      * 获取高性能计算集群`ID`。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HpcClusterId 高性能计算集群`ID`。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHpcClusterId() const;
 
                     /**
                      * 设置高性能计算集群`ID`。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hpcClusterId 高性能计算集群`ID`。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHpcClusterId(const std::string& _hpcClusterId);
@@ -793,18 +785,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例所在的专用集群`ID`。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DedicatedClusterId 实例所在的专用集群`ID`。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDedicatedClusterId() const;
 
                     /**
                      * 设置实例所在的专用集群`ID`。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dedicatedClusterId 实例所在的专用集群`ID`。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDedicatedClusterId(const std::string& _dedicatedClusterId);
@@ -818,18 +806,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例隔离类型。取值范围：<br><li>ARREAR：表示欠费隔离<br></li><li>EXPIRE：表示到期隔离<br></li><li>MANMADE：表示主动退还隔离<br></li><li>NOTISOLATED：表示未隔离<br></li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsolatedSource 实例隔离类型。取值范围：<br><li>ARREAR：表示欠费隔离<br></li><li>EXPIRE：表示到期隔离<br></li><li>MANMADE：表示主动退还隔离<br></li><li>NOTISOLATED：表示未隔离<br></li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIsolatedSource() const;
 
                     /**
                      * 设置实例隔离类型。取值范围：<br><li>ARREAR：表示欠费隔离<br></li><li>EXPIRE：表示到期隔离<br></li><li>MANMADE：表示主动退还隔离<br></li><li>NOTISOLATED：表示未隔离<br></li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isolatedSource 实例隔离类型。取值范围：<br><li>ARREAR：表示欠费隔离<br></li><li>EXPIRE：表示到期隔离<br></li><li>MANMADE：表示主动退还隔离<br></li><li>NOTISOLATED：表示未隔离<br></li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsolatedSource(const std::string& _isolatedSource);
@@ -843,18 +827,14 @@ namespace TencentCloud
 
                     /**
                      * 获取GPU信息。如果是gpu类型子机，该值会返回GPU信息，如果是其他类型子机则不返回。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GPUInfo GPU信息。如果是gpu类型子机，该值会返回GPU信息，如果是其他类型子机则不返回。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     GPUInfo GetGPUInfo() const;
 
                     /**
                      * 设置GPU信息。如果是gpu类型子机，该值会返回GPU信息，如果是其他类型子机则不返回。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gPUInfo GPU信息。如果是gpu类型子机，该值会返回GPU信息，如果是其他类型子机则不返回。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGPUInfo(const GPUInfo& _gPUInfo);
@@ -1153,7 +1133,6 @@ namespace TencentCloud
 
                     /**
                      * 分散置放群组ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_disasterRecoverGroupId;
                     bool m_disasterRecoverGroupIdHasBeenSet;
@@ -1174,7 +1153,6 @@ namespace TencentCloud
 
                     /**
                      * 高性能计算集群`ID`。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hpcClusterId;
                     bool m_hpcClusterIdHasBeenSet;
@@ -1188,21 +1166,18 @@ namespace TencentCloud
 
                     /**
                      * 实例所在的专用集群`ID`。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dedicatedClusterId;
                     bool m_dedicatedClusterIdHasBeenSet;
 
                     /**
                      * 实例隔离类型。取值范围：<br><li>ARREAR：表示欠费隔离<br></li><li>EXPIRE：表示到期隔离<br></li><li>MANMADE：表示主动退还隔离<br></li><li>NOTISOLATED：表示未隔离<br></li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_isolatedSource;
                     bool m_isolatedSourceHasBeenSet;
 
                     /**
                      * GPU信息。如果是gpu类型子机，该值会返回GPU信息，如果是其他类型子机则不返回。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     GPUInfo m_gPUInfo;
                     bool m_gPUInfoHasBeenSet;

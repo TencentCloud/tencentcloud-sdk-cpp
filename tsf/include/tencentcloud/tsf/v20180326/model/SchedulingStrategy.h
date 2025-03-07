@@ -52,18 +52,14 @@ namespace TencentCloud
 
                     /**
                      * 获取NONE：不使用调度策略；CROSS_AZ：跨可用区部署
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type NONE：不使用调度策略；CROSS_AZ：跨可用区部署
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置NONE：不使用调度策略；CROSS_AZ：跨可用区部署
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type NONE：不使用调度策略；CROSS_AZ：跨可用区部署
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -77,18 +73,14 @@ namespace TencentCloud
 
                     /**
                      * 获取-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeScheduleStrategyType -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNodeScheduleStrategyType() const;
 
                     /**
                      * 设置-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nodeScheduleStrategyType -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNodeScheduleStrategyType(const std::string& _nodeScheduleStrategyType);
@@ -102,18 +94,14 @@ namespace TencentCloud
 
                     /**
                      * 获取-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeScheduleOptions -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CommonOption> GetNodeScheduleOptions() const;
 
                     /**
                      * 设置-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nodeScheduleOptions -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNodeScheduleOptions(const std::vector<CommonOption>& _nodeScheduleOptions);
@@ -127,18 +115,14 @@ namespace TencentCloud
 
                     /**
                      * 获取-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StrongAffinityList -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CommonOption> GetStrongAffinityList() const;
 
                     /**
                      * 设置-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _strongAffinityList -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStrongAffinityList(const std::vector<CommonOption>& _strongAffinityList);
@@ -152,18 +136,14 @@ namespace TencentCloud
 
                     /**
                      * 获取-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WeakAffinityList -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CommonOption> GetWeakAffinityList() const;
 
                     /**
                      * 设置-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _weakAffinityList -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWeakAffinityList(const std::vector<CommonOption>& _weakAffinityList);
@@ -177,18 +157,14 @@ namespace TencentCloud
 
                     /**
                      * 获取-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WeakAffinityWeight -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetWeakAffinityWeight() const;
 
                     /**
                      * 设置-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _weakAffinityWeight -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWeakAffinityWeight(const int64_t& _weakAffinityWeight);
@@ -202,18 +178,14 @@ namespace TencentCloud
 
                     /**
                      * 获取-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AvailableZoneScatterScheduleType -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAvailableZoneScatterScheduleType() const;
 
                     /**
                      * 设置-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _availableZoneScatterScheduleType -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAvailableZoneScatterScheduleType(const std::string& _availableZoneScatterScheduleType);
@@ -227,18 +199,14 @@ namespace TencentCloud
 
                     /**
                      * 获取-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AvailableZoneScatterScheduleRules -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AvailableZoneScatterScheduleRule> GetAvailableZoneScatterScheduleRules() const;
 
                     /**
                      * 设置-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _availableZoneScatterScheduleRules -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAvailableZoneScatterScheduleRules(const std::vector<AvailableZoneScatterScheduleRule>& _availableZoneScatterScheduleRules);
@@ -252,18 +220,14 @@ namespace TencentCloud
 
                     /**
                      * 获取-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PodScheduleStrategyType -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPodScheduleStrategyType() const;
 
                     /**
                      * 设置-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _podScheduleStrategyType -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPodScheduleStrategyType(const std::string& _podScheduleStrategyType);
@@ -277,18 +241,14 @@ namespace TencentCloud
 
                     /**
                      * 获取-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CustomPodSchedule -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CustomPodSchedule GetCustomPodSchedule() const;
 
                     /**
                      * 设置-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _customPodSchedule -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCustomPodSchedule(const CustomPodSchedule& _customPodSchedule);
@@ -302,18 +262,14 @@ namespace TencentCloud
 
                     /**
                      * 获取-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TolerateScheduleType -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTolerateScheduleType() const;
 
                     /**
                      * 设置-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tolerateScheduleType -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTolerateScheduleType(const std::string& _tolerateScheduleType);
@@ -327,18 +283,14 @@ namespace TencentCloud
 
                     /**
                      * 获取-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CustomTolerateSchedules -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CustomTolerateSchedule> GetCustomTolerateSchedules() const;
 
                     /**
                      * 设置-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _customTolerateSchedules -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCustomTolerateSchedules(const std::vector<CustomTolerateSchedule>& _customTolerateSchedules);
@@ -354,84 +306,72 @@ namespace TencentCloud
 
                     /**
                      * NONE：不使用调度策略；CROSS_AZ：跨可用区部署
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * -
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nodeScheduleStrategyType;
                     bool m_nodeScheduleStrategyTypeHasBeenSet;
 
                     /**
                      * -
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CommonOption> m_nodeScheduleOptions;
                     bool m_nodeScheduleOptionsHasBeenSet;
 
                     /**
                      * -
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CommonOption> m_strongAffinityList;
                     bool m_strongAffinityListHasBeenSet;
 
                     /**
                      * -
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CommonOption> m_weakAffinityList;
                     bool m_weakAffinityListHasBeenSet;
 
                     /**
                      * -
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_weakAffinityWeight;
                     bool m_weakAffinityWeightHasBeenSet;
 
                     /**
                      * -
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_availableZoneScatterScheduleType;
                     bool m_availableZoneScatterScheduleTypeHasBeenSet;
 
                     /**
                      * -
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AvailableZoneScatterScheduleRule> m_availableZoneScatterScheduleRules;
                     bool m_availableZoneScatterScheduleRulesHasBeenSet;
 
                     /**
                      * -
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_podScheduleStrategyType;
                     bool m_podScheduleStrategyTypeHasBeenSet;
 
                     /**
                      * -
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CustomPodSchedule m_customPodSchedule;
                     bool m_customPodScheduleHasBeenSet;
 
                     /**
                      * -
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tolerateScheduleType;
                     bool m_tolerateScheduleTypeHasBeenSet;
 
                     /**
                      * -
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CustomTolerateSchedule> m_customTolerateSchedules;
                     bool m_customTolerateSchedulesHasBeenSet;

@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取亲和性范围
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Scope 亲和性范围
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetScope() const;
 
                     /**
                      * 设置亲和性范围
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scope 亲和性范围
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScope(const std::string& _scope);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取亲和规则的权重
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Weight 亲和规则的权重
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWeight() const;
 
                     /**
                      * 设置亲和规则的权重
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _weight 亲和规则的权重
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWeight(const std::string& _weight);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Paths -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CommonOption> GetPaths() const;
 
                     /**
                      * 设置-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _paths -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPaths(const std::vector<CommonOption>& _paths);
@@ -126,21 +114,18 @@ namespace TencentCloud
 
                     /**
                      * 亲和性范围
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scope;
                     bool m_scopeHasBeenSet;
 
                     /**
                      * 亲和规则的权重
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_weight;
                     bool m_weightHasBeenSet;
 
                     /**
                      * -
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CommonOption> m_paths;
                     bool m_pathsHasBeenSet;

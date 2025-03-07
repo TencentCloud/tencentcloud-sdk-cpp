@@ -109,7 +109,8 @@ TaskOpsDto::TaskOpsDto() :
     m_dLCResourceConfigHasBeenSet(false),
     m_parentTaskInfosHasBeenSet(false),
     m_extResourceFlagHasBeenSet(false),
-    m_newParentTaskInfosHasBeenSet(false)
+    m_newParentTaskInfosHasBeenSet(false),
+    m_selfWorkFlowDependTypeHasBeenSet(false)
 {
 }
 
@@ -1070,6 +1071,16 @@ CoreInternalOutcome TaskOpsDto::Deserialize(const rapidjson::Value &value)
         m_newParentTaskInfosHasBeenSet = true;
     }
 
+    if (value.HasMember("SelfWorkFlowDependType") && !value["SelfWorkFlowDependType"].IsNull())
+    {
+        if (!value["SelfWorkFlowDependType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskOpsDto.SelfWorkFlowDependType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_selfWorkFlowDependType = string(value["SelfWorkFlowDependType"].GetString());
+        m_selfWorkFlowDependTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1807,6 +1818,14 @@ void TaskOpsDto::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_selfWorkFlowDependTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SelfWorkFlowDependType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_selfWorkFlowDependType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -3234,5 +3253,21 @@ void TaskOpsDto::SetNewParentTaskInfos(const vector<AiopsSimpleTaskDto>& _newPar
 bool TaskOpsDto::NewParentTaskInfosHasBeenSet() const
 {
     return m_newParentTaskInfosHasBeenSet;
+}
+
+string TaskOpsDto::GetSelfWorkFlowDependType() const
+{
+    return m_selfWorkFlowDependType;
+}
+
+void TaskOpsDto::SetSelfWorkFlowDependType(const string& _selfWorkFlowDependType)
+{
+    m_selfWorkFlowDependType = _selfWorkFlowDependType;
+    m_selfWorkFlowDependTypeHasBeenSet = true;
+}
+
+bool TaskOpsDto::SelfWorkFlowDependTypeHasBeenSet() const
+{
+    return m_selfWorkFlowDependTypeHasBeenSet;
 }
 

@@ -556,6 +556,49 @@ LkeClient::CreateReleaseOutcomeCallable LkeClient::CreateReleaseCallable(const C
     return task->get_future();
 }
 
+LkeClient::CreateVarOutcome LkeClient::CreateVar(const CreateVarRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateVar");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateVarResponse rsp = CreateVarResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateVarOutcome(rsp);
+        else
+            return CreateVarOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateVarOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::CreateVarAsync(const CreateVarRequest& request, const CreateVarAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateVar(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::CreateVarOutcomeCallable LkeClient::CreateVarCallable(const CreateVarRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateVarOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateVar(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LkeClient::DeleteAppOutcome LkeClient::DeleteApp(const DeleteAppRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteApp");
@@ -2269,6 +2312,49 @@ LkeClient::GetTaskStatusOutcomeCallable LkeClient::GetTaskStatusCallable(const G
         [this, request]()
         {
             return this->GetTaskStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LkeClient::GetVarListOutcome LkeClient::GetVarList(const GetVarListRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetVarList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetVarListResponse rsp = GetVarListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetVarListOutcome(rsp);
+        else
+            return GetVarListOutcome(o.GetError());
+    }
+    else
+    {
+        return GetVarListOutcome(outcome.GetError());
+    }
+}
+
+void LkeClient::GetVarListAsync(const GetVarListRequest& request, const GetVarListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetVarList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeClient::GetVarListOutcomeCallable LkeClient::GetVarListCallable(const GetVarListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetVarListOutcome()>>(
+        [this, request]()
+        {
+            return this->GetVarList(request);
         }
     );
 

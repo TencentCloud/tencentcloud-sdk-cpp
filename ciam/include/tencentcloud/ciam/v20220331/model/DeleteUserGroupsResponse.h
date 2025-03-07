@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取删除的用户组关联的应用信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserGroupDeletedInfo 删除的用户组关联的应用信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     UserGroupDeleteResp GetUserGroupDeletedInfo() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 删除的用户组关联的应用信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     UserGroupDeleteResp m_userGroupDeletedInfo;
                     bool m_userGroupDeletedInfoHasBeenSet;

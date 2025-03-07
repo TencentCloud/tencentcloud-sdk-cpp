@@ -96,6 +96,27 @@ namespace TencentCloud
                      */
                     bool RefreshIntervalHasBeenSet() const;
 
+                    /**
+                     * 获取自定义参数
+                     * @return CustomSetting 自定义参数
+                     * 
+                     */
+                    std::string GetCustomSetting() const;
+
+                    /**
+                     * 设置自定义参数
+                     * @param _customSetting 自定义参数
+                     * 
+                     */
+                    void SetCustomSetting(const std::string& _customSetting);
+
+                    /**
+                     * 判断参数 CustomSetting 是否已赋值
+                     * @return CustomSetting 是否已赋值
+                     * 
+                     */
+                    bool CustomSettingHasBeenSet() const;
+
                 private:
 
                     /**
@@ -111,6 +132,12 @@ namespace TencentCloud
                      */
                     std::string m_refreshInterval;
                     bool m_refreshIntervalHasBeenSet;
+
+                    /**
+                     * 自定义参数
+                     */
+                    std::string m_customSetting;
+                    bool m_customSettingHasBeenSet;
 
                 };
             }
