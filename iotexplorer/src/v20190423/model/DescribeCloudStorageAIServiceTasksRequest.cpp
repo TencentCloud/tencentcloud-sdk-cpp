@@ -30,7 +30,11 @@ DescribeCloudStorageAIServiceTasksRequest::DescribeCloudStorageAIServiceTasksReq
     m_offsetHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_userIdHasBeenSet(false),
-    m_channelIdHasBeenSet(false)
+    m_channelIdHasBeenSet(false),
+    m_deviceNamesHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
+    m_endTimeHasBeenSet(false),
+    m_fileURLExpireTimeHasBeenSet(false)
 {
 }
 
@@ -103,6 +107,43 @@ string DescribeCloudStorageAIServiceTasksRequest::ToJsonString() const
         string key = "ChannelId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_channelId, allocator);
+    }
+
+    if (m_deviceNamesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceNames";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_deviceNames.begin(); itr != m_deviceNames.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_startTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_startTime, allocator);
+    }
+
+    if (m_endTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_endTime, allocator);
+    }
+
+    if (m_fileURLExpireTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileURLExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_fileURLExpireTime, allocator);
     }
 
 
@@ -239,6 +280,70 @@ void DescribeCloudStorageAIServiceTasksRequest::SetChannelId(const uint64_t& _ch
 bool DescribeCloudStorageAIServiceTasksRequest::ChannelIdHasBeenSet() const
 {
     return m_channelIdHasBeenSet;
+}
+
+vector<string> DescribeCloudStorageAIServiceTasksRequest::GetDeviceNames() const
+{
+    return m_deviceNames;
+}
+
+void DescribeCloudStorageAIServiceTasksRequest::SetDeviceNames(const vector<string>& _deviceNames)
+{
+    m_deviceNames = _deviceNames;
+    m_deviceNamesHasBeenSet = true;
+}
+
+bool DescribeCloudStorageAIServiceTasksRequest::DeviceNamesHasBeenSet() const
+{
+    return m_deviceNamesHasBeenSet;
+}
+
+int64_t DescribeCloudStorageAIServiceTasksRequest::GetStartTime() const
+{
+    return m_startTime;
+}
+
+void DescribeCloudStorageAIServiceTasksRequest::SetStartTime(const int64_t& _startTime)
+{
+    m_startTime = _startTime;
+    m_startTimeHasBeenSet = true;
+}
+
+bool DescribeCloudStorageAIServiceTasksRequest::StartTimeHasBeenSet() const
+{
+    return m_startTimeHasBeenSet;
+}
+
+int64_t DescribeCloudStorageAIServiceTasksRequest::GetEndTime() const
+{
+    return m_endTime;
+}
+
+void DescribeCloudStorageAIServiceTasksRequest::SetEndTime(const int64_t& _endTime)
+{
+    m_endTime = _endTime;
+    m_endTimeHasBeenSet = true;
+}
+
+bool DescribeCloudStorageAIServiceTasksRequest::EndTimeHasBeenSet() const
+{
+    return m_endTimeHasBeenSet;
+}
+
+int64_t DescribeCloudStorageAIServiceTasksRequest::GetFileURLExpireTime() const
+{
+    return m_fileURLExpireTime;
+}
+
+void DescribeCloudStorageAIServiceTasksRequest::SetFileURLExpireTime(const int64_t& _fileURLExpireTime)
+{
+    m_fileURLExpireTime = _fileURLExpireTime;
+    m_fileURLExpireTimeHasBeenSet = true;
+}
+
+bool DescribeCloudStorageAIServiceTasksRequest::FileURLExpireTimeHasBeenSet() const
+{
+    return m_fileURLExpireTimeHasBeenSet;
 }
 
 

@@ -451,6 +451,31 @@ namespace TencentCloud
                      */
                     bool IdHasBeenSet() const;
 
+                    /**
+                     * 获取引擎类型
+
+                     * @return EngineGeneration 引擎类型
+
+                     * 
+                     */
+                    std::string GetEngineGeneration() const;
+
+                    /**
+                     * 设置引擎类型
+
+                     * @param _engineGeneration 引擎类型
+
+                     * 
+                     */
+                    void SetEngineGeneration(const std::string& _engineGeneration);
+
+                    /**
+                     * 判断参数 EngineGeneration 是否已赋值
+                     * @return EngineGeneration 是否已赋值
+                     * 
+                     */
+                    bool EngineGenerationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -566,6 +591,13 @@ namespace TencentCloud
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
+
+                    /**
+                     * 引擎类型
+
+                     */
+                    std::string m_engineGeneration;
+                    bool m_engineGenerationHasBeenSet;
 
                 };
             }

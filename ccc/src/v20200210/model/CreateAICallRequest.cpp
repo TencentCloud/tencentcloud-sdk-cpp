@@ -49,7 +49,8 @@ CreateAICallRequest::CreateAICallRequest() :
     m_customTTSConfigHasBeenSet(false),
     m_promptVariablesHasBeenSet(false),
     m_vadSilenceTimeHasBeenSet(false),
-    m_extractConfigHasBeenSet(false)
+    m_extractConfigHasBeenSet(false),
+    m_temperatureHasBeenSet(false)
 {
 }
 
@@ -305,6 +306,14 @@ string CreateAICallRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_temperatureHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Temperature";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_temperature, allocator);
     }
 
 
@@ -745,6 +754,22 @@ void CreateAICallRequest::SetExtractConfig(const vector<AICallExtractConfigEleme
 bool CreateAICallRequest::ExtractConfigHasBeenSet() const
 {
     return m_extractConfigHasBeenSet;
+}
+
+double CreateAICallRequest::GetTemperature() const
+{
+    return m_temperature;
+}
+
+void CreateAICallRequest::SetTemperature(const double& _temperature)
+{
+    m_temperature = _temperature;
+    m_temperatureHasBeenSet = true;
+}
+
+bool CreateAICallRequest::TemperatureHasBeenSet() const
+{
+    return m_temperatureHasBeenSet;
 }
 
 

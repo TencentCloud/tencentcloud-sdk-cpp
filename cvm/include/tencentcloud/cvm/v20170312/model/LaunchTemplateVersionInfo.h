@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例启动模板版本号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LaunchTemplateVersion 实例启动模板版本号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetLaunchTemplateVersion() const;
 
                     /**
                      * 设置实例启动模板版本号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _launchTemplateVersion 实例启动模板版本号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLaunchTemplateVersion(const uint64_t& _launchTemplateVersion);
@@ -158,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例启动模板版本描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LaunchTemplateVersionDescription 实例启动模板版本描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLaunchTemplateVersionDescription() const;
 
                     /**
                      * 设置实例启动模板版本描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _launchTemplateVersionDescription 实例启动模板版本描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLaunchTemplateVersionDescription(const std::string& _launchTemplateVersionDescription);
@@ -206,7 +198,6 @@ namespace TencentCloud
 
                     /**
                      * 实例启动模板版本号。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_launchTemplateVersion;
                     bool m_launchTemplateVersionHasBeenSet;
@@ -237,7 +228,6 @@ namespace TencentCloud
 
                     /**
                      * 实例启动模板版本描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_launchTemplateVersionDescription;
                     bool m_launchTemplateVersionDescriptionHasBeenSet;

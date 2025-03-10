@@ -31,6 +31,7 @@ CloudStorageAIServiceTask::CloudStorageAIServiceTask() :
     m_statusHasBeenSet(false),
     m_resultHasBeenSet(false),
     m_filesHasBeenSet(false),
+    m_filesInfoHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_customIdHasBeenSet(false)
@@ -143,6 +144,26 @@ CoreInternalOutcome CloudStorageAIServiceTask::Deserialize(const rapidjson::Valu
             m_files.push_back((*itr).GetString());
         }
         m_filesHasBeenSet = true;
+    }
+
+    if (value.HasMember("FilesInfo") && !value["FilesInfo"].IsNull())
+    {
+        if (!value["FilesInfo"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CloudStorageAIServiceTask.FilesInfo` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["FilesInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CloudStorageAIServiceTaskFileInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_filesInfo.push_back(item);
+        }
+        m_filesInfoHasBeenSet = true;
     }
 
     if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
@@ -264,6 +285,21 @@ void CloudStorageAIServiceTask::ToJsonObject(rapidjson::Value &value, rapidjson:
         for (auto itr = m_files.begin(); itr != m_files.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_filesInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilesInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filesInfo.begin(); itr != m_filesInfo.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
@@ -452,6 +488,22 @@ void CloudStorageAIServiceTask::SetFiles(const vector<string>& _files)
 bool CloudStorageAIServiceTask::FilesHasBeenSet() const
 {
     return m_filesHasBeenSet;
+}
+
+vector<CloudStorageAIServiceTaskFileInfo> CloudStorageAIServiceTask::GetFilesInfo() const
+{
+    return m_filesInfo;
+}
+
+void CloudStorageAIServiceTask::SetFilesInfo(const vector<CloudStorageAIServiceTaskFileInfo>& _filesInfo)
+{
+    m_filesInfo = _filesInfo;
+    m_filesInfoHasBeenSet = true;
+}
+
+bool CloudStorageAIServiceTask::FilesInfoHasBeenSet() const
+{
+    return m_filesInfoHasBeenSet;
 }
 
 int64_t CloudStorageAIServiceTask::GetCreateTime() const

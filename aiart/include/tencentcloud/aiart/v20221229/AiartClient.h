@@ -43,6 +43,8 @@
 #include <tencentcloud/aiart/v20221229/model/QueryTextToImageProJobResponse.h>
 #include <tencentcloud/aiart/v20221229/model/QueryTrainPortraitModelJobRequest.h>
 #include <tencentcloud/aiart/v20221229/model/QueryTrainPortraitModelJobResponse.h>
+#include <tencentcloud/aiart/v20221229/model/RefineImageRequest.h>
+#include <tencentcloud/aiart/v20221229/model/RefineImageResponse.h>
 #include <tencentcloud/aiart/v20221229/model/ReplaceBackgroundRequest.h>
 #include <tencentcloud/aiart/v20221229/model/ReplaceBackgroundResponse.h>
 #include <tencentcloud/aiart/v20221229/model/SketchToImageRequest.h>
@@ -105,6 +107,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QueryTrainPortraitModelJobResponse> QueryTrainPortraitModelJobOutcome;
                 typedef std::future<QueryTrainPortraitModelJobOutcome> QueryTrainPortraitModelJobOutcomeCallable;
                 typedef std::function<void(const AiartClient*, const Model::QueryTrainPortraitModelJobRequest&, QueryTrainPortraitModelJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryTrainPortraitModelJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::RefineImageResponse> RefineImageOutcome;
+                typedef std::future<RefineImageOutcome> RefineImageOutcomeCallable;
+                typedef std::function<void(const AiartClient*, const Model::RefineImageRequest&, RefineImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RefineImageAsyncHandler;
                 typedef Outcome<Core::Error, Model::ReplaceBackgroundResponse> ReplaceBackgroundOutcome;
                 typedef std::future<ReplaceBackgroundOutcome> ReplaceBackgroundOutcomeCallable;
                 typedef std::function<void(const AiartClient*, const Model::ReplaceBackgroundRequest&, ReplaceBackgroundOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReplaceBackgroundAsyncHandler;
@@ -255,6 +260,16 @@ AI 美照默认提供1个并发，代表最多能同时处理1个已提交的任
                 QueryTrainPortraitModelJobOutcome QueryTrainPortraitModelJob(const Model::QueryTrainPortraitModelJobRequest &request);
                 void QueryTrainPortraitModelJobAsync(const Model::QueryTrainPortraitModelJobRequest& request, const QueryTrainPortraitModelJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryTrainPortraitModelJobOutcomeCallable QueryTrainPortraitModelJobCallable(const Model::QueryTrainPortraitModelJobRequest& request);
+
+                /**
+                 *将图像变清晰，增强图像细节。变清晰后的图片将保持原图比例，长边为2048。
+默认提供1个并发，代表最多能同时处理1个已提交的任务。
+                 * @param req RefineImageRequest
+                 * @return RefineImageOutcome
+                 */
+                RefineImageOutcome RefineImage(const Model::RefineImageRequest &request);
+                void RefineImageAsync(const Model::RefineImageRequest& request, const RefineImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RefineImageOutcomeCallable RefineImageCallable(const Model::RefineImageRequest& request);
 
                 /**
                  *商品背景生成接口根据指定的背景描述 Prompt，将商品图中的原背景替换为自定义的新背景并保留商品主体形象，实现商品背景的自由生成与更换。

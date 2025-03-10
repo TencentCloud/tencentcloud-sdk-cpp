@@ -470,6 +470,49 @@ AiartClient::QueryTrainPortraitModelJobOutcomeCallable AiartClient::QueryTrainPo
     return task->get_future();
 }
 
+AiartClient::RefineImageOutcome AiartClient::RefineImage(const RefineImageRequest &request)
+{
+    auto outcome = MakeRequest(request, "RefineImage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RefineImageResponse rsp = RefineImageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RefineImageOutcome(rsp);
+        else
+            return RefineImageOutcome(o.GetError());
+    }
+    else
+    {
+        return RefineImageOutcome(outcome.GetError());
+    }
+}
+
+void AiartClient::RefineImageAsync(const RefineImageRequest& request, const RefineImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RefineImage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AiartClient::RefineImageOutcomeCallable AiartClient::RefineImageCallable(const RefineImageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RefineImageOutcome()>>(
+        [this, request]()
+        {
+            return this->RefineImage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AiartClient::ReplaceBackgroundOutcome AiartClient::ReplaceBackground(const ReplaceBackgroundRequest &request)
 {
     auto outcome = MakeRequest(request, "ReplaceBackground");

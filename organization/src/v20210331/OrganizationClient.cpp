@@ -513,6 +513,49 @@ OrganizationClient::BindOrganizationMemberAuthAccountOutcomeCallable Organizatio
     return task->get_future();
 }
 
+OrganizationClient::BindOrganizationPolicySubAccountOutcome OrganizationClient::BindOrganizationPolicySubAccount(const BindOrganizationPolicySubAccountRequest &request)
+{
+    auto outcome = MakeRequest(request, "BindOrganizationPolicySubAccount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BindOrganizationPolicySubAccountResponse rsp = BindOrganizationPolicySubAccountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BindOrganizationPolicySubAccountOutcome(rsp);
+        else
+            return BindOrganizationPolicySubAccountOutcome(o.GetError());
+    }
+    else
+    {
+        return BindOrganizationPolicySubAccountOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::BindOrganizationPolicySubAccountAsync(const BindOrganizationPolicySubAccountRequest& request, const BindOrganizationPolicySubAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BindOrganizationPolicySubAccount(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OrganizationClient::BindOrganizationPolicySubAccountOutcomeCallable OrganizationClient::BindOrganizationPolicySubAccountCallable(const BindOrganizationPolicySubAccountRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BindOrganizationPolicySubAccountOutcome()>>(
+        [this, request]()
+        {
+            return this->BindOrganizationPolicySubAccount(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OrganizationClient::CancelOrganizationMemberAuthAccountOutcome OrganizationClient::CancelOrganizationMemberAuthAccount(const CancelOrganizationMemberAuthAccountRequest &request)
 {
     auto outcome = MakeRequest(request, "CancelOrganizationMemberAuthAccount");
@@ -549,6 +592,49 @@ OrganizationClient::CancelOrganizationMemberAuthAccountOutcomeCallable Organizat
         [this, request]()
         {
             return this->CancelOrganizationMemberAuthAccount(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OrganizationClient::CancelOrganizationPolicySubAccountOutcome OrganizationClient::CancelOrganizationPolicySubAccount(const CancelOrganizationPolicySubAccountRequest &request)
+{
+    auto outcome = MakeRequest(request, "CancelOrganizationPolicySubAccount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CancelOrganizationPolicySubAccountResponse rsp = CancelOrganizationPolicySubAccountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CancelOrganizationPolicySubAccountOutcome(rsp);
+        else
+            return CancelOrganizationPolicySubAccountOutcome(o.GetError());
+    }
+    else
+    {
+        return CancelOrganizationPolicySubAccountOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::CancelOrganizationPolicySubAccountAsync(const CancelOrganizationPolicySubAccountRequest& request, const CancelOrganizationPolicySubAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CancelOrganizationPolicySubAccount(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OrganizationClient::CancelOrganizationPolicySubAccountOutcomeCallable OrganizationClient::CancelOrganizationPolicySubAccountCallable(const CancelOrganizationPolicySubAccountRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CancelOrganizationPolicySubAccountOutcome()>>(
+        [this, request]()
+        {
+            return this->CancelOrganizationPolicySubAccount(request);
         }
     );
 

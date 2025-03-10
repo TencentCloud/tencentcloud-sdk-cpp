@@ -132,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取预支费用的折扣，如20.0代表2折。 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FixedPriceDiscount 预支费用的折扣，如20.0代表2折。 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetFixedPriceDiscount() const;
 
                     /**
                      * 设置预支费用的折扣，如20.0代表2折。 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fixedPriceDiscount 预支费用的折扣，如20.0代表2折。 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFixedPriceDiscount(const double& _fixedPriceDiscount);
@@ -157,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取后续费用的折扣，如20.0代表2折。 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UsagePriceDiscount 后续费用的折扣，如20.0代表2折。 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetUsagePriceDiscount() const;
 
                     /**
                      * 设置后续费用的折扣，如20.0代表2折。 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _usagePriceDiscount 后续费用的折扣，如20.0代表2折。 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUsagePriceDiscount(const double& _usagePriceDiscount);
@@ -208,14 +200,12 @@ namespace TencentCloud
 
                     /**
                      * 预支费用的折扣，如20.0代表2折。 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_fixedPriceDiscount;
                     bool m_fixedPriceDiscountHasBeenSet;
 
                     /**
                      * 后续费用的折扣，如20.0代表2折。 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_usagePriceDiscount;
                     bool m_usagePriceDiscountHasBeenSet;

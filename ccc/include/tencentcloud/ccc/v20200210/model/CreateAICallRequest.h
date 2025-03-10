@@ -1276,6 +1276,27 @@ HoaiMy
                      */
                     bool ExtractConfigHasBeenSet() const;
 
+                    /**
+                     * 获取模型温度控制
+                     * @return Temperature 模型温度控制
+                     * 
+                     */
+                    double GetTemperature() const;
+
+                    /**
+                     * 设置模型温度控制
+                     * @param _temperature 模型温度控制
+                     * 
+                     */
+                    void SetTemperature(const double& _temperature);
+
+                    /**
+                     * 判断参数 Temperature 是否已赋值
+                     * @return Temperature 是否已赋值
+                     * 
+                     */
+                    bool TemperatureHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1605,6 +1626,12 @@ HoaiMy
                      */
                     std::vector<AICallExtractConfigElement> m_extractConfig;
                     bool m_extractConfigHasBeenSet;
+
+                    /**
+                     * 模型温度控制
+                     */
+                    double m_temperature;
+                    bool m_temperatureHasBeenSet;
 
                 };
             }

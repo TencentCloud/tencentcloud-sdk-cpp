@@ -272,6 +272,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/CloudStorageEventWithAITasks.h
   include/tencentcloud/iotexplorer/v20190423/model/CreateDeviceChannelRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeDevicePackagesResponse.h
+  include/tencentcloud/iotexplorer/v20190423/model/CloudStorageAIServiceTaskVideoMetaInfo.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeGatewaySubDeviceListResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/SearchStudioProductResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeVideoLicenseResponse.h
@@ -303,6 +304,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/DeleteProjectRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/CloudStoragePackageInfo.h
   include/tencentcloud/iotexplorer/v20190423/model/DevicesItem.h
+  include/tencentcloud/iotexplorer/v20190423/model/CloudStorageAIServiceTaskFileInfo.h
   include/tencentcloud/iotexplorer/v20190423/model/UpdateDevicesEnableStateResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/GenerateSignedVideoURLRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/ModifyPositionFenceRequest.h
@@ -659,6 +661,7 @@ set(iotexplorer_src
   src/v20190423/model/CloudStorageEventWithAITasks.cpp
   src/v20190423/model/CreateDeviceChannelRequest.cpp
   src/v20190423/model/DescribeDevicePackagesResponse.cpp
+  src/v20190423/model/CloudStorageAIServiceTaskVideoMetaInfo.cpp
   src/v20190423/model/DescribeGatewaySubDeviceListResponse.cpp
   src/v20190423/model/SearchStudioProductResponse.cpp
   src/v20190423/model/DescribeVideoLicenseResponse.cpp
@@ -690,6 +693,7 @@ set(iotexplorer_src
   src/v20190423/model/DeleteProjectRequest.cpp
   src/v20190423/model/CloudStoragePackageInfo.cpp
   src/v20190423/model/DevicesItem.cpp
+  src/v20190423/model/CloudStorageAIServiceTaskFileInfo.cpp
   src/v20190423/model/UpdateDevicesEnableStateResponse.cpp
   src/v20190423/model/GenerateSignedVideoURLRequest.cpp
   src/v20190423/model/ModifyPositionFenceRequest.cpp

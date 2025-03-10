@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CloudStorageAIServiceTaskFileInfo.h>
 
 
 namespace TencentCloud
@@ -273,6 +274,27 @@ namespace TencentCloud
                     bool FilesHasBeenSet() const;
 
                     /**
+                     * 获取任务输出文件信息列表
+                     * @return FilesInfo 任务输出文件信息列表
+                     * 
+                     */
+                    std::vector<CloudStorageAIServiceTaskFileInfo> GetFilesInfo() const;
+
+                    /**
+                     * 设置任务输出文件信息列表
+                     * @param _filesInfo 任务输出文件信息列表
+                     * 
+                     */
+                    void SetFilesInfo(const std::vector<CloudStorageAIServiceTaskFileInfo>& _filesInfo);
+
+                    /**
+                     * 判断参数 FilesInfo 是否已赋值
+                     * @return FilesInfo 是否已赋值
+                     * 
+                     */
+                    bool FilesInfoHasBeenSet() const;
+
+                    /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
                      * 
@@ -400,6 +422,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_files;
                     bool m_filesHasBeenSet;
+
+                    /**
+                     * 任务输出文件信息列表
+                     */
+                    std::vector<CloudStorageAIServiceTaskFileInfo> m_filesInfo;
+                    bool m_filesInfoHasBeenSet;
 
                     /**
                      * 创建时间

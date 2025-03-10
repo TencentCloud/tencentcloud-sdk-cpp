@@ -242,6 +242,106 @@ namespace TencentCloud
                      */
                     bool ChannelIdHasBeenSet() const;
 
+                    /**
+                     * 获取设备名称列表。
+
+当需要同时查询多台设备的任务列表时传入，优先级高于参数 `DeviceName`
+                     * @return DeviceNames 设备名称列表。
+
+当需要同时查询多台设备的任务列表时传入，优先级高于参数 `DeviceName`
+                     * 
+                     */
+                    std::vector<std::string> GetDeviceNames() const;
+
+                    /**
+                     * 设置设备名称列表。
+
+当需要同时查询多台设备的任务列表时传入，优先级高于参数 `DeviceName`
+                     * @param _deviceNames 设备名称列表。
+
+当需要同时查询多台设备的任务列表时传入，优先级高于参数 `DeviceName`
+                     * 
+                     */
+                    void SetDeviceNames(const std::vector<std::string>& _deviceNames);
+
+                    /**
+                     * 判断参数 DeviceNames 是否已赋值
+                     * @return DeviceNames 是否已赋值
+                     * 
+                     */
+                    bool DeviceNamesHasBeenSet() const;
+
+                    /**
+                     * 获取查询任务时间范围的起始时间（秒级 UNIX 时间戳）
+                     * @return StartTime 查询任务时间范围的起始时间（秒级 UNIX 时间戳）
+                     * 
+                     */
+                    int64_t GetStartTime() const;
+
+                    /**
+                     * 设置查询任务时间范围的起始时间（秒级 UNIX 时间戳）
+                     * @param _startTime 查询任务时间范围的起始时间（秒级 UNIX 时间戳）
+                     * 
+                     */
+                    void SetStartTime(const int64_t& _startTime);
+
+                    /**
+                     * 判断参数 StartTime 是否已赋值
+                     * @return StartTime 是否已赋值
+                     * 
+                     */
+                    bool StartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取查询任务时间范围的结束时间（秒级 UNIX 时间戳）
+                     * @return EndTime 查询任务时间范围的结束时间（秒级 UNIX 时间戳）
+                     * 
+                     */
+                    int64_t GetEndTime() const;
+
+                    /**
+                     * 设置查询任务时间范围的结束时间（秒级 UNIX 时间戳）
+                     * @param _endTime 查询任务时间范围的结束时间（秒级 UNIX 时间戳）
+                     * 
+                     */
+                    void SetEndTime(const int64_t& _endTime);
+
+                    /**
+                     * 判断参数 EndTime 是否已赋值
+                     * @return EndTime 是否已赋值
+                     * 
+                     */
+                    bool EndTimeHasBeenSet() const;
+
+                    /**
+                     * 获取下载 URL 的过期时间。
+
+若传入该参数，则响应中将包含所有文件的下载 URL
+                     * @return FileURLExpireTime 下载 URL 的过期时间。
+
+若传入该参数，则响应中将包含所有文件的下载 URL
+                     * 
+                     */
+                    int64_t GetFileURLExpireTime() const;
+
+                    /**
+                     * 设置下载 URL 的过期时间。
+
+若传入该参数，则响应中将包含所有文件的下载 URL
+                     * @param _fileURLExpireTime 下载 URL 的过期时间。
+
+若传入该参数，则响应中将包含所有文件的下载 URL
+                     * 
+                     */
+                    void SetFileURLExpireTime(const int64_t& _fileURLExpireTime);
+
+                    /**
+                     * 判断参数 FileURLExpireTime 是否已赋值
+                     * @return FileURLExpireTime 是否已赋值
+                     * 
+                     */
+                    bool FileURLExpireTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -299,6 +399,34 @@ namespace TencentCloud
                      */
                     uint64_t m_channelId;
                     bool m_channelIdHasBeenSet;
+
+                    /**
+                     * 设备名称列表。
+
+当需要同时查询多台设备的任务列表时传入，优先级高于参数 `DeviceName`
+                     */
+                    std::vector<std::string> m_deviceNames;
+                    bool m_deviceNamesHasBeenSet;
+
+                    /**
+                     * 查询任务时间范围的起始时间（秒级 UNIX 时间戳）
+                     */
+                    int64_t m_startTime;
+                    bool m_startTimeHasBeenSet;
+
+                    /**
+                     * 查询任务时间范围的结束时间（秒级 UNIX 时间戳）
+                     */
+                    int64_t m_endTime;
+                    bool m_endTimeHasBeenSet;
+
+                    /**
+                     * 下载 URL 的过期时间。
+
+若传入该参数，则响应中将包含所有文件的下载 URL
+                     */
+                    int64_t m_fileURLExpireTime;
+                    bool m_fileURLExpireTimeHasBeenSet;
 
                 };
             }
