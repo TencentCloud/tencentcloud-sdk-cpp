@@ -237,9 +237,7 @@ video 纯视频
 
                     /**
                      * 获取助教UserId列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Assistants 助教UserId列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetAssistants() const;
@@ -253,9 +251,7 @@ video 纯视频
 
                     /**
                      * 获取录制地址（协议为https)。仅在房间结束后存在。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecordUrl 录制地址（协议为https)。仅在房间结束后存在。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRecordUrl() const;
@@ -269,9 +265,7 @@ video 纯视频
 
                     /**
                      * 获取课堂状态。0为未开始，1为已开始，2为已结束，3为已过期。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 课堂状态。0为未开始，1为已开始，2为已结束，3为已过期。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStatus() const;
@@ -285,9 +279,7 @@ video 纯视频
 
                     /**
                      * 获取房间绑定的群组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupId 房间绑定的群组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupId() const;
@@ -529,6 +521,20 @@ video 纯视频
                      */
                     bool RecordLayoutHasBeenSet() const;
 
+                    /**
+                     * 获取板书截图生成类型。0 不生成板书；1 全量模式；2 单页去重模式
+                     * @return WhiteBoardSnapshotMode 板书截图生成类型。0 不生成板书；1 全量模式；2 单页去重模式
+                     * 
+                     */
+                    uint64_t GetWhiteBoardSnapshotMode() const;
+
+                    /**
+                     * 判断参数 WhiteBoardSnapshotMode 是否已赋值
+                     * @return WhiteBoardSnapshotMode 是否已赋值
+                     * 
+                     */
+                    bool WhiteBoardSnapshotModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -617,28 +623,24 @@ video 纯视频
 
                     /**
                      * 助教UserId列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_assistants;
                     bool m_assistantsHasBeenSet;
 
                     /**
                      * 录制地址（协议为https)。仅在房间结束后存在。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_recordUrl;
                     bool m_recordUrlHasBeenSet;
 
                     /**
                      * 课堂状态。0为未开始，1为已开始，2为已结束，3为已过期。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 房间绑定的群组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
@@ -741,6 +743,12 @@ video 纯视频
                      */
                     uint64_t m_recordLayout;
                     bool m_recordLayoutHasBeenSet;
+
+                    /**
+                     * 板书截图生成类型。0 不生成板书；1 全量模式；2 单页去重模式
+                     */
+                    uint64_t m_whiteBoardSnapshotMode;
+                    bool m_whiteBoardSnapshotModeHasBeenSet;
 
                 };
             }

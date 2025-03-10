@@ -92,12 +92,26 @@ namespace TencentCloud
                     /**
                      * 获取执行任务状态。取值范围：
 
-<ul> <li>PENDING：等待下发</li> <li>RUNNING：命令运行中</li> <li>SUCCESS：命令成功</li> <li>FAILED：命令失败</li> <li>TIMEOUT：命令超时</li> <li>PARTIAL_FAILED：命令部分失败</li> <li>PARTIAL_CANCELLED：任务部分取消</li> <li>CANCELLED：任务全部取消</li> <li>CANCELLING：任务取消中</li> </ul>
-
+- PENDING：等待下发
+- RUNNING：命令运行中
+- CANCELLING：取消中
+- SUCCESS：命令成功
+- TIMEOUT：命令超时
+- FAILED：命令失败
+- CANCELLED：命令全部取消
+- PARTIAL_FAILED：命令部分失败
+- PARTIAL_CANCELLED：命令部分取消
                      * @return InvocationStatus 执行任务状态。取值范围：
 
-<ul> <li>PENDING：等待下发</li> <li>RUNNING：命令运行中</li> <li>SUCCESS：命令成功</li> <li>FAILED：命令失败</li> <li>TIMEOUT：命令超时</li> <li>PARTIAL_FAILED：命令部分失败</li> <li>PARTIAL_CANCELLED：任务部分取消</li> <li>CANCELLED：任务全部取消</li> <li>CANCELLING：任务取消中</li> </ul>
-
+- PENDING：等待下发
+- RUNNING：命令运行中
+- CANCELLING：取消中
+- SUCCESS：命令成功
+- TIMEOUT：命令超时
+- FAILED：命令失败
+- CANCELLED：命令全部取消
+- PARTIAL_FAILED：命令部分失败
+- PARTIAL_CANCELLED：命令部分取消
                      * 
                      */
                     std::string GetInvocationStatus() const;
@@ -105,12 +119,26 @@ namespace TencentCloud
                     /**
                      * 设置执行任务状态。取值范围：
 
-<ul> <li>PENDING：等待下发</li> <li>RUNNING：命令运行中</li> <li>SUCCESS：命令成功</li> <li>FAILED：命令失败</li> <li>TIMEOUT：命令超时</li> <li>PARTIAL_FAILED：命令部分失败</li> <li>PARTIAL_CANCELLED：任务部分取消</li> <li>CANCELLED：任务全部取消</li> <li>CANCELLING：任务取消中</li> </ul>
-
+- PENDING：等待下发
+- RUNNING：命令运行中
+- CANCELLING：取消中
+- SUCCESS：命令成功
+- TIMEOUT：命令超时
+- FAILED：命令失败
+- CANCELLED：命令全部取消
+- PARTIAL_FAILED：命令部分失败
+- PARTIAL_CANCELLED：命令部分取消
                      * @param _invocationStatus 执行任务状态。取值范围：
 
-<ul> <li>PENDING：等待下发</li> <li>RUNNING：命令运行中</li> <li>SUCCESS：命令成功</li> <li>FAILED：命令失败</li> <li>TIMEOUT：命令超时</li> <li>PARTIAL_FAILED：命令部分失败</li> <li>PARTIAL_CANCELLED：任务部分取消</li> <li>CANCELLED：任务全部取消</li> <li>CANCELLING：任务取消中</li> </ul>
-
+- PENDING：等待下发
+- RUNNING：命令运行中
+- CANCELLING：取消中
+- SUCCESS：命令成功
+- TIMEOUT：命令超时
+- FAILED：命令失败
+- CANCELLED：命令全部取消
+- PARTIAL_FAILED：命令部分失败
+- PARTIAL_CANCELLED：命令部分取消
                      * 
                      */
                     void SetInvocationStatus(const std::string& _invocationStatus);
@@ -165,15 +193,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取执行活动开始时间。
-                     * @return StartTime 执行活动开始时间。
+                     * 获取执行活动开始时间。格式为：YYYY-MM-DDThh:mm:ssZ
+                     * @return StartTime 执行活动开始时间。格式为：YYYY-MM-DDThh:mm:ssZ
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置执行活动开始时间。
-                     * @param _startTime 执行活动开始时间。
+                     * 设置执行活动开始时间。格式为：YYYY-MM-DDThh:mm:ssZ
+                     * @param _startTime 执行活动开始时间。格式为：YYYY-MM-DDThh:mm:ssZ
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -186,15 +214,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取执行活动结束时间。
-                     * @return EndTime 执行活动结束时间。
+                     * 获取执行活动结束时间。格式为：YYYY-MM-DDThh:mm:ssZ
+                     * @return EndTime 执行活动结束时间。格式为：YYYY-MM-DDThh:mm:ssZ
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置执行活动结束时间。
-                     * @param _endTime 执行活动结束时间。
+                     * 设置执行活动结束时间。格式为：YYYY-MM-DDThh:mm:ssZ
+                     * @param _endTime 执行活动结束时间。格式为：YYYY-MM-DDThh:mm:ssZ
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -207,15 +235,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取执行活动创建时间。
-                     * @return CreatedTime 执行活动创建时间。
+                     * 获取执行活动创建时间。格式为：YYYY-MM-DDThh:mm:ssZ
+                     * @return CreatedTime 执行活动创建时间。格式为：YYYY-MM-DDThh:mm:ssZ
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
-                     * 设置执行活动创建时间。
-                     * @param _createdTime 执行活动创建时间。
+                     * 设置执行活动创建时间。格式为：YYYY-MM-DDThh:mm:ssZ
+                     * @param _createdTime 执行活动创建时间。格式为：YYYY-MM-DDThh:mm:ssZ
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -228,15 +256,15 @@ namespace TencentCloud
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取执行活动更新时间。
-                     * @return UpdatedTime 执行活动更新时间。
+                     * 获取执行活动更新时间。格式为：YYYY-MM-DDThh:mm:ssZ
+                     * @return UpdatedTime 执行活动更新时间。格式为：YYYY-MM-DDThh:mm:ssZ
                      * 
                      */
                     std::string GetUpdatedTime() const;
 
                     /**
-                     * 设置执行活动更新时间。
-                     * @param _updatedTime 执行活动更新时间。
+                     * 设置执行活动更新时间。格式为：YYYY-MM-DDThh:mm:ssZ
+                     * @param _updatedTime 执行活动更新时间。格式为：YYYY-MM-DDThh:mm:ssZ
                      * 
                      */
                     void SetUpdatedTime(const std::string& _updatedTime);
@@ -334,14 +362,26 @@ namespace TencentCloud
 
                     /**
                      * 获取调用来源。
+
+- USER：来源于用户调用。
+- INVOKER：来源于定时执行。
                      * @return InvocationSource 调用来源。
+
+- USER：来源于用户调用。
+- INVOKER：来源于定时执行。
                      * 
                      */
                     std::string GetInvocationSource() const;
 
                     /**
                      * 设置调用来源。
+
+- USER：来源于用户调用。
+- INVOKER：来源于定时执行。
                      * @param _invocationSource 调用来源。
+
+- USER：来源于用户调用。
+- INVOKER：来源于定时执行。
                      * 
                      */
                     void SetInvocationSource(const std::string& _invocationSource);
@@ -496,8 +536,15 @@ namespace TencentCloud
                     /**
                      * 执行任务状态。取值范围：
 
-<ul> <li>PENDING：等待下发</li> <li>RUNNING：命令运行中</li> <li>SUCCESS：命令成功</li> <li>FAILED：命令失败</li> <li>TIMEOUT：命令超时</li> <li>PARTIAL_FAILED：命令部分失败</li> <li>PARTIAL_CANCELLED：任务部分取消</li> <li>CANCELLED：任务全部取消</li> <li>CANCELLING：任务取消中</li> </ul>
-
+- PENDING：等待下发
+- RUNNING：命令运行中
+- CANCELLING：取消中
+- SUCCESS：命令成功
+- TIMEOUT：命令超时
+- FAILED：命令失败
+- CANCELLED：命令全部取消
+- PARTIAL_FAILED：命令部分失败
+- PARTIAL_CANCELLED：命令部分取消
                      */
                     std::string m_invocationStatus;
                     bool m_invocationStatusHasBeenSet;
@@ -515,25 +562,25 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 执行活动开始时间。
+                     * 执行活动开始时间。格式为：YYYY-MM-DDThh:mm:ssZ
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 执行活动结束时间。
+                     * 执行活动结束时间。格式为：YYYY-MM-DDThh:mm:ssZ
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 执行活动创建时间。
+                     * 执行活动创建时间。格式为：YYYY-MM-DDThh:mm:ssZ
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
 
                     /**
-                     * 执行活动更新时间。
+                     * 执行活动更新时间。格式为：YYYY-MM-DDThh:mm:ssZ
                      */
                     std::string m_updatedTime;
                     bool m_updatedTimeHasBeenSet;
@@ -564,6 +611,9 @@ namespace TencentCloud
 
                     /**
                      * 调用来源。
+
+- USER：来源于用户调用。
+- INVOKER：来源于定时执行。
                      */
                     std::string m_invocationSource;
                     bool m_invocationSourceHasBeenSet;

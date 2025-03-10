@@ -70,7 +70,8 @@ CynosdbClusterDetail::CynosdbClusterDetail() :
     m_resourcePackagesHasBeenSet(false),
     m_renewFlagHasBeenSet(false),
     m_networkTypeHasBeenSet(false),
-    m_slaveZoneAttrHasBeenSet(false)
+    m_slaveZoneAttrHasBeenSet(false),
+    m_cynosVersionTagHasBeenSet(false)
 {
 }
 
@@ -649,6 +650,16 @@ CoreInternalOutcome CynosdbClusterDetail::Deserialize(const rapidjson::Value &va
         m_slaveZoneAttrHasBeenSet = true;
     }
 
+    if (value.HasMember("CynosVersionTag") && !value["CynosVersionTag"].IsNull())
+    {
+        if (!value["CynosVersionTag"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.CynosVersionTag` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cynosVersionTag = string(value["CynosVersionTag"].GetString());
+        m_cynosVersionTagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1102,6 +1113,14 @@ void CynosdbClusterDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_cynosVersionTagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CynosVersionTag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cynosVersionTag.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1905,5 +1924,21 @@ void CynosdbClusterDetail::SetSlaveZoneAttr(const vector<SlaveZoneAttrItem>& _sl
 bool CynosdbClusterDetail::SlaveZoneAttrHasBeenSet() const
 {
     return m_slaveZoneAttrHasBeenSet;
+}
+
+string CynosdbClusterDetail::GetCynosVersionTag() const
+{
+    return m_cynosVersionTag;
+}
+
+void CynosdbClusterDetail::SetCynosVersionTag(const string& _cynosVersionTag)
+{
+    m_cynosVersionTag = _cynosVersionTag;
+    m_cynosVersionTagHasBeenSet = true;
+}
+
+bool CynosdbClusterDetail::CynosVersionTagHasBeenSet() const
+{
+    return m_cynosVersionTagHasBeenSet;
 }
 

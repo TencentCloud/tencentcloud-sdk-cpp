@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tat/v20201028/model/Tag.h>
 
 
 namespace TencentCloud
@@ -131,15 +132,15 @@ namespace TencentCloud
                     bool MachineIdHasBeenSet() const;
 
                     /**
-                     * 获取系统名。
-                     * @return SystemName 系统名。
+                     * 获取系统名。取值：Linux | Windows。
+                     * @return SystemName 系统名。取值：Linux | Windows。
                      * 
                      */
                     std::string GetSystemName() const;
 
                     /**
-                     * 设置系统名。
-                     * @param _systemName 系统名。
+                     * 设置系统名。取值：Linux | Windows。
+                     * @param _systemName 系统名。取值：Linux | Windows。
                      * 
                      */
                     void SetSystemName(const std::string& _systemName);
@@ -240,15 +241,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取创建时间。
-                     * @return CreatedTime 创建时间。
+                     * 获取创建时间。格式为：YYYY-MM-DDThh:mm:ssZ
+                     * @return CreatedTime 创建时间。格式为：YYYY-MM-DDThh:mm:ssZ
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
-                     * 设置创建时间。
-                     * @param _createdTime 创建时间。
+                     * 设置创建时间。格式为：YYYY-MM-DDThh:mm:ssZ
+                     * @param _createdTime 创建时间。格式为：YYYY-MM-DDThh:mm:ssZ
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -261,15 +262,15 @@ namespace TencentCloud
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取上次更新时间。
-                     * @return UpdatedTime 上次更新时间。
+                     * 获取上次更新时间。格式为：YYYY-MM-DDThh:mm:ssZ
+                     * @return UpdatedTime 上次更新时间。格式为：YYYY-MM-DDThh:mm:ssZ
                      * 
                      */
                     std::string GetUpdatedTime() const;
 
                     /**
-                     * 设置上次更新时间。
-                     * @param _updatedTime 上次更新时间。
+                     * 设置上次更新时间。格式为：YYYY-MM-DDThh:mm:ssZ
+                     * @param _updatedTime 上次更新时间。格式为：YYYY-MM-DDThh:mm:ssZ
                      * 
                      */
                     void SetUpdatedTime(const std::string& _updatedTime);
@@ -280,6 +281,27 @@ namespace TencentCloud
                      * 
                      */
                     bool UpdatedTimeHasBeenSet() const;
+
+                    /**
+                     * 获取标签
+                     * @return Tags 标签
+                     * 
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置标签
+                     * @param _tags 标签
+                     * 
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
 
                 private:
 
@@ -308,7 +330,7 @@ namespace TencentCloud
                     bool m_machineIdHasBeenSet;
 
                     /**
-                     * 系统名。
+                     * 系统名。取值：Linux | Windows。
                      */
                     std::string m_systemName;
                     bool m_systemNameHasBeenSet;
@@ -339,16 +361,22 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 创建时间。
+                     * 创建时间。格式为：YYYY-MM-DDThh:mm:ssZ
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
 
                     /**
-                     * 上次更新时间。
+                     * 上次更新时间。格式为：YYYY-MM-DDThh:mm:ssZ
                      */
                     std::string m_updatedTime;
                     bool m_updatedTimeHasBeenSet;
+
+                    /**
+                     * 标签
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

@@ -43,15 +43,23 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取执行活动ID
-                     * @return InvocationId 执行活动ID
+                     * 获取执行活动ID。
+
+可通过 [DescribeInvocations(查询执行活动)](https://cloud.tencent.com/document/api/1340/52679) 接口获取。
+                     * @return InvocationId 执行活动ID。
+
+可通过 [DescribeInvocations(查询执行活动)](https://cloud.tencent.com/document/api/1340/52679) 接口获取。
                      * 
                      */
                     std::string GetInvocationId() const;
 
                     /**
-                     * 设置执行活动ID
-                     * @param _invocationId 执行活动ID
+                     * 设置执行活动ID。
+
+可通过 [DescribeInvocations(查询执行活动)](https://cloud.tencent.com/document/api/1340/52679) 接口获取。
+                     * @param _invocationId 执行活动ID。
+
+可通过 [DescribeInvocations(查询执行活动)](https://cloud.tencent.com/document/api/1340/52679) 接口获取。
                      * 
                      */
                     void SetInvocationId(const std::string& _invocationId);
@@ -64,23 +72,35 @@ namespace TencentCloud
                     bool InvocationIdHasBeenSet() const;
 
                     /**
-                     * 获取实例ID列表，上限100。支持实例类型：
-<li> CVM </li>
-<li> LIGHTHOUSE </li>
-                     * @return InstanceIds 实例ID列表，上限100。支持实例类型：
-<li> CVM </li>
-<li> LIGHTHOUSE </li>
+                     * 获取实例ID列表，上限100。
+
+可通过对应云产品的查询实例接口获取实例 ID。目前支持实例类型：
+- CVM
+- Lighthouse
+- TAT 托管实例
+                     * @return InstanceIds 实例ID列表，上限100。
+
+可通过对应云产品的查询实例接口获取实例 ID。目前支持实例类型：
+- CVM
+- Lighthouse
+- TAT 托管实例
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置实例ID列表，上限100。支持实例类型：
-<li> CVM </li>
-<li> LIGHTHOUSE </li>
-                     * @param _instanceIds 实例ID列表，上限100。支持实例类型：
-<li> CVM </li>
-<li> LIGHTHOUSE </li>
+                     * 设置实例ID列表，上限100。
+
+可通过对应云产品的查询实例接口获取实例 ID。目前支持实例类型：
+- CVM
+- Lighthouse
+- TAT 托管实例
+                     * @param _instanceIds 实例ID列表，上限100。
+
+可通过对应云产品的查询实例接口获取实例 ID。目前支持实例类型：
+- CVM
+- Lighthouse
+- TAT 托管实例
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -95,15 +115,20 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 执行活动ID
+                     * 执行活动ID。
+
+可通过 [DescribeInvocations(查询执行活动)](https://cloud.tencent.com/document/api/1340/52679) 接口获取。
                      */
                     std::string m_invocationId;
                     bool m_invocationIdHasBeenSet;
 
                     /**
-                     * 实例ID列表，上限100。支持实例类型：
-<li> CVM </li>
-<li> LIGHTHOUSE </li>
+                     * 实例ID列表，上限100。
+
+可通过对应云产品的查询实例接口获取实例 ID。目前支持实例类型：
+- CVM
+- Lighthouse
+- TAT 托管实例
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;

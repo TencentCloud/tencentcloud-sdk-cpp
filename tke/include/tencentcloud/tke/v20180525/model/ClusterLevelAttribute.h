@@ -216,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取其他资源数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OtherCount 其他资源数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetOtherCount() const;
 
                     /**
                      * 设置其他资源数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _otherCount 其他资源数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOtherCount(const uint64_t& _otherCount);
@@ -291,7 +287,6 @@ namespace TencentCloud
 
                     /**
                      * 其他资源数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_otherCount;
                     bool m_otherCountHasBeenSet;

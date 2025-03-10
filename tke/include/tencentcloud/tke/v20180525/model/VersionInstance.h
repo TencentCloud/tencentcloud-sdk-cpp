@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取版本名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 版本名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置版本名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 版本名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取版本信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Version 版本信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置版本信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _version 版本信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVersion(const std::string& _version);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Remark
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark Remark
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置Remark
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remark Remark
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 版本名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 版本信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;
 
                     /**
                      * Remark
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;

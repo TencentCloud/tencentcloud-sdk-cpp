@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取集群版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterVersion 集群版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterVersion() const;
@@ -80,7 +78,6 @@ namespace TencentCloud
 
                     /**
                      * 集群版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterVersion;
                     bool m_clusterVersionHasBeenSet;

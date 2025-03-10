@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取参数名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 参数名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置参数名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 参数名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取参数类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 参数类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置参数类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 参数类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取参数描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Usage 参数描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUsage() const;
 
                     /**
                      * 设置参数描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _usage 参数描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUsage(const std::string& _usage);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取参数默认值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Default 参数默认值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDefault() const;
 
                     /**
                      * 设置参数默认值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _default 参数默认值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDefault(const std::string& _default);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取参数可选范围（目前包含range和in两种，"[]"代表range，如"[1, 5]"表示参数必须>=1且 <=5, "()"代表in， 如"('aa', 'bb')"表示参数只能为字符串'aa'或者'bb'，该参数为空表示不校验）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Constraint 参数可选范围（目前包含range和in两种，"[]"代表range，如"[1, 5]"表示参数必须>=1且 <=5, "()"代表in， 如"('aa', 'bb')"表示参数只能为字符串'aa'或者'bb'，该参数为空表示不校验）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConstraint() const;
 
                     /**
                      * 设置参数可选范围（目前包含range和in两种，"[]"代表range，如"[1, 5]"表示参数必须>=1且 <=5, "()"代表in， 如"('aa', 'bb')"表示参数只能为字符串'aa'或者'bb'，该参数为空表示不校验）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _constraint 参数可选范围（目前包含range和in两种，"[]"代表range，如"[1, 5]"表示参数必须>=1且 <=5, "()"代表in， 如"('aa', 'bb')"表示参数只能为字符串'aa'或者'bb'，该参数为空表示不校验）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConstraint(const std::string& _constraint);
@@ -175,35 +155,30 @@ namespace TencentCloud
 
                     /**
                      * 参数名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 参数类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 参数描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_usage;
                     bool m_usageHasBeenSet;
 
                     /**
                      * 参数默认值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_default;
                     bool m_defaultHasBeenSet;
 
                     /**
                      * 参数可选范围（目前包含range和in两种，"[]"代表range，如"[1, 5]"表示参数必须>=1且 <=5, "()"代表in， 如"('aa', 'bb')"表示参数只能为字符串'aa'或者'bb'，该参数为空表示不校验）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_constraint;
                     bool m_constraintHasBeenSet;

@@ -20,15 +20,39 @@ set(controlcenter_public_header
 
 set(controlcenter_public_header_model
   include/tencentcloud/controlcenter/v20230110/model/BaselineConfigItem.h
+  include/tencentcloud/controlcenter/v20230110/model/UpdateAccountFactoryBaselineResponse.h
+  include/tencentcloud/controlcenter/v20230110/model/BaselineStepTaskInfo.h
+  include/tencentcloud/controlcenter/v20230110/model/ListAccountFactoryBaselineItemsRequest.h
+  include/tencentcloud/controlcenter/v20230110/model/DependsOnItem.h
   include/tencentcloud/controlcenter/v20230110/model/BatchApplyAccountBaselinesResponse.h
+  include/tencentcloud/controlcenter/v20230110/model/UpdateAccountFactoryBaselineRequest.h
+  include/tencentcloud/controlcenter/v20230110/model/ListDeployStepTasksRequest.h
+  include/tencentcloud/controlcenter/v20230110/model/AccountFactoryItem.h
   include/tencentcloud/controlcenter/v20230110/model/BatchApplyAccountBaselinesRequest.h
+  include/tencentcloud/controlcenter/v20230110/model/GetAccountFactoryBaselineResponse.h
+  include/tencentcloud/controlcenter/v20230110/model/ListAccountFactoryBaselineItemsResponse.h
+  include/tencentcloud/controlcenter/v20230110/model/GetAccountFactoryBaselineRequest.h
+  include/tencentcloud/controlcenter/v20230110/model/BaselineInfoItem.h
+  include/tencentcloud/controlcenter/v20230110/model/ListDeployStepTasksResponse.h
   )
 
 set(controlcenter_src
   src/v20230110/ControlcenterClient.cpp
   src/v20230110/model/BaselineConfigItem.cpp
+  src/v20230110/model/UpdateAccountFactoryBaselineResponse.cpp
+  src/v20230110/model/BaselineStepTaskInfo.cpp
+  src/v20230110/model/ListAccountFactoryBaselineItemsRequest.cpp
+  src/v20230110/model/DependsOnItem.cpp
   src/v20230110/model/BatchApplyAccountBaselinesResponse.cpp
+  src/v20230110/model/UpdateAccountFactoryBaselineRequest.cpp
+  src/v20230110/model/ListDeployStepTasksRequest.cpp
+  src/v20230110/model/AccountFactoryItem.cpp
   src/v20230110/model/BatchApplyAccountBaselinesRequest.cpp
+  src/v20230110/model/GetAccountFactoryBaselineResponse.cpp
+  src/v20230110/model/ListAccountFactoryBaselineItemsResponse.cpp
+  src/v20230110/model/GetAccountFactoryBaselineRequest.cpp
+  src/v20230110/model/BaselineInfoItem.cpp
+  src/v20230110/model/ListDeployStepTasksResponse.cpp
   )
 
 set(controlcenter_include

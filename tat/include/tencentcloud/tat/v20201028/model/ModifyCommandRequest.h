@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取命令ID。
-                     * @return CommandId 命令ID。
+                     * 获取命令ID。可通过 [DescribeCommands(查询命令详情)](https://cloud.tencent.com/document/api/1340/52681) 接口获取。
+                     * @return CommandId 命令ID。可通过 [DescribeCommands(查询命令详情)](https://cloud.tencent.com/document/api/1340/52681) 接口获取。
                      * 
                      */
                     std::string GetCommandId() const;
 
                     /**
-                     * 设置命令ID。
-                     * @param _commandId 命令ID。
+                     * 设置命令ID。可通过 [DescribeCommands(查询命令详情)](https://cloud.tencent.com/document/api/1340/52681) 接口获取。
+                     * @param _commandId 命令ID。可通过 [DescribeCommands(查询命令详情)](https://cloud.tencent.com/document/api/1340/52681) 接口获取。
                      * 
                      */
                     void SetCommandId(const std::string& _commandId);
@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool ContentHasBeenSet() const;
 
                     /**
-                     * 获取命令类型，目前支持取值：SHELL、POWERSHELL。
-                     * @return CommandType 命令类型，目前支持取值：SHELL、POWERSHELL。
+                     * 获取命令类型，目前支持取值：SHELL、POWERSHELL、BAT。
+                     * @return CommandType 命令类型，目前支持取值：SHELL、POWERSHELL、BAT。
                      * 
                      */
                     std::string GetCommandType() const;
 
                     /**
-                     * 设置命令类型，目前支持取值：SHELL、POWERSHELL。
-                     * @param _commandType 命令类型，目前支持取值：SHELL、POWERSHELL。
+                     * 设置命令类型，目前支持取值：SHELL、POWERSHELL、BAT。
+                     * @param _commandType 命令类型，目前支持取值：SHELL、POWERSHELL、BAT。
                      * 
                      */
                     void SetCommandType(const std::string& _commandType);
@@ -192,14 +192,16 @@ namespace TencentCloud
 
                     /**
                      * 获取启用自定义参数功能时，自定义参数的默认取值。字段类型为json encoded string。如：{"varA": "222"}。
+参数不支持同时指定 `DefaultParameters` 和 `DefaultParameterConfs` 。
 采取整体全覆盖式修改，即修改时必须提供所有新默认值。
-必须 Command 的 EnableParameter 为 true 时，才允许修改这个值。
+仅在命令的 EnableParameter 为 true 时，才允许修改此参数。可通过 [DescribeCommands(查询命令详情)](https://cloud.tencent.com/document/api/1340/52681) 接口获取命令的 EnableParameter 设置。
 key为自定义参数名称，value为该参数的默认取值。kv均为字符串型。
 自定义参数最多20个。
 自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。
                      * @return DefaultParameters 启用自定义参数功能时，自定义参数的默认取值。字段类型为json encoded string。如：{"varA": "222"}。
+参数不支持同时指定 `DefaultParameters` 和 `DefaultParameterConfs` 。
 采取整体全覆盖式修改，即修改时必须提供所有新默认值。
-必须 Command 的 EnableParameter 为 true 时，才允许修改这个值。
+仅在命令的 EnableParameter 为 true 时，才允许修改此参数。可通过 [DescribeCommands(查询命令详情)](https://cloud.tencent.com/document/api/1340/52681) 接口获取命令的 EnableParameter 设置。
 key为自定义参数名称，value为该参数的默认取值。kv均为字符串型。
 自定义参数最多20个。
 自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。
@@ -209,14 +211,16 @@ key为自定义参数名称，value为该参数的默认取值。kv均为字符�
 
                     /**
                      * 设置启用自定义参数功能时，自定义参数的默认取值。字段类型为json encoded string。如：{"varA": "222"}。
+参数不支持同时指定 `DefaultParameters` 和 `DefaultParameterConfs` 。
 采取整体全覆盖式修改，即修改时必须提供所有新默认值。
-必须 Command 的 EnableParameter 为 true 时，才允许修改这个值。
+仅在命令的 EnableParameter 为 true 时，才允许修改此参数。可通过 [DescribeCommands(查询命令详情)](https://cloud.tencent.com/document/api/1340/52681) 接口获取命令的 EnableParameter 设置。
 key为自定义参数名称，value为该参数的默认取值。kv均为字符串型。
 自定义参数最多20个。
 自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。
                      * @param _defaultParameters 启用自定义参数功能时，自定义参数的默认取值。字段类型为json encoded string。如：{"varA": "222"}。
+参数不支持同时指定 `DefaultParameters` 和 `DefaultParameterConfs` 。
 采取整体全覆盖式修改，即修改时必须提供所有新默认值。
-必须 Command 的 EnableParameter 为 true 时，才允许修改这个值。
+仅在命令的 EnableParameter 为 true 时，才允许修改此参数。可通过 [DescribeCommands(查询命令详情)](https://cloud.tencent.com/document/api/1340/52681) 接口获取命令的 EnableParameter 设置。
 key为自定义参数名称，value为该参数的默认取值。kv均为字符串型。
 自定义参数最多20个。
 自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。
@@ -232,22 +236,26 @@ key为自定义参数名称，value为该参数的默认取值。kv均为字符�
                     bool DefaultParametersHasBeenSet() const;
 
                     /**
-                     * 获取自定义参数数组。
-如果InvokeCommand时未提供参数取值，将使用这里的默认值进行替换。
+                     * 获取自定义参数数组。如果 InvokeCommand 时未提供参数取值，将使用这里的默认值进行替换。
+参数不支持同时指定 `DefaultParameters` 和 `DefaultParameterConfs` 。
+仅在命令的 EnableParameter 为 true 时，才允许修改此参数。可通过 [DescribeCommands(查询命令详情)](https://cloud.tencent.com/document/api/1340/52681) 接口获取命令的 EnableParameter 设置。
 自定义参数最多20个。
-                     * @return DefaultParameterConfs 自定义参数数组。
-如果InvokeCommand时未提供参数取值，将使用这里的默认值进行替换。
+                     * @return DefaultParameterConfs 自定义参数数组。如果 InvokeCommand 时未提供参数取值，将使用这里的默认值进行替换。
+参数不支持同时指定 `DefaultParameters` 和 `DefaultParameterConfs` 。
+仅在命令的 EnableParameter 为 true 时，才允许修改此参数。可通过 [DescribeCommands(查询命令详情)](https://cloud.tencent.com/document/api/1340/52681) 接口获取命令的 EnableParameter 设置。
 自定义参数最多20个。
                      * 
                      */
                     std::vector<DefaultParameterConf> GetDefaultParameterConfs() const;
 
                     /**
-                     * 设置自定义参数数组。
-如果InvokeCommand时未提供参数取值，将使用这里的默认值进行替换。
+                     * 设置自定义参数数组。如果 InvokeCommand 时未提供参数取值，将使用这里的默认值进行替换。
+参数不支持同时指定 `DefaultParameters` 和 `DefaultParameterConfs` 。
+仅在命令的 EnableParameter 为 true 时，才允许修改此参数。可通过 [DescribeCommands(查询命令详情)](https://cloud.tencent.com/document/api/1340/52681) 接口获取命令的 EnableParameter 设置。
 自定义参数最多20个。
-                     * @param _defaultParameterConfs 自定义参数数组。
-如果InvokeCommand时未提供参数取值，将使用这里的默认值进行替换。
+                     * @param _defaultParameterConfs 自定义参数数组。如果 InvokeCommand 时未提供参数取值，将使用这里的默认值进行替换。
+参数不支持同时指定 `DefaultParameters` 和 `DefaultParameterConfs` 。
+仅在命令的 EnableParameter 为 true 时，才允许修改此参数。可通过 [DescribeCommands(查询命令详情)](https://cloud.tencent.com/document/api/1340/52681) 接口获取命令的 EnableParameter 设置。
 自定义参数最多20个。
                      * 
                      */
@@ -342,7 +350,7 @@ key为自定义参数名称，value为该参数的默认取值。kv均为字符�
                 private:
 
                     /**
-                     * 命令ID。
+                     * 命令ID。可通过 [DescribeCommands(查询命令详情)](https://cloud.tencent.com/document/api/1340/52681) 接口获取。
                      */
                     std::string m_commandId;
                     bool m_commandIdHasBeenSet;
@@ -366,7 +374,7 @@ key为自定义参数名称，value为该参数的默认取值。kv均为字符�
                     bool m_contentHasBeenSet;
 
                     /**
-                     * 命令类型，目前支持取值：SHELL、POWERSHELL。
+                     * 命令类型，目前支持取值：SHELL、POWERSHELL、BAT。
                      */
                     std::string m_commandType;
                     bool m_commandTypeHasBeenSet;
@@ -385,8 +393,9 @@ key为自定义参数名称，value为该参数的默认取值。kv均为字符�
 
                     /**
                      * 启用自定义参数功能时，自定义参数的默认取值。字段类型为json encoded string。如：{"varA": "222"}。
+参数不支持同时指定 `DefaultParameters` 和 `DefaultParameterConfs` 。
 采取整体全覆盖式修改，即修改时必须提供所有新默认值。
-必须 Command 的 EnableParameter 为 true 时，才允许修改这个值。
+仅在命令的 EnableParameter 为 true 时，才允许修改此参数。可通过 [DescribeCommands(查询命令详情)](https://cloud.tencent.com/document/api/1340/52681) 接口获取命令的 EnableParameter 设置。
 key为自定义参数名称，value为该参数的默认取值。kv均为字符串型。
 自定义参数最多20个。
 自定义参数名称需符合以下规范：字符数目上限64，可选范围【a-zA-Z0-9-_】。
@@ -395,8 +404,9 @@ key为自定义参数名称，value为该参数的默认取值。kv均为字符�
                     bool m_defaultParametersHasBeenSet;
 
                     /**
-                     * 自定义参数数组。
-如果InvokeCommand时未提供参数取值，将使用这里的默认值进行替换。
+                     * 自定义参数数组。如果 InvokeCommand 时未提供参数取值，将使用这里的默认值进行替换。
+参数不支持同时指定 `DefaultParameters` 和 `DefaultParameterConfs` 。
+仅在命令的 EnableParameter 为 true 时，才允许修改此参数。可通过 [DescribeCommands(查询命令详情)](https://cloud.tencent.com/document/api/1340/52681) 接口获取命令的 EnableParameter 设置。
 自定义参数最多20个。
                      */
                     std::vector<DefaultParameterConf> m_defaultParameterConfs;

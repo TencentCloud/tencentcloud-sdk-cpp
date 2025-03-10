@@ -51,6 +51,8 @@
 #include <tencentcloud/partners/v20180321/model/DescribeAgentSelfPayDealsV2Response.h>
 #include <tencentcloud/partners/v20180321/model/DescribeClientBalanceNewRequest.h>
 #include <tencentcloud/partners/v20180321/model/DescribeClientBalanceNewResponse.h>
+#include <tencentcloud/partners/v20180321/model/DescribeClientJoinIncreaseListRequest.h>
+#include <tencentcloud/partners/v20180321/model/DescribeClientJoinIncreaseListResponse.h>
 #include <tencentcloud/partners/v20180321/model/DescribeRebateInfosRequest.h>
 #include <tencentcloud/partners/v20180321/model/DescribeRebateInfosResponse.h>
 #include <tencentcloud/partners/v20180321/model/DescribeRebateInfosNewRequest.h>
@@ -119,6 +121,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeClientBalanceNewResponse> DescribeClientBalanceNewOutcome;
                 typedef std::future<DescribeClientBalanceNewOutcome> DescribeClientBalanceNewOutcomeCallable;
                 typedef std::function<void(const PartnersClient*, const Model::DescribeClientBalanceNewRequest&, DescribeClientBalanceNewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClientBalanceNewAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeClientJoinIncreaseListResponse> DescribeClientJoinIncreaseListOutcome;
+                typedef std::future<DescribeClientJoinIncreaseListOutcome> DescribeClientJoinIncreaseListOutcomeCallable;
+                typedef std::function<void(const PartnersClient*, const Model::DescribeClientJoinIncreaseListRequest&, DescribeClientJoinIncreaseListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClientJoinIncreaseListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRebateInfosResponse> DescribeRebateInfosOutcome;
                 typedef std::future<DescribeRebateInfosOutcome> DescribeRebateInfosOutcomeCallable;
                 typedef std::function<void(const PartnersClient*, const Model::DescribeRebateInfosRequest&, DescribeRebateInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRebateInfosAsyncHandler;
@@ -268,6 +273,15 @@ namespace TencentCloud
                 DescribeClientBalanceNewOutcome DescribeClientBalanceNew(const Model::DescribeClientBalanceNewRequest &request);
                 void DescribeClientBalanceNewAsync(const Model::DescribeClientBalanceNewRequest& request, const DescribeClientBalanceNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeClientBalanceNewOutcomeCallable DescribeClientBalanceNewCallable(const Model::DescribeClientBalanceNewRequest& request);
+
+                /**
+                 *查询合作伙伴名下客户的参与增量激励考核信息列表
+                 * @param req DescribeClientJoinIncreaseListRequest
+                 * @return DescribeClientJoinIncreaseListOutcome
+                 */
+                DescribeClientJoinIncreaseListOutcome DescribeClientJoinIncreaseList(const Model::DescribeClientJoinIncreaseListRequest &request);
+                void DescribeClientJoinIncreaseListAsync(const Model::DescribeClientJoinIncreaseListRequest& request, const DescribeClientJoinIncreaseListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClientJoinIncreaseListOutcomeCallable DescribeClientJoinIncreaseListCallable(const Model::DescribeClientJoinIncreaseListRequest& request);
 
                 /**
                  *【该接口已下线，请切换使用升级版本DescribeRebateInfosNew】代理商可查询自己名下全部返佣信息

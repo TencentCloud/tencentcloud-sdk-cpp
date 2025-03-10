@@ -48,7 +48,8 @@ ModifyRoomRequest::ModifyRoomRequest() :
     m_recordLiveUrlHasBeenSet(false),
     m_enableAutoStartHasBeenSet(false),
     m_recordSceneHasBeenSet(false),
-    m_recordLangHasBeenSet(false)
+    m_recordLangHasBeenSet(false),
+    m_whiteBoardSnapshotModeHasBeenSet(false)
 {
 }
 
@@ -270,6 +271,14 @@ string ModifyRoomRequest::ToJsonString() const
         string key = "RecordLang";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_recordLang.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_whiteBoardSnapshotModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WhiteBoardSnapshotMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_whiteBoardSnapshotMode, allocator);
     }
 
 
@@ -694,6 +703,22 @@ void ModifyRoomRequest::SetRecordLang(const string& _recordLang)
 bool ModifyRoomRequest::RecordLangHasBeenSet() const
 {
     return m_recordLangHasBeenSet;
+}
+
+uint64_t ModifyRoomRequest::GetWhiteBoardSnapshotMode() const
+{
+    return m_whiteBoardSnapshotMode;
+}
+
+void ModifyRoomRequest::SetWhiteBoardSnapshotMode(const uint64_t& _whiteBoardSnapshotMode)
+{
+    m_whiteBoardSnapshotMode = _whiteBoardSnapshotMode;
+    m_whiteBoardSnapshotModeHasBeenSet = true;
+}
+
+bool ModifyRoomRequest::WhiteBoardSnapshotModeHasBeenSet() const
+{
+    return m_whiteBoardSnapshotModeHasBeenSet;
 }
 
 

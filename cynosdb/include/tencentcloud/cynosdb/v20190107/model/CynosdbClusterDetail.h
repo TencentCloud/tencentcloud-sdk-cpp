@@ -1223,6 +1223,27 @@ pausing
                      */
                     bool SlaveZoneAttrHasBeenSet() const;
 
+                    /**
+                     * 获取版本标签
+                     * @return CynosVersionTag 版本标签
+                     * 
+                     */
+                    std::string GetCynosVersionTag() const;
+
+                    /**
+                     * 设置版本标签
+                     * @param _cynosVersionTag 版本标签
+                     * 
+                     */
+                    void SetCynosVersionTag(const std::string& _cynosVersionTag);
+
+                    /**
+                     * 判断参数 CynosVersionTag 是否已赋值
+                     * @return CynosVersionTag 是否已赋值
+                     * 
+                     */
+                    bool CynosVersionTagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1554,6 +1575,12 @@ pausing
                      */
                     std::vector<SlaveZoneAttrItem> m_slaveZoneAttr;
                     bool m_slaveZoneAttrHasBeenSet;
+
+                    /**
+                     * 版本标签
+                     */
+                    std::string m_cynosVersionTag;
+                    bool m_cynosVersionTagHasBeenSet;
 
                 };
             }

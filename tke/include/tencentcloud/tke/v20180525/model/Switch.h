@@ -70,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取审计开关的详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Audit 审计开关的详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SwitchInfo GetAudit() const;
 
                     /**
                      * 设置审计开关的详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _audit 审计开关的详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAudit(const SwitchInfo& _audit);
@@ -95,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取事件开关的详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Event 事件开关的详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SwitchInfo GetEvent() const;
 
                     /**
                      * 设置事件开关的详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _event 事件开关的详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEvent(const SwitchInfo& _event);
@@ -120,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取普通日志的详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Log 普通日志的详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SwitchInfo GetLog() const;
 
                     /**
                      * 设置普通日志的详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _log 普通日志的详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLog(const SwitchInfo& _log);
@@ -145,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取master 日志详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MasterLog master 日志详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SwitchInfo GetMasterLog() const;
 
                     /**
                      * 设置master 日志详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _masterLog master 日志详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMasterLog(const SwitchInfo& _masterLog);
@@ -178,28 +162,24 @@ namespace TencentCloud
 
                     /**
                      * 审计开关的详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SwitchInfo m_audit;
                     bool m_auditHasBeenSet;
 
                     /**
                      * 事件开关的详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SwitchInfo m_event;
                     bool m_eventHasBeenSet;
 
                     /**
                      * 普通日志的详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SwitchInfo m_log;
                     bool m_logHasBeenSet;
 
                     /**
                      * master 日志详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SwitchInfo m_masterLog;
                     bool m_masterLogHasBeenSet;

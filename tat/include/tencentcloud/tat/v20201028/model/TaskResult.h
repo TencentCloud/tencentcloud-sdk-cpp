@@ -89,18 +89,18 @@ namespace TencentCloud
                     bool OutputHasBeenSet() const;
 
                     /**
-                     * 获取命令执行开始时间。
+                     * 获取命令执行开始时间。格式为：YYYY-MM-DDThh:mm:ssZ
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExecStartTime 命令执行开始时间。
+                     * @return ExecStartTime 命令执行开始时间。格式为：YYYY-MM-DDThh:mm:ssZ
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExecStartTime() const;
 
                     /**
-                     * 设置命令执行开始时间。
+                     * 设置命令执行开始时间。格式为：YYYY-MM-DDThh:mm:ssZ
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _execStartTime 命令执行开始时间。
+                     * @param _execStartTime 命令执行开始时间。格式为：YYYY-MM-DDThh:mm:ssZ
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -114,18 +114,18 @@ namespace TencentCloud
                     bool ExecStartTimeHasBeenSet() const;
 
                     /**
-                     * 获取命令执行结束时间。
+                     * 获取命令执行结束时间。格式为：YYYY-MM-DDThh:mm:ssZ
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExecEndTime 命令执行结束时间。
+                     * @return ExecEndTime 命令执行结束时间。格式为：YYYY-MM-DDThh:mm:ssZ
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExecEndTime() const;
 
                     /**
-                     * 设置命令执行结束时间。
+                     * 设置命令执行结束时间。格式为：YYYY-MM-DDThh:mm:ssZ
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _execEndTime 命令执行结束时间。
+                     * @param _execEndTime 命令执行结束时间。格式为：YYYY-MM-DDThh:mm:ssZ
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -216,14 +216,14 @@ namespace TencentCloud
                     bool m_outputHasBeenSet;
 
                     /**
-                     * 命令执行开始时间。
+                     * 命令执行开始时间。格式为：YYYY-MM-DDThh:mm:ssZ
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_execStartTime;
                     bool m_execStartTimeHasBeenSet;
 
                     /**
-                     * 命令执行结束时间。
+                     * 命令执行结束时间。格式为：YYYY-MM-DDThh:mm:ssZ
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_execEndTime;

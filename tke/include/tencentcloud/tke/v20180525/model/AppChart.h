@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取chart的标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Label chart的标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLabel() const;
 
                     /**
                      * 设置chart的标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _label chart的标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLabel(const std::string& _label);
@@ -123,7 +119,6 @@ namespace TencentCloud
 
                     /**
                      * chart的标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_label;
                     bool m_labelHasBeenSet;

@@ -44,14 +44,22 @@ namespace TencentCloud
 
                     /**
                      * 获取执行器ID列表。列表上限 100。
+
+可通过 [DescribeInvokers(查询执行器)](https://cloud.tencent.com/document/api/1340/61759) 接口获取。
                      * @return InvokerIds 执行器ID列表。列表上限 100。
+
+可通过 [DescribeInvokers(查询执行器)](https://cloud.tencent.com/document/api/1340/61759) 接口获取。
                      * 
                      */
                     std::vector<std::string> GetInvokerIds() const;
 
                     /**
                      * 设置执行器ID列表。列表上限 100。
+
+可通过 [DescribeInvokers(查询执行器)](https://cloud.tencent.com/document/api/1340/61759) 接口获取。
                      * @param _invokerIds 执行器ID列表。列表上限 100。
+
+可通过 [DescribeInvokers(查询执行器)](https://cloud.tencent.com/document/api/1340/61759) 接口获取。
                      * 
                      */
                     void SetInvokerIds(const std::vector<std::string>& _invokerIds);
@@ -109,6 +117,8 @@ namespace TencentCloud
 
                     /**
                      * 执行器ID列表。列表上限 100。
+
+可通过 [DescribeInvokers(查询执行器)](https://cloud.tencent.com/document/api/1340/61759) 接口获取。
                      */
                     std::vector<std::string> m_invokerIds;
                     bool m_invokerIdsHasBeenSet;

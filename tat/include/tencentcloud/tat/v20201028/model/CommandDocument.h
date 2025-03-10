@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool ContentHasBeenSet() const;
 
                     /**
-                     * 获取命令类型。
-                     * @return CommandType 命令类型。
+                     * 获取命令类型。取值为 SHELL、POWERSHELL、BAT 之一。
+                     * @return CommandType 命令类型。取值为 SHELL、POWERSHELL、BAT 之一。
                      * 
                      */
                     std::string GetCommandType() const;
 
                     /**
-                     * 设置命令类型。
-                     * @param _commandType 命令类型。
+                     * 设置命令类型。取值为 SHELL、POWERSHELL、BAT 之一。
+                     * @param _commandType 命令类型。取值为 SHELL、POWERSHELL、BAT 之一。
                      * 
                      */
                     void SetCommandType(const std::string& _commandType);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool CommandTypeHasBeenSet() const;
 
                     /**
-                     * 获取超时时间。
-                     * @return Timeout 超时时间。
+                     * 获取超时时间。单位：秒。
+                     * @return Timeout 超时时间。单位：秒。
                      * 
                      */
                     uint64_t GetTimeout() const;
 
                     /**
-                     * 设置超时时间。
-                     * @param _timeout 超时时间。
+                     * 设置超时时间。单位：秒。
+                     * @param _timeout 超时时间。单位：秒。
                      * 
                      */
                     void SetTimeout(const uint64_t& _timeout);
@@ -202,13 +202,13 @@ namespace TencentCloud
                     bool m_contentHasBeenSet;
 
                     /**
-                     * 命令类型。
+                     * 命令类型。取值为 SHELL、POWERSHELL、BAT 之一。
                      */
                     std::string m_commandType;
                     bool m_commandTypeHasBeenSet;
 
                     /**
-                     * 超时时间。
+                     * 超时时间。单位：秒。
                      */
                     uint64_t m_timeout;
                     bool m_timeoutHasBeenSet;

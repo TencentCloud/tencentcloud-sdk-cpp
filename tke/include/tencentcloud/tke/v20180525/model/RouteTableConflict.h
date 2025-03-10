@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取路由表CIDR。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RouteTableCidrBlock 路由表CIDR。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRouteTableCidrBlock() const;
 
                     /**
                      * 设置路由表CIDR。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _routeTableCidrBlock 路由表CIDR。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRouteTableCidrBlock(const std::string& _routeTableCidrBlock);
@@ -94,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取路由表名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RouteTableName 路由表名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRouteTableName() const;
 
                     /**
                      * 设置路由表名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _routeTableName 路由表名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRouteTableName(const std::string& _routeTableName);
@@ -119,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取路由表ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RouteTableId 路由表ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRouteTableId() const;
 
                     /**
                      * 设置路由表ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _routeTableId 路由表ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRouteTableId(const std::string& _routeTableId);
@@ -152,21 +140,18 @@ namespace TencentCloud
 
                     /**
                      * 路由表CIDR。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_routeTableCidrBlock;
                     bool m_routeTableCidrBlockHasBeenSet;
 
                     /**
                      * 路由表名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_routeTableName;
                     bool m_routeTableNameHasBeenSet;
 
                     /**
                      * 路由表ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_routeTableId;
                     bool m_routeTableIdHasBeenSet;

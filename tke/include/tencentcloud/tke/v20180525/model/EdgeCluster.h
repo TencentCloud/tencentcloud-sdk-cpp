@@ -260,18 +260,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点最大Pod数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxNodePodNum 节点最大Pod数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxNodePodNum() const;
 
                     /**
                      * 设置节点最大Pod数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxNodePodNum 节点最大Pod数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxNodePodNum(const int64_t& _maxNodePodNum);
@@ -285,18 +281,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群高级设置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterAdvancedSettings 集群高级设置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     EdgeClusterAdvancedSettings GetClusterAdvancedSettings() const;
 
                     /**
                      * 设置集群高级设置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterAdvancedSettings 集群高级设置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterAdvancedSettings(const EdgeClusterAdvancedSettings& _clusterAdvancedSettings);
@@ -310,18 +302,14 @@ namespace TencentCloud
 
                     /**
                      * 获取边缘容器集群级别
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Level 边缘容器集群级别
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLevel() const;
 
                     /**
                      * 设置边缘容器集群级别
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _level 边缘容器集群级别
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLevel(const std::string& _level);
@@ -335,18 +323,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否支持自动提升集群配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoUpgradeClusterLevel 是否支持自动提升集群配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetAutoUpgradeClusterLevel() const;
 
                     /**
                      * 设置是否支持自动提升集群配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _autoUpgradeClusterLevel 是否支持自动提升集群配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAutoUpgradeClusterLevel(const bool& _autoUpgradeClusterLevel);
@@ -360,18 +344,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群付费模式，支持POSTPAID_BY_HOUR或者PREPAID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChargeType 集群付费模式，支持POSTPAID_BY_HOUR或者PREPAID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetChargeType() const;
 
                     /**
                      * 设置集群付费模式，支持POSTPAID_BY_HOUR或者PREPAID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _chargeType 集群付费模式，支持POSTPAID_BY_HOUR或者PREPAID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChargeType(const std::string& _chargeType);
@@ -385,18 +365,14 @@ namespace TencentCloud
 
                     /**
                      * 获取边缘集群组件的版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EdgeVersion 边缘集群组件的版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEdgeVersion() const;
 
                     /**
                      * 设置边缘集群组件的版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _edgeVersion 边缘集群组件的版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEdgeVersion(const std::string& _edgeVersion);
@@ -497,42 +473,36 @@ namespace TencentCloud
 
                     /**
                      * 节点最大Pod数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxNodePodNum;
                     bool m_maxNodePodNumHasBeenSet;
 
                     /**
                      * 集群高级设置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     EdgeClusterAdvancedSettings m_clusterAdvancedSettings;
                     bool m_clusterAdvancedSettingsHasBeenSet;
 
                     /**
                      * 边缘容器集群级别
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_level;
                     bool m_levelHasBeenSet;
 
                     /**
                      * 是否支持自动提升集群配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_autoUpgradeClusterLevel;
                     bool m_autoUpgradeClusterLevelHasBeenSet;
 
                     /**
                      * 集群付费模式，支持POSTPAID_BY_HOUR或者PREPAID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_chargeType;
                     bool m_chargeTypeHasBeenSet;
 
                     /**
                      * 边缘集群组件的版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_edgeVersion;
                     bool m_edgeVersionHasBeenSet;

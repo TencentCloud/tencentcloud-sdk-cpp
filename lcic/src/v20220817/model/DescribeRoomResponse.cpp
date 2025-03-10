@@ -55,7 +55,8 @@ DescribeRoomResponse::DescribeRoomResponse() :
     m_recordSceneHasBeenSet(false),
     m_recordLangHasBeenSet(false),
     m_recordStreamHasBeenSet(false),
-    m_recordLayoutHasBeenSet(false)
+    m_recordLayoutHasBeenSet(false),
+    m_whiteBoardSnapshotModeHasBeenSet(false)
 {
 }
 
@@ -416,6 +417,16 @@ CoreInternalOutcome DescribeRoomResponse::Deserialize(const string &payload)
         m_recordLayoutHasBeenSet = true;
     }
 
+    if (rsp.HasMember("WhiteBoardSnapshotMode") && !rsp["WhiteBoardSnapshotMode"].IsNull())
+    {
+        if (!rsp["WhiteBoardSnapshotMode"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `WhiteBoardSnapshotMode` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_whiteBoardSnapshotMode = rsp["WhiteBoardSnapshotMode"].GetUint64();
+        m_whiteBoardSnapshotModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -685,6 +696,14 @@ string DescribeRoomResponse::ToJsonString() const
         string key = "RecordLayout";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_recordLayout, allocator);
+    }
+
+    if (m_whiteBoardSnapshotModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WhiteBoardSnapshotMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_whiteBoardSnapshotMode, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1017,6 +1036,16 @@ uint64_t DescribeRoomResponse::GetRecordLayout() const
 bool DescribeRoomResponse::RecordLayoutHasBeenSet() const
 {
     return m_recordLayoutHasBeenSet;
+}
+
+uint64_t DescribeRoomResponse::GetWhiteBoardSnapshotMode() const
+{
+    return m_whiteBoardSnapshotMode;
+}
+
+bool DescribeRoomResponse::WhiteBoardSnapshotModeHasBeenSet() const
+{
+    return m_whiteBoardSnapshotModeHasBeenSet;
 }
 
 

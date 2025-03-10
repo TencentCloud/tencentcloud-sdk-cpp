@@ -995,18 +995,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例的节点详细信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeSet 实例的节点详细信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<NodeInfo> GetNodeSet() const;
 
                     /**
                      * 设置实例的节点详细信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nodeSet 实例的节点详细信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNodeSet(const std::vector<NodeInfo>& _nodeSet);
@@ -1418,7 +1414,6 @@ namespace TencentCloud
 
                     /**
                      * 实例的节点详细信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<NodeInfo> m_nodeSet;
                     bool m_nodeSetHasBeenSet;

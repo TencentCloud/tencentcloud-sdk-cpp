@@ -642,6 +642,49 @@ PartnersClient::DescribeClientBalanceNewOutcomeCallable PartnersClient::Describe
     return task->get_future();
 }
 
+PartnersClient::DescribeClientJoinIncreaseListOutcome PartnersClient::DescribeClientJoinIncreaseList(const DescribeClientJoinIncreaseListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClientJoinIncreaseList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClientJoinIncreaseListResponse rsp = DescribeClientJoinIncreaseListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClientJoinIncreaseListOutcome(rsp);
+        else
+            return DescribeClientJoinIncreaseListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClientJoinIncreaseListOutcome(outcome.GetError());
+    }
+}
+
+void PartnersClient::DescribeClientJoinIncreaseListAsync(const DescribeClientJoinIncreaseListRequest& request, const DescribeClientJoinIncreaseListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClientJoinIncreaseList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PartnersClient::DescribeClientJoinIncreaseListOutcomeCallable PartnersClient::DescribeClientJoinIncreaseListCallable(const DescribeClientJoinIncreaseListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClientJoinIncreaseListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClientJoinIncreaseList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PartnersClient::DescribeRebateInfosOutcome PartnersClient::DescribeRebateInfos(const DescribeRebateInfosRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRebateInfos");

@@ -44,7 +44,8 @@ RoomItem::RoomItem() :
     m_enableAutoStartHasBeenSet(false),
     m_recordBackgroundHasBeenSet(false),
     m_recordSceneHasBeenSet(false),
-    m_recordLangHasBeenSet(false)
+    m_recordLangHasBeenSet(false),
+    m_whiteBoardSnapshotModeHasBeenSet(false)
 {
 }
 
@@ -293,6 +294,16 @@ CoreInternalOutcome RoomItem::Deserialize(const rapidjson::Value &value)
         m_recordLangHasBeenSet = true;
     }
 
+    if (value.HasMember("WhiteBoardSnapshotMode") && !value["WhiteBoardSnapshotMode"].IsNull())
+    {
+        if (!value["WhiteBoardSnapshotMode"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RoomItem.WhiteBoardSnapshotMode` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_whiteBoardSnapshotMode = value["WhiteBoardSnapshotMode"].GetUint64();
+        m_whiteBoardSnapshotModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -490,6 +501,14 @@ void RoomItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "RecordLang";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_recordLang.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_whiteBoardSnapshotModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WhiteBoardSnapshotMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_whiteBoardSnapshotMode, allocator);
     }
 
 }
@@ -877,5 +896,21 @@ void RoomItem::SetRecordLang(const string& _recordLang)
 bool RoomItem::RecordLangHasBeenSet() const
 {
     return m_recordLangHasBeenSet;
+}
+
+uint64_t RoomItem::GetWhiteBoardSnapshotMode() const
+{
+    return m_whiteBoardSnapshotMode;
+}
+
+void RoomItem::SetWhiteBoardSnapshotMode(const uint64_t& _whiteBoardSnapshotMode)
+{
+    m_whiteBoardSnapshotMode = _whiteBoardSnapshotMode;
+    m_whiteBoardSnapshotModeHasBeenSet = true;
+}
+
+bool RoomItem::WhiteBoardSnapshotModeHasBeenSet() const
+{
+    return m_whiteBoardSnapshotModeHasBeenSet;
 }
 

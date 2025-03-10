@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取GPU驱动或者CUDA的版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Version GPU驱动或者CUDA的版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置GPU驱动或者CUDA的版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _version GPU驱动或者CUDA的版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVersion(const std::string& _version);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取GPU驱动或者CUDA的名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name GPU驱动或者CUDA的名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置GPU驱动或者CUDA的名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name GPU驱动或者CUDA的名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * GPU驱动或者CUDA的版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;
 
                     /**
                      * GPU驱动或者CUDA的名字
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

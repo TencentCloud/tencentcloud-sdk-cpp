@@ -44,6 +44,27 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取环境ID
+                     * @return EnvId 环境ID
+                     * 
+                     */
+                    std::string GetEnvId() const;
+
+                    /**
+                     * 设置环境ID
+                     * @param _envId 环境ID
+                     * 
+                     */
+                    void SetEnvId(const std::string& _envId);
+
+                    /**
+                     * 判断参数 EnvId 是否已赋值
+                     * @return EnvId 是否已赋值
+                     * 
+                     */
+                    bool EnvIdHasBeenSet() const;
+
+                    /**
                      * 获取知识库标识
                      * @return CollectionView 知识库标识
                      * 
@@ -86,6 +107,12 @@ namespace TencentCloud
                     bool QueryHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 环境ID
+                     */
+                    std::string m_envId;
+                    bool m_envIdHasBeenSet;
 
                     /**
                      * 知识库标识

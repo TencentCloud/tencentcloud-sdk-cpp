@@ -90,14 +90,22 @@ namespace TencentCloud
 
                     /**
                      * 获取场景创建者。
+
+- TAT：公共场景
                      * @return CreatedBy 场景创建者。
+
+- TAT：公共场景
                      * 
                      */
                     std::string GetCreatedBy() const;
 
                     /**
                      * 设置场景创建者。
+
+- TAT：公共场景
                      * @param _createdBy 场景创建者。
+
+- TAT：公共场景
                      * 
                      */
                     void SetCreatedBy(const std::string& _createdBy);
@@ -110,15 +118,15 @@ namespace TencentCloud
                     bool CreatedByHasBeenSet() const;
 
                     /**
-                     * 获取创建时间。
-                     * @return CreatedTime 创建时间。
+                     * 获取创建时间。格式为：YYYY-MM-DDThh:mm:ssZ
+                     * @return CreatedTime 创建时间。格式为：YYYY-MM-DDThh:mm:ssZ
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
-                     * 设置创建时间。
-                     * @param _createdTime 创建时间。
+                     * 设置创建时间。格式为：YYYY-MM-DDThh:mm:ssZ
+                     * @param _createdTime 创建时间。格式为：YYYY-MM-DDThh:mm:ssZ
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -131,15 +139,15 @@ namespace TencentCloud
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取更新时间。
-                     * @return UpdatedTime 更新时间。
+                     * 获取更新时间。格式为：YYYY-MM-DDThh:mm:ssZ
+                     * @return UpdatedTime 更新时间。格式为：YYYY-MM-DDThh:mm:ssZ
                      * 
                      */
                     std::string GetUpdatedTime() const;
 
                     /**
-                     * 设置更新时间。
-                     * @param _updatedTime 更新时间。
+                     * 设置更新时间。格式为：YYYY-MM-DDThh:mm:ssZ
+                     * @param _updatedTime 更新时间。格式为：YYYY-MM-DDThh:mm:ssZ
                      * 
                      */
                     void SetUpdatedTime(const std::string& _updatedTime);
@@ -167,18 +175,20 @@ namespace TencentCloud
 
                     /**
                      * 场景创建者。
+
+- TAT：公共场景
                      */
                     std::string m_createdBy;
                     bool m_createdByHasBeenSet;
 
                     /**
-                     * 创建时间。
+                     * 创建时间。格式为：YYYY-MM-DDThh:mm:ssZ
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
 
                     /**
-                     * 更新时间。
+                     * 更新时间。格式为：YYYY-MM-DDThh:mm:ssZ
                      */
                     std::string m_updatedTime;
                     bool m_updatedTimeHasBeenSet;

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_LKE_V20231130_MODEL_QUERYPARSEDOCRESULTREQUEST_H_
-#define TENCENTCLOUD_LKE_V20231130_MODEL_QUERYPARSEDOCRESULTREQUEST_H_
+#ifndef TENCENTCLOUD_PARTNERS_V20180321_MODEL_DESCRIBECLIENTJOININCREASELISTREQUEST_H_
+#define TENCENTCLOUD_PARTNERS_V20180321_MODEL_DESCRIBECLIENTJOININCREASELISTREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -25,51 +25,51 @@
 
 namespace TencentCloud
 {
-    namespace Lke
+    namespace Partners
     {
-        namespace V20231130
+        namespace V20180321
         {
             namespace Model
             {
                 /**
-                * QueryParseDocResult请求参数结构体
+                * DescribeClientJoinIncreaseList请求参数结构体
                 */
-                class QueryParseDocResultRequest : public AbstractModel
+                class DescribeClientJoinIncreaseListRequest : public AbstractModel
                 {
                 public:
-                    QueryParseDocResultRequest();
-                    ~QueryParseDocResultRequest() = default;
+                    DescribeClientJoinIncreaseListRequest();
+                    ~DescribeClientJoinIncreaseListRequest() = default;
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取任务ID
-                     * @return TaskId 任务ID
+                     * 获取客户UIN列表
+                     * @return ClientUins 客户UIN列表
                      * 
                      */
-                    std::string GetTaskId() const;
+                    std::vector<std::string> GetClientUins() const;
 
                     /**
-                     * 设置任务ID
-                     * @param _taskId 任务ID
+                     * 设置客户UIN列表
+                     * @param _clientUins 客户UIN列表
                      * 
                      */
-                    void SetTaskId(const std::string& _taskId);
+                    void SetClientUins(const std::vector<std::string>& _clientUins);
 
                     /**
-                     * 判断参数 TaskId 是否已赋值
-                     * @return TaskId 是否已赋值
+                     * 判断参数 ClientUins 是否已赋值
+                     * @return ClientUins 是否已赋值
                      * 
                      */
-                    bool TaskIdHasBeenSet() const;
+                    bool ClientUinsHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 任务ID
+                     * 客户UIN列表
                      */
-                    std::string m_taskId;
-                    bool m_taskIdHasBeenSet;
+                    std::vector<std::string> m_clientUins;
+                    bool m_clientUinsHasBeenSet;
 
                 };
             }
@@ -77,4 +77,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_LKE_V20231130_MODEL_QUERYPARSEDOCRESULTREQUEST_H_
+#endif // !TENCENTCLOUD_PARTNERS_V20180321_MODEL_DESCRIBECLIENTJOININCREASELISTREQUEST_H_

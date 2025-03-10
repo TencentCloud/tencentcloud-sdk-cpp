@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取开启标识符 true代表开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Enable 开启标识符 true代表开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnable() const;
 
                     /**
                      * 设置开启标识符 true代表开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enable 开启标识符 true代表开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnable(const bool& _enable);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取CLS日志集ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogsetId CLS日志集ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLogsetId() const;
 
                     /**
                      * 设置CLS日志集ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logsetId CLS日志集ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogsetId(const std::string& _logsetId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取CLS日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicId CLS日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
                      * 设置CLS日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topicId CLS日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当前log-agent版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Version 当前log-agent版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置当前log-agent版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _version 当前log-agent版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVersion(const std::string& _version);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否可升级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpgradeAble 是否可升级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetUpgradeAble() const;
 
                     /**
                      * 设置是否可升级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _upgradeAble 是否可升级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpgradeAble(const bool& _upgradeAble);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取CLS日志主题所属region
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicRegion CLS日志主题所属region
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTopicRegion() const;
 
                     /**
                      * 设置CLS日志主题所属region
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topicRegion CLS日志主题所属region
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopicRegion(const std::string& _topicRegion);
@@ -200,42 +176,36 @@ namespace TencentCloud
 
                     /**
                      * 开启标识符 true代表开启
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enable;
                     bool m_enableHasBeenSet;
 
                     /**
                      * CLS日志集ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logsetId;
                     bool m_logsetIdHasBeenSet;
 
                     /**
                      * CLS日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
 
                     /**
                      * 当前log-agent版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;
 
                     /**
                      * 是否可升级
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_upgradeAble;
                     bool m_upgradeAbleHasBeenSet;
 
                     /**
                      * CLS日志主题所属region
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_topicRegion;
                     bool m_topicRegionHasBeenSet;

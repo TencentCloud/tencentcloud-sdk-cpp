@@ -44,15 +44,27 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例id。
-                     * @return InstanceIds 实例id。
+                     * 获取托管实例 id。
+
+参数不支持同时指定 `InstanceIds` 和 `Filters` 。
+
+                     * @return InstanceIds 托管实例 id。
+
+参数不支持同时指定 `InstanceIds` 和 `Filters` 。
+
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置实例id。
-                     * @param _instanceIds 实例id。
+                     * 设置托管实例 id。
+
+参数不支持同时指定 `InstanceIds` 和 `Filters` 。
+
+                     * @param _instanceIds 托管实例 id。
+
+参数不支持同时指定 `InstanceIds` 和 `Filters` 。
+
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -65,23 +77,24 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取过滤器列表。
+                     * 获取过滤器列表。参数不支持同时指定 `InstanceIds` 和 `Filters` 。
+
 
 - instance-name
 
-按照【实例名称】进行过滤。
+按照【托管实例名称】进行过滤。
 类型：String
 必选：否
 
 - instance-id
 
-按照【实例ID】进行过滤。
+按照【托管实例ID】进行过滤。
 类型：String
 必选：否
 
 - register-code-id
 
-按照【注册码ID】进行过滤。
+按照【托管实例注册码ID】进行过滤。可通过 [DescribeRegisterCodes(查询注册码)](https://cloud.tencent.com/document/api/1340/96925) 接口获取。
 类型：String
 必选：否
 
@@ -92,23 +105,24 @@ namespace TencentCloud
 必选：否
 
 
-                     * @return Filters 过滤器列表。
+                     * @return Filters 过滤器列表。参数不支持同时指定 `InstanceIds` 和 `Filters` 。
+
 
 - instance-name
 
-按照【实例名称】进行过滤。
+按照【托管实例名称】进行过滤。
 类型：String
 必选：否
 
 - instance-id
 
-按照【实例ID】进行过滤。
+按照【托管实例ID】进行过滤。
 类型：String
 必选：否
 
 - register-code-id
 
-按照【注册码ID】进行过滤。
+按照【托管实例注册码ID】进行过滤。可通过 [DescribeRegisterCodes(查询注册码)](https://cloud.tencent.com/document/api/1340/96925) 接口获取。
 类型：String
 必选：否
 
@@ -124,23 +138,24 @@ namespace TencentCloud
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤器列表。
+                     * 设置过滤器列表。参数不支持同时指定 `InstanceIds` 和 `Filters` 。
+
 
 - instance-name
 
-按照【实例名称】进行过滤。
+按照【托管实例名称】进行过滤。
 类型：String
 必选：否
 
 - instance-id
 
-按照【实例ID】进行过滤。
+按照【托管实例ID】进行过滤。
 类型：String
 必选：否
 
 - register-code-id
 
-按照【注册码ID】进行过滤。
+按照【托管实例注册码ID】进行过滤。可通过 [DescribeRegisterCodes(查询注册码)](https://cloud.tencent.com/document/api/1340/96925) 接口获取。
 类型：String
 必选：否
 
@@ -151,23 +166,24 @@ namespace TencentCloud
 必选：否
 
 
-                     * @param _filters 过滤器列表。
+                     * @param _filters 过滤器列表。参数不支持同时指定 `InstanceIds` 和 `Filters` 。
+
 
 - instance-name
 
-按照【实例名称】进行过滤。
+按照【托管实例名称】进行过滤。
 类型：String
 必选：否
 
 - instance-id
 
-按照【实例ID】进行过滤。
+按照【托管实例ID】进行过滤。
 类型：String
 必选：否
 
 - register-code-id
 
-按照【注册码ID】进行过滤。
+按照【托管实例注册码ID】进行过滤。可通过 [DescribeRegisterCodes(查询注册码)](https://cloud.tencent.com/document/api/1340/96925) 接口获取。
 类型：String
 必选：否
 
@@ -234,29 +250,33 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例id。
+                     * 托管实例 id。
+
+参数不支持同时指定 `InstanceIds` 和 `Filters` 。
+
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * 过滤器列表。
+                     * 过滤器列表。参数不支持同时指定 `InstanceIds` 和 `Filters` 。
+
 
 - instance-name
 
-按照【实例名称】进行过滤。
+按照【托管实例名称】进行过滤。
 类型：String
 必选：否
 
 - instance-id
 
-按照【实例ID】进行过滤。
+按照【托管实例ID】进行过滤。
 类型：String
 必选：否
 
 - register-code-id
 
-按照【注册码ID】进行过滤。
+按照【托管实例注册码ID】进行过滤。可通过 [DescribeRegisterCodes(查询注册码)](https://cloud.tencent.com/document/api/1340/96925) 接口获取。
 类型：String
 必选：否
 

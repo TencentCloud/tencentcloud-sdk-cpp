@@ -23,6 +23,7 @@ using namespace TencentCloud::Lowcode::V20210108::Model;
 using namespace std;
 
 DescribeKnowledgeDocumentSetDetailRequest::DescribeKnowledgeDocumentSetDetailRequest() :
+    m_envIdHasBeenSet(false),
     m_collectionViewHasBeenSet(false),
     m_documentSetNameHasBeenSet(false),
     m_documentSetIdHasBeenSet(false)
@@ -35,6 +36,14 @@ string DescribeKnowledgeDocumentSetDetailRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_envIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnvId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_envId.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_collectionViewHasBeenSet)
     {
@@ -67,6 +76,22 @@ string DescribeKnowledgeDocumentSetDetailRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeKnowledgeDocumentSetDetailRequest::GetEnvId() const
+{
+    return m_envId;
+}
+
+void DescribeKnowledgeDocumentSetDetailRequest::SetEnvId(const string& _envId)
+{
+    m_envId = _envId;
+    m_envIdHasBeenSet = true;
+}
+
+bool DescribeKnowledgeDocumentSetDetailRequest::EnvIdHasBeenSet() const
+{
+    return m_envIdHasBeenSet;
+}
 
 string DescribeKnowledgeDocumentSetDetailRequest::GetCollectionView() const
 {

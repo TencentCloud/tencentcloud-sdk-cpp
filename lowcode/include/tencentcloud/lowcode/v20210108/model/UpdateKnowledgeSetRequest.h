@@ -43,6 +43,27 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取环境ID
+                     * @return EnvId 环境ID
+                     * 
+                     */
+                    std::string GetEnvId() const;
+
+                    /**
+                     * 设置环境ID
+                     * @param _envId 环境ID
+                     * 
+                     */
+                    void SetEnvId(const std::string& _envId);
+
+                    /**
+                     * 判断参数 EnvId 是否已赋值
+                     * @return EnvId 是否已赋值
+                     * 
+                     */
+                    bool EnvIdHasBeenSet() const;
+
+                    /**
                      * 获取知识库标识
                      * @return Name 知识库标识
                      * 
@@ -126,7 +147,34 @@ namespace TencentCloud
                      */
                     bool ActiveHasBeenSet() const;
 
+                    /**
+                     * 获取知识库的meta信息
+                     * @return Meta 知识库的meta信息
+                     * 
+                     */
+                    std::string GetMeta() const;
+
+                    /**
+                     * 设置知识库的meta信息
+                     * @param _meta 知识库的meta信息
+                     * 
+                     */
+                    void SetMeta(const std::string& _meta);
+
+                    /**
+                     * 判断参数 Meta 是否已赋值
+                     * @return Meta 是否已赋值
+                     * 
+                     */
+                    bool MetaHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 环境ID
+                     */
+                    std::string m_envId;
+                    bool m_envIdHasBeenSet;
 
                     /**
                      * 知识库标识
@@ -151,6 +199,12 @@ namespace TencentCloud
                      */
                     std::string m_active;
                     bool m_activeHasBeenSet;
+
+                    /**
+                     * 知识库的meta信息
+                     */
+                    std::string m_meta;
+                    bool m_metaHasBeenSet;
 
                 };
             }

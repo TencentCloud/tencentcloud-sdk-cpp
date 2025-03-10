@@ -43,6 +43,27 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取环境ID
+                     * @return EnvId 环境ID
+                     * 
+                     */
+                    std::string GetEnvId() const;
+
+                    /**
+                     * 设置环境ID
+                     * @param _envId 环境ID
+                     * 
+                     */
+                    void SetEnvId(const std::string& _envId);
+
+                    /**
+                     * 判断参数 EnvId 是否已赋值
+                     * @return EnvId 是否已赋值
+                     * 
+                     */
+                    bool EnvIdHasBeenSet() const;
+
+                    /**
                      * 获取知识库标识
                      * @return CollectionView 知识库标识
                      * 
@@ -85,15 +106,15 @@ namespace TencentCloud
                     bool FileNameHasBeenSet() const;
 
                     /**
-                     * 获取文件存储位置的可读地址
-                     * @return CosUrl 文件存储位置的可读地址
+                     * 获取腾讯云文件存储位置的可读地址
+                     * @return CosUrl 腾讯云文件存储位置的可读地址
                      * 
                      */
                     std::string GetCosUrl() const;
 
                     /**
-                     * 设置文件存储位置的可读地址
-                     * @param _cosUrl 文件存储位置的可读地址
+                     * 设置腾讯云文件存储位置的可读地址
+                     * @param _cosUrl 腾讯云文件存储位置的可读地址
                      * 
                      */
                     void SetCosUrl(const std::string& _cosUrl);
@@ -213,6 +234,12 @@ namespace TencentCloud
                 private:
 
                     /**
+                     * 环境ID
+                     */
+                    std::string m_envId;
+                    bool m_envIdHasBeenSet;
+
+                    /**
                      * 知识库标识
                      */
                     std::string m_collectionView;
@@ -225,7 +252,7 @@ namespace TencentCloud
                     bool m_fileNameHasBeenSet;
 
                     /**
-                     * 文件存储位置的可读地址
+                     * 腾讯云文件存储位置的可读地址
                      */
                     std::string m_cosUrl;
                     bool m_cosUrlHasBeenSet;

@@ -26,7 +26,8 @@ KnowledgeSet::KnowledgeSet() :
     m_descHasBeenSet(false),
     m_activeHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_metaHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome KnowledgeSet::Deserialize(const rapidjson::Value &value)
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("Meta") && !value["Meta"].IsNull())
+    {
+        if (!value["Meta"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `KnowledgeSet.Meta` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_meta = string(value["Meta"].GetString());
+        m_metaHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void KnowledgeSet::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_metaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Meta";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_meta.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void KnowledgeSet::SetUpdateTime(const string& _updateTime)
 bool KnowledgeSet::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+string KnowledgeSet::GetMeta() const
+{
+    return m_meta;
+}
+
+void KnowledgeSet::SetMeta(const string& _meta)
+{
+    m_meta = _meta;
+    m_metaHasBeenSet = true;
+}
+
+bool KnowledgeSet::MetaHasBeenSet() const
+{
+    return m_metaHasBeenSet;
 }
 

@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取addon的参数，是一个json格式的base64转码后的字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RawValues addon的参数，是一个json格式的base64转码后的字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRawValues() const;
 
                     /**
                      * 设置addon的参数，是一个json格式的base64转码后的字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rawValues addon的参数，是一个json格式的base64转码后的字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRawValues(const std::string& _rawValues);
@@ -115,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取addon的状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Phase addon的状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPhase() const;
 
                     /**
                      * 设置addon的状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _phase addon的状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPhase(const std::string& _phase);
@@ -140,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取addon失败的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Reason addon失败的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReason() const;
 
                     /**
                      * 设置addon失败的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _reason addon失败的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReason(const std::string& _reason);
@@ -200,21 +188,18 @@ namespace TencentCloud
 
                     /**
                      * addon的参数，是一个json格式的base64转码后的字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_rawValues;
                     bool m_rawValuesHasBeenSet;
 
                     /**
                      * addon的状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_phase;
                     bool m_phaseHasBeenSet;
 
                     /**
                      * addon失败的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reason;
                     bool m_reasonHasBeenSet;

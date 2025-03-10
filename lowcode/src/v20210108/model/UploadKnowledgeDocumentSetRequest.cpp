@@ -23,6 +23,7 @@ using namespace TencentCloud::Lowcode::V20210108::Model;
 using namespace std;
 
 UploadKnowledgeDocumentSetRequest::UploadKnowledgeDocumentSetRequest() :
+    m_envIdHasBeenSet(false),
     m_collectionViewHasBeenSet(false),
     m_fileNameHasBeenSet(false),
     m_cosUrlHasBeenSet(false),
@@ -40,6 +41,14 @@ string UploadKnowledgeDocumentSetRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_envIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnvId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_envId.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_collectionViewHasBeenSet)
     {
@@ -112,6 +121,22 @@ string UploadKnowledgeDocumentSetRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string UploadKnowledgeDocumentSetRequest::GetEnvId() const
+{
+    return m_envId;
+}
+
+void UploadKnowledgeDocumentSetRequest::SetEnvId(const string& _envId)
+{
+    m_envId = _envId;
+    m_envIdHasBeenSet = true;
+}
+
+bool UploadKnowledgeDocumentSetRequest::EnvIdHasBeenSet() const
+{
+    return m_envIdHasBeenSet;
+}
 
 string UploadKnowledgeDocumentSetRequest::GetCollectionView() const
 {

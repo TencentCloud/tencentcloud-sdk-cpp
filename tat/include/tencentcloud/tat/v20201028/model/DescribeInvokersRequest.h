@@ -45,14 +45,26 @@ namespace TencentCloud
 
                     /**
                      * 获取执行器ID列表。
+
+参数不支持同时指定 `InvokerIds ` 和 `Filters ` 。
+
                      * @return InvokerIds 执行器ID列表。
+
+参数不支持同时指定 `InvokerIds ` 和 `Filters ` 。
+
                      * 
                      */
                     std::vector<std::string> GetInvokerIds() const;
 
                     /**
                      * 设置执行器ID列表。
+
+参数不支持同时指定 `InvokerIds ` 和 `Filters ` 。
+
                      * @param _invokerIds 执行器ID列表。
+
+参数不支持同时指定 `InvokerIds ` 和 `Filters ` 。
+
                      * 
                      */
                     void SetInvokerIds(const std::vector<std::string>& _invokerIds);
@@ -65,15 +77,39 @@ namespace TencentCloud
                     bool InvokerIdsHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件：<li> invoker-id - String - 是否必填：否 - （过滤条件）按执行器ID过滤。</li> <li> command-id - String - 是否必填：否 - （过滤条件）按命令ID过滤。</li> <li> type - String - 是否必填：否 - （过滤条件）按执行器类型过滤。</li>
-                     * @return Filters 过滤条件：<li> invoker-id - String - 是否必填：否 - （过滤条件）按执行器ID过滤。</li> <li> command-id - String - 是否必填：否 - （过滤条件）按命令ID过滤。</li> <li> type - String - 是否必填：否 - （过滤条件）按执行器类型过滤。</li>
+                     * 获取过滤条件：
+
+- invoker-id - String - 是否必填：否 - （过滤条件）按执行器ID过滤。
+- command-id - String - 是否必填：否 - （过滤条件）按命令ID过滤。可通过 [DescribeCommands(查询命令详情)](https://cloud.tencent.com/document/api/1340/52681) 接口获取。
+- type - String - 是否必填：否 - （过滤条件）按执行器类型过滤。目前仅支持 SCHEDULE 一种。
+
+参数不支持同时指定 `InvokerIds ` 和 `Filters ` 。
+                     * @return Filters 过滤条件：
+
+- invoker-id - String - 是否必填：否 - （过滤条件）按执行器ID过滤。
+- command-id - String - 是否必填：否 - （过滤条件）按命令ID过滤。可通过 [DescribeCommands(查询命令详情)](https://cloud.tencent.com/document/api/1340/52681) 接口获取。
+- type - String - 是否必填：否 - （过滤条件）按执行器类型过滤。目前仅支持 SCHEDULE 一种。
+
+参数不支持同时指定 `InvokerIds ` 和 `Filters ` 。
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤条件：<li> invoker-id - String - 是否必填：否 - （过滤条件）按执行器ID过滤。</li> <li> command-id - String - 是否必填：否 - （过滤条件）按命令ID过滤。</li> <li> type - String - 是否必填：否 - （过滤条件）按执行器类型过滤。</li>
-                     * @param _filters 过滤条件：<li> invoker-id - String - 是否必填：否 - （过滤条件）按执行器ID过滤。</li> <li> command-id - String - 是否必填：否 - （过滤条件）按命令ID过滤。</li> <li> type - String - 是否必填：否 - （过滤条件）按执行器类型过滤。</li>
+                     * 设置过滤条件：
+
+- invoker-id - String - 是否必填：否 - （过滤条件）按执行器ID过滤。
+- command-id - String - 是否必填：否 - （过滤条件）按命令ID过滤。可通过 [DescribeCommands(查询命令详情)](https://cloud.tencent.com/document/api/1340/52681) 接口获取。
+- type - String - 是否必填：否 - （过滤条件）按执行器类型过滤。目前仅支持 SCHEDULE 一种。
+
+参数不支持同时指定 `InvokerIds ` 和 `Filters ` 。
+                     * @param _filters 过滤条件：
+
+- invoker-id - String - 是否必填：否 - （过滤条件）按执行器ID过滤。
+- command-id - String - 是否必填：否 - （过滤条件）按命令ID过滤。可通过 [DescribeCommands(查询命令详情)](https://cloud.tencent.com/document/api/1340/52681) 接口获取。
+- type - String - 是否必填：否 - （过滤条件）按执行器类型过滤。目前仅支持 SCHEDULE 一种。
+
+参数不支持同时指定 `InvokerIds ` 和 `Filters ` 。
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -131,12 +167,21 @@ namespace TencentCloud
 
                     /**
                      * 执行器ID列表。
+
+参数不支持同时指定 `InvokerIds ` 和 `Filters ` 。
+
                      */
                     std::vector<std::string> m_invokerIds;
                     bool m_invokerIdsHasBeenSet;
 
                     /**
-                     * 过滤条件：<li> invoker-id - String - 是否必填：否 - （过滤条件）按执行器ID过滤。</li> <li> command-id - String - 是否必填：否 - （过滤条件）按命令ID过滤。</li> <li> type - String - 是否必填：否 - （过滤条件）按执行器类型过滤。</li>
+                     * 过滤条件：
+
+- invoker-id - String - 是否必填：否 - （过滤条件）按执行器ID过滤。
+- command-id - String - 是否必填：否 - （过滤条件）按命令ID过滤。可通过 [DescribeCommands(查询命令详情)](https://cloud.tencent.com/document/api/1340/52681) 接口获取。
+- type - String - 是否必填：否 - （过滤条件）按执行器类型过滤。目前仅支持 SCHEDULE 一种。
+
+参数不支持同时指定 `InvokerIds ` 和 `Filters ` 。
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

@@ -195,10 +195,6 @@
 #include <tencentcloud/lke/v20231130/model/ModifyQACateResponse.h>
 #include <tencentcloud/lke/v20231130/model/ModifyRejectedQuestionRequest.h>
 #include <tencentcloud/lke/v20231130/model/ModifyRejectedQuestionResponse.h>
-#include <tencentcloud/lke/v20231130/model/ParseDocRequest.h>
-#include <tencentcloud/lke/v20231130/model/ParseDocResponse.h>
-#include <tencentcloud/lke/v20231130/model/QueryParseDocResultRequest.h>
-#include <tencentcloud/lke/v20231130/model/QueryParseDocResultResponse.h>
 #include <tencentcloud/lke/v20231130/model/QueryRewriteRequest.h>
 #include <tencentcloud/lke/v20231130/model/QueryRewriteResponse.h>
 #include <tencentcloud/lke/v20231130/model/RateMsgRecordRequest.h>
@@ -497,12 +493,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyRejectedQuestionResponse> ModifyRejectedQuestionOutcome;
                 typedef std::future<ModifyRejectedQuestionOutcome> ModifyRejectedQuestionOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::ModifyRejectedQuestionRequest&, ModifyRejectedQuestionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRejectedQuestionAsyncHandler;
-                typedef Outcome<Core::Error, Model::ParseDocResponse> ParseDocOutcome;
-                typedef std::future<ParseDocOutcome> ParseDocOutcomeCallable;
-                typedef std::function<void(const LkeClient*, const Model::ParseDocRequest&, ParseDocOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ParseDocAsyncHandler;
-                typedef Outcome<Core::Error, Model::QueryParseDocResultResponse> QueryParseDocResultOutcome;
-                typedef std::future<QueryParseDocResultOutcome> QueryParseDocResultOutcomeCallable;
-                typedef std::function<void(const LkeClient*, const Model::QueryParseDocResultRequest&, QueryParseDocResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryParseDocResultAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryRewriteResponse> QueryRewriteOutcome;
                 typedef std::future<QueryRewriteOutcome> QueryRewriteOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::QueryRewriteRequest&, QueryRewriteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryRewriteAsyncHandler;
@@ -1324,28 +1314,6 @@ namespace TencentCloud
                 ModifyRejectedQuestionOutcome ModifyRejectedQuestion(const Model::ModifyRejectedQuestionRequest &request);
                 void ModifyRejectedQuestionAsync(const Model::ModifyRejectedQuestionRequest& request, const ModifyRejectedQuestionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyRejectedQuestionOutcomeCallable ModifyRejectedQuestionCallable(const Model::ModifyRejectedQuestionRequest& request);
-
-                /**
-                 *接口已迁移到新接口了，无调用量
-
-接口即将下线，请切换使用新接口：[文档解析](https://cloud.tencent.com/document/product/1759/107504)
-                 * @param req ParseDocRequest
-                 * @return ParseDocOutcome
-                 */
-                ParseDocOutcome ParseDoc(const Model::ParseDocRequest &request);
-                void ParseDocAsync(const Model::ParseDocRequest& request, const ParseDocAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ParseDocOutcomeCallable ParseDocCallable(const Model::ParseDocRequest& request);
-
-                /**
-                 *接口已迁移到新接口了，无调用量
-
-查询文档解析结果。该接口需开通文档解析原子能力后调用。文档解析原子能力内测中，如有需要请联系架构师或[联系客服](https://cloud.tencent.com/act/event/Online_service) 。
-                 * @param req QueryParseDocResultRequest
-                 * @return QueryParseDocResultOutcome
-                 */
-                QueryParseDocResultOutcome QueryParseDocResult(const Model::QueryParseDocResultRequest &request);
-                void QueryParseDocResultAsync(const Model::QueryParseDocResultRequest& request, const QueryParseDocResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                QueryParseDocResultOutcomeCallable QueryParseDocResultCallable(const Model::QueryParseDocResultRequest& request);
 
                 /**
                  *多轮改写（QueryRewrite）主要用于多轮对话中，进行指代消解和省略补全。使用本接口，无需输入prompt描述，根据对话历史即可生成更精确的用户查询。在应用场景上，本接口可应用于智能问答、对话式搜索等多种场景。

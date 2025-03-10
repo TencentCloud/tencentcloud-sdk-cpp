@@ -77,6 +77,8 @@
 #include <tencentcloud/mqtt/v20240516/model/DescribeDeviceCertificatesResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeInsPublicEndpointsRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeInsPublicEndpointsResponse.h>
+#include <tencentcloud/mqtt/v20240516/model/DescribeInsVPCEndpointsRequest.h>
+#include <tencentcloud/mqtt/v20240516/model/DescribeInsVPCEndpointsResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeInstanceRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeInstanceResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/DescribeInstanceListRequest.h>
@@ -210,6 +212,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInsPublicEndpointsResponse> DescribeInsPublicEndpointsOutcome;
                 typedef std::future<DescribeInsPublicEndpointsOutcome> DescribeInsPublicEndpointsOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::DescribeInsPublicEndpointsRequest&, DescribeInsPublicEndpointsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInsPublicEndpointsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInsVPCEndpointsResponse> DescribeInsVPCEndpointsOutcome;
+                typedef std::future<DescribeInsVPCEndpointsOutcome> DescribeInsVPCEndpointsOutcomeCallable;
+                typedef std::function<void(const MqttClient*, const Model::DescribeInsVPCEndpointsRequest&, DescribeInsVPCEndpointsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInsVPCEndpointsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstanceResponse> DescribeInstanceOutcome;
                 typedef std::future<DescribeInstanceOutcome> DescribeInstanceOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::DescribeInstanceRequest&, DescribeInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceAsyncHandler;
@@ -512,6 +517,15 @@ namespace TencentCloud
                 DescribeInsPublicEndpointsOutcome DescribeInsPublicEndpoints(const Model::DescribeInsPublicEndpointsRequest &request);
                 void DescribeInsPublicEndpointsAsync(const Model::DescribeInsPublicEndpointsRequest& request, const DescribeInsPublicEndpointsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInsPublicEndpointsOutcomeCallable DescribeInsPublicEndpointsCallable(const Model::DescribeInsPublicEndpointsRequest& request);
+
+                /**
+                 *查询MQTT实例公网接入点
+                 * @param req DescribeInsVPCEndpointsRequest
+                 * @return DescribeInsVPCEndpointsOutcome
+                 */
+                DescribeInsVPCEndpointsOutcome DescribeInsVPCEndpoints(const Model::DescribeInsVPCEndpointsRequest &request);
+                void DescribeInsVPCEndpointsAsync(const Model::DescribeInsVPCEndpointsRequest& request, const DescribeInsVPCEndpointsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInsVPCEndpointsOutcomeCallable DescribeInsVPCEndpointsCallable(const Model::DescribeInsVPCEndpointsRequest& request);
 
                 /**
                  *查询实例信息

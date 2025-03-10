@@ -43,6 +43,27 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取环境ID
+                     * @return EnvId 环境ID
+                     * 
+                     */
+                    std::string GetEnvId() const;
+
+                    /**
+                     * 设置环境ID
+                     * @param _envId 环境ID
+                     * 
+                     */
+                    void SetEnvId(const std::string& _envId);
+
+                    /**
+                     * 判断参数 EnvId 是否已赋值
+                     * @return EnvId 是否已赋值
+                     * 
+                     */
+                    bool EnvIdHasBeenSet() const;
+
+                    /**
                      * 获取知识库标识，精准查询
                      * @return Name 知识库标识，精准查询
                      * 
@@ -83,6 +104,27 @@ namespace TencentCloud
                      * 
                      */
                     bool TitleHasBeenSet() const;
+
+                    /**
+                     * 获取分页起始位
+                     * @return Offset 分页起始位
+                     * 
+                     */
+                    int64_t GetOffset() const;
+
+                    /**
+                     * 设置分页起始位
+                     * @param _offset 分页起始位
+                     * 
+                     */
+                    void SetOffset(const int64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     * 
+                     */
+                    bool OffsetHasBeenSet() const;
 
                     /**
                      * 获取查询条数
@@ -129,6 +171,12 @@ namespace TencentCloud
                 private:
 
                     /**
+                     * 环境ID
+                     */
+                    std::string m_envId;
+                    bool m_envIdHasBeenSet;
+
+                    /**
                      * 知识库标识，精准查询
                      */
                     std::string m_name;
@@ -139,6 +187,12 @@ namespace TencentCloud
                      */
                     std::string m_title;
                     bool m_titleHasBeenSet;
+
+                    /**
+                     * 分页起始位
+                     */
+                    int64_t m_offset;
+                    bool m_offsetHasBeenSet;
 
                     /**
                      * 查询条数

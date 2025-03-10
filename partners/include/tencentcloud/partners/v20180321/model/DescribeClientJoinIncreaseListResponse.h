@@ -14,56 +14,57 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_LKE_V20231130_MODEL_PARSEDOCRESPONSE_H_
-#define TENCENTCLOUD_LKE_V20231130_MODEL_PARSEDOCRESPONSE_H_
+#ifndef TENCENTCLOUD_PARTNERS_V20180321_MODEL_DESCRIBECLIENTJOININCREASELISTRESPONSE_H_
+#define TENCENTCLOUD_PARTNERS_V20180321_MODEL_DESCRIBECLIENTJOININCREASELISTRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/partners/v20180321/model/ClientIncreaseInfoList.h>
 
 
 namespace TencentCloud
 {
-    namespace Lke
+    namespace Partners
     {
-        namespace V20231130
+        namespace V20180321
         {
             namespace Model
             {
                 /**
-                * ParseDoc返回参数结构体
+                * DescribeClientJoinIncreaseList返回参数结构体
                 */
-                class ParseDocResponse : public AbstractModel
+                class DescribeClientJoinIncreaseListResponse : public AbstractModel
                 {
                 public:
-                    ParseDocResponse();
-                    ~ParseDocResponse() = default;
+                    DescribeClientJoinIncreaseListResponse();
+                    ~DescribeClientJoinIncreaseListResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取任务ID
-                     * @return TaskId 任务ID
+                     * 获取已审核代客列表
+                     * @return List 已审核代客列表
                      * 
                      */
-                    std::string GetTaskId() const;
+                    std::vector<ClientIncreaseInfoList> GetList() const;
 
                     /**
-                     * 判断参数 TaskId 是否已赋值
-                     * @return TaskId 是否已赋值
+                     * 判断参数 List 是否已赋值
+                     * @return List 是否已赋值
                      * 
                      */
-                    bool TaskIdHasBeenSet() const;
+                    bool ListHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 任务ID
+                     * 已审核代客列表
                      */
-                    std::string m_taskId;
-                    bool m_taskIdHasBeenSet;
+                    std::vector<ClientIncreaseInfoList> m_list;
+                    bool m_listHasBeenSet;
 
                 };
             }
@@ -71,4 +72,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_LKE_V20231130_MODEL_PARSEDOCRESPONSE_H_
+#endif // !TENCENTCLOUD_PARTNERS_V20180321_MODEL_DESCRIBECLIENTJOININCREASELISTRESPONSE_H_

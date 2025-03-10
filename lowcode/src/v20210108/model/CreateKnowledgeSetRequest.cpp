@@ -23,9 +23,11 @@ using namespace TencentCloud::Lowcode::V20210108::Model;
 using namespace std;
 
 CreateKnowledgeSetRequest::CreateKnowledgeSetRequest() :
+    m_envIdHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_titleHasBeenSet(false),
-    m_descHasBeenSet(false)
+    m_descHasBeenSet(false),
+    m_metaHasBeenSet(false)
 {
 }
 
@@ -35,6 +37,14 @@ string CreateKnowledgeSetRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_envIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnvId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_envId.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_nameHasBeenSet)
     {
@@ -60,6 +70,14 @@ string CreateKnowledgeSetRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_desc.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_metaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Meta";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_meta.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -67,6 +85,22 @@ string CreateKnowledgeSetRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string CreateKnowledgeSetRequest::GetEnvId() const
+{
+    return m_envId;
+}
+
+void CreateKnowledgeSetRequest::SetEnvId(const string& _envId)
+{
+    m_envId = _envId;
+    m_envIdHasBeenSet = true;
+}
+
+bool CreateKnowledgeSetRequest::EnvIdHasBeenSet() const
+{
+    return m_envIdHasBeenSet;
+}
 
 string CreateKnowledgeSetRequest::GetName() const
 {
@@ -114,6 +148,22 @@ void CreateKnowledgeSetRequest::SetDesc(const string& _desc)
 bool CreateKnowledgeSetRequest::DescHasBeenSet() const
 {
     return m_descHasBeenSet;
+}
+
+string CreateKnowledgeSetRequest::GetMeta() const
+{
+    return m_meta;
+}
+
+void CreateKnowledgeSetRequest::SetMeta(const string& _meta)
+{
+    m_meta = _meta;
+    m_metaHasBeenSet = true;
+}
+
+bool CreateKnowledgeSetRequest::MetaHasBeenSet() const
+{
+    return m_metaHasBeenSet;
 }
 
 

@@ -44,15 +44,27 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取场景 ID 数组
-                     * @return SceneIds 场景 ID 数组
+                     * 获取场景 ID 数组。
+
+参数不支持同时指定 `SceneIds ` 和 `Filters ` 。
+
+                     * @return SceneIds 场景 ID 数组。
+
+参数不支持同时指定 `SceneIds ` 和 `Filters ` 。
+
                      * 
                      */
                     std::vector<std::string> GetSceneIds() const;
 
                     /**
-                     * 设置场景 ID 数组
-                     * @param _sceneIds 场景 ID 数组
+                     * 设置场景 ID 数组。
+
+参数不支持同时指定 `SceneIds ` 和 `Filters ` 。
+
+                     * @param _sceneIds 场景 ID 数组。
+
+参数不支持同时指定 `SceneIds ` 和 `Filters ` 。
+
                      * 
                      */
                     void SetSceneIds(const std::vector<std::string>& _sceneIds);
@@ -66,15 +78,17 @@ namespace TencentCloud
 
                     /**
                      * 获取过滤条件。
-<li> scene-id - String - 是否必填：否 -（过滤条件）按照场景 ID 过滤。</li>
-<li> scene-name - String - 是否必填：否 -（过滤条件）按照场景名称过滤。</li>
-<li> created-by - String - 是否必填：否 -（过滤条件）按照场景创建者过滤，取值为 TAT 或 USER。TAT 代表公共命令，USER 代表由用户创建的命令。</li>
+
+- scene-id - String - 是否必填：否 -（过滤条件）按照场景 ID 过滤。
+- scene-name - String - 是否必填：否 -（过滤条件）按照场景名称过滤。
+- created-by - String - 是否必填：否 -（过滤条件）按照场景创建者过滤，目前仅支持 TAT，代表公共场景。
 
 每次请求的 `Filters` 的上限为10， `Filter.Values` 的上限为5。参数不支持同时指定 `SceneIds` 和 `Filters` 。
                      * @return Filters 过滤条件。
-<li> scene-id - String - 是否必填：否 -（过滤条件）按照场景 ID 过滤。</li>
-<li> scene-name - String - 是否必填：否 -（过滤条件）按照场景名称过滤。</li>
-<li> created-by - String - 是否必填：否 -（过滤条件）按照场景创建者过滤，取值为 TAT 或 USER。TAT 代表公共命令，USER 代表由用户创建的命令。</li>
+
+- scene-id - String - 是否必填：否 -（过滤条件）按照场景 ID 过滤。
+- scene-name - String - 是否必填：否 -（过滤条件）按照场景名称过滤。
+- created-by - String - 是否必填：否 -（过滤条件）按照场景创建者过滤，目前仅支持 TAT，代表公共场景。
 
 每次请求的 `Filters` 的上限为10， `Filter.Values` 的上限为5。参数不支持同时指定 `SceneIds` 和 `Filters` 。
                      * 
@@ -83,15 +97,17 @@ namespace TencentCloud
 
                     /**
                      * 设置过滤条件。
-<li> scene-id - String - 是否必填：否 -（过滤条件）按照场景 ID 过滤。</li>
-<li> scene-name - String - 是否必填：否 -（过滤条件）按照场景名称过滤。</li>
-<li> created-by - String - 是否必填：否 -（过滤条件）按照场景创建者过滤，取值为 TAT 或 USER。TAT 代表公共命令，USER 代表由用户创建的命令。</li>
+
+- scene-id - String - 是否必填：否 -（过滤条件）按照场景 ID 过滤。
+- scene-name - String - 是否必填：否 -（过滤条件）按照场景名称过滤。
+- created-by - String - 是否必填：否 -（过滤条件）按照场景创建者过滤，目前仅支持 TAT，代表公共场景。
 
 每次请求的 `Filters` 的上限为10， `Filter.Values` 的上限为5。参数不支持同时指定 `SceneIds` 和 `Filters` 。
                      * @param _filters 过滤条件。
-<li> scene-id - String - 是否必填：否 -（过滤条件）按照场景 ID 过滤。</li>
-<li> scene-name - String - 是否必填：否 -（过滤条件）按照场景名称过滤。</li>
-<li> created-by - String - 是否必填：否 -（过滤条件）按照场景创建者过滤，取值为 TAT 或 USER。TAT 代表公共命令，USER 代表由用户创建的命令。</li>
+
+- scene-id - String - 是否必填：否 -（过滤条件）按照场景 ID 过滤。
+- scene-name - String - 是否必填：否 -（过滤条件）按照场景名称过滤。
+- created-by - String - 是否必填：否 -（过滤条件）按照场景创建者过滤，目前仅支持 TAT，代表公共场景。
 
 每次请求的 `Filters` 的上限为10， `Filter.Values` 的上限为5。参数不支持同时指定 `SceneIds` 和 `Filters` 。
                      * 
@@ -150,16 +166,20 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 场景 ID 数组
+                     * 场景 ID 数组。
+
+参数不支持同时指定 `SceneIds ` 和 `Filters ` 。
+
                      */
                     std::vector<std::string> m_sceneIds;
                     bool m_sceneIdsHasBeenSet;
 
                     /**
                      * 过滤条件。
-<li> scene-id - String - 是否必填：否 -（过滤条件）按照场景 ID 过滤。</li>
-<li> scene-name - String - 是否必填：否 -（过滤条件）按照场景名称过滤。</li>
-<li> created-by - String - 是否必填：否 -（过滤条件）按照场景创建者过滤，取值为 TAT 或 USER。TAT 代表公共命令，USER 代表由用户创建的命令。</li>
+
+- scene-id - String - 是否必填：否 -（过滤条件）按照场景 ID 过滤。
+- scene-name - String - 是否必填：否 -（过滤条件）按照场景名称过滤。
+- created-by - String - 是否必填：否 -（过滤条件）按照场景创建者过滤，目前仅支持 TAT，代表公共场景。
 
 每次请求的 `Filters` 的上限为10， `Filter.Values` 的上限为5。参数不支持同时指定 `SceneIds` 和 `Filters` 。
                      */

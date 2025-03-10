@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取VpcId(VPC网络下有效)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId VpcId(VPC网络下有效)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置VpcId(VPC网络下有效)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcId VpcId(VPC网络下有效)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子网Id(VPC网络下有效)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetId 子网Id(VPC网络下有效)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网Id(VPC网络下有效)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subnetId 子网Id(VPC网络下有效)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内网访问IP。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vip 内网访问IP。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVip() const;
 
                     /**
                      * 设置内网访问IP。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vip 内网访问IP。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVip(const std::string& _vip);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内网访问Port。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Port 内网访问Port。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置内网访问Port。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _port 内网访问Port。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPort(const int64_t& _port);
@@ -192,28 +176,24 @@ namespace TencentCloud
 
                     /**
                      * VpcId(VPC网络下有效)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
                      * 子网Id(VPC网络下有效)。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
                      * 内网访问IP。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vip;
                     bool m_vipHasBeenSet;
 
                     /**
                      * 内网访问Port。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;

@@ -1201,6 +1201,49 @@ MqttClient::DescribeInsPublicEndpointsOutcomeCallable MqttClient::DescribeInsPub
     return task->get_future();
 }
 
+MqttClient::DescribeInsVPCEndpointsOutcome MqttClient::DescribeInsVPCEndpoints(const DescribeInsVPCEndpointsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInsVPCEndpoints");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInsVPCEndpointsResponse rsp = DescribeInsVPCEndpointsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInsVPCEndpointsOutcome(rsp);
+        else
+            return DescribeInsVPCEndpointsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInsVPCEndpointsOutcome(outcome.GetError());
+    }
+}
+
+void MqttClient::DescribeInsVPCEndpointsAsync(const DescribeInsVPCEndpointsRequest& request, const DescribeInsVPCEndpointsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInsVPCEndpoints(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MqttClient::DescribeInsVPCEndpointsOutcomeCallable MqttClient::DescribeInsVPCEndpointsCallable(const DescribeInsVPCEndpointsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInsVPCEndpointsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInsVPCEndpoints(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MqttClient::DescribeInstanceOutcome MqttClient::DescribeInstance(const DescribeInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeInstance");

@@ -48,14 +48,34 @@ namespace TencentCloud
 
                     /**
                      * 获取资源名称
+
+取值为：
+
+- COMMAND：命令
+- REGISTER_CODE：托管实例注册码
                      * @return ResourceName 资源名称
+
+取值为：
+
+- COMMAND：命令
+- REGISTER_CODE：托管实例注册码
                      * 
                      */
                     std::string GetResourceName() const;
 
                     /**
                      * 设置资源名称
+
+取值为：
+
+- COMMAND：命令
+- REGISTER_CODE：托管实例注册码
                      * @param _resourceName 资源名称
+
+取值为：
+
+- COMMAND：命令
+- REGISTER_CODE：托管实例注册码
                      * 
                      */
                     void SetResourceName(const std::string& _resourceName);
@@ -113,6 +133,11 @@ namespace TencentCloud
 
                     /**
                      * 资源名称
+
+取值为：
+
+- COMMAND：命令
+- REGISTER_CODE：托管实例注册码
                      */
                     std::string m_resourceName;
                     bool m_resourceNameHasBeenSet;

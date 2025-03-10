@@ -49,7 +49,8 @@ RoomInfo::RoomInfo() :
     m_recordBackgroundHasBeenSet(false),
     m_recordSceneHasBeenSet(false),
     m_recordLangHasBeenSet(false),
-    m_recordStreamHasBeenSet(false)
+    m_recordStreamHasBeenSet(false),
+    m_whiteBoardSnapshotModeHasBeenSet(false)
 {
 }
 
@@ -351,6 +352,16 @@ CoreInternalOutcome RoomInfo::Deserialize(const rapidjson::Value &value)
         m_recordStreamHasBeenSet = true;
     }
 
+    if (value.HasMember("WhiteBoardSnapshotMode") && !value["WhiteBoardSnapshotMode"].IsNull())
+    {
+        if (!value["WhiteBoardSnapshotMode"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RoomInfo.WhiteBoardSnapshotMode` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_whiteBoardSnapshotMode = value["WhiteBoardSnapshotMode"].GetUint64();
+        m_whiteBoardSnapshotModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -593,6 +604,14 @@ void RoomInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "RecordStream";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_recordStream, allocator);
+    }
+
+    if (m_whiteBoardSnapshotModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WhiteBoardSnapshotMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_whiteBoardSnapshotMode, allocator);
     }
 
 }
@@ -1060,5 +1079,21 @@ void RoomInfo::SetRecordStream(const uint64_t& _recordStream)
 bool RoomInfo::RecordStreamHasBeenSet() const
 {
     return m_recordStreamHasBeenSet;
+}
+
+uint64_t RoomInfo::GetWhiteBoardSnapshotMode() const
+{
+    return m_whiteBoardSnapshotMode;
+}
+
+void RoomInfo::SetWhiteBoardSnapshotMode(const uint64_t& _whiteBoardSnapshotMode)
+{
+    m_whiteBoardSnapshotMode = _whiteBoardSnapshotMode;
+    m_whiteBoardSnapshotModeHasBeenSet = true;
+}
+
+bool RoomInfo::WhiteBoardSnapshotModeHasBeenSet() const
+{
+    return m_whiteBoardSnapshotModeHasBeenSet;
 }
 

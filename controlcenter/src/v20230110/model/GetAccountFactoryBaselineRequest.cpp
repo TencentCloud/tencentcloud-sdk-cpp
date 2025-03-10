@@ -14,33 +14,24 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/lke/v20231130/model/QueryParseDocResultRequest.h>
+#include <tencentcloud/controlcenter/v20230110/model/GetAccountFactoryBaselineRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Lke::V20231130::Model;
+using namespace TencentCloud::Controlcenter::V20230110::Model;
 using namespace std;
 
-QueryParseDocResultRequest::QueryParseDocResultRequest() :
-    m_taskIdHasBeenSet(false)
+GetAccountFactoryBaselineRequest::GetAccountFactoryBaselineRequest()
 {
 }
 
-string QueryParseDocResultRequest::ToJsonString() const
+string GetAccountFactoryBaselineRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_taskIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TaskId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
-    }
 
 
     rapidjson::StringBuffer buffer;
@@ -49,21 +40,5 @@ string QueryParseDocResultRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string QueryParseDocResultRequest::GetTaskId() const
-{
-    return m_taskId;
-}
-
-void QueryParseDocResultRequest::SetTaskId(const string& _taskId)
-{
-    m_taskId = _taskId;
-    m_taskIdHasBeenSet = true;
-}
-
-bool QueryParseDocResultRequest::TaskIdHasBeenSet() const
-{
-    return m_taskIdHasBeenSet;
-}
 
 

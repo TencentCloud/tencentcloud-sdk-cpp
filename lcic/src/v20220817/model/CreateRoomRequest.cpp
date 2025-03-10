@@ -52,7 +52,8 @@ CreateRoomRequest::CreateRoomRequest() :
     m_recordBackgroundHasBeenSet(false),
     m_recordSceneHasBeenSet(false),
     m_recordLangHasBeenSet(false),
-    m_recordStreamHasBeenSet(false)
+    m_recordStreamHasBeenSet(false),
+    m_whiteBoardSnapshotModeHasBeenSet(false)
 {
 }
 
@@ -306,6 +307,14 @@ string CreateRoomRequest::ToJsonString() const
         string key = "RecordStream";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_recordStream, allocator);
+    }
+
+    if (m_whiteBoardSnapshotModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WhiteBoardSnapshotMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_whiteBoardSnapshotMode, allocator);
     }
 
 
@@ -794,6 +803,22 @@ void CreateRoomRequest::SetRecordStream(const uint64_t& _recordStream)
 bool CreateRoomRequest::RecordStreamHasBeenSet() const
 {
     return m_recordStreamHasBeenSet;
+}
+
+uint64_t CreateRoomRequest::GetWhiteBoardSnapshotMode() const
+{
+    return m_whiteBoardSnapshotMode;
+}
+
+void CreateRoomRequest::SetWhiteBoardSnapshotMode(const uint64_t& _whiteBoardSnapshotMode)
+{
+    m_whiteBoardSnapshotMode = _whiteBoardSnapshotMode;
+    m_whiteBoardSnapshotModeHasBeenSet = true;
+}
+
+bool CreateRoomRequest::WhiteBoardSnapshotModeHasBeenSet() const
+{
+    return m_whiteBoardSnapshotModeHasBeenSet;
 }
 
 

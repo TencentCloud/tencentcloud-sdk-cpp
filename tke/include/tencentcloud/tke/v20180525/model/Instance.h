@@ -133,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例是否封锁状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DrainStatus 实例是否封锁状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDrainStatus() const;
 
                     /**
                      * 设置实例是否封锁状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _drainStatus 实例是否封锁状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDrainStatus(const std::string& _drainStatus);
@@ -158,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceAdvancedSettings 节点配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     InstanceAdvancedSettings GetInstanceAdvancedSettings() const;
 
                     /**
                      * 设置节点配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceAdvancedSettings 节点配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceAdvancedSettings(const InstanceAdvancedSettings& _instanceAdvancedSettings);
@@ -204,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点内网IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LanIP 节点内网IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLanIP() const;
 
                     /**
                      * 设置节点内网IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lanIP 节点内网IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLanIP(const std::string& _lanIP);
@@ -229,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源池ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodePoolId 资源池ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNodePoolId() const;
 
                     /**
                      * 设置资源池ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nodePoolId 资源池ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNodePoolId(const std::string& _nodePoolId);
@@ -254,18 +238,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自动伸缩组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoscalingGroupId 自动伸缩组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAutoscalingGroupId() const;
 
                     /**
                      * 设置自动伸缩组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _autoscalingGroupId 自动伸缩组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAutoscalingGroupId(const std::string& _autoscalingGroupId);
@@ -305,14 +285,12 @@ namespace TencentCloud
 
                     /**
                      * 实例是否封锁状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_drainStatus;
                     bool m_drainStatusHasBeenSet;
 
                     /**
                      * 节点配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     InstanceAdvancedSettings m_instanceAdvancedSettings;
                     bool m_instanceAdvancedSettingsHasBeenSet;
@@ -325,21 +303,18 @@ namespace TencentCloud
 
                     /**
                      * 节点内网IP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lanIP;
                     bool m_lanIPHasBeenSet;
 
                     /**
                      * 资源池ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nodePoolId;
                     bool m_nodePoolIdHasBeenSet;
 
                     /**
                      * 自动伸缩组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_autoscalingGroupId;
                     bool m_autoscalingGroupIdHasBeenSet;

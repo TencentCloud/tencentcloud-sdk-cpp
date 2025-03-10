@@ -44,14 +44,22 @@ namespace TencentCloud
 
                     /**
                      * 获取待停止的执行器ID。
+
+可通过 [DescribeInvokers(查询执行器)](https://cloud.tencent.com/document/api/1340/61759) 接口获取。
                      * @return InvokerId 待停止的执行器ID。
+
+可通过 [DescribeInvokers(查询执行器)](https://cloud.tencent.com/document/api/1340/61759) 接口获取。
                      * 
                      */
                     std::string GetInvokerId() const;
 
                     /**
                      * 设置待停止的执行器ID。
+
+可通过 [DescribeInvokers(查询执行器)](https://cloud.tencent.com/document/api/1340/61759) 接口获取。
                      * @param _invokerId 待停止的执行器ID。
+
+可通过 [DescribeInvokers(查询执行器)](https://cloud.tencent.com/document/api/1340/61759) 接口获取。
                      * 
                      */
                     void SetInvokerId(const std::string& _invokerId);
@@ -67,6 +75,8 @@ namespace TencentCloud
 
                     /**
                      * 待停止的执行器ID。
+
+可通过 [DescribeInvokers(查询执行器)](https://cloud.tencent.com/document/api/1340/61759) 接口获取。
                      */
                     std::string m_invokerId;
                     bool m_invokerIdHasBeenSet;

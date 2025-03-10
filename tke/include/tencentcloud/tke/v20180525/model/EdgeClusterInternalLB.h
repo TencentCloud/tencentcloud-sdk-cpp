@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启内网访问LB
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Enabled 是否开启内网访问LB
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnabled() const;
 
                     /**
                      * 设置是否开启内网访问LB
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enabled 是否开启内网访问LB
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnabled(const bool& _enabled);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内网访问LB关联的子网Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetId 内网访问LB关联的子网Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetSubnetId() const;
 
                     /**
                      * 设置内网访问LB关联的子网Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subnetId 内网访问LB关联的子网Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubnetId(const std::vector<std::string>& _subnetId);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 是否开启内网访问LB
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enabled;
                     bool m_enabledHasBeenSet;
 
                     /**
                      * 内网访问LB关联的子网Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_subnetId;
                     bool m_subnetIdHasBeenSet;

@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool RegionNameHasBeenSet() const;
 
                     /**
-                     * 获取地域是否可用状态，AVAILABLE 代表可用
-                     * @return RegionState 地域是否可用状态，AVAILABLE 代表可用
+                     * 获取地域是否可用状态，AVAILABLE 代表可用，UNAVAILABLE 代表不可用。
+                     * @return RegionState 地域是否可用状态，AVAILABLE 代表可用，UNAVAILABLE 代表不可用。
                      * 
                      */
                     std::string GetRegionState() const;
 
                     /**
-                     * 设置地域是否可用状态，AVAILABLE 代表可用
-                     * @param _regionState 地域是否可用状态，AVAILABLE 代表可用
+                     * 设置地域是否可用状态，AVAILABLE 代表可用，UNAVAILABLE 代表不可用。
+                     * @param _regionState 地域是否可用状态，AVAILABLE 代表可用，UNAVAILABLE 代表不可用。
                      * 
                      */
                     void SetRegionState(const std::string& _regionState);
@@ -124,7 +124,7 @@ namespace TencentCloud
                     bool m_regionNameHasBeenSet;
 
                     /**
-                     * 地域是否可用状态，AVAILABLE 代表可用
+                     * 地域是否可用状态，AVAILABLE 代表可用，UNAVAILABLE 代表不可用。
                      */
                     std::string m_regionState;
                     bool m_regionStateHasBeenSet;

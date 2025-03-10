@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当前版本的最新小版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LatestVersion 当前版本的最新小版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLatestVersion() const;
 
                     /**
                      * 设置当前版本的最新小版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _latestVersion 当前版本的最新小版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLatestVersion(const std::string& _latestVersion);
@@ -171,7 +167,6 @@ namespace TencentCloud
 
                     /**
                      * 当前版本的最新小版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_latestVersion;
                     bool m_latestVersionHasBeenSet;

@@ -70,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodesNum 节点数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetNodesNum() const;
 
                     /**
                      * 设置节点数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nodesNum 节点数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNodesNum(const uint64_t& _nodesNum);
@@ -103,7 +99,6 @@ namespace TencentCloud
 
                     /**
                      * 节点数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_nodesNum;
                     bool m_nodesNumHasBeenSet;

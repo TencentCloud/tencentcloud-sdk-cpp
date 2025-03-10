@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源六段式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Resource 资源六段式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResource() const;
 
                     /**
                      * 设置资源六段式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resource 资源六段式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResource(const std::string& _resource);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取执行失败的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Error 执行失败的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetError() const;
 
                     /**
                      * 设置执行失败的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _error 执行失败的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetError(const std::string& _error);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 资源六段式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resource;
                     bool m_resourceHasBeenSet;
 
                     /**
                      * 执行失败的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_error;
                     bool m_errorHasBeenSet;

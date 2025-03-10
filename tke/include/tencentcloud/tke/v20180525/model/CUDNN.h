@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取cuDNN的版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Version cuDNN的版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置cuDNN的版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _version cuDNN的版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVersion(const std::string& _version);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取cuDNN的名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name cuDNN的名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置cuDNN的名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name cuDNN的名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取cuDNN的Doc名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DocName cuDNN的Doc名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDocName() const;
 
                     /**
                      * 设置cuDNN的Doc名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _docName cuDNN的Doc名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDocName(const std::string& _docName);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取cuDNN的Dev名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DevName cuDNN的Dev名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDevName() const;
 
                     /**
                      * 设置cuDNN的Dev名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _devName cuDNN的Dev名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDevName(const std::string& _devName);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * cuDNN的版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;
 
                     /**
                      * cuDNN的名字
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * cuDNN的Doc名字
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_docName;
                     bool m_docNameHasBeenSet;
 
                     /**
                      * cuDNN的Dev名字
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_devName;
                     bool m_devNameHasBeenSet;
