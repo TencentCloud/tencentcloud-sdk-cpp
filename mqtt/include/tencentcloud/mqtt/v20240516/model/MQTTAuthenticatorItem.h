@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取认证器类型: JWT：JWT认证器 JWKS：JWKS认证器 BYOC：一端一证认证器
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 认证器类型: JWT：JWT认证器 JWKS：JWKS认证器 BYOC：一端一证认证器
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置认证器类型: JWT：JWT认证器 JWKS：JWKS认证器 BYOC：一端一证认证器
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 认证器类型: JWT：JWT认证器 JWKS：JWKS认证器 BYOC：一端一证认证器
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取认证器配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Config 认证器配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConfig() const;
 
                     /**
                      * 设置认证器配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _config 认证器配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConfig(const std::string& _config);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取认证器状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 认证器状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置认证器状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 认证器状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const int64_t& _createTime);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取说明
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 说明
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置说明
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remark 说明
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -175,35 +155,30 @@ namespace TencentCloud
 
                     /**
                      * 认证器类型: JWT：JWT认证器 JWKS：JWKS认证器 BYOC：一端一证认证器
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 认证器配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_config;
                     bool m_configHasBeenSet;
 
                     /**
                      * 认证器状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 说明
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;

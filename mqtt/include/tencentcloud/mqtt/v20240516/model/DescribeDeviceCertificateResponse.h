@@ -199,9 +199,7 @@ namespace TencentCloud
 
                     /**
                      * 获取客户端id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClientId 客户端id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClientId() const;
@@ -242,6 +240,20 @@ namespace TencentCloud
                      * 
                      */
                     bool NotBeforeTimeHasBeenSet() const;
+
+                    /**
+                     * 获取组织单位
+                     * @return OrganizationalUnit 组织单位
+                     * 
+                     */
+                    std::string GetOrganizationalUnit() const;
+
+                    /**
+                     * 判断参数 OrganizationalUnit 是否已赋值
+                     * @return OrganizationalUnit 是否已赋值
+                     * 
+                     */
+                    bool OrganizationalUnitHasBeenSet() const;
 
                 private:
 
@@ -313,7 +325,6 @@ namespace TencentCloud
 
                     /**
                      * 客户端id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clientId;
                     bool m_clientIdHasBeenSet;
@@ -330,6 +341,12 @@ namespace TencentCloud
                      */
                     int64_t m_notBeforeTime;
                     bool m_notBeforeTimeHasBeenSet;
+
+                    /**
+                     * 组织单位
+                     */
+                    std::string m_organizationalUnit;
+                    bool m_organizationalUnitHasBeenSet;
 
                 };
             }

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取客户端id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClientId 客户端id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClientId() const;
 
                     /**
                      * 设置客户端id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clientId 客户端id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClientId(const std::string& _clientId);
@@ -214,19 +210,36 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
+                     * 获取组织单位
+                     * @return OrganizationalUnit 组织单位
+                     * 
+                     */
+                    std::string GetOrganizationalUnit() const;
+
+                    /**
+                     * 设置组织单位
+                     * @param _organizationalUnit 组织单位
+                     * 
+                     */
+                    void SetOrganizationalUnit(const std::string& _organizationalUnit);
+
+                    /**
+                     * 判断参数 OrganizationalUnit 是否已赋值
+                     * @return OrganizationalUnit 是否已赋值
+                     * 
+                     */
+                    bool OrganizationalUnitHasBeenSet() const;
+
+                    /**
                      * 获取上次激活时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastActivationTime 上次激活时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLastActivationTime() const;
 
                     /**
                      * 设置上次激活时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lastActivationTime 上次激活时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLastActivationTime(const int64_t& _lastActivationTime);
@@ -240,18 +253,14 @@ namespace TencentCloud
 
                     /**
                      * 获取上次取消激活时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastInactivationTime 上次取消激活时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLastInactivationTime() const;
 
                     /**
                      * 设置上次取消激活时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lastInactivationTime 上次取消激活时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLastInactivationTime(const int64_t& _lastInactivationTime);
@@ -286,18 +295,14 @@ namespace TencentCloud
 
                     /**
                      * 获取预销毁时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 预销毁时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetUpdateTime() const;
 
                     /**
                      * 设置预销毁时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updateTime 预销毁时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdateTime(const int64_t& _updateTime);
@@ -313,11 +318,9 @@ namespace TencentCloud
                      * 获取证书来源：
 API, 手动注册   
 JITP 自动注册
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CertificateSource 证书来源：
 API, 手动注册   
 JITP 自动注册
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCertificateSource() const;
@@ -326,11 +329,9 @@ JITP 自动注册
                      * 设置证书来源：
 API, 手动注册   
 JITP 自动注册
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _certificateSource 证书来源：
 API, 手动注册   
 JITP 自动注册
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCertificateSource(const std::string& _certificateSource);
@@ -344,18 +345,14 @@ JITP 自动注册
 
                     /**
                      * 获取证书失效日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NotAfterTime 证书失效日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetNotAfterTime() const;
 
                     /**
                      * 设置证书失效日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _notAfterTime 证书失效日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNotAfterTime(const int64_t& _notAfterTime);
@@ -369,18 +366,14 @@ JITP 自动注册
 
                     /**
                      * 获取证书生效开始日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NotBeforeTime 证书生效开始日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetNotBeforeTime() const;
 
                     /**
                      * 设置证书生效开始日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _notBeforeTime 证书生效开始日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNotBeforeTime(const int64_t& _notBeforeTime);
@@ -396,7 +389,6 @@ JITP 自动注册
 
                     /**
                      * 客户端id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clientId;
                     bool m_clientIdHasBeenSet;
@@ -442,15 +434,19 @@ JITP 自动注册
                     bool m_statusHasBeenSet;
 
                     /**
+                     * 组织单位
+                     */
+                    std::string m_organizationalUnit;
+                    bool m_organizationalUnitHasBeenSet;
+
+                    /**
                      * 上次激活时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_lastActivationTime;
                     bool m_lastActivationTimeHasBeenSet;
 
                     /**
                      * 上次取消激活时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_lastInactivationTime;
                     bool m_lastInactivationTimeHasBeenSet;
@@ -463,7 +459,6 @@ JITP 自动注册
 
                     /**
                      * 预销毁时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_updateTime;
                     bool m_updateTimeHasBeenSet;
@@ -472,21 +467,18 @@ JITP 自动注册
                      * 证书来源：
 API, 手动注册   
 JITP 自动注册
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_certificateSource;
                     bool m_certificateSourceHasBeenSet;
 
                     /**
                      * 证书失效日期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_notAfterTime;
                     bool m_notAfterTimeHasBeenSet;
 
                     /**
                      * 证书生效开始日期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_notBeforeTime;
                     bool m_notBeforeTimeHasBeenSet;

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取接入点
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Url 接入点
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置接入点
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _url 接入点
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取vpc信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId vpc信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置vpc信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcId vpc信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子网信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetId 子网信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subnetId 子网信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Host 主机
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHost() const;
 
                     /**
                      * 设置主机
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _host 主机
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHost(const std::string& _host);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Port 端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _port 端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPort(const int64_t& _port);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取接入点ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ip 接入点ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置接入点ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ip 接入点ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIp(const std::string& _ip);
@@ -225,49 +197,42 @@ namespace TencentCloud
 
                     /**
                      * 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 接入点
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
 
                     /**
                      * vpc信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
                      * 子网信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
                      * 主机
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_host;
                     bool m_hostHasBeenSet;
 
                     /**
                      * 端口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
                      * 接入点ip
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;

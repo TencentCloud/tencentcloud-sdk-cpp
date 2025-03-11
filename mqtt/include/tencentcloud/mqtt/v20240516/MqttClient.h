@@ -31,6 +31,8 @@
 #include <tencentcloud/mqtt/v20240516/model/ApplyRegistrationCodeResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/CreateAuthorizationPolicyRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/CreateAuthorizationPolicyResponse.h>
+#include <tencentcloud/mqtt/v20240516/model/CreateHttpAuthenticatorRequest.h>
+#include <tencentcloud/mqtt/v20240516/model/CreateHttpAuthenticatorResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/CreateInsPublicEndpointRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/CreateInsPublicEndpointResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/CreateInstanceRequest.h>
@@ -99,6 +101,8 @@
 #include <tencentcloud/mqtt/v20240516/model/DescribeUserListResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/ModifyAuthorizationPolicyRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/ModifyAuthorizationPolicyResponse.h>
+#include <tencentcloud/mqtt/v20240516/model/ModifyHttpAuthenticatorRequest.h>
+#include <tencentcloud/mqtt/v20240516/model/ModifyHttpAuthenticatorResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/ModifyInsPublicEndpointRequest.h>
 #include <tencentcloud/mqtt/v20240516/model/ModifyInsPublicEndpointResponse.h>
 #include <tencentcloud/mqtt/v20240516/model/ModifyInstanceRequest.h>
@@ -149,6 +153,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAuthorizationPolicyResponse> CreateAuthorizationPolicyOutcome;
                 typedef std::future<CreateAuthorizationPolicyOutcome> CreateAuthorizationPolicyOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::CreateAuthorizationPolicyRequest&, CreateAuthorizationPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAuthorizationPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateHttpAuthenticatorResponse> CreateHttpAuthenticatorOutcome;
+                typedef std::future<CreateHttpAuthenticatorOutcome> CreateHttpAuthenticatorOutcomeCallable;
+                typedef std::function<void(const MqttClient*, const Model::CreateHttpAuthenticatorRequest&, CreateHttpAuthenticatorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateHttpAuthenticatorAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateInsPublicEndpointResponse> CreateInsPublicEndpointOutcome;
                 typedef std::future<CreateInsPublicEndpointOutcome> CreateInsPublicEndpointOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::CreateInsPublicEndpointRequest&, CreateInsPublicEndpointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInsPublicEndpointAsyncHandler;
@@ -251,6 +258,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyAuthorizationPolicyResponse> ModifyAuthorizationPolicyOutcome;
                 typedef std::future<ModifyAuthorizationPolicyOutcome> ModifyAuthorizationPolicyOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::ModifyAuthorizationPolicyRequest&, ModifyAuthorizationPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAuthorizationPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyHttpAuthenticatorResponse> ModifyHttpAuthenticatorOutcome;
+                typedef std::future<ModifyHttpAuthenticatorOutcome> ModifyHttpAuthenticatorOutcomeCallable;
+                typedef std::function<void(const MqttClient*, const Model::ModifyHttpAuthenticatorRequest&, ModifyHttpAuthenticatorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyHttpAuthenticatorAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyInsPublicEndpointResponse> ModifyInsPublicEndpointOutcome;
                 typedef std::future<ModifyInsPublicEndpointOutcome> ModifyInsPublicEndpointOutcomeCallable;
                 typedef std::function<void(const MqttClient*, const Model::ModifyInsPublicEndpointRequest&, ModifyInsPublicEndpointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInsPublicEndpointAsyncHandler;
@@ -325,6 +335,15 @@ namespace TencentCloud
                 CreateAuthorizationPolicyOutcome CreateAuthorizationPolicy(const Model::CreateAuthorizationPolicyRequest &request);
                 void CreateAuthorizationPolicyAsync(const Model::CreateAuthorizationPolicyRequest& request, const CreateAuthorizationPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAuthorizationPolicyOutcomeCallable CreateAuthorizationPolicyCallable(const Model::CreateAuthorizationPolicyRequest& request);
+
+                /**
+                 *创建一个HTTP的认证器
+                 * @param req CreateHttpAuthenticatorRequest
+                 * @return CreateHttpAuthenticatorOutcome
+                 */
+                CreateHttpAuthenticatorOutcome CreateHttpAuthenticator(const Model::CreateHttpAuthenticatorRequest &request);
+                void CreateHttpAuthenticatorAsync(const Model::CreateHttpAuthenticatorRequest& request, const CreateHttpAuthenticatorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateHttpAuthenticatorOutcomeCallable CreateHttpAuthenticatorCallable(const Model::CreateHttpAuthenticatorRequest& request);
 
                 /**
                  *为MQTT实例创建公网接入点
@@ -641,6 +660,15 @@ namespace TencentCloud
                 ModifyAuthorizationPolicyOutcome ModifyAuthorizationPolicy(const Model::ModifyAuthorizationPolicyRequest &request);
                 void ModifyAuthorizationPolicyAsync(const Model::ModifyAuthorizationPolicyRequest& request, const ModifyAuthorizationPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyAuthorizationPolicyOutcomeCallable ModifyAuthorizationPolicyCallable(const Model::ModifyAuthorizationPolicyRequest& request);
+
+                /**
+                 *修改MQTT HTTP 认证器
+                 * @param req ModifyHttpAuthenticatorRequest
+                 * @return ModifyHttpAuthenticatorOutcome
+                 */
+                ModifyHttpAuthenticatorOutcome ModifyHttpAuthenticator(const Model::ModifyHttpAuthenticatorRequest &request);
+                void ModifyHttpAuthenticatorAsync(const Model::ModifyHttpAuthenticatorRequest& request, const ModifyHttpAuthenticatorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyHttpAuthenticatorOutcomeCallable ModifyHttpAuthenticatorCallable(const Model::ModifyHttpAuthenticatorRequest& request);
 
                 /**
                  *更新MQTT实例公网接入点

@@ -28,6 +28,7 @@ DeviceCertificateItem::DeviceCertificateItem() :
     m_caSnHasBeenSet(false),
     m_formatHasBeenSet(false),
     m_statusHasBeenSet(false),
+    m_organizationalUnitHasBeenSet(false),
     m_lastActivationTimeHasBeenSet(false),
     m_lastInactivationTimeHasBeenSet(false),
     m_createdTimeHasBeenSet(false),
@@ -111,6 +112,16 @@ CoreInternalOutcome DeviceCertificateItem::Deserialize(const rapidjson::Value &v
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("OrganizationalUnit") && !value["OrganizationalUnit"].IsNull())
+    {
+        if (!value["OrganizationalUnit"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeviceCertificateItem.OrganizationalUnit` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_organizationalUnit = string(value["OrganizationalUnit"].GetString());
+        m_organizationalUnitHasBeenSet = true;
     }
 
     if (value.HasMember("LastActivationTime") && !value["LastActivationTime"].IsNull())
@@ -244,6 +255,14 @@ void DeviceCertificateItem::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_organizationalUnitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrganizationalUnit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_organizationalUnit.c_str(), allocator).Move(), allocator);
     }
 
     if (m_lastActivationTimeHasBeenSet)
@@ -415,6 +434,22 @@ void DeviceCertificateItem::SetStatus(const string& _status)
 bool DeviceCertificateItem::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string DeviceCertificateItem::GetOrganizationalUnit() const
+{
+    return m_organizationalUnit;
+}
+
+void DeviceCertificateItem::SetOrganizationalUnit(const string& _organizationalUnit)
+{
+    m_organizationalUnit = _organizationalUnit;
+    m_organizationalUnitHasBeenSet = true;
+}
+
+bool DeviceCertificateItem::OrganizationalUnitHasBeenSet() const
+{
+    return m_organizationalUnitHasBeenSet;
 }
 
 int64_t DeviceCertificateItem::GetLastActivationTime() const

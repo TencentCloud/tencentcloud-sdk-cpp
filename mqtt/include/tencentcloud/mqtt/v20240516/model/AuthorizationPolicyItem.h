@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolicyName 规则名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPolicyName() const;
 
                     /**
                      * 设置规则名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _policyName 规则名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPolicyName(const std::string& _policyName);
@@ -115,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则语法版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Version 规则语法版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetVersion() const;
 
                     /**
                      * 设置规则语法版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _version 规则语法版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVersion(const int64_t& _version);
@@ -140,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取越小越优先
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Priority 越小越优先
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPriority() const;
 
                     /**
                      * 设置越小越优先
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _priority 越小越优先
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPriority(const int64_t& _priority);
@@ -165,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取allow/deny
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Effect allow/deny
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEffect() const;
 
                     /**
                      * 设置allow/deny
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _effect allow/deny
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEffect(const std::string& _effect);
@@ -190,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取connect、pub、sub
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Actions connect、pub、sub
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetActions() const;
 
                     /**
                      * 设置connect、pub、sub
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _actions connect、pub、sub
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetActions(const std::string& _actions);
@@ -215,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Resources 资源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResources() const;
 
                     /**
                      * 设置资源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resources 资源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResources(const std::string& _resources);
@@ -240,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取client
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClientId client
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClientId() const;
 
                     /**
                      * 设置client
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clientId client
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClientId(const std::string& _clientId);
@@ -265,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Username 用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUsername() const;
 
                     /**
                      * 设置用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _username 用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUsername(const std::string& _username);
@@ -290,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取IP地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ip IP地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置IP地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ip IP地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIp(const std::string& _ip);
@@ -315,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取0，1，2
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Qos 0，1，2
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetQos() const;
 
                     /**
                      * 设置0，1，2
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _qos 0，1，2
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQos(const std::string& _qos);
@@ -342,11 +302,9 @@ namespace TencentCloud
                      * 获取1：表示匹配retain消息
 2：表示匹配非retain消息
 3：表示匹配retain和非retain消息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Retain 1：表示匹配retain消息
 2：表示匹配非retain消息
 3：表示匹配retain和非retain消息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRetain() const;
@@ -355,11 +313,9 @@ namespace TencentCloud
                      * 设置1：表示匹配retain消息
 2：表示匹配非retain消息
 3：表示匹配retain和非retain消息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _retain 1：表示匹配retain消息
 2：表示匹配非retain消息
 3：表示匹配retain和非retain消息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRetain(const int64_t& _retain);
@@ -373,18 +329,14 @@ namespace TencentCloud
 
                     /**
                      * 获取描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remark 描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -454,70 +406,60 @@ namespace TencentCloud
 
                     /**
                      * 规则名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_policyName;
                     bool m_policyNameHasBeenSet;
 
                     /**
                      * 规则语法版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_version;
                     bool m_versionHasBeenSet;
 
                     /**
                      * 越小越优先
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_priority;
                     bool m_priorityHasBeenSet;
 
                     /**
                      * allow/deny
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_effect;
                     bool m_effectHasBeenSet;
 
                     /**
                      * connect、pub、sub
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_actions;
                     bool m_actionsHasBeenSet;
 
                     /**
                      * 资源
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resources;
                     bool m_resourcesHasBeenSet;
 
                     /**
                      * client
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clientId;
                     bool m_clientIdHasBeenSet;
 
                     /**
                      * 用户
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_username;
                     bool m_usernameHasBeenSet;
 
                     /**
                      * IP地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;
 
                     /**
                      * 0，1，2
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_qos;
                     bool m_qosHasBeenSet;
@@ -526,14 +468,12 @@ namespace TencentCloud
                      * 1：表示匹配retain消息
 2：表示匹配非retain消息
 3：表示匹配retain和非retain消息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_retain;
                     bool m_retainHasBeenSet;
 
                     /**
                      * 描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;

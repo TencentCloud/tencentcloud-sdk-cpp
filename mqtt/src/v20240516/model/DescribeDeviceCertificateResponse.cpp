@@ -37,7 +37,8 @@ DescribeDeviceCertificateResponse::DescribeDeviceCertificateResponse() :
     m_formatHasBeenSet(false),
     m_clientIdHasBeenSet(false),
     m_certificateSourceHasBeenSet(false),
-    m_notBeforeTimeHasBeenSet(false)
+    m_notBeforeTimeHasBeenSet(false),
+    m_organizationalUnitHasBeenSet(false)
 {
 }
 
@@ -215,6 +216,16 @@ CoreInternalOutcome DescribeDeviceCertificateResponse::Deserialize(const string 
         m_notBeforeTimeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("OrganizationalUnit") && !rsp["OrganizationalUnit"].IsNull())
+    {
+        if (!rsp["OrganizationalUnit"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `OrganizationalUnit` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_organizationalUnit = string(rsp["OrganizationalUnit"].GetString());
+        m_organizationalUnitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -335,6 +346,14 @@ string DescribeDeviceCertificateResponse::ToJsonString() const
         string key = "NotBeforeTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_notBeforeTime, allocator);
+    }
+
+    if (m_organizationalUnitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrganizationalUnit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_organizationalUnit.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -487,6 +506,16 @@ int64_t DescribeDeviceCertificateResponse::GetNotBeforeTime() const
 bool DescribeDeviceCertificateResponse::NotBeforeTimeHasBeenSet() const
 {
     return m_notBeforeTimeHasBeenSet;
+}
+
+string DescribeDeviceCertificateResponse::GetOrganizationalUnit() const
+{
+    return m_organizationalUnit;
+}
+
+bool DescribeDeviceCertificateResponse::OrganizationalUnitHasBeenSet() const
+{
+    return m_organizationalUnitHasBeenSet;
 }
 
 

@@ -977,6 +977,56 @@ namespace TencentCloud
                      */
                     bool RunningMemHasBeenSet() const;
 
+                    /**
+                     * 获取是否开了默认告警
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OpenJobDefaultAlarm 是否开了默认告警
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetOpenJobDefaultAlarm() const;
+
+                    /**
+                     * 设置是否开了默认告警
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _openJobDefaultAlarm 是否开了默认告警
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOpenJobDefaultAlarm(const int64_t& _openJobDefaultAlarm);
+
+                    /**
+                     * 判断参数 OpenJobDefaultAlarm 是否已赋值
+                     * @return OpenJobDefaultAlarm 是否已赋值
+                     * 
+                     */
+                    bool OpenJobDefaultAlarmHasBeenSet() const;
+
+                    /**
+                     * 获取操作中描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProgressDesc 操作中描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetProgressDesc() const;
+
+                    /**
+                     * 设置操作中描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _progressDesc 操作中描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetProgressDesc(const std::string& _progressDesc);
+
+                    /**
+                     * 判断参数 ProgressDesc 是否已赋值
+                     * @return ProgressDesc 是否已赋值
+                     * 
+                     */
+                    bool ProgressDescHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1238,6 +1288,20 @@ namespace TencentCloud
                      */
                     double m_runningMem;
                     bool m_runningMemHasBeenSet;
+
+                    /**
+                     * 是否开了默认告警
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_openJobDefaultAlarm;
+                    bool m_openJobDefaultAlarmHasBeenSet;
+
+                    /**
+                     * 操作中描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_progressDesc;
+                    bool m_progressDescHasBeenSet;
 
                 };
             }

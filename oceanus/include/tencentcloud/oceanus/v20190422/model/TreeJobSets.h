@@ -202,14 +202,18 @@ namespace TencentCloud
 
                     /**
                      * 获取RunningCpu
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return RunningCpu RunningCpu
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetRunningCpu() const;
 
                     /**
                      * 设置RunningCpu
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _runningCpu RunningCpu
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRunningCpu(const double& _runningCpu);
@@ -223,14 +227,18 @@ namespace TencentCloud
 
                     /**
                      * 获取RunningMem
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return RunningMem RunningMem
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetRunningMem() const;
 
                     /**
                      * 设置RunningMem
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _runningMem RunningMem
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRunningMem(const double& _runningMem);
@@ -241,6 +249,31 @@ namespace TencentCloud
                      * 
                      */
                     bool RunningMemHasBeenSet() const;
+
+                    /**
+                     * 获取sql
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DecodeSqlCode sql
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDecodeSqlCode() const;
+
+                    /**
+                     * 设置sql
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _decodeSqlCode sql
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDecodeSqlCode(const std::string& _decodeSqlCode);
+
+                    /**
+                     * 判断参数 DecodeSqlCode 是否已赋值
+                     * @return DecodeSqlCode 是否已赋值
+                     * 
+                     */
+                    bool DecodeSqlCodeHasBeenSet() const;
 
                 private:
 
@@ -289,15 +322,24 @@ namespace TencentCloud
 
                     /**
                      * RunningCpu
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_runningCpu;
                     bool m_runningCpuHasBeenSet;
 
                     /**
                      * RunningMem
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_runningMem;
                     bool m_runningMemHasBeenSet;
+
+                    /**
+                     * sql
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_decodeSqlCode;
+                    bool m_decodeSqlCodeHasBeenSet;
 
                 };
             }

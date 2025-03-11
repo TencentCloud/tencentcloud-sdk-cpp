@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取步长
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Step 步长
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStep() const;
 
                     /**
                      * 设置步长
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _step 步长
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStep(const int64_t& _step);
@@ -156,7 +152,6 @@ namespace TencentCloud
 
                     /**
                      * 步长
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_step;
                     bool m_stepHasBeenSet;

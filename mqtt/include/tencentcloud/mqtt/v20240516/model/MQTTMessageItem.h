@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取消息ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MsgId 消息ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMsgId() const;
 
                     /**
                      * 设置消息ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _msgId 消息ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMsgId(const std::string& _msgId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取消息tag
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 消息tag
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTags() const;
 
                     /**
                      * 设置消息tag
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 消息tag
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::string& _tags);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取消息key
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Keys 消息key
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKeys() const;
 
                     /**
                      * 设置消息key
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _keys 消息key
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKeys(const std::string& _keys);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取客户端地址	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProducerAddr 客户端地址	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProducerAddr() const;
 
                     /**
                      * 设置客户端地址	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _producerAddr 客户端地址	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProducerAddr(const std::string& _producerAddr);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取消息发送时间	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProduceTime 消息发送时间	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProduceTime() const;
 
                     /**
                      * 设置消息发送时间	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _produceTime 消息发送时间	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProduceTime(const std::string& _produceTime);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取死信重发次数	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeadLetterResendTimes 死信重发次数	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDeadLetterResendTimes() const;
 
                     /**
                      * 设置死信重发次数	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deadLetterResendTimes 死信重发次数	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeadLetterResendTimes(const int64_t& _deadLetterResendTimes);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取死信重发成功次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeadLetterResendSuccessTimes 死信重发成功次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDeadLetterResendSuccessTimes() const;
 
                     /**
                      * 设置死信重发成功次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deadLetterResendSuccessTimes 死信重发成功次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeadLetterResendSuccessTimes(const int64_t& _deadLetterResendSuccessTimes);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子topic
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubTopic 子topic
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubTopic() const;
 
                     /**
                      * 设置子topic
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subTopic 子topic
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubTopic(const std::string& _subTopic);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取消息质量等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Qos 消息质量等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetQos() const;
 
                     /**
                      * 设置消息质量等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _qos 消息质量等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQos(const std::string& _qos);
@@ -275,63 +239,54 @@ namespace TencentCloud
 
                     /**
                      * 消息ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_msgId;
                     bool m_msgIdHasBeenSet;
 
                     /**
                      * 消息tag
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
                      * 消息key
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_keys;
                     bool m_keysHasBeenSet;
 
                     /**
                      * 客户端地址	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_producerAddr;
                     bool m_producerAddrHasBeenSet;
 
                     /**
                      * 消息发送时间	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_produceTime;
                     bool m_produceTimeHasBeenSet;
 
                     /**
                      * 死信重发次数	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_deadLetterResendTimes;
                     bool m_deadLetterResendTimesHasBeenSet;
 
                     /**
                      * 死信重发成功次数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_deadLetterResendSuccessTimes;
                     bool m_deadLetterResendSuccessTimesHasBeenSet;
 
                     /**
                      * 子topic
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subTopic;
                     bool m_subTopicHasBeenSet;
 
                     /**
                      * 消息质量等级
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_qos;
                     bool m_qosHasBeenSet;

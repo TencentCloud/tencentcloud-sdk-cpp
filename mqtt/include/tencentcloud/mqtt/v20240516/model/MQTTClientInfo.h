@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取客户端唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClientId 客户端唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClientId() const;
 
                     /**
                      * 设置客户端唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clientId 客户端唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClientId(const std::string& _clientId);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取客户端网络地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClientAddress 客户端网络地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClientAddress() const;
 
                     /**
                      * 设置客户端网络地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clientAddress 客户端网络地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClientAddress(const std::string& _clientAddress);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取MQTT 协议版本，4 表示 MQTT 3.1.1
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProtocolVersion MQTT 协议版本，4 表示 MQTT 3.1.1
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetProtocolVersion() const;
 
                     /**
                      * 设置MQTT 协议版本，4 表示 MQTT 3.1.1
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _protocolVersion MQTT 协议版本，4 表示 MQTT 3.1.1
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProtocolVersion(const int64_t& _protocolVersion);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取保持连接时间，单位：秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Keepalive 保持连接时间，单位：秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetKeepalive() const;
 
                     /**
                      * 设置保持连接时间，单位：秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _keepalive 保持连接时间，单位：秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKeepalive(const int64_t& _keepalive);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取连接状态，CONNECTED 已连接，DISCONNECTED 未连接
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConnectionStatus 连接状态，CONNECTED 已连接，DISCONNECTED 未连接
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConnectionStatus() const;
 
                     /**
                      * 设置连接状态，CONNECTED 已连接，DISCONNECTED 未连接
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _connectionStatus 连接状态，CONNECTED 已连接，DISCONNECTED 未连接
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConnectionStatus(const std::string& _connectionStatus);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取客户端创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 客户端创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCreateTime() const;
 
                     /**
                      * 设置客户端创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 客户端创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const int64_t& _createTime);
@@ -199,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取上次建立连接时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConnectTime 上次建立连接时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetConnectTime() const;
 
                     /**
                      * 设置上次建立连接时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _connectTime 上次建立连接时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConnectTime(const int64_t& _connectTime);
@@ -224,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取上次断开连接时间，仅对持久会话（cleanSession=false）并且客户端当前未连接时有意义
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DisconnectTime 上次断开连接时间，仅对持久会话（cleanSession=false）并且客户端当前未连接时有意义
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDisconnectTime() const;
 
                     /**
                      * 设置上次断开连接时间，仅对持久会话（cleanSession=false）并且客户端当前未连接时有意义
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _disconnectTime 上次断开连接时间，仅对持久会话（cleanSession=false）并且客户端当前未连接时有意义
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDisconnectTime(const int64_t& _disconnectTime);
@@ -249,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取客户端的订阅列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MQTTClientSubscriptions 客户端的订阅列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<MQTTClientSubscription> GetMQTTClientSubscriptions() const;
 
                     /**
                      * 设置客户端的订阅列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mQTTClientSubscriptions 客户端的订阅列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMQTTClientSubscriptions(const std::vector<MQTTClientSubscription>& _mQTTClientSubscriptions);
@@ -276,63 +240,54 @@ namespace TencentCloud
 
                     /**
                      * 客户端唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clientId;
                     bool m_clientIdHasBeenSet;
 
                     /**
                      * 客户端网络地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clientAddress;
                     bool m_clientAddressHasBeenSet;
 
                     /**
                      * MQTT 协议版本，4 表示 MQTT 3.1.1
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_protocolVersion;
                     bool m_protocolVersionHasBeenSet;
 
                     /**
                      * 保持连接时间，单位：秒
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_keepalive;
                     bool m_keepaliveHasBeenSet;
 
                     /**
                      * 连接状态，CONNECTED 已连接，DISCONNECTED 未连接
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_connectionStatus;
                     bool m_connectionStatusHasBeenSet;
 
                     /**
                      * 客户端创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 上次建立连接时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_connectTime;
                     bool m_connectTimeHasBeenSet;
 
                     /**
                      * 上次断开连接时间，仅对持久会话（cleanSession=false）并且客户端当前未连接时有意义
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_disconnectTime;
                     bool m_disconnectTimeHasBeenSet;
 
                     /**
                      * 客户端的订阅列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MQTTClientSubscription> m_mQTTClientSubscriptions;
                     bool m_mQTTClientSubscriptionsHasBeenSet;

@@ -28,7 +28,8 @@ TreeJobSets::TreeJobSets() :
     m_statusHasBeenSet(false),
     m_scalingTypeHasBeenSet(false),
     m_runningCpuHasBeenSet(false),
-    m_runningMemHasBeenSet(false)
+    m_runningMemHasBeenSet(false),
+    m_decodeSqlCodeHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome TreeJobSets::Deserialize(const rapidjson::Value &value)
         m_runningMemHasBeenSet = true;
     }
 
+    if (value.HasMember("DecodeSqlCode") && !value["DecodeSqlCode"].IsNull())
+    {
+        if (!value["DecodeSqlCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TreeJobSets.DecodeSqlCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_decodeSqlCode = string(value["DecodeSqlCode"].GetString());
+        m_decodeSqlCodeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void TreeJobSets::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "RunningMem";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_runningMem, allocator);
+    }
+
+    if (m_decodeSqlCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DecodeSqlCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_decodeSqlCode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void TreeJobSets::SetRunningMem(const double& _runningMem)
 bool TreeJobSets::RunningMemHasBeenSet() const
 {
     return m_runningMemHasBeenSet;
+}
+
+string TreeJobSets::GetDecodeSqlCode() const
+{
+    return m_decodeSqlCode;
+}
+
+void TreeJobSets::SetDecodeSqlCode(const string& _decodeSqlCode)
+{
+    m_decodeSqlCode = _decodeSqlCode;
+    m_decodeSqlCodeHasBeenSet = true;
+}
+
+bool TreeJobSets::DecodeSqlCodeHasBeenSet() const
+{
+    return m_decodeSqlCodeHasBeenSet;
 }
 

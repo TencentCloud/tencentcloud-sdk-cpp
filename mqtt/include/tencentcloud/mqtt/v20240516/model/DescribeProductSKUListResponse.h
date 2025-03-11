@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取查询总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 查询总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取mqtt商品配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MQTTProductSkuList mqtt商品配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ProductSkuItem> GetMQTTProductSkuList() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 查询总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
                      * mqtt商品配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ProductSkuItem> m_mQTTProductSkuList;
                     bool m_mQTTProductSkuListHasBeenSet;

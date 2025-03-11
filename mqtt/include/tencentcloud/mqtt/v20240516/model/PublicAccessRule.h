@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取ip网段信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IpRule ip网段信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIpRule() const;
 
                     /**
                      * 设置ip网段信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ipRule ip网段信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIpRule(const std::string& _ipRule);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取允许或者拒绝
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Allow 允许或者拒绝
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetAllow() const;
 
                     /**
                      * 设置允许或者拒绝
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _allow 允许或者拒绝
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAllow(const bool& _allow);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remark 备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * ip网段信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ipRule;
                     bool m_ipRuleHasBeenSet;
 
                     /**
                      * 允许或者拒绝
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_allow;
                     bool m_allowHasBeenSet;
 
                     /**
                      * 备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;

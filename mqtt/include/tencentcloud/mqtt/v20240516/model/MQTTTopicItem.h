@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主题描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 主题描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置主题描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remark 主题描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -129,7 +125,6 @@ namespace TencentCloud
 
                     /**
                      * 主题描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;

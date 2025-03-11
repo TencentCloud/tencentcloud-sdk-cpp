@@ -153,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取ca状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status ca状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置ca状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status ca状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -178,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取上次激活时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastActivationTime 上次激活时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLastActivationTime() const;
 
                     /**
                      * 设置上次激活时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lastActivationTime 上次激活时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLastActivationTime(const int64_t& _lastActivationTime);
@@ -203,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCreatedTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createdTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreatedTime(const int64_t& _createdTime);
@@ -228,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取预销毁时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 预销毁时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetUpdateTime() const;
 
                     /**
                      * 设置预销毁时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updateTime 预销毁时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdateTime(const int64_t& _updateTime);
@@ -253,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取上次去激活时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastInactivationTime 上次去激活时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLastInactivationTime() const;
 
                     /**
                      * 设置上次去激活时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lastInactivationTime 上次去激活时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLastInactivationTime(const int64_t& _lastInactivationTime);
@@ -278,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Ca证书颁发者CN
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CaIssuerCn Ca证书颁发者CN
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCaIssuerCn() const;
 
                     /**
                      * 设置Ca证书颁发者CN
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _caIssuerCn Ca证书颁发者CN
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCaIssuerCn(const std::string& _caIssuerCn);
@@ -303,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取生效时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NotBeforeTime 生效时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetNotBeforeTime() const;
 
                     /**
                      * 设置生效时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _notBeforeTime 生效时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNotBeforeTime(const int64_t& _notBeforeTime);
@@ -328,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取失效时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NotAfterTime 失效时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetNotAfterTime() const;
 
                     /**
                      * 设置失效时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _notAfterTime 失效时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNotAfterTime(const int64_t& _notAfterTime);
@@ -385,56 +353,48 @@ namespace TencentCloud
 
                     /**
                      * ca状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 上次激活时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_lastActivationTime;
                     bool m_lastActivationTimeHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_createdTime;
                     bool m_createdTimeHasBeenSet;
 
                     /**
                      * 预销毁时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
                      * 上次去激活时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_lastInactivationTime;
                     bool m_lastInactivationTimeHasBeenSet;
 
                     /**
                      * Ca证书颁发者CN
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_caIssuerCn;
                     bool m_caIssuerCnHasBeenSet;
 
                     /**
                      * 生效时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_notBeforeTime;
                     bool m_notBeforeTimeHasBeenSet;
 
                     /**
                      * 失效时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_notAfterTime;
                     bool m_notAfterTimeHasBeenSet;

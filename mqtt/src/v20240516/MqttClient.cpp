@@ -212,6 +212,49 @@ MqttClient::CreateAuthorizationPolicyOutcomeCallable MqttClient::CreateAuthoriza
     return task->get_future();
 }
 
+MqttClient::CreateHttpAuthenticatorOutcome MqttClient::CreateHttpAuthenticator(const CreateHttpAuthenticatorRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateHttpAuthenticator");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateHttpAuthenticatorResponse rsp = CreateHttpAuthenticatorResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateHttpAuthenticatorOutcome(rsp);
+        else
+            return CreateHttpAuthenticatorOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateHttpAuthenticatorOutcome(outcome.GetError());
+    }
+}
+
+void MqttClient::CreateHttpAuthenticatorAsync(const CreateHttpAuthenticatorRequest& request, const CreateHttpAuthenticatorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateHttpAuthenticator(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MqttClient::CreateHttpAuthenticatorOutcomeCallable MqttClient::CreateHttpAuthenticatorCallable(const CreateHttpAuthenticatorRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateHttpAuthenticatorOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateHttpAuthenticator(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MqttClient::CreateInsPublicEndpointOutcome MqttClient::CreateInsPublicEndpoint(const CreateInsPublicEndpointRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateInsPublicEndpoint");
@@ -1667,6 +1710,49 @@ MqttClient::ModifyAuthorizationPolicyOutcomeCallable MqttClient::ModifyAuthoriza
         [this, request]()
         {
             return this->ModifyAuthorizationPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MqttClient::ModifyHttpAuthenticatorOutcome MqttClient::ModifyHttpAuthenticator(const ModifyHttpAuthenticatorRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyHttpAuthenticator");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyHttpAuthenticatorResponse rsp = ModifyHttpAuthenticatorResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyHttpAuthenticatorOutcome(rsp);
+        else
+            return ModifyHttpAuthenticatorOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyHttpAuthenticatorOutcome(outcome.GetError());
+    }
+}
+
+void MqttClient::ModifyHttpAuthenticatorAsync(const ModifyHttpAuthenticatorRequest& request, const ModifyHttpAuthenticatorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyHttpAuthenticator(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MqttClient::ModifyHttpAuthenticatorOutcomeCallable MqttClient::ModifyHttpAuthenticatorCallable(const ModifyHttpAuthenticatorRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyHttpAuthenticatorOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyHttpAuthenticator(request);
         }
     );
 

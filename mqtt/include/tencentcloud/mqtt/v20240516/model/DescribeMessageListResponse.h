@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取查询总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 查询总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取消息记录列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 消息记录列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<MQTTMessageItem> GetData() const;
@@ -94,14 +90,12 @@ namespace TencentCloud
 
                     /**
                      * 查询总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
                      * 消息记录列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MQTTMessageItem> m_data;
                     bool m_dataHasBeenSet;

@@ -57,7 +57,9 @@ JobV1::JobV1() :
     m_descriptionHasBeenSet(false),
     m_scalingTypeHasBeenSet(false),
     m_runningCpuHasBeenSet(false),
-    m_runningMemHasBeenSet(false)
+    m_runningMemHasBeenSet(false),
+    m_openJobDefaultAlarmHasBeenSet(false),
+    m_progressDescHasBeenSet(false)
 {
 }
 
@@ -453,6 +455,26 @@ CoreInternalOutcome JobV1::Deserialize(const rapidjson::Value &value)
         m_runningMemHasBeenSet = true;
     }
 
+    if (value.HasMember("OpenJobDefaultAlarm") && !value["OpenJobDefaultAlarm"].IsNull())
+    {
+        if (!value["OpenJobDefaultAlarm"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobV1.OpenJobDefaultAlarm` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_openJobDefaultAlarm = value["OpenJobDefaultAlarm"].GetInt64();
+        m_openJobDefaultAlarmHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProgressDesc") && !value["ProgressDesc"].IsNull())
+    {
+        if (!value["ProgressDesc"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobV1.ProgressDesc` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_progressDesc = string(value["ProgressDesc"].GetString());
+        m_progressDescHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -762,6 +784,22 @@ void JobV1::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "RunningMem";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_runningMem, allocator);
+    }
+
+    if (m_openJobDefaultAlarmHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OpenJobDefaultAlarm";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_openJobDefaultAlarm, allocator);
+    }
+
+    if (m_progressDescHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProgressDesc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_progressDesc.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1357,5 +1395,37 @@ void JobV1::SetRunningMem(const double& _runningMem)
 bool JobV1::RunningMemHasBeenSet() const
 {
     return m_runningMemHasBeenSet;
+}
+
+int64_t JobV1::GetOpenJobDefaultAlarm() const
+{
+    return m_openJobDefaultAlarm;
+}
+
+void JobV1::SetOpenJobDefaultAlarm(const int64_t& _openJobDefaultAlarm)
+{
+    m_openJobDefaultAlarm = _openJobDefaultAlarm;
+    m_openJobDefaultAlarmHasBeenSet = true;
+}
+
+bool JobV1::OpenJobDefaultAlarmHasBeenSet() const
+{
+    return m_openJobDefaultAlarmHasBeenSet;
+}
+
+string JobV1::GetProgressDesc() const
+{
+    return m_progressDesc;
+}
+
+void JobV1::SetProgressDesc(const string& _progressDesc)
+{
+    m_progressDesc = _progressDesc;
+    m_progressDescHasBeenSet = true;
+}
+
+bool JobV1::ProgressDescHasBeenSet() const
+{
+    return m_progressDescHasBeenSet;
 }
 

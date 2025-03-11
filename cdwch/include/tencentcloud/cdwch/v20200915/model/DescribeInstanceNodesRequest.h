@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取集群角色类型，默认为 "data"数据节点
-                     * @return NodeRole 集群角色类型，默认为 "data"数据节点
+                     * 获取集群角色类型，“DATA” 为数据节点、“COMMON” 为 ZooKeeper 节点，默认为 "DATA" 数据节点。
+                     * @return NodeRole 集群角色类型，“DATA” 为数据节点、“COMMON” 为 ZooKeeper 节点，默认为 "DATA" 数据节点。
                      * 
                      */
                     std::string GetNodeRole() const;
 
                     /**
-                     * 设置集群角色类型，默认为 "data"数据节点
-                     * @param _nodeRole 集群角色类型，默认为 "data"数据节点
+                     * 设置集群角色类型，“DATA” 为数据节点、“COMMON” 为 ZooKeeper 节点，默认为 "DATA" 数据节点。
+                     * @param _nodeRole 集群角色类型，“DATA” 为数据节点、“COMMON” 为 ZooKeeper 节点，默认为 "DATA" 数据节点。
                      * 
                      */
                     void SetNodeRole(const std::string& _nodeRole);
@@ -177,7 +177,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 集群角色类型，默认为 "data"数据节点
+                     * 集群角色类型，“DATA” 为数据节点、“COMMON” 为 ZooKeeper 节点，默认为 "DATA" 数据节点。
                      */
                     std::string m_nodeRole;
                     bool m_nodeRoleHasBeenSet;

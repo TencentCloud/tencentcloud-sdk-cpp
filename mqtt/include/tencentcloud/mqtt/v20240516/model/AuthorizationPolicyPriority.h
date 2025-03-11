@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 策略id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置策略id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id 策略id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取优先级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Priority 优先级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPriority() const;
 
                     /**
                      * 设置优先级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _priority 优先级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPriority(const int64_t& _priority);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 策略id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * 优先级
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_priority;
                     bool m_priorityHasBeenSet;

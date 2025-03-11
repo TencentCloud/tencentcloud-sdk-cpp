@@ -51,11 +51,9 @@ namespace TencentCloud
                      * 获取规格类型
 BASIC：基础版
 PRO ：专业版
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceType 规格类型
 BASIC：基础版
 PRO ：专业版
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceType() const;
@@ -64,11 +62,9 @@ PRO ：专业版
                      * 设置规格类型
 BASIC：基础版
 PRO ：专业版
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceType 规格类型
 BASIC：基础版
 PRO ：专业版
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -82,18 +78,14 @@ PRO ：专业版
 
                     /**
                      * 获取规格代码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SkuCode 规格代码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSkuCode() const;
 
                     /**
                      * 设置规格代码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _skuCode 规格代码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSkuCode(const std::string& _skuCode);
@@ -107,18 +99,14 @@ PRO ：专业版
 
                     /**
                      * 获取是否售卖
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OnSale 是否售卖
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetOnSale() const;
 
                     /**
                      * 设置是否售卖
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _onSale 是否售卖
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOnSale(const bool& _onSale);
@@ -132,18 +120,14 @@ PRO ：专业版
 
                     /**
                      * 获取topic num限制
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicNumLimit topic num限制
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTopicNumLimit() const;
 
                     /**
                      * 设置topic num限制
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topicNumLimit topic num限制
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopicNumLimit(const int64_t& _topicNumLimit);
@@ -157,18 +141,14 @@ PRO ：专业版
 
                     /**
                      * 获取tps
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TpsLimit tps
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTpsLimit() const;
 
                     /**
                      * 设置tps
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tpsLimit tps
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTpsLimit(const int64_t& _tpsLimit);
@@ -182,18 +162,14 @@ PRO ：专业版
 
                     /**
                      * 获取客户端连接数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClientNumLimit 客户端连接数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetClientNumLimit() const;
 
                     /**
                      * 设置客户端连接数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clientNumLimit 客户端连接数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClientNumLimit(const int64_t& _clientNumLimit);
@@ -207,18 +183,14 @@ PRO ：专业版
 
                     /**
                      * 获取单客户端最大订阅数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxSubscriptionPerClient 单客户端最大订阅数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxSubscriptionPerClient() const;
 
                     /**
                      * 设置单客户端最大订阅数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxSubscriptionPerClient 单客户端最大订阅数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxSubscriptionPerClient(const int64_t& _maxSubscriptionPerClient);
@@ -232,18 +204,14 @@ PRO ：专业版
 
                     /**
                      * 获取授权规则条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuthorizationPolicyLimit 授权规则条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAuthorizationPolicyLimit() const;
 
                     /**
                      * 设置授权规则条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _authorizationPolicyLimit 授权规则条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAuthorizationPolicyLimit(const int64_t& _authorizationPolicyLimit);
@@ -257,18 +225,14 @@ PRO ：专业版
 
                     /**
                      * 获取计费项信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PriceTags 计费项信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<PriceTag> GetPriceTags() const;
 
                     /**
                      * 设置计费项信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _priceTags 计费项信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPriceTags(const std::vector<PriceTag>& _priceTags);
@@ -286,63 +250,54 @@ PRO ：专业版
                      * 规格类型
 BASIC：基础版
 PRO ：专业版
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**
                      * 规格代码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_skuCode;
                     bool m_skuCodeHasBeenSet;
 
                     /**
                      * 是否售卖
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_onSale;
                     bool m_onSaleHasBeenSet;
 
                     /**
                      * topic num限制
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_topicNumLimit;
                     bool m_topicNumLimitHasBeenSet;
 
                     /**
                      * tps
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_tpsLimit;
                     bool m_tpsLimitHasBeenSet;
 
                     /**
                      * 客户端连接数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_clientNumLimit;
                     bool m_clientNumLimitHasBeenSet;
 
                     /**
                      * 单客户端最大订阅数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxSubscriptionPerClient;
                     bool m_maxSubscriptionPerClientHasBeenSet;
 
                     /**
                      * 授权规则条数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_authorizationPolicyLimit;
                     bool m_authorizationPolicyLimitHasBeenSet;
 
                     /**
                      * 计费项信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<PriceTag> m_priceTags;
                     bool m_priceTagsHasBeenSet;
