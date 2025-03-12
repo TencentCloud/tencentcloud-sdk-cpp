@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地域英文名，如：ap-guangzhou
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 地域英文名，如：ap-guangzhou
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地域英文名，如：ap-guangzhou
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _region 地域英文名，如：ap-guangzhou
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点类型，proxy表示节点类型为主机，set表示节点类型为节点。proxy类型必须填在数组第一项。tdsqlmysql类型的源/目标配置必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Role 节点类型，proxy表示节点类型为主机，set表示节点类型为节点。proxy类型必须填在数组第一项。tdsqlmysql类型的源/目标配置必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRole() const;
 
                     /**
                      * 设置节点类型，proxy表示节点类型为主机，set表示节点类型为节点。proxy类型必须填在数组第一项。tdsqlmysql类型的源/目标配置必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _role 节点类型，proxy表示节点类型为主机，set表示节点类型为节点。proxy类型必须填在数组第一项。tdsqlmysql类型的源/目标配置必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRole(const std::string& _role);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库内核类型，tdsql中用于区分不同内核：percona,mariadb,mysql。注意TDSQL-C MySQL、TDSQL PostgreSQL无需填写此项值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DbKernel 数据库内核类型，tdsql中用于区分不同内核：percona,mariadb,mysql。注意TDSQL-C MySQL、TDSQL PostgreSQL无需填写此项值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDbKernel() const;
 
                     /**
                      * 设置数据库内核类型，tdsql中用于区分不同内核：percona,mariadb,mysql。注意TDSQL-C MySQL、TDSQL PostgreSQL无需填写此项值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dbKernel 数据库内核类型，tdsql中用于区分不同内核：percona,mariadb,mysql。注意TDSQL-C MySQL、TDSQL PostgreSQL无需填写此项值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDbKernel(const std::string& _dbKernel);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库实例ID，格式如：cdb-powiqx8q
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 数据库实例ID，格式如：cdb-powiqx8q
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置数据库实例ID，格式如：cdb-powiqx8q
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceId 数据库实例ID，格式如：cdb-powiqx8q
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例的IP地址，接入类型为非cdb时此项必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ip 实例的IP地址，接入类型为非cdb时此项必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置实例的IP地址，接入类型为非cdb时此项必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ip 实例的IP地址，接入类型为非cdb时此项必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIp(const std::string& _ip);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例端口，接入类型为非cdb时此项必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Port 实例端口，接入类型为非cdb时此项必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPort() const;
 
                     /**
                      * 设置实例端口，接入类型为非cdb时此项必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _port 实例端口，接入类型为非cdb时此项必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPort(const uint64_t& _port);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户名，对于访问需要用户名密码认证的实例必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return User 用户名，对于访问需要用户名密码认证的实例必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUser() const;
 
                     /**
                      * 设置用户名，对于访问需要用户名密码认证的实例必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _user 用户名，对于访问需要用户名密码认证的实例必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUser(const std::string& _user);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取密码，对于访问需要用户名密码认证的实例必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Password 密码，对于访问需要用户名密码认证的实例必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPassword() const;
 
                     /**
                      * 设置密码，对于访问需要用户名密码认证的实例必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _password 密码，对于访问需要用户名密码认证的实例必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPassword(const std::string& _password);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库名，数据库为cdwpg时，需要提供
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DbName 数据库名，数据库为cdwpg时，需要提供
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDbName() const;
 
                     /**
                      * 设置数据库名，数据库为cdwpg时，需要提供
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dbName 数据库名，数据库为cdwpg时，需要提供
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDbName(const std::string& _dbName);
@@ -273,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取私有网络ID，对于私有网络、专线、VPN的接入方式此项必填，格式如：vpc-92jblxto
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId 私有网络ID，对于私有网络、专线、VPN的接入方式此项必填，格式如：vpc-92jblxto
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置私有网络ID，对于私有网络、专线、VPN的接入方式此项必填，格式如：vpc-92jblxto
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcId 私有网络ID，对于私有网络、专线、VPN的接入方式此项必填，格式如：vpc-92jblxto
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -298,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取私有网络下的子网ID，对于私有网络、专线、VPN的接入方式此项必填，格式如：subnet-3paxmkdz
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetId 私有网络下的子网ID，对于私有网络、专线、VPN的接入方式此项必填，格式如：subnet-3paxmkdz
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置私有网络下的子网ID，对于私有网络、专线、VPN的接入方式此项必填，格式如：subnet-3paxmkdz
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subnetId 私有网络下的子网ID，对于私有网络、专线、VPN的接入方式此项必填，格式如：subnet-3paxmkdz
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -323,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取CVM实例短ID，格式如：ins-olgl39y8，与云服务器控制台页面显示的实例ID相同。如果是CVM自建实例，需要传递此字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CvmInstanceId CVM实例短ID，格式如：ins-olgl39y8，与云服务器控制台页面显示的实例ID相同。如果是CVM自建实例，需要传递此字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCvmInstanceId() const;
 
                     /**
                      * 设置CVM实例短ID，格式如：ins-olgl39y8，与云服务器控制台页面显示的实例ID相同。如果是CVM自建实例，需要传递此字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cvmInstanceId CVM实例短ID，格式如：ins-olgl39y8，与云服务器控制台页面显示的实例ID相同。如果是CVM自建实例，需要传递此字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCvmInstanceId(const std::string& _cvmInstanceId);
@@ -348,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取专线网关ID，对于专线接入类型此项必填，格式如：dcg-0rxtqqxb
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UniqDcgId 专线网关ID，对于专线接入类型此项必填，格式如：dcg-0rxtqqxb
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUniqDcgId() const;
 
                     /**
                      * 设置专线网关ID，对于专线接入类型此项必填，格式如：dcg-0rxtqqxb
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uniqDcgId 专线网关ID，对于专线接入类型此项必填，格式如：dcg-0rxtqqxb
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUniqDcgId(const std::string& _uniqDcgId);
@@ -373,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取VPN网关ID，对于vpn接入类型此项必填，格式如：vpngw-9ghexg7q
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UniqVpnGwId VPN网关ID，对于vpn接入类型此项必填，格式如：vpngw-9ghexg7q
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUniqVpnGwId() const;
 
                     /**
                      * 设置VPN网关ID，对于vpn接入类型此项必填，格式如：vpngw-9ghexg7q
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uniqVpnGwId VPN网关ID，对于vpn接入类型此项必填，格式如：vpngw-9ghexg7q
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUniqVpnGwId(const std::string& _uniqVpnGwId);
@@ -398,18 +342,14 @@ namespace TencentCloud
 
                     /**
                      * 获取云联网ID，对于云联网接入类型此项必填，如：ccn-afp6kltc
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CcnId 云联网ID，对于云联网接入类型此项必填，如：ccn-afp6kltc
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCcnId() const;
 
                     /**
                      * 设置云联网ID，对于云联网接入类型此项必填，如：ccn-afp6kltc
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ccnId 云联网ID，对于云联网接入类型此项必填，如：ccn-afp6kltc
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCcnId(const std::string& _ccnId);
@@ -423,18 +363,14 @@ namespace TencentCloud
 
                     /**
                      * 获取云厂商类型，当实例为RDS实例时，填写为aliyun, 其他情况均填写others，默认为others
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Supplier 云厂商类型，当实例为RDS实例时，填写为aliyun, 其他情况均填写others，默认为others
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSupplier() const;
 
                     /**
                      * 设置云厂商类型，当实例为RDS实例时，填写为aliyun, 其他情况均填写others，默认为others
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _supplier 云厂商类型，当实例为RDS实例时，填写为aliyun, 其他情况均填写others，默认为others
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSupplier(const std::string& _supplier);
@@ -448,18 +384,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库版本，当实例为RDS实例时才有效，其他实例忽略，格式如：5.6或者5.7，默认为5.6
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EngineVersion 数据库版本，当实例为RDS实例时才有效，其他实例忽略，格式如：5.6或者5.7，默认为5.6
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEngineVersion() const;
 
                     /**
                      * 设置数据库版本，当实例为RDS实例时才有效，其他实例忽略，格式如：5.6或者5.7，默认为5.6
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _engineVersion 数据库版本，当实例为RDS实例时才有效，其他实例忽略，格式如：5.6或者5.7，默认为5.6
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEngineVersion(const std::string& _engineVersion);
@@ -473,18 +405,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例所属账号，如果为跨账号实例此项必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Account 实例所属账号，如果为跨账号实例此项必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAccount() const;
 
                     /**
                      * 设置实例所属账号，如果为跨账号实例此项必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _account 实例所属账号，如果为跨账号实例此项必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAccount(const std::string& _account);
@@ -498,18 +426,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源所属账号 为空或self(表示本账号内资源)、other(表示跨账号资源)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccountMode 资源所属账号 为空或self(表示本账号内资源)、other(表示跨账号资源)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAccountMode() const;
 
                     /**
                      * 设置资源所属账号 为空或self(表示本账号内资源)、other(表示跨账号资源)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _accountMode 资源所属账号 为空或self(表示本账号内资源)、other(表示跨账号资源)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAccountMode(const std::string& _accountMode);
@@ -523,18 +447,14 @@ namespace TencentCloud
 
                     /**
                      * 获取跨账号同步时的角色，只允许[a-zA-Z0-9\-\_]+，如果为跨账号实例此项必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccountRole 跨账号同步时的角色，只允许[a-zA-Z0-9\-\_]+，如果为跨账号实例此项必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAccountRole() const;
 
                     /**
                      * 设置跨账号同步时的角色，只允许[a-zA-Z0-9\-\_]+，如果为跨账号实例此项必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _accountRole 跨账号同步时的角色，只允许[a-zA-Z0-9\-\_]+，如果为跨账号实例此项必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAccountRole(const std::string& _accountRole);
@@ -548,18 +468,14 @@ namespace TencentCloud
 
                     /**
                      * 获取外部角色id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RoleExternalId 外部角色id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRoleExternalId() const;
 
                     /**
                      * 设置外部角色id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _roleExternalId 外部角色id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRoleExternalId(const std::string& _roleExternalId);
@@ -573,18 +489,14 @@ namespace TencentCloud
 
                     /**
                      * 获取临时密钥Id，可通过申请扮演角色临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48197，其中角色资源RoleArn的定义可参考DTS跨账号同步文档(https://cloud.tencent.com/document/product/571/68729)第4节中关于角色的定义。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TmpSecretId 临时密钥Id，可通过申请扮演角色临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48197，其中角色资源RoleArn的定义可参考DTS跨账号同步文档(https://cloud.tencent.com/document/product/571/68729)第4节中关于角色的定义。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTmpSecretId() const;
 
                     /**
                      * 设置临时密钥Id，可通过申请扮演角色临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48197，其中角色资源RoleArn的定义可参考DTS跨账号同步文档(https://cloud.tencent.com/document/product/571/68729)第4节中关于角色的定义。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tmpSecretId 临时密钥Id，可通过申请扮演角色临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48197，其中角色资源RoleArn的定义可参考DTS跨账号同步文档(https://cloud.tencent.com/document/product/571/68729)第4节中关于角色的定义。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTmpSecretId(const std::string& _tmpSecretId);
@@ -598,18 +510,14 @@ namespace TencentCloud
 
                     /**
                      * 获取临时密钥Id，可通过申请扮演角色临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48197，其中角色资源RoleArn的定义可参考DTS跨账号同步文档(https://cloud.tencent.com/document/product/571/68729)第4节中关于角色的定义。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TmpSecretKey 临时密钥Id，可通过申请扮演角色临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48197，其中角色资源RoleArn的定义可参考DTS跨账号同步文档(https://cloud.tencent.com/document/product/571/68729)第4节中关于角色的定义。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTmpSecretKey() const;
 
                     /**
                      * 设置临时密钥Id，可通过申请扮演角色临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48197，其中角色资源RoleArn的定义可参考DTS跨账号同步文档(https://cloud.tencent.com/document/product/571/68729)第4节中关于角色的定义。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tmpSecretKey 临时密钥Id，可通过申请扮演角色临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48197，其中角色资源RoleArn的定义可参考DTS跨账号同步文档(https://cloud.tencent.com/document/product/571/68729)第4节中关于角色的定义。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTmpSecretKey(const std::string& _tmpSecretKey);
@@ -623,18 +531,14 @@ namespace TencentCloud
 
                     /**
                      * 获取临时密钥Id，可通过申请扮演角色临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48197，其中角色资源RoleArn的定义可参考DTS跨账号同步文档(https://cloud.tencent.com/document/product/571/68729)第4节中关于角色的定义。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TmpToken 临时密钥Id，可通过申请扮演角色临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48197，其中角色资源RoleArn的定义可参考DTS跨账号同步文档(https://cloud.tencent.com/document/product/571/68729)第4节中关于角色的定义。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTmpToken() const;
 
                     /**
                      * 设置临时密钥Id，可通过申请扮演角色临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48197，其中角色资源RoleArn的定义可参考DTS跨账号同步文档(https://cloud.tencent.com/document/product/571/68729)第4节中关于角色的定义。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tmpToken 临时密钥Id，可通过申请扮演角色临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48197，其中角色资源RoleArn的定义可参考DTS跨账号同步文档(https://cloud.tencent.com/document/product/571/68729)第4节中关于角色的定义。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTmpToken(const std::string& _tmpToken);
@@ -648,18 +552,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否走加密传输、UnEncrypted表示不走加密传输，Encrypted表示走加密传输，默认UnEncrypted
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EncryptConn 是否走加密传输、UnEncrypted表示不走加密传输，Encrypted表示走加密传输，默认UnEncrypted
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEncryptConn() const;
 
                     /**
                      * 设置是否走加密传输、UnEncrypted表示不走加密传输，Encrypted表示走加密传输，默认UnEncrypted
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _encryptConn 是否走加密传输、UnEncrypted表示不走加密传输，Encrypted表示走加密传输，默认UnEncrypted
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEncryptConn(const std::string& _encryptConn);
@@ -673,18 +573,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库所属网络环境，AccessType为云联网(ccn)时必填， UserIDC表示用户IDC、TencentVPC表示腾讯云VPC；
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatabaseNetEnv 数据库所属网络环境，AccessType为云联网(ccn)时必填， UserIDC表示用户IDC、TencentVPC表示腾讯云VPC；
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDatabaseNetEnv() const;
 
                     /**
                      * 设置数据库所属网络环境，AccessType为云联网(ccn)时必填， UserIDC表示用户IDC、TencentVPC表示腾讯云VPC；
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _databaseNetEnv 数据库所属网络环境，AccessType为云联网(ccn)时必填， UserIDC表示用户IDC、TencentVPC表示腾讯云VPC；
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDatabaseNetEnv(const std::string& _databaseNetEnv);
@@ -698,18 +594,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库为跨账号云联网下的实例时、表示云联网所属主账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CcnOwnerUin 数据库为跨账号云联网下的实例时、表示云联网所属主账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCcnOwnerUin() const;
 
                     /**
                      * 设置数据库为跨账号云联网下的实例时、表示云联网所属主账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ccnOwnerUin 数据库为跨账号云联网下的实例时、表示云联网所属主账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCcnOwnerUin(const std::string& _ccnOwnerUin);
@@ -723,18 +615,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库为cynos、且是cynos集群内的一个子数据库实例时、该参数为该子实例的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChildInstanceId 数据库为cynos、且是cynos集群内的一个子数据库实例时、该参数为该子实例的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetChildInstanceId() const;
 
                     /**
                      * 设置数据库为cynos、且是cynos集群内的一个子数据库实例时、该参数为该子实例的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _childInstanceId 数据库为cynos、且是cynos集群内的一个子数据库实例时、该参数为该子实例的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChildInstanceId(const std::string& _childInstanceId);
@@ -748,18 +636,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库为cynos、且是cynos集群内的一个子数据库实例时、该参数为该子实例的类型、例如：只读实例传ro、读写实例传rw
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChildInstanceType 数据库为cynos、且是cynos集群内的一个子数据库实例时、该参数为该子实例的类型、例如：只读实例传ro、读写实例传rw
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetChildInstanceType() const;
 
                     /**
                      * 设置数据库为cynos、且是cynos集群内的一个子数据库实例时、该参数为该子实例的类型、例如：只读实例传ro、读写实例传rw
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _childInstanceType 数据库为cynos、且是cynos集群内的一个子数据库实例时、该参数为该子实例的类型、例如：只读实例传ro、读写实例传rw
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChildInstanceType(const std::string& _childInstanceType);
@@ -773,18 +657,14 @@ namespace TencentCloud
 
                     /**
                      * 获取tdsql的分片id。如节点类型为set必填。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SetId tdsql的分片id。如节点类型为set必填。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSetId() const;
 
                     /**
                      * 设置tdsql的分片id。如节点类型为set必填。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _setId tdsql的分片id。如节点类型为set必填。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSetId(const std::string& _setId);
@@ -800,210 +680,180 @@ namespace TencentCloud
 
                     /**
                      * 地域英文名，如：ap-guangzhou
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
                      * 节点类型，proxy表示节点类型为主机，set表示节点类型为节点。proxy类型必须填在数组第一项。tdsqlmysql类型的源/目标配置必填
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_role;
                     bool m_roleHasBeenSet;
 
                     /**
                      * 数据库内核类型，tdsql中用于区分不同内核：percona,mariadb,mysql。注意TDSQL-C MySQL、TDSQL PostgreSQL无需填写此项值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dbKernel;
                     bool m_dbKernelHasBeenSet;
 
                     /**
                      * 数据库实例ID，格式如：cdb-powiqx8q
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
                      * 实例的IP地址，接入类型为非cdb时此项必填
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;
 
                     /**
                      * 实例端口，接入类型为非cdb时此项必填
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
                      * 用户名，对于访问需要用户名密码认证的实例必填
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_user;
                     bool m_userHasBeenSet;
 
                     /**
                      * 密码，对于访问需要用户名密码认证的实例必填
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
 
                     /**
                      * 数据库名，数据库为cdwpg时，需要提供
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dbName;
                     bool m_dbNameHasBeenSet;
 
                     /**
                      * 私有网络ID，对于私有网络、专线、VPN的接入方式此项必填，格式如：vpc-92jblxto
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
                      * 私有网络下的子网ID，对于私有网络、专线、VPN的接入方式此项必填，格式如：subnet-3paxmkdz
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
                      * CVM实例短ID，格式如：ins-olgl39y8，与云服务器控制台页面显示的实例ID相同。如果是CVM自建实例，需要传递此字段
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cvmInstanceId;
                     bool m_cvmInstanceIdHasBeenSet;
 
                     /**
                      * 专线网关ID，对于专线接入类型此项必填，格式如：dcg-0rxtqqxb
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uniqDcgId;
                     bool m_uniqDcgIdHasBeenSet;
 
                     /**
                      * VPN网关ID，对于vpn接入类型此项必填，格式如：vpngw-9ghexg7q
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uniqVpnGwId;
                     bool m_uniqVpnGwIdHasBeenSet;
 
                     /**
                      * 云联网ID，对于云联网接入类型此项必填，如：ccn-afp6kltc
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ccnId;
                     bool m_ccnIdHasBeenSet;
 
                     /**
                      * 云厂商类型，当实例为RDS实例时，填写为aliyun, 其他情况均填写others，默认为others
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_supplier;
                     bool m_supplierHasBeenSet;
 
                     /**
                      * 数据库版本，当实例为RDS实例时才有效，其他实例忽略，格式如：5.6或者5.7，默认为5.6
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_engineVersion;
                     bool m_engineVersionHasBeenSet;
 
                     /**
                      * 实例所属账号，如果为跨账号实例此项必填
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_account;
                     bool m_accountHasBeenSet;
 
                     /**
                      * 资源所属账号 为空或self(表示本账号内资源)、other(表示跨账号资源)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_accountMode;
                     bool m_accountModeHasBeenSet;
 
                     /**
                      * 跨账号同步时的角色，只允许[a-zA-Z0-9\-\_]+，如果为跨账号实例此项必填
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_accountRole;
                     bool m_accountRoleHasBeenSet;
 
                     /**
                      * 外部角色id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_roleExternalId;
                     bool m_roleExternalIdHasBeenSet;
 
                     /**
                      * 临时密钥Id，可通过申请扮演角色临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48197，其中角色资源RoleArn的定义可参考DTS跨账号同步文档(https://cloud.tencent.com/document/product/571/68729)第4节中关于角色的定义。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tmpSecretId;
                     bool m_tmpSecretIdHasBeenSet;
 
                     /**
                      * 临时密钥Id，可通过申请扮演角色临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48197，其中角色资源RoleArn的定义可参考DTS跨账号同步文档(https://cloud.tencent.com/document/product/571/68729)第4节中关于角色的定义。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tmpSecretKey;
                     bool m_tmpSecretKeyHasBeenSet;
 
                     /**
                      * 临时密钥Id，可通过申请扮演角色临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48197，其中角色资源RoleArn的定义可参考DTS跨账号同步文档(https://cloud.tencent.com/document/product/571/68729)第4节中关于角色的定义。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tmpToken;
                     bool m_tmpTokenHasBeenSet;
 
                     /**
                      * 是否走加密传输、UnEncrypted表示不走加密传输，Encrypted表示走加密传输，默认UnEncrypted
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_encryptConn;
                     bool m_encryptConnHasBeenSet;
 
                     /**
                      * 数据库所属网络环境，AccessType为云联网(ccn)时必填， UserIDC表示用户IDC、TencentVPC表示腾讯云VPC；
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_databaseNetEnv;
                     bool m_databaseNetEnvHasBeenSet;
 
                     /**
                      * 数据库为跨账号云联网下的实例时、表示云联网所属主账号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ccnOwnerUin;
                     bool m_ccnOwnerUinHasBeenSet;
 
                     /**
                      * 数据库为cynos、且是cynos集群内的一个子数据库实例时、该参数为该子实例的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_childInstanceId;
                     bool m_childInstanceIdHasBeenSet;
 
                     /**
                      * 数据库为cynos、且是cynos集群内的一个子数据库实例时、该参数为该子实例的类型、例如：只读实例传ro、读写实例传rw
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_childInstanceType;
                     bool m_childInstanceTypeHasBeenSet;
 
                     /**
                      * tdsql的分片id。如节点类型为set必填。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_setId;
                     bool m_setIdHasBeenSet;

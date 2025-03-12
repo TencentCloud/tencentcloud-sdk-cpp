@@ -92,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取消费者组备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 消费者组备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置消费者组备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 消费者组备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -264,18 +260,14 @@ namespace TencentCloud
 
                     /**
                      * 获取每个消费者正在消费的分区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PartitionAssignment 每个消费者正在消费的分区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<PartitionAssignment> GetPartitionAssignment() const;
 
                     /**
                      * 设置每个消费者正在消费的分区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _partitionAssignment 每个消费者正在消费的分区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPartitionAssignment(const std::vector<PartitionAssignment>& _partitionAssignment);
@@ -303,7 +295,6 @@ namespace TencentCloud
 
                     /**
                      * 消费者组备注
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
@@ -352,7 +343,6 @@ namespace TencentCloud
 
                     /**
                      * 每个消费者正在消费的分区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<PartitionAssignment> m_partitionAssignment;
                     bool m_partitionAssignmentHasBeenSet;

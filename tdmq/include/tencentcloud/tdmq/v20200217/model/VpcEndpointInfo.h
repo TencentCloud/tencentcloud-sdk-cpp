@@ -110,22 +110,18 @@ namespace TencentCloud
                     bool VpcEndpointHasBeenSet() const;
 
                     /**
-                     * 获取vpc接入点状态
-OFF/ON/CREATING/DELETING
+                     * 获取vpc接入点状态 OFF/ON/CREATING/DELETING
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VpcDataStreamEndpointStatus vpc接入点状态
-OFF/ON/CREATING/DELETING
+                     * @return VpcDataStreamEndpointStatus vpc接入点状态 OFF/ON/CREATING/DELETING
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcDataStreamEndpointStatus() const;
 
                     /**
-                     * 设置vpc接入点状态
-OFF/ON/CREATING/DELETING
+                     * 设置vpc接入点状态 OFF/ON/CREATING/DELETING
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _vpcDataStreamEndpointStatus vpc接入点状态
-OFF/ON/CREATING/DELETING
+                     * @param _vpcDataStreamEndpointStatus vpc接入点状态 OFF/ON/CREATING/DELETING
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -159,8 +155,7 @@ OFF/ON/CREATING/DELETING
                     bool m_vpcEndpointHasBeenSet;
 
                     /**
-                     * vpc接入点状态
-OFF/ON/CREATING/DELETING
+                     * vpc接入点状态 OFF/ON/CREATING/DELETING
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcDataStreamEndpointStatus;

@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取完成时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Completed 完成时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCompleted() const;
 
                     /**
                      * 设置完成时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _completed 完成时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCompleted(const int64_t& _completed);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取开始时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Started 开始时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStarted() const;
 
                     /**
                      * 设置开始时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _started 开始时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStarted(const int64_t& _started);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取完成进度，百分制
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Progress 完成进度，百分制
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetProgress() const;
 
                     /**
                      * 设置完成进度，百分制
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _progress 完成进度，百分制
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProgress(const double& _progress);
@@ -216,18 +204,14 @@ namespace TencentCloud
 
                     /**
                      * 获取运行语句
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Code 运行语句
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCode() const;
 
                     /**
                      * 设置运行语句
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _code 运行语句
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCode(const std::string& _code);
@@ -241,18 +225,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskId 任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskId 任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -268,21 +248,18 @@ namespace TencentCloud
 
                     /**
                      * 完成时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_completed;
                     bool m_completedHasBeenSet;
 
                     /**
                      * 开始时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_started;
                     bool m_startedHasBeenSet;
 
                     /**
                      * 完成进度，百分制
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_progress;
                     bool m_progressHasBeenSet;
@@ -315,14 +292,12 @@ namespace TencentCloud
 
                     /**
                      * 运行语句
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_code;
                     bool m_codeHasBeenSet;
 
                     /**
                      * 任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;

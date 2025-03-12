@@ -112,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取扣分详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScoreDetails 扣分详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ScoreDetail> GetScoreDetails() const;
 
                     /**
                      * 设置扣分详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scoreDetails 扣分详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScoreDetails(const std::vector<ScoreDetail>& _scoreDetails);
@@ -157,7 +153,6 @@ namespace TencentCloud
 
                     /**
                      * 扣分详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ScoreDetail> m_scoreDetails;
                     bool m_scoreDetailsHasBeenSet;

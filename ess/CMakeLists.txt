@@ -25,6 +25,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/BillUsageDetail.h
   include/tencentcloud/ess/v20201111/model/DescribeCancelFlowsTaskResponse.h
   include/tencentcloud/ess/v20201111/model/IntentionActionResult.h
+  include/tencentcloud/ess/v20201111/model/DescribeUserFlowTypeResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeFileCounterSignResultRequest.h
   include/tencentcloud/ess/v20201111/model/CreateSealRequest.h
   include/tencentcloud/ess/v20201111/model/FlowGroupUrlInfo.h
@@ -159,6 +160,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreateSchemeUrlResponse.h
   include/tencentcloud/ess/v20201111/model/CreateFlowByFilesRequest.h
   include/tencentcloud/ess/v20201111/model/FlowGroupInfo.h
+  include/tencentcloud/ess/v20201111/model/TemplateUserFlowType.h
   include/tencentcloud/ess/v20201111/model/CreateFlowSignUrlResponse.h
   include/tencentcloud/ess/v20201111/model/RegisterInfo.h
   include/tencentcloud/ess/v20201111/model/DescribeFileUrlsRequest.h
@@ -257,6 +259,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/StartFlowRequest.h
   include/tencentcloud/ess/v20201111/model/CreateSealResponse.h
   include/tencentcloud/ess/v20201111/model/CreatePrepareFlowRequest.h
+  include/tencentcloud/ess/v20201111/model/DescribeUserFlowTypeRequest.h
   include/tencentcloud/ess/v20201111/model/ApproverOption.h
   include/tencentcloud/ess/v20201111/model/DescribeCancelFlowsTaskRequest.h
   include/tencentcloud/ess/v20201111/model/CreateEmbedWebUrlResponse.h
@@ -331,6 +334,7 @@ set(ess_src
   src/v20201111/model/BillUsageDetail.cpp
   src/v20201111/model/DescribeCancelFlowsTaskResponse.cpp
   src/v20201111/model/IntentionActionResult.cpp
+  src/v20201111/model/DescribeUserFlowTypeResponse.cpp
   src/v20201111/model/DescribeFileCounterSignResultRequest.cpp
   src/v20201111/model/CreateSealRequest.cpp
   src/v20201111/model/FlowGroupUrlInfo.cpp
@@ -465,6 +469,7 @@ set(ess_src
   src/v20201111/model/CreateSchemeUrlResponse.cpp
   src/v20201111/model/CreateFlowByFilesRequest.cpp
   src/v20201111/model/FlowGroupInfo.cpp
+  src/v20201111/model/TemplateUserFlowType.cpp
   src/v20201111/model/CreateFlowSignUrlResponse.cpp
   src/v20201111/model/RegisterInfo.cpp
   src/v20201111/model/DescribeFileUrlsRequest.cpp
@@ -563,6 +568,7 @@ set(ess_src
   src/v20201111/model/StartFlowRequest.cpp
   src/v20201111/model/CreateSealResponse.cpp
   src/v20201111/model/CreatePrepareFlowRequest.cpp
+  src/v20201111/model/DescribeUserFlowTypeRequest.cpp
   src/v20201111/model/ApproverOption.cpp
   src/v20201111/model/DescribeCancelFlowsTaskRequest.cpp
   src/v20201111/model/CreateEmbedWebUrlResponse.cpp

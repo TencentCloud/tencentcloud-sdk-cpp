@@ -81,6 +81,7 @@ set(tse_public_header_model
   include/tencentcloud/tse/v20201207/model/ModifyNetworkAccessStrategyResponse.h
   include/tencentcloud/tse/v20201207/model/RestartSREInstanceRequest.h
   include/tencentcloud/tse/v20201207/model/UnbindAutoScalerResourceStrategyFromGroupsRequest.h
+  include/tencentcloud/tse/v20201207/model/ConfigFilePersistent.h
   include/tencentcloud/tse/v20201207/model/DeleteCloudNativeAPIGatewayPublicNetworkRequest.h
   include/tencentcloud/tse/v20201207/model/ReleaseVersion.h
   include/tencentcloud/tse/v20201207/model/PolarisLimiterAddress.h
@@ -445,6 +446,7 @@ set(tse_src
   src/v20201207/model/ModifyNetworkAccessStrategyResponse.cpp
   src/v20201207/model/RestartSREInstanceRequest.cpp
   src/v20201207/model/UnbindAutoScalerResourceStrategyFromGroupsRequest.cpp
+  src/v20201207/model/ConfigFilePersistent.cpp
   src/v20201207/model/DeleteCloudNativeAPIGatewayPublicNetworkRequest.cpp
   src/v20201207/model/ReleaseVersion.cpp
   src/v20201207/model/PolarisLimiterAddress.cpp

@@ -181,8 +181,6 @@
 #include <tencentcloud/tdmq/v20200217/model/DescribeRabbitMQVipInstancesResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRabbitMQVirtualHostRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRabbitMQVirtualHostResponse.h>
-#include <tencentcloud/tdmq/v20200217/model/DescribeRabbitMQVirtualHostListRequest.h>
-#include <tencentcloud/tdmq/v20200217/model/DescribeRabbitMQVirtualHostListResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQClusterRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQClusterResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQClustersRequest.h>
@@ -576,9 +574,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRabbitMQVirtualHostResponse> DescribeRabbitMQVirtualHostOutcome;
                 typedef std::future<DescribeRabbitMQVirtualHostOutcome> DescribeRabbitMQVirtualHostOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeRabbitMQVirtualHostRequest&, DescribeRabbitMQVirtualHostOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRabbitMQVirtualHostAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeRabbitMQVirtualHostListResponse> DescribeRabbitMQVirtualHostListOutcome;
-                typedef std::future<DescribeRabbitMQVirtualHostListOutcome> DescribeRabbitMQVirtualHostListOutcomeCallable;
-                typedef std::function<void(const TdmqClient*, const Model::DescribeRabbitMQVirtualHostListRequest&, DescribeRabbitMQVirtualHostListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRabbitMQVirtualHostListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRocketMQClusterResponse> DescribeRocketMQClusterOutcome;
                 typedef std::future<DescribeRocketMQClusterOutcome> DescribeRocketMQClusterOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeRocketMQClusterRequest&, DescribeRocketMQClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRocketMQClusterAsyncHandler;
@@ -1507,17 +1502,6 @@ namespace TencentCloud
                 DescribeRabbitMQVirtualHostOutcome DescribeRabbitMQVirtualHost(const Model::DescribeRabbitMQVirtualHostRequest &request);
                 void DescribeRabbitMQVirtualHostAsync(const Model::DescribeRabbitMQVirtualHostRequest& request, const DescribeRabbitMQVirtualHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRabbitMQVirtualHostOutcomeCallable DescribeRabbitMQVirtualHostCallable(const Model::DescribeRabbitMQVirtualHostRequest& request);
-
-                /**
-                 *消息队列TDMQ RabbitMQ 有一个存量旧接口没下线，目前实际上已经不在产品中使用：DescribeRabbitMQVirtualHostList，这个接口很久前已经被 DescribeRabbitMQVirtualHost 替换掉。已无用户在调用。
-
-RabbitMQ专享版查询虚拟主机列表
-                 * @param req DescribeRabbitMQVirtualHostListRequest
-                 * @return DescribeRabbitMQVirtualHostListOutcome
-                 */
-                DescribeRabbitMQVirtualHostListOutcome DescribeRabbitMQVirtualHostList(const Model::DescribeRabbitMQVirtualHostListRequest &request);
-                void DescribeRabbitMQVirtualHostListAsync(const Model::DescribeRabbitMQVirtualHostListRequest& request, const DescribeRabbitMQVirtualHostListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeRabbitMQVirtualHostListOutcomeCallable DescribeRabbitMQVirtualHostListCallable(const Model::DescribeRabbitMQVirtualHostListRequest& request);
 
                 /**
                  *获取单个RocketMQ集群信息

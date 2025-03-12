@@ -46,7 +46,9 @@ TableLineageInfo::TableLineageInfo() :
     m_tableTypeHasBeenSet(false),
     m_datasourceNameHasBeenSet(false),
     m_databaseNameHasBeenSet(false),
-    m_databaseIdHasBeenSet(false)
+    m_databaseIdHasBeenSet(false),
+    m_dataFromTypeHasBeenSet(false),
+    m_collectJobIdHasBeenSet(false)
 {
 }
 
@@ -338,6 +340,26 @@ CoreInternalOutcome TableLineageInfo::Deserialize(const rapidjson::Value &value)
         m_databaseIdHasBeenSet = true;
     }
 
+    if (value.HasMember("DataFromType") && !value["DataFromType"].IsNull())
+    {
+        if (!value["DataFromType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableLineageInfo.DataFromType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dataFromType = string(value["DataFromType"].GetString());
+        m_dataFromTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("CollectJobId") && !value["CollectJobId"].IsNull())
+    {
+        if (!value["CollectJobId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableLineageInfo.CollectJobId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_collectJobId = string(value["CollectJobId"].GetString());
+        m_collectJobIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -570,6 +592,22 @@ void TableLineageInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "DatabaseId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_databaseId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dataFromTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataFromType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dataFromType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_collectJobIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CollectJobId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_collectJobId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -989,5 +1027,37 @@ void TableLineageInfo::SetDatabaseId(const string& _databaseId)
 bool TableLineageInfo::DatabaseIdHasBeenSet() const
 {
     return m_databaseIdHasBeenSet;
+}
+
+string TableLineageInfo::GetDataFromType() const
+{
+    return m_dataFromType;
+}
+
+void TableLineageInfo::SetDataFromType(const string& _dataFromType)
+{
+    m_dataFromType = _dataFromType;
+    m_dataFromTypeHasBeenSet = true;
+}
+
+bool TableLineageInfo::DataFromTypeHasBeenSet() const
+{
+    return m_dataFromTypeHasBeenSet;
+}
+
+string TableLineageInfo::GetCollectJobId() const
+{
+    return m_collectJobId;
+}
+
+void TableLineageInfo::SetCollectJobId(const string& _collectJobId)
+{
+    m_collectJobId = _collectJobId;
+    m_collectJobIdHasBeenSet = true;
+}
+
+bool TableLineageInfo::CollectJobIdHasBeenSet() const
+{
+    return m_collectJobIdHasBeenSet;
 }
 

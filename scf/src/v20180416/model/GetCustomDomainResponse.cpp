@@ -28,7 +28,8 @@ GetCustomDomainResponse::GetCustomDomainResponse() :
     m_protocolHasBeenSet(false),
     m_endpointsConfigHasBeenSet(false),
     m_certConfigHasBeenSet(false),
-    m_wafConfigHasBeenSet(false)
+    m_wafConfigHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -140,6 +141,26 @@ CoreInternalOutcome GetCustomDomainResponse::Deserialize(const string &payload)
         m_wafConfigHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Tags") && !rsp["Tags"].IsNull())
+    {
+        if (!rsp["Tags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Tags` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Tags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tags.push_back(item);
+        }
+        m_tagsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -197,6 +218,21 @@ string GetCustomDomainResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_wafConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -259,6 +295,16 @@ WafConf GetCustomDomainResponse::GetWafConfig() const
 bool GetCustomDomainResponse::WafConfigHasBeenSet() const
 {
     return m_wafConfigHasBeenSet;
+}
+
+vector<Tag> GetCustomDomainResponse::GetTags() const
+{
+    return m_tags;
+}
+
+bool GetCustomDomainResponse::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

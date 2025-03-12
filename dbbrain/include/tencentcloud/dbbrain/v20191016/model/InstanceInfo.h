@@ -637,18 +637,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内网vip。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InternalVip 内网vip。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInternalVip() const;
 
                     /**
                      * 设置内网vip。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _internalVip 内网vip。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInternalVip(const std::string& _internalVip);
@@ -662,18 +658,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内网port。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InternalVport 内网port。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetInternalVport() const;
 
                     /**
                      * 设置内网port。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _internalVport 内网port。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInternalVport(const int64_t& _internalVport);
@@ -708,18 +700,14 @@ namespace TencentCloud
 
                     /**
                      * 获取所属集群ID（仅对集群数据库产品该字段非空，如TDSQL-C）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterId 所属集群ID（仅对集群数据库产品该字段非空，如TDSQL-C）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置所属集群ID（仅对集群数据库产品该字段非空，如TDSQL-C）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterId 所属集群ID（仅对集群数据库产品该字段非空，如TDSQL-C）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -733,18 +721,14 @@ namespace TencentCloud
 
                     /**
                      * 获取所属集群名称（仅对集群数据库产品该字段非空，如TDSQL-C）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterName 所属集群名称（仅对集群数据库产品该字段非空，如TDSQL-C）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterName() const;
 
                     /**
                      * 设置所属集群名称（仅对集群数据库产品该字段非空，如TDSQL-C）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterName 所属集群名称（仅对集群数据库产品该字段非空，如TDSQL-C）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterName(const std::string& _clusterName);
@@ -928,14 +912,12 @@ namespace TencentCloud
 
                     /**
                      * 内网vip。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_internalVip;
                     bool m_internalVipHasBeenSet;
 
                     /**
                      * 内网port。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_internalVport;
                     bool m_internalVportHasBeenSet;
@@ -948,14 +930,12 @@ namespace TencentCloud
 
                     /**
                      * 所属集群ID（仅对集群数据库产品该字段非空，如TDSQL-C）。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
                      * 所属集群名称（仅对集群数据库产品该字段非空，如TDSQL-C）。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterName;
                     bool m_clusterNameHasBeenSet;

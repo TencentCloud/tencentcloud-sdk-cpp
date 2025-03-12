@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件的字符数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TextLength 文件的字符数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTextLength() const;
 
                     /**
                      * 设置文件的字符数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _textLength 文件的字符数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTextLength(const uint64_t& _textLength);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件的字节数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ByteLength 文件的字节数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetByteLength() const;
 
                     /**
                      * 设置文件的字节数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _byteLength 文件的字节数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetByteLength(const uint64_t& _byteLength);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件被预处理、Embedding 向量化的进度。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IndexedProgress 文件被预处理、Embedding 向量化的进度。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIndexedProgress() const;
 
                     /**
                      * 设置文件被预处理、Embedding 向量化的进度。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _indexedProgress 文件被预处理、Embedding 向量化的进度。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIndexedProgress(const uint64_t& _indexedProgress);
@@ -128,14 +116,12 @@ Loading：文件解析中。
 Failure：文件解析、写入出错。
 Ready：文件解析、写入完成。
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IndexedStatus 文件预处理、Embedding 向量化的状态。
 New：等待解析。
 Loading：文件解析中。
 Failure：文件解析、写入出错。
 Ready：文件解析、写入完成。
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIndexedStatus() const;
@@ -147,14 +133,12 @@ Loading：文件解析中。
 Failure：文件解析、写入出错。
 Ready：文件解析、写入完成。
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _indexedStatus 文件预处理、Embedding 向量化的状态。
 New：等待解析。
 Loading：文件解析中。
 Failure：文件解析、写入出错。
 Ready：文件解析、写入完成。
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIndexedStatus(const std::string& _indexedStatus);
@@ -168,18 +152,14 @@ Ready：文件解析、写入完成。
 
                     /**
                      * 获取文件创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 文件创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置文件创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 文件创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -193,18 +173,14 @@ Ready：文件解析、写入完成。
 
                     /**
                      * 获取文件最后更新时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastUpdateTime 文件最后更新时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLastUpdateTime() const;
 
                     /**
                      * 设置文件最后更新时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lastUpdateTime 文件最后更新时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLastUpdateTime(const std::string& _lastUpdateTime);
@@ -218,18 +194,14 @@ Ready：文件解析、写入完成。
 
                     /**
                      * 获取文件关键字。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Keywords 文件关键字。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKeywords() const;
 
                     /**
                      * 设置文件关键字。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _keywords 文件关键字。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKeywords(const std::string& _keywords);
@@ -245,21 +217,18 @@ Ready：文件解析、写入完成。
 
                     /**
                      * 文件的字符数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_textLength;
                     bool m_textLengthHasBeenSet;
 
                     /**
                      * 文件的字节数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_byteLength;
                     bool m_byteLengthHasBeenSet;
 
                     /**
                      * 文件被预处理、Embedding 向量化的进度。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_indexedProgress;
                     bool m_indexedProgressHasBeenSet;
@@ -271,28 +240,24 @@ Loading：文件解析中。
 Failure：文件解析、写入出错。
 Ready：文件解析、写入完成。
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_indexedStatus;
                     bool m_indexedStatusHasBeenSet;
 
                     /**
                      * 文件创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 文件最后更新时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastUpdateTime;
                     bool m_lastUpdateTimeHasBeenSet;
 
                     /**
                      * 文件关键字。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_keywords;
                     bool m_keywordsHasBeenSet;

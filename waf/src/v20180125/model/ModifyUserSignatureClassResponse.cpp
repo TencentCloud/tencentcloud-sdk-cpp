@@ -14,22 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tdmq/v20200217/model/DescribeRabbitMQVirtualHostListResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyUserSignatureClassResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Tdmq::V20200217::Model;
+using namespace TencentCloud::Waf::V20180125::Model;
 using namespace std;
 
-DescribeRabbitMQVirtualHostListResponse::DescribeRabbitMQVirtualHostListResponse() :
-    m_totalCountHasBeenSet(false),
-    m_virtualHostListHasBeenSet(false)
+ModifyUserSignatureClassResponse::ModifyUserSignatureClassResponse() :
+    m_typeIDHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeRabbitMQVirtualHostListResponse::Deserialize(const string &payload)
+CoreInternalOutcome ModifyUserSignatureClassResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,67 +63,50 @@ CoreInternalOutcome DescribeRabbitMQVirtualHostListResponse::Deserialize(const s
     }
 
 
-    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    if (rsp.HasMember("TypeID") && !rsp["TypeID"].IsNull())
     {
-        if (!rsp["TotalCount"].IsUint64())
+        if (!rsp["TypeID"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TypeID` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_totalCount = rsp["TotalCount"].GetUint64();
-        m_totalCountHasBeenSet = true;
+        m_typeID = string(rsp["TypeID"].GetString());
+        m_typeIDHasBeenSet = true;
     }
 
-    if (rsp.HasMember("VirtualHostList") && !rsp["VirtualHostList"].IsNull())
+    if (rsp.HasMember("Status") && !rsp["Status"].IsNull())
     {
-        if (!rsp["VirtualHostList"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `VirtualHostList` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["VirtualHostList"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!rsp["Status"].IsInt64())
         {
-            RabbitMQPrivateVirtualHost item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_virtualHostList.push_back(item);
+            return CoreInternalOutcome(Core::Error("response `Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_virtualHostListHasBeenSet = true;
+        m_status = rsp["Status"].GetInt64();
+        m_statusHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeRabbitMQVirtualHostListResponse::ToJsonString() const
+string ModifyUserSignatureClassResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_totalCountHasBeenSet)
+    if (m_typeIDHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TotalCount";
+        string key = "TypeID";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_totalCount, allocator);
+        value.AddMember(iKey, rapidjson::Value(m_typeID.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_virtualHostListHasBeenSet)
+    if (m_statusHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "VirtualHostList";
+        string key = "Status";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_virtualHostList.begin(); itr != m_virtualHostList.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
+        value.AddMember(iKey, m_status, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -138,24 +121,24 @@ string DescribeRabbitMQVirtualHostListResponse::ToJsonString() const
 }
 
 
-uint64_t DescribeRabbitMQVirtualHostListResponse::GetTotalCount() const
+string ModifyUserSignatureClassResponse::GetTypeID() const
 {
-    return m_totalCount;
+    return m_typeID;
 }
 
-bool DescribeRabbitMQVirtualHostListResponse::TotalCountHasBeenSet() const
+bool ModifyUserSignatureClassResponse::TypeIDHasBeenSet() const
 {
-    return m_totalCountHasBeenSet;
+    return m_typeIDHasBeenSet;
 }
 
-vector<RabbitMQPrivateVirtualHost> DescribeRabbitMQVirtualHostListResponse::GetVirtualHostList() const
+int64_t ModifyUserSignatureClassResponse::GetStatus() const
 {
-    return m_virtualHostList;
+    return m_status;
 }
 
-bool DescribeRabbitMQVirtualHostListResponse::VirtualHostListHasBeenSet() const
+bool ModifyUserSignatureClassResponse::StatusHasBeenSet() const
 {
-    return m_virtualHostListHasBeenSet;
+    return m_statusHasBeenSet;
 }
 
 

@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取待变更实例 ID。
-                     * @return InstanceId 待变更实例 ID。
+                     * 获取待变更实例 ID。请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
+                     * @return InstanceId 待变更实例 ID。请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置待变更实例 ID。
-                     * @param _instanceId 待变更实例 ID。
+                     * 设置待变更实例 ID。请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
+                     * @param _instanceId 待变更实例 ID。请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -148,10 +148,39 @@ namespace TencentCloud
                      */
                     bool NodeSetHasBeenSet() const;
 
+                    /**
+                     * 获取切换时间。 
+- 1：维护时间窗操作：在设置的维护时间窗内执行操作。请通过接口[DescribeMaintenanceWindow](https://cloud.tencent.com/document/product/239/46336)查询设置的维护时间窗时间段。缩副本、扩缩分片、扩内存均支持在维护时间窗执行操作。
+- 2：立即操作：默认切换时刻。操作将立即执行，无需等待维护时间窗。
+                     * @return SwitchOption 切换时间。 
+- 1：维护时间窗操作：在设置的维护时间窗内执行操作。请通过接口[DescribeMaintenanceWindow](https://cloud.tencent.com/document/product/239/46336)查询设置的维护时间窗时间段。缩副本、扩缩分片、扩内存均支持在维护时间窗执行操作。
+- 2：立即操作：默认切换时刻。操作将立即执行，无需等待维护时间窗。
+                     * 
+                     */
+                    uint64_t GetSwitchOption() const;
+
+                    /**
+                     * 设置切换时间。 
+- 1：维护时间窗操作：在设置的维护时间窗内执行操作。请通过接口[DescribeMaintenanceWindow](https://cloud.tencent.com/document/product/239/46336)查询设置的维护时间窗时间段。缩副本、扩缩分片、扩内存均支持在维护时间窗执行操作。
+- 2：立即操作：默认切换时刻。操作将立即执行，无需等待维护时间窗。
+                     * @param _switchOption 切换时间。 
+- 1：维护时间窗操作：在设置的维护时间窗内执行操作。请通过接口[DescribeMaintenanceWindow](https://cloud.tencent.com/document/product/239/46336)查询设置的维护时间窗时间段。缩副本、扩缩分片、扩内存均支持在维护时间窗执行操作。
+- 2：立即操作：默认切换时刻。操作将立即执行，无需等待维护时间窗。
+                     * 
+                     */
+                    void SetSwitchOption(const uint64_t& _switchOption);
+
+                    /**
+                     * 判断参数 SwitchOption 是否已赋值
+                     * @return SwitchOption 是否已赋值
+                     * 
+                     */
+                    bool SwitchOptionHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 待变更实例 ID。
+                     * 待变更实例 ID。请登录[Redis控制台](https://console.cloud.tencent.com/redis/instance/list)在实例列表复制实例 ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -179,6 +208,14 @@ namespace TencentCloud
                      */
                     std::vector<RedisNodeInfo> m_nodeSet;
                     bool m_nodeSetHasBeenSet;
+
+                    /**
+                     * 切换时间。 
+- 1：维护时间窗操作：在设置的维护时间窗内执行操作。请通过接口[DescribeMaintenanceWindow](https://cloud.tencent.com/document/product/239/46336)查询设置的维护时间窗时间段。缩副本、扩缩分片、扩内存均支持在维护时间窗执行操作。
+- 2：立即操作：默认切换时刻。操作将立即执行，无需等待维护时间窗。
+                     */
+                    uint64_t m_switchOption;
+                    bool m_switchOptionHasBeenSet;
 
                 };
             }

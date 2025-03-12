@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文档id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DocumentSetId 文档id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDocumentSetId() const;
 
                     /**
                      * 设置文档id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _documentSetId 文档id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDocumentSetId(const std::string& _documentSetId);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文档名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DocumentSetName 文档名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDocumentSetName() const;
 
                     /**
                      * 设置文档名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _documentSetName 文档名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDocumentSetName(const std::string& _documentSetName);
@@ -100,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件完整内容。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Text 文件完整内容。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetText() const;
 
                     /**
                      * 设置文件完整内容。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _text 文件完整内容。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetText(const std::string& _text);
@@ -125,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件内容前 200个字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TextPrefix 文件内容前 200个字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTextPrefix() const;
 
                     /**
                      * 设置文件内容前 200个字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _textPrefix 文件内容前 200个字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTextPrefix(const std::string& _textPrefix);
@@ -150,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DocumentSetInfo 文件详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     KnowledgeDocumentSetInfo GetDocumentSetInfo() const;
 
                     /**
                      * 设置文件详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _documentSetInfo 文件详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDocumentSetInfo(const KnowledgeDocumentSetInfo& _documentSetInfo);
@@ -175,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件拆分信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SplitterPreprocess 文件拆分信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     KnowledgeSplitterPreprocess GetSplitterPreprocess() const;
 
                     /**
                      * 设置文件拆分信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _splitterPreprocess 文件拆分信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSplitterPreprocess(const KnowledgeSplitterPreprocess& _splitterPreprocess);
@@ -200,18 +176,14 @@ namespace TencentCloud
 
                     /**
                      * 获取未使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 未使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置未使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 未使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -225,18 +197,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文档标题
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileTitle 文档标题
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileTitle() const;
 
                     /**
                      * 设置文档标题
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileTitle 文档标题
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileTitle(const std::string& _fileTitle);
@@ -250,18 +218,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文档元信息，必须为jsonstring
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileMetaData 文档元信息，必须为jsonstring
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileMetaData() const;
 
                     /**
                      * 设置文档元信息，必须为jsonstring
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileMetaData 文档元信息，必须为jsonstring
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileMetaData(const std::string& _fileMetaData);
@@ -275,18 +239,14 @@ namespace TencentCloud
 
                     /**
                      * 获取作者
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Author 作者
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAuthor() const;
 
                     /**
                      * 设置作者
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _author 作者
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAuthor(const std::string& _author);
@@ -302,70 +262,60 @@ namespace TencentCloud
 
                     /**
                      * 文档id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_documentSetId;
                     bool m_documentSetIdHasBeenSet;
 
                     /**
                      * 文档名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_documentSetName;
                     bool m_documentSetNameHasBeenSet;
 
                     /**
                      * 文件完整内容。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_text;
                     bool m_textHasBeenSet;
 
                     /**
                      * 文件内容前 200个字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_textPrefix;
                     bool m_textPrefixHasBeenSet;
 
                     /**
                      * 文件详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     KnowledgeDocumentSetInfo m_documentSetInfo;
                     bool m_documentSetInfoHasBeenSet;
 
                     /**
                      * 文件拆分信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     KnowledgeSplitterPreprocess m_splitterPreprocess;
                     bool m_splitterPreprocessHasBeenSet;
 
                     /**
                      * 未使用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 文档标题
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileTitle;
                     bool m_fileTitleHasBeenSet;
 
                     /**
                      * 文档元信息，必须为jsonstring
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileMetaData;
                     bool m_fileMetaDataHasBeenSet;
 
                     /**
                      * 作者
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_author;
                     bool m_authorHasBeenSet;

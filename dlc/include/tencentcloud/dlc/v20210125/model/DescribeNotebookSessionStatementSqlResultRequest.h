@@ -126,6 +126,27 @@ namespace TencentCloud
                      */
                     bool BatchIdHasBeenSet() const;
 
+                    /**
+                     * 获取返回结果集中字段值长度截取，如果超过该长度则截取到该长度
+                     * @return DataFieldCutLen 返回结果集中字段值长度截取，如果超过该长度则截取到该长度
+                     * 
+                     */
+                    int64_t GetDataFieldCutLen() const;
+
+                    /**
+                     * 设置返回结果集中字段值长度截取，如果超过该长度则截取到该长度
+                     * @param _dataFieldCutLen 返回结果集中字段值长度截取，如果超过该长度则截取到该长度
+                     * 
+                     */
+                    void SetDataFieldCutLen(const int64_t& _dataFieldCutLen);
+
+                    /**
+                     * 判断参数 DataFieldCutLen 是否已赋值
+                     * @return DataFieldCutLen 是否已赋值
+                     * 
+                     */
+                    bool DataFieldCutLenHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +172,12 @@ namespace TencentCloud
                      */
                     std::string m_batchId;
                     bool m_batchIdHasBeenSet;
+
+                    /**
+                     * 返回结果集中字段值长度截取，如果超过该长度则截取到该长度
+                     */
+                    int64_t m_dataFieldCutLen;
+                    bool m_dataFieldCutLenHasBeenSet;
 
                 };
             }

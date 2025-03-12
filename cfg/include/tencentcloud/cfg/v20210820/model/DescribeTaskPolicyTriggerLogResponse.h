@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取触发日志
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TriggerLogs 触发日志
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<PolicyTriggerLog> GetTriggerLogs() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 触发日志
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<PolicyTriggerLog> m_triggerLogs;
                     bool m_triggerLogsHasBeenSet;

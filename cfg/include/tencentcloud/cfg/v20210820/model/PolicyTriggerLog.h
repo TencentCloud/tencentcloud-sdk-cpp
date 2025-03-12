@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取演练ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskId 演练ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTaskId() const;
 
                     /**
                      * 设置演练ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskId 演练ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskId(const int64_t& _taskId);
@@ -175,7 +171,6 @@ namespace TencentCloud
 
                     /**
                      * 演练ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_taskId;
                     bool m_taskIdHasBeenSet;

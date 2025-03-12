@@ -336,6 +336,27 @@ namespace TencentCloud
                      */
                     bool SortOrderHasBeenSet() const;
 
+                    /**
+                     * 获取user
+                     * @return UserName user
+                     * 
+                     */
+                    std::string GetUserName() const;
+
+                    /**
+                     * 设置user
+                     * @param _userName user
+                     * 
+                     */
+                    void SetUserName(const std::string& _userName);
+
+                    /**
+                     * 判断参数 UserName 是否已赋值
+                     * @return UserName 是否已赋值
+                     * 
+                     */
+                    bool UserNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -421,6 +442,12 @@ namespace TencentCloud
                      */
                     std::string m_sortOrder;
                     bool m_sortOrderHasBeenSet;
+
+                    /**
+                     * user
+                     */
+                    std::string m_userName;
+                    bool m_userNameHasBeenSet;
 
                 };
             }

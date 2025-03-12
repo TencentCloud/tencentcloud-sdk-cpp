@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DbName 数据库名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDbName() const;
 
                     /**
                      * 设置数据库名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dbName 数据库名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDbName(const std::string& _dbName);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库选择模式: all 为当前对象下的所有对象,partial 为部分对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DbMode 数据库选择模式: all 为当前对象下的所有对象,partial 为部分对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDbMode() const;
 
                     /**
                      * 设置数据库选择模式: all 为当前对象下的所有对象,partial 为部分对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dbMode 数据库选择模式: all 为当前对象下的所有对象,partial 为部分对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDbMode(const std::string& _dbMode);
@@ -100,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取schema名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SchemaName schema名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSchemaName() const;
 
                     /**
                      * 设置schema名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _schemaName schema名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSchemaName(const std::string& _schemaName);
@@ -125,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取表选择模式: all 为当前对象下的所有表对象,partial 为部分表对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableMode 表选择模式: all 为当前对象下的所有表对象,partial 为部分表对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTableMode() const;
 
                     /**
                      * 设置表选择模式: all 为当前对象下的所有表对象,partial 为部分表对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tableMode 表选择模式: all 为当前对象下的所有表对象,partial 为部分表对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTableMode(const std::string& _tableMode);
@@ -150,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用于一致性校验的表配置，当 TableMode 为 partial 时，需要填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tables 用于一致性校验的表配置，当 TableMode 为 partial 时，需要填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CompareTableItem> GetTables() const;
 
                     /**
                      * 设置用于一致性校验的表配置，当 TableMode 为 partial 时，需要填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tables 用于一致性校验的表配置，当 TableMode 为 partial 时，需要填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTables(const std::vector<CompareTableItem>& _tables);
@@ -175,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取视图选择模式: all 为当前对象下的所有视图对象,partial 为部分视图对象(一致性校验不校验视图，当前参数未启作用)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ViewMode 视图选择模式: all 为当前对象下的所有视图对象,partial 为部分视图对象(一致性校验不校验视图，当前参数未启作用)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetViewMode() const;
 
                     /**
                      * 设置视图选择模式: all 为当前对象下的所有视图对象,partial 为部分视图对象(一致性校验不校验视图，当前参数未启作用)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _viewMode 视图选择模式: all 为当前对象下的所有视图对象,partial 为部分视图对象(一致性校验不校验视图，当前参数未启作用)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetViewMode(const std::string& _viewMode);
@@ -227,42 +203,36 @@ namespace TencentCloud
 
                     /**
                      * 数据库名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dbName;
                     bool m_dbNameHasBeenSet;
 
                     /**
                      * 数据库选择模式: all 为当前对象下的所有对象,partial 为部分对象
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dbMode;
                     bool m_dbModeHasBeenSet;
 
                     /**
                      * schema名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_schemaName;
                     bool m_schemaNameHasBeenSet;
 
                     /**
                      * 表选择模式: all 为当前对象下的所有表对象,partial 为部分表对象
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tableMode;
                     bool m_tableModeHasBeenSet;
 
                     /**
                      * 用于一致性校验的表配置，当 TableMode 为 partial 时，需要填写
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CompareTableItem> m_tables;
                     bool m_tablesHasBeenSet;
 
                     /**
                      * 视图选择模式: all 为当前对象下的所有视图对象,partial 为部分视图对象(一致性校验不校验视图，当前参数未启作用)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_viewMode;
                     bool m_viewModeHasBeenSet;

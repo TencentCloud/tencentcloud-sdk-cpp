@@ -406,14 +406,18 @@ namespace TencentCloud
 
                     /**
                      * 获取kafka旁路配置信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Kafka kafka旁路配置信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Kafka GetKafka() const;
 
                     /**
                      * 设置kafka旁路配置信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _kafka kafka旁路配置信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKafka(const Kafka& _kafka);
@@ -531,6 +535,7 @@ namespace TencentCloud
 
                     /**
                      * kafka旁路配置信息
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Kafka m_kafka;
                     bool m_kafkaHasBeenSet;

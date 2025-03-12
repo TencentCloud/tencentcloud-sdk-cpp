@@ -154,6 +154,7 @@ set(organization_public_header_model
   include/tencentcloud/organization/v20210331/model/DeleteOrganizationMembersResponse.h
   include/tencentcloud/organization/v20210331/model/ManagerShareUnit.h
   include/tencentcloud/organization/v20210331/model/UpdateSCIMCredentialStatusResponse.h
+  include/tencentcloud/organization/v20210331/model/UpdateOrganizationMembersPolicyRequest.h
   include/tencentcloud/organization/v20210331/model/ShareUnitResource.h
   include/tencentcloud/organization/v20210331/model/DescribeOrganizationMemberAuthIdentitiesRequest.h
   include/tencentcloud/organization/v20210331/model/CreateOrganizationMemberAuthIdentityResponse.h
@@ -340,6 +341,7 @@ set(organization_public_header_model
   include/tencentcloud/organization/v20210331/model/CreateSCIMCredentialRequest.h
   include/tencentcloud/organization/v20210331/model/DescribePolicyRequest.h
   include/tencentcloud/organization/v20210331/model/DeleteGroupResponse.h
+  include/tencentcloud/organization/v20210331/model/UpdateOrganizationMembersPolicyResponse.h
   include/tencentcloud/organization/v20210331/model/UpdateUserStatusRequest.h
   include/tencentcloud/organization/v20210331/model/JoinedGroups.h
   include/tencentcloud/organization/v20210331/model/CreateRoleConfigurationResponse.h
@@ -509,6 +511,7 @@ set(organization_src
   src/v20210331/model/DeleteOrganizationMembersResponse.cpp
   src/v20210331/model/ManagerShareUnit.cpp
   src/v20210331/model/UpdateSCIMCredentialStatusResponse.cpp
+  src/v20210331/model/UpdateOrganizationMembersPolicyRequest.cpp
   src/v20210331/model/ShareUnitResource.cpp
   src/v20210331/model/DescribeOrganizationMemberAuthIdentitiesRequest.cpp
   src/v20210331/model/CreateOrganizationMemberAuthIdentityResponse.cpp
@@ -695,6 +698,7 @@ set(organization_src
   src/v20210331/model/CreateSCIMCredentialRequest.cpp
   src/v20210331/model/DescribePolicyRequest.cpp
   src/v20210331/model/DeleteGroupResponse.cpp
+  src/v20210331/model/UpdateOrganizationMembersPolicyResponse.cpp
   src/v20210331/model/UpdateUserStatusRequest.cpp
   src/v20210331/model/JoinedGroups.cpp
   src/v20210331/model/CreateRoleConfigurationResponse.cpp

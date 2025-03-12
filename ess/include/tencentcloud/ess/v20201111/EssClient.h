@@ -195,6 +195,8 @@
 #include <tencentcloud/ess/v20201111/model/DescribeThirdPartyAuthCodeResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeUserAutoSignStatusRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeUserAutoSignStatusResponse.h>
+#include <tencentcloud/ess/v20201111/model/DescribeUserFlowTypeRequest.h>
+#include <tencentcloud/ess/v20201111/model/DescribeUserFlowTypeResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeUserVerifyStatusRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeUserVerifyStatusResponse.h>
 #include <tencentcloud/ess/v20201111/model/DisableUserAutoSignRequest.h>
@@ -497,6 +499,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeUserAutoSignStatusResponse> DescribeUserAutoSignStatusOutcome;
                 typedef std::future<DescribeUserAutoSignStatusOutcome> DescribeUserAutoSignStatusOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeUserAutoSignStatusRequest&, DescribeUserAutoSignStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserAutoSignStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUserFlowTypeResponse> DescribeUserFlowTypeOutcome;
+                typedef std::future<DescribeUserFlowTypeOutcome> DescribeUserFlowTypeOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::DescribeUserFlowTypeRequest&, DescribeUserFlowTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserFlowTypeAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeUserVerifyStatusResponse> DescribeUserVerifyStatusOutcome;
                 typedef std::future<DescribeUserVerifyStatusOutcome> DescribeUserVerifyStatusOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeUserVerifyStatusRequest&, DescribeUserVerifyStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserVerifyStatusAsyncHandler;
@@ -2108,6 +2113,19 @@ namespace TencentCloud
                 DescribeUserAutoSignStatusOutcome DescribeUserAutoSignStatus(const Model::DescribeUserAutoSignStatusRequest &request);
                 void DescribeUserAutoSignStatusAsync(const Model::DescribeUserAutoSignStatusRequest& request, const DescribeUserAutoSignStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeUserAutoSignStatusOutcomeCallable DescribeUserAutoSignStatusCallable(const Model::DescribeUserAutoSignStatusRequest& request);
+
+                /**
+                 *查询用户模版类型，分为两种模式：
+<ul>
+<li>QueryBindTemplate:false，查询用户合同模版类型，返回用户合同模版类型ID，用户合同模版类型名称，用户合同模版类型描述信息</li>
+<li>QueryBindTemplate:false，查询用户合同模版类型，返回用户合同模版类型ID，用户合同模版类型名称，用户合同模版类型描述信息，被绑定的模版数量</li>
+</ul>
+                 * @param req DescribeUserFlowTypeRequest
+                 * @return DescribeUserFlowTypeOutcome
+                 */
+                DescribeUserFlowTypeOutcome DescribeUserFlowType(const Model::DescribeUserFlowTypeRequest &request);
+                void DescribeUserFlowTypeAsync(const Model::DescribeUserFlowTypeRequest& request, const DescribeUserFlowTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUserFlowTypeOutcomeCallable DescribeUserFlowTypeCallable(const Model::DescribeUserFlowTypeRequest& request);
 
                 /**
                  *检测个人用户是否已经实名。

@@ -63,6 +63,27 @@ namespace TencentCloud
                      */
                     bool LoadBalancerIdsHasBeenSet() const;
 
+                    /**
+                     * 获取是否强制删除clb。为true表示强制删除，为false表示不是强制删除，需要做拦截校验。
+                     * @return ForceDelete 是否强制删除clb。为true表示强制删除，为false表示不是强制删除，需要做拦截校验。
+                     * 
+                     */
+                    bool GetForceDelete() const;
+
+                    /**
+                     * 设置是否强制删除clb。为true表示强制删除，为false表示不是强制删除，需要做拦截校验。
+                     * @param _forceDelete 是否强制删除clb。为true表示强制删除，为false表示不是强制删除，需要做拦截校验。
+                     * 
+                     */
+                    void SetForceDelete(const bool& _forceDelete);
+
+                    /**
+                     * 判断参数 ForceDelete 是否已赋值
+                     * @return ForceDelete 是否已赋值
+                     * 
+                     */
+                    bool ForceDeleteHasBeenSet() const;
+
                 private:
 
                     /**
@@ -70,6 +91,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_loadBalancerIds;
                     bool m_loadBalancerIdsHasBeenSet;
+
+                    /**
+                     * 是否强制删除clb。为true表示强制删除，为false表示不是强制删除，需要做拦截校验。
+                     */
+                    bool m_forceDelete;
+                    bool m_forceDeleteHasBeenSet;
 
                 };
             }

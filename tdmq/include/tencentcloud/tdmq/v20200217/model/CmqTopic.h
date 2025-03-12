@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主题的 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicId 主题的 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
                      * 设置主题的 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topicId 主题的 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主题名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicName 主题名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTopicName() const;
 
                     /**
                      * 设置主题名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topicName 主题名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopicName(const std::string& _topicName);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取消息在主题中最长存活时间，从发送到该主题开始经过此参数指定的时间后，不论消息是否被成功推送给用户都将被删除，单位为秒。固定为一天（86400秒），该属性不能修改。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MsgRetentionSeconds 消息在主题中最长存活时间，从发送到该主题开始经过此参数指定的时间后，不论消息是否被成功推送给用户都将被删除，单位为秒。固定为一天（86400秒），该属性不能修改。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMsgRetentionSeconds() const;
 
                     /**
                      * 设置消息在主题中最长存活时间，从发送到该主题开始经过此参数指定的时间后，不论消息是否被成功推送给用户都将被删除，单位为秒。固定为一天（86400秒），该属性不能修改。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _msgRetentionSeconds 消息在主题中最长存活时间，从发送到该主题开始经过此参数指定的时间后，不论消息是否被成功推送给用户都将被删除，单位为秒。固定为一天（86400秒），该属性不能修改。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMsgRetentionSeconds(const uint64_t& _msgRetentionSeconds);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取消息最大长度。取值范围1024 - 1048576Byte（即1 - 1024K），默认值为1048576。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxMsgSize 消息最大长度。取值范围1024 - 1048576Byte（即1 - 1024K），默认值为1048576。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMaxMsgSize() const;
 
                     /**
                      * 设置消息最大长度。取值范围1024 - 1048576Byte（即1 - 1024K），默认值为1048576。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxMsgSize 消息最大长度。取值范围1024 - 1048576Byte（即1 - 1024K），默认值为1048576。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxMsgSize(const uint64_t& _maxMsgSize);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取每秒钟发布消息的条数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Qps 每秒钟发布消息的条数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetQps() const;
 
                     /**
                      * 设置每秒钟发布消息的条数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _qps 每秒钟发布消息的条数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQps(const uint64_t& _qps);
@@ -176,11 +156,9 @@ namespace TencentCloud
                      * 获取描述用户创建订阅时选择的过滤策略：
 FilterType = 1表示用户使用 FilterTag 标签过滤;
 FilterType = 2表示用户使用 BindingKey 过滤。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FilterType 描述用户创建订阅时选择的过滤策略：
 FilterType = 1表示用户使用 FilterTag 标签过滤;
 FilterType = 2表示用户使用 BindingKey 过滤。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetFilterType() const;
@@ -189,11 +167,9 @@ FilterType = 2表示用户使用 BindingKey 过滤。
                      * 设置描述用户创建订阅时选择的过滤策略：
 FilterType = 1表示用户使用 FilterTag 标签过滤;
 FilterType = 2表示用户使用 BindingKey 过滤。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _filterType 描述用户创建订阅时选择的过滤策略：
 FilterType = 1表示用户使用 FilterTag 标签过滤;
 FilterType = 2表示用户使用 BindingKey 过滤。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFilterType(const uint64_t& _filterType);
@@ -207,18 +183,14 @@ FilterType = 2表示用户使用 BindingKey 过滤。
 
                     /**
                      * 获取主题的创建时间。返回 Unix 时间戳，精确到毫秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 主题的创建时间。返回 Unix 时间戳，精确到毫秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
                      * 设置主题的创建时间。返回 Unix 时间戳，精确到毫秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 主题的创建时间。返回 Unix 时间戳，精确到毫秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const uint64_t& _createTime);
@@ -232,18 +204,14 @@ FilterType = 2表示用户使用 BindingKey 过滤。
 
                     /**
                      * 获取最后一次修改主题属性的时间。返回 Unix 时间戳，精确到毫秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastModifyTime 最后一次修改主题属性的时间。返回 Unix 时间戳，精确到毫秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetLastModifyTime() const;
 
                     /**
                      * 设置最后一次修改主题属性的时间。返回 Unix 时间戳，精确到毫秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lastModifyTime 最后一次修改主题属性的时间。返回 Unix 时间戳，精确到毫秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLastModifyTime(const uint64_t& _lastModifyTime);
@@ -257,18 +225,14 @@ FilterType = 2表示用户使用 BindingKey 过滤。
 
                     /**
                      * 获取当前该主题中消息数目（消息堆积数）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MsgCount 当前该主题中消息数目（消息堆积数）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMsgCount() const;
 
                     /**
                      * 设置当前该主题中消息数目（消息堆积数）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _msgCount 当前该主题中消息数目（消息堆积数）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMsgCount(const uint64_t& _msgCount);
@@ -357,18 +321,14 @@ FilterType = 2表示用户使用 BindingKey 过滤。
 
                     /**
                      * 获取租户id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TenantId 租户id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTenantId() const;
 
                     /**
                      * 设置租户id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tenantId 租户id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTenantId(const std::string& _tenantId);
@@ -382,18 +342,14 @@ FilterType = 2表示用户使用 BindingKey 过滤。
 
                     /**
                      * 获取命名空间名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NamespaceName 命名空间名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNamespaceName() const;
 
                     /**
                      * 设置命名空间名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _namespaceName 命名空间名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNamespaceName(const std::string& _namespaceName);
@@ -407,18 +363,14 @@ FilterType = 2表示用户使用 BindingKey 过滤。
 
                     /**
                      * 获取集群状态，0:创建中，1:正常，2:销毁中，3:已删除，4: 隔离中，5:创建失败，6: 删除失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 集群状态，0:创建中，1:正常，2:销毁中，3:已删除，4: 隔离中，5:创建失败，6: 删除失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置集群状态，0:创建中，1:正常，2:销毁中，3:已删除，4: 隔离中，5:创建失败，6: 删除失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 集群状态，0:创建中，1:正常，2:销毁中，3:已删除，4: 隔离中，5:创建失败，6: 删除失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -432,18 +384,14 @@ FilterType = 2表示用户使用 BindingKey 过滤。
 
                     /**
                      * 获取0表示pulsar，1表示rocketmq
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BrokerType 0表示pulsar，1表示rocketmq
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBrokerType() const;
 
                     /**
                      * 设置0表示pulsar，1表示rocketmq
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _brokerType 0表示pulsar，1表示rocketmq
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBrokerType(const int64_t& _brokerType);
@@ -457,18 +405,14 @@ FilterType = 2表示用户使用 BindingKey 过滤。
 
                     /**
                      * 获取订阅数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubscriptionCount 订阅数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSubscriptionCount() const;
 
                     /**
                      * 设置订阅数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subscriptionCount 订阅数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubscriptionCount(const int64_t& _subscriptionCount);
@@ -484,35 +428,30 @@ FilterType = 2表示用户使用 BindingKey 过滤。
 
                     /**
                      * 主题的 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
 
                     /**
                      * 主题名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;
 
                     /**
                      * 消息在主题中最长存活时间，从发送到该主题开始经过此参数指定的时间后，不论消息是否被成功推送给用户都将被删除，单位为秒。固定为一天（86400秒），该属性不能修改。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_msgRetentionSeconds;
                     bool m_msgRetentionSecondsHasBeenSet;
 
                     /**
                      * 消息最大长度。取值范围1024 - 1048576Byte（即1 - 1024K），默认值为1048576。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_maxMsgSize;
                     bool m_maxMsgSizeHasBeenSet;
 
                     /**
                      * 每秒钟发布消息的条数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_qps;
                     bool m_qpsHasBeenSet;
@@ -521,28 +460,24 @@ FilterType = 2表示用户使用 BindingKey 过滤。
                      * 描述用户创建订阅时选择的过滤策略：
 FilterType = 1表示用户使用 FilterTag 标签过滤;
 FilterType = 2表示用户使用 BindingKey 过滤。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_filterType;
                     bool m_filterTypeHasBeenSet;
 
                     /**
                      * 主题的创建时间。返回 Unix 时间戳，精确到毫秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 最后一次修改主题属性的时间。返回 Unix 时间戳，精确到毫秒。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_lastModifyTime;
                     bool m_lastModifyTimeHasBeenSet;
 
                     /**
                      * 当前该主题中消息数目（消息堆积数）。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_msgCount;
                     bool m_msgCountHasBeenSet;
@@ -570,35 +505,30 @@ FilterType = 2表示用户使用 BindingKey 过滤。
 
                     /**
                      * 租户id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tenantId;
                     bool m_tenantIdHasBeenSet;
 
                     /**
                      * 命名空间名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_namespaceName;
                     bool m_namespaceNameHasBeenSet;
 
                     /**
                      * 集群状态，0:创建中，1:正常，2:销毁中，3:已删除，4: 隔离中，5:创建失败，6: 删除失败
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 0表示pulsar，1表示rocketmq
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_brokerType;
                     bool m_brokerTypeHasBeenSet;
 
                     /**
                      * 订阅数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_subscriptionCount;
                     bool m_subscriptionCountHasBeenSet;

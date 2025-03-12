@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取交易订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DealName 交易订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDealName() const;
 
                     /**
                      * 设置交易订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dealName 交易订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDealName(const std::string& _dealName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取上一次交易订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastDealName 上一次交易订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLastDealName() const;
 
                     /**
                      * 设置上一次交易订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lastDealName 上一次交易订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLastDealName(const std::string& _lastDealName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例规格，包括：micro、small、medium、large、xlarge、2xlarge等
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceClass 实例规格，包括：micro、small、medium、large、xlarge、2xlarge等
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceClass() const;
 
                     /**
                      * 设置实例规格，包括：micro、small、medium、large、xlarge、2xlarge等
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceClass 实例规格，包括：micro、small、medium、large、xlarge、2xlarge等
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceClass(const std::string& _instanceClass);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取计费任务状态， normal(计费或待计费)、resizing(变配中)、reversing(冲正中，比较短暂的状态)、isolating(隔离中，比较短暂的状态)、isolated(已隔离)、offlining(下线中)、offlined(已下线)、notBilled(未计费)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TradeStatus 计费任务状态， normal(计费或待计费)、resizing(变配中)、reversing(冲正中，比较短暂的状态)、isolating(隔离中，比较短暂的状态)、isolated(已隔离)、offlining(下线中)、offlined(已下线)、notBilled(未计费)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTradeStatus() const;
 
                     /**
                      * 设置计费任务状态， normal(计费或待计费)、resizing(变配中)、reversing(冲正中，比较短暂的状态)、isolating(隔离中，比较短暂的状态)、isolated(已隔离)、offlining(下线中)、offlined(已下线)、notBilled(未计费)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tradeStatus 计费任务状态， normal(计费或待计费)、resizing(变配中)、reversing(冲正中，比较短暂的状态)、isolating(隔离中，比较短暂的状态)、isolated(已隔离)、offlining(下线中)、offlined(已下线)、notBilled(未计费)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTradeStatus(const std::string& _tradeStatus);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取到期时间，格式为"yyyy-mm-dd hh:mm:ss"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpireTime 到期时间，格式为"yyyy-mm-dd hh:mm:ss"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
                      * 设置到期时间，格式为"yyyy-mm-dd hh:mm:ss"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _expireTime 到期时间，格式为"yyyy-mm-dd hh:mm:ss"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取下线时间，格式为"yyyy-mm-dd hh:mm:ss"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OfflineTime 下线时间，格式为"yyyy-mm-dd hh:mm:ss"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOfflineTime() const;
 
                     /**
                      * 设置下线时间，格式为"yyyy-mm-dd hh:mm:ss"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _offlineTime 下线时间，格式为"yyyy-mm-dd hh:mm:ss"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOfflineTime(const std::string& _offlineTime);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取隔离时间，格式为"yyyy-mm-dd hh:mm:ss"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsolateTime 隔离时间，格式为"yyyy-mm-dd hh:mm:ss"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIsolateTime() const;
 
                     /**
                      * 设置隔离时间，格式为"yyyy-mm-dd hh:mm:ss"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isolateTime 隔离时间，格式为"yyyy-mm-dd hh:mm:ss"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsolateTime(const std::string& _isolateTime);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取下线原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OfflineReason 下线原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOfflineReason() const;
 
                     /**
                      * 设置下线原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _offlineReason 下线原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOfflineReason(const std::string& _offlineReason);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取隔离原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsolateReason 隔离原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIsolateReason() const;
 
                     /**
                      * 设置隔离原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isolateReason 隔离原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsolateReason(const std::string& _isolateReason);
@@ -273,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取付费类型，包括：postpay(后付费)、prepay(预付费)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayType 付费类型，包括：postpay(后付费)、prepay(预付费)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPayType() const;
 
                     /**
                      * 设置付费类型，包括：postpay(后付费)、prepay(预付费)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _payType 付费类型，包括：postpay(后付费)、prepay(预付费)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPayType(const std::string& _payType);
@@ -298,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务计费类型，包括：billing(计费)、notBilling(不计费)、 promotions(促销活动中)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BillingType 任务计费类型，包括：billing(计费)、notBilling(不计费)、 promotions(促销活动中)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBillingType() const;
 
                     /**
                      * 设置任务计费类型，包括：billing(计费)、notBilling(不计费)、 promotions(促销活动中)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _billingType 任务计费类型，包括：billing(计费)、notBilling(不计费)、 promotions(促销活动中)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBillingType(const std::string& _billingType);
@@ -325,77 +281,66 @@ namespace TencentCloud
 
                     /**
                      * 交易订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dealName;
                     bool m_dealNameHasBeenSet;
 
                     /**
                      * 上一次交易订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastDealName;
                     bool m_lastDealNameHasBeenSet;
 
                     /**
                      * 实例规格，包括：micro、small、medium、large、xlarge、2xlarge等
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceClass;
                     bool m_instanceClassHasBeenSet;
 
                     /**
                      * 计费任务状态， normal(计费或待计费)、resizing(变配中)、reversing(冲正中，比较短暂的状态)、isolating(隔离中，比较短暂的状态)、isolated(已隔离)、offlining(下线中)、offlined(已下线)、notBilled(未计费)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tradeStatus;
                     bool m_tradeStatusHasBeenSet;
 
                     /**
                      * 到期时间，格式为"yyyy-mm-dd hh:mm:ss"
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
                      * 下线时间，格式为"yyyy-mm-dd hh:mm:ss"
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_offlineTime;
                     bool m_offlineTimeHasBeenSet;
 
                     /**
                      * 隔离时间，格式为"yyyy-mm-dd hh:mm:ss"
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_isolateTime;
                     bool m_isolateTimeHasBeenSet;
 
                     /**
                      * 下线原因
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_offlineReason;
                     bool m_offlineReasonHasBeenSet;
 
                     /**
                      * 隔离原因
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_isolateReason;
                     bool m_isolateReasonHasBeenSet;
 
                     /**
                      * 付费类型，包括：postpay(后付费)、prepay(预付费)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_payType;
                     bool m_payTypeHasBeenSet;
 
                     /**
                      * 任务计费类型，包括：billing(计费)、notBilling(不计费)、 promotions(促销活动中)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_billingType;
                     bool m_billingTypeHasBeenSet;

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取删除文档数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AffectedCount 删除文档数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAffectedCount() const;
 
                     /**
                      * 设置删除文档数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _affectedCount 删除文档数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAffectedCount(const int64_t& _affectedCount);
@@ -75,7 +71,6 @@ namespace TencentCloud
 
                     /**
                      * 删除文档数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_affectedCount;
                     bool m_affectedCountHasBeenSet;

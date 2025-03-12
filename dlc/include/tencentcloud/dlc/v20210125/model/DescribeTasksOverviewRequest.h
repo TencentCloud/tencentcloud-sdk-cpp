@@ -127,6 +127,27 @@ namespace TencentCloud
                      */
                     bool DataEngineNameHasBeenSet() const;
 
+                    /**
+                     * 获取DataEngine-dm8bjs29
+                     * @return HouseIds DataEngine-dm8bjs29
+                     * 
+                     */
+                    std::vector<std::string> GetHouseIds() const;
+
+                    /**
+                     * 设置DataEngine-dm8bjs29
+                     * @param _houseIds DataEngine-dm8bjs29
+                     * 
+                     */
+                    void SetHouseIds(const std::vector<std::string>& _houseIds);
+
+                    /**
+                     * 判断参数 HouseIds 是否已赋值
+                     * @return HouseIds 是否已赋值
+                     * 
+                     */
+                    bool HouseIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -152,6 +173,12 @@ namespace TencentCloud
                      */
                     std::string m_dataEngineName;
                     bool m_dataEngineNameHasBeenSet;
+
+                    /**
+                     * DataEngine-dm8bjs29
+                     */
+                    std::vector<std::string> m_houseIds;
+                    bool m_houseIdsHasBeenSet;
 
                 };
             }

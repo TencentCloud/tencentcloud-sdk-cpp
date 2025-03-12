@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取死信队列。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeadLetterQueue 死信队列。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeadLetterQueue() const;
 
                     /**
                      * 设置死信队列。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deadLetterQueue 死信队列。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeadLetterQueue(const std::string& _deadLetterQueue);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取死信队列策略。0:最大接收次数;1:最大未消费时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Policy 死信队列策略。0:最大接收次数;1:最大未消费时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPolicy() const;
 
                     /**
                      * 设置死信队列策略。0:最大接收次数;1:最大未消费时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _policy 死信队列策略。0:最大接收次数;1:最大未消费时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPolicy(const uint64_t& _policy);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最大未消费过期时间。Policy为1时必选。范围300-43200，单位秒，需要小于消息最大保留时间MsgRetentionSeconds。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxTimeToLive 最大未消费过期时间。Policy为1时必选。范围300-43200，单位秒，需要小于消息最大保留时间MsgRetentionSeconds。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMaxTimeToLive() const;
 
                     /**
                      * 设置最大未消费过期时间。Policy为1时必选。范围300-43200，单位秒，需要小于消息最大保留时间MsgRetentionSeconds。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxTimeToLive 最大未消费过期时间。Policy为1时必选。范围300-43200，单位秒，需要小于消息最大保留时间MsgRetentionSeconds。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxTimeToLive(const uint64_t& _maxTimeToLive);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最大接收次数。Policy为0时必选，范围在1到1000。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxReceiveCount 最大接收次数。Policy为0时必选，范围在1到1000。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMaxReceiveCount() const;
 
                     /**
                      * 设置最大接收次数。Policy为0时必选，范围在1到1000。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxReceiveCount 最大接收次数。Policy为0时必选，范围在1到1000。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxReceiveCount(const uint64_t& _maxReceiveCount);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 死信队列。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deadLetterQueue;
                     bool m_deadLetterQueueHasBeenSet;
 
                     /**
                      * 死信队列策略。0:最大接收次数;1:最大未消费时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_policy;
                     bool m_policyHasBeenSet;
 
                     /**
                      * 最大未消费过期时间。Policy为1时必选。范围300-43200，单位秒，需要小于消息最大保留时间MsgRetentionSeconds。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_maxTimeToLive;
                     bool m_maxTimeToLiveHasBeenSet;
 
                     /**
                      * 最大接收次数。Policy为0时必选，范围在1到1000。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_maxReceiveCount;
                     bool m_maxReceiveCountHasBeenSet;

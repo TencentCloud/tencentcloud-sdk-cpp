@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取表名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableName 表名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTableName() const;
 
                     /**
                      * 设置表名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tableName 表名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTableName(const std::string& _tableName);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取column 模式，all 为全部，partial 表示部分(该参数仅对数据同步任务有效)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ColumnMode column 模式，all 为全部，partial 表示部分(该参数仅对数据同步任务有效)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetColumnMode() const;
 
                     /**
                      * 设置column 模式，all 为全部，partial 表示部分(该参数仅对数据同步任务有效)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _columnMode column 模式，all 为全部，partial 表示部分(该参数仅对数据同步任务有效)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetColumnMode(const std::string& _columnMode);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当 ColumnMode 为 partial 时必填(该参数仅对数据同步任务有效)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Columns 当 ColumnMode 为 partial 时必填(该参数仅对数据同步任务有效)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CompareColumnItem> GetColumns() const;
 
                     /**
                      * 设置当 ColumnMode 为 partial 时必填(该参数仅对数据同步任务有效)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _columns 当 ColumnMode 为 partial 时必填(该参数仅对数据同步任务有效)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetColumns(const std::vector<CompareColumnItem>& _columns);
@@ -126,21 +114,18 @@ namespace TencentCloud
 
                     /**
                      * 表名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tableName;
                     bool m_tableNameHasBeenSet;
 
                     /**
                      * column 模式，all 为全部，partial 表示部分(该参数仅对数据同步任务有效)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_columnMode;
                     bool m_columnModeHasBeenSet;
 
                     /**
                      * 当 ColumnMode 为 partial 时必填(该参数仅对数据同步任务有效)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CompareColumnItem> m_columns;
                     bool m_columnsHasBeenSet;

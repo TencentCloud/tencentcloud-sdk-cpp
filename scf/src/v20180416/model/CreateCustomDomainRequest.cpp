@@ -27,7 +27,8 @@ CreateCustomDomainRequest::CreateCustomDomainRequest() :
     m_protocolHasBeenSet(false),
     m_endpointsConfigHasBeenSet(false),
     m_certConfigHasBeenSet(false),
-    m_wafConfigHasBeenSet(false)
+    m_wafConfigHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,21 @@ string CreateCustomDomainRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_wafConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -173,6 +189,22 @@ void CreateCustomDomainRequest::SetWafConfig(const WafConf& _wafConfig)
 bool CreateCustomDomainRequest::WafConfigHasBeenSet() const
 {
     return m_wafConfigHasBeenSet;
+}
+
+vector<Tag> CreateCustomDomainRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateCustomDomainRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateCustomDomainRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

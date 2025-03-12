@@ -291,6 +291,8 @@
 #include <tencentcloud/waf/v20180125/model/ModifySpartaProtectionModeResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyUserLevelRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyUserLevelResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyUserSignatureClassRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyUserSignatureClassResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyUserSignatureRuleRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyUserSignatureRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyUserSignatureRuleV2Request.h>
@@ -313,6 +315,8 @@
 #include <tencentcloud/waf/v20180125/model/SwitchDomainRulesResponse.h>
 #include <tencentcloud/waf/v20180125/model/SwitchElasticModeRequest.h>
 #include <tencentcloud/waf/v20180125/model/SwitchElasticModeResponse.h>
+#include <tencentcloud/waf/v20180125/model/UpdateProtectionModesRequest.h>
+#include <tencentcloud/waf/v20180125/model/UpdateProtectionModesResponse.h>
 #include <tencentcloud/waf/v20180125/model/UpsertCCAutoStatusRequest.h>
 #include <tencentcloud/waf/v20180125/model/UpsertCCAutoStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/UpsertCCRuleRequest.h>
@@ -737,6 +741,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyUserLevelResponse> ModifyUserLevelOutcome;
                 typedef std::future<ModifyUserLevelOutcome> ModifyUserLevelOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyUserLevelRequest&, ModifyUserLevelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserLevelAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyUserSignatureClassResponse> ModifyUserSignatureClassOutcome;
+                typedef std::future<ModifyUserSignatureClassOutcome> ModifyUserSignatureClassOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyUserSignatureClassRequest&, ModifyUserSignatureClassOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserSignatureClassAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyUserSignatureRuleResponse> ModifyUserSignatureRuleOutcome;
                 typedef std::future<ModifyUserSignatureRuleOutcome> ModifyUserSignatureRuleOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyUserSignatureRuleRequest&, ModifyUserSignatureRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserSignatureRuleAsyncHandler;
@@ -770,6 +777,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SwitchElasticModeResponse> SwitchElasticModeOutcome;
                 typedef std::future<SwitchElasticModeOutcome> SwitchElasticModeOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::SwitchElasticModeRequest&, SwitchElasticModeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SwitchElasticModeAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateProtectionModesResponse> UpdateProtectionModesOutcome;
+                typedef std::future<UpdateProtectionModesOutcome> UpdateProtectionModesOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::UpdateProtectionModesRequest&, UpdateProtectionModesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateProtectionModesAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpsertCCAutoStatusResponse> UpsertCCAutoStatusOutcome;
                 typedef std::future<UpsertCCAutoStatusOutcome> UpsertCCAutoStatusOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::UpsertCCAutoStatusRequest&, UpsertCCAutoStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpsertCCAutoStatusAsyncHandler;
@@ -1995,6 +2005,15 @@ namespace TencentCloud
                 ModifyUserLevelOutcomeCallable ModifyUserLevelCallable(const Model::ModifyUserLevelRequest& request);
 
                 /**
+                 *切换Tiga引擎规则类型的生效开关
+                 * @param req ModifyUserSignatureClassRequest
+                 * @return ModifyUserSignatureClassOutcome
+                 */
+                ModifyUserSignatureClassOutcome ModifyUserSignatureClass(const Model::ModifyUserSignatureClassRequest &request);
+                void ModifyUserSignatureClassAsync(const Model::ModifyUserSignatureClassRequest& request, const ModifyUserSignatureClassAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyUserSignatureClassOutcomeCallable ModifyUserSignatureClassCallable(const Model::ModifyUserSignatureClassRequest& request);
+
+                /**
                  *修改用户防护规则，开启关闭具体的某条规则
                  * @param req ModifyUserSignatureRuleRequest
                  * @return ModifyUserSignatureRuleOutcome
@@ -2092,6 +2111,15 @@ namespace TencentCloud
                 SwitchElasticModeOutcome SwitchElasticMode(const Model::SwitchElasticModeRequest &request);
                 void SwitchElasticModeAsync(const Model::SwitchElasticModeRequest& request, const SwitchElasticModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SwitchElasticModeOutcomeCallable SwitchElasticModeCallable(const Model::SwitchElasticModeRequest& request);
+
+                /**
+                 *更新Tiga引擎下大类规则的防护模式
+                 * @param req UpdateProtectionModesRequest
+                 * @return UpdateProtectionModesOutcome
+                 */
+                UpdateProtectionModesOutcome UpdateProtectionModes(const Model::UpdateProtectionModesRequest &request);
+                void UpdateProtectionModesAsync(const Model::UpdateProtectionModesRequest& request, const UpdateProtectionModesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateProtectionModesOutcomeCallable UpdateProtectionModesCallable(const Model::UpdateProtectionModesRequest& request);
 
                 /**
                  *编辑SAAS型接入的紧急CC防护状态

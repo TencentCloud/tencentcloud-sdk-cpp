@@ -23,7 +23,8 @@ using namespace TencentCloud::Clb::V20180317::Model;
 using namespace std;
 
 DeleteLoadBalancerRequest::DeleteLoadBalancerRequest() :
-    m_loadBalancerIdsHasBeenSet(false)
+    m_loadBalancerIdsHasBeenSet(false),
+    m_forceDeleteHasBeenSet(false)
 {
 }
 
@@ -45,6 +46,14 @@ string DeleteLoadBalancerRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_forceDeleteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ForceDelete";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_forceDelete, allocator);
     }
 
 
@@ -69,6 +78,22 @@ void DeleteLoadBalancerRequest::SetLoadBalancerIds(const vector<string>& _loadBa
 bool DeleteLoadBalancerRequest::LoadBalancerIdsHasBeenSet() const
 {
     return m_loadBalancerIdsHasBeenSet;
+}
+
+bool DeleteLoadBalancerRequest::GetForceDelete() const
+{
+    return m_forceDelete;
+}
+
+void DeleteLoadBalancerRequest::SetForceDelete(const bool& _forceDelete)
+{
+    m_forceDelete = _forceDelete;
+    m_forceDeleteHasBeenSet = true;
+}
+
+bool DeleteLoadBalancerRequest::ForceDeleteHasBeenSet() const
+{
+    return m_forceDeleteHasBeenSet;
 }
 
 

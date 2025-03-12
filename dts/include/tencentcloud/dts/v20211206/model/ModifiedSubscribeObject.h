@@ -49,10 +49,8 @@ namespace TencentCloud
                     /**
                      * 获取订阅对象的类型，枚举值为：0-库，1-表(该值对于mongo任务来说，是集合) 。
 注意：mongo只支持全实例、单库或者单集合订阅，因此该字段不要与SubscribeObjectType冲突。如：SubscribeObjectType=4，表示mongo单库订阅，那么该字段应该传0。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ObjectsType 订阅对象的类型，枚举值为：0-库，1-表(该值对于mongo任务来说，是集合) 。
 注意：mongo只支持全实例、单库或者单集合订阅，因此该字段不要与SubscribeObjectType冲突。如：SubscribeObjectType=4，表示mongo单库订阅，那么该字段应该传0。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetObjectsType() const;
@@ -60,10 +58,8 @@ namespace TencentCloud
                     /**
                      * 设置订阅对象的类型，枚举值为：0-库，1-表(该值对于mongo任务来说，是集合) 。
 注意：mongo只支持全实例、单库或者单集合订阅，因此该字段不要与SubscribeObjectType冲突。如：SubscribeObjectType=4，表示mongo单库订阅，那么该字段应该传0。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _objectsType 订阅对象的类型，枚举值为：0-库，1-表(该值对于mongo任务来说，是集合) 。
 注意：mongo只支持全实例、单库或者单集合订阅，因此该字段不要与SubscribeObjectType冲突。如：SubscribeObjectType=4，表示mongo单库订阅，那么该字段应该传0。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetObjectsType(const int64_t& _objectsType);
@@ -77,18 +73,14 @@ namespace TencentCloud
 
                     /**
                      * 获取订阅数据库的名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatabaseName 订阅数据库的名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDatabaseName() const;
 
                     /**
                      * 设置订阅数据库的名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _databaseName 订阅数据库的名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDatabaseName(const std::string& _databaseName);
@@ -102,18 +94,14 @@ namespace TencentCloud
 
                     /**
                      * 获取订阅数据库中表(或集合)的名称。如果 ObjectsType 为 1，那么此字段为必填，且不为空；
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableNames 订阅数据库中表(或集合)的名称。如果 ObjectsType 为 1，那么此字段为必填，且不为空；
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetTableNames() const;
 
                     /**
                      * 设置订阅数据库中表(或集合)的名称。如果 ObjectsType 为 1，那么此字段为必填，且不为空；
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tableNames 订阅数据库中表(或集合)的名称。如果 ObjectsType 为 1，那么此字段为必填，且不为空；
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTableNames(const std::vector<std::string>& _tableNames);
@@ -130,21 +118,18 @@ namespace TencentCloud
                     /**
                      * 订阅对象的类型，枚举值为：0-库，1-表(该值对于mongo任务来说，是集合) 。
 注意：mongo只支持全实例、单库或者单集合订阅，因此该字段不要与SubscribeObjectType冲突。如：SubscribeObjectType=4，表示mongo单库订阅，那么该字段应该传0。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_objectsType;
                     bool m_objectsTypeHasBeenSet;
 
                     /**
                      * 订阅数据库的名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_databaseName;
                     bool m_databaseNameHasBeenSet;
 
                     /**
                      * 订阅数据库中表(或集合)的名称。如果 ObjectsType 为 1，那么此字段为必填，且不为空；
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_tableNames;
                     bool m_tableNamesHasBeenSet;

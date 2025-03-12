@@ -327,6 +327,27 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取与此触发器关联的资源。目前仅函数URL关联的自定义域名会返回
+                     * @return BoundResources 与此触发器关联的资源。目前仅函数URL关联的自定义域名会返回
+                     * 
+                     */
+                    std::string GetBoundResources() const;
+
+                    /**
+                     * 设置与此触发器关联的资源。目前仅函数URL关联的自定义域名会返回
+                     * @param _boundResources 与此触发器关联的资源。目前仅函数URL关联的自定义域名会返回
+                     * 
+                     */
+                    void SetBoundResources(const std::string& _boundResources);
+
+                    /**
+                     * 判断参数 BoundResources 是否已赋值
+                     * @return BoundResources 是否已赋值
+                     * 
+                     */
+                    bool BoundResourcesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -408,6 +429,12 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 与此触发器关联的资源。目前仅函数URL关联的自定义域名会返回
+                     */
+                    std::string m_boundResources;
+                    bool m_boundResourcesHasBeenSet;
 
                 };
             }

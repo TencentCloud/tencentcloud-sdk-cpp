@@ -70,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据源名称，当前任务执行时候选中的默认数据源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatasourceConnectionName 数据源名称，当前任务执行时候选中的默认数据源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDatasourceConnectionName() const;
 
                     /**
                      * 设置数据源名称，当前任务执行时候选中的默认数据源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _datasourceConnectionName 数据源名称，当前任务执行时候选中的默认数据源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDatasourceConnectionName(const std::string& _datasourceConnectionName);
@@ -95,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库名称，当前任务执行时候选中的默认数据库
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatabaseName 数据库名称，当前任务执行时候选中的默认数据库
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDatabaseName() const;
 
                     /**
                      * 设置数据库名称，当前任务执行时候选中的默认数据库
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _databaseName 数据库名称，当前任务执行时候选中的默认数据库
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDatabaseName(const std::string& _databaseName);
@@ -334,18 +326,14 @@ namespace TencentCloud
 
                     /**
                      * 获取结果信息，反转义后，外层数组的每个元素为一行数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResultSet 结果信息，反转义后，外层数组的每个元素为一行数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResultSet() const;
 
                     /**
                      * 设置结果信息，反转义后，外层数组的每个元素为一行数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resultSet 结果信息，反转义后，外层数组的每个元素为一行数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResultSet(const std::string& _resultSet);
@@ -464,18 +452,14 @@ namespace TencentCloud
 
                     /**
                      * 获取获取结果消耗的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return QueryResultTime 获取结果消耗的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetQueryResultTime() const;
 
                     /**
                      * 设置获取结果消耗的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _queryResultTime 获取结果消耗的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQueryResultTime(const double& _queryResultTime);
@@ -497,14 +481,12 @@ namespace TencentCloud
 
                     /**
                      * 数据源名称，当前任务执行时候选中的默认数据源
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_datasourceConnectionName;
                     bool m_datasourceConnectionNameHasBeenSet;
 
                     /**
                      * 数据库名称，当前任务执行时候选中的默认数据库
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_databaseName;
                     bool m_databaseNameHasBeenSet;
@@ -572,7 +554,6 @@ namespace TencentCloud
 
                     /**
                      * 结果信息，反转义后，外层数组的每个元素为一行数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resultSet;
                     bool m_resultSetHasBeenSet;
@@ -609,7 +590,6 @@ namespace TencentCloud
 
                     /**
                      * 获取结果消耗的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_queryResultTime;
                     bool m_queryResultTimeHasBeenSet;

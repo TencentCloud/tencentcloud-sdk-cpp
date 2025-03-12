@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取主题列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicList 主题列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CmqTopic> GetTopicList() const;
@@ -78,7 +76,6 @@ namespace TencentCloud
 
                     /**
                      * 主题列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CmqTopic> m_topicList;
                     bool m_topicListHasBeenSet;

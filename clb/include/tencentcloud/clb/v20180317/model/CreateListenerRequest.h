@@ -152,38 +152,22 @@ namespace TencentCloud
 
                     /**
                      * 获取证书相关信息。参数限制如下：
-<li>
-此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。
-</li>
-<li>
-创建TCP_SSL监听器和未开启SNI特性的HTTPS监听器时，此参数和参数MultiCertInfo至少需要传一个， 但不能同时传入。
-</li>
+<li>此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。</li>
+<li>创建TCP_SSL监听器和未开启SNI特性的HTTPS监听器时，此参数和参数MultiCertInfo至少需要传一个， 但不能同时传入。</li>
                      * @return Certificate 证书相关信息。参数限制如下：
-<li>
-此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。
-</li>
-<li>
-创建TCP_SSL监听器和未开启SNI特性的HTTPS监听器时，此参数和参数MultiCertInfo至少需要传一个， 但不能同时传入。
-</li>
+<li>此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。</li>
+<li>创建TCP_SSL监听器和未开启SNI特性的HTTPS监听器时，此参数和参数MultiCertInfo至少需要传一个， 但不能同时传入。</li>
                      * 
                      */
                     CertificateInput GetCertificate() const;
 
                     /**
                      * 设置证书相关信息。参数限制如下：
-<li>
-此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。
-</li>
-<li>
-创建TCP_SSL监听器和未开启SNI特性的HTTPS监听器时，此参数和参数MultiCertInfo至少需要传一个， 但不能同时传入。
-</li>
+<li>此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。</li>
+<li>创建TCP_SSL监听器和未开启SNI特性的HTTPS监听器时，此参数和参数MultiCertInfo至少需要传一个， 但不能同时传入。</li>
                      * @param _certificate 证书相关信息。参数限制如下：
-<li>
-此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。
-</li>
-<li>
-创建TCP_SSL监听器和未开启SNI特性的HTTPS监听器时，此参数和参数MultiCertInfo至少需要传一个， 但不能同时传入。
-</li>
+<li>此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。</li>
+<li>创建TCP_SSL监听器和未开启SNI特性的HTTPS监听器时，此参数和参数MultiCertInfo至少需要传一个， 但不能同时传入。</li>
                      * 
                      */
                     void SetCertificate(const CertificateInput& _certificate);
@@ -369,38 +353,22 @@ namespace TencentCloud
 
                     /**
                      * 获取证书信息，支持同时传入不同算法类型的多本服务端证书，参数限制如下：
-<li>
-此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。
-</li>
-<li>
-创建TCP_SSL监听器和未开启SNI特性的HTTPS监听器时，此参数和参数Certificate至少需要传一个， 但不能同时传入。
-</li>
+<li>此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。</li>
+<li>创建TCP_SSL监听器和未开启SNI特性的HTTPS监听器时，此参数和参数Certificate至少需要传一个， 但不能同时传入。</li>
                      * @return MultiCertInfo 证书信息，支持同时传入不同算法类型的多本服务端证书，参数限制如下：
-<li>
-此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。
-</li>
-<li>
-创建TCP_SSL监听器和未开启SNI特性的HTTPS监听器时，此参数和参数Certificate至少需要传一个， 但不能同时传入。
-</li>
+<li>此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。</li>
+<li>创建TCP_SSL监听器和未开启SNI特性的HTTPS监听器时，此参数和参数Certificate至少需要传一个， 但不能同时传入。</li>
                      * 
                      */
                     MultiCertInfo GetMultiCertInfo() const;
 
                     /**
                      * 设置证书信息，支持同时传入不同算法类型的多本服务端证书，参数限制如下：
-<li>
-此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。
-</li>
-<li>
-创建TCP_SSL监听器和未开启SNI特性的HTTPS监听器时，此参数和参数Certificate至少需要传一个， 但不能同时传入。
-</li>
+<li>此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。</li>
+<li>创建TCP_SSL监听器和未开启SNI特性的HTTPS监听器时，此参数和参数Certificate至少需要传一个， 但不能同时传入。</li>
                      * @param _multiCertInfo 证书信息，支持同时传入不同算法类型的多本服务端证书，参数限制如下：
-<li>
-此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。
-</li>
-<li>
-创建TCP_SSL监听器和未开启SNI特性的HTTPS监听器时，此参数和参数Certificate至少需要传一个， 但不能同时传入。
-</li>
+<li>此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。</li>
+<li>创建TCP_SSL监听器和未开启SNI特性的HTTPS监听器时，此参数和参数Certificate至少需要传一个， 但不能同时传入。</li>
                      * 
                      */
                     void SetMultiCertInfo(const MultiCertInfo& _multiCertInfo);
@@ -559,6 +527,27 @@ namespace TencentCloud
                      */
                     bool SslCloseSwitchHasBeenSet() const;
 
+                    /**
+                     * 获取数据压缩模式
+                     * @return DataCompressMode 数据压缩模式
+                     * 
+                     */
+                    std::string GetDataCompressMode() const;
+
+                    /**
+                     * 设置数据压缩模式
+                     * @param _dataCompressMode 数据压缩模式
+                     * 
+                     */
+                    void SetDataCompressMode(const std::string& _dataCompressMode);
+
+                    /**
+                     * 判断参数 DataCompressMode 是否已赋值
+                     * @return DataCompressMode 是否已赋值
+                     * 
+                     */
+                    bool DataCompressModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -593,12 +582,8 @@ namespace TencentCloud
 
                     /**
                      * 证书相关信息。参数限制如下：
-<li>
-此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。
-</li>
-<li>
-创建TCP_SSL监听器和未开启SNI特性的HTTPS监听器时，此参数和参数MultiCertInfo至少需要传一个， 但不能同时传入。
-</li>
+<li>此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。</li>
+<li>创建TCP_SSL监听器和未开启SNI特性的HTTPS监听器时，此参数和参数MultiCertInfo至少需要传一个， 但不能同时传入。</li>
                      */
                     CertificateInput m_certificate;
                     bool m_certificateHasBeenSet;
@@ -654,12 +639,8 @@ namespace TencentCloud
 
                     /**
                      * 证书信息，支持同时传入不同算法类型的多本服务端证书，参数限制如下：
-<li>
-此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。
-</li>
-<li>
-创建TCP_SSL监听器和未开启SNI特性的HTTPS监听器时，此参数和参数Certificate至少需要传一个， 但不能同时传入。
-</li>
+<li>此参数仅适用于TCP_SSL监听器和未开启SNI特性的HTTPS监听器。</li>
+<li>创建TCP_SSL监听器和未开启SNI特性的HTTPS监听器时，此参数和参数Certificate至少需要传一个， 但不能同时传入。</li>
                      */
                     MultiCertInfo m_multiCertInfo;
                     bool m_multiCertInfoHasBeenSet;
@@ -705,6 +686,12 @@ namespace TencentCloud
                      */
                     bool m_sslCloseSwitch;
                     bool m_sslCloseSwitchHasBeenSet;
+
+                    /**
+                     * 数据压缩模式
+                     */
+                    std::string m_dataCompressMode;
+                    bool m_dataCompressModeHasBeenSet;
 
                 };
             }

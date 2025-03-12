@@ -60,6 +60,20 @@ namespace TencentCloud
                      */
                     bool ErrorLogItemsHasBeenSet() const;
 
+                    /**
+                     * 获取错误日志字符串
+                     * @return FileContent 错误日志字符串
+                     * 
+                     */
+                    std::string GetFileContent() const;
+
+                    /**
+                     * 判断参数 FileContent 是否已赋值
+                     * @return FileContent 是否已赋值
+                     * 
+                     */
+                    bool FileContentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -68,6 +82,12 @@ namespace TencentCloud
                      */
                     std::vector<ErrorLogItemExport> m_errorLogItems;
                     bool m_errorLogItemsHasBeenSet;
+
+                    /**
+                     * 错误日志字符串
+                     */
+                    std::string m_fileContent;
+                    bool m_fileContentHasBeenSet;
 
                 };
             }

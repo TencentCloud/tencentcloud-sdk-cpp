@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 设置总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _total 总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotal(const int64_t& _total);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取知识库列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return KnowledgeSets 知识库列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<KnowledgeSet> GetKnowledgeSets() const;
 
                     /**
                      * 设置知识库列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _knowledgeSets 知识库列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKnowledgeSets(const std::vector<KnowledgeSet>& _knowledgeSets);
@@ -101,14 +93,12 @@ namespace TencentCloud
 
                     /**
                      * 总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
                      * 知识库列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<KnowledgeSet> m_knowledgeSets;
                     bool m_knowledgeSetsHasBeenSet;

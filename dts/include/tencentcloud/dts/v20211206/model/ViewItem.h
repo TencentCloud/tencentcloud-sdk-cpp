@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取视图名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ViewName 视图名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetViewName() const;
 
                     /**
                      * 设置视图名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _viewName 视图名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetViewName(const std::string& _viewName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取迁移后的视图名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NewViewName 迁移后的视图名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNewViewName() const;
 
                     /**
                      * 设置迁移后的视图名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _newViewName 迁移后的视图名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNewViewName(const std::string& _newViewName);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 视图名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_viewName;
                     bool m_viewNameHasBeenSet;
 
                     /**
                      * 迁移后的视图名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_newViewName;
                     bool m_newViewNameHasBeenSet;

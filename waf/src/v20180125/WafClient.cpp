@@ -5802,6 +5802,49 @@ WafClient::ModifyUserLevelOutcomeCallable WafClient::ModifyUserLevelCallable(con
     return task->get_future();
 }
 
+WafClient::ModifyUserSignatureClassOutcome WafClient::ModifyUserSignatureClass(const ModifyUserSignatureClassRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyUserSignatureClass");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyUserSignatureClassResponse rsp = ModifyUserSignatureClassResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyUserSignatureClassOutcome(rsp);
+        else
+            return ModifyUserSignatureClassOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyUserSignatureClassOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ModifyUserSignatureClassAsync(const ModifyUserSignatureClassRequest& request, const ModifyUserSignatureClassAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyUserSignatureClass(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::ModifyUserSignatureClassOutcomeCallable WafClient::ModifyUserSignatureClassCallable(const ModifyUserSignatureClassRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyUserSignatureClassOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyUserSignatureClass(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::ModifyUserSignatureRuleOutcome WafClient::ModifyUserSignatureRule(const ModifyUserSignatureRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyUserSignatureRule");
@@ -6268,6 +6311,49 @@ WafClient::SwitchElasticModeOutcomeCallable WafClient::SwitchElasticModeCallable
         [this, request]()
         {
             return this->SwitchElasticMode(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::UpdateProtectionModesOutcome WafClient::UpdateProtectionModes(const UpdateProtectionModesRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateProtectionModes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateProtectionModesResponse rsp = UpdateProtectionModesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateProtectionModesOutcome(rsp);
+        else
+            return UpdateProtectionModesOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateProtectionModesOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::UpdateProtectionModesAsync(const UpdateProtectionModesRequest& request, const UpdateProtectionModesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateProtectionModes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::UpdateProtectionModesOutcomeCallable WafClient::UpdateProtectionModesCallable(const UpdateProtectionModesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateProtectionModesOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateProtectionModes(request);
         }
     );
 

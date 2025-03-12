@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool CosUrlHasBeenSet() const;
 
                     /**
-                     * 获取ETag 全称为 Entity Tag，是对象被创建时标识对象内容的信息标签，可用于检查对象的内容是否发生变化
-                     * @return ETag ETag 全称为 Entity Tag，是对象被创建时标识对象内容的信息标签，可用于检查对象的内容是否发生变化
+                     * 获取ETag 全称为 Entity Tag，是对象被创建时标识对象内容的信息标签，可用于检查对象的内容是否发生变化 成功上传cos后，从返回头中获取
+                     * @return ETag ETag 全称为 Entity Tag，是对象被创建时标识对象内容的信息标签，可用于检查对象的内容是否发生变化 成功上传cos后，从返回头中获取
                      * 
                      */
                     std::string GetETag() const;
 
                     /**
-                     * 设置ETag 全称为 Entity Tag，是对象被创建时标识对象内容的信息标签，可用于检查对象的内容是否发生变化
-                     * @param _eTag ETag 全称为 Entity Tag，是对象被创建时标识对象内容的信息标签，可用于检查对象的内容是否发生变化
+                     * 设置ETag 全称为 Entity Tag，是对象被创建时标识对象内容的信息标签，可用于检查对象的内容是否发生变化 成功上传cos后，从返回头中获取
+                     * @param _eTag ETag 全称为 Entity Tag，是对象被创建时标识对象内容的信息标签，可用于检查对象的内容是否发生变化 成功上传cos后，从返回头中获取
                      * 
                      */
                     void SetETag(const std::string& _eTag);
@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool ETagHasBeenSet() const;
 
                     /**
-                     * 获取cos_hash x-cos-hash-crc64ecma 头部中的 CRC64编码进行校验上传到云端的文件和本地文件的一致性
-                     * @return CosHash cos_hash x-cos-hash-crc64ecma 头部中的 CRC64编码进行校验上传到云端的文件和本地文件的一致性
+                     * 获取cos_hash x-cos-hash-crc64ecma 头部中的 CRC64编码进行校验上传到云端的文件和本地文件的一致性  <br> 成功上传cos后，从返回头中获取
+                     * @return CosHash cos_hash x-cos-hash-crc64ecma 头部中的 CRC64编码进行校验上传到云端的文件和本地文件的一致性  <br> 成功上传cos后，从返回头中获取
                      * 
                      */
                     std::string GetCosHash() const;
 
                     /**
-                     * 设置cos_hash x-cos-hash-crc64ecma 头部中的 CRC64编码进行校验上传到云端的文件和本地文件的一致性
-                     * @param _cosHash cos_hash x-cos-hash-crc64ecma 头部中的 CRC64编码进行校验上传到云端的文件和本地文件的一致性
+                     * 设置cos_hash x-cos-hash-crc64ecma 头部中的 CRC64编码进行校验上传到云端的文件和本地文件的一致性  <br> 成功上传cos后，从返回头中获取
+                     * @param _cosHash cos_hash x-cos-hash-crc64ecma 头部中的 CRC64编码进行校验上传到云端的文件和本地文件的一致性  <br> 成功上传cos后，从返回头中获取
                      * 
                      */
                     void SetCosHash(const std::string& _cosHash);
@@ -191,15 +191,15 @@ namespace TencentCloud
                     bool SizeHasBeenSet() const;
 
                     /**
-                     * 获取标签适用范围 1：全部，2：按条件范围
-                     * @return AttrRange 标签适用范围 1：全部，2：按条件范围
+                     * 获取标签适用范围，默认填0即可
+                     * @return AttrRange 标签适用范围，默认填0即可
                      * 
                      */
                     uint64_t GetAttrRange() const;
 
                     /**
-                     * 设置标签适用范围 1：全部，2：按条件范围
-                     * @param _attrRange 标签适用范围 1：全部，2：按条件范围
+                     * 设置标签适用范围，默认填0即可
+                     * @param _attrRange 标签适用范围，默认填0即可
                      * 
                      */
                     void SetAttrRange(const uint64_t& _attrRange);
@@ -363,15 +363,15 @@ namespace TencentCloud
                     bool IsReferHasBeenSet() const;
 
                     /**
-                     * 获取文档操作类型：1：批量导入（批量导入问答对）；2:文档导入（正常导入单个文档）
-                     * @return Opt 文档操作类型：1：批量导入（批量导入问答对）；2:文档导入（正常导入单个文档）
+                     * 获取文档操作类型：1：批量导入（批量导入问答对）；2:文档导入（正常导入单个文档） 默认为1  <br> 请注意，opt=1的时候请从知识引擎页面下载excel模板
+                     * @return Opt 文档操作类型：1：批量导入（批量导入问答对）；2:文档导入（正常导入单个文档） 默认为1  <br> 请注意，opt=1的时候请从知识引擎页面下载excel模板
                      * 
                      */
                     uint64_t GetOpt() const;
 
                     /**
-                     * 设置文档操作类型：1：批量导入（批量导入问答对）；2:文档导入（正常导入单个文档）
-                     * @param _opt 文档操作类型：1：批量导入（批量导入问答对）；2:文档导入（正常导入单个文档）
+                     * 设置文档操作类型：1：批量导入（批量导入问答对）；2:文档导入（正常导入单个文档） 默认为1  <br> 请注意，opt=1的时候请从知识引擎页面下载excel模板
+                     * @param _opt 文档操作类型：1：批量导入（批量导入问答对）；2:文档导入（正常导入单个文档） 默认为1  <br> 请注意，opt=1的时候请从知识引擎页面下载excel模板
                      * 
                      */
                     void SetOpt(const uint64_t& _opt);
@@ -431,13 +431,13 @@ namespace TencentCloud
                     bool m_cosUrlHasBeenSet;
 
                     /**
-                     * ETag 全称为 Entity Tag，是对象被创建时标识对象内容的信息标签，可用于检查对象的内容是否发生变化
+                     * ETag 全称为 Entity Tag，是对象被创建时标识对象内容的信息标签，可用于检查对象的内容是否发生变化 成功上传cos后，从返回头中获取
                      */
                     std::string m_eTag;
                     bool m_eTagHasBeenSet;
 
                     /**
-                     * cos_hash x-cos-hash-crc64ecma 头部中的 CRC64编码进行校验上传到云端的文件和本地文件的一致性
+                     * cos_hash x-cos-hash-crc64ecma 头部中的 CRC64编码进行校验上传到云端的文件和本地文件的一致性  <br> 成功上传cos后，从返回头中获取
                      */
                     std::string m_cosHash;
                     bool m_cosHashHasBeenSet;
@@ -449,7 +449,7 @@ namespace TencentCloud
                     bool m_sizeHasBeenSet;
 
                     /**
-                     * 标签适用范围 1：全部，2：按条件范围
+                     * 标签适用范围，默认填0即可
                      */
                     uint64_t m_attrRange;
                     bool m_attrRangeHasBeenSet;
@@ -498,7 +498,7 @@ namespace TencentCloud
                     bool m_isReferHasBeenSet;
 
                     /**
-                     * 文档操作类型：1：批量导入（批量导入问答对）；2:文档导入（正常导入单个文档）
+                     * 文档操作类型：1：批量导入（批量导入问答对）；2:文档导入（正常导入单个文档） 默认为1  <br> 请注意，opt=1的时候请从知识引擎页面下载excel模板
                      */
                     uint64_t m_opt;
                     bool m_optHasBeenSet;

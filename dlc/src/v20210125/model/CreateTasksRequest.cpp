@@ -28,7 +28,8 @@ CreateTasksRequest::CreateTasksRequest() :
     m_datasourceConnectionNameHasBeenSet(false),
     m_dataEngineNameHasBeenSet(false),
     m_resourceGroupNameHasBeenSet(false),
-    m_isMultiStatementHasBeenSet(false)
+    m_isMultiStatementHasBeenSet(false),
+    m_sourceInfoHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,21 @@ string CreateTasksRequest::ToJsonString() const
         string key = "IsMultiStatement";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isMultiStatement, allocator);
+    }
+
+    if (m_sourceInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_sourceInfo.begin(); itr != m_sourceInfo.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -190,6 +206,22 @@ void CreateTasksRequest::SetIsMultiStatement(const bool& _isMultiStatement)
 bool CreateTasksRequest::IsMultiStatementHasBeenSet() const
 {
     return m_isMultiStatementHasBeenSet;
+}
+
+vector<KVPair> CreateTasksRequest::GetSourceInfo() const
+{
+    return m_sourceInfo;
+}
+
+void CreateTasksRequest::SetSourceInfo(const vector<KVPair>& _sourceInfo)
+{
+    m_sourceInfo = _sourceInfo;
+    m_sourceInfoHasBeenSet = true;
+}
+
+bool CreateTasksRequest::SourceInfoHasBeenSet() const
+{
+    return m_sourceInfoHasBeenSet;
 }
 
 

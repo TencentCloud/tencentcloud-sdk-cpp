@@ -74,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取诊断失败的错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrMsg 诊断失败的错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetErrMsg() const;
@@ -90,9 +88,7 @@ namespace TencentCloud
 
                     /**
                      * 获取任务流详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowSteps 任务流详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TaskFlowStepsInfo> GetFlowSteps() const;
@@ -120,14 +116,12 @@ namespace TencentCloud
 
                     /**
                      * 诊断失败的错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errMsg;
                     bool m_errMsgHasBeenSet;
 
                     /**
                      * 任务流详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TaskFlowStepsInfo> m_flowSteps;
                     bool m_flowStepsHasBeenSet;

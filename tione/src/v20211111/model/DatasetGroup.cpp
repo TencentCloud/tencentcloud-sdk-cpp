@@ -52,7 +52,9 @@ DatasetGroup::DatasetGroup() :
     m_sceneTagsHasBeenSet(false),
     m_numAnnotatedHasBeenSet(false),
     m_annotationSpecificationHasBeenSet(false),
-    m_annotationSchemaConfiguredHasBeenSet(false)
+    m_annotationSchemaConfiguredHasBeenSet(false),
+    m_creatorNicknameHasBeenSet(false),
+    m_isCfsUpdatedHasBeenSet(false)
 {
 }
 
@@ -425,6 +427,26 @@ CoreInternalOutcome DatasetGroup::Deserialize(const rapidjson::Value &value)
         m_annotationSchemaConfiguredHasBeenSet = true;
     }
 
+    if (value.HasMember("CreatorNickname") && !value["CreatorNickname"].IsNull())
+    {
+        if (!value["CreatorNickname"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatasetGroup.CreatorNickname` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_creatorNickname = string(value["CreatorNickname"].GetString());
+        m_creatorNicknameHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsCfsUpdated") && !value["IsCfsUpdated"].IsNull())
+    {
+        if (!value["IsCfsUpdated"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatasetGroup.IsCfsUpdated` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isCfsUpdated = value["IsCfsUpdated"].GetBool();
+        m_isCfsUpdatedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -708,6 +730,22 @@ void DatasetGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "AnnotationSchemaConfigured";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_annotationSchemaConfigured, allocator);
+    }
+
+    if (m_creatorNicknameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreatorNickname";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_creatorNickname.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isCfsUpdatedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsCfsUpdated";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isCfsUpdated, allocator);
     }
 
 }
@@ -1223,5 +1261,37 @@ void DatasetGroup::SetAnnotationSchemaConfigured(const bool& _annotationSchemaCo
 bool DatasetGroup::AnnotationSchemaConfiguredHasBeenSet() const
 {
     return m_annotationSchemaConfiguredHasBeenSet;
+}
+
+string DatasetGroup::GetCreatorNickname() const
+{
+    return m_creatorNickname;
+}
+
+void DatasetGroup::SetCreatorNickname(const string& _creatorNickname)
+{
+    m_creatorNickname = _creatorNickname;
+    m_creatorNicknameHasBeenSet = true;
+}
+
+bool DatasetGroup::CreatorNicknameHasBeenSet() const
+{
+    return m_creatorNicknameHasBeenSet;
+}
+
+bool DatasetGroup::GetIsCfsUpdated() const
+{
+    return m_isCfsUpdated;
+}
+
+void DatasetGroup::SetIsCfsUpdated(const bool& _isCfsUpdated)
+{
+    m_isCfsUpdated = _isCfsUpdated;
+    m_isCfsUpdatedHasBeenSet = true;
+}
+
+bool DatasetGroup::IsCfsUpdatedHasBeenSet() const
+{
+    return m_isCfsUpdatedHasBeenSet;
 }
 

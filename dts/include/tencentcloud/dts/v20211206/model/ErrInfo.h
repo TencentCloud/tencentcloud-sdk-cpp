@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _message 错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMessage(const std::string& _message);
@@ -94,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取解决方案
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Solution 解决方案
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSolution() const;
 
                     /**
                      * 设置解决方案
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _solution 解决方案
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSolution(const std::string& _solution);
@@ -127,14 +119,12 @@ namespace TencentCloud
 
                     /**
                      * 错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
 
                     /**
                      * 解决方案
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_solution;
                     bool m_solutionHasBeenSet;

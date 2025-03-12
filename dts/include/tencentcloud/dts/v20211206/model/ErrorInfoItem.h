@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取错误码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Code 错误码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCode() const;
 
                     /**
                      * 设置错误码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _code 错误码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCode(const std::string& _code);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取解决方案
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Solution 解决方案
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSolution() const;
 
                     /**
                      * 设置解决方案
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _solution 解决方案
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSolution(const std::string& _solution);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取错误日志信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorLog 错误日志信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetErrorLog() const;
 
                     /**
                      * 设置错误日志信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _errorLog 错误日志信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetErrorLog(const std::string& _errorLog);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文档提示
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HelpDoc 文档提示
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHelpDoc() const;
 
                     /**
                      * 设置文档提示
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _helpDoc 文档提示
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHelpDoc(const std::string& _helpDoc);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 错误码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_code;
                     bool m_codeHasBeenSet;
 
                     /**
                      * 解决方案
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_solution;
                     bool m_solutionHasBeenSet;
 
                     /**
                      * 错误日志信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errorLog;
                     bool m_errorLogHasBeenSet;
 
                     /**
                      * 文档提示
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_helpDoc;
                     bool m_helpDocHasBeenSet;

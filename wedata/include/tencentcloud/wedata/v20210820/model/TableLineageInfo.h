@@ -698,6 +698,56 @@ namespace TencentCloud
                      */
                     bool DatabaseIdHasBeenSet() const;
 
+                    /**
+                     * 获取数据来源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DataFromType 数据来源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDataFromType() const;
+
+                    /**
+                     * 设置数据来源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dataFromType 数据来源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDataFromType(const std::string& _dataFromType);
+
+                    /**
+                     * 判断参数 DataFromType 是否已赋值
+                     * @return DataFromType 是否已赋值
+                     * 
+                     */
+                    bool DataFromTypeHasBeenSet() const;
+
+                    /**
+                     * 获取采集id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CollectJobId 采集id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCollectJobId() const;
+
+                    /**
+                     * 设置采集id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _collectJobId 采集id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCollectJobId(const std::string& _collectJobId);
+
+                    /**
+                     * 判断参数 CollectJobId 是否已赋值
+                     * @return CollectJobId 是否已赋值
+                     * 
+                     */
+                    bool CollectJobIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -881,6 +931,20 @@ namespace TencentCloud
                      */
                     std::string m_databaseId;
                     bool m_databaseIdHasBeenSet;
+
+                    /**
+                     * 数据来源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dataFromType;
+                    bool m_dataFromTypeHasBeenSet;
+
+                    /**
+                     * 采集id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_collectJobId;
+                    bool m_collectJobIdHasBeenSet;
 
                 };
             }

@@ -139,18 +139,14 @@ namespace TencentCloud
 
                     /**
                      * 获取绑定bucket的数据流动策略ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleId 绑定bucket的数据流动策略ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuleId() const;
 
                     /**
                      * 设置绑定bucket的数据流动策略ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleId 绑定bucket的数据流动策略ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleId(const std::string& _ruleId);
@@ -164,18 +160,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则备注与描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleDescription 规则备注与描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuleDescription() const;
 
                     /**
                      * 设置规则备注与描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleDescription 规则备注与描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleDescription(const std::string& _ruleDescription);
@@ -210,18 +202,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否使用全球加速域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccelerateFlag 是否使用全球加速域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetAccelerateFlag() const;
 
                     /**
                      * 设置是否使用全球加速域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _accelerateFlag 是否使用全球加速域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAccelerateFlag(const bool& _accelerateFlag);
@@ -235,18 +223,14 @@ namespace TencentCloud
 
                     /**
                      * 获取桶所在的园区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BucketRegion 桶所在的园区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBucketRegion() const;
 
                     /**
                      * 设置桶所在的园区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bucketRegion 桶所在的园区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBucketRegion(const std::string& _bucketRegion);
@@ -260,18 +244,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自定义Endpoint
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Endpoint 自定义Endpoint
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndpoint() const;
 
                     /**
                      * 设置自定义Endpoint
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endpoint 自定义Endpoint
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndpoint(const std::string& _endpoint);
@@ -312,14 +292,12 @@ namespace TencentCloud
 
                     /**
                      * 绑定bucket的数据流动策略ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ruleId;
                     bool m_ruleIdHasBeenSet;
 
                     /**
                      * 规则备注与描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ruleDescription;
                     bool m_ruleDescriptionHasBeenSet;
@@ -332,21 +310,18 @@ namespace TencentCloud
 
                     /**
                      * 是否使用全球加速域名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_accelerateFlag;
                     bool m_accelerateFlagHasBeenSet;
 
                     /**
                      * 桶所在的园区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bucketRegion;
                     bool m_bucketRegionHasBeenSet;
 
                     /**
                      * 自定义Endpoint
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endpoint;
                     bool m_endpointHasBeenSet;

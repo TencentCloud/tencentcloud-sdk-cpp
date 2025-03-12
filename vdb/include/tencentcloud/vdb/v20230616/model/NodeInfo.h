@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 实例pod信息，仅包含 pod 名称
+                * 实例pod信息， pod 名称
                 */
                 class NodeInfo : public AbstractModel
                 {
@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Pod名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name Pod名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置Pod名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name Pod名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -75,7 +71,6 @@ namespace TencentCloud
 
                     /**
                      * Pod名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

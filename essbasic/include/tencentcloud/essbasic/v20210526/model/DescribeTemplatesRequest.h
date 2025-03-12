@@ -476,6 +476,27 @@ namespace TencentCloud
                      */
                     bool OperatorHasBeenSet() const;
 
+                    /**
+                     * 获取用户合同类型id
+                     * @return UserFlowTypeId 用户合同类型id
+                     * 
+                     */
+                    std::string GetUserFlowTypeId() const;
+
+                    /**
+                     * 设置用户合同类型id
+                     * @param _userFlowTypeId 用户合同类型id
+                     * 
+                     */
+                    void SetUserFlowTypeId(const std::string& _userFlowTypeId);
+
+                    /**
+                     * 判断参数 UserFlowTypeId 是否已赋值
+                     * @return UserFlowTypeId 是否已赋值
+                     * 
+                     */
+                    bool UserFlowTypeIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -594,6 +615,12 @@ namespace TencentCloud
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
+
+                    /**
+                     * 用户合同类型id
+                     */
+                    std::string m_userFlowTypeId;
+                    bool m_userFlowTypeIdHasBeenSet;
 
                 };
             }

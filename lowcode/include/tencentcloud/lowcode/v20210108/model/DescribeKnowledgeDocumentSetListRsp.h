@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件集
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DocumentSets 文件集
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<QureyKnowledgeDocumentSet> GetDocumentSets() const;
 
                     /**
                      * 设置文件集
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _documentSets 文件集
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDocumentSets(const std::vector<QureyKnowledgeDocumentSet>& _documentSets);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Count 条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCount() const;
 
                     /**
                      * 设置条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _count 条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCount(const uint64_t& _count);
@@ -101,14 +93,12 @@ namespace TencentCloud
 
                     /**
                      * 文件集
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<QureyKnowledgeDocumentSet> m_documentSets;
                     bool m_documentSetsHasBeenSet;
 
                     /**
                      * 条数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_count;
                     bool m_countHasBeenSet;

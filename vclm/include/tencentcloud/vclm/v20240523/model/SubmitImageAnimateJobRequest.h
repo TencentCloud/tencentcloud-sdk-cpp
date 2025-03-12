@@ -160,15 +160,31 @@ namespace TencentCloud
                     bool EnableAudioHasBeenSet() const;
 
                     /**
-                     * 获取是否检测输入图人体12个身体部位（头部、颈部、右肩、右肘、右腕、左肩、左肘、左腕、右髋、左髋,、左膝、右膝）。默认不检测。
-                     * @return EnableBodyJoins 是否检测输入图人体12个身体部位（头部、颈部、右肩、右肘、右腕、左肩、左肘、左腕、右髋、左髋,、左膝、右膝）。默认不检测。
+                     * 获取是否对输入图采用加强检测方案。
+
+默认不加强检测（false），仅对输入图做必要的基础检测。
+
+开启加强检测（true）有助于提升效果稳定性，将根据选择的动作模板提取建议的人体关键点，并判断输入图中是否包含这些人体关键点。加强检测仅对人像输入图生效，对非人输入图不生效。
+                     * @return EnableBodyJoins 是否对输入图采用加强检测方案。
+
+默认不加强检测（false），仅对输入图做必要的基础检测。
+
+开启加强检测（true）有助于提升效果稳定性，将根据选择的动作模板提取建议的人体关键点，并判断输入图中是否包含这些人体关键点。加强检测仅对人像输入图生效，对非人输入图不生效。
                      * 
                      */
                     bool GetEnableBodyJoins() const;
 
                     /**
-                     * 设置是否检测输入图人体12个身体部位（头部、颈部、右肩、右肘、右腕、左肩、左肘、左腕、右髋、左髋,、左膝、右膝）。默认不检测。
-                     * @param _enableBodyJoins 是否检测输入图人体12个身体部位（头部、颈部、右肩、右肘、右腕、左肩、左肘、左腕、右髋、左髋,、左膝、右膝）。默认不检测。
+                     * 设置是否对输入图采用加强检测方案。
+
+默认不加强检测（false），仅对输入图做必要的基础检测。
+
+开启加强检测（true）有助于提升效果稳定性，将根据选择的动作模板提取建议的人体关键点，并判断输入图中是否包含这些人体关键点。加强检测仅对人像输入图生效，对非人输入图不生效。
+                     * @param _enableBodyJoins 是否对输入图采用加强检测方案。
+
+默认不加强检测（false），仅对输入图做必要的基础检测。
+
+开启加强检测（true）有助于提升效果稳定性，将根据选择的动作模板提取建议的人体关键点，并判断输入图中是否包含这些人体关键点。加强检测仅对人像输入图生效，对非人输入图不生效。
                      * 
                      */
                     void SetEnableBodyJoins(const bool& _enableBodyJoins);
@@ -271,6 +287,35 @@ false：不分割结果视频，结果视频（ResultVideoUrl）为带背景的�
                      */
                     bool LogoParamHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启人脸检测。
+
+默认开启人脸检测（true），拦截主体为人像但无人脸、人脸不完整或被遮挡的输入图。可选关闭人脸检测（false）。
+                     * @return EnableFace 是否开启人脸检测。
+
+默认开启人脸检测（true），拦截主体为人像但无人脸、人脸不完整或被遮挡的输入图。可选关闭人脸检测（false）。
+                     * 
+                     */
+                    bool GetEnableFace() const;
+
+                    /**
+                     * 设置是否开启人脸检测。
+
+默认开启人脸检测（true），拦截主体为人像但无人脸、人脸不完整或被遮挡的输入图。可选关闭人脸检测（false）。
+                     * @param _enableFace 是否开启人脸检测。
+
+默认开启人脸检测（true），拦截主体为人像但无人脸、人脸不完整或被遮挡的输入图。可选关闭人脸检测（false）。
+                     * 
+                     */
+                    void SetEnableFace(const bool& _enableFace);
+
+                    /**
+                     * 判断参数 EnableFace 是否已赋值
+                     * @return EnableFace 是否已赋值
+                     * 
+                     */
+                    bool EnableFaceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -306,7 +351,11 @@ false：不分割结果视频，结果视频（ResultVideoUrl）为带背景的�
                     bool m_enableAudioHasBeenSet;
 
                     /**
-                     * 是否检测输入图人体12个身体部位（头部、颈部、右肩、右肘、右腕、左肩、左肘、左腕、右髋、左髋,、左膝、右膝）。默认不检测。
+                     * 是否对输入图采用加强检测方案。
+
+默认不加强检测（false），仅对输入图做必要的基础检测。
+
+开启加强检测（true）有助于提升效果稳定性，将根据选择的动作模板提取建议的人体关键点，并判断输入图中是否包含这些人体关键点。加强检测仅对人像输入图生效，对非人输入图不生效。
                      */
                     bool m_enableBodyJoins;
                     bool m_enableBodyJoinsHasBeenSet;
@@ -335,6 +384,14 @@ false：不分割结果视频，结果视频（ResultVideoUrl）为带背景的�
                      */
                     LogoParam m_logoParam;
                     bool m_logoParamHasBeenSet;
+
+                    /**
+                     * 是否开启人脸检测。
+
+默认开启人脸检测（true），拦截主体为人像但无人脸、人脸不完整或被遮挡的输入图。可选关闭人脸检测（false）。
+                     */
+                    bool m_enableFace;
+                    bool m_enableFaceHasBeenSet;
 
                 };
             }

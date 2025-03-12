@@ -64,19 +64,15 @@ namespace TencentCloud
                     bool OfdFileUrlHasBeenSet() const;
 
                     /**
-                     * 获取OFD文件的 Base64 值。
-OfdFileUrl 和 OfdFileBase64 必传其一，若两者都传，只解析OfdFileBase64。
-                     * @return OfdFileBase64 OFD文件的 Base64 值。
-OfdFileUrl 和 OfdFileBase64 必传其一，若两者都传，只解析OfdFileBase64。
+                     * 获取OFD文件的 Base64 值。OfdFileUrl 和 OfdFileBase64 必传其一，若两者都传，只使用OfdFileUrl。
+                     * @return OfdFileBase64 OFD文件的 Base64 值。OfdFileUrl 和 OfdFileBase64 必传其一，若两者都传，只使用OfdFileUrl。
                      * 
                      */
                     std::string GetOfdFileBase64() const;
 
                     /**
-                     * 设置OFD文件的 Base64 值。
-OfdFileUrl 和 OfdFileBase64 必传其一，若两者都传，只解析OfdFileBase64。
-                     * @param _ofdFileBase64 OFD文件的 Base64 值。
-OfdFileUrl 和 OfdFileBase64 必传其一，若两者都传，只解析OfdFileBase64。
+                     * 设置OFD文件的 Base64 值。OfdFileUrl 和 OfdFileBase64 必传其一，若两者都传，只使用OfdFileUrl。
+                     * @param _ofdFileBase64 OFD文件的 Base64 值。OfdFileUrl 和 OfdFileBase64 必传其一，若两者都传，只使用OfdFileUrl。
                      * 
                      */
                     void SetOfdFileBase64(const std::string& _ofdFileBase64);
@@ -118,8 +114,7 @@ OfdFileUrl 和 OfdFileBase64 必传其一，若两者都传，只解析OfdFileBa
                     bool m_ofdFileUrlHasBeenSet;
 
                     /**
-                     * OFD文件的 Base64 值。
-OfdFileUrl 和 OfdFileBase64 必传其一，若两者都传，只解析OfdFileBase64。
+                     * OFD文件的 Base64 值。OfdFileUrl 和 OfdFileBase64 必传其一，若两者都传，只使用OfdFileUrl。
                      */
                     std::string m_ofdFileBase64;
                     bool m_ofdFileBase64HasBeenSet;

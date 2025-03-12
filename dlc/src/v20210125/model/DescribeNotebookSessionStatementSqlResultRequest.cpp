@@ -26,7 +26,8 @@ DescribeNotebookSessionStatementSqlResultRequest::DescribeNotebookSessionStateme
     m_taskIdHasBeenSet(false),
     m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
-    m_batchIdHasBeenSet(false)
+    m_batchIdHasBeenSet(false),
+    m_dataFieldCutLenHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string DescribeNotebookSessionStatementSqlResultRequest::ToJsonString() const
         string key = "BatchId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_batchId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dataFieldCutLenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataFieldCutLen";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_dataFieldCutLen, allocator);
     }
 
 
@@ -139,6 +148,22 @@ void DescribeNotebookSessionStatementSqlResultRequest::SetBatchId(const string& 
 bool DescribeNotebookSessionStatementSqlResultRequest::BatchIdHasBeenSet() const
 {
     return m_batchIdHasBeenSet;
+}
+
+int64_t DescribeNotebookSessionStatementSqlResultRequest::GetDataFieldCutLen() const
+{
+    return m_dataFieldCutLen;
+}
+
+void DescribeNotebookSessionStatementSqlResultRequest::SetDataFieldCutLen(const int64_t& _dataFieldCutLen)
+{
+    m_dataFieldCutLen = _dataFieldCutLen;
+    m_dataFieldCutLenHasBeenSet = true;
+}
+
+bool DescribeNotebookSessionStatementSqlResultRequest::DataFieldCutLenHasBeenSet() const
+{
+    return m_dataFieldCutLenHasBeenSet;
 }
 
 

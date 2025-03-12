@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceId 实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例自定义名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 实例自定义名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置实例自定义名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 实例自定义名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -100,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户APPID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppId 用户APPID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetAppId() const;
 
                     /**
                      * 设置用户APPID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appId 用户APPID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppId(const uint64_t& _appId);
@@ -125,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地域。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 地域。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地域。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _region 地域。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -150,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取可用区。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zone 可用区。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zone 可用区。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -175,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取产品。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Product 产品。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProduct() const;
 
                     /**
                      * 设置产品。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _product 产品。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProduct(const std::string& _product);
@@ -200,18 +176,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网络信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Networks 网络信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Network> GetNetworks() const;
 
                     /**
                      * 设置网络信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _networks 网络信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNetworks(const std::vector<Network>& _networks);
@@ -225,18 +197,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分片信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ShardNum 分片信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetShardNum() const;
 
                     /**
                      * 设置分片信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _shardNum 分片信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetShardNum(const uint64_t& _shardNum);
@@ -250,18 +218,14 @@ namespace TencentCloud
 
                     /**
                      * 获取副本数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReplicaNum 副本数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetReplicaNum() const;
 
                     /**
                      * 设置副本数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _replicaNum 副本数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReplicaNum(const uint64_t& _replicaNum);
@@ -275,18 +239,14 @@ namespace TencentCloud
 
                     /**
                      * 获取CPU.
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cpu CPU.
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetCpu() const;
 
                     /**
                      * 设置CPU.
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cpu CPU.
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCpu(const double& _cpu);
@@ -300,18 +260,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内存。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Memory 内存。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetMemory() const;
 
                     /**
                      * 设置内存。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _memory 内存。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMemory(const double& _memory);
@@ -325,18 +281,14 @@ namespace TencentCloud
 
                     /**
                      * 获取磁盘。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Disk 磁盘。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDisk() const;
 
                     /**
                      * 设置磁盘。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _disk 磁盘。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDisk(const uint64_t& _disk);
@@ -425,18 +377,14 @@ namespace TencentCloud
 
                     /**
                      * 获取所属标签。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceTags 所属标签。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetResourceTags() const;
 
                     /**
                      * 设置所属标签。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceTags 所属标签。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceTags(const std::vector<Tag>& _resourceTags);
@@ -450,18 +398,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedAt 创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatedAt() const;
 
                     /**
                      * 设置创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createdAt 创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreatedAt(const std::string& _createdAt);
@@ -475,18 +419,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源状态。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 资源状态。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置资源状态。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 资源状态。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -500,18 +440,14 @@ namespace TencentCloud
 
                     /**
                      * 获取引擎名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EngineName 引擎名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEngineName() const;
 
                     /**
                      * 设置引擎名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _engineName 引擎名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEngineName(const std::string& _engineName);
@@ -525,18 +461,14 @@ namespace TencentCloud
 
                     /**
                      * 获取引擎版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EngineVersion 引擎版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEngineVersion() const;
 
                     /**
                      * 设置引擎版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _engineVersion 引擎版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEngineVersion(const std::string& _engineVersion);
@@ -550,18 +482,14 @@ namespace TencentCloud
 
                     /**
                      * 获取api版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApiVersion api版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApiVersion() const;
 
                     /**
                      * 设置api版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _apiVersion api版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApiVersion(const std::string& _apiVersion);
@@ -575,18 +503,14 @@ namespace TencentCloud
 
                     /**
                      * 获取计费模式。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayMode 计费模式。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPayMode() const;
 
                     /**
                      * 设置计费模式。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _payMode 计费模式。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPayMode(const int64_t& _payMode);
@@ -600,18 +524,14 @@ namespace TencentCloud
 
                     /**
                      * 获取差异化扩展信息, json格式。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Extend 差异化扩展信息, json格式。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExtend() const;
 
                     /**
                      * 设置差异化扩展信息, json格式。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _extend 差异化扩展信息, json格式。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExtend(const std::string& _extend);
@@ -625,18 +545,14 @@ namespace TencentCloud
 
                     /**
                      * 获取过期时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpiredAt 过期时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExpiredAt() const;
 
                     /**
                      * 设置过期时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _expiredAt 过期时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExpiredAt(const std::string& _expiredAt);
@@ -650,18 +566,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否不过期(永久)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsNoExpired 是否不过期(永久)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsNoExpired() const;
 
                     /**
                      * 设置是否不过期(永久)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isNoExpired 是否不过期(永久)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsNoExpired(const bool& _isNoExpired);
@@ -675,18 +587,14 @@ namespace TencentCloud
 
                     /**
                      * 获取外网地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WanAddress 外网地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWanAddress() const;
 
                     /**
                      * 设置外网地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _wanAddress 外网地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWanAddress(const std::string& _wanAddress);
@@ -700,18 +608,14 @@ namespace TencentCloud
 
                     /**
                      * 获取隔离时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsolateAt 隔离时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIsolateAt() const;
 
                     /**
                      * 设置隔离时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isolateAt 隔离时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsolateAt(const std::string& _isolateAt);
@@ -725,18 +629,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否自动续费。0: 不自动续费(可以支持特权不停服)；1:自动续费；2:到期不续费.
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoRenew 是否自动续费。0: 不自动续费(可以支持特权不停服)；1:自动续费；2:到期不续费.
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAutoRenew() const;
 
                     /**
                      * 设置是否自动续费。0: 不自动续费(可以支持特权不停服)；1:自动续费；2:到期不续费.
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _autoRenew 是否自动续费。0: 不自动续费(可以支持特权不停服)；1:自动续费；2:到期不续费.
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAutoRenew(const int64_t& _autoRenew);
@@ -752,84 +652,72 @@ namespace TencentCloud
 
                     /**
                      * 实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
                      * 实例自定义名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 用户APPID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
                      * 地域。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
                      * 可用区。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
                      * 产品。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_product;
                     bool m_productHasBeenSet;
 
                     /**
                      * 网络信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Network> m_networks;
                     bool m_networksHasBeenSet;
 
                     /**
                      * 分片信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_shardNum;
                     bool m_shardNumHasBeenSet;
 
                     /**
                      * 副本数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_replicaNum;
                     bool m_replicaNumHasBeenSet;
 
                     /**
                      * CPU.
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_cpu;
                     bool m_cpuHasBeenSet;
 
                     /**
                      * 内存。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_memory;
                     bool m_memoryHasBeenSet;
 
                     /**
                      * 磁盘。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_disk;
                     bool m_diskHasBeenSet;
@@ -857,91 +745,78 @@ namespace TencentCloud
 
                     /**
                      * 所属标签。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_resourceTags;
                     bool m_resourceTagsHasBeenSet;
 
                     /**
                      * 创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createdAt;
                     bool m_createdAtHasBeenSet;
 
                     /**
                      * 资源状态。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 引擎名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_engineName;
                     bool m_engineNameHasBeenSet;
 
                     /**
                      * 引擎版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_engineVersion;
                     bool m_engineVersionHasBeenSet;
 
                     /**
                      * api版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_apiVersion;
                     bool m_apiVersionHasBeenSet;
 
                     /**
                      * 计费模式。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
                      * 差异化扩展信息, json格式。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_extend;
                     bool m_extendHasBeenSet;
 
                     /**
                      * 过期时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_expiredAt;
                     bool m_expiredAtHasBeenSet;
 
                     /**
                      * 是否不过期(永久)。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isNoExpired;
                     bool m_isNoExpiredHasBeenSet;
 
                     /**
                      * 外网地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_wanAddress;
                     bool m_wanAddressHasBeenSet;
 
                     /**
                      * 隔离时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_isolateAt;
                     bool m_isolateAtHasBeenSet;
 
                     /**
                      * 是否自动续费。0: 不自动续费(可以支持特权不停服)；1:自动续费；2:到期不续费.
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_autoRenew;
                     bool m_autoRenewHasBeenSet;

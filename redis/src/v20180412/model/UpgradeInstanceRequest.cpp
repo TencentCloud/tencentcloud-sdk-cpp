@@ -27,7 +27,8 @@ UpgradeInstanceRequest::UpgradeInstanceRequest() :
     m_memSizeHasBeenSet(false),
     m_redisShardNumHasBeenSet(false),
     m_redisReplicasNumHasBeenSet(false),
-    m_nodeSetHasBeenSet(false)
+    m_nodeSetHasBeenSet(false),
+    m_switchOptionHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,14 @@ string UpgradeInstanceRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_switchOptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SwitchOption";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_switchOption, allocator);
     }
 
 
@@ -171,6 +180,22 @@ void UpgradeInstanceRequest::SetNodeSet(const vector<RedisNodeInfo>& _nodeSet)
 bool UpgradeInstanceRequest::NodeSetHasBeenSet() const
 {
     return m_nodeSetHasBeenSet;
+}
+
+uint64_t UpgradeInstanceRequest::GetSwitchOption() const
+{
+    return m_switchOption;
+}
+
+void UpgradeInstanceRequest::SetSwitchOption(const uint64_t& _switchOption)
+{
+    m_switchOption = _switchOption;
+    m_switchOptionHasBeenSet = true;
+}
+
+bool UpgradeInstanceRequest::SwitchOptionHasBeenSet() const
+{
+    return m_switchOptionHasBeenSet;
 }
 
 

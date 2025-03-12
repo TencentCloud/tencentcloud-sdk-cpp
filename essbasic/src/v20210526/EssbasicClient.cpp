@@ -3480,6 +3480,49 @@ EssbasicClient::DescribeUsageOutcomeCallable EssbasicClient::DescribeUsageCallab
     return task->get_future();
 }
 
+EssbasicClient::DescribeUserFlowTypeOutcome EssbasicClient::DescribeUserFlowType(const DescribeUserFlowTypeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUserFlowType");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUserFlowTypeResponse rsp = DescribeUserFlowTypeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUserFlowTypeOutcome(rsp);
+        else
+            return DescribeUserFlowTypeOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUserFlowTypeOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::DescribeUserFlowTypeAsync(const DescribeUserFlowTypeRequest& request, const DescribeUserFlowTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUserFlowType(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::DescribeUserFlowTypeOutcomeCallable EssbasicClient::DescribeUserFlowTypeCallable(const DescribeUserFlowTypeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUserFlowTypeOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUserFlowType(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::GetDownloadFlowUrlOutcome EssbasicClient::GetDownloadFlowUrl(const GetDownloadFlowUrlRequest &request)
 {
     auto outcome = MakeRequest(request, "GetDownloadFlowUrl");

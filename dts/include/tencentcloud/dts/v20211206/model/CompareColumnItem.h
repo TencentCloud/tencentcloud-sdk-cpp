@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取列名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ColumnName 列名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetColumnName() const;
 
                     /**
                      * 设置列名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _columnName 列名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetColumnName(const std::string& _columnName);
@@ -75,7 +71,6 @@ namespace TencentCloud
 
                     /**
                      * 列名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_columnName;
                     bool m_columnNameHasBeenSet;

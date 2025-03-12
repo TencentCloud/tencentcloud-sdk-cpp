@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取迁移对象类型 all(全实例)，partial(部分对象)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ObjectMode 迁移对象类型 all(全实例)，partial(部分对象)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetObjectMode() const;
 
                     /**
                      * 设置迁移对象类型 all(全实例)，partial(部分对象)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _objectMode 迁移对象类型 all(全实例)，partial(部分对象)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetObjectMode(const std::string& _objectMode);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取迁移对象，当 ObjectMode 为 partial 时，不为空
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Databases 迁移对象，当 ObjectMode 为 partial 时，不为空
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DBItem> GetDatabases() const;
 
                     /**
                      * 设置迁移对象，当 ObjectMode 为 partial 时，不为空
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _databases 迁移对象，当 ObjectMode 为 partial 时，不为空
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDatabases(const std::vector<DBItem>& _databases);
@@ -126,14 +118,12 @@ namespace TencentCloud
 
                     /**
                      * 迁移对象类型 all(全实例)，partial(部分对象)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_objectMode;
                     bool m_objectModeHasBeenSet;
 
                     /**
                      * 迁移对象，当 ObjectMode 为 partial 时，不为空
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DBItem> m_databases;
                     bool m_databasesHasBeenSet;

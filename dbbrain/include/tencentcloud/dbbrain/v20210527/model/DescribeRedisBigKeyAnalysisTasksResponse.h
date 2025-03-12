@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取任务总数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 任务总数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -78,7 +76,6 @@ namespace TencentCloud
 
                     /**
                      * 任务总数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

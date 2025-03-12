@@ -183,6 +183,8 @@
 #include <tencentcloud/essbasic/v20210526/model/DescribeTemplatesResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/DescribeUsageRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/DescribeUsageResponse.h>
+#include <tencentcloud/essbasic/v20210526/model/DescribeUserFlowTypeRequest.h>
+#include <tencentcloud/essbasic/v20210526/model/DescribeUserFlowTypeResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/GetDownloadFlowUrlRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/GetDownloadFlowUrlResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ModifyExtendedServiceRequest.h>
@@ -453,6 +455,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeUsageResponse> DescribeUsageOutcome;
                 typedef std::future<DescribeUsageOutcome> DescribeUsageOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::DescribeUsageRequest&, DescribeUsageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUsageAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUserFlowTypeResponse> DescribeUserFlowTypeOutcome;
+                typedef std::future<DescribeUserFlowTypeOutcome> DescribeUserFlowTypeOutcomeCallable;
+                typedef std::function<void(const EssbasicClient*, const Model::DescribeUserFlowTypeRequest&, DescribeUserFlowTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserFlowTypeAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetDownloadFlowUrlResponse> GetDownloadFlowUrlOutcome;
                 typedef std::future<GetDownloadFlowUrlOutcome> GetDownloadFlowUrlOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::GetDownloadFlowUrlRequest&, GetDownloadFlowUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetDownloadFlowUrlAsyncHandler;
@@ -2105,6 +2110,19 @@ Agent参数中的OpenId 必须为审批者的openId，且链接必须由审批�
                 DescribeUsageOutcome DescribeUsage(const Model::DescribeUsageRequest &request);
                 void DescribeUsageAsync(const Model::DescribeUsageRequest& request, const DescribeUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeUsageOutcomeCallable DescribeUsageCallable(const Model::DescribeUsageRequest& request);
+
+                /**
+                 *查询用户模版类型，分为两种模式：
+<ul>
+<li>QueryBindTemplate:false，查询用户合同模版类型，返回用户合同模版类型ID，用户合同模版类型名称，用户合同模版类型描述信息</li>
+<li>QueryBindTemplate:false，查询用户合同模版类型，返回用户合同模版类型ID，用户合同模版类型名称，用户合同模版类型描述信息，被绑定的模版数量</li>
+</ul>
+                 * @param req DescribeUserFlowTypeRequest
+                 * @return DescribeUserFlowTypeOutcome
+                 */
+                DescribeUserFlowTypeOutcome DescribeUserFlowType(const Model::DescribeUserFlowTypeRequest &request);
+                void DescribeUserFlowTypeAsync(const Model::DescribeUserFlowTypeRequest& request, const DescribeUserFlowTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUserFlowTypeOutcomeCallable DescribeUserFlowTypeCallable(const Model::DescribeUserFlowTypeRequest& request);
 
                 /**
                  *此接口（GetDownloadFlowUrl）用户获取合同控制台下载页面链接,  点击链接后会跳转至本企业合同管理控制台(会筛选出传入的合同列表), 点击**下载**按钮后就会下载传入的合同列表, 下载页面如下图

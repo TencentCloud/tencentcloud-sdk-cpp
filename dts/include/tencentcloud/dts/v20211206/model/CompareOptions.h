@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取对比方式：dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比), 默认为dataCheck
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Method 对比方式：dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比), 默认为dataCheck
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMethod() const;
 
                     /**
                      * 设置对比方式：dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比), 默认为dataCheck
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _method 对比方式：dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比), 默认为dataCheck
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMethod(const std::string& _method);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取抽样比例;范围0,100。默认为100
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SampleRate 抽样比例;范围0,100。默认为100
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSampleRate() const;
 
                     /**
                      * 设置抽样比例;范围0,100。默认为100
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sampleRate 抽样比例;范围0,100。默认为100
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSampleRate(const int64_t& _sampleRate);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取线程数，取值1-5，默认为1
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ThreadCount 线程数，取值1-5，默认为1
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetThreadCount() const;
 
                     /**
                      * 设置线程数，取值1-5，默认为1
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _threadCount 线程数，取值1-5，默认为1
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetThreadCount(const int64_t& _threadCount);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 对比方式：dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比), 默认为dataCheck
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_method;
                     bool m_methodHasBeenSet;
 
                     /**
                      * 抽样比例;范围0,100。默认为100
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_sampleRate;
                     bool m_sampleRateHasBeenSet;
 
                     /**
                      * 线程数，取值1-5，默认为1
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_threadCount;
                     bool m_threadCountHasBeenSet;

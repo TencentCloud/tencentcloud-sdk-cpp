@@ -24,7 +24,8 @@ using namespace std;
 
 CreateSparkAppTaskRequest::CreateSparkAppTaskRequest() :
     m_jobNameHasBeenSet(false),
-    m_cmdArgsHasBeenSet(false)
+    m_cmdArgsHasBeenSet(false),
+    m_sourceInfoHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,21 @@ string CreateSparkAppTaskRequest::ToJsonString() const
         string key = "CmdArgs";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_cmdArgs.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourceInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_sourceInfo.begin(); itr != m_sourceInfo.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -89,6 +105,22 @@ void CreateSparkAppTaskRequest::SetCmdArgs(const string& _cmdArgs)
 bool CreateSparkAppTaskRequest::CmdArgsHasBeenSet() const
 {
     return m_cmdArgsHasBeenSet;
+}
+
+vector<KVPair> CreateSparkAppTaskRequest::GetSourceInfo() const
+{
+    return m_sourceInfo;
+}
+
+void CreateSparkAppTaskRequest::SetSourceInfo(const vector<KVPair>& _sourceInfo)
+{
+    m_sourceInfo = _sourceInfo;
+    m_sourceInfoHasBeenSet = true;
+}
+
+bool CreateSparkAppTaskRequest::SourceInfoHasBeenSet() const
+{
+    return m_sourceInfoHasBeenSet;
 }
 
 

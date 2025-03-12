@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取步骤序列
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StepNo 步骤序列
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStepNo() const;
 
                     /**
                      * 设置步骤序列
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _stepNo 步骤序列
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStepNo(const uint64_t& _stepNo);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取步骤展现名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StepName 步骤展现名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStepName() const;
 
                     /**
                      * 设置步骤展现名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _stepName 步骤展现名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStepName(const std::string& _stepName);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取步骤英文标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StepId 步骤英文标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStepId() const;
 
                     /**
                      * 设置步骤英文标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _stepId 步骤英文标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStepId(const std::string& _stepId);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取步骤状态:success(成功)、failed(失败)、running(执行中)、notStarted(未执行)、默认为notStarted
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 步骤状态:success(成功)、failed(失败)、running(执行中)、notStarted(未执行)、默认为notStarted
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置步骤状态:success(成功)、failed(失败)、running(执行中)、notStarted(未执行)、默认为notStarted
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 步骤状态:success(成功)、failed(失败)、running(执行中)、notStarted(未执行)、默认为notStarted
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当前步骤开始的时间，格式为"yyyy-mm-dd hh:mm:ss"，该字段不存在或者为空是无意义 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 当前步骤开始的时间，格式为"yyyy-mm-dd hh:mm:ss"，该字段不存在或者为空是无意义 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置当前步骤开始的时间，格式为"yyyy-mm-dd hh:mm:ss"，该字段不存在或者为空是无意义 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _startTime 当前步骤开始的时间，格式为"yyyy-mm-dd hh:mm:ss"，该字段不存在或者为空是无意义 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取步骤错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StepMessage 步骤错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStepMessage() const;
 
                     /**
                      * 设置步骤错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _stepMessage 步骤错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStepMessage(const std::string& _stepMessage);
@@ -199,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取执行进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Percent 执行进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPercent() const;
 
                     /**
                      * 设置执行进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _percent 执行进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPercent(const uint64_t& _percent);
@@ -224,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Errors 错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ProcessStepTip> GetErrors() const;
 
                     /**
                      * 设置错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _errors 错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetErrors(const std::vector<ProcessStepTip>& _errors);
@@ -249,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取告警提示
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Warnings 告警提示
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ProcessStepTip> GetWarnings() const;
 
                     /**
                      * 设置告警提示
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _warnings 告警提示
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWarnings(const std::vector<ProcessStepTip>& _warnings);
@@ -276,63 +240,54 @@ namespace TencentCloud
 
                     /**
                      * 步骤序列
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_stepNo;
                     bool m_stepNoHasBeenSet;
 
                     /**
                      * 步骤展现名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_stepName;
                     bool m_stepNameHasBeenSet;
 
                     /**
                      * 步骤英文标识
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_stepId;
                     bool m_stepIdHasBeenSet;
 
                     /**
                      * 步骤状态:success(成功)、failed(失败)、running(执行中)、notStarted(未执行)、默认为notStarted
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 当前步骤开始的时间，格式为"yyyy-mm-dd hh:mm:ss"，该字段不存在或者为空是无意义 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
                      * 步骤错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_stepMessage;
                     bool m_stepMessageHasBeenSet;
 
                     /**
                      * 执行进度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_percent;
                     bool m_percentHasBeenSet;
 
                     /**
                      * 错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ProcessStepTip> m_errors;
                     bool m_errorsHasBeenSet;
 
                     /**
                      * 告警提示
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ProcessStepTip> m_warnings;
                     bool m_warningsHasBeenSet;

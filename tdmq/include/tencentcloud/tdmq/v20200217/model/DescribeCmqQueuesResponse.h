@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取队列列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return QueueList 队列列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CmqQueue> GetQueueList() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 队列列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CmqQueue> m_queueList;
                     bool m_queueListHasBeenSet;

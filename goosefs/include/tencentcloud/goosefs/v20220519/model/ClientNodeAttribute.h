@@ -174,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自定义挂载点
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MountPoint 自定义挂载点
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMountPoint() const;
 
                     /**
                      * 设置自定义挂载点
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mountPoint 自定义挂载点
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMountPoint(const std::string& _mountPoint);
@@ -237,7 +233,6 @@ namespace TencentCloud
 
                     /**
                      * 自定义挂载点
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mountPoint;
                     bool m_mountPointHasBeenSet;

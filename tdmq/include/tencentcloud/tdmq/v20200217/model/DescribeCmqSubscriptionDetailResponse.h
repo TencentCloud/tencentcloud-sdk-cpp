@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取Subscription属性集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubscriptionSet Subscription属性集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CmqSubscription> GetSubscriptionSet() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * Subscription属性集合
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CmqSubscription> m_subscriptionSet;
                     bool m_subscriptionSetHasBeenSet;

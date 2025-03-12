@@ -34,7 +34,8 @@ CreateSparkSessionBatchSQLRequest::CreateSparkSessionBatchSQLRequest() :
     m_sessionNameHasBeenSet(false),
     m_argumentsHasBeenSet(false),
     m_isInheritHasBeenSet(false),
-    m_customKeyHasBeenSet(false)
+    m_customKeyHasBeenSet(false),
+    m_sourceInfoHasBeenSet(false)
 {
 }
 
@@ -146,6 +147,21 @@ string CreateSparkSessionBatchSQLRequest::ToJsonString() const
         string key = "CustomKey";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_customKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourceInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_sourceInfo.begin(); itr != m_sourceInfo.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -346,6 +362,22 @@ void CreateSparkSessionBatchSQLRequest::SetCustomKey(const string& _customKey)
 bool CreateSparkSessionBatchSQLRequest::CustomKeyHasBeenSet() const
 {
     return m_customKeyHasBeenSet;
+}
+
+vector<KVPair> CreateSparkSessionBatchSQLRequest::GetSourceInfo() const
+{
+    return m_sourceInfo;
+}
+
+void CreateSparkSessionBatchSQLRequest::SetSourceInfo(const vector<KVPair>& _sourceInfo)
+{
+    m_sourceInfo = _sourceInfo;
+    m_sourceInfoHasBeenSet = true;
+}
+
+bool CreateSparkSessionBatchSQLRequest::SourceInfoHasBeenSet() const
+{
+    return m_sourceInfoHasBeenSet;
 }
 
 

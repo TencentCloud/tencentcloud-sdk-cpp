@@ -3437,49 +3437,6 @@ TdmqClient::DescribeRabbitMQVirtualHostOutcomeCallable TdmqClient::DescribeRabbi
     return task->get_future();
 }
 
-TdmqClient::DescribeRabbitMQVirtualHostListOutcome TdmqClient::DescribeRabbitMQVirtualHostList(const DescribeRabbitMQVirtualHostListRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeRabbitMQVirtualHostList");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeRabbitMQVirtualHostListResponse rsp = DescribeRabbitMQVirtualHostListResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeRabbitMQVirtualHostListOutcome(rsp);
-        else
-            return DescribeRabbitMQVirtualHostListOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeRabbitMQVirtualHostListOutcome(outcome.GetError());
-    }
-}
-
-void TdmqClient::DescribeRabbitMQVirtualHostListAsync(const DescribeRabbitMQVirtualHostListRequest& request, const DescribeRabbitMQVirtualHostListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRabbitMQVirtualHostList(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TdmqClient::DescribeRabbitMQVirtualHostListOutcomeCallable TdmqClient::DescribeRabbitMQVirtualHostListCallable(const DescribeRabbitMQVirtualHostListRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeRabbitMQVirtualHostListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRabbitMQVirtualHostList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TdmqClient::DescribeRocketMQClusterOutcome TdmqClient::DescribeRocketMQCluster(const DescribeRocketMQClusterRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRocketMQCluster");

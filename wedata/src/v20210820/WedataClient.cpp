@@ -5501,6 +5501,92 @@ WedataClient::DescribeRealTimeTaskSpeedOutcomeCallable WedataClient::DescribeRea
     return task->get_future();
 }
 
+WedataClient::DescribeReportTaskDetailOutcome WedataClient::DescribeReportTaskDetail(const DescribeReportTaskDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeReportTaskDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeReportTaskDetailResponse rsp = DescribeReportTaskDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeReportTaskDetailOutcome(rsp);
+        else
+            return DescribeReportTaskDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeReportTaskDetailOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DescribeReportTaskDetailAsync(const DescribeReportTaskDetailRequest& request, const DescribeReportTaskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeReportTaskDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::DescribeReportTaskDetailOutcomeCallable WedataClient::DescribeReportTaskDetailCallable(const DescribeReportTaskDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeReportTaskDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeReportTaskDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WedataClient::DescribeReportTaskListOutcome WedataClient::DescribeReportTaskList(const DescribeReportTaskListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeReportTaskList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeReportTaskListResponse rsp = DescribeReportTaskListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeReportTaskListOutcome(rsp);
+        else
+            return DescribeReportTaskListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeReportTaskListOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DescribeReportTaskListAsync(const DescribeReportTaskListRequest& request, const DescribeReportTaskListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeReportTaskList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::DescribeReportTaskListOutcomeCallable WedataClient::DescribeReportTaskListCallable(const DescribeReportTaskListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeReportTaskListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeReportTaskList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WedataClient::DescribeResourceManagePathTreesOutcome WedataClient::DescribeResourceManagePathTrees(const DescribeResourceManagePathTreesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeResourceManagePathTrees");

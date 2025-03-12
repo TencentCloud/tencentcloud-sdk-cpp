@@ -38,7 +38,8 @@ DescribeSlowQueryRecordsRequest::DescribeSlowQueryRecordsRequest() :
     m_resultBytesHasBeenSet(false),
     m_memoryUsageHasBeenSet(false),
     m_sortFieldHasBeenSet(false),
-    m_sortOrderHasBeenSet(false)
+    m_sortOrderHasBeenSet(false),
+    m_userNameHasBeenSet(false)
 {
 }
 
@@ -185,6 +186,14 @@ string DescribeSlowQueryRecordsRequest::ToJsonString() const
         string key = "SortOrder";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_sortOrder.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -449,6 +458,22 @@ void DescribeSlowQueryRecordsRequest::SetSortOrder(const string& _sortOrder)
 bool DescribeSlowQueryRecordsRequest::SortOrderHasBeenSet() const
 {
     return m_sortOrderHasBeenSet;
+}
+
+string DescribeSlowQueryRecordsRequest::GetUserName() const
+{
+    return m_userName;
+}
+
+void DescribeSlowQueryRecordsRequest::SetUserName(const string& _userName)
+{
+    m_userName = _userName;
+    m_userNameHasBeenSet = true;
+}
+
+bool DescribeSlowQueryRecordsRequest::UserNameHasBeenSet() const
+{
+    return m_userNameHasBeenSet;
 }
 
 

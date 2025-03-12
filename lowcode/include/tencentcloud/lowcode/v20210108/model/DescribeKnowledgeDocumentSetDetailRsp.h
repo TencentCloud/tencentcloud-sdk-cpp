@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取获取的数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Count 获取的数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCount() const;
 
                     /**
                      * 设置获取的数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _count 获取的数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCount(const int64_t& _count);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文档信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DocumentSet 文档信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     KnowledgeDocumentSet GetDocumentSet() const;
 
                     /**
                      * 设置文档信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _documentSet 文档信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDocumentSet(const KnowledgeDocumentSet& _documentSet);
@@ -101,14 +93,12 @@ namespace TencentCloud
 
                     /**
                      * 获取的数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_count;
                     bool m_countHasBeenSet;
 
                     /**
                      * 文档信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     KnowledgeDocumentSet m_documentSet;
                     bool m_documentSetHasBeenSet;

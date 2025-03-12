@@ -44,7 +44,8 @@ CreateListenerRequest::CreateListenerRequest() :
     m_snatEnableHasBeenSet(false),
     m_fullEndPortsHasBeenSet(false),
     m_h2cSwitchHasBeenSet(false),
-    m_sslCloseSwitchHasBeenSet(false)
+    m_sslCloseSwitchHasBeenSet(false),
+    m_dataCompressModeHasBeenSet(false)
 {
 }
 
@@ -247,6 +248,14 @@ string CreateListenerRequest::ToJsonString() const
         string key = "SslCloseSwitch";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_sslCloseSwitch, allocator);
+    }
+
+    if (m_dataCompressModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataCompressMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dataCompressMode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -607,6 +616,22 @@ void CreateListenerRequest::SetSslCloseSwitch(const bool& _sslCloseSwitch)
 bool CreateListenerRequest::SslCloseSwitchHasBeenSet() const
 {
     return m_sslCloseSwitchHasBeenSet;
+}
+
+string CreateListenerRequest::GetDataCompressMode() const
+{
+    return m_dataCompressMode;
+}
+
+void CreateListenerRequest::SetDataCompressMode(const string& _dataCompressMode)
+{
+    m_dataCompressMode = _dataCompressMode;
+    m_dataCompressModeHasBeenSet = true;
+}
+
+bool CreateListenerRequest::DataCompressModeHasBeenSet() const
+{
+    return m_dataCompressModeHasBeenSet;
 }
 
 

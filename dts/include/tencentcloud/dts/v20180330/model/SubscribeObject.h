@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据订阅对象的类型，0-数据库，1-数据库内的表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ObjectsType 数据订阅对象的类型，0-数据库，1-数据库内的表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetObjectsType() const;
 
                     /**
                      * 设置数据订阅对象的类型，0-数据库，1-数据库内的表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _objectsType 数据订阅对象的类型，0-数据库，1-数据库内的表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetObjectsType(const int64_t& _objectsType);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取订阅数据库的名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatabaseName 订阅数据库的名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDatabaseName() const;
 
                     /**
                      * 设置订阅数据库的名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _databaseName 订阅数据库的名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDatabaseName(const std::string& _databaseName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取订阅数据库中表名称数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableNames 订阅数据库中表名称数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetTableNames() const;
 
                     /**
                      * 设置订阅数据库中表名称数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tableNames 订阅数据库中表名称数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTableNames(const std::vector<std::string>& _tableNames);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 数据订阅对象的类型，0-数据库，1-数据库内的表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_objectsType;
                     bool m_objectsTypeHasBeenSet;
 
                     /**
                      * 订阅数据库的名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_databaseName;
                     bool m_databaseNameHasBeenSet;
 
                     /**
                      * 订阅数据库中表名称数组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_tableNames;
                     bool m_tableNamesHasBeenSet;

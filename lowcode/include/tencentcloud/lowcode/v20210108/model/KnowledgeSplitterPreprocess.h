@@ -51,12 +51,10 @@ namespace TencentCloud
 false：不追加。
 true：将段落 Title 追加到切分后的段落。
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppendTitleToChunk 在对文件拆分时，配置是否将 Title 追加到切分后的段落后面一并 Embedding。取值如下所示：
 false：不追加。
 true：将段落 Title 追加到切分后的段落。
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetAppendTitleToChunk() const;
@@ -66,12 +64,10 @@ true：将段落 Title 追加到切分后的段落。
 false：不追加。
 true：将段落 Title 追加到切分后的段落。
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appendTitleToChunk 在对文件拆分时，配置是否将 Title 追加到切分后的段落后面一并 Embedding。取值如下所示：
 false：不追加。
 true：将段落 Title 追加到切分后的段落。
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppendTitleToChunk(const bool& _appendTitleToChunk);
@@ -88,12 +84,10 @@ true：将段落 Title 追加到切分后的段落。
 false：不追加。
 true：将全文的 keywords 追加到切分后的段落。
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppendKeywordsToChunk 在对文件拆分时，配置是否将关键字 keywords 追加到切分后的段落一并 Embedding。取值如下所示：
 false：不追加。
 true：将全文的 keywords 追加到切分后的段落。
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetAppendKeywordsToChunk() const;
@@ -103,12 +97,10 @@ true：将全文的 keywords 追加到切分后的段落。
 false：不追加。
 true：将全文的 keywords 追加到切分后的段落。
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appendKeywordsToChunk 在对文件拆分时，配置是否将关键字 keywords 追加到切分后的段落一并 Embedding。取值如下所示：
 false：不追加。
 true：将全文的 keywords 追加到切分后的段落。
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppendKeywordsToChunk(const bool& _appendKeywordsToChunk);
@@ -127,7 +119,6 @@ true：将全文的 keywords 追加到切分后的段落。
 false：不追加。
 true：将段落 Title 追加到切分后的段落。
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_appendTitleToChunk;
                     bool m_appendTitleToChunkHasBeenSet;
@@ -137,7 +128,6 @@ true：将段落 Title 追加到切分后的段落。
 false：不追加。
 true：将全文的 keywords 追加到切分后的段落。
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_appendKeywordsToChunk;
                     bool m_appendKeywordsToChunkHasBeenSet;

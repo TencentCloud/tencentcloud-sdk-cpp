@@ -26,7 +26,8 @@ DescribeTaskResultRequest::DescribeTaskResultRequest() :
     m_taskIdHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResultsHasBeenSet(false),
-    m_isTransformDataTypeHasBeenSet(false)
+    m_isTransformDataTypeHasBeenSet(false),
+    m_dataFieldCutLenHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string DescribeTaskResultRequest::ToJsonString() const
         string key = "IsTransformDataType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isTransformDataType, allocator);
+    }
+
+    if (m_dataFieldCutLenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataFieldCutLen";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_dataFieldCutLen, allocator);
     }
 
 
@@ -139,6 +148,22 @@ void DescribeTaskResultRequest::SetIsTransformDataType(const bool& _isTransformD
 bool DescribeTaskResultRequest::IsTransformDataTypeHasBeenSet() const
 {
     return m_isTransformDataTypeHasBeenSet;
+}
+
+int64_t DescribeTaskResultRequest::GetDataFieldCutLen() const
+{
+    return m_dataFieldCutLen;
+}
+
+void DescribeTaskResultRequest::SetDataFieldCutLen(const int64_t& _dataFieldCutLen)
+{
+    m_dataFieldCutLen = _dataFieldCutLen;
+    m_dataFieldCutLenHasBeenSet = true;
+}
+
+bool DescribeTaskResultRequest::DataFieldCutLenHasBeenSet() const
+{
+    return m_dataFieldCutLenHasBeenSet;
 }
 
 

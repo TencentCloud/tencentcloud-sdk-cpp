@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取给文件分配的 ID 信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DocumentSetId 给文件分配的 ID 信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDocumentSetId() const;
 
                     /**
                      * 设置给文件分配的 ID 信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _documentSetId 给文件分配的 ID 信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDocumentSetId(const std::string& _documentSetId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DocumentSetName 文件名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDocumentSetName() const;
 
                     /**
                      * 设置文件名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _documentSetName 文件名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDocumentSetName(const std::string& _documentSetName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件标题
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileTitle 文件标题
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileTitle() const;
 
                     /**
                      * 设置文件标题
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileTitle 文件标题
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileTitle(const std::string& _fileTitle);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件元信息，为jsonstring
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileMetaData 文件元信息，为jsonstring
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileMetaData() const;
 
                     /**
                      * 设置文件元信息，为jsonstring
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileMetaData 文件元信息，为jsonstring
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileMetaData(const std::string& _fileMetaData);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 给文件分配的 ID 信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_documentSetId;
                     bool m_documentSetIdHasBeenSet;
 
                     /**
                      * 文件名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_documentSetName;
                     bool m_documentSetNameHasBeenSet;
 
                     /**
                      * 文件标题
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileTitle;
                     bool m_fileTitleHasBeenSet;
 
                     /**
                      * 文件元信息，为jsonstring
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileMetaData;
                     bool m_fileMetaDataHasBeenSet;

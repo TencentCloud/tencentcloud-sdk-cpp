@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/essbasic/v20210526/model/Component.h>
 #include <tencentcloud/essbasic/v20210526/model/Recipient.h>
+#include <tencentcloud/essbasic/v20210526/model/UserFlowType.h>
 
 
 namespace TencentCloud
@@ -497,6 +498,27 @@ namespace TencentCloud
                      */
                     bool AvailableHasBeenSet() const;
 
+                    /**
+                     * 获取模版的用户合同类型
+                     * @return UserFlowType 模版的用户合同类型
+                     * 
+                     */
+                    UserFlowType GetUserFlowType() const;
+
+                    /**
+                     * 设置模版的用户合同类型
+                     * @param _userFlowType 模版的用户合同类型
+                     * 
+                     */
+                    void SetUserFlowType(const UserFlowType& _userFlowType);
+
+                    /**
+                     * 判断参数 UserFlowType 是否已赋值
+                     * @return UserFlowType 是否已赋值
+                     * 
+                     */
+                    bool UserFlowTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -621,6 +643,12 @@ namespace TencentCloud
                      */
                     int64_t m_available;
                     bool m_availableHasBeenSet;
+
+                    /**
+                     * 模版的用户合同类型
+                     */
+                    UserFlowType m_userFlowType;
+                    bool m_userFlowTypeHasBeenSet;
 
                 };
             }

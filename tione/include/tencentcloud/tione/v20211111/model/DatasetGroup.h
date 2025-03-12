@@ -850,6 +850,56 @@ namespace TencentCloud
                      */
                     bool AnnotationSchemaConfiguredHasBeenSet() const;
 
+                    /**
+                     * 获取创建者名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreatorNickname 创建者名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCreatorNickname() const;
+
+                    /**
+                     * 设置创建者名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _creatorNickname 创建者名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCreatorNickname(const std::string& _creatorNickname);
+
+                    /**
+                     * 判断参数 CreatorNickname 是否已赋值
+                     * @return CreatorNickname 是否已赋值
+                     * 
+                     */
+                    bool CreatorNicknameHasBeenSet() const;
+
+                    /**
+                     * 获取cfs路径是否有修改
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsCfsUpdated cfs路径是否有修改
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetIsCfsUpdated() const;
+
+                    /**
+                     * 设置cfs路径是否有修改
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isCfsUpdated cfs路径是否有修改
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsCfsUpdated(const bool& _isCfsUpdated);
+
+                    /**
+                     * 判断参数 IsCfsUpdated 是否已赋值
+                     * @return IsCfsUpdated 是否已赋值
+                     * 
+                     */
+                    bool IsCfsUpdatedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1075,6 +1125,20 @@ namespace TencentCloud
                      */
                     bool m_annotationSchemaConfigured;
                     bool m_annotationSchemaConfiguredHasBeenSet;
+
+                    /**
+                     * 创建者名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_creatorNickname;
+                    bool m_creatorNicknameHasBeenSet;
+
+                    /**
+                     * cfs路径是否有修改
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isCfsUpdated;
+                    bool m_isCfsUpdatedHasBeenSet;
 
                 };
             }

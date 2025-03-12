@@ -26,7 +26,8 @@ CheckAnimateImageJobRequest::CheckAnimateImageJobRequest() :
     m_templateIdHasBeenSet(false),
     m_imageUrlHasBeenSet(false),
     m_imageBase64HasBeenSet(false),
-    m_enableBodyJoinsHasBeenSet(false)
+    m_enableBodyJoinsHasBeenSet(false),
+    m_enableFaceHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string CheckAnimateImageJobRequest::ToJsonString() const
         string key = "EnableBodyJoins";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableBodyJoins, allocator);
+    }
+
+    if (m_enableFaceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableFace";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableFace, allocator);
     }
 
 
@@ -139,6 +148,22 @@ void CheckAnimateImageJobRequest::SetEnableBodyJoins(const bool& _enableBodyJoin
 bool CheckAnimateImageJobRequest::EnableBodyJoinsHasBeenSet() const
 {
     return m_enableBodyJoinsHasBeenSet;
+}
+
+bool CheckAnimateImageJobRequest::GetEnableFace() const
+{
+    return m_enableFace;
+}
+
+void CheckAnimateImageJobRequest::SetEnableFace(const bool& _enableFace)
+{
+    m_enableFace = _enableFace;
+    m_enableFaceHasBeenSet = true;
+}
+
+bool CheckAnimateImageJobRequest::EnableFaceHasBeenSet() const
+{
+    return m_enableFaceHasBeenSet;
 }
 
 

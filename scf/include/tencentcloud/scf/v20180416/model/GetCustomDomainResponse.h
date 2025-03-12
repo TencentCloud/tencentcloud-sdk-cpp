@@ -24,6 +24,7 @@
 #include <tencentcloud/scf/v20180416/model/EndpointsConf.h>
 #include <tencentcloud/scf/v20180416/model/CertConf.h>
 #include <tencentcloud/scf/v20180416/model/WafConf.h>
+#include <tencentcloud/scf/v20180416/model/Tag.h>
 
 
 namespace TencentCloud
@@ -116,6 +117,20 @@ namespace TencentCloud
                      */
                     bool WafConfigHasBeenSet() const;
 
+                    /**
+                     * 获取标签
+                     * @return Tags 标签
+                     * 
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -147,6 +162,12 @@ namespace TencentCloud
                      */
                     WafConf m_wafConfig;
                     bool m_wafConfigHasBeenSet;
+
+                    /**
+                     * 标签
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

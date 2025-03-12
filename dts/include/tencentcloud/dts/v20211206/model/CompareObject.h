@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取对象模式 整实例-all,部分对象-partial
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ObjectMode 对象模式 整实例-all,部分对象-partial
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetObjectMode() const;
 
                     /**
                      * 设置对象模式 整实例-all,部分对象-partial
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _objectMode 对象模式 整实例-all,部分对象-partial
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetObjectMode(const std::string& _objectMode);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取对象列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ObjectItems 对象列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CompareObjectItem> GetObjectItems() const;
 
                     /**
                      * 设置对象列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _objectItems 对象列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetObjectItems(const std::vector<CompareObjectItem>& _objectItems);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取高级对象类型，目前只支持mongodb链路。如index(索引),shardkey(片键),schema(库表)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdvancedObjects 高级对象类型，目前只支持mongodb链路。如index(索引),shardkey(片键),schema(库表)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetAdvancedObjects() const;
 
                     /**
                      * 设置高级对象类型，目前只支持mongodb链路。如index(索引),shardkey(片键),schema(库表)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _advancedObjects 高级对象类型，目前只支持mongodb链路。如index(索引),shardkey(片键),schema(库表)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAdvancedObjects(const std::vector<std::string>& _advancedObjects);
@@ -126,21 +114,18 @@ namespace TencentCloud
 
                     /**
                      * 对象模式 整实例-all,部分对象-partial
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_objectMode;
                     bool m_objectModeHasBeenSet;
 
                     /**
                      * 对象列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CompareObjectItem> m_objectItems;
                     bool m_objectItemsHasBeenSet;
 
                     /**
                      * 高级对象类型，目前只支持mongodb链路。如index(索引),shardkey(片键),schema(库表)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_advancedObjects;
                     bool m_advancedObjectsHasBeenSet;

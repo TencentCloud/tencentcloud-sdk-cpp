@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取kafka分区数量，枚举值为1，4，8
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NumberOfPartitions kafka分区数量，枚举值为1，4，8
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetNumberOfPartitions() const;
 
                     /**
                      * 设置kafka分区数量，枚举值为1，4，8
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _numberOfPartitions kafka分区数量，枚举值为1，4，8
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNumberOfPartitions(const uint64_t& _numberOfPartitions);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分区规则。当NumberOfPartitions > 1时，该项必填。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DistributeRules 分区规则。当NumberOfPartitions > 1时，该项必填。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DistributeRule> GetDistributeRules() const;
 
                     /**
                      * 设置分区规则。当NumberOfPartitions > 1时，该项必填。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _distributeRules 分区规则。当NumberOfPartitions > 1时，该项必填。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDistributeRules(const std::vector<DistributeRule>& _distributeRules);
@@ -101,11 +93,9 @@ namespace TencentCloud
                      * 获取默认分区策略。当NumberOfPartitions > 1时，该项必填。不满足DistributeRules中正则表达式的数据，将按照默认分区策略计算分区。
 非mongo产品的枚举值为: table-按表名分区，pk-按表名+主键分区。mongo的枚举值为：collection-按集合名分区。
 该字段与DistributeRules搭配使用，如果配置了该字段，视为配置了一条DistributeRules。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefaultRuleType 默认分区策略。当NumberOfPartitions > 1时，该项必填。不满足DistributeRules中正则表达式的数据，将按照默认分区策略计算分区。
 非mongo产品的枚举值为: table-按表名分区，pk-按表名+主键分区。mongo的枚举值为：collection-按集合名分区。
 该字段与DistributeRules搭配使用，如果配置了该字段，视为配置了一条DistributeRules。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDefaultRuleType() const;
@@ -114,11 +104,9 @@ namespace TencentCloud
                      * 设置默认分区策略。当NumberOfPartitions > 1时，该项必填。不满足DistributeRules中正则表达式的数据，将按照默认分区策略计算分区。
 非mongo产品的枚举值为: table-按表名分区，pk-按表名+主键分区。mongo的枚举值为：collection-按集合名分区。
 该字段与DistributeRules搭配使用，如果配置了该字段，视为配置了一条DistributeRules。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _defaultRuleType 默认分区策略。当NumberOfPartitions > 1时，该项必填。不满足DistributeRules中正则表达式的数据，将按照默认分区策略计算分区。
 非mongo产品的枚举值为: table-按表名分区，pk-按表名+主键分区。mongo的枚举值为：collection-按集合名分区。
 该字段与DistributeRules搭配使用，如果配置了该字段，视为配置了一条DistributeRules。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDefaultRuleType(const std::string& _defaultRuleType);
@@ -134,14 +122,12 @@ namespace TencentCloud
 
                     /**
                      * kafka分区数量，枚举值为1，4，8
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_numberOfPartitions;
                     bool m_numberOfPartitionsHasBeenSet;
 
                     /**
                      * 分区规则。当NumberOfPartitions > 1时，该项必填。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DistributeRule> m_distributeRules;
                     bool m_distributeRulesHasBeenSet;
@@ -150,7 +136,6 @@ namespace TencentCloud
                      * 默认分区策略。当NumberOfPartitions > 1时，该项必填。不满足DistributeRules中正则表达式的数据，将按照默认分区策略计算分区。
 非mongo产品的枚举值为: table-按表名分区，pk-按表名+主键分区。mongo的枚举值为：collection-按集合名分区。
 该字段与DistributeRules搭配使用，如果配置了该字段，视为配置了一条DistributeRules。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_defaultRuleType;
                     bool m_defaultRuleTypeHasBeenSet;

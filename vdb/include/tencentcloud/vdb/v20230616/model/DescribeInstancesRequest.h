@@ -130,21 +130,21 @@ namespace TencentCloud
                     /**
                      * 获取按照引擎筛选实例。
                      * @return EngineNames 按照引擎筛选实例。
-                     * 
+                     * @deprecated
                      */
                     std::vector<std::string> GetEngineNames() const;
 
                     /**
                      * 设置按照引擎筛选实例。
                      * @param _engineNames 按照引擎筛选实例。
-                     * 
+                     * @deprecated
                      */
                     void SetEngineNames(const std::vector<std::string>& _engineNames);
 
                     /**
                      * 判断参数 EngineNames 是否已赋值
                      * @return EngineNames 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool EngineNamesHasBeenSet() const;
 
@@ -214,21 +214,21 @@ namespace TencentCloud
                     /**
                      * 获取按照可用区筛选实例。
                      * @return Zones 按照可用区筛选实例。
-                     * 
+                     * @deprecated
                      */
                     std::vector<std::string> GetZones() const;
 
                     /**
                      * 设置按照可用区筛选实例。
                      * @param _zones 按照可用区筛选实例。
-                     * 
+                     * @deprecated
                      */
                     void SetZones(const std::vector<std::string>& _zones);
 
                     /**
                      * 判断参数 Zones 是否已赋值
                      * @return Zones 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ZonesHasBeenSet() const;
 
