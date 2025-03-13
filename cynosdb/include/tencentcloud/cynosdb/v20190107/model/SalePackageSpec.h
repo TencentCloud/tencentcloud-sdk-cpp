@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源包使用地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackageRegion 资源包使用地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPackageRegion() const;
 
                     /**
                      * 设置资源包使用地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _packageRegion 资源包使用地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPackageRegion(const std::string& _packageRegion);
@@ -75,11 +71,9 @@ namespace TencentCloud
                      * 获取资源包类型
 CCU-计算资源包
 DISK-存储资源包
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackageType 资源包类型
 CCU-计算资源包
 DISK-存储资源包
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPackageType() const;
@@ -88,11 +82,9 @@ DISK-存储资源包
                      * 设置资源包类型
 CCU-计算资源包
 DISK-存储资源包
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _packageType 资源包类型
 CCU-计算资源包
 DISK-存储资源包
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPackageType(const std::string& _packageType);
@@ -107,10 +99,8 @@ DISK-存储资源包
                     /**
                      * 获取资源包版本
 base-基础版本，common-通用版本，enterprise-企业版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackageVersion 资源包版本
 base-基础版本，common-通用版本，enterprise-企业版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPackageVersion() const;
@@ -118,10 +108,8 @@ base-基础版本，common-通用版本，enterprise-企业版本
                     /**
                      * 设置资源包版本
 base-基础版本，common-通用版本，enterprise-企业版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _packageVersion 资源包版本
 base-基础版本，common-通用版本，enterprise-企业版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPackageVersion(const std::string& _packageVersion);
@@ -135,18 +123,14 @@ base-基础版本，common-通用版本，enterprise-企业版本
 
                     /**
                      * 获取当前版本资源包最小资源数，计算资源单位：个；存储资源：GB
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MinPackageSpec 当前版本资源包最小资源数，计算资源单位：个；存储资源：GB
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetMinPackageSpec() const;
 
                     /**
                      * 设置当前版本资源包最小资源数，计算资源单位：个；存储资源：GB
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _minPackageSpec 当前版本资源包最小资源数，计算资源单位：个；存储资源：GB
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMinPackageSpec(const double& _minPackageSpec);
@@ -160,18 +144,14 @@ base-基础版本，common-通用版本，enterprise-企业版本
 
                     /**
                      * 获取当前版本资源包最大资源数，计算资源单位：个；存储资源：GB
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxPackageSpec 当前版本资源包最大资源数，计算资源单位：个；存储资源：GB
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetMaxPackageSpec() const;
 
                     /**
                      * 设置当前版本资源包最大资源数，计算资源单位：个；存储资源：GB
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxPackageSpec 当前版本资源包最大资源数，计算资源单位：个；存储资源：GB
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxPackageSpec(const double& _maxPackageSpec);
@@ -185,18 +165,14 @@ base-基础版本，common-通用版本，enterprise-企业版本
 
                     /**
                      * 获取资源包有效期，单位:天
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpireDay 资源包有效期，单位:天
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetExpireDay() const;
 
                     /**
                      * 设置资源包有效期，单位:天
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _expireDay 资源包有效期，单位:天
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExpireDay(const int64_t& _expireDay);
@@ -212,7 +188,6 @@ base-基础版本，common-通用版本，enterprise-企业版本
 
                     /**
                      * 资源包使用地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_packageRegion;
                     bool m_packageRegionHasBeenSet;
@@ -221,7 +196,6 @@ base-基础版本，common-通用版本，enterprise-企业版本
                      * 资源包类型
 CCU-计算资源包
 DISK-存储资源包
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_packageType;
                     bool m_packageTypeHasBeenSet;
@@ -229,28 +203,24 @@ DISK-存储资源包
                     /**
                      * 资源包版本
 base-基础版本，common-通用版本，enterprise-企业版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_packageVersion;
                     bool m_packageVersionHasBeenSet;
 
                     /**
                      * 当前版本资源包最小资源数，计算资源单位：个；存储资源：GB
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_minPackageSpec;
                     bool m_minPackageSpecHasBeenSet;
 
                     /**
                      * 当前版本资源包最大资源数，计算资源单位：个；存储资源：GB
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_maxPackageSpec;
                     bool m_maxPackageSpecHasBeenSet;
 
                     /**
                      * 资源包有效期，单位:天
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_expireDay;
                     bool m_expireDayHasBeenSet;

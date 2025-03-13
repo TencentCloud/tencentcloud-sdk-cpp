@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务自增ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskId 任务自增ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTaskId() const;
 
                     /**
                      * 设置任务自增ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskId 任务自增ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskId(const int64_t& _taskId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskType 任务类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskType() const;
 
                     /**
                      * 设置任务类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskType 任务类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskType(const std::string& _taskType);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskStatus 任务状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskStatus() const;
 
                     /**
                      * 设置任务状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskStatus 任务状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskStatus(const std::string& _taskStatus);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务ID（集群ID|实例组ID|实例ID）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ObjectId 任务ID（集群ID|实例组ID|实例ID）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetObjectId() const;
 
                     /**
                      * 设置任务ID（集群ID|实例组ID|实例ID）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _objectId 任务ID（集群ID|实例组ID|实例ID）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetObjectId(const std::string& _objectId);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ObjectType 任务类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetObjectType() const;
 
                     /**
                      * 设置任务类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _objectType 任务类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetObjectType(const std::string& _objectType);
@@ -175,35 +155,30 @@ namespace TencentCloud
 
                     /**
                      * 任务自增ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
                      * 任务类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskType;
                     bool m_taskTypeHasBeenSet;
 
                     /**
                      * 任务状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskStatus;
                     bool m_taskStatusHasBeenSet;
 
                     /**
                      * 任务ID（集群ID|实例组ID|实例ID）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_objectId;
                     bool m_objectIdHasBeenSet;
 
                     /**
                      * 任务类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_objectType;
                     bool m_objectTypeHasBeenSet;

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceGroupId 实例组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceGroupId() const;
 
                     /**
                      * 设置实例组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceGroupId 实例组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceGroupId(const std::string& _instanceGroupId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取vpc信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UniqVpcId vpc信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUniqVpcId() const;
 
                     /**
                      * 设置vpc信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uniqVpcId vpc信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUniqVpcId(const std::string& _uniqVpcId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子网信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UniqSubnetId 子网信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUniqSubnetId() const;
 
                     /**
                      * 设置子网信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uniqSubnetId 子网信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUniqSubnetId(const std::string& _uniqSubnetId);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取vip信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vip vip信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVip() const;
 
                     /**
                      * 设置vip信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vip vip信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVip(const std::string& _vip);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取vport信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vport vport信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetVport() const;
 
                     /**
                      * 设置vport信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vport vport信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVport(const int64_t& _vport);
@@ -175,35 +155,30 @@ namespace TencentCloud
 
                     /**
                      * 实例组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceGroupId;
                     bool m_instanceGroupIdHasBeenSet;
 
                     /**
                      * vpc信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uniqVpcId;
                     bool m_uniqVpcIdHasBeenSet;
 
                     /**
                      * 子网信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uniqSubnetId;
                     bool m_uniqSubnetIdHasBeenSet;
 
                     /**
                      * vip信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vip;
                     bool m_vipHasBeenSet;
 
                     /**
                      * vport信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_vport;
                     bool m_vportHasBeenSet;

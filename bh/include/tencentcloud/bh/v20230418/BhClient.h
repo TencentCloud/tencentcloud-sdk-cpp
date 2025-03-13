@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/bh/v20230418/model/AccessDevicesRequest.h>
+#include <tencentcloud/bh/v20230418/model/AccessDevicesResponse.h>
 #include <tencentcloud/bh/v20230418/model/AddDeviceGroupMembersRequest.h>
 #include <tencentcloud/bh/v20230418/model/AddDeviceGroupMembersResponse.h>
 #include <tencentcloud/bh/v20230418/model/AddUserGroupMembersRequest.h>
@@ -161,6 +163,9 @@ namespace TencentCloud
                 BhClient(const Credential &credential, const std::string &region);
                 BhClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::AccessDevicesResponse> AccessDevicesOutcome;
+                typedef std::future<AccessDevicesOutcome> AccessDevicesOutcomeCallable;
+                typedef std::function<void(const BhClient*, const Model::AccessDevicesRequest&, AccessDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AccessDevicesAsyncHandler;
                 typedef Outcome<Core::Error, Model::AddDeviceGroupMembersResponse> AddDeviceGroupMembersOutcome;
                 typedef std::future<AddDeviceGroupMembersOutcome> AddDeviceGroupMembersOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::AddDeviceGroupMembersRequest&, AddDeviceGroupMembersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddDeviceGroupMembersAsyncHandler;
@@ -349,6 +354,15 @@ namespace TencentCloud
                 typedef std::function<void(const BhClient*, const Model::SearchSessionCommandRequest&, SearchSessionCommandOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchSessionCommandAsyncHandler;
 
 
+
+                /**
+                 *外部客户访问资产
+                 * @param req AccessDevicesRequest
+                 * @return AccessDevicesOutcome
+                 */
+                AccessDevicesOutcome AccessDevices(const Model::AccessDevicesRequest &request);
+                void AccessDevicesAsync(const Model::AccessDevicesRequest& request, const AccessDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AccessDevicesOutcomeCallable AccessDevicesCallable(const Model::AccessDevicesRequest& request);
 
                 /**
                  *添加资产组成员

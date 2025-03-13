@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备通道所属的设备名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceName 设备通道所属的设备名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置设备通道所属的设备名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceName 设备通道所属的设备名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
@@ -115,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备通道名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChannelName 设备通道名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetChannelName() const;
 
                     /**
                      * 设置设备通道名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _channelName 设备通道名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChannelName(const std::string& _channelName);
@@ -140,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取所属组织名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrganizationName 所属组织名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOrganizationName() const;
 
                     /**
                      * 设置所属组织名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _organizationName 所属组织名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOrganizationName(const std::string& _organizationName);
@@ -194,7 +182,6 @@ namespace TencentCloud
 
                     /**
                      * 设备通道所属的设备名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceName;
                     bool m_deviceNameHasBeenSet;
@@ -207,14 +194,12 @@ namespace TencentCloud
 
                     /**
                      * 设备通道名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_channelName;
                     bool m_channelNameHasBeenSet;
 
                     /**
                      * 所属组织名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_organizationName;
                     bool m_organizationNameHasBeenSet;

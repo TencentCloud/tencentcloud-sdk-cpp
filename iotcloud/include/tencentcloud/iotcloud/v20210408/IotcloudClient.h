@@ -595,7 +595,7 @@ namespace TencentCloud
                 DescribeDeviceResourcesOutcomeCallable DescribeDeviceResourcesCallable(const Model::DescribeDeviceResourcesRequest& request);
 
                 /**
-                 *本接口（DescribeDeviceShadow）用于查询虚拟设备信息。 
+                 *本接口（DescribeDeviceShadow）用于查询虚拟设备信息。
                  * @param req DescribeDeviceShadowRequest
                  * @return DescribeDeviceShadowOutcome
                  */

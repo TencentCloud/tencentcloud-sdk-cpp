@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取表名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableName 表名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTableName() const;
 
                     /**
                      * 设置表名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tableName 表名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTableName(const std::string& _tableName);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取新表名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NewTableName 新表名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNewTableName() const;
 
                     /**
                      * 设置新表名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _newTableName 新表名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNewTableName(const std::string& _newTableName);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取过滤条件
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FilterCondition 过滤条件
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFilterCondition() const;
 
                     /**
                      * 设置过滤条件
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _filterCondition 过滤条件
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFilterCondition(const std::string& _filterCondition);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否同步表中所有列，All：当前表下的所有列,Partial(ModifySyncJobConfig接口里的对应字段ColumnMode暂不支持Partial)：当前表下的部分列，通过填充Columns字段详细表信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ColumnMode 是否同步表中所有列，All：当前表下的所有列,Partial(ModifySyncJobConfig接口里的对应字段ColumnMode暂不支持Partial)：当前表下的部分列，通过填充Columns字段详细表信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetColumnMode() const;
 
                     /**
                      * 设置是否同步表中所有列，All：当前表下的所有列,Partial(ModifySyncJobConfig接口里的对应字段ColumnMode暂不支持Partial)：当前表下的部分列，通过填充Columns字段详细表信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _columnMode 是否同步表中所有列，All：当前表下的所有列,Partial(ModifySyncJobConfig接口里的对应字段ColumnMode暂不支持Partial)：当前表下的部分列，通过填充Columns字段详细表信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetColumnMode(const std::string& _columnMode);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取同步的列信息，当ColumnMode为Partial时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Columns 同步的列信息，当ColumnMode为Partial时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Column> GetColumns() const;
 
                     /**
                      * 设置同步的列信息，当ColumnMode为Partial时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _columns 同步的列信息，当ColumnMode为Partial时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetColumns(const std::vector<Column>& _columns);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取同步临时表，注意此配置与NewTableName互斥，只能使用其中一种。当配置的同步对象为表级别且TableEditMode为pt时此项有意义，针对pt-osc等工具在同步过程中产生的临时表进行同步，需要提前将可能的临时表配置在这里，否则不会同步任何临时表。示例，如要对t1进行pt-osc操作，此项配置应该为["\_t1\_new","\_t1\_old"]；如要对t1进行gh-ost操作，此项配置应该为["\_t1\_ghc","\_t1\_gho","\_t1\_del"]，pt-osc与gh-ost产生的临时表可同时配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TmpTables 同步临时表，注意此配置与NewTableName互斥，只能使用其中一种。当配置的同步对象为表级别且TableEditMode为pt时此项有意义，针对pt-osc等工具在同步过程中产生的临时表进行同步，需要提前将可能的临时表配置在这里，否则不会同步任何临时表。示例，如要对t1进行pt-osc操作，此项配置应该为["\_t1\_new","\_t1\_old"]；如要对t1进行gh-ost操作，此项配置应该为["\_t1\_ghc","\_t1\_gho","\_t1\_del"]，pt-osc与gh-ost产生的临时表可同时配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetTmpTables() const;
 
                     /**
                      * 设置同步临时表，注意此配置与NewTableName互斥，只能使用其中一种。当配置的同步对象为表级别且TableEditMode为pt时此项有意义，针对pt-osc等工具在同步过程中产生的临时表进行同步，需要提前将可能的临时表配置在这里，否则不会同步任何临时表。示例，如要对t1进行pt-osc操作，此项配置应该为["\_t1\_new","\_t1\_old"]；如要对t1进行gh-ost操作，此项配置应该为["\_t1\_ghc","\_t1\_gho","\_t1\_del"]，pt-osc与gh-ost产生的临时表可同时配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tmpTables 同步临时表，注意此配置与NewTableName互斥，只能使用其中一种。当配置的同步对象为表级别且TableEditMode为pt时此项有意义，针对pt-osc等工具在同步过程中产生的临时表进行同步，需要提前将可能的临时表配置在这里，否则不会同步任何临时表。示例，如要对t1进行pt-osc操作，此项配置应该为["\_t1\_new","\_t1\_old"]；如要对t1进行gh-ost操作，此项配置应该为["\_t1\_ghc","\_t1\_gho","\_t1\_del"]，pt-osc与gh-ost产生的临时表可同时配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTmpTables(const std::vector<std::string>& _tmpTables);
@@ -199,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取编辑表类型，rename(表映射)，pt(同步附加表)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableEditMode 编辑表类型，rename(表映射)，pt(同步附加表)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTableEditMode() const;
 
                     /**
                      * 设置编辑表类型，rename(表映射)，pt(同步附加表)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tableEditMode 编辑表类型，rename(表映射)，pt(同步附加表)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTableEditMode(const std::string& _tableEditMode);
@@ -226,49 +198,42 @@ namespace TencentCloud
 
                     /**
                      * 表名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tableName;
                     bool m_tableNameHasBeenSet;
 
                     /**
                      * 新表名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_newTableName;
                     bool m_newTableNameHasBeenSet;
 
                     /**
                      * 过滤条件
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_filterCondition;
                     bool m_filterConditionHasBeenSet;
 
                     /**
                      * 是否同步表中所有列，All：当前表下的所有列,Partial(ModifySyncJobConfig接口里的对应字段ColumnMode暂不支持Partial)：当前表下的部分列，通过填充Columns字段详细表信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_columnMode;
                     bool m_columnModeHasBeenSet;
 
                     /**
                      * 同步的列信息，当ColumnMode为Partial时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Column> m_columns;
                     bool m_columnsHasBeenSet;
 
                     /**
                      * 同步临时表，注意此配置与NewTableName互斥，只能使用其中一种。当配置的同步对象为表级别且TableEditMode为pt时此项有意义，针对pt-osc等工具在同步过程中产生的临时表进行同步，需要提前将可能的临时表配置在这里，否则不会同步任何临时表。示例，如要对t1进行pt-osc操作，此项配置应该为["\_t1\_new","\_t1\_old"]；如要对t1进行gh-ost操作，此项配置应该为["\_t1\_ghc","\_t1\_gho","\_t1\_del"]，pt-osc与gh-ost产生的临时表可同时配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_tmpTables;
                     bool m_tmpTablesHasBeenSet;
 
                     /**
                      * 编辑表类型，rename(表映射)，pt(同步附加表)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tableEditMode;
                     bool m_tableEditModeHasBeenSet;

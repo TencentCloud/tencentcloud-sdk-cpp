@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取客户端ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DbHost 客户端ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDbHost() const;
 
                     /**
                      * 设置客户端ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dbHost 客户端ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDbHost(const std::string& _dbHost);
@@ -94,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户权限
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DbPrivilege 用户权限
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDbPrivilege() const;
 
                     /**
                      * 设置用户权限
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dbPrivilege 用户权限
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDbPrivilege(const std::string& _dbPrivilege);
@@ -127,14 +119,12 @@ namespace TencentCloud
 
                     /**
                      * 客户端ip
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dbHost;
                     bool m_dbHostHasBeenSet;
 
                     /**
                      * 用户权限
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dbPrivilege;
                     bool m_dbPrivilegeHasBeenSet;

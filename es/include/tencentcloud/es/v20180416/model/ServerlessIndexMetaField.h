@@ -101,6 +101,31 @@ namespace TencentCloud
                     bool IndexNameHasBeenSet() const;
 
                     /**
+                     * 获取索引元数据JSON
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IndexMetaJson 索引元数据JSON
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetIndexMetaJson() const;
+
+                    /**
+                     * 设置索引元数据JSON
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _indexMetaJson 索引元数据JSON
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIndexMetaJson(const std::string& _indexMetaJson);
+
+                    /**
+                     * 判断参数 IndexMetaJson 是否已赋值
+                     * @return IndexMetaJson 是否已赋值
+                     * 
+                     */
+                    bool IndexMetaJsonHasBeenSet() const;
+
+                    /**
                      * 获取索引文档数
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return IndexDocs 索引文档数
@@ -511,6 +536,13 @@ namespace TencentCloud
                      */
                     std::string m_indexName;
                     bool m_indexNameHasBeenSet;
+
+                    /**
+                     * 索引元数据JSON
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_indexMetaJson;
+                    bool m_indexMetaJsonHasBeenSet;
 
                     /**
                      * 索引文档数

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterId 集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterId 集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterName 集群名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterName() const;
 
                     /**
                      * 设置集群名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterName 集群名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterName(const std::string& _clusterName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取vpc信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UniqVpcId vpc信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUniqVpcId() const;
 
                     /**
                      * 设置vpc信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uniqVpcId vpc信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUniqVpcId(const std::string& _uniqVpcId);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子网信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UniqSubnetId 子网信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUniqSubnetId() const;
 
                     /**
                      * 设置子网信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uniqSubnetId 子网信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUniqSubnetId(const std::string& _uniqSubnetId);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取vip信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vip vip信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVip() const;
 
                     /**
                      * 设置vip信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vip vip信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVip(const std::string& _vip);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取vport信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vport vport信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetVport() const;
 
                     /**
                      * 设置vport信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vport vport信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVport(const int64_t& _vport);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceId 实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceName 实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceName 实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -273,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取cpu大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cpu cpu大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCpu() const;
 
                     /**
                      * 设置cpu大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cpu cpu大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCpu(const int64_t& _cpu);
@@ -298,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内存大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Mem 内存大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMem() const;
 
                     /**
                      * 设置内存大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mem 内存大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMem(const int64_t& _mem);
@@ -323,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取存储大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StorageLimit 存储大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStorageLimit() const;
 
                     /**
                      * 设置存储大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _storageLimit 存储大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStorageLimit(const int64_t& _storageLimit);
@@ -350,84 +302,72 @@ namespace TencentCloud
 
                     /**
                      * 集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
                      * 集群名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterName;
                     bool m_clusterNameHasBeenSet;
 
                     /**
                      * vpc信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uniqVpcId;
                     bool m_uniqVpcIdHasBeenSet;
 
                     /**
                      * 子网信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uniqSubnetId;
                     bool m_uniqSubnetIdHasBeenSet;
 
                     /**
                      * vip信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vip;
                     bool m_vipHasBeenSet;
 
                     /**
                      * vport信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_vport;
                     bool m_vportHasBeenSet;
 
                     /**
                      * 实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
                      * 实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
                      * 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * cpu大小
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_cpu;
                     bool m_cpuHasBeenSet;
 
                     /**
                      * 内存大小
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_mem;
                     bool m_memHasBeenSet;
 
                     /**
                      * 存储大小
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_storageLimit;
                     bool m_storageLimitHasBeenSet;

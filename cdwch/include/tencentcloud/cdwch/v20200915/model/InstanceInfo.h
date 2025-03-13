@@ -1363,6 +1363,27 @@ Modify 集群变更中；
                      */
                     bool BindSGsHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启公网clb
+                     * @return HasPublicCloudClb 是否开启公网clb
+                     * 
+                     */
+                    bool GetHasPublicCloudClb() const;
+
+                    /**
+                     * 设置是否开启公网clb
+                     * @param _hasPublicCloudClb 是否开启公网clb
+                     * 
+                     */
+                    void SetHasPublicCloudClb(const bool& _hasPublicCloudClb);
+
+                    /**
+                     * 判断参数 HasPublicCloudClb 是否已赋值
+                     * @return HasPublicCloudClb 是否已赋值
+                     * 
+                     */
+                    bool HasPublicCloudClbHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1731,6 +1752,12 @@ Modify 集群变更中；
                      */
                     std::vector<std::string> m_bindSGs;
                     bool m_bindSGsHasBeenSet;
+
+                    /**
+                     * 是否开启公网clb
+                     */
+                    bool m_hasPublicCloudClb;
+                    bool m_hasPublicCloudClbHasBeenSet;
 
                 };
             }

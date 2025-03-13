@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启自动逻辑备份
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogicBackupEnable 是否开启自动逻辑备份
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLogicBackupEnable() const;
 
                     /**
                      * 设置是否开启自动逻辑备份
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logicBackupEnable 是否开启自动逻辑备份
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogicBackupEnable(const std::string& _logicBackupEnable);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自动逻辑备份开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogicBackupTimeBeg 自动逻辑备份开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetLogicBackupTimeBeg() const;
 
                     /**
                      * 设置自动逻辑备份开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logicBackupTimeBeg 自动逻辑备份开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogicBackupTimeBeg(const uint64_t& _logicBackupTimeBeg);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自动逻辑备份结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogicBackupTimeEnd 自动逻辑备份结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetLogicBackupTimeEnd() const;
 
                     /**
                      * 设置自动逻辑备份结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logicBackupTimeEnd 自动逻辑备份结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogicBackupTimeEnd(const uint64_t& _logicBackupTimeEnd);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自动逻辑备份保留时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogicReserveDuration 自动逻辑备份保留时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetLogicReserveDuration() const;
 
                     /**
                      * 设置自动逻辑备份保留时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logicReserveDuration 自动逻辑备份保留时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogicReserveDuration(const uint64_t& _logicReserveDuration);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启跨地域逻辑备份
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogicCrossRegionsEnable 是否开启跨地域逻辑备份
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLogicCrossRegionsEnable() const;
 
                     /**
                      * 设置是否开启跨地域逻辑备份
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logicCrossRegionsEnable 是否开启跨地域逻辑备份
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogicCrossRegionsEnable(const std::string& _logicCrossRegionsEnable);
@@ -200,35 +180,30 @@ namespace TencentCloud
 
                     /**
                      * 是否开启自动逻辑备份
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logicBackupEnable;
                     bool m_logicBackupEnableHasBeenSet;
 
                     /**
                      * 自动逻辑备份开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_logicBackupTimeBeg;
                     bool m_logicBackupTimeBegHasBeenSet;
 
                     /**
                      * 自动逻辑备份结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_logicBackupTimeEnd;
                     bool m_logicBackupTimeEndHasBeenSet;
 
                     /**
                      * 自动逻辑备份保留时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_logicReserveDuration;
                     bool m_logicReserveDurationHasBeenSet;
 
                     /**
                      * 是否开启跨地域逻辑备份
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logicCrossRegionsEnable;
                     bool m_logicCrossRegionsEnableHasBeenSet;

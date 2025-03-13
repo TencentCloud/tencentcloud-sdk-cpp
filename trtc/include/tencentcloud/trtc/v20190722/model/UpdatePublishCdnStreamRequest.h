@@ -113,14 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 获取是否转码，0表示无需转码，1表示需要转码。
+注：混流是必须转码，这个参数需设置为1。
                      * @return WithTranscoding 是否转码，0表示无需转码，1表示需要转码。
+注：混流是必须转码，这个参数需设置为1。
                      * 
                      */
                     uint64_t GetWithTranscoding() const;
 
                     /**
                      * 设置是否转码，0表示无需转码，1表示需要转码。
+注：混流是必须转码，这个参数需设置为1。
                      * @param _withTranscoding 是否转码，0表示无需转码，1表示需要转码。
+注：混流是必须转码，这个参数需设置为1。
                      * 
                      */
                     void SetWithTranscoding(const uint64_t& _withTranscoding);
@@ -280,6 +284,7 @@ namespace TencentCloud
 
                     /**
                      * 是否转码，0表示无需转码，1表示需要转码。
+注：混流是必须转码，这个参数需设置为1。
                      */
                     uint64_t m_withTranscoding;
                     bool m_withTranscodingHasBeenSet;

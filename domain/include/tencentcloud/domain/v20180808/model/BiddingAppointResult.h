@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取business_id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BusinessID business_id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBusinessID() const;
 
                     /**
                      * 设置business_id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _businessID business_id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBusinessID(const std::string& _businessID);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Domain 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _domain 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取预定价格
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppointPrice 预定价格
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetAppointPrice() const;
 
                     /**
                      * 设置预定价格
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appointPrice 预定价格
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppointPrice(const uint64_t& _appointPrice);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取预约保证金
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppointBondPrice 预约保证金
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetAppointBondPrice() const;
 
                     /**
                      * 设置预约保证金
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appointBondPrice 预约保证金
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppointBondPrice(const uint64_t& _appointBondPrice);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取预约结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppointEndTime 预约结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAppointEndTime() const;
 
                     /**
                      * 设置预约结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appointEndTime 预约结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppointEndTime(const std::string& _appointEndTime);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取预约人数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppointNum 预约人数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetAppointNum() const;
 
                     /**
                      * 设置预约人数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appointNum 预约人数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppointNum(const uint64_t& _appointNum);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取1 已预约，2 竞价中，3 等待出价 4 竞价失败 5 等待支付 6 等待转移，7 转移中 8 交易成功 9 预约持有者赎回 10 竞价持有者赎回 11 其他阶段持有者赎回 12 违约
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 1 已预约，2 竞价中，3 等待出价 4 竞价失败 5 等待支付 6 等待转移，7 转移中 8 交易成功 9 预约持有者赎回 10 竞价持有者赎回 11 其他阶段持有者赎回 12 违约
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置1 已预约，2 竞价中，3 等待出价 4 竞价失败 5 等待支付 6 等待转移，7 转移中 8 交易成功 9 预约持有者赎回 10 竞价持有者赎回 11 其他阶段持有者赎回 12 违约
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 1 已预约，2 竞价中，3 等待出价 4 竞价失败 5 等待支付 6 等待转移，7 转移中 8 交易成功 9 预约持有者赎回 10 竞价持有者赎回 11 其他阶段持有者赎回 12 违约
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -225,49 +197,42 @@ namespace TencentCloud
 
                     /**
                      * business_id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_businessID;
                     bool m_businessIDHasBeenSet;
 
                     /**
                      * 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
                      * 预定价格
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_appointPrice;
                     bool m_appointPriceHasBeenSet;
 
                     /**
                      * 预约保证金
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_appointBondPrice;
                     bool m_appointBondPriceHasBeenSet;
 
                     /**
                      * 预约结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_appointEndTime;
                     bool m_appointEndTimeHasBeenSet;
 
                     /**
                      * 预约人数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_appointNum;
                     bool m_appointNumHasBeenSet;
 
                     /**
                      * 1 已预约，2 竞价中，3 等待出价 4 竞价失败 5 等待支付 6 等待转移，7 转移中 8 交易成功 9 预约持有者赎回 10 竞价持有者赎回 11 其他阶段持有者赎回 12 违约
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;

@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取校验的步骤总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StepCount 校验的步骤总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStepCount() const;
@@ -76,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取当前所在步骤
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StepCur 当前所在步骤
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStepCur() const;
@@ -92,9 +88,7 @@ namespace TencentCloud
 
                     /**
                      * 获取总体进度，范围为[0,100]	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Progress 总体进度，范围为[0,100]	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetProgress() const;
@@ -132,21 +126,18 @@ namespace TencentCloud
 
                     /**
                      * 校验的步骤总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_stepCount;
                     bool m_stepCountHasBeenSet;
 
                     /**
                      * 当前所在步骤
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_stepCur;
                     bool m_stepCurHasBeenSet;
 
                     /**
                      * 总体进度，范围为[0,100]	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_progress;
                     bool m_progressHasBeenSet;

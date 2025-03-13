@@ -264,6 +264,51 @@ namespace TencentCloud
                      */
                     bool WelcomeMessagePriorityHasBeenSet() const;
 
+                    /**
+                     * 获取用于过滤LLM返回内容，不播放括号中的内容。
+1：中文括号（）
+2：英文括号()
+3：中文方括号【】
+4：英文方括号[]
+5：英文花括号{}
+默认值为空，表示不进行过滤。
+                     * @return FilterBracketsContent 用于过滤LLM返回内容，不播放括号中的内容。
+1：中文括号（）
+2：英文括号()
+3：中文方括号【】
+4：英文方括号[]
+5：英文花括号{}
+默认值为空，表示不进行过滤。
+                     * 
+                     */
+                    uint64_t GetFilterBracketsContent() const;
+
+                    /**
+                     * 设置用于过滤LLM返回内容，不播放括号中的内容。
+1：中文括号（）
+2：英文括号()
+3：中文方括号【】
+4：英文方括号[]
+5：英文花括号{}
+默认值为空，表示不进行过滤。
+                     * @param _filterBracketsContent 用于过滤LLM返回内容，不播放括号中的内容。
+1：中文括号（）
+2：英文括号()
+3：中文方括号【】
+4：英文方括号[]
+5：英文花括号{}
+默认值为空，表示不进行过滤。
+                     * 
+                     */
+                    void SetFilterBracketsContent(const uint64_t& _filterBracketsContent);
+
+                    /**
+                     * 判断参数 FilterBracketsContent 是否已赋值
+                     * @return FilterBracketsContent 是否已赋值
+                     * 
+                     */
+                    bool FilterBracketsContentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -327,6 +372,18 @@ namespace TencentCloud
                      */
                     uint64_t m_welcomeMessagePriority;
                     bool m_welcomeMessagePriorityHasBeenSet;
+
+                    /**
+                     * 用于过滤LLM返回内容，不播放括号中的内容。
+1：中文括号（）
+2：英文括号()
+3：中文方括号【】
+4：英文方括号[]
+5：英文花括号{}
+默认值为空，表示不进行过滤。
+                     */
+                    uint64_t m_filterBracketsContent;
+                    bool m_filterBracketsContentHasBeenSet;
 
                 };
             }

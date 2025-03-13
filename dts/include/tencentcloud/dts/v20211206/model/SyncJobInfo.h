@@ -54,18 +54,14 @@ namespace TencentCloud
 
                     /**
                      * 获取同步任务id，如：sync-btso140
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return JobId 同步任务id，如：sync-btso140
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetJobId() const;
 
                     /**
                      * 设置同步任务id，如：sync-btso140
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _jobId 同步任务id，如：sync-btso140
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetJobId(const std::string& _jobId);
@@ -79,18 +75,14 @@ namespace TencentCloud
 
                     /**
                      * 获取同步任务名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return JobName 同步任务名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetJobName() const;
 
                     /**
                      * 设置同步任务名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _jobName 同步任务名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetJobName(const std::string& _jobName);
@@ -104,18 +96,14 @@ namespace TencentCloud
 
                     /**
                      * 获取付款方式，PostPay(按量付费)、PrePay(包年包月)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayMode 付款方式，PostPay(按量付费)、PrePay(包年包月)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPayMode() const;
 
                     /**
                      * 设置付款方式，PostPay(按量付费)、PrePay(包年包月)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _payMode 付款方式，PostPay(按量付费)、PrePay(包年包月)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPayMode(const std::string& _payMode);
@@ -129,18 +117,14 @@ namespace TencentCloud
 
                     /**
                      * 获取运行模式，Immediate(表示立即运行，默认为此项值)、Timed(表示定时运行)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RunMode 运行模式，Immediate(表示立即运行，默认为此项值)、Timed(表示定时运行)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRunMode() const;
 
                     /**
                      * 设置运行模式，Immediate(表示立即运行，默认为此项值)、Timed(表示定时运行)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _runMode 运行模式，Immediate(表示立即运行，默认为此项值)、Timed(表示定时运行)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRunMode(const std::string& _runMode);
@@ -154,18 +138,14 @@ namespace TencentCloud
 
                     /**
                      * 获取期待运行时间，格式为 yyyy-mm-dd hh:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpectRunTime 期待运行时间，格式为 yyyy-mm-dd hh:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExpectRunTime() const;
 
                     /**
                      * 设置期待运行时间，格式为 yyyy-mm-dd hh:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _expectRunTime 期待运行时间，格式为 yyyy-mm-dd hh:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExpectRunTime(const std::string& _expectRunTime);
@@ -179,18 +159,14 @@ namespace TencentCloud
 
                     /**
                      * 获取支持的所有操作
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AllActions 支持的所有操作
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetAllActions() const;
 
                     /**
                      * 设置支持的所有操作
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _allActions 支持的所有操作
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAllActions(const std::vector<std::string>& _allActions);
@@ -204,18 +180,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当前状态能进行的操作
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Actions 当前状态能进行的操作
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetActions() const;
 
                     /**
                      * 设置当前状态能进行的操作
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _actions 当前状态能进行的操作
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetActions(const std::vector<std::string>& _actions);
@@ -229,18 +201,14 @@ namespace TencentCloud
 
                     /**
                      * 获取同步选项
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Options 同步选项
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Options GetOptions() const;
 
                     /**
                      * 设置同步选项
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _options 同步选项
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOptions(const Options& _options);
@@ -254,18 +222,14 @@ namespace TencentCloud
 
                     /**
                      * 获取同步库表对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Objects 同步库表对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Objects GetObjects() const;
 
                     /**
                      * 设置同步库表对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _objects 同步库表对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetObjects(const Objects& _objects);
@@ -279,18 +243,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Specification 任务规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSpecification() const;
 
                     /**
                      * 设置任务规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _specification 任务规格
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSpecification(const std::string& _specification);
@@ -304,18 +264,14 @@ namespace TencentCloud
 
                     /**
                      * 获取过期时间，格式为 yyyy-mm-dd hh:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpireTime 过期时间，格式为 yyyy-mm-dd hh:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExpireTime() const;
 
                     /**
                      * 设置过期时间，格式为 yyyy-mm-dd hh:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _expireTime 过期时间，格式为 yyyy-mm-dd hh:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExpireTime(const std::string& _expireTime);
@@ -329,18 +285,14 @@ namespace TencentCloud
 
                     /**
                      * 获取源端地域，如：ap-guangzhou等
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SrcRegion 源端地域，如：ap-guangzhou等
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSrcRegion() const;
 
                     /**
                      * 设置源端地域，如：ap-guangzhou等
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _srcRegion 源端地域，如：ap-guangzhou等
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSrcRegion(const std::string& _srcRegion);
@@ -354,18 +306,14 @@ namespace TencentCloud
 
                     /**
                      * 获取源端数据库类型，mysql,cynosdbmysql,tdapg,tdpg,tdsqlmysql等
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SrcDatabaseType 源端数据库类型，mysql,cynosdbmysql,tdapg,tdpg,tdsqlmysql等
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSrcDatabaseType() const;
 
                     /**
                      * 设置源端数据库类型，mysql,cynosdbmysql,tdapg,tdpg,tdsqlmysql等
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _srcDatabaseType 源端数据库类型，mysql,cynosdbmysql,tdapg,tdpg,tdsqlmysql等
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSrcDatabaseType(const std::string& _srcDatabaseType);
@@ -379,18 +327,14 @@ namespace TencentCloud
 
                     /**
                      * 获取源端接入类型，cdb(云数据库)、cvm(云主机自建)、vpc(私有网络)、extranet(外网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、intranet(自研上云)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SrcAccessType 源端接入类型，cdb(云数据库)、cvm(云主机自建)、vpc(私有网络)、extranet(外网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、intranet(自研上云)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSrcAccessType() const;
 
                     /**
                      * 设置源端接入类型，cdb(云数据库)、cvm(云主机自建)、vpc(私有网络)、extranet(外网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、intranet(自研上云)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _srcAccessType 源端接入类型，cdb(云数据库)、cvm(云主机自建)、vpc(私有网络)、extranet(外网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、intranet(自研上云)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSrcAccessType(const std::string& _srcAccessType);
@@ -404,18 +348,14 @@ namespace TencentCloud
 
                     /**
                      * 获取源端信息，单节点数据库使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SrcInfo 源端信息，单节点数据库使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Endpoint GetSrcInfo() const;
 
                     /**
                      * 设置源端信息，单节点数据库使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _srcInfo 源端信息，单节点数据库使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSrcInfo(const Endpoint& _srcInfo);
@@ -429,18 +369,14 @@ namespace TencentCloud
 
                     /**
                      * 获取枚举值：cluster、single。源库为单节点数据库使用single，多节点使用cluster
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SrcNodeType 枚举值：cluster、single。源库为单节点数据库使用single，多节点使用cluster
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSrcNodeType() const;
 
                     /**
                      * 设置枚举值：cluster、single。源库为单节点数据库使用single，多节点使用cluster
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _srcNodeType 枚举值：cluster、single。源库为单节点数据库使用single，多节点使用cluster
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSrcNodeType(const std::string& _srcNodeType);
@@ -454,18 +390,14 @@ namespace TencentCloud
 
                     /**
                      * 获取源端信息，多节点数据库使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SrcInfos 源端信息，多节点数据库使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SyncDBEndpointInfos GetSrcInfos() const;
 
                     /**
                      * 设置源端信息，多节点数据库使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _srcInfos 源端信息，多节点数据库使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSrcInfos(const SyncDBEndpointInfos& _srcInfos);
@@ -479,18 +411,14 @@ namespace TencentCloud
 
                     /**
                      * 获取目标端地域，如：ap-guangzhou等
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DstRegion 目标端地域，如：ap-guangzhou等
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDstRegion() const;
 
                     /**
                      * 设置目标端地域，如：ap-guangzhou等
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dstRegion 目标端地域，如：ap-guangzhou等
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDstRegion(const std::string& _dstRegion);
@@ -504,18 +432,14 @@ namespace TencentCloud
 
                     /**
                      * 获取目标端数据库类型，mysql,cynosdbmysql,tdapg,tdpg,tdsqlmysql等
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DstDatabaseType 目标端数据库类型，mysql,cynosdbmysql,tdapg,tdpg,tdsqlmysql等
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDstDatabaseType() const;
 
                     /**
                      * 设置目标端数据库类型，mysql,cynosdbmysql,tdapg,tdpg,tdsqlmysql等
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dstDatabaseType 目标端数据库类型，mysql,cynosdbmysql,tdapg,tdpg,tdsqlmysql等
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDstDatabaseType(const std::string& _dstDatabaseType);
@@ -529,18 +453,14 @@ namespace TencentCloud
 
                     /**
                      * 获取目标端接入类型，cdb(云数据库)、cvm(云主机自建)、vpc(私有网络)、extranet(外网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、intranet(自研上云)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DstAccessType 目标端接入类型，cdb(云数据库)、cvm(云主机自建)、vpc(私有网络)、extranet(外网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、intranet(自研上云)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDstAccessType() const;
 
                     /**
                      * 设置目标端接入类型，cdb(云数据库)、cvm(云主机自建)、vpc(私有网络)、extranet(外网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、intranet(自研上云)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dstAccessType 目标端接入类型，cdb(云数据库)、cvm(云主机自建)、vpc(私有网络)、extranet(外网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、intranet(自研上云)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDstAccessType(const std::string& _dstAccessType);
@@ -554,18 +474,14 @@ namespace TencentCloud
 
                     /**
                      * 获取目标端信息，单节点数据库使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DstInfo 目标端信息，单节点数据库使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Endpoint GetDstInfo() const;
 
                     /**
                      * 设置目标端信息，单节点数据库使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dstInfo 目标端信息，单节点数据库使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDstInfo(const Endpoint& _dstInfo);
@@ -579,18 +495,14 @@ namespace TencentCloud
 
                     /**
                      * 获取枚举值：cluster、single。目标库为单节点数据库使用single，多节点使用cluster
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DstNodeType 枚举值：cluster、single。目标库为单节点数据库使用single，多节点使用cluster
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDstNodeType() const;
 
                     /**
                      * 设置枚举值：cluster、single。目标库为单节点数据库使用single，多节点使用cluster
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dstNodeType 枚举值：cluster、single。目标库为单节点数据库使用single，多节点使用cluster
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDstNodeType(const std::string& _dstNodeType);
@@ -604,18 +516,14 @@ namespace TencentCloud
 
                     /**
                      * 获取目标端信息，多节点数据库使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DstInfos 目标端信息，多节点数据库使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SyncDBEndpointInfos GetDstInfos() const;
 
                     /**
                      * 设置目标端信息，多节点数据库使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dstInfos 目标端信息，多节点数据库使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDstInfos(const SyncDBEndpointInfos& _dstInfos);
@@ -629,18 +537,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间，格式为 yyyy-mm-dd hh:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间，格式为 yyyy-mm-dd hh:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间，格式为 yyyy-mm-dd hh:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间，格式为 yyyy-mm-dd hh:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -654,18 +558,14 @@ namespace TencentCloud
 
                     /**
                      * 获取开始时间，格式为 yyyy-mm-dd hh:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 开始时间，格式为 yyyy-mm-dd hh:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置开始时间，格式为 yyyy-mm-dd hh:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _startTime 开始时间，格式为 yyyy-mm-dd hh:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -679,18 +579,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务状态，UnInitialized(未初始化)、Initialized(已初始化)、Checking(校验中)、CheckPass(校验通过)、CheckNotPass(校验不通过)、ReadyRunning(准备运行)、Running(运行中)、Pausing(暂停中)、Paused(已暂停)、Stopping(停止中)、Stopped(已结束)、ResumableErr(任务错误)、Resuming(恢复中)、Failed(失败)、Released(已释放)、Resetting(重置中)、Unknown(未知)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 任务状态，UnInitialized(未初始化)、Initialized(已初始化)、Checking(校验中)、CheckPass(校验通过)、CheckNotPass(校验不通过)、ReadyRunning(准备运行)、Running(运行中)、Pausing(暂停中)、Paused(已暂停)、Stopping(停止中)、Stopped(已结束)、ResumableErr(任务错误)、Resuming(恢复中)、Failed(失败)、Released(已释放)、Resetting(重置中)、Unknown(未知)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置任务状态，UnInitialized(未初始化)、Initialized(已初始化)、Checking(校验中)、CheckPass(校验通过)、CheckNotPass(校验不通过)、ReadyRunning(准备运行)、Running(运行中)、Pausing(暂停中)、Paused(已暂停)、Stopping(停止中)、Stopped(已结束)、ResumableErr(任务错误)、Resuming(恢复中)、Failed(失败)、Released(已释放)、Resetting(重置中)、Unknown(未知)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 任务状态，UnInitialized(未初始化)、Initialized(已初始化)、Checking(校验中)、CheckPass(校验通过)、CheckNotPass(校验不通过)、ReadyRunning(准备运行)、Running(运行中)、Pausing(暂停中)、Paused(已暂停)、Stopping(停止中)、Stopped(已结束)、ResumableErr(任务错误)、Resuming(恢复中)、Failed(失败)、Released(已释放)、Resetting(重置中)、Unknown(未知)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -704,18 +600,14 @@ namespace TencentCloud
 
                     /**
                      * 获取结束时间，格式为 yyyy-mm-dd hh:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 结束时间，格式为 yyyy-mm-dd hh:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间，格式为 yyyy-mm-dd hh:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endTime 结束时间，格式为 yyyy-mm-dd hh:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -729,18 +621,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标签相关信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 标签相关信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TagItem> GetTags() const;
 
                     /**
                      * 设置标签相关信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 标签相关信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::vector<TagItem>& _tags);
@@ -754,18 +642,14 @@ namespace TencentCloud
 
                     /**
                      * 获取同步任务运行步骤信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Detail 同步任务运行步骤信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SyncDetailInfo GetDetail() const;
 
                     /**
                      * 设置同步任务运行步骤信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _detail 同步任务运行步骤信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDetail(const SyncDetailInfo& _detail);
@@ -779,18 +663,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用于计费的状态，可能取值有：Normal(正常状态)、Resizing(变配中)、Renewing(续费中)、Isolating(隔离中)、Isolated(已隔离)、Offlining(下线中)、Offlined(已下线)、NotBilled(未计费)、Recovering(解隔离)、PostPay2Prepaying(按量计费转包年包月中)、PrePay2Postpaying(包年包月转按量计费中)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TradeStatus 用于计费的状态，可能取值有：Normal(正常状态)、Resizing(变配中)、Renewing(续费中)、Isolating(隔离中)、Isolated(已隔离)、Offlining(下线中)、Offlined(已下线)、NotBilled(未计费)、Recovering(解隔离)、PostPay2Prepaying(按量计费转包年包月中)、PrePay2Postpaying(包年包月转按量计费中)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTradeStatus() const;
 
                     /**
                      * 设置用于计费的状态，可能取值有：Normal(正常状态)、Resizing(变配中)、Renewing(续费中)、Isolating(隔离中)、Isolated(已隔离)、Offlining(下线中)、Offlined(已下线)、NotBilled(未计费)、Recovering(解隔离)、PostPay2Prepaying(按量计费转包年包月中)、PrePay2Postpaying(包年包月转按量计费中)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tradeStatus 用于计费的状态，可能取值有：Normal(正常状态)、Resizing(变配中)、Renewing(续费中)、Isolating(隔离中)、Isolated(已隔离)、Offlining(下线中)、Offlined(已下线)、NotBilled(未计费)、Recovering(解隔离)、PostPay2Prepaying(按量计费转包年包月中)、PrePay2Postpaying(包年包月转按量计费中)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTradeStatus(const std::string& _tradeStatus);
@@ -804,18 +684,14 @@ namespace TencentCloud
 
                     /**
                      * 获取同步链路规格，如micro,small,medium,large
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceClass 同步链路规格，如micro,small,medium,large
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceClass() const;
 
                     /**
                      * 设置同步链路规格，如micro,small,medium,large
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceClass 同步链路规格，如micro,small,medium,large
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceClass(const std::string& _instanceClass);
@@ -829,18 +705,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自动续费标识，当PayMode值为PrePay则此项配置有意义，取值为：1（表示自动续费）、0（不自动续费）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoRenew 自动续费标识，当PayMode值为PrePay则此项配置有意义，取值为：1（表示自动续费）、0（不自动续费）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetAutoRenew() const;
 
                     /**
                      * 设置自动续费标识，当PayMode值为PrePay则此项配置有意义，取值为：1（表示自动续费）、0（不自动续费）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _autoRenew 自动续费标识，当PayMode值为PrePay则此项配置有意义，取值为：1（表示自动续费）、0（不自动续费）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAutoRenew(const uint64_t& _autoRenew);
@@ -854,18 +726,14 @@ namespace TencentCloud
 
                     /**
                      * 获取下线时间，格式为 yyyy-mm-dd hh:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OfflineTime 下线时间，格式为 yyyy-mm-dd hh:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOfflineTime() const;
 
                     /**
                      * 设置下线时间，格式为 yyyy-mm-dd hh:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _offlineTime 下线时间，格式为 yyyy-mm-dd hh:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOfflineTime(const std::string& _offlineTime);
@@ -879,18 +747,14 @@ namespace TencentCloud
 
                     /**
                      * 获取动态修改对象，修改任务的状态等
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OptObjStatus 动态修改对象，修改任务的状态等
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOptObjStatus() const;
 
                     /**
                      * 设置动态修改对象，修改任务的状态等
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _optObjStatus 动态修改对象，修改任务的状态等
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOptObjStatus(const std::string& _optObjStatus);
@@ -904,18 +768,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自动重试时间段设置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoRetryTimeRangeMinutes 自动重试时间段设置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAutoRetryTimeRangeMinutes() const;
 
                     /**
                      * 设置自动重试时间段设置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _autoRetryTimeRangeMinutes 自动重试时间段设置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAutoRetryTimeRangeMinutes(const int64_t& _autoRetryTimeRangeMinutes);
@@ -929,18 +789,14 @@ namespace TencentCloud
 
                     /**
                      * 获取全量导出可重入标识：enum::"yes"/"no"。yes表示当前任务可重入、no表示当前任务处于全量导出且不可重入阶段；如果在该值为no时重启任务导出流程不支持断点续传
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DumperResumeCtrl 全量导出可重入标识：enum::"yes"/"no"。yes表示当前任务可重入、no表示当前任务处于全量导出且不可重入阶段；如果在该值为no时重启任务导出流程不支持断点续传
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDumperResumeCtrl() const;
 
                     /**
                      * 设置全量导出可重入标识：enum::"yes"/"no"。yes表示当前任务可重入、no表示当前任务处于全量导出且不可重入阶段；如果在该值为no时重启任务导出流程不支持断点续传
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dumperResumeCtrl 全量导出可重入标识：enum::"yes"/"no"。yes表示当前任务可重入、no表示当前任务处于全量导出且不可重入阶段；如果在该值为no时重启任务导出流程不支持断点续传
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDumperResumeCtrl(const std::string& _dumperResumeCtrl);
@@ -956,252 +812,216 @@ namespace TencentCloud
 
                     /**
                      * 同步任务id，如：sync-btso140
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;
 
                     /**
                      * 同步任务名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_jobName;
                     bool m_jobNameHasBeenSet;
 
                     /**
                      * 付款方式，PostPay(按量付费)、PrePay(包年包月)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
                      * 运行模式，Immediate(表示立即运行，默认为此项值)、Timed(表示定时运行)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_runMode;
                     bool m_runModeHasBeenSet;
 
                     /**
                      * 期待运行时间，格式为 yyyy-mm-dd hh:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_expectRunTime;
                     bool m_expectRunTimeHasBeenSet;
 
                     /**
                      * 支持的所有操作
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_allActions;
                     bool m_allActionsHasBeenSet;
 
                     /**
                      * 当前状态能进行的操作
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_actions;
                     bool m_actionsHasBeenSet;
 
                     /**
                      * 同步选项
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Options m_options;
                     bool m_optionsHasBeenSet;
 
                     /**
                      * 同步库表对象
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Objects m_objects;
                     bool m_objectsHasBeenSet;
 
                     /**
                      * 任务规格
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_specification;
                     bool m_specificationHasBeenSet;
 
                     /**
                      * 过期时间，格式为 yyyy-mm-dd hh:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
                      * 源端地域，如：ap-guangzhou等
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_srcRegion;
                     bool m_srcRegionHasBeenSet;
 
                     /**
                      * 源端数据库类型，mysql,cynosdbmysql,tdapg,tdpg,tdsqlmysql等
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_srcDatabaseType;
                     bool m_srcDatabaseTypeHasBeenSet;
 
                     /**
                      * 源端接入类型，cdb(云数据库)、cvm(云主机自建)、vpc(私有网络)、extranet(外网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、intranet(自研上云)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_srcAccessType;
                     bool m_srcAccessTypeHasBeenSet;
 
                     /**
                      * 源端信息，单节点数据库使用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Endpoint m_srcInfo;
                     bool m_srcInfoHasBeenSet;
 
                     /**
                      * 枚举值：cluster、single。源库为单节点数据库使用single，多节点使用cluster
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_srcNodeType;
                     bool m_srcNodeTypeHasBeenSet;
 
                     /**
                      * 源端信息，多节点数据库使用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SyncDBEndpointInfos m_srcInfos;
                     bool m_srcInfosHasBeenSet;
 
                     /**
                      * 目标端地域，如：ap-guangzhou等
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dstRegion;
                     bool m_dstRegionHasBeenSet;
 
                     /**
                      * 目标端数据库类型，mysql,cynosdbmysql,tdapg,tdpg,tdsqlmysql等
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dstDatabaseType;
                     bool m_dstDatabaseTypeHasBeenSet;
 
                     /**
                      * 目标端接入类型，cdb(云数据库)、cvm(云主机自建)、vpc(私有网络)、extranet(外网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、intranet(自研上云)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dstAccessType;
                     bool m_dstAccessTypeHasBeenSet;
 
                     /**
                      * 目标端信息，单节点数据库使用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Endpoint m_dstInfo;
                     bool m_dstInfoHasBeenSet;
 
                     /**
                      * 枚举值：cluster、single。目标库为单节点数据库使用single，多节点使用cluster
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dstNodeType;
                     bool m_dstNodeTypeHasBeenSet;
 
                     /**
                      * 目标端信息，多节点数据库使用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SyncDBEndpointInfos m_dstInfos;
                     bool m_dstInfosHasBeenSet;
 
                     /**
                      * 创建时间，格式为 yyyy-mm-dd hh:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 开始时间，格式为 yyyy-mm-dd hh:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
                      * 任务状态，UnInitialized(未初始化)、Initialized(已初始化)、Checking(校验中)、CheckPass(校验通过)、CheckNotPass(校验不通过)、ReadyRunning(准备运行)、Running(运行中)、Pausing(暂停中)、Paused(已暂停)、Stopping(停止中)、Stopped(已结束)、ResumableErr(任务错误)、Resuming(恢复中)、Failed(失败)、Released(已释放)、Resetting(重置中)、Unknown(未知)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 结束时间，格式为 yyyy-mm-dd hh:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
                      * 标签相关信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TagItem> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
                      * 同步任务运行步骤信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SyncDetailInfo m_detail;
                     bool m_detailHasBeenSet;
 
                     /**
                      * 用于计费的状态，可能取值有：Normal(正常状态)、Resizing(变配中)、Renewing(续费中)、Isolating(隔离中)、Isolated(已隔离)、Offlining(下线中)、Offlined(已下线)、NotBilled(未计费)、Recovering(解隔离)、PostPay2Prepaying(按量计费转包年包月中)、PrePay2Postpaying(包年包月转按量计费中)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tradeStatus;
                     bool m_tradeStatusHasBeenSet;
 
                     /**
                      * 同步链路规格，如micro,small,medium,large
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceClass;
                     bool m_instanceClassHasBeenSet;
 
                     /**
                      * 自动续费标识，当PayMode值为PrePay则此项配置有意义，取值为：1（表示自动续费）、0（不自动续费）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_autoRenew;
                     bool m_autoRenewHasBeenSet;
 
                     /**
                      * 下线时间，格式为 yyyy-mm-dd hh:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_offlineTime;
                     bool m_offlineTimeHasBeenSet;
 
                     /**
                      * 动态修改对象，修改任务的状态等
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_optObjStatus;
                     bool m_optObjStatusHasBeenSet;
 
                     /**
                      * 自动重试时间段设置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_autoRetryTimeRangeMinutes;
                     bool m_autoRetryTimeRangeMinutesHasBeenSet;
 
                     /**
                      * 全量导出可重入标识：enum::"yes"/"no"。yes表示当前任务可重入、no表示当前任务处于全量导出且不可重入阶段；如果在该值为no时重启任务导出流程不支持断点续传
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dumperResumeCtrl;
                     bool m_dumperResumeCtrlHasBeenSet;

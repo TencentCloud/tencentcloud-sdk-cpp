@@ -2362,6 +2362,49 @@ EmrClient::ModifyGlobalConfigOutcomeCallable EmrClient::ModifyGlobalConfigCallab
     return task->get_future();
 }
 
+EmrClient::ModifyInspectionSettingsOutcome EmrClient::ModifyInspectionSettings(const ModifyInspectionSettingsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInspectionSettings");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInspectionSettingsResponse rsp = ModifyInspectionSettingsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInspectionSettingsOutcome(rsp);
+        else
+            return ModifyInspectionSettingsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInspectionSettingsOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::ModifyInspectionSettingsAsync(const ModifyInspectionSettingsRequest& request, const ModifyInspectionSettingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyInspectionSettings(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::ModifyInspectionSettingsOutcomeCallable EmrClient::ModifyInspectionSettingsCallable(const ModifyInspectionSettingsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyInspectionSettingsOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyInspectionSettings(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EmrClient::ModifyInstanceBasicOutcome EmrClient::ModifyInstanceBasic(const ModifyInstanceBasicRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyInstanceBasic");

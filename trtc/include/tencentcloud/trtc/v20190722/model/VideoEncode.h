@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool WidthHasBeenSet() const;
 
                     /**
-                     * 获取输出流高，音视频输出时必填。取值范围[0,1080]，单位为像素值。
-                     * @return Height 输出流高，音视频输出时必填。取值范围[0,1080]，单位为像素值。
+                     * 获取输出流高，音视频输出时必填。取值范围[0,1920]，单位为像素值。
+                     * @return Height 输出流高，音视频输出时必填。取值范围[0,1920]，单位为像素值。
                      * 
                      */
                     uint64_t GetHeight() const;
 
                     /**
-                     * 设置输出流高，音视频输出时必填。取值范围[0,1080]，单位为像素值。
-                     * @param _height 输出流高，音视频输出时必填。取值范围[0,1080]，单位为像素值。
+                     * 设置输出流高，音视频输出时必填。取值范围[0,1920]，单位为像素值。
+                     * @param _height 输出流高，音视频输出时必填。取值范围[0,1920]，单位为像素值。
                      * 
                      */
                     void SetHeight(const uint64_t& _height);
@@ -160,7 +160,7 @@ namespace TencentCloud
                     bool m_widthHasBeenSet;
 
                     /**
-                     * 输出流高，音视频输出时必填。取值范围[0,1080]，单位为像素值。
+                     * 输出流高，音视频输出时必填。取值范围[0,1920]，单位为像素值。
                      */
                     uint64_t m_height;
                     bool m_heightHasBeenSet;

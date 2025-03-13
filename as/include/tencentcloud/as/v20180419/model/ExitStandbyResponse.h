@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取伸缩活动ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActivityId 伸缩活动ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetActivityId() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 伸缩活动ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_activityId;
                     bool m_activityIdHasBeenSet;

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取view名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ViewName view名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetViewName() const;
 
                     /**
                      * 设置view名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _viewName view名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetViewName(const std::string& _viewName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取预留字段、目前暂时不支持view的重命名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NewViewName 预留字段、目前暂时不支持view的重命名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNewViewName() const;
 
                     /**
                      * 设置预留字段、目前暂时不支持view的重命名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _newViewName 预留字段、目前暂时不支持view的重命名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNewViewName(const std::string& _newViewName);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * view名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_viewName;
                     bool m_viewNameHasBeenSet;
 
                     /**
                      * 预留字段、目前暂时不支持view的重命名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_newViewName;
                     bool m_newViewNameHasBeenSet;

@@ -79,6 +79,8 @@
 #include <tencentcloud/vpc/v20170312/model/CheckAssistantCidrResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CheckDefaultSubnetRequest.h>
 #include <tencentcloud/vpc/v20170312/model/CheckDefaultSubnetResponse.h>
+#include <tencentcloud/vpc/v20170312/model/CheckGatewayFlowMonitorRequest.h>
+#include <tencentcloud/vpc/v20170312/model/CheckGatewayFlowMonitorResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CheckNetDetectStateRequest.h>
 #include <tencentcloud/vpc/v20170312/model/CheckNetDetectStateResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CheckTrafficMirrorRequest.h>
@@ -925,6 +927,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CheckDefaultSubnetResponse> CheckDefaultSubnetOutcome;
                 typedef std::future<CheckDefaultSubnetOutcome> CheckDefaultSubnetOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::CheckDefaultSubnetRequest&, CheckDefaultSubnetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckDefaultSubnetAsyncHandler;
+                typedef Outcome<Core::Error, Model::CheckGatewayFlowMonitorResponse> CheckGatewayFlowMonitorOutcome;
+                typedef std::future<CheckGatewayFlowMonitorOutcome> CheckGatewayFlowMonitorOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::CheckGatewayFlowMonitorRequest&, CheckGatewayFlowMonitorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckGatewayFlowMonitorAsyncHandler;
                 typedef Outcome<Core::Error, Model::CheckNetDetectStateResponse> CheckNetDetectStateOutcome;
                 typedef std::future<CheckNetDetectStateOutcome> CheckNetDetectStateOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::CheckNetDetectStateRequest&, CheckNetDetectStateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckNetDetectStateAsyncHandler;
@@ -2356,6 +2361,15 @@ namespace TencentCloud
                 CheckDefaultSubnetOutcome CheckDefaultSubnet(const Model::CheckDefaultSubnetRequest &request);
                 void CheckDefaultSubnetAsync(const Model::CheckDefaultSubnetRequest& request, const CheckDefaultSubnetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CheckDefaultSubnetOutcomeCallable CheckDefaultSubnetCallable(const Model::CheckDefaultSubnetRequest& request);
+
+                /**
+                 *本接口（CheckGatewayFlowMonitor）用于查询网关是否启用流量监控。
+                 * @param req CheckGatewayFlowMonitorRequest
+                 * @return CheckGatewayFlowMonitorOutcome
+                 */
+                CheckGatewayFlowMonitorOutcome CheckGatewayFlowMonitor(const Model::CheckGatewayFlowMonitorRequest &request);
+                void CheckGatewayFlowMonitorAsync(const Model::CheckGatewayFlowMonitorRequest& request, const CheckGatewayFlowMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CheckGatewayFlowMonitorOutcomeCallable CheckGatewayFlowMonitorCallable(const Model::CheckGatewayFlowMonitorRequest& request);
 
                 /**
                  *本接口（CheckNetDetectState）用于验证网络探测。

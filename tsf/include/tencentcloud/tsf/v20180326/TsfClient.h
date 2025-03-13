@@ -271,6 +271,8 @@
 #include <tencentcloud/tsf/v20180326/model/DescribeMicroserviceResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeMicroservicesRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeMicroservicesResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeMicroservicesByGroupIdsRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DescribeMicroservicesByGroupIdsResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeMsApiListRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeMsApiListResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DescribeOverviewInvocationRequest.h>
@@ -853,6 +855,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeMicroservicesResponse> DescribeMicroservicesOutcome;
                 typedef std::future<DescribeMicroservicesOutcome> DescribeMicroservicesOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeMicroservicesRequest&, DescribeMicroservicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMicroservicesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMicroservicesByGroupIdsResponse> DescribeMicroservicesByGroupIdsOutcome;
+                typedef std::future<DescribeMicroservicesByGroupIdsOutcome> DescribeMicroservicesByGroupIdsOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DescribeMicroservicesByGroupIdsRequest&, DescribeMicroservicesByGroupIdsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMicroservicesByGroupIdsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeMsApiListResponse> DescribeMsApiListOutcome;
                 typedef std::future<DescribeMsApiListOutcome> DescribeMsApiListOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DescribeMsApiListRequest&, DescribeMsApiListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMsApiListAsyncHandler;
@@ -2272,6 +2277,15 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 DescribeMicroservicesOutcome DescribeMicroservices(const Model::DescribeMicroservicesRequest &request);
                 void DescribeMicroservicesAsync(const Model::DescribeMicroservicesRequest& request, const DescribeMicroservicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeMicroservicesOutcomeCallable DescribeMicroservicesCallable(const Model::DescribeMicroservicesRequest& request);
+
+                /**
+                 *通过部署组ID获取微服务
+                 * @param req DescribeMicroservicesByGroupIdsRequest
+                 * @return DescribeMicroservicesByGroupIdsOutcome
+                 */
+                DescribeMicroservicesByGroupIdsOutcome DescribeMicroservicesByGroupIds(const Model::DescribeMicroservicesByGroupIdsRequest &request);
+                void DescribeMicroservicesByGroupIdsAsync(const Model::DescribeMicroservicesByGroupIdsRequest& request, const DescribeMicroservicesByGroupIdsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMicroservicesByGroupIdsOutcomeCallable DescribeMicroservicesByGroupIdsCallable(const Model::DescribeMicroservicesByGroupIdsRequest& request);
 
                 /**
                  *查询服务API列表

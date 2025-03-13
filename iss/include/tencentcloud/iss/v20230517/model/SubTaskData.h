@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailReason 任务失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFailReason() const;
 
                     /**
                      * 设置任务失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _failReason 任务失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFailReason(const std::string& _failReason);
@@ -283,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceId 设备ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
                      * 设置设备ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceId 设备ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
@@ -308,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceName 设备名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置设备名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceName 设备名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
@@ -333,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取通道ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChannelId 通道ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetChannelId() const;
 
                     /**
                      * 设置通道ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _channelId 通道ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChannelId(const std::string& _channelId);
@@ -358,18 +342,14 @@ namespace TencentCloud
 
                     /**
                      * 获取通道名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChannelName 通道名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetChannelName() const;
 
                     /**
                      * 设置通道名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _channelName 通道名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChannelName(const std::string& _channelName);
@@ -397,7 +377,6 @@ namespace TencentCloud
 
                     /**
                      * 任务失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_failReason;
                     bool m_failReasonHasBeenSet;
@@ -452,28 +431,24 @@ namespace TencentCloud
 
                     /**
                      * 设备ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceId;
                     bool m_deviceIdHasBeenSet;
 
                     /**
                      * 设备名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceName;
                     bool m_deviceNameHasBeenSet;
 
                     /**
                      * 通道ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_channelId;
                     bool m_channelIdHasBeenSet;
 
                     /**
                      * 通道名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_channelName;
                     bool m_channelNameHasBeenSet;

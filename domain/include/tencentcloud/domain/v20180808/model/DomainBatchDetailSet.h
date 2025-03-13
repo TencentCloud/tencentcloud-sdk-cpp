@@ -144,18 +144,14 @@ success  操作成功。
 
                     /**
                      * 获取失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Reason 失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReason() const;
 
                     /**
                      * 设置失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _reason 失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReason(const std::string& _reason);
@@ -211,18 +207,14 @@ success  操作成功。
 
                     /**
                      * 获取订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BigDealId 订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBigDealId() const;
 
                     /**
                      * 设置订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bigDealId 订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBigDealId(const std::string& _bigDealId);
@@ -265,7 +257,6 @@ success  操作成功。
 
                     /**
                      * 失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reason;
                     bool m_reasonHasBeenSet;
@@ -284,7 +275,6 @@ success  操作成功。
 
                     /**
                      * 订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bigDealId;
                     bool m_bigDealIdHasBeenSet;

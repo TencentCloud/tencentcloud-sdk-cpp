@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取域名ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 域名ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置域名ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id 域名ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取播放域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PlayDomain 播放域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPlayDomain() const;
 
                     /**
                      * 设置播放域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _playDomain 播放域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPlayDomain(const std::string& _playDomain);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取CNAME 记录值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InternalDomain CNAME 记录值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInternalDomain() const;
 
                     /**
                      * 设置CNAME 记录值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _internalDomain CNAME 记录值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInternalDomain(const std::string& _internalDomain);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否上传证书（0：否，1：是）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HaveCert 是否上传证书（0：否，1：是）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetHaveCert() const;
 
                     /**
                      * 设置是否上传证书（0：否，1：是）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _haveCert 是否上传证书（0：否，1：是）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHaveCert(const int64_t& _haveCert);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务节点 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterId 服务节点 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置服务节点 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterId 服务节点 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务节点名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterName 服务节点名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterName() const;
 
                     /**
                      * 设置服务节点名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterName 服务节点名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterName(const std::string& _clusterName);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppId 用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAppId() const;
 
                     /**
                      * 设置用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appId 用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppId(const int64_t& _appId);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CertId 证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCertId() const;
 
                     /**
                      * 设置证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _certId 证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCertId(const std::string& _certId);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取域名类型 0:拉流域名 1:推流域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DomainType 域名类型 0:拉流域名 1:推流域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDomainType() const;
 
                     /**
                      * 设置域名类型 0:拉流域名 1:推流域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _domainType 域名类型 0:拉流域名 1:推流域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDomainType(const int64_t& _domainType);
@@ -275,63 +239,54 @@ namespace TencentCloud
 
                     /**
                      * 域名ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * 播放域名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_playDomain;
                     bool m_playDomainHasBeenSet;
 
                     /**
                      * CNAME 记录值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_internalDomain;
                     bool m_internalDomainHasBeenSet;
 
                     /**
                      * 是否上传证书（0：否，1：是）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_haveCert;
                     bool m_haveCertHasBeenSet;
 
                     /**
                      * 服务节点 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
                      * 服务节点名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterName;
                     bool m_clusterNameHasBeenSet;
 
                     /**
                      * 用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
                      * 证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_certId;
                     bool m_certIdHasBeenSet;
 
                     /**
                      * 域名类型 0:拉流域名 1:推流域名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_domainType;
                     bool m_domainTypeHasBeenSet;

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取通道Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChannelId 通道Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetChannelId() const;
 
                     /**
                      * 设置通道Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _channelId 通道Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChannelId(const std::string& _channelId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取码率,单位:kbps
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Bitrate 码率,单位:kbps
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetBitrate() const;
 
                     /**
                      * 设置码率,单位:kbps
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bitrate 码率,单位:kbps
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBitrate(const double& _bitrate);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 通道Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_channelId;
                     bool m_channelIdHasBeenSet;
 
                     /**
                      * 码率,单位:kbps
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_bitrate;
                     bool m_bitrateHasBeenSet;

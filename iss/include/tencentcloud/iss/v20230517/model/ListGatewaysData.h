@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网关列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return List 网关列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<GatewaysData> GetList() const;
 
                     /**
                      * 设置网关列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _list 网关列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetList(const std::vector<GatewaysData>& _list);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网关数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 网关数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置网关数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalCount 网关数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
@@ -101,14 +93,12 @@ namespace TencentCloud
 
                     /**
                      * 网关列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<GatewaysData> m_list;
                     bool m_listHasBeenSet;
 
                     /**
                      * 网关数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

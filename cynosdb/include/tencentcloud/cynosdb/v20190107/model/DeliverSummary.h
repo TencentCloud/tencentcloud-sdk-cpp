@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取投递类型，store（存储类），mq（消息通道）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeliverType 投递类型，store（存储类），mq（消息通道）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeliverType() const;
 
                     /**
                      * 设置投递类型，store（存储类），mq（消息通道）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deliverType 投递类型，store（存储类），mq（消息通道）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeliverType(const std::string& _deliverType);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取投递子类型：cls，ckafka。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeliverSubType 投递子类型：cls，ckafka。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeliverSubType() const;
 
                     /**
                      * 设置投递子类型：cls，ckafka。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deliverSubType 投递子类型：cls，ckafka。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeliverSubType(const std::string& _deliverSubType);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 投递类型，store（存储类），mq（消息通道）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deliverType;
                     bool m_deliverTypeHasBeenSet;
 
                     /**
                      * 投递子类型：cls，ckafka。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deliverSubType;
                     bool m_deliverSubTypeHasBeenSet;

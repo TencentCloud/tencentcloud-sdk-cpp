@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取录像播放地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Flv 录像播放地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFlv() const;
 
                     /**
                      * 设置录像播放地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _flv 录像播放地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFlv(const std::string& _flv);
@@ -75,7 +71,6 @@ namespace TencentCloud
 
                     /**
                      * 录像播放地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_flv;
                     bool m_flvHasBeenSet;

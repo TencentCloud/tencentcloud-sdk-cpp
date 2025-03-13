@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分片起始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Begin 分片起始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBegin() const;
 
                     /**
                      * 设置分片起始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _begin 分片起始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBegin(const int64_t& _begin);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分片结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return End 分片结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEnd() const;
 
                     /**
                      * 设置分片结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _end 分片结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnd(const int64_t& _end);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 分片起始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_begin;
                     bool m_beginHasBeenSet;
 
                     /**
                      * 分片结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_end;
                     bool m_endHasBeenSet;

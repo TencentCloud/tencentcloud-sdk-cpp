@@ -468,18 +468,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标签列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 标签列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置标签列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 标签列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -728,18 +724,14 @@ namespace TencentCloud
 
                     /**
                      * 获取镜像族名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageFamily 镜像族名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetImageFamily() const;
 
                     /**
                      * 设置镜像族名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _imageFamily 镜像族名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetImageFamily(const std::string& _imageFamily);
@@ -892,7 +884,6 @@ namespace TencentCloud
 
                     /**
                      * 标签列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
@@ -966,7 +957,6 @@ namespace TencentCloud
 
                     /**
                      * 镜像族名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_imageFamily;
                     bool m_imageFamilyHasBeenSet;

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取条件覆盖的列
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConditionColumn 条件覆盖的列
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConditionColumn() const;
 
                     /**
                      * 设置条件覆盖的列
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _conditionColumn 条件覆盖的列
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConditionColumn(const std::string& _conditionColumn);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取条件覆盖操作
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConditionOperator 条件覆盖操作
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConditionOperator() const;
 
                     /**
                      * 设置条件覆盖操作
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _conditionOperator 条件覆盖操作
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConditionOperator(const std::string& _conditionOperator);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取条件覆盖优先级处理
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConditionOrderInSrcAndDst 条件覆盖优先级处理
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConditionOrderInSrcAndDst() const;
 
                     /**
                      * 设置条件覆盖优先级处理
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _conditionOrderInSrcAndDst 条件覆盖优先级处理
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConditionOrderInSrcAndDst(const std::string& _conditionOrderInSrcAndDst);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 条件覆盖的列
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_conditionColumn;
                     bool m_conditionColumnHasBeenSet;
 
                     /**
                      * 条件覆盖操作
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_conditionOperator;
                     bool m_conditionOperatorHasBeenSet;
 
                     /**
                      * 条件覆盖优先级处理
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_conditionOrderInSrcAndDst;
                     bool m_conditionOrderInSrcAndDstHasBeenSet;

@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取通道码率列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BitRates 通道码率列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BitRateInfo> GetBitRates() const;
 
                     /**
                      * 设置通道码率列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bitRates 通道码率列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBitRates(const std::vector<BitRateInfo>& _bitRates);
@@ -76,7 +72,6 @@ namespace TencentCloud
 
                     /**
                      * 通道码率列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BitRateInfo> m_bitRates;
                     bool m_bitRatesHasBeenSet;

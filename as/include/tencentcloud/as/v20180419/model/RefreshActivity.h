@@ -92,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取原始刷新活动ID，仅在回滚刷新活动中存在。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OriginRefreshActivityId 原始刷新活动ID，仅在回滚刷新活动中存在。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOriginRefreshActivityId() const;
 
                     /**
                      * 设置原始刷新活动ID，仅在回滚刷新活动中存在。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _originRefreshActivityId 原始刷新活动ID，仅在回滚刷新活动中存在。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOriginRefreshActivityId(const std::string& _originRefreshActivityId);
@@ -262,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当前刷新批次序号。例如，2 表示当前活动正在刷新第二批次的实例。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CurrentRefreshBatchNum 当前刷新批次序号。例如，2 表示当前活动正在刷新第二批次的实例。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCurrentRefreshBatchNum() const;
 
                     /**
                      * 设置当前刷新批次序号。例如，2 表示当前活动正在刷新第二批次的实例。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _currentRefreshBatchNum 当前刷新批次序号。例如，2 表示当前活动正在刷新第二批次的实例。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCurrentRefreshBatchNum(const uint64_t& _currentRefreshBatchNum);
@@ -337,18 +329,14 @@ namespace TencentCloud
 
                     /**
                      * 获取刷新活动创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedTime 刷新活动创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置刷新活动创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createdTime 刷新活动创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -376,7 +364,6 @@ namespace TencentCloud
 
                     /**
                      * 原始刷新活动ID，仅在回滚刷新活动中存在。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_originRefreshActivityId;
                     bool m_originRefreshActivityIdHasBeenSet;
@@ -423,7 +410,6 @@ namespace TencentCloud
 
                     /**
                      * 当前刷新批次序号。例如，2 表示当前活动正在刷新第二批次的实例。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_currentRefreshBatchNum;
                     bool m_currentRefreshBatchNumHasBeenSet;
@@ -444,7 +430,6 @@ namespace TencentCloud
 
                     /**
                      * 刷新活动创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;

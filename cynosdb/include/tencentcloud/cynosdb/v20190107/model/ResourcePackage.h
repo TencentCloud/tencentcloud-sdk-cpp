@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源包的唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackageId 资源包的唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPackageId() const;
 
                     /**
                      * 设置资源包的唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _packageId 资源包的唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPackageId(const std::string& _packageId);
@@ -74,10 +70,8 @@ namespace TencentCloud
                     /**
                      * 获取资源包类型：CCU：计算资源包
 DISK：存储资源包
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackageType 资源包类型：CCU：计算资源包
 DISK：存储资源包
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPackageType() const;
@@ -85,10 +79,8 @@ DISK：存储资源包
                     /**
                      * 设置资源包类型：CCU：计算资源包
 DISK：存储资源包
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _packageType 资源包类型：CCU：计算资源包
 DISK：存储资源包
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPackageType(const std::string& _packageType);
@@ -102,18 +94,14 @@ DISK：存储资源包
 
                     /**
                      * 获取当前资源包绑定在当前实例下的抵扣优先级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeductionPriority 当前资源包绑定在当前实例下的抵扣优先级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDeductionPriority() const;
 
                     /**
                      * 设置当前资源包绑定在当前实例下的抵扣优先级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deductionPriority 当前资源包绑定在当前实例下的抵扣优先级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeductionPriority(const int64_t& _deductionPriority);
@@ -129,7 +117,6 @@ DISK：存储资源包
 
                     /**
                      * 资源包的唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_packageId;
                     bool m_packageIdHasBeenSet;
@@ -137,14 +124,12 @@ DISK：存储资源包
                     /**
                      * 资源包类型：CCU：计算资源包
 DISK：存储资源包
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_packageType;
                     bool m_packageTypeHasBeenSet;
 
                     /**
                      * 当前资源包绑定在当前实例下的抵扣优先级
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_deductionPriority;
                     bool m_deductionPriorityHasBeenSet;

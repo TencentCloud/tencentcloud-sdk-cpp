@@ -54,7 +54,8 @@ Task::Task() :
     m_taskPlanEndTimeHasBeenSet(false),
     m_taskOrgHasBeenSet(false),
     m_taskIssueHasBeenSet(false),
-    m_taskRegionNameHasBeenSet(false)
+    m_taskRegionNameHasBeenSet(false),
+    m_taskArchIdHasBeenSet(false)
 {
 }
 
@@ -463,6 +464,16 @@ CoreInternalOutcome Task::Deserialize(const rapidjson::Value &value)
         m_taskRegionNameHasBeenSet = true;
     }
 
+    if (value.HasMember("TaskArchId") && !value["TaskArchId"].IsNull())
+    {
+        if (!value["TaskArchId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Task.TaskArchId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskArchId = string(value["TaskArchId"].GetString());
+        m_taskArchIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -781,6 +792,14 @@ void Task::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "TaskRegionName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_taskRegionName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskArchIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskArchId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskArchId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1328,5 +1347,21 @@ void Task::SetTaskRegionName(const string& _taskRegionName)
 bool Task::TaskRegionNameHasBeenSet() const
 {
     return m_taskRegionNameHasBeenSet;
+}
+
+string Task::GetTaskArchId() const
+{
+    return m_taskArchId;
+}
+
+void Task::SetTaskArchId(const string& _taskArchId)
+{
+    m_taskArchId = _taskArchId;
+    m_taskArchIdHasBeenSet = true;
+}
+
+bool Task::TaskArchIdHasBeenSet() const
+{
+    return m_taskArchIdHasBeenSet;
 }
 

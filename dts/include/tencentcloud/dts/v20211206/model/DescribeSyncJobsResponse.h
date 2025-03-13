@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取任务数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 任务数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取任务详情数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return JobList 任务详情数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SyncJobInfo> GetJobList() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 任务数目
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
                      * 任务详情数组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SyncJobInfo> m_jobList;
                     bool m_jobListHasBeenSet;

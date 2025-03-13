@@ -780,18 +780,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例名称序号相关设置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceNameIndexSettings 实例名称序号相关设置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     InstanceNameIndexSettings GetInstanceNameIndexSettings() const;
 
                     /**
                      * 设置实例名称序号相关设置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceNameIndexSettings 实例名称序号相关设置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceNameIndexSettings(const InstanceNameIndexSettings& _instanceNameIndexSettings);
@@ -1012,7 +1008,6 @@ namespace TencentCloud
 
                     /**
                      * 实例名称序号相关设置。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     InstanceNameIndexSettings m_instanceNameIndexSettings;
                     bool m_instanceNameIndexSettingsHasBeenSet;

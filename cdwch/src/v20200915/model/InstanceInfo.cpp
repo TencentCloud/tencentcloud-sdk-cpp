@@ -72,7 +72,8 @@ InstanceInfo::InstanceInfo() :
     m_clickHouseKeeperHasBeenSet(false),
     m_detailsHasBeenSet(false),
     m_isWhiteSGsHasBeenSet(false),
-    m_bindSGsHasBeenSet(false)
+    m_bindSGsHasBeenSet(false),
+    m_hasPublicCloudClbHasBeenSet(false)
 {
 }
 
@@ -652,6 +653,16 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_bindSGsHasBeenSet = true;
     }
 
+    if (value.HasMember("HasPublicCloudClb") && !value["HasPublicCloudClb"].IsNull())
+    {
+        if (!value["HasPublicCloudClb"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.HasPublicCloudClb` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_hasPublicCloudClb = value["HasPublicCloudClb"].GetBool();
+        m_hasPublicCloudClbHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1096,6 +1107,14 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_hasPublicCloudClbHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HasPublicCloudClb";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_hasPublicCloudClb, allocator);
     }
 
 }
@@ -1931,5 +1950,21 @@ void InstanceInfo::SetBindSGs(const vector<string>& _bindSGs)
 bool InstanceInfo::BindSGsHasBeenSet() const
 {
     return m_bindSGsHasBeenSet;
+}
+
+bool InstanceInfo::GetHasPublicCloudClb() const
+{
+    return m_hasPublicCloudClb;
+}
+
+void InstanceInfo::SetHasPublicCloudClb(const bool& _hasPublicCloudClb)
+{
+    m_hasPublicCloudClb = _hasPublicCloudClb;
+    m_hasPublicCloudClbHasBeenSet = true;
+}
+
+bool InstanceInfo::HasPublicCloudClbHasBeenSet() const
+{
+    return m_hasPublicCloudClbHasBeenSet;
 }
 

@@ -10317,6 +10317,49 @@ WedataClient::TriggerEventOutcomeCallable WedataClient::TriggerEventCallable(con
     return task->get_future();
 }
 
+WedataClient::TriggerManualTasksOutcome WedataClient::TriggerManualTasks(const TriggerManualTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "TriggerManualTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TriggerManualTasksResponse rsp = TriggerManualTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TriggerManualTasksOutcome(rsp);
+        else
+            return TriggerManualTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return TriggerManualTasksOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::TriggerManualTasksAsync(const TriggerManualTasksRequest& request, const TriggerManualTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->TriggerManualTasks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::TriggerManualTasksOutcomeCallable WedataClient::TriggerManualTasksCallable(const TriggerManualTasksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<TriggerManualTasksOutcome()>>(
+        [this, request]()
+        {
+            return this->TriggerManualTasks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WedataClient::UnlockIntegrationTaskOutcome WedataClient::UnlockIntegrationTask(const UnlockIntegrationTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "UnlockIntegrationTask");

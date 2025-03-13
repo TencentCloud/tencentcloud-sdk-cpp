@@ -20,31 +20,39 @@ set(svp_public_header
 
 set(svp_public_header_model
   include/tencentcloud/svp/v20240125/model/CreateSavingPlanOrderRequest.h
+  include/tencentcloud/svp/v20240125/model/DescribeSavingPlanCoverageRequest.h
   include/tencentcloud/svp/v20240125/model/CreateSavingPlanOrderResponse.h
   include/tencentcloud/svp/v20240125/model/DescribeSavingPlanDeductRequest.h
   include/tencentcloud/svp/v20240125/model/SavingPlanOverviewDetail.h
+  include/tencentcloud/svp/v20240125/model/SavingPlanCoverageRate.h
   include/tencentcloud/svp/v20240125/model/DescribeSavingPlanUsageRequest.h
   include/tencentcloud/svp/v20240125/model/SavingPlanDeductDetail.h
+  include/tencentcloud/svp/v20240125/model/SavingPlanCoverageDetail.h
   include/tencentcloud/svp/v20240125/model/DescribeSavingPlanOverviewResponse.h
   include/tencentcloud/svp/v20240125/model/DescribeSavingPlanUsageResponse.h
   include/tencentcloud/svp/v20240125/model/DescribeSavingPlanDeductResponse.h
   include/tencentcloud/svp/v20240125/model/DescribeSavingPlanOverviewRequest.h
   include/tencentcloud/svp/v20240125/model/SavingPlanUsageDetail.h
+  include/tencentcloud/svp/v20240125/model/DescribeSavingPlanCoverageResponse.h
   )
 
 set(svp_src
   src/v20240125/SvpClient.cpp
   src/v20240125/model/CreateSavingPlanOrderRequest.cpp
+  src/v20240125/model/DescribeSavingPlanCoverageRequest.cpp
   src/v20240125/model/CreateSavingPlanOrderResponse.cpp
   src/v20240125/model/DescribeSavingPlanDeductRequest.cpp
   src/v20240125/model/SavingPlanOverviewDetail.cpp
+  src/v20240125/model/SavingPlanCoverageRate.cpp
   src/v20240125/model/DescribeSavingPlanUsageRequest.cpp
   src/v20240125/model/SavingPlanDeductDetail.cpp
+  src/v20240125/model/SavingPlanCoverageDetail.cpp
   src/v20240125/model/DescribeSavingPlanOverviewResponse.cpp
   src/v20240125/model/DescribeSavingPlanUsageResponse.cpp
   src/v20240125/model/DescribeSavingPlanDeductResponse.cpp
   src/v20240125/model/DescribeSavingPlanOverviewRequest.cpp
   src/v20240125/model/SavingPlanUsageDetail.cpp
+  src/v20240125/model/DescribeSavingPlanCoverageResponse.cpp
   )
 
 set(svp_include

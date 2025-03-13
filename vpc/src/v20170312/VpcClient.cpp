@@ -1244,6 +1244,49 @@ VpcClient::CheckDefaultSubnetOutcomeCallable VpcClient::CheckDefaultSubnetCallab
     return task->get_future();
 }
 
+VpcClient::CheckGatewayFlowMonitorOutcome VpcClient::CheckGatewayFlowMonitor(const CheckGatewayFlowMonitorRequest &request)
+{
+    auto outcome = MakeRequest(request, "CheckGatewayFlowMonitor");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CheckGatewayFlowMonitorResponse rsp = CheckGatewayFlowMonitorResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CheckGatewayFlowMonitorOutcome(rsp);
+        else
+            return CheckGatewayFlowMonitorOutcome(o.GetError());
+    }
+    else
+    {
+        return CheckGatewayFlowMonitorOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::CheckGatewayFlowMonitorAsync(const CheckGatewayFlowMonitorRequest& request, const CheckGatewayFlowMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CheckGatewayFlowMonitor(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::CheckGatewayFlowMonitorOutcomeCallable VpcClient::CheckGatewayFlowMonitorCallable(const CheckGatewayFlowMonitorRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CheckGatewayFlowMonitorOutcome()>>(
+        [this, request]()
+        {
+            return this->CheckGatewayFlowMonitor(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::CheckNetDetectStateOutcome VpcClient::CheckNetDetectState(const CheckNetDetectStateRequest &request)
 {
     auto outcome = MakeRequest(request, "CheckNetDetectState");

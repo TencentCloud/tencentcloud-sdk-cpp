@@ -23,6 +23,7 @@ using namespace std;
 ServerlessIndexMetaField::ServerlessIndexMetaField() :
     m_appIdHasBeenSet(false),
     m_indexNameHasBeenSet(false),
+    m_indexMetaJsonHasBeenSet(false),
     m_indexDocsHasBeenSet(false),
     m_indexStorageHasBeenSet(false),
     m_indexCreateTimeHasBeenSet(false),
@@ -65,6 +66,16 @@ CoreInternalOutcome ServerlessIndexMetaField::Deserialize(const rapidjson::Value
         }
         m_indexName = string(value["IndexName"].GetString());
         m_indexNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("IndexMetaJson") && !value["IndexMetaJson"].IsNull())
+    {
+        if (!value["IndexMetaJson"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServerlessIndexMetaField.IndexMetaJson` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_indexMetaJson = string(value["IndexMetaJson"].GetString());
+        m_indexMetaJsonHasBeenSet = true;
     }
 
     if (value.HasMember("IndexDocs") && !value["IndexDocs"].IsNull())
@@ -281,6 +292,14 @@ void ServerlessIndexMetaField::ToJsonObject(rapidjson::Value &value, rapidjson::
         value.AddMember(iKey, rapidjson::Value(m_indexName.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_indexMetaJsonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IndexMetaJson";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_indexMetaJson.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_indexDocsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -452,6 +471,22 @@ void ServerlessIndexMetaField::SetIndexName(const string& _indexName)
 bool ServerlessIndexMetaField::IndexNameHasBeenSet() const
 {
     return m_indexNameHasBeenSet;
+}
+
+string ServerlessIndexMetaField::GetIndexMetaJson() const
+{
+    return m_indexMetaJson;
+}
+
+void ServerlessIndexMetaField::SetIndexMetaJson(const string& _indexMetaJson)
+{
+    m_indexMetaJson = _indexMetaJson;
+    m_indexMetaJsonHasBeenSet = true;
+}
+
+bool ServerlessIndexMetaField::IndexMetaJsonHasBeenSet() const
+{
+    return m_indexMetaJsonHasBeenSet;
 }
 
 int64_t ServerlessIndexMetaField::GetIndexDocs() const

@@ -27,7 +27,9 @@ set(lcic_public_header_model
   include/tencentcloud/lcic/v20220817/model/DeleteUserRequest.h
   include/tencentcloud/lcic/v20220817/model/WatermarkConfig.h
   include/tencentcloud/lcic/v20220817/model/DescribeSupervisorsResponse.h
+  include/tencentcloud/lcic/v20220817/model/DescribeWhiteBoardSnapshotRequest.h
   include/tencentcloud/lcic/v20220817/model/DeleteUserResponse.h
+  include/tencentcloud/lcic/v20220817/model/DeleteWhiteBoardSnapshotRequest.h
   include/tencentcloud/lcic/v20220817/model/BatchDeleteRecordRequest.h
   include/tencentcloud/lcic/v20220817/model/ModifyAppResponse.h
   include/tencentcloud/lcic/v20220817/model/UnblockKickedUserResponse.h
@@ -64,6 +66,7 @@ set(lcic_public_header_model
   include/tencentcloud/lcic/v20220817/model/SetAppCustomContentResponse.h
   include/tencentcloud/lcic/v20220817/model/UnblockKickedUserRequest.h
   include/tencentcloud/lcic/v20220817/model/BatchUserRequest.h
+  include/tencentcloud/lcic/v20220817/model/DeleteWhiteBoardSnapshotResponse.h
   include/tencentcloud/lcic/v20220817/model/LoginUserResponse.h
   include/tencentcloud/lcic/v20220817/model/ModifyGroupRequest.h
   include/tencentcloud/lcic/v20220817/model/DescribeAppDetailRequest.h
@@ -155,6 +158,7 @@ set(lcic_public_header_model
   include/tencentcloud/lcic/v20220817/model/DescribeDocumentsByRoomResponse.h
   include/tencentcloud/lcic/v20220817/model/LoginOriginIdResponse.h
   include/tencentcloud/lcic/v20220817/model/DescribeQuestionListResponse.h
+  include/tencentcloud/lcic/v20220817/model/DescribeWhiteBoardSnapshotResponse.h
   include/tencentcloud/lcic/v20220817/model/GetRoomsResponse.h
   include/tencentcloud/lcic/v20220817/model/SetMarqueeResponse.h
   include/tencentcloud/lcic/v20220817/model/QuestionInfo.h
@@ -200,7 +204,9 @@ set(lcic_src
   src/v20220817/model/DeleteUserRequest.cpp
   src/v20220817/model/WatermarkConfig.cpp
   src/v20220817/model/DescribeSupervisorsResponse.cpp
+  src/v20220817/model/DescribeWhiteBoardSnapshotRequest.cpp
   src/v20220817/model/DeleteUserResponse.cpp
+  src/v20220817/model/DeleteWhiteBoardSnapshotRequest.cpp
   src/v20220817/model/BatchDeleteRecordRequest.cpp
   src/v20220817/model/ModifyAppResponse.cpp
   src/v20220817/model/UnblockKickedUserResponse.cpp
@@ -237,6 +243,7 @@ set(lcic_src
   src/v20220817/model/SetAppCustomContentResponse.cpp
   src/v20220817/model/UnblockKickedUserRequest.cpp
   src/v20220817/model/BatchUserRequest.cpp
+  src/v20220817/model/DeleteWhiteBoardSnapshotResponse.cpp
   src/v20220817/model/LoginUserResponse.cpp
   src/v20220817/model/ModifyGroupRequest.cpp
   src/v20220817/model/DescribeAppDetailRequest.cpp
@@ -328,6 +335,7 @@ set(lcic_src
   src/v20220817/model/DescribeDocumentsByRoomResponse.cpp
   src/v20220817/model/LoginOriginIdResponse.cpp
   src/v20220817/model/DescribeQuestionListResponse.cpp
+  src/v20220817/model/DescribeWhiteBoardSnapshotResponse.cpp
   src/v20220817/model/GetRoomsResponse.cpp
   src/v20220817/model/SetMarqueeResponse.cpp
   src/v20220817/model/QuestionInfo.cpp

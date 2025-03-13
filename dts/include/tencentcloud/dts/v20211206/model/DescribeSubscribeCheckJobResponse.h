@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取失败或者报错提示，成功则提示success。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 失败或者报错提示，成功则提示success。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMessage() const;
@@ -132,9 +130,7 @@ namespace TencentCloud
 
                     /**
                      * 获取各个步骤运行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Steps 各个步骤运行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SubscribeCheckStepInfo> GetSteps() const;
@@ -156,7 +152,6 @@ namespace TencentCloud
 
                     /**
                      * 失败或者报错提示，成功则提示success。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
@@ -187,7 +182,6 @@ namespace TencentCloud
 
                     /**
                      * 各个步骤运行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SubscribeCheckStepInfo> m_steps;
                     bool m_stepsHasBeenSet;

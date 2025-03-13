@@ -280,10 +280,8 @@ namespace TencentCloud
                     /**
                      * 获取远程读取次数
 数据库内核版本大于3.1.12
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SyncReadCountRemote 远程读取次数
 数据库内核版本大于3.1.12
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSyncReadCountRemote() const;
@@ -291,10 +289,8 @@ namespace TencentCloud
                     /**
                      * 设置远程读取次数
 数据库内核版本大于3.1.12
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _syncReadCountRemote 远程读取次数
 数据库内核版本大于3.1.12
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSyncReadCountRemote(const int64_t& _syncReadCountRemote);
@@ -309,10 +305,8 @@ namespace TencentCloud
                     /**
                      * 获取远程读取的字节数
 数据库内核版本大于3.1.12
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SyncReadBytesRemote 远程读取的字节数
 数据库内核版本大于3.1.12
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSyncReadBytesRemote() const;
@@ -320,10 +314,8 @@ namespace TencentCloud
                     /**
                      * 设置远程读取的字节数
 数据库内核版本大于3.1.12
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _syncReadBytesRemote 远程读取的字节数
 数据库内核版本大于3.1.12
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSyncReadBytesRemote(const int64_t& _syncReadBytesRemote);
@@ -338,10 +330,8 @@ namespace TencentCloud
                     /**
                      * 获取远程读取所花费的时间（微秒）
 数据库内核版本大于3.1.12
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SyncReadTimeRemote 远程读取所花费的时间（微秒）
 数据库内核版本大于3.1.12
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSyncReadTimeRemote() const;
@@ -349,10 +339,8 @@ namespace TencentCloud
                     /**
                      * 设置远程读取所花费的时间（微秒）
 数据库内核版本大于3.1.12
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _syncReadTimeRemote 远程读取所花费的时间（微秒）
 数据库内核版本大于3.1.12
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSyncReadTimeRemote(const int64_t& _syncReadTimeRemote);
@@ -367,10 +355,8 @@ namespace TencentCloud
                     /**
                      * 获取远程写入次数
 数据库内核版本大于3.1.12
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SyncWriteCountRemote 远程写入次数
 数据库内核版本大于3.1.12
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSyncWriteCountRemote() const;
@@ -378,10 +364,8 @@ namespace TencentCloud
                     /**
                      * 设置远程写入次数
 数据库内核版本大于3.1.12
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _syncWriteCountRemote 远程写入次数
 数据库内核版本大于3.1.12
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSyncWriteCountRemote(const int64_t& _syncWriteCountRemote);
@@ -396,10 +380,8 @@ namespace TencentCloud
                     /**
                      * 获取远程写入的字节数。
 数据库内核版本大于3.1.12
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SyncWriteBytesRemote 远程写入的字节数。
 数据库内核版本大于3.1.12
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSyncWriteBytesRemote() const;
@@ -407,10 +389,8 @@ namespace TencentCloud
                     /**
                      * 设置远程写入的字节数。
 数据库内核版本大于3.1.12
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _syncWriteBytesRemote 远程写入的字节数。
 数据库内核版本大于3.1.12
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSyncWriteBytesRemote(const int64_t& _syncWriteBytesRemote);
@@ -425,10 +405,8 @@ namespace TencentCloud
                     /**
                      * 获取远程写入所花费的时间（微秒）。
 数据库内核版本大于3.1.12
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SyncWriteTimeRemote 远程写入所花费的时间（微秒）。
 数据库内核版本大于3.1.12
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSyncWriteTimeRemote() const;
@@ -436,10 +414,8 @@ namespace TencentCloud
                     /**
                      * 设置远程写入所花费的时间（微秒）。
 数据库内核版本大于3.1.12
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _syncWriteTimeRemote 远程写入所花费的时间（微秒）。
 数据库内核版本大于3.1.12
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSyncWriteTimeRemote(const int64_t& _syncWriteTimeRemote);
@@ -454,10 +430,8 @@ namespace TencentCloud
                     /**
                      * 获取事务提交延迟（微秒）
 数据库内核版本大于3.1.12
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TrxCommitDelay 事务提交延迟（微秒）
 数据库内核版本大于3.1.12
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTrxCommitDelay() const;
@@ -465,10 +439,8 @@ namespace TencentCloud
                     /**
                      * 设置事务提交延迟（微秒）
 数据库内核版本大于3.1.12
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _trxCommitDelay 事务提交延迟（微秒）
 数据库内核版本大于3.1.12
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTrxCommitDelay(const int64_t& _trxCommitDelay);
@@ -551,7 +523,6 @@ namespace TencentCloud
                     /**
                      * 远程读取次数
 数据库内核版本大于3.1.12
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_syncReadCountRemote;
                     bool m_syncReadCountRemoteHasBeenSet;
@@ -559,7 +530,6 @@ namespace TencentCloud
                     /**
                      * 远程读取的字节数
 数据库内核版本大于3.1.12
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_syncReadBytesRemote;
                     bool m_syncReadBytesRemoteHasBeenSet;
@@ -567,7 +537,6 @@ namespace TencentCloud
                     /**
                      * 远程读取所花费的时间（微秒）
 数据库内核版本大于3.1.12
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_syncReadTimeRemote;
                     bool m_syncReadTimeRemoteHasBeenSet;
@@ -575,7 +544,6 @@ namespace TencentCloud
                     /**
                      * 远程写入次数
 数据库内核版本大于3.1.12
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_syncWriteCountRemote;
                     bool m_syncWriteCountRemoteHasBeenSet;
@@ -583,7 +551,6 @@ namespace TencentCloud
                     /**
                      * 远程写入的字节数。
 数据库内核版本大于3.1.12
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_syncWriteBytesRemote;
                     bool m_syncWriteBytesRemoteHasBeenSet;
@@ -591,7 +558,6 @@ namespace TencentCloud
                     /**
                      * 远程写入所花费的时间（微秒）。
 数据库内核版本大于3.1.12
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_syncWriteTimeRemote;
                     bool m_syncWriteTimeRemoteHasBeenSet;
@@ -599,7 +565,6 @@ namespace TencentCloud
                     /**
                      * 事务提交延迟（微秒）
 数据库内核版本大于3.1.12
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_trxCommitDelay;
                     bool m_trxCommitDelayHasBeenSet;

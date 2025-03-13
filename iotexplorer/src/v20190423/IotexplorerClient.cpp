@@ -83,49 +83,6 @@ IotexplorerClient::ActivateTWeCallLicenseOutcomeCallable IotexplorerClient::Acti
     return task->get_future();
 }
 
-IotexplorerClient::AssignTWeCallLicenseOutcome IotexplorerClient::AssignTWeCallLicense(const AssignTWeCallLicenseRequest &request)
-{
-    auto outcome = MakeRequest(request, "AssignTWeCallLicense");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        AssignTWeCallLicenseResponse rsp = AssignTWeCallLicenseResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return AssignTWeCallLicenseOutcome(rsp);
-        else
-            return AssignTWeCallLicenseOutcome(o.GetError());
-    }
-    else
-    {
-        return AssignTWeCallLicenseOutcome(outcome.GetError());
-    }
-}
-
-void IotexplorerClient::AssignTWeCallLicenseAsync(const AssignTWeCallLicenseRequest& request, const AssignTWeCallLicenseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->AssignTWeCallLicense(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-IotexplorerClient::AssignTWeCallLicenseOutcomeCallable IotexplorerClient::AssignTWeCallLicenseCallable(const AssignTWeCallLicenseRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<AssignTWeCallLicenseOutcome()>>(
-        [this, request]()
-        {
-            return this->AssignTWeCallLicense(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 IotexplorerClient::BindCloudStorageUserOutcome IotexplorerClient::BindCloudStorageUser(const BindCloudStorageUserRequest &request)
 {
     auto outcome = MakeRequest(request, "BindCloudStorageUser");
@@ -4849,49 +4806,6 @@ IotexplorerClient::GetTWeCallActiveStatusOutcomeCallable IotexplorerClient::GetT
         [this, request]()
         {
             return this->GetTWeCallActiveStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-IotexplorerClient::GetTWeCallPkgListOutcome IotexplorerClient::GetTWeCallPkgList(const GetTWeCallPkgListRequest &request)
-{
-    auto outcome = MakeRequest(request, "GetTWeCallPkgList");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        GetTWeCallPkgListResponse rsp = GetTWeCallPkgListResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return GetTWeCallPkgListOutcome(rsp);
-        else
-            return GetTWeCallPkgListOutcome(o.GetError());
-    }
-    else
-    {
-        return GetTWeCallPkgListOutcome(outcome.GetError());
-    }
-}
-
-void IotexplorerClient::GetTWeCallPkgListAsync(const GetTWeCallPkgListRequest& request, const GetTWeCallPkgListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetTWeCallPkgList(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-IotexplorerClient::GetTWeCallPkgListOutcomeCallable IotexplorerClient::GetTWeCallPkgListCallable(const GetTWeCallPkgListRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<GetTWeCallPkgListOutcome()>>(
-        [this, request]()
-        {
-            return this->GetTWeCallPkgList(request);
         }
     );
 

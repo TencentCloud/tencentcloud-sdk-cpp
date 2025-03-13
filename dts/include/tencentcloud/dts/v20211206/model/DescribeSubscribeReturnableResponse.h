@@ -59,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取不支持退还的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReturnFailMessage 不支持退还的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReturnFailMessage() const;
@@ -83,7 +81,6 @@ namespace TencentCloud
 
                     /**
                      * 不支持退还的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_returnFailMessage;
                     bool m_returnFailMessageHasBeenSet;

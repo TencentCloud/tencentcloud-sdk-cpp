@@ -260,18 +260,14 @@ namespace TencentCloud
 
                     /**
                      * 获取远程命令执行对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LifecycleCommand 远程命令执行对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     LifecycleCommand GetLifecycleCommand() const;
 
                     /**
                      * 设置远程命令执行对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lifecycleCommand 远程命令执行对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLifecycleCommand(const LifecycleCommand& _lifecycleCommand);
@@ -347,7 +343,6 @@ namespace TencentCloud
 
                     /**
                      * 远程命令执行对象
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     LifecycleCommand m_lifecycleCommand;
                     bool m_lifecycleCommandHasBeenSet;

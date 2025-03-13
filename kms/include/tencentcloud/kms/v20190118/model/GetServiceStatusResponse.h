@@ -169,6 +169,34 @@ namespace TencentCloud
                      */
                     bool SubscriptionInfoHasBeenSet() const;
 
+                    /**
+                     * 获取返回KMS用户密钥使用数量
+                     * @return CmkUserCount 返回KMS用户密钥使用数量
+                     * 
+                     */
+                    uint64_t GetCmkUserCount() const;
+
+                    /**
+                     * 判断参数 CmkUserCount 是否已赋值
+                     * @return CmkUserCount 是否已赋值
+                     * 
+                     */
+                    bool CmkUserCountHasBeenSet() const;
+
+                    /**
+                     * 获取返回KMS用户密钥规格数量
+                     * @return CmkLimit 返回KMS用户密钥规格数量
+                     * 
+                     */
+                    uint64_t GetCmkLimit() const;
+
+                    /**
+                     * 判断参数 CmkLimit 是否已赋值
+                     * @return CmkLimit 是否已赋值
+                     * 
+                     */
+                    bool CmkLimitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -224,6 +252,18 @@ namespace TencentCloud
                      */
                     std::string m_subscriptionInfo;
                     bool m_subscriptionInfoHasBeenSet;
+
+                    /**
+                     * 返回KMS用户密钥使用数量
+                     */
+                    uint64_t m_cmkUserCount;
+                    bool m_cmkUserCountHasBeenSet;
+
+                    /**
+                     * 返回KMS用户密钥规格数量
+                     */
+                    uint64_t m_cmkLimit;
+                    bool m_cmkLimitHasBeenSet;
 
                 };
             }

@@ -25,8 +25,6 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ActivateTWeCallLicenseRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/ActivateTWeCallLicenseResponse.h>
-#include <tencentcloud/iotexplorer/v20190423/model/AssignTWeCallLicenseRequest.h>
-#include <tencentcloud/iotexplorer/v20190423/model/AssignTWeCallLicenseResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/BindCloudStorageUserRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/BindCloudStorageUserResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/BindDevicesRequest.h>
@@ -247,8 +245,6 @@
 #include <tencentcloud/iotexplorer/v20190423/model/GetStudioProductListResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetTWeCallActiveStatusRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetTWeCallActiveStatusResponse.h>
-#include <tencentcloud/iotexplorer/v20190423/model/GetTWeCallPkgListRequest.h>
-#include <tencentcloud/iotexplorer/v20190423/model/GetTWeCallPkgListResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetTopicRuleListRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetTopicRuleListResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/GetWechatDeviceTicketRequest.h>
@@ -356,9 +352,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ActivateTWeCallLicenseResponse> ActivateTWeCallLicenseOutcome;
                 typedef std::future<ActivateTWeCallLicenseOutcome> ActivateTWeCallLicenseOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::ActivateTWeCallLicenseRequest&, ActivateTWeCallLicenseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ActivateTWeCallLicenseAsyncHandler;
-                typedef Outcome<Core::Error, Model::AssignTWeCallLicenseResponse> AssignTWeCallLicenseOutcome;
-                typedef std::future<AssignTWeCallLicenseOutcome> AssignTWeCallLicenseOutcomeCallable;
-                typedef std::function<void(const IotexplorerClient*, const Model::AssignTWeCallLicenseRequest&, AssignTWeCallLicenseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssignTWeCallLicenseAsyncHandler;
                 typedef Outcome<Core::Error, Model::BindCloudStorageUserResponse> BindCloudStorageUserOutcome;
                 typedef std::future<BindCloudStorageUserOutcome> BindCloudStorageUserOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::BindCloudStorageUserRequest&, BindCloudStorageUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindCloudStorageUserAsyncHandler;
@@ -689,9 +682,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetTWeCallActiveStatusResponse> GetTWeCallActiveStatusOutcome;
                 typedef std::future<GetTWeCallActiveStatusOutcome> GetTWeCallActiveStatusOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::GetTWeCallActiveStatusRequest&, GetTWeCallActiveStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTWeCallActiveStatusAsyncHandler;
-                typedef Outcome<Core::Error, Model::GetTWeCallPkgListResponse> GetTWeCallPkgListOutcome;
-                typedef std::future<GetTWeCallPkgListOutcome> GetTWeCallPkgListOutcomeCallable;
-                typedef std::function<void(const IotexplorerClient*, const Model::GetTWeCallPkgListRequest&, GetTWeCallPkgListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTWeCallPkgListAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetTopicRuleListResponse> GetTopicRuleListOutcome;
                 typedef std::future<GetTopicRuleListOutcome> GetTopicRuleListOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::GetTopicRuleListRequest&, GetTopicRuleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTopicRuleListAsyncHandler;
@@ -838,17 +828,6 @@ namespace TencentCloud
                 ActivateTWeCallLicenseOutcome ActivateTWeCallLicense(const Model::ActivateTWeCallLicenseRequest &request);
                 void ActivateTWeCallLicenseAsync(const Model::ActivateTWeCallLicenseRequest& request, const ActivateTWeCallLicenseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ActivateTWeCallLicenseOutcomeCallable ActivateTWeCallLicenseCallable(const Model::ActivateTWeCallLicenseRequest& request);
-
-                /**
-                 *微信VOIP功能调整下线
-
-分配License
-                 * @param req AssignTWeCallLicenseRequest
-                 * @return AssignTWeCallLicenseOutcome
-                 */
-                AssignTWeCallLicenseOutcome AssignTWeCallLicense(const Model::AssignTWeCallLicenseRequest &request);
-                void AssignTWeCallLicenseAsync(const Model::AssignTWeCallLicenseRequest& request, const AssignTWeCallLicenseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                AssignTWeCallLicenseOutcomeCallable AssignTWeCallLicenseCallable(const Model::AssignTWeCallLicenseRequest& request);
 
                 /**
                  *绑定云存用户
@@ -1839,17 +1818,6 @@ namespace TencentCloud
                 GetTWeCallActiveStatusOutcome GetTWeCallActiveStatus(const Model::GetTWeCallActiveStatusRequest &request);
                 void GetTWeCallActiveStatusAsync(const Model::GetTWeCallActiveStatusRequest& request, const GetTWeCallActiveStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetTWeCallActiveStatusOutcomeCallable GetTWeCallActiveStatusCallable(const Model::GetTWeCallActiveStatusRequest& request);
-
-                /**
-                 *微信VOIP功能调整下线
-
-查询TWeCall包列表
-                 * @param req GetTWeCallPkgListRequest
-                 * @return GetTWeCallPkgListOutcome
-                 */
-                GetTWeCallPkgListOutcome GetTWeCallPkgList(const Model::GetTWeCallPkgListRequest &request);
-                void GetTWeCallPkgListAsync(const Model::GetTWeCallPkgListRequest& request, const GetTWeCallPkgListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                GetTWeCallPkgListOutcomeCallable GetTWeCallPkgListCallable(const Model::GetTWeCallPkgListRequest& request);
 
                 /**
                  *获取规则列表

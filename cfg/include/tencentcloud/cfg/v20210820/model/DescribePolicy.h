@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取护栏策略生效处理策略 1:顺序执行，2:暂停
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskPolicyDealType 护栏策略生效处理策略 1:顺序执行，2:暂停
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTaskPolicyDealType() const;
 
                     /**
                      * 设置护栏策略生效处理策略 1:顺序执行，2:暂停
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskPolicyDealType 护栏策略生效处理策略 1:顺序执行，2:暂停
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskPolicyDealType(const int64_t& _taskPolicyDealType);
@@ -156,7 +152,6 @@ namespace TencentCloud
 
                     /**
                      * 护栏策略生效处理策略 1:顺序执行，2:暂停
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_taskPolicyDealType;
                     bool m_taskPolicyDealTypeHasBeenSet;

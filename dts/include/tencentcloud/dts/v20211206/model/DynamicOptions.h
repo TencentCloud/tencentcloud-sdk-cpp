@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取所要同步的DML和DDL的选项，Insert(插入操作)、Update(更新操作)、Delete(删除操作)、DDL(结构同步)，PartialDDL(自定义,和DdlOptions一起起作用 )；必填、dts会用该值覆盖原有的值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OpTypes 所要同步的DML和DDL的选项，Insert(插入操作)、Update(更新操作)、Delete(删除操作)、DDL(结构同步)，PartialDDL(自定义,和DdlOptions一起起作用 )；必填、dts会用该值覆盖原有的值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetOpTypes() const;
 
                     /**
                      * 设置所要同步的DML和DDL的选项，Insert(插入操作)、Update(更新操作)、Delete(删除操作)、DDL(结构同步)，PartialDDL(自定义,和DdlOptions一起起作用 )；必填、dts会用该值覆盖原有的值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _opTypes 所要同步的DML和DDL的选项，Insert(插入操作)、Update(更新操作)、Delete(删除操作)、DDL(结构同步)，PartialDDL(自定义,和DdlOptions一起起作用 )；必填、dts会用该值覆盖原有的值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOpTypes(const std::vector<std::string>& _opTypes);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取DDL同步选项，具体描述要同步那些DDL; 当OpTypes取值PartialDDL时、字段不能为空；必填、dts会用该值覆盖原有的值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DdlOptions DDL同步选项，具体描述要同步那些DDL; 当OpTypes取值PartialDDL时、字段不能为空；必填、dts会用该值覆盖原有的值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DdlOption> GetDdlOptions() const;
 
                     /**
                      * 设置DDL同步选项，具体描述要同步那些DDL; 当OpTypes取值PartialDDL时、字段不能为空；必填、dts会用该值覆盖原有的值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ddlOptions DDL同步选项，具体描述要同步那些DDL; 当OpTypes取值PartialDDL时、字段不能为空；必填、dts会用该值覆盖原有的值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDdlOptions(const std::vector<DdlOption>& _ddlOptions);
@@ -100,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取冲突处理选项，ReportError(报错)、Ignore(忽略)、Cover(覆盖)、ConditionCover(条件覆盖); 目前目标端为kafka的链路不支持修改该配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConflictHandleType 冲突处理选项，ReportError(报错)、Ignore(忽略)、Cover(覆盖)、ConditionCover(条件覆盖); 目前目标端为kafka的链路不支持修改该配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConflictHandleType() const;
 
                     /**
                      * 设置冲突处理选项，ReportError(报错)、Ignore(忽略)、Cover(覆盖)、ConditionCover(条件覆盖); 目前目标端为kafka的链路不支持修改该配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _conflictHandleType 冲突处理选项，ReportError(报错)、Ignore(忽略)、Cover(覆盖)、ConditionCover(条件覆盖); 目前目标端为kafka的链路不支持修改该配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConflictHandleType(const std::string& _conflictHandleType);
@@ -125,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取冲突处理的详细选项，如条件覆盖中的条件行和条件操作；不能部分更新该选项的内部字段；有更新时、需要全量更新该字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConflictHandleOption 冲突处理的详细选项，如条件覆盖中的条件行和条件操作；不能部分更新该选项的内部字段；有更新时、需要全量更新该字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ConflictHandleOption GetConflictHandleOption() const;
 
                     /**
                      * 设置冲突处理的详细选项，如条件覆盖中的条件行和条件操作；不能部分更新该选项的内部字段；有更新时、需要全量更新该字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _conflictHandleOption 冲突处理的详细选项，如条件覆盖中的条件行和条件操作；不能部分更新该选项的内部字段；有更新时、需要全量更新该字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConflictHandleOption(const ConflictHandleOption& _conflictHandleOption);
@@ -152,28 +136,24 @@ namespace TencentCloud
 
                     /**
                      * 所要同步的DML和DDL的选项，Insert(插入操作)、Update(更新操作)、Delete(删除操作)、DDL(结构同步)，PartialDDL(自定义,和DdlOptions一起起作用 )；必填、dts会用该值覆盖原有的值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_opTypes;
                     bool m_opTypesHasBeenSet;
 
                     /**
                      * DDL同步选项，具体描述要同步那些DDL; 当OpTypes取值PartialDDL时、字段不能为空；必填、dts会用该值覆盖原有的值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DdlOption> m_ddlOptions;
                     bool m_ddlOptionsHasBeenSet;
 
                     /**
                      * 冲突处理选项，ReportError(报错)、Ignore(忽略)、Cover(覆盖)、ConditionCover(条件覆盖); 目前目标端为kafka的链路不支持修改该配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_conflictHandleType;
                     bool m_conflictHandleTypeHasBeenSet;
 
                     /**
                      * 冲突处理的详细选项，如条件覆盖中的条件行和条件操作；不能部分更新该选项的内部字段；有更新时、需要全量更新该字段
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ConflictHandleOption m_conflictHandleOption;
                     bool m_conflictHandleOptionHasBeenSet;

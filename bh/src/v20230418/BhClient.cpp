@@ -40,6 +40,49 @@ BhClient::BhClient(const Credential &credential, const string &region, const Cli
 }
 
 
+BhClient::AccessDevicesOutcome BhClient::AccessDevices(const AccessDevicesRequest &request)
+{
+    auto outcome = MakeRequest(request, "AccessDevices");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AccessDevicesResponse rsp = AccessDevicesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AccessDevicesOutcome(rsp);
+        else
+            return AccessDevicesOutcome(o.GetError());
+    }
+    else
+    {
+        return AccessDevicesOutcome(outcome.GetError());
+    }
+}
+
+void BhClient::AccessDevicesAsync(const AccessDevicesRequest& request, const AccessDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AccessDevices(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BhClient::AccessDevicesOutcomeCallable BhClient::AccessDevicesCallable(const AccessDevicesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AccessDevicesOutcome()>>(
+        [this, request]()
+        {
+            return this->AccessDevices(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 BhClient::AddDeviceGroupMembersOutcome BhClient::AddDeviceGroupMembers(const AddDeviceGroupMembersRequest &request)
 {
     auto outcome = MakeRequest(request, "AddDeviceGroupMembers");

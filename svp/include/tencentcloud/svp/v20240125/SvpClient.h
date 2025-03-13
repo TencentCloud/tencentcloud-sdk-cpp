@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/svp/v20240125/model/CreateSavingPlanOrderRequest.h>
 #include <tencentcloud/svp/v20240125/model/CreateSavingPlanOrderResponse.h>
+#include <tencentcloud/svp/v20240125/model/DescribeSavingPlanCoverageRequest.h>
+#include <tencentcloud/svp/v20240125/model/DescribeSavingPlanCoverageResponse.h>
 #include <tencentcloud/svp/v20240125/model/DescribeSavingPlanDeductRequest.h>
 #include <tencentcloud/svp/v20240125/model/DescribeSavingPlanDeductResponse.h>
 #include <tencentcloud/svp/v20240125/model/DescribeSavingPlanOverviewRequest.h>
@@ -48,6 +50,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateSavingPlanOrderResponse> CreateSavingPlanOrderOutcome;
                 typedef std::future<CreateSavingPlanOrderOutcome> CreateSavingPlanOrderOutcomeCallable;
                 typedef std::function<void(const SvpClient*, const Model::CreateSavingPlanOrderRequest&, CreateSavingPlanOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSavingPlanOrderAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSavingPlanCoverageResponse> DescribeSavingPlanCoverageOutcome;
+                typedef std::future<DescribeSavingPlanCoverageOutcome> DescribeSavingPlanCoverageOutcomeCallable;
+                typedef std::function<void(const SvpClient*, const Model::DescribeSavingPlanCoverageRequest&, DescribeSavingPlanCoverageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSavingPlanCoverageAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSavingPlanDeductResponse> DescribeSavingPlanDeductOutcome;
                 typedef std::future<DescribeSavingPlanDeductOutcome> DescribeSavingPlanDeductOutcomeCallable;
                 typedef std::function<void(const SvpClient*, const Model::DescribeSavingPlanDeductRequest&, DescribeSavingPlanDeductOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSavingPlanDeductAsyncHandler;
@@ -68,6 +73,15 @@ namespace TencentCloud
                 CreateSavingPlanOrderOutcome CreateSavingPlanOrder(const Model::CreateSavingPlanOrderRequest &request);
                 void CreateSavingPlanOrderAsync(const Model::CreateSavingPlanOrderRequest& request, const CreateSavingPlanOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateSavingPlanOrderOutcomeCallable CreateSavingPlanOrderCallable(const Model::CreateSavingPlanOrderRequest& request);
+
+                /**
+                 *查询当前用户节省计划覆盖率明细数据，如无特别说明，金额单位均为元（国内站）或者美元（国际站）。
+                 * @param req DescribeSavingPlanCoverageRequest
+                 * @return DescribeSavingPlanCoverageOutcome
+                 */
+                DescribeSavingPlanCoverageOutcome DescribeSavingPlanCoverage(const Model::DescribeSavingPlanCoverageRequest &request);
+                void DescribeSavingPlanCoverageAsync(const Model::DescribeSavingPlanCoverageRequest& request, const DescribeSavingPlanCoverageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSavingPlanCoverageOutcomeCallable DescribeSavingPlanCoverageCallable(const Model::DescribeSavingPlanCoverageRequest& request);
 
                 /**
                  *查询节省计划抵扣明细

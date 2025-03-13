@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 服务名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置服务名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 服务名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Version 服务版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置服务版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _version 服务版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVersion(const std::string& _version);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务最新版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LatestVersion 服务最新版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLatestVersion() const;
 
                     /**
                      * 设置服务最新版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _latestVersion 服务最新版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLatestVersion(const std::string& _latestVersion);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否需要更新
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsUpdate 是否需要更新
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsUpdate() const;
 
                     /**
                      * 设置是否需要更新
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isUpdate 是否需要更新
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsUpdate(const bool& _isUpdate);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取升级信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpgradeInfo 升级信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetUpgradeInfo() const;
 
                     /**
                      * 设置升级信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _upgradeInfo 升级信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpgradeInfo(const std::vector<std::string>& _upgradeInfo);
@@ -175,35 +155,30 @@ namespace TencentCloud
 
                     /**
                      * 服务名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 服务版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;
 
                     /**
                      * 服务最新版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_latestVersion;
                     bool m_latestVersionHasBeenSet;
 
                     /**
                      * 是否需要更新
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isUpdate;
                     bool m_isUpdateHasBeenSet;
 
                     /**
                      * 升级信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_upgradeInfo;
                     bool m_upgradeInfoHasBeenSet;

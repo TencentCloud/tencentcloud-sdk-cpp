@@ -55,9 +55,7 @@ namespace TencentCloud
 
                     /**
                      * 获取数据迁移任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return JobId 数据迁移任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetJobId() const;
@@ -71,9 +69,7 @@ namespace TencentCloud
 
                     /**
                      * 获取数据迁移任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return JobName 数据迁移任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetJobName() const;
@@ -87,9 +83,7 @@ namespace TencentCloud
 
                     /**
                      * 获取任务创建(提交)时间，格式为 yyyy-mm-dd hh:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 任务创建(提交)时间，格式为 yyyy-mm-dd hh:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
@@ -103,9 +97,7 @@ namespace TencentCloud
 
                     /**
                      * 获取任务更新时间，格式为 yyyy-mm-dd hh:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 任务更新时间，格式为 yyyy-mm-dd hh:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
@@ -119,9 +111,7 @@ namespace TencentCloud
 
                     /**
                      * 获取任务开始执行时间，格式为 yyyy-mm-dd hh:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 任务开始执行时间，格式为 yyyy-mm-dd hh:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStartTime() const;
@@ -135,9 +125,7 @@ namespace TencentCloud
 
                     /**
                      * 获取任务执行结束时间，格式为 yyyy-mm-dd hh:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 任务执行结束时间，格式为 yyyy-mm-dd hh:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndTime() const;
@@ -151,9 +139,7 @@ namespace TencentCloud
 
                     /**
                      * 获取迁移任务简要错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BriefMsg 迁移任务简要错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBriefMsg() const;
@@ -169,11 +155,9 @@ namespace TencentCloud
                      * 获取任务状态，取值为：created(创建完成)、checking(校验中)、checkPass(校验通过)、checkNotPass(校验不通过)、readyRun(准备运行)、running(任务运行中)、readyComplete(准备完成)、success(任务成功)、failed(任务失败)、stopping(中止中)、completing(完成中)、
 pausing(暂停中)、
 manualPaused(已暂停)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 任务状态，取值为：created(创建完成)、checking(校验中)、checkPass(校验通过)、checkNotPass(校验不通过)、readyRun(准备运行)、running(任务运行中)、readyComplete(准备完成)、success(任务成功)、failed(任务失败)、stopping(中止中)、completing(完成中)、
 pausing(暂停中)、
 manualPaused(已暂停)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
@@ -187,9 +171,7 @@ manualPaused(已暂停)
 
                     /**
                      * 获取任务操作信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Action 任务操作信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MigrateAction GetAction() const;
@@ -203,9 +185,7 @@ manualPaused(已暂停)
 
                     /**
                      * 获取迁移执行过程信息，在校验阶段显示校验过程步骤信息，在迁移阶段会显示迁移步骤信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StepInfo 迁移执行过程信息，在校验阶段显示校验过程步骤信息，在迁移阶段会显示迁移步骤信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MigrateDetailInfo GetStepInfo() const;
@@ -219,9 +199,7 @@ manualPaused(已暂停)
 
                     /**
                      * 获取源实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SrcInfo 源实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DBEndpointInfo GetSrcInfo() const;
@@ -235,9 +213,7 @@ manualPaused(已暂停)
 
                     /**
                      * 获取目标端信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DstInfo 目标端信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DBEndpointInfo GetDstInfo() const;
@@ -251,9 +227,7 @@ manualPaused(已暂停)
 
                     /**
                      * 获取数据一致性校验结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CompareTask 数据一致性校验结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CompareTaskInfo GetCompareTask() const;
@@ -267,9 +241,7 @@ manualPaused(已暂停)
 
                     /**
                      * 获取标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TagItem> GetTags() const;
@@ -283,9 +255,7 @@ manualPaused(已暂停)
 
                     /**
                      * 获取运行模式，取值如：immediate(表示立即运行)、timed(表示定时运行)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RunMode 运行模式，取值如：immediate(表示立即运行)、timed(表示定时运行)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRunMode() const;
@@ -299,9 +269,7 @@ manualPaused(已暂停)
 
                     /**
                      * 获取期待启动时间，当RunMode取值为timed时，此值必填，形如："2006-01-02 15:04:05"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpectRunTime 期待启动时间，当RunMode取值为timed时，此值必填，形如："2006-01-02 15:04:05"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExpectRunTime() const;
@@ -315,9 +283,7 @@ manualPaused(已暂停)
 
                     /**
                      * 获取迁移选项，描述任务如何执行迁移等一系列配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MigrateOption 迁移选项，描述任务如何执行迁移等一系列配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MigrateOption GetMigrateOption() const;
@@ -331,9 +297,7 @@ manualPaused(已暂停)
 
                     /**
                      * 获取校验任务运行详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CheckStepInfo 校验任务运行详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CheckStepInfo GetCheckStepInfo() const;
@@ -347,9 +311,7 @@ manualPaused(已暂停)
 
                     /**
                      * 获取描述计费相关的信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TradeInfo 描述计费相关的信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TradeInfo GetTradeInfo() const;
@@ -363,9 +325,7 @@ manualPaused(已暂停)
 
                     /**
                      * 获取任务错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorInfo 任务错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ErrorInfoItem> GetErrorInfo() const;
@@ -393,9 +353,7 @@ manualPaused(已暂停)
 
                     /**
                      * 获取任务的限速信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RateLimitOption 任务的限速信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RateLimitOption GetRateLimitOption() const;
@@ -411,49 +369,42 @@ manualPaused(已暂停)
 
                     /**
                      * 数据迁移任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;
 
                     /**
                      * 数据迁移任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_jobName;
                     bool m_jobNameHasBeenSet;
 
                     /**
                      * 任务创建(提交)时间，格式为 yyyy-mm-dd hh:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 任务更新时间，格式为 yyyy-mm-dd hh:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
                      * 任务开始执行时间，格式为 yyyy-mm-dd hh:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
                      * 任务执行结束时间，格式为 yyyy-mm-dd hh:mm:ss
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
                      * 迁移任务简要错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_briefMsg;
                     bool m_briefMsgHasBeenSet;
@@ -462,91 +413,78 @@ manualPaused(已暂停)
                      * 任务状态，取值为：created(创建完成)、checking(校验中)、checkPass(校验通过)、checkNotPass(校验不通过)、readyRun(准备运行)、running(任务运行中)、readyComplete(准备完成)、success(任务成功)、failed(任务失败)、stopping(中止中)、completing(完成中)、
 pausing(暂停中)、
 manualPaused(已暂停)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 任务操作信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MigrateAction m_action;
                     bool m_actionHasBeenSet;
 
                     /**
                      * 迁移执行过程信息，在校验阶段显示校验过程步骤信息，在迁移阶段会显示迁移步骤信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MigrateDetailInfo m_stepInfo;
                     bool m_stepInfoHasBeenSet;
 
                     /**
                      * 源实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DBEndpointInfo m_srcInfo;
                     bool m_srcInfoHasBeenSet;
 
                     /**
                      * 目标端信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DBEndpointInfo m_dstInfo;
                     bool m_dstInfoHasBeenSet;
 
                     /**
                      * 数据一致性校验结果
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CompareTaskInfo m_compareTask;
                     bool m_compareTaskHasBeenSet;
 
                     /**
                      * 标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TagItem> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
                      * 运行模式，取值如：immediate(表示立即运行)、timed(表示定时运行)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_runMode;
                     bool m_runModeHasBeenSet;
 
                     /**
                      * 期待启动时间，当RunMode取值为timed时，此值必填，形如："2006-01-02 15:04:05"
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_expectRunTime;
                     bool m_expectRunTimeHasBeenSet;
 
                     /**
                      * 迁移选项，描述任务如何执行迁移等一系列配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MigrateOption m_migrateOption;
                     bool m_migrateOptionHasBeenSet;
 
                     /**
                      * 校验任务运行详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CheckStepInfo m_checkStepInfo;
                     bool m_checkStepInfoHasBeenSet;
 
                     /**
                      * 描述计费相关的信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TradeInfo m_tradeInfo;
                     bool m_tradeInfoHasBeenSet;
 
                     /**
                      * 任务错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ErrorInfoItem> m_errorInfo;
                     bool m_errorInfoHasBeenSet;
@@ -559,7 +497,6 @@ manualPaused(已暂停)
 
                     /**
                      * 任务的限速信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RateLimitOption m_rateLimitOption;
                     bool m_rateLimitOptionHasBeenSet;

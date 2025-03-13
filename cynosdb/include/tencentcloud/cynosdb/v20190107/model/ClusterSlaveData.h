@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取旧主可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OldMasterZone 旧主可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOldMasterZone() const;
 
                     /**
                      * 设置旧主可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _oldMasterZone 旧主可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOldMasterZone(const std::string& _oldMasterZone);
@@ -99,18 +95,14 @@ namespace TencentCloud
 
                     /**
                      * 获取新主可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NewMasterZone 新主可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNewMasterZone() const;
 
                     /**
                      * 设置新主可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _newMasterZone 新主可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNewMasterZone(const std::string& _newMasterZone);
@@ -149,18 +141,14 @@ namespace TencentCloud
 
                     /**
                      * 获取新从可用区属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NewSlaveZoneAttr 新从可用区属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SlaveZoneAttrItem> GetNewSlaveZoneAttr() const;
 
                     /**
                      * 设置新从可用区属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _newSlaveZoneAttr 新从可用区属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNewSlaveZoneAttr(const std::vector<SlaveZoneAttrItem>& _newSlaveZoneAttr);
@@ -174,18 +162,14 @@ namespace TencentCloud
 
                     /**
                      * 获取旧可用区属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OldSlaveZoneAttr 旧可用区属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SlaveZoneAttrItem> GetOldSlaveZoneAttr() const;
 
                     /**
                      * 设置旧可用区属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _oldSlaveZoneAttr 旧可用区属性
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOldSlaveZoneAttr(const std::vector<SlaveZoneAttrItem>& _oldSlaveZoneAttr);
@@ -201,7 +185,6 @@ namespace TencentCloud
 
                     /**
                      * 旧主可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_oldMasterZone;
                     bool m_oldMasterZoneHasBeenSet;
@@ -215,7 +198,6 @@ namespace TencentCloud
 
                     /**
                      * 新主可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_newMasterZone;
                     bool m_newMasterZoneHasBeenSet;
@@ -229,14 +211,12 @@ namespace TencentCloud
 
                     /**
                      * 新从可用区属性
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SlaveZoneAttrItem> m_newSlaveZoneAttr;
                     bool m_newSlaveZoneAttrHasBeenSet;
 
                     /**
                      * 旧可用区属性
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SlaveZoneAttrItem> m_oldSlaveZoneAttr;
                     bool m_oldSlaveZoneAttrHasBeenSet;

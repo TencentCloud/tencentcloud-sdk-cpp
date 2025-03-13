@@ -133,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 数据库备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置数据库备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 数据库备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -158,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户权限
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserHostPrivileges 用户权限
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<UserHostPrivilege> GetUserHostPrivileges() const;
 
                     /**
                      * 设置用户权限
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userHostPrivileges 用户权限
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserHostPrivileges(const std::vector<UserHostPrivilege>& _userHostPrivileges);
@@ -183,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DbId 数据库ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDbId() const;
 
                     /**
                      * 设置数据库ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dbId 数据库ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDbId(const int64_t& _dbId);
@@ -208,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -233,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updateTime 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -258,18 +238,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户appid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppId 用户appid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAppId() const;
 
                     /**
                      * 设置用户appid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appId 用户appid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppId(const int64_t& _appId);
@@ -283,18 +259,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户Uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uin 用户Uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
                      * 设置用户Uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uin 用户Uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -308,18 +280,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterId 集群Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterId 集群Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -359,56 +327,48 @@ namespace TencentCloud
 
                     /**
                      * 数据库备注
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
                      * 用户权限
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<UserHostPrivilege> m_userHostPrivileges;
                     bool m_userHostPrivilegesHasBeenSet;
 
                     /**
                      * 数据库ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_dbId;
                     bool m_dbIdHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
                      * 用户appid
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
                      * 用户Uin
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
                      * 集群Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;

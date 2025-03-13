@@ -32,7 +32,9 @@ GetServiceStatusResponse::GetServiceStatusResponse() :
     m_proResourceIdHasBeenSet(false),
     m_exclusiveVSMEnabledHasBeenSet(false),
     m_exclusiveHSMEnabledHasBeenSet(false),
-    m_subscriptionInfoHasBeenSet(false)
+    m_subscriptionInfoHasBeenSet(false),
+    m_cmkUserCountHasBeenSet(false),
+    m_cmkLimitHasBeenSet(false)
 {
 }
 
@@ -160,6 +162,26 @@ CoreInternalOutcome GetServiceStatusResponse::Deserialize(const string &payload)
         m_subscriptionInfoHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CmkUserCount") && !rsp["CmkUserCount"].IsNull())
+    {
+        if (!rsp["CmkUserCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CmkUserCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cmkUserCount = rsp["CmkUserCount"].GetUint64();
+        m_cmkUserCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CmkLimit") && !rsp["CmkLimit"].IsNull())
+    {
+        if (!rsp["CmkLimit"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CmkLimit` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cmkLimit = rsp["CmkLimit"].GetUint64();
+        m_cmkLimitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -240,6 +262,22 @@ string GetServiceStatusResponse::ToJsonString() const
         string key = "SubscriptionInfo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subscriptionInfo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cmkUserCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CmkUserCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cmkUserCount, allocator);
+    }
+
+    if (m_cmkLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CmkLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cmkLimit, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -342,6 +380,26 @@ string GetServiceStatusResponse::GetSubscriptionInfo() const
 bool GetServiceStatusResponse::SubscriptionInfoHasBeenSet() const
 {
     return m_subscriptionInfoHasBeenSet;
+}
+
+uint64_t GetServiceStatusResponse::GetCmkUserCount() const
+{
+    return m_cmkUserCount;
+}
+
+bool GetServiceStatusResponse::CmkUserCountHasBeenSet() const
+{
+    return m_cmkUserCountHasBeenSet;
+}
+
+uint64_t GetServiceStatusResponse::GetCmkLimit() const
+{
+    return m_cmkLimit;
+}
+
+bool GetServiceStatusResponse::CmkLimitHasBeenSet() const
+{
+    return m_cmkLimitHasBeenSet;
 }
 
 

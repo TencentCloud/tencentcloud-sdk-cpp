@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SlaveZone 备可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSlaveZone() const;
 
                     /**
                      * 设置备可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _slaveZone 备可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSlaveZone(const std::string& _slaveZone);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备可用区的库存数量	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StockCount 备可用区的库存数量	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStockCount() const;
 
                     /**
                      * 设置备可用区的库存数量	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _stockCount 备可用区的库存数量	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStockCount(const uint64_t& _stockCount);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备可用区是否有库存	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HasStock 备可用区是否有库存	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetHasStock() const;
 
                     /**
                      * 设置备可用区是否有库存	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hasStock 备可用区是否有库存	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHasStock(const bool& _hasStock);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 备可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_slaveZone;
                     bool m_slaveZoneHasBeenSet;
 
                     /**
                      * 备可用区的库存数量	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_stockCount;
                     bool m_stockCountHasBeenSet;
 
                     /**
                      * 备可用区是否有库存	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_hasStock;
                     bool m_hasStockHasBeenSet;

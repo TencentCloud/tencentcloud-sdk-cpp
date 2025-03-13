@@ -29,7 +29,8 @@ ObjectType::ObjectType() :
     m_objectHasNewActionHasBeenSet(false),
     m_objectPlatformNameHasBeenSet(false),
     m_objectSupportTypeHasBeenSet(false),
-    m_archLayerHasBeenSet(false)
+    m_archLayerHasBeenSet(false),
+    m_isArchSvgHasBeenSet(false)
 {
 }
 
@@ -142,6 +143,16 @@ CoreInternalOutcome ObjectType::Deserialize(const rapidjson::Value &value)
         m_archLayerHasBeenSet = true;
     }
 
+    if (value.HasMember("IsArchSvg") && !value["IsArchSvg"].IsNull())
+    {
+        if (!value["IsArchSvg"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ObjectType.IsArchSvg` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isArchSvg = value["IsArchSvg"].GetBool();
+        m_isArchSvgHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -221,6 +232,14 @@ void ObjectType::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "ArchLayer";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_archLayer, allocator);
+    }
+
+    if (m_isArchSvgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsArchSvg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isArchSvg, allocator);
     }
 
 }
@@ -368,5 +387,21 @@ void ObjectType::SetArchLayer(const int64_t& _archLayer)
 bool ObjectType::ArchLayerHasBeenSet() const
 {
     return m_archLayerHasBeenSet;
+}
+
+bool ObjectType::GetIsArchSvg() const
+{
+    return m_isArchSvg;
+}
+
+void ObjectType::SetIsArchSvg(const bool& _isArchSvg)
+{
+    m_isArchSvg = _isArchSvg;
+    m_isArchSvgHasBeenSet = true;
+}
+
+bool ObjectType::IsArchSvgHasBeenSet() const
+{
+    return m_isArchSvgHasBeenSet;
 }
 

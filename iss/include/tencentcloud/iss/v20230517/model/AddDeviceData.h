@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备iD
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceId 设备iD
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
                      * 设置设备iD
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceId 设备iD
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备编码（国标设备即我们为设备生成的20位国标编码，rtmp 设备为10 位设备编码）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Code 设备编码（国标设备即我们为设备生成的20位国标编码，rtmp 设备为10 位设备编码）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCode() const;
 
                     /**
                      * 设置设备编码（国标设备即我们为设备生成的20位国标编码，rtmp 设备为10 位设备编码）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _code 设备编码（国标设备即我们为设备生成的20位国标编码，rtmp 设备为10 位设备编码）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCode(const std::string& _code);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 设备名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置设备名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 设备名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备接入协议，1:RTMP,2:GB,3:GW 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccessProtocol 设备接入协议，1:RTMP,2:GB,3:GW 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAccessProtocol() const;
 
                     /**
                      * 设置设备接入协议，1:RTMP,2:GB,3:GW 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _accessProtocol 设备接入协议，1:RTMP,2:GB,3:GW 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAccessProtocol(const int64_t& _accessProtocol);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备类型，1:IPC,2:NVR
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 设备类型，1:IPC,2:NVR
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetType() const;
 
                     /**
                      * 设置设备类型，1:IPC,2:NVR
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 设备类型，1:IPC,2:NVR
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const int64_t& _type);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备接入服务节点ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterId 设备接入服务节点ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置设备接入服务节点ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterId 设备接入服务节点ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -199,10 +175,8 @@ namespace TencentCloud
                     /**
                      * 获取设备接入服务节点名称
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterName 设备接入服务节点名称
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterName() const;
@@ -210,10 +184,8 @@ namespace TencentCloud
                     /**
                      * 设置设备接入服务节点名称
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterName 设备接入服务节点名称
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterName(const std::string& _clusterName);
@@ -227,18 +199,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备流传输协议，1:UDP,2:TCP 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TransportProtocol 设备流传输协议，1:UDP,2:TCP 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTransportProtocol() const;
 
                     /**
                      * 设置设备流传输协议，1:UDP,2:TCP 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _transportProtocol 设备流传输协议，1:UDP,2:TCP 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTransportProtocol(const int64_t& _transportProtocol);
@@ -252,18 +220,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Password 设备密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPassword() const;
 
                     /**
                      * 设置设备密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _password 设备密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPassword(const std::string& _password);
@@ -277,18 +241,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 设备描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置设备描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 设备描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -302,18 +262,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备状态，0:未注册,1:在线,2:离线,3:禁用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 设备状态，0:未注册,1:在线,2:离线,3:禁用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置设备状态，0:未注册,1:在线,2:离线,3:禁用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 设备状态，0:未注册,1:在线,2:离线,3:禁用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -327,18 +283,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备所属组织ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrganizationId 设备所属组织ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetOrganizationId() const;
 
                     /**
                      * 设置设备所属组织ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _organizationId 设备所属组织ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOrganizationId(const int64_t& _organizationId);
@@ -352,18 +304,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备接入网关ID，从查询网关列表接口中获取（仅网关接入需要）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GatewayId 设备接入网关ID，从查询网关列表接口中获取（仅网关接入需要）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGatewayId() const;
 
                     /**
                      * 设置设备接入网关ID，从查询网关列表接口中获取（仅网关接入需要）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gatewayId 设备接入网关ID，从查询网关列表接口中获取（仅网关接入需要）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGatewayId(const std::string& _gatewayId);
@@ -377,18 +325,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网关接入协议类型，1.海康SDK，2.大华SDK，3.宇视SDK，4.Onvif（仅网关接入需要）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProtocolType 网关接入协议类型，1.海康SDK，2.大华SDK，3.宇视SDK，4.Onvif（仅网关接入需要）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetProtocolType() const;
 
                     /**
                      * 设置网关接入协议类型，1.海康SDK，2.大华SDK，3.宇视SDK，4.Onvif（仅网关接入需要）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _protocolType 网关接入协议类型，1.海康SDK，2.大华SDK，3.宇视SDK，4.Onvif（仅网关接入需要）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProtocolType(const int64_t& _protocolType);
@@ -402,18 +346,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备接入IP（仅网关接入需要）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ip 设备接入IP（仅网关接入需要）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置设备接入IP（仅网关接入需要）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ip 设备接入IP（仅网关接入需要）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIp(const std::string& _ip);
@@ -427,18 +367,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备Port（仅网关接入需要）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Port 设备Port（仅网关接入需要）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置设备Port（仅网关接入需要）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _port 设备Port（仅网关接入需要）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPort(const int64_t& _port);
@@ -452,18 +388,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备用户名（仅网关接入需要）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Username 设备用户名（仅网关接入需要）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUsername() const;
 
                     /**
                      * 设置设备用户名（仅网关接入需要）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _username 设备用户名（仅网关接入需要）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUsername(const std::string& _username);
@@ -477,18 +409,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppId 用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAppId() const;
 
                     /**
                      * 设置用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appId 用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppId(const int64_t& _appId);
@@ -504,42 +432,36 @@ namespace TencentCloud
 
                     /**
                      * 设备iD
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceId;
                     bool m_deviceIdHasBeenSet;
 
                     /**
                      * 设备编码（国标设备即我们为设备生成的20位国标编码，rtmp 设备为10 位设备编码）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_code;
                     bool m_codeHasBeenSet;
 
                     /**
                      * 设备名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 设备接入协议，1:RTMP,2:GB,3:GW 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_accessProtocol;
                     bool m_accessProtocolHasBeenSet;
 
                     /**
                      * 设备类型，1:IPC,2:NVR
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 设备接入服务节点ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
@@ -547,84 +469,72 @@ namespace TencentCloud
                     /**
                      * 设备接入服务节点名称
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterName;
                     bool m_clusterNameHasBeenSet;
 
                     /**
                      * 设备流传输协议，1:UDP,2:TCP 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_transportProtocol;
                     bool m_transportProtocolHasBeenSet;
 
                     /**
                      * 设备密码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
 
                     /**
                      * 设备描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
                      * 设备状态，0:未注册,1:在线,2:离线,3:禁用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 设备所属组织ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_organizationId;
                     bool m_organizationIdHasBeenSet;
 
                     /**
                      * 设备接入网关ID，从查询网关列表接口中获取（仅网关接入需要）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_gatewayId;
                     bool m_gatewayIdHasBeenSet;
 
                     /**
                      * 网关接入协议类型，1.海康SDK，2.大华SDK，3.宇视SDK，4.Onvif（仅网关接入需要）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_protocolType;
                     bool m_protocolTypeHasBeenSet;
 
                     /**
                      * 设备接入IP（仅网关接入需要）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;
 
                     /**
                      * 设备Port（仅网关接入需要）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
                      * 设备用户名（仅网关接入需要）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_username;
                     bool m_usernameHasBeenSet;
 
                     /**
                      * 用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_appId;
                     bool m_appIdHasBeenSet;

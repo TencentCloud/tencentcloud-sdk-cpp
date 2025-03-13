@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取滚动更新设置参数。RefreshMode 为滚动更新该参数必须填写。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RollingUpdateSettings 滚动更新设置参数。RefreshMode 为滚动更新该参数必须填写。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RollingUpdateSettings GetRollingUpdateSettings() const;
 
                     /**
                      * 设置滚动更新设置参数。RefreshMode 为滚动更新该参数必须填写。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rollingUpdateSettings 滚动更新设置参数。RefreshMode 为滚动更新该参数必须填写。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRollingUpdateSettings(const RollingUpdateSettings& _rollingUpdateSettings);
@@ -97,7 +93,6 @@ namespace TencentCloud
 
                     /**
                      * 滚动更新设置参数。RefreshMode 为滚动更新该参数必须填写。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RollingUpdateSettings m_rollingUpdateSettings;
                     bool m_rollingUpdateSettingsHasBeenSet;

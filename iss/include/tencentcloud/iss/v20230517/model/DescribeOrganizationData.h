@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取组织 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrganizationId 组织 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOrganizationId() const;
 
                     /**
                      * 设置组织 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _organizationId 组织 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOrganizationId(const std::string& _organizationId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取组织名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 组织名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置组织名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 组织名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取组织父节点 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParentId 组织父节点 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetParentId() const;
 
                     /**
                      * 设置组织父节点 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _parentId 组织父节点 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetParentId(const std::string& _parentId);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取组织层级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Level 组织层级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLevel() const;
 
                     /**
                      * 设置组织层级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _level 组织层级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLevel(const int64_t& _level);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppId 用户id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAppId() const;
 
                     /**
                      * 设置用户id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appId 用户id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppId(const int64_t& _appId);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取组织结构
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParentIds 组织结构
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetParentIds() const;
 
                     /**
                      * 设置组织结构
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _parentIds 组织结构
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetParentIds(const std::string& _parentIds);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 设备总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 设置设备总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _total 设备总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotal(const int64_t& _total);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备在线数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Online 设备在线数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetOnline() const;
 
                     /**
                      * 设置设备在线数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _online 设备在线数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOnline(const int64_t& _online);
@@ -250,56 +218,48 @@ namespace TencentCloud
 
                     /**
                      * 组织 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_organizationId;
                     bool m_organizationIdHasBeenSet;
 
                     /**
                      * 组织名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 组织父节点 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_parentId;
                     bool m_parentIdHasBeenSet;
 
                     /**
                      * 组织层级
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_level;
                     bool m_levelHasBeenSet;
 
                     /**
                      * 用户id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
                      * 组织结构
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_parentIds;
                     bool m_parentIdsHasBeenSet;
 
                     /**
                      * 设备总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
                      * 设备在线数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_online;
                     bool m_onlineHasBeenSet;

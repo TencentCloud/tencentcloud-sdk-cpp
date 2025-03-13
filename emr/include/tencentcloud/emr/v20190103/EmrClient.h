@@ -131,6 +131,8 @@
 #include <tencentcloud/emr/v20190103/model/ModifyAutoScaleStrategyResponse.h>
 #include <tencentcloud/emr/v20190103/model/ModifyGlobalConfigRequest.h>
 #include <tencentcloud/emr/v20190103/model/ModifyGlobalConfigResponse.h>
+#include <tencentcloud/emr/v20190103/model/ModifyInspectionSettingsRequest.h>
+#include <tencentcloud/emr/v20190103/model/ModifyInspectionSettingsResponse.h>
 #include <tencentcloud/emr/v20190103/model/ModifyInstanceBasicRequest.h>
 #include <tencentcloud/emr/v20190103/model/ModifyInstanceBasicResponse.h>
 #include <tencentcloud/emr/v20190103/model/ModifyPodNumRequest.h>
@@ -355,6 +357,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyGlobalConfigResponse> ModifyGlobalConfigOutcome;
                 typedef std::future<ModifyGlobalConfigOutcome> ModifyGlobalConfigOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::ModifyGlobalConfigRequest&, ModifyGlobalConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyGlobalConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyInspectionSettingsResponse> ModifyInspectionSettingsOutcome;
+                typedef std::future<ModifyInspectionSettingsOutcome> ModifyInspectionSettingsOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::ModifyInspectionSettingsRequest&, ModifyInspectionSettingsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInspectionSettingsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyInstanceBasicResponse> ModifyInstanceBasicOutcome;
                 typedef std::future<ModifyInstanceBasicOutcome> ModifyInstanceBasicOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::ModifyInstanceBasicRequest&, ModifyInstanceBasicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceBasicAsyncHandler;
@@ -920,6 +925,15 @@ namespace TencentCloud
                 ModifyGlobalConfigOutcome ModifyGlobalConfig(const Model::ModifyGlobalConfigRequest &request);
                 void ModifyGlobalConfigAsync(const Model::ModifyGlobalConfigRequest& request, const ModifyGlobalConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyGlobalConfigOutcomeCallable ModifyGlobalConfigCallable(const Model::ModifyGlobalConfigRequest& request);
+
+                /**
+                 *设置巡检任务配置
+                 * @param req ModifyInspectionSettingsRequest
+                 * @return ModifyInspectionSettingsOutcome
+                 */
+                ModifyInspectionSettingsOutcome ModifyInspectionSettings(const Model::ModifyInspectionSettingsRequest &request);
+                void ModifyInspectionSettingsAsync(const Model::ModifyInspectionSettingsRequest& request, const ModifyInspectionSettingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInspectionSettingsOutcomeCallable ModifyInspectionSettingsCallable(const Model::ModifyInspectionSettingsRequest& request);
 
                 /**
                  *修改集群名称

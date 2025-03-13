@@ -131,18 +131,14 @@ NoAudit: 无需实名认证
 
                     /**
                      * 获取域名实名认证不通过原因。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RealNameAuditUnpassReason 域名实名认证不通过原因。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRealNameAuditUnpassReason() const;
 
                     /**
                      * 设置域名实名认证不通过原因。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _realNameAuditUnpassReason 域名实名认证不通过原因。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRealNameAuditUnpassReason(const std::string& _realNameAuditUnpassReason);
@@ -197,18 +193,14 @@ Rejected：域名命名审核拒绝
 
                     /**
                      * 获取域名命名审核不通过原因。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DomainNameAuditUnpassReason 域名命名审核不通过原因。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDomainNameAuditUnpassReason() const;
 
                     /**
                      * 设置域名命名审核不通过原因。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _domainNameAuditUnpassReason 域名命名审核不通过原因。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDomainNameAuditUnpassReason(const std::string& _domainNameAuditUnpassReason);
@@ -648,7 +640,6 @@ NoAudit: 无需实名认证
 
                     /**
                      * 域名实名认证不通过原因。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_realNameAuditUnpassReason;
                     bool m_realNameAuditUnpassReasonHasBeenSet;
@@ -666,7 +657,6 @@ Rejected：域名命名审核拒绝
 
                     /**
                      * 域名命名审核不通过原因。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_domainNameAuditUnpassReason;
                     bool m_domainNameAuditUnpassReasonHasBeenSet;

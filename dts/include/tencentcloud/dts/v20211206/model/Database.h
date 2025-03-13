@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取需要迁移或同步的库名，当ObjectMode为Partial时，此项必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DbName 需要迁移或同步的库名，当ObjectMode为Partial时，此项必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDbName() const;
 
                     /**
                      * 设置需要迁移或同步的库名，当ObjectMode为Partial时，此项必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dbName 需要迁移或同步的库名，当ObjectMode为Partial时，此项必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDbName(const std::string& _dbName);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取迁移或同步后的库名，默认与源库相同
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NewDbName 迁移或同步后的库名，默认与源库相同
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNewDbName() const;
 
                     /**
                      * 设置迁移或同步后的库名，默认与源库相同
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _newDbName 迁移或同步后的库名，默认与源库相同
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNewDbName(const std::string& _newDbName);
@@ -100,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取DB选择模式: All(为当前对象下的所有对象)，Partial(部分对象)，当Mode为Partial时，此项必填。注意，高级对象的同步不依赖此值，如果整库同步此处应该为All。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DbMode DB选择模式: All(为当前对象下的所有对象)，Partial(部分对象)，当Mode为Partial时，此项必填。注意，高级对象的同步不依赖此值，如果整库同步此处应该为All。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDbMode() const;
 
                     /**
                      * 设置DB选择模式: All(为当前对象下的所有对象)，Partial(部分对象)，当Mode为Partial时，此项必填。注意，高级对象的同步不依赖此值，如果整库同步此处应该为All。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dbMode DB选择模式: All(为当前对象下的所有对象)，Partial(部分对象)，当Mode为Partial时，此项必填。注意，高级对象的同步不依赖此值，如果整库同步此处应该为All。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDbMode(const std::string& _dbMode);
@@ -125,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取迁移或同步的 schema
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SchemaName 迁移或同步的 schema
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSchemaName() const;
 
                     /**
                      * 设置迁移或同步的 schema
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _schemaName 迁移或同步的 schema
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSchemaName(const std::string& _schemaName);
@@ -150,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取迁移或同步后的 schema name
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NewSchemaName 迁移或同步后的 schema name
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNewSchemaName() const;
 
                     /**
                      * 设置迁移或同步后的 schema name
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _newSchemaName 迁移或同步后的 schema name
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNewSchemaName(const std::string& _newSchemaName);
@@ -175,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取表选择模式: All(为当前对象下的所有对象)，Partial(部分对象)，当DBMode为Partial时此项必填，如果整库同步此处应该为All。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableMode 表选择模式: All(为当前对象下的所有对象)，Partial(部分对象)，当DBMode为Partial时此项必填，如果整库同步此处应该为All。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTableMode() const;
 
                     /**
                      * 设置表选择模式: All(为当前对象下的所有对象)，Partial(部分对象)，当DBMode为Partial时此项必填，如果整库同步此处应该为All。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tableMode 表选择模式: All(为当前对象下的所有对象)，Partial(部分对象)，当DBMode为Partial时此项必填，如果整库同步此处应该为All。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTableMode(const std::string& _tableMode);
@@ -200,18 +176,14 @@ namespace TencentCloud
 
                     /**
                      * 获取表图对象集合，当 TableMode 为 Partial 时，此项需要填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tables 表图对象集合，当 TableMode 为 Partial 时，此项需要填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Table> GetTables() const;
 
                     /**
                      * 设置表图对象集合，当 TableMode 为 Partial 时，此项需要填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tables 表图对象集合，当 TableMode 为 Partial 时，此项需要填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTables(const std::vector<Table>& _tables);
@@ -225,18 +197,14 @@ namespace TencentCloud
 
                     /**
                      * 获取视图选择模式: All 为当前对象下的所有视图对象,Partial 为部分视图对象，如果整库同步此处应该为All。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ViewMode 视图选择模式: All 为当前对象下的所有视图对象,Partial 为部分视图对象，如果整库同步此处应该为All。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetViewMode() const;
 
                     /**
                      * 设置视图选择模式: All 为当前对象下的所有视图对象,Partial 为部分视图对象，如果整库同步此处应该为All。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _viewMode 视图选择模式: All 为当前对象下的所有视图对象,Partial 为部分视图对象，如果整库同步此处应该为All。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetViewMode(const std::string& _viewMode);
@@ -250,18 +218,14 @@ namespace TencentCloud
 
                     /**
                      * 获取视图对象集合，当 ViewMode 为 Partial 时， 此项需要填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Views 视图对象集合，当 ViewMode 为 Partial 时， 此项需要填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<View> GetViews() const;
 
                     /**
                      * 设置视图对象集合，当 ViewMode 为 Partial 时， 此项需要填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _views 视图对象集合，当 ViewMode 为 Partial 时， 此项需要填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetViews(const std::vector<View>& _views);
@@ -275,18 +239,14 @@ namespace TencentCloud
 
                     /**
                      * 获取选择要同步的模式，Partial为部分，All为整选，如果整库同步此处应该为All。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FunctionMode 选择要同步的模式，Partial为部分，All为整选，如果整库同步此处应该为All。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFunctionMode() const;
 
                     /**
                      * 设置选择要同步的模式，Partial为部分，All为整选，如果整库同步此处应该为All。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _functionMode 选择要同步的模式，Partial为部分，All为整选，如果整库同步此处应该为All。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFunctionMode(const std::string& _functionMode);
@@ -300,18 +260,14 @@ namespace TencentCloud
 
                     /**
                      * 获取FunctionMode取值为Partial时需要填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Functions FunctionMode取值为Partial时需要填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetFunctions() const;
 
                     /**
                      * 设置FunctionMode取值为Partial时需要填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _functions FunctionMode取值为Partial时需要填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFunctions(const std::vector<std::string>& _functions);
@@ -325,18 +281,14 @@ namespace TencentCloud
 
                     /**
                      * 获取选择要同步的模式，Partial为部分，All为整选，如果整库同步此处应该为All。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProcedureMode 选择要同步的模式，Partial为部分，All为整选，如果整库同步此处应该为All。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProcedureMode() const;
 
                     /**
                      * 设置选择要同步的模式，Partial为部分，All为整选，如果整库同步此处应该为All。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _procedureMode 选择要同步的模式，Partial为部分，All为整选，如果整库同步此处应该为All。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProcedureMode(const std::string& _procedureMode);
@@ -350,18 +302,14 @@ namespace TencentCloud
 
                     /**
                      * 获取ProcedureMode取值为Partial时需要填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Procedures ProcedureMode取值为Partial时需要填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetProcedures() const;
 
                     /**
                      * 设置ProcedureMode取值为Partial时需要填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _procedures ProcedureMode取值为Partial时需要填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProcedures(const std::vector<std::string>& _procedures);
@@ -375,18 +323,14 @@ namespace TencentCloud
 
                     /**
                      * 获取触发器迁移模式，All(为当前对象下的所有对象)，Partial(部分对象)，如果整库同步此处应该为All。数据同步暂不支持此高级对象。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TriggerMode 触发器迁移模式，All(为当前对象下的所有对象)，Partial(部分对象)，如果整库同步此处应该为All。数据同步暂不支持此高级对象。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTriggerMode() const;
 
                     /**
                      * 设置触发器迁移模式，All(为当前对象下的所有对象)，Partial(部分对象)，如果整库同步此处应该为All。数据同步暂不支持此高级对象。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _triggerMode 触发器迁移模式，All(为当前对象下的所有对象)，Partial(部分对象)，如果整库同步此处应该为All。数据同步暂不支持此高级对象。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTriggerMode(const std::string& _triggerMode);
@@ -400,18 +344,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当TriggerMode为partial，指定要迁移的触发器名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Triggers 当TriggerMode为partial，指定要迁移的触发器名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetTriggers() const;
 
                     /**
                      * 设置当TriggerMode为partial，指定要迁移的触发器名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _triggers 当TriggerMode为partial，指定要迁移的触发器名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTriggers(const std::vector<std::string>& _triggers);
@@ -425,18 +365,14 @@ namespace TencentCloud
 
                     /**
                      * 获取事件迁移模式，All(为当前对象下的所有对象)，Partial(部分对象)，如果整库同步此处应该为All。数据同步暂不支持此高级对象。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EventMode 事件迁移模式，All(为当前对象下的所有对象)，Partial(部分对象)，如果整库同步此处应该为All。数据同步暂不支持此高级对象。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEventMode() const;
 
                     /**
                      * 设置事件迁移模式，All(为当前对象下的所有对象)，Partial(部分对象)，如果整库同步此处应该为All。数据同步暂不支持此高级对象。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _eventMode 事件迁移模式，All(为当前对象下的所有对象)，Partial(部分对象)，如果整库同步此处应该为All。数据同步暂不支持此高级对象。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEventMode(const std::string& _eventMode);
@@ -450,18 +386,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当EventMode为partial，指定要迁移的事件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Events 当EventMode为partial，指定要迁移的事件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetEvents() const;
 
                     /**
                      * 设置当EventMode为partial，指定要迁移的事件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _events 当EventMode为partial，指定要迁移的事件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEvents(const std::vector<std::string>& _events);
@@ -477,119 +409,102 @@ namespace TencentCloud
 
                     /**
                      * 需要迁移或同步的库名，当ObjectMode为Partial时，此项必填
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dbName;
                     bool m_dbNameHasBeenSet;
 
                     /**
                      * 迁移或同步后的库名，默认与源库相同
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_newDbName;
                     bool m_newDbNameHasBeenSet;
 
                     /**
                      * DB选择模式: All(为当前对象下的所有对象)，Partial(部分对象)，当Mode为Partial时，此项必填。注意，高级对象的同步不依赖此值，如果整库同步此处应该为All。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dbMode;
                     bool m_dbModeHasBeenSet;
 
                     /**
                      * 迁移或同步的 schema
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_schemaName;
                     bool m_schemaNameHasBeenSet;
 
                     /**
                      * 迁移或同步后的 schema name
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_newSchemaName;
                     bool m_newSchemaNameHasBeenSet;
 
                     /**
                      * 表选择模式: All(为当前对象下的所有对象)，Partial(部分对象)，当DBMode为Partial时此项必填，如果整库同步此处应该为All。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tableMode;
                     bool m_tableModeHasBeenSet;
 
                     /**
                      * 表图对象集合，当 TableMode 为 Partial 时，此项需要填写
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Table> m_tables;
                     bool m_tablesHasBeenSet;
 
                     /**
                      * 视图选择模式: All 为当前对象下的所有视图对象,Partial 为部分视图对象，如果整库同步此处应该为All。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_viewMode;
                     bool m_viewModeHasBeenSet;
 
                     /**
                      * 视图对象集合，当 ViewMode 为 Partial 时， 此项需要填写
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<View> m_views;
                     bool m_viewsHasBeenSet;
 
                     /**
                      * 选择要同步的模式，Partial为部分，All为整选，如果整库同步此处应该为All。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_functionMode;
                     bool m_functionModeHasBeenSet;
 
                     /**
                      * FunctionMode取值为Partial时需要填写
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_functions;
                     bool m_functionsHasBeenSet;
 
                     /**
                      * 选择要同步的模式，Partial为部分，All为整选，如果整库同步此处应该为All。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_procedureMode;
                     bool m_procedureModeHasBeenSet;
 
                     /**
                      * ProcedureMode取值为Partial时需要填写
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_procedures;
                     bool m_proceduresHasBeenSet;
 
                     /**
                      * 触发器迁移模式，All(为当前对象下的所有对象)，Partial(部分对象)，如果整库同步此处应该为All。数据同步暂不支持此高级对象。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_triggerMode;
                     bool m_triggerModeHasBeenSet;
 
                     /**
                      * 当TriggerMode为partial，指定要迁移的触发器名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_triggers;
                     bool m_triggersHasBeenSet;
 
                     /**
                      * 事件迁移模式，All(为当前对象下的所有对象)，Partial(部分对象)，如果整库同步此处应该为All。数据同步暂不支持此高级对象。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_eventMode;
                     bool m_eventModeHasBeenSet;
 
                     /**
                      * 当EventMode为partial，指定要迁移的事件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_events;
                     bool m_eventsHasBeenSet;

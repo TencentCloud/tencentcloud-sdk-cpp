@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zone 可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zone 可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取binlog同步方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BinlogSyncWay binlog同步方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBinlogSyncWay() const;
 
                     /**
                      * 设置binlog同步方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _binlogSyncWay binlog同步方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBinlogSyncWay(const std::string& _binlogSyncWay);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
                      * binlog同步方式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_binlogSyncWay;
                     bool m_binlogSyncWayHasBeenSet;

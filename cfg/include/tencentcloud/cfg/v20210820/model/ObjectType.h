@@ -253,6 +253,27 @@ namespace TencentCloud
                      */
                     bool ArchLayerHasBeenSet() const;
 
+                    /**
+                     * 获取是否支持演练生图
+                     * @return IsArchSvg 是否支持演练生图
+                     * 
+                     */
+                    bool GetIsArchSvg() const;
+
+                    /**
+                     * 设置是否支持演练生图
+                     * @param _isArchSvg 是否支持演练生图
+                     * 
+                     */
+                    void SetIsArchSvg(const bool& _isArchSvg);
+
+                    /**
+                     * 判断参数 IsArchSvg 是否已赋值
+                     * @return IsArchSvg 是否已赋值
+                     * 
+                     */
+                    bool IsArchSvgHasBeenSet() const;
+
                 private:
 
                     /**
@@ -312,6 +333,12 @@ namespace TencentCloud
                      */
                     int64_t m_archLayer;
                     bool m_archLayerHasBeenSet;
+
+                    /**
+                     * 是否支持演练生图
+                     */
+                    bool m_isArchSvg;
+                    bool m_isArchSvgHasBeenSet;
 
                 };
             }

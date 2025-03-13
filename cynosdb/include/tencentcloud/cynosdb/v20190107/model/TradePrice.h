@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取预付费模式下资源总价，不包含优惠，单位:分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalPrice 预付费模式下资源总价，不包含优惠，单位:分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalPrice() const;
 
                     /**
                      * 设置预付费模式下资源总价，不包含优惠，单位:分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalPrice 预付费模式下资源总价，不包含优惠，单位:分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalPrice(const int64_t& _totalPrice);
@@ -94,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取预付费模式下的优惠后总价, 单位: 分,例如用户享有折扣 =TotalPrice × Discount
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalPriceDiscount 预付费模式下的优惠后总价, 单位: 分,例如用户享有折扣 =TotalPrice × Discount
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalPriceDiscount() const;
 
                     /**
                      * 设置预付费模式下的优惠后总价, 单位: 分,例如用户享有折扣 =TotalPrice × Discount
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalPriceDiscount 预付费模式下的优惠后总价, 单位: 分,例如用户享有折扣 =TotalPrice × Discount
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalPriceDiscount(const int64_t& _totalPriceDiscount);
@@ -119,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取后付费模式下的单位资源价格，不包含优惠，单位:分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnitPrice 后付费模式下的单位资源价格，不包含优惠，单位:分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetUnitPrice() const;
 
                     /**
                      * 设置后付费模式下的单位资源价格，不包含优惠，单位:分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _unitPrice 后付费模式下的单位资源价格，不包含优惠，单位:分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUnitPrice(const int64_t& _unitPrice);
@@ -144,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取优惠后后付费模式下的单位资源价格, 单位: 分,例如用户享有折扣=UnitPricet × Discount
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnitPriceDiscount 优惠后后付费模式下的单位资源价格, 单位: 分,例如用户享有折扣=UnitPricet × Discount
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetUnitPriceDiscount() const;
 
                     /**
                      * 设置优惠后后付费模式下的单位资源价格, 单位: 分,例如用户享有折扣=UnitPricet × Discount
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _unitPriceDiscount 优惠后后付费模式下的单位资源价格, 单位: 分,例如用户享有折扣=UnitPricet × Discount
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUnitPriceDiscount(const int64_t& _unitPriceDiscount);
@@ -192,7 +176,6 @@ namespace TencentCloud
 
                     /**
                      * 预付费模式下资源总价，不包含优惠，单位:分
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalPrice;
                     bool m_totalPriceHasBeenSet;
@@ -205,21 +188,18 @@ namespace TencentCloud
 
                     /**
                      * 预付费模式下的优惠后总价, 单位: 分,例如用户享有折扣 =TotalPrice × Discount
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalPriceDiscount;
                     bool m_totalPriceDiscountHasBeenSet;
 
                     /**
                      * 后付费模式下的单位资源价格，不包含优惠，单位:分
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_unitPrice;
                     bool m_unitPriceHasBeenSet;
 
                     /**
                      * 优惠后后付费模式下的单位资源价格, 单位: 分,例如用户享有折扣=UnitPricet × Discount
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_unitPriceDiscount;
                     bool m_unitPriceDiscountHasBeenSet;

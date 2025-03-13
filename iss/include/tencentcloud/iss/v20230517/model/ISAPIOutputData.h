@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取输出参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OutputData 输出参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOutputData() const;
 
                     /**
                      * 设置输出参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _outputData 输出参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutputData(const std::string& _outputData);
@@ -75,7 +71,6 @@ namespace TencentCloud
 
                     /**
                      * 输出参数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_outputData;
                     bool m_outputDataHasBeenSet;

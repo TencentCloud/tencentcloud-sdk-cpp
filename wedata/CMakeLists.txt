@@ -57,6 +57,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/WorkFlowExecuteDto.h
   include/tencentcloud/wedata/v20210820/model/RecordsSpeed.h
   include/tencentcloud/wedata/v20210820/model/ColumnLineageInfo.h
+  include/tencentcloud/wedata/v20210820/model/TriggerManualTasksRequest.h
   include/tencentcloud/wedata/v20210820/model/TaskLineageInfoPair.h
   include/tencentcloud/wedata/v20210820/model/JudgeResourceFileResponse.h
   include/tencentcloud/wedata/v20210820/model/DataServicePublishedApiListFilter.h
@@ -75,6 +76,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/ColumnItem.h
   include/tencentcloud/wedata/v20210820/model/RuleGroupExecResult.h
   include/tencentcloud/wedata/v20210820/model/AlarmEventInfo.h
+  include/tencentcloud/wedata/v20210820/model/TriggerManualTasksResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeTaskLineageRequest.h
   include/tencentcloud/wedata/v20210820/model/BytesSpeed.h
   include/tencentcloud/wedata/v20210820/model/CheckTaskNameExistRequest.h
@@ -252,6 +254,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/DescribeExecStrategyResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeSuccessorOpsTaskInfosResponse.h
   include/tencentcloud/wedata/v20210820/model/DeleteResourceResponse.h
+  include/tencentcloud/wedata/v20210820/model/ManualTriggerRecordOpsDto.h
   include/tencentcloud/wedata/v20210820/model/ModifyRuleResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeInstanceLogFileResponse.h
   include/tencentcloud/wedata/v20210820/model/PairDto.h
@@ -640,6 +643,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/StopIntegrationTaskRequest.h
   include/tencentcloud/wedata/v20210820/model/FunctionTypeOrKind.h
   include/tencentcloud/wedata/v20210820/model/DescribeApply.h
+  include/tencentcloud/wedata/v20210820/model/KVPair.h
   include/tencentcloud/wedata/v20210820/model/CreateDataSourceResponse.h
   include/tencentcloud/wedata/v20210820/model/BatchReturn.h
   include/tencentcloud/wedata/v20210820/model/DescribeFolderWorkflowListResponse.h
@@ -823,6 +827,7 @@ set(wedata_src
   src/v20210820/model/WorkFlowExecuteDto.cpp
   src/v20210820/model/RecordsSpeed.cpp
   src/v20210820/model/ColumnLineageInfo.cpp
+  src/v20210820/model/TriggerManualTasksRequest.cpp
   src/v20210820/model/TaskLineageInfoPair.cpp
   src/v20210820/model/JudgeResourceFileResponse.cpp
   src/v20210820/model/DataServicePublishedApiListFilter.cpp
@@ -841,6 +846,7 @@ set(wedata_src
   src/v20210820/model/ColumnItem.cpp
   src/v20210820/model/RuleGroupExecResult.cpp
   src/v20210820/model/AlarmEventInfo.cpp
+  src/v20210820/model/TriggerManualTasksResponse.cpp
   src/v20210820/model/DescribeTaskLineageRequest.cpp
   src/v20210820/model/BytesSpeed.cpp
   src/v20210820/model/CheckTaskNameExistRequest.cpp
@@ -1018,6 +1024,7 @@ set(wedata_src
   src/v20210820/model/DescribeExecStrategyResponse.cpp
   src/v20210820/model/DescribeSuccessorOpsTaskInfosResponse.cpp
   src/v20210820/model/DeleteResourceResponse.cpp
+  src/v20210820/model/ManualTriggerRecordOpsDto.cpp
   src/v20210820/model/ModifyRuleResponse.cpp
   src/v20210820/model/DescribeInstanceLogFileResponse.cpp
   src/v20210820/model/PairDto.cpp
@@ -1406,6 +1413,7 @@ set(wedata_src
   src/v20210820/model/StopIntegrationTaskRequest.cpp
   src/v20210820/model/FunctionTypeOrKind.cpp
   src/v20210820/model/DescribeApply.cpp
+  src/v20210820/model/KVPair.cpp
   src/v20210820/model/CreateDataSourceResponse.cpp
   src/v20210820/model/BatchReturn.cpp
   src/v20210820/model/DescribeFolderWorkflowListResponse.cpp

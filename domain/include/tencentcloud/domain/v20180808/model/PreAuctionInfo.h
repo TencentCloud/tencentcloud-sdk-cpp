@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Domain 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _domain 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取竞价倒计时
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BiddingTime 竞价倒计时
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBiddingTime() const;
 
                     /**
                      * 设置竞价倒计时
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _biddingTime 竞价倒计时
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBiddingTime(const std::string& _biddingTime);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取出价次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BidCount 出价次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBidCount() const;
 
                     /**
                      * 设置出价次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bidCount 出价次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBidCount(const int64_t& _bidCount);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当前价格
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Price 当前价格
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetPrice() const;
 
                     /**
                      * 设置当前价格
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _price 当前价格
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPrice(const double& _price);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户操作 bid：出价 "noAction"：无法操作
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Op 用户操作 bid：出价 "noAction"：无法操作
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOp() const;
 
                     /**
                      * 设置用户操作 bid：出价 "noAction"：无法操作
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _op 用户操作 bid：出价 "noAction"：无法操作
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOp(const std::string& _op);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取业务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BusinessId 业务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBusinessId() const;
 
                     /**
                      * 设置业务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _businessId 业务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBusinessId(const std::string& _businessId);
@@ -200,42 +176,36 @@ namespace TencentCloud
 
                     /**
                      * 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
                      * 竞价倒计时
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_biddingTime;
                     bool m_biddingTimeHasBeenSet;
 
                     /**
                      * 出价次数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_bidCount;
                     bool m_bidCountHasBeenSet;
 
                     /**
                      * 当前价格
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_price;
                     bool m_priceHasBeenSet;
 
                     /**
                      * 用户操作 bid：出价 "noAction"：无法操作
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_op;
                     bool m_opHasBeenSet;
 
                     /**
                      * 业务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_businessId;
                     bool m_businessIdHasBeenSet;

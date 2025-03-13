@@ -91,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取参数为enum/string/bool时，可选值列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnumValue 参数为enum/string/bool时，可选值列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetEnumValue() const;
 
                     /**
                      * 设置参数为enum/string/bool时，可选值列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enumValue 参数为enum/string/bool时，可选值列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnumValue(const std::vector<std::string>& _enumValue);
@@ -284,18 +280,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否为全局参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsGlobal 是否为全局参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIsGlobal() const;
 
                     /**
                      * 设置是否为全局参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isGlobal 是否为全局参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsGlobal(const int64_t& _isGlobal);
@@ -309,18 +301,14 @@ namespace TencentCloud
 
                     /**
                      * 获取参数是否可修改
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifiableInfo 参数是否可修改
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ModifiableInfo GetModifiableInfo() const;
 
                     /**
                      * 设置参数是否可修改
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modifiableInfo 参数是否可修改
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModifiableInfo(const ModifiableInfo& _modifiableInfo);
@@ -334,18 +322,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否为函数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsFunc 是否为函数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsFunc() const;
 
                     /**
                      * 设置是否为函数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isFunc 是否为函数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsFunc(const bool& _isFunc);
@@ -359,18 +343,14 @@ namespace TencentCloud
 
                     /**
                      * 获取函数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Func 函数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFunc() const;
 
                     /**
                      * 设置函数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _func 函数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFunc(const std::string& _func);
@@ -384,18 +364,14 @@ namespace TencentCloud
 
                     /**
                      * 获取支持公式的参数的默认公式样式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FuncPattern 支持公式的参数的默认公式样式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFuncPattern() const;
 
                     /**
                      * 设置支持公式的参数的默认公式样式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _funcPattern 支持公式的参数的默认公式样式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFuncPattern(const std::string& _funcPattern);
@@ -423,7 +399,6 @@ namespace TencentCloud
 
                     /**
                      * 参数为enum/string/bool时，可选值列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_enumValue;
                     bool m_enumValueHasBeenSet;
@@ -478,35 +453,30 @@ namespace TencentCloud
 
                     /**
                      * 是否为全局参数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isGlobal;
                     bool m_isGlobalHasBeenSet;
 
                     /**
                      * 参数是否可修改
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ModifiableInfo m_modifiableInfo;
                     bool m_modifiableInfoHasBeenSet;
 
                     /**
                      * 是否为函数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isFunc;
                     bool m_isFuncHasBeenSet;
 
                     /**
                      * 函数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_func;
                     bool m_funcHasBeenSet;
 
                     /**
                      * 支持公式的参数的默认公式样式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_funcPattern;
                     bool m_funcPatternHasBeenSet;

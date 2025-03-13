@@ -67,6 +67,8 @@
 #include <tencentcloud/lcic/v20220817/model/DeleteSupervisorResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DeleteUserRequest.h>
 #include <tencentcloud/lcic/v20220817/model/DeleteUserResponse.h>
+#include <tencentcloud/lcic/v20220817/model/DeleteWhiteBoardSnapshotRequest.h>
+#include <tencentcloud/lcic/v20220817/model/DeleteWhiteBoardSnapshotResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeAnswerListRequest.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeAnswerListResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeAppDetailRequest.h>
@@ -111,6 +113,8 @@
 #include <tencentcloud/lcic/v20220817/model/DescribeSupervisorsResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeUserRequest.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeUserResponse.h>
+#include <tencentcloud/lcic/v20220817/model/DescribeWhiteBoardSnapshotRequest.h>
+#include <tencentcloud/lcic/v20220817/model/DescribeWhiteBoardSnapshotResponse.h>
 #include <tencentcloud/lcic/v20220817/model/EndRoomRequest.h>
 #include <tencentcloud/lcic/v20220817/model/EndRoomResponse.h>
 #include <tencentcloud/lcic/v20220817/model/ForbidSendMsgRequest.h>
@@ -239,6 +243,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteUserResponse> DeleteUserOutcome;
                 typedef std::future<DeleteUserOutcome> DeleteUserOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::DeleteUserRequest&, DeleteUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteWhiteBoardSnapshotResponse> DeleteWhiteBoardSnapshotOutcome;
+                typedef std::future<DeleteWhiteBoardSnapshotOutcome> DeleteWhiteBoardSnapshotOutcomeCallable;
+                typedef std::function<void(const LcicClient*, const Model::DeleteWhiteBoardSnapshotRequest&, DeleteWhiteBoardSnapshotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteWhiteBoardSnapshotAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAnswerListResponse> DescribeAnswerListOutcome;
                 typedef std::future<DescribeAnswerListOutcome> DescribeAnswerListOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::DescribeAnswerListRequest&, DescribeAnswerListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAnswerListAsyncHandler;
@@ -305,6 +312,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeUserResponse> DescribeUserOutcome;
                 typedef std::future<DescribeUserOutcome> DescribeUserOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::DescribeUserRequest&, DescribeUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeWhiteBoardSnapshotResponse> DescribeWhiteBoardSnapshotOutcome;
+                typedef std::future<DescribeWhiteBoardSnapshotOutcome> DescribeWhiteBoardSnapshotOutcomeCallable;
+                typedef std::function<void(const LcicClient*, const Model::DescribeWhiteBoardSnapshotRequest&, DescribeWhiteBoardSnapshotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWhiteBoardSnapshotAsyncHandler;
                 typedef Outcome<Core::Error, Model::EndRoomResponse> EndRoomOutcome;
                 typedef std::future<EndRoomOutcome> EndRoomOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::EndRoomRequest&, EndRoomOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EndRoomAsyncHandler;
@@ -599,6 +609,15 @@ namespace TencentCloud
                 DeleteUserOutcomeCallable DeleteUserCallable(const Model::DeleteUserRequest& request);
 
                 /**
+                 *删除白板板书截图
+                 * @param req DeleteWhiteBoardSnapshotRequest
+                 * @return DeleteWhiteBoardSnapshotOutcome
+                 */
+                DeleteWhiteBoardSnapshotOutcome DeleteWhiteBoardSnapshot(const Model::DeleteWhiteBoardSnapshotRequest &request);
+                void DeleteWhiteBoardSnapshotAsync(const Model::DeleteWhiteBoardSnapshotRequest& request, const DeleteWhiteBoardSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteWhiteBoardSnapshotOutcomeCallable DeleteWhiteBoardSnapshotCallable(const Model::DeleteWhiteBoardSnapshotRequest& request);
+
+                /**
                  *获取房间答题详情
                  * @param req DescribeAnswerListRequest
                  * @return DescribeAnswerListOutcome
@@ -797,6 +816,15 @@ namespace TencentCloud
                 DescribeUserOutcome DescribeUser(const Model::DescribeUserRequest &request);
                 void DescribeUserAsync(const Model::DescribeUserRequest& request, const DescribeUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeUserOutcomeCallable DescribeUserCallable(const Model::DescribeUserRequest& request);
+
+                /**
+                 *查询白板板书截图
+                 * @param req DescribeWhiteBoardSnapshotRequest
+                 * @return DescribeWhiteBoardSnapshotOutcome
+                 */
+                DescribeWhiteBoardSnapshotOutcome DescribeWhiteBoardSnapshot(const Model::DescribeWhiteBoardSnapshotRequest &request);
+                void DescribeWhiteBoardSnapshotAsync(const Model::DescribeWhiteBoardSnapshotRequest& request, const DescribeWhiteBoardSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeWhiteBoardSnapshotOutcomeCallable DescribeWhiteBoardSnapshotCallable(const Model::DescribeWhiteBoardSnapshotRequest& request);
 
                 /**
                  *结束房间的直播

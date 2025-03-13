@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取对应时间片段的播放url
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HlsUrl 对应时间片段的播放url
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHlsUrl() const;
 
                     /**
                      * 设置对应时间片段的播放url
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hlsUrl 对应时间片段的播放url
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHlsUrl(const std::string& _hlsUrl);
@@ -129,7 +125,6 @@ namespace TencentCloud
 
                     /**
                      * 对应时间片段的播放url
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hlsUrl;
                     bool m_hlsUrlHasBeenSet;

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最高价格
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxPrice 最高价格
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetMaxPrice() const;
 
                     /**
                      * 设置最高价格
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxPrice 最高价格
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxPrice(const double& _maxPrice);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最低价格
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MinPrice 最低价格
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetMinPrice() const;
 
                     /**
                      * 设置最低价格
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _minPrice 最低价格
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMinPrice(const double& _minPrice);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取价格幅度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Price 价格幅度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetPrice() const;
 
                     /**
                      * 设置价格幅度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _price 价格幅度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPrice(const double& _price);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取保证金
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DepositPrice 保证金
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetDepositPrice() const;
 
                     /**
                      * 设置保证金
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _depositPrice 保证金
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDepositPrice(const double& _depositPrice);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 最高价格
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_maxPrice;
                     bool m_maxPriceHasBeenSet;
 
                     /**
                      * 最低价格
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_minPrice;
                     bool m_minPriceHasBeenSet;
 
                     /**
                      * 价格幅度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_price;
                     bool m_priceHasBeenSet;
 
                     /**
                      * 保证金
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_depositPrice;
                     bool m_depositPriceHasBeenSet;

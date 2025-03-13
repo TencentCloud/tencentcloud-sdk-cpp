@@ -297,35 +297,15 @@ namespace TencentCloud
                     bool ApmInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取编程语言;
-J - JAVA；
-C - C/C++；
-P - Python；
-G - Go；
-O - Other；
-                     * @return ProgramLanguage 编程语言;
-J - JAVA；
-C - C/C++；
-P - Python；
-G - Go；
-O - Other；
+                     * 获取编程语言:  Java；C/C++；Python；Go；Other
+                     * @return ProgramLanguage 编程语言:  Java；C/C++；Python；Go；Other
                      * 
                      */
                     std::string GetProgramLanguage() const;
 
                     /**
-                     * 设置编程语言;
-J - JAVA；
-C - C/C++；
-P - Python；
-G - Go；
-O - Other；
-                     * @param _programLanguage 编程语言;
-J - JAVA；
-C - C/C++；
-P - Python；
-G - Go；
-O - Other；
+                     * 设置编程语言:  Java；C/C++；Python；Go；Other
+                     * @param _programLanguage 编程语言:  Java；C/C++；Python；Go；Other
                      * 
                      */
                     void SetProgramLanguage(const std::string& _programLanguage);
@@ -475,12 +455,7 @@ O - Other；
                     bool m_apmInstanceIdHasBeenSet;
 
                     /**
-                     * 编程语言;
-J - JAVA；
-C - C/C++；
-P - Python；
-G - Go；
-O - Other；
+                     * 编程语言:  Java；C/C++；Python；Go；Other
                      */
                     std::string m_programLanguage;
                     bool m_programLanguageHasBeenSet;

@@ -23,7 +23,8 @@ using namespace std;
 DescribeGatewayProtocolData::DescribeGatewayProtocolData() :
     m_typeCodeHasBeenSet(false),
     m_valueHasBeenSet(false),
-    m_labelHasBeenSet(false)
+    m_labelHasBeenSet(false),
+    m_valueTextHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome DescribeGatewayProtocolData::Deserialize(const rapidjson::Va
         m_labelHasBeenSet = true;
     }
 
+    if (value.HasMember("ValueText") && !value["ValueText"].IsNull())
+    {
+        if (!value["ValueText"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeGatewayProtocolData.ValueText` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_valueText = string(value["ValueText"].GetString());
+        m_valueTextHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void DescribeGatewayProtocolData::ToJsonObject(rapidjson::Value &value, rapidjso
         string key = "Label";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_label.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_valueTextHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ValueText";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_valueText.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void DescribeGatewayProtocolData::SetLabel(const string& _label)
 bool DescribeGatewayProtocolData::LabelHasBeenSet() const
 {
     return m_labelHasBeenSet;
+}
+
+string DescribeGatewayProtocolData::GetValueText() const
+{
+    return m_valueText;
+}
+
+void DescribeGatewayProtocolData::SetValueText(const string& _valueText)
+{
+    m_valueText = _valueText;
+    m_valueTextHasBeenSet = true;
+}
+
+bool DescribeGatewayProtocolData::ValueTextHasBeenSet() const
+{
+    return m_valueTextHasBeenSet;
 }
 

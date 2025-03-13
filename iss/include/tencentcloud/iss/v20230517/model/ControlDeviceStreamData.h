@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取flv 流地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Flv flv 流地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFlv() const;
 
                     /**
                      * 设置flv 流地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _flv flv 流地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFlv(const std::string& _flv);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取hls 流地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Hls hls 流地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHls() const;
 
                     /**
                      * 设置hls 流地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hls hls 流地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHls(const std::string& _hls);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取rtmp 流地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Rtmp rtmp 流地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRtmp() const;
 
                     /**
                      * 设置rtmp 流地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rtmp rtmp 流地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRtmp(const std::string& _rtmp);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * flv 流地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_flv;
                     bool m_flvHasBeenSet;
 
                     /**
                      * hls 流地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hls;
                     bool m_hlsHasBeenSet;
 
                     /**
                      * rtmp 流地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_rtmp;
                     bool m_rtmpHasBeenSet;

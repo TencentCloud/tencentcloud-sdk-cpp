@@ -174,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取变配前实例机器类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OldDeviceType 变配前实例机器类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOldDeviceType() const;
 
                     /**
                      * 设置变配前实例机器类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _oldDeviceType 变配前实例机器类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOldDeviceType(const std::string& _oldDeviceType);
@@ -199,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取变配后实例机器类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceType 变配后实例机器类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeviceType() const;
 
                     /**
                      * 设置变配后实例机器类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceType 变配后实例机器类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceType(const std::string& _deviceType);
@@ -283,14 +275,12 @@ namespace TencentCloud
 
                     /**
                      * 变配前实例机器类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_oldDeviceType;
                     bool m_oldDeviceTypeHasBeenSet;
 
                     /**
                      * 变配后实例机器类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceType;
                     bool m_deviceTypeHasBeenSet;

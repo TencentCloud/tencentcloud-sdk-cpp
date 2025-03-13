@@ -25,18 +25,12 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/fmu/v20191213/model/BeautifyPicRequest.h>
 #include <tencentcloud/fmu/v20191213/model/BeautifyPicResponse.h>
-#include <tencentcloud/fmu/v20191213/model/BeautifyVideoRequest.h>
-#include <tencentcloud/fmu/v20191213/model/BeautifyVideoResponse.h>
-#include <tencentcloud/fmu/v20191213/model/CancelBeautifyVideoJobRequest.h>
-#include <tencentcloud/fmu/v20191213/model/CancelBeautifyVideoJobResponse.h>
 #include <tencentcloud/fmu/v20191213/model/CreateModelRequest.h>
 #include <tencentcloud/fmu/v20191213/model/CreateModelResponse.h>
 #include <tencentcloud/fmu/v20191213/model/DeleteModelRequest.h>
 #include <tencentcloud/fmu/v20191213/model/DeleteModelResponse.h>
 #include <tencentcloud/fmu/v20191213/model/GetModelListRequest.h>
 #include <tencentcloud/fmu/v20191213/model/GetModelListResponse.h>
-#include <tencentcloud/fmu/v20191213/model/QueryBeautifyVideoJobRequest.h>
-#include <tencentcloud/fmu/v20191213/model/QueryBeautifyVideoJobResponse.h>
 #include <tencentcloud/fmu/v20191213/model/StyleImageRequest.h>
 #include <tencentcloud/fmu/v20191213/model/StyleImageResponse.h>
 #include <tencentcloud/fmu/v20191213/model/StyleImageProRequest.h>
@@ -60,12 +54,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::BeautifyPicResponse> BeautifyPicOutcome;
                 typedef std::future<BeautifyPicOutcome> BeautifyPicOutcomeCallable;
                 typedef std::function<void(const FmuClient*, const Model::BeautifyPicRequest&, BeautifyPicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BeautifyPicAsyncHandler;
-                typedef Outcome<Core::Error, Model::BeautifyVideoResponse> BeautifyVideoOutcome;
-                typedef std::future<BeautifyVideoOutcome> BeautifyVideoOutcomeCallable;
-                typedef std::function<void(const FmuClient*, const Model::BeautifyVideoRequest&, BeautifyVideoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BeautifyVideoAsyncHandler;
-                typedef Outcome<Core::Error, Model::CancelBeautifyVideoJobResponse> CancelBeautifyVideoJobOutcome;
-                typedef std::future<CancelBeautifyVideoJobOutcome> CancelBeautifyVideoJobOutcomeCallable;
-                typedef std::function<void(const FmuClient*, const Model::CancelBeautifyVideoJobRequest&, CancelBeautifyVideoJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelBeautifyVideoJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateModelResponse> CreateModelOutcome;
                 typedef std::future<CreateModelOutcome> CreateModelOutcomeCallable;
                 typedef std::function<void(const FmuClient*, const Model::CreateModelRequest&, CreateModelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateModelAsyncHandler;
@@ -75,9 +63,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetModelListResponse> GetModelListOutcome;
                 typedef std::future<GetModelListOutcome> GetModelListOutcomeCallable;
                 typedef std::function<void(const FmuClient*, const Model::GetModelListRequest&, GetModelListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetModelListAsyncHandler;
-                typedef Outcome<Core::Error, Model::QueryBeautifyVideoJobResponse> QueryBeautifyVideoJobOutcome;
-                typedef std::future<QueryBeautifyVideoJobOutcome> QueryBeautifyVideoJobOutcomeCallable;
-                typedef std::function<void(const FmuClient*, const Model::QueryBeautifyVideoJobRequest&, QueryBeautifyVideoJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryBeautifyVideoJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::StyleImageResponse> StyleImageOutcome;
                 typedef std::future<StyleImageOutcome> StyleImageOutcomeCallable;
                 typedef std::function<void(const FmuClient*, const Model::StyleImageRequest&, StyleImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StyleImageAsyncHandler;
@@ -98,28 +83,6 @@ namespace TencentCloud
                 BeautifyPicOutcome BeautifyPic(const Model::BeautifyPicRequest &request);
                 void BeautifyPicAsync(const Model::BeautifyPicRequest& request, const BeautifyPicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 BeautifyPicOutcomeCallable BeautifyPicCallable(const Model::BeautifyPicRequest& request);
-
-                /**
-                 *产品不再维护，准备下线。
-
-视频美颜(此接口目前已下线)
-                 * @param req BeautifyVideoRequest
-                 * @return BeautifyVideoOutcome
-                 */
-                BeautifyVideoOutcome BeautifyVideo(const Model::BeautifyVideoRequest &request);
-                void BeautifyVideoAsync(const Model::BeautifyVideoRequest& request, const BeautifyVideoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                BeautifyVideoOutcomeCallable BeautifyVideoCallable(const Model::BeautifyVideoRequest& request);
-
-                /**
-                 *产品不再维护，准备下线。
-
-撤销视频美颜任务请求
-                 * @param req CancelBeautifyVideoJobRequest
-                 * @return CancelBeautifyVideoJobOutcome
-                 */
-                CancelBeautifyVideoJobOutcome CancelBeautifyVideoJob(const Model::CancelBeautifyVideoJobRequest &request);
-                void CancelBeautifyVideoJobAsync(const Model::CancelBeautifyVideoJobRequest& request, const CancelBeautifyVideoJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CancelBeautifyVideoJobOutcomeCallable CancelBeautifyVideoJobCallable(const Model::CancelBeautifyVideoJobRequest& request);
 
                 /**
                  *在使用LUT素材的modelid实现试唇色前，您需要先上传 LUT 格式的cube文件注册唇色ID。查看 [LUT文件的使用说明](https://cloud.tencent.com/document/product/1172/41701)。
@@ -149,17 +112,6 @@ namespace TencentCloud
                 GetModelListOutcome GetModelList(const Model::GetModelListRequest &request);
                 void GetModelListAsync(const Model::GetModelListRequest& request, const GetModelListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetModelListOutcomeCallable GetModelListCallable(const Model::GetModelListRequest& request);
-
-                /**
-                 *产品不再维护，准备下线。
-
-查询视频美颜处理进度
-                 * @param req QueryBeautifyVideoJobRequest
-                 * @return QueryBeautifyVideoJobOutcome
-                 */
-                QueryBeautifyVideoJobOutcome QueryBeautifyVideoJob(const Model::QueryBeautifyVideoJobRequest &request);
-                void QueryBeautifyVideoJobAsync(const Model::QueryBeautifyVideoJobRequest& request, const QueryBeautifyVideoJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                QueryBeautifyVideoJobOutcomeCallable QueryBeautifyVideoJobCallable(const Model::QueryBeautifyVideoJobRequest& request);
 
                 /**
                  *上传一张照片，输出滤镜处理后的图片。

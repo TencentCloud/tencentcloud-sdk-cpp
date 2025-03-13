@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取返回结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 返回结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ListForbidplayChannelsData GetData() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 返回结果
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ListForbidplayChannelsData m_data;
                     bool m_dataHasBeenSet;

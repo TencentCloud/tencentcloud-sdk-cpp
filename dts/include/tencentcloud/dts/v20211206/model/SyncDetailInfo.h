@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取总步骤数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StepAll 总步骤数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStepAll() const;
 
                     /**
                      * 设置总步骤数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _stepAll 总步骤数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStepAll(const uint64_t& _stepAll);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当前步骤
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StepNow 当前步骤
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStepNow() const;
 
                     /**
                      * 设置当前步骤
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _stepNow 当前步骤
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStepNow(const uint64_t& _stepNow);
@@ -100,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取总体进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Progress 总体进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetProgress() const;
 
                     /**
                      * 设置总体进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _progress 总体进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProgress(const int64_t& _progress);
@@ -125,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当前步骤进度，范围为[0-100]，若为-1表示当前步骤不支持查看进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CurrentStepProgress 当前步骤进度，范围为[0-100]，若为-1表示当前步骤不支持查看进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCurrentStepProgress() const;
 
                     /**
                      * 设置当前步骤进度，范围为[0-100]，若为-1表示当前步骤不支持查看进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _currentStepProgress 当前步骤进度，范围为[0-100]，若为-1表示当前步骤不支持查看进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCurrentStepProgress(const int64_t& _currentStepProgress);
@@ -150,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取同步两端数据量差距
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MasterSlaveDistance 同步两端数据量差距
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMasterSlaveDistance() const;
 
                     /**
                      * 设置同步两端数据量差距
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _masterSlaveDistance 同步两端数据量差距
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMasterSlaveDistance(const int64_t& _masterSlaveDistance);
@@ -175,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取同步两端时间差距
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecondsBehindMaster 同步两端时间差距
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSecondsBehindMaster() const;
 
                     /**
                      * 设置同步两端时间差距
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _secondsBehindMaster 同步两端时间差距
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSecondsBehindMaster(const int64_t& _secondsBehindMaster);
@@ -200,18 +176,14 @@ namespace TencentCloud
 
                     /**
                      * 获取总体描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 总体描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置总体描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _message 总体描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMessage(const std::string& _message);
@@ -250,18 +222,14 @@ namespace TencentCloud
 
                     /**
                      * 获取不能发起一致性校验的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CauseOfCompareDisable 不能发起一致性校验的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCauseOfCompareDisable() const;
 
                     /**
                      * 设置不能发起一致性校验的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _causeOfCompareDisable 不能发起一致性校验的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCauseOfCompareDisable(const std::string& _causeOfCompareDisable);
@@ -275,18 +243,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务的错误和解决方案信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrInfo 任务的错误和解决方案信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ErrInfo GetErrInfo() const;
 
                     /**
                      * 设置任务的错误和解决方案信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _errInfo 任务的错误和解决方案信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetErrInfo(const ErrInfo& _errInfo);
@@ -302,49 +266,42 @@ namespace TencentCloud
 
                     /**
                      * 总步骤数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_stepAll;
                     bool m_stepAllHasBeenSet;
 
                     /**
                      * 当前步骤
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_stepNow;
                     bool m_stepNowHasBeenSet;
 
                     /**
                      * 总体进度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_progress;
                     bool m_progressHasBeenSet;
 
                     /**
                      * 当前步骤进度，范围为[0-100]，若为-1表示当前步骤不支持查看进度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_currentStepProgress;
                     bool m_currentStepProgressHasBeenSet;
 
                     /**
                      * 同步两端数据量差距
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_masterSlaveDistance;
                     bool m_masterSlaveDistanceHasBeenSet;
 
                     /**
                      * 同步两端时间差距
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_secondsBehindMaster;
                     bool m_secondsBehindMasterHasBeenSet;
 
                     /**
                      * 总体描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
@@ -358,14 +315,12 @@ namespace TencentCloud
 
                     /**
                      * 不能发起一致性校验的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_causeOfCompareDisable;
                     bool m_causeOfCompareDisableHasBeenSet;
 
                     /**
                      * 任务的错误和解决方案信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ErrInfo m_errInfo;
                     bool m_errInfoHasBeenSet;

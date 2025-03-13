@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return User 用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUser() const;
 
                     /**
                      * 设置用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _user 用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUser(const std::string& _user);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取出价
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Price 出价
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPrice() const;
 
                     /**
                      * 设置出价
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _price 出价
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPrice(const int64_t& _price);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取出价时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BidTime 出价时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBidTime() const;
 
                     /**
                      * 设置出价时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bidTime 出价时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBidTime(const std::string& _bidTime);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当前状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BidStatus 当前状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBidStatus() const;
 
                     /**
                      * 设置当前状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bidStatus 当前状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBidStatus(const std::string& _bidStatus);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 用户
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_user;
                     bool m_userHasBeenSet;
 
                     /**
                      * 出价
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_price;
                     bool m_priceHasBeenSet;
 
                     /**
                      * 出价时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bidTime;
                     bool m_bidTimeHasBeenSet;
 
                     /**
                      * 当前状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bidStatus;
                     bool m_bidStatusHasBeenSet;

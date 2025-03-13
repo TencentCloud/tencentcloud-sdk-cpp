@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取接入协议的字典码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TypeCode 接入协议的字典码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTypeCode() const;
 
                     /**
                      * 设置接入协议的字典码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _typeCode 接入协议的字典码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTypeCode(const std::string& _typeCode);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取接入协议类型值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 接入协议类型值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetValue() const;
 
                     /**
                      * 设置接入协议类型值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _value 接入协议类型值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValue(const int64_t& _value);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取接入协议的类型描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Label 接入协议的类型描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLabel() const;
 
                     /**
                      * 设置接入协议的类型描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _label 接入协议的类型描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLabel(const std::string& _label);
@@ -121,28 +109,52 @@ namespace TencentCloud
                      */
                     bool LabelHasBeenSet() const;
 
+                    /**
+                     * 获取协议值文本
+                     * @return ValueText 协议值文本
+                     * 
+                     */
+                    std::string GetValueText() const;
+
+                    /**
+                     * 设置协议值文本
+                     * @param _valueText 协议值文本
+                     * 
+                     */
+                    void SetValueText(const std::string& _valueText);
+
+                    /**
+                     * 判断参数 ValueText 是否已赋值
+                     * @return ValueText 是否已赋值
+                     * 
+                     */
+                    bool ValueTextHasBeenSet() const;
+
                 private:
 
                     /**
                      * 接入协议的字典码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_typeCode;
                     bool m_typeCodeHasBeenSet;
 
                     /**
                      * 接入协议类型值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_value;
                     bool m_valueHasBeenSet;
 
                     /**
                      * 接入协议的类型描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_label;
                     bool m_labelHasBeenSet;
+
+                    /**
+                     * 协议值文本
+                     */
+                    std::string m_valueText;
+                    bool m_valueTextHasBeenSet;
 
                 };
             }

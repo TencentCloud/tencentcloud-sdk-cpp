@@ -501,6 +501,8 @@
 #include <tencentcloud/wedata/v20210820/model/TriggerDsEventResponse.h>
 #include <tencentcloud/wedata/v20210820/model/TriggerEventRequest.h>
 #include <tencentcloud/wedata/v20210820/model/TriggerEventResponse.h>
+#include <tencentcloud/wedata/v20210820/model/TriggerManualTasksRequest.h>
+#include <tencentcloud/wedata/v20210820/model/TriggerManualTasksResponse.h>
 #include <tencentcloud/wedata/v20210820/model/UnlockIntegrationTaskRequest.h>
 #include <tencentcloud/wedata/v20210820/model/UnlockIntegrationTaskResponse.h>
 #include <tencentcloud/wedata/v20210820/model/UpdateDataModelRegistryInfoRequest.h>
@@ -1242,6 +1244,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::TriggerEventResponse> TriggerEventOutcome;
                 typedef std::future<TriggerEventOutcome> TriggerEventOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::TriggerEventRequest&, TriggerEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TriggerEventAsyncHandler;
+                typedef Outcome<Core::Error, Model::TriggerManualTasksResponse> TriggerManualTasksOutcome;
+                typedef std::future<TriggerManualTasksOutcome> TriggerManualTasksOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::TriggerManualTasksRequest&, TriggerManualTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TriggerManualTasksAsyncHandler;
                 typedef Outcome<Core::Error, Model::UnlockIntegrationTaskResponse> UnlockIntegrationTaskOutcome;
                 typedef std::future<UnlockIntegrationTaskOutcome> UnlockIntegrationTaskOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::UnlockIntegrationTaskRequest&, UnlockIntegrationTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnlockIntegrationTaskAsyncHandler;
@@ -3427,6 +3432,15 @@ https://capi.woa.com/api/detail?product=wedata&env=api_formal&version=2021-08-20
                 TriggerEventOutcome TriggerEvent(const Model::TriggerEventRequest &request);
                 void TriggerEventAsync(const Model::TriggerEventRequest& request, const TriggerEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 TriggerEventOutcomeCallable TriggerEventCallable(const Model::TriggerEventRequest& request);
+
+                /**
+                 *手动任务触发运行
+                 * @param req TriggerManualTasksRequest
+                 * @return TriggerManualTasksOutcome
+                 */
+                TriggerManualTasksOutcome TriggerManualTasks(const Model::TriggerManualTasksRequest &request);
+                void TriggerManualTasksAsync(const Model::TriggerManualTasksRequest& request, const TriggerManualTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TriggerManualTasksOutcomeCallable TriggerManualTasksCallable(const Model::TriggerManualTasksRequest& request);
 
                 /**
                  *解锁集成任务

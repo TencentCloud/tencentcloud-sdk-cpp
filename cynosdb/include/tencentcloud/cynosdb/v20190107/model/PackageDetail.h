@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取AppId账户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppId AppId账户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAppId() const;
 
                     /**
                      * 设置AppId账户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appId AppId账户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppId(const int64_t& _appId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源包唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackageId 资源包唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPackageId() const;
 
                     /**
                      * 设置资源包唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _packageId 资源包唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPackageId(const std::string& _packageId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceId 实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取成功抵扣容量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SuccessDeductSpec 成功抵扣容量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetSuccessDeductSpec() const;
 
                     /**
                      * 设置成功抵扣容量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _successDeductSpec 成功抵扣容量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSuccessDeductSpec(const double& _successDeductSpec);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取截止当前，资源包已使用的容量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackageTotalUsedSpec 截止当前，资源包已使用的容量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetPackageTotalUsedSpec() const;
 
                     /**
                      * 设置截止当前，资源包已使用的容量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _packageTotalUsedSpec 截止当前，资源包已使用的容量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPackageTotalUsedSpec(const double& _packageTotalUsedSpec);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取抵扣开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 抵扣开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置抵扣开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _startTime 抵扣开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取抵扣结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 抵扣结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置抵扣结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endTime 抵扣结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取扩展信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExtendInfo 扩展信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExtendInfo() const;
 
                     /**
                      * 设置扩展信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _extendInfo 扩展信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExtendInfo(const std::string& _extendInfo);
@@ -250,56 +218,48 @@ namespace TencentCloud
 
                     /**
                      * AppId账户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
                      * 资源包唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_packageId;
                     bool m_packageIdHasBeenSet;
 
                     /**
                      * 实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
                      * 成功抵扣容量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_successDeductSpec;
                     bool m_successDeductSpecHasBeenSet;
 
                     /**
                      * 截止当前，资源包已使用的容量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_packageTotalUsedSpec;
                     bool m_packageTotalUsedSpecHasBeenSet;
 
                     /**
                      * 抵扣开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
                      * 抵扣结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
                      * 扩展信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_extendInfo;
                     bool m_extendInfoHasBeenSet;

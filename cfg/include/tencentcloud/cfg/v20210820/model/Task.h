@@ -858,6 +858,27 @@ namespace TencentCloud
                      */
                     bool TaskRegionNameHasBeenSet() const;
 
+                    /**
+                     * 获取架构ID
+                     * @return TaskArchId 架构ID
+                     * 
+                     */
+                    std::string GetTaskArchId() const;
+
+                    /**
+                     * 设置架构ID
+                     * @param _taskArchId 架构ID
+                     * 
+                     */
+                    void SetTaskArchId(const std::string& _taskArchId);
+
+                    /**
+                     * 判断参数 TaskArchId 是否已赋值
+                     * @return TaskArchId 是否已赋值
+                     * 
+                     */
+                    bool TaskArchIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1086,6 +1107,12 @@ namespace TencentCloud
                      */
                     std::string m_taskRegionName;
                     bool m_taskRegionNameHasBeenSet;
+
+                    /**
+                     * 架构ID
+                     */
+                    std::string m_taskArchId;
+                    bool m_taskArchIdHasBeenSet;
 
                 };
             }

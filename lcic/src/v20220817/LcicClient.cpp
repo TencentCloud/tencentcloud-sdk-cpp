@@ -986,6 +986,49 @@ LcicClient::DeleteUserOutcomeCallable LcicClient::DeleteUserCallable(const Delet
     return task->get_future();
 }
 
+LcicClient::DeleteWhiteBoardSnapshotOutcome LcicClient::DeleteWhiteBoardSnapshot(const DeleteWhiteBoardSnapshotRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteWhiteBoardSnapshot");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteWhiteBoardSnapshotResponse rsp = DeleteWhiteBoardSnapshotResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteWhiteBoardSnapshotOutcome(rsp);
+        else
+            return DeleteWhiteBoardSnapshotOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteWhiteBoardSnapshotOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::DeleteWhiteBoardSnapshotAsync(const DeleteWhiteBoardSnapshotRequest& request, const DeleteWhiteBoardSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteWhiteBoardSnapshot(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LcicClient::DeleteWhiteBoardSnapshotOutcomeCallable LcicClient::DeleteWhiteBoardSnapshotCallable(const DeleteWhiteBoardSnapshotRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteWhiteBoardSnapshotOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteWhiteBoardSnapshot(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LcicClient::DescribeAnswerListOutcome LcicClient::DescribeAnswerList(const DescribeAnswerListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAnswerList");
@@ -1925,6 +1968,49 @@ LcicClient::DescribeUserOutcomeCallable LcicClient::DescribeUserCallable(const D
         [this, request]()
         {
             return this->DescribeUser(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LcicClient::DescribeWhiteBoardSnapshotOutcome LcicClient::DescribeWhiteBoardSnapshot(const DescribeWhiteBoardSnapshotRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeWhiteBoardSnapshot");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeWhiteBoardSnapshotResponse rsp = DescribeWhiteBoardSnapshotResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeWhiteBoardSnapshotOutcome(rsp);
+        else
+            return DescribeWhiteBoardSnapshotOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeWhiteBoardSnapshotOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::DescribeWhiteBoardSnapshotAsync(const DescribeWhiteBoardSnapshotRequest& request, const DescribeWhiteBoardSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeWhiteBoardSnapshot(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LcicClient::DescribeWhiteBoardSnapshotOutcomeCallable LcicClient::DescribeWhiteBoardSnapshotCallable(const DescribeWhiteBoardSnapshotRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeWhiteBoardSnapshotOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeWhiteBoardSnapshot(request);
         }
     );
 

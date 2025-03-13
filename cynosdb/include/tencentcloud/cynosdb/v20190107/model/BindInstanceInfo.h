@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取绑定的集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 绑定的集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置绑定的集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceId 绑定的集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取绑定的实例所在的地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceRegion 绑定的实例所在的地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceRegion() const;
 
                     /**
                      * 设置绑定的实例所在的地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceRegion 绑定的实例所在的地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceRegion(const std::string& _instanceRegion);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取绑定的实例类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceType 绑定的实例类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
                      * 设置绑定的实例类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceType 绑定的实例类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取绑定集群下的实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExtendIds 绑定集群下的实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetExtendIds() const;
 
                     /**
                      * 设置绑定集群下的实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _extendIds 绑定集群下的实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExtendIds(const std::vector<std::string>& _extendIds);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 绑定的集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
                      * 绑定的实例所在的地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceRegion;
                     bool m_instanceRegionHasBeenSet;
 
                     /**
                      * 绑定的实例类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**
                      * 绑定集群下的实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_extendIds;
                     bool m_extendIdsHasBeenSet;

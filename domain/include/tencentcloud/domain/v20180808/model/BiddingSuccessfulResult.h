@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取支付结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayEndTime 支付结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPayEndTime() const;
 
                     /**
                      * 设置支付结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _payEndTime 支付结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPayEndTime(const std::string& _payEndTime);
@@ -75,7 +71,6 @@ namespace TencentCloud
 
                     /**
                      * 支付结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_payEndTime;
                     bool m_payEndTimeHasBeenSet;

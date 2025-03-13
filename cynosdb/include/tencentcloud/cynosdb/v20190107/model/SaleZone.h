@@ -190,18 +190,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户是否有可用区权限
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HasPermission 用户是否有可用区权限
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetHasPermission() const;
 
                     /**
                      * 设置用户是否有可用区权限
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hasPermission 用户是否有可用区权限
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHasPermission(const bool& _hasPermission);
@@ -299,7 +295,6 @@ namespace TencentCloud
 
                     /**
                      * 用户是否有可用区权限
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_hasPermission;
                     bool m_hasPermissionHasBeenSet;

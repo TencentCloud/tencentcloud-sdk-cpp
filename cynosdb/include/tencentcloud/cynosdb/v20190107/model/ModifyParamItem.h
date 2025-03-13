@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取参数旧值（只在出参时有用）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OldValue 参数旧值（只在出参时有用）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOldValue() const;
 
                     /**
                      * 设置参数旧值（只在出参时有用）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _oldValue 参数旧值（只在出参时有用）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOldValue(const std::string& _oldValue);
@@ -129,7 +125,6 @@ namespace TencentCloud
 
                     /**
                      * 参数旧值（只在出参时有用）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_oldValue;
                     bool m_oldValueHasBeenSet;

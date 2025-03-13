@@ -728,6 +728,49 @@ MongodbClient::DescribeDBInstanceDealOutcomeCallable MongodbClient::DescribeDBIn
     return task->get_future();
 }
 
+MongodbClient::DescribeDBInstanceNamespaceOutcome MongodbClient::DescribeDBInstanceNamespace(const DescribeDBInstanceNamespaceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBInstanceNamespace");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBInstanceNamespaceResponse rsp = DescribeDBInstanceNamespaceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBInstanceNamespaceOutcome(rsp);
+        else
+            return DescribeDBInstanceNamespaceOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBInstanceNamespaceOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::DescribeDBInstanceNamespaceAsync(const DescribeDBInstanceNamespaceRequest& request, const DescribeDBInstanceNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDBInstanceNamespace(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MongodbClient::DescribeDBInstanceNamespaceOutcomeCallable MongodbClient::DescribeDBInstanceNamespaceCallable(const DescribeDBInstanceNamespaceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDBInstanceNamespaceOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDBInstanceNamespace(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MongodbClient::DescribeDBInstanceNodePropertyOutcome MongodbClient::DescribeDBInstanceNodeProperty(const DescribeDBInstanceNodePropertyRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDBInstanceNodeProperty");

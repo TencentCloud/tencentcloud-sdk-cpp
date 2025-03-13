@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取binlog保留时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BinlogSaveDays binlog保留时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBinlogSaveDays() const;
 
                     /**
                      * 设置binlog保留时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _binlogSaveDays binlog保留时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBinlogSaveDays(const int64_t& _binlogSaveDays);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取binlog异地地域备份是否开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BinlogCrossRegionsEnable binlog异地地域备份是否开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBinlogCrossRegionsEnable() const;
 
                     /**
                      * 设置binlog异地地域备份是否开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _binlogCrossRegionsEnable binlog异地地域备份是否开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBinlogCrossRegionsEnable(const std::string& _binlogCrossRegionsEnable);
@@ -125,14 +117,12 @@ namespace TencentCloud
 
                     /**
                      * binlog保留时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_binlogSaveDays;
                     bool m_binlogSaveDaysHasBeenSet;
 
                     /**
                      * binlog异地地域备份是否开启
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_binlogCrossRegionsEnable;
                     bool m_binlogCrossRegionsEnableHasBeenSet;

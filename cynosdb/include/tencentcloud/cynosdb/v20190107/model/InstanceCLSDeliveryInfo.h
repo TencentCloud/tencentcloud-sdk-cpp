@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceId 实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -74,10 +70,8 @@ namespace TencentCloud
                     /**
                      * 获取实例name
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceName 实例name
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceName() const;
@@ -85,10 +79,8 @@ namespace TencentCloud
                     /**
                      * 设置实例name
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceName 实例name
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -103,10 +95,8 @@ namespace TencentCloud
                     /**
                      * 获取日志主题id
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicId 日志主题id
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTopicId() const;
@@ -114,10 +104,8 @@ namespace TencentCloud
                     /**
                      * 设置日志主题id
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topicId 日志主题id
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -131,18 +119,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志主题name
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicName 日志主题name
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTopicName() const;
 
                     /**
                      * 设置日志主题name
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topicName 日志主题name
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopicName(const std::string& _topicName);
@@ -157,10 +141,8 @@ namespace TencentCloud
                     /**
                      * 获取日志集id
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupId 日志集id
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupId() const;
@@ -168,10 +150,8 @@ namespace TencentCloud
                     /**
                      * 设置日志集id
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupId 日志集id
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -186,10 +166,8 @@ namespace TencentCloud
                     /**
                      * 获取日志集name
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupName 日志集name
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupName() const;
@@ -197,10 +175,8 @@ namespace TencentCloud
                     /**
                      * 设置日志集name
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupName 日志集name
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -215,10 +191,8 @@ namespace TencentCloud
                     /**
                      * 获取日志投递地域
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 日志投递地域
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegion() const;
@@ -226,10 +200,8 @@ namespace TencentCloud
                     /**
                      * 设置日志投递地域
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _region 日志投递地域
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -244,10 +216,8 @@ namespace TencentCloud
                     /**
                      * 获取投递状态creating,running,offlining,offlined
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 投递状态creating,running,offlining,offlined
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
@@ -255,10 +225,8 @@ namespace TencentCloud
                     /**
                      * 设置投递状态creating,running,offlining,offlined
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 投递状态creating,running,offlining,offlined
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -272,18 +240,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogType 日志类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLogType() const;
 
                     /**
                      * 设置日志类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logType 日志类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogType(const std::string& _logType);
@@ -299,7 +263,6 @@ namespace TencentCloud
 
                     /**
                      * 实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -307,7 +270,6 @@ namespace TencentCloud
                     /**
                      * 实例name
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
@@ -315,14 +277,12 @@ namespace TencentCloud
                     /**
                      * 日志主题id
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
 
                     /**
                      * 日志主题name
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;
@@ -330,7 +290,6 @@ namespace TencentCloud
                     /**
                      * 日志集id
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
@@ -338,7 +297,6 @@ namespace TencentCloud
                     /**
                      * 日志集name
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
@@ -346,7 +304,6 @@ namespace TencentCloud
                     /**
                      * 日志投递地域
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
@@ -354,14 +311,12 @@ namespace TencentCloud
                     /**
                      * 投递状态creating,running,offlining,offlined
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 日志类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logType;
                     bool m_logTypeHasBeenSet;

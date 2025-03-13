@@ -70,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取市场选项类型，当前只支持取值：spot
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MarketType 市场选项类型，当前只支持取值：spot
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMarketType() const;
 
                     /**
                      * 设置市场选项类型，当前只支持取值：spot
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _marketType 市场选项类型，当前只支持取值：spot
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMarketType(const std::string& _marketType);
@@ -103,7 +99,6 @@ namespace TencentCloud
 
                     /**
                      * 市场选项类型，当前只支持取值：spot
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_marketType;
                     bool m_marketTypeHasBeenSet;

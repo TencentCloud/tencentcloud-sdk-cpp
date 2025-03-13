@@ -30,7 +30,8 @@ AgentConfig::AgentConfig() :
     m_interruptSpeechDurationHasBeenSet(false),
     m_turnDetectionModeHasBeenSet(false),
     m_filterOneWordHasBeenSet(false),
-    m_welcomeMessagePriorityHasBeenSet(false)
+    m_welcomeMessagePriorityHasBeenSet(false),
+    m_filterBracketsContentHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,16 @@ CoreInternalOutcome AgentConfig::Deserialize(const rapidjson::Value &value)
         m_welcomeMessagePriorityHasBeenSet = true;
     }
 
+    if (value.HasMember("FilterBracketsContent") && !value["FilterBracketsContent"].IsNull())
+    {
+        if (!value["FilterBracketsContent"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AgentConfig.FilterBracketsContent` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_filterBracketsContent = value["FilterBracketsContent"].GetUint64();
+        m_filterBracketsContentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +235,14 @@ void AgentConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "WelcomeMessagePriority";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_welcomeMessagePriority, allocator);
+    }
+
+    if (m_filterBracketsContentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilterBracketsContent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_filterBracketsContent, allocator);
     }
 
 }
@@ -387,5 +406,21 @@ void AgentConfig::SetWelcomeMessagePriority(const uint64_t& _welcomeMessagePrior
 bool AgentConfig::WelcomeMessagePriorityHasBeenSet() const
 {
     return m_welcomeMessagePriorityHasBeenSet;
+}
+
+uint64_t AgentConfig::GetFilterBracketsContent() const
+{
+    return m_filterBracketsContent;
+}
+
+void AgentConfig::SetFilterBracketsContent(const uint64_t& _filterBracketsContent)
+{
+    m_filterBracketsContent = _filterBracketsContent;
+    m_filterBracketsContentHasBeenSet = true;
+}
+
+bool AgentConfig::FilterBracketsContentHasBeenSet() const
+{
+    return m_filterBracketsContentHasBeenSet;
 }
 

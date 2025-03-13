@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取ddl类型，如Database,Table,View,Index等
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DdlObject ddl类型，如Database,Table,View,Index等
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDdlObject() const;
 
                     /**
                      * 设置ddl类型，如Database,Table,View,Index等
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ddlObject ddl类型，如Database,Table,View,Index等
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDdlObject(const std::string& _ddlObject);
@@ -100,7 +96,6 @@ namespace TencentCloud
 
                     /**
                      * ddl类型，如Database,Table,View,Index等
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ddlObject;
                     bool m_ddlObjectHasBeenSet;
