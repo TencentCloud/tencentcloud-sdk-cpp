@@ -15,14 +15,11 @@
 #
 
 set(vod_public_header
-  include/tencentcloud/vod/v20240718/VodClient.h
   include/tencentcloud/vod/v20180717/VodClient.h
+  include/tencentcloud/vod/v20240718/VodClient.h
   )
 
 set(vod_public_header_model
-  include/tencentcloud/vod/v20240718/model/Credentials.h
-  include/tencentcloud/vod/v20240718/model/CreateStorageCredentialsRequest.h
-  include/tencentcloud/vod/v20240718/model/CreateStorageCredentialsResponse.h
   include/tencentcloud/vod/v20180717/model/Canvas.h
   include/tencentcloud/vod/v20180717/model/ModifySampleSnapshotTemplateResponse.h
   include/tencentcloud/vod/v20180717/model/ModifyWatermarkTemplateRequest.h
@@ -847,14 +844,14 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/HDRInfo.h
   include/tencentcloud/vod/v20180717/model/EditMediaTEHDConfig.h
   include/tencentcloud/vod/v20180717/model/AiRecognitionResult.h
+  include/tencentcloud/vod/v20240718/model/Credentials.h
+  include/tencentcloud/vod/v20240718/model/CreateStorageCredentialsRequest.h
+  include/tencentcloud/vod/v20240718/model/CreateStorageCredentialsResponse.h
   )
 
 set(vod_src
-  src/v20240718/VodClient.cpp
   src/v20180717/VodClient.cpp
-  src/v20240718/model/Credentials.cpp
-  src/v20240718/model/CreateStorageCredentialsRequest.cpp
-  src/v20240718/model/CreateStorageCredentialsResponse.cpp
+  src/v20240718/VodClient.cpp
   src/v20180717/model/Canvas.cpp
   src/v20180717/model/ModifySampleSnapshotTemplateResponse.cpp
   src/v20180717/model/ModifyWatermarkTemplateRequest.cpp
@@ -1679,6 +1676,9 @@ set(vod_src
   src/v20180717/model/HDRInfo.cpp
   src/v20180717/model/EditMediaTEHDConfig.cpp
   src/v20180717/model/AiRecognitionResult.cpp
+  src/v20240718/model/Credentials.cpp
+  src/v20240718/model/CreateStorageCredentialsRequest.cpp
+  src/v20240718/model/CreateStorageCredentialsResponse.cpp
   )
 
 set(vod_include
@@ -1707,9 +1707,9 @@ target_link_libraries(vod
   core)
 
 #install(FILES ${vod_public_header}
-#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/vod/v20180717)
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/vod/v20240718)
 #install(FILES ${vod_public_header_model}
-#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/vod/v20180717/model)
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/vod/v20240718/model)
 install(DIRECTORY ${vod_include}
   DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud)
 

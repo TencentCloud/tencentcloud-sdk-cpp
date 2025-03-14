@@ -15,11 +15,17 @@
 #
 
 set(monitor_public_header
-  include/tencentcloud/monitor/v20180724/MonitorClient.h
   include/tencentcloud/monitor/v20230616/MonitorClient.h
+  include/tencentcloud/monitor/v20180724/MonitorClient.h
   )
 
 set(monitor_public_header_model
+  include/tencentcloud/monitor/v20230616/model/GetMonitorDataResponse.h
+  include/tencentcloud/monitor/v20230616/model/Expr.h
+  include/tencentcloud/monitor/v20230616/model/GetMonitorDataRequest.h
+  include/tencentcloud/monitor/v20230616/model/Instance.h
+  include/tencentcloud/monitor/v20230616/model/DataPoint.h
+  include/tencentcloud/monitor/v20230616/model/Dimension.h
   include/tencentcloud/monitor/v20180724/model/ModifyAlarmPolicyInfoRequest.h
   include/tencentcloud/monitor/v20180724/model/AlarmPolicyTriggerTask.h
   include/tencentcloud/monitor/v20180724/model/GetTopNMonitorDataRequest.h
@@ -475,17 +481,17 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/UpdateAlertRuleStateRequest.h
   include/tencentcloud/monitor/v20180724/model/SetDefaultAlarmPolicyResponse.h
   include/tencentcloud/monitor/v20180724/model/BindingPolicyObjectResponse.h
-  include/tencentcloud/monitor/v20230616/model/GetMonitorDataResponse.h
-  include/tencentcloud/monitor/v20230616/model/Expr.h
-  include/tencentcloud/monitor/v20230616/model/GetMonitorDataRequest.h
-  include/tencentcloud/monitor/v20230616/model/Instance.h
-  include/tencentcloud/monitor/v20230616/model/DataPoint.h
-  include/tencentcloud/monitor/v20230616/model/Dimension.h
   )
 
 set(monitor_src
-  src/v20180724/MonitorClient.cpp
   src/v20230616/MonitorClient.cpp
+  src/v20180724/MonitorClient.cpp
+  src/v20230616/model/GetMonitorDataResponse.cpp
+  src/v20230616/model/Expr.cpp
+  src/v20230616/model/GetMonitorDataRequest.cpp
+  src/v20230616/model/Instance.cpp
+  src/v20230616/model/DataPoint.cpp
+  src/v20230616/model/Dimension.cpp
   src/v20180724/model/ModifyAlarmPolicyInfoRequest.cpp
   src/v20180724/model/AlarmPolicyTriggerTask.cpp
   src/v20180724/model/GetTopNMonitorDataRequest.cpp
@@ -941,12 +947,6 @@ set(monitor_src
   src/v20180724/model/UpdateAlertRuleStateRequest.cpp
   src/v20180724/model/SetDefaultAlarmPolicyResponse.cpp
   src/v20180724/model/BindingPolicyObjectResponse.cpp
-  src/v20230616/model/GetMonitorDataResponse.cpp
-  src/v20230616/model/Expr.cpp
-  src/v20230616/model/GetMonitorDataRequest.cpp
-  src/v20230616/model/Instance.cpp
-  src/v20230616/model/DataPoint.cpp
-  src/v20230616/model/Dimension.cpp
   )
 
 set(monitor_include
@@ -975,9 +975,9 @@ target_link_libraries(monitor
   core)
 
 #install(FILES ${monitor_public_header}
-#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/monitor/v20230616)
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/monitor/v20180724)
 #install(FILES ${monitor_public_header_model}
-#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/monitor/v20230616/model)
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/monitor/v20180724/model)
 install(DIRECTORY ${monitor_include}
   DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud)
 

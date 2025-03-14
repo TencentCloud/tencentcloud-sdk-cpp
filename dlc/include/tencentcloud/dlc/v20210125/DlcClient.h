@@ -205,6 +205,8 @@
 #include <tencentcloud/dlc/v20210125/model/DescribeTablesNameResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeTaskLogRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeTaskLogResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeTaskMonitorInfosRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeTaskMonitorInfosResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeTaskResultRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeTaskResultResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeTasksRequest.h>
@@ -598,6 +600,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTaskLogResponse> DescribeTaskLogOutcome;
                 typedef std::future<DescribeTaskLogOutcome> DescribeTaskLogOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeTaskLogRequest&, DescribeTaskLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskLogAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTaskMonitorInfosResponse> DescribeTaskMonitorInfosOutcome;
+                typedef std::future<DescribeTaskMonitorInfosOutcome> DescribeTaskMonitorInfosOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeTaskMonitorInfosRequest&, DescribeTaskMonitorInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskMonitorInfosAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTaskResultResponse> DescribeTaskResultOutcome;
                 typedef std::future<DescribeTaskResultOutcome> DescribeTaskResultOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeTaskResultRequest&, DescribeTaskResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskResultAsyncHandler;
@@ -1578,6 +1583,15 @@ namespace TencentCloud
                 DescribeTaskLogOutcome DescribeTaskLog(const Model::DescribeTaskLogRequest &request);
                 void DescribeTaskLogAsync(const Model::DescribeTaskLogRequest& request, const DescribeTaskLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTaskLogOutcomeCallable DescribeTaskLogCallable(const Model::DescribeTaskLogRequest& request);
+
+                /**
+                 *查询任务监控指标信息
+                 * @param req DescribeTaskMonitorInfosRequest
+                 * @return DescribeTaskMonitorInfosOutcome
+                 */
+                DescribeTaskMonitorInfosOutcome DescribeTaskMonitorInfos(const Model::DescribeTaskMonitorInfosRequest &request);
+                void DescribeTaskMonitorInfosAsync(const Model::DescribeTaskMonitorInfosRequest& request, const DescribeTaskMonitorInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTaskMonitorInfosOutcomeCallable DescribeTaskMonitorInfosCallable(const Model::DescribeTaskMonitorInfosRequest& request);
 
                 /**
                  *查询任务结果，仅支持30天以内的任务查询结果，且返回数据大小超过近50M会进行截断。

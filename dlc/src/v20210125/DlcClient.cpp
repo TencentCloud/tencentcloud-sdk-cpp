@@ -3953,6 +3953,49 @@ DlcClient::DescribeTaskLogOutcomeCallable DlcClient::DescribeTaskLogCallable(con
     return task->get_future();
 }
 
+DlcClient::DescribeTaskMonitorInfosOutcome DlcClient::DescribeTaskMonitorInfos(const DescribeTaskMonitorInfosRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTaskMonitorInfos");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTaskMonitorInfosResponse rsp = DescribeTaskMonitorInfosResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTaskMonitorInfosOutcome(rsp);
+        else
+            return DescribeTaskMonitorInfosOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTaskMonitorInfosOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeTaskMonitorInfosAsync(const DescribeTaskMonitorInfosRequest& request, const DescribeTaskMonitorInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTaskMonitorInfos(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::DescribeTaskMonitorInfosOutcomeCallable DlcClient::DescribeTaskMonitorInfosCallable(const DescribeTaskMonitorInfosRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTaskMonitorInfosOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTaskMonitorInfos(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::DescribeTaskResultOutcome DlcClient::DescribeTaskResult(const DescribeTaskResultRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTaskResult");

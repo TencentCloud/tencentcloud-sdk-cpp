@@ -242,11 +242,13 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/UpdateDataEngineResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeTasksOverviewRequest.h
   include/tencentcloud/dlc/v20210125/model/TPartition.h
+  include/tencentcloud/dlc/v20210125/model/DescribeTaskMonitorInfosRequest.h
   include/tencentcloud/dlc/v20210125/model/LakeFsInfo.h
   include/tencentcloud/dlc/v20210125/model/QueryResultRequest.h
   include/tencentcloud/dlc/v20210125/model/CheckDataEngineImageCanBeRollbackRequest.h
   include/tencentcloud/dlc/v20210125/model/CreateTaskRequest.h
   include/tencentcloud/dlc/v20210125/model/CreateTableRequest.h
+  include/tencentcloud/dlc/v20210125/model/TaskMonitorInfo.h
   include/tencentcloud/dlc/v20210125/model/DescribeSparkSessionBatchSqlLogRequest.h
   include/tencentcloud/dlc/v20210125/model/WorkGroupIdSetOfUserId.h
   include/tencentcloud/dlc/v20210125/model/DescribeUpdatableDataEnginesRequest.h
@@ -261,6 +263,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DatasourceConnectionInfo.h
   include/tencentcloud/dlc/v20210125/model/DescribeDataEngineImageVersionsRequest.h
   include/tencentcloud/dlc/v20210125/model/BindWorkGroupsToUserResponse.h
+  include/tencentcloud/dlc/v20210125/model/AssignMangedTablePropertiesResponse.h
   include/tencentcloud/dlc/v20210125/model/SparkSessionBatchLog.h
   include/tencentcloud/dlc/v20210125/model/DeleteScriptRequest.h
   include/tencentcloud/dlc/v20210125/model/AddDMSPartitionsRequest.h
@@ -282,7 +285,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DMSPartition.h
   include/tencentcloud/dlc/v20210125/model/WorkGroupDetailInfo.h
   include/tencentcloud/dlc/v20210125/model/DescribeThirdPartyAccessUserRequest.h
-  include/tencentcloud/dlc/v20210125/model/AssignMangedTablePropertiesResponse.h
+  include/tencentcloud/dlc/v20210125/model/OptimizerEngineInfo.h
   include/tencentcloud/dlc/v20210125/model/UpdateDataEngineConfigResponse.h
   include/tencentcloud/dlc/v20210125/model/DataEngineImageVersion.h
   include/tencentcloud/dlc/v20210125/model/MysqlInfo.h
@@ -309,6 +312,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DeleteCHDFSBindingProductResponse.h
   include/tencentcloud/dlc/v20210125/model/CancelNotebookSessionStatementBatchRequest.h
   include/tencentcloud/dlc/v20210125/model/DescribeLakeFsTaskResultResponse.h
+  include/tencentcloud/dlc/v20210125/model/DescribeTaskMonitorInfosResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeTasksCostInfoRequest.h
   include/tencentcloud/dlc/v20210125/model/UserDetailInfo.h
   include/tencentcloud/dlc/v20210125/model/DescribeTaskResultResponse.h
@@ -647,11 +651,13 @@ set(dlc_src
   src/v20210125/model/UpdateDataEngineResponse.cpp
   src/v20210125/model/DescribeTasksOverviewRequest.cpp
   src/v20210125/model/TPartition.cpp
+  src/v20210125/model/DescribeTaskMonitorInfosRequest.cpp
   src/v20210125/model/LakeFsInfo.cpp
   src/v20210125/model/QueryResultRequest.cpp
   src/v20210125/model/CheckDataEngineImageCanBeRollbackRequest.cpp
   src/v20210125/model/CreateTaskRequest.cpp
   src/v20210125/model/CreateTableRequest.cpp
+  src/v20210125/model/TaskMonitorInfo.cpp
   src/v20210125/model/DescribeSparkSessionBatchSqlLogRequest.cpp
   src/v20210125/model/WorkGroupIdSetOfUserId.cpp
   src/v20210125/model/DescribeUpdatableDataEnginesRequest.cpp
@@ -666,6 +672,7 @@ set(dlc_src
   src/v20210125/model/DatasourceConnectionInfo.cpp
   src/v20210125/model/DescribeDataEngineImageVersionsRequest.cpp
   src/v20210125/model/BindWorkGroupsToUserResponse.cpp
+  src/v20210125/model/AssignMangedTablePropertiesResponse.cpp
   src/v20210125/model/SparkSessionBatchLog.cpp
   src/v20210125/model/DeleteScriptRequest.cpp
   src/v20210125/model/AddDMSPartitionsRequest.cpp
@@ -687,7 +694,7 @@ set(dlc_src
   src/v20210125/model/DMSPartition.cpp
   src/v20210125/model/WorkGroupDetailInfo.cpp
   src/v20210125/model/DescribeThirdPartyAccessUserRequest.cpp
-  src/v20210125/model/AssignMangedTablePropertiesResponse.cpp
+  src/v20210125/model/OptimizerEngineInfo.cpp
   src/v20210125/model/UpdateDataEngineConfigResponse.cpp
   src/v20210125/model/DataEngineImageVersion.cpp
   src/v20210125/model/MysqlInfo.cpp
@@ -714,6 +721,7 @@ set(dlc_src
   src/v20210125/model/DeleteCHDFSBindingProductResponse.cpp
   src/v20210125/model/CancelNotebookSessionStatementBatchRequest.cpp
   src/v20210125/model/DescribeLakeFsTaskResultResponse.cpp
+  src/v20210125/model/DescribeTaskMonitorInfosResponse.cpp
   src/v20210125/model/DescribeTasksCostInfoRequest.cpp
   src/v20210125/model/UserDetailInfo.cpp
   src/v20210125/model/DescribeTaskResultResponse.cpp

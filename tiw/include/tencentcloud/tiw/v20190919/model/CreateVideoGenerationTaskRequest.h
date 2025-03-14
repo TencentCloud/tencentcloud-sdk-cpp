@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取录制任务的TaskId
-                     * @return OnlineRecordTaskId 录制任务的TaskId
+                     * 获取实时录制任务的TaskId
+                     * @return OnlineRecordTaskId 实时录制任务的TaskId
                      * 
                      */
                     std::string GetOnlineRecordTaskId() const;
 
                     /**
-                     * 设置录制任务的TaskId
-                     * @param _onlineRecordTaskId 录制任务的TaskId
+                     * 设置实时录制任务的TaskId
+                     * @param _onlineRecordTaskId 实时录制任务的TaskId
                      * 
                      */
                     void SetOnlineRecordTaskId(const std::string& _onlineRecordTaskId);
@@ -228,7 +228,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 录制任务的TaskId
+                     * 实时录制任务的TaskId
                      */
                     std::string m_onlineRecordTaskId;
                     bool m_onlineRecordTaskIdHasBeenSet;
