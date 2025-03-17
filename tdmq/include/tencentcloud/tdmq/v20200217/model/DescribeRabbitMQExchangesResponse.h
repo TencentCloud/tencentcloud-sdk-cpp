@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取策略列表信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExchangeInfoList 策略列表信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RabbitMQExchangeListInfo> GetExchangeInfoList() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取策略结果总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 策略结果总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 策略列表信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RabbitMQExchangeListInfo> m_exchangeInfoList;
                     bool m_exchangeInfoListHasBeenSet;
 
                     /**
                      * 策略结果总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

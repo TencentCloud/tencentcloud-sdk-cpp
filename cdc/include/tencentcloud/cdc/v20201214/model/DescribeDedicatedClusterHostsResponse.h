@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取宿主机信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostInfoSet 宿主机信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<HostInfo> GetHostInfoSet() const;
@@ -78,7 +76,6 @@ namespace TencentCloud
 
                     /**
                      * 宿主机信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<HostInfo> m_hostInfoSet;
                     bool m_hostInfoSetHasBeenSet;

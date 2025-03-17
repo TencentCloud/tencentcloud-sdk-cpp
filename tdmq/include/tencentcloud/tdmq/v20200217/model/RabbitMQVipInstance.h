@@ -91,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceVersion 实例版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceVersion() const;
 
                     /**
                      * 设置实例版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceVersion 实例版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceVersion(const std::string& _instanceVersion);
@@ -305,18 +301,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remark 备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -426,18 +418,14 @@ namespace TencentCloud
 
                     /**
                      * 获取VPC 接入点列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vpcs VPC 接入点列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<VpcEndpointInfo> GetVpcs() const;
 
                     /**
                      * 设置VPC 接入点列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcs VPC 接入点列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcs(const std::vector<VpcEndpointInfo>& _vpcs);
@@ -451,18 +439,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间，毫秒为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间，毫秒为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
                      * 设置创建时间，毫秒为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间，毫秒为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const uint64_t& _createTime);
@@ -511,7 +495,6 @@ namespace TencentCloud
 
                     /**
                      * 实例版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceVersion;
                     bool m_instanceVersionHasBeenSet;
@@ -572,7 +555,6 @@ namespace TencentCloud
 
                     /**
                      * 备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
@@ -606,14 +588,12 @@ namespace TencentCloud
 
                     /**
                      * VPC 接入点列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<VpcEndpointInfo> m_vpcs;
                     bool m_vpcsHasBeenSet;
 
                     /**
                      * 创建时间，毫秒为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_createTime;
                     bool m_createTimeHasBeenSet;

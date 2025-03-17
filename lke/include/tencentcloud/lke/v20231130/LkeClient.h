@@ -574,7 +574,7 @@ namespace TencentCloud
                 CreateAppOutcomeCallable CreateAppCallable(const Model::CreateAppRequest& request);
 
                 /**
-                 *创建属性
+                 *创建标签
                  * @param req CreateAttributeLabelRequest
                  * @return CreateAttributeLabelOutcome
                  */

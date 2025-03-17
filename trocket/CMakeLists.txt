@@ -21,6 +21,7 @@ set(trocket_public_header
 set(trocket_public_header_model
   include/tencentcloud/trocket/v20230308/model/DetailedRolePerm.h
   include/tencentcloud/trocket/v20230308/model/DescribeProductSKUsRequest.h
+  include/tencentcloud/trocket/v20230308/model/ResetConsumerGroupOffsetResponse.h
   include/tencentcloud/trocket/v20230308/model/ProductSKU.h
   include/tencentcloud/trocket/v20230308/model/DescribeRoleListResponse.h
   include/tencentcloud/trocket/v20230308/model/DeleteMQTTTopicRequest.h
@@ -165,12 +166,14 @@ set(trocket_public_header_model
   include/tencentcloud/trocket/v20230308/model/DescribeInstanceRequest.h
   include/tencentcloud/trocket/v20230308/model/DescribeProductSKUsResponse.h
   include/tencentcloud/trocket/v20230308/model/DescribeMQTTMessageListRequest.h
+  include/tencentcloud/trocket/v20230308/model/ResetConsumerGroupOffsetRequest.h
   )
 
 set(trocket_src
   src/v20230308/TrocketClient.cpp
   src/v20230308/model/DetailedRolePerm.cpp
   src/v20230308/model/DescribeProductSKUsRequest.cpp
+  src/v20230308/model/ResetConsumerGroupOffsetResponse.cpp
   src/v20230308/model/ProductSKU.cpp
   src/v20230308/model/DescribeRoleListResponse.cpp
   src/v20230308/model/DeleteMQTTTopicRequest.cpp
@@ -315,6 +318,7 @@ set(trocket_src
   src/v20230308/model/DescribeInstanceRequest.cpp
   src/v20230308/model/DescribeProductSKUsResponse.cpp
   src/v20230308/model/DescribeMQTTMessageListRequest.cpp
+  src/v20230308/model/ResetConsumerGroupOffsetRequest.cpp
   )
 
 set(trocket_include

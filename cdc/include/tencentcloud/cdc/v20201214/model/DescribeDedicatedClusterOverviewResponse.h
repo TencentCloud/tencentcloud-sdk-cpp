@@ -76,9 +76,7 @@ namespace TencentCloud
 
                     /**
                      * 获取vpn通道状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpnConnectionState vpn通道状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpnConnectionState() const;
@@ -92,9 +90,7 @@ namespace TencentCloud
 
                     /**
                      * 获取vpn网关监控数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpngwBandwidthData vpn网关监控数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     VpngwBandwidthData GetVpngwBandwidthData() const;
@@ -108,9 +104,7 @@ namespace TencentCloud
 
                     /**
                      * 获取本地网关信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LocalNetInfo 本地网关信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     LocalNetInfo GetLocalNetInfo() const;
@@ -124,9 +118,7 @@ namespace TencentCloud
 
                     /**
                      * 获取vpn网关通道监控数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpnConnectionBandwidthData vpn网关通道监控数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<VpngwBandwidthData> GetVpnConnectionBandwidthData() const;
@@ -196,28 +188,24 @@ namespace TencentCloud
 
                     /**
                      * vpn通道状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpnConnectionState;
                     bool m_vpnConnectionStateHasBeenSet;
 
                     /**
                      * vpn网关监控数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     VpngwBandwidthData m_vpngwBandwidthData;
                     bool m_vpngwBandwidthDataHasBeenSet;
 
                     /**
                      * 本地网关信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     LocalNetInfo m_localNetInfo;
                     bool m_localNetInfoHasBeenSet;
 
                     /**
                      * vpn网关通道监控数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<VpngwBandwidthData> m_vpnConnectionBandwidthData;
                     bool m_vpnConnectionBandwidthDataHasBeenSet;

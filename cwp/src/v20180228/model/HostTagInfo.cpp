@@ -32,7 +32,8 @@ HostTagInfo::HostTagInfo() :
     m_protectTypeHasBeenSet(false),
     m_vulNumHasBeenSet(false),
     m_cloudTagsHasBeenSet(false),
-    m_instanceIDHasBeenSet(false)
+    m_instanceIDHasBeenSet(false),
+    m_machineTypeHasBeenSet(false)
 {
 }
 
@@ -174,6 +175,16 @@ CoreInternalOutcome HostTagInfo::Deserialize(const rapidjson::Value &value)
         m_instanceIDHasBeenSet = true;
     }
 
+    if (value.HasMember("MachineType") && !value["MachineType"].IsNull())
+    {
+        if (!value["MachineType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostTagInfo.MachineType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_machineType = string(value["MachineType"].GetString());
+        m_machineTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -287,6 +298,14 @@ void HostTagInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "InstanceID";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_machineTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MachineType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_machineType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -482,5 +501,21 @@ void HostTagInfo::SetInstanceID(const string& _instanceID)
 bool HostTagInfo::InstanceIDHasBeenSet() const
 {
     return m_instanceIDHasBeenSet;
+}
+
+string HostTagInfo::GetMachineType() const
+{
+    return m_machineType;
+}
+
+void HostTagInfo::SetMachineType(const string& _machineType)
+{
+    m_machineType = _machineType;
+    m_machineTypeHasBeenSet = true;
+}
+
+bool HostTagInfo::MachineTypeHasBeenSet() const
+{
+    return m_machineTypeHasBeenSet;
 }
 

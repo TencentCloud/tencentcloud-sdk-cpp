@@ -106,25 +106,46 @@ namespace TencentCloud
                     bool UsernameHasBeenSet() const;
 
                     /**
-                     * 获取是否强制关机
-                     * @return ForceStop 是否强制关机
-                     * 
+                     * 获取是否强制关机。本参数已弃用，推荐使用StopType，不可以与参数StopType同时使用。
+                     * @return ForceStop 是否强制关机。本参数已弃用，推荐使用StopType，不可以与参数StopType同时使用。
+                     * @deprecated
                      */
                     bool GetForceStop() const;
 
                     /**
-                     * 设置是否强制关机
-                     * @param _forceStop 是否强制关机
-                     * 
+                     * 设置是否强制关机。本参数已弃用，推荐使用StopType，不可以与参数StopType同时使用。
+                     * @param _forceStop 是否强制关机。本参数已弃用，推荐使用StopType，不可以与参数StopType同时使用。
+                     * @deprecated
                      */
                     void SetForceStop(const bool& _forceStop);
 
                     /**
                      * 判断参数 ForceStop 是否已赋值
                      * @return ForceStop 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool ForceStopHasBeenSet() const;
+
+                    /**
+                     * 获取实例的关闭模式。取值范围：<br><li>SOFT_FIRST：表示在正常关闭失败后进行强制关闭</li><br><li>HARD：直接强制关闭</li><br><li>SOFT：仅软关机</li><br>默认取值：SOFT。
+                     * @return StopType 实例的关闭模式。取值范围：<br><li>SOFT_FIRST：表示在正常关闭失败后进行强制关闭</li><br><li>HARD：直接强制关闭</li><br><li>SOFT：仅软关机</li><br>默认取值：SOFT。
+                     * 
+                     */
+                    std::string GetStopType() const;
+
+                    /**
+                     * 设置实例的关闭模式。取值范围：<br><li>SOFT_FIRST：表示在正常关闭失败后进行强制关闭</li><br><li>HARD：直接强制关闭</li><br><li>SOFT：仅软关机</li><br>默认取值：SOFT。
+                     * @param _stopType 实例的关闭模式。取值范围：<br><li>SOFT_FIRST：表示在正常关闭失败后进行强制关闭</li><br><li>HARD：直接强制关闭</li><br><li>SOFT：仅软关机</li><br>默认取值：SOFT。
+                     * 
+                     */
+                    void SetStopType(const std::string& _stopType);
+
+                    /**
+                     * 判断参数 StopType 是否已赋值
+                     * @return StopType 是否已赋值
+                     * 
+                     */
+                    bool StopTypeHasBeenSet() const;
 
                 private:
 
@@ -147,10 +168,16 @@ namespace TencentCloud
                     bool m_usernameHasBeenSet;
 
                     /**
-                     * 是否强制关机
+                     * 是否强制关机。本参数已弃用，推荐使用StopType，不可以与参数StopType同时使用。
                      */
                     bool m_forceStop;
                     bool m_forceStopHasBeenSet;
+
+                    /**
+                     * 实例的关闭模式。取值范围：<br><li>SOFT_FIRST：表示在正常关闭失败后进行强制关闭</li><br><li>HARD：直接强制关闭</li><br><li>SOFT：仅软关机</li><br>默认取值：SOFT。
+                     */
+                    std::string m_stopType;
+                    bool m_stopTypeHasBeenSet;
 
                 };
             }

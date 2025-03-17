@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool RegisterCodeIdHasBeenSet() const;
 
                     /**
-                     * 获取实例ID。
-                     * @return InstanceId 实例ID。
+                     * 获取托管实例ID。
+                     * @return InstanceId 托管实例ID。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID。
-                     * @param _instanceId 实例ID。
+                     * 设置托管实例ID。
+                     * @param _instanceId 托管实例ID。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例名。
-                     * @return InstanceName 实例名。
+                     * 获取托管实例名。
+                     * @return InstanceName 托管实例名。
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名。
-                     * @param _instanceName 实例名。
+                     * 设置托管实例名。
+                     * @param _instanceName 托管实例名。
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -312,13 +312,13 @@ namespace TencentCloud
                     bool m_registerCodeIdHasBeenSet;
 
                     /**
-                     * 实例ID。
+                     * 托管实例ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例名。
+                     * 托管实例名。
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;

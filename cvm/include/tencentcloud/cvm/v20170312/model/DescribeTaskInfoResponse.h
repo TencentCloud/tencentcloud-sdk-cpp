@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取查询返回的维修任务列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RepairTaskInfoSet 查询返回的维修任务列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RepairTaskInfo> GetRepairTaskInfoSet() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 查询返回的维修任务列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RepairTaskInfo> m_repairTaskInfoSet;
                     bool m_repairTaskInfoSetHasBeenSet;

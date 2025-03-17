@@ -32,7 +32,8 @@ ChannelCreatePrepareFlowRequest::ChannelCreatePrepareFlowRequest() :
     m_flowIdHasBeenSet(false),
     m_needPreviewHasBeenSet(false),
     m_organizationHasBeenSet(false),
-    m_operatorHasBeenSet(false)
+    m_operatorHasBeenSet(false),
+    m_signComponentConfigHasBeenSet(false)
 {
 }
 
@@ -133,6 +134,15 @@ string ChannelCreatePrepareFlowRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_operator.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_signComponentConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SignComponentConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_signComponentConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -301,6 +311,22 @@ void ChannelCreatePrepareFlowRequest::SetOperator(const UserInfo& _operator)
 bool ChannelCreatePrepareFlowRequest::OperatorHasBeenSet() const
 {
     return m_operatorHasBeenSet;
+}
+
+SignComponentConfig ChannelCreatePrepareFlowRequest::GetSignComponentConfig() const
+{
+    return m_signComponentConfig;
+}
+
+void ChannelCreatePrepareFlowRequest::SetSignComponentConfig(const SignComponentConfig& _signComponentConfig)
+{
+    m_signComponentConfig = _signComponentConfig;
+    m_signComponentConfigHasBeenSet = true;
+}
+
+bool ChannelCreatePrepareFlowRequest::SignComponentConfigHasBeenSet() const
+{
+    return m_signComponentConfigHasBeenSet;
 }
 
 

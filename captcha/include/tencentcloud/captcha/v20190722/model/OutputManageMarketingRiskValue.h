@@ -54,14 +54,12 @@ AccountType 是 8 时，对应 imei、idfa、imeiMD5 或者 idfaMD5。
 AccountType 是 0 时，对应账号信息。
 AccountType 是 10004 时，对应手机号的 MD5。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserId 账号 ID。对应输入参数： AccountType 是 1 时，对应 QQ 的 OpenID。
 AccountType 是 2 时，对应微信的 OpenID/UnionID。
 AccountType 是 4 时，对应手机号。
 AccountType 是 8 时，对应 imei、idfa、imeiMD5 或者 idfaMD5。
 AccountType 是 0 时，对应账号信息。
 AccountType 是 10004 时，对应手机号的 MD5。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -75,14 +73,12 @@ AccountType 是 8 时，对应 imei、idfa、imeiMD5 或者 idfaMD5。
 AccountType 是 0 时，对应账号信息。
 AccountType 是 10004 时，对应手机号的 MD5。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userId 账号 ID。对应输入参数： AccountType 是 1 时，对应 QQ 的 OpenID。
 AccountType 是 2 时，对应微信的 OpenID/UnionID。
 AccountType 是 4 时，对应手机号。
 AccountType 是 8 时，对应 imei、idfa、imeiMD5 或者 idfaMD5。
 AccountType 是 0 时，对应账号信息。
 AccountType 是 10004 时，对应手机号的 MD5。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,22 +93,18 @@ AccountType 是 10004 时，对应手机号的 MD5。
 
                     /**
                      * 获取操作时间戳，单位秒（对应输入参数）。 
-注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
+
                      * @return PostTime 操作时间戳，单位秒（对应输入参数）。 
-注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
+
                      * 
                      */
                     int64_t GetPostTime() const;
 
                     /**
                      * 设置操作时间戳，单位秒（对应输入参数）。 
-注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
+
                      * @param _postTime 操作时间戳，单位秒（对应输入参数）。 
-注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
+
                      * 
                      */
                     void SetPostTime(const int64_t& _postTime);
@@ -127,9 +119,7 @@ AccountType 是 10004 时，对应手机号的 MD5。
                     /**
                      * 获取对应输入参数，AccountType 是 QQ 或微信开放账号时，用于标识 QQ 或微信用户登录 后关联业务自身的账号 ID。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssociateAccount 对应输入参数，AccountType 是 QQ 或微信开放账号时，用于标识 QQ 或微信用户登录 后关联业务自身的账号 ID。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -138,9 +128,7 @@ AccountType 是 10004 时，对应手机号的 MD5。
                     /**
                      * 设置对应输入参数，AccountType 是 QQ 或微信开放账号时，用于标识 QQ 或微信用户登录 后关联业务自身的账号 ID。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _associateAccount 对应输入参数，AccountType 是 QQ 或微信开放账号时，用于标识 QQ 或微信用户登录 后关联业务自身的账号 ID。
-注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -154,19 +142,15 @@ AccountType 是 10004 时，对应手机号的 MD5。
                     bool AssociateAccountHasBeenSet() const;
 
                     /**
-                     * 获取业务详情。 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return UserIp 业务详情。 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取业务详情
+                     * @return UserIp 业务详情
                      * 
                      */
                     std::string GetUserIp() const;
 
                     /**
-                     * 设置业务详情。 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _userIp 业务详情。 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置业务详情
+                     * @param _userIp 业务详情
                      * 
                      */
                     void SetUserIp(const std::string& _userIp);
@@ -182,13 +166,9 @@ AccountType 是 10004 时，对应手机号的 MD5。
                      * 获取风险值 pass : 无恶意
 review：需要人工审核
 reject：拒绝，高风险恶意
-注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskLevel 风险值 pass : 无恶意
 review：需要人工审核
 reject：拒绝，高风险恶意
-注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRiskLevel() const;
@@ -197,13 +177,9 @@ reject：拒绝，高风险恶意
                      * 设置风险值 pass : 无恶意
 review：需要人工审核
 reject：拒绝，高风险恶意
-注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _riskLevel 风险值 pass : 无恶意
 review：需要人工审核
 reject：拒绝，高风险恶意
-注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRiskLevel(const std::string& _riskLevel);
@@ -216,7 +192,7 @@ reject：拒绝，高风险恶意
                     bool RiskLevelHasBeenSet() const;
 
                     /**
-                     * 获取风险类型，请查看下面详细说明 注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取风险类型，请查看下面详细说明 
 账号风险	
         账号信用低	1	账号近期存在因恶意被处罚历史，网络低活跃，被举报等因素
 	疑似 低活跃账号	11	账号活跃度与正常用户有差异
@@ -238,7 +214,7 @@ reject：拒绝，高风险恶意
 	疑似 IP 异常 	2012	使用 idc 机房 ip 或 使用代理 ip 或 使用恶意 ip 
 	非公网有效 ip 	205	传进来的 IP 地址为内网 ip 地址或者 ip 保留地
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RiskType 风险类型，请查看下面详细说明 注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RiskType 风险类型，请查看下面详细说明 
 账号风险	
         账号信用低	1	账号近期存在因恶意被处罚历史，网络低活跃，被举报等因素
 	疑似 低活跃账号	11	账号活跃度与正常用户有差异
@@ -265,7 +241,7 @@ reject：拒绝，高风险恶意
                     std::vector<int64_t> GetRiskType() const;
 
                     /**
-                     * 设置风险类型，请查看下面详细说明 注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置风险类型，请查看下面详细说明 
 账号风险	
         账号信用低	1	账号近期存在因恶意被处罚历史，网络低活跃，被举报等因素
 	疑似 低活跃账号	11	账号活跃度与正常用户有差异
@@ -287,7 +263,7 @@ reject：拒绝，高风险恶意
 	疑似 IP 异常 	2012	使用 idc 机房 ip 或 使用代理 ip 或 使用恶意 ip 
 	非公网有效 ip 	205	传进来的 IP 地址为内网 ip 地址或者 ip 保留地
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _riskType 风险类型，请查看下面详细说明 注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _riskType 风险类型，请查看下面详细说明 
 账号风险	
         账号信用低	1	账号近期存在因恶意被处罚历史，网络低活跃，被举报等因素
 	疑似 低活跃账号	11	账号活跃度与正常用户有差异
@@ -330,15 +306,13 @@ AccountType 是 8 时，对应 imei、idfa、imeiMD5 或者 idfaMD5。
 AccountType 是 0 时，对应账号信息。
 AccountType 是 10004 时，对应手机号的 MD5。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
 
                     /**
                      * 操作时间戳，单位秒（对应输入参数）。 
-注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
+
                      */
                     int64_t m_postTime;
                     bool m_postTimeHasBeenSet;
@@ -346,14 +320,12 @@ AccountType 是 10004 时，对应手机号的 MD5。
                     /**
                      * 对应输入参数，AccountType 是 QQ 或微信开放账号时，用于标识 QQ 或微信用户登录 后关联业务自身的账号 ID。
 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_associateAccount;
                     bool m_associateAccountHasBeenSet;
 
                     /**
-                     * 业务详情。 注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 业务详情
                      */
                     std::string m_userIp;
                     bool m_userIpHasBeenSet;
@@ -362,14 +334,12 @@ AccountType 是 10004 时，对应手机号的 MD5。
                      * 风险值 pass : 无恶意
 review：需要人工审核
 reject：拒绝，高风险恶意
-注意：此字段可能返回 null，表示取不到有效值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_riskLevel;
                     bool m_riskLevelHasBeenSet;
 
                     /**
-                     * 风险类型，请查看下面详细说明 注意：此字段可能返回 null，表示取不到有效值。
+                     * 风险类型，请查看下面详细说明 
 账号风险	
         账号信用低	1	账号近期存在因恶意被处罚历史，网络低活跃，被举报等因素
 	疑似 低活跃账号	11	账号活跃度与正常用户有差异

@@ -59,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取滚动更新的VersionName
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VersionName 滚动更新的VersionName
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVersionName() const;
@@ -75,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取操作记录id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RunId 操作记录id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRunId() const;
@@ -99,14 +95,12 @@ namespace TencentCloud
 
                     /**
                      * 滚动更新的VersionName
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_versionName;
                     bool m_versionNameHasBeenSet;
 
                     /**
                      * 操作记录id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_runId;
                     bool m_runIdHasBeenSet;

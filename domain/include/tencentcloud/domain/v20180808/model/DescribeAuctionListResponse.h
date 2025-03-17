@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取竞拍详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuctionList 竞拍详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AuctionInfo> GetAuctionList() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 竞拍详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AuctionInfo> m_auctionList;
                     bool m_auctionListHasBeenSet;
 
                     /**
                      * 总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

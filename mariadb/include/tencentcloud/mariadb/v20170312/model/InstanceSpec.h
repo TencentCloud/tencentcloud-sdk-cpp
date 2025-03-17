@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备型号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Machine 设备型号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMachine() const;
 
                     /**
                      * 设置设备型号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _machine 设备型号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMachine(const std::string& _machine);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该机型对应的可售卖规格列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SpecInfos 该机型对应的可售卖规格列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SpecConfigInfo> GetSpecInfos() const;
 
                     /**
                      * 设置该机型对应的可售卖规格列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _specInfos 该机型对应的可售卖规格列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSpecInfos(const std::vector<SpecConfigInfo>& _specInfos);
@@ -101,14 +93,12 @@ namespace TencentCloud
 
                     /**
                      * 设备型号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_machine;
                     bool m_machineHasBeenSet;
 
                     /**
                      * 该机型对应的可售卖规格列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SpecConfigInfo> m_specInfos;
                     bool m_specInfosHasBeenSet;

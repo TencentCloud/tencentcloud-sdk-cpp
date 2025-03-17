@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取所有vpcid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vpcs 所有vpcid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetVpcs() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 所有vpcid
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_vpcs;
                     bool m_vpcsHasBeenSet;

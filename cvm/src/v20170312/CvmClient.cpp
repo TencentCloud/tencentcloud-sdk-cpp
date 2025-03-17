@@ -1631,6 +1631,49 @@ CvmClient::DescribeInstancesActionTimerOutcomeCallable CvmClient::DescribeInstan
     return task->get_future();
 }
 
+CvmClient::DescribeInstancesAttributesOutcome CvmClient::DescribeInstancesAttributes(const DescribeInstancesAttributesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstancesAttributes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstancesAttributesResponse rsp = DescribeInstancesAttributesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstancesAttributesOutcome(rsp);
+        else
+            return DescribeInstancesAttributesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstancesAttributesOutcome(outcome.GetError());
+    }
+}
+
+void CvmClient::DescribeInstancesAttributesAsync(const DescribeInstancesAttributesRequest& request, const DescribeInstancesAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstancesAttributes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CvmClient::DescribeInstancesAttributesOutcomeCallable CvmClient::DescribeInstancesAttributesCallable(const DescribeInstancesAttributesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstancesAttributesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstancesAttributes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CvmClient::DescribeInstancesModificationOutcome CvmClient::DescribeInstancesModification(const DescribeInstancesModificationRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeInstancesModification");

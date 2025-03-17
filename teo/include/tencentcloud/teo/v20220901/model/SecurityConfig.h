@@ -34,6 +34,7 @@
 #include <tencentcloud/teo/v20220901/model/DropPageConfig.h>
 #include <tencentcloud/teo/v20220901/model/TemplateConfig.h>
 #include <tencentcloud/teo/v20220901/model/SlowPostConfig.h>
+#include <tencentcloud/teo/v20220901/model/DetectLengthLimitConfig.h>
 
 
 namespace TencentCloud
@@ -45,7 +46,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 安全配置
+                * Web安全配置
                 */
                 class SecurityConfig : public AbstractModel
                 {
@@ -306,6 +307,31 @@ namespace TencentCloud
                      */
                     bool SlowPostConfigHasBeenSet() const;
 
+                    /**
+                     * 获取检测长度限制配置。仅出参使用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DetectLengthLimitConfig 检测长度限制配置。仅出参使用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    DetectLengthLimitConfig GetDetectLengthLimitConfig() const;
+
+                    /**
+                     * 设置检测长度限制配置。仅出参使用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _detectLengthLimitConfig 检测长度限制配置。仅出参使用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDetectLengthLimitConfig(const DetectLengthLimitConfig& _detectLengthLimitConfig);
+
+                    /**
+                     * 判断参数 DetectLengthLimitConfig 是否已赋值
+                     * @return DetectLengthLimitConfig 是否已赋值
+                     * 
+                     */
+                    bool DetectLengthLimitConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -377,6 +403,13 @@ namespace TencentCloud
                      */
                     SlowPostConfig m_slowPostConfig;
                     bool m_slowPostConfigHasBeenSet;
+
+                    /**
+                     * 检测长度限制配置。仅出参使用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DetectLengthLimitConfig m_detectLengthLimitConfig;
+                    bool m_detectLengthLimitConfigHasBeenSet;
 
                 };
             }

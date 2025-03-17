@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取账单维度编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupKey 账单维度编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupKey() const;
 
                     /**
                      * 设置账单维度编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupKey 账单维度编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupKey(const std::string& _groupKey);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取账单维度值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupValue 账单维度值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupValue() const;
 
                     /**
                      * 设置账单维度值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupValue 账单维度值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupValue(const std::string& _groupValue);
@@ -204,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分成金账户支出：通过分成金账户支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TransferPayAmount 分成金账户支出：通过分成金账户支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTransferPayAmount() const;
 
                     /**
                      * 设置分成金账户支出：通过分成金账户支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _transferPayAmount 分成金账户支出：通过分成金账户支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTransferPayAmount(const std::string& _transferPayAmount);
@@ -229,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取产品汇总信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Business 产品汇总信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BusinessSummaryInfo> GetBusiness() const;
 
                     /**
                      * 设置产品汇总信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _business 产品汇总信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBusiness(const std::vector<BusinessSummaryInfo>& _business);
@@ -256,14 +240,12 @@ namespace TencentCloud
 
                     /**
                      * 账单维度编码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupKey;
                     bool m_groupKeyHasBeenSet;
 
                     /**
                      * 账单维度值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupValue;
                     bool m_groupValueHasBeenSet;
@@ -300,14 +282,12 @@ namespace TencentCloud
 
                     /**
                      * 分成金账户支出：通过分成金账户支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_transferPayAmount;
                     bool m_transferPayAmountHasBeenSet;
 
                     /**
                      * 产品汇总信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BusinessSummaryInfo> m_business;
                     bool m_businessHasBeenSet;

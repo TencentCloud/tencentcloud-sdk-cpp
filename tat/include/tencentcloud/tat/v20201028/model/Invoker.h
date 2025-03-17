@@ -217,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取执行器周期计划。周期执行器会返回此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScheduleSettings 执行器周期计划。周期执行器会返回此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ScheduleSettings GetScheduleSettings() const;
 
                     /**
                      * 设置执行器周期计划。周期执行器会返回此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scheduleSettings 执行器周期计划。周期执行器会返回此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScheduleSettings(const ScheduleSettings& _scheduleSettings);
@@ -334,7 +330,6 @@ namespace TencentCloud
 
                     /**
                      * 执行器周期计划。周期执行器会返回此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ScheduleSettings m_scheduleSettings;
                     bool m_scheduleSettingsHasBeenSet;

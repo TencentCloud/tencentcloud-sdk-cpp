@@ -51,6 +51,8 @@
 #include <tencentcloud/waf/v20180125/model/CreateHostResponse.h>
 #include <tencentcloud/waf/v20180125/model/CreateIpAccessControlRequest.h>
 #include <tencentcloud/waf/v20180125/model/CreateIpAccessControlResponse.h>
+#include <tencentcloud/waf/v20180125/model/CreatePostCLSFlowRequest.h>
+#include <tencentcloud/waf/v20180125/model/CreatePostCLSFlowResponse.h>
 #include <tencentcloud/waf/v20180125/model/DeleteAccessExportRequest.h>
 #include <tencentcloud/waf/v20180125/model/DeleteAccessExportResponse.h>
 #include <tencentcloud/waf/v20180125/model/DeleteAntiFakeUrlRequest.h>
@@ -169,6 +171,8 @@
 #include <tencentcloud/waf/v20180125/model/DescribePolicyStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribePortsRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribePortsResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribePostCLSFlowsRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribePostCLSFlowsResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeProtectionModesRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeProtectionModesResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeRuleLimitRequest.h>
@@ -207,6 +211,8 @@
 #include <tencentcloud/waf/v20180125/model/DescribeWafThreatenIntelligenceResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeWebshellStatusRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeWebshellStatusResponse.h>
+#include <tencentcloud/waf/v20180125/model/DestroyPostCLSFlowRequest.h>
+#include <tencentcloud/waf/v20180125/model/DestroyPostCLSFlowResponse.h>
 #include <tencentcloud/waf/v20180125/model/FreshAntiFakeUrlRequest.h>
 #include <tencentcloud/waf/v20180125/model/FreshAntiFakeUrlResponse.h>
 #include <tencentcloud/waf/v20180125/model/GenerateDealsAndPayNewRequest.h>
@@ -381,6 +387,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateIpAccessControlResponse> CreateIpAccessControlOutcome;
                 typedef std::future<CreateIpAccessControlOutcome> CreateIpAccessControlOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::CreateIpAccessControlRequest&, CreateIpAccessControlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateIpAccessControlAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreatePostCLSFlowResponse> CreatePostCLSFlowOutcome;
+                typedef std::future<CreatePostCLSFlowOutcome> CreatePostCLSFlowOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::CreatePostCLSFlowRequest&, CreatePostCLSFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePostCLSFlowAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteAccessExportResponse> DeleteAccessExportOutcome;
                 typedef std::future<DeleteAccessExportOutcome> DeleteAccessExportOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DeleteAccessExportRequest&, DeleteAccessExportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAccessExportAsyncHandler;
@@ -558,6 +567,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribePortsResponse> DescribePortsOutcome;
                 typedef std::future<DescribePortsOutcome> DescribePortsOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribePortsRequest&, DescribePortsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePortsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePostCLSFlowsResponse> DescribePostCLSFlowsOutcome;
+                typedef std::future<DescribePostCLSFlowsOutcome> DescribePostCLSFlowsOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribePostCLSFlowsRequest&, DescribePostCLSFlowsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePostCLSFlowsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeProtectionModesResponse> DescribeProtectionModesOutcome;
                 typedef std::future<DescribeProtectionModesOutcome> DescribeProtectionModesOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeProtectionModesRequest&, DescribeProtectionModesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProtectionModesAsyncHandler;
@@ -615,6 +627,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeWebshellStatusResponse> DescribeWebshellStatusOutcome;
                 typedef std::future<DescribeWebshellStatusOutcome> DescribeWebshellStatusOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeWebshellStatusRequest&, DescribeWebshellStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWebshellStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::DestroyPostCLSFlowResponse> DestroyPostCLSFlowOutcome;
+                typedef std::future<DestroyPostCLSFlowOutcome> DestroyPostCLSFlowOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DestroyPostCLSFlowRequest&, DestroyPostCLSFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyPostCLSFlowAsyncHandler;
                 typedef Outcome<Core::Error, Model::FreshAntiFakeUrlResponse> FreshAntiFakeUrlOutcome;
                 typedef std::future<FreshAntiFakeUrlOutcome> FreshAntiFakeUrlOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::FreshAntiFakeUrlRequest&, FreshAntiFakeUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FreshAntiFakeUrlAsyncHandler;
@@ -920,6 +935,15 @@ namespace TencentCloud
                 CreateIpAccessControlOutcome CreateIpAccessControl(const Model::CreateIpAccessControlRequest &request);
                 void CreateIpAccessControlAsync(const Model::CreateIpAccessControlRequest& request, const CreateIpAccessControlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateIpAccessControlOutcomeCallable CreateIpAccessControlCallable(const Model::CreateIpAccessControlRequest& request);
+
+                /**
+                 *创建CLS投递流任务
+                 * @param req CreatePostCLSFlowRequest
+                 * @return CreatePostCLSFlowOutcome
+                 */
+                CreatePostCLSFlowOutcome CreatePostCLSFlow(const Model::CreatePostCLSFlowRequest &request);
+                void CreatePostCLSFlowAsync(const Model::CreatePostCLSFlowRequest& request, const CreatePostCLSFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePostCLSFlowOutcomeCallable CreatePostCLSFlowCallable(const Model::CreatePostCLSFlowRequest& request);
 
                 /**
                  *本接口用于删除访问日志导出
@@ -1453,6 +1477,15 @@ namespace TencentCloud
                 DescribePortsOutcomeCallable DescribePortsCallable(const Model::DescribePortsRequest& request);
 
                 /**
+                 *获取CLS投递流任务列表
+                 * @param req DescribePostCLSFlowsRequest
+                 * @return DescribePostCLSFlowsOutcome
+                 */
+                DescribePostCLSFlowsOutcome DescribePostCLSFlows(const Model::DescribePostCLSFlowsRequest &request);
+                void DescribePostCLSFlowsAsync(const Model::DescribePostCLSFlowsRequest& request, const DescribePostCLSFlowsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePostCLSFlowsOutcomeCallable DescribePostCLSFlowsCallable(const Model::DescribePostCLSFlowsRequest& request);
+
+                /**
                  *查询Tiga引擎大类规则及其防护模式
                  * @param req DescribeProtectionModesRequest
                  * @return DescribeProtectionModesOutcome
@@ -1624,6 +1657,15 @@ namespace TencentCloud
                 DescribeWebshellStatusOutcome DescribeWebshellStatus(const Model::DescribeWebshellStatusRequest &request);
                 void DescribeWebshellStatusAsync(const Model::DescribeWebshellStatusRequest& request, const DescribeWebshellStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeWebshellStatusOutcomeCallable DescribeWebshellStatusCallable(const Model::DescribeWebshellStatusRequest& request);
+
+                /**
+                 *销毁CLS投递流任务
+                 * @param req DestroyPostCLSFlowRequest
+                 * @return DestroyPostCLSFlowOutcome
+                 */
+                DestroyPostCLSFlowOutcome DestroyPostCLSFlow(const Model::DestroyPostCLSFlowRequest &request);
+                void DestroyPostCLSFlowAsync(const Model::DestroyPostCLSFlowRequest& request, const DestroyPostCLSFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DestroyPostCLSFlowOutcomeCallable DestroyPostCLSFlowCallable(const Model::DestroyPostCLSFlowRequest& request);
 
                 /**
                  *刷新防篡改url

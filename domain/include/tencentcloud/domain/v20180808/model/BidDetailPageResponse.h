@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Domain 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDomain() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取当前域名价格
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CurrentPrice 当前域名价格
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetCurrentPrice() const;
@@ -78,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取用户上次出价
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BidPrice 用户上次出价
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetBidPrice() const;
@@ -94,9 +88,7 @@ namespace TencentCloud
 
                     /**
                      * 获取当前加价幅度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CurrentPriceScope 当前加价幅度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetCurrentPriceScope() const;
@@ -126,9 +118,7 @@ namespace TencentCloud
 
                     /**
                      * 获取用户当前已经支付了的保证金
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DepositPrice 用户当前已经支付了的保证金
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetDepositPrice() const;
@@ -144,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
                      * 当前域名价格
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_currentPrice;
                     bool m_currentPriceHasBeenSet;
 
                     /**
                      * 用户上次出价
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_bidPrice;
                     bool m_bidPriceHasBeenSet;
 
                     /**
                      * 当前加价幅度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_currentPriceScope;
                     bool m_currentPriceScopeHasBeenSet;
@@ -179,7 +165,6 @@ namespace TencentCloud
 
                     /**
                      * 用户当前已经支付了的保证金
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_depositPrice;
                     bool m_depositPriceHasBeenSet;

@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取专用集群订单id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DedicatedClusterOrderId 专用集群订单id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDedicatedClusterOrderId() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 专用集群订单id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dedicatedClusterOrderId;
                     bool m_dedicatedClusterOrderIdHasBeenSet;

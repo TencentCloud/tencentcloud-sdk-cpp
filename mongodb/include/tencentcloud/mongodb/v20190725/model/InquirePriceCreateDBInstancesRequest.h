@@ -413,15 +413,15 @@ namespace TencentCloud
                     bool MongosNumHasBeenSet() const;
 
                     /**
-                     * 获取指 ConfigServer CPU核数，取值为1，单位：GB。若为分片集群实例询价，该参数必须设置。
-                     * @return ConfigServerCpu 指 ConfigServer CPU核数，取值为1，单位：GB。若为分片集群实例询价，该参数必须设置。
+                     * 获取指 ConfigServer CPU核数，固定取值为 1，单位：GB，可不配置该参数。
+                     * @return ConfigServerCpu 指 ConfigServer CPU核数，固定取值为 1，单位：GB，可不配置该参数。
                      * 
                      */
                     uint64_t GetConfigServerCpu() const;
 
                     /**
-                     * 设置指 ConfigServer CPU核数，取值为1，单位：GB。若为分片集群实例询价，该参数必须设置。
-                     * @param _configServerCpu 指 ConfigServer CPU核数，取值为1，单位：GB。若为分片集群实例询价，该参数必须设置。
+                     * 设置指 ConfigServer CPU核数，固定取值为 1，单位：GB，可不配置该参数。
+                     * @param _configServerCpu 指 ConfigServer CPU核数，固定取值为 1，单位：GB，可不配置该参数。
                      * 
                      */
                     void SetConfigServerCpu(const uint64_t& _configServerCpu);
@@ -434,15 +434,15 @@ namespace TencentCloud
                     bool ConfigServerCpuHasBeenSet() const;
 
                     /**
-                     * 获取指 ConfigServer 内存大小，取值为2，单位：GB。若为分片集群实例询价，则该参数必须设置。
-                     * @return ConfigServerMemory 指 ConfigServer 内存大小，取值为2，单位：GB。若为分片集群实例询价，则该参数必须设置。
+                     * 获取指 ConfigServer 内存大小，固定取值为 2，单位：GB，可不配置该参数。
+                     * @return ConfigServerMemory 指 ConfigServer 内存大小，固定取值为 2，单位：GB，可不配置该参数。
                      * 
                      */
                     uint64_t GetConfigServerMemory() const;
 
                     /**
-                     * 设置指 ConfigServer 内存大小，取值为2，单位：GB。若为分片集群实例询价，则该参数必须设置。
-                     * @param _configServerMemory 指 ConfigServer 内存大小，取值为2，单位：GB。若为分片集群实例询价，则该参数必须设置。
+                     * 设置指 ConfigServer 内存大小，固定取值为 2，单位：GB，可不配置该参数。
+                     * @param _configServerMemory 指 ConfigServer 内存大小，固定取值为 2，单位：GB，可不配置该参数。
                      * 
                      */
                     void SetConfigServerMemory(const uint64_t& _configServerMemory);
@@ -455,15 +455,15 @@ namespace TencentCloud
                     bool ConfigServerMemoryHasBeenSet() const;
 
                     /**
-                     * 获取指 ConfigServer 磁盘大小，取值为 20，单位：GB。若为分片集群实例询价，则该参数必须设置。
-                     * @return ConfigServerVolume 指 ConfigServer 磁盘大小，取值为 20，单位：GB。若为分片集群实例询价，则该参数必须设置。
+                     * 获取指 ConfigServer 磁盘大小，固定取值为 20，单位：GB，可不配置该参数。
+                     * @return ConfigServerVolume 指 ConfigServer 磁盘大小，固定取值为 20，单位：GB，可不配置该参数。
                      * 
                      */
                     uint64_t GetConfigServerVolume() const;
 
                     /**
-                     * 设置指 ConfigServer 磁盘大小，取值为 20，单位：GB。若为分片集群实例询价，则该参数必须设置。
-                     * @param _configServerVolume 指 ConfigServer 磁盘大小，取值为 20，单位：GB。若为分片集群实例询价，则该参数必须设置。
+                     * 设置指 ConfigServer 磁盘大小，固定取值为 20，单位：GB，可不配置该参数。
+                     * @param _configServerVolume 指 ConfigServer 磁盘大小，固定取值为 20，单位：GB，可不配置该参数。
                      * 
                      */
                     void SetConfigServerVolume(const uint64_t& _configServerVolume);
@@ -581,19 +581,19 @@ namespace TencentCloud
                     bool m_mongosNumHasBeenSet;
 
                     /**
-                     * 指 ConfigServer CPU核数，取值为1，单位：GB。若为分片集群实例询价，该参数必须设置。
+                     * 指 ConfigServer CPU核数，固定取值为 1，单位：GB，可不配置该参数。
                      */
                     uint64_t m_configServerCpu;
                     bool m_configServerCpuHasBeenSet;
 
                     /**
-                     * 指 ConfigServer 内存大小，取值为2，单位：GB。若为分片集群实例询价，则该参数必须设置。
+                     * 指 ConfigServer 内存大小，固定取值为 2，单位：GB，可不配置该参数。
                      */
                     uint64_t m_configServerMemory;
                     bool m_configServerMemoryHasBeenSet;
 
                     /**
-                     * 指 ConfigServer 磁盘大小，取值为 20，单位：GB。若为分片集群实例询价，则该参数必须设置。
+                     * 指 ConfigServer 磁盘大小，固定取值为 20，单位：GB，可不配置该参数。
                      */
                     uint64_t m_configServerVolume;
                     bool m_configServerVolumeHasBeenSet;

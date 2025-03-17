@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取新购订单
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PrepayPurchase 新购订单
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPrepayPurchase() const;
 
                     /**
                      * 设置新购订单
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _prepayPurchase 新购订单
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPrepayPurchase(const std::string& _prepayPurchase);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取续费订单
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PrepayRenew 续费订单
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPrepayRenew() const;
 
                     /**
                      * 设置续费订单
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _prepayRenew 续费订单
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPrepayRenew(const std::string& _prepayRenew);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取升配订单
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PrepayModifyUp 升配订单
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPrepayModifyUp() const;
 
                     /**
                      * 设置升配订单
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _prepayModifyUp 升配订单
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPrepayModifyUp(const std::string& _prepayModifyUp);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取冲销订单
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReverseOrder 冲销订单
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReverseOrder() const;
 
                     /**
                      * 设置冲销订单
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _reverseOrder 冲销订单
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReverseOrder(const std::string& _reverseOrder);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取优惠调整后订单
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NewOrder 优惠调整后订单
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNewOrder() const;
 
                     /**
                      * 设置优惠调整后订单
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _newOrder 优惠调整后订单
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNewOrder(const std::string& _newOrder);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取优惠调整前订单
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Original 优惠调整前订单
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOriginal() const;
 
                     /**
                      * 设置优惠调整前订单
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _original 优惠调整前订单
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOriginal(const std::string& _original);
@@ -200,42 +176,36 @@ namespace TencentCloud
 
                     /**
                      * 新购订单
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_prepayPurchase;
                     bool m_prepayPurchaseHasBeenSet;
 
                     /**
                      * 续费订单
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_prepayRenew;
                     bool m_prepayRenewHasBeenSet;
 
                     /**
                      * 升配订单
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_prepayModifyUp;
                     bool m_prepayModifyUpHasBeenSet;
 
                     /**
                      * 冲销订单
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reverseOrder;
                     bool m_reverseOrderHasBeenSet;
 
                     /**
                      * 优惠调整后订单
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_newOrder;
                     bool m_newOrderHasBeenSet;
 
                     /**
                      * 优惠调整前订单
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_original;
                     bool m_originalHasBeenSet;

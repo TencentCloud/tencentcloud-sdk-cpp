@@ -259,15 +259,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取版本信息：0-基础版 1-专业版 2-旗舰版 3-普惠版
-                     * @return HostVersion 版本信息：0-基础版 1-专业版 2-旗舰版 3-普惠版
+                     * 获取版本信息：0-基础版 1-专业版 2-旗舰版 3-轻量版
+                     * @return HostVersion 版本信息：0-基础版 1-专业版 2-旗舰版 3-轻量版
                      * 
                      */
                     uint64_t GetHostVersion() const;
 
                     /**
-                     * 设置版本信息：0-基础版 1-专业版 2-旗舰版 3-普惠版
-                     * @param _hostVersion 版本信息：0-基础版 1-专业版 2-旗舰版 3-普惠版
+                     * 设置版本信息：0-基础版 1-专业版 2-旗舰版 3-轻量版
+                     * @param _hostVersion 版本信息：0-基础版 1-专业版 2-旗舰版 3-轻量版
                      * 
                      */
                     void SetHostVersion(const uint64_t& _hostVersion);
@@ -489,7 +489,7 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 版本信息：0-基础版 1-专业版 2-旗舰版 3-普惠版
+                     * 版本信息：0-基础版 1-专业版 2-旗舰版 3-轻量版
                      */
                     uint64_t m_hostVersion;
                     bool m_hostVersionHasBeenSet;

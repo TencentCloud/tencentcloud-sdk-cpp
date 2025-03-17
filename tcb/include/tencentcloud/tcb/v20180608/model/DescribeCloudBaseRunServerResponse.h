@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取版本列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VersionItems 版本列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CloudBaseRunServerVersionItem> GetVersionItems() const;
@@ -78,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取服务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServerName 服务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetServerName() const;
@@ -94,9 +88,7 @@ namespace TencentCloud
 
                     /**
                      * 获取是否对于外网开放
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsPublic 是否对于外网开放
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsPublic() const;
@@ -110,9 +102,7 @@ namespace TencentCloud
 
                     /**
                      * 获取镜像仓库
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageRepo 镜像仓库
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetImageRepo() const;
@@ -126,9 +116,7 @@ namespace TencentCloud
 
                     /**
                      * 获取流量配置的类型（FLOW,URL_PARAMS)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TrafficType 流量配置的类型（FLOW,URL_PARAMS)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTrafficType() const;
@@ -142,9 +130,7 @@ namespace TencentCloud
 
                     /**
                      * 获取服务创建类型，默认为空，一键部署为oneclick
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SourceType 服务创建类型，默认为空，一键部署为oneclick
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSourceType() const;
@@ -158,9 +144,7 @@ namespace TencentCloud
 
                     /**
                      * 获取服务标签, function: 托管函数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tag 服务标签, function: 托管函数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTag() const;
@@ -176,56 +160,48 @@ namespace TencentCloud
 
                     /**
                      * 个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
                      * 版本列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CloudBaseRunServerVersionItem> m_versionItems;
                     bool m_versionItemsHasBeenSet;
 
                     /**
                      * 服务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serverName;
                     bool m_serverNameHasBeenSet;
 
                     /**
                      * 是否对于外网开放
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isPublic;
                     bool m_isPublicHasBeenSet;
 
                     /**
                      * 镜像仓库
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_imageRepo;
                     bool m_imageRepoHasBeenSet;
 
                     /**
                      * 流量配置的类型（FLOW,URL_PARAMS)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_trafficType;
                     bool m_trafficTypeHasBeenSet;
 
                     /**
                      * 服务创建类型，默认为空，一键部署为oneclick
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sourceType;
                     bool m_sourceTypeHasBeenSet;
 
                     /**
                      * 服务标签, function: 托管函数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tag;
                     bool m_tagHasBeenSet;

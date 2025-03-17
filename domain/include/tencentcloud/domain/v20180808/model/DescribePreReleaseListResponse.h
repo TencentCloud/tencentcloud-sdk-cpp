@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取预释放列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PreReleaseList 预释放列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<PreReleaseInfo> GetPreReleaseList() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 预释放列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<PreReleaseInfo> m_preReleaseList;
                     bool m_preReleaseListHasBeenSet;

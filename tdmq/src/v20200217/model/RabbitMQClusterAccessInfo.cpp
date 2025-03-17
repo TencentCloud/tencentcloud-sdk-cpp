@@ -33,7 +33,8 @@ RabbitMQClusterAccessInfo::RabbitMQClusterAccessInfo() :
     m_vpcWebConsoleSwitchStatusHasBeenSet(false),
     m_publicDataStreamStatusHasBeenSet(false),
     m_prometheusEndpointInfoHasBeenSet(false),
-    m_webConsoleDomainEndpointHasBeenSet(false)
+    m_webConsoleDomainEndpointHasBeenSet(false),
+    m_controlPlaneEndpointInfoHasBeenSet(false)
 {
 }
 
@@ -179,6 +180,23 @@ CoreInternalOutcome RabbitMQClusterAccessInfo::Deserialize(const rapidjson::Valu
         m_webConsoleDomainEndpointHasBeenSet = true;
     }
 
+    if (value.HasMember("ControlPlaneEndpointInfo") && !value["ControlPlaneEndpointInfo"].IsNull())
+    {
+        if (!value["ControlPlaneEndpointInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQClusterAccessInfo.ControlPlaneEndpointInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_controlPlaneEndpointInfo.Deserialize(value["ControlPlaneEndpointInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_controlPlaneEndpointInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -289,6 +307,15 @@ void RabbitMQClusterAccessInfo::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "WebConsoleDomainEndpoint";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_webConsoleDomainEndpoint.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_controlPlaneEndpointInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ControlPlaneEndpointInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_controlPlaneEndpointInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -500,5 +527,21 @@ void RabbitMQClusterAccessInfo::SetWebConsoleDomainEndpoint(const string& _webCo
 bool RabbitMQClusterAccessInfo::WebConsoleDomainEndpointHasBeenSet() const
 {
     return m_webConsoleDomainEndpointHasBeenSet;
+}
+
+VpcEndpointInfo RabbitMQClusterAccessInfo::GetControlPlaneEndpointInfo() const
+{
+    return m_controlPlaneEndpointInfo;
+}
+
+void RabbitMQClusterAccessInfo::SetControlPlaneEndpointInfo(const VpcEndpointInfo& _controlPlaneEndpointInfo)
+{
+    m_controlPlaneEndpointInfo = _controlPlaneEndpointInfo;
+    m_controlPlaneEndpointInfoHasBeenSet = true;
+}
+
+bool RabbitMQClusterAccessInfo::ControlPlaneEndpointInfoHasBeenSet() const
+{
+    return m_controlPlaneEndpointInfoHasBeenSet;
 }
 

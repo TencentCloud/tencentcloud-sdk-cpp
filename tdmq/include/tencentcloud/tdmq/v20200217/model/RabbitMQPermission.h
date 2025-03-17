@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取权限类型，declare相关操作，该用户可操作该vhost下的资源名称正则表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigRegexp 权限类型，declare相关操作，该用户可操作该vhost下的资源名称正则表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConfigRegexp() const;
 
                     /**
                      * 设置权限类型，declare相关操作，该用户可操作该vhost下的资源名称正则表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _configRegexp 权限类型，declare相关操作，该用户可操作该vhost下的资源名称正则表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConfigRegexp(const std::string& _configRegexp);
@@ -136,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取权限类型，消息写入相关操作，该用户可操作该vhost下的资源名称正则表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WriteRegexp 权限类型，消息写入相关操作，该用户可操作该vhost下的资源名称正则表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWriteRegexp() const;
 
                     /**
                      * 设置权限类型，消息写入相关操作，该用户可操作该vhost下的资源名称正则表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _writeRegexp 权限类型，消息写入相关操作，该用户可操作该vhost下的资源名称正则表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWriteRegexp(const std::string& _writeRegexp);
@@ -161,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取权限类型，消息读取相关操作，该用户可操作该vhost下的资源名称正则表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReadRegexp 权限类型，消息读取相关操作，该用户可操作该vhost下的资源名称正则表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReadRegexp() const;
 
                     /**
                      * 设置权限类型，消息读取相关操作，该用户可操作该vhost下的资源名称正则表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _readRegexp 权限类型，消息读取相关操作，该用户可操作该vhost下的资源名称正则表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReadRegexp(const std::string& _readRegexp);
@@ -186,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -211,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifyTime 修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
                      * 设置修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modifyTime 修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
@@ -256,35 +236,30 @@ namespace TencentCloud
 
                     /**
                      * 权限类型，declare相关操作，该用户可操作该vhost下的资源名称正则表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_configRegexp;
                     bool m_configRegexpHasBeenSet;
 
                     /**
                      * 权限类型，消息写入相关操作，该用户可操作该vhost下的资源名称正则表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_writeRegexp;
                     bool m_writeRegexpHasBeenSet;
 
                     /**
                      * 权限类型，消息读取相关操作，该用户可操作该vhost下的资源名称正则表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_readRegexp;
                     bool m_readRegexpHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;

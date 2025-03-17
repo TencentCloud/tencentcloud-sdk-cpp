@@ -41,7 +41,8 @@ RansomDefenseStrategyMachineBackupInfo::RansomDefenseStrategyMachineBackupInfo()
     m_rollBackPercentHasBeenSet(false),
     m_rollBackStatusHasBeenSet(false),
     m_backupSuccessCountHasBeenSet(false),
-    m_hostVersionHasBeenSet(false)
+    m_hostVersionHasBeenSet(false),
+    m_machineTypeHasBeenSet(false)
 {
 }
 
@@ -287,6 +288,16 @@ CoreInternalOutcome RansomDefenseStrategyMachineBackupInfo::Deserialize(const ra
         m_hostVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("MachineType") && !value["MachineType"].IsNull())
+    {
+        if (!value["MachineType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RansomDefenseStrategyMachineBackupInfo.MachineType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_machineType = string(value["MachineType"].GetString());
+        m_machineTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -475,6 +486,14 @@ void RansomDefenseStrategyMachineBackupInfo::ToJsonObject(rapidjson::Value &valu
         string key = "HostVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_hostVersion, allocator);
+    }
+
+    if (m_machineTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MachineType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_machineType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -814,5 +833,21 @@ void RansomDefenseStrategyMachineBackupInfo::SetHostVersion(const uint64_t& _hos
 bool RansomDefenseStrategyMachineBackupInfo::HostVersionHasBeenSet() const
 {
     return m_hostVersionHasBeenSet;
+}
+
+string RansomDefenseStrategyMachineBackupInfo::GetMachineType() const
+{
+    return m_machineType;
+}
+
+void RansomDefenseStrategyMachineBackupInfo::SetMachineType(const string& _machineType)
+{
+    m_machineType = _machineType;
+    m_machineTypeHasBeenSet = true;
+}
+
+bool RansomDefenseStrategyMachineBackupInfo::MachineTypeHasBeenSet() const
+{
+    return m_machineTypeHasBeenSet;
 }
 

@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取域名信息集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DomainSet 域名信息集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DomainList> GetDomainSet() const;
@@ -78,7 +76,6 @@ namespace TencentCloud
 
                     /**
                      * 域名信息集合
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DomainList> m_domainSet;
                     bool m_domainSetHasBeenSet;

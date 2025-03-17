@@ -44,6 +44,7 @@ set(trro_public_header_model
   include/tencentcloud/trro/v20220325/model/ModifyPolicyResponse.h
   include/tencentcloud/trro/v20220325/model/Device.h
   include/tencentcloud/trro/v20220325/model/DescribeSessionStatisticsRequest.h
+  include/tencentcloud/trro/v20220325/model/ModifyProjectSecModeResponse.h
   include/tencentcloud/trro/v20220325/model/BatchDeleteDevicesResponse.h
   include/tencentcloud/trro/v20220325/model/ModifyProjectRequest.h
   include/tencentcloud/trro/v20220325/model/DescribeRecentSessionListResponse.h
@@ -70,6 +71,7 @@ set(trro_public_header_model
   include/tencentcloud/trro/v20220325/model/GetLicensesResponse.h
   include/tencentcloud/trro/v20220325/model/DeviceInfo.h
   include/tencentcloud/trro/v20220325/model/DescribeDeviceSessionListRequest.h
+  include/tencentcloud/trro/v20220325/model/ModifyProjectSecModeRequest.h
   include/tencentcloud/trro/v20220325/model/GetDevicesRequest.h
   include/tencentcloud/trro/v20220325/model/CreateProjectResponse.h
   include/tencentcloud/trro/v20220325/model/SessionIntervalStatistic.h
@@ -104,6 +106,7 @@ set(trro_src
   src/v20220325/model/ModifyPolicyResponse.cpp
   src/v20220325/model/Device.cpp
   src/v20220325/model/DescribeSessionStatisticsRequest.cpp
+  src/v20220325/model/ModifyProjectSecModeResponse.cpp
   src/v20220325/model/BatchDeleteDevicesResponse.cpp
   src/v20220325/model/ModifyProjectRequest.cpp
   src/v20220325/model/DescribeRecentSessionListResponse.cpp
@@ -130,6 +133,7 @@ set(trro_src
   src/v20220325/model/GetLicensesResponse.cpp
   src/v20220325/model/DeviceInfo.cpp
   src/v20220325/model/DescribeDeviceSessionListRequest.cpp
+  src/v20220325/model/ModifyProjectSecModeRequest.cpp
   src/v20220325/model/GetDevicesRequest.cpp
   src/v20220325/model/CreateProjectResponse.cpp
   src/v20220325/model/SessionIntervalStatistic.cpp

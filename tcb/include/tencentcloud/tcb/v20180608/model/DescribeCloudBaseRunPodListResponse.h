@@ -88,9 +88,7 @@ namespace TencentCloud
 
                     /**
                      * 获取容器列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PodList 容器列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CloudBaseRunVersionPod> GetPodList() const;
@@ -124,7 +122,6 @@ namespace TencentCloud
 
                     /**
                      * 容器列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CloudBaseRunVersionPod> m_podList;
                     bool m_podListHasBeenSet;

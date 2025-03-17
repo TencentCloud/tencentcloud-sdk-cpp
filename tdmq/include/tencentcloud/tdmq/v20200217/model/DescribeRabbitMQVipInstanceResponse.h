@@ -80,9 +80,7 @@ namespace TencentCloud
 
                     /**
                      * 获取集群访问
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterNetInfo 集群访问
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RabbitMQClusterAccessInfo GetClusterNetInfo() const;
@@ -96,9 +94,7 @@ namespace TencentCloud
 
                     /**
                      * 获取集群白名单
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterWhiteListInfo 集群白名单
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RabbitMQClusterWhiteListInfo GetClusterWhiteListInfo() const;
@@ -168,14 +164,12 @@ namespace TencentCloud
 
                     /**
                      * 集群访问
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RabbitMQClusterAccessInfo m_clusterNetInfo;
                     bool m_clusterNetInfoHasBeenSet;
 
                     /**
                      * 集群白名单
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RabbitMQClusterWhiteListInfo m_clusterWhiteListInfo;
                     bool m_clusterWhiteListInfoHasBeenSet;

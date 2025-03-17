@@ -42,7 +42,8 @@ CreatePrepareFlowRequest::CreatePrepareFlowRequest() :
     m_flowIdHasBeenSet(false),
     m_agentHasBeenSet(false),
     m_initiatorComponentsHasBeenSet(false),
-    m_flowDisplayTypeHasBeenSet(false)
+    m_flowDisplayTypeHasBeenSet(false),
+    m_signComponentConfigHasBeenSet(false)
 {
 }
 
@@ -236,6 +237,15 @@ string CreatePrepareFlowRequest::ToJsonString() const
         string key = "FlowDisplayType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_flowDisplayType, allocator);
+    }
+
+    if (m_signComponentConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SignComponentConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_signComponentConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -564,6 +574,22 @@ void CreatePrepareFlowRequest::SetFlowDisplayType(const int64_t& _flowDisplayTyp
 bool CreatePrepareFlowRequest::FlowDisplayTypeHasBeenSet() const
 {
     return m_flowDisplayTypeHasBeenSet;
+}
+
+SignComponentConfig CreatePrepareFlowRequest::GetSignComponentConfig() const
+{
+    return m_signComponentConfig;
+}
+
+void CreatePrepareFlowRequest::SetSignComponentConfig(const SignComponentConfig& _signComponentConfig)
+{
+    m_signComponentConfig = _signComponentConfig;
+    m_signComponentConfigHasBeenSet = true;
+}
+
+bool CreatePrepareFlowRequest::SignComponentConfigHasBeenSet() const
+{
+    return m_signComponentConfigHasBeenSet;
 }
 
 

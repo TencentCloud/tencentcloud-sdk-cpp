@@ -642,6 +642,49 @@ WafClient::CreateIpAccessControlOutcomeCallable WafClient::CreateIpAccessControl
     return task->get_future();
 }
 
+WafClient::CreatePostCLSFlowOutcome WafClient::CreatePostCLSFlow(const CreatePostCLSFlowRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePostCLSFlow");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePostCLSFlowResponse rsp = CreatePostCLSFlowResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePostCLSFlowOutcome(rsp);
+        else
+            return CreatePostCLSFlowOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePostCLSFlowOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::CreatePostCLSFlowAsync(const CreatePostCLSFlowRequest& request, const CreatePostCLSFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreatePostCLSFlow(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::CreatePostCLSFlowOutcomeCallable WafClient::CreatePostCLSFlowCallable(const CreatePostCLSFlowRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreatePostCLSFlowOutcome()>>(
+        [this, request]()
+        {
+            return this->CreatePostCLSFlow(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::DeleteAccessExportOutcome WafClient::DeleteAccessExport(const DeleteAccessExportRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteAccessExport");
@@ -3179,6 +3222,49 @@ WafClient::DescribePortsOutcomeCallable WafClient::DescribePortsCallable(const D
     return task->get_future();
 }
 
+WafClient::DescribePostCLSFlowsOutcome WafClient::DescribePostCLSFlows(const DescribePostCLSFlowsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePostCLSFlows");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePostCLSFlowsResponse rsp = DescribePostCLSFlowsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePostCLSFlowsOutcome(rsp);
+        else
+            return DescribePostCLSFlowsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePostCLSFlowsOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribePostCLSFlowsAsync(const DescribePostCLSFlowsRequest& request, const DescribePostCLSFlowsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePostCLSFlows(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribePostCLSFlowsOutcomeCallable WafClient::DescribePostCLSFlowsCallable(const DescribePostCLSFlowsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePostCLSFlowsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePostCLSFlows(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::DescribeProtectionModesOutcome WafClient::DescribeProtectionModes(const DescribeProtectionModesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeProtectionModes");
@@ -3989,6 +4075,49 @@ WafClient::DescribeWebshellStatusOutcomeCallable WafClient::DescribeWebshellStat
         [this, request]()
         {
             return this->DescribeWebshellStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::DestroyPostCLSFlowOutcome WafClient::DestroyPostCLSFlow(const DestroyPostCLSFlowRequest &request)
+{
+    auto outcome = MakeRequest(request, "DestroyPostCLSFlow");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DestroyPostCLSFlowResponse rsp = DestroyPostCLSFlowResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DestroyPostCLSFlowOutcome(rsp);
+        else
+            return DestroyPostCLSFlowOutcome(o.GetError());
+    }
+    else
+    {
+        return DestroyPostCLSFlowOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DestroyPostCLSFlowAsync(const DestroyPostCLSFlowRequest& request, const DestroyPostCLSFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DestroyPostCLSFlow(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DestroyPostCLSFlowOutcomeCallable WafClient::DestroyPostCLSFlowCallable(const DestroyPostCLSFlowRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DestroyPostCLSFlowOutcome()>>(
+        [this, request]()
+        {
+            return this->DestroyPostCLSFlow(request);
         }
     );
 

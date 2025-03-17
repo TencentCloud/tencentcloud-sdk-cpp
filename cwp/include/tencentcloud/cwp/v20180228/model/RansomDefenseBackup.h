@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool EventStatusHasBeenSet() const;
 
                     /**
-                     * 获取备份状态：0备份中，1正常，2、3失败，4快照已过期，9快照已删除
-                     * @return BackupStatus 备份状态：0备份中，1正常，2、3失败，4快照已过期，9快照已删除
+                     * 获取备份状态：0备份中，1正常，2、3失败，4快照已过期，5快照数量超出限制，9快照已删除
+                     * @return BackupStatus 备份状态：0备份中，1正常，2、3失败，4快照已过期，5快照数量超出限制，9快照已删除
                      * 
                      */
                     uint64_t GetBackupStatus() const;
 
                     /**
-                     * 设置备份状态：0备份中，1正常，2、3失败，4快照已过期，9快照已删除
-                     * @param _backupStatus 备份状态：0备份中，1正常，2、3失败，4快照已过期，9快照已删除
+                     * 设置备份状态：0备份中，1正常，2、3失败，4快照已过期，5快照数量超出限制，9快照已删除
+                     * @param _backupStatus 备份状态：0备份中，1正常，2、3失败，4快照已过期，5快照数量超出限制，9快照已删除
                      * 
                      */
                     void SetBackupStatus(const uint64_t& _backupStatus);
@@ -250,7 +250,7 @@ namespace TencentCloud
                     bool m_eventStatusHasBeenSet;
 
                     /**
-                     * 备份状态：0备份中，1正常，2、3失败，4快照已过期，9快照已删除
+                     * 备份状态：0备份中，1正常，2、3失败，4快照已过期，5快照数量超出限制，9快照已删除
                      */
                     uint64_t m_backupStatus;
                     bool m_backupStatusHasBeenSet;

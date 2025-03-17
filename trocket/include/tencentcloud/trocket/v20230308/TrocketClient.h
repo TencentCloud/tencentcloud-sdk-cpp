@@ -135,6 +135,8 @@
 #include <tencentcloud/trocket/v20230308/model/ModifyTopicResponse.h>
 #include <tencentcloud/trocket/v20230308/model/ResendDeadLetterMessageRequest.h>
 #include <tencentcloud/trocket/v20230308/model/ResendDeadLetterMessageResponse.h>
+#include <tencentcloud/trocket/v20230308/model/ResetConsumerGroupOffsetRequest.h>
+#include <tencentcloud/trocket/v20230308/model/ResetConsumerGroupOffsetResponse.h>
 
 
 namespace TencentCloud
@@ -317,6 +319,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ResendDeadLetterMessageResponse> ResendDeadLetterMessageOutcome;
                 typedef std::future<ResendDeadLetterMessageOutcome> ResendDeadLetterMessageOutcomeCallable;
                 typedef std::function<void(const TrocketClient*, const Model::ResendDeadLetterMessageRequest&, ResendDeadLetterMessageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResendDeadLetterMessageAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResetConsumerGroupOffsetResponse> ResetConsumerGroupOffsetOutcome;
+                typedef std::future<ResetConsumerGroupOffsetOutcome> ResetConsumerGroupOffsetOutcomeCallable;
+                typedef std::function<void(const TrocketClient*, const Model::ResetConsumerGroupOffsetRequest&, ResetConsumerGroupOffsetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetConsumerGroupOffsetAsyncHandler;
 
 
 
@@ -859,6 +864,15 @@ TopicName，主题名称过滤
                 ResendDeadLetterMessageOutcome ResendDeadLetterMessage(const Model::ResendDeadLetterMessageRequest &request);
                 void ResendDeadLetterMessageAsync(const Model::ResendDeadLetterMessageRequest& request, const ResendDeadLetterMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ResendDeadLetterMessageOutcomeCallable ResendDeadLetterMessageCallable(const Model::ResendDeadLetterMessageRequest& request);
+
+                /**
+                 *重置消费位点
+                 * @param req ResetConsumerGroupOffsetRequest
+                 * @return ResetConsumerGroupOffsetOutcome
+                 */
+                ResetConsumerGroupOffsetOutcome ResetConsumerGroupOffset(const Model::ResetConsumerGroupOffsetRequest &request);
+                void ResetConsumerGroupOffsetAsync(const Model::ResetConsumerGroupOffsetRequest& request, const ResetConsumerGroupOffsetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResetConsumerGroupOffsetOutcomeCallable ResetConsumerGroupOffsetCallable(const Model::ResetConsumerGroupOffsetRequest& request);
 
             };
         }

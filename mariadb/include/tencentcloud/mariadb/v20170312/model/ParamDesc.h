@@ -91,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设置过的值，参数生效后，该值和value一样。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SetValue 设置过的值，参数生效后，该值和value一样。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSetValue() const;
 
                     /**
                      * 设置设置过的值，参数生效后，该值和value一样。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _setValue 设置过的值，参数生效后，该值和value一样。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSetValue(const std::string& _setValue);
@@ -218,7 +214,6 @@ true:需要重启
 
                     /**
                      * 设置过的值，参数生效后，该值和value一样。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_setValue;
                     bool m_setValueHasBeenSet;

@@ -104,6 +104,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/IntentionAction.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateOrganizationBatchSignUrlRequest.h
   include/tencentcloud/essbasic/v20210526/model/DynamicFlowApproverResult.h
+  include/tencentcloud/essbasic/v20210526/model/SignComponentConfig.h
   include/tencentcloud/essbasic/v20210526/model/GetDownloadFlowUrlResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelRole.h
   include/tencentcloud/essbasic/v20210526/model/FlowGroupApproverInfo.h
@@ -505,6 +506,7 @@ set(essbasic_src
   src/v20210526/model/IntentionAction.cpp
   src/v20210526/model/ChannelCreateOrganizationBatchSignUrlRequest.cpp
   src/v20210526/model/DynamicFlowApproverResult.cpp
+  src/v20210526/model/SignComponentConfig.cpp
   src/v20210526/model/GetDownloadFlowUrlResponse.cpp
   src/v20210526/model/ChannelRole.cpp
   src/v20210526/model/FlowGroupApproverInfo.cpp

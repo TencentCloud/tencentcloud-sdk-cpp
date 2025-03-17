@@ -63,9 +63,7 @@ namespace TencentCloud
 
                     /**
                      * 获取备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemark() const;
@@ -79,9 +77,7 @@ namespace TencentCloud
 
                     /**
                      * 获取Dockefile的路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DockerfilePath Dockefile的路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDockerfilePath() const;
@@ -95,9 +91,7 @@ namespace TencentCloud
 
                     /**
                      * 获取DockerBuild的目录
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BuildDir DockerBuild的目录
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBuildDir() const;
@@ -167,9 +161,7 @@ namespace TencentCloud
 
                     /**
                      * 获取环境变量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnvParams 环境变量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEnvParams() const;
@@ -211,9 +203,7 @@ namespace TencentCloud
 
                     /**
                      * 获取版本的IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VersionIP 版本的IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVersionIP() const;
@@ -227,9 +217,7 @@ namespace TencentCloud
 
                     /**
                      * 获取版本的端口号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VersionPort 版本的端口号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetVersionPort() const;
@@ -243,9 +231,7 @@ namespace TencentCloud
 
                     /**
                      * 获取版本状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 版本状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
@@ -259,9 +245,7 @@ namespace TencentCloud
 
                     /**
                      * 获取枚举（package/repository/image)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UploadType 枚举（package/repository/image)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUploadType() const;
@@ -275,9 +259,7 @@ namespace TencentCloud
 
                     /**
                      * 获取服务名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServerName 服务名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetServerName() const;
@@ -291,9 +273,7 @@ namespace TencentCloud
 
                     /**
                      * 获取是否对于外网开放
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsPublic 是否对于外网开放
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsPublic() const;
@@ -307,9 +287,7 @@ namespace TencentCloud
 
                     /**
                      * 获取vpc id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId vpc id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcId() const;
@@ -323,9 +301,7 @@ namespace TencentCloud
 
                     /**
                      * 获取子网实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetIds 子网实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetSubnetIds() const;
@@ -339,9 +315,7 @@ namespace TencentCloud
 
                     /**
                      * 获取日志采集路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CustomLogs 日志采集路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCustomLogs() const;
@@ -355,9 +329,7 @@ namespace TencentCloud
 
                     /**
                      * 获取监听端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContainerPort 监听端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetContainerPort() const;
@@ -371,9 +343,7 @@ namespace TencentCloud
 
                     /**
                      * 获取延迟多长时间开始健康检查（单位s）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InitialDelaySeconds 延迟多长时间开始健康检查（单位s）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetInitialDelaySeconds() const;
@@ -387,9 +357,7 @@ namespace TencentCloud
 
                     /**
                      * 获取镜像地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageUrl 镜像地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetImageUrl() const;
@@ -403,9 +371,7 @@ namespace TencentCloud
 
                     /**
                      * 获取是否有Dockerfile：0-default has, 1-has, 2-has not
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HasDockerfile 是否有Dockerfile：0-default has, 1-has, 2-has not
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetHasDockerfile() const;
@@ -419,9 +385,7 @@ namespace TencentCloud
 
                     /**
                      * 获取基础镜像
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BaseImage 基础镜像
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBaseImage() const;
@@ -435,9 +399,7 @@ namespace TencentCloud
 
                     /**
                      * 获取容器启动入口命令
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EntryPoint 容器启动入口命令
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEntryPoint() const;
@@ -451,9 +413,7 @@ namespace TencentCloud
 
                     /**
                      * 获取自动扩缩容策略组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolicyDetail 自动扩缩容策略组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<HpaPolicy> GetPolicyDetail() const;
@@ -467,9 +427,7 @@ namespace TencentCloud
 
                     /**
                      * 获取Tke集群信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TkeClusterInfo Tke集群信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TkeClusterInfo GetTkeClusterInfo() const;
@@ -483,9 +441,7 @@ namespace TencentCloud
 
                     /**
                      * 获取版本工作负载类型；deployment/deamonset
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TkeWorkloadType 版本工作负载类型；deployment/deamonset
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTkeWorkloadType() const;
@@ -499,9 +455,7 @@ namespace TencentCloud
 
                     /**
                      * 获取代码包信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackageInfo 代码包信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CbrPackageInfo GetPackageInfo() const;
@@ -515,9 +469,7 @@ namespace TencentCloud
 
                     /**
                      * 获取仓库信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RepoInfo 仓库信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CbrRepoInfo GetRepoInfo() const;
@@ -539,21 +491,18 @@ namespace TencentCloud
 
                     /**
                      * 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
                      * Dockefile的路径
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dockerfilePath;
                     bool m_dockerfilePathHasBeenSet;
 
                     /**
                      * DockerBuild的目录
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_buildDir;
                     bool m_buildDirHasBeenSet;
@@ -584,7 +533,6 @@ namespace TencentCloud
 
                     /**
                      * 环境变量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_envParams;
                     bool m_envParamsHasBeenSet;
@@ -603,140 +551,120 @@ namespace TencentCloud
 
                     /**
                      * 版本的IP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_versionIP;
                     bool m_versionIPHasBeenSet;
 
                     /**
                      * 版本的端口号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_versionPort;
                     bool m_versionPortHasBeenSet;
 
                     /**
                      * 版本状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 枚举（package/repository/image)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uploadType;
                     bool m_uploadTypeHasBeenSet;
 
                     /**
                      * 服务名字
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serverName;
                     bool m_serverNameHasBeenSet;
 
                     /**
                      * 是否对于外网开放
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isPublic;
                     bool m_isPublicHasBeenSet;
 
                     /**
                      * vpc id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
                      * 子网实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_subnetIds;
                     bool m_subnetIdsHasBeenSet;
 
                     /**
                      * 日志采集路径
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_customLogs;
                     bool m_customLogsHasBeenSet;
 
                     /**
                      * 监听端口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_containerPort;
                     bool m_containerPortHasBeenSet;
 
                     /**
                      * 延迟多长时间开始健康检查（单位s）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_initialDelaySeconds;
                     bool m_initialDelaySecondsHasBeenSet;
 
                     /**
                      * 镜像地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_imageUrl;
                     bool m_imageUrlHasBeenSet;
 
                     /**
                      * 是否有Dockerfile：0-default has, 1-has, 2-has not
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_hasDockerfile;
                     bool m_hasDockerfileHasBeenSet;
 
                     /**
                      * 基础镜像
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_baseImage;
                     bool m_baseImageHasBeenSet;
 
                     /**
                      * 容器启动入口命令
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_entryPoint;
                     bool m_entryPointHasBeenSet;
 
                     /**
                      * 自动扩缩容策略组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<HpaPolicy> m_policyDetail;
                     bool m_policyDetailHasBeenSet;
 
                     /**
                      * Tke集群信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TkeClusterInfo m_tkeClusterInfo;
                     bool m_tkeClusterInfoHasBeenSet;
 
                     /**
                      * 版本工作负载类型；deployment/deamonset
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tkeWorkloadType;
                     bool m_tkeWorkloadTypeHasBeenSet;
 
                     /**
                      * 代码包信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CbrPackageInfo m_packageInfo;
                     bool m_packageInfoHasBeenSet;
 
                     /**
                      * 仓库信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CbrRepoInfo m_repoInfo;
                     bool m_repoInfoHasBeenSet;

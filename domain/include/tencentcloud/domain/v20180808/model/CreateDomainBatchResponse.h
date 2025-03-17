@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取批量日志ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogId 批量日志ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLogId() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 批量日志ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_logId;
                     bool m_logIdHasBeenSet;

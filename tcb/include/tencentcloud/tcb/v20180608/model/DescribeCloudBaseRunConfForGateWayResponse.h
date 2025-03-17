@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取最近更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastUpTime 最近更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLastUpTime() const;
@@ -80,7 +78,6 @@ namespace TencentCloud
 
                     /**
                      * 最近更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastUpTime;
                     bool m_lastUpTimeHasBeenSet;

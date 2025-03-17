@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取计量单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Unit 计量单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUnit() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取用量数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DetailSets 用量数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DetailSet> GetDetailSets() const;
@@ -78,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取错误码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RetCode 错误码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRetCode() const;
@@ -94,9 +88,7 @@ namespace TencentCloud
 
                     /**
                      * 获取错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RetMsg 错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRetMsg() const;
@@ -112,28 +104,24 @@ namespace TencentCloud
 
                     /**
                      * 计量单位
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_unit;
                     bool m_unitHasBeenSet;
 
                     /**
                      * 用量数组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DetailSet> m_detailSets;
                     bool m_detailSetsHasBeenSet;
 
                     /**
                      * 错误码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_retCode;
                     bool m_retCodeHasBeenSet;
 
                     /**
                      * 错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_retMsg;
                     bool m_retMsgHasBeenSet;

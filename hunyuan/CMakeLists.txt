@@ -36,12 +36,13 @@ set(hunyuan_public_header_model
   include/tencentcloud/hunyuan/v20230901/model/Usage.h
   include/tencentcloud/hunyuan/v20230901/model/Replace.h
   include/tencentcloud/hunyuan/v20230901/model/SubmitHunyuanImageChatJobResponse.h
+  include/tencentcloud/hunyuan/v20230901/model/ThreadMessageInCompleteDetailsObject.h
   include/tencentcloud/hunyuan/v20230901/model/QueryHunyuanImageChatJobRequest.h
   include/tencentcloud/hunyuan/v20230901/model/RunThreadRequest.h
   include/tencentcloud/hunyuan/v20230901/model/SubmitHunyuanImageChatJobRequest.h
   include/tencentcloud/hunyuan/v20230901/model/ChatTranslationsRequest.h
   include/tencentcloud/hunyuan/v20230901/model/GetThreadMessageResponse.h
-  include/tencentcloud/hunyuan/v20230901/model/ThreadMessageInCompleteDetailsObject.h
+  include/tencentcloud/hunyuan/v20230901/model/Image.h
   include/tencentcloud/hunyuan/v20230901/model/Tool.h
   include/tencentcloud/hunyuan/v20230901/model/GetThreadMessageListRequest.h
   include/tencentcloud/hunyuan/v20230901/model/Choice.h
@@ -118,12 +119,13 @@ set(hunyuan_src
   src/v20230901/model/Usage.cpp
   src/v20230901/model/Replace.cpp
   src/v20230901/model/SubmitHunyuanImageChatJobResponse.cpp
+  src/v20230901/model/ThreadMessageInCompleteDetailsObject.cpp
   src/v20230901/model/QueryHunyuanImageChatJobRequest.cpp
   src/v20230901/model/RunThreadRequest.cpp
   src/v20230901/model/SubmitHunyuanImageChatJobRequest.cpp
   src/v20230901/model/ChatTranslationsRequest.cpp
   src/v20230901/model/GetThreadMessageResponse.cpp
-  src/v20230901/model/ThreadMessageInCompleteDetailsObject.cpp
+  src/v20230901/model/Image.cpp
   src/v20230901/model/Tool.cpp
   src/v20230901/model/GetThreadMessageListRequest.cpp
   src/v20230901/model/Choice.cpp

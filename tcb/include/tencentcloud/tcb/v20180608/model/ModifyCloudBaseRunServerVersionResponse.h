@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取返回结果（succ为成功）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 返回结果（succ为成功）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResult() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 返回结果（succ为成功）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_result;
                     bool m_resultHasBeenSet;

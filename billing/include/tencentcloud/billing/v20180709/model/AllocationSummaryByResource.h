@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分账单元唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TreeNodeUniqKey 分账单元唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTreeNodeUniqKey() const;
 
                     /**
                      * 设置分账单元唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _treeNodeUniqKey 分账单元唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTreeNodeUniqKey(const std::string& _treeNodeUniqKey);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分账单元名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TreeNodeUniqKeyName 分账单元名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTreeNodeUniqKeyName() const;
 
                     /**
                      * 设置分账单元名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _treeNodeUniqKeyName 分账单元名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTreeNodeUniqKeyName(const std::string& _treeNodeUniqKeyName);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日期：结算日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BillDate 日期：结算日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBillDate() const;
 
                     /**
                      * 设置日期：结算日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _billDate 日期：结算日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBillDate(const std::string& _billDate);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取支付者 UIN：支付者的账号 ID，账号 ID 是用户在腾讯云的唯一账号标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayerUin 支付者 UIN：支付者的账号 ID，账号 ID 是用户在腾讯云的唯一账号标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPayerUin() const;
 
                     /**
                      * 设置支付者 UIN：支付者的账号 ID，账号 ID 是用户在腾讯云的唯一账号标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _payerUin 支付者 UIN：支付者的账号 ID，账号 ID 是用户在腾讯云的唯一账号标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPayerUin(const std::string& _payerUin);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取使用者 UIN：实际使用资源的账号 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OwnerUin 使用者 UIN：实际使用资源的账号 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOwnerUin() const;
 
                     /**
                      * 设置使用者 UIN：实际使用资源的账号 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ownerUin 使用者 UIN：实际使用资源的账号 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOwnerUin(const std::string& _ownerUin);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取操作者 UIN：操作者账号 ID（预付费资源下单或后付费操作开通资源账号的ID或者角色 ID）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OperateUin 操作者 UIN：操作者账号 ID（预付费资源下单或后付费操作开通资源账号的ID或者角色 ID）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOperateUin() const;
 
                     /**
                      * 设置操作者 UIN：操作者账号 ID（预付费资源下单或后付费操作开通资源账号的ID或者角色 ID）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _operateUin 操作者 UIN：操作者账号 ID（预付费资源下单或后付费操作开通资源账号的ID或者角色 ID）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOperateUin(const std::string& _operateUin);
@@ -199,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取计费模式编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayMode 计费模式编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPayMode() const;
 
                     /**
                      * 设置计费模式编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _payMode 计费模式编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPayMode(const std::string& _payMode);
@@ -224,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取计费模式：资源的计费模式，区分为包年包月和按量计费
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayModeName 计费模式：资源的计费模式，区分为包年包月和按量计费
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPayModeName() const;
 
                     /**
                      * 设置计费模式：资源的计费模式，区分为包年包月和按量计费
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _payModeName 计费模式：资源的计费模式，区分为包年包月和按量计费
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPayModeName(const std::string& _payModeName);
@@ -249,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取交易类型编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActionType 交易类型编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetActionType() const;
 
                     /**
                      * 设置交易类型编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _actionType 交易类型编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetActionType(const std::string& _actionType);
@@ -274,18 +238,14 @@ namespace TencentCloud
 
                     /**
                      * 获取交易类型：明细交易类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActionTypeName 交易类型：明细交易类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetActionTypeName() const;
 
                     /**
                      * 设置交易类型：明细交易类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _actionTypeName 交易类型：明细交易类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetActionTypeName(const std::string& _actionTypeName);
@@ -299,18 +259,14 @@ namespace TencentCloud
 
                     /**
                      * 获取产品编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BusinessCode 产品编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBusinessCode() const;
 
                     /**
                      * 设置产品编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _businessCode 产品编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBusinessCode(const std::string& _businessCode);
@@ -324,18 +280,14 @@ namespace TencentCloud
 
                     /**
                      * 获取产品名称：用户所采购的各类云产品
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BusinessCodeName 产品名称：用户所采购的各类云产品
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBusinessCodeName() const;
 
                     /**
                      * 设置产品名称：用户所采购的各类云产品
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _businessCodeName 产品名称：用户所采购的各类云产品
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBusinessCodeName(const std::string& _businessCodeName);
@@ -349,18 +301,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子产品编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductCode 子产品编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProductCode() const;
 
                     /**
                      * 设置子产品编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _productCode 子产品编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProductCode(const std::string& _productCode);
@@ -374,18 +322,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子产品名称：用户采购的具体产品细分类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductCodeName 子产品名称：用户采购的具体产品细分类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProductCodeName() const;
 
                     /**
                      * 设置子产品名称：用户采购的具体产品细分类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _productCodeName 子产品名称：用户采购的具体产品细分类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProductCodeName(const std::string& _productCodeName);
@@ -399,18 +343,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地域ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionId 地域ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRegionId() const;
 
                     /**
                      * 设置地域ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _regionId 地域ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegionId(const uint64_t& _regionId);
@@ -424,18 +364,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地域名称：资源所属地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionName 地域名称：资源所属地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegionName() const;
 
                     /**
                      * 设置地域名称：资源所属地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _regionName 地域名称：资源所属地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegionName(const std::string& _regionName);
@@ -449,18 +385,14 @@ namespace TencentCloud
 
                     /**
                      * 获取可用区ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZoneId 可用区ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetZoneId() const;
 
                     /**
                      * 设置可用区ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zoneId 可用区ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZoneId(const uint64_t& _zoneId);
@@ -474,18 +406,14 @@ namespace TencentCloud
 
                     /**
                      * 获取可用区：资源所属可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZoneName 可用区：资源所属可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetZoneName() const;
 
                     /**
                      * 设置可用区：资源所属可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zoneName 可用区：资源所属可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZoneName(const std::string& _zoneName);
@@ -499,18 +427,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例类型编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceType 实例类型编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
                      * 设置实例类型编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceType 实例类型编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -524,18 +448,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例类型：购买的产品服务对应的实例类型，包括资源包、RI、SP、竞价实例。常规实例默认展示“-”
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceTypeName 实例类型：购买的产品服务对应的实例类型，包括资源包、RI、SP、竞价实例。常规实例默认展示“-”
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceTypeName() const;
 
                     /**
                      * 设置实例类型：购买的产品服务对应的实例类型，包括资源包、RI、SP、竞价实例。常规实例默认展示“-”
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceTypeName 实例类型：购买的产品服务对应的实例类型，包括资源包、RI、SP、竞价实例。常规实例默认展示“-”
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceTypeName(const std::string& _instanceTypeName);
@@ -549,18 +469,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源ID：不同产品因资源形态不同，资源内容不完全相同，如云服务器 CVM 为对应的实例 ID； 若该产品被分拆，则展示产品分拆后的分拆项 ID，如 COS 桶 ID，CDN 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceId 资源ID：不同产品因资源形态不同，资源内容不完全相同，如云服务器 CVM 为对应的实例 ID； 若该产品被分拆，则展示产品分拆后的分拆项 ID，如 COS 桶 ID，CDN 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置资源ID：不同产品因资源形态不同，资源内容不完全相同，如云服务器 CVM 为对应的实例 ID； 若该产品被分拆，则展示产品分拆后的分拆项 ID，如 COS 桶 ID，CDN 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceId 资源ID：不同产品因资源形态不同，资源内容不完全相同，如云服务器 CVM 为对应的实例 ID； 若该产品被分拆，则展示产品分拆后的分拆项 ID，如 COS 桶 ID，CDN 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -574,18 +490,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例名称：用户在控制台为资源设置的名称，如未设置默认为空；若该产品被分拆，则展示分拆产品分拆后的分拆项资源别名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceName 实例名称：用户在控制台为资源设置的名称，如未设置默认为空；若该产品被分拆，则展示分拆产品分拆后的分拆项资源别名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceName() const;
 
                     /**
                      * 设置实例名称：用户在控制台为资源设置的名称，如未设置默认为空；若该产品被分拆，则展示分拆产品分拆后的分拆项资源别名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceName 实例名称：用户在控制台为资源设置的名称，如未设置默认为空；若该产品被分拆，则展示分拆产品分拆后的分拆项资源别名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceName(const std::string& _resourceName);
@@ -599,18 +511,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分账标签：资源绑定的标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tag 分账标签：资源绑定的标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BillTag> GetTag() const;
 
                     /**
                      * 设置分账标签：资源绑定的标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tag 分账标签：资源绑定的标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTag(const std::vector<BillTag>& _tag);
@@ -624,18 +532,14 @@ namespace TencentCloud
 
                     /**
                      * 获取项目ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectId 项目ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetProjectId() const;
 
                     /**
                      * 设置项目ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _projectId 项目ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProjectId(const uint64_t& _projectId);
@@ -649,18 +553,14 @@ namespace TencentCloud
 
                     /**
                      * 获取项目名称：资源归属的项目，用户在控制台给资源自主分配项目，未分配则是默认项目
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectName 项目名称：资源归属的项目，用户在控制台给资源自主分配项目，未分配则是默认项目
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProjectName() const;
 
                     /**
                      * 设置项目名称：资源归属的项目，用户在控制台给资源自主分配项目，未分配则是默认项目
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _projectName 项目名称：资源归属的项目，用户在控制台给资源自主分配项目，未分配则是默认项目
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProjectName(const std::string& _projectName);
@@ -677,12 +577,10 @@ namespace TencentCloud
 0 - 分摊 
 1 - 归集 
 -1 -  未分配
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AllocationType 费用归集类型：费用来源类型，分摊、归集、未分配
 0 - 分摊 
 1 - 归集 
 -1 -  未分配
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAllocationType() const;
@@ -692,12 +590,10 @@ namespace TencentCloud
 0 - 分摊 
 1 - 归集 
 -1 -  未分配
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _allocationType 费用归集类型：费用来源类型，分摊、归集、未分配
 0 - 分摊 
 1 - 归集 
 -1 -  未分配
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAllocationType(const int64_t& _allocationType);
@@ -711,18 +607,14 @@ namespace TencentCloud
 
                     /**
                      * 获取组件原价：原价 = 组件刊例价 * 组件用量 * 使用时长（如客户享受一口价/合同价则默认不展示，退费类场景也默认不展示），指定价模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCost 组件原价：原价 = 组件刊例价 * 组件用量 * 使用时长（如客户享受一口价/合同价则默认不展示，退费类场景也默认不展示），指定价模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTotalCost() const;
 
                     /**
                      * 设置组件原价：原价 = 组件刊例价 * 组件用量 * 使用时长（如客户享受一口价/合同价则默认不展示，退费类场景也默认不展示），指定价模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalCost 组件原价：原价 = 组件刊例价 * 组件用量 * 使用时长（如客户享受一口价/合同价则默认不展示，退费类场景也默认不展示），指定价模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalCost(const std::string& _totalCost);
@@ -736,18 +628,14 @@ namespace TencentCloud
 
                     /**
                      * 获取预留实例抵扣时长：本产品或服务使用预留实例抵扣的使用时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiTimeSpan 预留实例抵扣时长：本产品或服务使用预留实例抵扣的使用时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRiTimeSpan() const;
 
                     /**
                      * 设置预留实例抵扣时长：本产品或服务使用预留实例抵扣的使用时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _riTimeSpan 预留实例抵扣时长：本产品或服务使用预留实例抵扣的使用时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRiTimeSpan(const std::string& _riTimeSpan);
@@ -761,18 +649,14 @@ namespace TencentCloud
 
                     /**
                      * 获取预留实例抵扣原价：本产品或服务使用预留实例抵扣的组件原价金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiCost 预留实例抵扣原价：本产品或服务使用预留实例抵扣的组件原价金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRiCost() const;
 
                     /**
                      * 设置预留实例抵扣原价：本产品或服务使用预留实例抵扣的组件原价金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _riCost 预留实例抵扣原价：本产品或服务使用预留实例抵扣的组件原价金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRiCost(const std::string& _riCost);
@@ -786,18 +670,14 @@ namespace TencentCloud
 
                     /**
                      * 获取优惠后总价：优惠后总价 =（原价 - 预留实例抵扣原价 - 节省计划抵扣原价）* 折扣率
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RealTotalCost 优惠后总价：优惠后总价 =（原价 - 预留实例抵扣原价 - 节省计划抵扣原价）* 折扣率
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRealTotalCost() const;
 
                     /**
                      * 设置优惠后总价：优惠后总价 =（原价 - 预留实例抵扣原价 - 节省计划抵扣原价）* 折扣率
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _realTotalCost 优惠后总价：优惠后总价 =（原价 - 预留实例抵扣原价 - 节省计划抵扣原价）* 折扣率
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRealTotalCost(const std::string& _realTotalCost);
@@ -811,18 +691,14 @@ namespace TencentCloud
 
                     /**
                      * 获取现金账户支出(元)：通过现金账户支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CashPayAmount 现金账户支出(元)：通过现金账户支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCashPayAmount() const;
 
                     /**
                      * 设置现金账户支出(元)：通过现金账户支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cashPayAmount 现金账户支出(元)：通过现金账户支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCashPayAmount(const std::string& _cashPayAmount);
@@ -836,18 +712,14 @@ namespace TencentCloud
 
                     /**
                      * 获取代金券支出(元)：使用各类优惠券（如代金券、现金券等）支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VoucherPayAmount 代金券支出(元)：使用各类优惠券（如代金券、现金券等）支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVoucherPayAmount() const;
 
                     /**
                      * 设置代金券支出(元)：使用各类优惠券（如代金券、现金券等）支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _voucherPayAmount 代金券支出(元)：使用各类优惠券（如代金券、现金券等）支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVoucherPayAmount(const std::string& _voucherPayAmount);
@@ -861,18 +733,14 @@ namespace TencentCloud
 
                     /**
                      * 获取赠送账户支出(元)：使用赠送金支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IncentivePayAmount 赠送账户支出(元)：使用赠送金支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIncentivePayAmount() const;
 
                     /**
                      * 设置赠送账户支出(元)：使用赠送金支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _incentivePayAmount 赠送账户支出(元)：使用赠送金支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIncentivePayAmount(const std::string& _incentivePayAmount);
@@ -886,18 +754,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分成账户支出(元)：通过分成金账户支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TransferPayAmount 分成账户支出(元)：通过分成金账户支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTransferPayAmount() const;
 
                     /**
                      * 设置分成账户支出(元)：通过分成金账户支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _transferPayAmount 分成账户支出(元)：通过分成金账户支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTransferPayAmount(const std::string& _transferPayAmount);
@@ -961,18 +825,14 @@ namespace TencentCloud
 
                     /**
                      * 获取开始使用时间：产品服务开始使用时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FeeBeginTime 开始使用时间：产品服务开始使用时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFeeBeginTime() const;
 
                     /**
                      * 设置开始使用时间：产品服务开始使用时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _feeBeginTime 开始使用时间：产品服务开始使用时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFeeBeginTime(const std::string& _feeBeginTime);
@@ -986,18 +846,14 @@ namespace TencentCloud
 
                     /**
                      * 获取结束使用时间：产品服务结束使用时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FeeEndTime 结束使用时间：产品服务结束使用时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFeeEndTime() const;
 
                     /**
                      * 设置结束使用时间：产品服务结束使用时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _feeEndTime 结束使用时间：产品服务结束使用时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFeeEndTime(const std::string& _feeEndTime);
@@ -1011,18 +867,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节省计划抵扣原价：节省计划抵扣原价 = 节省计划包抵扣面值 / 节省计划抵扣率
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SPCost 节省计划抵扣原价：节省计划抵扣原价 = 节省计划包抵扣面值 / 节省计划抵扣率
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSPCost() const;
 
                     /**
                      * 设置节省计划抵扣原价：节省计划抵扣原价 = 节省计划包抵扣面值 / 节省计划抵扣率
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sPCost 节省计划抵扣原价：节省计划抵扣原价 = 节省计划包抵扣面值 / 节省计划抵扣率
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSPCost(const std::string& _sPCost);
@@ -1036,18 +888,14 @@ namespace TencentCloud
 
                     /**
                      * 获取国内国际编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionType 国内国际编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegionType() const;
 
                     /**
                      * 设置国内国际编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _regionType 国内国际编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegionType(const std::string& _regionType);
@@ -1061,18 +909,14 @@ namespace TencentCloud
 
                     /**
                      * 获取国内国际：资源所属区域类型（国内、国际）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionTypeName 国内国际：资源所属区域类型（国内、国际）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegionTypeName() const;
 
                     /**
                      * 设置国内国际：资源所属区域类型（国内、国际）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _regionTypeName 国内国际：资源所属区域类型（国内、国际）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegionTypeName(const std::string& _regionTypeName);
@@ -1086,18 +930,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置描述：对应资源下各组件名称及用量（如组件为用量累加型计费则为合计用量）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ComponentConfig 配置描述：对应资源下各组件名称及用量（如组件为用量累加型计费则为合计用量）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetComponentConfig() const;
 
                     /**
                      * 设置配置描述：对应资源下各组件名称及用量（如组件为用量累加型计费则为合计用量）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _componentConfig 配置描述：对应资源下各组件名称及用量（如组件为用量累加型计费则为合计用量）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetComponentConfig(const std::string& _componentConfig);
@@ -1111,18 +951,14 @@ namespace TencentCloud
 
                     /**
                      * 获取SPDeduction
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SPDeduction SPDeduction
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSPDeduction() const;
 
                     /**
                      * 设置SPDeduction
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sPDeduction SPDeduction
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSPDeduction(const std::string& _sPDeduction);
@@ -1136,18 +972,14 @@ namespace TencentCloud
 
                     /**
                      * 获取账单月
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BillMonth 账单月
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBillMonth() const;
 
                     /**
                      * 设置账单月
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _billMonth 账单月
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBillMonth(const std::string& _billMonth);
@@ -1163,175 +995,150 @@ namespace TencentCloud
 
                     /**
                      * 分账单元唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_treeNodeUniqKey;
                     bool m_treeNodeUniqKeyHasBeenSet;
 
                     /**
                      * 分账单元名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_treeNodeUniqKeyName;
                     bool m_treeNodeUniqKeyNameHasBeenSet;
 
                     /**
                      * 日期：结算日期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_billDate;
                     bool m_billDateHasBeenSet;
 
                     /**
                      * 支付者 UIN：支付者的账号 ID，账号 ID 是用户在腾讯云的唯一账号标识
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_payerUin;
                     bool m_payerUinHasBeenSet;
 
                     /**
                      * 使用者 UIN：实际使用资源的账号 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ownerUin;
                     bool m_ownerUinHasBeenSet;
 
                     /**
                      * 操作者 UIN：操作者账号 ID（预付费资源下单或后付费操作开通资源账号的ID或者角色 ID）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_operateUin;
                     bool m_operateUinHasBeenSet;
 
                     /**
                      * 计费模式编码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
                      * 计费模式：资源的计费模式，区分为包年包月和按量计费
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_payModeName;
                     bool m_payModeNameHasBeenSet;
 
                     /**
                      * 交易类型编码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_actionType;
                     bool m_actionTypeHasBeenSet;
 
                     /**
                      * 交易类型：明细交易类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_actionTypeName;
                     bool m_actionTypeNameHasBeenSet;
 
                     /**
                      * 产品编码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_businessCode;
                     bool m_businessCodeHasBeenSet;
 
                     /**
                      * 产品名称：用户所采购的各类云产品
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_businessCodeName;
                     bool m_businessCodeNameHasBeenSet;
 
                     /**
                      * 子产品编码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_productCode;
                     bool m_productCodeHasBeenSet;
 
                     /**
                      * 子产品名称：用户采购的具体产品细分类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_productCodeName;
                     bool m_productCodeNameHasBeenSet;
 
                     /**
                      * 地域ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_regionId;
                     bool m_regionIdHasBeenSet;
 
                     /**
                      * 地域名称：资源所属地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_regionName;
                     bool m_regionNameHasBeenSet;
 
                     /**
                      * 可用区ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
                      * 可用区：资源所属可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zoneName;
                     bool m_zoneNameHasBeenSet;
 
                     /**
                      * 实例类型编码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**
                      * 实例类型：购买的产品服务对应的实例类型，包括资源包、RI、SP、竞价实例。常规实例默认展示“-”
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceTypeName;
                     bool m_instanceTypeNameHasBeenSet;
 
                     /**
                      * 资源ID：不同产品因资源形态不同，资源内容不完全相同，如云服务器 CVM 为对应的实例 ID； 若该产品被分拆，则展示产品分拆后的分拆项 ID，如 COS 桶 ID，CDN 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
                      * 实例名称：用户在控制台为资源设置的名称，如未设置默认为空；若该产品被分拆，则展示分拆产品分拆后的分拆项资源别名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceName;
                     bool m_resourceNameHasBeenSet;
 
                     /**
                      * 分账标签：资源绑定的标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BillTag> m_tag;
                     bool m_tagHasBeenSet;
 
                     /**
                      * 项目ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
                      * 项目名称：资源归属的项目，用户在控制台给资源自主分配项目，未分配则是默认项目
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_projectName;
                     bool m_projectNameHasBeenSet;
@@ -1341,63 +1148,54 @@ namespace TencentCloud
 0 - 分摊 
 1 - 归集 
 -1 -  未分配
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_allocationType;
                     bool m_allocationTypeHasBeenSet;
 
                     /**
                      * 组件原价：原价 = 组件刊例价 * 组件用量 * 使用时长（如客户享受一口价/合同价则默认不展示，退费类场景也默认不展示），指定价模式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_totalCost;
                     bool m_totalCostHasBeenSet;
 
                     /**
                      * 预留实例抵扣时长：本产品或服务使用预留实例抵扣的使用时长
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_riTimeSpan;
                     bool m_riTimeSpanHasBeenSet;
 
                     /**
                      * 预留实例抵扣原价：本产品或服务使用预留实例抵扣的组件原价金额
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_riCost;
                     bool m_riCostHasBeenSet;
 
                     /**
                      * 优惠后总价：优惠后总价 =（原价 - 预留实例抵扣原价 - 节省计划抵扣原价）* 折扣率
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_realTotalCost;
                     bool m_realTotalCostHasBeenSet;
 
                     /**
                      * 现金账户支出(元)：通过现金账户支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cashPayAmount;
                     bool m_cashPayAmountHasBeenSet;
 
                     /**
                      * 代金券支出(元)：使用各类优惠券（如代金券、现金券等）支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_voucherPayAmount;
                     bool m_voucherPayAmountHasBeenSet;
 
                     /**
                      * 赠送账户支出(元)：使用赠送金支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_incentivePayAmount;
                     bool m_incentivePayAmountHasBeenSet;
 
                     /**
                      * 分成账户支出(元)：通过分成金账户支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_transferPayAmount;
                     bool m_transferPayAmountHasBeenSet;
@@ -1418,56 +1216,48 @@ namespace TencentCloud
 
                     /**
                      * 开始使用时间：产品服务开始使用时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_feeBeginTime;
                     bool m_feeBeginTimeHasBeenSet;
 
                     /**
                      * 结束使用时间：产品服务结束使用时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_feeEndTime;
                     bool m_feeEndTimeHasBeenSet;
 
                     /**
                      * 节省计划抵扣原价：节省计划抵扣原价 = 节省计划包抵扣面值 / 节省计划抵扣率
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sPCost;
                     bool m_sPCostHasBeenSet;
 
                     /**
                      * 国内国际编码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_regionType;
                     bool m_regionTypeHasBeenSet;
 
                     /**
                      * 国内国际：资源所属区域类型（国内、国际）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_regionTypeName;
                     bool m_regionTypeNameHasBeenSet;
 
                     /**
                      * 配置描述：对应资源下各组件名称及用量（如组件为用量累加型计费则为合计用量）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_componentConfig;
                     bool m_componentConfigHasBeenSet;
 
                     /**
                      * SPDeduction
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sPDeduction;
                     bool m_sPDeductionHasBeenSet;
 
                     /**
                      * 账单月
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_billMonth;
                     bool m_billMonthHasBeenSet;

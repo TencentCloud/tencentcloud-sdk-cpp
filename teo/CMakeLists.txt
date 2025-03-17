@@ -111,6 +111,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/DownloadL4LogsRequest.h
   include/tencentcloud/teo/v20220901/model/StatusCodeCacheParam.h
   include/tencentcloud/teo/v20220901/model/ModifyZoneSettingRequest.h
+  include/tencentcloud/teo/v20220901/model/DetectLengthLimitRule.h
   include/tencentcloud/teo/v20220901/model/OriginGroupHealthStatus.h
   include/tencentcloud/teo/v20220901/model/ModifyDnsRecordsResponse.h
   include/tencentcloud/teo/v20220901/model/BillingDataFilter.h
@@ -218,6 +219,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/DescribeHostsSettingRequest.h
   include/tencentcloud/teo/v20220901/model/DestroyPlanRequest.h
   include/tencentcloud/teo/v20220901/model/CreatePlanRequest.h
+  include/tencentcloud/teo/v20220901/model/DetectLengthLimitConfig.h
   include/tencentcloud/teo/v20220901/model/DescribeFunctionRuntimeEnvironmentRequest.h
   include/tencentcloud/teo/v20220901/model/IPGroup.h
   include/tencentcloud/teo/v20220901/model/DescribeDnsRecordsRequest.h
@@ -445,6 +447,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/DescribeAvailablePlansRequest.h
   include/tencentcloud/teo/v20220901/model/DnsVerification.h
   include/tencentcloud/teo/v20220901/model/AlgDetectSession.h
+  include/tencentcloud/teo/v20220901/model/ModifyZoneStatusResponse.h
   include/tencentcloud/teo/v20220901/model/DeleteContentIdentifierRequest.h
   include/tencentcloud/teo/v20220901/model/CreateContentIdentifierRequest.h
   include/tencentcloud/teo/v20220901/model/OriginProtectionInfo.h
@@ -461,7 +464,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/Quic.h
   include/tencentcloud/teo/v20220901/model/CreateCLSIndexRequest.h
   include/tencentcloud/teo/v20220901/model/DescribeRulesRequest.h
-  include/tencentcloud/teo/v20220901/model/DescribeContentQuotaResponse.h
+  include/tencentcloud/teo/v20220901/model/DetectLengthLimitCondition.h
   include/tencentcloud/teo/v20220901/model/ModifyZoneSettingResponse.h
   include/tencentcloud/teo/v20220901/model/DownloadL7LogsResponse.h
   include/tencentcloud/teo/v20220901/model/AccelerationDomain.h
@@ -528,7 +531,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/Function.h
   include/tencentcloud/teo/v20220901/model/Quota.h
   include/tencentcloud/teo/v20220901/model/CheckCnameStatusRequest.h
-  include/tencentcloud/teo/v20220901/model/ModifyZoneStatusResponse.h
+  include/tencentcloud/teo/v20220901/model/DescribeContentQuotaResponse.h
   include/tencentcloud/teo/v20220901/model/DescribeSecurityIPGroupResponse.h
   include/tencentcloud/teo/v20220901/model/UpgradePlanRequest.h
   include/tencentcloud/teo/v20220901/model/CreatePurgeTaskRequest.h
@@ -658,6 +661,7 @@ set(teo_src
   src/v20220901/model/DownloadL4LogsRequest.cpp
   src/v20220901/model/StatusCodeCacheParam.cpp
   src/v20220901/model/ModifyZoneSettingRequest.cpp
+  src/v20220901/model/DetectLengthLimitRule.cpp
   src/v20220901/model/OriginGroupHealthStatus.cpp
   src/v20220901/model/ModifyDnsRecordsResponse.cpp
   src/v20220901/model/BillingDataFilter.cpp
@@ -765,6 +769,7 @@ set(teo_src
   src/v20220901/model/DescribeHostsSettingRequest.cpp
   src/v20220901/model/DestroyPlanRequest.cpp
   src/v20220901/model/CreatePlanRequest.cpp
+  src/v20220901/model/DetectLengthLimitConfig.cpp
   src/v20220901/model/DescribeFunctionRuntimeEnvironmentRequest.cpp
   src/v20220901/model/IPGroup.cpp
   src/v20220901/model/DescribeDnsRecordsRequest.cpp
@@ -992,6 +997,7 @@ set(teo_src
   src/v20220901/model/DescribeAvailablePlansRequest.cpp
   src/v20220901/model/DnsVerification.cpp
   src/v20220901/model/AlgDetectSession.cpp
+  src/v20220901/model/ModifyZoneStatusResponse.cpp
   src/v20220901/model/DeleteContentIdentifierRequest.cpp
   src/v20220901/model/CreateContentIdentifierRequest.cpp
   src/v20220901/model/OriginProtectionInfo.cpp
@@ -1008,7 +1014,7 @@ set(teo_src
   src/v20220901/model/Quic.cpp
   src/v20220901/model/CreateCLSIndexRequest.cpp
   src/v20220901/model/DescribeRulesRequest.cpp
-  src/v20220901/model/DescribeContentQuotaResponse.cpp
+  src/v20220901/model/DetectLengthLimitCondition.cpp
   src/v20220901/model/ModifyZoneSettingResponse.cpp
   src/v20220901/model/DownloadL7LogsResponse.cpp
   src/v20220901/model/AccelerationDomain.cpp
@@ -1075,7 +1081,7 @@ set(teo_src
   src/v20220901/model/Function.cpp
   src/v20220901/model/Quota.cpp
   src/v20220901/model/CheckCnameStatusRequest.cpp
-  src/v20220901/model/ModifyZoneStatusResponse.cpp
+  src/v20220901/model/DescribeContentQuotaResponse.cpp
   src/v20220901/model/DescribeSecurityIPGroupResponse.cpp
   src/v20220901/model/UpgradePlanRequest.cpp
   src/v20220901/model/CreatePurgeTaskRequest.cpp

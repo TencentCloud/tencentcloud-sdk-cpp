@@ -405,18 +405,14 @@ namespace TencentCloud
 
                     /**
                      * 获取样例Sql
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExampleSql 样例Sql
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExampleSql() const;
 
                     /**
                      * 设置样例Sql
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _exampleSql 样例Sql
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExampleSql(const std::string& _exampleSql);
@@ -555,7 +551,6 @@ namespace TencentCloud
 
                     /**
                      * 样例Sql
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_exampleSql;
                     bool m_exampleSqlHasBeenSet;

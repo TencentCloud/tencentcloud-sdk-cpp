@@ -27,6 +27,7 @@
 #include <tencentcloud/ess/v20201111/model/CreateFlowOption.h>
 #include <tencentcloud/ess/v20201111/model/CcInfo.h>
 #include <tencentcloud/ess/v20201111/model/Agent.h>
+#include <tencentcloud/ess/v20201111/model/SignComponentConfig.h>
 
 
 namespace TencentCloud
@@ -628,6 +629,35 @@ namespace TencentCloud
                      */
                     bool FlowDisplayTypeHasBeenSet() const;
 
+                    /**
+                     * 获取签署控件的配置信息，用在嵌入式发起的页面配置，包括  
+
+- 签署控件 是否默认展示日期.
+                     * @return SignComponentConfig 签署控件的配置信息，用在嵌入式发起的页面配置，包括  
+
+- 签署控件 是否默认展示日期.
+                     * 
+                     */
+                    SignComponentConfig GetSignComponentConfig() const;
+
+                    /**
+                     * 设置签署控件的配置信息，用在嵌入式发起的页面配置，包括  
+
+- 签署控件 是否默认展示日期.
+                     * @param _signComponentConfig 签署控件的配置信息，用在嵌入式发起的页面配置，包括  
+
+- 签署控件 是否默认展示日期.
+                     * 
+                     */
+                    void SetSignComponentConfig(const SignComponentConfig& _signComponentConfig);
+
+                    /**
+                     * 判断参数 SignComponentConfig 是否已赋值
+                     * @return SignComponentConfig 是否已赋值
+                     * 
+                     */
+                    bool SignComponentConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -789,6 +819,14 @@ namespace TencentCloud
                      */
                     int64_t m_flowDisplayType;
                     bool m_flowDisplayTypeHasBeenSet;
+
+                    /**
+                     * 签署控件的配置信息，用在嵌入式发起的页面配置，包括  
+
+- 签署控件 是否默认展示日期.
+                     */
+                    SignComponentConfig m_signComponentConfig;
+                    bool m_signComponentConfigHasBeenSet;
 
                 };
             }

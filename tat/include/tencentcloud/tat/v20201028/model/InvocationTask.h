@@ -366,14 +366,26 @@ namespace TencentCloud
 
                     /**
                      * 获取调用来源。
+
+- USER：来源于用户调用。
+- INVOKER：来源于定时执行。
                      * @return InvocationSource 调用来源。
+
+- USER：来源于用户调用。
+- INVOKER：来源于定时执行。
                      * 
                      */
                     std::string GetInvocationSource() const;
 
                     /**
                      * 设置调用来源。
+
+- USER：来源于用户调用。
+- INVOKER：来源于定时执行。
                      * @param _invocationSource 调用来源。
+
+- USER：来源于用户调用。
+- INVOKER：来源于定时执行。
                      * 
                      */
                     void SetInvocationSource(const std::string& _invocationSource);
@@ -477,6 +489,9 @@ namespace TencentCloud
 
                     /**
                      * 调用来源。
+
+- USER：来源于用户调用。
+- INVOKER：来源于定时执行。
                      */
                     std::string m_invocationSource;
                     bool m_invocationSourceHasBeenSet;

@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取已创建exchange数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UsedExchange 已创建exchange数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetUsedExchange() const;
 
                     /**
                      * 设置已创建exchange数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _usedExchange 已创建exchange数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUsedExchange(const int64_t& _usedExchange);
@@ -102,7 +98,6 @@ namespace TencentCloud
 
                     /**
                      * 已创建exchange数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_usedExchange;
                     bool m_usedExchangeHasBeenSet;

@@ -91,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日期明细金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeDetail 日期明细金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AnalyseTimeDetail> GetTimeDetail() const;
 
                     /**
                      * 设置日期明细金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timeDetail 日期明细金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimeDetail(const std::vector<AnalyseTimeDetail>& _timeDetail);
@@ -130,7 +126,6 @@ namespace TencentCloud
 
                     /**
                      * 日期明细金额
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AnalyseTimeDetail> m_timeDetail;
                     bool m_timeDetailHasBeenSet;

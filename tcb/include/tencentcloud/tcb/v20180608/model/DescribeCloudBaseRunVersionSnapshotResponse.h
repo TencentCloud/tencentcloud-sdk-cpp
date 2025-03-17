@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取版本历史
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Snapshots 版本历史
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CloudRunServiceSimpleVersionSnapshot> GetSnapshots() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 版本历史
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CloudRunServiceSimpleVersionSnapshot> m_snapshots;
                     bool m_snapshotsHasBeenSet;

@@ -2448,3 +2448,46 @@ TrocketClient::ResendDeadLetterMessageOutcomeCallable TrocketClient::ResendDeadL
     return task->get_future();
 }
 
+TrocketClient::ResetConsumerGroupOffsetOutcome TrocketClient::ResetConsumerGroupOffset(const ResetConsumerGroupOffsetRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResetConsumerGroupOffset");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResetConsumerGroupOffsetResponse rsp = ResetConsumerGroupOffsetResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResetConsumerGroupOffsetOutcome(rsp);
+        else
+            return ResetConsumerGroupOffsetOutcome(o.GetError());
+    }
+    else
+    {
+        return ResetConsumerGroupOffsetOutcome(outcome.GetError());
+    }
+}
+
+void TrocketClient::ResetConsumerGroupOffsetAsync(const ResetConsumerGroupOffsetRequest& request, const ResetConsumerGroupOffsetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ResetConsumerGroupOffset(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrocketClient::ResetConsumerGroupOffsetOutcomeCallable TrocketClient::ResetConsumerGroupOffsetCallable(const ResetConsumerGroupOffsetRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ResetConsumerGroupOffsetOutcome()>>(
+        [this, request]()
+        {
+            return this->ResetConsumerGroupOffset(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

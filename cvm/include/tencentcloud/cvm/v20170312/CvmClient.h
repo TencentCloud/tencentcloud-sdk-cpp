@@ -97,6 +97,8 @@
 #include <tencentcloud/cvm/v20170312/model/DescribeInstancesResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeInstancesActionTimerRequest.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeInstancesActionTimerResponse.h>
+#include <tencentcloud/cvm/v20170312/model/DescribeInstancesAttributesRequest.h>
+#include <tencentcloud/cvm/v20170312/model/DescribeInstancesAttributesResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeInstancesModificationRequest.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeInstancesModificationResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeInstancesOperationLimitRequest.h>
@@ -350,6 +352,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInstancesActionTimerResponse> DescribeInstancesActionTimerOutcome;
                 typedef std::future<DescribeInstancesActionTimerOutcome> DescribeInstancesActionTimerOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::DescribeInstancesActionTimerRequest&, DescribeInstancesActionTimerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesActionTimerAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstancesAttributesResponse> DescribeInstancesAttributesOutcome;
+                typedef std::future<DescribeInstancesAttributesOutcome> DescribeInstancesAttributesOutcomeCallable;
+                typedef std::function<void(const CvmClient*, const Model::DescribeInstancesAttributesRequest&, DescribeInstancesAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesAttributesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstancesModificationResponse> DescribeInstancesModificationOutcome;
                 typedef std::future<DescribeInstancesModificationOutcome> DescribeInstancesModificationOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::DescribeInstancesModificationRequest&, DescribeInstancesModificationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesModificationAsyncHandler;
@@ -934,6 +939,15 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
                 DescribeInstancesActionTimerOutcome DescribeInstancesActionTimer(const Model::DescribeInstancesActionTimerRequest &request);
                 void DescribeInstancesActionTimerAsync(const Model::DescribeInstancesActionTimerRequest& request, const DescribeInstancesActionTimerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInstancesActionTimerOutcomeCallable DescribeInstancesActionTimerCallable(const Model::DescribeInstancesActionTimerRequest& request);
+
+                /**
+                 *获取指定实例的属性，目前支持查询实例自定义数据User-Data。
+                 * @param req DescribeInstancesAttributesRequest
+                 * @return DescribeInstancesAttributesOutcome
+                 */
+                DescribeInstancesAttributesOutcome DescribeInstancesAttributes(const Model::DescribeInstancesAttributesRequest &request);
+                void DescribeInstancesAttributesAsync(const Model::DescribeInstancesAttributesRequest& request, const DescribeInstancesAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstancesAttributesOutcomeCallable DescribeInstancesAttributesCallable(const Model::DescribeInstancesAttributesRequest& request);
 
                 /**
                  *本接口 (DescribeInstancesModification) 用于查询指定实例支持调整的机型配置。

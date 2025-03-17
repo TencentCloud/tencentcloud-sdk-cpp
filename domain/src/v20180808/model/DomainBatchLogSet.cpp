@@ -27,7 +27,9 @@ DomainBatchLogSet::DomainBatchLogSet() :
     m_createdOnHasBeenSet(false),
     m_successHasBeenSet(false),
     m_doingHasBeenSet(false),
-    m_failedHasBeenSet(false)
+    m_failedHasBeenSet(false),
+    m_payStatusHasBeenSet(false),
+    m_bigDealIdHasBeenSet(false)
 {
 }
 
@@ -106,6 +108,26 @@ CoreInternalOutcome DomainBatchLogSet::Deserialize(const rapidjson::Value &value
         m_failedHasBeenSet = true;
     }
 
+    if (value.HasMember("PayStatus") && !value["PayStatus"].IsNull())
+    {
+        if (!value["PayStatus"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainBatchLogSet.PayStatus` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_payStatus = value["PayStatus"].GetBool();
+        m_payStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("BigDealId") && !value["BigDealId"].IsNull())
+    {
+        if (!value["BigDealId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainBatchLogSet.BigDealId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_bigDealId = string(value["BigDealId"].GetString());
+        m_bigDealIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +189,22 @@ void DomainBatchLogSet::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "Failed";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_failed, allocator);
+    }
+
+    if (m_payStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PayStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_payStatus, allocator);
+    }
+
+    if (m_bigDealIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BigDealId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_bigDealId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +320,37 @@ void DomainBatchLogSet::SetFailed(const int64_t& _failed)
 bool DomainBatchLogSet::FailedHasBeenSet() const
 {
     return m_failedHasBeenSet;
+}
+
+bool DomainBatchLogSet::GetPayStatus() const
+{
+    return m_payStatus;
+}
+
+void DomainBatchLogSet::SetPayStatus(const bool& _payStatus)
+{
+    m_payStatus = _payStatus;
+    m_payStatusHasBeenSet = true;
+}
+
+bool DomainBatchLogSet::PayStatusHasBeenSet() const
+{
+    return m_payStatusHasBeenSet;
+}
+
+string DomainBatchLogSet::GetBigDealId() const
+{
+    return m_bigDealId;
+}
+
+void DomainBatchLogSet::SetBigDealId(const string& _bigDealId)
+{
+    m_bigDealId = _bigDealId;
+    m_bigDealIdHasBeenSet = true;
+}
+
+bool DomainBatchLogSet::BigDealIdHasBeenSet() const
+{
+    return m_bigDealIdHasBeenSet;
 }
 

@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取集群状态(creating/succ)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterStatus 集群状态(creating/succ)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterStatus() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取虚拟集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VirtualClusterId 虚拟集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVirtualClusterId() const;
@@ -78,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取vpc id信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId vpc id信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcId() const;
@@ -94,9 +88,7 @@ namespace TencentCloud
 
                     /**
                      * 获取地域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 地域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegion() const;
@@ -128,28 +120,24 @@ namespace TencentCloud
 
                     /**
                      * 集群状态(creating/succ)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterStatus;
                     bool m_clusterStatusHasBeenSet;
 
                     /**
                      * 虚拟集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_virtualClusterId;
                     bool m_virtualClusterIdHasBeenSet;
 
                     /**
                      * vpc id信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
                      * 地域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;

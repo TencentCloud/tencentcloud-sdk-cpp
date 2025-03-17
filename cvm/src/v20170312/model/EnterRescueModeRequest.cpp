@@ -26,7 +26,8 @@ EnterRescueModeRequest::EnterRescueModeRequest() :
     m_instanceIdHasBeenSet(false),
     m_passwordHasBeenSet(false),
     m_usernameHasBeenSet(false),
-    m_forceStopHasBeenSet(false)
+    m_forceStopHasBeenSet(false),
+    m_stopTypeHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string EnterRescueModeRequest::ToJsonString() const
         string key = "ForceStop";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_forceStop, allocator);
+    }
+
+    if (m_stopTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StopType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_stopType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void EnterRescueModeRequest::SetForceStop(const bool& _forceStop)
 bool EnterRescueModeRequest::ForceStopHasBeenSet() const
 {
     return m_forceStopHasBeenSet;
+}
+
+string EnterRescueModeRequest::GetStopType() const
+{
+    return m_stopType;
+}
+
+void EnterRescueModeRequest::SetStopType(const string& _stopType)
+{
+    m_stopType = _stopType;
+    m_stopTypeHasBeenSet = true;
+}
+
+bool EnterRescueModeRequest::StopTypeHasBeenSet() const
+{
+    return m_stopTypeHasBeenSet;
 }
 
 
