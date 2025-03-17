@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取Binlog列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Binlogs Binlog列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BinlogItem> GetBinlogs() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * Binlog列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BinlogItem> m_binlogs;
                     bool m_binlogsHasBeenSet;

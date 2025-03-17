@@ -48,18 +48,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取1
+                     * 获取任务列表详情
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Rows 1
+                     * @return Rows 任务列表详情
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TaskInfoVo> GetRows() const;
 
                     /**
-                     * 设置1
+                     * 设置任务列表详情
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _rows 1
+                     * @param _rows 任务列表详情
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -73,18 +73,18 @@ namespace TencentCloud
                     bool RowsHasBeenSet() const;
 
                     /**
-                     * 获取1
+                     * 获取页码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PageNum 1
+                     * @return PageNum 页码
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPageNum() const;
 
                     /**
-                     * 设置1
+                     * 设置页码
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _pageNum 1
+                     * @param _pageNum 页码
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -98,18 +98,18 @@ namespace TencentCloud
                     bool PageNumHasBeenSet() const;
 
                     /**
-                     * 获取1
+                     * 获取每页条数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PageSize 1
+                     * @return PageSize 每页条数
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPageSize() const;
 
                     /**
-                     * 设置1
+                     * 设置每页条数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _pageSize 1
+                     * @param _pageSize 每页条数
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -123,18 +123,18 @@ namespace TencentCloud
                     bool PageSizeHasBeenSet() const;
 
                     /**
-                     * 获取1
+                     * 获取总记录数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TotalCount 1
+                     * @return TotalCount 总记录数
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
-                     * 设置1
+                     * 设置总记录数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _totalCount 1
+                     * @param _totalCount 总记录数
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -148,18 +148,18 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取1
+                     * 获取总页数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TotalPageNumber 1
+                     * @return TotalPageNumber 总页数
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTotalPageNumber() const;
 
                     /**
-                     * 设置1
+                     * 设置总页数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _totalPageNumber 1
+                     * @param _totalPageNumber 总页数
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -175,35 +175,35 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 1
+                     * 任务列表详情
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TaskInfoVo> m_rows;
                     bool m_rowsHasBeenSet;
 
                     /**
-                     * 1
+                     * 页码
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_pageNum;
                     bool m_pageNumHasBeenSet;
 
                     /**
-                     * 1
+                     * 每页条数
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
 
                     /**
-                     * 1
+                     * 总记录数
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 1
+                     * 总页数
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_totalPageNumber;

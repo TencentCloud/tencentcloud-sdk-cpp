@@ -238,18 +238,14 @@ namespace TencentCloud
 
                     /**
                      * 获取执行开始时间(距离0点的秒数)	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaintainStartTime 执行开始时间(距离0点的秒数)	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaintainStartTime() const;
 
                     /**
                      * 设置执行开始时间(距离0点的秒数)	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maintainStartTime 执行开始时间(距离0点的秒数)	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaintainStartTime(const int64_t& _maintainStartTime);
@@ -263,18 +259,14 @@ namespace TencentCloud
 
                     /**
                      * 获取持续的时间(单位：秒)	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaintainDuration 持续的时间(单位：秒)	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaintainDuration() const;
 
                     /**
                      * 设置持续的时间(单位：秒)	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maintainDuration 持续的时间(单位：秒)	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaintainDuration(const int64_t& _maintainDuration);
@@ -288,18 +280,14 @@ namespace TencentCloud
 
                     /**
                      * 获取可以执行的时间，枚举值：["Mon","Tue","Wed","Thu","Fri", "Sat", "Sun"]
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaintainWeekDays 可以执行的时间，枚举值：["Mon","Tue","Wed","Thu","Fri", "Sat", "Sun"]
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetMaintainWeekDays() const;
 
                     /**
                      * 设置可以执行的时间，枚举值：["Mon","Tue","Wed","Thu","Fri", "Sat", "Sun"]
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maintainWeekDays 可以执行的时间，枚举值：["Mon","Tue","Wed","Thu","Fri", "Sat", "Sun"]
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaintainWeekDays(const std::vector<std::string>& _maintainWeekDays);
@@ -313,18 +301,14 @@ namespace TencentCloud
 
                     /**
                      * 获取serverless实例子状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServerlessStatus serverless实例子状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetServerlessStatus() const;
 
                     /**
                      * 设置serverless实例子状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serverlessStatus serverless实例子状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServerlessStatus(const std::string& _serverlessStatus);
@@ -338,18 +322,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例任务信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceTasks 实例任务信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ObjectTask> GetInstanceTasks() const;
 
                     /**
                      * 设置实例任务信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceTasks 实例任务信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceTasks(const std::vector<ObjectTask>& _instanceTasks);
@@ -363,18 +343,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例机器类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceDeviceType 实例机器类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceDeviceType() const;
 
                     /**
                      * 设置实例机器类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceDeviceType 实例机器类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceDeviceType(const std::string& _instanceDeviceType);
@@ -388,18 +364,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例存储类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceStorageType 实例存储类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceStorageType() const;
 
                     /**
                      * 设置实例存储类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceStorageType 实例存储类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceStorageType(const std::string& _instanceStorageType);
@@ -490,49 +462,42 @@ namespace TencentCloud
 
                     /**
                      * 执行开始时间(距离0点的秒数)	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maintainStartTime;
                     bool m_maintainStartTimeHasBeenSet;
 
                     /**
                      * 持续的时间(单位：秒)	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maintainDuration;
                     bool m_maintainDurationHasBeenSet;
 
                     /**
                      * 可以执行的时间，枚举值：["Mon","Tue","Wed","Thu","Fri", "Sat", "Sun"]
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_maintainWeekDays;
                     bool m_maintainWeekDaysHasBeenSet;
 
                     /**
                      * serverless实例子状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serverlessStatus;
                     bool m_serverlessStatusHasBeenSet;
 
                     /**
                      * 实例任务信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ObjectTask> m_instanceTasks;
                     bool m_instanceTasksHasBeenSet;
 
                     /**
                      * 实例机器类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceDeviceType;
                     bool m_instanceDeviceTypeHasBeenSet;
 
                     /**
                      * 实例存储类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceStorageType;
                     bool m_instanceStorageTypeHasBeenSet;

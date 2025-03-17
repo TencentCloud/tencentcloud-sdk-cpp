@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取live实例列表,如取不到值返回空数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceList live实例列表,如取不到值返回空数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<LiveInstanceDetail> GetInstanceList() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * live实例列表,如取不到值返回空数组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<LiveInstanceDetail> m_instanceList;
                     bool m_instanceListHasBeenSet;

@@ -74,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取证书操作日志列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OperateLogs 证书操作日志列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<OperationLog> GetOperateLogs() const;
@@ -104,7 +102,6 @@ namespace TencentCloud
 
                     /**
                      * 证书操作日志列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<OperationLog> m_operateLogs;
                     bool m_operateLogsHasBeenSet;

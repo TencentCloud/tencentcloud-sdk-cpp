@@ -198,18 +198,14 @@ namespace TencentCloud
 
                     /**
                      * 获取回档到serverlessls集群时最小CPU
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MinCpu 回档到serverlessls集群时最小CPU
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMinCpu() const;
 
                     /**
                      * 设置回档到serverlessls集群时最小CPU
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _minCpu 回档到serverlessls集群时最小CPU
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMinCpu(const int64_t& _minCpu);
@@ -223,18 +219,14 @@ namespace TencentCloud
 
                     /**
                      * 获取回档到serverlessls集群时最大CPU
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxCpu 回档到serverlessls集群时最大CPU
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxCpu() const;
 
                     /**
                      * 设置回档到serverlessls集群时最大CPU
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxCpu 回档到serverlessls集群时最大CPU
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxCpu(const int64_t& _maxCpu);
@@ -248,18 +240,14 @@ namespace TencentCloud
 
                     /**
                      * 获取快照ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SnapShotId 快照ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetSnapShotId() const;
 
                     /**
                      * 设置快照ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _snapShotId 快照ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSnapShotId(const uint64_t& _snapShotId);
@@ -323,18 +311,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备份文件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackupFileName 备份文件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBackupFileName() const;
 
                     /**
                      * 设置备份文件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _backupFileName 备份文件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBackupFileName(const std::string& _backupFileName);
@@ -348,18 +332,14 @@ namespace TencentCloud
 
                     /**
                      * 获取回档进程
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RollbackProcess 回档进程
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RollbackProcessInfo GetRollbackProcess() const;
 
                     /**
                      * 设置回档进程
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rollbackProcess 回档进程
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRollbackProcess(const RollbackProcessInfo& _rollbackProcess);
@@ -417,21 +397,18 @@ namespace TencentCloud
 
                     /**
                      * 回档到serverlessls集群时最小CPU
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_minCpu;
                     bool m_minCpuHasBeenSet;
 
                     /**
                      * 回档到serverlessls集群时最大CPU
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxCpu;
                     bool m_maxCpuHasBeenSet;
 
                     /**
                      * 快照ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_snapShotId;
                     bool m_snapShotIdHasBeenSet;
@@ -452,14 +429,12 @@ namespace TencentCloud
 
                     /**
                      * 备份文件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_backupFileName;
                     bool m_backupFileNameHasBeenSet;
 
                     /**
                      * 回档进程
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RollbackProcessInfo m_rollbackProcess;
                     bool m_rollbackProcessHasBeenSet;

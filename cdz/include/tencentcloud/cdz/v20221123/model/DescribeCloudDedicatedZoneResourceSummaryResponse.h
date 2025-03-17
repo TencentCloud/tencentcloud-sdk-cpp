@@ -47,9 +47,7 @@ namespace TencentCloud
 
                     /**
                      * 获取资源水位详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceSummarySet 资源水位详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CloudDedicatedZoneResourceSummaryInfo> GetResourceSummarySet() const;
@@ -63,9 +61,7 @@ namespace TencentCloud
 
                     /**
                      * 获取资源水位扩展信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExtraInfo 资源水位扩展信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ExtraInfo GetExtraInfo() const;
@@ -81,14 +77,12 @@ namespace TencentCloud
 
                     /**
                      * 资源水位详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CloudDedicatedZoneResourceSummaryInfo> m_resourceSummarySet;
                     bool m_resourceSummarySetHasBeenSet;
 
                     /**
                      * 资源水位扩展信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ExtraInfo m_extraInfo;
                     bool m_extraInfoHasBeenSet;

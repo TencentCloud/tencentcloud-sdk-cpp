@@ -217,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地域库存信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZoneStockInfos 地域库存信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ZoneStockInfo> GetZoneStockInfos() const;
 
                     /**
                      * 设置地域库存信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zoneStockInfos 地域库存信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZoneStockInfos(const std::vector<ZoneStockInfo>& _zoneStockInfos);
@@ -242,18 +238,14 @@ namespace TencentCloud
 
                     /**
                      * 获取库存数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StockCount 库存数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStockCount() const;
 
                     /**
                      * 设置库存数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _stockCount 库存数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStockCount(const int64_t& _stockCount);
@@ -317,14 +309,12 @@ namespace TencentCloud
 
                     /**
                      * 地域库存信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ZoneStockInfo> m_zoneStockInfos;
                     bool m_zoneStockInfosHasBeenSet;
 
                     /**
                      * 库存数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_stockCount;
                     bool m_stockCountHasBeenSet;

@@ -57,9 +57,7 @@ namespace TencentCloud
 
                     /**
                      * 获取关联clb资源详情	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CLB 关联clb资源详情	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ClbInstanceList> GetCLB() const;
@@ -73,9 +71,7 @@ namespace TencentCloud
 
                     /**
                      * 获取关联cdn资源详情	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CDN 关联cdn资源详情	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CdnInstanceList> GetCDN() const;
@@ -89,9 +85,7 @@ namespace TencentCloud
 
                     /**
                      * 获取关联waf资源详情	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WAF 关联waf资源详情	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<WafInstanceList> GetWAF() const;
@@ -105,9 +99,7 @@ namespace TencentCloud
 
                     /**
                      * 获取关联ddos资源详情	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DDOS 关联ddos资源详情	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DdosInstanceList> GetDDOS() const;
@@ -121,9 +113,7 @@ namespace TencentCloud
 
                     /**
                      * 获取关联live资源详情	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LIVE 关联live资源详情	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<LiveInstanceList> GetLIVE() const;
@@ -137,9 +127,7 @@ namespace TencentCloud
 
                     /**
                      * 获取关联vod资源详情	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VOD 关联vod资源详情	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<VODInstanceList> GetVOD() const;
@@ -153,9 +141,7 @@ namespace TencentCloud
 
                     /**
                      * 获取关联tke资源详情	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TKE 关联tke资源详情	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TkeInstanceList> GetTKE() const;
@@ -169,9 +155,7 @@ namespace TencentCloud
 
                     /**
                      * 获取关联apigateway资源详情	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return APIGATEWAY 关联apigateway资源详情	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ApiGatewayInstanceList> GetAPIGATEWAY() const;
@@ -185,9 +169,7 @@ namespace TencentCloud
 
                     /**
                      * 获取关联tcb资源详情	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TCB 关联tcb资源详情	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TCBInstanceList> GetTCB() const;
@@ -201,9 +183,7 @@ namespace TencentCloud
 
                     /**
                      * 获取关联teo资源详情	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TEO 关联teo资源详情	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TeoInstanceList> GetTEO() const;
@@ -245,9 +225,7 @@ namespace TencentCloud
 
                     /**
                      * 获取关联tse资源详情	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TSE 关联tse资源详情	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TSEInstanceList> GetTSE() const;
@@ -261,9 +239,7 @@ namespace TencentCloud
 
                     /**
                      * 获取关联的COS资源详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return COS 关联的COS资源详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<COSInstanceList> GetCOS() const;
@@ -279,70 +255,60 @@ namespace TencentCloud
 
                     /**
                      * 关联clb资源详情	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ClbInstanceList> m_cLB;
                     bool m_cLBHasBeenSet;
 
                     /**
                      * 关联cdn资源详情	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CdnInstanceList> m_cDN;
                     bool m_cDNHasBeenSet;
 
                     /**
                      * 关联waf资源详情	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<WafInstanceList> m_wAF;
                     bool m_wAFHasBeenSet;
 
                     /**
                      * 关联ddos资源详情	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DdosInstanceList> m_dDOS;
                     bool m_dDOSHasBeenSet;
 
                     /**
                      * 关联live资源详情	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<LiveInstanceList> m_lIVE;
                     bool m_lIVEHasBeenSet;
 
                     /**
                      * 关联vod资源详情	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<VODInstanceList> m_vOD;
                     bool m_vODHasBeenSet;
 
                     /**
                      * 关联tke资源详情	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TkeInstanceList> m_tKE;
                     bool m_tKEHasBeenSet;
 
                     /**
                      * 关联apigateway资源详情	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ApiGatewayInstanceList> m_aPIGATEWAY;
                     bool m_aPIGATEWAYHasBeenSet;
 
                     /**
                      * 关联tcb资源详情	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TCBInstanceList> m_tCB;
                     bool m_tCBHasBeenSet;
 
                     /**
                      * 关联teo资源详情	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TeoInstanceList> m_tEO;
                     bool m_tEOHasBeenSet;
@@ -361,14 +327,12 @@ namespace TencentCloud
 
                     /**
                      * 关联tse资源详情	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TSEInstanceList> m_tSE;
                     bool m_tSEHasBeenSet;
 
                     /**
                      * 关联的COS资源详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<COSInstanceList> m_cOS;
                     bool m_cOSHasBeenSet;

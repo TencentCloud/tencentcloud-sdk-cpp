@@ -169,6 +169,27 @@ namespace TencentCloud
                      */
                     bool IsSimpleHasBeenSet() const;
 
+                    /**
+                     * 获取vip列表
+                     * @return Vips vip列表
+                     * 
+                     */
+                    std::vector<std::string> GetVips() const;
+
+                    /**
+                     * 设置vip列表
+                     * @param _vips vip列表
+                     * 
+                     */
+                    void SetVips(const std::vector<std::string>& _vips);
+
+                    /**
+                     * 判断参数 Vips 是否已赋值
+                     * @return Vips 是否已赋值
+                     * 
+                     */
+                    bool VipsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -206,6 +227,12 @@ namespace TencentCloud
                      */
                     bool m_isSimple;
                     bool m_isSimpleHasBeenSet;
+
+                    /**
+                     * vip列表
+                     */
+                    std::vector<std::string> m_vips;
+                    bool m_vipsHasBeenSet;
 
                 };
             }

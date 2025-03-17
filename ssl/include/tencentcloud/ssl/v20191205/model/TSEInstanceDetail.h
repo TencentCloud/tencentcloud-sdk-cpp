@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网关ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GatewayId 网关ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGatewayId() const;
 
                     /**
                      * 设置网关ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gatewayId 网关ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGatewayId(const std::string& _gatewayId);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网关名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GatewayName 网关名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGatewayName() const;
 
                     /**
                      * 设置网关名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gatewayName 网关名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGatewayName(const std::string& _gatewayName);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网关证书列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CertificateList 网关证书列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<GatewayCertificate> GetCertificateList() const;
 
                     /**
                      * 设置网关证书列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _certificateList 网关证书列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCertificateList(const std::vector<GatewayCertificate>& _certificateList);
@@ -126,21 +114,18 @@ namespace TencentCloud
 
                     /**
                      * 网关ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_gatewayId;
                     bool m_gatewayIdHasBeenSet;
 
                     /**
                      * 网关名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_gatewayName;
                     bool m_gatewayNameHasBeenSet;
 
                     /**
                      * 网关证书列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<GatewayCertificate> m_certificateList;
                     bool m_certificateListHasBeenSet;

@@ -280,18 +280,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子订单详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DedicatedClusterOrderItems 子订单详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DedicatedClusterOrderItem> GetDedicatedClusterOrderItems() const;
 
                     /**
                      * 设置子订单详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dedicatedClusterOrderItems 子订单详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDedicatedClusterOrderItems(const std::vector<DedicatedClusterOrderItem>& _dedicatedClusterOrderItems);
@@ -305,18 +301,14 @@ namespace TencentCloud
 
                     /**
                      * 获取cpu值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cpu cpu值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCpu() const;
 
                     /**
                      * 设置cpu值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cpu cpu值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCpu(const int64_t& _cpu);
@@ -330,18 +322,14 @@ namespace TencentCloud
 
                     /**
                      * 获取mem值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Mem mem值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMem() const;
 
                     /**
                      * 设置mem值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mem mem值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMem(const int64_t& _mem);
@@ -355,18 +343,14 @@ namespace TencentCloud
 
                     /**
                      * 获取gpu值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Gpu gpu值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetGpu() const;
 
                     /**
                      * 设置gpu值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gpu gpu值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGpu(const int64_t& _gpu);
@@ -380,18 +364,14 @@ namespace TencentCloud
 
                     /**
                      * 获取0代表未支付，1代表已支付
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayStatus 0代表未支付，1代表已支付
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPayStatus() const;
 
                     /**
                      * 设置0代表未支付，1代表已支付
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _payStatus 0代表未支付，1代表已支付
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPayStatus(const int64_t& _payStatus);
@@ -405,18 +385,14 @@ namespace TencentCloud
 
                     /**
                      * 获取支付方式，一次性、按月、按年
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayType 支付方式，一次性、按月、按年
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPayType() const;
 
                     /**
                      * 设置支付方式，一次性、按月、按年
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _payType 支付方式，一次性、按月、按年
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPayType(const std::string& _payType);
@@ -430,18 +406,14 @@ namespace TencentCloud
 
                     /**
                      * 获取购买时长的单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeUnit 购买时长的单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTimeUnit() const;
 
                     /**
                      * 设置购买时长的单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timeUnit 购买时长的单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimeUnit(const std::string& _timeUnit);
@@ -455,18 +427,14 @@ namespace TencentCloud
 
                     /**
                      * 获取购买时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeSpan 购买时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTimeSpan() const;
 
                     /**
                      * 设置购买时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timeSpan 购买时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimeSpan(const int64_t& _timeSpan);
@@ -480,18 +448,14 @@ namespace TencentCloud
 
                     /**
                      * 获取订单类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrderType 订单类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOrderType() const;
 
                     /**
                      * 设置订单类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _orderType 订单类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOrderType(const std::string& _orderType);
@@ -505,14 +469,18 @@ namespace TencentCloud
 
                     /**
                      * 获取验收状态
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return CheckStatus 验收状态
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCheckStatus() const;
 
                     /**
                      * 设置验收状态
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _checkStatus 验收状态
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCheckStatus(const std::string& _checkStatus);
@@ -526,14 +494,18 @@ namespace TencentCloud
 
                     /**
                      * 获取交付预期时间
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeliverExpectTime 交付预期时间
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeliverExpectTime() const;
 
                     /**
                      * 设置交付预期时间
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deliverExpectTime 交付预期时间
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeliverExpectTime(const std::string& _deliverExpectTime);
@@ -547,14 +519,18 @@ namespace TencentCloud
 
                     /**
                      * 获取交付实际完成时间
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeliverFinishTime 交付实际完成时间
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeliverFinishTime() const;
 
                     /**
                      * 设置交付实际完成时间
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deliverFinishTime 交付实际完成时间
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeliverFinishTime(const std::string& _deliverFinishTime);
@@ -568,14 +544,18 @@ namespace TencentCloud
 
                     /**
                      * 获取验收预期时间
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return CheckExpectTime 验收预期时间
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCheckExpectTime() const;
 
                     /**
                      * 设置验收预期时间
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _checkExpectTime 验收预期时间
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCheckExpectTime(const std::string& _checkExpectTime);
@@ -589,14 +569,18 @@ namespace TencentCloud
 
                     /**
                      * 获取验收实际完成时间
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return CheckFinishTime 验收实际完成时间
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCheckFinishTime() const;
 
                     /**
                      * 设置验收实际完成时间
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _checkFinishTime 验收实际完成时间
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCheckFinishTime(const std::string& _checkFinishTime);
@@ -610,14 +594,18 @@ namespace TencentCloud
 
                     /**
                      * 获取订单SLA
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrderSLA 订单SLA
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOrderSLA() const;
 
                     /**
                      * 设置订单SLA
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _orderSLA 订单SLA
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOrderSLA(const std::string& _orderSLA);
@@ -631,14 +619,18 @@ namespace TencentCloud
 
                     /**
                      * 获取订单支付计划
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrderPayPlan 订单支付计划
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOrderPayPlan() const;
 
                     /**
                      * 设置订单支付计划
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _orderPayPlan 订单支付计划
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOrderPayPlan(const std::string& _orderPayPlan);
@@ -720,105 +712,103 @@ namespace TencentCloud
 
                     /**
                      * 子订单详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DedicatedClusterOrderItem> m_dedicatedClusterOrderItems;
                     bool m_dedicatedClusterOrderItemsHasBeenSet;
 
                     /**
                      * cpu值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_cpu;
                     bool m_cpuHasBeenSet;
 
                     /**
                      * mem值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_mem;
                     bool m_memHasBeenSet;
 
                     /**
                      * gpu值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_gpu;
                     bool m_gpuHasBeenSet;
 
                     /**
                      * 0代表未支付，1代表已支付
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_payStatus;
                     bool m_payStatusHasBeenSet;
 
                     /**
                      * 支付方式，一次性、按月、按年
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_payType;
                     bool m_payTypeHasBeenSet;
 
                     /**
                      * 购买时长的单位
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_timeUnit;
                     bool m_timeUnitHasBeenSet;
 
                     /**
                      * 购买时长
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_timeSpan;
                     bool m_timeSpanHasBeenSet;
 
                     /**
                      * 订单类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_orderType;
                     bool m_orderTypeHasBeenSet;
 
                     /**
                      * 验收状态
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_checkStatus;
                     bool m_checkStatusHasBeenSet;
 
                     /**
                      * 交付预期时间
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deliverExpectTime;
                     bool m_deliverExpectTimeHasBeenSet;
 
                     /**
                      * 交付实际完成时间
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deliverFinishTime;
                     bool m_deliverFinishTimeHasBeenSet;
 
                     /**
                      * 验收预期时间
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_checkExpectTime;
                     bool m_checkExpectTimeHasBeenSet;
 
                     /**
                      * 验收实际完成时间
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_checkFinishTime;
                     bool m_checkFinishTimeHasBeenSet;
 
                     /**
                      * 订单SLA
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_orderSLA;
                     bool m_orderSLAHasBeenSet;
 
                     /**
                      * 订单支付计划
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_orderPayPlan;
                     bool m_orderPayPlanHasBeenSet;

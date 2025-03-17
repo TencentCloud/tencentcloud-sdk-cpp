@@ -132,14 +132,30 @@ namespace TencentCloud
 
                     /**
                      * 获取磁盘类型
+枚举值：
+<li> SYSTEM_DISK: 系统盘 </li>
+<li> DATA_DISK: 数据盘 </li>
+
                      * @return DiskUsage 磁盘类型
+枚举值：
+<li> SYSTEM_DISK: 系统盘 </li>
+<li> DATA_DISK: 数据盘 </li>
+
                      * 
                      */
                     std::string GetDiskUsage() const;
 
                     /**
                      * 设置磁盘类型
+枚举值：
+<li> SYSTEM_DISK: 系统盘 </li>
+<li> DATA_DISK: 数据盘 </li>
+
                      * @param _diskUsage 磁盘类型
+枚举值：
+<li> SYSTEM_DISK: 系统盘 </li>
+<li> DATA_DISK: 数据盘 </li>
+
                      * 
                      */
                     void SetDiskUsage(const std::string& _diskUsage);
@@ -153,14 +169,30 @@ namespace TencentCloud
 
                     /**
                      * 获取磁盘介质类型
+枚举值:
+<li> CLOUD_BASIC: 普通云硬盘 </li>
+<li> CLOUD_PREMIUM: 高性能云硬盘 </li>
+<li> CLOUD_SSD: SSD云硬盘 </li>
                      * @return DiskType 磁盘介质类型
+枚举值:
+<li> CLOUD_BASIC: 普通云硬盘 </li>
+<li> CLOUD_PREMIUM: 高性能云硬盘 </li>
+<li> CLOUD_SSD: SSD云硬盘 </li>
                      * 
                      */
                     std::string GetDiskType() const;
 
                     /**
                      * 设置磁盘介质类型
+枚举值:
+<li> CLOUD_BASIC: 普通云硬盘 </li>
+<li> CLOUD_PREMIUM: 高性能云硬盘 </li>
+<li> CLOUD_SSD: SSD云硬盘 </li>
                      * @param _diskType 磁盘介质类型
+枚举值:
+<li> CLOUD_BASIC: 普通云硬盘 </li>
+<li> CLOUD_PREMIUM: 高性能云硬盘 </li>
+<li> CLOUD_SSD: SSD云硬盘 </li>
                      * 
                      */
                     void SetDiskType(const std::string& _diskType);
@@ -174,14 +206,22 @@ namespace TencentCloud
 
                     /**
                      * 获取磁盘付费类型
+<li> PREPAID: 预付费 </li>
+<li> POSTPAID_BY_HOUR: 按小时后付费 </li>
                      * @return DiskChargeType 磁盘付费类型
+<li> PREPAID: 预付费 </li>
+<li> POSTPAID_BY_HOUR: 按小时后付费 </li>
                      * 
                      */
                     std::string GetDiskChargeType() const;
 
                     /**
                      * 设置磁盘付费类型
+<li> PREPAID: 预付费 </li>
+<li> POSTPAID_BY_HOUR: 按小时后付费 </li>
                      * @param _diskChargeType 磁盘付费类型
+<li> PREPAID: 预付费 </li>
+<li> POSTPAID_BY_HOUR: 按小时后付费 </li>
                      * 
                      */
                     void SetDiskChargeType(const std::string& _diskChargeType);
@@ -194,15 +234,15 @@ namespace TencentCloud
                     bool DiskChargeTypeHasBeenSet() const;
 
                     /**
-                     * 获取磁盘大小
-                     * @return DiskSize 磁盘大小
+                     * 获取磁盘大小, 单位GB
+                     * @return DiskSize 磁盘大小, 单位GB
                      * 
                      */
                     int64_t GetDiskSize() const;
 
                     /**
-                     * 设置磁盘大小
-                     * @param _diskSize 磁盘大小
+                     * 设置磁盘大小, 单位GB
+                     * @param _diskSize 磁盘大小, 单位GB
                      * 
                      */
                     void SetDiskSize(const int64_t& _diskSize);
@@ -238,7 +278,7 @@ namespace TencentCloud
                     /**
                      * 获取磁盘状态，取值范围：
 <li>PENDING：创建中。 </li>
-<li>UNATTACHED：未挂载。</li>
+<li>UNATTACHED：待挂载。</li>
 <li>ATTACHING：挂载中。</li>
 <li>ATTACHED：已挂载。</li>
 <li>DETACHING：卸载中。 </li>
@@ -249,7 +289,7 @@ namespace TencentCloud
 <li> FREEZING：冻结中。</li>
                      * @return DiskState 磁盘状态，取值范围：
 <li>PENDING：创建中。 </li>
-<li>UNATTACHED：未挂载。</li>
+<li>UNATTACHED：待挂载。</li>
 <li>ATTACHING：挂载中。</li>
 <li>ATTACHED：已挂载。</li>
 <li>DETACHING：卸载中。 </li>
@@ -265,7 +305,7 @@ namespace TencentCloud
                     /**
                      * 设置磁盘状态，取值范围：
 <li>PENDING：创建中。 </li>
-<li>UNATTACHED：未挂载。</li>
+<li>UNATTACHED：待挂载。</li>
 <li>ATTACHING：挂载中。</li>
 <li>ATTACHED：已挂载。</li>
 <li>DETACHING：卸载中。 </li>
@@ -276,7 +316,7 @@ namespace TencentCloud
 <li> FREEZING：冻结中。</li>
                      * @param _diskState 磁盘状态，取值范围：
 <li>PENDING：创建中。 </li>
-<li>UNATTACHED：未挂载。</li>
+<li>UNATTACHED：待挂载。</li>
 <li>ATTACHING：挂载中。</li>
 <li>ATTACHED：已挂载。</li>
 <li>DETACHING：卸载中。 </li>
@@ -558,24 +598,34 @@ namespace TencentCloud
 
                     /**
                      * 磁盘类型
+枚举值：
+<li> SYSTEM_DISK: 系统盘 </li>
+<li> DATA_DISK: 数据盘 </li>
+
                      */
                     std::string m_diskUsage;
                     bool m_diskUsageHasBeenSet;
 
                     /**
                      * 磁盘介质类型
+枚举值:
+<li> CLOUD_BASIC: 普通云硬盘 </li>
+<li> CLOUD_PREMIUM: 高性能云硬盘 </li>
+<li> CLOUD_SSD: SSD云硬盘 </li>
                      */
                     std::string m_diskType;
                     bool m_diskTypeHasBeenSet;
 
                     /**
                      * 磁盘付费类型
+<li> PREPAID: 预付费 </li>
+<li> POSTPAID_BY_HOUR: 按小时后付费 </li>
                      */
                     std::string m_diskChargeType;
                     bool m_diskChargeTypeHasBeenSet;
 
                     /**
-                     * 磁盘大小
+                     * 磁盘大小, 单位GB
                      */
                     int64_t m_diskSize;
                     bool m_diskSizeHasBeenSet;
@@ -589,7 +639,7 @@ namespace TencentCloud
                     /**
                      * 磁盘状态，取值范围：
 <li>PENDING：创建中。 </li>
-<li>UNATTACHED：未挂载。</li>
+<li>UNATTACHED：待挂载。</li>
 <li>ATTACHING：挂载中。</li>
 <li>ATTACHED：已挂载。</li>
 <li>DETACHING：卸载中。 </li>

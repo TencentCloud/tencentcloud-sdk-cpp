@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取要删除的快照 ID 列表，可通过 <a href="https://cloud.tencent.com/document/product/1207/54388" target="_blank">DescribeSnapshots</a>查询。
-                     * @return SnapshotIds 要删除的快照 ID 列表，可通过 <a href="https://cloud.tencent.com/document/product/1207/54388" target="_blank">DescribeSnapshots</a>查询。
+                     * 获取要删除的快照 ID 列表，每次请求批量快照的上限为10个，可通过 <a href="https://cloud.tencent.com/document/product/1207/54388" target="_blank">DescribeSnapshots</a>查询。
+                     * @return SnapshotIds 要删除的快照 ID 列表，每次请求批量快照的上限为10个，可通过 <a href="https://cloud.tencent.com/document/product/1207/54388" target="_blank">DescribeSnapshots</a>查询。
                      * 
                      */
                     std::vector<std::string> GetSnapshotIds() const;
 
                     /**
-                     * 设置要删除的快照 ID 列表，可通过 <a href="https://cloud.tencent.com/document/product/1207/54388" target="_blank">DescribeSnapshots</a>查询。
-                     * @param _snapshotIds 要删除的快照 ID 列表，可通过 <a href="https://cloud.tencent.com/document/product/1207/54388" target="_blank">DescribeSnapshots</a>查询。
+                     * 设置要删除的快照 ID 列表，每次请求批量快照的上限为10个，可通过 <a href="https://cloud.tencent.com/document/product/1207/54388" target="_blank">DescribeSnapshots</a>查询。
+                     * @param _snapshotIds 要删除的快照 ID 列表，每次请求批量快照的上限为10个，可通过 <a href="https://cloud.tencent.com/document/product/1207/54388" target="_blank">DescribeSnapshots</a>查询。
                      * 
                      */
                     void SetSnapshotIds(const std::vector<std::string>& _snapshotIds);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 要删除的快照 ID 列表，可通过 <a href="https://cloud.tencent.com/document/product/1207/54388" target="_blank">DescribeSnapshots</a>查询。
+                     * 要删除的快照 ID 列表，每次请求批量快照的上限为10个，可通过 <a href="https://cloud.tencent.com/document/product/1207/54388" target="_blank">DescribeSnapshots</a>查询。
                      */
                     std::vector<std::string> m_snapshotIds;
                     bool m_snapshotIdsHasBeenSet;

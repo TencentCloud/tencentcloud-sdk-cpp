@@ -91,6 +91,8 @@
 #include <tencentcloud/as/v20180419/model/DisableAutoScalingGroupResponse.h>
 #include <tencentcloud/as/v20180419/model/EnableAutoScalingGroupRequest.h>
 #include <tencentcloud/as/v20180419/model/EnableAutoScalingGroupResponse.h>
+#include <tencentcloud/as/v20180419/model/EnterStandbyRequest.h>
+#include <tencentcloud/as/v20180419/model/EnterStandbyResponse.h>
 #include <tencentcloud/as/v20180419/model/ExecuteScalingPolicyRequest.h>
 #include <tencentcloud/as/v20180419/model/ExecuteScalingPolicyResponse.h>
 #include <tencentcloud/as/v20180419/model/ExitStandbyRequest.h>
@@ -253,6 +255,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::EnableAutoScalingGroupResponse> EnableAutoScalingGroupOutcome;
                 typedef std::future<EnableAutoScalingGroupOutcome> EnableAutoScalingGroupOutcomeCallable;
                 typedef std::function<void(const AsClient*, const Model::EnableAutoScalingGroupRequest&, EnableAutoScalingGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableAutoScalingGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::EnterStandbyResponse> EnterStandbyOutcome;
+                typedef std::future<EnterStandbyOutcome> EnterStandbyOutcomeCallable;
+                typedef std::function<void(const AsClient*, const Model::EnterStandbyRequest&, EnterStandbyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnterStandbyAsyncHandler;
                 typedef Outcome<Core::Error, Model::ExecuteScalingPolicyResponse> ExecuteScalingPolicyOutcome;
                 typedef std::future<ExecuteScalingPolicyOutcome> ExecuteScalingPolicyOutcomeCallable;
                 typedef std::function<void(const AsClient*, const Model::ExecuteScalingPolicyRequest&, ExecuteScalingPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExecuteScalingPolicyAsyncHandler;
@@ -730,6 +735,18 @@ namespace TencentCloud
                 EnableAutoScalingGroupOutcome EnableAutoScalingGroup(const Model::EnableAutoScalingGroupRequest &request);
                 void EnableAutoScalingGroupAsync(const Model::EnableAutoScalingGroupRequest& request, const EnableAutoScalingGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 EnableAutoScalingGroupOutcomeCallable EnableAutoScalingGroupCallable(const Model::EnableAutoScalingGroupRequest& request);
+
+                /**
+                 *伸缩组内实例进入备用中状态。
+* 备用中状态实例的 CLB 权重值为 0，不会被自动缩容、不健康替换、实例刷新操作选中
+* 调用弹性伸缩开关机接口会使得备用中状态发生变化，而云服务器开关机接口不会影响
+* 实例进入备用中状态后，伸缩组会尝试下调期望实例数，新期望数不会小于最小值
+                 * @param req EnterStandbyRequest
+                 * @return EnterStandbyOutcome
+                 */
+                EnterStandbyOutcome EnterStandby(const Model::EnterStandbyRequest &request);
+                void EnterStandbyAsync(const Model::EnterStandbyRequest& request, const EnterStandbyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EnterStandbyOutcomeCallable EnterStandbyCallable(const Model::EnterStandbyRequest& request);
 
                 /**
                  *本接口（ExecuteScalingPolicy）用于执行伸缩策略。

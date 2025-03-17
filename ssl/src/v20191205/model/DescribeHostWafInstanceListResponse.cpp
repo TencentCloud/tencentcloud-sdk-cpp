@@ -70,7 +70,7 @@ CoreInternalOutcome DescribeHostWafInstanceListResponse::Deserialize(const strin
         const rapidjson::Value &tmpValue = rsp["InstanceList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            LiveInstanceDetail item;
+            WafInstanceDetail item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
@@ -119,7 +119,7 @@ string DescribeHostWafInstanceListResponse::ToJsonString() const
 }
 
 
-vector<LiveInstanceDetail> DescribeHostWafInstanceListResponse::GetInstanceList() const
+vector<WafInstanceDetail> DescribeHostWafInstanceListResponse::GetInstanceList() const
 {
     return m_instanceList;
 }

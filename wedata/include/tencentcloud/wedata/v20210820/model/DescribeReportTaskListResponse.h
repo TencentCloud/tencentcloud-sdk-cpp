@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取1
-                     * @return Data 1
+                     * 获取任务列表信息
+                     * @return Data 任务列表信息
                      * 
                      */
                     ReportTaskListInfo GetData() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 1
+                     * 任务列表信息
                      */
                     ReportTaskListInfo m_data;
                     bool m_dataHasBeenSet;

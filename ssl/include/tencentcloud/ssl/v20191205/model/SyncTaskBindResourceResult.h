@@ -71,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取关联云资源结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BindResourceResult 关联云资源结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BindResourceResult> GetBindResourceResult() const;
 
                     /**
                      * 设置关联云资源结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bindResourceResult 关联云资源结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBindResourceResult(const std::vector<BindResourceResult>& _bindResourceResult);
@@ -171,7 +167,6 @@ namespace TencentCloud
 
                     /**
                      * 关联云资源结果
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BindResourceResult> m_bindResourceResult;
                     bool m_bindResourceResultHasBeenSet;

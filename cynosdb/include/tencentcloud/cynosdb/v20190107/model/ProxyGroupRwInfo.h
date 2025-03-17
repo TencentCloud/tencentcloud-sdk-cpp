@@ -175,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开通读写节点，yse-是，no-否
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OpenRw 是否开通读写节点，yse-是，no-否
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOpenRw() const;
 
                     /**
                      * 设置是否开通读写节点，yse-是，no-否
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _openRw 是否开通读写节点，yse-是，no-否
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOpenRw(const std::string& _openRw);
@@ -301,7 +297,6 @@ namespace TencentCloud
 
                     /**
                      * 是否开通读写节点，yse-是，no-否
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_openRw;
                     bool m_openRwHasBeenSet;

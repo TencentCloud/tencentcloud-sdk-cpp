@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用类型，取值：自定义，HTTP(80)，HTTPS(443)，Linux登录(22)，Windows登录(3389)，MySQL(3306)，SQL Server(1433)，全部TCP，全部UDP，Ping-ICMP，ALL。
-                     * @return AppType 应用类型，取值：自定义，HTTP(80)，HTTPS(443)，Linux登录(22)，Windows登录(3389)，MySQL(3306)，SQL Server(1433)，全部TCP，全部UDP，Ping-ICMP，ALL。
+                     * 获取应用类型，取值：自定义，HTTP(80)，HTTPS(443)，Linux登录(22)，Windows登录(3389)，MySQL(3306)，SQL Server(1433)，全部TCP，全部UDP，Ping-ICMP，Windows登录优化 (3389)，FTP (21)，Ping，Ping (IPv6)，ALL。
+                     * @return AppType 应用类型，取值：自定义，HTTP(80)，HTTPS(443)，Linux登录(22)，Windows登录(3389)，MySQL(3306)，SQL Server(1433)，全部TCP，全部UDP，Ping-ICMP，Windows登录优化 (3389)，FTP (21)，Ping，Ping (IPv6)，ALL。
                      * 
                      */
                     std::string GetAppType() const;
 
                     /**
-                     * 设置应用类型，取值：自定义，HTTP(80)，HTTPS(443)，Linux登录(22)，Windows登录(3389)，MySQL(3306)，SQL Server(1433)，全部TCP，全部UDP，Ping-ICMP，ALL。
-                     * @param _appType 应用类型，取值：自定义，HTTP(80)，HTTPS(443)，Linux登录(22)，Windows登录(3389)，MySQL(3306)，SQL Server(1433)，全部TCP，全部UDP，Ping-ICMP，ALL。
+                     * 设置应用类型，取值：自定义，HTTP(80)，HTTPS(443)，Linux登录(22)，Windows登录(3389)，MySQL(3306)，SQL Server(1433)，全部TCP，全部UDP，Ping-ICMP，Windows登录优化 (3389)，FTP (21)，Ping，Ping (IPv6)，ALL。
+                     * @param _appType 应用类型，取值：自定义，HTTP(80)，HTTPS(443)，Linux登录(22)，Windows登录(3389)，MySQL(3306)，SQL Server(1433)，全部TCP，全部UDP，Ping-ICMP，Windows登录优化 (3389)，FTP (21)，Ping，Ping (IPv6)，ALL。
                      * 
                      */
                     void SetAppType(const std::string& _appType);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool AppTypeHasBeenSet() const;
 
                     /**
-                     * 获取协议，取值：TCP，UDP，ICMP，ALL。
-                     * @return Protocol 协议，取值：TCP，UDP，ICMP，ALL。
+                     * 获取协议，取值：TCP，UDP，ICMP，ICMPv6，ALL。
+                     * @return Protocol 协议，取值：TCP，UDP，ICMP，ICMPv6，ALL。
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置协议，取值：TCP，UDP，ICMP，ALL。
-                     * @param _protocol 协议，取值：TCP，UDP，ICMP，ALL。
+                     * 设置协议，取值：TCP，UDP，ICMP，ICMPv6，ALL。
+                     * @param _protocol 协议，取值：TCP，UDP，ICMP，ICMPv6，ALL。
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -220,13 +220,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用类型，取值：自定义，HTTP(80)，HTTPS(443)，Linux登录(22)，Windows登录(3389)，MySQL(3306)，SQL Server(1433)，全部TCP，全部UDP，Ping-ICMP，ALL。
+                     * 应用类型，取值：自定义，HTTP(80)，HTTPS(443)，Linux登录(22)，Windows登录(3389)，MySQL(3306)，SQL Server(1433)，全部TCP，全部UDP，Ping-ICMP，Windows登录优化 (3389)，FTP (21)，Ping，Ping (IPv6)，ALL。
                      */
                     std::string m_appType;
                     bool m_appTypeHasBeenSet;
 
                     /**
-                     * 协议，取值：TCP，UDP，ICMP，ALL。
+                     * 协议，取值：TCP，UDP，ICMP，ICMPv6，ALL。
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;

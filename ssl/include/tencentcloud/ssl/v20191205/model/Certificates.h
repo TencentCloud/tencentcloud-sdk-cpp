@@ -1561,14 +1561,18 @@ null：用户上传证书（没有套餐类型），
 
                     /**
                      * 获取托管配置信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostingConfig 托管配置信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     HostingConfig GetHostingConfig() const;
 
                     /**
                      * 设置托管配置信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hostingConfig 托管配置信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHostingConfig(const HostingConfig& _hostingConfig);
@@ -2002,6 +2006,7 @@ null：用户上传证书（没有套餐类型），
 
                     /**
                      * 托管配置信息
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     HostingConfig m_hostingConfig;
                     bool m_hostingConfigHasBeenSet;

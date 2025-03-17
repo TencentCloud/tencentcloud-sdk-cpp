@@ -27,6 +27,7 @@ DescribeDBDiagEventsRequest::DescribeDBDiagEventsRequest() :
     m_endTimeHasBeenSet(false),
     m_severitiesHasBeenSet(false),
     m_instanceIdsHasBeenSet(false),
+    m_productHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false)
 {
@@ -79,6 +80,14 @@ string DescribeDBDiagEventsRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_productHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Product";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_product.c_str(), allocator).Move(), allocator);
     }
 
     if (m_offsetHasBeenSet)
@@ -167,6 +176,22 @@ void DescribeDBDiagEventsRequest::SetInstanceIds(const vector<string>& _instance
 bool DescribeDBDiagEventsRequest::InstanceIdsHasBeenSet() const
 {
     return m_instanceIdsHasBeenSet;
+}
+
+string DescribeDBDiagEventsRequest::GetProduct() const
+{
+    return m_product;
+}
+
+void DescribeDBDiagEventsRequest::SetProduct(const string& _product)
+{
+    m_product = _product;
+    m_productHasBeenSet = true;
+}
+
+bool DescribeDBDiagEventsRequest::ProductHasBeenSet() const
+{
+    return m_productHasBeenSet;
 }
 
 int64_t DescribeDBDiagEventsRequest::GetOffset() const

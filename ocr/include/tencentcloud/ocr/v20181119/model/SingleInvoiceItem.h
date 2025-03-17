@@ -44,6 +44,7 @@
 #include <tencentcloud/ocr/v20181119/model/ElectronicFlightTicketFull.h>
 #include <tencentcloud/ocr/v20181119/model/TaxPayment.h>
 #include <tencentcloud/ocr/v20181119/model/CustomsPaymentReceipt.h>
+#include <tencentcloud/ocr/v20181119/model/BankSlip.h>
 
 
 namespace TencentCloud
@@ -791,6 +792,31 @@ namespace TencentCloud
                      */
                     bool CustomsPaymentReceiptHasBeenSet() const;
 
+                    /**
+                     * 获取银行回单
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BankSlip 银行回单
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    BankSlip GetBankSlip() const;
+
+                    /**
+                     * 设置银行回单
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _bankSlip 银行回单
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetBankSlip(const BankSlip& _bankSlip);
+
+                    /**
+                     * 判断参数 BankSlip 是否已赋值
+                     * @return BankSlip 是否已赋值
+                     * 
+                     */
+                    bool BankSlipHasBeenSet() const;
+
                 private:
 
                     /**
@@ -995,6 +1021,13 @@ namespace TencentCloud
                      */
                     CustomsPaymentReceipt m_customsPaymentReceipt;
                     bool m_customsPaymentReceiptHasBeenSet;
+
+                    /**
+                     * 银行回单
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    BankSlip m_bankSlip;
+                    bool m_bankSlipHasBeenSet;
 
                 };
             }

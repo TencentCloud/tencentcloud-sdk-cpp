@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取云资源部署任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeployRecordId 云资源部署任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDeployRecordId() const;
@@ -77,7 +75,6 @@ namespace TencentCloud
 
                     /**
                      * 云资源部署任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_deployRecordId;
                     bool m_deployRecordIdHasBeenSet;

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取异常错误码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Code 异常错误码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCode() const;
 
                     /**
                      * 设置异常错误码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _code 异常错误码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCode(const std::string& _code);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取异常错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 异常错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置异常错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _message 异常错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMessage(const std::string& _message);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 异常错误码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_code;
                     bool m_codeHasBeenSet;
 
                     /**
                      * 异常错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;

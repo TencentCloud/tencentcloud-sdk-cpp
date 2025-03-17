@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取项目名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectName 项目名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProjectName() const;
 
                     /**
                      * 设置项目名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _projectName 项目名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProjectName(const std::string& _projectName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取项目创建用户 UIN。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectCreatorUin 项目创建用户 UIN。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetProjectCreatorUin() const;
 
                     /**
                      * 设置项目创建用户 UIN。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _projectCreatorUin 项目创建用户 UIN。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProjectCreatorUin(const uint64_t& _projectCreatorUin);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取项目创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectCreateTime 项目创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProjectCreateTime() const;
 
                     /**
                      * 设置项目创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _projectCreateTime 项目创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProjectCreateTime(const std::string& _projectCreateTime);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取项目信息简述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectResume 项目信息简述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProjectResume() const;
 
                     /**
                      * 设置项目信息简述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _projectResume 项目信息简述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProjectResume(const std::string& _projectResume);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户 UIN。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OwnerUin 用户 UIN。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetOwnerUin() const;
 
                     /**
                      * 设置用户 UIN。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ownerUin 用户 UIN。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOwnerUin(const uint64_t& _ownerUin);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取项目 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectId 项目 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProjectId() const;
 
                     /**
                      * 设置项目 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _projectId 项目 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProjectId(const std::string& _projectId);
@@ -200,42 +176,36 @@ namespace TencentCloud
 
                     /**
                      * 项目名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_projectName;
                     bool m_projectNameHasBeenSet;
 
                     /**
                      * 项目创建用户 UIN。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_projectCreatorUin;
                     bool m_projectCreatorUinHasBeenSet;
 
                     /**
                      * 项目创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_projectCreateTime;
                     bool m_projectCreateTimeHasBeenSet;
 
                     /**
                      * 项目信息简述。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_projectResume;
                     bool m_projectResumeHasBeenSet;
 
                     /**
                      * 用户 UIN。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_ownerUin;
                     bool m_ownerUinHasBeenSet;
 
                     /**
                      * 项目 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;

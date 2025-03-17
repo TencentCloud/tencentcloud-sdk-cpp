@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取重复的证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RepeatCertId 重复的证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRepeatCertId() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 重复的证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_repeatCertId;
                     bool m_repeatCertIdHasBeenSet;

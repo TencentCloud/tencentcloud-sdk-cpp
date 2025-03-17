@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取协议
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Protocol 协议
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置协议
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _protocol 协议
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网络id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId 网络id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置网络id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcId 网络id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取路由信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BGPRoute 路由信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBGPRoute() const;
 
                     /**
                      * 设置路由信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bGPRoute 路由信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBGPRoute(const std::string& _bGPRoute);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取本地IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LocalIp 本地IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLocalIp() const;
 
                     /**
                      * 设置本地IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _localIp 本地IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLocalIp(const std::string& _localIp);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 协议
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
                      * 网络id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
                      * 路由信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bGPRoute;
                     bool m_bGPRouteHasBeenSet;
 
                     /**
                      * 本地IP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_localIp;
                     bool m_localIpHasBeenSet;

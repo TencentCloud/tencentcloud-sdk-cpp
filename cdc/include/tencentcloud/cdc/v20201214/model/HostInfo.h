@@ -258,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取宿主机id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostId 宿主机id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHostId() const;
 
                     /**
                      * 设置宿主机id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hostId 宿主机id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHostId(const std::string& _hostId);
@@ -345,7 +341,6 @@ namespace TencentCloud
 
                     /**
                      * 宿主机id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hostId;
                     bool m_hostIdHasBeenSet;

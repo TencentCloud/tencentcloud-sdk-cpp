@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库账号列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccountSet 数据库账号列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Account> GetAccountSet() const;
@@ -78,7 +76,6 @@ namespace TencentCloud
 
                     /**
                      * 数据库账号列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Account> m_accountSet;
                     bool m_accountSetHasBeenSet;

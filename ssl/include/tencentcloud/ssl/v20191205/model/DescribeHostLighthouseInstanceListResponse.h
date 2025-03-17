@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取Lighthouse实例列表,如取不到返回空数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceList Lighthouse实例列表,如取不到返回空数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<LighthouseInstanceDetail> GetInstanceList() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取总数，如取不到返回0
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 总数，如取不到返回0
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * Lighthouse实例列表,如取不到返回空数组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<LighthouseInstanceDetail> m_instanceList;
                     bool m_instanceListHasBeenSet;
 
                     /**
                      * 总数，如取不到返回0
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

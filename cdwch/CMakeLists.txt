@@ -23,6 +23,7 @@ set(cdwch_public_header_model
   include/tencentcloud/cdwch/v20200915/model/ScaleOutInstanceRequest.h
   include/tencentcloud/cdwch/v20200915/model/ScaleOutInstanceResponse.h
   include/tencentcloud/cdwch/v20200915/model/DescribeInstancesNewResponse.h
+  include/tencentcloud/cdwch/v20200915/model/SecondaryZoneInfo.h
   include/tencentcloud/cdwch/v20200915/model/DatabasePrivilegeInfo.h
   include/tencentcloud/cdwch/v20200915/model/DescribeInstanceKeyValConfigsRequest.h
   include/tencentcloud/cdwch/v20200915/model/DescribeInstanceNodesRequest.h
@@ -109,6 +110,7 @@ set(cdwch_src
   src/v20200915/model/ScaleOutInstanceRequest.cpp
   src/v20200915/model/ScaleOutInstanceResponse.cpp
   src/v20200915/model/DescribeInstancesNewResponse.cpp
+  src/v20200915/model/SecondaryZoneInfo.cpp
   src/v20200915/model/DatabasePrivilegeInfo.cpp
   src/v20200915/model/DescribeInstanceKeyValConfigsRequest.cpp
   src/v20200915/model/DescribeInstanceNodesRequest.cpp

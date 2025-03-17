@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Domain 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _domain 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -99,10 +91,8 @@ namespace TencentCloud
                     /**
                      * 获取统一域名状态
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnionStatus 统一域名状态
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetUnionStatus() const;
@@ -110,10 +100,8 @@ namespace TencentCloud
                     /**
                      * 设置统一域名状态
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _unionStatus 统一域名状态
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUnionStatus(const int64_t& _unionStatus);
@@ -128,10 +116,8 @@ namespace TencentCloud
                     /**
                      * 获取是否被抢占, 被抢占表示域名被其他环境绑定了，需要解绑或者重新绑定。
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsPreempted 是否被抢占, 被抢占表示域名被其他环境绑定了，需要解绑或者重新绑定。
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsPreempted() const;
@@ -139,10 +125,8 @@ namespace TencentCloud
                     /**
                      * 设置是否被抢占, 被抢占表示域名被其他环境绑定了，需要解绑或者重新绑定。
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isPreempted 是否被抢占, 被抢占表示域名被其他环境绑定了，需要解绑或者重新绑定。
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsPreempted(const bool& _isPreempted);
@@ -157,10 +141,8 @@ namespace TencentCloud
                     /**
                      * 获取icp黑名单封禁状态，0-未封禁，1-封禁
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ICPStatus icp黑名单封禁状态，0-未封禁，1-封禁
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetICPStatus() const;
@@ -168,10 +150,8 @@ namespace TencentCloud
                     /**
                      * 设置icp黑名单封禁状态，0-未封禁，1-封禁
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _iCPStatus icp黑名单封禁状态，0-未封禁，1-封禁
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetICPStatus(const int64_t& _iCPStatus);
@@ -185,18 +165,14 @@ namespace TencentCloud
 
                     /**
                      * 获取已绑定证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OldCertificateId 已绑定证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOldCertificateId() const;
 
                     /**
                      * 设置已绑定证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _oldCertificateId 已绑定证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOldCertificateId(const std::string& _oldCertificateId);
@@ -212,14 +188,12 @@ namespace TencentCloud
 
                     /**
                      * 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
                      * 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
@@ -227,7 +201,6 @@ namespace TencentCloud
                     /**
                      * 统一域名状态
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_unionStatus;
                     bool m_unionStatusHasBeenSet;
@@ -235,7 +208,6 @@ namespace TencentCloud
                     /**
                      * 是否被抢占, 被抢占表示域名被其他环境绑定了，需要解绑或者重新绑定。
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isPreempted;
                     bool m_isPreemptedHasBeenSet;
@@ -243,14 +215,12 @@ namespace TencentCloud
                     /**
                      * icp黑名单封禁状态，0-未封禁，1-封禁
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_iCPStatus;
                     bool m_iCPStatusHasBeenSet;
 
                     /**
                      * 已绑定证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_oldCertificateId;
                     bool m_oldCertificateIdHasBeenSet;

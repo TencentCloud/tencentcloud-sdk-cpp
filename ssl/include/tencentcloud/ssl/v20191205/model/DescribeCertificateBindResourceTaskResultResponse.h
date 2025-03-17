@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取异步任务绑定关联云资源结果列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SyncTaskBindResourceResult 异步任务绑定关联云资源结果列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SyncTaskBindResourceResult> GetSyncTaskBindResourceResult() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 异步任务绑定关联云资源结果列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SyncTaskBindResourceResult> m_syncTaskBindResourceResult;
                     bool m_syncTaskBindResourceResultHasBeenSet;

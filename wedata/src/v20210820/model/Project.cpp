@@ -35,7 +35,8 @@ Project::Project() :
     m_paramsHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_modelHasBeenSet(false),
-    m_secondModuleListHasBeenSet(false)
+    m_secondModuleListHasBeenSet(false),
+    m_ownerHasBeenSet(false)
 {
 }
 
@@ -231,6 +232,23 @@ CoreInternalOutcome Project::Deserialize(const rapidjson::Value &value)
         m_secondModuleListHasBeenSet = true;
     }
 
+    if (value.HasMember("Owner") && !value["Owner"].IsNull())
+    {
+        if (!value["Owner"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Project.Owner` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_owner.Deserialize(value["Owner"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_ownerHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -377,6 +395,15 @@ void Project::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_ownerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Owner";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_owner.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -620,5 +647,21 @@ void Project::SetSecondModuleList(const vector<string>& _secondModuleList)
 bool Project::SecondModuleListHasBeenSet() const
 {
     return m_secondModuleListHasBeenSet;
+}
+
+BaseUser Project::GetOwner() const
+{
+    return m_owner;
+}
+
+void Project::SetOwner(const BaseUser& _owner)
+{
+    m_owner = _owner;
+    m_ownerHasBeenSet = true;
+}
+
+bool Project::OwnerHasBeenSet() const
+{
+    return m_ownerHasBeenSet;
 }
 

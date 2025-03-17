@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取证书域名验证记录Key
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DvAuthKey 证书域名验证记录Key
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDvAuthKey() const;
 
                     /**
                      * 设置证书域名验证记录Key
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dvAuthKey 证书域名验证记录Key
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDvAuthKey(const std::string& _dvAuthKey);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取证书域名验证记录值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DvAuthValue 证书域名验证记录值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDvAuthValue() const;
 
                     /**
                      * 设置证书域名验证记录值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dvAuthValue 证书域名验证记录值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDvAuthValue(const std::string& _dvAuthValue);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取证书域名验证域名值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DvAuthDomain 证书域名验证域名值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDvAuthDomain() const;
 
                     /**
                      * 设置证书域名验证域名值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dvAuthDomain 证书域名验证域名值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDvAuthDomain(const std::string& _dvAuthDomain);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取证书域名验证文件路径， 仅FILE、FILE_PROXY使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DvAuthPath 证书域名验证文件路径， 仅FILE、FILE_PROXY使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDvAuthPath() const;
 
                     /**
                      * 设置证书域名验证文件路径， 仅FILE、FILE_PROXY使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dvAuthPath 证书域名验证文件路径， 仅FILE、FILE_PROXY使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDvAuthPath(const std::string& _dvAuthPath);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取证书域名验证子域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DvAuthSubDomain 证书域名验证子域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDvAuthSubDomain() const;
 
                     /**
                      * 设置证书域名验证子域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dvAuthSubDomain 证书域名验证子域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDvAuthSubDomain(const std::string& _dvAuthSubDomain);
@@ -176,12 +156,10 @@ namespace TencentCloud
 TXT：DNS域名验证添加TXT记录
 FILE：域名文件验证
 CNAME：DNS域名验证添加CNAME记录
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DvAuthVerifyType 证书域名验证类型，取值：
 TXT：DNS域名验证添加TXT记录
 FILE：域名文件验证
 CNAME：DNS域名验证添加CNAME记录
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDvAuthVerifyType() const;
@@ -191,12 +169,10 @@ CNAME：DNS域名验证添加CNAME记录
 TXT：DNS域名验证添加TXT记录
 FILE：域名文件验证
 CNAME：DNS域名验证添加CNAME记录
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dvAuthVerifyType 证书域名验证类型，取值：
 TXT：DNS域名验证添加TXT记录
 FILE：域名文件验证
 CNAME：DNS域名验证添加CNAME记录
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDvAuthVerifyType(const std::string& _dvAuthVerifyType);
@@ -212,35 +188,30 @@ CNAME：DNS域名验证添加CNAME记录
 
                     /**
                      * 证书域名验证记录Key
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dvAuthKey;
                     bool m_dvAuthKeyHasBeenSet;
 
                     /**
                      * 证书域名验证记录值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dvAuthValue;
                     bool m_dvAuthValueHasBeenSet;
 
                     /**
                      * 证书域名验证域名值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dvAuthDomain;
                     bool m_dvAuthDomainHasBeenSet;
 
                     /**
                      * 证书域名验证文件路径， 仅FILE、FILE_PROXY使用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dvAuthPath;
                     bool m_dvAuthPathHasBeenSet;
 
                     /**
                      * 证书域名验证子域名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dvAuthSubDomain;
                     bool m_dvAuthSubDomainHasBeenSet;
@@ -250,7 +221,6 @@ CNAME：DNS域名验证添加CNAME记录
 TXT：DNS域名验证添加TXT记录
 FILE：域名文件验证
 CNAME：DNS域名验证添加CNAME记录
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dvAuthVerifyType;
                     bool m_dvAuthVerifyTypeHasBeenSet;

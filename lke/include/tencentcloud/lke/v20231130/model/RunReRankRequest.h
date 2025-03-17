@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取模型名称, 必填，默认: lke-reranker-base
-                     * @return Query 模型名称, 必填，默认: lke-reranker-base
+                     * 获取查询内容，必填
+                     * @return Query 查询内容，必填
                      * 
                      */
                     std::string GetQuery() const;
 
                     /**
-                     * 设置模型名称, 必填，默认: lke-reranker-base
-                     * @param _query 模型名称, 必填，默认: lke-reranker-base
+                     * 设置查询内容，必填
+                     * @param _query 查询内容，必填
                      * 
                      */
                     void SetQuery(const std::string& _query);
@@ -151,7 +151,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 模型名称, 必填，默认: lke-reranker-base
+                     * 查询内容，必填
                      */
                     std::string m_query;
                     bool m_queryHasBeenSet;

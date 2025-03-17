@@ -132,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部署地域列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Regions 部署地域列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetRegions() const;
 
                     /**
                      * 设置部署地域列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _regions 部署地域列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegions(const std::vector<std::string>& _regions);
@@ -246,7 +242,6 @@ namespace TencentCloud
 
                     /**
                      * 部署地域列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_regions;
                     bool m_regionsHasBeenSet;

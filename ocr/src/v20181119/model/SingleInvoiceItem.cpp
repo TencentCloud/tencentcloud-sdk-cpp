@@ -49,7 +49,8 @@ SingleInvoiceItem::SingleInvoiceItem() :
     m_electronicTrainTicketFullHasBeenSet(false),
     m_electronicFlightTicketFullHasBeenSet(false),
     m_taxPaymentHasBeenSet(false),
-    m_customsPaymentReceiptHasBeenSet(false)
+    m_customsPaymentReceiptHasBeenSet(false),
+    m_bankSlipHasBeenSet(false)
 {
 }
 
@@ -551,6 +552,23 @@ CoreInternalOutcome SingleInvoiceItem::Deserialize(const rapidjson::Value &value
         m_customsPaymentReceiptHasBeenSet = true;
     }
 
+    if (value.HasMember("BankSlip") && !value["BankSlip"].IsNull())
+    {
+        if (!value["BankSlip"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SingleInvoiceItem.BankSlip` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_bankSlip.Deserialize(value["BankSlip"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_bankSlipHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -817,6 +835,15 @@ void SingleInvoiceItem::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_customsPaymentReceipt.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_bankSlipHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BankSlip";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_bankSlip.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1284,5 +1311,21 @@ void SingleInvoiceItem::SetCustomsPaymentReceipt(const CustomsPaymentReceipt& _c
 bool SingleInvoiceItem::CustomsPaymentReceiptHasBeenSet() const
 {
     return m_customsPaymentReceiptHasBeenSet;
+}
+
+BankSlip SingleInvoiceItem::GetBankSlip() const
+{
+    return m_bankSlip;
+}
+
+void SingleInvoiceItem::SetBankSlip(const BankSlip& _bankSlip)
+{
+    m_bankSlip = _bankSlip;
+    m_bankSlipHasBeenSet = true;
+}
+
+bool SingleInvoiceItem::BankSlipHasBeenSet() const
+{
+    return m_bankSlipHasBeenSet;
 }
 

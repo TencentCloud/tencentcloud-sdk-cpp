@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取DV 认证值路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DomainValidateAuthPath DV 认证值路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDomainValidateAuthPath() const;
 
                     /**
                      * 设置DV 认证值路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _domainValidateAuthPath DV 认证值路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDomainValidateAuthPath(const std::string& _domainValidateAuthPath);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取DV 认证 KEY。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DomainValidateAuthKey DV 认证 KEY。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDomainValidateAuthKey() const;
 
                     /**
                      * 设置DV 认证 KEY。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _domainValidateAuthKey DV 认证 KEY。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDomainValidateAuthKey(const std::string& _domainValidateAuthKey);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取DV 认证值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DomainValidateAuthValue DV 认证值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDomainValidateAuthValue() const;
 
                     /**
                      * 设置DV 认证值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _domainValidateAuthValue DV 认证值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDomainValidateAuthValue(const std::string& _domainValidateAuthValue);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取DV 认证域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DomainValidateAuthDomain DV 认证域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDomainValidateAuthDomain() const;
 
                     /**
                      * 设置DV 认证域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _domainValidateAuthDomain DV 认证域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDomainValidateAuthDomain(const std::string& _domainValidateAuthDomain);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * DV 认证值路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_domainValidateAuthPath;
                     bool m_domainValidateAuthPathHasBeenSet;
 
                     /**
                      * DV 认证 KEY。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_domainValidateAuthKey;
                     bool m_domainValidateAuthKeyHasBeenSet;
 
                     /**
                      * DV 认证值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_domainValidateAuthValue;
                     bool m_domainValidateAuthValueHasBeenSet;
 
                     /**
                      * DV 认证域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_domainValidateAuthDomain;
                     bool m_domainValidateAuthDomainHasBeenSet;

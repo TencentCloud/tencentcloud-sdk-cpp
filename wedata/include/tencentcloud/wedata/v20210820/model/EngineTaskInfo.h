@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取1
+                     * 获取引擎提交时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EngineSubmitTime 1
+                     * @return EngineSubmitTime 引擎提交时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEngineSubmitTime() const;
 
                     /**
-                     * 设置1
+                     * 设置引擎提交时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _engineSubmitTime 1
+                     * @param _engineSubmitTime 引擎提交时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool EngineSubmitTimeHasBeenSet() const;
 
                     /**
-                     * 获取1
+                     * 获取引擎执行时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EngineExeTime 1
+                     * @return EngineExeTime 引擎执行时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEngineExeTime() const;
 
                     /**
-                     * 设置1
+                     * 设置引擎执行时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _engineExeTime 1
+                     * @param _engineExeTime 引擎执行时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool EngineExeTimeHasBeenSet() const;
 
                     /**
-                     * 获取1
+                     * 获取引擎执行总时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EngineExeTimes 1
+                     * @return EngineExeTimes 引擎执行总时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetEngineExeTimes() const;
 
                     /**
-                     * 设置1
+                     * 设置引擎执行总时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _engineExeTimes 1
+                     * @param _engineExeTimes 引擎执行总时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool EngineExeTimesHasBeenSet() const;
 
                     /**
-                     * 获取1
+                     * 获取cu消耗
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CuConsume 1
+                     * @return CuConsume cu消耗
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCuConsume() const;
 
                     /**
-                     * 设置1
+                     * 设置cu消耗
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cuConsume 1
+                     * @param _cuConsume cu消耗
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -147,18 +147,18 @@ namespace TencentCloud
                     bool CuConsumeHasBeenSet() const;
 
                     /**
-                     * 获取1
+                     * 获取资源消耗
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ResourceUsage 1
+                     * @return ResourceUsage 资源消耗
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetResourceUsage() const;
 
                     /**
-                     * 设置1
+                     * 设置资源消耗
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _resourceUsage 1
+                     * @param _resourceUsage 资源消耗
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -172,18 +172,18 @@ namespace TencentCloud
                     bool ResourceUsageHasBeenSet() const;
 
                     /**
-                     * 获取1
+                     * 获取引擎名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EngineName 1
+                     * @return EngineName 引擎名
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEngineName() const;
 
                     /**
-                     * 设置1
+                     * 设置引擎名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _engineName 1
+                     * @param _engineName 引擎名
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -197,18 +197,18 @@ namespace TencentCloud
                     bool EngineNameHasBeenSet() const;
 
                     /**
-                     * 获取1
+                     * 获取引擎执行状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EngineExeStatus 1
+                     * @return EngineExeStatus 引擎执行状态
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEngineExeStatus() const;
 
                     /**
-                     * 设置1
+                     * 设置引擎执行状态
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _engineExeStatus 1
+                     * @param _engineExeStatus 引擎执行状态
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -222,18 +222,18 @@ namespace TencentCloud
                     bool EngineExeStatusHasBeenSet() const;
 
                     /**
-                     * 获取1
+                     * 获取任务种类
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskKind 1
+                     * @return TaskKind 任务种类
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskKind() const;
 
                     /**
-                     * 设置1
+                     * 设置任务种类
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _taskKind 1
+                     * @param _taskKind 任务种类
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -247,18 +247,18 @@ namespace TencentCloud
                     bool TaskKindHasBeenSet() const;
 
                     /**
-                     * 获取1
+                     * 获取任务类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskType 1
+                     * @return TaskType 任务类型
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskType() const;
 
                     /**
-                     * 设置1
+                     * 设置任务类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _taskType 1
+                     * @param _taskType 任务类型
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -272,18 +272,18 @@ namespace TencentCloud
                     bool TaskTypeHasBeenSet() const;
 
                     /**
-                     * 获取1
+                     * 获取任务SQL语句
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskContent 1
+                     * @return TaskContent 任务SQL语句
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskContent() const;
 
                     /**
-                     * 设置1
+                     * 设置任务SQL语句
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _taskContent 1
+                     * @param _taskContent 任务SQL语句
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -297,18 +297,22 @@ namespace TencentCloud
                     bool TaskContentHasBeenSet() const;
 
                     /**
-                     * 获取1
+                     * 获取数据扫描总 bytes
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InputBytesSum 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InputBytesSum 数据扫描总 bytes
+注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetInputBytesSum() const;
 
                     /**
-                     * 设置1
+                     * 设置数据扫描总 bytes
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _inputBytesSum 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _inputBytesSum 数据扫描总 bytes
+注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -322,18 +326,22 @@ namespace TencentCloud
                     bool InputBytesSumHasBeenSet() const;
 
                     /**
-                     * 获取1
+                     * 获取shuffle read 总 bytes
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ShuffleReadBytesSum 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ShuffleReadBytesSum shuffle read 总 bytes
+注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetShuffleReadBytesSum() const;
 
                     /**
-                     * 设置1
+                     * 设置shuffle read 总 bytes
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _shuffleReadBytesSum 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _shuffleReadBytesSum shuffle read 总 bytes
+注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -347,18 +355,22 @@ namespace TencentCloud
                     bool ShuffleReadBytesSumHasBeenSet() const;
 
                     /**
-                     * 获取1
+                     * 获取shuffle read 总行数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ShuffleReadRecordsSum 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ShuffleReadRecordsSum shuffle read 总行数
+注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetShuffleReadRecordsSum() const;
 
                     /**
-                     * 设置1
+                     * 设置shuffle read 总行数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _shuffleReadRecordsSum 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _shuffleReadRecordsSum shuffle read 总行数
+注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -372,18 +384,22 @@ namespace TencentCloud
                     bool ShuffleReadRecordsSumHasBeenSet() const;
 
                     /**
-                     * 获取1
+                     * 获取输出总行数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OutputRecordsSum 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OutputRecordsSum 输出总行数
+注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetOutputRecordsSum() const;
 
                     /**
-                     * 设置1
+                     * 设置输出总行数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _outputRecordsSum 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _outputRecordsSum 输出总行数
+注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -397,18 +413,22 @@ namespace TencentCloud
                     bool OutputRecordsSumHasBeenSet() const;
 
                     /**
-                     * 获取1
+                     * 获取输出总 bytes
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OutputBytesSum 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OutputBytesSum 输出总 bytes
+注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetOutputBytesSum() const;
 
                     /**
-                     * 设置1
+                     * 设置输出总 bytes
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _outputBytesSum 1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _outputBytesSum 输出总 bytes
+注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -422,18 +442,18 @@ namespace TencentCloud
                     bool OutputBytesSumHasBeenSet() const;
 
                     /**
-                     * 获取1
+                     * 获取输出文件数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OutputFilesNum 1
+                     * @return OutputFilesNum 输出文件数
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetOutputFilesNum() const;
 
                     /**
-                     * 设置1
+                     * 设置输出文件数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _outputFilesNum 1
+                     * @param _outputFilesNum 输出文件数
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -447,18 +467,18 @@ namespace TencentCloud
                     bool OutputFilesNumHasBeenSet() const;
 
                     /**
-                     * 获取1
+                     * 获取输出小文件数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OutputSmallFilesNum 1
+                     * @return OutputSmallFilesNum 输出小文件数
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetOutputSmallFilesNum() const;
 
                     /**
-                     * 设置1
+                     * 设置输出小文件数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _outputSmallFilesNum 1
+                     * @param _outputSmallFilesNum 输出小文件数
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -472,18 +492,18 @@ namespace TencentCloud
                     bool OutputSmallFilesNumHasBeenSet() const;
 
                     /**
-                     * 获取1
+                     * 获取执行等待时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WaitTime 1
+                     * @return WaitTime 执行等待时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetWaitTime() const;
 
                     /**
-                     * 设置1
+                     * 设置执行等待时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _waitTime 1
+                     * @param _waitTime 执行等待时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -497,18 +517,18 @@ namespace TencentCloud
                     bool WaitTimeHasBeenSet() const;
 
                     /**
-                     * 获取1
+                     * 获取查询结果时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return QueryResultTime 1
+                     * @return QueryResultTime 查询结果时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetQueryResultTime() const;
 
                     /**
-                     * 设置1
+                     * 设置查询结果时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _queryResultTime 1
+                     * @param _queryResultTime 查询结果时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -522,18 +542,18 @@ namespace TencentCloud
                     bool QueryResultTimeHasBeenSet() const;
 
                     /**
-                     * 获取1
+                     * 获取入参
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CmdArgs 1
+                     * @return CmdArgs 入参
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCmdArgs() const;
 
                     /**
-                     * 设置1
+                     * 设置入参
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cmdArgs 1
+                     * @param _cmdArgs 入参
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -549,140 +569,145 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 1
+                     * 引擎提交时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_engineSubmitTime;
                     bool m_engineSubmitTimeHasBeenSet;
 
                     /**
-                     * 1
+                     * 引擎执行时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_engineExeTime;
                     bool m_engineExeTimeHasBeenSet;
 
                     /**
-                     * 1
+                     * 引擎执行总时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_engineExeTimes;
                     bool m_engineExeTimesHasBeenSet;
 
                     /**
-                     * 1
+                     * cu消耗
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_cuConsume;
                     bool m_cuConsumeHasBeenSet;
 
                     /**
-                     * 1
+                     * 资源消耗
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_resourceUsage;
                     bool m_resourceUsageHasBeenSet;
 
                     /**
-                     * 1
+                     * 引擎名
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_engineName;
                     bool m_engineNameHasBeenSet;
 
                     /**
-                     * 1
+                     * 引擎执行状态
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_engineExeStatus;
                     bool m_engineExeStatusHasBeenSet;
 
                     /**
-                     * 1
+                     * 任务种类
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskKind;
                     bool m_taskKindHasBeenSet;
 
                     /**
-                     * 1
+                     * 任务类型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskType;
                     bool m_taskTypeHasBeenSet;
 
                     /**
-                     * 1
+                     * 任务SQL语句
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskContent;
                     bool m_taskContentHasBeenSet;
 
                     /**
-                     * 1
+                     * 数据扫描总 bytes
+注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_inputBytesSum;
                     bool m_inputBytesSumHasBeenSet;
 
                     /**
-                     * 1
+                     * shuffle read 总 bytes
+注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_shuffleReadBytesSum;
                     bool m_shuffleReadBytesSumHasBeenSet;
 
                     /**
-                     * 1
+                     * shuffle read 总行数
+注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_shuffleReadRecordsSum;
                     bool m_shuffleReadRecordsSumHasBeenSet;
 
                     /**
-                     * 1
+                     * 输出总行数
+注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_outputRecordsSum;
                     bool m_outputRecordsSumHasBeenSet;
 
                     /**
-                     * 1
+                     * 输出总 bytes
+注意：此字段可能返回 null，表示取不到有效值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_outputBytesSum;
                     bool m_outputBytesSumHasBeenSet;
 
                     /**
-                     * 1
+                     * 输出文件数
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_outputFilesNum;
                     bool m_outputFilesNumHasBeenSet;
 
                     /**
-                     * 1
+                     * 输出小文件数
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_outputSmallFilesNum;
                     bool m_outputSmallFilesNumHasBeenSet;
 
                     /**
-                     * 1
+                     * 执行等待时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_waitTime;
                     bool m_waitTimeHasBeenSet;
 
                     /**
-                     * 1
+                     * 查询结果时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_queryResultTime;
                     bool m_queryResultTimeHasBeenSet;
 
                     /**
-                     * 1
+                     * 入参
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cmdArgs;

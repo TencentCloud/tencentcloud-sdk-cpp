@@ -366,18 +366,14 @@ namespace TencentCloud
 
                     /**
                      * 获取VPC的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UniqVpcId VPC的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUniqVpcId() const;
 
                     /**
                      * 设置VPC的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uniqVpcId VPC的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUniqVpcId(const std::string& _uniqVpcId);
@@ -391,18 +387,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UniqSubnetId 子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUniqSubnetId() const;
 
                     /**
                      * 设置子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uniqSubnetId 子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUniqSubnetId(const std::string& _uniqSubnetId);
@@ -416,18 +408,14 @@ namespace TencentCloud
 
                     /**
                      * 获取正在回收IP信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OldAddrInfo 正在回收IP信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     OldAddrInfo GetOldAddrInfo() const;
 
                     /**
                      * 设置正在回收IP信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _oldAddrInfo 正在回收IP信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOldAddrInfo(const OldAddrInfo& _oldAddrInfo);
@@ -596,21 +584,18 @@ namespace TencentCloud
 
                     /**
                      * VPC的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uniqVpcId;
                     bool m_uniqVpcIdHasBeenSet;
 
                     /**
                      * 子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uniqSubnetId;
                     bool m_uniqSubnetIdHasBeenSet;
 
                     /**
                      * 正在回收IP信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     OldAddrInfo m_oldAddrInfo;
                     bool m_oldAddrInfoHasBeenSet;

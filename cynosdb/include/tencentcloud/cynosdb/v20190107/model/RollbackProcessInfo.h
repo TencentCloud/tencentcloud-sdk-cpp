@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否可以交换vip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsVipSwitchable 是否可以交换vip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsVipSwitchable() const;
 
                     /**
                      * 设置是否可以交换vip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isVipSwitchable 是否可以交换vip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsVipSwitchable(const bool& _isVipSwitchable);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取vip可交换时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VipSwitchableTime vip可交换时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVipSwitchableTime() const;
 
                     /**
                      * 设置vip可交换时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vipSwitchableTime vip可交换时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVipSwitchableTime(const std::string& _vipSwitchableTime);
@@ -150,18 +142,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当前步骤
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CurrentStep 当前步骤
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCurrentStep() const;
 
                     /**
                      * 设置当前步骤
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _currentStep 当前步骤
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCurrentStep(const std::string& _currentStep);
@@ -175,18 +163,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当前步骤进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CurrentStepProgress 当前步骤进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCurrentStepProgress() const;
 
                     /**
                      * 设置当前步骤进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _currentStepProgress 当前步骤进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCurrentStepProgress(const int64_t& _currentStepProgress);
@@ -200,18 +184,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当前步骤剩余时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CurrentStepRemainingTime 当前步骤剩余时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCurrentStepRemainingTime() const;
 
                     /**
                      * 设置当前步骤剩余时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _currentStepRemainingTime 当前步骤剩余时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCurrentStepRemainingTime(const std::string& _currentStepRemainingTime);
@@ -227,14 +207,12 @@ namespace TencentCloud
 
                     /**
                      * 是否可以交换vip
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isVipSwitchable;
                     bool m_isVipSwitchableHasBeenSet;
 
                     /**
                      * vip可交换时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vipSwitchableTime;
                     bool m_vipSwitchableTimeHasBeenSet;
@@ -255,21 +233,18 @@ namespace TencentCloud
 
                     /**
                      * 当前步骤
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_currentStep;
                     bool m_currentStepHasBeenSet;
 
                     /**
                      * 当前步骤进度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_currentStepProgress;
                     bool m_currentStepProgressHasBeenSet;
 
                     /**
                      * 当前步骤剩余时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_currentStepRemainingTime;
                     bool m_currentStepRemainingTimeHasBeenSet;

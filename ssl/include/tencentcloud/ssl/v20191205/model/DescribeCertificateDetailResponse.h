@@ -52,9 +52,7 @@ namespace TencentCloud
 
                     /**
                      * 获取证书所属用户主账号 UIN。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OwnerUin 证书所属用户主账号 UIN。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOwnerUin() const;
@@ -68,9 +66,7 @@ namespace TencentCloud
 
                     /**
                      * 获取项目 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectId 项目 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProjectId() const;
@@ -88,13 +84,11 @@ trustasia：亚洲诚信，
 upload：用户上传。
 wosign：沃通
 sheca：上海CA
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return From 证书来源：
 trustasia：亚洲诚信，
 upload：用户上传。
 wosign：沃通
 sheca：上海CA
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFrom() const;
@@ -108,9 +102,7 @@ sheca：上海CA
 
                     /**
                      * 获取证书类型：CA = 客户端证书，SVR = 服务器证书。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CertificateType 证书类型：CA = 客户端证书，SVR = 服务器证书。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCertificateType() const;
@@ -308,9 +300,7 @@ null：用户上传证书（没有套餐类型），
 
                     /**
                      * 获取证书产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductZhName 证书产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProductZhName() const;
@@ -324,9 +314,7 @@ null：用户上传证书（没有套餐类型），
 
                     /**
                      * 获取证书绑定通用名称域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Domain 证书绑定通用名称域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDomain() const;
@@ -340,9 +328,7 @@ null：用户上传证书（没有套餐类型），
 
                     /**
                      * 获取备注名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Alias 备注名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAlias() const;
@@ -356,9 +342,7 @@ null：用户上传证书（没有套餐类型），
 
                     /**
                      * 获取证书状态：0 = 审核中，1 = 已通过，2 = 审核失败，3 = 已过期，4 = 自动添加DNS记录，5 = 企业证书，待提交资料，6 = 订单取消中，7 = 已取消，8 = 已提交资料， 待上传确认函，9 = 证书吊销中，10 = 已吊销，11 = 重颁发中，12 = 待上传吊销确认函，13 = 免费证书待提交资料。14 = 证书已退款。 15 = 证书迁移中
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 证书状态：0 = 审核中，1 = 已通过，2 = 审核失败，3 = 已过期，4 = 自动添加DNS记录，5 = 企业证书，待提交资料，6 = 订单取消中，7 = 已取消，8 = 已提交资料， 待上传确认函，9 = 证书吊销中，10 = 已吊销，11 = 重颁发中，12 = 待上传吊销确认函，13 = 免费证书待提交资料。14 = 证书已退款。 15 = 证书迁移中
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStatus() const;
@@ -428,9 +412,7 @@ null：用户上传证书（没有套餐类型），
 
                     /**
                      * 获取漏洞扫描状态。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VulnerabilityStatus 漏洞扫描状态。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVulnerabilityStatus() const;
@@ -476,9 +458,7 @@ null：用户上传证书（没有套餐类型），
 
                     /**
                      * 获取证书有效期：单位（月）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ValidityPeriod 证书有效期：单位（月）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetValidityPeriod() const;
@@ -492,9 +472,7 @@ null：用户上传证书（没有套餐类型），
 
                     /**
                      * 获取证书申请时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InsertTime 证书申请时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInsertTime() const;
@@ -524,9 +502,7 @@ null：用户上传证书（没有套餐类型），
 
                     /**
                      * 获取证书扩展信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CertificateExtra 证书扩展信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CertificateExtra GetCertificateExtra() const;
@@ -604,9 +580,7 @@ null：用户上传证书（没有套餐类型），
 
                     /**
                      * 获取证书 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CertificateId 证书 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCertificateId() const;
@@ -636,9 +610,7 @@ null：用户上传证书（没有套餐类型），
 
                     /**
                      * 获取状态描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StatusName 状态描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatusName() const;
@@ -652,9 +624,7 @@ null：用户上传证书（没有套餐类型），
 
                     /**
                      * 获取证书包含的多个域名（不包含主域名，主域名使用Domain字段）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubjectAltName 证书包含的多个域名（不包含主域名，主域名使用Domain字段）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetSubjectAltName() const;
@@ -668,9 +638,7 @@ null：用户上传证书（没有套餐类型），
 
                     /**
                      * 获取是否为付费证书。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsVip 是否为付费证书。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsVip() const;
@@ -684,9 +652,7 @@ null：用户上传证书（没有套餐类型），
 
                     /**
                      * 获取是否为泛域名证书。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsWildcard 是否为泛域名证书。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsWildcard() const;
@@ -700,9 +666,7 @@ null：用户上传证书（没有套餐类型），
 
                     /**
                      * 获取是否为 DV 版证书。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsDv 是否为 DV 版证书。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsDv() const;
@@ -716,9 +680,7 @@ null：用户上传证书（没有套餐类型），
 
                     /**
                      * 获取是否启用了漏洞扫描功能。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsVulnerability 是否启用了漏洞扫描功能。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsVulnerability() const;
@@ -748,9 +710,7 @@ null：用户上传证书（没有套餐类型），
 
                     /**
                      * 获取是否可续费。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RenewAble 是否可续费。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetRenewAble() const;
@@ -764,9 +724,7 @@ null：用户上传证书（没有套餐类型），
 
                     /**
                      * 获取是否可部署。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Deployable 是否可部署。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetDeployable() const;
@@ -780,9 +738,7 @@ null：用户上传证书（没有套餐类型），
 
                     /**
                      * 获取关联标签列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 关联标签列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tags> GetTags() const;
@@ -796,9 +752,7 @@ null：用户上传证书（没有套餐类型），
 
                     /**
                      * 获取根证书。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RootCert 根证书。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RootCertificates GetRootCert() const;
@@ -876,9 +830,7 @@ null：用户上传证书（没有套餐类型），
 
                     /**
                      * 获取证书加密算法（国密证书特有）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EncryptAlgorithm 证书加密算法（国密证书特有）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEncryptAlgorithm() const;
@@ -926,14 +878,12 @@ null：用户上传证书（没有套餐类型），
 
                     /**
                      * 证书所属用户主账号 UIN。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ownerUin;
                     bool m_ownerUinHasBeenSet;
 
                     /**
                      * 项目 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
@@ -944,14 +894,12 @@ trustasia：亚洲诚信，
 upload：用户上传。
 wosign：沃通
 sheca：上海CA
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_from;
                     bool m_fromHasBeenSet;
 
                     /**
                      * 证书类型：CA = 客户端证书，SVR = 服务器证书。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_certificateType;
                     bool m_certificateTypeHasBeenSet;
@@ -1049,28 +997,24 @@ null：用户上传证书（没有套餐类型），
 
                     /**
                      * 证书产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_productZhName;
                     bool m_productZhNameHasBeenSet;
 
                     /**
                      * 证书绑定通用名称域名。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
                      * 备注名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_alias;
                     bool m_aliasHasBeenSet;
 
                     /**
                      * 证书状态：0 = 审核中，1 = 已通过，2 = 审核失败，3 = 已过期，4 = 自动添加DNS记录，5 = 企业证书，待提交资料，6 = 订单取消中，7 = 已取消，8 = 已提交资料， 待上传确认函，9 = 证书吊销中，10 = 已吊销，11 = 重颁发中，12 = 待上传吊销确认函，13 = 免费证书待提交资料。14 = 证书已退款。 15 = 证书迁移中
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
@@ -1103,7 +1047,6 @@ null：用户上传证书（没有套餐类型），
 
                     /**
                      * 漏洞扫描状态。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vulnerabilityStatus;
                     bool m_vulnerabilityStatusHasBeenSet;
@@ -1124,14 +1067,12 @@ null：用户上传证书（没有套餐类型），
 
                     /**
                      * 证书有效期：单位（月）。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_validityPeriod;
                     bool m_validityPeriodHasBeenSet;
 
                     /**
                      * 证书申请时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_insertTime;
                     bool m_insertTimeHasBeenSet;
@@ -1145,7 +1086,6 @@ null：用户上传证书（没有套餐类型），
 
                     /**
                      * 证书扩展信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CertificateExtra m_certificateExtra;
                     bool m_certificateExtraHasBeenSet;
@@ -1180,7 +1120,6 @@ null：用户上传证书（没有套餐类型），
 
                     /**
                      * 证书 ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_certificateId;
                     bool m_certificateIdHasBeenSet;
@@ -1194,42 +1133,36 @@ null：用户上传证书（没有套餐类型），
 
                     /**
                      * 状态描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_statusName;
                     bool m_statusNameHasBeenSet;
 
                     /**
                      * 证书包含的多个域名（不包含主域名，主域名使用Domain字段）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_subjectAltName;
                     bool m_subjectAltNameHasBeenSet;
 
                     /**
                      * 是否为付费证书。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isVip;
                     bool m_isVipHasBeenSet;
 
                     /**
                      * 是否为泛域名证书。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isWildcard;
                     bool m_isWildcardHasBeenSet;
 
                     /**
                      * 是否为 DV 版证书。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isDv;
                     bool m_isDvHasBeenSet;
 
                     /**
                      * 是否启用了漏洞扫描功能。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isVulnerability;
                     bool m_isVulnerabilityHasBeenSet;
@@ -1243,28 +1176,24 @@ null：用户上传证书（没有套餐类型），
 
                     /**
                      * 是否可续费。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_renewAble;
                     bool m_renewAbleHasBeenSet;
 
                     /**
                      * 是否可部署。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_deployable;
                     bool m_deployableHasBeenSet;
 
                     /**
                      * 关联标签列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tags> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
                      * 根证书。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RootCertificates m_rootCert;
                     bool m_rootCertHasBeenSet;
@@ -1299,7 +1228,6 @@ null：用户上传证书（没有套餐类型），
 
                     /**
                      * 证书加密算法（国密证书特有）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_encryptAlgorithm;
                     bool m_encryptAlgorithmHasBeenSet;

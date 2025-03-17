@@ -68,6 +68,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/FlightItem.h
   include/tencentcloud/ocr/v20181119/model/Value.h
   include/tencentcloud/ocr/v20181119/model/EnterpriseLicenseOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/BankSlip.h
   include/tencentcloud/ocr/v20181119/model/QuestionOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/SealInfo.h
   include/tencentcloud/ocr/v20181119/model/InvoiceGeneralInfo.h
@@ -391,6 +392,7 @@ set(ocr_src
   src/v20181119/model/FlightItem.cpp
   src/v20181119/model/Value.cpp
   src/v20181119/model/EnterpriseLicenseOCRResponse.cpp
+  src/v20181119/model/BankSlip.cpp
   src/v20181119/model/QuestionOCRResponse.cpp
   src/v20181119/model/SealInfo.cpp
   src/v20181119/model/InvoiceGeneralInfo.cpp

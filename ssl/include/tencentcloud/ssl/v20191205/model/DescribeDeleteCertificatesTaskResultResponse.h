@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取批量删除证书异步任务结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeleteTaskResult 批量删除证书异步任务结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DeleteTaskResult> GetDeleteTaskResult() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 批量删除证书异步任务结果
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DeleteTaskResult> m_deleteTaskResult;
                     bool m_deleteTaskResultHasBeenSet;

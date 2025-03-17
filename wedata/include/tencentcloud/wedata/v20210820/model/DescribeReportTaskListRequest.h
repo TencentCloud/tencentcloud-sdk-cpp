@@ -211,15 +211,15 @@ namespace TencentCloud
                     bool EngineTaskIdHasBeenSet() const;
 
                     /**
-                     * 获取产品模块
-                     * @return ProductSource 产品模块
+                     * 获取数据来源,DATA_INTEGRATION、DATA_EXPLORATION、DATA_QUALITY、OM_CENTER等
+                     * @return ProductSource 数据来源,DATA_INTEGRATION、DATA_EXPLORATION、DATA_QUALITY、OM_CENTER等
                      * 
                      */
                     std::string GetProductSource() const;
 
                     /**
-                     * 设置产品模块
-                     * @param _productSource 产品模块
+                     * 设置数据来源,DATA_INTEGRATION、DATA_EXPLORATION、DATA_QUALITY、OM_CENTER等
+                     * @param _productSource 数据来源,DATA_INTEGRATION、DATA_EXPLORATION、DATA_QUALITY、OM_CENTER等
                      * 
                      */
                     void SetProductSource(const std::string& _productSource);
@@ -345,7 +345,7 @@ namespace TencentCloud
                     bool m_engineTaskIdHasBeenSet;
 
                     /**
-                     * 产品模块
+                     * 数据来源,DATA_INTEGRATION、DATA_EXPLORATION、DATA_QUALITY、OM_CENTER等
                      */
                     std::string m_productSource;
                     bool m_productSourceHasBeenSet;

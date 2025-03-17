@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zone 可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zone 可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取存储量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StockCount 存储量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStockCount() const;
 
                     /**
                      * 设置存储量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _stockCount 存储量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStockCount(const int64_t& _stockCount);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否包含库存
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HasStock 是否包含库存
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetHasStock() const;
 
                     /**
                      * 设置是否包含库存
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hasStock 是否包含库存
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHasStock(const bool& _hasStock);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取从可用区库存信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SlaveZoneStockInfos 从可用区库存信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SlaveZoneStockInfo> GetSlaveZoneStockInfos() const;
 
                     /**
                      * 设置从可用区库存信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _slaveZoneStockInfos 从可用区库存信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSlaveZoneStockInfos(const std::vector<SlaveZoneStockInfo>& _slaveZoneStockInfos);
@@ -151,28 +135,24 @@ namespace TencentCloud
 
                     /**
                      * 可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
                      * 存储量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_stockCount;
                     bool m_stockCountHasBeenSet;
 
                     /**
                      * 是否包含库存
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_hasStock;
                     bool m_hasStockHasBeenSet;
 
                     /**
                      * 从可用区库存信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SlaveZoneStockInfo> m_slaveZoneStockInfos;
                     bool m_slaveZoneStockInfosHasBeenSet;

@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uin 主账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUin() const;
 
                     /**
                      * 设置主账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uin 主账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUin(const std::string& _uin);
@@ -115,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubAccountUin 子账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubAccountUin() const;
 
                     /**
                      * 设置子账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subAccountUin 子账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubAccountUin(const std::string& _subAccountUin);
@@ -140,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CertId 证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCertId() const;
 
                     /**
                      * 设置证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _certId 证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCertId(const std::string& _certId);
@@ -191,7 +179,6 @@ namespace TencentCloud
 24. issued - 表示证书签发。
 25. domainValidationPassed - 表示域名验证完成。
 26. Resubmit - 表示证书重新申请。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 每个操作类型都对应一个具体的操作描述。以下是对每个操作类型及其描述的文字说明：
 1. apply - 表示申请一个免费的证书。
 2. delete - 表示删除操作。
@@ -219,7 +206,6 @@ namespace TencentCloud
 24. issued - 表示证书签发。
 25. domainValidationPassed - 表示域名验证完成。
 26. Resubmit - 表示证书重新申请。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
@@ -252,7 +238,6 @@ namespace TencentCloud
 24. issued - 表示证书签发。
 25. domainValidationPassed - 表示域名验证完成。
 26. Resubmit - 表示证书重新申请。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 每个操作类型都对应一个具体的操作描述。以下是对每个操作类型及其描述的文字说明：
 1. apply - 表示申请一个免费的证书。
 2. delete - 表示删除操作。
@@ -280,7 +265,6 @@ namespace TencentCloud
 24. issued - 表示证书签发。
 25. domainValidationPassed - 表示域名验证完成。
 26. Resubmit - 表示证书重新申请。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -308,21 +292,18 @@ namespace TencentCloud
 
                     /**
                      * 主账号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
                      * 子账号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subAccountUin;
                     bool m_subAccountUinHasBeenSet;
 
                     /**
                      * 证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_certId;
                     bool m_certIdHasBeenSet;
@@ -355,7 +336,6 @@ namespace TencentCloud
 24. issued - 表示证书签发。
 25. domainValidationPassed - 表示域名验证完成。
 26. Resubmit - 表示证书重新申请。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

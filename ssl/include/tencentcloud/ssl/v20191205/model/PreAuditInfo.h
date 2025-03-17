@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取证书总年限
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalPeriod 证书总年限
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalPeriod() const;
 
                     /**
                      * 设置证书总年限
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalPeriod 证书总年限
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalPeriod(const int64_t& _totalPeriod);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取证书当前年限
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NowPeriod 证书当前年限
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetNowPeriod() const;
 
                     /**
                      * 设置证书当前年限
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nowPeriod 证书当前年限
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNowPeriod(const int64_t& _nowPeriod);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取证书预审核管理人ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ManagerId 证书预审核管理人ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetManagerId() const;
 
                     /**
                      * 设置证书预审核管理人ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _managerId 证书预审核管理人ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetManagerId(const std::string& _managerId);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 证书总年限
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalPeriod;
                     bool m_totalPeriodHasBeenSet;
 
                     /**
                      * 证书当前年限
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_nowPeriod;
                     bool m_nowPeriodHasBeenSet;
 
                     /**
                      * 证书预审核管理人ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_managerId;
                     bool m_managerIdHasBeenSet;

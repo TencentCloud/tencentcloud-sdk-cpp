@@ -741,15 +741,15 @@ video 纯视频
                     bool RecordStreamHasBeenSet() const;
 
                     /**
-                     * 获取板书截图生成类型。0 不生成板书；1 全量模式；2 单页去重模式
-                     * @return WhiteBoardSnapshotMode 板书截图生成类型。0 不生成板书；1 全量模式；2 单页去重模式
+                     * 获取板书截图生成类型。0 不生成板书（默认）；1 全量模式；2 单页去重模式
+                     * @return WhiteBoardSnapshotMode 板书截图生成类型。0 不生成板书（默认）；1 全量模式；2 单页去重模式
                      * 
                      */
                     uint64_t GetWhiteBoardSnapshotMode() const;
 
                     /**
-                     * 设置板书截图生成类型。0 不生成板书；1 全量模式；2 单页去重模式
-                     * @param _whiteBoardSnapshotMode 板书截图生成类型。0 不生成板书；1 全量模式；2 单页去重模式
+                     * 设置板书截图生成类型。0 不生成板书（默认）；1 全量模式；2 单页去重模式
+                     * @param _whiteBoardSnapshotMode 板书截图生成类型。0 不生成板书（默认）；1 全量模式；2 单页去重模式
                      * 
                      */
                     void SetWhiteBoardSnapshotMode(const uint64_t& _whiteBoardSnapshotMode);
@@ -961,7 +961,7 @@ video 纯视频
                     bool m_recordStreamHasBeenSet;
 
                     /**
-                     * 板书截图生成类型。0 不生成板书；1 全量模式；2 单页去重模式
+                     * 板书截图生成类型。0 不生成板书（默认）；1 全量模式；2 单页去重模式
                      */
                     uint64_t m_whiteBoardSnapshotMode;
                     bool m_whiteBoardSnapshotModeHasBeenSet;

@@ -384,18 +384,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规格展示
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ComputeFormat 规格展示
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetComputeFormat() const;
 
                     /**
                      * 设置规格展示
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _computeFormat 规格展示
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetComputeFormat(const std::string& _computeFormat);
@@ -409,18 +405,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规格类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TypeFamily 规格类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTypeFamily() const;
 
                     /**
                      * 设置规格类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _typeFamily 规格类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTypeFamily(const std::string& _typeFamily);
@@ -434,18 +426,14 @@ namespace TencentCloud
 
                     /**
                      * 获取0未支付，1已支付
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubOrderPayStatus 0未支付，1已支付
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSubOrderPayStatus() const;
 
                     /**
                      * 设置0未支付，1已支付
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subOrderPayStatus 0未支付，1已支付
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubOrderPayStatus(const int64_t& _subOrderPayStatus);
@@ -557,21 +545,18 @@ namespace TencentCloud
 
                     /**
                      * 规格展示
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_computeFormat;
                     bool m_computeFormatHasBeenSet;
 
                     /**
                      * 规格类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_typeFamily;
                     bool m_typeFamilyHasBeenSet;
 
                     /**
                      * 0未支付，1已支付
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_subOrderPayStatus;
                     bool m_subOrderPayStatusHasBeenSet;

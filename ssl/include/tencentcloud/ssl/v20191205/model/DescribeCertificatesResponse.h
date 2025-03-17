@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取总数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 总数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Certificates 列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Certificates> GetCertificates() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 总数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
                      * 列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Certificates> m_certificates;
                     bool m_certificatesHasBeenSet;

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Domain 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDomain() const;
 
                     /**
                      * 设置域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _domain 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDomain(const std::string& _domain);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取解析状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DNSStatus 解析状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDNSStatus() const;
 
                     /**
                      * 设置解析状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dNSStatus 解析状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDNSStatus(const std::string& _dNSStatus);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取已绑定证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OldCertificateId 已绑定证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOldCertificateId() const;
 
                     /**
                      * 设置已绑定证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _oldCertificateId 已绑定证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOldCertificateId(const std::string& _oldCertificateId);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 域名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
 
                     /**
                      * 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 解析状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dNSStatus;
                     bool m_dNSStatusHasBeenSet;
 
                     /**
                      * 已绑定证书ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_oldCertificateId;
                     bool m_oldCertificateIdHasBeenSet;

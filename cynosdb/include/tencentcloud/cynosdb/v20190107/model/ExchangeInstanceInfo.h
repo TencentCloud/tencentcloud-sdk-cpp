@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取源实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SrcInstanceInfo 源实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RollbackInstanceInfo GetSrcInstanceInfo() const;
 
                     /**
                      * 设置源实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _srcInstanceInfo 源实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSrcInstanceInfo(const RollbackInstanceInfo& _srcInstanceInfo);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取目标实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DstInstanceInfo 目标实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RollbackInstanceInfo GetDstInstanceInfo() const;
 
                     /**
                      * 设置目标实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dstInstanceInfo 目标实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDstInstanceInfo(const RollbackInstanceInfo& _dstInstanceInfo);
@@ -101,14 +93,12 @@ namespace TencentCloud
 
                     /**
                      * 源实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RollbackInstanceInfo m_srcInstanceInfo;
                     bool m_srcInstanceInfoHasBeenSet;
 
                     /**
                      * 目标实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RollbackInstanceInfo m_dstInstanceInfo;
                     bool m_dstInstanceInfoHasBeenSet;

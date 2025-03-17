@@ -27,7 +27,8 @@ DedicatedCluster::DedicatedCluster() :
     m_nameHasBeenSet(false),
     m_lifecycleStatusHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_siteIdHasBeenSet(false)
+    m_siteIdHasBeenSet(false),
+    m_runningStatusHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome DedicatedCluster::Deserialize(const rapidjson::Value &value)
         m_siteIdHasBeenSet = true;
     }
 
+    if (value.HasMember("RunningStatus") && !value["RunningStatus"].IsNull())
+    {
+        if (!value["RunningStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DedicatedCluster.RunningStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_runningStatus = string(value["RunningStatus"].GetString());
+        m_runningStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void DedicatedCluster::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "SiteId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_siteId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_runningStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RunningStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_runningStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void DedicatedCluster::SetSiteId(const string& _siteId)
 bool DedicatedCluster::SiteIdHasBeenSet() const
 {
     return m_siteIdHasBeenSet;
+}
+
+string DedicatedCluster::GetRunningStatus() const
+{
+    return m_runningStatus;
+}
+
+void DedicatedCluster::SetRunningStatus(const string& _runningStatus)
+{
+    m_runningStatus = _runningStatus;
+    m_runningStatusHasBeenSet = true;
+}
+
+bool DedicatedCluster::RunningStatusHasBeenSet() const
+{
+    return m_runningStatusHasBeenSet;
 }
 

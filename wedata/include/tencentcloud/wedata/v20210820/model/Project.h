@@ -420,6 +420,31 @@ namespace TencentCloud
                      */
                     bool SecondModuleListHasBeenSet() const;
 
+                    /**
+                     * 获取项目负责人
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Owner 项目负责人
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    BaseUser GetOwner() const;
+
+                    /**
+                     * 设置项目负责人
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _owner 项目负责人
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOwner(const BaseUser& _owner);
+
+                    /**
+                     * 判断参数 Owner 是否已赋值
+                     * @return Owner 是否已赋值
+                     * 
+                     */
+                    bool OwnerHasBeenSet() const;
+
                 private:
 
                     /**
@@ -525,6 +550,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_secondModuleList;
                     bool m_secondModuleListHasBeenSet;
+
+                    /**
+                     * 项目负责人
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    BaseUser m_owner;
+                    bool m_ownerHasBeenSet;
 
                 };
             }

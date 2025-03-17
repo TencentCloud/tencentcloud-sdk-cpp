@@ -28,7 +28,8 @@ DescribeInstancesNewRequest::DescribeInstancesNewRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_searchTagsHasBeenSet(false),
-    m_isSimpleHasBeenSet(false)
+    m_isSimpleHasBeenSet(false),
+    m_vipsHasBeenSet(false)
 {
 }
 
@@ -92,6 +93,19 @@ string DescribeInstancesNewRequest::ToJsonString() const
         string key = "IsSimple";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isSimple, allocator);
+    }
+
+    if (m_vipsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Vips";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_vips.begin(); itr != m_vips.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -196,6 +210,22 @@ void DescribeInstancesNewRequest::SetIsSimple(const bool& _isSimple)
 bool DescribeInstancesNewRequest::IsSimpleHasBeenSet() const
 {
     return m_isSimpleHasBeenSet;
+}
+
+vector<string> DescribeInstancesNewRequest::GetVips() const
+{
+    return m_vips;
+}
+
+void DescribeInstancesNewRequest::SetVips(const vector<string>& _vips)
+{
+    m_vips = _vips;
+    m_vipsHasBeenSet = true;
+}
+
+bool DescribeInstancesNewRequest::VipsHasBeenSet() const
+{
+    return m_vipsHasBeenSet;
 }
 
 

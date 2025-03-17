@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取吊销证书域名验证信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RevokeDomainValidateAuths 吊销证书域名验证信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RevokeDomainValidateAuths> GetRevokeDomainValidateAuths() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 吊销证书域名验证信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RevokeDomainValidateAuths> m_revokeDomainValidateAuths;
                     bool m_revokeDomainValidateAuthsHasBeenSet;

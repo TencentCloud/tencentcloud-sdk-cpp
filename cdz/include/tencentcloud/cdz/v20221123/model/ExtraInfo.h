@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取专属可用区当地时间本周一日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ThisMondayLocalDate 专属可用区当地时间本周一日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetThisMondayLocalDate() const;
 
                     /**
                      * 设置专属可用区当地时间本周一日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _thisMondayLocalDate 专属可用区当地时间本周一日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetThisMondayLocalDate(const std::string& _thisMondayLocalDate);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取专属可用区当地时间上周一日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastMondayLocalDate 专属可用区当地时间上周一日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLastMondayLocalDate() const;
 
                     /**
                      * 设置专属可用区当地时间上周一日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lastMondayLocalDate 专属可用区当地时间上周一日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLastMondayLocalDate(const std::string& _lastMondayLocalDate);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 专属可用区当地时间本周一日期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_thisMondayLocalDate;
                     bool m_thisMondayLocalDateHasBeenSet;
 
                     /**
                      * 专属可用区当地时间上周一日期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastMondayLocalDate;
                     bool m_lastMondayLocalDateHasBeenSet;

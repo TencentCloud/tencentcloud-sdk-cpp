@@ -48,18 +48,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取1
+                     * 获取引擎任务id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EngineTaskId 1
+                     * @return EngineTaskId 引擎任务id
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEngineTaskId() const;
 
                     /**
-                     * 设置1
+                     * 设置引擎任务id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _engineTaskId 1
+                     * @param _engineTaskId 引擎任务id
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -73,18 +73,18 @@ namespace TencentCloud
                     bool EngineTaskIdHasBeenSet() const;
 
                     /**
-                     * 获取1
+                     * 获取引擎执行状态，枚举
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EngineExeStatus 1
+                     * @return EngineExeStatus 引擎执行状态，枚举
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEngineExeStatus() const;
 
                     /**
-                     * 设置1
+                     * 设置引擎执行状态，枚举
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _engineExeStatus 1
+                     * @param _engineExeStatus 引擎执行状态，枚举
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -98,18 +98,18 @@ namespace TencentCloud
                     bool EngineExeStatusHasBeenSet() const;
 
                     /**
-                     * 获取1
+                     * 获取引擎执行开始时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EngineExeStartTime 1
+                     * @return EngineExeStartTime 引擎执行开始时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEngineExeStartTime() const;
 
                     /**
-                     * 设置1
+                     * 设置引擎执行开始时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _engineExeStartTime 1
+                     * @param _engineExeStartTime 引擎执行开始时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -123,18 +123,18 @@ namespace TencentCloud
                     bool EngineExeStartTimeHasBeenSet() const;
 
                     /**
-                     * 获取1
+                     * 获取引擎执行结束时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EngineExeEndTime 1
+                     * @return EngineExeEndTime 引擎执行结束时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEngineExeEndTime() const;
 
                     /**
-                     * 设置1
+                     * 设置引擎执行结束时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _engineExeEndTime 1
+                     * @param _engineExeEndTime 引擎执行结束时间
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -148,18 +148,18 @@ namespace TencentCloud
                     bool EngineExeEndTimeHasBeenSet() const;
 
                     /**
-                     * 获取1
+                     * 获取任务类型id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TaskTypeId 1
+                     * @return TaskTypeId 任务类型id
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTaskTypeId() const;
 
                     /**
-                     * 设置1
+                     * 设置任务类型id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _taskTypeId 1
+                     * @param _taskTypeId 任务类型id
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -173,18 +173,18 @@ namespace TencentCloud
                     bool TaskTypeIdHasBeenSet() const;
 
                     /**
-                     * 获取1
+                     * 获取业务信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BusinessInfo 1
+                     * @return BusinessInfo 业务信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBusinessInfo() const;
 
                     /**
-                     * 设置1
+                     * 设置业务信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _businessInfo 1
+                     * @param _businessInfo 业务信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -198,18 +198,18 @@ namespace TencentCloud
                     bool BusinessInfoHasBeenSet() const;
 
                     /**
-                     * 获取1
+                     * 获取引擎任务信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EngineTaskInfo 1
+                     * @return EngineTaskInfo 引擎任务信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     EngineTaskInfo GetEngineTaskInfo() const;
 
                     /**
-                     * 设置1
+                     * 设置引擎任务信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _engineTaskInfo 1
+                     * @param _engineTaskInfo 引擎任务信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -225,49 +225,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 1
+                     * 引擎任务id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_engineTaskId;
                     bool m_engineTaskIdHasBeenSet;
 
                     /**
-                     * 1
+                     * 引擎执行状态，枚举
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_engineExeStatus;
                     bool m_engineExeStatusHasBeenSet;
 
                     /**
-                     * 1
+                     * 引擎执行开始时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_engineExeStartTime;
                     bool m_engineExeStartTimeHasBeenSet;
 
                     /**
-                     * 1
+                     * 引擎执行结束时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_engineExeEndTime;
                     bool m_engineExeEndTimeHasBeenSet;
 
                     /**
-                     * 1
+                     * 任务类型id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_taskTypeId;
                     bool m_taskTypeIdHasBeenSet;
 
                     /**
-                     * 1
+                     * 业务信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_businessInfo;
                     bool m_businessInfoHasBeenSet;
 
                     /**
-                     * 1
+                     * 引擎任务信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     EngineTaskInfo m_engineTaskInfo;

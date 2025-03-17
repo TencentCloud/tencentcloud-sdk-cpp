@@ -70,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例参数修改任务详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifyInstanceParamList 实例参数修改任务详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ModifyParamItem> GetModifyInstanceParamList() const;
 
                     /**
                      * 设置实例参数修改任务详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modifyInstanceParamList 实例参数修改任务详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModifyInstanceParamList(const std::vector<ModifyParamItem>& _modifyInstanceParamList);
@@ -103,7 +99,6 @@ namespace TencentCloud
 
                     /**
                      * 实例参数修改任务详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ModifyParamItem> m_modifyInstanceParamList;
                     bool m_modifyInstanceParamListHasBeenSet;

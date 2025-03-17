@@ -238,18 +238,14 @@ namespace TencentCloud
 
                     /**
                      * 获取参数的可选枚举值。如果为非枚举值，则为空
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnumValue 参数的可选枚举值。如果为非枚举值，则为空
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetEnumValue() const;
 
                     /**
                      * 设置参数的可选枚举值。如果为非枚举值，则为空
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enumValue 参数的可选枚举值。如果为非枚举值，则为空
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnumValue(const std::vector<std::string>& _enumValue);
@@ -326,18 +322,14 @@ namespace TencentCloud
 
                     /**
                      * 获取true-为公式，false-非公式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsFunc true-为公式，false-非公式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsFunc() const;
 
                     /**
                      * 设置true-为公式，false-非公式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isFunc true-为公式，false-非公式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsFunc(const bool& _isFunc);
@@ -351,18 +343,14 @@ namespace TencentCloud
 
                     /**
                      * 获取参数设置为公式时，Func返回设置的公式内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Func 参数设置为公式时，Func返回设置的公式内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFunc() const;
 
                     /**
                      * 设置参数设置为公式时，Func返回设置的公式内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _func 参数设置为公式时，Func返回设置的公式内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFunc(const std::string& _func);
@@ -376,18 +364,14 @@ namespace TencentCloud
 
                     /**
                      * 获取参数是否可修改
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifiableInfo 参数是否可修改
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ModifiableInfo GetModifiableInfo() const;
 
                     /**
                      * 设置参数是否可修改
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modifiableInfo 参数是否可修改
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModifiableInfo(const ModifiableInfo& _modifiableInfo);
@@ -401,18 +385,14 @@ namespace TencentCloud
 
                     /**
                      * 获取支持公式的参数的默认公式样式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FuncPattern 支持公式的参数的默认公式样式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFuncPattern() const;
 
                     /**
                      * 设置支持公式的参数的默认公式样式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _funcPattern 支持公式的参数的默认公式样式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFuncPattern(const std::string& _funcPattern);
@@ -482,7 +462,6 @@ namespace TencentCloud
 
                     /**
                      * 参数的可选枚举值。如果为非枚举值，则为空
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_enumValue;
                     bool m_enumValueHasBeenSet;
@@ -507,28 +486,24 @@ namespace TencentCloud
 
                     /**
                      * true-为公式，false-非公式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isFunc;
                     bool m_isFuncHasBeenSet;
 
                     /**
                      * 参数设置为公式时，Func返回设置的公式内容
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_func;
                     bool m_funcHasBeenSet;
 
                     /**
                      * 参数是否可修改
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ModifiableInfo m_modifiableInfo;
                     bool m_modifiableInfoHasBeenSet;
 
                     /**
                      * 支持公式的参数的默认公式样式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_funcPattern;
                     bool m_funcPatternHasBeenSet;

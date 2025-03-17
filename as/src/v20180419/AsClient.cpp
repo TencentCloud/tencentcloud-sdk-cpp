@@ -1502,6 +1502,49 @@ AsClient::EnableAutoScalingGroupOutcomeCallable AsClient::EnableAutoScalingGroup
     return task->get_future();
 }
 
+AsClient::EnterStandbyOutcome AsClient::EnterStandby(const EnterStandbyRequest &request)
+{
+    auto outcome = MakeRequest(request, "EnterStandby");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnterStandbyResponse rsp = EnterStandbyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnterStandbyOutcome(rsp);
+        else
+            return EnterStandbyOutcome(o.GetError());
+    }
+    else
+    {
+        return EnterStandbyOutcome(outcome.GetError());
+    }
+}
+
+void AsClient::EnterStandbyAsync(const EnterStandbyRequest& request, const EnterStandbyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->EnterStandby(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AsClient::EnterStandbyOutcomeCallable AsClient::EnterStandbyCallable(const EnterStandbyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<EnterStandbyOutcome()>>(
+        [this, request]()
+        {
+            return this->EnterStandby(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AsClient::ExecuteScalingPolicyOutcome AsClient::ExecuteScalingPolicy(const ExecuteScalingPolicyRequest &request)
 {
     auto outcome = MakeRequest(request, "ExecuteScalingPolicy");

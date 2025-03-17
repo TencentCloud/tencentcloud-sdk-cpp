@@ -24,6 +24,7 @@
 #include <tencentcloud/cdwch/v20200915/model/Charge.h>
 #include <tencentcloud/cdwch/v20200915/model/NodeSpec.h>
 #include <tencentcloud/cdwch/v20200915/model/Tag.h>
+#include <tencentcloud/cdwch/v20200915/model/SecondaryZoneInfo.h>
 
 
 namespace TencentCloud
@@ -368,6 +369,27 @@ SpecName从DescribeSpec接口中返回的CommonSpec.Name（ZK节点）获取
                      */
                     bool TagItemsHasBeenSet() const;
 
+                    /**
+                     * 获取副可用去信息
+                     * @return SecondaryZoneInfo 副可用去信息
+                     * 
+                     */
+                    std::vector<SecondaryZoneInfo> GetSecondaryZoneInfo() const;
+
+                    /**
+                     * 设置副可用去信息
+                     * @param _secondaryZoneInfo 副可用去信息
+                     * 
+                     */
+                    void SetSecondaryZoneInfo(const std::vector<SecondaryZoneInfo>& _secondaryZoneInfo);
+
+                    /**
+                     * 判断参数 SecondaryZoneInfo 是否已赋值
+                     * @return SecondaryZoneInfo 是否已赋值
+                     * 
+                     */
+                    bool SecondaryZoneInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -461,6 +483,12 @@ SpecName从DescribeSpec接口中返回的CommonSpec.Name（ZK节点）获取
                      */
                     std::vector<Tag> m_tagItems;
                     bool m_tagItemsHasBeenSet;
+
+                    /**
+                     * 副可用去信息
+                     */
+                    std::vector<SecondaryZoneInfo> m_secondaryZoneInfo;
+                    bool m_secondaryZoneInfoHasBeenSet;
 
                 };
             }

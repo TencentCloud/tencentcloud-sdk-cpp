@@ -40,6 +40,49 @@ TchdClient::TchdClient(const Credential &credential, const string &region, const
 }
 
 
+TchdClient::DescribeEventStatisticsOutcome TchdClient::DescribeEventStatistics(const DescribeEventStatisticsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEventStatistics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEventStatisticsResponse rsp = DescribeEventStatisticsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEventStatisticsOutcome(rsp);
+        else
+            return DescribeEventStatisticsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEventStatisticsOutcome(outcome.GetError());
+    }
+}
+
+void TchdClient::DescribeEventStatisticsAsync(const DescribeEventStatisticsRequest& request, const DescribeEventStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeEventStatistics(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TchdClient::DescribeEventStatisticsOutcomeCallable TchdClient::DescribeEventStatisticsCallable(const DescribeEventStatisticsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeEventStatisticsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeEventStatistics(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TchdClient::DescribeEventsOutcome TchdClient::DescribeEvents(const DescribeEventsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeEvents");
