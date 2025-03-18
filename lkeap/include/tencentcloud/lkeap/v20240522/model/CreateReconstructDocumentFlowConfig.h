@@ -50,11 +50,11 @@ namespace TencentCloud
                      * 获取Markdown文件中表格返回的形式
 0，表格以MD形式返回
 1，表格以HTML形式返回
-默认为1
+默认为0
                      * @return TableResultType Markdown文件中表格返回的形式
 0，表格以MD形式返回
 1，表格以HTML形式返回
-默认为1
+默认为0
                      * 
                      */
                     std::string GetTableResultType() const;
@@ -63,11 +63,11 @@ namespace TencentCloud
                      * 设置Markdown文件中表格返回的形式
 0，表格以MD形式返回
 1，表格以HTML形式返回
-默认为1
+默认为0
                      * @param _tableResultType Markdown文件中表格返回的形式
 0，表格以MD形式返回
 1，表格以HTML形式返回
-默认为1
+默认为0
                      * 
                      */
                     void SetTableResultType(const std::string& _tableResultType);
@@ -86,18 +86,14 @@ namespace TencentCloud
 2：只返回每一页的MD，
 3：返回全文MD + 每一页的OCR原始Json；
 4：返回全文MD + 每一页的MD，
-默认值为3（返回全文MD + 每一页的OCR原始Json）
-
-
+默认值为0
                      * @return ResultType 智能文档解析返回结果的格式
 0：只返回全文MD；
 1：只返回每一页的OCR原始Json；
 2：只返回每一页的MD，
 3：返回全文MD + 每一页的OCR原始Json；
 4：返回全文MD + 每一页的MD，
-默认值为3（返回全文MD + 每一页的OCR原始Json）
-
-
+默认值为0
                      * 
                      */
                     std::string GetResultType() const;
@@ -109,18 +105,14 @@ namespace TencentCloud
 2：只返回每一页的MD，
 3：返回全文MD + 每一页的OCR原始Json；
 4：返回全文MD + 每一页的MD，
-默认值为3（返回全文MD + 每一页的OCR原始Json）
-
-
+默认值为0
                      * @param _resultType 智能文档解析返回结果的格式
 0：只返回全文MD；
 1：只返回每一页的OCR原始Json；
 2：只返回每一页的MD，
 3：返回全文MD + 每一页的OCR原始Json；
 4：返回全文MD + 每一页的MD，
-默认值为3（返回全文MD + 每一页的OCR原始Json）
-
-
+默认值为0
                      * 
                      */
                     void SetResultType(const std::string& _resultType);
@@ -138,7 +130,7 @@ namespace TencentCloud
                      * Markdown文件中表格返回的形式
 0，表格以MD形式返回
 1，表格以HTML形式返回
-默认为1
+默认为0
                      */
                     std::string m_tableResultType;
                     bool m_tableResultTypeHasBeenSet;
@@ -150,9 +142,7 @@ namespace TencentCloud
 2：只返回每一页的MD，
 3：返回全文MD + 每一页的OCR原始Json；
 4：返回全文MD + 每一页的MD，
-默认值为3（返回全文MD + 每一页的OCR原始Json）
-
-
+默认值为0
                      */
                     std::string m_resultType;
                     bool m_resultTypeHasBeenSet;

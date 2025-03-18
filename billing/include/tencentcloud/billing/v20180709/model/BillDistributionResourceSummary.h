@@ -532,18 +532,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分成金账户支出：通过分成金账户支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TransferPayAmount 分成金账户支出：通过分成金账户支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTransferPayAmount() const;
 
                     /**
                      * 设置分成金账户支出：通过分成金账户支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _transferPayAmount 分成金账户支出：通过分成金账户支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTransferPayAmount(const std::string& _transferPayAmount);
@@ -620,18 +616,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BillTagInfo> GetTags() const;
 
                     /**
                      * 设置标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::vector<BillTagInfo>& _tags);
@@ -834,18 +826,14 @@ namespace TencentCloud
 
                     /**
                      * 获取账单归属月
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BillMonth 账单归属月
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBillMonth() const;
 
                     /**
                      * 设置账单归属月
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _billMonth 账单归属月
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBillMonth(const std::string& _billMonth);
@@ -999,7 +987,6 @@ namespace TencentCloud
 
                     /**
                      * 分成金账户支出：通过分成金账户支付的金额
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_transferPayAmount;
                     bool m_transferPayAmountHasBeenSet;
@@ -1024,7 +1011,6 @@ namespace TencentCloud
 
                     /**
                      * 标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BillTagInfo> m_tags;
                     bool m_tagsHasBeenSet;
@@ -1085,7 +1071,6 @@ namespace TencentCloud
 
                     /**
                      * 账单归属月
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_billMonth;
                     bool m_billMonthHasBeenSet;

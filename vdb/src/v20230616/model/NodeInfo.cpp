@@ -21,7 +21,8 @@ using namespace TencentCloud::Vdb::V20230616::Model;
 using namespace std;
 
 NodeInfo::NodeInfo() :
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,16 @@ CoreInternalOutcome NodeInfo::Deserialize(const rapidjson::Value &value)
         m_nameHasBeenSet = true;
     }
 
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeInfo.Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = string(value["Status"].GetString());
+        m_statusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +64,14 @@ void NodeInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -72,5 +91,21 @@ void NodeInfo::SetName(const string& _name)
 bool NodeInfo::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+string NodeInfo::GetStatus() const
+{
+    return m_status;
+}
+
+void NodeInfo::SetStatus(const string& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool NodeInfo::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 

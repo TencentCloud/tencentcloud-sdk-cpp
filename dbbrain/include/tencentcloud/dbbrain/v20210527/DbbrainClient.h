@@ -25,8 +25,12 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/dbbrain/v20210527/model/AddUserContactRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/AddUserContactResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/CancelDBAutonomyActionRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/CancelDBAutonomyActionResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/CancelKillTaskRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/CancelKillTaskResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/CancelRedisBigKeyAnalysisTasksRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/CancelRedisBigKeyAnalysisTasksResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/CloseAuditServiceRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/CloseAuditServiceResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/CreateAuditLogFileRequest.h>
@@ -49,6 +53,8 @@
 #include <tencentcloud/dbbrain/v20210527/model/CreateSecurityAuditLogExportTaskResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/CreateSqlFilterRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/CreateSqlFilterResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/CreateUserAutonomyProfileRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/CreateUserAutonomyProfileResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DeleteAuditLogFileRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DeleteAuditLogFileResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DeleteDBDiagReportTasksRequest.h>
@@ -69,6 +75,10 @@
 #include <tencentcloud/dbbrain/v20210527/model/DescribeAuditInstanceListResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeAuditLogFilesRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeAuditLogFilesResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeDBAutonomyActionsRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeDBAutonomyActionsResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeDBAutonomyEventsRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeDBAutonomyEventsResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDBDiagEventRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDBDiagEventResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDBDiagEventsRequest.h>
@@ -131,6 +141,8 @@
 #include <tencentcloud/dbbrain/v20210527/model/DescribeTopSpaceTableTimeSeriesResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeTopSpaceTablesRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeTopSpaceTablesResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeUserAutonomyProfileRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeUserAutonomyProfileResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeUserSqlAdviceRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeUserSqlAdviceResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/KillMySqlThreadsRequest.h>
@@ -143,6 +155,8 @@
 #include <tencentcloud/dbbrain/v20210527/model/ModifyDiagDBInstanceConfResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/ModifySqlFiltersRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/ModifySqlFiltersResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/ModifyUserAutonomyProfileRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/ModifyUserAutonomyProfileResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/OpenAuditServiceRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/OpenAuditServiceResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/UpdateAgentSwitchRequest.h>
@@ -168,9 +182,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddUserContactResponse> AddUserContactOutcome;
                 typedef std::future<AddUserContactOutcome> AddUserContactOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::AddUserContactRequest&, AddUserContactOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddUserContactAsyncHandler;
+                typedef Outcome<Core::Error, Model::CancelDBAutonomyActionResponse> CancelDBAutonomyActionOutcome;
+                typedef std::future<CancelDBAutonomyActionOutcome> CancelDBAutonomyActionOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::CancelDBAutonomyActionRequest&, CancelDBAutonomyActionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelDBAutonomyActionAsyncHandler;
                 typedef Outcome<Core::Error, Model::CancelKillTaskResponse> CancelKillTaskOutcome;
                 typedef std::future<CancelKillTaskOutcome> CancelKillTaskOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::CancelKillTaskRequest&, CancelKillTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelKillTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CancelRedisBigKeyAnalysisTasksResponse> CancelRedisBigKeyAnalysisTasksOutcome;
+                typedef std::future<CancelRedisBigKeyAnalysisTasksOutcome> CancelRedisBigKeyAnalysisTasksOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::CancelRedisBigKeyAnalysisTasksRequest&, CancelRedisBigKeyAnalysisTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelRedisBigKeyAnalysisTasksAsyncHandler;
                 typedef Outcome<Core::Error, Model::CloseAuditServiceResponse> CloseAuditServiceOutcome;
                 typedef std::future<CloseAuditServiceOutcome> CloseAuditServiceOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::CloseAuditServiceRequest&, CloseAuditServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseAuditServiceAsyncHandler;
@@ -204,6 +224,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateSqlFilterResponse> CreateSqlFilterOutcome;
                 typedef std::future<CreateSqlFilterOutcome> CreateSqlFilterOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::CreateSqlFilterRequest&, CreateSqlFilterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSqlFilterAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateUserAutonomyProfileResponse> CreateUserAutonomyProfileOutcome;
+                typedef std::future<CreateUserAutonomyProfileOutcome> CreateUserAutonomyProfileOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::CreateUserAutonomyProfileRequest&, CreateUserAutonomyProfileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserAutonomyProfileAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteAuditLogFileResponse> DeleteAuditLogFileOutcome;
                 typedef std::future<DeleteAuditLogFileOutcome> DeleteAuditLogFileOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DeleteAuditLogFileRequest&, DeleteAuditLogFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAuditLogFileAsyncHandler;
@@ -234,6 +257,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAuditLogFilesResponse> DescribeAuditLogFilesOutcome;
                 typedef std::future<DescribeAuditLogFilesOutcome> DescribeAuditLogFilesOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeAuditLogFilesRequest&, DescribeAuditLogFilesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditLogFilesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDBAutonomyActionsResponse> DescribeDBAutonomyActionsOutcome;
+                typedef std::future<DescribeDBAutonomyActionsOutcome> DescribeDBAutonomyActionsOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeDBAutonomyActionsRequest&, DescribeDBAutonomyActionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBAutonomyActionsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDBAutonomyEventsResponse> DescribeDBAutonomyEventsOutcome;
+                typedef std::future<DescribeDBAutonomyEventsOutcome> DescribeDBAutonomyEventsOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeDBAutonomyEventsRequest&, DescribeDBAutonomyEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBAutonomyEventsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDBDiagEventResponse> DescribeDBDiagEventOutcome;
                 typedef std::future<DescribeDBDiagEventOutcome> DescribeDBDiagEventOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeDBDiagEventRequest&, DescribeDBDiagEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBDiagEventAsyncHandler;
@@ -327,6 +356,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTopSpaceTablesResponse> DescribeTopSpaceTablesOutcome;
                 typedef std::future<DescribeTopSpaceTablesOutcome> DescribeTopSpaceTablesOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeTopSpaceTablesRequest&, DescribeTopSpaceTablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopSpaceTablesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUserAutonomyProfileResponse> DescribeUserAutonomyProfileOutcome;
+                typedef std::future<DescribeUserAutonomyProfileOutcome> DescribeUserAutonomyProfileOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeUserAutonomyProfileRequest&, DescribeUserAutonomyProfileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserAutonomyProfileAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeUserSqlAdviceResponse> DescribeUserSqlAdviceOutcome;
                 typedef std::future<DescribeUserSqlAdviceOutcome> DescribeUserSqlAdviceOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeUserSqlAdviceRequest&, DescribeUserSqlAdviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserSqlAdviceAsyncHandler;
@@ -345,6 +377,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifySqlFiltersResponse> ModifySqlFiltersOutcome;
                 typedef std::future<ModifySqlFiltersOutcome> ModifySqlFiltersOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::ModifySqlFiltersRequest&, ModifySqlFiltersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySqlFiltersAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyUserAutonomyProfileResponse> ModifyUserAutonomyProfileOutcome;
+                typedef std::future<ModifyUserAutonomyProfileOutcome> ModifyUserAutonomyProfileOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::ModifyUserAutonomyProfileRequest&, ModifyUserAutonomyProfileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserAutonomyProfileAsyncHandler;
                 typedef Outcome<Core::Error, Model::OpenAuditServiceResponse> OpenAuditServiceOutcome;
                 typedef std::future<OpenAuditServiceOutcome> OpenAuditServiceOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::OpenAuditServiceRequest&, OpenAuditServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenAuditServiceAsyncHandler;
@@ -370,6 +405,15 @@ namespace TencentCloud
                 AddUserContactOutcomeCallable AddUserContactCallable(const Model::AddUserContactRequest& request);
 
                 /**
+                 *自治中心-终止自治任务（单次）
+                 * @param req CancelDBAutonomyActionRequest
+                 * @return CancelDBAutonomyActionOutcome
+                 */
+                CancelDBAutonomyActionOutcome CancelDBAutonomyAction(const Model::CancelDBAutonomyActionRequest &request);
+                void CancelDBAutonomyActionAsync(const Model::CancelDBAutonomyActionRequest& request, const CancelDBAutonomyActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CancelDBAutonomyActionOutcomeCallable CancelDBAutonomyActionCallable(const Model::CancelDBAutonomyActionRequest& request);
+
+                /**
                  *终止中断会话任务。
                  * @param req CancelKillTaskRequest
                  * @return CancelKillTaskOutcome
@@ -377,6 +421,15 @@ namespace TencentCloud
                 CancelKillTaskOutcome CancelKillTask(const Model::CancelKillTaskRequest &request);
                 void CancelKillTaskAsync(const Model::CancelKillTaskRequest& request, const CancelKillTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CancelKillTaskOutcomeCallable CancelKillTaskCallable(const Model::CancelKillTaskRequest& request);
+
+                /**
+                 *自治中心-终止自治任务（单次）
+                 * @param req CancelRedisBigKeyAnalysisTasksRequest
+                 * @return CancelRedisBigKeyAnalysisTasksOutcome
+                 */
+                CancelRedisBigKeyAnalysisTasksOutcome CancelRedisBigKeyAnalysisTasks(const Model::CancelRedisBigKeyAnalysisTasksRequest &request);
+                void CancelRedisBigKeyAnalysisTasksAsync(const Model::CancelRedisBigKeyAnalysisTasksRequest& request, const CancelRedisBigKeyAnalysisTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CancelRedisBigKeyAnalysisTasksOutcomeCallable CancelRedisBigKeyAnalysisTasksCallable(const Model::CancelRedisBigKeyAnalysisTasksRequest& request);
 
                 /**
                  *不用审计日志时，关闭数据库审计
@@ -478,6 +531,15 @@ namespace TencentCloud
                 CreateSqlFilterOutcomeCallable CreateSqlFilterCallable(const Model::CreateSqlFilterRequest& request);
 
                 /**
+                 *自治中心-终止自治任务（单次）；注意：接口需要加白名单。
+                 * @param req CreateUserAutonomyProfileRequest
+                 * @return CreateUserAutonomyProfileOutcome
+                 */
+                CreateUserAutonomyProfileOutcome CreateUserAutonomyProfile(const Model::CreateUserAutonomyProfileRequest &request);
+                void CreateUserAutonomyProfileAsync(const Model::CreateUserAutonomyProfileRequest& request, const CreateUserAutonomyProfileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateUserAutonomyProfileOutcomeCallable CreateUserAutonomyProfileCallable(const Model::CreateUserAutonomyProfileRequest& request);
+
+                /**
                  *用于删除云数据库实例的审计日志文件。
                  * @param req DeleteAuditLogFileRequest
                  * @return DeleteAuditLogFileOutcome
@@ -566,6 +628,24 @@ namespace TencentCloud
                 DescribeAuditLogFilesOutcome DescribeAuditLogFiles(const Model::DescribeAuditLogFilesRequest &request);
                 void DescribeAuditLogFilesAsync(const Model::DescribeAuditLogFilesRequest& request, const DescribeAuditLogFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAuditLogFilesOutcomeCallable DescribeAuditLogFilesCallable(const Model::DescribeAuditLogFilesRequest& request);
+
+                /**
+                 *自治中心-终止自治任务（单次）
+                 * @param req DescribeDBAutonomyActionsRequest
+                 * @return DescribeDBAutonomyActionsOutcome
+                 */
+                DescribeDBAutonomyActionsOutcome DescribeDBAutonomyActions(const Model::DescribeDBAutonomyActionsRequest &request);
+                void DescribeDBAutonomyActionsAsync(const Model::DescribeDBAutonomyActionsRequest& request, const DescribeDBAutonomyActionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBAutonomyActionsOutcomeCallable DescribeDBAutonomyActionsCallable(const Model::DescribeDBAutonomyActionsRequest& request);
+
+                /**
+                 *自治中心-终止自治任务（单次）
+                 * @param req DescribeDBAutonomyEventsRequest
+                 * @return DescribeDBAutonomyEventsOutcome
+                 */
+                DescribeDBAutonomyEventsOutcome DescribeDBAutonomyEvents(const Model::DescribeDBAutonomyEventsRequest &request);
+                void DescribeDBAutonomyEventsAsync(const Model::DescribeDBAutonomyEventsRequest& request, const DescribeDBAutonomyEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBAutonomyEventsOutcomeCallable DescribeDBAutonomyEventsCallable(const Model::DescribeDBAutonomyEventsRequest& request);
 
                 /**
                  *获取实例异常诊断事件的详情信息。
@@ -847,6 +927,15 @@ namespace TencentCloud
                 DescribeTopSpaceTablesOutcomeCallable DescribeTopSpaceTablesCallable(const Model::DescribeTopSpaceTablesRequest& request);
 
                 /**
+                 *自治中心-终止自治任务（单次）；注意： 接口调用需要加白名单。
+                 * @param req DescribeUserAutonomyProfileRequest
+                 * @return DescribeUserAutonomyProfileOutcome
+                 */
+                DescribeUserAutonomyProfileOutcome DescribeUserAutonomyProfile(const Model::DescribeUserAutonomyProfileRequest &request);
+                void DescribeUserAutonomyProfileAsync(const Model::DescribeUserAutonomyProfileRequest& request, const DescribeUserAutonomyProfileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUserAutonomyProfileOutcomeCallable DescribeUserAutonomyProfileCallable(const Model::DescribeUserAutonomyProfileRequest& request);
+
+                /**
                  *获取SQL优化建议。【产品用户回馈，此接口限免开放，后续将并入dbbrain专业版】
                  * @param req DescribeUserSqlAdviceRequest
                  * @return DescribeUserSqlAdviceOutcome
@@ -899,6 +988,15 @@ namespace TencentCloud
                 ModifySqlFiltersOutcome ModifySqlFilters(const Model::ModifySqlFiltersRequest &request);
                 void ModifySqlFiltersAsync(const Model::ModifySqlFiltersRequest& request, const ModifySqlFiltersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifySqlFiltersOutcomeCallable ModifySqlFiltersCallable(const Model::ModifySqlFiltersRequest& request);
+
+                /**
+                 *自治中心-终止自治任务（单次）；注意：接口需要加白名单。
+                 * @param req ModifyUserAutonomyProfileRequest
+                 * @return ModifyUserAutonomyProfileOutcome
+                 */
+                ModifyUserAutonomyProfileOutcome ModifyUserAutonomyProfile(const Model::ModifyUserAutonomyProfileRequest &request);
+                void ModifyUserAutonomyProfileAsync(const Model::ModifyUserAutonomyProfileRequest& request, const ModifyUserAutonomyProfileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyUserAutonomyProfileOutcomeCallable ModifyUserAutonomyProfileCallable(const Model::ModifyUserAutonomyProfileRequest& request);
 
                 /**
                  *开启数据库审计服务

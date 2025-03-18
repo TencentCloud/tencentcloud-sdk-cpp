@@ -320,6 +320,27 @@ TriggerScope=ENTIRE_WORKFLOW 时无需传此参数，TriggerScope=SPECIFIED_TASK
                      */
                     bool ScheduleTimeZoneHasBeenSet() const;
 
+                    /**
+                     * 获取时间类型，DATA_TIME：数据时间、SCHEDULE_TIME：计划调度时间, 为空时会被当成DATA_TIME处理
+                     * @return TimeType 时间类型，DATA_TIME：数据时间、SCHEDULE_TIME：计划调度时间, 为空时会被当成DATA_TIME处理
+                     * 
+                     */
+                    std::string GetTimeType() const;
+
+                    /**
+                     * 设置时间类型，DATA_TIME：数据时间、SCHEDULE_TIME：计划调度时间, 为空时会被当成DATA_TIME处理
+                     * @param _timeType 时间类型，DATA_TIME：数据时间、SCHEDULE_TIME：计划调度时间, 为空时会被当成DATA_TIME处理
+                     * 
+                     */
+                    void SetTimeType(const std::string& _timeType);
+
+                    /**
+                     * 判断参数 TimeType 是否已赋值
+                     * @return TimeType 是否已赋值
+                     * 
+                     */
+                    bool TimeTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -400,6 +421,12 @@ TriggerScope=ENTIRE_WORKFLOW 时无需传此参数，TriggerScope=SPECIFIED_TASK
                      */
                     std::string m_scheduleTimeZone;
                     bool m_scheduleTimeZoneHasBeenSet;
+
+                    /**
+                     * 时间类型，DATA_TIME：数据时间、SCHEDULE_TIME：计划调度时间, 为空时会被当成DATA_TIME处理
+                     */
+                    std::string m_timeType;
+                    bool m_timeTypeHasBeenSet;
 
                 };
             }

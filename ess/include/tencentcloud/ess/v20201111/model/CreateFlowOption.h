@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ess/v20201111/model/CreateResultPageConfig.h>
+#include <tencentcloud/ess/v20201111/model/SignComponentConfig.h>
 
 
 namespace TencentCloud
@@ -657,6 +658,31 @@ namespace TencentCloud
                      */
                     bool ResultPageConfigHasBeenSet() const;
 
+                    /**
+                     * 获取签署控件的配置信息，用在嵌入式发起的页面配置，包括 
+ - 签署控件 是否默认展示日期.
+                     * @return SignComponentConfig 签署控件的配置信息，用在嵌入式发起的页面配置，包括 
+ - 签署控件 是否默认展示日期.
+                     * 
+                     */
+                    SignComponentConfig GetSignComponentConfig() const;
+
+                    /**
+                     * 设置签署控件的配置信息，用在嵌入式发起的页面配置，包括 
+ - 签署控件 是否默认展示日期.
+                     * @param _signComponentConfig 签署控件的配置信息，用在嵌入式发起的页面配置，包括 
+ - 签署控件 是否默认展示日期.
+                     * 
+                     */
+                    void SetSignComponentConfig(const SignComponentConfig& _signComponentConfig);
+
+                    /**
+                     * 判断参数 SignComponentConfig 是否已赋值
+                     * @return SignComponentConfig 是否已赋值
+                     * 
+                     */
+                    bool SignComponentConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -821,6 +847,13 @@ namespace TencentCloud
                      */
                     std::vector<CreateResultPageConfig> m_resultPageConfig;
                     bool m_resultPageConfigHasBeenSet;
+
+                    /**
+                     * 签署控件的配置信息，用在嵌入式发起的页面配置，包括 
+ - 签署控件 是否默认展示日期.
+                     */
+                    SignComponentConfig m_signComponentConfig;
+                    bool m_signComponentConfigHasBeenSet;
 
                 };
             }

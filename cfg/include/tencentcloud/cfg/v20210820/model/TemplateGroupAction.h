@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分组动作通用配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GeneralConfiguration 分组动作通用配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGeneralConfiguration() const;
 
                     /**
                      * 设置分组动作通用配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _generalConfiguration 分组动作通用配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGeneralConfiguration(const std::string& _generalConfiguration);
@@ -136,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分组动作自定义配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CustomConfiguration 分组动作自定义配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCustomConfiguration() const;
 
                     /**
                      * 设置分组动作自定义配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _customConfiguration 分组动作自定义配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCustomConfiguration(const std::string& _customConfiguration);
@@ -224,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自身随机id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RandomId 自身随机id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRandomId() const;
 
                     /**
                      * 设置自身随机id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _randomId 自身随机id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRandomId(const int64_t& _randomId);
@@ -249,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取恢复动作id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecoverId 恢复动作id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRecoverId() const;
 
                     /**
                      * 设置恢复动作id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _recoverId 恢复动作id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRecoverId(const int64_t& _recoverId);
@@ -274,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取执行动作id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExecuteId 执行动作id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetExecuteId() const;
 
                     /**
                      * 设置执行动作id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _executeId 执行动作id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExecuteId(const int64_t& _executeId);
@@ -299,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取调用api类型，0:tat, 1:云api
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActionApiType 调用api类型，0:tat, 1:云api
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetActionApiType() const;
 
                     /**
                      * 设置调用api类型，0:tat, 1:云api
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _actionApiType 调用api类型，0:tat, 1:云api
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetActionApiType(const int64_t& _actionApiType);
@@ -324,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取1:故障，2:恢复
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActionAttribute 1:故障，2:恢复
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetActionAttribute() const;
 
                     /**
                      * 设置1:故障，2:恢复
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _actionAttribute 1:故障，2:恢复
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetActionAttribute(const int64_t& _actionAttribute);
@@ -349,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取动作类型：平台和自定义
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActionType 动作类型：平台和自定义
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetActionType() const;
 
                     /**
                      * 设置动作类型：平台和自定义
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _actionType 动作类型：平台和自定义
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetActionType(const std::string& _actionType);
@@ -374,18 +342,14 @@ namespace TencentCloud
 
                     /**
                      * 获取动作风险等级，1:低风险 2:中风险 3:高风险
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActionRisk 动作风险等级，1:低风险 2:中风险 3:高风险
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetActionRisk() const;
 
                     /**
                      * 设置动作风险等级，1:低风险 2:中风险 3:高风险
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _actionRisk 动作风险等级，1:低风险 2:中风险 3:高风险
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetActionRisk(const std::string& _actionRisk);
@@ -440,14 +404,12 @@ namespace TencentCloud
 
                     /**
                      * 分组动作通用配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_generalConfiguration;
                     bool m_generalConfigurationHasBeenSet;
 
                     /**
                      * 分组动作自定义配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_customConfiguration;
                     bool m_customConfigurationHasBeenSet;
@@ -472,49 +434,42 @@ namespace TencentCloud
 
                     /**
                      * 自身随机id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_randomId;
                     bool m_randomIdHasBeenSet;
 
                     /**
                      * 恢复动作id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_recoverId;
                     bool m_recoverIdHasBeenSet;
 
                     /**
                      * 执行动作id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_executeId;
                     bool m_executeIdHasBeenSet;
 
                     /**
                      * 调用api类型，0:tat, 1:云api
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_actionApiType;
                     bool m_actionApiTypeHasBeenSet;
 
                     /**
                      * 1:故障，2:恢复
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_actionAttribute;
                     bool m_actionAttributeHasBeenSet;
 
                     /**
                      * 动作类型：平台和自定义
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_actionType;
                     bool m_actionTypeHasBeenSet;
 
                     /**
                      * 动作风险等级，1:低风险 2:中风险 3:高风险
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_actionRisk;
                     bool m_actionRiskHasBeenSet;

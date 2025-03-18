@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Host的唯一标识uuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostUuid Host的唯一标识uuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHostUuid() const;
 
                     /**
                      * 设置Host的唯一标识uuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hostUuid Host的唯一标识uuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHostUuid(const std::string& _hostUuid);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例名称数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstancesInfo 实例名称数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetInstancesInfo() const;
 
                     /**
                      * 设置实例名称数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instancesInfo 实例名称数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstancesInfo(const std::vector<std::string>& _instancesInfo);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * Host的唯一标识uuid
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hostUuid;
                     bool m_hostUuidHasBeenSet;
 
                     /**
                      * 实例名称数组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_instancesInfo;
                     bool m_instancesInfoHasBeenSet;

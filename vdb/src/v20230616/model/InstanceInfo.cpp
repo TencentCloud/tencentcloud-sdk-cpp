@@ -48,7 +48,8 @@ InstanceInfo::InstanceInfo() :
     m_isNoExpiredHasBeenSet(false),
     m_wanAddressHasBeenSet(false),
     m_isolateAtHasBeenSet(false),
-    m_autoRenewHasBeenSet(false)
+    m_autoRenewHasBeenSet(false),
+    m_taskStatusHasBeenSet(false)
 {
 }
 
@@ -357,6 +358,16 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_autoRenewHasBeenSet = true;
     }
 
+    if (value.HasMember("TaskStatus") && !value["TaskStatus"].IsNull())
+    {
+        if (!value["TaskStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.TaskStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskStatus = value["TaskStatus"].GetInt64();
+        m_taskStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -600,6 +611,14 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "AutoRenew";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_autoRenew, allocator);
+    }
+
+    if (m_taskStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_taskStatus, allocator);
     }
 
 }
@@ -1051,5 +1070,21 @@ void InstanceInfo::SetAutoRenew(const int64_t& _autoRenew)
 bool InstanceInfo::AutoRenewHasBeenSet() const
 {
     return m_autoRenewHasBeenSet;
+}
+
+int64_t InstanceInfo::GetTaskStatus() const
+{
+    return m_taskStatus;
+}
+
+void InstanceInfo::SetTaskStatus(const int64_t& _taskStatus)
+{
+    m_taskStatus = _taskStatus;
+    m_taskStatusHasBeenSet = true;
+}
+
+bool InstanceInfo::TaskStatusHasBeenSet() const
+{
+    return m_taskStatusHasBeenSet;
 }
 

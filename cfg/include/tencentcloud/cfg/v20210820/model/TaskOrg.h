@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取演练角色
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskRole 演练角色
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskRole() const;
 
                     /**
                      * 设置演练角色
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskRole 演练角色
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskRole(const std::string& _taskRole);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取负责人
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskOperator 负责人
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskOperator() const;
 
                     /**
                      * 设置负责人
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskOperator 负责人
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskOperator(const std::string& _taskOperator);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 演练角色
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskRole;
                     bool m_taskRoleHasBeenSet;
 
                     /**
                      * 负责人
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskOperator;
                     bool m_taskOperatorHasBeenSet;

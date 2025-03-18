@@ -226,8 +226,8 @@ namespace TencentCloud
                     bool ProVersionLicenseCntHasBeenSet() const;
 
                     /**
-                     * 获取普惠版总授权数(有效订单的授权数)
-                     * @return CwpVersionLicenseCnt 普惠版总授权数(有效订单的授权数)
+                     * 获取轻量版总授权数(有效订单的授权数)
+                     * @return CwpVersionLicenseCnt 轻量版总授权数(有效订单的授权数)
                      * 
                      */
                     uint64_t GetCwpVersionLicenseCnt() const;
@@ -390,7 +390,7 @@ namespace TencentCloud
                     bool m_proVersionLicenseCntHasBeenSet;
 
                     /**
-                     * 普惠版总授权数(有效订单的授权数)
+                     * 轻量版总授权数(有效订单的授权数)
                      */
                     uint64_t m_cwpVersionLicenseCnt;
                     bool m_cwpVersionLicenseCntHasBeenSet;

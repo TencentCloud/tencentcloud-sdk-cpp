@@ -32,7 +32,8 @@ MediaTranscodeItem::MediaTranscodeItem() :
     m_containerHasBeenSet(false),
     m_md5HasBeenSet(false),
     m_audioStreamSetHasBeenSet(false),
-    m_videoStreamSetHasBeenSet(false)
+    m_videoStreamSetHasBeenSet(false),
+    m_callBackExtInfoHasBeenSet(false)
 {
 }
 
@@ -188,6 +189,16 @@ CoreInternalOutcome MediaTranscodeItem::Deserialize(const rapidjson::Value &valu
         m_videoStreamSetHasBeenSet = true;
     }
 
+    if (value.HasMember("CallBackExtInfo") && !value["CallBackExtInfo"].IsNull())
+    {
+        if (!value["CallBackExtInfo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaTranscodeItem.CallBackExtInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_callBackExtInfo = string(value["CallBackExtInfo"].GetString());
+        m_callBackExtInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -304,6 +315,14 @@ void MediaTranscodeItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_callBackExtInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CallBackExtInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_callBackExtInfo.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -499,5 +518,21 @@ void MediaTranscodeItem::SetVideoStreamSet(const vector<MediaVideoStreamItem>& _
 bool MediaTranscodeItem::VideoStreamSetHasBeenSet() const
 {
     return m_videoStreamSetHasBeenSet;
+}
+
+string MediaTranscodeItem::GetCallBackExtInfo() const
+{
+    return m_callBackExtInfo;
+}
+
+void MediaTranscodeItem::SetCallBackExtInfo(const string& _callBackExtInfo)
+{
+    m_callBackExtInfo = _callBackExtInfo;
+    m_callBackExtInfoHasBeenSet = true;
+}
+
+bool MediaTranscodeItem::CallBackExtInfoHasBeenSet() const
+{
+    return m_callBackExtInfoHasBeenSet;
 }
 

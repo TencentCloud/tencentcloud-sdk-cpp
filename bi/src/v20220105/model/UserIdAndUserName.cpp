@@ -35,12 +35,15 @@ UserIdAndUserName::UserIdAndUserName() :
     m_updatedUserHasBeenSet(false),
     m_updatedAtHasBeenSet(false),
     m_globalUserNameHasBeenSet(false),
+    m_globalUserCodeHasBeenSet(false),
     m_mobileHasBeenSet(false),
     m_appIdHasBeenSet(false),
     m_appUserIdHasBeenSet(false),
     m_appUserAliasNameHasBeenSet(false),
     m_appUserNameHasBeenSet(false),
-    m_inValidateAppRangeHasBeenSet(false)
+    m_inValidateAppRangeHasBeenSet(false),
+    m_emailActivationStatusHasBeenSet(false),
+    m_idHasBeenSet(false)
 {
 }
 
@@ -189,6 +192,16 @@ CoreInternalOutcome UserIdAndUserName::Deserialize(const rapidjson::Value &value
         m_globalUserNameHasBeenSet = true;
     }
 
+    if (value.HasMember("GlobalUserCode") && !value["GlobalUserCode"].IsNull())
+    {
+        if (!value["GlobalUserCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserIdAndUserName.GlobalUserCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_globalUserCode = string(value["GlobalUserCode"].GetString());
+        m_globalUserCodeHasBeenSet = true;
+    }
+
     if (value.HasMember("Mobile") && !value["Mobile"].IsNull())
     {
         if (!value["Mobile"].IsString())
@@ -247,6 +260,26 @@ CoreInternalOutcome UserIdAndUserName::Deserialize(const rapidjson::Value &value
         }
         m_inValidateAppRange = value["InValidateAppRange"].GetBool();
         m_inValidateAppRangeHasBeenSet = true;
+    }
+
+    if (value.HasMember("EmailActivationStatus") && !value["EmailActivationStatus"].IsNull())
+    {
+        if (!value["EmailActivationStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserIdAndUserName.EmailActivationStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_emailActivationStatus = value["EmailActivationStatus"].GetInt64();
+        m_emailActivationStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("Id") && !value["Id"].IsNull())
+    {
+        if (!value["Id"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserIdAndUserName.Id` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_id = value["Id"].GetUint64();
+        m_idHasBeenSet = true;
     }
 
 
@@ -368,6 +401,14 @@ void UserIdAndUserName::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         value.AddMember(iKey, rapidjson::Value(m_globalUserName.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_globalUserCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GlobalUserCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_globalUserCode.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_mobileHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -414,6 +455,22 @@ void UserIdAndUserName::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "InValidateAppRange";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_inValidateAppRange, allocator);
+    }
+
+    if (m_emailActivationStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EmailActivationStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_emailActivationStatus, allocator);
+    }
+
+    if (m_idHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Id";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_id, allocator);
     }
 
 }
@@ -643,6 +700,22 @@ bool UserIdAndUserName::GlobalUserNameHasBeenSet() const
     return m_globalUserNameHasBeenSet;
 }
 
+string UserIdAndUserName::GetGlobalUserCode() const
+{
+    return m_globalUserCode;
+}
+
+void UserIdAndUserName::SetGlobalUserCode(const string& _globalUserCode)
+{
+    m_globalUserCode = _globalUserCode;
+    m_globalUserCodeHasBeenSet = true;
+}
+
+bool UserIdAndUserName::GlobalUserCodeHasBeenSet() const
+{
+    return m_globalUserCodeHasBeenSet;
+}
+
 string UserIdAndUserName::GetMobile() const
 {
     return m_mobile;
@@ -737,5 +810,37 @@ void UserIdAndUserName::SetInValidateAppRange(const bool& _inValidateAppRange)
 bool UserIdAndUserName::InValidateAppRangeHasBeenSet() const
 {
     return m_inValidateAppRangeHasBeenSet;
+}
+
+int64_t UserIdAndUserName::GetEmailActivationStatus() const
+{
+    return m_emailActivationStatus;
+}
+
+void UserIdAndUserName::SetEmailActivationStatus(const int64_t& _emailActivationStatus)
+{
+    m_emailActivationStatus = _emailActivationStatus;
+    m_emailActivationStatusHasBeenSet = true;
+}
+
+bool UserIdAndUserName::EmailActivationStatusHasBeenSet() const
+{
+    return m_emailActivationStatusHasBeenSet;
+}
+
+uint64_t UserIdAndUserName::GetId() const
+{
+    return m_id;
+}
+
+void UserIdAndUserName::SetId(const uint64_t& _id)
+{
+    m_id = _id;
+    m_idHasBeenSet = true;
+}
+
+bool UserIdAndUserName::IdHasBeenSet() const
+{
+    return m_idHasBeenSet;
 }
 

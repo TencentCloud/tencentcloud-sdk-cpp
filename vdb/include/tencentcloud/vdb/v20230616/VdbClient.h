@@ -89,7 +89,7 @@ namespace TencentCloud
                 DescribeDBSecurityGroupsOutcomeCallable DescribeDBSecurityGroupsCallable(const Model::DescribeDBSecurityGroupsRequest& request);
 
                 /**
-                 *实例节点列表
+                 *查询实例pod列表
                  * @param req DescribeInstanceNodesRequest
                  * @return DescribeInstanceNodesOutcome
                  */

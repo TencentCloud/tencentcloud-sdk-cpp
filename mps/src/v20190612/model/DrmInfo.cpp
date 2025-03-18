@@ -22,7 +22,8 @@ using namespace std;
 
 DrmInfo::DrmInfo() :
     m_typeHasBeenSet(false),
-    m_simpleAesDrmHasBeenSet(false)
+    m_simpleAesDrmHasBeenSet(false),
+    m_spekeDrmHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,23 @@ CoreInternalOutcome DrmInfo::Deserialize(const rapidjson::Value &value)
         m_simpleAesDrmHasBeenSet = true;
     }
 
+    if (value.HasMember("SpekeDrm") && !value["SpekeDrm"].IsNull())
+    {
+        if (!value["SpekeDrm"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DrmInfo.SpekeDrm` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_spekeDrm.Deserialize(value["SpekeDrm"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_spekeDrmHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -80,6 +98,15 @@ void DrmInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_simpleAesDrm.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_spekeDrmHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpekeDrm";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_spekeDrm.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -115,5 +142,21 @@ void DrmInfo::SetSimpleAesDrm(const SimpleAesDrm& _simpleAesDrm)
 bool DrmInfo::SimpleAesDrmHasBeenSet() const
 {
     return m_simpleAesDrmHasBeenSet;
+}
+
+SpekeDrm DrmInfo::GetSpekeDrm() const
+{
+    return m_spekeDrm;
+}
+
+void DrmInfo::SetSpekeDrm(const SpekeDrm& _spekeDrm)
+{
+    m_spekeDrm = _spekeDrm;
+    m_spekeDrmHasBeenSet = true;
+}
+
+bool DrmInfo::SpekeDrmHasBeenSet() const
+{
+    return m_spekeDrmHasBeenSet;
 }
 

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AddTime 策略创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAddTime() const;
 
                     /**
                      * 设置策略创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _addTime 策略创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAddTime(const std::string& _addTime);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略绑定次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AttachedTimes 策略绑定次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetAttachedTimes() const;
 
                     /**
                      * 设置策略绑定次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _attachedTimes 策略绑定次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAttachedTimes(const uint64_t& _attachedTimes);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 策略描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置策略描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 策略描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -165,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 策略更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置策略更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updateTime 策略更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -213,21 +197,18 @@ namespace TencentCloud
 
                     /**
                      * 策略创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_addTime;
                     bool m_addTimeHasBeenSet;
 
                     /**
                      * 策略绑定次数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_attachedTimes;
                     bool m_attachedTimesHasBeenSet;
 
                     /**
                      * 策略描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
@@ -246,7 +227,6 @@ namespace TencentCloud
 
                     /**
                      * 策略更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;

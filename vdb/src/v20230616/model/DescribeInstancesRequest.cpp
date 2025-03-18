@@ -36,7 +36,8 @@ DescribeInstancesRequest::DescribeInstancesRequest() :
     m_orderDirectionHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_resourceTagsHasBeenSet(false)
+    m_resourceTagsHasBeenSet(false),
+    m_taskStatusHasBeenSet(false)
 {
 }
 
@@ -203,6 +204,19 @@ string DescribeInstancesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_taskStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskStatus";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_taskStatus.begin(); itr != m_taskStatus.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 
@@ -436,6 +450,22 @@ void DescribeInstancesRequest::SetResourceTags(const vector<Tag>& _resourceTags)
 bool DescribeInstancesRequest::ResourceTagsHasBeenSet() const
 {
     return m_resourceTagsHasBeenSet;
+}
+
+vector<int64_t> DescribeInstancesRequest::GetTaskStatus() const
+{
+    return m_taskStatus;
+}
+
+void DescribeInstancesRequest::SetTaskStatus(const vector<int64_t>& _taskStatus)
+{
+    m_taskStatus = _taskStatus;
+    m_taskStatusHasBeenSet = true;
+}
+
+bool DescribeInstancesRequest::TaskStatusHasBeenSet() const
+{
+    return m_taskStatusHasBeenSet;
 }
 
 

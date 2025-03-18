@@ -332,8 +332,8 @@ namespace TencentCloud
                     bool HasAssetScanHasBeenSet() const;
 
                     /**
-                     * 获取防护版本：BASIC_VERSION 基础版，PRO_VERSION 专业版，Flagship 旗舰版，GENERAL_DISCOUNT 普惠版
-                     * @return ProtectType 防护版本：BASIC_VERSION 基础版，PRO_VERSION 专业版，Flagship 旗舰版，GENERAL_DISCOUNT 普惠版
+                     * 获取防护版本：BASIC_VERSION 基础版，PRO_VERSION 专业版，Flagship 旗舰版，GENERAL_DISCOUNT 轻量版
+                     * @return ProtectType 防护版本：BASIC_VERSION 基础版，PRO_VERSION 专业版，Flagship 旗舰版，GENERAL_DISCOUNT 轻量版
                      * 
                      */
                     std::string GetProtectType() const;
@@ -473,7 +473,7 @@ namespace TencentCloud
                     bool m_hasAssetScanHasBeenSet;
 
                     /**
-                     * 防护版本：BASIC_VERSION 基础版，PRO_VERSION 专业版，Flagship 旗舰版，GENERAL_DISCOUNT 普惠版
+                     * 防护版本：BASIC_VERSION 基础版，PRO_VERSION 专业版，Flagship 旗舰版，GENERAL_DISCOUNT 轻量版
                      */
                     std::string m_protectType;
                     bool m_protectTypeHasBeenSet;

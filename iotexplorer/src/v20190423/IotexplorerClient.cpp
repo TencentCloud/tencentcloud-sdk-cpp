@@ -341,6 +341,49 @@ IotexplorerClient::CancelAssignTWeCallLicenseOutcomeCallable IotexplorerClient::
     return task->get_future();
 }
 
+IotexplorerClient::ChangeP2PRouteOutcome IotexplorerClient::ChangeP2PRoute(const ChangeP2PRouteRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChangeP2PRoute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChangeP2PRouteResponse rsp = ChangeP2PRouteResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChangeP2PRouteOutcome(rsp);
+        else
+            return ChangeP2PRouteOutcome(o.GetError());
+    }
+    else
+    {
+        return ChangeP2PRouteOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::ChangeP2PRouteAsync(const ChangeP2PRouteRequest& request, const ChangeP2PRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChangeP2PRoute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::ChangeP2PRouteOutcomeCallable IotexplorerClient::ChangeP2PRouteCallable(const ChangeP2PRouteRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChangeP2PRouteOutcome()>>(
+        [this, request]()
+        {
+            return this->ChangeP2PRoute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::CheckFirmwareUpdateOutcome IotexplorerClient::CheckFirmwareUpdate(const CheckFirmwareUpdateRequest &request)
 {
     auto outcome = MakeRequest(request, "CheckFirmwareUpdate");
@@ -3523,6 +3566,49 @@ IotexplorerClient::DescribeModelDefinitionOutcomeCallable IotexplorerClient::Des
     return task->get_future();
 }
 
+IotexplorerClient::DescribeP2PRouteOutcome IotexplorerClient::DescribeP2PRoute(const DescribeP2PRouteRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeP2PRoute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeP2PRouteResponse rsp = DescribeP2PRouteResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeP2PRouteOutcome(rsp);
+        else
+            return DescribeP2PRouteOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeP2PRouteOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeP2PRouteAsync(const DescribeP2PRouteRequest& request, const DescribeP2PRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeP2PRoute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DescribeP2PRouteOutcomeCallable IotexplorerClient::DescribeP2PRouteCallable(const DescribeP2PRouteRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeP2PRouteOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeP2PRoute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::DescribePackageConsumeTaskOutcome IotexplorerClient::DescribePackageConsumeTask(const DescribePackageConsumeTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePackageConsumeTask");
@@ -5150,6 +5236,49 @@ IotexplorerClient::ListTopicPolicyOutcomeCallable IotexplorerClient::ListTopicPo
         [this, request]()
         {
             return this->ListTopicPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotexplorerClient::ModifyApplicationOutcome IotexplorerClient::ModifyApplication(const ModifyApplicationRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyApplication");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyApplicationResponse rsp = ModifyApplicationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyApplicationOutcome(rsp);
+        else
+            return ModifyApplicationOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyApplicationOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::ModifyApplicationAsync(const ModifyApplicationRequest& request, const ModifyApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyApplication(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::ModifyApplicationOutcomeCallable IotexplorerClient::ModifyApplicationCallable(const ModifyApplicationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyApplicationOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyApplication(request);
         }
     );
 

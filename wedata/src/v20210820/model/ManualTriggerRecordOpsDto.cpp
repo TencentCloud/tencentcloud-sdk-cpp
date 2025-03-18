@@ -37,7 +37,8 @@ ManualTriggerRecordOpsDto::ManualTriggerRecordOpsDto() :
     m_tenantIdHasBeenSet(false),
     m_projectIdHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_scheduleTimeZoneHasBeenSet(false)
+    m_scheduleTimeZoneHasBeenSet(false),
+    m_timeTypeHasBeenSet(false)
 {
 }
 
@@ -219,6 +220,16 @@ CoreInternalOutcome ManualTriggerRecordOpsDto::Deserialize(const rapidjson::Valu
         m_scheduleTimeZoneHasBeenSet = true;
     }
 
+    if (value.HasMember("TimeType") && !value["TimeType"].IsNull())
+    {
+        if (!value["TimeType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ManualTriggerRecordOpsDto.TimeType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_timeType = string(value["TimeType"].GetString());
+        m_timeTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -365,6 +376,14 @@ void ManualTriggerRecordOpsDto::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "ScheduleTimeZone";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_scheduleTimeZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_timeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimeType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_timeType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -640,5 +659,21 @@ void ManualTriggerRecordOpsDto::SetScheduleTimeZone(const string& _scheduleTimeZ
 bool ManualTriggerRecordOpsDto::ScheduleTimeZoneHasBeenSet() const
 {
     return m_scheduleTimeZoneHasBeenSet;
+}
+
+string ManualTriggerRecordOpsDto::GetTimeType() const
+{
+    return m_timeType;
+}
+
+void ManualTriggerRecordOpsDto::SetTimeType(const string& _timeType)
+{
+    m_timeType = _timeType;
+    m_timeTypeHasBeenSet = true;
+}
+
+bool ManualTriggerRecordOpsDto::TimeTypeHasBeenSet() const
+{
+    return m_timeTypeHasBeenSet;
 }
 

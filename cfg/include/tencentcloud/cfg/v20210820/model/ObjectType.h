@@ -134,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取tke接口json解析规则，null不需要解析
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ObjectTypeJsonParse tke接口json解析规则，null不需要解析
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ObjectTypeJsonParse GetObjectTypeJsonParse() const;
 
                     /**
                      * 设置tke接口json解析规则，null不需要解析
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _objectTypeJsonParse tke接口json解析规则，null不需要解析
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetObjectTypeJsonParse(const ObjectTypeJsonParse& _objectTypeJsonParse);
@@ -159,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否包含新动作
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ObjectHasNewAction 是否包含新动作
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetObjectHasNewAction() const;
 
                     /**
                      * 设置是否包含新动作
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _objectHasNewAction 是否包含新动作
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetObjectHasNewAction(const bool& _objectHasNewAction);
@@ -184,18 +176,14 @@ namespace TencentCloud
 
                     /**
                      * 获取对应在平台架构图中的资源类型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ObjectPlatformName 对应在平台架构图中的资源类型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetObjectPlatformName() const;
 
                     /**
                      * 设置对应在平台架构图中的资源类型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _objectPlatformName 对应在平台架构图中的资源类型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetObjectPlatformName(const std::string& _objectPlatformName);
@@ -209,18 +197,14 @@ namespace TencentCloud
 
                     /**
                      * 获取1：平台支持的对象 2：应用支持的部分对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ObjectSupportType 1：平台支持的对象 2：应用支持的部分对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetObjectSupportType() const;
 
                     /**
                      * 设置1：平台支持的对象 2：应用支持的部分对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _objectSupportType 1：平台支持的对象 2：应用支持的部分对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetObjectSupportType(const int64_t& _objectSupportType);
@@ -302,28 +286,24 @@ namespace TencentCloud
 
                     /**
                      * tke接口json解析规则，null不需要解析
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ObjectTypeJsonParse m_objectTypeJsonParse;
                     bool m_objectTypeJsonParseHasBeenSet;
 
                     /**
                      * 是否包含新动作
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_objectHasNewAction;
                     bool m_objectHasNewActionHasBeenSet;
 
                     /**
                      * 对应在平台架构图中的资源类型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_objectPlatformName;
                     bool m_objectPlatformNameHasBeenSet;
 
                     /**
                      * 1：平台支持的对象 2：应用支持的部分对象
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_objectSupportType;
                     bool m_objectSupportTypeHasBeenSet;

@@ -116,18 +116,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自定义标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TemplateTag 自定义标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTemplateTag() const;
 
                     /**
                      * 设置自定义标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _templateTag 自定义标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTemplateTag(const std::string& _templateTag);
@@ -355,18 +351,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TagWithDescribe> GetTags() const;
 
                     /**
                      * 设置标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::vector<TagWithDescribe>& _tags);
@@ -380,18 +372,14 @@ namespace TencentCloud
 
                     /**
                      * 获取经验来源 0-自建 1-专家推荐
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TemplateSource 经验来源 0-自建 1-专家推荐
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTemplateSource() const;
 
                     /**
                      * 设置经验来源 0-自建 1-专家推荐
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _templateSource 经验来源 0-自建 1-专家推荐
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTemplateSource(const int64_t& _templateSource);
@@ -405,18 +393,14 @@ namespace TencentCloud
 
                     /**
                      * 获取apm应用信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApmServiceList apm应用信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ApmServiceInfo> GetApmServiceList() const;
 
                     /**
                      * 设置apm应用信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _apmServiceList apm应用信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApmServiceList(const std::vector<ApmServiceInfo>& _apmServiceList);
@@ -430,18 +414,14 @@ namespace TencentCloud
 
                     /**
                      * 获取告警指标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlarmPolicy 告警指标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetAlarmPolicy() const;
 
                     /**
                      * 设置告警指标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _alarmPolicy 告警指标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAlarmPolicy(const std::vector<std::string>& _alarmPolicy);
@@ -455,18 +435,14 @@ namespace TencentCloud
 
                     /**
                      * 获取护栏处理方式，1--顺序回滚，2--演练暂停
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolicyDealType 护栏处理方式，1--顺序回滚，2--演练暂停
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPolicyDealType() const;
 
                     /**
                      * 设置护栏处理方式，1--顺序回滚，2--演练暂停
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _policyDealType 护栏处理方式，1--顺序回滚，2--演练暂停
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPolicyDealType(const int64_t& _policyDealType);
@@ -500,7 +476,6 @@ namespace TencentCloud
 
                     /**
                      * 自定义标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_templateTag;
                     bool m_templateTagHasBeenSet;
@@ -568,35 +543,30 @@ namespace TencentCloud
 
                     /**
                      * 标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TagWithDescribe> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
                      * 经验来源 0-自建 1-专家推荐
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_templateSource;
                     bool m_templateSourceHasBeenSet;
 
                     /**
                      * apm应用信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ApmServiceInfo> m_apmServiceList;
                     bool m_apmServiceListHasBeenSet;
 
                     /**
                      * 告警指标
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_alarmPolicy;
                     bool m_alarmPolicyHasBeenSet;
 
                     /**
                      * 护栏处理方式，1--顺序回滚，2--演练暂停
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_policyDealType;
                     bool m_policyDealTypeHasBeenSet;

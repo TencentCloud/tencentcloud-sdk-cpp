@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日期：结算日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BillDay 日期：结算日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBillDay() const;
 
                     /**
                      * 设置日期：结算日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _billDay 日期：结算日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBillDay(const std::string& _billDay);
@@ -75,7 +71,6 @@ namespace TencentCloud
 
                     /**
                      * 日期：结算日期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_billDay;
                     bool m_billDayHasBeenSet;

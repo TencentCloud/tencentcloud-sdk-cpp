@@ -414,7 +414,7 @@ set(iotvideo_public_header_model
   include/tencentcloud/iotvideo/v20211125/model/CreateDataForwardResponse.h
   include/tencentcloud/iotvideo/v20211125/model/UploadFirmwareRequest.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeCloudStoragePackageConsumeStatsResponse.h
-  include/tencentcloud/iotvideo/v20211125/model/PackageInfo.h
+  include/tencentcloud/iotvideo/v20211125/model/DescribeP2PRouteResponse.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeFirmwareRequest.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeCloudStorageUsersResponse.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeProductRequest.h
@@ -455,6 +455,7 @@ set(iotvideo_public_header_model
   include/tencentcloud/iotvideo/v20211125/model/ControlDeviceDataRequest.h
   include/tencentcloud/iotvideo/v20211125/model/AIModelUsageInfo.h
   include/tencentcloud/iotvideo/v20211125/model/GetAllFirmwareVersionRequest.h
+  include/tencentcloud/iotvideo/v20211125/model/PackageInfo.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeFirmwareTaskDevicesRequest.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeFirmwareResponse.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeDeviceStatusLogResponse.h
@@ -472,6 +473,7 @@ set(iotvideo_public_header_model
   include/tencentcloud/iotvideo/v20211125/model/ModifyPushChannelResponse.h
   include/tencentcloud/iotvideo/v20211125/model/CallDeviceActionSyncResponse.h
   include/tencentcloud/iotvideo/v20211125/model/CreateProductResponse.h
+  include/tencentcloud/iotvideo/v20211125/model/ChangeP2PRouteResponse.h
   include/tencentcloud/iotvideo/v20211125/model/TRTCParams.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeDeviceDataHistoryResponse.h
   include/tencentcloud/iotvideo/v20211125/model/CallTRTCDeviceRequest.h
@@ -486,7 +488,7 @@ set(iotvideo_public_header_model
   include/tencentcloud/iotvideo/v20211125/model/DescribeFirmwareTaskResponse.h
   include/tencentcloud/iotvideo/v20211125/model/FirmwareInfo.h
   include/tencentcloud/iotvideo/v20211125/model/CreateProductRequest.h
-  include/tencentcloud/iotvideo/v20211125/model/DescribeFirmwareTasksRequest.h
+  include/tencentcloud/iotvideo/v20211125/model/ChangeP2PRouteRequest.h
   include/tencentcloud/iotvideo/v20211125/model/GetFirmwareURLResponse.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeUserResponse.h
   include/tencentcloud/iotvideo/v20211125/model/DescribePackageConsumeTaskResponse.h
@@ -542,6 +544,7 @@ set(iotvideo_public_header_model
   include/tencentcloud/iotvideo/v20211125/model/CreateCloudStorageResponse.h
   include/tencentcloud/iotvideo/v20211125/model/BindCloudStorageUserResponse.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeFreeCloudStorageNumRequest.h
+  include/tencentcloud/iotvideo/v20211125/model/DescribeFirmwareTasksRequest.h
   include/tencentcloud/iotvideo/v20211125/model/CancelDeviceFirmwareTaskRequest.h
   include/tencentcloud/iotvideo/v20211125/model/CancelDeviceFirmwareTaskResponse.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeBatchsRequest.h
@@ -579,6 +582,7 @@ set(iotvideo_public_header_model
   include/tencentcloud/iotvideo/v20211125/model/DescribeAIModelsResponse.h
   include/tencentcloud/iotvideo/v20211125/model/InheritCloudStorageUserRequest.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeAIModelChannelRequest.h
+  include/tencentcloud/iotvideo/v20211125/model/DescribeP2PRouteRequest.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeAIModelUsageRequest.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeBonusesRequest.h
   include/tencentcloud/iotvideo/v20211125/model/DeleteFirmwareRequest.h
@@ -1009,7 +1013,7 @@ set(iotvideo_src
   src/v20211125/model/CreateDataForwardResponse.cpp
   src/v20211125/model/UploadFirmwareRequest.cpp
   src/v20211125/model/DescribeCloudStoragePackageConsumeStatsResponse.cpp
-  src/v20211125/model/PackageInfo.cpp
+  src/v20211125/model/DescribeP2PRouteResponse.cpp
   src/v20211125/model/DescribeFirmwareRequest.cpp
   src/v20211125/model/DescribeCloudStorageUsersResponse.cpp
   src/v20211125/model/DescribeProductRequest.cpp
@@ -1050,6 +1054,7 @@ set(iotvideo_src
   src/v20211125/model/ControlDeviceDataRequest.cpp
   src/v20211125/model/AIModelUsageInfo.cpp
   src/v20211125/model/GetAllFirmwareVersionRequest.cpp
+  src/v20211125/model/PackageInfo.cpp
   src/v20211125/model/DescribeFirmwareTaskDevicesRequest.cpp
   src/v20211125/model/DescribeFirmwareResponse.cpp
   src/v20211125/model/DescribeDeviceStatusLogResponse.cpp
@@ -1067,6 +1072,7 @@ set(iotvideo_src
   src/v20211125/model/ModifyPushChannelResponse.cpp
   src/v20211125/model/CallDeviceActionSyncResponse.cpp
   src/v20211125/model/CreateProductResponse.cpp
+  src/v20211125/model/ChangeP2PRouteResponse.cpp
   src/v20211125/model/TRTCParams.cpp
   src/v20211125/model/DescribeDeviceDataHistoryResponse.cpp
   src/v20211125/model/CallTRTCDeviceRequest.cpp
@@ -1081,7 +1087,7 @@ set(iotvideo_src
   src/v20211125/model/DescribeFirmwareTaskResponse.cpp
   src/v20211125/model/FirmwareInfo.cpp
   src/v20211125/model/CreateProductRequest.cpp
-  src/v20211125/model/DescribeFirmwareTasksRequest.cpp
+  src/v20211125/model/ChangeP2PRouteRequest.cpp
   src/v20211125/model/GetFirmwareURLResponse.cpp
   src/v20211125/model/DescribeUserResponse.cpp
   src/v20211125/model/DescribePackageConsumeTaskResponse.cpp
@@ -1137,6 +1143,7 @@ set(iotvideo_src
   src/v20211125/model/CreateCloudStorageResponse.cpp
   src/v20211125/model/BindCloudStorageUserResponse.cpp
   src/v20211125/model/DescribeFreeCloudStorageNumRequest.cpp
+  src/v20211125/model/DescribeFirmwareTasksRequest.cpp
   src/v20211125/model/CancelDeviceFirmwareTaskRequest.cpp
   src/v20211125/model/CancelDeviceFirmwareTaskResponse.cpp
   src/v20211125/model/DescribeBatchsRequest.cpp
@@ -1174,6 +1181,7 @@ set(iotvideo_src
   src/v20211125/model/DescribeAIModelsResponse.cpp
   src/v20211125/model/InheritCloudStorageUserRequest.cpp
   src/v20211125/model/DescribeAIModelChannelRequest.cpp
+  src/v20211125/model/DescribeP2PRouteRequest.cpp
   src/v20211125/model/DescribeAIModelUsageRequest.cpp
   src/v20211125/model/DescribeBonusesRequest.cpp
   src/v20211125/model/DeleteFirmwareRequest.cpp

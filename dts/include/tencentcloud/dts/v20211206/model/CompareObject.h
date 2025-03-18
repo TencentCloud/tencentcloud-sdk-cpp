@@ -91,14 +91,18 @@ namespace TencentCloud
 
                     /**
                      * 获取高级对象类型，目前只支持mongodb链路。如index(索引),shardkey(片键),schema(库表)
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdvancedObjects 高级对象类型，目前只支持mongodb链路。如index(索引),shardkey(片键),schema(库表)
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetAdvancedObjects() const;
 
                     /**
                      * 设置高级对象类型，目前只支持mongodb链路。如index(索引),shardkey(片键),schema(库表)
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _advancedObjects 高级对象类型，目前只支持mongodb链路。如index(索引),shardkey(片键),schema(库表)
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAdvancedObjects(const std::vector<std::string>& _advancedObjects);
@@ -126,6 +130,7 @@ namespace TencentCloud
 
                     /**
                      * 高级对象类型，目前只支持mongodb链路。如index(索引),shardkey(片键),schema(库表)
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_advancedObjects;
                     bool m_advancedObjectsHasBeenSet;

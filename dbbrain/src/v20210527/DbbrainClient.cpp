@@ -83,6 +83,49 @@ DbbrainClient::AddUserContactOutcomeCallable DbbrainClient::AddUserContactCallab
     return task->get_future();
 }
 
+DbbrainClient::CancelDBAutonomyActionOutcome DbbrainClient::CancelDBAutonomyAction(const CancelDBAutonomyActionRequest &request)
+{
+    auto outcome = MakeRequest(request, "CancelDBAutonomyAction");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CancelDBAutonomyActionResponse rsp = CancelDBAutonomyActionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CancelDBAutonomyActionOutcome(rsp);
+        else
+            return CancelDBAutonomyActionOutcome(o.GetError());
+    }
+    else
+    {
+        return CancelDBAutonomyActionOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::CancelDBAutonomyActionAsync(const CancelDBAutonomyActionRequest& request, const CancelDBAutonomyActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CancelDBAutonomyAction(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::CancelDBAutonomyActionOutcomeCallable DbbrainClient::CancelDBAutonomyActionCallable(const CancelDBAutonomyActionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CancelDBAutonomyActionOutcome()>>(
+        [this, request]()
+        {
+            return this->CancelDBAutonomyAction(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DbbrainClient::CancelKillTaskOutcome DbbrainClient::CancelKillTask(const CancelKillTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CancelKillTask");
@@ -119,6 +162,49 @@ DbbrainClient::CancelKillTaskOutcomeCallable DbbrainClient::CancelKillTaskCallab
         [this, request]()
         {
             return this->CancelKillTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DbbrainClient::CancelRedisBigKeyAnalysisTasksOutcome DbbrainClient::CancelRedisBigKeyAnalysisTasks(const CancelRedisBigKeyAnalysisTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "CancelRedisBigKeyAnalysisTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CancelRedisBigKeyAnalysisTasksResponse rsp = CancelRedisBigKeyAnalysisTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CancelRedisBigKeyAnalysisTasksOutcome(rsp);
+        else
+            return CancelRedisBigKeyAnalysisTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return CancelRedisBigKeyAnalysisTasksOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::CancelRedisBigKeyAnalysisTasksAsync(const CancelRedisBigKeyAnalysisTasksRequest& request, const CancelRedisBigKeyAnalysisTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CancelRedisBigKeyAnalysisTasks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::CancelRedisBigKeyAnalysisTasksOutcomeCallable DbbrainClient::CancelRedisBigKeyAnalysisTasksCallable(const CancelRedisBigKeyAnalysisTasksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CancelRedisBigKeyAnalysisTasksOutcome()>>(
+        [this, request]()
+        {
+            return this->CancelRedisBigKeyAnalysisTasks(request);
         }
     );
 
@@ -599,6 +685,49 @@ DbbrainClient::CreateSqlFilterOutcomeCallable DbbrainClient::CreateSqlFilterCall
     return task->get_future();
 }
 
+DbbrainClient::CreateUserAutonomyProfileOutcome DbbrainClient::CreateUserAutonomyProfile(const CreateUserAutonomyProfileRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateUserAutonomyProfile");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateUserAutonomyProfileResponse rsp = CreateUserAutonomyProfileResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateUserAutonomyProfileOutcome(rsp);
+        else
+            return CreateUserAutonomyProfileOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateUserAutonomyProfileOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::CreateUserAutonomyProfileAsync(const CreateUserAutonomyProfileRequest& request, const CreateUserAutonomyProfileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateUserAutonomyProfile(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::CreateUserAutonomyProfileOutcomeCallable DbbrainClient::CreateUserAutonomyProfileCallable(const CreateUserAutonomyProfileRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateUserAutonomyProfileOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateUserAutonomyProfile(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DbbrainClient::DeleteAuditLogFileOutcome DbbrainClient::DeleteAuditLogFile(const DeleteAuditLogFileRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteAuditLogFile");
@@ -1022,6 +1151,92 @@ DbbrainClient::DescribeAuditLogFilesOutcomeCallable DbbrainClient::DescribeAudit
         [this, request]()
         {
             return this->DescribeAuditLogFiles(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DbbrainClient::DescribeDBAutonomyActionsOutcome DbbrainClient::DescribeDBAutonomyActions(const DescribeDBAutonomyActionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBAutonomyActions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBAutonomyActionsResponse rsp = DescribeDBAutonomyActionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBAutonomyActionsOutcome(rsp);
+        else
+            return DescribeDBAutonomyActionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBAutonomyActionsOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeDBAutonomyActionsAsync(const DescribeDBAutonomyActionsRequest& request, const DescribeDBAutonomyActionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDBAutonomyActions(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeDBAutonomyActionsOutcomeCallable DbbrainClient::DescribeDBAutonomyActionsCallable(const DescribeDBAutonomyActionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDBAutonomyActionsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDBAutonomyActions(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DbbrainClient::DescribeDBAutonomyEventsOutcome DbbrainClient::DescribeDBAutonomyEvents(const DescribeDBAutonomyEventsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBAutonomyEvents");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBAutonomyEventsResponse rsp = DescribeDBAutonomyEventsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBAutonomyEventsOutcome(rsp);
+        else
+            return DescribeDBAutonomyEventsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBAutonomyEventsOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeDBAutonomyEventsAsync(const DescribeDBAutonomyEventsRequest& request, const DescribeDBAutonomyEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDBAutonomyEvents(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeDBAutonomyEventsOutcomeCallable DbbrainClient::DescribeDBAutonomyEventsCallable(const DescribeDBAutonomyEventsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDBAutonomyEventsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDBAutonomyEvents(request);
         }
     );
 
@@ -2362,6 +2577,49 @@ DbbrainClient::DescribeTopSpaceTablesOutcomeCallable DbbrainClient::DescribeTopS
     return task->get_future();
 }
 
+DbbrainClient::DescribeUserAutonomyProfileOutcome DbbrainClient::DescribeUserAutonomyProfile(const DescribeUserAutonomyProfileRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUserAutonomyProfile");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUserAutonomyProfileResponse rsp = DescribeUserAutonomyProfileResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUserAutonomyProfileOutcome(rsp);
+        else
+            return DescribeUserAutonomyProfileOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUserAutonomyProfileOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeUserAutonomyProfileAsync(const DescribeUserAutonomyProfileRequest& request, const DescribeUserAutonomyProfileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUserAutonomyProfile(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeUserAutonomyProfileOutcomeCallable DbbrainClient::DescribeUserAutonomyProfileCallable(const DescribeUserAutonomyProfileRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUserAutonomyProfileOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUserAutonomyProfile(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DbbrainClient::DescribeUserSqlAdviceOutcome DbbrainClient::DescribeUserSqlAdvice(const DescribeUserSqlAdviceRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeUserSqlAdvice");
@@ -2613,6 +2871,49 @@ DbbrainClient::ModifySqlFiltersOutcomeCallable DbbrainClient::ModifySqlFiltersCa
         [this, request]()
         {
             return this->ModifySqlFilters(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DbbrainClient::ModifyUserAutonomyProfileOutcome DbbrainClient::ModifyUserAutonomyProfile(const ModifyUserAutonomyProfileRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyUserAutonomyProfile");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyUserAutonomyProfileResponse rsp = ModifyUserAutonomyProfileResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyUserAutonomyProfileOutcome(rsp);
+        else
+            return ModifyUserAutonomyProfileOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyUserAutonomyProfileOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::ModifyUserAutonomyProfileAsync(const ModifyUserAutonomyProfileRequest& request, const ModifyUserAutonomyProfileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyUserAutonomyProfile(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::ModifyUserAutonomyProfileOutcomeCallable DbbrainClient::ModifyUserAutonomyProfileCallable(const ModifyUserAutonomyProfileRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyUserAutonomyProfileOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyUserAutonomyProfile(request);
         }
     );
 

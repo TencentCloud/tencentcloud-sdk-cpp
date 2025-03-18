@@ -155,8 +155,10 @@ namespace TencentCloud
                     /**
                      * 获取可用区列表。
 不填此参数，表示为随机可用区。
+可通过 <a href="https://cloud.tencent.com/document/product/1207/57513" target="_blank">DescribeZones</a>接口获取指定地域下的可用区列表信息
                      * @return Zones 可用区列表。
 不填此参数，表示为随机可用区。
+可通过 <a href="https://cloud.tencent.com/document/product/1207/57513" target="_blank">DescribeZones</a>接口获取指定地域下的可用区列表信息
                      * 
                      */
                     std::vector<std::string> GetZones() const;
@@ -164,8 +166,10 @@ namespace TencentCloud
                     /**
                      * 设置可用区列表。
 不填此参数，表示为随机可用区。
+可通过 <a href="https://cloud.tencent.com/document/product/1207/57513" target="_blank">DescribeZones</a>接口获取指定地域下的可用区列表信息
                      * @param _zones 可用区列表。
 不填此参数，表示为随机可用区。
+可通过 <a href="https://cloud.tencent.com/document/product/1207/57513" target="_blank">DescribeZones</a>接口获取指定地域下的可用区列表信息
                      * 
                      */
                     void SetZones(const std::vector<std::string>& _zones);
@@ -379,14 +383,18 @@ false（默认）：发送正常请求，通过检查后直接创建实例
 
                     /**
                      * 获取主域名。
+注意：域名指定后，仅支持购买一台实例（参数InstanceCount=1）。
                      * @return DomainName 主域名。
+注意：域名指定后，仅支持购买一台实例（参数InstanceCount=1）。
                      * 
                      */
                     std::string GetDomainName() const;
 
                     /**
                      * 设置主域名。
+注意：域名指定后，仅支持购买一台实例（参数InstanceCount=1）。
                      * @param _domainName 主域名。
+注意：域名指定后，仅支持购买一台实例（参数InstanceCount=1）。
                      * 
                      */
                     void SetDomainName(const std::string& _domainName);
@@ -400,14 +408,18 @@ false（默认）：发送正常请求，通过检查后直接创建实例
 
                     /**
                      * 获取子域名。
+注意：域名指定后，仅支持购买一台实例（参数InstanceCount=1）。
                      * @return Subdomain 子域名。
+注意：域名指定后，仅支持购买一台实例（参数InstanceCount=1）。
                      * 
                      */
                     std::string GetSubdomain() const;
 
                     /**
                      * 设置子域名。
+注意：域名指定后，仅支持购买一台实例（参数InstanceCount=1）。
                      * @param _subdomain 子域名。
+注意：域名指定后，仅支持购买一台实例（参数InstanceCount=1）。
                      * 
                      */
                     void SetSubdomain(const std::string& _subdomain);
@@ -454,6 +466,7 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                     /**
                      * 可用区列表。
 不填此参数，表示为随机可用区。
+可通过 <a href="https://cloud.tencent.com/document/product/1207/57513" target="_blank">DescribeZones</a>接口获取指定地域下的可用区列表信息
                      */
                     std::vector<std::string> m_zones;
                     bool m_zonesHasBeenSet;
@@ -516,12 +529,14 @@ false（默认）：发送正常请求，通过检查后直接创建实例
 
                     /**
                      * 主域名。
+注意：域名指定后，仅支持购买一台实例（参数InstanceCount=1）。
                      */
                     std::string m_domainName;
                     bool m_domainNameHasBeenSet;
 
                     /**
                      * 子域名。
+注意：域名指定后，仅支持购买一台实例（参数InstanceCount=1）。
                      */
                     std::string m_subdomain;
                     bool m_subdomainHasBeenSet;

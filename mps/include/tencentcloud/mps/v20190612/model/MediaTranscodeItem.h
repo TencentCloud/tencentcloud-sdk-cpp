@@ -301,6 +301,75 @@ namespace TencentCloud
                      */
                     bool VideoStreamSetHasBeenSet() const;
 
+                    /**
+                     * 获取视频转码使用增强项说明，增强项解释
+<li>hdr：HDR配置</li>
+<li>wd_fps：插帧帧率配置</li>
+<li>video_super_resolution：	超分配置</li>
+<li>repair：综合增强配置</li>
+<li>denoise：视频降噪配置</li>
+<li>color_enhance：色彩增强配置</li>
+<li>scratch：去划痕配置</li>
+<li>artifact：去伪影（毛刺）配置</li>
+<li>sharp：细节增强配置</li>
+<li>low_light：低光照增强配置</li>
+<li>face_enhance：人脸增强配置</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CallBackExtInfo 视频转码使用增强项说明，增强项解释
+<li>hdr：HDR配置</li>
+<li>wd_fps：插帧帧率配置</li>
+<li>video_super_resolution：	超分配置</li>
+<li>repair：综合增强配置</li>
+<li>denoise：视频降噪配置</li>
+<li>color_enhance：色彩增强配置</li>
+<li>scratch：去划痕配置</li>
+<li>artifact：去伪影（毛刺）配置</li>
+<li>sharp：细节增强配置</li>
+<li>low_light：低光照增强配置</li>
+<li>face_enhance：人脸增强配置</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCallBackExtInfo() const;
+
+                    /**
+                     * 设置视频转码使用增强项说明，增强项解释
+<li>hdr：HDR配置</li>
+<li>wd_fps：插帧帧率配置</li>
+<li>video_super_resolution：	超分配置</li>
+<li>repair：综合增强配置</li>
+<li>denoise：视频降噪配置</li>
+<li>color_enhance：色彩增强配置</li>
+<li>scratch：去划痕配置</li>
+<li>artifact：去伪影（毛刺）配置</li>
+<li>sharp：细节增强配置</li>
+<li>low_light：低光照增强配置</li>
+<li>face_enhance：人脸增强配置</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _callBackExtInfo 视频转码使用增强项说明，增强项解释
+<li>hdr：HDR配置</li>
+<li>wd_fps：插帧帧率配置</li>
+<li>video_super_resolution：	超分配置</li>
+<li>repair：综合增强配置</li>
+<li>denoise：视频降噪配置</li>
+<li>color_enhance：色彩增强配置</li>
+<li>scratch：去划痕配置</li>
+<li>artifact：去伪影（毛刺）配置</li>
+<li>sharp：细节增强配置</li>
+<li>low_light：低光照增强配置</li>
+<li>face_enhance：人脸增强配置</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCallBackExtInfo(const std::string& _callBackExtInfo);
+
+                    /**
+                     * 判断参数 CallBackExtInfo 是否已赋值
+                     * @return CallBackExtInfo 是否已赋值
+                     * 
+                     */
+                    bool CallBackExtInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -374,6 +443,24 @@ namespace TencentCloud
                      */
                     std::vector<MediaVideoStreamItem> m_videoStreamSet;
                     bool m_videoStreamSetHasBeenSet;
+
+                    /**
+                     * 视频转码使用增强项说明，增强项解释
+<li>hdr：HDR配置</li>
+<li>wd_fps：插帧帧率配置</li>
+<li>video_super_resolution：	超分配置</li>
+<li>repair：综合增强配置</li>
+<li>denoise：视频降噪配置</li>
+<li>color_enhance：色彩增强配置</li>
+<li>scratch：去划痕配置</li>
+<li>artifact：去伪影（毛刺）配置</li>
+<li>sharp：细节增强配置</li>
+<li>low_light：低光照增强配置</li>
+<li>face_enhance：人脸增强配置</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_callBackExtInfo;
+                    bool m_callBackExtInfoHasBeenSet;
 
                 };
             }

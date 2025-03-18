@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Db 数据库名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDb() const;
 
                     /**
                      * 设置数据库名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _db 数据库名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDb(const std::string& _db);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取表名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Table 表名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTable() const;
 
                     /**
                      * 设置表名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _table 表名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTable(const std::string& _table);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取未发起检查的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Reason 未发起检查的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReason() const;
 
                     /**
                      * 设置未发起检查的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _reason 未发起检查的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReason(const std::string& _reason);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 数据库名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_db;
                     bool m_dbHasBeenSet;
 
                     /**
                      * 表名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_table;
                     bool m_tableHasBeenSet;
 
                     /**
                      * 未发起检查的原因
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reason;
                     bool m_reasonHasBeenSet;

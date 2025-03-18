@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取迁移任务数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 迁移任务数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取迁移任务列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return JobList 迁移任务列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<JobItem> GetJobList() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 迁移任务数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
                      * 迁移任务列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<JobItem> m_jobList;
                     bool m_jobListHasBeenSet;

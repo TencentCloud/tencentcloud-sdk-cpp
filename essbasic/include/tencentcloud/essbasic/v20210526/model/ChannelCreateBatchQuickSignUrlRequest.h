@@ -417,6 +417,27 @@ namespace TencentCloud
                      */
                     bool CacheApproverInfoHasBeenSet() const;
 
+                    /**
+                     * 获取是否允许此链接中签署方批量拒签。 <ul><li>false (默认): 不允许批量拒签</li> <li>true : 允许批量拒签。</li></ul>注：`合同组暂不支持批量拒签功能。`
+                     * @return CanBatchReject 是否允许此链接中签署方批量拒签。 <ul><li>false (默认): 不允许批量拒签</li> <li>true : 允许批量拒签。</li></ul>注：`合同组暂不支持批量拒签功能。`
+                     * 
+                     */
+                    bool GetCanBatchReject() const;
+
+                    /**
+                     * 设置是否允许此链接中签署方批量拒签。 <ul><li>false (默认): 不允许批量拒签</li> <li>true : 允许批量拒签。</li></ul>注：`合同组暂不支持批量拒签功能。`
+                     * @param _canBatchReject 是否允许此链接中签署方批量拒签。 <ul><li>false (默认): 不允许批量拒签</li> <li>true : 允许批量拒签。</li></ul>注：`合同组暂不支持批量拒签功能。`
+                     * 
+                     */
+                    void SetCanBatchReject(const bool& _canBatchReject);
+
+                    /**
+                     * 判断参数 CanBatchReject 是否已赋值
+                     * @return CanBatchReject 是否已赋值
+                     * 
+                     */
+                    bool CanBatchRejectHasBeenSet() const;
+
                 private:
 
                     /**
@@ -519,6 +540,12 @@ namespace TencentCloud
                      */
                     bool m_cacheApproverInfo;
                     bool m_cacheApproverInfoHasBeenSet;
+
+                    /**
+                     * 是否允许此链接中签署方批量拒签。 <ul><li>false (默认): 不允许批量拒签</li> <li>true : 允许批量拒签。</li></ul>注：`合同组暂不支持批量拒签功能。`
+                     */
+                    bool m_canBatchReject;
+                    bool m_canBatchRejectHasBeenSet;
 
                 };
             }

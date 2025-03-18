@@ -318,6 +318,11 @@ namespace TencentCloud
 <li>HK_EXCLUSIVE_BUNDLE：香港专属型 </li>
 <li>CAREFREE_BUNDLE：无忧型</li>
 <li>BEFAST_BUNDLE：蜂驰型 </li>
+<li>EXCLUSIVE_BUNDLE_02：境外专属Ⅱ型</li>
+<li>NEWCOMER_BUNDLE：新客专享</li>
+<li>GAME_PORTAL_BUNDLE：游戏专区</li>
+<li>ECONOMY_BUNDLE：经济型</li>
+<li>RAZOR_SPEED_BUNDLE：锐驰型</li>
                      * @return BundleType 套餐类型。
 取值范围：
 <li>STARTER_BUNDLE：入门型</li>
@@ -328,6 +333,11 @@ namespace TencentCloud
 <li>HK_EXCLUSIVE_BUNDLE：香港专属型 </li>
 <li>CAREFREE_BUNDLE：无忧型</li>
 <li>BEFAST_BUNDLE：蜂驰型 </li>
+<li>EXCLUSIVE_BUNDLE_02：境外专属Ⅱ型</li>
+<li>NEWCOMER_BUNDLE：新客专享</li>
+<li>GAME_PORTAL_BUNDLE：游戏专区</li>
+<li>ECONOMY_BUNDLE：经济型</li>
+<li>RAZOR_SPEED_BUNDLE：锐驰型</li>
                      * 
                      */
                     std::string GetBundleType() const;
@@ -343,6 +353,11 @@ namespace TencentCloud
 <li>HK_EXCLUSIVE_BUNDLE：香港专属型 </li>
 <li>CAREFREE_BUNDLE：无忧型</li>
 <li>BEFAST_BUNDLE：蜂驰型 </li>
+<li>EXCLUSIVE_BUNDLE_02：境外专属Ⅱ型</li>
+<li>NEWCOMER_BUNDLE：新客专享</li>
+<li>GAME_PORTAL_BUNDLE：游戏专区</li>
+<li>ECONOMY_BUNDLE：经济型</li>
+<li>RAZOR_SPEED_BUNDLE：锐驰型</li>
                      * @param _bundleType 套餐类型。
 取值范围：
 <li>STARTER_BUNDLE：入门型</li>
@@ -353,6 +368,11 @@ namespace TencentCloud
 <li>HK_EXCLUSIVE_BUNDLE：香港专属型 </li>
 <li>CAREFREE_BUNDLE：无忧型</li>
 <li>BEFAST_BUNDLE：蜂驰型 </li>
+<li>EXCLUSIVE_BUNDLE_02：境外专属Ⅱ型</li>
+<li>NEWCOMER_BUNDLE：新客专享</li>
+<li>GAME_PORTAL_BUNDLE：游戏专区</li>
+<li>ECONOMY_BUNDLE：经济型</li>
+<li>RAZOR_SPEED_BUNDLE：锐驰型</li>
                      * 
                      */
                     void SetBundleType(const std::string& _bundleType);
@@ -509,6 +529,11 @@ namespace TencentCloud
 <li>HK_EXCLUSIVE_BUNDLE：香港专属型 </li>
 <li>CAREFREE_BUNDLE：无忧型</li>
 <li>BEFAST_BUNDLE：蜂驰型 </li>
+<li>EXCLUSIVE_BUNDLE_02：境外专属Ⅱ型</li>
+<li>NEWCOMER_BUNDLE：新客专享</li>
+<li>GAME_PORTAL_BUNDLE：游戏专区</li>
+<li>ECONOMY_BUNDLE：经济型</li>
+<li>RAZOR_SPEED_BUNDLE：锐驰型</li>
                      */
                     std::string m_bundleType;
                     bool m_bundleTypeHasBeenSet;

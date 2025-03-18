@@ -384,6 +384,49 @@ IotvideoClient::CancelDeviceFirmwareTaskOutcomeCallable IotvideoClient::CancelDe
     return task->get_future();
 }
 
+IotvideoClient::ChangeP2PRouteOutcome IotvideoClient::ChangeP2PRoute(const ChangeP2PRouteRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChangeP2PRoute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChangeP2PRouteResponse rsp = ChangeP2PRouteResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChangeP2PRouteOutcome(rsp);
+        else
+            return ChangeP2PRouteOutcome(o.GetError());
+    }
+    else
+    {
+        return ChangeP2PRouteOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::ChangeP2PRouteAsync(const ChangeP2PRouteRequest& request, const ChangeP2PRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChangeP2PRoute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::ChangeP2PRouteOutcomeCallable IotvideoClient::ChangeP2PRouteCallable(const ChangeP2PRouteRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChangeP2PRouteOutcome()>>(
+        [this, request]()
+        {
+            return this->ChangeP2PRoute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotvideoClient::CheckForwardAuthOutcome IotvideoClient::CheckForwardAuth(const CheckForwardAuthRequest &request)
 {
     auto outcome = MakeRequest(request, "CheckForwardAuth");
@@ -3043,6 +3086,49 @@ IotvideoClient::DescribeP2PInfoOutcomeCallable IotvideoClient::DescribeP2PInfoCa
         [this, request]()
         {
             return this->DescribeP2PInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IotvideoClient::DescribeP2PRouteOutcome IotvideoClient::DescribeP2PRoute(const DescribeP2PRouteRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeP2PRoute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeP2PRouteResponse rsp = DescribeP2PRouteResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeP2PRouteOutcome(rsp);
+        else
+            return DescribeP2PRouteOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeP2PRouteOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::DescribeP2PRouteAsync(const DescribeP2PRouteRequest& request, const DescribeP2PRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeP2PRoute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::DescribeP2PRouteOutcomeCallable IotvideoClient::DescribeP2PRouteCallable(const DescribeP2PRouteRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeP2PRouteOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeP2PRoute(request);
         }
     );
 

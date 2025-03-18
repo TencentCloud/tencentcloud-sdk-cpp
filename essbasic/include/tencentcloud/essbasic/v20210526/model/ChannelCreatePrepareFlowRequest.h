@@ -324,31 +324,35 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取签署控件的配置信息，用在嵌入式发起的页面配置，包括
+                     * 获取<font color="red">此参数已经废弃，请使用 CreateFlowOption 里面的 SignComponentConfig</font>
+签署控件的配置信息，用在嵌入式发起的页面配置，包括
 
 - 签署控件 是否默认展示日期.
-                     * @return SignComponentConfig 签署控件的配置信息，用在嵌入式发起的页面配置，包括
+                     * @return SignComponentConfig <font color="red">此参数已经废弃，请使用 CreateFlowOption 里面的 SignComponentConfig</font>
+签署控件的配置信息，用在嵌入式发起的页面配置，包括
 
 - 签署控件 是否默认展示日期.
-                     * 
+                     * @deprecated
                      */
                     SignComponentConfig GetSignComponentConfig() const;
 
                     /**
-                     * 设置签署控件的配置信息，用在嵌入式发起的页面配置，包括
+                     * 设置<font color="red">此参数已经废弃，请使用 CreateFlowOption 里面的 SignComponentConfig</font>
+签署控件的配置信息，用在嵌入式发起的页面配置，包括
 
 - 签署控件 是否默认展示日期.
-                     * @param _signComponentConfig 签署控件的配置信息，用在嵌入式发起的页面配置，包括
+                     * @param _signComponentConfig <font color="red">此参数已经废弃，请使用 CreateFlowOption 里面的 SignComponentConfig</font>
+签署控件的配置信息，用在嵌入式发起的页面配置，包括
 
 - 签署控件 是否默认展示日期.
-                     * 
+                     * @deprecated
                      */
                     void SetSignComponentConfig(const SignComponentConfig& _signComponentConfig);
 
                     /**
                      * 判断参数 SignComponentConfig 是否已赋值
                      * @return SignComponentConfig 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool SignComponentConfigHasBeenSet() const;
 
@@ -431,7 +435,8 @@ namespace TencentCloud
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 签署控件的配置信息，用在嵌入式发起的页面配置，包括
+                     * <font color="red">此参数已经废弃，请使用 CreateFlowOption 里面的 SignComponentConfig</font>
+签署控件的配置信息，用在嵌入式发起的页面配置，包括
 
 - 签署控件 是否默认展示日期.
                      */

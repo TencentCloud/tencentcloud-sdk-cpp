@@ -42,7 +42,8 @@ UserRoleListDataUserRoleInfo::UserRoleListDataUserRoleInfo() :
     m_appUserAliasNameHasBeenSet(false),
     m_appUserNameHasBeenSet(false),
     m_inValidateAppRangeHasBeenSet(false),
-    m_appOpenUserIdHasBeenSet(false)
+    m_appOpenUserIdHasBeenSet(false),
+    m_emailActivationStatusHasBeenSet(false)
 {
 }
 
@@ -284,6 +285,16 @@ CoreInternalOutcome UserRoleListDataUserRoleInfo::Deserialize(const rapidjson::V
         m_appOpenUserIdHasBeenSet = true;
     }
 
+    if (value.HasMember("EmailActivationStatus") && !value["EmailActivationStatus"].IsNull())
+    {
+        if (!value["EmailActivationStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserRoleListDataUserRoleInfo.EmailActivationStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_emailActivationStatus = value["EmailActivationStatus"].GetInt64();
+        m_emailActivationStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -477,6 +488,14 @@ void UserRoleListDataUserRoleInfo::ToJsonObject(rapidjson::Value &value, rapidjs
         string key = "AppOpenUserId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_appOpenUserId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_emailActivationStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EmailActivationStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_emailActivationStatus, allocator);
     }
 
 }
@@ -832,5 +851,21 @@ void UserRoleListDataUserRoleInfo::SetAppOpenUserId(const string& _appOpenUserId
 bool UserRoleListDataUserRoleInfo::AppOpenUserIdHasBeenSet() const
 {
     return m_appOpenUserIdHasBeenSet;
+}
+
+int64_t UserRoleListDataUserRoleInfo::GetEmailActivationStatus() const
+{
+    return m_emailActivationStatus;
+}
+
+void UserRoleListDataUserRoleInfo::SetEmailActivationStatus(const int64_t& _emailActivationStatus)
+{
+    m_emailActivationStatus = _emailActivationStatus;
+    m_emailActivationStatusHasBeenSet = true;
+}
+
+bool UserRoleListDataUserRoleInfo::EmailActivationStatusHasBeenSet() const
+{
+    return m_emailActivationStatusHasBeenSet;
 }
 

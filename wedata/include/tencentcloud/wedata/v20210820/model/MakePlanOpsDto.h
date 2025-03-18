@@ -810,6 +810,31 @@ REVERSE： 实例数据时间逆序
                      */
                     bool AppParamHasBeenSet() const;
 
+                    /**
+                     * 获取补录计划时间范围的类型： 
+DATA_TIME：实例数据时间；SCHEDULE_TIME 计划调度时间
+                     * @return TimeType 补录计划时间范围的类型： 
+DATA_TIME：实例数据时间；SCHEDULE_TIME 计划调度时间
+                     * 
+                     */
+                    std::string GetTimeType() const;
+
+                    /**
+                     * 设置补录计划时间范围的类型： 
+DATA_TIME：实例数据时间；SCHEDULE_TIME 计划调度时间
+                     * @param _timeType 补录计划时间范围的类型： 
+DATA_TIME：实例数据时间；SCHEDULE_TIME 计划调度时间
+                     * 
+                     */
+                    void SetTimeType(const std::string& _timeType);
+
+                    /**
+                     * 判断参数 TimeType 是否已赋值
+                     * @return TimeType 是否已赋值
+                     * 
+                     */
+                    bool TimeTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1024,6 +1049,13 @@ REVERSE： 实例数据时间逆序
                      */
                     std::string m_appParam;
                     bool m_appParamHasBeenSet;
+
+                    /**
+                     * 补录计划时间范围的类型： 
+DATA_TIME：实例数据时间；SCHEDULE_TIME 计划调度时间
+                     */
+                    std::string m_timeType;
+                    bool m_timeTypeHasBeenSet;
 
                 };
             }

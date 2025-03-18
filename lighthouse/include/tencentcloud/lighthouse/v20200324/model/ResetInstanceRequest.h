@@ -88,14 +88,18 @@ namespace TencentCloud
 
                     /**
                      * 获取要创建的容器配置列表。
+注意：仅重装的镜像类型为Docker时支持传入该参数。
                      * @return Containers 要创建的容器配置列表。
+注意：仅重装的镜像类型为Docker时支持传入该参数。
                      * 
                      */
                     std::vector<DockerContainerConfiguration> GetContainers() const;
 
                     /**
                      * 设置要创建的容器配置列表。
+注意：仅重装的镜像类型为Docker时支持传入该参数。
                      * @param _containers 要创建的容器配置列表。
+注意：仅重装的镜像类型为Docker时支持传入该参数。
                      * 
                      */
                     void SetContainers(const std::vector<DockerContainerConfiguration>& _containers);
@@ -144,6 +148,7 @@ namespace TencentCloud
 
                     /**
                      * 要创建的容器配置列表。
+注意：仅重装的镜像类型为Docker时支持传入该参数。
                      */
                     std::vector<DockerContainerConfiguration> m_containers;
                     bool m_containersHasBeenSet;

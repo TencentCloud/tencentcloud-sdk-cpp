@@ -37,7 +37,8 @@ ChannelCreateBatchSignUrlRequest::ChannelCreateBatchSignUrlRequest() :
     m_openIdHasBeenSet(false),
     m_organizationOpenIdHasBeenSet(false),
     m_autoJumpBackHasBeenSet(false),
-    m_urlUseEnvHasBeenSet(false)
+    m_urlUseEnvHasBeenSet(false),
+    m_canBatchRejectHasBeenSet(false)
 {
 }
 
@@ -174,6 +175,14 @@ string ChannelCreateBatchSignUrlRequest::ToJsonString() const
         string key = "UrlUseEnv";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_urlUseEnv.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_canBatchRejectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CanBatchReject";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_canBatchReject, allocator);
     }
 
 
@@ -422,6 +431,22 @@ void ChannelCreateBatchSignUrlRequest::SetUrlUseEnv(const string& _urlUseEnv)
 bool ChannelCreateBatchSignUrlRequest::UrlUseEnvHasBeenSet() const
 {
     return m_urlUseEnvHasBeenSet;
+}
+
+bool ChannelCreateBatchSignUrlRequest::GetCanBatchReject() const
+{
+    return m_canBatchReject;
+}
+
+void ChannelCreateBatchSignUrlRequest::SetCanBatchReject(const bool& _canBatchReject)
+{
+    m_canBatchReject = _canBatchReject;
+    m_canBatchRejectHasBeenSet = true;
+}
+
+bool ChannelCreateBatchSignUrlRequest::CanBatchRejectHasBeenSet() const
+{
+    return m_canBatchRejectHasBeenSet;
 }
 
 

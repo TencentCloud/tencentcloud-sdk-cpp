@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/SimpleAesDrm.h>
+#include <tencentcloud/mps/v20190612/model/SpekeDrm.h>
 
 
 namespace TencentCloud
@@ -113,6 +114,27 @@ namespace TencentCloud
                      */
                     bool SimpleAesDrmHasBeenSet() const;
 
+                    /**
+                     * 获取FairPlay, WideVine， PlayReady 加密信息。
+                     * @return SpekeDrm FairPlay, WideVine， PlayReady 加密信息。
+                     * 
+                     */
+                    SpekeDrm GetSpekeDrm() const;
+
+                    /**
+                     * 设置FairPlay, WideVine， PlayReady 加密信息。
+                     * @param _spekeDrm FairPlay, WideVine， PlayReady 加密信息。
+                     * 
+                     */
+                    void SetSpekeDrm(const SpekeDrm& _spekeDrm);
+
+                    /**
+                     * 判断参数 SpekeDrm 是否已赋值
+                     * @return SpekeDrm 是否已赋值
+                     * 
+                     */
+                    bool SpekeDrmHasBeenSet() const;
+
                 private:
 
                     /**
@@ -132,6 +154,12 @@ namespace TencentCloud
                      */
                     SimpleAesDrm m_simpleAesDrm;
                     bool m_simpleAesDrmHasBeenSet;
+
+                    /**
+                     * FairPlay, WideVine， PlayReady 加密信息。
+                     */
+                    SpekeDrm m_spekeDrm;
+                    bool m_spekeDrmHasBeenSet;
 
                 };
             }

@@ -342,18 +342,14 @@ namespace TencentCloud
 
                     /**
                      * 获取云联网ID，如：ccn-afp6kltc
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CcnId 云联网ID，如：ccn-afp6kltc
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCcnId() const;
 
                     /**
                      * 设置云联网ID，如：ccn-afp6kltc
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ccnId 云联网ID，如：ccn-afp6kltc
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCcnId(const std::string& _ccnId);
@@ -474,7 +470,6 @@ namespace TencentCloud
 
                     /**
                      * 云联网ID，如：ccn-afp6kltc
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ccnId;
                     bool m_ccnIdHasBeenSet;

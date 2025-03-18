@@ -35,7 +35,8 @@ TriggerManualTasksRequest::TriggerManualTasksRequest() :
     m_execOrderHasBeenSet(false),
     m_customParamsHasBeenSet(false),
     m_extraParamsHasBeenSet(false),
-    m_scheduleTimeZoneHasBeenSet(false)
+    m_scheduleTimeZoneHasBeenSet(false),
+    m_timeTypeHasBeenSet(false)
 {
 }
 
@@ -165,6 +166,14 @@ string TriggerManualTasksRequest::ToJsonString() const
         string key = "ScheduleTimeZone";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_scheduleTimeZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_timeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimeType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_timeType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -381,6 +390,22 @@ void TriggerManualTasksRequest::SetScheduleTimeZone(const string& _scheduleTimeZ
 bool TriggerManualTasksRequest::ScheduleTimeZoneHasBeenSet() const
 {
     return m_scheduleTimeZoneHasBeenSet;
+}
+
+string TriggerManualTasksRequest::GetTimeType() const
+{
+    return m_timeType;
+}
+
+void TriggerManualTasksRequest::SetTimeType(const string& _timeType)
+{
+    m_timeType = _timeType;
+    m_timeTypeHasBeenSet = true;
+}
+
+bool TriggerManualTasksRequest::TimeTypeHasBeenSet() const
+{
+    return m_timeTypeHasBeenSet;
 }
 
 

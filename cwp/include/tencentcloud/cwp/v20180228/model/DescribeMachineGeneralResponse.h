@@ -269,8 +269,8 @@ namespace TencentCloud
                     bool NotProtectMachineCntHasBeenSet() const;
 
                     /**
-                     * 获取已防护普惠版机器数（Lighthouse机器）
-                     * @return LHGeneralDiscountCnt 已防护普惠版机器数（Lighthouse机器）
+                     * 获取已防护轻量机器数（Lighthouse机器）
+                     * @return LHGeneralDiscountCnt 已防护轻量机器数（Lighthouse机器）
                      * 
                      */
                     uint64_t GetLHGeneralDiscountCnt() const;
@@ -423,7 +423,7 @@ namespace TencentCloud
                     bool m_notProtectMachineCntHasBeenSet;
 
                     /**
-                     * 已防护普惠版机器数（Lighthouse机器）
+                     * 已防护轻量机器数（Lighthouse机器）
                      */
                     uint64_t m_lHGeneralDiscountCnt;
                     bool m_lHGeneralDiscountCntHasBeenSet;

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Db 数据库名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDb() const;
 
                     /**
                      * 设置数据库名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _db 数据库名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDb(const std::string& _db);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Table 集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTable() const;
 
                     /**
                      * 设置集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _table 集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTable(const std::string& _table);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取源端ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SrcChunk 源端ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSrcChunk() const;
 
                     /**
                      * 设置源端ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _srcChunk 源端ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSrcChunk(const std::string& _srcChunk);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取目标端ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DstChunk 目标端ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDstChunk() const;
 
                     /**
                      * 设置目标端ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dstChunk 目标端ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDstChunk(const std::string& _dstChunk);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取源端值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SrcItem 源端值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSrcItem() const;
 
                     /**
                      * 设置源端值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _srcItem 源端值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSrcItem(const std::string& _srcItem);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取目标端值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DstItem 目标端值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDstItem() const;
 
                     /**
                      * 设置目标端值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dstItem 目标端值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDstItem(const std::string& _dstItem);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdatedAt 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdatedAt() const;
 
                     /**
                      * 设置更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updatedAt 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdatedAt(const std::string& _updatedAt);
@@ -225,49 +197,42 @@ namespace TencentCloud
 
                     /**
                      * 数据库名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_db;
                     bool m_dbHasBeenSet;
 
                     /**
                      * 集合
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_table;
                     bool m_tableHasBeenSet;
 
                     /**
                      * 源端ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_srcChunk;
                     bool m_srcChunkHasBeenSet;
 
                     /**
                      * 目标端ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dstChunk;
                     bool m_dstChunkHasBeenSet;
 
                     /**
                      * 源端值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_srcItem;
                     bool m_srcItemHasBeenSet;
 
                     /**
                      * 目标端值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dstItem;
                     bool m_dstItemHasBeenSet;
 
                     /**
                      * 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updatedAt;
                     bool m_updatedAtHasBeenSet;

@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取监控指标ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MetricId 监控指标ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMetricId() const;
 
                     /**
                      * 设置监控指标ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _metricId 监控指标ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMetricId(const uint64_t& _metricId);
@@ -157,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取中文指标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MetricChineseName 中文指标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMetricChineseName() const;
 
                     /**
                      * 设置中文指标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _metricChineseName 中文指标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMetricChineseName(const std::string& _metricChineseName);
@@ -182,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Unit 单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUnit() const;
 
                     /**
                      * 设置单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _unit 单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUnit(const std::string& _unit);
@@ -215,7 +203,6 @@ namespace TencentCloud
 
                     /**
                      * 监控指标ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_metricId;
                     bool m_metricIdHasBeenSet;
@@ -240,14 +227,12 @@ namespace TencentCloud
 
                     /**
                      * 中文指标
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_metricChineseName;
                     bool m_metricChineseNameHasBeenSet;
 
                     /**
                      * 单位
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_unit;
                     bool m_unitHasBeenSet;

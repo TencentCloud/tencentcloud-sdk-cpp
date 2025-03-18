@@ -50,7 +50,8 @@ MakePlanOpsDto::MakePlanOpsDto() :
     m_selfWorkflowDependencyHasBeenSet(false),
     m_makeDataTimeOrderHasBeenSet(false),
     m_scheduleTimeZoneHasBeenSet(false),
-    m_appParamHasBeenSet(false)
+    m_appParamHasBeenSet(false),
+    m_timeTypeHasBeenSet(false)
 {
 }
 
@@ -382,6 +383,16 @@ CoreInternalOutcome MakePlanOpsDto::Deserialize(const rapidjson::Value &value)
         m_appParamHasBeenSet = true;
     }
 
+    if (value.HasMember("TimeType") && !value["TimeType"].IsNull())
+    {
+        if (!value["TimeType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MakePlanOpsDto.TimeType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_timeType = string(value["TimeType"].GetString());
+        m_timeTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -646,6 +657,14 @@ void MakePlanOpsDto::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "AppParam";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_appParam.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_timeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimeType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_timeType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1129,5 +1148,21 @@ void MakePlanOpsDto::SetAppParam(const string& _appParam)
 bool MakePlanOpsDto::AppParamHasBeenSet() const
 {
     return m_appParamHasBeenSet;
+}
+
+string MakePlanOpsDto::GetTimeType() const
+{
+    return m_timeType;
+}
+
+void MakePlanOpsDto::SetTimeType(const string& _timeType)
+{
+    m_timeType = _timeType;
+    m_timeTypeHasBeenSet = true;
+}
+
+bool MakePlanOpsDto::TimeTypeHasBeenSet() const
+{
+    return m_timeTypeHasBeenSet;
 }
 

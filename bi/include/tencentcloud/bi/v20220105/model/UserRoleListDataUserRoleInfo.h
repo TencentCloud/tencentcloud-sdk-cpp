@@ -581,6 +581,31 @@ namespace TencentCloud
                      */
                     bool AppOpenUserIdHasBeenSet() const;
 
+                    /**
+                     * 获取邮箱激活状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EmailActivationStatus 邮箱激活状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetEmailActivationStatus() const;
+
+                    /**
+                     * 设置邮箱激活状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _emailActivationStatus 邮箱激活状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEmailActivationStatus(const int64_t& _emailActivationStatus);
+
+                    /**
+                     * 判断参数 EmailActivationStatus 是否已赋值
+                     * @return EmailActivationStatus 是否已赋值
+                     * 
+                     */
+                    bool EmailActivationStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -732,6 +757,13 @@ namespace TencentCloud
                      */
                     std::string m_appOpenUserId;
                     bool m_appOpenUserIdHasBeenSet;
+
+                    /**
+                     * 邮箱激活状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_emailActivationStatus;
+                    bool m_emailActivationStatusHasBeenSet;
 
                 };
             }

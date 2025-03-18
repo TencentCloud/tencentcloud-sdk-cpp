@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool UltimateVersionNumHasBeenSet() const;
 
                     /**
-                     * 获取普惠版数量
-                     * @return GeneralVersionNum 普惠版数量
+                     * 获取轻量版数量
+                     * @return GeneralVersionNum 轻量版数量
                      * 
                      */
                     uint64_t GetGeneralVersionNum() const;
@@ -120,7 +120,7 @@ namespace TencentCloud
                     bool m_ultimateVersionNumHasBeenSet;
 
                     /**
-                     * 普惠版数量
+                     * 轻量版数量
                      */
                     uint64_t m_generalVersionNum;
                     bool m_generalVersionNumHasBeenSet;

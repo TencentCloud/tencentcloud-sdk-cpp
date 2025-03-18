@@ -48,7 +48,9 @@ ModifyModelServiceRequest::ModifyModelServiceRequest() :
     m_serviceEIPHasBeenSet(false),
     m_commandBase64HasBeenSet(false),
     m_servicePortHasBeenSet(false),
-    m_instancePerReplicasHasBeenSet(false)
+    m_instancePerReplicasHasBeenSet(false),
+    m_terminationGracePeriodSecondsHasBeenSet(false),
+    m_preStopCommandHasBeenSet(false)
 {
 }
 
@@ -288,6 +290,27 @@ string ModifyModelServiceRequest::ToJsonString() const
         string key = "InstancePerReplicas";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_instancePerReplicas, allocator);
+    }
+
+    if (m_terminationGracePeriodSecondsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TerminationGracePeriodSeconds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_terminationGracePeriodSeconds, allocator);
+    }
+
+    if (m_preStopCommandHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreStopCommand";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_preStopCommand.begin(); itr != m_preStopCommand.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -712,6 +735,38 @@ void ModifyModelServiceRequest::SetInstancePerReplicas(const int64_t& _instanceP
 bool ModifyModelServiceRequest::InstancePerReplicasHasBeenSet() const
 {
     return m_instancePerReplicasHasBeenSet;
+}
+
+int64_t ModifyModelServiceRequest::GetTerminationGracePeriodSeconds() const
+{
+    return m_terminationGracePeriodSeconds;
+}
+
+void ModifyModelServiceRequest::SetTerminationGracePeriodSeconds(const int64_t& _terminationGracePeriodSeconds)
+{
+    m_terminationGracePeriodSeconds = _terminationGracePeriodSeconds;
+    m_terminationGracePeriodSecondsHasBeenSet = true;
+}
+
+bool ModifyModelServiceRequest::TerminationGracePeriodSecondsHasBeenSet() const
+{
+    return m_terminationGracePeriodSecondsHasBeenSet;
+}
+
+vector<string> ModifyModelServiceRequest::GetPreStopCommand() const
+{
+    return m_preStopCommand;
+}
+
+void ModifyModelServiceRequest::SetPreStopCommand(const vector<string>& _preStopCommand)
+{
+    m_preStopCommand = _preStopCommand;
+    m_preStopCommandHasBeenSet = true;
+}
+
+bool ModifyModelServiceRequest::PreStopCommandHasBeenSet() const
+{
+    return m_preStopCommandHasBeenSet;
 }
 
 

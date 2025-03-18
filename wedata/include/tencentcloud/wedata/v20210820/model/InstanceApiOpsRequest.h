@@ -741,6 +741,48 @@ namespace TencentCloud
                      */
                     bool ScheduleTimeZoneHasBeenSet() const;
 
+                    /**
+                     * 获取计划调度时间
+                     * @return ScheduleTimeFrom 计划调度时间
+                     * 
+                     */
+                    std::string GetScheduleTimeFrom() const;
+
+                    /**
+                     * 设置计划调度时间
+                     * @param _scheduleTimeFrom 计划调度时间
+                     * 
+                     */
+                    void SetScheduleTimeFrom(const std::string& _scheduleTimeFrom);
+
+                    /**
+                     * 判断参数 ScheduleTimeFrom 是否已赋值
+                     * @return ScheduleTimeFrom 是否已赋值
+                     * 
+                     */
+                    bool ScheduleTimeFromHasBeenSet() const;
+
+                    /**
+                     * 获取计划调度时间
+                     * @return ScheduleTimeTo 计划调度时间
+                     * 
+                     */
+                    std::string GetScheduleTimeTo() const;
+
+                    /**
+                     * 设置计划调度时间
+                     * @param _scheduleTimeTo 计划调度时间
+                     * 
+                     */
+                    void SetScheduleTimeTo(const std::string& _scheduleTimeTo);
+
+                    /**
+                     * 判断参数 ScheduleTimeTo 是否已赋值
+                     * @return ScheduleTimeTo 是否已赋值
+                     * 
+                     */
+                    bool ScheduleTimeToHasBeenSet() const;
+
                 private:
 
                     /**
@@ -940,6 +982,18 @@ namespace TencentCloud
                      */
                     std::string m_scheduleTimeZone;
                     bool m_scheduleTimeZoneHasBeenSet;
+
+                    /**
+                     * 计划调度时间
+                     */
+                    std::string m_scheduleTimeFrom;
+                    bool m_scheduleTimeFromHasBeenSet;
+
+                    /**
+                     * 计划调度时间
+                     */
+                    std::string m_scheduleTimeTo;
+                    bool m_scheduleTimeToHasBeenSet;
 
                 };
             }

@@ -691,6 +691,48 @@ HYBRID_PAID:
                      */
                     bool InstancePerReplicasHasBeenSet() const;
 
+                    /**
+                     * 获取30
+                     * @return TerminationGracePeriodSeconds 30
+                     * 
+                     */
+                    int64_t GetTerminationGracePeriodSeconds() const;
+
+                    /**
+                     * 设置30
+                     * @param _terminationGracePeriodSeconds 30
+                     * 
+                     */
+                    void SetTerminationGracePeriodSeconds(const int64_t& _terminationGracePeriodSeconds);
+
+                    /**
+                     * 判断参数 TerminationGracePeriodSeconds 是否已赋值
+                     * @return TerminationGracePeriodSeconds 是否已赋值
+                     * 
+                     */
+                    bool TerminationGracePeriodSecondsHasBeenSet() const;
+
+                    /**
+                     * 获取["sleep","60"]
+                     * @return PreStopCommand ["sleep","60"]
+                     * 
+                     */
+                    std::vector<std::string> GetPreStopCommand() const;
+
+                    /**
+                     * 设置["sleep","60"]
+                     * @param _preStopCommand ["sleep","60"]
+                     * 
+                     */
+                    void SetPreStopCommand(const std::vector<std::string>& _preStopCommand);
+
+                    /**
+                     * 判断参数 PreStopCommand 是否已赋值
+                     * @return PreStopCommand 是否已赋值
+                     * 
+                     */
+                    bool PreStopCommandHasBeenSet() const;
+
                 private:
 
                     /**
@@ -871,6 +913,18 @@ HYBRID_PAID:
                      */
                     int64_t m_instancePerReplicas;
                     bool m_instancePerReplicasHasBeenSet;
+
+                    /**
+                     * 30
+                     */
+                    int64_t m_terminationGracePeriodSeconds;
+                    bool m_terminationGracePeriodSecondsHasBeenSet;
+
+                    /**
+                     * ["sleep","60"]
+                     */
+                    std::vector<std::string> m_preStopCommand;
+                    bool m_preStopCommandHasBeenSet;
 
                 };
             }

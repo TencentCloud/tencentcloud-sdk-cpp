@@ -170,8 +170,8 @@ namespace TencentCloud
                     bool ClickTimeoutHasBeenSet() const;
 
                     /**
-                     * 获取为空默认扫描全部专业版、旗舰版、普惠版主机，不为空只扫描选中主机
-                     * @return Uuids 为空默认扫描全部专业版、旗舰版、普惠版主机，不为空只扫描选中主机
+                     * 获取为空默认扫描全部专业版、旗舰版、轻量版主机，不为空只扫描选中主机
+                     * @return Uuids 为空默认扫描全部专业版、旗舰版、轻量版主机，不为空只扫描选中主机
                      * 
                      */
                     std::vector<std::string> GetUuids() const;
@@ -254,7 +254,7 @@ namespace TencentCloud
                     bool m_clickTimeoutHasBeenSet;
 
                     /**
-                     * 为空默认扫描全部专业版、旗舰版、普惠版主机，不为空只扫描选中主机
+                     * 为空默认扫描全部专业版、旗舰版、轻量版主机，不为空只扫描选中主机
                      */
                     std::vector<std::string> m_uuids;
                     bool m_uuidsHasBeenSet;

@@ -39,6 +39,8 @@
 #include <tencentcloud/iotvideo/v20211125/model/CancelAIModelApplicationResponse.h>
 #include <tencentcloud/iotvideo/v20211125/model/CancelDeviceFirmwareTaskRequest.h>
 #include <tencentcloud/iotvideo/v20211125/model/CancelDeviceFirmwareTaskResponse.h>
+#include <tencentcloud/iotvideo/v20211125/model/ChangeP2PRouteRequest.h>
+#include <tencentcloud/iotvideo/v20211125/model/ChangeP2PRouteResponse.h>
 #include <tencentcloud/iotvideo/v20211125/model/CheckForwardAuthRequest.h>
 #include <tencentcloud/iotvideo/v20211125/model/CheckForwardAuthResponse.h>
 #include <tencentcloud/iotvideo/v20211125/model/ControlDeviceDataRequest.h>
@@ -163,6 +165,8 @@
 #include <tencentcloud/iotvideo/v20211125/model/DescribeModelDefinitionResponse.h>
 #include <tencentcloud/iotvideo/v20211125/model/DescribeP2PInfoRequest.h>
 #include <tencentcloud/iotvideo/v20211125/model/DescribeP2PInfoResponse.h>
+#include <tencentcloud/iotvideo/v20211125/model/DescribeP2PRouteRequest.h>
+#include <tencentcloud/iotvideo/v20211125/model/DescribeP2PRouteResponse.h>
 #include <tencentcloud/iotvideo/v20211125/model/DescribePackageConsumeTaskRequest.h>
 #include <tencentcloud/iotvideo/v20211125/model/DescribePackageConsumeTaskResponse.h>
 #include <tencentcloud/iotvideo/v20211125/model/DescribePackageConsumeTasksRequest.h>
@@ -271,6 +275,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CancelDeviceFirmwareTaskResponse> CancelDeviceFirmwareTaskOutcome;
                 typedef std::future<CancelDeviceFirmwareTaskOutcome> CancelDeviceFirmwareTaskOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::CancelDeviceFirmwareTaskRequest&, CancelDeviceFirmwareTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelDeviceFirmwareTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::ChangeP2PRouteResponse> ChangeP2PRouteOutcome;
+                typedef std::future<ChangeP2PRouteOutcome> ChangeP2PRouteOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::ChangeP2PRouteRequest&, ChangeP2PRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChangeP2PRouteAsyncHandler;
                 typedef Outcome<Core::Error, Model::CheckForwardAuthResponse> CheckForwardAuthOutcome;
                 typedef std::future<CheckForwardAuthOutcome> CheckForwardAuthOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::CheckForwardAuthRequest&, CheckForwardAuthOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckForwardAuthAsyncHandler;
@@ -457,6 +464,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeP2PInfoResponse> DescribeP2PInfoOutcome;
                 typedef std::future<DescribeP2PInfoOutcome> DescribeP2PInfoOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::DescribeP2PInfoRequest&, DescribeP2PInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeP2PInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeP2PRouteResponse> DescribeP2PRouteOutcome;
+                typedef std::future<DescribeP2PRouteOutcome> DescribeP2PRouteOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::DescribeP2PRouteRequest&, DescribeP2PRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeP2PRouteAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePackageConsumeTaskResponse> DescribePackageConsumeTaskOutcome;
                 typedef std::future<DescribePackageConsumeTaskOutcome> DescribePackageConsumeTaskOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::DescribePackageConsumeTaskRequest&, DescribePackageConsumeTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePackageConsumeTaskAsyncHandler;
@@ -636,6 +646,15 @@ namespace TencentCloud
                 CancelDeviceFirmwareTaskOutcome CancelDeviceFirmwareTask(const Model::CancelDeviceFirmwareTaskRequest &request);
                 void CancelDeviceFirmwareTaskAsync(const Model::CancelDeviceFirmwareTaskRequest& request, const CancelDeviceFirmwareTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CancelDeviceFirmwareTaskOutcomeCallable CancelDeviceFirmwareTaskCallable(const Model::CancelDeviceFirmwareTaskRequest& request);
+
+                /**
+                 *p2p路线切换
+                 * @param req ChangeP2PRouteRequest
+                 * @return ChangeP2PRouteOutcome
+                 */
+                ChangeP2PRouteOutcome ChangeP2PRoute(const Model::ChangeP2PRouteRequest &request);
+                void ChangeP2PRouteAsync(const Model::ChangeP2PRouteRequest& request, const ChangeP2PRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ChangeP2PRouteOutcomeCallable ChangeP2PRouteCallable(const Model::ChangeP2PRouteRequest& request);
 
                 /**
                  *判断是否开启转发的权限
@@ -1194,6 +1213,15 @@ namespace TencentCloud
                 DescribeP2PInfoOutcome DescribeP2PInfo(const Model::DescribeP2PInfoRequest &request);
                 void DescribeP2PInfoAsync(const Model::DescribeP2PInfoRequest& request, const DescribeP2PInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeP2PInfoOutcomeCallable DescribeP2PInfoCallable(const Model::DescribeP2PInfoRequest& request);
+
+                /**
+                 *当前p2p线路
+                 * @param req DescribeP2PRouteRequest
+                 * @return DescribeP2PRouteOutcome
+                 */
+                DescribeP2PRouteOutcome DescribeP2PRoute(const Model::DescribeP2PRouteRequest &request);
+                void DescribeP2PRouteAsync(const Model::DescribeP2PRouteRequest& request, const DescribeP2PRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeP2PRouteOutcomeCallable DescribeP2PRouteCallable(const Model::DescribeP2PRouteRequest& request);
 
                 /**
                  *查询套餐消耗记录详情

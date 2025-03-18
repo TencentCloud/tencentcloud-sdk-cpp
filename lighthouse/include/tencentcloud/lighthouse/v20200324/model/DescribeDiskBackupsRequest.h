@@ -75,12 +75,14 @@ namespace TencentCloud
 <li>disk-backup-state</li>按照【云硬盘备份点状态】进行过滤。
 类型：String
 必选：否
-取值：参考数据结构 
-<a href="https://cloud.tencent.com/document/product/1207/47576#DiskBackup">DescribeSnapshots</a> 下的DiskBackupState取值。
+取值：参考数据结构 [DiskBackup](https://cloud.tencent.com/document/product/1207/47576#DiskBackup) 下的DiskBackupState取值。
 <li>disk-usage</li>按照【云硬盘类型】进行过滤。
 类型：String
 必选：否
-取值：SYSTEM_DISK或DATA_DISK
+取值：
+- SYSTEM_DISK - 系统盘
+- DATA_DISK - 数据盘
+
 每次请求的 Filters 的上限为 10，Filter.Values 的上限为5。参数不支持同时指定DiskBackupIds 和 Filters。
                      * @return Filters 过滤器列表。
 <li>disk-backup-id</li>按照【云硬盘备份点 ID】进行过滤。
@@ -92,12 +94,14 @@ namespace TencentCloud
 <li>disk-backup-state</li>按照【云硬盘备份点状态】进行过滤。
 类型：String
 必选：否
-取值：参考数据结构 
-<a href="https://cloud.tencent.com/document/product/1207/47576#DiskBackup">DescribeSnapshots</a> 下的DiskBackupState取值。
+取值：参考数据结构 [DiskBackup](https://cloud.tencent.com/document/product/1207/47576#DiskBackup) 下的DiskBackupState取值。
 <li>disk-usage</li>按照【云硬盘类型】进行过滤。
 类型：String
 必选：否
-取值：SYSTEM_DISK或DATA_DISK
+取值：
+- SYSTEM_DISK - 系统盘
+- DATA_DISK - 数据盘
+
 每次请求的 Filters 的上限为 10，Filter.Values 的上限为5。参数不支持同时指定DiskBackupIds 和 Filters。
                      * 
                      */
@@ -114,12 +118,14 @@ namespace TencentCloud
 <li>disk-backup-state</li>按照【云硬盘备份点状态】进行过滤。
 类型：String
 必选：否
-取值：参考数据结构 
-<a href="https://cloud.tencent.com/document/product/1207/47576#DiskBackup">DescribeSnapshots</a> 下的DiskBackupState取值。
+取值：参考数据结构 [DiskBackup](https://cloud.tencent.com/document/product/1207/47576#DiskBackup) 下的DiskBackupState取值。
 <li>disk-usage</li>按照【云硬盘类型】进行过滤。
 类型：String
 必选：否
-取值：SYSTEM_DISK或DATA_DISK
+取值：
+- SYSTEM_DISK - 系统盘
+- DATA_DISK - 数据盘
+
 每次请求的 Filters 的上限为 10，Filter.Values 的上限为5。参数不支持同时指定DiskBackupIds 和 Filters。
                      * @param _filters 过滤器列表。
 <li>disk-backup-id</li>按照【云硬盘备份点 ID】进行过滤。
@@ -131,12 +137,14 @@ namespace TencentCloud
 <li>disk-backup-state</li>按照【云硬盘备份点状态】进行过滤。
 类型：String
 必选：否
-取值：参考数据结构 
-<a href="https://cloud.tencent.com/document/product/1207/47576#DiskBackup">DescribeSnapshots</a> 下的DiskBackupState取值。
+取值：参考数据结构 [DiskBackup](https://cloud.tencent.com/document/product/1207/47576#DiskBackup) 下的DiskBackupState取值。
 <li>disk-usage</li>按照【云硬盘类型】进行过滤。
 类型：String
 必选：否
-取值：SYSTEM_DISK或DATA_DISK
+取值：
+- SYSTEM_DISK - 系统盘
+- DATA_DISK - 数据盘
+
 每次请求的 Filters 的上限为 10，Filter.Values 的上限为5。参数不支持同时指定DiskBackupIds 和 Filters。
                      * 
                      */
@@ -210,12 +218,14 @@ namespace TencentCloud
 <li>disk-backup-state</li>按照【云硬盘备份点状态】进行过滤。
 类型：String
 必选：否
-取值：参考数据结构 
-<a href="https://cloud.tencent.com/document/product/1207/47576#DiskBackup">DescribeSnapshots</a> 下的DiskBackupState取值。
+取值：参考数据结构 [DiskBackup](https://cloud.tencent.com/document/product/1207/47576#DiskBackup) 下的DiskBackupState取值。
 <li>disk-usage</li>按照【云硬盘类型】进行过滤。
 类型：String
 必选：否
-取值：SYSTEM_DISK或DATA_DISK
+取值：
+- SYSTEM_DISK - 系统盘
+- DATA_DISK - 数据盘
+
 每次请求的 Filters 的上限为 10，Filter.Values 的上限为5。参数不支持同时指定DiskBackupIds 和 Filters。
                      */
                     std::vector<Filter> m_filters;

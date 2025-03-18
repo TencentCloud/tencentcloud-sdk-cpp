@@ -67,6 +67,27 @@ namespace TencentCloud
                      */
                     bool NameHasBeenSet() const;
 
+                    /**
+                     * 获取pod状态
+                     * @return Status pod状态
+                     * 
+                     */
+                    std::string GetStatus() const;
+
+                    /**
+                     * 设置pod状态
+                     * @param _status pod状态
+                     * 
+                     */
+                    void SetStatus(const std::string& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -74,6 +95,12 @@ namespace TencentCloud
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
+
+                    /**
+                     * pod状态
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }

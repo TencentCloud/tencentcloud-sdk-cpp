@@ -289,6 +289,132 @@ namespace TencentCloud
                      */
                     bool SpCoverageHasBeenSet() const;
 
+                    /**
+                     * 获取支付者昵称
+                     * @return PayerUinName 支付者昵称
+                     * 
+                     */
+                    std::string GetPayerUinName() const;
+
+                    /**
+                     * 设置支付者昵称
+                     * @param _payerUinName 支付者昵称
+                     * 
+                     */
+                    void SetPayerUinName(const std::string& _payerUinName);
+
+                    /**
+                     * 判断参数 PayerUinName 是否已赋值
+                     * @return PayerUinName 是否已赋值
+                     * 
+                     */
+                    bool PayerUinNameHasBeenSet() const;
+
+                    /**
+                     * 获取使用者昵称
+                     * @return OwnerUinName 使用者昵称
+                     * 
+                     */
+                    std::string GetOwnerUinName() const;
+
+                    /**
+                     * 设置使用者昵称
+                     * @param _ownerUinName 使用者昵称
+                     * 
+                     */
+                    void SetOwnerUinName(const std::string& _ownerUinName);
+
+                    /**
+                     * 判断参数 OwnerUinName 是否已赋值
+                     * @return OwnerUinName 是否已赋值
+                     * 
+                     */
+                    bool OwnerUinNameHasBeenSet() const;
+
+                    /**
+                     * 获取支付者uin
+                     * @return PayerUin 支付者uin
+                     * 
+                     */
+                    std::string GetPayerUin() const;
+
+                    /**
+                     * 设置支付者uin
+                     * @param _payerUin 支付者uin
+                     * 
+                     */
+                    void SetPayerUin(const std::string& _payerUin);
+
+                    /**
+                     * 判断参数 PayerUin 是否已赋值
+                     * @return PayerUin 是否已赋值
+                     * 
+                     */
+                    bool PayerUinHasBeenSet() const;
+
+                    /**
+                     * 获取计费项名称
+                     * @return SubBillingItemName 计费项名称
+                     * 
+                     */
+                    std::string GetSubBillingItemName() const;
+
+                    /**
+                     * 设置计费项名称
+                     * @param _subBillingItemName 计费项名称
+                     * 
+                     */
+                    void SetSubBillingItemName(const std::string& _subBillingItemName);
+
+                    /**
+                     * 判断参数 SubBillingItemName 是否已赋值
+                     * @return SubBillingItemName 是否已赋值
+                     * 
+                     */
+                    bool SubBillingItemNameHasBeenSet() const;
+
+                    /**
+                     * 获取计费细项名称
+                     * @return BillingItemName 计费细项名称
+                     * 
+                     */
+                    std::string GetBillingItemName() const;
+
+                    /**
+                     * 设置计费细项名称
+                     * @param _billingItemName 计费细项名称
+                     * 
+                     */
+                    void SetBillingItemName(const std::string& _billingItemName);
+
+                    /**
+                     * 判断参数 BillingItemName 是否已赋值
+                     * @return BillingItemName 是否已赋值
+                     * 
+                     */
+                    bool BillingItemNameHasBeenSet() const;
+
+                    /**
+                     * 获取子产品名称
+                     * @return SubProductName 子产品名称
+                     * 
+                     */
+                    std::string GetSubProductName() const;
+
+                    /**
+                     * 设置子产品名称
+                     * @param _subProductName 子产品名称
+                     * 
+                     */
+                    void SetSubProductName(const std::string& _subProductName);
+
+                    /**
+                     * 判断参数 SubProductName 是否已赋值
+                     * @return SubProductName 是否已赋值
+                     * 
+                     */
+                    bool SubProductNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -359,6 +485,42 @@ namespace TencentCloud
                      */
                     double m_spCoverage;
                     bool m_spCoverageHasBeenSet;
+
+                    /**
+                     * 支付者昵称
+                     */
+                    std::string m_payerUinName;
+                    bool m_payerUinNameHasBeenSet;
+
+                    /**
+                     * 使用者昵称
+                     */
+                    std::string m_ownerUinName;
+                    bool m_ownerUinNameHasBeenSet;
+
+                    /**
+                     * 支付者uin
+                     */
+                    std::string m_payerUin;
+                    bool m_payerUinHasBeenSet;
+
+                    /**
+                     * 计费项名称
+                     */
+                    std::string m_subBillingItemName;
+                    bool m_subBillingItemNameHasBeenSet;
+
+                    /**
+                     * 计费细项名称
+                     */
+                    std::string m_billingItemName;
+                    bool m_billingItemNameHasBeenSet;
+
+                    /**
+                     * 子产品名称
+                     */
+                    std::string m_subProductName;
+                    bool m_subProductNameHasBeenSet;
 
                 };
             }

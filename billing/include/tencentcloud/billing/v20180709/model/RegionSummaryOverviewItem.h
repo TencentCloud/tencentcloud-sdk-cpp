@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地域ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionId 地域ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegionId() const;
 
                     /**
                      * 设置地域ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _regionId 地域ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegionId(const std::string& _regionId);
@@ -264,7 +260,6 @@ namespace TencentCloud
 
                     /**
                      * 地域ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_regionId;
                     bool m_regionIdHasBeenSet;

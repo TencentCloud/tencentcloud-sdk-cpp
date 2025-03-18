@@ -384,9 +384,7 @@ namespace TencentCloud
 
                     /**
                      * 获取订阅实例的标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 订阅实例的标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TagItem> GetTags() const;
@@ -400,9 +398,7 @@ namespace TencentCloud
 
                     /**
                      * 获取自动续费标识,0-不自动续费，1-自动续费
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoRenewFlag 自动续费标识,0-不自动续费，1-自动续费
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAutoRenewFlag() const;
@@ -592,14 +588,12 @@ namespace TencentCloud
 
                     /**
                      * 订阅实例的标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TagItem> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
                      * 自动续费标识,0-不自动续费，1-自动续费
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_autoRenewFlag;
                     bool m_autoRenewFlagHasBeenSet;

@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取校验任务执行状态，如：notStarted(未开始)、running(校验中)、failed(校验任务失败)、success(任务成功)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 校验任务执行状态，如：notStarted(未开始)、running(校验中)、failed(校验任务失败)、success(任务成功)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取校验任务结果输出简要信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BriefMsg 校验任务结果输出简要信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBriefMsg() const;
@@ -78,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取检查步骤
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StepInfo 检查步骤
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CheckStep> GetStepInfo() const;
@@ -110,21 +104,18 @@ namespace TencentCloud
 
                     /**
                      * 校验任务执行状态，如：notStarted(未开始)、running(校验中)、failed(校验任务失败)、success(任务成功)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 校验任务结果输出简要信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_briefMsg;
                     bool m_briefMsgHasBeenSet;
 
                     /**
                      * 检查步骤
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CheckStep> m_stepInfo;
                     bool m_stepInfoHasBeenSet;

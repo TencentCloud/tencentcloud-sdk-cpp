@@ -102,9 +102,7 @@ namespace TencentCloud
 
                     /**
                      * 获取子网信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetIds 子网信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CloudBaseRunVpcSubnet> GetSubnetIds() const;
@@ -144,7 +142,6 @@ namespace TencentCloud
 
                     /**
                      * 子网信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CloudBaseRunVpcSubnet> m_subnetIds;
                     bool m_subnetIdsHasBeenSet;

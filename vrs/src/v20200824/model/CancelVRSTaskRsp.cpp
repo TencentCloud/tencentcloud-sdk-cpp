@@ -20,7 +20,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vrs::V20200824::Model;
 using namespace std;
 
-CancelVRSTaskRsp::CancelVRSTaskRsp()
+CancelVRSTaskRsp::CancelVRSTaskRsp() :
+    m_taskIdHasBeenSet(false)
 {
 }
 
@@ -29,6 +30,16 @@ CoreInternalOutcome CancelVRSTaskRsp::Deserialize(const rapidjson::Value &value)
     string requestId = "";
 
 
+    if (value.HasMember("TaskId") && !value["TaskId"].IsNull())
+    {
+        if (!value["TaskId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CancelVRSTaskRsp.TaskId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskId = string(value["TaskId"].GetString());
+        m_taskIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -36,6 +47,30 @@ CoreInternalOutcome CancelVRSTaskRsp::Deserialize(const rapidjson::Value &value)
 void CancelVRSTaskRsp::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
+    if (m_taskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
+
+string CancelVRSTaskRsp::GetTaskId() const
+{
+    return m_taskId;
+}
+
+void CancelVRSTaskRsp::SetTaskId(const string& _taskId)
+{
+    m_taskId = _taskId;
+    m_taskIdHasBeenSet = true;
+}
+
+bool CancelVRSTaskRsp::TaskIdHasBeenSet() const
+{
+    return m_taskIdHasBeenSet;
+}
 

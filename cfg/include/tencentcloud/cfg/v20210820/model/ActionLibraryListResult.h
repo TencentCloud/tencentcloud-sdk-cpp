@@ -321,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取二级分类
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceType 二级分类
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceType() const;
 
                     /**
                      * 设置二级分类
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceType 二级分类
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceType(const std::string& _resourceType);
@@ -346,18 +342,14 @@ namespace TencentCloud
 
                     /**
                      * 获取动作描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActionDetail 动作描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetActionDetail() const;
 
                     /**
                      * 设置动作描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _actionDetail 动作描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetActionDetail(const std::string& _actionDetail);
@@ -371,18 +363,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否允许当前账号使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsAllowed 是否允许当前账号使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsAllowed() const;
 
                     /**
                      * 设置是否允许当前账号使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isAllowed 是否允许当前账号使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsAllowed(const bool& _isAllowed);
@@ -396,18 +384,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最佳实践案例的链接地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActionBestCase 最佳实践案例的链接地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetActionBestCase() const;
 
                     /**
                      * 设置最佳实践案例的链接地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _actionBestCase 最佳实践案例的链接地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetActionBestCase(const std::string& _actionBestCase);
@@ -421,18 +405,14 @@ namespace TencentCloud
 
                     /**
                      * 获取对象类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ObjectType 对象类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetObjectType() const;
 
                     /**
                      * 设置对象类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _objectType 对象类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetObjectType(const std::string& _objectType);
@@ -446,18 +426,14 @@ namespace TencentCloud
 
                     /**
                      * 获取监控指标ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MetricIdList 监控指标ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<uint64_t> GetMetricIdList() const;
 
                     /**
                      * 设置监控指标ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _metricIdList 监控指标ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMetricIdList(const std::vector<uint64_t>& _metricIdList);
@@ -471,18 +447,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否是新动作
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsNewAction 是否是新动作
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsNewAction() const;
 
                     /**
                      * 设置是否是新动作
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isNewAction 是否是新动作
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsNewAction(const bool& _isNewAction);
@@ -496,18 +468,14 @@ namespace TencentCloud
 
                     /**
                      * 获取对象类型ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ObjectTypeId 对象类型ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetObjectTypeId() const;
 
                     /**
                      * 设置对象类型ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _objectTypeId 对象类型ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetObjectTypeId(const int64_t& _objectTypeId);
@@ -601,56 +569,48 @@ namespace TencentCloud
 
                     /**
                      * 二级分类
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceType;
                     bool m_resourceTypeHasBeenSet;
 
                     /**
                      * 动作描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_actionDetail;
                     bool m_actionDetailHasBeenSet;
 
                     /**
                      * 是否允许当前账号使用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isAllowed;
                     bool m_isAllowedHasBeenSet;
 
                     /**
                      * 最佳实践案例的链接地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_actionBestCase;
                     bool m_actionBestCaseHasBeenSet;
 
                     /**
                      * 对象类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_objectType;
                     bool m_objectTypeHasBeenSet;
 
                     /**
                      * 监控指标ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<uint64_t> m_metricIdList;
                     bool m_metricIdListHasBeenSet;
 
                     /**
                      * 是否是新动作
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isNewAction;
                     bool m_isNewActionHasBeenSet;
 
                     /**
                      * 对象类型ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_objectTypeId;
                     bool m_objectTypeIdHasBeenSet;

@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取消耗明细
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DetailSet 消耗明细
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CostDetail> GetDetailSet() const;
@@ -80,7 +78,6 @@ namespace TencentCloud
 
                     /**
                      * 消耗明细
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CostDetail> m_detailSet;
                     bool m_detailSetHasBeenSet;

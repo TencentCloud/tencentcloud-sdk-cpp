@@ -34,7 +34,8 @@ CreateFlowOption::CreateFlowOption() :
     m_forbidEditFlowPropertiesHasBeenSet(false),
     m_hideComponentTypesHasBeenSet(false),
     m_showComponentTypesHasBeenSet(false),
-    m_resultPageConfigHasBeenSet(false)
+    m_resultPageConfigHasBeenSet(false),
+    m_signComponentConfigHasBeenSet(false)
 {
 }
 
@@ -199,6 +200,23 @@ CoreInternalOutcome CreateFlowOption::Deserialize(const rapidjson::Value &value)
         m_resultPageConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("SignComponentConfig") && !value["SignComponentConfig"].IsNull())
+    {
+        if (!value["SignComponentConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateFlowOption.SignComponentConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_signComponentConfig.Deserialize(value["SignComponentConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_signComponentConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -333,6 +351,15 @@ void CreateFlowOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_signComponentConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SignComponentConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_signComponentConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -560,5 +587,21 @@ void CreateFlowOption::SetResultPageConfig(const vector<CreateResultPageConfig>&
 bool CreateFlowOption::ResultPageConfigHasBeenSet() const
 {
     return m_resultPageConfigHasBeenSet;
+}
+
+SignComponentConfig CreateFlowOption::GetSignComponentConfig() const
+{
+    return m_signComponentConfig;
+}
+
+void CreateFlowOption::SetSignComponentConfig(const SignComponentConfig& _signComponentConfig)
+{
+    m_signComponentConfig = _signComponentConfig;
+    m_signComponentConfigHasBeenSet = true;
+}
+
+bool CreateFlowOption::SignComponentConfigHasBeenSet() const
+{
+    return m_signComponentConfigHasBeenSet;
 }
 

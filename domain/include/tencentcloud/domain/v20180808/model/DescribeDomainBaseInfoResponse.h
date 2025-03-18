@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取用户Uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uin 用户Uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUin() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 用户Uin
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;

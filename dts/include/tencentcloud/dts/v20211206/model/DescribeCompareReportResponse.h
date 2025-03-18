@@ -47,9 +47,7 @@ namespace TencentCloud
 
                     /**
                      * 获取一致性校验摘要信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Abstract 一致性校验摘要信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CompareAbstractInfo GetAbstract() const;
@@ -63,9 +61,7 @@ namespace TencentCloud
 
                     /**
                      * 获取一致性校验详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Detail 一致性校验详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CompareDetailInfo GetDetail() const;
@@ -81,14 +77,12 @@ namespace TencentCloud
 
                     /**
                      * 一致性校验摘要信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CompareAbstractInfo m_abstract;
                     bool m_abstractHasBeenSet;
 
                     /**
                      * 一致性校验详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CompareDetailInfo m_detail;
                     bool m_detailHasBeenSet;

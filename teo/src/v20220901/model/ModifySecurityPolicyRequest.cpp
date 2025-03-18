@@ -25,7 +25,9 @@ using namespace std;
 ModifySecurityPolicyRequest::ModifySecurityPolicyRequest() :
     m_zoneIdHasBeenSet(false),
     m_securityConfigHasBeenSet(false),
+    m_securityPolicyHasBeenSet(false),
     m_entityHasBeenSet(false),
+    m_hostHasBeenSet(false),
     m_templateIdHasBeenSet(false)
 {
 }
@@ -54,12 +56,29 @@ string ModifySecurityPolicyRequest::ToJsonString() const
         m_securityConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
+    if (m_securityPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecurityPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_securityPolicy.ToJsonObject(d[key.c_str()], allocator);
+    }
+
     if (m_entityHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Entity";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_entity.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hostHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Host";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_host.c_str(), allocator).Move(), allocator);
     }
 
     if (m_templateIdHasBeenSet)
@@ -110,6 +129,22 @@ bool ModifySecurityPolicyRequest::SecurityConfigHasBeenSet() const
     return m_securityConfigHasBeenSet;
 }
 
+SecurityPolicy ModifySecurityPolicyRequest::GetSecurityPolicy() const
+{
+    return m_securityPolicy;
+}
+
+void ModifySecurityPolicyRequest::SetSecurityPolicy(const SecurityPolicy& _securityPolicy)
+{
+    m_securityPolicy = _securityPolicy;
+    m_securityPolicyHasBeenSet = true;
+}
+
+bool ModifySecurityPolicyRequest::SecurityPolicyHasBeenSet() const
+{
+    return m_securityPolicyHasBeenSet;
+}
+
 string ModifySecurityPolicyRequest::GetEntity() const
 {
     return m_entity;
@@ -124,6 +159,22 @@ void ModifySecurityPolicyRequest::SetEntity(const string& _entity)
 bool ModifySecurityPolicyRequest::EntityHasBeenSet() const
 {
     return m_entityHasBeenSet;
+}
+
+string ModifySecurityPolicyRequest::GetHost() const
+{
+    return m_host;
+}
+
+void ModifySecurityPolicyRequest::SetHost(const string& _host)
+{
+    m_host = _host;
+    m_hostHasBeenSet = true;
+}
+
+bool ModifySecurityPolicyRequest::HostHasBeenSet() const
+{
+    return m_hostHasBeenSet;
 }
 
 string ModifySecurityPolicyRequest::GetTemplateId() const

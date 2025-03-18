@@ -33,7 +33,8 @@ ChannelCreateBatchQuickSignUrlRequest::ChannelCreateBatchQuickSignUrlRequest() :
     m_signTypeSelectorHasBeenSet(false),
     m_flowBatchUrlInfoHasBeenSet(false),
     m_intentionHasBeenSet(false),
-    m_cacheApproverInfoHasBeenSet(false)
+    m_cacheApproverInfoHasBeenSet(false),
+    m_canBatchRejectHasBeenSet(false)
 {
 }
 
@@ -149,6 +150,14 @@ string ChannelCreateBatchQuickSignUrlRequest::ToJsonString() const
         string key = "CacheApproverInfo";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_cacheApproverInfo, allocator);
+    }
+
+    if (m_canBatchRejectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CanBatchReject";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_canBatchReject, allocator);
     }
 
 
@@ -333,6 +342,22 @@ void ChannelCreateBatchQuickSignUrlRequest::SetCacheApproverInfo(const bool& _ca
 bool ChannelCreateBatchQuickSignUrlRequest::CacheApproverInfoHasBeenSet() const
 {
     return m_cacheApproverInfoHasBeenSet;
+}
+
+bool ChannelCreateBatchQuickSignUrlRequest::GetCanBatchReject() const
+{
+    return m_canBatchReject;
+}
+
+void ChannelCreateBatchQuickSignUrlRequest::SetCanBatchReject(const bool& _canBatchReject)
+{
+    m_canBatchReject = _canBatchReject;
+    m_canBatchRejectHasBeenSet = true;
+}
+
+bool ChannelCreateBatchQuickSignUrlRequest::CanBatchRejectHasBeenSet() const
+{
+    return m_canBatchRejectHasBeenSet;
 }
 
 

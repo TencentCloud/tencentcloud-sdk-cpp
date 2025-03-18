@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Db 数据库名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDb() const;
 
                     /**
                      * 设置数据库名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _db 数据库名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDb(const std::string& _db);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Table 集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTable() const;
 
                     /**
                      * 设置集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _table 集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTable(const std::string& _table);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取源端行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SrcCount 源端行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSrcCount() const;
 
                     /**
                      * 设置源端行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _srcCount 源端行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSrcCount(const int64_t& _srcCount);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取目标端行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DstCount 目标端行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDstCount() const;
 
                     /**
                      * 设置目标端行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dstCount 目标端行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDstCount(const int64_t& _dstCount);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 数据库名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_db;
                     bool m_dbHasBeenSet;
 
                     /**
                      * 集合
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_table;
                     bool m_tableHasBeenSet;
 
                     /**
                      * 源端行数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_srcCount;
                     bool m_srcCountHasBeenSet;
 
                     /**
                      * 目标端行数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_dstCount;
                     bool m_dstCountHasBeenSet;

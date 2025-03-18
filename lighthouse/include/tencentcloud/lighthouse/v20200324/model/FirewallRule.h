@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取协议，取值：TCP，UDP，ICMP，ALL。
-                     * @return Protocol 协议，取值：TCP，UDP，ICMP，ALL。
+                     * 获取协议，取值：TCP，UDP，ICMP，ALL，ICMPv6。
+                     * @return Protocol 协议，取值：TCP，UDP，ICMP，ALL，ICMPv6。
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置协议，取值：TCP，UDP，ICMP，ALL。
-                     * @param _protocol 协议，取值：TCP，UDP，ICMP，ALL。
+                     * 设置协议，取值：TCP，UDP，ICMP，ALL，ICMPv6。
+                     * @param _protocol 协议，取值：TCP，UDP，ICMP，ALL，ICMPv6。
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -199,7 +199,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 协议，取值：TCP，UDP，ICMP，ALL。
+                     * 协议，取值：TCP，UDP，ICMP，ALL，ICMPv6。
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;

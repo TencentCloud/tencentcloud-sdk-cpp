@@ -191,15 +191,15 @@ namespace TencentCloud
                     bool SizeHasBeenSet() const;
 
                     /**
-                     * 获取标签适用范围，默认填0即可
-                     * @return AttrRange 标签适用范围，默认填0即可
+                     * 获取标签适用范围，需要传参为1
+                     * @return AttrRange 标签适用范围，需要传参为1
                      * 
                      */
                     uint64_t GetAttrRange() const;
 
                     /**
-                     * 设置标签适用范围，默认填0即可
-                     * @param _attrRange 标签适用范围，默认填0即可
+                     * 设置标签适用范围，需要传参为1
+                     * @param _attrRange 标签适用范围，需要传参为1
                      * 
                      */
                     void SetAttrRange(const uint64_t& _attrRange);
@@ -449,7 +449,7 @@ namespace TencentCloud
                     bool m_sizeHasBeenSet;
 
                     /**
-                     * 标签适用范围，默认填0即可
+                     * 标签适用范围，需要传参为1
                      */
                     uint64_t m_attrRange;
                     bool m_attrRangeHasBeenSet;

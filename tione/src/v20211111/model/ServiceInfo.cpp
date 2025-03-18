@@ -52,7 +52,9 @@ ServiceInfo::ServiceInfo() :
     m_inferCodeInfoHasBeenSet(false),
     m_commandHasBeenSet(false),
     m_serviceEIPHasBeenSet(false),
-    m_servicePortHasBeenSet(false)
+    m_servicePortHasBeenSet(false),
+    m_terminationGracePeriodSecondsHasBeenSet(false),
+    m_preStopCommandHasBeenSet(false)
 {
 }
 
@@ -498,6 +500,29 @@ CoreInternalOutcome ServiceInfo::Deserialize(const rapidjson::Value &value)
         m_servicePortHasBeenSet = true;
     }
 
+    if (value.HasMember("TerminationGracePeriodSeconds") && !value["TerminationGracePeriodSeconds"].IsNull())
+    {
+        if (!value["TerminationGracePeriodSeconds"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceInfo.TerminationGracePeriodSeconds` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_terminationGracePeriodSeconds = value["TerminationGracePeriodSeconds"].GetInt64();
+        m_terminationGracePeriodSecondsHasBeenSet = true;
+    }
+
+    if (value.HasMember("PreStopCommand") && !value["PreStopCommand"].IsNull())
+    {
+        if (!value["PreStopCommand"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ServiceInfo.PreStopCommand` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["PreStopCommand"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_preStopCommand.push_back((*itr).GetString());
+        }
+        m_preStopCommandHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -797,6 +822,27 @@ void ServiceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "ServicePort";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_servicePort, allocator);
+    }
+
+    if (m_terminationGracePeriodSecondsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TerminationGracePeriodSeconds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_terminationGracePeriodSeconds, allocator);
+    }
+
+    if (m_preStopCommandHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreStopCommand";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_preStopCommand.begin(); itr != m_preStopCommand.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -1312,5 +1358,37 @@ void ServiceInfo::SetServicePort(const int64_t& _servicePort)
 bool ServiceInfo::ServicePortHasBeenSet() const
 {
     return m_servicePortHasBeenSet;
+}
+
+int64_t ServiceInfo::GetTerminationGracePeriodSeconds() const
+{
+    return m_terminationGracePeriodSeconds;
+}
+
+void ServiceInfo::SetTerminationGracePeriodSeconds(const int64_t& _terminationGracePeriodSeconds)
+{
+    m_terminationGracePeriodSeconds = _terminationGracePeriodSeconds;
+    m_terminationGracePeriodSecondsHasBeenSet = true;
+}
+
+bool ServiceInfo::TerminationGracePeriodSecondsHasBeenSet() const
+{
+    return m_terminationGracePeriodSecondsHasBeenSet;
+}
+
+vector<string> ServiceInfo::GetPreStopCommand() const
+{
+    return m_preStopCommand;
+}
+
+void ServiceInfo::SetPreStopCommand(const vector<string>& _preStopCommand)
+{
+    m_preStopCommand = _preStopCommand;
+    m_preStopCommandHasBeenSet = true;
+}
+
+bool ServiceInfo::PreStopCommandHasBeenSet() const
+{
+    return m_preStopCommandHasBeenSet;
 }
 

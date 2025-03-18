@@ -46,7 +46,39 @@ namespace TencentCloud
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
+                    /**
+                     * 获取任务ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskId 任务ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetTaskId() const;
+
+                    /**
+                     * 设置任务ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _taskId 任务ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTaskId(const std::string& _taskId);
+
+                    /**
+                     * 判断参数 TaskId 是否已赋值
+                     * @return TaskId 是否已赋值
+                     * 
+                     */
+                    bool TaskIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 任务ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_taskId;
+                    bool m_taskIdHasBeenSet;
 
                 };
             }

@@ -73,8 +73,8 @@ namespace TencentCloud
                     bool ProfessionalHasBeenSet() const;
 
                     /**
-                     * 获取普惠版 配置信息
-                     * @return PrattWhitney 普惠版 配置信息
+                     * 获取轻量版 配置信息
+                     * @return PrattWhitney 轻量版 配置信息
                      * 
                      */
                     VersionWhiteConfig GetPrattWhitney() const;
@@ -101,7 +101,7 @@ namespace TencentCloud
                     bool m_professionalHasBeenSet;
 
                     /**
-                     * 普惠版 配置信息
+                     * 轻量版 配置信息
                      */
                     VersionWhiteConfig m_prattWhitney;
                     bool m_prattWhitneyHasBeenSet;

@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取字段值是否需要转译，当不需要转译时，此字段返回null
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Transfer 字段值是否需要转译，当不需要转译时，此字段返回null
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTransfer() const;
 
                     /**
                      * 设置字段值是否需要转译，当不需要转译时，此字段返回null
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _transfer 字段值是否需要转译，当不需要转译时，此字段返回null
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTransfer(const std::string& _transfer);
@@ -115,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取tke的pod字段信息解析
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return JsonParse tke的pod字段信息解析
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetJsonParse() const;
 
                     /**
                      * 设置tke的pod字段信息解析
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _jsonParse tke的pod字段信息解析
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetJsonParse(const std::string& _jsonParse);
@@ -175,14 +167,12 @@ namespace TencentCloud
 
                     /**
                      * 字段值是否需要转译，当不需要转译时，此字段返回null
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_transfer;
                     bool m_transferHasBeenSet;
 
                     /**
                      * tke的pod字段信息解析
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_jsonParse;
                     bool m_jsonParseHasBeenSet;

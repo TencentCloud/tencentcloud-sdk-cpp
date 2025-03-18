@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取跳过的表数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 跳过的表数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 设置跳过的表数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalCount 跳过的表数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalCount(const uint64_t& _totalCount);
@@ -101,7 +97,6 @@ namespace TencentCloud
 
                     /**
                      * 跳过的表数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

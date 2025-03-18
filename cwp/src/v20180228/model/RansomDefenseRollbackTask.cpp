@@ -31,7 +31,8 @@ RansomDefenseRollbackTask::RansomDefenseRollbackTask() :
     m_backupTimeHasBeenSet(false),
     m_modifyTimeHasBeenSet(false),
     m_regionInfoHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_machineTypeHasBeenSet(false)
 {
 }
 
@@ -157,6 +158,16 @@ CoreInternalOutcome RansomDefenseRollbackTask::Deserialize(const rapidjson::Valu
         m_instanceIdHasBeenSet = true;
     }
 
+    if (value.HasMember("MachineType") && !value["MachineType"].IsNull())
+    {
+        if (!value["MachineType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RansomDefenseRollbackTask.MachineType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_machineType = string(value["MachineType"].GetString());
+        m_machineTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -251,6 +262,14 @@ void RansomDefenseRollbackTask::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_machineTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MachineType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_machineType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -430,5 +449,21 @@ void RansomDefenseRollbackTask::SetInstanceId(const string& _instanceId)
 bool RansomDefenseRollbackTask::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+string RansomDefenseRollbackTask::GetMachineType() const
+{
+    return m_machineType;
+}
+
+void RansomDefenseRollbackTask::SetMachineType(const string& _machineType)
+{
+    m_machineType = _machineType;
+    m_machineTypeHasBeenSet = true;
+}
+
+bool RansomDefenseRollbackTask::MachineTypeHasBeenSet() const
+{
+    return m_machineTypeHasBeenSet;
 }
 

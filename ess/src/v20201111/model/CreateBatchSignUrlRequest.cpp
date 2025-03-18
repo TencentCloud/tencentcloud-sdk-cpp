@@ -35,7 +35,8 @@ CreateBatchSignUrlRequest::CreateBatchSignUrlRequest() :
     m_jumpToDetailHasBeenSet(false),
     m_flowBatchUrlInfoHasBeenSet(false),
     m_autoJumpBackHasBeenSet(false),
-    m_urlUseEnvHasBeenSet(false)
+    m_urlUseEnvHasBeenSet(false),
+    m_canBatchRejectHasBeenSet(false)
 {
 }
 
@@ -156,6 +157,14 @@ string CreateBatchSignUrlRequest::ToJsonString() const
         string key = "UrlUseEnv";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_urlUseEnv.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_canBatchRejectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CanBatchReject";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_canBatchReject, allocator);
     }
 
 
@@ -372,6 +381,22 @@ void CreateBatchSignUrlRequest::SetUrlUseEnv(const string& _urlUseEnv)
 bool CreateBatchSignUrlRequest::UrlUseEnvHasBeenSet() const
 {
     return m_urlUseEnvHasBeenSet;
+}
+
+bool CreateBatchSignUrlRequest::GetCanBatchReject() const
+{
+    return m_canBatchReject;
+}
+
+void CreateBatchSignUrlRequest::SetCanBatchReject(const bool& _canBatchReject)
+{
+    m_canBatchReject = _canBatchReject;
+    m_canBatchRejectHasBeenSet = true;
+}
+
+bool CreateBatchSignUrlRequest::CanBatchRejectHasBeenSet() const
+{
+    return m_canBatchRejectHasBeenSet;
 }
 
 

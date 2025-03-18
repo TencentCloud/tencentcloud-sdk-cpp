@@ -117,18 +117,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自定义标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskTag 自定义标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskTag() const;
 
                     /**
                      * 设置自定义标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskTag 自定义标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskTag(const std::string& _taskTag);
@@ -142,18 +138,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务状态，1001--未开始  1002--进行中（执行）1003--进行中（暂停）1004--执行结束
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskStatus 任务状态，1001--未开始  1002--进行中（执行）1003--进行中（暂停）1004--执行结束
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTaskStatus() const;
 
                     /**
                      * 设置任务状态，1001--未开始  1002--进行中（执行）1003--进行中（暂停）1004--执行结束
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskStatus 任务状态，1001--未开始  1002--进行中（执行）1003--进行中（暂停）1004--执行结束
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskStatus(const int64_t& _taskStatus);
@@ -460,18 +452,14 @@ namespace TencentCloud
 
                     /**
                      * 获取监控指标列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskMonitors 监控指标列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TaskMonitor> GetTaskMonitors() const;
 
                     /**
                      * 设置监控指标列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskMonitors 监控指标列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskMonitors(const std::vector<TaskMonitor>& _taskMonitors);
@@ -510,18 +498,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TagWithDescribe> GetTags() const;
 
                     /**
                      * 设置标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::vector<TagWithDescribe>& _tags);
@@ -610,18 +594,14 @@ namespace TencentCloud
 
                     /**
                      * 获取关联的应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationName 关联的应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApplicationName() const;
 
                     /**
                      * 设置关联的应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _applicationName 关联的应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApplicationName(const std::string& _applicationName);
@@ -635,18 +615,14 @@ namespace TencentCloud
 
                     /**
                      * 获取关联的告警指标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlarmPolicy 关联的告警指标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetAlarmPolicy() const;
 
                     /**
                      * 设置关联的告警指标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _alarmPolicy 关联的告警指标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAlarmPolicy(const std::vector<std::string>& _alarmPolicy);
@@ -660,18 +636,14 @@ namespace TencentCloud
 
                     /**
                      * 获取关联的APM服务
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApmServiceList 关联的APM服务
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ApmServiceInfo> GetApmServiceList() const;
 
                     /**
                      * 设置关联的APM服务
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _apmServiceList 关联的APM服务
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApmServiceList(const std::vector<ApmServiceInfo>& _apmServiceList);
@@ -710,18 +682,14 @@ namespace TencentCloud
 
                     /**
                      * 获取护栏处理方式，1--顺序回滚，2--演练暂停
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolicyDealType 护栏处理方式，1--顺序回滚，2--演练暂停
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPolicyDealType() const;
 
                     /**
                      * 设置护栏处理方式，1--顺序回滚，2--演练暂停
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _policyDealType 护栏处理方式，1--顺序回滚，2--演练暂停
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPolicyDealType(const int64_t& _policyDealType);
@@ -835,18 +803,14 @@ namespace TencentCloud
 
                     /**
                      * 获取region信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskRegionName region信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskRegionName() const;
 
                     /**
                      * 设置region信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskRegionName region信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskRegionName(const std::string& _taskRegionName);
@@ -901,14 +865,12 @@ namespace TencentCloud
 
                     /**
                      * 自定义标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskTag;
                     bool m_taskTagHasBeenSet;
 
                     /**
                      * 任务状态，1001--未开始  1002--进行中（执行）1003--进行中（暂停）1004--执行结束
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_taskStatus;
                     bool m_taskStatusHasBeenSet;
@@ -998,7 +960,6 @@ namespace TencentCloud
 
                     /**
                      * 监控指标列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TaskMonitor> m_taskMonitors;
                     bool m_taskMonitorsHasBeenSet;
@@ -1012,7 +973,6 @@ namespace TencentCloud
 
                     /**
                      * 标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TagWithDescribe> m_tags;
                     bool m_tagsHasBeenSet;
@@ -1040,21 +1000,18 @@ namespace TencentCloud
 
                     /**
                      * 关联的应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_applicationName;
                     bool m_applicationNameHasBeenSet;
 
                     /**
                      * 关联的告警指标
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_alarmPolicy;
                     bool m_alarmPolicyHasBeenSet;
 
                     /**
                      * 关联的APM服务
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ApmServiceInfo> m_apmServiceList;
                     bool m_apmServiceListHasBeenSet;
@@ -1068,7 +1025,6 @@ namespace TencentCloud
 
                     /**
                      * 护栏处理方式，1--顺序回滚，2--演练暂停
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_policyDealType;
                     bool m_policyDealTypeHasBeenSet;
@@ -1103,7 +1059,6 @@ namespace TencentCloud
 
                     /**
                      * region信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskRegionName;
                     bool m_taskRegionNameHasBeenSet;

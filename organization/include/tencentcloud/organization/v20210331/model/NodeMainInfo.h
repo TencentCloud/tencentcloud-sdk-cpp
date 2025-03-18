@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部门ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeId 部门ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetNodeId() const;
 
                     /**
                      * 设置部门ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nodeId 部门ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNodeId(const int64_t& _nodeId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部门名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeName 部门名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNodeName() const;
 
                     /**
                      * 设置部门名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nodeName 部门名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNodeName(const std::string& _nodeName);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 部门ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_nodeId;
                     bool m_nodeIdHasBeenSet;
 
                     /**
                      * 部门名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nodeName;
                     bool m_nodeNameHasBeenSet;

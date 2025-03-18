@@ -31,7 +31,13 @@ SavingPlanCoverageDetail::SavingPlanCoverageDetail() :
     m_spUncoveredAmountHasBeenSet(false),
     m_totalRealAmountHasBeenSet(false),
     m_expectedAmountHasBeenSet(false),
-    m_spCoverageHasBeenSet(false)
+    m_spCoverageHasBeenSet(false),
+    m_payerUinNameHasBeenSet(false),
+    m_ownerUinNameHasBeenSet(false),
+    m_payerUinHasBeenSet(false),
+    m_subBillingItemNameHasBeenSet(false),
+    m_billingItemNameHasBeenSet(false),
+    m_subProductNameHasBeenSet(false)
 {
 }
 
@@ -150,6 +156,66 @@ CoreInternalOutcome SavingPlanCoverageDetail::Deserialize(const rapidjson::Value
         m_spCoverageHasBeenSet = true;
     }
 
+    if (value.HasMember("PayerUinName") && !value["PayerUinName"].IsNull())
+    {
+        if (!value["PayerUinName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SavingPlanCoverageDetail.PayerUinName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_payerUinName = string(value["PayerUinName"].GetString());
+        m_payerUinNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("OwnerUinName") && !value["OwnerUinName"].IsNull())
+    {
+        if (!value["OwnerUinName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SavingPlanCoverageDetail.OwnerUinName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ownerUinName = string(value["OwnerUinName"].GetString());
+        m_ownerUinNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("PayerUin") && !value["PayerUin"].IsNull())
+    {
+        if (!value["PayerUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SavingPlanCoverageDetail.PayerUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_payerUin = string(value["PayerUin"].GetString());
+        m_payerUinHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubBillingItemName") && !value["SubBillingItemName"].IsNull())
+    {
+        if (!value["SubBillingItemName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SavingPlanCoverageDetail.SubBillingItemName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subBillingItemName = string(value["SubBillingItemName"].GetString());
+        m_subBillingItemNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("BillingItemName") && !value["BillingItemName"].IsNull())
+    {
+        if (!value["BillingItemName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SavingPlanCoverageDetail.BillingItemName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_billingItemName = string(value["BillingItemName"].GetString());
+        m_billingItemNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubProductName") && !value["SubProductName"].IsNull())
+    {
+        if (!value["SubProductName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SavingPlanCoverageDetail.SubProductName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subProductName = string(value["SubProductName"].GetString());
+        m_subProductNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +309,54 @@ void SavingPlanCoverageDetail::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "SpCoverage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_spCoverage, allocator);
+    }
+
+    if (m_payerUinNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PayerUinName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_payerUinName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ownerUinNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OwnerUinName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ownerUinName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_payerUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PayerUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_payerUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subBillingItemNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubBillingItemName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subBillingItemName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_billingItemNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BillingItemName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_billingItemName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subProductNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubProductName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subProductName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -422,5 +536,101 @@ void SavingPlanCoverageDetail::SetSpCoverage(const double& _spCoverage)
 bool SavingPlanCoverageDetail::SpCoverageHasBeenSet() const
 {
     return m_spCoverageHasBeenSet;
+}
+
+string SavingPlanCoverageDetail::GetPayerUinName() const
+{
+    return m_payerUinName;
+}
+
+void SavingPlanCoverageDetail::SetPayerUinName(const string& _payerUinName)
+{
+    m_payerUinName = _payerUinName;
+    m_payerUinNameHasBeenSet = true;
+}
+
+bool SavingPlanCoverageDetail::PayerUinNameHasBeenSet() const
+{
+    return m_payerUinNameHasBeenSet;
+}
+
+string SavingPlanCoverageDetail::GetOwnerUinName() const
+{
+    return m_ownerUinName;
+}
+
+void SavingPlanCoverageDetail::SetOwnerUinName(const string& _ownerUinName)
+{
+    m_ownerUinName = _ownerUinName;
+    m_ownerUinNameHasBeenSet = true;
+}
+
+bool SavingPlanCoverageDetail::OwnerUinNameHasBeenSet() const
+{
+    return m_ownerUinNameHasBeenSet;
+}
+
+string SavingPlanCoverageDetail::GetPayerUin() const
+{
+    return m_payerUin;
+}
+
+void SavingPlanCoverageDetail::SetPayerUin(const string& _payerUin)
+{
+    m_payerUin = _payerUin;
+    m_payerUinHasBeenSet = true;
+}
+
+bool SavingPlanCoverageDetail::PayerUinHasBeenSet() const
+{
+    return m_payerUinHasBeenSet;
+}
+
+string SavingPlanCoverageDetail::GetSubBillingItemName() const
+{
+    return m_subBillingItemName;
+}
+
+void SavingPlanCoverageDetail::SetSubBillingItemName(const string& _subBillingItemName)
+{
+    m_subBillingItemName = _subBillingItemName;
+    m_subBillingItemNameHasBeenSet = true;
+}
+
+bool SavingPlanCoverageDetail::SubBillingItemNameHasBeenSet() const
+{
+    return m_subBillingItemNameHasBeenSet;
+}
+
+string SavingPlanCoverageDetail::GetBillingItemName() const
+{
+    return m_billingItemName;
+}
+
+void SavingPlanCoverageDetail::SetBillingItemName(const string& _billingItemName)
+{
+    m_billingItemName = _billingItemName;
+    m_billingItemNameHasBeenSet = true;
+}
+
+bool SavingPlanCoverageDetail::BillingItemNameHasBeenSet() const
+{
+    return m_billingItemNameHasBeenSet;
+}
+
+string SavingPlanCoverageDetail::GetSubProductName() const
+{
+    return m_subProductName;
+}
+
+void SavingPlanCoverageDetail::SetSubProductName(const string& _subProductName)
+{
+    m_subProductName = _subProductName;
+    m_subProductNameHasBeenSet = true;
+}
+
+bool SavingPlanCoverageDetail::SubProductNameHasBeenSet() const
+{
+    return m_subProductNameHasBeenSet;
 }
 

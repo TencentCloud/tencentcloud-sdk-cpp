@@ -53,7 +53,9 @@ InstanceApiOpsRequest::InstanceApiOpsRequest() :
     m_dataTimeCycleHasBeenSet(false),
     m_executorGroupIdListHasBeenSet(false),
     m_onlyRerunHasBeenSet(false),
-    m_scheduleTimeZoneHasBeenSet(false)
+    m_scheduleTimeZoneHasBeenSet(false),
+    m_scheduleTimeFromHasBeenSet(false),
+    m_scheduleTimeToHasBeenSet(false)
 {
 }
 
@@ -442,6 +444,26 @@ CoreInternalOutcome InstanceApiOpsRequest::Deserialize(const rapidjson::Value &v
         m_scheduleTimeZoneHasBeenSet = true;
     }
 
+    if (value.HasMember("ScheduleTimeFrom") && !value["ScheduleTimeFrom"].IsNull())
+    {
+        if (!value["ScheduleTimeFrom"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceApiOpsRequest.ScheduleTimeFrom` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scheduleTimeFrom = string(value["ScheduleTimeFrom"].GetString());
+        m_scheduleTimeFromHasBeenSet = true;
+    }
+
+    if (value.HasMember("ScheduleTimeTo") && !value["ScheduleTimeTo"].IsNull())
+    {
+        if (!value["ScheduleTimeTo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceApiOpsRequest.ScheduleTimeTo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scheduleTimeTo = string(value["ScheduleTimeTo"].GetString());
+        m_scheduleTimeToHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -774,6 +796,22 @@ void InstanceApiOpsRequest::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "ScheduleTimeZone";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_scheduleTimeZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scheduleTimeFromHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduleTimeFrom";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scheduleTimeFrom.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scheduleTimeToHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduleTimeTo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scheduleTimeTo.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1305,5 +1343,37 @@ void InstanceApiOpsRequest::SetScheduleTimeZone(const string& _scheduleTimeZone)
 bool InstanceApiOpsRequest::ScheduleTimeZoneHasBeenSet() const
 {
     return m_scheduleTimeZoneHasBeenSet;
+}
+
+string InstanceApiOpsRequest::GetScheduleTimeFrom() const
+{
+    return m_scheduleTimeFrom;
+}
+
+void InstanceApiOpsRequest::SetScheduleTimeFrom(const string& _scheduleTimeFrom)
+{
+    m_scheduleTimeFrom = _scheduleTimeFrom;
+    m_scheduleTimeFromHasBeenSet = true;
+}
+
+bool InstanceApiOpsRequest::ScheduleTimeFromHasBeenSet() const
+{
+    return m_scheduleTimeFromHasBeenSet;
+}
+
+string InstanceApiOpsRequest::GetScheduleTimeTo() const
+{
+    return m_scheduleTimeTo;
+}
+
+void InstanceApiOpsRequest::SetScheduleTimeTo(const string& _scheduleTimeTo)
+{
+    m_scheduleTimeTo = _scheduleTimeTo;
+    m_scheduleTimeToHasBeenSet = true;
+}
+
+bool InstanceApiOpsRequest::ScheduleTimeToHasBeenSet() const
+{
+    return m_scheduleTimeToHasBeenSet;
 }
 

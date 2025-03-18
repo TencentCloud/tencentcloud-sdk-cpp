@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -94,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取类型，0--触发，1--恢复
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TriggerType 类型，0--触发，1--恢复
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTriggerType() const;
 
                     /**
                      * 设置类型，0--触发，1--恢复
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _triggerType 类型，0--触发，1--恢复
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTriggerType(const int64_t& _triggerType);
@@ -119,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Content 内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContent() const;
 
                     /**
                      * 设置内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _content 内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContent(const std::string& _content);
@@ -144,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取触发时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatTime 触发时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatTime() const;
 
                     /**
                      * 设置触发时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _creatTime 触发时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreatTime(const std::string& _creatTime);
@@ -177,28 +161,24 @@ namespace TencentCloud
 
                     /**
                      * 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 类型，0--触发，1--恢复
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_triggerType;
                     bool m_triggerTypeHasBeenSet;
 
                     /**
                      * 内容
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;
 
                     /**
                      * 触发时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_creatTime;
                     bool m_creatTimeHasBeenSet;

@@ -887,6 +887,48 @@ HYBRID_PAID:
                      */
                     bool ServicePortHasBeenSet() const;
 
+                    /**
+                     * 获取服务的优雅退出时限。单位为秒，默认值为30，最小为1
+                     * @return TerminationGracePeriodSeconds 服务的优雅退出时限。单位为秒，默认值为30，最小为1
+                     * 
+                     */
+                    int64_t GetTerminationGracePeriodSeconds() const;
+
+                    /**
+                     * 设置服务的优雅退出时限。单位为秒，默认值为30，最小为1
+                     * @param _terminationGracePeriodSeconds 服务的优雅退出时限。单位为秒，默认值为30，最小为1
+                     * 
+                     */
+                    void SetTerminationGracePeriodSeconds(const int64_t& _terminationGracePeriodSeconds);
+
+                    /**
+                     * 判断参数 TerminationGracePeriodSeconds 是否已赋值
+                     * @return TerminationGracePeriodSeconds 是否已赋值
+                     * 
+                     */
+                    bool TerminationGracePeriodSecondsHasBeenSet() const;
+
+                    /**
+                     * 获取服务实例停止前执行的命令，执行完毕或执行时间超过优雅退出时限后实例结束
+                     * @return PreStopCommand 服务实例停止前执行的命令，执行完毕或执行时间超过优雅退出时限后实例结束
+                     * 
+                     */
+                    std::vector<std::string> GetPreStopCommand() const;
+
+                    /**
+                     * 设置服务实例停止前执行的命令，执行完毕或执行时间超过优雅退出时限后实例结束
+                     * @param _preStopCommand 服务实例停止前执行的命令，执行完毕或执行时间超过优雅退出时限后实例结束
+                     * 
+                     */
+                    void SetPreStopCommand(const std::vector<std::string>& _preStopCommand);
+
+                    /**
+                     * 判断参数 PreStopCommand 是否已赋值
+                     * @return PreStopCommand 是否已赋值
+                     * 
+                     */
+                    bool PreStopCommandHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1119,6 +1161,18 @@ HYBRID_PAID:
                      */
                     int64_t m_servicePort;
                     bool m_servicePortHasBeenSet;
+
+                    /**
+                     * 服务的优雅退出时限。单位为秒，默认值为30，最小为1
+                     */
+                    int64_t m_terminationGracePeriodSeconds;
+                    bool m_terminationGracePeriodSecondsHasBeenSet;
+
+                    /**
+                     * 服务实例停止前执行的命令，执行完毕或执行时间超过优雅退出时限后实例结束
+                     */
+                    std::vector<std::string> m_preStopCommand;
+                    bool m_preStopCommandHasBeenSet;
 
                 };
             }

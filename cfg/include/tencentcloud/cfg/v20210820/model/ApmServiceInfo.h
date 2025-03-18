@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取业务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 业务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置业务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceId 业务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceNameList 应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetServiceNameList() const;
 
                     /**
                      * 设置应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serviceNameList 应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServiceNameList(const std::vector<std::string>& _serviceNameList);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地域ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionId 地域ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRegionId() const;
 
                     /**
                      * 设置地域ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _regionId 地域ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegionId(const int64_t& _regionId);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 业务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
                      * 应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_serviceNameList;
                     bool m_serviceNameListHasBeenSet;
 
                     /**
                      * 地域ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_regionId;
                     bool m_regionIdHasBeenSet;

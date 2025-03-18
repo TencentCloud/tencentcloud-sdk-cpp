@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取产品资源ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductResourceId 产品资源ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProductResourceId() const;
 
                     /**
                      * 设置产品资源ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _productResourceId 产品资源ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProductResourceId(const std::string& _productResourceId);
@@ -102,7 +98,6 @@ namespace TencentCloud
 
                     /**
                      * 产品资源ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_productResourceId;
                     bool m_productResourceIdHasBeenSet;

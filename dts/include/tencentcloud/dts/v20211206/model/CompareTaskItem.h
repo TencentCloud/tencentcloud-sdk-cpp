@@ -51,18 +51,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return JobId 任务id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetJobId() const;
 
                     /**
                      * 设置任务id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _jobId 任务id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetJobId(const std::string& _jobId);
@@ -76,18 +72,14 @@ namespace TencentCloud
 
                     /**
                      * 获取对比任务 Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CompareTaskId 对比任务 Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCompareTaskId() const;
 
                     /**
                      * 设置对比任务 Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _compareTaskId 对比任务 Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCompareTaskId(const std::string& _compareTaskId);
@@ -101,18 +93,14 @@ namespace TencentCloud
 
                     /**
                      * 获取对比任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskName 对比任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskName() const;
 
                     /**
                      * 设置对比任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskName 对比任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskName(const std::string& _taskName);
@@ -126,18 +114,14 @@ namespace TencentCloud
 
                     /**
                      * 获取对比任务状态, 可能的值：created - 创建完成；readyRun - 等待运行；running - 运行中；success - 成功；stopping - 结束中；failed - 失败；canceled - 已终止
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 对比任务状态, 可能的值：created - 创建完成；readyRun - 等待运行；running - 运行中；success - 成功；stopping - 结束中；failed - 失败；canceled - 已终止
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置对比任务状态, 可能的值：created - 创建完成；readyRun - 等待运行；running - 运行中；success - 成功；stopping - 结束中；failed - 失败；canceled - 已终止
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 对比任务状态, 可能的值：created - 创建完成；readyRun - 等待运行；running - 运行中；success - 成功；stopping - 结束中；failed - 失败；canceled - 已终止
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -151,18 +135,14 @@ namespace TencentCloud
 
                     /**
                      * 获取对比任务配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Config 对比任务配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CompareObject GetConfig() const;
 
                     /**
                      * 设置对比任务配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _config 对比任务配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConfig(const CompareObject& _config);
@@ -176,18 +156,14 @@ namespace TencentCloud
 
                     /**
                      * 获取对比任务校验详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CheckProcess 对比任务校验详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ProcessProgress GetCheckProcess() const;
 
                     /**
                      * 设置对比任务校验详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _checkProcess 对比任务校验详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCheckProcess(const ProcessProgress& _checkProcess);
@@ -201,18 +177,14 @@ namespace TencentCloud
 
                     /**
                      * 获取对比任务运行详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CompareProcess 对比任务运行详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ProcessProgress GetCompareProcess() const;
 
                     /**
                      * 设置对比任务运行详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _compareProcess 对比任务运行详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCompareProcess(const ProcessProgress& _compareProcess);
@@ -226,18 +198,14 @@ namespace TencentCloud
 
                     /**
                      * 获取对比结果, 可能的值：same - 一致；different - 不一致；skipAll - 跳过
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Conclusion 对比结果, 可能的值：same - 一致；different - 不一致；skipAll - 跳过
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConclusion() const;
 
                     /**
                      * 设置对比结果, 可能的值：same - 一致；different - 不一致；skipAll - 跳过
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _conclusion 对比结果, 可能的值：same - 一致；different - 不一致；skipAll - 跳过
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConclusion(const std::string& _conclusion);
@@ -251,18 +219,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedAt 任务创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatedAt() const;
 
                     /**
                      * 设置任务创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createdAt 任务创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreatedAt(const std::string& _createdAt);
@@ -276,18 +240,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务启动时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartedAt 任务启动时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStartedAt() const;
 
                     /**
                      * 设置任务启动时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _startedAt 任务启动时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStartedAt(const std::string& _startedAt);
@@ -301,18 +261,14 @@ namespace TencentCloud
 
                     /**
                      * 获取对比结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FinishedAt 对比结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFinishedAt() const;
 
                     /**
                      * 设置对比结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _finishedAt 对比结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFinishedAt(const std::string& _finishedAt);
@@ -326,18 +282,14 @@ namespace TencentCloud
 
                     /**
                      * 获取对比类型，dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Method 对比类型，dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMethod() const;
 
                     /**
                      * 设置对比类型，dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _method 对比类型，dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMethod(const std::string& _method);
@@ -351,18 +303,14 @@ namespace TencentCloud
 
                     /**
                      * 获取对比配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Options 对比配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CompareOptions GetOptions() const;
 
                     /**
                      * 设置对比配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _options 对比配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOptions(const CompareOptions& _options);
@@ -376,18 +324,14 @@ namespace TencentCloud
 
                     /**
                      * 获取一致性校验提示信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 一致性校验提示信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置一致性校验提示信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _message 一致性校验提示信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMessage(const std::string& _message);
@@ -403,98 +347,84 @@ namespace TencentCloud
 
                     /**
                      * 任务id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;
 
                     /**
                      * 对比任务 Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_compareTaskId;
                     bool m_compareTaskIdHasBeenSet;
 
                     /**
                      * 对比任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskName;
                     bool m_taskNameHasBeenSet;
 
                     /**
                      * 对比任务状态, 可能的值：created - 创建完成；readyRun - 等待运行；running - 运行中；success - 成功；stopping - 结束中；failed - 失败；canceled - 已终止
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 对比任务配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CompareObject m_config;
                     bool m_configHasBeenSet;
 
                     /**
                      * 对比任务校验详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ProcessProgress m_checkProcess;
                     bool m_checkProcessHasBeenSet;
 
                     /**
                      * 对比任务运行详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ProcessProgress m_compareProcess;
                     bool m_compareProcessHasBeenSet;
 
                     /**
                      * 对比结果, 可能的值：same - 一致；different - 不一致；skipAll - 跳过
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_conclusion;
                     bool m_conclusionHasBeenSet;
 
                     /**
                      * 任务创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createdAt;
                     bool m_createdAtHasBeenSet;
 
                     /**
                      * 任务启动时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_startedAt;
                     bool m_startedAtHasBeenSet;
 
                     /**
                      * 对比结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_finishedAt;
                     bool m_finishedAtHasBeenSet;
 
                     /**
                      * 对比类型，dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_method;
                     bool m_methodHasBeenSet;
 
                     /**
                      * 对比配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CompareOptions m_options;
                     bool m_optionsHasBeenSet;
 
                     /**
                      * 一致性校验提示信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;

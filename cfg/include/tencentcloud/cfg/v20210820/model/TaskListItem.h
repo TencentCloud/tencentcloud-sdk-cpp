@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskTag 任务标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskTag() const;
 
                     /**
                      * 设置任务标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskTag 任务标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskTag(const std::string& _taskTag);
@@ -199,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取0--未开始，1--进行中，2--已完成
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskPreCheckStatus 0--未开始，1--进行中，2--已完成
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTaskPreCheckStatus() const;
 
                     /**
                      * 设置0--未开始，1--进行中，2--已完成
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskPreCheckStatus 0--未开始，1--进行中，2--已完成
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskPreCheckStatus(const int64_t& _taskPreCheckStatus);
@@ -224,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取环境检查是否通过
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskPreCheckSuccess 环境检查是否通过
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetTaskPreCheckSuccess() const;
 
                     /**
                      * 设置环境检查是否通过
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskPreCheckSuccess 环境检查是否通过
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskPreCheckSuccess(const bool& _taskPreCheckSuccess);
@@ -249,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取演练是否符合预期 1-符合预期 2-不符合预期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskExpect 演练是否符合预期 1-符合预期 2-不符合预期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTaskExpect() const;
 
                     /**
                      * 设置演练是否符合预期 1-符合预期 2-不符合预期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskExpect 演练是否符合预期 1-符合预期 2-不符合预期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskExpect(const int64_t& _taskExpect);
@@ -274,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取关联应用ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationId 关联应用ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApplicationId() const;
 
                     /**
                      * 设置关联应用ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _applicationId 关联应用ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApplicationId(const std::string& _applicationId);
@@ -299,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取关联应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationName 关联应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApplicationName() const;
 
                     /**
                      * 设置关联应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _applicationName 关联应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApplicationName(const std::string& _applicationName);
@@ -324,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取验证项ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VerifyId 验证项ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetVerifyId() const;
 
                     /**
                      * 设置验证项ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _verifyId 验证项ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVerifyId(const uint64_t& _verifyId);
@@ -349,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取状态类型: 0 -- 无状态，1 -- 成功，2-- 失败，3--终止
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskStatusType 状态类型: 0 -- 无状态，1 -- 成功，2-- 失败，3--终止
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTaskStatusType() const;
 
                     /**
                      * 设置状态类型: 0 -- 无状态，1 -- 成功，2-- 失败，3--终止
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskStatusType 状态类型: 0 -- 无状态，1 -- 成功，2-- 失败，3--终止
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskStatusType(const uint64_t& _taskStatusType);
@@ -436,7 +404,6 @@ namespace TencentCloud
 
                     /**
                      * 任务标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskTag;
                     bool m_taskTagHasBeenSet;
@@ -461,49 +428,42 @@ namespace TencentCloud
 
                     /**
                      * 0--未开始，1--进行中，2--已完成
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_taskPreCheckStatus;
                     bool m_taskPreCheckStatusHasBeenSet;
 
                     /**
                      * 环境检查是否通过
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_taskPreCheckSuccess;
                     bool m_taskPreCheckSuccessHasBeenSet;
 
                     /**
                      * 演练是否符合预期 1-符合预期 2-不符合预期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_taskExpect;
                     bool m_taskExpectHasBeenSet;
 
                     /**
                      * 关联应用ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_applicationId;
                     bool m_applicationIdHasBeenSet;
 
                     /**
                      * 关联应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_applicationName;
                     bool m_applicationNameHasBeenSet;
 
                     /**
                      * 验证项ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_verifyId;
                     bool m_verifyIdHasBeenSet;
 
                     /**
                      * 状态类型: 0 -- 无状态，1 -- 成功，2-- 失败，3--终止
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_taskStatusType;
                     bool m_taskStatusTypeHasBeenSet;

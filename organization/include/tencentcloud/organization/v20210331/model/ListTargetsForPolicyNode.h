@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取账号或者节点名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 账号或者节点名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置账号或者节点名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 账号或者节点名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -150,7 +146,6 @@ namespace TencentCloud
 
                     /**
                      * 账号或者节点名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

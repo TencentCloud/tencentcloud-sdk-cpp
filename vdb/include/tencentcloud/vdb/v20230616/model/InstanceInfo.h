@@ -648,6 +648,27 @@ namespace TencentCloud
                      */
                     bool AutoRenewHasBeenSet() const;
 
+                    /**
+                     * 获取任务状态：0-无任务；1-待执行任务；2-密钥更新中；3-网络变更中；4-参数变更中；5-embedding变更中；6-ai套件变更中；7-滚动升级中；8-纵向扩容中；9-纵向缩容中；10-横向扩容中；11-横向缩容中
+                     * @return TaskStatus 任务状态：0-无任务；1-待执行任务；2-密钥更新中；3-网络变更中；4-参数变更中；5-embedding变更中；6-ai套件变更中；7-滚动升级中；8-纵向扩容中；9-纵向缩容中；10-横向扩容中；11-横向缩容中
+                     * 
+                     */
+                    int64_t GetTaskStatus() const;
+
+                    /**
+                     * 设置任务状态：0-无任务；1-待执行任务；2-密钥更新中；3-网络变更中；4-参数变更中；5-embedding变更中；6-ai套件变更中；7-滚动升级中；8-纵向扩容中；9-纵向缩容中；10-横向扩容中；11-横向缩容中
+                     * @param _taskStatus 任务状态：0-无任务；1-待执行任务；2-密钥更新中；3-网络变更中；4-参数变更中；5-embedding变更中；6-ai套件变更中；7-滚动升级中；8-纵向扩容中；9-纵向缩容中；10-横向扩容中；11-横向缩容中
+                     * 
+                     */
+                    void SetTaskStatus(const int64_t& _taskStatus);
+
+                    /**
+                     * 判断参数 TaskStatus 是否已赋值
+                     * @return TaskStatus 是否已赋值
+                     * 
+                     */
+                    bool TaskStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -820,6 +841,12 @@ namespace TencentCloud
                      */
                     int64_t m_autoRenew;
                     bool m_autoRenewHasBeenSet;
+
+                    /**
+                     * 任务状态：0-无任务；1-待执行任务；2-密钥更新中；3-网络变更中；4-参数变更中；5-embedding变更中；6-ai套件变更中；7-滚动升级中；8-纵向扩容中；9-纵向缩容中；10-横向扩容中；11-横向缩容中
+                     */
+                    int64_t m_taskStatus;
+                    bool m_taskStatusHasBeenSet;
 
                 };
             }
