@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取通知内容模板列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NoticeContents 通知内容模板列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<NoticeContentTemplate> GetNoticeContents() const;
@@ -78,7 +76,6 @@ namespace TencentCloud
 
                     /**
                      * 通知内容模板列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<NoticeContentTemplate> m_noticeContents;
                     bool m_noticeContentsHasBeenSet;

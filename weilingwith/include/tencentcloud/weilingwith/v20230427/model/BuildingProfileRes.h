@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取建筑概要信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BuildingProfile 建筑概要信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BuildingProfile GetBuildingProfile() const;
 
                     /**
                      * 设置建筑概要信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _buildingProfile 建筑概要信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBuildingProfile(const BuildingProfile& _buildingProfile);
@@ -76,7 +72,6 @@ namespace TencentCloud
 
                     /**
                      * 建筑概要信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BuildingProfile m_buildingProfile;
                     bool m_buildingProfileHasBeenSet;

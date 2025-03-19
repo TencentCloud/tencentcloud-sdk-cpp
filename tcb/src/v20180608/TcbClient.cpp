@@ -3136,6 +3136,49 @@ TcbClient::DestroyStaticStoreOutcomeCallable TcbClient::DestroyStaticStoreCallab
     return task->get_future();
 }
 
+TcbClient::EditAuthConfigOutcome TcbClient::EditAuthConfig(const EditAuthConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "EditAuthConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EditAuthConfigResponse rsp = EditAuthConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EditAuthConfigOutcome(rsp);
+        else
+            return EditAuthConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return EditAuthConfigOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::EditAuthConfigAsync(const EditAuthConfigRequest& request, const EditAuthConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->EditAuthConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::EditAuthConfigOutcomeCallable TcbClient::EditAuthConfigCallable(const EditAuthConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<EditAuthConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->EditAuthConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcbClient::EstablishCloudBaseRunServerOutcome TcbClient::EstablishCloudBaseRunServer(const EstablishCloudBaseRunServerRequest &request)
 {
     auto outcome = MakeRequest(request, "EstablishCloudBaseRunServer");

@@ -26,7 +26,8 @@ CloudProductLogTaskInfo::CloudProductLogTaskInfo() :
     m_logsetIdHasBeenSet(false),
     m_topicIdHasBeenSet(false),
     m_extendHasBeenSet(false),
-    m_logTypeHasBeenSet(false)
+    m_logTypeHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome CloudProductLogTaskInfo::Deserialize(const rapidjson::Value 
         m_logTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudProductLogTaskInfo.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = value["Status"].GetInt64();
+        m_statusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void CloudProductLogTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "LogType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_logType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_status, allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void CloudProductLogTaskInfo::SetLogType(const string& _logType)
 bool CloudProductLogTaskInfo::LogTypeHasBeenSet() const
 {
     return m_logTypeHasBeenSet;
+}
+
+int64_t CloudProductLogTaskInfo::GetStatus() const
+{
+    return m_status;
+}
+
+void CloudProductLogTaskInfo::SetStatus(const int64_t& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool CloudProductLogTaskInfo::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 

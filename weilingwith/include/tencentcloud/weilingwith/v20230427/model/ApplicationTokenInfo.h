@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用申请调用API的令牌
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Token 应用申请调用API的令牌
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetToken() const;
 
                     /**
                      * 设置应用申请调用API的令牌
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _token 应用申请调用API的令牌
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetToken(const std::string& _token);
@@ -75,7 +71,6 @@ namespace TencentCloud
 
                     /**
                      * 应用申请调用API的令牌
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_token;
                     bool m_tokenHasBeenSet;

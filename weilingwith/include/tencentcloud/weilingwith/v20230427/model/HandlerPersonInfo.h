@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 用户id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置用户id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id 用户id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 用户id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * 用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

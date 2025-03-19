@@ -51,11 +51,9 @@ namespace TencentCloud
                      * 获取采集类型，必填字段。
 <li>0：元数据配置。</li>
 <li>1：指定Pod Label。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 采集类型，必填字段。
 <li>0：元数据配置。</li>
 <li>1：指定Pod Label。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetType() const;
@@ -64,11 +62,9 @@ namespace TencentCloud
                      * 设置采集类型，必填字段。
 <li>0：元数据配置。</li>
 <li>1：指定Pod Label。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 采集类型，必填字段。
 <li>0：元数据配置。</li>
 <li>1：指定Pod Label。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const uint64_t& _type);
@@ -84,11 +80,9 @@ namespace TencentCloud
                      * 获取指定采集类型的采集配置信息。
 <li>当Type为0时，CollectConfigs不允许为空。</li>
 <li>当Type为1时，CollectConfigs为空时，表示选择所有Pod Label；否则CollectConfigs为指定Pod Label。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CollectConfigs 指定采集类型的采集配置信息。
 <li>当Type为0时，CollectConfigs不允许为空。</li>
 <li>当Type为1时，CollectConfigs为空时，表示选择所有Pod Label；否则CollectConfigs为指定Pod Label。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CollectConfig> GetCollectConfigs() const;
@@ -97,11 +91,9 @@ namespace TencentCloud
                      * 设置指定采集类型的采集配置信息。
 <li>当Type为0时，CollectConfigs不允许为空。</li>
 <li>当Type为1时，CollectConfigs为空时，表示选择所有Pod Label；否则CollectConfigs为指定Pod Label。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _collectConfigs 指定采集类型的采集配置信息。
 <li>当Type为0时，CollectConfigs不允许为空。</li>
 <li>当Type为1时，CollectConfigs为空时，表示选择所有Pod Label；否则CollectConfigs为指定Pod Label。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCollectConfigs(const std::vector<CollectConfig>& _collectConfigs);
@@ -119,7 +111,6 @@ namespace TencentCloud
                      * 采集类型，必填字段。
 <li>0：元数据配置。</li>
 <li>1：指定Pod Label。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_type;
                     bool m_typeHasBeenSet;
@@ -128,7 +119,6 @@ namespace TencentCloud
                      * 指定采集类型的采集配置信息。
 <li>当Type为0时，CollectConfigs不允许为空。</li>
 <li>当Type为1时，CollectConfigs为空时，表示选择所有Pod Label；否则CollectConfigs为指定Pod Label。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CollectConfig> m_collectConfigs;
                     bool m_collectConfigsHasBeenSet;

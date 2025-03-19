@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取通过城市id查询工作空间列表结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WorkspaceSet 通过城市id查询工作空间列表结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<WorkspaceInfo> GetWorkspaceSet() const;
 
                     /**
                      * 设置通过城市id查询工作空间列表结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _workspaceSet 通过城市id查询工作空间列表结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWorkspaceSet(const std::vector<WorkspaceInfo>& _workspaceSet);
@@ -76,7 +72,6 @@ namespace TencentCloud
 
                     /**
                      * 通过城市id查询工作空间列表结果
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<WorkspaceInfo> m_workspaceSet;
                     bool m_workspaceSetHasBeenSet;

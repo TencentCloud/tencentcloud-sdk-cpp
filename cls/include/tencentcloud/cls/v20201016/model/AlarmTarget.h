@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志主题ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicId 日志主题ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
                      * 设置日志主题ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topicId 日志主题ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取查询语句。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Query 查询语句。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetQuery() const;
 
                     /**
                      * 设置查询语句。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _query 查询语句。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQuery(const std::string& _query);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取告警对象序号；从1开始递增。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Number 告警对象序号；从1开始递增。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetNumber() const;
 
                     /**
                      * 设置告警对象序号；从1开始递增。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _number 告警对象序号；从1开始递增。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNumber(const int64_t& _number);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取查询范围起始时间相对于告警执行时间的偏移，单位为分钟，取值为非正，最大值为0，最小值为-1440。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTimeOffset 查询范围起始时间相对于告警执行时间的偏移，单位为分钟，取值为非正，最大值为0，最小值为-1440。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStartTimeOffset() const;
 
                     /**
                      * 设置查询范围起始时间相对于告警执行时间的偏移，单位为分钟，取值为非正，最大值为0，最小值为-1440。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _startTimeOffset 查询范围起始时间相对于告警执行时间的偏移，单位为分钟，取值为非正，最大值为0，最小值为-1440。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStartTimeOffset(const int64_t& _startTimeOffset);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取查询范围终止时间相对于告警执行时间的偏移，单位为分钟，取值为非正，须大于StartTimeOffset，最大值为0，最小值为-1440。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTimeOffset 查询范围终止时间相对于告警执行时间的偏移，单位为分钟，取值为非正，须大于StartTimeOffset，最大值为0，最小值为-1440。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEndTimeOffset() const;
 
                     /**
                      * 设置查询范围终止时间相对于告警执行时间的偏移，单位为分钟，取值为非正，须大于StartTimeOffset，最大值为0，最小值为-1440。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endTimeOffset 查询范围终止时间相对于告警执行时间的偏移，单位为分钟，取值为非正，须大于StartTimeOffset，最大值为0，最小值为-1440。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndTimeOffset(const int64_t& _endTimeOffset);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志集ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogsetId 日志集ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLogsetId() const;
 
                     /**
                      * 设置日志集ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logsetId 日志集ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogsetId(const std::string& _logsetId);
@@ -200,11 +176,9 @@ namespace TencentCloud
                      * 获取检索语法规则，默认值为0。
 0：Lucene语法，1：CQL语法。
 详细说明参见<a href="https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules" target="_blank">检索条件语法规则</a>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SyntaxRule 检索语法规则，默认值为0。
 0：Lucene语法，1：CQL语法。
 详细说明参见<a href="https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules" target="_blank">检索条件语法规则</a>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetSyntaxRule() const;
@@ -213,11 +187,9 @@ namespace TencentCloud
                      * 设置检索语法规则，默认值为0。
 0：Lucene语法，1：CQL语法。
 详细说明参见<a href="https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules" target="_blank">检索条件语法规则</a>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _syntaxRule 检索语法规则，默认值为0。
 0：Lucene语法，1：CQL语法。
 详细说明参见<a href="https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules" target="_blank">检索条件语法规则</a>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSyntaxRule(const uint64_t& _syntaxRule);
@@ -233,42 +205,36 @@ namespace TencentCloud
 
                     /**
                      * 日志主题ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
 
                     /**
                      * 查询语句。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_query;
                     bool m_queryHasBeenSet;
 
                     /**
                      * 告警对象序号；从1开始递增。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_number;
                     bool m_numberHasBeenSet;
 
                     /**
                      * 查询范围起始时间相对于告警执行时间的偏移，单位为分钟，取值为非正，最大值为0，最小值为-1440。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_startTimeOffset;
                     bool m_startTimeOffsetHasBeenSet;
 
                     /**
                      * 查询范围终止时间相对于告警执行时间的偏移，单位为分钟，取值为非正，须大于StartTimeOffset，最大值为0，最小值为-1440。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_endTimeOffset;
                     bool m_endTimeOffsetHasBeenSet;
 
                     /**
                      * 日志集ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logsetId;
                     bool m_logsetIdHasBeenSet;
@@ -277,7 +243,6 @@ namespace TencentCloud
                      * 检索语法规则，默认值为0。
 0：Lucene语法，1：CQL语法。
 详细说明参见<a href="https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules" target="_blank">检索条件语法规则</a>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_syntaxRule;
                     bool m_syntaxRuleHasBeenSet;

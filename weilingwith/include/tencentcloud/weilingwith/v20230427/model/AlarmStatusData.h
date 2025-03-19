@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取告警状态ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StatusID 告警状态ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatusID() const;
 
                     /**
                      * 设置告警状态ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _statusID 告警状态ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatusID(const std::string& _statusID);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取告警状态名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StatusName 告警状态名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatusName() const;
 
                     /**
                      * 设置告警状态名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _statusName 告警状态名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatusName(const std::string& _statusName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取告警状态类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StatusType 告警状态类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatusType() const;
 
                     /**
                      * 设置告警状态类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _statusType 告警状态类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatusType(const std::string& _statusType);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 告警状态ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_statusID;
                     bool m_statusIDHasBeenSet;
 
                     /**
                      * 告警状态名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_statusName;
                     bool m_statusNameHasBeenSet;
 
                     /**
                      * 告警状态类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_statusType;
                     bool m_statusTypeHasBeenSet;

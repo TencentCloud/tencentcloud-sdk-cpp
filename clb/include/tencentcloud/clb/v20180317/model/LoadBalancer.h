@@ -593,18 +593,38 @@ OPEN：公网属性， INTERNAL：内网属性；对于内网属性的负载均�
                     bool NumericalVpcIdHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡IP地址所属的运营商。取值范围（BGP、CMCC、CTCC、CUCC）
+                     * 获取负载均衡IP地址所属的运营商。
+
+- BGP :  BGP（多线）
+- CMCC：中国移动单线
+- CTCC：中国电信单线
+- CUCC：中国联通单线
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VipIsp 负载均衡IP地址所属的运营商。取值范围（BGP、CMCC、CTCC、CUCC）
+                     * @return VipIsp 负载均衡IP地址所属的运营商。
+
+- BGP :  BGP（多线）
+- CMCC：中国移动单线
+- CTCC：中国电信单线
+- CUCC：中国联通单线
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVipIsp() const;
 
                     /**
-                     * 设置负载均衡IP地址所属的运营商。取值范围（BGP、CMCC、CTCC、CUCC）
+                     * 设置负载均衡IP地址所属的运营商。
+
+- BGP :  BGP（多线）
+- CMCC：中国移动单线
+- CTCC：中国电信单线
+- CUCC：中国联通单线
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _vipIsp 负载均衡IP地址所属的运营商。取值范围（BGP、CMCC、CTCC、CUCC）
+                     * @param _vipIsp 负载均衡IP地址所属的运营商。
+
+- BGP :  BGP（多线）
+- CMCC：中国移动单线
+- CTCC：中国电信单线
+- CUCC：中国联通单线
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -1617,7 +1637,12 @@ OPEN：公网属性， INTERNAL：内网属性；对于内网属性的负载均�
                     bool m_numericalVpcIdHasBeenSet;
 
                     /**
-                     * 负载均衡IP地址所属的运营商。取值范围（BGP、CMCC、CTCC、CUCC）
+                     * 负载均衡IP地址所属的运营商。
+
+- BGP :  BGP（多线）
+- CMCC：中国移动单线
+- CTCC：中国电信单线
+- CUCC：中国联通单线
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vipIsp;

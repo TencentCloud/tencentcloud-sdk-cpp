@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取建筑id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BuildingId 建筑id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBuildingId() const;
 
                     /**
                      * 设置建筑id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _buildingId 建筑id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBuildingId(const std::string& _buildingId);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取父级构件id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParentElementId 父级构件id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetParentElementId() const;
 
                     /**
                      * 设置父级构件id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _parentElementId 父级构件id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetParentElementId(const std::string& _parentElementId);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取构件树
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Root 构件树
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ElementProfileTreeNode GetRoot() const;
 
                     /**
                      * 设置构件树
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _root 构件树
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRoot(const ElementProfileTreeNode& _root);
@@ -126,21 +114,18 @@ namespace TencentCloud
 
                     /**
                      * 建筑id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_buildingId;
                     bool m_buildingIdHasBeenSet;
 
                     /**
                      * 父级构件id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_parentElementId;
                     bool m_parentElementIdHasBeenSet;
 
                     /**
                      * 构件树
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ElementProfileTreeNode m_root;
                     bool m_rootHasBeenSet;

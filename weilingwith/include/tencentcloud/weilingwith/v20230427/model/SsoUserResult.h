@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 设置总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _total 总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotal(const int64_t& _total);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取租户人员数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Users 租户人员数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SsoUser> GetUsers() const;
 
                     /**
                      * 设置租户人员数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _users 租户人员数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUsers(const std::vector<SsoUser>& _users);
@@ -101,14 +93,12 @@ namespace TencentCloud
 
                     /**
                      * 总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
                      * 租户人员数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SsoUser> m_users;
                     bool m_usersHasBeenSet;

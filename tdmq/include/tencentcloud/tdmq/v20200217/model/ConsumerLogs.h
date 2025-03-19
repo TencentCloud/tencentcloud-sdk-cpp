@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取记录数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 记录数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 设置记录数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalCount 记录数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalCount(const uint64_t& _totalCount);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取消费日志。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConsumerLogSets 消费日志。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ConsumerLog> GetConsumerLogSets() const;
 
                     /**
                      * 设置消费日志。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _consumerLogSets 消费日志。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConsumerLogSets(const std::vector<ConsumerLog>& _consumerLogSets);
@@ -101,14 +93,12 @@ namespace TencentCloud
 
                     /**
                      * 记录数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
                      * 消费日志。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ConsumerLog> m_consumerLogSets;
                     bool m_consumerLogSetsHasBeenSet;

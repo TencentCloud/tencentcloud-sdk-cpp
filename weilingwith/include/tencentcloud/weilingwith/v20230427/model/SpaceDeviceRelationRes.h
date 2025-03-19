@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备空间绑定关系列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SpaceDeviceRelationList 设备空间绑定关系列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SpaceDeviceRelation> GetSpaceDeviceRelationList() const;
 
                     /**
                      * 设置设备空间绑定关系列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _spaceDeviceRelationList 设备空间绑定关系列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSpaceDeviceRelationList(const std::vector<SpaceDeviceRelation>& _spaceDeviceRelationList);
@@ -76,7 +72,6 @@ namespace TencentCloud
 
                     /**
                      * 设备空间绑定关系列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SpaceDeviceRelation> m_spaceDeviceRelationList;
                     bool m_spaceDeviceRelationListHasBeenSet;

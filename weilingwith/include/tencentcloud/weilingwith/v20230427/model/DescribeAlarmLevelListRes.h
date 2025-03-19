@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取告警级别枚举获取数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlarmLevelSet 告警级别枚举获取数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AlarmLevelInfo> GetAlarmLevelSet() const;
 
                     /**
                      * 设置告警级别枚举获取数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _alarmLevelSet 告警级别枚举获取数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAlarmLevelSet(const std::vector<AlarmLevelInfo>& _alarmLevelSet);
@@ -76,7 +72,6 @@ namespace TencentCloud
 
                     /**
                      * 告警级别枚举获取数组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AlarmLevelInfo> m_alarmLevelSet;
                     bool m_alarmLevelSetHasBeenSet;

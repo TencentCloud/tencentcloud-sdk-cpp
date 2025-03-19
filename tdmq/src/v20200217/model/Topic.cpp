@@ -43,7 +43,9 @@ Topic::Topic() :
     m_producerLimitHasBeenSet(false),
     m_consumerLimitHasBeenSet(false),
     m_pulsarTopicTypeHasBeenSet(false),
-    m_msgTTLHasBeenSet(false)
+    m_msgTTLHasBeenSet(false),
+    m_clusterIdHasBeenSet(false),
+    m_tenantHasBeenSet(false)
 {
 }
 
@@ -292,6 +294,26 @@ CoreInternalOutcome Topic::Deserialize(const rapidjson::Value &value)
         m_msgTTLHasBeenSet = true;
     }
 
+    if (value.HasMember("ClusterId") && !value["ClusterId"].IsNull())
+    {
+        if (!value["ClusterId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Topic.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterId = string(value["ClusterId"].GetString());
+        m_clusterIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Tenant") && !value["Tenant"].IsNull())
+    {
+        if (!value["Tenant"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Topic.Tenant` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tenant = string(value["Tenant"].GetString());
+        m_tenantHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -488,6 +510,22 @@ void Topic::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "MsgTTL";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_msgTTL, allocator);
+    }
+
+    if (m_clusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tenantHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tenant";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tenant.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -859,5 +897,37 @@ void Topic::SetMsgTTL(const uint64_t& _msgTTL)
 bool Topic::MsgTTLHasBeenSet() const
 {
     return m_msgTTLHasBeenSet;
+}
+
+string Topic::GetClusterId() const
+{
+    return m_clusterId;
+}
+
+void Topic::SetClusterId(const string& _clusterId)
+{
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
+}
+
+bool Topic::ClusterIdHasBeenSet() const
+{
+    return m_clusterIdHasBeenSet;
+}
+
+string Topic::GetTenant() const
+{
+    return m_tenant;
+}
+
+void Topic::SetTenant(const string& _tenant)
+{
+    m_tenant = _tenant;
+    m_tenantHasBeenSet = true;
+}
+
+bool Topic::TenantHasBeenSet() const
+{
+    return m_tenantHasBeenSet;
 }
 

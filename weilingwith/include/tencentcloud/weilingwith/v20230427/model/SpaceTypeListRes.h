@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取空间分类列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SpaceTypeList 空间分类列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SpaceType> GetSpaceTypeList() const;
 
                     /**
                      * 设置空间分类列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _spaceTypeList 空间分类列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSpaceTypeList(const std::vector<SpaceType>& _spaceTypeList);
@@ -76,7 +72,6 @@ namespace TencentCloud
 
                     /**
                      * 空间分类列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SpaceType> m_spaceTypeList;
                     bool m_spaceTypeListHasBeenSet;

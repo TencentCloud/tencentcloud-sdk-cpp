@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceId 设备id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
                      * 设置设备id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceId 设备id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取构件id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ElementId 构件id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetElementId() const;
 
                     /**
                      * 设置构件id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _elementId 构件id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetElementId(const std::string& _elementId);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 设备id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceId;
                     bool m_deviceIdHasBeenSet;
 
                     /**
                      * 构件id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_elementId;
                     bool m_elementIdHasBeenSet;

@@ -33,7 +33,8 @@ PulsarProClusterInfo::PulsarProClusterInfo() :
     m_billingLabelVersionHasBeenSet(false),
     m_expireTimeHasBeenSet(false),
     m_autoCreateTopicStatusHasBeenSet(false),
-    m_defaultPartitionNumberHasBeenSet(false)
+    m_defaultPartitionNumberHasBeenSet(false),
+    m_tenantHasBeenSet(false)
 {
 }
 
@@ -182,6 +183,16 @@ CoreInternalOutcome PulsarProClusterInfo::Deserialize(const rapidjson::Value &va
         m_defaultPartitionNumberHasBeenSet = true;
     }
 
+    if (value.HasMember("Tenant") && !value["Tenant"].IsNull())
+    {
+        if (!value["Tenant"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PulsarProClusterInfo.Tenant` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tenant = string(value["Tenant"].GetString());
+        m_tenantHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -298,6 +309,14 @@ void PulsarProClusterInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "DefaultPartitionNumber";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_defaultPartitionNumber, allocator);
+    }
+
+    if (m_tenantHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tenant";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tenant.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -509,5 +528,21 @@ void PulsarProClusterInfo::SetDefaultPartitionNumber(const int64_t& _defaultPart
 bool PulsarProClusterInfo::DefaultPartitionNumberHasBeenSet() const
 {
     return m_defaultPartitionNumberHasBeenSet;
+}
+
+string PulsarProClusterInfo::GetTenant() const
+{
+    return m_tenant;
+}
+
+void PulsarProClusterInfo::SetTenant(const string& _tenant)
+{
+    m_tenant = _tenant;
+    m_tenantHasBeenSet = true;
+}
+
+bool PulsarProClusterInfo::TenantHasBeenSet() const
+{
+    return m_tenantHasBeenSet;
 }
 

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取经度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Longitude 经度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetLongitude() const;
 
                     /**
                      * 设置经度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _longitude 经度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLongitude(const double& _longitude);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取纬度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Latitude 纬度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetLatitude() const;
 
                     /**
                      * 设置纬度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _latitude 纬度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLatitude(const double& _latitude);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取高程
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Altitude 高程
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetAltitude() const;
 
                     /**
                      * 设置高程
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _altitude 高程
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAltitude(const double& _altitude);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 经度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_longitude;
                     bool m_longitudeHasBeenSet;
 
                     /**
                      * 纬度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_latitude;
                     bool m_latitudeHasBeenSet;
 
                     /**
                      * 高程
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_altitude;
                     bool m_altitudeHasBeenSet;

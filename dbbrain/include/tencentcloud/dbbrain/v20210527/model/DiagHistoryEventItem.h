@@ -216,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取保留字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Metric 保留字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMetric() const;
 
                     /**
                      * 设置保留字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _metric 保留字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMetric(const std::string& _metric);
@@ -312,7 +308,6 @@ namespace TencentCloud
 
                     /**
                      * 保留字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_metric;
                     bool m_metricHasBeenSet;

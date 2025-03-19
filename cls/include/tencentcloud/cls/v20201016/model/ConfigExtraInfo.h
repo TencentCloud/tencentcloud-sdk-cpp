@@ -138,18 +138,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点文件配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostFile 节点文件配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     HostFileInfo GetHostFile() const;
 
                     /**
                      * 设置节点文件配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hostFile 节点文件配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHostFile(const HostFileInfo& _hostFile);
@@ -163,18 +159,14 @@ namespace TencentCloud
 
                     /**
                      * 获取容器文件路径信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContainerFile 容器文件路径信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ContainerFileInfo GetContainerFile() const;
 
                     /**
                      * 设置容器文件路径信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _containerFile 容器文件路径信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContainerFile(const ContainerFileInfo& _containerFile);
@@ -188,18 +180,14 @@ namespace TencentCloud
 
                     /**
                      * 获取容器标准输出信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContainerStdout 容器标准输出信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ContainerStdoutInfo GetContainerStdout() const;
 
                     /**
                      * 设置容器标准输出信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _containerStdout 容器标准输出信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContainerStdout(const ContainerStdoutInfo& _containerStdout);
@@ -213,18 +201,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志格式化方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogFormat 日志格式化方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLogFormat() const;
 
                     /**
                      * 设置日志格式化方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logFormat 日志格式化方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogFormat(const std::string& _logFormat);
@@ -238,18 +222,14 @@ namespace TencentCloud
 
                     /**
                      * 获取采集的日志类型，json_log代表json格式日志，delimiter_log代表分隔符格式日志，minimalist_log代表极简日志，multiline_log代表多行日志，fullregex_log代表完整正则，默认为minimalist_log
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogType 采集的日志类型，json_log代表json格式日志，delimiter_log代表分隔符格式日志，minimalist_log代表极简日志，multiline_log代表多行日志，fullregex_log代表完整正则，默认为minimalist_log
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLogType() const;
 
                     /**
                      * 设置采集的日志类型，json_log代表json格式日志，delimiter_log代表分隔符格式日志，minimalist_log代表极简日志，multiline_log代表多行日志，fullregex_log代表完整正则，默认为minimalist_log
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logType 采集的日志类型，json_log代表json格式日志，delimiter_log代表分隔符格式日志，minimalist_log代表极简日志，multiline_log代表多行日志，fullregex_log代表完整正则，默认为minimalist_log
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogType(const std::string& _logType);
@@ -263,18 +243,14 @@ namespace TencentCloud
 
                     /**
                      * 获取提取规则，如果设置了ExtractRule，则必须设置LogType
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExtractRule 提取规则，如果设置了ExtractRule，则必须设置LogType
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ExtractRuleInfo GetExtractRule() const;
 
                     /**
                      * 设置提取规则，如果设置了ExtractRule，则必须设置LogType
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _extractRule 提取规则，如果设置了ExtractRule，则必须设置LogType
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExtractRule(const ExtractRuleInfo& _extractRule);
@@ -355,18 +331,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户自定义解析字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserDefineRule 用户自定义解析字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserDefineRule() const;
 
                     /**
                      * 设置用户自定义解析字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userDefineRule 用户自定义解析字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserDefineRule(const std::string& _userDefineRule);
@@ -401,18 +373,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自建采集配置标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigFlag 自建采集配置标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConfigFlag() const;
 
                     /**
                      * 设置自建采集配置标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _configFlag 自建采集配置标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConfigFlag(const std::string& _configFlag);
@@ -426,18 +394,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志集ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogsetId 日志集ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLogsetId() const;
 
                     /**
                      * 设置日志集ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logsetId 日志集ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogsetId(const std::string& _logsetId);
@@ -451,18 +415,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志集name
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogsetName 日志集name
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLogsetName() const;
 
                     /**
                      * 设置日志集name
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logsetName 日志集name
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogsetName(const std::string& _logsetName);
@@ -476,18 +436,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志主题name
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicName 日志主题name
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTopicName() const;
 
                     /**
                      * 设置日志主题name
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topicName 日志主题name
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopicName(const std::string& _topicName);
@@ -501,18 +457,14 @@ namespace TencentCloud
 
                     /**
                      * 获取采集相关配置信息。详情见 CollectInfo复杂类型配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CollectInfos 采集相关配置信息。详情见 CollectInfo复杂类型配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CollectInfo> GetCollectInfos() const;
 
                     /**
                      * 设置采集相关配置信息。详情见 CollectInfo复杂类型配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _collectInfos 采集相关配置信息。详情见 CollectInfo复杂类型配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCollectInfos(const std::vector<CollectInfo>& _collectInfos);
@@ -530,13 +482,11 @@ namespace TencentCloud
 - ClsAgentMaxDepth(最大目录深度)，取值范围: 大于等于0的整数
 - ClsAgentParseFailMerge(合并解析失败日志)，取值范围: true或false
 样例：{"ClsAgentFileTimeout":0,"ClsAgentMaxDepth":10,"ClsAgentParseFailMerge":true}
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdvancedConfig 高级采集配置。 Json字符串， Key/Value定义为如下：
 - ClsAgentFileTimeout(超时属性), 取值范围: 大于等于0的整数， 0为不超时
 - ClsAgentMaxDepth(最大目录深度)，取值范围: 大于等于0的整数
 - ClsAgentParseFailMerge(合并解析失败日志)，取值范围: true或false
 样例：{"ClsAgentFileTimeout":0,"ClsAgentMaxDepth":10,"ClsAgentParseFailMerge":true}
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAdvancedConfig() const;
@@ -547,13 +497,11 @@ namespace TencentCloud
 - ClsAgentMaxDepth(最大目录深度)，取值范围: 大于等于0的整数
 - ClsAgentParseFailMerge(合并解析失败日志)，取值范围: true或false
 样例：{"ClsAgentFileTimeout":0,"ClsAgentMaxDepth":10,"ClsAgentParseFailMerge":true}
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _advancedConfig 高级采集配置。 Json字符串， Key/Value定义为如下：
 - ClsAgentFileTimeout(超时属性), 取值范围: 大于等于0的整数， 0为不超时
 - ClsAgentMaxDepth(最大目录深度)，取值范围: 大于等于0的整数
 - ClsAgentParseFailMerge(合并解析失败日志)，取值范围: true或false
 样例：{"ClsAgentFileTimeout":0,"ClsAgentMaxDepth":10,"ClsAgentParseFailMerge":true}
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAdvancedConfig(const std::string& _advancedConfig);
@@ -593,42 +541,36 @@ namespace TencentCloud
 
                     /**
                      * 节点文件配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     HostFileInfo m_hostFile;
                     bool m_hostFileHasBeenSet;
 
                     /**
                      * 容器文件路径信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ContainerFileInfo m_containerFile;
                     bool m_containerFileHasBeenSet;
 
                     /**
                      * 容器标准输出信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ContainerStdoutInfo m_containerStdout;
                     bool m_containerStdoutHasBeenSet;
 
                     /**
                      * 日志格式化方式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logFormat;
                     bool m_logFormatHasBeenSet;
 
                     /**
                      * 采集的日志类型，json_log代表json格式日志，delimiter_log代表分隔符格式日志，minimalist_log代表极简日志，multiline_log代表多行日志，fullregex_log代表完整正则，默认为minimalist_log
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logType;
                     bool m_logTypeHasBeenSet;
 
                     /**
                      * 提取规则，如果设置了ExtractRule，则必须设置LogType
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ExtractRuleInfo m_extractRule;
                     bool m_extractRuleHasBeenSet;
@@ -654,7 +596,6 @@ namespace TencentCloud
 
                     /**
                      * 用户自定义解析字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userDefineRule;
                     bool m_userDefineRuleHasBeenSet;
@@ -667,35 +608,30 @@ namespace TencentCloud
 
                     /**
                      * 自建采集配置标
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_configFlag;
                     bool m_configFlagHasBeenSet;
 
                     /**
                      * 日志集ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logsetId;
                     bool m_logsetIdHasBeenSet;
 
                     /**
                      * 日志集name
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logsetName;
                     bool m_logsetNameHasBeenSet;
 
                     /**
                      * 日志主题name
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;
 
                     /**
                      * 采集相关配置信息。详情见 CollectInfo复杂类型配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CollectInfo> m_collectInfos;
                     bool m_collectInfosHasBeenSet;
@@ -706,7 +642,6 @@ namespace TencentCloud
 - ClsAgentMaxDepth(最大目录深度)，取值范围: 大于等于0的整数
 - ClsAgentParseFailMerge(合并解析失败日志)，取值范围: true或false
 样例：{"ClsAgentFileTimeout":0,"ClsAgentMaxDepth":10,"ClsAgentParseFailMerge":true}
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_advancedConfig;
                     bool m_advancedConfigHasBeenSet;

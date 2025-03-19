@@ -155,6 +155,20 @@ namespace TencentCloud
                      */
                     bool RagSearchUsageHasBeenSet() const;
 
+                    /**
+                     * 获取联网搜索次数
+                     * @return InternetSearchUsage 联网搜索次数
+                     * 
+                     */
+                    double GetInternetSearchUsage() const;
+
+                    /**
+                     * 判断参数 InternetSearchUsage 是否已赋值
+                     * @return InternetSearchUsage 是否已赋值
+                     * 
+                     */
+                    bool InternetSearchUsageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -204,6 +218,12 @@ namespace TencentCloud
                      */
                     double m_ragSearchUsage;
                     bool m_ragSearchUsageHasBeenSet;
+
+                    /**
+                     * 联网搜索次数
+                     */
+                    double m_internetSearchUsage;
+                    bool m_internetSearchUsageHasBeenSet;
 
                 };
             }

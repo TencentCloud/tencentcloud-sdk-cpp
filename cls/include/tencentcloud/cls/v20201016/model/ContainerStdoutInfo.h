@@ -70,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取container为空表所有的，不为空采集指定的容器
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Container container为空表所有的，不为空采集指定的容器
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContainer() const;
 
                     /**
                      * 设置container为空表所有的，不为空采集指定的容器
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _container container为空表所有的，不为空采集指定的容器
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContainer(const std::string& _container);
@@ -95,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取namespace可以多个，用分隔号分割,例如A,B；为空或者没有这个字段，表示所有namespace
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Namespace namespace可以多个，用分隔号分割,例如A,B；为空或者没有这个字段，表示所有namespace
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置namespace可以多个，用分隔号分割,例如A,B；为空或者没有这个字段，表示所有namespace
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _namespace namespace可以多个，用分隔号分割,例如A,B；为空或者没有这个字段，表示所有namespace
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNamespace(const std::string& _namespace);
@@ -170,18 +162,14 @@ namespace TencentCloud
 
                     /**
                      * 获取需要排除的namespace可以多个，用分隔号分割,例如A,B
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExcludeNamespace 需要排除的namespace可以多个，用分隔号分割,例如A,B
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExcludeNamespace() const;
 
                     /**
                      * 设置需要排除的namespace可以多个，用分隔号分割,例如A,B
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _excludeNamespace 需要排除的namespace可以多个，用分隔号分割,例如A,B
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExcludeNamespace(const std::string& _excludeNamespace);
@@ -253,14 +241,12 @@ namespace TencentCloud
 
                     /**
                      * container为空表所有的，不为空采集指定的容器
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_container;
                     bool m_containerHasBeenSet;
 
                     /**
                      * namespace可以多个，用分隔号分割,例如A,B；为空或者没有这个字段，表示所有namespace
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;
@@ -281,7 +267,6 @@ namespace TencentCloud
 
                     /**
                      * 需要排除的namespace可以多个，用分隔号分割,例如A,B
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_excludeNamespace;
                     bool m_excludeNamespaceHasBeenSet;

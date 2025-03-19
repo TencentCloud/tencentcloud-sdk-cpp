@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WID 设备ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWID() const;
 
                     /**
                      * 设置设备ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _wID 设备ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWID(const std::string& _wID);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备影子数据,返回有效数据为"x-json:"后字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceShadow 设备影子数据,返回有效数据为"x-json:"后字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeviceShadow() const;
 
                     /**
                      * 设置设备影子数据,返回有效数据为"x-json:"后字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceShadow 设备影子数据,返回有效数据为"x-json:"后字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceShadow(const std::string& _deviceShadow);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备影子更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceShadowUpdateTime 设备影子更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeviceShadowUpdateTime() const;
 
                     /**
                      * 设置设备影子更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceShadowUpdateTime 设备影子更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceShadowUpdateTime(const std::string& _deviceShadowUpdateTime);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 设备ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_wID;
                     bool m_wIDHasBeenSet;
 
                     /**
                      * 设备影子数据,返回有效数据为"x-json:"后字段
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceShadow;
                     bool m_deviceShadowHasBeenSet;
 
                     /**
                      * 设备影子更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceShadowUpdateTime;
                     bool m_deviceShadowUpdateTimeHasBeenSet;

@@ -37,7 +37,9 @@ ProcessMediaRequest::ProcessMediaRequest() :
     m_sessionIdHasBeenSet(false),
     m_sessionContextHasBeenSet(false),
     m_taskTypeHasBeenSet(false),
-    m_resourceIdHasBeenSet(false)
+    m_resourceIdHasBeenSet(false),
+    m_smartSubtitlesTaskHasBeenSet(false),
+    m_skipMateDataHasBeenSet(false)
 {
 }
 
@@ -174,6 +176,23 @@ string ProcessMediaRequest::ToJsonString() const
         string key = "ResourceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_resourceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_smartSubtitlesTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SmartSubtitlesTask";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_smartSubtitlesTask.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_skipMateDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SkipMateData";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_skipMateData, allocator);
     }
 
 
@@ -422,6 +441,38 @@ void ProcessMediaRequest::SetResourceId(const string& _resourceId)
 bool ProcessMediaRequest::ResourceIdHasBeenSet() const
 {
     return m_resourceIdHasBeenSet;
+}
+
+SmartSubtitlesTaskInput ProcessMediaRequest::GetSmartSubtitlesTask() const
+{
+    return m_smartSubtitlesTask;
+}
+
+void ProcessMediaRequest::SetSmartSubtitlesTask(const SmartSubtitlesTaskInput& _smartSubtitlesTask)
+{
+    m_smartSubtitlesTask = _smartSubtitlesTask;
+    m_smartSubtitlesTaskHasBeenSet = true;
+}
+
+bool ProcessMediaRequest::SmartSubtitlesTaskHasBeenSet() const
+{
+    return m_smartSubtitlesTaskHasBeenSet;
+}
+
+int64_t ProcessMediaRequest::GetSkipMateData() const
+{
+    return m_skipMateData;
+}
+
+void ProcessMediaRequest::SetSkipMateData(const int64_t& _skipMateData)
+{
+    m_skipMateData = _skipMateData;
+    m_skipMateDataHasBeenSet = true;
+}
+
+bool ProcessMediaRequest::SkipMateDataHasBeenSet() const
+{
+    return m_skipMateDataHasBeenSet;
 }
 
 

@@ -604,7 +604,7 @@ namespace TencentCloud
                 DescribeDeviceShadowOutcomeCallable DescribeDeviceShadowCallable(const Model::DescribeDeviceShadowRequest& request);
 
                 /**
-                 *本接口（DescribeDevices）用于查询物联网通信设备的设备列表。 
+                 *本接口（DescribeDevices）用于查询物联网通信设备的设备列表。
                  * @param req DescribeDevicesRequest
                  * @return DescribeDevicesOutcome
                  */
@@ -757,7 +757,7 @@ namespace TencentCloud
                 DescribeProductTasksOutcomeCallable DescribeProductTasksCallable(const Model::DescribeProductTasksRequest& request);
 
                 /**
-                 *本接口（DescribeProducts）用于列出产品列表。 
+                 *本接口（DescribeProducts）用于列出产品列表。
                  * @param req DescribeProductsRequest
                  * @return DescribeProductsOutcome
                  */
@@ -811,7 +811,7 @@ namespace TencentCloud
                 EditFirmwareOutcomeCallable EditFirmwareCallable(const Model::EditFirmwareRequest& request);
 
                 /**
-                 *本接口（EnableTopicRule）用于启用规则 
+                 *本接口（EnableTopicRule）用于启用规则
                  * @param req EnableTopicRuleRequest
                  * @return EnableTopicRuleOutcome
                  */
@@ -856,7 +856,7 @@ namespace TencentCloud
                 ListFirmwaresOutcomeCallable ListFirmwaresCallable(const Model::ListFirmwaresRequest& request);
 
                 /**
-                 *本接口（ListLog）用于查看日志信息 
+                 *本接口（ListLog）用于查看日志信息
                  * @param req ListLogRequest
                  * @return ListLogOutcome
                  */

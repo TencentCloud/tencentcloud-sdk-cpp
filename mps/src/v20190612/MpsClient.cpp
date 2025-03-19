@@ -341,6 +341,49 @@ MpsClient::CreateAnimatedGraphicsTemplateOutcomeCallable MpsClient::CreateAnimat
     return task->get_future();
 }
 
+MpsClient::CreateAsrHotwordsOutcome MpsClient::CreateAsrHotwords(const CreateAsrHotwordsRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAsrHotwords");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAsrHotwordsResponse rsp = CreateAsrHotwordsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAsrHotwordsOutcome(rsp);
+        else
+            return CreateAsrHotwordsOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAsrHotwordsOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::CreateAsrHotwordsAsync(const CreateAsrHotwordsRequest& request, const CreateAsrHotwordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAsrHotwords(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::CreateAsrHotwordsOutcomeCallable MpsClient::CreateAsrHotwordsCallable(const CreateAsrHotwordsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAsrHotwordsOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAsrHotwords(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MpsClient::CreateContentReviewTemplateOutcome MpsClient::CreateContentReviewTemplate(const CreateContentReviewTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateContentReviewTemplate");
@@ -635,6 +678,49 @@ MpsClient::CreateScheduleOutcomeCallable MpsClient::CreateScheduleCallable(const
         [this, request]()
         {
             return this->CreateSchedule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::CreateSmartSubtitleTemplateOutcome MpsClient::CreateSmartSubtitleTemplate(const CreateSmartSubtitleTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSmartSubtitleTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSmartSubtitleTemplateResponse rsp = CreateSmartSubtitleTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSmartSubtitleTemplateOutcome(rsp);
+        else
+            return CreateSmartSubtitleTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSmartSubtitleTemplateOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::CreateSmartSubtitleTemplateAsync(const CreateSmartSubtitleTemplateRequest& request, const CreateSmartSubtitleTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateSmartSubtitleTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::CreateSmartSubtitleTemplateOutcomeCallable MpsClient::CreateSmartSubtitleTemplateCallable(const CreateSmartSubtitleTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateSmartSubtitleTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateSmartSubtitleTemplate(request);
         }
     );
 
@@ -1330,6 +1416,49 @@ MpsClient::DeleteAnimatedGraphicsTemplateOutcomeCallable MpsClient::DeleteAnimat
     return task->get_future();
 }
 
+MpsClient::DeleteAsrHotwordsOutcome MpsClient::DeleteAsrHotwords(const DeleteAsrHotwordsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAsrHotwords");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAsrHotwordsResponse rsp = DeleteAsrHotwordsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAsrHotwordsOutcome(rsp);
+        else
+            return DeleteAsrHotwordsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAsrHotwordsOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DeleteAsrHotwordsAsync(const DeleteAsrHotwordsRequest& request, const DeleteAsrHotwordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteAsrHotwords(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::DeleteAsrHotwordsOutcomeCallable MpsClient::DeleteAsrHotwordsCallable(const DeleteAsrHotwordsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteAsrHotwordsOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteAsrHotwords(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MpsClient::DeleteContentReviewTemplateOutcome MpsClient::DeleteContentReviewTemplate(const DeleteContentReviewTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteContentReviewTemplate");
@@ -1624,6 +1753,49 @@ MpsClient::DeleteScheduleOutcomeCallable MpsClient::DeleteScheduleCallable(const
         [this, request]()
         {
             return this->DeleteSchedule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::DeleteSmartSubtitleTemplateOutcome MpsClient::DeleteSmartSubtitleTemplate(const DeleteSmartSubtitleTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteSmartSubtitleTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteSmartSubtitleTemplateResponse rsp = DeleteSmartSubtitleTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteSmartSubtitleTemplateOutcome(rsp);
+        else
+            return DeleteSmartSubtitleTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteSmartSubtitleTemplateOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DeleteSmartSubtitleTemplateAsync(const DeleteSmartSubtitleTemplateRequest& request, const DeleteSmartSubtitleTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteSmartSubtitleTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::DeleteSmartSubtitleTemplateOutcomeCallable MpsClient::DeleteSmartSubtitleTemplateCallable(const DeleteSmartSubtitleTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteSmartSubtitleTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteSmartSubtitleTemplate(request);
         }
     );
 
@@ -2190,6 +2362,92 @@ MpsClient::DescribeAnimatedGraphicsTemplatesOutcomeCallable MpsClient::DescribeA
     return task->get_future();
 }
 
+MpsClient::DescribeAsrHotwordsOutcome MpsClient::DescribeAsrHotwords(const DescribeAsrHotwordsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAsrHotwords");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAsrHotwordsResponse rsp = DescribeAsrHotwordsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAsrHotwordsOutcome(rsp);
+        else
+            return DescribeAsrHotwordsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAsrHotwordsOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DescribeAsrHotwordsAsync(const DescribeAsrHotwordsRequest& request, const DescribeAsrHotwordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAsrHotwords(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::DescribeAsrHotwordsOutcomeCallable MpsClient::DescribeAsrHotwordsCallable(const DescribeAsrHotwordsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAsrHotwordsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAsrHotwords(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::DescribeAsrHotwordsListOutcome MpsClient::DescribeAsrHotwordsList(const DescribeAsrHotwordsListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAsrHotwordsList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAsrHotwordsListResponse rsp = DescribeAsrHotwordsListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAsrHotwordsListOutcome(rsp);
+        else
+            return DescribeAsrHotwordsListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAsrHotwordsListOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DescribeAsrHotwordsListAsync(const DescribeAsrHotwordsListRequest& request, const DescribeAsrHotwordsListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAsrHotwordsList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::DescribeAsrHotwordsListOutcomeCallable MpsClient::DescribeAsrHotwordsListCallable(const DescribeAsrHotwordsListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAsrHotwordsListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAsrHotwordsList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MpsClient::DescribeContentReviewTemplatesOutcome MpsClient::DescribeContentReviewTemplates(const DescribeContentReviewTemplatesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeContentReviewTemplates");
@@ -2570,6 +2828,49 @@ MpsClient::DescribeSchedulesOutcomeCallable MpsClient::DescribeSchedulesCallable
         [this, request]()
         {
             return this->DescribeSchedules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::DescribeSmartSubtitleTemplatesOutcome MpsClient::DescribeSmartSubtitleTemplates(const DescribeSmartSubtitleTemplatesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSmartSubtitleTemplates");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSmartSubtitleTemplatesResponse rsp = DescribeSmartSubtitleTemplatesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSmartSubtitleTemplatesOutcome(rsp);
+        else
+            return DescribeSmartSubtitleTemplatesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSmartSubtitleTemplatesOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DescribeSmartSubtitleTemplatesAsync(const DescribeSmartSubtitleTemplatesRequest& request, const DescribeSmartSubtitleTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSmartSubtitleTemplates(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::DescribeSmartSubtitleTemplatesOutcomeCallable MpsClient::DescribeSmartSubtitleTemplatesCallable(const DescribeSmartSubtitleTemplatesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSmartSubtitleTemplatesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSmartSubtitleTemplates(request);
         }
     );
 
@@ -4039,6 +4340,49 @@ MpsClient::ModifyAnimatedGraphicsTemplateOutcomeCallable MpsClient::ModifyAnimat
     return task->get_future();
 }
 
+MpsClient::ModifyAsrHotwordsOutcome MpsClient::ModifyAsrHotwords(const ModifyAsrHotwordsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAsrHotwords");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAsrHotwordsResponse rsp = ModifyAsrHotwordsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAsrHotwordsOutcome(rsp);
+        else
+            return ModifyAsrHotwordsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAsrHotwordsOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::ModifyAsrHotwordsAsync(const ModifyAsrHotwordsRequest& request, const ModifyAsrHotwordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAsrHotwords(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::ModifyAsrHotwordsOutcomeCallable MpsClient::ModifyAsrHotwordsCallable(const ModifyAsrHotwordsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAsrHotwordsOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAsrHotwords(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MpsClient::ModifyContentReviewTemplateOutcome MpsClient::ModifyContentReviewTemplate(const ModifyContentReviewTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyContentReviewTemplate");
@@ -4333,6 +4677,49 @@ MpsClient::ModifyScheduleOutcomeCallable MpsClient::ModifyScheduleCallable(const
         [this, request]()
         {
             return this->ModifySchedule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::ModifySmartSubtitleTemplateOutcome MpsClient::ModifySmartSubtitleTemplate(const ModifySmartSubtitleTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySmartSubtitleTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySmartSubtitleTemplateResponse rsp = ModifySmartSubtitleTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySmartSubtitleTemplateOutcome(rsp);
+        else
+            return ModifySmartSubtitleTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySmartSubtitleTemplateOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::ModifySmartSubtitleTemplateAsync(const ModifySmartSubtitleTemplateRequest& request, const ModifySmartSubtitleTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifySmartSubtitleTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::ModifySmartSubtitleTemplateOutcomeCallable MpsClient::ModifySmartSubtitleTemplateCallable(const ModifySmartSubtitleTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifySmartSubtitleTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifySmartSubtitleTemplate(request);
         }
     );
 

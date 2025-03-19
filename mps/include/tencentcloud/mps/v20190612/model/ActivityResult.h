@@ -59,6 +59,7 @@ namespace TencentCloud
 <li>AIRecognition：智能识别。</li>
 <li>AIAnalysis：智能分析。</li>
 <li>AiQualityControl：媒体质检。</li>
+<li>SmartSubtitles：智能字幕。</li>
                      * @return ActivityType 原子任务类型。
 <li>Transcode：转码。</li>
 <li>SampleSnapshot：采样截图。</li>
@@ -70,6 +71,7 @@ namespace TencentCloud
 <li>AIRecognition：智能识别。</li>
 <li>AIAnalysis：智能分析。</li>
 <li>AiQualityControl：媒体质检。</li>
+<li>SmartSubtitles：智能字幕。</li>
                      * 
                      */
                     std::string GetActivityType() const;
@@ -86,6 +88,7 @@ namespace TencentCloud
 <li>AIRecognition：智能识别。</li>
 <li>AIAnalysis：智能分析。</li>
 <li>AiQualityControl：媒体质检。</li>
+<li>SmartSubtitles：智能字幕。</li>
                      * @param _activityType 原子任务类型。
 <li>Transcode：转码。</li>
 <li>SampleSnapshot：采样截图。</li>
@@ -97,6 +100,7 @@ namespace TencentCloud
 <li>AIRecognition：智能识别。</li>
 <li>AIAnalysis：智能分析。</li>
 <li>AiQualityControl：媒体质检。</li>
+<li>SmartSubtitles：智能字幕。</li>
                      * 
                      */
                     void SetActivityType(const std::string& _activityType);
@@ -143,6 +147,7 @@ namespace TencentCloud
 <li>AIRecognition：智能识别。</li>
 <li>AIAnalysis：智能分析。</li>
 <li>AiQualityControl：媒体质检。</li>
+<li>SmartSubtitles：智能字幕。</li>
                      */
                     std::string m_activityType;
                     bool m_activityTypeHasBeenSet;

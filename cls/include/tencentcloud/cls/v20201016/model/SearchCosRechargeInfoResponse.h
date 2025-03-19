@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取匹配到的存储桶下的某个文件的前几行数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 匹配到的存储桶下的某个文件的前几行数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetData() const;
@@ -75,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取当前预览文件路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Path 当前预览文件路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPath() const;
@@ -91,9 +87,7 @@ namespace TencentCloud
 
                     /**
                      * 获取预览获取数据失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Msg 预览获取数据失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMsg() const;
@@ -123,7 +117,6 @@ namespace TencentCloud
 
                     /**
                      * 匹配到的存储桶下的某个文件的前几行数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_data;
                     bool m_dataHasBeenSet;
@@ -136,14 +129,12 @@ namespace TencentCloud
 
                     /**
                      * 当前预览文件路径
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_path;
                     bool m_pathHasBeenSet;
 
                     /**
                      * 预览获取数据失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_msg;
                     bool m_msgHasBeenSet;

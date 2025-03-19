@@ -149,15 +149,15 @@ namespace TencentCloud
                     bool BackupFreqHasBeenSet() const;
 
                     /**
-                     * 获取该参数目前不支持修改，无需填写。备份方式，logic-逻辑备份，snapshot-快照备份
-                     * @return BackupType 该参数目前不支持修改，无需填写。备份方式，logic-逻辑备份，snapshot-快照备份
+                     * 获取该参数目前不支持修改，无需填写。
+                     * @return BackupType 该参数目前不支持修改，无需填写。
                      * 
                      */
                     std::string GetBackupType() const;
 
                     /**
-                     * 设置该参数目前不支持修改，无需填写。备份方式，logic-逻辑备份，snapshot-快照备份
-                     * @param _backupType 该参数目前不支持修改，无需填写。备份方式，logic-逻辑备份，snapshot-快照备份
+                     * 设置该参数目前不支持修改，无需填写。
+                     * @param _backupType 该参数目前不支持修改，无需填写。
                      * 
                      */
                     void SetBackupType(const std::string& _backupType);
@@ -244,7 +244,7 @@ namespace TencentCloud
                     bool m_backupFreqHasBeenSet;
 
                     /**
-                     * 该参数目前不支持修改，无需填写。备份方式，logic-逻辑备份，snapshot-快照备份
+                     * 该参数目前不支持修改，无需填写。
                      */
                     std::string m_backupType;
                     bool m_backupTypeHasBeenSet;

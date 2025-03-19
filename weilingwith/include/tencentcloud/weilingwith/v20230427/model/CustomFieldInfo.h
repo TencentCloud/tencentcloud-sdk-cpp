@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取字段id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 字段id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置字段id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id 字段id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取字段key
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Key 字段key
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置字段key
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _key 字段key
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKey(const std::string& _key);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取字段名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 字段名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置字段名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 字段名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取字段值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Val 字段值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVal() const;
 
                     /**
                      * 设置字段值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _val 字段值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVal(const std::string& _val);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 字段id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * 字段key
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
 
                     /**
                      * 字段名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 字段值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_val;
                     bool m_valHasBeenSet;

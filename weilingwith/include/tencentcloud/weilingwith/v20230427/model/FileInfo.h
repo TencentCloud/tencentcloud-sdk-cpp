@@ -49,10 +49,8 @@ namespace TencentCloud
                     /**
                      * 获取文件id
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileId 文件id
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileId() const;
@@ -60,10 +58,8 @@ namespace TencentCloud
                     /**
                      * 设置文件id
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileId 文件id
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileId(const std::string& _fileId);
@@ -77,18 +73,14 @@ namespace TencentCloud
 
                     /**
                      * 获取名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReportName 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReportName() const;
 
                     /**
                      * 设置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _reportName 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReportName(const std::string& _reportName);
@@ -105,14 +97,12 @@ namespace TencentCloud
                     /**
                      * 文件id
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileId;
                     bool m_fileIdHasBeenSet;
 
                     /**
                      * 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reportName;
                     bool m_reportNameHasBeenSet;

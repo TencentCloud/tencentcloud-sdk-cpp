@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationInfoList 应用列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ApplicationInfo> GetApplicationInfoList() const;
 
                     /**
                      * 设置应用列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _applicationInfoList 应用列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApplicationInfoList(const std::vector<ApplicationInfo>& _applicationInfoList);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当前查询条件命中的数据总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 当前查询条件命中的数据总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTotalCount() const;
 
                     /**
                      * 设置当前查询条件命中的数据总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalCount 当前查询条件命中的数据总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalCount(const std::string& _totalCount);
@@ -101,14 +93,12 @@ namespace TencentCloud
 
                     /**
                      * 应用列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ApplicationInfo> m_applicationInfoList;
                     bool m_applicationInfoListHasBeenSet;
 
                     /**
                      * 当前查询条件命中的数据总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_totalCount;
                     bool m_totalCountHasBeenSet;

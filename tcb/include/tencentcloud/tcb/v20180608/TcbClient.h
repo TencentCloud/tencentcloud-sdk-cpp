@@ -167,6 +167,8 @@
 #include <tencentcloud/tcb/v20180608/model/DestroyStandaloneGatewayResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DestroyStaticStoreRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DestroyStaticStoreResponse.h>
+#include <tencentcloud/tcb/v20180608/model/EditAuthConfigRequest.h>
+#include <tencentcloud/tcb/v20180608/model/EditAuthConfigResponse.h>
 #include <tencentcloud/tcb/v20180608/model/EstablishCloudBaseRunServerRequest.h>
 #include <tencentcloud/tcb/v20180608/model/EstablishCloudBaseRunServerResponse.h>
 #include <tencentcloud/tcb/v20180608/model/EstablishWxGatewayRouteRequest.h>
@@ -431,6 +433,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DestroyStaticStoreResponse> DestroyStaticStoreOutcome;
                 typedef std::future<DestroyStaticStoreOutcome> DestroyStaticStoreOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DestroyStaticStoreRequest&, DestroyStaticStoreOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyStaticStoreAsyncHandler;
+                typedef Outcome<Core::Error, Model::EditAuthConfigResponse> EditAuthConfigOutcome;
+                typedef std::future<EditAuthConfigOutcome> EditAuthConfigOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::EditAuthConfigRequest&, EditAuthConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EditAuthConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::EstablishCloudBaseRunServerResponse> EstablishCloudBaseRunServerOutcome;
                 typedef std::future<EstablishCloudBaseRunServerOutcome> EstablishCloudBaseRunServerOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::EstablishCloudBaseRunServerRequest&, EstablishCloudBaseRunServerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EstablishCloudBaseRunServerAsyncHandler;
@@ -1136,6 +1141,15 @@ namespace TencentCloud
                 DestroyStaticStoreOutcome DestroyStaticStore(const Model::DestroyStaticStoreRequest &request);
                 void DestroyStaticStoreAsync(const Model::DestroyStaticStoreRequest& request, const DestroyStaticStoreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DestroyStaticStoreOutcomeCallable DestroyStaticStoreCallable(const Model::DestroyStaticStoreRequest& request);
+
+                /**
+                 *修改登录配置
+                 * @param req EditAuthConfigRequest
+                 * @return EditAuthConfigOutcome
+                 */
+                EditAuthConfigOutcome EditAuthConfig(const Model::EditAuthConfigRequest &request);
+                void EditAuthConfigAsync(const Model::EditAuthConfigRequest& request, const EditAuthConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EditAuthConfigOutcomeCallable EditAuthConfigCallable(const Model::EditAuthConfigRequest& request);
 
                 /**
                  *创建云应用服务

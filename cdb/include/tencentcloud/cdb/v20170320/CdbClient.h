@@ -143,6 +143,8 @@
 #include <tencentcloud/cdb/v20170320/model/DescribeBinlogBackupOverviewResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeBinlogsRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeBinlogsResponse.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeCPUExpandStrategyInfoRequest.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeCPUExpandStrategyInfoResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeCdbProxyInfoRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeCdbProxyInfoResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeCdbZoneConfigRequest.h>
@@ -561,6 +563,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBinlogsResponse> DescribeBinlogsOutcome;
                 typedef std::future<DescribeBinlogsOutcome> DescribeBinlogsOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeBinlogsRequest&, DescribeBinlogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBinlogsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCPUExpandStrategyInfoResponse> DescribeCPUExpandStrategyInfoOutcome;
+                typedef std::future<DescribeCPUExpandStrategyInfoOutcome> DescribeCPUExpandStrategyInfoOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::DescribeCPUExpandStrategyInfoRequest&, DescribeCPUExpandStrategyInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCPUExpandStrategyInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCdbProxyInfoResponse> DescribeCdbProxyInfoOutcome;
                 typedef std::future<DescribeCdbProxyInfoOutcome> DescribeCdbProxyInfoOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeCdbProxyInfoRequest&, DescribeCdbProxyInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCdbProxyInfoAsyncHandler;
@@ -1461,6 +1466,15 @@ namespace TencentCloud
                 DescribeBinlogsOutcome DescribeBinlogs(const Model::DescribeBinlogsRequest &request);
                 void DescribeBinlogsAsync(const Model::DescribeBinlogsRequest& request, const DescribeBinlogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBinlogsOutcomeCallable DescribeBinlogsCallable(const Model::DescribeBinlogsRequest& request);
+
+                /**
+                 *通过该 API 可以查询实例的 CPU 弹性扩容信息
+                 * @param req DescribeCPUExpandStrategyInfoRequest
+                 * @return DescribeCPUExpandStrategyInfoOutcome
+                 */
+                DescribeCPUExpandStrategyInfoOutcome DescribeCPUExpandStrategyInfo(const Model::DescribeCPUExpandStrategyInfoRequest &request);
+                void DescribeCPUExpandStrategyInfoAsync(const Model::DescribeCPUExpandStrategyInfoRequest& request, const DescribeCPUExpandStrategyInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCPUExpandStrategyInfoOutcomeCallable DescribeCPUExpandStrategyInfoCallable(const Model::DescribeCPUExpandStrategyInfoRequest& request);
 
                 /**
                  *本接口（DescribeCdbProxyInfo）用于查询数据库代理详情信息。

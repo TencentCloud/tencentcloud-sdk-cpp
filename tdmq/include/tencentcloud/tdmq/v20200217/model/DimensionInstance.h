@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例的维度组合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Dimensions 实例的维度组合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DimensionOpt> GetDimensions() const;
 
                     /**
                      * 设置实例的维度组合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dimensions 实例的维度组合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDimensions(const std::vector<DimensionOpt>& _dimensions);
@@ -76,7 +72,6 @@ namespace TencentCloud
 
                     /**
                      * 实例的维度组合
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DimensionOpt> m_dimensions;
                     bool m_dimensionsHasBeenSet;

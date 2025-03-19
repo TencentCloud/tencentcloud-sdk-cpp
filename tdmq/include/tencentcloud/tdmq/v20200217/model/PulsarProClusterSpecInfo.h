@@ -153,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规格外弹性TPS
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScalableTps 规格外弹性TPS
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetScalableTps() const;
 
                     /**
                      * 设置规格外弹性TPS
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scalableTps 规格外弹性TPS
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScalableTps(const uint64_t& _scalableTps);
@@ -179,10 +175,8 @@ namespace TencentCloud
                     /**
                      * 获取32或者128
 当前集群topic的最大分区数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxPartitions 32或者128
 当前集群topic的最大分区数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMaxPartitions() const;
@@ -190,10 +184,8 @@ namespace TencentCloud
                     /**
                      * 设置32或者128
 当前集群topic的最大分区数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxPartitions 32或者128
 当前集群topic的最大分区数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxPartitions(const uint64_t& _maxPartitions);
@@ -204,6 +196,27 @@ namespace TencentCloud
                      * 
                      */
                     bool MaxPartitionsHasBeenSet() const;
+
+                    /**
+                     * 获取商品最大延迟消息数量。0代表没有限制	
+                     * @return MaxDelayedMessages 商品最大延迟消息数量。0代表没有限制	
+                     * 
+                     */
+                    int64_t GetMaxDelayedMessages() const;
+
+                    /**
+                     * 设置商品最大延迟消息数量。0代表没有限制	
+                     * @param _maxDelayedMessages 商品最大延迟消息数量。0代表没有限制	
+                     * 
+                     */
+                    void SetMaxDelayedMessages(const int64_t& _maxDelayedMessages);
+
+                    /**
+                     * 判断参数 MaxDelayedMessages 是否已赋值
+                     * @return MaxDelayedMessages 是否已赋值
+                     * 
+                     */
+                    bool MaxDelayedMessagesHasBeenSet() const;
 
                 private:
 
@@ -239,7 +252,6 @@ namespace TencentCloud
 
                     /**
                      * 规格外弹性TPS
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_scalableTps;
                     bool m_scalableTpsHasBeenSet;
@@ -247,10 +259,15 @@ namespace TencentCloud
                     /**
                      * 32或者128
 当前集群topic的最大分区数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_maxPartitions;
                     bool m_maxPartitionsHasBeenSet;
+
+                    /**
+                     * 商品最大延迟消息数量。0代表没有限制	
+                     */
+                    int64_t m_maxDelayedMessages;
+                    bool m_maxDelayedMessagesHasBeenSet;
 
                 };
             }

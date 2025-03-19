@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取指标值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Values 指标值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetValues() const;
 
                     /**
                      * 设置指标值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _values 指标值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValues(const std::vector<int64_t>& _values);
@@ -129,7 +125,6 @@ namespace TencentCloud
 
                     /**
                      * 指标值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_values;
                     bool m_valuesHasBeenSet;

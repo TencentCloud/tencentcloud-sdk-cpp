@@ -27,7 +27,8 @@ PulsarProClusterSpecInfo::PulsarProClusterSpecInfo() :
     m_maxNamespacesHasBeenSet(false),
     m_maxTopicsHasBeenSet(false),
     m_scalableTpsHasBeenSet(false),
-    m_maxPartitionsHasBeenSet(false)
+    m_maxPartitionsHasBeenSet(false),
+    m_maxDelayedMessagesHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome PulsarProClusterSpecInfo::Deserialize(const rapidjson::Value
         m_maxPartitionsHasBeenSet = true;
     }
 
+    if (value.HasMember("MaxDelayedMessages") && !value["MaxDelayedMessages"].IsNull())
+    {
+        if (!value["MaxDelayedMessages"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PulsarProClusterSpecInfo.MaxDelayedMessages` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxDelayedMessages = value["MaxDelayedMessages"].GetInt64();
+        m_maxDelayedMessagesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void PulsarProClusterSpecInfo::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "MaxPartitions";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxPartitions, allocator);
+    }
+
+    if (m_maxDelayedMessagesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxDelayedMessages";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxDelayedMessages, allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void PulsarProClusterSpecInfo::SetMaxPartitions(const uint64_t& _maxPartitions)
 bool PulsarProClusterSpecInfo::MaxPartitionsHasBeenSet() const
 {
     return m_maxPartitionsHasBeenSet;
+}
+
+int64_t PulsarProClusterSpecInfo::GetMaxDelayedMessages() const
+{
+    return m_maxDelayedMessages;
+}
+
+void PulsarProClusterSpecInfo::SetMaxDelayedMessages(const int64_t& _maxDelayedMessages)
+{
+    m_maxDelayedMessages = _maxDelayedMessages;
+    m_maxDelayedMessagesHasBeenSet = true;
+}
+
+bool PulsarProClusterSpecInfo::MaxDelayedMessagesHasBeenSet() const
+{
+    return m_maxDelayedMessagesHasBeenSet;
 }
 

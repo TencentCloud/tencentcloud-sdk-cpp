@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当前分区id。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Partitions 当前分区id。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPartitions() const;
 
                     /**
                      * 设置当前分区id。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _partitions 当前分区id。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPartitions(const uint64_t& _partitions);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取消息数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NumberOfEntries 消息数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetNumberOfEntries() const;
 
                     /**
                      * 设置消息数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _numberOfEntries 消息数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNumberOfEntries(const uint64_t& _numberOfEntries);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取消息积压数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MsgBacklog 消息积压数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMsgBacklog() const;
 
                     /**
                      * 设置消息积压数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _msgBacklog 消息积压数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMsgBacklog(const uint64_t& _msgBacklog);
@@ -165,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取超时丢弃比例。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MsgRateExpired 超时丢弃比例。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMsgRateExpired() const;
 
                     /**
                      * 设置超时丢弃比例。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _msgRateExpired 超时丢弃比例。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMsgRateExpired(const std::string& _msgRateExpired);
@@ -192,21 +176,18 @@ namespace TencentCloud
 
                     /**
                      * 当前分区id。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_partitions;
                     bool m_partitionsHasBeenSet;
 
                     /**
                      * 消息数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_numberOfEntries;
                     bool m_numberOfEntriesHasBeenSet;
 
                     /**
                      * 消息积压数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_msgBacklog;
                     bool m_msgBacklogHasBeenSet;
@@ -225,7 +206,6 @@ namespace TencentCloud
 
                     /**
                      * 超时丢弃比例。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_msgRateExpired;
                     bool m_msgRateExpiredHasBeenSet;

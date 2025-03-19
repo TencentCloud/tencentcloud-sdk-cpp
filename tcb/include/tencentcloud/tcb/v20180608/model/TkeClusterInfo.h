@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterId 集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterId 集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群的vpcId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId 集群的vpcId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置集群的vpcId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcId 集群的vpcId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取版本内网CLB所在子网Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VersionClbSubnetId 版本内网CLB所在子网Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVersionClbSubnetId() const;
 
                     /**
                      * 设置版本内网CLB所在子网Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _versionClbSubnetId 版本内网CLB所在子网Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVersionClbSubnetId(const std::string& _versionClbSubnetId);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
                      * 集群的vpcId
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
                      * 版本内网CLB所在子网Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_versionClbSubnetId;
                     bool m_versionClbSubnetIdHasBeenSet;

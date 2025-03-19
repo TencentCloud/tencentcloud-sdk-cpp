@@ -185,9 +185,7 @@ namespace TencentCloud
 
                     /**
                      * 获取本次统计分析使用的采样率
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SamplingRate 本次统计分析使用的采样率
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetSamplingRate() const;
@@ -279,7 +277,6 @@ namespace TencentCloud
 
                     /**
                      * 本次统计分析使用的采样率
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_samplingRate;
                     bool m_samplingRateHasBeenSet;

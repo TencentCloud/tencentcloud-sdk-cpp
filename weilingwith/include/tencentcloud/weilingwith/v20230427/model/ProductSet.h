@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PageNumber 第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPageNumber() const;
 
                     /**
                      * 设置第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pageNumber 第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPageNumber(const int64_t& _pageNumber);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取每页条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PageSize 每页条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPageSize() const;
 
                     /**
                      * 设置每页条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pageSize 每页条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPageSize(const int64_t& _pageSize);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取总页数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalPage 总页数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalPage() const;
 
                     /**
                      * 设置总页数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalPage 总页数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalPage(const int64_t& _totalPage);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalRow 总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalRow() const;
 
                     /**
                      * 设置总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalRow 总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalRow(const int64_t& _totalRow);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取产品信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Product 产品信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ProductInfo> GetProduct() const;
 
                     /**
                      * 设置产品信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _product 产品信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProduct(const std::vector<ProductInfo>& _product);
@@ -176,35 +156,30 @@ namespace TencentCloud
 
                     /**
                      * 第几页
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_pageNumber;
                     bool m_pageNumberHasBeenSet;
 
                     /**
                      * 每页条数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
 
                     /**
                      * 总页数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalPage;
                     bool m_totalPageHasBeenSet;
 
                     /**
                      * 总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalRow;
                     bool m_totalRowHasBeenSet;
 
                     /**
                      * 产品信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ProductInfo> m_product;
                     bool m_productHasBeenSet;

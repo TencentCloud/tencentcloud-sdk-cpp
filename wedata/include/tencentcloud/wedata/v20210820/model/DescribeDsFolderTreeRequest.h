@@ -364,6 +364,111 @@ false 否
                      */
                     bool WorkflowTypeHasBeenSet() const;
 
+                    /**
+                     * 获取任务类型id列表
+                     * @return TaskTypeIdList 任务类型id列表
+                     * 
+                     */
+                    std::vector<int64_t> GetTaskTypeIdList() const;
+
+                    /**
+                     * 设置任务类型id列表
+                     * @param _taskTypeIdList 任务类型id列表
+                     * 
+                     */
+                    void SetTaskTypeIdList(const std::vector<int64_t>& _taskTypeIdList);
+
+                    /**
+                     * 判断参数 TaskTypeIdList 是否已赋值
+                     * @return TaskTypeIdList 是否已赋值
+                     * 
+                     */
+                    bool TaskTypeIdListHasBeenSet() const;
+
+                    /**
+                     * 获取责任人id列表
+                     * @return InChargeIdList 责任人id列表
+                     * 
+                     */
+                    std::vector<std::string> GetInChargeIdList() const;
+
+                    /**
+                     * 设置责任人id列表
+                     * @param _inChargeIdList 责任人id列表
+                     * 
+                     */
+                    void SetInChargeIdList(const std::vector<std::string>& _inChargeIdList);
+
+                    /**
+                     * 判断参数 InChargeIdList 是否已赋值
+                     * @return InChargeIdList 是否已赋值
+                     * 
+                     */
+                    bool InChargeIdListHasBeenSet() const;
+
+                    /**
+                     * 获取自身责任人
+                     * @return OnlyMe 自身责任人
+                     * 
+                     */
+                    bool GetOnlyMe() const;
+
+                    /**
+                     * 设置自身责任人
+                     * @param _onlyMe 自身责任人
+                     * 
+                     */
+                    void SetOnlyMe(const bool& _onlyMe);
+
+                    /**
+                     * 判断参数 OnlyMe 是否已赋值
+                     * @return OnlyMe 是否已赋值
+                     * 
+                     */
+                    bool OnlyMeHasBeenSet() const;
+
+                    /**
+                     * 获取是否包含代码模版
+                     * @return IncludeCodeTemplate 是否包含代码模版
+                     * 
+                     */
+                    bool GetIncludeCodeTemplate() const;
+
+                    /**
+                     * 设置是否包含代码模版
+                     * @param _includeCodeTemplate 是否包含代码模版
+                     * 
+                     */
+                    void SetIncludeCodeTemplate(const bool& _includeCodeTemplate);
+
+                    /**
+                     * 判断参数 IncludeCodeTemplate 是否已赋值
+                     * @return IncludeCodeTemplate 是否已赋值
+                     * 
+                     */
+                    bool IncludeCodeTemplateHasBeenSet() const;
+
+                    /**
+                     * 获取编排空间 或代码模版 orchestrationSpace 编排空间 template模版管理
+                     * @return FolderForm 编排空间 或代码模版 orchestrationSpace 编排空间 template模版管理
+                     * 
+                     */
+                    std::string GetFolderForm() const;
+
+                    /**
+                     * 设置编排空间 或代码模版 orchestrationSpace 编排空间 template模版管理
+                     * @param _folderForm 编排空间 或代码模版 orchestrationSpace 编排空间 template模版管理
+                     * 
+                     */
+                    void SetFolderForm(const std::string& _folderForm);
+
+                    /**
+                     * 判断参数 FolderForm 是否已赋值
+                     * @return FolderForm 是否已赋值
+                     * 
+                     */
+                    bool FolderFormHasBeenSet() const;
+
                 private:
 
                     /**
@@ -456,6 +561,36 @@ false 否
                      */
                     std::string m_workflowType;
                     bool m_workflowTypeHasBeenSet;
+
+                    /**
+                     * 任务类型id列表
+                     */
+                    std::vector<int64_t> m_taskTypeIdList;
+                    bool m_taskTypeIdListHasBeenSet;
+
+                    /**
+                     * 责任人id列表
+                     */
+                    std::vector<std::string> m_inChargeIdList;
+                    bool m_inChargeIdListHasBeenSet;
+
+                    /**
+                     * 自身责任人
+                     */
+                    bool m_onlyMe;
+                    bool m_onlyMeHasBeenSet;
+
+                    /**
+                     * 是否包含代码模版
+                     */
+                    bool m_includeCodeTemplate;
+                    bool m_includeCodeTemplateHasBeenSet;
+
+                    /**
+                     * 编排空间 或代码模版 orchestrationSpace 编排空间 template模版管理
+                     */
+                    std::string m_folderForm;
+                    bool m_folderFormHasBeenSet;
 
                 };
             }

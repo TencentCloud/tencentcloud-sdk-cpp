@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取组件类型编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ComponentCode 组件类型编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetComponentCode() const;
 
                     /**
                      * 设置组件类型编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _componentCode 组件类型编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetComponentCode(const std::string& _componentCode);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取组件类型：用户购买的产品或服务对应的组件大类
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ComponentCodeName 组件类型：用户购买的产品或服务对应的组件大类
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetComponentCodeName() const;
 
                     /**
                      * 设置组件类型：用户购买的产品或服务对应的组件大类
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _componentCodeName 组件类型：用户购买的产品或服务对应的组件大类
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetComponentCodeName(const std::string& _componentCodeName);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 组件类型编码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_componentCode;
                     bool m_componentCodeHasBeenSet;
 
                     /**
                      * 组件类型：用户购买的产品或服务对应的组件大类
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_componentCodeName;
                     bool m_componentCodeNameHasBeenSet;

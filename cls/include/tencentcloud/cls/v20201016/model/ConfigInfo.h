@@ -71,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取采集规则配置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 采集规则配置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置采集规则配置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 采集规则配置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -96,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志格式化方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogFormat 日志格式化方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLogFormat() const;
 
                     /**
                      * 设置日志格式化方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logFormat 日志格式化方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogFormat(const std::string& _logFormat);
@@ -121,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志采集路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Path 日志采集路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPath() const;
 
                     /**
                      * 设置日志采集路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _path 日志采集路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPath(const std::string& _path);
@@ -155,7 +143,6 @@ namespace TencentCloud
 - user_define_log代表：组合解析（适用于多格式嵌套的日志，详见[使用组合解析提取模式采集日志](https://cloud.tencent.com/document/product/614/61310)）；
 - service_syslog代表：syslog 采集（详见[采集 Syslog](https://cloud.tencent.com/document/product/614/81454)）；
 - windows_event_log代表：Windows事件日志（详见[采集 Windows 事件日志](https://cloud.tencent.com/document/product/614/96678)）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogType 采集的日志类型。
 - json_log代表：JSON-文件日志（详见[使用 JSON 提取模式采集日志](https://cloud.tencent.com/document/product/614/17419)）；
 - delimiter_log代表：分隔符-文件日志（详见[使用分隔符提取模式采集日志](https://cloud.tencent.com/document/product/614/17420)）；
@@ -166,7 +153,6 @@ namespace TencentCloud
 - user_define_log代表：组合解析（适用于多格式嵌套的日志，详见[使用组合解析提取模式采集日志](https://cloud.tencent.com/document/product/614/61310)）；
 - service_syslog代表：syslog 采集（详见[采集 Syslog](https://cloud.tencent.com/document/product/614/81454)）；
 - windows_event_log代表：Windows事件日志（详见[采集 Windows 事件日志](https://cloud.tencent.com/document/product/614/96678)）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLogType() const;
@@ -182,7 +168,6 @@ namespace TencentCloud
 - user_define_log代表：组合解析（适用于多格式嵌套的日志，详见[使用组合解析提取模式采集日志](https://cloud.tencent.com/document/product/614/61310)）；
 - service_syslog代表：syslog 采集（详见[采集 Syslog](https://cloud.tencent.com/document/product/614/81454)）；
 - windows_event_log代表：Windows事件日志（详见[采集 Windows 事件日志](https://cloud.tencent.com/document/product/614/96678)）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logType 采集的日志类型。
 - json_log代表：JSON-文件日志（详见[使用 JSON 提取模式采集日志](https://cloud.tencent.com/document/product/614/17419)）；
 - delimiter_log代表：分隔符-文件日志（详见[使用分隔符提取模式采集日志](https://cloud.tencent.com/document/product/614/17420)）；
@@ -193,7 +178,6 @@ namespace TencentCloud
 - user_define_log代表：组合解析（适用于多格式嵌套的日志，详见[使用组合解析提取模式采集日志](https://cloud.tencent.com/document/product/614/61310)）；
 - service_syslog代表：syslog 采集（详见[采集 Syslog](https://cloud.tencent.com/document/product/614/81454)）；
 - windows_event_log代表：Windows事件日志（详见[采集 Windows 事件日志](https://cloud.tencent.com/document/product/614/96678)）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogType(const std::string& _logType);
@@ -207,18 +191,14 @@ namespace TencentCloud
 
                     /**
                      * 获取提取规则，如果设置了ExtractRule，则必须设置LogType
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExtractRule 提取规则，如果设置了ExtractRule，则必须设置LogType
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ExtractRuleInfo GetExtractRule() const;
 
                     /**
                      * 设置提取规则，如果设置了ExtractRule，则必须设置LogType
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _extractRule 提取规则，如果设置了ExtractRule，则必须设置LogType
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExtractRule(const ExtractRuleInfo& _extractRule);
@@ -278,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updateTime 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -324,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户自定义解析字符串，详见[使用组合解析提取模式采集日志](https://cloud.tencent.com/document/product/614/61310)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserDefineRule 用户自定义解析字符串，详见[使用组合解析提取模式采集日志](https://cloud.tencent.com/document/product/614/61310)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserDefineRule() const;
 
                     /**
                      * 设置用户自定义解析字符串，详见[使用组合解析提取模式采集日志](https://cloud.tencent.com/document/product/614/61310)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userDefineRule 用户自定义解析字符串，详见[使用组合解析提取模式采集日志](https://cloud.tencent.com/document/product/614/61310)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserDefineRule(const std::string& _userDefineRule);
@@ -356,7 +328,6 @@ namespace TencentCloud
 `{\"ClsAgentFileTimeout\":0,\"ClsAgentMaxDepth\":10,\"ClsAgentParseFailMerge\":true}`
 
 控制台默认占位值：`{\"ClsAgentDefault\":0}`
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdvancedConfig 高级采集配置。 Json字符串， Key/Value定义为如下：
 - ClsAgentFileTimeout(超时属性), 取值范围: 大于等于0的整数， 0为不超时
 - ClsAgentMaxDepth(最大目录深度)，取值范围: 大于等于0的整数
@@ -365,7 +336,6 @@ namespace TencentCloud
 `{\"ClsAgentFileTimeout\":0,\"ClsAgentMaxDepth\":10,\"ClsAgentParseFailMerge\":true}`
 
 控制台默认占位值：`{\"ClsAgentDefault\":0}`
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAdvancedConfig() const;
@@ -379,7 +349,6 @@ namespace TencentCloud
 `{\"ClsAgentFileTimeout\":0,\"ClsAgentMaxDepth\":10,\"ClsAgentParseFailMerge\":true}`
 
 控制台默认占位值：`{\"ClsAgentDefault\":0}`
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _advancedConfig 高级采集配置。 Json字符串， Key/Value定义为如下：
 - ClsAgentFileTimeout(超时属性), 取值范围: 大于等于0的整数， 0为不超时
 - ClsAgentMaxDepth(最大目录深度)，取值范围: 大于等于0的整数
@@ -388,7 +357,6 @@ namespace TencentCloud
 `{\"ClsAgentFileTimeout\":0,\"ClsAgentMaxDepth\":10,\"ClsAgentParseFailMerge\":true}`
 
 控制台默认占位值：`{\"ClsAgentDefault\":0}`
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAdvancedConfig(const std::string& _advancedConfig);
@@ -410,21 +378,18 @@ namespace TencentCloud
 
                     /**
                      * 采集规则配置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 日志格式化方式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logFormat;
                     bool m_logFormatHasBeenSet;
 
                     /**
                      * 日志采集路径
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_path;
                     bool m_pathHasBeenSet;
@@ -440,14 +405,12 @@ namespace TencentCloud
 - user_define_log代表：组合解析（适用于多格式嵌套的日志，详见[使用组合解析提取模式采集日志](https://cloud.tencent.com/document/product/614/61310)）；
 - service_syslog代表：syslog 采集（详见[采集 Syslog](https://cloud.tencent.com/document/product/614/81454)）；
 - windows_event_log代表：Windows事件日志（详见[采集 Windows 事件日志](https://cloud.tencent.com/document/product/614/96678)）。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logType;
                     bool m_logTypeHasBeenSet;
 
                     /**
                      * 提取规则，如果设置了ExtractRule，则必须设置LogType
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ExtractRuleInfo m_extractRule;
                     bool m_extractRuleHasBeenSet;
@@ -467,7 +430,6 @@ namespace TencentCloud
 
                     /**
                      * 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
@@ -480,7 +442,6 @@ namespace TencentCloud
 
                     /**
                      * 用户自定义解析字符串，详见[使用组合解析提取模式采集日志](https://cloud.tencent.com/document/product/614/61310)。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userDefineRule;
                     bool m_userDefineRuleHasBeenSet;
@@ -494,7 +455,6 @@ namespace TencentCloud
 `{\"ClsAgentFileTimeout\":0,\"ClsAgentMaxDepth\":10,\"ClsAgentParseFailMerge\":true}`
 
 控制台默认占位值：`{\"ClsAgentDefault\":0}`
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_advancedConfig;
                     bool m_advancedConfigHasBeenSet;

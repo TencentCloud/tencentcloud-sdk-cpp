@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WID 设备ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWID() const;
 
                     /**
                      * 设置设备ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _wID 设备ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWID(const std::string& _wID);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备状态（online=normal+fault、offline）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceStatus 设备状态（online=normal+fault、offline）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeviceStatus() const;
 
                     /**
                      * 设置设备状态（online=normal+fault、offline）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceStatus 设备状态（online=normal+fault、offline）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceStatus(const std::string& _deviceStatus);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备状态更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceStatusUpdateTime 设备状态更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeviceStatusUpdateTime() const;
 
                     /**
                      * 设置设备状态更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceStatusUpdateTime 设备状态更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceStatusUpdateTime(const std::string& _deviceStatusUpdateTime);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备业务状态（normal、fault、offline）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 设备业务状态（normal、fault、offline）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置设备业务状态（normal、fault、offline）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 设备业务状态（normal、fault、offline）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取推流状态。推流中-true，未推流-false
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsAlive 推流状态。推流中-true，未推流-false
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsAlive() const;
 
                     /**
                      * 设置推流状态。推流中-true，未推流-false
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isAlive 推流状态。推流中-true，未推流-false
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsAlive(const bool& _isAlive);
@@ -175,35 +155,30 @@ namespace TencentCloud
 
                     /**
                      * 设备ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_wID;
                     bool m_wIDHasBeenSet;
 
                     /**
                      * 设备状态（online=normal+fault、offline）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceStatus;
                     bool m_deviceStatusHasBeenSet;
 
                     /**
                      * 设备状态更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceStatusUpdateTime;
                     bool m_deviceStatusUpdateTimeHasBeenSet;
 
                     /**
                      * 设备业务状态（normal、fault、offline）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 推流状态。推流中-true，未推流-false
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isAlive;
                     bool m_isAliveHasBeenSet;

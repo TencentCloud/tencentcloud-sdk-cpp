@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取Kafka集群可访问状态，0：可正常访问 ...
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status Kafka集群可访问状态，0：可正常访问 ...
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * Kafka集群可访问状态，0：可正常访问 ...
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;

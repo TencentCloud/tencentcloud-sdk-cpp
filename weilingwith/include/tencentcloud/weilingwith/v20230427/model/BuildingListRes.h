@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取建筑列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BuildingProfileList 建筑列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BuildingProfile> GetBuildingProfileList() const;
 
                     /**
                      * 设置建筑列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _buildingProfileList 建筑列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBuildingProfileList(const std::vector<BuildingProfile>& _buildingProfileList);
@@ -76,7 +72,6 @@ namespace TencentCloud
 
                     /**
                      * 建筑列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BuildingProfile> m_buildingProfileList;
                     bool m_buildingProfileListHasBeenSet;

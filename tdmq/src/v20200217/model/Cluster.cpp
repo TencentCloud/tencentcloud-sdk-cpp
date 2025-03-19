@@ -49,7 +49,8 @@ Cluster::Cluster() :
     m_tagsHasBeenSet(false),
     m_payModeHasBeenSet(false),
     m_projectIdHasBeenSet(false),
-    m_projectNameHasBeenSet(false)
+    m_projectNameHasBeenSet(false),
+    m_upgradeProInstanceHasBeenSet(false)
 {
 }
 
@@ -358,6 +359,16 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
         m_projectNameHasBeenSet = true;
     }
 
+    if (value.HasMember("UpgradeProInstance") && !value["UpgradeProInstance"].IsNull())
+    {
+        if (!value["UpgradeProInstance"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cluster.UpgradeProInstance` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_upgradeProInstance = value["UpgradeProInstance"].GetBool();
+        m_upgradeProInstanceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -602,6 +613,14 @@ void Cluster::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "ProjectName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_projectName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_upgradeProInstanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpgradeProInstance";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_upgradeProInstance, allocator);
     }
 
 }
@@ -1069,5 +1088,21 @@ void Cluster::SetProjectName(const string& _projectName)
 bool Cluster::ProjectNameHasBeenSet() const
 {
     return m_projectNameHasBeenSet;
+}
+
+bool Cluster::GetUpgradeProInstance() const
+{
+    return m_upgradeProInstance;
+}
+
+void Cluster::SetUpgradeProInstance(const bool& _upgradeProInstance)
+{
+    m_upgradeProInstance = _upgradeProInstance;
+    m_upgradeProInstanceHasBeenSet = true;
+}
+
+bool Cluster::UpgradeProInstanceHasBeenSet() const
+{
+    return m_upgradeProInstanceHasBeenSet;
 }
 

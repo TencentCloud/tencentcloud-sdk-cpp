@@ -31,7 +31,8 @@ WorkflowTask::WorkflowTask() :
     m_aiContentReviewResultSetHasBeenSet(false),
     m_aiAnalysisResultSetHasBeenSet(false),
     m_aiRecognitionResultSetHasBeenSet(false),
-    m_aiQualityControlTaskResultHasBeenSet(false)
+    m_aiQualityControlTaskResultHasBeenSet(false),
+    m_smartSubtitlesTaskResultHasBeenSet(false)
 {
 }
 
@@ -211,6 +212,26 @@ CoreInternalOutcome WorkflowTask::Deserialize(const rapidjson::Value &value)
         m_aiQualityControlTaskResultHasBeenSet = true;
     }
 
+    if (value.HasMember("SmartSubtitlesTaskResult") && !value["SmartSubtitlesTaskResult"].IsNull())
+    {
+        if (!value["SmartSubtitlesTaskResult"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `WorkflowTask.SmartSubtitlesTaskResult` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SmartSubtitlesTaskResult"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SmartSubtitlesResult item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_smartSubtitlesTaskResult.push_back(item);
+        }
+        m_smartSubtitlesTaskResultHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -335,6 +356,21 @@ void WorkflowTask::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_aiQualityControlTaskResult.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_smartSubtitlesTaskResultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SmartSubtitlesTaskResult";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_smartSubtitlesTaskResult.begin(); itr != m_smartSubtitlesTaskResult.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -514,5 +550,21 @@ void WorkflowTask::SetAiQualityControlTaskResult(const ScheduleQualityControlTas
 bool WorkflowTask::AiQualityControlTaskResultHasBeenSet() const
 {
     return m_aiQualityControlTaskResultHasBeenSet;
+}
+
+vector<SmartSubtitlesResult> WorkflowTask::GetSmartSubtitlesTaskResult() const
+{
+    return m_smartSubtitlesTaskResult;
+}
+
+void WorkflowTask::SetSmartSubtitlesTaskResult(const vector<SmartSubtitlesResult>& _smartSubtitlesTaskResult)
+{
+    m_smartSubtitlesTaskResult = _smartSubtitlesTaskResult;
+    m_smartSubtitlesTaskResultHasBeenSet = true;
+}
+
+bool WorkflowTask::SmartSubtitlesTaskResultHasBeenSet() const
+{
+    return m_smartSubtitlesTaskResultHasBeenSet;
 }
 

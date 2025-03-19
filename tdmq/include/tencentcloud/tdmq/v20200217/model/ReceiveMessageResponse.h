@@ -87,9 +87,7 @@ namespace TencentCloud
 
                     /**
                      * 获取返回的错误信息，如果为空，说明没有错误
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorMsg 返回的错误信息，如果为空，说明没有错误
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetErrorMsg() const;
@@ -103,9 +101,7 @@ namespace TencentCloud
 
                     /**
                      * 获取返回订阅者的名字，用来创建 ack consumer时使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubName 返回订阅者的名字，用来创建 ack consumer时使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubName() const;
@@ -119,9 +115,7 @@ namespace TencentCloud
 
                     /**
                      * 获取BatchReceivePolicy 一次性返回的多条消息的 MessageID，用 ‘###’ 来区分不同的 MessageID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MessageIDList BatchReceivePolicy 一次性返回的多条消息的 MessageID，用 ‘###’ 来区分不同的 MessageID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMessageIDList() const;
@@ -135,9 +129,7 @@ namespace TencentCloud
 
                     /**
                      * 获取BatchReceivePolicy 一次性返回的多条消息的消息内容，用 ‘###’ 来区分不同的消息内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MessagesPayload BatchReceivePolicy 一次性返回的多条消息的消息内容，用 ‘###’ 来区分不同的消息内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMessagesPayload() const;
@@ -171,28 +163,24 @@ namespace TencentCloud
 
                     /**
                      * 返回的错误信息，如果为空，说明没有错误
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errorMsg;
                     bool m_errorMsgHasBeenSet;
 
                     /**
                      * 返回订阅者的名字，用来创建 ack consumer时使用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subName;
                     bool m_subNameHasBeenSet;
 
                     /**
                      * BatchReceivePolicy 一次性返回的多条消息的 MessageID，用 ‘###’ 来区分不同的 MessageID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_messageIDList;
                     bool m_messageIDListHasBeenSet;
 
                     /**
                      * BatchReceivePolicy 一次性返回的多条消息的消息内容，用 ‘###’ 来区分不同的消息内容
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_messagesPayload;
                     bool m_messagesPayloadHasBeenSet;

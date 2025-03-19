@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取行政区划编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdministrationCode 行政区划编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAdministrationCode() const;
 
                     /**
                      * 设置行政区划编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _administrationCode 行政区划编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAdministrationCode(const std::string& _administrationCode);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取行政区划名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdministrationName 行政区划名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAdministrationName() const;
 
                     /**
                      * 设置行政区划名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _administrationName 行政区划名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAdministrationName(const std::string& _administrationName);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 行政区划编码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_administrationCode;
                     bool m_administrationCodeHasBeenSet;
 
                     /**
                      * 行政区划名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_administrationName;
                     bool m_administrationNameHasBeenSet;

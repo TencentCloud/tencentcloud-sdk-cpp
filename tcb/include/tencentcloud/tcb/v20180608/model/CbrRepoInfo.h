@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分支名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Branch 分支名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBranch() const;
 
                     /**
                      * 设置分支名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _branch 分支名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBranch(const std::string& _branch);
@@ -156,7 +152,6 @@ namespace TencentCloud
 
                     /**
                      * 分支名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_branch;
                     bool m_branchHasBeenSet;

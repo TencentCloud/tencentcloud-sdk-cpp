@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取项目空间列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return List 项目空间列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SpaceInfo> GetList() const;
 
                     /**
                      * 设置项目空间列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _list 项目空间列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetList(const std::vector<SpaceInfo>& _list);
@@ -76,7 +72,6 @@ namespace TencentCloud
 
                     /**
                      * 项目空间列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SpaceInfo> m_list;
                     bool m_listHasBeenSet;

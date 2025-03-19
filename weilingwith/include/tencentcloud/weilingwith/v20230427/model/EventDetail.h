@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取事件id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 事件id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置事件id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id 事件id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取事件名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 事件名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置事件名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 事件名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取事件触发类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TriggerType 事件触发类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTriggerType() const;
 
                     /**
                      * 设置事件触发类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _triggerType 事件触发类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTriggerType(const std::string& _triggerType);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取事件触发条件，返回为x-json后的字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TriggerCondition 事件触发条件，返回为x-json后的字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTriggerCondition() const;
 
                     /**
                      * 设置事件触发条件，返回为x-json后的字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _triggerCondition 事件触发条件，返回为x-json后的字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTriggerCondition(const std::string& _triggerCondition);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取有效期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ValidPeriod 有效期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetValidPeriod() const;
 
                     /**
                      * 设置有效期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _validPeriod 有效期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValidPeriod(const std::string& _validPeriod);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取关联规则列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LinkRuleSet 关联规则列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<LinkRule> GetLinkRuleSet() const;
 
                     /**
                      * 设置关联规则列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _linkRuleSet 关联规则列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLinkRuleSet(const std::vector<LinkRule>& _linkRuleSet);
@@ -199,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -224,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备类型，当触发类型为deviceType时返回
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceType 设备类型，当触发类型为deviceType时返回
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeviceType() const;
 
                     /**
                      * 设置设备类型，当触发类型为deviceType时返回
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceType 设备类型，当触发类型为deviceType时返回
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceType(const std::string& _deviceType);
@@ -249,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备的wid，当触发类型是device返回
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WID 设备的wid，当触发类型是device返回
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWID() const;
 
                     /**
                      * 设置设备的wid，当触发类型是device返回
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _wID 设备的wid，当触发类型是device返回
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWID(const std::string& _wID);
@@ -276,63 +240,54 @@ namespace TencentCloud
 
                     /**
                      * 事件id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * 事件名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 事件触发类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_triggerType;
                     bool m_triggerTypeHasBeenSet;
 
                     /**
                      * 事件触发条件，返回为x-json后的字段
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_triggerCondition;
                     bool m_triggerConditionHasBeenSet;
 
                     /**
                      * 有效期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_validPeriod;
                     bool m_validPeriodHasBeenSet;
 
                     /**
                      * 关联规则列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<LinkRule> m_linkRuleSet;
                     bool m_linkRuleSetHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 设备类型，当触发类型为deviceType时返回
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceType;
                     bool m_deviceTypeHasBeenSet;
 
                     /**
                      * 设备的wid，当触发类型是device返回
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_wID;
                     bool m_wIDHasBeenSet;

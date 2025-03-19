@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取关联联动规则id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 关联联动规则id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置关联联动规则id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id 关联联动规则id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取关联联动规则名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 关联联动规则名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置关联联动规则名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 关联联动规则名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 关联联动规则id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * 关联联动规则名字
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

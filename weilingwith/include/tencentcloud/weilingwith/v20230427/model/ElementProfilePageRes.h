@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取构件总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 构件总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 设置构件总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalCount 构件总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalCount(const uint64_t& _totalCount);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取构件列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return List 构件列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ElementProfile> GetList() const;
 
                     /**
                      * 设置构件列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _list 构件列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetList(const std::vector<ElementProfile>& _list);
@@ -101,14 +93,12 @@ namespace TencentCloud
 
                     /**
                      * 构件总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
                      * 构件列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ElementProfile> m_list;
                     bool m_listHasBeenSet;

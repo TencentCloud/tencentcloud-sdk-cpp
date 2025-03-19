@@ -4168,6 +4168,49 @@ RedisClient::ReleaseWanAddressOutcomeCallable RedisClient::ReleaseWanAddressCall
     return task->get_future();
 }
 
+RedisClient::RemoveReplicationGroupOutcome RedisClient::RemoveReplicationGroup(const RemoveReplicationGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "RemoveReplicationGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RemoveReplicationGroupResponse rsp = RemoveReplicationGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RemoveReplicationGroupOutcome(rsp);
+        else
+            return RemoveReplicationGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return RemoveReplicationGroupOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::RemoveReplicationGroupAsync(const RemoveReplicationGroupRequest& request, const RemoveReplicationGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RemoveReplicationGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RedisClient::RemoveReplicationGroupOutcomeCallable RedisClient::RemoveReplicationGroupCallable(const RemoveReplicationGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RemoveReplicationGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->RemoveReplicationGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 RedisClient::RemoveReplicationInstanceOutcome RedisClient::RemoveReplicationInstance(const RemoveReplicationInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "RemoveReplicationInstance");

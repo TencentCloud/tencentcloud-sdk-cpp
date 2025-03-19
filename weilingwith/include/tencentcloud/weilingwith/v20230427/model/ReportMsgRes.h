@@ -49,10 +49,8 @@ namespace TencentCloud
                     /**
                      * 获取上报消息对应下标的16位标识Id, 即第几个消息
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReportId 上报消息对应下标的16位标识Id, 即第几个消息
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReportId() const;
@@ -60,10 +58,8 @@ namespace TencentCloud
                     /**
                      * 设置上报消息对应下标的16位标识Id, 即第几个消息
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _reportId 上报消息对应下标的16位标识Id, 即第几个消息
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReportId(const std::string& _reportId);
@@ -78,10 +74,8 @@ namespace TencentCloud
                     /**
                      * 获取上报消息结果，1表示成功推送，0表示推送失败
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReportStatus 上报消息结果，1表示成功推送，0表示推送失败
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetReportStatus() const;
@@ -89,10 +83,8 @@ namespace TencentCloud
                     /**
                      * 设置上报消息结果，1表示成功推送，0表示推送失败
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _reportStatus 上报消息结果，1表示成功推送，0表示推送失败
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReportStatus(const int64_t& _reportStatus);
@@ -109,7 +101,6 @@ namespace TencentCloud
                     /**
                      * 上报消息对应下标的16位标识Id, 即第几个消息
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reportId;
                     bool m_reportIdHasBeenSet;
@@ -117,7 +108,6 @@ namespace TencentCloud
                     /**
                      * 上报消息结果，1表示成功推送，0表示推送失败
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_reportStatus;
                     bool m_reportStatusHasBeenSet;

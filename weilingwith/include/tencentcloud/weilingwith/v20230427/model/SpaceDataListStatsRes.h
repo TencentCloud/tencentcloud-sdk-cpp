@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取楼栋数量与建筑面积列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return List 楼栋数量与建筑面积列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SpaceDataStats> GetList() const;
 
                     /**
                      * 设置楼栋数量与建筑面积列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _list 楼栋数量与建筑面积列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetList(const std::vector<SpaceDataStats>& _list);
@@ -76,7 +72,6 @@ namespace TencentCloud
 
                     /**
                      * 楼栋数量与建筑面积列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SpaceDataStats> m_list;
                     bool m_listHasBeenSet;

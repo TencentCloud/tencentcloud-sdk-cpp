@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取空间分类编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SpaceTypeCode 空间分类编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSpaceTypeCode() const;
 
                     /**
                      * 设置空间分类编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _spaceTypeCode 空间分类编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSpaceTypeCode(const std::string& _spaceTypeCode);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取空间分类名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SpaceTypeName 空间分类名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSpaceTypeName() const;
 
                     /**
                      * 设置空间分类名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _spaceTypeName 空间分类名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSpaceTypeName(const std::string& _spaceTypeName);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 空间分类编码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_spaceTypeCode;
                     bool m_spaceTypeCodeHasBeenSet;
 
                     /**
                      * 空间分类名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_spaceTypeName;
                     bool m_spaceTypeNameHasBeenSet;

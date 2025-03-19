@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取工作空间id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WorkspaceId 工作空间id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetWorkspaceId() const;
 
                     /**
                      * 设置工作空间id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _workspaceId 工作空间id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWorkspaceId(const int64_t& _workspaceId);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取模型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModelName 模型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModelName() const;
 
                     /**
                      * 设置模型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modelName 模型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModelName(const std::string& _modelName);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取物模型id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModelId 物模型id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModelId() const;
 
                     /**
                      * 设置物模型id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modelId 物模型id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModelId(const std::string& _modelId);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取关联产品信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RelatedProduct 关联产品信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RelatedProduct> GetRelatedProduct() const;
 
                     /**
                      * 设置关联产品信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _relatedProduct 关联产品信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRelatedProduct(const std::vector<RelatedProduct>& _relatedProduct);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备类型名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceTypeName 设备类型名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeviceTypeName() const;
 
                     /**
                      * 设置设备类型名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceTypeName 设备类型名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceTypeName(const std::string& _deviceTypeName);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备类型id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceType 设备类型id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeviceType() const;
 
                     /**
                      * 设置设备类型id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceType 设备类型id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceType(const std::string& _deviceType);
@@ -199,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取物模型类型，产品模型/标准模型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModelType 物模型类型，产品模型/标准模型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetModelType() const;
 
                     /**
                      * 设置物模型类型，产品模型/标准模型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modelType 物模型类型，产品模型/标准模型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModelType(const int64_t& _modelType);
@@ -224,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取模型参数内容,有效字段为"x-json:"后的字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModelParams 模型参数内容,有效字段为"x-json:"后的字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModelParams() const;
 
                     /**
                      * 设置模型参数内容,有效字段为"x-json:"后的字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modelParams 模型参数内容,有效字段为"x-json:"后的字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModelParams(const std::string& _modelParams);
@@ -251,56 +219,48 @@ namespace TencentCloud
 
                     /**
                      * 工作空间id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_workspaceId;
                     bool m_workspaceIdHasBeenSet;
 
                     /**
                      * 模型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modelName;
                     bool m_modelNameHasBeenSet;
 
                     /**
                      * 物模型id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modelId;
                     bool m_modelIdHasBeenSet;
 
                     /**
                      * 关联产品信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RelatedProduct> m_relatedProduct;
                     bool m_relatedProductHasBeenSet;
 
                     /**
                      * 设备类型名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceTypeName;
                     bool m_deviceTypeNameHasBeenSet;
 
                     /**
                      * 设备类型id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceType;
                     bool m_deviceTypeHasBeenSet;
 
                     /**
                      * 物模型类型，产品模型/标准模型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_modelType;
                     bool m_modelTypeHasBeenSet;
 
                     /**
                      * 模型参数内容,有效字段为"x-json:"后的字段
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modelParams;
                     bool m_modelParamsHasBeenSet;

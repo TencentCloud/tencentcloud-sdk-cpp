@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取工作空间id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WorkspaceId 工作空间id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetWorkspaceId() const;
 
                     /**
                      * 设置工作空间id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _workspaceId 工作空间id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWorkspaceId(const int64_t& _workspaceId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取产品PID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductId 产品PID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetProductId() const;
 
                     /**
                      * 设置产品PID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _productId 产品PID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProductId(const int64_t& _productId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductName 产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProductName() const;
 
                     /**
                      * 设置产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _productName 产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProductName(const std::string& _productName);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceTypeName 设备类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeviceTypeName() const;
 
                     /**
                      * 设置设备类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceTypeName 设备类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceTypeName(const std::string& _deviceTypeName);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备类型id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceTypeId 设备类型id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeviceTypeId() const;
 
                     /**
                      * 设置设备类型id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceTypeId 设备类型id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceTypeId(const std::string& _deviceTypeId);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取产品属性，如：网关（1）、直连设备（2）、子设备（3）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Attribute 产品属性，如：网关（1）、直连设备（2）、子设备（3）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAttribute() const;
 
                     /**
                      * 设置产品属性，如：网关（1）、直连设备（2）、子设备（3）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _attribute 产品属性，如：网关（1）、直连设备（2）、子设备（3）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAttribute(const int64_t& _attribute);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取产品型号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductType 产品型号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProductType() const;
 
                     /**
                      * 设置产品型号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _productType 产品型号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProductType(const std::string& _productType);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取产品能力:信令数据、音视频。二进制数值中第0位表示信令数据、第1位表示音视频 。1（信令数据），3（具有信令数据以及音视频能力）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductAbility 产品能力:信令数据、音视频。二进制数值中第0位表示信令数据、第1位表示音视频 。1（信令数据），3（具有信令数据以及音视频能力）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetProductAbility() const;
 
                     /**
                      * 设置产品能力:信令数据、音视频。二进制数值中第0位表示信令数据、第1位表示音视频 。1（信令数据），3（具有信令数据以及音视频能力）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _productAbility 产品能力:信令数据、音视频。二进制数值中第0位表示信令数据、第1位表示音视频 。1（信令数据），3（具有信令数据以及音视频能力）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProductAbility(const int64_t& _productAbility);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取生产厂商
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Manufacturer 生产厂商
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetManufacturer() const;
 
                     /**
                      * 设置生产厂商
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _manufacturer 生产厂商
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetManufacturer(const std::string& _manufacturer);
@@ -273,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取维保厂商
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaintenanceMfr 维保厂商
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMaintenanceMfr() const;
 
                     /**
                      * 设置维保厂商
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maintenanceMfr 维保厂商
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaintenanceMfr(const std::string& _maintenanceMfr);
@@ -298,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取物模型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModelName 物模型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModelName() const;
 
                     /**
                      * 设置物模型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modelName 物模型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModelName(const std::string& _modelName);
@@ -323,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取物模型id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModelId 物模型id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModelId() const;
 
                     /**
                      * 设置物模型id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modelId 物模型id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModelId(const std::string& _modelId);
@@ -348,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取物模型类型，产品模型/标准模型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModelType 物模型类型，产品模型/标准模型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetModelType() const;
 
                     /**
                      * 设置物模型类型，产品模型/标准模型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modelType 物模型类型，产品模型/标准模型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModelType(const int64_t& _modelType);
@@ -375,91 +323,78 @@ namespace TencentCloud
 
                     /**
                      * 工作空间id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_workspaceId;
                     bool m_workspaceIdHasBeenSet;
 
                     /**
                      * 产品PID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_productId;
                     bool m_productIdHasBeenSet;
 
                     /**
                      * 产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_productName;
                     bool m_productNameHasBeenSet;
 
                     /**
                      * 设备类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceTypeName;
                     bool m_deviceTypeNameHasBeenSet;
 
                     /**
                      * 设备类型id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceTypeId;
                     bool m_deviceTypeIdHasBeenSet;
 
                     /**
                      * 产品属性，如：网关（1）、直连设备（2）、子设备（3）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_attribute;
                     bool m_attributeHasBeenSet;
 
                     /**
                      * 产品型号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_productType;
                     bool m_productTypeHasBeenSet;
 
                     /**
                      * 产品能力:信令数据、音视频。二进制数值中第0位表示信令数据、第1位表示音视频 。1（信令数据），3（具有信令数据以及音视频能力）。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_productAbility;
                     bool m_productAbilityHasBeenSet;
 
                     /**
                      * 生产厂商
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_manufacturer;
                     bool m_manufacturerHasBeenSet;
 
                     /**
                      * 维保厂商
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_maintenanceMfr;
                     bool m_maintenanceMfrHasBeenSet;
 
                     /**
                      * 物模型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modelName;
                     bool m_modelNameHasBeenSet;
 
                     /**
                      * 物模型id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modelId;
                     bool m_modelIdHasBeenSet;
 
                     /**
                      * 物模型类型，产品模型/标准模型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_modelType;
                     bool m_modelTypeHasBeenSet;

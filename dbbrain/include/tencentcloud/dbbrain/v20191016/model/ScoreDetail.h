@@ -112,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取扣分项列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Items 扣分项列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ScoreItem> GetItems() const;
 
                     /**
                      * 设置扣分项列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _items 扣分项列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetItems(const std::vector<ScoreItem>& _items);
@@ -157,7 +153,6 @@ namespace TencentCloud
 
                     /**
                      * 扣分项列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ScoreItem> m_items;
                     bool m_itemsHasBeenSet;

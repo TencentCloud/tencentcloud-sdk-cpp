@@ -66,10 +66,10 @@ namespace TencentCloud
                     /**
                      * 获取日志服务(CLS)的日志集 ID。
 <li>增加和更新日志主题时可调用 [DescribeLogsets](https://cloud.tencent.com/document/product/614/58624) 接口获取日志集 ID。</li>
-<li>删除日志主题时，此参数填写为null即可。</li>
+<li>删除日志主题时，此参数填写为**空字符串**即可。</li>
                      * @return LogSetId 日志服务(CLS)的日志集 ID。
 <li>增加和更新日志主题时可调用 [DescribeLogsets](https://cloud.tencent.com/document/product/614/58624) 接口获取日志集 ID。</li>
-<li>删除日志主题时，此参数填写为null即可。</li>
+<li>删除日志主题时，此参数填写为**空字符串**即可。</li>
                      * 
                      */
                     std::string GetLogSetId() const;
@@ -77,10 +77,10 @@ namespace TencentCloud
                     /**
                      * 设置日志服务(CLS)的日志集 ID。
 <li>增加和更新日志主题时可调用 [DescribeLogsets](https://cloud.tencent.com/document/product/614/58624) 接口获取日志集 ID。</li>
-<li>删除日志主题时，此参数填写为null即可。</li>
+<li>删除日志主题时，此参数填写为**空字符串**即可。</li>
                      * @param _logSetId 日志服务(CLS)的日志集 ID。
 <li>增加和更新日志主题时可调用 [DescribeLogsets](https://cloud.tencent.com/document/product/614/58624) 接口获取日志集 ID。</li>
-<li>删除日志主题时，此参数填写为null即可。</li>
+<li>删除日志主题时，此参数填写为**空字符串**即可。</li>
                      * 
                      */
                     void SetLogSetId(const std::string& _logSetId);
@@ -95,10 +95,10 @@ namespace TencentCloud
                     /**
                      * 获取日志服务(CLS)的日志主题 ID。
 <li>增加和更新日志主题时可调用 [DescribeTopics](https://cloud.tencent.com/document/product/614/56454) 接口获取日志主题 ID。</li>
-<li>删除日志主题时，此参数填写为null即可。</li>
+<li>删除日志主题时，此参数填写为**空字符串**即可。</li>
                      * @return LogTopicId 日志服务(CLS)的日志主题 ID。
 <li>增加和更新日志主题时可调用 [DescribeTopics](https://cloud.tencent.com/document/product/614/56454) 接口获取日志主题 ID。</li>
-<li>删除日志主题时，此参数填写为null即可。</li>
+<li>删除日志主题时，此参数填写为**空字符串**即可。</li>
                      * 
                      */
                     std::string GetLogTopicId() const;
@@ -106,10 +106,10 @@ namespace TencentCloud
                     /**
                      * 设置日志服务(CLS)的日志主题 ID。
 <li>增加和更新日志主题时可调用 [DescribeTopics](https://cloud.tencent.com/document/product/614/56454) 接口获取日志主题 ID。</li>
-<li>删除日志主题时，此参数填写为null即可。</li>
+<li>删除日志主题时，此参数填写为**空字符串**即可。</li>
                      * @param _logTopicId 日志服务(CLS)的日志主题 ID。
 <li>增加和更新日志主题时可调用 [DescribeTopics](https://cloud.tencent.com/document/product/614/56454) 接口获取日志主题 ID。</li>
-<li>删除日志主题时，此参数填写为null即可。</li>
+<li>删除日志主题时，此参数填写为**空字符串**即可。</li>
                      * 
                      */
                     void SetLogTopicId(const std::string& _logTopicId);
@@ -165,7 +165,7 @@ namespace TencentCloud
                     /**
                      * 日志服务(CLS)的日志集 ID。
 <li>增加和更新日志主题时可调用 [DescribeLogsets](https://cloud.tencent.com/document/product/614/58624) 接口获取日志集 ID。</li>
-<li>删除日志主题时，此参数填写为null即可。</li>
+<li>删除日志主题时，此参数填写为**空字符串**即可。</li>
                      */
                     std::string m_logSetId;
                     bool m_logSetIdHasBeenSet;
@@ -173,7 +173,7 @@ namespace TencentCloud
                     /**
                      * 日志服务(CLS)的日志主题 ID。
 <li>增加和更新日志主题时可调用 [DescribeTopics](https://cloud.tencent.com/document/product/614/56454) 接口获取日志主题 ID。</li>
-<li>删除日志主题时，此参数填写为null即可。</li>
+<li>删除日志主题时，此参数填写为**空字符串**即可。</li>
                      */
                     std::string m_logTopicId;
                     bool m_logTopicIdHasBeenSet;

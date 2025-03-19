@@ -180,18 +180,14 @@ namespace TencentCloud
 
                     /**
                      * 获取工作负载信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WorkLoad 工作负载信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ContainerWorkLoadInfo GetWorkLoad() const;
 
                     /**
                      * 设置工作负载信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _workLoad 工作负载信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWorkLoad(const ContainerWorkLoadInfo& _workLoad);
@@ -205,18 +201,14 @@ namespace TencentCloud
 
                     /**
                      * 获取需要排除的namespace可以多个，用分隔号分割,例如A,B
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExcludeNamespace 需要排除的namespace可以多个，用分隔号分割,例如A,B
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExcludeNamespace() const;
 
                     /**
                      * 设置需要排除的namespace可以多个，用分隔号分割,例如A,B
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _excludeNamespace 需要排除的namespace可以多个，用分隔号分割,例如A,B
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExcludeNamespace(const std::string& _excludeNamespace);
@@ -319,14 +311,12 @@ namespace TencentCloud
 
                     /**
                      * 工作负载信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ContainerWorkLoadInfo m_workLoad;
                     bool m_workLoadHasBeenSet;
 
                     /**
                      * 需要排除的namespace可以多个，用分隔号分割,例如A,B
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_excludeNamespace;
                     bool m_excludeNamespaceHasBeenSet;

@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取空间层级关系
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SpaceRelation 空间层级关系
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SpaceRelation GetSpaceRelation() const;
 
                     /**
                      * 设置空间层级关系
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _spaceRelation 空间层级关系
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSpaceRelation(const SpaceRelation& _spaceRelation);
@@ -76,7 +72,6 @@ namespace TencentCloud
 
                     /**
                      * 空间层级关系
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SpaceRelation m_spaceRelation;
                     bool m_spaceRelationHasBeenSet;

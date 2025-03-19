@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取产品id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductId 产品id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetProductId() const;
 
                     /**
                      * 设置产品id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _productId 产品id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProductId(const int64_t& _productId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取父设备wid，不为空表示导入自设备
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParentWID 父设备wid，不为空表示导入自设备
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetParentWID() const;
 
                     /**
                      * 设置父设备wid，不为空表示导入自设备
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _parentWID 父设备wid，不为空表示导入自设备
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetParentWID(const std::string& _parentWID);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Reason 失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReason() const;
 
                     /**
                      * 设置失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _reason 失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReason(const std::string& _reason);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备sn序列号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SN 设备sn序列号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSN() const;
 
                     /**
                      * 设置设备sn序列号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sN 设备sn序列号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSN(const std::string& _sN);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 产品id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_productId;
                     bool m_productIdHasBeenSet;
 
                     /**
                      * 父设备wid，不为空表示导入自设备
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_parentWID;
                     bool m_parentWIDHasBeenSet;
 
                     /**
                      * 失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reason;
                     bool m_reasonHasBeenSet;
 
                     /**
                      * 设备sn序列号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sN;
                     bool m_sNHasBeenSet;

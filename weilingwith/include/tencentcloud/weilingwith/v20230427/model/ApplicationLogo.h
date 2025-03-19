@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取logo图片对应的fileId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileId logo图片对应的fileId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileId() const;
 
                     /**
                      * 设置logo图片对应的fileId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileId logo图片对应的fileId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileId(const std::string& _fileId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取logo图片地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Url logo图片地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUrl() const;
 
                     /**
                      * 设置logo图片地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _url logo图片地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * logo图片对应的fileId
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileId;
                     bool m_fileIdHasBeenSet;
 
                     /**
                      * logo图片地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;

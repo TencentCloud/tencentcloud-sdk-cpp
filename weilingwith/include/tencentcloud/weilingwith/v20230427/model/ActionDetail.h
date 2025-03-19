@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取动作id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 动作id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
                      * 设置动作id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id 动作id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取动作名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 动作名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置动作名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 动作名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取动作类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActionType 动作类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetActionType() const;
 
                     /**
                      * 设置动作类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _actionType 动作类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetActionType(const std::string& _actionType);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取动作说明
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActionDesc 动作说明
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetActionDesc() const;
 
                     /**
                      * 设置动作说明
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _actionDesc 动作说明
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetActionDesc(const std::string& _actionDesc);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取消息类型，orgin/custom/model
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MsgType 消息类型，orgin/custom/model
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMsgType() const;
 
                     /**
                      * 设置消息类型，orgin/custom/model
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _msgType 消息类型，orgin/custom/model
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMsgType(const std::string& _msgType);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取消息内容,有效值为x-json:后的字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MsgContent 消息内容,有效值为x-json:后的字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMsgContent() const;
 
                     /**
                      * 设置消息内容,有效值为x-json:后的字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _msgContent 消息内容,有效值为x-json:后的字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMsgContent(const std::string& _msgContent);
@@ -199,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -224,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WID 设备唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWID() const;
 
                     /**
                      * 设置设备唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _wID 设备唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWID(const std::string& _wID);
@@ -249,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取关联故障列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LinkRuleSet 关联故障列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<LinkRule> GetLinkRuleSet() const;
 
                     /**
                      * 设置关联故障列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _linkRuleSet 关联故障列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLinkRuleSet(const std::vector<LinkRule>& _linkRuleSet);
@@ -274,18 +238,14 @@ namespace TencentCloud
 
                     /**
                      * 获取动作下沉配置,有效值为x-json:后的字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SinkConfig 动作下沉配置,有效值为x-json:后的字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSinkConfig() const;
 
                     /**
                      * 设置动作下沉配置,有效值为x-json:后的字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sinkConfig 动作下沉配置,有效值为x-json:后的字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSinkConfig(const std::string& _sinkConfig);
@@ -301,70 +261,60 @@ namespace TencentCloud
 
                     /**
                      * 动作id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * 动作名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 动作类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_actionType;
                     bool m_actionTypeHasBeenSet;
 
                     /**
                      * 动作说明
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_actionDesc;
                     bool m_actionDescHasBeenSet;
 
                     /**
                      * 消息类型，orgin/custom/model
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_msgType;
                     bool m_msgTypeHasBeenSet;
 
                     /**
                      * 消息内容,有效值为x-json:后的字段
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_msgContent;
                     bool m_msgContentHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 设备唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_wID;
                     bool m_wIDHasBeenSet;
 
                     /**
                      * 关联故障列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<LinkRule> m_linkRuleSet;
                     bool m_linkRuleSetHasBeenSet;
 
                     /**
                      * 动作下沉配置,有效值为x-json:后的字段
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sinkConfig;
                     bool m_sinkConfigHasBeenSet;

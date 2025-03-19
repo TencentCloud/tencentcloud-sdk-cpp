@@ -25,7 +25,8 @@ using namespace std;
 CreateDsFolderRequest::CreateDsFolderRequest() :
     m_projectIdHasBeenSet(false),
     m_folderNameHasBeenSet(false),
-    m_parentsFolderIdHasBeenSet(false)
+    m_parentsFolderIdHasBeenSet(false),
+    m_folderFormHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string CreateDsFolderRequest::ToJsonString() const
         string key = "ParentsFolderId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_parentsFolderId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_folderFormHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FolderForm";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_folderForm.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void CreateDsFolderRequest::SetParentsFolderId(const string& _parentsFolderId)
 bool CreateDsFolderRequest::ParentsFolderIdHasBeenSet() const
 {
     return m_parentsFolderIdHasBeenSet;
+}
+
+string CreateDsFolderRequest::GetFolderForm() const
+{
+    return m_folderForm;
+}
+
+void CreateDsFolderRequest::SetFolderForm(const string& _folderForm)
+{
+    m_folderForm = _folderForm;
+    m_folderFormHasBeenSet = true;
+}
+
+bool CreateDsFolderRequest::FolderFormHasBeenSet() const
+{
+    return m_folderFormHasBeenSet;
 }
 
 

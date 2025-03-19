@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取构件id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ElementId 构件id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetElementId() const;
 
                     /**
                      * 设置构件id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _elementId 构件id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetElementId(const std::string& _elementId);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取构件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ElementName 构件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetElementName() const;
 
                     /**
                      * 设置构件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _elementName 构件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetElementName(const std::string& _elementName);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取空间层级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Level 空间层级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetLevel() const;
 
                     /**
                      * 设置空间层级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _level 空间层级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLevel(const uint64_t& _level);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取空间编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SpaceCode 空间编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSpaceCode() const;
 
                     /**
                      * 设置空间编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _spaceCode 空间编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSpaceCode(const std::string& _spaceCode);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取父级空间编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParentSpaceCode 父级空间编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetParentSpaceCode() const;
 
                     /**
                      * 设置父级空间编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _parentSpaceCode 父级空间编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetParentSpaceCode(const std::string& _parentSpaceCode);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子构件信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Children 子构件信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SpaceRelation> GetChildren() const;
 
                     /**
                      * 设置子构件信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _children 子构件信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChildren(const std::vector<SpaceRelation>& _children);
@@ -201,42 +177,36 @@ namespace TencentCloud
 
                     /**
                      * 构件id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_elementId;
                     bool m_elementIdHasBeenSet;
 
                     /**
                      * 构件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_elementName;
                     bool m_elementNameHasBeenSet;
 
                     /**
                      * 空间层级
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_level;
                     bool m_levelHasBeenSet;
 
                     /**
                      * 空间编码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_spaceCode;
                     bool m_spaceCodeHasBeenSet;
 
                     /**
                      * 父级空间编码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_parentSpaceCode;
                     bool m_parentSpaceCodeHasBeenSet;
 
                     /**
                      * 子构件信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SpaceRelation> m_children;
                     bool m_childrenHasBeenSet;

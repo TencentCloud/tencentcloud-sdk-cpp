@@ -59,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取日志预览结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogData 日志预览结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLogData() const;
@@ -83,7 +81,6 @@ namespace TencentCloud
 
                     /**
                      * 日志预览结果
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logData;
                     bool m_logDataHasBeenSet;

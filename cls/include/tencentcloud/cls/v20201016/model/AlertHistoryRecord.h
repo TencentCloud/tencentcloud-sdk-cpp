@@ -323,18 +323,14 @@ namespace TencentCloud
 
                     /**
                      * 获取告警分组触发时对应的分组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupTriggerCondition 告警分组触发时对应的分组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<GroupTriggerConditionInfo> GetGroupTriggerCondition() const;
 
                     /**
                      * 设置告警分组触发时对应的分组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupTriggerCondition 告警分组触发时对应的分组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupTriggerCondition(const std::vector<GroupTriggerConditionInfo>& _groupTriggerCondition);
@@ -348,18 +344,14 @@ namespace TencentCloud
 
                     /**
                      * 获取告警级别，0代表警告(Warn)，1代表提醒(Info)，2代表紧急 (Critical)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlarmLevel 告警级别，0代表警告(Warn)，1代表提醒(Info)，2代表紧急 (Critical)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetAlarmLevel() const;
 
                     /**
                      * 设置告警级别，0代表警告(Warn)，1代表提醒(Info)，2代表紧急 (Critical)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _alarmLevel 告警级别，0代表警告(Warn)，1代表提醒(Info)，2代表紧急 (Critical)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAlarmLevel(const uint64_t& _alarmLevel);
@@ -374,10 +366,8 @@ namespace TencentCloud
                     /**
                      * 获取监控对象类型。
 0:执行语句共用监控对象; 1:每个执行语句单独选择监控对象。 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MonitorObjectType 监控对象类型。
 0:执行语句共用监控对象; 1:每个执行语句单独选择监控对象。 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMonitorObjectType() const;
@@ -385,10 +375,8 @@ namespace TencentCloud
                     /**
                      * 设置监控对象类型。
 0:执行语句共用监控对象; 1:每个执行语句单独选择监控对象。 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _monitorObjectType 监控对象类型。
 0:执行语句共用监控对象; 1:每个执行语句单独选择监控对象。 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMonitorObjectType(const uint64_t& _monitorObjectType);
@@ -482,14 +470,12 @@ namespace TencentCloud
 
                     /**
                      * 告警分组触发时对应的分组信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<GroupTriggerConditionInfo> m_groupTriggerCondition;
                     bool m_groupTriggerConditionHasBeenSet;
 
                     /**
                      * 告警级别，0代表警告(Warn)，1代表提醒(Info)，2代表紧急 (Critical)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_alarmLevel;
                     bool m_alarmLevelHasBeenSet;
@@ -497,7 +483,6 @@ namespace TencentCloud
                     /**
                      * 监控对象类型。
 0:执行语句共用监控对象; 1:每个执行语句单独选择监控对象。 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_monitorObjectType;
                     bool m_monitorObjectTypeHasBeenSet;

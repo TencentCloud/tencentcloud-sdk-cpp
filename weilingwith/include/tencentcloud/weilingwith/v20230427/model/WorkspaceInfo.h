@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取工作空间Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WorkspaceId 工作空间Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetWorkspaceId() const;
 
                     /**
                      * 设置工作空间Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _workspaceId 工作空间Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWorkspaceId(const int64_t& _workspaceId);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取工作空间中文名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChineseName 工作空间中文名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetChineseName() const;
 
                     /**
                      * 设置工作空间中文名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _chineseName 工作空间中文名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChineseName(const std::string& _chineseName);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取工作空间描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 工作空间描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置工作空间描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 工作空间描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取工作空间是否删除状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 工作空间是否删除状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置工作空间是否删除状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 工作空间是否删除状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该工作空间绑定的区/县的行政区名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParkName 该工作空间绑定的区/县的行政区名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetParkName() const;
 
                     /**
                      * 设置该工作空间绑定的区/县的行政区名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _parkName 该工作空间绑定的区/县的行政区名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetParkName(const std::string& _parkName);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该工作空间绑定的区/县的行政区编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParkNum 该工作空间绑定的区/县的行政区编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetParkNum() const;
 
                     /**
                      * 设置该工作空间绑定的区/县的行政区编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _parkNum 该工作空间绑定的区/县的行政区编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetParkNum(const std::string& _parkNum);
@@ -199,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取获取该工作空间绑定的区/县的上级行政区划信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdministrativeDetailSet 获取该工作空间绑定的区/县的上级行政区划信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AdministrativeDetail> GetAdministrativeDetailSet() const;
 
                     /**
                      * 设置获取该工作空间绑定的区/县的上级行政区划信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _administrativeDetailSet 获取该工作空间绑定的区/县的上级行政区划信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAdministrativeDetailSet(const std::vector<AdministrativeDetail>& _administrativeDetailSet);
@@ -226,49 +198,42 @@ namespace TencentCloud
 
                     /**
                      * 工作空间Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_workspaceId;
                     bool m_workspaceIdHasBeenSet;
 
                     /**
                      * 工作空间中文名字
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_chineseName;
                     bool m_chineseNameHasBeenSet;
 
                     /**
                      * 工作空间描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
                      * 工作空间是否删除状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 该工作空间绑定的区/县的行政区名字
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_parkName;
                     bool m_parkNameHasBeenSet;
 
                     /**
                      * 该工作空间绑定的区/县的行政区编码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_parkNum;
                     bool m_parkNumHasBeenSet;
 
                     /**
                      * 获取该工作空间绑定的区/县的上级行政区划信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AdministrativeDetail> m_administrativeDetailSet;
                     bool m_administrativeDetailSetHasBeenSet;

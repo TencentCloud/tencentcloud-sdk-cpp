@@ -310,33 +310,23 @@ namespace TencentCloud
                     /**
                      * 获取套餐类型。
 取值范围：
-<li>STARTER_BUNDLE：入门型</li>
 <li>GENERAL_BUNDLE：通用型</li>
-<li>ENTERPRISE_BUNDLE：企业型</li>
 <li>STORAGE_BUNDLE：存储型</li>
+<li>ENTERPRISE_BUNDLE：企业型</li>
 <li>EXCLUSIVE_BUNDLE：专属型</li>
-<li>HK_EXCLUSIVE_BUNDLE：香港专属型 </li>
-<li>CAREFREE_BUNDLE：无忧型</li>
 <li>BEFAST_BUNDLE：蜂驰型 </li>
-<li>EXCLUSIVE_BUNDLE_02：境外专属Ⅱ型</li>
-<li>NEWCOMER_BUNDLE：新客专享</li>
-<li>GAME_PORTAL_BUNDLE：游戏专区</li>
-<li>ECONOMY_BUNDLE：经济型</li>
+<li>STARTER_BUNDLE：入门型</li>
+<li>CAREFREE_BUNDLE：无忧型</li>
 <li>RAZOR_SPEED_BUNDLE：锐驰型</li>
                      * @return BundleType 套餐类型。
 取值范围：
-<li>STARTER_BUNDLE：入门型</li>
 <li>GENERAL_BUNDLE：通用型</li>
-<li>ENTERPRISE_BUNDLE：企业型</li>
 <li>STORAGE_BUNDLE：存储型</li>
+<li>ENTERPRISE_BUNDLE：企业型</li>
 <li>EXCLUSIVE_BUNDLE：专属型</li>
-<li>HK_EXCLUSIVE_BUNDLE：香港专属型 </li>
-<li>CAREFREE_BUNDLE：无忧型</li>
 <li>BEFAST_BUNDLE：蜂驰型 </li>
-<li>EXCLUSIVE_BUNDLE_02：境外专属Ⅱ型</li>
-<li>NEWCOMER_BUNDLE：新客专享</li>
-<li>GAME_PORTAL_BUNDLE：游戏专区</li>
-<li>ECONOMY_BUNDLE：经济型</li>
+<li>STARTER_BUNDLE：入门型</li>
+<li>CAREFREE_BUNDLE：无忧型</li>
 <li>RAZOR_SPEED_BUNDLE：锐驰型</li>
                      * 
                      */
@@ -345,33 +335,23 @@ namespace TencentCloud
                     /**
                      * 设置套餐类型。
 取值范围：
-<li>STARTER_BUNDLE：入门型</li>
 <li>GENERAL_BUNDLE：通用型</li>
-<li>ENTERPRISE_BUNDLE：企业型</li>
 <li>STORAGE_BUNDLE：存储型</li>
+<li>ENTERPRISE_BUNDLE：企业型</li>
 <li>EXCLUSIVE_BUNDLE：专属型</li>
-<li>HK_EXCLUSIVE_BUNDLE：香港专属型 </li>
-<li>CAREFREE_BUNDLE：无忧型</li>
 <li>BEFAST_BUNDLE：蜂驰型 </li>
-<li>EXCLUSIVE_BUNDLE_02：境外专属Ⅱ型</li>
-<li>NEWCOMER_BUNDLE：新客专享</li>
-<li>GAME_PORTAL_BUNDLE：游戏专区</li>
-<li>ECONOMY_BUNDLE：经济型</li>
+<li>STARTER_BUNDLE：入门型</li>
+<li>CAREFREE_BUNDLE：无忧型</li>
 <li>RAZOR_SPEED_BUNDLE：锐驰型</li>
                      * @param _bundleType 套餐类型。
 取值范围：
-<li>STARTER_BUNDLE：入门型</li>
 <li>GENERAL_BUNDLE：通用型</li>
-<li>ENTERPRISE_BUNDLE：企业型</li>
 <li>STORAGE_BUNDLE：存储型</li>
+<li>ENTERPRISE_BUNDLE：企业型</li>
 <li>EXCLUSIVE_BUNDLE：专属型</li>
-<li>HK_EXCLUSIVE_BUNDLE：香港专属型 </li>
-<li>CAREFREE_BUNDLE：无忧型</li>
 <li>BEFAST_BUNDLE：蜂驰型 </li>
-<li>EXCLUSIVE_BUNDLE_02：境外专属Ⅱ型</li>
-<li>NEWCOMER_BUNDLE：新客专享</li>
-<li>GAME_PORTAL_BUNDLE：游戏专区</li>
-<li>ECONOMY_BUNDLE：经济型</li>
+<li>STARTER_BUNDLE：入门型</li>
+<li>CAREFREE_BUNDLE：无忧型</li>
 <li>RAZOR_SPEED_BUNDLE：锐驰型</li>
                      * 
                      */
@@ -521,18 +501,13 @@ namespace TencentCloud
                     /**
                      * 套餐类型。
 取值范围：
-<li>STARTER_BUNDLE：入门型</li>
 <li>GENERAL_BUNDLE：通用型</li>
-<li>ENTERPRISE_BUNDLE：企业型</li>
 <li>STORAGE_BUNDLE：存储型</li>
+<li>ENTERPRISE_BUNDLE：企业型</li>
 <li>EXCLUSIVE_BUNDLE：专属型</li>
-<li>HK_EXCLUSIVE_BUNDLE：香港专属型 </li>
-<li>CAREFREE_BUNDLE：无忧型</li>
 <li>BEFAST_BUNDLE：蜂驰型 </li>
-<li>EXCLUSIVE_BUNDLE_02：境外专属Ⅱ型</li>
-<li>NEWCOMER_BUNDLE：新客专享</li>
-<li>GAME_PORTAL_BUNDLE：游戏专区</li>
-<li>ECONOMY_BUNDLE：经济型</li>
+<li>STARTER_BUNDLE：入门型</li>
+<li>CAREFREE_BUNDLE：无忧型</li>
 <li>RAZOR_SPEED_BUNDLE：锐驰型</li>
                      */
                     std::string m_bundleType;

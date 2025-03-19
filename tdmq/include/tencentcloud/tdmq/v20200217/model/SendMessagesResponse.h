@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取消息的messageID, 是全局唯一的，用来标识消息的元数据信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MessageId 消息的messageID, 是全局唯一的，用来标识消息的元数据信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMessageId() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取返回的错误消息，如果返回为 “”，说明没有错误
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorMsg 返回的错误消息，如果返回为 “”，说明没有错误
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetErrorMsg() const;
@@ -79,14 +75,12 @@ namespace TencentCloud
 
                     /**
                      * 消息的messageID, 是全局唯一的，用来标识消息的元数据信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_messageId;
                     bool m_messageIdHasBeenSet;
 
                     /**
                      * 返回的错误消息，如果返回为 “”，说明没有错误
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errorMsg;
                     bool m_errorMsgHasBeenSet;

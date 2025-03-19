@@ -20,6 +20,7 @@ set(redis_public_header
 
 set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/UpgradeProxyVersionRequest.h
+  include/tencentcloud/redis/v20180412/model/RemoveReplicationGroupRequest.h
   include/tencentcloud/redis/v20180412/model/UpgradeSmallVersionRequest.h
   include/tencentcloud/redis/v20180412/model/ModifyInstanceParamsResponse.h
   include/tencentcloud/redis/v20180412/model/EnableReplicaReadonlyRequest.h
@@ -136,6 +137,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/DescribeInstanceMonitorTookDistRequest.h
   include/tencentcloud/redis/v20180412/model/DeleteReplicationInstanceRequest.h
   include/tencentcloud/redis/v20180412/model/SwitchAccessNewInstanceRequest.h
+  include/tencentcloud/redis/v20180412/model/RemoveReplicationGroupResponse.h
   include/tencentcloud/redis/v20180412/model/KillMasterGroupRequest.h
   include/tencentcloud/redis/v20180412/model/SwitchAccessNewInstanceResponse.h
   include/tencentcloud/redis/v20180412/model/CloneInstancesResponse.h
@@ -297,6 +299,7 @@ set(redis_public_header_model
 set(redis_src
   src/v20180412/RedisClient.cpp
   src/v20180412/model/UpgradeProxyVersionRequest.cpp
+  src/v20180412/model/RemoveReplicationGroupRequest.cpp
   src/v20180412/model/UpgradeSmallVersionRequest.cpp
   src/v20180412/model/ModifyInstanceParamsResponse.cpp
   src/v20180412/model/EnableReplicaReadonlyRequest.cpp
@@ -413,6 +416,7 @@ set(redis_src
   src/v20180412/model/DescribeInstanceMonitorTookDistRequest.cpp
   src/v20180412/model/DeleteReplicationInstanceRequest.cpp
   src/v20180412/model/SwitchAccessNewInstanceRequest.cpp
+  src/v20180412/model/RemoveReplicationGroupResponse.cpp
   src/v20180412/model/KillMasterGroupRequest.cpp
   src/v20180412/model/SwitchAccessNewInstanceResponse.cpp
   src/v20180412/model/CloneInstancesResponse.cpp

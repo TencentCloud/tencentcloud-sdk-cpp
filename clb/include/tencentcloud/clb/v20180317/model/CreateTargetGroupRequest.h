@@ -154,6 +154,27 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
+                     * 获取目标组后端转发协议。v2新版目标组该项必填。目前支持tcp、udp。
+                     * @return Protocol 目标组后端转发协议。v2新版目标组该项必填。目前支持tcp、udp。
+                     * 
+                     */
+                    std::string GetProtocol() const;
+
+                    /**
+                     * 设置目标组后端转发协议。v2新版目标组该项必填。目前支持tcp、udp。
+                     * @param _protocol 目标组后端转发协议。v2新版目标组该项必填。目前支持tcp、udp。
+                     * 
+                     */
+                    void SetProtocol(const std::string& _protocol);
+
+                    /**
+                     * 判断参数 Protocol 是否已赋值
+                     * @return Protocol 是否已赋值
+                     * 
+                     */
+                    bool ProtocolHasBeenSet() const;
+
+                    /**
                      * 获取标签。
                      * @return Tags 标签。
                      * 
@@ -247,6 +268,12 @@ namespace TencentCloud
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
+
+                    /**
+                     * 目标组后端转发协议。v2新版目标组该项必填。目前支持tcp、udp。
+                     */
+                    std::string m_protocol;
+                    bool m_protocolHasBeenSet;
 
                     /**
                      * 标签。

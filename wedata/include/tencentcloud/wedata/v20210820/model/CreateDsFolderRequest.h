@@ -105,6 +105,27 @@ namespace TencentCloud
                      */
                     bool ParentsFolderIdHasBeenSet() const;
 
+                    /**
+                     * 获取文件夹来源 template管理，orchestrationSpace 编排空间
+                     * @return FolderForm 文件夹来源 template管理，orchestrationSpace 编排空间
+                     * 
+                     */
+                    std::string GetFolderForm() const;
+
+                    /**
+                     * 设置文件夹来源 template管理，orchestrationSpace 编排空间
+                     * @param _folderForm 文件夹来源 template管理，orchestrationSpace 编排空间
+                     * 
+                     */
+                    void SetFolderForm(const std::string& _folderForm);
+
+                    /**
+                     * 判断参数 FolderForm 是否已赋值
+                     * @return FolderForm 是否已赋值
+                     * 
+                     */
+                    bool FolderFormHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +145,12 @@ namespace TencentCloud
                      */
                     std::string m_parentsFolderId;
                     bool m_parentsFolderIdHasBeenSet;
+
+                    /**
+                     * 文件夹来源 template管理，orchestrationSpace 编排空间
+                     */
+                    std::string m_folderForm;
+                    bool m_folderFormHasBeenSet;
 
                 };
             }

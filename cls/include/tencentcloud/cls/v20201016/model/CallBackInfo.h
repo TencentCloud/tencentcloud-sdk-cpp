@@ -121,13 +121,11 @@ namespace TencentCloud
 ```
 "Content-Type: application/json"
 ```
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Headers 回调时的HTTP请求头部字段。
 例如：下面请求头部字段来告知服务器请求主体的内容类型为JSON。
 ```
 "Content-Type: application/json"
 ```
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetHeaders() const;
@@ -138,13 +136,11 @@ namespace TencentCloud
 ```
 "Content-Type: application/json"
 ```
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _headers 回调时的HTTP请求头部字段。
 例如：下面请求头部字段来告知服务器请求主体的内容类型为JSON。
 ```
 "Content-Type: application/json"
 ```
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHeaders(const std::vector<std::string>& _headers);
@@ -182,7 +178,6 @@ namespace TencentCloud
 ```
 "Content-Type: application/json"
 ```
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_headers;
                     bool m_headersHasBeenSet;

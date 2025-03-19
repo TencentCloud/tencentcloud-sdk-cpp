@@ -2620,6 +2620,49 @@ CdbClient::DescribeBinlogsOutcomeCallable CdbClient::DescribeBinlogsCallable(con
     return task->get_future();
 }
 
+CdbClient::DescribeCPUExpandStrategyInfoOutcome CdbClient::DescribeCPUExpandStrategyInfo(const DescribeCPUExpandStrategyInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCPUExpandStrategyInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCPUExpandStrategyInfoResponse rsp = DescribeCPUExpandStrategyInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCPUExpandStrategyInfoOutcome(rsp);
+        else
+            return DescribeCPUExpandStrategyInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCPUExpandStrategyInfoOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::DescribeCPUExpandStrategyInfoAsync(const DescribeCPUExpandStrategyInfoRequest& request, const DescribeCPUExpandStrategyInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCPUExpandStrategyInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::DescribeCPUExpandStrategyInfoOutcomeCallable CdbClient::DescribeCPUExpandStrategyInfoCallable(const DescribeCPUExpandStrategyInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCPUExpandStrategyInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCPUExpandStrategyInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::DescribeCdbProxyInfoOutcome CdbClient::DescribeCdbProxyInfo(const DescribeCdbProxyInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCdbProxyInfo");

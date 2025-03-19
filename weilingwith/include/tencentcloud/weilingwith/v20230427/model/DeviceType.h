@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备类型编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Code 设备类型编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCode() const;
 
                     /**
                      * 设置设备类型编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _code 设备类型编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCode(const std::string& _code);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备类型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 设备类型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置设备类型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 设备类型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取父设备类型编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParentCode 父设备类型编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetParentCode() const;
 
                     /**
                      * 设置父设备类型编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _parentCode 父设备类型编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetParentCode(const std::string& _parentCode);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取父设备类型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParentName 父设备类型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetParentName() const;
 
                     /**
                      * 设置父设备类型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _parentName 父设备类型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetParentName(const std::string& _parentName);
@@ -149,10 +133,8 @@ namespace TencentCloud
                     /**
                      * 获取是否子系统，1是
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsSubsystem 是否子系统，1是
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIsSubsystem() const;
@@ -160,10 +142,8 @@ namespace TencentCloud
                     /**
                      * 设置是否子系统，1是
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isSubsystem 是否子系统，1是
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsSubsystem(const int64_t& _isSubsystem);
@@ -179,28 +159,24 @@ namespace TencentCloud
 
                     /**
                      * 设备类型编码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_code;
                     bool m_codeHasBeenSet;
 
                     /**
                      * 设备类型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 父设备类型编码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_parentCode;
                     bool m_parentCodeHasBeenSet;
 
                     /**
                      * 父设备类型名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_parentName;
                     bool m_parentNameHasBeenSet;
@@ -208,7 +184,6 @@ namespace TencentCloud
                     /**
                      * 是否子系统，1是
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isSubsystem;
                     bool m_isSubsystemHasBeenSet;

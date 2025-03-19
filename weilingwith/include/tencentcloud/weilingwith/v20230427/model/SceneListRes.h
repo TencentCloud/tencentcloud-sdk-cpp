@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取场景列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SceneList 场景列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SceneInfo> GetSceneList() const;
 
                     /**
                      * 设置场景列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sceneList 场景列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSceneList(const std::vector<SceneInfo>& _sceneList);
@@ -76,7 +72,6 @@ namespace TencentCloud
 
                     /**
                      * 场景列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SceneInfo> m_sceneList;
                     bool m_sceneListHasBeenSet;

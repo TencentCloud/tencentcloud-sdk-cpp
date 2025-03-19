@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取建筑id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BuildingId 建筑id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBuildingId() const;
 
                     /**
                      * 设置建筑id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _buildingId 建筑id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBuildingId(const std::string& _buildingId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取建筑名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BuildingName 建筑名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBuildingName() const;
 
                     /**
                      * 设置建筑名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _buildingName 建筑名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBuildingName(const std::string& _buildingName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取空间编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SpaceCode 空间编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSpaceCode() const;
 
                     /**
                      * 设置空间编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _spaceCode 空间编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSpaceCode(const std::string& _spaceCode);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取经度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Longitude 经度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetLongitude() const;
 
                     /**
                      * 设置经度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _longitude 经度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLongitude(const double& _longitude);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取纬度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Latitude 纬度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetLatitude() const;
 
                     /**
                      * 设置纬度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _latitude 纬度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLatitude(const double& _latitude);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Address 地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAddress() const;
 
                     /**
                      * 设置地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _address 地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAddress(const std::string& _address);
@@ -200,42 +176,36 @@ namespace TencentCloud
 
                     /**
                      * 建筑id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_buildingId;
                     bool m_buildingIdHasBeenSet;
 
                     /**
                      * 建筑名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_buildingName;
                     bool m_buildingNameHasBeenSet;
 
                     /**
                      * 空间编码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_spaceCode;
                     bool m_spaceCodeHasBeenSet;
 
                     /**
                      * 经度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_longitude;
                     bool m_longitudeHasBeenSet;
 
                     /**
                      * 纬度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_latitude;
                     bool m_latitudeHasBeenSet;
 
                     /**
                      * 地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_address;
                     bool m_addressHasBeenSet;

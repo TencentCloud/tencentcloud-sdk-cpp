@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserId 用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userId 用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserId(const std::string& _userId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RealName 用户名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRealName() const;
 
                     /**
                      * 设置用户名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _realName 用户名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRealName(const std::string& _realName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户类型，1-超级管理员；2-1号管理员；3-普通管理员；99-普通用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserType 用户类型，1-超级管理员；2-1号管理员；3-普通管理员；99-普通用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserType() const;
 
                     /**
                      * 设置用户类型，1-超级管理员；2-1号管理员；3-普通管理员；99-普通用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userType 用户类型，1-超级管理员；2-1号管理员；3-普通管理员；99-普通用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserType(const std::string& _userType);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取所属租户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TenantId 所属租户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTenantId() const;
 
                     /**
                      * 设置所属租户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tenantId 所属租户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTenantId(const std::string& _tenantId);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取邮箱
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Email 邮箱
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEmail() const;
 
                     /**
                      * 设置邮箱
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _email 邮箱
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEmail(const std::string& _email);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取电话
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Phone 电话
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPhone() const;
 
                     /**
                      * 设置电话
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _phone 电话
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPhone(const std::string& _phone);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 用户状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置用户状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 用户状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateAt 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCreateAt() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createAt 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateAt(const int64_t& _createAt);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部门ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DepartmentId 部门ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDepartmentId() const;
 
                     /**
                      * 设置部门ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _departmentId 部门ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDepartmentId(const std::string& _departmentId);
@@ -273,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部门名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DepartmentName 部门名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDepartmentName() const;
 
                     /**
                      * 设置部门名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _departmentName 部门名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDepartmentName(const std::string& _departmentName);
@@ -298,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否关联权限
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LinkFilter 是否关联权限
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLinkFilter() const;
 
                     /**
                      * 设置是否关联权限
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _linkFilter 是否关联权限
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLinkFilter(const int64_t& _linkFilter);
@@ -325,77 +281,66 @@ namespace TencentCloud
 
                     /**
                      * 用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
 
                     /**
                      * 用户名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_realName;
                     bool m_realNameHasBeenSet;
 
                     /**
                      * 用户类型，1-超级管理员；2-1号管理员；3-普通管理员；99-普通用户
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userType;
                     bool m_userTypeHasBeenSet;
 
                     /**
                      * 所属租户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tenantId;
                     bool m_tenantIdHasBeenSet;
 
                     /**
                      * 邮箱
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_email;
                     bool m_emailHasBeenSet;
 
                     /**
                      * 电话
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_phone;
                     bool m_phoneHasBeenSet;
 
                     /**
                      * 用户状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_createAt;
                     bool m_createAtHasBeenSet;
 
                     /**
                      * 部门ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_departmentId;
                     bool m_departmentIdHasBeenSet;
 
                     /**
                      * 部门名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_departmentName;
                     bool m_departmentNameHasBeenSet;
 
                     /**
                      * 是否关联权限
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_linkFilter;
                     bool m_linkFilterHasBeenSet;

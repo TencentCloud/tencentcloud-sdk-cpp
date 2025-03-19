@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取需要绑定的命名空间Id，不重复且存在资源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnvironmentId 需要绑定的命名空间Id，不重复且存在资源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEnvironmentId() const;
 
                     /**
                      * 设置需要绑定的命名空间Id，不重复且存在资源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _environmentId 需要绑定的命名空间Id，不重复且存在资源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnvironmentId(const std::string& _environmentId);
@@ -74,10 +70,8 @@ namespace TencentCloud
                     /**
                      * 获取名字空间需要绑定的权限，枚举为 "consume" "produce" 组合，但是不为空
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Permissions 名字空间需要绑定的权限，枚举为 "consume" "produce" 组合，但是不为空
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetPermissions() const;
@@ -85,10 +79,8 @@ namespace TencentCloud
                     /**
                      * 设置名字空间需要绑定的权限，枚举为 "consume" "produce" 组合，但是不为空
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _permissions 名字空间需要绑定的权限，枚举为 "consume" "produce" 组合，但是不为空
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPermissions(const std::vector<std::string>& _permissions);
@@ -104,7 +96,6 @@ namespace TencentCloud
 
                     /**
                      * 需要绑定的命名空间Id，不重复且存在资源
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_environmentId;
                     bool m_environmentIdHasBeenSet;
@@ -112,7 +103,6 @@ namespace TencentCloud
                     /**
                      * 名字空间需要绑定的权限，枚举为 "consume" "produce" 组合，但是不为空
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_permissions;
                     bool m_permissionsHasBeenSet;

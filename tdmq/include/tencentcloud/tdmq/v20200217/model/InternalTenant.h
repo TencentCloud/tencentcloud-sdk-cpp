@@ -426,18 +426,14 @@ namespace TencentCloud
 
                     /**
                      * 获取命名空间最大消费带宽，byte为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxDispatchRateInBytes 命名空间最大消费带宽，byte为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMaxDispatchRateInBytes() const;
 
                     /**
                      * 设置命名空间最大消费带宽，byte为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxDispatchRateInBytes 命名空间最大消费带宽，byte为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxDispatchRateInBytes(const uint64_t& _maxDispatchRateInBytes);
@@ -451,18 +447,14 @@ namespace TencentCloud
 
                     /**
                      * 获取命名空间最大生产带宽，byte为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxPublishRateInBytes 命名空间最大生产带宽，byte为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMaxPublishRateInBytes() const;
 
                     /**
                      * 设置命名空间最大生产带宽，byte为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxPublishRateInBytes 命名空间最大生产带宽，byte为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxPublishRateInBytes(const uint64_t& _maxPublishRateInBytes);
@@ -476,18 +468,14 @@ namespace TencentCloud
 
                     /**
                      * 获取消息最大保留空间，MB为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxRetentionSizeInMB 消息最大保留空间，MB为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMaxRetentionSizeInMB() const;
 
                     /**
                      * 设置消息最大保留空间，MB为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxRetentionSizeInMB 消息最大保留空间，MB为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxRetentionSizeInMB(const uint64_t& _maxRetentionSizeInMB);
@@ -501,18 +489,14 @@ namespace TencentCloud
 
                     /**
                      * 获取public Access Enabled
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicAccessEnabled public Access Enabled
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetPublicAccessEnabled() const;
 
                     /**
                      * 设置public Access Enabled
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _publicAccessEnabled public Access Enabled
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPublicAccessEnabled(const bool& _publicAccessEnabled);
@@ -636,28 +620,24 @@ namespace TencentCloud
 
                     /**
                      * 命名空间最大消费带宽，byte为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_maxDispatchRateInBytes;
                     bool m_maxDispatchRateInBytesHasBeenSet;
 
                     /**
                      * 命名空间最大生产带宽，byte为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_maxPublishRateInBytes;
                     bool m_maxPublishRateInBytesHasBeenSet;
 
                     /**
                      * 消息最大保留空间，MB为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_maxRetentionSizeInMB;
                     bool m_maxRetentionSizeInMBHasBeenSet;
 
                     /**
                      * public Access Enabled
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_publicAccessEnabled;
                     bool m_publicAccessEnabledHasBeenSet;

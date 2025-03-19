@@ -70,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取投递失败原因。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrMsg 投递失败原因。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetErrMsg() const;
 
                     /**
                      * 设置投递失败原因。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _errMsg 投递失败原因。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetErrMsg(const std::string& _errMsg);
@@ -103,7 +99,6 @@ namespace TencentCloud
 
                     /**
                      * 投递失败原因。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errMsg;
                     bool m_errMsgHasBeenSet;

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetType() const;
 
                     /**
                      * 设置类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const int64_t& _type);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetData() const;
 
                     /**
                      * 设置数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _data 数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetData(const std::string& _data);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_data;
                     bool m_dataHasBeenSet;

@@ -132,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志配置拓展信息， 一般用于存储额外的日志投递配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Extend 日志配置拓展信息， 一般用于存储额外的日志投递配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExtend() const;
 
                     /**
                      * 设置日志配置拓展信息， 一般用于存储额外的日志投递配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _extend 日志配置拓展信息， 一般用于存储额外的日志投递配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExtend(const std::string& _extend);
@@ -157,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志类型，支持枚举：CDS-AUDIT、CDS-RISK、CDB-AUDIT、TDSQL-C-AUDIT、MongoDB-AUDIT、MongoDB-SlowLog、MongoDB-ErrorLog、TDMYSQL-SLOW、DCDB-AUDIT、DCDB-SLOW、DCDB-ERROR、MariaDB-AUDIT、MariaDB-SLOW、MariaDB-ERROR、PostgreSQL-SLOW、PostgreSQL-ERROR、PostgreSQL-AUDIT、BH-FILELOG、BH-COMMANDLOG、APIS-ACCESS
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogType 日志类型，支持枚举：CDS-AUDIT、CDS-RISK、CDB-AUDIT、TDSQL-C-AUDIT、MongoDB-AUDIT、MongoDB-SlowLog、MongoDB-ErrorLog、TDMYSQL-SLOW、DCDB-AUDIT、DCDB-SLOW、DCDB-ERROR、MariaDB-AUDIT、MariaDB-SLOW、MariaDB-ERROR、PostgreSQL-SLOW、PostgreSQL-ERROR、PostgreSQL-AUDIT、BH-FILELOG、BH-COMMANDLOG、APIS-ACCESS
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLogType() const;
 
                     /**
                      * 设置日志类型，支持枚举：CDS-AUDIT、CDS-RISK、CDB-AUDIT、TDSQL-C-AUDIT、MongoDB-AUDIT、MongoDB-SlowLog、MongoDB-ErrorLog、TDMYSQL-SLOW、DCDB-AUDIT、DCDB-SLOW、DCDB-ERROR、MariaDB-AUDIT、MariaDB-SLOW、MariaDB-ERROR、PostgreSQL-SLOW、PostgreSQL-ERROR、PostgreSQL-AUDIT、BH-FILELOG、BH-COMMANDLOG、APIS-ACCESS
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logType 日志类型，支持枚举：CDS-AUDIT、CDS-RISK、CDB-AUDIT、TDSQL-C-AUDIT、MongoDB-AUDIT、MongoDB-SlowLog、MongoDB-ErrorLog、TDMYSQL-SLOW、DCDB-AUDIT、DCDB-SLOW、DCDB-ERROR、MariaDB-AUDIT、MariaDB-SLOW、MariaDB-ERROR、PostgreSQL-SLOW、PostgreSQL-ERROR、PostgreSQL-AUDIT、BH-FILELOG、BH-COMMANDLOG、APIS-ACCESS
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogType(const std::string& _logType);
@@ -179,6 +171,27 @@ namespace TencentCloud
                      * 
                      */
                     bool LogTypeHasBeenSet() const;
+
+                    /**
+                     * 获取任务状态， 0创建中 1创建完成 2 删除中 
+                     * @return Status 任务状态， 0创建中 1创建完成 2 删除中 
+                     * 
+                     */
+                    int64_t GetStatus() const;
+
+                    /**
+                     * 设置任务状态， 0创建中 1创建完成 2 删除中 
+                     * @param _status 任务状态， 0创建中 1创建完成 2 删除中 
+                     * 
+                     */
+                    void SetStatus(const int64_t& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     * 
+                     */
+                    bool StatusHasBeenSet() const;
 
                 private:
 
@@ -208,17 +221,21 @@ namespace TencentCloud
 
                     /**
                      * 日志配置拓展信息， 一般用于存储额外的日志投递配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_extend;
                     bool m_extendHasBeenSet;
 
                     /**
                      * 日志类型，支持枚举：CDS-AUDIT、CDS-RISK、CDB-AUDIT、TDSQL-C-AUDIT、MongoDB-AUDIT、MongoDB-SlowLog、MongoDB-ErrorLog、TDMYSQL-SLOW、DCDB-AUDIT、DCDB-SLOW、DCDB-ERROR、MariaDB-AUDIT、MariaDB-SLOW、MariaDB-ERROR、PostgreSQL-SLOW、PostgreSQL-ERROR、PostgreSQL-AUDIT、BH-FILELOG、BH-COMMANDLOG、APIS-ACCESS
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logType;
                     bool m_logTypeHasBeenSet;
+
+                    /**
+                     * 任务状态， 0创建中 1创建完成 2 删除中 
+                     */
+                    int64_t m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }

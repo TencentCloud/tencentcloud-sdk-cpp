@@ -223,18 +223,14 @@ GZJGZY: 公证机构执业证。
 
                     /**
                      * 获取原始照片地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OriginImgUrl 原始照片地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOriginImgUrl() const;
 
                     /**
                      * 设置原始照片地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _originImgUrl 原始照片地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOriginImgUrl(const std::string& _originImgUrl);
@@ -248,18 +244,14 @@ GZJGZY: 公证机构执业证。
 
                     /**
                      * 获取联系人证件号码。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegistrantCertificateCode 联系人证件号码。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegistrantCertificateCode() const;
 
                     /**
                      * 设置联系人证件号码。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _registrantCertificateCode 联系人证件号码。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegistrantCertificateCode(const std::string& _registrantCertificateCode);
@@ -301,7 +293,6 @@ GAJZZ: 中国港澳居住证。
 TWJZZ: 中国台湾居住证。
 QTTYDM: 其他-统一社会信用代码证书。
 GZJGZY: 公证机构执业证。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegistrantCertificateType 联系人证件类型。
 SFZ: 身份证。
 HZ: 护照。
@@ -331,7 +322,6 @@ GAJZZ: 中国港澳居住证。
 TWJZZ: 中国台湾居住证。
 QTTYDM: 其他-统一社会信用代码证书。
 GZJGZY: 公证机构执业证。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegistrantCertificateType() const;
@@ -366,7 +356,6 @@ GAJZZ: 中国港澳居住证。
 TWJZZ: 中国台湾居住证。
 QTTYDM: 其他-统一社会信用代码证书。
 GZJGZY: 公证机构执业证。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _registrantCertificateType 联系人证件类型。
 SFZ: 身份证。
 HZ: 护照。
@@ -396,7 +385,6 @@ GAJZZ: 中国港澳居住证。
 TWJZZ: 中国台湾居住证。
 QTTYDM: 其他-统一社会信用代码证书。
 GZJGZY: 公证机构执业证。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegistrantCertificateType(const std::string& _registrantCertificateType);
@@ -410,18 +398,14 @@ GZJGZY: 公证机构执业证。
 
                     /**
                      * 获取联系人证件照片地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegistrantImgUrl 联系人证件照片地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegistrantImgUrl() const;
 
                     /**
                      * 设置联系人证件照片地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _registrantImgUrl 联系人证件照片地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegistrantImgUrl(const std::string& _registrantImgUrl);
@@ -483,14 +467,12 @@ GZJGZY: 公证机构执业证。
 
                     /**
                      * 原始照片地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_originImgUrl;
                     bool m_originImgUrlHasBeenSet;
 
                     /**
                      * 联系人证件号码。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_registrantCertificateCode;
                     bool m_registrantCertificateCodeHasBeenSet;
@@ -525,14 +507,12 @@ GAJZZ: 中国港澳居住证。
 TWJZZ: 中国台湾居住证。
 QTTYDM: 其他-统一社会信用代码证书。
 GZJGZY: 公证机构执业证。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_registrantCertificateType;
                     bool m_registrantCertificateTypeHasBeenSet;
 
                     /**
                      * 联系人证件照片地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_registrantImgUrl;
                     bool m_registrantImgUrlHasBeenSet;

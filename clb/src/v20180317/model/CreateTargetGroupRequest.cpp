@@ -28,6 +28,7 @@ CreateTargetGroupRequest::CreateTargetGroupRequest() :
     m_portHasBeenSet(false),
     m_targetGroupInstancesHasBeenSet(false),
     m_typeHasBeenSet(false),
+    m_protocolHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_weightHasBeenSet(false)
 {
@@ -85,6 +86,14 @@ string CreateTargetGroupRequest::ToJsonString() const
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_protocolHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Protocol";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tagsHasBeenSet)
@@ -196,6 +205,22 @@ void CreateTargetGroupRequest::SetType(const string& _type)
 bool CreateTargetGroupRequest::TypeHasBeenSet() const
 {
     return m_typeHasBeenSet;
+}
+
+string CreateTargetGroupRequest::GetProtocol() const
+{
+    return m_protocol;
+}
+
+void CreateTargetGroupRequest::SetProtocol(const string& _protocol)
+{
+    m_protocol = _protocol;
+    m_protocolHasBeenSet = true;
+}
+
+bool CreateTargetGroupRequest::ProtocolHasBeenSet() const
+{
+    return m_protocolHasBeenSet;
 }
 
 vector<TagInfo> CreateTargetGroupRequest::GetTags() const

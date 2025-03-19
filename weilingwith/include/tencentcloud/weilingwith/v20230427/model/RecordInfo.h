@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取本录像片段开始时间（s）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 本录像片段开始时间（s）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStartTime() const;
 
                     /**
                      * 设置本录像片段开始时间（s）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _startTime 本录像片段开始时间（s）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStartTime(const int64_t& _startTime);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取本录像片段结束时间（s）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 本录像片段结束时间（s）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEndTime() const;
 
                     /**
                      * 设置本录像片段结束时间（s）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endTime 本录像片段结束时间（s）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndTime(const int64_t& _endTime);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取录像片段文件url
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VideoURL 录像片段文件url
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVideoURL() const;
 
                     /**
                      * 设置录像片段文件url
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _videoURL 录像片段文件url
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVideoURL(const std::string& _videoURL);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 本录像片段开始时间（s）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
                      * 本录像片段结束时间（s）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
                      * 录像片段文件url
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_videoURL;
                     bool m_videoURLHasBeenSet;

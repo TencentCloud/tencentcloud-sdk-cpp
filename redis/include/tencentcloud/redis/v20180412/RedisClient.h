@@ -215,6 +215,8 @@
 #include <tencentcloud/redis/v20180412/model/OpenSSLResponse.h>
 #include <tencentcloud/redis/v20180412/model/ReleaseWanAddressRequest.h>
 #include <tencentcloud/redis/v20180412/model/ReleaseWanAddressResponse.h>
+#include <tencentcloud/redis/v20180412/model/RemoveReplicationGroupRequest.h>
+#include <tencentcloud/redis/v20180412/model/RemoveReplicationGroupResponse.h>
 #include <tencentcloud/redis/v20180412/model/RemoveReplicationInstanceRequest.h>
 #include <tencentcloud/redis/v20180412/model/RemoveReplicationInstanceResponse.h>
 #include <tencentcloud/redis/v20180412/model/RenewInstanceRequest.h>
@@ -543,6 +545,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ReleaseWanAddressResponse> ReleaseWanAddressOutcome;
                 typedef std::future<ReleaseWanAddressOutcome> ReleaseWanAddressOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::ReleaseWanAddressRequest&, ReleaseWanAddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseWanAddressAsyncHandler;
+                typedef Outcome<Core::Error, Model::RemoveReplicationGroupResponse> RemoveReplicationGroupOutcome;
+                typedef std::future<RemoveReplicationGroupOutcome> RemoveReplicationGroupOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::RemoveReplicationGroupRequest&, RemoveReplicationGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveReplicationGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::RemoveReplicationInstanceResponse> RemoveReplicationInstanceOutcome;
                 typedef std::future<RemoveReplicationInstanceOutcome> RemoveReplicationInstanceOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::RemoveReplicationInstanceRequest&, RemoveReplicationInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveReplicationInstanceAsyncHandler;
@@ -1450,6 +1455,15 @@ namespace TencentCloud
                 ReleaseWanAddressOutcome ReleaseWanAddress(const Model::ReleaseWanAddressRequest &request);
                 void ReleaseWanAddressAsync(const Model::ReleaseWanAddressRequest& request, const ReleaseWanAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ReleaseWanAddressOutcomeCallable ReleaseWanAddressCallable(const Model::ReleaseWanAddressRequest& request);
+
+                /**
+                 *删除复制组
+                 * @param req RemoveReplicationGroupRequest
+                 * @return RemoveReplicationGroupOutcome
+                 */
+                RemoveReplicationGroupOutcome RemoveReplicationGroup(const Model::RemoveReplicationGroupRequest &request);
+                void RemoveReplicationGroupAsync(const Model::RemoveReplicationGroupRequest& request, const RemoveReplicationGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RemoveReplicationGroupOutcomeCallable RemoveReplicationGroupCallable(const Model::RemoveReplicationGroupRequest& request);
 
                 /**
                  *本接口（RemoveReplicationInstance）用于移除复制组中的实例。

@@ -211,6 +211,8 @@
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusInstancesResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusInstancesOverviewRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusInstancesOverviewResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribePrometheusIntegrationMetricsRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribePrometheusIntegrationMetricsResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusRecordRulesRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusRecordRulesResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusRegionsRequest.h>
@@ -637,6 +639,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribePrometheusInstancesOverviewResponse> DescribePrometheusInstancesOverviewOutcome;
                 typedef std::future<DescribePrometheusInstancesOverviewOutcome> DescribePrometheusInstancesOverviewOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribePrometheusInstancesOverviewRequest&, DescribePrometheusInstancesOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrometheusInstancesOverviewAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePrometheusIntegrationMetricsResponse> DescribePrometheusIntegrationMetricsOutcome;
+                typedef std::future<DescribePrometheusIntegrationMetricsOutcome> DescribePrometheusIntegrationMetricsOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribePrometheusIntegrationMetricsRequest&, DescribePrometheusIntegrationMetricsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrometheusIntegrationMetricsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePrometheusRecordRulesResponse> DescribePrometheusRecordRulesOutcome;
                 typedef std::future<DescribePrometheusRecordRulesOutcome> DescribePrometheusRecordRulesOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribePrometheusRecordRulesRequest&, DescribePrometheusRecordRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrometheusRecordRulesAsyncHandler;
@@ -1695,6 +1700,15 @@ namespace TencentCloud
                 DescribePrometheusInstancesOverviewOutcome DescribePrometheusInstancesOverview(const Model::DescribePrometheusInstancesOverviewRequest &request);
                 void DescribePrometheusInstancesOverviewAsync(const Model::DescribePrometheusInstancesOverviewRequest& request, const DescribePrometheusInstancesOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribePrometheusInstancesOverviewOutcomeCallable DescribePrometheusInstancesOverviewCallable(const Model::DescribePrometheusInstancesOverviewRequest& request);
+
+                /**
+                 *获取prometheus集成指标
+                 * @param req DescribePrometheusIntegrationMetricsRequest
+                 * @return DescribePrometheusIntegrationMetricsOutcome
+                 */
+                DescribePrometheusIntegrationMetricsOutcome DescribePrometheusIntegrationMetrics(const Model::DescribePrometheusIntegrationMetricsRequest &request);
+                void DescribePrometheusIntegrationMetricsAsync(const Model::DescribePrometheusIntegrationMetricsRequest& request, const DescribePrometheusIntegrationMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePrometheusIntegrationMetricsOutcomeCallable DescribePrometheusIntegrationMetricsCallable(const Model::DescribePrometheusIntegrationMetricsRequest& request);
 
                 /**
                  *获取聚合规则列表，包含关联集群内crd资源创建的record rule

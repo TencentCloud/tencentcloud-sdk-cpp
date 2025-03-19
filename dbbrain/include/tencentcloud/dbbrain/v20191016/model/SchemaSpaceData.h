@@ -195,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取库中所有表对应的独立物理文件大小加和（MB）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PhysicalFileSize 库中所有表对应的独立物理文件大小加和（MB）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetPhysicalFileSize() const;
 
                     /**
                      * 设置库中所有表对应的独立物理文件大小加和（MB）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _physicalFileSize 库中所有表对应的独立物理文件大小加和（MB）。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPhysicalFileSize(const double& _physicalFileSize);
@@ -264,7 +260,6 @@ namespace TencentCloud
 
                     /**
                      * 库中所有表对应的独立物理文件大小加和（MB）。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_physicalFileSize;
                     bool m_physicalFileSizeHasBeenSet;

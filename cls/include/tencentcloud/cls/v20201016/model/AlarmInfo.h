@@ -310,18 +310,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自定义回调模板
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CallBack 自定义回调模板
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CallBackInfo GetCallBack() const;
 
                     /**
                      * 设置自定义回调模板
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _callBack 自定义回调模板
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCallBack(const CallBackInfo& _callBack);
@@ -335,18 +331,14 @@ namespace TencentCloud
 
                     /**
                      * 获取多维分析设置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Analysis 多维分析设置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AnalysisDimensional> GetAnalysis() const;
 
                     /**
                      * 设置多维分析设置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _analysis 多维分析设置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAnalysis(const std::vector<AnalysisDimensional>& _analysis);
@@ -359,19 +351,15 @@ namespace TencentCloud
                     bool AnalysisHasBeenSet() const;
 
                     /**
-                     * 获取分组触发状态。1：开启，0：关闭（默认）
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GroupTriggerStatus 分组触发状态。1：开启，0：关闭（默认）
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取分组触发状态。true：开启，false：关闭（默认）
+                     * @return GroupTriggerStatus 分组触发状态。true：开启，false：关闭（默认）
                      * 
                      */
                     bool GetGroupTriggerStatus() const;
 
                     /**
-                     * 设置分组触发状态。1：开启，0：关闭（默认）
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _groupTriggerStatus 分组触发状态。1：开启，0：关闭（默认）
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置分组触发状态。true：开启，false：关闭（默认）
+                     * @param _groupTriggerStatus 分组触发状态。true：开启，false：关闭（默认）
                      * 
                      */
                     void SetGroupTriggerStatus(const bool& _groupTriggerStatus);
@@ -385,18 +373,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分组触发条件。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupTriggerCondition 分组触发条件。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetGroupTriggerCondition() const;
 
                     /**
                      * 设置分组触发条件。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupTriggerCondition 分组触发条件。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupTriggerCondition(const std::vector<std::string>& _groupTriggerCondition);
@@ -410,18 +394,14 @@ namespace TencentCloud
 
                     /**
                      * 获取监控对象类型。0:执行语句共用监控对象;1:每个执行语句单独选择监控对象。 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MonitorObjectType 监控对象类型。0:执行语句共用监控对象;1:每个执行语句单独选择监控对象。 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMonitorObjectType() const;
 
                     /**
                      * 设置监控对象类型。0:执行语句共用监控对象;1:每个执行语句单独选择监控对象。 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _monitorObjectType 监控对象类型。0:执行语句共用监控对象;1:每个执行语句单独选择监控对象。 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMonitorObjectType(const uint64_t& _monitorObjectType);
@@ -435,18 +415,14 @@ namespace TencentCloud
 
                     /**
                      * 获取告警级别。0:警告(Warn);1:提醒(Info);2:紧急 (Critical)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlarmLevel 告警级别。0:警告(Warn);1:提醒(Info);2:紧急 (Critical)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetAlarmLevel() const;
 
                     /**
                      * 设置告警级别。0:警告(Warn);1:提醒(Info);2:紧急 (Critical)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _alarmLevel 告警级别。0:警告(Warn);1:提醒(Info);2:紧急 (Critical)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAlarmLevel(const uint64_t& _alarmLevel);
@@ -460,18 +436,14 @@ namespace TencentCloud
 
                     /**
                      * 获取告警附加分类字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Classifications 告警附加分类字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AlarmClassification> GetClassifications() const;
 
                     /**
                      * 设置告警附加分类字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _classifications 告警附加分类字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClassifications(const std::vector<AlarmClassification>& _classifications);
@@ -486,10 +458,8 @@ namespace TencentCloud
                     /**
                      * 获取多触发条件。与
 Condition互斥。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MultiConditions 多触发条件。与
 Condition互斥。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<MultiCondition> GetMultiConditions() const;
@@ -497,10 +467,8 @@ Condition互斥。
                     /**
                      * 设置多触发条件。与
 Condition互斥。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _multiConditions 多触发条件。与
 Condition互斥。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMultiConditions(const std::vector<MultiCondition>& _multiConditions);
@@ -589,49 +557,42 @@ Condition互斥。
 
                     /**
                      * 自定义回调模板
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CallBackInfo m_callBack;
                     bool m_callBackHasBeenSet;
 
                     /**
                      * 多维分析设置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AnalysisDimensional> m_analysis;
                     bool m_analysisHasBeenSet;
 
                     /**
-                     * 分组触发状态。1：开启，0：关闭（默认）
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 分组触发状态。true：开启，false：关闭（默认）
                      */
                     bool m_groupTriggerStatus;
                     bool m_groupTriggerStatusHasBeenSet;
 
                     /**
                      * 分组触发条件。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_groupTriggerCondition;
                     bool m_groupTriggerConditionHasBeenSet;
 
                     /**
                      * 监控对象类型。0:执行语句共用监控对象;1:每个执行语句单独选择监控对象。 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_monitorObjectType;
                     bool m_monitorObjectTypeHasBeenSet;
 
                     /**
                      * 告警级别。0:警告(Warn);1:提醒(Info);2:紧急 (Critical)。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_alarmLevel;
                     bool m_alarmLevelHasBeenSet;
 
                     /**
                      * 告警附加分类字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AlarmClassification> m_classifications;
                     bool m_classificationsHasBeenSet;
@@ -639,7 +600,6 @@ Condition互斥。
                     /**
                      * 多触发条件。与
 Condition互斥。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MultiCondition> m_multiConditions;
                     bool m_multiConditionsHasBeenSet;

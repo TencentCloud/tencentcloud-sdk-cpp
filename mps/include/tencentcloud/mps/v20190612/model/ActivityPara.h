@@ -34,6 +34,7 @@
 #include <tencentcloud/mps/v20190612/model/AiAnalysisTaskInput.h>
 #include <tencentcloud/mps/v20190612/model/AiRecognitionTaskInput.h>
 #include <tencentcloud/mps/v20190612/model/AiQualityControlTaskInput.h>
+#include <tencentcloud/mps/v20190612/model/SmartSubtitlesTaskInput.h>
 
 
 namespace TencentCloud
@@ -306,6 +307,31 @@ namespace TencentCloud
                      */
                     bool QualityControlTaskHasBeenSet() const;
 
+                    /**
+                     * 获取智能字幕任务
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SmartSubtitlesTask 智能字幕任务
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    SmartSubtitlesTaskInput GetSmartSubtitlesTask() const;
+
+                    /**
+                     * 设置智能字幕任务
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _smartSubtitlesTask 智能字幕任务
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSmartSubtitlesTask(const SmartSubtitlesTaskInput& _smartSubtitlesTask);
+
+                    /**
+                     * 判断参数 SmartSubtitlesTask 是否已赋值
+                     * @return SmartSubtitlesTask 是否已赋值
+                     * 
+                     */
+                    bool SmartSubtitlesTaskHasBeenSet() const;
+
                 private:
 
                     /**
@@ -377,6 +403,13 @@ namespace TencentCloud
                      */
                     AiQualityControlTaskInput m_qualityControlTask;
                     bool m_qualityControlTaskHasBeenSet;
+
+                    /**
+                     * 智能字幕任务
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SmartSubtitlesTaskInput m_smartSubtitlesTask;
+                    bool m_smartSubtitlesTaskHasBeenSet;
 
                 };
             }

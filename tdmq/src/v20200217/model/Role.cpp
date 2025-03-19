@@ -25,7 +25,8 @@ Role::Role() :
     m_tokenHasBeenSet(false),
     m_remarkHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_permTypeHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome Role::Deserialize(const rapidjson::Value &value)
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("PermType") && !value["PermType"].IsNull())
+    {
+        if (!value["PermType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Role.PermType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_permType = string(value["PermType"].GetString());
+        m_permTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void Role::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_permTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PermType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_permType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void Role::SetUpdateTime(const string& _updateTime)
 bool Role::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+string Role::GetPermType() const
+{
+    return m_permType;
+}
+
+void Role::SetPermType(const string& _permType)
+{
+    m_permType = _permType;
+    m_permTypeHasBeenSet = true;
+}
+
+bool Role::PermTypeHasBeenSet() const
+{
+    return m_permTypeHasBeenSet;
 }
 

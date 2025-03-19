@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备id列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceIds 设备id列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetDeviceIds() const;
 
                     /**
                      * 设置设备id列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceIds 设备id列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceIds(const std::vector<std::string>& _deviceIds);
@@ -75,7 +71,6 @@ namespace TencentCloud
 
                     /**
                      * 设备id列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_deviceIds;
                     bool m_deviceIdsHasBeenSet;

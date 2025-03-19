@@ -31,7 +31,8 @@ DescribeTokenUsageResponse::DescribeTokenUsageResponse() :
     m_searchUsageHasBeenSet(false),
     m_pageUsageHasBeenSet(false),
     m_splitTokenUsageHasBeenSet(false),
-    m_ragSearchUsageHasBeenSet(false)
+    m_ragSearchUsageHasBeenSet(false),
+    m_internetSearchUsageHasBeenSet(false)
 {
 }
 
@@ -149,6 +150,16 @@ CoreInternalOutcome DescribeTokenUsageResponse::Deserialize(const string &payloa
         m_ragSearchUsageHasBeenSet = true;
     }
 
+    if (rsp.HasMember("InternetSearchUsage") && !rsp["InternetSearchUsage"].IsNull())
+    {
+        if (!rsp["InternetSearchUsage"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `InternetSearchUsage` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_internetSearchUsage = rsp["InternetSearchUsage"].GetDouble();
+        m_internetSearchUsageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -221,6 +232,14 @@ string DescribeTokenUsageResponse::ToJsonString() const
         string key = "RagSearchUsage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ragSearchUsage, allocator);
+    }
+
+    if (m_internetSearchUsageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InternetSearchUsage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_internetSearchUsage, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -313,6 +332,16 @@ double DescribeTokenUsageResponse::GetRagSearchUsage() const
 bool DescribeTokenUsageResponse::RagSearchUsageHasBeenSet() const
 {
     return m_ragSearchUsageHasBeenSet;
+}
+
+double DescribeTokenUsageResponse::GetInternetSearchUsage() const
+{
+    return m_internetSearchUsage;
+}
+
+bool DescribeTokenUsageResponse::InternetSearchUsageHasBeenSet() const
+{
+    return m_internetSearchUsageHasBeenSet;
 }
 
 

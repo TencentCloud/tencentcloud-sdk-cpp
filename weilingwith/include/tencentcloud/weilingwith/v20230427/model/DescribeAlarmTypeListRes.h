@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取告警类型查询列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlarmTypeSet 告警类型查询列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AlarmTypeDetailInfo> GetAlarmTypeSet() const;
 
                     /**
                      * 设置告警类型查询列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _alarmTypeSet 告警类型查询列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAlarmTypeSet(const std::vector<AlarmTypeDetailInfo>& _alarmTypeSet);
@@ -76,7 +72,6 @@ namespace TencentCloud
 
                     /**
                      * 告警类型查询列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AlarmTypeDetailInfo> m_alarmTypeSet;
                     bool m_alarmTypeSetHasBeenSet;

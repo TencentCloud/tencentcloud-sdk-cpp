@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取行政区划列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return List 行政区划列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AdministrationData> GetList() const;
 
                     /**
                      * 设置行政区划列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _list 行政区划列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetList(const std::vector<AdministrationData>& _list);
@@ -76,7 +72,6 @@ namespace TencentCloud
 
                     /**
                      * 行政区划列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AdministrationData> m_list;
                     bool m_listHasBeenSet;

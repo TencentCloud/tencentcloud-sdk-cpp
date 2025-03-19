@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备分组list
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return List 设备分组list
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DescribeGroupInfo> GetList() const;
 
                     /**
                      * 设置设备分组list
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _list 设备分组list
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetList(const std::vector<DescribeGroupInfo>& _list);
@@ -76,7 +72,6 @@ namespace TencentCloud
 
                     /**
                      * 设备分组list
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DescribeGroupInfo> m_list;
                     bool m_listHasBeenSet;

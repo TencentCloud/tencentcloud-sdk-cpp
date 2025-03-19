@@ -4082,6 +4082,49 @@ MonitorClient::DescribePrometheusInstancesOverviewOutcomeCallable MonitorClient:
     return task->get_future();
 }
 
+MonitorClient::DescribePrometheusIntegrationMetricsOutcome MonitorClient::DescribePrometheusIntegrationMetrics(const DescribePrometheusIntegrationMetricsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePrometheusIntegrationMetrics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePrometheusIntegrationMetricsResponse rsp = DescribePrometheusIntegrationMetricsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePrometheusIntegrationMetricsOutcome(rsp);
+        else
+            return DescribePrometheusIntegrationMetricsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePrometheusIntegrationMetricsOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribePrometheusIntegrationMetricsAsync(const DescribePrometheusIntegrationMetricsRequest& request, const DescribePrometheusIntegrationMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePrometheusIntegrationMetrics(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DescribePrometheusIntegrationMetricsOutcomeCallable MonitorClient::DescribePrometheusIntegrationMetricsCallable(const DescribePrometheusIntegrationMetricsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePrometheusIntegrationMetricsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePrometheusIntegrationMetrics(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::DescribePrometheusRecordRulesOutcome MonitorClient::DescribePrometheusRecordRules(const DescribePrometheusRecordRulesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePrometheusRecordRules");

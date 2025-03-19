@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取投递规则列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Shippers 投递规则列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ShipperInfo> GetShippers() const;
@@ -78,7 +76,6 @@ namespace TencentCloud
 
                     /**
                      * 投递规则列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ShipperInfo> m_shippers;
                     bool m_shippersHasBeenSet;

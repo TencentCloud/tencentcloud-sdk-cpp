@@ -153,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取屏蔽规则，当Type为2时必填。规则填写方式详见[产品文档](https://cloud.tencent.com/document/product/614/103178#rule)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Rule 屏蔽规则，当Type为2时必填。规则填写方式详见[产品文档](https://cloud.tencent.com/document/product/614/103178#rule)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRule() const;
 
                     /**
                      * 设置屏蔽规则，当Type为2时必填。规则填写方式详见[产品文档](https://cloud.tencent.com/document/product/614/103178#rule)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rule 屏蔽规则，当Type为2时必填。规则填写方式详见[产品文档](https://cloud.tencent.com/document/product/614/103178#rule)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRule(const std::string& _rule);
@@ -344,7 +340,6 @@ namespace TencentCloud
 
                     /**
                      * 屏蔽规则，当Type为2时必填。规则填写方式详见[产品文档](https://cloud.tencent.com/document/product/614/103178#rule)。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_rule;
                     bool m_ruleHasBeenSet;

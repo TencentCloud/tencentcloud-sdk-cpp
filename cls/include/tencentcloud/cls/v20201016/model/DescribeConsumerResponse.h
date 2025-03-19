@@ -105,9 +105,7 @@ namespace TencentCloud
 
                     /**
                      * 获取压缩方式[0:NONE；2:SNAPPY；3:LZ4]
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Compression 压缩方式[0:NONE；2:SNAPPY；3:LZ4]
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCompression() const;
@@ -148,7 +146,6 @@ namespace TencentCloud
 
                     /**
                      * 压缩方式[0:NONE；2:SNAPPY；3:LZ4]
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_compression;
                     bool m_compressionHasBeenSet;

@@ -50,10 +50,8 @@ namespace TencentCloud
                     /**
                      * 获取上报数量
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalElements 上报数量
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalElements() const;
@@ -61,10 +59,8 @@ namespace TencentCloud
                     /**
                      * 设置上报数量
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalElements 上报数量
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalElements(const int64_t& _totalElements);
@@ -78,18 +74,14 @@ namespace TencentCloud
 
                     /**
                      * 获取提交数量（推送成功）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Commit 提交数量（推送成功）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCommit() const;
 
                     /**
                      * 设置提交数量（推送成功）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _commit 提交数量（推送成功）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCommit(const int64_t& _commit);
@@ -103,18 +95,14 @@ namespace TencentCloud
 
                     /**
                      * 获取消息推送结果列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SpanMap 消息推送结果列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ReportMsgRes> GetSpanMap() const;
 
                     /**
                      * 设置消息推送结果列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _spanMap 消息推送结果列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSpanMap(const std::vector<ReportMsgRes>& _spanMap);
@@ -131,21 +119,18 @@ namespace TencentCloud
                     /**
                      * 上报数量
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalElements;
                     bool m_totalElementsHasBeenSet;
 
                     /**
                      * 提交数量（推送成功）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_commit;
                     bool m_commitHasBeenSet;
 
                     /**
                      * 消息推送结果列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ReportMsgRes> m_spanMap;
                     bool m_spanMapHasBeenSet;

@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取建模模型信息出参
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Models 建模模型信息出参
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BuildingModel> GetModels() const;
 
                     /**
                      * 设置建模模型信息出参
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _models 建模模型信息出参
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModels(const std::vector<BuildingModel>& _models);
@@ -76,7 +72,6 @@ namespace TencentCloud
 
                     /**
                      * 建模模型信息出参
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BuildingModel> m_models;
                     bool m_modelsHasBeenSet;

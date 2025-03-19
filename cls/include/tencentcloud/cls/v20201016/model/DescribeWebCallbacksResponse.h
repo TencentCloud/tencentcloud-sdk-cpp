@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取告警渠道回调配置列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WebCallbacks 告警渠道回调配置列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<WebCallbackInfo> GetWebCallbacks() const;
@@ -78,7 +76,6 @@ namespace TencentCloud
 
                     /**
                      * 告警渠道回调配置列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<WebCallbackInfo> m_webCallbacks;
                     bool m_webCallbacksHasBeenSet;

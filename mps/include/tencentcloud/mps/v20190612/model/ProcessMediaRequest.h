@@ -29,6 +29,7 @@
 #include <tencentcloud/mps/v20190612/model/AiRecognitionTaskInput.h>
 #include <tencentcloud/mps/v20190612/model/AiQualityControlTaskInput.h>
 #include <tencentcloud/mps/v20190612/model/TaskNotifyConfig.h>
+#include <tencentcloud/mps/v20190612/model/SmartSubtitlesTaskInput.h>
 
 
 namespace TencentCloud
@@ -409,6 +410,60 @@ namespace TencentCloud
                      */
                     bool ResourceIdHasBeenSet() const;
 
+                    /**
+                     * 获取智能字幕
+                     * @return SmartSubtitlesTask 智能字幕
+                     * 
+                     */
+                    SmartSubtitlesTaskInput GetSmartSubtitlesTask() const;
+
+                    /**
+                     * 设置智能字幕
+                     * @param _smartSubtitlesTask 智能字幕
+                     * 
+                     */
+                    void SetSmartSubtitlesTask(const SmartSubtitlesTaskInput& _smartSubtitlesTask);
+
+                    /**
+                     * 判断参数 SmartSubtitlesTask 是否已赋值
+                     * @return SmartSubtitlesTask 是否已赋值
+                     * 
+                     */
+                    bool SmartSubtitlesTaskHasBeenSet() const;
+
+                    /**
+                     * 获取是否跳过元信息获取，可选值： 
+0：表示不跳过 
+1：表示跳过 
+默认值：0	
+                     * @return SkipMateData 是否跳过元信息获取，可选值： 
+0：表示不跳过 
+1：表示跳过 
+默认值：0	
+                     * 
+                     */
+                    int64_t GetSkipMateData() const;
+
+                    /**
+                     * 设置是否跳过元信息获取，可选值： 
+0：表示不跳过 
+1：表示跳过 
+默认值：0	
+                     * @param _skipMateData 是否跳过元信息获取，可选值： 
+0：表示不跳过 
+1：表示跳过 
+默认值：0	
+                     * 
+                     */
+                    void SetSkipMateData(const int64_t& _skipMateData);
+
+                    /**
+                     * 判断参数 SkipMateData 是否已赋值
+                     * @return SkipMateData 是否已赋值
+                     * 
+                     */
+                    bool SkipMateDataHasBeenSet() const;
+
                 private:
 
                     /**
@@ -511,6 +566,21 @@ namespace TencentCloud
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
+
+                    /**
+                     * 智能字幕
+                     */
+                    SmartSubtitlesTaskInput m_smartSubtitlesTask;
+                    bool m_smartSubtitlesTaskHasBeenSet;
+
+                    /**
+                     * 是否跳过元信息获取，可选值： 
+0：表示不跳过 
+1：表示跳过 
+默认值：0	
+                     */
+                    int64_t m_skipMateData;
+                    bool m_skipMateDataHasBeenSet;
 
                 };
             }

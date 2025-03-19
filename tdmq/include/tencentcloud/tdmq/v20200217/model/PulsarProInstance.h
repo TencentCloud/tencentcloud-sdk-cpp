@@ -259,18 +259,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remark 备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -305,18 +301,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规格外弹性TPS
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScalableTps 规格外弹性TPS
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetScalableTps() const;
 
                     /**
                      * 设置规格外弹性TPS
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scalableTps 规格外弹性TPS
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScalableTps(const uint64_t& _scalableTps);
@@ -330,18 +322,14 @@ namespace TencentCloud
 
                     /**
                      * 获取VPC的id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId VPC的id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置VPC的id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcId VPC的id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -355,18 +343,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetId 子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subnetId 子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -401,18 +385,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群的标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 集群的标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置集群的标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 集群的标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -426,18 +406,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 集群创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置集群创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 集群创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -451,18 +427,14 @@ namespace TencentCloud
 
                     /**
                      * 获取代表是专业版和小规格专业版的不同计费规格PULSAR.P1固定存储PULSAR.P2弹性存储
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BillingLabelVersion 代表是专业版和小规格专业版的不同计费规格PULSAR.P1固定存储PULSAR.P2弹性存储
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBillingLabelVersion() const;
 
                     /**
                      * 设置代表是专业版和小规格专业版的不同计费规格PULSAR.P1固定存储PULSAR.P2弹性存储
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _billingLabelVersion 代表是专业版和小规格专业版的不同计费规格PULSAR.P1固定存储PULSAR.P2弹性存储
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBillingLabelVersion(const std::string& _billingLabelVersion);
@@ -473,6 +445,27 @@ namespace TencentCloud
                      * 
                      */
                     bool BillingLabelVersionHasBeenSet() const;
+
+                    /**
+                     * 获取自定义租户
+                     * @return Tenant 自定义租户
+                     * 
+                     */
+                    std::string GetTenant() const;
+
+                    /**
+                     * 设置自定义租户
+                     * @param _tenant 自定义租户
+                     * 
+                     */
+                    void SetTenant(const std::string& _tenant);
+
+                    /**
+                     * 判断参数 Tenant 是否已赋值
+                     * @return Tenant 是否已赋值
+                     * 
+                     */
+                    bool TenantHasBeenSet() const;
 
                 private:
 
@@ -538,7 +531,6 @@ namespace TencentCloud
 
                     /**
                      * 备注信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
@@ -551,21 +543,18 @@ namespace TencentCloud
 
                     /**
                      * 规格外弹性TPS
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_scalableTps;
                     bool m_scalableTpsHasBeenSet;
 
                     /**
                      * VPC的id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
                      * 子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
@@ -578,24 +567,27 @@ namespace TencentCloud
 
                     /**
                      * 集群的标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
                      * 集群创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 代表是专业版和小规格专业版的不同计费规格PULSAR.P1固定存储PULSAR.P2弹性存储
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_billingLabelVersion;
                     bool m_billingLabelVersionHasBeenSet;
+
+                    /**
+                     * 自定义租户
+                     */
+                    std::string m_tenant;
+                    bool m_tenantHasBeenSet;
 
                 };
             }

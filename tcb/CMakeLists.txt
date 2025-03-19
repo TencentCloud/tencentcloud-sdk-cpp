@@ -33,6 +33,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/SearchClsLogResponse.h
   include/tencentcloud/tcb/v20180608/model/ModifyClsTopicResponse.h
   include/tencentcloud/tcb/v20180608/model/StandaloneGatewayInfo.h
+  include/tencentcloud/tcb/v20180608/model/EditAuthConfigResponse.h
   include/tencentcloud/tcb/v20180608/model/CloudBaseRunSideSpec.h
   include/tencentcloud/tcb/v20180608/model/CommonServiceAPIResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeStandaloneGatewayRequest.h
@@ -210,6 +211,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/CreateStandaloneGatewayResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeQuotaDataRequest.h
   include/tencentcloud/tcb/v20180608/model/CreateStaticStoreResponse.h
+  include/tencentcloud/tcb/v20180608/model/EditAuthConfigRequest.h
   include/tencentcloud/tcb/v20180608/model/CloudBaseRunVpcInfo.h
   include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunResourceResponse.h
   include/tencentcloud/tcb/v20180608/model/StorageInfo.h
@@ -285,6 +287,7 @@ set(tcb_src
   src/v20180608/model/SearchClsLogResponse.cpp
   src/v20180608/model/ModifyClsTopicResponse.cpp
   src/v20180608/model/StandaloneGatewayInfo.cpp
+  src/v20180608/model/EditAuthConfigResponse.cpp
   src/v20180608/model/CloudBaseRunSideSpec.cpp
   src/v20180608/model/CommonServiceAPIResponse.cpp
   src/v20180608/model/DescribeStandaloneGatewayRequest.cpp
@@ -462,6 +465,7 @@ set(tcb_src
   src/v20180608/model/CreateStandaloneGatewayResponse.cpp
   src/v20180608/model/DescribeQuotaDataRequest.cpp
   src/v20180608/model/CreateStaticStoreResponse.cpp
+  src/v20180608/model/EditAuthConfigRequest.cpp
   src/v20180608/model/CloudBaseRunVpcInfo.cpp
   src/v20180608/model/DescribeCloudBaseRunResourceResponse.cpp
   src/v20180608/model/StorageInfo.cpp
