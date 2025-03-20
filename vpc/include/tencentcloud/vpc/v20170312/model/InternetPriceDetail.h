@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取折扣后的价格，单位：元。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiscountPrice 折扣后的价格，单位：元。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetDiscountPrice() const;
 
                     /**
                      * 设置折扣后的价格，单位：元。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _discountPrice 折扣后的价格，单位：元。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiscountPrice(const double& _discountPrice);
@@ -94,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取计价单元，可取值范围：<ul> <li>HOUR：表示计价单元是按每小时来计算。当前涉及该计价单元的场景有：流量按小时后付费（TRAFFIC_POSTPAID_BY_HOUR）、带宽按小时后付费（BANDWIDTH_POSTPAID_BY_HOUR）。</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChargeUnit 计价单元，可取值范围：<ul> <li>HOUR：表示计价单元是按每小时来计算。当前涉及该计价单元的场景有：流量按小时后付费（TRAFFIC_POSTPAID_BY_HOUR）、带宽按小时后付费（BANDWIDTH_POSTPAID_BY_HOUR）。</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetChargeUnit() const;
 
                     /**
                      * 设置计价单元，可取值范围：<ul> <li>HOUR：表示计价单元是按每小时来计算。当前涉及该计价单元的场景有：流量按小时后付费（TRAFFIC_POSTPAID_BY_HOUR）、带宽按小时后付费（BANDWIDTH_POSTPAID_BY_HOUR）。</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _chargeUnit 计价单元，可取值范围：<ul> <li>HOUR：表示计价单元是按每小时来计算。当前涉及该计价单元的场景有：流量按小时后付费（TRAFFIC_POSTPAID_BY_HOUR）、带宽按小时后付费（BANDWIDTH_POSTPAID_BY_HOUR）。</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChargeUnit(const std::string& _chargeUnit);
@@ -148,14 +140,12 @@ namespace TencentCloud
 
                     /**
                      * 折扣后的价格，单位：元。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_discountPrice;
                     bool m_discountPriceHasBeenSet;
 
                     /**
                      * 计价单元，可取值范围：<ul> <li>HOUR：表示计价单元是按每小时来计算。当前涉及该计价单元的场景有：流量按小时后付费（TRAFFIC_POSTPAID_BY_HOUR）、带宽按小时后付费（BANDWIDTH_POSTPAID_BY_HOUR）。</li></ul>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_chargeUnit;
                     bool m_chargeUnitHasBeenSet;

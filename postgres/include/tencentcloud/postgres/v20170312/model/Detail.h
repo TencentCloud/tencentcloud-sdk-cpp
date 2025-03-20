@@ -91,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取慢SQL统计分析列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AnalysisItems 慢SQL统计分析列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AnalysisItems> GetAnalysisItems() const;
 
                     /**
                      * 设置慢SQL统计分析列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _analysisItems 慢SQL统计分析列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAnalysisItems(const std::vector<AnalysisItems>& _analysisItems);
@@ -130,7 +126,6 @@ namespace TencentCloud
 
                     /**
                      * 慢SQL统计分析列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AnalysisItems> m_analysisItems;
                     bool m_analysisItemsHasBeenSet;

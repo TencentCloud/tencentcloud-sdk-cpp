@@ -342,18 +342,14 @@ namespace TencentCloud
 
                     /**
                      * 获取容器状态 "RUNNING":运行,"PAUSED":暂停,"STOPPED":停止,"CREATED":已经创建,"DESTROYED":已销毁,"RESTARTING":重启中,"REMOVING":迁移中,"DEAD":DEAD,"UNKNOWN":未知
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContainerStatus 容器状态 "RUNNING":运行,"PAUSED":暂停,"STOPPED":停止,"CREATED":已经创建,"DESTROYED":已销毁,"RESTARTING":重启中,"REMOVING":迁移中,"DEAD":DEAD,"UNKNOWN":未知
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContainerStatus() const;
 
                     /**
                      * 设置容器状态 "RUNNING":运行,"PAUSED":暂停,"STOPPED":停止,"CREATED":已经创建,"DESTROYED":已销毁,"RESTARTING":重启中,"REMOVING":迁移中,"DEAD":DEAD,"UNKNOWN":未知
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _containerStatus 容器状态 "RUNNING":运行,"PAUSED":暂停,"STOPPED":停止,"CREATED":已经创建,"DESTROYED":已销毁,"RESTARTING":重启中,"REMOVING":迁移中,"DEAD":DEAD,"UNKNOWN":未知
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContainerStatus(const std::string& _containerStatus);
@@ -453,7 +449,6 @@ namespace TencentCloud
 
                     /**
                      * 容器状态 "RUNNING":运行,"PAUSED":暂停,"STOPPED":停止,"CREATED":已经创建,"DESTROYED":已销毁,"RESTARTING":重启中,"REMOVING":迁移中,"DEAD":DEAD,"UNKNOWN":未知
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_containerStatus;
                     bool m_containerStatusHasBeenSet;

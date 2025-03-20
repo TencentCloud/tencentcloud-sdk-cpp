@@ -25,7 +25,8 @@ using namespace std;
 CreatePostCLSFlowRequest::CreatePostCLSFlowRequest() :
     m_cLSRegionHasBeenSet(false),
     m_logsetNameHasBeenSet(false),
-    m_logTypeHasBeenSet(false)
+    m_logTypeHasBeenSet(false),
+    m_logTopicNameHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string CreatePostCLSFlowRequest::ToJsonString() const
         string key = "LogType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_logType, allocator);
+    }
+
+    if (m_logTopicNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogTopicName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_logTopicName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void CreatePostCLSFlowRequest::SetLogType(const int64_t& _logType)
 bool CreatePostCLSFlowRequest::LogTypeHasBeenSet() const
 {
     return m_logTypeHasBeenSet;
+}
+
+string CreatePostCLSFlowRequest::GetLogTopicName() const
+{
+    return m_logTopicName;
+}
+
+void CreatePostCLSFlowRequest::SetLogTopicName(const string& _logTopicName)
+{
+    m_logTopicName = _logTopicName;
+    m_logTopicNameHasBeenSet = true;
+}
+
+bool CreatePostCLSFlowRequest::LogTopicNameHasBeenSet() const
+{
+    return m_logTopicNameHasBeenSet;
 }
 
 

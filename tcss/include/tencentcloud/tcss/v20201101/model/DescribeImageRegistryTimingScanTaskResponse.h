@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取定时扫描开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Enable 定时扫描开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnable() const;
@@ -90,9 +88,7 @@ namespace TencentCloud
 
                     /**
                      * 获取扫描类型数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanType 扫描类型数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetScanType() const;
@@ -120,9 +116,7 @@ namespace TencentCloud
 
                     /**
                      * 获取自定义扫描镜像
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Images 自定义扫描镜像
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ImageInfo> GetImages() const;
@@ -136,9 +130,7 @@ namespace TencentCloud
 
                     /**
                      * 获取自动以扫描镜像Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 自动以扫描镜像Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<uint64_t> GetId() const;
@@ -152,9 +144,7 @@ namespace TencentCloud
 
                     /**
                      * 获取是否扫描最新版本镜像
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Latest 是否扫描最新版本镜像
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetLatest() const;
@@ -168,9 +158,7 @@ namespace TencentCloud
 
                     /**
                      * 获取扫描结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanEndTime 扫描结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetScanEndTime() const;
@@ -240,9 +228,7 @@ namespace TencentCloud
 
                     /**
                      * 获取排除的镜像资产id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExcludeImageAssetIds 排除的镜像资产id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<uint64_t> GetExcludeImageAssetIds() const;
@@ -256,9 +242,7 @@ namespace TencentCloud
 
                     /**
                      * 获取最近扫描时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastScanTime 最近扫描时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLastScanTime() const;
@@ -288,7 +272,6 @@ namespace TencentCloud
 
                     /**
                      * 定时扫描开关
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enable;
                     bool m_enableHasBeenSet;
@@ -307,7 +290,6 @@ namespace TencentCloud
 
                     /**
                      * 扫描类型数组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_scanType;
                     bool m_scanTypeHasBeenSet;
@@ -320,28 +302,24 @@ namespace TencentCloud
 
                     /**
                      * 自定义扫描镜像
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ImageInfo> m_images;
                     bool m_imagesHasBeenSet;
 
                     /**
                      * 自动以扫描镜像Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<uint64_t> m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * 是否扫描最新版本镜像
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_latest;
                     bool m_latestHasBeenSet;
 
                     /**
                      * 扫描结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scanEndTime;
                     bool m_scanEndTimeHasBeenSet;
@@ -372,14 +350,12 @@ namespace TencentCloud
 
                     /**
                      * 排除的镜像资产id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<uint64_t> m_excludeImageAssetIds;
                     bool m_excludeImageAssetIdsHasBeenSet;
 
                     /**
                      * 最近扫描时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastScanTime;
                     bool m_lastScanTimeHasBeenSet;

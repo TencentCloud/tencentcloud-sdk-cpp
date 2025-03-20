@@ -5200,49 +5200,6 @@ TdmqClient::ModifyEnvironmentRoleOutcomeCallable TdmqClient::ModifyEnvironmentRo
     return task->get_future();
 }
 
-TdmqClient::ModifyPublicNetworkAccessPointOutcome TdmqClient::ModifyPublicNetworkAccessPoint(const ModifyPublicNetworkAccessPointRequest &request)
-{
-    auto outcome = MakeRequest(request, "ModifyPublicNetworkAccessPoint");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ModifyPublicNetworkAccessPointResponse rsp = ModifyPublicNetworkAccessPointResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ModifyPublicNetworkAccessPointOutcome(rsp);
-        else
-            return ModifyPublicNetworkAccessPointOutcome(o.GetError());
-    }
-    else
-    {
-        return ModifyPublicNetworkAccessPointOutcome(outcome.GetError());
-    }
-}
-
-void TdmqClient::ModifyPublicNetworkAccessPointAsync(const ModifyPublicNetworkAccessPointRequest& request, const ModifyPublicNetworkAccessPointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyPublicNetworkAccessPoint(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TdmqClient::ModifyPublicNetworkAccessPointOutcomeCallable TdmqClient::ModifyPublicNetworkAccessPointCallable(const ModifyPublicNetworkAccessPointRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<ModifyPublicNetworkAccessPointOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyPublicNetworkAccessPoint(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TdmqClient::ModifyPublicNetworkSecurityPolicyOutcome TdmqClient::ModifyPublicNetworkSecurityPolicy(const ModifyPublicNetworkSecurityPolicyRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyPublicNetworkSecurityPolicy");

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主题名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicName 主题名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTopicName() const;
 
                     /**
                      * 设置主题名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topicName 主题名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopicName(const std::string& _topicName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主题Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicId 主题Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
                      * 设置主题Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topicId 主题Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主题占用Broker 容量大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataSize 主题占用Broker 容量大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDataSize() const;
 
                     /**
                      * 设置主题占用Broker 容量大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataSize 主题占用Broker 容量大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataSize(const uint64_t& _dataSize);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 主题名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;
 
                     /**
                      * 主题Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
 
                     /**
                      * 主题占用Broker 容量大小
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_dataSize;
                     bool m_dataSizeHasBeenSet;

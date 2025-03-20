@@ -363,18 +363,14 @@ namespace TencentCloud
 
                     /**
                      * 获取修复版本号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FixedVersions 修复版本号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFixedVersions() const;
 
                     /**
                      * 设置修复版本号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fixedVersions 修复版本号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFixedVersions(const std::string& _fixedVersions);
@@ -388,18 +384,14 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞标签:"CanBeFixed","DynamicLevelPoc","DynamicLevelExp"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tag 漏洞标签:"CanBeFixed","DynamicLevelPoc","DynamicLevelExp"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetTag() const;
 
                     /**
                      * 设置漏洞标签:"CanBeFixed","DynamicLevelPoc","DynamicLevelExp"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tag 漏洞标签:"CanBeFixed","DynamicLevelPoc","DynamicLevelExp"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTag(const std::vector<std::string>& _tag);
@@ -413,18 +405,14 @@ namespace TencentCloud
 
                     /**
                      * 获取攻击热度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AttackLevel 攻击热度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAttackLevel() const;
 
                     /**
                      * 设置攻击热度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _attackLevel 攻击热度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAttackLevel(const int64_t& _attackLevel);
@@ -530,21 +518,18 @@ namespace TencentCloud
 
                     /**
                      * 修复版本号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fixedVersions;
                     bool m_fixedVersionsHasBeenSet;
 
                     /**
                      * 漏洞标签:"CanBeFixed","DynamicLevelPoc","DynamicLevelExp"
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_tag;
                     bool m_tagHasBeenSet;
 
                     /**
                      * 攻击热度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_attackLevel;
                     bool m_attackLevelHasBeenSet;

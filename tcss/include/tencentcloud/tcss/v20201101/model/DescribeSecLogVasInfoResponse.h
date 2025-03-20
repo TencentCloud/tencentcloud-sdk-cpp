@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tcss/v20201101/model/VasInfoResourceDetail.h>
 
 
 namespace TencentCloud
@@ -161,6 +162,20 @@ namespace TencentCloud
                      */
                     bool TrialCapacityHasBeenSet() const;
 
+                    /**
+                     * 获取资源详情数组对象
+                     * @return ResourceDetailList 资源详情数组对象
+                     * 
+                     */
+                    std::vector<VasInfoResourceDetail> GetResourceDetailList() const;
+
+                    /**
+                     * 判断参数 ResourceDetailList 是否已赋值
+                     * @return ResourceDetailList 是否已赋值
+                     * 
+                     */
+                    bool ResourceDetailListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -213,6 +228,12 @@ namespace TencentCloud
                      */
                     uint64_t m_trialCapacity;
                     bool m_trialCapacityHasBeenSet;
+
+                    /**
+                     * 资源详情数组对象
+                     */
+                    std::vector<VasInfoResourceDetail> m_resourceDetailList;
+                    bool m_resourceDetailListHasBeenSet;
 
                 };
             }

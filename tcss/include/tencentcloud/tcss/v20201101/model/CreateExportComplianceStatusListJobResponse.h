@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取返回创建的导出任务的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return JobId 返回创建的导出任务的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetJobId() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 返回创建的导出任务的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;

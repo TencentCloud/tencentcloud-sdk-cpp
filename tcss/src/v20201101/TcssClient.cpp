@@ -3007,6 +3007,49 @@ TcssClient::DeleteNetworkFirewallPolicyDetailOutcomeCallable TcssClient::DeleteN
     return task->get_future();
 }
 
+TcssClient::DeleteRaspRulesOutcome TcssClient::DeleteRaspRules(const DeleteRaspRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteRaspRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteRaspRulesResponse rsp = DeleteRaspRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteRaspRulesOutcome(rsp);
+        else
+            return DeleteRaspRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteRaspRulesOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DeleteRaspRulesAsync(const DeleteRaspRulesRequest& request, const DeleteRaspRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteRaspRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DeleteRaspRulesOutcomeCallable TcssClient::DeleteRaspRulesCallable(const DeleteRaspRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteRaspRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteRaspRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcssClient::DeleteReverseShellEventsOutcome TcssClient::DeleteReverseShellEvents(const DeleteReverseShellEventsRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteReverseShellEvents");
@@ -3394,49 +3437,6 @@ TcssClient::DescribeAbnormalProcessEventsOutcomeCallable TcssClient::DescribeAbn
     return task->get_future();
 }
 
-TcssClient::DescribeAbnormalProcessEventsExportOutcome TcssClient::DescribeAbnormalProcessEventsExport(const DescribeAbnormalProcessEventsExportRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeAbnormalProcessEventsExport");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeAbnormalProcessEventsExportResponse rsp = DescribeAbnormalProcessEventsExportResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeAbnormalProcessEventsExportOutcome(rsp);
-        else
-            return DescribeAbnormalProcessEventsExportOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeAbnormalProcessEventsExportOutcome(outcome.GetError());
-    }
-}
-
-void TcssClient::DescribeAbnormalProcessEventsExportAsync(const DescribeAbnormalProcessEventsExportRequest& request, const DescribeAbnormalProcessEventsExportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAbnormalProcessEventsExport(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TcssClient::DescribeAbnormalProcessEventsExportOutcomeCallable TcssClient::DescribeAbnormalProcessEventsExportCallable(const DescribeAbnormalProcessEventsExportRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeAbnormalProcessEventsExportOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAbnormalProcessEventsExport(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TcssClient::DescribeAbnormalProcessLevelSummaryOutcome TcssClient::DescribeAbnormalProcessLevelSummary(const DescribeAbnormalProcessLevelSummaryRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAbnormalProcessLevelSummary");
@@ -3559,49 +3559,6 @@ TcssClient::DescribeAbnormalProcessRulesOutcomeCallable TcssClient::DescribeAbno
         [this, request]()
         {
             return this->DescribeAbnormalProcessRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-TcssClient::DescribeAbnormalProcessRulesExportOutcome TcssClient::DescribeAbnormalProcessRulesExport(const DescribeAbnormalProcessRulesExportRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeAbnormalProcessRulesExport");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeAbnormalProcessRulesExportResponse rsp = DescribeAbnormalProcessRulesExportResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeAbnormalProcessRulesExportOutcome(rsp);
-        else
-            return DescribeAbnormalProcessRulesExportOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeAbnormalProcessRulesExportOutcome(outcome.GetError());
-    }
-}
-
-void TcssClient::DescribeAbnormalProcessRulesExportAsync(const DescribeAbnormalProcessRulesExportRequest& request, const DescribeAbnormalProcessRulesExportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAbnormalProcessRulesExport(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TcssClient::DescribeAbnormalProcessRulesExportOutcomeCallable TcssClient::DescribeAbnormalProcessRulesExportCallable(const DescribeAbnormalProcessRulesExportRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeAbnormalProcessRulesExportOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAbnormalProcessRulesExport(request);
         }
     );
 
@@ -3817,49 +3774,6 @@ TcssClient::DescribeAccessControlRulesOutcomeCallable TcssClient::DescribeAccess
         [this, request]()
         {
             return this->DescribeAccessControlRules(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-TcssClient::DescribeAccessControlRulesExportOutcome TcssClient::DescribeAccessControlRulesExport(const DescribeAccessControlRulesExportRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeAccessControlRulesExport");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeAccessControlRulesExportResponse rsp = DescribeAccessControlRulesExportResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeAccessControlRulesExportOutcome(rsp);
-        else
-            return DescribeAccessControlRulesExportOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeAccessControlRulesExportOutcome(outcome.GetError());
-    }
-}
-
-void TcssClient::DescribeAccessControlRulesExportAsync(const DescribeAccessControlRulesExportRequest& request, const DescribeAccessControlRulesExportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAccessControlRulesExport(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TcssClient::DescribeAccessControlRulesExportOutcomeCallable TcssClient::DescribeAccessControlRulesExportCallable(const DescribeAccessControlRulesExportRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeAccessControlRulesExportOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAccessControlRulesExport(request);
         }
     );
 
@@ -4591,49 +4505,6 @@ TcssClient::DescribeAssetImageListOutcomeCallable TcssClient::DescribeAssetImage
         [this, request]()
         {
             return this->DescribeAssetImageList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-TcssClient::DescribeAssetImageListExportOutcome TcssClient::DescribeAssetImageListExport(const DescribeAssetImageListExportRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeAssetImageListExport");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeAssetImageListExportResponse rsp = DescribeAssetImageListExportResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeAssetImageListExportOutcome(rsp);
-        else
-            return DescribeAssetImageListExportOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeAssetImageListExportOutcome(outcome.GetError());
-    }
-}
-
-void TcssClient::DescribeAssetImageListExportAsync(const DescribeAssetImageListExportRequest& request, const DescribeAssetImageListExportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeAssetImageListExport(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TcssClient::DescribeAssetImageListExportOutcomeCallable TcssClient::DescribeAssetImageListExportCallable(const DescribeAssetImageListExportRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeAssetImageListExportOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeAssetImageListExport(request);
         }
     );
 
@@ -6963,49 +6834,6 @@ TcssClient::DescribeEscapeEventTypeSummaryOutcomeCallable TcssClient::DescribeEs
     return task->get_future();
 }
 
-TcssClient::DescribeEscapeEventsExportOutcome TcssClient::DescribeEscapeEventsExport(const DescribeEscapeEventsExportRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeEscapeEventsExport");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeEscapeEventsExportResponse rsp = DescribeEscapeEventsExportResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeEscapeEventsExportOutcome(rsp);
-        else
-            return DescribeEscapeEventsExportOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeEscapeEventsExportOutcome(outcome.GetError());
-    }
-}
-
-void TcssClient::DescribeEscapeEventsExportAsync(const DescribeEscapeEventsExportRequest& request, const DescribeEscapeEventsExportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeEscapeEventsExport(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TcssClient::DescribeEscapeEventsExportOutcomeCallable TcssClient::DescribeEscapeEventsExportCallable(const DescribeEscapeEventsExportRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeEscapeEventsExportOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeEscapeEventsExport(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TcssClient::DescribeEscapeRuleInfoOutcome TcssClient::DescribeEscapeRuleInfo(const DescribeEscapeRuleInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeEscapeRuleInfo");
@@ -8891,6 +8719,92 @@ TcssClient::DescribePurchaseStateInfoOutcomeCallable TcssClient::DescribePurchas
         [this, request]()
         {
             return this->DescribePurchaseStateInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeRaspRuleVulsOutcome TcssClient::DescribeRaspRuleVuls(const DescribeRaspRuleVulsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRaspRuleVuls");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRaspRuleVulsResponse rsp = DescribeRaspRuleVulsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRaspRuleVulsOutcome(rsp);
+        else
+            return DescribeRaspRuleVulsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRaspRuleVulsOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeRaspRuleVulsAsync(const DescribeRaspRuleVulsRequest& request, const DescribeRaspRuleVulsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRaspRuleVuls(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeRaspRuleVulsOutcomeCallable TcssClient::DescribeRaspRuleVulsCallable(const DescribeRaspRuleVulsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRaspRuleVulsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRaspRuleVuls(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeRaspRulesOutcome TcssClient::DescribeRaspRules(const DescribeRaspRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRaspRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRaspRulesResponse rsp = DescribeRaspRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRaspRulesOutcome(rsp);
+        else
+            return DescribeRaspRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRaspRulesOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeRaspRulesAsync(const DescribeRaspRulesRequest& request, const DescribeRaspRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRaspRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeRaspRulesOutcomeCallable TcssClient::DescribeRaspRulesCallable(const DescribeRaspRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRaspRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRaspRules(request);
         }
     );
 
@@ -13062,6 +12976,49 @@ TcssClient::ModifyK8sApiAbnormalRuleStatusOutcomeCallable TcssClient::ModifyK8sA
         [this, request]()
         {
             return this->ModifyK8sApiAbnormalRuleStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::ModifyRaspRulesOutcome TcssClient::ModifyRaspRules(const ModifyRaspRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyRaspRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyRaspRulesResponse rsp = ModifyRaspRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyRaspRulesOutcome(rsp);
+        else
+            return ModifyRaspRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyRaspRulesOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::ModifyRaspRulesAsync(const ModifyRaspRulesRequest& request, const ModifyRaspRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyRaspRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::ModifyRaspRulesOutcomeCallable TcssClient::ModifyRaspRulesCallable(const ModifyRaspRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyRaspRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyRaspRules(request);
         }
     );
 

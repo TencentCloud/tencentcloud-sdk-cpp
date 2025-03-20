@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取录制计划详情·列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Plans 录制计划详情·列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RecordPlanItem> GetPlans() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取录制计划总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 录制计划总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 录制计划详情·列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RecordPlanItem> m_plans;
                     bool m_plansHasBeenSet;
 
                     /**
                      * 录制计划总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

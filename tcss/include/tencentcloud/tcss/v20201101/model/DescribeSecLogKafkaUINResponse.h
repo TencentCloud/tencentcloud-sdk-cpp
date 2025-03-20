@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取目标UIN
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DstUIN 目标UIN
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDstUIN() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取授权状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 授权状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetStatus() const;
@@ -79,14 +75,12 @@ namespace TencentCloud
 
                     /**
                      * 目标UIN
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dstUIN;
                     bool m_dstUINHasBeenSet;
 
                     /**
                      * 授权状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_status;
                     bool m_statusHasBeenSet;

@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取Excel下载地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DownloadUrl Excel下载地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDownloadUrl() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取任务Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return JobId 任务Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetJobId() const;
@@ -79,14 +75,12 @@ namespace TencentCloud
 
                     /**
                      * Excel下载地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_downloadUrl;
                     bool m_downloadUrlHasBeenSet;
 
                     /**
                      * 任务Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;

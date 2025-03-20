@@ -32,7 +32,8 @@ CreateAssetImageScanTaskRequest::CreateAssetImageScanTaskRequest() :
     m_excludeImageIdsHasBeenSet(false),
     m_containerRunningHasBeenSet(false),
     m_scanScopeHasBeenSet(false),
-    m_timeoutHasBeenSet(false)
+    m_timeoutHasBeenSet(false),
+    m_isOneClickScanningTaskHasBeenSet(false)
 {
 }
 
@@ -138,6 +139,14 @@ string CreateAssetImageScanTaskRequest::ToJsonString() const
         string key = "Timeout";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_timeout, allocator);
+    }
+
+    if (m_isOneClickScanningTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsOneClickScanningTask";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isOneClickScanningTask, allocator);
     }
 
 
@@ -306,6 +315,22 @@ void CreateAssetImageScanTaskRequest::SetTimeout(const uint64_t& _timeout)
 bool CreateAssetImageScanTaskRequest::TimeoutHasBeenSet() const
 {
     return m_timeoutHasBeenSet;
+}
+
+bool CreateAssetImageScanTaskRequest::GetIsOneClickScanningTask() const
+{
+    return m_isOneClickScanningTask;
+}
+
+void CreateAssetImageScanTaskRequest::SetIsOneClickScanningTask(const bool& _isOneClickScanningTask)
+{
+    m_isOneClickScanningTask = _isOneClickScanningTask;
+    m_isOneClickScanningTaskHasBeenSet = true;
+}
+
+bool CreateAssetImageScanTaskRequest::IsOneClickScanningTaskHasBeenSet() const
+{
+    return m_isOneClickScanningTaskHasBeenSet;
 }
 
 

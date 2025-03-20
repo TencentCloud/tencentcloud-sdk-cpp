@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取查询结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DBInstanceSet 查询结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ServerlessDBInstance> GetDBInstanceSet() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 查询结果
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ServerlessDBInstance> m_dBInstanceSet;
                     bool m_dBInstanceSetHasBeenSet;

@@ -61,9 +61,7 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库代理组列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyGroupInfos 数据库代理组列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ProxyGroupInfo> GetProxyGroupInfos() const;
@@ -101,7 +99,6 @@ namespace TencentCloud
 
                     /**
                      * 数据库代理组列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ProxyGroupInfo> m_proxyGroupInfos;
                     bool m_proxyGroupInfosHasBeenSet;

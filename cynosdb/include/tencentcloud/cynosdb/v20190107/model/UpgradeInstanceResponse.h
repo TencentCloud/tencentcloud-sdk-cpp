@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取冻结流水ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TranId 冻结流水ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTranId() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取大订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BigDealIds 大订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetBigDealIds() const;
@@ -93,14 +89,12 @@ namespace TencentCloud
 
                     /**
                      * 冻结流水ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tranId;
                     bool m_tranIdHasBeenSet;
 
                     /**
                      * 大订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_bigDealIds;
                     bool m_bigDealIdsHasBeenSet;

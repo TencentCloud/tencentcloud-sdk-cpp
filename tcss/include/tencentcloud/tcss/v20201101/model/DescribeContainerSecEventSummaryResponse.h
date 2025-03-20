@@ -143,9 +143,7 @@ namespace TencentCloud
 
                     /**
                      * 获取未处理k8sApi事件
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnhandledK8sApiEventCnt 未处理k8sApi事件
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetUnhandledK8sApiEventCnt() const;
@@ -203,7 +201,6 @@ namespace TencentCloud
 
                     /**
                      * 未处理k8sApi事件
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_unhandledK8sApiEventCnt;
                     bool m_unhandledK8sApiEventCntHasBeenSet;

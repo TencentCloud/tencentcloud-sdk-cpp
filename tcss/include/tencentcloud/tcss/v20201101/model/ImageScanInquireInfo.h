@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool InquireKeyHasBeenSet() const;
 
                     /**
-                     * 获取容量
-                     * @return Capcity 容量
+                     * 获取总容量
+                     * @return Capcity 总容量
                      * 
                      */
                     uint64_t GetCapcity() const;
 
                     /**
-                     * 设置容量
-                     * @param _capcity 容量
+                     * 设置总容量
+                     * @param _capcity 总容量
                      * 
                      */
                     void SetCapcity(const uint64_t& _capcity);
@@ -205,6 +205,69 @@ namespace TencentCloud
                      */
                     bool ResourceIDHasBeenSet() const;
 
+                    /**
+                     * 获取购买扫描数
+                     * @return PayNum 购买扫描数
+                     * 
+                     */
+                    uint64_t GetPayNum() const;
+
+                    /**
+                     * 设置购买扫描数
+                     * @param _payNum 购买扫描数
+                     * 
+                     */
+                    void SetPayNum(const uint64_t& _payNum);
+
+                    /**
+                     * 判断参数 PayNum 是否已赋值
+                     * @return PayNum 是否已赋值
+                     * 
+                     */
+                    bool PayNumHasBeenSet() const;
+
+                    /**
+                     * 获取试用扫描数
+                     * @return TrialNum 试用扫描数
+                     * 
+                     */
+                    uint64_t GetTrialNum() const;
+
+                    /**
+                     * 设置试用扫描数
+                     * @param _trialNum 试用扫描数
+                     * 
+                     */
+                    void SetTrialNum(const uint64_t& _trialNum);
+
+                    /**
+                     * 判断参数 TrialNum 是否已赋值
+                     * @return TrialNum 是否已赋值
+                     * 
+                     */
+                    bool TrialNumHasBeenSet() const;
+
+                    /**
+                     * 获取购买已使用量
+                     * @return PayUsage 购买已使用量
+                     * 
+                     */
+                    uint64_t GetPayUsage() const;
+
+                    /**
+                     * 设置购买已使用量
+                     * @param _payUsage 购买已使用量
+                     * 
+                     */
+                    void SetPayUsage(const uint64_t& _payUsage);
+
+                    /**
+                     * 判断参数 PayUsage 是否已赋值
+                     * @return PayUsage 是否已赋值
+                     * 
+                     */
+                    bool PayUsageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -214,7 +277,7 @@ namespace TencentCloud
                     bool m_inquireKeyHasBeenSet;
 
                     /**
-                     * 容量
+                     * 总容量
                      */
                     uint64_t m_capcity;
                     bool m_capcityHasBeenSet;
@@ -251,6 +314,24 @@ namespace TencentCloud
                      */
                     std::string m_resourceID;
                     bool m_resourceIDHasBeenSet;
+
+                    /**
+                     * 购买扫描数
+                     */
+                    uint64_t m_payNum;
+                    bool m_payNumHasBeenSet;
+
+                    /**
+                     * 试用扫描数
+                     */
+                    uint64_t m_trialNum;
+                    bool m_trialNumHasBeenSet;
+
+                    /**
+                     * 购买已使用量
+                     */
+                    uint64_t m_payUsage;
+                    bool m_payUsageHasBeenSet;
 
                 };
             }

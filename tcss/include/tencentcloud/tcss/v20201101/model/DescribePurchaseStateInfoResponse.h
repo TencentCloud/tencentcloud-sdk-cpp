@@ -73,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取总防护核数 =已购核数+ 试用赠送核数 +弹性计费核数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CoresCnt 总防护核数 =已购核数+ 试用赠送核数 +弹性计费核数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCoresCnt() const;
@@ -103,9 +101,7 @@ namespace TencentCloud
 
                     /**
                      * 获取已购买核数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuthorizedCoresCnt 已购买核数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetAuthorizedCoresCnt() const;
@@ -119,9 +115,7 @@ namespace TencentCloud
 
                     /**
                      * 获取试用赠送专业版核心数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GivenAuthorizedCoresCnt 试用赠送专业版核心数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetGivenAuthorizedCoresCnt() const;
@@ -149,9 +143,7 @@ namespace TencentCloud
 
                     /**
                      * 获取镜像数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageCnt 镜像数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetImageCnt() const;
@@ -165,9 +157,7 @@ namespace TencentCloud
 
                     /**
                      * 获取已授权镜像数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuthorizedImageCnt 已授权镜像数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetAuthorizedImageCnt() const;
@@ -181,9 +171,7 @@ namespace TencentCloud
 
                     /**
                      * 获取过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpirationTime 过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExpirationTime() const;
@@ -197,9 +185,7 @@ namespace TencentCloud
 
                     /**
                      * 获取已购买镜像授权数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PurchasedAuthorizedCnt 已购买镜像授权数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPurchasedAuthorizedCnt() const;
@@ -213,9 +199,7 @@ namespace TencentCloud
 
                     /**
                      * 获取0表示默认状态(用户未设置，即初始状态)， 1表示自动续费，2表示明确不自动续费(用户设置)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutomaticRenewal 0表示默认状态(用户未设置，即初始状态)， 1表示自动续费，2表示明确不自动续费(用户设置)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAutomaticRenewal() const;
@@ -229,9 +213,7 @@ namespace TencentCloud
 
                     /**
                      * 获取试用期间赠送镜像授权数，可能会过期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GivenAuthorizedCnt 试用期间赠送镜像授权数，可能会过期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetGivenAuthorizedCnt() const;
@@ -245,9 +227,7 @@ namespace TencentCloud
 
                     /**
                      * 获取起始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BeginTime 起始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBeginTime() const;
@@ -262,10 +242,8 @@ namespace TencentCloud
                     /**
                      * 获取子状态(具体意义依据State字段而定)
 State为4时，有效值为: ISOLATE(隔离) DESTROED(已销毁)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubState 子状态(具体意义依据State字段而定)
 State为4时，有效值为: ISOLATE(隔离) DESTROED(已销毁)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubState() const;
@@ -279,9 +257,7 @@ State为4时，有效值为: ISOLATE(隔离) DESTROED(已销毁)
 
                     /**
                      * 获取计费key
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InquireKey 计费key
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInquireKey() const;
@@ -365,7 +341,6 @@ State为4时，有效值为: ISOLATE(隔离) DESTROED(已销毁)
 
                     /**
                      * 总防护核数 =已购核数+ 试用赠送核数 +弹性计费核数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_coresCnt;
                     bool m_coresCntHasBeenSet;
@@ -378,14 +353,12 @@ State为4时，有效值为: ISOLATE(隔离) DESTROED(已销毁)
 
                     /**
                      * 已购买核数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_authorizedCoresCnt;
                     bool m_authorizedCoresCntHasBeenSet;
 
                     /**
                      * 试用赠送专业版核心数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_givenAuthorizedCoresCnt;
                     bool m_givenAuthorizedCoresCntHasBeenSet;
@@ -398,49 +371,42 @@ State为4时，有效值为: ISOLATE(隔离) DESTROED(已销毁)
 
                     /**
                      * 镜像数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_imageCnt;
                     bool m_imageCntHasBeenSet;
 
                     /**
                      * 已授权镜像数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_authorizedImageCnt;
                     bool m_authorizedImageCntHasBeenSet;
 
                     /**
                      * 过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_expirationTime;
                     bool m_expirationTimeHasBeenSet;
 
                     /**
                      * 已购买镜像授权数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_purchasedAuthorizedCnt;
                     bool m_purchasedAuthorizedCntHasBeenSet;
 
                     /**
                      * 0表示默认状态(用户未设置，即初始状态)， 1表示自动续费，2表示明确不自动续费(用户设置)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_automaticRenewal;
                     bool m_automaticRenewalHasBeenSet;
 
                     /**
                      * 试用期间赠送镜像授权数，可能会过期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_givenAuthorizedCnt;
                     bool m_givenAuthorizedCntHasBeenSet;
 
                     /**
                      * 起始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_beginTime;
                     bool m_beginTimeHasBeenSet;
@@ -448,14 +414,12 @@ State为4时，有效值为: ISOLATE(隔离) DESTROED(已销毁)
                     /**
                      * 子状态(具体意义依据State字段而定)
 State为4时，有效值为: ISOLATE(隔离) DESTROED(已销毁)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subState;
                     bool m_subStateHasBeenSet;
 
                     /**
                      * 计费key
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_inquireKey;
                     bool m_inquireKeyHasBeenSet;

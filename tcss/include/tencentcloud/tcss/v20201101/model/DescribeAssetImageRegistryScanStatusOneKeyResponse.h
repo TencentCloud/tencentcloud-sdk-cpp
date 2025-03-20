@@ -74,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取扫描进度列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageStatus 扫描进度列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ImageProgress> GetImageStatus() const;
@@ -146,9 +144,7 @@ namespace TencentCloud
 
                     /**
                      * 获取扫描剩余时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanRemainTime 扫描剩余时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetScanRemainTime() const;
@@ -176,7 +172,6 @@ namespace TencentCloud
 
                     /**
                      * 扫描进度列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ImageProgress> m_imageStatus;
                     bool m_imageStatusHasBeenSet;
@@ -207,7 +202,6 @@ namespace TencentCloud
 
                     /**
                      * 扫描剩余时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_scanRemainTime;
                     bool m_scanRemainTimeHasBeenSet;

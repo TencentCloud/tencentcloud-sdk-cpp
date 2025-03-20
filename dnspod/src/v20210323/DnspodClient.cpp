@@ -384,6 +384,49 @@ DnspodClient::CreateDomainGroupOutcomeCallable DnspodClient::CreateDomainGroupCa
     return task->get_future();
 }
 
+DnspodClient::CreateDomainsAnalyticsFileOutcome DnspodClient::CreateDomainsAnalyticsFile(const CreateDomainsAnalyticsFileRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDomainsAnalyticsFile");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDomainsAnalyticsFileResponse rsp = CreateDomainsAnalyticsFileResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDomainsAnalyticsFileOutcome(rsp);
+        else
+            return CreateDomainsAnalyticsFileOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDomainsAnalyticsFileOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::CreateDomainsAnalyticsFileAsync(const CreateDomainsAnalyticsFileRequest& request, const CreateDomainsAnalyticsFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateDomainsAnalyticsFile(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::CreateDomainsAnalyticsFileOutcomeCallable DnspodClient::CreateDomainsAnalyticsFileCallable(const CreateDomainsAnalyticsFileRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateDomainsAnalyticsFileOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateDomainsAnalyticsFile(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DnspodClient::CreateLineGroupOutcome DnspodClient::CreateLineGroup(const CreateLineGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateLineGroup");
@@ -635,6 +678,49 @@ DnspodClient::CreateSnapshotOutcomeCallable DnspodClient::CreateSnapshotCallable
         [this, request]()
         {
             return this->CreateSnapshot(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DnspodClient::CreateSubDomainsAnalyticsFileOutcome DnspodClient::CreateSubDomainsAnalyticsFile(const CreateSubDomainsAnalyticsFileRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSubDomainsAnalyticsFile");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSubDomainsAnalyticsFileResponse rsp = CreateSubDomainsAnalyticsFileResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSubDomainsAnalyticsFileOutcome(rsp);
+        else
+            return CreateSubDomainsAnalyticsFileOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSubDomainsAnalyticsFileOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::CreateSubDomainsAnalyticsFileAsync(const CreateSubDomainsAnalyticsFileRequest& request, const CreateSubDomainsAnalyticsFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateSubDomainsAnalyticsFile(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::CreateSubDomainsAnalyticsFileOutcomeCallable DnspodClient::CreateSubDomainsAnalyticsFileCallable(const CreateSubDomainsAnalyticsFileRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateSubDomainsAnalyticsFileOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateSubDomainsAnalyticsFile(request);
         }
     );
 
@@ -1753,6 +1839,49 @@ DnspodClient::DescribeDomainWhoisOutcomeCallable DnspodClient::DescribeDomainWho
         [this, request]()
         {
             return this->DescribeDomainWhois(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DnspodClient::DescribeFileInfoByJobIdOutcome DnspodClient::DescribeFileInfoByJobId(const DescribeFileInfoByJobIdRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFileInfoByJobId");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFileInfoByJobIdResponse rsp = DescribeFileInfoByJobIdResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFileInfoByJobIdOutcome(rsp);
+        else
+            return DescribeFileInfoByJobIdOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFileInfoByJobIdOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::DescribeFileInfoByJobIdAsync(const DescribeFileInfoByJobIdRequest& request, const DescribeFileInfoByJobIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFileInfoByJobId(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::DescribeFileInfoByJobIdOutcomeCallable DnspodClient::DescribeFileInfoByJobIdCallable(const DescribeFileInfoByJobIdRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFileInfoByJobIdOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFileInfoByJobId(request);
         }
     );
 

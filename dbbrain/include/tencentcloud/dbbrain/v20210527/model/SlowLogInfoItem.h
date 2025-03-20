@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取User来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserName User来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置User来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userName User来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserName(const std::string& _userName);
@@ -136,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取IP来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserHost IP来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserHost() const;
 
                     /**
                      * 设置IP来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userHost IP来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserHost(const std::string& _userHost);
@@ -182,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取锁时间,单位秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LockTime 锁时间,单位秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetLockTime() const;
 
                     /**
                      * 设置锁时间,单位秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lockTime 锁时间,单位秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLockTime(const double& _lockTime);
@@ -207,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取扫描行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RowsExamined 扫描行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRowsExamined() const;
 
                     /**
                      * 设置扫描行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rowsExamined 扫描行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRowsExamined(const int64_t& _rowsExamined);
@@ -232,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取返回行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RowsSent 返回行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRowsSent() const;
 
                     /**
                      * 设置返回行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rowsSent 返回行数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRowsSent(const int64_t& _rowsSent);
@@ -277,14 +257,12 @@ namespace TencentCloud
 
                     /**
                      * User来源
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;
 
                     /**
                      * IP来源
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userHost;
                     bool m_userHostHasBeenSet;
@@ -297,21 +275,18 @@ namespace TencentCloud
 
                     /**
                      * 锁时间,单位秒
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_lockTime;
                     bool m_lockTimeHasBeenSet;
 
                     /**
                      * 扫描行数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_rowsExamined;
                     bool m_rowsExaminedHasBeenSet;
 
                     /**
                      * 返回行数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_rowsSent;
                     bool m_rowsSentHasBeenSet;

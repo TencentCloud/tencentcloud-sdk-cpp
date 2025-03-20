@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取pod空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Namespace pod空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置pod空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _namespace pod空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNamespace(const std::string& _namespace);
@@ -94,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取pod标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Labels pod标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLabels() const;
 
                     /**
                      * 设置pod标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _labels pod标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLabels(const std::string& _labels);
@@ -119,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取pod类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WorkloadKind pod类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWorkloadKind() const;
 
                     /**
                      * 设置pod类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _workloadKind pod类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWorkloadKind(const std::string& _workloadKind);
@@ -152,21 +140,18 @@ namespace TencentCloud
 
                     /**
                      * pod空间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;
 
                     /**
                      * pod标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_labels;
                     bool m_labelsHasBeenSet;
 
                     /**
                      * pod类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_workloadKind;
                     bool m_workloadKindHasBeenSet;

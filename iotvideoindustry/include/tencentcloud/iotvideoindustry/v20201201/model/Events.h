@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取开始时间，秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EventTime 开始时间，秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEventTime() const;
 
                     /**
                      * 设置开始时间，秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _eventTime 开始时间，秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEventTime(const int64_t& _eventTime);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取事件类型 1:注册 2:心跳 4:录制异常 5:播放异常 6:流中断
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EventType 事件类型 1:注册 2:心跳 4:录制异常 5:播放异常 6:流中断
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEventType() const;
 
                     /**
                      * 设置事件类型 1:注册 2:心跳 4:录制异常 5:播放异常 6:流中断
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _eventType 事件类型 1:注册 2:心跳 4:录制异常 5:播放异常 6:流中断
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEventType(const int64_t& _eventType);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取事件描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EventDesc 事件描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEventDesc() const;
 
                     /**
                      * 设置事件描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _eventDesc 事件描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEventDesc(const std::string& _eventDesc);
@@ -228,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备备注名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceName 设备备注名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置设备备注名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceName 设备备注名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
@@ -255,21 +239,18 @@ namespace TencentCloud
 
                     /**
                      * 开始时间，秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_eventTime;
                     bool m_eventTimeHasBeenSet;
 
                     /**
                      * 事件类型 1:注册 2:心跳 4:录制异常 5:播放异常 6:流中断
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_eventType;
                     bool m_eventTypeHasBeenSet;
 
                     /**
                      * 事件描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_eventDesc;
                     bool m_eventDescHasBeenSet;
@@ -306,7 +287,6 @@ namespace TencentCloud
 
                     /**
                      * 设备备注名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceName;
                     bool m_deviceNameHasBeenSet;

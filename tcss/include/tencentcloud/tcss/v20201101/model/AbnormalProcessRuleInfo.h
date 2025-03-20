@@ -134,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleId 策略id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuleId() const;
 
                     /**
                      * 设置策略id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleId 策略id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleId(const std::string& _ruleId);
@@ -227,7 +223,6 @@ namespace TencentCloud
 
                     /**
                      * 策略id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ruleId;
                     bool m_ruleIdHasBeenSet;

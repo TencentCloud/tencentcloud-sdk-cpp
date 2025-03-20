@@ -116,9 +116,7 @@ namespace TencentCloud
 
                     /**
                      * 获取仓库版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegistryVersion 仓库版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegistryVersion() const;
@@ -146,9 +144,7 @@ namespace TencentCloud
 
                     /**
                      * 获取区域，列表:default（默认）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegistryRegion 区域，列表:default（默认）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegistryRegion() const;
@@ -162,9 +158,7 @@ namespace TencentCloud
 
                     /**
                      * 获取限速
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SpeedLimit 限速
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetSpeedLimit() const;
@@ -178,9 +172,7 @@ namespace TencentCloud
 
                     /**
                      * 获取安全模式（证书校验）：0（默认） 非安全模式（跳过证书校验）：1
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Insecure 安全模式（证书校验）：0（默认） 非安全模式（跳过证书校验）：1
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetInsecure() const;
@@ -220,6 +212,62 @@ namespace TencentCloud
                      */
                     bool InstanceIDHasBeenSet() const;
 
+                    /**
+                     * 获取同步方式，0全量同步，1增量同步
+                     * @return SyncMode 同步方式，0全量同步，1增量同步
+                     * 
+                     */
+                    uint64_t GetSyncMode() const;
+
+                    /**
+                     * 判断参数 SyncMode 是否已赋值
+                     * @return SyncMode 是否已赋值
+                     * 
+                     */
+                    bool SyncModeHasBeenSet() const;
+
+                    /**
+                     * 获取是否自动授权&扫描，选择全量同步时只针对最新版本镜像，增量同步时则包含所有新增镜像
+                     * @return NeedScan 是否自动授权&扫描，选择全量同步时只针对最新版本镜像，增量同步时则包含所有新增镜像
+                     * 
+                     */
+                    bool GetNeedScan() const;
+
+                    /**
+                     * 判断参数 NeedScan 是否已赋值
+                     * @return NeedScan 是否已赋值
+                     * 
+                     */
+                    bool NeedScanHasBeenSet() const;
+
+                    /**
+                     * 获取webhook接入地址
+                     * @return WebhookUrl webhook接入地址
+                     * 
+                     */
+                    std::string GetWebhookUrl() const;
+
+                    /**
+                     * 判断参数 WebhookUrl 是否已赋值
+                     * @return WebhookUrl 是否已赋值
+                     * 
+                     */
+                    bool WebhookUrlHasBeenSet() const;
+
+                    /**
+                     * 获取webhook接入token	
+                     * @return WebhookToken webhook接入token	
+                     * 
+                     */
+                    std::string GetWebhookToken() const;
+
+                    /**
+                     * 判断参数 WebhookToken 是否已赋值
+                     * @return WebhookToken 是否已赋值
+                     * 
+                     */
+                    bool WebhookTokenHasBeenSet() const;
+
                 private:
 
                     /**
@@ -254,7 +302,6 @@ namespace TencentCloud
 
                     /**
                      * 仓库版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_registryVersion;
                     bool m_registryVersionHasBeenSet;
@@ -267,21 +314,18 @@ namespace TencentCloud
 
                     /**
                      * 区域，列表:default（默认）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_registryRegion;
                     bool m_registryRegionHasBeenSet;
 
                     /**
                      * 限速
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_speedLimit;
                     bool m_speedLimitHasBeenSet;
 
                     /**
                      * 安全模式（证书校验）：0（默认） 非安全模式（跳过证书校验）：1
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_insecure;
                     bool m_insecureHasBeenSet;
@@ -297,6 +341,30 @@ namespace TencentCloud
                      */
                     std::string m_instanceID;
                     bool m_instanceIDHasBeenSet;
+
+                    /**
+                     * 同步方式，0全量同步，1增量同步
+                     */
+                    uint64_t m_syncMode;
+                    bool m_syncModeHasBeenSet;
+
+                    /**
+                     * 是否自动授权&扫描，选择全量同步时只针对最新版本镜像，增量同步时则包含所有新增镜像
+                     */
+                    bool m_needScan;
+                    bool m_needScanHasBeenSet;
+
+                    /**
+                     * webhook接入地址
+                     */
+                    std::string m_webhookUrl;
+                    bool m_webhookUrlHasBeenSet;
+
+                    /**
+                     * webhook接入token	
+                     */
+                    std::string m_webhookToken;
+                    bool m_webhookTokenHasBeenSet;
 
                 };
             }

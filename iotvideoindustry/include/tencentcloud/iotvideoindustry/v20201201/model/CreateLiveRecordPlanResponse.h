@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取录制计划名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PlanId 录制计划名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPlanId() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 录制计划名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_planId;
                     bool m_planIdHasBeenSet;

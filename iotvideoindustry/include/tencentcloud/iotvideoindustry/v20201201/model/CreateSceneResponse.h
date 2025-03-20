@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取场景ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IntId 场景ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIntId() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 场景ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_intId;
                     bool m_intIdHasBeenSet;

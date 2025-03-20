@@ -153,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取私有网络ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId 私有网络ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置私有网络ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcId 私有网络ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -178,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetId 子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subnetId 子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -203,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取连接数据库的协议类型，当前支持：postgresql、mssql（MSSQL兼容语法）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProtocolType 连接数据库的协议类型，当前支持：postgresql、mssql（MSSQL兼容语法）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProtocolType() const;
 
                     /**
                      * 设置连接数据库的协议类型，当前支持：postgresql、mssql（MSSQL兼容语法）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _protocolType 连接数据库的协议类型，当前支持：postgresql、mssql（MSSQL兼容语法）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProtocolType(const std::string& _protocolType);
@@ -260,21 +248,18 @@ namespace TencentCloud
 
                     /**
                      * 私有网络ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
                      * 子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
                      * 连接数据库的协议类型，当前支持：postgresql、mssql（MSSQL兼容语法）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_protocolType;
                     bool m_protocolTypeHasBeenSet;

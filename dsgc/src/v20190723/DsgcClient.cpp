@@ -4512,49 +4512,6 @@ DsgcClient::DescribeReportTasksOutcomeCallable DsgcClient::DescribeReportTasksCa
     return task->get_future();
 }
 
-DsgcClient::DescribeRuleDetailOutcome DsgcClient::DescribeRuleDetail(const DescribeRuleDetailRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeRuleDetail");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeRuleDetailResponse rsp = DescribeRuleDetailResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeRuleDetailOutcome(rsp);
-        else
-            return DescribeRuleDetailOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeRuleDetailOutcome(outcome.GetError());
-    }
-}
-
-void DsgcClient::DescribeRuleDetailAsync(const DescribeRuleDetailRequest& request, const DescribeRuleDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeRuleDetail(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-DsgcClient::DescribeRuleDetailOutcomeCallable DsgcClient::DescribeRuleDetailCallable(const DescribeRuleDetailRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeRuleDetailOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeRuleDetail(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 DsgcClient::DescribeRuleListOutcome DsgcClient::DescribeRuleList(const DescribeRuleListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRuleList");

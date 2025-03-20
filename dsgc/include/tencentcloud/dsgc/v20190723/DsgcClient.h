@@ -231,8 +231,6 @@
 #include <tencentcloud/dsgc/v20190723/model/DescribeReportTaskDownloadUrlResponse.h>
 #include <tencentcloud/dsgc/v20190723/model/DescribeReportTasksRequest.h>
 #include <tencentcloud/dsgc/v20190723/model/DescribeReportTasksResponse.h>
-#include <tencentcloud/dsgc/v20190723/model/DescribeRuleDetailRequest.h>
-#include <tencentcloud/dsgc/v20190723/model/DescribeRuleDetailResponse.h>
 #include <tencentcloud/dsgc/v20190723/model/DescribeRuleListRequest.h>
 #include <tencentcloud/dsgc/v20190723/model/DescribeRuleListResponse.h>
 #include <tencentcloud/dsgc/v20190723/model/DescribeSensitiveCOSDataDistributionRequest.h>
@@ -645,9 +643,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeReportTasksResponse> DescribeReportTasksOutcome;
                 typedef std::future<DescribeReportTasksOutcome> DescribeReportTasksOutcomeCallable;
                 typedef std::function<void(const DsgcClient*, const Model::DescribeReportTasksRequest&, DescribeReportTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReportTasksAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeRuleDetailResponse> DescribeRuleDetailOutcome;
-                typedef std::future<DescribeRuleDetailOutcome> DescribeRuleDetailOutcomeCallable;
-                typedef std::function<void(const DsgcClient*, const Model::DescribeRuleDetailRequest&, DescribeRuleDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRuleDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRuleListResponse> DescribeRuleListOutcome;
                 typedef std::future<DescribeRuleListOutcome> DescribeRuleListOutcomeCallable;
                 typedef std::function<void(const DsgcClient*, const Model::DescribeRuleListRequest&, DescribeRuleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRuleListAsyncHandler;
@@ -1731,16 +1726,6 @@ namespace TencentCloud
                 DescribeReportTasksOutcome DescribeReportTasks(const Model::DescribeReportTasksRequest &request);
                 void DescribeReportTasksAsync(const Model::DescribeReportTasksRequest& request, const DescribeReportTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeReportTasksOutcomeCallable DescribeReportTasksCallable(const Model::DescribeReportTasksRequest& request);
-
-                /**
-                 *查询分类规则详情
-
-                 * @param req DescribeRuleDetailRequest
-                 * @return DescribeRuleDetailOutcome
-                 */
-                DescribeRuleDetailOutcome DescribeRuleDetail(const Model::DescribeRuleDetailRequest &request);
-                void DescribeRuleDetailAsync(const Model::DescribeRuleDetailRequest& request, const DescribeRuleDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeRuleDetailOutcomeCallable DescribeRuleDetailCallable(const Model::DescribeRuleDetailRequest& request);
 
                 /**
                  *查询分类下规则列表

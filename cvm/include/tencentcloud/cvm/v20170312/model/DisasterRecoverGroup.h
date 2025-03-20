@@ -207,6 +207,27 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
+                     * 获取置放群组亲和度
+                     * @return Affinity 置放群组亲和度
+                     * 
+                     */
+                    int64_t GetAffinity() const;
+
+                    /**
+                     * 设置置放群组亲和度
+                     * @param _affinity 置放群组亲和度
+                     * 
+                     */
+                    void SetAffinity(const int64_t& _affinity);
+
+                    /**
+                     * 判断参数 Affinity 是否已赋值
+                     * @return Affinity 是否已赋值
+                     * 
+                     */
+                    bool AffinityHasBeenSet() const;
+
+                    /**
                      * 获取置放群组关联的标签列表。
                      * @return Tags 置放群组关联的标签列表。
                      * 
@@ -273,6 +294,12 @@ namespace TencentCloud
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 置放群组亲和度
+                     */
+                    int64_t m_affinity;
+                    bool m_affinityHasBeenSet;
 
                     /**
                      * 置放群组关联的标签列表。

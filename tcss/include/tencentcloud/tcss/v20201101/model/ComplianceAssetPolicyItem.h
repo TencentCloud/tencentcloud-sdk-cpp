@@ -234,11 +234,9 @@ CHECK_FAILED, 检测失败
                      * 获取检测结果
 RESULT_PASSED: 通过
 RESULT_FAILED: 未通过
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CheckResult 检测结果
 RESULT_PASSED: 通过
 RESULT_FAILED: 未通过
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCheckResult() const;
@@ -247,11 +245,9 @@ RESULT_FAILED: 未通过
                      * 设置检测结果
 RESULT_PASSED: 通过
 RESULT_FAILED: 未通过
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _checkResult 检测结果
 RESULT_PASSED: 通过
 RESULT_FAILED: 未通过
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCheckResult(const std::string& _checkResult);
@@ -265,18 +261,14 @@ RESULT_FAILED: 未通过
 
                     /**
                      * 获取检测项对应的白名单项的ID。如果存在且非0，表示检测项被用户忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WhitelistId 检测项对应的白名单项的ID。如果存在且非0，表示检测项被用户忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetWhitelistId() const;
 
                     /**
                      * 设置检测项对应的白名单项的ID。如果存在且非0，表示检测项被用户忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _whitelistId 检测项对应的白名单项的ID。如果存在且非0，表示检测项被用户忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWhitelistId(const uint64_t& _whitelistId);
@@ -311,18 +303,14 @@ RESULT_FAILED: 未通过
 
                     /**
                      * 获取最近检测的时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastCheckTime 最近检测的时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLastCheckTime() const;
 
                     /**
                      * 设置最近检测的时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lastCheckTime 最近检测的时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLastCheckTime(const std::string& _lastCheckTime);
@@ -336,18 +324,14 @@ RESULT_FAILED: 未通过
 
                     /**
                      * 获取验证信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VerifyInfo 验证信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVerifyInfo() const;
 
                     /**
                      * 设置验证信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _verifyInfo 验证信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVerifyInfo(const std::string& _verifyInfo);
@@ -417,14 +401,12 @@ CHECK_FAILED, 检测失败
                      * 检测结果
 RESULT_PASSED: 通过
 RESULT_FAILED: 未通过
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_checkResult;
                     bool m_checkResultHasBeenSet;
 
                     /**
                      * 检测项对应的白名单项的ID。如果存在且非0，表示检测项被用户忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_whitelistId;
                     bool m_whitelistIdHasBeenSet;
@@ -437,14 +419,12 @@ RESULT_FAILED: 未通过
 
                     /**
                      * 最近检测的时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastCheckTime;
                     bool m_lastCheckTimeHasBeenSet;
 
                     /**
                      * 验证信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_verifyInfo;
                     bool m_verifyInfoHasBeenSet;

@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取集群ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterId 集群ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterId() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 集群ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;

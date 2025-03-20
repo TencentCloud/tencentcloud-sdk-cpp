@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceID 实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceID() const;
 
                     /**
                      * 设置实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceID 实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceID(const std::string& _instanceID);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceName 实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceName 实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -100,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主题列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicList 主题列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CKafkaTopicInfo> GetTopicList() const;
 
                     /**
                      * 设置主题列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topicList 主题列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopicList(const std::vector<CKafkaTopicInfo>& _topicList);
@@ -125,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取路由列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RouteList 路由列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CkafkaRouteInfo> GetRouteList() const;
 
                     /**
                      * 设置路由列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _routeList 路由列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRouteList(const std::vector<CkafkaRouteInfo>& _routeList);
@@ -150,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取kafka版本号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return KafkaVersion kafka版本号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKafkaVersion() const;
 
                     /**
                      * 设置kafka版本号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _kafkaVersion kafka版本号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKafkaVersion(const std::string& _kafkaVersion);
@@ -177,35 +157,30 @@ namespace TencentCloud
 
                     /**
                      * 实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceID;
                     bool m_instanceIDHasBeenSet;
 
                     /**
                      * 实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
                      * 主题列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CKafkaTopicInfo> m_topicList;
                     bool m_topicListHasBeenSet;
 
                     /**
                      * 路由列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CkafkaRouteInfo> m_routeList;
                     bool m_routeListHasBeenSet;
 
                     /**
                      * kafka版本号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_kafkaVersion;
                     bool m_kafkaVersionHasBeenSet;

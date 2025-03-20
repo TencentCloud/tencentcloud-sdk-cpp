@@ -295,6 +295,48 @@ namespace TencentCloud
                      */
                     bool RegistryIdHasBeenSet() const;
 
+                    /**
+                     * 获取同步方式，0全量同步，1增量同步
+                     * @return SyncMode 同步方式，0全量同步，1增量同步
+                     * 
+                     */
+                    uint64_t GetSyncMode() const;
+
+                    /**
+                     * 设置同步方式，0全量同步，1增量同步
+                     * @param _syncMode 同步方式，0全量同步，1增量同步
+                     * 
+                     */
+                    void SetSyncMode(const uint64_t& _syncMode);
+
+                    /**
+                     * 判断参数 SyncMode 是否已赋值
+                     * @return SyncMode 是否已赋值
+                     * 
+                     */
+                    bool SyncModeHasBeenSet() const;
+
+                    /**
+                     * 获取是否自动授权&扫描，选择增量同步时参数生效，包含所有新增镜像
+                     * @return NeedScan 是否自动授权&扫描，选择增量同步时参数生效，包含所有新增镜像
+                     * 
+                     */
+                    bool GetNeedScan() const;
+
+                    /**
+                     * 设置是否自动授权&扫描，选择增量同步时参数生效，包含所有新增镜像
+                     * @param _needScan 是否自动授权&扫描，选择增量同步时参数生效，包含所有新增镜像
+                     * 
+                     */
+                    void SetNeedScan(const bool& _needScan);
+
+                    /**
+                     * 判断参数 NeedScan 是否已赋值
+                     * @return NeedScan 是否已赋值
+                     * 
+                     */
+                    bool NeedScanHasBeenSet() const;
+
                 private:
 
                     /**
@@ -368,6 +410,18 @@ namespace TencentCloud
                      */
                     int64_t m_registryId;
                     bool m_registryIdHasBeenSet;
+
+                    /**
+                     * 同步方式，0全量同步，1增量同步
+                     */
+                    uint64_t m_syncMode;
+                    bool m_syncModeHasBeenSet;
+
+                    /**
+                     * 是否自动授权&扫描，选择增量同步时参数生效，包含所有新增镜像
+                     */
+                    bool m_needScan;
+                    bool m_needScanHasBeenSet;
 
                 };
             }

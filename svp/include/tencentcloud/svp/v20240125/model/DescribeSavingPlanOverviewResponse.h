@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取节省计划总览明细数据	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Overviews 节省计划总览明细数据	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SavingPlanOverviewDetail> GetOverviews() const;
@@ -78,7 +76,6 @@ namespace TencentCloud
 
                     /**
                      * 节省计划总览明细数据	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SavingPlanOverviewDetail> m_overviews;
                     bool m_overviewsHasBeenSet;

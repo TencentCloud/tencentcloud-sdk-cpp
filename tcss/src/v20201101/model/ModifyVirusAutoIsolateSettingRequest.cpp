@@ -24,7 +24,8 @@ using namespace std;
 
 ModifyVirusAutoIsolateSettingRequest::ModifyVirusAutoIsolateSettingRequest() :
     m_autoIsolateSwitchHasBeenSet(false),
-    m_isKillProgressHasBeenSet(false)
+    m_isKillProgressHasBeenSet(false),
+    m_userAutoIsolateKillSwitchHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string ModifyVirusAutoIsolateSettingRequest::ToJsonString() const
         string key = "IsKillProgress";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isKillProgress, allocator);
+    }
+
+    if (m_userAutoIsolateKillSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserAutoIsolateKillSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_userAutoIsolateKillSwitch, allocator);
     }
 
 
@@ -89,6 +98,22 @@ void ModifyVirusAutoIsolateSettingRequest::SetIsKillProgress(const bool& _isKill
 bool ModifyVirusAutoIsolateSettingRequest::IsKillProgressHasBeenSet() const
 {
     return m_isKillProgressHasBeenSet;
+}
+
+bool ModifyVirusAutoIsolateSettingRequest::GetUserAutoIsolateKillSwitch() const
+{
+    return m_userAutoIsolateKillSwitch;
+}
+
+void ModifyVirusAutoIsolateSettingRequest::SetUserAutoIsolateKillSwitch(const bool& _userAutoIsolateKillSwitch)
+{
+    m_userAutoIsolateKillSwitch = _userAutoIsolateKillSwitch;
+    m_userAutoIsolateKillSwitchHasBeenSet = true;
+}
+
+bool ModifyVirusAutoIsolateSettingRequest::UserAutoIsolateKillSwitchHasBeenSet() const
+{
+    return m_userAutoIsolateKillSwitchHasBeenSet;
 }
 
 

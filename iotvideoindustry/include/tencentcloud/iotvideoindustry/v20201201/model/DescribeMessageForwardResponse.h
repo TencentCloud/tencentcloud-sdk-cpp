@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取区域ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionId 区域ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegionId() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取区域名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionName 区域名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegionName() const;
@@ -77,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Instance 实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstance() const;
@@ -93,9 +87,7 @@ namespace TencentCloud
 
                     /**
                      * 获取实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceName 实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceName() const;
@@ -109,9 +101,7 @@ namespace TencentCloud
 
                     /**
                      * 获取配置ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IntId 配置ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIntId() const;
@@ -125,9 +115,7 @@ namespace TencentCloud
 
                     /**
                      * 获取json数组， 转发类型 1: 告警 2:GPS
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MessageType json数组， 转发类型 1: 告警 2:GPS
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMessageType() const;
@@ -141,9 +129,7 @@ namespace TencentCloud
 
                     /**
                      * 获取kafka topic id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicId kafka topic id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTopicId() const;
@@ -157,9 +143,7 @@ namespace TencentCloud
 
                     /**
                      * 获取配置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 配置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
@@ -173,9 +157,7 @@ namespace TencentCloud
 
                     /**
                      * 获取用户Uin信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uin 用户Uin信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUin() const;
@@ -189,9 +171,7 @@ namespace TencentCloud
 
                     /**
                      * 获取kafka topic 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicName kafka topic 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTopicName() const;
@@ -203,77 +183,87 @@ namespace TencentCloud
                      */
                     bool TopicNameHasBeenSet() const;
 
+                    /**
+                     * 获取更新时间
+                     * @return UpdateTime 更新时间
+                     * 
+                     */
+                    std::string GetUpdateTime() const;
+
+                    /**
+                     * 判断参数 UpdateTime 是否已赋值
+                     * @return UpdateTime 是否已赋值
+                     * 
+                     */
+                    bool UpdateTimeHasBeenSet() const;
+
                 private:
 
                     /**
                      * 区域ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_regionId;
                     bool m_regionIdHasBeenSet;
 
                     /**
                      * 区域名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_regionName;
                     bool m_regionNameHasBeenSet;
 
                     /**
                      * 实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instance;
                     bool m_instanceHasBeenSet;
 
                     /**
                      * 实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
                      * 配置ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_intId;
                     bool m_intIdHasBeenSet;
 
                     /**
                      * json数组， 转发类型 1: 告警 2:GPS
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_messageType;
                     bool m_messageTypeHasBeenSet;
 
                     /**
                      * kafka topic id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
 
                     /**
                      * 配置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 用户Uin信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
                      * kafka topic 名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;
+
+                    /**
+                     * 更新时间
+                     */
+                    std::string m_updateTime;
+                    bool m_updateTimeHasBeenSet;
 
                 };
             }

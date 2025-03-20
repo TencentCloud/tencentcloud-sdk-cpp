@@ -232,6 +232,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/DescribeDnsRecordsRequest.h
   include/tencentcloud/teo/v20220901/model/CreatePrefetchTaskResponse.h
   include/tencentcloud/teo/v20220901/model/DescribeDefaultCertificatesRequest.h
+  include/tencentcloud/teo/v20220901/model/MaxAgeParameters.h
   include/tencentcloud/teo/v20220901/model/ModifyApplicationProxyRuleResponse.h
   include/tencentcloud/teo/v20220901/model/FailReason.h
   include/tencentcloud/teo/v20220901/model/ModifyRequestHeaderParameters.h
@@ -249,7 +250,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/DeleteRealtimeLogDeliveryTaskResponse.h
   include/tencentcloud/teo/v20220901/model/RuleCondition.h
   include/tencentcloud/teo/v20220901/model/DescribeOverviewL7DataResponse.h
-  include/tencentcloud/teo/v20220901/model/MaxAgeParameters.h
+  include/tencentcloud/teo/v20220901/model/DescribeSecurityPolicyRequest.h
   include/tencentcloud/teo/v20220901/model/DescribeEnvironmentsResponse.h
   include/tencentcloud/teo/v20220901/model/CacheParameters.h
   include/tencentcloud/teo/v20220901/model/TimingDataItem.h
@@ -536,6 +537,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/CacheTag.h
   include/tencentcloud/teo/v20220901/model/DescribeDefaultCertificatesResponse.h
   include/tencentcloud/teo/v20220901/model/CreateOriginGroupResponse.h
+  include/tencentcloud/teo/v20220901/model/DescribeSecurityPolicyResponse.h
   include/tencentcloud/teo/v20220901/model/CreateContentIdentifierResponse.h
   include/tencentcloud/teo/v20220901/model/HostHeaderParameters.h
   include/tencentcloud/teo/v20220901/model/DescribeConfigGroupVersionsRequest.h
@@ -795,6 +797,7 @@ set(teo_src
   src/v20220901/model/DescribeDnsRecordsRequest.cpp
   src/v20220901/model/CreatePrefetchTaskResponse.cpp
   src/v20220901/model/DescribeDefaultCertificatesRequest.cpp
+  src/v20220901/model/MaxAgeParameters.cpp
   src/v20220901/model/ModifyApplicationProxyRuleResponse.cpp
   src/v20220901/model/FailReason.cpp
   src/v20220901/model/ModifyRequestHeaderParameters.cpp
@@ -812,7 +815,7 @@ set(teo_src
   src/v20220901/model/DeleteRealtimeLogDeliveryTaskResponse.cpp
   src/v20220901/model/RuleCondition.cpp
   src/v20220901/model/DescribeOverviewL7DataResponse.cpp
-  src/v20220901/model/MaxAgeParameters.cpp
+  src/v20220901/model/DescribeSecurityPolicyRequest.cpp
   src/v20220901/model/DescribeEnvironmentsResponse.cpp
   src/v20220901/model/CacheParameters.cpp
   src/v20220901/model/TimingDataItem.cpp
@@ -1099,6 +1102,7 @@ set(teo_src
   src/v20220901/model/CacheTag.cpp
   src/v20220901/model/DescribeDefaultCertificatesResponse.cpp
   src/v20220901/model/CreateOriginGroupResponse.cpp
+  src/v20220901/model/DescribeSecurityPolicyResponse.cpp
   src/v20220901/model/CreateContentIdentifierResponse.cpp
   src/v20220901/model/HostHeaderParameters.cpp
   src/v20220901/model/DescribeConfigGroupVersionsRequest.cpp

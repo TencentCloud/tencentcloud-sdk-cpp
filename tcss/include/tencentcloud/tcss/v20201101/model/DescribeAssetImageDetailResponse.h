@@ -115,9 +115,7 @@ namespace TencentCloud
 
                     /**
                      * 获取关联主机个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostCnt 关联主机个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetHostCnt() const;
@@ -131,9 +129,7 @@ namespace TencentCloud
 
                     /**
                      * 获取关联容器个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContainerCnt 关联容器个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetContainerCnt() const;
@@ -147,9 +143,7 @@ namespace TencentCloud
 
                     /**
                      * 获取最近扫描时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanTime 最近扫描时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetScanTime() const;
@@ -163,9 +157,7 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VulCnt 漏洞个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetVulCnt() const;
@@ -179,9 +171,7 @@ namespace TencentCloud
 
                     /**
                      * 获取风险行为数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskCnt 风险行为数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRiskCnt() const;
@@ -195,9 +185,7 @@ namespace TencentCloud
 
                     /**
                      * 获取敏感信息数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SensitiveInfoCnt 敏感信息数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetSensitiveInfoCnt() const;
@@ -239,9 +227,7 @@ namespace TencentCloud
 
                     /**
                      * 获取agent镜像扫描错误
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AgentError agent镜像扫描错误
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAgentError() const;
@@ -255,9 +241,7 @@ namespace TencentCloud
 
                     /**
                      * 获取后端镜像扫描错误
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanError 后端镜像扫描错误
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetScanError() const;
@@ -271,9 +255,7 @@ namespace TencentCloud
 
                     /**
                      * 获取系统架构
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Architecture 系统架构
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetArchitecture() const;
@@ -287,9 +269,7 @@ namespace TencentCloud
 
                     /**
                      * 获取作者
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Author 作者
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAuthor() const;
@@ -303,9 +283,7 @@ namespace TencentCloud
 
                     /**
                      * 获取构建历史
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BuildHistory 构建历史
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBuildHistory() const;
@@ -319,9 +297,7 @@ namespace TencentCloud
 
                     /**
                      * 获取木马扫描进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanVirusProgress 木马扫描进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetScanVirusProgress() const;
@@ -335,9 +311,7 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞扫进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanVulProgress 漏洞扫进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetScanVulProgress() const;
@@ -351,9 +325,7 @@ namespace TencentCloud
 
                     /**
                      * 获取敏感信息扫描进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanRiskProgress 敏感信息扫描进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetScanRiskProgress() const;
@@ -367,9 +339,7 @@ namespace TencentCloud
 
                     /**
                      * 获取木马扫描错误
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanVirusError 木马扫描错误
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetScanVirusError() const;
@@ -383,9 +353,7 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞扫描错误
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanVulError 漏洞扫描错误
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetScanVulError() const;
@@ -399,9 +367,7 @@ namespace TencentCloud
 
                     /**
                      * 获取敏感信息错误
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanRiskError 敏感信息错误
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetScanRiskError() const;
@@ -415,9 +381,7 @@ namespace TencentCloud
 
                     /**
                      * 获取镜像扫描状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanStatus 镜像扫描状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetScanStatus() const;
@@ -431,9 +395,7 @@ namespace TencentCloud
 
                     /**
                      * 获取木马病毒数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VirusCnt 木马病毒数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetVirusCnt() const;
@@ -447,9 +409,7 @@ namespace TencentCloud
 
                     /**
                      * 获取镜像扫描状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 镜像扫描状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStatus() const;
@@ -463,9 +423,7 @@ namespace TencentCloud
 
                     /**
                      * 获取剩余扫描时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RemainScanTime 剩余扫描时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRemainScanTime() const;
@@ -525,42 +483,36 @@ namespace TencentCloud
 
                     /**
                      * 关联主机个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_hostCnt;
                     bool m_hostCntHasBeenSet;
 
                     /**
                      * 关联容器个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_containerCnt;
                     bool m_containerCntHasBeenSet;
 
                     /**
                      * 最近扫描时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scanTime;
                     bool m_scanTimeHasBeenSet;
 
                     /**
                      * 漏洞个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_vulCnt;
                     bool m_vulCntHasBeenSet;
 
                     /**
                      * 风险行为数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_riskCnt;
                     bool m_riskCntHasBeenSet;
 
                     /**
                      * 敏感信息数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_sensitiveInfoCnt;
                     bool m_sensitiveInfoCntHasBeenSet;
@@ -579,105 +531,90 @@ namespace TencentCloud
 
                     /**
                      * agent镜像扫描错误
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_agentError;
                     bool m_agentErrorHasBeenSet;
 
                     /**
                      * 后端镜像扫描错误
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scanError;
                     bool m_scanErrorHasBeenSet;
 
                     /**
                      * 系统架构
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_architecture;
                     bool m_architectureHasBeenSet;
 
                     /**
                      * 作者
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_author;
                     bool m_authorHasBeenSet;
 
                     /**
                      * 构建历史
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_buildHistory;
                     bool m_buildHistoryHasBeenSet;
 
                     /**
                      * 木马扫描进度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_scanVirusProgress;
                     bool m_scanVirusProgressHasBeenSet;
 
                     /**
                      * 漏洞扫进度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_scanVulProgress;
                     bool m_scanVulProgressHasBeenSet;
 
                     /**
                      * 敏感信息扫描进度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_scanRiskProgress;
                     bool m_scanRiskProgressHasBeenSet;
 
                     /**
                      * 木马扫描错误
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scanVirusError;
                     bool m_scanVirusErrorHasBeenSet;
 
                     /**
                      * 漏洞扫描错误
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scanVulError;
                     bool m_scanVulErrorHasBeenSet;
 
                     /**
                      * 敏感信息错误
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scanRiskError;
                     bool m_scanRiskErrorHasBeenSet;
 
                     /**
                      * 镜像扫描状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scanStatus;
                     bool m_scanStatusHasBeenSet;
 
                     /**
                      * 木马病毒数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_virusCnt;
                     bool m_virusCntHasBeenSet;
 
                     /**
                      * 镜像扫描状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 剩余扫描时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_remainScanTime;
                     bool m_remainScanTimeHasBeenSet;

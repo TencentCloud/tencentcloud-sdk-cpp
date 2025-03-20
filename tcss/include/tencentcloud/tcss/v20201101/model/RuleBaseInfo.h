@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略更新时间, 存在为空的情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 策略更新时间, 存在为空的情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置策略更新时间, 存在为空的情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updateTime 策略更新时间, 存在为空的情况
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -219,7 +215,6 @@ namespace TencentCloud
 
                     /**
                      * 策略更新时间, 存在为空的情况
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;

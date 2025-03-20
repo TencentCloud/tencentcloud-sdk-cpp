@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取层id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LayerId 层id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLayerId() const;
 
                     /**
                      * 设置层id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _layerId 层id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLayerId(const std::string& _layerId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取层cmd
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LayerCmd 层cmd
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLayerCmd() const;
 
                     /**
                      * 设置层cmd
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _layerCmd 层cmd
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLayerCmd(const std::string& _layerCmd);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 层id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_layerId;
                     bool m_layerIdHasBeenSet;
 
                     /**
                      * 层cmd
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_layerCmd;
                     bool m_layerCmdHasBeenSet;

@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取录制设备总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecordingDevice 录制设备总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRecordingDevice() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取非录制设备总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NonRecordingDevice 非录制设备总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetNonRecordingDevice() const;
@@ -77,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取观看流量总数。为直播观看流量与点播观看流量之和。单位：GB
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WatchFlux 观看流量总数。为直播观看流量与点播观看流量之和。单位：GB
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetWatchFlux() const;
@@ -93,9 +87,7 @@ namespace TencentCloud
 
                     /**
                      * 获取累计有效存储容量总数。单位：GB
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StorageUsage 累计有效存储容量总数。单位：GB
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetStorageUsage() const;
@@ -109,9 +101,7 @@ namespace TencentCloud
 
                     /**
                      * 获取X-P2P分享流量。单位 Byte
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return P2PFluxTotal X-P2P分享流量。单位 Byte
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetP2PFluxTotal() const;
@@ -125,9 +115,7 @@ namespace TencentCloud
 
                     /**
                      * 获取X-P2P峰值带宽。 单位bps
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return P2PPeakValue X-P2P峰值带宽。 单位bps
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetP2PPeakValue() const;
@@ -141,9 +129,7 @@ namespace TencentCloud
 
                     /**
                      * 获取RTMP推流路数 ( 直播推流)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LivePushTotal RTMP推流路数 ( 直播推流)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLivePushTotal() const;
@@ -159,49 +145,42 @@ namespace TencentCloud
 
                     /**
                      * 录制设备总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_recordingDevice;
                     bool m_recordingDeviceHasBeenSet;
 
                     /**
                      * 非录制设备总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_nonRecordingDevice;
                     bool m_nonRecordingDeviceHasBeenSet;
 
                     /**
                      * 观看流量总数。为直播观看流量与点播观看流量之和。单位：GB
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_watchFlux;
                     bool m_watchFluxHasBeenSet;
 
                     /**
                      * 累计有效存储容量总数。单位：GB
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_storageUsage;
                     bool m_storageUsageHasBeenSet;
 
                     /**
                      * X-P2P分享流量。单位 Byte
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_p2PFluxTotal;
                     bool m_p2PFluxTotalHasBeenSet;
 
                     /**
                      * X-P2P峰值带宽。 单位bps
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_p2PPeakValue;
                     bool m_p2PPeakValueHasBeenSet;
 
                     /**
                      * RTMP推流路数 ( 直播推流)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_livePushTotal;
                     bool m_livePushTotalHasBeenSet;

@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取时间模板详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Template 时间模板详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TimeTemplateItem GetTemplate() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 时间模板详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TimeTemplateItem m_template;
                     bool m_templateHasBeenSet;

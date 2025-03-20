@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取策略方式，可取值alg表示验证码，drop表示丢弃，trans表示放行
-                     * @return PolicyAction 策略方式，可取值alg表示验证码，drop表示丢弃，trans表示放行
+                     * 获取策略方式，可取值alg表示人机校验，drop表示丢弃，trans表示放行
+                     * @return PolicyAction 策略方式，可取值alg表示人机校验，drop表示丢弃，trans表示放行
                      * 
                      */
                     std::string GetPolicyAction() const;
 
                     /**
-                     * 设置策略方式，可取值alg表示验证码，drop表示丢弃，trans表示放行
-                     * @param _policyAction 策略方式，可取值alg表示验证码，drop表示丢弃，trans表示放行
+                     * 设置策略方式，可取值alg表示人机校验，drop表示丢弃，trans表示放行
+                     * @param _policyAction 策略方式，可取值alg表示人机校验，drop表示丢弃，trans表示放行
                      * 
                      */
                     void SetPolicyAction(const std::string& _policyAction);
@@ -196,7 +196,7 @@ namespace TencentCloud
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 策略方式，可取值alg表示验证码，drop表示丢弃，trans表示放行
+                     * 策略方式，可取值alg表示人机校验，drop表示丢弃，trans表示放行
                      */
                     std::string m_policyAction;
                     bool m_policyActionHasBeenSet;

@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取录像详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VideoList 录像详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RecordTaskItem> GetVideoList() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取录像总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 录像总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 录像详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RecordTaskItem> m_videoList;
                     bool m_videoListHasBeenSet;
 
                     /**
                      * 录像总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

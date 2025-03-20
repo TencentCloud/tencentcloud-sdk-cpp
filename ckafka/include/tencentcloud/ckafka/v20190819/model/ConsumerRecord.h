@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取消息key
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Key 消息key
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置消息key
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _key 消息key
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKey(const std::string& _key);
@@ -136,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取消息value
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 消息value
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置消息value
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _value 消息value
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -161,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取消息时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Timestamp 消息时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTimestamp() const;
 
                     /**
                      * 设置消息时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timestamp 消息时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimestamp(const int64_t& _timestamp);
@@ -186,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取消息headers
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Headers 消息headers
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHeaders() const;
 
                     /**
                      * 设置消息headers
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _headers 消息headers
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHeaders(const std::string& _headers);
@@ -231,28 +215,24 @@ namespace TencentCloud
 
                     /**
                      * 消息key
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
 
                     /**
                      * 消息value
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;
 
                     /**
                      * 消息时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_timestamp;
                     bool m_timestampHasBeenSet;
 
                     /**
                      * 消息headers
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_headers;
                     bool m_headersHasBeenSet;

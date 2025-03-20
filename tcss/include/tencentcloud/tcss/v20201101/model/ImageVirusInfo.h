@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Path 路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPath() const;
 
                     /**
                      * 设置路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _path 路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPath(const std::string& _path);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取风险等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskLevel 风险等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRiskLevel() const;
 
                     /**
                      * 设置风险等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _riskLevel 风险等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRiskLevel(const uint64_t& _riskLevel);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取病毒名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VirusName 病毒名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVirusName() const;
 
                     /**
                      * 设置病毒名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _virusName 病毒名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVirusName(const std::string& _virusName);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetTags() const;
 
                     /**
                      * 设置标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::vector<std::string>& _tags);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Desc 描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDesc() const;
 
                     /**
                      * 设置描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _desc 描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDesc(const std::string& _desc);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取修护建议
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Solution 修护建议
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSolution() const;
 
                     /**
                      * 设置修护建议
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _solution 修护建议
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSolution(const std::string& _solution);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Size 大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetSize() const;
 
                     /**
                      * 设置大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _size 大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSize(const uint64_t& _size);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取首次发现时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FirstScanTime 首次发现时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFirstScanTime() const;
 
                     /**
                      * 设置首次发现时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _firstScanTime 首次发现时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFirstScanTime(const std::string& _firstScanTime);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最近扫描时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LatestScanTime 最近扫描时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLatestScanTime() const;
 
                     /**
                      * 设置最近扫描时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _latestScanTime 最近扫描时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLatestScanTime(const std::string& _latestScanTime);
@@ -273,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件md5
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Md5 文件md5
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMd5() const;
 
                     /**
                      * 设置文件md5
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _md5 文件md5
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMd5(const std::string& _md5);
@@ -298,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileName 文件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileName() const;
 
                     /**
                      * 设置文件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileName 文件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileName(const std::string& _fileName);
@@ -328,14 +284,12 @@ namespace TencentCloud
 3: binaryAi
 4: 异常行为
 5: 威胁情报
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CheckPlatform 检测平台
 1: 云查杀引擎
 2: tav
 3: binaryAi
 4: 异常行为
 5: 威胁情报
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetCheckPlatform() const;
@@ -347,14 +301,12 @@ namespace TencentCloud
 3: binaryAi
 4: 异常行为
 5: 威胁情报
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _checkPlatform 检测平台
 1: 云查杀引擎
 2: tav
 3: binaryAi
 4: 异常行为
 5: 威胁情报
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCheckPlatform(const std::vector<std::string>& _checkPlatform);
@@ -370,77 +322,66 @@ namespace TencentCloud
 
                     /**
                      * 路径
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_path;
                     bool m_pathHasBeenSet;
 
                     /**
                      * 风险等级
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_riskLevel;
                     bool m_riskLevelHasBeenSet;
 
                     /**
                      * 病毒名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_virusName;
                     bool m_virusNameHasBeenSet;
 
                     /**
                      * 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
                      * 描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_desc;
                     bool m_descHasBeenSet;
 
                     /**
                      * 修护建议
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_solution;
                     bool m_solutionHasBeenSet;
 
                     /**
                      * 大小
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_size;
                     bool m_sizeHasBeenSet;
 
                     /**
                      * 首次发现时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_firstScanTime;
                     bool m_firstScanTimeHasBeenSet;
 
                     /**
                      * 最近扫描时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_latestScanTime;
                     bool m_latestScanTimeHasBeenSet;
 
                     /**
                      * 文件md5
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_md5;
                     bool m_md5HasBeenSet;
 
                     /**
                      * 文件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileName;
                     bool m_fileNameHasBeenSet;
@@ -452,7 +393,6 @@ namespace TencentCloud
 3: binaryAi
 4: 异常行为
 5: 威胁情报
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_checkPlatform;
                     bool m_checkPlatformHasBeenSet;

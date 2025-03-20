@@ -98,18 +98,14 @@ Standby，代表备节点。
 
                     /**
                      * 获取专属集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DedicatedClusterId 专属集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDedicatedClusterId() const;
 
                     /**
                      * 设置专属集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dedicatedClusterId 专属集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDedicatedClusterId(const std::string& _dedicatedClusterId);
@@ -139,7 +135,6 @@ Standby，代表备节点。
 
                     /**
                      * 专属集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dedicatedClusterId;
                     bool m_dedicatedClusterIdHasBeenSet;

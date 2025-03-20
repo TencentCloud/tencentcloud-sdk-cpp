@@ -279,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群网络插件错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NetworkPolicyPluginError 集群网络插件错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNetworkPolicyPluginError() const;
 
                     /**
                      * 设置集群网络插件错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _networkPolicyPluginError 集群网络插件错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNetworkPolicyPluginError(const std::string& _networkPolicyPluginError);
@@ -304,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取容器网络插件
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterNetworkSettings 容器网络插件
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterNetworkSettings() const;
 
                     /**
                      * 设置容器网络插件
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterNetworkSettings 容器网络插件
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterNetworkSettings(const std::string& _clusterNetworkSettings);
@@ -397,14 +389,12 @@ namespace TencentCloud
 
                     /**
                      * 集群网络插件错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_networkPolicyPluginError;
                     bool m_networkPolicyPluginErrorHasBeenSet;
 
                     /**
                      * 容器网络插件
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterNetworkSettings;
                     bool m_clusterNetworkSettingsHasBeenSet;

@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取任务流ID(后付费或者serverless资源返回，如果需要同步任务状态，请使用DescribeFlow接口)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowId 任务流ID(后付费或者serverless资源返回，如果需要同步任务状态，请使用DescribeFlow接口)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFlowId() const;
@@ -79,7 +77,6 @@ namespace TencentCloud
 
                     /**
                      * 任务流ID(后付费或者serverless资源返回，如果需要同步任务状态，请使用DescribeFlow接口)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_flowId;
                     bool m_flowIdHasBeenSet;

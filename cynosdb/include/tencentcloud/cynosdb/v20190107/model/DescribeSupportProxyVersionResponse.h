@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取支持的数据库代理版本集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SupportProxyVersions 支持的数据库代理版本集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetSupportProxyVersions() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取当前proxy版本号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CurrentProxyVersion 当前proxy版本号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCurrentProxyVersion() const;
@@ -94,14 +90,12 @@ namespace TencentCloud
 
                     /**
                      * 支持的数据库代理版本集合
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_supportProxyVersions;
                     bool m_supportProxyVersionsHasBeenSet;
 
                     /**
                      * 当前proxy版本号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_currentProxyVersion;
                     bool m_currentProxyVersionHasBeenSet;

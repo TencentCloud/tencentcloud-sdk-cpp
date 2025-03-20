@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取副可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecondaryZone 副可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSecondaryZone() const;
 
                     /**
                      * 设置副可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _secondaryZone 副可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSecondaryZone(const std::string& _secondaryZone);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取可用区可用的子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecondarySubnet 可用区可用的子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSecondarySubnet() const;
 
                     /**
                      * 设置可用区可用的子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _secondarySubnet 可用区可用的子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSecondarySubnet(const std::string& _secondarySubnet);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取可用区可用的子网可用ip的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserIpNum 可用区可用的子网可用ip的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserIpNum() const;
 
                     /**
                      * 设置可用区可用的子网可用ip的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userIpNum 可用区可用的子网可用ip的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserIpNum(const std::string& _userIpNum);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取可用区可用的子网可用ip的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecondaryUserSubnetIPNum 可用区可用的子网可用ip的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSecondaryUserSubnetIPNum() const;
 
                     /**
                      * 设置可用区可用的子网可用ip的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _secondaryUserSubnetIPNum 可用区可用的子网可用ip的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSecondaryUserSubnetIPNum(const int64_t& _secondaryUserSubnetIPNum);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 副可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_secondaryZone;
                     bool m_secondaryZoneHasBeenSet;
 
                     /**
                      * 可用区可用的子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_secondarySubnet;
                     bool m_secondarySubnetHasBeenSet;
 
                     /**
                      * 可用区可用的子网可用ip的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userIpNum;
                     bool m_userIpNumHasBeenSet;
 
                     /**
                      * 可用区可用的子网可用ip的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_secondaryUserSubnetIPNum;
                     bool m_secondaryUserSubnetIPNumHasBeenSet;

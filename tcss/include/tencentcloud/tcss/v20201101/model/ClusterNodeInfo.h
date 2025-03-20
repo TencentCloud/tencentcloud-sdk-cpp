@@ -153,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取agent安装状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AgentStatus agent安装状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAgentStatus() const;
 
                     /**
                      * 设置agent安装状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _agentStatus agent安装状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAgentStatus(const std::string& _agentStatus);
@@ -178,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取公网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicIP 公网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPublicIP() const;
 
                     /**
                      * 设置公网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _publicIP 公网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPublicIP(const std::string& _publicIP);
@@ -203,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostID 节点ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHostID() const;
 
                     /**
                      * 设置节点ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hostID 节点ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHostID(const std::string& _hostID);
@@ -228,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机类型(普通节点情况)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MachineType 主机类型(普通节点情况)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMachineType() const;
 
                     /**
                      * 设置主机类型(普通节点情况)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _machineType 主机类型(普通节点情况)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMachineType(const std::string& _machineType);
@@ -256,12 +240,10 @@ namespace TencentCloud
 NORMAL: 普通节点
 SUPER:超级节点
 )
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeType 节点类型(
 NORMAL: 普通节点
 SUPER:超级节点
 )
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNodeType() const;
@@ -271,12 +253,10 @@ SUPER:超级节点
 NORMAL: 普通节点
 SUPER:超级节点
 )
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nodeType 节点类型(
 NORMAL: 普通节点
 SUPER:超级节点
 )
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNodeType(const std::string& _nodeType);
@@ -290,18 +270,14 @@ SUPER:超级节点
 
                     /**
                      * 获取uuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UUID uuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUUID() const;
 
                     /**
                      * 设置uuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uUID uuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUUID(const std::string& _uUID);
@@ -315,18 +291,14 @@ SUPER:超级节点
 
                     /**
                      * 获取计费核数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChargeCoresCnt 计费核数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetChargeCoresCnt() const;
 
                     /**
                      * 设置计费核数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _chargeCoresCnt 计费核数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChargeCoresCnt(const uint64_t& _chargeCoresCnt);
@@ -342,11 +314,9 @@ SUPER:超级节点
                      * 获取防护状态:
 已防护: Defended
 未防护: UnDefended
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefendStatus 防护状态:
 已防护: Defended
 未防护: UnDefended
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDefendStatus() const;
@@ -355,11 +325,9 @@ SUPER:超级节点
                      * 设置防护状态:
 已防护: Defended
 未防护: UnDefended
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _defendStatus 防护状态:
 已防护: Defended
 未防护: UnDefended
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDefendStatus(const std::string& _defendStatus);
@@ -405,28 +373,24 @@ SUPER:超级节点
 
                     /**
                      * agent安装状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_agentStatus;
                     bool m_agentStatusHasBeenSet;
 
                     /**
                      * 公网ip
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_publicIP;
                     bool m_publicIPHasBeenSet;
 
                     /**
                      * 节点ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hostID;
                     bool m_hostIDHasBeenSet;
 
                     /**
                      * 主机类型(普通节点情况)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_machineType;
                     bool m_machineTypeHasBeenSet;
@@ -436,21 +400,18 @@ SUPER:超级节点
 NORMAL: 普通节点
 SUPER:超级节点
 )
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nodeType;
                     bool m_nodeTypeHasBeenSet;
 
                     /**
                      * uuid
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uUID;
                     bool m_uUIDHasBeenSet;
 
                     /**
                      * 计费核数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_chargeCoresCnt;
                     bool m_chargeCoresCntHasBeenSet;
@@ -459,7 +420,6 @@ SUPER:超级节点
                      * 防护状态:
 已防护: Defended
 未防护: UnDefended
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_defendStatus;
                     bool m_defendStatusHasBeenSet;

@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取实例参数列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Items 实例参数列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ParamItemInfo> GetItems() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 实例参数列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ParamItemInfo> m_items;
                     bool m_itemsHasBeenSet;

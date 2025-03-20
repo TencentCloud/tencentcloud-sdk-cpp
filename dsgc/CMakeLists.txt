@@ -44,7 +44,6 @@ set(dsgc_public_header_model
   include/tencentcloud/dsgc/v20190723/model/ModifyClassificationRuleRequest.h
   include/tencentcloud/dsgc/v20190723/model/DescribeDSPADiscoveryServiceStatusResponse.h
   include/tencentcloud/dsgc/v20190723/model/CloudResourceItem.h
-  include/tencentcloud/dsgc/v20190723/model/DescribeRuleDetailResponse.h
   include/tencentcloud/dsgc/v20190723/model/DSPACosMetaDataInfo.h
   include/tencentcloud/dsgc/v20190723/model/AssessmentTemplate.h
   include/tencentcloud/dsgc/v20190723/model/ModifyDSPATaskResultRequest.h
@@ -95,7 +94,6 @@ set(dsgc_public_header_model
   include/tencentcloud/dsgc/v20190723/model/DescribeAssetDetailDataExportResultResponse.h
   include/tencentcloud/dsgc/v20190723/model/DeleteDSPADiscoveryTaskResultResponse.h
   include/tencentcloud/dsgc/v20190723/model/DspaDiscoveryTaskDataSource.h
-  include/tencentcloud/dsgc/v20190723/model/DescribeRuleDetailRequest.h
   include/tencentcloud/dsgc/v20190723/model/ModifyDSPADiscoveryTaskRequest.h
   include/tencentcloud/dsgc/v20190723/model/DeleteDSPAAssessmentTaskResponse.h
   include/tencentcloud/dsgc/v20190723/model/DspaDiscoveryComplianceGroupRuleInfo.h
@@ -461,7 +459,6 @@ set(dsgc_src
   src/v20190723/model/ModifyClassificationRuleRequest.cpp
   src/v20190723/model/DescribeDSPADiscoveryServiceStatusResponse.cpp
   src/v20190723/model/CloudResourceItem.cpp
-  src/v20190723/model/DescribeRuleDetailResponse.cpp
   src/v20190723/model/DSPACosMetaDataInfo.cpp
   src/v20190723/model/AssessmentTemplate.cpp
   src/v20190723/model/ModifyDSPATaskResultRequest.cpp
@@ -512,7 +509,6 @@ set(dsgc_src
   src/v20190723/model/DescribeAssetDetailDataExportResultResponse.cpp
   src/v20190723/model/DeleteDSPADiscoveryTaskResultResponse.cpp
   src/v20190723/model/DspaDiscoveryTaskDataSource.cpp
-  src/v20190723/model/DescribeRuleDetailRequest.cpp
   src/v20190723/model/ModifyDSPADiscoveryTaskRequest.cpp
   src/v20190723/model/DeleteDSPAAssessmentTaskResponse.cpp
   src/v20190723/model/DspaDiscoveryComplianceGroupRuleInfo.cpp

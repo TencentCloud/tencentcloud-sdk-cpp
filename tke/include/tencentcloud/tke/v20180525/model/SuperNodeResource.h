@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeName 节点名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNodeName() const;
 
                     /**
                      * 设置节点名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nodeName 节点名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNodeName(const std::string& _nodeName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点上的资源总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Num 节点上的资源总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetNum() const;
 
                     /**
                      * 设置节点上的资源总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _num 节点上的资源总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNum(const uint64_t& _num);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点上的总核数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cpu 节点上的总核数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetCpu() const;
 
                     /**
                      * 设置节点上的总核数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cpu 节点上的总核数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCpu(const double& _cpu);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点上的总内存数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Memory 节点上的总内存数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetMemory() const;
 
                     /**
                      * 设置节点上的总内存数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _memory 节点上的总内存数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMemory(const double& _memory);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点上的总 GPU 卡数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Gpu 节点上的总 GPU 卡数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetGpu() const;
 
                     /**
                      * 设置节点上的总 GPU 卡数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gpu 节点上的总 GPU 卡数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGpu(const double& _gpu);
@@ -175,35 +155,30 @@ namespace TencentCloud
 
                     /**
                      * 节点名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nodeName;
                     bool m_nodeNameHasBeenSet;
 
                     /**
                      * 节点上的资源总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_num;
                     bool m_numHasBeenSet;
 
                     /**
                      * 节点上的总核数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_cpu;
                     bool m_cpuHasBeenSet;
 
                     /**
                      * 节点上的总内存数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_memory;
                     bool m_memoryHasBeenSet;
 
                     /**
                      * 节点上的总 GPU 卡数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_gpu;
                     bool m_gpuHasBeenSet;

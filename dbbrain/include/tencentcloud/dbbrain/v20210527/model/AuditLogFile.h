@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取审计日志文件生成异步任务ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AsyncRequestId 审计日志文件生成异步任务ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAsyncRequestId() const;
 
                     /**
                      * 设置审计日志文件生成异步任务ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _asyncRequestId 审计日志文件生成异步任务ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAsyncRequestId(const int64_t& _asyncRequestId);
@@ -94,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取审计日志文件创建时间。格式为 : "2019-03-20 17:09:13"。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 审计日志文件创建时间。格式为 : "2019-03-20 17:09:13"。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置审计日志文件创建时间。格式为 : "2019-03-20 17:09:13"。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 审计日志文件创建时间。格式为 : "2019-03-20 17:09:13"。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -122,12 +114,10 @@ namespace TencentCloud
 "creating" - 生成中;
 "failed" - 创建失败;
 "success" - 已生成;
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 文件状态值。可能返回的值为：
 "creating" - 生成中;
 "failed" - 创建失败;
 "success" - 已生成;
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
@@ -137,12 +127,10 @@ namespace TencentCloud
 "creating" - 生成中;
 "failed" - 创建失败;
 "success" - 已生成;
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 文件状态值。可能返回的值为：
 "creating" - 生成中;
 "failed" - 创建失败;
 "success" - 已生成;
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -263,7 +251,6 @@ namespace TencentCloud
 
                     /**
                      * 审计日志文件生成异步任务ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_asyncRequestId;
                     bool m_asyncRequestIdHasBeenSet;
@@ -276,7 +263,6 @@ namespace TencentCloud
 
                     /**
                      * 审计日志文件创建时间。格式为 : "2019-03-20 17:09:13"。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
@@ -286,7 +272,6 @@ namespace TencentCloud
 "creating" - 生成中;
 "failed" - 创建失败;
 "success" - 已生成;
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

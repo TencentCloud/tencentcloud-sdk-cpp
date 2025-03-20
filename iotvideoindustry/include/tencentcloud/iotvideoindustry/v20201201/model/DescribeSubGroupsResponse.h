@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取子分组详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupList 子分组详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<GroupItem> GetGroupList() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取子分组总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 子分组总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 子分组详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<GroupItem> m_groupList;
                     bool m_groupListHasBeenSet;
 
                     /**
                      * 子分组总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

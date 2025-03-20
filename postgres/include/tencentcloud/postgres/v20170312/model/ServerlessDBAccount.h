@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DBUser 用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDBUser() const;
 
                     /**
                      * 设置用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dBUser 用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDBUser(const std::string& _dBUser);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DBPassword 密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDBPassword() const;
 
                     /**
                      * 设置密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dBPassword 密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDBPassword(const std::string& _dBPassword);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取连接数限制
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DBConnLimit 连接数限制
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDBConnLimit() const;
 
                     /**
                      * 设置连接数限制
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dBConnLimit 连接数限制
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDBConnLimit(const int64_t& _dBConnLimit);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dBUser;
                     bool m_dBUserHasBeenSet;
 
                     /**
                      * 密码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dBPassword;
                     bool m_dBPasswordHasBeenSet;
 
                     /**
                      * 连接数限制
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_dBConnLimit;
                     bool m_dBConnLimitHasBeenSet;

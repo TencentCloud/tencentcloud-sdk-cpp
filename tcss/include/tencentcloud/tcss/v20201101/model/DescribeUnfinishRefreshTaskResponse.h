@@ -73,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取新任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NewTaskID 新任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNewTaskID() const;
@@ -103,7 +101,6 @@ namespace TencentCloud
 
                     /**
                      * 新任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_newTaskID;
                     bool m_newTaskIDHasBeenSet;

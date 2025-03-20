@@ -409,9 +409,7 @@ namespace TencentCloud
 
                     /**
                      * 获取隔离来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsolateSource 隔离来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIsolateSource() const;
@@ -425,9 +423,7 @@ namespace TencentCloud
 
                     /**
                      * 获取隔离时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsolateTime 隔离时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIsolateTime() const;
@@ -781,14 +777,12 @@ namespace TencentCloud
 
                     /**
                      * 隔离来源
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_isolateSource;
                     bool m_isolateSourceHasBeenSet;
 
                     /**
                      * 隔离时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_isolateTime;
                     bool m_isolateTimeHasBeenSet;

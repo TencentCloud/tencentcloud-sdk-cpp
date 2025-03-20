@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取镜像所在远程仓库的路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Repository 镜像所在远程仓库的路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRepository() const;
 
                     /**
                      * 设置镜像所在远程仓库的路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _repository 镜像所在远程仓库的路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRepository(const std::string& _repository);
@@ -156,7 +152,6 @@ namespace TencentCloud
 
                     /**
                      * 镜像所在远程仓库的路径。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_repository;
                     bool m_repositoryHasBeenSet;

@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取分组绑定的设备数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 分组绑定的设备数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取设备详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceList 设备详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<GroupDeviceItem> GetDeviceList() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 分组绑定的设备数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
                      * 设备详情列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<GroupDeviceItem> m_deviceList;
                     bool m_deviceListHasBeenSet;

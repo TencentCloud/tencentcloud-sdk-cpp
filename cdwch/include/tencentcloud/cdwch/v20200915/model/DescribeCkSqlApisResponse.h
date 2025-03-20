@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取返回的查询数据，大部分情况是list，也可能是bool
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReturnData 返回的查询数据，大部分情况是list，也可能是bool
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReturnData() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 返回的查询数据，大部分情况是list，也可能是bool
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_returnData;
                     bool m_returnDataHasBeenSet;

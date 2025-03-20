@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取表的列名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ColumnName 表的列名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetColumnName() const;
 
                     /**
                      * 设置表的列名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _columnName 表的列名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetColumnName(const std::string& _columnName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该列对应的jsonKey名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return JsonKey 该列对应的jsonKey名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetJsonKey() const;
 
                     /**
                      * 设置该列对应的jsonKey名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _jsonKey 该列对应的jsonKey名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetJsonKey(const std::string& _jsonKey);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取表列项的类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 表列项的类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置表列项的类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 表列项的类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取列项是否允许为空
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AllowNull 列项是否允许为空
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetAllowNull() const;
 
                     /**
                      * 设置列项是否允许为空
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _allowNull 列项是否允许为空
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAllowNull(const bool& _allowNull);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 表的列名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_columnName;
                     bool m_columnNameHasBeenSet;
 
                     /**
                      * 该列对应的jsonKey名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_jsonKey;
                     bool m_jsonKeyHasBeenSet;
 
                     /**
                      * 表列项的类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 列项是否允许为空
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_allowNull;
                     bool m_allowNullHasBeenSet;

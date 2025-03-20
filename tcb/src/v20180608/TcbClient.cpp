@@ -814,49 +814,6 @@ TcbClient::DeleteWxGatewayRouteOutcomeCallable TcbClient::DeleteWxGatewayRouteCa
     return task->get_future();
 }
 
-TcbClient::DescribeActivityInfoOutcome TcbClient::DescribeActivityInfo(const DescribeActivityInfoRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeActivityInfo");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeActivityInfoResponse rsp = DescribeActivityInfoResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeActivityInfoOutcome(rsp);
-        else
-            return DescribeActivityInfoOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeActivityInfoOutcome(outcome.GetError());
-    }
-}
-
-void TcbClient::DescribeActivityInfoAsync(const DescribeActivityInfoRequest& request, const DescribeActivityInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeActivityInfo(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TcbClient::DescribeActivityInfoOutcomeCallable TcbClient::DescribeActivityInfoCallable(const DescribeActivityInfoRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeActivityInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeActivityInfo(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TcbClient::DescribeActivityRecordOutcome TcbClient::DescribeActivityRecord(const DescribeActivityRecordRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeActivityRecord");

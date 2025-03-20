@@ -3824,6 +3824,49 @@ TeoClient::DescribeSecurityIPGroupInfoOutcomeCallable TeoClient::DescribeSecurit
     return task->get_future();
 }
 
+TeoClient::DescribeSecurityPolicyOutcome TeoClient::DescribeSecurityPolicy(const DescribeSecurityPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSecurityPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSecurityPolicyResponse rsp = DescribeSecurityPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSecurityPolicyOutcome(rsp);
+        else
+            return DescribeSecurityPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSecurityPolicyOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeSecurityPolicyAsync(const DescribeSecurityPolicyRequest& request, const DescribeSecurityPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSecurityPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DescribeSecurityPolicyOutcomeCallable TeoClient::DescribeSecurityPolicyCallable(const DescribeSecurityPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSecurityPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSecurityPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TeoClient::DescribeSecurityTemplateBindingsOutcome TeoClient::DescribeSecurityTemplateBindings(const DescribeSecurityTemplateBindingsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSecurityTemplateBindings");

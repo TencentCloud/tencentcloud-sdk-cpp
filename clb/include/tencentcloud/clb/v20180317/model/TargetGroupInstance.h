@@ -90,14 +90,22 @@ namespace TencentCloud
 
                     /**
                      * 获取目标组实例的权重
+
+v2目标组需要配置权重，调用CreateTargetGroup接口创建目标组时该参数与创建接口中的Weight参数必填其一。
                      * @return Weight 目标组实例的权重
+
+v2目标组需要配置权重，调用CreateTargetGroup接口创建目标组时该参数与创建接口中的Weight参数必填其一。
                      * 
                      */
                     uint64_t GetWeight() const;
 
                     /**
                      * 设置目标组实例的权重
+
+v2目标组需要配置权重，调用CreateTargetGroup接口创建目标组时该参数与创建接口中的Weight参数必填其一。
                      * @param _weight 目标组实例的权重
+
+v2目标组需要配置权重，调用CreateTargetGroup接口创建目标组时该参数与创建接口中的Weight参数必填其一。
                      * 
                      */
                     void SetWeight(const uint64_t& _weight);
@@ -146,6 +154,8 @@ namespace TencentCloud
 
                     /**
                      * 目标组实例的权重
+
+v2目标组需要配置权重，调用CreateTargetGroup接口创建目标组时该参数与创建接口中的Weight参数必填其一。
                      */
                     uint64_t m_weight;
                     bool m_weightHasBeenSet;

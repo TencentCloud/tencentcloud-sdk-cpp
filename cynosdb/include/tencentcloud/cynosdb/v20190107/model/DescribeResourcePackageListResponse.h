@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取资源包明细
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Detail 资源包明细
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Package> GetDetail() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 资源包明细
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Package> m_detail;
                     bool m_detailHasBeenSet;

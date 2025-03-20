@@ -24,7 +24,9 @@ SecLogDeliveryKafkaSettingInfo::SecLogDeliveryKafkaSettingInfo() :
     m_logTypeHasBeenSet(false),
     m_topicIDHasBeenSet(false),
     m_topicNameHasBeenSet(false),
-    m_stateHasBeenSet(false)
+    m_stateHasBeenSet(false),
+    m_subLogTypeHasBeenSet(false),
+    m_errMsgHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,29 @@ CoreInternalOutcome SecLogDeliveryKafkaSettingInfo::Deserialize(const rapidjson:
         m_stateHasBeenSet = true;
     }
 
+    if (value.HasMember("SubLogType") && !value["SubLogType"].IsNull())
+    {
+        if (!value["SubLogType"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SecLogDeliveryKafkaSettingInfo.SubLogType` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SubLogType"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_subLogType.push_back((*itr).GetString());
+        }
+        m_subLogTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ErrMsg") && !value["ErrMsg"].IsNull())
+    {
+        if (!value["ErrMsg"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecLogDeliveryKafkaSettingInfo.ErrMsg` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_errMsg = string(value["ErrMsg"].GetString());
+        m_errMsgHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +135,27 @@ void SecLogDeliveryKafkaSettingInfo::ToJsonObject(rapidjson::Value &value, rapid
         string key = "State";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_state, allocator);
+    }
+
+    if (m_subLogTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubLogType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_subLogType.begin(); itr != m_subLogType.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_errMsgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrMsg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errMsg.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +223,37 @@ void SecLogDeliveryKafkaSettingInfo::SetState(const bool& _state)
 bool SecLogDeliveryKafkaSettingInfo::StateHasBeenSet() const
 {
     return m_stateHasBeenSet;
+}
+
+vector<string> SecLogDeliveryKafkaSettingInfo::GetSubLogType() const
+{
+    return m_subLogType;
+}
+
+void SecLogDeliveryKafkaSettingInfo::SetSubLogType(const vector<string>& _subLogType)
+{
+    m_subLogType = _subLogType;
+    m_subLogTypeHasBeenSet = true;
+}
+
+bool SecLogDeliveryKafkaSettingInfo::SubLogTypeHasBeenSet() const
+{
+    return m_subLogTypeHasBeenSet;
+}
+
+string SecLogDeliveryKafkaSettingInfo::GetErrMsg() const
+{
+    return m_errMsg;
+}
+
+void SecLogDeliveryKafkaSettingInfo::SetErrMsg(const string& _errMsg)
+{
+    m_errMsg = _errMsg;
+    m_errMsgHasBeenSet = true;
+}
+
+bool SecLogDeliveryKafkaSettingInfo::ErrMsgHasBeenSet() const
+{
+    return m_errMsgHasBeenSet;
 }
 

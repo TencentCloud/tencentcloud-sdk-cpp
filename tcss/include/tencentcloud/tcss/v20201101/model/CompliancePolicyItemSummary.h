@@ -195,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最近检测的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastCheckTime 最近检测的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLastCheckTime() const;
 
                     /**
                      * 设置最近检测的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lastCheckTime 最近检测的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLastCheckTime(const std::string& _lastCheckTime);
@@ -275,11 +271,9 @@ CHECK_FAILED, 检测失败
                      * 获取检测结果。RESULT_PASSED: 通过
 
 RESULT_FAILED: 未通过
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CheckResult 检测结果。RESULT_PASSED: 通过
 
 RESULT_FAILED: 未通过
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCheckResult() const;
@@ -288,11 +282,9 @@ RESULT_FAILED: 未通过
                      * 设置检测结果。RESULT_PASSED: 通过
 
 RESULT_FAILED: 未通过
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _checkResult 检测结果。RESULT_PASSED: 通过
 
 RESULT_FAILED: 未通过
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCheckResult(const std::string& _checkResult);
@@ -306,18 +298,14 @@ RESULT_FAILED: 未通过
 
                     /**
                      * 获取通过检测的资产的数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PassedAssetCount 通过检测的资产的数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPassedAssetCount() const;
 
                     /**
                      * 设置通过检测的资产的数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _passedAssetCount 通过检测的资产的数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPassedAssetCount(const uint64_t& _passedAssetCount);
@@ -331,18 +319,14 @@ RESULT_FAILED: 未通过
 
                     /**
                      * 获取未通过检测的资产的数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailedAssetCount 未通过检测的资产的数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetFailedAssetCount() const;
 
                     /**
                      * 设置未通过检测的资产的数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _failedAssetCount 未通过检测的资产的数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFailedAssetCount(const uint64_t& _failedAssetCount);
@@ -356,18 +340,14 @@ RESULT_FAILED: 未通过
 
                     /**
                      * 获取检测项对应的白名单项的ID。如果存在且非0，表示检测项被用户忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WhitelistId 检测项对应的白名单项的ID。如果存在且非0，表示检测项被用户忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetWhitelistId() const;
 
                     /**
                      * 设置检测项对应的白名单项的ID。如果存在且非0，表示检测项被用户忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _whitelistId 检测项对应的白名单项的ID。如果存在且非0，表示检测项被用户忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWhitelistId(const uint64_t& _whitelistId);
@@ -423,18 +403,14 @@ RESULT_FAILED: 未通过
 
                     /**
                      * 获取检测项适用的版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicableVersion 检测项适用的版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApplicableVersion() const;
 
                     /**
                      * 设置检测项适用的版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _applicableVersion 检测项适用的版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApplicableVersion(const std::string& _applicableVersion);
@@ -448,18 +424,14 @@ RESULT_FAILED: 未通过
 
                     /**
                      * 获取检查项描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 检查项描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置检查项描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 检查项描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -473,18 +445,14 @@ RESULT_FAILED: 未通过
 
                     /**
                      * 获取检查项审计方法
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuditProcedure 检查项审计方法
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAuditProcedure() const;
 
                     /**
                      * 设置检查项审计方法
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _auditProcedure 检查项审计方法
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAuditProcedure(const std::string& _auditProcedure);
@@ -500,11 +468,9 @@ RESULT_FAILED: 未通过
                      * 获取是否开启
 <li>0 关闭</li>
 <li>1 开启</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsEnable 是否开启
 <li>0 关闭</li>
 <li>1 开启</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIsEnable() const;
@@ -513,11 +479,9 @@ RESULT_FAILED: 未通过
                      * 设置是否开启
 <li>0 关闭</li>
 <li>1 开启</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isEnable 是否开启
 <li>0 关闭</li>
 <li>1 开启</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsEnable(const uint64_t& _isEnable);
@@ -575,7 +539,6 @@ RESULT_FAILED: 未通过
 
                     /**
                      * 最近检测的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastCheckTime;
                     bool m_lastCheckTimeHasBeenSet;
@@ -598,28 +561,24 @@ CHECK_FAILED, 检测失败
                      * 检测结果。RESULT_PASSED: 通过
 
 RESULT_FAILED: 未通过
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_checkResult;
                     bool m_checkResultHasBeenSet;
 
                     /**
                      * 通过检测的资产的数目
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_passedAssetCount;
                     bool m_passedAssetCountHasBeenSet;
 
                     /**
                      * 未通过检测的资产的数目
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_failedAssetCount;
                     bool m_failedAssetCountHasBeenSet;
 
                     /**
                      * 检测项对应的白名单项的ID。如果存在且非0，表示检测项被用户忽略。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_whitelistId;
                     bool m_whitelistIdHasBeenSet;
@@ -638,21 +597,18 @@ RESULT_FAILED: 未通过
 
                     /**
                      * 检测项适用的版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_applicableVersion;
                     bool m_applicableVersionHasBeenSet;
 
                     /**
                      * 检查项描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
                      * 检查项审计方法
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_auditProcedure;
                     bool m_auditProcedureHasBeenSet;
@@ -661,7 +617,6 @@ RESULT_FAILED: 未通过
                      * 是否开启
 <li>0 关闭</li>
 <li>1 开启</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_isEnable;
                     bool m_isEnableHasBeenSet;

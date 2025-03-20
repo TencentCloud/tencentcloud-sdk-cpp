@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取生产的信息是否为json格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DecodeJson 生产的信息是否为json格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetDecodeJson() const;
 
                     /**
                      * 设置生产的信息是否为json格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _decodeJson 生产的信息是否为json格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDecodeJson(const bool& _decodeJson);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取cls日志主题id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Resource cls日志主题id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResource() const;
 
                     /**
                      * 设置cls日志主题id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resource cls日志主题id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResource(const std::string& _resource);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取cls日志集id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogSet cls日志集id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLogSet() const;
 
                     /**
                      * 设置cls日志集id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logSet cls日志集id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogSet(const std::string& _logSet);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当DecodeJson为false时必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContentKey 当DecodeJson为false时必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContentKey() const;
 
                     /**
                      * 设置当DecodeJson为false时必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _contentKey 当DecodeJson为false时必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContentKey(const std::string& _contentKey);
@@ -149,10 +133,8 @@ namespace TencentCloud
                     /**
                      * 获取指定消息中的某字段内容作为cls日志的时间。
 字段内容格式需要是秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeField 指定消息中的某字段内容作为cls日志的时间。
 字段内容格式需要是秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTimeField() const;
@@ -160,10 +142,8 @@ namespace TencentCloud
                     /**
                      * 设置指定消息中的某字段内容作为cls日志的时间。
 字段内容格式需要是秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timeField 指定消息中的某字段内容作为cls日志的时间。
 字段内容格式需要是秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimeField(const std::string& _timeField);
@@ -179,28 +159,24 @@ namespace TencentCloud
 
                     /**
                      * 生产的信息是否为json格式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_decodeJson;
                     bool m_decodeJsonHasBeenSet;
 
                     /**
                      * cls日志主题id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resource;
                     bool m_resourceHasBeenSet;
 
                     /**
                      * cls日志集id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logSet;
                     bool m_logSetHasBeenSet;
 
                     /**
                      * 当DecodeJson为false时必填
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_contentKey;
                     bool m_contentKeyHasBeenSet;
@@ -208,7 +184,6 @@ namespace TencentCloud
                     /**
                      * 指定消息中的某字段内容作为cls日志的时间。
 字段内容格式需要是秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_timeField;
                     bool m_timeFieldHasBeenSet;

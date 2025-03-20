@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户列表，默认为User:*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Principal 用户列表，默认为User:*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPrincipal() const;
 
                     /**
                      * 设置用户列表，默认为User:*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _principal 用户列表，默认为User:*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPrincipal(const std::string& _principal);
@@ -115,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取默认\*,表示任何host都可以访问，当前ckafka不支持host为\*，但是后面开源kafka的产品化会直接支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Host 默认\*,表示任何host都可以访问，当前ckafka不支持host为\*，但是后面开源kafka的产品化会直接支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHost() const;
 
                     /**
                      * 设置默认\*,表示任何host都可以访问，当前ckafka不支持host为\*，但是后面开源kafka的产品化会直接支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _host 默认\*,表示任何host都可以访问，当前ckafka不支持host为\*，但是后面开源kafka的产品化会直接支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHost(const std::string& _host);
@@ -196,14 +188,12 @@ namespace TencentCloud
 
                     /**
                      * 用户列表，默认为User:*，表示任何user都可以访问，当前用户只能是用户列表中包含的用户
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_principal;
                     bool m_principalHasBeenSet;
 
                     /**
                      * 默认\*,表示任何host都可以访问，当前ckafka不支持host为\*，但是后面开源kafka的产品化会直接支持
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_host;
                     bool m_hostHasBeenSet;

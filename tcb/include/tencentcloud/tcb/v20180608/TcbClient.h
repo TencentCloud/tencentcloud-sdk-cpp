@@ -59,8 +59,6 @@
 #include <tencentcloud/tcb/v20180608/model/DeleteGatewayVersionResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteWxGatewayRouteRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DeleteWxGatewayRouteResponse.h>
-#include <tencentcloud/tcb/v20180608/model/DescribeActivityInfoRequest.h>
-#include <tencentcloud/tcb/v20180608/model/DescribeActivityInfoResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeActivityRecordRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeActivityRecordResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeAuthDomainsRequest.h>
@@ -271,9 +269,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteWxGatewayRouteResponse> DeleteWxGatewayRouteOutcome;
                 typedef std::future<DeleteWxGatewayRouteOutcome> DeleteWxGatewayRouteOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DeleteWxGatewayRouteRequest&, DeleteWxGatewayRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteWxGatewayRouteAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeActivityInfoResponse> DescribeActivityInfoOutcome;
-                typedef std::future<DescribeActivityInfoOutcome> DescribeActivityInfoOutcomeCallable;
-                typedef std::function<void(const TcbClient*, const Model::DescribeActivityInfoRequest&, DescribeActivityInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeActivityInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeActivityRecordResponse> DescribeActivityRecordOutcome;
                 typedef std::future<DescribeActivityRecordOutcome> DescribeActivityRecordOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeActivityRecordRequest&, DescribeActivityRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeActivityRecordAsyncHandler;
@@ -651,15 +646,6 @@ namespace TencentCloud
                 DeleteWxGatewayRouteOutcome DeleteWxGatewayRoute(const Model::DeleteWxGatewayRouteRequest &request);
                 void DeleteWxGatewayRouteAsync(const Model::DeleteWxGatewayRouteRequest& request, const DeleteWxGatewayRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteWxGatewayRouteOutcomeCallable DeleteWxGatewayRouteCallable(const Model::DeleteWxGatewayRouteRequest& request);
-
-                /**
-                 *查询活动信息
-                 * @param req DescribeActivityInfoRequest
-                 * @return DescribeActivityInfoOutcome
-                 */
-                DescribeActivityInfoOutcome DescribeActivityInfo(const Model::DescribeActivityInfoRequest &request);
-                void DescribeActivityInfoAsync(const Model::DescribeActivityInfoRequest& request, const DescribeActivityInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeActivityInfoOutcomeCallable DescribeActivityInfoCallable(const Model::DescribeActivityInfoRequest& request);
 
                 /**
                  *查询活动记录信息

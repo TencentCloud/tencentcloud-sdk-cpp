@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取类型值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Key 类型值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetKey() const;
 
                     /**
                      * 设置类型值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _key 类型值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKey(const int64_t& _key);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取类型总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Count 类型总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCount() const;
 
                     /**
                      * 设置类型总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _count 类型总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCount(const int64_t& _count);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 类型值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_key;
                     bool m_keyHasBeenSet;
 
                     /**
                      * 类型总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_count;
                     bool m_countHasBeenSet;

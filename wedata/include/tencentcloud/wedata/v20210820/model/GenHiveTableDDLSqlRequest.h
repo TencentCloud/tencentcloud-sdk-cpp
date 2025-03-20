@@ -571,6 +571,27 @@ namespace TencentCloud
                      */
                     bool EnvHasBeenSet() const;
 
+                    /**
+                     * 获取doris写入模式配置
+                     * @return WriteMode doris写入模式配置
+                     * 
+                     */
+                    std::string GetWriteMode() const;
+
+                    /**
+                     * 设置doris写入模式配置
+                     * @param _writeMode doris写入模式配置
+                     * 
+                     */
+                    void SetWriteMode(const std::string& _writeMode);
+
+                    /**
+                     * 判断参数 WriteMode 是否已赋值
+                     * @return WriteMode 是否已赋值
+                     * 
+                     */
+                    bool WriteModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -722,6 +743,12 @@ namespace TencentCloud
                      */
                     std::string m_env;
                     bool m_envHasBeenSet;
+
+                    /**
+                     * doris写入模式配置
+                     */
+                    std::string m_writeMode;
+                    bool m_writeModeHasBeenSet;
 
                 };
             }

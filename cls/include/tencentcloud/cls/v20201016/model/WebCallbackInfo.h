@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取告警渠道回调配置id。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WebCallbackId 告警渠道回调配置id。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWebCallbackId() const;
 
                     /**
                      * 设置告警渠道回调配置id。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _webCallbackId 告警渠道回调配置id。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWebCallbackId(const std::string& _webCallbackId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取告警渠道回调配置名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 告警渠道回调配置名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置告警渠道回调配置名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 告警渠道回调配置名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -100,11 +92,9 @@ namespace TencentCloud
                      * 获取渠道类型
 
 WeCom:企业微信;DingTalk:钉钉;Lark:飞书;Http:自定义回调;
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 渠道类型
 
 WeCom:企业微信;DingTalk:钉钉;Lark:飞书;Http:自定义回调;
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
@@ -113,11 +103,9 @@ WeCom:企业微信;DingTalk:钉钉;Lark:飞书;Http:自定义回调;
                      * 设置渠道类型
 
 WeCom:企业微信;DingTalk:钉钉;Lark:飞书;Http:自定义回调;
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 渠道类型
 
 WeCom:企业微信;DingTalk:钉钉;Lark:飞书;Http:自定义回调;
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -131,18 +119,14 @@ WeCom:企业微信;DingTalk:钉钉;Lark:飞书;Http:自定义回调;
 
                     /**
                      * 获取回调地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Webhook 回调地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWebhook() const;
 
                     /**
                      * 设置回调地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _webhook 回调地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWebhook(const std::string& _webhook);
@@ -156,18 +140,14 @@ WeCom:企业微信;DingTalk:钉钉;Lark:飞书;Http:自定义回调;
 
                     /**
                      * 获取请求方式。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Method 请求方式。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMethod() const;
 
                     /**
                      * 设置请求方式。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _method 请求方式。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMethod(const std::string& _method);
@@ -181,18 +161,14 @@ WeCom:企业微信;DingTalk:钉钉;Lark:飞书;Http:自定义回调;
 
                     /**
                      * 获取秘钥信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Key 秘钥信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置秘钥信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _key 秘钥信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKey(const std::string& _key);
@@ -206,18 +182,14 @@ WeCom:企业微信;DingTalk:钉钉;Lark:飞书;Http:自定义回调;
 
                     /**
                      * 获取主账号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uin 主账号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetUin() const;
 
                     /**
                      * 设置主账号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uin 主账号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUin(const uint64_t& _uin);
@@ -231,18 +203,14 @@ WeCom:企业微信;DingTalk:钉钉;Lark:飞书;Http:自定义回调;
 
                     /**
                      * 获取子账号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubUin 子账号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetSubUin() const;
 
                     /**
                      * 设置子账号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subUin 子账号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubUin(const uint64_t& _subUin);
@@ -256,18 +224,14 @@ WeCom:企业微信;DingTalk:钉钉;Lark:飞书;Http:自定义回调;
 
                     /**
                      * 获取创建时间。秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间。秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCreateTime() const;
 
                     /**
                      * 设置创建时间。秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间。秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const uint64_t& _createTime);
@@ -281,18 +245,14 @@ WeCom:企业微信;DingTalk:钉钉;Lark:飞书;Http:自定义回调;
 
                     /**
                      * 获取更新时间。秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 更新时间。秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetUpdateTime() const;
 
                     /**
                      * 设置更新时间。秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updateTime 更新时间。秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdateTime(const uint64_t& _updateTime);
@@ -308,14 +268,12 @@ WeCom:企业微信;DingTalk:钉钉;Lark:飞书;Http:自定义回调;
 
                     /**
                      * 告警渠道回调配置id。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_webCallbackId;
                     bool m_webCallbackIdHasBeenSet;
 
                     /**
                      * 告警渠道回调配置名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -324,56 +282,48 @@ WeCom:企业微信;DingTalk:钉钉;Lark:飞书;Http:自定义回调;
                      * 渠道类型
 
 WeCom:企业微信;DingTalk:钉钉;Lark:飞书;Http:自定义回调;
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 回调地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_webhook;
                     bool m_webhookHasBeenSet;
 
                     /**
                      * 请求方式。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_method;
                     bool m_methodHasBeenSet;
 
                     /**
                      * 秘钥信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
 
                     /**
                      * 主账号。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
                      * 子账号。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_subUin;
                     bool m_subUinHasBeenSet;
 
                     /**
                      * 创建时间。秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 更新时间。秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_updateTime;
                     bool m_updateTimeHasBeenSet;

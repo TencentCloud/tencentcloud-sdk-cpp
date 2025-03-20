@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取镜像id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageId 镜像id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetImageId() const;
 
                     /**
                      * 设置镜像id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _imageId 镜像id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetImageId(const std::string& _imageId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取仓库类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegistryType 仓库类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegistryType() const;
 
                     /**
                      * 设置仓库类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _registryType 仓库类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegistryType(const std::string& _registryType);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取镜像仓库地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageRepoAddress 镜像仓库地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetImageRepoAddress() const;
 
                     /**
                      * 设置镜像仓库地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _imageRepoAddress 镜像仓库地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetImageRepoAddress(const std::string& _imageRepoAddress);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceId 实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceName 实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceName() const;
 
                     /**
                      * 设置实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceName 实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceName(const std::string& _instanceName);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Namespace 命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _namespace 命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNamespace(const std::string& _namespace);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取仓库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageName 仓库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetImageName() const;
 
                     /**
                      * 设置仓库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _imageName 仓库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetImageName(const std::string& _imageName);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取镜像tag
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageTag 镜像tag
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetImageTag() const;
 
                     /**
                      * 设置镜像tag
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _imageTag 镜像tag
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetImageTag(const std::string& _imageTag);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取镜像扫描状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanStatus 镜像扫描状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetScanStatus() const;
 
                     /**
                      * 设置镜像扫描状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scanStatus 镜像扫描状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScanStatus(const std::string& _scanStatus);
@@ -273,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取镜像cve扫描进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CveProgress 镜像cve扫描进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCveProgress() const;
 
                     /**
                      * 设置镜像cve扫描进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cveProgress 镜像cve扫描进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCveProgress(const uint64_t& _cveProgress);
@@ -298,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取镜像敏感扫描进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskProgress 镜像敏感扫描进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRiskProgress() const;
 
                     /**
                      * 设置镜像敏感扫描进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _riskProgress 镜像敏感扫描进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRiskProgress(const uint64_t& _riskProgress);
@@ -323,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取镜像木马扫描进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VirusProgress 镜像木马扫描进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetVirusProgress() const;
 
                     /**
                      * 设置镜像木马扫描进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _virusProgress 镜像木马扫描进度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVirusProgress(const uint64_t& _virusProgress);
@@ -350,84 +302,72 @@ namespace TencentCloud
 
                     /**
                      * 镜像id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_imageId;
                     bool m_imageIdHasBeenSet;
 
                     /**
                      * 仓库类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_registryType;
                     bool m_registryTypeHasBeenSet;
 
                     /**
                      * 镜像仓库地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_imageRepoAddress;
                     bool m_imageRepoAddressHasBeenSet;
 
                     /**
                      * 实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
                      * 实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
                      * 命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;
 
                     /**
                      * 仓库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_imageName;
                     bool m_imageNameHasBeenSet;
 
                     /**
                      * 镜像tag
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_imageTag;
                     bool m_imageTagHasBeenSet;
 
                     /**
                      * 镜像扫描状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scanStatus;
                     bool m_scanStatusHasBeenSet;
 
                     /**
                      * 镜像cve扫描进度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_cveProgress;
                     bool m_cveProgressHasBeenSet;
 
                     /**
                      * 镜像敏感扫描进度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_riskProgress;
                     bool m_riskProgressHasBeenSet;
 
                     /**
                      * 镜像木马扫描进度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_virusProgress;
                     bool m_virusProgressHasBeenSet;

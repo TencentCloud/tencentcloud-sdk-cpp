@@ -722,6 +722,31 @@ namespace TencentCloud
                      */
                     bool LastAccessTimeByTablesHasBeenSet() const;
 
+                    /**
+                     * 获取库guid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DatabaseGuid 库guid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDatabaseGuid() const;
+
+                    /**
+                     * 设置库guid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _databaseGuid 库guid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDatabaseGuid(const std::string& _databaseGuid);
+
+                    /**
+                     * 判断参数 DatabaseGuid 是否已赋值
+                     * @return DatabaseGuid 是否已赋值
+                     * 
+                     */
+                    bool DatabaseGuidHasBeenSet() const;
+
                 private:
 
                     /**
@@ -912,6 +937,13 @@ namespace TencentCloud
                      */
                     uint64_t m_lastAccessTimeByTables;
                     bool m_lastAccessTimeByTablesHasBeenSet;
+
+                    /**
+                     * 库guid
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_databaseGuid;
+                    bool m_databaseGuidHasBeenSet;
 
                 };
             }

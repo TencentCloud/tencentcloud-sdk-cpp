@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatabaseName 数据库名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDatabaseName() const;
 
                     /**
                      * 设置数据库名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _databaseName 数据库名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDatabaseName(const std::string& _databaseName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库所有者
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatabaseOwner 数据库所有者
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDatabaseOwner() const;
 
                     /**
                      * 设置数据库所有者
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _databaseOwner 数据库所有者
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDatabaseOwner(const std::string& _databaseOwner);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库字符编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Encoding 数据库字符编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEncoding() const;
 
                     /**
                      * 设置数据库字符编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _encoding 数据库字符编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEncoding(const std::string& _encoding);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库排序规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Collate 数据库排序规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCollate() const;
 
                     /**
                      * 设置数据库排序规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _collate 数据库排序规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCollate(const std::string& _collate);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库字符分类
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ctype 数据库字符分类
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCtype() const;
 
                     /**
                      * 设置数据库字符分类
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ctype 数据库字符分类
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCtype(const std::string& _ctype);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库是否允许连接
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AllowConn 数据库是否允许连接
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetAllowConn() const;
 
                     /**
                      * 设置数据库是否允许连接
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _allowConn 数据库是否允许连接
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAllowConn(const bool& _allowConn);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库最大连接数，-1表示无限制
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConnLimit 数据库最大连接数，-1表示无限制
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetConnLimit() const;
 
                     /**
                      * 设置数据库最大连接数，-1表示无限制
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _connLimit 数据库最大连接数，-1表示无限制
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConnLimit(const int64_t& _connLimit);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库权限列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Privileges 数据库权限列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPrivileges() const;
 
                     /**
                      * 设置数据库权限列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _privileges 数据库权限列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPrivileges(const std::string& _privileges);
@@ -250,56 +218,48 @@ namespace TencentCloud
 
                     /**
                      * 数据库名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_databaseName;
                     bool m_databaseNameHasBeenSet;
 
                     /**
                      * 数据库所有者
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_databaseOwner;
                     bool m_databaseOwnerHasBeenSet;
 
                     /**
                      * 数据库字符编码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_encoding;
                     bool m_encodingHasBeenSet;
 
                     /**
                      * 数据库排序规则
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_collate;
                     bool m_collateHasBeenSet;
 
                     /**
                      * 数据库字符分类
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ctype;
                     bool m_ctypeHasBeenSet;
 
                     /**
                      * 数据库是否允许连接
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_allowConn;
                     bool m_allowConnHasBeenSet;
 
                     /**
                      * 数据库最大连接数，-1表示无限制
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_connLimit;
                     bool m_connLimitHasBeenSet;
 
                     /**
                      * 数据库权限列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_privileges;
                     bool m_privilegesHasBeenSet;

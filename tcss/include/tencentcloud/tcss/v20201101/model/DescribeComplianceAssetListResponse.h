@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取返回各类资产的列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssetInfoList 返回各类资产的列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ComplianceAssetInfo> GetAssetInfoList() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 返回各类资产的列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ComplianceAssetInfo> m_assetInfoList;
                     bool m_assetInfoListHasBeenSet;

@@ -133,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务的结束时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 任务的结束时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置任务的结束时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endTime 任务的结束时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -200,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务的详情信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskDetail 任务的详情信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TaskDetail GetTaskDetail() const;
 
                     /**
                      * 设置任务的详情信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskDetail 任务的详情信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskDetail(const TaskDetail& _taskDetail);
@@ -251,7 +243,6 @@ namespace TencentCloud
 
                     /**
                      * 任务的结束时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
@@ -270,7 +261,6 @@ namespace TencentCloud
 
                     /**
                      * 任务的详情信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TaskDetail m_taskDetail;
                     bool m_taskDetailHasBeenSet;

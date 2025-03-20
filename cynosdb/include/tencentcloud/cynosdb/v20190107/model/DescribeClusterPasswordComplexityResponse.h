@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取数据字典参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ValidatePasswordDictionary 数据字典参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ParamInfo GetValidatePasswordDictionary() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取密码长度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ValidatePasswordLength 密码长度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ParamInfo GetValidatePasswordLength() const;
@@ -78,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取大小写敏感字符个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ValidatePasswordMixedCaseCount 大小写敏感字符个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ParamInfo GetValidatePasswordMixedCaseCount() const;
@@ -94,9 +88,7 @@ namespace TencentCloud
 
                     /**
                      * 获取数字个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ValidatePasswordNumberCount 数字个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ParamInfo GetValidatePasswordNumberCount() const;
@@ -110,9 +102,7 @@ namespace TencentCloud
 
                     /**
                      * 获取密码等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ValidatePasswordPolicy 密码等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ParamInfo GetValidatePasswordPolicy() const;
@@ -126,9 +116,7 @@ namespace TencentCloud
 
                     /**
                      * 获取特殊字符个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ValidatePasswordSpecialCharCount 特殊字符个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ParamInfo GetValidatePasswordSpecialCharCount() const;
@@ -144,42 +132,36 @@ namespace TencentCloud
 
                     /**
                      * 数据字典参数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ParamInfo m_validatePasswordDictionary;
                     bool m_validatePasswordDictionaryHasBeenSet;
 
                     /**
                      * 密码长度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ParamInfo m_validatePasswordLength;
                     bool m_validatePasswordLengthHasBeenSet;
 
                     /**
                      * 大小写敏感字符个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ParamInfo m_validatePasswordMixedCaseCount;
                     bool m_validatePasswordMixedCaseCountHasBeenSet;
 
                     /**
                      * 数字个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ParamInfo m_validatePasswordNumberCount;
                     bool m_validatePasswordNumberCountHasBeenSet;
 
                     /**
                      * 密码等级
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ParamInfo m_validatePasswordPolicy;
                     bool m_validatePasswordPolicyHasBeenSet;
 
                     /**
                      * 特殊字符个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ParamInfo m_validatePasswordSpecialCharCount;
                     bool m_validatePasswordSpecialCharCountHasBeenSet;

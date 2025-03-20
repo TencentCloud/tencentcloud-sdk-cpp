@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取实例密钥信息列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EncryptionKeys 实例密钥信息列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<EncryptionKey> GetEncryptionKeys() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 实例密钥信息列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<EncryptionKey> m_encryptionKeys;
                     bool m_encryptionKeysHasBeenSet;

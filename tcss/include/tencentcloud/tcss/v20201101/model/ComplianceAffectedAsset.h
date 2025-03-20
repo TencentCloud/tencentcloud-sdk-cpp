@@ -252,18 +252,14 @@ RESULT_PASSED: 通过
 
                     /**
                      * 获取主机IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostIP 主机IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHostIP() const;
 
                     /**
                      * 设置主机IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hostIP 主机IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHostIP(const std::string& _hostIP);
@@ -277,18 +273,14 @@ RESULT_PASSED: 通过
 
                     /**
                      * 获取镜像的tag
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageTag 镜像的tag
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetImageTag() const;
 
                     /**
                      * 设置镜像的tag
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _imageTag 镜像的tag
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetImageTag(const std::string& _imageTag);
@@ -302,18 +294,14 @@ RESULT_PASSED: 通过
 
                     /**
                      * 获取检查项验证信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VerifyInfo 检查项验证信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVerifyInfo() const;
 
                     /**
                      * 设置检查项验证信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _verifyInfo 检查项验证信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVerifyInfo(const std::string& _verifyInfo);
@@ -327,18 +315,14 @@ RESULT_PASSED: 通过
 
                     /**
                      * 获取主机实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 主机实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置主机实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceId 主机实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -473,28 +457,24 @@ RESULT_PASSED: 通过
 
                     /**
                      * 主机IP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hostIP;
                     bool m_hostIPHasBeenSet;
 
                     /**
                      * 镜像的tag
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_imageTag;
                     bool m_imageTagHasBeenSet;
 
                     /**
                      * 检查项验证信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_verifyInfo;
                     bool m_verifyInfoHasBeenSet;
 
                     /**
                      * 主机实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

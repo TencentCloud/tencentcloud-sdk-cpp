@@ -135,15 +135,15 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取排序字段
-                     * @return By 排序字段
+                     * 获取排序字段 StartTime
+                     * @return By 排序字段 StartTime
                      * 
                      */
                     std::string GetBy() const;
 
                     /**
-                     * 设置排序字段
-                     * @param _by 排序字段
+                     * 设置排序字段 StartTime
+                     * @param _by 排序字段 StartTime
                      * 
                      */
                     void SetBy(const std::string& _by);
@@ -204,7 +204,7 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 排序字段
+                     * 排序字段 StartTime
                      */
                     std::string m_by;
                     bool m_byHasBeenSet;

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取流程编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowNo 流程编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFlowNo() const;
 
                     /**
                      * 设置流程编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _flowNo 流程编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFlowNo(const std::string& _flowNo);
@@ -115,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取流程状态描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowStateDesc 流程状态描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFlowStateDesc() const;
 
                     /**
                      * 设置流程状态描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _flowStateDesc 流程状态描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFlowStateDesc(const std::string& _flowStateDesc);
@@ -140,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取流程启动时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 流程启动时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置流程启动时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _startTime 流程启动时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -165,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取流程完成时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 流程完成时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置流程完成时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endTime 流程完成时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -192,7 +176,6 @@ namespace TencentCloud
 
                     /**
                      * 流程编号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_flowNo;
                     bool m_flowNoHasBeenSet;
@@ -211,21 +194,18 @@ namespace TencentCloud
 
                     /**
                      * 流程状态描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_flowStateDesc;
                     bool m_flowStateDescHasBeenSet;
 
                     /**
                      * 流程启动时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
                      * 流程完成时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

@@ -47,22 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取重定向目标的监听器ID
-注意：此字段可能返回 null，表示无重定向。
+                     * 获取重定向目标的监听器ID，该字段仅配置了重定向时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TargetListenerId 重定向目标的监听器ID
-注意：此字段可能返回 null，表示无重定向。
+                     * @return TargetListenerId 重定向目标的监听器ID，该字段仅配置了重定向时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTargetListenerId() const;
 
                     /**
-                     * 设置重定向目标的监听器ID
-注意：此字段可能返回 null，表示无重定向。
+                     * 设置重定向目标的监听器ID，该字段仅配置了重定向时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _targetListenerId 重定向目标的监听器ID
-注意：此字段可能返回 null，表示无重定向。
+                     * @param _targetListenerId 重定向目标的监听器ID，该字段仅配置了重定向时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -76,22 +72,18 @@ namespace TencentCloud
                     bool TargetListenerIdHasBeenSet() const;
 
                     /**
-                     * 获取重定向目标的转发规则ID
-注意：此字段可能返回 null，表示无重定向。
+                     * 获取重定向目标的转发规则ID，该字段仅配置了重定向时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TargetLocationId 重定向目标的转发规则ID
-注意：此字段可能返回 null，表示无重定向。
+                     * @return TargetLocationId 重定向目标的转发规则ID，该字段仅配置了重定向时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTargetLocationId() const;
 
                     /**
-                     * 设置重定向目标的转发规则ID
-注意：此字段可能返回 null，表示无重定向。
+                     * 设置重定向目标的转发规则ID，该字段仅配置了重定向时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _targetLocationId 重定向目标的转发规则ID
-注意：此字段可能返回 null，表示无重定向。
+                     * @param _targetLocationId 重定向目标的转发规则ID，该字段仅配置了重定向时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -182,16 +174,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 重定向目标的监听器ID
-注意：此字段可能返回 null，表示无重定向。
+                     * 重定向目标的监听器ID，该字段仅配置了重定向时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_targetListenerId;
                     bool m_targetListenerIdHasBeenSet;
 
                     /**
-                     * 重定向目标的转发规则ID
-注意：此字段可能返回 null，表示无重定向。
+                     * 重定向目标的转发规则ID，该字段仅配置了重定向时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_targetLocationId;

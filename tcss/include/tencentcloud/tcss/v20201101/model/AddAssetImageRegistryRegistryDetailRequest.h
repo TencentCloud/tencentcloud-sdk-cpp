@@ -128,15 +128,15 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取仓库类型，列表：harbor
-                     * @return RegistryType 仓库类型，列表：harbor
+                     * 获取仓库类型，列表：harbor,quay,jfrog,aws,azure,other-tcr
+                     * @return RegistryType 仓库类型，列表：harbor,quay,jfrog,aws,azure,other-tcr
                      * 
                      */
                     std::string GetRegistryType() const;
 
                     /**
-                     * 设置仓库类型，列表：harbor
-                     * @param _registryType 仓库类型，列表：harbor
+                     * 设置仓库类型，列表：harbor,quay,jfrog,aws,azure,other-tcr
+                     * @param _registryType 仓库类型，列表：harbor,quay,jfrog,aws,azure,other-tcr
                      * 
                      */
                     void SetRegistryType(const std::string& _registryType);
@@ -275,15 +275,15 @@ namespace TencentCloud
                     bool ConnDetectConfigHasBeenSet() const;
 
                     /**
-                     * 获取”授权&扫描"开关
-                     * @return NeedScan ”授权&扫描"开关
+                     * 获取是否自动授权&扫描，选择全量同步时只针对最新版本镜像，增量同步时则包含所有新增镜像
+                     * @return NeedScan 是否自动授权&扫描，选择全量同步时只针对最新版本镜像，增量同步时则包含所有新增镜像
                      * 
                      */
                     bool GetNeedScan() const;
 
                     /**
-                     * 设置”授权&扫描"开关
-                     * @param _needScan ”授权&扫描"开关
+                     * 设置是否自动授权&扫描，选择全量同步时只针对最新版本镜像，增量同步时则包含所有新增镜像
+                     * @param _needScan 是否自动授权&扫描，选择全量同步时只针对最新版本镜像，增量同步时则包含所有新增镜像
                      * 
                      */
                     void SetNeedScan(const bool& _needScan);
@@ -294,6 +294,69 @@ namespace TencentCloud
                      * 
                      */
                     bool NeedScanHasBeenSet() const;
+
+                    /**
+                     * 获取同步方式，0全量同步，1增量同步
+                     * @return SyncMode 同步方式，0全量同步，1增量同步
+                     * 
+                     */
+                    uint64_t GetSyncMode() const;
+
+                    /**
+                     * 设置同步方式，0全量同步，1增量同步
+                     * @param _syncMode 同步方式，0全量同步，1增量同步
+                     * 
+                     */
+                    void SetSyncMode(const uint64_t& _syncMode);
+
+                    /**
+                     * 判断参数 SyncMode 是否已赋值
+                     * @return SyncMode 是否已赋值
+                     * 
+                     */
+                    bool SyncModeHasBeenSet() const;
+
+                    /**
+                     * 获取webhook接入地址
+                     * @return WebhookUrl webhook接入地址
+                     * 
+                     */
+                    std::string GetWebhookUrl() const;
+
+                    /**
+                     * 设置webhook接入地址
+                     * @param _webhookUrl webhook接入地址
+                     * 
+                     */
+                    void SetWebhookUrl(const std::string& _webhookUrl);
+
+                    /**
+                     * 判断参数 WebhookUrl 是否已赋值
+                     * @return WebhookUrl 是否已赋值
+                     * 
+                     */
+                    bool WebhookUrlHasBeenSet() const;
+
+                    /**
+                     * 获取webhook接入token
+                     * @return WebhookToken webhook接入token
+                     * 
+                     */
+                    std::string GetWebhookToken() const;
+
+                    /**
+                     * 设置webhook接入token
+                     * @param _webhookToken webhook接入token
+                     * 
+                     */
+                    void SetWebhookToken(const std::string& _webhookToken);
+
+                    /**
+                     * 判断参数 WebhookToken 是否已赋值
+                     * @return WebhookToken 是否已赋值
+                     * 
+                     */
+                    bool WebhookTokenHasBeenSet() const;
 
                 private:
 
@@ -322,7 +385,7 @@ namespace TencentCloud
                     bool m_urlHasBeenSet;
 
                     /**
-                     * 仓库类型，列表：harbor
+                     * 仓库类型，列表：harbor,quay,jfrog,aws,azure,other-tcr
                      */
                     std::string m_registryType;
                     bool m_registryTypeHasBeenSet;
@@ -364,10 +427,28 @@ namespace TencentCloud
                     bool m_connDetectConfigHasBeenSet;
 
                     /**
-                     * ”授权&扫描"开关
+                     * 是否自动授权&扫描，选择全量同步时只针对最新版本镜像，增量同步时则包含所有新增镜像
                      */
                     bool m_needScan;
                     bool m_needScanHasBeenSet;
+
+                    /**
+                     * 同步方式，0全量同步，1增量同步
+                     */
+                    uint64_t m_syncMode;
+                    bool m_syncModeHasBeenSet;
+
+                    /**
+                     * webhook接入地址
+                     */
+                    std::string m_webhookUrl;
+                    bool m_webhookUrlHasBeenSet;
+
+                    /**
+                     * webhook接入token
+                     */
+                    std::string m_webhookToken;
+                    bool m_webhookTokenHasBeenSet;
 
                 };
             }

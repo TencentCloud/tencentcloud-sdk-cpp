@@ -161,6 +161,8 @@
 #include <tencentcloud/tcss/v20201101/model/DeleteMachineResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DeleteNetworkFirewallPolicyDetailRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DeleteNetworkFirewallPolicyDetailResponse.h>
+#include <tencentcloud/tcss/v20201101/model/DeleteRaspRulesRequest.h>
+#include <tencentcloud/tcss/v20201101/model/DeleteRaspRulesResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DeleteReverseShellEventsRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DeleteReverseShellEventsResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DeleteReverseShellWhiteListsRequest.h>
@@ -179,16 +181,12 @@
 #include <tencentcloud/tcss/v20201101/model/DescribeAbnormalProcessEventTendencyResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeAbnormalProcessEventsRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeAbnormalProcessEventsResponse.h>
-#include <tencentcloud/tcss/v20201101/model/DescribeAbnormalProcessEventsExportRequest.h>
-#include <tencentcloud/tcss/v20201101/model/DescribeAbnormalProcessEventsExportResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeAbnormalProcessLevelSummaryRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeAbnormalProcessLevelSummaryResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeAbnormalProcessRuleDetailRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeAbnormalProcessRuleDetailResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeAbnormalProcessRulesRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeAbnormalProcessRulesResponse.h>
-#include <tencentcloud/tcss/v20201101/model/DescribeAbnormalProcessRulesExportRequest.h>
-#include <tencentcloud/tcss/v20201101/model/DescribeAbnormalProcessRulesExportResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeAccessControlDetailRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeAccessControlDetailResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeAccessControlEventsRequest.h>
@@ -199,8 +197,6 @@
 #include <tencentcloud/tcss/v20201101/model/DescribeAccessControlRuleDetailResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeAccessControlRulesRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeAccessControlRulesResponse.h>
-#include <tencentcloud/tcss/v20201101/model/DescribeAccessControlRulesExportRequest.h>
-#include <tencentcloud/tcss/v20201101/model/DescribeAccessControlRulesExportResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeAffectedClusterCountRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeAffectedClusterCountResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeAffectedNodeListRequest.h>
@@ -235,8 +231,6 @@
 #include <tencentcloud/tcss/v20201101/model/DescribeAssetImageHostListResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeAssetImageListRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeAssetImageListResponse.h>
-#include <tencentcloud/tcss/v20201101/model/DescribeAssetImageListExportRequest.h>
-#include <tencentcloud/tcss/v20201101/model/DescribeAssetImageListExportResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeAssetImageRegistryAssetStatusRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeAssetImageRegistryAssetStatusResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeAssetImageRegistryDetailRequest.h>
@@ -345,8 +339,6 @@
 #include <tencentcloud/tcss/v20201101/model/DescribeEscapeEventTendencyResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeEscapeEventTypeSummaryRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeEscapeEventTypeSummaryResponse.h>
-#include <tencentcloud/tcss/v20201101/model/DescribeEscapeEventsExportRequest.h>
-#include <tencentcloud/tcss/v20201101/model/DescribeEscapeEventsExportResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeEscapeRuleInfoRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeEscapeRuleInfoResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeEscapeSafeStateRequest.h>
@@ -435,6 +427,10 @@
 #include <tencentcloud/tcss/v20201101/model/DescribePublicKeyResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribePurchaseStateInfoRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DescribePurchaseStateInfoResponse.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeRaspRuleVulsRequest.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeRaspRuleVulsResponse.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeRaspRulesRequest.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeRaspRulesResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeRefreshTaskRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeRefreshTaskResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeReverseShellDetailRequest.h>
@@ -629,6 +625,8 @@
 #include <tencentcloud/tcss/v20201101/model/ModifyK8sApiAbnormalRuleInfoResponse.h>
 #include <tencentcloud/tcss/v20201101/model/ModifyK8sApiAbnormalRuleStatusRequest.h>
 #include <tencentcloud/tcss/v20201101/model/ModifyK8sApiAbnormalRuleStatusResponse.h>
+#include <tencentcloud/tcss/v20201101/model/ModifyRaspRulesRequest.h>
+#include <tencentcloud/tcss/v20201101/model/ModifyRaspRulesResponse.h>
 #include <tencentcloud/tcss/v20201101/model/ModifyReverseShellStatusRequest.h>
 #include <tencentcloud/tcss/v20201101/model/ModifyReverseShellStatusResponse.h>
 #include <tencentcloud/tcss/v20201101/model/ModifyRiskSyscallStatusRequest.h>
@@ -920,6 +918,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteNetworkFirewallPolicyDetailResponse> DeleteNetworkFirewallPolicyDetailOutcome;
                 typedef std::future<DeleteNetworkFirewallPolicyDetailOutcome> DeleteNetworkFirewallPolicyDetailOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::DeleteNetworkFirewallPolicyDetailRequest&, DeleteNetworkFirewallPolicyDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNetworkFirewallPolicyDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteRaspRulesResponse> DeleteRaspRulesOutcome;
+                typedef std::future<DeleteRaspRulesOutcome> DeleteRaspRulesOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::DeleteRaspRulesRequest&, DeleteRaspRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRaspRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteReverseShellEventsResponse> DeleteReverseShellEventsOutcome;
                 typedef std::future<DeleteReverseShellEventsOutcome> DeleteReverseShellEventsOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::DeleteReverseShellEventsRequest&, DeleteReverseShellEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteReverseShellEventsAsyncHandler;
@@ -947,9 +948,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAbnormalProcessEventsResponse> DescribeAbnormalProcessEventsOutcome;
                 typedef std::future<DescribeAbnormalProcessEventsOutcome> DescribeAbnormalProcessEventsOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::DescribeAbnormalProcessEventsRequest&, DescribeAbnormalProcessEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAbnormalProcessEventsAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeAbnormalProcessEventsExportResponse> DescribeAbnormalProcessEventsExportOutcome;
-                typedef std::future<DescribeAbnormalProcessEventsExportOutcome> DescribeAbnormalProcessEventsExportOutcomeCallable;
-                typedef std::function<void(const TcssClient*, const Model::DescribeAbnormalProcessEventsExportRequest&, DescribeAbnormalProcessEventsExportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAbnormalProcessEventsExportAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAbnormalProcessLevelSummaryResponse> DescribeAbnormalProcessLevelSummaryOutcome;
                 typedef std::future<DescribeAbnormalProcessLevelSummaryOutcome> DescribeAbnormalProcessLevelSummaryOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::DescribeAbnormalProcessLevelSummaryRequest&, DescribeAbnormalProcessLevelSummaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAbnormalProcessLevelSummaryAsyncHandler;
@@ -959,9 +957,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAbnormalProcessRulesResponse> DescribeAbnormalProcessRulesOutcome;
                 typedef std::future<DescribeAbnormalProcessRulesOutcome> DescribeAbnormalProcessRulesOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::DescribeAbnormalProcessRulesRequest&, DescribeAbnormalProcessRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAbnormalProcessRulesAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeAbnormalProcessRulesExportResponse> DescribeAbnormalProcessRulesExportOutcome;
-                typedef std::future<DescribeAbnormalProcessRulesExportOutcome> DescribeAbnormalProcessRulesExportOutcomeCallable;
-                typedef std::function<void(const TcssClient*, const Model::DescribeAbnormalProcessRulesExportRequest&, DescribeAbnormalProcessRulesExportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAbnormalProcessRulesExportAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAccessControlDetailResponse> DescribeAccessControlDetailOutcome;
                 typedef std::future<DescribeAccessControlDetailOutcome> DescribeAccessControlDetailOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::DescribeAccessControlDetailRequest&, DescribeAccessControlDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccessControlDetailAsyncHandler;
@@ -977,9 +972,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAccessControlRulesResponse> DescribeAccessControlRulesOutcome;
                 typedef std::future<DescribeAccessControlRulesOutcome> DescribeAccessControlRulesOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::DescribeAccessControlRulesRequest&, DescribeAccessControlRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccessControlRulesAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeAccessControlRulesExportResponse> DescribeAccessControlRulesExportOutcome;
-                typedef std::future<DescribeAccessControlRulesExportOutcome> DescribeAccessControlRulesExportOutcomeCallable;
-                typedef std::function<void(const TcssClient*, const Model::DescribeAccessControlRulesExportRequest&, DescribeAccessControlRulesExportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccessControlRulesExportAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAffectedClusterCountResponse> DescribeAffectedClusterCountOutcome;
                 typedef std::future<DescribeAffectedClusterCountOutcome> DescribeAffectedClusterCountOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::DescribeAffectedClusterCountRequest&, DescribeAffectedClusterCountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAffectedClusterCountAsyncHandler;
@@ -1031,9 +1023,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAssetImageListResponse> DescribeAssetImageListOutcome;
                 typedef std::future<DescribeAssetImageListOutcome> DescribeAssetImageListOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::DescribeAssetImageListRequest&, DescribeAssetImageListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetImageListAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeAssetImageListExportResponse> DescribeAssetImageListExportOutcome;
-                typedef std::future<DescribeAssetImageListExportOutcome> DescribeAssetImageListExportOutcomeCallable;
-                typedef std::function<void(const TcssClient*, const Model::DescribeAssetImageListExportRequest&, DescribeAssetImageListExportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetImageListExportAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAssetImageRegistryAssetStatusResponse> DescribeAssetImageRegistryAssetStatusOutcome;
                 typedef std::future<DescribeAssetImageRegistryAssetStatusOutcome> DescribeAssetImageRegistryAssetStatusOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::DescribeAssetImageRegistryAssetStatusRequest&, DescribeAssetImageRegistryAssetStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetImageRegistryAssetStatusAsyncHandler;
@@ -1196,9 +1185,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeEscapeEventTypeSummaryResponse> DescribeEscapeEventTypeSummaryOutcome;
                 typedef std::future<DescribeEscapeEventTypeSummaryOutcome> DescribeEscapeEventTypeSummaryOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::DescribeEscapeEventTypeSummaryRequest&, DescribeEscapeEventTypeSummaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEscapeEventTypeSummaryAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeEscapeEventsExportResponse> DescribeEscapeEventsExportOutcome;
-                typedef std::future<DescribeEscapeEventsExportOutcome> DescribeEscapeEventsExportOutcomeCallable;
-                typedef std::function<void(const TcssClient*, const Model::DescribeEscapeEventsExportRequest&, DescribeEscapeEventsExportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEscapeEventsExportAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeEscapeRuleInfoResponse> DescribeEscapeRuleInfoOutcome;
                 typedef std::future<DescribeEscapeRuleInfoOutcome> DescribeEscapeRuleInfoOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::DescribeEscapeRuleInfoRequest&, DescribeEscapeRuleInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEscapeRuleInfoAsyncHandler;
@@ -1331,6 +1317,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribePurchaseStateInfoResponse> DescribePurchaseStateInfoOutcome;
                 typedef std::future<DescribePurchaseStateInfoOutcome> DescribePurchaseStateInfoOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::DescribePurchaseStateInfoRequest&, DescribePurchaseStateInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePurchaseStateInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRaspRuleVulsResponse> DescribeRaspRuleVulsOutcome;
+                typedef std::future<DescribeRaspRuleVulsOutcome> DescribeRaspRuleVulsOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::DescribeRaspRuleVulsRequest&, DescribeRaspRuleVulsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRaspRuleVulsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRaspRulesResponse> DescribeRaspRulesOutcome;
+                typedef std::future<DescribeRaspRulesOutcome> DescribeRaspRulesOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::DescribeRaspRulesRequest&, DescribeRaspRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRaspRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRefreshTaskResponse> DescribeRefreshTaskOutcome;
                 typedef std::future<DescribeRefreshTaskOutcome> DescribeRefreshTaskOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::DescribeRefreshTaskRequest&, DescribeRefreshTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRefreshTaskAsyncHandler;
@@ -1622,6 +1614,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyK8sApiAbnormalRuleStatusResponse> ModifyK8sApiAbnormalRuleStatusOutcome;
                 typedef std::future<ModifyK8sApiAbnormalRuleStatusOutcome> ModifyK8sApiAbnormalRuleStatusOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::ModifyK8sApiAbnormalRuleStatusRequest&, ModifyK8sApiAbnormalRuleStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyK8sApiAbnormalRuleStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyRaspRulesResponse> ModifyRaspRulesOutcome;
+                typedef std::future<ModifyRaspRulesOutcome> ModifyRaspRulesOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::ModifyRaspRulesRequest&, ModifyRaspRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRaspRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyReverseShellStatusResponse> ModifyReverseShellStatusOutcome;
                 typedef std::future<ModifyReverseShellStatusOutcome> ModifyReverseShellStatusOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::ModifyReverseShellStatusRequest&, ModifyReverseShellStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyReverseShellStatusAsyncHandler;
@@ -2357,6 +2352,15 @@ namespace TencentCloud
                 DeleteNetworkFirewallPolicyDetailOutcomeCallable DeleteNetworkFirewallPolicyDetailCallable(const Model::DeleteNetworkFirewallPolicyDetailRequest& request);
 
                 /**
+                 *删除漏洞防御白名单
+                 * @param req DeleteRaspRulesRequest
+                 * @return DeleteRaspRulesOutcome
+                 */
+                DeleteRaspRulesOutcome DeleteRaspRules(const Model::DeleteRaspRulesRequest &request);
+                void DeleteRaspRulesAsync(const Model::DeleteRaspRulesRequest& request, const DeleteRaspRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteRaspRulesOutcomeCallable DeleteRaspRulesCallable(const Model::DeleteRaspRulesRequest& request);
+
+                /**
                  *删除运行时反弹shell事件
                  * @param req DeleteReverseShellEventsRequest
                  * @return DeleteReverseShellEventsOutcome
@@ -2438,17 +2442,6 @@ namespace TencentCloud
                 DescribeAbnormalProcessEventsOutcomeCallable DescribeAbnormalProcessEventsCallable(const Model::DescribeAbnormalProcessEventsRequest& request);
 
                 /**
-                 *接口已废弃
-
-查询运行时异常进程事件列表信息导出
-                 * @param req DescribeAbnormalProcessEventsExportRequest
-                 * @return DescribeAbnormalProcessEventsExportOutcome
-                 */
-                DescribeAbnormalProcessEventsExportOutcome DescribeAbnormalProcessEventsExport(const Model::DescribeAbnormalProcessEventsExportRequest &request);
-                void DescribeAbnormalProcessEventsExportAsync(const Model::DescribeAbnormalProcessEventsExportRequest& request, const DescribeAbnormalProcessEventsExportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeAbnormalProcessEventsExportOutcomeCallable DescribeAbnormalProcessEventsExportCallable(const Model::DescribeAbnormalProcessEventsExportRequest& request);
-
-                /**
                  *统计异常进程各威胁等级待处理事件数
                  * @param req DescribeAbnormalProcessLevelSummaryRequest
                  * @return DescribeAbnormalProcessLevelSummaryOutcome
@@ -2474,17 +2467,6 @@ namespace TencentCloud
                 DescribeAbnormalProcessRulesOutcome DescribeAbnormalProcessRules(const Model::DescribeAbnormalProcessRulesRequest &request);
                 void DescribeAbnormalProcessRulesAsync(const Model::DescribeAbnormalProcessRulesRequest& request, const DescribeAbnormalProcessRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAbnormalProcessRulesOutcomeCallable DescribeAbnormalProcessRulesCallable(const Model::DescribeAbnormalProcessRulesRequest& request);
-
-                /**
-                 *接口已废弃
-
-查询运行时异常进程策略列表信息导出
-                 * @param req DescribeAbnormalProcessRulesExportRequest
-                 * @return DescribeAbnormalProcessRulesExportOutcome
-                 */
-                DescribeAbnormalProcessRulesExportOutcome DescribeAbnormalProcessRulesExport(const Model::DescribeAbnormalProcessRulesExportRequest &request);
-                void DescribeAbnormalProcessRulesExportAsync(const Model::DescribeAbnormalProcessRulesExportRequest& request, const DescribeAbnormalProcessRulesExportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeAbnormalProcessRulesExportOutcomeCallable DescribeAbnormalProcessRulesExportCallable(const Model::DescribeAbnormalProcessRulesExportRequest& request);
 
                 /**
                  *查询运行时访问控制事件的详细信息
@@ -2530,17 +2512,6 @@ namespace TencentCloud
                 DescribeAccessControlRulesOutcome DescribeAccessControlRules(const Model::DescribeAccessControlRulesRequest &request);
                 void DescribeAccessControlRulesAsync(const Model::DescribeAccessControlRulesRequest& request, const DescribeAccessControlRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAccessControlRulesOutcomeCallable DescribeAccessControlRulesCallable(const Model::DescribeAccessControlRulesRequest& request);
-
-                /**
-                 *接口已废弃
-
-查询运行时访问控制策略列表导出
-                 * @param req DescribeAccessControlRulesExportRequest
-                 * @return DescribeAccessControlRulesExportOutcome
-                 */
-                DescribeAccessControlRulesExportOutcome DescribeAccessControlRulesExport(const Model::DescribeAccessControlRulesExportRequest &request);
-                void DescribeAccessControlRulesExportAsync(const Model::DescribeAccessControlRulesExportRequest& request, const DescribeAccessControlRulesExportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeAccessControlRulesExportOutcomeCallable DescribeAccessControlRulesExportCallable(const Model::DescribeAccessControlRulesExportRequest& request);
 
                 /**
                  *获取受影响的集群数量，返回数量
@@ -2694,17 +2665,6 @@ namespace TencentCloud
                 DescribeAssetImageListOutcome DescribeAssetImageList(const Model::DescribeAssetImageListRequest &request);
                 void DescribeAssetImageListAsync(const Model::DescribeAssetImageListRequest& request, const DescribeAssetImageListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAssetImageListOutcomeCallable DescribeAssetImageListCallable(const Model::DescribeAssetImageListRequest& request);
-
-                /**
-                 *接口已废弃
-
-容器安全搜索查询镜像列表导出
-                 * @param req DescribeAssetImageListExportRequest
-                 * @return DescribeAssetImageListExportOutcome
-                 */
-                DescribeAssetImageListExportOutcome DescribeAssetImageListExport(const Model::DescribeAssetImageListExportRequest &request);
-                void DescribeAssetImageListExportAsync(const Model::DescribeAssetImageListExportRequest& request, const DescribeAssetImageListExportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeAssetImageListExportOutcomeCallable DescribeAssetImageListExportCallable(const Model::DescribeAssetImageListExportRequest& request);
 
                 /**
                  *查看镜像仓库资产更新进度状态
@@ -3193,17 +3153,6 @@ namespace TencentCloud
                 DescribeEscapeEventTypeSummaryOutcomeCallable DescribeEscapeEventTypeSummaryCallable(const Model::DescribeEscapeEventTypeSummaryRequest& request);
 
                 /**
-                 *接口已废弃
-
-DescribeEscapeEventsExport  查询容器逃逸事件列表导出
-                 * @param req DescribeEscapeEventsExportRequest
-                 * @return DescribeEscapeEventsExportOutcome
-                 */
-                DescribeEscapeEventsExportOutcome DescribeEscapeEventsExport(const Model::DescribeEscapeEventsExportRequest &request);
-                void DescribeEscapeEventsExportAsync(const Model::DescribeEscapeEventsExportRequest& request, const DescribeEscapeEventsExportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeEscapeEventsExportOutcomeCallable DescribeEscapeEventsExportCallable(const Model::DescribeEscapeEventsExportRequest& request);
-
-                /**
                  *DescribeEscapeRuleInfo 查询容器逃逸扫描规则信息
                  * @param req DescribeEscapeRuleInfoRequest
                  * @return DescribeEscapeRuleInfoOutcome
@@ -3598,6 +3547,24 @@ DescribeEscapeEventsExport  查询容器逃逸事件列表导出
                 DescribePurchaseStateInfoOutcome DescribePurchaseStateInfo(const Model::DescribePurchaseStateInfoRequest &request);
                 void DescribePurchaseStateInfoAsync(const Model::DescribePurchaseStateInfoRequest& request, const DescribePurchaseStateInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribePurchaseStateInfoOutcomeCallable DescribePurchaseStateInfoCallable(const Model::DescribePurchaseStateInfoRequest& request);
+
+                /**
+                 *获取漏洞防御白名单漏洞列表
+                 * @param req DescribeRaspRuleVulsRequest
+                 * @return DescribeRaspRuleVulsOutcome
+                 */
+                DescribeRaspRuleVulsOutcome DescribeRaspRuleVuls(const Model::DescribeRaspRuleVulsRequest &request);
+                void DescribeRaspRuleVulsAsync(const Model::DescribeRaspRuleVulsRequest& request, const DescribeRaspRuleVulsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRaspRuleVulsOutcomeCallable DescribeRaspRuleVulsCallable(const Model::DescribeRaspRuleVulsRequest& request);
+
+                /**
+                 *查询支持防御的漏洞列表
+                 * @param req DescribeRaspRulesRequest
+                 * @return DescribeRaspRulesOutcome
+                 */
+                DescribeRaspRulesOutcome DescribeRaspRules(const Model::DescribeRaspRulesRequest &request);
+                void DescribeRaspRulesAsync(const Model::DescribeRaspRulesRequest& request, const DescribeRaspRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRaspRulesOutcomeCallable DescribeRaspRulesCallable(const Model::DescribeRaspRulesRequest& request);
 
                 /**
                  *查询刷新任务
@@ -4471,6 +4438,15 @@ DescribeEscapeEventsExport  查询容器逃逸事件列表导出
                 ModifyK8sApiAbnormalRuleStatusOutcome ModifyK8sApiAbnormalRuleStatus(const Model::ModifyK8sApiAbnormalRuleStatusRequest &request);
                 void ModifyK8sApiAbnormalRuleStatusAsync(const Model::ModifyK8sApiAbnormalRuleStatusRequest& request, const ModifyK8sApiAbnormalRuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyK8sApiAbnormalRuleStatusOutcomeCallable ModifyK8sApiAbnormalRuleStatusCallable(const Model::ModifyK8sApiAbnormalRuleStatusRequest& request);
+
+                /**
+                 *编辑或者创建java内存马白名单
+                 * @param req ModifyRaspRulesRequest
+                 * @return ModifyRaspRulesOutcome
+                 */
+                ModifyRaspRulesOutcome ModifyRaspRules(const Model::ModifyRaspRulesRequest &request);
+                void ModifyRaspRulesAsync(const Model::ModifyRaspRulesRequest& request, const ModifyRaspRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyRaspRulesOutcomeCallable ModifyRaspRulesCallable(const Model::ModifyRaspRulesRequest& request);
 
                 /**
                  *修改反弹shell事件的状态信息

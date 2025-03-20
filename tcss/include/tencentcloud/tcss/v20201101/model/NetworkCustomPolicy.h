@@ -71,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网络策略策略端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ports 网络策略策略端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<NetworkPorts> GetPorts() const;
 
                     /**
                      * 设置网络策略策略端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ports 网络策略策略端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPorts(const std::vector<NetworkPorts>& _ports);
@@ -106,7 +102,6 @@ namespace TencentCloud
 开启中：Publishing
 
 待开启：unPublishEdit
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Peer 网络策略策略对象
 
 开启待确认：PublishedNoConfirm
@@ -118,7 +113,6 @@ namespace TencentCloud
 开启中：Publishing
 
 待开启：unPublishEdit
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<NetworkPeer> GetPeer() const;
@@ -135,7 +129,6 @@ namespace TencentCloud
 开启中：Publishing
 
 待开启：unPublishEdit
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _peer 网络策略策略对象
 
 开启待确认：PublishedNoConfirm
@@ -147,7 +140,6 @@ namespace TencentCloud
 开启中：Publishing
 
 待开启：unPublishEdit
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPeer(const std::vector<NetworkPeer>& _peer);
@@ -169,7 +161,6 @@ namespace TencentCloud
 
                     /**
                      * 网络策略策略端口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<NetworkPorts> m_ports;
                     bool m_portsHasBeenSet;
@@ -186,7 +177,6 @@ namespace TencentCloud
 开启中：Publishing
 
 待开启：unPublishEdit
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<NetworkPeer> m_peer;
                     bool m_peerHasBeenSet;

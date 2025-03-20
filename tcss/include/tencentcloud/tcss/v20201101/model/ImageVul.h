@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CVEID 漏洞id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCVEID() const;
 
                     /**
                      * 设置漏洞id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cVEID 漏洞id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCVEID(const std::string& _cVEID);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取观点验证程序id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return POCID 观点验证程序id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPOCID() const;
 
                     /**
                      * 设置观点验证程序id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pOCID 观点验证程序id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPOCID(const std::string& _pOCID);
@@ -100,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 漏洞名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置漏洞名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 漏洞名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -125,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取涉及组件信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Components 涉及组件信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ComponentsInfo> GetComponents() const;
 
                     /**
                      * 设置涉及组件信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _components 涉及组件信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetComponents(const std::vector<ComponentsInfo>& _components);
@@ -150,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分类
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Category 分类
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCategory() const;
 
                     /**
                      * 设置分类
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _category 分类
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCategory(const std::string& _category);
@@ -175,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分类2
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CategoryType 分类2
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCategoryType() const;
 
                     /**
                      * 设置分类2
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _categoryType 分类2
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCategoryType(const std::string& _categoryType);
@@ -200,18 +176,14 @@ namespace TencentCloud
 
                     /**
                      * 获取风险等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Level 风险等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLevel() const;
 
                     /**
                      * 设置风险等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _level 风险等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLevel(const std::string& _level);
@@ -225,18 +197,14 @@ namespace TencentCloud
 
                     /**
                      * 获取描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Des 描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDes() const;
 
                     /**
                      * 设置描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _des 描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDes(const std::string& _des);
@@ -250,18 +218,14 @@ namespace TencentCloud
 
                     /**
                      * 获取解决方案
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OfficialSolution 解决方案
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOfficialSolution() const;
 
                     /**
                      * 设置解决方案
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _officialSolution 解决方案
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOfficialSolution(const std::string& _officialSolution);
@@ -275,18 +239,14 @@ namespace TencentCloud
 
                     /**
                      * 获取引用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Reference 引用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReference() const;
 
                     /**
                      * 设置引用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _reference 引用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReference(const std::string& _reference);
@@ -300,18 +260,14 @@ namespace TencentCloud
 
                     /**
                      * 获取防御方案
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefenseSolution 防御方案
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDefenseSolution() const;
 
                     /**
                      * 设置防御方案
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _defenseSolution 防御方案
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDefenseSolution(const std::string& _defenseSolution);
@@ -325,18 +281,14 @@ namespace TencentCloud
 
                     /**
                      * 获取提交时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubmitTime 提交时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubmitTime() const;
 
                     /**
                      * 设置提交时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _submitTime 提交时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubmitTime(const std::string& _submitTime);
@@ -350,18 +302,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Cvss分数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CvssScore Cvss分数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCvssScore() const;
 
                     /**
                      * 设置Cvss分数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cvssScore Cvss分数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCvssScore(const std::string& _cvssScore);
@@ -375,18 +323,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Cvss信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CvssVector Cvss信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCvssVector() const;
 
                     /**
                      * 设置Cvss信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cvssVector Cvss信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCvssVector(const std::string& _cvssVector);
@@ -400,18 +344,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否建议修复
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsSuggest 是否建议修复
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIsSuggest() const;
 
                     /**
                      * 设置是否建议修复
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isSuggest 是否建议修复
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsSuggest(const std::string& _isSuggest);
@@ -425,18 +365,14 @@ namespace TencentCloud
 
                     /**
                      * 获取修复版本号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FixedVersions 修复版本号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFixedVersions() const;
 
                     /**
                      * 设置修复版本号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fixedVersions 修复版本号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFixedVersions(const std::string& _fixedVersions);
@@ -450,18 +386,14 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞标签:"CanBeFixed","DynamicLevelPoc","DynamicLevelExp"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tag 漏洞标签:"CanBeFixed","DynamicLevelPoc","DynamicLevelExp"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetTag() const;
 
                     /**
                      * 设置漏洞标签:"CanBeFixed","DynamicLevelPoc","DynamicLevelExp"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tag 漏洞标签:"CanBeFixed","DynamicLevelPoc","DynamicLevelExp"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTag(const std::vector<std::string>& _tag);
@@ -475,18 +407,14 @@ namespace TencentCloud
 
                     /**
                      * 获取组件名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Component 组件名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetComponent() const;
 
                     /**
                      * 设置组件名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _component 组件名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetComponent(const std::string& _component);
@@ -500,18 +428,14 @@ namespace TencentCloud
 
                     /**
                      * 获取组件版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Version 组件版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置组件版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _version 组件版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVersion(const std::string& _version);
@@ -525,18 +449,14 @@ namespace TencentCloud
 
                     /**
                      * 获取攻击热度 0-3
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AttackLevel 攻击热度 0-3
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAttackLevel() const;
 
                     /**
                      * 设置攻击热度 0-3
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _attackLevel 攻击热度 0-3
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAttackLevel(const int64_t& _attackLevel);
@@ -550,18 +470,14 @@ namespace TencentCloud
 
                     /**
                      * 获取镜像层信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LayerInfos 镜像层信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ImageVulLayerInfo> GetLayerInfos() const;
 
                     /**
                      * 设置镜像层信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _layerInfos 镜像层信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLayerInfos(const std::vector<ImageVulLayerInfo>& _layerInfos);
@@ -577,147 +493,126 @@ namespace TencentCloud
 
                     /**
                      * 漏洞id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cVEID;
                     bool m_cVEIDHasBeenSet;
 
                     /**
                      * 观点验证程序id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pOCID;
                     bool m_pOCIDHasBeenSet;
 
                     /**
                      * 漏洞名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 涉及组件信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ComponentsInfo> m_components;
                     bool m_componentsHasBeenSet;
 
                     /**
                      * 分类
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_category;
                     bool m_categoryHasBeenSet;
 
                     /**
                      * 分类2
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_categoryType;
                     bool m_categoryTypeHasBeenSet;
 
                     /**
                      * 风险等级
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_level;
                     bool m_levelHasBeenSet;
 
                     /**
                      * 描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_des;
                     bool m_desHasBeenSet;
 
                     /**
                      * 解决方案
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_officialSolution;
                     bool m_officialSolutionHasBeenSet;
 
                     /**
                      * 引用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reference;
                     bool m_referenceHasBeenSet;
 
                     /**
                      * 防御方案
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_defenseSolution;
                     bool m_defenseSolutionHasBeenSet;
 
                     /**
                      * 提交时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_submitTime;
                     bool m_submitTimeHasBeenSet;
 
                     /**
                      * Cvss分数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cvssScore;
                     bool m_cvssScoreHasBeenSet;
 
                     /**
                      * Cvss信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cvssVector;
                     bool m_cvssVectorHasBeenSet;
 
                     /**
                      * 是否建议修复
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_isSuggest;
                     bool m_isSuggestHasBeenSet;
 
                     /**
                      * 修复版本号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fixedVersions;
                     bool m_fixedVersionsHasBeenSet;
 
                     /**
                      * 漏洞标签:"CanBeFixed","DynamicLevelPoc","DynamicLevelExp"
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_tag;
                     bool m_tagHasBeenSet;
 
                     /**
                      * 组件名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_component;
                     bool m_componentHasBeenSet;
 
                     /**
                      * 组件版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;
 
                     /**
                      * 攻击热度 0-3
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_attackLevel;
                     bool m_attackLevelHasBeenSet;
 
                     /**
                      * 镜像层信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ImageVulLayerInfo> m_layerInfos;
                     bool m_layerInfosHasBeenSet;

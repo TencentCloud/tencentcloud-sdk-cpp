@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取使用率
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Rate 使用率
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetRate() const;
 
                     /**
                      * 设置使用率
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rate 使用率
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRate(const double& _rate);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取预留券数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Num 预留券数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetNum() const;
 
                     /**
                      * 设置预留券数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _num 预留券数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNum(const uint64_t& _num);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取核数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CPU 核数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetCPU() const;
 
                     /**
                      * 设置核数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cPU 核数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCPU(const double& _cPU);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内存
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Memory 内存
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetMemory() const;
 
                     /**
                      * 设置内存
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _memory 内存
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMemory(const double& _memory);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取 预留券类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type  预留券类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置 预留券类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type  预留券类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取GPU 卡数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GpuNum GPU 卡数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGpuNum() const;
 
                     /**
                      * 设置GPU 卡数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gpuNum GPU 卡数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGpuNum(const std::string& _gpuNum);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zone 可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zone 可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterId 集群 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置集群 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterId 集群 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeName 节点名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNodeName() const;
 
                     /**
                      * 设置节点名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nodeName 节点名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNodeName(const std::string& _nodeName);
@@ -273,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Pod 数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PodNum Pod 数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPodNum() const;
 
                     /**
                      * 设置Pod 数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _podNum Pod 数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPodNum(const uint64_t& _podNum);
@@ -300,70 +260,60 @@ namespace TencentCloud
 
                     /**
                      * 使用率
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_rate;
                     bool m_rateHasBeenSet;
 
                     /**
                      * 预留券数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_num;
                     bool m_numHasBeenSet;
 
                     /**
                      * 核数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_cPU;
                     bool m_cPUHasBeenSet;
 
                     /**
                      * 内存
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_memory;
                     bool m_memoryHasBeenSet;
 
                     /**
                      *  预留券类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * GPU 卡数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_gpuNum;
                     bool m_gpuNumHasBeenSet;
 
                     /**
                      * 可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
                      * 集群 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
                      * 节点名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nodeName;
                     bool m_nodeNameHasBeenSet;
 
                     /**
                      * Pod 数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_podNum;
                     bool m_podNumHasBeenSet;

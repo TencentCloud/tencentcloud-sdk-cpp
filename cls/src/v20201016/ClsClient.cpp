@@ -384,49 +384,6 @@ ClsClient::CreateAlarmShieldOutcomeCallable ClsClient::CreateAlarmShieldCallable
     return task->get_future();
 }
 
-ClsClient::CreateCloudProductLogTaskOutcome ClsClient::CreateCloudProductLogTask(const CreateCloudProductLogTaskRequest &request)
-{
-    auto outcome = MakeRequest(request, "CreateCloudProductLogTask");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CreateCloudProductLogTaskResponse rsp = CreateCloudProductLogTaskResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CreateCloudProductLogTaskOutcome(rsp);
-        else
-            return CreateCloudProductLogTaskOutcome(o.GetError());
-    }
-    else
-    {
-        return CreateCloudProductLogTaskOutcome(outcome.GetError());
-    }
-}
-
-void ClsClient::CreateCloudProductLogTaskAsync(const CreateCloudProductLogTaskRequest& request, const CreateCloudProductLogTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateCloudProductLogTask(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-ClsClient::CreateCloudProductLogTaskOutcomeCallable ClsClient::CreateCloudProductLogTaskCallable(const CreateCloudProductLogTaskRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<CreateCloudProductLogTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateCloudProductLogTask(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 ClsClient::CreateConfigOutcome ClsClient::CreateConfig(const CreateConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateConfig");
@@ -1323,49 +1280,6 @@ ClsClient::DeleteAlarmShieldOutcomeCallable ClsClient::DeleteAlarmShieldCallable
         [this, request]()
         {
             return this->DeleteAlarmShield(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-ClsClient::DeleteCloudProductLogTaskOutcome ClsClient::DeleteCloudProductLogTask(const DeleteCloudProductLogTaskRequest &request)
-{
-    auto outcome = MakeRequest(request, "DeleteCloudProductLogTask");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DeleteCloudProductLogTaskResponse rsp = DeleteCloudProductLogTaskResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DeleteCloudProductLogTaskOutcome(rsp);
-        else
-            return DeleteCloudProductLogTaskOutcome(o.GetError());
-    }
-    else
-    {
-        return DeleteCloudProductLogTaskOutcome(outcome.GetError());
-    }
-}
-
-void ClsClient::DeleteCloudProductLogTaskAsync(const DeleteCloudProductLogTaskRequest& request, const DeleteCloudProductLogTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteCloudProductLogTask(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-ClsClient::DeleteCloudProductLogTaskOutcomeCallable ClsClient::DeleteCloudProductLogTaskCallable(const DeleteCloudProductLogTaskRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DeleteCloudProductLogTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteCloudProductLogTask(request);
         }
     );
 
@@ -2312,49 +2226,6 @@ ClsClient::DescribeAlertRecordHistoryOutcomeCallable ClsClient::DescribeAlertRec
         [this, request]()
         {
             return this->DescribeAlertRecordHistory(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-ClsClient::DescribeCloudProductLogTasksOutcome ClsClient::DescribeCloudProductLogTasks(const DescribeCloudProductLogTasksRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeCloudProductLogTasks");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeCloudProductLogTasksResponse rsp = DescribeCloudProductLogTasksResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeCloudProductLogTasksOutcome(rsp);
-        else
-            return DescribeCloudProductLogTasksOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeCloudProductLogTasksOutcome(outcome.GetError());
-    }
-}
-
-void ClsClient::DescribeCloudProductLogTasksAsync(const DescribeCloudProductLogTasksRequest& request, const DescribeCloudProductLogTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCloudProductLogTasks(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-ClsClient::DescribeCloudProductLogTasksOutcomeCallable ClsClient::DescribeCloudProductLogTasksCallable(const DescribeCloudProductLogTasksRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeCloudProductLogTasksOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCloudProductLogTasks(request);
         }
     );
 
@@ -3688,49 +3559,6 @@ ClsClient::ModifyAlarmShieldOutcomeCallable ClsClient::ModifyAlarmShieldCallable
         [this, request]()
         {
             return this->ModifyAlarmShield(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-ClsClient::ModifyCloudProductLogTaskOutcome ClsClient::ModifyCloudProductLogTask(const ModifyCloudProductLogTaskRequest &request)
-{
-    auto outcome = MakeRequest(request, "ModifyCloudProductLogTask");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ModifyCloudProductLogTaskResponse rsp = ModifyCloudProductLogTaskResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ModifyCloudProductLogTaskOutcome(rsp);
-        else
-            return ModifyCloudProductLogTaskOutcome(o.GetError());
-    }
-    else
-    {
-        return ModifyCloudProductLogTaskOutcome(outcome.GetError());
-    }
-}
-
-void ClsClient::ModifyCloudProductLogTaskAsync(const ModifyCloudProductLogTaskRequest& request, const ModifyCloudProductLogTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyCloudProductLogTask(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-ClsClient::ModifyCloudProductLogTaskOutcomeCallable ClsClient::ModifyCloudProductLogTaskCallable(const ModifyCloudProductLogTaskRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<ModifyCloudProductLogTaskOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyCloudProductLogTask(request);
         }
     );
 

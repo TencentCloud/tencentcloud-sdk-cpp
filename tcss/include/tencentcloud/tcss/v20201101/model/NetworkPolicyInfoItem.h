@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网络策略描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 网络策略描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置网络策略描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 网络策略描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -271,18 +267,14 @@ cilium：Cilium
 
                     /**
                      * 获取策略发布结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublishResult 策略发布结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPublishResult() const;
 
                     /**
                      * 设置策略发布结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _publishResult 策略发布结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPublishResult(const std::string& _publishResult);
@@ -386,18 +378,14 @@ cilium：Cilium
 
                     /**
                      * 获取作用对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PodSelector 作用对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPodSelector() const;
 
                     /**
                      * 设置作用对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _podSelector 作用对象
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPodSelector(const std::string& _podSelector);
@@ -440,7 +428,6 @@ cilium：Cilium
 
                     /**
                      * 网络策略描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
@@ -495,7 +482,6 @@ cilium：Cilium
 
                     /**
                      * 策略发布结果
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_publishResult;
                     bool m_publishResultHasBeenSet;
@@ -526,7 +512,6 @@ cilium：Cilium
 
                     /**
                      * 作用对象
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_podSelector;
                     bool m_podSelectorHasBeenSet;

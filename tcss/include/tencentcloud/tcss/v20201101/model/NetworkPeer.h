@@ -93,18 +93,14 @@ ip类型：IPBlock，代表只有IPBlock有值
 
                     /**
                      * 获取空间选择器
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NamespaceSelector 空间选择器
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNamespaceSelector() const;
 
                     /**
                      * 设置空间选择器
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _namespaceSelector 空间选择器
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNamespaceSelector(const std::string& _namespaceSelector);
@@ -118,18 +114,14 @@ ip类型：IPBlock，代表只有IPBlock有值
 
                     /**
                      * 获取pod选择器
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PodSelector pod选择器
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPodSelector() const;
 
                     /**
                      * 设置pod选择器
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _podSelector pod选择器
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPodSelector(const std::string& _podSelector);
@@ -143,18 +135,14 @@ ip类型：IPBlock，代表只有IPBlock有值
 
                     /**
                      * 获取Ip选择器
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IPBlock Ip选择器
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIPBlock() const;
 
                     /**
                      * 设置Ip选择器
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _iPBlock Ip选择器
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIPBlock(const std::string& _iPBlock);
@@ -182,21 +170,18 @@ ip类型：IPBlock，代表只有IPBlock有值
 
                     /**
                      * 空间选择器
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_namespaceSelector;
                     bool m_namespaceSelectorHasBeenSet;
 
                     /**
                      * pod选择器
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_podSelector;
                     bool m_podSelectorHasBeenSet;
 
                     /**
                      * Ip选择器
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_iPBlock;
                     bool m_iPBlockHasBeenSet;

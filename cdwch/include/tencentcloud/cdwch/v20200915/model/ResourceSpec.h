@@ -196,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否可用，false代表售罄
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Available 是否可用，false代表售罄
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetAvailable() const;
 
                     /**
                      * 设置是否可用，false代表售罄
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _available 是否可用，false代表售罄
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAvailable(const bool& _available);
@@ -221,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规格描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ComputeSpecDesc 规格描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetComputeSpecDesc() const;
 
                     /**
                      * 设置规格描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _computeSpecDesc 规格描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetComputeSpecDesc(const std::string& _computeSpecDesc);
@@ -246,18 +238,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规格名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DisplayName 规格名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDisplayName() const;
 
                     /**
                      * 设置规格名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _displayName 规格名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDisplayName(const std::string& _displayName);
@@ -271,18 +259,14 @@ namespace TencentCloud
 
                     /**
                      * 获取库存数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceQuota 库存数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetInstanceQuota() const;
 
                     /**
                      * 设置库存数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceQuota 库存数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceQuota(const int64_t& _instanceQuota);
@@ -340,28 +324,24 @@ namespace TencentCloud
 
                     /**
                      * 是否可用，false代表售罄
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_available;
                     bool m_availableHasBeenSet;
 
                     /**
                      * 规格描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_computeSpecDesc;
                     bool m_computeSpecDescHasBeenSet;
 
                     /**
                      * 规格名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_displayName;
                     bool m_displayNameHasBeenSet;
 
                     /**
                      * 库存数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_instanceQuota;
                     bool m_instanceQuotaHasBeenSet;

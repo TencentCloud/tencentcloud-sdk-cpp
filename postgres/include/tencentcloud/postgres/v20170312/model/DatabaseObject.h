@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取支持使用的数据库对象类型有：account,database,schema,sequence,procedure,type,function,table,view,matview,column。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ObjectType 支持使用的数据库对象类型有：account,database,schema,sequence,procedure,type,function,table,view,matview,column。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetObjectType() const;
 
                     /**
                      * 设置支持使用的数据库对象类型有：account,database,schema,sequence,procedure,type,function,table,view,matview,column。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _objectType 支持使用的数据库对象类型有：account,database,schema,sequence,procedure,type,function,table,view,matview,column。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetObjectType(const std::string& _objectType);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取所描述的数据库对象名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ObjectName 所描述的数据库对象名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetObjectName() const;
 
                     /**
                      * 设置所描述的数据库对象名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _objectName 所描述的数据库对象名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetObjectName(const std::string& _objectName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取所要描述的数据库对象，所属的数据库名称。当描述对象类型不为database时，此参数必选。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatabaseName 所要描述的数据库对象，所属的数据库名称。当描述对象类型不为database时，此参数必选。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDatabaseName() const;
 
                     /**
                      * 设置所要描述的数据库对象，所属的数据库名称。当描述对象类型不为database时，此参数必选。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _databaseName 所要描述的数据库对象，所属的数据库名称。当描述对象类型不为database时，此参数必选。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDatabaseName(const std::string& _databaseName);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取所要描述的数据库对象，所属的模式名称。当描述对象不为database、schema时，此参数必选。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SchemaName 所要描述的数据库对象，所属的模式名称。当描述对象不为database、schema时，此参数必选。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSchemaName() const;
 
                     /**
                      * 设置所要描述的数据库对象，所属的模式名称。当描述对象不为database、schema时，此参数必选。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _schemaName 所要描述的数据库对象，所属的模式名称。当描述对象不为database、schema时，此参数必选。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSchemaName(const std::string& _schemaName);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取所要描述的数据库对象，所属的表名称。当描述的对象类型为column时，此参数必填。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableName 所要描述的数据库对象，所属的表名称。当描述的对象类型为column时，此参数必填。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTableName() const;
 
                     /**
                      * 设置所要描述的数据库对象，所属的表名称。当描述的对象类型为column时，此参数必填。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tableName 所要描述的数据库对象，所属的表名称。当描述的对象类型为column时，此参数必填。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTableName(const std::string& _tableName);
@@ -175,35 +155,30 @@ namespace TencentCloud
 
                     /**
                      * 支持使用的数据库对象类型有：account,database,schema,sequence,procedure,type,function,table,view,matview,column。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_objectType;
                     bool m_objectTypeHasBeenSet;
 
                     /**
                      * 所描述的数据库对象名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_objectName;
                     bool m_objectNameHasBeenSet;
 
                     /**
                      * 所要描述的数据库对象，所属的数据库名称。当描述对象类型不为database时，此参数必选。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_databaseName;
                     bool m_databaseNameHasBeenSet;
 
                     /**
                      * 所要描述的数据库对象，所属的模式名称。当描述对象不为database、schema时，此参数必选。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_schemaName;
                     bool m_schemaNameHasBeenSet;
 
                     /**
                      * 所要描述的数据库对象，所属的表名称。当描述的对象类型为column时，此参数必填。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tableName;
                     bool m_tableNameHasBeenSet;

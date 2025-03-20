@@ -39,8 +39,6 @@
 #include <tencentcloud/cls/v20201016/model/CreateAlarmNoticeResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateAlarmShieldRequest.h>
 #include <tencentcloud/cls/v20201016/model/CreateAlarmShieldResponse.h>
-#include <tencentcloud/cls/v20201016/model/CreateCloudProductLogTaskRequest.h>
-#include <tencentcloud/cls/v20201016/model/CreateCloudProductLogTaskResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateConfigRequest.h>
 #include <tencentcloud/cls/v20201016/model/CreateConfigResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateConfigExtraRequest.h>
@@ -83,8 +81,6 @@
 #include <tencentcloud/cls/v20201016/model/DeleteAlarmNoticeResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteAlarmShieldRequest.h>
 #include <tencentcloud/cls/v20201016/model/DeleteAlarmShieldResponse.h>
-#include <tencentcloud/cls/v20201016/model/DeleteCloudProductLogTaskRequest.h>
-#include <tencentcloud/cls/v20201016/model/DeleteCloudProductLogTaskResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteConfigRequest.h>
 #include <tencentcloud/cls/v20201016/model/DeleteConfigResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteConfigExtraRequest.h>
@@ -129,8 +125,6 @@
 #include <tencentcloud/cls/v20201016/model/DescribeAlarmsResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeAlertRecordHistoryRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribeAlertRecordHistoryResponse.h>
-#include <tencentcloud/cls/v20201016/model/DescribeCloudProductLogTasksRequest.h>
-#include <tencentcloud/cls/v20201016/model/DescribeCloudProductLogTasksResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeConfigExtrasRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribeConfigExtrasResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeConfigMachineGroupsRequest.h>
@@ -193,8 +187,6 @@
 #include <tencentcloud/cls/v20201016/model/ModifyAlarmNoticeResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyAlarmShieldRequest.h>
 #include <tencentcloud/cls/v20201016/model/ModifyAlarmShieldResponse.h>
-#include <tencentcloud/cls/v20201016/model/ModifyCloudProductLogTaskRequest.h>
-#include <tencentcloud/cls/v20201016/model/ModifyCloudProductLogTaskResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyConfigRequest.h>
 #include <tencentcloud/cls/v20201016/model/ModifyConfigResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyConfigExtraRequest.h>
@@ -287,9 +279,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAlarmShieldResponse> CreateAlarmShieldOutcome;
                 typedef std::future<CreateAlarmShieldOutcome> CreateAlarmShieldOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::CreateAlarmShieldRequest&, CreateAlarmShieldOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAlarmShieldAsyncHandler;
-                typedef Outcome<Core::Error, Model::CreateCloudProductLogTaskResponse> CreateCloudProductLogTaskOutcome;
-                typedef std::future<CreateCloudProductLogTaskOutcome> CreateCloudProductLogTaskOutcomeCallable;
-                typedef std::function<void(const ClsClient*, const Model::CreateCloudProductLogTaskRequest&, CreateCloudProductLogTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCloudProductLogTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateConfigResponse> CreateConfigOutcome;
                 typedef std::future<CreateConfigOutcome> CreateConfigOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::CreateConfigRequest&, CreateConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateConfigAsyncHandler;
@@ -353,9 +342,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteAlarmShieldResponse> DeleteAlarmShieldOutcome;
                 typedef std::future<DeleteAlarmShieldOutcome> DeleteAlarmShieldOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DeleteAlarmShieldRequest&, DeleteAlarmShieldOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAlarmShieldAsyncHandler;
-                typedef Outcome<Core::Error, Model::DeleteCloudProductLogTaskResponse> DeleteCloudProductLogTaskOutcome;
-                typedef std::future<DeleteCloudProductLogTaskOutcome> DeleteCloudProductLogTaskOutcomeCallable;
-                typedef std::function<void(const ClsClient*, const Model::DeleteCloudProductLogTaskRequest&, DeleteCloudProductLogTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCloudProductLogTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteConfigResponse> DeleteConfigOutcome;
                 typedef std::future<DeleteConfigOutcome> DeleteConfigOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DeleteConfigRequest&, DeleteConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteConfigAsyncHandler;
@@ -422,9 +408,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAlertRecordHistoryResponse> DescribeAlertRecordHistoryOutcome;
                 typedef std::future<DescribeAlertRecordHistoryOutcome> DescribeAlertRecordHistoryOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribeAlertRecordHistoryRequest&, DescribeAlertRecordHistoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlertRecordHistoryAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeCloudProductLogTasksResponse> DescribeCloudProductLogTasksOutcome;
-                typedef std::future<DescribeCloudProductLogTasksOutcome> DescribeCloudProductLogTasksOutcomeCallable;
-                typedef std::function<void(const ClsClient*, const Model::DescribeCloudProductLogTasksRequest&, DescribeCloudProductLogTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudProductLogTasksAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeConfigExtrasResponse> DescribeConfigExtrasOutcome;
                 typedef std::future<DescribeConfigExtrasOutcome> DescribeConfigExtrasOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribeConfigExtrasRequest&, DescribeConfigExtrasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConfigExtrasAsyncHandler;
@@ -518,9 +501,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyAlarmShieldResponse> ModifyAlarmShieldOutcome;
                 typedef std::future<ModifyAlarmShieldOutcome> ModifyAlarmShieldOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::ModifyAlarmShieldRequest&, ModifyAlarmShieldOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAlarmShieldAsyncHandler;
-                typedef Outcome<Core::Error, Model::ModifyCloudProductLogTaskResponse> ModifyCloudProductLogTaskOutcome;
-                typedef std::future<ModifyCloudProductLogTaskOutcome> ModifyCloudProductLogTaskOutcomeCallable;
-                typedef std::function<void(const ClsClient*, const Model::ModifyCloudProductLogTaskRequest&, ModifyCloudProductLogTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCloudProductLogTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyConfigResponse> ModifyConfigOutcome;
                 typedef std::future<ModifyConfigOutcome> ModifyConfigOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::ModifyConfigRequest&, ModifyConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyConfigAsyncHandler;
@@ -683,15 +663,6 @@ namespace TencentCloud
                 CreateAlarmShieldOutcome CreateAlarmShield(const Model::CreateAlarmShieldRequest &request);
                 void CreateAlarmShieldAsync(const Model::CreateAlarmShieldRequest& request, const CreateAlarmShieldAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAlarmShieldOutcomeCallable CreateAlarmShieldCallable(const Model::CreateAlarmShieldRequest& request);
-
-                /**
-                 *内部云产品接入使用相关接口
-                 * @param req CreateCloudProductLogTaskRequest
-                 * @return CreateCloudProductLogTaskOutcome
-                 */
-                CreateCloudProductLogTaskOutcome CreateCloudProductLogTask(const Model::CreateCloudProductLogTaskRequest &request);
-                void CreateCloudProductLogTaskAsync(const Model::CreateCloudProductLogTaskRequest& request, const CreateCloudProductLogTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateCloudProductLogTaskOutcomeCallable CreateCloudProductLogTaskCallable(const Model::CreateCloudProductLogTaskRequest& request);
 
                 /**
                  *创建采集规则配置
@@ -881,15 +852,6 @@ namespace TencentCloud
                 DeleteAlarmShieldOutcome DeleteAlarmShield(const Model::DeleteAlarmShieldRequest &request);
                 void DeleteAlarmShieldAsync(const Model::DeleteAlarmShieldRequest& request, const DeleteAlarmShieldAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteAlarmShieldOutcomeCallable DeleteAlarmShieldCallable(const Model::DeleteAlarmShieldRequest& request);
-
-                /**
-                 *内部云产品接入使用相关接口
-                 * @param req DeleteCloudProductLogTaskRequest
-                 * @return DeleteCloudProductLogTaskOutcome
-                 */
-                DeleteCloudProductLogTaskOutcome DeleteCloudProductLogTask(const Model::DeleteCloudProductLogTaskRequest &request);
-                void DeleteCloudProductLogTaskAsync(const Model::DeleteCloudProductLogTaskRequest& request, const DeleteCloudProductLogTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DeleteCloudProductLogTaskOutcomeCallable DeleteCloudProductLogTaskCallable(const Model::DeleteCloudProductLogTaskRequest& request);
 
                 /**
                  *删除采集规则配置
@@ -1088,15 +1050,6 @@ namespace TencentCloud
                 DescribeAlertRecordHistoryOutcome DescribeAlertRecordHistory(const Model::DescribeAlertRecordHistoryRequest &request);
                 void DescribeAlertRecordHistoryAsync(const Model::DescribeAlertRecordHistoryRequest& request, const DescribeAlertRecordHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAlertRecordHistoryOutcomeCallable DescribeAlertRecordHistoryCallable(const Model::DescribeAlertRecordHistoryRequest& request);
-
-                /**
-                 *云产品接入使用相关接口
-                 * @param req DescribeCloudProductLogTasksRequest
-                 * @return DescribeCloudProductLogTasksOutcome
-                 */
-                DescribeCloudProductLogTasksOutcome DescribeCloudProductLogTasks(const Model::DescribeCloudProductLogTasksRequest &request);
-                void DescribeCloudProductLogTasksAsync(const Model::DescribeCloudProductLogTasksRequest& request, const DescribeCloudProductLogTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeCloudProductLogTasksOutcomeCallable DescribeCloudProductLogTasksCallable(const Model::DescribeCloudProductLogTasksRequest& request);
 
                 /**
                  *本接口用于获取特殊采集配置，特殊采集配置应用于自建K8S环境的采集Agent
@@ -1377,15 +1330,6 @@ API返回数据包最大49MB，建议启用 gzip 压缩（HTTP Request Header Ac
                 ModifyAlarmShieldOutcome ModifyAlarmShield(const Model::ModifyAlarmShieldRequest &request);
                 void ModifyAlarmShieldAsync(const Model::ModifyAlarmShieldRequest& request, const ModifyAlarmShieldAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyAlarmShieldOutcomeCallable ModifyAlarmShieldCallable(const Model::ModifyAlarmShieldRequest& request);
-
-                /**
-                 *内部云产品接入使用相关接口
-                 * @param req ModifyCloudProductLogTaskRequest
-                 * @return ModifyCloudProductLogTaskOutcome
-                 */
-                ModifyCloudProductLogTaskOutcome ModifyCloudProductLogTask(const Model::ModifyCloudProductLogTaskRequest &request);
-                void ModifyCloudProductLogTaskAsync(const Model::ModifyCloudProductLogTaskRequest& request, const ModifyCloudProductLogTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ModifyCloudProductLogTaskOutcomeCallable ModifyCloudProductLogTaskCallable(const Model::ModifyCloudProductLogTaskRequest& request);
 
                 /**
                  *修改采集规则配置

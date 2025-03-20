@@ -47,7 +47,8 @@ DatabaseMeta::DatabaseMeta() :
     m_clusterIdHasBeenSet(false),
     m_clusterNameHasBeenSet(false),
     m_modifiedTimeByTablesHasBeenSet(false),
-    m_lastAccessTimeByTablesHasBeenSet(false)
+    m_lastAccessTimeByTablesHasBeenSet(false),
+    m_databaseGuidHasBeenSet(false)
 {
 }
 
@@ -336,6 +337,16 @@ CoreInternalOutcome DatabaseMeta::Deserialize(const rapidjson::Value &value)
         m_lastAccessTimeByTablesHasBeenSet = true;
     }
 
+    if (value.HasMember("DatabaseGuid") && !value["DatabaseGuid"].IsNull())
+    {
+        if (!value["DatabaseGuid"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatabaseMeta.DatabaseGuid` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_databaseGuid = string(value["DatabaseGuid"].GetString());
+        m_databaseGuidHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -564,6 +575,14 @@ void DatabaseMeta::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "LastAccessTimeByTables";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_lastAccessTimeByTables, allocator);
+    }
+
+    if (m_databaseGuidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatabaseGuid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_databaseGuid.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -999,5 +1018,21 @@ void DatabaseMeta::SetLastAccessTimeByTables(const uint64_t& _lastAccessTimeByTa
 bool DatabaseMeta::LastAccessTimeByTablesHasBeenSet() const
 {
     return m_lastAccessTimeByTablesHasBeenSet;
+}
+
+string DatabaseMeta::GetDatabaseGuid() const
+{
+    return m_databaseGuid;
+}
+
+void DatabaseMeta::SetDatabaseGuid(const string& _databaseGuid)
+{
+    m_databaseGuid = _databaseGuid;
+    m_databaseGuidHasBeenSet = true;
+}
+
+bool DatabaseMeta::DatabaseGuidHasBeenSet() const
+{
+    return m_databaseGuidHasBeenSet;
 }
 

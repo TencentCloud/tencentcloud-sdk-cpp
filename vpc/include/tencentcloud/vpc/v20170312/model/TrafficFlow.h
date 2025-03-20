@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取格式化后的流量，单位见参数 FormatUnit
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FormatValue 格式化后的流量，单位见参数 FormatUnit
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetFormatValue() const;
 
                     /**
                      * 设置格式化后的流量，单位见参数 FormatUnit
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _formatValue 格式化后的流量，单位见参数 FormatUnit
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFormatValue(const double& _formatValue);
@@ -94,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取格式化后流量的单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FormatUnit 格式化后流量的单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFormatUnit() const;
 
                     /**
                      * 设置格式化后流量的单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _formatUnit 格式化后流量的单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFormatUnit(const std::string& _formatUnit);
@@ -127,14 +119,12 @@ namespace TencentCloud
 
                     /**
                      * 格式化后的流量，单位见参数 FormatUnit
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_formatValue;
                     bool m_formatValueHasBeenSet;
 
                     /**
                      * 格式化后流量的单位
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_formatUnit;
                     bool m_formatUnitHasBeenSet;

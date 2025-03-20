@@ -73,18 +73,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主题列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicList 主题列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ConsumerGroupTopic> GetTopicList() const;
 
                     /**
                      * 设置主题列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topicList 主题列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopicList(const std::vector<ConsumerGroupTopic>& _topicList);
@@ -98,18 +94,14 @@ namespace TencentCloud
 
                     /**
                      * 获取消费分组List
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupList 消费分组List
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ConsumerGroup> GetGroupList() const;
 
                     /**
                      * 设置消费分组List
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupList 消费分组List
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupList(const std::vector<ConsumerGroup>& _groupList);
@@ -123,18 +115,14 @@ namespace TencentCloud
 
                     /**
                      * 获取所有分区数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalPartition 所有分区数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalPartition() const;
 
                     /**
                      * 设置所有分区数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalPartition 所有分区数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalPartition(const int64_t& _totalPartition);
@@ -148,18 +136,14 @@ namespace TencentCloud
 
                     /**
                      * 获取监控的分区列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PartitionListForMonitor 监控的分区列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Partition> GetPartitionListForMonitor() const;
 
                     /**
                      * 设置监控的分区列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _partitionListForMonitor 监控的分区列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPartitionListForMonitor(const std::vector<Partition>& _partitionListForMonitor);
@@ -173,18 +157,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主题总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalTopic 主题总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalTopic() const;
 
                     /**
                      * 设置主题总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalTopic 主题总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalTopic(const int64_t& _totalTopic);
@@ -198,18 +178,14 @@ namespace TencentCloud
 
                     /**
                      * 获取监控的主题列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicListForMonitor 监控的主题列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ConsumerGroupTopic> GetTopicListForMonitor() const;
 
                     /**
                      * 设置监控的主题列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topicListForMonitor 监控的主题列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopicListForMonitor(const std::vector<ConsumerGroupTopic>& _topicListForMonitor);
@@ -223,18 +199,14 @@ namespace TencentCloud
 
                     /**
                      * 获取监控的组列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupListForMonitor 监控的组列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Group> GetGroupListForMonitor() const;
 
                     /**
                      * 设置监控的组列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupListForMonitor 监控的组列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupListForMonitor(const std::vector<Group>& _groupListForMonitor);
@@ -256,49 +228,42 @@ namespace TencentCloud
 
                     /**
                      * 主题列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ConsumerGroupTopic> m_topicList;
                     bool m_topicListHasBeenSet;
 
                     /**
                      * 消费分组List
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ConsumerGroup> m_groupList;
                     bool m_groupListHasBeenSet;
 
                     /**
                      * 所有分区数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalPartition;
                     bool m_totalPartitionHasBeenSet;
 
                     /**
                      * 监控的分区列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Partition> m_partitionListForMonitor;
                     bool m_partitionListForMonitorHasBeenSet;
 
                     /**
                      * 主题总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalTopic;
                     bool m_totalTopicHasBeenSet;
 
                     /**
                      * 监控的主题列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ConsumerGroupTopic> m_topicListForMonitor;
                     bool m_topicListForMonitorHasBeenSet;
 
                     /**
                      * 监控的组列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Group> m_groupListForMonitor;
                     bool m_groupListForMonitorHasBeenSet;

@@ -64,9 +64,7 @@ namespace TencentCloud
 
                     /**
                      * 获取当资产为容器时，返回此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContainerDetailInfo 当资产为容器时，返回此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ComplianceContainerDetailInfo GetContainerDetailInfo() const;
@@ -80,9 +78,7 @@ namespace TencentCloud
 
                     /**
                      * 获取当资产为镜像时，返回此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageDetailInfo 当资产为镜像时，返回此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ComplianceImageDetailInfo GetImageDetailInfo() const;
@@ -96,9 +92,7 @@ namespace TencentCloud
 
                     /**
                      * 获取当资产为主机时，返回此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostDetailInfo 当资产为主机时，返回此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ComplianceHostDetailInfo GetHostDetailInfo() const;
@@ -112,9 +106,7 @@ namespace TencentCloud
 
                     /**
                      * 获取当资产为K8S时，返回此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return K8SDetailInfo 当资产为K8S时，返回此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ComplianceK8SDetailInfo GetK8SDetailInfo() const;
@@ -136,28 +128,24 @@ namespace TencentCloud
 
                     /**
                      * 当资产为容器时，返回此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ComplianceContainerDetailInfo m_containerDetailInfo;
                     bool m_containerDetailInfoHasBeenSet;
 
                     /**
                      * 当资产为镜像时，返回此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ComplianceImageDetailInfo m_imageDetailInfo;
                     bool m_imageDetailInfoHasBeenSet;
 
                     /**
                      * 当资产为主机时，返回此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ComplianceHostDetailInfo m_hostDetailInfo;
                     bool m_hostDetailInfoHasBeenSet;
 
                     /**
                      * 当资产为K8S时，返回此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ComplianceK8SDetailInfo m_k8SDetailInfo;
                     bool m_k8SDetailInfoHasBeenSet;

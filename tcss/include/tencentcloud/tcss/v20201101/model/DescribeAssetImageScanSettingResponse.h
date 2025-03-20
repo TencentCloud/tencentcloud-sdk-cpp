@@ -199,9 +199,7 @@ namespace TencentCloud
 
                     /**
                      * 获取排除的扫描镜像
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExcludeImages 排除的扫描镜像
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetExcludeImages() const;
@@ -215,9 +213,7 @@ namespace TencentCloud
 
                     /**
                      * 获取最后一次扫描时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastScanTime 最后一次扫描时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLastScanTime() const;
@@ -231,9 +227,7 @@ namespace TencentCloud
 
                     /**
                      * 获取扫描结果(Success|InsufficientLicense|ImageNeedIsEmpty|InternalError)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanResult 扫描结果(Success|InsufficientLicense|ImageNeedIsEmpty|InternalError)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetScanResult() const;
@@ -315,21 +309,18 @@ namespace TencentCloud
 
                     /**
                      * 排除的扫描镜像
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_excludeImages;
                     bool m_excludeImagesHasBeenSet;
 
                     /**
                      * 最后一次扫描时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastScanTime;
                     bool m_lastScanTimeHasBeenSet;
 
                     /**
                      * 扫描结果(Success|InsufficientLicense|ImageNeedIsEmpty|InternalError)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scanResult;
                     bool m_scanResultHasBeenSet;

@@ -130,18 +130,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否是跨账号复制快照快照, 1：是, 0: 不是
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsCopyToRemote 是否是跨账号复制快照快照, 1：是, 0: 不是
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIsCopyToRemote() const;
 
                     /**
                      * 设置是否是跨账号复制快照快照, 1：是, 0: 不是
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isCopyToRemote 是否是跨账号复制快照快照, 1：是, 0: 不是
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsCopyToRemote(const uint64_t& _isCopyToRemote);
@@ -327,18 +323,14 @@ namespace TencentCloud
 
                     /**
                      * 获取已绑定当前定期快照策略的实例ID列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceIdSet 已绑定当前定期快照策略的实例ID列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetInstanceIdSet() const;
 
                     /**
                      * 设置已绑定当前定期快照策略的实例ID列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceIdSet 已绑定当前定期快照策略的实例ID列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceIdSet(const std::vector<std::string>& _instanceIdSet);
@@ -352,18 +344,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该定期快照创建的快照可以保留的月数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RetentionMonths 该定期快照创建的快照可以保留的月数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRetentionMonths() const;
 
                     /**
                      * 设置该定期快照创建的快照可以保留的月数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _retentionMonths 该定期快照创建的快照可以保留的月数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRetentionMonths(const uint64_t& _retentionMonths);
@@ -377,18 +365,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该定期快照创建的快照最大保留数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RetentionAmount 该定期快照创建的快照最大保留数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRetentionAmount() const;
 
                     /**
                      * 设置该定期快照创建的快照最大保留数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _retentionAmount 该定期快照创建的快照最大保留数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRetentionAmount(const uint64_t& _retentionAmount);
@@ -452,18 +436,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标签。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 标签。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置标签。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 标签。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -501,7 +481,6 @@ namespace TencentCloud
 
                     /**
                      * 是否是跨账号复制快照快照, 1：是, 0: 不是
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_isCopyToRemote;
                     bool m_isCopyToRemoteHasBeenSet;
@@ -557,21 +536,18 @@ namespace TencentCloud
 
                     /**
                      * 已绑定当前定期快照策略的实例ID列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_instanceIdSet;
                     bool m_instanceIdSetHasBeenSet;
 
                     /**
                      * 该定期快照创建的快照可以保留的月数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_retentionMonths;
                     bool m_retentionMonthsHasBeenSet;
 
                     /**
                      * 该定期快照创建的快照最大保留数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_retentionAmount;
                     bool m_retentionAmountHasBeenSet;
@@ -592,7 +568,6 @@ namespace TencentCloud
 
                     /**
                      * 标签。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;

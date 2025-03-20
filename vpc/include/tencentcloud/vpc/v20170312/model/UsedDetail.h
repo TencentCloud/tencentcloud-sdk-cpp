@@ -70,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取流量包名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TrafficPackageName 流量包名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTrafficPackageName() const;
 
                     /**
                      * 设置流量包名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _trafficPackageName 流量包名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTrafficPackageName(const std::string& _trafficPackageName);
@@ -271,7 +267,6 @@ namespace TencentCloud
 
                     /**
                      * 流量包名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_trafficPackageName;
                     bool m_trafficPackageNameHasBeenSet;

@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取通道类型 0：未知；1：视频通道；2：音频通道；3：告警通道
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChannelType 通道类型 0：未知；1：视频通道；2：音频通道；3：告警通道
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetChannelType() const;
 
                     /**
                      * 设置通道类型 0：未知；1：视频通道；2：音频通道；3：告警通道
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _channelType 通道类型 0：未知；1：视频通道；2：音频通道；3：告警通道
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChannelType(const int64_t& _channelType);
@@ -115,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取20位国标通道编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChannelCode 20位国标通道编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetChannelCode() const;
 
                     /**
                      * 设置20位国标通道编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _channelCode 20位国标通道编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChannelCode(const std::string& _channelCode);
@@ -140,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取通道扩展信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExtraInformation 通道扩展信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExtraInformation() const;
 
                     /**
                      * 设置通道扩展信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _extraInformation 通道扩展信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExtraInformation(const std::string& _extraInformation);
@@ -165,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取通道在线状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 通道在线状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置通道在线状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 通道在线状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -190,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取通道是否存在录像标识 0：无录像；1：有录像
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsRecord 通道是否存在录像标识 0：无录像；1：有录像
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIsRecord() const;
 
                     /**
                      * 设置通道是否存在录像标识 0：无录像；1：有录像
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isRecord 通道是否存在录像标识 0：无录像；1：有录像
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsRecord(const int64_t& _isRecord);
@@ -215,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取通道所属设备唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceId 通道所属设备唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
                      * 设置通道所属设备唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceId 通道所属设备唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
@@ -240,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取通道所属虚拟组织的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BusinessGroupId 通道所属虚拟组织的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBusinessGroupId() const;
 
                     /**
                      * 设置通道所属虚拟组织的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _businessGroupId 通道所属虚拟组织的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBusinessGroupId(const std::string& _businessGroupId);
@@ -279,49 +251,42 @@ namespace TencentCloud
 
                     /**
                      * 通道类型 0：未知；1：视频通道；2：音频通道；3：告警通道
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_channelType;
                     bool m_channelTypeHasBeenSet;
 
                     /**
                      * 20位国标通道编码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_channelCode;
                     bool m_channelCodeHasBeenSet;
 
                     /**
                      * 通道扩展信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_extraInformation;
                     bool m_extraInformationHasBeenSet;
 
                     /**
                      * 通道在线状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 通道是否存在录像标识 0：无录像；1：有录像
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isRecord;
                     bool m_isRecordHasBeenSet;
 
                     /**
                      * 通道所属设备唯一标识
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceId;
                     bool m_deviceIdHasBeenSet;
 
                     /**
                      * 通道所属虚拟组织的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_businessGroupId;
                     bool m_businessGroupIdHasBeenSet;

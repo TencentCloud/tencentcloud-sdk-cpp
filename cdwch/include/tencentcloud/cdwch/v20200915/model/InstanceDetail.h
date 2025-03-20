@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取告警策略是否可用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableAlarmStrategy 告警策略是否可用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnableAlarmStrategy() const;
 
                     /**
                      * 设置告警策略是否可用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enableAlarmStrategy 告警策略是否可用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnableAlarmStrategy(const bool& _enableAlarmStrategy);
@@ -75,7 +71,6 @@ namespace TencentCloud
 
                     /**
                      * 告警策略是否可用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enableAlarmStrategy;
                     bool m_enableAlarmStrategyHasBeenSet;

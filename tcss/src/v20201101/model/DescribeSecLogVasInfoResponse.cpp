@@ -31,7 +31,8 @@ DescribeSecLogVasInfoResponse::DescribeSecLogVasInfoResponse() :
     m_logCapacityHasBeenSet(false),
     m_resourceIDHasBeenSet(false),
     m_isPurchasedHasBeenSet(false),
-    m_trialCapacityHasBeenSet(false)
+    m_trialCapacityHasBeenSet(false),
+    m_resourceDetailListHasBeenSet(false)
 {
 }
 
@@ -149,6 +150,26 @@ CoreInternalOutcome DescribeSecLogVasInfoResponse::Deserialize(const string &pay
         m_trialCapacityHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ResourceDetailList") && !rsp["ResourceDetailList"].IsNull())
+    {
+        if (!rsp["ResourceDetailList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ResourceDetailList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ResourceDetailList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            VasInfoResourceDetail item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_resourceDetailList.push_back(item);
+        }
+        m_resourceDetailListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -221,6 +242,21 @@ string DescribeSecLogVasInfoResponse::ToJsonString() const
         string key = "TrialCapacity";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_trialCapacity, allocator);
+    }
+
+    if (m_resourceDetailListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceDetailList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_resourceDetailList.begin(); itr != m_resourceDetailList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -313,6 +349,16 @@ uint64_t DescribeSecLogVasInfoResponse::GetTrialCapacity() const
 bool DescribeSecLogVasInfoResponse::TrialCapacityHasBeenSet() const
 {
     return m_trialCapacityHasBeenSet;
+}
+
+vector<VasInfoResourceDetail> DescribeSecLogVasInfoResponse::GetResourceDetailList() const
+{
+    return m_resourceDetailList;
+}
+
+bool DescribeSecLogVasInfoResponse::ResourceDetailListHasBeenSet() const
+{
+    return m_resourceDetailListHasBeenSet;
 }
 
 

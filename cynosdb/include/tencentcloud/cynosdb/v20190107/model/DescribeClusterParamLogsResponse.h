@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取参数修改记录
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterParamLogs 参数修改记录
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ClusterParamModifyLog> GetClusterParamLogs() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 参数修改记录
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ClusterParamModifyLog> m_clusterParamLogs;
                     bool m_clusterParamLogsHasBeenSet;

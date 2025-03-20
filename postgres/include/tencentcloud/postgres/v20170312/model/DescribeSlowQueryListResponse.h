@@ -61,9 +61,7 @@ namespace TencentCloud
 
                     /**
                      * 获取查询到的慢日志耗时分段分析结果。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DurationAnalysis 查询到的慢日志耗时分段分析结果。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DurationAnalysis> GetDurationAnalysis() const;
@@ -77,9 +75,7 @@ namespace TencentCloud
 
                     /**
                      * 获取查询到的慢日志详细信息集合。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RawSlowQueryList 查询到的慢日志详细信息集合。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RawSlowQuery> GetRawSlowQueryList() const;
@@ -101,14 +97,12 @@ namespace TencentCloud
 
                     /**
                      * 查询到的慢日志耗时分段分析结果。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DurationAnalysis> m_durationAnalysis;
                     bool m_durationAnalysisHasBeenSet;
 
                     /**
                      * 查询到的慢日志详细信息集合。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RawSlowQuery> m_rawSlowQueryList;
                     bool m_rawSlowQueryListHasBeenSet;

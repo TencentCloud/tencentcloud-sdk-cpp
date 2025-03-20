@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取订单号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DealName 订单号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDealName() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取订单流水号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BillId 订单流水号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBillId() const;
@@ -77,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取克隆出的新实例ID，当前只支持后付费返回该值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DBInstanceId 克隆出的新实例ID，当前只支持后付费返回该值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDBInstanceId() const;
@@ -95,21 +89,18 @@ namespace TencentCloud
 
                     /**
                      * 订单号。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dealName;
                     bool m_dealNameHasBeenSet;
 
                     /**
                      * 订单流水号。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_billId;
                     bool m_billIdHasBeenSet;
 
                     /**
                      * 克隆出的新实例ID，当前只支持后付费返回该值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dBInstanceId;
                     bool m_dBInstanceIdHasBeenSet;

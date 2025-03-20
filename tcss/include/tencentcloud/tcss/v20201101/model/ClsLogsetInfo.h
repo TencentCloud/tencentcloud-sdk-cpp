@@ -70,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志集名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogsetName 日志集名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLogsetName() const;
 
                     /**
                      * 设置日志集名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logsetName 日志集名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogsetName(const std::string& _logsetName);
@@ -95,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取cls主题列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicList cls主题列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ClsTopicInfo> GetTopicList() const;
 
                     /**
                      * 设置cls主题列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topicList cls主题列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopicList(const std::vector<ClsTopicInfo>& _topicList);
@@ -128,14 +120,12 @@ namespace TencentCloud
 
                     /**
                      * 日志集名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logsetName;
                     bool m_logsetNameHasBeenSet;
 
                     /**
                      * cls主题列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ClsTopicInfo> m_topicList;
                     bool m_topicListHasBeenSet;

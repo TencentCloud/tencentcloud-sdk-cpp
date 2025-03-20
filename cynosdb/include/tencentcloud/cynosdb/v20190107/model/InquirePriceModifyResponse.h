@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取实例价格
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstancePrice 实例价格
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TradePrice GetInstancePrice() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取存储价格
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StoragePrice 存储价格
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TradePrice GetStoragePrice() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 实例价格
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TradePrice m_instancePrice;
                     bool m_instancePriceHasBeenSet;
 
                     /**
                      * 存储价格
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TradePrice m_storagePrice;
                     bool m_storagePriceHasBeenSet;

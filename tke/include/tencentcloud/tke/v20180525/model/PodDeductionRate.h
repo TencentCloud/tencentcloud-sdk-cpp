@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Pod的 CPU
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cpu Pod的 CPU
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetCpu() const;
 
                     /**
                      * 设置Pod的 CPU
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cpu Pod的 CPU
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCpu(const double& _cpu);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Pod 的内存
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Memory Pod 的内存
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetMemory() const;
 
                     /**
                      * 设置Pod 的内存
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _memory Pod 的内存
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMemory(const double& _memory);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取 Pod 的类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type  Pod 的类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置 Pod 的类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type  Pod 的类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取 Pod 的 GPU 卡数，Pod 类型为 GPU 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GpuNum  Pod 的 GPU 卡数，Pod 类型为 GPU 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGpuNum() const;
 
                     /**
                      * 设置 Pod 的 GPU 卡数，Pod 类型为 GPU 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gpuNum  Pod 的 GPU 卡数，Pod 类型为 GPU 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGpuNum(const std::string& _gpuNum);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取这种规格的 Pod总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalNum 这种规格的 Pod总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTotalNum() const;
 
                     /**
                      * 设置这种规格的 Pod总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalNum 这种规格的 Pod总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalNum(const uint64_t& _totalNum);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取这种规格的 Pod被预留券抵扣的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeductionNum 这种规格的 Pod被预留券抵扣的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDeductionNum() const;
 
                     /**
                      * 设置这种规格的 Pod被预留券抵扣的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deductionNum 这种规格的 Pod被预留券抵扣的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeductionNum(const uint64_t& _deductionNum);
@@ -200,42 +176,36 @@ namespace TencentCloud
 
                     /**
                      * Pod的 CPU
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_cpu;
                     bool m_cpuHasBeenSet;
 
                     /**
                      * Pod 的内存
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_memory;
                     bool m_memoryHasBeenSet;
 
                     /**
                      *  Pod 的类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      *  Pod 的 GPU 卡数，Pod 类型为 GPU 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_gpuNum;
                     bool m_gpuNumHasBeenSet;
 
                     /**
                      * 这种规格的 Pod总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_totalNum;
                     bool m_totalNumHasBeenSet;
 
                     /**
                      * 这种规格的 Pod被预留券抵扣的数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_deductionNum;
                     bool m_deductionNumHasBeenSet;

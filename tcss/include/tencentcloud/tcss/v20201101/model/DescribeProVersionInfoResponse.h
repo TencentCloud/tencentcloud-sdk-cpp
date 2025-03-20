@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取专业版开始时间，补充购买时才不为空
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 专业版开始时间，补充购买时才不为空
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStartTime() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取专业版结束时间，补充购买时才不为空
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 专业版结束时间，补充购买时才不为空
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndTime() const;
@@ -105,9 +101,7 @@ namespace TencentCloud
 
                     /**
                      * 获取资源ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceId 资源ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceId() const;
@@ -157,14 +151,12 @@ namespace TencentCloud
 
                     /**
                      * 专业版开始时间，补充购买时才不为空
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
                      * 专业版结束时间，补充购买时才不为空
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
@@ -183,7 +175,6 @@ namespace TencentCloud
 
                     /**
                      * 资源ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;

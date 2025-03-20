@@ -153,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Pod是GPU时，表示GPU卡数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Gpu Pod是GPU时，表示GPU卡数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGpu() const;
 
                     /**
                      * 设置Pod是GPU时，表示GPU卡数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gpu Pod是GPU时，表示GPU卡数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGpu(const std::string& _gpu);
@@ -293,7 +289,6 @@ TPOD：特惠实例
 
                     /**
                      * Pod是GPU时，表示GPU卡数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_gpu;
                     bool m_gpuHasBeenSet;

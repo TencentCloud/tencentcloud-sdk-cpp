@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取小程序应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppName 小程序应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAppName() const;
 
                     /**
                      * 设置小程序应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appName 小程序应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppName(const std::string& _appName);
@@ -94,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取小程序应用版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppVersion 小程序应用版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAppVersion() const;
 
                     /**
                      * 设置小程序应用版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appVersion 小程序应用版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppVersion(const std::string& _appVersion);
@@ -140,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取小程序隐私诊断报告下载链接
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReportUrl 小程序隐私诊断报告下载链接
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReportUrl() const;
 
                     /**
                      * 设置小程序隐私诊断报告下载链接
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _reportUrl 小程序隐私诊断报告下载链接
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReportUrl(const std::string& _reportUrl);
@@ -165,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取小程序隐私诊断报告名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReportTitle 小程序隐私诊断报告名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReportTitle() const;
 
                     /**
                      * 设置小程序隐私诊断报告名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _reportTitle 小程序隐私诊断报告名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReportTitle(const std::string& _reportTitle);
@@ -190,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取小程序隐私诊断堆栈报告下载链接
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BehaviorUrl 小程序隐私诊断堆栈报告下载链接
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBehaviorUrl() const;
 
                     /**
                      * 设置小程序隐私诊断堆栈报告下载链接
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _behaviorUrl 小程序隐私诊断堆栈报告下载链接
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBehaviorUrl(const std::string& _behaviorUrl);
@@ -215,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取小程序隐私诊断堆栈报告名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BehaviorTitle 小程序隐私诊断堆栈报告名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBehaviorTitle() const;
 
                     /**
                      * 设置小程序隐私诊断堆栈报告名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _behaviorTitle 小程序隐私诊断堆栈报告名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBehaviorTitle(const std::string& _behaviorTitle);
@@ -240,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取诊断风险项数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HighRiskCount 诊断风险项数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetHighRiskCount() const;
 
                     /**
                      * 设置诊断风险项数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _highRiskCount 诊断风险项数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHighRiskCount(const int64_t& _highRiskCount);
@@ -265,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取隐私申明文件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PrivacyTextName 隐私申明文件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPrivacyTextName() const;
 
                     /**
                      * 设置隐私申明文件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _privacyTextName 隐私申明文件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPrivacyTextName(const std::string& _privacyTextName);
@@ -290,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取软件MD5
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SoftwareMD5 软件MD5
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSoftwareMD5() const;
 
                     /**
                      * 设置软件MD5
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _softwareMD5 软件MD5
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSoftwareMD5(const std::string& _softwareMD5);
@@ -315,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取隐私文本MD5
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PrivacyTextMD5 隐私文本MD5
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPrivacyTextMD5() const;
 
                     /**
                      * 设置隐私文本MD5
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _privacyTextMD5 隐私文本MD5
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPrivacyTextMD5(const std::string& _privacyTextMD5);
@@ -348,14 +308,12 @@ namespace TencentCloud
 
                     /**
                      * 小程序应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_appName;
                     bool m_appNameHasBeenSet;
 
                     /**
                      * 小程序应用版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_appVersion;
                     bool m_appVersionHasBeenSet;
@@ -368,56 +326,48 @@ namespace TencentCloud
 
                     /**
                      * 小程序隐私诊断报告下载链接
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reportUrl;
                     bool m_reportUrlHasBeenSet;
 
                     /**
                      * 小程序隐私诊断报告名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reportTitle;
                     bool m_reportTitleHasBeenSet;
 
                     /**
                      * 小程序隐私诊断堆栈报告下载链接
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_behaviorUrl;
                     bool m_behaviorUrlHasBeenSet;
 
                     /**
                      * 小程序隐私诊断堆栈报告名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_behaviorTitle;
                     bool m_behaviorTitleHasBeenSet;
 
                     /**
                      * 诊断风险项数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_highRiskCount;
                     bool m_highRiskCountHasBeenSet;
 
                     /**
                      * 隐私申明文件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_privacyTextName;
                     bool m_privacyTextNameHasBeenSet;
 
                     /**
                      * 软件MD5
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_softwareMD5;
                     bool m_softwareMD5HasBeenSet;
 
                     /**
                      * 隐私文本MD5
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_privacyTextMD5;
                     bool m_privacyTextMD5HasBeenSet;

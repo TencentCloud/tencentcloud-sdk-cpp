@@ -70,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取AclRule列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AclRuleList AclRule列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AclRule> GetAclRuleList() const;
 
                     /**
                      * 设置AclRule列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _aclRuleList AclRule列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAclRuleList(const std::vector<AclRule>& _aclRuleList);
@@ -103,7 +99,6 @@ namespace TencentCloud
 
                     /**
                      * AclRule列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AclRule> m_aclRuleList;
                     bool m_aclRuleListHasBeenSet;

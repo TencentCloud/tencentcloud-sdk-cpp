@@ -51,18 +51,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例id，唯一标识符
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DBInstanceId 实例id，唯一标识符
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDBInstanceId() const;
 
                     /**
                      * 设置实例id，唯一标识符
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dBInstanceId 实例id，唯一标识符
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDBInstanceId(const std::string& _dBInstanceId);
@@ -76,18 +72,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DBInstanceName 实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDBInstanceName() const;
 
                     /**
                      * 设置实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dBInstanceName 实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDBInstanceName(const std::string& _dBInstanceName);
@@ -101,18 +93,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DBInstanceStatus 实例状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDBInstanceStatus() const;
 
                     /**
                      * 设置实例状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dBInstanceStatus 实例状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDBInstanceStatus(const std::string& _dBInstanceStatus);
@@ -126,18 +114,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _region 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -151,18 +135,14 @@ namespace TencentCloud
 
                     /**
                      * 获取可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zone 可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zone 可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -176,18 +156,14 @@ namespace TencentCloud
 
                     /**
                      * 获取项目id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectId 项目id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetProjectId() const;
 
                     /**
                      * 设置项目id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _projectId 项目id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProjectId(const int64_t& _projectId);
@@ -201,18 +177,14 @@ namespace TencentCloud
 
                     /**
                      * 获取私有网络Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId 私有网络Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置私有网络Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcId 私有网络Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -226,18 +198,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetId 子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subnetId 子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -251,18 +219,14 @@ namespace TencentCloud
 
                     /**
                      * 获取字符集
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DBCharset 字符集
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDBCharset() const;
 
                     /**
                      * 设置字符集
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dBCharset 字符集
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDBCharset(const std::string& _dBCharset);
@@ -276,18 +240,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DBVersion 数据库版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDBVersion() const;
 
                     /**
                      * 设置数据库版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dBVersion 数据库版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDBVersion(const std::string& _dBVersion);
@@ -301,18 +261,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -326,18 +282,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例网络信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DBInstanceNetInfo 实例网络信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ServerlessDBInstanceNetInfo> GetDBInstanceNetInfo() const;
 
                     /**
                      * 设置实例网络信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dBInstanceNetInfo 实例网络信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDBInstanceNetInfo(const std::vector<ServerlessDBInstanceNetInfo>& _dBInstanceNetInfo);
@@ -351,18 +303,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例账户信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DBAccountSet 实例账户信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ServerlessDBAccount> GetDBAccountSet() const;
 
                     /**
                      * 设置实例账户信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dBAccountSet 实例账户信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDBAccountSet(const std::vector<ServerlessDBAccount>& _dBAccountSet);
@@ -376,18 +324,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例下的db信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DBDatabaseList 实例下的db信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetDBDatabaseList() const;
 
                     /**
                      * 设置实例下的db信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dBDatabaseList 实例下的db信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDBDatabaseList(const std::vector<std::string>& _dBDatabaseList);
@@ -401,18 +345,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例绑定的标签数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagList 实例绑定的标签数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTagList() const;
 
                     /**
                      * 设置实例绑定的标签数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tagList 实例绑定的标签数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTagList(const std::vector<Tag>& _tagList);
@@ -426,18 +366,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库内核版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DBKernelVersion 数据库内核版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDBKernelVersion() const;
 
                     /**
                      * 设置数据库内核版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dBKernelVersion 数据库内核版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDBKernelVersion(const std::string& _dBKernelVersion);
@@ -451,18 +387,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库主要版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DBMajorVersion 数据库主要版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDBMajorVersion() const;
 
                     /**
                      * 设置数据库主要版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dBMajorVersion 数据库主要版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDBMajorVersion(const std::string& _dBMajorVersion);
@@ -478,119 +410,102 @@ namespace TencentCloud
 
                     /**
                      * 实例id，唯一标识符
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dBInstanceId;
                     bool m_dBInstanceIdHasBeenSet;
 
                     /**
                      * 实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dBInstanceName;
                     bool m_dBInstanceNameHasBeenSet;
 
                     /**
                      * 实例状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dBInstanceStatus;
                     bool m_dBInstanceStatusHasBeenSet;
 
                     /**
                      * 地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
                      * 可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
                      * 项目id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
                      * 私有网络Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
                      * 子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
                      * 字符集
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dBCharset;
                     bool m_dBCharsetHasBeenSet;
 
                     /**
                      * 数据库版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dBVersion;
                     bool m_dBVersionHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 实例网络信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ServerlessDBInstanceNetInfo> m_dBInstanceNetInfo;
                     bool m_dBInstanceNetInfoHasBeenSet;
 
                     /**
                      * 实例账户信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ServerlessDBAccount> m_dBAccountSet;
                     bool m_dBAccountSetHasBeenSet;
 
                     /**
                      * 实例下的db信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_dBDatabaseList;
                     bool m_dBDatabaseListHasBeenSet;
 
                     /**
                      * 实例绑定的标签数组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tagList;
                     bool m_tagListHasBeenSet;
 
                     /**
                      * 数据库内核版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dBKernelVersion;
                     bool m_dBKernelVersionHasBeenSet;
 
                     /**
                      * 数据库主要版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dBMajorVersion;
                     bool m_dBMajorVersionHasBeenSet;

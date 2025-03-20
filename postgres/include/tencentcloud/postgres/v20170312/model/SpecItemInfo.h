@@ -258,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取PostgreSQL的主要版本编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MajorVersion PostgreSQL的主要版本编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMajorVersion() const;
 
                     /**
                      * 设置PostgreSQL的主要版本编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _majorVersion PostgreSQL的主要版本编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMajorVersion(const std::string& _majorVersion);
@@ -283,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取PostgreSQL的内核版本编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return KernelVersion PostgreSQL的内核版本编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKernelVersion() const;
 
                     /**
                      * 设置PostgreSQL的内核版本编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _kernelVersion PostgreSQL的内核版本编号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKernelVersion(const std::string& _kernelVersion);
@@ -308,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否支持TDE数据加密功能，0-不支持，1-支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsSupportTDE 是否支持TDE数据加密功能，0-不支持，1-支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIsSupportTDE() const;
 
                     /**
                      * 设置是否支持TDE数据加密功能，0-不支持，1-支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isSupportTDE 是否支持TDE数据加密功能，0-不支持，1-支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsSupportTDE(const int64_t& _isSupportTDE);
@@ -395,21 +383,18 @@ namespace TencentCloud
 
                     /**
                      * PostgreSQL的主要版本编号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_majorVersion;
                     bool m_majorVersionHasBeenSet;
 
                     /**
                      * PostgreSQL的内核版本编号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_kernelVersion;
                     bool m_kernelVersionHasBeenSet;
 
                     /**
                      * 是否支持TDE数据加密功能，0-不支持，1-支持
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isSupportTDE;
                     bool m_isSupportTDEHasBeenSet;

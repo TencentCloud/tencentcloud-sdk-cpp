@@ -37,7 +37,8 @@ ImageRepoRegistryInfo::ImageRepoRegistryInfo() :
     m_syncStatusHasBeenSet(false),
     m_syncFailReasonHasBeenSet(false),
     m_syncSolutionHasBeenSet(false),
-    m_syncMessageHasBeenSet(false)
+    m_syncMessageHasBeenSet(false),
+    m_syncModeHasBeenSet(false)
 {
 }
 
@@ -226,6 +227,16 @@ CoreInternalOutcome ImageRepoRegistryInfo::Deserialize(const rapidjson::Value &v
         m_syncMessageHasBeenSet = true;
     }
 
+    if (value.HasMember("SyncMode") && !value["SyncMode"].IsNull())
+    {
+        if (!value["SyncMode"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageRepoRegistryInfo.SyncMode` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_syncMode = value["SyncMode"].GetUint64();
+        m_syncModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -374,6 +385,14 @@ void ImageRepoRegistryInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "SyncMessage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_syncMessage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_syncModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyncMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_syncMode, allocator);
     }
 
 }
@@ -649,5 +668,21 @@ void ImageRepoRegistryInfo::SetSyncMessage(const string& _syncMessage)
 bool ImageRepoRegistryInfo::SyncMessageHasBeenSet() const
 {
     return m_syncMessageHasBeenSet;
+}
+
+uint64_t ImageRepoRegistryInfo::GetSyncMode() const
+{
+    return m_syncMode;
+}
+
+void ImageRepoRegistryInfo::SetSyncMode(const uint64_t& _syncMode)
+{
+    m_syncMode = _syncMode;
+    m_syncModeHasBeenSet = true;
+}
+
+bool ImageRepoRegistryInfo::SyncModeHasBeenSet() const
+{
+    return m_syncModeHasBeenSet;
 }
 

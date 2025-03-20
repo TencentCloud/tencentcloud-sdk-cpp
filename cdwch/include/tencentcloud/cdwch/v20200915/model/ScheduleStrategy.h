@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备份桶名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CosBucketName 备份桶名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCosBucketName() const;
 
                     /**
                      * 设置备份桶名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cosBucketName 备份桶名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCosBucketName(const std::string& _cosBucketName);
@@ -157,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取下次备份时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NextBackupTime 下次备份时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNextBackupTime() const;
 
                     /**
                      * 设置下次备份时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nextBackupTime 下次备份时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNextBackupTime(const std::string& _nextBackupTime);
@@ -184,7 +176,6 @@ namespace TencentCloud
 
                     /**
                      * 备份桶名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cosBucketName;
                     bool m_cosBucketNameHasBeenSet;
@@ -215,7 +206,6 @@ namespace TencentCloud
 
                     /**
                      * 下次备份时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nextBackupTime;
                     bool m_nextBackupTimeHasBeenSet;

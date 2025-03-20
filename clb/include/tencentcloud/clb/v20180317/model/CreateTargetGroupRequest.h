@@ -112,15 +112,15 @@ namespace TencentCloud
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取目标组绑定的后端服务器
-                     * @return TargetGroupInstances 目标组绑定的后端服务器
+                     * 获取目标组绑定的后端服务器，单次最多支持50个。
+                     * @return TargetGroupInstances 目标组绑定的后端服务器，单次最多支持50个。
                      * 
                      */
                     std::vector<TargetGroupInstance> GetTargetGroupInstances() const;
 
                     /**
-                     * 设置目标组绑定的后端服务器
-                     * @param _targetGroupInstances 目标组绑定的后端服务器
+                     * 设置目标组绑定的后端服务器，单次最多支持50个。
+                     * @param _targetGroupInstances 目标组绑定的后端服务器，单次最多支持50个。
                      * 
                      */
                     void SetTargetGroupInstances(const std::vector<TargetGroupInstance>& _targetGroupInstances);
@@ -258,7 +258,7 @@ namespace TencentCloud
                     bool m_portHasBeenSet;
 
                     /**
-                     * 目标组绑定的后端服务器
+                     * 目标组绑定的后端服务器，单次最多支持50个。
                      */
                     std::vector<TargetGroupInstance> m_targetGroupInstances;
                     bool m_targetGroupInstancesHasBeenSet;

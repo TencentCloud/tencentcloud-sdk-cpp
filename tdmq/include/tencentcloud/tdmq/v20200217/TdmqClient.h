@@ -263,8 +263,6 @@
 #include <tencentcloud/tdmq/v20200217/model/ModifyEnvironmentAttributesResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyEnvironmentRoleRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyEnvironmentRoleResponse.h>
-#include <tencentcloud/tdmq/v20200217/model/ModifyPublicNetworkAccessPointRequest.h>
-#include <tencentcloud/tdmq/v20200217/model/ModifyPublicNetworkAccessPointResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyPublicNetworkSecurityPolicyRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyPublicNetworkSecurityPolicyResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyRabbitMQPermissionRequest.h>
@@ -697,9 +695,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyEnvironmentRoleResponse> ModifyEnvironmentRoleOutcome;
                 typedef std::future<ModifyEnvironmentRoleOutcome> ModifyEnvironmentRoleOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::ModifyEnvironmentRoleRequest&, ModifyEnvironmentRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEnvironmentRoleAsyncHandler;
-                typedef Outcome<Core::Error, Model::ModifyPublicNetworkAccessPointResponse> ModifyPublicNetworkAccessPointOutcome;
-                typedef std::future<ModifyPublicNetworkAccessPointOutcome> ModifyPublicNetworkAccessPointOutcomeCallable;
-                typedef std::function<void(const TdmqClient*, const Model::ModifyPublicNetworkAccessPointRequest&, ModifyPublicNetworkAccessPointOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPublicNetworkAccessPointAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyPublicNetworkSecurityPolicyResponse> ModifyPublicNetworkSecurityPolicyOutcome;
                 typedef std::future<ModifyPublicNetworkSecurityPolicyOutcome> ModifyPublicNetworkSecurityPolicyOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::ModifyPublicNetworkSecurityPolicyRequest&, ModifyPublicNetworkSecurityPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPublicNetworkSecurityPolicyAsyncHandler;
@@ -1873,15 +1868,6 @@ namespace TencentCloud
                 ModifyEnvironmentRoleOutcome ModifyEnvironmentRole(const Model::ModifyEnvironmentRoleRequest &request);
                 void ModifyEnvironmentRoleAsync(const Model::ModifyEnvironmentRoleRequest& request, const ModifyEnvironmentRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyEnvironmentRoleOutcomeCallable ModifyEnvironmentRoleCallable(const Model::ModifyEnvironmentRoleRequest& request);
-
-                /**
-                 *RabbitMQ专享版修改公网管控台，vpc15672开关
-                 * @param req ModifyPublicNetworkAccessPointRequest
-                 * @return ModifyPublicNetworkAccessPointOutcome
-                 */
-                ModifyPublicNetworkAccessPointOutcome ModifyPublicNetworkAccessPoint(const Model::ModifyPublicNetworkAccessPointRequest &request);
-                void ModifyPublicNetworkAccessPointAsync(const Model::ModifyPublicNetworkAccessPointRequest& request, const ModifyPublicNetworkAccessPointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ModifyPublicNetworkAccessPointOutcomeCallable ModifyPublicNetworkAccessPointCallable(const Model::ModifyPublicNetworkAccessPointRequest& request);
 
                 /**
                  *修改pulsar专业版公网安全策略

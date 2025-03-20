@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取备份表详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TableContents 备份表详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BackupTableContent> GetTableContents() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 备份表详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BackupTableContent> m_tableContents;
                     bool m_tableContentsHasBeenSet;

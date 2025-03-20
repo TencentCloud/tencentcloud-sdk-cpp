@@ -47,7 +47,8 @@ GenHiveTableDDLSqlRequest::GenHiveTableDDLSqlRequest() :
     m_upsertKeysHasBeenSet(false),
     m_tableBaseInfoHasBeenSet(false),
     m_sinkSchemaNameHasBeenSet(false),
-    m_envHasBeenSet(false)
+    m_envHasBeenSet(false),
+    m_writeModeHasBeenSet(false)
 {
 }
 
@@ -283,6 +284,14 @@ string GenHiveTableDDLSqlRequest::ToJsonString() const
         string key = "Env";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_env.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_writeModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WriteMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_writeMode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -691,6 +700,22 @@ void GenHiveTableDDLSqlRequest::SetEnv(const string& _env)
 bool GenHiveTableDDLSqlRequest::EnvHasBeenSet() const
 {
     return m_envHasBeenSet;
+}
+
+string GenHiveTableDDLSqlRequest::GetWriteMode() const
+{
+    return m_writeMode;
+}
+
+void GenHiveTableDDLSqlRequest::SetWriteMode(const string& _writeMode)
+{
+    m_writeMode = _writeMode;
+    m_writeModeHasBeenSet = true;
+}
+
+bool GenHiveTableDDLSqlRequest::WriteModeHasBeenSet() const
+{
+    return m_writeModeHasBeenSet;
 }
 
 

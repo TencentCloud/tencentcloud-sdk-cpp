@@ -409,15 +409,23 @@ Operator 目前支持
                     bool GlobalParamHasBeenSet() const;
 
                     /**
-                     * 获取100 不绑定用户  200 单用户单token  300 单用户多token
-                     * @return TokenType 100 不绑定用户  200 单用户单token  300 单用户多token
+                     * 获取100 不绑定用户, 一次创建一个token，UserCorpId和UserId 非必填，不支持 ChatBI 嵌出
+200 单用户单token , 一次创建一个token， UserCorpId和UserId 必填
+300 单用户多token, 一次创建多个token，UserCorpId和UserId 必填
+                     * @return TokenType 100 不绑定用户, 一次创建一个token，UserCorpId和UserId 非必填，不支持 ChatBI 嵌出
+200 单用户单token , 一次创建一个token， UserCorpId和UserId 必填
+300 单用户多token, 一次创建多个token，UserCorpId和UserId 必填
                      * 
                      */
                     int64_t GetTokenType() const;
 
                     /**
-                     * 设置100 不绑定用户  200 单用户单token  300 单用户多token
-                     * @param _tokenType 100 不绑定用户  200 单用户单token  300 单用户多token
+                     * 设置100 不绑定用户, 一次创建一个token，UserCorpId和UserId 非必填，不支持 ChatBI 嵌出
+200 单用户单token , 一次创建一个token， UserCorpId和UserId 必填
+300 单用户多token, 一次创建多个token，UserCorpId和UserId 必填
+                     * @param _tokenType 100 不绑定用户, 一次创建一个token，UserCorpId和UserId 非必填，不支持 ChatBI 嵌出
+200 单用户单token , 一次创建一个token， UserCorpId和UserId 必填
+300 单用户多token, 一次创建多个token，UserCorpId和UserId 必填
                      * 
                      */
                     void SetTokenType(const int64_t& _tokenType);
@@ -552,7 +560,9 @@ Operator 目前支持
                     bool m_globalParamHasBeenSet;
 
                     /**
-                     * 100 不绑定用户  200 单用户单token  300 单用户多token
+                     * 100 不绑定用户, 一次创建一个token，UserCorpId和UserId 非必填，不支持 ChatBI 嵌出
+200 单用户单token , 一次创建一个token， UserCorpId和UserId 必填
+300 单用户多token, 一次创建多个token，UserCorpId和UserId 必填
                      */
                     int64_t m_tokenType;
                     bool m_tokenTypeHasBeenSet;

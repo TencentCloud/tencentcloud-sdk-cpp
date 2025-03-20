@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取集群pod详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PodList 集群pod详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<NetworkClusterPodInfo> GetPodList() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 集群pod详细信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<NetworkClusterPodInfo> m_podList;
                     bool m_podListHasBeenSet;

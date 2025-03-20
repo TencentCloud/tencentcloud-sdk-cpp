@@ -253,6 +253,27 @@ namespace TencentCloud
                      */
                     bool TimeoutHasBeenSet() const;
 
+                    /**
+                     * 获取一键扫描任务。默认false表示非一键扫描，true一键扫描
+                     * @return IsOneClickScanningTask 一键扫描任务。默认false表示非一键扫描，true一键扫描
+                     * 
+                     */
+                    bool GetIsOneClickScanningTask() const;
+
+                    /**
+                     * 设置一键扫描任务。默认false表示非一键扫描，true一键扫描
+                     * @param _isOneClickScanningTask 一键扫描任务。默认false表示非一键扫描，true一键扫描
+                     * 
+                     */
+                    void SetIsOneClickScanningTask(const bool& _isOneClickScanningTask);
+
+                    /**
+                     * 判断参数 IsOneClickScanningTask 是否已赋值
+                     * @return IsOneClickScanningTask 是否已赋值
+                     * 
+                     */
+                    bool IsOneClickScanningTaskHasBeenSet() const;
+
                 private:
 
                     /**
@@ -314,6 +335,12 @@ namespace TencentCloud
                      */
                     uint64_t m_timeout;
                     bool m_timeoutHasBeenSet;
+
+                    /**
+                     * 一键扫描任务。默认false表示非一键扫描，true一键扫描
+                     */
+                    bool m_isOneClickScanningTask;
+                    bool m_isOneClickScanningTaskHasBeenSet;
 
                 };
             }

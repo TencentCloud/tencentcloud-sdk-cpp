@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotal() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取设备列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return List 设备列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DeviceItem> GetList() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
                      * 设备列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DeviceItem> m_list;
                     bool m_listHasBeenSet;

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Address 地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAddress() const;
 
                     /**
                      * 设置地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _address 地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAddress(const std::string& _address);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取ip地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ip ip地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置ip地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ip ip地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIp(const std::string& _ip);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取端口号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Port 端口号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置端口号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _port 端口号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPort(const int64_t& _port);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网络类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NetType 网络类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNetType() const;
 
                     /**
                      * 设置网络类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _netType 网络类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNetType(const std::string& _netType);
@@ -175,35 +155,30 @@ namespace TencentCloud
 
                     /**
                      * 地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_address;
                     bool m_addressHasBeenSet;
 
                     /**
                      * ip地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;
 
                     /**
                      * 端口号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
                      * 状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 网络类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_netType;
                     bool m_netTypeHasBeenSet;

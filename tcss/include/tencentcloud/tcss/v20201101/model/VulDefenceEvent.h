@@ -321,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取首次发现时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 首次发现时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置首次发现时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 首次发现时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -391,18 +387,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最近发现时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MergeTime 最近发现时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMergeTime() const;
 
                     /**
                      * 设置最近发现时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mergeTime 最近发现时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMergeTime(const std::string& _mergeTime);
@@ -423,7 +415,6 @@ namespace TencentCloud
 已经销毁: DESTROYED
 正在重启中: RESTARTING
 迁移中: REMOVING
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContainerStatus 容器状态
 正在运行: RUNNING
 暂停: PAUSED
@@ -432,7 +423,6 @@ namespace TencentCloud
 已经销毁: DESTROYED
 正在重启中: RESTARTING
 迁移中: REMOVING
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContainerStatus() const;
@@ -446,7 +436,6 @@ namespace TencentCloud
 已经销毁: DESTROYED
 正在重启中: RESTARTING
 迁移中: REMOVING
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _containerStatus 容器状态
 正在运行: RUNNING
 暂停: PAUSED
@@ -455,7 +444,6 @@ namespace TencentCloud
 已经销毁: DESTROYED
 正在重启中: RESTARTING
 迁移中: REMOVING
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContainerStatus(const std::string& _containerStatus);
@@ -476,7 +464,6 @@ namespace TencentCloud
 	"SHARED_HOST"         // 容器与主机共享网络
 	"RESOURCE_LIMIT"      //隔离操作资源超限
 	"UNKNOW"              // 原因未知
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContainerNetSubStatus 容器子状态
 "AGENT_OFFLINE"       //Agent离线
 	"NODE_DESTROYED"      //节点已销毁
@@ -485,7 +472,6 @@ namespace TencentCloud
 	"SHARED_HOST"         // 容器与主机共享网络
 	"RESOURCE_LIMIT"      //隔离操作资源超限
 	"UNKNOW"              // 原因未知
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContainerNetSubStatus() const;
@@ -499,7 +485,6 @@ namespace TencentCloud
 	"SHARED_HOST"         // 容器与主机共享网络
 	"RESOURCE_LIMIT"      //隔离操作资源超限
 	"UNKNOW"              // 原因未知
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _containerNetSubStatus 容器子状态
 "AGENT_OFFLINE"       //Agent离线
 	"NODE_DESTROYED"      //节点已销毁
@@ -508,7 +493,6 @@ namespace TencentCloud
 	"SHARED_HOST"         // 容器与主机共享网络
 	"RESOURCE_LIMIT"      //隔离操作资源超限
 	"UNKNOW"              // 原因未知
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContainerNetSubStatus(const std::string& _containerNetSubStatus);
@@ -522,18 +506,14 @@ namespace TencentCloud
 
                     /**
                      * 获取容器隔离操作来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContainerIsolateOperationSrc 容器隔离操作来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContainerIsolateOperationSrc() const;
 
                     /**
                      * 设置容器隔离操作来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _containerIsolateOperationSrc 容器隔离操作来源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContainerIsolateOperationSrc(const std::string& _containerIsolateOperationSrc);
@@ -547,18 +527,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机QUUID/超级节点ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return QUUID 主机QUUID/超级节点ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetQUUID() const;
 
                     /**
                      * 设置主机QUUID/超级节点ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _qUUID 主机QUUID/超级节点ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQUUID(const std::string& _qUUID);
@@ -572,18 +548,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机内网IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostIP 主机内网IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHostIP() const;
 
                     /**
                      * 设置主机内网IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hostIP 主机内网IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHostIP(const std::string& _hostIP);
@@ -597,18 +569,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主机名称/超级节点名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostName 主机名称/超级节点名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHostName() const;
 
                     /**
                      * 设置主机名称/超级节点名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hostName 主机名称/超级节点名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHostName(const std::string& _hostName);
@@ -870,7 +838,6 @@ namespace TencentCloud
 
                     /**
                      * 首次发现时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
@@ -889,7 +856,6 @@ namespace TencentCloud
 
                     /**
                      * 最近发现时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mergeTime;
                     bool m_mergeTimeHasBeenSet;
@@ -903,7 +869,6 @@ namespace TencentCloud
 已经销毁: DESTROYED
 正在重启中: RESTARTING
 迁移中: REMOVING
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_containerStatus;
                     bool m_containerStatusHasBeenSet;
@@ -917,35 +882,30 @@ namespace TencentCloud
 	"SHARED_HOST"         // 容器与主机共享网络
 	"RESOURCE_LIMIT"      //隔离操作资源超限
 	"UNKNOW"              // 原因未知
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_containerNetSubStatus;
                     bool m_containerNetSubStatusHasBeenSet;
 
                     /**
                      * 容器隔离操作来源
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_containerIsolateOperationSrc;
                     bool m_containerIsolateOperationSrcHasBeenSet;
 
                     /**
                      * 主机QUUID/超级节点ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_qUUID;
                     bool m_qUUIDHasBeenSet;
 
                     /**
                      * 主机内网IP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hostIP;
                     bool m_hostIPHasBeenSet;
 
                     /**
                      * 主机名称/超级节点名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hostName;
                     bool m_hostNameHasBeenSet;

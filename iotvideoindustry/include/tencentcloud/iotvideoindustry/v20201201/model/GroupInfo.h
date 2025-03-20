@@ -216,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分组状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupStatus 分组状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetGroupStatus() const;
 
                     /**
                      * 设置分组状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupStatus 分组状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupStatus(const int64_t& _groupStatus);
@@ -241,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备不存在时产生的错误
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Error 设备不存在时产生的错误
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetError() const;
 
                     /**
                      * 设置设备不存在时产生的错误
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _error 设备不存在时产生的错误
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetError(const std::string& _error);
@@ -316,14 +308,12 @@ namespace TencentCloud
 
                     /**
                      * 分组状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_groupStatus;
                     bool m_groupStatusHasBeenSet;
 
                     /**
                      * 设备不存在时产生的错误
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_error;
                     bool m_errorHasBeenSet;

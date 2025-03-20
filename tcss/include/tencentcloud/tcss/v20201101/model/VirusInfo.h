@@ -582,18 +582,14 @@ VALIDATION: 参数非法
 
                     /**
                      * 获取md5值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MD5 md5值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMD5() const;
 
                     /**
                      * 设置md5值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mD5 md5值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMD5(const std::string& _mD5);
@@ -607,18 +603,14 @@ VALIDATION: 参数非法
 
                     /**
                      * 获取风险等级 RISK_CRITICAL, RISK_HIGH, RISK_MEDIUM, RISK_LOW, RISK_NOTICE。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskLevel 风险等级 RISK_CRITICAL, RISK_HIGH, RISK_MEDIUM, RISK_LOW, RISK_NOTICE。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRiskLevel() const;
 
                     /**
                      * 设置风险等级 RISK_CRITICAL, RISK_HIGH, RISK_MEDIUM, RISK_LOW, RISK_NOTICE。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _riskLevel 风险等级 RISK_CRITICAL, RISK_HIGH, RISK_MEDIUM, RISK_LOW, RISK_NOTICE。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRiskLevel(const std::string& _riskLevel);
@@ -637,14 +629,12 @@ VALIDATION: 参数非法
 3: binaryAi
 4: 异常行为
 5: 威胁情报
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CheckPlatform 检测平台
 1: 云查杀引擎
 2: tav
 3: binaryAi
 4: 异常行为
 5: 威胁情报
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetCheckPlatform() const;
@@ -656,14 +646,12 @@ VALIDATION: 参数非法
 3: binaryAi
 4: 异常行为
 5: 威胁情报
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _checkPlatform 检测平台
 1: 云查杀引擎
 2: tav
 3: binaryAi
 4: 异常行为
 5: 威胁情报
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCheckPlatform(const std::vector<std::string>& _checkPlatform);
@@ -1057,14 +1045,12 @@ VALIDATION: 参数非法
 
                     /**
                      * md5值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mD5;
                     bool m_mD5HasBeenSet;
 
                     /**
                      * 风险等级 RISK_CRITICAL, RISK_HIGH, RISK_MEDIUM, RISK_LOW, RISK_NOTICE。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_riskLevel;
                     bool m_riskLevelHasBeenSet;
@@ -1076,7 +1062,6 @@ VALIDATION: 参数非法
 3: binaryAi
 4: 异常行为
 5: 威胁情报
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_checkPlatform;
                     bool m_checkPlatformHasBeenSet;

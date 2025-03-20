@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据转储Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatahubId 数据转储Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDatahubId() const;
 
                     /**
                      * 设置数据转储Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _datahubId 数据转储Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDatahubId(const std::string& _datahubId);
@@ -102,7 +98,6 @@ namespace TencentCloud
 
                     /**
                      * 数据转储Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_datahubId;
                     bool m_datahubIdHasBeenSet;

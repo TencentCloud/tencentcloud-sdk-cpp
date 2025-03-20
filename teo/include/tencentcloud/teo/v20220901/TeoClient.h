@@ -199,6 +199,8 @@
 #include <tencentcloud/teo/v20220901/model/DescribeSecurityIPGroupResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeSecurityIPGroupInfoRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeSecurityIPGroupInfoResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeSecurityPolicyRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeSecurityPolicyResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeSecurityTemplateBindingsRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeSecurityTemplateBindingsResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeTimingL4DataRequest.h>
@@ -581,6 +583,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSecurityIPGroupInfoResponse> DescribeSecurityIPGroupInfoOutcome;
                 typedef std::future<DescribeSecurityIPGroupInfoOutcome> DescribeSecurityIPGroupInfoOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeSecurityIPGroupInfoRequest&, DescribeSecurityIPGroupInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityIPGroupInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSecurityPolicyResponse> DescribeSecurityPolicyOutcome;
+                typedef std::future<DescribeSecurityPolicyOutcome> DescribeSecurityPolicyOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeSecurityPolicyRequest&, DescribeSecurityPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSecurityTemplateBindingsResponse> DescribeSecurityTemplateBindingsOutcome;
                 typedef std::future<DescribeSecurityTemplateBindingsOutcome> DescribeSecurityTemplateBindingsOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeSecurityTemplateBindingsRequest&, DescribeSecurityTemplateBindingsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityTemplateBindingsAsyncHandler;
@@ -1547,6 +1552,15 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 DescribeSecurityIPGroupInfoOutcome DescribeSecurityIPGroupInfo(const Model::DescribeSecurityIPGroupInfoRequest &request);
                 void DescribeSecurityIPGroupInfoAsync(const Model::DescribeSecurityIPGroupInfoRequest& request, const DescribeSecurityIPGroupInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSecurityIPGroupInfoOutcomeCallable DescribeSecurityIPGroupInfoCallable(const Model::DescribeSecurityIPGroupInfoRequest& request);
+
+                /**
+                 *查询安全防护配置详情。
+                 * @param req DescribeSecurityPolicyRequest
+                 * @return DescribeSecurityPolicyOutcome
+                 */
+                DescribeSecurityPolicyOutcome DescribeSecurityPolicy(const Model::DescribeSecurityPolicyRequest &request);
+                void DescribeSecurityPolicyAsync(const Model::DescribeSecurityPolicyRequest& request, const DescribeSecurityPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSecurityPolicyOutcomeCallable DescribeSecurityPolicyCallable(const Model::DescribeSecurityPolicyRequest& request);
 
                 /**
                  *查询指定策略模板的绑定关系列表。

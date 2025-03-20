@@ -74,7 +74,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/CloudBaseRunVolumeMount.h
   include/tencentcloud/tcb/v20180608/model/BackendServiceInfo.h
   include/tencentcloud/tcb/v20180608/model/DescribePostpayFreeQuotasRequest.h
-  include/tencentcloud/tcb/v20180608/model/DescribeActivityInfoResponse.h
+  include/tencentcloud/tcb/v20180608/model/DeleteGatewayVersionRequest.h
   include/tencentcloud/tcb/v20180608/model/CloudBaseRunImageInfo.h
   include/tencentcloud/tcb/v20180608/model/DestroyStandaloneGatewayResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunServerVersionResponse.h
@@ -88,9 +88,8 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/ModifyGatewayVersionTrafficRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeQuotaDataResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeGatewayCurveDataResponse.h
-  include/tencentcloud/tcb/v20180608/model/ActivityInfoItem.h
   include/tencentcloud/tcb/v20180608/model/KVPair.h
-  include/tencentcloud/tcb/v20180608/model/DeleteGatewayVersionRequest.h
+  include/tencentcloud/tcb/v20180608/model/SmsFreeQuota.h
   include/tencentcloud/tcb/v20180608/model/FunctionInfo.h
   include/tencentcloud/tcb/v20180608/model/CommonServiceAPIRequest.h
   include/tencentcloud/tcb/v20180608/model/DestroyStaticStoreRequest.h
@@ -121,7 +120,6 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DescribeExtensionUploadInfoRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeBillingInfoRequest.h
   include/tencentcloud/tcb/v20180608/model/HpaPolicy.h
-  include/tencentcloud/tcb/v20180608/model/CloudBaseRunImageSecretInfo.h
   include/tencentcloud/tcb/v20180608/model/CreateCloudBaseRunResourceResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeStandaloneGatewayPackageResponse.h
   include/tencentcloud/tcb/v20180608/model/LogObject.h
@@ -190,7 +188,6 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DeleteGatewayVersionResponse.h
   include/tencentcloud/tcb/v20180608/model/EstablishWxGatewayRouteResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeDatabaseACLRequest.h
-  include/tencentcloud/tcb/v20180608/model/SmsFreeQuota.h
   include/tencentcloud/tcb/v20180608/model/CreateCloudBaseRunServerVersionResponse.h
   include/tencentcloud/tcb/v20180608/model/CloudBaseRunServerVersionItem.h
   include/tencentcloud/tcb/v20180608/model/PlatformStatistic.h
@@ -204,7 +201,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DescribeWxCloudBaseRunEnvsRequest.h
   include/tencentcloud/tcb/v20180608/model/CloudBaseRunServiceVolumeHostPath.h
   include/tencentcloud/tcb/v20180608/model/DescribeCurveDataRequest.h
-  include/tencentcloud/tcb/v20180608/model/DescribeActivityInfoRequest.h
+  include/tencentcloud/tcb/v20180608/model/CloudBaseRunImageSecretInfo.h
   include/tencentcloud/tcb/v20180608/model/BindEnvGatewayRequest.h
   include/tencentcloud/tcb/v20180608/model/ModifyEnvResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeCbrServerVersionResponse.h
@@ -328,7 +325,7 @@ set(tcb_src
   src/v20180608/model/CloudBaseRunVolumeMount.cpp
   src/v20180608/model/BackendServiceInfo.cpp
   src/v20180608/model/DescribePostpayFreeQuotasRequest.cpp
-  src/v20180608/model/DescribeActivityInfoResponse.cpp
+  src/v20180608/model/DeleteGatewayVersionRequest.cpp
   src/v20180608/model/CloudBaseRunImageInfo.cpp
   src/v20180608/model/DestroyStandaloneGatewayResponse.cpp
   src/v20180608/model/DescribeCloudBaseRunServerVersionResponse.cpp
@@ -342,9 +339,8 @@ set(tcb_src
   src/v20180608/model/ModifyGatewayVersionTrafficRequest.cpp
   src/v20180608/model/DescribeQuotaDataResponse.cpp
   src/v20180608/model/DescribeGatewayCurveDataResponse.cpp
-  src/v20180608/model/ActivityInfoItem.cpp
   src/v20180608/model/KVPair.cpp
-  src/v20180608/model/DeleteGatewayVersionRequest.cpp
+  src/v20180608/model/SmsFreeQuota.cpp
   src/v20180608/model/FunctionInfo.cpp
   src/v20180608/model/CommonServiceAPIRequest.cpp
   src/v20180608/model/DestroyStaticStoreRequest.cpp
@@ -375,7 +371,6 @@ set(tcb_src
   src/v20180608/model/DescribeExtensionUploadInfoRequest.cpp
   src/v20180608/model/DescribeBillingInfoRequest.cpp
   src/v20180608/model/HpaPolicy.cpp
-  src/v20180608/model/CloudBaseRunImageSecretInfo.cpp
   src/v20180608/model/CreateCloudBaseRunResourceResponse.cpp
   src/v20180608/model/DescribeStandaloneGatewayPackageResponse.cpp
   src/v20180608/model/LogObject.cpp
@@ -444,7 +439,6 @@ set(tcb_src
   src/v20180608/model/DeleteGatewayVersionResponse.cpp
   src/v20180608/model/EstablishWxGatewayRouteResponse.cpp
   src/v20180608/model/DescribeDatabaseACLRequest.cpp
-  src/v20180608/model/SmsFreeQuota.cpp
   src/v20180608/model/CreateCloudBaseRunServerVersionResponse.cpp
   src/v20180608/model/CloudBaseRunServerVersionItem.cpp
   src/v20180608/model/PlatformStatistic.cpp
@@ -458,7 +452,7 @@ set(tcb_src
   src/v20180608/model/DescribeWxCloudBaseRunEnvsRequest.cpp
   src/v20180608/model/CloudBaseRunServiceVolumeHostPath.cpp
   src/v20180608/model/DescribeCurveDataRequest.cpp
-  src/v20180608/model/DescribeActivityInfoRequest.cpp
+  src/v20180608/model/CloudBaseRunImageSecretInfo.cpp
   src/v20180608/model/BindEnvGatewayRequest.cpp
   src/v20180608/model/ModifyEnvResponse.cpp
   src/v20180608/model/DescribeCbrServerVersionResponse.cpp

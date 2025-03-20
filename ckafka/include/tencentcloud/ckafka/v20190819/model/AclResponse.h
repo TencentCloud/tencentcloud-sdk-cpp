@@ -70,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取ACL列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AclList ACL列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Acl> GetAclList() const;
 
                     /**
                      * 设置ACL列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _aclList ACL列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAclList(const std::vector<Acl>& _aclList);
@@ -103,7 +99,6 @@ namespace TencentCloud
 
                     /**
                      * ACL列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Acl> m_aclList;
                     bool m_aclListHasBeenSet;

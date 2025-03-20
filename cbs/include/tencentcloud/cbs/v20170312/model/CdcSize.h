@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取独享集群的可用容量大小，单位GiB
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiskAvailable 独享集群的可用容量大小，单位GiB
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDiskAvailable() const;
 
                     /**
                      * 设置独享集群的可用容量大小，单位GiB
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _diskAvailable 独享集群的可用容量大小，单位GiB
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiskAvailable(const uint64_t& _diskAvailable);
@@ -102,7 +98,6 @@ namespace TencentCloud
 
                     /**
                      * 独享集群的可用容量大小，单位GiB
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_diskAvailable;
                     bool m_diskAvailableHasBeenSet;

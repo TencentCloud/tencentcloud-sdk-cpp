@@ -112,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取支持KMS的地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SupportKMSRegions 支持KMS的地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetSupportKMSRegions() const;
 
                     /**
                      * 设置支持KMS的地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _supportKMSRegions 支持KMS的地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSupportKMSRegions(const std::vector<std::string>& _supportKMSRegions);
@@ -157,7 +153,6 @@ namespace TencentCloud
 
                     /**
                      * 支持KMS的地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_supportKMSRegions;
                     bool m_supportKMSRegionsHasBeenSet;

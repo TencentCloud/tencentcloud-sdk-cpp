@@ -185,9 +185,7 @@ namespace TencentCloud
 
                     /**
                      * 获取一键检测的超时设置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClickTimeout 一键检测的超时设置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetClickTimeout() const;
@@ -285,7 +283,6 @@ SCAN_PATH_USER_DEFINE：用户自定义路径
 
                     /**
                      * 一键检测的超时设置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_clickTimeout;
                     bool m_clickTimeoutHasBeenSet;

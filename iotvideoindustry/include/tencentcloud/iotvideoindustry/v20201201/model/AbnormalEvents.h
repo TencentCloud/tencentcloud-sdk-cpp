@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取对应查询日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Date 对应查询日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDate() const;
 
                     /**
                      * 设置对应查询日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _date 对应查询日期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDate(const std::string& _date);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取列表信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Info 列表信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AbnormalEventsInfo> GetInfo() const;
 
                     /**
                      * 设置列表信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _info 列表信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInfo(const std::vector<AbnormalEventsInfo>& _info);
@@ -101,14 +93,12 @@ namespace TencentCloud
 
                     /**
                      * 对应查询日期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_date;
                     bool m_dateHasBeenSet;
 
                     /**
                      * 列表信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AbnormalEventsInfo> m_info;
                     bool m_infoHasBeenSet;

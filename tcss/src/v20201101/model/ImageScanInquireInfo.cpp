@@ -27,7 +27,10 @@ ImageScanInquireInfo::ImageScanInquireInfo() :
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_purchaseStatusHasBeenSet(false),
-    m_resourceIDHasBeenSet(false)
+    m_resourceIDHasBeenSet(false),
+    m_payNumHasBeenSet(false),
+    m_trialNumHasBeenSet(false),
+    m_payUsageHasBeenSet(false)
 {
 }
 
@@ -106,6 +109,36 @@ CoreInternalOutcome ImageScanInquireInfo::Deserialize(const rapidjson::Value &va
         m_resourceIDHasBeenSet = true;
     }
 
+    if (value.HasMember("PayNum") && !value["PayNum"].IsNull())
+    {
+        if (!value["PayNum"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageScanInquireInfo.PayNum` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_payNum = value["PayNum"].GetUint64();
+        m_payNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("TrialNum") && !value["TrialNum"].IsNull())
+    {
+        if (!value["TrialNum"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageScanInquireInfo.TrialNum` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_trialNum = value["TrialNum"].GetUint64();
+        m_trialNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("PayUsage") && !value["PayUsage"].IsNull())
+    {
+        if (!value["PayUsage"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageScanInquireInfo.PayUsage` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_payUsage = value["PayUsage"].GetUint64();
+        m_payUsageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +200,30 @@ void ImageScanInquireInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "ResourceID";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_resourceID.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_payNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PayNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_payNum, allocator);
+    }
+
+    if (m_trialNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TrialNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_trialNum, allocator);
+    }
+
+    if (m_payUsageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PayUsage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_payUsage, allocator);
     }
 
 }
@@ -282,5 +339,53 @@ void ImageScanInquireInfo::SetResourceID(const string& _resourceID)
 bool ImageScanInquireInfo::ResourceIDHasBeenSet() const
 {
     return m_resourceIDHasBeenSet;
+}
+
+uint64_t ImageScanInquireInfo::GetPayNum() const
+{
+    return m_payNum;
+}
+
+void ImageScanInquireInfo::SetPayNum(const uint64_t& _payNum)
+{
+    m_payNum = _payNum;
+    m_payNumHasBeenSet = true;
+}
+
+bool ImageScanInquireInfo::PayNumHasBeenSet() const
+{
+    return m_payNumHasBeenSet;
+}
+
+uint64_t ImageScanInquireInfo::GetTrialNum() const
+{
+    return m_trialNum;
+}
+
+void ImageScanInquireInfo::SetTrialNum(const uint64_t& _trialNum)
+{
+    m_trialNum = _trialNum;
+    m_trialNumHasBeenSet = true;
+}
+
+bool ImageScanInquireInfo::TrialNumHasBeenSet() const
+{
+    return m_trialNumHasBeenSet;
+}
+
+uint64_t ImageScanInquireInfo::GetPayUsage() const
+{
+    return m_payUsage;
+}
+
+void ImageScanInquireInfo::SetPayUsage(const uint64_t& _payUsage)
+{
+    m_payUsage = _payUsage;
+    m_payUsageHasBeenSet = true;
+}
+
+bool ImageScanInquireInfo::PayUsageHasBeenSet() const
+{
+    return m_payUsageHasBeenSet;
 }
 

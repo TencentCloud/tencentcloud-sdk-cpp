@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取时间模板列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Templates 时间模板列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TimeTemplateItem> GetTemplates() const;
@@ -78,7 +76,6 @@ namespace TencentCloud
 
                     /**
                      * 时间模板列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TimeTemplateItem> m_templates;
                     bool m_templatesHasBeenSet;

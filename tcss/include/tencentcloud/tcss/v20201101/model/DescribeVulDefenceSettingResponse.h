@@ -101,9 +101,7 @@ namespace TencentCloud
 
                     /**
                      * 获取自选漏洞防御主机
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostIDs 自选漏洞防御主机
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetHostIDs() const;
@@ -117,9 +115,7 @@ namespace TencentCloud
 
                     /**
                      * 获取开通容器安全的主机总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostTotalCount 开通容器安全的主机总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetHostTotalCount() const;
@@ -133,9 +129,7 @@ namespace TencentCloud
 
                     /**
                      * 获取支持防御的漏洞数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SupportDefenseVulCount 支持防御的漏洞数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSupportDefenseVulCount() const;
@@ -245,21 +239,18 @@ namespace TencentCloud
 
                     /**
                      * 自选漏洞防御主机
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_hostIDs;
                     bool m_hostIDsHasBeenSet;
 
                     /**
                      * 开通容器安全的主机总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_hostTotalCount;
                     bool m_hostTotalCountHasBeenSet;
 
                     /**
                      * 支持防御的漏洞数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_supportDefenseVulCount;
                     bool m_supportDefenseVulCountHasBeenSet;

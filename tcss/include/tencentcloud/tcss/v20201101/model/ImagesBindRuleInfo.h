@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取绑定规则id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleId 绑定规则id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuleId() const;
 
                     /**
                      * 设置绑定规则id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleId 绑定规则id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleId(const std::string& _ruleId);
@@ -136,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleName 规则名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuleName() const;
 
                     /**
                      * 设置规则名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleName 规则名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleName(const std::string& _ruleName);
@@ -161,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取镜像大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImageSize 镜像大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetImageSize() const;
 
                     /**
                      * 设置镜像大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _imageSize 镜像大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetImageSize(const int64_t& _imageSize);
@@ -186,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最近扫描时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanTime 最近扫描时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetScanTime() const;
 
                     /**
                      * 设置最近扫描时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scanTime 最近扫描时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScanTime(const std::string& _scanTime);
@@ -231,28 +215,24 @@ namespace TencentCloud
 
                     /**
                      * 绑定规则id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ruleId;
                     bool m_ruleIdHasBeenSet;
 
                     /**
                      * 规则名字
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ruleName;
                     bool m_ruleNameHasBeenSet;
 
                     /**
                      * 镜像大小
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_imageSize;
                     bool m_imageSizeHasBeenSet;
 
                     /**
                      * 最近扫描时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scanTime;
                     bool m_scanTimeHasBeenSet;

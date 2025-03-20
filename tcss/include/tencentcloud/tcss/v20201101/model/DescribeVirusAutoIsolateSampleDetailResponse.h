@@ -59,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取文件大小(B)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Size 文件大小(B)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetSize() const;
@@ -75,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取病毒名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VirusName 病毒名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVirusName() const;
@@ -91,9 +87,7 @@ namespace TencentCloud
 
                     /**
                      * 获取风险等级 RISK_CRITICAL, RISK_HIGH, RISK_MEDIUM, RISK_LOW, RISK_NOTICE。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskLevel 风险等级 RISK_CRITICAL, RISK_HIGH, RISK_MEDIUM, RISK_LOW, RISK_NOTICE。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRiskLevel() const;
@@ -107,9 +101,7 @@ namespace TencentCloud
 
                     /**
                      * 获取查杀引擎
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return KillEngine 查杀引擎
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetKillEngine() const;
@@ -123,9 +115,7 @@ namespace TencentCloud
 
                     /**
                      * 获取标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetTags() const;
@@ -139,9 +129,7 @@ namespace TencentCloud
 
                     /**
                      * 获取事件描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HarmDescribe 事件描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHarmDescribe() const;
@@ -155,9 +143,7 @@ namespace TencentCloud
 
                     /**
                      * 获取建议方案
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SuggestScheme 建议方案
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSuggestScheme() const;
@@ -171,9 +157,7 @@ namespace TencentCloud
 
                     /**
                      * 获取参考链接
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReferenceLink 参考链接
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReferenceLink() const;
@@ -195,56 +179,48 @@ namespace TencentCloud
 
                     /**
                      * 文件大小(B)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_size;
                     bool m_sizeHasBeenSet;
 
                     /**
                      * 病毒名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_virusName;
                     bool m_virusNameHasBeenSet;
 
                     /**
                      * 风险等级 RISK_CRITICAL, RISK_HIGH, RISK_MEDIUM, RISK_LOW, RISK_NOTICE。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_riskLevel;
                     bool m_riskLevelHasBeenSet;
 
                     /**
                      * 查杀引擎
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_killEngine;
                     bool m_killEngineHasBeenSet;
 
                     /**
                      * 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
                      * 事件描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_harmDescribe;
                     bool m_harmDescribeHasBeenSet;
 
                     /**
                      * 建议方案
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_suggestScheme;
                     bool m_suggestSchemeHasBeenSet;
 
                     /**
                      * 参考链接
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_referenceLink;
                     bool m_referenceLinkHasBeenSet;

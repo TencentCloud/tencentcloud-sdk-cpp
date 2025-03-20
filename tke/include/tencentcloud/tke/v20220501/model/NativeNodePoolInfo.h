@@ -56,18 +56,14 @@ namespace TencentCloud
 
                     /**
                      * 获取伸缩配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Scaling 伸缩配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MachineSetScaling GetScaling() const;
 
                     /**
                      * 设置伸缩配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scaling 伸缩配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScaling(const MachineSetScaling& _scaling);
@@ -127,18 +123,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自动升级配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpgradeSettings 自动升级配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MachineUpgradeSettings GetUpgradeSettings() const;
 
                     /**
                      * 设置自动升级配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _upgradeSettings 自动升级配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpgradeSettings(const MachineUpgradeSettings& _upgradeSettings);
@@ -198,18 +190,14 @@ namespace TencentCloud
 
                     /**
                      * 获取包年包月机型计费配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceChargePrepaid 包年包月机型计费配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     InstanceChargePrepaid GetInstanceChargePrepaid() const;
 
                     /**
                      * 设置包年包月机型计费配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceChargePrepaid 包年包月机型计费配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceChargePrepaid(const InstanceChargePrepaid& _instanceChargePrepaid);
@@ -269,18 +257,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Machine 系统配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Management Machine 系统配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ManagementConfig GetManagement() const;
 
                     /**
                      * 设置Machine 系统配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _management Machine 系统配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetManagement(const ManagementConfig& _management);
@@ -369,18 +353,14 @@ namespace TencentCloud
 
                     /**
                      * 获取预定义脚本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Lifecycle 预定义脚本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     LifecycleConfig GetLifecycle() const;
 
                     /**
                      * 设置预定义脚本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lifecycle 预定义脚本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLifecycle(const LifecycleConfig& _lifecycle);
@@ -394,18 +374,14 @@ namespace TencentCloud
 
                     /**
                      * 获取运行时根目录
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuntimeRootDir 运行时根目录
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuntimeRootDir() const;
 
                     /**
                      * 设置运行时根目录
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _runtimeRootDir 运行时根目录
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuntimeRootDir(const std::string& _runtimeRootDir);
@@ -419,18 +395,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启弹性伸缩
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableAutoscaling 是否开启弹性伸缩
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnableAutoscaling() const;
 
                     /**
                      * 设置是否开启弹性伸缩
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enableAutoscaling 是否开启弹性伸缩
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnableAutoscaling(const bool& _enableAutoscaling);
@@ -465,18 +437,14 @@ namespace TencentCloud
 
                     /**
                      * 获取期望节点数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Replicas 期望节点数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetReplicas() const;
 
                     /**
                      * 设置期望节点数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _replicas 期望节点数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReplicas(const int64_t& _replicas);
@@ -511,18 +479,14 @@ namespace TencentCloud
 
                     /**
                      * 获取公网带宽设置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InternetAccessible 公网带宽设置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     InternetAccessible GetInternetAccessible() const;
 
                     /**
                      * 设置公网带宽设置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _internetAccessible 公网带宽设置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInternetAccessible(const InternetAccessible& _internetAccessible);
@@ -561,18 +525,14 @@ namespace TencentCloud
 
                     /**
                      * 获取原生节点机型 Native, NativeCVM
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MachineType 原生节点机型 Native, NativeCVM
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMachineType() const;
 
                     /**
                      * 设置原生节点机型 Native, NativeCVM
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _machineType 原生节点机型 Native, NativeCVM
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMachineType(const std::string& _machineType);
@@ -588,7 +548,6 @@ namespace TencentCloud
 
                     /**
                      * 伸缩配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MachineSetScaling m_scaling;
                     bool m_scalingHasBeenSet;
@@ -608,7 +567,6 @@ namespace TencentCloud
 
                     /**
                      * 自动升级配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MachineUpgradeSettings m_upgradeSettings;
                     bool m_upgradeSettingsHasBeenSet;
@@ -628,7 +586,6 @@ namespace TencentCloud
 
                     /**
                      * 包年包月机型计费配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     InstanceChargePrepaid m_instanceChargePrepaid;
                     bool m_instanceChargePrepaidHasBeenSet;
@@ -648,7 +605,6 @@ namespace TencentCloud
 
                     /**
                      * Machine 系统配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ManagementConfig m_management;
                     bool m_managementHasBeenSet;
@@ -676,21 +632,18 @@ namespace TencentCloud
 
                     /**
                      * 预定义脚本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     LifecycleConfig m_lifecycle;
                     bool m_lifecycleHasBeenSet;
 
                     /**
                      * 运行时根目录
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_runtimeRootDir;
                     bool m_runtimeRootDirHasBeenSet;
 
                     /**
                      * 是否开启弹性伸缩
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enableAutoscaling;
                     bool m_enableAutoscalingHasBeenSet;
@@ -703,7 +656,6 @@ namespace TencentCloud
 
                     /**
                      * 期望节点数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_replicas;
                     bool m_replicasHasBeenSet;
@@ -716,7 +668,6 @@ namespace TencentCloud
 
                     /**
                      * 公网带宽设置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     InternetAccessible m_internetAccessible;
                     bool m_internetAccessibleHasBeenSet;
@@ -730,7 +681,6 @@ namespace TencentCloud
 
                     /**
                      * 原生节点机型 Native, NativeCVM
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_machineType;
                     bool m_machineTypeHasBeenSet;

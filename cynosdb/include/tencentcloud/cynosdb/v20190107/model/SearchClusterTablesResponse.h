@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取数据表列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tables 数据表列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DatabaseTables> GetTables() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 数据表列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DatabaseTables> m_tables;
                     bool m_tablesHasBeenSet;

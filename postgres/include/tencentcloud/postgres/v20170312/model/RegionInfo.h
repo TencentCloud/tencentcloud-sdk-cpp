@@ -132,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该地域是否支持国际站售卖，0：不支持，1：支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SupportInternational 该地域是否支持国际站售卖，0：不支持，1：支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetSupportInternational() const;
 
                     /**
                      * 设置该地域是否支持国际站售卖，0：不支持，1：支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _supportInternational 该地域是否支持国际站售卖，0：不支持，1：支持
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSupportInternational(const uint64_t& _supportInternational);
@@ -183,7 +179,6 @@ namespace TencentCloud
 
                     /**
                      * 该地域是否支持国际站售卖，0：不支持，1：支持
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_supportInternational;
                     bool m_supportInternationalHasBeenSet;

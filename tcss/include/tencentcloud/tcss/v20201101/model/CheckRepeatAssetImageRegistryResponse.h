@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取是否重复
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsRepeat 是否重复
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsRepeat() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 是否重复
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isRepeat;
                     bool m_isRepeatHasBeenSet;

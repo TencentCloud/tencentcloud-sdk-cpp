@@ -132,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取扫描时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanDuration 扫描时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetScanDuration() const;
 
                     /**
                      * 设置扫描时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scanDuration 扫描时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScanDuration(const double& _scanDuration);
@@ -351,7 +347,6 @@ namespace TencentCloud
 
                     /**
                      * 扫描时长
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_scanDuration;
                     bool m_scanDurationHasBeenSet;

@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取统计数据列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 统计数据列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RecordStatistic> GetData() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 统计数据列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RecordStatistic> m_data;
                     bool m_dataHasBeenSet;

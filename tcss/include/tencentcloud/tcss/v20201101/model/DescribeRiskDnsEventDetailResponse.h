@@ -365,9 +365,7 @@ namespace TencentCloud
 
                     /**
                      * 获取恶意域名或IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Address 恶意域名或IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAddress() const;
@@ -381,9 +379,7 @@ namespace TencentCloud
 
                     /**
                      * 获取恶意IP所属城市
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return City 恶意IP所属城市
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCity() const;
@@ -675,9 +671,7 @@ EVENT_ADD_WHITE：已加白
 
                     /**
                      * 获取操作时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OperationTime 操作时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOperationTime() const;
@@ -1029,14 +1023,12 @@ EVENT_ADD_WHITE：已加白
 
                     /**
                      * 恶意域名或IP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_address;
                     bool m_addressHasBeenSet;
 
                     /**
                      * 恶意IP所属城市
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_city;
                     bool m_cityHasBeenSet;
@@ -1163,7 +1155,6 @@ EVENT_ADD_WHITE：已加白
 
                     /**
                      * 操作时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_operationTime;
                     bool m_operationTimeHasBeenSet;

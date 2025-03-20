@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取参数名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParamName 参数名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetParamName() const;
 
                     /**
                      * 设置参数名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _paramName 参数名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetParamName(const std::string& _paramName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取原参数值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OldValue 原参数值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOldValue() const;
 
                     /**
                      * 设置原参数值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _oldValue 原参数值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOldValue(const std::string& _oldValue);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取本次修改期望参数值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NewValue 本次修改期望参数值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNewValue() const;
 
                     /**
                      * 设置本次修改期望参数值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _newValue 本次修改期望参数值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNewValue(const std::string& _newValue);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取后台参数修改开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifyTime 后台参数修改开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
                      * 设置后台参数修改开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modifyTime 后台参数修改开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取后台参数生效开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EffectiveTime 后台参数生效开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEffectiveTime() const;
 
                     /**
                      * 设置后台参数生效开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _effectiveTime 后台参数生效开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEffectiveTime(const std::string& _effectiveTime);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取修改状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return State 修改状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetState() const;
 
                     /**
                      * 设置修改状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _state 修改状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetState(const std::string& _state);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取操作者（一般为用户sub UIN）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Operator 操作者（一般为用户sub UIN）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOperator() const;
 
                     /**
                      * 设置操作者（一般为用户sub UIN）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _operator 操作者（一般为用户sub UIN）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOperator(const std::string& _operator);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取时间日志。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EventLog 时间日志。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEventLog() const;
 
                     /**
                      * 设置时间日志。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _eventLog 时间日志。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEventLog(const std::string& _eventLog);
@@ -250,56 +218,48 @@ namespace TencentCloud
 
                     /**
                      * 参数名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_paramName;
                     bool m_paramNameHasBeenSet;
 
                     /**
                      * 原参数值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_oldValue;
                     bool m_oldValueHasBeenSet;
 
                     /**
                      * 本次修改期望参数值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_newValue;
                     bool m_newValueHasBeenSet;
 
                     /**
                      * 后台参数修改开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
 
                     /**
                      * 后台参数生效开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_effectiveTime;
                     bool m_effectiveTimeHasBeenSet;
 
                     /**
                      * 修改状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_state;
                     bool m_stateHasBeenSet;
 
                     /**
                      * 操作者（一般为用户sub UIN）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
                      * 时间日志。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_eventLog;
                     bool m_eventLogHasBeenSet;

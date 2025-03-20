@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取容器所属的Pod的名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PodName 容器所属的Pod的名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPodName() const;
 
                     /**
                      * 设置容器所属的Pod的名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _podName 容器所属的Pod的名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPodName(const std::string& _podName);
@@ -102,7 +98,6 @@ namespace TencentCloud
 
                     /**
                      * 容器所属的Pod的名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_podName;
                     bool m_podNameHasBeenSet;

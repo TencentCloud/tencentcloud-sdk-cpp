@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取含有录像文件的日期列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Dates 含有录像文件的日期列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetDates() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 含有录像文件的日期列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_dates;
                     bool m_datesHasBeenSet;

@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取返回各类检测失败的资产的汇总信息的列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanFailedAssetList 返回各类检测失败的资产的汇总信息的列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ComplianceScanFailedAsset> GetScanFailedAssetList() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 返回各类检测失败的资产的汇总信息的列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ComplianceScanFailedAsset> m_scanFailedAssetList;
                     bool m_scanFailedAssetListHasBeenSet;

@@ -217,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取VPC IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Rip VPC IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRip() const;
 
                     /**
                      * 设置VPC IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rip VPC IP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRip(const std::string& _rip);
@@ -242,18 +238,14 @@ namespace TencentCloud
 
                     /**
                      * 获取ture的时候表示该节点上部署了chproxy进程
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsCHProxy ture的时候表示该节点上部署了chproxy进程
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsCHProxy() const;
 
                     /**
                      * 设置ture的时候表示该节点上部署了chproxy进程
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isCHProxy ture的时候表示该节点上部署了chproxy进程
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsCHProxy(const bool& _isCHProxy);
@@ -267,18 +259,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 节点状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置节点状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 节点状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -292,18 +280,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点uuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UUID 节点uuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUUID() const;
 
                     /**
                      * 设置节点uuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uUID 节点uuid
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUUID(const std::string& _uUID);
@@ -317,18 +301,14 @@ namespace TencentCloud
 
                     /**
                      * 获取区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zone 区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zone 区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -342,18 +322,14 @@ namespace TencentCloud
 
                     /**
                      * 获取区描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZoneDesc 区描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetZoneDesc() const;
 
                     /**
                      * 设置区描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zoneDesc 区描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZoneDesc(const std::string& _zoneDesc);
@@ -438,42 +414,36 @@ namespace TencentCloud
 
                     /**
                      * VPC IP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_rip;
                     bool m_ripHasBeenSet;
 
                     /**
                      * ture的时候表示该节点上部署了chproxy进程
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isCHProxy;
                     bool m_isCHProxyHasBeenSet;
 
                     /**
                      * 节点状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 节点uuid
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uUID;
                     bool m_uUIDHasBeenSet;
 
                     /**
                      * 区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
                      * 区描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zoneDesc;
                     bool m_zoneDescHasBeenSet;

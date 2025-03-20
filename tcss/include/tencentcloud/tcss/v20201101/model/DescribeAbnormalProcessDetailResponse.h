@@ -106,9 +106,7 @@ namespace TencentCloud
 
                     /**
                      * 获取祖先进程信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AncestorProcessInfo 祖先进程信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ProcessBaseInfo GetAncestorProcessInfo() const;
@@ -148,7 +146,6 @@ namespace TencentCloud
 
                     /**
                      * 祖先进程信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ProcessBaseInfo m_ancestorProcessInfo;
                     bool m_ancestorProcessInfoHasBeenSet;

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取计算节点ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeId 计算节点ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNodeId() const;
 
                     /**
                      * 设置计算节点ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nodeId 计算节点ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNodeId(const std::string& _nodeId);
@@ -75,7 +71,6 @@ namespace TencentCloud
 
                     /**
                      * 计算节点ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nodeId;
                     bool m_nodeIdHasBeenSet;

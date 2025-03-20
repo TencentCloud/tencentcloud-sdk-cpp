@@ -135,18 +135,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配额所属的网络组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return QuotaGroup 配额所属的网络组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetQuotaGroup() const;
 
                     /**
                      * 设置配额所属的网络组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _quotaGroup 配额所属的网络组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQuotaGroup(const std::string& _quotaGroup);
@@ -186,7 +182,6 @@ namespace TencentCloud
 
                     /**
                      * 配额所属的网络组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_quotaGroup;
                     bool m_quotaGroupHasBeenSet;

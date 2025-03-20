@@ -174,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源Tags。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceTags 资源Tags。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetResourceTags() const;
 
                     /**
                      * 设置资源Tags。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceTags 资源Tags。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceTags(const std::vector<std::string>& _resourceTags);
@@ -237,7 +233,6 @@ namespace TencentCloud
 
                     /**
                      * 资源Tags。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_resourceTags;
                     bool m_resourceTagsHasBeenSet;

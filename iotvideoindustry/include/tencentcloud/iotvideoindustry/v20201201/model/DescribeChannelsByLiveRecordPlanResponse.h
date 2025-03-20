@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取总个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 总个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取通道详情数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LiveChannels 通道详情数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<LiveChannelItem> GetLiveChannels() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 总个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
                      * 通道详情数组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<LiveChannelItem> m_liveChannels;
                     bool m_liveChannelsHasBeenSet;

@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取错误日志导出内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorLogItems 错误日志导出内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ErrorLogItemExport> GetErrorLogItems() const;
@@ -78,7 +76,6 @@ namespace TencentCloud
 
                     /**
                      * 错误日志导出内容
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ErrorLogItemExport> m_errorLogItems;
                     bool m_errorLogItemsHasBeenSet;

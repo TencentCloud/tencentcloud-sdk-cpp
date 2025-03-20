@@ -59,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取扫描全部路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanPathAll 扫描全部路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetScanPathAll() const;
@@ -75,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取当ScanPathAll为true 生效 0扫描以下路径 1、扫描除以下路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanPathType 当ScanPathAll为true 生效 0扫描以下路径 1、扫描除以下路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetScanPathType() const;
@@ -91,9 +87,7 @@ namespace TencentCloud
 
                     /**
                      * 获取自选排除或扫描的地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanPath 自选排除或扫描的地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetScanPath() const;
@@ -137,21 +131,18 @@ SCAN_PATH_USER_DEFINE：用户自定义路径
 
                     /**
                      * 扫描全部路径
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_scanPathAll;
                     bool m_scanPathAllHasBeenSet;
 
                     /**
                      * 当ScanPathAll为true 生效 0扫描以下路径 1、扫描除以下路径
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_scanPathType;
                     bool m_scanPathTypeHasBeenSet;
 
                     /**
                      * 自选排除或扫描的地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_scanPath;
                     bool m_scanPathHasBeenSet;

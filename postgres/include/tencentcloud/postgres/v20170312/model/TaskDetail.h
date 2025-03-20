@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当前执行的子任务步骤名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CurrentStep 当前执行的子任务步骤名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCurrentStep() const;
 
                     /**
                      * 设置当前执行的子任务步骤名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _currentStep 当前执行的子任务步骤名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCurrentStep(const std::string& _currentStep);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当前任务所拥有的子步骤描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AllSteps 当前任务所拥有的子步骤描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAllSteps() const;
 
                     /**
                      * 设置当前任务所拥有的子步骤描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _allSteps 当前任务所拥有的子步骤描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAllSteps(const std::string& _allSteps);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务的输入参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Input 任务的输入参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInput() const;
 
                     /**
                      * 设置任务的输入参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _input 任务的输入参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInput(const std::string& _input);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务的输出参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Output 任务的输出参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOutput() const;
 
                     /**
                      * 设置任务的输出参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _output 任务的输出参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutput(const std::string& _output);
@@ -152,13 +136,11 @@ namespace TencentCloud
 1：立即切换
 2：指定时间切换
 3：维护时间窗口内切换。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SwitchTag 指定实例配置完成变更后的切换时间，默认值：0
 0:   此任务不需要切换
 1：立即切换
 2：指定时间切换
 3：维护时间窗口内切换。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetSwitchTag() const;
@@ -169,13 +151,11 @@ namespace TencentCloud
 1：立即切换
 2：指定时间切换
 3：维护时间窗口内切换。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _switchTag 指定实例配置完成变更后的切换时间，默认值：0
 0:   此任务不需要切换
 1：立即切换
 2：指定时间切换
 3：维护时间窗口内切换。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSwitchTag(const uint64_t& _switchTag);
@@ -189,18 +169,14 @@ namespace TencentCloud
 
                     /**
                      * 获取指定的切换时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SwitchTime 指定的切换时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSwitchTime() const;
 
                     /**
                      * 设置指定的切换时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _switchTime 指定的切换时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSwitchTime(const std::string& _switchTime);
@@ -214,18 +190,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务的提示信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Message 任务的提示信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMessage() const;
 
                     /**
                      * 设置任务的提示信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _message 任务的提示信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMessage(const std::string& _message);
@@ -241,28 +213,24 @@ namespace TencentCloud
 
                     /**
                      * 当前执行的子任务步骤名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_currentStep;
                     bool m_currentStepHasBeenSet;
 
                     /**
                      * 当前任务所拥有的子步骤描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_allSteps;
                     bool m_allStepsHasBeenSet;
 
                     /**
                      * 任务的输入参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_input;
                     bool m_inputHasBeenSet;
 
                     /**
                      * 任务的输出参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_output;
                     bool m_outputHasBeenSet;
@@ -273,21 +241,18 @@ namespace TencentCloud
 1：立即切换
 2：指定时间切换
 3：维护时间窗口内切换。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_switchTag;
                     bool m_switchTagHasBeenSet;
 
                     /**
                      * 指定的切换时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_switchTime;
                     bool m_switchTimeHasBeenSet;
 
                     /**
                      * 任务的提示信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;

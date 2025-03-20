@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分隔符、正则表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Regex 分隔符、正则表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegex() const;
 
                     /**
                      * 设置分隔符、正则表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _regex 分隔符、正则表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegex(const std::string& _regex);
@@ -94,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取需再次处理的KEY——模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InputValueType 需再次处理的KEY——模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInputValueType() const;
 
                     /**
                      * 设置需再次处理的KEY——模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _inputValueType 需再次处理的KEY——模式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInputValueType(const std::string& _inputValueType);
@@ -119,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取需再次处理的KEY——KEY表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InputValue 需再次处理的KEY——KEY表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInputValue() const;
 
                     /**
                      * 设置需再次处理的KEY——KEY表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _inputValue 需再次处理的KEY——KEY表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInputValue(const std::string& _inputValue);
@@ -152,21 +140,18 @@ namespace TencentCloud
 
                     /**
                      * 分隔符、正则表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_regex;
                     bool m_regexHasBeenSet;
 
                     /**
                      * 需再次处理的KEY——模式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_inputValueType;
                     bool m_inputValueTypeHasBeenSet;
 
                     /**
                      * 需再次处理的KEY——KEY表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_inputValue;
                     bool m_inputValueHasBeenSet;

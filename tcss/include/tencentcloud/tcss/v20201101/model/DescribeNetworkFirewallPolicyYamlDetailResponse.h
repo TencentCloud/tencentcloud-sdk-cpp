@@ -73,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取base64编码的yaml字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Yaml base64编码的yaml字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetYaml() const;
@@ -89,9 +87,7 @@ namespace TencentCloud
 
                     /**
                      * 获取策略描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 策略描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
@@ -133,9 +129,7 @@ namespace TencentCloud
 
                     /**
                      * 获取网络策略对应的网络插件
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NetworkPolicyPlugin 网络策略对应的网络插件
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNetworkPolicyPlugin() const;
@@ -163,9 +157,7 @@ namespace TencentCloud
 
                     /**
                      * 获取网络发布结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublishResult 网络发布结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPublishResult() const;
@@ -193,14 +185,12 @@ namespace TencentCloud
 
                     /**
                      * base64编码的yaml字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_yaml;
                     bool m_yamlHasBeenSet;
 
                     /**
                      * 策略描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
@@ -219,7 +209,6 @@ namespace TencentCloud
 
                     /**
                      * 网络策略对应的网络插件
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_networkPolicyPlugin;
                     bool m_networkPolicyPluginHasBeenSet;
@@ -232,7 +221,6 @@ namespace TencentCloud
 
                     /**
                      * 网络发布结果
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_publishResult;
                     bool m_publishResultHasBeenSet;

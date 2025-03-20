@@ -105,6 +105,27 @@ namespace TencentCloud
                      */
                     bool LogTypeHasBeenSet() const;
 
+                    /**
+                     * 获取投递的CLS所在日志主题的名称，默认为 waf_post_logtopic
+                     * @return LogTopicName 投递的CLS所在日志主题的名称，默认为 waf_post_logtopic
+                     * 
+                     */
+                    std::string GetLogTopicName() const;
+
+                    /**
+                     * 设置投递的CLS所在日志主题的名称，默认为 waf_post_logtopic
+                     * @param _logTopicName 投递的CLS所在日志主题的名称，默认为 waf_post_logtopic
+                     * 
+                     */
+                    void SetLogTopicName(const std::string& _logTopicName);
+
+                    /**
+                     * 判断参数 LogTopicName 是否已赋值
+                     * @return LogTopicName 是否已赋值
+                     * 
+                     */
+                    bool LogTopicNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +145,12 @@ namespace TencentCloud
                      */
                     int64_t m_logType;
                     bool m_logTypeHasBeenSet;
+
+                    /**
+                     * 投递的CLS所在日志主题的名称，默认为 waf_post_logtopic
+                     */
+                    std::string m_logTopicName;
+                    bool m_logTopicNameHasBeenSet;
 
                 };
             }

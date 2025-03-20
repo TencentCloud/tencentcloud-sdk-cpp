@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取ckafka集群实例Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId ckafka集群实例Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置ckafka集群实例Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceId ckafka集群实例Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主题名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicName 主题名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTopicName() const;
 
                     /**
                      * 设置主题名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topicName 主题名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopicName(const std::string& _topicName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取操作返回码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReturnCode 操作返回码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReturnCode() const;
 
                     /**
                      * 设置操作返回码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _returnCode 操作返回码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReturnCode(const std::string& _returnCode);
@@ -146,21 +134,18 @@ namespace TencentCloud
 
                     /**
                      * ckafka集群实例Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
                      * 主题名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;
 
                     /**
                      * 操作返回码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_returnCode;
                     bool m_returnCodeHasBeenSet;

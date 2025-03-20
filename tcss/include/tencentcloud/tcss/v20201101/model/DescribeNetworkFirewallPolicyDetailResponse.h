@@ -74,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Namespace 命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNamespace() const;
@@ -118,9 +116,7 @@ namespace TencentCloud
 
                     /**
                      * 获取自定义规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CustomPolicy 自定义规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<NetworkCustomPolicy> GetCustomPolicy() const;
@@ -148,9 +144,7 @@ namespace TencentCloud
 
                     /**
                      * 获取策略描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 策略描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
@@ -192,9 +186,7 @@ namespace TencentCloud
 
                     /**
                      * 获取网络策略对应的网络插件
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NetworkPolicyPlugin 网络策略对应的网络插件
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNetworkPolicyPlugin() const;
@@ -222,9 +214,7 @@ namespace TencentCloud
 
                     /**
                      * 获取网络发布结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublishResult 网络发布结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPublishResult() const;
@@ -252,7 +242,6 @@ namespace TencentCloud
 
                     /**
                      * 命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;
@@ -271,7 +260,6 @@ namespace TencentCloud
 
                     /**
                      * 自定义规则
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<NetworkCustomPolicy> m_customPolicy;
                     bool m_customPolicyHasBeenSet;
@@ -284,7 +272,6 @@ namespace TencentCloud
 
                     /**
                      * 策略描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
@@ -303,7 +290,6 @@ namespace TencentCloud
 
                     /**
                      * 网络策略对应的网络插件
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_networkPolicyPlugin;
                     bool m_networkPolicyPluginHasBeenSet;
@@ -316,7 +302,6 @@ namespace TencentCloud
 
                     /**
                      * 网络发布结果
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_publishResult;
                     bool m_publishResultHasBeenSet;

@@ -497,7 +497,6 @@ namespace TencentCloud
 卸载异常: AccessedUninstallException
 接入中: AccessedInstalling
 卸载中: AccessedUninstalling
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccessedStatus 接入状态:
 未接入: AccessedNone
 已防护: AccessedDefended
@@ -507,7 +506,6 @@ namespace TencentCloud
 卸载异常: AccessedUninstallException
 接入中: AccessedInstalling
 卸载中: AccessedUninstalling
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAccessedStatus() const;
@@ -522,7 +520,6 @@ namespace TencentCloud
 卸载异常: AccessedUninstallException
 接入中: AccessedInstalling
 卸载中: AccessedUninstalling
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _accessedStatus 接入状态:
 未接入: AccessedNone
 已防护: AccessedDefended
@@ -532,7 +529,6 @@ namespace TencentCloud
 卸载异常: AccessedUninstallException
 接入中: AccessedInstalling
 卸载中: AccessedUninstalling
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAccessedStatus(const std::string& _accessedStatus);
@@ -546,18 +542,14 @@ namespace TencentCloud
 
                     /**
                      * 获取接入失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccessedSubStatus 接入失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAccessedSubStatus() const;
 
                     /**
                      * 设置接入失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _accessedSubStatus 接入失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAccessedSubStatus(const std::string& _accessedSubStatus);
@@ -571,18 +563,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeCount 节点总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetNodeCount() const;
 
                     /**
                      * 设置节点总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nodeCount 节点总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNodeCount(const uint64_t& _nodeCount);
@@ -596,18 +584,14 @@ namespace TencentCloud
 
                     /**
                      * 获取离线节点数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OffLineNodeCount 离线节点数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetOffLineNodeCount() const;
 
                     /**
                      * 设置离线节点数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _offLineNodeCount 离线节点数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOffLineNodeCount(const uint64_t& _offLineNodeCount);
@@ -621,18 +605,14 @@ namespace TencentCloud
 
                     /**
                      * 获取未安装agent节点数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnInstallAgentNodeCount 未安装agent节点数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetUnInstallAgentNodeCount() const;
 
                     /**
                      * 设置未安装agent节点数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _unInstallAgentNodeCount 未安装agent节点数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUnInstallAgentNodeCount(const uint64_t& _unInstallAgentNodeCount);
@@ -646,18 +626,14 @@ namespace TencentCloud
 
                     /**
                      * 获取计费核数(弹性计费核数+普通计费核数)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChargeCoresCnt 计费核数(弹性计费核数+普通计费核数)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetChargeCoresCnt() const;
 
                     /**
                      * 设置计费核数(弹性计费核数+普通计费核数)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _chargeCoresCnt 计费核数(弹性计费核数+普通计费核数)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChargeCoresCnt(const uint64_t& _chargeCoresCnt);
@@ -895,42 +871,36 @@ namespace TencentCloud
 卸载异常: AccessedUninstallException
 接入中: AccessedInstalling
 卸载中: AccessedUninstalling
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_accessedStatus;
                     bool m_accessedStatusHasBeenSet;
 
                     /**
                      * 接入失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_accessedSubStatus;
                     bool m_accessedSubStatusHasBeenSet;
 
                     /**
                      * 节点总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_nodeCount;
                     bool m_nodeCountHasBeenSet;
 
                     /**
                      * 离线节点数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_offLineNodeCount;
                     bool m_offLineNodeCountHasBeenSet;
 
                     /**
                      * 未安装agent节点数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_unInstallAgentNodeCount;
                     bool m_unInstallAgentNodeCountHasBeenSet;
 
                     /**
                      * 计费核数(弹性计费核数+普通计费核数)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_chargeCoresCnt;
                     bool m_chargeCoresCntHasBeenSet;

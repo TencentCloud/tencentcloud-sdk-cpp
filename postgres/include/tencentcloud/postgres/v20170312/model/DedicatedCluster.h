@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取专属集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DedicatedClusterId 专属集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDedicatedClusterId() const;
 
                     /**
                      * 设置专属集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dedicatedClusterId 专属集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDedicatedClusterId(const std::string& _dedicatedClusterId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取专属集群名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 专属集群名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置专属集群名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 专属集群名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取专属集群所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zone 专属集群所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置专属集群所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zone 专属集群所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取灾备集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StandbyDedicatedClusterSet 灾备集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetStandbyDedicatedClusterSet() const;
 
                     /**
                      * 设置灾备集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _standbyDedicatedClusterSet 灾备集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStandbyDedicatedClusterSet(const std::vector<std::string>& _standbyDedicatedClusterSet);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceCount 实例数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetInstanceCount() const;
 
                     /**
                      * 设置实例数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceCount 实例数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceCount(const int64_t& _instanceCount);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Cpu总量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CpuTotal Cpu总量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCpuTotal() const;
 
                     /**
                      * 设置Cpu总量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cpuTotal Cpu总量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCpuTotal(const int64_t& _cpuTotal);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Cpu可用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CpuAvailable Cpu可用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCpuAvailable() const;
 
                     /**
                      * 设置Cpu可用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cpuAvailable Cpu可用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCpuAvailable(const int64_t& _cpuAvailable);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内存总量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MemTotal 内存总量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMemTotal() const;
 
                     /**
                      * 设置内存总量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _memTotal 内存总量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMemTotal(const int64_t& _memTotal);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内存可用量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MemAvailable 内存可用量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMemAvailable() const;
 
                     /**
                      * 设置内存可用量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _memAvailable 内存可用量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMemAvailable(const int64_t& _memAvailable);
@@ -273,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取磁盘总量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiskTotal 磁盘总量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDiskTotal() const;
 
                     /**
                      * 设置磁盘总量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _diskTotal 磁盘总量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiskTotal(const int64_t& _diskTotal);
@@ -298,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取磁盘可用量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiskAvailable 磁盘可用量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDiskAvailable() const;
 
                     /**
                      * 设置磁盘可用量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _diskAvailable 磁盘可用量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiskAvailable(const int64_t& _diskAvailable);
@@ -325,77 +281,66 @@ namespace TencentCloud
 
                     /**
                      * 专属集群ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dedicatedClusterId;
                     bool m_dedicatedClusterIdHasBeenSet;
 
                     /**
                      * 专属集群名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 专属集群所在可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
                      * 灾备集群
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_standbyDedicatedClusterSet;
                     bool m_standbyDedicatedClusterSetHasBeenSet;
 
                     /**
                      * 实例数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_instanceCount;
                     bool m_instanceCountHasBeenSet;
 
                     /**
                      * Cpu总量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_cpuTotal;
                     bool m_cpuTotalHasBeenSet;
 
                     /**
                      * Cpu可用数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_cpuAvailable;
                     bool m_cpuAvailableHasBeenSet;
 
                     /**
                      * 内存总量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_memTotal;
                     bool m_memTotalHasBeenSet;
 
                     /**
                      * 内存可用量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_memAvailable;
                     bool m_memAvailableHasBeenSet;
 
                     /**
                      * 磁盘总量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_diskTotal;
                     bool m_diskTotalHasBeenSet;
 
                     /**
                      * 磁盘可用量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_diskAvailable;
                     bool m_diskAvailableHasBeenSet;
