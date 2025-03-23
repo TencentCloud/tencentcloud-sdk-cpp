@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取通知内容模板ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NoticeContentId 通知内容模板ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNoticeContentId() const;
 
                     /**
                      * 设置通知内容模板ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _noticeContentId 通知内容模板ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNoticeContentId(const std::string& _noticeContentId);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取通知内容模板名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 通知内容模板名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置通知内容模板名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 通知内容模板名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -102,12 +94,10 @@ namespace TencentCloud
 
 0： 中文
 1： 英文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 语言类型。
 
 0： 中文
 1： 英文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetType() const;
@@ -117,12 +107,10 @@ namespace TencentCloud
 
 0： 中文
 1： 英文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 语言类型。
 
 0： 中文
 1： 英文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const uint64_t& _type);
@@ -136,18 +124,14 @@ namespace TencentCloud
 
                     /**
                      * 获取通知内容模板信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NoticeContents 通知内容模板信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<NoticeContent> GetNoticeContents() const;
 
                     /**
                      * 设置通知内容模板信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _noticeContents 通知内容模板信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNoticeContents(const std::vector<NoticeContent>& _noticeContents);
@@ -164,12 +148,10 @@ namespace TencentCloud
 
 0： 用户自定义
 1： 系统内置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Flag 通知内容模板标记。
 
 0： 用户自定义
 1： 系统内置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetFlag() const;
@@ -179,12 +161,10 @@ namespace TencentCloud
 
 0： 用户自定义
 1： 系统内置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _flag 通知内容模板标记。
 
 0： 用户自定义
 1： 系统内置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFlag(const uint64_t& _flag);
@@ -198,18 +178,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建者主账号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uin 创建者主账号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetUin() const;
 
                     /**
                      * 设置创建者主账号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uin 创建者主账号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUin(const uint64_t& _uin);
@@ -223,18 +199,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建/修改者子账号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubUin 创建/修改者子账号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetSubUin() const;
 
                     /**
                      * 设置创建/修改者子账号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subUin 创建/修改者子账号。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubUin(const uint64_t& _subUin);
@@ -248,18 +220,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间 秒级时间戳。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间 秒级时间戳。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCreateTime() const;
 
                     /**
                      * 设置创建时间 秒级时间戳。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间 秒级时间戳。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const int64_t& _createTime);
@@ -273,18 +241,14 @@ namespace TencentCloud
 
                     /**
                      * 获取更新时间 秒级时间戳。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 更新时间 秒级时间戳。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetUpdateTime() const;
 
                     /**
                      * 设置更新时间 秒级时间戳。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updateTime 更新时间 秒级时间戳。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdateTime(const int64_t& _updateTime);
@@ -300,14 +264,12 @@ namespace TencentCloud
 
                     /**
                      * 通知内容模板ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_noticeContentId;
                     bool m_noticeContentIdHasBeenSet;
 
                     /**
                      * 通知内容模板名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -317,14 +279,12 @@ namespace TencentCloud
 
 0： 中文
 1： 英文
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 通知内容模板信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<NoticeContent> m_noticeContents;
                     bool m_noticeContentsHasBeenSet;
@@ -334,35 +294,30 @@ namespace TencentCloud
 
 0： 用户自定义
 1： 系统内置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_flag;
                     bool m_flagHasBeenSet;
 
                     /**
                      * 创建者主账号。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
                      * 创建/修改者子账号。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_subUin;
                     bool m_subUinHasBeenSet;
 
                     /**
                      * 创建时间 秒级时间戳。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 更新时间 秒级时间戳。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_updateTime;
                     bool m_updateTimeHasBeenSet;

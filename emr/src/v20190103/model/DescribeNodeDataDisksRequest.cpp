@@ -24,7 +24,11 @@ using namespace std;
 
 DescribeNodeDataDisksRequest::DescribeNodeDataDisksRequest() :
     m_instanceIdHasBeenSet(false),
-    m_cvmInstanceIdsHasBeenSet(false)
+    m_cvmInstanceIdsHasBeenSet(false),
+    m_filtersHasBeenSet(false),
+    m_innerSearchHasBeenSet(false),
+    m_limitHasBeenSet(false),
+    m_offsetHasBeenSet(false)
 {
 }
 
@@ -54,6 +58,45 @@ string DescribeNodeDataDisksRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_innerSearchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InnerSearch";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_innerSearch.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
     }
 
 
@@ -94,6 +137,70 @@ void DescribeNodeDataDisksRequest::SetCvmInstanceIds(const vector<string>& _cvmI
 bool DescribeNodeDataDisksRequest::CvmInstanceIdsHasBeenSet() const
 {
     return m_cvmInstanceIdsHasBeenSet;
+}
+
+vector<Filters> DescribeNodeDataDisksRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeNodeDataDisksRequest::SetFilters(const vector<Filters>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeNodeDataDisksRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
+}
+
+string DescribeNodeDataDisksRequest::GetInnerSearch() const
+{
+    return m_innerSearch;
+}
+
+void DescribeNodeDataDisksRequest::SetInnerSearch(const string& _innerSearch)
+{
+    m_innerSearch = _innerSearch;
+    m_innerSearchHasBeenSet = true;
+}
+
+bool DescribeNodeDataDisksRequest::InnerSearchHasBeenSet() const
+{
+    return m_innerSearchHasBeenSet;
+}
+
+uint64_t DescribeNodeDataDisksRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeNodeDataDisksRequest::SetLimit(const uint64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeNodeDataDisksRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
+}
+
+uint64_t DescribeNodeDataDisksRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeNodeDataDisksRequest::SetOffset(const uint64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeNodeDataDisksRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
 }
 
 

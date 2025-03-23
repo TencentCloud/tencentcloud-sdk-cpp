@@ -57,6 +57,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/ModifyAccelerationDomainStatusesResponse.h
   include/tencentcloud/teo/v20220901/model/DeployRecord.h
   include/tencentcloud/teo/v20220901/model/RuleExtraParameter.h
+  include/tencentcloud/teo/v20220901/model/ModifyL7AccRulePriorityRequest.h
   include/tencentcloud/teo/v20220901/model/WebSocket.h
   include/tencentcloud/teo/v20220901/model/ModifyAccelerationDomainRequest.h
   include/tencentcloud/teo/v20220901/model/ModifyContentIdentifierResponse.h
@@ -235,6 +236,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/MaxAgeParameters.h
   include/tencentcloud/teo/v20220901/model/ModifyApplicationProxyRuleResponse.h
   include/tencentcloud/teo/v20220901/model/FailReason.h
+  include/tencentcloud/teo/v20220901/model/ModifyL7AccRulePriorityResponse.h
   include/tencentcloud/teo/v20220901/model/ModifyRequestHeaderParameters.h
   include/tencentcloud/teo/v20220901/model/CreateConfigGroupVersionResponse.h
   include/tencentcloud/teo/v20220901/model/DownloadL7LogsRequest.h
@@ -622,6 +624,7 @@ set(teo_src
   src/v20220901/model/ModifyAccelerationDomainStatusesResponse.cpp
   src/v20220901/model/DeployRecord.cpp
   src/v20220901/model/RuleExtraParameter.cpp
+  src/v20220901/model/ModifyL7AccRulePriorityRequest.cpp
   src/v20220901/model/WebSocket.cpp
   src/v20220901/model/ModifyAccelerationDomainRequest.cpp
   src/v20220901/model/ModifyContentIdentifierResponse.cpp
@@ -800,6 +803,7 @@ set(teo_src
   src/v20220901/model/MaxAgeParameters.cpp
   src/v20220901/model/ModifyApplicationProxyRuleResponse.cpp
   src/v20220901/model/FailReason.cpp
+  src/v20220901/model/ModifyL7AccRulePriorityResponse.cpp
   src/v20220901/model/ModifyRequestHeaderParameters.cpp
   src/v20220901/model/CreateConfigGroupVersionResponse.cpp
   src/v20220901/model/DownloadL7LogsRequest.cpp

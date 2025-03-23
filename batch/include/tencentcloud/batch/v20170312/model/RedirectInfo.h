@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标准输出重定向路径; 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StdoutRedirectPath 标准输出重定向路径; 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStdoutRedirectPath() const;
 
                     /**
                      * 设置标准输出重定向路径; 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _stdoutRedirectPath 标准输出重定向路径; 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStdoutRedirectPath(const std::string& _stdoutRedirectPath);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标准错误重定向路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StderrRedirectPath 标准错误重定向路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStderrRedirectPath() const;
 
                     /**
                      * 设置标准错误重定向路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _stderrRedirectPath 标准错误重定向路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStderrRedirectPath(const std::string& _stderrRedirectPath);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标准输出重定向文件名，支持三个占位符${BATCH_JOB_ID}、${BATCH_TASK_NAME}、${BATCH_TASK_INSTANCE_INDEX}
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StdoutRedirectFileName 标准输出重定向文件名，支持三个占位符${BATCH_JOB_ID}、${BATCH_TASK_NAME}、${BATCH_TASK_INSTANCE_INDEX}
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStdoutRedirectFileName() const;
 
                     /**
                      * 设置标准输出重定向文件名，支持三个占位符${BATCH_JOB_ID}、${BATCH_TASK_NAME}、${BATCH_TASK_INSTANCE_INDEX}
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _stdoutRedirectFileName 标准输出重定向文件名，支持三个占位符${BATCH_JOB_ID}、${BATCH_TASK_NAME}、${BATCH_TASK_INSTANCE_INDEX}
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStdoutRedirectFileName(const std::string& _stdoutRedirectFileName);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标准错误重定向文件名，支持三个占位符${BATCH_JOB_ID}、${BATCH_TASK_NAME}、${BATCH_TASK_INSTANCE_INDEX}
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StderrRedirectFileName 标准错误重定向文件名，支持三个占位符${BATCH_JOB_ID}、${BATCH_TASK_NAME}、${BATCH_TASK_INSTANCE_INDEX}
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStderrRedirectFileName() const;
 
                     /**
                      * 设置标准错误重定向文件名，支持三个占位符${BATCH_JOB_ID}、${BATCH_TASK_NAME}、${BATCH_TASK_INSTANCE_INDEX}
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _stderrRedirectFileName 标准错误重定向文件名，支持三个占位符${BATCH_JOB_ID}、${BATCH_TASK_NAME}、${BATCH_TASK_INSTANCE_INDEX}
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStderrRedirectFileName(const std::string& _stderrRedirectFileName);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 标准输出重定向路径; 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_stdoutRedirectPath;
                     bool m_stdoutRedirectPathHasBeenSet;
 
                     /**
                      * 标准错误重定向路径
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_stderrRedirectPath;
                     bool m_stderrRedirectPathHasBeenSet;
 
                     /**
                      * 标准输出重定向文件名，支持三个占位符${BATCH_JOB_ID}、${BATCH_TASK_NAME}、${BATCH_TASK_INSTANCE_INDEX}
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_stdoutRedirectFileName;
                     bool m_stdoutRedirectFileNameHasBeenSet;
 
                     /**
                      * 标准错误重定向文件名，支持三个占位符${BATCH_JOB_ID}、${BATCH_TASK_NAME}、${BATCH_TASK_INSTANCE_INDEX}
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_stderrRedirectFileName;
                     bool m_stderrRedirectFileNameHasBeenSet;

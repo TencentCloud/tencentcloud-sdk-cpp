@@ -75,9 +75,7 @@ namespace TencentCloud
 
                     /**
                      * 获取云盘列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AttachCBSSpec 云盘列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DiskSpec> GetAttachCBSSpec() const;
@@ -105,7 +103,6 @@ namespace TencentCloud
 
                     /**
                      * 云盘列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DiskSpec> m_attachCBSSpec;
                     bool m_attachCBSSpecHasBeenSet;

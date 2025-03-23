@@ -3996,6 +3996,49 @@ IotexplorerClient::DescribeTopicRuleOutcomeCallable IotexplorerClient::DescribeT
     return task->get_future();
 }
 
+IotexplorerClient::DescribeUnbindedDevicesOutcome IotexplorerClient::DescribeUnbindedDevices(const DescribeUnbindedDevicesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUnbindedDevices");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUnbindedDevicesResponse rsp = DescribeUnbindedDevicesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUnbindedDevicesOutcome(rsp);
+        else
+            return DescribeUnbindedDevicesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUnbindedDevicesOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeUnbindedDevicesAsync(const DescribeUnbindedDevicesRequest& request, const DescribeUnbindedDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUnbindedDevices(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DescribeUnbindedDevicesOutcomeCallable IotexplorerClient::DescribeUnbindedDevicesCallable(const DescribeUnbindedDevicesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUnbindedDevicesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUnbindedDevices(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::DescribeVideoLicenseOutcome IotexplorerClient::DescribeVideoLicense(const DescribeVideoLicenseRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeVideoLicense");

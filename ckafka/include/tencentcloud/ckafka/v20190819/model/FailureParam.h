@@ -134,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取DIP Topic类型死信队列
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicParam DIP Topic类型死信队列
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TopicParam GetTopicParam() const;
 
                     /**
                      * 设置DIP Topic类型死信队列
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topicParam DIP Topic类型死信队列
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopicParam(const TopicParam& _topicParam);
@@ -159,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取死信队列类型，CKAFKA，TOPIC
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DlqType 死信队列类型，CKAFKA，TOPIC
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDlqType() const;
 
                     /**
                      * 设置死信队列类型，CKAFKA，TOPIC
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dlqType 死信队列类型，CKAFKA，TOPIC
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDlqType(const std::string& _dlqType);
@@ -210,14 +202,12 @@ namespace TencentCloud
 
                     /**
                      * DIP Topic类型死信队列
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TopicParam m_topicParam;
                     bool m_topicParamHasBeenSet;
 
                     /**
                      * 死信队列类型，CKAFKA，TOPIC
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dlqType;
                     bool m_dlqTypeHasBeenSet;

@@ -14,22 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/antiddos/v20200309/model/DescribeListProtectThresholdConfigResponse.h>
+#include <tencentcloud/monitor/v20180724/model/CreateConditionsTemplateResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Antiddos::V20200309::Model;
+using namespace TencentCloud::Monitor::V20180724::Model;
 using namespace std;
 
-DescribeListProtectThresholdConfigResponse::DescribeListProtectThresholdConfigResponse() :
-    m_totalHasBeenSet(false),
-    m_configListHasBeenSet(false)
+CreateConditionsTemplateResponse::CreateConditionsTemplateResponse() :
+    m_groupIDHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeListProtectThresholdConfigResponse::Deserialize(const string &payload)
+CoreInternalOutcome CreateConditionsTemplateResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,67 +62,32 @@ CoreInternalOutcome DescribeListProtectThresholdConfigResponse::Deserialize(cons
     }
 
 
-    if (rsp.HasMember("Total") && !rsp["Total"].IsNull())
+    if (rsp.HasMember("GroupID") && !rsp["GroupID"].IsNull())
     {
-        if (!rsp["Total"].IsUint64())
+        if (!rsp["GroupID"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `Total` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `GroupID` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_total = rsp["Total"].GetUint64();
-        m_totalHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("ConfigList") && !rsp["ConfigList"].IsNull())
-    {
-        if (!rsp["ConfigList"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `ConfigList` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["ConfigList"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            ProtectThresholdRelation item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_configList.push_back(item);
-        }
-        m_configListHasBeenSet = true;
+        m_groupID = rsp["GroupID"].GetInt64();
+        m_groupIDHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeListProtectThresholdConfigResponse::ToJsonString() const
+string CreateConditionsTemplateResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_totalHasBeenSet)
+    if (m_groupIDHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Total";
+        string key = "GroupID";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_total, allocator);
-    }
-
-    if (m_configListHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ConfigList";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_configList.begin(); itr != m_configList.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
+        value.AddMember(iKey, m_groupID, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -138,24 +102,14 @@ string DescribeListProtectThresholdConfigResponse::ToJsonString() const
 }
 
 
-uint64_t DescribeListProtectThresholdConfigResponse::GetTotal() const
+int64_t CreateConditionsTemplateResponse::GetGroupID() const
 {
-    return m_total;
+    return m_groupID;
 }
 
-bool DescribeListProtectThresholdConfigResponse::TotalHasBeenSet() const
+bool CreateConditionsTemplateResponse::GroupIDHasBeenSet() const
 {
-    return m_totalHasBeenSet;
-}
-
-vector<ProtectThresholdRelation> DescribeListProtectThresholdConfigResponse::GetConfigList() const
-{
-    return m_configList;
-}
-
-bool DescribeListProtectThresholdConfigResponse::ConfigListHasBeenSet() const
-{
-    return m_configListHasBeenSet;
+    return m_groupIDHasBeenSet;
 }
 
 

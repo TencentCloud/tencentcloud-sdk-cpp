@@ -24,7 +24,8 @@ ProdSchedulerTask::ProdSchedulerTask() :
     m_workflowIdHasBeenSet(false),
     m_taskIdHasBeenSet(false),
     m_taskNameHasBeenSet(false),
-    m_cycleTypeHasBeenSet(false)
+    m_cycleTypeHasBeenSet(false),
+    m_taskTypeHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome ProdSchedulerTask::Deserialize(const rapidjson::Value &value
         m_cycleTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("TaskType") && !value["TaskType"].IsNull())
+    {
+        if (!value["TaskType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProdSchedulerTask.TaskType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskType = string(value["TaskType"].GetString());
+        m_taskTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void ProdSchedulerTask::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "CycleType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cycleType, allocator);
+    }
+
+    if (m_taskTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void ProdSchedulerTask::SetCycleType(const int64_t& _cycleType)
 bool ProdSchedulerTask::CycleTypeHasBeenSet() const
 {
     return m_cycleTypeHasBeenSet;
+}
+
+string ProdSchedulerTask::GetTaskType() const
+{
+    return m_taskType;
+}
+
+void ProdSchedulerTask::SetTaskType(const string& _taskType)
+{
+    m_taskType = _taskType;
+    m_taskTypeHasBeenSet = true;
+}
+
+bool ProdSchedulerTask::TaskTypeHasBeenSet() const
+{
+    return m_taskTypeHasBeenSet;
 }
 

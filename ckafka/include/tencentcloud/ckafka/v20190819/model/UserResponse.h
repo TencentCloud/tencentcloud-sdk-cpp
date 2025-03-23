@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取符合条件的用户列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Users 符合条件的用户列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<User> GetUsers() const;
 
                     /**
                      * 设置符合条件的用户列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _users 符合条件的用户列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUsers(const std::vector<User>& _users);
@@ -97,7 +93,6 @@ namespace TencentCloud
 
                     /**
                      * 符合条件的用户列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<User> m_users;
                     bool m_usersHasBeenSet;

@@ -27,7 +27,8 @@ InquirePriceRenewEmrResponse::InquirePriceRenewEmrResponse() :
     m_originalCostHasBeenSet(false),
     m_discountCostHasBeenSet(false),
     m_timeUnitHasBeenSet(false),
-    m_timeSpanHasBeenSet(false)
+    m_timeSpanHasBeenSet(false),
+    m_nodeRenewPriceDetailsHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,26 @@ CoreInternalOutcome InquirePriceRenewEmrResponse::Deserialize(const string &payl
         m_timeSpanHasBeenSet = true;
     }
 
+    if (rsp.HasMember("NodeRenewPriceDetails") && !rsp["NodeRenewPriceDetails"].IsNull())
+    {
+        if (!rsp["NodeRenewPriceDetails"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `NodeRenewPriceDetails` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["NodeRenewPriceDetails"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            NodeRenewPriceDetail item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_nodeRenewPriceDetails.push_back(item);
+        }
+        m_nodeRenewPriceDetailsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -145,6 +166,21 @@ string InquirePriceRenewEmrResponse::ToJsonString() const
         string key = "TimeSpan";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_timeSpan, allocator);
+    }
+
+    if (m_nodeRenewPriceDetailsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeRenewPriceDetails";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_nodeRenewPriceDetails.begin(); itr != m_nodeRenewPriceDetails.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -197,6 +233,16 @@ int64_t InquirePriceRenewEmrResponse::GetTimeSpan() const
 bool InquirePriceRenewEmrResponse::TimeSpanHasBeenSet() const
 {
     return m_timeSpanHasBeenSet;
+}
+
+vector<NodeRenewPriceDetail> InquirePriceRenewEmrResponse::GetNodeRenewPriceDetails() const
+{
+    return m_nodeRenewPriceDetails;
+}
+
+bool InquirePriceRenewEmrResponse::NodeRenewPriceDetailsHasBeenSet() const
+{
+    return m_nodeRenewPriceDetailsHasBeenSet;
 }
 
 

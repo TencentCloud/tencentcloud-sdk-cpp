@@ -91,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用程序执行结束的exit code
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExitCode 应用程序执行结束的exit code
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetExitCode() const;
 
                     /**
                      * 设置应用程序执行结束的exit code
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _exitCode 应用程序执行结束的exit code
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExitCode(const int64_t& _exitCode);
@@ -137,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务实例运行时所在计算节点（例如CVM）的InstanceId。任务实例未运行或者完结时，本字段为空。任务实例重试时，本字段会随之变化
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ComputeNodeInstanceId 任务实例运行时所在计算节点（例如CVM）的InstanceId。任务实例未运行或者完结时，本字段为空。任务实例重试时，本字段会随之变化
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetComputeNodeInstanceId() const;
 
                     /**
                      * 设置任务实例运行时所在计算节点（例如CVM）的InstanceId。任务实例未运行或者完结时，本字段为空。任务实例重试时，本字段会随之变化
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _computeNodeInstanceId 任务实例运行时所在计算节点（例如CVM）的InstanceId。任务实例未运行或者完结时，本字段为空。任务实例重试时，本字段会随之变化
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetComputeNodeInstanceId(const std::string& _computeNodeInstanceId);
@@ -183,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取启动时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LaunchTime 启动时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLaunchTime() const;
 
                     /**
                      * 设置启动时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _launchTime 启动时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLaunchTime(const std::string& _launchTime);
@@ -208,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取开始运行时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RunningTime 开始运行时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRunningTime() const;
 
                     /**
                      * 设置开始运行时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _runningTime 开始运行时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRunningTime(const std::string& _runningTime);
@@ -233,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endTime 结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -314,7 +294,6 @@ namespace TencentCloud
 
                     /**
                      * 应用程序执行结束的exit code
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_exitCode;
                     bool m_exitCodeHasBeenSet;
@@ -327,7 +306,6 @@ namespace TencentCloud
 
                     /**
                      * 任务实例运行时所在计算节点（例如CVM）的InstanceId。任务实例未运行或者完结时，本字段为空。任务实例重试时，本字段会随之变化
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_computeNodeInstanceId;
                     bool m_computeNodeInstanceIdHasBeenSet;
@@ -340,21 +318,18 @@ namespace TencentCloud
 
                     /**
                      * 启动时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_launchTime;
                     bool m_launchTimeHasBeenSet;
 
                     /**
                      * 开始运行时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_runningTime;
                     bool m_runningTimeHasBeenSet;
 
                     /**
                      * 结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

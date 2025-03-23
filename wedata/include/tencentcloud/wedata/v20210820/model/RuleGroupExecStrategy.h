@@ -497,6 +497,132 @@ namespace TencentCloud
                      */
                     bool DlcGroupNameHasBeenSet() const;
 
+                    /**
+                     * 获取任务名称
+                     * @return RuleGroupName 任务名称
+                     * 
+                     */
+                    std::string GetRuleGroupName() const;
+
+                    /**
+                     * 设置任务名称
+                     * @param _ruleGroupName 任务名称
+                     * 
+                     */
+                    void SetRuleGroupName(const std::string& _ruleGroupName);
+
+                    /**
+                     * 判断参数 RuleGroupName 是否已赋值
+                     * @return RuleGroupName 是否已赋值
+                     * 
+                     */
+                    bool RuleGroupNameHasBeenSet() const;
+
+                    /**
+                     * 获取数据库名称
+                     * @return DatabaseName 数据库名称
+                     * 
+                     */
+                    std::string GetDatabaseName() const;
+
+                    /**
+                     * 设置数据库名称
+                     * @param _databaseName 数据库名称
+                     * 
+                     */
+                    void SetDatabaseName(const std::string& _databaseName);
+
+                    /**
+                     * 判断参数 DatabaseName 是否已赋值
+                     * @return DatabaseName 是否已赋值
+                     * 
+                     */
+                    bool DatabaseNameHasBeenSet() const;
+
+                    /**
+                     * 获取schema名称
+                     * @return SchemaName schema名称
+                     * 
+                     */
+                    std::string GetSchemaName() const;
+
+                    /**
+                     * 设置schema名称
+                     * @param _schemaName schema名称
+                     * 
+                     */
+                    void SetSchemaName(const std::string& _schemaName);
+
+                    /**
+                     * 判断参数 SchemaName 是否已赋值
+                     * @return SchemaName 是否已赋值
+                     * 
+                     */
+                    bool SchemaNameHasBeenSet() const;
+
+                    /**
+                     * 获取表名称
+                     * @return TableName 表名称
+                     * 
+                     */
+                    std::string GetTableName() const;
+
+                    /**
+                     * 设置表名称
+                     * @param _tableName 表名称
+                     * 
+                     */
+                    void SetTableName(const std::string& _tableName);
+
+                    /**
+                     * 判断参数 TableName 是否已赋值
+                     * @return TableName 是否已赋值
+                     * 
+                     */
+                    bool TableNameHasBeenSet() const;
+
+                    /**
+                     * 获取数据源id
+                     * @return DatasourceId 数据源id
+                     * 
+                     */
+                    std::string GetDatasourceId() const;
+
+                    /**
+                     * 设置数据源id
+                     * @param _datasourceId 数据源id
+                     * 
+                     */
+                    void SetDatasourceId(const std::string& _datasourceId);
+
+                    /**
+                     * 判断参数 DatasourceId 是否已赋值
+                     * @return DatasourceId 是否已赋值
+                     * 
+                     */
+                    bool DatasourceIdHasBeenSet() const;
+
+                    /**
+                     * 获取任务描述
+                     * @return Description 任务描述
+                     * 
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置任务描述
+                     * @param _description 任务描述
+                     * 
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     * 
+                     */
+                    bool DescriptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -624,6 +750,42 @@ namespace TencentCloud
                      */
                     std::string m_dlcGroupName;
                     bool m_dlcGroupNameHasBeenSet;
+
+                    /**
+                     * 任务名称
+                     */
+                    std::string m_ruleGroupName;
+                    bool m_ruleGroupNameHasBeenSet;
+
+                    /**
+                     * 数据库名称
+                     */
+                    std::string m_databaseName;
+                    bool m_databaseNameHasBeenSet;
+
+                    /**
+                     * schema名称
+                     */
+                    std::string m_schemaName;
+                    bool m_schemaNameHasBeenSet;
+
+                    /**
+                     * 表名称
+                     */
+                    std::string m_tableName;
+                    bool m_tableNameHasBeenSet;
+
+                    /**
+                     * 数据源id
+                     */
+                    std::string m_datasourceId;
+                    bool m_datasourceIdHasBeenSet;
+
+                    /**
+                     * 任务描述
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
 
                 };
             }

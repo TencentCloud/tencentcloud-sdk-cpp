@@ -46,27 +46,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取指标列表
-                     * @return Metrics 指标列表
-                     * 
-                     */
-                    std::vector<QueryMetricItem> GetMetrics() const;
-
-                    /**
-                     * 设置指标列表
-                     * @param _metrics 指标列表
-                     * 
-                     */
-                    void SetMetrics(const std::vector<QueryMetricItem>& _metrics);
-
-                    /**
-                     * 判断参数 Metrics 是否已赋值
-                     * @return Metrics 是否已赋值
-                     * 
-                     */
-                    bool MetricsHasBeenSet() const;
-
-                    /**
                      * 获取业务系统 ID
                      * @return InstanceId 业务系统 ID
                      * 
@@ -86,6 +65,27 @@ namespace TencentCloud
                      * 
                      */
                     bool InstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取指标列表
+                     * @return Metrics 指标列表
+                     * 
+                     */
+                    std::vector<QueryMetricItem> GetMetrics() const;
+
+                    /**
+                     * 设置指标列表
+                     * @param _metrics 指标列表
+                     * 
+                     */
+                    void SetMetrics(const std::vector<QueryMetricItem>& _metrics);
+
+                    /**
+                     * 判断参数 Metrics 是否已赋值
+                     * @return Metrics 是否已赋值
+                     * 
+                     */
+                    bool MetricsHasBeenSet() const;
 
                     /**
                      * 获取开始时间（单位为秒）
@@ -130,6 +130,27 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
+                     * 获取聚合维度
+                     * @return GroupBy 聚合维度
+                     * 
+                     */
+                    std::vector<std::string> GetGroupBy() const;
+
+                    /**
+                     * 设置聚合维度
+                     * @param _groupBy 聚合维度
+                     * 
+                     */
+                    void SetGroupBy(const std::vector<std::string>& _groupBy);
+
+                    /**
+                     * 判断参数 GroupBy 是否已赋值
+                     * @return GroupBy 是否已赋值
+                     * 
+                     */
+                    bool GroupByHasBeenSet() const;
+
+                    /**
                      * 获取过滤条件
                      * @return Filters 过滤条件
                      * 
@@ -170,27 +191,6 @@ namespace TencentCloud
                      * 
                      */
                     bool OrFiltersHasBeenSet() const;
-
-                    /**
-                     * 获取聚合维度
-                     * @return GroupBy 聚合维度
-                     * 
-                     */
-                    std::vector<std::string> GetGroupBy() const;
-
-                    /**
-                     * 设置聚合维度
-                     * @param _groupBy 聚合维度
-                     * 
-                     */
-                    void SetGroupBy(const std::vector<std::string>& _groupBy);
-
-                    /**
-                     * 判断参数 GroupBy 是否已赋值
-                     * @return GroupBy 是否已赋值
-                     * 
-                     */
-                    bool GroupByHasBeenSet() const;
 
                     /**
                      * 获取排序
@@ -382,16 +382,16 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 指标列表
-                     */
-                    std::vector<QueryMetricItem> m_metrics;
-                    bool m_metricsHasBeenSet;
-
-                    /**
                      * 业务系统 ID
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 指标列表
+                     */
+                    std::vector<QueryMetricItem> m_metrics;
+                    bool m_metricsHasBeenSet;
 
                     /**
                      * 开始时间（单位为秒）
@@ -406,6 +406,12 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
+                     * 聚合维度
+                     */
+                    std::vector<std::string> m_groupBy;
+                    bool m_groupByHasBeenSet;
+
+                    /**
                      * 过滤条件
                      */
                     std::vector<Filter> m_filters;
@@ -416,12 +422,6 @@ namespace TencentCloud
                      */
                     std::vector<Filter> m_orFilters;
                     bool m_orFiltersHasBeenSet;
-
-                    /**
-                     * 聚合维度
-                     */
-                    std::vector<std::string> m_groupBy;
-                    bool m_groupByHasBeenSet;
 
                     /**
                      * 排序

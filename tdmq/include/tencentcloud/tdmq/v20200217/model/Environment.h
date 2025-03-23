@@ -196,14 +196,18 @@ namespace TencentCloud
 
                     /**
                      * 获取Topic数量
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicNum Topic数量
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTopicNum() const;
 
                     /**
                      * 设置Topic数量
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topicNum Topic数量
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopicNum(const int64_t& _topicNum);
@@ -217,14 +221,18 @@ namespace TencentCloud
 
                     /**
                      * 获取消息保留策略
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return RetentionPolicy 消息保留策略
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RetentionPolicy GetRetentionPolicy() const;
 
                     /**
                      * 设置消息保留策略
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _retentionPolicy 消息保留策略
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRetentionPolicy(const RetentionPolicy& _retentionPolicy);
@@ -238,14 +246,18 @@ namespace TencentCloud
 
                     /**
                      * 获取是否自动创建订阅
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoSubscriptionCreation 是否自动创建订阅
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetAutoSubscriptionCreation() const;
 
                     /**
                      * 设置是否自动创建订阅
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _autoSubscriptionCreation 是否自动创建订阅
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAutoSubscriptionCreation(const bool& _autoSubscriptionCreation);
@@ -303,18 +315,21 @@ namespace TencentCloud
 
                     /**
                      * Topic数量
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_topicNum;
                     bool m_topicNumHasBeenSet;
 
                     /**
                      * 消息保留策略
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RetentionPolicy m_retentionPolicy;
                     bool m_retentionPolicyHasBeenSet;
 
                     /**
                      * 是否自动创建订阅
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_autoSubscriptionCreation;
                     bool m_autoSubscriptionCreationHasBeenSet;

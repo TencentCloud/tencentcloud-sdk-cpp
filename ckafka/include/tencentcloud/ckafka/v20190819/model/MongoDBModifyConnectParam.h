@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取MongoDB连接源的实例资源【不支持修改】
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Resource MongoDB连接源的实例资源【不支持修改】
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResource() const;
 
                     /**
                      * 设置MongoDB连接源的实例资源【不支持修改】
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resource MongoDB连接源的实例资源【不支持修改】
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResource(const std::string& _resource);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取MongoDB的连接port【不支持修改】
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Port MongoDB的连接port【不支持修改】
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置MongoDB的连接port【不支持修改】
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _port MongoDB的连接port【不支持修改】
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPort(const int64_t& _port);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取MongoDB连接源的实例vip【不支持修改】
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceVip MongoDB连接源的实例vip【不支持修改】
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetServiceVip() const;
 
                     /**
                      * 设置MongoDB连接源的实例vip【不支持修改】
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serviceVip MongoDB连接源的实例vip【不支持修改】
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServiceVip(const std::string& _serviceVip);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取MongoDB连接源的vpcId【不支持修改】
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UniqVpcId MongoDB连接源的vpcId【不支持修改】
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUniqVpcId() const;
 
                     /**
                      * 设置MongoDB连接源的vpcId【不支持修改】
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uniqVpcId MongoDB连接源的vpcId【不支持修改】
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUniqVpcId(const std::string& _uniqVpcId);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取MongoDB连接源的用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserName MongoDB连接源的用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置MongoDB连接源的用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userName MongoDB连接源的用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserName(const std::string& _userName);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取MongoDB连接源的密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Password MongoDB连接源的密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPassword() const;
 
                     /**
                      * 设置MongoDB连接源的密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _password MongoDB连接源的密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPassword(const std::string& _password);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取MongoDB连接源是否为自建集群【不支持修改】
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SelfBuilt MongoDB连接源是否为自建集群【不支持修改】
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetSelfBuilt() const;
 
                     /**
                      * 设置MongoDB连接源是否为自建集群【不支持修改】
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _selfBuilt MongoDB连接源是否为自建集群【不支持修改】
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSelfBuilt(const bool& _selfBuilt);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否更新到关联的Datahub任务
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsUpdate 是否更新到关联的Datahub任务
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsUpdate() const;
 
                     /**
                      * 设置是否更新到关联的Datahub任务
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isUpdate 是否更新到关联的Datahub任务
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsUpdate(const bool& _isUpdate);
@@ -250,56 +218,48 @@ namespace TencentCloud
 
                     /**
                      * MongoDB连接源的实例资源【不支持修改】
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resource;
                     bool m_resourceHasBeenSet;
 
                     /**
                      * MongoDB的连接port【不支持修改】
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
                      * MongoDB连接源的实例vip【不支持修改】
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serviceVip;
                     bool m_serviceVipHasBeenSet;
 
                     /**
                      * MongoDB连接源的vpcId【不支持修改】
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uniqVpcId;
                     bool m_uniqVpcIdHasBeenSet;
 
                     /**
                      * MongoDB连接源的用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;
 
                     /**
                      * MongoDB连接源的密码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
 
                     /**
                      * MongoDB连接源是否为自建集群【不支持修改】
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_selfBuilt;
                     bool m_selfBuiltHasBeenSet;
 
                     /**
                      * 是否更新到关联的Datahub任务
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isUpdate;
                     bool m_isUpdateHasBeenSet;

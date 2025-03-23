@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Kafka连接源的实例资源, 非自建时必填，NetworkType=VPC时传clb实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Resource Kafka连接源的实例资源, 非自建时必填，NetworkType=VPC时传clb实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResource() const;
 
                     /**
                      * 设置Kafka连接源的实例资源, 非自建时必填，NetworkType=VPC时传clb实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resource Kafka连接源的实例资源, 非自建时必填，NetworkType=VPC时传clb实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResource(const std::string& _resource);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否为自建集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SelfBuilt 是否为自建集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetSelfBuilt() const;
 
                     /**
                      * 设置是否为自建集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _selfBuilt 是否为自建集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSelfBuilt(const bool& _selfBuilt);
@@ -123,18 +115,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Kafka连接的broker地址, NetworkType=PUBLIC公网时必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BrokerAddress Kafka连接的broker地址, NetworkType=PUBLIC公网时必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBrokerAddress() const;
 
                     /**
                      * 设置Kafka连接的broker地址, NetworkType=PUBLIC公网时必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _brokerAddress Kafka连接的broker地址, NetworkType=PUBLIC公网时必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBrokerAddress(const std::string& _brokerAddress);
@@ -148,18 +136,14 @@ namespace TencentCloud
 
                     /**
                      * 获取CKafka连接源的实例资源地域, 跨地域时必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region CKafka连接源的实例资源地域, 跨地域时必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置CKafka连接源的实例资源地域, 跨地域时必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _region CKafka连接源的实例资源地域, 跨地域时必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -175,14 +159,12 @@ namespace TencentCloud
 
                     /**
                      * Kafka连接源的实例资源, 非自建时必填，NetworkType=VPC时传clb实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resource;
                     bool m_resourceHasBeenSet;
 
                     /**
                      * 是否为自建集群
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_selfBuilt;
                     bool m_selfBuiltHasBeenSet;
@@ -196,14 +178,12 @@ namespace TencentCloud
 
                     /**
                      * Kafka连接的broker地址, NetworkType=PUBLIC公网时必填
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_brokerAddress;
                     bool m_brokerAddressHasBeenSet;
 
                     /**
                      * CKafka连接源的实例资源地域, 跨地域时必填
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;

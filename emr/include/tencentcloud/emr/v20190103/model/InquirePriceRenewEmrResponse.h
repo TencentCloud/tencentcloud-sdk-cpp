@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/emr/v20190103/model/NodeRenewPriceDetail.h>
 
 
 namespace TencentCloud
@@ -101,6 +102,20 @@ namespace TencentCloud
                      */
                     bool TimeSpanHasBeenSet() const;
 
+                    /**
+                     * 获取节点续费询价明细列表
+                     * @return NodeRenewPriceDetails 节点续费询价明细列表
+                     * 
+                     */
+                    std::vector<NodeRenewPriceDetail> GetNodeRenewPriceDetails() const;
+
+                    /**
+                     * 判断参数 NodeRenewPriceDetails 是否已赋值
+                     * @return NodeRenewPriceDetails 是否已赋值
+                     * 
+                     */
+                    bool NodeRenewPriceDetailsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -127,6 +142,12 @@ namespace TencentCloud
                      */
                     int64_t m_timeSpan;
                     bool m_timeSpanHasBeenSet;
+
+                    /**
+                     * 节点续费询价明细列表
+                     */
+                    std::vector<NodeRenewPriceDetail> m_nodeRenewPriceDetails;
+                    bool m_nodeRenewPriceDetailsHasBeenSet;
 
                 };
             }

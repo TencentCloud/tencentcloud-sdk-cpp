@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicId 主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
                      * 设置主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topicId 主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主题名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicName 主题名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTopicName() const;
 
                     /**
                      * 设置主题名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topicName 主题名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopicName(const std::string& _topicName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分区数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PartitionNum 分区数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPartitionNum() const;
 
                     /**
                      * 设置分区数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _partitionNum 分区数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPartitionNum(const uint64_t& _partitionNum);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取副本数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReplicaNum 副本数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetReplicaNum() const;
 
                     /**
                      * 设置副本数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _replicaNum 副本数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReplicaNum(const uint64_t& _replicaNum);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Topic 流量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicTraffic Topic 流量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTopicTraffic() const;
 
                     /**
                      * 设置Topic 流量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topicTraffic Topic 流量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopicTraffic(const std::string& _topicTraffic);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取topic消息堆积/占用磁盘
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MessageHeap topic消息堆积/占用磁盘
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMessageHeap() const;
 
                     /**
                      * 设置topic消息堆积/占用磁盘
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _messageHeap topic消息堆积/占用磁盘
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMessageHeap(const uint64_t& _messageHeap);
@@ -200,42 +176,36 @@ namespace TencentCloud
 
                     /**
                      * 主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
 
                     /**
                      * 主题名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;
 
                     /**
                      * 分区数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_partitionNum;
                     bool m_partitionNumHasBeenSet;
 
                     /**
                      * 副本数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_replicaNum;
                     bool m_replicaNumHasBeenSet;
 
                     /**
                      * Topic 流量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_topicTraffic;
                     bool m_topicTrafficHasBeenSet;
 
                     /**
                      * topic消息堆积/占用磁盘
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_messageHeap;
                     bool m_messageHeapHasBeenSet;

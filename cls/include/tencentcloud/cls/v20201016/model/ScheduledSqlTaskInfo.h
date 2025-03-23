@@ -414,18 +414,14 @@ namespace TencentCloud
 
                     /**
                      * 获取语法规则，0：Lucene语法，1：CQL语法
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SyntaxRule 语法规则，0：Lucene语法，1：CQL语法
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetSyntaxRule() const;
 
                     /**
                      * 设置语法规则，0：Lucene语法，1：CQL语法
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _syntaxRule 语法规则，0：Lucene语法，1：CQL语法
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSyntaxRule(const uint64_t& _syntaxRule);
@@ -439,18 +435,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启投递服务日志。1：关闭，2：开启。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HasServicesLog 是否开启投递服务日志。1：关闭，2：开启。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetHasServicesLog() const;
 
                     /**
                      * 设置是否开启投递服务日志。1：关闭，2：开启。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hasServicesLog 是否开启投递服务日志。1：关闭，2：开启。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHasServicesLog(const uint64_t& _hasServicesLog);
@@ -570,14 +562,12 @@ namespace TencentCloud
 
                     /**
                      * 语法规则，0：Lucene语法，1：CQL语法
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_syntaxRule;
                     bool m_syntaxRuleHasBeenSet;
 
                     /**
                      * 是否开启投递服务日志。1：关闭，2：开启。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_hasServicesLog;
                     bool m_hasServicesLogHasBeenSet;

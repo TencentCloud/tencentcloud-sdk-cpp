@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取ip或者网段
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Route ip或者网段
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRoute() const;
 
                     /**
                      * 设置ip或者网段
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _route ip或者网段
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRoute(const std::string& _route);
@@ -70,8 +74,10 @@ namespace TencentCloud
                     /**
                      * 获取策略 true就是允许，白名单或者 false 拒绝 黑名单
 
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Policy 策略 true就是允许，白名单或者 false 拒绝 黑名单
 
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetPolicy() const;
@@ -79,8 +85,10 @@ namespace TencentCloud
                     /**
                      * 设置策略 true就是允许，白名单或者 false 拒绝 黑名单
 
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _policy 策略 true就是允许，白名单或者 false 拒绝 黑名单
 
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPolicy(const bool& _policy);
@@ -94,14 +102,18 @@ namespace TencentCloud
 
                     /**
                      * 获取备注
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 备注
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remark 备注
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -117,6 +129,7 @@ namespace TencentCloud
 
                     /**
                      * ip或者网段
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_route;
                     bool m_routeHasBeenSet;
@@ -124,12 +137,14 @@ namespace TencentCloud
                     /**
                      * 策略 true就是允许，白名单或者 false 拒绝 黑名单
 
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_policy;
                     bool m_policyHasBeenSet;
 
                     /**
                      * 备注
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;

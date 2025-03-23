@@ -365,6 +365,27 @@ namespace TencentCloud
                      */
                     bool ShareableHasBeenSet() const;
 
+                    /**
+                     * 获取emr节点ID
+                     * @return EmrResourceId emr节点ID
+                     * 
+                     */
+                    std::string GetEmrResourceId() const;
+
+                    /**
+                     * 设置emr节点ID
+                     * @param _emrResourceId emr节点ID
+                     * 
+                     */
+                    void SetEmrResourceId(const std::string& _emrResourceId);
+
+                    /**
+                     * 判断参数 EmrResourceId 是否已赋值
+                     * @return EmrResourceId 是否已赋值
+                     * 
+                     */
+                    bool EmrResourceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -457,6 +478,12 @@ namespace TencentCloud
                      */
                     bool m_shareable;
                     bool m_shareableHasBeenSet;
+
+                    /**
+                     * emr节点ID
+                     */
+                    std::string m_emrResourceId;
+                    bool m_emrResourceIdHasBeenSet;
 
                 };
             }

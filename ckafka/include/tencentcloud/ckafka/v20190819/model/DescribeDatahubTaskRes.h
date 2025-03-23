@@ -137,18 +137,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SourceResource 数据源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DatahubResource GetSourceResource() const;
 
                     /**
                      * 设置数据源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sourceResource 数据源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSourceResource(const DatahubResource& _sourceResource);
@@ -162,18 +158,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据目标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TargetResource 数据目标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DatahubResource GetTargetResource() const;
 
                     /**
                      * 设置数据目标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _targetResource 数据目标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTargetResource(const DatahubResource& _targetResource);
@@ -187,18 +179,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Connection列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Connections Connection列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Connection> GetConnections() const;
 
                     /**
                      * 设置Connection列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _connections Connection列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConnections(const std::vector<Connection>& _connections);
@@ -212,18 +200,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 任务创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置任务创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 任务创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -262,18 +246,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据接入ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DatahubId 数据接入ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDatahubId() const;
 
                     /**
                      * 设置数据接入ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _datahubId 数据接入ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDatahubId(const std::string& _datahubId);
@@ -287,18 +267,14 @@ namespace TencentCloud
 
                     /**
                      * 获取绑定的SchemaId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SchemaId 绑定的SchemaId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSchemaId() const;
 
                     /**
                      * 设置绑定的SchemaId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _schemaId 绑定的SchemaId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSchemaId(const std::string& _schemaId);
@@ -312,18 +288,14 @@ namespace TencentCloud
 
                     /**
                      * 获取绑定的Schema名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SchemaName 绑定的Schema名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSchemaName() const;
 
                     /**
                      * 设置绑定的Schema名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _schemaName 绑定的Schema名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSchemaName(const std::string& _schemaName);
@@ -362,18 +334,14 @@ namespace TencentCloud
 
                     /**
                      * 获取异常信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrorMessage 异常信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetErrorMessage() const;
 
                     /**
                      * 设置异常信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _errorMessage 异常信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetErrorMessage(const std::string& _errorMessage);
@@ -387,18 +355,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 任务标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置任务标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 任务标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -438,28 +402,24 @@ namespace TencentCloud
 
                     /**
                      * 数据源
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DatahubResource m_sourceResource;
                     bool m_sourceResourceHasBeenSet;
 
                     /**
                      * 数据目标
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DatahubResource m_targetResource;
                     bool m_targetResourceHasBeenSet;
 
                     /**
                      * Connection列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Connection> m_connections;
                     bool m_connectionsHasBeenSet;
 
                     /**
                      * 任务创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
@@ -473,21 +433,18 @@ namespace TencentCloud
 
                     /**
                      * 数据接入ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_datahubId;
                     bool m_datahubIdHasBeenSet;
 
                     /**
                      * 绑定的SchemaId
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_schemaId;
                     bool m_schemaIdHasBeenSet;
 
                     /**
                      * 绑定的Schema名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_schemaName;
                     bool m_schemaNameHasBeenSet;
@@ -501,14 +458,12 @@ namespace TencentCloud
 
                     /**
                      * 异常信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errorMessage;
                     bool m_errorMessageHasBeenSet;
 
                     /**
                      * 任务标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;

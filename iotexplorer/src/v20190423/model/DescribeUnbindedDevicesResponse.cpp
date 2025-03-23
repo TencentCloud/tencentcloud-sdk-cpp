@@ -14,22 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/antiddos/v20200309/model/DescribeBlackWhiteIpListResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeUnbindedDevicesResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Antiddos::V20200309::Model;
+using namespace TencentCloud::Iotexplorer::V20190423::Model;
 using namespace std;
 
-DescribeBlackWhiteIpListResponse::DescribeBlackWhiteIpListResponse() :
-    m_blackIpListHasBeenSet(false),
-    m_whiteIpListHasBeenSet(false)
+DescribeUnbindedDevicesResponse::DescribeUnbindedDevicesResponse() :
+    m_unbindedDevicesHasBeenSet(false),
+    m_totalHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeBlackWhiteIpListResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeUnbindedDevicesResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,66 +63,67 @@ CoreInternalOutcome DescribeBlackWhiteIpListResponse::Deserialize(const string &
     }
 
 
-    if (rsp.HasMember("BlackIpList") && !rsp["BlackIpList"].IsNull())
+    if (rsp.HasMember("UnbindedDevices") && !rsp["UnbindedDevices"].IsNull())
     {
-        if (!rsp["BlackIpList"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `BlackIpList` is not array type"));
+        if (!rsp["UnbindedDevices"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `UnbindedDevices` is not array type"));
 
-        const rapidjson::Value &tmpValue = rsp["BlackIpList"];
+        const rapidjson::Value &tmpValue = rsp["UnbindedDevices"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            m_blackIpList.push_back((*itr).GetString());
+            BindDeviceInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_unbindedDevices.push_back(item);
         }
-        m_blackIpListHasBeenSet = true;
+        m_unbindedDevicesHasBeenSet = true;
     }
 
-    if (rsp.HasMember("WhiteIpList") && !rsp["WhiteIpList"].IsNull())
+    if (rsp.HasMember("Total") && !rsp["Total"].IsNull())
     {
-        if (!rsp["WhiteIpList"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `WhiteIpList` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["WhiteIpList"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!rsp["Total"].IsInt64())
         {
-            m_whiteIpList.push_back((*itr).GetString());
+            return CoreInternalOutcome(Core::Error("response `Total` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_whiteIpListHasBeenSet = true;
+        m_total = rsp["Total"].GetInt64();
+        m_totalHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeBlackWhiteIpListResponse::ToJsonString() const
+string DescribeUnbindedDevicesResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_blackIpListHasBeenSet)
+    if (m_unbindedDevicesHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "BlackIpList";
+        string key = "UnbindedDevices";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
-        for (auto itr = m_blackIpList.begin(); itr != m_blackIpList.end(); ++itr)
+        int i=0;
+        for (auto itr = m_unbindedDevices.begin(); itr != m_unbindedDevices.end(); ++itr, ++i)
         {
-            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
-    if (m_whiteIpListHasBeenSet)
+    if (m_totalHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "WhiteIpList";
+        string key = "Total";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_whiteIpList.begin(); itr != m_whiteIpList.end(); ++itr)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
+        value.AddMember(iKey, m_total, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -137,24 +138,24 @@ string DescribeBlackWhiteIpListResponse::ToJsonString() const
 }
 
 
-vector<string> DescribeBlackWhiteIpListResponse::GetBlackIpList() const
+vector<BindDeviceInfo> DescribeUnbindedDevicesResponse::GetUnbindedDevices() const
 {
-    return m_blackIpList;
+    return m_unbindedDevices;
 }
 
-bool DescribeBlackWhiteIpListResponse::BlackIpListHasBeenSet() const
+bool DescribeUnbindedDevicesResponse::UnbindedDevicesHasBeenSet() const
 {
-    return m_blackIpListHasBeenSet;
+    return m_unbindedDevicesHasBeenSet;
 }
 
-vector<string> DescribeBlackWhiteIpListResponse::GetWhiteIpList() const
+int64_t DescribeUnbindedDevicesResponse::GetTotal() const
 {
-    return m_whiteIpList;
+    return m_total;
 }
 
-bool DescribeBlackWhiteIpListResponse::WhiteIpListHasBeenSet() const
+bool DescribeUnbindedDevicesResponse::TotalHasBeenSet() const
 {
-    return m_whiteIpListHasBeenSet;
+    return m_totalHasBeenSet;
 }
 
 

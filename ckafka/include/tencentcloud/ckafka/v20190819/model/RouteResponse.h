@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取路由信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Routers 路由信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Route> GetRouters() const;
 
                     /**
                      * 设置路由信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _routers 路由信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRouters(const std::vector<Route>& _routers);
@@ -76,7 +72,6 @@ namespace TencentCloud
 
                     /**
                      * 路由信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Route> m_routers;
                     bool m_routersHasBeenSet;

@@ -79,9 +79,7 @@ namespace TencentCloud
 
                     /**
                      * 获取计算环境描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnvDescription 计算环境描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEnvDescription() const;
@@ -223,7 +221,6 @@ namespace TencentCloud
 
                     /**
                      * 计算环境描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_envDescription;
                     bool m_envDescriptionHasBeenSet;

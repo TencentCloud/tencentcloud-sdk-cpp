@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Doris jdbc 负载均衡连接 port，通常映射到 fe 的 9030 端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Port Doris jdbc 负载均衡连接 port，通常映射到 fe 的 9030 端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置Doris jdbc 负载均衡连接 port，通常映射到 fe 的 9030 端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _port Doris jdbc 负载均衡连接 port，通常映射到 fe 的 9030 端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPort(const int64_t& _port);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Doris 连接源的用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserName Doris 连接源的用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置Doris 连接源的用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userName Doris 连接源的用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserName(const std::string& _userName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Doris 连接源的密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Password Doris 连接源的密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPassword() const;
 
                     /**
                      * 设置Doris 连接源的密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _password Doris 连接源的密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPassword(const std::string& _password);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Doris 连接源的实例资源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Resource Doris 连接源的实例资源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResource() const;
 
                     /**
                      * 设置Doris 连接源的实例资源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resource Doris 连接源的实例资源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResource(const std::string& _resource);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Doris 连接源的实例vip，当为腾讯云实例时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceVip Doris 连接源的实例vip，当为腾讯云实例时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetServiceVip() const;
 
                     /**
                      * 设置Doris 连接源的实例vip，当为腾讯云实例时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serviceVip Doris 连接源的实例vip，当为腾讯云实例时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServiceVip(const std::string& _serviceVip);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Doris 连接源的vpcId，当为腾讯云实例时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UniqVpcId Doris 连接源的vpcId，当为腾讯云实例时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUniqVpcId() const;
 
                     /**
                      * 设置Doris 连接源的vpcId，当为腾讯云实例时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uniqVpcId Doris 连接源的vpcId，当为腾讯云实例时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUniqVpcId(const std::string& _uniqVpcId);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否更新到关联的Datahub任务
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsUpdate 是否更新到关联的Datahub任务
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsUpdate() const;
 
                     /**
                      * 设置是否更新到关联的Datahub任务
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isUpdate 是否更新到关联的Datahub任务
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsUpdate(const bool& _isUpdate);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Doris 连接源是否为自建集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SelfBuilt Doris 连接源是否为自建集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetSelfBuilt() const;
 
                     /**
                      * 设置Doris 连接源是否为自建集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _selfBuilt Doris 连接源是否为自建集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSelfBuilt(const bool& _selfBuilt);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Doris 的 http 负载均衡连接 port，通常映射到 be 的 8040 端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BePort Doris 的 http 负载均衡连接 port，通常映射到 be 的 8040 端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBePort() const;
 
                     /**
                      * 设置Doris 的 http 负载均衡连接 port，通常映射到 be 的 8040 端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bePort Doris 的 http 负载均衡连接 port，通常映射到 be 的 8040 端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBePort(const int64_t& _bePort);
@@ -275,63 +239,54 @@ namespace TencentCloud
 
                     /**
                      * Doris jdbc 负载均衡连接 port，通常映射到 fe 的 9030 端口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
                      * Doris 连接源的用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;
 
                     /**
                      * Doris 连接源的密码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
 
                     /**
                      * Doris 连接源的实例资源
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resource;
                     bool m_resourceHasBeenSet;
 
                     /**
                      * Doris 连接源的实例vip，当为腾讯云实例时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serviceVip;
                     bool m_serviceVipHasBeenSet;
 
                     /**
                      * Doris 连接源的vpcId，当为腾讯云实例时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uniqVpcId;
                     bool m_uniqVpcIdHasBeenSet;
 
                     /**
                      * 是否更新到关联的Datahub任务
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isUpdate;
                     bool m_isUpdateHasBeenSet;
 
                     /**
                      * Doris 连接源是否为自建集群
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_selfBuilt;
                     bool m_selfBuiltHasBeenSet;
 
                     /**
                      * Doris 的 http 负载均衡连接 port，通常映射到 be 的 8040 端口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_bePort;
                     bool m_bePortHasBeenSet;

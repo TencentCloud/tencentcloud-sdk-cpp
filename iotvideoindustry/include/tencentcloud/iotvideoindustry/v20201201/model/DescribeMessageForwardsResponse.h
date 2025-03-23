@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取配置总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 配置总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotal() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取配置列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return List 配置列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<MessageForward> GetList() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 配置总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
                      * 配置列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MessageForward> m_list;
                     bool m_listHasBeenSet;

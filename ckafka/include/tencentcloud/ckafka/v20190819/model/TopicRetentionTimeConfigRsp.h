@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取期望值，即用户配置的Topic消息保留时间(单位分钟)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Expect 期望值，即用户配置的Topic消息保留时间(单位分钟)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetExpect() const;
 
                     /**
                      * 设置期望值，即用户配置的Topic消息保留时间(单位分钟)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _expect 期望值，即用户配置的Topic消息保留时间(单位分钟)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExpect(const int64_t& _expect);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当前值，即当前生效值(可能存在动态调整，单位分钟)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Current 当前值，即当前生效值(可能存在动态调整，单位分钟)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCurrent() const;
 
                     /**
                      * 设置当前值，即当前生效值(可能存在动态调整，单位分钟)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _current 当前值，即当前生效值(可能存在动态调整，单位分钟)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCurrent(const int64_t& _current);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最近变更时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModTimeStamp 最近变更时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetModTimeStamp() const;
 
                     /**
                      * 设置最近变更时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modTimeStamp 最近变更时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModTimeStamp(const int64_t& _modTimeStamp);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 期望值，即用户配置的Topic消息保留时间(单位分钟)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_expect;
                     bool m_expectHasBeenSet;
 
                     /**
                      * 当前值，即当前生效值(可能存在动态调整，单位分钟)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_current;
                     bool m_currentHasBeenSet;
 
                     /**
                      * 最近变更时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_modTimeStamp;
                     bool m_modTimeStampHasBeenSet;

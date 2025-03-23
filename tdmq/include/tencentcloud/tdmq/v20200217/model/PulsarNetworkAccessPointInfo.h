@@ -49,14 +49,18 @@ namespace TencentCloud
 
                     /**
                      * 获取vpc的id，支撑网和公网接入点，该字段为空
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId vpc的id，支撑网和公网接入点，该字段为空
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置vpc的id，支撑网和公网接入点，该字段为空
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcId vpc的id，支撑网和公网接入点，该字段为空
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -70,14 +74,18 @@ namespace TencentCloud
 
                     /**
                      * 获取子网id，支撑网和公网接入点，该字段为空
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetId 子网id，支撑网和公网接入点，该字段为空
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网id，支撑网和公网接入点，该字段为空
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subnetId 子网id，支撑网和公网接入点，该字段为空
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -170,11 +178,13 @@ namespace TencentCloud
 2：跨地域访问，已经完成了异地切换，该状态用于源集群的接入点，该状态下的接入点不可删除
 3：跨地域访问，随时可以进行异地访问切回，该状态用于目标集群的接入点，该状态下的接入点不可删除
 4:跨地域访问，目标集群已经完成异地切回，等待删除状态
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return OperationType 0：本地域访问，由于并没有配置跨地域容灾，所该类型的接入点，无法进行异地切换、异地访问切回；
 1：本地域访问，由于配置了跨地域容灾，随时可以进行异地切换，该状态用于主集群的接入点
 2：跨地域访问，已经完成了异地切换，该状态用于源集群的接入点，该状态下的接入点不可删除
 3：跨地域访问，随时可以进行异地访问切回，该状态用于目标集群的接入点，该状态下的接入点不可删除
 4:跨地域访问，目标集群已经完成异地切回，等待删除状态
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetOperationType() const;
@@ -185,11 +195,13 @@ namespace TencentCloud
 2：跨地域访问，已经完成了异地切换，该状态用于源集群的接入点，该状态下的接入点不可删除
 3：跨地域访问，随时可以进行异地访问切回，该状态用于目标集群的接入点，该状态下的接入点不可删除
 4:跨地域访问，目标集群已经完成异地切回，等待删除状态
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _operationType 0：本地域访问，由于并没有配置跨地域容灾，所该类型的接入点，无法进行异地切换、异地访问切回；
 1：本地域访问，由于配置了跨地域容灾，随时可以进行异地切换，该状态用于主集群的接入点
 2：跨地域访问，已经完成了异地切换，该状态用于源集群的接入点，该状态下的接入点不可删除
 3：跨地域访问，随时可以进行异地访问切回，该状态用于目标集群的接入点，该状态下的接入点不可删除
 4:跨地域访问，目标集群已经完成异地切回，等待删除状态
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOperationType(const uint64_t& _operationType);
@@ -203,14 +215,18 @@ namespace TencentCloud
 
                     /**
                      * 获取接入点类型
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccessPointsType 接入点类型
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAccessPointsType() const;
 
                     /**
                      * 设置接入点类型
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _accessPointsType 接入点类型
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAccessPointsType(const std::string& _accessPointsType);
@@ -224,14 +240,18 @@ namespace TencentCloud
 
                     /**
                      * 获取带宽，目前只有公网会有这个值
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Bandwidth 带宽，目前只有公网会有这个值
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBandwidth() const;
 
                     /**
                      * 设置带宽，目前只有公网会有这个值
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bandwidth 带宽，目前只有公网会有这个值
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBandwidth(const int64_t& _bandwidth);
@@ -245,14 +265,18 @@ namespace TencentCloud
 
                     /**
                      * 获取类
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecurityPolicy 类
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SecurityPolicy> GetSecurityPolicy() const;
 
                     /**
                      * 设置类
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _securityPolicy 类
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSecurityPolicy(const std::vector<SecurityPolicy>& _securityPolicy);
@@ -266,14 +290,18 @@ namespace TencentCloud
 
                     /**
                      * 获取是否是标准的接入点 true是标准的 false不是标准的
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return StandardAccessPoint 是否是标准的接入点 true是标准的 false不是标准的
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetStandardAccessPoint() const;
 
                     /**
                      * 设置是否是标准的接入点 true是标准的 false不是标准的
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _standardAccessPoint 是否是标准的接入点 true是标准的 false不是标准的
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStandardAccessPoint(const bool& _standardAccessPoint);
@@ -287,14 +315,18 @@ namespace TencentCloud
 
                     /**
                      * 获取可用区信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZoneName 可用区信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetZoneName() const;
 
                     /**
                      * 设置可用区信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zoneName 可用区信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZoneName(const std::string& _zoneName);
@@ -310,12 +342,14 @@ namespace TencentCloud
 
                     /**
                      * vpc的id，支撑网和公网接入点，该字段为空
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
                      * 子网id，支撑网和公网接入点，该字段为空
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
@@ -347,36 +381,42 @@ namespace TencentCloud
 2：跨地域访问，已经完成了异地切换，该状态用于源集群的接入点，该状态下的接入点不可删除
 3：跨地域访问，随时可以进行异地访问切回，该状态用于目标集群的接入点，该状态下的接入点不可删除
 4:跨地域访问，目标集群已经完成异地切回，等待删除状态
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_operationType;
                     bool m_operationTypeHasBeenSet;
 
                     /**
                      * 接入点类型
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_accessPointsType;
                     bool m_accessPointsTypeHasBeenSet;
 
                     /**
                      * 带宽，目前只有公网会有这个值
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_bandwidth;
                     bool m_bandwidthHasBeenSet;
 
                     /**
                      * 类
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SecurityPolicy> m_securityPolicy;
                     bool m_securityPolicyHasBeenSet;
 
                     /**
                      * 是否是标准的接入点 true是标准的 false不是标准的
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_standardAccessPoint;
                     bool m_standardAccessPointHasBeenSet;
 
                     /**
                      * 可用区信息
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zoneName;
                     bool m_zoneNameHasBeenSet;

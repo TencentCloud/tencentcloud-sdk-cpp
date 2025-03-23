@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取流程Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowId 流程Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFlowId() const;
 
                     /**
                      * 设置流程Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _flowId 流程Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFlowId(const int64_t& _flowId);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取RouteIdDto
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RouteDTO RouteIdDto
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RouteDTO GetRouteDTO() const;
 
                     /**
                      * 设置RouteIdDto
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _routeDTO RouteIdDto
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRouteDTO(const RouteDTO& _routeDTO);
@@ -101,14 +93,12 @@ namespace TencentCloud
 
                     /**
                      * 流程Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_flowId;
                     bool m_flowIdHasBeenSet;
 
                     /**
                      * RouteIdDto
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RouteDTO m_routeDTO;
                     bool m_routeDTOHasBeenSet;

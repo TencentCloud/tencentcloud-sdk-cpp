@@ -35,7 +35,8 @@ CBSInstance::CBSInstance() :
     m_differDaysOfDeadlineHasBeenSet(false),
     m_instanceIdListHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
-    m_shareableHasBeenSet(false)
+    m_shareableHasBeenSet(false),
+    m_emrResourceIdHasBeenSet(false)
 {
 }
 
@@ -197,6 +198,16 @@ CoreInternalOutcome CBSInstance::Deserialize(const rapidjson::Value &value)
         m_shareableHasBeenSet = true;
     }
 
+    if (value.HasMember("EmrResourceId") && !value["EmrResourceId"].IsNull())
+    {
+        if (!value["EmrResourceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CBSInstance.EmrResourceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_emrResourceId = string(value["EmrResourceId"].GetString());
+        m_emrResourceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -327,6 +338,14 @@ void CBSInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "Shareable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_shareable, allocator);
+    }
+
+    if (m_emrResourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EmrResourceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_emrResourceId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -570,5 +589,21 @@ void CBSInstance::SetShareable(const bool& _shareable)
 bool CBSInstance::ShareableHasBeenSet() const
 {
     return m_shareableHasBeenSet;
+}
+
+string CBSInstance::GetEmrResourceId() const
+{
+    return m_emrResourceId;
+}
+
+void CBSInstance::SetEmrResourceId(const string& _emrResourceId)
+{
+    m_emrResourceId = _emrResourceId;
+    m_emrResourceIdHasBeenSet = true;
+}
+
+bool CBSInstance::EmrResourceIdHasBeenSet() const
+{
+    return m_emrResourceIdHasBeenSet;
 }
 

@@ -648,6 +648,152 @@ namespace TencentCloud
                      */
                     bool ClusterDeployTypeHasBeenSet() const;
 
+                    /**
+                     * 获取任务名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Name 任务名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 设置任务名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _name 任务名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     * 
+                     */
+                    bool NameHasBeenSet() const;
+
+                    /**
+                     * 获取执行详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExecDetail 执行详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetExecDetail() const;
+
+                    /**
+                     * 设置执行详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _execDetail 执行详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetExecDetail(const std::string& _execDetail);
+
+                    /**
+                     * 判断参数 ExecDetail 是否已赋值
+                     * @return ExecDetail 是否已赋值
+                     * 
+                     */
+                    bool ExecDetailHasBeenSet() const;
+
+                    /**
+                     * 获取事中关联任务数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PipelineTaskCount 事中关联任务数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetPipelineTaskCount() const;
+
+                    /**
+                     * 设置事中关联任务数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _pipelineTaskCount 事中关联任务数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPipelineTaskCount(const int64_t& _pipelineTaskCount);
+
+                    /**
+                     * 判断参数 PipelineTaskCount 是否已赋值
+                     * @return PipelineTaskCount 是否已赋值
+                     * 
+                     */
+                    bool PipelineTaskCountHasBeenSet() const;
+
+                    /**
+                     * 获取有效规则数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnableRuleCount 有效规则数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetEnableRuleCount() const;
+
+                    /**
+                     * 设置有效规则数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _enableRuleCount 有效规则数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEnableRuleCount(const int64_t& _enableRuleCount);
+
+                    /**
+                     * 判断参数 EnableRuleCount 是否已赋值
+                     * @return EnableRuleCount 是否已赋值
+                     * 
+                     */
+                    bool EnableRuleCountHasBeenSet() const;
+
+                    /**
+                     * 获取任务描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Description 任务描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置任务描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _description 任务描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     * 
+                     */
+                    bool DescriptionHasBeenSet() const;
+
+                    /**
+                     * 获取监控创建人
+                     * @return CreateUserName 监控创建人
+                     * 
+                     */
+                    std::string GetCreateUserName() const;
+
+                    /**
+                     * 设置监控创建人
+                     * @param _createUserName 监控创建人
+                     * 
+                     */
+                    void SetCreateUserName(const std::string& _createUserName);
+
+                    /**
+                     * 判断参数 CreateUserName 是否已赋值
+                     * @return CreateUserName 是否已赋值
+                     * 
+                     */
+                    bool CreateUserNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -817,6 +963,47 @@ namespace TencentCloud
                      */
                     std::string m_clusterDeployType;
                     bool m_clusterDeployTypeHasBeenSet;
+
+                    /**
+                     * 任务名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
+
+                    /**
+                     * 执行详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_execDetail;
+                    bool m_execDetailHasBeenSet;
+
+                    /**
+                     * 事中关联任务数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_pipelineTaskCount;
+                    bool m_pipelineTaskCountHasBeenSet;
+
+                    /**
+                     * 有效规则数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_enableRuleCount;
+                    bool m_enableRuleCountHasBeenSet;
+
+                    /**
+                     * 任务描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 监控创建人
+                     */
+                    std::string m_createUserName;
+                    bool m_createUserNameHasBeenSet;
 
                 };
             }

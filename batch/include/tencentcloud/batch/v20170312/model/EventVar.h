@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自定义键
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 自定义键
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置自定义键
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 自定义键
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自定义值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 自定义值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置自定义值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _value 自定义值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 自定义键
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 自定义值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;

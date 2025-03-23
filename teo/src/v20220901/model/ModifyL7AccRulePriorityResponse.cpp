@@ -14,20 +14,20 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/lke/v20231130/model/ResetSessionResponse.h>
+#include <tencentcloud/teo/v20220901/model/ModifyL7AccRulePriorityResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Lke::V20231130::Model;
+using namespace TencentCloud::Teo::V20220901::Model;
 using namespace std;
 
-ResetSessionResponse::ResetSessionResponse()
+ModifyL7AccRulePriorityResponse::ModifyL7AccRulePriorityResponse()
 {
 }
 
-CoreInternalOutcome ResetSessionResponse::Deserialize(const string &payload)
+CoreInternalOutcome ModifyL7AccRulePriorityResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -65,7 +65,7 @@ CoreInternalOutcome ResetSessionResponse::Deserialize(const string &payload)
     return CoreInternalOutcome(true);
 }
 
-string ResetSessionResponse::ToJsonString() const
+string ModifyL7AccRulePriorityResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();

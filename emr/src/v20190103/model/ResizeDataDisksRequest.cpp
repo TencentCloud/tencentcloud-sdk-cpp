@@ -24,9 +24,10 @@ using namespace std;
 
 ResizeDataDisksRequest::ResizeDataDisksRequest() :
     m_instanceIdHasBeenSet(false),
-    m_diskIdsHasBeenSet(false),
     m_diskSizeHasBeenSet(false),
-    m_cvmInstanceIdsHasBeenSet(false)
+    m_cvmInstanceIdsHasBeenSet(false),
+    m_diskIdsHasBeenSet(false),
+    m_resizeAllHasBeenSet(false)
 {
 }
 
@@ -43,19 +44,6 @@ string ResizeDataDisksRequest::ToJsonString() const
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_diskIdsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DiskIds";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_diskIds.begin(); itr != m_diskIds.end(); ++itr)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
     }
 
     if (m_diskSizeHasBeenSet)
@@ -77,6 +65,27 @@ string ResizeDataDisksRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_diskIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiskIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_diskIds.begin(); itr != m_diskIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_resizeAllHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResizeAll";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_resizeAll, allocator);
     }
 
 
@@ -101,22 +110,6 @@ void ResizeDataDisksRequest::SetInstanceId(const string& _instanceId)
 bool ResizeDataDisksRequest::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
-}
-
-vector<string> ResizeDataDisksRequest::GetDiskIds() const
-{
-    return m_diskIds;
-}
-
-void ResizeDataDisksRequest::SetDiskIds(const vector<string>& _diskIds)
-{
-    m_diskIds = _diskIds;
-    m_diskIdsHasBeenSet = true;
-}
-
-bool ResizeDataDisksRequest::DiskIdsHasBeenSet() const
-{
-    return m_diskIdsHasBeenSet;
 }
 
 int64_t ResizeDataDisksRequest::GetDiskSize() const
@@ -149,6 +142,38 @@ void ResizeDataDisksRequest::SetCvmInstanceIds(const vector<string>& _cvmInstanc
 bool ResizeDataDisksRequest::CvmInstanceIdsHasBeenSet() const
 {
     return m_cvmInstanceIdsHasBeenSet;
+}
+
+vector<string> ResizeDataDisksRequest::GetDiskIds() const
+{
+    return m_diskIds;
+}
+
+void ResizeDataDisksRequest::SetDiskIds(const vector<string>& _diskIds)
+{
+    m_diskIds = _diskIds;
+    m_diskIdsHasBeenSet = true;
+}
+
+bool ResizeDataDisksRequest::DiskIdsHasBeenSet() const
+{
+    return m_diskIdsHasBeenSet;
+}
+
+bool ResizeDataDisksRequest::GetResizeAll() const
+{
+    return m_resizeAll;
+}
+
+void ResizeDataDisksRequest::SetResizeAll(const bool& _resizeAll)
+{
+    m_resizeAll = _resizeAll;
+    m_resizeAllHasBeenSet = true;
+}
+
+bool ResizeDataDisksRequest::ResizeAllHasBeenSet() const
+{
+    return m_resizeAllHasBeenSet;
 }
 
 

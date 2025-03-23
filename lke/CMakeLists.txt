@@ -27,7 +27,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/DescribeQAResponse.h
   include/tencentcloud/lke/v20231130/model/GetWsTokenReq_Label.h
   include/tencentcloud/lke/v20231130/model/GetAppKnowledgeCountRequest.h
-  include/tencentcloud/lke/v20231130/model/ResetSessionResponse.h
+  include/tencentcloud/lke/v20231130/model/StopDocParseResponse.h
   include/tencentcloud/lke/v20231130/model/ListSelectDocResponse.h
   include/tencentcloud/lke/v20231130/model/DescribeReleaseInfoRequest.h
   include/tencentcloud/lke/v20231130/model/DeleteDocRequest.h
@@ -146,7 +146,6 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/GroupQAResponse.h
   include/tencentcloud/lke/v20231130/model/QuoteInfo.h
   include/tencentcloud/lke/v20231130/model/CreateAppRequest.h
-  include/tencentcloud/lke/v20231130/model/ResetSessionRequest.h
   include/tencentcloud/lke/v20231130/model/AppConfig.h
   include/tencentcloud/lke/v20231130/model/DescribeReleaseRequest.h
   include/tencentcloud/lke/v20231130/model/ReleaseQA.h
@@ -257,7 +256,6 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/ListAppKnowledgeDetailRequest.h
   include/tencentcloud/lke/v20231130/model/CreateQAResponse.h
   include/tencentcloud/lke/v20231130/model/ReRankDataObject.h
-  include/tencentcloud/lke/v20231130/model/StopDocParseResponse.h
   include/tencentcloud/lke/v20231130/model/ListQACateRequest.h
   include/tencentcloud/lke/v20231130/model/ListReleaseQAPreviewRequest.h
   include/tencentcloud/lke/v20231130/model/DescribeReleaseInfoResponse.h
@@ -320,7 +318,7 @@ set(lke_src
   src/v20231130/model/DescribeQAResponse.cpp
   src/v20231130/model/GetWsTokenReq_Label.cpp
   src/v20231130/model/GetAppKnowledgeCountRequest.cpp
-  src/v20231130/model/ResetSessionResponse.cpp
+  src/v20231130/model/StopDocParseResponse.cpp
   src/v20231130/model/ListSelectDocResponse.cpp
   src/v20231130/model/DescribeReleaseInfoRequest.cpp
   src/v20231130/model/DeleteDocRequest.cpp
@@ -439,7 +437,6 @@ set(lke_src
   src/v20231130/model/GroupQAResponse.cpp
   src/v20231130/model/QuoteInfo.cpp
   src/v20231130/model/CreateAppRequest.cpp
-  src/v20231130/model/ResetSessionRequest.cpp
   src/v20231130/model/AppConfig.cpp
   src/v20231130/model/DescribeReleaseRequest.cpp
   src/v20231130/model/ReleaseQA.cpp
@@ -550,7 +547,6 @@ set(lke_src
   src/v20231130/model/ListAppKnowledgeDetailRequest.cpp
   src/v20231130/model/CreateQAResponse.cpp
   src/v20231130/model/ReRankDataObject.cpp
-  src/v20231130/model/StopDocParseResponse.cpp
   src/v20231130/model/ListQACateRequest.cpp
   src/v20231130/model/ListReleaseQAPreviewRequest.cpp
   src/v20231130/model/DescribeReleaseInfoResponse.cpp

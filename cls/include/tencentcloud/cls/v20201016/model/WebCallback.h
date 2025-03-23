@@ -110,18 +110,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集成配置ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WebCallbackId 集成配置ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWebCallbackId() const;
 
                     /**
                      * 设置集成配置ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _webCallbackId 集成配置ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWebCallbackId(const std::string& _webCallbackId);
@@ -140,14 +136,12 @@ namespace TencentCloud
 
 注意：
 - 参数CallbackType为Http时为必选，其它回调方式无需填写。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Method 回调方法。可选值：
 - POST（默认值）
 - PUT
 
 注意：
 - 参数CallbackType为Http时为必选，其它回调方式无需填写。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMethod() const;
@@ -159,14 +153,12 @@ namespace TencentCloud
 
 注意：
 - 参数CallbackType为Http时为必选，其它回调方式无需填写。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _method 回调方法。可选值：
 - POST（默认值）
 - PUT
 
 注意：
 - 参数CallbackType为Http时为必选，其它回调方式无需填写。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMethod(const std::string& _method);
@@ -180,18 +172,14 @@ namespace TencentCloud
 
                     /**
                      * 获取通知内容模板ID，使用Default-zh引用默认模板（中文），使用Default-en引用DefaultTemplate(English)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NoticeContentId 通知内容模板ID，使用Default-zh引用默认模板（中文），使用Default-en引用DefaultTemplate(English)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNoticeContentId() const;
 
                     /**
                      * 设置通知内容模板ID，使用Default-zh引用默认模板（中文），使用Default-en引用DefaultTemplate(English)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _noticeContentId 通知内容模板ID，使用Default-zh引用默认模板（中文），使用Default-en引用DefaultTemplate(English)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNoticeContentId(const std::string& _noticeContentId);
@@ -207,11 +195,9 @@ namespace TencentCloud
                      * 获取提醒类型。
 
 0：不提醒；1：指定人；2：所有人
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RemindType 提醒类型。
 
 0：不提醒；1：指定人；2：所有人
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRemindType() const;
@@ -220,11 +206,9 @@ namespace TencentCloud
                      * 设置提醒类型。
 
 0：不提醒；1：指定人；2：所有人
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remindType 提醒类型。
 
 0：不提醒；1：指定人；2：所有人
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemindType(const uint64_t& _remindType);
@@ -238,18 +222,14 @@ namespace TencentCloud
 
                     /**
                      * 获取电话列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Mobiles 电话列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetMobiles() const;
 
                     /**
                      * 设置电话列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mobiles 电话列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMobiles(const std::vector<std::string>& _mobiles);
@@ -263,18 +243,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户ID列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserIds 用户ID列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetUserIds() const;
 
                     /**
                      * 设置用户ID列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userIds 用户ID列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserIds(const std::vector<std::string>& _userIds);
@@ -288,18 +264,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该参数已废弃，请使用NoticeContentId。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Headers 该参数已废弃，请使用NoticeContentId。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetHeaders() const;
 
                     /**
                      * 设置该参数已废弃，请使用NoticeContentId。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _headers 该参数已废弃，请使用NoticeContentId。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHeaders(const std::vector<std::string>& _headers);
@@ -386,7 +358,6 @@ namespace TencentCloud
 
                     /**
                      * 集成配置ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_webCallbackId;
                     bool m_webCallbackIdHasBeenSet;
@@ -398,14 +369,12 @@ namespace TencentCloud
 
 注意：
 - 参数CallbackType为Http时为必选，其它回调方式无需填写。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_method;
                     bool m_methodHasBeenSet;
 
                     /**
                      * 通知内容模板ID，使用Default-zh引用默认模板（中文），使用Default-en引用DefaultTemplate(English)。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_noticeContentId;
                     bool m_noticeContentIdHasBeenSet;
@@ -414,28 +383,24 @@ namespace TencentCloud
                      * 提醒类型。
 
 0：不提醒；1：指定人；2：所有人
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_remindType;
                     bool m_remindTypeHasBeenSet;
 
                     /**
                      * 电话列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_mobiles;
                     bool m_mobilesHasBeenSet;
 
                     /**
                      * 用户ID列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_userIds;
                     bool m_userIdsHasBeenSet;
 
                     /**
                      * 该参数已废弃，请使用NoticeContentId。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_headers;
                     bool m_headersHasBeenSet;

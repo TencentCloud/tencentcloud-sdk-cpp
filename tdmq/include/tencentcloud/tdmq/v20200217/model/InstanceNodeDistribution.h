@@ -132,14 +132,18 @@ namespace TencentCloud
 
                     /**
                      * 获取可用区状态
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZoneStatus 可用区状态
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetZoneStatus() const;
 
                     /**
                      * 设置可用区状态
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zoneStatus 可用区状态
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZoneStatus(const std::string& _zoneStatus);
@@ -179,6 +183,7 @@ namespace TencentCloud
 
                     /**
                      * 可用区状态
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zoneStatus;
                     bool m_zoneStatusHasBeenSet;

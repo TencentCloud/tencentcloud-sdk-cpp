@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取频道总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 频道总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotal() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取频道信息数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LiveChannels 频道信息数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<LiveChannelInfo> GetLiveChannels() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 频道总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
                      * 频道信息数组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<LiveChannelInfo> m_liveChannels;
                     bool m_liveChannelsHasBeenSet;

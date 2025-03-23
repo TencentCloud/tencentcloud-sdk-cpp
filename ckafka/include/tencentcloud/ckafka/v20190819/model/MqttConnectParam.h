@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取MQTT连接源的用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserName MQTT连接源的用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置MQTT连接源的用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userName MQTT连接源的用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserName(const std::string& _userName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取MQTT连接源的密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Password MQTT连接源的密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPassword() const;
 
                     /**
                      * 设置MQTT连接源的密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _password MQTT连接源的密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPassword(const std::string& _password);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取MQTT连接源的实例资源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Resource MQTT连接源的实例资源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResource() const;
 
                     /**
                      * 设置MQTT连接源的实例资源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resource MQTT连接源的实例资源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResource(const std::string& _resource);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取MQTT Instance vpc-id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UniqVpcId MQTT Instance vpc-id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUniqVpcId() const;
 
                     /**
                      * 设置MQTT Instance vpc-id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uniqVpcId MQTT Instance vpc-id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUniqVpcId(const std::string& _uniqVpcId);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否为自建集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SelfBuilt 是否为自建集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetSelfBuilt() const;
 
                     /**
                      * 设置是否为自建集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _selfBuilt 是否为自建集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSelfBuilt(const bool& _selfBuilt);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否更新到关联的Dip任务
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsUpdate 是否更新到关联的Dip任务
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsUpdate() const;
 
                     /**
                      * 设置是否更新到关联的Dip任务
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isUpdate 是否更新到关联的Dip任务
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsUpdate(const bool& _isUpdate);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取MQTT连接源的实例资源地域, 跨地域时必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region MQTT连接源的实例资源地域, 跨地域时必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置MQTT连接源的实例资源地域, 跨地域时必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _region MQTT连接源的实例资源地域, 跨地域时必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -225,49 +197,42 @@ namespace TencentCloud
 
                     /**
                      * MQTT连接源的用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;
 
                     /**
                      * MQTT连接源的密码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
 
                     /**
                      * MQTT连接源的实例资源
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resource;
                     bool m_resourceHasBeenSet;
 
                     /**
                      * MQTT Instance vpc-id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uniqVpcId;
                     bool m_uniqVpcIdHasBeenSet;
 
                     /**
                      * 是否为自建集群
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_selfBuilt;
                     bool m_selfBuiltHasBeenSet;
 
                     /**
                      * 是否更新到关联的Dip任务
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isUpdate;
                     bool m_isUpdateHasBeenSet;
 
                     /**
                      * MQTT连接源的实例资源地域, 跨地域时必填
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;

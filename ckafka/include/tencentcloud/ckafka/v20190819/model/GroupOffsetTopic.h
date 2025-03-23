@@ -70,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该主题分区数组，其中每个元素为一个 json object
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Partitions 该主题分区数组，其中每个元素为一个 json object
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<GroupOffsetPartition> GetPartitions() const;
 
                     /**
                      * 设置该主题分区数组，其中每个元素为一个 json object
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _partitions 该主题分区数组，其中每个元素为一个 json object
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPartitions(const std::vector<GroupOffsetPartition>& _partitions);
@@ -103,7 +99,6 @@ namespace TencentCloud
 
                     /**
                      * 该主题分区数组，其中每个元素为一个 json object
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<GroupOffsetPartition> m_partitions;
                     bool m_partitionsHasBeenSet;

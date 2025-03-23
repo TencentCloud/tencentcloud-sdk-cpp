@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取主题名称。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicName 主题名称。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTopicName() const;
 
                     /**
                      * 设置主题名称。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topicName 主题名称。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopicName(const std::string& _topicName);
@@ -72,10 +76,12 @@ namespace TencentCloud
 1: 非持久分区
 2: 持久非分区
 3: 持久分区
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return PulsarTopicType 0: 非持久非分区
 1: 非持久分区
 2: 持久非分区
 3: 持久分区
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPulsarTopicType() const;
@@ -85,10 +91,12 @@ namespace TencentCloud
 1: 非持久分区
 2: 持久非分区
 3: 持久分区
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pulsarTopicType 0: 非持久非分区
 1: 非持久分区
 2: 持久非分区
 3: 持久分区
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPulsarTopicType(const int64_t& _pulsarTopicType);
@@ -104,6 +112,7 @@ namespace TencentCloud
 
                     /**
                      * 主题名称。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;
@@ -113,6 +122,7 @@ namespace TencentCloud
 1: 非持久分区
 2: 持久非分区
 3: 持久分区
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_pulsarTopicType;
                     bool m_pulsarTopicTypeHasBeenSet;

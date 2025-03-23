@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Submitted个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubmittedCount Submitted个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSubmittedCount() const;
 
                     /**
                      * 设置Submitted个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _submittedCount Submitted个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubmittedCount(const int64_t& _submittedCount);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Pending个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PendingCount Pending个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPendingCount() const;
 
                     /**
                      * 设置Pending个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pendingCount Pending个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPendingCount(const int64_t& _pendingCount);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Runnable个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RunnableCount Runnable个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRunnableCount() const;
 
                     /**
                      * 设置Runnable个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _runnableCount Runnable个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRunnableCount(const int64_t& _runnableCount);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Starting个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartingCount Starting个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStartingCount() const;
 
                     /**
                      * 设置Starting个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _startingCount Starting个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStartingCount(const int64_t& _startingCount);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Running个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RunningCount Running个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRunningCount() const;
 
                     /**
                      * 设置Running个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _runningCount Running个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRunningCount(const int64_t& _runningCount);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Succeed个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SucceedCount Succeed个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSucceedCount() const;
 
                     /**
                      * 设置Succeed个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _succeedCount Succeed个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSucceedCount(const int64_t& _succeedCount);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取FailedInterrupted个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailedInterruptedCount FailedInterrupted个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFailedInterruptedCount() const;
 
                     /**
                      * 设置FailedInterrupted个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _failedInterruptedCount FailedInterrupted个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFailedInterruptedCount(const int64_t& _failedInterruptedCount);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Failed个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailedCount Failed个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFailedCount() const;
 
                     /**
                      * 设置Failed个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _failedCount Failed个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFailedCount(const int64_t& _failedCount);
@@ -250,56 +218,48 @@ namespace TencentCloud
 
                     /**
                      * Submitted个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_submittedCount;
                     bool m_submittedCountHasBeenSet;
 
                     /**
                      * Pending个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_pendingCount;
                     bool m_pendingCountHasBeenSet;
 
                     /**
                      * Runnable个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_runnableCount;
                     bool m_runnableCountHasBeenSet;
 
                     /**
                      * Starting个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_startingCount;
                     bool m_startingCountHasBeenSet;
 
                     /**
                      * Running个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_runningCount;
                     bool m_runningCountHasBeenSet;
 
                     /**
                      * Succeed个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_succeedCount;
                     bool m_succeedCountHasBeenSet;
 
                     /**
                      * FailedInterrupted个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_failedInterruptedCount;
                     bool m_failedInterruptedCountHasBeenSet;
 
                     /**
                      * Failed个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_failedCount;
                     bool m_failedCountHasBeenSet;

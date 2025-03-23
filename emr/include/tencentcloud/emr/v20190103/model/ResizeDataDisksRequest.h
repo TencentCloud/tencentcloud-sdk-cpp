@@ -64,27 +64,6 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取需要扩容的云盘ID
-                     * @return DiskIds 需要扩容的云盘ID
-                     * 
-                     */
-                    std::vector<std::string> GetDiskIds() const;
-
-                    /**
-                     * 设置需要扩容的云盘ID
-                     * @param _diskIds 需要扩容的云盘ID
-                     * 
-                     */
-                    void SetDiskIds(const std::vector<std::string>& _diskIds);
-
-                    /**
-                     * 判断参数 DiskIds 是否已赋值
-                     * @return DiskIds 是否已赋值
-                     * 
-                     */
-                    bool DiskIdsHasBeenSet() const;
-
-                    /**
                      * 获取需要扩充的容量值，容量值需要大于原容量，并且为10的整数倍
                      * @return DiskSize 需要扩充的容量值，容量值需要大于原容量，并且为10的整数倍
                      * 
@@ -126,6 +105,48 @@ namespace TencentCloud
                      */
                     bool CvmInstanceIdsHasBeenSet() const;
 
+                    /**
+                     * 获取需要扩容的云盘ID
+                     * @return DiskIds 需要扩容的云盘ID
+                     * 
+                     */
+                    std::vector<std::string> GetDiskIds() const;
+
+                    /**
+                     * 设置需要扩容的云盘ID
+                     * @param _diskIds 需要扩容的云盘ID
+                     * 
+                     */
+                    void SetDiskIds(const std::vector<std::string>& _diskIds);
+
+                    /**
+                     * 判断参数 DiskIds 是否已赋值
+                     * @return DiskIds 是否已赋值
+                     * 
+                     */
+                    bool DiskIdsHasBeenSet() const;
+
+                    /**
+                     * 获取是否扩容全部云硬盘
+                     * @return ResizeAll 是否扩容全部云硬盘
+                     * 
+                     */
+                    bool GetResizeAll() const;
+
+                    /**
+                     * 设置是否扩容全部云硬盘
+                     * @param _resizeAll 是否扩容全部云硬盘
+                     * 
+                     */
+                    void SetResizeAll(const bool& _resizeAll);
+
+                    /**
+                     * 判断参数 ResizeAll 是否已赋值
+                     * @return ResizeAll 是否已赋值
+                     * 
+                     */
+                    bool ResizeAllHasBeenSet() const;
+
                 private:
 
                     /**
@@ -133,12 +154,6 @@ namespace TencentCloud
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
-
-                    /**
-                     * 需要扩容的云盘ID
-                     */
-                    std::vector<std::string> m_diskIds;
-                    bool m_diskIdsHasBeenSet;
 
                     /**
                      * 需要扩充的容量值，容量值需要大于原容量，并且为10的整数倍
@@ -151,6 +166,18 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_cvmInstanceIds;
                     bool m_cvmInstanceIdsHasBeenSet;
+
+                    /**
+                     * 需要扩容的云盘ID
+                     */
+                    std::vector<std::string> m_diskIds;
+                    bool m_diskIdsHasBeenSet;
+
+                    /**
+                     * 是否扩容全部云硬盘
+                     */
+                    bool m_resizeAll;
+                    bool m_resizeAllHasBeenSet;
 
                 };
             }

@@ -198,6 +198,27 @@ ALIGN_DEADLINE：自动对其到期时间
                      */
                     bool DeleteWithInstanceHasBeenSet() const;
 
+                    /**
+                     * 获取新挂磁盘时可支持配置的服务名称列表
+                     * @return SelectiveConfServices 新挂磁盘时可支持配置的服务名称列表
+                     * 
+                     */
+                    std::vector<std::string> GetSelectiveConfServices() const;
+
+                    /**
+                     * 设置新挂磁盘时可支持配置的服务名称列表
+                     * @param _selectiveConfServices 新挂磁盘时可支持配置的服务名称列表
+                     * 
+                     */
+                    void SetSelectiveConfServices(const std::vector<std::string>& _selectiveConfServices);
+
+                    /**
+                     * 判断参数 SelectiveConfServices 是否已赋值
+                     * @return SelectiveConfServices 是否已赋值
+                     * 
+                     */
+                    bool SelectiveConfServicesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -243,6 +264,12 @@ ALIGN_DEADLINE：自动对其到期时间
                      */
                     bool m_deleteWithInstance;
                     bool m_deleteWithInstanceHasBeenSet;
+
+                    /**
+                     * 新挂磁盘时可支持配置的服务名称列表
+                     */
+                    std::vector<std::string> m_selectiveConfServices;
+                    bool m_selectiveConfServicesHasBeenSet;
 
                 };
             }

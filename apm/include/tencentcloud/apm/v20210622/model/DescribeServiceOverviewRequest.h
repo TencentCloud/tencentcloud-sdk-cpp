@@ -88,48 +88,6 @@ namespace TencentCloud
                     bool MetricsHasBeenSet() const;
 
                     /**
-                     * 获取聚合维度
-                     * @return GroupBy 聚合维度
-                     * 
-                     */
-                    std::vector<std::string> GetGroupBy() const;
-
-                    /**
-                     * 设置聚合维度
-                     * @param _groupBy 聚合维度
-                     * 
-                     */
-                    void SetGroupBy(const std::vector<std::string>& _groupBy);
-
-                    /**
-                     * 判断参数 GroupBy 是否已赋值
-                     * @return GroupBy 是否已赋值
-                     * 
-                     */
-                    bool GroupByHasBeenSet() const;
-
-                    /**
-                     * 获取过滤条件
-                     * @return Filters 过滤条件
-                     * 
-                     */
-                    std::vector<Filter> GetFilters() const;
-
-                    /**
-                     * 设置过滤条件
-                     * @param _filters 过滤条件
-                     * 
-                     */
-                    void SetFilters(const std::vector<Filter>& _filters);
-
-                    /**
-                     * 判断参数 Filters 是否已赋值
-                     * @return Filters 是否已赋值
-                     * 
-                     */
-                    bool FiltersHasBeenSet() const;
-
-                    /**
                      * 获取开始时间（单位：秒）
                      * @return StartTime 开始时间（单位：秒）
                      * 
@@ -170,6 +128,48 @@ namespace TencentCloud
                      * 
                      */
                     bool EndTimeHasBeenSet() const;
+
+                    /**
+                     * 获取聚合维度
+                     * @return GroupBy 聚合维度
+                     * 
+                     */
+                    std::vector<std::string> GetGroupBy() const;
+
+                    /**
+                     * 设置聚合维度
+                     * @param _groupBy 聚合维度
+                     * 
+                     */
+                    void SetGroupBy(const std::vector<std::string>& _groupBy);
+
+                    /**
+                     * 判断参数 GroupBy 是否已赋值
+                     * @return GroupBy 是否已赋值
+                     * 
+                     */
+                    bool GroupByHasBeenSet() const;
+
+                    /**
+                     * 获取过滤条件
+                     * @return Filters 过滤条件
+                     * 
+                     */
+                    std::vector<Filter> GetFilters() const;
+
+                    /**
+                     * 设置过滤条件
+                     * @param _filters 过滤条件
+                     * 
+                     */
+                    void SetFilters(const std::vector<Filter>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     * 
+                     */
+                    bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取排序方式
@@ -261,18 +261,6 @@ Value 填写：
                     bool m_metricsHasBeenSet;
 
                     /**
-                     * 聚合维度
-                     */
-                    std::vector<std::string> m_groupBy;
-                    bool m_groupByHasBeenSet;
-
-                    /**
-                     * 过滤条件
-                     */
-                    std::vector<Filter> m_filters;
-                    bool m_filtersHasBeenSet;
-
-                    /**
                      * 开始时间（单位：秒）
                      */
                     uint64_t m_startTime;
@@ -283,6 +271,18 @@ Value 填写：
                      */
                     uint64_t m_endTime;
                     bool m_endTimeHasBeenSet;
+
+                    /**
+                     * 聚合维度
+                     */
+                    std::vector<std::string> m_groupBy;
+                    bool m_groupByHasBeenSet;
+
+                    /**
+                     * 过滤条件
+                     */
+                    std::vector<Filter> m_filters;
+                    bool m_filtersHasBeenSet;
 
                     /**
                      * 排序方式

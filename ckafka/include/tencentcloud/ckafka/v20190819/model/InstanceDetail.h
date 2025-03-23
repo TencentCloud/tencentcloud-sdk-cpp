@@ -449,18 +449,14 @@ namespace TencentCloud
 
                     /**
                      * 获取kafka版本信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Version kafka版本信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置kafka版本信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _version kafka版本信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVersion(const std::string& _version);
@@ -474,18 +470,14 @@ namespace TencentCloud
 
                     /**
                      * 获取跨可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZoneIds 跨可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetZoneIds() const;
 
                     /**
                      * 设置跨可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zoneIds 跨可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZoneIds(const std::vector<int64_t>& _zoneIds);
@@ -499,18 +491,14 @@ namespace TencentCloud
 
                     /**
                      * 获取ckafka售卖类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cvm ckafka售卖类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCvm() const;
 
                     /**
                      * 设置ckafka售卖类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cvm ckafka售卖类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCvm(const int64_t& _cvm);
@@ -524,18 +512,14 @@ namespace TencentCloud
 
                     /**
                      * 获取ckafka集群实例类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceType ckafka集群实例类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
                      * 设置ckafka集群实例类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceType ckafka集群实例类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -549,18 +533,14 @@ namespace TencentCloud
 
                     /**
                      * 获取ckafka集群实例磁盘类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DiskType ckafka集群实例磁盘类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDiskType() const;
 
                     /**
                      * 设置ckafka集群实例磁盘类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _diskType ckafka集群实例磁盘类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDiskType(const std::string& _diskType);
@@ -574,18 +554,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当前规格最大Topic数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxTopicNumber 当前规格最大Topic数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxTopicNumber() const;
 
                     /**
                      * 设置当前规格最大Topic数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxTopicNumber 当前规格最大Topic数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxTopicNumber(const int64_t& _maxTopicNumber);
@@ -599,18 +575,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当前规格最大Partition数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxPartitionNumber 当前规格最大Partition数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxPartitionNumber() const;
 
                     /**
                      * 设置当前规格最大Partition数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxPartitionNumber 当前规格最大Partition数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxPartitionNumber(const int64_t& _maxPartitionNumber);
@@ -624,18 +596,14 @@ namespace TencentCloud
 
                     /**
                      * 获取计划升级配置时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RebalanceTime 计划升级配置时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRebalanceTime() const;
 
                     /**
                      * 设置计划升级配置时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rebalanceTime 计划升级配置时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRebalanceTime(const std::string& _rebalanceTime);
@@ -649,18 +617,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例当前partition数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PartitionNumber 实例当前partition数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPartitionNumber() const;
 
                     /**
                      * 设置实例当前partition数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _partitionNumber 实例当前partition数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPartitionNumber(const uint64_t& _partitionNumber);
@@ -674,18 +638,14 @@ namespace TencentCloud
 
                     /**
                      * 获取ckafka集群实例公网带宽类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicNetworkChargeType ckafka集群实例公网带宽类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPublicNetworkChargeType() const;
 
                     /**
                      * 设置ckafka集群实例公网带宽类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _publicNetworkChargeType ckafka集群实例公网带宽类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPublicNetworkChargeType(const std::string& _publicNetworkChargeType);
@@ -699,18 +659,14 @@ namespace TencentCloud
 
                     /**
                      * 获取公网带宽 最小3Mbps  最大999Mbps 仅专业版支持填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicNetwork 公网带宽 最小3Mbps  最大999Mbps 仅专业版支持填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPublicNetwork() const;
 
                     /**
                      * 设置公网带宽 最小3Mbps  最大999Mbps 仅专业版支持填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _publicNetwork 公网带宽 最小3Mbps  最大999Mbps 仅专业版支持填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPublicNetwork(const int64_t& _publicNetwork);
@@ -724,18 +680,14 @@ namespace TencentCloud
 
                     /**
                      * 获取ckafka集群实例底层集群类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterType ckafka集群实例底层集群类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterType() const;
 
                     /**
                      * 设置ckafka集群实例底层集群类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterType ckafka集群实例底层集群类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterType(const std::string& _clusterType);
@@ -749,18 +701,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例功能列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Features 实例功能列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetFeatures() const;
 
                     /**
                      * 设置实例功能列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _features 实例功能列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFeatures(const std::vector<std::string>& _features);
@@ -890,91 +838,78 @@ namespace TencentCloud
 
                     /**
                      * kafka版本信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;
 
                     /**
                      * 跨可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_zoneIds;
                     bool m_zoneIdsHasBeenSet;
 
                     /**
                      * ckafka售卖类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_cvm;
                     bool m_cvmHasBeenSet;
 
                     /**
                      * ckafka集群实例类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**
                      * ckafka集群实例磁盘类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_diskType;
                     bool m_diskTypeHasBeenSet;
 
                     /**
                      * 当前规格最大Topic数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxTopicNumber;
                     bool m_maxTopicNumberHasBeenSet;
 
                     /**
                      * 当前规格最大Partition数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxPartitionNumber;
                     bool m_maxPartitionNumberHasBeenSet;
 
                     /**
                      * 计划升级配置时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_rebalanceTime;
                     bool m_rebalanceTimeHasBeenSet;
 
                     /**
                      * 实例当前partition数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_partitionNumber;
                     bool m_partitionNumberHasBeenSet;
 
                     /**
                      * ckafka集群实例公网带宽类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_publicNetworkChargeType;
                     bool m_publicNetworkChargeTypeHasBeenSet;
 
                     /**
                      * 公网带宽 最小3Mbps  最大999Mbps 仅专业版支持填写
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_publicNetwork;
                     bool m_publicNetworkHasBeenSet;
 
                     /**
                      * ckafka集群实例底层集群类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterType;
                     bool m_clusterTypeHasBeenSet;
 
                     /**
                      * 实例功能列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_features;
                     bool m_featuresHasBeenSet;

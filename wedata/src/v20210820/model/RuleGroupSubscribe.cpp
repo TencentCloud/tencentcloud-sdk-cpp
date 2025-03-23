@@ -26,7 +26,8 @@ RuleGroupSubscribe::RuleGroupSubscribe() :
     m_subscribeTypeHasBeenSet(false),
     m_webHooksHasBeenSet(false),
     m_ruleIdHasBeenSet(false),
-    m_ruleNameHasBeenSet(false)
+    m_ruleNameHasBeenSet(false),
+    m_alarmMessageRuleHasBeenSet(false)
 {
 }
 
@@ -118,6 +119,16 @@ CoreInternalOutcome RuleGroupSubscribe::Deserialize(const rapidjson::Value &valu
         m_ruleNameHasBeenSet = true;
     }
 
+    if (value.HasMember("AlarmMessageRule") && !value["AlarmMessageRule"].IsNull())
+    {
+        if (!value["AlarmMessageRule"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroupSubscribe.AlarmMessageRule` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_alarmMessageRule = string(value["AlarmMessageRule"].GetString());
+        m_alarmMessageRuleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -190,6 +201,14 @@ void RuleGroupSubscribe::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "RuleName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_ruleName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_alarmMessageRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlarmMessageRule";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_alarmMessageRule.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -289,5 +308,21 @@ void RuleGroupSubscribe::SetRuleName(const string& _ruleName)
 bool RuleGroupSubscribe::RuleNameHasBeenSet() const
 {
     return m_ruleNameHasBeenSet;
+}
+
+string RuleGroupSubscribe::GetAlarmMessageRule() const
+{
+    return m_alarmMessageRule;
+}
+
+void RuleGroupSubscribe::SetAlarmMessageRule(const string& _alarmMessageRule)
+{
+    m_alarmMessageRule = _alarmMessageRule;
+    m_alarmMessageRuleHasBeenSet = true;
+}
+
+bool RuleGroupSubscribe::AlarmMessageRuleHasBeenSet() const
+{
+    return m_alarmMessageRuleHasBeenSet;
 }
 

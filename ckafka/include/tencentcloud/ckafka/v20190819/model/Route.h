@@ -199,18 +199,14 @@ namespace TencentCloud
 
                     /**
                      * 获取时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeleteTimestamp 时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeleteTimestamp() const;
 
                     /**
                      * 设置时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deleteTimestamp 时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeleteTimestamp(const std::string& _deleteTimestamp);
@@ -249,18 +245,14 @@ namespace TencentCloud
 
                     /**
                      * 获取虚拟IP列表(1对1 broker节点)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BrokerVipList 虚拟IP列表(1对1 broker节点)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<VipEntity> GetBrokerVipList() const;
 
                     /**
                      * 设置虚拟IP列表(1对1 broker节点)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _brokerVipList 虚拟IP列表(1对1 broker节点)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBrokerVipList(const std::vector<VipEntity>& _brokerVipList);
@@ -343,7 +335,6 @@ namespace TencentCloud
 
                     /**
                      * 时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deleteTimestamp;
                     bool m_deleteTimestampHasBeenSet;
@@ -357,7 +348,6 @@ namespace TencentCloud
 
                     /**
                      * 虚拟IP列表(1对1 broker节点)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<VipEntity> m_brokerVipList;
                     bool m_brokerVipListHasBeenSet;

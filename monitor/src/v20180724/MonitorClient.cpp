@@ -384,6 +384,49 @@ MonitorClient::CreateAlertRuleOutcomeCallable MonitorClient::CreateAlertRuleCall
     return task->get_future();
 }
 
+MonitorClient::CreateConditionsTemplateOutcome MonitorClient::CreateConditionsTemplate(const CreateConditionsTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateConditionsTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateConditionsTemplateResponse rsp = CreateConditionsTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateConditionsTemplateOutcome(rsp);
+        else
+            return CreateConditionsTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateConditionsTemplateOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::CreateConditionsTemplateAsync(const CreateConditionsTemplateRequest& request, const CreateConditionsTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateConditionsTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::CreateConditionsTemplateOutcomeCallable MonitorClient::CreateConditionsTemplateCallable(const CreateConditionsTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateConditionsTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateConditionsTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::CreateExporterIntegrationOutcome MonitorClient::CreateExporterIntegration(const CreateExporterIntegrationRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateExporterIntegration");

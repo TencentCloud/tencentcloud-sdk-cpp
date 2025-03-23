@@ -38,7 +38,13 @@ RuleGroupExecStrategy::RuleGroupExecStrategy() :
     m_ruleIdHasBeenSet(false),
     m_ruleNameHasBeenSet(false),
     m_triggerTypesHasBeenSet(false),
-    m_dlcGroupNameHasBeenSet(false)
+    m_dlcGroupNameHasBeenSet(false),
+    m_ruleGroupNameHasBeenSet(false),
+    m_databaseNameHasBeenSet(false),
+    m_schemaNameHasBeenSet(false),
+    m_tableNameHasBeenSet(false),
+    m_datasourceIdHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -240,6 +246,66 @@ CoreInternalOutcome RuleGroupExecStrategy::Deserialize(const rapidjson::Value &v
         m_dlcGroupNameHasBeenSet = true;
     }
 
+    if (value.HasMember("RuleGroupName") && !value["RuleGroupName"].IsNull())
+    {
+        if (!value["RuleGroupName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroupExecStrategy.RuleGroupName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleGroupName = string(value["RuleGroupName"].GetString());
+        m_ruleGroupNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("DatabaseName") && !value["DatabaseName"].IsNull())
+    {
+        if (!value["DatabaseName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroupExecStrategy.DatabaseName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_databaseName = string(value["DatabaseName"].GetString());
+        m_databaseNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("SchemaName") && !value["SchemaName"].IsNull())
+    {
+        if (!value["SchemaName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroupExecStrategy.SchemaName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_schemaName = string(value["SchemaName"].GetString());
+        m_schemaNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("TableName") && !value["TableName"].IsNull())
+    {
+        if (!value["TableName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroupExecStrategy.TableName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tableName = string(value["TableName"].GetString());
+        m_tableNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("DatasourceId") && !value["DatasourceId"].IsNull())
+    {
+        if (!value["DatasourceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroupExecStrategy.DatasourceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_datasourceId = string(value["DatasourceId"].GetString());
+        m_datasourceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Description") && !value["Description"].IsNull())
+    {
+        if (!value["Description"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroupExecStrategy.Description` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_description = string(value["Description"].GetString());
+        m_descriptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -401,6 +467,54 @@ void RuleGroupExecStrategy::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "DlcGroupName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dlcGroupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ruleGroupNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleGroupName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ruleGroupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_databaseNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatabaseName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_databaseName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_schemaNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SchemaName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_schemaName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tableNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TableName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tableName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_datasourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatasourceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_datasourceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -692,5 +806,101 @@ void RuleGroupExecStrategy::SetDlcGroupName(const string& _dlcGroupName)
 bool RuleGroupExecStrategy::DlcGroupNameHasBeenSet() const
 {
     return m_dlcGroupNameHasBeenSet;
+}
+
+string RuleGroupExecStrategy::GetRuleGroupName() const
+{
+    return m_ruleGroupName;
+}
+
+void RuleGroupExecStrategy::SetRuleGroupName(const string& _ruleGroupName)
+{
+    m_ruleGroupName = _ruleGroupName;
+    m_ruleGroupNameHasBeenSet = true;
+}
+
+bool RuleGroupExecStrategy::RuleGroupNameHasBeenSet() const
+{
+    return m_ruleGroupNameHasBeenSet;
+}
+
+string RuleGroupExecStrategy::GetDatabaseName() const
+{
+    return m_databaseName;
+}
+
+void RuleGroupExecStrategy::SetDatabaseName(const string& _databaseName)
+{
+    m_databaseName = _databaseName;
+    m_databaseNameHasBeenSet = true;
+}
+
+bool RuleGroupExecStrategy::DatabaseNameHasBeenSet() const
+{
+    return m_databaseNameHasBeenSet;
+}
+
+string RuleGroupExecStrategy::GetSchemaName() const
+{
+    return m_schemaName;
+}
+
+void RuleGroupExecStrategy::SetSchemaName(const string& _schemaName)
+{
+    m_schemaName = _schemaName;
+    m_schemaNameHasBeenSet = true;
+}
+
+bool RuleGroupExecStrategy::SchemaNameHasBeenSet() const
+{
+    return m_schemaNameHasBeenSet;
+}
+
+string RuleGroupExecStrategy::GetTableName() const
+{
+    return m_tableName;
+}
+
+void RuleGroupExecStrategy::SetTableName(const string& _tableName)
+{
+    m_tableName = _tableName;
+    m_tableNameHasBeenSet = true;
+}
+
+bool RuleGroupExecStrategy::TableNameHasBeenSet() const
+{
+    return m_tableNameHasBeenSet;
+}
+
+string RuleGroupExecStrategy::GetDatasourceId() const
+{
+    return m_datasourceId;
+}
+
+void RuleGroupExecStrategy::SetDatasourceId(const string& _datasourceId)
+{
+    m_datasourceId = _datasourceId;
+    m_datasourceIdHasBeenSet = true;
+}
+
+bool RuleGroupExecStrategy::DatasourceIdHasBeenSet() const
+{
+    return m_datasourceIdHasBeenSet;
+}
+
+string RuleGroupExecStrategy::GetDescription() const
+{
+    return m_description;
+}
+
+void RuleGroupExecStrategy::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool RuleGroupExecStrategy::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
 }
 

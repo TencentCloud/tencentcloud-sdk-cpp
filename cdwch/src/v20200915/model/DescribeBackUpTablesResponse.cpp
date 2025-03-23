@@ -24,7 +24,8 @@ using namespace TencentCloud::Cdwch::V20200915::Model;
 using namespace std;
 
 DescribeBackUpTablesResponse::DescribeBackUpTablesResponse() :
-    m_availableTablesHasBeenSet(false)
+    m_availableTablesHasBeenSet(false),
+    m_errorMsgHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,16 @@ CoreInternalOutcome DescribeBackUpTablesResponse::Deserialize(const string &payl
         m_availableTablesHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ErrorMsg") && !rsp["ErrorMsg"].IsNull())
+    {
+        if (!rsp["ErrorMsg"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ErrorMsg` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_errorMsg = string(rsp["ErrorMsg"].GetString());
+        m_errorMsgHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +118,14 @@ string DescribeBackUpTablesResponse::ToJsonString() const
         }
     }
 
+    if (m_errorMsgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrorMsg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errorMsg.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -127,6 +146,16 @@ vector<BackupTableContent> DescribeBackUpTablesResponse::GetAvailableTables() co
 bool DescribeBackUpTablesResponse::AvailableTablesHasBeenSet() const
 {
     return m_availableTablesHasBeenSet;
+}
+
+string DescribeBackUpTablesResponse::GetErrorMsg() const
+{
+    return m_errorMsg;
+}
+
+bool DescribeBackUpTablesResponse::ErrorMsgHasBeenSet() const
+{
+    return m_errorMsgHasBeenSet;
 }
 
 

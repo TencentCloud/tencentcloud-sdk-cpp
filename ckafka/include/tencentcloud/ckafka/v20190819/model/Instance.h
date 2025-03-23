@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开源实例。开源：true，不开源：false
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IfCommunity 是否开源实例。开源：true，不开源：false
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIfCommunity() const;
 
                     /**
                      * 设置是否开源实例。开源：true，不开源：false
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ifCommunity 是否开源实例。开源：true，不开源：false
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIfCommunity(const bool& _ifCommunity);
@@ -156,7 +152,6 @@ namespace TencentCloud
 
                     /**
                      * 是否开源实例。开源：true，不开源：false
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_ifCommunity;
                     bool m_ifCommunityHasBeenSet;

@@ -135,18 +135,14 @@ namespace TencentCloud
 
                     /**
                      * 获取机器组绑定的标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 机器组绑定的标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置机器组绑定的标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 机器组绑定的标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -160,18 +156,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启机器组自动更新
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoUpdate 是否开启机器组自动更新
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAutoUpdate() const;
 
                     /**
                      * 设置是否开启机器组自动更新
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _autoUpdate 是否开启机器组自动更新
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAutoUpdate(const std::string& _autoUpdate);
@@ -185,18 +177,14 @@ namespace TencentCloud
 
                     /**
                      * 获取升级开始时间，建议业务低峰期升级LogListener
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateStartTime 升级开始时间，建议业务低峰期升级LogListener
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateStartTime() const;
 
                     /**
                      * 设置升级开始时间，建议业务低峰期升级LogListener
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updateStartTime 升级开始时间，建议业务低峰期升级LogListener
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdateStartTime(const std::string& _updateStartTime);
@@ -210,18 +198,14 @@ namespace TencentCloud
 
                     /**
                      * 获取升级结束时间，建议业务低峰期升级LogListener
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateEndTime 升级结束时间，建议业务低峰期升级LogListener
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateEndTime() const;
 
                     /**
                      * 设置升级结束时间，建议业务低峰期升级LogListener
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updateEndTime 升级结束时间，建议业务低峰期升级LogListener
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdateEndTime(const std::string& _updateEndTime);
@@ -235,18 +219,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启服务日志，用于记录因Loglistener 服务自身产生的log，开启后，会创建内部日志集cls_service_logging和日志主题loglistener_status,loglistener_alarm,loglistener_business，不产生计费
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceLogging 是否开启服务日志，用于记录因Loglistener 服务自身产生的log，开启后，会创建内部日志集cls_service_logging和日志主题loglistener_status,loglistener_alarm,loglistener_business，不产生计费
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetServiceLogging() const;
 
                     /**
                      * 设置是否开启服务日志，用于记录因Loglistener 服务自身产生的log，开启后，会创建内部日志集cls_service_logging和日志主题loglistener_status,loglistener_alarm,loglistener_business，不产生计费
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serviceLogging 是否开启服务日志，用于记录因Loglistener 服务自身产生的log，开启后，会创建内部日志集cls_service_logging和日志主题loglistener_status,loglistener_alarm,loglistener_business，不产生计费
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServiceLogging(const bool& _serviceLogging);
@@ -260,18 +240,14 @@ namespace TencentCloud
 
                     /**
                      * 获取机器组中机器离线定期清理时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DelayCleanupTime 机器组中机器离线定期清理时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDelayCleanupTime() const;
 
                     /**
                      * 设置机器组中机器离线定期清理时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _delayCleanupTime 机器组中机器离线定期清理时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDelayCleanupTime(const int64_t& _delayCleanupTime);
@@ -353,42 +329,36 @@ namespace TencentCloud
 
                     /**
                      * 机器组绑定的标签列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
                      * 是否开启机器组自动更新
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_autoUpdate;
                     bool m_autoUpdateHasBeenSet;
 
                     /**
                      * 升级开始时间，建议业务低峰期升级LogListener
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateStartTime;
                     bool m_updateStartTimeHasBeenSet;
 
                     /**
                      * 升级结束时间，建议业务低峰期升级LogListener
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateEndTime;
                     bool m_updateEndTimeHasBeenSet;
 
                     /**
                      * 是否开启服务日志，用于记录因Loglistener 服务自身产生的log，开启后，会创建内部日志集cls_service_logging和日志主题loglistener_status,loglistener_alarm,loglistener_business，不产生计费
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_serviceLogging;
                     bool m_serviceLoggingHasBeenSet;
 
                     /**
                      * 机器组中机器离线定期清理时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_delayCleanupTime;
                     bool m_delayCleanupTimeHasBeenSet;

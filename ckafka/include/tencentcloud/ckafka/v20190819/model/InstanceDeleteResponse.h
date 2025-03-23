@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取删除实例返回的任务Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowId 删除实例返回的任务Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFlowId() const;
 
                     /**
                      * 设置删除实例返回的任务Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _flowId 删除实例返回的任务Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFlowId(const int64_t& _flowId);
@@ -75,7 +71,6 @@ namespace TencentCloud
 
                     /**
                      * 删除实例返回的任务Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_flowId;
                     bool m_flowIdHasBeenSet;

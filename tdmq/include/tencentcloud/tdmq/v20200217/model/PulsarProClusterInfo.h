@@ -175,14 +175,18 @@ namespace TencentCloud
 
                     /**
                      * 获取节点分布情况
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodeDistribution 节点分布情况
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<InstanceNodeDistribution> GetNodeDistribution() const;
 
                     /**
                      * 设置节点分布情况
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nodeDistribution 节点分布情况
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNodeDistribution(const std::vector<InstanceNodeDistribution>& _nodeDistribution);
@@ -217,14 +221,18 @@ namespace TencentCloud
 
                     /**
                      * 获取是否可以修改路由
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return CanEditRoute 是否可以修改路由
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetCanEditRoute() const;
 
                     /**
                      * 设置是否可以修改路由
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _canEditRoute 是否可以修改路由
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCanEditRoute(const bool& _canEditRoute);
@@ -238,14 +246,18 @@ namespace TencentCloud
 
                     /**
                      * 获取代表是专业版和小规格专业版的不同计费规格PULSAR.P1固定存储PULSAR.P2弹性存储
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return BillingLabelVersion 代表是专业版和小规格专业版的不同计费规格PULSAR.P1固定存储PULSAR.P2弹性存储
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBillingLabelVersion() const;
 
                     /**
                      * 设置代表是专业版和小规格专业版的不同计费规格PULSAR.P1固定存储PULSAR.P2弹性存储
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _billingLabelVersion 代表是专业版和小规格专业版的不同计费规格PULSAR.P1固定存储PULSAR.P2弹性存储
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBillingLabelVersion(const std::string& _billingLabelVersion);
@@ -259,14 +271,18 @@ namespace TencentCloud
 
                     /**
                      * 获取实例到期时间戳，毫秒级精度。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpireTime 实例到期时间戳，毫秒级精度。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetExpireTime() const;
 
                     /**
                      * 设置实例到期时间戳，毫秒级精度。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _expireTime 实例到期时间戳，毫秒级精度。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExpireTime(const int64_t& _expireTime);
@@ -281,8 +297,10 @@ namespace TencentCloud
                     /**
                      * 获取是否开启自动创建主题
 true就是开启了，false是关闭
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoCreateTopicStatus 是否开启自动创建主题
 true就是开启了，false是关闭
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetAutoCreateTopicStatus() const;
@@ -290,8 +308,10 @@ true就是开启了，false是关闭
                     /**
                      * 设置是否开启自动创建主题
 true就是开启了，false是关闭
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _autoCreateTopicStatus 是否开启自动创建主题
 true就是开启了，false是关闭
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAutoCreateTopicStatus(const bool& _autoCreateTopicStatus);
@@ -305,14 +325,18 @@ true就是开启了，false是关闭
 
                     /**
                      * 获取自动创建主题的默认分区数，如果没开启就是0
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefaultPartitionNumber 自动创建主题的默认分区数，如果没开启就是0
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDefaultPartitionNumber() const;
 
                     /**
                      * 设置自动创建主题的默认分区数，如果没开启就是0
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _defaultPartitionNumber 自动创建主题的默认分区数，如果没开启就是0
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDefaultPartitionNumber(const int64_t& _defaultPartitionNumber);
@@ -389,6 +413,7 @@ true就是开启了，false是关闭
 
                     /**
                      * 节点分布情况
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<InstanceNodeDistribution> m_nodeDistribution;
                     bool m_nodeDistributionHasBeenSet;
@@ -401,18 +426,21 @@ true就是开启了，false是关闭
 
                     /**
                      * 是否可以修改路由
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_canEditRoute;
                     bool m_canEditRouteHasBeenSet;
 
                     /**
                      * 代表是专业版和小规格专业版的不同计费规格PULSAR.P1固定存储PULSAR.P2弹性存储
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_billingLabelVersion;
                     bool m_billingLabelVersionHasBeenSet;
 
                     /**
                      * 实例到期时间戳，毫秒级精度。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_expireTime;
                     bool m_expireTimeHasBeenSet;
@@ -420,12 +448,14 @@ true就是开启了，false是关闭
                     /**
                      * 是否开启自动创建主题
 true就是开启了，false是关闭
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_autoCreateTopicStatus;
                     bool m_autoCreateTopicStatusHasBeenSet;
 
                     /**
                      * 自动创建主题的默认分区数，如果没开启就是0
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_defaultPartitionNumber;
                     bool m_defaultPartitionNumberHasBeenSet;

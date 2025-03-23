@@ -1889,49 +1889,6 @@ AntiddosClient::DescribeBizTrendOutcomeCallable AntiddosClient::DescribeBizTrend
     return task->get_future();
 }
 
-AntiddosClient::DescribeBlackWhiteIpListOutcome AntiddosClient::DescribeBlackWhiteIpList(const DescribeBlackWhiteIpListRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeBlackWhiteIpList");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeBlackWhiteIpListResponse rsp = DescribeBlackWhiteIpListResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeBlackWhiteIpListOutcome(rsp);
-        else
-            return DescribeBlackWhiteIpListOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeBlackWhiteIpListOutcome(outcome.GetError());
-    }
-}
-
-void AntiddosClient::DescribeBlackWhiteIpListAsync(const DescribeBlackWhiteIpListRequest& request, const DescribeBlackWhiteIpListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBlackWhiteIpList(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-AntiddosClient::DescribeBlackWhiteIpListOutcomeCallable AntiddosClient::DescribeBlackWhiteIpListCallable(const DescribeBlackWhiteIpListRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeBlackWhiteIpListOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBlackWhiteIpList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 AntiddosClient::DescribeCCLevelListOutcome AntiddosClient::DescribeCCLevelList(const DescribeCCLevelListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCCLevelList");
@@ -2957,49 +2914,6 @@ AntiddosClient::DescribeListPortAclListOutcomeCallable AntiddosClient::DescribeL
         [this, request]()
         {
             return this->DescribeListPortAclList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-AntiddosClient::DescribeListProtectThresholdConfigOutcome AntiddosClient::DescribeListProtectThresholdConfig(const DescribeListProtectThresholdConfigRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeListProtectThresholdConfig");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeListProtectThresholdConfigResponse rsp = DescribeListProtectThresholdConfigResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeListProtectThresholdConfigOutcome(rsp);
-        else
-            return DescribeListProtectThresholdConfigOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeListProtectThresholdConfigOutcome(outcome.GetError());
-    }
-}
-
-void AntiddosClient::DescribeListProtectThresholdConfigAsync(const DescribeListProtectThresholdConfigRequest& request, const DescribeListProtectThresholdConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeListProtectThresholdConfig(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-AntiddosClient::DescribeListProtectThresholdConfigOutcomeCallable AntiddosClient::DescribeListProtectThresholdConfigCallable(const DescribeListProtectThresholdConfigRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeListProtectThresholdConfigOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeListProtectThresholdConfig(request);
         }
     );
 

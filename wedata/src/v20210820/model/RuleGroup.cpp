@@ -44,7 +44,13 @@ RuleGroup::RuleGroup() :
     m_strategyConfigHasBeenSet(false),
     m_subscribeConfigHasBeenSet(false),
     m_dsEnvTypeHasBeenSet(false),
-    m_clusterDeployTypeHasBeenSet(false)
+    m_clusterDeployTypeHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_execDetailHasBeenSet(false),
+    m_pipelineTaskCountHasBeenSet(false),
+    m_enableRuleCountHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
+    m_createUserNameHasBeenSet(false)
 {
 }
 
@@ -307,6 +313,66 @@ CoreInternalOutcome RuleGroup::Deserialize(const rapidjson::Value &value)
         m_clusterDeployTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("Name") && !value["Name"].IsNull())
+    {
+        if (!value["Name"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroup.Name` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_name = string(value["Name"].GetString());
+        m_nameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExecDetail") && !value["ExecDetail"].IsNull())
+    {
+        if (!value["ExecDetail"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroup.ExecDetail` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_execDetail = string(value["ExecDetail"].GetString());
+        m_execDetailHasBeenSet = true;
+    }
+
+    if (value.HasMember("PipelineTaskCount") && !value["PipelineTaskCount"].IsNull())
+    {
+        if (!value["PipelineTaskCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroup.PipelineTaskCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_pipelineTaskCount = value["PipelineTaskCount"].GetInt64();
+        m_pipelineTaskCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnableRuleCount") && !value["EnableRuleCount"].IsNull())
+    {
+        if (!value["EnableRuleCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroup.EnableRuleCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableRuleCount = value["EnableRuleCount"].GetInt64();
+        m_enableRuleCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("Description") && !value["Description"].IsNull())
+    {
+        if (!value["Description"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroup.Description` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_description = string(value["Description"].GetString());
+        m_descriptionHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateUserName") && !value["CreateUserName"].IsNull())
+    {
+        if (!value["CreateUserName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroup.CreateUserName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createUserName = string(value["CreateUserName"].GetString());
+        m_createUserNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -506,6 +572,54 @@ void RuleGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "ClusterDeployType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_clusterDeployType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_execDetailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExecDetail";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_execDetail.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pipelineTaskCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PipelineTaskCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_pipelineTaskCount, allocator);
+    }
+
+    if (m_enableRuleCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableRuleCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableRuleCount, allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createUserNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateUserName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createUserName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -893,5 +1007,101 @@ void RuleGroup::SetClusterDeployType(const string& _clusterDeployType)
 bool RuleGroup::ClusterDeployTypeHasBeenSet() const
 {
     return m_clusterDeployTypeHasBeenSet;
+}
+
+string RuleGroup::GetName() const
+{
+    return m_name;
+}
+
+void RuleGroup::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool RuleGroup::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
+}
+
+string RuleGroup::GetExecDetail() const
+{
+    return m_execDetail;
+}
+
+void RuleGroup::SetExecDetail(const string& _execDetail)
+{
+    m_execDetail = _execDetail;
+    m_execDetailHasBeenSet = true;
+}
+
+bool RuleGroup::ExecDetailHasBeenSet() const
+{
+    return m_execDetailHasBeenSet;
+}
+
+int64_t RuleGroup::GetPipelineTaskCount() const
+{
+    return m_pipelineTaskCount;
+}
+
+void RuleGroup::SetPipelineTaskCount(const int64_t& _pipelineTaskCount)
+{
+    m_pipelineTaskCount = _pipelineTaskCount;
+    m_pipelineTaskCountHasBeenSet = true;
+}
+
+bool RuleGroup::PipelineTaskCountHasBeenSet() const
+{
+    return m_pipelineTaskCountHasBeenSet;
+}
+
+int64_t RuleGroup::GetEnableRuleCount() const
+{
+    return m_enableRuleCount;
+}
+
+void RuleGroup::SetEnableRuleCount(const int64_t& _enableRuleCount)
+{
+    m_enableRuleCount = _enableRuleCount;
+    m_enableRuleCountHasBeenSet = true;
+}
+
+bool RuleGroup::EnableRuleCountHasBeenSet() const
+{
+    return m_enableRuleCountHasBeenSet;
+}
+
+string RuleGroup::GetDescription() const
+{
+    return m_description;
+}
+
+void RuleGroup::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool RuleGroup::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
+}
+
+string RuleGroup::GetCreateUserName() const
+{
+    return m_createUserName;
+}
+
+void RuleGroup::SetCreateUserName(const string& _createUserName)
+{
+    m_createUserName = _createUserName;
+    m_createUserNameHasBeenSet = true;
+}
+
+bool RuleGroup::CreateUserNameHasBeenSet() const
+{
+    return m_createUserNameHasBeenSet;
 }
 

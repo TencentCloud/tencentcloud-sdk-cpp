@@ -473,18 +473,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标签数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 标签数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置标签数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 标签数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -498,18 +494,14 @@ namespace TencentCloud
 
                     /**
                      * 获取过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpireTime 过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetExpireTime() const;
 
                     /**
                      * 设置过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _expireTime 过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExpireTime(const uint64_t& _expireTime);
@@ -523,18 +515,14 @@ namespace TencentCloud
 
                     /**
                      * 获取可用区列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZoneIds 可用区列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetZoneIds() const;
 
                     /**
                      * 设置可用区列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zoneIds 可用区列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZoneIds(const std::vector<int64_t>& _zoneIds);
@@ -548,18 +536,14 @@ namespace TencentCloud
 
                     /**
                      * 获取ckafka集群实例版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Version ckafka集群实例版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置ckafka集群实例版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _version ckafka集群实例版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVersion(const std::string& _version);
@@ -573,18 +557,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最大分组数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxGroupNum 最大分组数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxGroupNum() const;
 
                     /**
                      * 设置最大分组数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxGroupNum 最大分组数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxGroupNum(const int64_t& _maxGroupNum);
@@ -598,18 +578,14 @@ namespace TencentCloud
 
                     /**
                      * 获取售卖类型,0:标准版,1:专业版
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Cvm 售卖类型,0:标准版,1:专业版
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCvm() const;
 
                     /**
                      * 设置售卖类型,0:标准版,1:专业版
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cvm 售卖类型,0:标准版,1:专业版
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCvm(const int64_t& _cvm);
@@ -623,18 +599,14 @@ namespace TencentCloud
 
                     /**
                      * 获取类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceType 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
                      * 设置类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceType 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -648,18 +620,14 @@ namespace TencentCloud
 
                     /**
                      * 获取表示该实例支持的特性。FEATURE_SUBNET_ACL:表示acl策略支持设置子网。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Features 表示该实例支持的特性。FEATURE_SUBNET_ACL:表示acl策略支持设置子网。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetFeatures() const;
 
                     /**
                      * 设置表示该实例支持的特性。FEATURE_SUBNET_ACL:表示acl策略支持设置子网。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _features 表示该实例支持的特性。FEATURE_SUBNET_ACL:表示acl策略支持设置子网。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFeatures(const std::vector<std::string>& _features);
@@ -673,18 +641,14 @@ namespace TencentCloud
 
                     /**
                      * 获取动态消息保留策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RetentionTimeConfig 动态消息保留策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DynamicRetentionTime GetRetentionTimeConfig() const;
 
                     /**
                      * 设置动态消息保留策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _retentionTimeConfig 动态消息保留策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRetentionTimeConfig(const DynamicRetentionTime& _retentionTimeConfig);
@@ -698,18 +662,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最大连接数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxConnection 最大连接数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMaxConnection() const;
 
                     /**
                      * 设置最大连接数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxConnection 最大连接数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxConnection(const uint64_t& _maxConnection);
@@ -723,18 +683,14 @@ namespace TencentCloud
 
                     /**
                      * 获取公网带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicNetwork 公网带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPublicNetwork() const;
 
                     /**
                      * 设置公网带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _publicNetwork 公网带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPublicNetwork(const int64_t& _publicNetwork);
@@ -748,18 +704,14 @@ namespace TencentCloud
 
                     /**
                      * 获取时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeleteRouteTimestamp 时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeleteRouteTimestamp() const;
 
                     /**
                      * 设置时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deleteRouteTimestamp 时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeleteRouteTimestamp(const std::string& _deleteRouteTimestamp);
@@ -773,18 +725,14 @@ namespace TencentCloud
 
                     /**
                      * 获取剩余创建分区数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RemainingPartitions 剩余创建分区数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRemainingPartitions() const;
 
                     /**
                      * 设置剩余创建分区数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remainingPartitions 剩余创建分区数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemainingPartitions(const int64_t& _remainingPartitions);
@@ -798,18 +746,14 @@ namespace TencentCloud
 
                     /**
                      * 获取剩余创建主题数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RemainingTopics 剩余创建主题数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRemainingTopics() const;
 
                     /**
                      * 设置剩余创建主题数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remainingTopics 剩余创建主题数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemainingTopics(const int64_t& _remainingTopics);
@@ -823,18 +767,14 @@ namespace TencentCloud
 
                     /**
                      * 获取动态硬盘扩容策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DynamicDiskConfig 动态硬盘扩容策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DynamicDiskConfig GetDynamicDiskConfig() const;
 
                     /**
                      * 设置动态硬盘扩容策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dynamicDiskConfig 动态硬盘扩容策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDynamicDiskConfig(const DynamicDiskConfig& _dynamicDiskConfig);
@@ -848,18 +788,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例计费类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceChargeType 实例计费类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceChargeType() const;
 
                     /**
                      * 设置实例计费类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceChargeType 实例计费类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceChargeType(const std::string& _instanceChargeType);
@@ -873,18 +809,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterType 集群类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterType() const;
 
                     /**
                      * 设置集群类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterType 集群类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterType(const std::string& _clusterType);
@@ -919,18 +851,14 @@ namespace TencentCloud
 
                     /**
                      * 获取弹性带宽上浮值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ElasticFloatBandwidth 弹性带宽上浮值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetElasticFloatBandwidth() const;
 
                     /**
                      * 设置弹性带宽上浮值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _elasticFloatBandwidth 弹性带宽上浮值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetElasticFloatBandwidth(const int64_t& _elasticFloatBandwidth);
@@ -1108,119 +1036,102 @@ namespace TencentCloud
 
                     /**
                      * 标签数组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
                      * 过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
                      * 可用区列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_zoneIds;
                     bool m_zoneIdsHasBeenSet;
 
                     /**
                      * ckafka集群实例版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;
 
                     /**
                      * 最大分组数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxGroupNum;
                     bool m_maxGroupNumHasBeenSet;
 
                     /**
                      * 售卖类型,0:标准版,1:专业版
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_cvm;
                     bool m_cvmHasBeenSet;
 
                     /**
                      * 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**
                      * 表示该实例支持的特性。FEATURE_SUBNET_ACL:表示acl策略支持设置子网。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_features;
                     bool m_featuresHasBeenSet;
 
                     /**
                      * 动态消息保留策略
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DynamicRetentionTime m_retentionTimeConfig;
                     bool m_retentionTimeConfigHasBeenSet;
 
                     /**
                      * 最大连接数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_maxConnection;
                     bool m_maxConnectionHasBeenSet;
 
                     /**
                      * 公网带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_publicNetwork;
                     bool m_publicNetworkHasBeenSet;
 
                     /**
                      * 时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deleteRouteTimestamp;
                     bool m_deleteRouteTimestampHasBeenSet;
 
                     /**
                      * 剩余创建分区数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_remainingPartitions;
                     bool m_remainingPartitionsHasBeenSet;
 
                     /**
                      * 剩余创建主题数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_remainingTopics;
                     bool m_remainingTopicsHasBeenSet;
 
                     /**
                      * 动态硬盘扩容策略
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DynamicDiskConfig m_dynamicDiskConfig;
                     bool m_dynamicDiskConfigHasBeenSet;
 
                     /**
                      * 实例计费类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceChargeType;
                     bool m_instanceChargeTypeHasBeenSet;
 
                     /**
                      * 集群类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterType;
                     bool m_clusterTypeHasBeenSet;
@@ -1233,7 +1144,6 @@ namespace TencentCloud
 
                     /**
                      * 弹性带宽上浮值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_elasticFloatBandwidth;
                     bool m_elasticFloatBandwidthHasBeenSet;

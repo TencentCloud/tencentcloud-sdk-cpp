@@ -70,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Datahub任务信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskList Datahub任务信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DatahubTaskInfo> GetTaskList() const;
 
                     /**
                      * 设置Datahub任务信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskList Datahub任务信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskList(const std::vector<DatahubTaskInfo>& _taskList);
@@ -103,7 +99,6 @@ namespace TencentCloud
 
                     /**
                      * Datahub任务信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DatahubTaskInfo> m_taskList;
                     bool m_taskListHasBeenSet;

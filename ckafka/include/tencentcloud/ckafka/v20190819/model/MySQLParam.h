@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取MySQL的数据库名称，"*"为全数据库
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Database MySQL的数据库名称，"*"为全数据库
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDatabase() const;
 
                     /**
                      * 设置MySQL的数据库名称，"*"为全数据库
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _database MySQL的数据库名称，"*"为全数据库
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDatabase(const std::string& _database);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取MySQL的数据表名称，"*"为所监听的所有数据库中的非系统表，可以","间隔，监听多个数据表，但数据表需要以"数据库名.数据表名"的格式进行填写，需要填入正则表达式时，格式为"数据库名\\.数据表名"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Table MySQL的数据表名称，"*"为所监听的所有数据库中的非系统表，可以","间隔，监听多个数据表，但数据表需要以"数据库名.数据表名"的格式进行填写，需要填入正则表达式时，格式为"数据库名\\.数据表名"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTable() const;
 
                     /**
                      * 设置MySQL的数据表名称，"*"为所监听的所有数据库中的非系统表，可以","间隔，监听多个数据表，但数据表需要以"数据库名.数据表名"的格式进行填写，需要填入正则表达式时，格式为"数据库名\\.数据表名"
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _table MySQL的数据表名称，"*"为所监听的所有数据库中的非系统表，可以","间隔，监听多个数据表，但数据表需要以"数据库名.数据表名"的格式进行填写，需要填入正则表达式时，格式为"数据库名\\.数据表名"
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTable(const std::string& _table);
@@ -100,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该MySQL在连接管理内的Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Resource 该MySQL在连接管理内的Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResource() const;
 
                     /**
                      * 设置该MySQL在连接管理内的Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resource 该MySQL在连接管理内的Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResource(const std::string& _resource);
@@ -125,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取复制存量信息(schema_only不复制, initial全量)，默认值initial
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SnapshotMode 复制存量信息(schema_only不复制, initial全量)，默认值initial
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSnapshotMode() const;
 
                     /**
                      * 设置复制存量信息(schema_only不复制, initial全量)，默认值initial
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _snapshotMode 复制存量信息(schema_only不复制, initial全量)，默认值initial
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSnapshotMode(const std::string& _snapshotMode);
@@ -150,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取存放MySQL的Ddl信息的Topic，为空则默认不存放
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DdlTopic 存放MySQL的Ddl信息的Topic，为空则默认不存放
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDdlTopic() const;
 
                     /**
                      * 设置存放MySQL的Ddl信息的Topic，为空则默认不存放
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ddlTopic 存放MySQL的Ddl信息的Topic，为空则默认不存放
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDdlTopic(const std::string& _ddlTopic);
@@ -175,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取"TABLE" 表示读取项为 table，"QUERY" 表示读取项为 query
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataSourceMonitorMode "TABLE" 表示读取项为 table，"QUERY" 表示读取项为 query
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDataSourceMonitorMode() const;
 
                     /**
                      * 设置"TABLE" 表示读取项为 table，"QUERY" 表示读取项为 query
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataSourceMonitorMode "TABLE" 表示读取项为 table，"QUERY" 表示读取项为 query
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataSourceMonitorMode(const std::string& _dataSourceMonitorMode);
@@ -200,18 +176,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当 "DataMonitorMode"="TABLE" 时，传入需要读取的 Table；当 "DataMonitorMode"="QUERY" 时，传入需要读取的查询 sql 语句
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataSourceMonitorResource 当 "DataMonitorMode"="TABLE" 时，传入需要读取的 Table；当 "DataMonitorMode"="QUERY" 时，传入需要读取的查询 sql 语句
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDataSourceMonitorResource() const;
 
                     /**
                      * 设置当 "DataMonitorMode"="TABLE" 时，传入需要读取的 Table；当 "DataMonitorMode"="QUERY" 时，传入需要读取的查询 sql 语句
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataSourceMonitorResource 当 "DataMonitorMode"="TABLE" 时，传入需要读取的 Table；当 "DataMonitorMode"="QUERY" 时，传入需要读取的查询 sql 语句
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataSourceMonitorResource(const std::string& _dataSourceMonitorResource);
@@ -225,18 +197,14 @@ namespace TencentCloud
 
                     /**
                      * 获取"TIMESTAMP" 表示增量列为时间戳类型，"INCREMENT" 表示增量列为自增 id 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataSourceIncrementMode "TIMESTAMP" 表示增量列为时间戳类型，"INCREMENT" 表示增量列为自增 id 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDataSourceIncrementMode() const;
 
                     /**
                      * 设置"TIMESTAMP" 表示增量列为时间戳类型，"INCREMENT" 表示增量列为自增 id 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataSourceIncrementMode "TIMESTAMP" 表示增量列为时间戳类型，"INCREMENT" 表示增量列为自增 id 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataSourceIncrementMode(const std::string& _dataSourceIncrementMode);
@@ -250,18 +218,14 @@ namespace TencentCloud
 
                     /**
                      * 获取传入需要监听的列名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataSourceIncrementColumn 传入需要监听的列名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDataSourceIncrementColumn() const;
 
                     /**
                      * 设置传入需要监听的列名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataSourceIncrementColumn 传入需要监听的列名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataSourceIncrementColumn(const std::string& _dataSourceIncrementColumn);
@@ -275,18 +239,14 @@ namespace TencentCloud
 
                     /**
                      * 获取"HEAD" 表示复制存量 + 增量数据，"TAIL" 表示只复制增量数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataSourceStartFrom "HEAD" 表示复制存量 + 增量数据，"TAIL" 表示只复制增量数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDataSourceStartFrom() const;
 
                     /**
                      * 设置"HEAD" 表示复制存量 + 增量数据，"TAIL" 表示只复制增量数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataSourceStartFrom "HEAD" 表示复制存量 + 增量数据，"TAIL" 表示只复制增量数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataSourceStartFrom(const std::string& _dataSourceStartFrom);
@@ -300,18 +260,14 @@ namespace TencentCloud
 
                     /**
                      * 获取"INSERT" 表示使用 Insert 模式插入，"UPSERT" 表示使用 Upsert 模式插入
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataTargetInsertMode "INSERT" 表示使用 Insert 模式插入，"UPSERT" 表示使用 Upsert 模式插入
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDataTargetInsertMode() const;
 
                     /**
                      * 设置"INSERT" 表示使用 Insert 模式插入，"UPSERT" 表示使用 Upsert 模式插入
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataTargetInsertMode "INSERT" 表示使用 Insert 模式插入，"UPSERT" 表示使用 Upsert 模式插入
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataTargetInsertMode(const std::string& _dataTargetInsertMode);
@@ -325,18 +281,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当 "DataInsertMode"="UPSERT" 时，传入当前 upsert 时依赖的主键
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataTargetPrimaryKeyField 当 "DataInsertMode"="UPSERT" 时，传入当前 upsert 时依赖的主键
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDataTargetPrimaryKeyField() const;
 
                     /**
                      * 设置当 "DataInsertMode"="UPSERT" 时，传入当前 upsert 时依赖的主键
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataTargetPrimaryKeyField 当 "DataInsertMode"="UPSERT" 时，传入当前 upsert 时依赖的主键
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataTargetPrimaryKeyField(const std::string& _dataTargetPrimaryKeyField);
@@ -350,18 +302,14 @@ namespace TencentCloud
 
                     /**
                      * 获取表与消息间的映射关系
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataTargetRecordMapping 表与消息间的映射关系
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RecordMapping> GetDataTargetRecordMapping() const;
 
                     /**
                      * 设置表与消息间的映射关系
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataTargetRecordMapping 表与消息间的映射关系
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataTargetRecordMapping(const std::vector<RecordMapping>& _dataTargetRecordMapping);
@@ -375,18 +323,14 @@ namespace TencentCloud
 
                     /**
                      * 获取事件路由到特定主题的正则表达式，默认为(.*)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicRegex 事件路由到特定主题的正则表达式，默认为(.*)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTopicRegex() const;
 
                     /**
                      * 设置事件路由到特定主题的正则表达式，默认为(.*)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topicRegex 事件路由到特定主题的正则表达式，默认为(.*)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopicRegex(const std::string& _topicRegex);
@@ -400,18 +344,14 @@ namespace TencentCloud
 
                     /**
                      * 获取TopicRegex的引用组，指定$1、$2等
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicReplacement TopicRegex的引用组，指定$1、$2等
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTopicReplacement() const;
 
                     /**
                      * 设置TopicRegex的引用组，指定$1、$2等
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topicReplacement TopicRegex的引用组，指定$1、$2等
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopicReplacement(const std::string& _topicReplacement);
@@ -425,18 +365,14 @@ namespace TencentCloud
 
                     /**
                      * 获取格式：库1.表1:字段1,字段2;库2.表2:字段2，表之间;（分号）隔开，字段之间,（逗号）隔开。不指定的表默认取表的主键
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return KeyColumns 格式：库1.表1:字段1,字段2;库2.表2:字段2，表之间;（分号）隔开，字段之间,（逗号）隔开。不指定的表默认取表的主键
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKeyColumns() const;
 
                     /**
                      * 设置格式：库1.表1:字段1,字段2;库2.表2:字段2，表之间;（分号）隔开，字段之间,（逗号）隔开。不指定的表默认取表的主键
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _keyColumns 格式：库1.表1:字段1,字段2;库2.表2:字段2，表之间;（分号）隔开，字段之间,（逗号）隔开。不指定的表默认取表的主键
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKeyColumns(const std::string& _keyColumns);
@@ -450,18 +386,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Mysql 是否抛弃解析失败的消息，默认为true
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DropInvalidMessage Mysql 是否抛弃解析失败的消息，默认为true
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetDropInvalidMessage() const;
 
                     /**
                      * 设置Mysql 是否抛弃解析失败的消息，默认为true
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dropInvalidMessage Mysql 是否抛弃解析失败的消息，默认为true
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDropInvalidMessage(const bool& _dropInvalidMessage);
@@ -475,18 +407,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当设置成员参数DropInvalidMessageToCls设置为true时,DropInvalidMessage参数失效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DropCls 当设置成员参数DropInvalidMessageToCls设置为true时,DropInvalidMessage参数失效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DropCls GetDropCls() const;
 
                     /**
                      * 设置当设置成员参数DropInvalidMessageToCls设置为true时,DropInvalidMessage参数失效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dropCls 当设置成员参数DropInvalidMessageToCls设置为true时,DropInvalidMessage参数失效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDropCls(const DropCls& _dropCls);
@@ -500,18 +428,14 @@ namespace TencentCloud
 
                     /**
                      * 获取输出格式，DEFAULT、CANAL_1、CANAL_2
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OutputFormat 输出格式，DEFAULT、CANAL_1、CANAL_2
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOutputFormat() const;
 
                     /**
                      * 设置输出格式，DEFAULT、CANAL_1、CANAL_2
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _outputFormat 输出格式，DEFAULT、CANAL_1、CANAL_2
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutputFormat(const std::string& _outputFormat);
@@ -525,18 +449,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当Table输入的是前缀时，该项值为true，否则为false
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsTablePrefix 当Table输入的是前缀时，该项值为true，否则为false
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsTablePrefix() const;
 
                     /**
                      * 设置当Table输入的是前缀时，该项值为true，否则为false
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isTablePrefix 当Table输入的是前缀时，该项值为true，否则为false
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsTablePrefix(const bool& _isTablePrefix);
@@ -550,18 +470,14 @@ namespace TencentCloud
 
                     /**
                      * 获取如果该值为all，则DDL数据以及DML数据也会写入到选中的topic；若该值为dml，则只有DML数据写入到选中的topic
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IncludeContentChanges 如果该值为all，则DDL数据以及DML数据也会写入到选中的topic；若该值为dml，则只有DML数据写入到选中的topic
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIncludeContentChanges() const;
 
                     /**
                      * 设置如果该值为all，则DDL数据以及DML数据也会写入到选中的topic；若该值为dml，则只有DML数据写入到选中的topic
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _includeContentChanges 如果该值为all，则DDL数据以及DML数据也会写入到选中的topic；若该值为dml，则只有DML数据写入到选中的topic
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIncludeContentChanges(const std::string& _includeContentChanges);
@@ -575,18 +491,14 @@ namespace TencentCloud
 
                     /**
                      * 获取如果该值为true，且MySQL中"binlog_rows_query_log_events"配置项的值为"ON"，则流入到topic的数据包含原SQL语句；若该值为false，流入到topic的数据不包含原SQL语句
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IncludeQuery 如果该值为true，且MySQL中"binlog_rows_query_log_events"配置项的值为"ON"，则流入到topic的数据包含原SQL语句；若该值为false，流入到topic的数据不包含原SQL语句
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIncludeQuery() const;
 
                     /**
                      * 设置如果该值为true，且MySQL中"binlog_rows_query_log_events"配置项的值为"ON"，则流入到topic的数据包含原SQL语句；若该值为false，流入到topic的数据不包含原SQL语句
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _includeQuery 如果该值为true，且MySQL中"binlog_rows_query_log_events"配置项的值为"ON"，则流入到topic的数据包含原SQL语句；若该值为false，流入到topic的数据不包含原SQL语句
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIncludeQuery(const bool& _includeQuery);
@@ -600,18 +512,14 @@ namespace TencentCloud
 
                     /**
                      * 获取如果该值为 true，则消息中会携带消息结构体对应的schema，如果该值为false则不会携带
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecordWithSchema 如果该值为 true，则消息中会携带消息结构体对应的schema，如果该值为false则不会携带
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetRecordWithSchema() const;
 
                     /**
                      * 设置如果该值为 true，则消息中会携带消息结构体对应的schema，如果该值为false则不会携带
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _recordWithSchema 如果该值为 true，则消息中会携带消息结构体对应的schema，如果该值为false则不会携带
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRecordWithSchema(const bool& _recordWithSchema);
@@ -625,18 +533,14 @@ namespace TencentCloud
 
                     /**
                      * 获取存放信令表的数据库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SignalDatabase 存放信令表的数据库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSignalDatabase() const;
 
                     /**
                      * 设置存放信令表的数据库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _signalDatabase 存放信令表的数据库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSignalDatabase(const std::string& _signalDatabase);
@@ -650,18 +554,14 @@ namespace TencentCloud
 
                     /**
                      * 获取输入的table是否为正则表达式，如果该选项以及IsTablePrefix同时为true，该选项的判断优先级高于IsTablePrefix
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsTableRegular 输入的table是否为正则表达式，如果该选项以及IsTablePrefix同时为true，该选项的判断优先级高于IsTablePrefix
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsTableRegular() const;
 
                     /**
                      * 设置输入的table是否为正则表达式，如果该选项以及IsTablePrefix同时为true，该选项的判断优先级高于IsTablePrefix
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isTableRegular 输入的table是否为正则表达式，如果该选项以及IsTablePrefix同时为true，该选项的判断优先级高于IsTablePrefix
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsTableRegular(const bool& _isTableRegular);
@@ -700,18 +600,14 @@ namespace TencentCloud
 
                     /**
                      * 获取datetime 类型字段转换为时间戳的时区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DateTimeZone datetime 类型字段转换为时间戳的时区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDateTimeZone() const;
 
                     /**
                      * 设置datetime 类型字段转换为时间戳的时区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dateTimeZone datetime 类型字段转换为时间戳的时区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDateTimeZone(const std::string& _dateTimeZone);
@@ -725,18 +621,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自建
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SelfBuilt 自建
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetSelfBuilt() const;
 
                     /**
                      * 设置自建
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _selfBuilt 自建
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSelfBuilt(const bool& _selfBuilt);
@@ -752,175 +644,150 @@ namespace TencentCloud
 
                     /**
                      * MySQL的数据库名称，"*"为全数据库
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_database;
                     bool m_databaseHasBeenSet;
 
                     /**
                      * MySQL的数据表名称，"*"为所监听的所有数据库中的非系统表，可以","间隔，监听多个数据表，但数据表需要以"数据库名.数据表名"的格式进行填写，需要填入正则表达式时，格式为"数据库名\\.数据表名"
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_table;
                     bool m_tableHasBeenSet;
 
                     /**
                      * 该MySQL在连接管理内的Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resource;
                     bool m_resourceHasBeenSet;
 
                     /**
                      * 复制存量信息(schema_only不复制, initial全量)，默认值initial
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_snapshotMode;
                     bool m_snapshotModeHasBeenSet;
 
                     /**
                      * 存放MySQL的Ddl信息的Topic，为空则默认不存放
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ddlTopic;
                     bool m_ddlTopicHasBeenSet;
 
                     /**
                      * "TABLE" 表示读取项为 table，"QUERY" 表示读取项为 query
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataSourceMonitorMode;
                     bool m_dataSourceMonitorModeHasBeenSet;
 
                     /**
                      * 当 "DataMonitorMode"="TABLE" 时，传入需要读取的 Table；当 "DataMonitorMode"="QUERY" 时，传入需要读取的查询 sql 语句
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataSourceMonitorResource;
                     bool m_dataSourceMonitorResourceHasBeenSet;
 
                     /**
                      * "TIMESTAMP" 表示增量列为时间戳类型，"INCREMENT" 表示增量列为自增 id 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataSourceIncrementMode;
                     bool m_dataSourceIncrementModeHasBeenSet;
 
                     /**
                      * 传入需要监听的列名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataSourceIncrementColumn;
                     bool m_dataSourceIncrementColumnHasBeenSet;
 
                     /**
                      * "HEAD" 表示复制存量 + 增量数据，"TAIL" 表示只复制增量数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataSourceStartFrom;
                     bool m_dataSourceStartFromHasBeenSet;
 
                     /**
                      * "INSERT" 表示使用 Insert 模式插入，"UPSERT" 表示使用 Upsert 模式插入
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataTargetInsertMode;
                     bool m_dataTargetInsertModeHasBeenSet;
 
                     /**
                      * 当 "DataInsertMode"="UPSERT" 时，传入当前 upsert 时依赖的主键
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dataTargetPrimaryKeyField;
                     bool m_dataTargetPrimaryKeyFieldHasBeenSet;
 
                     /**
                      * 表与消息间的映射关系
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RecordMapping> m_dataTargetRecordMapping;
                     bool m_dataTargetRecordMappingHasBeenSet;
 
                     /**
                      * 事件路由到特定主题的正则表达式，默认为(.*)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_topicRegex;
                     bool m_topicRegexHasBeenSet;
 
                     /**
                      * TopicRegex的引用组，指定$1、$2等
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_topicReplacement;
                     bool m_topicReplacementHasBeenSet;
 
                     /**
                      * 格式：库1.表1:字段1,字段2;库2.表2:字段2，表之间;（分号）隔开，字段之间,（逗号）隔开。不指定的表默认取表的主键
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_keyColumns;
                     bool m_keyColumnsHasBeenSet;
 
                     /**
                      * Mysql 是否抛弃解析失败的消息，默认为true
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_dropInvalidMessage;
                     bool m_dropInvalidMessageHasBeenSet;
 
                     /**
                      * 当设置成员参数DropInvalidMessageToCls设置为true时,DropInvalidMessage参数失效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DropCls m_dropCls;
                     bool m_dropClsHasBeenSet;
 
                     /**
                      * 输出格式，DEFAULT、CANAL_1、CANAL_2
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_outputFormat;
                     bool m_outputFormatHasBeenSet;
 
                     /**
                      * 当Table输入的是前缀时，该项值为true，否则为false
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isTablePrefix;
                     bool m_isTablePrefixHasBeenSet;
 
                     /**
                      * 如果该值为all，则DDL数据以及DML数据也会写入到选中的topic；若该值为dml，则只有DML数据写入到选中的topic
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_includeContentChanges;
                     bool m_includeContentChangesHasBeenSet;
 
                     /**
                      * 如果该值为true，且MySQL中"binlog_rows_query_log_events"配置项的值为"ON"，则流入到topic的数据包含原SQL语句；若该值为false，流入到topic的数据不包含原SQL语句
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_includeQuery;
                     bool m_includeQueryHasBeenSet;
 
                     /**
                      * 如果该值为 true，则消息中会携带消息结构体对应的schema，如果该值为false则不会携带
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_recordWithSchema;
                     bool m_recordWithSchemaHasBeenSet;
 
                     /**
                      * 存放信令表的数据库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_signalDatabase;
                     bool m_signalDatabaseHasBeenSet;
 
                     /**
                      * 输入的table是否为正则表达式，如果该选项以及IsTablePrefix同时为true，该选项的判断优先级高于IsTablePrefix
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isTableRegular;
                     bool m_isTableRegularHasBeenSet;
@@ -934,14 +801,12 @@ namespace TencentCloud
 
                     /**
                      * datetime 类型字段转换为时间戳的时区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dateTimeZone;
                     bool m_dateTimeZoneHasBeenSet;
 
                     /**
                      * 自建
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_selfBuilt;
                     bool m_selfBuiltHasBeenSet;

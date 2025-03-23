@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取查询命中的节省计划抵扣明细数据总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 查询命中的节省计划抵扣明细数据总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTotal() const;
@@ -78,7 +76,6 @@ namespace TencentCloud
 
                     /**
                      * 查询命中的节省计划抵扣明细数据总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_total;
                     bool m_totalHasBeenSet;

@@ -135,18 +135,14 @@ namespace TencentCloud
 
                     /**
                      * 获取位置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Placement 位置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Placement GetPlacement() const;
 
                     /**
                      * 设置位置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _placement 位置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPlacement(const Placement& _placement);
@@ -181,18 +177,14 @@ namespace TencentCloud
 
                     /**
                      * 获取结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endTime 结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -227,18 +219,14 @@ namespace TencentCloud
 
                     /**
                      * 获取作业绑定的标签列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 作业绑定的标签列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置作业绑定的标签列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 作业绑定的标签列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -278,7 +266,6 @@ namespace TencentCloud
 
                     /**
                      * 位置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Placement m_placement;
                     bool m_placementHasBeenSet;
@@ -291,7 +278,6 @@ namespace TencentCloud
 
                     /**
                      * 结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
@@ -304,7 +290,6 @@ namespace TencentCloud
 
                     /**
                      * 作业绑定的标签列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;

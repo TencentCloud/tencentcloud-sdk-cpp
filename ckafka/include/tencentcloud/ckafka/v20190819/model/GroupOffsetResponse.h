@@ -70,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该主题分区数组，其中每个元素为一个 json object
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicList 该主题分区数组，其中每个元素为一个 json object
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<GroupOffsetTopic> GetTopicList() const;
 
                     /**
                      * 设置该主题分区数组，其中每个元素为一个 json object
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topicList 该主题分区数组，其中每个元素为一个 json object
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopicList(const std::vector<GroupOffsetTopic>& _topicList);
@@ -103,7 +99,6 @@ namespace TencentCloud
 
                     /**
                      * 该主题分区数组，其中每个元素为一个 json object
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<GroupOffsetTopic> m_topicList;
                     bool m_topicListHasBeenSet;

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取MySQL的连接port
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Port MySQL的连接port
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置MySQL的连接port
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _port MySQL的连接port
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPort(const int64_t& _port);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取MySQL连接源的用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserName MySQL连接源的用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置MySQL连接源的用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userName MySQL连接源的用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserName(const std::string& _userName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取MySQL连接源的密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Password MySQL连接源的密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPassword() const;
 
                     /**
                      * 设置MySQL连接源的密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _password MySQL连接源的密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPassword(const std::string& _password);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取MySQL连接源的实例资源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Resource MySQL连接源的实例资源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResource() const;
 
                     /**
                      * 设置MySQL连接源的实例资源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resource MySQL连接源的实例资源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResource(const std::string& _resource);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取MySQL连接源的实例vip，当为腾讯云实例时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceVip MySQL连接源的实例vip，当为腾讯云实例时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetServiceVip() const;
 
                     /**
                      * 设置MySQL连接源的实例vip，当为腾讯云实例时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serviceVip MySQL连接源的实例vip，当为腾讯云实例时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServiceVip(const std::string& _serviceVip);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取MySQL连接源的vpcId，当为腾讯云实例时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UniqVpcId MySQL连接源的vpcId，当为腾讯云实例时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUniqVpcId() const;
 
                     /**
                      * 设置MySQL连接源的vpcId，当为腾讯云实例时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uniqVpcId MySQL连接源的vpcId，当为腾讯云实例时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUniqVpcId(const std::string& _uniqVpcId);
@@ -223,18 +199,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当type为TDSQL_C_MYSQL时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterId 当type为TDSQL_C_MYSQL时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterId() const;
 
                     /**
                      * 设置当type为TDSQL_C_MYSQL时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterId 当type为TDSQL_C_MYSQL时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterId(const std::string& _clusterId);
@@ -248,18 +220,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Mysql 连接源是否为自建集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SelfBuilt Mysql 连接源是否为自建集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetSelfBuilt() const;
 
                     /**
                      * 设置Mysql 连接源是否为自建集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _selfBuilt Mysql 连接源是否为自建集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSelfBuilt(const bool& _selfBuilt);
@@ -275,42 +243,36 @@ namespace TencentCloud
 
                     /**
                      * MySQL的连接port
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
                      * MySQL连接源的用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;
 
                     /**
                      * MySQL连接源的密码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
 
                     /**
                      * MySQL连接源的实例资源
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resource;
                     bool m_resourceHasBeenSet;
 
                     /**
                      * MySQL连接源的实例vip，当为腾讯云实例时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serviceVip;
                     bool m_serviceVipHasBeenSet;
 
                     /**
                      * MySQL连接源的vpcId，当为腾讯云实例时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uniqVpcId;
                     bool m_uniqVpcIdHasBeenSet;
@@ -324,14 +286,12 @@ namespace TencentCloud
 
                     /**
                      * 当type为TDSQL_C_MYSQL时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
 
                     /**
                      * Mysql 连接源是否为自建集群
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_selfBuilt;
                     bool m_selfBuiltHasBeenSet;

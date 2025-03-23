@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_LKE_V20231130_MODEL_RESETSESSIONRESPONSE_H_
-#define TENCENTCLOUD_LKE_V20231130_MODEL_RESETSESSIONRESPONSE_H_
+#ifndef TENCENTCLOUD_TEO_V20220901_MODEL_MODIFYL7ACCRULEPRIORITYRESPONSE_H_
+#define TENCENTCLOUD_TEO_V20220901_MODEL_MODIFYL7ACCRULEPRIORITYRESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,20 +25,20 @@
 
 namespace TencentCloud
 {
-    namespace Lke
+    namespace Teo
     {
-        namespace V20231130
+        namespace V20220901
         {
             namespace Model
             {
                 /**
-                * ResetSession返回参数结构体
+                * ModifyL7AccRulePriority返回参数结构体
                 */
-                class ResetSessionResponse : public AbstractModel
+                class ModifyL7AccRulePriorityResponse : public AbstractModel
                 {
                 public:
-                    ResetSessionResponse();
-                    ~ResetSessionResponse() = default;
+                    ModifyL7AccRulePriorityResponse();
+                    ~ModifyL7AccRulePriorityResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
@@ -51,4 +51,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_LKE_V20231130_MODEL_RESETSESSIONRESPONSE_H_
+#endif // !TENCENTCLOUD_TEO_V20220901_MODEL_MODIFYL7ACCRULEPRIORITYRESPONSE_H_

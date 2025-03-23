@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取连接管理实例资源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Resource 连接管理实例资源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResource() const;
 
                     /**
                      * 设置连接管理实例资源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resource 连接管理实例资源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResource(const std::string& _resource);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Ctsdb的metric
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CtsdbMetric Ctsdb的metric
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCtsdbMetric() const;
 
                     /**
                      * 设置Ctsdb的metric
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ctsdbMetric Ctsdb的metric
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCtsdbMetric(const std::string& _ctsdbMetric);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 连接管理实例资源
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resource;
                     bool m_resourceHasBeenSet;
 
                     /**
                      * Ctsdb的metric
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ctsdbMetric;
                     bool m_ctsdbMetricHasBeenSet;

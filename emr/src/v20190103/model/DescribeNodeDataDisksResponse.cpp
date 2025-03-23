@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeNodeDataDisksResponse::DescribeNodeDataDisksResponse() :
     m_totalCountHasBeenSet(false),
-    m_cBSListHasBeenSet(false)
+    m_cBSListHasBeenSet(false),
+    m_maxSizeHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,16 @@ CoreInternalOutcome DescribeNodeDataDisksResponse::Deserialize(const string &pay
         m_cBSListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("MaxSize") && !rsp["MaxSize"].IsNull())
+    {
+        if (!rsp["MaxSize"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MaxSize` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxSize = rsp["MaxSize"].GetUint64();
+        m_maxSizeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +137,14 @@ string DescribeNodeDataDisksResponse::ToJsonString() const
         }
     }
 
+    if (m_maxSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxSize, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -156,6 +175,16 @@ vector<CBSInstance> DescribeNodeDataDisksResponse::GetCBSList() const
 bool DescribeNodeDataDisksResponse::CBSListHasBeenSet() const
 {
     return m_cBSListHasBeenSet;
+}
+
+uint64_t DescribeNodeDataDisksResponse::GetMaxSize() const
+{
+    return m_maxSize;
+}
+
+bool DescribeNodeDataDisksResponse::MaxSizeHasBeenSet() const
+{
+    return m_maxSizeHasBeenSet;
 }
 
 

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取依赖关系的起点任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTask 依赖关系的起点任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStartTask() const;
 
                     /**
                      * 设置依赖关系的起点任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _startTask 依赖关系的起点任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStartTask(const std::string& _startTask);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取依赖关系的终点任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTask 依赖关系的终点任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndTask() const;
 
                     /**
                      * 设置依赖关系的终点任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endTask 依赖关系的终点任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndTask(const std::string& _endTask);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 依赖关系的起点任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_startTask;
                     bool m_startTaskHasBeenSet;
 
                     /**
                      * 依赖关系的终点任务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endTask;
                     bool m_endTaskHasBeenSet;

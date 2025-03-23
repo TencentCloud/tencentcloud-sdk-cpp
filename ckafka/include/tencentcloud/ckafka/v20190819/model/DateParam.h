@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取输入类型，string，unix时间戳，默认string
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TargetType 输入类型，string，unix时间戳，默认string
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTargetType() const;
 
                     /**
                      * 设置输入类型，string，unix时间戳，默认string
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _targetType 输入类型，string，unix时间戳，默认string
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTargetType(const std::string& _targetType);
@@ -94,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取时区，默认GMT+8
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeZone 时区，默认GMT+8
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTimeZone() const;
 
                     /**
                      * 设置时区，默认GMT+8
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timeZone 时区，默认GMT+8
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimeZone(const std::string& _timeZone);
@@ -127,14 +119,12 @@ namespace TencentCloud
 
                     /**
                      * 输入类型，string，unix时间戳，默认string
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_targetType;
                     bool m_targetTypeHasBeenSet;
 
                     /**
                      * 时区，默认GMT+8
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_timeZone;
                     bool m_timeZoneHasBeenSet;

@@ -112,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据处理VALUE
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 数据处理VALUE
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置数据处理VALUE
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _value 数据处理VALUE
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -137,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取VALUE处理
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ValueOperate VALUE处理
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ValueParam GetValueOperate() const;
 
                     /**
                      * 设置VALUE处理
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _valueOperate VALUE处理
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValueOperate(const ValueParam& _valueOperate);
@@ -162,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取原始VALUE
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OriginalValue 原始VALUE
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOriginalValue() const;
 
                     /**
                      * 设置原始VALUE
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _originalValue 原始VALUE
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOriginalValue(const std::string& _originalValue);
@@ -187,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取VALUE处理链
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ValueOperates VALUE处理链
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ValueParam> GetValueOperates() const;
 
                     /**
                      * 设置VALUE处理链
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _valueOperates VALUE处理链
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValueOperates(const std::vector<ValueParam>& _valueOperates);
@@ -232,28 +216,24 @@ namespace TencentCloud
 
                     /**
                      * 数据处理VALUE
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;
 
                     /**
                      * VALUE处理
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ValueParam m_valueOperate;
                     bool m_valueOperateHasBeenSet;
 
                     /**
                      * 原始VALUE
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_originalValue;
                     bool m_originalValueHasBeenSet;
 
                     /**
                      * VALUE处理链
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ValueParam> m_valueOperates;
                     bool m_valueOperatesHasBeenSet;

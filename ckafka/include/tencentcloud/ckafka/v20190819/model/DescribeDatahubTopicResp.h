@@ -153,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Note 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNote() const;
 
                     /**
                      * 设置备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _note 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNote(const std::string& _note);
@@ -241,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务路由地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Address 服务路由地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAddress() const;
 
                     /**
                      * 设置服务路由地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _address 服务路由地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAddress(const std::string& _address);
@@ -298,7 +290,6 @@ namespace TencentCloud
 
                     /**
                      * 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_note;
                     bool m_noteHasBeenSet;
@@ -323,7 +314,6 @@ namespace TencentCloud
 
                     /**
                      * 服务路由地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_address;
                     bool m_addressHasBeenSet;

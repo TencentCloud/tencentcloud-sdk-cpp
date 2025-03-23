@@ -23,13 +23,13 @@ using namespace TencentCloud::Apm::V20210622::Model;
 using namespace std;
 
 DescribeMetricRecordsRequest::DescribeMetricRecordsRequest() :
-    m_metricsHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
+    m_metricsHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
+    m_groupByHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_orFiltersHasBeenSet(false),
-    m_groupByHasBeenSet(false),
     m_orderByHasBeenSet(false),
     m_businessNameHasBeenSet(false),
     m_typeHasBeenSet(false),
@@ -47,6 +47,14 @@ string DescribeMetricRecordsRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_metricsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -60,14 +68,6 @@ string DescribeMetricRecordsRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
-    }
-
-    if (m_instanceIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "InstanceId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_startTimeHasBeenSet)
@@ -84,6 +84,19 @@ string DescribeMetricRecordsRequest::ToJsonString() const
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_endTime, allocator);
+    }
+
+    if (m_groupByHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupBy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_groupBy.begin(); itr != m_groupBy.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     if (m_filtersHasBeenSet)
@@ -113,19 +126,6 @@ string DescribeMetricRecordsRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
-        }
-    }
-
-    if (m_groupByHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "GroupBy";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_groupBy.begin(); itr != m_groupBy.end(); ++itr)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -194,22 +194,6 @@ string DescribeMetricRecordsRequest::ToJsonString() const
 }
 
 
-vector<QueryMetricItem> DescribeMetricRecordsRequest::GetMetrics() const
-{
-    return m_metrics;
-}
-
-void DescribeMetricRecordsRequest::SetMetrics(const vector<QueryMetricItem>& _metrics)
-{
-    m_metrics = _metrics;
-    m_metricsHasBeenSet = true;
-}
-
-bool DescribeMetricRecordsRequest::MetricsHasBeenSet() const
-{
-    return m_metricsHasBeenSet;
-}
-
 string DescribeMetricRecordsRequest::GetInstanceId() const
 {
     return m_instanceId;
@@ -224,6 +208,22 @@ void DescribeMetricRecordsRequest::SetInstanceId(const string& _instanceId)
 bool DescribeMetricRecordsRequest::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+vector<QueryMetricItem> DescribeMetricRecordsRequest::GetMetrics() const
+{
+    return m_metrics;
+}
+
+void DescribeMetricRecordsRequest::SetMetrics(const vector<QueryMetricItem>& _metrics)
+{
+    m_metrics = _metrics;
+    m_metricsHasBeenSet = true;
+}
+
+bool DescribeMetricRecordsRequest::MetricsHasBeenSet() const
+{
+    return m_metricsHasBeenSet;
 }
 
 uint64_t DescribeMetricRecordsRequest::GetStartTime() const
@@ -258,6 +258,22 @@ bool DescribeMetricRecordsRequest::EndTimeHasBeenSet() const
     return m_endTimeHasBeenSet;
 }
 
+vector<string> DescribeMetricRecordsRequest::GetGroupBy() const
+{
+    return m_groupBy;
+}
+
+void DescribeMetricRecordsRequest::SetGroupBy(const vector<string>& _groupBy)
+{
+    m_groupBy = _groupBy;
+    m_groupByHasBeenSet = true;
+}
+
+bool DescribeMetricRecordsRequest::GroupByHasBeenSet() const
+{
+    return m_groupByHasBeenSet;
+}
+
 vector<Filter> DescribeMetricRecordsRequest::GetFilters() const
 {
     return m_filters;
@@ -288,22 +304,6 @@ void DescribeMetricRecordsRequest::SetOrFilters(const vector<Filter>& _orFilters
 bool DescribeMetricRecordsRequest::OrFiltersHasBeenSet() const
 {
     return m_orFiltersHasBeenSet;
-}
-
-vector<string> DescribeMetricRecordsRequest::GetGroupBy() const
-{
-    return m_groupBy;
-}
-
-void DescribeMetricRecordsRequest::SetGroupBy(const vector<string>& _groupBy)
-{
-    m_groupBy = _groupBy;
-    m_groupByHasBeenSet = true;
-}
-
-bool DescribeMetricRecordsRequest::GroupByHasBeenSet() const
-{
-    return m_groupByHasBeenSet;
 }
 
 OrderBy DescribeMetricRecordsRequest::GetOrderBy() const

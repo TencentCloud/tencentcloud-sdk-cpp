@@ -1055,7 +1055,7 @@ namespace TencentCloud
                 ResetYarnConfigOutcomeCallable ResetYarnConfigCallable(const Model::ResetYarnConfigRequest& request);
 
                 /**
-                 *云盘扩容
+                 *云数据盘扩容
                  * @param req ResizeDataDisksRequest
                  * @return ResizeDataDisksOutcome
                  */

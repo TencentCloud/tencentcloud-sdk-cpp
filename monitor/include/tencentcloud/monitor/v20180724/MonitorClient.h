@@ -39,6 +39,8 @@
 #include <tencentcloud/monitor/v20180724/model/CreateAlarmShieldResponse.h>
 #include <tencentcloud/monitor/v20180724/model/CreateAlertRuleRequest.h>
 #include <tencentcloud/monitor/v20180724/model/CreateAlertRuleResponse.h>
+#include <tencentcloud/monitor/v20180724/model/CreateConditionsTemplateRequest.h>
+#include <tencentcloud/monitor/v20180724/model/CreateConditionsTemplateResponse.h>
 #include <tencentcloud/monitor/v20180724/model/CreateExporterIntegrationRequest.h>
 #include <tencentcloud/monitor/v20180724/model/CreateExporterIntegrationResponse.h>
 #include <tencentcloud/monitor/v20180724/model/CreateGrafanaInstanceRequest.h>
@@ -381,6 +383,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAlertRuleResponse> CreateAlertRuleOutcome;
                 typedef std::future<CreateAlertRuleOutcome> CreateAlertRuleOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::CreateAlertRuleRequest&, CreateAlertRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAlertRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateConditionsTemplateResponse> CreateConditionsTemplateOutcome;
+                typedef std::future<CreateConditionsTemplateOutcome> CreateConditionsTemplateOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::CreateConditionsTemplateRequest&, CreateConditionsTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateConditionsTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateExporterIntegrationResponse> CreateExporterIntegrationOutcome;
                 typedef std::future<CreateExporterIntegrationOutcome> CreateExporterIntegrationOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::CreateExporterIntegrationRequest&, CreateExporterIntegrationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateExporterIntegrationAsyncHandler;
@@ -913,6 +918,15 @@ namespace TencentCloud
                 CreateAlertRuleOutcome CreateAlertRule(const Model::CreateAlertRuleRequest &request);
                 void CreateAlertRuleAsync(const Model::CreateAlertRuleRequest& request, const CreateAlertRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAlertRuleOutcomeCallable CreateAlertRuleCallable(const Model::CreateAlertRuleRequest& request);
+
+                /**
+                 *创建告警条件模板
+                 * @param req CreateConditionsTemplateRequest
+                 * @return CreateConditionsTemplateOutcome
+                 */
+                CreateConditionsTemplateOutcome CreateConditionsTemplate(const Model::CreateConditionsTemplateRequest &request);
+                void CreateConditionsTemplateAsync(const Model::CreateConditionsTemplateRequest& request, const CreateConditionsTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateConditionsTemplateOutcomeCallable CreateConditionsTemplateCallable(const Model::CreateConditionsTemplateRequest& request);
 
                 /**
                  *创建集成中心 exporter 集成，因集成较多，建议控制台创建集成。(前提：已授权创建托管 EKS 集群，验证方式：1. 控制台界面确认，未提示授权则表示已授权创建；2. 通过 DescribePrometheusInstanceInitStatus 接口查询集群状态，如果托管集群不存在，可通过 RunPrometheusInstance 接口创建)

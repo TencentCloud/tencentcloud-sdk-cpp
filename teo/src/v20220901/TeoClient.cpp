@@ -5501,6 +5501,49 @@ TeoClient::ModifyL7AccRuleOutcomeCallable TeoClient::ModifyL7AccRuleCallable(con
     return task->get_future();
 }
 
+TeoClient::ModifyL7AccRulePriorityOutcome TeoClient::ModifyL7AccRulePriority(const ModifyL7AccRulePriorityRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyL7AccRulePriority");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyL7AccRulePriorityResponse rsp = ModifyL7AccRulePriorityResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyL7AccRulePriorityOutcome(rsp);
+        else
+            return ModifyL7AccRulePriorityOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyL7AccRulePriorityOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::ModifyL7AccRulePriorityAsync(const ModifyL7AccRulePriorityRequest& request, const ModifyL7AccRulePriorityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyL7AccRulePriority(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::ModifyL7AccRulePriorityOutcomeCallable TeoClient::ModifyL7AccRulePriorityCallable(const ModifyL7AccRulePriorityRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyL7AccRulePriorityOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyL7AccRulePriority(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TeoClient::ModifyL7AccSettingOutcome TeoClient::ModifyL7AccSetting(const ModifyL7AccSettingRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyL7AccSetting");

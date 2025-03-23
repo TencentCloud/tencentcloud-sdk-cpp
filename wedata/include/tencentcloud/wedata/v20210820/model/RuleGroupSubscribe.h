@@ -198,6 +198,31 @@ namespace TencentCloud
                      */
                     bool RuleNameHasBeenSet() const;
 
+                    /**
+                     * 获取发送对象
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AlarmMessageRule 发送对象
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAlarmMessageRule() const;
+
+                    /**
+                     * 设置发送对象
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _alarmMessageRule 发送对象
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAlarmMessageRule(const std::string& _alarmMessageRule);
+
+                    /**
+                     * 判断参数 AlarmMessageRule 是否已赋值
+                     * @return AlarmMessageRule 是否已赋值
+                     * 
+                     */
+                    bool AlarmMessageRuleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -241,6 +266,13 @@ namespace TencentCloud
                      */
                     std::string m_ruleName;
                     bool m_ruleNameHasBeenSet;
+
+                    /**
+                     * 发送对象
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_alarmMessageRule;
+                    bool m_alarmMessageRuleHasBeenSet;
 
                 };
             }

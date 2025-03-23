@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取授权场景，例如COS
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Scene 授权场景，例如COS
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetScene() const;
 
                     /**
                      * 设置授权场景，例如COS
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scene 授权场景，例如COS
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScene(const std::string& _scene);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取SecretId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecretId SecretId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSecretId() const;
 
                     /**
                      * 设置SecretId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _secretId SecretId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSecretId(const std::string& _secretId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取SecretKey
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecretKey SecretKey
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSecretKey() const;
 
                     /**
                      * 设置SecretKey
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _secretKey SecretKey
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSecretKey(const std::string& _secretKey);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 授权场景，例如COS
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scene;
                     bool m_sceneHasBeenSet;
 
                     /**
                      * SecretId
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_secretId;
                     bool m_secretIdHasBeenSet;
 
                     /**
                      * SecretKey
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_secretKey;
                     bool m_secretKeyHasBeenSet;

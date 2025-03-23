@@ -78,18 +78,14 @@ Email:邮件;Sms:短信;WeChat:微信;Phone:电话;WeCom:企业微信;DingTalk:�
 
                     /**
                      * 获取告警触发通知内容模板。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TriggerContent 告警触发通知内容模板。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     NoticeContentInfo GetTriggerContent() const;
 
                     /**
                      * 设置告警触发通知内容模板。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _triggerContent 告警触发通知内容模板。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTriggerContent(const NoticeContentInfo& _triggerContent);
@@ -103,18 +99,14 @@ Email:邮件;Sms:短信;WeChat:微信;Phone:电话;WeCom:企业微信;DingTalk:�
 
                     /**
                      * 获取告警恢复通知内容模板。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecoveryContent 告警恢复通知内容模板。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     NoticeContentInfo GetRecoveryContent() const;
 
                     /**
                      * 设置告警恢复通知内容模板。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _recoveryContent 告警恢复通知内容模板。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRecoveryContent(const NoticeContentInfo& _recoveryContent);
@@ -138,14 +130,12 @@ Email:邮件;Sms:短信;WeChat:微信;Phone:电话;WeCom:企业微信;DingTalk:�
 
                     /**
                      * 告警触发通知内容模板。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     NoticeContentInfo m_triggerContent;
                     bool m_triggerContentHasBeenSet;
 
                     /**
                      * 告警恢复通知内容模板。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     NoticeContentInfo m_recoveryContent;
                     bool m_recoveryContentHasBeenSet;

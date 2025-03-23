@@ -98,18 +98,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否支持的版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsUnSupportVersion 是否支持的版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsUnSupportVersion() const;
 
                     /**
                      * 设置是否支持的版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isUnSupportVersion 是否支持的版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsUnSupportVersion(const bool& _isUnSupportVersion);
@@ -139,7 +135,6 @@ namespace TencentCloud
 
                     /**
                      * 是否支持的版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isUnSupportVersion;
                     bool m_isUnSupportVersionHasBeenSet;

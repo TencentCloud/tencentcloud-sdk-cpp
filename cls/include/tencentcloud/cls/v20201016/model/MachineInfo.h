@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取机器实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceID 机器实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceID() const;
 
                     /**
                      * 设置机器实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceID 机器实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceID(const std::string& _instanceID);
@@ -257,7 +253,6 @@ namespace TencentCloud
 
                     /**
                      * 机器实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceID;
                     bool m_instanceIDHasBeenSet;

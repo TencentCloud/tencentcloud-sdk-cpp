@@ -73,6 +73,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/CreateTRTCSignaturesWithRoomIdRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeSpaceFenceEventListRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/FenceEventItem.h
+  include/tencentcloud/iotexplorer/v20190423/model/DescribeUnbindedDevicesRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/RegisteredDeviceNetTypeInfo.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeGatewaySubDeviceListRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/GetDeviceListRequest.h
@@ -191,6 +192,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/CreateTopicRuleResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeDeviceDataResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribePositionFenceListRequest.h
+  include/tencentcloud/iotexplorer/v20190423/model/DescribeUnbindedDevicesResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/InvokeCloudStorageAIServiceTaskRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/ResetCloudStorageRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageEventsWithAITasksRequest.h
@@ -463,6 +465,7 @@ set(iotexplorer_src
   src/v20190423/model/CreateTRTCSignaturesWithRoomIdRequest.cpp
   src/v20190423/model/DescribeSpaceFenceEventListRequest.cpp
   src/v20190423/model/FenceEventItem.cpp
+  src/v20190423/model/DescribeUnbindedDevicesRequest.cpp
   src/v20190423/model/RegisteredDeviceNetTypeInfo.cpp
   src/v20190423/model/DescribeGatewaySubDeviceListRequest.cpp
   src/v20190423/model/GetDeviceListRequest.cpp
@@ -581,6 +584,7 @@ set(iotexplorer_src
   src/v20190423/model/CreateTopicRuleResponse.cpp
   src/v20190423/model/DescribeDeviceDataResponse.cpp
   src/v20190423/model/DescribePositionFenceListRequest.cpp
+  src/v20190423/model/DescribeUnbindedDevicesResponse.cpp
   src/v20190423/model/InvokeCloudStorageAIServiceTaskRequest.cpp
   src/v20190423/model/ResetCloudStorageRequest.cpp
   src/v20190423/model/DescribeCloudStorageEventsWithAITasksRequest.cpp

@@ -207,6 +207,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeTopicPolicyResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeTopicRuleRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeTopicRuleResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeUnbindedDevicesRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeUnbindedDevicesResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeVideoLicenseRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeVideoLicenseResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DirectBindDeviceInFamilyRequest.h>
@@ -631,6 +633,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTopicRuleResponse> DescribeTopicRuleOutcome;
                 typedef std::future<DescribeTopicRuleOutcome> DescribeTopicRuleOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeTopicRuleRequest&, DescribeTopicRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopicRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUnbindedDevicesResponse> DescribeUnbindedDevicesOutcome;
+                typedef std::future<DescribeUnbindedDevicesOutcome> DescribeUnbindedDevicesOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeUnbindedDevicesRequest&, DescribeUnbindedDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUnbindedDevicesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeVideoLicenseResponse> DescribeVideoLicenseOutcome;
                 typedef std::future<DescribeVideoLicenseOutcome> DescribeVideoLicenseOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeVideoLicenseRequest&, DescribeVideoLicenseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVideoLicenseAsyncHandler;
@@ -1662,6 +1667,15 @@ namespace TencentCloud
                 DescribeTopicRuleOutcome DescribeTopicRule(const Model::DescribeTopicRuleRequest &request);
                 void DescribeTopicRuleAsync(const Model::DescribeTopicRuleRequest& request, const DescribeTopicRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTopicRuleOutcomeCallable DescribeTopicRuleCallable(const Model::DescribeTopicRuleRequest& request);
+
+                /**
+                 *获取未绑定的设备列表
+                 * @param req DescribeUnbindedDevicesRequest
+                 * @return DescribeUnbindedDevicesOutcome
+                 */
+                DescribeUnbindedDevicesOutcome DescribeUnbindedDevices(const Model::DescribeUnbindedDevicesRequest &request);
+                void DescribeUnbindedDevicesAsync(const Model::DescribeUnbindedDevicesRequest& request, const DescribeUnbindedDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUnbindedDevicesOutcomeCallable DescribeUnbindedDevicesCallable(const Model::DescribeUnbindedDevicesRequest& request);
 
                 /**
                  *用于查询视频激活码统计概览

@@ -203,8 +203,6 @@
 #include <tencentcloud/lke/v20231130/model/ReconstructDocumentResponse.h>
 #include <tencentcloud/lke/v20231130/model/RenameDocRequest.h>
 #include <tencentcloud/lke/v20231130/model/RenameDocResponse.h>
-#include <tencentcloud/lke/v20231130/model/ResetSessionRequest.h>
-#include <tencentcloud/lke/v20231130/model/ResetSessionResponse.h>
 #include <tencentcloud/lke/v20231130/model/RetryDocAuditRequest.h>
 #include <tencentcloud/lke/v20231130/model/RetryDocAuditResponse.h>
 #include <tencentcloud/lke/v20231130/model/RetryDocParseRequest.h>
@@ -505,9 +503,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RenameDocResponse> RenameDocOutcome;
                 typedef std::future<RenameDocOutcome> RenameDocOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::RenameDocRequest&, RenameDocOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenameDocAsyncHandler;
-                typedef Outcome<Core::Error, Model::ResetSessionResponse> ResetSessionOutcome;
-                typedef std::future<ResetSessionOutcome> ResetSessionOutcomeCallable;
-                typedef std::function<void(const LkeClient*, const Model::ResetSessionRequest&, ResetSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetSessionAsyncHandler;
                 typedef Outcome<Core::Error, Model::RetryDocAuditResponse> RetryDocAuditOutcome;
                 typedef std::future<RetryDocAuditOutcome> RetryDocAuditOutcomeCallable;
                 typedef std::function<void(const LkeClient*, const Model::RetryDocAuditRequest&, RetryDocAuditOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RetryDocAuditAsyncHandler;
@@ -1353,15 +1348,6 @@ namespace TencentCloud
                 RenameDocOutcome RenameDoc(const Model::RenameDocRequest &request);
                 void RenameDocAsync(const Model::RenameDocRequest& request, const RenameDocAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RenameDocOutcomeCallable RenameDocCallable(const Model::RenameDocRequest& request);
-
-                /**
-                 *重置会话
-                 * @param req ResetSessionRequest
-                 * @return ResetSessionOutcome
-                 */
-                ResetSessionOutcome ResetSession(const Model::ResetSessionRequest &request);
-                void ResetSessionAsync(const Model::ResetSessionRequest& request, const ResetSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ResetSessionOutcomeCallable ResetSessionCallable(const Model::ResetSessionRequest& request);
 
                 /**
                  *文档解析重试

@@ -178,18 +178,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群调度器版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SchedulerVersion 集群调度器版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSchedulerVersion() const;
 
                     /**
                      * 设置集群调度器版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _schedulerVersion 集群调度器版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSchedulerVersion(const std::string& _schedulerVersion);
@@ -409,7 +405,6 @@ namespace TencentCloud
 
                     /**
                      * 集群调度器版本。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_schedulerVersion;
                     bool m_schedulerVersionHasBeenSet;

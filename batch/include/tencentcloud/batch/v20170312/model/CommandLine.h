@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务执行命令。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Command 任务执行命令。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCommand() const;
 
                     /**
                      * 设置任务执行命令。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _command 任务执行命令。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCommand(const std::string& _command);
@@ -75,7 +71,6 @@ namespace TencentCloud
 
                     /**
                      * 任务执行命令。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_command;
                     bool m_commandHasBeenSet;

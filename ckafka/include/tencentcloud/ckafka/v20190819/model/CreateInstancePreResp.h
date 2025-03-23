@@ -91,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取操作型返回的Data数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 操作型返回的Data数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CreateInstancePreData GetData() const;
 
                     /**
                      * 设置操作型返回的Data数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _data 操作型返回的Data数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetData(const CreateInstancePreData& _data);
@@ -155,7 +151,6 @@ namespace TencentCloud
 
                     /**
                      * 操作型返回的Data数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CreateInstancePreData m_data;
                     bool m_dataHasBeenSet;

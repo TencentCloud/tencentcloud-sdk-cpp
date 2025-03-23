@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取频道ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LiveChannelId 频道ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLiveChannelId() const;
 
                     /**
                      * 设置频道ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _liveChannelId 频道ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLiveChannelId(const std::string& _liveChannelId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取频道名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LiveChannelName 频道名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLiveChannelName() const;
 
                     /**
                      * 设置频道名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _liveChannelName 频道名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLiveChannelName(const std::string& _liveChannelName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取频道类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LiveChannelType 频道类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLiveChannelType() const;
 
                     /**
                      * 设置频道类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _liveChannelType 频道类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLiveChannelType(const int64_t& _liveChannelType);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取通道直播状态：1: 未推流，2: 推流中
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LiveStatus 通道直播状态：1: 未推流，2: 推流中
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLiveStatus() const;
 
                     /**
                      * 设置通道直播状态：1: 未推流，2: 推流中
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _liveStatus 通道直播状态：1: 未推流，2: 推流中
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLiveStatus(const int64_t& _liveStatus);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取推流地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PushStreamAddress 推流地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPushStreamAddress() const;
 
                     /**
                      * 设置推流地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pushStreamAddress 推流地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPushStreamAddress(const std::string& _pushStreamAddress);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updateTime 修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -225,49 +197,42 @@ namespace TencentCloud
 
                     /**
                      * 频道ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_liveChannelId;
                     bool m_liveChannelIdHasBeenSet;
 
                     /**
                      * 频道名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_liveChannelName;
                     bool m_liveChannelNameHasBeenSet;
 
                     /**
                      * 频道类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_liveChannelType;
                     bool m_liveChannelTypeHasBeenSet;
 
                     /**
                      * 通道直播状态：1: 未推流，2: 推流中
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_liveStatus;
                     bool m_liveStatusHasBeenSet;
 
                     /**
                      * 推流地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pushStreamAddress;
                     bool m_pushStreamAddressHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取SQLServer的连接port
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Port SQLServer的连接port
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置SQLServer的连接port
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _port SQLServer的连接port
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPort(const int64_t& _port);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取SQLServer连接源的用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserName SQLServer连接源的用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置SQLServer连接源的用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userName SQLServer连接源的用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserName(const std::string& _userName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取SQLServer连接源的密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Password SQLServer连接源的密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPassword() const;
 
                     /**
                      * 设置SQLServer连接源的密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _password SQLServer连接源的密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPassword(const std::string& _password);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取SQLServer连接源的实例资源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Resource SQLServer连接源的实例资源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResource() const;
 
                     /**
                      * 设置SQLServer连接源的实例资源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resource SQLServer连接源的实例资源
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResource(const std::string& _resource);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取SQLServer连接源的实例vip，当为腾讯云实例时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceVip SQLServer连接源的实例vip，当为腾讯云实例时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetServiceVip() const;
 
                     /**
                      * 设置SQLServer连接源的实例vip，当为腾讯云实例时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serviceVip SQLServer连接源的实例vip，当为腾讯云实例时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServiceVip(const std::string& _serviceVip);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取SQLServer连接源的vpcId，当为腾讯云实例时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UniqVpcId SQLServer连接源的vpcId，当为腾讯云实例时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUniqVpcId() const;
 
                     /**
                      * 设置SQLServer连接源的vpcId，当为腾讯云实例时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uniqVpcId SQLServer连接源的vpcId，当为腾讯云实例时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUniqVpcId(const std::string& _uniqVpcId);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否更新到关联的Dip任务
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsUpdate 是否更新到关联的Dip任务
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsUpdate() const;
 
                     /**
                      * 设置是否更新到关联的Dip任务
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isUpdate 是否更新到关联的Dip任务
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsUpdate(const bool& _isUpdate);
@@ -225,49 +197,42 @@ namespace TencentCloud
 
                     /**
                      * SQLServer的连接port
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
                      * SQLServer连接源的用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;
 
                     /**
                      * SQLServer连接源的密码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
 
                     /**
                      * SQLServer连接源的实例资源
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resource;
                     bool m_resourceHasBeenSet;
 
                     /**
                      * SQLServer连接源的实例vip，当为腾讯云实例时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serviceVip;
                     bool m_serviceVipHasBeenSet;
 
                     /**
                      * SQLServer连接源的vpcId，当为腾讯云实例时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uniqVpcId;
                     bool m_uniqVpcIdHasBeenSet;
 
                     /**
                      * 是否更新到关联的Dip任务
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isUpdate;
                     bool m_isUpdateHasBeenSet;

@@ -174,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Docker命令运行参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DockerRunOption Docker命令运行参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDockerRunOption() const;
 
                     /**
                      * 设置Docker命令运行参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dockerRunOption Docker命令运行参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDockerRunOption(const std::string& _dockerRunOption);
@@ -237,7 +233,6 @@ namespace TencentCloud
 
                     /**
                      * Docker命令运行参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dockerRunOption;
                     bool m_dockerRunOptionHasBeenSet;

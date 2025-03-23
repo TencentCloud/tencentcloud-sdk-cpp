@@ -49,10 +49,8 @@ namespace TencentCloud
                     /**
                      * 获取通知内容模板标题信息。
 部分通知渠道类型不支持“标题”，请参照腾讯云控制台页面。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Title 通知内容模板标题信息。
 部分通知渠道类型不支持“标题”，请参照腾讯云控制台页面。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTitle() const;
@@ -60,10 +58,8 @@ namespace TencentCloud
                     /**
                      * 设置通知内容模板标题信息。
 部分通知渠道类型不支持“标题”，请参照腾讯云控制台页面。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _title 通知内容模板标题信息。
 部分通知渠道类型不支持“标题”，请参照腾讯云控制台页面。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTitle(const std::string& _title);
@@ -77,18 +73,14 @@ namespace TencentCloud
 
                     /**
                      * 获取通知内容模板正文信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Content 通知内容模板正文信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContent() const;
 
                     /**
                      * 设置通知内容模板正文信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _content 通知内容模板正文信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContent(const std::string& _content);
@@ -103,10 +95,8 @@ namespace TencentCloud
                     /**
                      * 获取请求头（Request Headers）：在HTTP请求中，请求头包含了客户端向服务器发送的附加信息，如用户代理、授权凭证、期望的响应格式等。
 仅“自定义回调”支持该配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Headers 请求头（Request Headers）：在HTTP请求中，请求头包含了客户端向服务器发送的附加信息，如用户代理、授权凭证、期望的响应格式等。
 仅“自定义回调”支持该配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetHeaders() const;
@@ -114,10 +104,8 @@ namespace TencentCloud
                     /**
                      * 设置请求头（Request Headers）：在HTTP请求中，请求头包含了客户端向服务器发送的附加信息，如用户代理、授权凭证、期望的响应格式等。
 仅“自定义回调”支持该配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _headers 请求头（Request Headers）：在HTTP请求中，请求头包含了客户端向服务器发送的附加信息，如用户代理、授权凭证、期望的响应格式等。
 仅“自定义回调”支持该配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHeaders(const std::vector<std::string>& _headers);
@@ -134,14 +122,12 @@ namespace TencentCloud
                     /**
                      * 通知内容模板标题信息。
 部分通知渠道类型不支持“标题”，请参照腾讯云控制台页面。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_title;
                     bool m_titleHasBeenSet;
 
                     /**
                      * 通知内容模板正文信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;
@@ -149,7 +135,6 @@ namespace TencentCloud
                     /**
                      * 请求头（Request Headers）：在HTTP请求中，请求头包含了客户端向服务器发送的附加信息，如用户代理、授权凭证、期望的响应格式等。
 仅“自定义回调”支持该配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_headers;
                     bool m_headersHasBeenSet;

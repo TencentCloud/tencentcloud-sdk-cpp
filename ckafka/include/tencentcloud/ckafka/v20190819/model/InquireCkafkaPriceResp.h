@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例价格
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstancePrice 实例价格
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     InquiryPrice GetInstancePrice() const;
 
                     /**
                      * 设置实例价格
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instancePrice 实例价格
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstancePrice(const InquiryPrice& _instancePrice);
@@ -101,7 +97,6 @@ namespace TencentCloud
 
                     /**
                      * 实例价格
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     InquiryPrice m_instancePrice;
                     bool m_instancePriceHasBeenSet;

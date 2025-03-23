@@ -25,10 +25,10 @@ using namespace std;
 DescribeServiceOverviewRequest::DescribeServiceOverviewRequest() :
     m_instanceIdHasBeenSet(false),
     m_metricsHasBeenSet(false),
-    m_groupByHasBeenSet(false),
-    m_filtersHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
+    m_groupByHasBeenSet(false),
+    m_filtersHasBeenSet(false),
     m_orderByHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false)
@@ -65,6 +65,22 @@ string DescribeServiceOverviewRequest::ToJsonString() const
         }
     }
 
+    if (m_startTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_startTime, allocator);
+    }
+
+    if (m_endTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_endTime, allocator);
+    }
+
     if (m_groupByHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -91,22 +107,6 @@ string DescribeServiceOverviewRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
-    }
-
-    if (m_startTimeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "StartTime";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_startTime, allocator);
-    }
-
-    if (m_endTimeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "EndTime";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_endTime, allocator);
     }
 
     if (m_orderByHasBeenSet)
@@ -174,38 +174,6 @@ bool DescribeServiceOverviewRequest::MetricsHasBeenSet() const
     return m_metricsHasBeenSet;
 }
 
-vector<string> DescribeServiceOverviewRequest::GetGroupBy() const
-{
-    return m_groupBy;
-}
-
-void DescribeServiceOverviewRequest::SetGroupBy(const vector<string>& _groupBy)
-{
-    m_groupBy = _groupBy;
-    m_groupByHasBeenSet = true;
-}
-
-bool DescribeServiceOverviewRequest::GroupByHasBeenSet() const
-{
-    return m_groupByHasBeenSet;
-}
-
-vector<Filter> DescribeServiceOverviewRequest::GetFilters() const
-{
-    return m_filters;
-}
-
-void DescribeServiceOverviewRequest::SetFilters(const vector<Filter>& _filters)
-{
-    m_filters = _filters;
-    m_filtersHasBeenSet = true;
-}
-
-bool DescribeServiceOverviewRequest::FiltersHasBeenSet() const
-{
-    return m_filtersHasBeenSet;
-}
-
 uint64_t DescribeServiceOverviewRequest::GetStartTime() const
 {
     return m_startTime;
@@ -236,6 +204,38 @@ void DescribeServiceOverviewRequest::SetEndTime(const uint64_t& _endTime)
 bool DescribeServiceOverviewRequest::EndTimeHasBeenSet() const
 {
     return m_endTimeHasBeenSet;
+}
+
+vector<string> DescribeServiceOverviewRequest::GetGroupBy() const
+{
+    return m_groupBy;
+}
+
+void DescribeServiceOverviewRequest::SetGroupBy(const vector<string>& _groupBy)
+{
+    m_groupBy = _groupBy;
+    m_groupByHasBeenSet = true;
+}
+
+bool DescribeServiceOverviewRequest::GroupByHasBeenSet() const
+{
+    return m_groupByHasBeenSet;
+}
+
+vector<Filter> DescribeServiceOverviewRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeServiceOverviewRequest::SetFilters(const vector<Filter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeServiceOverviewRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
 }
 
 OrderBy DescribeServiceOverviewRequest::GetOrderBy() const

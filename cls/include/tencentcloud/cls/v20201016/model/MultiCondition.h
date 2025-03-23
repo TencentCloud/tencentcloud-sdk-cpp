@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取触发条件。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Condition 触发条件。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCondition() const;
 
                     /**
                      * 设置触发条件。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _condition 触发条件。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCondition(const std::string& _condition);
@@ -75,11 +71,9 @@ namespace TencentCloud
                      * 获取告警级别。0:警告(Warn); 1:提醒(Info); 2:紧急 (Critical)。
 
 - 不填则默认为0。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlarmLevel 告警级别。0:警告(Warn); 1:提醒(Info); 2:紧急 (Critical)。
 
 - 不填则默认为0。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetAlarmLevel() const;
@@ -88,11 +82,9 @@ namespace TencentCloud
                      * 设置告警级别。0:警告(Warn); 1:提醒(Info); 2:紧急 (Critical)。
 
 - 不填则默认为0。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _alarmLevel 告警级别。0:警告(Warn); 1:提醒(Info); 2:紧急 (Critical)。
 
 - 不填则默认为0。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAlarmLevel(const uint64_t& _alarmLevel);
@@ -108,7 +100,6 @@ namespace TencentCloud
 
                     /**
                      * 触发条件。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_condition;
                     bool m_conditionHasBeenSet;
@@ -117,7 +108,6 @@ namespace TencentCloud
                      * 告警级别。0:警告(Warn); 1:提醒(Info); 2:紧急 (Critical)。
 
 - 不填则默认为0。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_alarmLevel;
                     bool m_alarmLevelHasBeenSet;

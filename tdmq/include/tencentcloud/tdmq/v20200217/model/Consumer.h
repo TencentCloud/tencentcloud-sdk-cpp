@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取消费者开始连接的时间。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConnectedSince 消费者开始连接的时间。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConnectedSince() const;
 
                     /**
                      * 设置消费者开始连接的时间。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _connectedSince 消费者开始连接的时间。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConnectedSince(const std::string& _connectedSince);
@@ -69,14 +73,18 @@ namespace TencentCloud
 
                     /**
                      * 获取消费者地址。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConsumerAddr 消费者地址。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConsumerAddr() const;
 
                     /**
                      * 设置消费者地址。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _consumerAddr 消费者地址。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConsumerAddr(const std::string& _consumerAddr);
@@ -90,14 +98,18 @@ namespace TencentCloud
 
                     /**
                      * 获取消费者名称。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConsumerName 消费者名称。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConsumerName() const;
 
                     /**
                      * 设置消费者名称。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _consumerName 消费者名称。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConsumerName(const std::string& _consumerName);
@@ -111,14 +123,18 @@ namespace TencentCloud
 
                     /**
                      * 获取消费者版本。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClientVersion 消费者版本。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClientVersion() const;
 
                     /**
                      * 设置消费者版本。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clientVersion 消费者版本。
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClientVersion(const std::string& _clientVersion);
@@ -132,14 +148,18 @@ namespace TencentCloud
 
                     /**
                      * 获取消费者连接的主题分区号
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Partition 消费者连接的主题分区号
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPartition() const;
 
                     /**
                      * 设置消费者连接的主题分区号
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _partition 消费者连接的主题分区号
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPartition(const int64_t& _partition);
@@ -155,30 +175,35 @@ namespace TencentCloud
 
                     /**
                      * 消费者开始连接的时间。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_connectedSince;
                     bool m_connectedSinceHasBeenSet;
 
                     /**
                      * 消费者地址。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_consumerAddr;
                     bool m_consumerAddrHasBeenSet;
 
                     /**
                      * 消费者名称。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_consumerName;
                     bool m_consumerNameHasBeenSet;
 
                     /**
                      * 消费者版本。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clientVersion;
                     bool m_clientVersionHasBeenSet;
 
                     /**
                      * 消费者连接的主题分区号
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_partition;
                     bool m_partitionHasBeenSet;

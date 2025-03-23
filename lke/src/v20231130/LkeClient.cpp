@@ -3910,49 +3910,6 @@ LkeClient::RenameDocOutcomeCallable LkeClient::RenameDocCallable(const RenameDoc
     return task->get_future();
 }
 
-LkeClient::ResetSessionOutcome LkeClient::ResetSession(const ResetSessionRequest &request)
-{
-    auto outcome = MakeRequest(request, "ResetSession");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ResetSessionResponse rsp = ResetSessionResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ResetSessionOutcome(rsp);
-        else
-            return ResetSessionOutcome(o.GetError());
-    }
-    else
-    {
-        return ResetSessionOutcome(outcome.GetError());
-    }
-}
-
-void LkeClient::ResetSessionAsync(const ResetSessionRequest& request, const ResetSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ResetSession(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-LkeClient::ResetSessionOutcomeCallable LkeClient::ResetSessionCallable(const ResetSessionRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<ResetSessionOutcome()>>(
-        [this, request]()
-        {
-            return this->ResetSession(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 LkeClient::RetryDocAuditOutcome LkeClient::RetryDocAudit(const RetryDocAuditRequest &request)
 {
     auto outcome = MakeRequest(request, "RetryDocAudit");

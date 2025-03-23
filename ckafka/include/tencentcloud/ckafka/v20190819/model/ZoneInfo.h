@@ -217,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标准版售罄信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SalesInfo 标准版售罄信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SaleInfo> GetSalesInfo() const;
 
                     /**
                      * 设置标准版售罄信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _salesInfo 标准版售罄信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSalesInfo(const std::vector<SaleInfo>& _salesInfo);
@@ -313,7 +309,6 @@ namespace TencentCloud
 
                     /**
                      * 标准版售罄信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SaleInfo> m_salesInfo;
                     bool m_salesInfoHasBeenSet;

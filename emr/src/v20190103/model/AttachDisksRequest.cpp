@@ -29,7 +29,8 @@ AttachDisksRequest::AttachDisksRequest() :
     m_cvmInstanceIdsHasBeenSet(false),
     m_createDiskHasBeenSet(false),
     m_diskSpecHasBeenSet(false),
-    m_deleteWithInstanceHasBeenSet(false)
+    m_deleteWithInstanceHasBeenSet(false),
+    m_selectiveConfServicesHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,19 @@ string AttachDisksRequest::ToJsonString() const
         string key = "DeleteWithInstance";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_deleteWithInstance, allocator);
+    }
+
+    if (m_selectiveConfServicesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SelectiveConfServices";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_selectiveConfServices.begin(); itr != m_selectiveConfServices.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -225,6 +239,22 @@ void AttachDisksRequest::SetDeleteWithInstance(const bool& _deleteWithInstance)
 bool AttachDisksRequest::DeleteWithInstanceHasBeenSet() const
 {
     return m_deleteWithInstanceHasBeenSet;
+}
+
+vector<string> AttachDisksRequest::GetSelectiveConfServices() const
+{
+    return m_selectiveConfServices;
+}
+
+void AttachDisksRequest::SetSelectiveConfServices(const vector<string>& _selectiveConfServices)
+{
+    m_selectiveConfServices = _selectiveConfServices;
+    m_selectiveConfServicesHasBeenSet = true;
+}
+
+bool AttachDisksRequest::SelectiveConfServicesHasBeenSet() const
+{
+    return m_selectiveConfServicesHasBeenSet;
 }
 
 

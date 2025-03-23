@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取需要同步的MQTT Topic列表, CSV格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Topics 需要同步的MQTT Topic列表, CSV格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTopics() const;
 
                     /**
                      * 设置需要同步的MQTT Topic列表, CSV格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topics 需要同步的MQTT Topic列表, CSV格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopics(const std::string& _topics);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取MQTT clean-session
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CleanSession MQTT clean-session
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetCleanSession() const;
 
                     /**
                      * 设置MQTT clean-session
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cleanSession MQTT clean-session
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCleanSession(const bool& _cleanSession);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取MQTT instance-id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Resource MQTT instance-id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResource() const;
 
                     /**
                      * 设置MQTT instance-id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resource MQTT instance-id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResource(const std::string& _resource);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取MQTT实例VIP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ip MQTT实例VIP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIp() const;
 
                     /**
                      * 设置MQTT实例VIP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ip MQTT实例VIP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIp(const std::string& _ip);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取MQTT VIP 端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Port MQTT VIP 端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置MQTT VIP 端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _port MQTT VIP 端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPort(const int64_t& _port);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取MQTT实例用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserName MQTT实例用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置MQTT实例用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userName MQTT实例用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserName(const std::string& _userName);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取MQTT实例内账户密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Password MQTT实例内账户密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPassword() const;
 
                     /**
                      * 设置MQTT实例内账户密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _password MQTT实例内账户密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPassword(const std::string& _password);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取QoS
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Qos QoS
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetQos() const;
 
                     /**
                      * 设置QoS
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _qos QoS
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQos(const int64_t& _qos);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取tasks.max 订阅Topic的并发Task个数, 默认为1; 当设置大于1时, 使用Shared Subscription
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxTasks tasks.max 订阅Topic的并发Task个数, 默认为1; 当设置大于1时, 使用Shared Subscription
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxTasks() const;
 
                     /**
                      * 设置tasks.max 订阅Topic的并发Task个数, 默认为1; 当设置大于1时, 使用Shared Subscription
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxTasks tasks.max 订阅Topic的并发Task个数, 默认为1; 当设置大于1时, 使用Shared Subscription
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxTasks(const int64_t& _maxTasks);
@@ -273,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取MQTT 实例的Service VIP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceVip MQTT 实例的Service VIP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetServiceVip() const;
 
                     /**
                      * 设置MQTT 实例的Service VIP
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serviceVip MQTT 实例的Service VIP
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServiceVip(const std::string& _serviceVip);
@@ -298,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取MQTT实例的VPC ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UniqVpcId MQTT实例的VPC ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUniqVpcId() const;
 
                     /**
                      * 设置MQTT实例的VPC ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uniqVpcId MQTT实例的VPC ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUniqVpcId(const std::string& _uniqVpcId);
@@ -323,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否为自建集群, MQTT只支持非自建集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SelfBuilt 是否为自建集群, MQTT只支持非自建集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetSelfBuilt() const;
 
                     /**
                      * 设置是否为自建集群, MQTT只支持非自建集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _selfBuilt 是否为自建集群, MQTT只支持非自建集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSelfBuilt(const bool& _selfBuilt);
@@ -350,84 +302,72 @@ namespace TencentCloud
 
                     /**
                      * 需要同步的MQTT Topic列表, CSV格式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_topics;
                     bool m_topicsHasBeenSet;
 
                     /**
                      * MQTT clean-session
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_cleanSession;
                     bool m_cleanSessionHasBeenSet;
 
                     /**
                      * MQTT instance-id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resource;
                     bool m_resourceHasBeenSet;
 
                     /**
                      * MQTT实例VIP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;
 
                     /**
                      * MQTT VIP 端口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
                      * MQTT实例用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;
 
                     /**
                      * MQTT实例内账户密码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
 
                     /**
                      * QoS
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_qos;
                     bool m_qosHasBeenSet;
 
                     /**
                      * tasks.max 订阅Topic的并发Task个数, 默认为1; 当设置大于1时, 使用Shared Subscription
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxTasks;
                     bool m_maxTasksHasBeenSet;
 
                     /**
                      * MQTT 实例的Service VIP
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serviceVip;
                     bool m_serviceVipHasBeenSet;
 
                     /**
                      * MQTT实例的VPC ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uniqVpcId;
                     bool m_uniqVpcIdHasBeenSet;
 
                     /**
                      * 是否为自建集群, MQTT只支持非自建集群
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_selfBuilt;
                     bool m_selfBuiltHasBeenSet;

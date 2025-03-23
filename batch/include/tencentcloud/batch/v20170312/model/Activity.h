@@ -216,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取活动结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 活动结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置活动结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endTime 活动结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -241,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取云服务器实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 云服务器实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置云服务器实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceId 云服务器实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -316,14 +308,12 @@ namespace TencentCloud
 
                     /**
                      * 活动结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
                      * 云服务器实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

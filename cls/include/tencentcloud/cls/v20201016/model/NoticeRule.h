@@ -108,7 +108,6 @@ namespace TencentCloud
     - 下一个子节点value支持的值：整型值单位分钟
 以下示例表示：告警持续时间大于1分钟或告警持续时间大于等于2分钟或告警持续时间小于3分钟或告警持续时间小于等于4分钟
 `{\"Value\":\"AND\",\"Type\":\"Operation\",\"Children\":[{\"Value\":\"OR\",\"Type\":\"Operation\",\"Children\":[{\"Type\":\"Condition\",\"Value\":\"Duration\",\"Children\":[{\"Value\":\">\",\"Type\":\"Compare\"},{\"Value\":1,\"Type\":\"Value\"}]},{\"Type\":\"Condition\",\"Value\":\"Duration\",\"Children\":[{\"Value\":\">=\",\"Type\":\"Compare\"},{\"Value\":2,\"Type\":\"Value\"}]},{\"Type\":\"Condition\",\"Value\":\"Duration\",\"Children\":[{\"Value\":\"<\",\"Type\":\"Compare\"},{\"Value\":3,\"Type\":\"Value\"}]},{\"Type\":\"Condition\",\"Value\":\"Duration\",\"Children\":[{\"Value\":\"<=\",\"Type\":\"Compare\"},{\"Value\":4,\"Type\":\"Value\"}]}]}]}`
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Rule 匹配规则 JSON串。
 **rule规则树格式为嵌套结构体JSON字符串**
 `{"Value":"AND","Type":"Operation","Children":[{"Value":"OR","Type":"Operation","Children":[{"Type":"Condition","Value":"Level","Children":[{"Value":"In","Type":"Compare"},{"Value":"[1,0]","Type":"Value"}]},{"Type":"Condition","Value":"Level","Children":[{"Value":"NotIn","Type":"Compare"},{"Value":"[2]","Type":"Value"}]}]}]}`
@@ -167,7 +166,6 @@ namespace TencentCloud
     - 下一个子节点value支持的值：整型值单位分钟
 以下示例表示：告警持续时间大于1分钟或告警持续时间大于等于2分钟或告警持续时间小于3分钟或告警持续时间小于等于4分钟
 `{\"Value\":\"AND\",\"Type\":\"Operation\",\"Children\":[{\"Value\":\"OR\",\"Type\":\"Operation\",\"Children\":[{\"Type\":\"Condition\",\"Value\":\"Duration\",\"Children\":[{\"Value\":\">\",\"Type\":\"Compare\"},{\"Value\":1,\"Type\":\"Value\"}]},{\"Type\":\"Condition\",\"Value\":\"Duration\",\"Children\":[{\"Value\":\">=\",\"Type\":\"Compare\"},{\"Value\":2,\"Type\":\"Value\"}]},{\"Type\":\"Condition\",\"Value\":\"Duration\",\"Children\":[{\"Value\":\"<\",\"Type\":\"Compare\"},{\"Value\":3,\"Type\":\"Value\"}]},{\"Type\":\"Condition\",\"Value\":\"Duration\",\"Children\":[{\"Value\":\"<=\",\"Type\":\"Compare\"},{\"Value\":4,\"Type\":\"Value\"}]}]}]}`
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRule() const;
@@ -231,7 +229,6 @@ namespace TencentCloud
     - 下一个子节点value支持的值：整型值单位分钟
 以下示例表示：告警持续时间大于1分钟或告警持续时间大于等于2分钟或告警持续时间小于3分钟或告警持续时间小于等于4分钟
 `{\"Value\":\"AND\",\"Type\":\"Operation\",\"Children\":[{\"Value\":\"OR\",\"Type\":\"Operation\",\"Children\":[{\"Type\":\"Condition\",\"Value\":\"Duration\",\"Children\":[{\"Value\":\">\",\"Type\":\"Compare\"},{\"Value\":1,\"Type\":\"Value\"}]},{\"Type\":\"Condition\",\"Value\":\"Duration\",\"Children\":[{\"Value\":\">=\",\"Type\":\"Compare\"},{\"Value\":2,\"Type\":\"Value\"}]},{\"Type\":\"Condition\",\"Value\":\"Duration\",\"Children\":[{\"Value\":\"<\",\"Type\":\"Compare\"},{\"Value\":3,\"Type\":\"Value\"}]},{\"Type\":\"Condition\",\"Value\":\"Duration\",\"Children\":[{\"Value\":\"<=\",\"Type\":\"Compare\"},{\"Value\":4,\"Type\":\"Value\"}]}]}]}`
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rule 匹配规则 JSON串。
 **rule规则树格式为嵌套结构体JSON字符串**
 `{"Value":"AND","Type":"Operation","Children":[{"Value":"OR","Type":"Operation","Children":[{"Type":"Condition","Value":"Level","Children":[{"Value":"In","Type":"Compare"},{"Value":"[1,0]","Type":"Value"}]},{"Type":"Condition","Value":"Level","Children":[{"Value":"NotIn","Type":"Compare"},{"Value":"[2]","Type":"Value"}]}]}]}`
@@ -290,7 +287,6 @@ namespace TencentCloud
     - 下一个子节点value支持的值：整型值单位分钟
 以下示例表示：告警持续时间大于1分钟或告警持续时间大于等于2分钟或告警持续时间小于3分钟或告警持续时间小于等于4分钟
 `{\"Value\":\"AND\",\"Type\":\"Operation\",\"Children\":[{\"Value\":\"OR\",\"Type\":\"Operation\",\"Children\":[{\"Type\":\"Condition\",\"Value\":\"Duration\",\"Children\":[{\"Value\":\">\",\"Type\":\"Compare\"},{\"Value\":1,\"Type\":\"Value\"}]},{\"Type\":\"Condition\",\"Value\":\"Duration\",\"Children\":[{\"Value\":\">=\",\"Type\":\"Compare\"},{\"Value\":2,\"Type\":\"Value\"}]},{\"Type\":\"Condition\",\"Value\":\"Duration\",\"Children\":[{\"Value\":\"<\",\"Type\":\"Compare\"},{\"Value\":3,\"Type\":\"Value\"}]},{\"Type\":\"Condition\",\"Value\":\"Duration\",\"Children\":[{\"Value\":\"<=\",\"Type\":\"Compare\"},{\"Value\":4,\"Type\":\"Value\"}]}]}]}`
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRule(const std::string& _rule);
@@ -304,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取告警通知接收者信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NoticeReceivers 告警通知接收者信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<NoticeReceiver> GetNoticeReceivers() const;
 
                     /**
                      * 设置告警通知接收者信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _noticeReceivers 告警通知接收者信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNoticeReceivers(const std::vector<NoticeReceiver>& _noticeReceivers);
@@ -329,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取告警通知模板回调信息，包括企业微信、钉钉、飞书。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WebCallbacks 告警通知模板回调信息，包括企业微信、钉钉、飞书。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<WebCallback> GetWebCallbacks() const;
 
                     /**
                      * 设置告警通知模板回调信息，包括企业微信、钉钉、飞书。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _webCallbacks 告警通知模板回调信息，包括企业微信、钉钉、飞书。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWebCallbacks(const std::vector<WebCallback>& _webCallbacks);
@@ -354,18 +342,14 @@ namespace TencentCloud
 
                     /**
                      * 获取告警升级开关。`true`：开启告警升级、`false`：关闭告警升级，默认：false
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Escalate 告警升级开关。`true`：开启告警升级、`false`：关闭告警升级，默认：false
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEscalate() const;
 
                     /**
                      * 设置告警升级开关。`true`：开启告警升级、`false`：关闭告警升级，默认：false
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _escalate 告警升级开关。`true`：开启告警升级、`false`：关闭告警升级，默认：false
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEscalate(const bool& _escalate);
@@ -382,12 +366,10 @@ namespace TencentCloud
 - 无人认领且未恢复：告警没有恢复并且没有人认领则升级
 - 未恢复：当前告警持续未恢复则升级
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 告警升级条件。`1`：无人认领且未恢复、`2`：未恢复，默认为1
 - 无人认领且未恢复：告警没有恢复并且没有人认领则升级
 - 未恢复：当前告警持续未恢复则升级
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetType() const;
@@ -397,12 +379,10 @@ namespace TencentCloud
 - 无人认领且未恢复：告警没有恢复并且没有人认领则升级
 - 未恢复：当前告警持续未恢复则升级
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 告警升级条件。`1`：无人认领且未恢复、`2`：未恢复，默认为1
 - 无人认领且未恢复：告警没有恢复并且没有人认领则升级
 - 未恢复：当前告警持续未恢复则升级
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const uint64_t& _type);
@@ -416,18 +396,14 @@ namespace TencentCloud
 
                     /**
                      * 获取告警升级间隔。单位：分钟，范围`[1，14400]`
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Interval 告警升级间隔。单位：分钟，范围`[1，14400]`
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetInterval() const;
 
                     /**
                      * 设置告警升级间隔。单位：分钟，范围`[1，14400]`
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _interval 告警升级间隔。单位：分钟，范围`[1，14400]`
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInterval(const uint64_t& _interval);
@@ -441,18 +417,14 @@ namespace TencentCloud
 
                     /**
                      * 获取告警升级后下一个环节的通知渠道配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EscalateNotice 告警升级后下一个环节的通知渠道配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     EscalateNoticeInfo GetEscalateNotice() const;
 
                     /**
                      * 设置告警升级后下一个环节的通知渠道配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _escalateNotice 告警升级后下一个环节的通知渠道配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEscalateNotice(const EscalateNoticeInfo& _escalateNotice);
@@ -525,28 +497,24 @@ namespace TencentCloud
     - 下一个子节点value支持的值：整型值单位分钟
 以下示例表示：告警持续时间大于1分钟或告警持续时间大于等于2分钟或告警持续时间小于3分钟或告警持续时间小于等于4分钟
 `{\"Value\":\"AND\",\"Type\":\"Operation\",\"Children\":[{\"Value\":\"OR\",\"Type\":\"Operation\",\"Children\":[{\"Type\":\"Condition\",\"Value\":\"Duration\",\"Children\":[{\"Value\":\">\",\"Type\":\"Compare\"},{\"Value\":1,\"Type\":\"Value\"}]},{\"Type\":\"Condition\",\"Value\":\"Duration\",\"Children\":[{\"Value\":\">=\",\"Type\":\"Compare\"},{\"Value\":2,\"Type\":\"Value\"}]},{\"Type\":\"Condition\",\"Value\":\"Duration\",\"Children\":[{\"Value\":\"<\",\"Type\":\"Compare\"},{\"Value\":3,\"Type\":\"Value\"}]},{\"Type\":\"Condition\",\"Value\":\"Duration\",\"Children\":[{\"Value\":\"<=\",\"Type\":\"Compare\"},{\"Value\":4,\"Type\":\"Value\"}]}]}]}`
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_rule;
                     bool m_ruleHasBeenSet;
 
                     /**
                      * 告警通知接收者信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<NoticeReceiver> m_noticeReceivers;
                     bool m_noticeReceiversHasBeenSet;
 
                     /**
                      * 告警通知模板回调信息，包括企业微信、钉钉、飞书。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<WebCallback> m_webCallbacks;
                     bool m_webCallbacksHasBeenSet;
 
                     /**
                      * 告警升级开关。`true`：开启告警升级、`false`：关闭告警升级，默认：false
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_escalate;
                     bool m_escalateHasBeenSet;
@@ -556,21 +524,18 @@ namespace TencentCloud
 - 无人认领且未恢复：告警没有恢复并且没有人认领则升级
 - 未恢复：当前告警持续未恢复则升级
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 告警升级间隔。单位：分钟，范围`[1，14400]`
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_interval;
                     bool m_intervalHasBeenSet;
 
                     /**
                      * 告警升级后下一个环节的通知渠道配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     EscalateNoticeInfo m_escalateNotice;
                     bool m_escalateNoticeHasBeenSet;

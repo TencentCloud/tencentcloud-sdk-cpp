@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Partition 分区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPartition() const;
 
                     /**
                      * 设置分区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _partition 分区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPartition(const std::string& _partition);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取位点偏移量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Offset 位点偏移量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
                      * 设置位点偏移量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _offset 位点偏移量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 分区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_partition;
                     bool m_partitionHasBeenSet;
 
                     /**
                      * 位点偏移量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;

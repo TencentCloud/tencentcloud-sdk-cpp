@@ -364,18 +364,14 @@ namespace TencentCloud
 
                     /**
                      * 获取主题描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Describes 主题描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescribes() const;
 
                     /**
                      * 设置主题描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _describes 主题描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescribes(const std::string& _describes);
@@ -472,18 +468,14 @@ HotPeriod=0为没有开启日志沉降。
 
                     /**
                      * 获取日志主题扩展信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Extends 日志主题扩展信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TopicExtendInfo GetExtends() const;
 
                     /**
                      * 设置日志主题扩展信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _extends 日志主题扩展信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExtends(const TopicExtendInfo& _extends);
@@ -651,7 +643,6 @@ HotPeriod=0为没有开启日志沉降。
 
                     /**
                      * 主题描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_describes;
                     bool m_describesHasBeenSet;
@@ -681,7 +672,6 @@ HotPeriod=0为没有开启日志沉降。
 
                     /**
                      * 日志主题扩展信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TopicExtendInfo m_extends;
                     bool m_extendsHasBeenSet;

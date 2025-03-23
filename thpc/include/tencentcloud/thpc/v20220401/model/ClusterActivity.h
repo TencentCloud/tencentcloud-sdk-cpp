@@ -133,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群活动状态码。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ActivityStatusCode 集群活动状态码。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetActivityStatusCode() const;
 
                     /**
                      * 设置集群活动状态码。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _activityStatusCode 集群活动状态码。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetActivityStatusCode(const std::string& _activityStatusCode);
@@ -246,18 +242,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群活动开始时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 集群活动开始时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置集群活动开始时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _startTime 集群活动开始时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -271,18 +263,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群活动结束时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 集群活动结束时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置集群活动结束时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endTime 集群活动结束时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -322,7 +310,6 @@ namespace TencentCloud
 
                     /**
                      * 集群活动状态码。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_activityStatusCode;
                     bool m_activityStatusCodeHasBeenSet;
@@ -354,14 +341,12 @@ namespace TencentCloud
 
                     /**
                      * 集群活动开始时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
                      * 集群活动结束时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取SCF云函数函数名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FunctionName SCF云函数函数名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFunctionName() const;
 
                     /**
                      * 设置SCF云函数函数名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _functionName SCF云函数函数名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFunctionName(const std::string& _functionName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取SCF云函数命名空间, 默认为default
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Namespace SCF云函数命名空间, 默认为default
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置SCF云函数命名空间, 默认为default
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _namespace SCF云函数命名空间, 默认为default
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNamespace(const std::string& _namespace);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取SCF云函数版本及别名, 默认为$DEFAULT
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Qualifier SCF云函数版本及别名, 默认为$DEFAULT
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetQualifier() const;
 
                     /**
                      * 设置SCF云函数版本及别名, 默认为$DEFAULT
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _qualifier SCF云函数版本及别名, 默认为$DEFAULT
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQualifier(const std::string& _qualifier);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取每批最大发送消息数, 默认为1000
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BatchSize 每批最大发送消息数, 默认为1000
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBatchSize() const;
 
                     /**
                      * 设置每批最大发送消息数, 默认为1000
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _batchSize 每批最大发送消息数, 默认为1000
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBatchSize(const int64_t& _batchSize);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取SCF调用失败后重试次数, 默认为5
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxRetries SCF调用失败后重试次数, 默认为5
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxRetries() const;
 
                     /**
                      * 设置SCF调用失败后重试次数, 默认为5
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxRetries SCF调用失败后重试次数, 默认为5
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxRetries(const int64_t& _maxRetries);
@@ -175,35 +155,30 @@ namespace TencentCloud
 
                     /**
                      * SCF云函数函数名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_functionName;
                     bool m_functionNameHasBeenSet;
 
                     /**
                      * SCF云函数命名空间, 默认为default
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;
 
                     /**
                      * SCF云函数版本及别名, 默认为$DEFAULT
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_qualifier;
                     bool m_qualifierHasBeenSet;
 
                     /**
                      * 每批最大发送消息数, 默认为1000
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_batchSize;
                     bool m_batchSizeHasBeenSet;
 
                     /**
                      * SCF调用失败后重试次数, 默认为5
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxRetries;
                     bool m_maxRetriesHasBeenSet;

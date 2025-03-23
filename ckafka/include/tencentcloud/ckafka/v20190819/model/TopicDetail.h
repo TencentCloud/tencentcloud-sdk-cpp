@@ -135,18 +135,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Note 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNote() const;
 
                     /**
                      * 设置备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _note 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNote(const std::string& _note);
@@ -223,18 +219,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据备份cos bucket: 转存到cos 的bucket地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ForwardCosBucket 数据备份cos bucket: 转存到cos 的bucket地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetForwardCosBucket() const;
 
                     /**
                      * 设置数据备份cos bucket: 转存到cos 的bucket地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _forwardCosBucket 数据备份cos bucket: 转存到cos 的bucket地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetForwardCosBucket(const std::string& _forwardCosBucket);
@@ -290,18 +282,14 @@ namespace TencentCloud
 
                     /**
                      * 获取高级配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Config 高级配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Config GetConfig() const;
 
                     /**
                      * 设置高级配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _config 高级配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConfig(const Config& _config);
@@ -315,18 +303,14 @@ namespace TencentCloud
 
                     /**
                      * 获取消息保留时间配置(用于动态配置变更记录)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RetentionTimeConfig 消息保留时间配置(用于动态配置变更记录)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TopicRetentionTimeConfigRsp GetRetentionTimeConfig() const;
 
                     /**
                      * 设置消息保留时间配置(用于动态配置变更记录)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _retentionTimeConfig 消息保留时间配置(用于动态配置变更记录)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRetentionTimeConfig(const TopicRetentionTimeConfigRsp& _retentionTimeConfig);
@@ -340,18 +324,14 @@ namespace TencentCloud
 
                     /**
                      * 获取0:正常，1：已删除，2：删除中
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 0:正常，1：已删除，2：删除中
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置0:正常，1：已删除，2：删除中
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 0:正常，1：已删除，2：删除中
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -416,7 +396,6 @@ namespace TencentCloud
 
                     /**
                      * 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_note;
                     bool m_noteHasBeenSet;
@@ -441,7 +420,6 @@ namespace TencentCloud
 
                     /**
                      * 数据备份cos bucket: 转存到cos 的bucket地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_forwardCosBucket;
                     bool m_forwardCosBucketHasBeenSet;
@@ -460,21 +438,18 @@ namespace TencentCloud
 
                     /**
                      * 高级配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Config m_config;
                     bool m_configHasBeenSet;
 
                     /**
                      * 消息保留时间配置(用于动态配置变更记录)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TopicRetentionTimeConfigRsp m_retentionTimeConfig;
                     bool m_retentionTimeConfigHasBeenSet;
 
                     /**
                      * 0:正常，1：已删除，2：删除中
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;

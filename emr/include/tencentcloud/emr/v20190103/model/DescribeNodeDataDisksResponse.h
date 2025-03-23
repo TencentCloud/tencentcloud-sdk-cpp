@@ -74,6 +74,20 @@ namespace TencentCloud
                      */
                     bool CBSListHasBeenSet() const;
 
+                    /**
+                     * 获取云盘最大容量
+                     * @return MaxSize 云盘最大容量
+                     * 
+                     */
+                    uint64_t GetMaxSize() const;
+
+                    /**
+                     * 判断参数 MaxSize 是否已赋值
+                     * @return MaxSize 是否已赋值
+                     * 
+                     */
+                    bool MaxSizeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -88,6 +102,12 @@ namespace TencentCloud
                      */
                     std::vector<CBSInstance> m_cBSList;
                     bool m_cBSListHasBeenSet;
+
+                    /**
+                     * 云盘最大容量
+                     */
+                    uint64_t m_maxSize;
+                    bool m_maxSizeHasBeenSet;
 
                 };
             }

@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取broker地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BrokerIp broker地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBrokerIp() const;
 
                     /**
                      * 设置broker地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _brokerIp broker地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBrokerIp(const std::string& _brokerIp);
@@ -136,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取VPC ID信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId VPC ID信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置VPC ID信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcId VPC ID信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -161,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子网ID信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetId 子网ID信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网ID信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subnetId 子网ID信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -206,21 +194,18 @@ namespace TencentCloud
 
                     /**
                      * broker地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_brokerIp;
                     bool m_brokerIpHasBeenSet;
 
                     /**
                      * VPC ID信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
                      * 子网ID信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;

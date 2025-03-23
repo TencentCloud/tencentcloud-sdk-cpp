@@ -234,9 +234,7 @@ namespace TencentCloud
 
                     /**
                      * 获取下一步动作
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NextAction 下一步动作
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNextAction() const;
@@ -331,7 +329,6 @@ namespace TencentCloud
 
                     /**
                      * 下一步动作
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nextAction;
                     bool m_nextActionHasBeenSet;

@@ -70,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Topic列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicList Topic列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DatahubTopicDTO> GetTopicList() const;
 
                     /**
                      * 设置Topic列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topicList Topic列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopicList(const std::vector<DatahubTopicDTO>& _topicList);
@@ -103,7 +99,6 @@ namespace TencentCloud
 
                     /**
                      * Topic列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DatahubTopicDTO> m_topicList;
                     bool m_topicListHasBeenSet;

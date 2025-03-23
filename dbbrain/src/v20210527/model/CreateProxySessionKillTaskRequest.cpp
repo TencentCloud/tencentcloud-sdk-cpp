@@ -24,7 +24,8 @@ using namespace std;
 
 CreateProxySessionKillTaskRequest::CreateProxySessionKillTaskRequest() :
     m_instanceIdHasBeenSet(false),
-    m_productHasBeenSet(false)
+    m_productHasBeenSet(false),
+    m_instanceProxyIdHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string CreateProxySessionKillTaskRequest::ToJsonString() const
         string key = "Product";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_product.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceProxyIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceProxyId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceProxyId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void CreateProxySessionKillTaskRequest::SetProduct(const string& _product)
 bool CreateProxySessionKillTaskRequest::ProductHasBeenSet() const
 {
     return m_productHasBeenSet;
+}
+
+string CreateProxySessionKillTaskRequest::GetInstanceProxyId() const
+{
+    return m_instanceProxyId;
+}
+
+void CreateProxySessionKillTaskRequest::SetInstanceProxyId(const string& _instanceProxyId)
+{
+    m_instanceProxyId = _instanceProxyId;
+    m_instanceProxyIdHasBeenSet = true;
+}
+
+bool CreateProxySessionKillTaskRequest::InstanceProxyIdHasBeenSet() const
+{
+    return m_instanceProxyIdHasBeenSet;
 }
 
 

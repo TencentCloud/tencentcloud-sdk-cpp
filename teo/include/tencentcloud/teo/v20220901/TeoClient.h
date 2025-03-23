@@ -277,6 +277,8 @@
 #include <tencentcloud/teo/v20220901/model/ModifyL4ProxyStatusResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyL7AccRuleRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyL7AccRuleResponse.h>
+#include <tencentcloud/teo/v20220901/model/ModifyL7AccRulePriorityRequest.h>
+#include <tencentcloud/teo/v20220901/model/ModifyL7AccRulePriorityResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyL7AccSettingRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyL7AccSettingResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyLoadBalancerRequest.h>
@@ -700,6 +702,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyL7AccRuleResponse> ModifyL7AccRuleOutcome;
                 typedef std::future<ModifyL7AccRuleOutcome> ModifyL7AccRuleOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifyL7AccRuleRequest&, ModifyL7AccRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyL7AccRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyL7AccRulePriorityResponse> ModifyL7AccRulePriorityOutcome;
+                typedef std::future<ModifyL7AccRulePriorityOutcome> ModifyL7AccRulePriorityOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::ModifyL7AccRulePriorityRequest&, ModifyL7AccRulePriorityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyL7AccRulePriorityAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyL7AccSettingResponse> ModifyL7AccSettingOutcome;
                 typedef std::future<ModifyL7AccSettingOutcome> ModifyL7AccSettingOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifyL7AccSettingRequest&, ModifyL7AccSettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyL7AccSettingAsyncHandler;
@@ -1917,6 +1922,15 @@ CNAME 模式接入时，若您未完成站点归属权校验，本接口将为�
                 ModifyL7AccRuleOutcome ModifyL7AccRule(const Model::ModifyL7AccRuleRequest &request);
                 void ModifyL7AccRuleAsync(const Model::ModifyL7AccRuleRequest& request, const ModifyL7AccRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyL7AccRuleOutcomeCallable ModifyL7AccRuleCallable(const Model::ModifyL7AccRuleRequest& request);
+
+                /**
+                 *本接口用于修改[规则引擎](https://cloud.tencent.com/document/product/1552/70901)中规则列表的优先级，本接口需要传入站点 ID 下完整的规则 ID 列表，规则 ID 列表可以通过[查询七层加速规则](https://cloud.tencent.com/document/product/1552/115820)接口获取，最终优先级顺序将调整成规则 ID 列表的顺序，从前往后执行。
+                 * @param req ModifyL7AccRulePriorityRequest
+                 * @return ModifyL7AccRulePriorityOutcome
+                 */
+                ModifyL7AccRulePriorityOutcome ModifyL7AccRulePriority(const Model::ModifyL7AccRulePriorityRequest &request);
+                void ModifyL7AccRulePriorityAsync(const Model::ModifyL7AccRulePriorityRequest& request, const ModifyL7AccRulePriorityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyL7AccRulePriorityOutcomeCallable ModifyL7AccRulePriorityCallable(const Model::ModifyL7AccRulePriorityRequest& request);
 
                 /**
                  *本接口用于修改[站点加速](https://cloud.tencent.com/document/product/1552/96193)全局配置。
