@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tione/v20211111/model/CosPathInfo.h>
+#include <tencentcloud/tione/v20211111/model/GooseFSx.h>
 
 
 namespace TencentCloud
@@ -176,6 +177,27 @@ namespace TencentCloud
                      * 
                      */
                     bool CosPathInfoHasBeenSet() const;
+
+                    /**
+                     * 获取GooseFSx的配置，ModelSource为GooseFSx时有效
+                     * @return GooseFSx GooseFSx的配置，ModelSource为GooseFSx时有效
+                     * 
+                     */
+                    GooseFSx GetGooseFSx() const;
+
+                    /**
+                     * 设置GooseFSx的配置，ModelSource为GooseFSx时有效
+                     * @param _gooseFSx GooseFSx的配置，ModelSource为GooseFSx时有效
+                     * 
+                     */
+                    void SetGooseFSx(const GooseFSx& _gooseFSx);
+
+                    /**
+                     * 判断参数 GooseFSx 是否已赋值
+                     * @return GooseFSx 是否已赋值
+                     * 
+                     */
+                    bool GooseFSxHasBeenSet() const;
 
                     /**
                      * 获取模型对应的算法框架，预留
@@ -336,6 +358,12 @@ namespace TencentCloud
                      */
                     CosPathInfo m_cosPathInfo;
                     bool m_cosPathInfoHasBeenSet;
+
+                    /**
+                     * GooseFSx的配置，ModelSource为GooseFSx时有效
+                     */
+                    GooseFSx m_gooseFSx;
+                    bool m_gooseFSxHasBeenSet;
 
                     /**
                      * 模型对应的算法框架，预留

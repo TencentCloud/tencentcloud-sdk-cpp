@@ -221,6 +221,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/DescribeBillingResourceGroupRequest.h
   include/tencentcloud/tione/v20211111/model/DescribeTrainingTaskRequest.h
   include/tencentcloud/tione/v20211111/model/ChatCompletionResponse.h
+  include/tencentcloud/tione/v20211111/model/GooseFSx.h
   include/tencentcloud/tione/v20211111/model/DescribeTrainingTaskPodsRequest.h
   include/tencentcloud/tione/v20211111/model/DescribeTrainingModelVersionsResponse.h
   include/tencentcloud/tione/v20211111/model/ModelInputInfo.h
@@ -450,6 +451,7 @@ set(tione_src
   src/v20211111/model/DescribeBillingResourceGroupRequest.cpp
   src/v20211111/model/DescribeTrainingTaskRequest.cpp
   src/v20211111/model/ChatCompletionResponse.cpp
+  src/v20211111/model/GooseFSx.cpp
   src/v20211111/model/DescribeTrainingTaskPodsRequest.cpp
   src/v20211111/model/DescribeTrainingModelVersionsResponse.cpp
   src/v20211111/model/ModelInputInfo.cpp

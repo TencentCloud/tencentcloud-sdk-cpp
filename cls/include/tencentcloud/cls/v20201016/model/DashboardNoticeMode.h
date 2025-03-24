@@ -145,11 +145,9 @@ namespace TencentCloud
                      * 获取回调Url。
 <br><li/> 当ReceiverType是 Wecom 时，Url必填。
 <br><li/> 当ReceiverType不是 Wecom 时，Url不能填写。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Url 回调Url。
 <br><li/> 当ReceiverType是 Wecom 时，Url必填。
 <br><li/> 当ReceiverType不是 Wecom 时，Url不能填写。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUrl() const;
@@ -158,11 +156,9 @@ namespace TencentCloud
                      * 设置回调Url。
 <br><li/> 当ReceiverType是 Wecom 时，Url必填。
 <br><li/> 当ReceiverType不是 Wecom 时，Url不能填写。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _url 回调Url。
 <br><li/> 当ReceiverType是 Wecom 时，Url必填。
 <br><li/> 当ReceiverType不是 Wecom 时，Url不能填写。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUrl(const std::string& _url);
@@ -206,7 +202,6 @@ namespace TencentCloud
                      * 回调Url。
 <br><li/> 当ReceiverType是 Wecom 时，Url必填。
 <br><li/> 当ReceiverType不是 Wecom 时，Url不能填写。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;

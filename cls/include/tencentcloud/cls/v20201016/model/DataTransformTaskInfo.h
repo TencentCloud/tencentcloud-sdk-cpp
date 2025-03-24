@@ -322,18 +322,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据加工类型。0：标准加工任务；1：前置加工任务。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataTransformType 数据加工类型。0：标准加工任务；1：前置加工任务。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDataTransformType() const;
 
                     /**
                      * 设置数据加工类型。0：标准加工任务；1：前置加工任务。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataTransformType 数据加工类型。0：标准加工任务；1：前置加工任务。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataTransformType(const uint64_t& _dataTransformType);
@@ -347,18 +343,14 @@ namespace TencentCloud
 
                     /**
                      * 获取保留失败日志状态。 1:不保留，2:保留
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return KeepFailureLog 保留失败日志状态。 1:不保留，2:保留
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetKeepFailureLog() const;
 
                     /**
                      * 设置保留失败日志状态。 1:不保留，2:保留
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _keepFailureLog 保留失败日志状态。 1:不保留，2:保留
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKeepFailureLog(const uint64_t& _keepFailureLog);
@@ -372,18 +364,14 @@ namespace TencentCloud
 
                     /**
                      * 获取失败日志的字段名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailureLogKey 失败日志的字段名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFailureLogKey() const;
 
                     /**
                      * 设置失败日志的字段名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _failureLogKey 失败日志的字段名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFailureLogKey(const std::string& _failureLogKey);
@@ -477,21 +465,18 @@ namespace TencentCloud
 
                     /**
                      * 数据加工类型。0：标准加工任务；1：前置加工任务。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_dataTransformType;
                     bool m_dataTransformTypeHasBeenSet;
 
                     /**
                      * 保留失败日志状态。 1:不保留，2:保留
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_keepFailureLog;
                     bool m_keepFailureLogHasBeenSet;
 
                     /**
                      * 失败日志的字段名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_failureLogKey;
                     bool m_failureLogKeyHasBeenSet;

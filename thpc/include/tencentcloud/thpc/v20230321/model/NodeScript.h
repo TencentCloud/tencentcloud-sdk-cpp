@@ -49,10 +49,8 @@ namespace TencentCloud
                     /**
                      * 获取节点执行脚本获取地址。
 目前仅支持cos地址。地址最大长度：255。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScriptPath 节点执行脚本获取地址。
 目前仅支持cos地址。地址最大长度：255。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetScriptPath() const;
@@ -60,10 +58,8 @@ namespace TencentCloud
                     /**
                      * 设置节点执行脚本获取地址。
 目前仅支持cos地址。地址最大长度：255。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _scriptPath 节点执行脚本获取地址。
 目前仅支持cos地址。地址最大长度：255。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetScriptPath(const std::string& _scriptPath);
@@ -77,18 +73,14 @@ namespace TencentCloud
 
                     /**
                      * 获取脚本执行超时时间（包含拉取脚本的时间）。单位秒，默认值：30。取值范围：10～1200。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Timeout 脚本执行超时时间（包含拉取脚本的时间）。单位秒，默认值：30。取值范围：10～1200。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTimeout() const;
 
                     /**
                      * 设置脚本执行超时时间（包含拉取脚本的时间）。单位秒，默认值：30。取值范围：10～1200。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timeout 脚本执行超时时间（包含拉取脚本的时间）。单位秒，默认值：30。取值范围：10～1200。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimeout(const int64_t& _timeout);
@@ -105,14 +97,12 @@ namespace TencentCloud
                     /**
                      * 节点执行脚本获取地址。
 目前仅支持cos地址。地址最大长度：255。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_scriptPath;
                     bool m_scriptPathHasBeenSet;
 
                     /**
                      * 脚本执行超时时间（包含拉取脚本的时间）。单位秒，默认值：30。取值范围：10～1200。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_timeout;
                     bool m_timeoutHasBeenSet;

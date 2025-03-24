@@ -40,6 +40,307 @@ GsClient::GsClient(const Credential &credential, const string &region, const Cli
 }
 
 
+GsClient::ConnectAndroidInstanceOutcome GsClient::ConnectAndroidInstance(const ConnectAndroidInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ConnectAndroidInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ConnectAndroidInstanceResponse rsp = ConnectAndroidInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ConnectAndroidInstanceOutcome(rsp);
+        else
+            return ConnectAndroidInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return ConnectAndroidInstanceOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::ConnectAndroidInstanceAsync(const ConnectAndroidInstanceRequest& request, const ConnectAndroidInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ConnectAndroidInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::ConnectAndroidInstanceOutcomeCallable GsClient::ConnectAndroidInstanceCallable(const ConnectAndroidInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ConnectAndroidInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->ConnectAndroidInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GsClient::CopyAndroidInstanceOutcome GsClient::CopyAndroidInstance(const CopyAndroidInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CopyAndroidInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CopyAndroidInstanceResponse rsp = CopyAndroidInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CopyAndroidInstanceOutcome(rsp);
+        else
+            return CopyAndroidInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return CopyAndroidInstanceOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::CopyAndroidInstanceAsync(const CopyAndroidInstanceRequest& request, const CopyAndroidInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CopyAndroidInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::CopyAndroidInstanceOutcomeCallable GsClient::CopyAndroidInstanceCallable(const CopyAndroidInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CopyAndroidInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->CopyAndroidInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GsClient::CreateAndroidInstanceImageOutcome GsClient::CreateAndroidInstanceImage(const CreateAndroidInstanceImageRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAndroidInstanceImage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAndroidInstanceImageResponse rsp = CreateAndroidInstanceImageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAndroidInstanceImageOutcome(rsp);
+        else
+            return CreateAndroidInstanceImageOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAndroidInstanceImageOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::CreateAndroidInstanceImageAsync(const CreateAndroidInstanceImageRequest& request, const CreateAndroidInstanceImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAndroidInstanceImage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::CreateAndroidInstanceImageOutcomeCallable GsClient::CreateAndroidInstanceImageCallable(const CreateAndroidInstanceImageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAndroidInstanceImageOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAndroidInstanceImage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GsClient::CreateAndroidInstanceLabelOutcome GsClient::CreateAndroidInstanceLabel(const CreateAndroidInstanceLabelRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAndroidInstanceLabel");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAndroidInstanceLabelResponse rsp = CreateAndroidInstanceLabelResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAndroidInstanceLabelOutcome(rsp);
+        else
+            return CreateAndroidInstanceLabelOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAndroidInstanceLabelOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::CreateAndroidInstanceLabelAsync(const CreateAndroidInstanceLabelRequest& request, const CreateAndroidInstanceLabelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAndroidInstanceLabel(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::CreateAndroidInstanceLabelOutcomeCallable GsClient::CreateAndroidInstanceLabelCallable(const CreateAndroidInstanceLabelRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAndroidInstanceLabelOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAndroidInstanceLabel(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GsClient::CreateAndroidInstanceSSHOutcome GsClient::CreateAndroidInstanceSSH(const CreateAndroidInstanceSSHRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAndroidInstanceSSH");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAndroidInstanceSSHResponse rsp = CreateAndroidInstanceSSHResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAndroidInstanceSSHOutcome(rsp);
+        else
+            return CreateAndroidInstanceSSHOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAndroidInstanceSSHOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::CreateAndroidInstanceSSHAsync(const CreateAndroidInstanceSSHRequest& request, const CreateAndroidInstanceSSHAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAndroidInstanceSSH(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::CreateAndroidInstanceSSHOutcomeCallable GsClient::CreateAndroidInstanceSSHCallable(const CreateAndroidInstanceSSHRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAndroidInstanceSSHOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAndroidInstanceSSH(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GsClient::CreateAndroidInstanceWebShellOutcome GsClient::CreateAndroidInstanceWebShell(const CreateAndroidInstanceWebShellRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAndroidInstanceWebShell");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAndroidInstanceWebShellResponse rsp = CreateAndroidInstanceWebShellResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAndroidInstanceWebShellOutcome(rsp);
+        else
+            return CreateAndroidInstanceWebShellOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAndroidInstanceWebShellOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::CreateAndroidInstanceWebShellAsync(const CreateAndroidInstanceWebShellRequest& request, const CreateAndroidInstanceWebShellAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAndroidInstanceWebShell(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::CreateAndroidInstanceWebShellOutcomeCallable GsClient::CreateAndroidInstanceWebShellCallable(const CreateAndroidInstanceWebShellRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAndroidInstanceWebShellOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAndroidInstanceWebShell(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GsClient::CreateAndroidInstancesOutcome GsClient::CreateAndroidInstances(const CreateAndroidInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAndroidInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAndroidInstancesResponse rsp = CreateAndroidInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAndroidInstancesOutcome(rsp);
+        else
+            return CreateAndroidInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAndroidInstancesOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::CreateAndroidInstancesAsync(const CreateAndroidInstancesRequest& request, const CreateAndroidInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAndroidInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::CreateAndroidInstancesOutcomeCallable GsClient::CreateAndroidInstancesCallable(const CreateAndroidInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAndroidInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAndroidInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GsClient::CreateSessionOutcome GsClient::CreateSession(const CreateSessionRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateSession");
@@ -76,6 +377,350 @@ GsClient::CreateSessionOutcomeCallable GsClient::CreateSessionCallable(const Cre
         [this, request]()
         {
             return this->CreateSession(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GsClient::DeleteAndroidInstanceImagesOutcome GsClient::DeleteAndroidInstanceImages(const DeleteAndroidInstanceImagesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAndroidInstanceImages");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAndroidInstanceImagesResponse rsp = DeleteAndroidInstanceImagesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAndroidInstanceImagesOutcome(rsp);
+        else
+            return DeleteAndroidInstanceImagesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAndroidInstanceImagesOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::DeleteAndroidInstanceImagesAsync(const DeleteAndroidInstanceImagesRequest& request, const DeleteAndroidInstanceImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteAndroidInstanceImages(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::DeleteAndroidInstanceImagesOutcomeCallable GsClient::DeleteAndroidInstanceImagesCallable(const DeleteAndroidInstanceImagesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteAndroidInstanceImagesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteAndroidInstanceImages(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GsClient::DeleteAndroidInstanceLabelOutcome GsClient::DeleteAndroidInstanceLabel(const DeleteAndroidInstanceLabelRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAndroidInstanceLabel");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAndroidInstanceLabelResponse rsp = DeleteAndroidInstanceLabelResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAndroidInstanceLabelOutcome(rsp);
+        else
+            return DeleteAndroidInstanceLabelOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAndroidInstanceLabelOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::DeleteAndroidInstanceLabelAsync(const DeleteAndroidInstanceLabelRequest& request, const DeleteAndroidInstanceLabelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteAndroidInstanceLabel(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::DeleteAndroidInstanceLabelOutcomeCallable GsClient::DeleteAndroidInstanceLabelCallable(const DeleteAndroidInstanceLabelRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteAndroidInstanceLabelOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteAndroidInstanceLabel(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GsClient::DescribeAndroidAppsOutcome GsClient::DescribeAndroidApps(const DescribeAndroidAppsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAndroidApps");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAndroidAppsResponse rsp = DescribeAndroidAppsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAndroidAppsOutcome(rsp);
+        else
+            return DescribeAndroidAppsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAndroidAppsOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::DescribeAndroidAppsAsync(const DescribeAndroidAppsRequest& request, const DescribeAndroidAppsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAndroidApps(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::DescribeAndroidAppsOutcomeCallable GsClient::DescribeAndroidAppsCallable(const DescribeAndroidAppsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAndroidAppsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAndroidApps(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GsClient::DescribeAndroidInstanceAppsOutcome GsClient::DescribeAndroidInstanceApps(const DescribeAndroidInstanceAppsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAndroidInstanceApps");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAndroidInstanceAppsResponse rsp = DescribeAndroidInstanceAppsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAndroidInstanceAppsOutcome(rsp);
+        else
+            return DescribeAndroidInstanceAppsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAndroidInstanceAppsOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::DescribeAndroidInstanceAppsAsync(const DescribeAndroidInstanceAppsRequest& request, const DescribeAndroidInstanceAppsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAndroidInstanceApps(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::DescribeAndroidInstanceAppsOutcomeCallable GsClient::DescribeAndroidInstanceAppsCallable(const DescribeAndroidInstanceAppsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAndroidInstanceAppsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAndroidInstanceApps(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GsClient::DescribeAndroidInstanceImagesOutcome GsClient::DescribeAndroidInstanceImages(const DescribeAndroidInstanceImagesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAndroidInstanceImages");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAndroidInstanceImagesResponse rsp = DescribeAndroidInstanceImagesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAndroidInstanceImagesOutcome(rsp);
+        else
+            return DescribeAndroidInstanceImagesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAndroidInstanceImagesOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::DescribeAndroidInstanceImagesAsync(const DescribeAndroidInstanceImagesRequest& request, const DescribeAndroidInstanceImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAndroidInstanceImages(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::DescribeAndroidInstanceImagesOutcomeCallable GsClient::DescribeAndroidInstanceImagesCallable(const DescribeAndroidInstanceImagesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAndroidInstanceImagesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAndroidInstanceImages(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GsClient::DescribeAndroidInstanceLabelsOutcome GsClient::DescribeAndroidInstanceLabels(const DescribeAndroidInstanceLabelsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAndroidInstanceLabels");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAndroidInstanceLabelsResponse rsp = DescribeAndroidInstanceLabelsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAndroidInstanceLabelsOutcome(rsp);
+        else
+            return DescribeAndroidInstanceLabelsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAndroidInstanceLabelsOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::DescribeAndroidInstanceLabelsAsync(const DescribeAndroidInstanceLabelsRequest& request, const DescribeAndroidInstanceLabelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAndroidInstanceLabels(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::DescribeAndroidInstanceLabelsOutcomeCallable GsClient::DescribeAndroidInstanceLabelsCallable(const DescribeAndroidInstanceLabelsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAndroidInstanceLabelsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAndroidInstanceLabels(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GsClient::DescribeAndroidInstanceTasksStatusOutcome GsClient::DescribeAndroidInstanceTasksStatus(const DescribeAndroidInstanceTasksStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAndroidInstanceTasksStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAndroidInstanceTasksStatusResponse rsp = DescribeAndroidInstanceTasksStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAndroidInstanceTasksStatusOutcome(rsp);
+        else
+            return DescribeAndroidInstanceTasksStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAndroidInstanceTasksStatusOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::DescribeAndroidInstanceTasksStatusAsync(const DescribeAndroidInstanceTasksStatusRequest& request, const DescribeAndroidInstanceTasksStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAndroidInstanceTasksStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::DescribeAndroidInstanceTasksStatusOutcomeCallable GsClient::DescribeAndroidInstanceTasksStatusCallable(const DescribeAndroidInstanceTasksStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAndroidInstanceTasksStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAndroidInstanceTasksStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GsClient::DescribeAndroidInstancesOutcome GsClient::DescribeAndroidInstances(const DescribeAndroidInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAndroidInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAndroidInstancesResponse rsp = DescribeAndroidInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAndroidInstancesOutcome(rsp);
+        else
+            return DescribeAndroidInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAndroidInstancesOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::DescribeAndroidInstancesAsync(const DescribeAndroidInstancesRequest& request, const DescribeAndroidInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAndroidInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::DescribeAndroidInstancesOutcomeCallable GsClient::DescribeAndroidInstancesCallable(const DescribeAndroidInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAndroidInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAndroidInstances(request);
         }
     );
 
@@ -126,6 +771,436 @@ GsClient::DescribeInstancesCountOutcomeCallable GsClient::DescribeInstancesCount
     return task->get_future();
 }
 
+GsClient::DestroyAndroidInstancesOutcome GsClient::DestroyAndroidInstances(const DestroyAndroidInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DestroyAndroidInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DestroyAndroidInstancesResponse rsp = DestroyAndroidInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DestroyAndroidInstancesOutcome(rsp);
+        else
+            return DestroyAndroidInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DestroyAndroidInstancesOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::DestroyAndroidInstancesAsync(const DestroyAndroidInstancesRequest& request, const DestroyAndroidInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DestroyAndroidInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::DestroyAndroidInstancesOutcomeCallable GsClient::DestroyAndroidInstancesCallable(const DestroyAndroidInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DestroyAndroidInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DestroyAndroidInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GsClient::ExecuteCommandOnAndroidInstancesOutcome GsClient::ExecuteCommandOnAndroidInstances(const ExecuteCommandOnAndroidInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExecuteCommandOnAndroidInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExecuteCommandOnAndroidInstancesResponse rsp = ExecuteCommandOnAndroidInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExecuteCommandOnAndroidInstancesOutcome(rsp);
+        else
+            return ExecuteCommandOnAndroidInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return ExecuteCommandOnAndroidInstancesOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::ExecuteCommandOnAndroidInstancesAsync(const ExecuteCommandOnAndroidInstancesRequest& request, const ExecuteCommandOnAndroidInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ExecuteCommandOnAndroidInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::ExecuteCommandOnAndroidInstancesOutcomeCallable GsClient::ExecuteCommandOnAndroidInstancesCallable(const ExecuteCommandOnAndroidInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ExecuteCommandOnAndroidInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->ExecuteCommandOnAndroidInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GsClient::InstallAndroidInstancesAppOutcome GsClient::InstallAndroidInstancesApp(const InstallAndroidInstancesAppRequest &request)
+{
+    auto outcome = MakeRequest(request, "InstallAndroidInstancesApp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InstallAndroidInstancesAppResponse rsp = InstallAndroidInstancesAppResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InstallAndroidInstancesAppOutcome(rsp);
+        else
+            return InstallAndroidInstancesAppOutcome(o.GetError());
+    }
+    else
+    {
+        return InstallAndroidInstancesAppOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::InstallAndroidInstancesAppAsync(const InstallAndroidInstancesAppRequest& request, const InstallAndroidInstancesAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->InstallAndroidInstancesApp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::InstallAndroidInstancesAppOutcomeCallable GsClient::InstallAndroidInstancesAppCallable(const InstallAndroidInstancesAppRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<InstallAndroidInstancesAppOutcome()>>(
+        [this, request]()
+        {
+            return this->InstallAndroidInstancesApp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GsClient::ModifyAndroidInstanceInformationOutcome GsClient::ModifyAndroidInstanceInformation(const ModifyAndroidInstanceInformationRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAndroidInstanceInformation");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAndroidInstanceInformationResponse rsp = ModifyAndroidInstanceInformationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAndroidInstanceInformationOutcome(rsp);
+        else
+            return ModifyAndroidInstanceInformationOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAndroidInstanceInformationOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::ModifyAndroidInstanceInformationAsync(const ModifyAndroidInstanceInformationRequest& request, const ModifyAndroidInstanceInformationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAndroidInstanceInformation(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::ModifyAndroidInstanceInformationOutcomeCallable GsClient::ModifyAndroidInstanceInformationCallable(const ModifyAndroidInstanceInformationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAndroidInstanceInformationOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAndroidInstanceInformation(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GsClient::ModifyAndroidInstanceResolutionOutcome GsClient::ModifyAndroidInstanceResolution(const ModifyAndroidInstanceResolutionRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAndroidInstanceResolution");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAndroidInstanceResolutionResponse rsp = ModifyAndroidInstanceResolutionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAndroidInstanceResolutionOutcome(rsp);
+        else
+            return ModifyAndroidInstanceResolutionOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAndroidInstanceResolutionOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::ModifyAndroidInstanceResolutionAsync(const ModifyAndroidInstanceResolutionRequest& request, const ModifyAndroidInstanceResolutionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAndroidInstanceResolution(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::ModifyAndroidInstanceResolutionOutcomeCallable GsClient::ModifyAndroidInstanceResolutionCallable(const ModifyAndroidInstanceResolutionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAndroidInstanceResolutionOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAndroidInstanceResolution(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GsClient::ModifyAndroidInstancesLabelsOutcome GsClient::ModifyAndroidInstancesLabels(const ModifyAndroidInstancesLabelsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAndroidInstancesLabels");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAndroidInstancesLabelsResponse rsp = ModifyAndroidInstancesLabelsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAndroidInstancesLabelsOutcome(rsp);
+        else
+            return ModifyAndroidInstancesLabelsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAndroidInstancesLabelsOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::ModifyAndroidInstancesLabelsAsync(const ModifyAndroidInstancesLabelsRequest& request, const ModifyAndroidInstancesLabelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAndroidInstancesLabels(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::ModifyAndroidInstancesLabelsOutcomeCallable GsClient::ModifyAndroidInstancesLabelsCallable(const ModifyAndroidInstancesLabelsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAndroidInstancesLabelsOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAndroidInstancesLabels(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GsClient::ModifyAndroidInstancesUserIdOutcome GsClient::ModifyAndroidInstancesUserId(const ModifyAndroidInstancesUserIdRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAndroidInstancesUserId");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAndroidInstancesUserIdResponse rsp = ModifyAndroidInstancesUserIdResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAndroidInstancesUserIdOutcome(rsp);
+        else
+            return ModifyAndroidInstancesUserIdOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAndroidInstancesUserIdOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::ModifyAndroidInstancesUserIdAsync(const ModifyAndroidInstancesUserIdRequest& request, const ModifyAndroidInstancesUserIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAndroidInstancesUserId(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::ModifyAndroidInstancesUserIdOutcomeCallable GsClient::ModifyAndroidInstancesUserIdCallable(const ModifyAndroidInstancesUserIdRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAndroidInstancesUserIdOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAndroidInstancesUserId(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GsClient::RebootAndroidInstancesOutcome GsClient::RebootAndroidInstances(const RebootAndroidInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "RebootAndroidInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RebootAndroidInstancesResponse rsp = RebootAndroidInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RebootAndroidInstancesOutcome(rsp);
+        else
+            return RebootAndroidInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return RebootAndroidInstancesOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::RebootAndroidInstancesAsync(const RebootAndroidInstancesRequest& request, const RebootAndroidInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RebootAndroidInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::RebootAndroidInstancesOutcomeCallable GsClient::RebootAndroidInstancesCallable(const RebootAndroidInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RebootAndroidInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->RebootAndroidInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GsClient::ResetAndroidInstancesOutcome GsClient::ResetAndroidInstances(const ResetAndroidInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResetAndroidInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResetAndroidInstancesResponse rsp = ResetAndroidInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResetAndroidInstancesOutcome(rsp);
+        else
+            return ResetAndroidInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return ResetAndroidInstancesOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::ResetAndroidInstancesAsync(const ResetAndroidInstancesRequest& request, const ResetAndroidInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ResetAndroidInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::ResetAndroidInstancesOutcomeCallable GsClient::ResetAndroidInstancesCallable(const ResetAndroidInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ResetAndroidInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->ResetAndroidInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GsClient::RestartAndroidInstancesAppOutcome GsClient::RestartAndroidInstancesApp(const RestartAndroidInstancesAppRequest &request)
+{
+    auto outcome = MakeRequest(request, "RestartAndroidInstancesApp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RestartAndroidInstancesAppResponse rsp = RestartAndroidInstancesAppResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RestartAndroidInstancesAppOutcome(rsp);
+        else
+            return RestartAndroidInstancesAppOutcome(o.GetError());
+    }
+    else
+    {
+        return RestartAndroidInstancesAppOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::RestartAndroidInstancesAppAsync(const RestartAndroidInstancesAppRequest& request, const RestartAndroidInstancesAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RestartAndroidInstancesApp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::RestartAndroidInstancesAppOutcomeCallable GsClient::RestartAndroidInstancesAppCallable(const RestartAndroidInstancesAppRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RestartAndroidInstancesAppOutcome()>>(
+        [this, request]()
+        {
+            return this->RestartAndroidInstancesApp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GsClient::SaveGameArchiveOutcome GsClient::SaveGameArchive(const SaveGameArchiveRequest &request)
 {
     auto outcome = MakeRequest(request, "SaveGameArchive");
@@ -162,6 +1237,92 @@ GsClient::SaveGameArchiveOutcomeCallable GsClient::SaveGameArchiveCallable(const
         [this, request]()
         {
             return this->SaveGameArchive(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GsClient::StartAndroidInstancesOutcome GsClient::StartAndroidInstances(const StartAndroidInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "StartAndroidInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StartAndroidInstancesResponse rsp = StartAndroidInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StartAndroidInstancesOutcome(rsp);
+        else
+            return StartAndroidInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return StartAndroidInstancesOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::StartAndroidInstancesAsync(const StartAndroidInstancesRequest& request, const StartAndroidInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StartAndroidInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::StartAndroidInstancesOutcomeCallable GsClient::StartAndroidInstancesCallable(const StartAndroidInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StartAndroidInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->StartAndroidInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GsClient::StartAndroidInstancesAppOutcome GsClient::StartAndroidInstancesApp(const StartAndroidInstancesAppRequest &request)
+{
+    auto outcome = MakeRequest(request, "StartAndroidInstancesApp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StartAndroidInstancesAppResponse rsp = StartAndroidInstancesAppResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StartAndroidInstancesAppOutcome(rsp);
+        else
+            return StartAndroidInstancesAppOutcome(o.GetError());
+    }
+    else
+    {
+        return StartAndroidInstancesAppOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::StartAndroidInstancesAppAsync(const StartAndroidInstancesAppRequest& request, const StartAndroidInstancesAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StartAndroidInstancesApp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::StartAndroidInstancesAppOutcomeCallable GsClient::StartAndroidInstancesAppCallable(const StartAndroidInstancesAppRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StartAndroidInstancesAppOutcome()>>(
+        [this, request]()
+        {
+            return this->StartAndroidInstancesApp(request);
         }
     );
 
@@ -248,6 +1409,92 @@ GsClient::StartPublishStreamToCSSOutcomeCallable GsClient::StartPublishStreamToC
         [this, request]()
         {
             return this->StartPublishStreamToCSS(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GsClient::StopAndroidInstancesOutcome GsClient::StopAndroidInstances(const StopAndroidInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopAndroidInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopAndroidInstancesResponse rsp = StopAndroidInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopAndroidInstancesOutcome(rsp);
+        else
+            return StopAndroidInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return StopAndroidInstancesOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::StopAndroidInstancesAsync(const StopAndroidInstancesRequest& request, const StopAndroidInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StopAndroidInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::StopAndroidInstancesOutcomeCallable GsClient::StopAndroidInstancesCallable(const StopAndroidInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StopAndroidInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->StopAndroidInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GsClient::StopAndroidInstancesAppOutcome GsClient::StopAndroidInstancesApp(const StopAndroidInstancesAppRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopAndroidInstancesApp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopAndroidInstancesAppResponse rsp = StopAndroidInstancesAppResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopAndroidInstancesAppOutcome(rsp);
+        else
+            return StopAndroidInstancesAppOutcome(o.GetError());
+    }
+    else
+    {
+        return StopAndroidInstancesAppOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::StopAndroidInstancesAppAsync(const StopAndroidInstancesAppRequest& request, const StopAndroidInstancesAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StopAndroidInstancesApp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::StopAndroidInstancesAppOutcomeCallable GsClient::StopAndroidInstancesAppCallable(const StopAndroidInstancesAppRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StopAndroidInstancesAppOutcome()>>(
+        [this, request]()
+        {
+            return this->StopAndroidInstancesApp(request);
         }
     );
 
@@ -384,6 +1631,92 @@ GsClient::SwitchGameArchiveOutcomeCallable GsClient::SwitchGameArchiveCallable(c
     return task->get_future();
 }
 
+GsClient::SyncAndroidInstanceImageOutcome GsClient::SyncAndroidInstanceImage(const SyncAndroidInstanceImageRequest &request)
+{
+    auto outcome = MakeRequest(request, "SyncAndroidInstanceImage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SyncAndroidInstanceImageResponse rsp = SyncAndroidInstanceImageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SyncAndroidInstanceImageOutcome(rsp);
+        else
+            return SyncAndroidInstanceImageOutcome(o.GetError());
+    }
+    else
+    {
+        return SyncAndroidInstanceImageOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::SyncAndroidInstanceImageAsync(const SyncAndroidInstanceImageRequest& request, const SyncAndroidInstanceImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SyncAndroidInstanceImage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::SyncAndroidInstanceImageOutcomeCallable GsClient::SyncAndroidInstanceImageCallable(const SyncAndroidInstanceImageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SyncAndroidInstanceImageOutcome()>>(
+        [this, request]()
+        {
+            return this->SyncAndroidInstanceImage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GsClient::SyncExecuteCommandOnAndroidInstancesOutcome GsClient::SyncExecuteCommandOnAndroidInstances(const SyncExecuteCommandOnAndroidInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "SyncExecuteCommandOnAndroidInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SyncExecuteCommandOnAndroidInstancesResponse rsp = SyncExecuteCommandOnAndroidInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SyncExecuteCommandOnAndroidInstancesOutcome(rsp);
+        else
+            return SyncExecuteCommandOnAndroidInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return SyncExecuteCommandOnAndroidInstancesOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::SyncExecuteCommandOnAndroidInstancesAsync(const SyncExecuteCommandOnAndroidInstancesRequest& request, const SyncExecuteCommandOnAndroidInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SyncExecuteCommandOnAndroidInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::SyncExecuteCommandOnAndroidInstancesOutcomeCallable GsClient::SyncExecuteCommandOnAndroidInstancesCallable(const SyncExecuteCommandOnAndroidInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SyncExecuteCommandOnAndroidInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->SyncExecuteCommandOnAndroidInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GsClient::TrylockWorkerOutcome GsClient::TrylockWorker(const TrylockWorkerRequest &request)
 {
     auto outcome = MakeRequest(request, "TrylockWorker");
@@ -420,6 +1753,92 @@ GsClient::TrylockWorkerOutcomeCallable GsClient::TrylockWorkerCallable(const Try
         [this, request]()
         {
             return this->TrylockWorker(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GsClient::UninstallAndroidInstancesAppOutcome GsClient::UninstallAndroidInstancesApp(const UninstallAndroidInstancesAppRequest &request)
+{
+    auto outcome = MakeRequest(request, "UninstallAndroidInstancesApp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UninstallAndroidInstancesAppResponse rsp = UninstallAndroidInstancesAppResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UninstallAndroidInstancesAppOutcome(rsp);
+        else
+            return UninstallAndroidInstancesAppOutcome(o.GetError());
+    }
+    else
+    {
+        return UninstallAndroidInstancesAppOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::UninstallAndroidInstancesAppAsync(const UninstallAndroidInstancesAppRequest& request, const UninstallAndroidInstancesAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UninstallAndroidInstancesApp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::UninstallAndroidInstancesAppOutcomeCallable GsClient::UninstallAndroidInstancesAppCallable(const UninstallAndroidInstancesAppRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UninstallAndroidInstancesAppOutcome()>>(
+        [this, request]()
+        {
+            return this->UninstallAndroidInstancesApp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GsClient::UploadFileToAndroidInstancesOutcome GsClient::UploadFileToAndroidInstances(const UploadFileToAndroidInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "UploadFileToAndroidInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UploadFileToAndroidInstancesResponse rsp = UploadFileToAndroidInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UploadFileToAndroidInstancesOutcome(rsp);
+        else
+            return UploadFileToAndroidInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return UploadFileToAndroidInstancesOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::UploadFileToAndroidInstancesAsync(const UploadFileToAndroidInstancesRequest& request, const UploadFileToAndroidInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UploadFileToAndroidInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::UploadFileToAndroidInstancesOutcomeCallable GsClient::UploadFileToAndroidInstancesCallable(const UploadFileToAndroidInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UploadFileToAndroidInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->UploadFileToAndroidInstances(request);
         }
     );
 

@@ -54,7 +54,8 @@ TaskAlarmInfo::TaskAlarmInfo() :
     m_descriptionHasBeenSet(false),
     m_larkWebHooksHasBeenSet(false),
     m_dingDingWebHooksHasBeenSet(false),
-    m_businessTypeHasBeenSet(false)
+    m_businessTypeHasBeenSet(false),
+    m_alarmMessageRuleHasBeenSet(false)
 {
 }
 
@@ -426,6 +427,16 @@ CoreInternalOutcome TaskAlarmInfo::Deserialize(const rapidjson::Value &value)
         m_businessTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("AlarmMessageRule") && !value["AlarmMessageRule"].IsNull())
+    {
+        if (!value["AlarmMessageRule"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskAlarmInfo.AlarmMessageRule` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_alarmMessageRule = string(value["AlarmMessageRule"].GetString());
+        m_alarmMessageRuleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -722,6 +733,14 @@ void TaskAlarmInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "BusinessType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_businessType, allocator);
+    }
+
+    if (m_alarmMessageRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlarmMessageRule";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_alarmMessageRule.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1269,5 +1288,21 @@ void TaskAlarmInfo::SetBusinessType(const int64_t& _businessType)
 bool TaskAlarmInfo::BusinessTypeHasBeenSet() const
 {
     return m_businessTypeHasBeenSet;
+}
+
+string TaskAlarmInfo::GetAlarmMessageRule() const
+{
+    return m_alarmMessageRule;
+}
+
+void TaskAlarmInfo::SetAlarmMessageRule(const string& _alarmMessageRule)
+{
+    m_alarmMessageRule = _alarmMessageRule;
+    m_alarmMessageRuleHasBeenSet = true;
+}
+
+bool TaskAlarmInfo::AlarmMessageRuleHasBeenSet() const
+{
+    return m_alarmMessageRuleHasBeenSet;
 }
 

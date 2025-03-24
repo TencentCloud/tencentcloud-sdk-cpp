@@ -195,14 +195,18 @@ namespace TencentCloud
 
                     /**
                      * 获取是否更新到关联的Datahub任务
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsUpdate 是否更新到关联的Datahub任务
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsUpdate() const;
 
                     /**
                      * 设置是否更新到关联的Datahub任务
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isUpdate 是否更新到关联的Datahub任务
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsUpdate(const bool& _isUpdate);
@@ -260,6 +264,7 @@ namespace TencentCloud
 
                     /**
                      * 是否更新到关联的Datahub任务
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isUpdate;
                     bool m_isUpdateHasBeenSet;

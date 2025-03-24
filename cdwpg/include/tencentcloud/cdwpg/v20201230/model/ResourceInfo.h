@@ -123,18 +123,18 @@ namespace TencentCloud
                     bool DiskSpecHasBeenSet() const;
 
                     /**
-                     * 获取资源类型，DATA
+                     * 获取节点类型，cn 或dn
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Type 资源类型，DATA
+                     * @return Type 节点类型，cn 或dn
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置资源类型，DATA
+                     * 设置节点类型，cn 或dn
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _type 资源类型，DATA
+                     * @param _type 节点类型，cn 或dn
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -171,7 +171,7 @@ namespace TencentCloud
                     bool m_diskSpecHasBeenSet;
 
                     /**
-                     * 资源类型，DATA
+                     * 节点类型，cn 或dn
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;

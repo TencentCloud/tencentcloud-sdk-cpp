@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取评估项列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Strategies 评估项列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Strategies> GetStrategies() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 评估项列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Strategies> m_strategies;
                     bool m_strategiesHasBeenSet;

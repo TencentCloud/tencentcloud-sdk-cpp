@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取场景详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SceneSet 场景详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SceneInfo> GetSceneSet() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 场景详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SceneInfo> m_sceneSet;
                     bool m_sceneSetHasBeenSet;

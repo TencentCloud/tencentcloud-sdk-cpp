@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取连接源的Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 连接源的Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DescribeConnectResourceResp GetResult() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 连接源的Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DescribeConnectResourceResp m_result;
                     bool m_resultHasBeenSet;

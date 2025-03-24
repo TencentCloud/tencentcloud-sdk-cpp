@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取键值索引自动配置开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 键值索引自动配置开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetStatus() const;
 
                     /**
                      * 设置键值索引自动配置开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 键值索引自动配置开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const bool& _status);
@@ -75,7 +71,6 @@ namespace TencentCloud
 
                     /**
                      * 键值索引自动配置开关
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_status;
                     bool m_statusHasBeenSet;

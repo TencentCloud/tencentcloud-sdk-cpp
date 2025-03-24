@@ -22,7 +22,10 @@
 using namespace TencentCloud::Wedata::V20210820::Model;
 using namespace std;
 
-AddProjectUserRoleRequest::AddProjectUserRoleRequest()
+AddProjectUserRoleRequest::AddProjectUserRoleRequest() :
+    m_projectIdHasBeenSet(false),
+    m_userIdsHasBeenSet(false),
+    m_roleIdsHasBeenSet(false)
 {
 }
 
@@ -33,6 +36,40 @@ string AddProjectUserRoleRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_projectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_userIds.begin(); itr != m_userIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_roleIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RoleIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_roleIds.begin(); itr != m_roleIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +77,53 @@ string AddProjectUserRoleRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string AddProjectUserRoleRequest::GetProjectId() const
+{
+    return m_projectId;
+}
+
+void AddProjectUserRoleRequest::SetProjectId(const string& _projectId)
+{
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
+}
+
+bool AddProjectUserRoleRequest::ProjectIdHasBeenSet() const
+{
+    return m_projectIdHasBeenSet;
+}
+
+vector<string> AddProjectUserRoleRequest::GetUserIds() const
+{
+    return m_userIds;
+}
+
+void AddProjectUserRoleRequest::SetUserIds(const vector<string>& _userIds)
+{
+    m_userIds = _userIds;
+    m_userIdsHasBeenSet = true;
+}
+
+bool AddProjectUserRoleRequest::UserIdsHasBeenSet() const
+{
+    return m_userIdsHasBeenSet;
+}
+
+vector<string> AddProjectUserRoleRequest::GetRoleIds() const
+{
+    return m_roleIds;
+}
+
+void AddProjectUserRoleRequest::SetRoleIds(const vector<string>& _roleIds)
+{
+    m_roleIds = _roleIds;
+    m_roleIdsHasBeenSet = true;
+}
+
+bool AddProjectUserRoleRequest::RoleIdsHasBeenSet() const
+{
+    return m_roleIdsHasBeenSet;
+}
 
 

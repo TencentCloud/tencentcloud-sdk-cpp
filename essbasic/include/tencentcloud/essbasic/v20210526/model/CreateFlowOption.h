@@ -193,6 +193,39 @@ namespace TencentCloud
                     bool CanSkipAddApproverHasBeenSet() const;
 
                     /**
+                     * 获取是否可以编辑签署人包括新增，修改，删除 
+<ul><li>（默认） false -可以编辑签署人</li> <li> true - 可以编辑签署人</li></ul>
+
+注意：如果设置参数为 false， 则 参数签署人 [FlowApproverList](https://qian.tencent.com/developers/partnerApis/embedPages/ChannelCreatePrepareFlow) 不能为空
+                     * @return ForbidEditApprover 是否可以编辑签署人包括新增，修改，删除 
+<ul><li>（默认） false -可以编辑签署人</li> <li> true - 可以编辑签署人</li></ul>
+
+注意：如果设置参数为 false， 则 参数签署人 [FlowApproverList](https://qian.tencent.com/developers/partnerApis/embedPages/ChannelCreatePrepareFlow) 不能为空
+                     * 
+                     */
+                    bool GetForbidEditApprover() const;
+
+                    /**
+                     * 设置是否可以编辑签署人包括新增，修改，删除 
+<ul><li>（默认） false -可以编辑签署人</li> <li> true - 可以编辑签署人</li></ul>
+
+注意：如果设置参数为 false， 则 参数签署人 [FlowApproverList](https://qian.tencent.com/developers/partnerApis/embedPages/ChannelCreatePrepareFlow) 不能为空
+                     * @param _forbidEditApprover 是否可以编辑签署人包括新增，修改，删除 
+<ul><li>（默认） false -可以编辑签署人</li> <li> true - 可以编辑签署人</li></ul>
+
+注意：如果设置参数为 false， 则 参数签署人 [FlowApproverList](https://qian.tencent.com/developers/partnerApis/embedPages/ChannelCreatePrepareFlow) 不能为空
+                     * 
+                     */
+                    void SetForbidEditApprover(const bool& _forbidEditApprover);
+
+                    /**
+                     * 判断参数 ForbidEditApprover 是否已赋值
+                     * @return ForbidEditApprover 是否已赋值
+                     * 
+                     */
+                    bool ForbidEditApproverHasBeenSet() const;
+
+                    /**
                      * 获取定制化发起合同弹窗的描述信息，长度不能超过500，只能由中文、字母、数字和标点组成。
                      * @return CustomCreateFlowDescription 定制化发起合同弹窗的描述信息，长度不能超过500，只能由中文、字母、数字和标点组成。
                      * 
@@ -345,6 +378,15 @@ namespace TencentCloud
                      */
                     bool m_canSkipAddApprover;
                     bool m_canSkipAddApproverHasBeenSet;
+
+                    /**
+                     * 是否可以编辑签署人包括新增，修改，删除 
+<ul><li>（默认） false -可以编辑签署人</li> <li> true - 可以编辑签署人</li></ul>
+
+注意：如果设置参数为 false， 则 参数签署人 [FlowApproverList](https://qian.tencent.com/developers/partnerApis/embedPages/ChannelCreatePrepareFlow) 不能为空
+                     */
+                    bool m_forbidEditApprover;
+                    bool m_forbidEditApproverHasBeenSet;
 
                     /**
                      * 定制化发起合同弹窗的描述信息，长度不能超过500，只能由中文、字母、数字和标点组成。

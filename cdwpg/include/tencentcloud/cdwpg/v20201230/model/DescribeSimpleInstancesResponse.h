@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取1
+                     * 获取集群列表总数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TotalCount 1
+                     * @return TotalCount 集群列表总数
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -61,9 +61,9 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取1
+                     * 获取集群列表详情
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstancesList 1
+                     * @return InstancesList 集群列表详情
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -77,9 +77,9 @@ namespace TencentCloud
                     bool InstancesListHasBeenSet() const;
 
                     /**
-                     * 获取-
+                     * 获取错误信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ErrorMsg -
+                     * @return ErrorMsg 错误信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -95,21 +95,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 1
+                     * 集群列表总数
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 1
+                     * 集群列表详情
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<InstanceSimpleInfoNew> m_instancesList;
                     bool m_instancesListHasBeenSet;
 
                     /**
-                     * -
+                     * 错误信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errorMsg;

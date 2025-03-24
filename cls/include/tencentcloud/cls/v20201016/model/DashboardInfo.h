@@ -92,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取仪表盘数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 仪表盘数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetData() const;
 
                     /**
                      * 设置仪表盘数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _data 仪表盘数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetData(const std::string& _data);
@@ -138,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取AssumerUin非空则表示创建该日志主题的服务方Uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssumerUin AssumerUin非空则表示创建该日志主题的服务方Uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetAssumerUin() const;
 
                     /**
                      * 设置AssumerUin非空则表示创建该日志主题的服务方Uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _assumerUin AssumerUin非空则表示创建该日志主题的服务方Uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAssumerUin(const uint64_t& _assumerUin);
@@ -163,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取RoleName非空则表示创建该日志主题的服务方使用的角色
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RoleName RoleName非空则表示创建该日志主题的服务方使用的角色
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRoleName() const;
 
                     /**
                      * 设置RoleName非空则表示创建该日志主题的服务方使用的角色
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _roleName RoleName非空则表示创建该日志主题的服务方使用的角色
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRoleName(const std::string& _roleName);
@@ -188,18 +176,14 @@ namespace TencentCloud
 
                     /**
                      * 获取AssumerName非空则表示创建该日志主题的服务方名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssumerName AssumerName非空则表示创建该日志主题的服务方名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAssumerName() const;
 
                     /**
                      * 设置AssumerName非空则表示创建该日志主题的服务方名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _assumerName AssumerName非空则表示创建该日志主题的服务方名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAssumerName(const std::string& _assumerName);
@@ -213,18 +197,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志主题绑定的标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 日志主题绑定的标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
                      * 设置日志主题绑定的标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 日志主题绑定的标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::vector<Tag>& _tags);
@@ -238,18 +218,14 @@ namespace TencentCloud
 
                     /**
                      * 获取仪表盘所在地域： 为了兼容老的地域。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DashboardRegion 仪表盘所在地域： 为了兼容老的地域。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDashboardRegion() const;
 
                     /**
                      * 设置仪表盘所在地域： 为了兼容老的地域。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dashboardRegion 仪表盘所在地域： 为了兼容老的地域。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDashboardRegion(const std::string& _dashboardRegion);
@@ -263,18 +239,14 @@ namespace TencentCloud
 
                     /**
                      * 获取修改仪表盘的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 修改仪表盘的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置修改仪表盘的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updateTime 修改仪表盘的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -288,18 +260,14 @@ namespace TencentCloud
 
                     /**
                      * 获取仪表盘对应的topic相关信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DashboardTopicInfos 仪表盘对应的topic相关信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DashboardTopicInfo> GetDashboardTopicInfos() const;
 
                     /**
                      * 设置仪表盘对应的topic相关信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dashboardTopicInfos 仪表盘对应的topic相关信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDashboardTopicInfos(const std::vector<DashboardTopicInfo>& _dashboardTopicInfos);
@@ -327,7 +295,6 @@ namespace TencentCloud
 
                     /**
                      * 仪表盘数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_data;
                     bool m_dataHasBeenSet;
@@ -340,49 +307,42 @@ namespace TencentCloud
 
                     /**
                      * AssumerUin非空则表示创建该日志主题的服务方Uin
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_assumerUin;
                     bool m_assumerUinHasBeenSet;
 
                     /**
                      * RoleName非空则表示创建该日志主题的服务方使用的角色
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_roleName;
                     bool m_roleNameHasBeenSet;
 
                     /**
                      * AssumerName非空则表示创建该日志主题的服务方名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_assumerName;
                     bool m_assumerNameHasBeenSet;
 
                     /**
                      * 日志主题绑定的标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
                      * 仪表盘所在地域： 为了兼容老的地域。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dashboardRegion;
                     bool m_dashboardRegionHasBeenSet;
 
                     /**
                      * 修改仪表盘的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
                      * 仪表盘对应的topic相关信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DashboardTopicInfo> m_dashboardTopicInfos;
                     bool m_dashboardTopicInfosHasBeenSet;

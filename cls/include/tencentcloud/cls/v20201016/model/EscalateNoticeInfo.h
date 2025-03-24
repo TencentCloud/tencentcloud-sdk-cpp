@@ -93,18 +93,14 @@ namespace TencentCloud
 
                     /**
                      * 获取告警升级开关。`true`：开启告警升级、`false`：关闭告警升级，默认：false
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Escalate 告警升级开关。`true`：开启告警升级、`false`：关闭告警升级，默认：false
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEscalate() const;
 
                     /**
                      * 设置告警升级开关。`true`：开启告警升级、`false`：关闭告警升级，默认：false
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _escalate 告警升级开关。`true`：开启告警升级、`false`：关闭告警升级，默认：false
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEscalate(const bool& _escalate);
@@ -118,18 +114,14 @@ namespace TencentCloud
 
                     /**
                      * 获取告警升级间隔。单位：分钟，范围`[1，14400]`
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Interval 告警升级间隔。单位：分钟，范围`[1，14400]`
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetInterval() const;
 
                     /**
                      * 设置告警升级间隔。单位：分钟，范围`[1，14400]`
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _interval 告警升级间隔。单位：分钟，范围`[1，14400]`
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInterval(const uint64_t& _interval);
@@ -146,12 +138,10 @@ namespace TencentCloud
 - 无人认领且未恢复：告警没有恢复并且没有人认领则升级
 - 未恢复：当前告警持续未恢复则升级
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 升级条件。`1`：无人认领且未恢复、`2`：未恢复，默认为1
 - 无人认领且未恢复：告警没有恢复并且没有人认领则升级
 - 未恢复：当前告警持续未恢复则升级
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetType() const;
@@ -161,12 +151,10 @@ namespace TencentCloud
 - 无人认领且未恢复：告警没有恢复并且没有人认领则升级
 - 未恢复：当前告警持续未恢复则升级
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 升级条件。`1`：无人认领且未恢复、`2`：未恢复，默认为1
 - 无人认领且未恢复：告警没有恢复并且没有人认领则升级
 - 未恢复：当前告警持续未恢复则升级
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const uint64_t& _type);
@@ -180,18 +168,14 @@ namespace TencentCloud
 
                     /**
                      * 获取告警升级后下一个环节的通知渠道配置，最多可配置5个环节。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EscalateNotice 告警升级后下一个环节的通知渠道配置，最多可配置5个环节。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     EscalateNoticeInfo GetEscalateNotice() const;
 
                     /**
                      * 设置告警升级后下一个环节的通知渠道配置，最多可配置5个环节。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _escalateNotice 告警升级后下一个环节的通知渠道配置，最多可配置5个环节。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEscalateNotice(const EscalateNoticeInfo& _escalateNotice);
@@ -219,14 +203,12 @@ namespace TencentCloud
 
                     /**
                      * 告警升级开关。`true`：开启告警升级、`false`：关闭告警升级，默认：false
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_escalate;
                     bool m_escalateHasBeenSet;
 
                     /**
                      * 告警升级间隔。单位：分钟，范围`[1，14400]`
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_interval;
                     bool m_intervalHasBeenSet;
@@ -236,14 +218,12 @@ namespace TencentCloud
 - 无人认领且未恢复：告警没有恢复并且没有人认领则升级
 - 未恢复：当前告警持续未恢复则升级
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 告警升级后下一个环节的通知渠道配置，最多可配置5个环节。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     EscalateNoticeInfo m_escalateNotice;
                     bool m_escalateNoticeHasBeenSet;

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 策略实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置策略实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 策略实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略实例关联事件数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EventNums 策略实例关联事件数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetEventNums() const;
 
                     /**
                      * 设置策略实例关联事件数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _eventNums 策略实例关联事件数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEventNums(const uint64_t& _eventNums);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例yaml详情base64编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return YamlDetail 实例yaml详情base64编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetYamlDetail() const;
 
                     /**
                      * 设置实例yaml详情base64编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _yamlDetail 实例yaml详情base64编码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetYamlDetail(const std::string& _yamlDetail);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 策略实例名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 策略实例关联事件数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_eventNums;
                     bool m_eventNumsHasBeenSet;
 
                     /**
                      * 实例yaml详情base64编码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_yamlDetail;
                     bool m_yamlDetailHasBeenSet;

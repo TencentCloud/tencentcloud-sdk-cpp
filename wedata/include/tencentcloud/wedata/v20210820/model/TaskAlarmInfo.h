@@ -866,6 +866,31 @@ namespace TencentCloud
                      */
                     bool BusinessTypeHasBeenSet() const;
 
+                    /**
+                     * 获取alarm message rule
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AlarmMessageRule alarm message rule
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAlarmMessageRule() const;
+
+                    /**
+                     * 设置alarm message rule
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _alarmMessageRule alarm message rule
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAlarmMessageRule(const std::string& _alarmMessageRule);
+
+                    /**
+                     * 判断参数 AlarmMessageRule 是否已赋值
+                     * @return AlarmMessageRule 是否已赋值
+                     * 
+                     */
+                    bool AlarmMessageRuleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1097,6 +1122,13 @@ namespace TencentCloud
                      */
                     int64_t m_businessType;
                     bool m_businessTypeHasBeenSet;
+
+                    /**
+                     * alarm message rule
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_alarmMessageRule;
+                    bool m_alarmMessageRuleHasBeenSet;
 
                 };
             }

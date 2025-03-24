@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取警告条件ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConditionId 警告条件ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetConditionId() const;
 
                     /**
                      * 设置警告条件ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _conditionId 警告条件ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConditionId(const uint64_t& _conditionId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取警告级别，2:中风险，3:高风险
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Level 警告级别，2:中风险，3:高风险
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetLevel() const;
 
                     /**
                      * 设置警告级别，2:中风险，3:高风险
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _level 警告级别，2:中风险，3:高风险
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLevel(const uint64_t& _level);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取警告级别描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LevelDesc 警告级别描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLevelDesc() const;
 
                     /**
                      * 设置警告级别描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _levelDesc 警告级别描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLevelDesc(const std::string& _levelDesc);
@@ -146,21 +134,18 @@ namespace TencentCloud
 
                     /**
                      * 警告条件ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_conditionId;
                     bool m_conditionIdHasBeenSet;
 
                     /**
                      * 警告级别，2:中风险，3:高风险
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_level;
                     bool m_levelHasBeenSet;
 
                     /**
                      * 警告级别描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_levelDesc;
                     bool m_levelDescHasBeenSet;

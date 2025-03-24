@@ -87,9 +87,7 @@ namespace TencentCloud
 
                     /**
                      * 获取小程序测试账号(自有账号体系需提供,其他情况不需要)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MiniAppTestAccount 小程序测试账号(自有账号体系需提供,其他情况不需要)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMiniAppTestAccount() const;
@@ -103,9 +101,7 @@ namespace TencentCloud
 
                     /**
                      * 获取小程序测试密码(自有账号体系需提供,其他情况不需要)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MiniAppTestPwd 小程序测试密码(自有账号体系需提供,其他情况不需要)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMiniAppTestPwd() const;
@@ -119,9 +115,7 @@ namespace TencentCloud
 
                     /**
                      * 获取诊断扫描版本 0:正式版 1:体验版
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ScanVersion 诊断扫描版本 0:正式版 1:体验版
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetScanVersion() const;
@@ -155,21 +149,18 @@ namespace TencentCloud
 
                     /**
                      * 小程序测试账号(自有账号体系需提供,其他情况不需要)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_miniAppTestAccount;
                     bool m_miniAppTestAccountHasBeenSet;
 
                     /**
                      * 小程序测试密码(自有账号体系需提供,其他情况不需要)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_miniAppTestPwd;
                     bool m_miniAppTestPwdHasBeenSet;
 
                     /**
                      * 诊断扫描版本 0:正式版 1:体验版
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_scanVersion;
                     bool m_scanVersionHasBeenSet;

@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取0 成功 非0 失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 0 成功 非0 失败
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetResult() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 0 成功 非0 失败
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_result;
                     bool m_resultHasBeenSet;

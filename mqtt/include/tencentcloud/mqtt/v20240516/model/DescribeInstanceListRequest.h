@@ -45,27 +45,27 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询条件列表,支持以下子弹
+                     * 获取查询条件列表,支持以下字段
 InstanceName：集群名模糊搜索
 InstanceId：集群id精确搜索
-InstanceStatus：集群状态搜索
-                     * @return Filters 查询条件列表,支持以下子弹
+InstanceStatus：集群状态搜索（RUNNING-运行中，CREATING-创建中，MODIFYING-变配中，DELETING-删除中）
+                     * @return Filters 查询条件列表,支持以下字段
 InstanceName：集群名模糊搜索
 InstanceId：集群id精确搜索
-InstanceStatus：集群状态搜索
+InstanceStatus：集群状态搜索（RUNNING-运行中，CREATING-创建中，MODIFYING-变配中，DELETING-删除中）
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置查询条件列表,支持以下子弹
+                     * 设置查询条件列表,支持以下字段
 InstanceName：集群名模糊搜索
 InstanceId：集群id精确搜索
-InstanceStatus：集群状态搜索
-                     * @param _filters 查询条件列表,支持以下子弹
+InstanceStatus：集群状态搜索（RUNNING-运行中，CREATING-创建中，MODIFYING-变配中，DELETING-删除中）
+                     * @param _filters 查询条件列表,支持以下字段
 InstanceName：集群名模糊搜索
 InstanceId：集群id精确搜索
-InstanceStatus：集群状态搜索
+InstanceStatus：集群状态搜索（RUNNING-运行中，CREATING-创建中，MODIFYING-变配中，DELETING-删除中）
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -78,15 +78,15 @@ InstanceStatus：集群状态搜索
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取查询起始位置
-                     * @return Offset 查询起始位置
+                     * 获取查询起始位置，默认0
+                     * @return Offset 查询起始位置，默认0
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置查询起始位置
-                     * @param _offset 查询起始位置
+                     * 设置查询起始位置，默认0
+                     * @param _offset 查询起始位置，默认0
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -99,15 +99,15 @@ InstanceStatus：集群状态搜索
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取查询结果限制数量
-                     * @return Limit 查询结果限制数量
+                     * 获取查询结果限制数量，默认20，最大100
+                     * @return Limit 查询结果限制数量，默认20，最大100
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置查询结果限制数量
-                     * @param _limit 查询结果限制数量
+                     * 设置查询结果限制数量，默认20，最大100
+                     * @param _limit 查询结果限制数量，默认20，最大100
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -143,22 +143,22 @@ InstanceStatus：集群状态搜索
                 private:
 
                     /**
-                     * 查询条件列表,支持以下子弹
+                     * 查询条件列表,支持以下字段
 InstanceName：集群名模糊搜索
 InstanceId：集群id精确搜索
-InstanceStatus：集群状态搜索
+InstanceStatus：集群状态搜索（RUNNING-运行中，CREATING-创建中，MODIFYING-变配中，DELETING-删除中）
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 查询起始位置
+                     * 查询起始位置，默认0
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 查询结果限制数量
+                     * 查询结果限制数量，默认20，最大100
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

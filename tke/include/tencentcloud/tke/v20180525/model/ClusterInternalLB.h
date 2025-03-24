@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启内网访问LB
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Enabled 是否开启内网访问LB
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnabled() const;
 
                     /**
                      * 设置是否开启内网访问LB
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enabled 是否开启内网访问LB
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnabled(const bool& _enabled);
@@ -100,7 +96,6 @@ namespace TencentCloud
 
                     /**
                      * 是否开启内网访问LB
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enabled;
                     bool m_enabledHasBeenSet;

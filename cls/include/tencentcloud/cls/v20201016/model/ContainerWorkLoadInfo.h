@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取容器名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Container 容器名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContainer() const;
 
                     /**
                      * 设置容器名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _container 容器名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContainer(const std::string& _container);
@@ -115,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Namespace 命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _namespace 命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNamespace(const std::string& _namespace);
@@ -154,14 +146,12 @@ namespace TencentCloud
 
                     /**
                      * 容器名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_container;
                     bool m_containerHasBeenSet;
 
                     /**
                      * 命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;

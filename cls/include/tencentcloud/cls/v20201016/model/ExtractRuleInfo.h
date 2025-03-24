@@ -52,18 +52,14 @@ namespace TencentCloud
 
                     /**
                      * 获取时间字段的key名字，TikeKey和TimeFormat必须成对出现
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeKey 时间字段的key名字，TikeKey和TimeFormat必须成对出现
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTimeKey() const;
 
                     /**
                      * 设置时间字段的key名字，TikeKey和TimeFormat必须成对出现
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timeKey 时间字段的key名字，TikeKey和TimeFormat必须成对出现
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimeKey(const std::string& _timeKey);
@@ -77,18 +73,14 @@ namespace TencentCloud
 
                     /**
                      * 获取时间字段的格式，参考c语言的strftime函数对于时间的格式说明输出参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeFormat 时间字段的格式，参考c语言的strftime函数对于时间的格式说明输出参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTimeFormat() const;
 
                     /**
                      * 设置时间字段的格式，参考c语言的strftime函数对于时间的格式说明输出参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timeFormat 时间字段的格式，参考c语言的strftime函数对于时间的格式说明输出参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimeFormat(const std::string& _timeFormat);
@@ -102,18 +94,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分隔符类型日志的分隔符，只有LogType为delimiter_log时有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Delimiter 分隔符类型日志的分隔符，只有LogType为delimiter_log时有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDelimiter() const;
 
                     /**
                      * 设置分隔符类型日志的分隔符，只有LogType为delimiter_log时有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _delimiter 分隔符类型日志的分隔符，只有LogType为delimiter_log时有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDelimiter(const std::string& _delimiter);
@@ -127,18 +115,14 @@ namespace TencentCloud
 
                     /**
                      * 获取整条日志匹配规则，只有LogType为fullregex_log时有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogRegex 整条日志匹配规则，只有LogType为fullregex_log时有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLogRegex() const;
 
                     /**
                      * 设置整条日志匹配规则，只有LogType为fullregex_log时有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logRegex 整条日志匹配规则，只有LogType为fullregex_log时有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogRegex(const std::string& _logRegex);
@@ -152,18 +136,14 @@ namespace TencentCloud
 
                     /**
                      * 获取行首匹配规则，只有LogType为multiline_log或fullregex_log时有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BeginRegex 行首匹配规则，只有LogType为multiline_log或fullregex_log时有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBeginRegex() const;
 
                     /**
                      * 设置行首匹配规则，只有LogType为multiline_log或fullregex_log时有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _beginRegex 行首匹配规则，只有LogType为multiline_log或fullregex_log时有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBeginRegex(const std::string& _beginRegex);
@@ -204,11 +184,9 @@ namespace TencentCloud
                      * 获取日志过滤规则列表（旧版），需要过滤日志的key，及其对应的regex。
  注意：2.9.3及以上版本LogListener ，建议使用AdvanceFilterRules配置日志过滤规则。
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FilterKeyRegex 日志过滤规则列表（旧版），需要过滤日志的key，及其对应的regex。
  注意：2.9.3及以上版本LogListener ，建议使用AdvanceFilterRules配置日志过滤规则。
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<KeyRegexInfo> GetFilterKeyRegex() const;
@@ -217,11 +195,9 @@ namespace TencentCloud
                      * 设置日志过滤规则列表（旧版），需要过滤日志的key，及其对应的regex。
  注意：2.9.3及以上版本LogListener ，建议使用AdvanceFilterRules配置日志过滤规则。
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _filterKeyRegex 日志过滤规则列表（旧版），需要过滤日志的key，及其对应的regex。
  注意：2.9.3及以上版本LogListener ，建议使用AdvanceFilterRules配置日志过滤规则。
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFilterKeyRegex(const std::vector<KeyRegexInfo>& _filterKeyRegex);
@@ -321,12 +297,10 @@ namespace TencentCloud
 注意
 - 目前取0值时，表示UTF-8编码
 - COS导入不支持此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsGBK 是否为Gbk编码。 0：否；1：是。
 注意
 - 目前取0值时，表示UTF-8编码
 - COS导入不支持此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIsGBK() const;
@@ -336,12 +310,10 @@ namespace TencentCloud
 注意
 - 目前取0值时，表示UTF-8编码
 - COS导入不支持此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isGBK 是否为Gbk编码。 0：否；1：是。
 注意
 - 目前取0值时，表示UTF-8编码
 - COS导入不支持此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsGBK(const int64_t& _isGBK);
@@ -387,12 +359,10 @@ namespace TencentCloud
 注意：
 - 该字段适用于：创建采集规则配置、修改采集规则配置。
 - COS导入不支持此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Protocol syslog传输协议，取值为tcp或者udp，只有在LogType为service_syslog时生效，其余类型无需填写。
 注意：
 - 该字段适用于：创建采集规则配置、修改采集规则配置。
 - COS导入不支持此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProtocol() const;
@@ -402,12 +372,10 @@ namespace TencentCloud
 注意：
 - 该字段适用于：创建采集规则配置、修改采集规则配置。
 - COS导入不支持此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _protocol syslog传输协议，取值为tcp或者udp，只有在LogType为service_syslog时生效，其余类型无需填写。
 注意：
 - 该字段适用于：创建采集规则配置、修改采集规则配置。
 - COS导入不支持此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -424,12 +392,10 @@ namespace TencentCloud
 注意：
 - 该字段适用于：创建采集规则配置、修改采集规则配置。
 - COS导入不支持此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Address syslog系统日志采集指定采集器监听的地址和端口 ，形式：[ip]:[port]，只有在LogType为service_syslog时生效，其余类型无需填写。
 注意：
 - 该字段适用于：创建采集规则配置、修改采集规则配置。
 - COS导入不支持此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAddress() const;
@@ -439,12 +405,10 @@ namespace TencentCloud
 注意：
 - 该字段适用于：创建采集规则配置、修改采集规则配置。
 - COS导入不支持此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _address syslog系统日志采集指定采集器监听的地址和端口 ，形式：[ip]:[port]，只有在LogType为service_syslog时生效，其余类型无需填写。
 注意：
 - 该字段适用于：创建采集规则配置、修改采集规则配置。
 - COS导入不支持此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAddress(const std::string& _address);
@@ -464,7 +428,6 @@ auto：自动匹配rfc3164或者rfc5424其中一种协议。
 注意：
 - 该字段适用于：创建采集规则配置、修改采集规则配置
 - COS导入不支持此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParseProtocol rfc3164：指定系统日志采集使用RFC3164协议解析日志。
 rfc5424：指定系统日志采集使用RFC5424协议解析日志。
 auto：自动匹配rfc3164或者rfc5424其中一种协议。
@@ -472,7 +435,6 @@ auto：自动匹配rfc3164或者rfc5424其中一种协议。
 注意：
 - 该字段适用于：创建采集规则配置、修改采集规则配置
 - COS导入不支持此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetParseProtocol() const;
@@ -485,7 +447,6 @@ auto：自动匹配rfc3164或者rfc5424其中一种协议。
 注意：
 - 该字段适用于：创建采集规则配置、修改采集规则配置
 - COS导入不支持此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _parseProtocol rfc3164：指定系统日志采集使用RFC3164协议解析日志。
 rfc5424：指定系统日志采集使用RFC5424协议解析日志。
 auto：自动匹配rfc3164或者rfc5424其中一种协议。
@@ -493,7 +454,6 @@ auto：自动匹配rfc3164或者rfc5424其中一种协议。
 注意：
 - 该字段适用于：创建采集规则配置、修改采集规则配置
 - COS导入不支持此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetParseProtocol(const std::string& _parseProtocol);
@@ -545,7 +505,6 @@ auto：自动匹配rfc3164或者rfc5424其中一种协议。
 注意：
 - MetadataType为3时必填。
 - COS导入不支持此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PathRegex 采集配置路径正则表达式。
 
 ```
@@ -556,7 +515,6 @@ auto：自动匹配rfc3164或者rfc5424其中一种协议。
 注意：
 - MetadataType为3时必填。
 - COS导入不支持此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPathRegex() const;
@@ -572,7 +530,6 @@ auto：自动匹配rfc3164或者rfc5424其中一种协议。
 注意：
 - MetadataType为3时必填。
 - COS导入不支持此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _pathRegex 采集配置路径正则表达式。
 
 ```
@@ -583,7 +540,6 @@ auto：自动匹配rfc3164或者rfc5424其中一种协议。
 注意：
 - MetadataType为3时必填。
 - COS导入不支持此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPathRegex(const std::string& _pathRegex);
@@ -690,35 +646,30 @@ auto：自动匹配rfc3164或者rfc5424其中一种协议。
 
                     /**
                      * 时间字段的key名字，TikeKey和TimeFormat必须成对出现
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_timeKey;
                     bool m_timeKeyHasBeenSet;
 
                     /**
                      * 时间字段的格式，参考c语言的strftime函数对于时间的格式说明输出参数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_timeFormat;
                     bool m_timeFormatHasBeenSet;
 
                     /**
                      * 分隔符类型日志的分隔符，只有LogType为delimiter_log时有效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_delimiter;
                     bool m_delimiterHasBeenSet;
 
                     /**
                      * 整条日志匹配规则，只有LogType为fullregex_log时有效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logRegex;
                     bool m_logRegexHasBeenSet;
 
                     /**
                      * 行首匹配规则，只有LogType为multiline_log或fullregex_log时有效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_beginRegex;
                     bool m_beginRegexHasBeenSet;
@@ -734,7 +685,6 @@ auto：自动匹配rfc3164或者rfc5424其中一种协议。
                      * 日志过滤规则列表（旧版），需要过滤日志的key，及其对应的regex。
  注意：2.9.3及以上版本LogListener ，建议使用AdvanceFilterRules配置日志过滤规则。
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<KeyRegexInfo> m_filterKeyRegex;
                     bool m_filterKeyRegexHasBeenSet;
@@ -767,7 +717,6 @@ auto：自动匹配rfc3164或者rfc5424其中一种协议。
 注意
 - 目前取0值时，表示UTF-8编码
 - COS导入不支持此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isGBK;
                     bool m_isGBKHasBeenSet;
@@ -785,7 +734,6 @@ auto：自动匹配rfc3164或者rfc5424其中一种协议。
 注意：
 - 该字段适用于：创建采集规则配置、修改采集规则配置。
 - COS导入不支持此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
@@ -795,7 +743,6 @@ auto：自动匹配rfc3164或者rfc5424其中一种协议。
 注意：
 - 该字段适用于：创建采集规则配置、修改采集规则配置。
 - COS导入不支持此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_address;
                     bool m_addressHasBeenSet;
@@ -808,7 +755,6 @@ auto：自动匹配rfc3164或者rfc5424其中一种协议。
 注意：
 - 该字段适用于：创建采集规则配置、修改采集规则配置
 - COS导入不支持此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_parseProtocol;
                     bool m_parseProtocolHasBeenSet;
@@ -832,7 +778,6 @@ auto：自动匹配rfc3164或者rfc5424其中一种协议。
 注意：
 - MetadataType为3时必填。
 - COS导入不支持此字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pathRegex;
                     bool m_pathRegexHasBeenSet;

@@ -49,10 +49,8 @@ namespace TencentCloud
                     /**
                      * 获取场景id
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SceneId 场景id
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSceneId() const;
@@ -60,10 +58,8 @@ namespace TencentCloud
                     /**
                      * 设置场景id
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sceneId 场景id
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSceneId(const std::string& _sceneId);
@@ -78,10 +74,8 @@ namespace TencentCloud
                     /**
                      * 获取场景名
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SceneName 场景名
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSceneName() const;
@@ -89,10 +83,8 @@ namespace TencentCloud
                     /**
                      * 设置场景名
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sceneName 场景名
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSceneName(const std::string& _sceneName);
@@ -109,7 +101,6 @@ namespace TencentCloud
                     /**
                      * 场景id
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sceneId;
                     bool m_sceneIdHasBeenSet;
@@ -117,7 +108,6 @@ namespace TencentCloud
                     /**
                      * 场景名
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sceneName;
                     bool m_sceneNameHasBeenSet;

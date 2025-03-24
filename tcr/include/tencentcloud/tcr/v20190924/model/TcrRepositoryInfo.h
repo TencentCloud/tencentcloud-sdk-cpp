@@ -132,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取仓库详细描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 仓库详细描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置仓库详细描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 仓库详细描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -157,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取简单描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BriefDescription 简单描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBriefDescription() const;
 
                     /**
                      * 设置简单描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _briefDescription 简单描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBriefDescription(const std::string& _briefDescription);
@@ -229,14 +221,12 @@ namespace TencentCloud
 
                     /**
                      * 仓库详细描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
                      * 简单描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_briefDescription;
                     bool m_briefDescriptionHasBeenSet;

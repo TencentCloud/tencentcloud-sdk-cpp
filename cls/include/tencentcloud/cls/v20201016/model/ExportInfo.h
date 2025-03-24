@@ -346,18 +346,14 @@ namespace TencentCloud
 
                     /**
                      * 获取导出字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DerivedFields 导出字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetDerivedFields() const;
 
                     /**
                      * 设置导出字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _derivedFields 导出字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDerivedFields(const std::vector<std::string>& _derivedFields);
@@ -458,7 +454,6 @@ namespace TencentCloud
 
                     /**
                      * 导出字段
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_derivedFields;
                     bool m_derivedFieldsHasBeenSet;

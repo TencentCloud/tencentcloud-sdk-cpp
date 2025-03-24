@@ -94,18 +94,14 @@ namespace TencentCloud
 
                     /**
                      * 获取投递Json格式，0：字符串方式投递；1:以结构化方式投递
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return JsonType 投递Json格式，0：字符串方式投递；1:以结构化方式投递
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetJsonType() const;
 
                     /**
                      * 设置投递Json格式，0：字符串方式投递；1:以结构化方式投递
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _jsonType 投递Json格式，0：字符串方式投递；1:以结构化方式投递
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetJsonType(const int64_t& _jsonType);
@@ -134,7 +130,6 @@ namespace TencentCloud
 
                     /**
                      * 投递Json格式，0：字符串方式投递；1:以结构化方式投递
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_jsonType;
                     bool m_jsonTypeHasBeenSet;

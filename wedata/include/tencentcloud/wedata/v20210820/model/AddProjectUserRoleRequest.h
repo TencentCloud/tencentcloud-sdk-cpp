@@ -42,7 +42,88 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取项目id
+                     * @return ProjectId 项目id
+                     * 
+                     */
+                    std::string GetProjectId() const;
+
+                    /**
+                     * 设置项目id
+                     * @param _projectId 项目id
+                     * 
+                     */
+                    void SetProjectId(const std::string& _projectId);
+
+                    /**
+                     * 判断参数 ProjectId 是否已赋值
+                     * @return ProjectId 是否已赋值
+                     * 
+                     */
+                    bool ProjectIdHasBeenSet() const;
+
+                    /**
+                     * 获取用户uin
+                     * @return UserIds 用户uin
+                     * 
+                     */
+                    std::vector<std::string> GetUserIds() const;
+
+                    /**
+                     * 设置用户uin
+                     * @param _userIds 用户uin
+                     * 
+                     */
+                    void SetUserIds(const std::vector<std::string>& _userIds);
+
+                    /**
+                     * 判断参数 UserIds 是否已赋值
+                     * @return UserIds 是否已赋值
+                     * 
+                     */
+                    bool UserIdsHasBeenSet() const;
+
+                    /**
+                     * 获取角色id
+                     * @return RoleIds 角色id
+                     * 
+                     */
+                    std::vector<std::string> GetRoleIds() const;
+
+                    /**
+                     * 设置角色id
+                     * @param _roleIds 角色id
+                     * 
+                     */
+                    void SetRoleIds(const std::vector<std::string>& _roleIds);
+
+                    /**
+                     * 判断参数 RoleIds 是否已赋值
+                     * @return RoleIds 是否已赋值
+                     * 
+                     */
+                    bool RoleIdsHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 项目id
+                     */
+                    std::string m_projectId;
+                    bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 用户uin
+                     */
+                    std::vector<std::string> m_userIds;
+                    bool m_userIdsHasBeenSet;
+
+                    /**
+                     * 角色id
+                     */
+                    std::vector<std::string> m_roleIds;
+                    bool m_roleIdsHasBeenSet;
 
                 };
             }

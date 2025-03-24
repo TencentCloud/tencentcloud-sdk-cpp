@@ -109,10 +109,8 @@ namespace TencentCloud
                     bool CustomParamHasBeenSet() const;
 
                     /**
-                     * 获取来源
-
-                     * @return Source 来源
-
+                     * 获取来源 1-文档生成问答对  2-批量导入问答对  3-单条手动录入问答对
+                     * @return Source 来源 1-文档生成问答对  2-批量导入问答对  3-单条手动录入问答对
                      * 
                      */
                     uint64_t GetSource() const;
@@ -157,10 +155,8 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取状态
-
-                     * @return Status 状态
-
+                     * 获取状态 <br>1-未校验  2-未发布 3-发布中 4-已发布  5-发布失败 6-不采纳 7-审核中  8-审核失败  9-审核失败申诉后人工审核中  11-审核失败申诉后人工审核不通过  12-已过期  13-超量失效  14-超量失效恢复 19-学习中  20-学习失败
+                     * @return Status 状态 <br>1-未校验  2-未发布 3-发布中 4-已发布  5-发布失败 6-不采纳 7-审核中  8-审核失败  9-审核失败申诉后人工审核中  11-审核失败申诉后人工审核不通过  12-已过期  13-超量失效  14-超量失效恢复 19-学习中  20-学习失败
                      * 
                      */
                     int64_t GetStatus() const;
@@ -516,8 +512,7 @@ namespace TencentCloud
                     bool m_customParamHasBeenSet;
 
                     /**
-                     * 来源
-
+                     * 来源 1-文档生成问答对  2-批量导入问答对  3-单条手动录入问答对
                      */
                     uint64_t m_source;
                     bool m_sourceHasBeenSet;
@@ -537,8 +532,7 @@ namespace TencentCloud
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 状态
-
+                     * 状态 <br>1-未校验  2-未发布 3-发布中 4-已发布  5-发布失败 6-不采纳 7-审核中  8-审核失败  9-审核失败申诉后人工审核中  11-审核失败申诉后人工审核不通过  12-已过期  13-超量失效  14-超量失效恢复 19-学习中  20-学习失败
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;

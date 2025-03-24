@@ -87,6 +87,8 @@
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDBDiagHistoryResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDBDiagReportTasksRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDBDiagReportTasksResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeDBPerfTimeSeriesRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeDBPerfTimeSeriesResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDBSpaceStatusRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDBSpaceStatusResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDiagDBInstancesRequest.h>
@@ -109,6 +111,12 @@
 #include <tencentcloud/dbbrain/v20210527/model/DescribeProxySessionKillTasksResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeRedisBigKeyAnalysisTasksRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeRedisBigKeyAnalysisTasksResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeRedisCmdPerfTimeSeriesRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeRedisCmdPerfTimeSeriesResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeRedisCommandCostStatisticsRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeRedisCommandCostStatisticsResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeRedisCommandOverviewRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeRedisCommandOverviewResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeRedisProcessListRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeRedisProcessListResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeRedisTopBigKeysRequest.h>
@@ -275,6 +283,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDBDiagReportTasksResponse> DescribeDBDiagReportTasksOutcome;
                 typedef std::future<DescribeDBDiagReportTasksOutcome> DescribeDBDiagReportTasksOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeDBDiagReportTasksRequest&, DescribeDBDiagReportTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBDiagReportTasksAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDBPerfTimeSeriesResponse> DescribeDBPerfTimeSeriesOutcome;
+                typedef std::future<DescribeDBPerfTimeSeriesOutcome> DescribeDBPerfTimeSeriesOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeDBPerfTimeSeriesRequest&, DescribeDBPerfTimeSeriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBPerfTimeSeriesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDBSpaceStatusResponse> DescribeDBSpaceStatusOutcome;
                 typedef std::future<DescribeDBSpaceStatusOutcome> DescribeDBSpaceStatusOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeDBSpaceStatusRequest&, DescribeDBSpaceStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBSpaceStatusAsyncHandler;
@@ -308,6 +319,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRedisBigKeyAnalysisTasksResponse> DescribeRedisBigKeyAnalysisTasksOutcome;
                 typedef std::future<DescribeRedisBigKeyAnalysisTasksOutcome> DescribeRedisBigKeyAnalysisTasksOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeRedisBigKeyAnalysisTasksRequest&, DescribeRedisBigKeyAnalysisTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRedisBigKeyAnalysisTasksAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRedisCmdPerfTimeSeriesResponse> DescribeRedisCmdPerfTimeSeriesOutcome;
+                typedef std::future<DescribeRedisCmdPerfTimeSeriesOutcome> DescribeRedisCmdPerfTimeSeriesOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeRedisCmdPerfTimeSeriesRequest&, DescribeRedisCmdPerfTimeSeriesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRedisCmdPerfTimeSeriesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRedisCommandCostStatisticsResponse> DescribeRedisCommandCostStatisticsOutcome;
+                typedef std::future<DescribeRedisCommandCostStatisticsOutcome> DescribeRedisCommandCostStatisticsOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeRedisCommandCostStatisticsRequest&, DescribeRedisCommandCostStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRedisCommandCostStatisticsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRedisCommandOverviewResponse> DescribeRedisCommandOverviewOutcome;
+                typedef std::future<DescribeRedisCommandOverviewOutcome> DescribeRedisCommandOverviewOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeRedisCommandOverviewRequest&, DescribeRedisCommandOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRedisCommandOverviewAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRedisProcessListResponse> DescribeRedisProcessListOutcome;
                 typedef std::future<DescribeRedisProcessListOutcome> DescribeRedisProcessListOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeRedisProcessListRequest&, DescribeRedisProcessListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRedisProcessListAsyncHandler;
@@ -684,6 +704,15 @@ namespace TencentCloud
                 DescribeDBDiagReportTasksOutcomeCallable DescribeDBDiagReportTasksCallable(const Model::DescribeDBDiagReportTasksRequest& request);
 
                 /**
+                 *根据实例ID获取指定时间段的性能趋势。
+                 * @param req DescribeDBPerfTimeSeriesRequest
+                 * @return DescribeDBPerfTimeSeriesOutcome
+                 */
+                DescribeDBPerfTimeSeriesOutcome DescribeDBPerfTimeSeries(const Model::DescribeDBPerfTimeSeriesRequest &request);
+                void DescribeDBPerfTimeSeriesAsync(const Model::DescribeDBPerfTimeSeriesRequest& request, const DescribeDBPerfTimeSeriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBPerfTimeSeriesOutcomeCallable DescribeDBPerfTimeSeriesCallable(const Model::DescribeDBPerfTimeSeriesRequest& request);
+
+                /**
                  *获取指定时间段内的实例空间使用概览，包括磁盘增长量(MB)、磁盘剩余(MB)、磁盘总量(MB)及预计可用天数。
                  * @param req DescribeDBSpaceStatusRequest
                  * @return DescribeDBSpaceStatusOutcome
@@ -781,6 +810,33 @@ namespace TencentCloud
                 DescribeRedisBigKeyAnalysisTasksOutcome DescribeRedisBigKeyAnalysisTasks(const Model::DescribeRedisBigKeyAnalysisTasksRequest &request);
                 void DescribeRedisBigKeyAnalysisTasksAsync(const Model::DescribeRedisBigKeyAnalysisTasksRequest& request, const DescribeRedisBigKeyAnalysisTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRedisBigKeyAnalysisTasksOutcomeCallable DescribeRedisBigKeyAnalysisTasksCallable(const Model::DescribeRedisBigKeyAnalysisTasksRequest& request);
+
+                /**
+                 *延迟分析-命令字分析-查询命令延迟趋势
+                 * @param req DescribeRedisCmdPerfTimeSeriesRequest
+                 * @return DescribeRedisCmdPerfTimeSeriesOutcome
+                 */
+                DescribeRedisCmdPerfTimeSeriesOutcome DescribeRedisCmdPerfTimeSeries(const Model::DescribeRedisCmdPerfTimeSeriesRequest &request);
+                void DescribeRedisCmdPerfTimeSeriesAsync(const Model::DescribeRedisCmdPerfTimeSeriesRequest& request, const DescribeRedisCmdPerfTimeSeriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRedisCmdPerfTimeSeriesOutcomeCallable DescribeRedisCmdPerfTimeSeriesCallable(const Model::DescribeRedisCmdPerfTimeSeriesRequest& request);
+
+                /**
+                 *延迟分析-查询命令延迟分布
+                 * @param req DescribeRedisCommandCostStatisticsRequest
+                 * @return DescribeRedisCommandCostStatisticsOutcome
+                 */
+                DescribeRedisCommandCostStatisticsOutcome DescribeRedisCommandCostStatistics(const Model::DescribeRedisCommandCostStatisticsRequest &request);
+                void DescribeRedisCommandCostStatisticsAsync(const Model::DescribeRedisCommandCostStatisticsRequest& request, const DescribeRedisCommandCostStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRedisCommandCostStatisticsOutcomeCallable DescribeRedisCommandCostStatisticsCallable(const Model::DescribeRedisCommandCostStatisticsRequest& request);
+
+                /**
+                 *延迟分析-查询实例访问命令统计
+                 * @param req DescribeRedisCommandOverviewRequest
+                 * @return DescribeRedisCommandOverviewOutcome
+                 */
+                DescribeRedisCommandOverviewOutcome DescribeRedisCommandOverview(const Model::DescribeRedisCommandOverviewRequest &request);
+                void DescribeRedisCommandOverviewAsync(const Model::DescribeRedisCommandOverviewRequest& request, const DescribeRedisCommandOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRedisCommandOverviewOutcomeCallable DescribeRedisCommandOverviewCallable(const Model::DescribeRedisCommandOverviewRequest& request);
 
                 /**
                  *获取 Redis 实例所有 proxy 节点的实时会话详情列表。

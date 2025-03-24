@@ -1416,6 +1416,49 @@ DbbrainClient::DescribeDBDiagReportTasksOutcomeCallable DbbrainClient::DescribeD
     return task->get_future();
 }
 
+DbbrainClient::DescribeDBPerfTimeSeriesOutcome DbbrainClient::DescribeDBPerfTimeSeries(const DescribeDBPerfTimeSeriesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBPerfTimeSeries");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBPerfTimeSeriesResponse rsp = DescribeDBPerfTimeSeriesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBPerfTimeSeriesOutcome(rsp);
+        else
+            return DescribeDBPerfTimeSeriesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBPerfTimeSeriesOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeDBPerfTimeSeriesAsync(const DescribeDBPerfTimeSeriesRequest& request, const DescribeDBPerfTimeSeriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDBPerfTimeSeries(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeDBPerfTimeSeriesOutcomeCallable DbbrainClient::DescribeDBPerfTimeSeriesCallable(const DescribeDBPerfTimeSeriesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDBPerfTimeSeriesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDBPerfTimeSeries(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DbbrainClient::DescribeDBSpaceStatusOutcome DbbrainClient::DescribeDBSpaceStatus(const DescribeDBSpaceStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDBSpaceStatus");
@@ -1882,6 +1925,135 @@ DbbrainClient::DescribeRedisBigKeyAnalysisTasksOutcomeCallable DbbrainClient::De
         [this, request]()
         {
             return this->DescribeRedisBigKeyAnalysisTasks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DbbrainClient::DescribeRedisCmdPerfTimeSeriesOutcome DbbrainClient::DescribeRedisCmdPerfTimeSeries(const DescribeRedisCmdPerfTimeSeriesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRedisCmdPerfTimeSeries");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRedisCmdPerfTimeSeriesResponse rsp = DescribeRedisCmdPerfTimeSeriesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRedisCmdPerfTimeSeriesOutcome(rsp);
+        else
+            return DescribeRedisCmdPerfTimeSeriesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRedisCmdPerfTimeSeriesOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeRedisCmdPerfTimeSeriesAsync(const DescribeRedisCmdPerfTimeSeriesRequest& request, const DescribeRedisCmdPerfTimeSeriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRedisCmdPerfTimeSeries(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeRedisCmdPerfTimeSeriesOutcomeCallable DbbrainClient::DescribeRedisCmdPerfTimeSeriesCallable(const DescribeRedisCmdPerfTimeSeriesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRedisCmdPerfTimeSeriesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRedisCmdPerfTimeSeries(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DbbrainClient::DescribeRedisCommandCostStatisticsOutcome DbbrainClient::DescribeRedisCommandCostStatistics(const DescribeRedisCommandCostStatisticsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRedisCommandCostStatistics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRedisCommandCostStatisticsResponse rsp = DescribeRedisCommandCostStatisticsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRedisCommandCostStatisticsOutcome(rsp);
+        else
+            return DescribeRedisCommandCostStatisticsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRedisCommandCostStatisticsOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeRedisCommandCostStatisticsAsync(const DescribeRedisCommandCostStatisticsRequest& request, const DescribeRedisCommandCostStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRedisCommandCostStatistics(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeRedisCommandCostStatisticsOutcomeCallable DbbrainClient::DescribeRedisCommandCostStatisticsCallable(const DescribeRedisCommandCostStatisticsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRedisCommandCostStatisticsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRedisCommandCostStatistics(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DbbrainClient::DescribeRedisCommandOverviewOutcome DbbrainClient::DescribeRedisCommandOverview(const DescribeRedisCommandOverviewRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRedisCommandOverview");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRedisCommandOverviewResponse rsp = DescribeRedisCommandOverviewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRedisCommandOverviewOutcome(rsp);
+        else
+            return DescribeRedisCommandOverviewOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRedisCommandOverviewOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeRedisCommandOverviewAsync(const DescribeRedisCommandOverviewRequest& request, const DescribeRedisCommandOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRedisCommandOverview(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeRedisCommandOverviewOutcomeCallable DbbrainClient::DescribeRedisCommandOverviewCallable(const DescribeRedisCommandOverviewRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRedisCommandOverviewOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRedisCommandOverview(request);
         }
     );
 

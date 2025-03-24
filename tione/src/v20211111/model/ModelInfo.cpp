@@ -27,6 +27,7 @@ ModelInfo::ModelInfo() :
     m_modelVersionHasBeenSet(false),
     m_modelSourceHasBeenSet(false),
     m_cosPathInfoHasBeenSet(false),
+    m_gooseFSxHasBeenSet(false),
     m_algorithmFrameworkHasBeenSet(false),
     m_modelTypeHasBeenSet(false),
     m_modelFormatHasBeenSet(false),
@@ -105,6 +106,23 @@ CoreInternalOutcome ModelInfo::Deserialize(const rapidjson::Value &value)
         }
 
         m_cosPathInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("GooseFSx") && !value["GooseFSx"].IsNull())
+    {
+        if (!value["GooseFSx"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelInfo.GooseFSx` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_gooseFSx.Deserialize(value["GooseFSx"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_gooseFSxHasBeenSet = true;
     }
 
     if (value.HasMember("AlgorithmFramework") && !value["AlgorithmFramework"].IsNull())
@@ -211,6 +229,15 @@ void ModelInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_cosPathInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_gooseFSxHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GooseFSx";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_gooseFSx.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_algorithmFrameworkHasBeenSet)
@@ -350,6 +377,22 @@ void ModelInfo::SetCosPathInfo(const CosPathInfo& _cosPathInfo)
 bool ModelInfo::CosPathInfoHasBeenSet() const
 {
     return m_cosPathInfoHasBeenSet;
+}
+
+GooseFSx ModelInfo::GetGooseFSx() const
+{
+    return m_gooseFSx;
+}
+
+void ModelInfo::SetGooseFSx(const GooseFSx& _gooseFSx)
+{
+    m_gooseFSx = _gooseFSx;
+    m_gooseFSxHasBeenSet = true;
+}
+
+bool ModelInfo::GooseFSxHasBeenSet() const
+{
+    return m_gooseFSxHasBeenSet;
 }
 
 string ModelInfo::GetAlgorithmFramework() const

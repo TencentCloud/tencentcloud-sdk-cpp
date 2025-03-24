@@ -26,6 +26,7 @@ CreateFlowOption::CreateFlowOption() :
     m_hideShowFlowTypeHasBeenSet(false),
     m_hideShowDeadlineHasBeenSet(false),
     m_canSkipAddApproverHasBeenSet(false),
+    m_forbidEditApproverHasBeenSet(false),
     m_customCreateFlowDescriptionHasBeenSet(false),
     m_forbidEditFillComponentHasBeenSet(false),
     m_skipUploadFileHasBeenSet(false),
@@ -86,6 +87,16 @@ CoreInternalOutcome CreateFlowOption::Deserialize(const rapidjson::Value &value)
         }
         m_canSkipAddApprover = value["CanSkipAddApprover"].GetBool();
         m_canSkipAddApproverHasBeenSet = true;
+    }
+
+    if (value.HasMember("ForbidEditApprover") && !value["ForbidEditApprover"].IsNull())
+    {
+        if (!value["ForbidEditApprover"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateFlowOption.ForbidEditApprover` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_forbidEditApprover = value["ForbidEditApprover"].GetBool();
+        m_forbidEditApproverHasBeenSet = true;
     }
 
     if (value.HasMember("CustomCreateFlowDescription") && !value["CustomCreateFlowDescription"].IsNull())
@@ -180,6 +191,14 @@ void CreateFlowOption::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "CanSkipAddApprover";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_canSkipAddApprover, allocator);
+    }
+
+    if (m_forbidEditApproverHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ForbidEditApprover";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_forbidEditApprover, allocator);
     }
 
     if (m_customCreateFlowDescriptionHasBeenSet)
@@ -296,6 +315,22 @@ void CreateFlowOption::SetCanSkipAddApprover(const bool& _canSkipAddApprover)
 bool CreateFlowOption::CanSkipAddApproverHasBeenSet() const
 {
     return m_canSkipAddApproverHasBeenSet;
+}
+
+bool CreateFlowOption::GetForbidEditApprover() const
+{
+    return m_forbidEditApprover;
+}
+
+void CreateFlowOption::SetForbidEditApprover(const bool& _forbidEditApprover)
+{
+    m_forbidEditApprover = _forbidEditApprover;
+    m_forbidEditApproverHasBeenSet = true;
+}
+
+bool CreateFlowOption::ForbidEditApproverHasBeenSet() const
+{
+    return m_forbidEditApproverHasBeenSet;
 }
 
 string CreateFlowOption::GetCustomCreateFlowDescription() const

@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取异常状态的数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AbnormalCount 异常状态的数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAbnormalCount() const;
 
                     /**
                      * 设置异常状态的数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _abnormalCount 异常状态的数目
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAbnormalCount(const int64_t& _abnormalCount);
@@ -129,7 +125,6 @@ namespace TencentCloud
 
                     /**
                      * 异常状态的数目
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_abnormalCount;
                     bool m_abnormalCountHasBeenSet;

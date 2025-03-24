@@ -264,6 +264,31 @@ namespace TencentCloud
                      */
                     bool LarkGroupHasBeenSet() const;
 
+                    /**
+                     * 获取发送结果 大json格式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AlarmMessageSendResult 发送结果 大json格式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetAlarmMessageSendResult() const;
+
+                    /**
+                     * 设置发送结果 大json格式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _alarmMessageSendResult 发送结果 大json格式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAlarmMessageSendResult(const std::string& _alarmMessageSendResult);
+
+                    /**
+                     * 判断参数 AlarmMessageSendResult 是否已赋值
+                     * @return AlarmMessageSendResult 是否已赋值
+                     * 
+                     */
+                    bool AlarmMessageSendResultHasBeenSet() const;
+
                 private:
 
                     /**
@@ -327,6 +352,13 @@ namespace TencentCloud
                      */
                     uint64_t m_larkGroup;
                     bool m_larkGroupHasBeenSet;
+
+                    /**
+                     * 发送结果 大json格式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_alarmMessageSendResult;
+                    bool m_alarmMessageSendResultHasBeenSet;
 
                 };
             }

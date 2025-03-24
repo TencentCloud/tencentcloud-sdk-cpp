@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取透传本次接口返回的Context值，可获取后续更多日志，过期时间1小时
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Context 透传本次接口返回的Context值，可获取后续更多日志，过期时间1小时
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContext() const;
 
                     /**
                      * 设置透传本次接口返回的Context值，可获取后续更多日志，过期时间1小时
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _context 透传本次接口返回的Context值，可获取后续更多日志，过期时间1小时
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContext(const std::string& _context);
@@ -129,7 +125,6 @@ namespace TencentCloud
 
                     /**
                      * 透传本次接口返回的Context值，可获取后续更多日志，过期时间1小时
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_context;
                     bool m_contextHasBeenSet;

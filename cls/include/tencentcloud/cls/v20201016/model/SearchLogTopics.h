@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取多日志主题检索对应的错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Errors 多日志主题检索对应的错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SearchLogErrors> GetErrors() const;
 
                     /**
                      * 设置多日志主题检索对应的错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _errors 多日志主题检索对应的错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetErrors(const std::vector<SearchLogErrors>& _errors);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取多日志主题检索各日志主题信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Infos 多日志主题检索各日志主题信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SearchLogInfos> GetInfos() const;
 
                     /**
                      * 设置多日志主题检索各日志主题信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _infos 多日志主题检索各日志主题信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInfos(const std::vector<SearchLogInfos>& _infos);
@@ -102,14 +94,12 @@ namespace TencentCloud
 
                     /**
                      * 多日志主题检索对应的错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SearchLogErrors> m_errors;
                     bool m_errorsHasBeenSet;
 
                     /**
                      * 多日志主题检索各日志主题信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SearchLogInfos> m_infos;
                     bool m_infosHasBeenSet;

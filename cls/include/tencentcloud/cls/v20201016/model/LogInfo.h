@@ -195,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志内容的Json序列化字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogJson 日志内容的Json序列化字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLogJson() const;
 
                     /**
                      * 设置日志内容的Json序列化字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logJson 日志内容的Json序列化字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogJson(const std::string& _logJson);
@@ -220,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志来源主机名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HostName 日志来源主机名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHostName() const;
 
                     /**
                      * 设置日志来源主机名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hostName 日志来源主机名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHostName(const std::string& _hostName);
@@ -245,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取原始日志(仅在日志创建索引异常时有值)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RawLog 原始日志(仅在日志创建索引异常时有值)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRawLog() const;
 
                     /**
                      * 设置原始日志(仅在日志创建索引异常时有值)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rawLog 原始日志(仅在日志创建索引异常时有值)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRawLog(const std::string& _rawLog);
@@ -270,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志创建索引异常原因(仅在日志创建索引异常时有值)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IndexStatus 日志创建索引异常原因(仅在日志创建索引异常时有值)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIndexStatus() const;
 
                     /**
                      * 设置日志创建索引异常原因(仅在日志创建索引异常时有值)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _indexStatus 日志创建索引异常原因(仅在日志创建索引异常时有值)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIndexStatus(const std::string& _indexStatus);
@@ -339,28 +323,24 @@ namespace TencentCloud
 
                     /**
                      * 日志内容的Json序列化字符串
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logJson;
                     bool m_logJsonHasBeenSet;
 
                     /**
                      * 日志来源主机名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hostName;
                     bool m_hostNameHasBeenSet;
 
                     /**
                      * 原始日志(仅在日志创建索引异常时有值)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_rawLog;
                     bool m_rawLogHasBeenSet;
 
                     /**
                      * 日志创建索引异常原因(仅在日志创建索引异常时有值)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_indexStatus;
                     bool m_indexStatusHasBeenSet;

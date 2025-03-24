@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Wedata::V20210820::Model;
 using namespace std;
 
-AddProjectUserRoleResponse::AddProjectUserRoleResponse()
+AddProjectUserRoleResponse::AddProjectUserRoleResponse() :
+    m_dataHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome AddProjectUserRoleResponse::Deserialize(const string &payloa
     }
 
 
+    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
+    {
+        if (!rsp["Data"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Data` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_data = rsp["Data"].GetBool();
+        m_dataHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string AddProjectUserRoleResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_dataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Data";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_data, allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string AddProjectUserRoleResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+bool AddProjectUserRoleResponse::GetData() const
+{
+    return m_data;
+}
+
+bool AddProjectUserRoleResponse::DataHasBeenSet() const
+{
+    return m_dataHasBeenSet;
+}
 
 

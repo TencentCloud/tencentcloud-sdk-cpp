@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取黑石可用区名称列表。如ap-guangzhou-bls-1, 可通过黑石接口[DescribeRegions]( https://cloud.tencent.com/document/api/386/33564)接口获取。不是Batch可用区名称。目前仅支持一个可用区名称。
-                     * @return Zones 黑石可用区名称列表。如ap-guangzhou-bls-1, 可通过黑石接口[DescribeRegions]( https://cloud.tencent.com/document/api/386/33564)接口获取。不是Batch可用区名称。目前仅支持一个可用区名称。
+                     * 获取黑石可用区名称列表。如ap-guangzhou-bls-1。不是Batch可用区名称。目前仅支持一个可用区名称。
+                     * @return Zones 黑石可用区名称列表。如ap-guangzhou-bls-1。不是Batch可用区名称。目前仅支持一个可用区名称。
                      * 
                      */
                     std::vector<std::string> GetZones() const;
 
                     /**
-                     * 设置黑石可用区名称列表。如ap-guangzhou-bls-1, 可通过黑石接口[DescribeRegions]( https://cloud.tencent.com/document/api/386/33564)接口获取。不是Batch可用区名称。目前仅支持一个可用区名称。
-                     * @param _zones 黑石可用区名称列表。如ap-guangzhou-bls-1, 可通过黑石接口[DescribeRegions]( https://cloud.tencent.com/document/api/386/33564)接口获取。不是Batch可用区名称。目前仅支持一个可用区名称。
+                     * 设置黑石可用区名称列表。如ap-guangzhou-bls-1。不是Batch可用区名称。目前仅支持一个可用区名称。
+                     * @param _zones 黑石可用区名称列表。如ap-guangzhou-bls-1。不是Batch可用区名称。目前仅支持一个可用区名称。
                      * 
                      */
                     void SetZones(const std::vector<std::string>& _zones);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool ZonesHasBeenSet() const;
 
                     /**
-                     * 获取购买的机型ID。通过黑石接口[DescribeDeviceClass]( https://cloud.tencent.com/document/api/386/32911)查询设备型号，获取机型信息。
-                     * @return InstanceTypes 购买的机型ID。通过黑石接口[DescribeDeviceClass]( https://cloud.tencent.com/document/api/386/32911)查询设备型号，获取机型信息。
+                     * 获取购买的机型ID。
+                     * @return InstanceTypes 购买的机型ID。
                      * 
                      */
                     std::vector<std::string> GetInstanceTypes() const;
 
                     /**
-                     * 设置购买的机型ID。通过黑石接口[DescribeDeviceClass]( https://cloud.tencent.com/document/api/386/32911)查询设备型号，获取机型信息。
-                     * @param _instanceTypes 购买的机型ID。通过黑石接口[DescribeDeviceClass]( https://cloud.tencent.com/document/api/386/32911)查询设备型号，获取机型信息。
+                     * 设置购买的机型ID。
+                     * @param _instanceTypes 购买的机型ID。
                      * 
                      */
                     void SetInstanceTypes(const std::vector<std::string>& _instanceTypes);
@@ -132,15 +132,15 @@ namespace TencentCloud
                     bool TimeSpanHasBeenSet() const;
 
                     /**
-                     * 获取RAID类型ID。通过黑石接口[DescribeDeviceClassPartition]( https://cloud.tencent.com/document/api/386/32910)查询机型RAID方式以及系统盘大小，获取RAID信息。
-                     * @return RaidId RAID类型ID。通过黑石接口[DescribeDeviceClassPartition]( https://cloud.tencent.com/document/api/386/32910)查询机型RAID方式以及系统盘大小，获取RAID信息。
+                     * 获取RAID类型ID。
+                     * @return RaidId RAID类型ID。
                      * 
                      */
                     int64_t GetRaidId() const;
 
                     /**
-                     * 设置RAID类型ID。通过黑石接口[DescribeDeviceClassPartition]( https://cloud.tencent.com/document/api/386/32910)查询机型RAID方式以及系统盘大小，获取RAID信息。
-                     * @param _raidId RAID类型ID。通过黑石接口[DescribeDeviceClassPartition]( https://cloud.tencent.com/document/api/386/32910)查询机型RAID方式以及系统盘大小，获取RAID信息。
+                     * 设置RAID类型ID。
+                     * @param _raidId RAID类型ID。
                      * 
                      */
                     void SetRaidId(const int64_t& _raidId);
@@ -405,15 +405,15 @@ namespace TencentCloud
                     bool ImageIdHasBeenSet() const;
 
                     /**
-                     * 获取系统盘根分区大小，单位为G，默认取值10G。通过黑石接口[DescribeDeviceClassPartition]( https://cloud.tencent.com/document/api/386/32910)查询机型RAID方式以及系统盘大小，获取根分区信息。
-                     * @return SysRootSpace 系统盘根分区大小，单位为G，默认取值10G。通过黑石接口[DescribeDeviceClassPartition]( https://cloud.tencent.com/document/api/386/32910)查询机型RAID方式以及系统盘大小，获取根分区信息。
+                     * 获取系统盘根分区大小，单位为G，默认取值10G。
+                     * @return SysRootSpace 系统盘根分区大小，单位为G，默认取值10G。
                      * 
                      */
                     int64_t GetSysRootSpace() const;
 
                     /**
-                     * 设置系统盘根分区大小，单位为G，默认取值10G。通过黑石接口[DescribeDeviceClassPartition]( https://cloud.tencent.com/document/api/386/32910)查询机型RAID方式以及系统盘大小，获取根分区信息。
-                     * @param _sysRootSpace 系统盘根分区大小，单位为G，默认取值10G。通过黑石接口[DescribeDeviceClassPartition]( https://cloud.tencent.com/document/api/386/32910)查询机型RAID方式以及系统盘大小，获取根分区信息。
+                     * 设置系统盘根分区大小，单位为G，默认取值10G。
+                     * @param _sysRootSpace 系统盘根分区大小，单位为G，默认取值10G。
                      * 
                      */
                     void SetSysRootSpace(const int64_t& _sysRootSpace);
@@ -491,13 +491,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 黑石可用区名称列表。如ap-guangzhou-bls-1, 可通过黑石接口[DescribeRegions]( https://cloud.tencent.com/document/api/386/33564)接口获取。不是Batch可用区名称。目前仅支持一个可用区名称。
+                     * 黑石可用区名称列表。如ap-guangzhou-bls-1。不是Batch可用区名称。目前仅支持一个可用区名称。
                      */
                     std::vector<std::string> m_zones;
                     bool m_zonesHasBeenSet;
 
                     /**
-                     * 购买的机型ID。通过黑石接口[DescribeDeviceClass]( https://cloud.tencent.com/document/api/386/32911)查询设备型号，获取机型信息。
+                     * 购买的机型ID。
                      */
                     std::vector<std::string> m_instanceTypes;
                     bool m_instanceTypesHasBeenSet;
@@ -515,7 +515,7 @@ namespace TencentCloud
                     bool m_timeSpanHasBeenSet;
 
                     /**
-                     * RAID类型ID。通过黑石接口[DescribeDeviceClassPartition]( https://cloud.tencent.com/document/api/386/32910)查询机型RAID方式以及系统盘大小，获取RAID信息。
+                     * RAID类型ID。
                      */
                     int64_t m_raidId;
                     bool m_raidIdHasBeenSet;
@@ -593,7 +593,7 @@ namespace TencentCloud
                     bool m_imageIdHasBeenSet;
 
                     /**
-                     * 系统盘根分区大小，单位为G，默认取值10G。通过黑石接口[DescribeDeviceClassPartition]( https://cloud.tencent.com/document/api/386/32910)查询机型RAID方式以及系统盘大小，获取根分区信息。
+                     * 系统盘根分区大小，单位为G，默认取值10G。
                      */
                     int64_t m_sysRootSpace;
                     bool m_sysRootSpaceHasBeenSet;

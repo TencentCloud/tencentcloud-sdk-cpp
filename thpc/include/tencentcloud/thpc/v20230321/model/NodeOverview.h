@@ -246,6 +246,27 @@ namespace TencentCloud
                      */
                     bool NodeIdHasBeenSet() const;
 
+                    /**
+                     * 获取节点的工作状态
+                     * @return NodeAllocateState 节点的工作状态
+                     * 
+                     */
+                    std::string GetNodeAllocateState() const;
+
+                    /**
+                     * 设置节点的工作状态
+                     * @param _nodeAllocateState 节点的工作状态
+                     * 
+                     */
+                    void SetNodeAllocateState(const std::string& _nodeAllocateState);
+
+                    /**
+                     * 判断参数 NodeAllocateState 是否已赋值
+                     * @return NodeAllocateState 是否已赋值
+                     * 
+                     */
+                    bool NodeAllocateStateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -303,6 +324,12 @@ namespace TencentCloud
                      */
                     std::string m_nodeId;
                     bool m_nodeIdHasBeenSet;
+
+                    /**
+                     * 节点的工作状态
+                     */
+                    std::string m_nodeAllocateState;
+                    bool m_nodeAllocateStateHasBeenSet;
 
                 };
             }

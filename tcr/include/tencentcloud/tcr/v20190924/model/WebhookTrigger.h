@@ -217,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取触发器所属命名空间名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NamespaceName 触发器所属命名空间名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNamespaceName() const;
 
                     /**
                      * 设置触发器所属命名空间名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _namespaceName 触发器所属命名空间名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNamespaceName(const std::string& _namespaceName);
@@ -292,7 +288,6 @@ namespace TencentCloud
 
                     /**
                      * 触发器所属命名空间名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_namespaceName;
                     bool m_namespaceNameHasBeenSet;

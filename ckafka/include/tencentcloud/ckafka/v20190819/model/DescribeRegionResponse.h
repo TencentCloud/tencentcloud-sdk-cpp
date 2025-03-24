@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取返回地域枚举结果列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 返回地域枚举结果列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Region> GetResult() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 返回地域枚举结果列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Region> m_result;
                     bool m_resultHasBeenSet;

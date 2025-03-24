@@ -49,10 +49,8 @@ namespace TencentCloud
                     /**
                      * 获取协议类型，支持的协议类型包括 plaintext、sasl_plaintext 或 sasl_ssl。建议使用 sasl_ssl，此协议会进行连接加密同时需要用户认证。
 入参必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Protocol 协议类型，支持的协议类型包括 plaintext、sasl_plaintext 或 sasl_ssl。建议使用 sasl_ssl，此协议会进行连接加密同时需要用户认证。
 入参必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProtocol() const;
@@ -60,10 +58,8 @@ namespace TencentCloud
                     /**
                      * 设置协议类型，支持的协议类型包括 plaintext、sasl_plaintext 或 sasl_ssl。建议使用 sasl_ssl，此协议会进行连接加密同时需要用户认证。
 入参必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _protocol 协议类型，支持的协议类型包括 plaintext、sasl_plaintext 或 sasl_ssl。建议使用 sasl_ssl，此协议会进行连接加密同时需要用户认证。
 入参必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -78,10 +74,8 @@ namespace TencentCloud
                     /**
                      * 获取加密类型，支持 PLAIN、SCRAM-SHA-256 或 SCRAM-SHA-512。
 当Protocol为sasl_plaintext或sasl_ssl时必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Mechanism 加密类型，支持 PLAIN、SCRAM-SHA-256 或 SCRAM-SHA-512。
 当Protocol为sasl_plaintext或sasl_ssl时必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMechanism() const;
@@ -89,10 +83,8 @@ namespace TencentCloud
                     /**
                      * 设置加密类型，支持 PLAIN、SCRAM-SHA-256 或 SCRAM-SHA-512。
 当Protocol为sasl_plaintext或sasl_ssl时必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mechanism 加密类型，支持 PLAIN、SCRAM-SHA-256 或 SCRAM-SHA-512。
 当Protocol为sasl_plaintext或sasl_ssl时必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMechanism(const std::string& _mechanism);
@@ -107,10 +99,8 @@ namespace TencentCloud
                     /**
                      * 获取用户名。
 当Protocol为sasl_plaintext或sasl_ssl时必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserName 用户名。
 当Protocol为sasl_plaintext或sasl_ssl时必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserName() const;
@@ -118,10 +108,8 @@ namespace TencentCloud
                     /**
                      * 设置用户名。
 当Protocol为sasl_plaintext或sasl_ssl时必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userName 用户名。
 当Protocol为sasl_plaintext或sasl_ssl时必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserName(const std::string& _userName);
@@ -136,10 +124,8 @@ namespace TencentCloud
                     /**
                      * 获取用户密码。
 当Protocol为sasl_plaintext或sasl_ssl时必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Password 用户密码。
 当Protocol为sasl_plaintext或sasl_ssl时必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPassword() const;
@@ -147,10 +133,8 @@ namespace TencentCloud
                     /**
                      * 设置用户密码。
 当Protocol为sasl_plaintext或sasl_ssl时必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _password 用户密码。
 当Protocol为sasl_plaintext或sasl_ssl时必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPassword(const std::string& _password);
@@ -167,7 +151,6 @@ namespace TencentCloud
                     /**
                      * 协议类型，支持的协议类型包括 plaintext、sasl_plaintext 或 sasl_ssl。建议使用 sasl_ssl，此协议会进行连接加密同时需要用户认证。
 入参必填
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
@@ -175,7 +158,6 @@ namespace TencentCloud
                     /**
                      * 加密类型，支持 PLAIN、SCRAM-SHA-256 或 SCRAM-SHA-512。
 当Protocol为sasl_plaintext或sasl_ssl时必填
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mechanism;
                     bool m_mechanismHasBeenSet;
@@ -183,7 +165,6 @@ namespace TencentCloud
                     /**
                      * 用户名。
 当Protocol为sasl_plaintext或sasl_ssl时必填
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;
@@ -191,7 +172,6 @@ namespace TencentCloud
                     /**
                      * 用户密码。
 当Protocol为sasl_plaintext或sasl_ssl时必填
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;

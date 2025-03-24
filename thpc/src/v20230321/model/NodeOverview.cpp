@@ -28,7 +28,8 @@ NodeOverview::NodeOverview() :
     m_queueNameHasBeenSet(false),
     m_nodeRoleHasBeenSet(false),
     m_nodeTypeHasBeenSet(false),
-    m_nodeIdHasBeenSet(false)
+    m_nodeIdHasBeenSet(false),
+    m_nodeAllocateStateHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome NodeOverview::Deserialize(const rapidjson::Value &value)
         m_nodeIdHasBeenSet = true;
     }
 
+    if (value.HasMember("NodeAllocateState") && !value["NodeAllocateState"].IsNull())
+    {
+        if (!value["NodeAllocateState"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeOverview.NodeAllocateState` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_nodeAllocateState = string(value["NodeAllocateState"].GetString());
+        m_nodeAllocateStateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void NodeOverview::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "NodeId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_nodeId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeAllocateStateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeAllocateState";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_nodeAllocateState.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void NodeOverview::SetNodeId(const string& _nodeId)
 bool NodeOverview::NodeIdHasBeenSet() const
 {
     return m_nodeIdHasBeenSet;
+}
+
+string NodeOverview::GetNodeAllocateState() const
+{
+    return m_nodeAllocateState;
+}
+
+void NodeOverview::SetNodeAllocateState(const string& _nodeAllocateState)
+{
+    m_nodeAllocateState = _nodeAllocateState;
+    m_nodeAllocateStateHasBeenSet = true;
+}
+
+bool NodeOverview::NodeAllocateStateHasBeenSet() const
+{
+    return m_nodeAllocateStateHasBeenSet;
 }
 

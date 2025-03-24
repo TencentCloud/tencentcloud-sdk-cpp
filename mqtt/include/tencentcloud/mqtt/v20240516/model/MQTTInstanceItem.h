@@ -110,13 +110,11 @@ namespace TencentCloud
                     bool VersionHasBeenSet() const;
 
                     /**
-                     * 获取实例类型，
-EXPERIMENT，体验版
+                     * 获取实例类型
 BASIC，基础版
 PRO，专业版
 PLATINUM，铂金版
-                     * @return InstanceType 实例类型，
-EXPERIMENT，体验版
+                     * @return InstanceType 实例类型
 BASIC，基础版
 PRO，专业版
 PLATINUM，铂金版
@@ -125,13 +123,11 @@ PLATINUM，铂金版
                     std::string GetInstanceType() const;
 
                     /**
-                     * 设置实例类型，
-EXPERIMENT，体验版
+                     * 设置实例类型
 BASIC，基础版
 PRO，专业版
 PLATINUM，铂金版
-                     * @param _instanceType 实例类型，
-EXPERIMENT，体验版
+                     * @param _instanceType 实例类型
 BASIC，基础版
 PRO，专业版
 PLATINUM，铂金版
@@ -313,15 +309,15 @@ DELETING，删除中
                     bool TpsLimitHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreateTime 创建时间
+                     * 获取创建时间，毫秒级时间戳
+                     * @return CreateTime 创建时间，毫秒级时间戳
                      * 
                      */
                     int64_t GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createTime 创建时间
+                     * 设置创建时间，毫秒级时间戳
+                     * @param _createTime 创建时间，毫秒级时间戳
                      * 
                      */
                     void SetCreateTime(const int64_t& _createTime);
@@ -376,15 +372,23 @@ DELETING，删除中
                     bool ClientNumLimitHasBeenSet() const;
 
                     /**
-                     * 获取是否自动续费
-                     * @return RenewFlag 是否自动续费
+                     * 获取是否自动续费。仅包年包月就去那生效。
+1:自动续费
+0:非自动续费
+                     * @return RenewFlag 是否自动续费。仅包年包月就去那生效。
+1:自动续费
+0:非自动续费
                      * 
                      */
                     int64_t GetRenewFlag() const;
 
                     /**
-                     * 设置是否自动续费
-                     * @param _renewFlag 是否自动续费
+                     * 设置是否自动续费。仅包年包月就去那生效。
+1:自动续费
+0:非自动续费
+                     * @param _renewFlag 是否自动续费。仅包年包月就去那生效。
+1:自动续费
+0:非自动续费
                      * 
                      */
                     void SetRenewFlag(const int64_t& _renewFlag);
@@ -418,15 +422,15 @@ DELETING，删除中
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取到期时间，秒为单位
-                     * @return ExpiryTime 到期时间，秒为单位
+                     * 获取到期时间，毫秒级时间戳
+                     * @return ExpiryTime 到期时间，毫秒级时间戳
                      * 
                      */
                     int64_t GetExpiryTime() const;
 
                     /**
-                     * 设置到期时间，秒为单位
-                     * @param _expiryTime 到期时间，秒为单位
+                     * 设置到期时间，毫秒级时间戳
+                     * @param _expiryTime 到期时间，毫秒级时间戳
                      * 
                      */
                     void SetExpiryTime(const int64_t& _expiryTime);
@@ -439,15 +443,15 @@ DELETING，删除中
                     bool ExpiryTimeHasBeenSet() const;
 
                     /**
-                     * 获取预销毁时间
-                     * @return DestroyTime 预销毁时间
+                     * 获取预销毁时间，毫秒级时间戳
+                     * @return DestroyTime 预销毁时间，毫秒级时间戳
                      * 
                      */
                     int64_t GetDestroyTime() const;
 
                     /**
-                     * 设置预销毁时间
-                     * @param _destroyTime 预销毁时间
+                     * 设置预销毁时间，毫秒级时间戳
+                     * @param _destroyTime 预销毁时间，毫秒级时间戳
                      * 
                      */
                     void SetDestroyTime(const int64_t& _destroyTime);
@@ -543,8 +547,7 @@ DELETING，删除中
                     bool m_versionHasBeenSet;
 
                     /**
-                     * 实例类型，
-EXPERIMENT，体验版
+                     * 实例类型
 BASIC，基础版
 PRO，专业版
 PLATINUM，铂金版
@@ -599,7 +602,7 @@ DELETING，删除中
                     bool m_tpsLimitHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * 创建时间，毫秒级时间戳
                      */
                     int64_t m_createTime;
                     bool m_createTimeHasBeenSet;
@@ -617,7 +620,9 @@ DELETING，删除中
                     bool m_clientNumLimitHasBeenSet;
 
                     /**
-                     * 是否自动续费
+                     * 是否自动续费。仅包年包月就去那生效。
+1:自动续费
+0:非自动续费
                      */
                     int64_t m_renewFlag;
                     bool m_renewFlagHasBeenSet;
@@ -629,13 +634,13 @@ DELETING，删除中
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 到期时间，秒为单位
+                     * 到期时间，毫秒级时间戳
                      */
                     int64_t m_expiryTime;
                     bool m_expiryTimeHasBeenSet;
 
                     /**
-                     * 预销毁时间
+                     * 预销毁时间，毫秒级时间戳
                      */
                     int64_t m_destroyTime;
                     bool m_destroyTimeHasBeenSet;

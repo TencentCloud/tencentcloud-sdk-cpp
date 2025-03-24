@@ -121,18 +121,14 @@ namespace TencentCloud
 
                     /**
                      * 获取时区。参考：https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#SHANGHAI
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Timezone 时区。参考：https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#SHANGHAI
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTimezone() const;
 
                     /**
                      * 设置时区。参考：https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#SHANGHAI
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timezone 时区。参考：https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#SHANGHAI
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimezone(const std::string& _timezone);
@@ -146,18 +142,14 @@ namespace TencentCloud
 
                     /**
                      * 获取语言。 zh 中文、en`英文。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubscribeLanguage 语言。 zh 中文、en`英文。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubscribeLanguage() const;
 
                     /**
                      * 设置语言。 zh 中文、en`英文。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subscribeLanguage 语言。 zh 中文、en`英文。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubscribeLanguage(const std::string& _subscribeLanguage);
@@ -171,18 +163,14 @@ namespace TencentCloud
 
                     /**
                      * 获取调用链接域名。http:// 或者 https:// 开头，不能/结尾
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return JumpDomain 调用链接域名。http:// 或者 https:// 开头，不能/结尾
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetJumpDomain() const;
 
                     /**
                      * 设置调用链接域名。http:// 或者 https:// 开头，不能/结尾
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _jumpDomain 调用链接域名。http:// 或者 https:// 开头，不能/结尾
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetJumpDomain(const std::string& _jumpDomain);
@@ -196,18 +184,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自定义跳转链接。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return JumpUrl 自定义跳转链接。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetJumpUrl() const;
 
                     /**
                      * 设置自定义跳转链接。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _jumpUrl 自定义跳转链接。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetJumpUrl(const std::string& _jumpUrl);
@@ -243,28 +227,24 @@ namespace TencentCloud
 
                     /**
                      * 时区。参考：https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#SHANGHAI
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_timezone;
                     bool m_timezoneHasBeenSet;
 
                     /**
                      * 语言。 zh 中文、en`英文。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subscribeLanguage;
                     bool m_subscribeLanguageHasBeenSet;
 
                     /**
                      * 调用链接域名。http:// 或者 https:// 开头，不能/结尾
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_jumpDomain;
                     bool m_jumpDomainHasBeenSet;
 
                     /**
                      * 自定义跳转链接。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_jumpUrl;
                     bool m_jumpUrlHasBeenSet;

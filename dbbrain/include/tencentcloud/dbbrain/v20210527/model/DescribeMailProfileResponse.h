@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取邮件配置详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProfileList 邮件配置详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<UserProfile> GetProfileList() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取邮件配置总数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 邮件配置总数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 邮件配置详情。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<UserProfile> m_profileList;
                     bool m_profileListHasBeenSet;
 
                     /**
                      * 邮件配置总数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

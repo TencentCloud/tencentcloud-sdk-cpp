@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启[腾讯云可观测平台](/document/product/248)服务。取值范围：<br><li>TRUE：表示开启腾讯云可观测平台服务</li><br><li>FALSE：表示不开启腾讯云可观测平台服务</li><br><br>默认取值：TRUE。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Enabled 是否开启[腾讯云可观测平台](/document/product/248)服务。取值范围：<br><li>TRUE：表示开启腾讯云可观测平台服务</li><br><li>FALSE：表示不开启腾讯云可观测平台服务</li><br><br>默认取值：TRUE。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnabled() const;
 
                     /**
                      * 设置是否开启[腾讯云可观测平台](/document/product/248)服务。取值范围：<br><li>TRUE：表示开启腾讯云可观测平台服务</li><br><li>FALSE：表示不开启腾讯云可观测平台服务</li><br><br>默认取值：TRUE。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enabled 是否开启[腾讯云可观测平台](/document/product/248)服务。取值范围：<br><li>TRUE：表示开启腾讯云可观测平台服务</li><br><li>FALSE：表示不开启腾讯云可观测平台服务</li><br><br>默认取值：TRUE。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnabled(const bool& _enabled);
@@ -75,7 +71,6 @@ namespace TencentCloud
 
                     /**
                      * 是否开启[腾讯云可观测平台](/document/product/248)服务。取值范围：<br><li>TRUE：表示开启腾讯云可观测平台服务</li><br><li>FALSE：表示不开启腾讯云可观测平台服务</li><br><br>默认取值：TRUE。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enabled;
                     bool m_enabledHasBeenSet;
