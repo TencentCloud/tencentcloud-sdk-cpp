@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceVersion 实例版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceVersion() const;
 
                     /**
                      * 设置实例版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceVersion 实例版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceVersion(const std::string& _instanceVersion);
@@ -350,18 +346,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最大可设置消息保留时间，小时为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxRetention 最大可设置消息保留时间，小时为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxRetention() const;
 
                     /**
                      * 设置最大可设置消息保留时间，小时为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _maxRetention 最大可设置消息保留时间，小时为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMaxRetention(const int64_t& _maxRetention);
@@ -375,18 +367,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最小可设置消息保留时间，小时为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MinRetention 最小可设置消息保留时间，小时为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMinRetention() const;
 
                     /**
                      * 设置最小可设置消息保留时间，小时为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _minRetention 最小可设置消息保留时间，小时为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMinRetention(const int64_t& _minRetention);
@@ -400,18 +388,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例消息保留时间，小时为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Retention 实例消息保留时间，小时为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRetention() const;
 
                     /**
                      * 设置实例消息保留时间，小时为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _retention 实例消息保留时间，小时为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRetention(const int64_t& _retention);
@@ -425,18 +409,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启ACL鉴权
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AclEnabled 是否开启ACL鉴权
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetAclEnabled() const;
 
                     /**
                      * 设置是否开启ACL鉴权
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _aclEnabled 是否开启ACL鉴权
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAclEnabled(const bool& _aclEnabled);
@@ -450,18 +430,14 @@ namespace TencentCloud
 
                     /**
                      * 获取销毁时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DestroyTime 销毁时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDestroyTime() const;
 
                     /**
                      * 设置销毁时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _destroyTime 销毁时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDestroyTime(const uint64_t& _destroyTime);
@@ -489,7 +465,6 @@ namespace TencentCloud
 
                     /**
                      * 实例版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceVersion;
                     bool m_instanceVersionHasBeenSet;
@@ -563,35 +538,30 @@ namespace TencentCloud
 
                     /**
                      * 最大可设置消息保留时间，小时为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxRetention;
                     bool m_maxRetentionHasBeenSet;
 
                     /**
                      * 最小可设置消息保留时间，小时为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_minRetention;
                     bool m_minRetentionHasBeenSet;
 
                     /**
                      * 实例消息保留时间，小时为单位
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_retention;
                     bool m_retentionHasBeenSet;
 
                     /**
                      * 是否开启ACL鉴权
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_aclEnabled;
                     bool m_aclEnabledHasBeenSet;
 
                     /**
                      * 销毁时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_destroyTime;
                     bool m_destroyTimeHasBeenSet;

@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取1
+                     * 获取磁盘个数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DiskCount 1
+                     * @return DiskCount 磁盘个数
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDiskCount() const;
 
                     /**
-                     * 设置1
+                     * 设置磁盘个数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _diskCount 1
+                     * @param _diskCount 磁盘个数
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -72,18 +72,18 @@ namespace TencentCloud
                     bool DiskCountHasBeenSet() const;
 
                     /**
-                     * 获取1
+                     * 获取磁盘最大值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MaxDiskSize 1
+                     * @return MaxDiskSize 磁盘最大值
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMaxDiskSize() const;
 
                     /**
-                     * 设置1
+                     * 设置磁盘最大值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _maxDiskSize 1
+                     * @param _maxDiskSize 磁盘最大值
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -97,18 +97,18 @@ namespace TencentCloud
                     bool MaxDiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取1
+                     * 获取磁盘最小值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MinDiskSize 1
+                     * @return MinDiskSize 磁盘最小值
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMinDiskSize() const;
 
                     /**
-                     * 设置1
+                     * 设置磁盘最小值
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _minDiskSize 1
+                     * @param _minDiskSize 磁盘最小值
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -122,18 +122,18 @@ namespace TencentCloud
                     bool MinDiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取1
+                     * 获取磁盘类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DiskType 1
+                     * @return DiskType 磁盘类型
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDiskType() const;
 
                     /**
-                     * 设置1
+                     * 设置磁盘类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _diskType 1
+                     * @param _diskType 磁盘类型
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -147,18 +147,18 @@ namespace TencentCloud
                     bool DiskTypeHasBeenSet() const;
 
                     /**
-                     * 获取1
+                     * 获取磁盘类型详情
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DiskDesc 1
+                     * @return DiskDesc 磁盘类型详情
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDiskDesc() const;
 
                     /**
-                     * 设置1
+                     * 设置磁盘类型详情
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _diskDesc 1
+                     * @param _diskDesc 磁盘类型详情
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -172,18 +172,18 @@ namespace TencentCloud
                     bool DiskDescHasBeenSet() const;
 
                     /**
-                     * 获取1
+                     * 获取机型类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CvmClass 1
+                     * @return CvmClass 机型类型
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCvmClass() const;
 
                     /**
-                     * 设置1
+                     * 设置机型类型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cvmClass 1
+                     * @param _cvmClass 机型类型
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -199,42 +199,42 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 1
+                     * 磁盘个数
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_diskCount;
                     bool m_diskCountHasBeenSet;
 
                     /**
-                     * 1
+                     * 磁盘最大值
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxDiskSize;
                     bool m_maxDiskSizeHasBeenSet;
 
                     /**
-                     * 1
+                     * 磁盘最小值
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_minDiskSize;
                     bool m_minDiskSizeHasBeenSet;
 
                     /**
-                     * 1
+                     * 磁盘类型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_diskType;
                     bool m_diskTypeHasBeenSet;
 
                     /**
-                     * 1
+                     * 磁盘类型详情
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_diskDesc;
                     bool m_diskDescHasBeenSet;
 
                     /**
-                     * 1
+                     * 机型类型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cvmClass;

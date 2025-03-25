@@ -21,6 +21,7 @@ using namespace TencentCloud::Cdwdoris::V20211228::Model;
 using namespace std;
 
 ClusterConfigsInfoFromEMR::ClusterConfigsInfoFromEMR() :
+    m_computeGroupIdHasBeenSet(false),
     m_fileNameHasBeenSet(false),
     m_fileConfHasBeenSet(false),
     m_keyConfHasBeenSet(false),
@@ -36,6 +37,16 @@ CoreInternalOutcome ClusterConfigsInfoFromEMR::Deserialize(const rapidjson::Valu
 {
     string requestId = "";
 
+
+    if (value.HasMember("ComputeGroupId") && !value["ComputeGroupId"].IsNull())
+    {
+        if (!value["ComputeGroupId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterConfigsInfoFromEMR.ComputeGroupId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_computeGroupId = string(value["ComputeGroupId"].GetString());
+        m_computeGroupIdHasBeenSet = true;
+    }
 
     if (value.HasMember("FileName") && !value["FileName"].IsNull())
     {
@@ -134,6 +145,14 @@ CoreInternalOutcome ClusterConfigsInfoFromEMR::Deserialize(const rapidjson::Valu
 void ClusterConfigsInfoFromEMR::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
+    if (m_computeGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComputeGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_computeGroupId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_fileNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -207,6 +226,22 @@ void ClusterConfigsInfoFromEMR::ToJsonObject(rapidjson::Value &value, rapidjson:
 
 }
 
+
+string ClusterConfigsInfoFromEMR::GetComputeGroupId() const
+{
+    return m_computeGroupId;
+}
+
+void ClusterConfigsInfoFromEMR::SetComputeGroupId(const string& _computeGroupId)
+{
+    m_computeGroupId = _computeGroupId;
+    m_computeGroupIdHasBeenSet = true;
+}
+
+bool ClusterConfigsInfoFromEMR::ComputeGroupIdHasBeenSet() const
+{
+    return m_computeGroupIdHasBeenSet;
+}
 
 string ClusterConfigsInfoFromEMR::GetFileName() const
 {

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * @return InstanceId 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * @param _instanceId 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取消息 payload，需要按 encoding 指定的编码方式进行编码
-                     * @return Payload 消息 payload，需要按 encoding 指定的编码方式进行编码
+                     * 获取消息负载 Payload，是消息的实际内容，需要按 encoding 指定的编码方式进行编码
+                     * @return Payload 消息负载 Payload，是消息的实际内容，需要按 encoding 指定的编码方式进行编码
                      * 
                      */
                     std::string GetPayload() const;
 
                     /**
-                     * 设置消息 payload，需要按 encoding 指定的编码方式进行编码
-                     * @param _payload 消息 payload，需要按 encoding 指定的编码方式进行编码
+                     * 设置消息负载 Payload，是消息的实际内容，需要按 encoding 指定的编码方式进行编码
+                     * @param _payload 消息负载 Payload，是消息的实际内容，需要按 encoding 指定的编码方式进行编码
                      * 
                      */
                     void SetPayload(const std::string& _payload);
@@ -149,14 +149,26 @@ namespace TencentCloud
 
                     /**
                      * 获取消息的服务质量等级，默认为 1
+QoS 0（至多一次）消息发送后，不保证接收方一定收到，也不要求接收方确认。
+QoS 1（至少一次）消息至少被接收方成功接收一次，但可能重复。
+QoS 2（恰好一次）消息确保被接收方接收且仅接收一次，无重复。
                      * @return Qos 消息的服务质量等级，默认为 1
+QoS 0（至多一次）消息发送后，不保证接收方一定收到，也不要求接收方确认。
+QoS 1（至少一次）消息至少被接收方成功接收一次，但可能重复。
+QoS 2（恰好一次）消息确保被接收方接收且仅接收一次，无重复。
                      * 
                      */
                     int64_t GetQos() const;
 
                     /**
                      * 设置消息的服务质量等级，默认为 1
+QoS 0（至多一次）消息发送后，不保证接收方一定收到，也不要求接收方确认。
+QoS 1（至少一次）消息至少被接收方成功接收一次，但可能重复。
+QoS 2（恰好一次）消息确保被接收方接收且仅接收一次，无重复。
                      * @param _qos 消息的服务质量等级，默认为 1
+QoS 0（至多一次）消息发送后，不保证接收方一定收到，也不要求接收方确认。
+QoS 1（至少一次）消息至少被接收方成功接收一次，但可能重复。
+QoS 2（恰好一次）消息确保被接收方接收且仅接收一次，无重复。
                      * 
                      */
                     void SetQos(const int64_t& _qos);
@@ -192,13 +204,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID
+                     * 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 消息 payload，需要按 encoding 指定的编码方式进行编码
+                     * 消息负载 Payload，是消息的实际内容，需要按 encoding 指定的编码方式进行编码
                      */
                     std::string m_payload;
                     bool m_payloadHasBeenSet;
@@ -223,6 +235,9 @@ namespace TencentCloud
 
                     /**
                      * 消息的服务质量等级，默认为 1
+QoS 0（至多一次）消息发送后，不保证接收方一定收到，也不要求接收方确认。
+QoS 1（至少一次）消息至少被接收方成功接收一次，但可能重复。
+QoS 2（恰好一次）消息确保被接收方接收且仅接收一次，无重复。
                      */
                     int64_t m_qos;
                     bool m_qosHasBeenSet;

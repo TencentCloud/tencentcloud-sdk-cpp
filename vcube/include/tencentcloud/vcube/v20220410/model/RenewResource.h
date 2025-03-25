@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceId 资源Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置资源Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceId 资源Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自动续期标记，0：默认，1：自动续期，2：不续期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoRenewFlag 自动续期标记，0：默认，1：自动续期，2：不续期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetAutoRenewFlag() const;
 
                     /**
                      * 设置自动续期标记，0：默认，1：自动续期，2：不续期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _autoRenewFlag 自动续期标记，0：默认，1：自动续期，2：不续期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAutoRenewFlag(const uint64_t& _autoRenewFlag);
@@ -148,18 +140,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子产品码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubProductCode 子产品码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubProductCode() const;
 
                     /**
                      * 设置子产品码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subProductCode 子产品码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubProductCode(const std::string& _subProductCode);
@@ -173,18 +161,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源到期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 资源到期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置资源到期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endTime 资源到期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -200,14 +184,12 @@ namespace TencentCloud
 
                     /**
                      * 资源Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
                      * 自动续期标记，0：默认，1：自动续期，2：不续期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_autoRenewFlag;
                     bool m_autoRenewFlagHasBeenSet;
@@ -228,14 +210,12 @@ namespace TencentCloud
 
                     /**
                      * 子产品码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subProductCode;
                     bool m_subProductCodeHasBeenSet;
 
                     /**
                      * 资源到期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

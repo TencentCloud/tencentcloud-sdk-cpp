@@ -147,6 +147,27 @@ namespace TencentCloud
                      */
                     bool EndTimeHasBeenSet() const;
 
+                    /**
+                     * 获取计算组ID
+                     * @return ComputeGroupId 计算组ID
+                     * 
+                     */
+                    std::string GetComputeGroupId() const;
+
+                    /**
+                     * 设置计算组ID
+                     * @param _computeGroupId 计算组ID
+                     * 
+                     */
+                    void SetComputeGroupId(const std::string& _computeGroupId);
+
+                    /**
+                     * 判断参数 ComputeGroupId 是否已赋值
+                     * @return ComputeGroupId 是否已赋值
+                     * 
+                     */
+                    bool ComputeGroupIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +199,12 @@ namespace TencentCloud
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
+
+                    /**
+                     * 计算组ID
+                     */
+                    std::string m_computeGroupId;
+                    bool m_computeGroupIdHasBeenSet;
 
                 };
             }

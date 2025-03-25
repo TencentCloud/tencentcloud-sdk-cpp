@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日期。格式【YYYY-MM-DD】
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Date 日期。格式【YYYY-MM-DD】
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDate() const;
 
                     /**
                      * 设置日期。格式【YYYY-MM-DD】
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _date 日期。格式【YYYY-MM-DD】
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDate(const std::string& _date);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取统计数额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Sum 统计数额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetSum() const;
 
                     /**
                      * 设置统计数额
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sum 统计数额
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSum(const double& _sum);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 日期。格式【YYYY-MM-DD】
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_date;
                     bool m_dateHasBeenSet;
 
                     /**
                      * 统计数额
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_sum;
                     bool m_sumHasBeenSet;

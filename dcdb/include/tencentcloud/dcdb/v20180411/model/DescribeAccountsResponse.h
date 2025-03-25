@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取实例用户列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Users 实例用户列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DBAccount> GetUsers() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 实例用户列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DBAccount> m_users;
                     bool m_usersHasBeenSet;

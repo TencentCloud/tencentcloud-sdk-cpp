@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取创建时间，秒为单位
-                     * @return CreatedTime 创建时间，秒为单位
+                     * 获取创建时间，毫秒级时间戳 。
+                     * @return CreatedTime 创建时间，毫秒级时间戳 。
                      * 
                      */
                     int64_t GetCreatedTime() const;
 
                     /**
-                     * 设置创建时间，秒为单位
-                     * @param _createdTime 创建时间，秒为单位
+                     * 设置创建时间，毫秒级时间戳 。
+                     * @param _createdTime 创建时间，毫秒级时间戳 。
                      * 
                      */
                     void SetCreatedTime(const int64_t& _createdTime);
@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取修改时间，秒为单位
-                     * @return ModifiedTime 修改时间，秒为单位
+                     * 获取修改时间，毫秒级时间戳 。
+                     * @return ModifiedTime 修改时间，毫秒级时间戳 。
                      * 
                      */
                     int64_t GetModifiedTime() const;
 
                     /**
-                     * 设置修改时间，秒为单位
-                     * @param _modifiedTime 修改时间，秒为单位
+                     * 设置修改时间，毫秒级时间戳 。
+                     * @param _modifiedTime 修改时间，毫秒级时间戳 。
                      * 
                      */
                     void SetModifiedTime(const int64_t& _modifiedTime);
@@ -172,13 +172,13 @@ namespace TencentCloud
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 创建时间，秒为单位
+                     * 创建时间，毫秒级时间戳 。
                      */
                     int64_t m_createdTime;
                     bool m_createdTimeHasBeenSet;
 
                     /**
-                     * 修改时间，秒为单位
+                     * 修改时间，毫秒级时间戳 。
                      */
                     int64_t m_modifiedTime;
                     bool m_modifiedTimeHasBeenSet;

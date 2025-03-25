@@ -424,6 +424,27 @@ namespace TencentCloud
                      */
                     bool CpuTimeMsHasBeenSet() const;
 
+                    /**
+                     * 获取计算组
+                     * @return ComputeGroup 计算组
+                     * 
+                     */
+                    std::string GetComputeGroup() const;
+
+                    /**
+                     * 设置计算组
+                     * @param _computeGroup 计算组
+                     * 
+                     */
+                    void SetComputeGroup(const std::string& _computeGroup);
+
+                    /**
+                     * 判断参数 ComputeGroup 是否已赋值
+                     * @return ComputeGroup 是否已赋值
+                     * 
+                     */
+                    bool ComputeGroupHasBeenSet() const;
+
                 private:
 
                     /**
@@ -533,6 +554,12 @@ namespace TencentCloud
                      */
                     int64_t m_cpuTimeMs;
                     bool m_cpuTimeMsHasBeenSet;
+
+                    /**
+                     * 计算组
+                     */
+                    std::string m_computeGroup;
+                    bool m_computeGroupHasBeenSet;
 
                 };
             }

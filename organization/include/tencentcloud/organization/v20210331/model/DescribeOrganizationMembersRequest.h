@@ -190,6 +190,48 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取组织单元ID
+                     * @return NodeId 组织单元ID
+                     * 
+                     */
+                    uint64_t GetNodeId() const;
+
+                    /**
+                     * 设置组织单元ID
+                     * @param _nodeId 组织单元ID
+                     * 
+                     */
+                    void SetNodeId(const uint64_t& _nodeId);
+
+                    /**
+                     * 判断参数 NodeId 是否已赋值
+                     * @return NodeId 是否已赋值
+                     * 
+                     */
+                    bool NodeIdHasBeenSet() const;
+
+                    /**
+                     * 获取组织单元名称
+                     * @return NodeName 组织单元名称
+                     * 
+                     */
+                    std::string GetNodeName() const;
+
+                    /**
+                     * 设置组织单元名称
+                     * @param _nodeName 组织单元名称
+                     * 
+                     */
+                    void SetNodeName(const std::string& _nodeName);
+
+                    /**
+                     * 判断参数 NodeName 是否已赋值
+                     * @return NodeName 是否已赋值
+                     * 
+                     */
+                    bool NodeNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -233,6 +275,18 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 组织单元ID
+                     */
+                    uint64_t m_nodeId;
+                    bool m_nodeIdHasBeenSet;
+
+                    /**
+                     * 组织单元名称
+                     */
+                    std::string m_nodeName;
+                    bool m_nodeNameHasBeenSet;
 
                 };
             }

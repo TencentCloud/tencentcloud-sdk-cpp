@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * @return InstanceId 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * @param _instanceId 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -67,11 +67,11 @@ namespace TencentCloud
                      * 获取认证器类型:
 JWT：JWT认证器
 JWKS：JWKS认证器
-BYOC：一端一证认证器
+HTTP：HTTP认证器
                      * @return Type 认证器类型:
 JWT：JWT认证器
 JWKS：JWKS认证器
-BYOC：一端一证认证器
+HTTP：HTTP认证器
                      * 
                      */
                     std::string GetType() const;
@@ -80,11 +80,11 @@ BYOC：一端一证认证器
                      * 设置认证器类型:
 JWT：JWT认证器
 JWKS：JWKS认证器
-BYOC：一端一证认证器
+HTTP：HTTP认证器
                      * @param _type 认证器类型:
 JWT：JWT认证器
 JWKS：JWKS认证器
-BYOC：一端一证认证器
+HTTP：HTTP认证器
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -99,7 +99,7 @@ BYOC：一端一证认证器
                 private:
 
                     /**
-                     * 实例ID
+                     * 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -108,7 +108,7 @@ BYOC：一端一证认证器
                      * 认证器类型:
 JWT：JWT认证器
 JWKS：JWKS认证器
-BYOC：一端一证认证器
+HTTP：HTTP认证器
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

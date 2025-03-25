@@ -47,15 +47,27 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取认证器类型: JWT：JWT认证器 JWKS：JWKS认证器 BYOC：一端一证认证器
-                     * @return Type 认证器类型: JWT：JWT认证器 JWKS：JWKS认证器 BYOC：一端一证认证器
+                     * 获取认证器类型
+JWT：JWT认证器
+JWKS：JWKS认证器
+HTTP：HTTP认证器
+                     * @return Type 认证器类型
+JWT：JWT认证器
+JWKS：JWKS认证器
+HTTP：HTTP认证器
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置认证器类型: JWT：JWT认证器 JWKS：JWKS认证器 BYOC：一端一证认证器
-                     * @param _type 认证器类型: JWT：JWT认证器 JWKS：JWKS认证器 BYOC：一端一证认证器
+                     * 设置认证器类型
+JWT：JWT认证器
+JWKS：JWKS认证器
+HTTP：HTTP认证器
+                     * @param _type 认证器类型
+JWT：JWT认证器
+JWKS：JWKS认证器
+HTTP：HTTP认证器
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -68,15 +80,55 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取认证器配置
-                     * @return Config 认证器配置
+                     * 获取HTTP认证器
+headers（请求头）：标准请求头和自定义请求头
+endpoint（接入点）：认证服务器接入点
+method（http请求方法）：POST/GET
+readTimeout（读超时时间）：读取认证服务器数据超时时间，单位秒
+connectTimeout（连接超时时间）：连接认证服务器超时时间，单位秒
+body（请求体）：http请求体
+concurrency（并发数）：最大并发请求数
+样例：{"headers":[{"key":"Content-type","value":"application/json"},{"key":"username","value":"${Username}"}],"endpoint":"https://127.0.0.1:443","method":"POST","readTimeout":10,"connectTimeout":10,"body":[{"key":"client-id","value":"${ClientId}"}],"concurrency":8}
+
+参考 [认证管理概述](https://cloud.tencent.com/document/product/1778/114813)
+                     * @return Config HTTP认证器
+headers（请求头）：标准请求头和自定义请求头
+endpoint（接入点）：认证服务器接入点
+method（http请求方法）：POST/GET
+readTimeout（读超时时间）：读取认证服务器数据超时时间，单位秒
+connectTimeout（连接超时时间）：连接认证服务器超时时间，单位秒
+body（请求体）：http请求体
+concurrency（并发数）：最大并发请求数
+样例：{"headers":[{"key":"Content-type","value":"application/json"},{"key":"username","value":"${Username}"}],"endpoint":"https://127.0.0.1:443","method":"POST","readTimeout":10,"connectTimeout":10,"body":[{"key":"client-id","value":"${ClientId}"}],"concurrency":8}
+
+参考 [认证管理概述](https://cloud.tencent.com/document/product/1778/114813)
                      * 
                      */
                     std::string GetConfig() const;
 
                     /**
-                     * 设置认证器配置
-                     * @param _config 认证器配置
+                     * 设置HTTP认证器
+headers（请求头）：标准请求头和自定义请求头
+endpoint（接入点）：认证服务器接入点
+method（http请求方法）：POST/GET
+readTimeout（读超时时间）：读取认证服务器数据超时时间，单位秒
+connectTimeout（连接超时时间）：连接认证服务器超时时间，单位秒
+body（请求体）：http请求体
+concurrency（并发数）：最大并发请求数
+样例：{"headers":[{"key":"Content-type","value":"application/json"},{"key":"username","value":"${Username}"}],"endpoint":"https://127.0.0.1:443","method":"POST","readTimeout":10,"connectTimeout":10,"body":[{"key":"client-id","value":"${ClientId}"}],"concurrency":8}
+
+参考 [认证管理概述](https://cloud.tencent.com/document/product/1778/114813)
+                     * @param _config HTTP认证器
+headers（请求头）：标准请求头和自定义请求头
+endpoint（接入点）：认证服务器接入点
+method（http请求方法）：POST/GET
+readTimeout（读超时时间）：读取认证服务器数据超时时间，单位秒
+connectTimeout（连接超时时间）：连接认证服务器超时时间，单位秒
+body（请求体）：http请求体
+concurrency（并发数）：最大并发请求数
+样例：{"headers":[{"key":"Content-type","value":"application/json"},{"key":"username","value":"${Username}"}],"endpoint":"https://127.0.0.1:443","method":"POST","readTimeout":10,"connectTimeout":10,"body":[{"key":"client-id","value":"${ClientId}"}],"concurrency":8}
+
+参考 [认证管理概述](https://cloud.tencent.com/document/product/1778/114813)
                      * 
                      */
                     void SetConfig(const std::string& _config);
@@ -90,14 +142,22 @@ namespace TencentCloud
 
                     /**
                      * 获取认证器状态
+open：认证器打开
+close：认证器关闭
                      * @return Status 认证器状态
+open：认证器打开
+close：认证器关闭
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置认证器状态
+open：认证器打开
+close：认证器关闭
                      * @param _status 认证器状态
+open：认证器打开
+close：认证器关闭
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -110,15 +170,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreateTime 创建时间
+                     * 获取创建时间，毫秒级时间戳 。
+                     * @return CreateTime 创建时间，毫秒级时间戳 。
                      * 
                      */
                     int64_t GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param _createTime 创建时间
+                     * 设置创建时间，毫秒级时间戳 。
+                     * @param _createTime 创建时间，毫秒级时间戳 。
                      * 
                      */
                     void SetCreateTime(const int64_t& _createTime);
@@ -131,15 +191,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取说明
-                     * @return Remark 说明
+                     * 获取说明，最长 128 字符。
+                     * @return Remark 说明，最长 128 字符。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置说明
-                     * @param _remark 说明
+                     * 设置说明，最长 128 字符。
+                     * @param _remark 说明，最长 128 字符。
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -154,31 +214,46 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 认证器类型: JWT：JWT认证器 JWKS：JWKS认证器 BYOC：一端一证认证器
+                     * 认证器类型
+JWT：JWT认证器
+JWKS：JWKS认证器
+HTTP：HTTP认证器
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 认证器配置
+                     * HTTP认证器
+headers（请求头）：标准请求头和自定义请求头
+endpoint（接入点）：认证服务器接入点
+method（http请求方法）：POST/GET
+readTimeout（读超时时间）：读取认证服务器数据超时时间，单位秒
+connectTimeout（连接超时时间）：连接认证服务器超时时间，单位秒
+body（请求体）：http请求体
+concurrency（并发数）：最大并发请求数
+样例：{"headers":[{"key":"Content-type","value":"application/json"},{"key":"username","value":"${Username}"}],"endpoint":"https://127.0.0.1:443","method":"POST","readTimeout":10,"connectTimeout":10,"body":[{"key":"client-id","value":"${ClientId}"}],"concurrency":8}
+
+参考 [认证管理概述](https://cloud.tencent.com/document/product/1778/114813)
                      */
                     std::string m_config;
                     bool m_configHasBeenSet;
 
                     /**
                      * 认证器状态
+open：认证器打开
+close：认证器关闭
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * 创建时间，毫秒级时间戳 。
                      */
                     int64_t m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 说明
+                     * 说明，最长 128 字符。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;

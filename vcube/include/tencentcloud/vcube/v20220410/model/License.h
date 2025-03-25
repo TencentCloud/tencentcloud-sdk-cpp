@@ -179,18 +179,14 @@ namespace TencentCloud
 
                     /**
                      * 获取测试license 是否可以续期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Renewal 测试license 是否可以续期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetRenewal() const;
 
                     /**
                      * 设置测试license 是否可以续期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _renewal 测试license 是否可以续期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRenewal(const bool& _renewal);
@@ -225,18 +221,14 @@ namespace TencentCloud
 
                     /**
                      * 获取license名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name license名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置license名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name license名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -250,18 +242,14 @@ namespace TencentCloud
 
                     /**
                      * 获取测试license 是否升级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Update 测试license 是否升级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetUpdate() const;
 
                     /**
                      * 设置测试license 是否升级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _update 测试license 是否升级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdate(const bool& _update);
@@ -325,18 +313,14 @@ namespace TencentCloud
 
                     /**
                      * 获取过期：true ，未过期：其它
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Expired 过期：true ，未过期：其它
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetExpired() const;
 
                     /**
                      * 设置过期：true ，未过期：其它
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _expired 过期：true ，未过期：其它
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExpired(const bool& _expired);
@@ -375,18 +359,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedAt 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatedAt() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createdAt 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreatedAt(const std::string& _createdAt);
@@ -400,18 +380,14 @@ namespace TencentCloud
 
                     /**
                      * 获取更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdatedAt 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdatedAt() const;
 
                     /**
                      * 设置更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updatedAt 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdatedAt(const std::string& _updatedAt);
@@ -450,18 +426,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否为马甲包
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsVest 是否为马甲包
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsVest() const;
 
                     /**
                      * 设置是否为马甲包
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isVest 是否为马甲包
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsVest(const bool& _isVest);
@@ -514,7 +486,6 @@ namespace TencentCloud
 
                     /**
                      * 测试license 是否可以续期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_renewal;
                     bool m_renewalHasBeenSet;
@@ -527,14 +498,12 @@ namespace TencentCloud
 
                     /**
                      * license名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 测试license 是否升级
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_update;
                     bool m_updateHasBeenSet;
@@ -555,7 +524,6 @@ namespace TencentCloud
 
                     /**
                      * 过期：true ，未过期：其它
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_expired;
                     bool m_expiredHasBeenSet;
@@ -569,14 +537,12 @@ namespace TencentCloud
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createdAt;
                     bool m_createdAtHasBeenSet;
 
                     /**
                      * 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updatedAt;
                     bool m_updatedAtHasBeenSet;
@@ -590,7 +556,6 @@ namespace TencentCloud
 
                     /**
                      * 是否为马甲包
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isVest;
                     bool m_isVestHasBeenSet;

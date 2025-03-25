@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AndroidAppId 应用id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAndroidAppId() const;
 
                     /**
                      * 设置应用id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _androidAppId 应用id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAndroidAppId(const std::string& _androidAppId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AndroidAppVersion 应用版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAndroidAppVersion() const;
 
                     /**
                      * 设置应用版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _androidAppVersion 应用版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAndroidAppVersion(const std::string& _androidAppVersion);
@@ -188,21 +176,18 @@ namespace TencentCloud
 
                     /**
                      * 应用id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_androidAppId;
                     bool m_androidAppIdHasBeenSet;
 
                     /**
                      * 应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 应用版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_androidAppVersion;
                     bool m_androidAppVersionHasBeenSet;

@@ -71,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取常见状态描述：集群生产中,集群运行中,集群创建中,集群已关闭,集群已删除
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StatusDesc 常见状态描述：集群生产中,集群运行中,集群创建中,集群已关闭,集群已删除
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatusDesc() const;
 
                     /**
                      * 设置常见状态描述：集群生产中,集群运行中,集群创建中,集群已关闭,集群已删除
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _statusDesc 常见状态描述：集群生产中,集群运行中,集群创建中,集群已关闭,集群已删除
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatusDesc(const std::string& _statusDesc);
@@ -285,18 +281,14 @@ namespace TencentCloud
 
                     /**
                      * 获取产品ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductId 产品ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetProductId() const;
 
                     /**
                      * 设置产品ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _productId 产品ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProductId(const uint64_t& _productId);
@@ -310,18 +302,14 @@ namespace TencentCloud
 
                     /**
                      * 获取项目ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectId 项目ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetProjectId() const;
 
                     /**
                      * 设置项目ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _projectId 项目ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProjectId(const uint64_t& _projectId);
@@ -335,18 +323,14 @@ namespace TencentCloud
 
                     /**
                      * 获取区域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionId 区域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetRegionId() const;
 
                     /**
                      * 设置区域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _regionId 区域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegionId(const uint64_t& _regionId);
@@ -360,18 +344,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetId 子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetSubnetId() const;
 
                     /**
                      * 设置子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subnetId 子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubnetId(const uint64_t& _subnetId);
@@ -385,18 +365,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网络ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId 网络ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetVpcId() const;
 
                     /**
                      * 设置网络ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcId 网络ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcId(const uint64_t& _vpcId);
@@ -410,18 +386,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zone 地区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置地区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zone 地区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -435,18 +407,14 @@ namespace TencentCloud
 
                     /**
                      * 获取状态码, 取值为-2(集群已删除), -1(集群已关闭), 0(集群生产中), 2(集群运行中), 3(集群创建中)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 状态码, 取值为-2(集群已删除), -1(集群已关闭), 0(集群生产中), 2(集群运行中), 3(集群创建中)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置状态码, 取值为-2(集群已删除), -1(集群已关闭), 0(集群生产中), 2(集群运行中), 3(集群创建中)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 状态码, 取值为-2(集群已删除), -1(集群已关闭), 0(集群生产中), 2(集群运行中), 3(集群创建中)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -485,18 +453,14 @@ namespace TencentCloud
 
                     /**
                      * 获取告警信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AlarmInfo 告警信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAlarmInfo() const;
 
                     /**
                      * 设置告警信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _alarmInfo 告警信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAlarmInfo(const std::string& _alarmInfo);
@@ -510,18 +474,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否是woodpecker集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsWoodpeckerCluster 是否是woodpecker集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIsWoodpeckerCluster() const;
 
                     /**
                      * 设置是否是woodpecker集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isWoodpeckerCluster 是否是woodpecker集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsWoodpeckerCluster(const uint64_t& _isWoodpeckerCluster);
@@ -535,18 +495,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Vpc中文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcName Vpc中文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcName() const;
 
                     /**
                      * 设置Vpc中文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcName Vpc中文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcName(const std::string& _vpcName);
@@ -560,18 +516,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子网中文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetName 子网中文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubnetName() const;
 
                     /**
                      * 设置子网中文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subnetName 子网中文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubnetName(const std::string& _subnetName);
@@ -585,18 +537,14 @@ namespace TencentCloud
 
                     /**
                      * 获取字符串VpcId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UniqVpcId 字符串VpcId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUniqVpcId() const;
 
                     /**
                      * 设置字符串VpcId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uniqVpcId 字符串VpcId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUniqVpcId(const std::string& _uniqVpcId);
@@ -610,18 +558,14 @@ namespace TencentCloud
 
                     /**
                      * 获取字符串子网
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UniqSubnetId 字符串子网
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUniqSubnetId() const;
 
                     /**
                      * 设置字符串子网
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uniqSubnetId 字符串子网
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUniqSubnetId(const std::string& _uniqSubnetId);
@@ -635,18 +579,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterClass 集群类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterClass() const;
 
                     /**
                      * 设置集群类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterClass 集群类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterClass(const std::string& _clusterClass);
@@ -660,18 +600,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否为跨AZ集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsMultiZoneCluster 是否为跨AZ集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsMultiZoneCluster() const;
 
                     /**
                      * 设置是否为跨AZ集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isMultiZoneCluster 是否为跨AZ集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsMultiZoneCluster(const bool& _isMultiZoneCluster);
@@ -685,18 +621,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否手戳集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsHandsCluster 是否手戳集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsHandsCluster() const;
 
                     /**
                      * 设置是否手戳集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isHandsCluster 是否手戳集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsHandsCluster(const bool& _isHandsCluster);
@@ -735,18 +667,14 @@ namespace TencentCloud
 
                     /**
                      * 获取当前集群的应用场景是否支持体外客户端
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsSupportOutsideCluster 当前集群的应用场景是否支持体外客户端
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsSupportOutsideCluster() const;
 
                     /**
                      * 设置当前集群的应用场景是否支持体外客户端
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isSupportOutsideCluster 当前集群的应用场景是否支持体外客户端
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsSupportOutsideCluster(const bool& _isSupportOutsideCluster);
@@ -760,18 +688,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否专有集群场景集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsDedicatedCluster 是否专有集群场景集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsDedicatedCluster() const;
 
                     /**
                      * 设置是否专有集群场景集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isDedicatedCluster 是否专有集群场景集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsDedicatedCluster(const bool& _isDedicatedCluster);
@@ -783,6 +707,27 @@ namespace TencentCloud
                      */
                     bool IsDedicatedClusterHasBeenSet() const;
 
+                    /**
+                     * 获取集群支持克隆
+                     * @return IsSupportClone 集群支持克隆
+                     * 
+                     */
+                    bool GetIsSupportClone() const;
+
+                    /**
+                     * 设置集群支持克隆
+                     * @param _isSupportClone 集群支持克隆
+                     * 
+                     */
+                    void SetIsSupportClone(const bool& _isSupportClone);
+
+                    /**
+                     * 判断参数 IsSupportClone 是否已赋值
+                     * @return IsSupportClone 是否已赋值
+                     * 
+                     */
+                    bool IsSupportCloneHasBeenSet() const;
+
                 private:
 
                     /**
@@ -793,7 +738,6 @@ namespace TencentCloud
 
                     /**
                      * 常见状态描述：集群生产中,集群运行中,集群创建中,集群已关闭,集群已删除
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_statusDesc;
                     bool m_statusDescHasBeenSet;
@@ -854,49 +798,42 @@ namespace TencentCloud
 
                     /**
                      * 产品ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_productId;
                     bool m_productIdHasBeenSet;
 
                     /**
                      * 项目ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
                      * 区域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_regionId;
                     bool m_regionIdHasBeenSet;
 
                     /**
                      * 子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
                      * 网络ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
                      * 地区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
                      * 状态码, 取值为-2(集群已删除), -1(集群已关闭), 0(集群生产中), 2(集群运行中), 3(集群创建中)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
@@ -910,63 +847,54 @@ namespace TencentCloud
 
                     /**
                      * 告警信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_alarmInfo;
                     bool m_alarmInfoHasBeenSet;
 
                     /**
                      * 是否是woodpecker集群
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_isWoodpeckerCluster;
                     bool m_isWoodpeckerClusterHasBeenSet;
 
                     /**
                      * Vpc中文
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcName;
                     bool m_vpcNameHasBeenSet;
 
                     /**
                      * 子网中文
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subnetName;
                     bool m_subnetNameHasBeenSet;
 
                     /**
                      * 字符串VpcId
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uniqVpcId;
                     bool m_uniqVpcIdHasBeenSet;
 
                     /**
                      * 字符串子网
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uniqSubnetId;
                     bool m_uniqSubnetIdHasBeenSet;
 
                     /**
                      * 集群类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterClass;
                     bool m_clusterClassHasBeenSet;
 
                     /**
                      * 是否为跨AZ集群
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isMultiZoneCluster;
                     bool m_isMultiZoneClusterHasBeenSet;
 
                     /**
                      * 是否手戳集群
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isHandsCluster;
                     bool m_isHandsClusterHasBeenSet;
@@ -980,17 +908,21 @@ namespace TencentCloud
 
                     /**
                      * 当前集群的应用场景是否支持体外客户端
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isSupportOutsideCluster;
                     bool m_isSupportOutsideClusterHasBeenSet;
 
                     /**
                      * 是否专有集群场景集群
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isDedicatedCluster;
                     bool m_isDedicatedClusterHasBeenSet;
+
+                    /**
+                     * 集群支持克隆
+                     */
+                    bool m_isSupportClone;
+                    bool m_isSupportCloneHasBeenSet;
 
                 };
             }

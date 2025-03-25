@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取房间名称。
-                     * @return Name 房间名称。
+                     * 获取课堂名称。
+                     * @return Name 课堂名称。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置房间名称。
-                     * @param _name 房间名称。
+                     * 设置课堂名称。
+                     * @param _name 课堂名称。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取预定的房间开始时间，unix时间戳（秒）。
-                     * @return StartTime 预定的房间开始时间，unix时间戳（秒）。
+                     * 获取预定的课堂开始时间，unix时间戳（秒）。
+                     * @return StartTime 预定的课堂开始时间，unix时间戳（秒）。
                      * 
                      */
                     uint64_t GetStartTime() const;
 
                     /**
-                     * 设置预定的房间开始时间，unix时间戳（秒）。
-                     * @param _startTime 预定的房间开始时间，unix时间戳（秒）。
+                     * 设置预定的课堂开始时间，unix时间戳（秒）。
+                     * @param _startTime 预定的课堂开始时间，unix时间戳（秒）。
                      * 
                      */
                     void SetStartTime(const uint64_t& _startTime);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取预定的房间结束时间，unix时间戳（秒）。
-                     * @return EndTime 预定的房间结束时间，unix时间戳（秒）。
+                     * 获取预定的课堂结束时间，unix时间戳（秒）。
+                     * @return EndTime 预定的课堂结束时间，unix时间戳（秒）。
                      * 
                      */
                     uint64_t GetEndTime() const;
 
                     /**
-                     * 设置预定的房间结束时间，unix时间戳（秒）。
-                     * @param _endTime 预定的房间结束时间，unix时间戳（秒）。
+                     * 设置预定的课堂结束时间，unix时间戳（秒）。
+                     * @param _endTime 预定的课堂结束时间，unix时间戳（秒）。
                      * 
                      */
                     void SetEndTime(const uint64_t& _endTime);
@@ -160,15 +160,15 @@ namespace TencentCloud
                     bool ResolutionHasBeenSet() const;
 
                     /**
-                     * 获取设置房间/课堂同时最大可与老师进行连麦互动的人数，该参数支持正式上课/开播前调用修改房间修改。小班课取值范围[0,16]，大班课取值范围[0,1]，当取值为0时表示当前课堂/直播，不支持连麦互动。该取值影响计费，请根据业务实际情况设置。计费规则见“购买指南”下“计费概述”。
-                     * @return MaxMicNumber 设置房间/课堂同时最大可与老师进行连麦互动的人数，该参数支持正式上课/开播前调用修改房间修改。小班课取值范围[0,16]，大班课取值范围[0,1]，当取值为0时表示当前课堂/直播，不支持连麦互动。该取值影响计费，请根据业务实际情况设置。计费规则见“购买指南”下“计费概述”。
+                     * 获取设置课堂同时最大可与老师进行连麦互动的人数，该参数支持正式上课/开播前调用修改房间修改。小班课取值范围[0,16]，大班课取值范围[0,1]，当取值为0时表示当前课堂/直播，不支持连麦互动。该取值影响计费，请根据业务实际情况设置。计费规则见“购买指南”下“计费概述”。
+                     * @return MaxMicNumber 设置课堂同时最大可与老师进行连麦互动的人数，该参数支持正式上课/开播前调用修改房间修改。小班课取值范围[0,16]，大班课取值范围[0,1]，当取值为0时表示当前课堂/直播，不支持连麦互动。该取值影响计费，请根据业务实际情况设置。计费规则见“购买指南”下“计费概述”。
                      * 
                      */
                     uint64_t GetMaxMicNumber() const;
 
                     /**
-                     * 设置设置房间/课堂同时最大可与老师进行连麦互动的人数，该参数支持正式上课/开播前调用修改房间修改。小班课取值范围[0,16]，大班课取值范围[0,1]，当取值为0时表示当前课堂/直播，不支持连麦互动。该取值影响计费，请根据业务实际情况设置。计费规则见“购买指南”下“计费概述”。
-                     * @param _maxMicNumber 设置房间/课堂同时最大可与老师进行连麦互动的人数，该参数支持正式上课/开播前调用修改房间修改。小班课取值范围[0,16]，大班课取值范围[0,1]，当取值为0时表示当前课堂/直播，不支持连麦互动。该取值影响计费，请根据业务实际情况设置。计费规则见“购买指南”下“计费概述”。
+                     * 设置设置课堂同时最大可与老师进行连麦互动的人数，该参数支持正式上课/开播前调用修改房间修改。小班课取值范围[0,16]，大班课取值范围[0,1]，当取值为0时表示当前课堂/直播，不支持连麦互动。该取值影响计费，请根据业务实际情况设置。计费规则见“购买指南”下“计费概述”。
+                     * @param _maxMicNumber 设置课堂同时最大可与老师进行连麦互动的人数，该参数支持正式上课/开播前调用修改房间修改。小班课取值范围[0,16]，大班课取值范围[0,1]，当取值为0时表示当前课堂/直播，不支持连麦互动。该取值影响计费，请根据业务实际情况设置。计费规则见“购买指南”下“计费概述”。
                      * 
                      */
                     void SetMaxMicNumber(const uint64_t& _maxMicNumber);
@@ -181,23 +181,15 @@ namespace TencentCloud
                     bool MaxMicNumberHasBeenSet() const;
 
                     /**
-                     * 获取房间子类型，可以有以下取值：
-videodoc 文档+视频
-video 纯视频
-                     * @return SubType 房间子类型，可以有以下取值：
-videodoc 文档+视频
-video 纯视频
+                     * 获取课堂子类型，可以有以下取值：videodoc 文档+视频video 纯视频
+                     * @return SubType 课堂子类型，可以有以下取值：videodoc 文档+视频video 纯视频
                      * 
                      */
                     std::string GetSubType() const;
 
                     /**
-                     * 设置房间子类型，可以有以下取值：
-videodoc 文档+视频
-video 纯视频
-                     * @param _subType 房间子类型，可以有以下取值：
-videodoc 文档+视频
-video 纯视频
+                     * 设置课堂子类型，可以有以下取值：videodoc 文档+视频video 纯视频
+                     * @param _subType 课堂子类型，可以有以下取值：videodoc 文档+视频video 纯视频
                      * 
                      */
                     void SetSubType(const std::string& _subType);
@@ -423,15 +415,15 @@ video 纯视频
                     bool RecordLayoutHasBeenSet() const;
 
                     /**
-                     * 获取房间绑定的群组ID,非空时限制组成员进入
-                     * @return GroupId 房间绑定的群组ID,非空时限制组成员进入
+                     * 获取课堂绑定的群组ID,非空时限制组成员进入
+                     * @return GroupId 课堂绑定的群组ID,非空时限制组成员进入
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置房间绑定的群组ID,非空时限制组成员进入
-                     * @param _groupId 房间绑定的群组ID,非空时限制组成员进入
+                     * 设置课堂绑定的群组ID,非空时限制组成员进入
+                     * @param _groupId 课堂绑定的群组ID,非空时限制组成员进入
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -544,19 +536,15 @@ video 纯视频
                     bool IsGradingRequiredPostClassHasBeenSet() const;
 
                     /**
-                     * 获取房间类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (预留参数，暂未开放)
-注：大班课的布局(layout)只有三分屏
-                     * @return RoomType 房间类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (预留参数，暂未开放)
-注：大班课的布局(layout)只有三分屏
+                     * 获取课堂类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (预留参数，暂未开放)注：大班课的布局(layout)只有三分屏
+                     * @return RoomType 课堂类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (预留参数，暂未开放)注：大班课的布局(layout)只有三分屏
                      * 
                      */
                     int64_t GetRoomType() const;
 
                     /**
-                     * 设置房间类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (预留参数，暂未开放)
-注：大班课的布局(layout)只有三分屏
-                     * @param _roomType 房间类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (预留参数，暂未开放)
-注：大班课的布局(layout)只有三分屏
+                     * 设置课堂类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (预留参数，暂未开放)注：大班课的布局(layout)只有三分屏
+                     * @param _roomType 课堂类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (预留参数，暂未开放)注：大班课的布局(layout)只有三分屏
                      * 
                      */
                     void SetRoomType(const int64_t& _roomType);
@@ -764,19 +752,19 @@ video 纯视频
                 private:
 
                     /**
-                     * 房间名称。
+                     * 课堂名称。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 预定的房间开始时间，unix时间戳（秒）。
+                     * 预定的课堂开始时间，unix时间戳（秒）。
                      */
                     uint64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 预定的房间结束时间，unix时间戳（秒）。
+                     * 预定的课堂结束时间，unix时间戳（秒）。
                      */
                     uint64_t m_endTime;
                     bool m_endTimeHasBeenSet;
@@ -797,15 +785,13 @@ video 纯视频
                     bool m_resolutionHasBeenSet;
 
                     /**
-                     * 设置房间/课堂同时最大可与老师进行连麦互动的人数，该参数支持正式上课/开播前调用修改房间修改。小班课取值范围[0,16]，大班课取值范围[0,1]，当取值为0时表示当前课堂/直播，不支持连麦互动。该取值影响计费，请根据业务实际情况设置。计费规则见“购买指南”下“计费概述”。
+                     * 设置课堂同时最大可与老师进行连麦互动的人数，该参数支持正式上课/开播前调用修改房间修改。小班课取值范围[0,16]，大班课取值范围[0,1]，当取值为0时表示当前课堂/直播，不支持连麦互动。该取值影响计费，请根据业务实际情况设置。计费规则见“购买指南”下“计费概述”。
                      */
                     uint64_t m_maxMicNumber;
                     bool m_maxMicNumberHasBeenSet;
 
                     /**
-                     * 房间子类型，可以有以下取值：
-videodoc 文档+视频
-video 纯视频
+                     * 课堂子类型，可以有以下取值：videodoc 文档+视频video 纯视频
                      */
                     std::string m_subType;
                     bool m_subTypeHasBeenSet;
@@ -871,7 +857,7 @@ video 纯视频
                     bool m_recordLayoutHasBeenSet;
 
                     /**
-                     * 房间绑定的群组ID,非空时限制组成员进入
+                     * 课堂绑定的群组ID,非空时限制组成员进入
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
@@ -905,8 +891,7 @@ video 纯视频
                     bool m_isGradingRequiredPostClassHasBeenSet;
 
                     /**
-                     * 房间类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (预留参数，暂未开放)
-注：大班课的布局(layout)只有三分屏
+                     * 课堂类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (预留参数，暂未开放)注：大班课的布局(layout)只有三分屏
                      */
                     int64_t m_roomType;
                     bool m_roomTypeHasBeenSet;

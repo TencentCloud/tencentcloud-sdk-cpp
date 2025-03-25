@@ -176,18 +176,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源开始生效时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 资源开始生效时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置资源开始生效时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _startTime 资源开始生效时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -201,18 +197,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源结束生效时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 资源结束生效时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置资源结束生效时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endTime 资源结束生效时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -322,18 +314,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否可以使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsUse 是否可以使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsUse() const;
 
                     /**
                      * 设置是否可以使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isUse 是否可以使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsUse(const bool& _isUse);
@@ -347,18 +335,14 @@ namespace TencentCloud
 
                     /**
                      * 获取single: 原子能力,combined:套餐
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return XMagicType single: 原子能力,combined:套餐
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetXMagicType() const;
 
                     /**
                      * 设置single: 原子能力,combined:套餐
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _xMagicType single: 原子能力,combined:套餐
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetXMagicType(const std::string& _xMagicType);
@@ -372,18 +356,14 @@ namespace TencentCloud
 
                     /**
                      * 获取功能模块名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 功能模块名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置功能模块名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 功能模块名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -397,18 +377,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源所属业务方 xmagic：优图，avatar：虚拟形象 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BizType 资源所属业务方 xmagic：优图，avatar：虚拟形象 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBizType() const;
 
                     /**
                      * 设置资源所属业务方 xmagic：优图，avatar：虚拟形象 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bizType 资源所属业务方 xmagic：优图，avatar：虚拟形象 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBizType(const std::string& _bizType);
@@ -422,18 +398,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceId 资源id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置资源id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceId 资源id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -447,18 +419,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源自动续费状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoRenewFlag 资源自动续费状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetAutoRenewFlag() const;
 
                     /**
                      * 设置资源自动续费状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _autoRenewFlag 资源自动续费状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAutoRenewFlag(const uint64_t& _autoRenewFlag);
@@ -510,14 +478,12 @@ namespace TencentCloud
 
                     /**
                      * 资源开始生效时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
                      * 资源结束生效时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
@@ -551,42 +517,36 @@ namespace TencentCloud
 
                     /**
                      * 是否可以使用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isUse;
                     bool m_isUseHasBeenSet;
 
                     /**
                      * single: 原子能力,combined:套餐
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_xMagicType;
                     bool m_xMagicTypeHasBeenSet;
 
                     /**
                      * 功能模块名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 资源所属业务方 xmagic：优图，avatar：虚拟形象 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bizType;
                     bool m_bizTypeHasBeenSet;
 
                     /**
                      * 资源id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
                      * 资源自动续费状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_autoRenewFlag;
                     bool m_autoRenewFlagHasBeenSet;

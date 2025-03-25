@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取触发表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InvokeExpr 触发表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInvokeExpr() const;
 
                     /**
                      * 设置触发表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _invokeExpr 触发表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInvokeExpr(const std::string& _invokeExpr);
@@ -102,7 +98,6 @@ namespace TencentCloud
 
                     /**
                      * 触发表达式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_invokeExpr;
                     bool m_invokeExprHasBeenSet;

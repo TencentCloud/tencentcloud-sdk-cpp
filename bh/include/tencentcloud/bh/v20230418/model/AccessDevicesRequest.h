@@ -43,36 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源id
-                     * @return InstanceId 资源id
-                     * 
-                     */
-                    std::string GetInstanceId() const;
-
-                    /**
-                     * 设置资源id
-                     * @param _instanceId 资源id
-                     * 
-                     */
-                    void SetInstanceId(const std::string& _instanceId);
-
-                    /**
-                     * 判断参数 InstanceId 是否已赋值
-                     * @return InstanceId 是否已赋值
-                     * 
-                     */
-                    bool InstanceIdHasBeenSet() const;
-
-                    /**
-                     * 获取账号
-                     * @return Account 账号
+                     * 获取资产的登录账号
+                     * @return Account 资产的登录账号
                      * 
                      */
                     std::string GetAccount() const;
 
                     /**
-                     * 设置账号
-                     * @param _account 账号
+                     * 设置资产的登录账号
+                     * @param _account 资产的登录账号
                      * 
                      */
                     void SetAccount(const std::string& _account);
@@ -87,55 +66,97 @@ namespace TencentCloud
                     /**
                      * 获取运维端登录账号
                      * @return LoginAccount 运维端登录账号
-                     * 
+                     * @deprecated
                      */
                     std::string GetLoginAccount() const;
 
                     /**
                      * 设置运维端登录账号
                      * @param _loginAccount 运维端登录账号
-                     * 
+                     * @deprecated
                      */
                     void SetLoginAccount(const std::string& _loginAccount);
 
                     /**
                      * 判断参数 LoginAccount 是否已赋值
                      * @return LoginAccount 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool LoginAccountHasBeenSet() const;
 
                     /**
                      * 获取运维端登录密码
                      * @return LoginPassword 运维端登录密码
-                     * 
+                     * @deprecated
                      */
                     std::string GetLoginPassword() const;
 
                     /**
                      * 设置运维端登录密码
                      * @param _loginPassword 运维端登录密码
-                     * 
+                     * @deprecated
                      */
                     void SetLoginPassword(const std::string& _loginPassword);
 
                     /**
                      * 判断参数 LoginPassword 是否已赋值
                      * @return LoginPassword 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool LoginPasswordHasBeenSet() const;
 
                     /**
-                     * 获取密码
-                     * @return Password 密码
+                     * 获取资产ID
+                     * @return DeviceId 资产ID
+                     * 
+                     */
+                    uint64_t GetDeviceId() const;
+
+                    /**
+                     * 设置资产ID
+                     * @param _deviceId 资产ID
+                     * 
+                     */
+                    void SetDeviceId(const uint64_t& _deviceId);
+
+                    /**
+                     * 判断参数 DeviceId 是否已赋值
+                     * @return DeviceId 是否已赋值
+                     * 
+                     */
+                    bool DeviceIdHasBeenSet() const;
+
+                    /**
+                     * 获取资源id(优先使用DeviceId)
+                     * @return InstanceId 资源id(优先使用DeviceId)
+                     * 
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置资源id(优先使用DeviceId)
+                     * @param _instanceId 资源id(优先使用DeviceId)
+                     * 
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取未托管密码私钥时，填入
+                     * @return Password 未托管密码私钥时，填入
                      * 
                      */
                     std::string GetPassword() const;
 
                     /**
-                     * 设置密码
-                     * @param _password 密码
+                     * 设置未托管密码私钥时，填入
+                     * @param _password 未托管密码私钥时，填入
                      * 
                      */
                     void SetPassword(const std::string& _password);
@@ -148,15 +169,15 @@ namespace TencentCloud
                     bool PasswordHasBeenSet() const;
 
                     /**
-                     * 获取私钥
-                     * @return PrivateKey 私钥
+                     * 获取未托管密码私钥时，填入
+                     * @return PrivateKey 未托管密码私钥时，填入
                      * 
                      */
                     std::string GetPrivateKey() const;
 
                     /**
-                     * 设置私钥
-                     * @param _privateKey 私钥
+                     * 设置未托管密码私钥时，填入
+                     * @param _privateKey 未托管密码私钥时，填入
                      * 
                      */
                     void SetPrivateKey(const std::string& _privateKey);
@@ -169,15 +190,15 @@ namespace TencentCloud
                     bool PrivateKeyHasBeenSet() const;
 
                     /**
-                     * 获取私钥密码
-                     * @return PrivateKeyPassword 私钥密码
+                     * 获取未托管密码私钥时，填入
+                     * @return PrivateKeyPassword 未托管密码私钥时，填入
                      * 
                      */
                     std::string GetPrivateKeyPassword() const;
 
                     /**
-                     * 设置私钥密码
-                     * @param _privateKeyPassword 私钥密码
+                     * 设置未托管密码私钥时，填入
+                     * @param _privateKeyPassword 未托管密码私钥时，填入
                      * 
                      */
                     void SetPrivateKeyPassword(const std::string& _privateKeyPassword);
@@ -294,16 +315,31 @@ namespace TencentCloud
                      */
                     bool IntranetAccessHasBeenSet() const;
 
+                    /**
+                     * 获取是否自动管理访问串，删掉过期的，新建可用的（默认false）
+                     * @return AutoManageAccessCredential 是否自动管理访问串，删掉过期的，新建可用的（默认false）
+                     * 
+                     */
+                    bool GetAutoManageAccessCredential() const;
+
+                    /**
+                     * 设置是否自动管理访问串，删掉过期的，新建可用的（默认false）
+                     * @param _autoManageAccessCredential 是否自动管理访问串，删掉过期的，新建可用的（默认false）
+                     * 
+                     */
+                    void SetAutoManageAccessCredential(const bool& _autoManageAccessCredential);
+
+                    /**
+                     * 判断参数 AutoManageAccessCredential 是否已赋值
+                     * @return AutoManageAccessCredential 是否已赋值
+                     * 
+                     */
+                    bool AutoManageAccessCredentialHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 资源id
-                     */
-                    std::string m_instanceId;
-                    bool m_instanceIdHasBeenSet;
-
-                    /**
-                     * 账号
+                     * 资产的登录账号
                      */
                     std::string m_account;
                     bool m_accountHasBeenSet;
@@ -321,19 +357,31 @@ namespace TencentCloud
                     bool m_loginPasswordHasBeenSet;
 
                     /**
-                     * 密码
+                     * 资产ID
+                     */
+                    uint64_t m_deviceId;
+                    bool m_deviceIdHasBeenSet;
+
+                    /**
+                     * 资源id(优先使用DeviceId)
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 未托管密码私钥时，填入
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
 
                     /**
-                     * 私钥
+                     * 未托管密码私钥时，填入
                      */
                     std::string m_privateKey;
                     bool m_privateKeyHasBeenSet;
 
                     /**
-                     * 私钥密码
+                     * 未托管密码私钥时，填入
                      */
                     std::string m_privateKeyPassword;
                     bool m_privateKeyPasswordHasBeenSet;
@@ -367,6 +415,12 @@ namespace TencentCloud
                      */
                     bool m_intranetAccess;
                     bool m_intranetAccessHasBeenSet;
+
+                    /**
+                     * 是否自动管理访问串，删掉过期的，新建可用的（默认false）
+                     */
+                    bool m_autoManageAccessCredential;
+                    bool m_autoManageAccessCredentialHasBeenSet;
 
                 };
             }

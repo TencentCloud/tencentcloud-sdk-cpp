@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取房间名称。
-                     * @return Name 房间名称。
+                     * 获取课堂名称。
+                     * @return Name 课堂名称。
                      * 
                      */
                     std::string GetName() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取预定的房间开始时间，unix时间戳（秒）。
-                     * @return StartTime 预定的房间开始时间，unix时间戳（秒）。
+                     * 获取预定的课堂开始时间，unix时间戳（秒）。
+                     * @return StartTime 预定的课堂开始时间，unix时间戳（秒）。
                      * 
                      */
                     uint64_t GetStartTime() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取预定的房间结束时间，unix时间戳（秒）。
-                     * @return EndTime 预定的房间结束时间，unix时间戳（秒）。
+                     * 获取预定的课堂结束时间，unix时间戳（秒）。
+                     * @return EndTime 预定的课堂结束时间，unix时间戳（秒）。
                      * 
                      */
                     uint64_t GetEndTime() const;
@@ -148,8 +148,8 @@ namespace TencentCloud
                     bool ResolutionHasBeenSet() const;
 
                     /**
-                     * 获取设置房间/课堂同时最大可与老师进行连麦互动的人数，该参数支持正式上课/开播前调用修改房间修改。小班课取值范围[0,16]，大班课取值范围[0,1]，当取值为0时表示当前课堂/直播，不支持连麦互动。
-                     * @return MaxMicNumber 设置房间/课堂同时最大可与老师进行连麦互动的人数，该参数支持正式上课/开播前调用修改房间修改。小班课取值范围[0,16]，大班课取值范围[0,1]，当取值为0时表示当前课堂/直播，不支持连麦互动。
+                     * 获取设置课堂同时最大可与老师进行连麦互动的人数，该参数支持正式上课/开播前调用修改房间修改。小班课取值范围[0,16]，大班课取值范围[0,1]，当取值为0时表示当前课堂/直播，不支持连麦互动。
+                     * @return MaxMicNumber 设置课堂同时最大可与老师进行连麦互动的人数，该参数支持正式上课/开播前调用修改房间修改。小班课取值范围[0,16]，大班课取值范围[0,1]，当取值为0时表示当前课堂/直播，不支持连麦互动。
                      * 
                      */
                     uint64_t GetMaxMicNumber() const;
@@ -198,12 +198,8 @@ namespace TencentCloud
                     bool AudioQualityHasBeenSet() const;
 
                     /**
-                     * 获取房间子类型，可以有以下取值：
-videodoc 文档+视频
-video 纯视频
-                     * @return SubType 房间子类型，可以有以下取值：
-videodoc 文档+视频
-video 纯视频
+                     * 获取课堂子类型，可以有以下取值：videodoc 文档+视频video 纯视频
+                     * @return SubType 课堂子类型，可以有以下取值：videodoc 文档+视频video 纯视频
                      * 
                      */
                     std::string GetSubType() const;
@@ -278,8 +274,8 @@ video 纯视频
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取房间绑定的群组ID
-                     * @return GroupId 房间绑定的群组ID
+                     * 获取课堂绑定的群组ID
+                     * @return GroupId 课堂绑定的群组ID
                      * 
                      */
                     std::string GetGroupId() const;
@@ -338,8 +334,8 @@ video 纯视频
                     bool VideoOrientationHasBeenSet() const;
 
                     /**
-                     * 获取该房间是否开启了课后评分功能。0：未开启  1：开启
-                     * @return IsGradingRequiredPostClass 该房间是否开启了课后评分功能。0：未开启  1：开启
+                     * 获取该课堂是否开启了课后评分功能。0：未开启  1：开启
+                     * @return IsGradingRequiredPostClass 该课堂是否开启了课后评分功能。0：未开启  1：开启
                      * 
                      */
                     int64_t GetIsGradingRequiredPostClass() const;
@@ -352,10 +348,8 @@ video 纯视频
                     bool IsGradingRequiredPostClassHasBeenSet() const;
 
                     /**
-                     * 获取房间类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (后续扩展)
-注：大班课的布局(layout)只有三分屏
-                     * @return RoomType 房间类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (后续扩展)
-注：大班课的布局(layout)只有三分屏
+                     * 获取课堂类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (后续扩展)注：大班课的布局(layout)只有三分屏
+                     * @return RoomType 课堂类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (后续扩展)注：大班课的布局(layout)只有三分屏
                      * 
                      */
                     int64_t GetRoomType() const;
@@ -538,19 +532,19 @@ video 纯视频
                 private:
 
                     /**
-                     * 房间名称。
+                     * 课堂名称。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 预定的房间开始时间，unix时间戳（秒）。
+                     * 预定的课堂开始时间，unix时间戳（秒）。
                      */
                     uint64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 预定的房间结束时间，unix时间戳（秒）。
+                     * 预定的课堂结束时间，unix时间戳（秒）。
                      */
                     uint64_t m_endTime;
                     bool m_endTimeHasBeenSet;
@@ -583,7 +577,7 @@ video 纯视频
                     bool m_resolutionHasBeenSet;
 
                     /**
-                     * 设置房间/课堂同时最大可与老师进行连麦互动的人数，该参数支持正式上课/开播前调用修改房间修改。小班课取值范围[0,16]，大班课取值范围[0,1]，当取值为0时表示当前课堂/直播，不支持连麦互动。
+                     * 设置课堂同时最大可与老师进行连麦互动的人数，该参数支持正式上课/开播前调用修改房间修改。小班课取值范围[0,16]，大班课取值范围[0,1]，当取值为0时表示当前课堂/直播，不支持连麦互动。
                      */
                     uint64_t m_maxMicNumber;
                     bool m_maxMicNumberHasBeenSet;
@@ -605,9 +599,7 @@ video 纯视频
                     bool m_audioQualityHasBeenSet;
 
                     /**
-                     * 房间子类型，可以有以下取值：
-videodoc 文档+视频
-video 纯视频
+                     * 课堂子类型，可以有以下取值：videodoc 文档+视频video 纯视频
                      */
                     std::string m_subType;
                     bool m_subTypeHasBeenSet;
@@ -640,7 +632,7 @@ video 纯视频
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 房间绑定的群组ID
+                     * 课堂绑定的群组ID
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
@@ -666,14 +658,13 @@ video 纯视频
                     bool m_videoOrientationHasBeenSet;
 
                     /**
-                     * 该房间是否开启了课后评分功能。0：未开启  1：开启
+                     * 该课堂是否开启了课后评分功能。0：未开启  1：开启
                      */
                     int64_t m_isGradingRequiredPostClass;
                     bool m_isGradingRequiredPostClassHasBeenSet;
 
                     /**
-                     * 房间类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (后续扩展)
-注：大班课的布局(layout)只有三分屏
+                     * 课堂类型: 0 小班课（默认值）; 1 大班课; 2 1V1 (后续扩展)注：大班课的布局(layout)只有三分屏
                      */
                     int64_t m_roomType;
                     bool m_roomTypeHasBeenSet;

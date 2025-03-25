@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskId 任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskId 任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AndroidInstanceId 实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAndroidInstanceId() const;
 
                     /**
                      * 设置实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _androidInstanceId 实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAndroidInstanceId(const std::string& _androidInstanceId);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
                      * 实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_androidInstanceId;
                     bool m_androidInstanceIdHasBeenSet;

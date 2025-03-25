@@ -48,14 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取名字
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParameterName 名字
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetParameterName() const;
 
                     /**
                      * 设置名字
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _parameterName 名字
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetParameterName(const std::string& _parameterName);
@@ -69,14 +73,18 @@ namespace TencentCloud
 
                     /**
                      * 获取值
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParameterValue 值
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetParameterValue() const;
 
                     /**
                      * 设置值
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _parameterValue 值
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetParameterValue(const std::string& _parameterValue);
@@ -90,14 +98,18 @@ namespace TencentCloud
 
                     /**
                      * 获取修改前的值
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return ParameterOldValue 修改前的值
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetParameterOldValue() const;
 
                     /**
                      * 设置修改前的值
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _parameterOldValue 修改前的值
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetParameterOldValue(const std::string& _parameterOldValue);
@@ -113,18 +125,21 @@ namespace TencentCloud
 
                     /**
                      * 名字
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_parameterName;
                     bool m_parameterNameHasBeenSet;
 
                     /**
                      * 值
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_parameterValue;
                     bool m_parameterValueHasBeenSet;
 
                     /**
                      * 修改前的值
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_parameterOldValue;
                     bool m_parameterOldValueHasBeenSet;

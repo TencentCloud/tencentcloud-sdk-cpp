@@ -174,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取工单完成时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FinishTime 工单完成时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFinishTime() const;
 
                     /**
                      * 设置工单完成时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _finishTime 工单完成时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFinishTime(const std::string& _finishTime);
@@ -237,7 +233,6 @@ namespace TencentCloud
 
                     /**
                      * 工单完成时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_finishTime;
                     bool m_finishTimeHasBeenSet;

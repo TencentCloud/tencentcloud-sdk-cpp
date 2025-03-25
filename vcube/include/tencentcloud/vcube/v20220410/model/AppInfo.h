@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppName 应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAppName() const;
 
                     /**
                      * 设置应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _appName 应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAppName(const std::string& _appName);
@@ -317,7 +313,6 @@ namespace TencentCloud
 
                     /**
                      * 应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_appName;
                     bool m_appNameHasBeenSet;

@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取策略id
-                     * @return Id 策略id
+                     * 获取授权策略规则id，可以从 [DescribeAuthorizationPolicies](https://cloud.tencent.com/document/api/1778/111074)接口获得。
+                     * @return Id 授权策略规则id，可以从 [DescribeAuthorizationPolicies](https://cloud.tencent.com/document/api/1778/111074)接口获得。
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
-                     * 设置策略id
-                     * @param _id 策略id
+                     * 设置授权策略规则id，可以从 [DescribeAuthorizationPolicies](https://cloud.tencent.com/document/api/1778/111074)接口获得。
+                     * @param _id 授权策略规则id，可以从 [DescribeAuthorizationPolicies](https://cloud.tencent.com/document/api/1778/111074)接口获得。
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -91,7 +91,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 策略id
+                     * 授权策略规则id，可以从 [DescribeAuthorizationPolicies](https://cloud.tencent.com/document/api/1778/111074)接口获得。
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;

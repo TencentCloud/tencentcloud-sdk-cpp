@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrderId 订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOrderId() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 订单号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_orderId;
                     bool m_orderIdHasBeenSet;

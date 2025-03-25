@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取优图资源包信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Resources 优图资源包信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<XMagicResource> GetResources() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取资源数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Count 资源数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCount() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 优图资源包信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<XMagicResource> m_resources;
                     bool m_resourcesHasBeenSet;
 
                     /**
                      * 资源数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_count;
                     bool m_countHasBeenSet;

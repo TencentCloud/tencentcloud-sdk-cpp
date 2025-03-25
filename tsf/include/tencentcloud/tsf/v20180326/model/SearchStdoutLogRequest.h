@@ -310,6 +310,27 @@ namespace TencentCloud
                      */
                     bool ScrollIdHasBeenSet() const;
 
+                    /**
+                     * 获取查询es使用searchAfter时，游标
+                     * @return SearchAfter 查询es使用searchAfter时，游标
+                     * 
+                     */
+                    std::vector<std::string> GetSearchAfter() const;
+
+                    /**
+                     * 设置查询es使用searchAfter时，游标
+                     * @param _searchAfter 查询es使用searchAfter时，游标
+                     * 
+                     */
+                    void SetSearchAfter(const std::vector<std::string>& _searchAfter);
+
+                    /**
+                     * 判断参数 SearchAfter 是否已赋值
+                     * @return SearchAfter 是否已赋值
+                     * 
+                     */
+                    bool SearchAfterHasBeenSet() const;
+
                 private:
 
                     /**
@@ -387,6 +408,12 @@ namespace TencentCloud
                      */
                     std::string m_scrollId;
                     bool m_scrollIdHasBeenSet;
+
+                    /**
+                     * 查询es使用searchAfter时，游标
+                     */
+                    std::vector<std::string> m_searchAfter;
+                    bool m_searchAfterHasBeenSet;
 
                 };
             }

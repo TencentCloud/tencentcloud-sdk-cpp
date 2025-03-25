@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取镜像 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AndroidInstanceImageId 镜像 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAndroidInstanceImageId() const;
 
                     /**
                      * 设置镜像 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _androidInstanceImageId 镜像 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAndroidInstanceImageId(const std::string& _androidInstanceImageId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取镜像名称，由业务方自定义，仅用于展示
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AndroidInstanceImageName 镜像名称，由业务方自定义，仅用于展示
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAndroidInstanceImageName() const;
 
                     /**
                      * 设置镜像名称，由业务方自定义，仅用于展示
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _androidInstanceImageName 镜像名称，由业务方自定义，仅用于展示
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAndroidInstanceImageName(const std::string& _androidInstanceImageName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取镜像状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AndroidInstanceImageState 镜像状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAndroidInstanceImageState() const;
 
                     /**
                      * 设置镜像状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _androidInstanceImageState 镜像状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAndroidInstanceImageState(const std::string& _androidInstanceImageState);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取镜像可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AndroidInstanceImageZone 镜像可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAndroidInstanceImageZone() const;
 
                     /**
                      * 设置镜像可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _androidInstanceImageZone 镜像可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAndroidInstanceImageZone(const std::string& _androidInstanceImageZone);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 镜像 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_androidInstanceImageId;
                     bool m_androidInstanceImageIdHasBeenSet;
 
                     /**
                      * 镜像名称，由业务方自定义，仅用于展示
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_androidInstanceImageName;
                     bool m_androidInstanceImageNameHasBeenSet;
 
                     /**
                      * 镜像状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_androidInstanceImageState;
                     bool m_androidInstanceImageStateHasBeenSet;
 
                     /**
                      * 镜像可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_androidInstanceImageZone;
                     bool m_androidInstanceImageZoneHasBeenSet;

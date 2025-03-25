@@ -50,11 +50,9 @@ namespace TencentCloud
                      * 获取目录级别，支持参数：
 first：一级目录
 second：二级目录
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CatalogueLevel 目录级别，支持参数：
 first：一级目录
 second：二级目录
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCatalogueLevel() const;
@@ -63,11 +61,9 @@ second：二级目录
                      * 设置目录级别，支持参数：
 first：一级目录
 second：二级目录
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _catalogueLevel 目录级别，支持参数：
 first：一级目录
 second：二级目录
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCatalogueLevel(const std::string& _catalogueLevel);
@@ -81,18 +77,14 @@ second：二级目录
 
                     /**
                      * 获取目录名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CatalogueName 目录名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCatalogueName() const;
 
                     /**
                      * 设置目录名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _catalogueName 目录名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCatalogueName(const std::string& _catalogueName);
@@ -110,14 +102,12 @@ second：二级目录
                      * 目录级别，支持参数：
 first：一级目录
 second：二级目录
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_catalogueLevel;
                     bool m_catalogueLevelHasBeenSet;
 
                     /**
                      * 目录名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_catalogueName;
                     bool m_catalogueNameHasBeenSet;

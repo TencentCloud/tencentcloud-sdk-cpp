@@ -25,7 +25,9 @@ using namespace std;
 ActionAlterUserRequest::ActionAlterUserRequest() :
     m_userInfoHasBeenSet(false),
     m_apiTypeHasBeenSet(false),
-    m_userPrivilegeHasBeenSet(false)
+    m_userPrivilegeHasBeenSet(false),
+    m_computeGroupsHasBeenSet(false),
+    m_instanceIdHasBeenSet(false)
 {
 }
 
@@ -59,6 +61,27 @@ string ActionAlterUserRequest::ToJsonString() const
         string key = "UserPrivilege";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_userPrivilege, allocator);
+    }
+
+    if (m_computeGroupsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComputeGroups";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_computeGroups.begin(); itr != m_computeGroups.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -115,6 +138,38 @@ void ActionAlterUserRequest::SetUserPrivilege(const int64_t& _userPrivilege)
 bool ActionAlterUserRequest::UserPrivilegeHasBeenSet() const
 {
     return m_userPrivilegeHasBeenSet;
+}
+
+vector<string> ActionAlterUserRequest::GetComputeGroups() const
+{
+    return m_computeGroups;
+}
+
+void ActionAlterUserRequest::SetComputeGroups(const vector<string>& _computeGroups)
+{
+    m_computeGroups = _computeGroups;
+    m_computeGroupsHasBeenSet = true;
+}
+
+bool ActionAlterUserRequest::ComputeGroupsHasBeenSet() const
+{
+    return m_computeGroupsHasBeenSet;
+}
+
+string ActionAlterUserRequest::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void ActionAlterUserRequest::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool ActionAlterUserRequest::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
 }
 
 

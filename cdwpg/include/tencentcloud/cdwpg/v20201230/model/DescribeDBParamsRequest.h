@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool NodeTypesHasBeenSet() const;
 
                     /**
-                     * 获取range::(0,100]
-                     * @return Limit range::(0,100]
+                     * 获取分页参数，分页步长，默认为10 示例值：10
+                     * @return Limit 分页参数，分页步长，默认为10 示例值：10
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置range::(0,100]
-                     * @param _limit range::(0,100]
+                     * 设置分页参数，分页步长，默认为10 示例值：10
+                     * @param _limit 分页参数，分页步长，默认为10 示例值：10
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取range::[0,INF)
-                     * @return Offset range::[0,INF)
+                     * 获取分页参数，第一页为0，第二页为10
+                     * @return Offset 分页参数，第一页为0，第二页为10
                      * 
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置range::[0,INF)
-                     * @param _offset range::[0,INF)
+                     * 设置分页参数，第一页为0，第二页为10
+                     * @param _offset 分页参数，第一页为0，第二页为10
                      * 
                      */
                     void SetOffset(const int64_t& _offset);
@@ -135,13 +135,13 @@ namespace TencentCloud
                     bool m_nodeTypesHasBeenSet;
 
                     /**
-                     * range::(0,100]
+                     * 分页参数，分页步长，默认为10 示例值：10
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * range::[0,INF)
+                     * 分页参数，第一页为0，第二页为10
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;

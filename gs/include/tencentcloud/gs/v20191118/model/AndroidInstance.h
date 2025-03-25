@@ -91,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AndroidInstanceZone 实例可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAndroidInstanceZone() const;
 
                     /**
                      * 设置实例可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _androidInstanceZone 实例可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAndroidInstanceZone(const std::string& _androidInstanceZone);
@@ -158,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例镜像 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AndroidInstanceImageId 实例镜像 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAndroidInstanceImageId() const;
 
                     /**
                      * 设置实例镜像 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _androidInstanceImageId 实例镜像 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAndroidInstanceImageId(const std::string& _androidInstanceImageId);
@@ -344,7 +336,6 @@ namespace TencentCloud
 
                     /**
                      * 实例可用区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_androidInstanceZone;
                     bool m_androidInstanceZoneHasBeenSet;
@@ -363,7 +354,6 @@ namespace TencentCloud
 
                     /**
                      * 实例镜像 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_androidInstanceImageId;
                     bool m_androidInstanceImageIdHasBeenSet;

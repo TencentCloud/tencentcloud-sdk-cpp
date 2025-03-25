@@ -59,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取app名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppName app名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAppName() const;
@@ -75,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取ios包名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BundleId ios包名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBundleId() const;
@@ -105,9 +101,7 @@ namespace TencentCloud
 
                     /**
                      * 获取有效时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Duration 有效时长
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDuration() const;
@@ -177,9 +171,7 @@ namespace TencentCloud
 
                     /**
                      * 获取license剩余天数，最后一天以及过期显示0
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResidueDay license剩余天数，最后一天以及过期显示0
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetResidueDay() const;
@@ -193,9 +185,7 @@ namespace TencentCloud
 
                     /**
                      * 获取license剩余秒数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Residue license剩余秒数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetResidue() const;
@@ -217,14 +207,12 @@ namespace TencentCloud
 
                     /**
                      * app名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_appName;
                     bool m_appNameHasBeenSet;
 
                     /**
                      * ios包名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bundleId;
                     bool m_bundleIdHasBeenSet;
@@ -237,7 +225,6 @@ namespace TencentCloud
 
                     /**
                      * 有效时长
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_duration;
                     bool m_durationHasBeenSet;
@@ -268,14 +255,12 @@ namespace TencentCloud
 
                     /**
                      * license剩余天数，最后一天以及过期显示0
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_residueDay;
                     bool m_residueDayHasBeenSet;
 
                     /**
                      * license剩余秒数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_residue;
                     bool m_residueHasBeenSet;

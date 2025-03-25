@@ -48,18 +48,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取1
+                     * 获取机型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SpecName 1
+                     * @return SpecName 机型
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSpecName() const;
 
                     /**
-                     * 设置1
+                     * 设置机型
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _specName 1
+                     * @param _specName 机型
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -73,18 +73,18 @@ namespace TencentCloud
                     bool SpecNameHasBeenSet() const;
 
                     /**
-                     * 获取1
+                     * 获取磁盘信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DataDisk 1
+                     * @return DataDisk 磁盘信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DiskSpecPlus GetDataDisk() const;
 
                     /**
-                     * 设置1
+                     * 设置磁盘信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _dataDisk 1
+                     * @param _dataDisk 磁盘信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -98,18 +98,18 @@ namespace TencentCloud
                     bool DataDiskHasBeenSet() const;
 
                     /**
-                     * 获取1
+                     * 获取机器个数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CvmCount 1
+                     * @return CvmCount 机器个数
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCvmCount() const;
 
                     /**
-                     * 设置1
+                     * 设置机器个数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _cvmCount 1
+                     * @param _cvmCount 机器个数
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -125,21 +125,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 1
+                     * 机型
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_specName;
                     bool m_specNameHasBeenSet;
 
                     /**
-                     * 1
+                     * 磁盘信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DiskSpecPlus m_dataDisk;
                     bool m_dataDiskHasBeenSet;
 
                     /**
-                     * 1
+                     * 机器个数
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_cvmCount;

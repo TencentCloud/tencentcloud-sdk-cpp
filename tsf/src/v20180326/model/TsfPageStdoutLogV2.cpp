@@ -24,7 +24,8 @@ TsfPageStdoutLogV2::TsfPageStdoutLogV2() :
     m_totalCountHasBeenSet(false),
     m_contentHasBeenSet(false),
     m_scrollIdHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_searchAfterHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,19 @@ CoreInternalOutcome TsfPageStdoutLogV2::Deserialize(const rapidjson::Value &valu
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("SearchAfter") && !value["SearchAfter"].IsNull())
+    {
+        if (!value["SearchAfter"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TsfPageStdoutLogV2.SearchAfter` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SearchAfter"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_searchAfter.push_back((*itr).GetString());
+        }
+        m_searchAfterHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -127,6 +141,19 @@ void TsfPageStdoutLogV2::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_searchAfterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SearchAfter";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_searchAfter.begin(); itr != m_searchAfter.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -194,5 +221,21 @@ void TsfPageStdoutLogV2::SetStatus(const string& _status)
 bool TsfPageStdoutLogV2::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+vector<string> TsfPageStdoutLogV2::GetSearchAfter() const
+{
+    return m_searchAfter;
+}
+
+void TsfPageStdoutLogV2::SetSearchAfter(const vector<string>& _searchAfter)
+{
+    m_searchAfter = _searchAfter;
+    m_searchAfterHasBeenSet = true;
+}
+
+bool TsfPageStdoutLogV2::SearchAfterHasBeenSet() const
+{
+    return m_searchAfterHasBeenSet;
 }
 

@@ -1173,6 +1173,27 @@ Modify 集群变更中；
                      */
                     bool CNSummaryHasBeenSet() const;
 
+                    /**
+                     * 获取计算组个数
+                     * @return ComputeGroupCount 计算组个数
+                     * 
+                     */
+                    int64_t GetComputeGroupCount() const;
+
+                    /**
+                     * 设置计算组个数
+                     * @param _computeGroupCount 计算组个数
+                     * 
+                     */
+                    void SetComputeGroupCount(const int64_t& _computeGroupCount);
+
+                    /**
+                     * 判断参数 ComputeGroupCount 是否已赋值
+                     * @return ComputeGroupCount 是否已赋值
+                     * 
+                     */
+                    bool ComputeGroupCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1494,6 +1515,12 @@ Modify 集群变更中；
                      */
                     NodesSummary m_cNSummary;
                     bool m_cNSummaryHasBeenSet;
+
+                    /**
+                     * 计算组个数
+                     */
+                    int64_t m_computeGroupCount;
+                    bool m_computeGroupCountHasBeenSet;
 
                 };
             }

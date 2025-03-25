@@ -127,6 +127,48 @@ namespace TencentCloud
                      */
                     bool WhiteHostHasBeenSet() const;
 
+                    /**
+                     * 获取更新类型，默认0，1为更新绑定计算组
+                     * @return UpdateType 更新类型，默认0，1为更新绑定计算组
+                     * 
+                     */
+                    int64_t GetUpdateType() const;
+
+                    /**
+                     * 设置更新类型，默认0，1为更新绑定计算组
+                     * @param _updateType 更新类型，默认0，1为更新绑定计算组
+                     * 
+                     */
+                    void SetUpdateType(const int64_t& _updateType);
+
+                    /**
+                     * 判断参数 UpdateType 是否已赋值
+                     * @return UpdateType 是否已赋值
+                     * 
+                     */
+                    bool UpdateTypeHasBeenSet() const;
+
+                    /**
+                     * 获取需绑定计算组列表
+                     * @return UpdateComputeGroups 需绑定计算组列表
+                     * 
+                     */
+                    std::vector<std::string> GetUpdateComputeGroups() const;
+
+                    /**
+                     * 设置需绑定计算组列表
+                     * @param _updateComputeGroups 需绑定计算组列表
+                     * 
+                     */
+                    void SetUpdateComputeGroups(const std::vector<std::string>& _updateComputeGroups);
+
+                    /**
+                     * 判断参数 UpdateComputeGroups 是否已赋值
+                     * @return UpdateComputeGroups 是否已赋值
+                     * 
+                     */
+                    bool UpdateComputeGroupsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -152,6 +194,18 @@ namespace TencentCloud
                      */
                     std::string m_whiteHost;
                     bool m_whiteHostHasBeenSet;
+
+                    /**
+                     * 更新类型，默认0，1为更新绑定计算组
+                     */
+                    int64_t m_updateType;
+                    bool m_updateTypeHasBeenSet;
+
+                    /**
+                     * 需绑定计算组列表
+                     */
+                    std::vector<std::string> m_updateComputeGroups;
+                    bool m_updateComputeGroupsHasBeenSet;
 
                 };
             }

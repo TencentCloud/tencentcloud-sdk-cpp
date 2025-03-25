@@ -153,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取制品创建至今时间长度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DurationDays 制品创建至今时间长度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDurationDays() const;
 
                     /**
                      * 设置制品创建至今时间长度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _durationDays 制品创建至今时间长度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDurationDays(const std::string& _durationDays);
@@ -399,7 +395,6 @@ namespace TencentCloud
 
                     /**
                      * 制品创建至今时间长度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_durationDays;
                     bool m_durationDaysHasBeenSet;

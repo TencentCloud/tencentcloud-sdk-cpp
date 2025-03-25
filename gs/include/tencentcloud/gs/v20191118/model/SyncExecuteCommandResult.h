@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取命令执行输出内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Output 命令执行输出内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOutput() const;
 
                     /**
                      * 设置命令执行输出内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _output 命令执行输出内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutput(const std::string& _output);
@@ -123,7 +119,6 @@ namespace TencentCloud
 
                     /**
                      * 命令执行输出内容
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_output;
                     bool m_outputHasBeenSet;

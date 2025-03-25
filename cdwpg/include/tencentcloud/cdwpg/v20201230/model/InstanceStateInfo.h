@@ -247,18 +247,18 @@ namespace TencentCloud
                     bool BackupStatusHasBeenSet() const;
 
                     /**
-                     * 获取1
+                     * 获取请求id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RequestId 1
+                     * @return RequestId 请求id
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRequestId() const;
 
                     /**
-                     * 设置1
+                     * 设置请求id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _requestId 1
+                     * @param _requestId 请求id
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -272,18 +272,18 @@ namespace TencentCloud
                     bool RequestIdHasBeenSet() const;
 
                     /**
-                     * 获取1
+                     * 获取集群是否有备份中任务，有为1,无为0
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BackupOpenStatus 1
+                     * @return BackupOpenStatus 集群是否有备份中任务，有为1,无为0
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBackupOpenStatus() const;
 
                     /**
-                     * 设置1
+                     * 设置集群是否有备份中任务，有为1,无为0
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _backupOpenStatus 1
+                     * @param _backupOpenStatus 集群是否有备份中任务，有为1,无为0
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -355,14 +355,14 @@ namespace TencentCloud
                     bool m_backupStatusHasBeenSet;
 
                     /**
-                     * 1
+                     * 请求id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_requestId;
                     bool m_requestIdHasBeenSet;
 
                     /**
-                     * 1
+                     * 集群是否有备份中任务，有为1,无为0
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_backupOpenStatus;

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取交易ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TxId 交易ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTxId() const;
 
                     /**
                      * 设置交易ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _txId 交易ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTxId(const std::string& _txId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取合约名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChaincodeName 合约名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetChaincodeName() const;
 
                     /**
                      * 设置合约名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _chaincodeName 合约名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetChaincodeName(const std::string& _chaincodeName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取交易发送者
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Sender 交易发送者
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSender() const;
 
                     /**
                      * 设置交易发送者
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sender 交易发送者
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSender(const std::string& _sender);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取交易创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 交易创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置交易创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 交易创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取交易所在区块高度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BlockHeight 交易所在区块高度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetBlockHeight() const;
 
                     /**
                      * 设置交易所在区块高度
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _blockHeight 交易所在区块高度
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBlockHeight(const int64_t& _blockHeight);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取交易在区块中的序号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TxIndex 交易在区块中的序号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTxIndex() const;
 
                     /**
                      * 设置交易在区块中的序号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _txIndex 交易在区块中的序号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTxIndex(const int64_t& _txIndex);
@@ -200,42 +176,36 @@ namespace TencentCloud
 
                     /**
                      * 交易ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_txId;
                     bool m_txIdHasBeenSet;
 
                     /**
                      * 合约名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_chaincodeName;
                     bool m_chaincodeNameHasBeenSet;
 
                     /**
                      * 交易发送者
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sender;
                     bool m_senderHasBeenSet;
 
                     /**
                      * 交易创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 交易所在区块高度
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_blockHeight;
                     bool m_blockHeightHasBeenSet;
 
                     /**
                      * 交易在区块中的序号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_txIndex;
                     bool m_txIndexHasBeenSet;

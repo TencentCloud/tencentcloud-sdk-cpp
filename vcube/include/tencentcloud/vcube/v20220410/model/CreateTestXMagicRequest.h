@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用id
-                     * @return ApplicationId 应用id
+                     * 获取将腾讯特效创建到哪个应用下
+                     * @return ApplicationId 将腾讯特效创建到哪个应用下
                      * 
                      */
                     uint64_t GetApplicationId() const;
 
                     /**
-                     * 设置应用id
-                     * @param _applicationId 应用id
+                     * 设置将腾讯特效创建到哪个应用下
+                     * @param _applicationId 将腾讯特效创建到哪个应用下
                      * 
                      */
                     void SetApplicationId(const uint64_t& _applicationId);
@@ -150,7 +150,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用id
+                     * 将腾讯特效创建到哪个应用下
                      */
                     uint64_t m_applicationId;
                     bool m_applicationIdHasBeenSet;

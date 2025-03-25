@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取对象属性名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PropertyName 对象属性名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPropertyName() const;
 
                     /**
                      * 设置对象属性名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _propertyName 对象属性名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPropertyName(const std::string& _propertyName);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取对象属性值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PropertyValue 对象属性值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPropertyValue() const;
 
                     /**
                      * 设置对象属性值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _propertyValue 对象属性值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPropertyValue(const std::string& _propertyValue);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 对象属性名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_propertyName;
                     bool m_propertyNameHasBeenSet;
 
                     /**
                      * 对象属性值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_propertyValue;
                     bool m_propertyValueHasBeenSet;

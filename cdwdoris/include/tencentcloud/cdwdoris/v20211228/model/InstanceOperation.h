@@ -277,6 +277,27 @@ namespace TencentCloud
                      */
                     bool OperationDetailHasBeenSet() const;
 
+                    /**
+                     * 获取计算组id
+                     * @return ComputerGroupId 计算组id
+                     * 
+                     */
+                    std::string GetComputerGroupId() const;
+
+                    /**
+                     * 设置计算组id
+                     * @param _computerGroupId 计算组id
+                     * 
+                     */
+                    void SetComputerGroupId(const std::string& _computerGroupId);
+
+                    /**
+                     * 判断参数 ComputerGroupId 是否已赋值
+                     * @return ComputerGroupId 是否已赋值
+                     * 
+                     */
+                    bool ComputerGroupIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -344,6 +365,12 @@ namespace TencentCloud
                      */
                     std::string m_operationDetail;
                     bool m_operationDetailHasBeenSet;
+
+                    /**
+                     * 计算组id
+                     */
+                    std::string m_computerGroupId;
+                    bool m_computerGroupIdHasBeenSet;
 
                 };
             }

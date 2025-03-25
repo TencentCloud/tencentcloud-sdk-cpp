@@ -27,7 +27,8 @@ DescribeInstanceOperationsRequest::DescribeInstanceOperationsRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+    m_endTimeHasBeenSet(false),
+    m_computeGroupIdHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string DescribeInstanceOperationsRequest::ToJsonString() const
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_computeGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComputeGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_computeGroupId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +173,22 @@ void DescribeInstanceOperationsRequest::SetEndTime(const string& _endTime)
 bool DescribeInstanceOperationsRequest::EndTimeHasBeenSet() const
 {
     return m_endTimeHasBeenSet;
+}
+
+string DescribeInstanceOperationsRequest::GetComputeGroupId() const
+{
+    return m_computeGroupId;
+}
+
+void DescribeInstanceOperationsRequest::SetComputeGroupId(const string& _computeGroupId)
+{
+    m_computeGroupId = _computeGroupId;
+    m_computeGroupIdHasBeenSet = true;
+}
+
+bool DescribeInstanceOperationsRequest::ComputeGroupIdHasBeenSet() const
+{
+    return m_computeGroupIdHasBeenSet;
 }
 
 

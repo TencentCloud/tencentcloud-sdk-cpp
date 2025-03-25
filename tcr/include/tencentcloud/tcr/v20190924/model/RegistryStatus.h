@@ -91,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取附加状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Conditions 附加状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<RegistryCondition> GetConditions() const;
 
                     /**
                      * 设置附加状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _conditions 附加状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConditions(const std::vector<RegistryCondition>& _conditions);
@@ -130,7 +126,6 @@ namespace TencentCloud
 
                     /**
                      * 附加状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<RegistryCondition> m_conditions;
                     bool m_conditionsHasBeenSet;

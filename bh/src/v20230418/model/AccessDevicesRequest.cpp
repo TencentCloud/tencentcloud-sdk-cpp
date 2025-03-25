@@ -23,10 +23,11 @@ using namespace TencentCloud::Bh::V20230418::Model;
 using namespace std;
 
 AccessDevicesRequest::AccessDevicesRequest() :
-    m_instanceIdHasBeenSet(false),
     m_accountHasBeenSet(false),
     m_loginAccountHasBeenSet(false),
     m_loginPasswordHasBeenSet(false),
+    m_deviceIdHasBeenSet(false),
+    m_instanceIdHasBeenSet(false),
     m_passwordHasBeenSet(false),
     m_privateKeyHasBeenSet(false),
     m_privateKeyPasswordHasBeenSet(false),
@@ -34,7 +35,8 @@ AccessDevicesRequest::AccessDevicesRequest() :
     m_driversHasBeenSet(false),
     m_widthHasBeenSet(false),
     m_heightHasBeenSet(false),
-    m_intranetAccessHasBeenSet(false)
+    m_intranetAccessHasBeenSet(false),
+    m_autoManageAccessCredentialHasBeenSet(false)
 {
 }
 
@@ -44,14 +46,6 @@ string AccessDevicesRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_instanceIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "InstanceId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_accountHasBeenSet)
     {
@@ -75,6 +69,22 @@ string AccessDevicesRequest::ToJsonString() const
         string key = "LoginPassword";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_loginPassword.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deviceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_deviceId, allocator);
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_passwordHasBeenSet)
@@ -146,6 +156,14 @@ string AccessDevicesRequest::ToJsonString() const
         d.AddMember(iKey, m_intranetAccess, allocator);
     }
 
+    if (m_autoManageAccessCredentialHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoManageAccessCredential";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoManageAccessCredential, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -153,22 +171,6 @@ string AccessDevicesRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string AccessDevicesRequest::GetInstanceId() const
-{
-    return m_instanceId;
-}
-
-void AccessDevicesRequest::SetInstanceId(const string& _instanceId)
-{
-    m_instanceId = _instanceId;
-    m_instanceIdHasBeenSet = true;
-}
-
-bool AccessDevicesRequest::InstanceIdHasBeenSet() const
-{
-    return m_instanceIdHasBeenSet;
-}
 
 string AccessDevicesRequest::GetAccount() const
 {
@@ -216,6 +218,38 @@ void AccessDevicesRequest::SetLoginPassword(const string& _loginPassword)
 bool AccessDevicesRequest::LoginPasswordHasBeenSet() const
 {
     return m_loginPasswordHasBeenSet;
+}
+
+uint64_t AccessDevicesRequest::GetDeviceId() const
+{
+    return m_deviceId;
+}
+
+void AccessDevicesRequest::SetDeviceId(const uint64_t& _deviceId)
+{
+    m_deviceId = _deviceId;
+    m_deviceIdHasBeenSet = true;
+}
+
+bool AccessDevicesRequest::DeviceIdHasBeenSet() const
+{
+    return m_deviceIdHasBeenSet;
+}
+
+string AccessDevicesRequest::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void AccessDevicesRequest::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool AccessDevicesRequest::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
 }
 
 string AccessDevicesRequest::GetPassword() const
@@ -344,6 +378,22 @@ void AccessDevicesRequest::SetIntranetAccess(const bool& _intranetAccess)
 bool AccessDevicesRequest::IntranetAccessHasBeenSet() const
 {
     return m_intranetAccessHasBeenSet;
+}
+
+bool AccessDevicesRequest::GetAutoManageAccessCredential() const
+{
+    return m_autoManageAccessCredential;
+}
+
+void AccessDevicesRequest::SetAutoManageAccessCredential(const bool& _autoManageAccessCredential)
+{
+    m_autoManageAccessCredential = _autoManageAccessCredential;
+    m_autoManageAccessCredentialHasBeenSet = true;
+}
+
+bool AccessDevicesRequest::AutoManageAccessCredentialHasBeenSet() const
+{
+    return m_autoManageAccessCredentialHasBeenSet;
 }
 
 

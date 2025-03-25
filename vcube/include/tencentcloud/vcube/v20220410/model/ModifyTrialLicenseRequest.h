@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取执照ID
-                     * @return LicenseId 执照ID
+                     * 获取授权ID
+                     * @return LicenseId 授权ID
                      * 
                      */
                     std::string GetLicenseId() const;
 
                     /**
-                     * 设置执照ID
-                     * @param _licenseId 执照ID
+                     * 设置授权ID
+                     * @param _licenseId 授权ID
                      * 
                      */
                     void SetLicenseId(const std::string& _licenseId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 执照ID
+                     * 授权ID
                      */
                     std::string m_licenseId;
                     bool m_licenseIdHasBeenSet;

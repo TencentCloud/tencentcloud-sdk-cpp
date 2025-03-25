@@ -151,6 +151,27 @@ namespace TencentCloud
                      */
                     bool XMagicTypeHasBeenSet() const;
 
+                    /**
+                     * 获取vod：点播 live：直播
+                     * @return BizType vod：点播 live：直播
+                     * 
+                     */
+                    std::string GetBizType() const;
+
+                    /**
+                     * 设置vod：点播 live：直播
+                     * @param _bizType vod：点播 live：直播
+                     * 
+                     */
+                    void SetBizType(const std::string& _bizType);
+
+                    /**
+                     * 判断参数 BizType 是否已赋值
+                     * @return BizType 是否已赋值
+                     * 
+                     */
+                    bool BizTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -182,6 +203,12 @@ namespace TencentCloud
                      */
                     std::string m_xMagicType;
                     bool m_xMagicTypeHasBeenSet;
+
+                    /**
+                     * vod：点播 live：直播
+                     */
+                    std::string m_bizType;
+                    bool m_bizTypeHasBeenSet;
 
                 };
             }

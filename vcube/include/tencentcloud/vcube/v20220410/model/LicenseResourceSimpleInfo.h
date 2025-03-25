@@ -137,18 +137,14 @@ namespace TencentCloud
 
                     /**
                      * 获取此license资源的开始生效时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 此license资源的开始生效时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置此license资源的开始生效时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _startTime 此license资源的开始生效时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStartTime(const std::string& _startTime);
@@ -162,18 +158,14 @@ namespace TencentCloud
 
                     /**
                      * 获取此license资源的生效结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 此license资源的生效结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置此license资源的生效结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endTime 此license资源的生效结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -229,18 +221,14 @@ namespace TencentCloud
 
                     /**
                      * 获取此资源是否可用于续期和更新有效期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsUse 此资源是否可用于续期和更新有效期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsUse() const;
 
                     /**
                      * 设置此资源是否可用于续期和更新有效期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isUse 此资源是否可用于续期和更新有效期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsUse(const bool& _isUse);
@@ -254,18 +242,14 @@ namespace TencentCloud
 
                     /**
                      * 获取此资源的状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 此资源的状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStatus() const;
 
                     /**
                      * 设置此资源的状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 此资源的状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const uint64_t& _status);
@@ -304,18 +288,14 @@ namespace TencentCloud
 
                     /**
                      * 获取功能模块名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 功能模块名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置功能模块名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 功能模块名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -329,18 +309,14 @@ namespace TencentCloud
 
                     /**
                      * 获取功能模块类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 功能模块类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置功能模块类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 功能模块类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -379,18 +355,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceId 资源id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置资源id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceId 资源id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -404,18 +376,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自动续费状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoRenewFlag 自动续费状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAutoRenewFlag() const;
 
                     /**
                      * 设置自动续费状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _autoRenewFlag 自动续费状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAutoRenewFlag(const int64_t& _autoRenewFlag);
@@ -456,14 +424,12 @@ namespace TencentCloud
 
                     /**
                      * 此license资源的开始生效时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
                      * 此license资源的生效结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
@@ -482,14 +448,12 @@ namespace TencentCloud
 
                     /**
                      * 此资源是否可用于续期和更新有效期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isUse;
                     bool m_isUseHasBeenSet;
 
                     /**
                      * 此资源的状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
@@ -503,14 +467,12 @@ namespace TencentCloud
 
                     /**
                      * 功能模块名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 功能模块类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -524,14 +486,12 @@ namespace TencentCloud
 
                     /**
                      * 资源id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
                      * 自动续费状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_autoRenewFlag;
                     bool m_autoRenewFlagHasBeenSet;

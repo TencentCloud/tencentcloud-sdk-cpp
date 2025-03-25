@@ -59,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取1: Illegal（名称非法）, 2:Reserved（名字保留）, 3:Existed（名字已存在）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DetailCode 1: Illegal（名称非法）, 2:Reserved（名字保留）, 3:Existed（名字已存在）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDetailCode() const;
@@ -83,7 +81,6 @@ namespace TencentCloud
 
                     /**
                      * 1: Illegal（名称非法）, 2:Reserved（名字保留）, 3:Existed（名字已存在）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_detailCode;
                     bool m_detailCodeHasBeenSet;

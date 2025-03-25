@@ -87,18 +87,18 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取目标组的默认端口， 后续添加服务器时可使用该默认端口。Port和TargetGroupInstances.N中的port二者必填其一。
+                     * 获取目标组的默认端口， 后续添加服务器时可使用该默认端口。全监听目标组不支持此参数，非全监听目标组Port和TargetGroupInstances.N中的port二者必填其一。
 
-                     * @return Port 目标组的默认端口， 后续添加服务器时可使用该默认端口。Port和TargetGroupInstances.N中的port二者必填其一。
+                     * @return Port 目标组的默认端口， 后续添加服务器时可使用该默认端口。全监听目标组不支持此参数，非全监听目标组Port和TargetGroupInstances.N中的port二者必填其一。
 
                      * 
                      */
                     uint64_t GetPort() const;
 
                     /**
-                     * 设置目标组的默认端口， 后续添加服务器时可使用该默认端口。Port和TargetGroupInstances.N中的port二者必填其一。
+                     * 设置目标组的默认端口， 后续添加服务器时可使用该默认端口。全监听目标组不支持此参数，非全监听目标组Port和TargetGroupInstances.N中的port二者必填其一。
 
-                     * @param _port 目标组的默认端口， 后续添加服务器时可使用该默认端口。Port和TargetGroupInstances.N中的port二者必填其一。
+                     * @param _port 目标组的默认端口， 后续添加服务器时可使用该默认端口。全监听目标组不支持此参数，非全监听目标组Port和TargetGroupInstances.N中的port二者必填其一。
 
                      * 
                      */
@@ -236,6 +236,27 @@ namespace TencentCloud
                      */
                     bool WeightHasBeenSet() const;
 
+                    /**
+                     * 获取全监听目标组标识，为true表示是全监听目标组，false表示不是全监听目标组。
+                     * @return FullListenSwitch 全监听目标组标识，为true表示是全监听目标组，false表示不是全监听目标组。
+                     * 
+                     */
+                    bool GetFullListenSwitch() const;
+
+                    /**
+                     * 设置全监听目标组标识，为true表示是全监听目标组，false表示不是全监听目标组。
+                     * @param _fullListenSwitch 全监听目标组标识，为true表示是全监听目标组，false表示不是全监听目标组。
+                     * 
+                     */
+                    void SetFullListenSwitch(const bool& _fullListenSwitch);
+
+                    /**
+                     * 判断参数 FullListenSwitch 是否已赋值
+                     * @return FullListenSwitch 是否已赋值
+                     * 
+                     */
+                    bool FullListenSwitchHasBeenSet() const;
+
                 private:
 
                     /**
@@ -251,7 +272,7 @@ namespace TencentCloud
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 目标组的默认端口， 后续添加服务器时可使用该默认端口。Port和TargetGroupInstances.N中的port二者必填其一。
+                     * 目标组的默认端口， 后续添加服务器时可使用该默认端口。全监听目标组不支持此参数，非全监听目标组Port和TargetGroupInstances.N中的port二者必填其一。
 
                      */
                     uint64_t m_port;
@@ -291,6 +312,12 @@ namespace TencentCloud
                      */
                     uint64_t m_weight;
                     bool m_weightHasBeenSet;
+
+                    /**
+                     * 全监听目标组标识，为true表示是全监听目标组，false表示不是全监听目标组。
+                     */
+                    bool m_fullListenSwitch;
+                    bool m_fullListenSwitchHasBeenSet;
 
                 };
             }

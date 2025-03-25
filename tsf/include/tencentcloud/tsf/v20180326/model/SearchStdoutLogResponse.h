@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取标准输出日志列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 标准输出日志列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TsfPageStdoutLogV2 GetResult() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 标准输出日志列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TsfPageStdoutLogV2 m_result;
                     bool m_resultHasBeenSet;

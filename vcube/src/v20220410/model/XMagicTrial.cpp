@@ -25,7 +25,8 @@ XMagicTrial::XMagicTrial() :
     m_trialCountHasBeenSet(false),
     m_durationHasBeenSet(false),
     m_planHasBeenSet(false),
-    m_xMagicTypeHasBeenSet(false)
+    m_xMagicTypeHasBeenSet(false),
+    m_bizTypeHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome XMagicTrial::Deserialize(const rapidjson::Value &value)
         m_xMagicTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("BizType") && !value["BizType"].IsNull())
+    {
+        if (!value["BizType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `XMagicTrial.BizType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_bizType = string(value["BizType"].GetString());
+        m_bizTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void XMagicTrial::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "XMagicType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_xMagicType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bizTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BizType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_bizType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void XMagicTrial::SetXMagicType(const string& _xMagicType)
 bool XMagicTrial::XMagicTypeHasBeenSet() const
 {
     return m_xMagicTypeHasBeenSet;
+}
+
+string XMagicTrial::GetBizType() const
+{
+    return m_bizType;
+}
+
+void XMagicTrial::SetBizType(const string& _bizType)
+{
+    m_bizType = _bizType;
+    m_bizTypeHasBeenSet = true;
+}
+
+bool XMagicTrial::BizTypeHasBeenSet() const
+{
+    return m_bizTypeHasBeenSet;
 }
 

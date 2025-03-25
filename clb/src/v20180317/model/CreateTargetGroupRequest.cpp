@@ -30,7 +30,8 @@ CreateTargetGroupRequest::CreateTargetGroupRequest() :
     m_typeHasBeenSet(false),
     m_protocolHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_weightHasBeenSet(false)
+    m_weightHasBeenSet(false),
+    m_fullListenSwitchHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,14 @@ string CreateTargetGroupRequest::ToJsonString() const
         string key = "Weight";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_weight, allocator);
+    }
+
+    if (m_fullListenSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FullListenSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_fullListenSwitch, allocator);
     }
 
 
@@ -253,6 +262,22 @@ void CreateTargetGroupRequest::SetWeight(const uint64_t& _weight)
 bool CreateTargetGroupRequest::WeightHasBeenSet() const
 {
     return m_weightHasBeenSet;
+}
+
+bool CreateTargetGroupRequest::GetFullListenSwitch() const
+{
+    return m_fullListenSwitch;
+}
+
+void CreateTargetGroupRequest::SetFullListenSwitch(const bool& _fullListenSwitch)
+{
+    m_fullListenSwitch = _fullListenSwitch;
+    m_fullListenSwitchHasBeenSet = true;
+}
+
+bool CreateTargetGroupRequest::FullListenSwitchHasBeenSet() const
+{
+    return m_fullListenSwitchHasBeenSet;
 }
 
 

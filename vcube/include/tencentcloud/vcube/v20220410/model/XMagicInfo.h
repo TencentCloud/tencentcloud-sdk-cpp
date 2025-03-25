@@ -145,18 +145,14 @@ namespace TencentCloud
 
                     /**
                      * 获取优图套餐类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Plan 优图套餐类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPlan() const;
 
                     /**
                      * 设置优图套餐类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _plan 优图套餐类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPlan(const std::string& _plan);
@@ -332,18 +328,14 @@ namespace TencentCloud
 
                     /**
                      * 获取历次审批的回复
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Reply 历次审批的回复
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetReply() const;
 
                     /**
                      * 设置历次审批的回复
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _reply 历次审批的回复
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReply(const std::vector<std::string>& _reply);
@@ -399,18 +391,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户更新信息的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 用户更新信息的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置用户更新信息的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updateTime 用户更新信息的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -474,18 +462,14 @@ namespace TencentCloud
 
                     /**
                      * 获取single: 原子能力,combined:套餐
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return XMagicType single: 原子能力,combined:套餐
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetXMagicType() const;
 
                     /**
                      * 设置single: 原子能力,combined:套餐
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _xMagicType single: 原子能力,combined:套餐
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetXMagicType(const std::string& _xMagicType);
@@ -499,18 +483,14 @@ namespace TencentCloud
 
                     /**
                      * 获取优图模块名称，自动中英文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 优图模块名称，自动中英文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置优图模块名称，自动中英文
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 优图模块名称，自动中英文
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -549,18 +529,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否是马甲包
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsVest 是否是马甲包
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsVest() const;
 
                     /**
                      * 设置是否是马甲包
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isVest 是否是马甲包
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsVest(const bool& _isVest);
@@ -603,7 +579,6 @@ namespace TencentCloud
 
                     /**
                      * 优图套餐类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_plan;
                     bool m_planHasBeenSet;
@@ -655,7 +630,6 @@ namespace TencentCloud
 
                     /**
                      * 历次审批的回复
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_reply;
                     bool m_replyHasBeenSet;
@@ -674,7 +648,6 @@ namespace TencentCloud
 
                     /**
                      * 用户更新信息的时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
@@ -695,14 +668,12 @@ namespace TencentCloud
 
                     /**
                      * single: 原子能力,combined:套餐
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_xMagicType;
                     bool m_xMagicTypeHasBeenSet;
 
                     /**
                      * 优图模块名称，自动中英文
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -716,7 +687,6 @@ namespace TencentCloud
 
                     /**
                      * 是否是马甲包
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isVest;
                     bool m_isVestHasBeenSet;

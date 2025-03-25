@@ -77,9 +77,7 @@ namespace TencentCloud
 
                     /**
                      * 获取可以开通的优图测试功能列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return XMagicTrialList 可以开通的优图测试功能列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<XMagicTrial> GetXMagicTrialList() const;
@@ -108,7 +106,6 @@ namespace TencentCloud
 
                     /**
                      * 可以开通的优图测试功能列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<XMagicTrial> m_xMagicTrialList;
                     bool m_xMagicTrialListHasBeenSet;

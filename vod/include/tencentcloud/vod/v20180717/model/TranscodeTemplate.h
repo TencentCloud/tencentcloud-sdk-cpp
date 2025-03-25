@@ -222,18 +222,14 @@ namespace TencentCloud
 
                     /**
                      * 获取视频流配置参数，仅当 RemoveVideo 为 0，该字段有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VideoTemplate 视频流配置参数，仅当 RemoveVideo 为 0，该字段有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     VideoTemplateInfo GetVideoTemplate() const;
 
                     /**
                      * 设置视频流配置参数，仅当 RemoveVideo 为 0，该字段有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _videoTemplate 视频流配置参数，仅当 RemoveVideo 为 0，该字段有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVideoTemplate(const VideoTemplateInfo& _videoTemplate);
@@ -247,18 +243,14 @@ namespace TencentCloud
 
                     /**
                      * 获取音频流配置参数，仅当 RemoveAudio 为 0，该字段有效 。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AudioTemplate 音频流配置参数，仅当 RemoveAudio 为 0，该字段有效 。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AudioTemplateInfo GetAudioTemplate() const;
 
                     /**
                      * 设置音频流配置参数，仅当 RemoveAudio 为 0，该字段有效 。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _audioTemplate 音频流配置参数，仅当 RemoveAudio 为 0，该字段有效 。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAudioTemplate(const AudioTemplateInfo& _audioTemplate);
@@ -439,14 +431,12 @@ namespace TencentCloud
 
                     /**
                      * 视频流配置参数，仅当 RemoveVideo 为 0，该字段有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     VideoTemplateInfo m_videoTemplate;
                     bool m_videoTemplateHasBeenSet;
 
                     /**
                      * 音频流配置参数，仅当 RemoveAudio 为 0，该字段有效 。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AudioTemplateInfo m_audioTemplate;
                     bool m_audioTemplateHasBeenSet;

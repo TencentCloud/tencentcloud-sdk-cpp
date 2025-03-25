@@ -215,15 +215,15 @@ namespace TencentCloud
                     bool ScopeHasBeenSet() const;
 
                     /**
-                     * 获取描述
-                     * @return Description 描述
+                     * 获取描述信息。由用户自行定义。
+                     * @return Description 描述信息。由用户自行定义。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置描述
-                     * @param _description 描述
+                     * 设置描述信息。由用户自行定义。
+                     * @param _description 描述信息。由用户自行定义。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -287,7 +287,7 @@ namespace TencentCloud
                     bool m_scopeHasBeenSet;
 
                     /**
-                     * 描述
+                     * 描述信息。由用户自行定义。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

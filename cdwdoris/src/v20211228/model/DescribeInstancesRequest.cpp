@@ -27,7 +27,8 @@ DescribeInstancesRequest::DescribeInstancesRequest() :
     m_searchInstanceNameHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_searchTagsHasBeenSet(false)
+    m_searchTagsHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,14 @@ string DescribeInstancesRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_instanceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_instanceType, allocator);
     }
 
 
@@ -171,6 +180,22 @@ void DescribeInstancesRequest::SetSearchTags(const vector<SearchTags>& _searchTa
 bool DescribeInstancesRequest::SearchTagsHasBeenSet() const
 {
     return m_searchTagsHasBeenSet;
+}
+
+int64_t DescribeInstancesRequest::GetInstanceType() const
+{
+    return m_instanceType;
+}
+
+void DescribeInstancesRequest::SetInstanceType(const int64_t& _instanceType)
+{
+    m_instanceType = _instanceType;
+    m_instanceTypeHasBeenSet = true;
+}
+
+bool DescribeInstancesRequest::InstanceTypeHasBeenSet() const
+{
+    return m_instanceTypeHasBeenSet;
 }
 
 

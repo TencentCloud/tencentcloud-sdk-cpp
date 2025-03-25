@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源路径，目前仅支持Namespace
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Resource 资源路径，目前仅支持Namespace
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResource() const;
 
                     /**
                      * 设置资源路径，目前仅支持Namespace
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resource 资源路径，目前仅支持Namespace
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResource(const std::string& _resource);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取动作，目前仅支持：tcr:PushRepository、tcr:PullRepository、tcr:CreateRepository、tcr:CreateHelmChart、tcr:DescribeHelmCharts
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Actions 动作，目前仅支持：tcr:PushRepository、tcr:PullRepository、tcr:CreateRepository、tcr:CreateHelmChart、tcr:DescribeHelmCharts
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetActions() const;
 
                     /**
                      * 设置动作，目前仅支持：tcr:PushRepository、tcr:PullRepository、tcr:CreateRepository、tcr:CreateHelmChart、tcr:DescribeHelmCharts
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _actions 动作，目前仅支持：tcr:PushRepository、tcr:PullRepository、tcr:CreateRepository、tcr:CreateHelmChart、tcr:DescribeHelmCharts
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetActions(const std::vector<std::string>& _actions);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 资源路径，目前仅支持Namespace
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resource;
                     bool m_resourceHasBeenSet;
 
                     /**
                      * 动作，目前仅支持：tcr:PushRepository、tcr:PullRepository、tcr:CreateRepository、tcr:CreateHelmChart、tcr:DescribeHelmCharts
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_actions;
                     bool m_actionsHasBeenSet;

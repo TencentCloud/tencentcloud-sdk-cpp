@@ -41,7 +41,8 @@ ServiceSetting::ServiceSetting() :
     m_nameHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_loadBalancingIpHasBeenSet(false),
-    m_loadBalancerIdHasBeenSet(false)
+    m_loadBalancerIdHasBeenSet(false),
+    m_existingLoadBalancerIdHasBeenSet(false)
 {
 }
 
@@ -270,6 +271,16 @@ CoreInternalOutcome ServiceSetting::Deserialize(const rapidjson::Value &value)
         m_loadBalancerIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ExistingLoadBalancerId") && !value["ExistingLoadBalancerId"].IsNull())
+    {
+        if (!value["ExistingLoadBalancerId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceSetting.ExistingLoadBalancerId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_existingLoadBalancerId = string(value["ExistingLoadBalancerId"].GetString());
+        m_existingLoadBalancerIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -450,6 +461,14 @@ void ServiceSetting::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "LoadBalancerId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_loadBalancerId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_existingLoadBalancerIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExistingLoadBalancerId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_existingLoadBalancerId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -789,5 +808,21 @@ void ServiceSetting::SetLoadBalancerId(const string& _loadBalancerId)
 bool ServiceSetting::LoadBalancerIdHasBeenSet() const
 {
     return m_loadBalancerIdHasBeenSet;
+}
+
+string ServiceSetting::GetExistingLoadBalancerId() const
+{
+    return m_existingLoadBalancerId;
+}
+
+void ServiceSetting::SetExistingLoadBalancerId(const string& _existingLoadBalancerId)
+{
+    m_existingLoadBalancerId = _existingLoadBalancerId;
+    m_existingLoadBalancerIdHasBeenSet = true;
+}
+
+bool ServiceSetting::ExistingLoadBalancerIdHasBeenSet() const
+{
+    return m_existingLoadBalancerIdHasBeenSet;
 }
 

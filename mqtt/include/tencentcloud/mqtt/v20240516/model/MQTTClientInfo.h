@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取客户端唯一标识
-                     * @return ClientId 客户端唯一标识
+                     * 获取客户端ID
+                     * @return ClientId 客户端ID
                      * 
                      */
                     std::string GetClientId() const;
 
                     /**
-                     * 设置客户端唯一标识
-                     * @param _clientId 客户端唯一标识
+                     * 设置客户端ID
+                     * @param _clientId 客户端ID
                      * 
                      */
                     void SetClientId(const std::string& _clientId);
@@ -90,15 +90,27 @@ namespace TencentCloud
                     bool ClientAddressHasBeenSet() const;
 
                     /**
-                     * 获取MQTT 协议版本，4 表示 MQTT 3.1.1
-                     * @return ProtocolVersion MQTT 协议版本，4 表示 MQTT 3.1.1
+                     * 获取MQTT 协议版本
+3：表示MQTT 3.1版本
+4：表示 MQTT 3.1.1
+5:   标识MQTT 5.0协议
+                     * @return ProtocolVersion MQTT 协议版本
+3：表示MQTT 3.1版本
+4：表示 MQTT 3.1.1
+5:   标识MQTT 5.0协议
                      * 
                      */
                     int64_t GetProtocolVersion() const;
 
                     /**
-                     * 设置MQTT 协议版本，4 表示 MQTT 3.1.1
-                     * @param _protocolVersion MQTT 协议版本，4 表示 MQTT 3.1.1
+                     * 设置MQTT 协议版本
+3：表示MQTT 3.1版本
+4：表示 MQTT 3.1.1
+5:   标识MQTT 5.0协议
+                     * @param _protocolVersion MQTT 协议版本
+3：表示MQTT 3.1版本
+4：表示 MQTT 3.1.1
+5:   标识MQTT 5.0协议
                      * 
                      */
                     void SetProtocolVersion(const int64_t& _protocolVersion);
@@ -153,15 +165,15 @@ namespace TencentCloud
                     bool ConnectionStatusHasBeenSet() const;
 
                     /**
-                     * 获取客户端创建时间
-                     * @return CreateTime 客户端创建时间
+                     * 获取客户端创建时间，毫秒级时间戳 。
+                     * @return CreateTime 客户端创建时间，毫秒级时间戳 。
                      * 
                      */
                     int64_t GetCreateTime() const;
 
                     /**
-                     * 设置客户端创建时间
-                     * @param _createTime 客户端创建时间
+                     * 设置客户端创建时间，毫秒级时间戳 。
+                     * @param _createTime 客户端创建时间，毫秒级时间戳 。
                      * 
                      */
                     void SetCreateTime(const int64_t& _createTime);
@@ -174,15 +186,15 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取上次建立连接时间
-                     * @return ConnectTime 上次建立连接时间
+                     * 获取上次建立连接时间，毫秒级时间戳 。
+                     * @return ConnectTime 上次建立连接时间，毫秒级时间戳 。
                      * 
                      */
                     int64_t GetConnectTime() const;
 
                     /**
-                     * 设置上次建立连接时间
-                     * @param _connectTime 上次建立连接时间
+                     * 设置上次建立连接时间，毫秒级时间戳 。
+                     * @param _connectTime 上次建立连接时间，毫秒级时间戳 。
                      * 
                      */
                     void SetConnectTime(const int64_t& _connectTime);
@@ -195,15 +207,15 @@ namespace TencentCloud
                     bool ConnectTimeHasBeenSet() const;
 
                     /**
-                     * 获取上次断开连接时间，仅对持久会话（cleanSession=false）并且客户端当前未连接时有意义
-                     * @return DisconnectTime 上次断开连接时间，仅对持久会话（cleanSession=false）并且客户端当前未连接时有意义
+                     * 获取上次断开连接时间，仅对持久会话（cleanSession=false）并且客户端当前未连接时有意义，毫秒级时间戳 。
+                     * @return DisconnectTime 上次断开连接时间，仅对持久会话（cleanSession=false）并且客户端当前未连接时有意义，毫秒级时间戳 。
                      * 
                      */
                     int64_t GetDisconnectTime() const;
 
                     /**
-                     * 设置上次断开连接时间，仅对持久会话（cleanSession=false）并且客户端当前未连接时有意义
-                     * @param _disconnectTime 上次断开连接时间，仅对持久会话（cleanSession=false）并且客户端当前未连接时有意义
+                     * 设置上次断开连接时间，仅对持久会话（cleanSession=false）并且客户端当前未连接时有意义，毫秒级时间戳 。
+                     * @param _disconnectTime 上次断开连接时间，仅对持久会话（cleanSession=false）并且客户端当前未连接时有意义，毫秒级时间戳 。
                      * 
                      */
                     void SetDisconnectTime(const int64_t& _disconnectTime);
@@ -239,7 +251,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 客户端唯一标识
+                     * 客户端ID
                      */
                     std::string m_clientId;
                     bool m_clientIdHasBeenSet;
@@ -251,7 +263,10 @@ namespace TencentCloud
                     bool m_clientAddressHasBeenSet;
 
                     /**
-                     * MQTT 协议版本，4 表示 MQTT 3.1.1
+                     * MQTT 协议版本
+3：表示MQTT 3.1版本
+4：表示 MQTT 3.1.1
+5:   标识MQTT 5.0协议
                      */
                     int64_t m_protocolVersion;
                     bool m_protocolVersionHasBeenSet;
@@ -269,19 +284,19 @@ namespace TencentCloud
                     bool m_connectionStatusHasBeenSet;
 
                     /**
-                     * 客户端创建时间
+                     * 客户端创建时间，毫秒级时间戳 。
                      */
                     int64_t m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 上次建立连接时间
+                     * 上次建立连接时间，毫秒级时间戳 。
                      */
                     int64_t m_connectTime;
                     bool m_connectTimeHasBeenSet;
 
                     /**
-                     * 上次断开连接时间，仅对持久会话（cleanSession=false）并且客户端当前未连接时有意义
+                     * 上次断开连接时间，仅对持久会话（cleanSession=false）并且客户端当前未连接时有意义，毫秒级时间戳 。
                      */
                     int64_t m_disconnectTime;
                     bool m_disconnectTimeHasBeenSet;

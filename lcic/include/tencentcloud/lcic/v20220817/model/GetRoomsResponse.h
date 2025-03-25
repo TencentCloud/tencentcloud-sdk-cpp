@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalHasBeenSet() const;
 
                     /**
-                     * 获取房间列表
-                     * @return Rooms 房间列表
+                     * 获取课堂列表
+                     * @return Rooms 课堂列表
                      * 
                      */
                     std::vector<RoomItem> GetRooms() const;
@@ -81,7 +81,7 @@ namespace TencentCloud
                     bool m_totalHasBeenSet;
 
                     /**
-                     * 房间列表
+                     * 课堂列表
                      */
                     std::vector<RoomItem> m_rooms;
                     bool m_roomsHasBeenSet;

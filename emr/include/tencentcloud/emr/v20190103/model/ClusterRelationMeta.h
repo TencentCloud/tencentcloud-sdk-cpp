@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClusterType 集群类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetClusterType() const;
 
                     /**
                      * 设置集群类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _clusterType 集群类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetClusterType(const std::string& _clusterType);
@@ -100,7 +96,6 @@ namespace TencentCloud
 
                     /**
                      * 集群类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_clusterType;
                     bool m_clusterTypeHasBeenSet;

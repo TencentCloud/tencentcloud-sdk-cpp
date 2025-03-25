@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取漏洞白名单 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CVEID 漏洞白名单 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCVEID() const;
 
                     /**
                      * 设置漏洞白名单 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cVEID 漏洞白名单 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCVEID(const std::string& _cVEID);
@@ -75,7 +71,6 @@ namespace TencentCloud
 
                     /**
                      * 漏洞白名单 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cVEID;
                     bool m_cVEIDHasBeenSet;

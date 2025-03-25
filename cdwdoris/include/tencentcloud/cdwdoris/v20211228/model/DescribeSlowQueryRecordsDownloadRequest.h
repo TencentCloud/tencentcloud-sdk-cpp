@@ -357,6 +357,27 @@ namespace TencentCloud
                      */
                     bool UserNameHasBeenSet() const;
 
+                    /**
+                     * 获取计算组列表
+                     * @return ComputeGroups 计算组列表
+                     * 
+                     */
+                    std::vector<std::string> GetComputeGroups() const;
+
+                    /**
+                     * 设置计算组列表
+                     * @param _computeGroups 计算组列表
+                     * 
+                     */
+                    void SetComputeGroups(const std::vector<std::string>& _computeGroups);
+
+                    /**
+                     * 判断参数 ComputeGroups 是否已赋值
+                     * @return ComputeGroups 是否已赋值
+                     * 
+                     */
+                    bool ComputeGroupsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -448,6 +469,12 @@ namespace TencentCloud
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;
+
+                    /**
+                     * 计算组列表
+                     */
+                    std::vector<std::string> m_computeGroups;
+                    bool m_computeGroupsHasBeenSet;
 
                 };
             }

@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取镜像总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 镜像总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotal() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取镜像列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AndroidInstanceImages 镜像列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AndroidInstanceImage> GetAndroidInstanceImages() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 镜像总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;
 
                     /**
                      * 镜像列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AndroidInstanceImage> m_androidInstanceImages;
                     bool m_androidInstanceImagesHasBeenSet;

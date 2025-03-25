@@ -37,7 +37,8 @@ DescribeDatabaseAuditDownloadRequest::DescribeDatabaseAuditDownloadRequest() :
     m_dbNamesHasBeenSet(false),
     m_sqlTypesHasBeenSet(false),
     m_catalogsHasBeenSet(false),
-    m_isQueryHasBeenSet(false)
+    m_isQueryHasBeenSet(false),
+    m_computeGroupsHasBeenSet(false)
 {
 }
 
@@ -190,6 +191,19 @@ string DescribeDatabaseAuditDownloadRequest::ToJsonString() const
         for (auto itr = m_isQuery.begin(); itr != m_isQuery.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetBool(*itr), allocator);
+        }
+    }
+
+    if (m_computeGroupsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComputeGroups";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_computeGroups.begin(); itr != m_computeGroups.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -439,6 +453,22 @@ void DescribeDatabaseAuditDownloadRequest::SetIsQuery(const vector<bool>& _isQue
 bool DescribeDatabaseAuditDownloadRequest::IsQueryHasBeenSet() const
 {
     return m_isQueryHasBeenSet;
+}
+
+vector<string> DescribeDatabaseAuditDownloadRequest::GetComputeGroups() const
+{
+    return m_computeGroups;
+}
+
+void DescribeDatabaseAuditDownloadRequest::SetComputeGroups(const vector<string>& _computeGroups)
+{
+    m_computeGroups = _computeGroups;
+    m_computeGroupsHasBeenSet = true;
+}
+
+bool DescribeDatabaseAuditDownloadRequest::ComputeGroupsHasBeenSet() const
+{
+    return m_computeGroupsHasBeenSet;
 }
 
 

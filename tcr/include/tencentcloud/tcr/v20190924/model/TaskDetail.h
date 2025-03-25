@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务的状态信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskMessage 任务的状态信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskMessage() const;
 
                     /**
                      * 设置任务的状态信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskMessage 任务的状态信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskMessage(const std::string& _taskMessage);
@@ -157,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FinishedTime 任务结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFinishedTime() const;
 
                     /**
                      * 设置任务结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _finishedTime 任务结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFinishedTime(const std::string& _finishedTime);
@@ -202,7 +194,6 @@ namespace TencentCloud
 
                     /**
                      * 任务的状态信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskMessage;
                     bool m_taskMessageHasBeenSet;
@@ -215,7 +206,6 @@ namespace TencentCloud
 
                     /**
                      * 任务结束时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_finishedTime;
                     bool m_finishedTimeHasBeenSet;

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * @return InstanceId 实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * @param _instanceId 实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool UsernameHasBeenSet() const;
 
                     /**
-                     * 获取备注
-                     * @return Remark 备注
+                     * 获取备注，长度不超过128个字符。
+                     * @return Remark 备注，长度不超过128个字符。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置备注
-                     * @param _remark 备注
+                     * 设置备注，长度不超过128个字符。
+                     * @param _remark 备注，长度不超过128个字符。
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -108,7 +108,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID
+                     * 实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -120,7 +120,7 @@ namespace TencentCloud
                     bool m_usernameHasBeenSet;
 
                     /**
-                     * 备注
+                     * 备注，长度不超过128个字符。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;

@@ -34,7 +34,8 @@ SearchStdoutLogRequest::SearchStdoutLogRequest() :
     m_orderTypeHasBeenSet(false),
     m_searchWordTypeHasBeenSet(false),
     m_batchTypeHasBeenSet(false),
-    m_scrollIdHasBeenSet(false)
+    m_scrollIdHasBeenSet(false),
+    m_searchAfterHasBeenSet(false)
 {
 }
 
@@ -144,6 +145,19 @@ string SearchStdoutLogRequest::ToJsonString() const
         string key = "ScrollId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_scrollId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_searchAfterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SearchAfter";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_searchAfter.begin(); itr != m_searchAfter.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -344,6 +358,22 @@ void SearchStdoutLogRequest::SetScrollId(const string& _scrollId)
 bool SearchStdoutLogRequest::ScrollIdHasBeenSet() const
 {
     return m_scrollIdHasBeenSet;
+}
+
+vector<string> SearchStdoutLogRequest::GetSearchAfter() const
+{
+    return m_searchAfter;
+}
+
+void SearchStdoutLogRequest::SetSearchAfter(const vector<string>& _searchAfter)
+{
+    m_searchAfter = _searchAfter;
+    m_searchAfterHasBeenSet = true;
+}
+
+bool SearchStdoutLogRequest::SearchAfterHasBeenSet() const
+{
+    return m_searchAfterHasBeenSet;
 }
 
 

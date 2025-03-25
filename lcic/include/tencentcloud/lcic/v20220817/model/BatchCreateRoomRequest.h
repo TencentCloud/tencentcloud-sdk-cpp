@@ -65,15 +65,15 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取创建房间ID列表
-                     * @return RoomInfos 创建房间ID列表
+                     * 获取创建课堂ID列表
+                     * @return RoomInfos 创建课堂ID列表
                      * 
                      */
                     std::vector<RoomInfo> GetRoomInfos() const;
 
                     /**
-                     * 设置创建房间ID列表
-                     * @param _roomInfos 创建房间ID列表
+                     * 设置创建课堂ID列表
+                     * @param _roomInfos 创建课堂ID列表
                      * 
                      */
                     void SetRoomInfos(const std::vector<RoomInfo>& _roomInfos);
@@ -94,7 +94,7 @@ namespace TencentCloud
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
-                     * 创建房间ID列表
+                     * 创建课堂ID列表
                      */
                     std::vector<RoomInfo> m_roomInfos;
                     bool m_roomInfosHasBeenSet;

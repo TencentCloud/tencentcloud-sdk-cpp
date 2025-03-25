@@ -235,6 +235,48 @@ namespace TencentCloud
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取计算组id
+                     * @return ComputeGroupId 计算组id
+                     * 
+                     */
+                    std::string GetComputeGroupId() const;
+
+                    /**
+                     * 设置计算组id
+                     * @param _computeGroupId 计算组id
+                     * 
+                     */
+                    void SetComputeGroupId(const std::string& _computeGroupId);
+
+                    /**
+                     * 判断参数 ComputeGroupId 是否已赋值
+                     * @return ComputeGroupId 是否已赋值
+                     * 
+                     */
+                    bool ComputeGroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取rip
+                     * @return RIp rip
+                     * 
+                     */
+                    std::string GetRIp() const;
+
+                    /**
+                     * 设置rip
+                     * @param _rIp rip
+                     * 
+                     */
+                    void SetRIp(const std::string& _rIp);
+
+                    /**
+                     * 判断参数 RIp 是否已赋值
+                     * @return RIp 是否已赋值
+                     * 
+                     */
+                    bool RIpHasBeenSet() const;
+
                 private:
 
                     /**
@@ -290,6 +332,18 @@ namespace TencentCloud
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 计算组id
+                     */
+                    std::string m_computeGroupId;
+                    bool m_computeGroupIdHasBeenSet;
+
+                    /**
+                     * rip
+                     */
+                    std::string m_rIp;
+                    bool m_rIpHasBeenSet;
 
                 };
             }

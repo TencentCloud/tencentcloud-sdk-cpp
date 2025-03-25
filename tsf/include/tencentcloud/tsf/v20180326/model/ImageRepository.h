@@ -447,6 +447,27 @@ namespace TencentCloud
                      */
                     bool RepoNameHasBeenSet() const;
 
+                    /**
+                     * 获取仓库类型
+                     * @return RepoType 仓库类型
+                     * 
+                     */
+                    std::string GetRepoType() const;
+
+                    /**
+                     * 设置仓库类型
+                     * @param _repoType 仓库类型
+                     * 
+                     */
+                    void SetRepoType(const std::string& _repoType);
+
+                    /**
+                     * 判断参数 RepoType 是否已赋值
+                     * @return RepoType 是否已赋值
+                     * 
+                     */
+                    bool RepoTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -562,6 +583,12 @@ namespace TencentCloud
                      */
                     std::string m_repoName;
                     bool m_repoNameHasBeenSet;
+
+                    /**
+                     * 仓库类型
+                     */
+                    std::string m_repoType;
+                    bool m_repoTypeHasBeenSet;
 
                 };
             }

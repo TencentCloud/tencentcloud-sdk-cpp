@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                *  作业调度信息
+                * 作业调度信息
                 */
                 class Schedule : public AbstractModel
                 {

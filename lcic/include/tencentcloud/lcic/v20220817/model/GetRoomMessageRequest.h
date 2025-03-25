@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取房间Id。	
-                     * @return RoomId 房间Id。	
+                     * 获取课堂Id。	
+                     * @return RoomId 课堂Id。	
                      * 
                      */
                     uint64_t GetRoomId() const;
 
                     /**
-                     * 设置房间Id。	
-                     * @param _roomId 房间Id。	
+                     * 设置课堂Id。	
+                     * @param _roomId 课堂Id。	
                      * 
                      */
                     void SetRoomId(const uint64_t& _roomId);
@@ -135,7 +135,7 @@ namespace TencentCloud
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
-                     * 房间Id。	
+                     * 课堂Id。	
                      */
                     uint64_t m_roomId;
                     bool m_roomIdHasBeenSet;

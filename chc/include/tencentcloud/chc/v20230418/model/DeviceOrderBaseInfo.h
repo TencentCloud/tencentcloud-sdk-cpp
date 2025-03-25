@@ -74,18 +74,14 @@ namespace TencentCloud
 
                     /**
                      * 获取机房名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IdcName 机房名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIdcName() const;
 
                     /**
                      * 设置机房名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _idcName 机房名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIdcName(const std::string& _idcName);
@@ -401,7 +397,6 @@ namespace TencentCloud
 
                     /**
                      * 机房名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_idcName;
                     bool m_idcNameHasBeenSet;

@@ -46,7 +46,34 @@ namespace TencentCloud
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
+                    /**
+                     * 获取新闻Id
+                     * @return Id 新闻Id
+                     * 
+                     */
+                    uint64_t GetId() const;
+
+                    /**
+                     * 设置新闻Id
+                     * @param _id 新闻Id
+                     * 
+                     */
+                    void SetId(const uint64_t& _id);
+
+                    /**
+                     * 判断参数 Id 是否已赋值
+                     * @return Id 是否已赋值
+                     * 
+                     */
+                    bool IdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 新闻Id
+                     */
+                    uint64_t m_id;
+                    bool m_idHasBeenSet;
 
                 };
             }

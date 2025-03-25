@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取功能名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 功能名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置功能名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 功能名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -115,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取功能类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 功能类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置功能类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 功能类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -140,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否可以申请试用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Trial 是否可以申请试用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetTrial() const;
 
                     /**
                      * 设置是否可以申请试用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _trial 是否可以申请试用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTrial(const bool& _trial);
@@ -215,18 +203,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedAt 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatedAt() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createdAt 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreatedAt(const std::string& _createdAt);
@@ -240,18 +224,14 @@ namespace TencentCloud
 
                     /**
                      * 获取更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdatedAt 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdatedAt() const;
 
                     /**
                      * 设置更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updatedAt 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdatedAt(const std::string& _updatedAt);
@@ -265,18 +245,14 @@ namespace TencentCloud
 
                     /**
                      * 获取功能所属业务方
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BizType 功能所属业务方
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBizType() const;
 
                     /**
                      * 设置功能所属业务方
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bizType 功能所属业务方
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBizType(const std::string& _bizType);
@@ -290,18 +266,14 @@ namespace TencentCloud
 
                     /**
                      * 获取平台类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Platform 平台类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPlatform() const;
 
                     /**
                      * 设置平台类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _platform 平台类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPlatform(const std::string& _platform);
@@ -329,21 +301,18 @@ namespace TencentCloud
 
                     /**
                      * 功能名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 功能类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 是否可以申请试用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_trial;
                     bool m_trialHasBeenSet;
@@ -364,28 +333,24 @@ namespace TencentCloud
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createdAt;
                     bool m_createdAtHasBeenSet;
 
                     /**
                      * 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updatedAt;
                     bool m_updatedAtHasBeenSet;
 
                     /**
                      * 功能所属业务方
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bizType;
                     bool m_bizTypeHasBeenSet;
 
                     /**
                      * 平台类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_platform;
                     bool m_platformHasBeenSet;

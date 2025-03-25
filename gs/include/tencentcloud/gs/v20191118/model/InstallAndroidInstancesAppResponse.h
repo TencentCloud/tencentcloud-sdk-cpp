@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取任务集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskSet 任务集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AndroidInstanceTask> GetTaskSet() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 任务集合
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AndroidInstanceTask> m_taskSet;
                     bool m_taskSetHasBeenSet;

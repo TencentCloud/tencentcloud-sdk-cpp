@@ -343,18 +343,14 @@ namespace TencentCloud
 
                     /**
                      * 获取DB节点信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NodesInfo DB节点信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<NodeInfo> GetNodesInfo() const;
 
                     /**
                      * 设置DB节点信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nodesInfo DB节点信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNodesInfo(const std::vector<NodeInfo>& _nodesInfo);
@@ -454,7 +450,6 @@ namespace TencentCloud
 
                     /**
                      * DB节点信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<NodeInfo> m_nodesInfo;
                     bool m_nodesInfoHasBeenSet;

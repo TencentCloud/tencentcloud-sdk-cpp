@@ -117,14 +117,18 @@ namespace TencentCloud
 
                     /**
                      * 获取license数组
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Licenses license数组
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<License> GetLicenses() const;
 
                     /**
                      * 设置license数组
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _licenses license数组
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLicenses(const std::vector<License>& _licenses);
@@ -138,18 +142,14 @@ namespace TencentCloud
 
                     /**
                      * 获取license 秘钥
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LicenseKey license 秘钥
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLicenseKey() const;
 
                     /**
                      * 设置license 秘钥
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _licenseKey license 秘钥
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLicenseKey(const std::string& _licenseKey);
@@ -188,18 +188,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedAt 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatedAt() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createdAt 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreatedAt(const std::string& _createdAt);
@@ -213,18 +209,14 @@ namespace TencentCloud
 
                     /**
                      * 获取更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdatedAt 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdatedAt() const;
 
                     /**
                      * 设置更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updatedAt 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdatedAt(const std::string& _updatedAt);
@@ -238,18 +230,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户应用Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationId 用户应用Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetApplicationId() const;
 
                     /**
                      * 设置用户应用Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _applicationId 用户应用Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApplicationId(const uint64_t& _applicationId);
@@ -263,18 +251,14 @@ namespace TencentCloud
 
                     /**
                      * 获取视立方下载license的url
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LicenseUrl 视立方下载license的url
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLicenseUrl() const;
 
                     /**
                      * 设置视立方下载license的url
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _licenseUrl 视立方下载license的url
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLicenseUrl(const std::string& _licenseUrl);
@@ -430,13 +414,13 @@ namespace TencentCloud
 
                     /**
                      * license数组
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<License> m_licenses;
                     bool m_licensesHasBeenSet;
 
                     /**
                      * license 秘钥
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_licenseKey;
                     bool m_licenseKeyHasBeenSet;
@@ -450,28 +434,24 @@ namespace TencentCloud
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createdAt;
                     bool m_createdAtHasBeenSet;
 
                     /**
                      * 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updatedAt;
                     bool m_updatedAtHasBeenSet;
 
                     /**
                      * 用户应用Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_applicationId;
                     bool m_applicationIdHasBeenSet;
 
                     /**
                      * 视立方下载license的url
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_licenseUrl;
                     bool m_licenseUrlHasBeenSet;

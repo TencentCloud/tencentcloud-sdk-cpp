@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群ID
-                     * @return InstanceId 集群ID
+                     * 获取实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * @return InstanceId 实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置集群ID
-                     * @param _instanceId 集群ID
+                     * 设置实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * @param _instanceId 实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -65,15 +65,51 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取过滤器支持ClientId、CaSn、DeviceCertificateSn、Status搜索
-                     * @return Filters 过滤器支持ClientId、CaSn、DeviceCertificateSn、Status搜索
+                     * 获取支持搜索参数
+ClientId：客户端id
+CaSn：所属的CA证书SN
+DeviceCertificateSn：设备证书SN
+DeviceCertificateCn：设备证书CN
+OrganizationalUnit：证书OU
+NotAfterEnd：过期时间小于等于指定时间的证书
+NotAfterStart：过期时间大于等于指定时间的证书
+Status：证书状态
+
+                     * @return Filters 支持搜索参数
+ClientId：客户端id
+CaSn：所属的CA证书SN
+DeviceCertificateSn：设备证书SN
+DeviceCertificateCn：设备证书CN
+OrganizationalUnit：证书OU
+NotAfterEnd：过期时间小于等于指定时间的证书
+NotAfterStart：过期时间大于等于指定时间的证书
+Status：证书状态
+
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置过滤器支持ClientId、CaSn、DeviceCertificateSn、Status搜索
-                     * @param _filters 过滤器支持ClientId、CaSn、DeviceCertificateSn、Status搜索
+                     * 设置支持搜索参数
+ClientId：客户端id
+CaSn：所属的CA证书SN
+DeviceCertificateSn：设备证书SN
+DeviceCertificateCn：设备证书CN
+OrganizationalUnit：证书OU
+NotAfterEnd：过期时间小于等于指定时间的证书
+NotAfterStart：过期时间大于等于指定时间的证书
+Status：证书状态
+
+                     * @param _filters 支持搜索参数
+ClientId：客户端id
+CaSn：所属的CA证书SN
+DeviceCertificateSn：设备证书SN
+DeviceCertificateCn：设备证书CN
+OrganizationalUnit：证书OU
+NotAfterEnd：过期时间小于等于指定时间的证书
+NotAfterStart：过期时间大于等于指定时间的证书
+Status：证书状态
+
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -163,13 +199,22 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群ID
+                     * 实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 过滤器支持ClientId、CaSn、DeviceCertificateSn、Status搜索
+                     * 支持搜索参数
+ClientId：客户端id
+CaSn：所属的CA证书SN
+DeviceCertificateSn：设备证书SN
+DeviceCertificateCn：设备证书CN
+OrganizationalUnit：证书OU
+NotAfterEnd：过期时间小于等于指定时间的证书
+NotAfterStart：过期时间大于等于指定时间的证书
+Status：证书状态
+
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

@@ -25,7 +25,8 @@ ZoneInfo::ZoneInfo() :
     m_descHasBeenSet(false),
     m_zoneIdHasBeenSet(false),
     m_encryptHasBeenSet(false),
-    m_mainHasBeenSet(false)
+    m_mainHasBeenSet(false),
+    m_containerEnabledHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome ZoneInfo::Deserialize(const rapidjson::Value &value)
         m_mainHasBeenSet = true;
     }
 
+    if (value.HasMember("ContainerEnabled") && !value["ContainerEnabled"].IsNull())
+    {
+        if (!value["ContainerEnabled"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ZoneInfo.ContainerEnabled` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_containerEnabled = value["ContainerEnabled"].GetInt64();
+        m_containerEnabledHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void ZoneInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "Main";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_main, allocator);
+    }
+
+    if (m_containerEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContainerEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_containerEnabled, allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void ZoneInfo::SetMain(const bool& _main)
 bool ZoneInfo::MainHasBeenSet() const
 {
     return m_mainHasBeenSet;
+}
+
+int64_t ZoneInfo::GetContainerEnabled() const
+{
+    return m_containerEnabled;
+}
+
+void ZoneInfo::SetContainerEnabled(const int64_t& _containerEnabled)
+{
+    m_containerEnabled = _containerEnabled;
+    m_containerEnabledHasBeenSet = true;
+}
+
+bool ZoneInfo::ContainerEnabledHasBeenSet() const
+{
+    return m_containerEnabledHasBeenSet;
 }
 

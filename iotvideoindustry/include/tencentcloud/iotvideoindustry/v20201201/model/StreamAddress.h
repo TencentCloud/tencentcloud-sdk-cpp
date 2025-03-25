@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取流ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StreamId 流ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStreamId() const;
 
                     /**
                      * 设置流ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _streamId 流ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStreamId(const std::string& _streamId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取rtsp流地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RtspAddr rtsp流地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRtspAddr() const;
 
                     /**
                      * 设置rtsp流地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rtspAddr rtsp流地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRtspAddr(const std::string& _rtspAddr);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取rtmp流地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RtmpAddr rtmp流地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRtmpAddr() const;
 
                     /**
                      * 设置rtmp流地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rtmpAddr rtmp流地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRtmpAddr(const std::string& _rtmpAddr);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取hls流地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HlsAddr hls流地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHlsAddr() const;
 
                     /**
                      * 设置hls流地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hlsAddr hls流地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHlsAddr(const std::string& _hlsAddr);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取flv流地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlvAddr flv流地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFlvAddr() const;
 
                     /**
                      * 设置flv流地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _flvAddr flv流地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFlvAddr(const std::string& _flvAddr);
@@ -175,35 +155,30 @@ namespace TencentCloud
 
                     /**
                      * 流ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_streamId;
                     bool m_streamIdHasBeenSet;
 
                     /**
                      * rtsp流地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_rtspAddr;
                     bool m_rtspAddrHasBeenSet;
 
                     /**
                      * rtmp流地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_rtmpAddr;
                     bool m_rtmpAddrHasBeenSet;
 
                     /**
                      * hls流地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hlsAddr;
                     bool m_hlsAddrHasBeenSet;
 
                     /**
                      * flv流地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_flvAddr;
                     bool m_flvAddrHasBeenSet;

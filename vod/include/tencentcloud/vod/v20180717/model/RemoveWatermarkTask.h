@@ -175,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取智能去除水印任务的输入。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Input 智能去除水印任务的输入。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RemoveWaterMarkTaskInput GetInput() const;
 
                     /**
                      * 设置智能去除水印任务的输入。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _input 智能去除水印任务的输入。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInput(const RemoveWaterMarkTaskInput& _input);
@@ -304,7 +300,6 @@ namespace TencentCloud
 
                     /**
                      * 智能去除水印任务的输入。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RemoveWaterMarkTaskInput m_input;
                     bool m_inputHasBeenSet;

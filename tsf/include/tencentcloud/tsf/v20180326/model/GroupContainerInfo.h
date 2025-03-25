@@ -73,18 +73,14 @@ namespace TencentCloud
 
                     /**
                      * 获取容器名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContainerName 容器名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContainerName() const;
 
                     /**
                      * 设置容器名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _containerName 容器名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContainerName(const std::string& _containerName);
@@ -98,18 +94,14 @@ namespace TencentCloud
 
                     /**
                      * 获取镜像名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RepoName 镜像名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRepoName() const;
 
                     /**
                      * 设置镜像名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _repoName 镜像名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRepoName(const std::string& _repoName);
@@ -123,18 +115,14 @@ namespace TencentCloud
 
                     /**
                      * 获取仓库类型,tcr，address，personal，默认personal
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RepoType 仓库类型,tcr，address，personal，默认personal
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRepoType() const;
 
                     /**
                      * 设置仓库类型,tcr，address，personal，默认personal
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _repoType 仓库类型,tcr，address，personal，默认personal
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRepoType(const std::string& _repoType);
@@ -148,18 +136,14 @@ namespace TencentCloud
 
                     /**
                      * 获取tcr仓库信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TcrRepoInfo tcr仓库信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TcrRepoInfo GetTcrRepoInfo() const;
 
                     /**
                      * 设置tcr仓库信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tcrRepoInfo tcr仓库信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTcrRepoInfo(const TcrRepoInfo& _tcrRepoInfo);
@@ -173,18 +157,14 @@ namespace TencentCloud
 
                     /**
                      * 获取镜像server
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Server 镜像server
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetServer() const;
 
                     /**
                      * 设置镜像server
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _server 镜像server
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServer(const std::string& _server);
@@ -198,18 +178,14 @@ namespace TencentCloud
 
                     /**
                      * 获取凭证名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecretName 凭证名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSecretName() const;
 
                     /**
                      * 设置凭证名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _secretName 凭证名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSecretName(const std::string& _secretName);
@@ -223,18 +199,14 @@ namespace TencentCloud
 
                     /**
                      * 获取jvm 参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return JvmOpts jvm 参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetJvmOpts() const;
 
                     /**
                      * 设置jvm 参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _jvmOpts jvm 参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetJvmOpts(const std::string& _jvmOpts);
@@ -248,18 +220,14 @@ namespace TencentCloud
 
                     /**
                      * 获取容器最大的 CPU 核数，对应 K8S 的 limit
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CpuLimit 容器最大的 CPU 核数，对应 K8S 的 limit
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCpuLimit() const;
 
                     /**
                      * 设置容器最大的 CPU 核数，对应 K8S 的 limit
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cpuLimit 容器最大的 CPU 核数，对应 K8S 的 limit
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCpuLimit(const std::string& _cpuLimit);
@@ -273,18 +241,14 @@ namespace TencentCloud
 
                     /**
                      * 获取容器分配的 CPU 核数，对应 K8S 的 request
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CpuRequest 容器分配的 CPU 核数，对应 K8S 的 request
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCpuRequest() const;
 
                     /**
                      * 设置容器分配的 CPU 核数，对应 K8S 的 request
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cpuRequest 容器分配的 CPU 核数，对应 K8S 的 request
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCpuRequest(const std::string& _cpuRequest);
@@ -298,18 +262,14 @@ namespace TencentCloud
 
                     /**
                      * 获取容器分配的内存 MiB 数，对应 K8S 的 request
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MemRequest 容器分配的内存 MiB 数，对应 K8S 的 request
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMemRequest() const;
 
                     /**
                      * 设置容器分配的内存 MiB 数，对应 K8S 的 request
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _memRequest 容器分配的内存 MiB 数，对应 K8S 的 request
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMemRequest(const std::string& _memRequest);
@@ -323,18 +283,14 @@ namespace TencentCloud
 
                     /**
                      * 获取容器最大的内存 MiB 数，对应 K8S 的 limit
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MemLimit 容器最大的内存 MiB 数，对应 K8S 的 limit
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMemLimit() const;
 
                     /**
                      * 设置容器最大的内存 MiB 数，对应 K8S 的 limit
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _memLimit 容器最大的内存 MiB 数，对应 K8S 的 limit
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMemLimit(const std::string& _memLimit);
@@ -348,18 +304,14 @@ namespace TencentCloud
 
                     /**
                      * 获取健康检查配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HealthCheckSettings 健康检查配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     HealthCheckSettings GetHealthCheckSettings() const;
 
                     /**
                      * 设置健康检查配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _healthCheckSettings 健康检查配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHealthCheckSettings(const HealthCheckSettings& _healthCheckSettings);
@@ -373,18 +325,14 @@ namespace TencentCloud
 
                     /**
                      * 获取环境变量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Envs 环境变量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Env> GetEnvs() const;
 
                     /**
                      * 设置环境变量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _envs 环境变量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnvs(const std::vector<Env>& _envs);
@@ -398,18 +346,14 @@ namespace TencentCloud
 
                     /**
                      * 获取环境变量,作为入参时不用填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserEnvs 环境变量,作为入参时不用填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Env> GetUserEnvs() const;
 
                     /**
                      * 设置环境变量,作为入参时不用填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userEnvs 环境变量,作为入参时不用填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserEnvs(const std::vector<Env>& _userEnvs);
@@ -423,18 +367,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据卷挂载点信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VolumeMountInfoList 数据卷挂载点信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<VolumeMountInfo> GetVolumeMountInfoList() const;
 
                     /**
                      * 设置数据卷挂载点信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _volumeMountInfoList 数据卷挂载点信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVolumeMountInfoList(const std::vector<VolumeMountInfo>& _volumeMountInfoList);
@@ -456,105 +396,90 @@ namespace TencentCloud
 
                     /**
                      * 容器名字
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_containerName;
                     bool m_containerNameHasBeenSet;
 
                     /**
                      * 镜像名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_repoName;
                     bool m_repoNameHasBeenSet;
 
                     /**
                      * 仓库类型,tcr，address，personal，默认personal
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_repoType;
                     bool m_repoTypeHasBeenSet;
 
                     /**
                      * tcr仓库信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TcrRepoInfo m_tcrRepoInfo;
                     bool m_tcrRepoInfoHasBeenSet;
 
                     /**
                      * 镜像server
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_server;
                     bool m_serverHasBeenSet;
 
                     /**
                      * 凭证名字
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_secretName;
                     bool m_secretNameHasBeenSet;
 
                     /**
                      * jvm 参数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_jvmOpts;
                     bool m_jvmOptsHasBeenSet;
 
                     /**
                      * 容器最大的 CPU 核数，对应 K8S 的 limit
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cpuLimit;
                     bool m_cpuLimitHasBeenSet;
 
                     /**
                      * 容器分配的 CPU 核数，对应 K8S 的 request
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cpuRequest;
                     bool m_cpuRequestHasBeenSet;
 
                     /**
                      * 容器分配的内存 MiB 数，对应 K8S 的 request
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_memRequest;
                     bool m_memRequestHasBeenSet;
 
                     /**
                      * 容器最大的内存 MiB 数，对应 K8S 的 limit
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_memLimit;
                     bool m_memLimitHasBeenSet;
 
                     /**
                      * 健康检查配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     HealthCheckSettings m_healthCheckSettings;
                     bool m_healthCheckSettingsHasBeenSet;
 
                     /**
                      * 环境变量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Env> m_envs;
                     bool m_envsHasBeenSet;
 
                     /**
                      * 环境变量,作为入参时不用填
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Env> m_userEnvs;
                     bool m_userEnvsHasBeenSet;
 
                     /**
                      * 数据卷挂载点信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<VolumeMountInfo> m_volumeMountInfoList;
                     bool m_volumeMountInfoListHasBeenSet;

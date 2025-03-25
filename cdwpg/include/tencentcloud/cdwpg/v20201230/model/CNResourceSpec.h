@@ -48,15 +48,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取无
-                     * @return Type 无
+                     * 获取节点类型
+                     * @return Type 节点类型
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置无
-                     * @param _type 无
+                     * 设置节点类型
+                     * @param _type 节点类型
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return SpecName 无
+                     * 获取机型
+                     * @return SpecName 机型
                      * 
                      */
                     std::string GetSpecName() const;
 
                     /**
-                     * 设置无
-                     * @param _specName 无
+                     * 设置机型
+                     * @param _specName 机型
                      * 
                      */
                     void SetSpecName(const std::string& _specName);
@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool SpecNameHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return Count 无
+                     * 获取节点个数
+                     * @return Count 节点个数
                      * 
                      */
                     int64_t GetCount() const;
 
                     /**
-                     * 设置无
-                     * @param _count 无
+                     * 设置节点个数
+                     * @param _count 节点个数
                      * 
                      */
                     void SetCount(const int64_t& _count);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool CountHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return DiskSpec 无
+                     * 获取磁盘信息
+                     * @return DiskSpec 磁盘信息
                      * 
                      */
                     CBSSpec GetDiskSpec() const;
 
                     /**
-                     * 设置无
-                     * @param _diskSpec 无
+                     * 设置磁盘信息
+                     * @param _diskSpec 磁盘信息
                      * 
                      */
                     void SetDiskSpec(const CBSSpec& _diskSpec);
@@ -134,25 +134,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 无
+                     * 节点类型
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 无
+                     * 机型
                      */
                     std::string m_specName;
                     bool m_specNameHasBeenSet;
 
                     /**
-                     * 无
+                     * 节点个数
                      */
                     int64_t m_count;
                     bool m_countHasBeenSet;
 
                     /**
-                     * 无
+                     * 磁盘信息
                      */
                     CBSSpec m_diskSpec;
                     bool m_diskSpecHasBeenSet;

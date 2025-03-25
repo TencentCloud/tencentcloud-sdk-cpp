@@ -20,7 +20,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vcube::V20220410::Model;
 using namespace std;
 
-NewsInfo::NewsInfo()
+NewsInfo::NewsInfo() :
+    m_idHasBeenSet(false)
 {
 }
 
@@ -29,6 +30,16 @@ CoreInternalOutcome NewsInfo::Deserialize(const rapidjson::Value &value)
     string requestId = "";
 
 
+    if (value.HasMember("Id") && !value["Id"].IsNull())
+    {
+        if (!value["Id"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NewsInfo.Id` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_id = value["Id"].GetUint64();
+        m_idHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -36,6 +47,30 @@ CoreInternalOutcome NewsInfo::Deserialize(const rapidjson::Value &value)
 void NewsInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
+    if (m_idHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Id";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_id, allocator);
+    }
+
 }
 
+
+uint64_t NewsInfo::GetId() const
+{
+    return m_id;
+}
+
+void NewsInfo::SetId(const uint64_t& _id)
+{
+    m_id = _id;
+    m_idHasBeenSet = true;
+}
+
+bool NewsInfo::IdHasBeenSet() const
+{
+    return m_idHasBeenSet;
+}
 

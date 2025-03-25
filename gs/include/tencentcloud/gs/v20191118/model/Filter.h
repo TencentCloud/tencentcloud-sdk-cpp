@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取"aaa"
-                     * @return Name "aaa"
+                     * 获取字段名
+                     * @return Name 字段名
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置"aaa"
-                     * @param _name "aaa"
+                     * 设置字段名
+                     * @param _name 字段名
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取["bbb", "ccc"]
-                     * @return Values ["bbb", "ccc"]
+                     * 获取字段值列表
+                     * @return Values 字段值列表
                      * 
                      */
                     std::vector<std::string> GetValues() const;
 
                     /**
-                     * 设置["bbb", "ccc"]
-                     * @param _values ["bbb", "ccc"]
+                     * 设置字段值列表
+                     * @param _values 字段值列表
                      * 
                      */
                     void SetValues(const std::vector<std::string>& _values);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * "aaa"
+                     * 字段名
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * ["bbb", "ccc"]
+                     * 字段值列表
                      */
                     std::vector<std::string> m_values;
                     bool m_valuesHasBeenSet;

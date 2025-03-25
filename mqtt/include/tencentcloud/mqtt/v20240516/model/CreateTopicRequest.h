@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * @return InstanceId 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * @param _instanceId 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取主题
-                     * @return Topic 主题
+                     * 获取主题，不能为空，只能包含字母、数字、“-”及“_”，3-100 字符。
+                     * @return Topic 主题，不能为空，只能包含字母、数字、“-”及“_”，3-100 字符。
                      * 
                      */
                     std::string GetTopic() const;
 
                     /**
-                     * 设置主题
-                     * @param _topic 主题
+                     * 设置主题，不能为空，只能包含字母、数字、“-”及“_”，3-100 字符。
+                     * @param _topic 主题，不能为空，只能包含字母、数字、“-”及“_”，3-100 字符。
                      * 
                      */
                     void SetTopic(const std::string& _topic);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool TopicHasBeenSet() const;
 
                     /**
-                     * 获取备注
-                     * @return Remark 备注
+                     * 获取备注，最长 128 字符
+                     * @return Remark 备注，最长 128 字符
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置备注
-                     * @param _remark 备注
+                     * 设置备注，最长 128 字符
+                     * @param _remark 备注，最长 128 字符
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -108,19 +108,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID
+                     * 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 主题
+                     * 主题，不能为空，只能包含字母、数字、“-”及“_”，3-100 字符。
                      */
                     std::string m_topic;
                     bool m_topicHasBeenSet;
 
                     /**
-                     * 备注
+                     * 备注，最长 128 字符
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;

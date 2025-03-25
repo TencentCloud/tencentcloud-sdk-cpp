@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalCount 总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标准输出日志列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Content 标准输出日志列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<StdoutLogV2> GetContent() const;
 
                     /**
                      * 设置标准输出日志列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _content 标准输出日志列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContent(const std::vector<StdoutLogV2>& _content);
@@ -147,18 +139,41 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取游标ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SearchAfter 游标ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<std::string> GetSearchAfter() const;
+
+                    /**
+                     * 设置游标ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _searchAfter 游标ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSearchAfter(const std::vector<std::string>& _searchAfter);
+
+                    /**
+                     * 判断参数 SearchAfter 是否已赋值
+                     * @return SearchAfter 是否已赋值
+                     * 
+                     */
+                    bool SearchAfterHasBeenSet() const;
+
                 private:
 
                     /**
                      * 总条数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
                      * 标准输出日志列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<StdoutLogV2> m_content;
                     bool m_contentHasBeenSet;
@@ -176,6 +191,13 @@ namespace TencentCloud
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 游标ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_searchAfter;
+                    bool m_searchAfterHasBeenSet;
 
                 };
             }

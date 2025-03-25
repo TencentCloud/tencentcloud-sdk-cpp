@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取联系人员电话
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StuffContact 联系人员电话
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStuffContact() const;
 
                     /**
                      * 设置联系人员电话
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _stuffContact 联系人员电话
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStuffContact(const std::string& _stuffContact);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取身份证号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StuffIDCard 身份证号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStuffIDCard() const;
 
                     /**
                      * 设置身份证号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _stuffIDCard 身份证号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStuffIDCard(const std::string& _stuffIDCard);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取人员姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StuffName 人员姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStuffName() const;
 
                     /**
                      * 设置人员姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _stuffName 人员姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStuffName(const std::string& _stuffName);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取上门时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OperationTime 上门时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOperationTime() const;
 
                     /**
                      * 设置上门时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _operationTime 上门时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOperationTime(const std::string& _operationTime);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 联系人员电话
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_stuffContact;
                     bool m_stuffContactHasBeenSet;
 
                     /**
                      * 身份证号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_stuffIDCard;
                     bool m_stuffIDCardHasBeenSet;
 
                     /**
                      * 人员姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_stuffName;
                     bool m_stuffNameHasBeenSet;
 
                     /**
                      * 上门时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_operationTime;
                     bool m_operationTimeHasBeenSet;

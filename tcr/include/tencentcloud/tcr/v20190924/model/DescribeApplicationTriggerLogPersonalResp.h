@@ -70,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取触发日志列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogInfo 触发日志列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TriggerLogResp> GetLogInfo() const;
 
                     /**
                      * 设置触发日志列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logInfo 触发日志列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogInfo(const std::vector<TriggerLogResp>& _logInfo);
@@ -103,7 +99,6 @@ namespace TencentCloud
 
                     /**
                      * 触发日志列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TriggerLogResp> m_logInfo;
                     bool m_logInfoHasBeenSet;

@@ -519,7 +519,7 @@ namespace TencentCloud
                 CreateGroupWithSubGroupOutcomeCallable CreateGroupWithSubGroupCallable(const Model::CreateGroupWithSubGroupRequest& request);
 
                 /**
-                 *创建房间
+                 *创建课堂
                  * @param req CreateRoomRequest
                  * @return CreateRoomOutcome
                  */

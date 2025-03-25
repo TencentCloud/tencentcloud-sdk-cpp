@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取设备证书sn
-                     * @return DeviceCertificateSn 设备证书sn
+                     * 获取设备证书的SN序列号，用于唯一标识一个设备证书。
+                     * @return DeviceCertificateSn 设备证书的SN序列号，用于唯一标识一个设备证书。
                      * 
                      */
                     std::string GetDeviceCertificateSn() const;
 
                     /**
-                     * 设置设备证书sn
-                     * @param _deviceCertificateSn 设备证书sn
+                     * 设置设备证书的SN序列号，用于唯一标识一个设备证书。
+                     * @param _deviceCertificateSn 设备证书的SN序列号，用于唯一标识一个设备证书。
                      * 
                      */
                     void SetDeviceCertificateSn(const std::string& _deviceCertificateSn);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DeviceCertificateSnHasBeenSet() const;
 
                     /**
-                     * 获取集群id
-                     * @return InstanceId 集群id
+                     * 获取腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * @return InstanceId 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置集群id
-                     * @param _instanceId 集群id
+                     * 设置腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * @param _instanceId 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 设备证书sn
+                     * 设备证书的SN序列号，用于唯一标识一个设备证书。
                      */
                     std::string m_deviceCertificateSn;
                     bool m_deviceCertificateSnHasBeenSet;
 
                     /**
-                     * 集群id
+                     * 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

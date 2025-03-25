@@ -153,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取最后消费进度更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastUpdateTime 最后消费进度更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLastUpdateTime() const;
 
                     /**
                      * 设置最后消费进度更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lastUpdateTime 最后消费进度更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLastUpdateTime(const int64_t& _lastUpdateTime);
@@ -210,7 +206,6 @@ namespace TencentCloud
 
                     /**
                      * 最后消费进度更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_lastUpdateTime;
                     bool m_lastUpdateTimeHasBeenSet;

@@ -256,7 +256,7 @@ namespace TencentCloud
                 CreateLicenseOutcomeCallable CreateLicenseCallable(const Model::CreateLicenseRequest& request);
 
                 /**
-                 *申请开通测试版优图
+                 *申请开通测试版腾讯特效
                  * @param req CreateTestXMagicRequest
                  * @return CreateTestXMagicOutcome
                  */
@@ -409,7 +409,7 @@ namespace TencentCloud
                 DescribeXMagicResourceListOutcomeCallable DescribeXMagicResourceListCallable(const Model::DescribeXMagicResourceListRequest& request);
 
                 /**
-                 *编辑更改应用
+                 *更改测试包名信息
                  * @param req ModifyApplicationRequest
                  * @return ModifyApplicationOutcome
                  */

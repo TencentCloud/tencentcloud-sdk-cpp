@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取安卓应用列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Apps 安卓应用列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AndroidInstanceAppInfo> GetApps() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 安卓应用列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AndroidInstanceAppInfo> m_apps;
                     bool m_appsHasBeenSet;

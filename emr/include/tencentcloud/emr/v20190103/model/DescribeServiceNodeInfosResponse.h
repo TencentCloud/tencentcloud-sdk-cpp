@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取总数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCnt 总数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCnt() const;
@@ -78,9 +76,7 @@ namespace TencentCloud
 
                     /**
                      * 获取集群所有节点的别名序列化
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AliasInfo 集群所有节点的别名序列化
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAliasInfo() const;
@@ -112,7 +108,6 @@ namespace TencentCloud
 
                     /**
                      * 总数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCnt;
                     bool m_totalCntHasBeenSet;
@@ -126,7 +121,6 @@ namespace TencentCloud
 
                     /**
                      * 集群所有节点的别名序列化
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_aliasInfo;
                     bool m_aliasInfoHasBeenSet;

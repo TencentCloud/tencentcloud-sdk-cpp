@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取创建时间
-                     * @return CreatedTime 创建时间
+                     * 获取创建时间，毫秒级时间戳 。
+                     * @return CreatedTime 创建时间，毫秒级时间戳 。
                      * 
                      */
                     int64_t GetCreatedTime() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取上次更新时间
-                     * @return UpdateTime 上次更新时间
+                     * 获取上次更新时间，毫秒级时间戳 。
+                     * @return UpdateTime 上次更新时间，毫秒级时间戳 。
                      * 
                      */
                     int64_t GetUpdateTime() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取证书失效日期
-                     * @return NotAfterTime 证书失效日期
+                     * 获取证书失效日期，毫秒级时间戳 。
+                     * @return NotAfterTime 证书失效日期，毫秒级时间戳 。
                      * 
                      */
                     int64_t GetNotAfterTime() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool NotAfterTimeHasBeenSet() const;
 
                     /**
-                     * 获取上次激活时间
-                     * @return LastActivationTime 上次激活时间
+                     * 获取上次激活时间，毫秒级时间戳 。
+                     * @return LastActivationTime 上次激活时间，毫秒级时间戳 。
                      * 
                      */
                     int64_t GetLastActivationTime() const;
@@ -100,8 +100,8 @@ namespace TencentCloud
                     bool LastActivationTimeHasBeenSet() const;
 
                     /**
-                     * 获取上次取消激活时间
-                     * @return LastInactivationTime 上次取消激活时间
+                     * 获取上次取消激活时间，毫秒级时间戳 。
+                     * @return LastInactivationTime 上次取消激活时间，毫秒级时间戳 。
                      * 
                      */
                     int64_t GetLastInactivationTime() const;
@@ -114,8 +114,16 @@ namespace TencentCloud
                     bool LastInactivationTimeHasBeenSet() const;
 
                     /**
-                     * 获取证书状态
-                     * @return Status 证书状态
+                     * 获取设备证书的状态
+    ACTIVE：激活 
+    INACTIVE：未激活
+    REVOKED：吊销
+    PENDING_ACTIVATION：注册待激活
+                     * @return Status 设备证书的状态
+    ACTIVE：激活 
+    INACTIVE：未激活
+    REVOKED：吊销
+    PENDING_ACTIVATION：注册待激活
                      * 
                      */
                     std::string GetStatus() const;
@@ -184,8 +192,8 @@ namespace TencentCloud
                     bool DeviceCertificateCnHasBeenSet() const;
 
                     /**
-                     * 获取证书格式
-                     * @return Format 证书格式
+                     * 获取证书格式，当前仅支持PEM格式
+                     * @return Format 证书格式，当前仅支持PEM格式
                      * 
                      */
                     std::string GetFormat() const;
@@ -212,10 +220,12 @@ namespace TencentCloud
                     bool ClientIdHasBeenSet() const;
 
                     /**
-                     * 获取    API, 手动注册   
-    JITP 自动注册
-                     * @return CertificateSource     API, 手动注册   
-    JITP 自动注册
+                     * 获取证书来源    
+API：手动注册   
+JITP：自动注册
+                     * @return CertificateSource 证书来源    
+API：手动注册   
+JITP：自动注册
                      * 
                      */
                     std::string GetCertificateSource() const;
@@ -228,8 +238,8 @@ namespace TencentCloud
                     bool CertificateSourceHasBeenSet() const;
 
                     /**
-                     * 获取证书生效开始时间
-                     * @return NotBeforeTime 证书生效开始时间
+                     * 获取证书生效开始时间，毫秒级时间戳 。
+                     * @return NotBeforeTime 证书生效开始时间，毫秒级时间戳 。
                      * 
                      */
                     int64_t GetNotBeforeTime() const;
@@ -258,37 +268,41 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 创建时间
+                     * 创建时间，毫秒级时间戳 。
                      */
                     int64_t m_createdTime;
                     bool m_createdTimeHasBeenSet;
 
                     /**
-                     * 上次更新时间
+                     * 上次更新时间，毫秒级时间戳 。
                      */
                     int64_t m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 证书失效日期
+                     * 证书失效日期，毫秒级时间戳 。
                      */
                     int64_t m_notAfterTime;
                     bool m_notAfterTimeHasBeenSet;
 
                     /**
-                     * 上次激活时间
+                     * 上次激活时间，毫秒级时间戳 。
                      */
                     int64_t m_lastActivationTime;
                     bool m_lastActivationTimeHasBeenSet;
 
                     /**
-                     * 上次取消激活时间
+                     * 上次取消激活时间，毫秒级时间戳 。
                      */
                     int64_t m_lastInactivationTime;
                     bool m_lastInactivationTimeHasBeenSet;
 
                     /**
-                     * 证书状态
+                     * 设备证书的状态
+    ACTIVE：激活 
+    INACTIVE：未激活
+    REVOKED：吊销
+    PENDING_ACTIVATION：注册待激活
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
@@ -318,7 +332,7 @@ namespace TencentCloud
                     bool m_deviceCertificateCnHasBeenSet;
 
                     /**
-                     * 证书格式
+                     * 证书格式，当前仅支持PEM格式
                      */
                     std::string m_format;
                     bool m_formatHasBeenSet;
@@ -330,14 +344,15 @@ namespace TencentCloud
                     bool m_clientIdHasBeenSet;
 
                     /**
-                     *     API, 手动注册   
-    JITP 自动注册
+                     * 证书来源    
+API：手动注册   
+JITP：自动注册
                      */
                     std::string m_certificateSource;
                     bool m_certificateSourceHasBeenSet;
 
                     /**
-                     * 证书生效开始时间
+                     * 证书生效开始时间，毫秒级时间戳 。
                      */
                     int64_t m_notBeforeTime;
                     bool m_notBeforeTimeHasBeenSet;

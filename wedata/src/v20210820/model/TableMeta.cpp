@@ -84,7 +84,8 @@ TableMeta::TableMeta() :
     m_hasBizPermissionHasBeenSet(false),
     m_ownerByEngineHasBeenSet(false),
     m_errorTipsHasBeenSet(false),
-    m_ifSupportCreateAndDDLHasBeenSet(false)
+    m_ifSupportCreateAndDDLHasBeenSet(false),
+    m_columnCountHasBeenSet(false)
 {
 }
 
@@ -793,6 +794,16 @@ CoreInternalOutcome TableMeta::Deserialize(const rapidjson::Value &value)
         m_ifSupportCreateAndDDLHasBeenSet = true;
     }
 
+    if (value.HasMember("ColumnCount") && !value["ColumnCount"].IsNull())
+    {
+        if (!value["ColumnCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableMeta.ColumnCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_columnCount = value["ColumnCount"].GetInt64();
+        m_columnCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1349,6 +1360,14 @@ void TableMeta::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_ifSupportCreateAndDDL.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_columnCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ColumnCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_columnCount, allocator);
     }
 
 }
@@ -2376,5 +2395,21 @@ void TableMeta::SetIfSupportCreateAndDDL(const CreateAndDDLSupport& _ifSupportCr
 bool TableMeta::IfSupportCreateAndDDLHasBeenSet() const
 {
     return m_ifSupportCreateAndDDLHasBeenSet;
+}
+
+int64_t TableMeta::GetColumnCount() const
+{
+    return m_columnCount;
+}
+
+void TableMeta::SetColumnCount(const int64_t& _columnCount)
+{
+    m_columnCount = _columnCount;
+    m_columnCountHasBeenSet = true;
+}
+
+bool TableMeta::ColumnCountHasBeenSet() const
+{
+    return m_columnCountHasBeenSet;
 }
 

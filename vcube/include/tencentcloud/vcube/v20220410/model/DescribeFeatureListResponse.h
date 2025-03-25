@@ -47,9 +47,7 @@ namespace TencentCloud
 
                     /**
                      * 获取功能列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FeatureList 功能列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<VideoFeature> GetFeatureList() const;
@@ -63,9 +61,7 @@ namespace TencentCloud
 
                     /**
                      * 获取优图功能列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return XMagicFeatureList 优图功能列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<XMagicFeature> GetXMagicFeatureList() const;
@@ -81,14 +77,12 @@ namespace TencentCloud
 
                     /**
                      * 功能列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<VideoFeature> m_featureList;
                     bool m_featureListHasBeenSet;
 
                     /**
                      * 优图功能列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<XMagicFeature> m_xMagicFeatureList;
                     bool m_xMagicFeatureListHasBeenSet;

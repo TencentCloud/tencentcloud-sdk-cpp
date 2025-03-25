@@ -39,7 +39,8 @@ ImageRepository::ImageRepository() :
     m_applicationNameRealHasBeenSet(false),
     m_publicHasBeenSet(false),
     m_createModeHasBeenSet(false),
-    m_repoNameHasBeenSet(false)
+    m_repoNameHasBeenSet(false),
+    m_repoTypeHasBeenSet(false)
 {
 }
 
@@ -252,6 +253,16 @@ CoreInternalOutcome ImageRepository::Deserialize(const rapidjson::Value &value)
         m_repoNameHasBeenSet = true;
     }
 
+    if (value.HasMember("RepoType") && !value["RepoType"].IsNull())
+    {
+        if (!value["RepoType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageRepository.RepoType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_repoType = string(value["RepoType"].GetString());
+        m_repoTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -411,6 +422,14 @@ void ImageRepository::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "RepoName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_repoName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_repoTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RepoType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_repoType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -718,5 +737,21 @@ void ImageRepository::SetRepoName(const string& _repoName)
 bool ImageRepository::RepoNameHasBeenSet() const
 {
     return m_repoNameHasBeenSet;
+}
+
+string ImageRepository::GetRepoType() const
+{
+    return m_repoType;
+}
+
+void ImageRepository::SetRepoType(const string& _repoType)
+{
+    m_repoType = _repoType;
+    m_repoTypeHasBeenSet = true;
+}
+
+bool ImageRepository::RepoTypeHasBeenSet() const
+{
+    return m_repoTypeHasBeenSet;
 }
 

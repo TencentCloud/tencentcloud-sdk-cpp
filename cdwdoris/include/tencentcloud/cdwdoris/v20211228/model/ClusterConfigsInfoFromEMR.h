@@ -48,6 +48,27 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取计算组id
+                     * @return ComputeGroupId 计算组id
+                     * 
+                     */
+                    std::string GetComputeGroupId() const;
+
+                    /**
+                     * 设置计算组id
+                     * @param _computeGroupId 计算组id
+                     * 
+                     */
+                    void SetComputeGroupId(const std::string& _computeGroupId);
+
+                    /**
+                     * 判断参数 ComputeGroupId 是否已赋值
+                     * @return ComputeGroupId 是否已赋值
+                     * 
+                     */
+                    bool ComputeGroupIdHasBeenSet() const;
+
+                    /**
                      * 获取配置文件名称
                      * @return FileName 配置文件名称
                      * 
@@ -220,6 +241,12 @@ namespace TencentCloud
                     bool FileKeyValuesNewHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 计算组id
+                     */
+                    std::string m_computeGroupId;
+                    bool m_computeGroupIdHasBeenSet;
 
                     /**
                      * 配置文件名称

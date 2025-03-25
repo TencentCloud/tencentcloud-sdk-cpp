@@ -112,18 +112,18 @@ namespace TencentCloud
                     bool TargetGroupNameHasBeenSet() const;
 
                     /**
-                     * 获取目标组的默认端口
+                     * 获取目标组的默认端口，全监听目标组此字段返回0，表示无效端口。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Port 目标组的默认端口
+                     * @return Port 目标组的默认端口，全监听目标组此字段返回0，表示无效端口。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPort() const;
 
                     /**
-                     * 设置目标组的默认端口
+                     * 设置目标组的默认端口，全监听目标组此字段返回0，表示无效端口。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _port 目标组的默认端口
+                     * @param _port 目标组的默认端口，全监听目标组此字段返回0，表示无效端口。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -324,6 +324,27 @@ namespace TencentCloud
                      */
                     bool WeightHasBeenSet() const;
 
+                    /**
+                     * 获取是否全监听目标组
+                     * @return FullListenSwitch 是否全监听目标组
+                     * 
+                     */
+                    bool GetFullListenSwitch() const;
+
+                    /**
+                     * 设置是否全监听目标组
+                     * @param _fullListenSwitch 是否全监听目标组
+                     * 
+                     */
+                    void SetFullListenSwitch(const bool& _fullListenSwitch);
+
+                    /**
+                     * 判断参数 FullListenSwitch 是否已赋值
+                     * @return FullListenSwitch 是否已赋值
+                     * 
+                     */
+                    bool FullListenSwitchHasBeenSet() const;
+
                 private:
 
                     /**
@@ -345,7 +366,7 @@ namespace TencentCloud
                     bool m_targetGroupNameHasBeenSet;
 
                     /**
-                     * 目标组的默认端口
+                     * 目标组的默认端口，全监听目标组此字段返回0，表示无效端口。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_port;
@@ -403,6 +424,12 @@ namespace TencentCloud
                      */
                     uint64_t m_weight;
                     bool m_weightHasBeenSet;
+
+                    /**
+                     * 是否全监听目标组
+                     */
+                    bool m_fullListenSwitch;
+                    bool m_fullListenSwitchHasBeenSet;
 
                 };
             }

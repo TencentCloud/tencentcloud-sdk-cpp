@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取1
-                     * @return FlowId 1
+                     * 获取流程id
+                     * @return FlowId 流程id
                      * 
                      */
                     std::string GetFlowId() const;
@@ -58,9 +58,9 @@ namespace TencentCloud
                     bool FlowIdHasBeenSet() const;
 
                     /**
-                     * 获取1
+                     * 获取错误信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ErrorMsg 1
+                     * @return ErrorMsg 错误信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -76,13 +76,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 1
+                     * 流程id
                      */
                     std::string m_flowId;
                     bool m_flowIdHasBeenSet;
 
                     /**
-                     * 1
+                     * 错误信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errorMsg;

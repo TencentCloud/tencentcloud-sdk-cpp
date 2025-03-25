@@ -785,18 +785,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例处于异步任务状态时，表示异步任务流程ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Locker 实例处于异步任务状态时，表示异步任务流程ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLocker() const;
 
                     /**
                      * 设置实例处于异步任务状态时，表示异步任务流程ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _locker 实例处于异步任务状态时，表示异步任务流程ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLocker(const int64_t& _locker);
@@ -873,18 +869,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例IPv6标志
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ipv6Flag 实例IPv6标志
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIpv6Flag() const;
 
                     /**
                      * 设置实例IPv6标志
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ipv6Flag 实例IPv6标志
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIpv6Flag(const uint64_t& _ipv6Flag);
@@ -898,18 +890,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内网IPv6
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vipv6 内网IPv6
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVipv6() const;
 
                     /**
                      * 设置内网IPv6
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vipv6 内网IPv6
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVipv6(const std::string& _vipv6);
@@ -923,18 +911,14 @@ namespace TencentCloud
 
                     /**
                      * 获取外网IPv6
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WanVipv6 外网IPv6
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetWanVipv6() const;
 
                     /**
                      * 设置外网IPv6
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _wanVipv6 外网IPv6
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWanVipv6(const std::string& _wanVipv6);
@@ -948,18 +932,14 @@ namespace TencentCloud
 
                     /**
                      * 获取外网IPv6端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WanPortIpv6 外网IPv6端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetWanPortIpv6() const;
 
                     /**
                      * 设置外网IPv6端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _wanPortIpv6 外网IPv6端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWanPortIpv6(const uint64_t& _wanPortIpv6);
@@ -973,18 +953,14 @@ namespace TencentCloud
 
                     /**
                      * 获取外网IPv6状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WanStatusIpv6 外网IPv6状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetWanStatusIpv6() const;
 
                     /**
                      * 设置外网IPv6状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _wanStatusIpv6 外网IPv6状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWanStatusIpv6(const uint64_t& _wanStatusIpv6);
@@ -998,18 +974,14 @@ namespace TencentCloud
 
                     /**
                      * 获取DCN标志，0-无，1-主实例，2-灾备实例
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DcnFlag DCN标志，0-无，1-主实例，2-灾备实例
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDcnFlag() const;
 
                     /**
                      * 设置DCN标志，0-无，1-主实例，2-灾备实例
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dcnFlag DCN标志，0-无，1-主实例，2-灾备实例
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDcnFlag(const int64_t& _dcnFlag);
@@ -1023,18 +995,14 @@ namespace TencentCloud
 
                     /**
                      * 获取DCN状态，0-无，1-创建中，2-同步中，3-已断开
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DcnStatus DCN状态，0-无，1-创建中，2-同步中，3-已断开
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDcnStatus() const;
 
                     /**
                      * 设置DCN状态，0-无，1-创建中，2-同步中，3-已断开
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dcnStatus DCN状态，0-无，1-创建中，2-同步中，3-已断开
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDcnStatus(const int64_t& _dcnStatus);
@@ -1048,18 +1016,14 @@ namespace TencentCloud
 
                     /**
                      * 获取DCN灾备实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DcnDstNum DCN灾备实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDcnDstNum() const;
 
                     /**
                      * 设置DCN灾备实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dcnDstNum DCN灾备实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDcnDstNum(const int64_t& _dcnDstNum);
@@ -1073,18 +1037,14 @@ namespace TencentCloud
 
                     /**
                      * 获取1： 主实例（独享型）, 2: 主实例, 3： 灾备实例, 4： 灾备实例（独享型）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceType 1： 主实例（独享型）, 2: 主实例, 3： 灾备实例, 4： 灾备实例（独享型）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetInstanceType() const;
 
                     /**
                      * 设置1： 主实例（独享型）, 2: 主实例, 3： 灾备实例, 4： 灾备实例（独享型）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceType 1： 主实例（独享型）, 2: 主实例, 3： 灾备实例, 4： 灾备实例（独享型）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceType(const int64_t& _instanceType);
@@ -1098,18 +1058,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceTags 实例标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ResourceTag> GetResourceTags() const;
 
                     /**
                      * 设置实例标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceTags 实例标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceTags(const std::vector<ResourceTag>& _resourceTags);
@@ -1123,18 +1079,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据库引擎版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DbVersionId 数据库引擎版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDbVersionId() const;
 
                     /**
                      * 设置数据库引擎版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dbVersionId 数据库引擎版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDbVersionId(const std::string& _dbVersionId);
@@ -1360,7 +1312,6 @@ namespace TencentCloud
 
                     /**
                      * 实例处于异步任务状态时，表示异步任务流程ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_locker;
                     bool m_lockerHasBeenSet;
@@ -1385,77 +1336,66 @@ namespace TencentCloud
 
                     /**
                      * 实例IPv6标志
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_ipv6Flag;
                     bool m_ipv6FlagHasBeenSet;
 
                     /**
                      * 内网IPv6
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vipv6;
                     bool m_vipv6HasBeenSet;
 
                     /**
                      * 外网IPv6
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_wanVipv6;
                     bool m_wanVipv6HasBeenSet;
 
                     /**
                      * 外网IPv6端口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_wanPortIpv6;
                     bool m_wanPortIpv6HasBeenSet;
 
                     /**
                      * 外网IPv6状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_wanStatusIpv6;
                     bool m_wanStatusIpv6HasBeenSet;
 
                     /**
                      * DCN标志，0-无，1-主实例，2-灾备实例
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_dcnFlag;
                     bool m_dcnFlagHasBeenSet;
 
                     /**
                      * DCN状态，0-无，1-创建中，2-同步中，3-已断开
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_dcnStatus;
                     bool m_dcnStatusHasBeenSet;
 
                     /**
                      * DCN灾备实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_dcnDstNum;
                     bool m_dcnDstNumHasBeenSet;
 
                     /**
                      * 1： 主实例（独享型）, 2: 主实例, 3： 灾备实例, 4： 灾备实例（独享型）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**
                      * 实例标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ResourceTag> m_resourceTags;
                     bool m_resourceTagsHasBeenSet;
 
                     /**
                      * 数据库引擎版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dbVersionId;
                     bool m_dbVersionIdHasBeenSet;

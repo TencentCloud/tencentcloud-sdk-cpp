@@ -26,7 +26,8 @@ DescribeSpecRequest::DescribeSpecRequest() :
     m_zoneHasBeenSet(false),
     m_payModeHasBeenSet(false),
     m_zonesHasBeenSet(false),
-    m_specNameHasBeenSet(false)
+    m_specNameHasBeenSet(false),
+    m_isSSCHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,14 @@ string DescribeSpecRequest::ToJsonString() const
         string key = "SpecName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_specName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isSSCHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSSC";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isSSC, allocator);
     }
 
 
@@ -144,6 +153,22 @@ void DescribeSpecRequest::SetSpecName(const string& _specName)
 bool DescribeSpecRequest::SpecNameHasBeenSet() const
 {
     return m_specNameHasBeenSet;
+}
+
+bool DescribeSpecRequest::GetIsSSC() const
+{
+    return m_isSSC;
+}
+
+void DescribeSpecRequest::SetIsSSC(const bool& _isSSC)
+{
+    m_isSSC = _isSSC;
+    m_isSSCHasBeenSet = true;
+}
+
+bool DescribeSpecRequest::IsSSCHasBeenSet() const
+{
+    return m_isSSCHasBeenSet;
 }
 
 

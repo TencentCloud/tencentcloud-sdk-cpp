@@ -151,6 +151,27 @@ namespace TencentCloud
                      */
                     bool MainHasBeenSet() const;
 
+                    /**
+                     * 获取0表示未开通容器化，1表示已开通容器化
+                     * @return ContainerEnabled 0表示未开通容器化，1表示已开通容器化
+                     * 
+                     */
+                    int64_t GetContainerEnabled() const;
+
+                    /**
+                     * 设置0表示未开通容器化，1表示已开通容器化
+                     * @param _containerEnabled 0表示未开通容器化，1表示已开通容器化
+                     * 
+                     */
+                    void SetContainerEnabled(const int64_t& _containerEnabled);
+
+                    /**
+                     * 判断参数 ContainerEnabled 是否已赋值
+                     * @return ContainerEnabled 是否已赋值
+                     * 
+                     */
+                    bool ContainerEnabledHasBeenSet() const;
+
                 private:
 
                     /**
@@ -182,6 +203,12 @@ namespace TencentCloud
                      */
                     bool m_main;
                     bool m_mainHasBeenSet;
+
+                    /**
+                     * 0表示未开通容器化，1表示已开通容器化
+                     */
+                    int64_t m_containerEnabled;
+                    bool m_containerEnabledHasBeenSet;
 
                 };
             }

@@ -74,8 +74,8 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取带宽
-                     * @return Bandwidth 带宽
+                     * 获取带宽，单位Mbps
+                     * @return Bandwidth 带宽，单位Mbps
                      * 
                      */
                     int64_t GetBandwidth() const;
@@ -140,7 +140,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 带宽
+                     * 带宽，单位Mbps
                      */
                     int64_t m_bandwidth;
                     bool m_bandwidthHasBeenSet;

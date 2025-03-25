@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/thpc/v20230321/model/Filter.h>
 
 
 namespace TencentCloud
@@ -105,6 +106,55 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取<ul>
+    <li><strong>cluster-type</strong>
+        <p style="padding-left: 30px;">按照【<strong>集群类型</strong>】进行过滤</p>
+        <p style="padding-left: 30px;">类型：String</p>
+        <p style="padding-left: 30px;">必选：否</p>
+    </li>
+</ul>
+<p style="padding-left: 30px;">每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。</p>
+                     * @return Filters <ul>
+    <li><strong>cluster-type</strong>
+        <p style="padding-left: 30px;">按照【<strong>集群类型</strong>】进行过滤</p>
+        <p style="padding-left: 30px;">类型：String</p>
+        <p style="padding-left: 30px;">必选：否</p>
+    </li>
+</ul>
+<p style="padding-left: 30px;">每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。</p>
+                     * 
+                     */
+                    std::vector<Filter> GetFilters() const;
+
+                    /**
+                     * 设置<ul>
+    <li><strong>cluster-type</strong>
+        <p style="padding-left: 30px;">按照【<strong>集群类型</strong>】进行过滤</p>
+        <p style="padding-left: 30px;">类型：String</p>
+        <p style="padding-left: 30px;">必选：否</p>
+    </li>
+</ul>
+<p style="padding-left: 30px;">每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。</p>
+                     * @param _filters <ul>
+    <li><strong>cluster-type</strong>
+        <p style="padding-left: 30px;">按照【<strong>集群类型</strong>】进行过滤</p>
+        <p style="padding-left: 30px;">类型：String</p>
+        <p style="padding-left: 30px;">必选：否</p>
+    </li>
+</ul>
+<p style="padding-left: 30px;">每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。</p>
+                     * 
+                     */
+                    void SetFilters(const std::vector<Filter>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     * 
+                     */
+                    bool FiltersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +174,19 @@ namespace TencentCloud
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * <ul>
+    <li><strong>cluster-type</strong>
+        <p style="padding-left: 30px;">按照【<strong>集群类型</strong>】进行过滤</p>
+        <p style="padding-left: 30px;">类型：String</p>
+        <p style="padding-left: 30px;">必选：否</p>
+    </li>
+</ul>
+<p style="padding-left: 30px;">每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。</p>
+                     */
+                    std::vector<Filter> m_filters;
+                    bool m_filtersHasBeenSet;
 
                 };
             }

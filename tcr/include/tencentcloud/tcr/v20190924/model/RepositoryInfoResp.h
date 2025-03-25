@@ -132,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取镜像仓库描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 镜像仓库描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置镜像仓库描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 镜像仓库描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -288,7 +284,6 @@ namespace TencentCloud
 
                     /**
                      * 镜像仓库描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

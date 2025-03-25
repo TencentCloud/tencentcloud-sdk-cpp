@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取该房间的事件总数，keyword搜索不影响该值。
-                     * @return Total 该房间的事件总数，keyword搜索不影响该值。
+                     * 获取该课堂的事件总数，keyword搜索不影响该值。
+                     * @return Total 该课堂的事件总数，keyword搜索不影响该值。
                      * 
                      */
                     uint64_t GetTotal() const;
@@ -75,7 +75,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 该房间的事件总数，keyword搜索不影响该值。
+                     * 该课堂的事件总数，keyword搜索不影响该值。
                      */
                     uint64_t m_total;
                     bool m_totalHasBeenSet;

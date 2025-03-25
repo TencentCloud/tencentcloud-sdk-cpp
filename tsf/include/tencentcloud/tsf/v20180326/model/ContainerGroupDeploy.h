@@ -58,18 +58,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部署组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupId 部署组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置部署组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupId 部署组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -83,18 +79,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupName 分组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置分组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupName 分组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -108,18 +100,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceNum 实例总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetInstanceNum() const;
 
                     /**
                      * 设置实例总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceNum 实例总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceNum(const int64_t& _instanceNum);
@@ -133,18 +121,14 @@ namespace TencentCloud
 
                     /**
                      * 获取已启动实例总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CurrentNum 已启动实例总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCurrentNum() const;
 
                     /**
                      * 设置已启动实例总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _currentNum 已启动实例总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCurrentNum(const int64_t& _currentNum);
@@ -358,18 +342,14 @@ namespace TencentCloud
 
                     /**
                      * 获取端口映射
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProtocolPorts 端口映射
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ProtocolPort> GetProtocolPorts() const;
 
                     /**
                      * 设置端口映射
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _protocolPorts 端口映射
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProtocolPorts(const std::vector<ProtocolPort>& _protocolPorts);
@@ -733,18 +713,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否部署Agent容器
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeployAgent 是否部署Agent容器
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetDeployAgent() const;
 
                     /**
                      * 设置是否部署Agent容器
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deployAgent 是否部署Agent容器
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeployAgent(const bool& _deployAgent);
@@ -783,18 +759,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否创建 k8s service
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DisableService 是否创建 k8s service
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetDisableService() const;
 
                     /**
                      * 设置是否创建 k8s service
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _disableService 是否创建 k8s service
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDisableService(const bool& _disableService);
@@ -808,18 +780,14 @@ namespace TencentCloud
 
                     /**
                      * 获取service 是否为 headless 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HeadlessService service 是否为 headless 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetHeadlessService() const;
 
                     /**
                      * 设置service 是否为 headless 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _headlessService service 是否为 headless 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHeadlessService(const bool& _headlessService);
@@ -933,18 +901,14 @@ namespace TencentCloud
 
                     /**
                      * 获取仓库类型 (person, tcr)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RepoType 仓库类型 (person, tcr)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRepoType() const;
 
                     /**
                      * 设置仓库类型 (person, tcr)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _repoType 仓库类型 (person, tcr)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRepoType(const std::string& _repoType);
@@ -958,18 +922,14 @@ namespace TencentCloud
 
                     /**
                      * 获取预热配置设置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WarmupSetting 预热配置设置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     WarmupSetting GetWarmupSetting() const;
 
                     /**
                      * 设置预热配置设置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _warmupSetting 预热配置设置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWarmupSetting(const WarmupSetting& _warmupSetting);
@@ -1008,18 +968,14 @@ namespace TencentCloud
 
                     /**
                      * 获取容器名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContainerName 容器名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetContainerName() const;
 
                     /**
                      * 设置容器名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _containerName 容器名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetContainerName(const std::string& _containerName);
@@ -1033,18 +989,14 @@ namespace TencentCloud
 
                     /**
                      * 获取附加容器列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdditionalContainerList 附加容器列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<GroupContainerInfo> GetAdditionalContainerList() const;
 
                     /**
                      * 设置附加容器列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _additionalContainerList 附加容器列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAdditionalContainerList(const std::vector<GroupContainerInfo>& _additionalContainerList);
@@ -1058,18 +1010,14 @@ namespace TencentCloud
 
                     /**
                      * 获取内部容器列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InternalContainerList 内部容器列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<GroupContainerInfo> GetInternalContainerList() const;
 
                     /**
                      * 设置内部容器列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _internalContainerList 内部容器列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInternalContainerList(const std::vector<GroupContainerInfo>& _internalContainerList);
@@ -1083,18 +1031,14 @@ namespace TencentCloud
 
                     /**
                      * 获取service列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceSettingList service列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ServiceSetting> GetServiceSettingList() const;
 
                     /**
                      * 设置service列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serviceSettingList service列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServiceSettingList(const std::vector<ServiceSetting>& _serviceSettingList);
@@ -1110,28 +1054,24 @@ namespace TencentCloud
 
                     /**
                      * 部署组id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
                      * 分组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
 
                     /**
                      * 实例总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_instanceNum;
                     bool m_instanceNumHasBeenSet;
 
                     /**
                      * 已启动实例总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_currentNum;
                     bool m_currentNumHasBeenSet;
@@ -1194,7 +1134,6 @@ namespace TencentCloud
 
                     /**
                      * 端口映射
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ProtocolPort> m_protocolPorts;
                     bool m_protocolPortsHasBeenSet;
@@ -1299,7 +1238,6 @@ namespace TencentCloud
 
                     /**
                      * 是否部署Agent容器
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_deployAgent;
                     bool m_deployAgentHasBeenSet;
@@ -1313,14 +1251,12 @@ namespace TencentCloud
 
                     /**
                      * 是否创建 k8s service
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_disableService;
                     bool m_disableServiceHasBeenSet;
 
                     /**
                      * service 是否为 headless 类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_headlessService;
                     bool m_headlessServiceHasBeenSet;
@@ -1355,14 +1291,12 @@ namespace TencentCloud
 
                     /**
                      * 仓库类型 (person, tcr)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_repoType;
                     bool m_repoTypeHasBeenSet;
 
                     /**
                      * 预热配置设置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     WarmupSetting m_warmupSetting;
                     bool m_warmupSettingHasBeenSet;
@@ -1376,28 +1310,24 @@ namespace TencentCloud
 
                     /**
                      * 容器名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_containerName;
                     bool m_containerNameHasBeenSet;
 
                     /**
                      * 附加容器列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<GroupContainerInfo> m_additionalContainerList;
                     bool m_additionalContainerListHasBeenSet;
 
                     /**
                      * 内部容器列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<GroupContainerInfo> m_internalContainerList;
                     bool m_internalContainerListHasBeenSet;
 
                     /**
                      * service列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ServiceSetting> m_serviceSettingList;
                     bool m_serviceSettingListHasBeenSet;

@@ -361,6 +361,27 @@ namespace TencentCloud
                      */
                     bool IsQueryHasBeenSet() const;
 
+                    /**
+                     * 获取计算组
+                     * @return ComputeGroup 计算组
+                     * 
+                     */
+                    std::string GetComputeGroup() const;
+
+                    /**
+                     * 设置计算组
+                     * @param _computeGroup 计算组
+                     * 
+                     */
+                    void SetComputeGroup(const std::string& _computeGroup);
+
+                    /**
+                     * 判断参数 ComputeGroup 是否已赋值
+                     * @return ComputeGroup 是否已赋值
+                     * 
+                     */
+                    bool ComputeGroupHasBeenSet() const;
+
                 private:
 
                     /**
@@ -452,6 +473,12 @@ namespace TencentCloud
                      */
                     bool m_isQuery;
                     bool m_isQueryHasBeenSet;
+
+                    /**
+                     * 计算组
+                     */
+                    std::string m_computeGroup;
+                    bool m_computeGroupHasBeenSet;
 
                 };
             }

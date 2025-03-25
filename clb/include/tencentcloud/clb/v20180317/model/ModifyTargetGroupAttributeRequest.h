@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool TargetGroupNameHasBeenSet() const;
 
                     /**
-                     * 获取目标组的新默认端口。
-                     * @return Port 目标组的新默认端口。
+                     * 获取目标组的新默认端口。全监听目标组不支持此参数。
+                     * @return Port 目标组的新默认端口。全监听目标组不支持此参数。
                      * 
                      */
                     uint64_t GetPort() const;
 
                     /**
-                     * 设置目标组的新默认端口。
-                     * @param _port 目标组的新默认端口。
+                     * 设置目标组的新默认端口。全监听目标组不支持此参数。
+                     * @param _port 目标组的新默认端口。全监听目标组不支持此参数。
                      * 
                      */
                     void SetPort(const uint64_t& _port);
@@ -157,7 +157,7 @@ namespace TencentCloud
                     bool m_targetGroupNameHasBeenSet;
 
                     /**
-                     * 目标组的新默认端口。
+                     * 目标组的新默认端口。全监听目标组不支持此参数。
                      */
                     uint64_t m_port;
                     bool m_portHasBeenSet;

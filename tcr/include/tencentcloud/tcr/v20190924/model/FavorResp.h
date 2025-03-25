@@ -70,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取仓库信息数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RepoInfo 仓库信息数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Favors> GetRepoInfo() const;
 
                     /**
                      * 设置仓库信息数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _repoInfo 仓库信息数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRepoInfo(const std::vector<Favors>& _repoInfo);
@@ -103,7 +99,6 @@ namespace TencentCloud
 
                     /**
                      * 仓库信息数组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Favors> m_repoInfo;
                     bool m_repoInfoHasBeenSet;

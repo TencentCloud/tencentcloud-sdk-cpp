@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Username 用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUsername() const;
@@ -89,9 +87,7 @@ namespace TencentCloud
 
                     /**
                      * 获取长期凭证的TokenId，短期凭证没有TokenId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TokenId 长期凭证的TokenId，短期凭证没有TokenId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTokenId() const;
@@ -107,7 +103,6 @@ namespace TencentCloud
 
                     /**
                      * 用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_username;
                     bool m_usernameHasBeenSet;
@@ -126,7 +121,6 @@ namespace TencentCloud
 
                     /**
                      * 长期凭证的TokenId，短期凭证没有TokenId
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tokenId;
                     bool m_tokenIdHasBeenSet;

@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取后端服务的监听端口
-                     * @return Port 后端服务的监听端口
+                     * 获取后端服务的监听端口，如果是全端口段监听器绑定的全监听目标组场景，此端口返回0，表示无效端口，绑定的后端服务的端口随监听器端口。
+                     * @return Port 后端服务的监听端口，如果是全端口段监听器绑定的全监听目标组场景，此端口返回0，表示无效端口，绑定的后端服务的端口随监听器端口。
                      * 
                      */
                     int64_t GetPort() const;
 
                     /**
-                     * 设置后端服务的监听端口
-                     * @param _port 后端服务的监听端口
+                     * 设置后端服务的监听端口，如果是全端口段监听器绑定的全监听目标组场景，此端口返回0，表示无效端口，绑定的后端服务的端口随监听器端口。
+                     * @param _port 后端服务的监听端口，如果是全端口段监听器绑定的全监听目标组场景，此端口返回0，表示无效端口，绑定的后端服务的端口随监听器端口。
                      * 
                      */
                     void SetPort(const int64_t& _port);
@@ -295,7 +295,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 后端服务的监听端口
+                     * 后端服务的监听端口，如果是全端口段监听器绑定的全监听目标组场景，此端口返回0，表示无效端口，绑定的后端服务的端口随监听器端口。
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;

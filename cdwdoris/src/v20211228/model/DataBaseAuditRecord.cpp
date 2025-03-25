@@ -35,7 +35,8 @@ DataBaseAuditRecord::DataBaseAuditRecord() :
     m_sqlTypeHasBeenSet(false),
     m_catalogHasBeenSet(false),
     m_stateHasBeenSet(false),
-    m_isQueryHasBeenSet(false)
+    m_isQueryHasBeenSet(false),
+    m_computeGroupHasBeenSet(false)
 {
 }
 
@@ -194,6 +195,16 @@ CoreInternalOutcome DataBaseAuditRecord::Deserialize(const rapidjson::Value &val
         m_isQueryHasBeenSet = true;
     }
 
+    if (value.HasMember("ComputeGroup") && !value["ComputeGroup"].IsNull())
+    {
+        if (!value["ComputeGroup"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataBaseAuditRecord.ComputeGroup` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_computeGroup = string(value["ComputeGroup"].GetString());
+        m_computeGroupHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -319,6 +330,14 @@ void DataBaseAuditRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "IsQuery";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isQuery, allocator);
+    }
+
+    if (m_computeGroupHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComputeGroup";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_computeGroup.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -562,5 +581,21 @@ void DataBaseAuditRecord::SetIsQuery(const bool& _isQuery)
 bool DataBaseAuditRecord::IsQueryHasBeenSet() const
 {
     return m_isQueryHasBeenSet;
+}
+
+string DataBaseAuditRecord::GetComputeGroup() const
+{
+    return m_computeGroup;
+}
+
+void DataBaseAuditRecord::SetComputeGroup(const string& _computeGroup)
+{
+    m_computeGroup = _computeGroup;
+    m_computeGroupHasBeenSet = true;
+}
+
+bool DataBaseAuditRecord::ComputeGroupHasBeenSet() const
+{
+    return m_computeGroupHasBeenSet;
 }
 

@@ -69,14 +69,26 @@ namespace TencentCloud
 
                     /**
                      * 获取服务质量等级
+0: 至多一次
+1: 至少一次
+2: 恰好一次
                      * @return Qos 服务质量等级
+0: 至多一次
+1: 至少一次
+2: 恰好一次
                      * 
                      */
                     int64_t GetQos() const;
 
                     /**
                      * 设置服务质量等级
+0: 至多一次
+1: 至少一次
+2: 恰好一次
                      * @param _qos 服务质量等级
+0: 至多一次
+1: 至少一次
+2: 恰好一次
                      * 
                      */
                     void SetQos(const int64_t& _qos);
@@ -140,6 +152,9 @@ namespace TencentCloud
 
                     /**
                      * 服务质量等级
+0: 至多一次
+1: 至少一次
+2: 恰好一次
                      */
                     int64_t m_qos;
                     bool m_qosHasBeenSet;

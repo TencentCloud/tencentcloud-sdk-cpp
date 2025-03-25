@@ -1656,6 +1656,31 @@ TABLE, VIEW, MANAGED_TABLE(Hive管理表), EXTERNAL_TABLE(Hive外部表), VIRTUA
                      */
                     bool IfSupportCreateAndDDLHasBeenSet() const;
 
+                    /**
+                     * 获取字段数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ColumnCount 字段数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetColumnCount() const;
+
+                    /**
+                     * 设置字段数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _columnCount 字段数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetColumnCount(const int64_t& _columnCount);
+
+                    /**
+                     * 判断参数 ColumnCount 是否已赋值
+                     * @return ColumnCount 是否已赋值
+                     * 
+                     */
+                    bool ColumnCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -2106,6 +2131,13 @@ TABLE, VIEW, MANAGED_TABLE(Hive管理表), EXTERNAL_TABLE(Hive外部表), VIRTUA
                      */
                     CreateAndDDLSupport m_ifSupportCreateAndDDL;
                     bool m_ifSupportCreateAndDDLHasBeenSet;
+
+                    /**
+                     * 字段数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_columnCount;
+                    bool m_columnCountHasBeenSet;
 
                 };
             }

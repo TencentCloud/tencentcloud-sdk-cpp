@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取计划ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PlanId 计划ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPlanId() const;
 
                     /**
                      * 设置计划ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _planId 计划ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPlanId(const std::string& _planId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取计划名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PlanName 计划名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPlanName() const;
 
                     /**
                      * 设置计划名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _planName 计划名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPlanName(const std::string& _planName);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 计划ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_planId;
                     bool m_planIdHasBeenSet;
 
                     /**
                      * 计划名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_planName;
                     bool m_planNameHasBeenSet;

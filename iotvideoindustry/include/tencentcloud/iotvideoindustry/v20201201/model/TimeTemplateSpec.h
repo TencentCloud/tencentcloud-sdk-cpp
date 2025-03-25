@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取一周中的周几
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DayofWeek 一周中的周几
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDayofWeek() const;
 
                     /**
                      * 设置一周中的周几
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dayofWeek 一周中的周几
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDayofWeek(const int64_t& _dayofWeek);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取时间片段的开始时分。格式【HH:MM】
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BeginTime 时间片段的开始时分。格式【HH:MM】
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBeginTime() const;
 
                     /**
                      * 设置时间片段的开始时分。格式【HH:MM】
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _beginTime 时间片段的开始时分。格式【HH:MM】
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBeginTime(const std::string& _beginTime);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取时间片段的结束时分。格式【HH:MM】
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EndTime 时间片段的结束时分。格式【HH:MM】
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEndTime() const;
 
                     /**
                      * 设置时间片段的结束时分。格式【HH:MM】
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _endTime 时间片段的结束时分。格式【HH:MM】
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEndTime(const std::string& _endTime);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 一周中的周几
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_dayofWeek;
                     bool m_dayofWeekHasBeenSet;
 
                     /**
                      * 时间片段的开始时分。格式【HH:MM】
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_beginTime;
                     bool m_beginTimeHasBeenSet;
 
                     /**
                      * 时间片段的结束时分。格式【HH:MM】
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

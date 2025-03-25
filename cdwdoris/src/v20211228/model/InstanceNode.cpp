@@ -33,7 +33,8 @@ InstanceNode::InstanceNode() :
     m_feRoleHasBeenSet(false),
     m_uUIDHasBeenSet(false),
     m_zoneHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_computeGroupIdHasBeenSet(false)
 {
 }
 
@@ -172,6 +173,16 @@ CoreInternalOutcome InstanceNode::Deserialize(const rapidjson::Value &value)
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("ComputeGroupId") && !value["ComputeGroupId"].IsNull())
+    {
+        if (!value["ComputeGroupId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceNode.ComputeGroupId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_computeGroupId = string(value["ComputeGroupId"].GetString());
+        m_computeGroupIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -281,6 +292,14 @@ void InstanceNode::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_computeGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComputeGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_computeGroupId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -492,5 +511,21 @@ void InstanceNode::SetCreateTime(const string& _createTime)
 bool InstanceNode::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+string InstanceNode::GetComputeGroupId() const
+{
+    return m_computeGroupId;
+}
+
+void InstanceNode::SetComputeGroupId(const string& _computeGroupId)
+{
+    m_computeGroupId = _computeGroupId;
+    m_computeGroupIdHasBeenSet = true;
+}
+
+bool InstanceNode::ComputeGroupIdHasBeenSet() const
+{
+    return m_computeGroupIdHasBeenSet;
 }
 

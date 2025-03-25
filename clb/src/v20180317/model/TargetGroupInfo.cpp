@@ -32,7 +32,8 @@ TargetGroupInfo::TargetGroupInfo() :
     m_associatedRuleCountHasBeenSet(false),
     m_registeredInstancesCountHasBeenSet(false),
     m_tagHasBeenSet(false),
-    m_weightHasBeenSet(false)
+    m_weightHasBeenSet(false),
+    m_fullListenSwitchHasBeenSet(false)
 {
 }
 
@@ -181,6 +182,16 @@ CoreInternalOutcome TargetGroupInfo::Deserialize(const rapidjson::Value &value)
         m_weightHasBeenSet = true;
     }
 
+    if (value.HasMember("FullListenSwitch") && !value["FullListenSwitch"].IsNull())
+    {
+        if (!value["FullListenSwitch"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `TargetGroupInfo.FullListenSwitch` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_fullListenSwitch = value["FullListenSwitch"].GetBool();
+        m_fullListenSwitchHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -296,6 +307,14 @@ void TargetGroupInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "Weight";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_weight, allocator);
+    }
+
+    if (m_fullListenSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FullListenSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_fullListenSwitch, allocator);
     }
 
 }
@@ -491,5 +510,21 @@ void TargetGroupInfo::SetWeight(const uint64_t& _weight)
 bool TargetGroupInfo::WeightHasBeenSet() const
 {
     return m_weightHasBeenSet;
+}
+
+bool TargetGroupInfo::GetFullListenSwitch() const
+{
+    return m_fullListenSwitch;
+}
+
+void TargetGroupInfo::SetFullListenSwitch(const bool& _fullListenSwitch)
+{
+    m_fullListenSwitch = _fullListenSwitch;
+    m_fullListenSwitchHasBeenSet = true;
+}
+
+bool TargetGroupInfo::FullListenSwitchHasBeenSet() const
+{
+    return m_fullListenSwitchHasBeenSet;
 }
 

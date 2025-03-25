@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取发货参数对应的价格组合，当DryRun=True，会返回空
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Price 发货参数对应的价格组合，当DryRun=True，会返回空
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Price GetPrice() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 发货参数对应的价格组合，当DryRun=True，会返回空
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Price m_price;
                     bool m_priceHasBeenSet;

@@ -110,15 +110,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取后端服务的监听端口
-                     * @return Port 后端服务的监听端口
+                     * 获取后端服务的监听端口，全端口段监听器此字段返回0，代表无效端口，即不支持设置。
+                     * @return Port 后端服务的监听端口，全端口段监听器此字段返回0，代表无效端口，即不支持设置。
                      * 
                      */
                     uint64_t GetPort() const;
 
                     /**
-                     * 设置后端服务的监听端口
-                     * @param _port 后端服务的监听端口
+                     * 设置后端服务的监听端口，全端口段监听器此字段返回0，代表无效端口，即不支持设置。
+                     * @param _port 后端服务的监听端口，全端口段监听器此字段返回0，代表无效端口，即不支持设置。
                      * 
                      */
                     void SetPort(const uint64_t& _port);
@@ -322,7 +322,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 后端服务的监听端口
+                     * 后端服务的监听端口，全端口段监听器此字段返回0，代表无效端口，即不支持设置。
                      */
                     uint64_t m_port;
                     bool m_portHasBeenSet;

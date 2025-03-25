@@ -77,9 +77,9 @@ namespace TencentCloud
                     bool InstancesListHasBeenSet() const;
 
                     /**
-                     * 获取-
+                     * 获取错误信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ErrorMsg -
+                     * @return ErrorMsg 错误信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -109,7 +109,7 @@ namespace TencentCloud
                     bool m_instancesListHasBeenSet;
 
                     /**
-                     * -
+                     * 错误信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errorMsg;
