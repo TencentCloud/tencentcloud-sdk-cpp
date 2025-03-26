@@ -94,6 +94,7 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/SkillGroupInfoItem.h
   include/tencentcloud/ccc/v20200210/model/CreateAIAgentCallRequest.h
   include/tencentcloud/ccc/v20200210/model/UpdateCCCSkillGroupRequest.h
+  include/tencentcloud/ccc/v20200210/model/TimeRange.h
   include/tencentcloud/ccc/v20200210/model/ModifyStaffPasswordRequest.h
   include/tencentcloud/ccc/v20200210/model/ModifyStaffResponse.h
   include/tencentcloud/ccc/v20200210/model/ModifyExtensionRequest.h
@@ -271,6 +272,7 @@ set(ccc_src
   src/v20200210/model/SkillGroupInfoItem.cpp
   src/v20200210/model/CreateAIAgentCallRequest.cpp
   src/v20200210/model/UpdateCCCSkillGroupRequest.cpp
+  src/v20200210/model/TimeRange.cpp
   src/v20200210/model/ModifyStaffPasswordRequest.cpp
   src/v20200210/model/ModifyStaffResponse.cpp
   src/v20200210/model/ModifyExtensionRequest.cpp

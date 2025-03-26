@@ -23,7 +23,8 @@ using namespace TencentCloud::Vpc::V20170312::Model;
 using namespace std;
 
 DeleteVpcEndPointRequest::DeleteVpcEndPointRequest() :
-    m_endPointIdHasBeenSet(false)
+    m_endPointIdHasBeenSet(false),
+    m_ipAddressTypeHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DeleteVpcEndPointRequest::ToJsonString() const
         string key = "EndPointId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_endPointId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ipAddressTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IpAddressType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_ipAddressType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DeleteVpcEndPointRequest::SetEndPointId(const string& _endPointId)
 bool DeleteVpcEndPointRequest::EndPointIdHasBeenSet() const
 {
     return m_endPointIdHasBeenSet;
+}
+
+string DeleteVpcEndPointRequest::GetIpAddressType() const
+{
+    return m_ipAddressType;
+}
+
+void DeleteVpcEndPointRequest::SetIpAddressType(const string& _ipAddressType)
+{
+    m_ipAddressType = _ipAddressType;
+    m_ipAddressTypeHasBeenSet = true;
+}
+
+bool DeleteVpcEndPointRequest::IpAddressTypeHasBeenSet() const
+{
+    return m_ipAddressTypeHasBeenSet;
 }
 
 

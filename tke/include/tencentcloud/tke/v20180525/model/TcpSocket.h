@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取TcpSocket检测的端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Port TcpSocket检测的端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPort() const;
 
                     /**
                      * 设置TcpSocket检测的端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _port TcpSocket检测的端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPort(const uint64_t& _port);
@@ -75,7 +71,6 @@ namespace TencentCloud
 
                     /**
                      * TcpSocket检测的端口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_port;
                     bool m_portHasBeenSet;

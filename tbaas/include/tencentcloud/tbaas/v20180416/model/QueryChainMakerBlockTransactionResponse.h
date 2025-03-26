@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取区块交易
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 区块交易
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ChainMakerTransactionResult> GetResult() const;
@@ -76,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取交易数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TxCount 交易数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTxCount() const;
@@ -108,7 +104,6 @@ namespace TencentCloud
 
                     /**
                      * 区块交易
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ChainMakerTransactionResult> m_result;
                     bool m_resultHasBeenSet;
@@ -121,7 +116,6 @@ namespace TencentCloud
 
                     /**
                      * 交易数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_txCount;
                     bool m_txCountHasBeenSet;

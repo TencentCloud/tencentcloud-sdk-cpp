@@ -34,6 +34,7 @@
 #include <tencentcloud/monitor/v20180724/model/AlarmGroupByItem.h>
 #include <tencentcloud/monitor/v20180724/model/Tag.h>
 #include <tencentcloud/monitor/v20180724/model/NoticeContentTmplBindInfo.h>
+#include <tencentcloud/monitor/v20180724/model/AlarmHierarchicalNotice.h>
 
 
 namespace TencentCloud
@@ -1064,6 +1065,81 @@ namespace TencentCloud
                      */
                     bool NoticeTmplBindInfosHasBeenSet() const;
 
+                    /**
+                     * 获取模板通知的等级
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HierarchicalNotices 模板通知的等级
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<AlarmHierarchicalNotice> GetHierarchicalNotices() const;
+
+                    /**
+                     * 设置模板通知的等级
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _hierarchicalNotices 模板通知的等级
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetHierarchicalNotices(const std::vector<AlarmHierarchicalNotice>& _hierarchicalNotices);
+
+                    /**
+                     * 判断参数 HierarchicalNotices 是否已赋值
+                     * @return HierarchicalNotices 是否已赋值
+                     * 
+                     */
+                    bool HierarchicalNoticesHasBeenSet() const;
+
+                    /**
+                     * 获取通知模板绑定内容模板信息，同NoticeTmplBindInfos
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NoticeContentTmplBindInfos 通知模板绑定内容模板信息，同NoticeTmplBindInfos
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<NoticeContentTmplBindInfo> GetNoticeContentTmplBindInfos() const;
+
+                    /**
+                     * 设置通知模板绑定内容模板信息，同NoticeTmplBindInfos
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _noticeContentTmplBindInfos 通知模板绑定内容模板信息，同NoticeTmplBindInfos
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNoticeContentTmplBindInfos(const std::vector<NoticeContentTmplBindInfo>& _noticeContentTmplBindInfos);
+
+                    /**
+                     * 判断参数 NoticeContentTmplBindInfos 是否已赋值
+                     * @return NoticeContentTmplBindInfos 是否已赋值
+                     * 
+                     */
+                    bool NoticeContentTmplBindInfosHasBeenSet() const;
+
+                    /**
+                     * 获取预设配置id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PredefinedConfigID 预设配置id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetPredefinedConfigID() const;
+
+                    /**
+                     * 设置预设配置id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _predefinedConfigID 预设配置id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetPredefinedConfigID(const std::string& _predefinedConfigID);
+
+                    /**
+                     * 判断参数 PredefinedConfigID 是否已赋值
+                     * @return PredefinedConfigID 是否已赋值
+                     * 
+                     */
+                    bool PredefinedConfigIDHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1347,6 +1423,27 @@ namespace TencentCloud
                      */
                     std::vector<NoticeContentTmplBindInfo> m_noticeTmplBindInfos;
                     bool m_noticeTmplBindInfosHasBeenSet;
+
+                    /**
+                     * 模板通知的等级
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AlarmHierarchicalNotice> m_hierarchicalNotices;
+                    bool m_hierarchicalNoticesHasBeenSet;
+
+                    /**
+                     * 通知模板绑定内容模板信息，同NoticeTmplBindInfos
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<NoticeContentTmplBindInfo> m_noticeContentTmplBindInfos;
+                    bool m_noticeContentTmplBindInfosHasBeenSet;
+
+                    /**
+                     * 预设配置id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_predefinedConfigID;
+                    bool m_predefinedConfigIDHasBeenSet;
 
                 };
             }

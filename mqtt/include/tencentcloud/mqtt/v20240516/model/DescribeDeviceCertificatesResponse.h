@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取设备证书
-                     * @return Data 设备证书
+                     * 获取设备证书列表
+                     * @return Data 设备证书列表
                      * 
                      */
                     std::vector<DeviceCertificateItem> GetData() const;
@@ -81,7 +81,7 @@ namespace TencentCloud
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 设备证书
+                     * 设备证书列表
                      */
                     std::vector<DeviceCertificateItem> m_data;
                     bool m_dataHasBeenSet;

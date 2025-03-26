@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取Java实例jvm监控数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result Java实例jvm监控数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     JvmMonitorData GetResult() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * Java实例jvm监控数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     JvmMonitorData m_result;
                     bool m_resultHasBeenSet;

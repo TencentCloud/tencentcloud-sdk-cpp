@@ -265,18 +265,14 @@ sub：订阅mqtt消息
 
                     /**
                      * 获取条件-用户名，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
-
                      * @return Username 条件-用户名，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
-
                      * 
                      */
                     std::string GetUsername() const;
 
                     /**
                      * 设置条件-用户名，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
-
                      * @param _username 条件-用户名，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
-
                      * 
                      */
                     void SetUsername(const std::string& _username);
@@ -491,7 +487,6 @@ sub：订阅mqtt消息
 
                     /**
                      * 条件-用户名，可参考 [数据面授权策略说明](https://cloud.tencent.com/document/product/1778/109715)。
-
                      */
                     std::string m_username;
                     bool m_usernameHasBeenSet;

@@ -149,18 +149,14 @@ namespace TencentCloud
 
                     /**
                      * 获取头尾识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HeadTailConfigure 头尾识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     HeadTailConfigureInfo GetHeadTailConfigure() const;
 
                     /**
                      * 设置头尾识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _headTailConfigure 头尾识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHeadTailConfigure(const HeadTailConfigureInfo& _headTailConfigure);
@@ -174,18 +170,14 @@ namespace TencentCloud
 
                     /**
                      * 获取拆条识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SegmentConfigure 拆条识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SegmentConfigureInfo GetSegmentConfigure() const;
 
                     /**
                      * 设置拆条识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _segmentConfigure 拆条识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSegmentConfigure(const SegmentConfigureInfo& _segmentConfigure);
@@ -199,18 +191,14 @@ namespace TencentCloud
 
                     /**
                      * 获取人脸识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FaceConfigure 人脸识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     FaceConfigureInfo GetFaceConfigure() const;
 
                     /**
                      * 设置人脸识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _faceConfigure 人脸识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFaceConfigure(const FaceConfigureInfo& _faceConfigure);
@@ -224,18 +212,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文本全文识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OcrFullTextConfigure 文本全文识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     OcrFullTextConfigureInfo GetOcrFullTextConfigure() const;
 
                     /**
                      * 设置文本全文识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ocrFullTextConfigure 文本全文识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOcrFullTextConfigure(const OcrFullTextConfigureInfo& _ocrFullTextConfigure);
@@ -249,18 +233,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文本关键词识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OcrWordsConfigure 文本关键词识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     OcrWordsConfigureInfo GetOcrWordsConfigure() const;
 
                     /**
                      * 设置文本关键词识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ocrWordsConfigure 文本关键词识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOcrWordsConfigure(const OcrWordsConfigureInfo& _ocrWordsConfigure);
@@ -275,10 +255,8 @@ namespace TencentCloud
                     /**
                      * 获取语音全文识别控制参数。
 <font color=red>注意：本参数已不再维护，推荐使用 AsrTranslateConfigure 参数发起语音翻译识别（当 DstLanguage 不填或填空字符串时，则不进行翻译，计费项和语音全文识别一致）。</font> 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AsrFullTextConfigure 语音全文识别控制参数。
 <font color=red>注意：本参数已不再维护，推荐使用 AsrTranslateConfigure 参数发起语音翻译识别（当 DstLanguage 不填或填空字符串时，则不进行翻译，计费项和语音全文识别一致）。</font> 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AsrFullTextConfigureInfo GetAsrFullTextConfigure() const;
@@ -286,10 +264,8 @@ namespace TencentCloud
                     /**
                      * 设置语音全文识别控制参数。
 <font color=red>注意：本参数已不再维护，推荐使用 AsrTranslateConfigure 参数发起语音翻译识别（当 DstLanguage 不填或填空字符串时，则不进行翻译，计费项和语音全文识别一致）。</font> 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _asrFullTextConfigure 语音全文识别控制参数。
 <font color=red>注意：本参数已不再维护，推荐使用 AsrTranslateConfigure 参数发起语音翻译识别（当 DstLanguage 不填或填空字符串时，则不进行翻译，计费项和语音全文识别一致）。</font> 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAsrFullTextConfigure(const AsrFullTextConfigureInfo& _asrFullTextConfigure);
@@ -303,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取语音关键词识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AsrWordsConfigure 语音关键词识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AsrWordsConfigureInfo GetAsrWordsConfigure() const;
 
                     /**
                      * 设置语音关键词识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _asrWordsConfigure 语音关键词识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAsrWordsConfigure(const AsrWordsConfigureInfo& _asrWordsConfigure);
@@ -328,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取语音翻译识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AsrTranslateConfigure 语音翻译识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AsrTranslateConfigureInfo GetAsrTranslateConfigure() const;
 
                     /**
                      * 设置语音翻译识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _asrTranslateConfigure 语音翻译识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAsrTranslateConfigure(const AsrTranslateConfigureInfo& _asrTranslateConfigure);
@@ -353,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取物体识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ObjectConfigure 物体识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ObjectConfigureInfo GetObjectConfigure() const;
 
                     /**
                      * 设置物体识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _objectConfigure 物体识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetObjectConfigure(const ObjectConfigureInfo& _objectConfigure);
@@ -469,35 +433,30 @@ namespace TencentCloud
 
                     /**
                      * 头尾识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     HeadTailConfigureInfo m_headTailConfigure;
                     bool m_headTailConfigureHasBeenSet;
 
                     /**
                      * 拆条识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SegmentConfigureInfo m_segmentConfigure;
                     bool m_segmentConfigureHasBeenSet;
 
                     /**
                      * 人脸识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     FaceConfigureInfo m_faceConfigure;
                     bool m_faceConfigureHasBeenSet;
 
                     /**
                      * 文本全文识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     OcrFullTextConfigureInfo m_ocrFullTextConfigure;
                     bool m_ocrFullTextConfigureHasBeenSet;
 
                     /**
                      * 文本关键词识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     OcrWordsConfigureInfo m_ocrWordsConfigure;
                     bool m_ocrWordsConfigureHasBeenSet;
@@ -505,28 +464,24 @@ namespace TencentCloud
                     /**
                      * 语音全文识别控制参数。
 <font color=red>注意：本参数已不再维护，推荐使用 AsrTranslateConfigure 参数发起语音翻译识别（当 DstLanguage 不填或填空字符串时，则不进行翻译，计费项和语音全文识别一致）。</font> 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AsrFullTextConfigureInfo m_asrFullTextConfigure;
                     bool m_asrFullTextConfigureHasBeenSet;
 
                     /**
                      * 语音关键词识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AsrWordsConfigureInfo m_asrWordsConfigure;
                     bool m_asrWordsConfigureHasBeenSet;
 
                     /**
                      * 语音翻译识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AsrTranslateConfigureInfo m_asrTranslateConfigure;
                     bool m_asrTranslateConfigureHasBeenSet;
 
                     /**
                      * 物体识别控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ObjectConfigureInfo m_objectConfigure;
                     bool m_objectConfigureHasBeenSet;

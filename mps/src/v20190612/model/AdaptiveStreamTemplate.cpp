@@ -24,7 +24,8 @@ AdaptiveStreamTemplate::AdaptiveStreamTemplate() :
     m_audioHasBeenSet(false),
     m_videoHasBeenSet(false),
     m_removeAudioHasBeenSet(false),
-    m_removeVideoHasBeenSet(false)
+    m_removeVideoHasBeenSet(false),
+    m_audioListHasBeenSet(false)
 {
 }
 
@@ -87,6 +88,26 @@ CoreInternalOutcome AdaptiveStreamTemplate::Deserialize(const rapidjson::Value &
         m_removeVideoHasBeenSet = true;
     }
 
+    if (value.HasMember("AudioList") && !value["AudioList"].IsNull())
+    {
+        if (!value["AudioList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AdaptiveStreamTemplate.AudioList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AudioList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AudioTemplateInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_audioList.push_back(item);
+        }
+        m_audioListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +147,21 @@ void AdaptiveStreamTemplate::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "RemoveVideo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_removeVideo, allocator);
+    }
+
+    if (m_audioListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AudioList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_audioList.begin(); itr != m_audioList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -193,5 +229,21 @@ void AdaptiveStreamTemplate::SetRemoveVideo(const uint64_t& _removeVideo)
 bool AdaptiveStreamTemplate::RemoveVideoHasBeenSet() const
 {
     return m_removeVideoHasBeenSet;
+}
+
+vector<AudioTemplateInfo> AdaptiveStreamTemplate::GetAudioList() const
+{
+    return m_audioList;
+}
+
+void AdaptiveStreamTemplate::SetAudioList(const vector<AudioTemplateInfo>& _audioList)
+{
+    m_audioList = _audioList;
+    m_audioListHasBeenSet = true;
+}
+
+bool AdaptiveStreamTemplate::AudioListHasBeenSet() const
+{
+    return m_audioListHasBeenSet;
 }
 

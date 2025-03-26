@@ -177,18 +177,14 @@ namespace TencentCloud
 
                     /**
                      * 获取备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remark 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -290,18 +286,14 @@ namespace TencentCloud
 
                     /**
                      * 获取绑定的关联账号的vpc列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccountVpcSet 绑定的关联账号的vpc列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AccountVpcInfoOutput> GetAccountVpcSet() const;
 
                     /**
                      * 设置绑定的关联账号的vpc列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _accountVpcSet 绑定的关联账号的vpc列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAccountVpcSet(const std::vector<AccountVpcInfoOutput>& _accountVpcSet);
@@ -315,18 +307,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否自定义TLD
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsCustomTld 是否自定义TLD
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsCustomTld() const;
 
                     /**
                      * 设置是否自定义TLD
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isCustomTld 是否自定义TLD
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsCustomTld(const bool& _isCustomTld);
@@ -361,18 +349,14 @@ namespace TencentCloud
 
                     /**
                      * 获取转发规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ForwardRuleName 转发规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetForwardRuleName() const;
 
                     /**
                      * 设置转发规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _forwardRuleName 转发规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetForwardRuleName(const std::string& _forwardRuleName);
@@ -386,18 +370,14 @@ namespace TencentCloud
 
                     /**
                      * 获取转发规则类型：云上到云下，DOWN；云下到云上，UP，目前只支持DOWN
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ForwardRuleType 转发规则类型：云上到云下，DOWN；云下到云上，UP，目前只支持DOWN
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetForwardRuleType() const;
 
                     /**
                      * 设置转发规则类型：云上到云下，DOWN；云下到云上，UP，目前只支持DOWN
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _forwardRuleType 转发规则类型：云上到云下，DOWN；云下到云上，UP，目前只支持DOWN
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetForwardRuleType(const std::string& _forwardRuleType);
@@ -411,18 +391,14 @@ namespace TencentCloud
 
                     /**
                      * 获取转发的地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ForwardAddress 转发的地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetForwardAddress() const;
 
                     /**
                      * 设置转发的地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _forwardAddress 转发的地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetForwardAddress(const std::string& _forwardAddress);
@@ -461,18 +437,14 @@ namespace TencentCloud
 
                     /**
                      * 获取已删除的vpc
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeletedVpcSet 已删除的vpc
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<VpcInfo> GetDeletedVpcSet() const;
 
                     /**
                      * 设置已删除的vpc
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deletedVpcSet 已删除的vpc
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeletedVpcSet(const std::vector<VpcInfo>& _deletedVpcSet);
@@ -524,7 +496,6 @@ namespace TencentCloud
 
                     /**
                      * 备注
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
@@ -556,14 +527,12 @@ namespace TencentCloud
 
                     /**
                      * 绑定的关联账号的vpc列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AccountVpcInfoOutput> m_accountVpcSet;
                     bool m_accountVpcSetHasBeenSet;
 
                     /**
                      * 是否自定义TLD
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isCustomTld;
                     bool m_isCustomTldHasBeenSet;
@@ -576,21 +545,18 @@ namespace TencentCloud
 
                     /**
                      * 转发规则名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_forwardRuleName;
                     bool m_forwardRuleNameHasBeenSet;
 
                     /**
                      * 转发规则类型：云上到云下，DOWN；云下到云上，UP，目前只支持DOWN
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_forwardRuleType;
                     bool m_forwardRuleTypeHasBeenSet;
 
                     /**
                      * 转发的地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_forwardAddress;
                     bool m_forwardAddressHasBeenSet;
@@ -604,7 +570,6 @@ namespace TencentCloud
 
                     /**
                      * 已删除的vpc
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<VpcInfo> m_deletedVpcSet;
                     bool m_deletedVpcSetHasBeenSet;

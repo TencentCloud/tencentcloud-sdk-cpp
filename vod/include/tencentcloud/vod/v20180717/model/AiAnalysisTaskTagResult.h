@@ -155,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取智能标签任务输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Output 智能标签任务输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AiAnalysisTaskTagOutput GetOutput() const;
 
                     /**
                      * 设置智能标签任务输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _output 智能标签任务输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutput(const AiAnalysisTaskTagOutput& _output);
@@ -275,7 +271,6 @@ namespace TencentCloud
 
                     /**
                      * 智能标签任务输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiAnalysisTaskTagOutput m_output;
                     bool m_outputHasBeenSet;

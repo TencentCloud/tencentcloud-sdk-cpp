@@ -155,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取智能封面任务输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Output 智能封面任务输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AiAnalysisTaskCoverOutput GetOutput() const;
 
                     /**
                      * 设置智能封面任务输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _output 智能封面任务输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutput(const AiAnalysisTaskCoverOutput& _output);
@@ -275,7 +271,6 @@ namespace TencentCloud
 
                     /**
                      * 智能封面任务输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiAnalysisTaskCoverOutput m_output;
                     bool m_outputHasBeenSet;

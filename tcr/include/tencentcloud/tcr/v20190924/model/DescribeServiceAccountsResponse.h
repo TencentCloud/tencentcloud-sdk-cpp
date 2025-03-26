@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取服务级账号列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceAccounts 服务级账号列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ServiceAccount> GetServiceAccounts() const;
@@ -78,7 +76,6 @@ namespace TencentCloud
 
                     /**
                      * 服务级账号列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ServiceAccount> m_serviceAccounts;
                     bool m_serviceAccountsHasBeenSet;

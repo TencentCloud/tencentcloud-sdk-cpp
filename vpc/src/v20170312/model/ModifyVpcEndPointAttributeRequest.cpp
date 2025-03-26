@@ -25,7 +25,8 @@ using namespace std;
 ModifyVpcEndPointAttributeRequest::ModifyVpcEndPointAttributeRequest() :
     m_endPointIdHasBeenSet(false),
     m_endPointNameHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false)
+    m_securityGroupIdsHasBeenSet(false),
+    m_ipAddressTypeHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,14 @@ string ModifyVpcEndPointAttributeRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_ipAddressTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IpAddressType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_ipAddressType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -119,6 +128,22 @@ void ModifyVpcEndPointAttributeRequest::SetSecurityGroupIds(const vector<string>
 bool ModifyVpcEndPointAttributeRequest::SecurityGroupIdsHasBeenSet() const
 {
     return m_securityGroupIdsHasBeenSet;
+}
+
+string ModifyVpcEndPointAttributeRequest::GetIpAddressType() const
+{
+    return m_ipAddressType;
+}
+
+void ModifyVpcEndPointAttributeRequest::SetIpAddressType(const string& _ipAddressType)
+{
+    m_ipAddressType = _ipAddressType;
+    m_ipAddressTypeHasBeenSet = true;
+}
+
+bool ModifyVpcEndPointAttributeRequest::IpAddressTypeHasBeenSet() const
+{
+    return m_ipAddressTypeHasBeenSet;
 }
 
 

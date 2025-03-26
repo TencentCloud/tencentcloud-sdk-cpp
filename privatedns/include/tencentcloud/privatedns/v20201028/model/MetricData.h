@@ -112,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取查询范围内的请求总量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MetricCount 查询范围内的请求总量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMetricCount() const;
 
                     /**
                      * 设置查询范围内的请求总量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _metricCount 查询范围内的请求总量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMetricCount(const int64_t& _metricCount);
@@ -157,7 +153,6 @@ namespace TencentCloud
 
                     /**
                      * 查询范围内的请求总量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_metricCount;
                     bool m_metricCountHasBeenSet;

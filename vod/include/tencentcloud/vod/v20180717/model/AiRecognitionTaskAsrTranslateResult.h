@@ -155,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取语音翻译任务输出信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Output 语音翻译任务输出信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AiRecognitionTaskAsrTranslateResultOutput GetOutput() const;
 
                     /**
                      * 设置语音翻译任务输出信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _output 语音翻译任务输出信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutput(const AiRecognitionTaskAsrTranslateResultOutput& _output);
@@ -275,7 +271,6 @@ namespace TencentCloud
 
                     /**
                      * 语音翻译任务输出信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiRecognitionTaskAsrTranslateResultOutput m_output;
                     bool m_outputHasBeenSet;

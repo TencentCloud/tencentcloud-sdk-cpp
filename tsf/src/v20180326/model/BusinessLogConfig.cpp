@@ -31,7 +31,9 @@ BusinessLogConfig::BusinessLogConfig() :
     m_configUpdateTimeHasBeenSet(false),
     m_configSchemaHasBeenSet(false),
     m_configAssociatedGroupsHasBeenSet(false),
-    m_configAssociatedGroupListHasBeenSet(false)
+    m_configAssociatedGroupListHasBeenSet(false),
+    m_filebeatConfigEnableHasBeenSet(false),
+    m_filebeatCloseTimeoutHasBeenSet(false)
 {
 }
 
@@ -177,6 +179,26 @@ CoreInternalOutcome BusinessLogConfig::Deserialize(const rapidjson::Value &value
         m_configAssociatedGroupListHasBeenSet = true;
     }
 
+    if (value.HasMember("FilebeatConfigEnable") && !value["FilebeatConfigEnable"].IsNull())
+    {
+        if (!value["FilebeatConfigEnable"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `BusinessLogConfig.FilebeatConfigEnable` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_filebeatConfigEnable = value["FilebeatConfigEnable"].GetBool();
+        m_filebeatConfigEnableHasBeenSet = true;
+    }
+
+    if (value.HasMember("FilebeatCloseTimeout") && !value["FilebeatCloseTimeout"].IsNull())
+    {
+        if (!value["FilebeatCloseTimeout"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BusinessLogConfig.FilebeatCloseTimeout` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_filebeatCloseTimeout = value["FilebeatCloseTimeout"].GetInt64();
+        m_filebeatCloseTimeoutHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -285,6 +307,22 @@ void BusinessLogConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_filebeatConfigEnableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilebeatConfigEnable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_filebeatConfigEnable, allocator);
+    }
+
+    if (m_filebeatCloseTimeoutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilebeatCloseTimeout";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_filebeatCloseTimeout, allocator);
     }
 
 }
@@ -464,5 +502,37 @@ void BusinessLogConfig::SetConfigAssociatedGroupList(const vector<BusinessLogCon
 bool BusinessLogConfig::ConfigAssociatedGroupListHasBeenSet() const
 {
     return m_configAssociatedGroupListHasBeenSet;
+}
+
+bool BusinessLogConfig::GetFilebeatConfigEnable() const
+{
+    return m_filebeatConfigEnable;
+}
+
+void BusinessLogConfig::SetFilebeatConfigEnable(const bool& _filebeatConfigEnable)
+{
+    m_filebeatConfigEnable = _filebeatConfigEnable;
+    m_filebeatConfigEnableHasBeenSet = true;
+}
+
+bool BusinessLogConfig::FilebeatConfigEnableHasBeenSet() const
+{
+    return m_filebeatConfigEnableHasBeenSet;
+}
+
+int64_t BusinessLogConfig::GetFilebeatCloseTimeout() const
+{
+    return m_filebeatCloseTimeout;
+}
+
+void BusinessLogConfig::SetFilebeatCloseTimeout(const int64_t& _filebeatCloseTimeout)
+{
+    m_filebeatCloseTimeout = _filebeatCloseTimeout;
+    m_filebeatCloseTimeoutHasBeenSet = true;
+}
+
+bool BusinessLogConfig::FilebeatCloseTimeoutHasBeenSet() const
+{
+    return m_filebeatCloseTimeoutHasBeenSet;
 }
 

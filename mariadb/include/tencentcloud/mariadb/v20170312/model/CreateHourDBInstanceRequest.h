@@ -213,15 +213,15 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取数据库引擎版本，当前可选：8.0，5.7，10.1，10.0。
-                     * @return DbVersionId 数据库引擎版本，当前可选：8.0，5.7，10.1，10.0。
+                     * 获取数据库引擎版本，当前可选：8.0，5.7，10.1。
+                     * @return DbVersionId 数据库引擎版本，当前可选：8.0，5.7，10.1。
                      * 
                      */
                     std::string GetDbVersionId() const;
 
                     /**
-                     * 设置数据库引擎版本，当前可选：8.0，5.7，10.1，10.0。
-                     * @param _dbVersionId 数据库引擎版本，当前可选：8.0，5.7，10.1，10.0。
+                     * 设置数据库引擎版本，当前可选：8.0，5.7，10.1。
+                     * @param _dbVersionId 数据库引擎版本，当前可选：8.0，5.7，10.1。
                      * 
                      */
                     void SetDbVersionId(const std::string& _dbVersionId);
@@ -502,7 +502,7 @@ innodb_page_size（innodb数据页，默认16K），sync_mode（同步模式：0
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 数据库引擎版本，当前可选：8.0，5.7，10.1，10.0。
+                     * 数据库引擎版本，当前可选：8.0，5.7，10.1。
                      */
                     std::string m_dbVersionId;
                     bool m_dbVersionIdHasBeenSet;

@@ -155,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文本关键词识别任务输出信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Output 文本关键词识别任务输出信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AiRecognitionTaskOcrWordsResultOutput GetOutput() const;
 
                     /**
                      * 设置文本关键词识别任务输出信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _output 文本关键词识别任务输出信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutput(const AiRecognitionTaskOcrWordsResultOutput& _output);
@@ -275,7 +271,6 @@ namespace TencentCloud
 
                     /**
                      * 文本关键词识别任务输出信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiRecognitionTaskOcrWordsResultOutput m_output;
                     bool m_outputHasBeenSet;

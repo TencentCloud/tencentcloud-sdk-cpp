@@ -27,6 +27,7 @@ StaffInfo::StaffInfo() :
     m_nickHasBeenSet(false),
     m_staffNumberHasBeenSet(false),
     m_roleIdHasBeenSet(false),
+    m_roleIdListHasBeenSet(false),
     m_skillGroupListHasBeenSet(false),
     m_lastModifyTimestampHasBeenSet(false),
     m_extensionNumberHasBeenSet(false)
@@ -96,6 +97,16 @@ CoreInternalOutcome StaffInfo::Deserialize(const rapidjson::Value &value)
         }
         m_roleId = value["RoleId"].GetUint64();
         m_roleIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("RoleIdList") && !value["RoleIdList"].IsNull())
+    {
+        if (!value["RoleIdList"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `StaffInfo.RoleIdList` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_roleIdList = value["RoleIdList"].GetUint64();
+        m_roleIdListHasBeenSet = true;
     }
 
     if (value.HasMember("SkillGroupList") && !value["SkillGroupList"].IsNull())
@@ -191,6 +202,14 @@ void StaffInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "RoleId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_roleId, allocator);
+    }
+
+    if (m_roleIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RoleIdList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_roleIdList, allocator);
     }
 
     if (m_skillGroupListHasBeenSet)
@@ -321,6 +340,22 @@ void StaffInfo::SetRoleId(const uint64_t& _roleId)
 bool StaffInfo::RoleIdHasBeenSet() const
 {
     return m_roleIdHasBeenSet;
+}
+
+uint64_t StaffInfo::GetRoleIdList() const
+{
+    return m_roleIdList;
+}
+
+void StaffInfo::SetRoleIdList(const uint64_t& _roleIdList)
+{
+    m_roleIdList = _roleIdList;
+    m_roleIdListHasBeenSet = true;
+}
+
+bool StaffInfo::RoleIdListHasBeenSet() const
+{
+    return m_roleIdListHasBeenSet;
 }
 
 vector<SkillGroupItem> StaffInfo::GetSkillGroupList() const

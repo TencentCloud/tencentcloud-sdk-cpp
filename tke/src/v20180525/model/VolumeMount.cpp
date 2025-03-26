@@ -21,11 +21,11 @@ using namespace TencentCloud::Tke::V20180525::Model;
 using namespace std;
 
 VolumeMount::VolumeMount() :
-    m_nameHasBeenSet(false),
     m_mountPathHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_mountPropagationHasBeenSet(false),
     m_readOnlyHasBeenSet(false),
     m_subPathHasBeenSet(false),
-    m_mountPropagationHasBeenSet(false),
     m_subPathExprHasBeenSet(false)
 {
 }
@@ -34,6 +34,16 @@ CoreInternalOutcome VolumeMount::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("MountPath") && !value["MountPath"].IsNull())
+    {
+        if (!value["MountPath"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VolumeMount.MountPath` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_mountPath = string(value["MountPath"].GetString());
+        m_mountPathHasBeenSet = true;
+    }
 
     if (value.HasMember("Name") && !value["Name"].IsNull())
     {
@@ -45,14 +55,14 @@ CoreInternalOutcome VolumeMount::Deserialize(const rapidjson::Value &value)
         m_nameHasBeenSet = true;
     }
 
-    if (value.HasMember("MountPath") && !value["MountPath"].IsNull())
+    if (value.HasMember("MountPropagation") && !value["MountPropagation"].IsNull())
     {
-        if (!value["MountPath"].IsString())
+        if (!value["MountPropagation"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `VolumeMount.MountPath` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `VolumeMount.MountPropagation` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_mountPath = string(value["MountPath"].GetString());
-        m_mountPathHasBeenSet = true;
+        m_mountPropagation = string(value["MountPropagation"].GetString());
+        m_mountPropagationHasBeenSet = true;
     }
 
     if (value.HasMember("ReadOnly") && !value["ReadOnly"].IsNull())
@@ -75,16 +85,6 @@ CoreInternalOutcome VolumeMount::Deserialize(const rapidjson::Value &value)
         m_subPathHasBeenSet = true;
     }
 
-    if (value.HasMember("MountPropagation") && !value["MountPropagation"].IsNull())
-    {
-        if (!value["MountPropagation"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `VolumeMount.MountPropagation` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_mountPropagation = string(value["MountPropagation"].GetString());
-        m_mountPropagationHasBeenSet = true;
-    }
-
     if (value.HasMember("SubPathExpr") && !value["SubPathExpr"].IsNull())
     {
         if (!value["SubPathExpr"].IsString())
@@ -102,6 +102,14 @@ CoreInternalOutcome VolumeMount::Deserialize(const rapidjson::Value &value)
 void VolumeMount::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
+    if (m_mountPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MountPath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mountPath.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_nameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,12 +118,12 @@ void VolumeMount::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_mountPathHasBeenSet)
+    if (m_mountPropagationHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "MountPath";
+        string key = "MountPropagation";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_mountPath.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mountPropagation.c_str(), allocator).Move(), allocator);
     }
 
     if (m_readOnlyHasBeenSet)
@@ -134,14 +142,6 @@ void VolumeMount::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         value.AddMember(iKey, rapidjson::Value(m_subPath.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_mountPropagationHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "MountPropagation";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_mountPropagation.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_subPathExprHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -152,6 +152,22 @@ void VolumeMount::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
 
 }
 
+
+string VolumeMount::GetMountPath() const
+{
+    return m_mountPath;
+}
+
+void VolumeMount::SetMountPath(const string& _mountPath)
+{
+    m_mountPath = _mountPath;
+    m_mountPathHasBeenSet = true;
+}
+
+bool VolumeMount::MountPathHasBeenSet() const
+{
+    return m_mountPathHasBeenSet;
+}
 
 string VolumeMount::GetName() const
 {
@@ -169,20 +185,20 @@ bool VolumeMount::NameHasBeenSet() const
     return m_nameHasBeenSet;
 }
 
-string VolumeMount::GetMountPath() const
+string VolumeMount::GetMountPropagation() const
 {
-    return m_mountPath;
+    return m_mountPropagation;
 }
 
-void VolumeMount::SetMountPath(const string& _mountPath)
+void VolumeMount::SetMountPropagation(const string& _mountPropagation)
 {
-    m_mountPath = _mountPath;
-    m_mountPathHasBeenSet = true;
+    m_mountPropagation = _mountPropagation;
+    m_mountPropagationHasBeenSet = true;
 }
 
-bool VolumeMount::MountPathHasBeenSet() const
+bool VolumeMount::MountPropagationHasBeenSet() const
 {
-    return m_mountPathHasBeenSet;
+    return m_mountPropagationHasBeenSet;
 }
 
 bool VolumeMount::GetReadOnly() const
@@ -215,22 +231,6 @@ void VolumeMount::SetSubPath(const string& _subPath)
 bool VolumeMount::SubPathHasBeenSet() const
 {
     return m_subPathHasBeenSet;
-}
-
-string VolumeMount::GetMountPropagation() const
-{
-    return m_mountPropagation;
-}
-
-void VolumeMount::SetMountPropagation(const string& _mountPropagation)
-{
-    m_mountPropagation = _mountPropagation;
-    m_mountPropagationHasBeenSet = true;
-}
-
-bool VolumeMount::MountPropagationHasBeenSet() const
-{
-    return m_mountPropagationHasBeenSet;
 }
 
 string VolumeMount::GetSubPathExpr() const

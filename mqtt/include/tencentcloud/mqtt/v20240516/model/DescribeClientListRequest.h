@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取客户端名
-                     * @return ClientId 客户端名
+                     * 获取客户端ID
+                     * @return ClientId 客户端ID
                      * 
                      */
                     std::string GetClientId() const;
 
                     /**
-                     * 设置客户端名
-                     * @param _clientId 客户端名
+                     * 设置客户端ID
+                     * @param _clientId 客户端ID
                      * 
                      */
                     void SetClientId(const std::string& _clientId);
@@ -114,7 +114,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 客户端名
+                     * 客户端ID
                      */
                     std::string m_clientId;
                     bool m_clientIdHasBeenSet;

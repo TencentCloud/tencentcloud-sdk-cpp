@@ -30,7 +30,8 @@ DescribeCaptchaRceResultResponse::DescribeCaptchaRceResultResponse() :
     m_getCaptchaTimeHasBeenSet(false),
     m_evilBitmapHasBeenSet(false),
     m_submitCaptchaTimeHasBeenSet(false),
-    m_rceResultHasBeenSet(false)
+    m_rceResultHasBeenSet(false),
+    m_deviceRiskCategoryHasBeenSet(false)
 {
 }
 
@@ -145,6 +146,16 @@ CoreInternalOutcome DescribeCaptchaRceResultResponse::Deserialize(const string &
         m_rceResultHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DeviceRiskCategory") && !rsp["DeviceRiskCategory"].IsNull())
+    {
+        if (!rsp["DeviceRiskCategory"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeviceRiskCategory` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deviceRiskCategory = string(rsp["DeviceRiskCategory"].GetString());
+        m_deviceRiskCategoryHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -210,6 +221,14 @@ string DescribeCaptchaRceResultResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_rceResult.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_deviceRiskCategoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeviceRiskCategory";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deviceRiskCategory.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -292,6 +311,16 @@ RceResult DescribeCaptchaRceResultResponse::GetRceResult() const
 bool DescribeCaptchaRceResultResponse::RceResultHasBeenSet() const
 {
     return m_rceResultHasBeenSet;
+}
+
+string DescribeCaptchaRceResultResponse::GetDeviceRiskCategory() const
+{
+    return m_deviceRiskCategory;
+}
+
+bool DescribeCaptchaRceResultResponse::DeviceRiskCategoryHasBeenSet() const
+{
+    return m_deviceRiskCategoryHasBeenSet;
 }
 
 

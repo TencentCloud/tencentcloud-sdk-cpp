@@ -577,7 +577,7 @@ namespace TencentCloud
                 DescribeDeviceClientKeyOutcomeCallable DescribeDeviceClientKeyCallable(const Model::DescribeDeviceClientKeyRequest& request);
 
                 /**
-                 *本接口（DescribeDeviceResource）用于查询设备资源详情。 
+                 *本接口（DescribeDeviceResource）用于查询设备资源详情。
                  * @param req DescribeDeviceResourceRequest
                  * @return DescribeDeviceResourceOutcome
                  */
@@ -586,7 +586,7 @@ namespace TencentCloud
                 DescribeDeviceResourceOutcomeCallable DescribeDeviceResourceCallable(const Model::DescribeDeviceResourceRequest& request);
 
                 /**
-                 *本接口（DescribeDeviceResources）用于查询设备资源列表。 
+                 *本接口（DescribeDeviceResources）用于查询设备资源列表。
                  * @param req DescribeDeviceResourcesRequest
                  * @return DescribeDeviceResourcesOutcome
                  */
@@ -721,7 +721,7 @@ namespace TencentCloud
                 DescribeProductCAOutcomeCallable DescribeProductCACallable(const Model::DescribeProductCARequest& request);
 
                 /**
-                 *本接口（DescribeProductResource）用于查询产品资源详情。 
+                 *本接口（DescribeProductResource）用于查询产品资源详情。
                  * @param req DescribeProductResourceRequest
                  * @return DescribeProductResourceOutcome
                  */

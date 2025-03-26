@@ -63,6 +63,48 @@ namespace TencentCloud
                      */
                     bool RegistryIdHasBeenSet() const;
 
+                    /**
+                     * 获取页数，默认为1
+                     * @return Page 页数，默认为1
+                     * 
+                     */
+                    int64_t GetPage() const;
+
+                    /**
+                     * 设置页数，默认为1
+                     * @param _page 页数，默认为1
+                     * 
+                     */
+                    void SetPage(const int64_t& _page);
+
+                    /**
+                     * 判断参数 Page 是否已赋值
+                     * @return Page 是否已赋值
+                     * 
+                     */
+                    bool PageHasBeenSet() const;
+
+                    /**
+                     * 获取每页展示个数，最大值为100
+                     * @return PageSize 每页展示个数，最大值为100
+                     * 
+                     */
+                    int64_t GetPageSize() const;
+
+                    /**
+                     * 设置每页展示个数，最大值为100
+                     * @param _pageSize 每页展示个数，最大值为100
+                     * 
+                     */
+                    void SetPageSize(const int64_t& _pageSize);
+
+                    /**
+                     * 判断参数 PageSize 是否已赋值
+                     * @return PageSize 是否已赋值
+                     * 
+                     */
+                    bool PageSizeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -70,6 +112,18 @@ namespace TencentCloud
                      */
                     std::string m_registryId;
                     bool m_registryIdHasBeenSet;
+
+                    /**
+                     * 页数，默认为1
+                     */
+                    int64_t m_page;
+                    bool m_pageHasBeenSet;
+
+                    /**
+                     * 每页展示个数，最大值为100
+                     */
+                    int64_t m_pageSize;
+                    bool m_pageSizeHasBeenSet;
 
                 };
             }

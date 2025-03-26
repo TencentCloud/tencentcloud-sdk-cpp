@@ -155,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Ocr 文字音视频审核涉及令人反感的信息的任务输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Output Ocr 文字音视频审核涉及令人反感的信息的任务输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AiReviewPornOcrTaskOutput GetOutput() const;
 
                     /**
                      * 设置Ocr 文字音视频审核涉及令人反感的信息的任务输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _output Ocr 文字音视频审核涉及令人反感的信息的任务输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutput(const AiReviewPornOcrTaskOutput& _output);
@@ -233,7 +229,6 @@ namespace TencentCloud
 
                     /**
                      * Ocr 文字音视频审核涉及令人反感的信息的任务输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiReviewPornOcrTaskOutput m_output;
                     bool m_outputHasBeenSet;

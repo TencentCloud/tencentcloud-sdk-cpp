@@ -34,7 +34,8 @@ SegmentRecognitionItem::SegmentRecognitionItem() :
     m_audioUrlHasBeenSet(false),
     m_audioBeginTimeHasBeenSet(false),
     m_audioEndTimeHasBeenSet(false),
-    m_personPositionUrlHasBeenSet(false)
+    m_personPositionUrlHasBeenSet(false),
+    m_personIdHasBeenSet(false)
 {
 }
 
@@ -186,6 +187,16 @@ CoreInternalOutcome SegmentRecognitionItem::Deserialize(const rapidjson::Value &
         m_personPositionUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("PersonId") && !value["PersonId"].IsNull())
+    {
+        if (!value["PersonId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SegmentRecognitionItem.PersonId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_personId = string(value["PersonId"].GetString());
+        m_personIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -308,6 +319,14 @@ void SegmentRecognitionItem::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "PersonPositionUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_personPositionUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_personIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PersonId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_personId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -535,5 +554,21 @@ void SegmentRecognitionItem::SetPersonPositionUrl(const string& _personPositionU
 bool SegmentRecognitionItem::PersonPositionUrlHasBeenSet() const
 {
     return m_personPositionUrlHasBeenSet;
+}
+
+string SegmentRecognitionItem::GetPersonId() const
+{
+    return m_personId;
+}
+
+void SegmentRecognitionItem::SetPersonId(const string& _personId)
+{
+    m_personId = _personId;
+    m_personIdHasBeenSet = true;
+}
+
+bool SegmentRecognitionItem::PersonIdHasBeenSet() const
+{
+    return m_personIdHasBeenSet;
 }
 

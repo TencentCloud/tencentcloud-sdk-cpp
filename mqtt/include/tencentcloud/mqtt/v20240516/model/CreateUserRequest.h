@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool UsernameHasBeenSet() const;
 
                     /**
-                     * 获取密码，该字段为空时候则后端会默认生成
-                     * @return Password 密码，该字段为空时候则后端会默认生成
+                     * 获取密码，该字段为空时候则后端会默认生成。用户自定义密码时，不能为空，只支持数字 大小写字母 分隔符("_","-")，不能超过 64 个字符。
+                     * @return Password 密码，该字段为空时候则后端会默认生成。用户自定义密码时，不能为空，只支持数字 大小写字母 分隔符("_","-")，不能超过 64 个字符。
                      * 
                      */
                     std::string GetPassword() const;
 
                     /**
-                     * 设置密码，该字段为空时候则后端会默认生成
-                     * @param _password 密码，该字段为空时候则后端会默认生成
+                     * 设置密码，该字段为空时候则后端会默认生成。用户自定义密码时，不能为空，只支持数字 大小写字母 分隔符("_","-")，不能超过 64 个字符。
+                     * @param _password 密码，该字段为空时候则后端会默认生成。用户自定义密码时，不能为空，只支持数字 大小写字母 分隔符("_","-")，不能超过 64 个字符。
                      * 
                      */
                     void SetPassword(const std::string& _password);
@@ -141,7 +141,7 @@ namespace TencentCloud
                     bool m_usernameHasBeenSet;
 
                     /**
-                     * 密码，该字段为空时候则后端会默认生成
+                     * 密码，该字段为空时候则后端会默认生成。用户自定义密码时，不能为空，只支持数字 大小写字母 分隔符("_","-")，不能超过 64 个字符。
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;

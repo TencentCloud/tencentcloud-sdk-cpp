@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ccc/v20200210/model/Variable.h>
 #include <tencentcloud/ccc/v20200210/model/CalleeAttribute.h>
+#include <tencentcloud/ccc/v20200210/model/TimeRange.h>
 
 
 namespace TencentCloud
@@ -380,6 +381,48 @@ namespace TencentCloud
                      */
                     bool CalleeAttributesHasBeenSet() const;
 
+                    /**
+                     * 获取IANA 时区名称，参考 https://datatracker.ietf.org/doc/html/draft-ietf-netmod-iana-timezones
+                     * @return TimeZone IANA 时区名称，参考 https://datatracker.ietf.org/doc/html/draft-ietf-netmod-iana-timezones
+                     * 
+                     */
+                    std::string GetTimeZone() const;
+
+                    /**
+                     * 设置IANA 时区名称，参考 https://datatracker.ietf.org/doc/html/draft-ietf-netmod-iana-timezones
+                     * @param _timeZone IANA 时区名称，参考 https://datatracker.ietf.org/doc/html/draft-ietf-netmod-iana-timezones
+                     * 
+                     */
+                    void SetTimeZone(const std::string& _timeZone);
+
+                    /**
+                     * 判断参数 TimeZone 是否已赋值
+                     * @return TimeZone 是否已赋值
+                     * 
+                     */
+                    bool TimeZoneHasBeenSet() const;
+
+                    /**
+                     * 获取可用时间段
+                     * @return AvailableTime 可用时间段
+                     * 
+                     */
+                    std::vector<TimeRange> GetAvailableTime() const;
+
+                    /**
+                     * 设置可用时间段
+                     * @param _availableTime 可用时间段
+                     * 
+                     */
+                    void SetAvailableTime(const std::vector<TimeRange>& _availableTime);
+
+                    /**
+                     * 判断参数 AvailableTime 是否已赋值
+                     * @return AvailableTime 是否已赋值
+                     * 
+                     */
+                    bool AvailableTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -477,6 +520,18 @@ namespace TencentCloud
                      */
                     std::vector<CalleeAttribute> m_calleeAttributes;
                     bool m_calleeAttributesHasBeenSet;
+
+                    /**
+                     * IANA 时区名称，参考 https://datatracker.ietf.org/doc/html/draft-ietf-netmod-iana-timezones
+                     */
+                    std::string m_timeZone;
+                    bool m_timeZoneHasBeenSet;
+
+                    /**
+                     * 可用时间段
+                     */
+                    std::vector<TimeRange> m_availableTime;
+                    bool m_availableTimeHasBeenSet;
 
                 };
             }

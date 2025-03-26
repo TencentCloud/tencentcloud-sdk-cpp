@@ -155,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取语音关键词识别任务输出信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Output 语音关键词识别任务输出信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AiRecognitionTaskAsrWordsResultOutput GetOutput() const;
 
                     /**
                      * 设置语音关键词识别任务输出信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _output 语音关键词识别任务输出信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutput(const AiRecognitionTaskAsrWordsResultOutput& _output);
@@ -275,7 +271,6 @@ namespace TencentCloud
 
                     /**
                      * 语音关键词识别任务输出信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiRecognitionTaskAsrWordsResultOutput m_output;
                     bool m_outputHasBeenSet;

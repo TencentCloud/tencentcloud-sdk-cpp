@@ -49,7 +49,8 @@ DescribeAlarmPoliciesRequest::DescribeAlarmPoliciesRequest() :
     m_tagsHasBeenSet(false),
     m_promInsIdHasBeenSet(false),
     m_receiverOnCallFormIDsHasBeenSet(false),
-    m_noticeContentTmplIDsHasBeenSet(false)
+    m_noticeContentTmplIDsHasBeenSet(false),
+    m_isPredefinedHasBeenSet(false)
 {
 }
 
@@ -348,6 +349,14 @@ string DescribeAlarmPoliciesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_isPredefinedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsPredefined";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isPredefined, allocator);
     }
 
 
@@ -788,6 +797,22 @@ void DescribeAlarmPoliciesRequest::SetNoticeContentTmplIDs(const vector<string>&
 bool DescribeAlarmPoliciesRequest::NoticeContentTmplIDsHasBeenSet() const
 {
     return m_noticeContentTmplIDsHasBeenSet;
+}
+
+int64_t DescribeAlarmPoliciesRequest::GetIsPredefined() const
+{
+    return m_isPredefined;
+}
+
+void DescribeAlarmPoliciesRequest::SetIsPredefined(const int64_t& _isPredefined)
+{
+    m_isPredefined = _isPredefined;
+    m_isPredefinedHasBeenSet = true;
+}
+
+bool DescribeAlarmPoliciesRequest::IsPredefinedHasBeenSet() const
+{
+    return m_isPredefinedHasBeenSet;
 }
 
 

@@ -93,18 +93,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置项日志路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigPath 配置项日志路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConfigPath() const;
 
                     /**
                      * 设置配置项日志路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _configPath 配置项日志路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConfigPath(const std::string& _configPath);
@@ -168,18 +164,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置项对应的ES管道
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigPipeline 配置项对应的ES管道
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConfigPipeline() const;
 
                     /**
                      * 设置配置项对应的ES管道
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _configPipeline 配置项对应的ES管道
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConfigPipeline(const std::string& _configPipeline);
@@ -243,18 +235,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置项解析规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigSchema 配置项解析规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BusinessLogConfigSchema GetConfigSchema() const;
 
                     /**
                      * 设置配置项解析规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _configSchema 配置项解析规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConfigSchema(const BusinessLogConfigSchema& _configSchema);
@@ -293,18 +281,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置项关联部署组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigAssociatedGroupList 配置项关联部署组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BusinessLogConfigAssociatedGroup> GetConfigAssociatedGroupList() const;
 
                     /**
                      * 设置配置项关联部署组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _configAssociatedGroupList 配置项关联部署组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConfigAssociatedGroupList(const std::vector<BusinessLogConfigAssociatedGroup>& _configAssociatedGroupList);
@@ -315,6 +299,56 @@ namespace TencentCloud
                      * 
                      */
                     bool ConfigAssociatedGroupListHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启filebeat高级配置开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FilebeatConfigEnable 是否开启filebeat高级配置开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetFilebeatConfigEnable() const;
+
+                    /**
+                     * 设置是否开启filebeat高级配置开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _filebeatConfigEnable 是否开启filebeat高级配置开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFilebeatConfigEnable(const bool& _filebeatConfigEnable);
+
+                    /**
+                     * 判断参数 FilebeatConfigEnable 是否已赋值
+                     * @return FilebeatConfigEnable 是否已赋值
+                     * 
+                     */
+                    bool FilebeatConfigEnableHasBeenSet() const;
+
+                    /**
+                     * 获取close_timeout参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FilebeatCloseTimeout close_timeout参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetFilebeatCloseTimeout() const;
+
+                    /**
+                     * 设置close_timeout参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _filebeatCloseTimeout close_timeout参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetFilebeatCloseTimeout(const int64_t& _filebeatCloseTimeout);
+
+                    /**
+                     * 判断参数 FilebeatCloseTimeout 是否已赋值
+                     * @return FilebeatCloseTimeout 是否已赋值
+                     * 
+                     */
+                    bool FilebeatCloseTimeoutHasBeenSet() const;
 
                 private:
 
@@ -332,7 +366,6 @@ namespace TencentCloud
 
                     /**
                      * 配置项日志路径
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_configPath;
                     bool m_configPathHasBeenSet;
@@ -353,7 +386,6 @@ namespace TencentCloud
 
                     /**
                      * 配置项对应的ES管道
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_configPipeline;
                     bool m_configPipelineHasBeenSet;
@@ -374,7 +406,6 @@ namespace TencentCloud
 
                     /**
                      * 配置项解析规则
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BusinessLogConfigSchema m_configSchema;
                     bool m_configSchemaHasBeenSet;
@@ -388,10 +419,23 @@ namespace TencentCloud
 
                     /**
                      * 配置项关联部署组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BusinessLogConfigAssociatedGroup> m_configAssociatedGroupList;
                     bool m_configAssociatedGroupListHasBeenSet;
+
+                    /**
+                     * 是否开启filebeat高级配置开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_filebeatConfigEnable;
+                    bool m_filebeatConfigEnableHasBeenSet;
+
+                    /**
+                     * close_timeout参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_filebeatCloseTimeout;
+                    bool m_filebeatCloseTimeoutHasBeenSet;
 
                 };
             }

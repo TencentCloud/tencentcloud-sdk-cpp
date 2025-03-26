@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取应用简介，长度限制： 300个字符。
-                     * @return Description 应用简介，长度限制： 300个字符。
+                     * 获取应用简介，长度限制： 300个字符。不填则应用简介默认为空。
+                     * @return Description 应用简介，长度限制： 300个字符。不填则应用简介默认为空。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置应用简介，长度限制： 300个字符。
-                     * @param _description 应用简介，长度限制： 300个字符。
+                     * 设置应用简介，长度限制： 300个字符。不填则应用简介默认为空。
+                     * @param _description 应用简介，长度限制： 300个字符。不填则应用简介默认为空。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 应用简介，长度限制： 300个字符。
+                     * 应用简介，长度限制： 300个字符。不填则应用简介默认为空。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

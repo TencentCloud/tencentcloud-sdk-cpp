@@ -23,19 +23,19 @@ using namespace std;
 Container::Container() :
     m_imageHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_commandsHasBeenSet(false),
     m_argsHasBeenSet(false),
-    m_environmentVarsHasBeenSet(false),
+    m_commandsHasBeenSet(false),
     m_cpuHasBeenSet(false),
-    m_memoryHasBeenSet(false),
-    m_volumeMountsHasBeenSet(false),
     m_currentStateHasBeenSet(false),
-    m_restartCountHasBeenSet(false),
-    m_workingDirHasBeenSet(false),
-    m_livenessProbeHasBeenSet(false),
-    m_readinessProbeHasBeenSet(false),
+    m_environmentVarsHasBeenSet(false),
     m_gpuLimitHasBeenSet(false),
-    m_securityContextHasBeenSet(false)
+    m_livenessProbeHasBeenSet(false),
+    m_memoryHasBeenSet(false),
+    m_readinessProbeHasBeenSet(false),
+    m_restartCountHasBeenSet(false),
+    m_securityContextHasBeenSet(false),
+    m_volumeMountsHasBeenSet(false),
+    m_workingDirHasBeenSet(false)
 {
 }
 
@@ -64,6 +64,19 @@ CoreInternalOutcome Container::Deserialize(const rapidjson::Value &value)
         m_nameHasBeenSet = true;
     }
 
+    if (value.HasMember("Args") && !value["Args"].IsNull())
+    {
+        if (!value["Args"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Container.Args` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Args"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_args.push_back((*itr).GetString());
+        }
+        m_argsHasBeenSet = true;
+    }
+
     if (value.HasMember("Commands") && !value["Commands"].IsNull())
     {
         if (!value["Commands"].IsArray())
@@ -77,17 +90,31 @@ CoreInternalOutcome Container::Deserialize(const rapidjson::Value &value)
         m_commandsHasBeenSet = true;
     }
 
-    if (value.HasMember("Args") && !value["Args"].IsNull())
+    if (value.HasMember("Cpu") && !value["Cpu"].IsNull())
     {
-        if (!value["Args"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `Container.Args` is not array type"));
-
-        const rapidjson::Value &tmpValue = value["Args"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!value["Cpu"].IsLosslessDouble())
         {
-            m_args.push_back((*itr).GetString());
+            return CoreInternalOutcome(Core::Error("response `Container.Cpu` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
-        m_argsHasBeenSet = true;
+        m_cpu = value["Cpu"].GetDouble();
+        m_cpuHasBeenSet = true;
+    }
+
+    if (value.HasMember("CurrentState") && !value["CurrentState"].IsNull())
+    {
+        if (!value["CurrentState"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Container.CurrentState` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_currentState.Deserialize(value["CurrentState"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_currentStateHasBeenSet = true;
     }
 
     if (value.HasMember("EnvironmentVars") && !value["EnvironmentVars"].IsNull())
@@ -110,14 +137,31 @@ CoreInternalOutcome Container::Deserialize(const rapidjson::Value &value)
         m_environmentVarsHasBeenSet = true;
     }
 
-    if (value.HasMember("Cpu") && !value["Cpu"].IsNull())
+    if (value.HasMember("GpuLimit") && !value["GpuLimit"].IsNull())
     {
-        if (!value["Cpu"].IsLosslessDouble())
+        if (!value["GpuLimit"].IsUint64())
         {
-            return CoreInternalOutcome(Core::Error("response `Container.Cpu` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Container.GpuLimit` IsUint64=false incorrectly").SetRequestId(requestId));
         }
-        m_cpu = value["Cpu"].GetDouble();
-        m_cpuHasBeenSet = true;
+        m_gpuLimit = value["GpuLimit"].GetUint64();
+        m_gpuLimitHasBeenSet = true;
+    }
+
+    if (value.HasMember("LivenessProbe") && !value["LivenessProbe"].IsNull())
+    {
+        if (!value["LivenessProbe"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Container.LivenessProbe` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_livenessProbe.Deserialize(value["LivenessProbe"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_livenessProbeHasBeenSet = true;
     }
 
     if (value.HasMember("Memory") && !value["Memory"].IsNull())
@@ -128,6 +172,50 @@ CoreInternalOutcome Container::Deserialize(const rapidjson::Value &value)
         }
         m_memory = value["Memory"].GetDouble();
         m_memoryHasBeenSet = true;
+    }
+
+    if (value.HasMember("ReadinessProbe") && !value["ReadinessProbe"].IsNull())
+    {
+        if (!value["ReadinessProbe"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Container.ReadinessProbe` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_readinessProbe.Deserialize(value["ReadinessProbe"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_readinessProbeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RestartCount") && !value["RestartCount"].IsNull())
+    {
+        if (!value["RestartCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Container.RestartCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_restartCount = value["RestartCount"].GetUint64();
+        m_restartCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("SecurityContext") && !value["SecurityContext"].IsNull())
+    {
+        if (!value["SecurityContext"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Container.SecurityContext` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_securityContext.Deserialize(value["SecurityContext"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_securityContextHasBeenSet = true;
     }
 
     if (value.HasMember("VolumeMounts") && !value["VolumeMounts"].IsNull())
@@ -150,33 +238,6 @@ CoreInternalOutcome Container::Deserialize(const rapidjson::Value &value)
         m_volumeMountsHasBeenSet = true;
     }
 
-    if (value.HasMember("CurrentState") && !value["CurrentState"].IsNull())
-    {
-        if (!value["CurrentState"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `Container.CurrentState` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_currentState.Deserialize(value["CurrentState"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_currentStateHasBeenSet = true;
-    }
-
-    if (value.HasMember("RestartCount") && !value["RestartCount"].IsNull())
-    {
-        if (!value["RestartCount"].IsUint64())
-        {
-            return CoreInternalOutcome(Core::Error("response `Container.RestartCount` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_restartCount = value["RestartCount"].GetUint64();
-        m_restartCountHasBeenSet = true;
-    }
-
     if (value.HasMember("WorkingDir") && !value["WorkingDir"].IsNull())
     {
         if (!value["WorkingDir"].IsString())
@@ -185,67 +246,6 @@ CoreInternalOutcome Container::Deserialize(const rapidjson::Value &value)
         }
         m_workingDir = string(value["WorkingDir"].GetString());
         m_workingDirHasBeenSet = true;
-    }
-
-    if (value.HasMember("LivenessProbe") && !value["LivenessProbe"].IsNull())
-    {
-        if (!value["LivenessProbe"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `Container.LivenessProbe` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_livenessProbe.Deserialize(value["LivenessProbe"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_livenessProbeHasBeenSet = true;
-    }
-
-    if (value.HasMember("ReadinessProbe") && !value["ReadinessProbe"].IsNull())
-    {
-        if (!value["ReadinessProbe"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `Container.ReadinessProbe` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_readinessProbe.Deserialize(value["ReadinessProbe"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_readinessProbeHasBeenSet = true;
-    }
-
-    if (value.HasMember("GpuLimit") && !value["GpuLimit"].IsNull())
-    {
-        if (!value["GpuLimit"].IsUint64())
-        {
-            return CoreInternalOutcome(Core::Error("response `Container.GpuLimit` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_gpuLimit = value["GpuLimit"].GetUint64();
-        m_gpuLimitHasBeenSet = true;
-    }
-
-    if (value.HasMember("SecurityContext") && !value["SecurityContext"].IsNull())
-    {
-        if (!value["SecurityContext"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `Container.SecurityContext` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_securityContext.Deserialize(value["SecurityContext"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_securityContextHasBeenSet = true;
     }
 
 
@@ -271,6 +271,19 @@ void Container::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_argsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Args";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_args.begin(); itr != m_args.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
     if (m_commandsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -284,17 +297,21 @@ void Container::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         }
     }
 
-    if (m_argsHasBeenSet)
+    if (m_cpuHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Args";
+        string key = "Cpu";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+        value.AddMember(iKey, m_cpu, allocator);
+    }
 
-        for (auto itr = m_args.begin(); itr != m_args.end(); ++itr)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
+    if (m_currentStateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CurrentState";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_currentState.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_environmentVarsHasBeenSet)
@@ -312,12 +329,21 @@ void Container::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         }
     }
 
-    if (m_cpuHasBeenSet)
+    if (m_gpuLimitHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Cpu";
+        string key = "GpuLimit";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_cpu, allocator);
+        value.AddMember(iKey, m_gpuLimit, allocator);
+    }
+
+    if (m_livenessProbeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LivenessProbe";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_livenessProbe.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_memoryHasBeenSet)
@@ -326,6 +352,32 @@ void Container::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "Memory";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_memory, allocator);
+    }
+
+    if (m_readinessProbeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReadinessProbe";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_readinessProbe.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_restartCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RestartCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_restartCount, allocator);
+    }
+
+    if (m_securityContextHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecurityContext";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_securityContext.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_volumeMountsHasBeenSet)
@@ -343,64 +395,12 @@ void Container::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         }
     }
 
-    if (m_currentStateHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CurrentState";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_currentState.ToJsonObject(value[key.c_str()], allocator);
-    }
-
-    if (m_restartCountHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RestartCount";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_restartCount, allocator);
-    }
-
     if (m_workingDirHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "WorkingDir";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_workingDir.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_livenessProbeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "LivenessProbe";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_livenessProbe.ToJsonObject(value[key.c_str()], allocator);
-    }
-
-    if (m_readinessProbeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ReadinessProbe";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_readinessProbe.ToJsonObject(value[key.c_str()], allocator);
-    }
-
-    if (m_gpuLimitHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "GpuLimit";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_gpuLimit, allocator);
-    }
-
-    if (m_securityContextHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SecurityContext";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_securityContext.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -438,22 +438,6 @@ bool Container::NameHasBeenSet() const
     return m_nameHasBeenSet;
 }
 
-vector<string> Container::GetCommands() const
-{
-    return m_commands;
-}
-
-void Container::SetCommands(const vector<string>& _commands)
-{
-    m_commands = _commands;
-    m_commandsHasBeenSet = true;
-}
-
-bool Container::CommandsHasBeenSet() const
-{
-    return m_commandsHasBeenSet;
-}
-
 vector<string> Container::GetArgs() const
 {
     return m_args;
@@ -470,20 +454,20 @@ bool Container::ArgsHasBeenSet() const
     return m_argsHasBeenSet;
 }
 
-vector<EnvironmentVariable> Container::GetEnvironmentVars() const
+vector<string> Container::GetCommands() const
 {
-    return m_environmentVars;
+    return m_commands;
 }
 
-void Container::SetEnvironmentVars(const vector<EnvironmentVariable>& _environmentVars)
+void Container::SetCommands(const vector<string>& _commands)
 {
-    m_environmentVars = _environmentVars;
-    m_environmentVarsHasBeenSet = true;
+    m_commands = _commands;
+    m_commandsHasBeenSet = true;
 }
 
-bool Container::EnvironmentVarsHasBeenSet() const
+bool Container::CommandsHasBeenSet() const
 {
-    return m_environmentVarsHasBeenSet;
+    return m_commandsHasBeenSet;
 }
 
 double Container::GetCpu() const
@@ -502,38 +486,6 @@ bool Container::CpuHasBeenSet() const
     return m_cpuHasBeenSet;
 }
 
-double Container::GetMemory() const
-{
-    return m_memory;
-}
-
-void Container::SetMemory(const double& _memory)
-{
-    m_memory = _memory;
-    m_memoryHasBeenSet = true;
-}
-
-bool Container::MemoryHasBeenSet() const
-{
-    return m_memoryHasBeenSet;
-}
-
-vector<VolumeMount> Container::GetVolumeMounts() const
-{
-    return m_volumeMounts;
-}
-
-void Container::SetVolumeMounts(const vector<VolumeMount>& _volumeMounts)
-{
-    m_volumeMounts = _volumeMounts;
-    m_volumeMountsHasBeenSet = true;
-}
-
-bool Container::VolumeMountsHasBeenSet() const
-{
-    return m_volumeMountsHasBeenSet;
-}
-
 ContainerState Container::GetCurrentState() const
 {
     return m_currentState;
@@ -550,68 +502,20 @@ bool Container::CurrentStateHasBeenSet() const
     return m_currentStateHasBeenSet;
 }
 
-uint64_t Container::GetRestartCount() const
+vector<EnvironmentVariable> Container::GetEnvironmentVars() const
 {
-    return m_restartCount;
+    return m_environmentVars;
 }
 
-void Container::SetRestartCount(const uint64_t& _restartCount)
+void Container::SetEnvironmentVars(const vector<EnvironmentVariable>& _environmentVars)
 {
-    m_restartCount = _restartCount;
-    m_restartCountHasBeenSet = true;
+    m_environmentVars = _environmentVars;
+    m_environmentVarsHasBeenSet = true;
 }
 
-bool Container::RestartCountHasBeenSet() const
+bool Container::EnvironmentVarsHasBeenSet() const
 {
-    return m_restartCountHasBeenSet;
-}
-
-string Container::GetWorkingDir() const
-{
-    return m_workingDir;
-}
-
-void Container::SetWorkingDir(const string& _workingDir)
-{
-    m_workingDir = _workingDir;
-    m_workingDirHasBeenSet = true;
-}
-
-bool Container::WorkingDirHasBeenSet() const
-{
-    return m_workingDirHasBeenSet;
-}
-
-LivenessOrReadinessProbe Container::GetLivenessProbe() const
-{
-    return m_livenessProbe;
-}
-
-void Container::SetLivenessProbe(const LivenessOrReadinessProbe& _livenessProbe)
-{
-    m_livenessProbe = _livenessProbe;
-    m_livenessProbeHasBeenSet = true;
-}
-
-bool Container::LivenessProbeHasBeenSet() const
-{
-    return m_livenessProbeHasBeenSet;
-}
-
-LivenessOrReadinessProbe Container::GetReadinessProbe() const
-{
-    return m_readinessProbe;
-}
-
-void Container::SetReadinessProbe(const LivenessOrReadinessProbe& _readinessProbe)
-{
-    m_readinessProbe = _readinessProbe;
-    m_readinessProbeHasBeenSet = true;
-}
-
-bool Container::ReadinessProbeHasBeenSet() const
-{
-    return m_readinessProbeHasBeenSet;
+    return m_environmentVarsHasBeenSet;
 }
 
 uint64_t Container::GetGpuLimit() const
@@ -630,6 +534,70 @@ bool Container::GpuLimitHasBeenSet() const
     return m_gpuLimitHasBeenSet;
 }
 
+LivenessOrReadinessProbe Container::GetLivenessProbe() const
+{
+    return m_livenessProbe;
+}
+
+void Container::SetLivenessProbe(const LivenessOrReadinessProbe& _livenessProbe)
+{
+    m_livenessProbe = _livenessProbe;
+    m_livenessProbeHasBeenSet = true;
+}
+
+bool Container::LivenessProbeHasBeenSet() const
+{
+    return m_livenessProbeHasBeenSet;
+}
+
+double Container::GetMemory() const
+{
+    return m_memory;
+}
+
+void Container::SetMemory(const double& _memory)
+{
+    m_memory = _memory;
+    m_memoryHasBeenSet = true;
+}
+
+bool Container::MemoryHasBeenSet() const
+{
+    return m_memoryHasBeenSet;
+}
+
+LivenessOrReadinessProbe Container::GetReadinessProbe() const
+{
+    return m_readinessProbe;
+}
+
+void Container::SetReadinessProbe(const LivenessOrReadinessProbe& _readinessProbe)
+{
+    m_readinessProbe = _readinessProbe;
+    m_readinessProbeHasBeenSet = true;
+}
+
+bool Container::ReadinessProbeHasBeenSet() const
+{
+    return m_readinessProbeHasBeenSet;
+}
+
+uint64_t Container::GetRestartCount() const
+{
+    return m_restartCount;
+}
+
+void Container::SetRestartCount(const uint64_t& _restartCount)
+{
+    m_restartCount = _restartCount;
+    m_restartCountHasBeenSet = true;
+}
+
+bool Container::RestartCountHasBeenSet() const
+{
+    return m_restartCountHasBeenSet;
+}
+
 SecurityContext Container::GetSecurityContext() const
 {
     return m_securityContext;
@@ -644,5 +612,37 @@ void Container::SetSecurityContext(const SecurityContext& _securityContext)
 bool Container::SecurityContextHasBeenSet() const
 {
     return m_securityContextHasBeenSet;
+}
+
+vector<VolumeMount> Container::GetVolumeMounts() const
+{
+    return m_volumeMounts;
+}
+
+void Container::SetVolumeMounts(const vector<VolumeMount>& _volumeMounts)
+{
+    m_volumeMounts = _volumeMounts;
+    m_volumeMountsHasBeenSet = true;
+}
+
+bool Container::VolumeMountsHasBeenSet() const
+{
+    return m_volumeMountsHasBeenSet;
+}
+
+string Container::GetWorkingDir() const
+{
+    return m_workingDir;
+}
+
+void Container::SetWorkingDir(const string& _workingDir)
+{
+    m_workingDir = _workingDir;
+    m_workingDirHasBeenSet = true;
+}
+
+bool Container::WorkingDirHasBeenSet() const
+{
+    return m_workingDirHasBeenSet;
 }
 

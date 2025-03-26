@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取创建时间
-                     * @return CreatedTime 创建时间
+                     * 获取创建时间，毫秒级时间戳 。
+                     * @return CreatedTime 创建时间，毫秒级时间戳 。
                      * 
                      */
                     int64_t GetCreatedTime() const;
@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool CreatedTimeHasBeenSet() const;
 
                     /**
-                     * 获取上次更新时间
-                     * @return UpdateTime 上次更新时间
+                     * 获取上次更新时间，毫秒级时间戳 。
+                     * @return UpdateTime 上次更新时间，毫秒级时间戳 。
                      * 
                      */
                     int64_t GetUpdateTime() const;
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取失效日期
-                     * @return NotAfterTime 失效日期
+                     * 获取失效日期，毫秒级时间戳 。
+                     * @return NotAfterTime 失效日期，毫秒级时间戳 。
                      * 
                      */
                     int64_t GetNotAfterTime() const;
@@ -86,8 +86,8 @@ namespace TencentCloud
                     bool NotAfterTimeHasBeenSet() const;
 
                     /**
-                     * 获取上次激活时间
-                     * @return LastActivationTime 上次激活时间
+                     * 获取上次激活时间，毫秒级时间戳 。
+                     * @return LastActivationTime 上次激活时间，毫秒级时间戳 。
                      * 
                      */
                     int64_t GetLastActivationTime() const;
@@ -100,8 +100,8 @@ namespace TencentCloud
                     bool LastActivationTimeHasBeenSet() const;
 
                     /**
-                     * 获取上次吊销时间
-                     * @return LastInactivationTime 上次吊销时间
+                     * 获取上次吊销时间，毫秒级时间戳 。
+                     * @return LastInactivationTime 上次吊销时间，毫秒级时间戳 。
                      * 
                      */
                     int64_t GetLastInactivationTime() const;
@@ -114,8 +114,14 @@ namespace TencentCloud
                     bool LastInactivationTimeHasBeenSet() const;
 
                     /**
-                     * 获取证书状态
-                     * @return Status 证书状态
+                     * 获取CA证书状态
+ ACTIVE：激活
+INACTIVE：未激活
+
+                     * @return Status CA证书状态
+ ACTIVE：激活
+INACTIVE：未激活
+
                      * 
                      */
                     std::string GetStatus() const;
@@ -142,8 +148,8 @@ namespace TencentCloud
                     bool CaSnHasBeenSet() const;
 
                     /**
-                     * 获取common name
-                     * @return CaCn common name
+                     * 获取证书的CN（Common Name），证书中用于标识主体的名称，通常是域名或组织名称
+                     * @return CaCn 证书的CN（Common Name），证书中用于标识主体的名称，通常是域名或组织名称
                      * 
                      */
                     std::string GetCaCn() const;
@@ -170,8 +176,8 @@ namespace TencentCloud
                     bool CaCertificateHasBeenSet() const;
 
                     /**
-                     * 获取证书格式
-                     * @return Format 证书格式
+                     * 获取证书格式，当仅支持PEM格式
+                     * @return Format 证书格式，当仅支持PEM格式
                      * 
                      */
                     std::string GetFormat() const;
@@ -198,8 +204,8 @@ namespace TencentCloud
                     bool CaIssuerCnHasBeenSet() const;
 
                     /**
-                     * 获取生效开始时间
-                     * @return NotBeforeTime 生效开始时间
+                     * 获取生效开始时间，毫秒级时间戳 。
+                     * @return NotBeforeTime 生效开始时间，毫秒级时间戳 。
                      * 
                      */
                     int64_t GetNotBeforeTime() const;
@@ -214,37 +220,40 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 创建时间
+                     * 创建时间，毫秒级时间戳 。
                      */
                     int64_t m_createdTime;
                     bool m_createdTimeHasBeenSet;
 
                     /**
-                     * 上次更新时间
+                     * 上次更新时间，毫秒级时间戳 。
                      */
                     int64_t m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 失效日期
+                     * 失效日期，毫秒级时间戳 。
                      */
                     int64_t m_notAfterTime;
                     bool m_notAfterTimeHasBeenSet;
 
                     /**
-                     * 上次激活时间
+                     * 上次激活时间，毫秒级时间戳 。
                      */
                     int64_t m_lastActivationTime;
                     bool m_lastActivationTimeHasBeenSet;
 
                     /**
-                     * 上次吊销时间
+                     * 上次吊销时间，毫秒级时间戳 。
                      */
                     int64_t m_lastInactivationTime;
                     bool m_lastInactivationTimeHasBeenSet;
 
                     /**
-                     * 证书状态
+                     * CA证书状态
+ ACTIVE：激活
+INACTIVE：未激活
+
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
@@ -256,7 +265,7 @@ namespace TencentCloud
                     bool m_caSnHasBeenSet;
 
                     /**
-                     * common name
+                     * 证书的CN（Common Name），证书中用于标识主体的名称，通常是域名或组织名称
                      */
                     std::string m_caCn;
                     bool m_caCnHasBeenSet;
@@ -268,7 +277,7 @@ namespace TencentCloud
                     bool m_caCertificateHasBeenSet;
 
                     /**
-                     * 证书格式
+                     * 证书格式，当仅支持PEM格式
                      */
                     std::string m_format;
                     bool m_formatHasBeenSet;
@@ -280,7 +289,7 @@ namespace TencentCloud
                     bool m_caIssuerCnHasBeenSet;
 
                     /**
-                     * 生效开始时间
+                     * 生效开始时间，毫秒级时间戳 。
                      */
                     int64_t m_notBeforeTime;
                     bool m_notBeforeTimeHasBeenSet;

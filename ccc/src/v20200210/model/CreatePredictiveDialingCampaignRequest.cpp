@@ -38,7 +38,9 @@ CreatePredictiveDialingCampaignRequest::CreatePredictiveDialingCampaignRequest()
     m_retryTimesHasBeenSet(false),
     m_variablesHasBeenSet(false),
     m_uUIHasBeenSet(false),
-    m_calleeAttributesHasBeenSet(false)
+    m_calleeAttributesHasBeenSet(false),
+    m_timeZoneHasBeenSet(false),
+    m_availableTimeHasBeenSet(false)
 {
 }
 
@@ -195,6 +197,29 @@ string CreatePredictiveDialingCampaignRequest::ToJsonString() const
 
         int i=0;
         for (auto itr = m_calleeAttributes.begin(); itr != m_calleeAttributes.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_timeZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimeZone";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_timeZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_availableTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AvailableTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_availableTime.begin(); itr != m_availableTime.end(); ++itr, ++i)
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
@@ -463,6 +488,38 @@ void CreatePredictiveDialingCampaignRequest::SetCalleeAttributes(const vector<Ca
 bool CreatePredictiveDialingCampaignRequest::CalleeAttributesHasBeenSet() const
 {
     return m_calleeAttributesHasBeenSet;
+}
+
+string CreatePredictiveDialingCampaignRequest::GetTimeZone() const
+{
+    return m_timeZone;
+}
+
+void CreatePredictiveDialingCampaignRequest::SetTimeZone(const string& _timeZone)
+{
+    m_timeZone = _timeZone;
+    m_timeZoneHasBeenSet = true;
+}
+
+bool CreatePredictiveDialingCampaignRequest::TimeZoneHasBeenSet() const
+{
+    return m_timeZoneHasBeenSet;
+}
+
+vector<TimeRange> CreatePredictiveDialingCampaignRequest::GetAvailableTime() const
+{
+    return m_availableTime;
+}
+
+void CreatePredictiveDialingCampaignRequest::SetAvailableTime(const vector<TimeRange>& _availableTime)
+{
+    m_availableTime = _availableTime;
+    m_availableTimeHasBeenSet = true;
+}
+
+bool CreatePredictiveDialingCampaignRequest::AvailableTimeHasBeenSet() const
+{
+    return m_availableTimeHasBeenSet;
 }
 
 

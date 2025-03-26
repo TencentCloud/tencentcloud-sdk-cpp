@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取域名信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DomainInfoList 域名信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CustomizedDomainInfo> GetDomainInfoList() const;
@@ -78,7 +76,6 @@ namespace TencentCloud
 
                     /**
                      * 域名信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CustomizedDomainInfo> m_domainInfoList;
                     bool m_domainInfoListHasBeenSet;

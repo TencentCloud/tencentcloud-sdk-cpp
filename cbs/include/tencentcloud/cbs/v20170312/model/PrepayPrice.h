@@ -274,18 +274,14 @@ namespace TencentCloud
 
                     /**
                      * 获取计费项目明细列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DetailPrices 计费项目明细列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DetailPrice> GetDetailPrices() const;
 
                     /**
                      * 设置计费项目明细列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _detailPrices 计费项目明细列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDetailPrices(const std::vector<DetailPrice>& _detailPrices);
@@ -364,7 +360,6 @@ namespace TencentCloud
 
                     /**
                      * 计费项目明细列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DetailPrice> m_detailPrices;
                     bool m_detailPricesHasBeenSet;

@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/mps/v20190612/model/AudioTrackChannelInfo.h>
 
 
 namespace TencentCloud
@@ -234,6 +235,35 @@ namespace TencentCloud
                      */
                     bool AudioChannelHasBeenSet() const;
 
+                    /**
+                     * 获取合并音轨信息。
+注意：此字段只是自适应转码生效，
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TrackChannelInfo 合并音轨信息。
+注意：此字段只是自适应转码生效，
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    AudioTrackChannelInfo GetTrackChannelInfo() const;
+
+                    /**
+                     * 设置合并音轨信息。
+注意：此字段只是自适应转码生效，
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _trackChannelInfo 合并音轨信息。
+注意：此字段只是自适应转码生效，
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetTrackChannelInfo(const AudioTrackChannelInfo& _trackChannelInfo);
+
+                    /**
+                     * 判断参数 TrackChannelInfo 是否已赋值
+                     * @return TrackChannelInfo 是否已赋值
+                     * 
+                     */
+                    bool TrackChannelInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -285,6 +315,14 @@ namespace TencentCloud
                      */
                     int64_t m_audioChannel;
                     bool m_audioChannelHasBeenSet;
+
+                    /**
+                     * 合并音轨信息。
+注意：此字段只是自适应转码生效，
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AudioTrackChannelInfo m_trackChannelInfo;
+                    bool m_trackChannelInfoHasBeenSet;
 
                 };
             }

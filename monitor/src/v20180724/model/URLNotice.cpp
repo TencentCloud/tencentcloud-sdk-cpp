@@ -26,7 +26,8 @@ URLNotice::URLNotice() :
     m_validationCodeHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
-    m_weekdayHasBeenSet(false)
+    m_weekdayHasBeenSet(false),
+    m_groupMembersHasBeenSet(false)
 {
 }
 
@@ -98,6 +99,16 @@ CoreInternalOutcome URLNotice::Deserialize(const rapidjson::Value &value)
         m_weekdayHasBeenSet = true;
     }
 
+    if (value.HasMember("GroupMembers") && !value["GroupMembers"].IsNull())
+    {
+        if (!value["GroupMembers"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `URLNotice.GroupMembers` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_groupMembers = string(value["GroupMembers"].GetString());
+        m_groupMembersHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -156,6 +167,14 @@ void URLNotice::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_groupMembersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupMembers";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupMembers.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -255,5 +274,21 @@ void URLNotice::SetWeekday(const vector<int64_t>& _weekday)
 bool URLNotice::WeekdayHasBeenSet() const
 {
     return m_weekdayHasBeenSet;
+}
+
+string URLNotice::GetGroupMembers() const
+{
+    return m_groupMembers;
+}
+
+void URLNotice::SetGroupMembers(const string& _groupMembers)
+{
+    m_groupMembers = _groupMembers;
+    m_groupMembersHasBeenSet = true;
+}
+
+bool URLNotice::GroupMembersHasBeenSet() const
+{
+    return m_groupMembersHasBeenSet;
 }
 

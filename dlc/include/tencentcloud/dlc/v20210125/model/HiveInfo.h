@@ -273,18 +273,14 @@ namespace TencentCloud
 
                     /**
                      * 获取EMR集群中hive组件的版本号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HiveVersion EMR集群中hive组件的版本号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHiveVersion() const;
 
                     /**
                      * 设置EMR集群中hive组件的版本号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hiveVersion EMR集群中hive组件的版本号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHiveVersion(const std::string& _hiveVersion);
@@ -413,7 +409,6 @@ namespace TencentCloud
 
                     /**
                      * EMR集群中hive组件的版本号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_hiveVersion;
                     bool m_hiveVersionHasBeenSet;

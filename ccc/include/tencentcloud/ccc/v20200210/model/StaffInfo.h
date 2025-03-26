@@ -154,24 +154,49 @@ namespace TencentCloud
 
                     /**
                      * 获取用户角色id
+一个用户绑定了多个角色时以RoleIdList为准
                      * @return RoleId 用户角色id
-                     * 
+一个用户绑定了多个角色时以RoleIdList为准
+                     * @deprecated
                      */
                     uint64_t GetRoleId() const;
 
                     /**
                      * 设置用户角色id
+一个用户绑定了多个角色时以RoleIdList为准
                      * @param _roleId 用户角色id
-                     * 
+一个用户绑定了多个角色时以RoleIdList为准
+                     * @deprecated
                      */
                     void SetRoleId(const uint64_t& _roleId);
 
                     /**
                      * 判断参数 RoleId 是否已赋值
                      * @return RoleId 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool RoleIdHasBeenSet() const;
+
+                    /**
+                     * 获取用户角色id列表
+                     * @return RoleIdList 用户角色id列表
+                     * 
+                     */
+                    uint64_t GetRoleIdList() const;
+
+                    /**
+                     * 设置用户角色id列表
+                     * @param _roleIdList 用户角色id列表
+                     * 
+                     */
+                    void SetRoleIdList(const uint64_t& _roleIdList);
+
+                    /**
+                     * 判断参数 RoleIdList 是否已赋值
+                     * @return RoleIdList 是否已赋值
+                     * 
+                     */
+                    bool RoleIdListHasBeenSet() const;
 
                     /**
                      * 获取所属技能组列表
@@ -270,9 +295,16 @@ namespace TencentCloud
 
                     /**
                      * 用户角色id
+一个用户绑定了多个角色时以RoleIdList为准
                      */
                     uint64_t m_roleId;
                     bool m_roleIdHasBeenSet;
+
+                    /**
+                     * 用户角色id列表
+                     */
+                    uint64_t m_roleIdList;
+                    bool m_roleIdListHasBeenSet;
 
                     /**
                      * 所属技能组列表

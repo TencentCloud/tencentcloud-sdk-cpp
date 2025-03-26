@@ -134,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取视频拆条任务输入信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Input 视频拆条任务输入信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AiRecognitionTaskSegmentResultInput GetInput() const;
 
                     /**
                      * 设置视频拆条任务输入信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _input 视频拆条任务输入信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInput(const AiRecognitionTaskSegmentResultInput& _input);
@@ -159,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取视频拆条任务输出信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Output 视频拆条任务输出信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AiRecognitionTaskSegmentResultOutput GetOutput() const;
 
                     /**
                      * 设置视频拆条任务输出信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _output 视频拆条任务输出信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutput(const AiRecognitionTaskSegmentResultOutput& _output);
@@ -273,14 +265,12 @@ namespace TencentCloud
 
                     /**
                      * 视频拆条任务输入信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiRecognitionTaskSegmentResultInput m_input;
                     bool m_inputHasBeenSet;
 
                     /**
                      * 视频拆条任务输出信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiRecognitionTaskSegmentResultOutput m_output;
                     bool m_outputHasBeenSet;

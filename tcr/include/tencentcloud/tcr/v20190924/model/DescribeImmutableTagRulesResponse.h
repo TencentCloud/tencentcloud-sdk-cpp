@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取规则列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Rules 规则列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ImmutableTagRule> GetRules() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取未创建规则的命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EmptyNs 未创建规则的命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetEmptyNs() const;
@@ -94,14 +90,12 @@ namespace TencentCloud
 
                     /**
                      * 规则列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ImmutableTagRule> m_rules;
                     bool m_rulesHasBeenSet;
 
                     /**
                      * 未创建规则的命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_emptyNs;
                     bool m_emptyNsHasBeenSet;

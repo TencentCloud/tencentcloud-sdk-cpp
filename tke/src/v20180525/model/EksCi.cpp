@@ -21,29 +21,29 @@ using namespace TencentCloud::Tke::V20180525::Model;
 using namespace std;
 
 EksCi::EksCi() :
+    m_autoCreatedEipIdHasBeenSet(false),
+    m_camRoleNameHasBeenSet(false),
+    m_containersHasBeenSet(false),
+    m_cpuHasBeenSet(false),
+    m_cpuTypeHasBeenSet(false),
+    m_creationTimeHasBeenSet(false),
+    m_eipAddressHasBeenSet(false),
     m_eksCiIdHasBeenSet(false),
     m_eksCiNameHasBeenSet(false),
-    m_memoryHasBeenSet(false),
-    m_cpuHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_restartPolicyHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_succeededTimeHasBeenSet(false),
-    m_containersHasBeenSet(false),
     m_eksCiVolumeHasBeenSet(false),
-    m_securityContextHasBeenSet(false),
-    m_privateIpHasBeenSet(false),
-    m_eipAddressHasBeenSet(false),
-    m_gpuTypeHasBeenSet(false),
-    m_cpuTypeHasBeenSet(false),
     m_gpuCountHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
+    m_gpuTypeHasBeenSet(false),
     m_initContainersHasBeenSet(false),
-    m_camRoleNameHasBeenSet(false),
-    m_autoCreatedEipIdHasBeenSet(false),
-    m_persistStatusHasBeenSet(false)
+    m_memoryHasBeenSet(false),
+    m_persistStatusHasBeenSet(false),
+    m_privateIpHasBeenSet(false),
+    m_restartPolicyHasBeenSet(false),
+    m_securityContextHasBeenSet(false),
+    m_securityGroupIdsHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_subnetIdHasBeenSet(false),
+    m_succeededTimeHasBeenSet(false),
+    m_vpcIdHasBeenSet(false)
 {
 }
 
@@ -52,97 +52,24 @@ CoreInternalOutcome EksCi::Deserialize(const rapidjson::Value &value)
     string requestId = "";
 
 
-    if (value.HasMember("EksCiId") && !value["EksCiId"].IsNull())
+    if (value.HasMember("AutoCreatedEipId") && !value["AutoCreatedEipId"].IsNull())
     {
-        if (!value["EksCiId"].IsString())
+        if (!value["AutoCreatedEipId"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `EksCi.EksCiId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EksCi.AutoCreatedEipId` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_eksCiId = string(value["EksCiId"].GetString());
-        m_eksCiIdHasBeenSet = true;
+        m_autoCreatedEipId = string(value["AutoCreatedEipId"].GetString());
+        m_autoCreatedEipIdHasBeenSet = true;
     }
 
-    if (value.HasMember("EksCiName") && !value["EksCiName"].IsNull())
+    if (value.HasMember("CamRoleName") && !value["CamRoleName"].IsNull())
     {
-        if (!value["EksCiName"].IsString())
+        if (!value["CamRoleName"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `EksCi.EksCiName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EksCi.CamRoleName` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_eksCiName = string(value["EksCiName"].GetString());
-        m_eksCiNameHasBeenSet = true;
-    }
-
-    if (value.HasMember("Memory") && !value["Memory"].IsNull())
-    {
-        if (!value["Memory"].IsLosslessDouble())
-        {
-            return CoreInternalOutcome(Core::Error("response `EksCi.Memory` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
-        }
-        m_memory = value["Memory"].GetDouble();
-        m_memoryHasBeenSet = true;
-    }
-
-    if (value.HasMember("Cpu") && !value["Cpu"].IsNull())
-    {
-        if (!value["Cpu"].IsLosslessDouble())
-        {
-            return CoreInternalOutcome(Core::Error("response `EksCi.Cpu` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
-        }
-        m_cpu = value["Cpu"].GetDouble();
-        m_cpuHasBeenSet = true;
-    }
-
-    if (value.HasMember("SecurityGroupIds") && !value["SecurityGroupIds"].IsNull())
-    {
-        if (!value["SecurityGroupIds"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `EksCi.SecurityGroupIds` is not array type"));
-
-        const rapidjson::Value &tmpValue = value["SecurityGroupIds"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            m_securityGroupIds.push_back((*itr).GetString());
-        }
-        m_securityGroupIdsHasBeenSet = true;
-    }
-
-    if (value.HasMember("RestartPolicy") && !value["RestartPolicy"].IsNull())
-    {
-        if (!value["RestartPolicy"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `EksCi.RestartPolicy` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_restartPolicy = string(value["RestartPolicy"].GetString());
-        m_restartPolicyHasBeenSet = true;
-    }
-
-    if (value.HasMember("Status") && !value["Status"].IsNull())
-    {
-        if (!value["Status"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `EksCi.Status` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_status = string(value["Status"].GetString());
-        m_statusHasBeenSet = true;
-    }
-
-    if (value.HasMember("CreationTime") && !value["CreationTime"].IsNull())
-    {
-        if (!value["CreationTime"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `EksCi.CreationTime` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_creationTime = string(value["CreationTime"].GetString());
-        m_creationTimeHasBeenSet = true;
-    }
-
-    if (value.HasMember("SucceededTime") && !value["SucceededTime"].IsNull())
-    {
-        if (!value["SucceededTime"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `EksCi.SucceededTime` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_succeededTime = string(value["SucceededTime"].GetString());
-        m_succeededTimeHasBeenSet = true;
+        m_camRoleName = string(value["CamRoleName"].GetString());
+        m_camRoleNameHasBeenSet = true;
     }
 
     if (value.HasMember("Containers") && !value["Containers"].IsNull())
@@ -165,6 +92,66 @@ CoreInternalOutcome EksCi::Deserialize(const rapidjson::Value &value)
         m_containersHasBeenSet = true;
     }
 
+    if (value.HasMember("Cpu") && !value["Cpu"].IsNull())
+    {
+        if (!value["Cpu"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `EksCi.Cpu` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_cpu = value["Cpu"].GetDouble();
+        m_cpuHasBeenSet = true;
+    }
+
+    if (value.HasMember("CpuType") && !value["CpuType"].IsNull())
+    {
+        if (!value["CpuType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EksCi.CpuType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cpuType = string(value["CpuType"].GetString());
+        m_cpuTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreationTime") && !value["CreationTime"].IsNull())
+    {
+        if (!value["CreationTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EksCi.CreationTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_creationTime = string(value["CreationTime"].GetString());
+        m_creationTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("EipAddress") && !value["EipAddress"].IsNull())
+    {
+        if (!value["EipAddress"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EksCi.EipAddress` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_eipAddress = string(value["EipAddress"].GetString());
+        m_eipAddressHasBeenSet = true;
+    }
+
+    if (value.HasMember("EksCiId") && !value["EksCiId"].IsNull())
+    {
+        if (!value["EksCiId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EksCi.EksCiId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_eksCiId = string(value["EksCiId"].GetString());
+        m_eksCiIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("EksCiName") && !value["EksCiName"].IsNull())
+    {
+        if (!value["EksCiName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EksCi.EksCiName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_eksCiName = string(value["EksCiName"].GetString());
+        m_eksCiNameHasBeenSet = true;
+    }
+
     if (value.HasMember("EksCiVolume") && !value["EksCiVolume"].IsNull())
     {
         if (!value["EksCiVolume"].IsObject())
@@ -182,63 +169,6 @@ CoreInternalOutcome EksCi::Deserialize(const rapidjson::Value &value)
         m_eksCiVolumeHasBeenSet = true;
     }
 
-    if (value.HasMember("SecurityContext") && !value["SecurityContext"].IsNull())
-    {
-        if (!value["SecurityContext"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `EksCi.SecurityContext` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_securityContext.Deserialize(value["SecurityContext"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_securityContextHasBeenSet = true;
-    }
-
-    if (value.HasMember("PrivateIp") && !value["PrivateIp"].IsNull())
-    {
-        if (!value["PrivateIp"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `EksCi.PrivateIp` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_privateIp = string(value["PrivateIp"].GetString());
-        m_privateIpHasBeenSet = true;
-    }
-
-    if (value.HasMember("EipAddress") && !value["EipAddress"].IsNull())
-    {
-        if (!value["EipAddress"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `EksCi.EipAddress` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_eipAddress = string(value["EipAddress"].GetString());
-        m_eipAddressHasBeenSet = true;
-    }
-
-    if (value.HasMember("GpuType") && !value["GpuType"].IsNull())
-    {
-        if (!value["GpuType"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `EksCi.GpuType` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_gpuType = string(value["GpuType"].GetString());
-        m_gpuTypeHasBeenSet = true;
-    }
-
-    if (value.HasMember("CpuType") && !value["CpuType"].IsNull())
-    {
-        if (!value["CpuType"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `EksCi.CpuType` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_cpuType = string(value["CpuType"].GetString());
-        m_cpuTypeHasBeenSet = true;
-    }
-
     if (value.HasMember("GpuCount") && !value["GpuCount"].IsNull())
     {
         if (!value["GpuCount"].IsUint64())
@@ -249,24 +179,14 @@ CoreInternalOutcome EksCi::Deserialize(const rapidjson::Value &value)
         m_gpuCountHasBeenSet = true;
     }
 
-    if (value.HasMember("VpcId") && !value["VpcId"].IsNull())
+    if (value.HasMember("GpuType") && !value["GpuType"].IsNull())
     {
-        if (!value["VpcId"].IsString())
+        if (!value["GpuType"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `EksCi.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EksCi.GpuType` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_vpcId = string(value["VpcId"].GetString());
-        m_vpcIdHasBeenSet = true;
-    }
-
-    if (value.HasMember("SubnetId") && !value["SubnetId"].IsNull())
-    {
-        if (!value["SubnetId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `EksCi.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_subnetId = string(value["SubnetId"].GetString());
-        m_subnetIdHasBeenSet = true;
+        m_gpuType = string(value["GpuType"].GetString());
+        m_gpuTypeHasBeenSet = true;
     }
 
     if (value.HasMember("InitContainers") && !value["InitContainers"].IsNull())
@@ -289,24 +209,14 @@ CoreInternalOutcome EksCi::Deserialize(const rapidjson::Value &value)
         m_initContainersHasBeenSet = true;
     }
 
-    if (value.HasMember("CamRoleName") && !value["CamRoleName"].IsNull())
+    if (value.HasMember("Memory") && !value["Memory"].IsNull())
     {
-        if (!value["CamRoleName"].IsString())
+        if (!value["Memory"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Core::Error("response `EksCi.CamRoleName` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `EksCi.Memory` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
-        m_camRoleName = string(value["CamRoleName"].GetString());
-        m_camRoleNameHasBeenSet = true;
-    }
-
-    if (value.HasMember("AutoCreatedEipId") && !value["AutoCreatedEipId"].IsNull())
-    {
-        if (!value["AutoCreatedEipId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `EksCi.AutoCreatedEipId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_autoCreatedEipId = string(value["AutoCreatedEipId"].GetString());
-        m_autoCreatedEipIdHasBeenSet = true;
+        m_memory = value["Memory"].GetDouble();
+        m_memoryHasBeenSet = true;
     }
 
     if (value.HasMember("PersistStatus") && !value["PersistStatus"].IsNull())
@@ -319,6 +229,96 @@ CoreInternalOutcome EksCi::Deserialize(const rapidjson::Value &value)
         m_persistStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("PrivateIp") && !value["PrivateIp"].IsNull())
+    {
+        if (!value["PrivateIp"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EksCi.PrivateIp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_privateIp = string(value["PrivateIp"].GetString());
+        m_privateIpHasBeenSet = true;
+    }
+
+    if (value.HasMember("RestartPolicy") && !value["RestartPolicy"].IsNull())
+    {
+        if (!value["RestartPolicy"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EksCi.RestartPolicy` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_restartPolicy = string(value["RestartPolicy"].GetString());
+        m_restartPolicyHasBeenSet = true;
+    }
+
+    if (value.HasMember("SecurityContext") && !value["SecurityContext"].IsNull())
+    {
+        if (!value["SecurityContext"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `EksCi.SecurityContext` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_securityContext.Deserialize(value["SecurityContext"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_securityContextHasBeenSet = true;
+    }
+
+    if (value.HasMember("SecurityGroupIds") && !value["SecurityGroupIds"].IsNull())
+    {
+        if (!value["SecurityGroupIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `EksCi.SecurityGroupIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SecurityGroupIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_securityGroupIds.push_back((*itr).GetString());
+        }
+        m_securityGroupIdsHasBeenSet = true;
+    }
+
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EksCi.Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = string(value["Status"].GetString());
+        m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubnetId") && !value["SubnetId"].IsNull())
+    {
+        if (!value["SubnetId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EksCi.SubnetId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subnetId = string(value["SubnetId"].GetString());
+        m_subnetIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("SucceededTime") && !value["SucceededTime"].IsNull())
+    {
+        if (!value["SucceededTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EksCi.SucceededTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_succeededTime = string(value["SucceededTime"].GetString());
+        m_succeededTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("VpcId") && !value["VpcId"].IsNull())
+    {
+        if (!value["VpcId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EksCi.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vpcId = string(value["VpcId"].GetString());
+        m_vpcIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -326,81 +326,20 @@ CoreInternalOutcome EksCi::Deserialize(const rapidjson::Value &value)
 void EksCi::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
-    if (m_eksCiIdHasBeenSet)
+    if (m_autoCreatedEipIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "EksCiId";
+        string key = "AutoCreatedEipId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_eksCiId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_autoCreatedEipId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_eksCiNameHasBeenSet)
+    if (m_camRoleNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "EksCiName";
+        string key = "CamRoleName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_eksCiName.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_memoryHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Memory";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_memory, allocator);
-    }
-
-    if (m_cpuHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Cpu";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_cpu, allocator);
-    }
-
-    if (m_securityGroupIdsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SecurityGroupIds";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_securityGroupIds.begin(); itr != m_securityGroupIds.end(); ++itr)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
-    }
-
-    if (m_restartPolicyHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RestartPolicy";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_restartPolicy.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_statusHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Status";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_creationTimeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CreationTime";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_creationTime.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_succeededTimeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SucceededTime";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_succeededTime.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_camRoleName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_containersHasBeenSet)
@@ -418,46 +357,12 @@ void EksCi::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         }
     }
 
-    if (m_eksCiVolumeHasBeenSet)
+    if (m_cpuHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "EksCiVolume";
+        string key = "Cpu";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_eksCiVolume.ToJsonObject(value[key.c_str()], allocator);
-    }
-
-    if (m_securityContextHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SecurityContext";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_securityContext.ToJsonObject(value[key.c_str()], allocator);
-    }
-
-    if (m_privateIpHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "PrivateIp";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_privateIp.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_eipAddressHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "EipAddress";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_eipAddress.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_gpuTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "GpuType";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_gpuType.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_cpu, allocator);
     }
 
     if (m_cpuTypeHasBeenSet)
@@ -468,6 +373,47 @@ void EksCi::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         value.AddMember(iKey, rapidjson::Value(m_cpuType.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_creationTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreationTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_creationTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_eipAddressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EipAddress";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_eipAddress.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_eksCiIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EksCiId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_eksCiId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_eksCiNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EksCiName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_eksCiName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_eksCiVolumeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EksCiVolume";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_eksCiVolume.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_gpuCountHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -476,20 +422,12 @@ void EksCi::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         value.AddMember(iKey, m_gpuCount, allocator);
     }
 
-    if (m_vpcIdHasBeenSet)
+    if (m_gpuTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "VpcId";
+        string key = "GpuType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_subnetIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SubnetId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_subnetId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gpuType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_initContainersHasBeenSet)
@@ -507,20 +445,12 @@ void EksCi::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         }
     }
 
-    if (m_camRoleNameHasBeenSet)
+    if (m_memoryHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CamRoleName";
+        string key = "Memory";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_camRoleName.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_autoCreatedEipIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AutoCreatedEipId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_autoCreatedEipId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_memory, allocator);
     }
 
     if (m_persistStatusHasBeenSet)
@@ -531,8 +461,190 @@ void EksCi::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         value.AddMember(iKey, m_persistStatus, allocator);
     }
 
+    if (m_privateIpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PrivateIp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_privateIp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_restartPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RestartPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_restartPolicy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_securityContextHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecurityContext";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_securityContext.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_securityGroupIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecurityGroupIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_securityGroupIds.begin(); itr != m_securityGroupIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subnetIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubnetId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subnetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_succeededTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SucceededTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_succeededTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vpcIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VpcId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
+
+string EksCi::GetAutoCreatedEipId() const
+{
+    return m_autoCreatedEipId;
+}
+
+void EksCi::SetAutoCreatedEipId(const string& _autoCreatedEipId)
+{
+    m_autoCreatedEipId = _autoCreatedEipId;
+    m_autoCreatedEipIdHasBeenSet = true;
+}
+
+bool EksCi::AutoCreatedEipIdHasBeenSet() const
+{
+    return m_autoCreatedEipIdHasBeenSet;
+}
+
+string EksCi::GetCamRoleName() const
+{
+    return m_camRoleName;
+}
+
+void EksCi::SetCamRoleName(const string& _camRoleName)
+{
+    m_camRoleName = _camRoleName;
+    m_camRoleNameHasBeenSet = true;
+}
+
+bool EksCi::CamRoleNameHasBeenSet() const
+{
+    return m_camRoleNameHasBeenSet;
+}
+
+vector<Container> EksCi::GetContainers() const
+{
+    return m_containers;
+}
+
+void EksCi::SetContainers(const vector<Container>& _containers)
+{
+    m_containers = _containers;
+    m_containersHasBeenSet = true;
+}
+
+bool EksCi::ContainersHasBeenSet() const
+{
+    return m_containersHasBeenSet;
+}
+
+double EksCi::GetCpu() const
+{
+    return m_cpu;
+}
+
+void EksCi::SetCpu(const double& _cpu)
+{
+    m_cpu = _cpu;
+    m_cpuHasBeenSet = true;
+}
+
+bool EksCi::CpuHasBeenSet() const
+{
+    return m_cpuHasBeenSet;
+}
+
+string EksCi::GetCpuType() const
+{
+    return m_cpuType;
+}
+
+void EksCi::SetCpuType(const string& _cpuType)
+{
+    m_cpuType = _cpuType;
+    m_cpuTypeHasBeenSet = true;
+}
+
+bool EksCi::CpuTypeHasBeenSet() const
+{
+    return m_cpuTypeHasBeenSet;
+}
+
+string EksCi::GetCreationTime() const
+{
+    return m_creationTime;
+}
+
+void EksCi::SetCreationTime(const string& _creationTime)
+{
+    m_creationTime = _creationTime;
+    m_creationTimeHasBeenSet = true;
+}
+
+bool EksCi::CreationTimeHasBeenSet() const
+{
+    return m_creationTimeHasBeenSet;
+}
+
+string EksCi::GetEipAddress() const
+{
+    return m_eipAddress;
+}
+
+void EksCi::SetEipAddress(const string& _eipAddress)
+{
+    m_eipAddress = _eipAddress;
+    m_eipAddressHasBeenSet = true;
+}
+
+bool EksCi::EipAddressHasBeenSet() const
+{
+    return m_eipAddressHasBeenSet;
+}
 
 string EksCi::GetEksCiId() const
 {
@@ -566,134 +678,6 @@ bool EksCi::EksCiNameHasBeenSet() const
     return m_eksCiNameHasBeenSet;
 }
 
-double EksCi::GetMemory() const
-{
-    return m_memory;
-}
-
-void EksCi::SetMemory(const double& _memory)
-{
-    m_memory = _memory;
-    m_memoryHasBeenSet = true;
-}
-
-bool EksCi::MemoryHasBeenSet() const
-{
-    return m_memoryHasBeenSet;
-}
-
-double EksCi::GetCpu() const
-{
-    return m_cpu;
-}
-
-void EksCi::SetCpu(const double& _cpu)
-{
-    m_cpu = _cpu;
-    m_cpuHasBeenSet = true;
-}
-
-bool EksCi::CpuHasBeenSet() const
-{
-    return m_cpuHasBeenSet;
-}
-
-vector<string> EksCi::GetSecurityGroupIds() const
-{
-    return m_securityGroupIds;
-}
-
-void EksCi::SetSecurityGroupIds(const vector<string>& _securityGroupIds)
-{
-    m_securityGroupIds = _securityGroupIds;
-    m_securityGroupIdsHasBeenSet = true;
-}
-
-bool EksCi::SecurityGroupIdsHasBeenSet() const
-{
-    return m_securityGroupIdsHasBeenSet;
-}
-
-string EksCi::GetRestartPolicy() const
-{
-    return m_restartPolicy;
-}
-
-void EksCi::SetRestartPolicy(const string& _restartPolicy)
-{
-    m_restartPolicy = _restartPolicy;
-    m_restartPolicyHasBeenSet = true;
-}
-
-bool EksCi::RestartPolicyHasBeenSet() const
-{
-    return m_restartPolicyHasBeenSet;
-}
-
-string EksCi::GetStatus() const
-{
-    return m_status;
-}
-
-void EksCi::SetStatus(const string& _status)
-{
-    m_status = _status;
-    m_statusHasBeenSet = true;
-}
-
-bool EksCi::StatusHasBeenSet() const
-{
-    return m_statusHasBeenSet;
-}
-
-string EksCi::GetCreationTime() const
-{
-    return m_creationTime;
-}
-
-void EksCi::SetCreationTime(const string& _creationTime)
-{
-    m_creationTime = _creationTime;
-    m_creationTimeHasBeenSet = true;
-}
-
-bool EksCi::CreationTimeHasBeenSet() const
-{
-    return m_creationTimeHasBeenSet;
-}
-
-string EksCi::GetSucceededTime() const
-{
-    return m_succeededTime;
-}
-
-void EksCi::SetSucceededTime(const string& _succeededTime)
-{
-    m_succeededTime = _succeededTime;
-    m_succeededTimeHasBeenSet = true;
-}
-
-bool EksCi::SucceededTimeHasBeenSet() const
-{
-    return m_succeededTimeHasBeenSet;
-}
-
-vector<Container> EksCi::GetContainers() const
-{
-    return m_containers;
-}
-
-void EksCi::SetContainers(const vector<Container>& _containers)
-{
-    m_containers = _containers;
-    m_containersHasBeenSet = true;
-}
-
-bool EksCi::ContainersHasBeenSet() const
-{
-    return m_containersHasBeenSet;
-}
-
 EksCiVolume EksCi::GetEksCiVolume() const
 {
     return m_eksCiVolume;
@@ -708,86 +692,6 @@ void EksCi::SetEksCiVolume(const EksCiVolume& _eksCiVolume)
 bool EksCi::EksCiVolumeHasBeenSet() const
 {
     return m_eksCiVolumeHasBeenSet;
-}
-
-SecurityContext EksCi::GetSecurityContext() const
-{
-    return m_securityContext;
-}
-
-void EksCi::SetSecurityContext(const SecurityContext& _securityContext)
-{
-    m_securityContext = _securityContext;
-    m_securityContextHasBeenSet = true;
-}
-
-bool EksCi::SecurityContextHasBeenSet() const
-{
-    return m_securityContextHasBeenSet;
-}
-
-string EksCi::GetPrivateIp() const
-{
-    return m_privateIp;
-}
-
-void EksCi::SetPrivateIp(const string& _privateIp)
-{
-    m_privateIp = _privateIp;
-    m_privateIpHasBeenSet = true;
-}
-
-bool EksCi::PrivateIpHasBeenSet() const
-{
-    return m_privateIpHasBeenSet;
-}
-
-string EksCi::GetEipAddress() const
-{
-    return m_eipAddress;
-}
-
-void EksCi::SetEipAddress(const string& _eipAddress)
-{
-    m_eipAddress = _eipAddress;
-    m_eipAddressHasBeenSet = true;
-}
-
-bool EksCi::EipAddressHasBeenSet() const
-{
-    return m_eipAddressHasBeenSet;
-}
-
-string EksCi::GetGpuType() const
-{
-    return m_gpuType;
-}
-
-void EksCi::SetGpuType(const string& _gpuType)
-{
-    m_gpuType = _gpuType;
-    m_gpuTypeHasBeenSet = true;
-}
-
-bool EksCi::GpuTypeHasBeenSet() const
-{
-    return m_gpuTypeHasBeenSet;
-}
-
-string EksCi::GetCpuType() const
-{
-    return m_cpuType;
-}
-
-void EksCi::SetCpuType(const string& _cpuType)
-{
-    m_cpuType = _cpuType;
-    m_cpuTypeHasBeenSet = true;
-}
-
-bool EksCi::CpuTypeHasBeenSet() const
-{
-    return m_cpuTypeHasBeenSet;
 }
 
 uint64_t EksCi::GetGpuCount() const
@@ -806,36 +710,20 @@ bool EksCi::GpuCountHasBeenSet() const
     return m_gpuCountHasBeenSet;
 }
 
-string EksCi::GetVpcId() const
+string EksCi::GetGpuType() const
 {
-    return m_vpcId;
+    return m_gpuType;
 }
 
-void EksCi::SetVpcId(const string& _vpcId)
+void EksCi::SetGpuType(const string& _gpuType)
 {
-    m_vpcId = _vpcId;
-    m_vpcIdHasBeenSet = true;
+    m_gpuType = _gpuType;
+    m_gpuTypeHasBeenSet = true;
 }
 
-bool EksCi::VpcIdHasBeenSet() const
+bool EksCi::GpuTypeHasBeenSet() const
 {
-    return m_vpcIdHasBeenSet;
-}
-
-string EksCi::GetSubnetId() const
-{
-    return m_subnetId;
-}
-
-void EksCi::SetSubnetId(const string& _subnetId)
-{
-    m_subnetId = _subnetId;
-    m_subnetIdHasBeenSet = true;
-}
-
-bool EksCi::SubnetIdHasBeenSet() const
-{
-    return m_subnetIdHasBeenSet;
+    return m_gpuTypeHasBeenSet;
 }
 
 vector<Container> EksCi::GetInitContainers() const
@@ -854,36 +742,20 @@ bool EksCi::InitContainersHasBeenSet() const
     return m_initContainersHasBeenSet;
 }
 
-string EksCi::GetCamRoleName() const
+double EksCi::GetMemory() const
 {
-    return m_camRoleName;
+    return m_memory;
 }
 
-void EksCi::SetCamRoleName(const string& _camRoleName)
+void EksCi::SetMemory(const double& _memory)
 {
-    m_camRoleName = _camRoleName;
-    m_camRoleNameHasBeenSet = true;
+    m_memory = _memory;
+    m_memoryHasBeenSet = true;
 }
 
-bool EksCi::CamRoleNameHasBeenSet() const
+bool EksCi::MemoryHasBeenSet() const
 {
-    return m_camRoleNameHasBeenSet;
-}
-
-string EksCi::GetAutoCreatedEipId() const
-{
-    return m_autoCreatedEipId;
-}
-
-void EksCi::SetAutoCreatedEipId(const string& _autoCreatedEipId)
-{
-    m_autoCreatedEipId = _autoCreatedEipId;
-    m_autoCreatedEipIdHasBeenSet = true;
-}
-
-bool EksCi::AutoCreatedEipIdHasBeenSet() const
-{
-    return m_autoCreatedEipIdHasBeenSet;
+    return m_memoryHasBeenSet;
 }
 
 bool EksCi::GetPersistStatus() const
@@ -900,5 +772,133 @@ void EksCi::SetPersistStatus(const bool& _persistStatus)
 bool EksCi::PersistStatusHasBeenSet() const
 {
     return m_persistStatusHasBeenSet;
+}
+
+string EksCi::GetPrivateIp() const
+{
+    return m_privateIp;
+}
+
+void EksCi::SetPrivateIp(const string& _privateIp)
+{
+    m_privateIp = _privateIp;
+    m_privateIpHasBeenSet = true;
+}
+
+bool EksCi::PrivateIpHasBeenSet() const
+{
+    return m_privateIpHasBeenSet;
+}
+
+string EksCi::GetRestartPolicy() const
+{
+    return m_restartPolicy;
+}
+
+void EksCi::SetRestartPolicy(const string& _restartPolicy)
+{
+    m_restartPolicy = _restartPolicy;
+    m_restartPolicyHasBeenSet = true;
+}
+
+bool EksCi::RestartPolicyHasBeenSet() const
+{
+    return m_restartPolicyHasBeenSet;
+}
+
+SecurityContext EksCi::GetSecurityContext() const
+{
+    return m_securityContext;
+}
+
+void EksCi::SetSecurityContext(const SecurityContext& _securityContext)
+{
+    m_securityContext = _securityContext;
+    m_securityContextHasBeenSet = true;
+}
+
+bool EksCi::SecurityContextHasBeenSet() const
+{
+    return m_securityContextHasBeenSet;
+}
+
+vector<string> EksCi::GetSecurityGroupIds() const
+{
+    return m_securityGroupIds;
+}
+
+void EksCi::SetSecurityGroupIds(const vector<string>& _securityGroupIds)
+{
+    m_securityGroupIds = _securityGroupIds;
+    m_securityGroupIdsHasBeenSet = true;
+}
+
+bool EksCi::SecurityGroupIdsHasBeenSet() const
+{
+    return m_securityGroupIdsHasBeenSet;
+}
+
+string EksCi::GetStatus() const
+{
+    return m_status;
+}
+
+void EksCi::SetStatus(const string& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool EksCi::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+string EksCi::GetSubnetId() const
+{
+    return m_subnetId;
+}
+
+void EksCi::SetSubnetId(const string& _subnetId)
+{
+    m_subnetId = _subnetId;
+    m_subnetIdHasBeenSet = true;
+}
+
+bool EksCi::SubnetIdHasBeenSet() const
+{
+    return m_subnetIdHasBeenSet;
+}
+
+string EksCi::GetSucceededTime() const
+{
+    return m_succeededTime;
+}
+
+void EksCi::SetSucceededTime(const string& _succeededTime)
+{
+    m_succeededTime = _succeededTime;
+    m_succeededTimeHasBeenSet = true;
+}
+
+bool EksCi::SucceededTimeHasBeenSet() const
+{
+    return m_succeededTimeHasBeenSet;
+}
+
+string EksCi::GetVpcId() const
+{
+    return m_vpcId;
+}
+
+void EksCi::SetVpcId(const string& _vpcId)
+{
+    m_vpcId = _vpcId;
+    m_vpcIdHasBeenSet = true;
+}
+
+bool EksCi::VpcIdHasBeenSet() const
+{
+    return m_vpcIdHasBeenSet;
 }
 

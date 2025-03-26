@@ -155,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取智能分类任务输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Output 智能分类任务输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AiAnalysisTaskClassificationOutput GetOutput() const;
 
                     /**
                      * 设置智能分类任务输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _output 智能分类任务输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutput(const AiAnalysisTaskClassificationOutput& _output);
@@ -275,7 +271,6 @@ namespace TencentCloud
 
                     /**
                      * 智能分类任务输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiAnalysisTaskClassificationOutput m_output;
                     bool m_outputHasBeenSet;

@@ -299,6 +299,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DeleteSparkAppResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeUserDataEngineConfigRequest.h
   include/tencentcloud/dlc/v20210125/model/CreateTasksResponse.h
+  include/tencentcloud/dlc/v20210125/model/TccHive.h
   include/tencentcloud/dlc/v20210125/model/GrantDLCCatalogAccessResponse.h
   include/tencentcloud/dlc/v20210125/model/CreateSparkAppRequest.h
   include/tencentcloud/dlc/v20210125/model/CreateSparkSessionBatchSQLRequest.h
@@ -306,6 +307,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DescribeSubUserAccessPolicyRequest.h
   include/tencentcloud/dlc/v20210125/model/HouseEventsInfo.h
   include/tencentcloud/dlc/v20210125/model/SQLTask.h
+  include/tencentcloud/dlc/v20210125/model/NetWork.h
   include/tencentcloud/dlc/v20210125/model/AttachUserPolicyResponse.h
   include/tencentcloud/dlc/v20210125/model/CreateDMSDatabaseRequest.h
   include/tencentcloud/dlc/v20210125/model/DetachWorkGroupPolicyRequest.h
@@ -708,6 +710,7 @@ set(dlc_src
   src/v20210125/model/DeleteSparkAppResponse.cpp
   src/v20210125/model/DescribeUserDataEngineConfigRequest.cpp
   src/v20210125/model/CreateTasksResponse.cpp
+  src/v20210125/model/TccHive.cpp
   src/v20210125/model/GrantDLCCatalogAccessResponse.cpp
   src/v20210125/model/CreateSparkAppRequest.cpp
   src/v20210125/model/CreateSparkSessionBatchSQLRequest.cpp
@@ -715,6 +718,7 @@ set(dlc_src
   src/v20210125/model/DescribeSubUserAccessPolicyRequest.cpp
   src/v20210125/model/HouseEventsInfo.cpp
   src/v20210125/model/SQLTask.cpp
+  src/v20210125/model/NetWork.cpp
   src/v20210125/model/AttachUserPolicyResponse.cpp
   src/v20210125/model/CreateDMSDatabaseRequest.cpp
   src/v20210125/model/DetachWorkGroupPolicyRequest.cpp

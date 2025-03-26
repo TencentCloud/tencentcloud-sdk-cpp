@@ -269,6 +269,8 @@
 #include <tencentcloud/tke/v20180525/model/DescribeLogConfigsResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeLogSwitchesRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeLogSwitchesResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribeOSImagesRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribeOSImagesResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeOpenPolicyListRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeOpenPolicyListResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribePodChargeInfoRequest.h>
@@ -862,6 +864,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLogSwitchesResponse> DescribeLogSwitchesOutcome;
                 typedef std::future<DescribeLogSwitchesOutcome> DescribeLogSwitchesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeLogSwitchesRequest&, DescribeLogSwitchesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogSwitchesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeOSImagesResponse> DescribeOSImagesOutcome;
+                typedef std::future<DescribeOSImagesOutcome> DescribeOSImagesOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeOSImagesRequest&, DescribeOSImagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOSImagesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeOpenPolicyListResponse> DescribeOpenPolicyListOutcome;
                 typedef std::future<DescribeOpenPolicyListOutcome> DescribeOpenPolicyListOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeOpenPolicyListRequest&, DescribeOpenPolicyListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOpenPolicyListAsyncHandler;
@@ -2286,6 +2291,15 @@ namespace TencentCloud
                 DescribeLogSwitchesOutcome DescribeLogSwitches(const Model::DescribeLogSwitchesRequest &request);
                 void DescribeLogSwitchesAsync(const Model::DescribeLogSwitchesRequest& request, const DescribeLogSwitchesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeLogSwitchesOutcomeCallable DescribeLogSwitchesCallable(const Model::DescribeLogSwitchesRequest& request);
+
+                /**
+                 *获取OS聚合信息
+                 * @param req DescribeOSImagesRequest
+                 * @return DescribeOSImagesOutcome
+                 */
+                DescribeOSImagesOutcome DescribeOSImages(const Model::DescribeOSImagesRequest &request);
+                void DescribeOSImagesAsync(const Model::DescribeOSImagesRequest& request, const DescribeOSImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeOSImagesOutcomeCallable DescribeOSImagesCallable(const Model::DescribeOSImagesRequest& request);
 
                 /**
                  *查询opa策略列表

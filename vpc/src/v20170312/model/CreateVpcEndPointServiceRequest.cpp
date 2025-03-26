@@ -29,7 +29,8 @@ CreateVpcEndPointServiceRequest::CreateVpcEndPointServiceRequest() :
     m_serviceInstanceIdHasBeenSet(false),
     m_isPassServiceHasBeenSet(false),
     m_serviceTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_ipAddressTypeHasBeenSet(false)
 {
 }
 
@@ -101,6 +102,14 @@ string CreateVpcEndPointServiceRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_ipAddressTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IpAddressType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_ipAddressType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -221,6 +230,22 @@ void CreateVpcEndPointServiceRequest::SetTags(const vector<Tag>& _tags)
 bool CreateVpcEndPointServiceRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string CreateVpcEndPointServiceRequest::GetIpAddressType() const
+{
+    return m_ipAddressType;
+}
+
+void CreateVpcEndPointServiceRequest::SetIpAddressType(const string& _ipAddressType)
+{
+    m_ipAddressType = _ipAddressType;
+    m_ipAddressTypeHasBeenSet = true;
+}
+
+bool CreateVpcEndPointServiceRequest::IpAddressTypeHasBeenSet() const
+{
+    return m_ipAddressTypeHasBeenSet;
 }
 
 

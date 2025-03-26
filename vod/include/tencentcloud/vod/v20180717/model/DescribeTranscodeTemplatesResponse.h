@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取转码模板详情列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TranscodeTemplateSet 转码模板详情列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TranscodeTemplate> GetTranscodeTemplateSet() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 转码模板详情列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TranscodeTemplate> m_transcodeTemplateSet;
                     bool m_transcodeTemplateSetHasBeenSet;

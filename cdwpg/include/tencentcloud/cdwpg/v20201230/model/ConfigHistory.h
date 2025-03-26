@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取id1
-                     * @return Id id1
+                     * 获取id
+                     * @return Id id
                      * 
                      */
                     int64_t GetId() const;
 
                     /**
-                     * 设置id1
-                     * @param _id id1
+                     * 设置id
+                     * @param _id id
                      * 
                      */
                     void SetId(const int64_t& _id);
@@ -238,7 +238,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * id1
+                     * id
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;

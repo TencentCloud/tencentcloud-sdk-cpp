@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取EKS Container Instance支持的地域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Regions EKS Container Instance支持的地域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<EksCiRegionInfo> GetRegions() const;
@@ -78,7 +76,6 @@ namespace TencentCloud
 
                     /**
                      * EKS Container Instance支持的地域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<EksCiRegionInfo> m_regions;
                     bool m_regionsHasBeenSet;

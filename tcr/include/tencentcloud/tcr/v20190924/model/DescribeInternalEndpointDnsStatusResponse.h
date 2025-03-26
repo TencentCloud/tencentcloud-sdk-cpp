@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取vpc私有域名解析状态列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcSet vpc私有域名解析状态列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<VpcPrivateDomainStatus> GetVpcSet() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * vpc私有域名解析状态列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<VpcPrivateDomainStatus> m_vpcSet;
                     bool m_vpcSetHasBeenSet;

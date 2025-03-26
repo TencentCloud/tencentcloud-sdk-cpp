@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InputHasBeenSet() const;
 
                     /**
-                     * 获取输入文本数组。输入数组总长度不超过 200 。
-                     * @return InputList 输入文本数组。输入数组总长度不超过 200 。
+                     * 获取输入文本数组。输入数组总长度不超过 50 。
+                     * @return InputList 输入文本数组。输入数组总长度不超过 50 。
                      * 
                      */
                     std::vector<std::string> GetInputList() const;
 
                     /**
-                     * 设置输入文本数组。输入数组总长度不超过 200 。
-                     * @param _inputList 输入文本数组。输入数组总长度不超过 200 。
+                     * 设置输入文本数组。输入数组总长度不超过 50 。
+                     * @param _inputList 输入文本数组。输入数组总长度不超过 50 。
                      * 
                      */
                     void SetInputList(const std::vector<std::string>& _inputList);
@@ -93,7 +93,7 @@ namespace TencentCloud
                     bool m_inputHasBeenSet;
 
                     /**
-                     * 输入文本数组。输入数组总长度不超过 200 。
+                     * 输入文本数组。输入数组总长度不超过 50 。
                      */
                     std::vector<std::string> m_inputList;
                     bool m_inputListHasBeenSet;

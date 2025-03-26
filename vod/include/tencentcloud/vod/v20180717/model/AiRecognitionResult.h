@@ -111,10 +111,8 @@ namespace TencentCloud
                     /**
                      * 获取视频片头片尾识别结果，当 Type 为
  HeadTailRecognition 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HeadTailTask 视频片头片尾识别结果，当 Type 为
  HeadTailRecognition 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AiRecognitionTaskHeadTailResult GetHeadTailTask() const;
@@ -122,10 +120,8 @@ namespace TencentCloud
                     /**
                      * 设置视频片头片尾识别结果，当 Type 为
  HeadTailRecognition 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _headTailTask 视频片头片尾识别结果，当 Type 为
  HeadTailRecognition 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHeadTailTask(const AiRecognitionTaskHeadTailResult& _headTailTask);
@@ -140,10 +136,8 @@ namespace TencentCloud
                     /**
                      * 获取视频拆条识别结果，当 Type 为
  SegmentRecognition 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SegmentTask 视频拆条识别结果，当 Type 为
  SegmentRecognition 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AiRecognitionTaskSegmentResult GetSegmentTask() const;
@@ -151,10 +145,8 @@ namespace TencentCloud
                     /**
                      * 设置视频拆条识别结果，当 Type 为
  SegmentRecognition 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _segmentTask 视频拆条识别结果，当 Type 为
  SegmentRecognition 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSegmentTask(const AiRecognitionTaskSegmentResult& _segmentTask);
@@ -169,10 +161,8 @@ namespace TencentCloud
                     /**
                      * 获取人脸识别结果，当 Type 为 
  FaceRecognition 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FaceTask 人脸识别结果，当 Type 为 
  FaceRecognition 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AiRecognitionTaskFaceResult GetFaceTask() const;
@@ -180,10 +170,8 @@ namespace TencentCloud
                     /**
                      * 设置人脸识别结果，当 Type 为 
  FaceRecognition 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _faceTask 人脸识别结果，当 Type 为 
  FaceRecognition 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFaceTask(const AiRecognitionTaskFaceResult& _faceTask);
@@ -198,10 +186,8 @@ namespace TencentCloud
                     /**
                      * 获取语音关键词识别结果，当 Type 为
  AsrWordsRecognition 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AsrWordsTask 语音关键词识别结果，当 Type 为
  AsrWordsRecognition 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AiRecognitionTaskAsrWordsResult GetAsrWordsTask() const;
@@ -209,10 +195,8 @@ namespace TencentCloud
                     /**
                      * 设置语音关键词识别结果，当 Type 为
  AsrWordsRecognition 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _asrWordsTask 语音关键词识别结果，当 Type 为
  AsrWordsRecognition 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAsrWordsTask(const AiRecognitionTaskAsrWordsResult& _asrWordsTask);
@@ -227,10 +211,8 @@ namespace TencentCloud
                     /**
                      * 获取语音全文识别结果，当 Type 为
  AsrFullTextRecognition 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AsrFullTextTask 语音全文识别结果，当 Type 为
  AsrFullTextRecognition 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AiRecognitionTaskAsrFullTextResult GetAsrFullTextTask() const;
@@ -238,10 +220,8 @@ namespace TencentCloud
                     /**
                      * 设置语音全文识别结果，当 Type 为
  AsrFullTextRecognition 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _asrFullTextTask 语音全文识别结果，当 Type 为
  AsrFullTextRecognition 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAsrFullTextTask(const AiRecognitionTaskAsrFullTextResult& _asrFullTextTask);
@@ -255,18 +235,14 @@ namespace TencentCloud
 
                     /**
                      * 获取语音翻译结果，当 Type 为 AsrTranslateRecognition 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AsrTranslateTask 语音翻译结果，当 Type 为 AsrTranslateRecognition 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AiRecognitionTaskAsrTranslateResult GetAsrTranslateTask() const;
 
                     /**
                      * 设置语音翻译结果，当 Type 为 AsrTranslateRecognition 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _asrTranslateTask 语音翻译结果，当 Type 为 AsrTranslateRecognition 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAsrTranslateTask(const AiRecognitionTaskAsrTranslateResult& _asrTranslateTask);
@@ -281,10 +257,8 @@ namespace TencentCloud
                     /**
                      * 获取文本关键词识别结果，当 Type 为
  OcrWordsRecognition 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OcrWordsTask 文本关键词识别结果，当 Type 为
  OcrWordsRecognition 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AiRecognitionTaskOcrWordsResult GetOcrWordsTask() const;
@@ -292,10 +266,8 @@ namespace TencentCloud
                     /**
                      * 设置文本关键词识别结果，当 Type 为
  OcrWordsRecognition 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ocrWordsTask 文本关键词识别结果，当 Type 为
  OcrWordsRecognition 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOcrWordsTask(const AiRecognitionTaskOcrWordsResult& _ocrWordsTask);
@@ -310,10 +282,8 @@ namespace TencentCloud
                     /**
                      * 获取文本全文识别结果，当 Type 为
  OcrFullTextRecognition 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OcrFullTextTask 文本全文识别结果，当 Type 为
  OcrFullTextRecognition 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AiRecognitionTaskOcrFullTextResult GetOcrFullTextTask() const;
@@ -321,10 +291,8 @@ namespace TencentCloud
                     /**
                      * 设置文本全文识别结果，当 Type 为
  OcrFullTextRecognition 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ocrFullTextTask 文本全文识别结果，当 Type 为
  OcrFullTextRecognition 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOcrFullTextTask(const AiRecognitionTaskOcrFullTextResult& _ocrFullTextTask);
@@ -339,10 +307,8 @@ namespace TencentCloud
                     /**
                      * 获取物体识别结果，当 Type 为
  ObjectRecognition 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ObjectTask 物体识别结果，当 Type 为
  ObjectRecognition 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AiRecognitionTaskObjectResult GetObjectTask() const;
@@ -350,10 +316,8 @@ namespace TencentCloud
                     /**
                      * 设置物体识别结果，当 Type 为
  ObjectRecognition 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _objectTask 物体识别结果，当 Type 为
  ObjectRecognition 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetObjectTask(const AiRecognitionTaskObjectResult& _objectTask);
@@ -384,7 +348,6 @@ namespace TencentCloud
                     /**
                      * 视频片头片尾识别结果，当 Type 为
  HeadTailRecognition 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiRecognitionTaskHeadTailResult m_headTailTask;
                     bool m_headTailTaskHasBeenSet;
@@ -392,7 +355,6 @@ namespace TencentCloud
                     /**
                      * 视频拆条识别结果，当 Type 为
  SegmentRecognition 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiRecognitionTaskSegmentResult m_segmentTask;
                     bool m_segmentTaskHasBeenSet;
@@ -400,7 +362,6 @@ namespace TencentCloud
                     /**
                      * 人脸识别结果，当 Type 为 
  FaceRecognition 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiRecognitionTaskFaceResult m_faceTask;
                     bool m_faceTaskHasBeenSet;
@@ -408,7 +369,6 @@ namespace TencentCloud
                     /**
                      * 语音关键词识别结果，当 Type 为
  AsrWordsRecognition 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiRecognitionTaskAsrWordsResult m_asrWordsTask;
                     bool m_asrWordsTaskHasBeenSet;
@@ -416,14 +376,12 @@ namespace TencentCloud
                     /**
                      * 语音全文识别结果，当 Type 为
  AsrFullTextRecognition 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiRecognitionTaskAsrFullTextResult m_asrFullTextTask;
                     bool m_asrFullTextTaskHasBeenSet;
 
                     /**
                      * 语音翻译结果，当 Type 为 AsrTranslateRecognition 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiRecognitionTaskAsrTranslateResult m_asrTranslateTask;
                     bool m_asrTranslateTaskHasBeenSet;
@@ -431,7 +389,6 @@ namespace TencentCloud
                     /**
                      * 文本关键词识别结果，当 Type 为
  OcrWordsRecognition 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiRecognitionTaskOcrWordsResult m_ocrWordsTask;
                     bool m_ocrWordsTaskHasBeenSet;
@@ -439,7 +396,6 @@ namespace TencentCloud
                     /**
                      * 文本全文识别结果，当 Type 为
  OcrFullTextRecognition 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiRecognitionTaskOcrFullTextResult m_ocrFullTextTask;
                     bool m_ocrFullTextTaskHasBeenSet;
@@ -447,7 +403,6 @@ namespace TencentCloud
                     /**
                      * 物体识别结果，当 Type 为
  ObjectRecognition 时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiRecognitionTaskObjectResult m_objectTask;
                     bool m_objectTaskHasBeenSet;

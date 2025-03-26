@@ -155,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取物体识别任务输出信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Output 物体识别任务输出信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AiRecognitionTaskObjectResultOutput GetOutput() const;
 
                     /**
                      * 设置物体识别任务输出信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _output 物体识别任务输出信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutput(const AiRecognitionTaskObjectResultOutput& _output);
@@ -275,7 +271,6 @@ namespace TencentCloud
 
                     /**
                      * 物体识别任务输出信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiRecognitionTaskObjectResultOutput m_output;
                     bool m_outputHasBeenSet;

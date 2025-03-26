@@ -34,7 +34,10 @@ CreateAutoCalloutTaskRequest::CreateAutoCalloutTaskRequest() :
     m_triesHasBeenSet(false),
     m_variablesHasBeenSet(false),
     m_uUIHasBeenSet(false),
-    m_calleeAttributesHasBeenSet(false)
+    m_calleeAttributesHasBeenSet(false),
+    m_timeZoneHasBeenSet(false),
+    m_availableTimeHasBeenSet(false),
+    m_aIAgentIdHasBeenSet(false)
 {
 }
 
@@ -163,6 +166,37 @@ string CreateAutoCalloutTaskRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_timeZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimeZone";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_timeZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_availableTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AvailableTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_availableTime.begin(); itr != m_availableTime.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_aIAgentIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AIAgentId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_aIAgentId, allocator);
     }
 
 
@@ -363,6 +397,54 @@ void CreateAutoCalloutTaskRequest::SetCalleeAttributes(const vector<CalleeAttrib
 bool CreateAutoCalloutTaskRequest::CalleeAttributesHasBeenSet() const
 {
     return m_calleeAttributesHasBeenSet;
+}
+
+string CreateAutoCalloutTaskRequest::GetTimeZone() const
+{
+    return m_timeZone;
+}
+
+void CreateAutoCalloutTaskRequest::SetTimeZone(const string& _timeZone)
+{
+    m_timeZone = _timeZone;
+    m_timeZoneHasBeenSet = true;
+}
+
+bool CreateAutoCalloutTaskRequest::TimeZoneHasBeenSet() const
+{
+    return m_timeZoneHasBeenSet;
+}
+
+vector<TimeRange> CreateAutoCalloutTaskRequest::GetAvailableTime() const
+{
+    return m_availableTime;
+}
+
+void CreateAutoCalloutTaskRequest::SetAvailableTime(const vector<TimeRange>& _availableTime)
+{
+    m_availableTime = _availableTime;
+    m_availableTimeHasBeenSet = true;
+}
+
+bool CreateAutoCalloutTaskRequest::AvailableTimeHasBeenSet() const
+{
+    return m_availableTimeHasBeenSet;
+}
+
+int64_t CreateAutoCalloutTaskRequest::GetAIAgentId() const
+{
+    return m_aIAgentId;
+}
+
+void CreateAutoCalloutTaskRequest::SetAIAgentId(const int64_t& _aIAgentId)
+{
+    m_aIAgentId = _aIAgentId;
+    m_aIAgentIdHasBeenSet = true;
+}
+
+bool CreateAutoCalloutTaskRequest::AIAgentIdHasBeenSet() const
+{
+    return m_aIAgentIdHasBeenSet;
 }
 
 

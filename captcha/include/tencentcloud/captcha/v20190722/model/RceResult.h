@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserId 用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserId() const;
 
                     /**
                      * 设置用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userId 用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserId(const std::string& _userId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取操作时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PostTime 操作时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPostTime() const;
 
                     /**
                      * 设置操作时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _postTime 操作时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPostTime(const int64_t& _postTime);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取业务参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AssociateAccount 业务参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAssociateAccount() const;
 
                     /**
                      * 设置业务参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _associateAccount 业务参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAssociateAccount(const std::string& _associateAccount);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户Ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserIp 用户Ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserIp() const;
 
                     /**
                      * 设置用户Ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userIp 用户Ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserIp(const std::string& _userIp);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取风险等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskLevel 风险等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRiskLevel() const;
 
                     /**
                      * 设置风险等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _riskLevel 风险等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRiskLevel(const std::string& _riskLevel);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取风险类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskType 风险类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<int64_t> GetRiskType() const;
 
                     /**
                      * 设置风险类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _riskType 风险类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRiskType(const std::vector<int64_t>& _riskType);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConstId 设备唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConstId() const;
 
                     /**
                      * 设置设备唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _constId 设备唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConstId(const std::string& _constId);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取风险扩展参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RiskInformation 风险扩展参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRiskInformation() const;
 
                     /**
                      * 设置风险扩展参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _riskInformation 风险扩展参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRiskInformation(const std::string& _riskInformation);
@@ -250,56 +218,48 @@ namespace TencentCloud
 
                     /**
                      * 用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
 
                     /**
                      * 操作时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_postTime;
                     bool m_postTimeHasBeenSet;
 
                     /**
                      * 业务参数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_associateAccount;
                     bool m_associateAccountHasBeenSet;
 
                     /**
                      * 用户Ip
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userIp;
                     bool m_userIpHasBeenSet;
 
                     /**
                      * 风险等级
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_riskLevel;
                     bool m_riskLevelHasBeenSet;
 
                     /**
                      * 风险类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_riskType;
                     bool m_riskTypeHasBeenSet;
 
                     /**
                      * 设备唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_constId;
                     bool m_constIdHasBeenSet;
 
                     /**
                      * 风险扩展参数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_riskInformation;
                     bool m_riskInformationHasBeenSet;

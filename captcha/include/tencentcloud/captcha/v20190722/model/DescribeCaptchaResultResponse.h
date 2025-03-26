@@ -73,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取状态描述及验证错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CaptchaMsg 状态描述及验证错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCaptchaMsg() const;
@@ -91,11 +89,9 @@ namespace TencentCloud
                      * 获取无感验证模式下，该参数返回验证结果：
 EvilLevel=0 请求无恶意
 EvilLevel=100 请求有恶意
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EvilLevel 无感验证模式下，该参数返回验证结果：
 EvilLevel=0 请求无恶意
 EvilLevel=100 请求有恶意
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetEvilLevel() const;
@@ -109,9 +105,7 @@ EvilLevel=100 请求有恶意
 
                     /**
                      * 获取前端获取验证码时间，时间戳格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GetCaptchaTime 前端获取验证码时间，时间戳格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetGetCaptchaTime() const;
@@ -186,7 +180,6 @@ EvilLevel=100 请求有恶意
 
                     /**
                      * 状态描述及验证错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_captchaMsg;
                     bool m_captchaMsgHasBeenSet;
@@ -195,14 +188,12 @@ EvilLevel=100 请求有恶意
                      * 无感验证模式下，该参数返回验证结果：
 EvilLevel=0 请求无恶意
 EvilLevel=100 请求有恶意
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_evilLevel;
                     bool m_evilLevelHasBeenSet;
 
                     /**
                      * 前端获取验证码时间，时间戳格式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_getCaptchaTime;
                     bool m_getCaptchaTimeHasBeenSet;

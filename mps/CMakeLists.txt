@@ -74,6 +74,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/OcrWordsConfigureInfo.h
   include/tencentcloud/mps/v20190612/model/DescribeStreamLinkEventRequest.h
   include/tencentcloud/mps/v20190612/model/DescribeAsrHotwordsRequest.h
+  include/tencentcloud/mps/v20190612/model/AudioTrackChannelInfo.h
   include/tencentcloud/mps/v20190612/model/MediaTranscodeItem.h
   include/tencentcloud/mps/v20190612/model/DiagnoseResult.h
   include/tencentcloud/mps/v20190612/model/RawWatermarkParameter.h
@@ -243,6 +244,7 @@ set(mps_public_header_model
   include/tencentcloud/mps/v20190612/model/StopStreamLinkFlowRequest.h
   include/tencentcloud/mps/v20190612/model/DescribeAdaptiveDynamicStreamingTemplatesRequest.h
   include/tencentcloud/mps/v20190612/model/ImageWatermarkInput.h
+  include/tencentcloud/mps/v20190612/model/TrackInfo.h
   include/tencentcloud/mps/v20190612/model/LiveRecordResult.h
   include/tencentcloud/mps/v20190612/model/AsrFullTextConfigureInfoForUpdate.h
   include/tencentcloud/mps/v20190612/model/LiveRecordFile.h
@@ -779,6 +781,7 @@ set(mps_src
   src/v20190612/model/OcrWordsConfigureInfo.cpp
   src/v20190612/model/DescribeStreamLinkEventRequest.cpp
   src/v20190612/model/DescribeAsrHotwordsRequest.cpp
+  src/v20190612/model/AudioTrackChannelInfo.cpp
   src/v20190612/model/MediaTranscodeItem.cpp
   src/v20190612/model/DiagnoseResult.cpp
   src/v20190612/model/RawWatermarkParameter.cpp
@@ -948,6 +951,7 @@ set(mps_src
   src/v20190612/model/StopStreamLinkFlowRequest.cpp
   src/v20190612/model/DescribeAdaptiveDynamicStreamingTemplatesRequest.cpp
   src/v20190612/model/ImageWatermarkInput.cpp
+  src/v20190612/model/TrackInfo.cpp
   src/v20190612/model/LiveRecordResult.cpp
   src/v20190612/model/AsrFullTextConfigureInfoForUpdate.cpp
   src/v20190612/model/LiveRecordFile.cpp

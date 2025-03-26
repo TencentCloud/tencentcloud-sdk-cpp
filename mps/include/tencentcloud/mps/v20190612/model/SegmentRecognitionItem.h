@@ -364,6 +364,27 @@ namespace TencentCloud
                      */
                     bool PersonPositionUrlHasBeenSet() const;
 
+                    /**
+                     * 获取指定人物ID。
+                     * @return PersonId 指定人物ID。
+                     * 
+                     */
+                    std::string GetPersonId() const;
+
+                    /**
+                     * 设置指定人物ID。
+                     * @param _personId 指定人物ID。
+                     * 
+                     */
+                    void SetPersonId(const std::string& _personId);
+
+                    /**
+                     * 判断参数 PersonId 是否已赋值
+                     * @return PersonId 是否已赋值
+                     * 
+                     */
+                    bool PersonIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -455,6 +476,12 @@ namespace TencentCloud
                      */
                     std::string m_personPositionUrl;
                     bool m_personPositionUrlHasBeenSet;
+
+                    /**
+                     * 指定人物ID。
+                     */
+                    std::string m_personId;
+                    bool m_personIdHasBeenSet;
 
                 };
             }

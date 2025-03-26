@@ -155,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取智能精彩片段任务输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Output 智能精彩片段任务输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AiAnalysisTaskHighlightOutput GetOutput() const;
 
                     /**
                      * 设置智能精彩片段任务输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _output 智能精彩片段任务输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutput(const AiAnalysisTaskHighlightOutput& _output);
@@ -275,7 +271,6 @@ namespace TencentCloud
 
                     /**
                      * 智能精彩片段任务输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiAnalysisTaskHighlightOutput m_output;
                     bool m_outputHasBeenSet;

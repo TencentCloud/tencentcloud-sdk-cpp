@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ccc/v20200210/model/Variable.h>
 #include <tencentcloud/ccc/v20200210/model/CalleeAttribute.h>
+#include <tencentcloud/ccc/v20200210/model/TimeRange.h>
 
 
 namespace TencentCloud
@@ -129,15 +130,15 @@ namespace TencentCloud
                     bool CallersHasBeenSet() const;
 
                     /**
-                     * 获取呼叫使用的Ivr
-                     * @return IvrId 呼叫使用的Ivr
+                     * 获取呼叫使用的 IVR Id，不填时需要填写 AIAgentId
+                     * @return IvrId 呼叫使用的 IVR Id，不填时需要填写 AIAgentId
                      * 
                      */
                     uint64_t GetIvrId() const;
 
                     /**
-                     * 设置呼叫使用的Ivr
-                     * @param _ivrId 呼叫使用的Ivr
+                     * 设置呼叫使用的 IVR Id，不填时需要填写 AIAgentId
+                     * @param _ivrId 呼叫使用的 IVR Id，不填时需要填写 AIAgentId
                      * 
                      */
                     void SetIvrId(const uint64_t& _ivrId);
@@ -296,6 +297,69 @@ namespace TencentCloud
                      */
                     bool CalleeAttributesHasBeenSet() const;
 
+                    /**
+                     * 获取IANA 时区名称，参考 https://datatracker.ietf.org/doc/html/draft-ietf-netmod-iana-timezones
+                     * @return TimeZone IANA 时区名称，参考 https://datatracker.ietf.org/doc/html/draft-ietf-netmod-iana-timezones
+                     * 
+                     */
+                    std::string GetTimeZone() const;
+
+                    /**
+                     * 设置IANA 时区名称，参考 https://datatracker.ietf.org/doc/html/draft-ietf-netmod-iana-timezones
+                     * @param _timeZone IANA 时区名称，参考 https://datatracker.ietf.org/doc/html/draft-ietf-netmod-iana-timezones
+                     * 
+                     */
+                    void SetTimeZone(const std::string& _timeZone);
+
+                    /**
+                     * 判断参数 TimeZone 是否已赋值
+                     * @return TimeZone 是否已赋值
+                     * 
+                     */
+                    bool TimeZoneHasBeenSet() const;
+
+                    /**
+                     * 获取可用时间段
+                     * @return AvailableTime 可用时间段
+                     * 
+                     */
+                    std::vector<TimeRange> GetAvailableTime() const;
+
+                    /**
+                     * 设置可用时间段
+                     * @param _availableTime 可用时间段
+                     * 
+                     */
+                    void SetAvailableTime(const std::vector<TimeRange>& _availableTime);
+
+                    /**
+                     * 判断参数 AvailableTime 是否已赋值
+                     * @return AvailableTime 是否已赋值
+                     * 
+                     */
+                    bool AvailableTimeHasBeenSet() const;
+
+                    /**
+                     * 获取智能体 ID，不填写时需要填写 IvrId
+                     * @return AIAgentId 智能体 ID，不填写时需要填写 IvrId
+                     * 
+                     */
+                    int64_t GetAIAgentId() const;
+
+                    /**
+                     * 设置智能体 ID，不填写时需要填写 IvrId
+                     * @param _aIAgentId 智能体 ID，不填写时需要填写 IvrId
+                     * 
+                     */
+                    void SetAIAgentId(const int64_t& _aIAgentId);
+
+                    /**
+                     * 判断参数 AIAgentId 是否已赋值
+                     * @return AIAgentId 是否已赋值
+                     * 
+                     */
+                    bool AIAgentIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -323,7 +387,7 @@ namespace TencentCloud
                     bool m_callersHasBeenSet;
 
                     /**
-                     * 呼叫使用的Ivr
+                     * 呼叫使用的 IVR Id，不填时需要填写 AIAgentId
                      */
                     uint64_t m_ivrId;
                     bool m_ivrIdHasBeenSet;
@@ -369,6 +433,24 @@ namespace TencentCloud
                      */
                     std::vector<CalleeAttribute> m_calleeAttributes;
                     bool m_calleeAttributesHasBeenSet;
+
+                    /**
+                     * IANA 时区名称，参考 https://datatracker.ietf.org/doc/html/draft-ietf-netmod-iana-timezones
+                     */
+                    std::string m_timeZone;
+                    bool m_timeZoneHasBeenSet;
+
+                    /**
+                     * 可用时间段
+                     */
+                    std::vector<TimeRange> m_availableTime;
+                    bool m_availableTimeHasBeenSet;
+
+                    /**
+                     * 智能体 ID，不填写时需要填写 IvrId
+                     */
+                    int64_t m_aIAgentId;
+                    bool m_aIAgentIdHasBeenSet;
 
                 };
             }

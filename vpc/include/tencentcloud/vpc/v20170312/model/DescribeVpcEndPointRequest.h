@@ -143,6 +143,27 @@ namespace TencentCloud
                      */
                     bool EndPointIdHasBeenSet() const;
 
+                    /**
+                     * 获取协议类型，支持 Ipv4，Ipv6，默认 Ipv4。
+                     * @return IpAddressType 协议类型，支持 Ipv4，Ipv6，默认 Ipv4。
+                     * 
+                     */
+                    std::string GetIpAddressType() const;
+
+                    /**
+                     * 设置协议类型，支持 Ipv4，Ipv6，默认 Ipv4。
+                     * @param _ipAddressType 协议类型，支持 Ipv4，Ipv6，默认 Ipv4。
+                     * 
+                     */
+                    void SetIpAddressType(const std::string& _ipAddressType);
+
+                    /**
+                     * 判断参数 IpAddressType 是否已赋值
+                     * @return IpAddressType 是否已赋值
+                     * 
+                     */
+                    bool IpAddressTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -172,6 +193,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_endPointId;
                     bool m_endPointIdHasBeenSet;
+
+                    /**
+                     * 协议类型，支持 Ipv4，Ipv6，默认 Ipv4。
+                     */
+                    std::string m_ipAddressType;
+                    bool m_ipAddressTypeHasBeenSet;
 
                 };
             }

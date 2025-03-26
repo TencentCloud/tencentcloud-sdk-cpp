@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取登录方式名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceName 登录方式名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetServiceName() const;
 
                     /**
                      * 设置登录方式名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serviceName 登录方式名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServiceName(const std::string& _serviceName);
@@ -75,7 +71,6 @@ namespace TencentCloud
 
                     /**
                      * 登录方式名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serviceName;
                     bool m_serviceNameHasBeenSet;

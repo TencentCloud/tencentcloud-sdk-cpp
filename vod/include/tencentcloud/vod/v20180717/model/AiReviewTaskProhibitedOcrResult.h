@@ -155,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取音视频审核 Ocr 文字鉴违禁任务输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Output 音视频审核 Ocr 文字鉴违禁任务输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AiReviewProhibitedOcrTaskOutput GetOutput() const;
 
                     /**
                      * 设置音视频审核 Ocr 文字鉴违禁任务输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _output 音视频审核 Ocr 文字鉴违禁任务输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutput(const AiReviewProhibitedOcrTaskOutput& _output);
@@ -233,7 +229,6 @@ namespace TencentCloud
 
                     /**
                      * 音视频审核 Ocr 文字鉴违禁任务输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiReviewProhibitedOcrTaskOutput m_output;
                     bool m_outputHasBeenSet;

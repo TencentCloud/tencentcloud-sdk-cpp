@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool ThreadActiveHasBeenSet() const;
 
                     /**
-                     * 获取守护线程数
-                     * @return DeamonThreadCount 守护线程数
+                     * 获取守护线程数 拼写错误，废弃
+                     * @return DeamonThreadCount 守护线程数 拼写错误，废弃
                      * 
                      */
                     std::vector<CurvePoint> GetDeamonThreadCount() const;
 
                     /**
-                     * 设置守护线程数
-                     * @param _deamonThreadCount 守护线程数
+                     * 设置守护线程数 拼写错误，废弃
+                     * @param _deamonThreadCount 守护线程数 拼写错误，废弃
                      * 
                      */
                     void SetDeamonThreadCount(const std::vector<CurvePoint>& _deamonThreadCount);
@@ -109,6 +109,27 @@ namespace TencentCloud
                      * 
                      */
                     bool DeamonThreadCountHasBeenSet() const;
+
+                    /**
+                     * 获取守护线程数
+                     * @return DaemonThreadCount 守护线程数
+                     * 
+                     */
+                    std::vector<CurvePoint> GetDaemonThreadCount() const;
+
+                    /**
+                     * 设置守护线程数
+                     * @param _daemonThreadCount 守护线程数
+                     * 
+                     */
+                    void SetDaemonThreadCount(const std::vector<CurvePoint>& _daemonThreadCount);
+
+                    /**
+                     * 判断参数 DaemonThreadCount 是否已赋值
+                     * @return DaemonThreadCount 是否已赋值
+                     * 
+                     */
+                    bool DaemonThreadCountHasBeenSet() const;
 
                 private:
 
@@ -125,10 +146,16 @@ namespace TencentCloud
                     bool m_threadActiveHasBeenSet;
 
                     /**
-                     * 守护线程数
+                     * 守护线程数 拼写错误，废弃
                      */
                     std::vector<CurvePoint> m_deamonThreadCount;
                     bool m_deamonThreadCountHasBeenSet;
+
+                    /**
+                     * 守护线程数
+                     */
+                    std::vector<CurvePoint> m_daemonThreadCount;
+                    bool m_daemonThreadCountHasBeenSet;
 
                 };
             }

@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取交易结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 交易结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ChainMakerContractResult GetResult() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 交易结果
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ChainMakerContractResult m_result;
                     bool m_resultHasBeenSet;

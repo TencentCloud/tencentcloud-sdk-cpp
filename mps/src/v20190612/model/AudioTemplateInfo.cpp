@@ -24,7 +24,8 @@ AudioTemplateInfo::AudioTemplateInfo() :
     m_codecHasBeenSet(false),
     m_bitrateHasBeenSet(false),
     m_sampleRateHasBeenSet(false),
-    m_audioChannelHasBeenSet(false)
+    m_audioChannelHasBeenSet(false),
+    m_trackChannelInfoHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,23 @@ CoreInternalOutcome AudioTemplateInfo::Deserialize(const rapidjson::Value &value
         m_audioChannelHasBeenSet = true;
     }
 
+    if (value.HasMember("TrackChannelInfo") && !value["TrackChannelInfo"].IsNull())
+    {
+        if (!value["TrackChannelInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AudioTemplateInfo.TrackChannelInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_trackChannelInfo.Deserialize(value["TrackChannelInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_trackChannelInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +128,15 @@ void AudioTemplateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "AudioChannel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_audioChannel, allocator);
+    }
+
+    if (m_trackChannelInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TrackChannelInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_trackChannelInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -177,5 +204,21 @@ void AudioTemplateInfo::SetAudioChannel(const int64_t& _audioChannel)
 bool AudioTemplateInfo::AudioChannelHasBeenSet() const
 {
     return m_audioChannelHasBeenSet;
+}
+
+AudioTrackChannelInfo AudioTemplateInfo::GetTrackChannelInfo() const
+{
+    return m_trackChannelInfo;
+}
+
+void AudioTemplateInfo::SetTrackChannelInfo(const AudioTrackChannelInfo& _trackChannelInfo)
+{
+    m_trackChannelInfo = _trackChannelInfo;
+    m_trackChannelInfoHasBeenSet = true;
+}
+
+bool AudioTemplateInfo::TrackChannelInfoHasBeenSet() const
+{
+    return m_trackChannelInfoHasBeenSet;
 }
 

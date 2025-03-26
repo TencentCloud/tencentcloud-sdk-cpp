@@ -585,7 +585,7 @@ namespace TencentCloud
                 ApplyAIModelOutcomeCallable ApplyAIModelCallable(const Model::ApplyAIModelRequest& request);
 
                 /**
-                 *本接口（BatchUpdateFirmware）用于批量更新设备固件 
+                 *本接口（BatchUpdateFirmware）用于批量更新设备固件
                  * @param req BatchUpdateFirmwareRequest
                  * @return BatchUpdateFirmwareOutcome
                  */
@@ -783,7 +783,7 @@ namespace TencentCloud
                 DeleteDeviceOutcomeCallable DeleteDeviceCallable(const Model::DeleteDeviceRequest& request);
 
                 /**
-                 *本接口（DeleteFirmware）用于删除固件 
+                 *本接口（DeleteFirmware）用于删除固件
                  * @param req DeleteFirmwareRequest
                  * @return DeleteFirmwareOutcome
                  */
@@ -1323,7 +1323,7 @@ namespace TencentCloud
                 GenerateSignedVideoURLOutcomeCallable GenerateSignedVideoURLCallable(const Model::GenerateSignedVideoURLRequest& request);
 
                 /**
-                 *本接口（GetAllFirmwareVersion）用于获取所有的版本列表 
+                 *本接口（GetAllFirmwareVersion）用于获取所有的版本列表
                  * @param req GetAllFirmwareVersionRequest
                  * @return GetAllFirmwareVersionOutcome
                  */
@@ -1332,7 +1332,7 @@ namespace TencentCloud
                 GetAllFirmwareVersionOutcomeCallable GetAllFirmwareVersionCallable(const Model::GetAllFirmwareVersionRequest& request);
 
                 /**
-                 *本接口（GetFirmwareURL）用于获取固件存储的URL 
+                 *本接口（GetFirmwareURL）用于获取固件存储的URL
                  * @param req GetFirmwareURLRequest
                  * @return GetFirmwareURLOutcome
                  */
@@ -1359,7 +1359,7 @@ namespace TencentCloud
                 InheritCloudStorageUserOutcomeCallable InheritCloudStorageUserCallable(const Model::InheritCloudStorageUserRequest& request);
 
                 /**
-                 *本接口（ListFirmwares）用于获取固件列表 
+                 *本接口（ListFirmwares）用于获取固件列表
                  * @param req ListFirmwaresRequest
                  * @return ListFirmwaresOutcome
                  */
@@ -1521,7 +1521,7 @@ namespace TencentCloud
                 UpdateAIModelChannelOutcomeCallable UpdateAIModelChannelCallable(const Model::UpdateAIModelChannelRequest& request);
 
                 /**
-                 *本接口（UploadFirmware）用于上传设备固件信息 
+                 *本接口（UploadFirmware）用于上传设备固件信息
                  * @param req UploadFirmwareRequest
                  * @return UploadFirmwareOutcome
                  */

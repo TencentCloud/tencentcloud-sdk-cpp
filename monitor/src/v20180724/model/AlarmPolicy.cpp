@@ -60,7 +60,10 @@ AlarmPolicy::AlarmPolicy() :
     m_tagsHasBeenSet(false),
     m_isSupportAlarmTagHasBeenSet(false),
     m_tagOperationHasBeenSet(false),
-    m_noticeTmplBindInfosHasBeenSet(false)
+    m_noticeTmplBindInfosHasBeenSet(false),
+    m_hierarchicalNoticesHasBeenSet(false),
+    m_noticeContentTmplBindInfosHasBeenSet(false),
+    m_predefinedConfigIDHasBeenSet(false)
 {
 }
 
@@ -563,6 +566,56 @@ CoreInternalOutcome AlarmPolicy::Deserialize(const rapidjson::Value &value)
         m_noticeTmplBindInfosHasBeenSet = true;
     }
 
+    if (value.HasMember("HierarchicalNotices") && !value["HierarchicalNotices"].IsNull())
+    {
+        if (!value["HierarchicalNotices"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicy.HierarchicalNotices` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["HierarchicalNotices"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AlarmHierarchicalNotice item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_hierarchicalNotices.push_back(item);
+        }
+        m_hierarchicalNoticesHasBeenSet = true;
+    }
+
+    if (value.HasMember("NoticeContentTmplBindInfos") && !value["NoticeContentTmplBindInfos"].IsNull())
+    {
+        if (!value["NoticeContentTmplBindInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicy.NoticeContentTmplBindInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["NoticeContentTmplBindInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            NoticeContentTmplBindInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_noticeContentTmplBindInfos.push_back(item);
+        }
+        m_noticeContentTmplBindInfosHasBeenSet = true;
+    }
+
+    if (value.HasMember("PredefinedConfigID") && !value["PredefinedConfigID"].IsNull())
+    {
+        if (!value["PredefinedConfigID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicy.PredefinedConfigID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_predefinedConfigID = string(value["PredefinedConfigID"].GetString());
+        m_predefinedConfigIDHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -944,6 +997,44 @@ void AlarmPolicy::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_hierarchicalNoticesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HierarchicalNotices";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_hierarchicalNotices.begin(); itr != m_hierarchicalNotices.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_noticeContentTmplBindInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NoticeContentTmplBindInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_noticeContentTmplBindInfos.begin(); itr != m_noticeContentTmplBindInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_predefinedConfigIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PredefinedConfigID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_predefinedConfigID.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1587,5 +1678,53 @@ void AlarmPolicy::SetNoticeTmplBindInfos(const vector<NoticeContentTmplBindInfo>
 bool AlarmPolicy::NoticeTmplBindInfosHasBeenSet() const
 {
     return m_noticeTmplBindInfosHasBeenSet;
+}
+
+vector<AlarmHierarchicalNotice> AlarmPolicy::GetHierarchicalNotices() const
+{
+    return m_hierarchicalNotices;
+}
+
+void AlarmPolicy::SetHierarchicalNotices(const vector<AlarmHierarchicalNotice>& _hierarchicalNotices)
+{
+    m_hierarchicalNotices = _hierarchicalNotices;
+    m_hierarchicalNoticesHasBeenSet = true;
+}
+
+bool AlarmPolicy::HierarchicalNoticesHasBeenSet() const
+{
+    return m_hierarchicalNoticesHasBeenSet;
+}
+
+vector<NoticeContentTmplBindInfo> AlarmPolicy::GetNoticeContentTmplBindInfos() const
+{
+    return m_noticeContentTmplBindInfos;
+}
+
+void AlarmPolicy::SetNoticeContentTmplBindInfos(const vector<NoticeContentTmplBindInfo>& _noticeContentTmplBindInfos)
+{
+    m_noticeContentTmplBindInfos = _noticeContentTmplBindInfos;
+    m_noticeContentTmplBindInfosHasBeenSet = true;
+}
+
+bool AlarmPolicy::NoticeContentTmplBindInfosHasBeenSet() const
+{
+    return m_noticeContentTmplBindInfosHasBeenSet;
+}
+
+string AlarmPolicy::GetPredefinedConfigID() const
+{
+    return m_predefinedConfigID;
+}
+
+void AlarmPolicy::SetPredefinedConfigID(const string& _predefinedConfigID)
+{
+    m_predefinedConfigID = _predefinedConfigID;
+    m_predefinedConfigIDHasBeenSet = true;
+}
+
+bool AlarmPolicy::PredefinedConfigIDHasBeenSet() const
+{
+    return m_predefinedConfigIDHasBeenSet;
 }
 

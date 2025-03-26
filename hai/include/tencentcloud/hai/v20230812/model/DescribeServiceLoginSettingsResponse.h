@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取服务登录配置详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LoginSettings 服务登录配置详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<LoginSetting> GetLoginSettings() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 服务登录配置详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<LoginSetting> m_loginSettings;
                     bool m_loginSettingsHasBeenSet;

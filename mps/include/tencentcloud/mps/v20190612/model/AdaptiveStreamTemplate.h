@@ -148,6 +148,35 @@ namespace TencentCloud
                      */
                     bool RemoveVideoHasBeenSet() const;
 
+                    /**
+                     * 获取音频参数信息列表。
+注意：参数数组长度最大为64。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AudioList 音频参数信息列表。
+注意：参数数组长度最大为64。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<AudioTemplateInfo> GetAudioList() const;
+
+                    /**
+                     * 设置音频参数信息列表。
+注意：参数数组长度最大为64。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _audioList 音频参数信息列表。
+注意：参数数组长度最大为64。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetAudioList(const std::vector<AudioTemplateInfo>& _audioList);
+
+                    /**
+                     * 判断参数 AudioList 是否已赋值
+                     * @return AudioList 是否已赋值
+                     * 
+                     */
+                    bool AudioListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -177,6 +206,14 @@ namespace TencentCloud
                      */
                     uint64_t m_removeVideo;
                     bool m_removeVideoHasBeenSet;
+
+                    /**
+                     * 音频参数信息列表。
+注意：参数数组长度最大为64。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AudioTemplateInfo> m_audioList;
+                    bool m_audioListHasBeenSet;
 
                 };
             }

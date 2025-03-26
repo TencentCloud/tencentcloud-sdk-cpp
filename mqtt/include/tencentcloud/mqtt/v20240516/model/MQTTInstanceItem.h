@@ -372,10 +372,10 @@ DELETING，删除中
                     bool ClientNumLimitHasBeenSet() const;
 
                     /**
-                     * 获取是否自动续费。仅包年包月就去那生效。
+                     * 获取是否自动续费。仅包年包月集群生效。
 1:自动续费
 0:非自动续费
-                     * @return RenewFlag 是否自动续费。仅包年包月就去那生效。
+                     * @return RenewFlag 是否自动续费。仅包年包月集群生效。
 1:自动续费
 0:非自动续费
                      * 
@@ -383,10 +383,10 @@ DELETING，删除中
                     int64_t GetRenewFlag() const;
 
                     /**
-                     * 设置是否自动续费。仅包年包月就去那生效。
+                     * 设置是否自动续费。仅包年包月集群生效。
 1:自动续费
 0:非自动续费
-                     * @param _renewFlag 是否自动续费。仅包年包月就去那生效。
+                     * @param _renewFlag 是否自动续费。仅包年包月集群生效。
 1:自动续费
 0:非自动续费
                      * 
@@ -620,7 +620,7 @@ DELETING，删除中
                     bool m_clientNumLimitHasBeenSet;
 
                     /**
-                     * 是否自动续费。仅包年包月就去那生效。
+                     * 是否自动续费。仅包年包月集群生效。
 1:自动续费
 0:非自动续费
                      */

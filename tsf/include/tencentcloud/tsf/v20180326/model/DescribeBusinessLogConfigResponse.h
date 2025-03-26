@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取日志配置项
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 日志配置项
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     BusinessLogConfig GetResult() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 日志配置项
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     BusinessLogConfig m_result;
                     bool m_resultHasBeenSet;

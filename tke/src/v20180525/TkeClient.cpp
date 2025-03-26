@@ -5329,6 +5329,49 @@ TkeClient::DescribeLogSwitchesOutcomeCallable TkeClient::DescribeLogSwitchesCall
     return task->get_future();
 }
 
+TkeClient::DescribeOSImagesOutcome TkeClient::DescribeOSImages(const DescribeOSImagesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOSImages");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOSImagesResponse rsp = DescribeOSImagesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOSImagesOutcome(rsp);
+        else
+            return DescribeOSImagesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOSImagesOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeOSImagesAsync(const DescribeOSImagesRequest& request, const DescribeOSImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeOSImages(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeOSImagesOutcomeCallable TkeClient::DescribeOSImagesCallable(const DescribeOSImagesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeOSImagesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeOSImages(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::DescribeOpenPolicyListOutcome TkeClient::DescribeOpenPolicyList(const DescribeOpenPolicyListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeOpenPolicyList");

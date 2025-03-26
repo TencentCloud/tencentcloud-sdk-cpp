@@ -40,6 +40,49 @@ TafClient::TafClient(const Credential &credential, const string &region, const C
 }
 
 
+TafClient::ManageDeviceRiskOutcome TafClient::ManageDeviceRisk(const ManageDeviceRiskRequest &request)
+{
+    auto outcome = MakeRequest(request, "ManageDeviceRisk");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ManageDeviceRiskResponse rsp = ManageDeviceRiskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ManageDeviceRiskOutcome(rsp);
+        else
+            return ManageDeviceRiskOutcome(o.GetError());
+    }
+    else
+    {
+        return ManageDeviceRiskOutcome(outcome.GetError());
+    }
+}
+
+void TafClient::ManageDeviceRiskAsync(const ManageDeviceRiskRequest& request, const ManageDeviceRiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ManageDeviceRisk(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TafClient::ManageDeviceRiskOutcomeCallable TafClient::ManageDeviceRiskCallable(const ManageDeviceRiskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ManageDeviceRiskOutcome()>>(
+        [this, request]()
+        {
+            return this->ManageDeviceRisk(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TafClient::ManagePortraitRiskOutcome TafClient::ManagePortraitRisk(const ManagePortraitRiskRequest &request)
 {
     auto outcome = MakeRequest(request, "ManagePortraitRisk");

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群id
-                     * @return InstanceId 集群id
+                     * 获取腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * @return InstanceId 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置集群id
-                     * @param _instanceId 集群id
+                     * 设置腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * @param _instanceId 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取设备证书
-                     * @return DeviceCertificate 设备证书
+                     * 获取设备证书内容，可参考 [使用 CA 证书生成服务端/客户端证书](https://cloud.tencent.com/document/product/1778/114817#aab79cc8-a148-412e-beb8-9c9e158eb944) 生成
+                     * @return DeviceCertificate 设备证书内容，可参考 [使用 CA 证书生成服务端/客户端证书](https://cloud.tencent.com/document/product/1778/114817#aab79cc8-a148-412e-beb8-9c9e158eb944) 生成
                      * 
                      */
                     std::string GetDeviceCertificate() const;
 
                     /**
-                     * 设置设备证书
-                     * @param _deviceCertificate 设备证书
+                     * 设置设备证书内容，可参考 [使用 CA 证书生成服务端/客户端证书](https://cloud.tencent.com/document/product/1778/114817#aab79cc8-a148-412e-beb8-9c9e158eb944) 生成
+                     * @param _deviceCertificate 设备证书内容，可参考 [使用 CA 证书生成服务端/客户端证书](https://cloud.tencent.com/document/product/1778/114817#aab79cc8-a148-412e-beb8-9c9e158eb944) 生成
                      * 
                      */
                     void SetDeviceCertificate(const std::string& _deviceCertificate);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool CaSnHasBeenSet() const;
 
                     /**
-                     * 获取客户端ID
-                     * @return ClientId 客户端ID
+                     * 获取客户端ID，需要关联该证书的客户端ID。根据实际业务使用填写
+                     * @return ClientId 客户端ID，需要关联该证书的客户端ID。根据实际业务使用填写
                      * 
                      */
                     std::string GetClientId() const;
 
                     /**
-                     * 设置客户端ID
-                     * @param _clientId 客户端ID
+                     * 设置客户端ID，需要关联该证书的客户端ID。根据实际业务使用填写
+                     * @param _clientId 客户端ID，需要关联该证书的客户端ID。根据实际业务使用填写
                      * 
                      */
                     void SetClientId(const std::string& _clientId);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool ClientIdHasBeenSet() const;
 
                     /**
-                     * 获取证书格式
-                     * @return Format 证书格式
+                     * 获取证书格式，默认为PEM，当前仅支持PEM格式
+                     * @return Format 证书格式，默认为PEM，当前仅支持PEM格式
                      * 
                      */
                     std::string GetFormat() const;
 
                     /**
-                     * 设置证书格式
-                     * @param _format 证书格式
+                     * 设置证书格式，默认为PEM，当前仅支持PEM格式
+                     * @param _format 证书格式，默认为PEM，当前仅支持PEM格式
                      * 
                      */
                     void SetFormat(const std::string& _format);
@@ -148,15 +148,31 @@ namespace TencentCloud
                     bool FormatHasBeenSet() const;
 
                     /**
-                     * 获取    ACTIVE,//激活     INACTIVE,//未激活     REVOKED,//吊销     PENDING_ACTIVATION,//注册待激活
-                     * @return Status     ACTIVE,//激活     INACTIVE,//未激活     REVOKED,//吊销     PENDING_ACTIVATION,//注册待激活
+                     * 获取 客户端证书状态，默认激活状态（ACTIVE）
+ACTIVE：激活     
+INACTIVE：未激活     
+REVOKED：吊销 
+PENDING_ACTIVATION：注册待激活
+                     * @return Status  客户端证书状态，默认激活状态（ACTIVE）
+ACTIVE：激活     
+INACTIVE：未激活     
+REVOKED：吊销 
+PENDING_ACTIVATION：注册待激活
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置    ACTIVE,//激活     INACTIVE,//未激活     REVOKED,//吊销     PENDING_ACTIVATION,//注册待激活
-                     * @param _status     ACTIVE,//激活     INACTIVE,//未激活     REVOKED,//吊销     PENDING_ACTIVATION,//注册待激活
+                     * 设置 客户端证书状态，默认激活状态（ACTIVE）
+ACTIVE：激活     
+INACTIVE：未激活     
+REVOKED：吊销 
+PENDING_ACTIVATION：注册待激活
+                     * @param _status  客户端证书状态，默认激活状态（ACTIVE）
+ACTIVE：激活     
+INACTIVE：未激活     
+REVOKED：吊销 
+PENDING_ACTIVATION：注册待激活
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -171,13 +187,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群id
+                     * 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 设备证书
+                     * 设备证书内容，可参考 [使用 CA 证书生成服务端/客户端证书](https://cloud.tencent.com/document/product/1778/114817#aab79cc8-a148-412e-beb8-9c9e158eb944) 生成
                      */
                     std::string m_deviceCertificate;
                     bool m_deviceCertificateHasBeenSet;
@@ -189,19 +205,23 @@ namespace TencentCloud
                     bool m_caSnHasBeenSet;
 
                     /**
-                     * 客户端ID
+                     * 客户端ID，需要关联该证书的客户端ID。根据实际业务使用填写
                      */
                     std::string m_clientId;
                     bool m_clientIdHasBeenSet;
 
                     /**
-                     * 证书格式
+                     * 证书格式，默认为PEM，当前仅支持PEM格式
                      */
                     std::string m_format;
                     bool m_formatHasBeenSet;
 
                     /**
-                     *     ACTIVE,//激活     INACTIVE,//未激活     REVOKED,//吊销     PENDING_ACTIVATION,//注册待激活
+                     *  客户端证书状态，默认激活状态（ACTIVE）
+ACTIVE：激活     
+INACTIVE：未激活     
+REVOKED：吊销 
+PENDING_ACTIVATION：注册待激活
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

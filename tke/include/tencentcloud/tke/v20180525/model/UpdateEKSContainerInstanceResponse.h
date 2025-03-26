@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取容器实例 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EksCiId 容器实例 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEksCiId() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 容器实例 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_eksCiId;
                     bool m_eksCiIdHasBeenSet;

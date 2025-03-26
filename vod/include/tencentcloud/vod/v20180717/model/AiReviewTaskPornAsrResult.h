@@ -155,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取音视频审核 Asr 文字涉及令人反感的信息的任务输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Output 音视频审核 Asr 文字涉及令人反感的信息的任务输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AiReviewPornAsrTaskOutput GetOutput() const;
 
                     /**
                      * 设置音视频审核 Asr 文字涉及令人反感的信息的任务输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _output 音视频审核 Asr 文字涉及令人反感的信息的任务输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutput(const AiReviewPornAsrTaskOutput& _output);
@@ -233,7 +229,6 @@ namespace TencentCloud
 
                     /**
                      * 音视频审核 Asr 文字涉及令人反感的信息的任务输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiReviewPornAsrTaskOutput m_output;
                     bool m_outputHasBeenSet;

@@ -155,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取视频片头片尾识别任务输出信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Output 视频片头片尾识别任务输出信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AiRecognitionTaskHeadTailResultOutput GetOutput() const;
 
                     /**
                      * 设置视频片头片尾识别任务输出信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _output 视频片头片尾识别任务输出信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutput(const AiRecognitionTaskHeadTailResultOutput& _output);
@@ -275,7 +271,6 @@ namespace TencentCloud
 
                     /**
                      * 视频片头片尾识别任务输出信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AiRecognitionTaskHeadTailResultOutput m_output;
                     bool m_outputHasBeenSet;

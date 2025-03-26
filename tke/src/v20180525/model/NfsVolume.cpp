@@ -22,8 +22,8 @@ using namespace std;
 
 NfsVolume::NfsVolume() :
     m_nameHasBeenSet(false),
-    m_serverHasBeenSet(false),
     m_pathHasBeenSet(false),
+    m_serverHasBeenSet(false),
     m_readOnlyHasBeenSet(false)
 {
 }
@@ -43,16 +43,6 @@ CoreInternalOutcome NfsVolume::Deserialize(const rapidjson::Value &value)
         m_nameHasBeenSet = true;
     }
 
-    if (value.HasMember("Server") && !value["Server"].IsNull())
-    {
-        if (!value["Server"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `NfsVolume.Server` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_server = string(value["Server"].GetString());
-        m_serverHasBeenSet = true;
-    }
-
     if (value.HasMember("Path") && !value["Path"].IsNull())
     {
         if (!value["Path"].IsString())
@@ -61,6 +51,16 @@ CoreInternalOutcome NfsVolume::Deserialize(const rapidjson::Value &value)
         }
         m_path = string(value["Path"].GetString());
         m_pathHasBeenSet = true;
+    }
+
+    if (value.HasMember("Server") && !value["Server"].IsNull())
+    {
+        if (!value["Server"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NfsVolume.Server` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_server = string(value["Server"].GetString());
+        m_serverHasBeenSet = true;
     }
 
     if (value.HasMember("ReadOnly") && !value["ReadOnly"].IsNull())
@@ -88,20 +88,20 @@ void NfsVolume::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_serverHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Server";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_server.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_pathHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Path";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_path.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serverHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Server";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_server.c_str(), allocator).Move(), allocator);
     }
 
     if (m_readOnlyHasBeenSet)
@@ -131,22 +131,6 @@ bool NfsVolume::NameHasBeenSet() const
     return m_nameHasBeenSet;
 }
 
-string NfsVolume::GetServer() const
-{
-    return m_server;
-}
-
-void NfsVolume::SetServer(const string& _server)
-{
-    m_server = _server;
-    m_serverHasBeenSet = true;
-}
-
-bool NfsVolume::ServerHasBeenSet() const
-{
-    return m_serverHasBeenSet;
-}
-
 string NfsVolume::GetPath() const
 {
     return m_path;
@@ -161,6 +145,22 @@ void NfsVolume::SetPath(const string& _path)
 bool NfsVolume::PathHasBeenSet() const
 {
     return m_pathHasBeenSet;
+}
+
+string NfsVolume::GetServer() const
+{
+    return m_server;
+}
+
+void NfsVolume::SetServer(const string& _server)
+{
+    m_server = _server;
+    m_serverHasBeenSet = true;
+}
+
+bool NfsVolume::ServerHasBeenSet() const
+{
+    return m_serverHasBeenSet;
 }
 
 bool NfsVolume::GetReadOnly() const
