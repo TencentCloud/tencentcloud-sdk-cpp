@@ -86,27 +86,6 @@ namespace TencentCloud
                     bool OperationHasBeenSet() const;
 
                     /**
-                     * 获取图片内容智能识别参数，当 Operation 为 ContentReview 时该字段有效。
-                     * @return ContentReviewInput 图片内容智能识别参数，当 Operation 为 ContentReview 时该字段有效。
-                     * 
-                     */
-                    ImageContentReviewInput GetContentReviewInput() const;
-
-                    /**
-                     * 设置图片内容智能识别参数，当 Operation 为 ContentReview 时该字段有效。
-                     * @param _contentReviewInput 图片内容智能识别参数，当 Operation 为 ContentReview 时该字段有效。
-                     * 
-                     */
-                    void SetContentReviewInput(const ImageContentReviewInput& _contentReviewInput);
-
-                    /**
-                     * 判断参数 ContentReviewInput 是否已赋值
-                     * @return ContentReviewInput 是否已赋值
-                     * 
-                     */
-                    bool ContentReviewInputHasBeenSet() const;
-
-                    /**
                      * 获取<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
                      * @return SubAppId <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
                      * 
@@ -127,6 +106,27 @@ namespace TencentCloud
                      */
                     bool SubAppIdHasBeenSet() const;
 
+                    /**
+                     * 获取图片内容智能识别参数，当 Operation 为 ContentReview 时该字段有效。
+                     * @return ContentReviewInput 图片内容智能识别参数，当 Operation 为 ContentReview 时该字段有效。
+                     * 
+                     */
+                    ImageContentReviewInput GetContentReviewInput() const;
+
+                    /**
+                     * 设置图片内容智能识别参数，当 Operation 为 ContentReview 时该字段有效。
+                     * @param _contentReviewInput 图片内容智能识别参数，当 Operation 为 ContentReview 时该字段有效。
+                     * 
+                     */
+                    void SetContentReviewInput(const ImageContentReviewInput& _contentReviewInput);
+
+                    /**
+                     * 判断参数 ContentReviewInput 是否已赋值
+                     * @return ContentReviewInput 是否已赋值
+                     * 
+                     */
+                    bool ContentReviewInputHasBeenSet() const;
+
                 private:
 
                     /**
@@ -142,16 +142,16 @@ namespace TencentCloud
                     bool m_operationHasBeenSet;
 
                     /**
-                     * 图片内容智能识别参数，当 Operation 为 ContentReview 时该字段有效。
-                     */
-                    ImageContentReviewInput m_contentReviewInput;
-                    bool m_contentReviewInputHasBeenSet;
-
-                    /**
                      * <b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>
                      */
                     uint64_t m_subAppId;
                     bool m_subAppIdHasBeenSet;
+
+                    /**
+                     * 图片内容智能识别参数，当 Operation 为 ContentReview 时该字段有效。
+                     */
+                    ImageContentReviewInput m_contentReviewInput;
+                    bool m_contentReviewInputHasBeenSet;
 
                 };
             }

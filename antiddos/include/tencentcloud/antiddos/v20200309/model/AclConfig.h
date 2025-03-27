@@ -174,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略优先级，数字越小，级别越高，该规则越靠前匹配，取值1-1000
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Priority 策略优先级，数字越小，级别越高，该规则越靠前匹配，取值1-1000
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPriority() const;
 
                     /**
                      * 设置策略优先级，数字越小，级别越高，该规则越靠前匹配，取值1-1000
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _priority 策略优先级，数字越小，级别越高，该规则越靠前匹配，取值1-1000
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPriority(const uint64_t& _priority);
@@ -237,7 +233,6 @@ namespace TencentCloud
 
                     /**
                      * 策略优先级，数字越小，级别越高，该规则越靠前匹配，取值1-1000
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_priority;
                     bool m_priorityHasBeenSet;

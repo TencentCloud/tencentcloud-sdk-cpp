@@ -160,6 +160,9 @@ EntrustmentBook -- 海运托书
 WordRecognize -- 手写英文作文模版
 Statement -- 对账单识别模板
 BookingConfirmation -- 配舱通知书识别模板
+AirWayBill -- 航空运单识别模板
+DispatchWeightNote -- 磅单发货单识别模板
+ReceiptWeightNote -- 磅单收货单识别模板
                      * @return ConfigId 配置id支持：
 General -- 通用场景 
 InvoiceEng -- 国际invoice模版 
@@ -172,6 +175,9 @@ EntrustmentBook -- 海运托书
 WordRecognize -- 手写英文作文模版
 Statement -- 对账单识别模板
 BookingConfirmation -- 配舱通知书识别模板
+AirWayBill -- 航空运单识别模板
+DispatchWeightNote -- 磅单发货单识别模板
+ReceiptWeightNote -- 磅单收货单识别模板
                      * 
                      */
                     std::string GetConfigId() const;
@@ -189,6 +195,9 @@ EntrustmentBook -- 海运托书
 WordRecognize -- 手写英文作文模版
 Statement -- 对账单识别模板
 BookingConfirmation -- 配舱通知书识别模板
+AirWayBill -- 航空运单识别模板
+DispatchWeightNote -- 磅单发货单识别模板
+ReceiptWeightNote -- 磅单收货单识别模板
                      * @param _configId 配置id支持：
 General -- 通用场景 
 InvoiceEng -- 国际invoice模版 
@@ -201,6 +210,9 @@ EntrustmentBook -- 海运托书
 WordRecognize -- 手写英文作文模版
 Statement -- 对账单识别模板
 BookingConfirmation -- 配舱通知书识别模板
+AirWayBill -- 航空运单识别模板
+DispatchWeightNote -- 磅单发货单识别模板
+ReceiptWeightNote -- 磅单收货单识别模板
                      * 
                      */
                     void SetConfigId(const std::string& _configId);
@@ -232,6 +244,27 @@ BookingConfirmation -- 配舱通知书识别模板
                      * 
                      */
                     bool EnableCoordHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启父子key识别，默认是
+                     * @return OutputParentKey 是否开启父子key识别，默认是
+                     * 
+                     */
+                    bool GetOutputParentKey() const;
+
+                    /**
+                     * 设置是否开启父子key识别，默认是
+                     * @param _outputParentKey 是否开启父子key识别，默认是
+                     * 
+                     */
+                    void SetOutputParentKey(const bool& _outputParentKey);
+
+                    /**
+                     * 判断参数 OutputParentKey 是否已赋值
+                     * @return OutputParentKey 是否已赋值
+                     * 
+                     */
+                    bool OutputParentKeyHasBeenSet() const;
 
                 private:
 
@@ -278,6 +311,9 @@ EntrustmentBook -- 海运托书
 WordRecognize -- 手写英文作文模版
 Statement -- 对账单识别模板
 BookingConfirmation -- 配舱通知书识别模板
+AirWayBill -- 航空运单识别模板
+DispatchWeightNote -- 磅单发货单识别模板
+ReceiptWeightNote -- 磅单收货单识别模板
                      */
                     std::string m_configId;
                     bool m_configIdHasBeenSet;
@@ -287,6 +323,12 @@ BookingConfirmation -- 配舱通知书识别模板
                      */
                     bool m_enableCoord;
                     bool m_enableCoordHasBeenSet;
+
+                    /**
+                     * 是否开启父子key识别，默认是
+                     */
+                    bool m_outputParentKey;
+                    bool m_outputParentKeyHasBeenSet;
 
                 };
             }

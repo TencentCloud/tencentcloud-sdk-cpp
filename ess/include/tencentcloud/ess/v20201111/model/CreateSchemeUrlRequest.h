@@ -505,6 +505,27 @@ namespace TencentCloud
                      */
                     bool UrlUseEnvHasBeenSet() const;
 
+                    /**
+                     * 获取在动态签署人场景预设了“企业名称”时，可通过该参数控制“已认证身份才可领取”，即在加入了预设的企业后才可领取。默认值：false，无须先加入企业。
+                     * @return PickUpAfterJoined 在动态签署人场景预设了“企业名称”时，可通过该参数控制“已认证身份才可领取”，即在加入了预设的企业后才可领取。默认值：false，无须先加入企业。
+                     * 
+                     */
+                    bool GetPickUpAfterJoined() const;
+
+                    /**
+                     * 设置在动态签署人场景预设了“企业名称”时，可通过该参数控制“已认证身份才可领取”，即在加入了预设的企业后才可领取。默认值：false，无须先加入企业。
+                     * @param _pickUpAfterJoined 在动态签署人场景预设了“企业名称”时，可通过该参数控制“已认证身份才可领取”，即在加入了预设的企业后才可领取。默认值：false，无须先加入企业。
+                     * 
+                     */
+                    void SetPickUpAfterJoined(const bool& _pickUpAfterJoined);
+
+                    /**
+                     * 判断参数 PickUpAfterJoined 是否已赋值
+                     * @return PickUpAfterJoined 是否已赋值
+                     * 
+                     */
+                    bool PickUpAfterJoinedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -633,6 +654,12 @@ namespace TencentCloud
                      */
                     std::string m_urlUseEnv;
                     bool m_urlUseEnvHasBeenSet;
+
+                    /**
+                     * 在动态签署人场景预设了“企业名称”时，可通过该参数控制“已认证身份才可领取”，即在加入了预设的企业后才可领取。默认值：false，无须先加入企业。
+                     */
+                    bool m_pickUpAfterJoined;
+                    bool m_pickUpAfterJoinedHasBeenSet;
 
                 };
             }

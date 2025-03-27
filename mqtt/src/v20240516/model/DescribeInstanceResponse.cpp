@@ -46,7 +46,8 @@ DescribeInstanceResponse::DescribeInstanceResponse() :
     m_x509ModeHasBeenSet(false),
     m_maxCaNumHasBeenSet(false),
     m_registrationCodeHasBeenSet(false),
-    m_maxSubscriptionHasBeenSet(false)
+    m_maxSubscriptionHasBeenSet(false),
+    m_authorizationPolicyHasBeenSet(false)
 {
 }
 
@@ -314,6 +315,16 @@ CoreInternalOutcome DescribeInstanceResponse::Deserialize(const string &payload)
         m_maxSubscriptionHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AuthorizationPolicy") && !rsp["AuthorizationPolicy"].IsNull())
+    {
+        if (!rsp["AuthorizationPolicy"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `AuthorizationPolicy` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_authorizationPolicy = rsp["AuthorizationPolicy"].GetBool();
+        m_authorizationPolicyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -506,6 +517,14 @@ string DescribeInstanceResponse::ToJsonString() const
         string key = "MaxSubscription";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxSubscription, allocator);
+    }
+
+    if (m_authorizationPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuthorizationPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_authorizationPolicy, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -748,6 +767,16 @@ int64_t DescribeInstanceResponse::GetMaxSubscription() const
 bool DescribeInstanceResponse::MaxSubscriptionHasBeenSet() const
 {
     return m_maxSubscriptionHasBeenSet;
+}
+
+bool DescribeInstanceResponse::GetAuthorizationPolicy() const
+{
+    return m_authorizationPolicy;
+}
+
+bool DescribeInstanceResponse::AuthorizationPolicyHasBeenSet() const
+{
+    return m_authorizationPolicyHasBeenSet;
 }
 
 

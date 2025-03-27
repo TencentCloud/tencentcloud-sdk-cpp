@@ -88,6 +88,27 @@ namespace TencentCloud
                      */
                     bool DurationHasBeenSet() const;
 
+                    /**
+                     * 获取拉流转推任务的时长，单位为秒
+                     * @return DurationSecond 拉流转推任务的时长，单位为秒
+                     * 
+                     */
+                    uint64_t GetDurationSecond() const;
+
+                    /**
+                     * 设置拉流转推任务的时长，单位为秒
+                     * @param _durationSecond 拉流转推任务的时长，单位为秒
+                     * 
+                     */
+                    void SetDurationSecond(const uint64_t& _durationSecond);
+
+                    /**
+                     * 判断参数 DurationSecond 是否已赋值
+                     * @return DurationSecond 是否已赋值
+                     * 
+                     */
+                    bool DurationSecondHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +122,12 @@ namespace TencentCloud
                      */
                     uint64_t m_duration;
                     bool m_durationHasBeenSet;
+
+                    /**
+                     * 拉流转推任务的时长，单位为秒
+                     */
+                    uint64_t m_durationSecond;
+                    bool m_durationSecondHasBeenSet;
 
                 };
             }

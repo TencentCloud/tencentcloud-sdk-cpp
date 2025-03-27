@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取规则模板详细信息列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Items 规则模板详细信息列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AuditRuleTemplateInfo> GetItems() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 规则模板详细信息列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AuditRuleTemplateInfo> m_items;
                     bool m_itemsHasBeenSet;

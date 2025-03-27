@@ -137,6 +137,27 @@ Oversea：则查询国外数据，
                      */
                     bool MainlandOrOverseaHasBeenSet() const;
 
+                    /**
+                     * 获取可选值：  PullLivePushLive：拉流源类型为直播  PullVodPushLive：拉流源类型为点播  PullPicPushLive：拉流源类型为图片  默认：查询全部拉流源类型
+                     * @return SourceType 可选值：  PullLivePushLive：拉流源类型为直播  PullVodPushLive：拉流源类型为点播  PullPicPushLive：拉流源类型为图片  默认：查询全部拉流源类型
+                     * 
+                     */
+                    std::string GetSourceType() const;
+
+                    /**
+                     * 设置可选值：  PullLivePushLive：拉流源类型为直播  PullVodPushLive：拉流源类型为点播  PullPicPushLive：拉流源类型为图片  默认：查询全部拉流源类型
+                     * @param _sourceType 可选值：  PullLivePushLive：拉流源类型为直播  PullVodPushLive：拉流源类型为点播  PullPicPushLive：拉流源类型为图片  默认：查询全部拉流源类型
+                     * 
+                     */
+                    void SetSourceType(const std::string& _sourceType);
+
+                    /**
+                     * 判断参数 SourceType 是否已赋值
+                     * @return SourceType 是否已赋值
+                     * 
+                     */
+                    bool SourceTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -164,6 +185,12 @@ Oversea：则查询国外数据，
                      */
                     std::string m_mainlandOrOversea;
                     bool m_mainlandOrOverseaHasBeenSet;
+
+                    /**
+                     * 可选值：  PullLivePushLive：拉流源类型为直播  PullVodPushLive：拉流源类型为点播  PullPicPushLive：拉流源类型为图片  默认：查询全部拉流源类型
+                     */
+                    std::string m_sourceType;
+                    bool m_sourceTypeHasBeenSet;
 
                 };
             }

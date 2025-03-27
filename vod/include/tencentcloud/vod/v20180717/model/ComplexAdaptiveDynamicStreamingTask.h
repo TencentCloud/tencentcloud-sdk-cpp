@@ -102,15 +102,15 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取自适应码流任务的执行状态与结果，每个元素对应一个自适应码流模版。
-                     * @return ComplexAdaptiveDynamicStreamingTaskResultSet 自适应码流任务的执行状态与结果，每个元素对应一个自适应码流模版。
+                     * 获取自适应码流任务的执行状态与结果，每个元素对应一个自适应码流模板。
+                     * @return ComplexAdaptiveDynamicStreamingTaskResultSet 自适应码流任务的执行状态与结果，每个元素对应一个自适应码流模板。
                      * 
                      */
                     std::vector<ComplexAdaptiveDynamicStreamingTaskResult> GetComplexAdaptiveDynamicStreamingTaskResultSet() const;
 
                     /**
-                     * 设置自适应码流任务的执行状态与结果，每个元素对应一个自适应码流模版。
-                     * @param _complexAdaptiveDynamicStreamingTaskResultSet 自适应码流任务的执行状态与结果，每个元素对应一个自适应码流模版。
+                     * 设置自适应码流任务的执行状态与结果，每个元素对应一个自适应码流模板。
+                     * @param _complexAdaptiveDynamicStreamingTaskResultSet 自适应码流任务的执行状态与结果，每个元素对应一个自适应码流模板。
                      * 
                      */
                     void SetComplexAdaptiveDynamicStreamingTaskResultSet(const std::vector<ComplexAdaptiveDynamicStreamingTaskResult>& _complexAdaptiveDynamicStreamingTaskResultSet);
@@ -140,7 +140,7 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 自适应码流任务的执行状态与结果，每个元素对应一个自适应码流模版。
+                     * 自适应码流任务的执行状态与结果，每个元素对应一个自适应码流模板。
                      */
                     std::vector<ComplexAdaptiveDynamicStreamingTaskResult> m_complexAdaptiveDynamicStreamingTaskResultSet;
                     bool m_complexAdaptiveDynamicStreamingTaskResultSetHasBeenSet;

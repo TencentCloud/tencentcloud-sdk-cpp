@@ -439,18 +439,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网络线路
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Line 网络线路
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetLine() const;
 
                     /**
                      * 设置网络线路
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _line 网络线路
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLine(const uint64_t& _line);
@@ -464,18 +460,14 @@ namespace TencentCloud
 
                     /**
                      * 获取不计费的业务带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FreeServiceBandwidth 不计费的业务带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetFreeServiceBandwidth() const;
 
                     /**
                      * 设置不计费的业务带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _freeServiceBandwidth 不计费的业务带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFreeServiceBandwidth(const uint64_t& _freeServiceBandwidth);
@@ -531,18 +523,14 @@ namespace TencentCloud
 
                     /**
                      * 获取修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifyTime 修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
                      * 设置修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modifyTime 修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
@@ -556,18 +544,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否是基础防护加强版 0: 不是 1: 是
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BasicPlusFlag 是否是基础防护加强版 0: 不是 1: 是
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetBasicPlusFlag() const;
 
                     /**
                      * 设置是否是基础防护加强版 0: 不是 1: 是
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _basicPlusFlag 是否是基础防护加强版 0: 不是 1: 是
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBasicPlusFlag(const uint64_t& _basicPlusFlag);
@@ -581,18 +565,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否标准版2.0 0: 包含标准版2.0 1: 只查询标准版2.0 2: 不查标准版2.0
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PlanCntFlag 是否标准版2.0 0: 包含标准版2.0 1: 只查询标准版2.0 2: 不查标准版2.0
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPlanCntFlag() const;
 
                     /**
                      * 设置是否标准版2.0 0: 包含标准版2.0 1: 只查询标准版2.0 2: 不查标准版2.0
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _planCntFlag 是否标准版2.0 0: 包含标准版2.0 1: 只查询标准版2.0 2: 不查标准版2.0
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPlanCntFlag(const uint64_t& _planCntFlag);
@@ -606,18 +586,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否跨区域产品 0: 不包含跨区域产品 1: 中国大陆跨区域产品 2: 非中国大陆跨区域产品
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TransRegionFlag 是否跨区域产品 0: 不包含跨区域产品 1: 中国大陆跨区域产品 2: 非中国大陆跨区域产品
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTransRegionFlag() const;
 
                     /**
                      * 设置是否跨区域产品 0: 不包含跨区域产品 1: 中国大陆跨区域产品 2: 非中国大陆跨区域产品
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _transRegionFlag 是否跨区域产品 0: 不包含跨区域产品 1: 中国大陆跨区域产品 2: 非中国大陆跨区域产品
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTransRegionFlag(const uint64_t& _transRegionFlag);
@@ -631,18 +607,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否为超级高防包
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SuperPackFlag 是否为超级高防包
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetSuperPackFlag() const;
 
                     /**
                      * 设置是否为超级高防包
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _superPackFlag 是否为超级高防包
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSuperPackFlag(const uint64_t& _superPackFlag);
@@ -656,18 +628,14 @@ namespace TencentCloud
 
                     /**
                      * 获取所属ZoneId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZoneId 所属ZoneId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetZoneId() const;
 
                     /**
                      * 设置所属ZoneId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zoneId 所属ZoneId
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZoneId(const int64_t& _zoneId);
@@ -791,14 +759,12 @@ namespace TencentCloud
 
                     /**
                      * 网络线路
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_line;
                     bool m_lineHasBeenSet;
 
                     /**
                      * 不计费的业务带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_freeServiceBandwidth;
                     bool m_freeServiceBandwidthHasBeenSet;
@@ -817,42 +783,36 @@ namespace TencentCloud
 
                     /**
                      * 修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
 
                     /**
                      * 是否是基础防护加强版 0: 不是 1: 是
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_basicPlusFlag;
                     bool m_basicPlusFlagHasBeenSet;
 
                     /**
                      * 是否标准版2.0 0: 包含标准版2.0 1: 只查询标准版2.0 2: 不查标准版2.0
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_planCntFlag;
                     bool m_planCntFlagHasBeenSet;
 
                     /**
                      * 是否跨区域产品 0: 不包含跨区域产品 1: 中国大陆跨区域产品 2: 非中国大陆跨区域产品
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_transRegionFlag;
                     bool m_transRegionFlagHasBeenSet;
 
                     /**
                      * 是否为超级高防包
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_superPackFlag;
                     bool m_superPackFlagHasBeenSet;
 
                     /**
                      * 所属ZoneId
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_zoneId;
                     bool m_zoneIdHasBeenSet;

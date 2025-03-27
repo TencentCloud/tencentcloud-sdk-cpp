@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取画面鉴别涉及令人不安全的信息的任务控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImgReviewInfo 画面鉴别涉及令人不安全的信息的任务控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TerrorismImgReviewTemplateInfo GetImgReviewInfo() const;
 
                     /**
                      * 设置画面鉴别涉及令人不安全的信息的任务控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _imgReviewInfo 画面鉴别涉及令人不安全的信息的任务控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetImgReviewInfo(const TerrorismImgReviewTemplateInfo& _imgReviewInfo);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文字鉴别涉及令人不安全的信息的任务控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OcrReviewInfo 文字鉴别涉及令人不安全的信息的任务控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TerrorismOcrReviewTemplateInfo GetOcrReviewInfo() const;
 
                     /**
                      * 设置文字鉴别涉及令人不安全的信息的任务控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ocrReviewInfo 文字鉴别涉及令人不安全的信息的任务控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOcrReviewInfo(const TerrorismOcrReviewTemplateInfo& _ocrReviewInfo);
@@ -102,14 +94,12 @@ namespace TencentCloud
 
                     /**
                      * 画面鉴别涉及令人不安全的信息的任务控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TerrorismImgReviewTemplateInfo m_imgReviewInfo;
                     bool m_imgReviewInfoHasBeenSet;
 
                     /**
                      * 文字鉴别涉及令人不安全的信息的任务控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TerrorismOcrReviewTemplateInfo m_ocrReviewInfo;
                     bool m_ocrReviewInfoHasBeenSet;

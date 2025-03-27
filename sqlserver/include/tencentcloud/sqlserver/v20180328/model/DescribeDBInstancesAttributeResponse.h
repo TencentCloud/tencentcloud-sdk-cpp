@@ -243,6 +243,20 @@ namespace TencentCloud
                      */
                     bool MultiDrReadableInfoHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启磁盘加密，1-开启，0-未开启
+                     * @return IsDiskEncryptFlag 是否开启磁盘加密，1-开启，0-未开启
+                     * 
+                     */
+                    int64_t GetIsDiskEncryptFlag() const;
+
+                    /**
+                     * 判断参数 IsDiskEncryptFlag 是否已赋值
+                     * @return IsDiskEncryptFlag 是否已赋值
+                     * 
+                     */
+                    bool IsDiskEncryptFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -328,6 +342,12 @@ namespace TencentCloud
                      */
                     std::vector<DrReadableInfo> m_multiDrReadableInfo;
                     bool m_multiDrReadableInfoHasBeenSet;
+
+                    /**
+                     * 是否开启磁盘加密，1-开启，0-未开启
+                     */
+                    int64_t m_isDiskEncryptFlag;
+                    bool m_isDiskEncryptFlagHasBeenSet;
 
                 };
             }

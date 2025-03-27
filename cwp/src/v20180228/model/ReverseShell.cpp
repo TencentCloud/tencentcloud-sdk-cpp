@@ -43,7 +43,8 @@ ReverseShell::ReverseShell() :
     m_detectByHasBeenSet(false),
     m_machineExtraInfoHasBeenSet(false),
     m_pidHasBeenSet(false),
-    m_riskLevelHasBeenSet(false)
+    m_riskLevelHasBeenSet(false),
+    m_cmdLineQuoteHasBeenSet(false)
 {
 }
 
@@ -289,6 +290,16 @@ CoreInternalOutcome ReverseShell::Deserialize(const rapidjson::Value &value)
         m_riskLevelHasBeenSet = true;
     }
 
+    if (value.HasMember("CmdLineQuote") && !value["CmdLineQuote"].IsNull())
+    {
+        if (!value["CmdLineQuote"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReverseShell.CmdLineQuote` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cmdLineQuote = string(value["CmdLineQuote"].GetString());
+        m_cmdLineQuoteHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -479,6 +490,14 @@ void ReverseShell::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "RiskLevel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_riskLevel, allocator);
+    }
+
+    if (m_cmdLineQuoteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CmdLineQuote";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cmdLineQuote.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -850,5 +869,21 @@ void ReverseShell::SetRiskLevel(const uint64_t& _riskLevel)
 bool ReverseShell::RiskLevelHasBeenSet() const
 {
     return m_riskLevelHasBeenSet;
+}
+
+string ReverseShell::GetCmdLineQuote() const
+{
+    return m_cmdLineQuote;
+}
+
+void ReverseShell::SetCmdLineQuote(const string& _cmdLineQuote)
+{
+    m_cmdLineQuote = _cmdLineQuote;
+    m_cmdLineQuoteHasBeenSet = true;
+}
+
+bool ReverseShell::CmdLineQuoteHasBeenSet() const
+{
+    return m_cmdLineQuoteHasBeenSet;
 }
 

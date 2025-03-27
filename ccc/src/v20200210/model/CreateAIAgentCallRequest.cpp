@@ -27,7 +27,8 @@ CreateAIAgentCallRequest::CreateAIAgentCallRequest() :
     m_aIAgentIdHasBeenSet(false),
     m_calleeHasBeenSet(false),
     m_callersHasBeenSet(false),
-    m_promptVariablesHasBeenSet(false)
+    m_promptVariablesHasBeenSet(false),
+    m_variablesHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,21 @@ string CreateAIAgentCallRequest::ToJsonString() const
 
         int i=0;
         for (auto itr = m_promptVariables.begin(); itr != m_promptVariables.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_variablesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Variables";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_variables.begin(); itr != m_variables.end(); ++itr, ++i)
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
@@ -176,6 +192,22 @@ void CreateAIAgentCallRequest::SetPromptVariables(const vector<Variable>& _promp
 bool CreateAIAgentCallRequest::PromptVariablesHasBeenSet() const
 {
     return m_promptVariablesHasBeenSet;
+}
+
+vector<Variable> CreateAIAgentCallRequest::GetVariables() const
+{
+    return m_variables;
+}
+
+void CreateAIAgentCallRequest::SetVariables(const vector<Variable>& _variables)
+{
+    m_variables = _variables;
+    m_variablesHasBeenSet = true;
+}
+
+bool CreateAIAgentCallRequest::VariablesHasBeenSet() const
+{
+    return m_variablesHasBeenSet;
 }
 
 

@@ -131,15 +131,15 @@ namespace TencentCloud
                     bool ProducerAddrHasBeenSet() const;
 
                     /**
-                     * 获取消息发送时间	
-                     * @return ProduceTime 消息发送时间	
+                     * 获取消息发送时间，格式 日期时间：YYYY-MM-DD hh:mm:ss
+                     * @return ProduceTime 消息发送时间，格式 日期时间：YYYY-MM-DD hh:mm:ss
                      * 
                      */
                     std::string GetProduceTime() const;
 
                     /**
-                     * 设置消息发送时间	
-                     * @param _produceTime 消息发送时间	
+                     * 设置消息发送时间，格式 日期时间：YYYY-MM-DD hh:mm:ss
+                     * @param _produceTime 消息发送时间，格式 日期时间：YYYY-MM-DD hh:mm:ss
                      * 
                      */
                     void SetProduceTime(const std::string& _produceTime);
@@ -216,14 +216,26 @@ namespace TencentCloud
 
                     /**
                      * 获取消息质量等级
+0：至多一次
+1：至少一次
+2：精确一次
                      * @return Qos 消息质量等级
+0：至多一次
+1：至少一次
+2：精确一次
                      * 
                      */
                     std::string GetQos() const;
 
                     /**
                      * 设置消息质量等级
+0：至多一次
+1：至少一次
+2：精确一次
                      * @param _qos 消息质量等级
+0：至多一次
+1：至少一次
+2：精确一次
                      * 
                      */
                     void SetQos(const std::string& _qos);
@@ -262,7 +274,7 @@ namespace TencentCloud
                     bool m_producerAddrHasBeenSet;
 
                     /**
-                     * 消息发送时间	
+                     * 消息发送时间，格式 日期时间：YYYY-MM-DD hh:mm:ss
                      */
                     std::string m_produceTime;
                     bool m_produceTimeHasBeenSet;
@@ -287,6 +299,9 @@ namespace TencentCloud
 
                     /**
                      * 消息质量等级
+0：至多一次
+1：至少一次
+2：精确一次
                      */
                     std::string m_qos;
                     bool m_qosHasBeenSet;

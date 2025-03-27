@@ -519,6 +519,31 @@ wifi、wifi-ble、cellular、5g、lorawan、ble、ethernet、wifi-ethernet、els
                      */
                     bool PeriodHasBeenSet() const;
 
+                    /**
+                     * 获取互联互通标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsInterconnection 互联互通标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    int64_t GetIsInterconnection() const;
+
+                    /**
+                     * 设置互联互通标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isInterconnection 互联互通标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsInterconnection(const int64_t& _isInterconnection);
+
+                    /**
+                     * 判断参数 IsInterconnection 是否已赋值
+                     * @return IsInterconnection 是否已赋值
+                     * 
+                     */
+                    bool IsInterconnectionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -654,6 +679,13 @@ wifi、wifi-ble、cellular、5g、lorawan、ble、ethernet、wifi-ethernet、els
                      */
                     std::string m_period;
                     bool m_periodHasBeenSet;
+
+                    /**
+                     * 互联互通标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_isInterconnection;
+                    bool m_isInterconnectionHasBeenSet;
 
                 };
             }

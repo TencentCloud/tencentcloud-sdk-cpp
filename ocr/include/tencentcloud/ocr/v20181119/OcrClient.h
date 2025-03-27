@@ -43,8 +43,6 @@
 #include <tencentcloud/ocr/v20181119/model/ClassifyDetectOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/ClassifyStoreNameRequest.h>
 #include <tencentcloud/ocr/v20181119/model/ClassifyStoreNameResponse.h>
-#include <tencentcloud/ocr/v20181119/model/CreateAIFormTaskRequest.h>
-#include <tencentcloud/ocr/v20181119/model/CreateAIFormTaskResponse.h>
 #include <tencentcloud/ocr/v20181119/model/DriverLicenseOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/DriverLicenseOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/DutyPaidProofOCRRequest.h>
@@ -79,8 +77,6 @@
 #include <tencentcloud/ocr/v20181119/model/GetOCRResultResponse.h>
 #include <tencentcloud/ocr/v20181119/model/GetOCRTokenRequest.h>
 #include <tencentcloud/ocr/v20181119/model/GetOCRTokenResponse.h>
-#include <tencentcloud/ocr/v20181119/model/GetTaskStateRequest.h>
-#include <tencentcloud/ocr/v20181119/model/GetTaskStateResponse.h>
 #include <tencentcloud/ocr/v20181119/model/HKIDCardOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/HKIDCardOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/HmtResidentPermitOCRRequest.h>
@@ -185,8 +181,6 @@
 #include <tencentcloud/ocr/v20181119/model/TrainTicketOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/VatInvoiceOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/VatInvoiceOCRResponse.h>
-#include <tencentcloud/ocr/v20181119/model/VatInvoiceVerifyRequest.h>
-#include <tencentcloud/ocr/v20181119/model/VatInvoiceVerifyResponse.h>
 #include <tencentcloud/ocr/v20181119/model/VatInvoiceVerifyNewRequest.h>
 #include <tencentcloud/ocr/v20181119/model/VatInvoiceVerifyNewResponse.h>
 #include <tencentcloud/ocr/v20181119/model/VatRollInvoiceOCRRequest.h>
@@ -245,9 +239,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ClassifyStoreNameResponse> ClassifyStoreNameOutcome;
                 typedef std::future<ClassifyStoreNameOutcome> ClassifyStoreNameOutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::ClassifyStoreNameRequest&, ClassifyStoreNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ClassifyStoreNameAsyncHandler;
-                typedef Outcome<Core::Error, Model::CreateAIFormTaskResponse> CreateAIFormTaskOutcome;
-                typedef std::future<CreateAIFormTaskOutcome> CreateAIFormTaskOutcomeCallable;
-                typedef std::function<void(const OcrClient*, const Model::CreateAIFormTaskRequest&, CreateAIFormTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAIFormTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DriverLicenseOCRResponse> DriverLicenseOCROutcome;
                 typedef std::future<DriverLicenseOCROutcome> DriverLicenseOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::DriverLicenseOCRRequest&, DriverLicenseOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> DriverLicenseOCRAsyncHandler;
@@ -299,9 +290,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetOCRTokenResponse> GetOCRTokenOutcome;
                 typedef std::future<GetOCRTokenOutcome> GetOCRTokenOutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::GetOCRTokenRequest&, GetOCRTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetOCRTokenAsyncHandler;
-                typedef Outcome<Core::Error, Model::GetTaskStateResponse> GetTaskStateOutcome;
-                typedef std::future<GetTaskStateOutcome> GetTaskStateOutcomeCallable;
-                typedef std::function<void(const OcrClient*, const Model::GetTaskStateRequest&, GetTaskStateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTaskStateAsyncHandler;
                 typedef Outcome<Core::Error, Model::HKIDCardOCRResponse> HKIDCardOCROutcome;
                 typedef std::future<HKIDCardOCROutcome> HKIDCardOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::HKIDCardOCRRequest&, HKIDCardOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> HKIDCardOCRAsyncHandler;
@@ -458,9 +446,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::VatInvoiceOCRResponse> VatInvoiceOCROutcome;
                 typedef std::future<VatInvoiceOCROutcome> VatInvoiceOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::VatInvoiceOCRRequest&, VatInvoiceOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> VatInvoiceOCRAsyncHandler;
-                typedef Outcome<Core::Error, Model::VatInvoiceVerifyResponse> VatInvoiceVerifyOutcome;
-                typedef std::future<VatInvoiceVerifyOutcome> VatInvoiceVerifyOutcomeCallable;
-                typedef std::function<void(const OcrClient*, const Model::VatInvoiceVerifyRequest&, VatInvoiceVerifyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VatInvoiceVerifyAsyncHandler;
                 typedef Outcome<Core::Error, Model::VatInvoiceVerifyNewResponse> VatInvoiceVerifyNewOutcome;
                 typedef std::future<VatInvoiceVerifyNewOutcome> VatInvoiceVerifyNewOutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::VatInvoiceVerifyNewRequest&, VatInvoiceVerifyNewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VatInvoiceVerifyNewAsyncHandler;
@@ -595,19 +580,6 @@ namespace TencentCloud
                 ClassifyStoreNameOutcome ClassifyStoreName(const Model::ClassifyStoreNameRequest &request);
                 void ClassifyStoreNameAsync(const Model::ClassifyStoreNameRequest& request, const ClassifyStoreNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ClassifyStoreNameOutcomeCallable ClassifyStoreNameCallable(const Model::ClassifyStoreNameRequest& request);
-
-                /**
-                 *智慧表单产品已下线，需要下线相关API
-
-本接口可创建智能表单录入任务，支持多个识别图片和PDF的URL上传，返回含有识别内容的操作页面URL。
-
-智能表单录入产品提供高准确率的表单识别技术和人工核对工具，支持自定义字段，将识别结果自动填入到自定义条目中，并提供人工操作工具，完成整个表单识别过程。适用性强，可对票据、合同、货单等文件的识别，适用于金融、货代、保险、档案等领域。本产品免费公测中，您可以点击demo（超链接：https://ocr.smartform.cloud.tencent.com/）试用，如需购买请与商务团队联系。
-                 * @param req CreateAIFormTaskRequest
-                 * @return CreateAIFormTaskOutcome
-                 */
-                CreateAIFormTaskOutcome CreateAIFormTask(const Model::CreateAIFormTaskRequest &request);
-                void CreateAIFormTaskAsync(const Model::CreateAIFormTaskRequest& request, const CreateAIFormTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateAIFormTaskOutcomeCallable CreateAIFormTaskCallable(const Model::CreateAIFormTaskRequest& request);
 
                 /**
                  *本接口支持驾驶证主页和副页所有字段的自动定位与识别，重点字段的识别准确度达到99%以上。
@@ -979,17 +951,6 @@ namespace TencentCloud
                 GetOCRTokenOutcome GetOCRToken(const Model::GetOCRTokenRequest &request);
                 void GetOCRTokenAsync(const Model::GetOCRTokenRequest& request, const GetOCRTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetOCRTokenOutcomeCallable GetOCRTokenCallable(const Model::GetOCRTokenRequest& request);
-
-                /**
-                 *智慧表单产品已下线，需要下线相关API
-
-支持查询智能表单录入任务的状态。本产品免费公测中，您可以点击demo（超链接：https://ocr.smartform.cloud.tencent.com/）试用，如需购买请与商务团队联系。
-                 * @param req GetTaskStateRequest
-                 * @return GetTaskStateOutcome
-                 */
-                GetTaskStateOutcome GetTaskState(const Model::GetTaskStateRequest &request);
-                void GetTaskStateAsync(const Model::GetTaskStateRequest& request, const GetTaskStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                GetTaskStateOutcomeCallable GetTaskStateCallable(const Model::GetTaskStateRequest& request);
 
                 /**
                  *本接口支持中国香港身份证人像面中关键字段的识别，包括中文姓名、英文姓名、姓名电码、出生日期、性别、证件符号、首次签发日期、最近领用日期、身份证号、是否是永久性居民身份证；具备人像照片裁剪等扩展功能。
@@ -1527,6 +1488,11 @@ namespace TencentCloud
           <td> 19 </td>
         </tr>
         <tr>
+          <td> BankSlip </td>
+          <td> 银行回单 </td>
+          <td> 20 </td>
+        </tr>
+        <tr>
           <td> OtherInvoice </td>
           <td> 其他发票 </td>
           <td> -1 </td>
@@ -1812,19 +1778,6 @@ namespace TencentCloud
                 VatInvoiceOCROutcome VatInvoiceOCR(const Model::VatInvoiceOCRRequest &request);
                 void VatInvoiceOCRAsync(const Model::VatInvoiceOCRRequest& request, const VatInvoiceOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 VatInvoiceOCROutcomeCallable VatInvoiceOCRCallable(const Model::VatInvoiceOCRRequest& request);
-
-                /**
-                 *已上线VatInvoiceVerifyNew，VatInvoiceVerify需要下线，产品在官网已发通告
-
-本接口支持增值税发票的准确性核验，您可以通过输入增值税发票的关键字段提供所需的验证信息，接口返回真实的票面相关信息，包括发票代码、发票号码、开票日期、金额、消费类型、购方名称、购方税号、销方名称、销方税号等多个常用字段。支持多种发票类型核验，包括增值税专用发票、增值税普通发票（含电子普通发票、卷式发票、通行费发票）、全电发票、机动车销售统一发票、货物运输业增值税专用发票、二手车销售统一发票。
-
-默认接口请求频率限制：20次/秒。
-                 * @param req VatInvoiceVerifyRequest
-                 * @return VatInvoiceVerifyOutcome
-                 */
-                VatInvoiceVerifyOutcome VatInvoiceVerify(const Model::VatInvoiceVerifyRequest &request);
-                void VatInvoiceVerifyAsync(const Model::VatInvoiceVerifyRequest& request, const VatInvoiceVerifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                VatInvoiceVerifyOutcomeCallable VatInvoiceVerifyCallable(const Model::VatInvoiceVerifyRequest& request);
 
                 /**
                  *本接口支持增值税发票的准确性核验，您可以通过输入增值税发票的关键字段提供所需的验证信息，接口返回真实的票面相关信息，包括发票代码、发票号码、开票日期、金额、消费类型、购方名称、购方税号、销方名称、销方税号等多个常用字段。支持多种发票类型核验，包括增值税专用发票、增值税普通发票（含电子普通发票、卷式发票、通行费发票）、全电发票、机动车销售统一发票、货物运输业增值税专用发票、二手车销售统一发票、通用机打电子发票（广东和浙江）。

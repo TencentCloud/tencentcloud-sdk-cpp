@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取列名。如果 RuleType 为 cols，此项必填。订阅任务会用该列的值计算分区。mongo没有按列分区，因此也不用传这个字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Columns 列名。如果 RuleType 为 cols，此项必填。订阅任务会用该列的值计算分区。mongo没有按列分区，因此也不用传这个字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetColumns() const;
 
                     /**
                      * 设置列名。如果 RuleType 为 cols，此项必填。订阅任务会用该列的值计算分区。mongo没有按列分区，因此也不用传这个字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _columns 列名。如果 RuleType 为 cols，此项必填。订阅任务会用该列的值计算分区。mongo没有按列分区，因此也不用传这个字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetColumns(const std::vector<std::string>& _columns);
@@ -156,7 +152,6 @@ namespace TencentCloud
 
                     /**
                      * 列名。如果 RuleType 为 cols，此项必填。订阅任务会用该列的值计算分区。mongo没有按列分区，因此也不用传这个字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_columns;
                     bool m_columnsHasBeenSet;

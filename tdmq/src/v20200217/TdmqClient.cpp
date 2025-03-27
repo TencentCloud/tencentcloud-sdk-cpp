@@ -4899,49 +4899,6 @@ TdmqClient::ImportRocketMQTopicsOutcomeCallable TdmqClient::ImportRocketMQTopics
     return task->get_future();
 }
 
-TdmqClient::ModifyAMQPClusterOutcome TdmqClient::ModifyAMQPCluster(const ModifyAMQPClusterRequest &request)
-{
-    auto outcome = MakeRequest(request, "ModifyAMQPCluster");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ModifyAMQPClusterResponse rsp = ModifyAMQPClusterResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ModifyAMQPClusterOutcome(rsp);
-        else
-            return ModifyAMQPClusterOutcome(o.GetError());
-    }
-    else
-    {
-        return ModifyAMQPClusterOutcome(outcome.GetError());
-    }
-}
-
-void TdmqClient::ModifyAMQPClusterAsync(const ModifyAMQPClusterRequest& request, const ModifyAMQPClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyAMQPCluster(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TdmqClient::ModifyAMQPClusterOutcomeCallable TdmqClient::ModifyAMQPClusterCallable(const ModifyAMQPClusterRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<ModifyAMQPClusterOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyAMQPCluster(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TdmqClient::ModifyClusterOutcome TdmqClient::ModifyCluster(const ModifyClusterRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyCluster");

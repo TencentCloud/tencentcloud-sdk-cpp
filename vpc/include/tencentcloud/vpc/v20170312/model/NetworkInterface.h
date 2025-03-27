@@ -372,15 +372,15 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取创建时间。
-                     * @return CreatedTime 创建时间。
+                     * 获取创建时间。格式：YYYY-MM-DD hh:mm:ss。示例值：2020-10-28 08:23:59
+                     * @return CreatedTime 创建时间。格式：YYYY-MM-DD hh:mm:ss。示例值：2020-10-28 08:23:59
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
-                     * 设置创建时间。
-                     * @param _createdTime 创建时间。
+                     * 设置创建时间。格式：YYYY-MM-DD hh:mm:ss。示例值：2020-10-28 08:23:59
+                     * @param _createdTime 创建时间。格式：YYYY-MM-DD hh:mm:ss。示例值：2020-10-28 08:23:59
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -435,15 +435,15 @@ namespace TencentCloud
                     bool TagSetHasBeenSet() const;
 
                     /**
-                     * 获取网卡类型。0 - 弹性网卡；1 - evm弹性网卡。
-                     * @return EniType 网卡类型。0 - 弹性网卡；1 - evm弹性网卡。
+                     * 获取网卡类型。“0”-辅助网卡，“1”-主网卡，“2”：中继网卡
+                     * @return EniType 网卡类型。“0”-辅助网卡，“1”-主网卡，“2”：中继网卡
                      * 
                      */
                     uint64_t GetEniType() const;
 
                     /**
-                     * 设置网卡类型。0 - 弹性网卡；1 - evm弹性网卡。
-                     * @param _eniType 网卡类型。0 - 弹性网卡；1 - evm弹性网卡。
+                     * 设置网卡类型。“0”-辅助网卡，“1”-主网卡，“2”：中继网卡
+                     * @param _eniType 网卡类型。“0”-辅助网卡，“1”-主网卡，“2”：中继网卡
                      * 
                      */
                     void SetEniType(const uint64_t& _eniType);
@@ -456,18 +456,18 @@ namespace TencentCloud
                     bool EniTypeHasBeenSet() const;
 
                     /**
-                     * 获取网卡绑定的子机类型：cvm，eks。
+                     * 获取网卡绑定的子机类型：cvm（普通CVM子机），eks（弹性容器服务Elastic Kubernetes Service）， hai（高性能应用服务Hyper Application Inventor）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Business 网卡绑定的子机类型：cvm，eks。
+                     * @return Business 网卡绑定的子机类型：cvm（普通CVM子机），eks（弹性容器服务Elastic Kubernetes Service）， hai（高性能应用服务Hyper Application Inventor）。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBusiness() const;
 
                     /**
-                     * 设置网卡绑定的子机类型：cvm，eks。
+                     * 设置网卡绑定的子机类型：cvm（普通CVM子机），eks（弹性容器服务Elastic Kubernetes Service）， hai（高性能应用服务Hyper Application Inventor）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _business 网卡绑定的子机类型：cvm，eks。
+                     * @param _business 网卡绑定的子机类型：cvm（普通CVM子机），eks（弹性容器服务Elastic Kubernetes Service）， hai（高性能应用服务Hyper Application Inventor）。
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -557,16 +557,16 @@ namespace TencentCloud
 
                     /**
                      * 获取服务质量级别：
-<li>`DEFAULT`：默认</li>
-<li>`PT`：云金</li>
-<li>`AU`：云银</li>
-<li>`AG`：云铜</li>
+PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。
+
+可选值：PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。
+
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return QosLevel 服务质量级别：
-<li>`DEFAULT`：默认</li>
-<li>`PT`：云金</li>
-<li>`AU`：云银</li>
-<li>`AG`：云铜</li>
+PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。
+
+可选值：PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。
+
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -574,16 +574,16 @@ namespace TencentCloud
 
                     /**
                      * 设置服务质量级别：
-<li>`DEFAULT`：默认</li>
-<li>`PT`：云金</li>
-<li>`AU`：云银</li>
-<li>`AG`：云铜</li>
+PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。
+
+可选值：PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。
+
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param _qosLevel 服务质量级别：
-<li>`DEFAULT`：默认</li>
-<li>`PT`：云金</li>
-<li>`AU`：云银</li>
-<li>`AG`：云铜</li>
+PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。
+
+可选值：PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。
+
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -689,7 +689,7 @@ namespace TencentCloud
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 创建时间。
+                     * 创建时间。格式：YYYY-MM-DD hh:mm:ss。示例值：2020-10-28 08:23:59
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
@@ -707,13 +707,13 @@ namespace TencentCloud
                     bool m_tagSetHasBeenSet;
 
                     /**
-                     * 网卡类型。0 - 弹性网卡；1 - evm弹性网卡。
+                     * 网卡类型。“0”-辅助网卡，“1”-主网卡，“2”：中继网卡
                      */
                     uint64_t m_eniType;
                     bool m_eniTypeHasBeenSet;
 
                     /**
-                     * 网卡绑定的子机类型：cvm，eks。
+                     * 网卡绑定的子机类型：cvm（普通CVM子机），eks（弹性容器服务Elastic Kubernetes Service）， hai（高性能应用服务Hyper Application Inventor）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_business;
@@ -742,10 +742,10 @@ namespace TencentCloud
 
                     /**
                      * 服务质量级别：
-<li>`DEFAULT`：默认</li>
-<li>`PT`：云金</li>
-<li>`AU`：云银</li>
-<li>`AG`：云铜</li>
+PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。
+
+可选值：PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。
+
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_qosLevel;

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取保底带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProtectBandwidth 保底带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetProtectBandwidth() const;
 
                     /**
                      * 设置保底带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _protectBandwidth 保底带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProtectBandwidth(const uint64_t& _protectBandwidth);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取业务带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NormalBandwidth 业务带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetNormalBandwidth() const;
 
                     /**
                      * 设置业务带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _normalBandwidth 业务带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNormalBandwidth(const uint64_t& _normalBandwidth);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取转发规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ForwardRulesLimit 转发规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetForwardRulesLimit() const;
 
                     /**
                      * 设置转发规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _forwardRulesLimit 转发规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetForwardRulesLimit(const uint64_t& _forwardRulesLimit);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自动续费标记
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoRenewFlag 自动续费标记
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetAutoRenewFlag() const;
 
                     /**
                      * 设置自动续费标记
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _autoRenewFlag 自动续费标记
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAutoRenewFlag(const uint64_t& _autoRenewFlag);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取到期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CurDeadline 到期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCurDeadline() const;
 
                     /**
                      * 设置到期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _curDeadline 到期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCurDeadline(const std::string& _curDeadline);
@@ -175,35 +155,30 @@ namespace TencentCloud
 
                     /**
                      * 保底带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_protectBandwidth;
                     bool m_protectBandwidthHasBeenSet;
 
                     /**
                      * 业务带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_normalBandwidth;
                     bool m_normalBandwidthHasBeenSet;
 
                     /**
                      * 转发规则
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_forwardRulesLimit;
                     bool m_forwardRulesLimitHasBeenSet;
 
                     /**
                      * 自动续费标记
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_autoRenewFlag;
                     bool m_autoRenewFlagHasBeenSet;
 
                     /**
                      * 到期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_curDeadline;
                     bool m_curDeadlineHasBeenSet;

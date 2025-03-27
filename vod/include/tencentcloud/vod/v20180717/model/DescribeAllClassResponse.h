@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取分类信息集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ClassInfoSet 分类信息集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<MediaClassInfo> GetClassInfoSet() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 分类信息集合
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MediaClassInfo> m_classInfoSet;
                     bool m_classInfoSetHasBeenSet;

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取输入源 Id，由系统分配。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 输入源 Id，由系统分配。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置输入源 Id，由系统分配。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id 输入源 Id，由系统分配。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -213,7 +209,6 @@ namespace TencentCloud
 
                     /**
                      * 输入源 Id，由系统分配。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;

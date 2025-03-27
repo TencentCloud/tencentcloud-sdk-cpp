@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取镜像信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OSImageSeriesSet 镜像信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<OSImage> GetOSImageSeriesSet() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取镜像数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 镜像数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTotalCount() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 镜像信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<OSImage> m_oSImageSeriesSet;
                     bool m_oSImageSeriesSetHasBeenSet;
 
                     /**
                      * 镜像数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

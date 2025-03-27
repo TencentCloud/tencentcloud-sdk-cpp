@@ -249,8 +249,6 @@
 #include <tencentcloud/tdmq/v20200217/model/ImportRocketMQConsumerGroupsResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/ImportRocketMQTopicsRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/ImportRocketMQTopicsResponse.h>
-#include <tencentcloud/tdmq/v20200217/model/ModifyAMQPClusterRequest.h>
-#include <tencentcloud/tdmq/v20200217/model/ModifyAMQPClusterResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyClusterRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyClusterResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyCmqQueueAttributeRequest.h>
@@ -674,9 +672,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ImportRocketMQTopicsResponse> ImportRocketMQTopicsOutcome;
                 typedef std::future<ImportRocketMQTopicsOutcome> ImportRocketMQTopicsOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::ImportRocketMQTopicsRequest&, ImportRocketMQTopicsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImportRocketMQTopicsAsyncHandler;
-                typedef Outcome<Core::Error, Model::ModifyAMQPClusterResponse> ModifyAMQPClusterOutcome;
-                typedef std::future<ModifyAMQPClusterOutcome> ModifyAMQPClusterOutcomeCallable;
-                typedef std::function<void(const TdmqClient*, const Model::ModifyAMQPClusterRequest&, ModifyAMQPClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAMQPClusterAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyClusterResponse> ModifyClusterOutcome;
                 typedef std::future<ModifyClusterOutcome> ModifyClusterOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::ModifyClusterRequest&, ModifyClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterAsyncHandler;
@@ -1803,17 +1798,6 @@ namespace TencentCloud
                 ImportRocketMQTopicsOutcome ImportRocketMQTopics(const Model::ImportRocketMQTopicsRequest &request);
                 void ImportRocketMQTopicsAsync(const Model::ImportRocketMQTopicsRequest& request, const ImportRocketMQTopicsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ImportRocketMQTopicsOutcomeCallable ImportRocketMQTopicsCallable(const Model::ImportRocketMQTopicsRequest& request);
-
-                /**
-                 *历史原因，该接口位于tdmq-manager，目前rabbitmq产品没有使用该接口，当前使用的是ModifyRabbitMQVipInstance。不过从调用链上看，线网还有请求流程，所以走预下线流程。
-
-更新Amqp集群信息
-                 * @param req ModifyAMQPClusterRequest
-                 * @return ModifyAMQPClusterOutcome
-                 */
-                ModifyAMQPClusterOutcome ModifyAMQPCluster(const Model::ModifyAMQPClusterRequest &request);
-                void ModifyAMQPClusterAsync(const Model::ModifyAMQPClusterRequest& request, const ModifyAMQPClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ModifyAMQPClusterOutcomeCallable ModifyAMQPClusterCallable(const Model::ModifyAMQPClusterRequest& request);
 
                 /**
                  *更新集群信息

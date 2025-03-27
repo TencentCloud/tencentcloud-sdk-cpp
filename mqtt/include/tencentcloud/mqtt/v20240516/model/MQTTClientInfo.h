@@ -93,11 +93,11 @@ namespace TencentCloud
                      * 获取MQTT 协议版本
 3：表示MQTT 3.1版本
 4：表示 MQTT 3.1.1
-5:   标识MQTT 5.0协议
+5：表示MQTT 5.0协议
                      * @return ProtocolVersion MQTT 协议版本
 3：表示MQTT 3.1版本
 4：表示 MQTT 3.1.1
-5:   标识MQTT 5.0协议
+5：表示MQTT 5.0协议
                      * 
                      */
                     int64_t GetProtocolVersion() const;
@@ -106,11 +106,11 @@ namespace TencentCloud
                      * 设置MQTT 协议版本
 3：表示MQTT 3.1版本
 4：表示 MQTT 3.1.1
-5:   标识MQTT 5.0协议
+5：表示MQTT 5.0协议
                      * @param _protocolVersion MQTT 协议版本
 3：表示MQTT 3.1版本
 4：表示 MQTT 3.1.1
-5:   标识MQTT 5.0协议
+5：表示MQTT 5.0协议
                      * 
                      */
                     void SetProtocolVersion(const int64_t& _protocolVersion);
@@ -266,7 +266,7 @@ namespace TencentCloud
                      * MQTT 协议版本
 3：表示MQTT 3.1版本
 4：表示 MQTT 3.1.1
-5:   标识MQTT 5.0协议
+5：表示MQTT 5.0协议
                      */
                     int64_t m_protocolVersion;
                     bool m_protocolVersionHasBeenSet;

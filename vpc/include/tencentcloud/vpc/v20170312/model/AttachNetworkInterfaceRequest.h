@@ -43,15 +43,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取弹性网卡实例ID，例如：eni-m6dyj72l。
-                     * @return NetworkInterfaceId 弹性网卡实例ID，例如：eni-m6dyj72l。
+                     * 获取弹性网卡实例ID，例如：eni-m6dyj72l。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。
+
+                     * @return NetworkInterfaceId 弹性网卡实例ID，例如：eni-m6dyj72l。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。
+
                      * 
                      */
                     std::string GetNetworkInterfaceId() const;
 
                     /**
-                     * 设置弹性网卡实例ID，例如：eni-m6dyj72l。
-                     * @param _networkInterfaceId 弹性网卡实例ID，例如：eni-m6dyj72l。
+                     * 设置弹性网卡实例ID，例如：eni-m6dyj72l。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。
+
+                     * @param _networkInterfaceId 弹性网卡实例ID，例如：eni-m6dyj72l。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。
+
                      * 
                      */
                     void SetNetworkInterfaceId(const std::string& _networkInterfaceId);
@@ -64,15 +68,19 @@ namespace TencentCloud
                     bool NetworkInterfaceIdHasBeenSet() const;
 
                     /**
-                     * 获取CVM实例ID。形如：ins-r8hr2upy。
-                     * @return InstanceId CVM实例ID。形如：ins-r8hr2upy。
+                     * 获取CVM实例ID。形如：ins-r8hr2upy。可通过[DescribeInstances](https://cloud.tencent.com/document/product/213/15728)接口获取。
+
+                     * @return InstanceId CVM实例ID。形如：ins-r8hr2upy。可通过[DescribeInstances](https://cloud.tencent.com/document/product/213/15728)接口获取。
+
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置CVM实例ID。形如：ins-r8hr2upy。
-                     * @param _instanceId CVM实例ID。形如：ins-r8hr2upy。
+                     * 设置CVM实例ID。形如：ins-r8hr2upy。可通过[DescribeInstances](https://cloud.tencent.com/document/product/213/15728)接口获取。
+
+                     * @param _instanceId CVM实例ID。形如：ins-r8hr2upy。可通过[DescribeInstances](https://cloud.tencent.com/document/product/213/15728)接口获取。
+
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -129,13 +137,15 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 弹性网卡实例ID，例如：eni-m6dyj72l。
+                     * 弹性网卡实例ID，例如：eni-m6dyj72l。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。
+
                      */
                     std::string m_networkInterfaceId;
                     bool m_networkInterfaceIdHasBeenSet;
 
                     /**
-                     * CVM实例ID。形如：ins-r8hr2upy。
+                     * CVM实例ID。形如：ins-r8hr2upy。可通过[DescribeInstances](https://cloud.tencent.com/document/product/213/15728)接口获取。
+
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

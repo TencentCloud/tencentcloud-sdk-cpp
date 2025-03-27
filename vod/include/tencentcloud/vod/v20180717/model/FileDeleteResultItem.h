@@ -70,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取本次删除的文件部分。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeleteParts 本次删除的文件部分。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<MediaDeleteItem> GetDeleteParts() const;
 
                     /**
                      * 设置本次删除的文件部分。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deleteParts 本次删除的文件部分。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeleteParts(const std::vector<MediaDeleteItem>& _deleteParts);
@@ -103,7 +99,6 @@ namespace TencentCloud
 
                     /**
                      * 本次删除的文件部分。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MediaDeleteItem> m_deleteParts;
                     bool m_deletePartsHasBeenSet;

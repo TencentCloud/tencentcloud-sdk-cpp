@@ -212,18 +212,14 @@ namespace TencentCloud
 
                     /**
                      * 获取域名名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UsrDomainName 域名名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUsrDomainName() const;
 
                     /**
                      * 设置域名名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _usrDomainName 域名名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUsrDomainName(const std::string& _usrDomainName);
@@ -285,7 +281,6 @@ namespace TencentCloud
 
                     /**
                      * 域名名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_usrDomainName;
                     bool m_usrDomainNameHasBeenSet;

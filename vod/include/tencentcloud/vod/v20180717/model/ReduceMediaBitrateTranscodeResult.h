@@ -134,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取转码任务的输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Output 转码任务的输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MediaTranscodeItem GetOutput() const;
 
                     /**
                      * 设置转码任务的输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _output 转码任务的输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutput(const MediaTranscodeItem& _output);
@@ -248,7 +244,6 @@ namespace TencentCloud
 
                     /**
                      * 转码任务的输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MediaTranscodeItem m_output;
                     bool m_outputHasBeenSet;

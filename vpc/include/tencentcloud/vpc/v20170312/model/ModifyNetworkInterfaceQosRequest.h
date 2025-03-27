@@ -43,15 +43,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取弹性网卡ID，支持批量修改。
-                     * @return NetworkInterfaceIds 弹性网卡ID，支持批量修改。
+                     * 获取弹性网卡ID，支持批量修改。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。
+
+                     * @return NetworkInterfaceIds 弹性网卡ID，支持批量修改。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。
+
                      * 
                      */
                     std::vector<std::string> GetNetworkInterfaceIds() const;
 
                     /**
-                     * 设置弹性网卡ID，支持批量修改。
-                     * @param _networkInterfaceIds 弹性网卡ID，支持批量修改。
+                     * 设置弹性网卡ID，支持批量修改。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。
+
+                     * @param _networkInterfaceIds 弹性网卡ID，支持批量修改。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。
+
                      * 
                      */
                     void SetNetworkInterfaceIds(const std::vector<std::string>& _networkInterfaceIds);
@@ -64,15 +68,15 @@ namespace TencentCloud
                     bool NetworkInterfaceIdsHasBeenSet() const;
 
                     /**
-                     * 获取服务质量，可选值：PT、AU、AG、DEFAULT，分别代表云金、云银、云铜、默认四个等级。
-                     * @return QosLevel 服务质量，可选值：PT、AU、AG、DEFAULT，分别代表云金、云银、云铜、默认四个等级。
+                     * 获取服务质量，可选值：PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。
+                     * @return QosLevel 服务质量，可选值：PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。
                      * 
                      */
                     std::string GetQosLevel() const;
 
                     /**
-                     * 设置服务质量，可选值：PT、AU、AG、DEFAULT，分别代表云金、云银、云铜、默认四个等级。
-                     * @param _qosLevel 服务质量，可选值：PT、AU、AG、DEFAULT，分别代表云金、云银、云铜、默认四个等级。
+                     * 设置服务质量，可选值：PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。
+                     * @param _qosLevel 服务质量，可选值：PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。
                      * 
                      */
                     void SetQosLevel(const std::string& _qosLevel);
@@ -85,15 +89,15 @@ namespace TencentCloud
                     bool QosLevelHasBeenSet() const;
 
                     /**
-                     * 获取DirectSend端口范围最大值。
-                     * @return DirectSendMaxPort DirectSend端口范围最大值。
+                     * 获取DirectSend端口范围最大值。最大值: 65535。
+                     * @return DirectSendMaxPort DirectSend端口范围最大值。最大值: 65535。
                      * 
                      */
                     uint64_t GetDirectSendMaxPort() const;
 
                     /**
-                     * 设置DirectSend端口范围最大值。
-                     * @param _directSendMaxPort DirectSend端口范围最大值。
+                     * 设置DirectSend端口范围最大值。最大值: 65535。
+                     * @param _directSendMaxPort DirectSend端口范围最大值。最大值: 65535。
                      * 
                      */
                     void SetDirectSendMaxPort(const uint64_t& _directSendMaxPort);
@@ -108,19 +112,20 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 弹性网卡ID，支持批量修改。
+                     * 弹性网卡ID，支持批量修改。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。
+
                      */
                     std::vector<std::string> m_networkInterfaceIds;
                     bool m_networkInterfaceIdsHasBeenSet;
 
                     /**
-                     * 服务质量，可选值：PT、AU、AG、DEFAULT，分别代表云金、云银、云铜、默认四个等级。
+                     * 服务质量，可选值：PT（云金）、AU（云银）、AG(云铜）、DEFAULT（默认）。
                      */
                     std::string m_qosLevel;
                     bool m_qosLevelHasBeenSet;
 
                     /**
-                     * DirectSend端口范围最大值。
+                     * DirectSend端口范围最大值。最大值: 65535。
                      */
                     uint64_t m_directSendMaxPort;
                     bool m_directSendMaxPortHasBeenSet;

@@ -143,9 +143,7 @@ namespace TencentCloud
 
                     /**
                      * 获取资源ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 资源ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetId() const;
@@ -217,7 +215,6 @@ namespace TencentCloud
 
                     /**
                      * 资源ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;

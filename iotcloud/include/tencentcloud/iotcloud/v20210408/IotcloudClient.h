@@ -433,7 +433,7 @@ namespace TencentCloud
                 CancelDeviceFirmwareTaskOutcomeCallable CancelDeviceFirmwareTaskCallable(const Model::CancelDeviceFirmwareTaskRequest& request);
 
                 /**
-                 *本接口（CreateDevice）用于新建一个物联网通信设备。 
+                 *本接口（CreateDevice）用于新建一个物联网通信设备。
                  * @param req CreateDeviceRequest
                  * @return CreateDeviceOutcome
                  */
@@ -496,7 +496,7 @@ namespace TencentCloud
                 CreateTopicRuleOutcomeCallable CreateTopicRuleCallable(const Model::CreateTopicRuleRequest& request);
 
                 /**
-                 *本接口（DeleteDevice）用于删除物联网通信设备。 
+                 *本接口（DeleteDevice）用于删除物联网通信设备。
                  * @param req DeleteDeviceRequest
                  * @return DeleteDeviceOutcome
                  */

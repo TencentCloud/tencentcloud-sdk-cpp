@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自适应码流参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StreamPara 自适应码流参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ComplexAdaptiveDynamicStreamingTaskStreamPara GetStreamPara() const;
 
                     /**
                      * 设置自适应码流参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _streamPara 自适应码流参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStreamPara(const ComplexAdaptiveDynamicStreamingTaskStreamPara& _streamPara);
@@ -76,7 +72,6 @@ namespace TencentCloud
 
                     /**
                      * 自适应码流参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ComplexAdaptiveDynamicStreamingTaskStreamPara m_streamPara;
                     bool m_streamParaHasBeenSet;

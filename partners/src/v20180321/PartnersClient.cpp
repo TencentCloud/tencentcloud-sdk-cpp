@@ -685,6 +685,49 @@ PartnersClient::DescribeClientJoinIncreaseListOutcomeCallable PartnersClient::De
     return task->get_future();
 }
 
+PartnersClient::DescribeClientSwitchTraTaskInfoOutcome PartnersClient::DescribeClientSwitchTraTaskInfo(const DescribeClientSwitchTraTaskInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClientSwitchTraTaskInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClientSwitchTraTaskInfoResponse rsp = DescribeClientSwitchTraTaskInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClientSwitchTraTaskInfoOutcome(rsp);
+        else
+            return DescribeClientSwitchTraTaskInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClientSwitchTraTaskInfoOutcome(outcome.GetError());
+    }
+}
+
+void PartnersClient::DescribeClientSwitchTraTaskInfoAsync(const DescribeClientSwitchTraTaskInfoRequest& request, const DescribeClientSwitchTraTaskInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClientSwitchTraTaskInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PartnersClient::DescribeClientSwitchTraTaskInfoOutcomeCallable PartnersClient::DescribeClientSwitchTraTaskInfoCallable(const DescribeClientSwitchTraTaskInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClientSwitchTraTaskInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClientSwitchTraTaskInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PartnersClient::DescribeRebateInfosOutcome PartnersClient::DescribeRebateInfos(const DescribeRebateInfosRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRebateInfos");

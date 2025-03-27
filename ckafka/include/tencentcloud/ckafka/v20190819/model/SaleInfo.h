@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool FlagHasBeenSet() const;
 
                     /**
-                     * 获取ckakfa版本号(1.1.1/2.4.2/0.10.2)
-                     * @return Version ckakfa版本号(1.1.1/2.4.2/0.10.2)
+                     * 获取ckafka版本号(1.1.1/2.4.2/0.10.2)
+                     * @return Version ckafka版本号(1.1.1/2.4.2/0.10.2)
                      * 
                      */
                     std::string GetVersion() const;
 
                     /**
-                     * 设置ckakfa版本号(1.1.1/2.4.2/0.10.2)
-                     * @param _version ckakfa版本号(1.1.1/2.4.2/0.10.2)
+                     * 设置ckafka版本号(1.1.1/2.4.2/0.10.2)
+                     * @param _version ckafka版本号(1.1.1/2.4.2/0.10.2)
                      * 
                      */
                     void SetVersion(const std::string& _version);
@@ -139,7 +139,7 @@ namespace TencentCloud
                     bool m_flagHasBeenSet;
 
                     /**
-                     * ckakfa版本号(1.1.1/2.4.2/0.10.2)
+                     * ckafka版本号(1.1.1/2.4.2/0.10.2)
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;

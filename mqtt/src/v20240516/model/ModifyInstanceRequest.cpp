@@ -28,7 +28,8 @@ ModifyInstanceRequest::ModifyInstanceRequest() :
     m_remarkHasBeenSet(false),
     m_skuCodeHasBeenSet(false),
     m_deviceCertificateProvisionTypeHasBeenSet(false),
-    m_automaticActivationHasBeenSet(false)
+    m_automaticActivationHasBeenSet(false),
+    m_authorizationPolicyHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string ModifyInstanceRequest::ToJsonString() const
         string key = "AutomaticActivation";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_automaticActivation, allocator);
+    }
+
+    if (m_authorizationPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuthorizationPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_authorizationPolicy, allocator);
     }
 
 
@@ -189,6 +198,22 @@ void ModifyInstanceRequest::SetAutomaticActivation(const bool& _automaticActivat
 bool ModifyInstanceRequest::AutomaticActivationHasBeenSet() const
 {
     return m_automaticActivationHasBeenSet;
+}
+
+bool ModifyInstanceRequest::GetAuthorizationPolicy() const
+{
+    return m_authorizationPolicy;
+}
+
+void ModifyInstanceRequest::SetAuthorizationPolicy(const bool& _authorizationPolicy)
+{
+    m_authorizationPolicy = _authorizationPolicy;
+    m_authorizationPolicyHasBeenSet = true;
+}
+
+bool ModifyInstanceRequest::AuthorizationPolicyHasBeenSet() const
+{
+    return m_authorizationPolicyHasBeenSet;
 }
 
 

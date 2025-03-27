@@ -47,7 +47,8 @@ CreateCloudDBInstancesRequest::CreateCloudDBInstancesRequest() :
     m_collationHasBeenSet(false),
     m_timeZoneHasBeenSet(false),
     m_multiNodesHasBeenSet(false),
-    m_drZonesHasBeenSet(false)
+    m_drZonesHasBeenSet(false),
+    m_diskEncryptFlagHasBeenSet(false)
 {
 }
 
@@ -283,6 +284,14 @@ string CreateCloudDBInstancesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_diskEncryptFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiskEncryptFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_diskEncryptFlag, allocator);
     }
 
 
@@ -691,6 +700,22 @@ void CreateCloudDBInstancesRequest::SetDrZones(const vector<string>& _drZones)
 bool CreateCloudDBInstancesRequest::DrZonesHasBeenSet() const
 {
     return m_drZonesHasBeenSet;
+}
+
+int64_t CreateCloudDBInstancesRequest::GetDiskEncryptFlag() const
+{
+    return m_diskEncryptFlag;
+}
+
+void CreateCloudDBInstancesRequest::SetDiskEncryptFlag(const int64_t& _diskEncryptFlag)
+{
+    m_diskEncryptFlag = _diskEncryptFlag;
+    m_diskEncryptFlagHasBeenSet = true;
+}
+
+bool CreateCloudDBInstancesRequest::DiskEncryptFlagHasBeenSet() const
+{
+    return m_diskEncryptFlagHasBeenSet;
 }
 
 

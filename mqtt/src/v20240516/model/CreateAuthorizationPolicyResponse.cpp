@@ -23,7 +23,9 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mqtt::V20240516::Model;
 using namespace std;
 
-CreateAuthorizationPolicyResponse::CreateAuthorizationPolicyResponse()
+CreateAuthorizationPolicyResponse::CreateAuthorizationPolicyResponse() :
+    m_instanceIdHasBeenSet(false),
+    m_idHasBeenSet(false)
 {
 }
 
@@ -61,6 +63,26 @@ CoreInternalOutcome CreateAuthorizationPolicyResponse::Deserialize(const string 
     }
 
 
+    if (rsp.HasMember("InstanceId") && !rsp["InstanceId"].IsNull())
+    {
+        if (!rsp["InstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceId = string(rsp["InstanceId"].GetString());
+        m_instanceIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Id") && !rsp["Id"].IsNull())
+    {
+        if (!rsp["Id"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Id` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_id = rsp["Id"].GetInt64();
+        m_idHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +92,22 @@ string CreateAuthorizationPolicyResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_idHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Id";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_id, allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +120,25 @@ string CreateAuthorizationPolicyResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string CreateAuthorizationPolicyResponse::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+bool CreateAuthorizationPolicyResponse::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
+
+int64_t CreateAuthorizationPolicyResponse::GetId() const
+{
+    return m_id;
+}
+
+bool CreateAuthorizationPolicyResponse::IdHasBeenSet() const
+{
+    return m_idHasBeenSet;
+}
 
 

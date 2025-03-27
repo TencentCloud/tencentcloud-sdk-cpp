@@ -25,7 +25,8 @@ using namespace std;
 
 DescribePullTransformPushInfoResponse::DescribePullTransformPushInfoResponse() :
     m_dataInfoListHasBeenSet(false),
-    m_totalDurationHasBeenSet(false)
+    m_totalDurationHasBeenSet(false),
+    m_totalDurationSecondHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,16 @@ CoreInternalOutcome DescribePullTransformPushInfoResponse::Deserialize(const str
         m_totalDurationHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TotalDurationSecond") && !rsp["TotalDurationSecond"].IsNull())
+    {
+        if (!rsp["TotalDurationSecond"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalDurationSecond` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalDurationSecond = rsp["TotalDurationSecond"].GetUint64();
+        m_totalDurationSecondHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +137,14 @@ string DescribePullTransformPushInfoResponse::ToJsonString() const
         value.AddMember(iKey, m_totalDuration, allocator);
     }
 
+    if (m_totalDurationSecondHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalDurationSecond";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalDurationSecond, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -156,6 +175,16 @@ uint64_t DescribePullTransformPushInfoResponse::GetTotalDuration() const
 bool DescribePullTransformPushInfoResponse::TotalDurationHasBeenSet() const
 {
     return m_totalDurationHasBeenSet;
+}
+
+uint64_t DescribePullTransformPushInfoResponse::GetTotalDurationSecond() const
+{
+    return m_totalDurationSecond;
+}
+
+bool DescribePullTransformPushInfoResponse::TotalDurationSecondHasBeenSet() const
+{
+    return m_totalDurationSecondHasBeenSet;
 }
 
 

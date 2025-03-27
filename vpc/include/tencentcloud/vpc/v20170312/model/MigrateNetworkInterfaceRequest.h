@@ -43,15 +43,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取弹性网卡实例ID，例如：eni-m6dyj72l。
-                     * @return NetworkInterfaceId 弹性网卡实例ID，例如：eni-m6dyj72l。
+                     * 获取弹性网卡实例ID，例如：eni-m6dyj72l。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。
+
+                     * @return NetworkInterfaceId 弹性网卡实例ID，例如：eni-m6dyj72l。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。
+
                      * 
                      */
                     std::string GetNetworkInterfaceId() const;
 
                     /**
-                     * 设置弹性网卡实例ID，例如：eni-m6dyj72l。
-                     * @param _networkInterfaceId 弹性网卡实例ID，例如：eni-m6dyj72l。
+                     * 设置弹性网卡实例ID，例如：eni-m6dyj72l。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。
+
+                     * @param _networkInterfaceId 弹性网卡实例ID，例如：eni-m6dyj72l。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。
+
                      * 
                      */
                     void SetNetworkInterfaceId(const std::string& _networkInterfaceId);
@@ -64,15 +68,19 @@ namespace TencentCloud
                     bool NetworkInterfaceIdHasBeenSet() const;
 
                     /**
-                     * 获取弹性网卡当前绑定的CVM实例ID。形如：ins-r8hr2upy。
-                     * @return SourceInstanceId 弹性网卡当前绑定的CVM实例ID。形如：ins-r8hr2upy。
+                     * 获取弹性网卡当前绑定的CVM实例ID。形如：ins-r8hr2upy。可通过[DescribeInstances](https://cloud.tencent.com/document/product/213/15728)接口获取。
+
+                     * @return SourceInstanceId 弹性网卡当前绑定的CVM实例ID。形如：ins-r8hr2upy。可通过[DescribeInstances](https://cloud.tencent.com/document/product/213/15728)接口获取。
+
                      * 
                      */
                     std::string GetSourceInstanceId() const;
 
                     /**
-                     * 设置弹性网卡当前绑定的CVM实例ID。形如：ins-r8hr2upy。
-                     * @param _sourceInstanceId 弹性网卡当前绑定的CVM实例ID。形如：ins-r8hr2upy。
+                     * 设置弹性网卡当前绑定的CVM实例ID。形如：ins-r8hr2upy。可通过[DescribeInstances](https://cloud.tencent.com/document/product/213/15728)接口获取。
+
+                     * @param _sourceInstanceId 弹性网卡当前绑定的CVM实例ID。形如：ins-r8hr2upy。可通过[DescribeInstances](https://cloud.tencent.com/document/product/213/15728)接口获取。
+
                      * 
                      */
                     void SetSourceInstanceId(const std::string& _sourceInstanceId);
@@ -85,15 +93,19 @@ namespace TencentCloud
                     bool SourceInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取待迁移的目的CVM实例ID。
-                     * @return DestinationInstanceId 待迁移的目的CVM实例ID。
+                     * 获取待迁移的目的CVM实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/product/213/15728)接口获取。
+
+                     * @return DestinationInstanceId 待迁移的目的CVM实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/product/213/15728)接口获取。
+
                      * 
                      */
                     std::string GetDestinationInstanceId() const;
 
                     /**
-                     * 设置待迁移的目的CVM实例ID。
-                     * @param _destinationInstanceId 待迁移的目的CVM实例ID。
+                     * 设置待迁移的目的CVM实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/product/213/15728)接口获取。
+
+                     * @param _destinationInstanceId 待迁移的目的CVM实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/product/213/15728)接口获取。
+
                      * 
                      */
                     void SetDestinationInstanceId(const std::string& _destinationInstanceId);
@@ -106,15 +118,15 @@ namespace TencentCloud
                     bool DestinationInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取网卡绑定类型：0 标准型 1 扩展型。
-                     * @return AttachType 网卡绑定类型：0 标准型 1 扩展型。
+                     * 获取网卡绑定类型：0 标准型 1 扩展型。默认：0。
+                     * @return AttachType 网卡绑定类型：0 标准型 1 扩展型。默认：0。
                      * 
                      */
                     uint64_t GetAttachType() const;
 
                     /**
-                     * 设置网卡绑定类型：0 标准型 1 扩展型。
-                     * @param _attachType 网卡绑定类型：0 标准型 1 扩展型。
+                     * 设置网卡绑定类型：0 标准型 1 扩展型。默认：0。
+                     * @param _attachType 网卡绑定类型：0 标准型 1 扩展型。默认：0。
                      * 
                      */
                     void SetAttachType(const uint64_t& _attachType);
@@ -129,25 +141,28 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 弹性网卡实例ID，例如：eni-m6dyj72l。
+                     * 弹性网卡实例ID，例如：eni-m6dyj72l。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。
+
                      */
                     std::string m_networkInterfaceId;
                     bool m_networkInterfaceIdHasBeenSet;
 
                     /**
-                     * 弹性网卡当前绑定的CVM实例ID。形如：ins-r8hr2upy。
+                     * 弹性网卡当前绑定的CVM实例ID。形如：ins-r8hr2upy。可通过[DescribeInstances](https://cloud.tencent.com/document/product/213/15728)接口获取。
+
                      */
                     std::string m_sourceInstanceId;
                     bool m_sourceInstanceIdHasBeenSet;
 
                     /**
-                     * 待迁移的目的CVM实例ID。
+                     * 待迁移的目的CVM实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/product/213/15728)接口获取。
+
                      */
                     std::string m_destinationInstanceId;
                     bool m_destinationInstanceIdHasBeenSet;
 
                     /**
-                     * 网卡绑定类型：0 标准型 1 扩展型。
+                     * 网卡绑定类型：0 标准型 1 扩展型。默认：0。
                      */
                     uint64_t m_attachType;
                     bool m_attachTypeHasBeenSet;

@@ -41,7 +41,8 @@ ProductEntry::ProductEntry() :
     m_bindStrategyHasBeenSet(false),
     m_deviceCountHasBeenSet(false),
     m_rateHasBeenSet(false),
-    m_periodHasBeenSet(false)
+    m_periodHasBeenSet(false),
+    m_isInterconnectionHasBeenSet(false)
 {
 }
 
@@ -260,6 +261,16 @@ CoreInternalOutcome ProductEntry::Deserialize(const rapidjson::Value &value)
         m_periodHasBeenSet = true;
     }
 
+    if (value.HasMember("IsInterconnection") && !value["IsInterconnection"].IsNull())
+    {
+        if (!value["IsInterconnection"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProductEntry.IsInterconnection` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isInterconnection = value["IsInterconnection"].GetInt64();
+        m_isInterconnectionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -433,6 +444,14 @@ void ProductEntry::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Period";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_period.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isInterconnectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsInterconnection";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isInterconnection, allocator);
     }
 
 }
@@ -772,5 +791,21 @@ void ProductEntry::SetPeriod(const string& _period)
 bool ProductEntry::PeriodHasBeenSet() const
 {
     return m_periodHasBeenSet;
+}
+
+int64_t ProductEntry::GetIsInterconnection() const
+{
+    return m_isInterconnection;
+}
+
+void ProductEntry::SetIsInterconnection(const int64_t& _isInterconnection)
+{
+    m_isInterconnection = _isInterconnection;
+    m_isInterconnectionHasBeenSet = true;
+}
+
+bool ProductEntry::IsInterconnectionHasBeenSet() const
+{
+    return m_isInterconnectionHasBeenSet;
 }
 

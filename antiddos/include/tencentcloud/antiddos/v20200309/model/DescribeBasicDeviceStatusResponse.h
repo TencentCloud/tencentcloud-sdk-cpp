@@ -66,9 +66,7 @@ namespace TencentCloud
 
                     /**
                      * 获取域名化资产的名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CLBData 域名化资产的名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<KeyValue> GetCLBData() const;
@@ -82,9 +80,7 @@ namespace TencentCloud
 
                     /**
                      * 获取cnamewaf资源状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CnameWafData cnamewaf资源状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<KeyValue> GetCnameWafData() const;
@@ -109,14 +105,12 @@ namespace TencentCloud
 
                     /**
                      * 域名化资产的名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<KeyValue> m_cLBData;
                     bool m_cLBDataHasBeenSet;
 
                     /**
                      * cnamewaf资源状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<KeyValue> m_cnameWafData;
                     bool m_cnameWafDataHasBeenSet;

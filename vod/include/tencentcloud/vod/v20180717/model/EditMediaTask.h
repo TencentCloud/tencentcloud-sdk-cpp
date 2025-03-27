@@ -197,18 +197,14 @@ namespace TencentCloud
 
                     /**
                      * 获取视频编辑任务的输入。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Input 视频编辑任务的输入。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     EditMediaTaskInput GetInput() const;
 
                     /**
                      * 设置视频编辑任务的输入。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _input 视频编辑任务的输入。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInput(const EditMediaTaskInput& _input);
@@ -222,18 +218,14 @@ namespace TencentCloud
 
                     /**
                      * 获取视频编辑任务的输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Output 视频编辑任务的输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     EditMediaTaskOutput GetOutput() const;
 
                     /**
                      * 设置视频编辑任务的输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _output 视频编辑任务的输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutput(const EditMediaTaskOutput& _output);
@@ -395,14 +387,12 @@ namespace TencentCloud
 
                     /**
                      * 视频编辑任务的输入。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     EditMediaTaskInput m_input;
                     bool m_inputHasBeenSet;
 
                     /**
                      * 视频编辑任务的输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     EditMediaTaskOutput m_output;
                     bool m_outputHasBeenSet;

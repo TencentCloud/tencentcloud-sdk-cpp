@@ -25,8 +25,8 @@ using namespace std;
 ProcessImageRequest::ProcessImageRequest() :
     m_fileIdHasBeenSet(false),
     m_operationHasBeenSet(false),
-    m_contentReviewInputHasBeenSet(false),
-    m_subAppIdHasBeenSet(false)
+    m_subAppIdHasBeenSet(false),
+    m_contentReviewInputHasBeenSet(false)
 {
 }
 
@@ -53,6 +53,14 @@ string ProcessImageRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_operation.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_subAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
+    }
+
     if (m_contentReviewInputHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -60,14 +68,6 @@ string ProcessImageRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_contentReviewInput.ToJsonObject(d[key.c_str()], allocator);
-    }
-
-    if (m_subAppIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SubAppId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_subAppId, allocator);
     }
 
 
@@ -110,22 +110,6 @@ bool ProcessImageRequest::OperationHasBeenSet() const
     return m_operationHasBeenSet;
 }
 
-ImageContentReviewInput ProcessImageRequest::GetContentReviewInput() const
-{
-    return m_contentReviewInput;
-}
-
-void ProcessImageRequest::SetContentReviewInput(const ImageContentReviewInput& _contentReviewInput)
-{
-    m_contentReviewInput = _contentReviewInput;
-    m_contentReviewInputHasBeenSet = true;
-}
-
-bool ProcessImageRequest::ContentReviewInputHasBeenSet() const
-{
-    return m_contentReviewInputHasBeenSet;
-}
-
 uint64_t ProcessImageRequest::GetSubAppId() const
 {
     return m_subAppId;
@@ -140,6 +124,22 @@ void ProcessImageRequest::SetSubAppId(const uint64_t& _subAppId)
 bool ProcessImageRequest::SubAppIdHasBeenSet() const
 {
     return m_subAppIdHasBeenSet;
+}
+
+ImageContentReviewInput ProcessImageRequest::GetContentReviewInput() const
+{
+    return m_contentReviewInput;
+}
+
+void ProcessImageRequest::SetContentReviewInput(const ImageContentReviewInput& _contentReviewInput)
+{
+    m_contentReviewInput = _contentReviewInput;
+    m_contentReviewInputHasBeenSet = true;
+}
+
+bool ProcessImageRequest::ContentReviewInputHasBeenSet() const
+{
+    return m_contentReviewInputHasBeenSet;
 }
 
 

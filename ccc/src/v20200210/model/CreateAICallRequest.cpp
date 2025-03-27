@@ -25,11 +25,11 @@ using namespace std;
 CreateAICallRequest::CreateAICallRequest() :
     m_sdkAppIdHasBeenSet(false),
     m_calleeHasBeenSet(false),
-    m_systemPromptHasBeenSet(false),
     m_lLMTypeHasBeenSet(false),
-    m_modelHasBeenSet(false),
     m_aPIKeyHasBeenSet(false),
     m_aPIUrlHasBeenSet(false),
+    m_systemPromptHasBeenSet(false),
+    m_modelHasBeenSet(false),
     m_voiceTypeHasBeenSet(false),
     m_callersHasBeenSet(false),
     m_welcomeMessageHasBeenSet(false),
@@ -50,7 +50,8 @@ CreateAICallRequest::CreateAICallRequest() :
     m_promptVariablesHasBeenSet(false),
     m_vadSilenceTimeHasBeenSet(false),
     m_extractConfigHasBeenSet(false),
-    m_temperatureHasBeenSet(false)
+    m_temperatureHasBeenSet(false),
+    m_variablesHasBeenSet(false)
 {
 }
 
@@ -77,28 +78,12 @@ string CreateAICallRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_callee.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_systemPromptHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SystemPrompt";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_systemPrompt.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_lLMTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "LLMType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_lLMType.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_modelHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Model";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_model.c_str(), allocator).Move(), allocator);
     }
 
     if (m_aPIKeyHasBeenSet)
@@ -115,6 +100,22 @@ string CreateAICallRequest::ToJsonString() const
         string key = "APIUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_aPIUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_systemPromptHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SystemPrompt";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_systemPrompt.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Model";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_model.c_str(), allocator).Move(), allocator);
     }
 
     if (m_voiceTypeHasBeenSet)
@@ -316,6 +317,21 @@ string CreateAICallRequest::ToJsonString() const
         d.AddMember(iKey, m_temperature, allocator);
     }
 
+    if (m_variablesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Variables";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_variables.begin(); itr != m_variables.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -356,22 +372,6 @@ bool CreateAICallRequest::CalleeHasBeenSet() const
     return m_calleeHasBeenSet;
 }
 
-string CreateAICallRequest::GetSystemPrompt() const
-{
-    return m_systemPrompt;
-}
-
-void CreateAICallRequest::SetSystemPrompt(const string& _systemPrompt)
-{
-    m_systemPrompt = _systemPrompt;
-    m_systemPromptHasBeenSet = true;
-}
-
-bool CreateAICallRequest::SystemPromptHasBeenSet() const
-{
-    return m_systemPromptHasBeenSet;
-}
-
 string CreateAICallRequest::GetLLMType() const
 {
     return m_lLMType;
@@ -386,22 +386,6 @@ void CreateAICallRequest::SetLLMType(const string& _lLMType)
 bool CreateAICallRequest::LLMTypeHasBeenSet() const
 {
     return m_lLMTypeHasBeenSet;
-}
-
-string CreateAICallRequest::GetModel() const
-{
-    return m_model;
-}
-
-void CreateAICallRequest::SetModel(const string& _model)
-{
-    m_model = _model;
-    m_modelHasBeenSet = true;
-}
-
-bool CreateAICallRequest::ModelHasBeenSet() const
-{
-    return m_modelHasBeenSet;
 }
 
 string CreateAICallRequest::GetAPIKey() const
@@ -434,6 +418,38 @@ void CreateAICallRequest::SetAPIUrl(const string& _aPIUrl)
 bool CreateAICallRequest::APIUrlHasBeenSet() const
 {
     return m_aPIUrlHasBeenSet;
+}
+
+string CreateAICallRequest::GetSystemPrompt() const
+{
+    return m_systemPrompt;
+}
+
+void CreateAICallRequest::SetSystemPrompt(const string& _systemPrompt)
+{
+    m_systemPrompt = _systemPrompt;
+    m_systemPromptHasBeenSet = true;
+}
+
+bool CreateAICallRequest::SystemPromptHasBeenSet() const
+{
+    return m_systemPromptHasBeenSet;
+}
+
+string CreateAICallRequest::GetModel() const
+{
+    return m_model;
+}
+
+void CreateAICallRequest::SetModel(const string& _model)
+{
+    m_model = _model;
+    m_modelHasBeenSet = true;
+}
+
+bool CreateAICallRequest::ModelHasBeenSet() const
+{
+    return m_modelHasBeenSet;
 }
 
 string CreateAICallRequest::GetVoiceType() const
@@ -770,6 +786,22 @@ void CreateAICallRequest::SetTemperature(const double& _temperature)
 bool CreateAICallRequest::TemperatureHasBeenSet() const
 {
     return m_temperatureHasBeenSet;
+}
+
+vector<Variable> CreateAICallRequest::GetVariables() const
+{
+    return m_variables;
+}
+
+void CreateAICallRequest::SetVariables(const vector<Variable>& _variables)
+{
+    m_variables = _variables;
+    m_variablesHasBeenSet = true;
+}
+
+bool CreateAICallRequest::VariablesHasBeenSet() const
+{
+    return m_variablesHasBeenSet;
 }
 
 

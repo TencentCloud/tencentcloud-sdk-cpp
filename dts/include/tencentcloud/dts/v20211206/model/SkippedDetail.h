@@ -70,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取跳过校验的表详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Items 跳过校验的表详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SkippedItem> GetItems() const;
 
                     /**
                      * 设置跳过校验的表详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _items 跳过校验的表详情
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetItems(const std::vector<SkippedItem>& _items);
@@ -103,7 +99,6 @@ namespace TencentCloud
 
                     /**
                      * 跳过校验的表详情
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SkippedItem> m_items;
                     bool m_itemsHasBeenSet;

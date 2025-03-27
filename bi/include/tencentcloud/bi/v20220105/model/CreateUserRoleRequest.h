@@ -68,21 +68,21 @@ namespace TencentCloud
                     /**
                      * 获取用户列表（废弃）
                      * @return UserList 用户列表（废弃）
-                     * 
+                     * @deprecated
                      */
                     std::vector<UserIdAndUserName> GetUserList() const;
 
                     /**
                      * 设置用户列表（废弃）
                      * @param _userList 用户列表（废弃）
-                     * 
+                     * @deprecated
                      */
                     void SetUserList(const std::vector<UserIdAndUserName>& _userList);
 
                     /**
                      * 判断参数 UserList 是否已赋值
                      * @return UserList 是否已赋值
-                     * 
+                     * @deprecated
                      */
                     bool UserListHasBeenSet() const;
 

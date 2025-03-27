@@ -148,6 +148,43 @@ namespace TencentCloud
                      */
                     bool PromptVariablesHasBeenSet() const;
 
+                    /**
+                     * 获取通用变量： <p>提示词变量</p> <p>欢迎语变量</p> <p> dify变量</p>  
+
+1. dify-inputs-xxx 为dify的inputs变量
+2.  dify-inputs-user 为dify的user值
+3.  dify-inputs-conversation_id 为dify的conversation_id值
+                     * @return Variables 通用变量： <p>提示词变量</p> <p>欢迎语变量</p> <p> dify变量</p>  
+
+1. dify-inputs-xxx 为dify的inputs变量
+2.  dify-inputs-user 为dify的user值
+3.  dify-inputs-conversation_id 为dify的conversation_id值
+                     * 
+                     */
+                    std::vector<Variable> GetVariables() const;
+
+                    /**
+                     * 设置通用变量： <p>提示词变量</p> <p>欢迎语变量</p> <p> dify变量</p>  
+
+1. dify-inputs-xxx 为dify的inputs变量
+2.  dify-inputs-user 为dify的user值
+3.  dify-inputs-conversation_id 为dify的conversation_id值
+                     * @param _variables 通用变量： <p>提示词变量</p> <p>欢迎语变量</p> <p> dify变量</p>  
+
+1. dify-inputs-xxx 为dify的inputs变量
+2.  dify-inputs-user 为dify的user值
+3.  dify-inputs-conversation_id 为dify的conversation_id值
+                     * 
+                     */
+                    void SetVariables(const std::vector<Variable>& _variables);
+
+                    /**
+                     * 判断参数 Variables 是否已赋值
+                     * @return Variables 是否已赋值
+                     * 
+                     */
+                    bool VariablesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -179,6 +216,16 @@ namespace TencentCloud
                      */
                     std::vector<Variable> m_promptVariables;
                     bool m_promptVariablesHasBeenSet;
+
+                    /**
+                     * 通用变量： <p>提示词变量</p> <p>欢迎语变量</p> <p> dify变量</p>  
+
+1. dify-inputs-xxx 为dify的inputs变量
+2.  dify-inputs-user 为dify的user值
+3.  dify-inputs-conversation_id 为dify的conversation_id值
+                     */
+                    std::vector<Variable> m_variables;
+                    bool m_variablesHasBeenSet;
 
                 };
             }

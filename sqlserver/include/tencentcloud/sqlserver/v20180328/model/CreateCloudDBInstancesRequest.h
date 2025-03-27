@@ -568,6 +568,27 @@ namespace TencentCloud
                      */
                     bool DrZonesHasBeenSet() const;
 
+                    /**
+                     * 获取磁盘加密标识，0-不加密，1-加密
+                     * @return DiskEncryptFlag 磁盘加密标识，0-不加密，1-加密
+                     * 
+                     */
+                    int64_t GetDiskEncryptFlag() const;
+
+                    /**
+                     * 设置磁盘加密标识，0-不加密，1-加密
+                     * @param _diskEncryptFlag 磁盘加密标识，0-不加密，1-加密
+                     * 
+                     */
+                    void SetDiskEncryptFlag(const int64_t& _diskEncryptFlag);
+
+                    /**
+                     * 判断参数 DiskEncryptFlag 是否已赋值
+                     * @return DiskEncryptFlag 是否已赋值
+                     * 
+                     */
+                    bool DiskEncryptFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -719,6 +740,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_drZones;
                     bool m_drZonesHasBeenSet;
+
+                    /**
+                     * 磁盘加密标识，0-不加密，1-加密
+                     */
+                    int64_t m_diskEncryptFlag;
+                    bool m_diskEncryptFlagHasBeenSet;
 
                 };
             }

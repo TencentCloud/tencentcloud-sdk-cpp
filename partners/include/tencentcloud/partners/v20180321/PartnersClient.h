@@ -53,6 +53,8 @@
 #include <tencentcloud/partners/v20180321/model/DescribeClientBalanceNewResponse.h>
 #include <tencentcloud/partners/v20180321/model/DescribeClientJoinIncreaseListRequest.h>
 #include <tencentcloud/partners/v20180321/model/DescribeClientJoinIncreaseListResponse.h>
+#include <tencentcloud/partners/v20180321/model/DescribeClientSwitchTraTaskInfoRequest.h>
+#include <tencentcloud/partners/v20180321/model/DescribeClientSwitchTraTaskInfoResponse.h>
 #include <tencentcloud/partners/v20180321/model/DescribeRebateInfosRequest.h>
 #include <tencentcloud/partners/v20180321/model/DescribeRebateInfosResponse.h>
 #include <tencentcloud/partners/v20180321/model/DescribeRebateInfosNewRequest.h>
@@ -124,6 +126,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeClientJoinIncreaseListResponse> DescribeClientJoinIncreaseListOutcome;
                 typedef std::future<DescribeClientJoinIncreaseListOutcome> DescribeClientJoinIncreaseListOutcomeCallable;
                 typedef std::function<void(const PartnersClient*, const Model::DescribeClientJoinIncreaseListRequest&, DescribeClientJoinIncreaseListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClientJoinIncreaseListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeClientSwitchTraTaskInfoResponse> DescribeClientSwitchTraTaskInfoOutcome;
+                typedef std::future<DescribeClientSwitchTraTaskInfoOutcome> DescribeClientSwitchTraTaskInfoOutcomeCallable;
+                typedef std::function<void(const PartnersClient*, const Model::DescribeClientSwitchTraTaskInfoRequest&, DescribeClientSwitchTraTaskInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClientSwitchTraTaskInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRebateInfosResponse> DescribeRebateInfosOutcome;
                 typedef std::future<DescribeRebateInfosOutcome> DescribeRebateInfosOutcomeCallable;
                 typedef std::function<void(const PartnersClient*, const Model::DescribeRebateInfosRequest&, DescribeRebateInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRebateInfosAsyncHandler;
@@ -282,6 +287,15 @@ namespace TencentCloud
                 DescribeClientJoinIncreaseListOutcome DescribeClientJoinIncreaseList(const Model::DescribeClientJoinIncreaseListRequest &request);
                 void DescribeClientJoinIncreaseListAsync(const Model::DescribeClientJoinIncreaseListRequest& request, const DescribeClientJoinIncreaseListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeClientJoinIncreaseListOutcomeCallable DescribeClientJoinIncreaseListCallable(const Model::DescribeClientJoinIncreaseListRequest& request);
+
+                /**
+                 *查询客户的交易类型切换任务的信息，查询成功则获取当前用户的切换链接，查询失败则返回失败的原因
+                 * @param req DescribeClientSwitchTraTaskInfoRequest
+                 * @return DescribeClientSwitchTraTaskInfoOutcome
+                 */
+                DescribeClientSwitchTraTaskInfoOutcome DescribeClientSwitchTraTaskInfo(const Model::DescribeClientSwitchTraTaskInfoRequest &request);
+                void DescribeClientSwitchTraTaskInfoAsync(const Model::DescribeClientSwitchTraTaskInfoRequest& request, const DescribeClientSwitchTraTaskInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClientSwitchTraTaskInfoOutcomeCallable DescribeClientSwitchTraTaskInfoCallable(const Model::DescribeClientSwitchTraTaskInfoRequest& request);
 
                 /**
                  *【该接口已下线，请切换使用升级版本DescribeRebateInfosNew】代理商可查询自己名下全部返佣信息

@@ -72,6 +72,20 @@ namespace TencentCloud
                      */
                     bool TotalDurationHasBeenSet() const;
 
+                    /**
+                     * 获取拉流转推得总时长（秒）
+                     * @return TotalDurationSecond 拉流转推得总时长（秒）
+                     * 
+                     */
+                    uint64_t GetTotalDurationSecond() const;
+
+                    /**
+                     * 判断参数 TotalDurationSecond 是否已赋值
+                     * @return TotalDurationSecond 是否已赋值
+                     * 
+                     */
+                    bool TotalDurationSecondHasBeenSet() const;
+
                 private:
 
                     /**
@@ -85,6 +99,12 @@ namespace TencentCloud
                      */
                     uint64_t m_totalDuration;
                     bool m_totalDurationHasBeenSet;
+
+                    /**
+                     * 拉流转推得总时长（秒）
+                     */
+                    uint64_t m_totalDurationSecond;
+                    bool m_totalDurationSecondHasBeenSet;
 
                 };
             }

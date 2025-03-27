@@ -51,18 +51,14 @@ namespace TencentCloud
 
                     /**
                      * 获取画面鉴别涉及令人反感的信息的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ImgReviewInfo 画面鉴别涉及令人反感的信息的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     PornImgReviewTemplateInfo GetImgReviewInfo() const;
 
                     /**
                      * 设置画面鉴别涉及令人反感的信息的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _imgReviewInfo 画面鉴别涉及令人反感的信息的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetImgReviewInfo(const PornImgReviewTemplateInfo& _imgReviewInfo);
@@ -76,18 +72,14 @@ namespace TencentCloud
 
                     /**
                      * 获取语音鉴别涉及令人反感的信息的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AsrReviewInfo 语音鉴别涉及令人反感的信息的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     PornAsrReviewTemplateInfo GetAsrReviewInfo() const;
 
                     /**
                      * 设置语音鉴别涉及令人反感的信息的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _asrReviewInfo 语音鉴别涉及令人反感的信息的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAsrReviewInfo(const PornAsrReviewTemplateInfo& _asrReviewInfo);
@@ -101,18 +93,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文本鉴别涉及令人反感的信息的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OcrReviewInfo 文本鉴别涉及令人反感的信息的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     PornOcrReviewTemplateInfo GetOcrReviewInfo() const;
 
                     /**
                      * 设置文本鉴别涉及令人反感的信息的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ocrReviewInfo 文本鉴别涉及令人反感的信息的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOcrReviewInfo(const PornOcrReviewTemplateInfo& _ocrReviewInfo);
@@ -128,21 +116,18 @@ namespace TencentCloud
 
                     /**
                      * 画面鉴别涉及令人反感的信息的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PornImgReviewTemplateInfo m_imgReviewInfo;
                     bool m_imgReviewInfoHasBeenSet;
 
                     /**
                      * 语音鉴别涉及令人反感的信息的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PornAsrReviewTemplateInfo m_asrReviewInfo;
                     bool m_asrReviewInfoHasBeenSet;
 
                     /**
                      * 文本鉴别涉及令人反感的信息的控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     PornOcrReviewTemplateInfo m_ocrReviewInfo;
                     bool m_ocrReviewInfoHasBeenSet;

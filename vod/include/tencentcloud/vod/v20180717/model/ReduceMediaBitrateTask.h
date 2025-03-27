@@ -163,18 +163,14 @@ namespace TencentCloud
 
                     /**
                      * 获取原始视频的元信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MetaData 原始视频的元信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     MediaMetaData GetMetaData() const;
 
                     /**
                      * 设置原始视频的元信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _metaData 原始视频的元信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMetaData(const MediaMetaData& _metaData);
@@ -335,7 +331,6 @@ namespace TencentCloud
 
                     /**
                      * 原始视频的元信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MediaMetaData m_metaData;
                     bool m_metaDataHasBeenSet;

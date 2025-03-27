@@ -31,6 +31,7 @@ set(partners_public_header_model
   include/tencentcloud/partners/v20180321/model/DescribeAgentDealsByCacheResponse.h
   include/tencentcloud/partners/v20180321/model/ClientIncreaseInfoList.h
   include/tencentcloud/partners/v20180321/model/RebateInfoElem.h
+  include/tencentcloud/partners/v20180321/model/DescribeClientSwitchTraTaskInfoResponse.h
   include/tencentcloud/partners/v20180321/model/DescribeAgentPayDealsV2Response.h
   include/tencentcloud/partners/v20180321/model/AgentTransferMoneyRequest.h
   include/tencentcloud/partners/v20180321/model/DescribeAgentPayDealsV2Request.h
@@ -62,6 +63,7 @@ set(partners_public_header_model
   include/tencentcloud/partners/v20180321/model/AssignClientsToSalesResponse.h
   include/tencentcloud/partners/v20180321/model/AgentBillElem.h
   include/tencentcloud/partners/v20180321/model/AuditApplyClientResponse.h
+  include/tencentcloud/partners/v20180321/model/DescribeClientSwitchTraTaskInfoRequest.h
   include/tencentcloud/partners/v20180321/model/DescribeAgentBillsRequest.h
   include/tencentcloud/partners/v20180321/model/AgentPayDealsResponse.h
   include/tencentcloud/partners/v20180321/model/RefundMap.h
@@ -89,6 +91,7 @@ set(partners_src
   src/v20180321/model/DescribeAgentDealsByCacheResponse.cpp
   src/v20180321/model/ClientIncreaseInfoList.cpp
   src/v20180321/model/RebateInfoElem.cpp
+  src/v20180321/model/DescribeClientSwitchTraTaskInfoResponse.cpp
   src/v20180321/model/DescribeAgentPayDealsV2Response.cpp
   src/v20180321/model/AgentTransferMoneyRequest.cpp
   src/v20180321/model/DescribeAgentPayDealsV2Request.cpp
@@ -120,6 +123,7 @@ set(partners_src
   src/v20180321/model/AssignClientsToSalesResponse.cpp
   src/v20180321/model/AgentBillElem.cpp
   src/v20180321/model/AuditApplyClientResponse.cpp
+  src/v20180321/model/DescribeClientSwitchTraTaskInfoRequest.cpp
   src/v20180321/model/DescribeAgentBillsRequest.cpp
   src/v20180321/model/AgentPayDealsResponse.cpp
   src/v20180321/model/RefundMap.cpp

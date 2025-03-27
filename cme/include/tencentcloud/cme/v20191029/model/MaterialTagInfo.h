@@ -48,18 +48,18 @@ namespace TencentCloud
 
                     /**
                      * 获取标签类型，取值为：
-<li>PRESET：预置标签；</li>
+<li>PRESET：预置标签。</li>
                      * @return Type 标签类型，取值为：
-<li>PRESET：预置标签；</li>
+<li>PRESET：预置标签。</li>
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置标签类型，取值为：
-<li>PRESET：预置标签；</li>
+<li>PRESET：预置标签。</li>
                      * @param _type 标签类型，取值为：
-<li>PRESET：预置标签；</li>
+<li>PRESET：预置标签。</li>
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -117,7 +117,7 @@ namespace TencentCloud
 
                     /**
                      * 标签类型，取值为：
-<li>PRESET：预置标签；</li>
+<li>PRESET：预置标签。</li>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

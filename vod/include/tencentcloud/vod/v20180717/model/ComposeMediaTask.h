@@ -172,18 +172,14 @@ namespace TencentCloud
 
                     /**
                      * 获取制作媒体文件任务的输入。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Input 制作媒体文件任务的输入。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ComposeMediaTaskInput GetInput() const;
 
                     /**
                      * 设置制作媒体文件任务的输入。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _input 制作媒体文件任务的输入。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInput(const ComposeMediaTaskInput& _input);
@@ -197,18 +193,14 @@ namespace TencentCloud
 
                     /**
                      * 获取制作媒体文件任务的输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Output 制作媒体文件任务的输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ComposeMediaTaskOutput GetOutput() const;
 
                     /**
                      * 设置制作媒体文件任务的输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _output 制作媒体文件任务的输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutput(const ComposeMediaTaskOutput& _output);
@@ -325,14 +317,12 @@ namespace TencentCloud
 
                     /**
                      * 制作媒体文件任务的输入。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ComposeMediaTaskInput m_input;
                     bool m_inputHasBeenSet;
 
                     /**
                      * 制作媒体文件任务的输出。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ComposeMediaTaskOutput m_output;
                     bool m_outputHasBeenSet;

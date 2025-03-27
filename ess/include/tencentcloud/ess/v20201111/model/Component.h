@@ -576,18 +576,19 @@ namespace TencentCloud
                     bool ComponentRecipientIdHasBeenSet() const;
 
                     /**
-                     * 获取**在所有的定位方式下**，控件的扩展参数，为<font color="red">JSON格式</font>，不同类型的控件会有部分非通用参数。
+                     * 获取
+**在所有的定位方式下**，控件的扩展参数，为<font color="red">JSON格式</font>，不同类型的控件会有部分非通用参数。
 
 <font color="red">ComponentType为TEXT、MULTI_LINE_TEXT时</font>，支持以下参数：
 <ul><li> <b>Font</b>：目前只支持黑体、宋体、仿宋</li>
-<li> <b>FontSize</b>： 范围12 :72</li>
+<li> <b>FontSize</b>： 范围6 :72</li>
 <li> <b>FontAlign</b>： Left/Right/Center，左对齐/居中/右对齐</li>
 <li> <b>FontColor</b>：字符串类型，格式为RGB颜色数字</li></ul>
 <b>参数样例</b>：`{"FontColor":"255,0,0","FontSize":12}`
 
 <font color="red">ComponentType为DATE时</font>，支持以下参数：
 <ul><li> <b>Font</b>：目前只支持黑体、宋体、仿宋</li>
-<li> <b>FontSize</b>： 范围12 :72</li></ul>
+<li> <b>FontSize</b>： 范围6 :72</li></ul>
 <b>参数样例</b>：`{"FontColor":"255,0,0","FontSize":12}`
 
 <font color="red">ComponentType为WATERMARK时</font>，支持以下参数：
@@ -698,18 +699,19 @@ ChildrenComponent结构体定义:
 </ul>
 
 
-                     * @return ComponentExtra **在所有的定位方式下**，控件的扩展参数，为<font color="red">JSON格式</font>，不同类型的控件会有部分非通用参数。
+                     * @return ComponentExtra 
+**在所有的定位方式下**，控件的扩展参数，为<font color="red">JSON格式</font>，不同类型的控件会有部分非通用参数。
 
 <font color="red">ComponentType为TEXT、MULTI_LINE_TEXT时</font>，支持以下参数：
 <ul><li> <b>Font</b>：目前只支持黑体、宋体、仿宋</li>
-<li> <b>FontSize</b>： 范围12 :72</li>
+<li> <b>FontSize</b>： 范围6 :72</li>
 <li> <b>FontAlign</b>： Left/Right/Center，左对齐/居中/右对齐</li>
 <li> <b>FontColor</b>：字符串类型，格式为RGB颜色数字</li></ul>
 <b>参数样例</b>：`{"FontColor":"255,0,0","FontSize":12}`
 
 <font color="red">ComponentType为DATE时</font>，支持以下参数：
 <ul><li> <b>Font</b>：目前只支持黑体、宋体、仿宋</li>
-<li> <b>FontSize</b>： 范围12 :72</li></ul>
+<li> <b>FontSize</b>： 范围6 :72</li></ul>
 <b>参数样例</b>：`{"FontColor":"255,0,0","FontSize":12}`
 
 <font color="red">ComponentType为WATERMARK时</font>，支持以下参数：
@@ -825,18 +827,19 @@ ChildrenComponent结构体定义:
                     std::string GetComponentExtra() const;
 
                     /**
-                     * 设置**在所有的定位方式下**，控件的扩展参数，为<font color="red">JSON格式</font>，不同类型的控件会有部分非通用参数。
+                     * 设置
+**在所有的定位方式下**，控件的扩展参数，为<font color="red">JSON格式</font>，不同类型的控件会有部分非通用参数。
 
 <font color="red">ComponentType为TEXT、MULTI_LINE_TEXT时</font>，支持以下参数：
 <ul><li> <b>Font</b>：目前只支持黑体、宋体、仿宋</li>
-<li> <b>FontSize</b>： 范围12 :72</li>
+<li> <b>FontSize</b>： 范围6 :72</li>
 <li> <b>FontAlign</b>： Left/Right/Center，左对齐/居中/右对齐</li>
 <li> <b>FontColor</b>：字符串类型，格式为RGB颜色数字</li></ul>
 <b>参数样例</b>：`{"FontColor":"255,0,0","FontSize":12}`
 
 <font color="red">ComponentType为DATE时</font>，支持以下参数：
 <ul><li> <b>Font</b>：目前只支持黑体、宋体、仿宋</li>
-<li> <b>FontSize</b>： 范围12 :72</li></ul>
+<li> <b>FontSize</b>： 范围6 :72</li></ul>
 <b>参数样例</b>：`{"FontColor":"255,0,0","FontSize":12}`
 
 <font color="red">ComponentType为WATERMARK时</font>，支持以下参数：
@@ -947,18 +950,19 @@ ChildrenComponent结构体定义:
 </ul>
 
 
-                     * @param _componentExtra **在所有的定位方式下**，控件的扩展参数，为<font color="red">JSON格式</font>，不同类型的控件会有部分非通用参数。
+                     * @param _componentExtra 
+**在所有的定位方式下**，控件的扩展参数，为<font color="red">JSON格式</font>，不同类型的控件会有部分非通用参数。
 
 <font color="red">ComponentType为TEXT、MULTI_LINE_TEXT时</font>，支持以下参数：
 <ul><li> <b>Font</b>：目前只支持黑体、宋体、仿宋</li>
-<li> <b>FontSize</b>： 范围12 :72</li>
+<li> <b>FontSize</b>： 范围6 :72</li>
 <li> <b>FontAlign</b>： Left/Right/Center，左对齐/居中/右对齐</li>
 <li> <b>FontColor</b>：字符串类型，格式为RGB颜色数字</li></ul>
 <b>参数样例</b>：`{"FontColor":"255,0,0","FontSize":12}`
 
 <font color="red">ComponentType为DATE时</font>，支持以下参数：
 <ul><li> <b>Font</b>：目前只支持黑体、宋体、仿宋</li>
-<li> <b>FontSize</b>： 范围12 :72</li></ul>
+<li> <b>FontSize</b>： 范围6 :72</li></ul>
 <b>参数样例</b>：`{"FontColor":"255,0,0","FontSize":12}`
 
 <font color="red">ComponentType为WATERMARK时</font>，支持以下参数：
@@ -1632,18 +1636,19 @@ ChildrenComponent结构体定义:
                     bool m_componentRecipientIdHasBeenSet;
 
                     /**
-                     * **在所有的定位方式下**，控件的扩展参数，为<font color="red">JSON格式</font>，不同类型的控件会有部分非通用参数。
+                     * 
+**在所有的定位方式下**，控件的扩展参数，为<font color="red">JSON格式</font>，不同类型的控件会有部分非通用参数。
 
 <font color="red">ComponentType为TEXT、MULTI_LINE_TEXT时</font>，支持以下参数：
 <ul><li> <b>Font</b>：目前只支持黑体、宋体、仿宋</li>
-<li> <b>FontSize</b>： 范围12 :72</li>
+<li> <b>FontSize</b>： 范围6 :72</li>
 <li> <b>FontAlign</b>： Left/Right/Center，左对齐/居中/右对齐</li>
 <li> <b>FontColor</b>：字符串类型，格式为RGB颜色数字</li></ul>
 <b>参数样例</b>：`{"FontColor":"255,0,0","FontSize":12}`
 
 <font color="red">ComponentType为DATE时</font>，支持以下参数：
 <ul><li> <b>Font</b>：目前只支持黑体、宋体、仿宋</li>
-<li> <b>FontSize</b>： 范围12 :72</li></ul>
+<li> <b>FontSize</b>： 范围6 :72</li></ul>
 <b>参数样例</b>：`{"FontColor":"255,0,0","FontSize":12}`
 
 <font color="red">ComponentType为WATERMARK时</font>，支持以下参数：

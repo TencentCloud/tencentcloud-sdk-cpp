@@ -101,6 +101,7 @@ FailedOperation.UnKnowError：表示识别失败；
 17：医疗发票
 18：完税凭证
 19：海关缴款书
+20：银行回单
                      * @return Type 识别出的图片所属的票据类型。
 -1：未知类型
 0：出租车发票
@@ -119,6 +120,7 @@ FailedOperation.UnKnowError：表示识别失败；
 17：医疗发票
 18：完税凭证
 19：海关缴款书
+20：银行回单
                      * 
                      */
                     int64_t GetType() const;
@@ -142,6 +144,7 @@ FailedOperation.UnKnowError：表示识别失败；
 17：医疗发票
 18：完税凭证
 19：海关缴款书
+20：银行回单
                      * @param _type 识别出的图片所属的票据类型。
 -1：未知类型
 0：出租车发票
@@ -160,6 +163,7 @@ FailedOperation.UnKnowError：表示识别失败；
 17：医疗发票
 18：完税凭证
 19：海关缴款书
+20：银行回单
                      * 
                      */
                     void SetType(const int64_t& _type);
@@ -390,6 +394,7 @@ FailedOperation.UnKnowError：表示识别失败；
 17：医疗发票
 18：完税凭证
 19：海关缴款书
+20：银行回单
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;

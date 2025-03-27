@@ -92,6 +92,20 @@ Exited：表示当前录制任务正在退出的过程中。
                      */
                     bool StorageFileListHasBeenSet() const;
 
+                    /**
+                     * 获取转推录制任务发起时所填，标识一次录制
+                     * @return RecorderKey 转推录制任务发起时所填，标识一次录制
+                     * 
+                     */
+                    std::string GetRecorderKey() const;
+
+                    /**
+                     * 判断参数 RecorderKey 是否已赋值
+                     * @return RecorderKey 是否已赋值
+                     * 
+                     */
+                    bool RecorderKeyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -114,6 +128,12 @@ Exited：表示当前录制任务正在退出的过程中。
                      */
                     std::vector<StorageFile> m_storageFileList;
                     bool m_storageFileListHasBeenSet;
+
+                    /**
+                     * 转推录制任务发起时所填，标识一次录制
+                     */
+                    std::string m_recorderKey;
+                    bool m_recorderKeyHasBeenSet;
 
                 };
             }

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * @return InstanceId 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param _instanceId 实例ID
+                     * 设置腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
+                     * @param _instanceId 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取要修改实例名称
-                     * @return Name 要修改实例名称
+                     * 获取要修改实例名称，不能为空, 3-64个字符，只能包含数字、字母、“-”和“_”。
+                     * @return Name 要修改实例名称，不能为空, 3-64个字符，只能包含数字、字母、“-”和“_”。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置要修改实例名称
-                     * @param _name 要修改实例名称
+                     * 设置要修改实例名称，不能为空, 3-64个字符，只能包含数字、字母、“-”和“_”。
+                     * @param _name 要修改实例名称，不能为空, 3-64个字符，只能包含数字、字母、“-”和“_”。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -85,15 +85,15 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取要修改的备注信息
-                     * @return Remark 要修改的备注信息
+                     * 获取要修改的备注信息，最多64个字符。
+                     * @return Remark 要修改的备注信息，最多64个字符。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置要修改的备注信息
-                     * @param _remark 要修改的备注信息
+                     * 设置要修改的备注信息，最多64个字符。
+                     * @param _remark 要修改的备注信息，最多64个字符。
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -106,15 +106,19 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取要变更的配置规格
-                     * @return SkuCode 要变更的配置规格
+                     * 获取需要变更的配置规格
+基础版和增强版集群不能升配到铂金版规格，铂金版集群不能降配至基础版和增强版规格。
+                     * @return SkuCode 需要变更的配置规格
+基础版和增强版集群不能升配到铂金版规格，铂金版集群不能降配至基础版和增强版规格。
                      * 
                      */
                     std::string GetSkuCode() const;
 
                     /**
-                     * 设置要变更的配置规格
-                     * @param _skuCode 要变更的配置规格
+                     * 设置需要变更的配置规格
+基础版和增强版集群不能升配到铂金版规格，铂金版集群不能降配至基础版和增强版规格。
+                     * @param _skuCode 需要变更的配置规格
+基础版和增强版集群不能升配到铂金版规格，铂金版集群不能降配至基础版和增强版规格。
                      * 
                      */
                     void SetSkuCode(const std::string& _skuCode);
@@ -176,28 +180,50 @@ API：手动通过API注册
                      */
                     bool AutomaticActivationHasBeenSet() const;
 
+                    /**
+                     * 获取授权策略开关
+                     * @return AuthorizationPolicy 授权策略开关
+                     * 
+                     */
+                    bool GetAuthorizationPolicy() const;
+
+                    /**
+                     * 设置授权策略开关
+                     * @param _authorizationPolicy 授权策略开关
+                     * 
+                     */
+                    void SetAuthorizationPolicy(const bool& _authorizationPolicy);
+
+                    /**
+                     * 判断参数 AuthorizationPolicy 是否已赋值
+                     * @return AuthorizationPolicy 是否已赋值
+                     * 
+                     */
+                    bool AuthorizationPolicyHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例ID
+                     * 腾讯云MQTT实例ID，从 [DescribeInstanceList](https://cloud.tencent.com/document/api/1778/111029)接口或控制台获得。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 要修改实例名称
+                     * 要修改实例名称，不能为空, 3-64个字符，只能包含数字、字母、“-”和“_”。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 要修改的备注信息
+                     * 要修改的备注信息，最多64个字符。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 要变更的配置规格
+                     * 需要变更的配置规格
+基础版和增强版集群不能升配到铂金版规格，铂金版集群不能降配至基础版和增强版规格。
                      */
                     std::string m_skuCode;
                     bool m_skuCodeHasBeenSet;
@@ -215,6 +241,12 @@ API：手动通过API注册
                      */
                     bool m_automaticActivation;
                     bool m_automaticActivationHasBeenSet;
+
+                    /**
+                     * 授权策略开关
+                     */
+                    bool m_authorizationPolicy;
+                    bool m_authorizationPolicyHasBeenSet;
 
                 };
             }

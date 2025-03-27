@@ -37,7 +37,8 @@ DescribeDBInstancesAttributeResponse::DescribeDBInstancesAttributeResponse() :
     m_drReadableInfoHasBeenSet(false),
     m_oldVipListHasBeenSet(false),
     m_xEventStatusHasBeenSet(false),
-    m_multiDrReadableInfoHasBeenSet(false)
+    m_multiDrReadableInfoHasBeenSet(false),
+    m_isDiskEncryptFlagHasBeenSet(false)
 {
 }
 
@@ -256,6 +257,16 @@ CoreInternalOutcome DescribeDBInstancesAttributeResponse::Deserialize(const stri
         m_multiDrReadableInfoHasBeenSet = true;
     }
 
+    if (rsp.HasMember("IsDiskEncryptFlag") && !rsp["IsDiskEncryptFlag"].IsNull())
+    {
+        if (!rsp["IsDiskEncryptFlag"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `IsDiskEncryptFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isDiskEncryptFlag = rsp["IsDiskEncryptFlag"].GetInt64();
+        m_isDiskEncryptFlagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -393,6 +404,14 @@ string DescribeDBInstancesAttributeResponse::ToJsonString() const
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_isDiskEncryptFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDiskEncryptFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isDiskEncryptFlag, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -545,6 +564,16 @@ vector<DrReadableInfo> DescribeDBInstancesAttributeResponse::GetMultiDrReadableI
 bool DescribeDBInstancesAttributeResponse::MultiDrReadableInfoHasBeenSet() const
 {
     return m_multiDrReadableInfoHasBeenSet;
+}
+
+int64_t DescribeDBInstancesAttributeResponse::GetIsDiskEncryptFlag() const
+{
+    return m_isDiskEncryptFlag;
+}
+
+bool DescribeDBInstancesAttributeResponse::IsDiskEncryptFlagHasBeenSet() const
+{
+    return m_isDiskEncryptFlagHasBeenSet;
 }
 
 

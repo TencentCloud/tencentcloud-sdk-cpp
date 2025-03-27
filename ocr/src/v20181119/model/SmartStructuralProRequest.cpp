@@ -29,7 +29,8 @@ SmartStructuralProRequest::SmartStructuralProRequest() :
     m_itemNamesHasBeenSet(false),
     m_returnFullTextHasBeenSet(false),
     m_configIdHasBeenSet(false),
-    m_enableCoordHasBeenSet(false)
+    m_enableCoordHasBeenSet(false),
+    m_outputParentKeyHasBeenSet(false)
 {
 }
 
@@ -99,6 +100,14 @@ string SmartStructuralProRequest::ToJsonString() const
         string key = "EnableCoord";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableCoord, allocator);
+    }
+
+    if (m_outputParentKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutputParentKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_outputParentKey, allocator);
     }
 
 
@@ -219,6 +228,22 @@ void SmartStructuralProRequest::SetEnableCoord(const bool& _enableCoord)
 bool SmartStructuralProRequest::EnableCoordHasBeenSet() const
 {
     return m_enableCoordHasBeenSet;
+}
+
+bool SmartStructuralProRequest::GetOutputParentKey() const
+{
+    return m_outputParentKey;
+}
+
+void SmartStructuralProRequest::SetOutputParentKey(const bool& _outputParentKey)
+{
+    m_outputParentKey = _outputParentKey;
+    m_outputParentKeyHasBeenSet = true;
+}
+
+bool SmartStructuralProRequest::OutputParentKeyHasBeenSet() const
+{
+    return m_outputParentKeyHasBeenSet;
 }
 
 

@@ -594,7 +594,7 @@ namespace TencentCloud
                 DescribeInstanceListOutcomeCallable DescribeInstanceListCallable(const Model::DescribeInstanceListRequest& request);
 
                 /**
-                 *查询消息列表，如查询死信，请设置ConsumerGroup参数
+                 *根据一级Topic查询消息列表
                  * @param req DescribeMessageListRequest
                  * @return DescribeMessageListOutcome
                  */
@@ -680,7 +680,7 @@ namespace TencentCloud
                 ModifyInsPublicEndpointOutcomeCallable ModifyInsPublicEndpointCallable(const Model::ModifyInsPublicEndpointRequest& request);
 
                 /**
-                 *修改实例属性
+                 *修改实例属性，只有运行中的集群可以调用该接口进行变更配置。
                  * @param req ModifyInstanceRequest
                  * @return ModifyInstanceOutcome
                  */

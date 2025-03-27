@@ -47,9 +47,11 @@ namespace TencentCloud
                      * 获取实例类型
 BASIC 基础版
 PRO  专业版
+PLATINUM 铂金版
                      * @return InstanceType 实例类型
 BASIC 基础版
 PRO  专业版
+PLATINUM 铂金版
                      * 
                      */
                     std::string GetInstanceType() const;
@@ -160,8 +162,8 @@ PRO  专业版
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取实例状态
-                     * @return InstanceStatus 实例状态
+                     * 获取实例状态， RUNNING, 运行中 MAINTAINING，维护中 ABNORMAL，异常 OVERDUE，欠费 DESTROYED，已删除 CREATING，创建中 MODIFYING，变配中 CREATE_FAILURE，创建失败 MODIFY_FAILURE，变配失败 DELETING，删除中
+                     * @return InstanceStatus 实例状态， RUNNING, 运行中 MAINTAINING，维护中 ABNORMAL，异常 OVERDUE，欠费 DESTROYED，已删除 CREATING，创建中 MODIFYING，变配中 CREATE_FAILURE，创建失败 MODIFY_FAILURE，变配失败 DELETING，删除中
                      * 
                      */
                     std::string GetInstanceStatus() const;
@@ -262,8 +264,8 @@ API：通过API手动注册
                     bool AutomaticActivationHasBeenSet() const;
 
                     /**
-                     * 获取是否自动续费
-                     * @return RenewFlag 是否自动续费
+                     * 获取是否自动续费。仅包年包月集群生效。 1:自动续费 0:非自动续费
+                     * @return RenewFlag 是否自动续费。仅包年包月集群生效。 1:自动续费 0:非自动续费
                      * 
                      */
                     int64_t GetRenewFlag() const;
@@ -290,8 +292,8 @@ API：通过API手动注册
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取到期时间，秒为单位
-                     * @return ExpiryTime 到期时间，秒为单位
+                     * 获取到期时间，毫秒级时间戳
+                     * @return ExpiryTime 到期时间，毫秒级时间戳
                      * 
                      */
                     int64_t GetExpiryTime() const;
@@ -304,8 +306,8 @@ API：通过API手动注册
                     bool ExpiryTimeHasBeenSet() const;
 
                     /**
-                     * 获取预销毁时间
-                     * @return DestroyTime 预销毁时间
+                     * 获取预销毁时间，毫秒级时间戳
+                     * @return DestroyTime 预销毁时间，毫秒级时间戳
                      * 
                      */
                     int64_t GetDestroyTime() const;
@@ -373,12 +375,27 @@ API：通过API手动注册
                      */
                     bool MaxSubscriptionHasBeenSet() const;
 
+                    /**
+                     * 获取授权策略开关
+                     * @return AuthorizationPolicy 授权策略开关
+                     * 
+                     */
+                    bool GetAuthorizationPolicy() const;
+
+                    /**
+                     * 判断参数 AuthorizationPolicy 是否已赋值
+                     * @return AuthorizationPolicy 是否已赋值
+                     * 
+                     */
+                    bool AuthorizationPolicyHasBeenSet() const;
+
                 private:
 
                     /**
                      * 实例类型
 BASIC 基础版
 PRO  专业版
+PLATINUM 铂金版
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
@@ -426,7 +443,7 @@ PRO  专业版
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 实例状态
+                     * 实例状态， RUNNING, 运行中 MAINTAINING，维护中 ABNORMAL，异常 OVERDUE，欠费 DESTROYED，已删除 CREATING，创建中 MODIFYING，变配中 CREATE_FAILURE，创建失败 MODIFY_FAILURE，变配失败 DELETING，删除中
                      */
                     std::string m_instanceStatus;
                     bool m_instanceStatusHasBeenSet;
@@ -470,7 +487,7 @@ API：通过API手动注册
                     bool m_automaticActivationHasBeenSet;
 
                     /**
-                     * 是否自动续费
+                     * 是否自动续费。仅包年包月集群生效。 1:自动续费 0:非自动续费
                      */
                     int64_t m_renewFlag;
                     bool m_renewFlagHasBeenSet;
@@ -482,13 +499,13 @@ API：通过API手动注册
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 到期时间，秒为单位
+                     * 到期时间，毫秒级时间戳
                      */
                     int64_t m_expiryTime;
                     bool m_expiryTimeHasBeenSet;
 
                     /**
-                     * 预销毁时间
+                     * 预销毁时间，毫秒级时间戳
                      */
                     int64_t m_destroyTime;
                     bool m_destroyTimeHasBeenSet;
@@ -516,6 +533,12 @@ API：通过API手动注册
                      */
                     int64_t m_maxSubscription;
                     bool m_maxSubscriptionHasBeenSet;
+
+                    /**
+                     * 授权策略开关
+                     */
+                    bool m_authorizationPolicy;
+                    bool m_authorizationPolicyHasBeenSet;
 
                 };
             }

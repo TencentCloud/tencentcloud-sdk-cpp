@@ -73,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取返回DataList中的最大值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxData 返回DataList中的最大值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMaxData() const;
@@ -103,7 +101,6 @@ namespace TencentCloud
 
                     /**
                      * 返回DataList中的最大值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_maxData;
                     bool m_maxDataHasBeenSet;

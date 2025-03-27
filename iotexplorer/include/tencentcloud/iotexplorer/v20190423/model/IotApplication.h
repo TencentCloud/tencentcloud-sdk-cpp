@@ -654,6 +654,31 @@ namespace TencentCloud
                      */
                     bool WechatNotifyStatusHasBeenSet() const;
 
+                    /**
+                     * 获取互联互通产品ID列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InterconnectionProducts 互联互通产品ID列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetInterconnectionProducts() const;
+
+                    /**
+                     * 设置互联互通产品ID列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _interconnectionProducts 互联互通产品ID列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInterconnectionProducts(const std::string& _interconnectionProducts);
+
+                    /**
+                     * 判断参数 InterconnectionProducts 是否已赋值
+                     * @return InterconnectionProducts 是否已赋值
+                     * 
+                     */
+                    bool InterconnectionProductsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -828,6 +853,13 @@ namespace TencentCloud
                      */
                     int64_t m_wechatNotifyStatus;
                     bool m_wechatNotifyStatusHasBeenSet;
+
+                    /**
+                     * 互联互通产品ID列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_interconnectionProducts;
+                    bool m_interconnectionProductsHasBeenSet;
 
                 };
             }

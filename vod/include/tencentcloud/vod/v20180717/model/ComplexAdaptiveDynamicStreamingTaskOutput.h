@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取自适应码流模版 ID。
-                     * @return Definition 自适应码流模版 ID。
+                     * 获取自适应码流模板 ID。
+                     * @return Definition 自适应码流模板 ID。
                      * 
                      */
                     uint64_t GetDefinition() const;
 
                     /**
-                     * 设置自适应码流模版 ID。
-                     * @param _definition 自适应码流模版 ID。
+                     * 设置自适应码流模板 ID。
+                     * @param _definition 自适应码流模板 ID。
                      * 
                      */
                     void SetDefinition(const uint64_t& _definition);
@@ -157,7 +157,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 自适应码流模版 ID。
+                     * 自适应码流模板 ID。
                      */
                     uint64_t m_definition;
                     bool m_definitionHasBeenSet;

@@ -38,7 +38,8 @@ CreateSchemeUrlRequest::CreateSchemeUrlRequest() :
     m_hidesHasBeenSet(false),
     m_recipientIdHasBeenSet(false),
     m_flowGroupUrlInfoHasBeenSet(false),
-    m_urlUseEnvHasBeenSet(false)
+    m_urlUseEnvHasBeenSet(false),
+    m_pickUpAfterJoinedHasBeenSet(false)
 {
 }
 
@@ -183,6 +184,14 @@ string CreateSchemeUrlRequest::ToJsonString() const
         string key = "UrlUseEnv";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_urlUseEnv.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pickUpAfterJoinedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PickUpAfterJoined";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_pickUpAfterJoined, allocator);
     }
 
 
@@ -447,6 +456,22 @@ void CreateSchemeUrlRequest::SetUrlUseEnv(const string& _urlUseEnv)
 bool CreateSchemeUrlRequest::UrlUseEnvHasBeenSet() const
 {
     return m_urlUseEnvHasBeenSet;
+}
+
+bool CreateSchemeUrlRequest::GetPickUpAfterJoined() const
+{
+    return m_pickUpAfterJoined;
+}
+
+void CreateSchemeUrlRequest::SetPickUpAfterJoined(const bool& _pickUpAfterJoined)
+{
+    m_pickUpAfterJoined = _pickUpAfterJoined;
+    m_pickUpAfterJoinedHasBeenSet = true;
+}
+
+bool CreateSchemeUrlRequest::PickUpAfterJoinedHasBeenSet() const
+{
+    return m_pickUpAfterJoinedHasBeenSet;
 }
 
 

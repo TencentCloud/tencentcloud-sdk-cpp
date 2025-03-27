@@ -48,7 +48,8 @@ IotApplication::IotApplication() :
     m_selfSmsAppKeyHasBeenSet(false),
     m_selfSmsSignHasBeenSet(false),
     m_selfSmsTemplateIdHasBeenSet(false),
-    m_wechatNotifyStatusHasBeenSet(false)
+    m_wechatNotifyStatusHasBeenSet(false),
+    m_interconnectionProductsHasBeenSet(false)
 {
 }
 
@@ -337,6 +338,16 @@ CoreInternalOutcome IotApplication::Deserialize(const rapidjson::Value &value)
         m_wechatNotifyStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("InterconnectionProducts") && !value["InterconnectionProducts"].IsNull())
+    {
+        if (!value["InterconnectionProducts"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IotApplication.InterconnectionProducts` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_interconnectionProducts = string(value["InterconnectionProducts"].GetString());
+        m_interconnectionProductsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -566,6 +577,14 @@ void IotApplication::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "WechatNotifyStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_wechatNotifyStatus, allocator);
+    }
+
+    if (m_interconnectionProductsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InterconnectionProducts";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_interconnectionProducts.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1017,5 +1036,21 @@ void IotApplication::SetWechatNotifyStatus(const int64_t& _wechatNotifyStatus)
 bool IotApplication::WechatNotifyStatusHasBeenSet() const
 {
     return m_wechatNotifyStatusHasBeenSet;
+}
+
+string IotApplication::GetInterconnectionProducts() const
+{
+    return m_interconnectionProducts;
+}
+
+void IotApplication::SetInterconnectionProducts(const string& _interconnectionProducts)
+{
+    m_interconnectionProducts = _interconnectionProducts;
+    m_interconnectionProductsHasBeenSet = true;
+}
+
+bool IotApplication::InterconnectionProductsHasBeenSet() const
+{
+    return m_interconnectionProductsHasBeenSet;
 }
 

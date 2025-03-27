@@ -51,18 +51,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户自定义人物音视频审核控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FaceReviewInfo 用户自定义人物音视频审核控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     UserDefineFaceReviewTemplateInfo GetFaceReviewInfo() const;
 
                     /**
                      * 设置用户自定义人物音视频审核控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _faceReviewInfo 用户自定义人物音视频审核控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFaceReviewInfo(const UserDefineFaceReviewTemplateInfo& _faceReviewInfo);
@@ -76,18 +72,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户自定义语音音视频审核控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AsrReviewInfo 用户自定义语音音视频审核控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     UserDefineAsrTextReviewTemplateInfo GetAsrReviewInfo() const;
 
                     /**
                      * 设置用户自定义语音音视频审核控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _asrReviewInfo 用户自定义语音音视频审核控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAsrReviewInfo(const UserDefineAsrTextReviewTemplateInfo& _asrReviewInfo);
@@ -101,18 +93,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户自定义文本音视频审核控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OcrReviewInfo 用户自定义文本音视频审核控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     UserDefineOcrTextReviewTemplateInfo GetOcrReviewInfo() const;
 
                     /**
                      * 设置用户自定义文本音视频审核控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ocrReviewInfo 用户自定义文本音视频审核控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOcrReviewInfo(const UserDefineOcrTextReviewTemplateInfo& _ocrReviewInfo);
@@ -128,21 +116,18 @@ namespace TencentCloud
 
                     /**
                      * 用户自定义人物音视频审核控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     UserDefineFaceReviewTemplateInfo m_faceReviewInfo;
                     bool m_faceReviewInfoHasBeenSet;
 
                     /**
                      * 用户自定义语音音视频审核控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     UserDefineAsrTextReviewTemplateInfo m_asrReviewInfo;
                     bool m_asrReviewInfoHasBeenSet;
 
                     /**
                      * 用户自定义文本音视频审核控制参数。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     UserDefineOcrTextReviewTemplateInfo m_ocrReviewInfo;
                     bool m_ocrReviewInfoHasBeenSet;

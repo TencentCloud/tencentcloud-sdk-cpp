@@ -43,15 +43,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取弹性网卡实例ID，例如：eni-pxir56ns。
-                     * @return NetworkInterfaceId 弹性网卡实例ID，例如：eni-pxir56ns。
+                     * 获取弹性网卡实例ID，例如：eni-pxir56ns。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。
+
+                     * @return NetworkInterfaceId 弹性网卡实例ID，例如：eni-pxir56ns。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。
+
                      * 
                      */
                     std::string GetNetworkInterfaceId() const;
 
                     /**
-                     * 设置弹性网卡实例ID，例如：eni-pxir56ns。
-                     * @param _networkInterfaceId 弹性网卡实例ID，例如：eni-pxir56ns。
+                     * 设置弹性网卡实例ID，例如：eni-pxir56ns。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。
+
+                     * @param _networkInterfaceId 弹性网卡实例ID，例如：eni-pxir56ns。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。
+
                      * 
                      */
                     void SetNetworkInterfaceId(const std::string& _networkInterfaceId);
@@ -106,15 +110,19 @@ namespace TencentCloud
                     bool NetworkInterfaceDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取指定绑定的安全组，例如:['sg-1dd51d']。
-                     * @return SecurityGroupIds 指定绑定的安全组，例如:['sg-1dd51d']。
+                     * 获取指定绑定的安全组，例如:['sg-1dd51d']。可通过[DescribeSecurityGroups](https://cloud.tencent.com/document/product/215/15808)接口获取。
+
+                     * @return SecurityGroupIds 指定绑定的安全组，例如:['sg-1dd51d']。可通过[DescribeSecurityGroups](https://cloud.tencent.com/document/product/215/15808)接口获取。
+
                      * 
                      */
                     std::vector<std::string> GetSecurityGroupIds() const;
 
                     /**
-                     * 设置指定绑定的安全组，例如:['sg-1dd51d']。
-                     * @param _securityGroupIds 指定绑定的安全组，例如:['sg-1dd51d']。
+                     * 设置指定绑定的安全组，例如:['sg-1dd51d']。可通过[DescribeSecurityGroups](https://cloud.tencent.com/document/product/215/15808)接口获取。
+
+                     * @param _securityGroupIds 指定绑定的安全组，例如:['sg-1dd51d']。可通过[DescribeSecurityGroups](https://cloud.tencent.com/document/product/215/15808)接口获取。
+
                      * 
                      */
                     void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
@@ -150,7 +158,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 弹性网卡实例ID，例如：eni-pxir56ns。
+                     * 弹性网卡实例ID，例如：eni-pxir56ns。可通过[DescribeNetworkInterfaces](https://cloud.tencent.com/document/product/215/15817)接口获取。
+
                      */
                     std::string m_networkInterfaceId;
                     bool m_networkInterfaceIdHasBeenSet;
@@ -168,7 +177,8 @@ namespace TencentCloud
                     bool m_networkInterfaceDescriptionHasBeenSet;
 
                     /**
-                     * 指定绑定的安全组，例如:['sg-1dd51d']。
+                     * 指定绑定的安全组，例如:['sg-1dd51d']。可通过[DescribeSecurityGroups](https://cloud.tencent.com/document/product/215/15808)接口获取。
+
                      */
                     std::vector<std::string> m_securityGroupIds;
                     bool m_securityGroupIdsHasBeenSet;

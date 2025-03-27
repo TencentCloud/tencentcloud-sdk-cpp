@@ -47,7 +47,8 @@ ReverseShellEventInfo::ReverseShellEventInfo() :
     m_referencesHasBeenSet(false),
     m_machineWanIpHasBeenSet(false),
     m_machineStatusHasBeenSet(false),
-    m_modifyTimeHasBeenSet(false)
+    m_modifyTimeHasBeenSet(false),
+    m_cmdLineQuoteHasBeenSet(false)
 {
 }
 
@@ -332,6 +333,16 @@ CoreInternalOutcome ReverseShellEventInfo::Deserialize(const rapidjson::Value &v
         m_modifyTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("CmdLineQuote") && !value["CmdLineQuote"].IsNull())
+    {
+        if (!value["CmdLineQuote"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReverseShellEventInfo.CmdLineQuote` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cmdLineQuote = string(value["CmdLineQuote"].GetString());
+        m_cmdLineQuoteHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -563,6 +574,14 @@ void ReverseShellEventInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "ModifyTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_modifyTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cmdLineQuoteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CmdLineQuote";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cmdLineQuote.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -998,5 +1017,21 @@ void ReverseShellEventInfo::SetModifyTime(const string& _modifyTime)
 bool ReverseShellEventInfo::ModifyTimeHasBeenSet() const
 {
     return m_modifyTimeHasBeenSet;
+}
+
+string ReverseShellEventInfo::GetCmdLineQuote() const
+{
+    return m_cmdLineQuote;
+}
+
+void ReverseShellEventInfo::SetCmdLineQuote(const string& _cmdLineQuote)
+{
+    m_cmdLineQuote = _cmdLineQuote;
+    m_cmdLineQuoteHasBeenSet = true;
+}
+
+bool ReverseShellEventInfo::CmdLineQuoteHasBeenSet() const
+{
+    return m_cmdLineQuoteHasBeenSet;
 }
 

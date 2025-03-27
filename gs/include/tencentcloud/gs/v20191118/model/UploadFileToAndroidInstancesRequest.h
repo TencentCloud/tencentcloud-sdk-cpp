@@ -84,6 +84,27 @@ namespace TencentCloud
                      */
                     bool FileURLHasBeenSet() const;
 
+                    /**
+                     * 获取上传目标目录，只能上传到 /sdcard/ 目录或其子目录下
+                     * @return DestinationDirectory 上传目标目录，只能上传到 /sdcard/ 目录或其子目录下
+                     * 
+                     */
+                    std::string GetDestinationDirectory() const;
+
+                    /**
+                     * 设置上传目标目录，只能上传到 /sdcard/ 目录或其子目录下
+                     * @param _destinationDirectory 上传目标目录，只能上传到 /sdcard/ 目录或其子目录下
+                     * 
+                     */
+                    void SetDestinationDirectory(const std::string& _destinationDirectory);
+
+                    /**
+                     * 判断参数 DestinationDirectory 是否已赋值
+                     * @return DestinationDirectory 是否已赋值
+                     * 
+                     */
+                    bool DestinationDirectoryHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +118,12 @@ namespace TencentCloud
                      */
                     std::string m_fileURL;
                     bool m_fileURLHasBeenSet;
+
+                    /**
+                     * 上传目标目录，只能上传到 /sdcard/ 目录或其子目录下
+                     */
+                    std::string m_destinationDirectory;
+                    bool m_destinationDirectoryHasBeenSet;
 
                 };
             }

@@ -75,18 +75,14 @@ namespace TencentCloud
 
                     /**
                      * 获取加速地区信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccelerateAreaInfos 加速地区信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AccelerateAreaInfo> GetAccelerateAreaInfos() const;
 
                     /**
                      * 设置加速地区信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _accelerateAreaInfos 加速地区信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAccelerateAreaInfos(const std::vector<AccelerateAreaInfo>& _accelerateAreaInfos);
@@ -133,18 +129,14 @@ namespace TencentCloud
 
                     /**
                      * 获取HTTPS 配置信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HTTPSConfig HTTPS 配置信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DomainHTTPSConfig GetHTTPSConfig() const;
 
                     /**
                      * 设置HTTPS 配置信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hTTPSConfig HTTPS 配置信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHTTPSConfig(const DomainHTTPSConfig& _hTTPSConfig);
@@ -158,18 +150,14 @@ namespace TencentCloud
 
                     /**
                      * 获取[Key 防盗链](https://cloud.tencent.com/document/product/266/14047)配置信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UrlSignatureAuthPolicy [Key 防盗链](https://cloud.tencent.com/document/product/266/14047)配置信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     UrlSignatureAuthPolicy GetUrlSignatureAuthPolicy() const;
 
                     /**
                      * 设置[Key 防盗链](https://cloud.tencent.com/document/product/266/14047)配置信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _urlSignatureAuthPolicy [Key 防盗链](https://cloud.tencent.com/document/product/266/14047)配置信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUrlSignatureAuthPolicy(const UrlSignatureAuthPolicy& _urlSignatureAuthPolicy);
@@ -183,18 +171,14 @@ namespace TencentCloud
 
                     /**
                      * 获取[Referer 防盗链](https://cloud.tencent.com/document/product/266/14046)配置信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RefererAuthPolicy [Referer 防盗链](https://cloud.tencent.com/document/product/266/14046)配置信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RefererAuthPolicy GetRefererAuthPolicy() const;
 
                     /**
                      * 设置[Referer 防盗链](https://cloud.tencent.com/document/product/266/14046)配置信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _refererAuthPolicy [Referer 防盗链](https://cloud.tencent.com/document/product/266/14046)配置信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRefererAuthPolicy(const RefererAuthPolicy& _refererAuthPolicy);
@@ -233,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取域名 QUIC 配置信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return QUICConfig 域名 QUIC 配置信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DomainQUICConfig GetQUICConfig() const;
 
                     /**
                      * 设置域名 QUIC 配置信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _qUICConfig 域名 QUIC 配置信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQUICConfig(const DomainQUICConfig& _qUICConfig);
@@ -258,18 +238,14 @@ namespace TencentCloud
 
                     /**
                      * 获取IP 访问限制配置信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IPFilterPolicy IP 访问限制配置信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     IPFilterPolicy GetIPFilterPolicy() const;
 
                     /**
                      * 设置IP 访问限制配置信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _iPFilterPolicy IP 访问限制配置信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIPFilterPolicy(const IPFilterPolicy& _iPFilterPolicy);
@@ -312,7 +288,6 @@ namespace TencentCloud
 
                     /**
                      * 加速地区信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AccelerateAreaInfo> m_accelerateAreaInfos;
                     bool m_accelerateAreaInfosHasBeenSet;
@@ -328,21 +303,18 @@ namespace TencentCloud
 
                     /**
                      * HTTPS 配置信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DomainHTTPSConfig m_hTTPSConfig;
                     bool m_hTTPSConfigHasBeenSet;
 
                     /**
                      * [Key 防盗链](https://cloud.tencent.com/document/product/266/14047)配置信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     UrlSignatureAuthPolicy m_urlSignatureAuthPolicy;
                     bool m_urlSignatureAuthPolicyHasBeenSet;
 
                     /**
                      * [Referer 防盗链](https://cloud.tencent.com/document/product/266/14046)配置信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RefererAuthPolicy m_refererAuthPolicy;
                     bool m_refererAuthPolicyHasBeenSet;
@@ -356,14 +328,12 @@ namespace TencentCloud
 
                     /**
                      * 域名 QUIC 配置信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DomainQUICConfig m_qUICConfig;
                     bool m_qUICConfigHasBeenSet;
 
                     /**
                      * IP 访问限制配置信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     IPFilterPolicy m_iPFilterPolicy;
                     bool m_iPFilterPolicyHasBeenSet;

@@ -71,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取视频拆条任务输出信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Output 视频拆条任务输出信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TaskOutputMediaInfo GetOutput() const;
 
                     /**
                      * 设置视频拆条任务输出信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _output 视频拆条任务输出信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutput(const TaskOutputMediaInfo& _output);
@@ -146,7 +142,6 @@ namespace TencentCloud
 
                     /**
                      * 视频拆条任务输出信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TaskOutputMediaInfo m_output;
                     bool m_outputHasBeenSet;
