@@ -221,27 +221,6 @@ namespace TencentCloud
                      */
                     bool PrivacyPolicyLinkHasBeenSet() const;
 
-                    /**
-                     * 获取是否是用户个人敏感数据（不推荐使用）。固定填：1。
-                     * @return IsPersonalData 是否是用户个人敏感数据（不推荐使用）。固定填：1。
-                     * 
-                     */
-                    uint64_t GetIsPersonalData() const;
-
-                    /**
-                     * 设置是否是用户个人敏感数据（不推荐使用）。固定填：1。
-                     * @param _isPersonalData 是否是用户个人敏感数据（不推荐使用）。固定填：1。
-                     * 
-                     */
-                    void SetIsPersonalData(const uint64_t& _isPersonalData);
-
-                    /**
-                     * 判断参数 IsPersonalData 是否已赋值
-                     * @return IsPersonalData 是否已赋值
-                     * 
-                     */
-                    bool IsPersonalDataHasBeenSet() const;
-
                 private:
 
                     /**
@@ -292,12 +271,6 @@ namespace TencentCloud
                      */
                     std::string m_privacyPolicyLink;
                     bool m_privacyPolicyLinkHasBeenSet;
-
-                    /**
-                     * 是否是用户个人敏感数据（不推荐使用）。固定填：1。
-                     */
-                    uint64_t m_isPersonalData;
-                    bool m_isPersonalDataHasBeenSet;
 
                 };
             }

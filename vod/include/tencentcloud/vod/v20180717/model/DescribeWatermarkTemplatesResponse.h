@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取水印模板详情列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WatermarkTemplateSet 水印模板详情列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<WatermarkTemplate> GetWatermarkTemplateSet() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 水印模板详情列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<WatermarkTemplate> m_watermarkTemplateSet;
                     bool m_watermarkTemplateSetHasBeenSet;

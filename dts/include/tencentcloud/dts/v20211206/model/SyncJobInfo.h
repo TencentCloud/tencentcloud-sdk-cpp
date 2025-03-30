@@ -180,14 +180,18 @@ namespace TencentCloud
 
                     /**
                      * 获取当前状态能进行的操作
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Actions 当前状态能进行的操作
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetActions() const;
 
                     /**
                      * 设置当前状态能进行的操作
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param _actions 当前状态能进行的操作
+注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetActions(const std::vector<std::string>& _actions);
@@ -848,6 +852,7 @@ namespace TencentCloud
 
                     /**
                      * 当前状态能进行的操作
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_actions;
                     bool m_actionsHasBeenSet;

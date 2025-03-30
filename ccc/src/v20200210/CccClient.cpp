@@ -40,6 +40,49 @@ CccClient::CccClient(const Credential &credential, const string &region, const C
 }
 
 
+CccClient::AbortAgentCruiseDialingCampaignOutcome CccClient::AbortAgentCruiseDialingCampaign(const AbortAgentCruiseDialingCampaignRequest &request)
+{
+    auto outcome = MakeRequest(request, "AbortAgentCruiseDialingCampaign");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AbortAgentCruiseDialingCampaignResponse rsp = AbortAgentCruiseDialingCampaignResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AbortAgentCruiseDialingCampaignOutcome(rsp);
+        else
+            return AbortAgentCruiseDialingCampaignOutcome(o.GetError());
+    }
+    else
+    {
+        return AbortAgentCruiseDialingCampaignOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::AbortAgentCruiseDialingCampaignAsync(const AbortAgentCruiseDialingCampaignRequest& request, const AbortAgentCruiseDialingCampaignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AbortAgentCruiseDialingCampaign(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::AbortAgentCruiseDialingCampaignOutcomeCallable CccClient::AbortAgentCruiseDialingCampaignCallable(const AbortAgentCruiseDialingCampaignRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AbortAgentCruiseDialingCampaignOutcome()>>(
+        [this, request]()
+        {
+            return this->AbortAgentCruiseDialingCampaign(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CccClient::AbortPredictiveDialingCampaignOutcome CccClient::AbortPredictiveDialingCampaign(const AbortPredictiveDialingCampaignRequest &request)
 {
     auto outcome = MakeRequest(request, "AbortPredictiveDialingCampaign");
@@ -291,6 +334,49 @@ CccClient::CreateAdminURLOutcomeCallable CccClient::CreateAdminURLCallable(const
         [this, request]()
         {
             return this->CreateAdminURL(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CccClient::CreateAgentCruiseDialingCampaignOutcome CccClient::CreateAgentCruiseDialingCampaign(const CreateAgentCruiseDialingCampaignRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAgentCruiseDialingCampaign");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAgentCruiseDialingCampaignResponse rsp = CreateAgentCruiseDialingCampaignResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAgentCruiseDialingCampaignOutcome(rsp);
+        else
+            return CreateAgentCruiseDialingCampaignOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAgentCruiseDialingCampaignOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::CreateAgentCruiseDialingCampaignAsync(const CreateAgentCruiseDialingCampaignRequest& request, const CreateAgentCruiseDialingCampaignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAgentCruiseDialingCampaign(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::CreateAgentCruiseDialingCampaignOutcomeCallable CccClient::CreateAgentCruiseDialingCampaignCallable(const CreateAgentCruiseDialingCampaignRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAgentCruiseDialingCampaignOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAgentCruiseDialingCampaign(request);
         }
     );
 
@@ -1022,6 +1108,49 @@ CccClient::DescribeActiveCarrierPrivilegeNumberOutcomeCallable CccClient::Descri
         [this, request]()
         {
             return this->DescribeActiveCarrierPrivilegeNumber(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CccClient::DescribeAgentCruiseDialingCampaignOutcome CccClient::DescribeAgentCruiseDialingCampaign(const DescribeAgentCruiseDialingCampaignRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAgentCruiseDialingCampaign");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAgentCruiseDialingCampaignResponse rsp = DescribeAgentCruiseDialingCampaignResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAgentCruiseDialingCampaignOutcome(rsp);
+        else
+            return DescribeAgentCruiseDialingCampaignOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAgentCruiseDialingCampaignOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::DescribeAgentCruiseDialingCampaignAsync(const DescribeAgentCruiseDialingCampaignRequest& request, const DescribeAgentCruiseDialingCampaignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAgentCruiseDialingCampaign(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::DescribeAgentCruiseDialingCampaignOutcomeCallable CccClient::DescribeAgentCruiseDialingCampaignCallable(const DescribeAgentCruiseDialingCampaignRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAgentCruiseDialingCampaignOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAgentCruiseDialingCampaign(request);
         }
     );
 
@@ -2570,6 +2699,49 @@ CccClient::StopAutoCalloutTaskOutcomeCallable CccClient::StopAutoCalloutTaskCall
         [this, request]()
         {
             return this->StopAutoCalloutTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CccClient::TransferToManualOutcome CccClient::TransferToManual(const TransferToManualRequest &request)
+{
+    auto outcome = MakeRequest(request, "TransferToManual");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TransferToManualResponse rsp = TransferToManualResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TransferToManualOutcome(rsp);
+        else
+            return TransferToManualOutcome(o.GetError());
+    }
+    else
+    {
+        return TransferToManualOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::TransferToManualAsync(const TransferToManualRequest& request, const TransferToManualAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->TransferToManual(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::TransferToManualOutcomeCallable CccClient::TransferToManualCallable(const TransferToManualRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<TransferToManualOutcome()>>(
+        [this, request]()
+        {
+            return this->TransferToManual(request);
         }
     );
 

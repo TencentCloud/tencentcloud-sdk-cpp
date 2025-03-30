@@ -63,12 +63,14 @@ set(gs_public_header_model
   include/tencentcloud/gs/v20191118/model/SyncExecuteCommandResult.h
   include/tencentcloud/gs/v20191118/model/RestartAndroidInstancesAppResponse.h
   include/tencentcloud/gs/v20191118/model/DescribeAndroidInstanceTasksStatusRequest.h
+  include/tencentcloud/gs/v20191118/model/CreateAndroidInstancesScreenshotResponse.h
   include/tencentcloud/gs/v20191118/model/DescribeInstancesCountResponse.h
   include/tencentcloud/gs/v20191118/model/ExecuteCommandOnAndroidInstancesRequest.h
   include/tencentcloud/gs/v20191118/model/ModifyAndroidInstanceInformationResponse.h
   include/tencentcloud/gs/v20191118/model/DestroyAndroidInstancesResponse.h
   include/tencentcloud/gs/v20191118/model/SaveGameArchiveRequest.h
   include/tencentcloud/gs/v20191118/model/SwitchGameArchiveResponse.h
+  include/tencentcloud/gs/v20191118/model/CreateAndroidInstancesScreenshotRequest.h
   include/tencentcloud/gs/v20191118/model/InstallAndroidInstancesAppResponse.h
   include/tencentcloud/gs/v20191118/model/AndroidInstanceTask.h
   include/tencentcloud/gs/v20191118/model/ConnectAndroidInstanceResponse.h
@@ -163,12 +165,14 @@ set(gs_src
   src/v20191118/model/SyncExecuteCommandResult.cpp
   src/v20191118/model/RestartAndroidInstancesAppResponse.cpp
   src/v20191118/model/DescribeAndroidInstanceTasksStatusRequest.cpp
+  src/v20191118/model/CreateAndroidInstancesScreenshotResponse.cpp
   src/v20191118/model/DescribeInstancesCountResponse.cpp
   src/v20191118/model/ExecuteCommandOnAndroidInstancesRequest.cpp
   src/v20191118/model/ModifyAndroidInstanceInformationResponse.cpp
   src/v20191118/model/DestroyAndroidInstancesResponse.cpp
   src/v20191118/model/SaveGameArchiveRequest.cpp
   src/v20191118/model/SwitchGameArchiveResponse.cpp
+  src/v20191118/model/CreateAndroidInstancesScreenshotRequest.cpp
   src/v20191118/model/InstallAndroidInstancesAppResponse.cpp
   src/v20191118/model/AndroidInstanceTask.cpp
   src/v20191118/model/ConnectAndroidInstanceResponse.cpp

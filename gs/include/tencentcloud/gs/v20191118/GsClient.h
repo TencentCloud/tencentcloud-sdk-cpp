@@ -37,6 +37,8 @@
 #include <tencentcloud/gs/v20191118/model/CreateAndroidInstanceWebShellResponse.h>
 #include <tencentcloud/gs/v20191118/model/CreateAndroidInstancesRequest.h>
 #include <tencentcloud/gs/v20191118/model/CreateAndroidInstancesResponse.h>
+#include <tencentcloud/gs/v20191118/model/CreateAndroidInstancesScreenshotRequest.h>
+#include <tencentcloud/gs/v20191118/model/CreateAndroidInstancesScreenshotResponse.h>
 #include <tencentcloud/gs/v20191118/model/CreateSessionRequest.h>
 #include <tencentcloud/gs/v20191118/model/CreateSessionResponse.h>
 #include <tencentcloud/gs/v20191118/model/DeleteAndroidInstanceImagesRequest.h>
@@ -142,6 +144,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAndroidInstancesResponse> CreateAndroidInstancesOutcome;
                 typedef std::future<CreateAndroidInstancesOutcome> CreateAndroidInstancesOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::CreateAndroidInstancesRequest&, CreateAndroidInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAndroidInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAndroidInstancesScreenshotResponse> CreateAndroidInstancesScreenshotOutcome;
+                typedef std::future<CreateAndroidInstancesScreenshotOutcome> CreateAndroidInstancesScreenshotOutcomeCallable;
+                typedef std::function<void(const GsClient*, const Model::CreateAndroidInstancesScreenshotRequest&, CreateAndroidInstancesScreenshotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAndroidInstancesScreenshotAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateSessionResponse> CreateSessionOutcome;
                 typedef std::future<CreateSessionOutcome> CreateSessionOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::CreateSessionRequest&, CreateSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSessionAsyncHandler;
@@ -316,6 +321,15 @@ namespace TencentCloud
                 CreateAndroidInstancesOutcome CreateAndroidInstances(const Model::CreateAndroidInstancesRequest &request);
                 void CreateAndroidInstancesAsync(const Model::CreateAndroidInstancesRequest& request, const CreateAndroidInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAndroidInstancesOutcomeCallable CreateAndroidInstancesCallable(const Model::CreateAndroidInstancesRequest& request);
+
+                /**
+                 *安卓实例截图
+                 * @param req CreateAndroidInstancesScreenshotRequest
+                 * @return CreateAndroidInstancesScreenshotOutcome
+                 */
+                CreateAndroidInstancesScreenshotOutcome CreateAndroidInstancesScreenshot(const Model::CreateAndroidInstancesScreenshotRequest &request);
+                void CreateAndroidInstancesScreenshotAsync(const Model::CreateAndroidInstancesScreenshotRequest& request, const CreateAndroidInstancesScreenshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAndroidInstancesScreenshotOutcomeCallable CreateAndroidInstancesScreenshotCallable(const Model::CreateAndroidInstancesScreenshotRequest& request);
 
                 /**
                  *创建会话

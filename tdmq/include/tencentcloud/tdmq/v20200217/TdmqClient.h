@@ -1629,7 +1629,9 @@ namespace TencentCloud
                 DescribeRocketMQSmoothMigrationTaskOutcomeCallable DescribeRocketMQSmoothMigrationTaskCallable(const Model::DescribeRocketMQSmoothMigrationTaskRequest& request);
 
                 /**
-                 *用于查询RocketMQ平滑迁移任务列表
+                 *平滑迁移相关接口已迁移至trocket产品下，该接口已废弃
+
+用于查询RocketMQ平滑迁移任务列表
                  * @param req DescribeRocketMQSmoothMigrationTaskListRequest
                  * @return DescribeRocketMQSmoothMigrationTaskListOutcome
                  */
@@ -1638,7 +1640,9 @@ namespace TencentCloud
                 DescribeRocketMQSmoothMigrationTaskListOutcomeCallable DescribeRocketMQSmoothMigrationTaskListCallable(const Model::DescribeRocketMQSmoothMigrationTaskListRequest& request);
 
                 /**
-                 *平滑迁移过程获取源集群group列表接口
+                 *平滑迁移相关接口已迁移至trocket产品下，该接口已废弃
+
+平滑迁移过程获取源集群group列表接口
                  * @param req DescribeRocketMQSourceClusterGroupListRequest
                  * @return DescribeRocketMQSourceClusterGroupListOutcome
                  */
@@ -1647,7 +1651,9 @@ namespace TencentCloud
                 DescribeRocketMQSourceClusterGroupListOutcomeCallable DescribeRocketMQSourceClusterGroupListCallable(const Model::DescribeRocketMQSourceClusterGroupListRequest& request);
 
                 /**
-                 *平滑迁移过程获取源集群topic列表接口
+                 *平滑迁移相关接口已迁移至trocket产品下，该接口已废弃
+
+平滑迁移过程获取源集群topic列表接口
                  * @param req DescribeRocketMQSourceClusterTopicListRequest
                  * @return DescribeRocketMQSourceClusterTopicListOutcome
                  */

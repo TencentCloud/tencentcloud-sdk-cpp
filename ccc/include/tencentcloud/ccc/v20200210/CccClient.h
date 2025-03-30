@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/ccc/v20200210/model/AbortAgentCruiseDialingCampaignRequest.h>
+#include <tencentcloud/ccc/v20200210/model/AbortAgentCruiseDialingCampaignResponse.h>
 #include <tencentcloud/ccc/v20200210/model/AbortPredictiveDialingCampaignRequest.h>
 #include <tencentcloud/ccc/v20200210/model/AbortPredictiveDialingCampaignResponse.h>
 #include <tencentcloud/ccc/v20200210/model/BindNumberCallOutSkillGroupRequest.h>
@@ -35,6 +37,8 @@
 #include <tencentcloud/ccc/v20200210/model/CreateAICallResponse.h>
 #include <tencentcloud/ccc/v20200210/model/CreateAdminURLRequest.h>
 #include <tencentcloud/ccc/v20200210/model/CreateAdminURLResponse.h>
+#include <tencentcloud/ccc/v20200210/model/CreateAgentCruiseDialingCampaignRequest.h>
+#include <tencentcloud/ccc/v20200210/model/CreateAgentCruiseDialingCampaignResponse.h>
 #include <tencentcloud/ccc/v20200210/model/CreateAutoCalloutTaskRequest.h>
 #include <tencentcloud/ccc/v20200210/model/CreateAutoCalloutTaskResponse.h>
 #include <tencentcloud/ccc/v20200210/model/CreateCCCSkillGroupRequest.h>
@@ -69,6 +73,8 @@
 #include <tencentcloud/ccc/v20200210/model/DescribeAICallExtractResultResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeActiveCarrierPrivilegeNumberRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeActiveCarrierPrivilegeNumberResponse.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeAgentCruiseDialingCampaignRequest.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeAgentCruiseDialingCampaignResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeAutoCalloutTaskRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeAutoCalloutTaskResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeAutoCalloutTasksRequest.h>
@@ -141,6 +147,8 @@
 #include <tencentcloud/ccc/v20200210/model/ResumePredictiveDialingCampaignResponse.h>
 #include <tencentcloud/ccc/v20200210/model/StopAutoCalloutTaskRequest.h>
 #include <tencentcloud/ccc/v20200210/model/StopAutoCalloutTaskResponse.h>
+#include <tencentcloud/ccc/v20200210/model/TransferToManualRequest.h>
+#include <tencentcloud/ccc/v20200210/model/TransferToManualResponse.h>
 #include <tencentcloud/ccc/v20200210/model/UnbindNumberCallOutSkillGroupRequest.h>
 #include <tencentcloud/ccc/v20200210/model/UnbindNumberCallOutSkillGroupResponse.h>
 #include <tencentcloud/ccc/v20200210/model/UnbindStaffSkillGroupListRequest.h>
@@ -165,6 +173,9 @@ namespace TencentCloud
                 CccClient(const Credential &credential, const std::string &region);
                 CccClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::AbortAgentCruiseDialingCampaignResponse> AbortAgentCruiseDialingCampaignOutcome;
+                typedef std::future<AbortAgentCruiseDialingCampaignOutcome> AbortAgentCruiseDialingCampaignOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::AbortAgentCruiseDialingCampaignRequest&, AbortAgentCruiseDialingCampaignOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AbortAgentCruiseDialingCampaignAsyncHandler;
                 typedef Outcome<Core::Error, Model::AbortPredictiveDialingCampaignResponse> AbortPredictiveDialingCampaignOutcome;
                 typedef std::future<AbortPredictiveDialingCampaignOutcome> AbortPredictiveDialingCampaignOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::AbortPredictiveDialingCampaignRequest&, AbortPredictiveDialingCampaignOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AbortPredictiveDialingCampaignAsyncHandler;
@@ -183,6 +194,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAdminURLResponse> CreateAdminURLOutcome;
                 typedef std::future<CreateAdminURLOutcome> CreateAdminURLOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::CreateAdminURLRequest&, CreateAdminURLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAdminURLAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAgentCruiseDialingCampaignResponse> CreateAgentCruiseDialingCampaignOutcome;
+                typedef std::future<CreateAgentCruiseDialingCampaignOutcome> CreateAgentCruiseDialingCampaignOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::CreateAgentCruiseDialingCampaignRequest&, CreateAgentCruiseDialingCampaignOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAgentCruiseDialingCampaignAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAutoCalloutTaskResponse> CreateAutoCalloutTaskOutcome;
                 typedef std::future<CreateAutoCalloutTaskOutcome> CreateAutoCalloutTaskOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::CreateAutoCalloutTaskRequest&, CreateAutoCalloutTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAutoCalloutTaskAsyncHandler;
@@ -234,6 +248,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeActiveCarrierPrivilegeNumberResponse> DescribeActiveCarrierPrivilegeNumberOutcome;
                 typedef std::future<DescribeActiveCarrierPrivilegeNumberOutcome> DescribeActiveCarrierPrivilegeNumberOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DescribeActiveCarrierPrivilegeNumberRequest&, DescribeActiveCarrierPrivilegeNumberOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeActiveCarrierPrivilegeNumberAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAgentCruiseDialingCampaignResponse> DescribeAgentCruiseDialingCampaignOutcome;
+                typedef std::future<DescribeAgentCruiseDialingCampaignOutcome> DescribeAgentCruiseDialingCampaignOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::DescribeAgentCruiseDialingCampaignRequest&, DescribeAgentCruiseDialingCampaignOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAgentCruiseDialingCampaignAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAutoCalloutTaskResponse> DescribeAutoCalloutTaskOutcome;
                 typedef std::future<DescribeAutoCalloutTaskOutcome> DescribeAutoCalloutTaskOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DescribeAutoCalloutTaskRequest&, DescribeAutoCalloutTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAutoCalloutTaskAsyncHandler;
@@ -342,6 +359,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StopAutoCalloutTaskResponse> StopAutoCalloutTaskOutcome;
                 typedef std::future<StopAutoCalloutTaskOutcome> StopAutoCalloutTaskOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::StopAutoCalloutTaskRequest&, StopAutoCalloutTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopAutoCalloutTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::TransferToManualResponse> TransferToManualOutcome;
+                typedef std::future<TransferToManualOutcome> TransferToManualOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::TransferToManualRequest&, TransferToManualOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TransferToManualAsyncHandler;
                 typedef Outcome<Core::Error, Model::UnbindNumberCallOutSkillGroupResponse> UnbindNumberCallOutSkillGroupOutcome;
                 typedef std::future<UnbindNumberCallOutSkillGroupOutcome> UnbindNumberCallOutSkillGroupOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::UnbindNumberCallOutSkillGroupRequest&, UnbindNumberCallOutSkillGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnbindNumberCallOutSkillGroupAsyncHandler;
@@ -359,6 +379,15 @@ namespace TencentCloud
                 typedef std::function<void(const CccClient*, const Model::UploadIvrAudioRequest&, UploadIvrAudioOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadIvrAudioAsyncHandler;
 
 
+
+                /**
+                 *停止座席巡航式外呼任务
+                 * @param req AbortAgentCruiseDialingCampaignRequest
+                 * @return AbortAgentCruiseDialingCampaignOutcome
+                 */
+                AbortAgentCruiseDialingCampaignOutcome AbortAgentCruiseDialingCampaign(const Model::AbortAgentCruiseDialingCampaignRequest &request);
+                void AbortAgentCruiseDialingCampaignAsync(const Model::AbortAgentCruiseDialingCampaignRequest& request, const AbortAgentCruiseDialingCampaignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AbortAgentCruiseDialingCampaignOutcomeCallable AbortAgentCruiseDialingCampaignCallable(const Model::AbortAgentCruiseDialingCampaignRequest& request);
 
                 /**
                  *停止预测式外呼任务
@@ -417,6 +446,15 @@ namespace TencentCloud
                 CreateAdminURLOutcome CreateAdminURL(const Model::CreateAdminURLRequest &request);
                 void CreateAdminURLAsync(const Model::CreateAdminURLRequest& request, const CreateAdminURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAdminURLOutcomeCallable CreateAdminURLCallable(const Model::CreateAdminURLRequest& request);
+
+                /**
+                 *座席巡航式外呼。
+                 * @param req CreateAgentCruiseDialingCampaignRequest
+                 * @return CreateAgentCruiseDialingCampaignOutcome
+                 */
+                CreateAgentCruiseDialingCampaignOutcome CreateAgentCruiseDialingCampaign(const Model::CreateAgentCruiseDialingCampaignRequest &request);
+                void CreateAgentCruiseDialingCampaignAsync(const Model::CreateAgentCruiseDialingCampaignRequest& request, const CreateAgentCruiseDialingCampaignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAgentCruiseDialingCampaignOutcomeCallable CreateAgentCruiseDialingCampaignCallable(const Model::CreateAgentCruiseDialingCampaignRequest& request);
 
                 /**
                  *创建自动外呼任务
@@ -574,6 +612,15 @@ namespace TencentCloud
                 DescribeActiveCarrierPrivilegeNumberOutcome DescribeActiveCarrierPrivilegeNumber(const Model::DescribeActiveCarrierPrivilegeNumberRequest &request);
                 void DescribeActiveCarrierPrivilegeNumberAsync(const Model::DescribeActiveCarrierPrivilegeNumberRequest& request, const DescribeActiveCarrierPrivilegeNumberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeActiveCarrierPrivilegeNumberOutcomeCallable DescribeActiveCarrierPrivilegeNumberCallable(const Model::DescribeActiveCarrierPrivilegeNumberRequest& request);
+
+                /**
+                 *查询 座席巡航式外呼任务
+                 * @param req DescribeAgentCruiseDialingCampaignRequest
+                 * @return DescribeAgentCruiseDialingCampaignOutcome
+                 */
+                DescribeAgentCruiseDialingCampaignOutcome DescribeAgentCruiseDialingCampaign(const Model::DescribeAgentCruiseDialingCampaignRequest &request);
+                void DescribeAgentCruiseDialingCampaignAsync(const Model::DescribeAgentCruiseDialingCampaignRequest& request, const DescribeAgentCruiseDialingCampaignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAgentCruiseDialingCampaignOutcomeCallable DescribeAgentCruiseDialingCampaignCallable(const Model::DescribeAgentCruiseDialingCampaignRequest& request);
 
                 /**
                  *查询自动外呼任务详情
@@ -900,6 +947,15 @@ namespace TencentCloud
                 StopAutoCalloutTaskOutcome StopAutoCalloutTask(const Model::StopAutoCalloutTaskRequest &request);
                 void StopAutoCalloutTaskAsync(const Model::StopAutoCalloutTaskRequest& request, const StopAutoCalloutTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StopAutoCalloutTaskOutcomeCallable StopAutoCalloutTaskCallable(const Model::StopAutoCalloutTaskRequest& request);
+
+                /**
+                 *特定场景下讲会话转接到人工坐席
+                 * @param req TransferToManualRequest
+                 * @return TransferToManualOutcome
+                 */
+                TransferToManualOutcome TransferToManual(const Model::TransferToManualRequest &request);
+                void TransferToManualAsync(const Model::TransferToManualRequest& request, const TransferToManualAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TransferToManualOutcomeCallable TransferToManualCallable(const Model::TransferToManualRequest& request);
 
                 /**
                  *解绑号码外呼技能组

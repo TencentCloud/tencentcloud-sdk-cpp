@@ -88,6 +88,48 @@ namespace TencentCloud
                      */
                     bool DeliverSubTypeHasBeenSet() const;
 
+                    /**
+                     * 获取投递者
+                     * @return DeliverConsumer 投递者
+                     * 
+                     */
+                    std::string GetDeliverConsumer() const;
+
+                    /**
+                     * 设置投递者
+                     * @param _deliverConsumer 投递者
+                     * 
+                     */
+                    void SetDeliverConsumer(const std::string& _deliverConsumer);
+
+                    /**
+                     * 判断参数 DeliverConsumer 是否已赋值
+                     * @return DeliverConsumer 是否已赋值
+                     * 
+                     */
+                    bool DeliverConsumerHasBeenSet() const;
+
+                    /**
+                     * 获取投递者名称
+                     * @return DeliverConsumerName 投递者名称
+                     * 
+                     */
+                    std::string GetDeliverConsumerName() const;
+
+                    /**
+                     * 设置投递者名称
+                     * @param _deliverConsumerName 投递者名称
+                     * 
+                     */
+                    void SetDeliverConsumerName(const std::string& _deliverConsumerName);
+
+                    /**
+                     * 判断参数 DeliverConsumerName 是否已赋值
+                     * @return DeliverConsumerName 是否已赋值
+                     * 
+                     */
+                    bool DeliverConsumerNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +143,18 @@ namespace TencentCloud
                      */
                     std::string m_deliverSubType;
                     bool m_deliverSubTypeHasBeenSet;
+
+                    /**
+                     * 投递者
+                     */
+                    std::string m_deliverConsumer;
+                    bool m_deliverConsumerHasBeenSet;
+
+                    /**
+                     * 投递者名称
+                     */
+                    std::string m_deliverConsumerName;
+                    bool m_deliverConsumerNameHasBeenSet;
 
                 };
             }

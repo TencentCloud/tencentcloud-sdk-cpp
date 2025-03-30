@@ -92,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志保留时长。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogExpireDay 日志保留时长。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetLogExpireDay() const;
 
                     /**
                      * 设置日志保留时长。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logExpireDay 日志保留时长。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogExpireDay(const uint64_t& _logExpireDay);
@@ -117,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取高频存储时长。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HighLogExpireDay 高频存储时长。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetHighLogExpireDay() const;
 
                     /**
                      * 设置高频存储时长。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _highLogExpireDay 高频存储时长。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHighLogExpireDay(const uint64_t& _highLogExpireDay);
@@ -142,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取低频存储时长。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LowLogExpireDay 低频存储时长。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetLowLogExpireDay() const;
 
                     /**
                      * 设置低频存储时长。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lowLogExpireDay 低频存储时长。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLowLogExpireDay(const uint64_t& _lowLogExpireDay);
@@ -167,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志存储量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BillingAmount 日志存储量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetBillingAmount() const;
 
                     /**
                      * 设置日志存储量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _billingAmount 日志存储量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBillingAmount(const double& _billingAmount);
@@ -192,18 +176,14 @@ namespace TencentCloud
 
                     /**
                      * 获取高频存储量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HighRealStorage 高频存储量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetHighRealStorage() const;
 
                     /**
                      * 设置高频存储量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _highRealStorage 高频存储量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHighRealStorage(const double& _highRealStorage);
@@ -217,18 +197,14 @@ namespace TencentCloud
 
                     /**
                      * 获取低频存储量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LowRealStorage 低频存储量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetLowRealStorage() const;
 
                     /**
                      * 设置低频存储量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _lowRealStorage 低频存储量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLowRealStorage(const double& _lowRealStorage);
@@ -242,18 +218,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否为全审计。true-表示全审计。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AuditAll 是否为全审计。true-表示全审计。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetAuditAll() const;
 
                     /**
                      * 设置是否为全审计。true-表示全审计。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _auditAll 是否为全审计。true-表示全审计。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAuditAll(const bool& _auditAll);
@@ -267,18 +239,14 @@ namespace TencentCloud
 
                     /**
                      * 获取审计开通时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateAt 审计开通时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateAt() const;
 
                     /**
                      * 设置审计开通时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createAt 审计开通时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateAt(const std::string& _createAt);
@@ -292,18 +260,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例相关信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceInfo 实例相关信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AuditInstanceInfo GetInstanceInfo() const;
 
                     /**
                      * 设置实例相关信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceInfo 实例相关信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceInfo(const AuditInstanceInfo& _instanceInfo);
@@ -317,18 +281,14 @@ namespace TencentCloud
 
                     /**
                      * 获取总存储量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RealStorage 总存储量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetRealStorage() const;
 
                     /**
                      * 设置总存储量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _realStorage 总存储量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRealStorage(const double& _realStorage);
@@ -342,18 +302,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例所应用的规则模板。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleTemplateIds 实例所应用的规则模板。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetRuleTemplateIds() const;
 
                     /**
                      * 设置实例所应用的规则模板。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleTemplateIds 实例所应用的规则模板。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleTemplateIds(const std::vector<std::string>& _ruleTemplateIds);
@@ -367,18 +323,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启日志投递：ON，OFF
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Deliver 是否开启日志投递：ON，OFF
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeliver() const;
 
                     /**
                      * 设置是否开启日志投递：ON，OFF
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deliver 是否开启日志投递：ON，OFF
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeliver(const std::string& _deliver);
@@ -392,18 +344,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志投递类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeliverSummary 日志投递类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DeliverSummary> GetDeliverSummary() const;
 
                     /**
                      * 设置日志投递类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deliverSummary 日志投递类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeliverSummary(const std::vector<DeliverSummary>& _deliverSummary);
@@ -431,91 +379,78 @@ namespace TencentCloud
 
                     /**
                      * 日志保留时长。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_logExpireDay;
                     bool m_logExpireDayHasBeenSet;
 
                     /**
                      * 高频存储时长。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_highLogExpireDay;
                     bool m_highLogExpireDayHasBeenSet;
 
                     /**
                      * 低频存储时长。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_lowLogExpireDay;
                     bool m_lowLogExpireDayHasBeenSet;
 
                     /**
                      * 日志存储量。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_billingAmount;
                     bool m_billingAmountHasBeenSet;
 
                     /**
                      * 高频存储量。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_highRealStorage;
                     bool m_highRealStorageHasBeenSet;
 
                     /**
                      * 低频存储量。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_lowRealStorage;
                     bool m_lowRealStorageHasBeenSet;
 
                     /**
                      * 是否为全审计。true-表示全审计。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_auditAll;
                     bool m_auditAllHasBeenSet;
 
                     /**
                      * 审计开通时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createAt;
                     bool m_createAtHasBeenSet;
 
                     /**
                      * 实例相关信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AuditInstanceInfo m_instanceInfo;
                     bool m_instanceInfoHasBeenSet;
 
                     /**
                      * 总存储量。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_realStorage;
                     bool m_realStorageHasBeenSet;
 
                     /**
                      * 实例所应用的规则模板。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_ruleTemplateIds;
                     bool m_ruleTemplateIdsHasBeenSet;
 
                     /**
                      * 是否开启日志投递：ON，OFF
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deliver;
                     bool m_deliverHasBeenSet;
 
                     /**
                      * 日志投递类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DeliverSummary> m_deliverSummary;
                     bool m_deliverSummaryHasBeenSet;

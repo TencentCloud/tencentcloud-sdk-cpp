@@ -44,10 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取域名信息
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LogList 域名信息
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取域名日志信息
+                     * @return LogList 域名日志信息
                      * 
                      */
                     std::vector<std::string> GetLogList() const;
@@ -90,8 +88,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 域名信息
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 域名日志信息
                      */
                     std::vector<std::string> m_logList;
                     bool m_logListHasBeenSet;

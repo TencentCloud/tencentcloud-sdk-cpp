@@ -532,18 +532,14 @@ namespace TencentCloud
 
                     /**
                      * 获取接入端口值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VirtualPort 接入端口值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetVirtualPort() const;
 
                     /**
                      * 设置接入端口值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _virtualPort 接入端口值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVirtualPort(const uint64_t& _virtualPort);
@@ -760,7 +756,6 @@ namespace TencentCloud
 
                     /**
                      * 接入端口值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_virtualPort;
                     bool m_virtualPortHasBeenSet;

@@ -341,6 +341,49 @@ GsClient::CreateAndroidInstancesOutcomeCallable GsClient::CreateAndroidInstances
     return task->get_future();
 }
 
+GsClient::CreateAndroidInstancesScreenshotOutcome GsClient::CreateAndroidInstancesScreenshot(const CreateAndroidInstancesScreenshotRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAndroidInstancesScreenshot");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAndroidInstancesScreenshotResponse rsp = CreateAndroidInstancesScreenshotResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAndroidInstancesScreenshotOutcome(rsp);
+        else
+            return CreateAndroidInstancesScreenshotOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAndroidInstancesScreenshotOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::CreateAndroidInstancesScreenshotAsync(const CreateAndroidInstancesScreenshotRequest& request, const CreateAndroidInstancesScreenshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAndroidInstancesScreenshot(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::CreateAndroidInstancesScreenshotOutcomeCallable GsClient::CreateAndroidInstancesScreenshotCallable(const CreateAndroidInstancesScreenshotRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAndroidInstancesScreenshotOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAndroidInstancesScreenshot(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GsClient::CreateSessionOutcome GsClient::CreateSession(const CreateSessionRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateSession");

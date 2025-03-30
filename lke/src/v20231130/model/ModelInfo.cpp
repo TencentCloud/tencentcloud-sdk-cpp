@@ -31,7 +31,10 @@ ModelInfo::ModelInfo() :
     m_maxTokensHasBeenSet(false),
     m_sourceHasBeenSet(false),
     m_iconHasBeenSet(false),
-    m_isFreeHasBeenSet(false)
+    m_isFreeHasBeenSet(false),
+    m_inputLenLimitHasBeenSet(false),
+    m_supportWorkflowStatusHasBeenSet(false),
+    m_modelCategoryHasBeenSet(false)
 {
 }
 
@@ -171,6 +174,36 @@ CoreInternalOutcome ModelInfo::Deserialize(const rapidjson::Value &value)
         m_isFreeHasBeenSet = true;
     }
 
+    if (value.HasMember("InputLenLimit") && !value["InputLenLimit"].IsNull())
+    {
+        if (!value["InputLenLimit"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelInfo.InputLenLimit` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_inputLenLimit = value["InputLenLimit"].GetUint64();
+        m_inputLenLimitHasBeenSet = true;
+    }
+
+    if (value.HasMember("SupportWorkflowStatus") && !value["SupportWorkflowStatus"].IsNull())
+    {
+        if (!value["SupportWorkflowStatus"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelInfo.SupportWorkflowStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_supportWorkflowStatus = value["SupportWorkflowStatus"].GetUint64();
+        m_supportWorkflowStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("ModelCategory") && !value["ModelCategory"].IsNull())
+    {
+        if (!value["ModelCategory"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelInfo.ModelCategory` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_modelCategory = string(value["ModelCategory"].GetString());
+        m_modelCategoryHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -267,6 +300,30 @@ void ModelInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "IsFree";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isFree, allocator);
+    }
+
+    if (m_inputLenLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InputLenLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_inputLenLimit, allocator);
+    }
+
+    if (m_supportWorkflowStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SupportWorkflowStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_supportWorkflowStatus, allocator);
+    }
+
+    if (m_modelCategoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelCategory";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_modelCategory.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -446,5 +503,53 @@ void ModelInfo::SetIsFree(const bool& _isFree)
 bool ModelInfo::IsFreeHasBeenSet() const
 {
     return m_isFreeHasBeenSet;
+}
+
+uint64_t ModelInfo::GetInputLenLimit() const
+{
+    return m_inputLenLimit;
+}
+
+void ModelInfo::SetInputLenLimit(const uint64_t& _inputLenLimit)
+{
+    m_inputLenLimit = _inputLenLimit;
+    m_inputLenLimitHasBeenSet = true;
+}
+
+bool ModelInfo::InputLenLimitHasBeenSet() const
+{
+    return m_inputLenLimitHasBeenSet;
+}
+
+uint64_t ModelInfo::GetSupportWorkflowStatus() const
+{
+    return m_supportWorkflowStatus;
+}
+
+void ModelInfo::SetSupportWorkflowStatus(const uint64_t& _supportWorkflowStatus)
+{
+    m_supportWorkflowStatus = _supportWorkflowStatus;
+    m_supportWorkflowStatusHasBeenSet = true;
+}
+
+bool ModelInfo::SupportWorkflowStatusHasBeenSet() const
+{
+    return m_supportWorkflowStatusHasBeenSet;
+}
+
+string ModelInfo::GetModelCategory() const
+{
+    return m_modelCategory;
+}
+
+void ModelInfo::SetModelCategory(const string& _modelCategory)
+{
+    m_modelCategory = _modelCategory;
+    m_modelCategoryHasBeenSet = true;
+}
+
+bool ModelInfo::ModelCategoryHasBeenSet() const
+{
+    return m_modelCategoryHasBeenSet;
 }
 

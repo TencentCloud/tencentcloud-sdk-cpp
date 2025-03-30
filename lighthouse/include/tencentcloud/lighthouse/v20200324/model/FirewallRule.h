@@ -48,14 +48,26 @@ namespace TencentCloud
 
                     /**
                      * 获取协议，取值：TCP，UDP，ICMP，ALL，ICMPv6。
+
+- 使用ICMP协议时，只支持CidrBlock，不支持使用Port、Ipv6CidrBlock参数；
+- 使用ICMPv6协议时，只支持Ipv6CidrBlock，不支持使用Port、Ipv6CidrBlock参数；
                      * @return Protocol 协议，取值：TCP，UDP，ICMP，ALL，ICMPv6。
+
+- 使用ICMP协议时，只支持CidrBlock，不支持使用Port、Ipv6CidrBlock参数；
+- 使用ICMPv6协议时，只支持Ipv6CidrBlock，不支持使用Port、Ipv6CidrBlock参数；
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置协议，取值：TCP，UDP，ICMP，ALL，ICMPv6。
+
+- 使用ICMP协议时，只支持CidrBlock，不支持使用Port、Ipv6CidrBlock参数；
+- 使用ICMPv6协议时，只支持Ipv6CidrBlock，不支持使用Port、Ipv6CidrBlock参数；
                      * @param _protocol 协议，取值：TCP，UDP，ICMP，ALL，ICMPv6。
+
+- 使用ICMP协议时，只支持CidrBlock，不支持使用Port、Ipv6CidrBlock参数；
+- 使用ICMPv6协议时，只支持Ipv6CidrBlock，不支持使用Port、Ipv6CidrBlock参数；
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -68,15 +80,15 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取端口，取值：ALL，单独的端口，逗号分隔的离散端口，减号分隔的端口范围。
-                     * @return Port 端口，取值：ALL，单独的端口，逗号分隔的离散端口，减号分隔的端口范围。
+                     * 获取端口，取值：ALL，单独的端口，逗号分隔的离散端口，减号分隔的端口范围。注意：单独的端口与离散端口不能同时存在。
+                     * @return Port 端口，取值：ALL，单独的端口，逗号分隔的离散端口，减号分隔的端口范围。注意：单独的端口与离散端口不能同时存在。
                      * 
                      */
                     std::string GetPort() const;
 
                     /**
-                     * 设置端口，取值：ALL，单独的端口，逗号分隔的离散端口，减号分隔的端口范围。
-                     * @param _port 端口，取值：ALL，单独的端口，逗号分隔的离散端口，减号分隔的端口范围。
+                     * 设置端口，取值：ALL，单独的端口，逗号分隔的离散端口，减号分隔的端口范围。注意：单独的端口与离散端口不能同时存在。
+                     * @param _port 端口，取值：ALL，单独的端口，逗号分隔的离散端口，减号分隔的端口范围。注意：单独的端口与离散端口不能同时存在。
                      * 
                      */
                     void SetPort(const std::string& _port);
@@ -155,15 +167,15 @@ namespace TencentCloud
                     bool Ipv6CidrBlockHasBeenSet() const;
 
                     /**
-                     * 获取取值：ACCEPT，DROP。默认为 ACCEPT。
-                     * @return Action 取值：ACCEPT，DROP。默认为 ACCEPT。
+                     * 获取取值：ACCEPT（允许），DROP（拒绝）。默认为 ACCEPT。
+                     * @return Action 取值：ACCEPT（允许），DROP（拒绝）。默认为 ACCEPT。
                      * 
                      */
                     std::string GetAction() const;
 
                     /**
-                     * 设置取值：ACCEPT，DROP。默认为 ACCEPT。
-                     * @param _action 取值：ACCEPT，DROP。默认为 ACCEPT。
+                     * 设置取值：ACCEPT（允许），DROP（拒绝）。默认为 ACCEPT。
+                     * @param _action 取值：ACCEPT（允许），DROP（拒绝）。默认为 ACCEPT。
                      * 
                      */
                     void SetAction(const std::string& _action);
@@ -200,12 +212,15 @@ namespace TencentCloud
 
                     /**
                      * 协议，取值：TCP，UDP，ICMP，ALL，ICMPv6。
+
+- 使用ICMP协议时，只支持CidrBlock，不支持使用Port、Ipv6CidrBlock参数；
+- 使用ICMPv6协议时，只支持Ipv6CidrBlock，不支持使用Port、Ipv6CidrBlock参数；
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 端口，取值：ALL，单独的端口，逗号分隔的离散端口，减号分隔的端口范围。
+                     * 端口，取值：ALL，单独的端口，逗号分隔的离散端口，减号分隔的端口范围。注意：单独的端口与离散端口不能同时存在。
                      */
                     std::string m_port;
                     bool m_portHasBeenSet;
@@ -229,7 +244,7 @@ namespace TencentCloud
                     bool m_ipv6CidrBlockHasBeenSet;
 
                     /**
-                     * 取值：ACCEPT，DROP。默认为 ACCEPT。
+                     * 取值：ACCEPT（允许），DROP（拒绝）。默认为 ACCEPT。
                      */
                     std::string m_action;
                     bool m_actionHasBeenSet;

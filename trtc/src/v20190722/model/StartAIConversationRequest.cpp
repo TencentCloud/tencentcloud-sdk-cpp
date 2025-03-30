@@ -31,7 +31,8 @@ StartAIConversationRequest::StartAIConversationRequest() :
     m_sTTConfigHasBeenSet(false),
     m_lLMConfigHasBeenSet(false),
     m_tTSConfigHasBeenSet(false),
-    m_avatarConfigHasBeenSet(false)
+    m_avatarConfigHasBeenSet(false),
+    m_experimentalParamsHasBeenSet(false)
 {
 }
 
@@ -114,6 +115,14 @@ string StartAIConversationRequest::ToJsonString() const
         string key = "AvatarConfig";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_avatarConfig.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_experimentalParamsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExperimentalParams";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_experimentalParams.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -266,6 +275,22 @@ void StartAIConversationRequest::SetAvatarConfig(const string& _avatarConfig)
 bool StartAIConversationRequest::AvatarConfigHasBeenSet() const
 {
     return m_avatarConfigHasBeenSet;
+}
+
+string StartAIConversationRequest::GetExperimentalParams() const
+{
+    return m_experimentalParams;
+}
+
+void StartAIConversationRequest::SetExperimentalParams(const string& _experimentalParams)
+{
+    m_experimentalParams = _experimentalParams;
+    m_experimentalParamsHasBeenSet = true;
+}
+
+bool StartAIConversationRequest::ExperimentalParamsHasBeenSet() const
+{
+    return m_experimentalParamsHasBeenSet;
 }
 
 

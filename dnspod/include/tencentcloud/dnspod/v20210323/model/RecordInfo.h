@@ -299,18 +299,14 @@ namespace TencentCloud
 
                     /**
                      * 获取记录的备注。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 记录的备注。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置记录的备注。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remark 记录的备注。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -439,7 +435,6 @@ namespace TencentCloud
 
                     /**
                      * 记录的备注。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;

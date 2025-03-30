@@ -49,6 +49,8 @@
 #include <tencentcloud/iss/v20230517/model/ControlDevicePTZResponse.h>
 #include <tencentcloud/iss/v20230517/model/ControlDevicePresetRequest.h>
 #include <tencentcloud/iss/v20230517/model/ControlDevicePresetResponse.h>
+#include <tencentcloud/iss/v20230517/model/ControlDeviceSnapshotRequest.h>
+#include <tencentcloud/iss/v20230517/model/ControlDeviceSnapshotResponse.h>
 #include <tencentcloud/iss/v20230517/model/ControlDeviceStreamRequest.h>
 #include <tencentcloud/iss/v20230517/model/ControlDeviceStreamResponse.h>
 #include <tencentcloud/iss/v20230517/model/ControlRecordRequest.h>
@@ -129,6 +131,8 @@
 #include <tencentcloud/iss/v20230517/model/DescribeVideoDownloadUrlResponse.h>
 #include <tencentcloud/iss/v20230517/model/ListAITasksRequest.h>
 #include <tencentcloud/iss/v20230517/model/ListAITasksResponse.h>
+#include <tencentcloud/iss/v20230517/model/ListDeviceSnapshotsRequest.h>
+#include <tencentcloud/iss/v20230517/model/ListDeviceSnapshotsResponse.h>
 #include <tencentcloud/iss/v20230517/model/ListDevicesRequest.h>
 #include <tencentcloud/iss/v20230517/model/ListDevicesResponse.h>
 #include <tencentcloud/iss/v20230517/model/ListGatewayDevicesRequest.h>
@@ -244,6 +248,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ControlDevicePresetResponse> ControlDevicePresetOutcome;
                 typedef std::future<ControlDevicePresetOutcome> ControlDevicePresetOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::ControlDevicePresetRequest&, ControlDevicePresetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ControlDevicePresetAsyncHandler;
+                typedef Outcome<Core::Error, Model::ControlDeviceSnapshotResponse> ControlDeviceSnapshotOutcome;
+                typedef std::future<ControlDeviceSnapshotOutcome> ControlDeviceSnapshotOutcomeCallable;
+                typedef std::function<void(const IssClient*, const Model::ControlDeviceSnapshotRequest&, ControlDeviceSnapshotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ControlDeviceSnapshotAsyncHandler;
                 typedef Outcome<Core::Error, Model::ControlDeviceStreamResponse> ControlDeviceStreamOutcome;
                 typedef std::future<ControlDeviceStreamOutcome> ControlDeviceStreamOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::ControlDeviceStreamRequest&, ControlDeviceStreamOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ControlDeviceStreamAsyncHandler;
@@ -364,6 +371,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ListAITasksResponse> ListAITasksOutcome;
                 typedef std::future<ListAITasksOutcome> ListAITasksOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::ListAITasksRequest&, ListAITasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListAITasksAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListDeviceSnapshotsResponse> ListDeviceSnapshotsOutcome;
+                typedef std::future<ListDeviceSnapshotsOutcome> ListDeviceSnapshotsOutcomeCallable;
+                typedef std::function<void(const IssClient*, const Model::ListDeviceSnapshotsRequest&, ListDeviceSnapshotsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListDeviceSnapshotsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListDevicesResponse> ListDevicesOutcome;
                 typedef std::future<ListDevicesOutcome> ListDevicesOutcomeCallable;
                 typedef std::function<void(const IssClient*, const Model::ListDevicesRequest&, ListDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListDevicesAsyncHandler;
@@ -579,6 +589,15 @@ namespace TencentCloud
                 ControlDevicePresetOutcome ControlDevicePreset(const Model::ControlDevicePresetRequest &request);
                 void ControlDevicePresetAsync(const Model::ControlDevicePresetRequest& request, const ControlDevicePresetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ControlDevicePresetOutcomeCallable ControlDevicePresetCallable(const Model::ControlDevicePresetRequest& request);
+
+                /**
+                 *控制设备抓拍--单次，当前仅支持国标设备
+                 * @param req ControlDeviceSnapshotRequest
+                 * @return ControlDeviceSnapshotOutcome
+                 */
+                ControlDeviceSnapshotOutcome ControlDeviceSnapshot(const Model::ControlDeviceSnapshotRequest &request);
+                void ControlDeviceSnapshotAsync(const Model::ControlDeviceSnapshotRequest& request, const ControlDeviceSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ControlDeviceSnapshotOutcomeCallable ControlDeviceSnapshotCallable(const Model::ControlDeviceSnapshotRequest& request);
 
                 /**
                  *用于获取设备的实时开流地址。
@@ -940,6 +959,15 @@ namespace TencentCloud
                 ListAITasksOutcome ListAITasks(const Model::ListAITasksRequest &request);
                 void ListAITasksAsync(const Model::ListAITasksRequest& request, const ListAITasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ListAITasksOutcomeCallable ListAITasksCallable(const Model::ListAITasksRequest& request);
+
+                /**
+                 *获取设备抓拍结果列表
+                 * @param req ListDeviceSnapshotsRequest
+                 * @return ListDeviceSnapshotsOutcome
+                 */
+                ListDeviceSnapshotsOutcome ListDeviceSnapshots(const Model::ListDeviceSnapshotsRequest &request);
+                void ListDeviceSnapshotsAsync(const Model::ListDeviceSnapshotsRequest& request, const ListDeviceSnapshotsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListDeviceSnapshotsOutcomeCallable ListDeviceSnapshotsCallable(const Model::ListDeviceSnapshotsRequest& request);
 
                 /**
                  *用于获取对应组织下的设备列表。

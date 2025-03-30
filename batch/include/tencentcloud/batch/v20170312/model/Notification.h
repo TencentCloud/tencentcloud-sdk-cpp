@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取CMQ主题名字，要求主题名有效且关联订阅
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicName CMQ主题名字，要求主题名有效且关联订阅
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTopicName() const;
 
                     /**
                      * 设置CMQ主题名字，要求主题名有效且关联订阅
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topicName CMQ主题名字，要求主题名有效且关联订阅
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopicName(const std::string& _topicName);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取事件配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EventConfigs 事件配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<EventConfig> GetEventConfigs() const;
 
                     /**
                      * 设置事件配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _eventConfigs 事件配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEventConfigs(const std::vector<EventConfig>& _eventConfigs);
@@ -101,14 +93,12 @@ namespace TencentCloud
 
                     /**
                      * CMQ主题名字，要求主题名有效且关联订阅
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;
 
                     /**
                      * 事件配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<EventConfig> m_eventConfigs;
                     bool m_eventConfigsHasBeenSet;

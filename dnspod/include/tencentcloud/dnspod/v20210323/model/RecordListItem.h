@@ -304,18 +304,14 @@ namespace TencentCloud
 
                     /**
                      * 获取MX值，只有MX记录有
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MX MX值，只有MX记录有
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMX() const;
 
                     /**
                      * 设置MX值，只有MX记录有
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mX MX值，只有MX记录有
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMX(const uint64_t& _mX);
@@ -425,7 +421,6 @@ namespace TencentCloud
 
                     /**
                      * MX值，只有MX记录有
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_mX;
                     bool m_mXHasBeenSet;

@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取项目ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectId 项目ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetProjectId() const;
 
                     /**
                      * 设置项目ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _projectId 项目ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProjectId(const int64_t& _projectId);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TagList 标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Tag> GetTagList() const;
 
                     /**
                      * 设置标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tagList 标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTagList(const std::vector<Tag>& _tagList);
@@ -101,14 +93,12 @@ namespace TencentCloud
 
                     /**
                      * 项目ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
                      * 标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_tagList;
                     bool m_tagListHasBeenSet;

@@ -599,6 +599,49 @@ IssClient::ControlDevicePresetOutcomeCallable IssClient::ControlDevicePresetCall
     return task->get_future();
 }
 
+IssClient::ControlDeviceSnapshotOutcome IssClient::ControlDeviceSnapshot(const ControlDeviceSnapshotRequest &request)
+{
+    auto outcome = MakeRequest(request, "ControlDeviceSnapshot");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ControlDeviceSnapshotResponse rsp = ControlDeviceSnapshotResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ControlDeviceSnapshotOutcome(rsp);
+        else
+            return ControlDeviceSnapshotOutcome(o.GetError());
+    }
+    else
+    {
+        return ControlDeviceSnapshotOutcome(outcome.GetError());
+    }
+}
+
+void IssClient::ControlDeviceSnapshotAsync(const ControlDeviceSnapshotRequest& request, const ControlDeviceSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ControlDeviceSnapshot(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IssClient::ControlDeviceSnapshotOutcomeCallable IssClient::ControlDeviceSnapshotCallable(const ControlDeviceSnapshotRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ControlDeviceSnapshotOutcome()>>(
+        [this, request]()
+        {
+            return this->ControlDeviceSnapshot(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IssClient::ControlDeviceStreamOutcome IssClient::ControlDeviceStream(const ControlDeviceStreamRequest &request)
 {
     auto outcome = MakeRequest(request, "ControlDeviceStream");
@@ -2312,6 +2355,49 @@ IssClient::ListAITasksOutcomeCallable IssClient::ListAITasksCallable(const ListA
         [this, request]()
         {
             return this->ListAITasks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IssClient::ListDeviceSnapshotsOutcome IssClient::ListDeviceSnapshots(const ListDeviceSnapshotsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ListDeviceSnapshots");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ListDeviceSnapshotsResponse rsp = ListDeviceSnapshotsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ListDeviceSnapshotsOutcome(rsp);
+        else
+            return ListDeviceSnapshotsOutcome(o.GetError());
+    }
+    else
+    {
+        return ListDeviceSnapshotsOutcome(outcome.GetError());
+    }
+}
+
+void IssClient::ListDeviceSnapshotsAsync(const ListDeviceSnapshotsRequest& request, const ListDeviceSnapshotsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ListDeviceSnapshots(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IssClient::ListDeviceSnapshotsOutcomeCallable IssClient::ListDeviceSnapshotsCallable(const ListDeviceSnapshotsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ListDeviceSnapshotsOutcome()>>(
+        [this, request]()
+        {
+            return this->ListDeviceSnapshots(request);
         }
     );
 

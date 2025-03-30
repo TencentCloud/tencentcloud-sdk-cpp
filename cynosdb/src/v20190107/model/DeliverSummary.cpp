@@ -22,7 +22,9 @@ using namespace std;
 
 DeliverSummary::DeliverSummary() :
     m_deliverTypeHasBeenSet(false),
-    m_deliverSubTypeHasBeenSet(false)
+    m_deliverSubTypeHasBeenSet(false),
+    m_deliverConsumerHasBeenSet(false),
+    m_deliverConsumerNameHasBeenSet(false)
 {
 }
 
@@ -51,6 +53,26 @@ CoreInternalOutcome DeliverSummary::Deserialize(const rapidjson::Value &value)
         m_deliverSubTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("DeliverConsumer") && !value["DeliverConsumer"].IsNull())
+    {
+        if (!value["DeliverConsumer"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeliverSummary.DeliverConsumer` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deliverConsumer = string(value["DeliverConsumer"].GetString());
+        m_deliverConsumerHasBeenSet = true;
+    }
+
+    if (value.HasMember("DeliverConsumerName") && !value["DeliverConsumerName"].IsNull())
+    {
+        if (!value["DeliverConsumerName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeliverSummary.DeliverConsumerName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deliverConsumerName = string(value["DeliverConsumerName"].GetString());
+        m_deliverConsumerNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +94,22 @@ void DeliverSummary::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "DeliverSubType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_deliverSubType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deliverConsumerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeliverConsumer";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deliverConsumer.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deliverConsumerNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeliverConsumerName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deliverConsumerName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +145,37 @@ void DeliverSummary::SetDeliverSubType(const string& _deliverSubType)
 bool DeliverSummary::DeliverSubTypeHasBeenSet() const
 {
     return m_deliverSubTypeHasBeenSet;
+}
+
+string DeliverSummary::GetDeliverConsumer() const
+{
+    return m_deliverConsumer;
+}
+
+void DeliverSummary::SetDeliverConsumer(const string& _deliverConsumer)
+{
+    m_deliverConsumer = _deliverConsumer;
+    m_deliverConsumerHasBeenSet = true;
+}
+
+bool DeliverSummary::DeliverConsumerHasBeenSet() const
+{
+    return m_deliverConsumerHasBeenSet;
+}
+
+string DeliverSummary::GetDeliverConsumerName() const
+{
+    return m_deliverConsumerName;
+}
+
+void DeliverSummary::SetDeliverConsumerName(const string& _deliverConsumerName)
+{
+    m_deliverConsumerName = _deliverConsumerName;
+    m_deliverConsumerNameHasBeenSet = true;
+}
+
+bool DeliverSummary::DeliverConsumerNameHasBeenSet() const
+{
+    return m_deliverConsumerNameHasBeenSet;
 }
 

@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取共享模式。r-只读；w-可写；rw-可读写。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Mode 共享模式。r-只读；w-可写；rw-可读写。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMode() const;
 
                     /**
                      * 设置共享模式。r-只读；w-可写；rw-可读写。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mode 共享模式。r-只读；w-可写；rw-可读写。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMode(const std::string& _mode);
@@ -94,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取共享到的用户昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Nickname 共享到的用户昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNickname() const;
 
                     /**
                      * 设置共享到的用户昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _nickname 共享到的用户昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNickname(const std::string& _nickname);
@@ -119,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取共享到的用户UIN
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return QCloudUIN 共享到的用户UIN
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetQCloudUIN() const;
 
                     /**
                      * 设置共享到的用户UIN
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _qCloudUIN 共享到的用户UIN
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetQCloudUIN(const std::string& _qCloudUIN);
@@ -144,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取共享状态。enabled-有效；pause-无效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 共享状态。enabled-有效；pause-无效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置共享状态。enabled-有效；pause-无效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 共享状态。enabled-有效；pause-无效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -169,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取共享的子域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubDomain 共享的子域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubDomain() const;
 
                     /**
                      * 设置共享的子域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subDomain 共享的子域名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubDomain(const std::string& _subDomain);
@@ -202,35 +182,30 @@ namespace TencentCloud
 
                     /**
                      * 共享模式。r-只读；w-可写；rw-可读写。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mode;
                     bool m_modeHasBeenSet;
 
                     /**
                      * 共享到的用户昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nickname;
                     bool m_nicknameHasBeenSet;
 
                     /**
                      * 共享到的用户UIN
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_qCloudUIN;
                     bool m_qCloudUINHasBeenSet;
 
                     /**
                      * 共享状态。enabled-有效；pause-无效。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 共享的子域名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subDomain;
                     bool m_subDomainHasBeenSet;

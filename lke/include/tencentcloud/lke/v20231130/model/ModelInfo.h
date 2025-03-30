@@ -248,15 +248,15 @@ namespace TencentCloud
                     bool MaxTokensHasBeenSet() const;
 
                     /**
-                     * 获取模型来源 Hunyuan：腾讯混元大模型,Industry：腾讯云行业大模型,Experience：新模型体验
-                     * @return Source 模型来源 Hunyuan：腾讯混元大模型,Industry：腾讯云行业大模型,Experience：新模型体验
+                     * 获取模型来源 Hunyuan：腾讯混元大模型,Industry：腾讯云行业大模型,Experience：新模型体验,Custom自定义模型
+                     * @return Source 模型来源 Hunyuan：腾讯混元大模型,Industry：腾讯云行业大模型,Experience：新模型体验,Custom自定义模型
                      * 
                      */
                     std::string GetSource() const;
 
                     /**
-                     * 设置模型来源 Hunyuan：腾讯混元大模型,Industry：腾讯云行业大模型,Experience：新模型体验
-                     * @param _source 模型来源 Hunyuan：腾讯混元大模型,Industry：腾讯云行业大模型,Experience：新模型体验
+                     * 设置模型来源 Hunyuan：腾讯混元大模型,Industry：腾讯云行业大模型,Experience：新模型体验,Custom自定义模型
+                     * @param _source 模型来源 Hunyuan：腾讯混元大模型,Industry：腾讯云行业大模型,Experience：新模型体验,Custom自定义模型
                      * 
                      */
                     void SetSource(const std::string& _source);
@@ -309,6 +309,77 @@ namespace TencentCloud
                      * 
                      */
                     bool IsFreeHasBeenSet() const;
+
+                    /**
+                     * 获取模型对话框可输入的上限
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InputLenLimit 模型对话框可输入的上限
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetInputLenLimit() const;
+
+                    /**
+                     * 设置模型对话框可输入的上限
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _inputLenLimit 模型对话框可输入的上限
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInputLenLimit(const uint64_t& _inputLenLimit);
+
+                    /**
+                     * 判断参数 InputLenLimit 是否已赋值
+                     * @return InputLenLimit 是否已赋值
+                     * 
+                     */
+                    bool InputLenLimitHasBeenSet() const;
+
+                    /**
+                     * 获取支持工作流的类型 0:模型不支持; 1: 模型支持工作流； 2： 模型支持效果不佳；
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SupportWorkflowStatus 支持工作流的类型 0:模型不支持; 1: 模型支持工作流； 2： 模型支持效果不佳；
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    uint64_t GetSupportWorkflowStatus() const;
+
+                    /**
+                     * 设置支持工作流的类型 0:模型不支持; 1: 模型支持工作流； 2： 模型支持效果不佳；
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _supportWorkflowStatus 支持工作流的类型 0:模型不支持; 1: 模型支持工作流； 2： 模型支持效果不佳；
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetSupportWorkflowStatus(const uint64_t& _supportWorkflowStatus);
+
+                    /**
+                     * 判断参数 SupportWorkflowStatus 是否已赋值
+                     * @return SupportWorkflowStatus 是否已赋值
+                     * 
+                     */
+                    bool SupportWorkflowStatusHasBeenSet() const;
+
+                    /**
+                     * 获取模型类别 generate：生成模型，thought：思考模型
+                     * @return ModelCategory 模型类别 generate：生成模型，thought：思考模型
+                     * 
+                     */
+                    std::string GetModelCategory() const;
+
+                    /**
+                     * 设置模型类别 generate：生成模型，thought：思考模型
+                     * @param _modelCategory 模型类别 generate：生成模型，thought：思考模型
+                     * 
+                     */
+                    void SetModelCategory(const std::string& _modelCategory);
+
+                    /**
+                     * 判断参数 ModelCategory 是否已赋值
+                     * @return ModelCategory 是否已赋值
+                     * 
+                     */
+                    bool ModelCategoryHasBeenSet() const;
 
                 private:
 
@@ -369,7 +440,7 @@ namespace TencentCloud
                     bool m_maxTokensHasBeenSet;
 
                     /**
-                     * 模型来源 Hunyuan：腾讯混元大模型,Industry：腾讯云行业大模型,Experience：新模型体验
+                     * 模型来源 Hunyuan：腾讯混元大模型,Industry：腾讯云行业大模型,Experience：新模型体验,Custom自定义模型
                      */
                     std::string m_source;
                     bool m_sourceHasBeenSet;
@@ -385,6 +456,26 @@ namespace TencentCloud
                      */
                     bool m_isFree;
                     bool m_isFreeHasBeenSet;
+
+                    /**
+                     * 模型对话框可输入的上限
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_inputLenLimit;
+                    bool m_inputLenLimitHasBeenSet;
+
+                    /**
+                     * 支持工作流的类型 0:模型不支持; 1: 模型支持工作流； 2： 模型支持效果不佳；
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_supportWorkflowStatus;
+                    bool m_supportWorkflowStatusHasBeenSet;
+
+                    /**
+                     * 模型类别 generate：生成模型，thought：思考模型
+                     */
+                    std::string m_modelCategory;
+                    bool m_modelCategoryHasBeenSet;
 
                 };
             }
