@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool DomainNameHasBeenSet() const;
 
                     /**
-                     * 获取推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
-                     * @return AppName 推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
+                     * 获取推流路径，与推流和播放地址中的AppName保持一致，默认为 live。注：如果需要对所有AppName生效，可填写“*”。
+                     * @return AppName 推流路径，与推流和播放地址中的AppName保持一致，默认为 live。注：如果需要对所有AppName生效，可填写“*”。
                      * 
                      */
                     std::string GetAppName() const;
 
                     /**
-                     * 设置推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
-                     * @param _appName 推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
+                     * 设置推流路径，与推流和播放地址中的AppName保持一致，默认为 live。注：如果需要对所有AppName生效，可填写“*”。
+                     * @param _appName 推流路径，与推流和播放地址中的AppName保持一致，默认为 live。注：如果需要对所有AppName生效，可填写“*”。
                      * 
                      */
                     void SetAppName(const std::string& _appName);
@@ -85,19 +85,15 @@ namespace TencentCloud
                     bool AppNameHasBeenSet() const;
 
                     /**
-                     * 获取流名称。
-注：如果本参数设置为非空字符串，规则将只对此推流起作用。
-                     * @return StreamName 流名称。
-注：如果本参数设置为非空字符串，规则将只对此推流起作用。
+                     * 获取流名称。注：如果本参数设置为非空字符串，规则将只对此推流起作用。如果需要对所有StreamName生效，可填写“*”。
+                     * @return StreamName 流名称。注：如果本参数设置为非空字符串，规则将只对此推流起作用。如果需要对所有StreamName生效，可填写“*”。
                      * 
                      */
                     std::string GetStreamName() const;
 
                     /**
-                     * 设置流名称。
-注：如果本参数设置为非空字符串，规则将只对此推流起作用。
-                     * @param _streamName 流名称。
-注：如果本参数设置为非空字符串，规则将只对此推流起作用。
+                     * 设置流名称。注：如果本参数设置为非空字符串，规则将只对此推流起作用。如果需要对所有StreamName生效，可填写“*”。
+                     * @param _streamName 流名称。注：如果本参数设置为非空字符串，规则将只对此推流起作用。如果需要对所有StreamName生效，可填写“*”。
                      * 
                      */
                     void SetStreamName(const std::string& _streamName);
@@ -139,14 +135,13 @@ namespace TencentCloud
                     bool m_domainNameHasBeenSet;
 
                     /**
-                     * 推流路径，与推流和播放地址中的AppName保持一致，默认为 live。
+                     * 推流路径，与推流和播放地址中的AppName保持一致，默认为 live。注：如果需要对所有AppName生效，可填写“*”。
                      */
                     std::string m_appName;
                     bool m_appNameHasBeenSet;
 
                     /**
-                     * 流名称。
-注：如果本参数设置为非空字符串，规则将只对此推流起作用。
+                     * 流名称。注：如果本参数设置为非空字符串，规则将只对此推流起作用。如果需要对所有StreamName生效，可填写“*”。
                      */
                     std::string m_streamName;
                     bool m_streamNameHasBeenSet;

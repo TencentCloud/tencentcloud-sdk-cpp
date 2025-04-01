@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取应用总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 应用总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取分页返回的应用列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationSet 分页返回的应用列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ApplicationInfo> GetApplicationSet() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 应用总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
                      * 分页返回的应用列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ApplicationInfo> m_applicationSet;
                     bool m_applicationSetHasBeenSet;

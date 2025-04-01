@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取对端IP。
-                     * @return Ip 对端IP。
+                     * 获取对端IP或域名。
+                     * @return Ip 对端IP或域名。
                      * 
                      */
                     std::string GetIp() const;
 
                     /**
-                     * 设置对端IP。
-                     * @param _ip 对端IP。
+                     * 设置对端IP或域名。
+                     * @param _ip 对端IP或域名。
                      * 
                      */
                     void SetIp(const std::string& _ip);
@@ -91,7 +91,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 对端IP。
+                     * 对端IP或域名。
                      */
                     std::string m_ip;
                     bool m_ipHasBeenSet;

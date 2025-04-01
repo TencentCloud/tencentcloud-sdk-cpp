@@ -131,6 +131,27 @@ namespace TencentCloud
                      */
                     bool ScoreDetailsHasBeenSet() const;
 
+                    /**
+                     * 获取健康等级版本，默认为V1
+                     * @return HealthLevelVersion 健康等级版本，默认为V1
+                     * 
+                     */
+                    std::string GetHealthLevelVersion() const;
+
+                    /**
+                     * 设置健康等级版本，默认为V1
+                     * @param _healthLevelVersion 健康等级版本，默认为V1
+                     * 
+                     */
+                    void SetHealthLevelVersion(const std::string& _healthLevelVersion);
+
+                    /**
+                     * 判断参数 HealthLevelVersion 是否已赋值
+                     * @return HealthLevelVersion 是否已赋值
+                     * 
+                     */
+                    bool HealthLevelVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -156,6 +177,12 @@ namespace TencentCloud
                      */
                     std::vector<ScoreDetail> m_scoreDetails;
                     bool m_scoreDetailsHasBeenSet;
+
+                    /**
+                     * 健康等级版本，默认为V1
+                     */
+                    std::string m_healthLevelVersion;
+                    bool m_healthLevelVersionHasBeenSet;
 
                 };
             }

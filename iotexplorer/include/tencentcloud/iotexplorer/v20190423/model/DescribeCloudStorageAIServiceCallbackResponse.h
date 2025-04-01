@@ -59,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取HTTP 回调 URL
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CallbackUrl HTTP 回调 URL
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCallbackUrl() const;
@@ -75,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取HTTP 回调鉴权 Token
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CallbackToken HTTP 回调鉴权 Token
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCallbackToken() const;
@@ -99,14 +95,12 @@ namespace TencentCloud
 
                     /**
                      * HTTP 回调 URL
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_callbackUrl;
                     bool m_callbackUrlHasBeenSet;
 
                     /**
                      * HTTP 回调鉴权 Token
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_callbackToken;
                     bool m_callbackTokenHasBeenSet;

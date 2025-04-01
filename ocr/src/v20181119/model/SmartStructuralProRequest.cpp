@@ -30,7 +30,8 @@ SmartStructuralProRequest::SmartStructuralProRequest() :
     m_returnFullTextHasBeenSet(false),
     m_configIdHasBeenSet(false),
     m_enableCoordHasBeenSet(false),
-    m_outputParentKeyHasBeenSet(false)
+    m_outputParentKeyHasBeenSet(false),
+    m_configAdvancedHasBeenSet(false)
 {
 }
 
@@ -108,6 +109,15 @@ string SmartStructuralProRequest::ToJsonString() const
         string key = "OutputParentKey";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_outputParentKey, allocator);
+    }
+
+    if (m_configAdvancedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfigAdvanced";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_configAdvanced.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -244,6 +254,22 @@ void SmartStructuralProRequest::SetOutputParentKey(const bool& _outputParentKey)
 bool SmartStructuralProRequest::OutputParentKeyHasBeenSet() const
 {
     return m_outputParentKeyHasBeenSet;
+}
+
+ConfigAdvanced SmartStructuralProRequest::GetConfigAdvanced() const
+{
+    return m_configAdvanced;
+}
+
+void SmartStructuralProRequest::SetConfigAdvanced(const ConfigAdvanced& _configAdvanced)
+{
+    m_configAdvanced = _configAdvanced;
+    m_configAdvancedHasBeenSet = true;
+}
+
+bool SmartStructuralProRequest::ConfigAdvancedHasBeenSet() const
+{
+    return m_configAdvancedHasBeenSet;
 }
 
 

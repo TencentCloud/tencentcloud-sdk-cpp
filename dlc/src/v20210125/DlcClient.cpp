@@ -1502,6 +1502,49 @@ DlcClient::CreateSparkSessionBatchSQLOutcomeCallable DlcClient::CreateSparkSessi
     return task->get_future();
 }
 
+DlcClient::CreateSparkSubmitTaskOutcome DlcClient::CreateSparkSubmitTask(const CreateSparkSubmitTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSparkSubmitTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSparkSubmitTaskResponse rsp = CreateSparkSubmitTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSparkSubmitTaskOutcome(rsp);
+        else
+            return CreateSparkSubmitTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSparkSubmitTaskOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::CreateSparkSubmitTaskAsync(const CreateSparkSubmitTaskRequest& request, const CreateSparkSubmitTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateSparkSubmitTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::CreateSparkSubmitTaskOutcomeCallable DlcClient::CreateSparkSubmitTaskCallable(const CreateSparkSubmitTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateSparkSubmitTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateSparkSubmitTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::CreateStoreLocationOutcome DlcClient::CreateStoreLocation(const CreateStoreLocationRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateStoreLocation");

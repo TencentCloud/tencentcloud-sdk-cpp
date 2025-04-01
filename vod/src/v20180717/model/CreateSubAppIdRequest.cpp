@@ -24,7 +24,8 @@ using namespace std;
 
 CreateSubAppIdRequest::CreateSubAppIdRequest() :
     m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string CreateSubAppIdRequest::ToJsonString() const
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void CreateSubAppIdRequest::SetDescription(const string& _description)
 bool CreateSubAppIdRequest::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+string CreateSubAppIdRequest::GetType() const
+{
+    return m_type;
+}
+
+void CreateSubAppIdRequest::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool CreateSubAppIdRequest::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 
 

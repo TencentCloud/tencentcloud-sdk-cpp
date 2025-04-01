@@ -44,7 +44,9 @@ RabbitMQClusterInfo::RabbitMQClusterInfo() :
     m_messageConsumeRateHasBeenSet(false),
     m_clusterVersionHasBeenSet(false),
     m_payModeHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false)
+    m_instanceTypeHasBeenSet(false),
+    m_isolatedTimeHasBeenSet(false),
+    m_containerHasBeenSet(false)
 {
 }
 
@@ -306,6 +308,26 @@ CoreInternalOutcome RabbitMQClusterInfo::Deserialize(const rapidjson::Value &val
         m_instanceTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("IsolatedTime") && !value["IsolatedTime"].IsNull())
+    {
+        if (!value["IsolatedTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQClusterInfo.IsolatedTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isolatedTime = value["IsolatedTime"].GetInt64();
+        m_isolatedTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Container") && !value["Container"].IsNull())
+    {
+        if (!value["Container"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQClusterInfo.Container` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_container = value["Container"].GetBool();
+        m_containerHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -515,6 +537,22 @@ void RabbitMQClusterInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "InstanceType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_instanceType, allocator);
+    }
+
+    if (m_isolatedTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsolatedTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isolatedTime, allocator);
+    }
+
+    if (m_containerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Container";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_container, allocator);
     }
 
 }
@@ -902,5 +940,37 @@ void RabbitMQClusterInfo::SetInstanceType(const uint64_t& _instanceType)
 bool RabbitMQClusterInfo::InstanceTypeHasBeenSet() const
 {
     return m_instanceTypeHasBeenSet;
+}
+
+int64_t RabbitMQClusterInfo::GetIsolatedTime() const
+{
+    return m_isolatedTime;
+}
+
+void RabbitMQClusterInfo::SetIsolatedTime(const int64_t& _isolatedTime)
+{
+    m_isolatedTime = _isolatedTime;
+    m_isolatedTimeHasBeenSet = true;
+}
+
+bool RabbitMQClusterInfo::IsolatedTimeHasBeenSet() const
+{
+    return m_isolatedTimeHasBeenSet;
+}
+
+bool RabbitMQClusterInfo::GetContainer() const
+{
+    return m_container;
+}
+
+void RabbitMQClusterInfo::SetContainer(const bool& _container)
+{
+    m_container = _container;
+    m_containerHasBeenSet = true;
+}
+
+bool RabbitMQClusterInfo::ContainerHasBeenSet() const
+{
+    return m_containerHasBeenSet;
 }
 

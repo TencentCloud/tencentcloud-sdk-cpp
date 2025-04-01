@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ocr/v20181119/model/ConfigAdvanced.h>
 
 
 namespace TencentCloud
@@ -163,6 +164,7 @@ BookingConfirmation -- 配舱通知书识别模板
 AirWayBill -- 航空运单识别模板
 DispatchWeightNote -- 磅单发货单识别模板
 ReceiptWeightNote -- 磅单收货单识别模板
+ArticalRecognize -- 手写作文模版
                      * @return ConfigId 配置id支持：
 General -- 通用场景 
 InvoiceEng -- 国际invoice模版 
@@ -178,6 +180,7 @@ BookingConfirmation -- 配舱通知书识别模板
 AirWayBill -- 航空运单识别模板
 DispatchWeightNote -- 磅单发货单识别模板
 ReceiptWeightNote -- 磅单收货单识别模板
+ArticalRecognize -- 手写作文模版
                      * 
                      */
                     std::string GetConfigId() const;
@@ -198,6 +201,7 @@ BookingConfirmation -- 配舱通知书识别模板
 AirWayBill -- 航空运单识别模板
 DispatchWeightNote -- 磅单发货单识别模板
 ReceiptWeightNote -- 磅单收货单识别模板
+ArticalRecognize -- 手写作文模版
                      * @param _configId 配置id支持：
 General -- 通用场景 
 InvoiceEng -- 国际invoice模版 
@@ -213,6 +217,7 @@ BookingConfirmation -- 配舱通知书识别模板
 AirWayBill -- 航空运单识别模板
 DispatchWeightNote -- 磅单发货单识别模板
 ReceiptWeightNote -- 磅单收货单识别模板
+ArticalRecognize -- 手写作文模版
                      * 
                      */
                     void SetConfigId(const std::string& _configId);
@@ -266,6 +271,27 @@ ReceiptWeightNote -- 磅单收货单识别模板
                      */
                     bool OutputParentKeyHasBeenSet() const;
 
+                    /**
+                     * 获取模版的单个属性配置
+                     * @return ConfigAdvanced 模版的单个属性配置
+                     * 
+                     */
+                    ConfigAdvanced GetConfigAdvanced() const;
+
+                    /**
+                     * 设置模版的单个属性配置
+                     * @param _configAdvanced 模版的单个属性配置
+                     * 
+                     */
+                    void SetConfigAdvanced(const ConfigAdvanced& _configAdvanced);
+
+                    /**
+                     * 判断参数 ConfigAdvanced 是否已赋值
+                     * @return ConfigAdvanced 是否已赋值
+                     * 
+                     */
+                    bool ConfigAdvancedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -314,6 +340,7 @@ BookingConfirmation -- 配舱通知书识别模板
 AirWayBill -- 航空运单识别模板
 DispatchWeightNote -- 磅单发货单识别模板
 ReceiptWeightNote -- 磅单收货单识别模板
+ArticalRecognize -- 手写作文模版
                      */
                     std::string m_configId;
                     bool m_configIdHasBeenSet;
@@ -329,6 +356,12 @@ ReceiptWeightNote -- 磅单收货单识别模板
                      */
                     bool m_outputParentKey;
                     bool m_outputParentKeyHasBeenSet;
+
+                    /**
+                     * 模版的单个属性配置
+                     */
+                    ConfigAdvanced m_configAdvanced;
+                    bool m_configAdvancedHasBeenSet;
 
                 };
             }

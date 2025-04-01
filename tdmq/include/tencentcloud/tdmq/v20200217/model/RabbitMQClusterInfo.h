@@ -555,6 +555,48 @@ namespace TencentCloud
                      */
                     bool InstanceTypeHasBeenSet() const;
 
+                    /**
+                     * 获取开始隔离时间
+                     * @return IsolatedTime 开始隔离时间
+                     * 
+                     */
+                    int64_t GetIsolatedTime() const;
+
+                    /**
+                     * 设置开始隔离时间
+                     * @param _isolatedTime 开始隔离时间
+                     * 
+                     */
+                    void SetIsolatedTime(const int64_t& _isolatedTime);
+
+                    /**
+                     * 判断参数 IsolatedTime 是否已赋值
+                     * @return IsolatedTime 是否已赋值
+                     * 
+                     */
+                    bool IsolatedTimeHasBeenSet() const;
+
+                    /**
+                     * 获取是否为容器实例，默认 true
+                     * @return Container 是否为容器实例，默认 true
+                     * 
+                     */
+                    bool GetContainer() const;
+
+                    /**
+                     * 设置是否为容器实例，默认 true
+                     * @param _container 是否为容器实例，默认 true
+                     * 
+                     */
+                    void SetContainer(const bool& _container);
+
+                    /**
+                     * 判断参数 Container 是否已赋值
+                     * @return Container 是否已赋值
+                     * 
+                     */
+                    bool ContainerHasBeenSet() const;
+
                 private:
 
                     /**
@@ -701,6 +743,18 @@ namespace TencentCloud
                      */
                     uint64_t m_instanceType;
                     bool m_instanceTypeHasBeenSet;
+
+                    /**
+                     * 开始隔离时间
+                     */
+                    int64_t m_isolatedTime;
+                    bool m_isolatedTimeHasBeenSet;
+
+                    /**
+                     * 是否为容器实例，默认 true
+                     */
+                    bool m_container;
+                    bool m_containerHasBeenSet;
 
                 };
             }

@@ -43,7 +43,47 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取mqtt实例ID
+                     * @return InstanceId mqtt实例ID
+                     * 
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取ca 证书的序列号
+                     * @return CaSn ca 证书的序列号
+                     * 
+                     */
+                    std::string GetCaSn() const;
+
+                    /**
+                     * 判断参数 CaSn 是否已赋值
+                     * @return CaSn 是否已赋值
+                     * 
+                     */
+                    bool CaSnHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * mqtt实例ID
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * ca 证书的序列号
+                     */
+                    std::string m_caSn;
+                    bool m_caSnHasBeenSet;
 
                 };
             }

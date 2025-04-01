@@ -919,7 +919,7 @@ namespace TencentCloud
                 PublishRRPCMessageOutcomeCallable PublishRRPCMessageCallable(const Model::PublishRRPCMessageRequest& request);
 
                 /**
-                 *本接口（ReplaceTopicRule）用于修改替换规则 
+                 *本接口（ReplaceTopicRule）用于修改替换规则
                  * @param req ReplaceTopicRuleRequest
                  * @return ReplaceTopicRuleOutcome
                  */

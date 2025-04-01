@@ -479,6 +479,27 @@ namespace TencentCloud
                      */
                     bool InstanceTypeHasBeenSet() const;
 
+                    /**
+                     * 获取隔离时间，毫秒为单位
+                     * @return IsolatedTime 隔离时间，毫秒为单位
+                     * 
+                     */
+                    uint64_t GetIsolatedTime() const;
+
+                    /**
+                     * 设置隔离时间，毫秒为单位
+                     * @param _isolatedTime 隔离时间，毫秒为单位
+                     * 
+                     */
+                    void SetIsolatedTime(const uint64_t& _isolatedTime);
+
+                    /**
+                     * 判断参数 IsolatedTime 是否已赋值
+                     * @return IsolatedTime 是否已赋值
+                     * 
+                     */
+                    bool IsolatedTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -603,6 +624,12 @@ namespace TencentCloud
                      */
                     uint64_t m_instanceType;
                     bool m_instanceTypeHasBeenSet;
+
+                    /**
+                     * 隔离时间，毫秒为单位
+                     */
+                    uint64_t m_isolatedTime;
+                    bool m_isolatedTimeHasBeenSet;
 
                 };
             }

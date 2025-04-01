@@ -1075,7 +1075,7 @@ namespace TencentCloud
                 CreateTRTCSignaturesWithRoomIdOutcomeCallable CreateTRTCSignaturesWithRoomIdCallable(const Model::CreateTRTCSignaturesWithRoomIdRequest& request);
 
                 /**
-                 *本接口（CreateTopicPolicy）用于创建一个Topic 
+                 *本接口（CreateTopicPolicy）用于创建一个Topic
                  * @param req CreateTopicPolicyRequest
                  * @return CreateTopicPolicyOutcome
                  */
@@ -1183,7 +1183,7 @@ namespace TencentCloud
                 DeleteStudioProductOutcomeCallable DeleteStudioProductCallable(const Model::DeleteStudioProductRequest& request);
 
                 /**
-                 *本接口（DeleteTopicPolicy）用于删除Topic 
+                 *本接口（DeleteTopicPolicy）用于删除Topic
                  * @param req DeleteTopicPolicyRequest
                  * @return DeleteTopicPolicyOutcome
                  */
@@ -1651,7 +1651,7 @@ namespace TencentCloud
                 DescribeStudioProductOutcomeCallable DescribeStudioProductCallable(const Model::DescribeStudioProductRequest& request);
 
                 /**
-                 *本接口（DescribeTopicPolicy）用于查看Topic详细信息 
+                 *本接口（DescribeTopicPolicy）用于查看Topic详细信息
                  * @param req DescribeTopicPolicyRequest
                  * @return DescribeTopicPolicyOutcome
                  */
@@ -2056,7 +2056,7 @@ namespace TencentCloud
                 ModifyStudioProductOutcomeCallable ModifyStudioProductCallable(const Model::ModifyStudioProductRequest& request);
 
                 /**
-                 *本接口（UpdateTopicPolicy）用于更新Topic信息 
+                 *本接口（UpdateTopicPolicy）用于更新Topic信息
                  * @param req ModifyTopicPolicyRequest
                  * @return ModifyTopicPolicyOutcome
                  */
@@ -2267,7 +2267,7 @@ namespace TencentCloud
                 UpdateDevicesEnableStateOutcomeCallable UpdateDevicesEnableStateCallable(const Model::UpdateDevicesEnableStateRequest& request);
 
                 /**
-                 *本接口（UpdateFirmware）用于对指定设备发起固件升级请求 
+                 *本接口（UpdateFirmware）用于对指定设备发起固件升级请求
                  * @param req UpdateFirmwareRequest
                  * @return UpdateFirmwareOutcome
                  */

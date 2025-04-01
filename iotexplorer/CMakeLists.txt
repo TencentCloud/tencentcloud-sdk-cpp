@@ -204,6 +204,7 @@ set(iotexplorer_public_header_model
   include/tencentcloud/iotexplorer/v20190423/model/PackageInfo.h
   include/tencentcloud/iotexplorer/v20190423/model/DeleteDevicesResponse.h
   include/tencentcloud/iotexplorer/v20190423/model/ModifyStudioProductResponse.h
+  include/tencentcloud/iotexplorer/v20190423/model/CloudStorageAIServiceTaskFileLabel.h
   include/tencentcloud/iotexplorer/v20190423/model/BindDevicesRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DescribePackageConsumeTaskRequest.h
   include/tencentcloud/iotexplorer/v20190423/model/DismissRoomByStrRoomIdFromTRTCResponse.h
@@ -596,6 +597,7 @@ set(iotexplorer_src
   src/v20190423/model/PackageInfo.cpp
   src/v20190423/model/DeleteDevicesResponse.cpp
   src/v20190423/model/ModifyStudioProductResponse.cpp
+  src/v20190423/model/CloudStorageAIServiceTaskFileLabel.cpp
   src/v20190423/model/BindDevicesRequest.cpp
   src/v20190423/model/DescribePackageConsumeTaskRequest.cpp
   src/v20190423/model/DismissRoomByStrRoomIdFromTRTCResponse.cpp

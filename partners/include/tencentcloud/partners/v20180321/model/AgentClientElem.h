@@ -277,6 +277,27 @@ namespace TencentCloud
                      */
                     bool ClientNameHasBeenSet() const;
 
+                    /**
+                     * 获取增量目标金额(分)
+                     * @return IncreaseGoal 增量目标金额(分)
+                     * 
+                     */
+                    std::string GetIncreaseGoal() const;
+
+                    /**
+                     * 设置增量目标金额(分)
+                     * @param _increaseGoal 增量目标金额(分)
+                     * 
+                     */
+                    void SetIncreaseGoal(const std::string& _increaseGoal);
+
+                    /**
+                     * 判断参数 IncreaseGoal 是否已赋值
+                     * @return IncreaseGoal 是否已赋值
+                     * 
+                     */
+                    bool IncreaseGoalHasBeenSet() const;
+
                 private:
 
                     /**
@@ -344,6 +365,12 @@ namespace TencentCloud
                      */
                     std::string m_clientName;
                     bool m_clientNameHasBeenSet;
+
+                    /**
+                     * 增量目标金额(分)
+                     */
+                    std::string m_increaseGoal;
+                    bool m_increaseGoalHasBeenSet;
 
                 };
             }

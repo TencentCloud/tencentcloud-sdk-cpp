@@ -25,7 +25,8 @@ CloudStorageAIServiceTaskFileInfo::CloudStorageAIServiceTaskFileInfo() :
     m_fileSizeHasBeenSet(false),
     m_downloadURLHasBeenSet(false),
     m_mimeTypeHasBeenSet(false),
-    m_videoMetaInfoHasBeenSet(false)
+    m_videoMetaInfoHasBeenSet(false),
+    m_labelsHasBeenSet(false)
 {
 }
 
@@ -91,6 +92,26 @@ CoreInternalOutcome CloudStorageAIServiceTaskFileInfo::Deserialize(const rapidjs
         m_videoMetaInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("Labels") && !value["Labels"].IsNull())
+    {
+        if (!value["Labels"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CloudStorageAIServiceTaskFileInfo.Labels` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Labels"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CloudStorageAIServiceTaskFileLabel item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_labels.push_back(item);
+        }
+        m_labelsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -137,6 +158,21 @@ void CloudStorageAIServiceTaskFileInfo::ToJsonObject(rapidjson::Value &value, ra
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_videoMetaInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_labelsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Labels";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_labels.begin(); itr != m_labels.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -220,5 +256,21 @@ void CloudStorageAIServiceTaskFileInfo::SetVideoMetaInfo(const CloudStorageAISer
 bool CloudStorageAIServiceTaskFileInfo::VideoMetaInfoHasBeenSet() const
 {
     return m_videoMetaInfoHasBeenSet;
+}
+
+vector<CloudStorageAIServiceTaskFileLabel> CloudStorageAIServiceTaskFileInfo::GetLabels() const
+{
+    return m_labels;
+}
+
+void CloudStorageAIServiceTaskFileInfo::SetLabels(const vector<CloudStorageAIServiceTaskFileLabel>& _labels)
+{
+    m_labels = _labels;
+    m_labelsHasBeenSet = true;
+}
+
+bool CloudStorageAIServiceTaskFileInfo::LabelsHasBeenSet() const
+{
+    return m_labelsHasBeenSet;
 }
 

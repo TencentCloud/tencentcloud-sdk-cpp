@@ -283,6 +283,8 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeReportTaskListResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeResourceManagePathTreesRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeResourceManagePathTreesResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRoleListRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRoleListResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeRuleRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeRuleResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeRuleDimStatRequest.h>
@@ -507,6 +509,8 @@
 #include <tencentcloud/wedata/v20210820/model/UnlockIntegrationTaskResponse.h>
 #include <tencentcloud/wedata/v20210820/model/UpdateDataModelRegistryInfoRequest.h>
 #include <tencentcloud/wedata/v20210820/model/UpdateDataModelRegistryInfoResponse.h>
+#include <tencentcloud/wedata/v20210820/model/UpdateProjectUserRoleRequest.h>
+#include <tencentcloud/wedata/v20210820/model/UpdateProjectUserRoleResponse.h>
 #include <tencentcloud/wedata/v20210820/model/UpdateWorkflowOwnerRequest.h>
 #include <tencentcloud/wedata/v20210820/model/UpdateWorkflowOwnerResponse.h>
 #include <tencentcloud/wedata/v20210820/model/UploadContentRequest.h>
@@ -917,6 +921,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeResourceManagePathTreesResponse> DescribeResourceManagePathTreesOutcome;
                 typedef std::future<DescribeResourceManagePathTreesOutcome> DescribeResourceManagePathTreesOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeResourceManagePathTreesRequest&, DescribeResourceManagePathTreesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceManagePathTreesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRoleListResponse> DescribeRoleListOutcome;
+                typedef std::future<DescribeRoleListOutcome> DescribeRoleListOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeRoleListRequest&, DescribeRoleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRoleListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRuleResponse> DescribeRuleOutcome;
                 typedef std::future<DescribeRuleOutcome> DescribeRuleOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeRuleRequest&, DescribeRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRuleAsyncHandler;
@@ -1253,6 +1260,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateDataModelRegistryInfoResponse> UpdateDataModelRegistryInfoOutcome;
                 typedef std::future<UpdateDataModelRegistryInfoOutcome> UpdateDataModelRegistryInfoOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::UpdateDataModelRegistryInfoRequest&, UpdateDataModelRegistryInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDataModelRegistryInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateProjectUserRoleResponse> UpdateProjectUserRoleOutcome;
+                typedef std::future<UpdateProjectUserRoleOutcome> UpdateProjectUserRoleOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::UpdateProjectUserRoleRequest&, UpdateProjectUserRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateProjectUserRoleAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateWorkflowOwnerResponse> UpdateWorkflowOwnerOutcome;
                 typedef std::future<UpdateWorkflowOwnerOutcome> UpdateWorkflowOwnerOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::UpdateWorkflowOwnerRequest&, UpdateWorkflowOwnerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateWorkflowOwnerAsyncHandler;
@@ -2438,6 +2448,15 @@ namespace TencentCloud
                 DescribeResourceManagePathTreesOutcomeCallable DescribeResourceManagePathTreesCallable(const Model::DescribeResourceManagePathTreesRequest& request);
 
                 /**
+                 *获取角色列表信息
+                 * @param req DescribeRoleListRequest
+                 * @return DescribeRoleListOutcome
+                 */
+                DescribeRoleListOutcome DescribeRoleList(const Model::DescribeRoleListRequest &request);
+                void DescribeRoleListAsync(const Model::DescribeRoleListRequest& request, const DescribeRoleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRoleListOutcomeCallable DescribeRoleListCallable(const Model::DescribeRoleListRequest& request);
+
+                /**
                  *查询规则详情
                  * @param req DescribeRuleRequest
                  * @return DescribeRuleOutcome
@@ -3459,6 +3478,15 @@ https://capi.woa.com/api/detail?product=wedata&env=api_formal&version=2021-08-20
                 UpdateDataModelRegistryInfoOutcome UpdateDataModelRegistryInfo(const Model::UpdateDataModelRegistryInfoRequest &request);
                 void UpdateDataModelRegistryInfoAsync(const Model::UpdateDataModelRegistryInfoRequest& request, const UpdateDataModelRegistryInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateDataModelRegistryInfoOutcomeCallable UpdateDataModelRegistryInfoCallable(const Model::UpdateDataModelRegistryInfoRequest& request);
+
+                /**
+                 *修改项目用户角色
+                 * @param req UpdateProjectUserRoleRequest
+                 * @return UpdateProjectUserRoleOutcome
+                 */
+                UpdateProjectUserRoleOutcome UpdateProjectUserRole(const Model::UpdateProjectUserRoleRequest &request);
+                void UpdateProjectUserRoleAsync(const Model::UpdateProjectUserRoleRequest& request, const UpdateProjectUserRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateProjectUserRoleOutcomeCallable UpdateProjectUserRoleCallable(const Model::UpdateProjectUserRoleRequest& request);
 
                 /**
                  *修改工作流责任人

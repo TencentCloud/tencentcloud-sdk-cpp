@@ -504,18 +504,18 @@ namespace TencentCloud
                     bool CellNumHasBeenSet() const;
 
                     /**
-                     * 获取实例Tag
+                     * 获取实例Tag，企业实例必传
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BillingTag 实例Tag
+                     * @return BillingTag 实例Tag，企业实例必传
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBillingTag() const;
 
                     /**
-                     * 设置实例Tag
+                     * 设置实例Tag，企业实例必传
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _billingTag 实例Tag
+                     * @param _billingTag 实例Tag，企业实例必传
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -710,7 +710,7 @@ namespace TencentCloud
                     bool m_cellNumHasBeenSet;
 
                     /**
-                     * 实例Tag
+                     * 实例Tag，企业实例必传
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_billingTag;

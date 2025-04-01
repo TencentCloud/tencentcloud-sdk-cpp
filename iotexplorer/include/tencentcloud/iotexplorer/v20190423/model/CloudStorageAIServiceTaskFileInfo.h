@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/iotexplorer/v20190423/model/CloudStorageAIServiceTaskVideoMetaInfo.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CloudStorageAIServiceTaskFileLabel.h>
 
 
 namespace TencentCloud
@@ -152,6 +153,27 @@ namespace TencentCloud
                      */
                     bool VideoMetaInfoHasBeenSet() const;
 
+                    /**
+                     * 获取文件标签
+                     * @return Labels 文件标签
+                     * 
+                     */
+                    std::vector<CloudStorageAIServiceTaskFileLabel> GetLabels() const;
+
+                    /**
+                     * 设置文件标签
+                     * @param _labels 文件标签
+                     * 
+                     */
+                    void SetLabels(const std::vector<CloudStorageAIServiceTaskFileLabel>& _labels);
+
+                    /**
+                     * 判断参数 Labels 是否已赋值
+                     * @return Labels 是否已赋值
+                     * 
+                     */
+                    bool LabelsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -183,6 +205,12 @@ namespace TencentCloud
                      */
                     CloudStorageAIServiceTaskVideoMetaInfo m_videoMetaInfo;
                     bool m_videoMetaInfoHasBeenSet;
+
+                    /**
+                     * 文件标签
+                     */
+                    std::vector<CloudStorageAIServiceTaskFileLabel> m_labels;
+                    bool m_labelsHasBeenSet;
 
                 };
             }

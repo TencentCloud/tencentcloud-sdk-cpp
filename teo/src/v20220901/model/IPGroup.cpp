@@ -23,7 +23,8 @@ using namespace std;
 IPGroup::IPGroup() :
     m_groupIdHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_contentHasBeenSet(false)
+    m_contentHasBeenSet(false),
+    m_iPExpireInfoHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,26 @@ CoreInternalOutcome IPGroup::Deserialize(const rapidjson::Value &value)
         m_contentHasBeenSet = true;
     }
 
+    if (value.HasMember("IPExpireInfo") && !value["IPExpireInfo"].IsNull())
+    {
+        if (!value["IPExpireInfo"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `IPGroup.IPExpireInfo` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["IPExpireInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            IPExpireInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_iPExpireInfo.push_back(item);
+        }
+        m_iPExpireInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -98,6 +119,21 @@ void IPGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         for (auto itr = m_content.begin(); itr != m_content.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_iPExpireInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IPExpireInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_iPExpireInfo.begin(); itr != m_iPExpireInfo.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
@@ -150,5 +186,21 @@ void IPGroup::SetContent(const vector<string>& _content)
 bool IPGroup::ContentHasBeenSet() const
 {
     return m_contentHasBeenSet;
+}
+
+vector<IPExpireInfo> IPGroup::GetIPExpireInfo() const
+{
+    return m_iPExpireInfo;
+}
+
+void IPGroup::SetIPExpireInfo(const vector<IPExpireInfo>& _iPExpireInfo)
+{
+    m_iPExpireInfo = _iPExpireInfo;
+    m_iPExpireInfoHasBeenSet = true;
+}
+
+bool IPGroup::IPExpireInfoHasBeenSet() const
+{
+    return m_iPExpireInfoHasBeenSet;
 }
 

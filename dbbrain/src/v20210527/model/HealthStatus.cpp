@@ -24,7 +24,8 @@ HealthStatus::HealthStatus() :
     m_healthScoreHasBeenSet(false),
     m_healthLevelHasBeenSet(false),
     m_scoreLostHasBeenSet(false),
-    m_scoreDetailsHasBeenSet(false)
+    m_scoreDetailsHasBeenSet(false),
+    m_healthLevelVersionHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,16 @@ CoreInternalOutcome HealthStatus::Deserialize(const rapidjson::Value &value)
         m_scoreDetailsHasBeenSet = true;
     }
 
+    if (value.HasMember("HealthLevelVersion") && !value["HealthLevelVersion"].IsNull())
+    {
+        if (!value["HealthLevelVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HealthStatus.HealthLevelVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_healthLevelVersion = string(value["HealthLevelVersion"].GetString());
+        m_healthLevelVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -127,6 +138,14 @@ void HealthStatus::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_healthLevelVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HealthLevelVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_healthLevelVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -194,5 +213,21 @@ void HealthStatus::SetScoreDetails(const vector<ScoreDetail>& _scoreDetails)
 bool HealthStatus::ScoreDetailsHasBeenSet() const
 {
     return m_scoreDetailsHasBeenSet;
+}
+
+string HealthStatus::GetHealthLevelVersion() const
+{
+    return m_healthLevelVersion;
+}
+
+void HealthStatus::SetHealthLevelVersion(const string& _healthLevelVersion)
+{
+    m_healthLevelVersion = _healthLevelVersion;
+    m_healthLevelVersionHasBeenSet = true;
+}
+
+bool HealthStatus::HealthLevelVersionHasBeenSet() const
+{
+    return m_healthLevelVersionHasBeenSet;
 }
 

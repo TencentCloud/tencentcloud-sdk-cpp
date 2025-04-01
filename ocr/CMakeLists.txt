@@ -238,6 +238,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/TextGeneralHandwriting.h
   include/tencentcloud/ocr/v20181119/model/PassportOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/DutyPaidProofOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/ConfigAdvanced.h
   include/tencentcloud/ocr/v20181119/model/RecognizeHealthCodeOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/LineInfo.h
   include/tencentcloud/ocr/v20181119/model/GeneralCardWarnInfo.h
@@ -301,6 +302,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/IDCardResult.h
   include/tencentcloud/ocr/v20181119/model/TableCell.h
   include/tencentcloud/ocr/v20181119/model/LicensePlateInfo.h
+  include/tencentcloud/ocr/v20181119/model/WordPolygon.h
   include/tencentcloud/ocr/v20181119/model/DetectedWordCoordPoint.h
   include/tencentcloud/ocr/v20181119/model/QuestionBlockObj.h
   include/tencentcloud/ocr/v20181119/model/Element.h
@@ -555,6 +557,7 @@ set(ocr_src
   src/v20181119/model/TextGeneralHandwriting.cpp
   src/v20181119/model/PassportOCRRequest.cpp
   src/v20181119/model/DutyPaidProofOCRRequest.cpp
+  src/v20181119/model/ConfigAdvanced.cpp
   src/v20181119/model/RecognizeHealthCodeOCRResponse.cpp
   src/v20181119/model/LineInfo.cpp
   src/v20181119/model/GeneralCardWarnInfo.cpp
@@ -618,6 +621,7 @@ set(ocr_src
   src/v20181119/model/IDCardResult.cpp
   src/v20181119/model/TableCell.cpp
   src/v20181119/model/LicensePlateInfo.cpp
+  src/v20181119/model/WordPolygon.cpp
   src/v20181119/model/DetectedWordCoordPoint.cpp
   src/v20181119/model/QuestionBlockObj.cpp
   src/v20181119/model/Element.cpp

@@ -23,7 +23,9 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Mqtt::V20240516::Model;
 using namespace std;
 
-RegisterCaCertificateResponse::RegisterCaCertificateResponse()
+RegisterCaCertificateResponse::RegisterCaCertificateResponse() :
+    m_instanceIdHasBeenSet(false),
+    m_caSnHasBeenSet(false)
 {
 }
 
@@ -61,6 +63,26 @@ CoreInternalOutcome RegisterCaCertificateResponse::Deserialize(const string &pay
     }
 
 
+    if (rsp.HasMember("InstanceId") && !rsp["InstanceId"].IsNull())
+    {
+        if (!rsp["InstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceId = string(rsp["InstanceId"].GetString());
+        m_instanceIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CaSn") && !rsp["CaSn"].IsNull())
+    {
+        if (!rsp["CaSn"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CaSn` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_caSn = string(rsp["CaSn"].GetString());
+        m_caSnHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +92,22 @@ string RegisterCaCertificateResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_caSnHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CaSn";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_caSn.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +120,25 @@ string RegisterCaCertificateResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string RegisterCaCertificateResponse::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+bool RegisterCaCertificateResponse::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
+
+string RegisterCaCertificateResponse::GetCaSn() const
+{
+    return m_caSn;
+}
+
+bool RegisterCaCertificateResponse::CaSnHasBeenSet() const
+{
+    return m_caSnHasBeenSet;
+}
 
 

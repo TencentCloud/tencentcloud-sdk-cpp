@@ -5630,6 +5630,49 @@ WedataClient::DescribeResourceManagePathTreesOutcomeCallable WedataClient::Descr
     return task->get_future();
 }
 
+WedataClient::DescribeRoleListOutcome WedataClient::DescribeRoleList(const DescribeRoleListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRoleList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRoleListResponse rsp = DescribeRoleListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRoleListOutcome(rsp);
+        else
+            return DescribeRoleListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRoleListOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::DescribeRoleListAsync(const DescribeRoleListRequest& request, const DescribeRoleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRoleList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::DescribeRoleListOutcomeCallable WedataClient::DescribeRoleListCallable(const DescribeRoleListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRoleListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRoleList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WedataClient::DescribeRuleOutcome WedataClient::DescribeRule(const DescribeRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRule");
@@ -10439,6 +10482,49 @@ WedataClient::UpdateDataModelRegistryInfoOutcomeCallable WedataClient::UpdateDat
         [this, request]()
         {
             return this->UpdateDataModelRegistryInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WedataClient::UpdateProjectUserRoleOutcome WedataClient::UpdateProjectUserRole(const UpdateProjectUserRoleRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateProjectUserRole");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateProjectUserRoleResponse rsp = UpdateProjectUserRoleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateProjectUserRoleOutcome(rsp);
+        else
+            return UpdateProjectUserRoleOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateProjectUserRoleOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::UpdateProjectUserRoleAsync(const UpdateProjectUserRoleRequest& request, const UpdateProjectUserRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateProjectUserRole(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::UpdateProjectUserRoleOutcomeCallable WedataClient::UpdateProjectUserRoleCallable(const UpdateProjectUserRoleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateProjectUserRoleOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateProjectUserRole(request);
         }
     );
 

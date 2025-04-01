@@ -25,7 +25,8 @@ AndroidApp::AndroidApp() :
     m_nameHasBeenSet(false),
     m_stateHasBeenSet(false),
     m_androidAppVersionInfoHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_userIdHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,16 @@ CoreInternalOutcome AndroidApp::Deserialize(const rapidjson::Value &value)
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("UserId") && !value["UserId"].IsNull())
+    {
+        if (!value["UserId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AndroidApp.UserId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userId = string(value["UserId"].GetString());
+        m_userIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -146,6 +157,14 @@ void AndroidApp::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -229,5 +248,21 @@ void AndroidApp::SetCreateTime(const string& _createTime)
 bool AndroidApp::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+string AndroidApp::GetUserId() const
+{
+    return m_userId;
+}
+
+void AndroidApp::SetUserId(const string& _userId)
+{
+    m_userId = _userId;
+    m_userIdHasBeenSet = true;
+}
+
+bool AndroidApp::UserIdHasBeenSet() const
+{
+    return m_userIdHasBeenSet;
 }
 

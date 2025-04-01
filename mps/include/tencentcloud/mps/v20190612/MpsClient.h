@@ -1364,7 +1364,6 @@ namespace TencentCloud
 
                 /**
                  *查询媒体传输流的媒体质量数据。
-
                  * @param req DescribeStreamLinkFlowMediaStatisticsRequest
                  * @return DescribeStreamLinkFlowMediaStatisticsOutcome
                  */
@@ -1392,7 +1391,6 @@ namespace TencentCloud
 
                 /**
                  *查询媒体传输流的媒体质量数据。
-
                  * @param req DescribeStreamLinkFlowStatisticsRequest
                  * @return DescribeStreamLinkFlowStatisticsOutcome
                  */

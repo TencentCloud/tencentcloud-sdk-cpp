@@ -91,6 +91,8 @@
 #include <tencentcloud/dlc/v20210125/model/CreateSparkAppTaskResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateSparkSessionBatchSQLRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CreateSparkSessionBatchSQLResponse.h>
+#include <tencentcloud/dlc/v20210125/model/CreateSparkSubmitTaskRequest.h>
+#include <tencentcloud/dlc/v20210125/model/CreateSparkSubmitTaskResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateStoreLocationRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CreateStoreLocationResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateTableRequest.h>
@@ -429,6 +431,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateSparkSessionBatchSQLResponse> CreateSparkSessionBatchSQLOutcome;
                 typedef std::future<CreateSparkSessionBatchSQLOutcome> CreateSparkSessionBatchSQLOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CreateSparkSessionBatchSQLRequest&, CreateSparkSessionBatchSQLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSparkSessionBatchSQLAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateSparkSubmitTaskResponse> CreateSparkSubmitTaskOutcome;
+                typedef std::future<CreateSparkSubmitTaskOutcome> CreateSparkSubmitTaskOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::CreateSparkSubmitTaskRequest&, CreateSparkSubmitTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSparkSubmitTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateStoreLocationResponse> CreateStoreLocationOutcome;
                 typedef std::future<CreateStoreLocationOutcome> CreateStoreLocationOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CreateStoreLocationRequest&, CreateStoreLocationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateStoreLocationAsyncHandler;
@@ -1070,6 +1075,15 @@ namespace TencentCloud
                 CreateSparkSessionBatchSQLOutcome CreateSparkSessionBatchSQL(const Model::CreateSparkSessionBatchSQLRequest &request);
                 void CreateSparkSessionBatchSQLAsync(const Model::CreateSparkSessionBatchSQLRequest& request, const CreateSparkSessionBatchSQLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateSparkSessionBatchSQLOutcomeCallable CreateSparkSessionBatchSQLCallable(const Model::CreateSparkSessionBatchSQLRequest& request);
+
+                /**
+                 *本接口（CreateSparkSubmitTask）用于提交SparkSbumit批流任务。
+                 * @param req CreateSparkSubmitTaskRequest
+                 * @return CreateSparkSubmitTaskOutcome
+                 */
+                CreateSparkSubmitTaskOutcome CreateSparkSubmitTask(const Model::CreateSparkSubmitTaskRequest &request);
+                void CreateSparkSubmitTaskAsync(const Model::CreateSparkSubmitTaskRequest& request, const CreateSparkSubmitTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSparkSubmitTaskOutcomeCallable CreateSparkSubmitTaskCallable(const Model::CreateSparkSubmitTaskRequest& request);
 
                 /**
                  *该接口（CreateStoreLocation）新增或覆盖计算结果存储位置。

@@ -384,6 +384,49 @@ ClsClient::CreateAlarmShieldOutcomeCallable ClsClient::CreateAlarmShieldCallable
     return task->get_future();
 }
 
+ClsClient::CreateCloudProductLogCollectionOutcome ClsClient::CreateCloudProductLogCollection(const CreateCloudProductLogCollectionRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCloudProductLogCollection");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCloudProductLogCollectionResponse rsp = CreateCloudProductLogCollectionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCloudProductLogCollectionOutcome(rsp);
+        else
+            return CreateCloudProductLogCollectionOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCloudProductLogCollectionOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::CreateCloudProductLogCollectionAsync(const CreateCloudProductLogCollectionRequest& request, const CreateCloudProductLogCollectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCloudProductLogCollection(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::CreateCloudProductLogCollectionOutcomeCallable ClsClient::CreateCloudProductLogCollectionCallable(const CreateCloudProductLogCollectionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCloudProductLogCollectionOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCloudProductLogCollection(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClsClient::CreateConfigOutcome ClsClient::CreateConfig(const CreateConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateConfig");
@@ -1280,6 +1323,49 @@ ClsClient::DeleteAlarmShieldOutcomeCallable ClsClient::DeleteAlarmShieldCallable
         [this, request]()
         {
             return this->DeleteAlarmShield(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClsClient::DeleteCloudProductLogCollectionOutcome ClsClient::DeleteCloudProductLogCollection(const DeleteCloudProductLogCollectionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCloudProductLogCollection");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCloudProductLogCollectionResponse rsp = DeleteCloudProductLogCollectionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCloudProductLogCollectionOutcome(rsp);
+        else
+            return DeleteCloudProductLogCollectionOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCloudProductLogCollectionOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DeleteCloudProductLogCollectionAsync(const DeleteCloudProductLogCollectionRequest& request, const DeleteCloudProductLogCollectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCloudProductLogCollection(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::DeleteCloudProductLogCollectionOutcomeCallable ClsClient::DeleteCloudProductLogCollectionCallable(const DeleteCloudProductLogCollectionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCloudProductLogCollectionOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCloudProductLogCollection(request);
         }
     );
 
@@ -2226,6 +2312,49 @@ ClsClient::DescribeAlertRecordHistoryOutcomeCallable ClsClient::DescribeAlertRec
         [this, request]()
         {
             return this->DescribeAlertRecordHistory(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClsClient::DescribeCloudProductLogTasksOutcome ClsClient::DescribeCloudProductLogTasks(const DescribeCloudProductLogTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCloudProductLogTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCloudProductLogTasksResponse rsp = DescribeCloudProductLogTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCloudProductLogTasksOutcome(rsp);
+        else
+            return DescribeCloudProductLogTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCloudProductLogTasksOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DescribeCloudProductLogTasksAsync(const DescribeCloudProductLogTasksRequest& request, const DescribeCloudProductLogTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCloudProductLogTasks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::DescribeCloudProductLogTasksOutcomeCallable ClsClient::DescribeCloudProductLogTasksCallable(const DescribeCloudProductLogTasksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCloudProductLogTasksOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCloudProductLogTasks(request);
         }
     );
 
@@ -3559,6 +3688,49 @@ ClsClient::ModifyAlarmShieldOutcomeCallable ClsClient::ModifyAlarmShieldCallable
         [this, request]()
         {
             return this->ModifyAlarmShield(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClsClient::ModifyCloudProductLogCollectionOutcome ClsClient::ModifyCloudProductLogCollection(const ModifyCloudProductLogCollectionRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCloudProductLogCollection");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCloudProductLogCollectionResponse rsp = ModifyCloudProductLogCollectionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCloudProductLogCollectionOutcome(rsp);
+        else
+            return ModifyCloudProductLogCollectionOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCloudProductLogCollectionOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::ModifyCloudProductLogCollectionAsync(const ModifyCloudProductLogCollectionRequest& request, const ModifyCloudProductLogCollectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCloudProductLogCollection(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::ModifyCloudProductLogCollectionOutcomeCallable ClsClient::ModifyCloudProductLogCollectionCallable(const ModifyCloudProductLogCollectionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCloudProductLogCollectionOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCloudProductLogCollection(request);
         }
     );
 

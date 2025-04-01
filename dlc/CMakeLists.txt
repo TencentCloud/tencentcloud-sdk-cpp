@@ -67,11 +67,12 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/CreateExportTaskRequest.h
   include/tencentcloud/dlc/v20210125/model/CreateDMSTableRequest.h
   include/tencentcloud/dlc/v20210125/model/DMSTable.h
-  include/tencentcloud/dlc/v20210125/model/ModifyWorkGroupResponse.h
+  include/tencentcloud/dlc/v20210125/model/ModifyAdvancedStoreLocationResponse.h
   include/tencentcloud/dlc/v20210125/model/DMSSds.h
   include/tencentcloud/dlc/v20210125/model/OpendThirdAccessUserInfo.h
   include/tencentcloud/dlc/v20210125/model/DescribeDataEnginesScaleDetailResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeNotebookSessionStatementSqlResultRequest.h
+  include/tencentcloud/dlc/v20210125/model/CreateSparkSubmitTaskRequest.h
   include/tencentcloud/dlc/v20210125/model/CreateTableResponse.h
   include/tencentcloud/dlc/v20210125/model/ListTaskJobLogNameRequest.h
   include/tencentcloud/dlc/v20210125/model/DescribeTaskResultRequest.h
@@ -332,11 +333,12 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DescribeNotebookSessionResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeSubUserAccessPolicyResponse.h
   include/tencentcloud/dlc/v20210125/model/CreateScriptResponse.h
-  include/tencentcloud/dlc/v20210125/model/ModifyAdvancedStoreLocationResponse.h
+  include/tencentcloud/dlc/v20210125/model/ModifyWorkGroupResponse.h
   include/tencentcloud/dlc/v20210125/model/CreateTasksInOrderResponse.h
   include/tencentcloud/dlc/v20210125/model/TagInfo.h
   include/tencentcloud/dlc/v20210125/model/DeleteSparkAppRequest.h
   include/tencentcloud/dlc/v20210125/model/DescribeDLCCatalogAccessRequest.h
+  include/tencentcloud/dlc/v20210125/model/CreateSparkSubmitTaskResponse.h
   include/tencentcloud/dlc/v20210125/model/DetachUserPolicyRequest.h
   include/tencentcloud/dlc/v20210125/model/DescribeTaskLogResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeTasksResponse.h
@@ -478,11 +480,12 @@ set(dlc_src
   src/v20210125/model/CreateExportTaskRequest.cpp
   src/v20210125/model/CreateDMSTableRequest.cpp
   src/v20210125/model/DMSTable.cpp
-  src/v20210125/model/ModifyWorkGroupResponse.cpp
+  src/v20210125/model/ModifyAdvancedStoreLocationResponse.cpp
   src/v20210125/model/DMSSds.cpp
   src/v20210125/model/OpendThirdAccessUserInfo.cpp
   src/v20210125/model/DescribeDataEnginesScaleDetailResponse.cpp
   src/v20210125/model/DescribeNotebookSessionStatementSqlResultRequest.cpp
+  src/v20210125/model/CreateSparkSubmitTaskRequest.cpp
   src/v20210125/model/CreateTableResponse.cpp
   src/v20210125/model/ListTaskJobLogNameRequest.cpp
   src/v20210125/model/DescribeTaskResultRequest.cpp
@@ -743,11 +746,12 @@ set(dlc_src
   src/v20210125/model/DescribeNotebookSessionResponse.cpp
   src/v20210125/model/DescribeSubUserAccessPolicyResponse.cpp
   src/v20210125/model/CreateScriptResponse.cpp
-  src/v20210125/model/ModifyAdvancedStoreLocationResponse.cpp
+  src/v20210125/model/ModifyWorkGroupResponse.cpp
   src/v20210125/model/CreateTasksInOrderResponse.cpp
   src/v20210125/model/TagInfo.cpp
   src/v20210125/model/DeleteSparkAppRequest.cpp
   src/v20210125/model/DescribeDLCCatalogAccessRequest.cpp
+  src/v20210125/model/CreateSparkSubmitTaskResponse.cpp
   src/v20210125/model/DetachUserPolicyRequest.cpp
   src/v20210125/model/DescribeTaskLogResponse.cpp
   src/v20210125/model/DescribeTasksResponse.cpp

@@ -550,7 +550,9 @@ namespace TencentCloud
                 DescribeCameraExtendInfoOutcomeCallable DescribeCameraExtendInfoCallable(const Model::DescribeCameraExtendInfoRequest& request);
 
                 /**
-                 *通过城市id查询工作空间列表
+                 *老微瓴后续不继续更新
+
+通过城市id查询工作空间列表
                  * @param req DescribeCityWorkspaceListRequest
                  * @return DescribeCityWorkspaceListOutcome
                  */

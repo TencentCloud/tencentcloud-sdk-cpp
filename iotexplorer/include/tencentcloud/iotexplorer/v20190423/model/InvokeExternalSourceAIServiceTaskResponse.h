@@ -74,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取任务信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskInfo 任务信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CloudStorageAIServiceTask GetTaskInfo() const;
@@ -104,7 +102,6 @@ namespace TencentCloud
 
                     /**
                      * 任务信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CloudStorageAIServiceTask m_taskInfo;
                     bool m_taskInfoHasBeenSet;

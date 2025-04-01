@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dbbrain/v20210527/model/RedisInstanceConf.h>
 
 
 namespace TencentCloud
@@ -172,6 +173,195 @@ namespace TencentCloud
                      */
                     bool EngineVersionHasBeenSet() const;
 
+                    /**
+                     * 获取CPU数量，对于Redis为0。
+                     * @return Cpu CPU数量，对于Redis为0。
+                     * 
+                     */
+                    int64_t GetCpu() const;
+
+                    /**
+                     * 设置CPU数量，对于Redis为0。
+                     * @param _cpu CPU数量，对于Redis为0。
+                     * 
+                     */
+                    void SetCpu(const int64_t& _cpu);
+
+                    /**
+                     * 判断参数 Cpu 是否已赋值
+                     * @return Cpu 是否已赋值
+                     * 
+                     */
+                    bool CpuHasBeenSet() const;
+
+                    /**
+                     * 获取实例部署模式。
+                     * @return DeployMode 实例部署模式。
+                     * 
+                     */
+                    std::string GetDeployMode() const;
+
+                    /**
+                     * 设置实例部署模式。
+                     * @param _deployMode 实例部署模式。
+                     * 
+                     */
+                    void SetDeployMode(const std::string& _deployMode);
+
+                    /**
+                     * 判断参数 DeployMode 是否已赋值
+                     * @return DeployMode 是否已赋值
+                     * 
+                     */
+                    bool DeployModeHasBeenSet() const;
+
+                    /**
+                     * 获取实例内存配置。
+                     * @return InstanceConf 实例内存配置。
+                     * 
+                     */
+                    RedisInstanceConf GetInstanceConf() const;
+
+                    /**
+                     * 设置实例内存配置。
+                     * @param _instanceConf 实例内存配置。
+                     * 
+                     */
+                    void SetInstanceConf(const RedisInstanceConf& _instanceConf);
+
+                    /**
+                     * 判断参数 InstanceConf 是否已赋值
+                     * @return InstanceConf 是否已赋值
+                     * 
+                     */
+                    bool InstanceConfHasBeenSet() const;
+
+                    /**
+                     * 获取DBbrain是否支持该实例。
+                     * @return IsSupported DBbrain是否支持该实例。
+                     * 
+                     */
+                    bool GetIsSupported() const;
+
+                    /**
+                     * 设置DBbrain是否支持该实例。
+                     * @param _isSupported DBbrain是否支持该实例。
+                     * 
+                     */
+                    void SetIsSupported(const bool& _isSupported);
+
+                    /**
+                     * 判断参数 IsSupported 是否已赋值
+                     * @return IsSupported 是否已赋值
+                     * 
+                     */
+                    bool IsSupportedHasBeenSet() const;
+
+                    /**
+                     * 获取实例内存，单位MB。
+                     * @return Memory 实例内存，单位MB。
+                     * 
+                     */
+                    int64_t GetMemory() const;
+
+                    /**
+                     * 设置实例内存，单位MB。
+                     * @param _memory 实例内存，单位MB。
+                     * 
+                     */
+                    void SetMemory(const int64_t& _memory);
+
+                    /**
+                     * 判断参数 Memory 是否已赋值
+                     * @return Memory 是否已赋值
+                     * 
+                     */
+                    bool MemoryHasBeenSet() const;
+
+                    /**
+                     * 获取实例地域。
+                     * @return Region 实例地域。
+                     * 
+                     */
+                    std::string GetRegion() const;
+
+                    /**
+                     * 设置实例地域。
+                     * @param _region 实例地域。
+                     * 
+                     */
+                    void SetRegion(const std::string& _region);
+
+                    /**
+                     * 判断参数 Region 是否已赋值
+                     * @return Region 是否已赋值
+                     * 
+                     */
+                    bool RegionHasBeenSet() const;
+
+                    /**
+                     * 获取实例子网统一ID，对于redis为空字符串。
+                     * @return UniqSubnetId 实例子网统一ID，对于redis为空字符串。
+                     * 
+                     */
+                    std::string GetUniqSubnetId() const;
+
+                    /**
+                     * 设置实例子网统一ID，对于redis为空字符串。
+                     * @param _uniqSubnetId 实例子网统一ID，对于redis为空字符串。
+                     * 
+                     */
+                    void SetUniqSubnetId(const std::string& _uniqSubnetId);
+
+                    /**
+                     * 判断参数 UniqSubnetId 是否已赋值
+                     * @return UniqSubnetId 是否已赋值
+                     * 
+                     */
+                    bool UniqSubnetIdHasBeenSet() const;
+
+                    /**
+                     * 获取实例私有网络统一ID，对于redis为空字符串。
+                     * @return UniqVpcId 实例私有网络统一ID，对于redis为空字符串。
+                     * 
+                     */
+                    std::string GetUniqVpcId() const;
+
+                    /**
+                     * 设置实例私有网络统一ID，对于redis为空字符串。
+                     * @param _uniqVpcId 实例私有网络统一ID，对于redis为空字符串。
+                     * 
+                     */
+                    void SetUniqVpcId(const std::string& _uniqVpcId);
+
+                    /**
+                     * 判断参数 UniqVpcId 是否已赋值
+                     * @return UniqVpcId 是否已赋值
+                     * 
+                     */
+                    bool UniqVpcIdHasBeenSet() const;
+
+                    /**
+                     * 获取实例磁盘容量，对于Redis为0。
+                     * @return Volume 实例磁盘容量，对于Redis为0。
+                     * 
+                     */
+                    int64_t GetVolume() const;
+
+                    /**
+                     * 设置实例磁盘容量，对于Redis为0。
+                     * @param _volume 实例磁盘容量，对于Redis为0。
+                     * 
+                     */
+                    void SetVolume(const int64_t& _volume);
+
+                    /**
+                     * 判断参数 Volume 是否已赋值
+                     * @return Volume 是否已赋值
+                     * 
+                     */
+                    bool VolumeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -209,6 +399,60 @@ namespace TencentCloud
                      */
                     std::string m_engineVersion;
                     bool m_engineVersionHasBeenSet;
+
+                    /**
+                     * CPU数量，对于Redis为0。
+                     */
+                    int64_t m_cpu;
+                    bool m_cpuHasBeenSet;
+
+                    /**
+                     * 实例部署模式。
+                     */
+                    std::string m_deployMode;
+                    bool m_deployModeHasBeenSet;
+
+                    /**
+                     * 实例内存配置。
+                     */
+                    RedisInstanceConf m_instanceConf;
+                    bool m_instanceConfHasBeenSet;
+
+                    /**
+                     * DBbrain是否支持该实例。
+                     */
+                    bool m_isSupported;
+                    bool m_isSupportedHasBeenSet;
+
+                    /**
+                     * 实例内存，单位MB。
+                     */
+                    int64_t m_memory;
+                    bool m_memoryHasBeenSet;
+
+                    /**
+                     * 实例地域。
+                     */
+                    std::string m_region;
+                    bool m_regionHasBeenSet;
+
+                    /**
+                     * 实例子网统一ID，对于redis为空字符串。
+                     */
+                    std::string m_uniqSubnetId;
+                    bool m_uniqSubnetIdHasBeenSet;
+
+                    /**
+                     * 实例私有网络统一ID，对于redis为空字符串。
+                     */
+                    std::string m_uniqVpcId;
+                    bool m_uniqVpcIdHasBeenSet;
+
+                    /**
+                     * 实例磁盘容量，对于Redis为0。
+                     */
+                    int64_t m_volume;
+                    bool m_volumeHasBeenSet;
 
                 };
             }

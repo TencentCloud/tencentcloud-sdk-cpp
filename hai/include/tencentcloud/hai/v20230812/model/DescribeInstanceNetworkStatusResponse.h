@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取查询结果集
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NetworkStatusSet 查询结果集
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<NetworkStatus> GetNetworkStatusSet() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 查询结果集
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<NetworkStatus> m_networkStatusSet;
                     bool m_networkStatusSetHasBeenSet;
