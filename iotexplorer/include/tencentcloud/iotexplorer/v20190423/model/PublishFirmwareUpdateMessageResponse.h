@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取请求状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 请求状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 请求状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

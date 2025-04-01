@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取详细刷新记录
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PurgeLogs 详细刷新记录
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<PurgeTask> GetPurgeLogs() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取任务总数，用于分页
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 任务总数，用于分页
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 详细刷新记录
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<PurgeTask> m_purgeLogs;
                     bool m_purgeLogsHasBeenSet;
 
                     /**
                      * 任务总数，用于分页
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

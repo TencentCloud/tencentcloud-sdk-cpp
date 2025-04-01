@@ -63,6 +63,27 @@ namespace TencentCloud
                      */
                     bool ZoneIdHasBeenSet() const;
 
+                    /**
+                     * 获取过期时间（秒），最小1小时，最大99年。如果不传则默认一年过期
+                     * @return ExpireDuration 过期时间（秒），最小1小时，最大99年。如果不传则默认一年过期
+                     * 
+                     */
+                    uint64_t GetExpireDuration() const;
+
+                    /**
+                     * 设置过期时间（秒），最小1小时，最大99年。如果不传则默认一年过期
+                     * @param _expireDuration 过期时间（秒），最小1小时，最大99年。如果不传则默认一年过期
+                     * 
+                     */
+                    void SetExpireDuration(const uint64_t& _expireDuration);
+
+                    /**
+                     * 判断参数 ExpireDuration 是否已赋值
+                     * @return ExpireDuration 是否已赋值
+                     * 
+                     */
+                    bool ExpireDurationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -70,6 +91,12 @@ namespace TencentCloud
                      */
                     std::string m_zoneId;
                     bool m_zoneIdHasBeenSet;
+
+                    /**
+                     * 过期时间（秒），最小1小时，最大99年。如果不传则默认一年过期
+                     */
+                    uint64_t m_expireDuration;
+                    bool m_expireDurationHasBeenSet;
 
                 };
             }

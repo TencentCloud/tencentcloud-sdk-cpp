@@ -26,7 +26,9 @@ DescribeUserProjectListRequest::DescribeUserProjectListRequest() :
     m_projectIdHasBeenSet(false),
     m_allPageHasBeenSet(false),
     m_pageNoHasBeenSet(false),
-    m_pageSizeHasBeenSet(false)
+    m_pageSizeHasBeenSet(false),
+    m_isFilterPerAuthUserHasBeenSet(false),
+    m_isFilterCurrentUserHasBeenSet(false)
 {
 }
 
@@ -67,6 +69,22 @@ string DescribeUserProjectListRequest::ToJsonString() const
         string key = "PageSize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pageSize, allocator);
+    }
+
+    if (m_isFilterPerAuthUserHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsFilterPerAuthUser";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isFilterPerAuthUser, allocator);
+    }
+
+    if (m_isFilterCurrentUserHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsFilterCurrentUser";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isFilterCurrentUser, allocator);
     }
 
 
@@ -139,6 +157,38 @@ void DescribeUserProjectListRequest::SetPageSize(const int64_t& _pageSize)
 bool DescribeUserProjectListRequest::PageSizeHasBeenSet() const
 {
     return m_pageSizeHasBeenSet;
+}
+
+bool DescribeUserProjectListRequest::GetIsFilterPerAuthUser() const
+{
+    return m_isFilterPerAuthUser;
+}
+
+void DescribeUserProjectListRequest::SetIsFilterPerAuthUser(const bool& _isFilterPerAuthUser)
+{
+    m_isFilterPerAuthUser = _isFilterPerAuthUser;
+    m_isFilterPerAuthUserHasBeenSet = true;
+}
+
+bool DescribeUserProjectListRequest::IsFilterPerAuthUserHasBeenSet() const
+{
+    return m_isFilterPerAuthUserHasBeenSet;
+}
+
+bool DescribeUserProjectListRequest::GetIsFilterCurrentUser() const
+{
+    return m_isFilterCurrentUser;
+}
+
+void DescribeUserProjectListRequest::SetIsFilterCurrentUser(const bool& _isFilterCurrentUser)
+{
+    m_isFilterCurrentUser = _isFilterCurrentUser;
+    m_isFilterCurrentUserHasBeenSet = true;
+}
+
+bool DescribeUserProjectListRequest::IsFilterCurrentUserHasBeenSet() const
+{
+    return m_isFilterCurrentUserHasBeenSet;
 }
 
 

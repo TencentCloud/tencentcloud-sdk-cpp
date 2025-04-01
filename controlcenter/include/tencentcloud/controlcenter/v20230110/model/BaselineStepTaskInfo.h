@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务唯一Id，只能包含英文字母、数字，是16个字符的随机字符串。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskId 任务唯一Id，只能包含英文字母、数字，是16个字符的随机字符串。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskId() const;
 
                     /**
                      * 设置任务唯一Id，只能包含英文字母、数字，是16个字符的随机字符串。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskId 任务唯一Id，只能包含英文字母、数字，是16个字符的随机字符串。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskId(const std::string& _taskId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取基线功能项唯一标识，只能包含英文字母、数字和@、,._[]-:()（）【】+=，。，长度2-128个字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Identifier 基线功能项唯一标识，只能包含英文字母、数字和@、,._[]-:()（）【】+=，。，长度2-128个字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIdentifier() const;
 
                     /**
                      * 设置基线功能项唯一标识，只能包含英文字母、数字和@、,._[]-:()（）【】+=，。，长度2-128个字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _identifier 基线功能项唯一标识，只能包含英文字母、数字和@、,._[]-:()（）【】+=，。，长度2-128个字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIdentifier(const std::string& _identifier);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取被应用基线项的成员账号uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MemberUin 被应用基线项的成员账号uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMemberUin() const;
 
                     /**
                      * 设置被应用基线项的成员账号uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _memberUin 被应用基线项的成员账号uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMemberUin(const int64_t& _memberUin);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取基线项应用的状态,Running表示基线项应用中,Success表示基线项应用成功,Failed表示基线项应用失败,Pending表示基线项待应用,Skipped表示基线项被跳过
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 基线项应用的状态,Running表示基线项应用中,Success表示基线项应用成功,Failed表示基线项应用失败,Pending表示基线项待应用,Skipped表示基线项被跳过
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置基线项应用的状态,Running表示基线项应用中,Success表示基线项应用成功,Failed表示基线项应用失败,Pending表示基线项待应用,Skipped表示基线项被跳过
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 基线项应用的状态,Running表示基线项应用中,Success表示基线项应用成功,Failed表示基线项应用失败,Pending表示基线项待应用,Skipped表示基线项被跳过
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取错误码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrCode 错误码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetErrCode() const;
 
                     /**
                      * 设置错误码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _errCode 错误码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetErrCode(const std::string& _errCode);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ErrMessage 错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetErrMessage() const;
 
                     /**
                      * 设置错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _errMessage 错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetErrMessage(const std::string& _errMessage);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取基线项部署输出
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Output 基线项部署输出
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOutput() const;
 
                     /**
                      * 设置基线项部署输出
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _output 基线项部署输出
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOutput(const std::string& _output);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间，按照ISO8601标准表示，格式为yyyy-MM-dd hh:mm:ss。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间，按照ISO8601标准表示，格式为yyyy-MM-dd hh:mm:ss。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间，按照ISO8601标准表示，格式为yyyy-MM-dd hh:mm:ss。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间，按照ISO8601标准表示，格式为yyyy-MM-dd hh:mm:ss。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取更新时间，按照ISO8601标准表示，格式为yyyy-MM-dd hh:mm:ss。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 更新时间，按照ISO8601标准表示，格式为yyyy-MM-dd hh:mm:ss。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置更新时间，按照ISO8601标准表示，格式为yyyy-MM-dd hh:mm:ss。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _updateTime 更新时间，按照ISO8601标准表示，格式为yyyy-MM-dd hh:mm:ss。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -275,63 +239,54 @@ namespace TencentCloud
 
                     /**
                      * 任务唯一Id，只能包含英文字母、数字，是16个字符的随机字符串。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
                      * 基线功能项唯一标识，只能包含英文字母、数字和@、,._[]-:()（）【】+=，。，长度2-128个字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_identifier;
                     bool m_identifierHasBeenSet;
 
                     /**
                      * 被应用基线项的成员账号uin
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_memberUin;
                     bool m_memberUinHasBeenSet;
 
                     /**
                      * 基线项应用的状态,Running表示基线项应用中,Success表示基线项应用成功,Failed表示基线项应用失败,Pending表示基线项待应用,Skipped表示基线项被跳过
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 错误码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errCode;
                     bool m_errCodeHasBeenSet;
 
                     /**
                      * 错误信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_errMessage;
                     bool m_errMessageHasBeenSet;
 
                     /**
                      * 基线项部署输出
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_output;
                     bool m_outputHasBeenSet;
 
                     /**
                      * 创建时间，按照ISO8601标准表示，格式为yyyy-MM-dd hh:mm:ss。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 更新时间，按照ISO8601标准表示，格式为yyyy-MM-dd hh:mm:ss。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;

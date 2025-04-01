@@ -38,7 +38,9 @@ ServiceGroup::ServiceGroup() :
     m_createSourceHasBeenSet(false),
     m_weightUpdateStatusHasBeenSet(false),
     m_replicasCountHasBeenSet(false),
-    m_availableReplicasCountHasBeenSet(false)
+    m_availableReplicasCountHasBeenSet(false),
+    m_subUinHasBeenSet(false),
+    m_appIdHasBeenSet(false)
 {
 }
 
@@ -247,6 +249,26 @@ CoreInternalOutcome ServiceGroup::Deserialize(const rapidjson::Value &value)
         m_availableReplicasCountHasBeenSet = true;
     }
 
+    if (value.HasMember("SubUin") && !value["SubUin"].IsNull())
+    {
+        if (!value["SubUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceGroup.SubUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subUin = string(value["SubUin"].GetString());
+        m_subUinHasBeenSet = true;
+    }
+
+    if (value.HasMember("AppId") && !value["AppId"].IsNull())
+    {
+        if (!value["AppId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceGroup.AppId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_appId = value["AppId"].GetInt64();
+        m_appIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -410,6 +432,22 @@ void ServiceGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "AvailableReplicasCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_availableReplicasCount, allocator);
+    }
+
+    if (m_subUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_appId, allocator);
     }
 
 }
@@ -701,5 +739,37 @@ void ServiceGroup::SetAvailableReplicasCount(const uint64_t& _availableReplicasC
 bool ServiceGroup::AvailableReplicasCountHasBeenSet() const
 {
     return m_availableReplicasCountHasBeenSet;
+}
+
+string ServiceGroup::GetSubUin() const
+{
+    return m_subUin;
+}
+
+void ServiceGroup::SetSubUin(const string& _subUin)
+{
+    m_subUin = _subUin;
+    m_subUinHasBeenSet = true;
+}
+
+bool ServiceGroup::SubUinHasBeenSet() const
+{
+    return m_subUinHasBeenSet;
+}
+
+int64_t ServiceGroup::GetAppId() const
+{
+    return m_appId;
+}
+
+void ServiceGroup::SetAppId(const int64_t& _appId)
+{
+    m_appId = _appId;
+    m_appIdHasBeenSet = true;
+}
+
+bool ServiceGroup::AppIdHasBeenSet() const
+{
+    return m_appIdHasBeenSet;
 }
 

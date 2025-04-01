@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取网关产品ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GatewayProductId 网关产品ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGatewayProductId() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取网关设备名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GatewayDeviceName 网关设备名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGatewayDeviceName() const;
@@ -77,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取网关产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GatewayName 网关产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGatewayName() const;
@@ -93,9 +87,7 @@ namespace TencentCloud
 
                     /**
                      * 获取设备对应产品所属的主账号名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GatewayProductOwnerName 设备对应产品所属的主账号名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGatewayProductOwnerName() const;
@@ -109,9 +101,7 @@ namespace TencentCloud
 
                     /**
                      * 获取设备对应产品所属的主账号 UIN
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GatewayProductOwnerUin 设备对应产品所属的主账号 UIN
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGatewayProductOwnerUin() const;
@@ -127,35 +117,30 @@ namespace TencentCloud
 
                     /**
                      * 网关产品ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_gatewayProductId;
                     bool m_gatewayProductIdHasBeenSet;
 
                     /**
                      * 网关设备名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_gatewayDeviceName;
                     bool m_gatewayDeviceNameHasBeenSet;
 
                     /**
                      * 网关产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_gatewayName;
                     bool m_gatewayNameHasBeenSet;
 
                     /**
                      * 设备对应产品所属的主账号名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_gatewayProductOwnerName;
                     bool m_gatewayProductOwnerNameHasBeenSet;
 
                     /**
                      * 设备对应产品所属的主账号 UIN
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_gatewayProductOwnerUin;
                     bool m_gatewayProductOwnerUinHasBeenSet;

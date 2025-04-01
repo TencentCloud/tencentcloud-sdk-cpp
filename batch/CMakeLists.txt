@@ -36,7 +36,7 @@ set(batch_public_header_model
   include/tencentcloud/batch/v20170312/model/Task.h
   include/tencentcloud/batch/v20170312/model/InstanceTypeConfig.h
   include/tencentcloud/batch/v20170312/model/CommandLine.h
-  include/tencentcloud/batch/v20170312/model/LoginSettings.h
+  include/tencentcloud/batch/v20170312/model/Externals.h
   include/tencentcloud/batch/v20170312/model/TerminateComputeNodesResponse.h
   include/tencentcloud/batch/v20170312/model/DescribeComputeEnvActivitiesResponse.h
   include/tencentcloud/batch/v20170312/model/TaskInstanceMetrics.h
@@ -44,14 +44,10 @@ set(batch_public_header_model
   include/tencentcloud/batch/v20170312/model/MountDataDisk.h
   include/tencentcloud/batch/v20170312/model/TaskView.h
   include/tencentcloud/batch/v20170312/model/Tag.h
-  include/tencentcloud/batch/v20170312/model/Externals.h
-  include/tencentcloud/batch/v20170312/model/OsInfo.h
   include/tencentcloud/batch/v20170312/model/DescribeComputeEnvResponse.h
-  include/tencentcloud/batch/v20170312/model/DescribeCpmOsInfoResponse.h
   include/tencentcloud/batch/v20170312/model/TerminateJobRequest.h
   include/tencentcloud/batch/v20170312/model/DetachInstancesResponse.h
   include/tencentcloud/batch/v20170312/model/Application.h
-  include/tencentcloud/batch/v20170312/model/EnvDataCpm.h
   include/tencentcloud/batch/v20170312/model/OutputMappingConfig.h
   include/tencentcloud/batch/v20170312/model/AttachInstancesResponse.h
   include/tencentcloud/batch/v20170312/model/ComputeNodeMetrics.h
@@ -70,22 +66,18 @@ set(batch_public_header_model
   include/tencentcloud/batch/v20170312/model/DescribeComputeEnvRequest.h
   include/tencentcloud/batch/v20170312/model/InstanceMarketOptionsRequest.h
   include/tencentcloud/batch/v20170312/model/DescribeTaskTemplatesResponse.h
-  include/tencentcloud/batch/v20170312/model/CreateCpmComputeEnvResponse.h
   include/tencentcloud/batch/v20170312/model/DeleteJobRequest.h
-  include/tencentcloud/batch/v20170312/model/CreateCpmComputeEnvRequest.h
   include/tencentcloud/batch/v20170312/model/DescribeTaskLogsResponse.h
-  include/tencentcloud/batch/v20170312/model/NamedCpmComputeEnv.h
   include/tencentcloud/batch/v20170312/model/DeleteTaskTemplatesRequest.h
   include/tencentcloud/batch/v20170312/model/DescribeJobResponse.h
   include/tencentcloud/batch/v20170312/model/DescribeComputeEnvCreateInfoRequest.h
   include/tencentcloud/batch/v20170312/model/ModifyTaskTemplateRequest.h
-  include/tencentcloud/batch/v20170312/model/DescribeCpmOsInfoRequest.h
   include/tencentcloud/batch/v20170312/model/DataDisk.h
   include/tencentcloud/batch/v20170312/model/NamedComputeEnv.h
   include/tencentcloud/batch/v20170312/model/DeleteJobResponse.h
   include/tencentcloud/batch/v20170312/model/EventConfig.h
   include/tencentcloud/batch/v20170312/model/SpotMarketOptions.h
-  include/tencentcloud/batch/v20170312/model/CpmVirtualPrivateCloud.h
+  include/tencentcloud/batch/v20170312/model/LoginSettings.h
   include/tencentcloud/batch/v20170312/model/DetachInstancesRequest.h
   include/tencentcloud/batch/v20170312/model/Instance.h
   include/tencentcloud/batch/v20170312/model/OutputMapping.h
@@ -164,7 +156,7 @@ set(batch_src
   src/v20170312/model/Task.cpp
   src/v20170312/model/InstanceTypeConfig.cpp
   src/v20170312/model/CommandLine.cpp
-  src/v20170312/model/LoginSettings.cpp
+  src/v20170312/model/Externals.cpp
   src/v20170312/model/TerminateComputeNodesResponse.cpp
   src/v20170312/model/DescribeComputeEnvActivitiesResponse.cpp
   src/v20170312/model/TaskInstanceMetrics.cpp
@@ -172,14 +164,10 @@ set(batch_src
   src/v20170312/model/MountDataDisk.cpp
   src/v20170312/model/TaskView.cpp
   src/v20170312/model/Tag.cpp
-  src/v20170312/model/Externals.cpp
-  src/v20170312/model/OsInfo.cpp
   src/v20170312/model/DescribeComputeEnvResponse.cpp
-  src/v20170312/model/DescribeCpmOsInfoResponse.cpp
   src/v20170312/model/TerminateJobRequest.cpp
   src/v20170312/model/DetachInstancesResponse.cpp
   src/v20170312/model/Application.cpp
-  src/v20170312/model/EnvDataCpm.cpp
   src/v20170312/model/OutputMappingConfig.cpp
   src/v20170312/model/AttachInstancesResponse.cpp
   src/v20170312/model/ComputeNodeMetrics.cpp
@@ -198,22 +186,18 @@ set(batch_src
   src/v20170312/model/DescribeComputeEnvRequest.cpp
   src/v20170312/model/InstanceMarketOptionsRequest.cpp
   src/v20170312/model/DescribeTaskTemplatesResponse.cpp
-  src/v20170312/model/CreateCpmComputeEnvResponse.cpp
   src/v20170312/model/DeleteJobRequest.cpp
-  src/v20170312/model/CreateCpmComputeEnvRequest.cpp
   src/v20170312/model/DescribeTaskLogsResponse.cpp
-  src/v20170312/model/NamedCpmComputeEnv.cpp
   src/v20170312/model/DeleteTaskTemplatesRequest.cpp
   src/v20170312/model/DescribeJobResponse.cpp
   src/v20170312/model/DescribeComputeEnvCreateInfoRequest.cpp
   src/v20170312/model/ModifyTaskTemplateRequest.cpp
-  src/v20170312/model/DescribeCpmOsInfoRequest.cpp
   src/v20170312/model/DataDisk.cpp
   src/v20170312/model/NamedComputeEnv.cpp
   src/v20170312/model/DeleteJobResponse.cpp
   src/v20170312/model/EventConfig.cpp
   src/v20170312/model/SpotMarketOptions.cpp
-  src/v20170312/model/CpmVirtualPrivateCloud.cpp
+  src/v20170312/model/LoginSettings.cpp
   src/v20170312/model/DetachInstancesRequest.cpp
   src/v20170312/model/Instance.cpp
   src/v20170312/model/OutputMapping.cpp

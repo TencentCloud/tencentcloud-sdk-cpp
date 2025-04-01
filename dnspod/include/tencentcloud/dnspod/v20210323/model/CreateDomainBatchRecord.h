@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子域名(主机记录)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubDomain 子域名(主机记录)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubDomain() const;
 
                     /**
                      * 设置子域名(主机记录)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subDomain 子域名(主机记录)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubDomain(const std::string& _subDomain);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取记录类型, 详见 DescribeRecordType 接口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecordType 记录类型, 详见 DescribeRecordType 接口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRecordType() const;
 
                     /**
                      * 设置记录类型, 详见 DescribeRecordType 接口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _recordType 记录类型, 详见 DescribeRecordType 接口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRecordType(const std::string& _recordType);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取解析记录的线路，详见 DescribeRecordLineList 接口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecordLine 解析记录的线路，详见 DescribeRecordLineList 接口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRecordLine() const;
 
                     /**
                      * 设置解析记录的线路，详见 DescribeRecordLineList 接口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _recordLine 解析记录的线路，详见 DescribeRecordLineList 接口
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRecordLine(const std::string& _recordLine);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取记录值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 记录值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置记录值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _value 记录值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取记录的 TTL 值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TTL 记录的 TTL 值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTTL() const;
 
                     /**
                      * 设置记录的 TTL 值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tTL 记录的 TTL 值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTTL(const uint64_t& _tTL);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取记录添加状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 记录添加状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置记录添加状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 记录添加状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取操作类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Operation 操作类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOperation() const;
 
                     /**
                      * 设置操作类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _operation 操作类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOperation(const std::string& _operation);
@@ -271,49 +243,42 @@ namespace TencentCloud
 
                     /**
                      * 子域名(主机记录)。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subDomain;
                     bool m_subDomainHasBeenSet;
 
                     /**
                      * 记录类型, 详见 DescribeRecordType 接口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_recordType;
                     bool m_recordTypeHasBeenSet;
 
                     /**
                      * 解析记录的线路，详见 DescribeRecordLineList 接口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_recordLine;
                     bool m_recordLineHasBeenSet;
 
                     /**
                      * 记录值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;
 
                     /**
                      * 记录的 TTL 值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_tTL;
                     bool m_tTLHasBeenSet;
 
                     /**
                      * 记录添加状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 操作类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_operation;
                     bool m_operationHasBeenSet;

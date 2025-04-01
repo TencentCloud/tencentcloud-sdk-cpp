@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/batch/v20170312/model/CreateCpmComputeEnvResponse.h>
+#include <tencentcloud/dbbrain/v20191016/model/DescribeMySqlProcessListResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Batch::V20170312::Model;
+using namespace TencentCloud::Dbbrain::V20191016::Model;
 using namespace std;
 
-CreateCpmComputeEnvResponse::CreateCpmComputeEnvResponse() :
-    m_envIdHasBeenSet(false)
+DescribeMySqlProcessListResponse::DescribeMySqlProcessListResponse() :
+    m_processListHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome CreateCpmComputeEnvResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeMySqlProcessListResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,32 +62,49 @@ CoreInternalOutcome CreateCpmComputeEnvResponse::Deserialize(const string &paylo
     }
 
 
-    if (rsp.HasMember("EnvId") && !rsp["EnvId"].IsNull())
+    if (rsp.HasMember("ProcessList") && !rsp["ProcessList"].IsNull())
     {
-        if (!rsp["EnvId"].IsString())
+        if (!rsp["ProcessList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ProcessList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ProcessList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            return CoreInternalOutcome(Core::Error("response `EnvId` IsString=false incorrectly").SetRequestId(requestId));
+            MySqlProcess item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_processList.push_back(item);
         }
-        m_envId = string(rsp["EnvId"].GetString());
-        m_envIdHasBeenSet = true;
+        m_processListHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string CreateCpmComputeEnvResponse::ToJsonString() const
+string DescribeMySqlProcessListResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_envIdHasBeenSet)
+    if (m_processListHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "EnvId";
+        string key = "ProcessList";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_envId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_processList.begin(); itr != m_processList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -102,14 +119,14 @@ string CreateCpmComputeEnvResponse::ToJsonString() const
 }
 
 
-string CreateCpmComputeEnvResponse::GetEnvId() const
+vector<MySqlProcess> DescribeMySqlProcessListResponse::GetProcessList() const
 {
-    return m_envId;
+    return m_processList;
 }
 
-bool CreateCpmComputeEnvResponse::EnvIdHasBeenSet() const
+bool DescribeMySqlProcessListResponse::ProcessListHasBeenSet() const
 {
-    return m_envIdHasBeenSet;
+    return m_processListHasBeenSet;
 }
 
 

@@ -158,9 +158,7 @@ namespace TencentCloud
 
                     /**
                      * 获取刷新检测信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PurgeInfo 刷新检测信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DiagnoseData GetPurgeInfo() const;
@@ -224,7 +222,6 @@ namespace TencentCloud
 
                     /**
                      * 刷新检测信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DiagnoseData m_purgeInfo;
                     bool m_purgeInfoHasBeenSet;

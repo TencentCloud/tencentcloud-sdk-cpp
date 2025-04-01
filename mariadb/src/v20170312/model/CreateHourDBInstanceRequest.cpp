@@ -41,7 +41,8 @@ CreateHourDBInstanceRequest::CreateHourDBInstanceRequest() :
     m_initParamsHasBeenSet(false),
     m_rollbackInstanceIdHasBeenSet(false),
     m_rollbackTimeHasBeenSet(false),
-    m_dcnSyncModeHasBeenSet(false)
+    m_dcnSyncModeHasBeenSet(false),
+    m_cpuTypeHasBeenSet(false)
 {
 }
 
@@ -226,6 +227,14 @@ string CreateHourDBInstanceRequest::ToJsonString() const
         string key = "DcnSyncMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_dcnSyncMode, allocator);
+    }
+
+    if (m_cpuTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CpuType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cpuType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -538,6 +547,22 @@ void CreateHourDBInstanceRequest::SetDcnSyncMode(const int64_t& _dcnSyncMode)
 bool CreateHourDBInstanceRequest::DcnSyncModeHasBeenSet() const
 {
     return m_dcnSyncModeHasBeenSet;
+}
+
+string CreateHourDBInstanceRequest::GetCpuType() const
+{
+    return m_cpuType;
+}
+
+void CreateHourDBInstanceRequest::SetCpuType(const string& _cpuType)
+{
+    m_cpuType = _cpuType;
+    m_cpuTypeHasBeenSet = true;
+}
+
+bool CreateHourDBInstanceRequest::CpuTypeHasBeenSet() const
+{
+    return m_cpuTypeHasBeenSet;
 }
 
 

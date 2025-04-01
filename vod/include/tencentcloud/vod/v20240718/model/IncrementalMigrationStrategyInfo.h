@@ -154,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取回源源站配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HttpOriginConfig 回源源站配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     IncrementalMigrationHttpOriginConfig GetHttpOriginConfig() const;
 
                     /**
                      * 设置回源源站配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _httpOriginConfig 回源源站配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHttpOriginConfig(const IncrementalMigrationHttpOriginConfig& _httpOriginConfig);
@@ -211,7 +207,6 @@ namespace TencentCloud
 
                     /**
                      * 回源源站配置。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     IncrementalMigrationHttpOriginConfig m_httpOriginConfig;
                     bool m_httpOriginConfigHasBeenSet;

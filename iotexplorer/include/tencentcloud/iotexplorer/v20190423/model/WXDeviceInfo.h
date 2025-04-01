@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceId 设备ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeviceId() const;
 
                     /**
                      * 设置设备ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceId 设备ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceId(const std::string& _deviceId);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取设备信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WXIoTDeviceInfo 设备信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     WXIoTDeviceInfo GetWXIoTDeviceInfo() const;
 
                     /**
                      * 设置设备信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _wXIoTDeviceInfo 设备信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWXIoTDeviceInfo(const WXIoTDeviceInfo& _wXIoTDeviceInfo);
@@ -101,14 +93,12 @@ namespace TencentCloud
 
                     /**
                      * 设备ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceId;
                     bool m_deviceIdHasBeenSet;
 
                     /**
                      * 设备信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     WXIoTDeviceInfo m_wXIoTDeviceInfo;
                     bool m_wXIoTDeviceInfoHasBeenSet;

@@ -26,7 +26,10 @@ DescribeSlowLogTimeSeriesStatsRequest::DescribeSlowLogTimeSeriesStatsRequest() :
     m_instanceIdHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
-    m_productHasBeenSet(false)
+    m_productHasBeenSet(false),
+    m_instanceProxyIdHasBeenSet(false),
+    m_instanceNodeIdHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -67,6 +70,30 @@ string DescribeSlowLogTimeSeriesStatsRequest::ToJsonString() const
         string key = "Product";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_product.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceProxyIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceProxyId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceProxyId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceNodeIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceNodeId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceNodeId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +166,54 @@ void DescribeSlowLogTimeSeriesStatsRequest::SetProduct(const string& _product)
 bool DescribeSlowLogTimeSeriesStatsRequest::ProductHasBeenSet() const
 {
     return m_productHasBeenSet;
+}
+
+string DescribeSlowLogTimeSeriesStatsRequest::GetInstanceProxyId() const
+{
+    return m_instanceProxyId;
+}
+
+void DescribeSlowLogTimeSeriesStatsRequest::SetInstanceProxyId(const string& _instanceProxyId)
+{
+    m_instanceProxyId = _instanceProxyId;
+    m_instanceProxyIdHasBeenSet = true;
+}
+
+bool DescribeSlowLogTimeSeriesStatsRequest::InstanceProxyIdHasBeenSet() const
+{
+    return m_instanceProxyIdHasBeenSet;
+}
+
+string DescribeSlowLogTimeSeriesStatsRequest::GetInstanceNodeId() const
+{
+    return m_instanceNodeId;
+}
+
+void DescribeSlowLogTimeSeriesStatsRequest::SetInstanceNodeId(const string& _instanceNodeId)
+{
+    m_instanceNodeId = _instanceNodeId;
+    m_instanceNodeIdHasBeenSet = true;
+}
+
+bool DescribeSlowLogTimeSeriesStatsRequest::InstanceNodeIdHasBeenSet() const
+{
+    return m_instanceNodeIdHasBeenSet;
+}
+
+string DescribeSlowLogTimeSeriesStatsRequest::GetType() const
+{
+    return m_type;
+}
+
+void DescribeSlowLogTimeSeriesStatsRequest::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool DescribeSlowLogTimeSeriesStatsRequest::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
 }
 
 

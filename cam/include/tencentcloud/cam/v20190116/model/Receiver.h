@@ -220,18 +220,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否允许微信接收通知
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WechatFlag 是否允许微信接收通知
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetWechatFlag() const;
 
                     /**
                      * 设置是否允许微信接收通知
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _wechatFlag 是否允许微信接收通知
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWechatFlag(const int64_t& _wechatFlag);
@@ -245,18 +241,14 @@ namespace TencentCloud
 
                     /**
                      * 获取账号uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uin 账号uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetUin() const;
 
                     /**
                      * 设置账号uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uin 账号uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUin(const int64_t& _uin);
@@ -321,14 +313,12 @@ namespace TencentCloud
 
                     /**
                      * 是否允许微信接收通知
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_wechatFlag;
                     bool m_wechatFlagHasBeenSet;
 
                     /**
                      * 账号uin
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_uin;
                     bool m_uinHasBeenSet;

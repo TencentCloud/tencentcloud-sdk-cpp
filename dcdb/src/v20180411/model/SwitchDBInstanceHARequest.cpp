@@ -25,7 +25,8 @@ using namespace std;
 SwitchDBInstanceHARequest::SwitchDBInstanceHARequest() :
     m_instanceIdHasBeenSet(false),
     m_zoneHasBeenSet(false),
-    m_shardInstanceIdsHasBeenSet(false)
+    m_shardInstanceIdsHasBeenSet(false),
+    m_zoneModeHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,14 @@ string SwitchDBInstanceHARequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_zoneModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZoneMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_zoneMode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -119,6 +128,22 @@ void SwitchDBInstanceHARequest::SetShardInstanceIds(const vector<string>& _shard
 bool SwitchDBInstanceHARequest::ShardInstanceIdsHasBeenSet() const
 {
     return m_shardInstanceIdsHasBeenSet;
+}
+
+string SwitchDBInstanceHARequest::GetZoneMode() const
+{
+    return m_zoneMode;
+}
+
+void SwitchDBInstanceHARequest::SetZoneMode(const string& _zoneMode)
+{
+    m_zoneMode = _zoneMode;
+    m_zoneModeHasBeenSet = true;
+}
+
+bool SwitchDBInstanceHARequest::ZoneModeHasBeenSet() const
+{
+    return m_zoneModeHasBeenSet;
 }
 
 

@@ -933,6 +933,56 @@ namespace TencentCloud
                      */
                     bool UseVPCHasBeenSet() const;
 
+                    /**
+                     * 获取所属人ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Owner 所属人ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetOwner() const;
+
+                    /**
+                     * 设置所属人ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _owner 所属人ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOwner(const std::string& _owner);
+
+                    /**
+                     * 判断参数 Owner 是否已赋值
+                     * @return Owner 是否已赋值
+                     * 
+                     */
+                    bool OwnerHasBeenSet() const;
+
+                    /**
+                     * 获取所属人名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OwnerName 所属人名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetOwnerName() const;
+
+                    /**
+                     * 设置所属人名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ownerName 所属人名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOwnerName(const std::string& _ownerName);
+
+                    /**
+                     * 判断参数 OwnerName 是否已赋值
+                     * @return OwnerName 是否已赋值
+                     * 
+                     */
+                    bool OwnerNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1183,6 +1233,20 @@ namespace TencentCloud
                      */
                     bool m_useVPC;
                     bool m_useVPCHasBeenSet;
+
+                    /**
+                     * 所属人ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_owner;
+                    bool m_ownerHasBeenSet;
+
+                    /**
+                     * 所属人名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ownerName;
+                    bool m_ownerNameHasBeenSet;
 
                 };
             }

@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取规则描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 规则描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置规则描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 规则描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -115,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取行为的JSON字符串。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Actions 行为的JSON字符串。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetActions() const;
 
                     /**
                      * 设置行为的JSON字符串。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _actions 行为的JSON字符串。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetActions(const std::string& _actions);
@@ -140,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否禁用规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleDisabled 是否禁用规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetRuleDisabled() const;
 
                     /**
                      * 设置是否禁用规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleDisabled 是否禁用规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleDisabled(const bool& _ruleDisabled);
@@ -179,21 +167,18 @@ namespace TencentCloud
 
                     /**
                      * 规则描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
                      * 行为的JSON字符串。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_actions;
                     bool m_actionsHasBeenSet;
 
                     /**
                      * 是否禁用规则
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_ruleDisabled;
                     bool m_ruleDisabledHasBeenSet;

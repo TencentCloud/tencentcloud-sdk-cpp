@@ -709,7 +709,7 @@ DescribeDiagnoseReport 用于获取指定报告id的内容。
                 DescribeHttpsPackagesOutcomeCallable DescribeHttpsPackagesCallable(const Model::DescribeHttpsPackagesRequest& request);
 
                 /**
-                 *DescribeImageConfig 用于获取域名图片优化的当前配置，支持Webp、TPG、 Guetzli 和 Avif。 
+                 *DescribeImageConfig 用于获取域名图片优化的当前配置，支持Webp、TPG、 Guetzli 和 Avif。
                  * @param req DescribeImageConfigRequest
                  * @return DescribeImageConfigOutcome
                  */

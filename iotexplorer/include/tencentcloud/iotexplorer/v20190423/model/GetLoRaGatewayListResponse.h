@@ -60,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取返回详情项
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Gateways 返回详情项
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<LoRaGatewayItem> GetGateways() const;
@@ -84,7 +82,6 @@ namespace TencentCloud
 
                     /**
                      * 返回详情项
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<LoRaGatewayItem> m_gateways;
                     bool m_gatewaysHasBeenSet;

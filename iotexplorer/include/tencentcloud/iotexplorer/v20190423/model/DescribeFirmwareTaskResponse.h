@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取固件任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskId 固件任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTaskId() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取固件任务状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 固件任务状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
@@ -77,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取固件任务创建时间，单位：秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 固件任务创建时间，单位：秒
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCreateTime() const;
@@ -93,9 +87,7 @@ namespace TencentCloud
 
                     /**
                      * 获取固件任务升级类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 固件任务升级类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetType() const;
@@ -109,9 +101,7 @@ namespace TencentCloud
 
                     /**
                      * 获取产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductName 产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProductName() const;
@@ -125,9 +115,7 @@ namespace TencentCloud
 
                     /**
                      * 获取固件任务升级模式。originalVersion（按版本号升级）、filename（提交文件升级）、devicenames（按设备名称升级）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpgradeMode 固件任务升级模式。originalVersion（按版本号升级）、filename（提交文件升级）、devicenames（按设备名称升级）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpgradeMode() const;
@@ -141,9 +129,7 @@ namespace TencentCloud
 
                     /**
                      * 获取产品ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductId 产品ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProductId() const;
@@ -157,9 +143,7 @@ namespace TencentCloud
 
                     /**
                      * 获取原始固件版本号，在UpgradeMode是originalVersion升级模式下会返回
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OriginalVersion 原始固件版本号，在UpgradeMode是originalVersion升级模式下会返回
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOriginalVersion() const;
@@ -173,9 +157,7 @@ namespace TencentCloud
 
                     /**
                      * 获取创建账号ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateUserId 创建账号ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCreateUserId() const;
@@ -189,9 +171,7 @@ namespace TencentCloud
 
                     /**
                      * 获取创建账号ID昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatorNickName 创建账号ID昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatorNickName() const;
@@ -207,70 +187,60 @@ namespace TencentCloud
 
                     /**
                      * 固件任务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_taskId;
                     bool m_taskIdHasBeenSet;
 
                     /**
                      * 固件任务状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 固件任务创建时间，单位：秒
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 固件任务升级类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 产品名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_productName;
                     bool m_productNameHasBeenSet;
 
                     /**
                      * 固件任务升级模式。originalVersion（按版本号升级）、filename（提交文件升级）、devicenames（按设备名称升级）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_upgradeMode;
                     bool m_upgradeModeHasBeenSet;
 
                     /**
                      * 产品ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_productId;
                     bool m_productIdHasBeenSet;
 
                     /**
                      * 原始固件版本号，在UpgradeMode是originalVersion升级模式下会返回
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_originalVersion;
                     bool m_originalVersionHasBeenSet;
 
                     /**
                      * 创建账号ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_createUserId;
                     bool m_createUserIdHasBeenSet;
 
                     /**
                      * 创建账号ID昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_creatorNickName;
                     bool m_creatorNickNameHasBeenSet;

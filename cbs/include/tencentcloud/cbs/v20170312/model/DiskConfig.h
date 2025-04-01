@@ -69,15 +69,15 @@ namespace TencentCloud
                     bool AvailableHasBeenSet() const;
 
                     /**
-                     * 获取付费模式。取值范围：<br><li>PREPAID：表示预付费，即包年包月<br><li>POSTPAID_BY_HOUR：表示后付费，即按量计费。
-                     * @return DiskChargeType 付费模式。取值范围：<br><li>PREPAID：表示预付费，即包年包月<br><li>POSTPAID_BY_HOUR：表示后付费，即按量计费。
+                     * 获取付费模式。取值范围：<br><li>PREPAID：表示预付费，即包年包月</li><br><li>POSTPAID_BY_HOUR：表示后付费，即按量计费。</li>
+                     * @return DiskChargeType 付费模式。取值范围：<br><li>PREPAID：表示预付费，即包年包月</li><br><li>POSTPAID_BY_HOUR：表示后付费，即按量计费。</li>
                      * 
                      */
                     std::string GetDiskChargeType() const;
 
                     /**
-                     * 设置付费模式。取值范围：<br><li>PREPAID：表示预付费，即包年包月<br><li>POSTPAID_BY_HOUR：表示后付费，即按量计费。
-                     * @param _diskChargeType 付费模式。取值范围：<br><li>PREPAID：表示预付费，即包年包月<br><li>POSTPAID_BY_HOUR：表示后付费，即按量计费。
+                     * 设置付费模式。取值范围：<br><li>PREPAID：表示预付费，即包年包月</li><br><li>POSTPAID_BY_HOUR：表示后付费，即按量计费。</li>
+                     * @param _diskChargeType 付费模式。取值范围：<br><li>PREPAID：表示预付费，即包年包月</li><br><li>POSTPAID_BY_HOUR：表示后付费，即按量计费。</li>
                      * 
                      */
                     void SetDiskChargeType(const std::string& _diskChargeType);
@@ -136,15 +136,15 @@ namespace TencentCloud
                     bool InstanceFamilyHasBeenSet() const;
 
                     /**
-                     * 获取云盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_SSD：SSD表示SSD云硬盘。
-                     * @return DiskType 云盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_SSD：SSD表示SSD云硬盘。
+                     * 获取云盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘</li><br><li>CLOUD_PREMIUM：表示高性能云硬盘</li><br><li>CLOUD_SSD：SSD表示SSD云硬盘。</li>
+                     * @return DiskType 云盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘</li><br><li>CLOUD_PREMIUM：表示高性能云硬盘</li><br><li>CLOUD_SSD：SSD表示SSD云硬盘。</li>
                      * 
                      */
                     std::string GetDiskType() const;
 
                     /**
-                     * 设置云盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_SSD：SSD表示SSD云硬盘。
-                     * @param _diskType 云盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_SSD：SSD表示SSD云硬盘。
+                     * 设置云盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘</li><br><li>CLOUD_PREMIUM：表示高性能云硬盘</li><br><li>CLOUD_SSD：SSD表示SSD云硬盘。</li>
+                     * @param _diskType 云盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘</li><br><li>CLOUD_PREMIUM：表示高性能云硬盘</li><br><li>CLOUD_SSD：SSD表示SSD云硬盘。</li>
                      * 
                      */
                     void SetDiskType(const std::string& _diskType);
@@ -158,18 +158,14 @@ namespace TencentCloud
 
                     /**
                      * 获取云盘大小变化的最小步长，单位GB。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StepSize 云盘大小变化的最小步长，单位GB。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStepSize() const;
 
                     /**
                      * 设置云盘大小变化的最小步长，单位GB。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _stepSize 云盘大小变化的最小步长，单位GB。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStepSize(const uint64_t& _stepSize);
@@ -232,15 +228,15 @@ namespace TencentCloud
                     bool DeviceClassHasBeenSet() const;
 
                     /**
-                     * 获取云盘类型。取值范围：<br><li>SYSTEM_DISK：表示系统盘<br><li>DATA_DISK：表示数据盘。
-                     * @return DiskUsage 云盘类型。取值范围：<br><li>SYSTEM_DISK：表示系统盘<br><li>DATA_DISK：表示数据盘。
+                     * 获取云盘类型。取值范围：<br><li>SYSTEM_DISK：表示系统盘</li><br><li>DATA_DISK：表示数据盘。</li>
+                     * @return DiskUsage 云盘类型。取值范围：<br><li>SYSTEM_DISK：表示系统盘</li><br><li>DATA_DISK：表示数据盘。</li>
                      * 
                      */
                     std::string GetDiskUsage() const;
 
                     /**
-                     * 设置云盘类型。取值范围：<br><li>SYSTEM_DISK：表示系统盘<br><li>DATA_DISK：表示数据盘。
-                     * @param _diskUsage 云盘类型。取值范围：<br><li>SYSTEM_DISK：表示系统盘<br><li>DATA_DISK：表示数据盘。
+                     * 设置云盘类型。取值范围：<br><li>SYSTEM_DISK：表示系统盘</li><br><li>DATA_DISK：表示数据盘。</li>
+                     * @param _diskUsage 云盘类型。取值范围：<br><li>SYSTEM_DISK：表示系统盘</li><br><li>DATA_DISK：表示数据盘。</li>
                      * 
                      */
                     void SetDiskUsage(const std::string& _diskUsage);
@@ -296,18 +292,14 @@ namespace TencentCloud
 
                     /**
                      * 获取描述预付费或后付费云盘的价格。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Price 描述预付费或后付费云盘的价格。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Price GetPrice() const;
 
                     /**
                      * 设置描述预付费或后付费云盘的价格。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _price 描述预付费或后付费云盘的价格。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPrice(const Price& _price);
@@ -328,7 +320,7 @@ namespace TencentCloud
                     bool m_availableHasBeenSet;
 
                     /**
-                     * 付费模式。取值范围：<br><li>PREPAID：表示预付费，即包年包月<br><li>POSTPAID_BY_HOUR：表示后付费，即按量计费。
+                     * 付费模式。取值范围：<br><li>PREPAID：表示预付费，即包年包月</li><br><li>POSTPAID_BY_HOUR：表示后付费，即按量计费。</li>
                      */
                     std::string m_diskChargeType;
                     bool m_diskChargeTypeHasBeenSet;
@@ -347,14 +339,13 @@ namespace TencentCloud
                     bool m_instanceFamilyHasBeenSet;
 
                     /**
-                     * 云盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘<br><li>CLOUD_PREMIUM：表示高性能云硬盘<br><li>CLOUD_SSD：SSD表示SSD云硬盘。
+                     * 云盘介质类型。取值范围：<br><li>CLOUD_BASIC：表示普通云硬盘</li><br><li>CLOUD_PREMIUM：表示高性能云硬盘</li><br><li>CLOUD_SSD：SSD表示SSD云硬盘。</li>
                      */
                     std::string m_diskType;
                     bool m_diskTypeHasBeenSet;
 
                     /**
                      * 云盘大小变化的最小步长，单位GB。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_stepSize;
                     bool m_stepSizeHasBeenSet;
@@ -374,7 +365,7 @@ namespace TencentCloud
                     bool m_deviceClassHasBeenSet;
 
                     /**
-                     * 云盘类型。取值范围：<br><li>SYSTEM_DISK：表示系统盘<br><li>DATA_DISK：表示数据盘。
+                     * 云盘类型。取值范围：<br><li>SYSTEM_DISK：表示系统盘</li><br><li>DATA_DISK：表示数据盘。</li>
                      */
                     std::string m_diskUsage;
                     bool m_diskUsageHasBeenSet;
@@ -393,7 +384,6 @@ namespace TencentCloud
 
                     /**
                      * 描述预付费或后付费云盘的价格。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Price m_price;
                     bool m_priceHasBeenSet;

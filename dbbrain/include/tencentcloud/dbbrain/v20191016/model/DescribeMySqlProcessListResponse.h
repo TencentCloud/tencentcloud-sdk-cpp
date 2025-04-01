@@ -14,57 +14,57 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_BATCH_V20170312_MODEL_DESCRIBECPMOSINFORESPONSE_H_
-#define TENCENTCLOUD_BATCH_V20170312_MODEL_DESCRIBECPMOSINFORESPONSE_H_
+#ifndef TENCENTCLOUD_DBBRAIN_V20191016_MODEL_DESCRIBEMYSQLPROCESSLISTRESPONSE_H_
+#define TENCENTCLOUD_DBBRAIN_V20191016_MODEL_DESCRIBEMYSQLPROCESSLISTRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/batch/v20170312/model/OsInfo.h>
+#include <tencentcloud/dbbrain/v20191016/model/MySqlProcess.h>
 
 
 namespace TencentCloud
 {
-    namespace Batch
+    namespace Dbbrain
     {
-        namespace V20170312
+        namespace V20191016
         {
             namespace Model
             {
                 /**
-                * DescribeCpmOsInfo返回参数结构体
+                * DescribeMySqlProcessList返回参数结构体
                 */
-                class DescribeCpmOsInfoResponse : public AbstractModel
+                class DescribeMySqlProcessListResponse : public AbstractModel
                 {
                 public:
-                    DescribeCpmOsInfoResponse();
-                    ~DescribeCpmOsInfoResponse() = default;
+                    DescribeMySqlProcessListResponse();
+                    ~DescribeMySqlProcessListResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取操作系统信息列表。
-                     * @return OsInfoSet 操作系统信息列表。
+                     * 获取实时线程列表。
+                     * @return ProcessList 实时线程列表。
                      * 
                      */
-                    std::vector<OsInfo> GetOsInfoSet() const;
+                    std::vector<MySqlProcess> GetProcessList() const;
 
                     /**
-                     * 判断参数 OsInfoSet 是否已赋值
-                     * @return OsInfoSet 是否已赋值
+                     * 判断参数 ProcessList 是否已赋值
+                     * @return ProcessList 是否已赋值
                      * 
                      */
-                    bool OsInfoSetHasBeenSet() const;
+                    bool ProcessListHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 操作系统信息列表。
+                     * 实时线程列表。
                      */
-                    std::vector<OsInfo> m_osInfoSet;
-                    bool m_osInfoSetHasBeenSet;
+                    std::vector<MySqlProcess> m_processList;
+                    bool m_processListHasBeenSet;
 
                 };
             }
@@ -72,4 +72,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_BATCH_V20170312_MODEL_DESCRIBECPMOSINFORESPONSE_H_
+#endif // !TENCENTCLOUD_DBBRAIN_V20191016_MODEL_DESCRIBEMYSQLPROCESSLISTRESPONSE_H_

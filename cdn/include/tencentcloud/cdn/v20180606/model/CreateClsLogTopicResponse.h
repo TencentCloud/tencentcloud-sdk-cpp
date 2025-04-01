@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicId 主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTopicId() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;

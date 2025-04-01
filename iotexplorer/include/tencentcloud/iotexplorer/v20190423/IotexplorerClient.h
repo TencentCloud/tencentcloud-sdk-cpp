@@ -1039,7 +1039,7 @@ namespace TencentCloud
                 CreatePositionFenceOutcomeCallable CreatePositionFenceCallable(const Model::CreatePositionFenceRequest& request);
 
                 /**
-                 *创建位置空间
+                 *创建位置空间。
                  * @param req CreatePositionSpaceRequest
                  * @return CreatePositionSpaceOutcome
                  */

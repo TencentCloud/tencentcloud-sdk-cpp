@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取剩余天数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Days 剩余天数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDays() const;
 
                     /**
                      * 设置剩余天数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _days 剩余天数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDays(const uint64_t& _days);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取剩余小时数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Hours 剩余小时数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetHours() const;
 
                     /**
                      * 设置剩余小时数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _hours 剩余小时数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHours(const uint64_t& _hours);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取剩余分钟数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Mins 剩余分钟数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetMins() const;
 
                     /**
                      * 设置剩余分钟数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mins 剩余分钟数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMins(const uint64_t& _mins);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 剩余天数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_days;
                     bool m_daysHasBeenSet;
 
                     /**
                      * 剩余小时数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_hours;
                     bool m_hoursHasBeenSet;
 
                     /**
                      * 剩余分钟数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_mins;
                     bool m_minsHasBeenSet;

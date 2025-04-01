@@ -172,6 +172,48 @@ namespace TencentCloud
                      */
                     bool UsedBluetoothLicenseHasBeenSet() const;
 
+                    /**
+                     * 获取可免费注册设备数
+                     * @return TotalFreeLicense 可免费注册设备数
+                     * 
+                     */
+                    int64_t GetTotalFreeLicense() const;
+
+                    /**
+                     * 设置可免费注册设备数
+                     * @param _totalFreeLicense 可免费注册设备数
+                     * 
+                     */
+                    void SetTotalFreeLicense(const int64_t& _totalFreeLicense);
+
+                    /**
+                     * 判断参数 TotalFreeLicense 是否已赋值
+                     * @return TotalFreeLicense 是否已赋值
+                     * 
+                     */
+                    bool TotalFreeLicenseHasBeenSet() const;
+
+                    /**
+                     * 获取已使用注册设备数
+                     * @return UsedFreeLicense 已使用注册设备数
+                     * 
+                     */
+                    int64_t GetUsedFreeLicense() const;
+
+                    /**
+                     * 设置已使用注册设备数
+                     * @param _usedFreeLicense 已使用注册设备数
+                     * 
+                     */
+                    void SetUsedFreeLicense(const int64_t& _usedFreeLicense);
+
+                    /**
+                     * 判断参数 UsedFreeLicense 是否已赋值
+                     * @return UsedFreeLicense 是否已赋值
+                     * 
+                     */
+                    bool UsedFreeLicenseHasBeenSet() const;
+
                 private:
 
                     /**
@@ -209,6 +251,18 @@ namespace TencentCloud
                      */
                     int64_t m_usedBluetoothLicense;
                     bool m_usedBluetoothLicenseHasBeenSet;
+
+                    /**
+                     * 可免费注册设备数
+                     */
+                    int64_t m_totalFreeLicense;
+                    bool m_totalFreeLicenseHasBeenSet;
+
+                    /**
+                     * 已使用注册设备数
+                     */
+                    int64_t m_usedFreeLicense;
+                    bool m_usedFreeLicenseHasBeenSet;
 
                 };
             }

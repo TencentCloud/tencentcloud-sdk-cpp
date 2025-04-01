@@ -109,6 +109,27 @@ namespace TencentCloud
                      */
                     bool SubDeviceNumHasBeenSet() const;
 
+                    /**
+                     * 获取已注册视频设备数
+                     * @return VideoDeviceNum 已注册视频设备数
+                     * 
+                     */
+                    int64_t GetVideoDeviceNum() const;
+
+                    /**
+                     * 设置已注册视频设备数
+                     * @param _videoDeviceNum 已注册视频设备数
+                     * 
+                     */
+                    void SetVideoDeviceNum(const int64_t& _videoDeviceNum);
+
+                    /**
+                     * 判断参数 VideoDeviceNum 是否已赋值
+                     * @return VideoDeviceNum 是否已赋值
+                     * 
+                     */
+                    bool VideoDeviceNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -128,6 +149,12 @@ namespace TencentCloud
                      */
                     int64_t m_subDeviceNum;
                     bool m_subDeviceNumHasBeenSet;
+
+                    /**
+                     * 已注册视频设备数
+                     */
+                    int64_t m_videoDeviceNum;
+                    bool m_videoDeviceNumHasBeenSet;
 
                 };
             }

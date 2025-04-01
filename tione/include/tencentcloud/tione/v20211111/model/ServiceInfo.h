@@ -32,6 +32,7 @@
 #include <tencentcloud/tione/v20211111/model/HorizontalPodAutoscaler.h>
 #include <tencentcloud/tione/v20211111/model/WorkloadStatus.h>
 #include <tencentcloud/tione/v20211111/model/CronScaleJob.h>
+#include <tencentcloud/tione/v20211111/model/ScheduledAction.h>
 #include <tencentcloud/tione/v20211111/model/Pod.h>
 #include <tencentcloud/tione/v20211111/model/ServiceLimit.h>
 #include <tencentcloud/tione/v20211111/model/VolumeMount.h>
@@ -619,7 +620,7 @@ HYBRID_PAID:
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    std::string GetScheduledAction() const;
+                    ScheduledAction GetScheduledAction() const;
 
                     /**
                      * 设置定时停止的配置
@@ -628,7 +629,7 @@ HYBRID_PAID:
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
-                    void SetScheduledAction(const std::string& _scheduledAction);
+                    void SetScheduledAction(const ScheduledAction& _scheduledAction);
 
                     /**
                      * 判断参数 ScheduledAction 是否已赋值
@@ -1089,7 +1090,7 @@ HYBRID_PAID:
                      * 定时停止的配置
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_scheduledAction;
+                    ScheduledAction m_scheduledAction;
                     bool m_scheduledActionHasBeenSet;
 
                     /**

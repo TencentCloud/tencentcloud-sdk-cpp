@@ -2104,6 +2104,49 @@ DbbrainClient::DescribeRedisProcessListOutcomeCallable DbbrainClient::DescribeRe
     return task->get_future();
 }
 
+DbbrainClient::DescribeRedisSlowLogTopSqlsOutcome DbbrainClient::DescribeRedisSlowLogTopSqls(const DescribeRedisSlowLogTopSqlsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRedisSlowLogTopSqls");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRedisSlowLogTopSqlsResponse rsp = DescribeRedisSlowLogTopSqlsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRedisSlowLogTopSqlsOutcome(rsp);
+        else
+            return DescribeRedisSlowLogTopSqlsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRedisSlowLogTopSqlsOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeRedisSlowLogTopSqlsAsync(const DescribeRedisSlowLogTopSqlsRequest& request, const DescribeRedisSlowLogTopSqlsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRedisSlowLogTopSqls(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeRedisSlowLogTopSqlsOutcomeCallable DbbrainClient::DescribeRedisSlowLogTopSqlsCallable(const DescribeRedisSlowLogTopSqlsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRedisSlowLogTopSqlsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRedisSlowLogTopSqls(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DbbrainClient::DescribeRedisTopBigKeysOutcome DbbrainClient::DescribeRedisTopBigKeys(const DescribeRedisTopBigKeysRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRedisTopBigKeys");
@@ -2312,6 +2355,49 @@ DbbrainClient::DescribeSecurityAuditLogExportTasksOutcomeCallable DbbrainClient:
         [this, request]()
         {
             return this->DescribeSecurityAuditLogExportTasks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DbbrainClient::DescribeSlowLogQueryTimeStatsOutcome DbbrainClient::DescribeSlowLogQueryTimeStats(const DescribeSlowLogQueryTimeStatsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSlowLogQueryTimeStats");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSlowLogQueryTimeStatsResponse rsp = DescribeSlowLogQueryTimeStatsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSlowLogQueryTimeStatsOutcome(rsp);
+        else
+            return DescribeSlowLogQueryTimeStatsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSlowLogQueryTimeStatsOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeSlowLogQueryTimeStatsAsync(const DescribeSlowLogQueryTimeStatsRequest& request, const DescribeSlowLogQueryTimeStatsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSlowLogQueryTimeStats(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeSlowLogQueryTimeStatsOutcomeCallable DbbrainClient::DescribeSlowLogQueryTimeStatsCallable(const DescribeSlowLogQueryTimeStatsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSlowLogQueryTimeStatsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSlowLogQueryTimeStats(request);
         }
     );
 

@@ -126,6 +126,48 @@ namespace TencentCloud
                      */
                     bool PageSizeHasBeenSet() const;
 
+                    /**
+                     * 获取是否过滤掉企业管理员
+                     * @return IsFilterPerAuthUser 是否过滤掉企业管理员
+                     * 
+                     */
+                    bool GetIsFilterPerAuthUser() const;
+
+                    /**
+                     * 设置是否过滤掉企业管理员
+                     * @param _isFilterPerAuthUser 是否过滤掉企业管理员
+                     * 
+                     */
+                    void SetIsFilterPerAuthUser(const bool& _isFilterPerAuthUser);
+
+                    /**
+                     * 判断参数 IsFilterPerAuthUser 是否已赋值
+                     * @return IsFilterPerAuthUser 是否已赋值
+                     * 
+                     */
+                    bool IsFilterPerAuthUserHasBeenSet() const;
+
+                    /**
+                     * 获取是否过滤掉当前用户
+                     * @return IsFilterCurrentUser 是否过滤掉当前用户
+                     * 
+                     */
+                    bool GetIsFilterCurrentUser() const;
+
+                    /**
+                     * 设置是否过滤掉当前用户
+                     * @param _isFilterCurrentUser 是否过滤掉当前用户
+                     * 
+                     */
+                    void SetIsFilterCurrentUser(const bool& _isFilterCurrentUser);
+
+                    /**
+                     * 判断参数 IsFilterCurrentUser 是否已赋值
+                     * @return IsFilterCurrentUser 是否已赋值
+                     * 
+                     */
+                    bool IsFilterCurrentUserHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +193,18 @@ namespace TencentCloud
                      */
                     int64_t m_pageSize;
                     bool m_pageSizeHasBeenSet;
+
+                    /**
+                     * 是否过滤掉企业管理员
+                     */
+                    bool m_isFilterPerAuthUser;
+                    bool m_isFilterPerAuthUserHasBeenSet;
+
+                    /**
+                     * 是否过滤掉当前用户
+                     */
+                    bool m_isFilterCurrentUser;
+                    bool m_isFilterCurrentUserHasBeenSet;
 
                 };
             }

@@ -151,8 +151,6 @@
 #include <tencentcloud/ocr/v20181119/model/RecognizeTravelCardOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeValidIDCardOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeValidIDCardOCRResponse.h>
-#include <tencentcloud/ocr/v20181119/model/ReconstructDocumentRequest.h>
-#include <tencentcloud/ocr/v20181119/model/ReconstructDocumentResponse.h>
 #include <tencentcloud/ocr/v20181119/model/ResidenceBookletOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/ResidenceBookletOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RideHailingDriverLicenseOCRRequest.h>
@@ -401,9 +399,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RecognizeValidIDCardOCRResponse> RecognizeValidIDCardOCROutcome;
                 typedef std::future<RecognizeValidIDCardOCROutcome> RecognizeValidIDCardOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RecognizeValidIDCardOCRRequest&, RecognizeValidIDCardOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeValidIDCardOCRAsyncHandler;
-                typedef Outcome<Core::Error, Model::ReconstructDocumentResponse> ReconstructDocumentOutcome;
-                typedef std::future<ReconstructDocumentOutcome> ReconstructDocumentOutcomeCallable;
-                typedef std::function<void(const OcrClient*, const Model::ReconstructDocumentRequest&, ReconstructDocumentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReconstructDocumentAsyncHandler;
                 typedef Outcome<Core::Error, Model::ResidenceBookletOCRResponse> ResidenceBookletOCROutcome;
                 typedef std::future<ResidenceBookletOCROutcome> ResidenceBookletOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::ResidenceBookletOCRRequest&, ResidenceBookletOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResidenceBookletOCRAsyncHandler;
@@ -1613,15 +1608,6 @@ namespace TencentCloud
                 RecognizeValidIDCardOCROutcome RecognizeValidIDCardOCR(const Model::RecognizeValidIDCardOCRRequest &request);
                 void RecognizeValidIDCardOCRAsync(const Model::RecognizeValidIDCardOCRRequest& request, const RecognizeValidIDCardOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RecognizeValidIDCardOCROutcomeCallable RecognizeValidIDCardOCRCallable(const Model::RecognizeValidIDCardOCRRequest& request);
-
-                /**
-                 *服务已迁移至 [文档解析](https://cloud.tencent.com/document/product/1759/107504)，请跳转查看接口文档。该接口支持将图片或PDF文件转换成Markdown格式文件，可解析包括表格、公式、图片、标题、段落、页眉、页脚等内容元素，并将内容智能转换成阅读顺序。
-                 * @param req ReconstructDocumentRequest
-                 * @return ReconstructDocumentOutcome
-                 */
-                ReconstructDocumentOutcome ReconstructDocument(const Model::ReconstructDocumentRequest &request);
-                void ReconstructDocumentAsync(const Model::ReconstructDocumentRequest& request, const ReconstructDocumentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ReconstructDocumentOutcomeCallable ReconstructDocumentCallable(const Model::ReconstructDocumentRequest& request);
 
                 /**
                  *本接口支持居民户口簿户主页及成员页关键字段的识别，包括姓名、户别、地址、籍贯、身份证号码等。

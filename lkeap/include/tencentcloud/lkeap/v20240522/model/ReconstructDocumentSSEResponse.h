@@ -101,8 +101,14 @@ namespace TencentCloud
                     bool ProgressMessageHasBeenSet() const;
 
                     /**
-                     * 获取文档解析结果URL。存储在腾讯云cos，可以通过http请求下载，URL十分钟内有效。
-                     * @return DocumentRecognizeResultUrl 文档解析结果URL。存储在腾讯云cos，可以通过http请求下载，URL十分钟内有效。
+                     * 获取文档解析结果的临时下载地址。
+文件类型为zip压缩包，下载链接有效期30分钟。
+压缩包内包含*.md、*.json以及images文件夹。
+
+                     * @return DocumentRecognizeResultUrl 文档解析结果的临时下载地址。
+文件类型为zip压缩包，下载链接有效期30分钟。
+压缩包内包含*.md、*.json以及images文件夹。
+
                      * 
                      */
                     std::string GetDocumentRecognizeResultUrl() const;
@@ -155,7 +161,10 @@ namespace TencentCloud
                     bool m_progressMessageHasBeenSet;
 
                     /**
-                     * 文档解析结果URL。存储在腾讯云cos，可以通过http请求下载，URL十分钟内有效。
+                     * 文档解析结果的临时下载地址。
+文件类型为zip压缩包，下载链接有效期30分钟。
+压缩包内包含*.md、*.json以及images文件夹。
+
                      */
                     std::string m_documentRecognizeResultUrl;
                     bool m_documentRecognizeResultUrlHasBeenSet;

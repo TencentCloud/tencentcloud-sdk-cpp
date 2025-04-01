@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取返回参数数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TRTCParamList 返回参数数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TRTCParams> GetTRTCParamList() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 返回参数数组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TRTCParams> m_tRTCParamList;
                     bool m_tRTCParamListHasBeenSet;

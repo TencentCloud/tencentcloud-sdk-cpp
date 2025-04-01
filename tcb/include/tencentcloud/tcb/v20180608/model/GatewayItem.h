@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tcb/v20180608/model/Tag.h>
 
 
 namespace TencentCloud
@@ -592,6 +593,27 @@ namespace TencentCloud
                      */
                     bool AccessDomainHasBeenSet() const;
 
+                    /**
+                     * 获取标签键值对
+                     * @return Tags 标签键值对
+                     * 
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置标签键值对
+                     * @param _tags 标签键值对
+                     * 
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -749,6 +771,12 @@ namespace TencentCloud
                      */
                     std::string m_accessDomain;
                     bool m_accessDomainHasBeenSet;
+
+                    /**
+                     * 标签键值对
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

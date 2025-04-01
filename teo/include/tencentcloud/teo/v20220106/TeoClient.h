@@ -66,7 +66,9 @@ namespace TencentCloud
 
 
                 /**
-                 *创建预热任务
+                 *老版本接口，最近一次调用时23年11月了
+
+创建预热任务
                  * @param req CreatePrefetchTaskRequest
                  * @return CreatePrefetchTaskOutcome
                  */
@@ -75,7 +77,9 @@ namespace TencentCloud
                 CreatePrefetchTaskOutcomeCallable CreatePrefetchTaskCallable(const Model::CreatePrefetchTaskRequest& request);
 
                 /**
-                 *创建清除缓存任务
+                 *老版本接口，老版本pod的最近一次调用在23年11月
+
+创建清除缓存任务
                  * @param req CreatePurgeTaskRequest
                  * @return CreatePurgeTaskOutcome
                  */

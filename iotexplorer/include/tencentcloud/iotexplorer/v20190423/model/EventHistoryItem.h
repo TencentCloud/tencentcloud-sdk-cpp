@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取事件的时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeStamp 事件的时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTimeStamp() const;
 
                     /**
                      * 设置事件的时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _timeStamp 事件的时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTimeStamp(const int64_t& _timeStamp);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取事件的产品ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductId 事件的产品ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProductId() const;
 
                     /**
                      * 设置事件的产品ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _productId 事件的产品ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProductId(const std::string& _productId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取事件的设备名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeviceName 事件的设备名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeviceName() const;
 
                     /**
                      * 设置事件的设备名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deviceName 事件的设备名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeviceName(const std::string& _deviceName);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取事件的标识符ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EventId 事件的标识符ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEventId() const;
 
                     /**
                      * 设置事件的标识符ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _eventId 事件的标识符ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEventId(const std::string& _eventId);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取事件的类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 事件的类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置事件的类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 事件的类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取事件的数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 事件的数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetData() const;
 
                     /**
                      * 设置事件的数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _data 事件的数据
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetData(const std::string& _data);
@@ -200,42 +176,36 @@ namespace TencentCloud
 
                     /**
                      * 事件的时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_timeStamp;
                     bool m_timeStampHasBeenSet;
 
                     /**
                      * 事件的产品ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_productId;
                     bool m_productIdHasBeenSet;
 
                     /**
                      * 事件的设备名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deviceName;
                     bool m_deviceNameHasBeenSet;
 
                     /**
                      * 事件的标识符ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_eventId;
                     bool m_eventIdHasBeenSet;
 
                     /**
                      * 事件的类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 事件的数据
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_data;
                     bool m_dataHasBeenSet;

@@ -153,6 +153,27 @@ namespace TencentCloud
                      */
                     bool AvailableChoiceHasBeenSet() const;
 
+                    /**
+                     * 获取Cpu类型，如：英特尔：Intel/AMD，海光：Hygon
+                     * @return CpuType Cpu类型，如：英特尔：Intel/AMD，海光：Hygon
+                     * 
+                     */
+                    std::string GetCpuType() const;
+
+                    /**
+                     * 设置Cpu类型，如：英特尔：Intel/AMD，海光：Hygon
+                     * @param _cpuType Cpu类型，如：英特尔：Intel/AMD，海光：Hygon
+                     * 
+                     */
+                    void SetCpuType(const std::string& _cpuType);
+
+                    /**
+                     * 判断参数 CpuType 是否已赋值
+                     * @return CpuType 是否已赋值
+                     * 
+                     */
+                    bool CpuTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -184,6 +205,12 @@ namespace TencentCloud
                      */
                     std::vector<ZoneChooseInfo> m_availableChoice;
                     bool m_availableChoiceHasBeenSet;
+
+                    /**
+                     * Cpu类型，如：英特尔：Intel/AMD，海光：Hygon
+                     */
+                    std::string m_cpuType;
+                    bool m_cpuTypeHasBeenSet;
 
                 };
             }

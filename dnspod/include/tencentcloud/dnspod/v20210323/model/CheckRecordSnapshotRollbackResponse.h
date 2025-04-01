@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取错误原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Reason 错误原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReason() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 错误原因
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reason;
                     bool m_reasonHasBeenSet;

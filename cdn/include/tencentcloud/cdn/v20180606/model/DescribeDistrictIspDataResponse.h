@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取地区运营商数据明细
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 地区运营商数据明细
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DistrictIspInfo> GetData() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 地区运营商数据明细
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DistrictIspInfo> m_data;
                     bool m_dataHasBeenSet;

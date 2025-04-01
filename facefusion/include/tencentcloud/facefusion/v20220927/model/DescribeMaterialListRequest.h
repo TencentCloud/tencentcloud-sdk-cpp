@@ -85,15 +85,19 @@ namespace TencentCloud
                     bool MaterialIdHasBeenSet() const;
 
                     /**
-                     * 获取每次拉取条数
-                     * @return Limit 每次拉取条数
+                     * 获取每次拉取条数。
+每次拉取素材最多可支持拉取20条素材信息，如果需要拉取全部素材信息，可以分多次请求拉取全部素材信息。
+                     * @return Limit 每次拉取条数。
+每次拉取素材最多可支持拉取20条素材信息，如果需要拉取全部素材信息，可以分多次请求拉取全部素材信息。
                      * 
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置每次拉取条数
-                     * @param _limit 每次拉取条数
+                     * 设置每次拉取条数。
+每次拉取素材最多可支持拉取20条素材信息，如果需要拉取全部素材信息，可以分多次请求拉取全部素材信息。
+                     * @param _limit 每次拉取条数。
+每次拉取素材最多可支持拉取20条素材信息，如果需要拉取全部素材信息，可以分多次请求拉取全部素材信息。
                      * 
                      */
                     void SetLimit(const int64_t& _limit);
@@ -141,7 +145,8 @@ namespace TencentCloud
                     bool m_materialIdHasBeenSet;
 
                     /**
-                     * 每次拉取条数
+                     * 每次拉取条数。
+每次拉取素材最多可支持拉取20条素材信息，如果需要拉取全部素材信息，可以分多次请求拉取全部素材信息。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

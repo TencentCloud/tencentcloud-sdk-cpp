@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取返回的设备列表, 注意列表设备的 DevicePsk 为空, 要获取设备的 DevicePsk 请使用 DescribeDevice
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Devices 返回的设备列表, 注意列表设备的 DevicePsk 为空, 要获取设备的 DevicePsk 请使用 DescribeDevice
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DeviceInfo> GetDevices() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取产品下的设备总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 产品下的设备总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotal() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 返回的设备列表, 注意列表设备的 DevicePsk 为空, 要获取设备的 DevicePsk 请使用 DescribeDevice
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DeviceInfo> m_devices;
                     bool m_devicesHasBeenSet;
 
                     /**
                      * 产品下的设备总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;

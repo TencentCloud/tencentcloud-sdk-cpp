@@ -542,6 +542,48 @@ UPDATING 更新中
                      */
                     bool AvailableReplicasCountHasBeenSet() const;
 
+                    /**
+                     * 获取服务组的subuin
+                     * @return SubUin 服务组的subuin
+                     * 
+                     */
+                    std::string GetSubUin() const;
+
+                    /**
+                     * 设置服务组的subuin
+                     * @param _subUin 服务组的subuin
+                     * 
+                     */
+                    void SetSubUin(const std::string& _subUin);
+
+                    /**
+                     * 判断参数 SubUin 是否已赋值
+                     * @return SubUin 是否已赋值
+                     * 
+                     */
+                    bool SubUinHasBeenSet() const;
+
+                    /**
+                     * 获取服务组的app_id
+                     * @return AppId 服务组的app_id
+                     * 
+                     */
+                    int64_t GetAppId() const;
+
+                    /**
+                     * 设置服务组的app_id
+                     * @param _appId 服务组的app_id
+                     * 
+                     */
+                    void SetAppId(const int64_t& _appId);
+
+                    /**
+                     * 判断参数 AppId 是否已赋值
+                     * @return AppId 是否已赋值
+                     * 
+                     */
+                    bool AppIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -680,6 +722,18 @@ UPDATING 更新中
                      */
                     uint64_t m_availableReplicasCount;
                     bool m_availableReplicasCountHasBeenSet;
+
+                    /**
+                     * 服务组的subuin
+                     */
+                    std::string m_subUin;
+                    bool m_subUinHasBeenSet;
+
+                    /**
+                     * 服务组的app_id
+                     */
+                    int64_t m_appId;
+                    bool m_appIdHasBeenSet;
 
                 };
             }

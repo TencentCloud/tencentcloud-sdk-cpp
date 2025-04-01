@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取围栏列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return List 围栏列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<PositionFenceInfo> GetList() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取围栏数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 围栏数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotal() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 围栏列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<PositionFenceInfo> m_list;
                     bool m_listHasBeenSet;
 
                     /**
                      * 围栏数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;

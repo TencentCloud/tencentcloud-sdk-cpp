@@ -299,18 +299,14 @@ DOMAIN_EXPORT：导出域名列表
 
                     /**
                      * 获取剩余时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LeftTime 剩余时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     LeftTime GetLeftTime() const;
 
                     /**
                      * 设置剩余时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _leftTime 剩余时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLeftTime(const LeftTime& _leftTime);
@@ -396,7 +392,6 @@ DOMAIN_EXPORT：导出域名列表
 
                     /**
                      * 剩余时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     LeftTime m_leftTime;
                     bool m_leftTimeHasBeenSet;

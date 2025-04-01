@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取资源所属主账号uin。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OwnerUin 资源所属主账号uin。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetOwnerUin() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取基线项名称，基线项名字唯一，仅支持英文字母、数宇、汉字、符号@、＆_[]-的组合，1-25个中文或英文字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 基线项名称，基线项名字唯一，仅支持英文字母、数宇、汉字、符号@、＆_[]-的组合，1-25个中文或英文字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
@@ -78,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取基线项配置列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BaselineConfigItems 基线项配置列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BaselineInfoItem> GetBaselineConfigItems() const;
@@ -94,9 +88,7 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间，按照ISO8601标准表示，格式为yyyy-MM-dd hh:mm:ss。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间，按照ISO8601标准表示，格式为yyyy-MM-dd hh:mm:ss。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
@@ -110,9 +102,7 @@ namespace TencentCloud
 
                     /**
                      * 获取更新时间，按照ISO8601标准表示，格式为yyyy-MM-dd hh:mm:ss。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 更新时间，按照ISO8601标准表示，格式为yyyy-MM-dd hh:mm:ss。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
@@ -128,35 +118,30 @@ namespace TencentCloud
 
                     /**
                      * 资源所属主账号uin。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_ownerUin;
                     bool m_ownerUinHasBeenSet;
 
                     /**
                      * 基线项名称，基线项名字唯一，仅支持英文字母、数宇、汉字、符号@、＆_[]-的组合，1-25个中文或英文字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 基线项配置列表。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BaselineInfoItem> m_baselineConfigItems;
                     bool m_baselineConfigItemsHasBeenSet;
 
                     /**
                      * 创建时间，按照ISO8601标准表示，格式为yyyy-MM-dd hh:mm:ss。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 更新时间，按照ISO8601标准表示，格式为yyyy-MM-dd hh:mm:ss。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;

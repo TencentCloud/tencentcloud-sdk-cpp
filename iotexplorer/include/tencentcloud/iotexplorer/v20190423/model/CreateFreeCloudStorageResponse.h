@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取订单金额，单位为分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Price 订单金额，单位为分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPrice() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取支付金额，单位为分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Amount 支付金额，单位为分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetAmount() const;
@@ -79,14 +75,12 @@ namespace TencentCloud
 
                     /**
                      * 订单金额，单位为分
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_price;
                     bool m_priceHasBeenSet;
 
                     /**
                      * 支付金额，单位为分
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_amount;
                     bool m_amountHasBeenSet;

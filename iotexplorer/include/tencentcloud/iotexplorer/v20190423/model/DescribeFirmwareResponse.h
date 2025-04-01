@@ -73,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取固件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 固件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
@@ -89,9 +87,7 @@ namespace TencentCloud
 
                     /**
                      * 获取固件描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 固件描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
@@ -105,9 +101,7 @@ namespace TencentCloud
 
                     /**
                      * 获取固件Md5值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Md5sum 固件Md5值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMd5sum() const;
@@ -121,9 +115,7 @@ namespace TencentCloud
 
                     /**
                      * 获取固件上传的秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Createtime 固件上传的秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCreatetime() const;
@@ -151,9 +143,7 @@ namespace TencentCloud
 
                     /**
                      * 获取固件升级模块
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FwType 固件升级模块
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFwType() const;
@@ -167,9 +157,7 @@ namespace TencentCloud
 
                     /**
                      * 获取固件用户自定义配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserDefined 固件用户自定义配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserDefined() const;
@@ -197,28 +185,24 @@ namespace TencentCloud
 
                     /**
                      * 固件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 固件描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
                      * 固件Md5值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_md5sum;
                     bool m_md5sumHasBeenSet;
 
                     /**
                      * 固件上传的秒级时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_createtime;
                     bool m_createtimeHasBeenSet;
@@ -231,14 +215,12 @@ namespace TencentCloud
 
                     /**
                      * 固件升级模块
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fwType;
                     bool m_fwTypeHasBeenSet;
 
                     /**
                      * 固件用户自定义配置信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userDefined;
                     bool m_userDefinedHasBeenSet;

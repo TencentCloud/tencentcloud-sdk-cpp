@@ -175,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取随组关联信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Groups 随组关联信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<AttachedUserPolicyGroupInfo> GetGroups() const;
 
                     /**
                      * 设置随组关联信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groups 随组关联信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroups(const std::vector<AttachedUserPolicyGroupInfo>& _groups);
@@ -200,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否已下线(0:否 1:是)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Deactived 是否已下线(0:否 1:是)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDeactived() const;
 
                     /**
                      * 设置是否已下线(0:否 1:是)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deactived 是否已下线(0:否 1:是)
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeactived(const uint64_t& _deactived);
@@ -225,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取已下线的产品列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeactivedDetail 已下线的产品列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetDeactivedDetail() const;
 
                     /**
                      * 设置已下线的产品列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deactivedDetail 已下线的产品列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeactivedDetail(const std::vector<std::string>& _deactivedDetail);
@@ -288,21 +276,18 @@ namespace TencentCloud
 
                     /**
                      * 随组关联信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<AttachedUserPolicyGroupInfo> m_groups;
                     bool m_groupsHasBeenSet;
 
                     /**
                      * 是否已下线(0:否 1:是)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_deactived;
                     bool m_deactivedHasBeenSet;
 
                     /**
                      * 已下线的产品列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_deactivedDetail;
                     bool m_deactivedDetailHasBeenSet;

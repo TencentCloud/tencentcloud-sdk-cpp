@@ -23,7 +23,8 @@ using namespace std;
 RegisteredDeviceTypeInfo::RegisteredDeviceTypeInfo() :
     m_normalDeviceNumHasBeenSet(false),
     m_gatewayDeviceNumHasBeenSet(false),
-    m_subDeviceNumHasBeenSet(false)
+    m_subDeviceNumHasBeenSet(false),
+    m_videoDeviceNumHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome RegisteredDeviceTypeInfo::Deserialize(const rapidjson::Value
         m_subDeviceNumHasBeenSet = true;
     }
 
+    if (value.HasMember("VideoDeviceNum") && !value["VideoDeviceNum"].IsNull())
+    {
+        if (!value["VideoDeviceNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RegisteredDeviceTypeInfo.VideoDeviceNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_videoDeviceNum = value["VideoDeviceNum"].GetInt64();
+        m_videoDeviceNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void RegisteredDeviceTypeInfo::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "SubDeviceNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_subDeviceNum, allocator);
+    }
+
+    if (m_videoDeviceNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VideoDeviceNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_videoDeviceNum, allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void RegisteredDeviceTypeInfo::SetSubDeviceNum(const int64_t& _subDeviceNum)
 bool RegisteredDeviceTypeInfo::SubDeviceNumHasBeenSet() const
 {
     return m_subDeviceNumHasBeenSet;
+}
+
+int64_t RegisteredDeviceTypeInfo::GetVideoDeviceNum() const
+{
+    return m_videoDeviceNum;
+}
+
+void RegisteredDeviceTypeInfo::SetVideoDeviceNum(const int64_t& _videoDeviceNum)
+{
+    m_videoDeviceNum = _videoDeviceNum;
+    m_videoDeviceNumHasBeenSet = true;
+}
+
+bool RegisteredDeviceTypeInfo::VideoDeviceNumHasBeenSet() const
+{
+    return m_videoDeviceNumHasBeenSet;
 }
 

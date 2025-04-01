@@ -126,49 +126,6 @@ BatchClient::CreateComputeEnvOutcomeCallable BatchClient::CreateComputeEnvCallab
     return task->get_future();
 }
 
-BatchClient::CreateCpmComputeEnvOutcome BatchClient::CreateCpmComputeEnv(const CreateCpmComputeEnvRequest &request)
-{
-    auto outcome = MakeRequest(request, "CreateCpmComputeEnv");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CreateCpmComputeEnvResponse rsp = CreateCpmComputeEnvResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CreateCpmComputeEnvOutcome(rsp);
-        else
-            return CreateCpmComputeEnvOutcome(o.GetError());
-    }
-    else
-    {
-        return CreateCpmComputeEnvOutcome(outcome.GetError());
-    }
-}
-
-void BatchClient::CreateCpmComputeEnvAsync(const CreateCpmComputeEnvRequest& request, const CreateCpmComputeEnvAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateCpmComputeEnv(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-BatchClient::CreateCpmComputeEnvOutcomeCallable BatchClient::CreateCpmComputeEnvCallable(const CreateCpmComputeEnvRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<CreateCpmComputeEnvOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateCpmComputeEnv(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 BatchClient::CreateTaskTemplateOutcome BatchClient::CreateTaskTemplate(const CreateTaskTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateTaskTemplate");
@@ -592,49 +549,6 @@ BatchClient::DescribeComputeEnvsOutcomeCallable BatchClient::DescribeComputeEnvs
         [this, request]()
         {
             return this->DescribeComputeEnvs(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-BatchClient::DescribeCpmOsInfoOutcome BatchClient::DescribeCpmOsInfo(const DescribeCpmOsInfoRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeCpmOsInfo");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeCpmOsInfoResponse rsp = DescribeCpmOsInfoResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeCpmOsInfoOutcome(rsp);
-        else
-            return DescribeCpmOsInfoOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeCpmOsInfoOutcome(outcome.GetError());
-    }
-}
-
-void BatchClient::DescribeCpmOsInfoAsync(const DescribeCpmOsInfoRequest& request, const DescribeCpmOsInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeCpmOsInfo(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-BatchClient::DescribeCpmOsInfoOutcomeCallable BatchClient::DescribeCpmOsInfoCallable(const DescribeCpmOsInfoRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeCpmOsInfoOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeCpmOsInfo(request);
         }
     );
 

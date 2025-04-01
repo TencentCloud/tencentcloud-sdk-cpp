@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取voip类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TWeCallType voip类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTWeCallType() const;
 
                     /**
                      * 设置voip类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tWeCallType voip类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTWeCallType(const std::string& _tWeCallType);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalNum 总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalNum() const;
 
                     /**
                      * 设置总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalNum 总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalNum(const int64_t& _totalNum);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取已使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UsedNum 已使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetUsedNum() const;
 
                     /**
                      * 设置已使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _usedNum 已使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUsedNum(const int64_t& _usedNum);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * voip类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tWeCallType;
                     bool m_tWeCallTypeHasBeenSet;
 
                     /**
                      * 总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalNum;
                     bool m_totalNumHasBeenSet;
 
                     /**
                      * 已使用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_usedNum;
                     bool m_usedNumHasBeenSet;

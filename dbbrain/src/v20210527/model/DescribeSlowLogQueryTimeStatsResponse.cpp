@@ -14,21 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/batch/v20170312/model/DescribeCpmOsInfoResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeSlowLogQueryTimeStatsResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Batch::V20170312::Model;
+using namespace TencentCloud::Dbbrain::V20210527::Model;
 using namespace std;
 
-DescribeCpmOsInfoResponse::DescribeCpmOsInfoResponse() :
-    m_osInfoSetHasBeenSet(false)
+DescribeSlowLogQueryTimeStatsResponse::DescribeSlowLogQueryTimeStatsResponse() :
+    m_totalCountHasBeenSet(false),
+    m_itemsHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeCpmOsInfoResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeSlowLogQueryTimeStatsResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,45 +63,63 @@ CoreInternalOutcome DescribeCpmOsInfoResponse::Deserialize(const string &payload
     }
 
 
-    if (rsp.HasMember("OsInfoSet") && !rsp["OsInfoSet"].IsNull())
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
     {
-        if (!rsp["OsInfoSet"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `OsInfoSet` is not array type"));
+        if (!rsp["TotalCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetInt64();
+        m_totalCountHasBeenSet = true;
+    }
 
-        const rapidjson::Value &tmpValue = rsp["OsInfoSet"];
+    if (rsp.HasMember("Items") && !rsp["Items"].IsNull())
+    {
+        if (!rsp["Items"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Items` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Items"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            OsInfo item;
+            SqlCostDistribution item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
                 return outcome;
             }
-            m_osInfoSet.push_back(item);
+            m_items.push_back(item);
         }
-        m_osInfoSetHasBeenSet = true;
+        m_itemsHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeCpmOsInfoResponse::ToJsonString() const
+string DescribeSlowLogQueryTimeStatsResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_osInfoSetHasBeenSet)
+    if (m_totalCountHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "OsInfoSet";
+        string key = "TotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
+    }
+
+    if (m_itemsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Items";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
-        for (auto itr = m_osInfoSet.begin(); itr != m_osInfoSet.end(); ++itr, ++i)
+        for (auto itr = m_items.begin(); itr != m_items.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -119,14 +138,24 @@ string DescribeCpmOsInfoResponse::ToJsonString() const
 }
 
 
-vector<OsInfo> DescribeCpmOsInfoResponse::GetOsInfoSet() const
+int64_t DescribeSlowLogQueryTimeStatsResponse::GetTotalCount() const
 {
-    return m_osInfoSet;
+    return m_totalCount;
 }
 
-bool DescribeCpmOsInfoResponse::OsInfoSetHasBeenSet() const
+bool DescribeSlowLogQueryTimeStatsResponse::TotalCountHasBeenSet() const
 {
-    return m_osInfoSetHasBeenSet;
+    return m_totalCountHasBeenSet;
+}
+
+vector<SqlCostDistribution> DescribeSlowLogQueryTimeStatsResponse::GetItems() const
+{
+    return m_items;
+}
+
+bool DescribeSlowLogQueryTimeStatsResponse::ItemsHasBeenSet() const
+{
+    return m_itemsHasBeenSet;
 }
 
 

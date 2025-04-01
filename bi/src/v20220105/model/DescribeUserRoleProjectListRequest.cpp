@@ -26,7 +26,9 @@ DescribeUserRoleProjectListRequest::DescribeUserRoleProjectListRequest() :
     m_pageNoHasBeenSet(false),
     m_pageSizeHasBeenSet(false),
     m_projectIdHasBeenSet(false),
-    m_isOnlyBindAppUserHasBeenSet(false)
+    m_isOnlyBindAppUserHasBeenSet(false),
+    m_allPageHasBeenSet(false),
+    m_roleCodeHasBeenSet(false)
 {
 }
 
@@ -67,6 +69,22 @@ string DescribeUserRoleProjectListRequest::ToJsonString() const
         string key = "IsOnlyBindAppUser";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isOnlyBindAppUser, allocator);
+    }
+
+    if (m_allPageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AllPage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_allPage, allocator);
+    }
+
+    if (m_roleCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RoleCode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_roleCode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +157,38 @@ void DescribeUserRoleProjectListRequest::SetIsOnlyBindAppUser(const bool& _isOnl
 bool DescribeUserRoleProjectListRequest::IsOnlyBindAppUserHasBeenSet() const
 {
     return m_isOnlyBindAppUserHasBeenSet;
+}
+
+bool DescribeUserRoleProjectListRequest::GetAllPage() const
+{
+    return m_allPage;
+}
+
+void DescribeUserRoleProjectListRequest::SetAllPage(const bool& _allPage)
+{
+    m_allPage = _allPage;
+    m_allPageHasBeenSet = true;
+}
+
+bool DescribeUserRoleProjectListRequest::AllPageHasBeenSet() const
+{
+    return m_allPageHasBeenSet;
+}
+
+string DescribeUserRoleProjectListRequest::GetRoleCode() const
+{
+    return m_roleCode;
+}
+
+void DescribeUserRoleProjectListRequest::SetRoleCode(const string& _roleCode)
+{
+    m_roleCode = _roleCode;
+    m_roleCodeHasBeenSet = true;
+}
+
+bool DescribeUserRoleProjectListRequest::RoleCodeHasBeenSet() const
+{
+    return m_roleCodeHasBeenSet;
 }
 
 

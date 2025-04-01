@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取封禁历史记录
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UrlRecordList 封禁历史记录
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<UrlRecord> GetUrlRecordList() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取任务总数，用于分页
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 任务总数，用于分页
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 封禁历史记录
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<UrlRecord> m_urlRecordList;
                     bool m_urlRecordListHasBeenSet;
 
                     /**
                      * 任务总数，用于分页
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

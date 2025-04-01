@@ -451,6 +451,27 @@ innodb_page_size（innodb数据页，默认16K），sync_mode（同步模式：0
                      */
                     bool DcnSyncModeHasBeenSet() const;
 
+                    /**
+                     * 获取cpu类型，英特尔：Intel/AMD，海光：Hygon，默认Intel/AMD
+                     * @return CpuType cpu类型，英特尔：Intel/AMD，海光：Hygon，默认Intel/AMD
+                     * 
+                     */
+                    std::string GetCpuType() const;
+
+                    /**
+                     * 设置cpu类型，英特尔：Intel/AMD，海光：Hygon，默认Intel/AMD
+                     * @param _cpuType cpu类型，英特尔：Intel/AMD，海光：Hygon，默认Intel/AMD
+                     * 
+                     */
+                    void SetCpuType(const std::string& _cpuType);
+
+                    /**
+                     * 判断参数 CpuType 是否已赋值
+                     * @return CpuType 是否已赋值
+                     * 
+                     */
+                    bool CpuTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -568,6 +589,12 @@ innodb_page_size（innodb数据页，默认16K），sync_mode（同步模式：0
                      */
                     int64_t m_dcnSyncMode;
                     bool m_dcnSyncModeHasBeenSet;
+
+                    /**
+                     * cpu类型，英特尔：Intel/AMD，海光：Hygon，默认Intel/AMD
+                     */
+                    std::string m_cpuType;
+                    bool m_cpuTypeHasBeenSet;
 
                 };
             }

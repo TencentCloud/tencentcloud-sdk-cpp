@@ -14,23 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/ocr/v20181119/model/ReconstructDocumentResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeNatGatewayFlowMonitorDetailResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Ocr::V20181119::Model;
+using namespace TencentCloud::Vpc::V20170312::Model;
 using namespace std;
 
-ReconstructDocumentResponse::ReconstructDocumentResponse() :
-    m_markdownBase64HasBeenSet(false),
-    m_insetImagePackageHasBeenSet(false),
-    m_documentRecognizeInfoHasBeenSet(false)
+DescribeNatGatewayFlowMonitorDetailResponse::DescribeNatGatewayFlowMonitorDetailResponse() :
+    m_totalCountHasBeenSet(false),
+    m_natGatewayFlowMonitorDetailSetHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome ReconstructDocumentResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeNatGatewayFlowMonitorDetailResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -64,81 +63,63 @@ CoreInternalOutcome ReconstructDocumentResponse::Deserialize(const string &paylo
     }
 
 
-    if (rsp.HasMember("MarkdownBase64") && !rsp["MarkdownBase64"].IsNull())
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
     {
-        if (!rsp["MarkdownBase64"].IsString())
+        if (!rsp["TotalCount"].IsUint64())
         {
-            return CoreInternalOutcome(Core::Error("response `MarkdownBase64` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
-        m_markdownBase64 = string(rsp["MarkdownBase64"].GetString());
-        m_markdownBase64HasBeenSet = true;
+        m_totalCount = rsp["TotalCount"].GetUint64();
+        m_totalCountHasBeenSet = true;
     }
 
-    if (rsp.HasMember("InsetImagePackage") && !rsp["InsetImagePackage"].IsNull())
+    if (rsp.HasMember("NatGatewayFlowMonitorDetailSet") && !rsp["NatGatewayFlowMonitorDetailSet"].IsNull())
     {
-        if (!rsp["InsetImagePackage"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `InsetImagePackage` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_insetImagePackage = string(rsp["InsetImagePackage"].GetString());
-        m_insetImagePackageHasBeenSet = true;
-    }
+        if (!rsp["NatGatewayFlowMonitorDetailSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `NatGatewayFlowMonitorDetailSet` is not array type"));
 
-    if (rsp.HasMember("DocumentRecognizeInfo") && !rsp["DocumentRecognizeInfo"].IsNull())
-    {
-        if (!rsp["DocumentRecognizeInfo"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `DocumentRecognizeInfo` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["DocumentRecognizeInfo"];
+        const rapidjson::Value &tmpValue = rsp["NatGatewayFlowMonitorDetailSet"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            DocumentRecognizeInfo item;
+            NatGatewayFlowMonitorDetail item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
                 return outcome;
             }
-            m_documentRecognizeInfo.push_back(item);
+            m_natGatewayFlowMonitorDetailSet.push_back(item);
         }
-        m_documentRecognizeInfoHasBeenSet = true;
+        m_natGatewayFlowMonitorDetailSetHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string ReconstructDocumentResponse::ToJsonString() const
+string DescribeNatGatewayFlowMonitorDetailResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_markdownBase64HasBeenSet)
+    if (m_totalCountHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "MarkdownBase64";
+        string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_markdownBase64.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
     }
 
-    if (m_insetImagePackageHasBeenSet)
+    if (m_natGatewayFlowMonitorDetailSetHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "InsetImagePackage";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_insetImagePackage.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_documentRecognizeInfoHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DocumentRecognizeInfo";
+        string key = "NatGatewayFlowMonitorDetailSet";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
-        for (auto itr = m_documentRecognizeInfo.begin(); itr != m_documentRecognizeInfo.end(); ++itr, ++i)
+        for (auto itr = m_natGatewayFlowMonitorDetailSet.begin(); itr != m_natGatewayFlowMonitorDetailSet.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -157,34 +138,24 @@ string ReconstructDocumentResponse::ToJsonString() const
 }
 
 
-string ReconstructDocumentResponse::GetMarkdownBase64() const
+uint64_t DescribeNatGatewayFlowMonitorDetailResponse::GetTotalCount() const
 {
-    return m_markdownBase64;
+    return m_totalCount;
 }
 
-bool ReconstructDocumentResponse::MarkdownBase64HasBeenSet() const
+bool DescribeNatGatewayFlowMonitorDetailResponse::TotalCountHasBeenSet() const
 {
-    return m_markdownBase64HasBeenSet;
+    return m_totalCountHasBeenSet;
 }
 
-string ReconstructDocumentResponse::GetInsetImagePackage() const
+vector<NatGatewayFlowMonitorDetail> DescribeNatGatewayFlowMonitorDetailResponse::GetNatGatewayFlowMonitorDetailSet() const
 {
-    return m_insetImagePackage;
+    return m_natGatewayFlowMonitorDetailSet;
 }
 
-bool ReconstructDocumentResponse::InsetImagePackageHasBeenSet() const
+bool DescribeNatGatewayFlowMonitorDetailResponse::NatGatewayFlowMonitorDetailSetHasBeenSet() const
 {
-    return m_insetImagePackageHasBeenSet;
-}
-
-vector<DocumentRecognizeInfo> ReconstructDocumentResponse::GetDocumentRecognizeInfo() const
-{
-    return m_documentRecognizeInfo;
-}
-
-bool ReconstructDocumentResponse::DocumentRecognizeInfoHasBeenSet() const
-{
-    return m_documentRecognizeInfoHasBeenSet;
+    return m_natGatewayFlowMonitorDetailSetHasBeenSet;
 }
 
 

@@ -399,6 +399,8 @@
 #include <tencentcloud/vpc/v20170312/model/DescribeNatGatewayDestinationIpPortTranslationNatRulesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeNatGatewayDirectConnectGatewayRouteRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeNatGatewayDirectConnectGatewayRouteResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeNatGatewayFlowMonitorDetailRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeNatGatewayFlowMonitorDetailResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeNatGatewaySourceIpTranslationNatRulesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeNatGatewaySourceIpTranslationNatRulesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeNatGatewaysRequest.h>
@@ -1407,6 +1409,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeNatGatewayDirectConnectGatewayRouteResponse> DescribeNatGatewayDirectConnectGatewayRouteOutcome;
                 typedef std::future<DescribeNatGatewayDirectConnectGatewayRouteOutcome> DescribeNatGatewayDirectConnectGatewayRouteOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeNatGatewayDirectConnectGatewayRouteRequest&, DescribeNatGatewayDirectConnectGatewayRouteOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNatGatewayDirectConnectGatewayRouteAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeNatGatewayFlowMonitorDetailResponse> DescribeNatGatewayFlowMonitorDetailOutcome;
+                typedef std::future<DescribeNatGatewayFlowMonitorDetailOutcome> DescribeNatGatewayFlowMonitorDetailOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeNatGatewayFlowMonitorDetailRequest&, DescribeNatGatewayFlowMonitorDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNatGatewayFlowMonitorDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeNatGatewaySourceIpTranslationNatRulesResponse> DescribeNatGatewaySourceIpTranslationNatRulesOutcome;
                 typedef std::future<DescribeNatGatewaySourceIpTranslationNatRulesOutcome> DescribeNatGatewaySourceIpTranslationNatRulesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeNatGatewaySourceIpTranslationNatRulesRequest&, DescribeNatGatewaySourceIpTranslationNatRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNatGatewaySourceIpTranslationNatRulesAsyncHandler;
@@ -3928,6 +3933,18 @@ namespace TencentCloud
                 DescribeNatGatewayDirectConnectGatewayRouteOutcome DescribeNatGatewayDirectConnectGatewayRoute(const Model::DescribeNatGatewayDirectConnectGatewayRouteRequest &request);
                 void DescribeNatGatewayDirectConnectGatewayRouteAsync(const Model::DescribeNatGatewayDirectConnectGatewayRouteRequest& request, const DescribeNatGatewayDirectConnectGatewayRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeNatGatewayDirectConnectGatewayRouteOutcomeCallable DescribeNatGatewayDirectConnectGatewayRouteCallable(const Model::DescribeNatGatewayDirectConnectGatewayRouteRequest& request);
+
+                /**
+                 *本接口（DescribeNatGatewayFlowMonitorDetail）用于查询NAT网关流量监控明细。
+
+- 只支持单个网关实例查询。即入参 `NatGatewayId` 最多只支持传一个，且必须传一个。
+- 如果网关有流量，但调用本接口没有返回数据，请在控制台对应网关详情页确认是否开启网关流量监控。
+                 * @param req DescribeNatGatewayFlowMonitorDetailRequest
+                 * @return DescribeNatGatewayFlowMonitorDetailOutcome
+                 */
+                DescribeNatGatewayFlowMonitorDetailOutcome DescribeNatGatewayFlowMonitorDetail(const Model::DescribeNatGatewayFlowMonitorDetailRequest &request);
+                void DescribeNatGatewayFlowMonitorDetailAsync(const Model::DescribeNatGatewayFlowMonitorDetailRequest& request, const DescribeNatGatewayFlowMonitorDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNatGatewayFlowMonitorDetailOutcomeCallable DescribeNatGatewayFlowMonitorDetailCallable(const Model::DescribeNatGatewayFlowMonitorDetailRequest& request);
 
                 /**
                  *本接口（DescribeNatGatewaySourceIpTranslationNatRules）用于查询NAT网关SNAT转发规则对象数组。

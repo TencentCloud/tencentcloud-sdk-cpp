@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取视频激活码分类概览
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return License 视频激活码分类概览
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<VideoLicenseEntity> GetLicense() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 视频激活码分类概览
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<VideoLicenseEntity> m_license;
                     bool m_licenseHasBeenSet;

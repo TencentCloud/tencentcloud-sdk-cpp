@@ -59,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取策略Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StrategyId 策略Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStrategyId() const;
@@ -83,7 +81,6 @@ namespace TencentCloud
 
                     /**
                      * 策略Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_strategyId;
                     bool m_strategyIdHasBeenSet;

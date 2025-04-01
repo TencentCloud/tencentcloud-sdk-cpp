@@ -87,9 +87,7 @@ namespace TencentCloud
 
                     /**
                      * 获取误差精度预估，单位为米
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Accuracy 误差精度预估，单位为米
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetAccuracy() const;
@@ -123,7 +121,6 @@ namespace TencentCloud
 
                     /**
                      * 误差精度预估，单位为米
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_accuracy;
                     bool m_accuracyHasBeenSet;

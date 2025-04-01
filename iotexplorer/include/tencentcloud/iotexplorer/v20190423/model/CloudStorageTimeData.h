@@ -70,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取播放地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VideoURL 播放地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVideoURL() const;
 
                     /**
                      * 设置播放地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _videoURL 播放地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVideoURL(const std::string& _videoURL);
@@ -103,7 +99,6 @@ namespace TencentCloud
 
                     /**
                      * 播放地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_videoURL;
                     bool m_videoURLHasBeenSet;

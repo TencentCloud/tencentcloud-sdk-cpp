@@ -568,6 +568,81 @@ namespace TencentCloud
                      */
                     bool ConfigListHasBeenSet() const;
 
+                    /**
+                     * 获取创建人
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreatedUserName 创建人
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetCreatedUserName() const;
+
+                    /**
+                     * 设置创建人
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _createdUserName 创建人
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetCreatedUserName(const std::string& _createdUserName);
+
+                    /**
+                     * 判断参数 CreatedUserName 是否已赋值
+                     * @return CreatedUserName 是否已赋值
+                     * 
+                     */
+                    bool CreatedUserNameHasBeenSet() const;
+
+                    /**
+                     * 获取所属人id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Owner 所属人id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetOwner() const;
+
+                    /**
+                     * 设置所属人id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _owner 所属人id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOwner(const std::string& _owner);
+
+                    /**
+                     * 判断参数 Owner 是否已赋值
+                     * @return Owner 是否已赋值
+                     * 
+                     */
+                    bool OwnerHasBeenSet() const;
+
+                    /**
+                     * 获取所属人
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OwnerName 所属人
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetOwnerName() const;
+
+                    /**
+                     * 设置所属人
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _ownerName 所属人
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetOwnerName(const std::string& _ownerName);
+
+                    /**
+                     * 判断参数 OwnerName 是否已赋值
+                     * @return OwnerName 是否已赋值
+                     * 
+                     */
+                    bool OwnerNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -715,6 +790,27 @@ namespace TencentCloud
                      */
                     std::vector<ProjectConfigList> m_configList;
                     bool m_configListHasBeenSet;
+
+                    /**
+                     * 创建人
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_createdUserName;
+                    bool m_createdUserNameHasBeenSet;
+
+                    /**
+                     * 所属人id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_owner;
+                    bool m_ownerHasBeenSet;
+
+                    /**
+                     * 所属人
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ownerName;
+                    bool m_ownerNameHasBeenSet;
 
                 };
             }

@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取服务产品类型，支持值包括： "mysql" - 云数据库 MySQL， "cynosdb" - 云数据库 CynosDB  for MySQL，默认为"mysql"。
-                     * @return Product 服务产品类型，支持值包括： "mysql" - 云数据库 MySQL， "cynosdb" - 云数据库 CynosDB  for MySQL，默认为"mysql"。
+                     * 获取服务产品类型，支持值包括： "mysql" - 云数据库 MySQL， "cynosdb" - 云数据库 CynosDB  for MySQL，"redis" - 云数据库 Redis，"mongodb" - 云数据库 MongoDB，默认为"mysql"。
+                     * @return Product 服务产品类型，支持值包括： "mysql" - 云数据库 MySQL， "cynosdb" - 云数据库 CynosDB  for MySQL，"redis" - 云数据库 Redis，"mongodb" - 云数据库 MongoDB，默认为"mysql"。
                      * 
                      */
                     std::string GetProduct() const;
 
                     /**
-                     * 设置服务产品类型，支持值包括： "mysql" - 云数据库 MySQL， "cynosdb" - 云数据库 CynosDB  for MySQL，默认为"mysql"。
-                     * @param _product 服务产品类型，支持值包括： "mysql" - 云数据库 MySQL， "cynosdb" - 云数据库 CynosDB  for MySQL，默认为"mysql"。
+                     * 设置服务产品类型，支持值包括： "mysql" - 云数据库 MySQL， "cynosdb" - 云数据库 CynosDB  for MySQL，"redis" - 云数据库 Redis，"mongodb" - 云数据库 MongoDB，默认为"mysql"。
+                     * @param _product 服务产品类型，支持值包括： "mysql" - 云数据库 MySQL， "cynosdb" - 云数据库 CynosDB  for MySQL，"redis" - 云数据库 Redis，"mongodb" - 云数据库 MongoDB，默认为"mysql"。
                      * 
                      */
                     void SetProduct(const std::string& _product);
@@ -125,6 +125,69 @@ namespace TencentCloud
                      * 
                      */
                     bool ProductHasBeenSet() const;
+
+                    /**
+                     * 获取Proxy节点ID。	
+                     * @return InstanceProxyId Proxy节点ID。	
+                     * 
+                     */
+                    std::string GetInstanceProxyId() const;
+
+                    /**
+                     * 设置Proxy节点ID。	
+                     * @param _instanceProxyId Proxy节点ID。	
+                     * 
+                     */
+                    void SetInstanceProxyId(const std::string& _instanceProxyId);
+
+                    /**
+                     * 判断参数 InstanceProxyId 是否已赋值
+                     * @return InstanceProxyId 是否已赋值
+                     * 
+                     */
+                    bool InstanceProxyIdHasBeenSet() const;
+
+                    /**
+                     * 获取实列节点ID。	
+                     * @return InstanceNodeId 实列节点ID。	
+                     * 
+                     */
+                    std::string GetInstanceNodeId() const;
+
+                    /**
+                     * 设置实列节点ID。	
+                     * @param _instanceNodeId 实列节点ID。	
+                     * 
+                     */
+                    void SetInstanceNodeId(const std::string& _instanceNodeId);
+
+                    /**
+                     * 判断参数 InstanceNodeId 是否已赋值
+                     * @return InstanceNodeId 是否已赋值
+                     * 
+                     */
+                    bool InstanceNodeIdHasBeenSet() const;
+
+                    /**
+                     * 获取查询类型，目前支持值：mongod，mongos。
+                     * @return Type 查询类型，目前支持值：mongod，mongos。
+                     * 
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置查询类型，目前支持值：mongod，mongos。
+                     * @param _type 查询类型，目前支持值：mongod，mongos。
+                     * 
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     * 
+                     */
+                    bool TypeHasBeenSet() const;
 
                 private:
 
@@ -147,10 +210,28 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 服务产品类型，支持值包括： "mysql" - 云数据库 MySQL， "cynosdb" - 云数据库 CynosDB  for MySQL，默认为"mysql"。
+                     * 服务产品类型，支持值包括： "mysql" - 云数据库 MySQL， "cynosdb" - 云数据库 CynosDB  for MySQL，"redis" - 云数据库 Redis，"mongodb" - 云数据库 MongoDB，默认为"mysql"。
                      */
                     std::string m_product;
                     bool m_productHasBeenSet;
+
+                    /**
+                     * Proxy节点ID。	
+                     */
+                    std::string m_instanceProxyId;
+                    bool m_instanceProxyIdHasBeenSet;
+
+                    /**
+                     * 实列节点ID。	
+                     */
+                    std::string m_instanceNodeId;
+                    bool m_instanceNodeIdHasBeenSet;
+
+                    /**
+                     * 查询类型，目前支持值：mongod，mongos。
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
 
                 };
             }

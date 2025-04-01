@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取策略版本号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VersionId 策略版本号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetVersionId() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 策略版本号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_versionId;
                     bool m_versionIdHasBeenSet;

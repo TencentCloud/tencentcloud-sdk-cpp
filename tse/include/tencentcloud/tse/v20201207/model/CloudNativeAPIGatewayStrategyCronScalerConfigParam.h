@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取定时伸缩周期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Period 定时伸缩周期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPeriod() const;
 
                     /**
                      * 设置定时伸缩周期
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _period 定时伸缩周期
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPeriod(const std::string& _period);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取定时伸缩开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartAt 定时伸缩开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStartAt() const;
 
                     /**
                      * 设置定时伸缩开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _startAt 定时伸缩开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStartAt(const std::string& _startAt);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取定时伸缩目标节点数，不超过指标伸缩中定义的最大节点数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TargetReplicas 定时伸缩目标节点数，不超过指标伸缩中定义的最大节点数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTargetReplicas() const;
 
                     /**
                      * 设置定时伸缩目标节点数，不超过指标伸缩中定义的最大节点数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _targetReplicas 定时伸缩目标节点数，不超过指标伸缩中定义的最大节点数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTargetReplicas(const int64_t& _targetReplicas);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取定时伸缩cron表达式，无需输入
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Crontab 定时伸缩cron表达式，无需输入
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCrontab() const;
 
                     /**
                      * 设置定时伸缩cron表达式，无需输入
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _crontab 定时伸缩cron表达式，无需输入
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCrontab(const std::string& _crontab);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 定时伸缩周期
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_period;
                     bool m_periodHasBeenSet;
 
                     /**
                      * 定时伸缩开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_startAt;
                     bool m_startAtHasBeenSet;
 
                     /**
                      * 定时伸缩目标节点数，不超过指标伸缩中定义的最大节点数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_targetReplicas;
                     bool m_targetReplicasHasBeenSet;
 
                     /**
                      * 定时伸缩cron表达式，无需输入
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_crontab;
                     bool m_crontabHasBeenSet;

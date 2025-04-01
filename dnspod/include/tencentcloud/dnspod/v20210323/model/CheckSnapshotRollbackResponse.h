@@ -118,9 +118,7 @@ namespace TencentCloud
 
                     /**
                      * 获取检查失败数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Failed 检查失败数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetFailed() const;
@@ -134,9 +132,7 @@ namespace TencentCloud
 
                     /**
                      * 获取失败记录信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FailedRecordList 失败记录信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<SnapshotRecord> GetFailedRecordList() const;
@@ -183,14 +179,12 @@ namespace TencentCloud
 
                     /**
                      * 检查失败数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_failed;
                     bool m_failedHasBeenSet;
 
                     /**
                      * 失败记录信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SnapshotRecord> m_failedRecordList;
                     bool m_failedRecordListHasBeenSet;

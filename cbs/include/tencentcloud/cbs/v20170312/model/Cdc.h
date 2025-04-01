@@ -95,18 +95,14 @@ namespace TencentCloud
 
                     /**
                      * 获取独享集群所属的[可用区](/document/product/213/15753#ZoneInfo)ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Zone 独享集群所属的[可用区](/document/product/213/15753#ZoneInfo)ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetZone() const;
 
                     /**
                      * 设置独享集群所属的[可用区](/document/product/213/15753#ZoneInfo)ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zone 独享集群所属的[可用区](/document/product/213/15753#ZoneInfo)ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZone(const std::string& _zone);
@@ -141,18 +137,14 @@ namespace TencentCloud
 
                     /**
                      * 获取独享集群的资源容量大小。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CdcResource 独享集群的资源容量大小。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CdcSize GetCdcResource() const;
 
                     /**
                      * 设置独享集群的资源容量大小。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cdcResource 独享集群的资源容量大小。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCdcResource(const CdcSize& _cdcResource);
@@ -286,7 +278,6 @@ namespace TencentCloud
 
                     /**
                      * 独享集群所属的[可用区](/document/product/213/15753#ZoneInfo)ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
@@ -299,7 +290,6 @@ namespace TencentCloud
 
                     /**
                      * 独享集群的资源容量大小。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CdcSize m_cdcResource;
                     bool m_cdcResourceHasBeenSet;

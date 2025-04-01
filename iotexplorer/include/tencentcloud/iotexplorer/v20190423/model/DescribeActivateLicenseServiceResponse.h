@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取增值服务激活码信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 增值服务激活码信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<LicenseServiceNumInfo> GetData() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 增值服务激活码信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<LicenseServiceNumInfo> m_data;
                     bool m_dataHasBeenSet;

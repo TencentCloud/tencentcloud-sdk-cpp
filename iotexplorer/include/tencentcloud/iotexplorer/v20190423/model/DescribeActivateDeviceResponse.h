@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取设备激活详情信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 设备激活详情信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ActivateDeviceInfo GetData() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 设备激活详情信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ActivateDeviceInfo m_data;
                     bool m_dataHasBeenSet;

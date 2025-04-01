@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略版本号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VersionId 策略版本号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetVersionId() const;
 
                     /**
                      * 设置策略版本号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _versionId 策略版本号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVersionId(const uint64_t& _versionId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略版本创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateDate 策略版本创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateDate() const;
 
                     /**
                      * 设置策略版本创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createDate 策略版本创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateDate(const std::string& _createDate);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否是正在生效的版本。0表示不是，1表示是
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsDefaultVersion 是否是正在生效的版本。0表示不是，1表示是
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetIsDefaultVersion() const;
 
                     /**
                      * 设置是否是正在生效的版本。0表示不是，1表示是
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isDefaultVersion 是否是正在生效的版本。0表示不是，1表示是
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsDefaultVersion(const int64_t& _isDefaultVersion);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 策略版本号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_versionId;
                     bool m_versionIdHasBeenSet;
 
                     /**
                      * 策略版本创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createDate;
                     bool m_createDateHasBeenSet;
 
                     /**
                      * 是否是正在生效的版本。0表示不是，1表示是
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isDefaultVersion;
                     bool m_isDefaultVersionHasBeenSet;

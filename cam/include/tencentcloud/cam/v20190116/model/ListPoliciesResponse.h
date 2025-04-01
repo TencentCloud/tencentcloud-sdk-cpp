@@ -92,9 +92,7 @@ IsAttached: 当需要查询标记实体是否已经关联策略时不为null。0
 
                     /**
                      * 获取保留字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceTypeList 保留字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetServiceTypeList() const;
@@ -131,7 +129,6 @@ IsAttached: 当需要查询标记实体是否已经关联策略时不为null。0
 
                     /**
                      * 保留字段
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_serviceTypeList;
                     bool m_serviceTypeListHasBeenSet;

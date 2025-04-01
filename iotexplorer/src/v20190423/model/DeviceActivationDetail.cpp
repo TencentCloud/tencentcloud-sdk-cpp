@@ -26,7 +26,9 @@ DeviceActivationDetail::DeviceActivationDetail() :
     m_totalNormalLicenseHasBeenSet(false),
     m_usedNormalLicenseHasBeenSet(false),
     m_totalBluetoothLicenseHasBeenSet(false),
-    m_usedBluetoothLicenseHasBeenSet(false)
+    m_usedBluetoothLicenseHasBeenSet(false),
+    m_totalFreeLicenseHasBeenSet(false),
+    m_usedFreeLicenseHasBeenSet(false)
 {
 }
 
@@ -95,6 +97,26 @@ CoreInternalOutcome DeviceActivationDetail::Deserialize(const rapidjson::Value &
         m_usedBluetoothLicenseHasBeenSet = true;
     }
 
+    if (value.HasMember("TotalFreeLicense") && !value["TotalFreeLicense"].IsNull())
+    {
+        if (!value["TotalFreeLicense"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeviceActivationDetail.TotalFreeLicense` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalFreeLicense = value["TotalFreeLicense"].GetInt64();
+        m_totalFreeLicenseHasBeenSet = true;
+    }
+
+    if (value.HasMember("UsedFreeLicense") && !value["UsedFreeLicense"].IsNull())
+    {
+        if (!value["UsedFreeLicense"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeviceActivationDetail.UsedFreeLicense` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_usedFreeLicense = value["UsedFreeLicense"].GetInt64();
+        m_usedFreeLicenseHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +170,22 @@ void DeviceActivationDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "UsedBluetoothLicense";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_usedBluetoothLicense, allocator);
+    }
+
+    if (m_totalFreeLicenseHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalFreeLicense";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalFreeLicense, allocator);
+    }
+
+    if (m_usedFreeLicenseHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UsedFreeLicense";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_usedFreeLicense, allocator);
     }
 
 }
@@ -247,5 +285,37 @@ void DeviceActivationDetail::SetUsedBluetoothLicense(const int64_t& _usedBluetoo
 bool DeviceActivationDetail::UsedBluetoothLicenseHasBeenSet() const
 {
     return m_usedBluetoothLicenseHasBeenSet;
+}
+
+int64_t DeviceActivationDetail::GetTotalFreeLicense() const
+{
+    return m_totalFreeLicense;
+}
+
+void DeviceActivationDetail::SetTotalFreeLicense(const int64_t& _totalFreeLicense)
+{
+    m_totalFreeLicense = _totalFreeLicense;
+    m_totalFreeLicenseHasBeenSet = true;
+}
+
+bool DeviceActivationDetail::TotalFreeLicenseHasBeenSet() const
+{
+    return m_totalFreeLicenseHasBeenSet;
+}
+
+int64_t DeviceActivationDetail::GetUsedFreeLicense() const
+{
+    return m_usedFreeLicense;
+}
+
+void DeviceActivationDetail::SetUsedFreeLicense(const int64_t& _usedFreeLicense)
+{
+    m_usedFreeLicense = _usedFreeLicense;
+    m_usedFreeLicenseHasBeenSet = true;
+}
+
+bool DeviceActivationDetail::UsedFreeLicenseHasBeenSet() const
+{
+    return m_usedFreeLicenseHasBeenSet;
 }
 

@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取云存套餐开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StartTime 云存套餐开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStartTime() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取云存套餐过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpireTime 云存套餐过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetExpireTime() const;
@@ -77,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取套餐id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PackageId 套餐id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPackageId() const;
@@ -127,9 +121,7 @@ namespace TencentCloud
 
                     /**
                      * 获取订单金额，单位为分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Price 订单金额，单位为分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPrice() const;
@@ -143,9 +135,7 @@ namespace TencentCloud
 
                     /**
                      * 获取支付金额，单位为分
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Amount 支付金额，单位为分
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetAmount() const;
@@ -161,21 +151,18 @@ namespace TencentCloud
 
                     /**
                      * 云存套餐开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
                      * 云存套餐过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_expireTime;
                     bool m_expireTimeHasBeenSet;
 
                     /**
                      * 套餐id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_packageId;
                     bool m_packageIdHasBeenSet;
@@ -197,14 +184,12 @@ namespace TencentCloud
 
                     /**
                      * 订单金额，单位为分
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_price;
                     bool m_priceHasBeenSet;
 
                     /**
                      * 支付金额，单位为分
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_amount;
                     bool m_amountHasBeenSet;

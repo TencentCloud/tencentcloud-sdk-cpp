@@ -728,6 +728,49 @@ DbbrainClient::DescribeMailProfileOutcomeCallable DbbrainClient::DescribeMailPro
     return task->get_future();
 }
 
+DbbrainClient::DescribeMySqlProcessListOutcome DbbrainClient::DescribeMySqlProcessList(const DescribeMySqlProcessListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeMySqlProcessList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeMySqlProcessListResponse rsp = DescribeMySqlProcessListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeMySqlProcessListOutcome(rsp);
+        else
+            return DescribeMySqlProcessListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeMySqlProcessListOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeMySqlProcessListAsync(const DescribeMySqlProcessListRequest& request, const DescribeMySqlProcessListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeMySqlProcessList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeMySqlProcessListOutcomeCallable DbbrainClient::DescribeMySqlProcessListCallable(const DescribeMySqlProcessListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeMySqlProcessListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeMySqlProcessList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DbbrainClient::DescribeSecurityAuditLogDownloadUrlsOutcome DbbrainClient::DescribeSecurityAuditLogDownloadUrls(const DescribeSecurityAuditLogDownloadUrlsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSecurityAuditLogDownloadUrls");

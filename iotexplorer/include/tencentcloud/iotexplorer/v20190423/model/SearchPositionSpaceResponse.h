@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取位置空间列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return List 位置空间列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<PositionSpaceInfo> GetList() const;
@@ -62,9 +60,7 @@ namespace TencentCloud
 
                     /**
                      * 获取符合条件的位置空间个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 符合条件的位置空间个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotal() const;
@@ -80,14 +76,12 @@ namespace TencentCloud
 
                     /**
                      * 位置空间列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<PositionSpaceInfo> m_list;
                     bool m_listHasBeenSet;
 
                     /**
                      * 符合条件的位置空间个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;

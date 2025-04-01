@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取依赖项类型，只有LandingZoneSetUp或AccountFactorySetUp。LandingZoneSetUp表示landingZone的依赖项；AccountFactorySetUp表示账号工厂的依赖项
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 依赖项类型，只有LandingZoneSetUp或AccountFactorySetUp。LandingZoneSetUp表示landingZone的依赖项；AccountFactorySetUp表示账号工厂的依赖项
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置依赖项类型，只有LandingZoneSetUp或AccountFactorySetUp。LandingZoneSetUp表示landingZone的依赖项；AccountFactorySetUp表示账号工厂的依赖项
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 依赖项类型，只有LandingZoneSetUp或AccountFactorySetUp。LandingZoneSetUp表示landingZone的依赖项；AccountFactorySetUp表示账号工厂的依赖项
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取功能项唯一标识，只能包含英文字母、数字和@、,._[]-:()（）【】+=，。，长度2-128个字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Identifier 功能项唯一标识，只能包含英文字母、数字和@、,._[]-:()（）【】+=，。，长度2-128个字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIdentifier() const;
 
                     /**
                      * 设置功能项唯一标识，只能包含英文字母、数字和@、,._[]-:()（）【】+=，。，长度2-128个字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _identifier 功能项唯一标识，只能包含英文字母、数字和@、,._[]-:()（）【】+=，。，长度2-128个字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIdentifier(const std::string& _identifier);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 依赖项类型，只有LandingZoneSetUp或AccountFactorySetUp。LandingZoneSetUp表示landingZone的依赖项；AccountFactorySetUp表示账号工厂的依赖项
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 功能项唯一标识，只能包含英文字母、数字和@、,._[]-:()（）【】+=，。，长度2-128个字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_identifier;
                     bool m_identifierHasBeenSet;

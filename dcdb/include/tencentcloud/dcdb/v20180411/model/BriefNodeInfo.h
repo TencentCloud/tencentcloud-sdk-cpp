@@ -109,6 +109,27 @@ namespace TencentCloud
                      */
                     bool ShardIdHasBeenSet() const;
 
+                    /**
+                     * 获取节点所在可用区
+                     * @return Zone 节点所在可用区
+                     * 
+                     */
+                    std::string GetZone() const;
+
+                    /**
+                     * 设置节点所在可用区
+                     * @param _zone 节点所在可用区
+                     * 
+                     */
+                    void SetZone(const std::string& _zone);
+
+                    /**
+                     * 判断参数 Zone 是否已赋值
+                     * @return Zone 是否已赋值
+                     * 
+                     */
+                    bool ZoneHasBeenSet() const;
+
                 private:
 
                     /**
@@ -128,6 +149,12 @@ namespace TencentCloud
                      */
                     std::string m_shardId;
                     bool m_shardIdHasBeenSet;
+
+                    /**
+                     * 节点所在可用区
+                     */
+                    std::string m_zone;
+                    bool m_zoneHasBeenSet;
 
                 };
             }

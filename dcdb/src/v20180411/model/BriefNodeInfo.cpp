@@ -23,7 +23,8 @@ using namespace std;
 BriefNodeInfo::BriefNodeInfo() :
     m_nodeIdHasBeenSet(false),
     m_roleHasBeenSet(false),
-    m_shardIdHasBeenSet(false)
+    m_shardIdHasBeenSet(false),
+    m_zoneHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome BriefNodeInfo::Deserialize(const rapidjson::Value &value)
         m_shardIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Zone") && !value["Zone"].IsNull())
+    {
+        if (!value["Zone"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BriefNodeInfo.Zone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_zone = string(value["Zone"].GetString());
+        m_zoneHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void BriefNodeInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "ShardId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_shardId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_zoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Zone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void BriefNodeInfo::SetShardId(const string& _shardId)
 bool BriefNodeInfo::ShardIdHasBeenSet() const
 {
     return m_shardIdHasBeenSet;
+}
+
+string BriefNodeInfo::GetZone() const
+{
+    return m_zone;
+}
+
+void BriefNodeInfo::SetZone(const string& _zone)
+{
+    m_zone = _zone;
+    m_zoneHasBeenSet = true;
+}
+
+bool BriefNodeInfo::ZoneHasBeenSet() const
+{
+    return m_zoneHasBeenSet;
 }
 

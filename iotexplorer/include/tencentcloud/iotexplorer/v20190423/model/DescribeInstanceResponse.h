@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     InstanceDetail GetData() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 实例信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     InstanceDetail m_data;
                     bool m_dataHasBeenSet;

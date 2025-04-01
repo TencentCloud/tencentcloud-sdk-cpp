@@ -23,7 +23,8 @@ using namespace TencentCloud::Organization::V20210331::Model;
 using namespace std;
 
 CreateSCIMCredentialRequest::CreateSCIMCredentialRequest() :
-    m_zoneIdHasBeenSet(false)
+    m_zoneIdHasBeenSet(false),
+    m_expireDurationHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string CreateSCIMCredentialRequest::ToJsonString() const
         string key = "ZoneId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_zoneId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_expireDurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExpireDuration";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_expireDuration, allocator);
     }
 
 
@@ -64,6 +73,22 @@ void CreateSCIMCredentialRequest::SetZoneId(const string& _zoneId)
 bool CreateSCIMCredentialRequest::ZoneIdHasBeenSet() const
 {
     return m_zoneIdHasBeenSet;
+}
+
+uint64_t CreateSCIMCredentialRequest::GetExpireDuration() const
+{
+    return m_expireDuration;
+}
+
+void CreateSCIMCredentialRequest::SetExpireDuration(const uint64_t& _expireDuration)
+{
+    m_expireDuration = _expireDuration;
+    m_expireDurationHasBeenSet = true;
+}
+
+bool CreateSCIMCredentialRequest::ExpireDurationHasBeenSet() const
+{
+    return m_expireDurationHasBeenSet;
 }
 
 

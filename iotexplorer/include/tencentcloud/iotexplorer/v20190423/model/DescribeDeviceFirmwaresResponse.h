@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取固件信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Firmwares 固件信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DeviceFirmwareInfo> GetFirmwares() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 固件信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DeviceFirmwareInfo> m_firmwares;
                     bool m_firmwaresHasBeenSet;

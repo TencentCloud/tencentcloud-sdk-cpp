@@ -531,18 +531,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自主短信配置APPID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SelfSmsAppId 自主短信配置APPID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSelfSmsAppId() const;
 
                     /**
                      * 设置自主短信配置APPID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _selfSmsAppId 自主短信配置APPID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSelfSmsAppId(const std::string& _selfSmsAppId);
@@ -556,18 +552,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自主短信配置APPKey
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SelfSmsAppKey 自主短信配置APPKey
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSelfSmsAppKey() const;
 
                     /**
                      * 设置自主短信配置APPKey
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _selfSmsAppKey 自主短信配置APPKey
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSelfSmsAppKey(const std::string& _selfSmsAppKey);
@@ -581,18 +573,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自主短信配置签名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SelfSmsSign 自主短信配置签名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSelfSmsSign() const;
 
                     /**
                      * 设置自主短信配置签名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _selfSmsSign 自主短信配置签名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSelfSmsSign(const std::string& _selfSmsSign);
@@ -606,18 +594,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自主短信配置模板ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SelfSmsTemplateId 自主短信配置模板ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSelfSmsTemplateId() const;
 
                     /**
                      * 设置自主短信配置模板ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _selfSmsTemplateId 自主短信配置模板ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSelfSmsTemplateId(const int64_t& _selfSmsTemplateId);
@@ -631,18 +615,14 @@ namespace TencentCloud
 
                     /**
                      * 获取第三方小程序强提醒开关 0：关闭；1：开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WechatNotifyStatus 第三方小程序强提醒开关 0：关闭；1：开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetWechatNotifyStatus() const;
 
                     /**
                      * 设置第三方小程序强提醒开关 0：关闭；1：开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _wechatNotifyStatus 第三方小程序强提醒开关 0：关闭；1：开启
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWechatNotifyStatus(const int64_t& _wechatNotifyStatus);
@@ -656,18 +636,14 @@ namespace TencentCloud
 
                     /**
                      * 获取互联互通产品ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InterconnectionProducts 互联互通产品ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInterconnectionProducts() const;
 
                     /**
                      * 设置互联互通产品ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _interconnectionProducts 互联互通产品ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInterconnectionProducts(const std::string& _interconnectionProducts);
@@ -821,42 +797,36 @@ namespace TencentCloud
 
                     /**
                      * 自主短信配置APPID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_selfSmsAppId;
                     bool m_selfSmsAppIdHasBeenSet;
 
                     /**
                      * 自主短信配置APPKey
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_selfSmsAppKey;
                     bool m_selfSmsAppKeyHasBeenSet;
 
                     /**
                      * 自主短信配置签名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_selfSmsSign;
                     bool m_selfSmsSignHasBeenSet;
 
                     /**
                      * 自主短信配置模板ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_selfSmsTemplateId;
                     bool m_selfSmsTemplateIdHasBeenSet;
 
                     /**
                      * 第三方小程序强提醒开关 0：关闭；1：开启
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_wechatNotifyStatus;
                     bool m_wechatNotifyStatusHasBeenSet;
 
                     /**
                      * 互联互通产品ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_interconnectionProducts;
                     bool m_interconnectionProductsHasBeenSet;

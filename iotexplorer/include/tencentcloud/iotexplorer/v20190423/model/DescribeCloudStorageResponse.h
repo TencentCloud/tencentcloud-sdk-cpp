@@ -101,9 +101,7 @@ namespace TencentCloud
 
                     /**
                      * 获取云存用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserId 云存用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUserId() const;
@@ -143,7 +141,6 @@ namespace TencentCloud
 
                     /**
                      * 云存用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;

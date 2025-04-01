@@ -112,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取TWeCall激活码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TWeCallLicense TWeCall激活码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TWeCallLicenseInfo> GetTWeCallLicense() const;
 
                     /**
                      * 设置TWeCall激活码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tWeCallLicense TWeCall激活码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTWeCallLicense(const std::vector<TWeCallLicenseInfo>& _tWeCallLicense);
@@ -157,7 +153,6 @@ namespace TencentCloud
 
                     /**
                      * TWeCall激活码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TWeCallLicenseInfo> m_tWeCallLicense;
                     bool m_tWeCallLicenseHasBeenSet;

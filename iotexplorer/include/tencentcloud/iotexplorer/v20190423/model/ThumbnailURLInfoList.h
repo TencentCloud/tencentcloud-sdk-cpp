@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取缩略图访问地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ThumbnailURL 缩略图访问地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetThumbnailURL() const;
 
                     /**
                      * 设置缩略图访问地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _thumbnailURL 缩略图访问地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetThumbnailURL(const std::string& _thumbnailURL);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取缩略图访问地址的过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpireTime 缩略图访问地址的过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetExpireTime() const;
 
                     /**
                      * 设置缩略图访问地址的过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _expireTime 缩略图访问地址的过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExpireTime(const int64_t& _expireTime);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 缩略图访问地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_thumbnailURL;
                     bool m_thumbnailURLHasBeenSet;
 
                     /**
                      * 缩略图访问地址的过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_expireTime;
                     bool m_expireTimeHasBeenSet;

@@ -892,6 +892,20 @@ namespace TencentCloud
                      */
                     bool ProxyVersionHasBeenSet() const;
 
+                    /**
+                     * 获取Cpu类型，如：英特尔：Intel/AMD，海光：Hygon
+                     * @return CpuType Cpu类型，如：英特尔：Intel/AMD，海光：Hygon
+                     * 
+                     */
+                    std::string GetCpuType() const;
+
+                    /**
+                     * 判断参数 CpuType 是否已赋值
+                     * @return CpuType 是否已赋值
+                     * 
+                     */
+                    bool CpuTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1255,6 +1269,12 @@ namespace TencentCloud
                      */
                     std::string m_proxyVersion;
                     bool m_proxyVersionHasBeenSet;
+
+                    /**
+                     * Cpu类型，如：英特尔：Intel/AMD，海光：Hygon
+                     */
+                    std::string m_cpuType;
+                    bool m_cpuTypeHasBeenSet;
 
                 };
             }

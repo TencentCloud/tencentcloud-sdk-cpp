@@ -94,15 +94,15 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取输出的转推协议，支持SRT|RTP|RTMP|RTMP_PULL|RTSP|RIST。
-                     * @return Protocol 输出的转推协议，支持SRT|RTP|RTMP|RTMP_PULL|RTSP|RIST。
+                     * 获取输出的转推协议，支持SRT|RTP|RTMP|RTMP_PULL|RTSP_PULL|RIST。
+                     * @return Protocol 输出的转推协议，支持SRT|RTP|RTMP|RTMP_PULL|RTSP_PULL|RIST。
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置输出的转推协议，支持SRT|RTP|RTMP|RTMP_PULL|RTSP|RIST。
-                     * @param _protocol 输出的转推协议，支持SRT|RTP|RTMP|RTMP_PULL|RTSP|RIST。
+                     * 设置输出的转推协议，支持SRT|RTP|RTMP|RTMP_PULL|RTSP_PULL|RIST。
+                     * @param _protocol 输出的转推协议，支持SRT|RTP|RTMP|RTMP_PULL|RTSP_PULL|RIST。
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -364,7 +364,7 @@ namespace TencentCloud
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 输出的转推协议，支持SRT|RTP|RTMP|RTMP_PULL|RTSP|RIST。
+                     * 输出的转推协议，支持SRT|RTP|RTMP|RTMP_PULL|RTSP_PULL|RIST。
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;

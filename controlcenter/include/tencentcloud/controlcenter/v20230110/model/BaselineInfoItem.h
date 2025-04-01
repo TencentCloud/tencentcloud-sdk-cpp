@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取账号工厂基线项唯一标识，只能包含英文字母、数字和@、,._[]-:()（）【】+=，。，长度2-128个字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Identifier 账号工厂基线项唯一标识，只能包含英文字母、数字和@、,._[]-:()（）【】+=，。，长度2-128个字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIdentifier() const;
 
                     /**
                      * 设置账号工厂基线项唯一标识，只能包含英文字母、数字和@、,._[]-:()（）【】+=，。，长度2-128个字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _identifier 账号工厂基线项唯一标识，只能包含英文字母、数字和@、,._[]-:()（）【】+=，。，长度2-128个字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIdentifier(const std::string& _identifier);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取账号工厂基线项配置，不同的基线项配置参数不同。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Configuration 账号工厂基线项配置，不同的基线项配置参数不同。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConfiguration() const;
 
                     /**
                      * 设置账号工厂基线项配置，不同的基线项配置参数不同。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _configuration 账号工厂基线项配置，不同的基线项配置参数不同。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConfiguration(const std::string& _configuration);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取基线应用的账号数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplyCount 基线应用的账号数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetApplyCount() const;
 
                     /**
                      * 设置基线应用的账号数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _applyCount 基线应用的账号数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetApplyCount(const int64_t& _applyCount);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 账号工厂基线项唯一标识，只能包含英文字母、数字和@、,._[]-:()（）【】+=，。，长度2-128个字符。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_identifier;
                     bool m_identifierHasBeenSet;
 
                     /**
                      * 账号工厂基线项配置，不同的基线项配置参数不同。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_configuration;
                     bool m_configurationHasBeenSet;
 
                     /**
                      * 基线应用的账号数量。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_applyCount;
                     bool m_applyCountHasBeenSet;

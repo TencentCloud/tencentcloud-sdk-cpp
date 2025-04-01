@@ -57,7 +57,9 @@ DatasourceInfo::DatasourceInfo() :
     m_dataOriginDatasourceIdHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
     m_dbTypeNameHasBeenSet(false),
-    m_useVPCHasBeenSet(false)
+    m_useVPCHasBeenSet(false),
+    m_ownerHasBeenSet(false),
+    m_ownerNameHasBeenSet(false)
 {
 }
 
@@ -456,6 +458,26 @@ CoreInternalOutcome DatasourceInfo::Deserialize(const rapidjson::Value &value)
         m_useVPCHasBeenSet = true;
     }
 
+    if (value.HasMember("Owner") && !value["Owner"].IsNull())
+    {
+        if (!value["Owner"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatasourceInfo.Owner` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_owner = string(value["Owner"].GetString());
+        m_ownerHasBeenSet = true;
+    }
+
+    if (value.HasMember("OwnerName") && !value["OwnerName"].IsNull())
+    {
+        if (!value["OwnerName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatasourceInfo.OwnerName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ownerName = string(value["OwnerName"].GetString());
+        m_ownerNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -770,6 +792,22 @@ void DatasourceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "UseVPC";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_useVPC, allocator);
+    }
+
+    if (m_ownerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Owner";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_owner.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ownerNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OwnerName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ownerName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1365,5 +1403,37 @@ void DatasourceInfo::SetUseVPC(const bool& _useVPC)
 bool DatasourceInfo::UseVPCHasBeenSet() const
 {
     return m_useVPCHasBeenSet;
+}
+
+string DatasourceInfo::GetOwner() const
+{
+    return m_owner;
+}
+
+void DatasourceInfo::SetOwner(const string& _owner)
+{
+    m_owner = _owner;
+    m_ownerHasBeenSet = true;
+}
+
+bool DatasourceInfo::OwnerHasBeenSet() const
+{
+    return m_ownerHasBeenSet;
+}
+
+string DatasourceInfo::GetOwnerName() const
+{
+    return m_ownerName;
+}
+
+void DatasourceInfo::SetOwnerName(const string& _ownerName)
+{
+    m_ownerName = _ownerName;
+    m_ownerNameHasBeenSet = true;
+}
+
+bool DatasourceInfo::OwnerNameHasBeenSet() const
+{
+    return m_ownerNameHasBeenSet;
 }
 

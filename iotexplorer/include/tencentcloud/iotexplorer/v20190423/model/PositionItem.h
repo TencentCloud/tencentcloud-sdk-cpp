@@ -111,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取位置点的定位类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LocationType 位置点的定位类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLocationType() const;
 
                     /**
                      * 设置位置点的定位类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _locationType 位置点的定位类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLocationType(const std::string& _locationType);
@@ -136,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取位置点的精度预估，单位为米
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Accuracy 位置点的精度预估，单位为米
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetAccuracy() const;
 
                     /**
                      * 设置位置点的精度预估，单位为米
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _accuracy 位置点的精度预估，单位为米
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAccuracy(const double& _accuracy);
@@ -181,14 +173,12 @@ namespace TencentCloud
 
                     /**
                      * 位置点的定位类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_locationType;
                     bool m_locationTypeHasBeenSet;
 
                     /**
                      * 位置点的精度预估，单位为米
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_accuracy;
                     bool m_accuracyHasBeenSet;

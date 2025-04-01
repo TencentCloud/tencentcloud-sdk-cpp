@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Sn信息，SN格式：产品ID_设备名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Sn Sn信息，SN格式：产品ID_设备名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSn() const;
 
                     /**
                      * 设置Sn信息，SN格式：产品ID_设备名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sn Sn信息，SN格式：产品ID_设备名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSn(const std::string& _sn);
@@ -125,7 +121,6 @@ namespace TencentCloud
 
                     /**
                      * Sn信息，SN格式：产品ID_设备名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sn;
                     bool m_snHasBeenSet;

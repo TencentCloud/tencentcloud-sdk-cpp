@@ -129,9 +129,7 @@ namespace TencentCloud
 
                     /**
                      * 获取成功数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SuccessCount 成功数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSuccessCount() const;
@@ -145,9 +143,7 @@ namespace TencentCloud
 
                     /**
                      * 获取量产最后失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LastFailedReason 量产最后失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLastFailedReason() const;
@@ -161,9 +157,7 @@ namespace TencentCloud
 
                     /**
                      * 获取量产状态  0：任务创建，未量产；1：处理中；2：量产结束上传结果中；3：任务完成
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 量产状态  0：任务创建，未量产；1：处理中；2：量产结束上传结果中；3：任务完成
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
@@ -215,21 +209,18 @@ namespace TencentCloud
 
                     /**
                      * 成功数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_successCount;
                     bool m_successCountHasBeenSet;
 
                     /**
                      * 量产最后失败原因
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_lastFailedReason;
                     bool m_lastFailedReasonHasBeenSet;
 
                     /**
                      * 量产状态  0：任务创建，未量产；1：处理中；2：量产结束上传结果中；3：任务完成
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;

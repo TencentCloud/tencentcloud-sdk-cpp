@@ -30,7 +30,8 @@ DescribePriceRequest::DescribePriceRequest() :
     m_periodHasBeenSet(false),
     m_countHasBeenSet(false),
     m_paymodeHasBeenSet(false),
-    m_amountUnitHasBeenSet(false)
+    m_amountUnitHasBeenSet(false),
+    m_cpuTypeHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,14 @@ string DescribePriceRequest::ToJsonString() const
         string key = "AmountUnit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_amountUnit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cpuTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CpuType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cpuType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -239,6 +248,22 @@ void DescribePriceRequest::SetAmountUnit(const string& _amountUnit)
 bool DescribePriceRequest::AmountUnitHasBeenSet() const
 {
     return m_amountUnitHasBeenSet;
+}
+
+string DescribePriceRequest::GetCpuType() const
+{
+    return m_cpuType;
+}
+
+void DescribePriceRequest::SetCpuType(const string& _cpuType)
+{
+    m_cpuType = _cpuType;
+    m_cpuTypeHasBeenSet = true;
+}
+
+bool DescribePriceRequest::CpuTypeHasBeenSet() const
+{
+    return m_cpuTypeHasBeenSet;
 }
 
 

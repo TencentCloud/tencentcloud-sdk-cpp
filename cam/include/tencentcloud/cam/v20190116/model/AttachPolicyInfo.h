@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolicyName 策略名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPolicyName() const;
 
                     /**
                      * 设置策略名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _policyName 策略名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPolicyName(const std::string& _policyName);
@@ -94,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AddTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAddTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _addTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAddTime(const std::string& _addTime);
@@ -119,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建来源，1 通过控制台创建, 2 通过策略语法创建
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateMode 创建来源，1 通过控制台创建, 2 通过策略语法创建
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCreateMode() const;
 
                     /**
                      * 设置创建来源，1 通过控制台创建, 2 通过策略语法创建
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createMode 创建来源，1 通过控制台创建, 2 通过策略语法创建
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateMode(const uint64_t& _createMode);
@@ -144,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取取值为User和QCS。User代表自定义策略，QCS代表系统策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolicyType 取值为User和QCS。User代表自定义策略，QCS代表系统策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPolicyType() const;
 
                     /**
                      * 设置取值为User和QCS。User代表自定义策略，QCS代表系统策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _policyType 取值为User和QCS。User代表自定义策略，QCS代表系统策略
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPolicyType(const std::string& _policyType);
@@ -169,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 策略备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRemark() const;
 
                     /**
                      * 设置策略备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _remark 策略备注
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemark(const std::string& _remark);
@@ -269,18 +249,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否已下线，1代表已下线，0代表未下线
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Deactived 是否已下线，1代表已下线，0代表未下线
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetDeactived() const;
 
                     /**
                      * 设置是否已下线，1代表已下线，0代表未下线
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deactived 是否已下线，1代表已下线，0代表未下线
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeactived(const uint64_t& _deactived);
@@ -294,18 +270,14 @@ namespace TencentCloud
 
                     /**
                      * 获取已下线的产品列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeactivedDetail 已下线的产品列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetDeactivedDetail() const;
 
                     /**
                      * 设置已下线的产品列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deactivedDetail 已下线的产品列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeactivedDetail(const std::vector<std::string>& _deactivedDetail);
@@ -327,35 +299,30 @@ namespace TencentCloud
 
                     /**
                      * 策略名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_policyName;
                     bool m_policyNameHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_addTime;
                     bool m_addTimeHasBeenSet;
 
                     /**
                      * 创建来源，1 通过控制台创建, 2 通过策略语法创建
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_createMode;
                     bool m_createModeHasBeenSet;
 
                     /**
                      * 取值为User和QCS。User代表自定义策略，QCS代表系统策略
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_policyType;
                     bool m_policyTypeHasBeenSet;
 
                     /**
                      * 策略备注
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
@@ -383,14 +350,12 @@ namespace TencentCloud
 
                     /**
                      * 是否已下线，1代表已下线，0代表未下线
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_deactived;
                     bool m_deactivedHasBeenSet;
 
                     /**
                      * 已下线的产品列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_deactivedDetail;
                     bool m_deactivedDetailHasBeenSet;

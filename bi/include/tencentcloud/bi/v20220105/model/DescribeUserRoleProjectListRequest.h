@@ -126,6 +126,48 @@ namespace TencentCloud
                      */
                     bool IsOnlyBindAppUserHasBeenSet() const;
 
+                    /**
+                     * 获取是否获取全部数据
+                     * @return AllPage 是否获取全部数据
+                     * 
+                     */
+                    bool GetAllPage() const;
+
+                    /**
+                     * 设置是否获取全部数据
+                     * @param _allPage 是否获取全部数据
+                     * 
+                     */
+                    void SetAllPage(const bool& _allPage);
+
+                    /**
+                     * 判断参数 AllPage 是否已赋值
+                     * @return AllPage 是否已赋值
+                     * 
+                     */
+                    bool AllPageHasBeenSet() const;
+
+                    /**
+                     * 获取角色编码
+                     * @return RoleCode 角色编码
+                     * 
+                     */
+                    std::string GetRoleCode() const;
+
+                    /**
+                     * 设置角色编码
+                     * @param _roleCode 角色编码
+                     * 
+                     */
+                    void SetRoleCode(const std::string& _roleCode);
+
+                    /**
+                     * 判断参数 RoleCode 是否已赋值
+                     * @return RoleCode 是否已赋值
+                     * 
+                     */
+                    bool RoleCodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +193,18 @@ namespace TencentCloud
                      */
                     bool m_isOnlyBindAppUser;
                     bool m_isOnlyBindAppUserHasBeenSet;
+
+                    /**
+                     * 是否获取全部数据
+                     */
+                    bool m_allPage;
+                    bool m_allPageHasBeenSet;
+
+                    /**
+                     * 角色编码
+                     */
+                    std::string m_roleCode;
+                    bool m_roleCodeHasBeenSet;
 
                 };
             }

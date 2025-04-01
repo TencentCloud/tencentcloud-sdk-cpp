@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实体名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 实体名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置实体名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 实体名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -94,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实体Uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uin 实体Uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetUin() const;
 
                     /**
                      * 设置实体Uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _uin 实体Uin
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUin(const uint64_t& _uin);
@@ -140,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略关联时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AttachmentTime 策略关联时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAttachmentTime() const;
 
                     /**
                      * 设置策略关联时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _attachmentTime 策略关联时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAttachmentTime(const std::string& _attachmentTime);
@@ -173,14 +161,12 @@ namespace TencentCloud
 
                     /**
                      * 实体名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 实体Uin
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_uin;
                     bool m_uinHasBeenSet;
@@ -193,7 +179,6 @@ namespace TencentCloud
 
                     /**
                      * 策略关联时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_attachmentTime;
                     bool m_attachmentTimeHasBeenSet;

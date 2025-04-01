@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取角色ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RoleId 角色ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRoleId() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 角色ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_roleId;
                     bool m_roleIdHasBeenSet;

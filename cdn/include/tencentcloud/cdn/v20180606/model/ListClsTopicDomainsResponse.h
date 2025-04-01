@@ -130,9 +130,7 @@ namespace TencentCloud
 
                     /**
                      * 获取日志主题最近更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 日志主题最近更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
@@ -184,7 +182,6 @@ namespace TencentCloud
 
                     /**
                      * 日志主题最近更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;

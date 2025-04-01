@@ -153,6 +153,48 @@ namespace TencentCloud
                      */
                     bool AvailableChoiceHasBeenSet() const;
 
+                    /**
+                     * 获取主机类型，如：物理机：Machine，容器：Container。
+                     * @return HostType 主机类型，如：物理机：Machine，容器：Container。
+                     * 
+                     */
+                    std::string GetHostType() const;
+
+                    /**
+                     * 设置主机类型，如：物理机：Machine，容器：Container。
+                     * @param _hostType 主机类型，如：物理机：Machine，容器：Container。
+                     * 
+                     */
+                    void SetHostType(const std::string& _hostType);
+
+                    /**
+                     * 判断参数 HostType 是否已赋值
+                     * @return HostType 是否已赋值
+                     * 
+                     */
+                    bool HostTypeHasBeenSet() const;
+
+                    /**
+                     * 获取Cpu类型，如：英特尔：Intel/AMD，海光：Hygon
+                     * @return CpuType Cpu类型，如：英特尔：Intel/AMD，海光：Hygon
+                     * 
+                     */
+                    std::string GetCpuType() const;
+
+                    /**
+                     * 设置Cpu类型，如：英特尔：Intel/AMD，海光：Hygon
+                     * @param _cpuType Cpu类型，如：英特尔：Intel/AMD，海光：Hygon
+                     * 
+                     */
+                    void SetCpuType(const std::string& _cpuType);
+
+                    /**
+                     * 判断参数 CpuType 是否已赋值
+                     * @return CpuType 是否已赋值
+                     * 
+                     */
+                    bool CpuTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -184,6 +226,18 @@ namespace TencentCloud
                      */
                     std::vector<ShardZoneChooseInfo> m_availableChoice;
                     bool m_availableChoiceHasBeenSet;
+
+                    /**
+                     * 主机类型，如：物理机：Machine，容器：Container。
+                     */
+                    std::string m_hostType;
+                    bool m_hostTypeHasBeenSet;
+
+                    /**
+                     * Cpu类型，如：英特尔：Intel/AMD，海光：Hygon
+                     */
+                    std::string m_cpuType;
+                    bool m_cpuTypeHasBeenSet;
 
                 };
             }

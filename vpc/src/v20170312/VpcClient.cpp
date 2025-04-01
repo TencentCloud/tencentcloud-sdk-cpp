@@ -8124,6 +8124,49 @@ VpcClient::DescribeNatGatewayDirectConnectGatewayRouteOutcomeCallable VpcClient:
     return task->get_future();
 }
 
+VpcClient::DescribeNatGatewayFlowMonitorDetailOutcome VpcClient::DescribeNatGatewayFlowMonitorDetail(const DescribeNatGatewayFlowMonitorDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNatGatewayFlowMonitorDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNatGatewayFlowMonitorDetailResponse rsp = DescribeNatGatewayFlowMonitorDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNatGatewayFlowMonitorDetailOutcome(rsp);
+        else
+            return DescribeNatGatewayFlowMonitorDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNatGatewayFlowMonitorDetailOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeNatGatewayFlowMonitorDetailAsync(const DescribeNatGatewayFlowMonitorDetailRequest& request, const DescribeNatGatewayFlowMonitorDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeNatGatewayFlowMonitorDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeNatGatewayFlowMonitorDetailOutcomeCallable VpcClient::DescribeNatGatewayFlowMonitorDetailCallable(const DescribeNatGatewayFlowMonitorDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeNatGatewayFlowMonitorDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeNatGatewayFlowMonitorDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::DescribeNatGatewaySourceIpTranslationNatRulesOutcome VpcClient::DescribeNatGatewaySourceIpTranslationNatRules(const DescribeNatGatewaySourceIpTranslationNatRulesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeNatGatewaySourceIpTranslationNatRules");

@@ -47,9 +47,7 @@ namespace TencentCloud
 
                     /**
                      * 获取规则描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Rule 规则描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TopicRule GetRule() const;
@@ -63,9 +61,7 @@ namespace TencentCloud
 
                     /**
                      * 获取规则绑定的标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CamTag 规则绑定的标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CamTag> GetCamTag() const;
@@ -81,14 +77,12 @@ namespace TencentCloud
 
                     /**
                      * 规则描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TopicRule m_rule;
                     bool m_ruleHasBeenSet;
 
                     /**
                      * 规则绑定的标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CamTag> m_camTag;
                     bool m_camTagHasBeenSet;

@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取已接入CDN的域名列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Domains 已接入CDN的域名列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetDomains() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取已配置证书的CDN域名列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CertifiedDomains 已配置证书的CDN域名列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetCertifiedDomains() const;
@@ -79,14 +75,12 @@ namespace TencentCloud
 
                     /**
                      * 已接入CDN的域名列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_domains;
                     bool m_domainsHasBeenSet;
 
                     /**
                      * 已配置证书的CDN域名列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_certifiedDomains;
                     bool m_certifiedDomainsHasBeenSet;

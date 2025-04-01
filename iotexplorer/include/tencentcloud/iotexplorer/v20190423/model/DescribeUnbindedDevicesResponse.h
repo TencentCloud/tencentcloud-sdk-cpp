@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取未绑定的设备列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnbindedDevices 未绑定的设备列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BindDeviceInfo> GetUnbindedDevices() const;
@@ -78,7 +76,6 @@ namespace TencentCloud
 
                     /**
                      * 未绑定的设备列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BindDeviceInfo> m_unbindedDevices;
                     bool m_unbindedDevicesHasBeenSet;

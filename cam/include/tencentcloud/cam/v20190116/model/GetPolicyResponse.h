@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取策略名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolicyName 策略名。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPolicyName() const;
@@ -61,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取策略描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 策略描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
@@ -77,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取1 表示自定义策略，2 表示预设策略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 1 表示自定义策略，2 表示预设策略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetType() const;
@@ -93,9 +87,7 @@ namespace TencentCloud
 
                     /**
                      * 获取策略创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AddTime 策略创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAddTime() const;
@@ -109,9 +101,7 @@ namespace TencentCloud
 
                     /**
                      * 获取策略最近更新时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 策略最近更新时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpdateTime() const;
@@ -125,9 +115,7 @@ namespace TencentCloud
 
                     /**
                      * 获取策略文档。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PolicyDocument 策略文档。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPolicyDocument() const;
@@ -157,9 +145,7 @@ namespace TencentCloud
 
                     /**
                      * 获取是否是服务相关策略，0代表不是服务相关策略，1代表是服务相关策略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsServiceLinkedRolePolicy 是否是服务相关策略，0代表不是服务相关策略，1代表是服务相关策略。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIsServiceLinkedRolePolicy() const;
@@ -175,42 +161,36 @@ namespace TencentCloud
 
                     /**
                      * 策略名。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_policyName;
                     bool m_policyNameHasBeenSet;
 
                     /**
                      * 策略描述。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
                      * 1 表示自定义策略，2 表示预设策略。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 策略创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_addTime;
                     bool m_addTimeHasBeenSet;
 
                     /**
                      * 策略最近更新时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
                      * 策略文档。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_policyDocument;
                     bool m_policyDocumentHasBeenSet;
@@ -224,7 +204,6 @@ namespace TencentCloud
 
                     /**
                      * 是否是服务相关策略，0代表不是服务相关策略，1代表是服务相关策略。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_isServiceLinkedRolePolicy;
                     bool m_isServiceLinkedRolePolicyHasBeenSet;

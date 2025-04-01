@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取策略版本列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Versions 策略版本列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<PolicyVersionItem> GetVersions() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 策略版本列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<PolicyVersionItem> m_versions;
                     bool m_versionsHasBeenSet;

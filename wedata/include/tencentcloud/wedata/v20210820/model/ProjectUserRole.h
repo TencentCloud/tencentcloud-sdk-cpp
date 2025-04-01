@@ -322,6 +322,31 @@ namespace TencentCloud
                      */
                     bool AppIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否项目负责人
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsProjectOwner 是否项目负责人
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetIsProjectOwner() const;
+
+                    /**
+                     * 设置是否项目负责人
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _isProjectOwner 是否项目负责人
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIsProjectOwner(const bool& _isProjectOwner);
+
+                    /**
+                     * 判断参数 IsProjectOwner 是否已赋值
+                     * @return IsProjectOwner 是否已赋值
+                     * 
+                     */
+                    bool IsProjectOwnerHasBeenSet() const;
+
                 private:
 
                     /**
@@ -400,6 +425,13 @@ namespace TencentCloud
                      */
                     std::string m_appId;
                     bool m_appIdHasBeenSet;
+
+                    /**
+                     * 是否项目负责人
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isProjectOwner;
+                    bool m_isProjectOwnerHasBeenSet;
 
                 };
             }

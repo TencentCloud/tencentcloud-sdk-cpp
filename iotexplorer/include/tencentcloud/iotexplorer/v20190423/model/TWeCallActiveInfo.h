@@ -73,18 +73,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Sn信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Sn Sn信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSn() const;
 
                     /**
                      * 设置Sn信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _sn Sn信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSn(const std::string& _sn);
@@ -98,18 +94,14 @@ namespace TencentCloud
 
                     /**
                      * 获取过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExpireTime 过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetExpireTime() const;
 
                     /**
                      * 设置过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _expireTime 过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExpireTime(const int64_t& _expireTime);
@@ -153,14 +145,12 @@ namespace TencentCloud
 
                     /**
                      * Sn信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sn;
                     bool m_snHasBeenSet;
 
                     /**
                      * 过期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_expireTime;
                     bool m_expireTimeHasBeenSet;

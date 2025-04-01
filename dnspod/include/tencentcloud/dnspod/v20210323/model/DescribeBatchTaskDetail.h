@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取见BatchRecordInfo
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecordList 见BatchRecordInfo
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<BatchRecordInfo> GetRecordList() const;
 
                     /**
                      * 设置见BatchRecordInfo
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _recordList 见BatchRecordInfo
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRecordList(const std::vector<BatchRecordInfo>& _recordList);
@@ -120,18 +116,14 @@ namespace TencentCloud
 
                     /**
                      * 获取域名等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DomainGrade 域名等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDomainGrade() const;
 
                     /**
                      * 设置域名等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _domainGrade 域名等级
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDomainGrade(const std::string& _domainGrade);
@@ -170,18 +162,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该条任务运行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 该条任务运行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置该条任务运行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 该条任务运行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -247,7 +235,6 @@ namespace TencentCloud
 
                     /**
                      * 见BatchRecordInfo
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BatchRecordInfo> m_recordList;
                     bool m_recordListHasBeenSet;
@@ -267,7 +254,6 @@ namespace TencentCloud
 
                     /**
                      * 域名等级
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_domainGrade;
                     bool m_domainGradeHasBeenSet;
@@ -281,7 +267,6 @@ namespace TencentCloud
 
                     /**
                      * 该条任务运行状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

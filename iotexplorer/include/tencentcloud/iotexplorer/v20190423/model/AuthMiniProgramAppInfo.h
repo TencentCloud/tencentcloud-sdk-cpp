@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取小程序APPID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MiniProgramAppId 小程序APPID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMiniProgramAppId() const;
 
                     /**
                      * 设置小程序APPID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _miniProgramAppId 小程序APPID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMiniProgramAppId(const std::string& _miniProgramAppId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const int64_t& _createTime);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取小程序名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MiniProgramName 小程序名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMiniProgramName() const;
 
                     /**
                      * 设置小程序名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _miniProgramName 小程序名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMiniProgramName(const std::string& _miniProgramName);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取激活码数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LicenseNum 激活码数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetLicenseNum() const;
 
                     /**
                      * 设置激活码数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _licenseNum 激活码数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLicenseNum(const int64_t& _licenseNum);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用ID 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IotAppId 应用ID 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIotAppId() const;
 
                     /**
                      * 设置应用ID 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _iotAppId 应用ID 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIotAppId(const std::string& _iotAppId);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IotAppName 应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIotAppName() const;
 
                     /**
                      * 设置应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _iotAppName 应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIotAppName(const std::string& _iotAppName);
@@ -200,42 +176,36 @@ namespace TencentCloud
 
                     /**
                      * 小程序APPID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_miniProgramAppId;
                     bool m_miniProgramAppIdHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 小程序名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_miniProgramName;
                     bool m_miniProgramNameHasBeenSet;
 
                     /**
                      * 激活码数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_licenseNum;
                     bool m_licenseNumHasBeenSet;
 
                     /**
                      * 应用ID 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_iotAppId;
                     bool m_iotAppIdHasBeenSet;
 
                     /**
                      * 应用名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_iotAppName;
                     bool m_iotAppNameHasBeenSet;

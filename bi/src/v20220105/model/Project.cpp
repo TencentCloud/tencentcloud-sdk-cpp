@@ -41,7 +41,10 @@ Project::Project() :
     m_panelScopeHasBeenSet(false),
     m_isExternalManageHasBeenSet(false),
     m_managePlatformHasBeenSet(false),
-    m_configListHasBeenSet(false)
+    m_configListHasBeenSet(false),
+    m_createdUserNameHasBeenSet(false),
+    m_ownerHasBeenSet(false),
+    m_ownerNameHasBeenSet(false)
 {
 }
 
@@ -273,6 +276,36 @@ CoreInternalOutcome Project::Deserialize(const rapidjson::Value &value)
         m_configListHasBeenSet = true;
     }
 
+    if (value.HasMember("CreatedUserName") && !value["CreatedUserName"].IsNull())
+    {
+        if (!value["CreatedUserName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Project.CreatedUserName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createdUserName = string(value["CreatedUserName"].GetString());
+        m_createdUserNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Owner") && !value["Owner"].IsNull())
+    {
+        if (!value["Owner"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Project.Owner` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_owner = string(value["Owner"].GetString());
+        m_ownerHasBeenSet = true;
+    }
+
+    if (value.HasMember("OwnerName") && !value["OwnerName"].IsNull())
+    {
+        if (!value["OwnerName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Project.OwnerName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ownerName = string(value["OwnerName"].GetString());
+        m_ownerNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -458,6 +491,30 @@ void Project::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_createdUserNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreatedUserName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createdUserName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ownerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Owner";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_owner.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ownerNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OwnerName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ownerName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -797,5 +854,53 @@ void Project::SetConfigList(const vector<ProjectConfigList>& _configList)
 bool Project::ConfigListHasBeenSet() const
 {
     return m_configListHasBeenSet;
+}
+
+string Project::GetCreatedUserName() const
+{
+    return m_createdUserName;
+}
+
+void Project::SetCreatedUserName(const string& _createdUserName)
+{
+    m_createdUserName = _createdUserName;
+    m_createdUserNameHasBeenSet = true;
+}
+
+bool Project::CreatedUserNameHasBeenSet() const
+{
+    return m_createdUserNameHasBeenSet;
+}
+
+string Project::GetOwner() const
+{
+    return m_owner;
+}
+
+void Project::SetOwner(const string& _owner)
+{
+    m_owner = _owner;
+    m_ownerHasBeenSet = true;
+}
+
+bool Project::OwnerHasBeenSet() const
+{
+    return m_ownerHasBeenSet;
+}
+
+string Project::GetOwnerName() const
+{
+    return m_ownerName;
+}
+
+void Project::SetOwnerName(const string& _ownerName)
+{
+    m_ownerName = _ownerName;
+    m_ownerNameHasBeenSet = true;
+}
+
+bool Project::OwnerNameHasBeenSet() const
+{
+    return m_ownerNameHasBeenSet;
 }
 

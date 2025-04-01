@@ -51,9 +51,11 @@ namespace TencentCloud
                      * 获取规格类型
 BASIC：基础版
 PRO ：专业版
+PLATINUM： 铂金版
                      * @return InstanceType 规格类型
 BASIC：基础版
 PRO ：专业版
+PLATINUM： 铂金版
                      * 
                      */
                     std::string GetInstanceType() const;
@@ -62,9 +64,11 @@ PRO ：专业版
                      * 设置规格类型
 BASIC：基础版
 PRO ：专业版
+PLATINUM： 铂金版
                      * @param _instanceType 规格类型
 BASIC：基础版
 PRO ：专业版
+PLATINUM： 铂金版
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -99,14 +103,22 @@ PRO ：专业版
 
                     /**
                      * 获取是否售卖
+1: 可售卖
+0: 不可售卖
                      * @return OnSale 是否售卖
+1: 可售卖
+0: 不可售卖
                      * 
                      */
                     bool GetOnSale() const;
 
                     /**
                      * 设置是否售卖
+1: 可售卖
+0: 不可售卖
                      * @param _onSale 是否售卖
+1: 可售卖
+0: 不可售卖
                      * 
                      */
                     void SetOnSale(const bool& _onSale);
@@ -140,15 +152,15 @@ PRO ：专业版
                     bool TopicNumLimitHasBeenSet() const;
 
                     /**
-                     * 获取tps
-                     * @return TpsLimit tps
+                     * 获取MQTT 集群下每秒钟生产消息量和消费消息量之和。详细计算方式参考 [计费概述](https://cloud.tencent.com/document/product/1778/109698)
+                     * @return TpsLimit MQTT 集群下每秒钟生产消息量和消费消息量之和。详细计算方式参考 [计费概述](https://cloud.tencent.com/document/product/1778/109698)
                      * 
                      */
                     int64_t GetTpsLimit() const;
 
                     /**
-                     * 设置tps
-                     * @param _tpsLimit tps
+                     * 设置MQTT 集群下每秒钟生产消息量和消费消息量之和。详细计算方式参考 [计费概述](https://cloud.tencent.com/document/product/1778/109698)
+                     * @param _tpsLimit MQTT 集群下每秒钟生产消息量和消费消息量之和。详细计算方式参考 [计费概述](https://cloud.tencent.com/document/product/1778/109698)
                      * 
                      */
                     void SetTpsLimit(const int64_t& _tpsLimit);
@@ -250,6 +262,7 @@ PRO ：专业版
                      * 规格类型
 BASIC：基础版
 PRO ：专业版
+PLATINUM： 铂金版
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
@@ -262,6 +275,8 @@ PRO ：专业版
 
                     /**
                      * 是否售卖
+1: 可售卖
+0: 不可售卖
                      */
                     bool m_onSale;
                     bool m_onSaleHasBeenSet;
@@ -273,7 +288,7 @@ PRO ：专业版
                     bool m_topicNumLimitHasBeenSet;
 
                     /**
-                     * tps
+                     * MQTT 集群下每秒钟生产消息量和消费消息量之和。详细计算方式参考 [计费概述](https://cloud.tencent.com/document/product/1778/109698)
                      */
                     int64_t m_tpsLimit;
                     bool m_tpsLimitHasBeenSet;

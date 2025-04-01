@@ -344,11 +344,18 @@ CoreInternalOutcome ServiceInfo::Deserialize(const rapidjson::Value &value)
 
     if (value.HasMember("ScheduledAction") && !value["ScheduledAction"].IsNull())
     {
-        if (!value["ScheduledAction"].IsString())
+        if (!value["ScheduledAction"].IsObject())
         {
-            return CoreInternalOutcome(Core::Error("response `ServiceInfo.ScheduledAction` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `ServiceInfo.ScheduledAction` is not object type").SetRequestId(requestId));
         }
-        m_scheduledAction = string(value["ScheduledAction"].GetString());
+
+        CoreInternalOutcome outcome = m_scheduledAction.Deserialize(value["ScheduledAction"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
         m_scheduledActionHasBeenSet = true;
     }
 
@@ -724,7 +731,8 @@ void ServiceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ScheduledAction";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_scheduledAction.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_scheduledAction.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_podListHasBeenSet)
@@ -1184,12 +1192,12 @@ bool ServiceInfo::ScaleStrategyHasBeenSet() const
     return m_scaleStrategyHasBeenSet;
 }
 
-string ServiceInfo::GetScheduledAction() const
+ScheduledAction ServiceInfo::GetScheduledAction() const
 {
     return m_scheduledAction;
 }
 
-void ServiceInfo::SetScheduledAction(const string& _scheduledAction)
+void ServiceInfo::SetScheduledAction(const ScheduledAction& _scheduledAction)
 {
     m_scheduledAction = _scheduledAction;
     m_scheduledActionHasBeenSet = true;

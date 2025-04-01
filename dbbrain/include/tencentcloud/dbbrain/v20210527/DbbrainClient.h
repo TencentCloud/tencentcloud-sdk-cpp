@@ -119,6 +119,8 @@
 #include <tencentcloud/dbbrain/v20210527/model/DescribeRedisCommandOverviewResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeRedisProcessListRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeRedisProcessListResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeRedisSlowLogTopSqlsRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeRedisSlowLogTopSqlsResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeRedisTopBigKeysRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeRedisTopBigKeysResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeRedisTopHotKeysRequest.h>
@@ -129,6 +131,8 @@
 #include <tencentcloud/dbbrain/v20210527/model/DescribeSecurityAuditLogDownloadUrlsResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeSecurityAuditLogExportTasksRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeSecurityAuditLogExportTasksResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeSlowLogQueryTimeStatsRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeSlowLogQueryTimeStatsResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeSlowLogTimeSeriesStatsRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeSlowLogTimeSeriesStatsResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeSlowLogTopSqlsRequest.h>
@@ -331,6 +335,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRedisProcessListResponse> DescribeRedisProcessListOutcome;
                 typedef std::future<DescribeRedisProcessListOutcome> DescribeRedisProcessListOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeRedisProcessListRequest&, DescribeRedisProcessListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRedisProcessListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRedisSlowLogTopSqlsResponse> DescribeRedisSlowLogTopSqlsOutcome;
+                typedef std::future<DescribeRedisSlowLogTopSqlsOutcome> DescribeRedisSlowLogTopSqlsOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeRedisSlowLogTopSqlsRequest&, DescribeRedisSlowLogTopSqlsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRedisSlowLogTopSqlsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRedisTopBigKeysResponse> DescribeRedisTopBigKeysOutcome;
                 typedef std::future<DescribeRedisTopBigKeysOutcome> DescribeRedisTopBigKeysOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeRedisTopBigKeysRequest&, DescribeRedisTopBigKeysOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRedisTopBigKeysAsyncHandler;
@@ -346,6 +353,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSecurityAuditLogExportTasksResponse> DescribeSecurityAuditLogExportTasksOutcome;
                 typedef std::future<DescribeSecurityAuditLogExportTasksOutcome> DescribeSecurityAuditLogExportTasksOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeSecurityAuditLogExportTasksRequest&, DescribeSecurityAuditLogExportTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityAuditLogExportTasksAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSlowLogQueryTimeStatsResponse> DescribeSlowLogQueryTimeStatsOutcome;
+                typedef std::future<DescribeSlowLogQueryTimeStatsOutcome> DescribeSlowLogQueryTimeStatsOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeSlowLogQueryTimeStatsRequest&, DescribeSlowLogQueryTimeStatsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSlowLogQueryTimeStatsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSlowLogTimeSeriesStatsResponse> DescribeSlowLogTimeSeriesStatsOutcome;
                 typedef std::future<DescribeSlowLogTimeSeriesStatsOutcome> DescribeSlowLogTimeSeriesStatsOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeSlowLogTimeSeriesStatsRequest&, DescribeSlowLogTimeSeriesStatsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSlowLogTimeSeriesStatsAsyncHandler;
@@ -848,6 +858,15 @@ namespace TencentCloud
                 DescribeRedisProcessListOutcomeCallable DescribeRedisProcessListCallable(const Model::DescribeRedisProcessListRequest& request);
 
                 /**
+                 *统计排序指定时间段内的top慢sql。
+                 * @param req DescribeRedisSlowLogTopSqlsRequest
+                 * @return DescribeRedisSlowLogTopSqlsOutcome
+                 */
+                DescribeRedisSlowLogTopSqlsOutcome DescribeRedisSlowLogTopSqls(const Model::DescribeRedisSlowLogTopSqlsRequest &request);
+                void DescribeRedisSlowLogTopSqlsAsync(const Model::DescribeRedisSlowLogTopSqlsRequest& request, const DescribeRedisSlowLogTopSqlsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRedisSlowLogTopSqlsOutcomeCallable DescribeRedisSlowLogTopSqlsCallable(const Model::DescribeRedisSlowLogTopSqlsRequest& request);
+
+                /**
                  *查询redis实例大key列表。
                  * @param req DescribeRedisTopBigKeysRequest
                  * @return DescribeRedisTopBigKeysOutcome
@@ -891,6 +910,15 @@ namespace TencentCloud
                 DescribeSecurityAuditLogExportTasksOutcome DescribeSecurityAuditLogExportTasks(const Model::DescribeSecurityAuditLogExportTasksRequest &request);
                 void DescribeSecurityAuditLogExportTasksAsync(const Model::DescribeSecurityAuditLogExportTasksRequest& request, const DescribeSecurityAuditLogExportTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSecurityAuditLogExportTasksOutcomeCallable DescribeSecurityAuditLogExportTasksCallable(const Model::DescribeSecurityAuditLogExportTasksRequest& request);
+
+                /**
+                 *统计排序指定时间段内的top慢sql。
+                 * @param req DescribeSlowLogQueryTimeStatsRequest
+                 * @return DescribeSlowLogQueryTimeStatsOutcome
+                 */
+                DescribeSlowLogQueryTimeStatsOutcome DescribeSlowLogQueryTimeStats(const Model::DescribeSlowLogQueryTimeStatsRequest &request);
+                void DescribeSlowLogQueryTimeStatsAsync(const Model::DescribeSlowLogQueryTimeStatsRequest& request, const DescribeSlowLogQueryTimeStatsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSlowLogQueryTimeStatsOutcomeCallable DescribeSlowLogQueryTimeStatsCallable(const Model::DescribeSlowLogQueryTimeStatsRequest& request);
 
                 /**
                  *获取慢日志统计柱状图。

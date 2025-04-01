@@ -83,7 +83,8 @@ DescribeDBInstanceDetailResponse::DescribeDBInstanceDetailResponse() :
     m_isPhysicalReplicationSupportedHasBeenSet(false),
     m_isDcnStrongSyncSupportedHasBeenSet(false),
     m_isDcnSwitchSupportedHasBeenSet(false),
-    m_proxyVersionHasBeenSet(false)
+    m_proxyVersionHasBeenSet(false),
+    m_cpuTypeHasBeenSet(false)
 {
 }
 
@@ -768,6 +769,16 @@ CoreInternalOutcome DescribeDBInstanceDetailResponse::Deserialize(const string &
         m_proxyVersionHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CpuType") && !rsp["CpuType"].IsNull())
+    {
+        if (!rsp["CpuType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CpuType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cpuType = string(rsp["CpuType"].GetString());
+        m_cpuTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1284,6 +1295,14 @@ string DescribeDBInstanceDetailResponse::ToJsonString() const
         string key = "ProxyVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_proxyVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cpuTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CpuType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cpuType.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1896,6 +1915,16 @@ string DescribeDBInstanceDetailResponse::GetProxyVersion() const
 bool DescribeDBInstanceDetailResponse::ProxyVersionHasBeenSet() const
 {
     return m_proxyVersionHasBeenSet;
+}
+
+string DescribeDBInstanceDetailResponse::GetCpuType() const
+{
+    return m_cpuType;
+}
+
+bool DescribeDBInstanceDetailResponse::CpuTypeHasBeenSet() const
+{
+    return m_cpuTypeHasBeenSet;
 }
 
 
