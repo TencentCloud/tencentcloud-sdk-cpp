@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/dts/v20211206/model/DdlOption.h>
 #include <tencentcloud/dts/v20211206/model/ConflictHandleOption.h>
+#include <tencentcloud/dts/v20211206/model/KafkaOption.h>
 
 
 namespace TencentCloud
@@ -132,6 +133,111 @@ namespace TencentCloud
                      */
                     bool ConflictHandleOptionHasBeenSet() const;
 
+                    /**
+                     * 获取同步到kafka链路的kafka配置
+                     * @return KafkaOption 同步到kafka链路的kafka配置
+                     * 
+                     */
+                    KafkaOption GetKafkaOption() const;
+
+                    /**
+                     * 设置同步到kafka链路的kafka配置
+                     * @param _kafkaOption 同步到kafka链路的kafka配置
+                     * 
+                     */
+                    void SetKafkaOption(const KafkaOption& _kafkaOption);
+
+                    /**
+                     * 判断参数 KafkaOption 是否已赋值
+                     * @return KafkaOption 是否已赋值
+                     * 
+                     */
+                    bool KafkaOptionHasBeenSet() const;
+
+                    /**
+                     * 获取同步到kafka链路是否过滤掉begin和commit消息。目前仅mysql2kafka链路支持
+                     * @return FilterBeginCommit 同步到kafka链路是否过滤掉begin和commit消息。目前仅mysql2kafka链路支持
+                     * 
+                     */
+                    bool GetFilterBeginCommit() const;
+
+                    /**
+                     * 设置同步到kafka链路是否过滤掉begin和commit消息。目前仅mysql2kafka链路支持
+                     * @param _filterBeginCommit 同步到kafka链路是否过滤掉begin和commit消息。目前仅mysql2kafka链路支持
+                     * 
+                     */
+                    void SetFilterBeginCommit(const bool& _filterBeginCommit);
+
+                    /**
+                     * 判断参数 FilterBeginCommit 是否已赋值
+                     * @return FilterBeginCommit 是否已赋值
+                     * 
+                     */
+                    bool FilterBeginCommitHasBeenSet() const;
+
+                    /**
+                     * 获取同步到kafka链路是否过滤掉checkpoint消息。目前仅mysql2kafka链路支持
+                     * @return FilterCheckpoint 同步到kafka链路是否过滤掉checkpoint消息。目前仅mysql2kafka链路支持
+                     * 
+                     */
+                    bool GetFilterCheckpoint() const;
+
+                    /**
+                     * 设置同步到kafka链路是否过滤掉checkpoint消息。目前仅mysql2kafka链路支持
+                     * @param _filterCheckpoint 同步到kafka链路是否过滤掉checkpoint消息。目前仅mysql2kafka链路支持
+                     * 
+                     */
+                    void SetFilterCheckpoint(const bool& _filterCheckpoint);
+
+                    /**
+                     * 判断参数 FilterCheckpoint 是否已赋值
+                     * @return FilterCheckpoint 是否已赋值
+                     * 
+                     */
+                    bool FilterCheckpointHasBeenSet() const;
+
+                    /**
+                     * 获取同名表的处理，ReportErrorAfterCheck(前置校验并报错，默认)、ExecuteAfterIgnore(忽略并继续执行)
+                     * @return DealOfExistSameTable 同名表的处理，ReportErrorAfterCheck(前置校验并报错，默认)、ExecuteAfterIgnore(忽略并继续执行)
+                     * 
+                     */
+                    std::string GetDealOfExistSameTable() const;
+
+                    /**
+                     * 设置同名表的处理，ReportErrorAfterCheck(前置校验并报错，默认)、ExecuteAfterIgnore(忽略并继续执行)
+                     * @param _dealOfExistSameTable 同名表的处理，ReportErrorAfterCheck(前置校验并报错，默认)、ExecuteAfterIgnore(忽略并继续执行)
+                     * 
+                     */
+                    void SetDealOfExistSameTable(const std::string& _dealOfExistSameTable);
+
+                    /**
+                     * 判断参数 DealOfExistSameTable 是否已赋值
+                     * @return DealOfExistSameTable 是否已赋值
+                     * 
+                     */
+                    bool DealOfExistSameTableHasBeenSet() const;
+
+                    /**
+                     * 获取仅增量任务重新设置指定位点
+                     * @return StartPosition 仅增量任务重新设置指定位点
+                     * 
+                     */
+                    std::string GetStartPosition() const;
+
+                    /**
+                     * 设置仅增量任务重新设置指定位点
+                     * @param _startPosition 仅增量任务重新设置指定位点
+                     * 
+                     */
+                    void SetStartPosition(const std::string& _startPosition);
+
+                    /**
+                     * 判断参数 StartPosition 是否已赋值
+                     * @return StartPosition 是否已赋值
+                     * 
+                     */
+                    bool StartPositionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -157,6 +263,36 @@ namespace TencentCloud
                      */
                     ConflictHandleOption m_conflictHandleOption;
                     bool m_conflictHandleOptionHasBeenSet;
+
+                    /**
+                     * 同步到kafka链路的kafka配置
+                     */
+                    KafkaOption m_kafkaOption;
+                    bool m_kafkaOptionHasBeenSet;
+
+                    /**
+                     * 同步到kafka链路是否过滤掉begin和commit消息。目前仅mysql2kafka链路支持
+                     */
+                    bool m_filterBeginCommit;
+                    bool m_filterBeginCommitHasBeenSet;
+
+                    /**
+                     * 同步到kafka链路是否过滤掉checkpoint消息。目前仅mysql2kafka链路支持
+                     */
+                    bool m_filterCheckpoint;
+                    bool m_filterCheckpointHasBeenSet;
+
+                    /**
+                     * 同名表的处理，ReportErrorAfterCheck(前置校验并报错，默认)、ExecuteAfterIgnore(忽略并继续执行)
+                     */
+                    std::string m_dealOfExistSameTable;
+                    bool m_dealOfExistSameTableHasBeenSet;
+
+                    /**
+                     * 仅增量任务重新设置指定位点
+                     */
+                    std::string m_startPosition;
+                    bool m_startPositionHasBeenSet;
 
                 };
             }

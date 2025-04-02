@@ -467,6 +467,27 @@ namespace TencentCloud
                     bool TmpTokenHasBeenSet() const;
 
                     /**
+                     * 获取是否走加密传输、UnEncrypted表示不走加密传输，Encrypted表示走加密传输，默认UnEncrypted
+                     * @return EncryptConn 是否走加密传输、UnEncrypted表示不走加密传输，Encrypted表示走加密传输，默认UnEncrypted
+                     * 
+                     */
+                    std::string GetEncryptConn() const;
+
+                    /**
+                     * 设置是否走加密传输、UnEncrypted表示不走加密传输，Encrypted表示走加密传输，默认UnEncrypted
+                     * @param _encryptConn 是否走加密传输、UnEncrypted表示不走加密传输，Encrypted表示走加密传输，默认UnEncrypted
+                     * 
+                     */
+                    void SetEncryptConn(const std::string& _encryptConn);
+
+                    /**
+                     * 判断参数 EncryptConn 是否已赋值
+                     * @return EncryptConn 是否已赋值
+                     * 
+                     */
+                    bool EncryptConnHasBeenSet() const;
+
+                    /**
                      * 获取tdsql的分片id。如节点类型为set必填。
                      * @return SetId tdsql的分片id。如节点类型为set必填。
                      * 
@@ -608,6 +629,12 @@ namespace TencentCloud
                      */
                     std::string m_tmpToken;
                     bool m_tmpTokenHasBeenSet;
+
+                    /**
+                     * 是否走加密传输、UnEncrypted表示不走加密传输，Encrypted表示走加密传输，默认UnEncrypted
+                     */
+                    std::string m_encryptConn;
+                    bool m_encryptConnHasBeenSet;
 
                     /**
                      * tdsql的分片id。如节点类型为set必填。
