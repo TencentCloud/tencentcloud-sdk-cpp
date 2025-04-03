@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Namespace 命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _namespace 命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNamespace(const std::string& _namespace);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置分组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Group 配置分组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroup() const;
 
                     /**
                      * 设置配置分组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _group 配置分组
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroup(const std::string& _group);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取文件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FileName 文件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFileName() const;
 
                     /**
                      * 设置文件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fileName 文件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFileName(const std::string& _fileName);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取发布版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReleaseVersion 发布版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReleaseVersion() const;
 
                     /**
                      * 设置发布版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _releaseVersion 发布版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReleaseVersion(const std::string& _releaseVersion);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取配置发布ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 配置发布ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置配置发布ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id 配置发布ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const uint64_t& _id);
@@ -175,35 +155,30 @@ namespace TencentCloud
 
                     /**
                      * 命名空间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;
 
                     /**
                      * 配置分组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_group;
                     bool m_groupHasBeenSet;
 
                     /**
                      * 文件名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fileName;
                     bool m_fileNameHasBeenSet;
 
                     /**
                      * 发布版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_releaseVersion;
                     bool m_releaseVersionHasBeenSet;
 
                     /**
                      * 配置发布ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_id;
                     bool m_idHasBeenSet;

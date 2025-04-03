@@ -38,7 +38,8 @@ Apply::Apply() :
     m_approverIdHasBeenSet(false),
     m_approverNameHasBeenSet(false),
     m_approveProjectNameHasBeenSet(false),
-    m_applyIdHasBeenSet(false)
+    m_applyIdHasBeenSet(false),
+    m_metadataHasBeenSet(false)
 {
 }
 
@@ -227,6 +228,16 @@ CoreInternalOutcome Apply::Deserialize(const rapidjson::Value &value)
         m_applyIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Metadata") && !value["Metadata"].IsNull())
+    {
+        if (!value["Metadata"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Apply.Metadata` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_metadata = string(value["Metadata"].GetString());
+        m_metadataHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -376,6 +387,14 @@ void Apply::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "ApplyId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_applyId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_metadataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Metadata";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_metadata.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -667,5 +686,21 @@ void Apply::SetApplyId(const string& _applyId)
 bool Apply::ApplyIdHasBeenSet() const
 {
     return m_applyIdHasBeenSet;
+}
+
+string Apply::GetMetadata() const
+{
+    return m_metadata;
+}
+
+void Apply::SetMetadata(const string& _metadata)
+{
+    m_metadata = _metadata;
+    m_metadataHasBeenSet = true;
+}
+
+bool Apply::MetadataHasBeenSet() const
+{
+    return m_metadataHasBeenSet;
 }
 

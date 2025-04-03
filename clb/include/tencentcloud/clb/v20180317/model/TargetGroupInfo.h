@@ -204,6 +204,35 @@ namespace TencentCloud
                     bool AssociatedRuleHasBeenSet() const;
 
                     /**
+                     * 获取后端转发协议类型，支持类型TCP， UDP。仅V2新版目标组支持返回该参数。
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Protocol 后端转发协议类型，支持类型TCP， UDP。仅V2新版目标组支持返回该参数。
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetProtocol() const;
+
+                    /**
+                     * 设置后端转发协议类型，支持类型TCP， UDP。仅V2新版目标组支持返回该参数。
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _protocol 后端转发协议类型，支持类型TCP， UDP。仅V2新版目标组支持返回该参数。
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetProtocol(const std::string& _protocol);
+
+                    /**
+                     * 判断参数 Protocol 是否已赋值
+                     * @return Protocol 是否已赋值
+                     * 
+                     */
+                    bool ProtocolHasBeenSet() const;
+
+                    /**
                      * 获取目标组类型，当前支持v1(旧版目标组), v2(新版目标组), gwlb(全局负载均衡目标组)。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TargetGroupType 目标组类型，当前支持v1(旧版目标组), v2(新版目标组), gwlb(全局负载均衡目标组)。
@@ -390,6 +419,14 @@ namespace TencentCloud
                      */
                     std::vector<AssociationItem> m_associatedRule;
                     bool m_associatedRuleHasBeenSet;
+
+                    /**
+                     * 后端转发协议类型，支持类型TCP， UDP。仅V2新版目标组支持返回该参数。
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_protocol;
+                    bool m_protocolHasBeenSet;
 
                     /**
                      * 目标组类型，当前支持v1(旧版目标组), v2(新版目标组), gwlb(全局负载均衡目标组)。

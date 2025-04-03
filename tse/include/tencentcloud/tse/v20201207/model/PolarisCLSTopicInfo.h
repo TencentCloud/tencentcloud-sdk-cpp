@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志集ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogSetId 日志集ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLogSetId() const;
 
                     /**
                      * 设置日志集ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logSetId 日志集ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogSetId(const std::string& _logSetId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志集名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogSetName 日志集名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLogSetName() const;
 
                     /**
                      * 设置日志集名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _logSetName 日志集名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLogSetName(const std::string& _logSetName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicId 日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTopicId() const;
 
                     /**
                      * 设置日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topicId 日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopicId(const std::string& _topicId);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取日志主题名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TopicName 日志主题名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTopicName() const;
 
                     /**
                      * 设置日志主题名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _topicName 日志主题名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTopicName(const std::string& _topicName);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 日志集ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logSetId;
                     bool m_logSetIdHasBeenSet;
 
                     /**
                      * 日志集名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logSetName;
                     bool m_logSetNameHasBeenSet;
 
                     /**
                      * 日志主题ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
 
                     /**
                      * 日志主题名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_topicName;
                     bool m_topicNameHasBeenSet;

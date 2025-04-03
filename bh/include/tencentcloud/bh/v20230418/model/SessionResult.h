@@ -466,6 +466,27 @@ namespace TencentCloud
                      */
                     bool AppAssetUrlHasBeenSet() const;
 
+                    /**
+                     * 获取回放类型 默认0, 1-rfb 2-mp4 3-ssh
+                     * @return ReplayType 回放类型 默认0, 1-rfb 2-mp4 3-ssh
+                     * 
+                     */
+                    uint64_t GetReplayType() const;
+
+                    /**
+                     * 设置回放类型 默认0, 1-rfb 2-mp4 3-ssh
+                     * @param _replayType 回放类型 默认0, 1-rfb 2-mp4 3-ssh
+                     * 
+                     */
+                    void SetReplayType(const uint64_t& _replayType);
+
+                    /**
+                     * 判断参数 ReplayType 是否已赋值
+                     * @return ReplayType 是否已赋值
+                     * 
+                     */
+                    bool ReplayTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -587,6 +608,12 @@ namespace TencentCloud
                      */
                     std::string m_appAssetUrl;
                     bool m_appAssetUrlHasBeenSet;
+
+                    /**
+                     * 回放类型 默认0, 1-rfb 2-mp4 3-ssh
+                     */
+                    uint64_t m_replayType;
+                    bool m_replayTypeHasBeenSet;
 
                 };
             }

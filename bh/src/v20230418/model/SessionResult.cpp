@@ -40,7 +40,8 @@ SessionResult::SessionResult() :
     m_apCodeHasBeenSet(false),
     m_protocolHasBeenSet(false),
     m_appAssetKindHasBeenSet(false),
-    m_appAssetUrlHasBeenSet(false)
+    m_appAssetUrlHasBeenSet(false),
+    m_replayTypeHasBeenSet(false)
 {
 }
 
@@ -249,6 +250,16 @@ CoreInternalOutcome SessionResult::Deserialize(const rapidjson::Value &value)
         m_appAssetUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("ReplayType") && !value["ReplayType"].IsNull())
+    {
+        if (!value["ReplayType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SessionResult.ReplayType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_replayType = value["ReplayType"].GetUint64();
+        m_replayTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -414,6 +425,14 @@ void SessionResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "AppAssetUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_appAssetUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_replayTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReplayType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_replayType, allocator);
     }
 
 }
@@ -737,5 +756,21 @@ void SessionResult::SetAppAssetUrl(const string& _appAssetUrl)
 bool SessionResult::AppAssetUrlHasBeenSet() const
 {
     return m_appAssetUrlHasBeenSet;
+}
+
+uint64_t SessionResult::GetReplayType() const
+{
+    return m_replayType;
+}
+
+void SessionResult::SetReplayType(const uint64_t& _replayType)
+{
+    m_replayType = _replayType;
+    m_replayTypeHasBeenSet = true;
+}
+
+bool SessionResult::ReplayTypeHasBeenSet() const
+{
+    return m_replayTypeHasBeenSet;
 }
 

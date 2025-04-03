@@ -219,18 +219,14 @@ namespace TencentCloud
 
                     /**
                      * 获取引擎关联CLS日志主题信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CLSTopics 引擎关联CLS日志主题信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<PolarisCLSTopicInfo> GetCLSTopics() const;
 
                     /**
                      * 设置引擎关联CLS日志主题信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cLSTopics 引擎关联CLS日志主题信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCLSTopics(const std::vector<PolarisCLSTopicInfo>& _cLSTopics);
@@ -294,7 +290,6 @@ namespace TencentCloud
 
                     /**
                      * 引擎关联CLS日志主题信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<PolarisCLSTopicInfo> m_cLSTopics;
                     bool m_cLSTopicsHasBeenSet;

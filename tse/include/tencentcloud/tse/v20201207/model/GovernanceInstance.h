@@ -112,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例ip地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Host 实例ip地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHost() const;
 
                     /**
                      * 设置实例ip地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _host 实例ip地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHost(const std::string& _host);
@@ -137,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例端口信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Port 实例端口信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetPort() const;
 
                     /**
                      * 设置实例端口信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _port 实例端口信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPort(const uint64_t& _port);
@@ -162,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取通信协议。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Protocol 通信协议。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置通信协议。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _protocol 通信协议。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -187,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取版本信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Version 版本信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置版本信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _version 版本信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVersion(const std::string& _version);
@@ -212,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取负载均衡权重。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Weight 负载均衡权重。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetWeight() const;
 
                     /**
                      * 设置负载均衡权重。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _weight 负载均衡权重。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetWeight(const uint64_t& _weight);
@@ -237,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启健康检查。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableHealthCheck 是否开启健康检查。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnableHealthCheck() const;
 
                     /**
                      * 设置是否开启健康检查。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enableHealthCheck 是否开启健康检查。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnableHealthCheck(const bool& _enableHealthCheck);
@@ -262,18 +238,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例是否健康。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Healthy 实例是否健康。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetHealthy() const;
 
                     /**
                      * 设置实例是否健康。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _healthy 实例是否健康。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHealthy(const bool& _healthy);
@@ -287,18 +259,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例是否隔离。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Isolate 实例是否隔离。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsolate() const;
 
                     /**
                      * 设置实例是否隔离。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isolate 实例是否隔离。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsolate(const bool& _isolate);
@@ -312,18 +280,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 实例创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置实例创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 实例创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -337,18 +301,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例修改时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifyTime 实例修改时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
                      * 设置实例修改时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modifyTime 实例修改时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
@@ -362,18 +322,14 @@ namespace TencentCloud
 
                     /**
                      * 获取元数据数组。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Metadatas 元数据数组。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Metadata> GetMetadatas() const;
 
                     /**
                      * 设置元数据数组。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _metadatas 元数据数组。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMetadatas(const std::vector<Metadata>& _metadatas);
@@ -387,18 +343,14 @@ namespace TencentCloud
 
                     /**
                      * 获取上报心跳间隔。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ttl 上报心跳间隔。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTtl() const;
 
                     /**
                      * 设置上报心跳间隔。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ttl 上报心跳间隔。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTtl(const uint64_t& _ttl);
@@ -412,18 +364,14 @@ namespace TencentCloud
 
                     /**
                      * 获取版本信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceVersion 版本信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceVersion() const;
 
                     /**
                      * 设置版本信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceVersion 版本信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceVersion(const std::string& _instanceVersion);
@@ -437,18 +385,14 @@ namespace TencentCloud
 
                     /**
                      * 获取状态信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HealthStatus 状态信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHealthStatus() const;
 
                     /**
                      * 设置状态信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _healthStatus 状态信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHealthStatus(const std::string& _healthStatus);
@@ -462,18 +406,14 @@ namespace TencentCloud
 
                     /**
                      * 获取描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Comment 描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetComment() const;
 
                     /**
                      * 设置描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _comment 描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetComment(const std::string& _comment);
@@ -507,105 +447,90 @@ namespace TencentCloud
 
                     /**
                      * 实例ip地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_host;
                     bool m_hostHasBeenSet;
 
                     /**
                      * 实例端口信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
                      * 通信协议。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
                      * 版本信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;
 
                     /**
                      * 负载均衡权重。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_weight;
                     bool m_weightHasBeenSet;
 
                     /**
                      * 是否开启健康检查。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enableHealthCheck;
                     bool m_enableHealthCheckHasBeenSet;
 
                     /**
                      * 实例是否健康。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_healthy;
                     bool m_healthyHasBeenSet;
 
                     /**
                      * 实例是否隔离。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isolate;
                     bool m_isolateHasBeenSet;
 
                     /**
                      * 实例创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 实例修改时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
 
                     /**
                      * 元数据数组。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Metadata> m_metadatas;
                     bool m_metadatasHasBeenSet;
 
                     /**
                      * 上报心跳间隔。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_ttl;
                     bool m_ttlHasBeenSet;
 
                     /**
                      * 版本信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceVersion;
                     bool m_instanceVersionHasBeenSet;
 
                     /**
                      * 状态信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_healthStatus;
                     bool m_healthStatusHasBeenSet;
 
                     /**
                      * 描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取契约版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Version 契约版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVersion() const;
 
                     /**
                      * 设置契约版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _version 契约版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVersion(const std::string& _version);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取契约名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 契约名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置契约名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 契约名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取唯一名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Key 唯一名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置唯一名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _key 唯一名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKey(const std::string& _key);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 契约版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;
 
                     /**
                      * 契约名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 唯一名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;

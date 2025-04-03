@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取配置文件
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigFile 配置文件
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ConfigFile GetConfigFile() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 配置文件
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ConfigFile m_configFile;
                     bool m_configFileHasBeenSet;

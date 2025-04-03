@@ -359,15 +359,15 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取生产限流，单位 MB/s
-                     * @return QuotaProducerByteRate 生产限流，单位 MB/s
+                     * 获取生产限流，单位 MB/s；设置为-1，则生产不限流
+                     * @return QuotaProducerByteRate 生产限流，单位 MB/s；设置为-1，则生产不限流
                      * 
                      */
                     int64_t GetQuotaProducerByteRate() const;
 
                     /**
-                     * 设置生产限流，单位 MB/s
-                     * @param _quotaProducerByteRate 生产限流，单位 MB/s
+                     * 设置生产限流，单位 MB/s；设置为-1，则生产不限流
+                     * @param _quotaProducerByteRate 生产限流，单位 MB/s；设置为-1，则生产不限流
                      * 
                      */
                     void SetQuotaProducerByteRate(const int64_t& _quotaProducerByteRate);
@@ -380,15 +380,15 @@ namespace TencentCloud
                     bool QuotaProducerByteRateHasBeenSet() const;
 
                     /**
-                     * 获取消费限流，单位 MB/s
-                     * @return QuotaConsumerByteRate 消费限流，单位 MB/s
+                     * 获取消费限流，单位 MB/s；设置为-1，则消费不限流
+                     * @return QuotaConsumerByteRate 消费限流，单位 MB/s；设置为-1，则消费不限流
                      * 
                      */
                     int64_t GetQuotaConsumerByteRate() const;
 
                     /**
-                     * 设置消费限流，单位 MB/s
-                     * @param _quotaConsumerByteRate 消费限流，单位 MB/s
+                     * 设置消费限流，单位 MB/s；设置为-1，则消费不限流
+                     * @param _quotaConsumerByteRate 消费限流，单位 MB/s；设置为-1，则消费不限流
                      * 
                      */
                     void SetQuotaConsumerByteRate(const int64_t& _quotaConsumerByteRate);
@@ -514,13 +514,13 @@ namespace TencentCloud
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 生产限流，单位 MB/s
+                     * 生产限流，单位 MB/s；设置为-1，则生产不限流
                      */
                     int64_t m_quotaProducerByteRate;
                     bool m_quotaProducerByteRateHasBeenSet;
 
                     /**
-                     * 消费限流，单位 MB/s
+                     * 消费限流，单位 MB/s；设置为-1，则消费不限流
                      */
                     int64_t m_quotaConsumerByteRate;
                     bool m_quotaConsumerByteRateHasBeenSet;

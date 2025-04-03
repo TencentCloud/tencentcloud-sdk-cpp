@@ -132,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务别名的描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Comment 服务别名的描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetComment() const;
 
                     /**
                      * 设置服务别名的描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _comment 服务别名的描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetComment(const std::string& _comment);
@@ -157,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务别名创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 服务别名创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置服务别名创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 服务别名创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -182,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务别名修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifyTime 服务别名修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
                      * 设置服务别名修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modifyTime 服务别名修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
@@ -207,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务别名ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 服务别名ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置服务别名ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id 服务别名ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -232,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该服务别名是否可以编辑
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Editable 该服务别名是否可以编辑
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEditable() const;
 
                     /**
                      * 设置该服务别名是否可以编辑
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _editable 该服务别名是否可以编辑
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEditable(const bool& _editable);
@@ -283,35 +263,30 @@ namespace TencentCloud
 
                     /**
                      * 服务别名的描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;
 
                     /**
                      * 服务别名创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 服务别名修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
 
                     /**
                      * 服务别名ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * 该服务别名是否可以编辑
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_editable;
                     bool m_editableHasBeenSet;

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网关服务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceId 网关服务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetServiceId() const;
 
                     /**
                      * 设置网关服务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serviceId 网关服务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServiceId(const std::string& _serviceId);
@@ -75,7 +71,6 @@ namespace TencentCloud
 
                     /**
                      * 网关服务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serviceId;
                     bool m_serviceIdHasBeenSet;

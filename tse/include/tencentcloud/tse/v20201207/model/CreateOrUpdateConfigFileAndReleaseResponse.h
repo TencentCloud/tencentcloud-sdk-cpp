@@ -59,9 +59,7 @@ namespace TencentCloud
 
                     /**
                      * 获取配置发布Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigFileReleaseId 配置发布Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConfigFileReleaseId() const;
@@ -75,9 +73,7 @@ namespace TencentCloud
 
                     /**
                      * 获取配置文件Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigFileId 配置文件Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConfigFileId() const;
@@ -99,14 +95,12 @@ namespace TencentCloud
 
                     /**
                      * 配置发布Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_configFileReleaseId;
                     bool m_configFileReleaseIdHasBeenSet;
 
                     /**
                      * 配置文件Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_configFileId;
                     bool m_configFileIdHasBeenSet;

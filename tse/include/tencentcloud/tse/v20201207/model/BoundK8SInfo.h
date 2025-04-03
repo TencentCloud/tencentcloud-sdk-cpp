@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取绑定的kubernetes的集群类型，分tke和eks两种
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BoundClusterType 绑定的kubernetes的集群类型，分tke和eks两种
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBoundClusterType() const;
 
                     /**
                      * 设置绑定的kubernetes的集群类型，分tke和eks两种
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _boundClusterType 绑定的kubernetes的集群类型，分tke和eks两种
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBoundClusterType(const std::string& _boundClusterType);
@@ -94,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务同步模式，all为全量同步，demand为按需同步
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SyncMode 服务同步模式，all为全量同步，demand为按需同步
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSyncMode() const;
 
                     /**
                      * 设置服务同步模式，all为全量同步，demand为按需同步
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _syncMode 服务同步模式，all为全量同步，demand为按需同步
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSyncMode(const std::string& _syncMode);
@@ -119,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取绑定的kubernetes集群所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BindRegion 绑定的kubernetes集群所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBindRegion() const;
 
                     /**
                      * 设置绑定的kubernetes集群所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bindRegion 绑定的kubernetes集群所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBindRegion(const std::string& _bindRegion);
@@ -152,21 +140,18 @@ namespace TencentCloud
 
                     /**
                      * 绑定的kubernetes的集群类型，分tke和eks两种
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_boundClusterType;
                     bool m_boundClusterTypeHasBeenSet;
 
                     /**
                      * 服务同步模式，all为全量同步，demand为按需同步
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_syncMode;
                     bool m_syncModeHasBeenSet;
 
                     /**
                      * 绑定的kubernetes集群所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bindRegion;
                     bool m_bindRegionHasBeenSet;

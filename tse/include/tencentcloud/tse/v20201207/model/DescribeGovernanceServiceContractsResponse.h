@@ -74,9 +74,7 @@ namespace TencentCloud
 
                     /**
                      * 获取契约定义列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceContracts 契约定义列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<GovernanceServiceContract> GetServiceContracts() const;
@@ -104,7 +102,6 @@ namespace TencentCloud
 
                     /**
                      * 契约定义列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<GovernanceServiceContract> m_serviceContracts;
                     bool m_serviceContractsHasBeenSet;

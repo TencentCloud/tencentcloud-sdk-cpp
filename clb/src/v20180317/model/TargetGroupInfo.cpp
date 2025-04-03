@@ -28,6 +28,7 @@ TargetGroupInfo::TargetGroupInfo() :
     m_createdTimeHasBeenSet(false),
     m_updatedTimeHasBeenSet(false),
     m_associatedRuleHasBeenSet(false),
+    m_protocolHasBeenSet(false),
     m_targetGroupTypeHasBeenSet(false),
     m_associatedRuleCountHasBeenSet(false),
     m_registeredInstancesCountHasBeenSet(false),
@@ -120,6 +121,16 @@ CoreInternalOutcome TargetGroupInfo::Deserialize(const rapidjson::Value &value)
             m_associatedRule.push_back(item);
         }
         m_associatedRuleHasBeenSet = true;
+    }
+
+    if (value.HasMember("Protocol") && !value["Protocol"].IsNull())
+    {
+        if (!value["Protocol"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TargetGroupInfo.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_protocol = string(value["Protocol"].GetString());
+        m_protocolHasBeenSet = true;
     }
 
     if (value.HasMember("TargetGroupType") && !value["TargetGroupType"].IsNull())
@@ -260,6 +271,14 @@ void TargetGroupInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_protocolHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Protocol";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
     }
 
     if (m_targetGroupTypeHasBeenSet)
@@ -430,6 +449,22 @@ void TargetGroupInfo::SetAssociatedRule(const vector<AssociationItem>& _associat
 bool TargetGroupInfo::AssociatedRuleHasBeenSet() const
 {
     return m_associatedRuleHasBeenSet;
+}
+
+string TargetGroupInfo::GetProtocol() const
+{
+    return m_protocol;
+}
+
+void TargetGroupInfo::SetProtocol(const string& _protocol)
+{
+    m_protocol = _protocol;
+    m_protocolHasBeenSet = true;
+}
+
+bool TargetGroupInfo::ProtocolHasBeenSet() const
+{
+    return m_protocolHasBeenSet;
 }
 
 string TargetGroupInfo::GetTargetGroupType() const

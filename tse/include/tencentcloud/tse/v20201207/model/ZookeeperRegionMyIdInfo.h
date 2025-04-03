@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Region 地域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRegion() const;
 
                     /**
                      * 设置地域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _region 地域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegion(const std::string& _region);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取myid 的起始号段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MyIdStart myid 的起始号段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMyIdStart() const;
 
                     /**
                      * 设置myid 的起始号段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _myIdStart myid 的起始号段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMyIdStart(const int64_t& _myIdStart);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取myid 的结束号段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MyIdEnd myid 的结束号段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetMyIdEnd() const;
 
                     /**
                      * 设置myid 的结束号段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _myIdEnd myid 的结束号段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMyIdEnd(const int64_t& _myIdEnd);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 地域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
                      * myid 的起始号段
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_myIdStart;
                     bool m_myIdStartHasBeenSet;
 
                     /**
                      * myid 的结束号段
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_myIdEnd;
                     bool m_myIdEndHasBeenSet;

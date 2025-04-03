@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取存储对象，分为snap和txn两种
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 存储对象，分为snap和txn两种
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置存储对象，分为snap和txn两种
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 存储对象，分为snap和txn两种
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取存储类型，分为三类CLOUD_PREMIUM/CLOUD_SSD/CLOUD_SSD_PLUS，分别对应高性能云硬盘、SSD云硬盘、增强型SSD云硬盘
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 存储类型，分为三类CLOUD_PREMIUM/CLOUD_SSD/CLOUD_SSD_PLUS，分别对应高性能云硬盘、SSD云硬盘、增强型SSD云硬盘
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置存储类型，分为三类CLOUD_PREMIUM/CLOUD_SSD/CLOUD_SSD_PLUS，分别对应高性能云硬盘、SSD云硬盘、增强型SSD云硬盘
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 存储类型，分为三类CLOUD_PREMIUM/CLOUD_SSD/CLOUD_SSD_PLUS，分别对应高性能云硬盘、SSD云硬盘、增强型SSD云硬盘
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取存储容量，[50, 3200]的范围
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Capacity 存储容量，[50, 3200]的范围
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetCapacity() const;
 
                     /**
                      * 设置存储容量，[50, 3200]的范围
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _capacity 存储容量，[50, 3200]的范围
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCapacity(const uint64_t& _capacity);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 存储对象，分为snap和txn两种
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 存储类型，分为三类CLOUD_PREMIUM/CLOUD_SSD/CLOUD_SSD_PLUS，分别对应高性能云硬盘、SSD云硬盘、增强型SSD云硬盘
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 存储容量，[50, 3200]的范围
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_capacity;
                     bool m_capacityHasBeenSet;

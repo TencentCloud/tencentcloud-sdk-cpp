@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取引擎部署地域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EngineRegion 引擎部署地域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEngineRegion() const;
 
                     /**
                      * 设置引擎部署地域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _engineRegion 引擎部署地域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEngineRegion(const std::string& _engineRegion);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取引擎在该地域的副本数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Replica 引擎在该地域的副本数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetReplica() const;
 
                     /**
                      * 设置引擎在该地域的副本数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _replica 引擎在该地域的副本数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetReplica(const int64_t& _replica);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取引擎在该地域的规格id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SpecId 引擎在该地域的规格id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSpecId() const;
 
                     /**
                      * 设置引擎在该地域的规格id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _specId 引擎在该地域的规格id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSpecId(const std::string& _specId);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取客户端内网的网络信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IntranetVpcInfos 客户端内网的网络信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<VpcInfo> GetIntranetVpcInfos() const;
 
                     /**
                      * 设置客户端内网的网络信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _intranetVpcInfos 客户端内网的网络信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIntranetVpcInfos(const std::vector<VpcInfo>& _intranetVpcInfos);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取控制台内网的网络信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConsoleIntranetVpcInfos 控制台内网的网络信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<VpcInfo> GetConsoleIntranetVpcInfos() const;
 
                     /**
                      * 设置控制台内网的网络信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _consoleIntranetVpcInfos 控制台内网的网络信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConsoleIntranetVpcInfos(const std::vector<VpcInfo>& _consoleIntranetVpcInfos);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开公网
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableClientInternet 是否开公网
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnableClientInternet() const;
 
                     /**
                      * 设置是否开公网
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enableClientInternet 是否开公网
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnableClientInternet(const bool& _enableClientInternet);
@@ -199,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取限流客户端内网的网络信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LimiterIntranetVpcInfos 限流客户端内网的网络信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<VpcInfo> GetLimiterIntranetVpcInfos() const;
 
                     /**
                      * 设置限流客户端内网的网络信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _limiterIntranetVpcInfos 限流客户端内网的网络信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLimiterIntranetVpcInfos(const std::vector<VpcInfo>& _limiterIntranetVpcInfos);
@@ -224,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否为主地域，仅在服务治理中心多地域有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MainRegion 是否为主地域，仅在服务治理中心多地域有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetMainRegion() const;
 
                     /**
                      * 设置是否为主地域，仅在服务治理中心多地域有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mainRegion 是否为主地域，仅在服务治理中心多地域有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMainRegion(const bool& _mainRegion);
@@ -249,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该地域所在的EKS集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EKSClusterID 该地域所在的EKS集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEKSClusterID() const;
 
                     /**
                      * 设置该地域所在的EKS集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _eKSClusterID 该地域所在的EKS集群
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEKSClusterID(const std::string& _eKSClusterID);
@@ -276,63 +240,54 @@ namespace TencentCloud
 
                     /**
                      * 引擎部署地域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_engineRegion;
                     bool m_engineRegionHasBeenSet;
 
                     /**
                      * 引擎在该地域的副本数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_replica;
                     bool m_replicaHasBeenSet;
 
                     /**
                      * 引擎在该地域的规格id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_specId;
                     bool m_specIdHasBeenSet;
 
                     /**
                      * 客户端内网的网络信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<VpcInfo> m_intranetVpcInfos;
                     bool m_intranetVpcInfosHasBeenSet;
 
                     /**
                      * 控制台内网的网络信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<VpcInfo> m_consoleIntranetVpcInfos;
                     bool m_consoleIntranetVpcInfosHasBeenSet;
 
                     /**
                      * 是否开公网
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enableClientInternet;
                     bool m_enableClientInternetHasBeenSet;
 
                     /**
                      * 限流客户端内网的网络信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<VpcInfo> m_limiterIntranetVpcInfos;
                     bool m_limiterIntranetVpcInfosHasBeenSet;
 
                     /**
                      * 是否为主地域，仅在服务治理中心多地域有效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_mainRegion;
                     bool m_mainRegionHasBeenSet;
 
                     /**
                      * 该地域所在的EKS集群
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_eKSClusterID;
                     bool m_eKSClusterIDHasBeenSet;

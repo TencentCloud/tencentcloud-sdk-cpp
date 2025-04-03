@@ -223,18 +223,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetIds 子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetSubnetIds() const;
 
                     /**
                      * 设置子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subnetIds 子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubnetIds(const std::vector<std::string>& _subnetIds);
@@ -248,18 +244,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启持久化存储
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableStorage 是否开启持久化存储
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnableStorage() const;
 
                     /**
                      * 设置是否开启持久化存储
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enableStorage 是否开启持久化存储
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnableStorage(const bool& _enableStorage);
@@ -273,18 +265,14 @@ namespace TencentCloud
 
                     /**
                      * 获取数据存储方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StorageType 数据存储方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStorageType() const;
 
                     /**
                      * 设置数据存储方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _storageType 数据存储方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStorageType(const std::string& _storageType);
@@ -298,18 +286,14 @@ namespace TencentCloud
 
                     /**
                      * 获取云硬盘容量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StorageCapacity 云硬盘容量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStorageCapacity() const;
 
                     /**
                      * 设置云硬盘容量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _storageCapacity 云硬盘容量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStorageCapacity(const int64_t& _storageCapacity);
@@ -323,18 +307,14 @@ namespace TencentCloud
 
                     /**
                      * 获取计费方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Paymode 计费方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPaymode() const;
 
                     /**
                      * 设置计费方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _paymode 计费方式
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPaymode(const std::string& _paymode);
@@ -348,18 +328,14 @@ namespace TencentCloud
 
                     /**
                      * 获取EKS集群的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EKSClusterID EKS集群的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEKSClusterID() const;
 
                     /**
                      * 设置EKS集群的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _eKSClusterID EKS集群的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEKSClusterID(const std::string& _eKSClusterID);
@@ -373,18 +349,14 @@ namespace TencentCloud
 
                     /**
                      * 获取集群创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 集群创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置集群创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 集群创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -398,18 +370,14 @@ namespace TencentCloud
 
                     /**
                      * 获取环境配置信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnvInfos 环境配置信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<EnvInfo> GetEnvInfos() const;
 
                     /**
                      * 设置环境配置信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _envInfos 环境配置信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnvInfos(const std::vector<EnvInfo>& _envInfos);
@@ -423,18 +391,14 @@ namespace TencentCloud
 
                     /**
                      * 获取引擎所在的区域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EngineRegion 引擎所在的区域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEngineRegion() const;
 
                     /**
                      * 设置引擎所在的区域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _engineRegion 引擎所在的区域
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEngineRegion(const std::string& _engineRegion);
@@ -448,18 +412,14 @@ namespace TencentCloud
 
                     /**
                      * 获取注册引擎是否开启公网
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableInternet 注册引擎是否开启公网
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnableInternet() const;
 
                     /**
                      * 设置注册引擎是否开启公网
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enableInternet 注册引擎是否开启公网
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnableInternet(const bool& _enableInternet);
@@ -473,18 +433,14 @@ namespace TencentCloud
 
                     /**
                      * 获取私有网络列表信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcInfos 私有网络列表信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<VpcInfo> GetVpcInfos() const;
 
                     /**
                      * 设置私有网络列表信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcInfos 私有网络列表信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcInfos(const std::vector<VpcInfo>& _vpcInfos);
@@ -498,18 +454,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务治理相关信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceGovernanceInfos 服务治理相关信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ServiceGovernanceInfo> GetServiceGovernanceInfos() const;
 
                     /**
                      * 设置服务治理相关信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serviceGovernanceInfos 服务治理相关信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServiceGovernanceInfos(const std::vector<ServiceGovernanceInfo>& _serviceGovernanceInfos);
@@ -523,18 +475,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例的标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 实例的标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<KVPair> GetTags() const;
 
                     /**
                      * 设置实例的标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 实例的标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::vector<KVPair>& _tags);
@@ -548,18 +496,14 @@ namespace TencentCloud
 
                     /**
                      * 获取引擎实例是否开启控制台公网访问地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableConsoleInternet 引擎实例是否开启控制台公网访问地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnableConsoleInternet() const;
 
                     /**
                      * 设置引擎实例是否开启控制台公网访问地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enableConsoleInternet 引擎实例是否开启控制台公网访问地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnableConsoleInternet(const bool& _enableConsoleInternet);
@@ -573,18 +517,14 @@ namespace TencentCloud
 
                     /**
                      * 获取引擎实例是否开启控制台内网访问地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableConsoleIntranet 引擎实例是否开启控制台内网访问地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnableConsoleIntranet() const;
 
                     /**
                      * 设置引擎实例是否开启控制台内网访问地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enableConsoleIntranet 引擎实例是否开启控制台内网访问地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnableConsoleIntranet(const bool& _enableConsoleIntranet);
@@ -598,18 +538,14 @@ namespace TencentCloud
 
                     /**
                      * 获取引擎实例是否展示参数配置页面
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigInfoVisible 引擎实例是否展示参数配置页面
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetConfigInfoVisible() const;
 
                     /**
                      * 设置引擎实例是否展示参数配置页面
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _configInfoVisible 引擎实例是否展示参数配置页面
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConfigInfoVisible(const bool& _configInfoVisible);
@@ -623,18 +559,14 @@ namespace TencentCloud
 
                     /**
                      * 获取引擎实例控制台默认密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConsoleDefaultPwd 引擎实例控制台默认密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetConsoleDefaultPwd() const;
 
                     /**
                      * 设置引擎实例控制台默认密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _consoleDefaultPwd 引擎实例控制台默认密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConsoleDefaultPwd(const std::string& _consoleDefaultPwd);
@@ -648,18 +580,14 @@ namespace TencentCloud
 
                     /**
                      * 获取交易付费类型，0后付费/1预付费
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TradeType 交易付费类型，0后付费/1预付费
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTradeType() const;
 
                     /**
                      * 设置交易付费类型，0后付费/1预付费
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tradeType 交易付费类型，0后付费/1预付费
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTradeType(const int64_t& _tradeType);
@@ -673,18 +601,14 @@ namespace TencentCloud
 
                     /**
                      * 获取自动续费标记：0表示默认状态(用户未设置，即初始状态)， 1表示自动续费，2表示明确不自动续费
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoRenewFlag 自动续费标记：0表示默认状态(用户未设置，即初始状态)， 1表示自动续费，2表示明确不自动续费
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAutoRenewFlag() const;
 
                     /**
                      * 设置自动续费标记：0表示默认状态(用户未设置，即初始状态)， 1表示自动续费，2表示明确不自动续费
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _autoRenewFlag 自动续费标记：0表示默认状态(用户未设置，即初始状态)， 1表示自动续费，2表示明确不自动续费
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAutoRenewFlag(const int64_t& _autoRenewFlag);
@@ -698,18 +622,14 @@ namespace TencentCloud
 
                     /**
                      * 获取预付费到期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CurDeadline 预付费到期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCurDeadline() const;
 
                     /**
                      * 设置预付费到期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _curDeadline 预付费到期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCurDeadline(const std::string& _curDeadline);
@@ -723,18 +643,14 @@ namespace TencentCloud
 
                     /**
                      * 获取隔离开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsolateTime 隔离开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIsolateTime() const;
 
                     /**
                      * 设置隔离开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isolateTime 隔离开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsolateTime(const std::string& _isolateTime);
@@ -748,18 +664,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例地域相关的描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionInfos 实例地域相关的描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<DescribeInstanceRegionInfo> GetRegionInfos() const;
 
                     /**
                      * 设置实例地域相关的描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _regionInfos 实例地域相关的描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRegionInfos(const std::vector<DescribeInstanceRegionInfo>& _regionInfos);
@@ -773,18 +685,14 @@ namespace TencentCloud
 
                     /**
                      * 获取所在EKS环境，分为common和yunti
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EKSType 所在EKS环境，分为common和yunti
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEKSType() const;
 
                     /**
                      * 设置所在EKS环境，分为common和yunti
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _eKSType 所在EKS环境，分为common和yunti
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEKSType(const std::string& _eKSType);
@@ -798,18 +706,14 @@ namespace TencentCloud
 
                     /**
                      * 获取引擎的产品版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FeatureVersion 引擎的产品版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFeatureVersion() const;
 
                     /**
                      * 设置引擎的产品版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _featureVersion 引擎的产品版本
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFeatureVersion(const std::string& _featureVersion);
@@ -823,18 +727,14 @@ namespace TencentCloud
 
                     /**
                      * 获取引擎实例是否开启客户端内网访问地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableClientIntranet 引擎实例是否开启客户端内网访问地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnableClientIntranet() const;
 
                     /**
                      * 设置引擎实例是否开启客户端内网访问地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enableClientIntranet 引擎实例是否开启客户端内网访问地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnableClientIntranet(const bool& _enableClientIntranet);
@@ -848,18 +748,14 @@ namespace TencentCloud
 
                     /**
                      * 获取存储额外配置选项
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StorageOption 存储额外配置选项
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<StorageOption> GetStorageOption() const;
 
                     /**
                      * 设置存储额外配置选项
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _storageOption 存储额外配置选项
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStorageOption(const std::vector<StorageOption>& _storageOption);
@@ -873,18 +769,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Zookeeper的额外环境数据信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ZookeeperRegionInfo Zookeeper的额外环境数据信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ZookeeperRegionInfo GetZookeeperRegionInfo() const;
 
                     /**
                      * 设置Zookeeper的额外环境数据信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _zookeeperRegionInfo Zookeeper的额外环境数据信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetZookeeperRegionInfo(const ZookeeperRegionInfo& _zookeeperRegionInfo);
@@ -898,18 +790,14 @@ namespace TencentCloud
 
                     /**
                      * 获取部署架构
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DeployMode 部署架构
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDeployMode() const;
 
                     /**
                      * 设置部署架构
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _deployMode 部署架构
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDeployMode(const std::string& _deployMode);
@@ -973,196 +861,168 @@ namespace TencentCloud
 
                     /**
                      * 子网ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_subnetIds;
                     bool m_subnetIdsHasBeenSet;
 
                     /**
                      * 是否开启持久化存储
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enableStorage;
                     bool m_enableStorageHasBeenSet;
 
                     /**
                      * 数据存储方式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_storageType;
                     bool m_storageTypeHasBeenSet;
 
                     /**
                      * 云硬盘容量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_storageCapacity;
                     bool m_storageCapacityHasBeenSet;
 
                     /**
                      * 计费方式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_paymode;
                     bool m_paymodeHasBeenSet;
 
                     /**
                      * EKS集群的ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_eKSClusterID;
                     bool m_eKSClusterIDHasBeenSet;
 
                     /**
                      * 集群创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 环境配置信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<EnvInfo> m_envInfos;
                     bool m_envInfosHasBeenSet;
 
                     /**
                      * 引擎所在的区域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_engineRegion;
                     bool m_engineRegionHasBeenSet;
 
                     /**
                      * 注册引擎是否开启公网
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enableInternet;
                     bool m_enableInternetHasBeenSet;
 
                     /**
                      * 私有网络列表信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<VpcInfo> m_vpcInfos;
                     bool m_vpcInfosHasBeenSet;
 
                     /**
                      * 服务治理相关信息列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ServiceGovernanceInfo> m_serviceGovernanceInfos;
                     bool m_serviceGovernanceInfosHasBeenSet;
 
                     /**
                      * 实例的标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<KVPair> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
                      * 引擎实例是否开启控制台公网访问地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enableConsoleInternet;
                     bool m_enableConsoleInternetHasBeenSet;
 
                     /**
                      * 引擎实例是否开启控制台内网访问地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enableConsoleIntranet;
                     bool m_enableConsoleIntranetHasBeenSet;
 
                     /**
                      * 引擎实例是否展示参数配置页面
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_configInfoVisible;
                     bool m_configInfoVisibleHasBeenSet;
 
                     /**
                      * 引擎实例控制台默认密码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_consoleDefaultPwd;
                     bool m_consoleDefaultPwdHasBeenSet;
 
                     /**
                      * 交易付费类型，0后付费/1预付费
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_tradeType;
                     bool m_tradeTypeHasBeenSet;
 
                     /**
                      * 自动续费标记：0表示默认状态(用户未设置，即初始状态)， 1表示自动续费，2表示明确不自动续费
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_autoRenewFlag;
                     bool m_autoRenewFlagHasBeenSet;
 
                     /**
                      * 预付费到期时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_curDeadline;
                     bool m_curDeadlineHasBeenSet;
 
                     /**
                      * 隔离开始时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_isolateTime;
                     bool m_isolateTimeHasBeenSet;
 
                     /**
                      * 实例地域相关的描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<DescribeInstanceRegionInfo> m_regionInfos;
                     bool m_regionInfosHasBeenSet;
 
                     /**
                      * 所在EKS环境，分为common和yunti
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_eKSType;
                     bool m_eKSTypeHasBeenSet;
 
                     /**
                      * 引擎的产品版本
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_featureVersion;
                     bool m_featureVersionHasBeenSet;
 
                     /**
                      * 引擎实例是否开启客户端内网访问地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enableClientIntranet;
                     bool m_enableClientIntranetHasBeenSet;
 
                     /**
                      * 存储额外配置选项
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<StorageOption> m_storageOption;
                     bool m_storageOptionHasBeenSet;
 
                     /**
                      * Zookeeper的额外环境数据信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ZookeeperRegionInfo m_zookeeperRegionInfo;
                     bool m_zookeeperRegionInfoHasBeenSet;
 
                     /**
                      * 部署架构
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_deployMode;
                     bool m_deployModeHasBeenSet;

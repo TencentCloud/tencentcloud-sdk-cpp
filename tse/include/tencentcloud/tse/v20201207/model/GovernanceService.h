@@ -91,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取元数据信息数组。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Metadatas 元数据信息数组。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Metadata> GetMetadatas() const;
 
                     /**
                      * 设置元数据信息数组。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _metadatas 元数据信息数组。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMetadatas(const std::vector<Metadata>& _metadatas);
@@ -116,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Comment 描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetComment() const;
 
                     /**
                      * 设置描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _comment 描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetComment(const std::string& _comment);
@@ -141,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -166,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取修改时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifyTime 修改时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
                      * 设置修改时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modifyTime 修改时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
@@ -191,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务所属部门。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Department 服务所属部门。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDepartment() const;
 
                     /**
                      * 设置服务所属部门。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _department 服务所属部门。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDepartment(const std::string& _department);
@@ -216,18 +196,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务所属业务。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Business 服务所属业务。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetBusiness() const;
 
                     /**
                      * 设置服务所属业务。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _business 服务所属业务。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBusiness(const std::string& _business);
@@ -241,18 +217,14 @@ namespace TencentCloud
 
                     /**
                      * 获取健康服务实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HealthyInstanceCount 健康服务实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetHealthyInstanceCount() const;
 
                     /**
                      * 设置健康服务实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _healthyInstanceCount 健康服务实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHealthyInstanceCount(const uint64_t& _healthyInstanceCount);
@@ -266,18 +238,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务实例总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalInstanceCount 服务实例总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTotalInstanceCount() const;
 
                     /**
                      * 设置服务实例总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalInstanceCount 服务实例总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalInstanceCount(const uint64_t& _totalInstanceCount);
@@ -291,18 +259,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 服务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置服务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id 服务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -316,18 +280,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否可以编辑
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Editable 是否可以编辑
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEditable() const;
 
                     /**
                      * 设置是否可以编辑
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _editable 是否可以编辑
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEditable(const bool& _editable);
@@ -341,18 +301,14 @@ namespace TencentCloud
 
                     /**
                      * 获取可以编辑该资源的用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserIds 可以编辑该资源的用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetUserIds() const;
 
                     /**
                      * 设置可以编辑该资源的用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userIds 可以编辑该资源的用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserIds(const std::vector<std::string>& _userIds);
@@ -366,18 +322,14 @@ namespace TencentCloud
 
                     /**
                      * 获取可以编辑该资源的用户组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupIds 可以编辑该资源的用户组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetGroupIds() const;
 
                     /**
                      * 设置可以编辑该资源的用户组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupIds 可以编辑该资源的用户组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupIds(const std::vector<std::string>& _groupIds);
@@ -391,18 +343,14 @@ namespace TencentCloud
 
                     /**
                      * 获取移除可以编辑该资源的用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RemoveUserIds 移除可以编辑该资源的用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetRemoveUserIds() const;
 
                     /**
                      * 设置移除可以编辑该资源的用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _removeUserIds 移除可以编辑该资源的用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemoveUserIds(const std::vector<std::string>& _removeUserIds);
@@ -416,18 +364,14 @@ namespace TencentCloud
 
                     /**
                      * 获取移除可以编辑该资源的用户组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RemoveGroupIds 移除可以编辑该资源的用户组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetRemoveGroupIds() const;
 
                     /**
                      * 设置移除可以编辑该资源的用户组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _removeGroupIds 移除可以编辑该资源的用户组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemoveGroupIds(const std::vector<std::string>& _removeGroupIds);
@@ -441,18 +385,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该服务对哪些命名空间可见	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExportTo 该服务对哪些命名空间可见	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetExportTo() const;
 
                     /**
                      * 设置该服务对哪些命名空间可见	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _exportTo 该服务对哪些命名空间可见	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExportTo(const std::vector<std::string>& _exportTo);
@@ -466,18 +406,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该服务信息摘要签名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Revision 该服务信息摘要签名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRevision() const;
 
                     /**
                      * 设置该服务信息摘要签名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _revision 该服务信息摘要签名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRevision(const std::string& _revision);
@@ -526,112 +462,96 @@ namespace TencentCloud
 
                     /**
                      * 元数据信息数组。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Metadata> m_metadatas;
                     bool m_metadatasHasBeenSet;
 
                     /**
                      * 描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;
 
                     /**
                      * 创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 修改时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
 
                     /**
                      * 服务所属部门。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_department;
                     bool m_departmentHasBeenSet;
 
                     /**
                      * 服务所属业务。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_business;
                     bool m_businessHasBeenSet;
 
                     /**
                      * 健康服务实例数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_healthyInstanceCount;
                     bool m_healthyInstanceCountHasBeenSet;
 
                     /**
                      * 服务实例总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_totalInstanceCount;
                     bool m_totalInstanceCountHasBeenSet;
 
                     /**
                      * 服务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * 是否可以编辑
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_editable;
                     bool m_editableHasBeenSet;
 
                     /**
                      * 可以编辑该资源的用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_userIds;
                     bool m_userIdsHasBeenSet;
 
                     /**
                      * 可以编辑该资源的用户组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_groupIds;
                     bool m_groupIdsHasBeenSet;
 
                     /**
                      * 移除可以编辑该资源的用户ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_removeUserIds;
                     bool m_removeUserIdsHasBeenSet;
 
                     /**
                      * 移除可以编辑该资源的用户组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_removeGroupIds;
                     bool m_removeGroupIdsHasBeenSet;
 
                     /**
                      * 该服务对哪些命名空间可见	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_exportTo;
                     bool m_exportToHasBeenSet;
 
                     /**
                      * 该服务信息摘要签名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_revision;
                     bool m_revisionHasBeenSet;

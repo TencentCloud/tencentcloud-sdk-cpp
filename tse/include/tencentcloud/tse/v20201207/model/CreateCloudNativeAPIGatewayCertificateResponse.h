@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取创建证书结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 创建证书结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CertificateInfo GetResult() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 创建证书结果
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CertificateInfo m_result;
                     bool m_resultHasBeenSet;

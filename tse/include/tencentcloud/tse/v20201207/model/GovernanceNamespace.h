@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取命名空间名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 命名空间名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置命名空间名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 命名空间名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取命名空间描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Comment 命名空间描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetComment() const;
 
                     /**
                      * 设置命名空间描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _comment 命名空间描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetComment(const std::string& _comment);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取修改时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifyTime 修改时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
                      * 设置修改时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modifyTime 修改时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取命名空间下总服务数据量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalServiceCount 命名空间下总服务数据量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalServiceCount() const;
 
                     /**
                      * 设置命名空间下总服务数据量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalServiceCount 命名空间下总服务数据量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalServiceCount(const int64_t& _totalServiceCount);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取命名空间下总健康实例数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalHealthInstanceCount 命名空间下总健康实例数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalHealthInstanceCount() const;
 
                     /**
                      * 设置命名空间下总健康实例数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalHealthInstanceCount 命名空间下总健康实例数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalHealthInstanceCount(const int64_t& _totalHealthInstanceCount);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取命名空间下总实例数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalInstanceCount 命名空间下总实例数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalInstanceCount() const;
 
                     /**
                      * 设置命名空间下总实例数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalInstanceCount 命名空间下总实例数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalInstanceCount(const int64_t& _totalInstanceCount);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取命名空间ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 命名空间ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置命名空间ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id 命名空间ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否可以编辑
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Editable 是否可以编辑
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEditable() const;
 
                     /**
                      * 设置是否可以编辑
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _editable 是否可以编辑
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEditable(const bool& _editable);
@@ -273,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取可以操作此命名空间的用户ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserIds 可以操作此命名空间的用户ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetUserIds() const;
 
                     /**
                      * 设置可以操作此命名空间的用户ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _userIds 可以操作此命名空间的用户ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUserIds(const std::vector<std::string>& _userIds);
@@ -298,18 +258,14 @@ namespace TencentCloud
 
                     /**
                      * 获取可以操作此命名空间的用户组ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupIds 可以操作此命名空间的用户组ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetGroupIds() const;
 
                     /**
                      * 设置可以操作此命名空间的用户组ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupIds 可以操作此命名空间的用户组ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupIds(const std::vector<std::string>& _groupIds);
@@ -323,18 +279,14 @@ namespace TencentCloud
 
                     /**
                      * 获取移除可以操作此命名空间的用户ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RemoveUserIds 移除可以操作此命名空间的用户ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetRemoveUserIds() const;
 
                     /**
                      * 设置移除可以操作此命名空间的用户ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _removeUserIds 移除可以操作此命名空间的用户ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemoveUserIds(const std::vector<std::string>& _removeUserIds);
@@ -348,18 +300,14 @@ namespace TencentCloud
 
                     /**
                      * 获取移除可以操作此命名空间的用户组ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RemoveGroupIds 移除可以操作此命名空间的用户组ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetRemoveGroupIds() const;
 
                     /**
                      * 设置移除可以操作此命名空间的用户组ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _removeGroupIds 移除可以操作此命名空间的用户组ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRemoveGroupIds(const std::vector<std::string>& _removeGroupIds);
@@ -373,18 +321,14 @@ namespace TencentCloud
 
                     /**
                      * 获取该命名空间下的服务对哪些命名空间可见
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceExportTo 该命名空间下的服务对哪些命名空间可见
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetServiceExportTo() const;
 
                     /**
                      * 设置该命名空间下的服务对哪些命名空间可见
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serviceExportTo 该命名空间下的服务对哪些命名空间可见
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServiceExportTo(const std::vector<std::string>& _serviceExportTo);
@@ -398,18 +342,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启同步到全局注册中心	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SyncToGlobalRegistry 是否开启同步到全局注册中心	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetSyncToGlobalRegistry() const;
 
                     /**
                      * 设置是否开启同步到全局注册中心	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _syncToGlobalRegistry 是否开启同步到全局注册中心	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSyncToGlobalRegistry(const bool& _syncToGlobalRegistry);
@@ -425,105 +365,90 @@ namespace TencentCloud
 
                     /**
                      * 命名空间名称。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 命名空间描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;
 
                     /**
                      * 创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 修改时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
 
                     /**
                      * 命名空间下总服务数据量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalServiceCount;
                     bool m_totalServiceCountHasBeenSet;
 
                     /**
                      * 命名空间下总健康实例数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalHealthInstanceCount;
                     bool m_totalHealthInstanceCountHasBeenSet;
 
                     /**
                      * 命名空间下总实例数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalInstanceCount;
                     bool m_totalInstanceCountHasBeenSet;
 
                     /**
                      * 命名空间ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * 是否可以编辑
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_editable;
                     bool m_editableHasBeenSet;
 
                     /**
                      * 可以操作此命名空间的用户ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_userIds;
                     bool m_userIdsHasBeenSet;
 
                     /**
                      * 可以操作此命名空间的用户组ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_groupIds;
                     bool m_groupIdsHasBeenSet;
 
                     /**
                      * 移除可以操作此命名空间的用户ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_removeUserIds;
                     bool m_removeUserIdsHasBeenSet;
 
                     /**
                      * 移除可以操作此命名空间的用户组ID列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_removeGroupIds;
                     bool m_removeGroupIdsHasBeenSet;
 
                     /**
                      * 该命名空间下的服务对哪些命名空间可见
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_serviceExportTo;
                     bool m_serviceExportToHasBeenSet;
 
                     /**
                      * 是否开启同步到全局注册中心	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_syncToGlobalRegistry;
                     bool m_syncToGlobalRegistryHasBeenSet;

@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取返回结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 返回结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CreatePublicNetworkResult GetResult() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 返回结果
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CreatePublicNetworkResult m_result;
                     bool m_resultHasBeenSet;
