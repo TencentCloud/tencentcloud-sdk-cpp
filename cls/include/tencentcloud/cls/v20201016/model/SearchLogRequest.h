@@ -439,6 +439,27 @@ namespace TencentCloud
                      */
                     bool UseNewAnalysisHasBeenSet() const;
 
+                    /**
+                     * 获取是否高亮符合检索条件的关键词，一般用于高亮显示。仅支持键值检索，不支持全文检索
+                     * @return HighLight 是否高亮符合检索条件的关键词，一般用于高亮显示。仅支持键值检索，不支持全文检索
+                     * 
+                     */
+                    bool GetHighLight() const;
+
+                    /**
+                     * 设置是否高亮符合检索条件的关键词，一般用于高亮显示。仅支持键值检索，不支持全文检索
+                     * @param _highLight 是否高亮符合检索条件的关键词，一般用于高亮显示。仅支持键值检索，不支持全文检索
+                     * 
+                     */
+                    void SetHighLight(const bool& _highLight);
+
+                    /**
+                     * 判断参数 HighLight 是否已赋值
+                     * @return HighLight 是否已赋值
+                     * 
+                     */
+                    bool HighLightHasBeenSet() const;
+
                 private:
 
                     /**
@@ -548,6 +569,12 @@ namespace TencentCloud
                      */
                     bool m_useNewAnalysis;
                     bool m_useNewAnalysisHasBeenSet;
+
+                    /**
+                     * 是否高亮符合检索条件的关键词，一般用于高亮显示。仅支持键值检索，不支持全文检索
+                     */
+                    bool m_highLight;
+                    bool m_highLightHasBeenSet;
 
                 };
             }

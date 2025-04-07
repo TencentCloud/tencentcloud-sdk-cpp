@@ -33,7 +33,8 @@ AndroidInstance::AndroidInstance() :
     m_androidInstanceGroupIdHasBeenSet(false),
     m_androidInstanceLabelsHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+    m_userIdHasBeenSet(false),
+    m_privateIPHasBeenSet(false)
 {
 }
 
@@ -182,6 +183,16 @@ CoreInternalOutcome AndroidInstance::Deserialize(const rapidjson::Value &value)
         m_userIdHasBeenSet = true;
     }
 
+    if (value.HasMember("PrivateIP") && !value["PrivateIP"].IsNull())
+    {
+        if (!value["PrivateIP"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AndroidInstance.PrivateIP` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_privateIP = string(value["PrivateIP"].GetString());
+        m_privateIPHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -298,6 +309,14 @@ void AndroidInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "UserId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_privateIPHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PrivateIP";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_privateIP.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -509,5 +528,21 @@ void AndroidInstance::SetUserId(const string& _userId)
 bool AndroidInstance::UserIdHasBeenSet() const
 {
     return m_userIdHasBeenSet;
+}
+
+string AndroidInstance::GetPrivateIP() const
+{
+    return m_privateIP;
+}
+
+void AndroidInstance::SetPrivateIP(const string& _privateIP)
+{
+    m_privateIP = _privateIP;
+    m_privateIPHasBeenSet = true;
+}
+
+bool AndroidInstance::PrivateIPHasBeenSet() const
+{
+    return m_privateIPHasBeenSet;
 }
 

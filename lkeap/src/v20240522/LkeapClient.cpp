@@ -513,6 +513,49 @@ LkeapClient::DescribeDocOutcomeCallable LkeapClient::DescribeDocCallable(const D
     return task->get_future();
 }
 
+LkeapClient::GetCharacterUsageOutcome LkeapClient::GetCharacterUsage(const GetCharacterUsageRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetCharacterUsage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetCharacterUsageResponse rsp = GetCharacterUsageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetCharacterUsageOutcome(rsp);
+        else
+            return GetCharacterUsageOutcome(o.GetError());
+    }
+    else
+    {
+        return GetCharacterUsageOutcome(outcome.GetError());
+    }
+}
+
+void LkeapClient::GetCharacterUsageAsync(const GetCharacterUsageRequest& request, const GetCharacterUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetCharacterUsage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LkeapClient::GetCharacterUsageOutcomeCallable LkeapClient::GetCharacterUsageCallable(const GetCharacterUsageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetCharacterUsageOutcome()>>(
+        [this, request]()
+        {
+            return this->GetCharacterUsage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LkeapClient::GetEmbeddingOutcome LkeapClient::GetEmbedding(const GetEmbeddingRequest &request)
 {
     auto outcome = MakeRequest(request, "GetEmbedding");

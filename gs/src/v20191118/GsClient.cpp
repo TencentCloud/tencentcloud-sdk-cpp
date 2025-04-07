@@ -40,6 +40,49 @@ GsClient::GsClient(const Credential &credential, const string &region, const Cli
 }
 
 
+GsClient::BackUpAndroidInstanceToStorageOutcome GsClient::BackUpAndroidInstanceToStorage(const BackUpAndroidInstanceToStorageRequest &request)
+{
+    auto outcome = MakeRequest(request, "BackUpAndroidInstanceToStorage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BackUpAndroidInstanceToStorageResponse rsp = BackUpAndroidInstanceToStorageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BackUpAndroidInstanceToStorageOutcome(rsp);
+        else
+            return BackUpAndroidInstanceToStorageOutcome(o.GetError());
+    }
+    else
+    {
+        return BackUpAndroidInstanceToStorageOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::BackUpAndroidInstanceToStorageAsync(const BackUpAndroidInstanceToStorageRequest& request, const BackUpAndroidInstanceToStorageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BackUpAndroidInstanceToStorage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::BackUpAndroidInstanceToStorageOutcomeCallable GsClient::BackUpAndroidInstanceToStorageCallable(const BackUpAndroidInstanceToStorageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BackUpAndroidInstanceToStorageOutcome()>>(
+        [this, request]()
+        {
+            return this->BackUpAndroidInstanceToStorage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GsClient::ConnectAndroidInstanceOutcome GsClient::ConnectAndroidInstance(const ConnectAndroidInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "ConnectAndroidInstance");
@@ -1237,6 +1280,49 @@ GsClient::RestartAndroidInstancesAppOutcomeCallable GsClient::RestartAndroidInst
         [this, request]()
         {
             return this->RestartAndroidInstancesApp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GsClient::RestoreAndroidInstanceFromStorageOutcome GsClient::RestoreAndroidInstanceFromStorage(const RestoreAndroidInstanceFromStorageRequest &request)
+{
+    auto outcome = MakeRequest(request, "RestoreAndroidInstanceFromStorage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RestoreAndroidInstanceFromStorageResponse rsp = RestoreAndroidInstanceFromStorageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RestoreAndroidInstanceFromStorageOutcome(rsp);
+        else
+            return RestoreAndroidInstanceFromStorageOutcome(o.GetError());
+    }
+    else
+    {
+        return RestoreAndroidInstanceFromStorageOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::RestoreAndroidInstanceFromStorageAsync(const RestoreAndroidInstanceFromStorageRequest& request, const RestoreAndroidInstanceFromStorageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RestoreAndroidInstanceFromStorage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::RestoreAndroidInstanceFromStorageOutcomeCallable GsClient::RestoreAndroidInstanceFromStorageCallable(const RestoreAndroidInstanceFromStorageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RestoreAndroidInstanceFromStorageOutcome()>>(
+        [this, request]()
+        {
+            return this->RestoreAndroidInstanceFromStorage(request);
         }
     );
 

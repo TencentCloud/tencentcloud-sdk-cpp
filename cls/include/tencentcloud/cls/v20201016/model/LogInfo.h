@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cls/v20201016/model/HighLightItem.h>
 
 
 namespace TencentCloud
@@ -194,6 +195,27 @@ namespace TencentCloud
                     bool PkgLogIdHasBeenSet() const;
 
                     /**
+                     * 获取符合检索条件的关键词，一般用于高亮显示。仅支持键值检索，不支持全文检索	
+                     * @return HighLights 符合检索条件的关键词，一般用于高亮显示。仅支持键值检索，不支持全文检索	
+                     * 
+                     */
+                    std::vector<HighLightItem> GetHighLights() const;
+
+                    /**
+                     * 设置符合检索条件的关键词，一般用于高亮显示。仅支持键值检索，不支持全文检索	
+                     * @param _highLights 符合检索条件的关键词，一般用于高亮显示。仅支持键值检索，不支持全文检索	
+                     * 
+                     */
+                    void SetHighLights(const std::vector<HighLightItem>& _highLights);
+
+                    /**
+                     * 判断参数 HighLights 是否已赋值
+                     * @return HighLights 是否已赋值
+                     * 
+                     */
+                    bool HighLightsHasBeenSet() const;
+
+                    /**
                      * 获取日志内容的Json序列化字符串
                      * @return LogJson 日志内容的Json序列化字符串
                      * 
@@ -320,6 +342,12 @@ namespace TencentCloud
                      */
                     std::string m_pkgLogId;
                     bool m_pkgLogIdHasBeenSet;
+
+                    /**
+                     * 符合检索条件的关键词，一般用于高亮显示。仅支持键值检索，不支持全文检索	
+                     */
+                    std::vector<HighLightItem> m_highLights;
+                    bool m_highLightsHasBeenSet;
 
                     /**
                      * 日志内容的Json序列化字符串

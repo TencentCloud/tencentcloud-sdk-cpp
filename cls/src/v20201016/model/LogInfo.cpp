@@ -28,6 +28,7 @@ LogInfo::LogInfo() :
     m_fileNameHasBeenSet(false),
     m_pkgIdHasBeenSet(false),
     m_pkgLogIdHasBeenSet(false),
+    m_highLightsHasBeenSet(false),
     m_logJsonHasBeenSet(false),
     m_hostNameHasBeenSet(false),
     m_rawLogHasBeenSet(false),
@@ -108,6 +109,26 @@ CoreInternalOutcome LogInfo::Deserialize(const rapidjson::Value &value)
         }
         m_pkgLogId = string(value["PkgLogId"].GetString());
         m_pkgLogIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("HighLights") && !value["HighLights"].IsNull())
+    {
+        if (!value["HighLights"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `LogInfo.HighLights` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["HighLights"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            HighLightItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_highLights.push_back(item);
+        }
+        m_highLightsHasBeenSet = true;
     }
 
     if (value.HasMember("LogJson") && !value["LogJson"].IsNull())
@@ -211,6 +232,21 @@ void LogInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "PkgLogId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_pkgLogId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_highLightsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HighLights";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_highLights.begin(); itr != m_highLights.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     if (m_logJsonHasBeenSet)
@@ -358,6 +394,22 @@ void LogInfo::SetPkgLogId(const string& _pkgLogId)
 bool LogInfo::PkgLogIdHasBeenSet() const
 {
     return m_pkgLogIdHasBeenSet;
+}
+
+vector<HighLightItem> LogInfo::GetHighLights() const
+{
+    return m_highLights;
+}
+
+void LogInfo::SetHighLights(const vector<HighLightItem>& _highLights)
+{
+    m_highLights = _highLights;
+    m_highLightsHasBeenSet = true;
+}
+
+bool LogInfo::HighLightsHasBeenSet() const
+{
+    return m_highLightsHasBeenSet;
 }
 
 string LogInfo::GetLogJson() const

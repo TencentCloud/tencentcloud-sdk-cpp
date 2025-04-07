@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/gs/v20191118/model/BackUpAndroidInstanceToStorageRequest.h>
+#include <tencentcloud/gs/v20191118/model/BackUpAndroidInstanceToStorageResponse.h>
 #include <tencentcloud/gs/v20191118/model/ConnectAndroidInstanceRequest.h>
 #include <tencentcloud/gs/v20191118/model/ConnectAndroidInstanceResponse.h>
 #include <tencentcloud/gs/v20191118/model/CopyAndroidInstanceRequest.h>
@@ -79,6 +81,8 @@
 #include <tencentcloud/gs/v20191118/model/ResetAndroidInstancesResponse.h>
 #include <tencentcloud/gs/v20191118/model/RestartAndroidInstancesAppRequest.h>
 #include <tencentcloud/gs/v20191118/model/RestartAndroidInstancesAppResponse.h>
+#include <tencentcloud/gs/v20191118/model/RestoreAndroidInstanceFromStorageRequest.h>
+#include <tencentcloud/gs/v20191118/model/RestoreAndroidInstanceFromStorageResponse.h>
 #include <tencentcloud/gs/v20191118/model/SaveGameArchiveRequest.h>
 #include <tencentcloud/gs/v20191118/model/SaveGameArchiveResponse.h>
 #include <tencentcloud/gs/v20191118/model/StartAndroidInstancesRequest.h>
@@ -123,6 +127,9 @@ namespace TencentCloud
                 GsClient(const Credential &credential, const std::string &region);
                 GsClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::BackUpAndroidInstanceToStorageResponse> BackUpAndroidInstanceToStorageOutcome;
+                typedef std::future<BackUpAndroidInstanceToStorageOutcome> BackUpAndroidInstanceToStorageOutcomeCallable;
+                typedef std::function<void(const GsClient*, const Model::BackUpAndroidInstanceToStorageRequest&, BackUpAndroidInstanceToStorageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BackUpAndroidInstanceToStorageAsyncHandler;
                 typedef Outcome<Core::Error, Model::ConnectAndroidInstanceResponse> ConnectAndroidInstanceOutcome;
                 typedef std::future<ConnectAndroidInstanceOutcome> ConnectAndroidInstanceOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::ConnectAndroidInstanceRequest&, ConnectAndroidInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ConnectAndroidInstanceAsyncHandler;
@@ -207,6 +214,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RestartAndroidInstancesAppResponse> RestartAndroidInstancesAppOutcome;
                 typedef std::future<RestartAndroidInstancesAppOutcome> RestartAndroidInstancesAppOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::RestartAndroidInstancesAppRequest&, RestartAndroidInstancesAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestartAndroidInstancesAppAsyncHandler;
+                typedef Outcome<Core::Error, Model::RestoreAndroidInstanceFromStorageResponse> RestoreAndroidInstanceFromStorageOutcome;
+                typedef std::future<RestoreAndroidInstanceFromStorageOutcome> RestoreAndroidInstanceFromStorageOutcomeCallable;
+                typedef std::function<void(const GsClient*, const Model::RestoreAndroidInstanceFromStorageRequest&, RestoreAndroidInstanceFromStorageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestoreAndroidInstanceFromStorageAsyncHandler;
                 typedef Outcome<Core::Error, Model::SaveGameArchiveResponse> SaveGameArchiveOutcome;
                 typedef std::future<SaveGameArchiveOutcome> SaveGameArchiveOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::SaveGameArchiveRequest&, SaveGameArchiveOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SaveGameArchiveAsyncHandler;
@@ -254,6 +264,15 @@ namespace TencentCloud
                 typedef std::function<void(const GsClient*, const Model::UploadFileToAndroidInstancesRequest&, UploadFileToAndroidInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadFileToAndroidInstancesAsyncHandler;
 
 
+
+                /**
+                 *备份云手机到指定存储
+                 * @param req BackUpAndroidInstanceToStorageRequest
+                 * @return BackUpAndroidInstanceToStorageOutcome
+                 */
+                BackUpAndroidInstanceToStorageOutcome BackUpAndroidInstanceToStorage(const Model::BackUpAndroidInstanceToStorageRequest &request);
+                void BackUpAndroidInstanceToStorageAsync(const Model::BackUpAndroidInstanceToStorageRequest& request, const BackUpAndroidInstanceToStorageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BackUpAndroidInstanceToStorageOutcomeCallable BackUpAndroidInstanceToStorageCallable(const Model::BackUpAndroidInstanceToStorageRequest& request);
 
                 /**
                  *连接安卓实例
@@ -510,6 +529,15 @@ namespace TencentCloud
                 RestartAndroidInstancesAppOutcome RestartAndroidInstancesApp(const Model::RestartAndroidInstancesAppRequest &request);
                 void RestartAndroidInstancesAppAsync(const Model::RestartAndroidInstancesAppRequest& request, const RestartAndroidInstancesAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RestartAndroidInstancesAppOutcomeCallable RestartAndroidInstancesAppCallable(const Model::RestartAndroidInstancesAppRequest& request);
+
+                /**
+                 *指定存储还原云手机
+                 * @param req RestoreAndroidInstanceFromStorageRequest
+                 * @return RestoreAndroidInstanceFromStorageOutcome
+                 */
+                RestoreAndroidInstanceFromStorageOutcome RestoreAndroidInstanceFromStorage(const Model::RestoreAndroidInstanceFromStorageRequest &request);
+                void RestoreAndroidInstanceFromStorageAsync(const Model::RestoreAndroidInstanceFromStorageRequest& request, const RestoreAndroidInstanceFromStorageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RestoreAndroidInstanceFromStorageOutcomeCallable RestoreAndroidInstanceFromStorageCallable(const Model::RestoreAndroidInstanceFromStorageRequest& request);
 
                 /**
                  *保存游戏存档

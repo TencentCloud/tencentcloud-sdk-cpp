@@ -45,6 +45,8 @@
 #include <tencentcloud/lkeap/v20240522/model/DeleteQAsResponse.h>
 #include <tencentcloud/lkeap/v20240522/model/DescribeDocRequest.h>
 #include <tencentcloud/lkeap/v20240522/model/DescribeDocResponse.h>
+#include <tencentcloud/lkeap/v20240522/model/GetCharacterUsageRequest.h>
+#include <tencentcloud/lkeap/v20240522/model/GetCharacterUsageResponse.h>
 #include <tencentcloud/lkeap/v20240522/model/GetEmbeddingRequest.h>
 #include <tencentcloud/lkeap/v20240522/model/GetEmbeddingResponse.h>
 #include <tencentcloud/lkeap/v20240522/model/GetReconstructDocumentResultRequest.h>
@@ -122,6 +124,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDocResponse> DescribeDocOutcome;
                 typedef std::future<DescribeDocOutcome> DescribeDocOutcomeCallable;
                 typedef std::function<void(const LkeapClient*, const Model::DescribeDocRequest&, DescribeDocOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDocAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetCharacterUsageResponse> GetCharacterUsageOutcome;
+                typedef std::future<GetCharacterUsageOutcome> GetCharacterUsageOutcomeCallable;
+                typedef std::function<void(const LkeapClient*, const Model::GetCharacterUsageRequest&, GetCharacterUsageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetCharacterUsageAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetEmbeddingResponse> GetEmbeddingOutcome;
                 typedef std::future<GetEmbeddingOutcome> GetEmbeddingOutcomeCallable;
                 typedef std::function<void(const LkeapClient*, const Model::GetEmbeddingRequest&, GetEmbeddingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetEmbeddingAsyncHandler;
@@ -173,7 +178,7 @@ namespace TencentCloud
                 /**
                  *### 接口功能
 
-调用接口，发起一次对话请求。单账号限制接口并发上限为5。
+调用接口，发起一次对话请求。单账号限制接口并发上限为100。
 如需使用OpenAI兼容接口， 请参考文档：[Deepseek OpenAI对话接口](https://cloud.tencent.com/document/product/1772/115969)
 
 #### 在线体验
@@ -376,6 +381,15 @@ except TencentCloudSDKException as err:
                 DescribeDocOutcome DescribeDoc(const Model::DescribeDocRequest &request);
                 void DescribeDocAsync(const Model::DescribeDocRequest& request, const DescribeDocAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDocOutcomeCallable DescribeDocCallable(const Model::DescribeDocRequest& request);
+
+                /**
+                 *获取字符使用量统计
+                 * @param req GetCharacterUsageRequest
+                 * @return GetCharacterUsageOutcome
+                 */
+                GetCharacterUsageOutcome GetCharacterUsage(const Model::GetCharacterUsageRequest &request);
+                void GetCharacterUsageAsync(const Model::GetCharacterUsageRequest& request, const GetCharacterUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetCharacterUsageOutcomeCallable GetCharacterUsageCallable(const Model::GetCharacterUsageRequest& request);
 
                 /**
                  *本接口（GetEmbedding）调用文本表示模型，将文本转化为用数值表示的向量形式，可用于文本检索、信息推荐、知识挖掘等场景。

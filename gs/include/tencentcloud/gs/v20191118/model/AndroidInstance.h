@@ -320,6 +320,27 @@ namespace TencentCloud
                      */
                     bool UserIdHasBeenSet() const;
 
+                    /**
+                     * 获取内网 IP
+                     * @return PrivateIP 内网 IP
+                     * 
+                     */
+                    std::string GetPrivateIP() const;
+
+                    /**
+                     * 设置内网 IP
+                     * @param _privateIP 内网 IP
+                     * 
+                     */
+                    void SetPrivateIP(const std::string& _privateIP);
+
+                    /**
+                     * 判断参数 PrivateIP 是否已赋值
+                     * @return PrivateIP 是否已赋值
+                     * 
+                     */
+                    bool PrivateIPHasBeenSet() const;
+
                 private:
 
                     /**
@@ -399,6 +420,12 @@ namespace TencentCloud
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
+
+                    /**
+                     * 内网 IP
+                     */
+                    std::string m_privateIP;
+                    bool m_privateIPHasBeenSet;
 
                 };
             }

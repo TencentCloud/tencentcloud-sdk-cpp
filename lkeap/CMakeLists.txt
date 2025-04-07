@@ -86,6 +86,8 @@ set(lkeap_public_header_model
   include/tencentcloud/lkeap/v20240522/model/CreateReconstructDocumentFlowResponse.h
   include/tencentcloud/lkeap/v20240522/model/DeleteKnowledgeBaseRequest.h
   include/tencentcloud/lkeap/v20240522/model/CreateQARequest.h
+  include/tencentcloud/lkeap/v20240522/model/GetCharacterUsageRequest.h
+  include/tencentcloud/lkeap/v20240522/model/GetCharacterUsageResponse.h
   include/tencentcloud/lkeap/v20240522/model/UploadDocResponse.h
   include/tencentcloud/lkeap/v20240522/model/AttributeItem.h
   include/tencentcloud/lkeap/v20240522/model/EmbeddingObject.h
@@ -164,6 +166,8 @@ set(lkeap_src
   src/v20240522/model/CreateReconstructDocumentFlowResponse.cpp
   src/v20240522/model/DeleteKnowledgeBaseRequest.cpp
   src/v20240522/model/CreateQARequest.cpp
+  src/v20240522/model/GetCharacterUsageRequest.cpp
+  src/v20240522/model/GetCharacterUsageResponse.cpp
   src/v20240522/model/UploadDocResponse.cpp
   src/v20240522/model/AttributeItem.cpp
   src/v20240522/model/EmbeddingObject.cpp
