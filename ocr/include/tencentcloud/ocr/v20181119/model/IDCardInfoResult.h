@@ -388,6 +388,27 @@ namespace TencentCloud
                      */
                     bool PortraitUrlHasBeenSet() const;
 
+                    /**
+                     * 获取整型错误码
+                     * @return IntErrorCode 整型错误码
+                     * 
+                     */
+                    int64_t GetIntErrorCode() const;
+
+                    /**
+                     * 设置整型错误码
+                     * @param _intErrorCode 整型错误码
+                     * 
+                     */
+                    void SetIntErrorCode(const int64_t& _intErrorCode);
+
+                    /**
+                     * 判断参数 IntErrorCode 是否已赋值
+                     * @return IntErrorCode 是否已赋值
+                     * 
+                     */
+                    bool IntErrorCodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -485,6 +506,12 @@ namespace TencentCloud
                      */
                     std::string m_portraitUrl;
                     bool m_portraitUrlHasBeenSet;
+
+                    /**
+                     * 整型错误码
+                     */
+                    int64_t m_intErrorCode;
+                    bool m_intErrorCodeHasBeenSet;
 
                 };
             }

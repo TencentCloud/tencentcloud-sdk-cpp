@@ -99,6 +99,8 @@
 #include <tencentcloud/cfw/v20190904/model/DescribeBlockStaticListResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeCfwEipsRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeCfwEipsResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeCfwInsStatusRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeCfwInsStatusResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeDefenseSwitchRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeDefenseSwitchResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeEnterpriseSGRuleProgressRequest.h>
@@ -375,6 +377,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCfwEipsResponse> DescribeCfwEipsOutcome;
                 typedef std::future<DescribeCfwEipsOutcome> DescribeCfwEipsOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeCfwEipsRequest&, DescribeCfwEipsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCfwEipsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCfwInsStatusResponse> DescribeCfwInsStatusOutcome;
+                typedef std::future<DescribeCfwInsStatusOutcome> DescribeCfwInsStatusOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeCfwInsStatusRequest&, DescribeCfwInsStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCfwInsStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDefenseSwitchResponse> DescribeDefenseSwitchOutcome;
                 typedef std::future<DescribeDefenseSwitchOutcome> DescribeDefenseSwitchOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeDefenseSwitchRequest&, DescribeDefenseSwitchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDefenseSwitchAsyncHandler;
@@ -945,6 +950,15 @@ namespace TencentCloud
                 DescribeCfwEipsOutcome DescribeCfwEips(const Model::DescribeCfwEipsRequest &request);
                 void DescribeCfwEipsAsync(const Model::DescribeCfwEipsRequest& request, const DescribeCfwEipsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCfwEipsOutcomeCallable DescribeCfwEipsCallable(const Model::DescribeCfwEipsRequest& request);
+
+                /**
+                 *cfw实例运行状态查询
+                 * @param req DescribeCfwInsStatusRequest
+                 * @return DescribeCfwInsStatusOutcome
+                 */
+                DescribeCfwInsStatusOutcome DescribeCfwInsStatus(const Model::DescribeCfwInsStatusRequest &request);
+                void DescribeCfwInsStatusAsync(const Model::DescribeCfwInsStatusRequest& request, const DescribeCfwInsStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCfwInsStatusOutcomeCallable DescribeCfwInsStatusCallable(const Model::DescribeCfwInsStatusRequest& request);
 
                 /**
                  *获取入侵防御按钮列表

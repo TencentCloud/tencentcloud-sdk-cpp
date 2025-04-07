@@ -194,15 +194,27 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取防护状态: 已防护: Defended 未防护: UnDefended
-                     * @return DefenderStatus 防护状态: 已防护: Defended 未防护: UnDefended
+                     * 获取防护状态: 
+已防护: Defended 
+未防护: UnDefended
+部分防护: PartDefened
+                     * @return DefenderStatus 防护状态: 
+已防护: Defended 
+未防护: UnDefended
+部分防护: PartDefened
                      * 
                      */
                     std::string GetDefenderStatus() const;
 
                     /**
-                     * 设置防护状态: 已防护: Defended 未防护: UnDefended
-                     * @param _defenderStatus 防护状态: 已防护: Defended 未防护: UnDefended
+                     * 设置防护状态: 
+已防护: Defended 
+未防护: UnDefended
+部分防护: PartDefened
+                     * @param _defenderStatus 防护状态: 
+已防护: Defended 
+未防护: UnDefended
+部分防护: PartDefened
                      * 
                      */
                     void SetDefenderStatus(const std::string& _defenderStatus);
@@ -778,7 +790,10 @@ namespace TencentCloud
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 防护状态: 已防护: Defended 未防护: UnDefended
+                     * 防护状态: 
+已防护: Defended 
+未防护: UnDefended
+部分防护: PartDefened
                      */
                     std::string m_defenderStatus;
                     bool m_defenderStatusHasBeenSet;

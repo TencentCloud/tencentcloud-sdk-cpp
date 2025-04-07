@@ -23,7 +23,10 @@ using namespace TencentCloud::Gs::V20191118::Model;
 using namespace std;
 
 DescribeAndroidInstanceTasksStatusRequest::DescribeAndroidInstanceTasksStatusRequest() :
-    m_taskIdsHasBeenSet(false)
+    m_taskIdsHasBeenSet(false),
+    m_filterHasBeenSet(false),
+    m_offsetHasBeenSet(false),
+    m_limitHasBeenSet(false)
 {
 }
 
@@ -45,6 +48,37 @@ string DescribeAndroidInstanceTasksStatusRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_filterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filter";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filter.begin(); itr != m_filter.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
     }
 
 
@@ -69,6 +103,54 @@ void DescribeAndroidInstanceTasksStatusRequest::SetTaskIds(const vector<string>&
 bool DescribeAndroidInstanceTasksStatusRequest::TaskIdsHasBeenSet() const
 {
     return m_taskIdsHasBeenSet;
+}
+
+vector<Filter> DescribeAndroidInstanceTasksStatusRequest::GetFilter() const
+{
+    return m_filter;
+}
+
+void DescribeAndroidInstanceTasksStatusRequest::SetFilter(const vector<Filter>& _filter)
+{
+    m_filter = _filter;
+    m_filterHasBeenSet = true;
+}
+
+bool DescribeAndroidInstanceTasksStatusRequest::FilterHasBeenSet() const
+{
+    return m_filterHasBeenSet;
+}
+
+uint64_t DescribeAndroidInstanceTasksStatusRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeAndroidInstanceTasksStatusRequest::SetOffset(const uint64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeAndroidInstanceTasksStatusRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
+
+uint64_t DescribeAndroidInstanceTasksStatusRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeAndroidInstanceTasksStatusRequest::SetLimit(const uint64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeAndroidInstanceTasksStatusRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
 }
 
 

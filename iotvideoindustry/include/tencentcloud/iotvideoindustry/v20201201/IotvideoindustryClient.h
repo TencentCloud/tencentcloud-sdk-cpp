@@ -654,7 +654,7 @@ namespace TencentCloud
                 CreateLiveChannelOutcomeCallable CreateLiveChannelCallable(const Model::CreateLiveChannelRequest& request);
 
                 /**
-                 *创建直播录制计划
+                 *创建直播录制计划，直播录制接口，暂时下线中，只有国标接口支持云端录制
                  * @param req CreateLiveRecordPlanRequest
                  * @return CreateLiveRecordPlanOutcome
                  */

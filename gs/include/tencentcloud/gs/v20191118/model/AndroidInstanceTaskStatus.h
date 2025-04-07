@@ -130,6 +130,69 @@ namespace TencentCloud
                      */
                     bool TaskResultHasBeenSet() const;
 
+                    /**
+                     * 获取任务类型
+                     * @return TaskType 任务类型
+                     * 
+                     */
+                    std::string GetTaskType() const;
+
+                    /**
+                     * 设置任务类型
+                     * @param _taskType 任务类型
+                     * 
+                     */
+                    void SetTaskType(const std::string& _taskType);
+
+                    /**
+                     * 判断参数 TaskType 是否已赋值
+                     * @return TaskType 是否已赋值
+                     * 
+                     */
+                    bool TaskTypeHasBeenSet() const;
+
+                    /**
+                     * 获取任务创建时间
+                     * @return CreateTime 任务创建时间
+                     * 
+                     */
+                    std::string GetCreateTime() const;
+
+                    /**
+                     * 设置任务创建时间
+                     * @param _createTime 任务创建时间
+                     * 
+                     */
+                    void SetCreateTime(const std::string& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     * 
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取任务完成时间
+                     * @return CompleteTime 任务完成时间
+                     * 
+                     */
+                    std::string GetCompleteTime() const;
+
+                    /**
+                     * 设置任务完成时间
+                     * @param _completeTime 任务完成时间
+                     * 
+                     */
+                    void SetCompleteTime(const std::string& _completeTime);
+
+                    /**
+                     * 判断参数 CompleteTime 是否已赋值
+                     * @return CompleteTime 是否已赋值
+                     * 
+                     */
+                    bool CompleteTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -155,6 +218,24 @@ namespace TencentCloud
                      */
                     std::string m_taskResult;
                     bool m_taskResultHasBeenSet;
+
+                    /**
+                     * 任务类型
+                     */
+                    std::string m_taskType;
+                    bool m_taskTypeHasBeenSet;
+
+                    /**
+                     * 任务创建时间
+                     */
+                    std::string m_createTime;
+                    bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 任务完成时间
+                     */
+                    std::string m_completeTime;
+                    bool m_completeTimeHasBeenSet;
 
                 };
             }

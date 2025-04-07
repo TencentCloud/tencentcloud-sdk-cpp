@@ -24,7 +24,10 @@ AndroidInstanceTaskStatus::AndroidInstanceTaskStatus() :
     m_taskIdHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_androidInstanceIdHasBeenSet(false),
-    m_taskResultHasBeenSet(false)
+    m_taskResultHasBeenSet(false),
+    m_taskTypeHasBeenSet(false),
+    m_createTimeHasBeenSet(false),
+    m_completeTimeHasBeenSet(false)
 {
 }
 
@@ -73,6 +76,36 @@ CoreInternalOutcome AndroidInstanceTaskStatus::Deserialize(const rapidjson::Valu
         m_taskResultHasBeenSet = true;
     }
 
+    if (value.HasMember("TaskType") && !value["TaskType"].IsNull())
+    {
+        if (!value["TaskType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AndroidInstanceTaskStatus.TaskType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskType = string(value["TaskType"].GetString());
+        m_taskTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AndroidInstanceTaskStatus.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("CompleteTime") && !value["CompleteTime"].IsNull())
+    {
+        if (!value["CompleteTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AndroidInstanceTaskStatus.CompleteTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_completeTime = string(value["CompleteTime"].GetString());
+        m_completeTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +143,30 @@ void AndroidInstanceTaskStatus::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "TaskResult";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_taskResult.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_completeTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CompleteTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_completeTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +234,53 @@ void AndroidInstanceTaskStatus::SetTaskResult(const string& _taskResult)
 bool AndroidInstanceTaskStatus::TaskResultHasBeenSet() const
 {
     return m_taskResultHasBeenSet;
+}
+
+string AndroidInstanceTaskStatus::GetTaskType() const
+{
+    return m_taskType;
+}
+
+void AndroidInstanceTaskStatus::SetTaskType(const string& _taskType)
+{
+    m_taskType = _taskType;
+    m_taskTypeHasBeenSet = true;
+}
+
+bool AndroidInstanceTaskStatus::TaskTypeHasBeenSet() const
+{
+    return m_taskTypeHasBeenSet;
+}
+
+string AndroidInstanceTaskStatus::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void AndroidInstanceTaskStatus::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool AndroidInstanceTaskStatus::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
+}
+
+string AndroidInstanceTaskStatus::GetCompleteTime() const
+{
+    return m_completeTime;
+}
+
+void AndroidInstanceTaskStatus::SetCompleteTime(const string& _completeTime)
+{
+    m_completeTime = _completeTime;
+    m_completeTimeHasBeenSet = true;
+}
+
+bool AndroidInstanceTaskStatus::CompleteTimeHasBeenSet() const
+{
+    return m_completeTimeHasBeenSet;
 }
 

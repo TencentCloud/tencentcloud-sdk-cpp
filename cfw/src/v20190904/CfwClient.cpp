@@ -1674,6 +1674,49 @@ CfwClient::DescribeCfwEipsOutcomeCallable CfwClient::DescribeCfwEipsCallable(con
     return task->get_future();
 }
 
+CfwClient::DescribeCfwInsStatusOutcome CfwClient::DescribeCfwInsStatus(const DescribeCfwInsStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCfwInsStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCfwInsStatusResponse rsp = DescribeCfwInsStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCfwInsStatusOutcome(rsp);
+        else
+            return DescribeCfwInsStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCfwInsStatusOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeCfwInsStatusAsync(const DescribeCfwInsStatusRequest& request, const DescribeCfwInsStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCfwInsStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::DescribeCfwInsStatusOutcomeCallable CfwClient::DescribeCfwInsStatusCallable(const DescribeCfwInsStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCfwInsStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCfwInsStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CfwClient::DescribeDefenseSwitchOutcome CfwClient::DescribeDefenseSwitch(const DescribeDefenseSwitchRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDefenseSwitch");
