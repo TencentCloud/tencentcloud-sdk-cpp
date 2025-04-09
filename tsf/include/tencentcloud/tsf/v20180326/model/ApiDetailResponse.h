@@ -143,18 +143,14 @@ namespace TencentCloud
 
                     /**
                      * 获取API  能否调试
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CanRun API  能否调试
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetCanRun() const;
 
                     /**
                      * 设置API  能否调试
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _canRun API  能否调试
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCanRun(const bool& _canRun);
@@ -168,18 +164,14 @@ namespace TencentCloud
 
                     /**
                      * 获取API 状态 0:离线 1:在线，默认0
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status API 状态 0:离线 1:在线，默认0
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置API 状态 0:离线 1:在线，默认0
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status API 状态 0:离线 1:在线，默认0
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const int64_t& _status);
@@ -246,14 +238,12 @@ namespace TencentCloud
 
                     /**
                      * API  能否调试
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_canRun;
                     bool m_canRunHasBeenSet;
 
                     /**
                      * API 状态 0:离线 1:在线，默认0
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;

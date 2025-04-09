@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点配置, 1c2g|2c4g|4c8g|8c16g。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Specification 节点配置, 1c2g|2c4g|4c8g|8c16g。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSpecification() const;
 
                     /**
                      * 设置节点配置, 1c2g|2c4g|4c8g|8c16g。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _specification 节点配置, 1c2g|2c4g|4c8g|8c16g。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSpecification(const std::string& _specification);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取节点数量，2-9。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Number 节点数量，2-9。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetNumber() const;
 
                     /**
                      * 设置节点数量，2-9。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _number 节点数量，2-9。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNumber(const int64_t& _number);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 节点配置, 1c2g|2c4g|4c8g|8c16g。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_specification;
                     bool m_specificationHasBeenSet;
 
                     /**
                      * 节点数量，2-9。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_number;
                     bool m_numberHasBeenSet;

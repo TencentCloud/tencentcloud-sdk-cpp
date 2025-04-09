@@ -197,15 +197,15 @@ FailedOperation.UnKnowError：表示识别失败；
                     bool PolygonHasBeenSet() const;
 
                     /**
-                     * 获取识别出的图片在混贴票据图片中的旋转角度。
-                     * @return Angle 识别出的图片在混贴票据图片中的旋转角度。
+                     * 获取识别出切图后各图片的旋转角度。
+                     * @return Angle 识别出切图后各图片的旋转角度。
                      * 
                      */
                     double GetAngle() const;
 
                     /**
-                     * 设置识别出的图片在混贴票据图片中的旋转角度。
-                     * @param _angle 识别出的图片在混贴票据图片中的旋转角度。
+                     * 设置识别出切图后各图片的旋转角度。
+                     * @param _angle 识别出切图后各图片的旋转角度。
                      * 
                      */
                     void SetAngle(const double& _angle);
@@ -406,7 +406,7 @@ FailedOperation.UnKnowError：表示识别失败；
                     bool m_polygonHasBeenSet;
 
                     /**
-                     * 识别出的图片在混贴票据图片中的旋转角度。
+                     * 识别出切图后各图片的旋转角度。
                      */
                     double m_angle;
                     bool m_angleHasBeenSet;

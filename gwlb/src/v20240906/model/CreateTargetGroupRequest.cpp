@@ -30,7 +30,8 @@ CreateTargetGroupRequest::CreateTargetGroupRequest() :
     m_protocolHasBeenSet(false),
     m_healthCheckHasBeenSet(false),
     m_scheduleAlgorithmHasBeenSet(false),
-    m_allDeadToAliveHasBeenSet(false)
+    m_allDeadToAliveHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -111,6 +112,21 @@ string CreateTargetGroupRequest::ToJsonString() const
         string key = "AllDeadToAlive";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_allDeadToAlive, allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -247,6 +263,22 @@ void CreateTargetGroupRequest::SetAllDeadToAlive(const bool& _allDeadToAlive)
 bool CreateTargetGroupRequest::AllDeadToAliveHasBeenSet() const
 {
     return m_allDeadToAliveHasBeenSet;
+}
+
+vector<TagInfo> CreateTargetGroupRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateTargetGroupRequest::SetTags(const vector<TagInfo>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateTargetGroupRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

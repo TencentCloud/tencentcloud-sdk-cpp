@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取健康检查配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 健康检查配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     UpstreamHealthCheckConfig GetResult() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 健康检查配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     UpstreamHealthCheckConfig m_result;
                     bool m_resultHasBeenSet;

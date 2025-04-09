@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取云原生API网关实例协议端口列表响应结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 云原生API网关实例协议端口列表响应结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     DescribeGatewayInstancePortResult GetResult() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 云原生API网关实例协议端口列表响应结果
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     DescribeGatewayInstancePortResult m_result;
                     bool m_resultHasBeenSet;

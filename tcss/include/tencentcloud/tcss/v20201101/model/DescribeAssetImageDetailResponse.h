@@ -114,8 +114,8 @@ namespace TencentCloud
                     bool SizeHasBeenSet() const;
 
                     /**
-                     * 获取关联主机个数
-                     * @return HostCnt 关联主机个数
+                     * 获取关联主机个数(包含普通节点数和超级节点数)
+                     * @return HostCnt 关联主机个数(包含普通节点数和超级节点数)
                      * 
                      */
                     uint64_t GetHostCnt() const;
@@ -140,6 +140,20 @@ namespace TencentCloud
                      * 
                      */
                     bool ContainerCntHasBeenSet() const;
+
+                    /**
+                     * 获取超级节点数
+                     * @return SuperNodeCnt 超级节点数
+                     * 
+                     */
+                    uint64_t GetSuperNodeCnt() const;
+
+                    /**
+                     * 判断参数 SuperNodeCnt 是否已赋值
+                     * @return SuperNodeCnt 是否已赋值
+                     * 
+                     */
+                    bool SuperNodeCntHasBeenSet() const;
 
                     /**
                      * 获取最近扫描时间
@@ -482,7 +496,7 @@ namespace TencentCloud
                     bool m_sizeHasBeenSet;
 
                     /**
-                     * 关联主机个数
+                     * 关联主机个数(包含普通节点数和超级节点数)
                      */
                     uint64_t m_hostCnt;
                     bool m_hostCntHasBeenSet;
@@ -492,6 +506,12 @@ namespace TencentCloud
                      */
                     uint64_t m_containerCnt;
                     bool m_containerCntHasBeenSet;
+
+                    /**
+                     * 超级节点数
+                     */
+                    uint64_t m_superNodeCnt;
+                    bool m_superNodeCntHasBeenSet;
 
                     /**
                      * 最近扫描时间

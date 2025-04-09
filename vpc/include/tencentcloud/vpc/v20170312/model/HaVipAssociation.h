@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取HaVip绑定的子机或网卡唯一ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId HaVip绑定的子机或网卡唯一ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置HaVip绑定的子机或网卡唯一ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceId HaVip绑定的子机或网卡唯一ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取HaVip实例唯一ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HaVipId HaVip实例唯一ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHaVipId() const;
 
                     /**
                      * 设置HaVip实例唯一ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _haVipId HaVip实例唯一ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHaVipId(const std::string& _haVipId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取HaVip绑定的类型。取值:CVM, ENI。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceType HaVip绑定的类型。取值:CVM, ENI。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInstanceType() const;
 
                     /**
                      * 设置HaVip绑定的类型。取值:CVM, ENI。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instanceType HaVip绑定的类型。取值:CVM, ENI。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstanceType(const std::string& _instanceType);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * HaVip绑定的子机或网卡唯一ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
                      * HaVip实例唯一ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_haVipId;
                     bool m_haVipIdHasBeenSet;
 
                     /**
                      * HaVip绑定的类型。取值:CVM, ENI。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;

@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取创建的规则 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 创建的规则 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ApiRateLimitRule GetResult() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 创建的规则 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ApiRateLimitRule m_result;
                     bool m_resultHasBeenSet;

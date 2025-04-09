@@ -104,6 +104,26 @@ namespace TencentCloud
 类型：String
 必选：否
 
+- tag-key
+
+按照【标签键】进行过滤。
+类型：String
+必选：否
+
+- tag-value
+
+按照【标签值】进行过滤。
+类型：String
+必选：否
+
+- tag:tag-key
+
+按照【标签键值对】进行过滤。 tag-key使用具体的标签键进行替换。
+类型：String
+必选：否
+
+例如 Filter 为 {"Name": "tag:key1", "Values": ["v1", "v2"] } ，即查询所有标签为 key1:v1 或 key1:v2 的资源。
+
 
                      * @return Filters 过滤器列表。参数不支持同时指定 `InstanceIds` 和 `Filters` 。
 
@@ -131,6 +151,26 @@ namespace TencentCloud
 按照【操作系统类型】进行过滤，取值：Linux | Windows。
 类型：String
 必选：否
+
+- tag-key
+
+按照【标签键】进行过滤。
+类型：String
+必选：否
+
+- tag-value
+
+按照【标签值】进行过滤。
+类型：String
+必选：否
+
+- tag:tag-key
+
+按照【标签键值对】进行过滤。 tag-key使用具体的标签键进行替换。
+类型：String
+必选：否
+
+例如 Filter 为 {"Name": "tag:key1", "Values": ["v1", "v2"] } ，即查询所有标签为 key1:v1 或 key1:v2 的资源。
 
 
                      * 
@@ -165,6 +205,26 @@ namespace TencentCloud
 类型：String
 必选：否
 
+- tag-key
+
+按照【标签键】进行过滤。
+类型：String
+必选：否
+
+- tag-value
+
+按照【标签值】进行过滤。
+类型：String
+必选：否
+
+- tag:tag-key
+
+按照【标签键值对】进行过滤。 tag-key使用具体的标签键进行替换。
+类型：String
+必选：否
+
+例如 Filter 为 {"Name": "tag:key1", "Values": ["v1", "v2"] } ，即查询所有标签为 key1:v1 或 key1:v2 的资源。
+
 
                      * @param _filters 过滤器列表。参数不支持同时指定 `InstanceIds` 和 `Filters` 。
 
@@ -192,6 +252,26 @@ namespace TencentCloud
 按照【操作系统类型】进行过滤，取值：Linux | Windows。
 类型：String
 必选：否
+
+- tag-key
+
+按照【标签键】进行过滤。
+类型：String
+必选：否
+
+- tag-value
+
+按照【标签值】进行过滤。
+类型：String
+必选：否
+
+- tag:tag-key
+
+按照【标签键值对】进行过滤。 tag-key使用具体的标签键进行替换。
+类型：String
+必选：否
+
+例如 Filter 为 {"Name": "tag:key1", "Values": ["v1", "v2"] } ，即查询所有标签为 key1:v1 或 key1:v2 的资源。
 
 
                      * 
@@ -285,6 +365,26 @@ namespace TencentCloud
 按照【操作系统类型】进行过滤，取值：Linux | Windows。
 类型：String
 必选：否
+
+- tag-key
+
+按照【标签键】进行过滤。
+类型：String
+必选：否
+
+- tag-value
+
+按照【标签值】进行过滤。
+类型：String
+必选：否
+
+- tag:tag-key
+
+按照【标签键值对】进行过滤。 tag-key使用具体的标签键进行替换。
+类型：String
+必选：否
+
+例如 Filter 为 {"Name": "tag:key1", "Values": ["v1", "v2"] } ，即查询所有标签为 key1:v1 或 key1:v2 的资源。
 
 
                      */

@@ -118,13 +118,13 @@ namespace TencentCloud
 - true: 不展示上传文件页
  
 
-注意: 此参数仅针对**EmbedType=CREATE_TEMPLATE(创建模板)有效**，
+注意: 此参数仅针对**EmbedType=CREATE_TEMPLATE(创建模板)和EmbedType=CREATE_CONTRACT_DRAFT_COOPEDIT(创建起草合同)有效**，
                      * @return SkipUploadFile 跳过上传文件，默认为false(展示上传文件页）![image](https://qcloudimg.tencent-cloud.cn/raw/8ca33745cf772e79831dbe5a70e82400.png)
 - false: 展示上传文件页
 - true: 不展示上传文件页
  
 
-注意: 此参数仅针对**EmbedType=CREATE_TEMPLATE(创建模板)有效**，
+注意: 此参数仅针对**EmbedType=CREATE_TEMPLATE(创建模板)和EmbedType=CREATE_CONTRACT_DRAFT_COOPEDIT(创建起草合同)有效**，
                      * 
                      */
                     bool GetSkipUploadFile() const;
@@ -135,13 +135,13 @@ namespace TencentCloud
 - true: 不展示上传文件页
  
 
-注意: 此参数仅针对**EmbedType=CREATE_TEMPLATE(创建模板)有效**，
+注意: 此参数仅针对**EmbedType=CREATE_TEMPLATE(创建模板)和EmbedType=CREATE_CONTRACT_DRAFT_COOPEDIT(创建起草合同)有效**，
                      * @param _skipUploadFile 跳过上传文件，默认为false(展示上传文件页）![image](https://qcloudimg.tencent-cloud.cn/raw/8ca33745cf772e79831dbe5a70e82400.png)
 - false: 展示上传文件页
 - true: 不展示上传文件页
  
 
-注意: 此参数仅针对**EmbedType=CREATE_TEMPLATE(创建模板)有效**，
+注意: 此参数仅针对**EmbedType=CREATE_TEMPLATE(创建模板)和EmbedType=CREATE_CONTRACT_DRAFT_COOPEDIT(创建起草合同)有效**，
                      * 
                      */
                     void SetSkipUploadFile(const bool& _skipUploadFile);
@@ -179,7 +179,7 @@ namespace TencentCloud
 - true: 不展示上传文件页
  
 
-注意: 此参数仅针对**EmbedType=CREATE_TEMPLATE(创建模板)有效**，
+注意: 此参数仅针对**EmbedType=CREATE_TEMPLATE(创建模板)和EmbedType=CREATE_CONTRACT_DRAFT_COOPEDIT(创建起草合同)有效**，
                      */
                     bool m_skipUploadFile;
                     bool m_skipUploadFileHasBeenSet;

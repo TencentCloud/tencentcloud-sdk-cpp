@@ -302,18 +302,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启filebeat高级配置开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FilebeatConfigEnable 是否开启filebeat高级配置开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetFilebeatConfigEnable() const;
 
                     /**
                      * 设置是否开启filebeat高级配置开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _filebeatConfigEnable 是否开启filebeat高级配置开关
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFilebeatConfigEnable(const bool& _filebeatConfigEnable);
@@ -327,18 +323,14 @@ namespace TencentCloud
 
                     /**
                      * 获取close_timeout参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FilebeatCloseTimeout close_timeout参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFilebeatCloseTimeout() const;
 
                     /**
                      * 设置close_timeout参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _filebeatCloseTimeout close_timeout参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFilebeatCloseTimeout(const int64_t& _filebeatCloseTimeout);
@@ -425,14 +417,12 @@ namespace TencentCloud
 
                     /**
                      * 是否开启filebeat高级配置开关
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_filebeatConfigEnable;
                     bool m_filebeatConfigEnableHasBeenSet;
 
                     /**
                      * close_timeout参数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_filebeatCloseTimeout;
                     bool m_filebeatCloseTimeoutHasBeenSet;

@@ -90,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取流量镜像的接收endpoint（公网IP）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TargetEndPoints 流量镜像的接收endpoint（公网IP）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetTargetEndPoints() const;
 
                     /**
                      * 设置流量镜像的接收endpoint（公网IP）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _targetEndPoints 流量镜像的接收endpoint（公网IP）
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTargetEndPoints(const std::vector<std::string>& _targetEndPoints);
@@ -115,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取流量镜像的接收类型，分别为：IP/ENI/CLB
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TargetType 流量镜像的接收类型，分别为：IP/ENI/CLB
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTargetType() const;
 
                     /**
                      * 设置流量镜像的接收类型，分别为：IP/ENI/CLB
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _targetType 流量镜像的接收类型，分别为：IP/ENI/CLB
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTargetType(const std::string& _targetType);
@@ -154,14 +146,12 @@ namespace TencentCloud
 
                     /**
                      * 流量镜像的接收endpoint（公网IP）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_targetEndPoints;
                     bool m_targetEndPointsHasBeenSet;
 
                     /**
                      * 流量镜像的接收类型，分别为：IP/ENI/CLB
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_targetType;
                     bool m_targetTypeHasBeenSet;

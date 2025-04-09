@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ID 服务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetID() const;
 
                     /**
                      * 设置服务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _iD 服务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetID(const std::string& _iD);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 服务名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置服务名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name 服务名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetTags() const;
 
                     /**
                      * 设置标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::vector<std::string>& _tags);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取后端配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpstreamInfo 后端配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     KongUpstreamInfo GetUpstreamInfo() const;
 
                     /**
                      * 设置后端配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _upstreamInfo 后端配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpstreamInfo(const KongUpstreamInfo& _upstreamInfo);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取后端类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpstreamType 后端类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpstreamType() const;
 
                     /**
                      * 设置后端类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _upstreamType 后端类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpstreamType(const std::string& _upstreamType);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createdTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -199,18 +175,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否可编辑
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Editable 是否可编辑
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEditable() const;
 
                     /**
                      * 设置是否可编辑
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _editable 是否可编辑
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEditable(const bool& _editable);
@@ -251,49 +223,42 @@ namespace TencentCloud
 
                     /**
                      * 服务ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_iD;
                     bool m_iDHasBeenSet;
 
                     /**
                      * 服务名字
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
                      * 后端配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     KongUpstreamInfo m_upstreamInfo;
                     bool m_upstreamInfoHasBeenSet;
 
                     /**
                      * 后端类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_upstreamType;
                     bool m_upstreamTypeHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;
 
                     /**
                      * 是否可编辑
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_editable;
                     bool m_editableHasBeenSet;

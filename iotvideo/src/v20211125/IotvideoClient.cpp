@@ -2147,6 +2147,49 @@ IotvideoClient::DescribeCloudStorageUsersOutcomeCallable IotvideoClient::Describ
     return task->get_future();
 }
 
+IotvideoClient::DescribeCsReportCountDataInfoOutcome IotvideoClient::DescribeCsReportCountDataInfo(const DescribeCsReportCountDataInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCsReportCountDataInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCsReportCountDataInfoResponse rsp = DescribeCsReportCountDataInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCsReportCountDataInfoOutcome(rsp);
+        else
+            return DescribeCsReportCountDataInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCsReportCountDataInfoOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::DescribeCsReportCountDataInfoAsync(const DescribeCsReportCountDataInfoRequest& request, const DescribeCsReportCountDataInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCsReportCountDataInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::DescribeCsReportCountDataInfoOutcomeCallable IotvideoClient::DescribeCsReportCountDataInfoCallable(const DescribeCsReportCountDataInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCsReportCountDataInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCsReportCountDataInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotvideoClient::DescribeDataForwardListOutcome IotvideoClient::DescribeDataForwardList(const DescribeDataForwardListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDataForwardList");

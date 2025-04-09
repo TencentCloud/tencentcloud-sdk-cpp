@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取高优路由表唯一 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HighPriorityRouteTableId 高优路由表唯一 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHighPriorityRouteTableId() const;
 
                     /**
                      * 设置高优路由表唯一 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _highPriorityRouteTableId 高优路由表唯一 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHighPriorityRouteTableId(const std::string& _highPriorityRouteTableId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取高优路由表条目唯一 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HighPriorityRouteId 高优路由表条目唯一 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHighPriorityRouteId() const;
 
                     /**
                      * 设置高优路由表条目唯一 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _highPriorityRouteId 高优路由表条目唯一 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHighPriorityRouteId(const std::string& _highPriorityRouteId);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取目标网段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DestinationCidrBlock 目标网段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDestinationCidrBlock() const;
 
                     /**
                      * 设置目标网段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _destinationCidrBlock 目标网段
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDestinationCidrBlock(const std::string& _destinationCidrBlock);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网关类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GatewayType 网关类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGatewayType() const;
 
                     /**
                      * 设置网关类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gatewayType 网关类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGatewayType(const std::string& _gatewayType);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网关唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GatewayId 网关唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGatewayId() const;
 
                     /**
                      * 设置网关唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gatewayId 网关唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGatewayId(const std::string& _gatewayId);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取高优路由条目描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 高优路由条目描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置高优路由条目描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 高优路由条目描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取ECMP算法，支持的算法有：ECMP_QUINTUPLE_HASH：五元组hash，ECMP_SOURCE_DESTINATION_IP_HASH：源和目的IP hash，ECMP_DESTINATION_IP_HASH：目的IP hash，ECMP_SOURCE_IP_HASH：源IP hash。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetRouteAlgorithm ECMP算法，支持的算法有：ECMP_QUINTUPLE_HASH：五元组hash，ECMP_SOURCE_DESTINATION_IP_HASH：源和目的IP hash，ECMP_DESTINATION_IP_HASH：目的IP hash，ECMP_SOURCE_IP_HASH：源IP hash。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubnetRouteAlgorithm() const;
 
                     /**
                      * 设置ECMP算法，支持的算法有：ECMP_QUINTUPLE_HASH：五元组hash，ECMP_SOURCE_DESTINATION_IP_HASH：源和目的IP hash，ECMP_DESTINATION_IP_HASH：目的IP hash，ECMP_SOURCE_IP_HASH：源IP hash。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subnetRouteAlgorithm ECMP算法，支持的算法有：ECMP_QUINTUPLE_HASH：五元组hash，ECMP_SOURCE_DESTINATION_IP_HASH：源和目的IP hash，ECMP_DESTINATION_IP_HASH：目的IP hash，ECMP_SOURCE_IP_HASH：源IP hash。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubnetRouteAlgorithm(const std::string& _subnetRouteAlgorithm);
@@ -223,18 +195,14 @@ namespace TencentCloud
 
                     /**
                      * 获取出参展示，是否为CDC属性高优路由
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsCdc 出参展示，是否为CDC属性高优路由
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetIsCdc() const;
 
                     /**
                      * 设置出参展示，是否为CDC属性高优路由
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isCdc 出参展示，是否为CDC属性高优路由
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsCdc(const bool& _isCdc);
@@ -248,18 +216,14 @@ namespace TencentCloud
 
                     /**
                      * 获取出参展示，CDC 唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CdcId 出参展示，CDC 唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCdcId() const;
 
                     /**
                      * 设置出参展示，CDC 唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cdcId 出参展示，CDC 唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCdcId(const std::string& _cdcId);
@@ -273,18 +237,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedTime 创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createdTime 创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreatedTime(const std::string& _createdTime);
@@ -300,70 +260,60 @@ namespace TencentCloud
 
                     /**
                      * 高优路由表唯一 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_highPriorityRouteTableId;
                     bool m_highPriorityRouteTableIdHasBeenSet;
 
                     /**
                      * 高优路由表条目唯一 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_highPriorityRouteId;
                     bool m_highPriorityRouteIdHasBeenSet;
 
                     /**
                      * 目标网段
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_destinationCidrBlock;
                     bool m_destinationCidrBlockHasBeenSet;
 
                     /**
                      * 网关类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_gatewayType;
                     bool m_gatewayTypeHasBeenSet;
 
                     /**
                      * 网关唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_gatewayId;
                     bool m_gatewayIdHasBeenSet;
 
                     /**
                      * 高优路由条目描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
                      * ECMP算法，支持的算法有：ECMP_QUINTUPLE_HASH：五元组hash，ECMP_SOURCE_DESTINATION_IP_HASH：源和目的IP hash，ECMP_DESTINATION_IP_HASH：目的IP hash，ECMP_SOURCE_IP_HASH：源IP hash。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subnetRouteAlgorithm;
                     bool m_subnetRouteAlgorithmHasBeenSet;
 
                     /**
                      * 出参展示，是否为CDC属性高优路由
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isCdc;
                     bool m_isCdcHasBeenSet;
 
                     /**
                      * 出参展示，CDC 唯一ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cdcId;
                     bool m_cdcIdHasBeenSet;
 
                     /**
                      * 创建时间。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;

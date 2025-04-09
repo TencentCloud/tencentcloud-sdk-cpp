@@ -422,6 +422,7 @@ set(iotvideo_public_header_model
   include/tencentcloud/iotvideo/v20211125/model/CheckForwardAuthRequest.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeDeviceDataRequest.h
   include/tencentcloud/iotvideo/v20211125/model/CreateBatchResponse.h
+  include/tencentcloud/iotvideo/v20211125/model/CountDataInfo.h
   include/tencentcloud/iotvideo/v20211125/model/DescribePackageConsumeTasksResponse.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeDeviceActionHistoryResponse.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeCategoryRequest.h
@@ -475,6 +476,7 @@ set(iotvideo_public_header_model
   include/tencentcloud/iotvideo/v20211125/model/CreateProductResponse.h
   include/tencentcloud/iotvideo/v20211125/model/ChangeP2PRouteResponse.h
   include/tencentcloud/iotvideo/v20211125/model/TRTCParams.h
+  include/tencentcloud/iotvideo/v20211125/model/DescribeCsReportCountDataInfoResponse.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeDeviceDataHistoryResponse.h
   include/tencentcloud/iotvideo/v20211125/model/CallTRTCDeviceRequest.h
   include/tencentcloud/iotvideo/v20211125/model/CallDeviceActionAsyncRequest.h
@@ -486,7 +488,7 @@ set(iotvideo_public_header_model
   include/tencentcloud/iotvideo/v20211125/model/InheritCloudStorageUserResponse.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeDeviceEventHistoryResponse.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeFirmwareTaskResponse.h
-  include/tencentcloud/iotvideo/v20211125/model/FirmwareInfo.h
+  include/tencentcloud/iotvideo/v20211125/model/DescribeDevicesRequest.h
   include/tencentcloud/iotvideo/v20211125/model/CreateProductRequest.h
   include/tencentcloud/iotvideo/v20211125/model/ChangeP2PRouteRequest.h
   include/tencentcloud/iotvideo/v20211125/model/GetFirmwareURLResponse.h
@@ -515,6 +517,7 @@ set(iotvideo_public_header_model
   include/tencentcloud/iotvideo/v20211125/model/BalanceTransaction.h
   include/tencentcloud/iotvideo/v20211125/model/FirmwareTaskInfo.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeProductDynamicRegisterRequest.h
+  include/tencentcloud/iotvideo/v20211125/model/UploadFirmwareResponse.h
   include/tencentcloud/iotvideo/v20211125/model/ResetCloudStorageEventRequest.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeFirmwareTaskDistributionResponse.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeBatchResponse.h
@@ -538,7 +541,7 @@ set(iotvideo_public_header_model
   include/tencentcloud/iotvideo/v20211125/model/CloudStorageTimeInfo.h
   include/tencentcloud/iotvideo/v20211125/model/ModifyDeviceResponse.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeCloudStoragePackageConsumeDetailsRequest.h
-  include/tencentcloud/iotvideo/v20211125/model/UploadFirmwareResponse.h
+  include/tencentcloud/iotvideo/v20211125/model/FirmwareInfo.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeCloudStorageOrderRequest.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeDeviceRequest.h
   include/tencentcloud/iotvideo/v20211125/model/CreateCloudStorageResponse.h
@@ -591,7 +594,7 @@ set(iotvideo_public_header_model
   include/tencentcloud/iotvideo/v20211125/model/AIModelInfo.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeCloudStorageThumbnailResponse.h
   include/tencentcloud/iotvideo/v20211125/model/SearchKeyword.h
-  include/tencentcloud/iotvideo/v20211125/model/DescribeDevicesRequest.h
+  include/tencentcloud/iotvideo/v20211125/model/DescribeCsReportCountDataInfoRequest.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeModelDefinitionRequest.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeProductDynamicRegisterResponse.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeFirmwareTaskStatisticsResponse.h
@@ -1021,6 +1024,7 @@ set(iotvideo_src
   src/v20211125/model/CheckForwardAuthRequest.cpp
   src/v20211125/model/DescribeDeviceDataRequest.cpp
   src/v20211125/model/CreateBatchResponse.cpp
+  src/v20211125/model/CountDataInfo.cpp
   src/v20211125/model/DescribePackageConsumeTasksResponse.cpp
   src/v20211125/model/DescribeDeviceActionHistoryResponse.cpp
   src/v20211125/model/DescribeCategoryRequest.cpp
@@ -1074,6 +1078,7 @@ set(iotvideo_src
   src/v20211125/model/CreateProductResponse.cpp
   src/v20211125/model/ChangeP2PRouteResponse.cpp
   src/v20211125/model/TRTCParams.cpp
+  src/v20211125/model/DescribeCsReportCountDataInfoResponse.cpp
   src/v20211125/model/DescribeDeviceDataHistoryResponse.cpp
   src/v20211125/model/CallTRTCDeviceRequest.cpp
   src/v20211125/model/CallDeviceActionAsyncRequest.cpp
@@ -1085,7 +1090,7 @@ set(iotvideo_src
   src/v20211125/model/InheritCloudStorageUserResponse.cpp
   src/v20211125/model/DescribeDeviceEventHistoryResponse.cpp
   src/v20211125/model/DescribeFirmwareTaskResponse.cpp
-  src/v20211125/model/FirmwareInfo.cpp
+  src/v20211125/model/DescribeDevicesRequest.cpp
   src/v20211125/model/CreateProductRequest.cpp
   src/v20211125/model/ChangeP2PRouteRequest.cpp
   src/v20211125/model/GetFirmwareURLResponse.cpp
@@ -1114,6 +1119,7 @@ set(iotvideo_src
   src/v20211125/model/BalanceTransaction.cpp
   src/v20211125/model/FirmwareTaskInfo.cpp
   src/v20211125/model/DescribeProductDynamicRegisterRequest.cpp
+  src/v20211125/model/UploadFirmwareResponse.cpp
   src/v20211125/model/ResetCloudStorageEventRequest.cpp
   src/v20211125/model/DescribeFirmwareTaskDistributionResponse.cpp
   src/v20211125/model/DescribeBatchResponse.cpp
@@ -1137,7 +1143,7 @@ set(iotvideo_src
   src/v20211125/model/CloudStorageTimeInfo.cpp
   src/v20211125/model/ModifyDeviceResponse.cpp
   src/v20211125/model/DescribeCloudStoragePackageConsumeDetailsRequest.cpp
-  src/v20211125/model/UploadFirmwareResponse.cpp
+  src/v20211125/model/FirmwareInfo.cpp
   src/v20211125/model/DescribeCloudStorageOrderRequest.cpp
   src/v20211125/model/DescribeDeviceRequest.cpp
   src/v20211125/model/CreateCloudStorageResponse.cpp
@@ -1190,7 +1196,7 @@ set(iotvideo_src
   src/v20211125/model/AIModelInfo.cpp
   src/v20211125/model/DescribeCloudStorageThumbnailResponse.cpp
   src/v20211125/model/SearchKeyword.cpp
-  src/v20211125/model/DescribeDevicesRequest.cpp
+  src/v20211125/model/DescribeCsReportCountDataInfoRequest.cpp
   src/v20211125/model/DescribeModelDefinitionRequest.cpp
   src/v20211125/model/DescribeProductDynamicRegisterResponse.cpp
   src/v20211125/model/DescribeFirmwareTaskStatisticsResponse.cpp

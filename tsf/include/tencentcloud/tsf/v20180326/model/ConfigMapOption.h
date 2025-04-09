@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Key -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _key -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKey(const std::string& _key);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Path -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPath() const;
 
                     /**
                      * 设置-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _path -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPath(const std::string& _path);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Mode -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMode() const;
 
                     /**
                      * 设置-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _mode -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMode(const std::string& _mode);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * -
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
 
                     /**
                      * -
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_path;
                     bool m_pathHasBeenSet;
 
                     /**
                      * -
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mode;
                     bool m_modeHasBeenSet;

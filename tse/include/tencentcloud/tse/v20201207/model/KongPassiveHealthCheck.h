@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取后端target协议类型，被动健康检查支持http和tcp，主动健康检查支持http
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 后端target协议类型，被动健康检查支持http和tcp，主动健康检查支持http
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置后端target协议类型，被动健康检查支持http和tcp，主动健康检查支持http
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 后端target协议类型，被动健康检查支持http和tcp，主动健康检查支持http
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -75,7 +71,6 @@ namespace TencentCloud
 
                     /**
                      * 后端target协议类型，被动健康检查支持http和tcp，主动健康检查支持http
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

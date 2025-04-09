@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupId 分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupId 分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupName 分组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置分组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupName 分组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分组下API个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupApiCount 分组下API个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetGroupApiCount() const;
 
                     /**
                      * 设置分组下API个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupApiCount 分组下API个数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupApiCount(const uint64_t& _groupApiCount);
@@ -124,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分组API列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupApis 分组API列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<GatewayGroupApiVo> GetGroupApis() const;
 
                     /**
                      * 设置分组API列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupApis 分组API列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupApis(const std::vector<GatewayGroupApiVo>& _groupApis);
@@ -149,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网关实例的类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GatewayInstanceType 网关实例的类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGatewayInstanceType() const;
 
                     /**
                      * 设置网关实例的类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gatewayInstanceType 网关实例的类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGatewayInstanceType(const std::string& _gatewayInstanceType);
@@ -174,18 +154,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网关实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GatewayInstanceId 网关实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGatewayInstanceId() const;
 
                     /**
                      * 设置网关实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gatewayInstanceId 网关实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGatewayInstanceId(const std::string& _gatewayInstanceId);
@@ -201,42 +177,36 @@ namespace TencentCloud
 
                     /**
                      * 分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
                      * 分组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
 
                     /**
                      * 分组下API个数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_groupApiCount;
                     bool m_groupApiCountHasBeenSet;
 
                     /**
                      * 分组API列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<GatewayGroupApiVo> m_groupApis;
                     bool m_groupApisHasBeenSet;
 
                     /**
                      * 网关实例的类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_gatewayInstanceType;
                     bool m_gatewayInstanceTypeHasBeenSet;
 
                     /**
                      * 网关实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_gatewayInstanceId;
                     bool m_gatewayInstanceIdHasBeenSet;

@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取网关服务创建结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 网关服务创建结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CreateGatewayServiceResult GetResult() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 网关服务创建结果
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CreateGatewayServiceResult m_result;
                     bool m_resultHasBeenSet;

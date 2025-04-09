@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取文件配置项
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 文件配置项
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     FileConfig GetResult() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 文件配置项
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     FileConfig m_result;
                     bool m_resultHasBeenSet;

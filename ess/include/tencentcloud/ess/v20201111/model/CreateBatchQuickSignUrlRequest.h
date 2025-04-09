@@ -26,6 +26,7 @@
 #include <tencentcloud/ess/v20201111/model/UserInfo.h>
 #include <tencentcloud/ess/v20201111/model/FlowBatchUrlInfo.h>
 #include <tencentcloud/ess/v20201111/model/Intention.h>
+#include <tencentcloud/ess/v20201111/model/PresetApproverInfo.h>
 
 
 namespace TencentCloud
@@ -500,6 +501,27 @@ namespace TencentCloud
                      */
                     bool CanBatchRejectHasBeenSet() const;
 
+                    /**
+                     * 获取	 预设的动态签署方的补充信息，仅匹配对应信息的签署方才能领取合同。暂时仅对个人参与方生效。
+                     * @return PresetApproverInfo 	 预设的动态签署方的补充信息，仅匹配对应信息的签署方才能领取合同。暂时仅对个人参与方生效。
+                     * 
+                     */
+                    PresetApproverInfo GetPresetApproverInfo() const;
+
+                    /**
+                     * 设置	 预设的动态签署方的补充信息，仅匹配对应信息的签署方才能领取合同。暂时仅对个人参与方生效。
+                     * @param _presetApproverInfo 	 预设的动态签署方的补充信息，仅匹配对应信息的签署方才能领取合同。暂时仅对个人参与方生效。
+                     * 
+                     */
+                    void SetPresetApproverInfo(const PresetApproverInfo& _presetApproverInfo);
+
+                    /**
+                     * 判断参数 PresetApproverInfo 是否已赋值
+                     * @return PresetApproverInfo 是否已赋值
+                     * 
+                     */
+                    bool PresetApproverInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -624,6 +646,12 @@ namespace TencentCloud
                      */
                     bool m_canBatchReject;
                     bool m_canBatchRejectHasBeenSet;
+
+                    /**
+                     * 	 预设的动态签署方的补充信息，仅匹配对应信息的签署方才能领取合同。暂时仅对个人参与方生效。
+                     */
+                    PresetApproverInfo m_presetApproverInfo;
+                    bool m_presetApproverInfoHasBeenSet;
 
                 };
             }

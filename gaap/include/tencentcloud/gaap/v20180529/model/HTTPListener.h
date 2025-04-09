@@ -194,18 +194,14 @@ namespace TencentCloud
 
                     /**
                      * 获取监听器的通道ID，如果监听器属于通道组，则为null
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyId 监听器的通道ID，如果监听器属于通道组，则为null
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProxyId() const;
 
                     /**
                      * 设置监听器的通道ID，如果监听器属于通道组，则为null
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _proxyId 监听器的通道ID，如果监听器属于通道组，则为null
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProxyId(const std::string& _proxyId);
@@ -287,7 +283,6 @@ namespace TencentCloud
 
                     /**
                      * 监听器的通道ID，如果监听器属于通道组，则为null
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_proxyId;
                     bool m_proxyIdHasBeenSet;

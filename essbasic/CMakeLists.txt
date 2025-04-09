@@ -340,6 +340,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/CreatePartnerAutoSignAuthUrlRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateBatchCancelFlowUrlRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelDescribeAccountBillDetailResponse.h
+  include/tencentcloud/essbasic/v20210526/model/PresetApproverInfo.h
   include/tencentcloud/essbasic/v20210526/model/ApproverRestriction.h
   include/tencentcloud/essbasic/v20210526/model/CreateFlowForwardsResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowByFilesResponse.h
@@ -742,6 +743,7 @@ set(essbasic_src
   src/v20210526/model/CreatePartnerAutoSignAuthUrlRequest.cpp
   src/v20210526/model/ChannelCreateBatchCancelFlowUrlRequest.cpp
   src/v20210526/model/ChannelDescribeAccountBillDetailResponse.cpp
+  src/v20210526/model/PresetApproverInfo.cpp
   src/v20210526/model/ApproverRestriction.cpp
   src/v20210526/model/CreateFlowForwardsResponse.cpp
   src/v20210526/model/ChannelCreateFlowByFilesResponse.cpp

@@ -45,9 +45,7 @@ namespace TencentCloud
 
                     /**
                      * 获取操作状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 操作状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetResult() const;
@@ -63,7 +61,6 @@ namespace TencentCloud
 
                     /**
                      * 操作状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_result;
                     bool m_resultHasBeenSet;

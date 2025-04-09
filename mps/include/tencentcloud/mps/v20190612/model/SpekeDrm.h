@@ -47,18 +47,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取资源标记，
+                     * 获取资源标记，该字段内容为用户自定义；
 支持1-128个字符的数字、字母、下划线(_)、中划线(-)。
-                     * @return ResourceId 资源标记，
+                     * @return ResourceId 资源标记，该字段内容为用户自定义；
 支持1-128个字符的数字、字母、下划线(_)、中划线(-)。
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置资源标记，
+                     * 设置资源标记，该字段内容为用户自定义；
 支持1-128个字符的数字、字母、下划线(_)、中划线(-)。
-                     * @param _resourceId 资源标记，
+                     * @param _resourceId 资源标记，该字段内容为用户自定义；
 支持1-128个字符的数字、字母、下划线(_)、中划线(-)。
                      * 
                      */
@@ -72,23 +72,23 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取drm厂商访问地址；
+                     * 获取DRM厂商访问地址，该字段内容从DRM厂商获取。
 
-注: 不同DRM厂商对子流的数量限制不一样，如 pallycon 限制不能超过5条子流，drmtoday厂商最多仅支持9条子流加密
-                     * @return KeyServerUrl drm厂商访问地址；
+注: 不同DRM厂商对子流的数量限制不一样，如 PallyCon 限制不能超过5条子流，DRMtoday厂商最多仅支持9条子流加密
+                     * @return KeyServerUrl DRM厂商访问地址，该字段内容从DRM厂商获取。
 
-注: 不同DRM厂商对子流的数量限制不一样，如 pallycon 限制不能超过5条子流，drmtoday厂商最多仅支持9条子流加密
+注: 不同DRM厂商对子流的数量限制不一样，如 PallyCon 限制不能超过5条子流，DRMtoday厂商最多仅支持9条子流加密
                      * 
                      */
                     std::string GetKeyServerUrl() const;
 
                     /**
-                     * 设置drm厂商访问地址；
+                     * 设置DRM厂商访问地址，该字段内容从DRM厂商获取。
 
-注: 不同DRM厂商对子流的数量限制不一样，如 pallycon 限制不能超过5条子流，drmtoday厂商最多仅支持9条子流加密
-                     * @param _keyServerUrl drm厂商访问地址；
+注: 不同DRM厂商对子流的数量限制不一样，如 PallyCon 限制不能超过5条子流，DRMtoday厂商最多仅支持9条子流加密
+                     * @param _keyServerUrl DRM厂商访问地址，该字段内容从DRM厂商获取。
 
-注: 不同DRM厂商对子流的数量限制不一样，如 pallycon 限制不能超过5条子流，drmtoday厂商最多仅支持9条子流加密
+注: 不同DRM厂商对子流的数量限制不一样，如 PallyCon 限制不能超过5条子流，DRMtoday厂商最多仅支持9条子流加密
                      * 
                      */
                     void SetKeyServerUrl(const std::string& _keyServerUrl);
@@ -101,15 +101,15 @@ namespace TencentCloud
                     bool KeyServerUrlHasBeenSet() const;
 
                     /**
-                     * 获取加密初始化向量(32字节字符串)。
-                     * @return Vector 加密初始化向量(32字节字符串)。
+                     * 获取加密初始化向量(32字节字符串)，该字段内容为用户自定义。
+                     * @return Vector 加密初始化向量(32字节字符串)，该字段内容为用户自定义。
                      * 
                      */
                     std::string GetVector() const;
 
                     /**
-                     * 设置加密初始化向量(32字节字符串)。
-                     * @param _vector 加密初始化向量(32字节字符串)。
+                     * 设置加密初始化向量(32字节字符串)，该字段内容为用户自定义。
+                     * @param _vector 加密初始化向量(32字节字符串)，该字段内容为用户自定义。
                      * 
                      */
                     void SetVector(const std::string& _vector);
@@ -190,22 +190,22 @@ preset1：每个子流使用不同的key加密；
                 private:
 
                     /**
-                     * 资源标记，
+                     * 资源标记，该字段内容为用户自定义；
 支持1-128个字符的数字、字母、下划线(_)、中划线(-)。
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * drm厂商访问地址；
+                     * DRM厂商访问地址，该字段内容从DRM厂商获取。
 
-注: 不同DRM厂商对子流的数量限制不一样，如 pallycon 限制不能超过5条子流，drmtoday厂商最多仅支持9条子流加密
+注: 不同DRM厂商对子流的数量限制不一样，如 PallyCon 限制不能超过5条子流，DRMtoday厂商最多仅支持9条子流加密
                      */
                     std::string m_keyServerUrl;
                     bool m_keyServerUrlHasBeenSet;
 
                     /**
-                     * 加密初始化向量(32字节字符串)。
+                     * 加密初始化向量(32字节字符串)，该字段内容为用户自定义。
                      */
                     std::string m_vector;
                     bool m_vectorHasBeenSet;

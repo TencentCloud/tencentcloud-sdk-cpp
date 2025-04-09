@@ -137,6 +137,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/DescribeOrganizationAuthStatusResponse.h
   include/tencentcloud/ess/v20201111/model/CreateUserAutoSignSealUrlResponse.h
   include/tencentcloud/ess/v20201111/model/FillApproverInfo.h
+  include/tencentcloud/ess/v20201111/model/Recipient.h
   include/tencentcloud/ess/v20201111/model/OccupiedSeal.h
   include/tencentcloud/ess/v20201111/model/IntentionActionResultDetail.h
   include/tencentcloud/ess/v20201111/model/CreateEmployeeQualificationSealQrCodeRequest.h
@@ -214,7 +215,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreateFlowByFilesResponse.h
   include/tencentcloud/ess/v20201111/model/UploadFilesResponse.h
   include/tencentcloud/ess/v20201111/model/SuccessCreateStaffData.h
-  include/tencentcloud/ess/v20201111/model/Recipient.h
+  include/tencentcloud/ess/v20201111/model/PresetApproverInfo.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowEvidenceReportRequest.h
   include/tencentcloud/ess/v20201111/model/FailedCreateRoleData.h
   include/tencentcloud/ess/v20201111/model/CreateEmployeeChangeUrlRequest.h
@@ -447,6 +448,7 @@ set(ess_src
   src/v20201111/model/DescribeOrganizationAuthStatusResponse.cpp
   src/v20201111/model/CreateUserAutoSignSealUrlResponse.cpp
   src/v20201111/model/FillApproverInfo.cpp
+  src/v20201111/model/Recipient.cpp
   src/v20201111/model/OccupiedSeal.cpp
   src/v20201111/model/IntentionActionResultDetail.cpp
   src/v20201111/model/CreateEmployeeQualificationSealQrCodeRequest.cpp
@@ -524,7 +526,7 @@ set(ess_src
   src/v20201111/model/CreateFlowByFilesResponse.cpp
   src/v20201111/model/UploadFilesResponse.cpp
   src/v20201111/model/SuccessCreateStaffData.cpp
-  src/v20201111/model/Recipient.cpp
+  src/v20201111/model/PresetApproverInfo.cpp
   src/v20201111/model/DescribeFlowEvidenceReportRequest.cpp
   src/v20201111/model/FailedCreateRoleData.cpp
   src/v20201111/model/CreateEmployeeChangeUrlRequest.cpp

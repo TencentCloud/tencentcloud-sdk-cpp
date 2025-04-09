@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/gwlb/v20240906/model/TargetGroupInstance.h>
 #include <tencentcloud/gwlb/v20240906/model/TargetGroupHealthCheck.h>
+#include <tencentcloud/gwlb/v20240906/model/TagInfo.h>
 
 
 namespace TencentCloud
@@ -224,6 +225,27 @@ namespace TencentCloud
                      */
                     bool AllDeadToAliveHasBeenSet() const;
 
+                    /**
+                     * 获取标签。
+                     * @return Tags 标签。
+                     * 
+                     */
+                    std::vector<TagInfo> GetTags() const;
+
+                    /**
+                     * 设置标签。
+                     * @param _tags 标签。
+                     * 
+                     */
+                    void SetTags(const std::vector<TagInfo>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     * 
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -276,6 +298,12 @@ namespace TencentCloud
                      */
                     bool m_allDeadToAlive;
                     bool m_allDeadToAliveHasBeenSet;
+
+                    /**
+                     * 标签。
+                     */
+                    std::vector<TagInfo> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

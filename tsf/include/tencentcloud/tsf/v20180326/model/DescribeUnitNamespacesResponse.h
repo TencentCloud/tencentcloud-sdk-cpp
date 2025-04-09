@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取单元化命名空间对象列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 单元化命名空间对象列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TsfPageUnitNamespace GetResult() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 单元化命名空间对象列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TsfPageUnitNamespace m_result;
                     bool m_resultHasBeenSet;

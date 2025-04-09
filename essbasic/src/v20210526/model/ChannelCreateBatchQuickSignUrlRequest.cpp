@@ -34,7 +34,8 @@ ChannelCreateBatchQuickSignUrlRequest::ChannelCreateBatchQuickSignUrlRequest() :
     m_flowBatchUrlInfoHasBeenSet(false),
     m_intentionHasBeenSet(false),
     m_cacheApproverInfoHasBeenSet(false),
-    m_canBatchRejectHasBeenSet(false)
+    m_canBatchRejectHasBeenSet(false),
+    m_presetApproverInfoHasBeenSet(false)
 {
 }
 
@@ -158,6 +159,15 @@ string ChannelCreateBatchQuickSignUrlRequest::ToJsonString() const
         string key = "CanBatchReject";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_canBatchReject, allocator);
+    }
+
+    if (m_presetApproverInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PresetApproverInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_presetApproverInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -358,6 +368,22 @@ void ChannelCreateBatchQuickSignUrlRequest::SetCanBatchReject(const bool& _canBa
 bool ChannelCreateBatchQuickSignUrlRequest::CanBatchRejectHasBeenSet() const
 {
     return m_canBatchRejectHasBeenSet;
+}
+
+PresetApproverInfo ChannelCreateBatchQuickSignUrlRequest::GetPresetApproverInfo() const
+{
+    return m_presetApproverInfo;
+}
+
+void ChannelCreateBatchQuickSignUrlRequest::SetPresetApproverInfo(const PresetApproverInfo& _presetApproverInfo)
+{
+    m_presetApproverInfo = _presetApproverInfo;
+    m_presetApproverInfoHasBeenSet = true;
+}
+
+bool ChannelCreateBatchQuickSignUrlRequest::PresetApproverInfoHasBeenSet() const
+{
+    return m_presetApproverInfoHasBeenSet;
 }
 
 

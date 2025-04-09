@@ -14,42 +14,42 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TAF_V20200210_MODEL_MANAGEDEVICERISKRESPONSE_H_
-#define TENCENTCLOUD_TAF_V20200210_MODEL_MANAGEDEVICERISKRESPONSE_H_
+#ifndef TENCENTCLOUD_IOTEXPLORER_V20190423_MODEL_DESCRIBECSREPORTCOUNTDATAINFORESPONSE_H_
+#define TENCENTCLOUD_IOTEXPLORER_V20190423_MODEL_DESCRIBECSREPORTCOUNTDATAINFORESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/taf/v20200210/model/ManageDeviceRiskOutput.h>
+#include <tencentcloud/iotexplorer/v20190423/model/CountDataInfo.h>
 
 
 namespace TencentCloud
 {
-    namespace Taf
+    namespace Iotexplorer
     {
-        namespace V20200210
+        namespace V20190423
         {
             namespace Model
             {
                 /**
-                * ManageDeviceRisk返回参数结构体
+                * DescribeCsReportCountDataInfo返回参数结构体
                 */
-                class ManageDeviceRiskResponse : public AbstractModel
+                class DescribeCsReportCountDataInfoResponse : public AbstractModel
                 {
                 public:
-                    ManageDeviceRiskResponse();
-                    ~ManageDeviceRiskResponse() = default;
+                    DescribeCsReportCountDataInfoResponse();
+                    ~DescribeCsReportCountDataInfoResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取业务出参
-                     * @return Data 业务出参
+                     * 获取云存上报统计信息
+                     * @return Data 云存上报统计信息
                      * 
                      */
-                    ManageDeviceRiskOutput GetData() const;
+                    CountDataInfo GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
@@ -61,9 +61,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 业务出参
+                     * 云存上报统计信息
                      */
-                    ManageDeviceRiskOutput m_data;
+                    CountDataInfo m_data;
                     bool m_dataHasBeenSet;
 
                 };
@@ -72,4 +72,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TAF_V20200210_MODEL_MANAGEDEVICERISKRESPONSE_H_
+#endif // !TENCENTCLOUD_IOTEXPLORER_V20190423_MODEL_DESCRIBECSREPORTCOUNTDATAINFORESPONSE_H_

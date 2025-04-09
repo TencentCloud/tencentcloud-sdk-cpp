@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取入站IPv4总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IngressIPv4TotalCount 入站IPv4总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIngressIPv4TotalCount() const;
 
                     /**
                      * 设置入站IPv4总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ingressIPv4TotalCount 入站IPv4总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIngressIPv4TotalCount(const uint64_t& _ingressIPv4TotalCount);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取入站IPv6总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IngressIPv6TotalCount 入站IPv6总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetIngressIPv6TotalCount() const;
 
                     /**
                      * 设置入站IPv6总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ingressIPv6TotalCount 入站IPv6总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIngressIPv6TotalCount(const uint64_t& _ingressIPv6TotalCount);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取出站IPv4总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EgressIPv4TotalCount 出站IPv4总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetEgressIPv4TotalCount() const;
 
                     /**
                      * 设置出站IPv4总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _egressIPv4TotalCount 出站IPv4总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEgressIPv4TotalCount(const uint64_t& _egressIPv4TotalCount);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取出站IPv6总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EgressIPv6TotalCount 出站IPv6总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetEgressIPv6TotalCount() const;
 
                     /**
                      * 设置出站IPv6总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _egressIPv6TotalCount 出站IPv6总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEgressIPv6TotalCount(const uint64_t& _egressIPv6TotalCount);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 入站IPv4总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_ingressIPv4TotalCount;
                     bool m_ingressIPv4TotalCountHasBeenSet;
 
                     /**
                      * 入站IPv6总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_ingressIPv6TotalCount;
                     bool m_ingressIPv6TotalCountHasBeenSet;
 
                     /**
                      * 出站IPv4总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_egressIPv4TotalCount;
                     bool m_egressIPv4TotalCountHasBeenSet;
 
                     /**
                      * 出站IPv6总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_egressIPv6TotalCount;
                     bool m_egressIPv6TotalCountHasBeenSet;

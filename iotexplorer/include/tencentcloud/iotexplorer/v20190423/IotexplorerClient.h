@@ -145,6 +145,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageTimeResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageUsersRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeCloudStorageUsersResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeCsReportCountDataInfoRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeCsReportCountDataInfoResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeDeviceRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeDeviceResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeDeviceBindGatewayRequest.h>
@@ -540,6 +542,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCloudStorageUsersResponse> DescribeCloudStorageUsersOutcome;
                 typedef std::future<DescribeCloudStorageUsersOutcome> DescribeCloudStorageUsersOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeCloudStorageUsersRequest&, DescribeCloudStorageUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudStorageUsersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCsReportCountDataInfoResponse> DescribeCsReportCountDataInfoOutcome;
+                typedef std::future<DescribeCsReportCountDataInfoOutcome> DescribeCsReportCountDataInfoOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeCsReportCountDataInfoRequest&, DescribeCsReportCountDataInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCsReportCountDataInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDeviceResponse> DescribeDeviceOutcome;
                 typedef std::future<DescribeDeviceOutcome> DescribeDeviceOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeDeviceRequest&, DescribeDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceAsyncHandler;
@@ -1388,6 +1393,15 @@ namespace TencentCloud
                 DescribeCloudStorageUsersOutcome DescribeCloudStorageUsers(const Model::DescribeCloudStorageUsersRequest &request);
                 void DescribeCloudStorageUsersAsync(const Model::DescribeCloudStorageUsersRequest& request, const DescribeCloudStorageUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCloudStorageUsersOutcomeCallable DescribeCloudStorageUsersCallable(const Model::DescribeCloudStorageUsersRequest& request);
+
+                /**
+                 *获取云存上报统计信息
+                 * @param req DescribeCsReportCountDataInfoRequest
+                 * @return DescribeCsReportCountDataInfoOutcome
+                 */
+                DescribeCsReportCountDataInfoOutcome DescribeCsReportCountDataInfo(const Model::DescribeCsReportCountDataInfoRequest &request);
+                void DescribeCsReportCountDataInfoAsync(const Model::DescribeCsReportCountDataInfoRequest& request, const DescribeCsReportCountDataInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCsReportCountDataInfoOutcomeCallable DescribeCsReportCountDataInfoCallable(const Model::DescribeCsReportCountDataInfoRequest& request);
 
                 /**
                  *用于查看某个设备的详细信息

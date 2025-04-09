@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/taf/v20200210/model/ManageDeviceRiskResponse.h>
+#include <tencentcloud/iotvideo/v20211125/model/DescribeCsReportCountDataInfoResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Taf::V20200210::Model;
+using namespace TencentCloud::Iotvideo::V20211125::Model;
 using namespace std;
 
-ManageDeviceRiskResponse::ManageDeviceRiskResponse() :
+DescribeCsReportCountDataInfoResponse::DescribeCsReportCountDataInfoResponse() :
     m_dataHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome ManageDeviceRiskResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeCsReportCountDataInfoResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -83,7 +83,7 @@ CoreInternalOutcome ManageDeviceRiskResponse::Deserialize(const string &payload)
     return CoreInternalOutcome(true);
 }
 
-string ManageDeviceRiskResponse::ToJsonString() const
+string DescribeCsReportCountDataInfoResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
@@ -110,12 +110,12 @@ string ManageDeviceRiskResponse::ToJsonString() const
 }
 
 
-ManageDeviceRiskOutput ManageDeviceRiskResponse::GetData() const
+CountDataInfo DescribeCsReportCountDataInfoResponse::GetData() const
 {
     return m_data;
 }
 
-bool ManageDeviceRiskResponse::DataHasBeenSet() const
+bool DescribeCsReportCountDataInfoResponse::DataHasBeenSet() const
 {
     return m_dataHasBeenSet;
 }

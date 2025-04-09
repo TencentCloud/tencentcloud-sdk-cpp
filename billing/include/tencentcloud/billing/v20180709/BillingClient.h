@@ -97,8 +97,6 @@
 #include <tencentcloud/billing/v20180709/model/DescribeDosageDetailListResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeGatherResourceRequest.h>
 #include <tencentcloud/billing/v20180709/model/DescribeGatherResourceResponse.h>
-#include <tencentcloud/billing/v20180709/model/DescribeSavingPlanCoverageRequest.h>
-#include <tencentcloud/billing/v20180709/model/DescribeSavingPlanCoverageResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeSavingPlanResourceInfoRequest.h>
 #include <tencentcloud/billing/v20180709/model/DescribeSavingPlanResourceInfoResponse.h>
 #include <tencentcloud/billing/v20180709/model/DescribeTagListRequest.h>
@@ -234,9 +232,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeGatherResourceResponse> DescribeGatherResourceOutcome;
                 typedef std::future<DescribeGatherResourceOutcome> DescribeGatherResourceOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::DescribeGatherResourceRequest&, DescribeGatherResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGatherResourceAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeSavingPlanCoverageResponse> DescribeSavingPlanCoverageOutcome;
-                typedef std::future<DescribeSavingPlanCoverageOutcome> DescribeSavingPlanCoverageOutcomeCallable;
-                typedef std::function<void(const BillingClient*, const Model::DescribeSavingPlanCoverageRequest&, DescribeSavingPlanCoverageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSavingPlanCoverageAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSavingPlanResourceInfoResponse> DescribeSavingPlanResourceInfoOutcome;
                 typedef std::future<DescribeSavingPlanResourceInfoOutcome> DescribeSavingPlanResourceInfoOutcomeCallable;
                 typedef std::function<void(const BillingClient*, const Model::DescribeSavingPlanResourceInfoRequest&, DescribeSavingPlanResourceInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSavingPlanResourceInfoAsyncHandler;
@@ -594,17 +589,6 @@ namespace TencentCloud
                 DescribeGatherResourceOutcome DescribeGatherResource(const Model::DescribeGatherResourceRequest &request);
                 void DescribeGatherResourceAsync(const Model::DescribeGatherResourceRequest& request, const DescribeGatherResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeGatherResourceOutcomeCallable DescribeGatherResourceCallable(const Model::DescribeGatherResourceRequest& request);
-
-                /**
-                 *当前接口已迁移至svp产品
-
-查询当前用户节省计划覆盖率明细数据，如无特别说明，金额单位均为元（国内站）或者美元（国际站）。
-                 * @param req DescribeSavingPlanCoverageRequest
-                 * @return DescribeSavingPlanCoverageOutcome
-                 */
-                DescribeSavingPlanCoverageOutcome DescribeSavingPlanCoverage(const Model::DescribeSavingPlanCoverageRequest &request);
-                void DescribeSavingPlanCoverageAsync(const Model::DescribeSavingPlanCoverageRequest& request, const DescribeSavingPlanCoverageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeSavingPlanCoverageOutcomeCallable DescribeSavingPlanCoverageCallable(const Model::DescribeSavingPlanCoverageRequest& request);
 
                 /**
                  *查询节省计划详情

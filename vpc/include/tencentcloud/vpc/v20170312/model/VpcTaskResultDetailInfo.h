@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取资源ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceId 资源ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResourceId() const;
 
                     /**
                      * 设置资源ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resourceId 资源ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResourceId(const std::string& _resourceId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取状态。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 状态。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置状态。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status 状态。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 资源ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
                      * 状态。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

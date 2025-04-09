@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取kong实例的服务列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceList kong实例的服务列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<KongServicePreview> GetServiceList() const;
 
                     /**
                      * 设置kong实例的服务列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serviceList kong实例的服务列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServiceList(const std::vector<KongServicePreview>& _serviceList);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取列表总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 列表总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置列表总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalCount 列表总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
@@ -101,14 +93,12 @@ namespace TencentCloud
 
                     /**
                      * kong实例的服务列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<KongServicePreview> m_serviceList;
                     bool m_serviceListHasBeenSet;
 
                     /**
                      * 列表总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

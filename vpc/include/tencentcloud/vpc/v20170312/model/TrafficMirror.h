@@ -282,18 +282,14 @@ namespace TencentCloud
 
                     /**
                      * 获取流量镜像的类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 流量镜像的类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置流量镜像的类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 流量镜像的类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -307,18 +303,14 @@ namespace TencentCloud
 
                     /**
                      * 获取流量镜像所属的子网ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetId 流量镜像所属的子网ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置流量镜像所属的子网ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subnetId 流量镜像所属的子网ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -332,18 +324,14 @@ namespace TencentCloud
 
                     /**
                      * 获取流量镜接收目标资源信息，当接收目标为ENI和CLB时返回。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TargetInfo 流量镜接收目标资源信息，当接收目标为ENI和CLB时返回。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TrafficMirrorTargetResourceInfo> GetTargetInfo() const;
 
                     /**
                      * 设置流量镜接收目标资源信息，当接收目标为ENI和CLB时返回。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _targetInfo 流量镜接收目标资源信息，当接收目标为ENI和CLB时返回。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTargetInfo(const std::vector<TrafficMirrorTargetResourceInfo>& _targetInfo);
@@ -425,21 +413,18 @@ namespace TencentCloud
 
                     /**
                      * 流量镜像的类型。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 流量镜像所属的子网ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
                      * 流量镜接收目标资源信息，当接收目标为ENI和CLB时返回。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TrafficMirrorTargetResourceInfo> m_targetInfo;
                     bool m_targetInfoHasBeenSet;

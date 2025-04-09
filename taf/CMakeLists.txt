@@ -19,30 +19,20 @@ set(taf_public_header
   )
 
 set(taf_public_header_model
-  include/tencentcloud/taf/v20200210/model/ManagePortraitRiskOutput.h
-  include/tencentcloud/taf/v20200210/model/ManageDeviceRiskOutput.h
-  include/tencentcloud/taf/v20200210/model/ManageDeviceRiskValueOutput.h
   include/tencentcloud/taf/v20200210/model/ManagePortraitRiskResponse.h
-  include/tencentcloud/taf/v20200210/model/ManageDeviceRiskInput.h
-  include/tencentcloud/taf/v20200210/model/ManagePortraitRiskValueOutput.h
-  include/tencentcloud/taf/v20200210/model/ManageDeviceRiskRequest.h
+  include/tencentcloud/taf/v20200210/model/ManagePortraitRiskOutput.h
   include/tencentcloud/taf/v20200210/model/ManagePortraitRiskInput.h
   include/tencentcloud/taf/v20200210/model/ManagePortraitRiskRequest.h
-  include/tencentcloud/taf/v20200210/model/ManageDeviceRiskResponse.h
+  include/tencentcloud/taf/v20200210/model/ManagePortraitRiskValueOutput.h
   )
 
 set(taf_src
   src/v20200210/TafClient.cpp
-  src/v20200210/model/ManagePortraitRiskOutput.cpp
-  src/v20200210/model/ManageDeviceRiskOutput.cpp
-  src/v20200210/model/ManageDeviceRiskValueOutput.cpp
   src/v20200210/model/ManagePortraitRiskResponse.cpp
-  src/v20200210/model/ManageDeviceRiskInput.cpp
-  src/v20200210/model/ManagePortraitRiskValueOutput.cpp
-  src/v20200210/model/ManageDeviceRiskRequest.cpp
+  src/v20200210/model/ManagePortraitRiskOutput.cpp
   src/v20200210/model/ManagePortraitRiskInput.cpp
   src/v20200210/model/ManagePortraitRiskRequest.cpp
-  src/v20200210/model/ManageDeviceRiskResponse.cpp
+  src/v20200210/model/ManagePortraitRiskValueOutput.cpp
   )
 
 set(taf_include

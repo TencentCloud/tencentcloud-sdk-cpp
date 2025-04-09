@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取分页后的全局配置项列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 分页后的全局配置项列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TsfPageConfig GetResult() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 分页后的全局配置项列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TsfPageConfig m_result;
                     bool m_resultHasBeenSet;

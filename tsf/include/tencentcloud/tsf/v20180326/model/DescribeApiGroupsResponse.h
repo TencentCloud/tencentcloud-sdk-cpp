@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取翻页结构体
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 翻页结构体
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TsfPageApiGroupInfo GetResult() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 翻页结构体
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TsfPageApiGroupInfo m_result;
                     bool m_resultHasBeenSet;

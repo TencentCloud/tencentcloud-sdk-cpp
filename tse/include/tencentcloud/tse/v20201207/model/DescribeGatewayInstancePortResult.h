@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取云原生API网关ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GatewayId 云原生API网关ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGatewayId() const;
 
                     /**
                      * 设置云原生API网关ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gatewayId 云原生API网关ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGatewayId(const std::string& _gatewayId);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网关实例协议端口列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GatewayInstancePortList 网关实例协议端口列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<GatewayInstanceSchemeAndPorts> GetGatewayInstancePortList() const;
 
                     /**
                      * 设置网关实例协议端口列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gatewayInstancePortList 网关实例协议端口列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGatewayInstancePortList(const std::vector<GatewayInstanceSchemeAndPorts>& _gatewayInstancePortList);
@@ -101,14 +93,12 @@ namespace TencentCloud
 
                     /**
                      * 云原生API网关ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_gatewayId;
                     bool m_gatewayIdHasBeenSet;
 
                     /**
                      * 网关实例协议端口列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<GatewayInstanceSchemeAndPorts> m_gatewayInstancePortList;
                     bool m_gatewayInstancePortListHasBeenSet;

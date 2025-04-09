@@ -31,6 +31,7 @@ DescribeAssetImageDetailResponse::DescribeAssetImageDetailResponse() :
     m_sizeHasBeenSet(false),
     m_hostCntHasBeenSet(false),
     m_containerCntHasBeenSet(false),
+    m_superNodeCntHasBeenSet(false),
     m_scanTimeHasBeenSet(false),
     m_vulCntHasBeenSet(false),
     m_riskCntHasBeenSet(false),
@@ -158,6 +159,16 @@ CoreInternalOutcome DescribeAssetImageDetailResponse::Deserialize(const string &
         }
         m_containerCnt = rsp["ContainerCnt"].GetUint64();
         m_containerCntHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SuperNodeCnt") && !rsp["SuperNodeCnt"].IsNull())
+    {
+        if (!rsp["SuperNodeCnt"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SuperNodeCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_superNodeCnt = rsp["SuperNodeCnt"].GetUint64();
+        m_superNodeCntHasBeenSet = true;
     }
 
     if (rsp.HasMember("ScanTime") && !rsp["ScanTime"].IsNull())
@@ -446,6 +457,14 @@ string DescribeAssetImageDetailResponse::ToJsonString() const
         value.AddMember(iKey, m_containerCnt, allocator);
     }
 
+    if (m_superNodeCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SuperNodeCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_superNodeCnt, allocator);
+    }
+
     if (m_scanTimeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -702,6 +721,16 @@ uint64_t DescribeAssetImageDetailResponse::GetContainerCnt() const
 bool DescribeAssetImageDetailResponse::ContainerCntHasBeenSet() const
 {
     return m_containerCntHasBeenSet;
+}
+
+uint64_t DescribeAssetImageDetailResponse::GetSuperNodeCnt() const
+{
+    return m_superNodeCnt;
+}
+
+bool DescribeAssetImageDetailResponse::SuperNodeCntHasBeenSet() const
+{
+    return m_superNodeCntHasBeenSet;
 }
 
 string DescribeAssetImageDetailResponse::GetScanTime() const

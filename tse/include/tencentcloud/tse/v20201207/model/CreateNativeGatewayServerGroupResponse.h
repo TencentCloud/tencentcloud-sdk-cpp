@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取网关分组创建信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 网关分组创建信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CreateCloudNativeAPIGatewayServerGroupResult GetResult() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 网关分组创建信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CreateCloudNativeAPIGatewayServerGroupResult m_result;
                     bool m_resultHasBeenSet;

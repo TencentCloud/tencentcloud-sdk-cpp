@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取导入结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 导入结果
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ConfigTemplate GetResult() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 导入结果
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ConfigTemplate m_result;
                     bool m_resultHasBeenSet;

@@ -325,6 +325,20 @@ State为4时，有效值为: ISOLATE(隔离) DESTROED(已销毁)
                      */
                     bool DefendHostCoresCntHasBeenSet() const;
 
+                    /**
+                     * 获取试用的专业版核数
+                     * @return TrialCoresCnt 试用的专业版核数
+                     * 
+                     */
+                    uint64_t GetTrialCoresCnt() const;
+
+                    /**
+                     * 判断参数 TrialCoresCnt 是否已赋值
+                     * @return TrialCoresCnt 是否已赋值
+                     * 
+                     */
+                    bool TrialCoresCntHasBeenSet() const;
+
                 private:
 
                     /**
@@ -447,6 +461,12 @@ State为4时，有效值为: ISOLATE(隔离) DESTROED(已销毁)
                      */
                     uint64_t m_defendHostCoresCnt;
                     bool m_defendHostCoresCntHasBeenSet;
+
+                    /**
+                     * 试用的专业版核数
+                     */
+                    uint64_t m_trialCoresCnt;
+                    bool m_trialCoresCntHasBeenSet;
 
                 };
             }

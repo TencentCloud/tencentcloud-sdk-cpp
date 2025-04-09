@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子网实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetId 子网实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subnetId 子网实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubnetId(const std::string& _subnetId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取路由表实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RouteTableId 路由表实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRouteTableId() const;
 
                     /**
                      * 设置路由表实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _routeTableId 路由表实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRouteTableId(const std::string& _routeTableId);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 子网实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
                      * 路由表实例ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_routeTableId;
                     bool m_routeTableIdHasBeenSet;

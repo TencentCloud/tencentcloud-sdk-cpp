@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取业务日志配置列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 业务日志配置列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TsfPageBusinessLogConfig GetResult() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 业务日志配置列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TsfPageBusinessLogConfig m_result;
                     bool m_resultHasBeenSet;

@@ -23,8 +23,6 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
-#include <tencentcloud/taf/v20200210/model/ManageDeviceRiskRequest.h>
-#include <tencentcloud/taf/v20200210/model/ManageDeviceRiskResponse.h>
 #include <tencentcloud/taf/v20200210/model/ManagePortraitRiskRequest.h>
 #include <tencentcloud/taf/v20200210/model/ManagePortraitRiskResponse.h>
 
@@ -41,23 +39,11 @@ namespace TencentCloud
                 TafClient(const Credential &credential, const std::string &region);
                 TafClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
-                typedef Outcome<Core::Error, Model::ManageDeviceRiskResponse> ManageDeviceRiskOutcome;
-                typedef std::future<ManageDeviceRiskOutcome> ManageDeviceRiskOutcomeCallable;
-                typedef std::function<void(const TafClient*, const Model::ManageDeviceRiskRequest&, ManageDeviceRiskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ManageDeviceRiskAsyncHandler;
                 typedef Outcome<Core::Error, Model::ManagePortraitRiskResponse> ManagePortraitRiskOutcome;
                 typedef std::future<ManagePortraitRiskOutcome> ManagePortraitRiskOutcomeCallable;
                 typedef std::function<void(const TafClient*, const Model::ManagePortraitRiskRequest&, ManagePortraitRiskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ManagePortraitRiskAsyncHandler;
 
 
-
-                /**
-                 *oaid 设备风险接口
-                 * @param req ManageDeviceRiskRequest
-                 * @return ManageDeviceRiskOutcome
-                 */
-                ManageDeviceRiskOutcome ManageDeviceRisk(const Model::ManageDeviceRiskRequest &request);
-                void ManageDeviceRiskAsync(const Model::ManageDeviceRiskRequest& request, const ManageDeviceRiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ManageDeviceRiskOutcomeCallable ManageDeviceRiskCallable(const Model::ManageDeviceRiskRequest& request);
 
                 /**
                  *虚假流量识别

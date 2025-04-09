@@ -25,7 +25,6 @@ set(billing_public_header_model
   include/tencentcloud/billing/v20180709/model/ConsumptionBusinessSummaryDataItem.h
   include/tencentcloud/billing/v20180709/model/BillTagInfo.h
   include/tencentcloud/billing/v20180709/model/AllocationOverviewTotal.h
-  include/tencentcloud/billing/v20180709/model/SavingPlanCoverageRate.h
   include/tencentcloud/billing/v20180709/model/BillTransactionInfo.h
   include/tencentcloud/billing/v20180709/model/ConditionBusiness.h
   include/tencentcloud/billing/v20180709/model/AnalyseActionTypeDetail.h
@@ -58,7 +57,6 @@ set(billing_public_header_model
   include/tencentcloud/billing/v20180709/model/DescribeAllocationTrendByMonthRequest.h
   include/tencentcloud/billing/v20180709/model/DescribeVoucherUsageDetailsResponse.h
   include/tencentcloud/billing/v20180709/model/ConsumptionSummaryTotal.h
-  include/tencentcloud/billing/v20180709/model/SavingPlanCoverageDetail.h
   include/tencentcloud/billing/v20180709/model/DescribeAllocationOverviewRequest.h
   include/tencentcloud/billing/v20180709/model/DescribeGatherResourceResponse.h
   include/tencentcloud/billing/v20180709/model/DescribeCostDetailResponse.h
@@ -79,7 +77,6 @@ set(billing_public_header_model
   include/tencentcloud/billing/v20180709/model/DescribeBillSummaryByTagRequest.h
   include/tencentcloud/billing/v20180709/model/AnalyseDetail.h
   include/tencentcloud/billing/v20180709/model/BillDays.h
-  include/tencentcloud/billing/v20180709/model/DescribeSavingPlanCoverageResponse.h
   include/tencentcloud/billing/v20180709/model/AnalyseAmountDetail.h
   include/tencentcloud/billing/v20180709/model/DescribeBillSummaryByProjectRequest.h
   include/tencentcloud/billing/v20180709/model/DescribeBillResourceSummaryForOrganizationRequest.h
@@ -95,7 +92,6 @@ set(billing_public_header_model
   include/tencentcloud/billing/v20180709/model/ConditionPayMode.h
   include/tencentcloud/billing/v20180709/model/BillProductLink.h
   include/tencentcloud/billing/v20180709/model/AllocationTreeNode.h
-  include/tencentcloud/billing/v20180709/model/DescribeSavingPlanCoverageRequest.h
   include/tencentcloud/billing/v20180709/model/PayDealsResponse.h
   include/tencentcloud/billing/v20180709/model/BillDetail.h
   include/tencentcloud/billing/v20180709/model/DescribeBillDetailResponse.h
@@ -208,7 +204,6 @@ set(billing_src
   src/v20180709/model/ConsumptionBusinessSummaryDataItem.cpp
   src/v20180709/model/BillTagInfo.cpp
   src/v20180709/model/AllocationOverviewTotal.cpp
-  src/v20180709/model/SavingPlanCoverageRate.cpp
   src/v20180709/model/BillTransactionInfo.cpp
   src/v20180709/model/ConditionBusiness.cpp
   src/v20180709/model/AnalyseActionTypeDetail.cpp
@@ -241,7 +236,6 @@ set(billing_src
   src/v20180709/model/DescribeAllocationTrendByMonthRequest.cpp
   src/v20180709/model/DescribeVoucherUsageDetailsResponse.cpp
   src/v20180709/model/ConsumptionSummaryTotal.cpp
-  src/v20180709/model/SavingPlanCoverageDetail.cpp
   src/v20180709/model/DescribeAllocationOverviewRequest.cpp
   src/v20180709/model/DescribeGatherResourceResponse.cpp
   src/v20180709/model/DescribeCostDetailResponse.cpp
@@ -262,7 +256,6 @@ set(billing_src
   src/v20180709/model/DescribeBillSummaryByTagRequest.cpp
   src/v20180709/model/AnalyseDetail.cpp
   src/v20180709/model/BillDays.cpp
-  src/v20180709/model/DescribeSavingPlanCoverageResponse.cpp
   src/v20180709/model/AnalyseAmountDetail.cpp
   src/v20180709/model/DescribeBillSummaryByProjectRequest.cpp
   src/v20180709/model/DescribeBillResourceSummaryForOrganizationRequest.cpp
@@ -278,7 +271,6 @@ set(billing_src
   src/v20180709/model/ConditionPayMode.cpp
   src/v20180709/model/BillProductLink.cpp
   src/v20180709/model/AllocationTreeNode.cpp
-  src/v20180709/model/DescribeSavingPlanCoverageRequest.cpp
   src/v20180709/model/PayDealsResponse.cpp
   src/v20180709/model/BillDetail.cpp
   src/v20180709/model/DescribeBillDetailResponse.cpp

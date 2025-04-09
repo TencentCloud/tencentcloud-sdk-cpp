@@ -22,7 +22,8 @@ using namespace std;
 
 Attachment::Attachment() :
     m_fileNameHasBeenSet(false),
-    m_contentHasBeenSet(false)
+    m_contentHasBeenSet(false),
+    m_fileURLHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome Attachment::Deserialize(const rapidjson::Value &value)
         m_contentHasBeenSet = true;
     }
 
+    if (value.HasMember("FileURL") && !value["FileURL"].IsNull())
+    {
+        if (!value["FileURL"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Attachment.FileURL` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileURL = string(value["FileURL"].GetString());
+        m_fileURLHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void Attachment::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "Content";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_content.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileURLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileURL";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileURL.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void Attachment::SetContent(const string& _content)
 bool Attachment::ContentHasBeenSet() const
 {
     return m_contentHasBeenSet;
+}
+
+string Attachment::GetFileURL() const
+{
+    return m_fileURL;
+}
+
+void Attachment::SetFileURL(const string& _fileURL)
+{
+    m_fileURL = _fileURL;
+    m_fileURLHasBeenSet = true;
+}
+
+bool Attachment::FileURLHasBeenSet() const
+{
+    return m_fileURLHasBeenSet;
 }
 

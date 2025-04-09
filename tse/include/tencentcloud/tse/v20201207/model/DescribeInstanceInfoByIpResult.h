@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GatewayId 实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGatewayId() const;
 
                     /**
                      * 设置实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gatewayId 实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGatewayId(const std::string& _gatewayId);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupId 分组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置分组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupId 分组id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_gatewayId;
                     bool m_gatewayIdHasBeenSet;
 
                     /**
                      * 分组id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;

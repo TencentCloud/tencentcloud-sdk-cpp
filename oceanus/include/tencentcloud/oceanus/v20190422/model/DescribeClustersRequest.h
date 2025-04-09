@@ -129,14 +129,38 @@ namespace TencentCloud
 
                     /**
                      * 获取过滤规则
+    
+- Name
+    按照集群的名字进行模糊查询。例如：测试
+    类型： String
+    必选： 否
+    
                      * @return Filters 过滤规则
+    
+- Name
+    按照集群的名字进行模糊查询。例如：测试
+    类型： String
+    必选： 否
+    
                      * 
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置过滤规则
+    
+- Name
+    按照集群的名字进行模糊查询。例如：测试
+    类型： String
+    必选： 否
+    
                      * @param _filters 过滤规则
+    
+- Name
+    按照集群的名字进行模糊查询。例如：测试
+    类型： String
+    必选： 否
+    
                      * 
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
@@ -197,6 +221,12 @@ namespace TencentCloud
 
                     /**
                      * 过滤规则
+    
+- Name
+    按照集群的名字进行模糊查询。例如：测试
+    类型： String
+    必选： 否
+    
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

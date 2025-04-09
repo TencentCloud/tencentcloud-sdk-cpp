@@ -24,6 +24,7 @@ VulAffectedImageInfo::VulAffectedImageInfo() :
     m_imageIDHasBeenSet(false),
     m_imageNameHasBeenSet(false),
     m_hostCountHasBeenSet(false),
+    m_superNodeCountHasBeenSet(false),
     m_containerCountHasBeenSet(false),
     m_componentListHasBeenSet(false)
 {
@@ -62,6 +63,16 @@ CoreInternalOutcome VulAffectedImageInfo::Deserialize(const rapidjson::Value &va
         }
         m_hostCount = value["HostCount"].GetInt64();
         m_hostCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("SuperNodeCount") && !value["SuperNodeCount"].IsNull())
+    {
+        if (!value["SuperNodeCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulAffectedImageInfo.SuperNodeCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_superNodeCount = value["SuperNodeCount"].GetInt64();
+        m_superNodeCountHasBeenSet = true;
     }
 
     if (value.HasMember("ContainerCount") && !value["ContainerCount"].IsNull())
@@ -123,6 +134,14 @@ void VulAffectedImageInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "HostCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_hostCount, allocator);
+    }
+
+    if (m_superNodeCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SuperNodeCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_superNodeCount, allocator);
     }
 
     if (m_containerCountHasBeenSet)
@@ -197,6 +216,22 @@ void VulAffectedImageInfo::SetHostCount(const int64_t& _hostCount)
 bool VulAffectedImageInfo::HostCountHasBeenSet() const
 {
     return m_hostCountHasBeenSet;
+}
+
+int64_t VulAffectedImageInfo::GetSuperNodeCount() const
+{
+    return m_superNodeCount;
+}
+
+void VulAffectedImageInfo::SetSuperNodeCount(const int64_t& _superNodeCount)
+{
+    m_superNodeCount = _superNodeCount;
+    m_superNodeCountHasBeenSet = true;
+}
+
+bool VulAffectedImageInfo::SuperNodeCountHasBeenSet() const
+{
+    return m_superNodeCountHasBeenSet;
 }
 
 int64_t VulAffectedImageInfo::GetContainerCount() const

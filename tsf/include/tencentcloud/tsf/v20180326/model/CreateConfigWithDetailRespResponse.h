@@ -46,9 +46,7 @@ namespace TencentCloud
 
                     /**
                      * 获取配置项
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 配置项
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     Config GetResult() const;
@@ -64,7 +62,6 @@ namespace TencentCloud
 
                     /**
                      * 配置项
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Config m_result;
                     bool m_resultHasBeenSet;

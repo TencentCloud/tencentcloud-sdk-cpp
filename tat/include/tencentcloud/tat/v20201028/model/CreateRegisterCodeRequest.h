@@ -139,15 +139,31 @@ namespace TencentCloud
                     bool EffectiveTimeHasBeenSet() const;
 
                     /**
-                     * 获取该注册码限制tat_agent只能从IpAddressRange所描述公网出口进行注册。默认不做限制。
-                     * @return IpAddressRange 该注册码限制tat_agent只能从IpAddressRange所描述公网出口进行注册。默认不做限制。
+                     * 获取限制注册码只能从 IpAddressRange 所描述公网出口进行注册。
+
+默认为空，即无任何限制。
+
+取值应为标准 IPv4 或 CIDRv4 格式。例如 192.168.1.1 或 192.168.0.0/16。
+                     * @return IpAddressRange 限制注册码只能从 IpAddressRange 所描述公网出口进行注册。
+
+默认为空，即无任何限制。
+
+取值应为标准 IPv4 或 CIDRv4 格式。例如 192.168.1.1 或 192.168.0.0/16。
                      * 
                      */
                     std::string GetIpAddressRange() const;
 
                     /**
-                     * 设置该注册码限制tat_agent只能从IpAddressRange所描述公网出口进行注册。默认不做限制。
-                     * @param _ipAddressRange 该注册码限制tat_agent只能从IpAddressRange所描述公网出口进行注册。默认不做限制。
+                     * 设置限制注册码只能从 IpAddressRange 所描述公网出口进行注册。
+
+默认为空，即无任何限制。
+
+取值应为标准 IPv4 或 CIDRv4 格式。例如 192.168.1.1 或 192.168.0.0/16。
+                     * @param _ipAddressRange 限制注册码只能从 IpAddressRange 所描述公网出口进行注册。
+
+默认为空，即无任何限制。
+
+取值应为标准 IPv4 或 CIDRv4 格式。例如 192.168.1.1 或 192.168.0.0/16。
                      * 
                      */
                     void SetIpAddressRange(const std::string& _ipAddressRange);
@@ -189,7 +205,11 @@ namespace TencentCloud
                     bool m_effectiveTimeHasBeenSet;
 
                     /**
-                     * 该注册码限制tat_agent只能从IpAddressRange所描述公网出口进行注册。默认不做限制。
+                     * 限制注册码只能从 IpAddressRange 所描述公网出口进行注册。
+
+默认为空，即无任何限制。
+
+取值应为标准 IPv4 或 CIDRv4 格式。例如 192.168.1.1 或 192.168.0.0/16。
                      */
                     std::string m_ipAddressRange;
                     bool m_ipAddressRangeHasBeenSet;

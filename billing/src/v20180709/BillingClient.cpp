@@ -1631,49 +1631,6 @@ BillingClient::DescribeGatherResourceOutcomeCallable BillingClient::DescribeGath
     return task->get_future();
 }
 
-BillingClient::DescribeSavingPlanCoverageOutcome BillingClient::DescribeSavingPlanCoverage(const DescribeSavingPlanCoverageRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeSavingPlanCoverage");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeSavingPlanCoverageResponse rsp = DescribeSavingPlanCoverageResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeSavingPlanCoverageOutcome(rsp);
-        else
-            return DescribeSavingPlanCoverageOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeSavingPlanCoverageOutcome(outcome.GetError());
-    }
-}
-
-void BillingClient::DescribeSavingPlanCoverageAsync(const DescribeSavingPlanCoverageRequest& request, const DescribeSavingPlanCoverageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeSavingPlanCoverage(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-BillingClient::DescribeSavingPlanCoverageOutcomeCallable BillingClient::DescribeSavingPlanCoverageCallable(const DescribeSavingPlanCoverageRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeSavingPlanCoverageOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeSavingPlanCoverage(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 BillingClient::DescribeSavingPlanResourceInfoOutcome BillingClient::DescribeSavingPlanResourceInfo(const DescribeSavingPlanResourceInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSavingPlanResourceInfo");
