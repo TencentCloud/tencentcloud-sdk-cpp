@@ -26,7 +26,8 @@ GetRoomMessageRequest::GetRoomMessageRequest() :
     m_sdkAppIdHasBeenSet(false),
     m_roomIdHasBeenSet(false),
     m_seqHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_userIdHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string GetRoomMessageRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_userIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void GetRoomMessageRequest::SetLimit(const uint64_t& _limit)
 bool GetRoomMessageRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string GetRoomMessageRequest::GetUserId() const
+{
+    return m_userId;
+}
+
+void GetRoomMessageRequest::SetUserId(const string& _userId)
+{
+    m_userId = _userId;
+    m_userIdHasBeenSet = true;
+}
+
+bool GetRoomMessageRequest::UserIdHasBeenSet() const
+{
+    return m_userIdHasBeenSet;
 }
 
 

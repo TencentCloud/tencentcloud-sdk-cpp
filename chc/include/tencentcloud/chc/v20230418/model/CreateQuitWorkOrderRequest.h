@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool DeviceTypeHasBeenSet() const;
 
                     /**
-                     * 获取下架选择 1.自行解决 2.由腾讯IDC负责 3.不涉及下架，如：其他设备退出
-                     * @return StuffOption 下架选择 1.自行解决 2.由腾讯IDC负责 3.不涉及下架，如：其他设备退出
+                     * 获取下架选择 1.自行解决 2.由腾讯IDC负责
+                     * @return StuffOption 下架选择 1.自行解决 2.由腾讯IDC负责
                      * 
                      */
                     std::string GetStuffOption() const;
 
                     /**
-                     * 设置下架选择 1.自行解决 2.由腾讯IDC负责 3.不涉及下架，如：其他设备退出
-                     * @param _stuffOption 下架选择 1.自行解决 2.由腾讯IDC负责 3.不涉及下架，如：其他设备退出
+                     * 设置下架选择 1.自行解决 2.由腾讯IDC负责
+                     * @param _stuffOption 下架选择 1.自行解决 2.由腾讯IDC负责
                      * 
                      */
                     void SetStuffOption(const std::string& _stuffOption);
@@ -292,7 +292,7 @@ namespace TencentCloud
                     bool m_deviceTypeHasBeenSet;
 
                     /**
-                     * 下架选择 1.自行解决 2.由腾讯IDC负责 3.不涉及下架，如：其他设备退出
+                     * 下架选择 1.自行解决 2.由腾讯IDC负责
                      */
                     std::string m_stuffOption;
                     bool m_stuffOptionHasBeenSet;

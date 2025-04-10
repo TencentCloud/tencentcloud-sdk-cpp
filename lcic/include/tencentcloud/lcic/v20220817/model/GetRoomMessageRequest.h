@@ -126,6 +126,27 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取请求消息的userId
+                     * @return UserId 请求消息的userId
+                     * 
+                     */
+                    std::string GetUserId() const;
+
+                    /**
+                     * 设置请求消息的userId
+                     * @param _userId 请求消息的userId
+                     * 
+                     */
+                    void SetUserId(const std::string& _userId);
+
+                    /**
+                     * 判断参数 UserId 是否已赋值
+                     * @return UserId 是否已赋值
+                     * 
+                     */
+                    bool UserIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,6 +172,12 @@ namespace TencentCloud
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 请求消息的userId
+                     */
+                    std::string m_userId;
+                    bool m_userIdHasBeenSet;
 
                 };
             }

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取微服务引擎VPC信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcID 微服务引擎VPC信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVpcID() const;
 
                     /**
                      * 设置微服务引擎VPC信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcID 微服务引擎VPC信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcID(const std::string& _vpcID);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取微服务引擎子网信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetID 微服务引擎子网信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubnetID() const;
 
                     /**
                      * 设置微服务引擎子网信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subnetID 微服务引擎子网信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubnetID(const std::string& _subnetID);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 微服务引擎VPC信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcID;
                     bool m_vpcIDHasBeenSet;
 
                     /**
                      * 微服务引擎子网信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subnetID;
                     bool m_subnetIDHasBeenSet;

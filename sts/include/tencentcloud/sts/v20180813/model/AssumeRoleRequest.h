@@ -230,6 +230,48 @@ qcs::cam::uin/12345678:role/tencentcloudServiceRole/4611686018427397920、qcs::c
                      */
                     bool SourceIdentityHasBeenSet() const;
 
+                    /**
+                     * 获取MFA序列号，与进行调用的CAM用户关联的MFA设备的标识号。格式qcs::cam:uin/${ownerUin}::mfa/${mfaType}。mfaType支持softToken（软token）
+                     * @return SerialNumber MFA序列号，与进行调用的CAM用户关联的MFA设备的标识号。格式qcs::cam:uin/${ownerUin}::mfa/${mfaType}。mfaType支持softToken（软token）
+                     * 
+                     */
+                    std::string GetSerialNumber() const;
+
+                    /**
+                     * 设置MFA序列号，与进行调用的CAM用户关联的MFA设备的标识号。格式qcs::cam:uin/${ownerUin}::mfa/${mfaType}。mfaType支持softToken（软token）
+                     * @param _serialNumber MFA序列号，与进行调用的CAM用户关联的MFA设备的标识号。格式qcs::cam:uin/${ownerUin}::mfa/${mfaType}。mfaType支持softToken（软token）
+                     * 
+                     */
+                    void SetSerialNumber(const std::string& _serialNumber);
+
+                    /**
+                     * 判断参数 SerialNumber 是否已赋值
+                     * @return SerialNumber 是否已赋值
+                     * 
+                     */
+                    bool SerialNumberHasBeenSet() const;
+
+                    /**
+                     * 获取mfa身份验证码。
+                     * @return TokenCode mfa身份验证码。
+                     * 
+                     */
+                    std::string GetTokenCode() const;
+
+                    /**
+                     * 设置mfa身份验证码。
+                     * @param _tokenCode mfa身份验证码。
+                     * 
+                     */
+                    void SetTokenCode(const std::string& _tokenCode);
+
+                    /**
+                     * 判断参数 TokenCode 是否已赋值
+                     * @return TokenCode 是否已赋值
+                     * 
+                     */
+                    bool TokenCodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -283,6 +325,18 @@ qcs::cam::uin/12345678:role/tencentcloudServiceRole/4611686018427397920、qcs::c
                      */
                     std::string m_sourceIdentity;
                     bool m_sourceIdentityHasBeenSet;
+
+                    /**
+                     * MFA序列号，与进行调用的CAM用户关联的MFA设备的标识号。格式qcs::cam:uin/${ownerUin}::mfa/${mfaType}。mfaType支持softToken（软token）
+                     */
+                    std::string m_serialNumber;
+                    bool m_serialNumberHasBeenSet;
+
+                    /**
+                     * mfa身份验证码。
+                     */
+                    std::string m_tokenCode;
+                    bool m_tokenCodeHasBeenSet;
 
                 };
             }

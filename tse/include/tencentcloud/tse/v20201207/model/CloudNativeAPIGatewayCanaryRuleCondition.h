@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取条件类型，支持 path, method, query, header, cookie, body 和 system。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 条件类型，支持 path, method, query, header, cookie, body 和 system。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置条件类型，支持 path, method, query, header, cookie, body 和 system。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 条件类型，支持 path, method, query, header, cookie, body 和 system。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取参数名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Key 参数名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置参数名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _key 参数名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKey(const std::string& _key);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取操作符，支持 "le", "eq", "lt", "ne", "ge", "gt", "regex", "exists", "in", "not in",  "prefix" ,"exact", "regex" 等
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Operator 操作符，支持 "le", "eq", "lt", "ne", "ge", "gt", "regex", "exists", "in", "not in",  "prefix" ,"exact", "regex" 等
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOperator() const;
 
                     /**
                      * 设置操作符，支持 "le", "eq", "lt", "ne", "ge", "gt", "regex", "exists", "in", "not in",  "prefix" ,"exact", "regex" 等
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _operator 操作符，支持 "le", "eq", "lt", "ne", "ge", "gt", "regex", "exists", "in", "not in",  "prefix" ,"exact", "regex" 等
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOperator(const std::string& _operator);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取目标参数值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 目标参数值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置目标参数值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _value 目标参数值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValue(const std::string& _value);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分隔符，当 Operator 为 in 或者 not in 时生效。支持值为英文逗号，英文分号，空格，换行符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Delimiter 分隔符，当 Operator 为 in 或者 not in 时生效。支持值为英文逗号，英文分号，空格，换行符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDelimiter() const;
 
                     /**
                      * 设置分隔符，当 Operator 为 in 或者 not in 时生效。支持值为英文逗号，英文分号，空格，换行符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _delimiter 分隔符，当 Operator 为 in 或者 not in 时生效。支持值为英文逗号，英文分号，空格，换行符。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDelimiter(const std::string& _delimiter);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取全局配置 Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GlobalConfigId 全局配置 Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGlobalConfigId() const;
 
                     /**
                      * 设置全局配置 Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _globalConfigId 全局配置 Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGlobalConfigId(const std::string& _globalConfigId);
@@ -198,18 +174,14 @@ namespace TencentCloud
 
                     /**
                      * 获取全局配置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GlobalConfigName 全局配置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGlobalConfigName() const;
 
                     /**
                      * 设置全局配置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _globalConfigName 全局配置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGlobalConfigName(const std::string& _globalConfigName);
@@ -225,49 +197,42 @@ namespace TencentCloud
 
                     /**
                      * 条件类型，支持 path, method, query, header, cookie, body 和 system。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 参数名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
 
                     /**
                      * 操作符，支持 "le", "eq", "lt", "ne", "ge", "gt", "regex", "exists", "in", "not in",  "prefix" ,"exact", "regex" 等
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
                      * 目标参数值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;
 
                     /**
                      * 分隔符，当 Operator 为 in 或者 not in 时生效。支持值为英文逗号，英文分号，空格，换行符。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_delimiter;
                     bool m_delimiterHasBeenSet;
 
                     /**
                      * 全局配置 Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_globalConfigId;
                     bool m_globalConfigIdHasBeenSet;
 
                     /**
                      * 全局配置名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_globalConfigName;
                     bool m_globalConfigNameHasBeenSet;

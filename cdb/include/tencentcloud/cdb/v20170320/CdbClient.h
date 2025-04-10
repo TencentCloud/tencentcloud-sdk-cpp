@@ -1023,7 +1023,7 @@ namespace TencentCloud
                 CreateAccountsOutcomeCallable CreateAccountsCallable(const Model::CreateAccountsRequest& request);
 
                 /**
-                 *本接口(CreateAuditLogFile)用于创建云数据库实例的审计日志文件。
+                 *本接口（CreateAuditLogFile）用于创建云数据库实例的审计日志文件。
                  * @param req CreateAuditLogFileRequest
                  * @return CreateAuditLogFileOutcome
                  */

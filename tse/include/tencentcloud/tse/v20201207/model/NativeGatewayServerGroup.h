@@ -205,18 +205,14 @@ namespace TencentCloud
 
                     /**
                      * 获取关联策略信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BindingStrategy 关联策略信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CloudNativeAPIGatewayStrategy GetBindingStrategy() const;
 
                     /**
                      * 设置关联策略信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _bindingStrategy 关联策略信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBindingStrategy(const CloudNativeAPIGatewayStrategy& _bindingStrategy);
@@ -230,18 +226,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网关实例 id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GatewayId 网关实例 id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGatewayId() const;
 
                     /**
                      * 设置网关实例 id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gatewayId 网关实例 id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGatewayId(const std::string& _gatewayId);
@@ -255,18 +247,14 @@ namespace TencentCloud
 
                     /**
                      * 获取带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InternetMaxBandwidthOut 带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetInternetMaxBandwidthOut() const;
 
                     /**
                      * 设置带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _internetMaxBandwidthOut 带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInternetMaxBandwidthOut(const int64_t& _internetMaxBandwidthOut);
@@ -280,18 +268,14 @@ namespace TencentCloud
 
                     /**
                      * 获取修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifyTime 修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
                      * 设置修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modifyTime 修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
@@ -305,18 +289,14 @@ namespace TencentCloud
 
                     /**
                      * 获取子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetIds 子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSubnetIds() const;
 
                     /**
                      * 设置子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _subnetIds 子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSubnetIds(const std::string& _subnetIds);
@@ -330,18 +310,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分组默认权重
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefaultWeight 分组默认权重
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetDefaultWeight() const;
 
                     /**
                      * 设置分组默认权重
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _defaultWeight 分组默认权重
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDefaultWeight(const int64_t& _defaultWeight);
@@ -355,18 +331,14 @@ namespace TencentCloud
 
                     /**
                      * 获取弹性节点
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ElasticNumber 弹性节点
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetElasticNumber() const;
 
                     /**
                      * 设置弹性节点
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _elasticNumber 弹性节点
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetElasticNumber(const uint64_t& _elasticNumber);
@@ -426,49 +398,42 @@ namespace TencentCloud
 
                     /**
                      * 关联策略信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CloudNativeAPIGatewayStrategy m_bindingStrategy;
                     bool m_bindingStrategyHasBeenSet;
 
                     /**
                      * 网关实例 id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_gatewayId;
                     bool m_gatewayIdHasBeenSet;
 
                     /**
                      * 带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_internetMaxBandwidthOut;
                     bool m_internetMaxBandwidthOutHasBeenSet;
 
                     /**
                      * 修改时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
 
                     /**
                      * 子网id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subnetIds;
                     bool m_subnetIdsHasBeenSet;
 
                     /**
                      * 分组默认权重
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_defaultWeight;
                     bool m_defaultWeightHasBeenSet;
 
                     /**
                      * 弹性节点
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_elasticNumber;
                     bool m_elasticNumberHasBeenSet;

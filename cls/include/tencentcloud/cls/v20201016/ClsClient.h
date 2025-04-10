@@ -95,6 +95,8 @@
 #include <tencentcloud/cls/v20201016/model/DeleteConsoleSharingResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteConsumerRequest.h>
 #include <tencentcloud/cls/v20201016/model/DeleteConsumerResponse.h>
+#include <tencentcloud/cls/v20201016/model/DeleteCosRechargeRequest.h>
+#include <tencentcloud/cls/v20201016/model/DeleteCosRechargeResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteDashboardSubscribeRequest.h>
 #include <tencentcloud/cls/v20201016/model/DeleteDashboardSubscribeResponse.h>
 #include <tencentcloud/cls/v20201016/model/DeleteDataTransformRequest.h>
@@ -371,6 +373,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteConsumerResponse> DeleteConsumerOutcome;
                 typedef std::future<DeleteConsumerOutcome> DeleteConsumerOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DeleteConsumerRequest&, DeleteConsumerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteConsumerAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteCosRechargeResponse> DeleteCosRechargeOutcome;
+                typedef std::future<DeleteCosRechargeOutcome> DeleteCosRechargeOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DeleteCosRechargeRequest&, DeleteCosRechargeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCosRechargeAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteDashboardSubscribeResponse> DeleteDashboardSubscribeOutcome;
                 typedef std::future<DeleteDashboardSubscribeOutcome> DeleteDashboardSubscribeOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DeleteDashboardSubscribeRequest&, DeleteDashboardSubscribeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDashboardSubscribeAsyncHandler;
@@ -935,6 +940,15 @@ namespace TencentCloud
                 DeleteConsumerOutcome DeleteConsumer(const Model::DeleteConsumerRequest &request);
                 void DeleteConsumerAsync(const Model::DeleteConsumerRequest& request, const DeleteConsumerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteConsumerOutcomeCallable DeleteConsumerCallable(const Model::DeleteConsumerRequest& request);
+
+                /**
+                 *本接口用于删除cos导入任务
+                 * @param req DeleteCosRechargeRequest
+                 * @return DeleteCosRechargeOutcome
+                 */
+                DeleteCosRechargeOutcome DeleteCosRecharge(const Model::DeleteCosRechargeRequest &request);
+                void DeleteCosRechargeAsync(const Model::DeleteCosRechargeRequest& request, const DeleteCosRechargeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCosRechargeOutcomeCallable DeleteCosRechargeCallable(const Model::DeleteCosRechargeRequest& request);
 
                 /**
                  *此接口用于删除仪表盘订阅

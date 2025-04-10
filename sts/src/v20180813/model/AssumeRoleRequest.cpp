@@ -29,7 +29,9 @@ AssumeRoleRequest::AssumeRoleRequest() :
     m_policyHasBeenSet(false),
     m_externalIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_sourceIdentityHasBeenSet(false)
+    m_sourceIdentityHasBeenSet(false),
+    m_serialNumberHasBeenSet(false),
+    m_tokenCodeHasBeenSet(false)
 {
 }
 
@@ -101,6 +103,22 @@ string AssumeRoleRequest::ToJsonString() const
         string key = "SourceIdentity";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_sourceIdentity.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serialNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SerialNumber";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_serialNumber.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tokenCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TokenCode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tokenCode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -221,6 +239,38 @@ void AssumeRoleRequest::SetSourceIdentity(const string& _sourceIdentity)
 bool AssumeRoleRequest::SourceIdentityHasBeenSet() const
 {
     return m_sourceIdentityHasBeenSet;
+}
+
+string AssumeRoleRequest::GetSerialNumber() const
+{
+    return m_serialNumber;
+}
+
+void AssumeRoleRequest::SetSerialNumber(const string& _serialNumber)
+{
+    m_serialNumber = _serialNumber;
+    m_serialNumberHasBeenSet = true;
+}
+
+bool AssumeRoleRequest::SerialNumberHasBeenSet() const
+{
+    return m_serialNumberHasBeenSet;
+}
+
+string AssumeRoleRequest::GetTokenCode() const
+{
+    return m_tokenCode;
+}
+
+void AssumeRoleRequest::SetTokenCode(const string& _tokenCode)
+{
+    m_tokenCode = _tokenCode;
+    m_tokenCodeHasBeenSet = true;
+}
+
+bool AssumeRoleRequest::TokenCodeHasBeenSet() const
+{
+    return m_tokenCodeHasBeenSet;
 }
 
 

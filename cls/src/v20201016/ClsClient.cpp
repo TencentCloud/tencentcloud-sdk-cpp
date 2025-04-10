@@ -1588,6 +1588,49 @@ ClsClient::DeleteConsumerOutcomeCallable ClsClient::DeleteConsumerCallable(const
     return task->get_future();
 }
 
+ClsClient::DeleteCosRechargeOutcome ClsClient::DeleteCosRecharge(const DeleteCosRechargeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCosRecharge");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCosRechargeResponse rsp = DeleteCosRechargeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCosRechargeOutcome(rsp);
+        else
+            return DeleteCosRechargeOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCosRechargeOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DeleteCosRechargeAsync(const DeleteCosRechargeRequest& request, const DeleteCosRechargeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCosRecharge(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::DeleteCosRechargeOutcomeCallable ClsClient::DeleteCosRechargeCallable(const DeleteCosRechargeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCosRechargeOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCosRecharge(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClsClient::DeleteDashboardSubscribeOutcome ClsClient::DeleteDashboardSubscribe(const DeleteDashboardSubscribeRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteDashboardSubscribe");

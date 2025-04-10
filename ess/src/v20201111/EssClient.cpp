@@ -4125,6 +4125,49 @@ EssClient::ModifyIntegrationRoleOutcomeCallable EssClient::ModifyIntegrationRole
     return task->get_future();
 }
 
+EssClient::OperateTemplateOutcome EssClient::OperateTemplate(const OperateTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "OperateTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        OperateTemplateResponse rsp = OperateTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return OperateTemplateOutcome(rsp);
+        else
+            return OperateTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return OperateTemplateOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::OperateTemplateAsync(const OperateTemplateRequest& request, const OperateTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->OperateTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::OperateTemplateOutcomeCallable EssClient::OperateTemplateCallable(const OperateTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<OperateTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->OperateTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::RenewAutoSignLicenseOutcome EssClient::RenewAutoSignLicense(const RenewAutoSignLicenseRequest &request)
 {
     auto outcome = MakeRequest(request, "RenewAutoSignLicense");

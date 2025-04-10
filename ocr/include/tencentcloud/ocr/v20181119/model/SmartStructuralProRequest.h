@@ -107,15 +107,15 @@ namespace TencentCloud
                     bool PdfPageNumberHasBeenSet() const;
 
                     /**
-                     * 获取自定义结构化功能需返回的字段名称，例：若客户只想返回姓名、性别两个字段的识别结果，则输入ItemNames=["姓名","性别"]
-                     * @return ItemNames 自定义结构化功能需返回的字段名称，例：若客户只想返回姓名、性别两个字段的识别结果，则输入ItemNames=["姓名","性别"]
+                     * 获取自定义结构化功能需返回的字段名称，例：若客户想新增返回姓名、性别两个字段的识别结果，则输入ItemNames=["姓名","性别"]
+                     * @return ItemNames 自定义结构化功能需返回的字段名称，例：若客户想新增返回姓名、性别两个字段的识别结果，则输入ItemNames=["姓名","性别"]
                      * 
                      */
                     std::vector<std::string> GetItemNames() const;
 
                     /**
-                     * 设置自定义结构化功能需返回的字段名称，例：若客户只想返回姓名、性别两个字段的识别结果，则输入ItemNames=["姓名","性别"]
-                     * @param _itemNames 自定义结构化功能需返回的字段名称，例：若客户只想返回姓名、性别两个字段的识别结果，则输入ItemNames=["姓名","性别"]
+                     * 设置自定义结构化功能需返回的字段名称，例：若客户想新增返回姓名、性别两个字段的识别结果，则输入ItemNames=["姓名","性别"]
+                     * @param _itemNames 自定义结构化功能需返回的字段名称，例：若客户想新增返回姓名、性别两个字段的识别结果，则输入ItemNames=["姓名","性别"]
                      * 
                      */
                     void SetItemNames(const std::vector<std::string>& _itemNames);
@@ -313,7 +313,7 @@ ArticalRecognize -- 手写作文模版
                     bool m_pdfPageNumberHasBeenSet;
 
                     /**
-                     * 自定义结构化功能需返回的字段名称，例：若客户只想返回姓名、性别两个字段的识别结果，则输入ItemNames=["姓名","性别"]
+                     * 自定义结构化功能需返回的字段名称，例：若客户想新增返回姓名、性别两个字段的识别结果，则输入ItemNames=["姓名","性别"]
                      */
                     std::vector<std::string> m_itemNames;
                     bool m_itemNamesHasBeenSet;

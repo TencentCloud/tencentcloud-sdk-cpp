@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Username 用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUsername() const;
 
                     /**
                      * 设置用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _username 用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUsername(const std::string& _username);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取账户密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Password 账户密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPassword() const;
 
                     /**
                      * 设置账户密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _password 账户密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPassword(const std::string& _password);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取访问凭据 token
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccessToken 访问凭据 token
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAccessToken() const;
 
                     /**
                      * 设置访问凭据 token
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _accessToken 访问凭据 token
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAccessToken(const std::string& _accessToken);
@@ -125,21 +113,18 @@ namespace TencentCloud
 
                     /**
                      * 用户名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_username;
                     bool m_usernameHasBeenSet;
 
                     /**
                      * 账户密码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
 
                     /**
                      * 访问凭据 token
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_accessToken;
                     bool m_accessTokenHasBeenSet;

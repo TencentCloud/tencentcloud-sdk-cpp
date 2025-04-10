@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取命名空间ID
-                     * @return NamespaceId 命名空间ID
+                     * 获取命名空间ID， 此参数必填
+                     * @return NamespaceId 命名空间ID， 此参数必填
                      * 
                      */
                     std::string GetNamespaceId() const;
 
                     /**
-                     * 设置命名空间ID
-                     * @param _namespaceId 命名空间ID
+                     * 设置命名空间ID， 此参数必填
+                     * @param _namespaceId 命名空间ID， 此参数必填
                      * 
                      */
                     void SetNamespaceId(const std::string& _namespaceId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool NamespaceIdHasBeenSet() const;
 
                     /**
-                     * 获取监控统计类型，可选值：SumReqAmount、AvgFailureRate、AvgTimeCost，分别对应请求量、请求错误率、平均响应耗时
-                     * @return Type 监控统计类型，可选值：SumReqAmount、AvgFailureRate、AvgTimeCost，分别对应请求量、请求错误率、平均响应耗时
+                     * 获取监控统计类型，必填，可选值：SumReqAmount、AvgFailureRate、AvgTimeCost，分别对应请求量、请求错误率、平均响应耗时
+                     * @return Type 监控统计类型，必填，可选值：SumReqAmount、AvgFailureRate、AvgTimeCost，分别对应请求量、请求错误率、平均响应耗时
                      * 
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置监控统计类型，可选值：SumReqAmount、AvgFailureRate、AvgTimeCost，分别对应请求量、请求错误率、平均响应耗时
-                     * @param _type 监控统计类型，可选值：SumReqAmount、AvgFailureRate、AvgTimeCost，分别对应请求量、请求错误率、平均响应耗时
+                     * 设置监控统计类型，必填，可选值：SumReqAmount、AvgFailureRate、AvgTimeCost，分别对应请求量、请求错误率、平均响应耗时
+                     * @param _type 监控统计类型，必填，可选值：SumReqAmount、AvgFailureRate、AvgTimeCost，分别对应请求量、请求错误率、平均响应耗时
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -150,13 +150,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 命名空间ID
+                     * 命名空间ID， 此参数必填
                      */
                     std::string m_namespaceId;
                     bool m_namespaceIdHasBeenSet;
 
                     /**
-                     * 监控统计类型，可选值：SumReqAmount、AvgFailureRate、AvgTimeCost，分别对应请求量、请求错误率、平均响应耗时
+                     * 监控统计类型，必填，可选值：SumReqAmount、AvgFailureRate、AvgTimeCost，分别对应请求量、请求错误率、平均响应耗时
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

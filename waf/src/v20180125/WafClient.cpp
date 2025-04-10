@@ -642,6 +642,49 @@ WafClient::CreateIpAccessControlOutcomeCallable WafClient::CreateIpAccessControl
     return task->get_future();
 }
 
+WafClient::CreatePostCKafkaFlowOutcome WafClient::CreatePostCKafkaFlow(const CreatePostCKafkaFlowRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePostCKafkaFlow");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePostCKafkaFlowResponse rsp = CreatePostCKafkaFlowResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePostCKafkaFlowOutcome(rsp);
+        else
+            return CreatePostCKafkaFlowOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePostCKafkaFlowOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::CreatePostCKafkaFlowAsync(const CreatePostCKafkaFlowRequest& request, const CreatePostCKafkaFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreatePostCKafkaFlow(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::CreatePostCKafkaFlowOutcomeCallable WafClient::CreatePostCKafkaFlowCallable(const CreatePostCKafkaFlowRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreatePostCKafkaFlowOutcome()>>(
+        [this, request]()
+        {
+            return this->CreatePostCKafkaFlow(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::CreatePostCLSFlowOutcome WafClient::CreatePostCLSFlow(const CreatePostCLSFlowRequest &request)
 {
     auto outcome = MakeRequest(request, "CreatePostCLSFlow");
@@ -3222,6 +3265,49 @@ WafClient::DescribePortsOutcomeCallable WafClient::DescribePortsCallable(const D
     return task->get_future();
 }
 
+WafClient::DescribePostCKafkaFlowsOutcome WafClient::DescribePostCKafkaFlows(const DescribePostCKafkaFlowsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePostCKafkaFlows");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePostCKafkaFlowsResponse rsp = DescribePostCKafkaFlowsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePostCKafkaFlowsOutcome(rsp);
+        else
+            return DescribePostCKafkaFlowsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePostCKafkaFlowsOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribePostCKafkaFlowsAsync(const DescribePostCKafkaFlowsRequest& request, const DescribePostCKafkaFlowsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePostCKafkaFlows(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribePostCKafkaFlowsOutcomeCallable WafClient::DescribePostCKafkaFlowsCallable(const DescribePostCKafkaFlowsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePostCKafkaFlowsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePostCKafkaFlows(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::DescribePostCLSFlowsOutcome WafClient::DescribePostCLSFlows(const DescribePostCLSFlowsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePostCLSFlows");
@@ -4075,6 +4161,49 @@ WafClient::DescribeWebshellStatusOutcomeCallable WafClient::DescribeWebshellStat
         [this, request]()
         {
             return this->DescribeWebshellStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::DestroyPostCKafkaFlowOutcome WafClient::DestroyPostCKafkaFlow(const DestroyPostCKafkaFlowRequest &request)
+{
+    auto outcome = MakeRequest(request, "DestroyPostCKafkaFlow");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DestroyPostCKafkaFlowResponse rsp = DestroyPostCKafkaFlowResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DestroyPostCKafkaFlowOutcome(rsp);
+        else
+            return DestroyPostCKafkaFlowOutcome(o.GetError());
+    }
+    else
+    {
+        return DestroyPostCKafkaFlowOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DestroyPostCKafkaFlowAsync(const DestroyPostCKafkaFlowRequest& request, const DestroyPostCKafkaFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DestroyPostCKafkaFlow(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DestroyPostCKafkaFlowOutcomeCallable WafClient::DestroyPostCKafkaFlowCallable(const DestroyPostCKafkaFlowRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DestroyPostCKafkaFlowOutcome()>>(
+        [this, request]()
+        {
+            return this->DestroyPostCKafkaFlow(request);
         }
     );
 

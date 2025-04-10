@@ -42,6 +42,7 @@ set(chc_public_header_model
   include/tencentcloud/chc/v20230418/model/WorkOrderFamilyDetail.h
   include/tencentcloud/chc/v20230418/model/DescribePositionStatusSummaryResponse.h
   include/tencentcloud/chc/v20230418/model/DescribeDeviceListRequest.h
+  include/tencentcloud/chc/v20230418/model/CreateSpeciallyQuitWorkOrderRequest.h
   include/tencentcloud/chc/v20230418/model/ConfirmCommonServiceWorkOrderRequest.h
   include/tencentcloud/chc/v20230418/model/OtherDevReceivingInfo.h
   include/tencentcloud/chc/v20230418/model/DescribeModelEvaluationWorkOrderDetailRequest.h
@@ -75,7 +76,7 @@ set(chc_public_header_model
   include/tencentcloud/chc/v20230418/model/NetReceivingInfo.h
   include/tencentcloud/chc/v20230418/model/DescribeCampusListResponse.h
   include/tencentcloud/chc/v20230418/model/WireReceivingInfo.h
-  include/tencentcloud/chc/v20230418/model/DescribeRacksDistributionResponse.h
+  include/tencentcloud/chc/v20230418/model/DescribeModelTemplateRequest.h
   include/tencentcloud/chc/v20230418/model/DeviceOrderBaseInfo.h
   include/tencentcloud/chc/v20230418/model/CreateMovingWorkOrderResponse.h
   include/tencentcloud/chc/v20230418/model/Campus.h
@@ -118,13 +119,14 @@ set(chc_public_header_model
   include/tencentcloud/chc/v20230418/model/CreatePowerOnWorkOrderRequest.h
   include/tencentcloud/chc/v20230418/model/OrderStep.h
   include/tencentcloud/chc/v20230418/model/CreatePowerOffWorkOrderResponse.h
+  include/tencentcloud/chc/v20230418/model/CreateSpeciallyQuitWorkOrderResponse.h
   include/tencentcloud/chc/v20230418/model/DeviceHistory.h
   include/tencentcloud/chc/v20230418/model/PersonnelVisitBaseInfo.h
   include/tencentcloud/chc/v20230418/model/ConfirmCommonServiceWorkOrderResponse.h
   include/tencentcloud/chc/v20230418/model/CreatePowerOffWorkOrderRequest.h
   include/tencentcloud/chc/v20230418/model/CreateQuitWorkOrderResponse.h
   include/tencentcloud/chc/v20230418/model/DevicePosition.h
-  include/tencentcloud/chc/v20230418/model/DescribeModelTemplateRequest.h
+  include/tencentcloud/chc/v20230418/model/DescribeRacksDistributionResponse.h
   include/tencentcloud/chc/v20230418/model/DescribeCustomerInfoRequest.h
   include/tencentcloud/chc/v20230418/model/DescribeDeviceListResponse.h
   include/tencentcloud/chc/v20230418/model/DescribeDeviceWorkOrderDetailRequest.h
@@ -161,6 +163,7 @@ set(chc_src
   src/v20230418/model/WorkOrderFamilyDetail.cpp
   src/v20230418/model/DescribePositionStatusSummaryResponse.cpp
   src/v20230418/model/DescribeDeviceListRequest.cpp
+  src/v20230418/model/CreateSpeciallyQuitWorkOrderRequest.cpp
   src/v20230418/model/ConfirmCommonServiceWorkOrderRequest.cpp
   src/v20230418/model/OtherDevReceivingInfo.cpp
   src/v20230418/model/DescribeModelEvaluationWorkOrderDetailRequest.cpp
@@ -194,7 +197,7 @@ set(chc_src
   src/v20230418/model/NetReceivingInfo.cpp
   src/v20230418/model/DescribeCampusListResponse.cpp
   src/v20230418/model/WireReceivingInfo.cpp
-  src/v20230418/model/DescribeRacksDistributionResponse.cpp
+  src/v20230418/model/DescribeModelTemplateRequest.cpp
   src/v20230418/model/DeviceOrderBaseInfo.cpp
   src/v20230418/model/CreateMovingWorkOrderResponse.cpp
   src/v20230418/model/Campus.cpp
@@ -237,13 +240,14 @@ set(chc_src
   src/v20230418/model/CreatePowerOnWorkOrderRequest.cpp
   src/v20230418/model/OrderStep.cpp
   src/v20230418/model/CreatePowerOffWorkOrderResponse.cpp
+  src/v20230418/model/CreateSpeciallyQuitWorkOrderResponse.cpp
   src/v20230418/model/DeviceHistory.cpp
   src/v20230418/model/PersonnelVisitBaseInfo.cpp
   src/v20230418/model/ConfirmCommonServiceWorkOrderResponse.cpp
   src/v20230418/model/CreatePowerOffWorkOrderRequest.cpp
   src/v20230418/model/CreateQuitWorkOrderResponse.cpp
   src/v20230418/model/DevicePosition.cpp
-  src/v20230418/model/DescribeModelTemplateRequest.cpp
+  src/v20230418/model/DescribeRacksDistributionResponse.cpp
   src/v20230418/model/DescribeCustomerInfoRequest.cpp
   src/v20230418/model/DescribeDeviceListResponse.cpp
   src/v20230418/model/DescribeDeviceWorkOrderDetailRequest.cpp

@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取证书列表总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Total 证书列表总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotal() const;
 
                     /**
                      * 设置证书列表总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _total 证书列表总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotal(const int64_t& _total);
@@ -126,7 +122,6 @@ namespace TencentCloud
 
                     /**
                      * 证书列表总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;

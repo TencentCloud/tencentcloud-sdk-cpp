@@ -67,6 +67,8 @@
 #include <tencentcloud/tione/v20211111/model/DescribeDatasetsResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribeInferTemplatesRequest.h>
 #include <tencentcloud/tione/v20211111/model/DescribeInferTemplatesResponse.h>
+#include <tencentcloud/tione/v20211111/model/DescribeLogsRequest.h>
+#include <tencentcloud/tione/v20211111/model/DescribeLogsResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribeModelAccelerateTaskRequest.h>
 #include <tencentcloud/tione/v20211111/model/DescribeModelAccelerateTaskResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribeModelAccelerateVersionsRequest.h>
@@ -189,6 +191,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInferTemplatesResponse> DescribeInferTemplatesOutcome;
                 typedef std::future<DescribeInferTemplatesOutcome> DescribeInferTemplatesOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DescribeInferTemplatesRequest&, DescribeInferTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInferTemplatesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLogsResponse> DescribeLogsOutcome;
+                typedef std::future<DescribeLogsOutcome> DescribeLogsOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::DescribeLogsRequest&, DescribeLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeModelAccelerateTaskResponse> DescribeModelAccelerateTaskOutcome;
                 typedef std::future<DescribeModelAccelerateTaskOutcome> DescribeModelAccelerateTaskOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DescribeModelAccelerateTaskRequest&, DescribeModelAccelerateTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeModelAccelerateTaskAsyncHandler;
@@ -454,6 +459,15 @@ namespace TencentCloud
                 DescribeInferTemplatesOutcome DescribeInferTemplates(const Model::DescribeInferTemplatesRequest &request);
                 void DescribeInferTemplatesAsync(const Model::DescribeInferTemplatesRequest& request, const DescribeInferTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInferTemplatesOutcomeCallable DescribeInferTemplatesCallable(const Model::DescribeInferTemplatesRequest& request);
+
+                /**
+                 *获取任务式建模训练任务，Notebook，在线服务和批量预测任务的日志API
+                 * @param req DescribeLogsRequest
+                 * @return DescribeLogsOutcome
+                 */
+                DescribeLogsOutcome DescribeLogs(const Model::DescribeLogsRequest &request);
+                void DescribeLogsAsync(const Model::DescribeLogsRequest& request, const DescribeLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLogsOutcomeCallable DescribeLogsCallable(const Model::DescribeLogsRequest& request);
 
                 /**
                  *查询模型优化任务详情

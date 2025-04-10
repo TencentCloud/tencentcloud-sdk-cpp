@@ -91,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分组子网信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupSubnetId 分组子网信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupSubnetId() const;
 
                     /**
                      * 设置分组子网信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupSubnetId 分组子网信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupSubnetId(const std::string& _groupSubnetId);
@@ -116,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分组VPC信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupVpcId 分组VPC信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupVpcId() const;
 
                     /**
                      * 设置分组VPC信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupVpcId 分组VPC信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupVpcId(const std::string& _groupVpcId);
@@ -141,18 +133,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupId 分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupId 分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -180,21 +168,18 @@ namespace TencentCloud
 
                     /**
                      * 分组子网信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupSubnetId;
                     bool m_groupSubnetIdHasBeenSet;
 
                     /**
                      * 分组VPC信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupVpcId;
                     bool m_groupVpcIdHasBeenSet;
 
                     /**
                      * 分组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;

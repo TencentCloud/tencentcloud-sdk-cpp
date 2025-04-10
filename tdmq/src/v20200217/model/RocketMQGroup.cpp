@@ -35,7 +35,9 @@ RocketMQGroup::RocketMQGroup() :
     m_consumerTypeHasBeenSet(false),
     m_broadcastEnabledHasBeenSet(false),
     m_groupTypeHasBeenSet(false),
-    m_retryMaxTimesHasBeenSet(false)
+    m_retryMaxTimesHasBeenSet(false),
+    m_instanceIdHasBeenSet(false),
+    m_namespaceHasBeenSet(false)
 {
 }
 
@@ -194,6 +196,26 @@ CoreInternalOutcome RocketMQGroup::Deserialize(const rapidjson::Value &value)
         m_retryMaxTimesHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceId") && !value["InstanceId"].IsNull())
+    {
+        if (!value["InstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RocketMQGroup.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceId = string(value["InstanceId"].GetString());
+        m_instanceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Namespace") && !value["Namespace"].IsNull())
+    {
+        if (!value["Namespace"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RocketMQGroup.Namespace` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_namespace = string(value["Namespace"].GetString());
+        m_namespaceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -319,6 +341,22 @@ void RocketMQGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "RetryMaxTimes";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_retryMaxTimes, allocator);
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_namespaceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Namespace";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_namespace.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -562,5 +600,37 @@ void RocketMQGroup::SetRetryMaxTimes(const uint64_t& _retryMaxTimes)
 bool RocketMQGroup::RetryMaxTimesHasBeenSet() const
 {
     return m_retryMaxTimesHasBeenSet;
+}
+
+string RocketMQGroup::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void RocketMQGroup::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool RocketMQGroup::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
+
+string RocketMQGroup::GetNamespace() const
+{
+    return m_namespace;
+}
+
+void RocketMQGroup::SetNamespace(const string& _namespace)
+{
+    m_namespace = _namespace;
+    m_namespaceHasBeenSet = true;
+}
+
+bool RocketMQGroup::NamespaceHasBeenSet() const
+{
+    return m_namespaceHasBeenSet;
 }
 

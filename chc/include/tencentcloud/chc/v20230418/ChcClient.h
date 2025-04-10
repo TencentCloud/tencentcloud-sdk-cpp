@@ -49,6 +49,8 @@
 #include <tencentcloud/chc/v20230418/model/CreateReceivingWorkOrderResponse.h>
 #include <tencentcloud/chc/v20230418/model/CreateServerModelRequest.h>
 #include <tencentcloud/chc/v20230418/model/CreateServerModelResponse.h>
+#include <tencentcloud/chc/v20230418/model/CreateSpeciallyQuitWorkOrderRequest.h>
+#include <tencentcloud/chc/v20230418/model/CreateSpeciallyQuitWorkOrderResponse.h>
 #include <tencentcloud/chc/v20230418/model/DescribeAvailableModelListRequest.h>
 #include <tencentcloud/chc/v20230418/model/DescribeAvailableModelListResponse.h>
 #include <tencentcloud/chc/v20230418/model/DescribeCampusListRequest.h>
@@ -148,6 +150,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateServerModelResponse> CreateServerModelOutcome;
                 typedef std::future<CreateServerModelOutcome> CreateServerModelOutcomeCallable;
                 typedef std::function<void(const ChcClient*, const Model::CreateServerModelRequest&, CreateServerModelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateServerModelAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateSpeciallyQuitWorkOrderResponse> CreateSpeciallyQuitWorkOrderOutcome;
+                typedef std::future<CreateSpeciallyQuitWorkOrderOutcome> CreateSpeciallyQuitWorkOrderOutcomeCallable;
+                typedef std::function<void(const ChcClient*, const Model::CreateSpeciallyQuitWorkOrderRequest&, CreateSpeciallyQuitWorkOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSpeciallyQuitWorkOrderAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAvailableModelListResponse> DescribeAvailableModelListOutcome;
                 typedef std::future<DescribeAvailableModelListOutcome> DescribeAvailableModelListOutcomeCallable;
                 typedef std::function<void(const ChcClient*, const Model::DescribeAvailableModelListRequest&, DescribeAvailableModelListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAvailableModelListAsyncHandler;
@@ -336,6 +341,15 @@ namespace TencentCloud
                 CreateServerModelOutcome CreateServerModel(const Model::CreateServerModelRequest &request);
                 void CreateServerModelAsync(const Model::CreateServerModelRequest& request, const CreateServerModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateServerModelOutcomeCallable CreateServerModelCallable(const Model::CreateServerModelRequest& request);
+
+                /**
+                 *创建临时设备退出工单
+                 * @param req CreateSpeciallyQuitWorkOrderRequest
+                 * @return CreateSpeciallyQuitWorkOrderOutcome
+                 */
+                CreateSpeciallyQuitWorkOrderOutcome CreateSpeciallyQuitWorkOrder(const Model::CreateSpeciallyQuitWorkOrderRequest &request);
+                void CreateSpeciallyQuitWorkOrderAsync(const Model::CreateSpeciallyQuitWorkOrderRequest& request, const CreateSpeciallyQuitWorkOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSpeciallyQuitWorkOrderOutcomeCallable CreateSpeciallyQuitWorkOrderCallable(const Model::CreateSpeciallyQuitWorkOrderRequest& request);
 
                 /**
                  *获取机房内可用的型号列表

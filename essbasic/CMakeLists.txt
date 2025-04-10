@@ -197,7 +197,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/ChannelCreatePrepareFlowRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowSignUrlRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateSealPolicyResponse.h
-  include/tencentcloud/essbasic/v20210526/model/OrganizationInfo.h
+  include/tencentcloud/essbasic/v20210526/model/OperateTemplateRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelDescribeSignFaceVideoResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCancelUserAutoSignEnableUrlResponse.h
   include/tencentcloud/essbasic/v20210526/model/DownloadFlowInfo.h
@@ -252,6 +252,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/ChannelVerifyPdfResponse.h
   include/tencentcloud/essbasic/v20210526/model/OrganizationCommonInfo.h
   include/tencentcloud/essbasic/v20210526/model/ArchiveDynamicFlowResponse.h
+  include/tencentcloud/essbasic/v20210526/model/WebThemeConfig.h
   include/tencentcloud/essbasic/v20210526/model/CreateConsoleLoginUrlRequest.h
   include/tencentcloud/essbasic/v20210526/model/CreateLegalSealQrCodeRequest.h
   include/tencentcloud/essbasic/v20210526/model/CreateCloseOrganizationUrlRequest.h
@@ -290,6 +291,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateBoundFlowsRequest.h
   include/tencentcloud/essbasic/v20210526/model/DeleteOrganizationAuthorizationInfo.h
   include/tencentcloud/essbasic/v20210526/model/ChannelDescribeEmployeesRequest.h
+  include/tencentcloud/essbasic/v20210526/model/OperateTemplateResponse.h
   include/tencentcloud/essbasic/v20210526/model/AuthorizedUser.h
   include/tencentcloud/essbasic/v20210526/model/Intention.h
   include/tencentcloud/essbasic/v20210526/model/CreateFlowBlockchainEvidenceUrlResponse.h
@@ -413,7 +415,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/ChannelUpdateSealStatusResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowRemindsRequest.h
   include/tencentcloud/essbasic/v20210526/model/DescribeExtendedServiceAuthInfoResponse.h
-  include/tencentcloud/essbasic/v20210526/model/WebThemeConfig.h
+  include/tencentcloud/essbasic/v20210526/model/OrganizationInfo.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateEmbedWebUrlRequest.h
   include/tencentcloud/essbasic/v20210526/model/CcInfo.h
   include/tencentcloud/essbasic/v20210526/model/ChannelDescribeFlowComponentsRequest.h
@@ -600,7 +602,7 @@ set(essbasic_src
   src/v20210526/model/ChannelCreatePrepareFlowRequest.cpp
   src/v20210526/model/ChannelCreateFlowSignUrlRequest.cpp
   src/v20210526/model/ChannelCreateSealPolicyResponse.cpp
-  src/v20210526/model/OrganizationInfo.cpp
+  src/v20210526/model/OperateTemplateRequest.cpp
   src/v20210526/model/ChannelDescribeSignFaceVideoResponse.cpp
   src/v20210526/model/ChannelCancelUserAutoSignEnableUrlResponse.cpp
   src/v20210526/model/DownloadFlowInfo.cpp
@@ -655,6 +657,7 @@ set(essbasic_src
   src/v20210526/model/ChannelVerifyPdfResponse.cpp
   src/v20210526/model/OrganizationCommonInfo.cpp
   src/v20210526/model/ArchiveDynamicFlowResponse.cpp
+  src/v20210526/model/WebThemeConfig.cpp
   src/v20210526/model/CreateConsoleLoginUrlRequest.cpp
   src/v20210526/model/CreateLegalSealQrCodeRequest.cpp
   src/v20210526/model/CreateCloseOrganizationUrlRequest.cpp
@@ -693,6 +696,7 @@ set(essbasic_src
   src/v20210526/model/ChannelCreateBoundFlowsRequest.cpp
   src/v20210526/model/DeleteOrganizationAuthorizationInfo.cpp
   src/v20210526/model/ChannelDescribeEmployeesRequest.cpp
+  src/v20210526/model/OperateTemplateResponse.cpp
   src/v20210526/model/AuthorizedUser.cpp
   src/v20210526/model/Intention.cpp
   src/v20210526/model/CreateFlowBlockchainEvidenceUrlResponse.cpp
@@ -816,7 +820,7 @@ set(essbasic_src
   src/v20210526/model/ChannelUpdateSealStatusResponse.cpp
   src/v20210526/model/ChannelCreateFlowRemindsRequest.cpp
   src/v20210526/model/DescribeExtendedServiceAuthInfoResponse.cpp
-  src/v20210526/model/WebThemeConfig.cpp
+  src/v20210526/model/OrganizationInfo.cpp
   src/v20210526/model/ChannelCreateEmbedWebUrlRequest.cpp
   src/v20210526/model/CcInfo.cpp
   src/v20210526/model/ChannelDescribeFlowComponentsRequest.cpp

@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取k8s 的 FieldPath
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FieldPath k8s 的 FieldPath
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFieldPath() const;
 
                     /**
                      * 设置k8s 的 FieldPath
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fieldPath k8s 的 FieldPath
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFieldPath(const std::string& _fieldPath);
@@ -75,7 +71,6 @@ namespace TencentCloud
 
                     /**
                      * k8s 的 FieldPath
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fieldPath;
                     bool m_fieldPathHasBeenSet;

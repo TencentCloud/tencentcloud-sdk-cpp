@@ -75,9 +75,7 @@ namespace TencentCloud
 
                     /**
                      * 获取申请人昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplyUinNick 申请人昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApplyUinNick() const;
@@ -119,9 +117,7 @@ namespace TencentCloud
 
                     /**
                      * 获取申请参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApplicationParams 申请参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ApplyParam> GetApplicationParams() const;
@@ -135,9 +131,7 @@ namespace TencentCloud
 
                     /**
                      * 获取申请原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Reason 申请原因
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetReason() const;
@@ -151,9 +145,7 @@ namespace TencentCloud
 
                     /**
                      * 获取申请时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 申请时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
@@ -167,9 +159,7 @@ namespace TencentCloud
 
                     /**
                      * 获取申请单状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 申请单状态
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetStatus() const;
@@ -183,9 +173,7 @@ namespace TencentCloud
 
                     /**
                      * 获取节点信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Nodes 节点信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<StatusNode> GetNodes() const;
@@ -199,9 +187,7 @@ namespace TencentCloud
 
                     /**
                      * 获取正在审批的节点id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ApprovingNodeId 正在审批的节点id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetApprovingNodeId() const;
@@ -215,9 +201,7 @@ namespace TencentCloud
 
                     /**
                      * 获取更新时间，时间格式：2021-12-12 10:12:10	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifyTime 更新时间，时间格式：2021-12-12 10:12:10	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModifyTime() const;
@@ -245,7 +229,6 @@ namespace TencentCloud
 
                     /**
                      * 申请人昵称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_applyUinNick;
                     bool m_applyUinNickHasBeenSet;
@@ -264,49 +247,42 @@ namespace TencentCloud
 
                     /**
                      * 申请参数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ApplyParam> m_applicationParams;
                     bool m_applicationParamsHasBeenSet;
 
                     /**
                      * 申请原因
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reason;
                     bool m_reasonHasBeenSet;
 
                     /**
                      * 申请时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 申请单状态
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
                      * 节点信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<StatusNode> m_nodes;
                     bool m_nodesHasBeenSet;
 
                     /**
                      * 正在审批的节点id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_approvingNodeId;
                     bool m_approvingNodeIdHasBeenSet;
 
                     /**
                      * 更新时间，时间格式：2021-12-12 10:12:10	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;

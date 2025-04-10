@@ -51,18 +51,14 @@ namespace TencentCloud
 
                     /**
                      * 获取k8s env 的 FieldRef
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FieldRef k8s env 的 FieldRef
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     FieldRef GetFieldRef() const;
 
                     /**
                      * 设置k8s env 的 FieldRef
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _fieldRef k8s env 的 FieldRef
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFieldRef(const FieldRef& _fieldRef);
@@ -101,18 +97,14 @@ namespace TencentCloud
 
                     /**
                      * 获取k8s env的configMapKeyRef
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigMapKeyRef k8s env的configMapKeyRef
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CommonRef GetConfigMapKeyRef() const;
 
                     /**
                      * 设置k8s env的configMapKeyRef
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _configMapKeyRef k8s env的configMapKeyRef
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConfigMapKeyRef(const CommonRef& _configMapKeyRef);
@@ -126,18 +118,14 @@ namespace TencentCloud
 
                     /**
                      * 获取k8s env 的 secretKeyRef
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SecretKeyRef k8s env 的 secretKeyRef
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CommonRef GetSecretKeyRef() const;
 
                     /**
                      * 设置k8s env 的 secretKeyRef
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _secretKeyRef k8s env 的 secretKeyRef
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSecretKeyRef(const CommonRef& _secretKeyRef);
@@ -153,7 +141,6 @@ namespace TencentCloud
 
                     /**
                      * k8s env 的 FieldRef
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     FieldRef m_fieldRef;
                     bool m_fieldRefHasBeenSet;
@@ -167,14 +154,12 @@ namespace TencentCloud
 
                     /**
                      * k8s env的configMapKeyRef
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CommonRef m_configMapKeyRef;
                     bool m_configMapKeyRefHasBeenSet;
 
                     /**
                      * k8s env 的 secretKeyRef
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CommonRef m_secretKeyRef;
                     bool m_secretKeyRefHasBeenSet;

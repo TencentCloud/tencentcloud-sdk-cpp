@@ -497,18 +497,18 @@ namespace TencentCloud
                     bool TagListHasBeenSet() const;
 
                     /**
-                     * 获取3782478.47
+                     * 获取索引流量，单位byte
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IndexTraffic 3782478.47
+                     * @return IndexTraffic 索引流量，单位byte
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetIndexTraffic() const;
 
                     /**
-                     * 设置3782478.47
+                     * 设置索引流量，单位byte
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _indexTraffic 3782478.47
+                     * @param _indexTraffic 索引流量，单位byte
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -649,7 +649,7 @@ namespace TencentCloud
                     bool m_tagListHasBeenSet;
 
                     /**
-                     * 3782478.47
+                     * 索引流量，单位byte
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_indexTraffic;

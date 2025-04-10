@@ -919,18 +919,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启cgroup控制内存cpu
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FilebeatCgroupEnable 是否开启cgroup控制内存cpu
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetFilebeatCgroupEnable() const;
 
                     /**
                      * 设置是否开启cgroup控制内存cpu
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _filebeatCgroupEnable 是否开启cgroup控制内存cpu
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFilebeatCgroupEnable(const bool& _filebeatCgroupEnable);
@@ -944,18 +940,14 @@ namespace TencentCloud
 
                     /**
                      * 获取filebeat使用cpu上限
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FilebeatMaxCpu filebeat使用cpu上限
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetFilebeatMaxCpu() const;
 
                     /**
                      * 设置filebeat使用cpu上限
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _filebeatMaxCpu filebeat使用cpu上限
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFilebeatMaxCpu(const double& _filebeatMaxCpu);
@@ -969,18 +961,14 @@ namespace TencentCloud
 
                     /**
                      * 获取filebeat使用内存上限
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FilebeatMaxMem filebeat使用内存上限
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetFilebeatMaxMem() const;
 
                     /**
                      * 设置filebeat使用内存上限
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _filebeatMaxMem filebeat使用内存上限
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFilebeatMaxMem(const int64_t& _filebeatMaxMem);
@@ -994,18 +982,14 @@ namespace TencentCloud
 
                     /**
                      * 获取仓库ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RepositoryId 仓库ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRepositoryId() const;
 
                     /**
                      * 设置仓库ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _repositoryId 仓库ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRepositoryId(const std::string& _repositoryId);
@@ -1019,18 +1003,14 @@ namespace TencentCloud
 
                     /**
                      * 获取仓库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RepositoryName 仓库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRepositoryName() const;
 
                     /**
                      * 设置仓库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _repositoryName 仓库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRepositoryName(const std::string& _repositoryName);
@@ -1044,18 +1024,14 @@ namespace TencentCloud
 
                     /**
                      * 获取仓库类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RepositoryType 仓库类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRepositoryType() const;
 
                     /**
                      * 设置仓库类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _repositoryType 仓库类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRepositoryType(const std::string& _repositoryType);
@@ -1317,42 +1293,36 @@ namespace TencentCloud
 
                     /**
                      * 是否开启cgroup控制内存cpu
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_filebeatCgroupEnable;
                     bool m_filebeatCgroupEnableHasBeenSet;
 
                     /**
                      * filebeat使用cpu上限
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_filebeatMaxCpu;
                     bool m_filebeatMaxCpuHasBeenSet;
 
                     /**
                      * filebeat使用内存上限
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_filebeatMaxMem;
                     bool m_filebeatMaxMemHasBeenSet;
 
                     /**
                      * 仓库ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_repositoryId;
                     bool m_repositoryIdHasBeenSet;
 
                     /**
                      * 仓库名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_repositoryName;
                     bool m_repositoryNameHasBeenSet;
 
                     /**
                      * 仓库类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_repositoryType;
                     bool m_repositoryTypeHasBeenSet;

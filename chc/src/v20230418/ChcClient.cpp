@@ -599,6 +599,49 @@ ChcClient::CreateServerModelOutcomeCallable ChcClient::CreateServerModelCallable
     return task->get_future();
 }
 
+ChcClient::CreateSpeciallyQuitWorkOrderOutcome ChcClient::CreateSpeciallyQuitWorkOrder(const CreateSpeciallyQuitWorkOrderRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSpeciallyQuitWorkOrder");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSpeciallyQuitWorkOrderResponse rsp = CreateSpeciallyQuitWorkOrderResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSpeciallyQuitWorkOrderOutcome(rsp);
+        else
+            return CreateSpeciallyQuitWorkOrderOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSpeciallyQuitWorkOrderOutcome(outcome.GetError());
+    }
+}
+
+void ChcClient::CreateSpeciallyQuitWorkOrderAsync(const CreateSpeciallyQuitWorkOrderRequest& request, const CreateSpeciallyQuitWorkOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateSpeciallyQuitWorkOrder(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ChcClient::CreateSpeciallyQuitWorkOrderOutcomeCallable ChcClient::CreateSpeciallyQuitWorkOrderCallable(const CreateSpeciallyQuitWorkOrderRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateSpeciallyQuitWorkOrderOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateSpeciallyQuitWorkOrder(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ChcClient::DescribeAvailableModelListOutcome ChcClient::DescribeAvailableModelList(const DescribeAvailableModelListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAvailableModelList");

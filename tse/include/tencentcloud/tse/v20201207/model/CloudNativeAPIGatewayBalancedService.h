@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务 ID，作为入参时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceID 服务 ID，作为入参时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetServiceID() const;
 
                     /**
                      * 设置服务 ID，作为入参时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serviceID 服务 ID，作为入参时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServiceID(const std::string& _serviceID);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务名称，作为入参时，无意义
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceName 服务名称，作为入参时，无意义
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetServiceName() const;
 
                     /**
                      * 设置服务名称，作为入参时，无意义
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serviceName 服务名称，作为入参时，无意义
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServiceName(const std::string& _serviceName);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Upstream 名称，作为入参时，无意义
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpstreamName Upstream 名称，作为入参时，无意义
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetUpstreamName() const;
 
                     /**
                      * 设置Upstream 名称，作为入参时，无意义
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _upstreamName Upstream 名称，作为入参时，无意义
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpstreamName(const std::string& _upstreamName);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取百分比，10 即 10%，范围0-100
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Percent 百分比，10 即 10%，范围0-100
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     double GetPercent() const;
 
                     /**
                      * 设置百分比，10 即 10%，范围0-100
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _percent 百分比，10 即 10%，范围0-100
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPercent(const double& _percent);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 服务 ID，作为入参时，必填
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serviceID;
                     bool m_serviceIDHasBeenSet;
 
                     /**
                      * 服务名称，作为入参时，无意义
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serviceName;
                     bool m_serviceNameHasBeenSet;
 
                     /**
                      * Upstream 名称，作为入参时，无意义
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_upstreamName;
                     bool m_upstreamNameHasBeenSet;
 
                     /**
                      * 百分比，10 即 10%，范围0-100
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_percent;
                     bool m_percentHasBeenSet;

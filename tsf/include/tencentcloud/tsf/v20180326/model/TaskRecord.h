@@ -177,18 +177,14 @@ namespace TencentCloud
 
                     /**
                      * 获取重试次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RetryCount 重试次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRetryCount() const;
 
                     /**
                      * 设置重试次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _retryCount 重试次数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRetryCount(const int64_t& _retryCount);
@@ -202,18 +198,14 @@ namespace TencentCloud
 
                     /**
                      * 获取重试间隔
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RetryInterval 重试间隔
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetRetryInterval() const;
 
                     /**
                      * 设置重试间隔
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _retryInterval 重试间隔
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRetryInterval(const int64_t& _retryInterval);
@@ -290,18 +282,14 @@ namespace TencentCloud
 
                     /**
                      * 获取判断任务成功的操作符
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SuccessOperator 判断任务成功的操作符
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetSuccessOperator() const;
 
                     /**
                      * 设置判断任务成功的操作符
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _successOperator 判断任务成功的操作符
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSuccessOperator(const std::string& _successOperator);
@@ -315,18 +303,14 @@ namespace TencentCloud
 
                     /**
                      * 获取判断任务成功的阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SuccessRatio 判断任务成功的阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetSuccessRatio() const;
 
                     /**
                      * 设置判断任务成功的阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _successRatio 判断任务成功的阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSuccessRatio(const int64_t& _successRatio);
@@ -340,18 +324,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分片数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ShardCount 分片数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetShardCount() const;
 
                     /**
                      * 设置分片数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _shardCount 分片数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetShardCount(const int64_t& _shardCount);
@@ -365,18 +345,14 @@ namespace TencentCloud
 
                     /**
                      * 获取高级设置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AdvanceSettings 高级设置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     AdvanceSettings GetAdvanceSettings() const;
 
                     /**
                      * 设置高级设置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _advanceSettings 高级设置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAdvanceSettings(const AdvanceSettings& _advanceSettings);
@@ -390,18 +366,14 @@ namespace TencentCloud
 
                     /**
                      * 获取分片参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ShardArguments 分片参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<ShardArgument> GetShardArguments() const;
 
                     /**
                      * 设置分片参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _shardArguments 分片参数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetShardArguments(const std::vector<ShardArgument>& _shardArguments);
@@ -415,18 +387,14 @@ namespace TencentCloud
 
                     /**
                      * 获取所属工作流ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BelongFlowIds 所属工作流ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetBelongFlowIds() const;
 
                     /**
                      * 设置所属工作流ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _belongFlowIds 所属工作流ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetBelongFlowIds(const std::vector<std::string>& _belongFlowIds);
@@ -440,18 +408,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务历史ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskLogId 任务历史ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskLogId() const;
 
                     /**
                      * 设置任务历史ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskLogId 任务历史ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskLogId(const std::string& _taskLogId);
@@ -465,18 +429,14 @@ namespace TencentCloud
 
                     /**
                      * 获取触发类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TriggerType 触发类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTriggerType() const;
 
                     /**
                      * 设置触发类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _triggerType 触发类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTriggerType(const std::string& _triggerType);
@@ -490,18 +450,14 @@ namespace TencentCloud
 
                     /**
                      * 获取任务参数，长度限制10000个字符
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TaskArgument 任务参数，长度限制10000个字符
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetTaskArgument() const;
 
                     /**
                      * 设置任务参数，长度限制10000个字符
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _taskArgument 任务参数，长度限制10000个字符
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTaskArgument(const std::string& _taskArgument);
@@ -553,14 +509,12 @@ namespace TencentCloud
 
                     /**
                      * 重试次数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_retryCount;
                     bool m_retryCountHasBeenSet;
 
                     /**
                      * 重试间隔
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_retryInterval;
                     bool m_retryIntervalHasBeenSet;
@@ -585,63 +539,54 @@ namespace TencentCloud
 
                     /**
                      * 判断任务成功的操作符
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_successOperator;
                     bool m_successOperatorHasBeenSet;
 
                     /**
                      * 判断任务成功的阈值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_successRatio;
                     bool m_successRatioHasBeenSet;
 
                     /**
                      * 分片数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_shardCount;
                     bool m_shardCountHasBeenSet;
 
                     /**
                      * 高级设置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AdvanceSettings m_advanceSettings;
                     bool m_advanceSettingsHasBeenSet;
 
                     /**
                      * 分片参数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ShardArgument> m_shardArguments;
                     bool m_shardArgumentsHasBeenSet;
 
                     /**
                      * 所属工作流ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_belongFlowIds;
                     bool m_belongFlowIdsHasBeenSet;
 
                     /**
                      * 任务历史ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskLogId;
                     bool m_taskLogIdHasBeenSet;
 
                     /**
                      * 触发类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_triggerType;
                     bool m_triggerTypeHasBeenSet;
 
                     /**
                      * 任务参数，长度限制10000个字符
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_taskArgument;
                     bool m_taskArgumentHasBeenSet;

@@ -94,18 +94,14 @@ namespace TencentCloud
 
                     /**
                      * 获取需要进行流量控制的请求路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Path 需要进行流量控制的请求路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPath() const;
 
                     /**
                      * 设置需要进行流量控制的请求路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _path 需要进行流量控制的请求路径
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPath(const std::string& _path);
@@ -119,18 +115,14 @@ namespace TencentCloud
 
                     /**
                      * 获取需要进行流量控制的请求头Key
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Header 需要进行流量控制的请求头Key
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetHeader() const;
 
                     /**
                      * 设置需要进行流量控制的请求头Key
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _header 需要进行流量控制的请求头Key
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetHeader(const std::string& _header);
@@ -169,18 +161,14 @@ ip service consumer credential path header
 
                     /**
                      * 获取外部redis配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExternalRedis 外部redis配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ExternalRedis GetExternalRedis() const;
 
                     /**
                      * 设置外部redis配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _externalRedis 外部redis配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExternalRedis(const ExternalRedis& _externalRedis);
@@ -198,13 +186,11 @@ local 单机
 redis  默认redis
 external_redis 外部redis
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Policy 计数器策略 
 local 单机
 redis  默认redis
 external_redis 外部redis
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetPolicy() const;
@@ -215,13 +201,11 @@ local 单机
 redis  默认redis
 external_redis 外部redis
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _policy 计数器策略 
 local 单机
 redis  默认redis
 external_redis 外部redis
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPolicy(const std::string& _policy);
@@ -236,10 +220,8 @@ external_redis 外部redis
                     /**
                      * 获取响应配置，响应策略为text
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RateLimitResponse 响应配置，响应策略为text
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     RateLimitResponse GetRateLimitResponse() const;
@@ -247,10 +229,8 @@ external_redis 外部redis
                     /**
                      * 设置响应配置，响应策略为text
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rateLimitResponse 响应配置，响应策略为text
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRateLimitResponse(const RateLimitResponse& _rateLimitResponse);
@@ -264,18 +244,14 @@ external_redis 外部redis
 
                     /**
                      * 获取请求转发地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RateLimitResponseUrl 请求转发地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRateLimitResponseUrl() const;
 
                     /**
                      * 设置请求转发地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _rateLimitResponseUrl 请求转发地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRateLimitResponseUrl(const std::string& _rateLimitResponseUrl);
@@ -453,14 +429,12 @@ default 直接返回
 
                     /**
                      * 需要进行流量控制的请求路径
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_path;
                     bool m_pathHasBeenSet;
 
                     /**
                      * 需要进行流量控制的请求头Key
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_header;
                     bool m_headerHasBeenSet;
@@ -474,7 +448,6 @@ ip service consumer credential path header
 
                     /**
                      * 外部redis配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ExternalRedis m_externalRedis;
                     bool m_externalRedisHasBeenSet;
@@ -485,7 +458,6 @@ local 单机
 redis  默认redis
 external_redis 外部redis
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_policy;
                     bool m_policyHasBeenSet;
@@ -493,14 +465,12 @@ external_redis 外部redis
                     /**
                      * 响应配置，响应策略为text
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RateLimitResponse m_rateLimitResponse;
                     bool m_rateLimitResponseHasBeenSet;
 
                     /**
                      * 请求转发地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_rateLimitResponseUrl;
                     bool m_rateLimitResponseUrlHasBeenSet;

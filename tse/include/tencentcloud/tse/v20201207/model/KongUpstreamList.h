@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取无
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpstreamList 无
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<KongUpstreamPreview> GetUpstreamList() const;
 
                     /**
                      * 设置无
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _upstreamList 无
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetUpstreamList(const std::vector<KongUpstreamPreview>& _upstreamList);
@@ -76,7 +72,6 @@ namespace TencentCloud
 
                     /**
                      * 无
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<KongUpstreamPreview> m_upstreamList;
                     bool m_upstreamListHasBeenSet;

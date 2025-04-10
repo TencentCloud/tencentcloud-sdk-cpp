@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ForceSchedule -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     ForceSchedule GetForceSchedule() const;
 
                     /**
                      * 设置-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _forceSchedule -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetForceSchedule(const ForceSchedule& _forceSchedule);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TrySchedule -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     TrySchedule GetTrySchedule() const;
 
                     /**
                      * 设置-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _trySchedule -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTrySchedule(const TrySchedule& _trySchedule);
@@ -102,14 +94,12 @@ namespace TencentCloud
 
                     /**
                      * -
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ForceSchedule m_forceSchedule;
                     bool m_forceScheduleHasBeenSet;
 
                     /**
                      * -
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     TrySchedule m_trySchedule;
                     bool m_tryScheduleHasBeenSet;

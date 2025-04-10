@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取部署组ID
-                     * @return GroupId 部署组ID
+                     * 获取部署组ID 必填项
+                     * @return GroupId 部署组ID 必填项
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置部署组ID
-                     * @param _groupId 部署组ID
+                     * 设置部署组ID 必填项
+                     * @param _groupId 部署组ID 必填项
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -193,7 +193,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 部署组ID
+                     * 部署组ID 必填项
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;

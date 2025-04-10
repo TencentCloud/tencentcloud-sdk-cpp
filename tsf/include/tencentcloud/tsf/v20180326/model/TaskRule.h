@@ -69,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Cron类型规则，cron表达式。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Expression Cron类型规则，cron表达式。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetExpression() const;
 
                     /**
                      * 设置Cron类型规则，cron表达式。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _expression Cron类型规则，cron表达式。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetExpression(const std::string& _expression);
@@ -127,7 +123,6 @@ namespace TencentCloud
 
                     /**
                      * Cron类型规则，cron表达式。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_expression;
                     bool m_expressionHasBeenSet;

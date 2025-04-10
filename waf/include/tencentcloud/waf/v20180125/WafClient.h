@@ -51,6 +51,8 @@
 #include <tencentcloud/waf/v20180125/model/CreateHostResponse.h>
 #include <tencentcloud/waf/v20180125/model/CreateIpAccessControlRequest.h>
 #include <tencentcloud/waf/v20180125/model/CreateIpAccessControlResponse.h>
+#include <tencentcloud/waf/v20180125/model/CreatePostCKafkaFlowRequest.h>
+#include <tencentcloud/waf/v20180125/model/CreatePostCKafkaFlowResponse.h>
 #include <tencentcloud/waf/v20180125/model/CreatePostCLSFlowRequest.h>
 #include <tencentcloud/waf/v20180125/model/CreatePostCLSFlowResponse.h>
 #include <tencentcloud/waf/v20180125/model/DeleteAccessExportRequest.h>
@@ -171,6 +173,8 @@
 #include <tencentcloud/waf/v20180125/model/DescribePolicyStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribePortsRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribePortsResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribePostCKafkaFlowsRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribePostCKafkaFlowsResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribePostCLSFlowsRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribePostCLSFlowsResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeProtectionModesRequest.h>
@@ -211,6 +215,8 @@
 #include <tencentcloud/waf/v20180125/model/DescribeWafThreatenIntelligenceResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeWebshellStatusRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeWebshellStatusResponse.h>
+#include <tencentcloud/waf/v20180125/model/DestroyPostCKafkaFlowRequest.h>
+#include <tencentcloud/waf/v20180125/model/DestroyPostCKafkaFlowResponse.h>
 #include <tencentcloud/waf/v20180125/model/DestroyPostCLSFlowRequest.h>
 #include <tencentcloud/waf/v20180125/model/DestroyPostCLSFlowResponse.h>
 #include <tencentcloud/waf/v20180125/model/FreshAntiFakeUrlRequest.h>
@@ -387,6 +393,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateIpAccessControlResponse> CreateIpAccessControlOutcome;
                 typedef std::future<CreateIpAccessControlOutcome> CreateIpAccessControlOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::CreateIpAccessControlRequest&, CreateIpAccessControlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateIpAccessControlAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreatePostCKafkaFlowResponse> CreatePostCKafkaFlowOutcome;
+                typedef std::future<CreatePostCKafkaFlowOutcome> CreatePostCKafkaFlowOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::CreatePostCKafkaFlowRequest&, CreatePostCKafkaFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePostCKafkaFlowAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreatePostCLSFlowResponse> CreatePostCLSFlowOutcome;
                 typedef std::future<CreatePostCLSFlowOutcome> CreatePostCLSFlowOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::CreatePostCLSFlowRequest&, CreatePostCLSFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePostCLSFlowAsyncHandler;
@@ -567,6 +576,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribePortsResponse> DescribePortsOutcome;
                 typedef std::future<DescribePortsOutcome> DescribePortsOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribePortsRequest&, DescribePortsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePortsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePostCKafkaFlowsResponse> DescribePostCKafkaFlowsOutcome;
+                typedef std::future<DescribePostCKafkaFlowsOutcome> DescribePostCKafkaFlowsOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribePostCKafkaFlowsRequest&, DescribePostCKafkaFlowsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePostCKafkaFlowsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePostCLSFlowsResponse> DescribePostCLSFlowsOutcome;
                 typedef std::future<DescribePostCLSFlowsOutcome> DescribePostCLSFlowsOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribePostCLSFlowsRequest&, DescribePostCLSFlowsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePostCLSFlowsAsyncHandler;
@@ -627,6 +639,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeWebshellStatusResponse> DescribeWebshellStatusOutcome;
                 typedef std::future<DescribeWebshellStatusOutcome> DescribeWebshellStatusOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeWebshellStatusRequest&, DescribeWebshellStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWebshellStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::DestroyPostCKafkaFlowResponse> DestroyPostCKafkaFlowOutcome;
+                typedef std::future<DestroyPostCKafkaFlowOutcome> DestroyPostCKafkaFlowOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DestroyPostCKafkaFlowRequest&, DestroyPostCKafkaFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyPostCKafkaFlowAsyncHandler;
                 typedef Outcome<Core::Error, Model::DestroyPostCLSFlowResponse> DestroyPostCLSFlowOutcome;
                 typedef std::future<DestroyPostCLSFlowOutcome> DestroyPostCLSFlowOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DestroyPostCLSFlowRequest&, DestroyPostCLSFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyPostCLSFlowAsyncHandler;
@@ -935,6 +950,15 @@ namespace TencentCloud
                 CreateIpAccessControlOutcome CreateIpAccessControl(const Model::CreateIpAccessControlRequest &request);
                 void CreateIpAccessControlAsync(const Model::CreateIpAccessControlRequest& request, const CreateIpAccessControlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateIpAccessControlOutcomeCallable CreateIpAccessControlCallable(const Model::CreateIpAccessControlRequest& request);
+
+                /**
+                 *创建CKafka投递流任务
+                 * @param req CreatePostCKafkaFlowRequest
+                 * @return CreatePostCKafkaFlowOutcome
+                 */
+                CreatePostCKafkaFlowOutcome CreatePostCKafkaFlow(const Model::CreatePostCKafkaFlowRequest &request);
+                void CreatePostCKafkaFlowAsync(const Model::CreatePostCKafkaFlowRequest& request, const CreatePostCKafkaFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePostCKafkaFlowOutcomeCallable CreatePostCKafkaFlowCallable(const Model::CreatePostCKafkaFlowRequest& request);
 
                 /**
                  *创建CLS投递流任务
@@ -1477,6 +1501,15 @@ namespace TencentCloud
                 DescribePortsOutcomeCallable DescribePortsCallable(const Model::DescribePortsRequest& request);
 
                 /**
+                 *获取CKafka投递流任务列表
+                 * @param req DescribePostCKafkaFlowsRequest
+                 * @return DescribePostCKafkaFlowsOutcome
+                 */
+                DescribePostCKafkaFlowsOutcome DescribePostCKafkaFlows(const Model::DescribePostCKafkaFlowsRequest &request);
+                void DescribePostCKafkaFlowsAsync(const Model::DescribePostCKafkaFlowsRequest& request, const DescribePostCKafkaFlowsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePostCKafkaFlowsOutcomeCallable DescribePostCKafkaFlowsCallable(const Model::DescribePostCKafkaFlowsRequest& request);
+
+                /**
                  *获取CLS投递流任务列表
                  * @param req DescribePostCLSFlowsRequest
                  * @return DescribePostCLSFlowsOutcome
@@ -1657,6 +1690,15 @@ namespace TencentCloud
                 DescribeWebshellStatusOutcome DescribeWebshellStatus(const Model::DescribeWebshellStatusRequest &request);
                 void DescribeWebshellStatusAsync(const Model::DescribeWebshellStatusRequest& request, const DescribeWebshellStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeWebshellStatusOutcomeCallable DescribeWebshellStatusCallable(const Model::DescribeWebshellStatusRequest& request);
+
+                /**
+                 *销毁CKafka投递流任务
+                 * @param req DestroyPostCKafkaFlowRequest
+                 * @return DestroyPostCKafkaFlowOutcome
+                 */
+                DestroyPostCKafkaFlowOutcome DestroyPostCKafkaFlow(const Model::DestroyPostCKafkaFlowRequest &request);
+                void DestroyPostCKafkaFlowAsync(const Model::DestroyPostCKafkaFlowRequest& request, const DestroyPostCKafkaFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DestroyPostCKafkaFlowOutcomeCallable DestroyPostCKafkaFlowCallable(const Model::DestroyPostCKafkaFlowRequest& request);
 
                 /**
                  *销毁CLS投递流任务

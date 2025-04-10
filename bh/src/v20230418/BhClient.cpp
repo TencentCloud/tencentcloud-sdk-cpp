@@ -556,6 +556,49 @@ BhClient::CreateDeviceGroupOutcomeCallable BhClient::CreateDeviceGroupCallable(c
     return task->get_future();
 }
 
+BhClient::CreateOperationTaskOutcome BhClient::CreateOperationTask(const CreateOperationTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateOperationTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateOperationTaskResponse rsp = CreateOperationTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateOperationTaskOutcome(rsp);
+        else
+            return CreateOperationTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateOperationTaskOutcome(outcome.GetError());
+    }
+}
+
+void BhClient::CreateOperationTaskAsync(const CreateOperationTaskRequest& request, const CreateOperationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateOperationTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BhClient::CreateOperationTaskOutcomeCallable BhClient::CreateOperationTaskCallable(const CreateOperationTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateOperationTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateOperationTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 BhClient::CreateResourceOutcome BhClient::CreateResource(const CreateResourceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateResource");
@@ -979,6 +1022,49 @@ BhClient::DeleteDevicesOutcomeCallable BhClient::DeleteDevicesCallable(const Del
         [this, request]()
         {
             return this->DeleteDevices(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BhClient::DeleteOperationTasksOutcome BhClient::DeleteOperationTasks(const DeleteOperationTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteOperationTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteOperationTasksResponse rsp = DeleteOperationTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteOperationTasksOutcome(rsp);
+        else
+            return DeleteOperationTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteOperationTasksOutcome(outcome.GetError());
+    }
+}
+
+void BhClient::DeleteOperationTasksAsync(const DeleteOperationTasksRequest& request, const DeleteOperationTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteOperationTasks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BhClient::DeleteOperationTasksOutcomeCallable BhClient::DeleteOperationTasksCallable(const DeleteOperationTasksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteOperationTasksOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteOperationTasks(request);
         }
     );
 
@@ -1674,6 +1760,49 @@ BhClient::DescribeOperationEventOutcomeCallable BhClient::DescribeOperationEvent
     return task->get_future();
 }
 
+BhClient::DescribeOperationTaskOutcome BhClient::DescribeOperationTask(const DescribeOperationTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOperationTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOperationTaskResponse rsp = DescribeOperationTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOperationTaskOutcome(rsp);
+        else
+            return DescribeOperationTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOperationTaskOutcome(outcome.GetError());
+    }
+}
+
+void BhClient::DescribeOperationTaskAsync(const DescribeOperationTaskRequest& request, const DescribeOperationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeOperationTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BhClient::DescribeOperationTaskOutcomeCallable BhClient::DescribeOperationTaskCallable(const DescribeOperationTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeOperationTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeOperationTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 BhClient::DescribeResourcesOutcome BhClient::DescribeResources(const DescribeResourcesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeResources");
@@ -2147,6 +2276,49 @@ BhClient::ModifyOAuthSettingOutcomeCallable BhClient::ModifyOAuthSettingCallable
     return task->get_future();
 }
 
+BhClient::ModifyOperationTaskOutcome BhClient::ModifyOperationTask(const ModifyOperationTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyOperationTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyOperationTaskResponse rsp = ModifyOperationTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyOperationTaskOutcome(rsp);
+        else
+            return ModifyOperationTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyOperationTaskOutcome(outcome.GetError());
+    }
+}
+
+void BhClient::ModifyOperationTaskAsync(const ModifyOperationTaskRequest& request, const ModifyOperationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyOperationTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BhClient::ModifyOperationTaskOutcomeCallable BhClient::ModifyOperationTaskCallable(const ModifyOperationTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyOperationTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyOperationTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 BhClient::ModifyResourceOutcome BhClient::ModifyResource(const ModifyResourceRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyResource");
@@ -2441,6 +2613,49 @@ BhClient::RunChangePwdTaskOutcomeCallable BhClient::RunChangePwdTaskCallable(con
         [this, request]()
         {
             return this->RunChangePwdTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BhClient::RunOperationTaskOutcome BhClient::RunOperationTask(const RunOperationTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "RunOperationTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RunOperationTaskResponse rsp = RunOperationTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RunOperationTaskOutcome(rsp);
+        else
+            return RunOperationTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return RunOperationTaskOutcome(outcome.GetError());
+    }
+}
+
+void BhClient::RunOperationTaskAsync(const RunOperationTaskRequest& request, const RunOperationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RunOperationTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BhClient::RunOperationTaskOutcomeCallable BhClient::RunOperationTaskCallable(const RunOperationTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RunOperationTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->RunOperationTask(request);
         }
     );
 

@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网关实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GatewayId 网关实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGatewayId() const;
 
                     /**
                      * 设置网关实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gatewayId 网关实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGatewayId(const std::string& _gatewayId);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取公网地址信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConfigList 公网地址信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<PublicAddressConfig> GetConfigList() const;
 
                     /**
                      * 设置公网地址信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _configList 公网地址信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConfigList(const std::vector<PublicAddressConfig>& _configList);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取总个数	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 总个数	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetTotalCount() const;
 
                     /**
                      * 设置总个数	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalCount 总个数	
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalCount(const uint64_t& _totalCount);
@@ -126,21 +114,18 @@ namespace TencentCloud
 
                     /**
                      * 网关实例id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_gatewayId;
                     bool m_gatewayIdHasBeenSet;
 
                     /**
                      * 公网地址信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<PublicAddressConfig> m_configList;
                     bool m_configListHasBeenSet;
 
                     /**
                      * 总个数	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

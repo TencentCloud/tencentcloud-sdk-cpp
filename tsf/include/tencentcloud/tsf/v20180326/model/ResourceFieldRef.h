@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取k8s 的 Resource
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Resource k8s 的 Resource
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetResource() const;
 
                     /**
                      * 设置k8s 的 Resource
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _resource k8s 的 Resource
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetResource(const std::string& _resource);
@@ -75,7 +71,6 @@ namespace TencentCloud
 
                     /**
                      * k8s 的 Resource
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resource;
                     bool m_resourceHasBeenSet;

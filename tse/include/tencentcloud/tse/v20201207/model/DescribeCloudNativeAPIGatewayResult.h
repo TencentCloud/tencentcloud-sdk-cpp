@@ -249,18 +249,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例的标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 实例的标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<InstanceTagInfo> GetTags() const;
 
                     /**
                      * 设置实例的标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tags 实例的标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTags(const std::vector<InstanceTagInfo>& _tags);
@@ -274,18 +270,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启 cls 日志
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableCls 是否开启 cls 日志
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnableCls() const;
 
                     /**
                      * 设置是否开启 cls 日志
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enableCls 是否开启 cls 日志
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnableCls(const bool& _enableCls);
@@ -299,18 +291,14 @@ namespace TencentCloud
 
                     /**
                      * 获取付费模式，0表示后付费，1预付费
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TradeType 付费模式，0表示后付费，1预付费
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTradeType() const;
 
                     /**
                      * 设置付费模式，0表示后付费，1预付费
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _tradeType 付费模式，0表示后付费，1预付费
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTradeType(const int64_t& _tradeType);
@@ -324,18 +312,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例版本，当前支持开发版、标准版、专业版【TRIAL、STANDARD、PROFESSIONAL】
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FeatureVersion 实例版本，当前支持开发版、标准版、专业版【TRIAL、STANDARD、PROFESSIONAL】
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetFeatureVersion() const;
 
                     /**
                      * 设置实例版本，当前支持开发版、标准版、专业版【TRIAL、STANDARD、PROFESSIONAL】
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _featureVersion 实例版本，当前支持开发版、标准版、专业版【TRIAL、STANDARD、PROFESSIONAL】
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetFeatureVersion(const std::string& _featureVersion);
@@ -349,18 +333,14 @@ namespace TencentCloud
 
                     /**
                      * 获取公网出流量带宽，[1,2048]Mbps
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InternetMaxBandwidthOut 公网出流量带宽，[1,2048]Mbps
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetInternetMaxBandwidthOut() const;
 
                     /**
                      * 设置公网出流量带宽，[1,2048]Mbps
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _internetMaxBandwidthOut 公网出流量带宽，[1,2048]Mbps
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInternetMaxBandwidthOut(const uint64_t& _internetMaxBandwidthOut);
@@ -375,10 +355,8 @@ namespace TencentCloud
                     /**
                      * 获取自动续费标记，0表示默认状态(用户未设置，即初始状态)；
 1表示自动续费，2表示明确不自动续费(用户设置)，若业务无续费概念或无需自动续费，需要设置为0
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AutoRenewFlag 自动续费标记，0表示默认状态(用户未设置，即初始状态)；
 1表示自动续费，2表示明确不自动续费(用户设置)，若业务无续费概念或无需自动续费，需要设置为0
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetAutoRenewFlag() const;
@@ -386,10 +364,8 @@ namespace TencentCloud
                     /**
                      * 设置自动续费标记，0表示默认状态(用户未设置，即初始状态)；
 1表示自动续费，2表示明确不自动续费(用户设置)，若业务无续费概念或无需自动续费，需要设置为0
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _autoRenewFlag 自动续费标记，0表示默认状态(用户未设置，即初始状态)；
 1表示自动续费，2表示明确不自动续费(用户设置)，若业务无续费概念或无需自动续费，需要设置为0
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAutoRenewFlag(const int64_t& _autoRenewFlag);
@@ -403,18 +379,14 @@ namespace TencentCloud
 
                     /**
                      * 获取到期时间，预付费时使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CurDeadline 到期时间，预付费时使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCurDeadline() const;
 
                     /**
                      * 设置到期时间，预付费时使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _curDeadline 到期时间，预付费时使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCurDeadline(const std::string& _curDeadline);
@@ -428,18 +400,14 @@ namespace TencentCloud
 
                     /**
                      * 获取隔离时间，实例隔离时使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsolateTime 隔离时间，实例隔离时使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIsolateTime() const;
 
                     /**
                      * 设置隔离时间，实例隔离时使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _isolateTime 隔离时间，实例隔离时使用
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIsolateTime(const std::string& _isolateTime);
@@ -453,18 +421,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否开启客户端公网。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EnableInternet 是否开启客户端公网。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnableInternet() const;
 
                     /**
                      * 设置是否开启客户端公网。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enableInternet 是否开启客户端公网。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnableInternet(const bool& _enableInternet);
@@ -478,18 +442,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例实际的地域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EngineRegion 实例实际的地域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetEngineRegion() const;
 
                     /**
                      * 设置实例实际的地域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _engineRegion 实例实际的地域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEngineRegion(const std::string& _engineRegion);
@@ -503,18 +463,14 @@ namespace TencentCloud
 
                     /**
                      * 获取Ingress class名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IngressClassName Ingress class名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetIngressClassName() const;
 
                     /**
                      * 设置Ingress class名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ingressClassName Ingress class名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetIngressClassName(const std::string& _ingressClassName);
@@ -528,18 +484,14 @@ namespace TencentCloud
 
                     /**
                      * 获取公网计费方式。可选取值 BANDWIDTH | TRAFFIC ，表示按带宽和按流量计费。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InternetPayMode 公网计费方式。可选取值 BANDWIDTH | TRAFFIC ，表示按带宽和按流量计费。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetInternetPayMode() const;
 
                     /**
                      * 设置公网计费方式。可选取值 BANDWIDTH | TRAFFIC ，表示按带宽和按流量计费。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _internetPayMode 公网计费方式。可选取值 BANDWIDTH | TRAFFIC ，表示按带宽和按流量计费。
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInternetPayMode(const std::string& _internetPayMode);
@@ -553,18 +505,14 @@ namespace TencentCloud
 
                     /**
                      * 获取云原生API网关小版本号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GatewayMinorVersion 云原生API网关小版本号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGatewayMinorVersion() const;
 
                     /**
                      * 设置云原生API网关小版本号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gatewayMinorVersion 云原生API网关小版本号
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGatewayMinorVersion(const std::string& _gatewayMinorVersion);
@@ -578,18 +526,14 @@ namespace TencentCloud
 
                     /**
                      * 获取实例监听的端口信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstancePort 实例监听的端口信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     InstancePort GetInstancePort() const;
 
                     /**
                      * 设置实例监听的端口信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _instancePort 实例监听的端口信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInstancePort(const InstancePort& _instancePort);
@@ -603,18 +547,14 @@ namespace TencentCloud
 
                     /**
                      * 获取公网CLB默认类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LoadBalancerType 公网CLB默认类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLoadBalancerType() const;
 
                     /**
                      * 设置公网CLB默认类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _loadBalancerType 公网CLB默认类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLoadBalancerType(const std::string& _loadBalancerType);
@@ -628,18 +568,14 @@ namespace TencentCloud
 
                     /**
                      * 获取公网IP地址列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PublicIpAddresses 公网IP地址列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetPublicIpAddresses() const;
 
                     /**
                      * 设置公网IP地址列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _publicIpAddresses 公网IP地址列表
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPublicIpAddresses(const std::vector<std::string>& _publicIpAddresses);
@@ -711,35 +647,30 @@ namespace TencentCloud
 
                     /**
                      * 实例的标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<InstanceTagInfo> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
                      * 是否开启 cls 日志
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enableCls;
                     bool m_enableClsHasBeenSet;
 
                     /**
                      * 付费模式，0表示后付费，1预付费
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_tradeType;
                     bool m_tradeTypeHasBeenSet;
 
                     /**
                      * 实例版本，当前支持开发版、标准版、专业版【TRIAL、STANDARD、PROFESSIONAL】
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_featureVersion;
                     bool m_featureVersionHasBeenSet;
 
                     /**
                      * 公网出流量带宽，[1,2048]Mbps
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_internetMaxBandwidthOut;
                     bool m_internetMaxBandwidthOutHasBeenSet;
@@ -747,77 +678,66 @@ namespace TencentCloud
                     /**
                      * 自动续费标记，0表示默认状态(用户未设置，即初始状态)；
 1表示自动续费，2表示明确不自动续费(用户设置)，若业务无续费概念或无需自动续费，需要设置为0
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_autoRenewFlag;
                     bool m_autoRenewFlagHasBeenSet;
 
                     /**
                      * 到期时间，预付费时使用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_curDeadline;
                     bool m_curDeadlineHasBeenSet;
 
                     /**
                      * 隔离时间，实例隔离时使用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_isolateTime;
                     bool m_isolateTimeHasBeenSet;
 
                     /**
                      * 是否开启客户端公网。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enableInternet;
                     bool m_enableInternetHasBeenSet;
 
                     /**
                      * 实例实际的地域信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_engineRegion;
                     bool m_engineRegionHasBeenSet;
 
                     /**
                      * Ingress class名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ingressClassName;
                     bool m_ingressClassNameHasBeenSet;
 
                     /**
                      * 公网计费方式。可选取值 BANDWIDTH | TRAFFIC ，表示按带宽和按流量计费。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_internetPayMode;
                     bool m_internetPayModeHasBeenSet;
 
                     /**
                      * 云原生API网关小版本号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_gatewayMinorVersion;
                     bool m_gatewayMinorVersionHasBeenSet;
 
                     /**
                      * 实例监听的端口信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     InstancePort m_instancePort;
                     bool m_instancePortHasBeenSet;
 
                     /**
                      * 公网CLB默认类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_loadBalancerType;
                     bool m_loadBalancerTypeHasBeenSet;
 
                     /**
                      * 公网IP地址列表
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_publicIpAddresses;
                     bool m_publicIpAddressesHasBeenSet;

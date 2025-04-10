@@ -86,7 +86,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20191022/model/ModelArtifacts.h
   include/tencentcloud/tione/v20191022/model/DeleteCodeRepositoryResponse.h
   include/tencentcloud/tione/v20211111/model/CreateModelServiceRequest.h
-  include/tencentcloud/tione/v20211111/model/Service.h
+  include/tencentcloud/tione/v20211111/model/DescribeLogsRequest.h
   include/tencentcloud/tione/v20211111/model/DescribeModelAccelerateVersionsRequest.h
   include/tencentcloud/tione/v20211111/model/StopModelAccelerateTaskRequest.h
   include/tencentcloud/tione/v20211111/model/DeleteTrainingModelVersionResponse.h
@@ -101,6 +101,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/DescribeTrainingModelVersionsRequest.h
   include/tencentcloud/tione/v20211111/model/SpecUnit.h
   include/tencentcloud/tione/v20211111/model/CreateDatasetResponse.h
+  include/tencentcloud/tione/v20211111/model/Service.h
   include/tencentcloud/tione/v20211111/model/CrossTenantENIInfo.h
   include/tencentcloud/tione/v20211111/model/HyperParameter.h
   include/tencentcloud/tione/v20211111/model/DescribeTrainingTasksRequest.h
@@ -209,6 +210,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/DescribeModelServiceGroupResponse.h
   include/tencentcloud/tione/v20211111/model/DescribeNotebookResponse.h
   include/tencentcloud/tione/v20211111/model/CreateTrainingModelResponse.h
+  include/tencentcloud/tione/v20211111/model/LogIdentity.h
   include/tencentcloud/tione/v20211111/model/StopModelAccelerateTaskResponse.h
   include/tencentcloud/tione/v20211111/model/IngressPrivateLinkInfo.h
   include/tencentcloud/tione/v20211111/model/ServiceEIPInfo.h
@@ -219,6 +221,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/DescribeTrainingTasksResponse.h
   include/tencentcloud/tione/v20211111/model/DescribeNotebookRequest.h
   include/tencentcloud/tione/v20211111/model/LocalDisk.h
+  include/tencentcloud/tione/v20211111/model/DescribeLogsResponse.h
   include/tencentcloud/tione/v20211111/model/EncodedStartCmdInfo.h
   include/tencentcloud/tione/v20211111/model/StopNotebookRequest.h
   include/tencentcloud/tione/v20211111/model/DeleteModelServiceGroupRequest.h
@@ -325,7 +328,7 @@ set(tione_src
   src/v20191022/model/ModelArtifacts.cpp
   src/v20191022/model/DeleteCodeRepositoryResponse.cpp
   src/v20211111/model/CreateModelServiceRequest.cpp
-  src/v20211111/model/Service.cpp
+  src/v20211111/model/DescribeLogsRequest.cpp
   src/v20211111/model/DescribeModelAccelerateVersionsRequest.cpp
   src/v20211111/model/StopModelAccelerateTaskRequest.cpp
   src/v20211111/model/DeleteTrainingModelVersionResponse.cpp
@@ -340,6 +343,7 @@ set(tione_src
   src/v20211111/model/DescribeTrainingModelVersionsRequest.cpp
   src/v20211111/model/SpecUnit.cpp
   src/v20211111/model/CreateDatasetResponse.cpp
+  src/v20211111/model/Service.cpp
   src/v20211111/model/CrossTenantENIInfo.cpp
   src/v20211111/model/HyperParameter.cpp
   src/v20211111/model/DescribeTrainingTasksRequest.cpp
@@ -448,6 +452,7 @@ set(tione_src
   src/v20211111/model/DescribeModelServiceGroupResponse.cpp
   src/v20211111/model/DescribeNotebookResponse.cpp
   src/v20211111/model/CreateTrainingModelResponse.cpp
+  src/v20211111/model/LogIdentity.cpp
   src/v20211111/model/StopModelAccelerateTaskResponse.cpp
   src/v20211111/model/IngressPrivateLinkInfo.cpp
   src/v20211111/model/ServiceEIPInfo.cpp
@@ -458,6 +463,7 @@ set(tione_src
   src/v20211111/model/DescribeTrainingTasksResponse.cpp
   src/v20211111/model/DescribeNotebookRequest.cpp
   src/v20211111/model/LocalDisk.cpp
+  src/v20211111/model/DescribeLogsResponse.cpp
   src/v20211111/model/EncodedStartCmdInfo.cpp
   src/v20211111/model/StopNotebookRequest.cpp
   src/v20211111/model/DeleteModelServiceGroupRequest.cpp

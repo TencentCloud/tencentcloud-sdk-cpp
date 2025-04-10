@@ -506,18 +506,18 @@ namespace TencentCloud
                     bool ClusterTypeHasBeenSet() const;
 
                     /**
-                     * 获取key:value
+                     * 获取空间标签信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TagList key:value
+                     * @return TagList 空间标签信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<TagInfo> GetTagList() const;
 
                     /**
-                     * 设置key:value
+                     * 设置空间标签信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _tagList key:value
+                     * @param _tagList 空间标签信息
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -661,7 +661,7 @@ namespace TencentCloud
                     bool m_clusterTypeHasBeenSet;
 
                     /**
-                     * key:value
+                     * 空间标签信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TagInfo> m_tagList;

@@ -163,6 +163,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/CreateMachineGroupResponse.h
   include/tencentcloud/cls/v20201016/model/DescribeCosRechargesRequest.h
   include/tencentcloud/cls/v20201016/model/AlarmTarget.h
+  include/tencentcloud/cls/v20201016/model/ModifyShipperResponse.h
   include/tencentcloud/cls/v20201016/model/CreateKafkaRechargeResponse.h
   include/tencentcloud/cls/v20201016/model/ModifyScheduledSqlRequest.h
   include/tencentcloud/cls/v20201016/model/DashboardSubscribeData.h
@@ -186,6 +187,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/AnalysisDimensional.h
   include/tencentcloud/cls/v20201016/model/DeleteWebCallbackRequest.h
   include/tencentcloud/cls/v20201016/model/LogRechargeRuleInfo.h
+  include/tencentcloud/cls/v20201016/model/DeleteCosRechargeRequest.h
   include/tencentcloud/cls/v20201016/model/ShipperTaskInfo.h
   include/tencentcloud/cls/v20201016/model/CloseKafkaConsumerRequest.h
   include/tencentcloud/cls/v20201016/model/RuleTagInfo.h
@@ -312,7 +314,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/DescribeConfigExtrasRequest.h
   include/tencentcloud/cls/v20201016/model/DescribeCloudProductLogTasksRequest.h
   include/tencentcloud/cls/v20201016/model/CreateAlarmNoticeRequest.h
-  include/tencentcloud/cls/v20201016/model/ModifyShipperResponse.h
+  include/tencentcloud/cls/v20201016/model/DeleteCosRechargeResponse.h
   include/tencentcloud/cls/v20201016/model/DescribeIndexResponse.h
   include/tencentcloud/cls/v20201016/model/HistogramInfo.h
   include/tencentcloud/cls/v20201016/model/DescribeMachineGroupConfigsRequest.h
@@ -493,6 +495,7 @@ set(cls_src
   src/v20201016/model/CreateMachineGroupResponse.cpp
   src/v20201016/model/DescribeCosRechargesRequest.cpp
   src/v20201016/model/AlarmTarget.cpp
+  src/v20201016/model/ModifyShipperResponse.cpp
   src/v20201016/model/CreateKafkaRechargeResponse.cpp
   src/v20201016/model/ModifyScheduledSqlRequest.cpp
   src/v20201016/model/DashboardSubscribeData.cpp
@@ -516,6 +519,7 @@ set(cls_src
   src/v20201016/model/AnalysisDimensional.cpp
   src/v20201016/model/DeleteWebCallbackRequest.cpp
   src/v20201016/model/LogRechargeRuleInfo.cpp
+  src/v20201016/model/DeleteCosRechargeRequest.cpp
   src/v20201016/model/ShipperTaskInfo.cpp
   src/v20201016/model/CloseKafkaConsumerRequest.cpp
   src/v20201016/model/RuleTagInfo.cpp
@@ -642,7 +646,7 @@ set(cls_src
   src/v20201016/model/DescribeConfigExtrasRequest.cpp
   src/v20201016/model/DescribeCloudProductLogTasksRequest.cpp
   src/v20201016/model/CreateAlarmNoticeRequest.cpp
-  src/v20201016/model/ModifyShipperResponse.cpp
+  src/v20201016/model/DeleteCosRechargeResponse.cpp
   src/v20201016/model/DescribeIndexResponse.cpp
   src/v20201016/model/HistogramInfo.cpp
   src/v20201016/model/DescribeMachineGroupConfigsRequest.cpp

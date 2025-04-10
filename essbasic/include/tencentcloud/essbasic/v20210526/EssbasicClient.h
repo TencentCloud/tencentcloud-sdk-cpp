@@ -193,6 +193,8 @@
 #include <tencentcloud/essbasic/v20210526/model/ModifyFlowDeadlineResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/OperateChannelTemplateRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/OperateChannelTemplateResponse.h>
+#include <tencentcloud/essbasic/v20210526/model/OperateTemplateRequest.h>
+#include <tencentcloud/essbasic/v20210526/model/OperateTemplateResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/PrepareFlowsRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/PrepareFlowsResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/SyncProxyOrganizationRequest.h>
@@ -470,6 +472,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::OperateChannelTemplateResponse> OperateChannelTemplateOutcome;
                 typedef std::future<OperateChannelTemplateOutcome> OperateChannelTemplateOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::OperateChannelTemplateRequest&, OperateChannelTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OperateChannelTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::OperateTemplateResponse> OperateTemplateOutcome;
+                typedef std::future<OperateTemplateOutcome> OperateTemplateOutcomeCallable;
+                typedef std::function<void(const EssbasicClient*, const Model::OperateTemplateRequest&, OperateTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OperateTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::PrepareFlowsResponse> PrepareFlowsOutcome;
                 typedef std::future<PrepareFlowsOutcome> PrepareFlowsOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::PrepareFlowsRequest&, PrepareFlowsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PrepareFlowsAsyncHandler;
@@ -2208,6 +2213,25 @@ Agent参数中的OpenId 必须为审批者的openId，且链接必须由审批�
                 OperateChannelTemplateOutcome OperateChannelTemplate(const Model::OperateChannelTemplateRequest &request);
                 void OperateChannelTemplateAsync(const Model::OperateChannelTemplateRequest& request, const OperateChannelTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 OperateChannelTemplateOutcomeCallable OperateChannelTemplateCallable(const Model::OperateChannelTemplateRequest& request);
+
+                /**
+                 *此接口（OperateTemplate）用于对企业自有模板进行管理操作，所有操作都会有对应的回调触发，具体参考回调文档 <a href="https://qian.tencent.com/developers/partner/callback_types_templates" target="_blank">模板操作相关回调</a>
+
+# 支持的操作
+## 1. 删除模板 (OperateType=DELETE)
+此操作会从模板将企业自有模板中彻底删除，若要保留模板而不删除，可将将模板停用。
+
+## 2. 启用模板 (OperateType=ENABLE)
+此操作是将停用的模板启用，操作幂等，若模板已经启用，接口不报错。
+
+## 3. 停用模板 (OperateType=DELETE)
+此操作是将启用态的模板停用，操作幂等，若模板已经停用，接口不报错，停用后，无法通过此模板发起合同，已经发起的合同不受影响。
+                 * @param req OperateTemplateRequest
+                 * @return OperateTemplateOutcome
+                 */
+                OperateTemplateOutcome OperateTemplate(const Model::OperateTemplateRequest &request);
+                void OperateTemplateAsync(const Model::OperateTemplateRequest& request, const OperateTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                OperateTemplateOutcomeCallable OperateTemplateCallable(const Model::OperateTemplateRequest& request);
 
                 /**
                  *该接口 (PrepareFlows) 用于创建待发起文件

@@ -33,7 +33,8 @@ Snapshots::Snapshots() :
     m_totalShardsHasBeenSet(false),
     m_failedShardsHasBeenSet(false),
     m_successfulShardsHasBeenSet(false),
-    m_failuresHasBeenSet(false)
+    m_failuresHasBeenSet(false),
+    m_userBackUpHasBeenSet(false)
 {
 }
 
@@ -188,6 +189,16 @@ CoreInternalOutcome Snapshots::Deserialize(const rapidjson::Value &value)
         m_failuresHasBeenSet = true;
     }
 
+    if (value.HasMember("UserBackUp") && !value["UserBackUp"].IsNull())
+    {
+        if (!value["UserBackUp"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Snapshots.UserBackUp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userBackUp = string(value["UserBackUp"].GetString());
+        m_userBackUpHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -314,6 +325,14 @@ void Snapshots::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_userBackUpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserBackUp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userBackUp.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -525,5 +544,21 @@ void Snapshots::SetFailures(const vector<Failures>& _failures)
 bool Snapshots::FailuresHasBeenSet() const
 {
     return m_failuresHasBeenSet;
+}
+
+string Snapshots::GetUserBackUp() const
+{
+    return m_userBackUp;
+}
+
+void Snapshots::SetUserBackUp(const string& _userBackUp)
+{
+    m_userBackUp = _userBackUp;
+    m_userBackUpHasBeenSet = true;
+}
+
+bool Snapshots::UserBackUpHasBeenSet() const
+{
+    return m_userBackUpHasBeenSet;
 }
 

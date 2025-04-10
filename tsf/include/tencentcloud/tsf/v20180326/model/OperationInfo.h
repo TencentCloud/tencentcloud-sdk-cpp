@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取初始化按钮的控制信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Init 初始化按钮的控制信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     OperationInfoDetail GetInit() const;
 
                     /**
                      * 设置初始化按钮的控制信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _init 初始化按钮的控制信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInit(const OperationInfoDetail& _init);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取添加实例按钮的控制信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AddInstance 添加实例按钮的控制信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     OperationInfoDetail GetAddInstance() const;
 
                     /**
                      * 设置添加实例按钮的控制信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _addInstance 添加实例按钮的控制信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAddInstance(const OperationInfoDetail& _addInstance);
@@ -99,18 +91,14 @@ namespace TencentCloud
 
                     /**
                      * 获取销毁机器的控制信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Destroy 销毁机器的控制信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     OperationInfoDetail GetDestroy() const;
 
                     /**
                      * 设置销毁机器的控制信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _destroy 销毁机器的控制信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDestroy(const OperationInfoDetail& _destroy);
@@ -126,21 +114,18 @@ namespace TencentCloud
 
                     /**
                      * 初始化按钮的控制信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     OperationInfoDetail m_init;
                     bool m_initHasBeenSet;
 
                     /**
                      * 添加实例按钮的控制信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     OperationInfoDetail m_addInstance;
                     bool m_addInstanceHasBeenSet;
 
                     /**
                      * 销毁机器的控制信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     OperationInfoDetail m_destroy;
                     bool m_destroyHasBeenSet;

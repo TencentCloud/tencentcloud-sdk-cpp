@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取 服务的名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name  服务的名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置 服务的名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name  服务的名字
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务的 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 服务的 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetId() const;
 
                     /**
                      * 设置服务的 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _id 服务的 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetId(const std::string& _id);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取服务的类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 服务的类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置服务的类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _type 服务的类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetType(const std::string& _type);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取 服务是否开启 WAF 防护
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status  服务是否开启 WAF 防护
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置 服务是否开启 WAF 防护
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _status  服务是否开启 WAF 防护
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      *  服务的名字
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 服务的 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
 
                     /**
                      * 服务的类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      *  服务是否开启 WAF 防护
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

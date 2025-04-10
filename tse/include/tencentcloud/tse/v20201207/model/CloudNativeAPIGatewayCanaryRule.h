@@ -50,18 +50,14 @@ namespace TencentCloud
 
                     /**
                      * 获取优先级，值范围为 0 到 100；值越大，优先级越高；不同规则间优先级不可重复
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Priority 优先级，值范围为 0 到 100；值越大，优先级越高；不同规则间优先级不可重复
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetPriority() const;
 
                     /**
                      * 设置优先级，值范围为 0 到 100；值越大，优先级越高；不同规则间优先级不可重复
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _priority 优先级，值范围为 0 到 100；值越大，优先级越高；不同规则间优先级不可重复
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetPriority(const int64_t& _priority);
@@ -75,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取是否启用规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Enabled 是否启用规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     bool GetEnabled() const;
 
                     /**
                      * 设置是否启用规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _enabled 是否启用规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetEnabled(const bool& _enabled);
@@ -100,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取参数匹配条件
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ConditionList 参数匹配条件
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CloudNativeAPIGatewayCanaryRuleCondition> GetConditionList() const;
 
                     /**
                      * 设置参数匹配条件
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _conditionList 参数匹配条件
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConditionList(const std::vector<CloudNativeAPIGatewayCanaryRuleCondition>& _conditionList);
@@ -150,18 +138,14 @@ namespace TencentCloud
 
                     /**
                      * 获取归属服务 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceId 归属服务 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetServiceId() const;
 
                     /**
                      * 设置归属服务 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serviceId 归属服务 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServiceId(const std::string& _serviceId);
@@ -175,18 +159,14 @@ namespace TencentCloud
 
                     /**
                      * 获取归属服务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServiceName 归属服务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetServiceName() const;
 
                     /**
                      * 设置归属服务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _serviceName 归属服务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetServiceName(const std::string& _serviceName);
@@ -201,10 +181,8 @@ namespace TencentCloud
                     /**
                      * 获取灰度规则类别
 Standard｜Lane
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleType 灰度规则类别
 Standard｜Lane
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRuleType() const;
@@ -212,10 +190,8 @@ Standard｜Lane
                     /**
                      * 设置灰度规则类别
 Standard｜Lane
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _ruleType 灰度规则类别
 Standard｜Lane
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetRuleType(const std::string& _ruleType);
@@ -229,18 +205,14 @@ Standard｜Lane
 
                     /**
                      * 获取全链路灰度策略多个条件之间的匹配方式，与AND，或OR
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MatchType 全链路灰度策略多个条件之间的匹配方式，与AND，或OR
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMatchType() const;
 
                     /**
                      * 设置全链路灰度策略多个条件之间的匹配方式，与AND，或OR
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _matchType 全链路灰度策略多个条件之间的匹配方式，与AND，或OR
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMatchType(const std::string& _matchType);
@@ -254,18 +226,14 @@ Standard｜Lane
 
                     /**
                      * 获取泳道组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupId 泳道组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置泳道组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupId 泳道组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -279,18 +247,14 @@ Standard｜Lane
 
                     /**
                      * 获取泳道组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupName 泳道组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置泳道组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupName 泳道组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -304,18 +268,14 @@ Standard｜Lane
 
                     /**
                      * 获取泳道ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LaneId 泳道ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLaneId() const;
 
                     /**
                      * 设置泳道ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _laneId 泳道ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLaneId(const std::string& _laneId);
@@ -329,18 +289,14 @@ Standard｜Lane
 
                     /**
                      * 获取泳道名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LaneName 泳道名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLaneName() const;
 
                     /**
                      * 设置泳道名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _laneName 泳道名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLaneName(const std::string& _laneName);
@@ -354,18 +310,14 @@ Standard｜Lane
 
                     /**
                      * 获取泳道匹配规则：严格STRICT｜宽松PERMISSIVE
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MatchMode 泳道匹配规则：严格STRICT｜宽松PERMISSIVE
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetMatchMode() const;
 
                     /**
                      * 设置泳道匹配规则：严格STRICT｜宽松PERMISSIVE
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _matchMode 泳道匹配规则：严格STRICT｜宽松PERMISSIVE
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetMatchMode(const std::string& _matchMode);
@@ -406,21 +358,18 @@ Standard｜Lane
 
                     /**
                      * 优先级，值范围为 0 到 100；值越大，优先级越高；不同规则间优先级不可重复
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_priority;
                     bool m_priorityHasBeenSet;
 
                     /**
                      * 是否启用规则
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_enabled;
                     bool m_enabledHasBeenSet;
 
                     /**
                      * 参数匹配条件
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CloudNativeAPIGatewayCanaryRuleCondition> m_conditionList;
                     bool m_conditionListHasBeenSet;
@@ -434,14 +383,12 @@ Standard｜Lane
 
                     /**
                      * 归属服务 ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serviceId;
                     bool m_serviceIdHasBeenSet;
 
                     /**
                      * 归属服务名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serviceName;
                     bool m_serviceNameHasBeenSet;
@@ -449,49 +396,42 @@ Standard｜Lane
                     /**
                      * 灰度规则类别
 Standard｜Lane
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ruleType;
                     bool m_ruleTypeHasBeenSet;
 
                     /**
                      * 全链路灰度策略多个条件之间的匹配方式，与AND，或OR
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_matchType;
                     bool m_matchTypeHasBeenSet;
 
                     /**
                      * 泳道组ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
                      * 泳道组名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
 
                     /**
                      * 泳道ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_laneId;
                     bool m_laneIdHasBeenSet;
 
                     /**
                      * 泳道名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_laneName;
                     bool m_laneNameHasBeenSet;
 
                     /**
                      * 泳道匹配规则：严格STRICT｜宽松PERMISSIVE
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_matchMode;
                     bool m_matchModeHasBeenSet;

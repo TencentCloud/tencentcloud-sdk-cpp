@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取灰度规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CanaryRuleList 灰度规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<CloudNativeAPIGatewayCanaryRule> GetCanaryRuleList() const;
 
                     /**
                      * 设置灰度规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _canaryRuleList 灰度规则
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCanaryRuleList(const std::vector<CloudNativeAPIGatewayCanaryRule>& _canaryRuleList);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TotalCount 总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     int64_t GetTotalCount() const;
 
                     /**
                      * 设置总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _totalCount 总数
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetTotalCount(const int64_t& _totalCount);
@@ -101,14 +93,12 @@ namespace TencentCloud
 
                     /**
                      * 灰度规则
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CloudNativeAPIGatewayCanaryRule> m_canaryRuleList;
                     bool m_canaryRuleListHasBeenSet;
 
                     /**
                      * 总数
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

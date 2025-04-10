@@ -381,6 +381,56 @@ namespace TencentCloud
                      */
                     bool RetryMaxTimesHasBeenSet() const;
 
+                    /**
+                     * 获取实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceId 实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _instanceId 实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     * 
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取命名空间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Namespace 命名空间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetNamespace() const;
+
+                    /**
+                     * 设置命名空间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _namespace 命名空间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetNamespace(const std::string& _namespace);
+
+                    /**
+                     * 判断参数 Namespace 是否已赋值
+                     * @return Namespace 是否已赋值
+                     * 
+                     */
+                    bool NamespaceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -477,6 +527,20 @@ namespace TencentCloud
                      */
                     uint64_t m_retryMaxTimes;
                     bool m_retryMaxTimesHasBeenSet;
+
+                    /**
+                     * 实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 命名空间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_namespace;
+                    bool m_namespaceHasBeenSet;
 
                 };
             }

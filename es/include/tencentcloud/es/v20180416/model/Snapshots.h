@@ -404,6 +404,31 @@ SUCCESS     备份成功
                      */
                     bool FailuresHasBeenSet() const;
 
+                    /**
+                     * 获取是否用户备份
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UserBackUp 是否用户备份
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetUserBackUp() const;
+
+                    /**
+                     * 设置是否用户备份
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _userBackUp 是否用户备份
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetUserBackUp(const std::string& _userBackUp);
+
+                    /**
+                     * 判断参数 UserBackUp 是否已赋值
+                     * @return UserBackUp 是否已赋值
+                     * 
+                     */
+                    bool UserBackUpHasBeenSet() const;
+
                 private:
 
                     /**
@@ -504,6 +529,13 @@ SUCCESS     备份成功
                      */
                     std::vector<Failures> m_failures;
                     bool m_failuresHasBeenSet;
+
+                    /**
+                     * 是否用户备份
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_userBackUp;
+                    bool m_userBackUpHasBeenSet;
 
                 };
             }

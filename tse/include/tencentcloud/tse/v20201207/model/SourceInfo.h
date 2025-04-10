@@ -71,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取微服务引擎VPC信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcInfo 微服务引擎VPC信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SourceInstanceVpcInfo GetVpcInfo() const;
 
                     /**
                      * 设置微服务引擎VPC信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vpcInfo 微服务引擎VPC信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVpcInfo(const SourceInstanceVpcInfo& _vpcInfo);
@@ -96,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取微服务引擎鉴权信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Auth 微服务引擎鉴权信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     SourceInstanceAuth GetAuth() const;
 
                     /**
                      * 设置微服务引擎鉴权信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _auth 微服务引擎鉴权信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAuth(const SourceInstanceAuth& _auth);
@@ -129,14 +121,12 @@ namespace TencentCloud
 
                     /**
                      * 微服务引擎VPC信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SourceInstanceVpcInfo m_vpcInfo;
                     bool m_vpcInfoHasBeenSet;
 
                     /**
                      * 微服务引擎鉴权信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     SourceInstanceAuth m_auth;
                     bool m_authHasBeenSet;

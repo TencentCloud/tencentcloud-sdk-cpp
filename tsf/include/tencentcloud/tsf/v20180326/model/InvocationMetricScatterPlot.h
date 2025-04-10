@@ -112,18 +112,14 @@ namespace TencentCloud
 
                     /**
                      * 获取多值数据点集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DataPoints 多值数据点集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<MultiValueDataPoints> GetDataPoints() const;
 
                     /**
                      * 设置多值数据点集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _dataPoints 多值数据点集合
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDataPoints(const std::vector<MultiValueDataPoints>& _dataPoints);
@@ -157,7 +153,6 @@ namespace TencentCloud
 
                     /**
                      * 多值数据点集合
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<MultiValueDataPoints> m_dataPoints;
                     bool m_dataPointsHasBeenSet;

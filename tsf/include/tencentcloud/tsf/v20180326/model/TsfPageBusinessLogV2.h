@@ -141,18 +141,14 @@ namespace TencentCloud
 
                     /**
                      * 获取查询es时，使用searchAfter返回的游标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SearchAfter 查询es时，使用searchAfter返回的游标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetSearchAfter() const;
 
                     /**
                      * 设置查询es时，使用searchAfter返回的游标
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _searchAfter 查询es时，使用searchAfter返回的游标
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetSearchAfter(const std::vector<std::string>& _searchAfter);
@@ -194,7 +190,6 @@ namespace TencentCloud
 
                     /**
                      * 查询es时，使用searchAfter返回的游标
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_searchAfter;
                     bool m_searchAfterHasBeenSet;

@@ -203,6 +203,27 @@ namespace TencentCloud
                      */
                     bool LogFilterHasBeenSet() const;
 
+                    /**
+                     * 获取下载筛选列
+                     * @return ColumnFilter 下载筛选列
+                     * 
+                     */
+                    std::vector<std::string> GetColumnFilter() const;
+
+                    /**
+                     * 设置下载筛选列
+                     * @param _columnFilter 下载筛选列
+                     * 
+                     */
+                    void SetColumnFilter(const std::vector<std::string>& _columnFilter);
+
+                    /**
+                     * 判断参数 ColumnFilter 是否已赋值
+                     * @return ColumnFilter 是否已赋值
+                     * 
+                     */
+                    bool ColumnFilterHasBeenSet() const;
+
                 private:
 
                     /**
@@ -249,6 +270,12 @@ namespace TencentCloud
                      */
                     std::vector<InstanceAuditLogFilters> m_logFilter;
                     bool m_logFilterHasBeenSet;
+
+                    /**
+                     * 下载筛选列
+                     */
+                    std::vector<std::string> m_columnFilter;
+                    bool m_columnFilterHasBeenSet;
 
                 };
             }

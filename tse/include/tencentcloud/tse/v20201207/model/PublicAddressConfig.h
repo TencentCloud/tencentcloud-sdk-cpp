@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取公网 ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vip 公网 ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetVip() const;
 
                     /**
                      * 设置公网 ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _vip 公网 ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetVip(const std::string& _vip);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取公网最大带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InternetMaxBandwidthOut 公网最大带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     uint64_t GetInternetMaxBandwidthOut() const;
 
                     /**
                      * 设置公网最大带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _internetMaxBandwidthOut 公网最大带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetInternetMaxBandwidthOut(const uint64_t& _internetMaxBandwidthOut);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取公网所属分组 id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupId 公网所属分组 id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置公网所属分组 id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupId 公网所属分组 id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupId(const std::string& _groupId);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取公网所属分组名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupName 公网所属分组名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置公网所属分组名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _groupName 公网所属分组名
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -148,18 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 获取公网负载均衡 id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NetworkId 公网负载均衡 id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetNetworkId() const;
 
                     /**
                      * 设置公网负载均衡 id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _networkId 公网负载均衡 id
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetNetworkId(const std::string& _networkId);
@@ -173,18 +153,14 @@ namespace TencentCloud
 
                     /**
                      * 获取公网负载均衡描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 公网负载均衡描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置公网负载均衡描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 公网负载均衡描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -200,42 +176,36 @@ namespace TencentCloud
 
                     /**
                      * 公网 ip
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vip;
                     bool m_vipHasBeenSet;
 
                     /**
                      * 公网最大带宽
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_internetMaxBandwidthOut;
                     bool m_internetMaxBandwidthOutHasBeenSet;
 
                     /**
                      * 公网所属分组 id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
                      * 公网所属分组名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
 
                     /**
                      * 公网负载均衡 id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_networkId;
                     bool m_networkIdHasBeenSet;
 
                     /**
                      * 公网负载均衡描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

@@ -49,18 +49,14 @@ namespace TencentCloud
 
                     /**
                      * 获取-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AffinityList -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Affinity> GetAffinityList() const;
 
                     /**
                      * 设置-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _affinityList -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAffinityList(const std::vector<Affinity>& _affinityList);
@@ -74,18 +70,14 @@ namespace TencentCloud
 
                     /**
                      * 获取-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AntiAffinityList -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<Affinity> GetAntiAffinityList() const;
 
                     /**
                      * 设置-
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _antiAffinityList -
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAntiAffinityList(const std::vector<Affinity>& _antiAffinityList);
@@ -101,14 +93,12 @@ namespace TencentCloud
 
                     /**
                      * -
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Affinity> m_affinityList;
                     bool m_affinityListHasBeenSet;
 
                     /**
                      * -
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Affinity> m_antiAffinityList;
                     bool m_antiAffinityListHasBeenSet;

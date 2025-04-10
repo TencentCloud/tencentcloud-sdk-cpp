@@ -33,6 +33,8 @@
 #include <tencentcloud/sts/v20180813/model/GetCallerIdentityResponse.h>
 #include <tencentcloud/sts/v20180813/model/GetFederationTokenRequest.h>
 #include <tencentcloud/sts/v20180813/model/GetFederationTokenResponse.h>
+#include <tencentcloud/sts/v20180813/model/GetSessionTokenRequest.h>
+#include <tencentcloud/sts/v20180813/model/GetSessionTokenResponse.h>
 #include <tencentcloud/sts/v20180813/model/QueryApiKeyRequest.h>
 #include <tencentcloud/sts/v20180813/model/QueryApiKeyResponse.h>
 
@@ -64,6 +66,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetFederationTokenResponse> GetFederationTokenOutcome;
                 typedef std::future<GetFederationTokenOutcome> GetFederationTokenOutcomeCallable;
                 typedef std::function<void(const StsClient*, const Model::GetFederationTokenRequest&, GetFederationTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetFederationTokenAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetSessionTokenResponse> GetSessionTokenOutcome;
+                typedef std::future<GetSessionTokenOutcome> GetSessionTokenOutcomeCallable;
+                typedef std::function<void(const StsClient*, const Model::GetSessionTokenRequest&, GetSessionTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetSessionTokenAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryApiKeyResponse> QueryApiKeyOutcome;
                 typedef std::future<QueryApiKeyOutcome> QueryApiKeyOutcomeCallable;
                 typedef std::function<void(const StsClient*, const Model::QueryApiKeyRequest&, QueryApiKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryApiKeyAsyncHandler;
@@ -141,6 +146,15 @@ namespace TencentCloud
                 GetFederationTokenOutcome GetFederationToken(const Model::GetFederationTokenRequest &request);
                 void GetFederationTokenAsync(const Model::GetFederationTokenRequest& request, const GetFederationTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetFederationTokenOutcomeCallable GetFederationTokenCallable(const Model::GetFederationTokenRequest& request);
+
+                /**
+                 *获取MFA临时证书
+                 * @param req GetSessionTokenRequest
+                 * @return GetSessionTokenOutcome
+                 */
+                GetSessionTokenOutcome GetSessionToken(const Model::GetSessionTokenRequest &request);
+                void GetSessionTokenAsync(const Model::GetSessionTokenRequest& request, const GetSessionTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetSessionTokenOutcomeCallable GetSessionTokenCallable(const Model::GetSessionTokenRequest& request);
 
                 /**
                  *拉取API密钥列表

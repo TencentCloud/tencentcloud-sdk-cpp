@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取限流条件的Key
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Key 限流条件的Key
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置限流条件的Key
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _key 限流条件的Key
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetKey(const std::string& _key);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取限流条件的Values
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Values 限流条件的Values
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::vector<std::string> GetValues() const;
 
                     /**
                      * 设置限流条件的Values
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _values 限流条件的Values
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetValues(const std::vector<std::string>& _values);
@@ -98,18 +90,14 @@ namespace TencentCloud
 
                     /**
                      * 获取操作符
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Operator 操作符
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetOperator() const;
 
                     /**
                      * 设置操作符
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _operator 操作符
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetOperator(const std::string& _operator);
@@ -123,18 +111,14 @@ namespace TencentCloud
 
                     /**
                      * 获取header或query对应的name
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name header或query对应的name
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置header或query对应的name
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _name header或query对应的name
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetName(const std::string& _name);
@@ -150,28 +134,24 @@ namespace TencentCloud
 
                     /**
                      * 限流条件的Key
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
 
                     /**
                      * 限流条件的Values
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_values;
                     bool m_valuesHasBeenSet;
 
                     /**
                      * 操作符
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_operator;
                     bool m_operatorHasBeenSet;
 
                     /**
                      * header或query对应的name
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;

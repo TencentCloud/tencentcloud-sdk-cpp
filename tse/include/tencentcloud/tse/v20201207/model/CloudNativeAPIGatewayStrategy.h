@@ -71,18 +71,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StrategyName 策略名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetStrategyName() const;
 
                     /**
                      * 设置策略名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _strategyName 策略名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetStrategyName(const std::string& _strategyName);
@@ -96,18 +92,14 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _createTime 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCreateTime(const std::string& _createTime);
@@ -121,18 +113,14 @@ namespace TencentCloud
 
                     /**
                      * 获取更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ModifyTime 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetModifyTime() const;
 
                     /**
                      * 设置更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _modifyTime 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetModifyTime(const std::string& _modifyTime);
@@ -146,18 +134,14 @@ namespace TencentCloud
 
                     /**
                      * 获取策略描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 策略描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置策略描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _description 策略描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetDescription(const std::string& _description);
@@ -171,18 +155,14 @@ namespace TencentCloud
 
                     /**
                      * 获取弹性伸缩配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Config 弹性伸缩配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CloudNativeAPIGatewayStrategyAutoScalerConfig GetConfig() const;
 
                     /**
                      * 设置弹性伸缩配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _config 弹性伸缩配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetConfig(const CloudNativeAPIGatewayStrategyAutoScalerConfig& _config);
@@ -196,18 +176,14 @@ namespace TencentCloud
 
                     /**
                      * 获取网关实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GatewayId 网关实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetGatewayId() const;
 
                     /**
                      * 设置网关实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _gatewayId 网关实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetGatewayId(const std::string& _gatewayId);
@@ -221,18 +197,14 @@ namespace TencentCloud
 
                     /**
                      * 获取定时伸缩配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CronConfig 定时伸缩配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     CloudNativeAPIGatewayStrategyCronScalerConfig GetCronConfig() const;
 
                     /**
                      * 设置定时伸缩配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _cronConfig 定时伸缩配置
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetCronConfig(const CloudNativeAPIGatewayStrategyCronScalerConfig& _cronConfig);
@@ -279,49 +251,42 @@ namespace TencentCloud
 
                     /**
                      * 策略名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_strategyName;
                     bool m_strategyNameHasBeenSet;
 
                     /**
                      * 创建时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 更新时间
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;
 
                     /**
                      * 策略描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
                      * 弹性伸缩配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CloudNativeAPIGatewayStrategyAutoScalerConfig m_config;
                     bool m_configHasBeenSet;
 
                     /**
                      * 网关实例ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_gatewayId;
                     bool m_gatewayIdHasBeenSet;
 
                     /**
                      * 定时伸缩配置
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     CloudNativeAPIGatewayStrategyCronScalerConfig m_cronConfig;
                     bool m_cronConfigHasBeenSet;

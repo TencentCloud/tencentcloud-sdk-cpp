@@ -2180,7 +2180,9 @@ COS相关文档请查阅：https://cloud.tencent.com/document/product/436
                 DescribeImageTagsOutcomeCallable DescribeImageTagsCallable(const Model::DescribeImageTagsRequest& request);
 
                 /**
-                 *废弃
+                 *废弃接口
+
+废弃
                  * @param req DescribeInovcationIndicatorsRequest
                  * @return DescribeInovcationIndicatorsOutcome
                  */

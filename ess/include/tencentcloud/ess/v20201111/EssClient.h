@@ -213,6 +213,8 @@
 #include <tencentcloud/ess/v20201111/model/ModifyIntegrationDepartmentResponse.h>
 #include <tencentcloud/ess/v20201111/model/ModifyIntegrationRoleRequest.h>
 #include <tencentcloud/ess/v20201111/model/ModifyIntegrationRoleResponse.h>
+#include <tencentcloud/ess/v20201111/model/OperateTemplateRequest.h>
+#include <tencentcloud/ess/v20201111/model/OperateTemplateResponse.h>
 #include <tencentcloud/ess/v20201111/model/RenewAutoSignLicenseRequest.h>
 #include <tencentcloud/ess/v20201111/model/RenewAutoSignLicenseResponse.h>
 #include <tencentcloud/ess/v20201111/model/StartFlowRequest.h>
@@ -526,6 +528,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyIntegrationRoleResponse> ModifyIntegrationRoleOutcome;
                 typedef std::future<ModifyIntegrationRoleOutcome> ModifyIntegrationRoleOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::ModifyIntegrationRoleRequest&, ModifyIntegrationRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIntegrationRoleAsyncHandler;
+                typedef Outcome<Core::Error, Model::OperateTemplateResponse> OperateTemplateOutcome;
+                typedef std::future<OperateTemplateOutcome> OperateTemplateOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::OperateTemplateRequest&, OperateTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OperateTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::RenewAutoSignLicenseResponse> RenewAutoSignLicenseOutcome;
                 typedef std::future<RenewAutoSignLicenseOutcome> RenewAutoSignLicenseOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::RenewAutoSignLicenseRequest&, RenewAutoSignLicenseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewAutoSignLicenseAsyncHandler;
@@ -2259,6 +2264,25 @@ namespace TencentCloud
                 ModifyIntegrationRoleOutcome ModifyIntegrationRole(const Model::ModifyIntegrationRoleRequest &request);
                 void ModifyIntegrationRoleAsync(const Model::ModifyIntegrationRoleRequest& request, const ModifyIntegrationRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyIntegrationRoleOutcomeCallable ModifyIntegrationRoleCallable(const Model::ModifyIntegrationRoleRequest& request);
+
+                /**
+                 *此接口（OperateTemplate）用于对企业自有模板进行管理操作，所有操作都会有对应的回调触发，具体参考回调文档 <a href="https://qian.tencent.com/developers/company/callback_types_templates" target="_blank">模板操作相关回调</a>
+
+# 支持的操作
+## 1. 删除模板 (OperateType=DELETE)
+此操作会从模板将企业自有模板中彻底删除，若要保留模板而不删除，可将将模板停用。
+
+## 2. 启用模板 (OperateType=ENABLE)
+此操作是将停用的模板启用，操作幂等，若模板已经启用，接口不报错。
+
+## 3. 停用模板 (OperateType=DELETE)
+此操作是将启用态的模板停用，操作幂等，若模板已经停用，接口不报错，停用后，无法通过此模板发起合同，已经发起的合同不受影响。
+                 * @param req OperateTemplateRequest
+                 * @return OperateTemplateOutcome
+                 */
+                OperateTemplateOutcome OperateTemplate(const Model::OperateTemplateRequest &request);
+                void OperateTemplateAsync(const Model::OperateTemplateRequest& request, const OperateTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                OperateTemplateOutcomeCallable OperateTemplateCallable(const Model::OperateTemplateRequest& request);
 
                 /**
                  *给医疗个人自动签许可续期。续期成功后，可对医疗自动签许可追加一年有效期，只可续期一次。

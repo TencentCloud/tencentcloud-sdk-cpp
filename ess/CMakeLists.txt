@@ -74,7 +74,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/SealInfo.h
   include/tencentcloud/ess/v20201111/model/StaffRole.h
   include/tencentcloud/ess/v20201111/model/GroupOrganization.h
-  include/tencentcloud/ess/v20201111/model/OrganizationInfo.h
+  include/tencentcloud/ess/v20201111/model/OperateTemplateRequest.h
   include/tencentcloud/ess/v20201111/model/ArchiveDynamicApproverData.h
   include/tencentcloud/ess/v20201111/model/CreateOrganizationAuthUrlRequest.h
   include/tencentcloud/ess/v20201111/model/CreateBatchQuickSignUrlResponse.h
@@ -107,6 +107,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreateDocumentResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeIntegrationEmployeesRequest.h
   include/tencentcloud/ess/v20201111/model/SignComponentConfig.h
+  include/tencentcloud/ess/v20201111/model/OrganizationInfo.h
   include/tencentcloud/ess/v20201111/model/UnbindEmployeeUserIdWithClientOpenIdResponse.h
   include/tencentcloud/ess/v20201111/model/CreateIntegrationUserRolesResponse.h
   include/tencentcloud/ess/v20201111/model/CreateFlowRequest.h
@@ -183,6 +184,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreateIntegrationRoleResponse.h
   include/tencentcloud/ess/v20201111/model/DetectInfoVideoData.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowComponentsRequest.h
+  include/tencentcloud/ess/v20201111/model/OperateTemplateResponse.h
   include/tencentcloud/ess/v20201111/model/CreateIntegrationDepartmentRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeUserVerifyStatusRequest.h
   include/tencentcloud/ess/v20201111/model/AuthorizedUser.h
@@ -385,7 +387,7 @@ set(ess_src
   src/v20201111/model/SealInfo.cpp
   src/v20201111/model/StaffRole.cpp
   src/v20201111/model/GroupOrganization.cpp
-  src/v20201111/model/OrganizationInfo.cpp
+  src/v20201111/model/OperateTemplateRequest.cpp
   src/v20201111/model/ArchiveDynamicApproverData.cpp
   src/v20201111/model/CreateOrganizationAuthUrlRequest.cpp
   src/v20201111/model/CreateBatchQuickSignUrlResponse.cpp
@@ -418,6 +420,7 @@ set(ess_src
   src/v20201111/model/CreateDocumentResponse.cpp
   src/v20201111/model/DescribeIntegrationEmployeesRequest.cpp
   src/v20201111/model/SignComponentConfig.cpp
+  src/v20201111/model/OrganizationInfo.cpp
   src/v20201111/model/UnbindEmployeeUserIdWithClientOpenIdResponse.cpp
   src/v20201111/model/CreateIntegrationUserRolesResponse.cpp
   src/v20201111/model/CreateFlowRequest.cpp
@@ -494,6 +497,7 @@ set(ess_src
   src/v20201111/model/CreateIntegrationRoleResponse.cpp
   src/v20201111/model/DetectInfoVideoData.cpp
   src/v20201111/model/DescribeFlowComponentsRequest.cpp
+  src/v20201111/model/OperateTemplateResponse.cpp
   src/v20201111/model/CreateIntegrationDepartmentRequest.cpp
   src/v20201111/model/DescribeUserVerifyStatusRequest.cpp
   src/v20201111/model/AuthorizedUser.cpp

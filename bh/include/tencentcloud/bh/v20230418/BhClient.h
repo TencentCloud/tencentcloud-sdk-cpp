@@ -47,6 +47,8 @@
 #include <tencentcloud/bh/v20230418/model/CreateDeviceAccountResponse.h>
 #include <tencentcloud/bh/v20230418/model/CreateDeviceGroupRequest.h>
 #include <tencentcloud/bh/v20230418/model/CreateDeviceGroupResponse.h>
+#include <tencentcloud/bh/v20230418/model/CreateOperationTaskRequest.h>
+#include <tencentcloud/bh/v20230418/model/CreateOperationTaskResponse.h>
 #include <tencentcloud/bh/v20230418/model/CreateResourceRequest.h>
 #include <tencentcloud/bh/v20230418/model/CreateResourceResponse.h>
 #include <tencentcloud/bh/v20230418/model/CreateUserRequest.h>
@@ -67,6 +69,8 @@
 #include <tencentcloud/bh/v20230418/model/DeleteDeviceGroupsResponse.h>
 #include <tencentcloud/bh/v20230418/model/DeleteDevicesRequest.h>
 #include <tencentcloud/bh/v20230418/model/DeleteDevicesResponse.h>
+#include <tencentcloud/bh/v20230418/model/DeleteOperationTasksRequest.h>
+#include <tencentcloud/bh/v20230418/model/DeleteOperationTasksResponse.h>
 #include <tencentcloud/bh/v20230418/model/DeleteUserGroupMembersRequest.h>
 #include <tencentcloud/bh/v20230418/model/DeleteUserGroupMembersResponse.h>
 #include <tencentcloud/bh/v20230418/model/DeleteUserGroupsRequest.h>
@@ -99,6 +103,8 @@
 #include <tencentcloud/bh/v20230418/model/DescribeLoginEventResponse.h>
 #include <tencentcloud/bh/v20230418/model/DescribeOperationEventRequest.h>
 #include <tencentcloud/bh/v20230418/model/DescribeOperationEventResponse.h>
+#include <tencentcloud/bh/v20230418/model/DescribeOperationTaskRequest.h>
+#include <tencentcloud/bh/v20230418/model/DescribeOperationTaskResponse.h>
 #include <tencentcloud/bh/v20230418/model/DescribeResourcesRequest.h>
 #include <tencentcloud/bh/v20230418/model/DescribeResourcesResponse.h>
 #include <tencentcloud/bh/v20230418/model/DescribeUserGroupMembersRequest.h>
@@ -121,6 +127,8 @@
 #include <tencentcloud/bh/v20230418/model/ModifyDeviceGroupResponse.h>
 #include <tencentcloud/bh/v20230418/model/ModifyOAuthSettingRequest.h>
 #include <tencentcloud/bh/v20230418/model/ModifyOAuthSettingResponse.h>
+#include <tencentcloud/bh/v20230418/model/ModifyOperationTaskRequest.h>
+#include <tencentcloud/bh/v20230418/model/ModifyOperationTaskResponse.h>
 #include <tencentcloud/bh/v20230418/model/ModifyResourceRequest.h>
 #include <tencentcloud/bh/v20230418/model/ModifyResourceResponse.h>
 #include <tencentcloud/bh/v20230418/model/ModifyUserRequest.h>
@@ -135,6 +143,8 @@
 #include <tencentcloud/bh/v20230418/model/ResetUserResponse.h>
 #include <tencentcloud/bh/v20230418/model/RunChangePwdTaskRequest.h>
 #include <tencentcloud/bh/v20230418/model/RunChangePwdTaskResponse.h>
+#include <tencentcloud/bh/v20230418/model/RunOperationTaskRequest.h>
+#include <tencentcloud/bh/v20230418/model/RunOperationTaskResponse.h>
 #include <tencentcloud/bh/v20230418/model/SearchAuditLogRequest.h>
 #include <tencentcloud/bh/v20230418/model/SearchAuditLogResponse.h>
 #include <tencentcloud/bh/v20230418/model/SearchCommandRequest.h>
@@ -199,6 +209,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDeviceGroupResponse> CreateDeviceGroupOutcome;
                 typedef std::future<CreateDeviceGroupOutcome> CreateDeviceGroupOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::CreateDeviceGroupRequest&, CreateDeviceGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDeviceGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateOperationTaskResponse> CreateOperationTaskOutcome;
+                typedef std::future<CreateOperationTaskOutcome> CreateOperationTaskOutcomeCallable;
+                typedef std::function<void(const BhClient*, const Model::CreateOperationTaskRequest&, CreateOperationTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOperationTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateResourceResponse> CreateResourceOutcome;
                 typedef std::future<CreateResourceOutcome> CreateResourceOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::CreateResourceRequest&, CreateResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateResourceAsyncHandler;
@@ -229,6 +242,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteDevicesResponse> DeleteDevicesOutcome;
                 typedef std::future<DeleteDevicesOutcome> DeleteDevicesOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::DeleteDevicesRequest&, DeleteDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDevicesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteOperationTasksResponse> DeleteOperationTasksOutcome;
+                typedef std::future<DeleteOperationTasksOutcome> DeleteOperationTasksOutcomeCallable;
+                typedef std::function<void(const BhClient*, const Model::DeleteOperationTasksRequest&, DeleteOperationTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteOperationTasksAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteUserGroupMembersResponse> DeleteUserGroupMembersOutcome;
                 typedef std::future<DeleteUserGroupMembersOutcome> DeleteUserGroupMembersOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::DeleteUserGroupMembersRequest&, DeleteUserGroupMembersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserGroupMembersAsyncHandler;
@@ -277,6 +293,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeOperationEventResponse> DescribeOperationEventOutcome;
                 typedef std::future<DescribeOperationEventOutcome> DescribeOperationEventOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::DescribeOperationEventRequest&, DescribeOperationEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOperationEventAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeOperationTaskResponse> DescribeOperationTaskOutcome;
+                typedef std::future<DescribeOperationTaskOutcome> DescribeOperationTaskOutcomeCallable;
+                typedef std::function<void(const BhClient*, const Model::DescribeOperationTaskRequest&, DescribeOperationTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOperationTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeResourcesResponse> DescribeResourcesOutcome;
                 typedef std::future<DescribeResourcesOutcome> DescribeResourcesOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::DescribeResourcesRequest&, DescribeResourcesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourcesAsyncHandler;
@@ -310,6 +329,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyOAuthSettingResponse> ModifyOAuthSettingOutcome;
                 typedef std::future<ModifyOAuthSettingOutcome> ModifyOAuthSettingOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::ModifyOAuthSettingRequest&, ModifyOAuthSettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyOAuthSettingAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyOperationTaskResponse> ModifyOperationTaskOutcome;
+                typedef std::future<ModifyOperationTaskOutcome> ModifyOperationTaskOutcomeCallable;
+                typedef std::function<void(const BhClient*, const Model::ModifyOperationTaskRequest&, ModifyOperationTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyOperationTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyResourceResponse> ModifyResourceOutcome;
                 typedef std::future<ModifyResourceOutcome> ModifyResourceOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::ModifyResourceRequest&, ModifyResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyResourceAsyncHandler;
@@ -331,6 +353,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RunChangePwdTaskResponse> RunChangePwdTaskOutcome;
                 typedef std::future<RunChangePwdTaskOutcome> RunChangePwdTaskOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::RunChangePwdTaskRequest&, RunChangePwdTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunChangePwdTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::RunOperationTaskResponse> RunOperationTaskOutcome;
+                typedef std::future<RunOperationTaskOutcome> RunOperationTaskOutcomeCallable;
+                typedef std::function<void(const BhClient*, const Model::RunOperationTaskRequest&, RunOperationTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunOperationTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::SearchAuditLogResponse> SearchAuditLogOutcome;
                 typedef std::future<SearchAuditLogOutcome> SearchAuditLogOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::SearchAuditLogRequest&, SearchAuditLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchAuditLogAsyncHandler;
@@ -464,6 +489,15 @@ namespace TencentCloud
                 CreateDeviceGroupOutcomeCallable CreateDeviceGroupCallable(const Model::CreateDeviceGroupRequest& request);
 
                 /**
+                 *创建运维任务
+                 * @param req CreateOperationTaskRequest
+                 * @return CreateOperationTaskOutcome
+                 */
+                CreateOperationTaskOutcome CreateOperationTask(const Model::CreateOperationTaskRequest &request);
+                void CreateOperationTaskAsync(const Model::CreateOperationTaskRequest& request, const CreateOperationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateOperationTaskOutcomeCallable CreateOperationTaskCallable(const Model::CreateOperationTaskRequest& request);
+
+                /**
                  *创建堡垒机实例
                  * @param req CreateResourceRequest
                  * @return CreateResourceOutcome
@@ -552,6 +586,15 @@ namespace TencentCloud
                 DeleteDevicesOutcome DeleteDevices(const Model::DeleteDevicesRequest &request);
                 void DeleteDevicesAsync(const Model::DeleteDevicesRequest& request, const DeleteDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteDevicesOutcomeCallable DeleteDevicesCallable(const Model::DeleteDevicesRequest& request);
+
+                /**
+                 *删除运维任务
+                 * @param req DeleteOperationTasksRequest
+                 * @return DeleteOperationTasksOutcome
+                 */
+                DeleteOperationTasksOutcome DeleteOperationTasks(const Model::DeleteOperationTasksRequest &request);
+                void DeleteOperationTasksAsync(const Model::DeleteOperationTasksRequest& request, const DeleteOperationTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteOperationTasksOutcomeCallable DeleteOperationTasksCallable(const Model::DeleteOperationTasksRequest& request);
 
                 /**
                  *删除用户组成员
@@ -698,6 +741,15 @@ namespace TencentCloud
                 DescribeOperationEventOutcomeCallable DescribeOperationEventCallable(const Model::DescribeOperationEventRequest& request);
 
                 /**
+                 *获取运维任务列表
+                 * @param req DescribeOperationTaskRequest
+                 * @return DescribeOperationTaskOutcome
+                 */
+                DescribeOperationTaskOutcome DescribeOperationTask(const Model::DescribeOperationTaskRequest &request);
+                void DescribeOperationTaskAsync(const Model::DescribeOperationTaskRequest& request, const DescribeOperationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeOperationTaskOutcomeCallable DescribeOperationTaskCallable(const Model::DescribeOperationTaskRequest& request);
+
+                /**
                  *查询用户购买的堡垒机服务信息，包括资源ID、授权点数、VPC、过期时间等。
                  * @param req DescribeResourcesRequest
                  * @return DescribeResourcesOutcome
@@ -797,6 +849,15 @@ namespace TencentCloud
                 ModifyOAuthSettingOutcomeCallable ModifyOAuthSettingCallable(const Model::ModifyOAuthSettingRequest& request);
 
                 /**
+                 *修改运维任务
+                 * @param req ModifyOperationTaskRequest
+                 * @return ModifyOperationTaskOutcome
+                 */
+                ModifyOperationTaskOutcome ModifyOperationTask(const Model::ModifyOperationTaskRequest &request);
+                void ModifyOperationTaskAsync(const Model::ModifyOperationTaskRequest& request, const ModifyOperationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyOperationTaskOutcomeCallable ModifyOperationTaskCallable(const Model::ModifyOperationTaskRequest& request);
+
+                /**
                  *资源变配
                  * @param req ModifyResourceRequest
                  * @return ModifyResourceOutcome
@@ -858,6 +919,15 @@ namespace TencentCloud
                 RunChangePwdTaskOutcome RunChangePwdTask(const Model::RunChangePwdTaskRequest &request);
                 void RunChangePwdTaskAsync(const Model::RunChangePwdTaskRequest& request, const RunChangePwdTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RunChangePwdTaskOutcomeCallable RunChangePwdTaskCallable(const Model::RunChangePwdTaskRequest& request);
+
+                /**
+                 *执行运维任务
+                 * @param req RunOperationTaskRequest
+                 * @return RunOperationTaskOutcome
+                 */
+                RunOperationTaskOutcome RunOperationTask(const Model::RunOperationTaskRequest &request);
+                void RunOperationTaskAsync(const Model::RunOperationTaskRequest& request, const RunOperationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RunOperationTaskOutcomeCallable RunOperationTaskCallable(const Model::RunOperationTaskRequest& request);
 
                 /**
                  *搜索审计日志
