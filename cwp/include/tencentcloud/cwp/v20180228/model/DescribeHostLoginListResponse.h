@@ -59,8 +59,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取登录审计列表
-                     * @return HostLoginList 登录审计列表
+                     * 获取异常登录列表
+                     * @return HostLoginList 异常登录列表
                      * 
                      */
                     std::vector<HostLoginList> GetHostLoginList() const;
@@ -81,7 +81,7 @@ namespace TencentCloud
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 登录审计列表
+                     * 异常登录列表
                      */
                     std::vector<HostLoginList> m_hostLoginList;
                     bool m_hostLoginListHasBeenSet;

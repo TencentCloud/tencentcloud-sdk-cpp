@@ -29,7 +29,9 @@ ListDocRequest::ListDocRequest() :
     m_queryHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_queryTypeHasBeenSet(false),
-    m_cateBizIdHasBeenSet(false)
+    m_cateBizIdHasBeenSet(false),
+    m_fileTypesHasBeenSet(false),
+    m_filterFlagHasBeenSet(false)
 {
 }
 
@@ -99,6 +101,34 @@ string ListDocRequest::ToJsonString() const
         string key = "CateBizId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_cateBizId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileTypes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_fileTypes.begin(); itr != m_fileTypes.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_filterFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilterFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filterFlag.begin(); itr != m_filterFlag.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -219,6 +249,38 @@ void ListDocRequest::SetCateBizId(const string& _cateBizId)
 bool ListDocRequest::CateBizIdHasBeenSet() const
 {
     return m_cateBizIdHasBeenSet;
+}
+
+vector<string> ListDocRequest::GetFileTypes() const
+{
+    return m_fileTypes;
+}
+
+void ListDocRequest::SetFileTypes(const vector<string>& _fileTypes)
+{
+    m_fileTypes = _fileTypes;
+    m_fileTypesHasBeenSet = true;
+}
+
+bool ListDocRequest::FileTypesHasBeenSet() const
+{
+    return m_fileTypesHasBeenSet;
+}
+
+vector<DocFilterFlag> ListDocRequest::GetFilterFlag() const
+{
+    return m_filterFlag;
+}
+
+void ListDocRequest::SetFilterFlag(const vector<DocFilterFlag>& _filterFlag)
+{
+    m_filterFlag = _filterFlag;
+    m_filterFlagHasBeenSet = true;
+}
+
+bool ListDocRequest::FilterFlagHasBeenSet() const
+{
+    return m_filterFlagHasBeenSet;
 }
 
 

@@ -152,7 +152,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/ListAppCategoryRequest.h
   include/tencentcloud/lke/v20231130/model/ListReleaseConfigPreviewRequest.h
   include/tencentcloud/lke/v20231130/model/CallDetail.h
-  include/tencentcloud/lke/v20231130/model/ModifyRejectedQuestionResponse.h
+  include/tencentcloud/lke/v20231130/model/DocFilterFlag.h
   include/tencentcloud/lke/v20231130/model/ListReleaseDocPreviewRequest.h
   include/tencentcloud/lke/v20231130/model/TokenStat.h
   include/tencentcloud/lke/v20231130/model/DocSegment.h
@@ -226,6 +226,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/DeleteAttributeLabelResponse.h
   include/tencentcloud/lke/v20231130/model/RetryReleaseRequest.h
   include/tencentcloud/lke/v20231130/model/KnowledgeQaPlugin.h
+  include/tencentcloud/lke/v20231130/model/IntentAchievement.h
   include/tencentcloud/lke/v20231130/model/DeleteQACateRequest.h
   include/tencentcloud/lke/v20231130/model/GenerateQARequest.h
   include/tencentcloud/lke/v20231130/model/GetWsTokenRequest.h
@@ -262,6 +263,7 @@ set(lke_public_header_model
   include/tencentcloud/lke/v20231130/model/IsTransferIntentRequest.h
   include/tencentcloud/lke/v20231130/model/DescribeReferRequest.h
   include/tencentcloud/lke/v20231130/model/DeleteAppRequest.h
+  include/tencentcloud/lke/v20231130/model/ModifyRejectedQuestionResponse.h
   include/tencentcloud/lke/v20231130/model/GetVarListResponse.h
   include/tencentcloud/lke/v20231130/model/WorkFlowSummary.h
   include/tencentcloud/lke/v20231130/model/TaskParams.h
@@ -443,7 +445,7 @@ set(lke_src
   src/v20231130/model/ListAppCategoryRequest.cpp
   src/v20231130/model/ListReleaseConfigPreviewRequest.cpp
   src/v20231130/model/CallDetail.cpp
-  src/v20231130/model/ModifyRejectedQuestionResponse.cpp
+  src/v20231130/model/DocFilterFlag.cpp
   src/v20231130/model/ListReleaseDocPreviewRequest.cpp
   src/v20231130/model/TokenStat.cpp
   src/v20231130/model/DocSegment.cpp
@@ -517,6 +519,7 @@ set(lke_src
   src/v20231130/model/DeleteAttributeLabelResponse.cpp
   src/v20231130/model/RetryReleaseRequest.cpp
   src/v20231130/model/KnowledgeQaPlugin.cpp
+  src/v20231130/model/IntentAchievement.cpp
   src/v20231130/model/DeleteQACateRequest.cpp
   src/v20231130/model/GenerateQARequest.cpp
   src/v20231130/model/GetWsTokenRequest.cpp
@@ -553,6 +556,7 @@ set(lke_src
   src/v20231130/model/IsTransferIntentRequest.cpp
   src/v20231130/model/DescribeReferRequest.cpp
   src/v20231130/model/DeleteAppRequest.cpp
+  src/v20231130/model/ModifyRejectedQuestionResponse.cpp
   src/v20231130/model/GetVarListResponse.cpp
   src/v20231130/model/WorkFlowSummary.cpp
   src/v20231130/model/TaskParams.cpp

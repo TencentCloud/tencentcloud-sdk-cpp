@@ -22,7 +22,8 @@ using namespace std;
 
 TargetRegionInfo::TargetRegionInfo() :
     m_regionHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+    m_vpcIdHasBeenSet(false),
+    m_numericalVpcIdHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome TargetRegionInfo::Deserialize(const rapidjson::Value &value)
         m_vpcIdHasBeenSet = true;
     }
 
+    if (value.HasMember("NumericalVpcId") && !value["NumericalVpcId"].IsNull())
+    {
+        if (!value["NumericalVpcId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TargetRegionInfo.NumericalVpcId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_numericalVpcId = value["NumericalVpcId"].GetInt64();
+        m_numericalVpcIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void TargetRegionInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "VpcId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_numericalVpcIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NumericalVpcId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_numericalVpcId, allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void TargetRegionInfo::SetVpcId(const string& _vpcId)
 bool TargetRegionInfo::VpcIdHasBeenSet() const
 {
     return m_vpcIdHasBeenSet;
+}
+
+int64_t TargetRegionInfo::GetNumericalVpcId() const
+{
+    return m_numericalVpcId;
+}
+
+void TargetRegionInfo::SetNumericalVpcId(const int64_t& _numericalVpcId)
+{
+    m_numericalVpcId = _numericalVpcId;
+    m_numericalVpcIdHasBeenSet = true;
+}
+
+bool TargetRegionInfo::NumericalVpcIdHasBeenSet() const
+{
+    return m_numericalVpcIdHasBeenSet;
 }
 

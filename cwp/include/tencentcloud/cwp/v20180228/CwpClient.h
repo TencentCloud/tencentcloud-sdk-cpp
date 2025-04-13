@@ -4324,7 +4324,7 @@ namespace TencentCloud
                 DescribeHostInfoOutcomeCallable DescribeHostInfoCallable(const Model::DescribeHostInfoRequest& request);
 
                 /**
-                 *获取登录审计列表
+                 *获取异常登录列表
                  * @param req DescribeHostLoginListRequest
                  * @return DescribeHostLoginListOutcome
                  */

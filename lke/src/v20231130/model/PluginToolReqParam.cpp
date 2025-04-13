@@ -26,7 +26,8 @@ PluginToolReqParam::PluginToolReqParam() :
     m_typeHasBeenSet(false),
     m_isRequiredHasBeenSet(false),
     m_defaultValueHasBeenSet(false),
-    m_subParamsHasBeenSet(false)
+    m_subParamsHasBeenSet(false),
+    m_globalHiddenHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,16 @@ CoreInternalOutcome PluginToolReqParam::Deserialize(const rapidjson::Value &valu
         m_subParamsHasBeenSet = true;
     }
 
+    if (value.HasMember("GlobalHidden") && !value["GlobalHidden"].IsNull())
+    {
+        if (!value["GlobalHidden"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `PluginToolReqParam.GlobalHidden` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_globalHidden = value["GlobalHidden"].GetBool();
+        m_globalHiddenHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -165,6 +176,14 @@ void PluginToolReqParam::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_globalHiddenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GlobalHidden";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_globalHidden, allocator);
     }
 
 }
@@ -264,5 +283,21 @@ void PluginToolReqParam::SetSubParams(const vector<PluginToolReqParam>& _subPara
 bool PluginToolReqParam::SubParamsHasBeenSet() const
 {
     return m_subParamsHasBeenSet;
+}
+
+bool PluginToolReqParam::GetGlobalHidden() const
+{
+    return m_globalHidden;
+}
+
+void PluginToolReqParam::SetGlobalHidden(const bool& _globalHidden)
+{
+    m_globalHidden = _globalHidden;
+    m_globalHiddenHasBeenSet = true;
+}
+
+bool PluginToolReqParam::GlobalHiddenHasBeenSet() const
+{
+    return m_globalHiddenHasBeenSet;
 }
 

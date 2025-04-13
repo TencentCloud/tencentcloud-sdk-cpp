@@ -4856,6 +4856,49 @@ MonitorClient::EnableSSOCamCheckOutcomeCallable MonitorClient::EnableSSOCamCheck
     return task->get_future();
 }
 
+MonitorClient::ExportPrometheusReadOnlyDynamicAPIOutcome MonitorClient::ExportPrometheusReadOnlyDynamicAPI(const ExportPrometheusReadOnlyDynamicAPIRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExportPrometheusReadOnlyDynamicAPI");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExportPrometheusReadOnlyDynamicAPIResponse rsp = ExportPrometheusReadOnlyDynamicAPIResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExportPrometheusReadOnlyDynamicAPIOutcome(rsp);
+        else
+            return ExportPrometheusReadOnlyDynamicAPIOutcome(o.GetError());
+    }
+    else
+    {
+        return ExportPrometheusReadOnlyDynamicAPIOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::ExportPrometheusReadOnlyDynamicAPIAsync(const ExportPrometheusReadOnlyDynamicAPIRequest& request, const ExportPrometheusReadOnlyDynamicAPIAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ExportPrometheusReadOnlyDynamicAPI(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::ExportPrometheusReadOnlyDynamicAPIOutcomeCallable MonitorClient::ExportPrometheusReadOnlyDynamicAPICallable(const ExportPrometheusReadOnlyDynamicAPIRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ExportPrometheusReadOnlyDynamicAPIOutcome()>>(
+        [this, request]()
+        {
+            return this->ExportPrometheusReadOnlyDynamicAPI(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::GetMonitorDataOutcome MonitorClient::GetMonitorData(const GetMonitorDataRequest &request)
 {
     auto outcome = MakeRequest(request, "GetMonitorData");

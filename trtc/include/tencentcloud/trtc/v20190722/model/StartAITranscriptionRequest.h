@@ -108,35 +108,23 @@ namespace TencentCloud
                     bool TranscriptionParamsHasBeenSet() const;
 
                     /**
-                     * 获取调用方传入的唯一Id，服务端用来去重。
+                     * 获取调用方传入的唯一Id，服务端用来任务去重，重复的任务会发起失败。服务端固定使用SdkAppId+RoomId+RoomIdType+RobotUserId来去重，如果传入了SessionId，也会使用SessionId去重。
 注意：
-如果传入该参数，服务端优先使用该参数来去重。
-如果不传该参数，服务端的去重策略如下：
-- 如果TranscriptionMode字段是0，则一个房间只能开启一个任务
-- 如果TranscriptionMode字段是1，则一个TargetUserId只能开启一个任务
-                     * @return SessionId 调用方传入的唯一Id，服务端用来去重。
+TranscriptionMode为0时，需要保证一个房间内只发起一个任务，如果发起多个任务，则机器人之间会相互订阅，除非主动停止任务，否则只有10小时后任务才会超时退出，这种情况下建议填写SessionId，保证后续重复发起的任务失败。
+                     * @return SessionId 调用方传入的唯一Id，服务端用来任务去重，重复的任务会发起失败。服务端固定使用SdkAppId+RoomId+RoomIdType+RobotUserId来去重，如果传入了SessionId，也会使用SessionId去重。
 注意：
-如果传入该参数，服务端优先使用该参数来去重。
-如果不传该参数，服务端的去重策略如下：
-- 如果TranscriptionMode字段是0，则一个房间只能开启一个任务
-- 如果TranscriptionMode字段是1，则一个TargetUserId只能开启一个任务
+TranscriptionMode为0时，需要保证一个房间内只发起一个任务，如果发起多个任务，则机器人之间会相互订阅，除非主动停止任务，否则只有10小时后任务才会超时退出，这种情况下建议填写SessionId，保证后续重复发起的任务失败。
                      * 
                      */
                     std::string GetSessionId() const;
 
                     /**
-                     * 设置调用方传入的唯一Id，服务端用来去重。
+                     * 设置调用方传入的唯一Id，服务端用来任务去重，重复的任务会发起失败。服务端固定使用SdkAppId+RoomId+RoomIdType+RobotUserId来去重，如果传入了SessionId，也会使用SessionId去重。
 注意：
-如果传入该参数，服务端优先使用该参数来去重。
-如果不传该参数，服务端的去重策略如下：
-- 如果TranscriptionMode字段是0，则一个房间只能开启一个任务
-- 如果TranscriptionMode字段是1，则一个TargetUserId只能开启一个任务
-                     * @param _sessionId 调用方传入的唯一Id，服务端用来去重。
+TranscriptionMode为0时，需要保证一个房间内只发起一个任务，如果发起多个任务，则机器人之间会相互订阅，除非主动停止任务，否则只有10小时后任务才会超时退出，这种情况下建议填写SessionId，保证后续重复发起的任务失败。
+                     * @param _sessionId 调用方传入的唯一Id，服务端用来任务去重，重复的任务会发起失败。服务端固定使用SdkAppId+RoomId+RoomIdType+RobotUserId来去重，如果传入了SessionId，也会使用SessionId去重。
 注意：
-如果传入该参数，服务端优先使用该参数来去重。
-如果不传该参数，服务端的去重策略如下：
-- 如果TranscriptionMode字段是0，则一个房间只能开启一个任务
-- 如果TranscriptionMode字段是1，则一个TargetUserId只能开启一个任务
+TranscriptionMode为0时，需要保证一个房间内只发起一个任务，如果发起多个任务，则机器人之间会相互订阅，除非主动停止任务，否则只有10小时后任务才会超时退出，这种情况下建议填写SessionId，保证后续重复发起的任务失败。
                      * 
                      */
                     void SetSessionId(const std::string& _sessionId);
@@ -211,12 +199,9 @@ namespace TencentCloud
                     bool m_transcriptionParamsHasBeenSet;
 
                     /**
-                     * 调用方传入的唯一Id，服务端用来去重。
+                     * 调用方传入的唯一Id，服务端用来任务去重，重复的任务会发起失败。服务端固定使用SdkAppId+RoomId+RoomIdType+RobotUserId来去重，如果传入了SessionId，也会使用SessionId去重。
 注意：
-如果传入该参数，服务端优先使用该参数来去重。
-如果不传该参数，服务端的去重策略如下：
-- 如果TranscriptionMode字段是0，则一个房间只能开启一个任务
-- 如果TranscriptionMode字段是1，则一个TargetUserId只能开启一个任务
+TranscriptionMode为0时，需要保证一个房间内只发起一个任务，如果发起多个任务，则机器人之间会相互订阅，除非主动停止任务，否则只有10小时后任务才会超时退出，这种情况下建议填写SessionId，保证后续重复发起的任务失败。
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;

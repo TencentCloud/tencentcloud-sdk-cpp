@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/lke/v20231130/model/DocFilterFlag.h>
 
 
 namespace TencentCloud
@@ -189,6 +190,48 @@ namespace TencentCloud
                      */
                     bool CateBizIdHasBeenSet() const;
 
+                    /**
+                     * 获取文件类型分类筛选
+                     * @return FileTypes 文件类型分类筛选
+                     * 
+                     */
+                    std::vector<std::string> GetFileTypes() const;
+
+                    /**
+                     * 设置文件类型分类筛选
+                     * @param _fileTypes 文件类型分类筛选
+                     * 
+                     */
+                    void SetFileTypes(const std::vector<std::string>& _fileTypes);
+
+                    /**
+                     * 判断参数 FileTypes 是否已赋值
+                     * @return FileTypes 是否已赋值
+                     * 
+                     */
+                    bool FileTypesHasBeenSet() const;
+
+                    /**
+                     * 获取文档列表筛选标识位
+                     * @return FilterFlag 文档列表筛选标识位
+                     * 
+                     */
+                    std::vector<DocFilterFlag> GetFilterFlag() const;
+
+                    /**
+                     * 设置文档列表筛选标识位
+                     * @param _filterFlag 文档列表筛选标识位
+                     * 
+                     */
+                    void SetFilterFlag(const std::vector<DocFilterFlag>& _filterFlag);
+
+                    /**
+                     * 判断参数 FilterFlag 是否已赋值
+                     * @return FilterFlag 是否已赋值
+                     * 
+                     */
+                    bool FilterFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -232,6 +275,18 @@ namespace TencentCloud
                      */
                     std::string m_cateBizId;
                     bool m_cateBizIdHasBeenSet;
+
+                    /**
+                     * 文件类型分类筛选
+                     */
+                    std::vector<std::string> m_fileTypes;
+                    bool m_fileTypesHasBeenSet;
+
+                    /**
+                     * 文档列表筛选标识位
+                     */
+                    std::vector<DocFilterFlag> m_filterFlag;
+                    bool m_filterFlagHasBeenSet;
 
                 };
             }

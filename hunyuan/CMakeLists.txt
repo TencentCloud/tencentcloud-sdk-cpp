@@ -36,6 +36,7 @@ set(hunyuan_public_header_model
   include/tencentcloud/hunyuan/v20230901/model/Usage.h
   include/tencentcloud/hunyuan/v20230901/model/Replace.h
   include/tencentcloud/hunyuan/v20230901/model/SubmitHunyuanImageChatJobResponse.h
+  include/tencentcloud/hunyuan/v20230901/model/SubmitHunyuanTo3DJobRequest.h
   include/tencentcloud/hunyuan/v20230901/model/ThreadMessageInCompleteDetailsObject.h
   include/tencentcloud/hunyuan/v20230901/model/QueryHunyuanImageChatJobRequest.h
   include/tencentcloud/hunyuan/v20230901/model/RunThreadRequest.h
@@ -45,15 +46,19 @@ set(hunyuan_public_header_model
   include/tencentcloud/hunyuan/v20230901/model/Image.h
   include/tencentcloud/hunyuan/v20230901/model/Tool.h
   include/tencentcloud/hunyuan/v20230901/model/GetThreadMessageListRequest.h
+  include/tencentcloud/hunyuan/v20230901/model/SubmitHunyuanTo3DJobResponse.h
+  include/tencentcloud/hunyuan/v20230901/model/File3D.h
   include/tencentcloud/hunyuan/v20230901/model/Choice.h
   include/tencentcloud/hunyuan/v20230901/model/GetTokenCountResponse.h
   include/tencentcloud/hunyuan/v20230901/model/QueryHunyuanImageChatJobResponse.h
   include/tencentcloud/hunyuan/v20230901/model/EmbeddingData.h
   include/tencentcloud/hunyuan/v20230901/model/GroupMessage.h
   include/tencentcloud/hunyuan/v20230901/model/GroupChatCompletionsRequest.h
+  include/tencentcloud/hunyuan/v20230901/model/File3Ds.h
   include/tencentcloud/hunyuan/v20230901/model/SearchInfo.h
   include/tencentcloud/hunyuan/v20230901/model/Delta.h
   include/tencentcloud/hunyuan/v20230901/model/SetPayModeResponse.h
+  include/tencentcloud/hunyuan/v20230901/model/QueryHunyuanTo3DJobRequest.h
   include/tencentcloud/hunyuan/v20230901/model/SongExt.h
   include/tencentcloud/hunyuan/v20230901/model/TranslationDelta.h
   include/tencentcloud/hunyuan/v20230901/model/ToolCall.h
@@ -98,6 +103,7 @@ set(hunyuan_public_header_model
   include/tencentcloud/hunyuan/v20230901/model/TranslationMessage.h
   include/tencentcloud/hunyuan/v20230901/model/ChatCompletionsResponse.h
   include/tencentcloud/hunyuan/v20230901/model/EmbeddingUsage.h
+  include/tencentcloud/hunyuan/v20230901/model/QueryHunyuanTo3DJobResponse.h
   )
 
 set(hunyuan_src
@@ -119,6 +125,7 @@ set(hunyuan_src
   src/v20230901/model/Usage.cpp
   src/v20230901/model/Replace.cpp
   src/v20230901/model/SubmitHunyuanImageChatJobResponse.cpp
+  src/v20230901/model/SubmitHunyuanTo3DJobRequest.cpp
   src/v20230901/model/ThreadMessageInCompleteDetailsObject.cpp
   src/v20230901/model/QueryHunyuanImageChatJobRequest.cpp
   src/v20230901/model/RunThreadRequest.cpp
@@ -128,15 +135,19 @@ set(hunyuan_src
   src/v20230901/model/Image.cpp
   src/v20230901/model/Tool.cpp
   src/v20230901/model/GetThreadMessageListRequest.cpp
+  src/v20230901/model/SubmitHunyuanTo3DJobResponse.cpp
+  src/v20230901/model/File3D.cpp
   src/v20230901/model/Choice.cpp
   src/v20230901/model/GetTokenCountResponse.cpp
   src/v20230901/model/QueryHunyuanImageChatJobResponse.cpp
   src/v20230901/model/EmbeddingData.cpp
   src/v20230901/model/GroupMessage.cpp
   src/v20230901/model/GroupChatCompletionsRequest.cpp
+  src/v20230901/model/File3Ds.cpp
   src/v20230901/model/SearchInfo.cpp
   src/v20230901/model/Delta.cpp
   src/v20230901/model/SetPayModeResponse.cpp
+  src/v20230901/model/QueryHunyuanTo3DJobRequest.cpp
   src/v20230901/model/SongExt.cpp
   src/v20230901/model/TranslationDelta.cpp
   src/v20230901/model/ToolCall.cpp
@@ -181,6 +192,7 @@ set(hunyuan_src
   src/v20230901/model/TranslationMessage.cpp
   src/v20230901/model/ChatCompletionsResponse.cpp
   src/v20230901/model/EmbeddingUsage.cpp
+  src/v20230901/model/QueryHunyuanTo3DJobResponse.cpp
   )
 
 set(hunyuan_include

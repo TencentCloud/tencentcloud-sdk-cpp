@@ -71,6 +71,8 @@
 #include <tencentcloud/ccc/v20200210/model/DeleteStaffResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeAICallExtractResultRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeAICallExtractResultResponse.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeAILatencyRequest.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeAILatencyResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeActiveCarrierPrivilegeNumberRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeActiveCarrierPrivilegeNumberResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeAgentCruiseDialingCampaignRequest.h>
@@ -127,6 +129,8 @@
 #include <tencentcloud/ccc/v20200210/model/DescribeTelSessionResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DisableCCCPhoneNumberRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DisableCCCPhoneNumberResponse.h>
+#include <tencentcloud/ccc/v20200210/model/ForceMemberOfflineRequest.h>
+#include <tencentcloud/ccc/v20200210/model/ForceMemberOfflineResponse.h>
 #include <tencentcloud/ccc/v20200210/model/HangUpCallRequest.h>
 #include <tencentcloud/ccc/v20200210/model/HangUpCallResponse.h>
 #include <tencentcloud/ccc/v20200210/model/ModifyCompanyApplyRequest.h>
@@ -143,6 +147,8 @@
 #include <tencentcloud/ccc/v20200210/model/PausePredictiveDialingCampaignResponse.h>
 #include <tencentcloud/ccc/v20200210/model/ResetExtensionPasswordRequest.h>
 #include <tencentcloud/ccc/v20200210/model/ResetExtensionPasswordResponse.h>
+#include <tencentcloud/ccc/v20200210/model/RestoreMemberOnlineRequest.h>
+#include <tencentcloud/ccc/v20200210/model/RestoreMemberOnlineResponse.h>
 #include <tencentcloud/ccc/v20200210/model/ResumePredictiveDialingCampaignRequest.h>
 #include <tencentcloud/ccc/v20200210/model/ResumePredictiveDialingCampaignResponse.h>
 #include <tencentcloud/ccc/v20200210/model/StopAutoCalloutTaskRequest.h>
@@ -245,6 +251,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAICallExtractResultResponse> DescribeAICallExtractResultOutcome;
                 typedef std::future<DescribeAICallExtractResultOutcome> DescribeAICallExtractResultOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DescribeAICallExtractResultRequest&, DescribeAICallExtractResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAICallExtractResultAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAILatencyResponse> DescribeAILatencyOutcome;
+                typedef std::future<DescribeAILatencyOutcome> DescribeAILatencyOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::DescribeAILatencyRequest&, DescribeAILatencyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAILatencyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeActiveCarrierPrivilegeNumberResponse> DescribeActiveCarrierPrivilegeNumberOutcome;
                 typedef std::future<DescribeActiveCarrierPrivilegeNumberOutcome> DescribeActiveCarrierPrivilegeNumberOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DescribeActiveCarrierPrivilegeNumberRequest&, DescribeActiveCarrierPrivilegeNumberOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeActiveCarrierPrivilegeNumberAsyncHandler;
@@ -329,6 +338,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DisableCCCPhoneNumberResponse> DisableCCCPhoneNumberOutcome;
                 typedef std::future<DisableCCCPhoneNumberOutcome> DisableCCCPhoneNumberOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DisableCCCPhoneNumberRequest&, DisableCCCPhoneNumberOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableCCCPhoneNumberAsyncHandler;
+                typedef Outcome<Core::Error, Model::ForceMemberOfflineResponse> ForceMemberOfflineOutcome;
+                typedef std::future<ForceMemberOfflineOutcome> ForceMemberOfflineOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::ForceMemberOfflineRequest&, ForceMemberOfflineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ForceMemberOfflineAsyncHandler;
                 typedef Outcome<Core::Error, Model::HangUpCallResponse> HangUpCallOutcome;
                 typedef std::future<HangUpCallOutcome> HangUpCallOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::HangUpCallRequest&, HangUpCallOutcome, const std::shared_ptr<const AsyncCallerContext>&)> HangUpCallAsyncHandler;
@@ -353,6 +365,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ResetExtensionPasswordResponse> ResetExtensionPasswordOutcome;
                 typedef std::future<ResetExtensionPasswordOutcome> ResetExtensionPasswordOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::ResetExtensionPasswordRequest&, ResetExtensionPasswordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetExtensionPasswordAsyncHandler;
+                typedef Outcome<Core::Error, Model::RestoreMemberOnlineResponse> RestoreMemberOnlineOutcome;
+                typedef std::future<RestoreMemberOnlineOutcome> RestoreMemberOnlineOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::RestoreMemberOnlineRequest&, RestoreMemberOnlineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestoreMemberOnlineAsyncHandler;
                 typedef Outcome<Core::Error, Model::ResumePredictiveDialingCampaignResponse> ResumePredictiveDialingCampaignOutcome;
                 typedef std::future<ResumePredictiveDialingCampaignOutcome> ResumePredictiveDialingCampaignOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::ResumePredictiveDialingCampaignRequest&, ResumePredictiveDialingCampaignOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResumePredictiveDialingCampaignAsyncHandler;
@@ -603,6 +618,15 @@ namespace TencentCloud
                 DescribeAICallExtractResultOutcome DescribeAICallExtractResult(const Model::DescribeAICallExtractResultRequest &request);
                 void DescribeAICallExtractResultAsync(const Model::DescribeAICallExtractResultRequest& request, const DescribeAICallExtractResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAICallExtractResultOutcomeCallable DescribeAICallExtractResultCallable(const Model::DescribeAICallExtractResultRequest& request);
+
+                /**
+                 *获取 AI 时延信息
+                 * @param req DescribeAILatencyRequest
+                 * @return DescribeAILatencyOutcome
+                 */
+                DescribeAILatencyOutcome DescribeAILatency(const Model::DescribeAILatencyRequest &request);
+                void DescribeAILatencyAsync(const Model::DescribeAILatencyRequest& request, const DescribeAILatencyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAILatencyOutcomeCallable DescribeAILatencyCallable(const Model::DescribeAILatencyRequest& request);
 
                 /**
                  *查询生效运营商白名单规则
@@ -859,6 +883,15 @@ namespace TencentCloud
                 DisableCCCPhoneNumberOutcomeCallable DisableCCCPhoneNumberCallable(const Model::DisableCCCPhoneNumberRequest& request);
 
                 /**
+                 *强制客服下线
+                 * @param req ForceMemberOfflineRequest
+                 * @return ForceMemberOfflineOutcome
+                 */
+                ForceMemberOfflineOutcome ForceMemberOffline(const Model::ForceMemberOfflineRequest &request);
+                void ForceMemberOfflineAsync(const Model::ForceMemberOfflineRequest& request, const ForceMemberOfflineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ForceMemberOfflineOutcomeCallable ForceMemberOfflineCallable(const Model::ForceMemberOfflineRequest& request);
+
+                /**
                  *挂断电话
                  * @param req HangUpCallRequest
                  * @return HangUpCallOutcome
@@ -929,6 +962,15 @@ namespace TencentCloud
                 ResetExtensionPasswordOutcome ResetExtensionPassword(const Model::ResetExtensionPasswordRequest &request);
                 void ResetExtensionPasswordAsync(const Model::ResetExtensionPasswordRequest& request, const ResetExtensionPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ResetExtensionPasswordOutcomeCallable ResetExtensionPasswordCallable(const Model::ResetExtensionPasswordRequest& request);
+
+                /**
+                 *恢复客服上线
+                 * @param req RestoreMemberOnlineRequest
+                 * @return RestoreMemberOnlineOutcome
+                 */
+                RestoreMemberOnlineOutcome RestoreMemberOnline(const Model::RestoreMemberOnlineRequest &request);
+                void RestoreMemberOnlineAsync(const Model::RestoreMemberOnlineRequest& request, const RestoreMemberOnlineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RestoreMemberOnlineOutcomeCallable RestoreMemberOnlineCallable(const Model::RestoreMemberOnlineRequest& request);
 
                 /**
                  *恢复预测式外呼任务

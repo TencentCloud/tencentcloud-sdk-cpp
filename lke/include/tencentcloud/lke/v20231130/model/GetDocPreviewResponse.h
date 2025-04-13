@@ -133,6 +133,20 @@ namespace TencentCloud
                      */
                     bool NewNameHasBeenSet() const;
 
+                    /**
+                     * 获取文件md结果cos临时地址
+                     * @return ParseResultCosUrl 文件md结果cos临时地址
+                     * 
+                     */
+                    std::string GetParseResultCosUrl() const;
+
+                    /**
+                     * 判断参数 ParseResultCosUrl 是否已赋值
+                     * @return ParseResultCosUrl 是否已赋值
+                     * 
+                     */
+                    bool ParseResultCosUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -173,6 +187,12 @@ namespace TencentCloud
                      */
                     std::string m_newName;
                     bool m_newNameHasBeenSet;
+
+                    /**
+                     * 文件md结果cos临时地址
+                     */
+                    std::string m_parseResultCosUrl;
+                    bool m_parseResultCosUrlHasBeenSet;
 
                 };
             }

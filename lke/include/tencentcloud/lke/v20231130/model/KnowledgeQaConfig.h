@@ -32,6 +32,7 @@
 #include <tencentcloud/lke/v20231130/model/SearchStrategy.h>
 #include <tencentcloud/lke/v20231130/model/KnowledgeQaSingleWorkflow.h>
 #include <tencentcloud/lke/v20231130/model/KnowledgeQaPlugin.h>
+#include <tencentcloud/lke/v20231130/model/IntentAchievement.h>
 
 
 namespace TencentCloud
@@ -80,18 +81,66 @@ namespace TencentCloud
                     bool GreetingHasBeenSet() const;
 
                     /**
-                     * 获取角色描述，300字符以内
+                     * 获取角色描述，4000字符以内。通过填写描述，设定应用的 #角色名称、 #风格特点 及可达成的#意图。建议按照下面的模板填写，且自定义意图建议不超过5个。
+
+#角色名称：
+#风格特点：
+#输出要求：
+#能力限制：
+
+能够达成以下用户意图
+##意图名称：
+##意图描述：
+##意图示例：
+##意图实现：
+
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RoleDescription 角色描述，300字符以内
+                     * @return RoleDescription 角色描述，4000字符以内。通过填写描述，设定应用的 #角色名称、 #风格特点 及可达成的#意图。建议按照下面的模板填写，且自定义意图建议不超过5个。
+
+#角色名称：
+#风格特点：
+#输出要求：
+#能力限制：
+
+能够达成以下用户意图
+##意图名称：
+##意图描述：
+##意图示例：
+##意图实现：
+
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetRoleDescription() const;
 
                     /**
-                     * 设置角色描述，300字符以内
+                     * 设置角色描述，4000字符以内。通过填写描述，设定应用的 #角色名称、 #风格特点 及可达成的#意图。建议按照下面的模板填写，且自定义意图建议不超过5个。
+
+#角色名称：
+#风格特点：
+#输出要求：
+#能力限制：
+
+能够达成以下用户意图
+##意图名称：
+##意图描述：
+##意图示例：
+##意图实现：
+
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param _roleDescription 角色描述，300字符以内
+                     * @param _roleDescription 角色描述，4000字符以内。通过填写描述，设定应用的 #角色名称、 #风格特点 及可达成的#意图。建议按照下面的模板填写，且自定义意图建议不超过5个。
+
+#角色名称：
+#风格特点：
+#输出要求：
+#能力限制：
+
+能够达成以下用户意图
+##意图名称：
+##意图描述：
+##意图示例：
+##意图实现：
+
 注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
@@ -354,6 +403,56 @@ namespace TencentCloud
                      */
                     bool ThoughtModelHasBeenSet() const;
 
+                    /**
+                     * 获取意图达成方式优先级
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IntentAchievements 意图达成方式优先级
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::vector<IntentAchievement> GetIntentAchievements() const;
+
+                    /**
+                     * 设置意图达成方式优先级
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _intentAchievements 意图达成方式优先级
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetIntentAchievements(const std::vector<IntentAchievement>& _intentAchievements);
+
+                    /**
+                     * 判断参数 IntentAchievements 是否已赋值
+                     * @return IntentAchievements 是否已赋值
+                     * 
+                     */
+                    bool IntentAchievementsHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启图文检索
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ImageTextRetrieval 是否开启图文检索
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    bool GetImageTextRetrieval() const;
+
+                    /**
+                     * 设置是否开启图文检索
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _imageTextRetrieval 是否开启图文检索
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetImageTextRetrieval(const bool& _imageTextRetrieval);
+
+                    /**
+                     * 判断参数 ImageTextRetrieval 是否已赋值
+                     * @return ImageTextRetrieval 是否已赋值
+                     * 
+                     */
+                    bool ImageTextRetrievalHasBeenSet() const;
+
                 private:
 
                     /**
@@ -364,7 +463,19 @@ namespace TencentCloud
                     bool m_greetingHasBeenSet;
 
                     /**
-                     * 角色描述，300字符以内
+                     * 角色描述，4000字符以内。通过填写描述，设定应用的 #角色名称、 #风格特点 及可达成的#意图。建议按照下面的模板填写，且自定义意图建议不超过5个。
+
+#角色名称：
+#风格特点：
+#输出要求：
+#能力限制：
+
+能够达成以下用户意图
+##意图名称：
+##意图描述：
+##意图示例：
+##意图实现：
+
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_roleDescription;
@@ -439,6 +550,20 @@ namespace TencentCloud
                      */
                     AppModel m_thoughtModel;
                     bool m_thoughtModelHasBeenSet;
+
+                    /**
+                     * 意图达成方式优先级
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<IntentAchievement> m_intentAchievements;
+                    bool m_intentAchievementsHasBeenSet;
+
+                    /**
+                     * 是否开启图文检索
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_imageTextRetrieval;
+                    bool m_imageTextRetrievalHasBeenSet;
 
                 };
             }

@@ -29,7 +29,8 @@ GetDocPreviewResponse::GetDocPreviewResponse() :
     m_cosUrlHasBeenSet(false),
     m_urlHasBeenSet(false),
     m_bucketHasBeenSet(false),
-    m_newNameHasBeenSet(false)
+    m_newNameHasBeenSet(false),
+    m_parseResultCosUrlHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,16 @@ CoreInternalOutcome GetDocPreviewResponse::Deserialize(const string &payload)
         m_newNameHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ParseResultCosUrl") && !rsp["ParseResultCosUrl"].IsNull())
+    {
+        if (!rsp["ParseResultCosUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ParseResultCosUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_parseResultCosUrl = string(rsp["ParseResultCosUrl"].GetString());
+        m_parseResultCosUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -183,6 +194,14 @@ string GetDocPreviewResponse::ToJsonString() const
         string key = "NewName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_newName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_parseResultCosUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParseResultCosUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_parseResultCosUrl.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -255,6 +274,16 @@ string GetDocPreviewResponse::GetNewName() const
 bool GetDocPreviewResponse::NewNameHasBeenSet() const
 {
     return m_newNameHasBeenSet;
+}
+
+string GetDocPreviewResponse::GetParseResultCosUrl() const
+{
+    return m_parseResultCosUrl;
+}
+
+bool GetDocPreviewResponse::ParseResultCosUrlHasBeenSet() const
+{
+    return m_parseResultCosUrlHasBeenSet;
 }
 
 

@@ -247,6 +247,8 @@
 #include <tencentcloud/monitor/v20180724/model/EnableGrafanaSSOResponse.h>
 #include <tencentcloud/monitor/v20180724/model/EnableSSOCamCheckRequest.h>
 #include <tencentcloud/monitor/v20180724/model/EnableSSOCamCheckResponse.h>
+#include <tencentcloud/monitor/v20180724/model/ExportPrometheusReadOnlyDynamicAPIRequest.h>
+#include <tencentcloud/monitor/v20180724/model/ExportPrometheusReadOnlyDynamicAPIResponse.h>
 #include <tencentcloud/monitor/v20180724/model/GetMonitorDataRequest.h>
 #include <tencentcloud/monitor/v20180724/model/GetMonitorDataResponse.h>
 #include <tencentcloud/monitor/v20180724/model/GetPrometheusAgentManagementCommandRequest.h>
@@ -695,6 +697,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::EnableSSOCamCheckResponse> EnableSSOCamCheckOutcome;
                 typedef std::future<EnableSSOCamCheckOutcome> EnableSSOCamCheckOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::EnableSSOCamCheckRequest&, EnableSSOCamCheckOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableSSOCamCheckAsyncHandler;
+                typedef Outcome<Core::Error, Model::ExportPrometheusReadOnlyDynamicAPIResponse> ExportPrometheusReadOnlyDynamicAPIOutcome;
+                typedef std::future<ExportPrometheusReadOnlyDynamicAPIOutcome> ExportPrometheusReadOnlyDynamicAPIOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::ExportPrometheusReadOnlyDynamicAPIRequest&, ExportPrometheusReadOnlyDynamicAPIOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ExportPrometheusReadOnlyDynamicAPIAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetMonitorDataResponse> GetMonitorDataOutcome;
                 typedef std::future<GetMonitorDataOutcome> GetMonitorDataOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::GetMonitorDataRequest&, GetMonitorDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetMonitorDataAsyncHandler;
@@ -1869,6 +1874,15 @@ namespace TencentCloud
                 EnableSSOCamCheckOutcome EnableSSOCamCheck(const Model::EnableSSOCamCheckRequest &request);
                 void EnableSSOCamCheckAsync(const Model::EnableSSOCamCheckRequest& request, const EnableSSOCamCheckAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 EnableSSOCamCheckOutcomeCallable EnableSSOCamCheckCallable(const Model::EnableSSOCamCheckRequest& request);
+
+                /**
+                 *Prometheus 内部动态 api 代理，仅内部使用
+                 * @param req ExportPrometheusReadOnlyDynamicAPIRequest
+                 * @return ExportPrometheusReadOnlyDynamicAPIOutcome
+                 */
+                ExportPrometheusReadOnlyDynamicAPIOutcome ExportPrometheusReadOnlyDynamicAPI(const Model::ExportPrometheusReadOnlyDynamicAPIRequest &request);
+                void ExportPrometheusReadOnlyDynamicAPIAsync(const Model::ExportPrometheusReadOnlyDynamicAPIRequest& request, const ExportPrometheusReadOnlyDynamicAPIAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ExportPrometheusReadOnlyDynamicAPIOutcomeCallable ExportPrometheusReadOnlyDynamicAPICallable(const Model::ExportPrometheusReadOnlyDynamicAPIRequest& request);
 
                 /**
                  *获取云产品的监控数据。此接口不适用于拉取容器服务监控数据，如需拉取容器服务监控数据，请使用[根据维度条件查询监控数据](https://cloud.tencent.com/document/product/248/51845)接口。

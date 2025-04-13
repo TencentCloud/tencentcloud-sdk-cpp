@@ -331,18 +331,14 @@ Standard｜Lane
 
                     /**
                      * 获取泳道标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LaneTag 泳道标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetLaneTag() const;
 
                     /**
                      * 设置泳道标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _laneTag 泳道标签
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetLaneTag(const std::string& _laneTag);
@@ -438,7 +434,6 @@ Standard｜Lane
 
                     /**
                      * 泳道标签
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_laneTag;
                     bool m_laneTagHasBeenSet;

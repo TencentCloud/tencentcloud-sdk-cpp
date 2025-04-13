@@ -173,6 +173,27 @@ namespace TencentCloud
                      */
                     bool SubParamsHasBeenSet() const;
 
+                    /**
+                     * 获取插件参数配置是否隐藏不可见，true-隐藏不可见，false-可见
+                     * @return GlobalHidden 插件参数配置是否隐藏不可见，true-隐藏不可见，false-可见
+                     * 
+                     */
+                    bool GetGlobalHidden() const;
+
+                    /**
+                     * 设置插件参数配置是否隐藏不可见，true-隐藏不可见，false-可见
+                     * @param _globalHidden 插件参数配置是否隐藏不可见，true-隐藏不可见，false-可见
+                     * 
+                     */
+                    void SetGlobalHidden(const bool& _globalHidden);
+
+                    /**
+                     * 判断参数 GlobalHidden 是否已赋值
+                     * @return GlobalHidden 是否已赋值
+                     * 
+                     */
+                    bool GlobalHiddenHasBeenSet() const;
+
                 private:
 
                     /**
@@ -210,6 +231,12 @@ namespace TencentCloud
                      */
                     std::vector<PluginToolReqParam> m_subParams;
                     bool m_subParamsHasBeenSet;
+
+                    /**
+                     * 插件参数配置是否隐藏不可见，true-隐藏不可见，false-可见
+                     */
+                    bool m_globalHidden;
+                    bool m_globalHiddenHasBeenSet;
 
                 };
             }

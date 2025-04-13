@@ -32,7 +32,9 @@ KnowledgeQaConfig::KnowledgeQaConfig() :
     m_searchStrategyHasBeenSet(false),
     m_singleWorkflowHasBeenSet(false),
     m_pluginsHasBeenSet(false),
-    m_thoughtModelHasBeenSet(false)
+    m_thoughtModelHasBeenSet(false),
+    m_intentAchievementsHasBeenSet(false),
+    m_imageTextRetrievalHasBeenSet(false)
 {
 }
 
@@ -230,6 +232,36 @@ CoreInternalOutcome KnowledgeQaConfig::Deserialize(const rapidjson::Value &value
         m_thoughtModelHasBeenSet = true;
     }
 
+    if (value.HasMember("IntentAchievements") && !value["IntentAchievements"].IsNull())
+    {
+        if (!value["IntentAchievements"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `KnowledgeQaConfig.IntentAchievements` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["IntentAchievements"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            IntentAchievement item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_intentAchievements.push_back(item);
+        }
+        m_intentAchievementsHasBeenSet = true;
+    }
+
+    if (value.HasMember("ImageTextRetrieval") && !value["ImageTextRetrieval"].IsNull())
+    {
+        if (!value["ImageTextRetrieval"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `KnowledgeQaConfig.ImageTextRetrieval` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_imageTextRetrieval = value["ImageTextRetrieval"].GetBool();
+        m_imageTextRetrievalHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -352,6 +384,29 @@ void KnowledgeQaConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_thoughtModel.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_intentAchievementsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IntentAchievements";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_intentAchievements.begin(); itr != m_intentAchievements.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_imageTextRetrievalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageTextRetrieval";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_imageTextRetrieval, allocator);
     }
 
 }
@@ -547,5 +602,37 @@ void KnowledgeQaConfig::SetThoughtModel(const AppModel& _thoughtModel)
 bool KnowledgeQaConfig::ThoughtModelHasBeenSet() const
 {
     return m_thoughtModelHasBeenSet;
+}
+
+vector<IntentAchievement> KnowledgeQaConfig::GetIntentAchievements() const
+{
+    return m_intentAchievements;
+}
+
+void KnowledgeQaConfig::SetIntentAchievements(const vector<IntentAchievement>& _intentAchievements)
+{
+    m_intentAchievements = _intentAchievements;
+    m_intentAchievementsHasBeenSet = true;
+}
+
+bool KnowledgeQaConfig::IntentAchievementsHasBeenSet() const
+{
+    return m_intentAchievementsHasBeenSet;
+}
+
+bool KnowledgeQaConfig::GetImageTextRetrieval() const
+{
+    return m_imageTextRetrieval;
+}
+
+void KnowledgeQaConfig::SetImageTextRetrieval(const bool& _imageTextRetrieval)
+{
+    m_imageTextRetrieval = _imageTextRetrieval;
+    m_imageTextRetrievalHasBeenSet = true;
+}
+
+bool KnowledgeQaConfig::ImageTextRetrievalHasBeenSet() const
+{
+    return m_imageTextRetrievalHasBeenSet;
 }
 
