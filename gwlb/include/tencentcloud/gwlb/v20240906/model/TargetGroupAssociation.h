@@ -47,15 +47,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取网关负载均衡实例ID。
-                     * @return LoadBalancerId 网关负载均衡实例ID。
+                     * 获取网关负载均衡实例ID，可以通过[DescribeGatewayLoadBalancers](https://cloud.tencent.com/document/product/1782/111683)获取网关负载均衡ID。
+                     * @return LoadBalancerId 网关负载均衡实例ID，可以通过[DescribeGatewayLoadBalancers](https://cloud.tencent.com/document/product/1782/111683)获取网关负载均衡ID。
                      * 
                      */
                     std::string GetLoadBalancerId() const;
 
                     /**
-                     * 设置网关负载均衡实例ID。
-                     * @param _loadBalancerId 网关负载均衡实例ID。
+                     * 设置网关负载均衡实例ID，可以通过[DescribeGatewayLoadBalancers](https://cloud.tencent.com/document/product/1782/111683)获取网关负载均衡ID。
+                     * @param _loadBalancerId 网关负载均衡实例ID，可以通过[DescribeGatewayLoadBalancers](https://cloud.tencent.com/document/product/1782/111683)获取网关负载均衡ID。
                      * 
                      */
                     void SetLoadBalancerId(const std::string& _loadBalancerId);
@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool LoadBalancerIdHasBeenSet() const;
 
                     /**
-                     * 获取目标组ID。
-                     * @return TargetGroupId 目标组ID。
+                     * 获取目标组ID，可以通过[DescribeTargetGroups](https://cloud.tencent.com/document/product/214/40554)获取目标组ID。
+                     * @return TargetGroupId 目标组ID，可以通过[DescribeTargetGroups](https://cloud.tencent.com/document/product/214/40554)获取目标组ID。
                      * 
                      */
                     std::string GetTargetGroupId() const;
 
                     /**
-                     * 设置目标组ID。
-                     * @param _targetGroupId 目标组ID。
+                     * 设置目标组ID，可以通过[DescribeTargetGroups](https://cloud.tencent.com/document/product/214/40554)获取目标组ID。
+                     * @param _targetGroupId 目标组ID，可以通过[DescribeTargetGroups](https://cloud.tencent.com/document/product/214/40554)获取目标组ID。
                      * 
                      */
                     void SetTargetGroupId(const std::string& _targetGroupId);
@@ -91,13 +91,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 网关负载均衡实例ID。
+                     * 网关负载均衡实例ID，可以通过[DescribeGatewayLoadBalancers](https://cloud.tencent.com/document/product/1782/111683)获取网关负载均衡ID。
                      */
                     std::string m_loadBalancerId;
                     bool m_loadBalancerIdHasBeenSet;
 
                     /**
-                     * 目标组ID。
+                     * 目标组ID，可以通过[DescribeTargetGroups](https://cloud.tencent.com/document/product/214/40554)获取目标组ID。
                      */
                     std::string m_targetGroupId;
                     bool m_targetGroupIdHasBeenSet;

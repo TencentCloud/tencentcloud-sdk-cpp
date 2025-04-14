@@ -72,6 +72,20 @@ namespace TencentCloud
                      */
                     bool IntervalHasBeenSet() const;
 
+                    /**
+                     * 获取导出数据下载地址
+                     * @return Url 导出数据下载地址
+                     * 
+                     */
+                    std::string GetUrl() const;
+
+                    /**
+                     * 判断参数 Url 是否已赋值
+                     * @return Url 是否已赋值
+                     * 
+                     */
+                    bool UrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -85,6 +99,12 @@ namespace TencentCloud
                      */
                     std::string m_interval;
                     bool m_intervalHasBeenSet;
+
+                    /**
+                     * 导出数据下载地址
+                     */
+                    std::string m_url;
+                    bool m_urlHasBeenSet;
 
                 };
             }

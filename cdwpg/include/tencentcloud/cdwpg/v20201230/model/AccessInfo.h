@@ -48,18 +48,14 @@ namespace TencentCloud
 
                     /**
                      * 获取地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Address 地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetAddress() const;
 
                     /**
                      * 设置地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _address 地址
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetAddress(const std::string& _address);
@@ -73,18 +69,14 @@ namespace TencentCloud
 
                     /**
                      * 获取协议
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Protocol 协议
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置协议
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param _protocol 协议
-注意：此字段可能返回 null，表示取不到有效值。
                      * 
                      */
                     void SetProtocol(const std::string& _protocol);
@@ -100,14 +92,12 @@ namespace TencentCloud
 
                     /**
                      * 地址
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_address;
                     bool m_addressHasBeenSet;
 
                     /**
                      * 协议
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;

@@ -407,18 +407,24 @@
 #include <tencentcloud/wedata/v20210820/model/GetCosTokenResponse.h>
 #include <tencentcloud/wedata/v20210820/model/GetFileInfoRequest.h>
 #include <tencentcloud/wedata/v20210820/model/GetFileInfoResponse.h>
+#include <tencentcloud/wedata/v20210820/model/GetInstanceLogRequest.h>
+#include <tencentcloud/wedata/v20210820/model/GetInstanceLogResponse.h>
 #include <tencentcloud/wedata/v20210820/model/GetIntegrationNodeColumnSchemaRequest.h>
 #include <tencentcloud/wedata/v20210820/model/GetIntegrationNodeColumnSchemaResponse.h>
 #include <tencentcloud/wedata/v20210820/model/GetOfflineDIInstanceListRequest.h>
 #include <tencentcloud/wedata/v20210820/model/GetOfflineDIInstanceListResponse.h>
 #include <tencentcloud/wedata/v20210820/model/GetOfflineInstanceListRequest.h>
 #include <tencentcloud/wedata/v20210820/model/GetOfflineInstanceListResponse.h>
+#include <tencentcloud/wedata/v20210820/model/GetTaskInstanceRequest.h>
+#include <tencentcloud/wedata/v20210820/model/GetTaskInstanceResponse.h>
 #include <tencentcloud/wedata/v20210820/model/JudgeResourceFileRequest.h>
 #include <tencentcloud/wedata/v20210820/model/JudgeResourceFileResponse.h>
 #include <tencentcloud/wedata/v20210820/model/KillOpsMakePlanInstancesRequest.h>
 #include <tencentcloud/wedata/v20210820/model/KillOpsMakePlanInstancesResponse.h>
 #include <tencentcloud/wedata/v20210820/model/KillScheduleInstancesRequest.h>
 #include <tencentcloud/wedata/v20210820/model/KillScheduleInstancesResponse.h>
+#include <tencentcloud/wedata/v20210820/model/ListInstancesRequest.h>
+#include <tencentcloud/wedata/v20210820/model/ListInstancesResponse.h>
 #include <tencentcloud/wedata/v20210820/model/LockIntegrationTaskRequest.h>
 #include <tencentcloud/wedata/v20210820/model/LockIntegrationTaskResponse.h>
 #include <tencentcloud/wedata/v20210820/model/ModifyApproveStatusRequest.h>
@@ -1107,6 +1113,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetFileInfoResponse> GetFileInfoOutcome;
                 typedef std::future<GetFileInfoOutcome> GetFileInfoOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::GetFileInfoRequest&, GetFileInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetFileInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetInstanceLogResponse> GetInstanceLogOutcome;
+                typedef std::future<GetInstanceLogOutcome> GetInstanceLogOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::GetInstanceLogRequest&, GetInstanceLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetInstanceLogAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetIntegrationNodeColumnSchemaResponse> GetIntegrationNodeColumnSchemaOutcome;
                 typedef std::future<GetIntegrationNodeColumnSchemaOutcome> GetIntegrationNodeColumnSchemaOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::GetIntegrationNodeColumnSchemaRequest&, GetIntegrationNodeColumnSchemaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetIntegrationNodeColumnSchemaAsyncHandler;
@@ -1116,6 +1125,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetOfflineInstanceListResponse> GetOfflineInstanceListOutcome;
                 typedef std::future<GetOfflineInstanceListOutcome> GetOfflineInstanceListOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::GetOfflineInstanceListRequest&, GetOfflineInstanceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetOfflineInstanceListAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetTaskInstanceResponse> GetTaskInstanceOutcome;
+                typedef std::future<GetTaskInstanceOutcome> GetTaskInstanceOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::GetTaskInstanceRequest&, GetTaskInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTaskInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::JudgeResourceFileResponse> JudgeResourceFileOutcome;
                 typedef std::future<JudgeResourceFileOutcome> JudgeResourceFileOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::JudgeResourceFileRequest&, JudgeResourceFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> JudgeResourceFileAsyncHandler;
@@ -1125,6 +1137,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::KillScheduleInstancesResponse> KillScheduleInstancesOutcome;
                 typedef std::future<KillScheduleInstancesOutcome> KillScheduleInstancesOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::KillScheduleInstancesRequest&, KillScheduleInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> KillScheduleInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ListInstancesResponse> ListInstancesOutcome;
+                typedef std::future<ListInstancesOutcome> ListInstancesOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::ListInstancesRequest&, ListInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::LockIntegrationTaskResponse> LockIntegrationTaskOutcome;
                 typedef std::future<LockIntegrationTaskOutcome> LockIntegrationTaskOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::LockIntegrationTaskRequest&, LockIntegrationTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> LockIntegrationTaskAsyncHandler;
@@ -3013,6 +3028,15 @@ https://capi.woa.com/api/detail?product=wedata&env=api_formal&version=2021-08-20
                 GetFileInfoOutcomeCallable GetFileInfoCallable(const Model::GetFileInfoRequest& request);
 
                 /**
+                 *获取实例列表
+                 * @param req GetInstanceLogRequest
+                 * @return GetInstanceLogOutcome
+                 */
+                GetInstanceLogOutcome GetInstanceLog(const Model::GetInstanceLogRequest &request);
+                void GetInstanceLogAsync(const Model::GetInstanceLogRequest& request, const GetInstanceLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetInstanceLogOutcomeCallable GetInstanceLogCallable(const Model::GetInstanceLogRequest& request);
+
+                /**
                  *提取数据集成节点字段Schema
                  * @param req GetIntegrationNodeColumnSchemaRequest
                  * @return GetIntegrationNodeColumnSchemaOutcome
@@ -3040,6 +3064,15 @@ https://capi.woa.com/api/detail?product=wedata&env=api_formal&version=2021-08-20
                 GetOfflineInstanceListOutcomeCallable GetOfflineInstanceListCallable(const Model::GetOfflineInstanceListRequest& request);
 
                 /**
+                 *获取实例列表
+                 * @param req GetTaskInstanceRequest
+                 * @return GetTaskInstanceOutcome
+                 */
+                GetTaskInstanceOutcome GetTaskInstance(const Model::GetTaskInstanceRequest &request);
+                void GetTaskInstanceAsync(const Model::GetTaskInstanceRequest& request, const GetTaskInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetTaskInstanceOutcomeCallable GetTaskInstanceCallable(const Model::GetTaskInstanceRequest& request);
+
+                /**
                  *资源管理-判断资源文件是否存在
                  * @param req JudgeResourceFileRequest
                  * @return JudgeResourceFileOutcome
@@ -3065,6 +3098,15 @@ https://capi.woa.com/api/detail?product=wedata&env=api_formal&version=2021-08-20
                 KillScheduleInstancesOutcome KillScheduleInstances(const Model::KillScheduleInstancesRequest &request);
                 void KillScheduleInstancesAsync(const Model::KillScheduleInstancesRequest& request, const KillScheduleInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 KillScheduleInstancesOutcomeCallable KillScheduleInstancesCallable(const Model::KillScheduleInstancesRequest& request);
+
+                /**
+                 *获取实例列表
+                 * @param req ListInstancesRequest
+                 * @return ListInstancesOutcome
+                 */
+                ListInstancesOutcome ListInstances(const Model::ListInstancesRequest &request);
+                void ListInstancesAsync(const Model::ListInstancesRequest& request, const ListInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ListInstancesOutcomeCallable ListInstancesCallable(const Model::ListInstancesRequest& request);
 
                 /**
                  *锁定集成任务

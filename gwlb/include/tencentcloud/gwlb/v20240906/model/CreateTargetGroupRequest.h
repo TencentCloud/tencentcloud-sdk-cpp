@@ -67,15 +67,15 @@ namespace TencentCloud
                     bool TargetGroupNameHasBeenSet() const;
 
                     /**
-                     * 获取目标组的vpcid属性，不填则使用默认vpc
-                     * @return VpcId 目标组的vpcid属性，不填则使用默认vpc
+                     * 获取网关负载均衡后端目标组所属的网络 ID，如vpc-12345678，可以通过 [DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)  接口获取。 不填此参数则默认为DefaultVPC。
+                     * @return VpcId 网关负载均衡后端目标组所属的网络 ID，如vpc-12345678，可以通过 [DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)  接口获取。 不填此参数则默认为DefaultVPC。
                      * 
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置目标组的vpcid属性，不填则使用默认vpc
-                     * @param _vpcId 目标组的vpcid属性，不填则使用默认vpc
+                     * 设置网关负载均衡后端目标组所属的网络 ID，如vpc-12345678，可以通过 [DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)  接口获取。 不填此参数则默认为DefaultVPC。
+                     * @param _vpcId 网关负载均衡后端目标组所属的网络 ID，如vpc-12345678，可以通过 [DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)  接口获取。 不填此参数则默认为DefaultVPC。
                      * 
                      */
                     void SetVpcId(const std::string& _vpcId);
@@ -255,7 +255,7 @@ namespace TencentCloud
                     bool m_targetGroupNameHasBeenSet;
 
                     /**
-                     * 目标组的vpcid属性，不填则使用默认vpc
+                     * 网关负载均衡后端目标组所属的网络 ID，如vpc-12345678，可以通过 [DescribeVpcs](https://cloud.tencent.com/document/product/215/15778)  接口获取。 不填此参数则默认为DefaultVPC。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;

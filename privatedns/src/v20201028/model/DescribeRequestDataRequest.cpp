@@ -25,7 +25,8 @@ using namespace std;
 DescribeRequestDataRequest::DescribeRequestDataRequest() :
     m_timeRangeBeginHasBeenSet(false),
     m_filtersHasBeenSet(false),
-    m_timeRangeEndHasBeenSet(false)
+    m_timeRangeEndHasBeenSet(false),
+    m_exportHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,14 @@ string DescribeRequestDataRequest::ToJsonString() const
         string key = "TimeRangeEnd";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_timeRangeEnd.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_exportHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Export";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_export, allocator);
     }
 
 
@@ -121,6 +130,22 @@ void DescribeRequestDataRequest::SetTimeRangeEnd(const string& _timeRangeEnd)
 bool DescribeRequestDataRequest::TimeRangeEndHasBeenSet() const
 {
     return m_timeRangeEndHasBeenSet;
+}
+
+bool DescribeRequestDataRequest::GetExport() const
+{
+    return m_export;
+}
+
+void DescribeRequestDataRequest::SetExport(const bool& _export)
+{
+    m_export = _export;
+    m_exportHasBeenSet = true;
+}
+
+bool DescribeRequestDataRequest::ExportHasBeenSet() const
+{
+    return m_exportHasBeenSet;
 }
 
 

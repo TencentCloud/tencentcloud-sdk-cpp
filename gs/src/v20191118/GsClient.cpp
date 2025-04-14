@@ -169,6 +169,92 @@ GsClient::CopyAndroidInstanceOutcomeCallable GsClient::CopyAndroidInstanceCallab
     return task->get_future();
 }
 
+GsClient::CreateAndroidAppOutcome GsClient::CreateAndroidApp(const CreateAndroidAppRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAndroidApp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAndroidAppResponse rsp = CreateAndroidAppResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAndroidAppOutcome(rsp);
+        else
+            return CreateAndroidAppOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAndroidAppOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::CreateAndroidAppAsync(const CreateAndroidAppRequest& request, const CreateAndroidAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAndroidApp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::CreateAndroidAppOutcomeCallable GsClient::CreateAndroidAppCallable(const CreateAndroidAppRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAndroidAppOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAndroidApp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GsClient::CreateAndroidAppVersionOutcome GsClient::CreateAndroidAppVersion(const CreateAndroidAppVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAndroidAppVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAndroidAppVersionResponse rsp = CreateAndroidAppVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAndroidAppVersionOutcome(rsp);
+        else
+            return CreateAndroidAppVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAndroidAppVersionOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::CreateAndroidAppVersionAsync(const CreateAndroidAppVersionRequest& request, const CreateAndroidAppVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAndroidAppVersion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::CreateAndroidAppVersionOutcomeCallable GsClient::CreateAndroidAppVersionCallable(const CreateAndroidAppVersionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAndroidAppVersionOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAndroidAppVersion(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GsClient::CreateAndroidInstanceImageOutcome GsClient::CreateAndroidInstanceImage(const CreateAndroidInstanceImageRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAndroidInstanceImage");
@@ -427,6 +513,49 @@ GsClient::CreateAndroidInstancesScreenshotOutcomeCallable GsClient::CreateAndroi
     return task->get_future();
 }
 
+GsClient::CreateCosCredentialOutcome GsClient::CreateCosCredential(const CreateCosCredentialRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCosCredential");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCosCredentialResponse rsp = CreateCosCredentialResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCosCredentialOutcome(rsp);
+        else
+            return CreateCosCredentialOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCosCredentialOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::CreateCosCredentialAsync(const CreateCosCredentialRequest& request, const CreateCosCredentialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCosCredential(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::CreateCosCredentialOutcomeCallable GsClient::CreateCosCredentialCallable(const CreateCosCredentialRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCosCredentialOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCosCredential(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GsClient::CreateSessionOutcome GsClient::CreateSession(const CreateSessionRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateSession");
@@ -463,6 +592,92 @@ GsClient::CreateSessionOutcomeCallable GsClient::CreateSessionCallable(const Cre
         [this, request]()
         {
             return this->CreateSession(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GsClient::DeleteAndroidAppOutcome GsClient::DeleteAndroidApp(const DeleteAndroidAppRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAndroidApp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAndroidAppResponse rsp = DeleteAndroidAppResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAndroidAppOutcome(rsp);
+        else
+            return DeleteAndroidAppOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAndroidAppOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::DeleteAndroidAppAsync(const DeleteAndroidAppRequest& request, const DeleteAndroidAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteAndroidApp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::DeleteAndroidAppOutcomeCallable GsClient::DeleteAndroidAppCallable(const DeleteAndroidAppRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteAndroidAppOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteAndroidApp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GsClient::DeleteAndroidAppVersionOutcome GsClient::DeleteAndroidAppVersion(const DeleteAndroidAppVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAndroidAppVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAndroidAppVersionResponse rsp = DeleteAndroidAppVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAndroidAppVersionOutcome(rsp);
+        else
+            return DeleteAndroidAppVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAndroidAppVersionOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::DeleteAndroidAppVersionAsync(const DeleteAndroidAppVersionRequest& request, const DeleteAndroidAppVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteAndroidAppVersion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::DeleteAndroidAppVersionOutcomeCallable GsClient::DeleteAndroidAppVersionCallable(const DeleteAndroidAppVersionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteAndroidAppVersionOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteAndroidAppVersion(request);
         }
     );
 
@@ -979,6 +1194,49 @@ GsClient::InstallAndroidInstancesAppOutcomeCallable GsClient::InstallAndroidInst
         [this, request]()
         {
             return this->InstallAndroidInstancesApp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GsClient::ModifyAndroidAppOutcome GsClient::ModifyAndroidApp(const ModifyAndroidAppRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAndroidApp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAndroidAppResponse rsp = ModifyAndroidAppResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAndroidAppOutcome(rsp);
+        else
+            return ModifyAndroidAppOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAndroidAppOutcome(outcome.GetError());
+    }
+}
+
+void GsClient::ModifyAndroidAppAsync(const ModifyAndroidAppRequest& request, const ModifyAndroidAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAndroidApp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GsClient::ModifyAndroidAppOutcomeCallable GsClient::ModifyAndroidAppCallable(const ModifyAndroidAppRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAndroidAppOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAndroidApp(request);
         }
     );
 

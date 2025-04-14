@@ -35,6 +35,8 @@
 #include <tencentcloud/bh/v20230418/model/BindDeviceAccountPrivateKeyResponse.h>
 #include <tencentcloud/bh/v20230418/model/BindDeviceResourceRequest.h>
 #include <tencentcloud/bh/v20230418/model/BindDeviceResourceResponse.h>
+#include <tencentcloud/bh/v20230418/model/CreateAccessWhiteListRuleRequest.h>
+#include <tencentcloud/bh/v20230418/model/CreateAccessWhiteListRuleResponse.h>
 #include <tencentcloud/bh/v20230418/model/CreateAclRequest.h>
 #include <tencentcloud/bh/v20230418/model/CreateAclResponse.h>
 #include <tencentcloud/bh/v20230418/model/CreateAssetSyncJobRequest.h>
@@ -55,6 +57,8 @@
 #include <tencentcloud/bh/v20230418/model/CreateUserResponse.h>
 #include <tencentcloud/bh/v20230418/model/CreateUserGroupRequest.h>
 #include <tencentcloud/bh/v20230418/model/CreateUserGroupResponse.h>
+#include <tencentcloud/bh/v20230418/model/DeleteAccessWhiteListRulesRequest.h>
+#include <tencentcloud/bh/v20230418/model/DeleteAccessWhiteListRulesResponse.h>
 #include <tencentcloud/bh/v20230418/model/DeleteAclsRequest.h>
 #include <tencentcloud/bh/v20230418/model/DeleteAclsResponse.h>
 #include <tencentcloud/bh/v20230418/model/DeleteChangePwdTaskRequest.h>
@@ -79,6 +83,8 @@
 #include <tencentcloud/bh/v20230418/model/DeleteUsersResponse.h>
 #include <tencentcloud/bh/v20230418/model/DeployResourceRequest.h>
 #include <tencentcloud/bh/v20230418/model/DeployResourceResponse.h>
+#include <tencentcloud/bh/v20230418/model/DescribeAccessWhiteListRulesRequest.h>
+#include <tencentcloud/bh/v20230418/model/DescribeAccessWhiteListRulesResponse.h>
 #include <tencentcloud/bh/v20230418/model/DescribeAclsRequest.h>
 #include <tencentcloud/bh/v20230418/model/DescribeAclsResponse.h>
 #include <tencentcloud/bh/v20230418/model/DescribeAssetSyncStatusRequest.h>
@@ -159,6 +165,8 @@
 #include <tencentcloud/bh/v20230418/model/SearchSessionResponse.h>
 #include <tencentcloud/bh/v20230418/model/SearchSessionCommandRequest.h>
 #include <tencentcloud/bh/v20230418/model/SearchSessionCommandResponse.h>
+#include <tencentcloud/bh/v20230418/model/SearchTaskResultRequest.h>
+#include <tencentcloud/bh/v20230418/model/SearchTaskResultResponse.h>
 
 
 namespace TencentCloud
@@ -191,6 +199,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::BindDeviceResourceResponse> BindDeviceResourceOutcome;
                 typedef std::future<BindDeviceResourceOutcome> BindDeviceResourceOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::BindDeviceResourceRequest&, BindDeviceResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindDeviceResourceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAccessWhiteListRuleResponse> CreateAccessWhiteListRuleOutcome;
+                typedef std::future<CreateAccessWhiteListRuleOutcome> CreateAccessWhiteListRuleOutcomeCallable;
+                typedef std::function<void(const BhClient*, const Model::CreateAccessWhiteListRuleRequest&, CreateAccessWhiteListRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAccessWhiteListRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAclResponse> CreateAclOutcome;
                 typedef std::future<CreateAclOutcome> CreateAclOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::CreateAclRequest&, CreateAclOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAclAsyncHandler;
@@ -221,6 +232,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateUserGroupResponse> CreateUserGroupOutcome;
                 typedef std::future<CreateUserGroupOutcome> CreateUserGroupOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::CreateUserGroupRequest&, CreateUserGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAccessWhiteListRulesResponse> DeleteAccessWhiteListRulesOutcome;
+                typedef std::future<DeleteAccessWhiteListRulesOutcome> DeleteAccessWhiteListRulesOutcomeCallable;
+                typedef std::function<void(const BhClient*, const Model::DeleteAccessWhiteListRulesRequest&, DeleteAccessWhiteListRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAccessWhiteListRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteAclsResponse> DeleteAclsOutcome;
                 typedef std::future<DeleteAclsOutcome> DeleteAclsOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::DeleteAclsRequest&, DeleteAclsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAclsAsyncHandler;
@@ -257,6 +271,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeployResourceResponse> DeployResourceOutcome;
                 typedef std::future<DeployResourceOutcome> DeployResourceOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::DeployResourceRequest&, DeployResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeployResourceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAccessWhiteListRulesResponse> DescribeAccessWhiteListRulesOutcome;
+                typedef std::future<DescribeAccessWhiteListRulesOutcome> DescribeAccessWhiteListRulesOutcomeCallable;
+                typedef std::function<void(const BhClient*, const Model::DescribeAccessWhiteListRulesRequest&, DescribeAccessWhiteListRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccessWhiteListRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAclsResponse> DescribeAclsOutcome;
                 typedef std::future<DescribeAclsOutcome> DescribeAclsOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::DescribeAclsRequest&, DescribeAclsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAclsAsyncHandler;
@@ -377,6 +394,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SearchSessionCommandResponse> SearchSessionCommandOutcome;
                 typedef std::future<SearchSessionCommandOutcome> SearchSessionCommandOutcomeCallable;
                 typedef std::function<void(const BhClient*, const Model::SearchSessionCommandRequest&, SearchSessionCommandOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchSessionCommandAsyncHandler;
+                typedef Outcome<Core::Error, Model::SearchTaskResultResponse> SearchTaskResultOutcome;
+                typedef std::future<SearchTaskResultOutcome> SearchTaskResultOutcomeCallable;
+                typedef std::function<void(const BhClient*, const Model::SearchTaskResultRequest&, SearchTaskResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchTaskResultAsyncHandler;
 
 
 
@@ -433,6 +453,15 @@ namespace TencentCloud
                 BindDeviceResourceOutcome BindDeviceResource(const Model::BindDeviceResourceRequest &request);
                 void BindDeviceResourceAsync(const Model::BindDeviceResourceRequest& request, const BindDeviceResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 BindDeviceResourceOutcomeCallable BindDeviceResourceCallable(const Model::BindDeviceResourceRequest& request);
+
+                /**
+                 *添加访问白名单规则
+                 * @param req CreateAccessWhiteListRuleRequest
+                 * @return CreateAccessWhiteListRuleOutcome
+                 */
+                CreateAccessWhiteListRuleOutcome CreateAccessWhiteListRule(const Model::CreateAccessWhiteListRuleRequest &request);
+                void CreateAccessWhiteListRuleAsync(const Model::CreateAccessWhiteListRuleRequest& request, const CreateAccessWhiteListRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAccessWhiteListRuleOutcomeCallable CreateAccessWhiteListRuleCallable(const Model::CreateAccessWhiteListRuleRequest& request);
 
                 /**
                  *新建访问权限
@@ -523,6 +552,15 @@ namespace TencentCloud
                 CreateUserGroupOutcome CreateUserGroup(const Model::CreateUserGroupRequest &request);
                 void CreateUserGroupAsync(const Model::CreateUserGroupRequest& request, const CreateUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateUserGroupOutcomeCallable CreateUserGroupCallable(const Model::CreateUserGroupRequest& request);
+
+                /**
+                 *删除访问白名单规则
+                 * @param req DeleteAccessWhiteListRulesRequest
+                 * @return DeleteAccessWhiteListRulesOutcome
+                 */
+                DeleteAccessWhiteListRulesOutcome DeleteAccessWhiteListRules(const Model::DeleteAccessWhiteListRulesRequest &request);
+                void DeleteAccessWhiteListRulesAsync(const Model::DeleteAccessWhiteListRulesRequest& request, const DeleteAccessWhiteListRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAccessWhiteListRulesOutcomeCallable DeleteAccessWhiteListRulesCallable(const Model::DeleteAccessWhiteListRulesRequest& request);
 
                 /**
                  *删除访问权限
@@ -631,6 +669,15 @@ namespace TencentCloud
                 DeployResourceOutcome DeployResource(const Model::DeployResourceRequest &request);
                 void DeployResourceAsync(const Model::DeployResourceRequest& request, const DeployResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeployResourceOutcomeCallable DeployResourceCallable(const Model::DeployResourceRequest& request);
+
+                /**
+                 *查询访问白名单规则列表
+                 * @param req DescribeAccessWhiteListRulesRequest
+                 * @return DescribeAccessWhiteListRulesOutcome
+                 */
+                DescribeAccessWhiteListRulesOutcome DescribeAccessWhiteListRules(const Model::DescribeAccessWhiteListRulesRequest &request);
+                void DescribeAccessWhiteListRulesAsync(const Model::DescribeAccessWhiteListRulesRequest& request, const DescribeAccessWhiteListRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAccessWhiteListRulesOutcomeCallable DescribeAccessWhiteListRulesCallable(const Model::DescribeAccessWhiteListRulesRequest& request);
 
                 /**
                  *查询访问权限列表
@@ -991,6 +1038,15 @@ namespace TencentCloud
                 SearchSessionCommandOutcome SearchSessionCommand(const Model::SearchSessionCommandRequest &request);
                 void SearchSessionCommandAsync(const Model::SearchSessionCommandRequest& request, const SearchSessionCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SearchSessionCommandOutcomeCallable SearchSessionCommandCallable(const Model::SearchSessionCommandRequest& request);
+
+                /**
+                 *搜索运维任务执行结果
+                 * @param req SearchTaskResultRequest
+                 * @return SearchTaskResultOutcome
+                 */
+                SearchTaskResultOutcome SearchTaskResult(const Model::SearchTaskResultRequest &request);
+                void SearchTaskResultAsync(const Model::SearchTaskResultRequest& request, const SearchTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SearchTaskResultOutcomeCallable SearchTaskResultCallable(const Model::SearchTaskResultRequest& request);
 
             };
         }

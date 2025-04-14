@@ -404,6 +404,27 @@ namespace TencentCloud
                      */
                     bool DbModeHasBeenSet() const;
 
+                    /**
+                     * 获取节点列表
+                     * @return NodeList 节点列表
+                     * 
+                     */
+                    std::vector<std::string> GetNodeList() const;
+
+                    /**
+                     * 设置节点列表
+                     * @param _nodeList 节点列表
+                     * 
+                     */
+                    void SetNodeList(const std::vector<std::string>& _nodeList);
+
+                    /**
+                     * 判断参数 NodeList 是否已赋值
+                     * @return NodeList 是否已赋值
+                     * 
+                     */
+                    bool NodeListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -507,6 +528,12 @@ namespace TencentCloud
                      */
                     std::string m_dbMode;
                     bool m_dbModeHasBeenSet;
+
+                    /**
+                     * 节点列表
+                     */
+                    std::vector<std::string> m_nodeList;
+                    bool m_nodeListHasBeenSet;
 
                 };
             }

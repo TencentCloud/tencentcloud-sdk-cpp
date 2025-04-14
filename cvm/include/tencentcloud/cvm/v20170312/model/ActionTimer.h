@@ -90,15 +90,15 @@ namespace TencentCloud
                     bool ActionTimeHasBeenSet() const;
 
                     /**
-                     * 获取扩展数据
-                     * @return Externals 扩展数据
+                     * 获取扩展数据。仅做出参使用。
+                     * @return Externals 扩展数据。仅做出参使用。
                      * 
                      */
                     Externals GetExternals() const;
 
                     /**
-                     * 设置扩展数据
-                     * @param _externals 扩展数据
+                     * 设置扩展数据。仅做出参使用。
+                     * @param _externals 扩展数据。仅做出参使用。
                      * 
                      */
                     void SetExternals(const Externals& _externals);
@@ -111,15 +111,15 @@ namespace TencentCloud
                     bool ExternalsHasBeenSet() const;
 
                     /**
-                     * 获取定时器ID。
-                     * @return ActionTimerId 定时器ID。
+                     * 获取定时器ID。仅做出参使用。
+                     * @return ActionTimerId 定时器ID。仅做出参使用。
                      * 
                      */
                     std::string GetActionTimerId() const;
 
                     /**
-                     * 设置定时器ID。
-                     * @param _actionTimerId 定时器ID。
+                     * 设置定时器ID。仅做出参使用。
+                     * @param _actionTimerId 定时器ID。仅做出参使用。
                      * 
                      */
                     void SetActionTimerId(const std::string& _actionTimerId);
@@ -132,35 +132,15 @@ namespace TencentCloud
                     bool ActionTimerIdHasBeenSet() const;
 
                     /**
-                     * 获取定时器状态，取值范围：
-
-UNDO：未触发
-DOING：触发中
-DONE：已经触发
-
-                     * @return Status 定时器状态，取值范围：
-
-UNDO：未触发
-DOING：触发中
-DONE：已经触发
-
+                     * 获取定时器状态，仅做出参使用。取值范围：<br><li>UNDO：未执行</li> <li>DOING：正在执行</li><li>DONE：执行完成。</li>
+                     * @return Status 定时器状态，仅做出参使用。取值范围：<br><li>UNDO：未执行</li> <li>DOING：正在执行</li><li>DONE：执行完成。</li>
                      * 
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置定时器状态，取值范围：
-
-UNDO：未触发
-DOING：触发中
-DONE：已经触发
-
-                     * @param _status 定时器状态，取值范围：
-
-UNDO：未触发
-DOING：触发中
-DONE：已经触发
-
+                     * 设置定时器状态，仅做出参使用。取值范围：<br><li>UNDO：未执行</li> <li>DOING：正在执行</li><li>DONE：执行完成。</li>
+                     * @param _status 定时器状态，仅做出参使用。取值范围：<br><li>UNDO：未执行</li> <li>DOING：正在执行</li><li>DONE：执行完成。</li>
                      * 
                      */
                     void SetStatus(const std::string& _status);
@@ -173,15 +153,15 @@ DONE：已经触发
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取定时器对应的实例ID。
-                     * @return InstanceId 定时器对应的实例ID。
+                     * 获取定时器对应的实例ID。仅做出参使用。
+                     * @return InstanceId 定时器对应的实例ID。仅做出参使用。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置定时器对应的实例ID。
-                     * @param _instanceId 定时器对应的实例ID。
+                     * 设置定时器对应的实例ID。仅做出参使用。
+                     * @param _instanceId 定时器对应的实例ID。仅做出参使用。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -208,30 +188,25 @@ DONE：已经触发
                     bool m_actionTimeHasBeenSet;
 
                     /**
-                     * 扩展数据
+                     * 扩展数据。仅做出参使用。
                      */
                     Externals m_externals;
                     bool m_externalsHasBeenSet;
 
                     /**
-                     * 定时器ID。
+                     * 定时器ID。仅做出参使用。
                      */
                     std::string m_actionTimerId;
                     bool m_actionTimerIdHasBeenSet;
 
                     /**
-                     * 定时器状态，取值范围：
-
-UNDO：未触发
-DOING：触发中
-DONE：已经触发
-
+                     * 定时器状态，仅做出参使用。取值范围：<br><li>UNDO：未执行</li> <li>DOING：正在执行</li><li>DONE：执行完成。</li>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 定时器对应的实例ID。
+                     * 定时器对应的实例ID。仅做出参使用。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

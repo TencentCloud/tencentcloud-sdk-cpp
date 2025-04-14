@@ -174,15 +174,15 @@ namespace TencentCloud
                     bool LaunchTemplateVersionDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取创建者。
-                     * @return CreatedBy 创建者。
+                     * 获取创建者的AppId。
+                     * @return CreatedBy 创建者的AppId。
                      * 
                      */
                     std::string GetCreatedBy() const;
 
                     /**
-                     * 设置创建者。
-                     * @param _createdBy 创建者。
+                     * 设置创建者的AppId。
+                     * @param _createdBy 创建者的AppId。
                      * 
                      */
                     void SetCreatedBy(const std::string& _createdBy);
@@ -233,7 +233,7 @@ namespace TencentCloud
                     bool m_launchTemplateVersionDescriptionHasBeenSet;
 
                     /**
-                     * 创建者。
+                     * 创建者的AppId。
                      */
                     std::string m_createdBy;
                     bool m_createdByHasBeenSet;

@@ -58,8 +58,12 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取导出镜像的COS文件名列表
-                     * @return CosPaths 导出镜像的COS文件名列表
+                     * 获取导出镜像的COS文件名列表。其中，文件名格式如下。
+* 系统盘：前缀名_镜像ID_system_快照ID.镜像格式
+* 数据盘：前缀名_镜像ID_data_快照ID.镜像格式
+                     * @return CosPaths 导出镜像的COS文件名列表。其中，文件名格式如下。
+* 系统盘：前缀名_镜像ID_system_快照ID.镜像格式
+* 数据盘：前缀名_镜像ID_data_快照ID.镜像格式
                      * 
                      */
                     std::vector<std::string> GetCosPaths() const;
@@ -80,7 +84,9 @@ namespace TencentCloud
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 导出镜像的COS文件名列表
+                     * 导出镜像的COS文件名列表。其中，文件名格式如下。
+* 系统盘：前缀名_镜像ID_system_快照ID.镜像格式
+* 数据盘：前缀名_镜像ID_data_快照ID.镜像格式
                      */
                     std::vector<std::string> m_cosPaths;
                     bool m_cosPathsHasBeenSet;

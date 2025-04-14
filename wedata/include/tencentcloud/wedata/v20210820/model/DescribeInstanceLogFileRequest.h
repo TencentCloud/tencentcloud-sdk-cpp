@@ -275,6 +275,27 @@ namespace TencentCloud
                     bool CurrentLifeRoundHasBeenSet() const;
 
                     /**
+                     * 获取最大生命周期数
+                     * @return MaxLifeRound 最大生命周期数
+                     * 
+                     */
+                    int64_t GetMaxLifeRound() const;
+
+                    /**
+                     * 设置最大生命周期数
+                     * @param _maxLifeRound 最大生命周期数
+                     * 
+                     */
+                    void SetMaxLifeRound(const int64_t& _maxLifeRound);
+
+                    /**
+                     * 判断参数 MaxLifeRound 是否已赋值
+                     * @return MaxLifeRound 是否已赋值
+                     * 
+                     */
+                    bool MaxLifeRoundHasBeenSet() const;
+
+                    /**
                      * 获取当前生命周期重试次数
                      * @return Tries 当前生命周期重试次数
                      * 
@@ -383,6 +404,12 @@ namespace TencentCloud
                      */
                     int64_t m_currentLifeRound;
                     bool m_currentLifeRoundHasBeenSet;
+
+                    /**
+                     * 最大生命周期数
+                     */
+                    int64_t m_maxLifeRound;
+                    bool m_maxLifeRoundHasBeenSet;
 
                     /**
                      * 当前生命周期重试次数

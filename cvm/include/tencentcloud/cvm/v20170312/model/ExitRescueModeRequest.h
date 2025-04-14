@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取退出救援模式的实例id
-                     * @return InstanceId 退出救援模式的实例id
+                     * 获取退出救援模式的实例id。可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口返回值中的`InstanceId`获取。
+                     * @return InstanceId 退出救援模式的实例id。可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口返回值中的`InstanceId`获取。
                      * 
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置退出救援模式的实例id
-                     * @param _instanceId 退出救援模式的实例id
+                     * 设置退出救援模式的实例id。可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口返回值中的`InstanceId`获取。
+                     * @param _instanceId 退出救援模式的实例id。可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口返回值中的`InstanceId`获取。
                      * 
                      */
                     void SetInstanceId(const std::string& _instanceId);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 退出救援模式的实例id
+                     * 退出救援模式的实例id。可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口返回值中的`InstanceId`获取。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

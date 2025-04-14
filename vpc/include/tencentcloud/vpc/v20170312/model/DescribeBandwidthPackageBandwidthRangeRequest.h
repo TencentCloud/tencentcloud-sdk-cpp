@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取带宽包资源ID列表，单次查询上限20。
-                     * @return BandwidthPackageIds 带宽包资源ID列表，单次查询上限20。
+                     * 获取带宽包资源ID列表，单次查询上限20。可以使用[DescribeBandwidthPackages](https://cloud.tencent.com/document/product/215/19209)接口查询BandwidthPackageId。
+                     * @return BandwidthPackageIds 带宽包资源ID列表，单次查询上限20。可以使用[DescribeBandwidthPackages](https://cloud.tencent.com/document/product/215/19209)接口查询BandwidthPackageId。
                      * 
                      */
                     std::vector<std::string> GetBandwidthPackageIds() const;
 
                     /**
-                     * 设置带宽包资源ID列表，单次查询上限20。
-                     * @param _bandwidthPackageIds 带宽包资源ID列表，单次查询上限20。
+                     * 设置带宽包资源ID列表，单次查询上限20。可以使用[DescribeBandwidthPackages](https://cloud.tencent.com/document/product/215/19209)接口查询BandwidthPackageId。
+                     * @param _bandwidthPackageIds 带宽包资源ID列表，单次查询上限20。可以使用[DescribeBandwidthPackages](https://cloud.tencent.com/document/product/215/19209)接口查询BandwidthPackageId。
                      * 
                      */
                     void SetBandwidthPackageIds(const std::vector<std::string>& _bandwidthPackageIds);
@@ -66,7 +66,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 带宽包资源ID列表，单次查询上限20。
+                     * 带宽包资源ID列表，单次查询上限20。可以使用[DescribeBandwidthPackages](https://cloud.tencent.com/document/product/215/19209)接口查询BandwidthPackageId。
                      */
                     std::vector<std::string> m_bandwidthPackageIds;
                     bool m_bandwidthPackageIdsHasBeenSet;

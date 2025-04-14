@@ -109,6 +109,8 @@
 #include <tencentcloud/ckafka/v20190819/model/DescribeConnectResourcesResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeConsumerGroupRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeConsumerGroupResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/DescribeCvmInfoRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/DescribeCvmInfoResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeDatahubGroupOffsetsRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeDatahubGroupOffsetsResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeDatahubTaskRequest.h>
@@ -153,6 +155,8 @@
 #include <tencentcloud/ckafka/v20190819/model/DescribeTopicSubscribeGroupResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeTopicSyncReplicaRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeTopicSyncReplicaResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/DescribeTypeInstancesRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/DescribeTypeInstancesResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeUserRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeUserResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/FetchDatahubMessageByOffsetRequest.h>
@@ -336,6 +340,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeConsumerGroupResponse> DescribeConsumerGroupOutcome;
                 typedef std::future<DescribeConsumerGroupOutcome> DescribeConsumerGroupOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::DescribeConsumerGroupRequest&, DescribeConsumerGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConsumerGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCvmInfoResponse> DescribeCvmInfoOutcome;
+                typedef std::future<DescribeCvmInfoOutcome> DescribeCvmInfoOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::DescribeCvmInfoRequest&, DescribeCvmInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCvmInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDatahubGroupOffsetsResponse> DescribeDatahubGroupOffsetsOutcome;
                 typedef std::future<DescribeDatahubGroupOffsetsOutcome> DescribeDatahubGroupOffsetsOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::DescribeDatahubGroupOffsetsRequest&, DescribeDatahubGroupOffsetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatahubGroupOffsetsAsyncHandler;
@@ -402,6 +409,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTopicSyncReplicaResponse> DescribeTopicSyncReplicaOutcome;
                 typedef std::future<DescribeTopicSyncReplicaOutcome> DescribeTopicSyncReplicaOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::DescribeTopicSyncReplicaRequest&, DescribeTopicSyncReplicaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopicSyncReplicaAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTypeInstancesResponse> DescribeTypeInstancesOutcome;
+                typedef std::future<DescribeTypeInstancesOutcome> DescribeTypeInstancesOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::DescribeTypeInstancesRequest&, DescribeTypeInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTypeInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeUserResponse> DescribeUserOutcome;
                 typedef std::future<DescribeUserOutcome> DescribeUserOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::DescribeUserRequest&, DescribeUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserAsyncHandler;
@@ -853,6 +863,15 @@ namespace TencentCloud
                 DescribeConsumerGroupOutcomeCallable DescribeConsumerGroupCallable(const Model::DescribeConsumerGroupRequest& request);
 
                 /**
+                 *本接口用于获取实例对应后端CVM信息，包括cvmId和ip等。用于专业版，标准版返回数据为空
+                 * @param req DescribeCvmInfoRequest
+                 * @return DescribeCvmInfoOutcome
+                 */
+                DescribeCvmInfoOutcome DescribeCvmInfo(const Model::DescribeCvmInfoRequest &request);
+                void DescribeCvmInfoAsync(const Model::DescribeCvmInfoRequest& request, const DescribeCvmInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCvmInfoOutcomeCallable DescribeCvmInfoCallable(const Model::DescribeCvmInfoRequest& request);
+
+                /**
                  *获取Datahub消费分组offset
                  * @param req DescribeDatahubGroupOffsetsRequest
                  * @return DescribeDatahubGroupOffsetsOutcome
@@ -1050,6 +1069,15 @@ namespace TencentCloud
                 DescribeTopicSyncReplicaOutcome DescribeTopicSyncReplica(const Model::DescribeTopicSyncReplicaRequest &request);
                 void DescribeTopicSyncReplicaAsync(const Model::DescribeTopicSyncReplicaRequest& request, const DescribeTopicSyncReplicaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTopicSyncReplicaOutcomeCallable DescribeTopicSyncReplicaCallable(const Model::DescribeTopicSyncReplicaRequest& request);
+
+                /**
+                 *本接口（DescribeTypeInstances）用于在用户账户下获取指定类型消息队列 CKafka 实例列表
+                 * @param req DescribeTypeInstancesRequest
+                 * @return DescribeTypeInstancesOutcome
+                 */
+                DescribeTypeInstancesOutcome DescribeTypeInstances(const Model::DescribeTypeInstancesRequest &request);
+                void DescribeTypeInstancesAsync(const Model::DescribeTypeInstancesRequest& request, const DescribeTypeInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTypeInstancesOutcomeCallable DescribeTypeInstancesCallable(const Model::DescribeTypeInstancesRequest& request);
 
                 /**
                  *查询用户信息

@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取带宽包限速大小。单位：Mbps。
-                     * @return InternetMaxBandwidth 带宽包限速大小。单位：Mbps。
+                     * 获取带宽包限速大小。单位：Mbps。带宽包计费类型对应的带宽上下限可参考：[BandwidthRange](https://cloud.tencent.com/document/api/215/15824#BandwidthRange) 
+                     * @return InternetMaxBandwidth 带宽包限速大小。单位：Mbps。带宽包计费类型对应的带宽上下限可参考：[BandwidthRange](https://cloud.tencent.com/document/api/215/15824#BandwidthRange) 
                      * 
                      */
                     int64_t GetInternetMaxBandwidth() const;
 
                     /**
-                     * 设置带宽包限速大小。单位：Mbps。
-                     * @param _internetMaxBandwidth 带宽包限速大小。单位：Mbps。
+                     * 设置带宽包限速大小。单位：Mbps。带宽包计费类型对应的带宽上下限可参考：[BandwidthRange](https://cloud.tencent.com/document/api/215/15824#BandwidthRange) 
+                     * @param _internetMaxBandwidth 带宽包限速大小。单位：Mbps。带宽包计费类型对应的带宽上下限可参考：[BandwidthRange](https://cloud.tencent.com/document/api/215/15824#BandwidthRange) 
                      * 
                      */
                     void SetInternetMaxBandwidth(const int64_t& _internetMaxBandwidth);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool InternetMaxBandwidthHasBeenSet() const;
 
                     /**
-                     * 获取共享带宽包ID
-                     * @return BandwidthPackageId 共享带宽包ID
+                     * 获取共享带宽包ID，可以使用[DescribeBandwidthPackages](https://cloud.tencent.com/document/product/215/19209)接口查询BandwidthPackageId。
+                     * @return BandwidthPackageId 共享带宽包ID，可以使用[DescribeBandwidthPackages](https://cloud.tencent.com/document/product/215/19209)接口查询BandwidthPackageId。
                      * 
                      */
                     std::string GetBandwidthPackageId() const;
 
                     /**
-                     * 设置共享带宽包ID
-                     * @param _bandwidthPackageId 共享带宽包ID
+                     * 设置共享带宽包ID，可以使用[DescribeBandwidthPackages](https://cloud.tencent.com/document/product/215/19209)接口查询BandwidthPackageId。
+                     * @param _bandwidthPackageId 共享带宽包ID，可以使用[DescribeBandwidthPackages](https://cloud.tencent.com/document/product/215/19209)接口查询BandwidthPackageId。
                      * 
                      */
                     void SetBandwidthPackageId(const std::string& _bandwidthPackageId);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 带宽包限速大小。单位：Mbps。
+                     * 带宽包限速大小。单位：Mbps。带宽包计费类型对应的带宽上下限可参考：[BandwidthRange](https://cloud.tencent.com/document/api/215/15824#BandwidthRange) 
                      */
                     int64_t m_internetMaxBandwidth;
                     bool m_internetMaxBandwidthHasBeenSet;
 
                     /**
-                     * 共享带宽包ID
+                     * 共享带宽包ID，可以使用[DescribeBandwidthPackages](https://cloud.tencent.com/document/product/215/19209)接口查询BandwidthPackageId。
                      */
                     std::string m_bandwidthPackageId;
                     bool m_bandwidthPackageIdHasBeenSet;

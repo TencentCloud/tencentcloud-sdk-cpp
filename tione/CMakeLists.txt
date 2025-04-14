@@ -217,6 +217,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/DescribeModelAccelerateTaskRequest.h
   include/tencentcloud/tione/v20211111/model/Container.h
   include/tencentcloud/tione/v20211111/model/DeleteDatasetResponse.h
+  include/tencentcloud/tione/v20211111/model/HostPath.h
   include/tencentcloud/tione/v20211111/model/TrainingTaskDetail.h
   include/tencentcloud/tione/v20211111/model/DescribeTrainingTasksResponse.h
   include/tencentcloud/tione/v20211111/model/DescribeNotebookRequest.h
@@ -459,6 +460,7 @@ set(tione_src
   src/v20211111/model/DescribeModelAccelerateTaskRequest.cpp
   src/v20211111/model/Container.cpp
   src/v20211111/model/DeleteDatasetResponse.cpp
+  src/v20211111/model/HostPath.cpp
   src/v20211111/model/TrainingTaskDetail.cpp
   src/v20211111/model/DescribeTrainingTasksResponse.cpp
   src/v20211111/model/DescribeNotebookRequest.cpp

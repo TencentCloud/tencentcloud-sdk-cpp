@@ -37,7 +37,8 @@ ClusterInstanceDetail::ClusterInstanceDetail() :
     m_instanceTasksHasBeenSet(false),
     m_instanceDeviceTypeHasBeenSet(false),
     m_instanceStorageTypeHasBeenSet(false),
-    m_dbModeHasBeenSet(false)
+    m_dbModeHasBeenSet(false),
+    m_nodeListHasBeenSet(false)
 {
 }
 
@@ -229,6 +230,19 @@ CoreInternalOutcome ClusterInstanceDetail::Deserialize(const rapidjson::Value &v
         m_dbModeHasBeenSet = true;
     }
 
+    if (value.HasMember("NodeList") && !value["NodeList"].IsNull())
+    {
+        if (!value["NodeList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ClusterInstanceDetail.NodeList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["NodeList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_nodeList.push_back((*itr).GetString());
+        }
+        m_nodeListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -382,6 +396,19 @@ void ClusterInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "DbMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dbMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_nodeList.begin(); itr != m_nodeList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -657,5 +684,21 @@ void ClusterInstanceDetail::SetDbMode(const string& _dbMode)
 bool ClusterInstanceDetail::DbModeHasBeenSet() const
 {
     return m_dbModeHasBeenSet;
+}
+
+vector<string> ClusterInstanceDetail::GetNodeList() const
+{
+    return m_nodeList;
+}
+
+void ClusterInstanceDetail::SetNodeList(const vector<string>& _nodeList)
+{
+    m_nodeList = _nodeList;
+    m_nodeListHasBeenSet = true;
+}
+
+bool ClusterInstanceDetail::NodeListHasBeenSet() const
+{
+    return m_nodeListHasBeenSet;
 }
 

@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool ActionTimerIdsHasBeenSet() const;
 
                     /**
-                     * 获取按照一个或者多个实例ID查询。
-                     * @return InstanceIds 按照一个或者多个实例ID查询。
+                     * 获取按照一个或者多个实例ID查询。可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口返回值中的`InstanceId`获取。
+                     * @return InstanceIds 按照一个或者多个实例ID查询。可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口返回值中的`InstanceId`获取。
                      * 
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置按照一个或者多个实例ID查询。
-                     * @param _instanceIds 按照一个或者多个实例ID查询。
+                     * 设置按照一个或者多个实例ID查询。可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口返回值中的`InstanceId`获取。
+                     * @param _instanceIds 按照一个或者多个实例ID查询。可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口返回值中的`InstanceId`获取。
                      * 
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
@@ -106,15 +106,15 @@ namespace TencentCloud
                     bool TimerActionHasBeenSet() const;
 
                     /**
-                     * 获取执行时间的结束范围，用于条件筛选，格式如2018-05-01 19:00:00。
-                     * @return EndActionTime 执行时间的结束范围，用于条件筛选，格式如2018-05-01 19:00:00。
+                     * 获取定时任务执行时间的结束范围，用于条件筛选，格式如2018-05-01 19:00:00。
+                     * @return EndActionTime 定时任务执行时间的结束范围，用于条件筛选，格式如2018-05-01 19:00:00。
                      * 
                      */
                     std::string GetEndActionTime() const;
 
                     /**
-                     * 设置执行时间的结束范围，用于条件筛选，格式如2018-05-01 19:00:00。
-                     * @param _endActionTime 执行时间的结束范围，用于条件筛选，格式如2018-05-01 19:00:00。
+                     * 设置定时任务执行时间的结束范围，用于条件筛选，格式如2018-05-01 19:00:00。
+                     * @param _endActionTime 定时任务执行时间的结束范围，用于条件筛选，格式如2018-05-01 19:00:00。
                      * 
                      */
                     void SetEndActionTime(const std::string& _endActionTime);
@@ -127,15 +127,15 @@ namespace TencentCloud
                     bool EndActionTimeHasBeenSet() const;
 
                     /**
-                     * 获取执行时间的开始范围，用于条件筛选，格式如2018-05-01 19:00:00。
-                     * @return StartActionTime 执行时间的开始范围，用于条件筛选，格式如2018-05-01 19:00:00。
+                     * 获取定时任务执行时间的开始范围，用于条件筛选，格式如2018-05-01 19:00:00。
+                     * @return StartActionTime 定时任务执行时间的开始范围，用于条件筛选，格式如2018-05-01 19:00:00。
                      * 
                      */
                     std::string GetStartActionTime() const;
 
                     /**
-                     * 设置执行时间的开始范围，用于条件筛选，格式如2018-05-01 19:00:00。
-                     * @param _startActionTime 执行时间的开始范围，用于条件筛选，格式如2018-05-01 19:00:00。
+                     * 设置定时任务执行时间的开始范围，用于条件筛选，格式如2018-05-01 19:00:00。
+                     * @param _startActionTime 定时任务执行时间的开始范围，用于条件筛选，格式如2018-05-01 19:00:00。
                      * 
                      */
                     void SetStartActionTime(const std::string& _startActionTime);
@@ -148,15 +148,15 @@ namespace TencentCloud
                     bool StartActionTimeHasBeenSet() const;
 
                     /**
-                     * 获取定时任务状态列表。<br><li>UNDO：未执行</li> <br><li>DOING：正在执行</li><br><li>DONE：执行完成。</li>
-                     * @return StatusList 定时任务状态列表。<br><li>UNDO：未执行</li> <br><li>DOING：正在执行</li><br><li>DONE：执行完成。</li>
+                     * 获取定时任务状态列表。<br><li>UNDO：未执行</li> <li>DOING：正在执行</li><li>DONE：执行完成。</li>
+                     * @return StatusList 定时任务状态列表。<br><li>UNDO：未执行</li> <li>DOING：正在执行</li><li>DONE：执行完成。</li>
                      * 
                      */
                     std::vector<std::string> GetStatusList() const;
 
                     /**
-                     * 设置定时任务状态列表。<br><li>UNDO：未执行</li> <br><li>DOING：正在执行</li><br><li>DONE：执行完成。</li>
-                     * @param _statusList 定时任务状态列表。<br><li>UNDO：未执行</li> <br><li>DOING：正在执行</li><br><li>DONE：执行完成。</li>
+                     * 设置定时任务状态列表。<br><li>UNDO：未执行</li> <li>DOING：正在执行</li><li>DONE：执行完成。</li>
+                     * @param _statusList 定时任务状态列表。<br><li>UNDO：未执行</li> <li>DOING：正在执行</li><li>DONE：执行完成。</li>
                      * 
                      */
                     void SetStatusList(const std::vector<std::string>& _statusList);
@@ -177,7 +177,7 @@ namespace TencentCloud
                     bool m_actionTimerIdsHasBeenSet;
 
                     /**
-                     * 按照一个或者多个实例ID查询。
+                     * 按照一个或者多个实例ID查询。可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口返回值中的`InstanceId`获取。
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
@@ -189,19 +189,19 @@ namespace TencentCloud
                     bool m_timerActionHasBeenSet;
 
                     /**
-                     * 执行时间的结束范围，用于条件筛选，格式如2018-05-01 19:00:00。
+                     * 定时任务执行时间的结束范围，用于条件筛选，格式如2018-05-01 19:00:00。
                      */
                     std::string m_endActionTime;
                     bool m_endActionTimeHasBeenSet;
 
                     /**
-                     * 执行时间的开始范围，用于条件筛选，格式如2018-05-01 19:00:00。
+                     * 定时任务执行时间的开始范围，用于条件筛选，格式如2018-05-01 19:00:00。
                      */
                     std::string m_startActionTime;
                     bool m_startActionTimeHasBeenSet;
 
                     /**
-                     * 定时任务状态列表。<br><li>UNDO：未执行</li> <br><li>DOING：正在执行</li><br><li>DONE：执行完成。</li>
+                     * 定时任务状态列表。<br><li>UNDO：未执行</li> <li>DOING：正在执行</li><li>DONE：执行完成。</li>
                      */
                     std::vector<std::string> m_statusList;
                     bool m_statusListHasBeenSet;

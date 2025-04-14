@@ -23,9 +23,9 @@ using namespace TencentCloud::Vpc::V20170312::Model;
 using namespace std;
 
 RemoveBandwidthPackageResourcesRequest::RemoveBandwidthPackageResourcesRequest() :
+    m_resourceIdsHasBeenSet(false),
     m_bandwidthPackageIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceIdsHasBeenSet(false)
+    m_resourceTypeHasBeenSet(false)
 {
 }
 
@@ -35,6 +35,19 @@ string RemoveBandwidthPackageResourcesRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_resourceIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_resourceIds.begin(); itr != m_resourceIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
 
     if (m_bandwidthPackageIdHasBeenSet)
     {
@@ -52,19 +65,6 @@ string RemoveBandwidthPackageResourcesRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_resourceType.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_resourceIdsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ResourceIds";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_resourceIds.begin(); itr != m_resourceIds.end(); ++itr)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
-    }
-
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -72,6 +72,22 @@ string RemoveBandwidthPackageResourcesRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<string> RemoveBandwidthPackageResourcesRequest::GetResourceIds() const
+{
+    return m_resourceIds;
+}
+
+void RemoveBandwidthPackageResourcesRequest::SetResourceIds(const vector<string>& _resourceIds)
+{
+    m_resourceIds = _resourceIds;
+    m_resourceIdsHasBeenSet = true;
+}
+
+bool RemoveBandwidthPackageResourcesRequest::ResourceIdsHasBeenSet() const
+{
+    return m_resourceIdsHasBeenSet;
+}
 
 string RemoveBandwidthPackageResourcesRequest::GetBandwidthPackageId() const
 {
@@ -103,22 +119,6 @@ void RemoveBandwidthPackageResourcesRequest::SetResourceType(const string& _reso
 bool RemoveBandwidthPackageResourcesRequest::ResourceTypeHasBeenSet() const
 {
     return m_resourceTypeHasBeenSet;
-}
-
-vector<string> RemoveBandwidthPackageResourcesRequest::GetResourceIds() const
-{
-    return m_resourceIds;
-}
-
-void RemoveBandwidthPackageResourcesRequest::SetResourceIds(const vector<string>& _resourceIds)
-{
-    m_resourceIds = _resourceIds;
-    m_resourceIdsHasBeenSet = true;
-}
-
-bool RemoveBandwidthPackageResourcesRequest::ResourceIdsHasBeenSet() const
-{
-    return m_resourceIdsHasBeenSet;
 }
 
 

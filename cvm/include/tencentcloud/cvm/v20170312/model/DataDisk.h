@@ -114,39 +114,15 @@ namespace TencentCloud
                     bool DiskIdHasBeenSet() const;
 
                     /**
-                     * 获取数据盘是否随子机销毁。取值范围：
-<li>true：子机销毁时，销毁数据盘，只支持按小时后付费云盘</li>
-<li>
-  false：子机销毁时，保留数据盘<br />
-  默认取值：true<br />
-  该参数目前仅用于 `RunInstances` 接口。
-</li>
-                     * @return DeleteWithInstance 数据盘是否随子机销毁。取值范围：
-<li>true：子机销毁时，销毁数据盘，只支持按小时后付费云盘</li>
-<li>
-  false：子机销毁时，保留数据盘<br />
-  默认取值：true<br />
-  该参数目前仅用于 `RunInstances` 接口。
-</li>
+                     * 获取数据盘是否随子机销毁。取值范围：<li>true：子机销毁时，销毁数据盘，只支持按小时后付费云盘</li><li>false：子机销毁时，保留数据盘</li><br/>默认取值：true <br/>该参数目前仅用于 `RunInstances` 接口。
+                     * @return DeleteWithInstance 数据盘是否随子机销毁。取值范围：<li>true：子机销毁时，销毁数据盘，只支持按小时后付费云盘</li><li>false：子机销毁时，保留数据盘</li><br/>默认取值：true <br/>该参数目前仅用于 `RunInstances` 接口。
                      * 
                      */
                     bool GetDeleteWithInstance() const;
 
                     /**
-                     * 设置数据盘是否随子机销毁。取值范围：
-<li>true：子机销毁时，销毁数据盘，只支持按小时后付费云盘</li>
-<li>
-  false：子机销毁时，保留数据盘<br />
-  默认取值：true<br />
-  该参数目前仅用于 `RunInstances` 接口。
-</li>
-                     * @param _deleteWithInstance 数据盘是否随子机销毁。取值范围：
-<li>true：子机销毁时，销毁数据盘，只支持按小时后付费云盘</li>
-<li>
-  false：子机销毁时，保留数据盘<br />
-  默认取值：true<br />
-  该参数目前仅用于 `RunInstances` 接口。
-</li>
+                     * 设置数据盘是否随子机销毁。取值范围：<li>true：子机销毁时，销毁数据盘，只支持按小时后付费云盘</li><li>false：子机销毁时，保留数据盘</li><br/>默认取值：true <br/>该参数目前仅用于 `RunInstances` 接口。
+                     * @param _deleteWithInstance 数据盘是否随子机销毁。取值范围：<li>true：子机销毁时，销毁数据盘，只支持按小时后付费云盘</li><li>false：子机销毁时，保留数据盘</li><br/>默认取值：true <br/>该参数目前仅用于 `RunInstances` 接口。
                      * 
                      */
                     void SetDeleteWithInstance(const bool& _deleteWithInstance);
@@ -180,39 +156,15 @@ namespace TencentCloud
                     bool SnapshotIdHasBeenSet() const;
 
                     /**
-                     * 获取数据盘是加密。取值范围：
-<li>true：加密</li>
-<li>
-  false：不加密<br />
-  默认取值：false<br />
-  该参数目前仅用于 `RunInstances` 接口。
-</li>
-                     * @return Encrypt 数据盘是加密。取值范围：
-<li>true：加密</li>
-<li>
-  false：不加密<br />
-  默认取值：false<br />
-  该参数目前仅用于 `RunInstances` 接口。
-</li>
+                     * 获取数据盘是否加密。取值范围：<li>true：加密</li><li>false：不加密</li><br/>默认取值：false<br/>该参数目前仅用于 `RunInstances` 接口。
+                     * @return Encrypt 数据盘是否加密。取值范围：<li>true：加密</li><li>false：不加密</li><br/>默认取值：false<br/>该参数目前仅用于 `RunInstances` 接口。
                      * 
                      */
                     bool GetEncrypt() const;
 
                     /**
-                     * 设置数据盘是加密。取值范围：
-<li>true：加密</li>
-<li>
-  false：不加密<br />
-  默认取值：false<br />
-  该参数目前仅用于 `RunInstances` 接口。
-</li>
-                     * @param _encrypt 数据盘是加密。取值范围：
-<li>true：加密</li>
-<li>
-  false：不加密<br />
-  默认取值：false<br />
-  该参数目前仅用于 `RunInstances` 接口。
-</li>
+                     * 设置数据盘是否加密。取值范围：<li>true：加密</li><li>false：不加密</li><br/>默认取值：false<br/>该参数目前仅用于 `RunInstances` 接口。
+                     * @param _encrypt 数据盘是否加密。取值范围：<li>true：加密</li><li>false：不加密</li><br/>默认取值：false<br/>该参数目前仅用于 `RunInstances` 接口。
                      * 
                      */
                     void SetEncrypt(const bool& _encrypt);
@@ -375,13 +327,7 @@ namespace TencentCloud
                     bool m_diskIdHasBeenSet;
 
                     /**
-                     * 数据盘是否随子机销毁。取值范围：
-<li>true：子机销毁时，销毁数据盘，只支持按小时后付费云盘</li>
-<li>
-  false：子机销毁时，保留数据盘<br />
-  默认取值：true<br />
-  该参数目前仅用于 `RunInstances` 接口。
-</li>
+                     * 数据盘是否随子机销毁。取值范围：<li>true：子机销毁时，销毁数据盘，只支持按小时后付费云盘</li><li>false：子机销毁时，保留数据盘</li><br/>默认取值：true <br/>该参数目前仅用于 `RunInstances` 接口。
                      */
                     bool m_deleteWithInstance;
                     bool m_deleteWithInstanceHasBeenSet;
@@ -393,13 +339,7 @@ namespace TencentCloud
                     bool m_snapshotIdHasBeenSet;
 
                     /**
-                     * 数据盘是加密。取值范围：
-<li>true：加密</li>
-<li>
-  false：不加密<br />
-  默认取值：false<br />
-  该参数目前仅用于 `RunInstances` 接口。
-</li>
+                     * 数据盘是否加密。取值范围：<li>true：加密</li><li>false：不加密</li><br/>默认取值：false<br/>该参数目前仅用于 `RunInstances` 接口。
                      */
                     bool m_encrypt;
                     bool m_encryptHasBeenSet;

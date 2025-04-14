@@ -168,15 +168,15 @@ namespace TencentCloud
                     bool IntervalTimeHasBeenSet() const;
 
                     /**
-                     * 获取检测健康阈值。 默认为3秒。 可配置范围：2 - 10次。
-                     * @return HealthNum 检测健康阈值。 默认为3秒。 可配置范围：2 - 10次。
+                     * 获取检测健康阈值。 默认为3次。 可配置范围：2 - 10次。
+                     * @return HealthNum 检测健康阈值。 默认为3次。 可配置范围：2 - 10次。
                      * 
                      */
                     int64_t GetHealthNum() const;
 
                     /**
-                     * 设置检测健康阈值。 默认为3秒。 可配置范围：2 - 10次。
-                     * @param _healthNum 检测健康阈值。 默认为3秒。 可配置范围：2 - 10次。
+                     * 设置检测健康阈值。 默认为3次。 可配置范围：2 - 10次。
+                     * @param _healthNum 检测健康阈值。 默认为3次。 可配置范围：2 - 10次。
                      * 
                      */
                     void SetHealthNum(const int64_t& _healthNum);
@@ -189,15 +189,15 @@ namespace TencentCloud
                     bool HealthNumHasBeenSet() const;
 
                     /**
-                     * 获取检测不健康阈值。 默认为3秒。 可配置范围：2 - 10次。
-                     * @return UnHealthNum 检测不健康阈值。 默认为3秒。 可配置范围：2 - 10次。
+                     * 获取检测不健康阈值。 默认为3次。 可配置范围：2 - 10次。
+                     * @return UnHealthNum 检测不健康阈值。 默认为3次。 可配置范围：2 - 10次。
                      * 
                      */
                     int64_t GetUnHealthNum() const;
 
                     /**
-                     * 设置检测不健康阈值。 默认为3秒。 可配置范围：2 - 10次。
-                     * @param _unHealthNum 检测不健康阈值。 默认为3秒。 可配置范围：2 - 10次。
+                     * 设置检测不健康阈值。 默认为3次。 可配置范围：2 - 10次。
+                     * @param _unHealthNum 检测不健康阈值。 默认为3次。 可配置范围：2 - 10次。
                      * 
                      */
                     void SetUnHealthNum(const int64_t& _unHealthNum);
@@ -246,13 +246,13 @@ namespace TencentCloud
                     bool m_intervalTimeHasBeenSet;
 
                     /**
-                     * 检测健康阈值。 默认为3秒。 可配置范围：2 - 10次。
+                     * 检测健康阈值。 默认为3次。 可配置范围：2 - 10次。
                      */
                     int64_t m_healthNum;
                     bool m_healthNumHasBeenSet;
 
                     /**
-                     * 检测不健康阈值。 默认为3秒。 可配置范围：2 - 10次。
+                     * 检测不健康阈值。 默认为3次。 可配置范围：2 - 10次。
                      */
                     int64_t m_unHealthNum;
                     bool m_unHealthNumHasBeenSet;

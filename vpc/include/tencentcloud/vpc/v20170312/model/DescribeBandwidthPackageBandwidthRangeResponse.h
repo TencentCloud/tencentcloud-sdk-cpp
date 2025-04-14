@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取带宽包带宽上下限详细信息。
-                     * @return BandwidthRangeSet 带宽包带宽上下限详细信息。
+                     * 获取带宽包带宽上下限详细信息。ResourceId：带宽包id、BandwidthLowerLimit：带宽下限、BandwidthUpperLimit：带宽上限。
+                     * @return BandwidthRangeSet 带宽包带宽上下限详细信息。ResourceId：带宽包id、BandwidthLowerLimit：带宽下限、BandwidthUpperLimit：带宽上限。
                      * 
                      */
                     std::vector<BandwidthRange> GetBandwidthRangeSet() const;
@@ -61,7 +61,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 带宽包带宽上下限详细信息。
+                     * 带宽包带宽上下限详细信息。ResourceId：带宽包id、BandwidthLowerLimit：带宽下限、BandwidthUpperLimit：带宽上限。
                      */
                     std::vector<BandwidthRange> m_bandwidthRangeSet;
                     bool m_bandwidthRangeSetHasBeenSet;

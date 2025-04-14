@@ -31,7 +31,8 @@ DataConfig::DataConfig() :
     m_gooseFSSourceHasBeenSet(false),
     m_cFSTurboSourceHasBeenSet(false),
     m_localDiskSourceHasBeenSet(false),
-    m_cBSSourceHasBeenSet(false)
+    m_cBSSourceHasBeenSet(false),
+    m_hostPathSourceHasBeenSet(false)
 {
 }
 
@@ -206,6 +207,23 @@ CoreInternalOutcome DataConfig::Deserialize(const rapidjson::Value &value)
         m_cBSSourceHasBeenSet = true;
     }
 
+    if (value.HasMember("HostPathSource") && !value["HostPathSource"].IsNull())
+    {
+        if (!value["HostPathSource"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataConfig.HostPathSource` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_hostPathSource.Deserialize(value["HostPathSource"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_hostPathSourceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -307,6 +325,15 @@ void DataConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_cBSSource.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_hostPathSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostPathSource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_hostPathSource.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -486,5 +513,21 @@ void DataConfig::SetCBSSource(const CBSConfig& _cBSSource)
 bool DataConfig::CBSSourceHasBeenSet() const
 {
     return m_cBSSourceHasBeenSet;
+}
+
+HostPath DataConfig::GetHostPathSource() const
+{
+    return m_hostPathSource;
+}
+
+void DataConfig::SetHostPathSource(const HostPath& _hostPathSource)
+{
+    m_hostPathSource = _hostPathSource;
+    m_hostPathSourceHasBeenSet = true;
+}
+
+bool DataConfig::HostPathSourceHasBeenSet() const
+{
+    return m_hostPathSourceHasBeenSet;
 }
 

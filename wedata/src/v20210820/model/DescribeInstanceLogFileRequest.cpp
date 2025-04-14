@@ -34,6 +34,7 @@ DescribeInstanceLogFileRequest::DescribeInstanceLogFileRequest() :
     m_executionFileTypeHasBeenSet(false),
     m_instanceLifeDetailDtoListHasBeenSet(false),
     m_currentLifeRoundHasBeenSet(false),
+    m_maxLifeRoundHasBeenSet(false),
     m_triesHasBeenSet(false),
     m_dynamicHasBeenSet(false)
 {
@@ -139,6 +140,14 @@ string DescribeInstanceLogFileRequest::ToJsonString() const
         string key = "CurrentLifeRound";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_currentLifeRound, allocator);
+    }
+
+    if (m_maxLifeRoundHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxLifeRound";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_maxLifeRound, allocator);
     }
 
     if (m_triesHasBeenSet)
@@ -339,6 +348,22 @@ void DescribeInstanceLogFileRequest::SetCurrentLifeRound(const int64_t& _current
 bool DescribeInstanceLogFileRequest::CurrentLifeRoundHasBeenSet() const
 {
     return m_currentLifeRoundHasBeenSet;
+}
+
+int64_t DescribeInstanceLogFileRequest::GetMaxLifeRound() const
+{
+    return m_maxLifeRound;
+}
+
+void DescribeInstanceLogFileRequest::SetMaxLifeRound(const int64_t& _maxLifeRound)
+{
+    m_maxLifeRound = _maxLifeRound;
+    m_maxLifeRoundHasBeenSet = true;
+}
+
+bool DescribeInstanceLogFileRequest::MaxLifeRoundHasBeenSet() const
+{
+    return m_maxLifeRoundHasBeenSet;
 }
 
 int64_t DescribeInstanceLogFileRequest::GetTries() const

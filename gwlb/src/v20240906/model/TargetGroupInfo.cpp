@@ -33,7 +33,8 @@ TargetGroupInfo::TargetGroupInfo() :
     m_healthCheckHasBeenSet(false),
     m_allDeadToAliveHasBeenSet(false),
     m_associatedRuleCountHasBeenSet(false),
-    m_registeredInstancesCountHasBeenSet(false)
+    m_registeredInstancesCountHasBeenSet(false),
+    m_tagHasBeenSet(false)
 {
 }
 
@@ -189,6 +190,26 @@ CoreInternalOutcome TargetGroupInfo::Deserialize(const rapidjson::Value &value)
         m_registeredInstancesCountHasBeenSet = true;
     }
 
+    if (value.HasMember("Tag") && !value["Tag"].IsNull())
+    {
+        if (!value["Tag"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TargetGroupInfo.Tag` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Tag"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TagInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tag.push_back(item);
+        }
+        m_tagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -306,6 +327,21 @@ void TargetGroupInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "RegisteredInstancesCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_registeredInstancesCount, allocator);
+    }
+
+    if (m_tagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tag.begin(); itr != m_tag.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -517,5 +553,21 @@ void TargetGroupInfo::SetRegisteredInstancesCount(const int64_t& _registeredInst
 bool TargetGroupInfo::RegisteredInstancesCountHasBeenSet() const
 {
     return m_registeredInstancesCountHasBeenSet;
+}
+
+vector<TagInfo> TargetGroupInfo::GetTag() const
+{
+    return m_tag;
+}
+
+void TargetGroupInfo::SetTag(const vector<TagInfo>& _tag)
+{
+    m_tag = _tag;
+    m_tagHasBeenSet = true;
+}
+
+bool TargetGroupInfo::TagHasBeenSet() const
+{
+    return m_tagHasBeenSet;
 }
 

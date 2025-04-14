@@ -43,15 +43,36 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取带宽包唯一标识ID，形如'bwp-xxxx'
-                     * @return BandwidthPackageId 带宽包唯一标识ID，形如'bwp-xxxx'
+                     * 获取资源唯一ID，当前支持EIP资源和LB资源，形如'eip-xxxx', 'lb-xxxx'。EIP资源列表可通过[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取，LB资源列表可通过[DescribeLoadBalancers](https://cloud.tencent.com/document/api/214/30685)接口获取。
+                     * @return ResourceIds 资源唯一ID，当前支持EIP资源和LB资源，形如'eip-xxxx', 'lb-xxxx'。EIP资源列表可通过[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取，LB资源列表可通过[DescribeLoadBalancers](https://cloud.tencent.com/document/api/214/30685)接口获取。
+                     * 
+                     */
+                    std::vector<std::string> GetResourceIds() const;
+
+                    /**
+                     * 设置资源唯一ID，当前支持EIP资源和LB资源，形如'eip-xxxx', 'lb-xxxx'。EIP资源列表可通过[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取，LB资源列表可通过[DescribeLoadBalancers](https://cloud.tencent.com/document/api/214/30685)接口获取。
+                     * @param _resourceIds 资源唯一ID，当前支持EIP资源和LB资源，形如'eip-xxxx', 'lb-xxxx'。EIP资源列表可通过[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取，LB资源列表可通过[DescribeLoadBalancers](https://cloud.tencent.com/document/api/214/30685)接口获取。
+                     * 
+                     */
+                    void SetResourceIds(const std::vector<std::string>& _resourceIds);
+
+                    /**
+                     * 判断参数 ResourceIds 是否已赋值
+                     * @return ResourceIds 是否已赋值
+                     * 
+                     */
+                    bool ResourceIdsHasBeenSet() const;
+
+                    /**
+                     * 获取带宽包唯一标识ID，形如'bwp-xxxx'，可以使用[DescribeBandwidthPackages](https://cloud.tencent.com/document/product/215/19209)接口查询BandwidthPackageId。
+                     * @return BandwidthPackageId 带宽包唯一标识ID，形如'bwp-xxxx'，可以使用[DescribeBandwidthPackages](https://cloud.tencent.com/document/product/215/19209)接口查询BandwidthPackageId。
                      * 
                      */
                     std::string GetBandwidthPackageId() const;
 
                     /**
-                     * 设置带宽包唯一标识ID，形如'bwp-xxxx'
-                     * @param _bandwidthPackageId 带宽包唯一标识ID，形如'bwp-xxxx'
+                     * 设置带宽包唯一标识ID，形如'bwp-xxxx'，可以使用[DescribeBandwidthPackages](https://cloud.tencent.com/document/product/215/19209)接口查询BandwidthPackageId。
+                     * @param _bandwidthPackageId 带宽包唯一标识ID，形如'bwp-xxxx'，可以使用[DescribeBandwidthPackages](https://cloud.tencent.com/document/product/215/19209)接口查询BandwidthPackageId。
                      * 
                      */
                     void SetBandwidthPackageId(const std::string& _bandwidthPackageId);
@@ -64,15 +85,23 @@ namespace TencentCloud
                     bool BandwidthPackageIdHasBeenSet() const;
 
                     /**
-                     * 获取资源类型，包括‘Address’, ‘LoadBalance’
-                     * @return ResourceType 资源类型，包括‘Address’, ‘LoadBalance’
+                     * 获取资源类型，可选值：
+<li>Address：弹性公网IP</li>
+<li>LoadBalance：负载均衡</li>
+                     * @return ResourceType 资源类型，可选值：
+<li>Address：弹性公网IP</li>
+<li>LoadBalance：负载均衡</li>
                      * 
                      */
                     std::string GetResourceType() const;
 
                     /**
-                     * 设置资源类型，包括‘Address’, ‘LoadBalance’
-                     * @param _resourceType 资源类型，包括‘Address’, ‘LoadBalance’
+                     * 设置资源类型，可选值：
+<li>Address：弹性公网IP</li>
+<li>LoadBalance：负载均衡</li>
+                     * @param _resourceType 资源类型，可选值：
+<li>Address：弹性公网IP</li>
+<li>LoadBalance：负载均衡</li>
                      * 
                      */
                     void SetResourceType(const std::string& _resourceType);
@@ -84,46 +113,27 @@ namespace TencentCloud
                      */
                     bool ResourceTypeHasBeenSet() const;
 
-                    /**
-                     * 获取资源ID，可支持资源形如'eip-xxxx', 'lb-xxxx'
-                     * @return ResourceIds 资源ID，可支持资源形如'eip-xxxx', 'lb-xxxx'
-                     * 
-                     */
-                    std::vector<std::string> GetResourceIds() const;
-
-                    /**
-                     * 设置资源ID，可支持资源形如'eip-xxxx', 'lb-xxxx'
-                     * @param _resourceIds 资源ID，可支持资源形如'eip-xxxx', 'lb-xxxx'
-                     * 
-                     */
-                    void SetResourceIds(const std::vector<std::string>& _resourceIds);
-
-                    /**
-                     * 判断参数 ResourceIds 是否已赋值
-                     * @return ResourceIds 是否已赋值
-                     * 
-                     */
-                    bool ResourceIdsHasBeenSet() const;
-
                 private:
 
                     /**
-                     * 带宽包唯一标识ID，形如'bwp-xxxx'
+                     * 资源唯一ID，当前支持EIP资源和LB资源，形如'eip-xxxx', 'lb-xxxx'。EIP资源列表可通过[DescribeAddresses](https://cloud.tencent.com/document/product/215/16702)接口获取，LB资源列表可通过[DescribeLoadBalancers](https://cloud.tencent.com/document/api/214/30685)接口获取。
+                     */
+                    std::vector<std::string> m_resourceIds;
+                    bool m_resourceIdsHasBeenSet;
+
+                    /**
+                     * 带宽包唯一标识ID，形如'bwp-xxxx'，可以使用[DescribeBandwidthPackages](https://cloud.tencent.com/document/product/215/19209)接口查询BandwidthPackageId。
                      */
                     std::string m_bandwidthPackageId;
                     bool m_bandwidthPackageIdHasBeenSet;
 
                     /**
-                     * 资源类型，包括‘Address’, ‘LoadBalance’
+                     * 资源类型，可选值：
+<li>Address：弹性公网IP</li>
+<li>LoadBalance：负载均衡</li>
                      */
                     std::string m_resourceType;
                     bool m_resourceTypeHasBeenSet;
-
-                    /**
-                     * 资源ID，可支持资源形如'eip-xxxx', 'lb-xxxx'
-                     */
-                    std::vector<std::string> m_resourceIds;
-                    bool m_resourceIdsHasBeenSet;
 
                 };
             }

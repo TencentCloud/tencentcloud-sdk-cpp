@@ -1247,6 +1247,48 @@ pause
                      */
                     bool InstanceStorageTypeHasBeenSet() const;
 
+                    /**
+                     * 获取未知字段
+                     * @return CynosVersionTag 未知字段
+                     * 
+                     */
+                    std::string GetCynosVersionTag() const;
+
+                    /**
+                     * 设置未知字段
+                     * @param _cynosVersionTag 未知字段
+                     * 
+                     */
+                    void SetCynosVersionTag(const std::string& _cynosVersionTag);
+
+                    /**
+                     * 判断参数 CynosVersionTag 是否已赋值
+                     * @return CynosVersionTag 是否已赋值
+                     * 
+                     */
+                    bool CynosVersionTagHasBeenSet() const;
+
+                    /**
+                     * 获取libradb 节点信息
+                     * @return NodeList libradb 节点信息
+                     * 
+                     */
+                    std::vector<std::string> GetNodeList() const;
+
+                    /**
+                     * 设置libradb 节点信息
+                     * @param _nodeList libradb 节点信息
+                     * 
+                     */
+                    void SetNodeList(const std::vector<std::string>& _nodeList);
+
+                    /**
+                     * 判断参数 NodeList 是否已赋值
+                     * @return NodeList 是否已赋值
+                     * 
+                     */
+                    bool NodeListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1589,6 +1631,18 @@ pause
                      */
                     std::string m_instanceStorageType;
                     bool m_instanceStorageTypeHasBeenSet;
+
+                    /**
+                     * 未知字段
+                     */
+                    std::string m_cynosVersionTag;
+                    bool m_cynosVersionTagHasBeenSet;
+
+                    /**
+                     * libradb 节点信息
+                     */
+                    std::vector<std::string> m_nodeList;
+                    bool m_nodeListHasBeenSet;
 
                 };
             }

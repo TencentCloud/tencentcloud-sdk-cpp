@@ -68,15 +68,39 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取带宽下限，单位：Mbps。
-                     * @return BandwidthLowerLimit 带宽下限，单位：Mbps。
+                     * 获取带宽下限，单位：Mbps。计费类型以及对应的带宽下限：
+- TOP5_POSTPAID_BY_MONTH: 默认无下限
+- BANDWIDTH_POSTPAID_BY_DAY: 50
+- FIXED_PREPAID_BY_MONTH: 100
+- ENHANCED95_POSTPAID_BY_MONTH: 300
+- PEAK_BANDWIDTH_POSTPAID_BY_DAY: 50
+- PRIMARY_TRAFFIC_POSTPAID_BY_HOUR: 50
+                     * @return BandwidthLowerLimit 带宽下限，单位：Mbps。计费类型以及对应的带宽下限：
+- TOP5_POSTPAID_BY_MONTH: 默认无下限
+- BANDWIDTH_POSTPAID_BY_DAY: 50
+- FIXED_PREPAID_BY_MONTH: 100
+- ENHANCED95_POSTPAID_BY_MONTH: 300
+- PEAK_BANDWIDTH_POSTPAID_BY_DAY: 50
+- PRIMARY_TRAFFIC_POSTPAID_BY_HOUR: 50
                      * 
                      */
                     uint64_t GetBandwidthLowerLimit() const;
 
                     /**
-                     * 设置带宽下限，单位：Mbps。
-                     * @param _bandwidthLowerLimit 带宽下限，单位：Mbps。
+                     * 设置带宽下限，单位：Mbps。计费类型以及对应的带宽下限：
+- TOP5_POSTPAID_BY_MONTH: 默认无下限
+- BANDWIDTH_POSTPAID_BY_DAY: 50
+- FIXED_PREPAID_BY_MONTH: 100
+- ENHANCED95_POSTPAID_BY_MONTH: 300
+- PEAK_BANDWIDTH_POSTPAID_BY_DAY: 50
+- PRIMARY_TRAFFIC_POSTPAID_BY_HOUR: 50
+                     * @param _bandwidthLowerLimit 带宽下限，单位：Mbps。计费类型以及对应的带宽下限：
+- TOP5_POSTPAID_BY_MONTH: 默认无下限
+- BANDWIDTH_POSTPAID_BY_DAY: 50
+- FIXED_PREPAID_BY_MONTH: 100
+- ENHANCED95_POSTPAID_BY_MONTH: 300
+- PEAK_BANDWIDTH_POSTPAID_BY_DAY: 50
+- PRIMARY_TRAFFIC_POSTPAID_BY_HOUR: 50
                      * 
                      */
                     void SetBandwidthLowerLimit(const uint64_t& _bandwidthLowerLimit);
@@ -89,15 +113,39 @@ namespace TencentCloud
                     bool BandwidthLowerLimitHasBeenSet() const;
 
                     /**
-                     * 获取带宽上限，单位：Mbps。
-                     * @return BandwidthUpperLimit 带宽上限，单位：Mbps。
+                     * 获取带宽上限，单位：Mbps。计费类型以及对应的带宽上限：
+- TOP5_POSTPAID_BY_MONTH: 默认无上限
+- BANDWIDTH_POSTPAID_BY_DAY: 300
+- FIXED_PREPAID_BY_MONTH: 5000
+- ENHANCED95_POSTPAID_BY_MONTH: 5000
+- PEAK_BANDWIDTH_POSTPAID_BY_DAY: 300
+- PRIMARY_TRAFFIC_POSTPAID_BY_HOUR: 2000
+                     * @return BandwidthUpperLimit 带宽上限，单位：Mbps。计费类型以及对应的带宽上限：
+- TOP5_POSTPAID_BY_MONTH: 默认无上限
+- BANDWIDTH_POSTPAID_BY_DAY: 300
+- FIXED_PREPAID_BY_MONTH: 5000
+- ENHANCED95_POSTPAID_BY_MONTH: 5000
+- PEAK_BANDWIDTH_POSTPAID_BY_DAY: 300
+- PRIMARY_TRAFFIC_POSTPAID_BY_HOUR: 2000
                      * 
                      */
                     uint64_t GetBandwidthUpperLimit() const;
 
                     /**
-                     * 设置带宽上限，单位：Mbps。
-                     * @param _bandwidthUpperLimit 带宽上限，单位：Mbps。
+                     * 设置带宽上限，单位：Mbps。计费类型以及对应的带宽上限：
+- TOP5_POSTPAID_BY_MONTH: 默认无上限
+- BANDWIDTH_POSTPAID_BY_DAY: 300
+- FIXED_PREPAID_BY_MONTH: 5000
+- ENHANCED95_POSTPAID_BY_MONTH: 5000
+- PEAK_BANDWIDTH_POSTPAID_BY_DAY: 300
+- PRIMARY_TRAFFIC_POSTPAID_BY_HOUR: 2000
+                     * @param _bandwidthUpperLimit 带宽上限，单位：Mbps。计费类型以及对应的带宽上限：
+- TOP5_POSTPAID_BY_MONTH: 默认无上限
+- BANDWIDTH_POSTPAID_BY_DAY: 300
+- FIXED_PREPAID_BY_MONTH: 5000
+- ENHANCED95_POSTPAID_BY_MONTH: 5000
+- PEAK_BANDWIDTH_POSTPAID_BY_DAY: 300
+- PRIMARY_TRAFFIC_POSTPAID_BY_HOUR: 2000
                      * 
                      */
                     void SetBandwidthUpperLimit(const uint64_t& _bandwidthUpperLimit);
@@ -118,13 +166,25 @@ namespace TencentCloud
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 带宽下限，单位：Mbps。
+                     * 带宽下限，单位：Mbps。计费类型以及对应的带宽下限：
+- TOP5_POSTPAID_BY_MONTH: 默认无下限
+- BANDWIDTH_POSTPAID_BY_DAY: 50
+- FIXED_PREPAID_BY_MONTH: 100
+- ENHANCED95_POSTPAID_BY_MONTH: 300
+- PEAK_BANDWIDTH_POSTPAID_BY_DAY: 50
+- PRIMARY_TRAFFIC_POSTPAID_BY_HOUR: 50
                      */
                     uint64_t m_bandwidthLowerLimit;
                     bool m_bandwidthLowerLimitHasBeenSet;
 
                     /**
-                     * 带宽上限，单位：Mbps。
+                     * 带宽上限，单位：Mbps。计费类型以及对应的带宽上限：
+- TOP5_POSTPAID_BY_MONTH: 默认无上限
+- BANDWIDTH_POSTPAID_BY_DAY: 300
+- FIXED_PREPAID_BY_MONTH: 5000
+- ENHANCED95_POSTPAID_BY_MONTH: 5000
+- PEAK_BANDWIDTH_POSTPAID_BY_DAY: 300
+- PRIMARY_TRAFFIC_POSTPAID_BY_HOUR: 2000
                      */
                     uint64_t m_bandwidthUpperLimit;
                     bool m_bandwidthUpperLimitHasBeenSet;

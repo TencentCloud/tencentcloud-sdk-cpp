@@ -65,18 +65,18 @@ namespace TencentCloud
 
                     /**
                      * 获取实例操作。
-<li> INSTANCE_DEGRADE：实例降配操作</li>
+<li> INSTANCE_DEGRADE：实例降配操作</li><li> INTERNET_CHARGE_TYPE_CHANGE：实例调整带宽付费模式操作</li>
                      * @return Operation 实例操作。
-<li> INSTANCE_DEGRADE：实例降配操作</li>
+<li> INSTANCE_DEGRADE：实例降配操作</li><li> INTERNET_CHARGE_TYPE_CHANGE：实例调整带宽付费模式操作</li>
                      * 
                      */
                     std::string GetOperation() const;
 
                     /**
                      * 设置实例操作。
-<li> INSTANCE_DEGRADE：实例降配操作</li>
+<li> INSTANCE_DEGRADE：实例降配操作</li><li> INTERNET_CHARGE_TYPE_CHANGE：实例调整带宽付费模式操作</li>
                      * @param _operation 实例操作。
-<li> INSTANCE_DEGRADE：实例降配操作</li>
+<li> INSTANCE_DEGRADE：实例降配操作</li><li> INTERNET_CHARGE_TYPE_CHANGE：实例调整带宽付费模式操作</li>
                      * 
                      */
                     void SetOperation(const std::string& _operation);
@@ -98,7 +98,7 @@ namespace TencentCloud
 
                     /**
                      * 实例操作。
-<li> INSTANCE_DEGRADE：实例降配操作</li>
+<li> INSTANCE_DEGRADE：实例降配操作</li><li> INTERNET_CHARGE_TYPE_CHANGE：实例调整带宽付费模式操作</li>
                      */
                     std::string m_operation;
                     bool m_operationHasBeenSet;

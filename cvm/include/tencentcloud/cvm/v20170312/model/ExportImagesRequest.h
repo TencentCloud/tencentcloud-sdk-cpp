@@ -43,15 +43,19 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取COS存储桶名称
-                     * @return BucketName COS存储桶名称
+                     * 获取COS存储桶名称。
+可通过 [List Buckets](https://cloud.tencent.com/document/product/436/8291) 接口查询请求者名下的所有存储桶列表或特定地域下的存储桶列表。
+                     * @return BucketName COS存储桶名称。
+可通过 [List Buckets](https://cloud.tencent.com/document/product/436/8291) 接口查询请求者名下的所有存储桶列表或特定地域下的存储桶列表。
                      * 
                      */
                     std::string GetBucketName() const;
 
                     /**
-                     * 设置COS存储桶名称
-                     * @param _bucketName COS存储桶名称
+                     * 设置COS存储桶名称。
+可通过 [List Buckets](https://cloud.tencent.com/document/product/436/8291) 接口查询请求者名下的所有存储桶列表或特定地域下的存储桶列表。
+                     * @param _bucketName COS存储桶名称。
+可通过 [List Buckets](https://cloud.tencent.com/document/product/436/8291) 接口查询请求者名下的所有存储桶列表或特定地域下的存储桶列表。
                      * 
                      */
                     void SetBucketName(const std::string& _bucketName);
@@ -65,14 +69,18 @@ namespace TencentCloud
 
                     /**
                      * 获取镜像ID列表。调用 ExportImages 接口时，参数 ImageIds 和 SnapshotIds 为二选一必填参数，目前参数 SnapshotIds 暂未对外开放。
+可通过 [DescribeImages](https://cloud.tencent.com/document/api/213/15715) 接口返回值中的`ImageId`获取。
                      * @return ImageIds 镜像ID列表。调用 ExportImages 接口时，参数 ImageIds 和 SnapshotIds 为二选一必填参数，目前参数 SnapshotIds 暂未对外开放。
+可通过 [DescribeImages](https://cloud.tencent.com/document/api/213/15715) 接口返回值中的`ImageId`获取。
                      * 
                      */
                     std::vector<std::string> GetImageIds() const;
 
                     /**
                      * 设置镜像ID列表。调用 ExportImages 接口时，参数 ImageIds 和 SnapshotIds 为二选一必填参数，目前参数 SnapshotIds 暂未对外开放。
+可通过 [DescribeImages](https://cloud.tencent.com/document/api/213/15715) 接口返回值中的`ImageId`获取。
                      * @param _imageIds 镜像ID列表。调用 ExportImages 接口时，参数 ImageIds 和 SnapshotIds 为二选一必填参数，目前参数 SnapshotIds 暂未对外开放。
+可通过 [DescribeImages](https://cloud.tencent.com/document/api/213/15715) 接口返回值中的`ImageId`获取。
                      * 
                      */
                     void SetImageIds(const std::vector<std::string>& _imageIds);
@@ -106,15 +114,19 @@ namespace TencentCloud
                     bool ExportFormatHasBeenSet() const;
 
                     /**
-                     * 获取导出文件的名称前缀列表
-                     * @return FileNamePrefixList 导出文件的名称前缀列表
+                     * 获取导出文件的名称前缀列表。
+默认导出文件无名称前缀。
+                     * @return FileNamePrefixList 导出文件的名称前缀列表。
+默认导出文件无名称前缀。
                      * 
                      */
                     std::vector<std::string> GetFileNamePrefixList() const;
 
                     /**
-                     * 设置导出文件的名称前缀列表
-                     * @param _fileNamePrefixList 导出文件的名称前缀列表
+                     * 设置导出文件的名称前缀列表。
+默认导出文件无名称前缀。
+                     * @param _fileNamePrefixList 导出文件的名称前缀列表。
+默认导出文件无名称前缀。
                      * 
                      */
                     void SetFileNamePrefixList(const std::vector<std::string>& _fileNamePrefixList);
@@ -127,15 +139,19 @@ namespace TencentCloud
                     bool FileNamePrefixListHasBeenSet() const;
 
                     /**
-                     * 获取是否只导出系统盘
-                     * @return OnlyExportRootDisk 是否只导出系统盘
+                     * 获取是否只导出系统盘。
+默认值：false
+                     * @return OnlyExportRootDisk 是否只导出系统盘。
+默认值：false
                      * 
                      */
                     bool GetOnlyExportRootDisk() const;
 
                     /**
-                     * 设置是否只导出系统盘
-                     * @param _onlyExportRootDisk 是否只导出系统盘
+                     * 设置是否只导出系统盘。
+默认值：false
+                     * @param _onlyExportRootDisk 是否只导出系统盘。
+默认值：false
                      * 
                      */
                     void SetOnlyExportRootDisk(const bool& _onlyExportRootDisk);
@@ -148,15 +164,19 @@ namespace TencentCloud
                     bool OnlyExportRootDiskHasBeenSet() const;
 
                     /**
-                     * 获取检测镜像是否支持导出
-                     * @return DryRun 检测镜像是否支持导出
+                     * 获取检测镜像是否支持导出。
+默认值：false
+                     * @return DryRun 检测镜像是否支持导出。
+默认值：false
                      * 
                      */
                     bool GetDryRun() const;
 
                     /**
-                     * 设置检测镜像是否支持导出
-                     * @param _dryRun 检测镜像是否支持导出
+                     * 设置检测镜像是否支持导出。
+默认值：false
+                     * @param _dryRun 检测镜像是否支持导出。
+默认值：false
                      * 
                      */
                     void SetDryRun(const bool& _dryRun);
@@ -192,13 +212,15 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * COS存储桶名称
+                     * COS存储桶名称。
+可通过 [List Buckets](https://cloud.tencent.com/document/product/436/8291) 接口查询请求者名下的所有存储桶列表或特定地域下的存储桶列表。
                      */
                     std::string m_bucketName;
                     bool m_bucketNameHasBeenSet;
 
                     /**
                      * 镜像ID列表。调用 ExportImages 接口时，参数 ImageIds 和 SnapshotIds 为二选一必填参数，目前参数 SnapshotIds 暂未对外开放。
+可通过 [DescribeImages](https://cloud.tencent.com/document/api/213/15715) 接口返回值中的`ImageId`获取。
                      */
                     std::vector<std::string> m_imageIds;
                     bool m_imageIdsHasBeenSet;
@@ -210,19 +232,22 @@ namespace TencentCloud
                     bool m_exportFormatHasBeenSet;
 
                     /**
-                     * 导出文件的名称前缀列表
+                     * 导出文件的名称前缀列表。
+默认导出文件无名称前缀。
                      */
                     std::vector<std::string> m_fileNamePrefixList;
                     bool m_fileNamePrefixListHasBeenSet;
 
                     /**
-                     * 是否只导出系统盘
+                     * 是否只导出系统盘。
+默认值：false
                      */
                     bool m_onlyExportRootDisk;
                     bool m_onlyExportRootDiskHasBeenSet;
 
                     /**
-                     * 检测镜像是否支持导出
+                     * 检测镜像是否支持导出。
+默认值：false
                      */
                     bool m_dryRun;
                     bool m_dryRunHasBeenSet;

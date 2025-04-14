@@ -22,7 +22,10 @@
 using namespace TencentCloud::Tcb::V20180608::Model;
 using namespace std;
 
-DescribeCloudBaseRunVersionRsByConditionRequest::DescribeCloudBaseRunVersionRsByConditionRequest()
+DescribeCloudBaseRunVersionRsByConditionRequest::DescribeCloudBaseRunVersionRsByConditionRequest() :
+    m_envIdHasBeenSet(false),
+    m_clusterIdHasBeenSet(false),
+    m_filterGwSwitchHasBeenSet(false)
 {
 }
 
@@ -33,6 +36,30 @@ string DescribeCloudBaseRunVersionRsByConditionRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_envIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnvId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_envId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_filterGwSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilterGwSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_filterGwSwitch, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +67,53 @@ string DescribeCloudBaseRunVersionRsByConditionRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeCloudBaseRunVersionRsByConditionRequest::GetEnvId() const
+{
+    return m_envId;
+}
+
+void DescribeCloudBaseRunVersionRsByConditionRequest::SetEnvId(const string& _envId)
+{
+    m_envId = _envId;
+    m_envIdHasBeenSet = true;
+}
+
+bool DescribeCloudBaseRunVersionRsByConditionRequest::EnvIdHasBeenSet() const
+{
+    return m_envIdHasBeenSet;
+}
+
+string DescribeCloudBaseRunVersionRsByConditionRequest::GetClusterId() const
+{
+    return m_clusterId;
+}
+
+void DescribeCloudBaseRunVersionRsByConditionRequest::SetClusterId(const string& _clusterId)
+{
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
+}
+
+bool DescribeCloudBaseRunVersionRsByConditionRequest::ClusterIdHasBeenSet() const
+{
+    return m_clusterIdHasBeenSet;
+}
+
+bool DescribeCloudBaseRunVersionRsByConditionRequest::GetFilterGwSwitch() const
+{
+    return m_filterGwSwitch;
+}
+
+void DescribeCloudBaseRunVersionRsByConditionRequest::SetFilterGwSwitch(const bool& _filterGwSwitch)
+{
+    m_filterGwSwitch = _filterGwSwitch;
+    m_filterGwSwitchHasBeenSet = true;
+}
+
+bool DescribeCloudBaseRunVersionRsByConditionRequest::FilterGwSwitchHasBeenSet() const
+{
+    return m_filterGwSwitchHasBeenSet;
+}
 
 

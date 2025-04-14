@@ -68,15 +68,15 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取HDD本地存储的最小容量
-                     * @return MinSize HDD本地存储的最小容量
+                     * 获取HDD本地存储的最小容量。单位：GiB。
+                     * @return MinSize HDD本地存储的最小容量。单位：GiB。
                      * 
                      */
                     int64_t GetMinSize() const;
 
                     /**
-                     * 设置HDD本地存储的最小容量
-                     * @param _minSize HDD本地存储的最小容量
+                     * 设置HDD本地存储的最小容量。单位：GiB。
+                     * @param _minSize HDD本地存储的最小容量。单位：GiB。
                      * 
                      */
                     void SetMinSize(const int64_t& _minSize);
@@ -89,15 +89,15 @@ namespace TencentCloud
                     bool MinSizeHasBeenSet() const;
 
                     /**
-                     * 获取HDD本地存储的最大容量
-                     * @return MaxSize HDD本地存储的最大容量
+                     * 获取HDD本地存储的最大容量。单位：GiB。
+                     * @return MaxSize HDD本地存储的最大容量。单位：GiB。
                      * 
                      */
                     int64_t GetMaxSize() const;
 
                     /**
-                     * 设置HDD本地存储的最大容量
-                     * @param _maxSize HDD本地存储的最大容量
+                     * 设置HDD本地存储的最大容量。单位：GiB。
+                     * @param _maxSize HDD本地存储的最大容量。单位：GiB。
                      * 
                      */
                     void SetMaxSize(const int64_t& _maxSize);
@@ -118,13 +118,13 @@ namespace TencentCloud
                     bool m_typeHasBeenSet;
 
                     /**
-                     * HDD本地存储的最小容量
+                     * HDD本地存储的最小容量。单位：GiB。
                      */
                     int64_t m_minSize;
                     bool m_minSizeHasBeenSet;
 
                     /**
-                     * HDD本地存储的最大容量
+                     * HDD本地存储的最大容量。单位：GiB。
                      */
                     int64_t m_maxSize;
                     bool m_maxSizeHasBeenSet;

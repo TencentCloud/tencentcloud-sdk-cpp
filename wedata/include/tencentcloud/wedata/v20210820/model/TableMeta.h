@@ -1657,6 +1657,106 @@ TABLE, VIEW, MANAGED_TABLE(Hive管理表), EXTERNAL_TABLE(Hive外部表), VIRTUA
                     bool IfSupportCreateAndDDLHasBeenSet() const;
 
                     /**
+                     * 获取资产来源 历史默认值都是CRAWLER
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DataFromType 资产来源 历史默认值都是CRAWLER
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDataFromType() const;
+
+                    /**
+                     * 设置资产来源 历史默认值都是CRAWLER
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dataFromType 资产来源 历史默认值都是CRAWLER
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDataFromType(const std::string& _dataFromType);
+
+                    /**
+                     * 判断参数 DataFromType 是否已赋值
+                     * @return DataFromType 是否已赋值
+                     * 
+                     */
+                    bool DataFromTypeHasBeenSet() const;
+
+                    /**
+                     * 获取引擎侧责任人
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EngineOwner 引擎侧责任人
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetEngineOwner() const;
+
+                    /**
+                     * 设置引擎侧责任人
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _engineOwner 引擎侧责任人
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetEngineOwner(const std::string& _engineOwner);
+
+                    /**
+                     * 判断参数 EngineOwner 是否已赋值
+                     * @return EngineOwner 是否已赋值
+                     * 
+                     */
+                    bool EngineOwnerHasBeenSet() const;
+
+                    /**
+                     * 获取数据分层UUID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DataLayerUuid 数据分层UUID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDataLayerUuid() const;
+
+                    /**
+                     * 设置数据分层UUID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dataLayerUuid 数据分层UUID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDataLayerUuid(const std::string& _dataLayerUuid);
+
+                    /**
+                     * 判断参数 DataLayerUuid 是否已赋值
+                     * @return DataLayerUuid 是否已赋值
+                     * 
+                     */
+                    bool DataLayerUuidHasBeenSet() const;
+
+                    /**
+                     * 获取数据分层名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DataLayerName 数据分层名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    std::string GetDataLayerName() const;
+
+                    /**
+                     * 设置数据分层名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param _dataLayerName 数据分层名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * 
+                     */
+                    void SetDataLayerName(const std::string& _dataLayerName);
+
+                    /**
+                     * 判断参数 DataLayerName 是否已赋值
+                     * @return DataLayerName 是否已赋值
+                     * 
+                     */
+                    bool DataLayerNameHasBeenSet() const;
+
+                    /**
                      * 获取字段数量
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ColumnCount 字段数量
@@ -2131,6 +2231,34 @@ TABLE, VIEW, MANAGED_TABLE(Hive管理表), EXTERNAL_TABLE(Hive外部表), VIRTUA
                      */
                     CreateAndDDLSupport m_ifSupportCreateAndDDL;
                     bool m_ifSupportCreateAndDDLHasBeenSet;
+
+                    /**
+                     * 资产来源 历史默认值都是CRAWLER
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dataFromType;
+                    bool m_dataFromTypeHasBeenSet;
+
+                    /**
+                     * 引擎侧责任人
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_engineOwner;
+                    bool m_engineOwnerHasBeenSet;
+
+                    /**
+                     * 数据分层UUID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dataLayerUuid;
+                    bool m_dataLayerUuidHasBeenSet;
+
+                    /**
+                     * 数据分层名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dataLayerName;
+                    bool m_dataLayerNameHasBeenSet;
 
                     /**
                      * 字段数量

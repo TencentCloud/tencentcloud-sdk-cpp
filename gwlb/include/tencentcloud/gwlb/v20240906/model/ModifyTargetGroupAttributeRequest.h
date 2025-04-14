@@ -44,15 +44,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取目标组的ID。
-                     * @return TargetGroupId 目标组的ID。
+                     * 获取目标组的ID，可以通过[DescribeTargetGroups](https://cloud.tencent.com/document/product/214/40554)获取。
+                     * @return TargetGroupId 目标组的ID，可以通过[DescribeTargetGroups](https://cloud.tencent.com/document/product/214/40554)获取。
                      * 
                      */
                     std::string GetTargetGroupId() const;
 
                     /**
-                     * 设置目标组的ID。
-                     * @param _targetGroupId 目标组的ID。
+                     * 设置目标组的ID，可以通过[DescribeTargetGroups](https://cloud.tencent.com/document/product/214/40554)获取。
+                     * @param _targetGroupId 目标组的ID，可以通过[DescribeTargetGroups](https://cloud.tencent.com/document/product/214/40554)获取。
                      * 
                      */
                     void SetTargetGroupId(const std::string& _targetGroupId);
@@ -130,7 +130,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 目标组的ID。
+                     * 目标组的ID，可以通过[DescribeTargetGroups](https://cloud.tencent.com/document/product/214/40554)获取。
                      */
                     std::string m_targetGroupId;
                     bool m_targetGroupIdHasBeenSet;

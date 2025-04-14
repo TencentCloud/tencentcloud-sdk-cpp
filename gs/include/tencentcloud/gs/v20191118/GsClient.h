@@ -29,6 +29,10 @@
 #include <tencentcloud/gs/v20191118/model/ConnectAndroidInstanceResponse.h>
 #include <tencentcloud/gs/v20191118/model/CopyAndroidInstanceRequest.h>
 #include <tencentcloud/gs/v20191118/model/CopyAndroidInstanceResponse.h>
+#include <tencentcloud/gs/v20191118/model/CreateAndroidAppRequest.h>
+#include <tencentcloud/gs/v20191118/model/CreateAndroidAppResponse.h>
+#include <tencentcloud/gs/v20191118/model/CreateAndroidAppVersionRequest.h>
+#include <tencentcloud/gs/v20191118/model/CreateAndroidAppVersionResponse.h>
 #include <tencentcloud/gs/v20191118/model/CreateAndroidInstanceImageRequest.h>
 #include <tencentcloud/gs/v20191118/model/CreateAndroidInstanceImageResponse.h>
 #include <tencentcloud/gs/v20191118/model/CreateAndroidInstanceLabelRequest.h>
@@ -41,8 +45,14 @@
 #include <tencentcloud/gs/v20191118/model/CreateAndroidInstancesResponse.h>
 #include <tencentcloud/gs/v20191118/model/CreateAndroidInstancesScreenshotRequest.h>
 #include <tencentcloud/gs/v20191118/model/CreateAndroidInstancesScreenshotResponse.h>
+#include <tencentcloud/gs/v20191118/model/CreateCosCredentialRequest.h>
+#include <tencentcloud/gs/v20191118/model/CreateCosCredentialResponse.h>
 #include <tencentcloud/gs/v20191118/model/CreateSessionRequest.h>
 #include <tencentcloud/gs/v20191118/model/CreateSessionResponse.h>
+#include <tencentcloud/gs/v20191118/model/DeleteAndroidAppRequest.h>
+#include <tencentcloud/gs/v20191118/model/DeleteAndroidAppResponse.h>
+#include <tencentcloud/gs/v20191118/model/DeleteAndroidAppVersionRequest.h>
+#include <tencentcloud/gs/v20191118/model/DeleteAndroidAppVersionResponse.h>
 #include <tencentcloud/gs/v20191118/model/DeleteAndroidInstanceImagesRequest.h>
 #include <tencentcloud/gs/v20191118/model/DeleteAndroidInstanceImagesResponse.h>
 #include <tencentcloud/gs/v20191118/model/DeleteAndroidInstanceLabelRequest.h>
@@ -67,6 +77,8 @@
 #include <tencentcloud/gs/v20191118/model/ExecuteCommandOnAndroidInstancesResponse.h>
 #include <tencentcloud/gs/v20191118/model/InstallAndroidInstancesAppRequest.h>
 #include <tencentcloud/gs/v20191118/model/InstallAndroidInstancesAppResponse.h>
+#include <tencentcloud/gs/v20191118/model/ModifyAndroidAppRequest.h>
+#include <tencentcloud/gs/v20191118/model/ModifyAndroidAppResponse.h>
 #include <tencentcloud/gs/v20191118/model/ModifyAndroidInstanceInformationRequest.h>
 #include <tencentcloud/gs/v20191118/model/ModifyAndroidInstanceInformationResponse.h>
 #include <tencentcloud/gs/v20191118/model/ModifyAndroidInstanceResolutionRequest.h>
@@ -136,6 +148,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CopyAndroidInstanceResponse> CopyAndroidInstanceOutcome;
                 typedef std::future<CopyAndroidInstanceOutcome> CopyAndroidInstanceOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::CopyAndroidInstanceRequest&, CopyAndroidInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CopyAndroidInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAndroidAppResponse> CreateAndroidAppOutcome;
+                typedef std::future<CreateAndroidAppOutcome> CreateAndroidAppOutcomeCallable;
+                typedef std::function<void(const GsClient*, const Model::CreateAndroidAppRequest&, CreateAndroidAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAndroidAppAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAndroidAppVersionResponse> CreateAndroidAppVersionOutcome;
+                typedef std::future<CreateAndroidAppVersionOutcome> CreateAndroidAppVersionOutcomeCallable;
+                typedef std::function<void(const GsClient*, const Model::CreateAndroidAppVersionRequest&, CreateAndroidAppVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAndroidAppVersionAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAndroidInstanceImageResponse> CreateAndroidInstanceImageOutcome;
                 typedef std::future<CreateAndroidInstanceImageOutcome> CreateAndroidInstanceImageOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::CreateAndroidInstanceImageRequest&, CreateAndroidInstanceImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAndroidInstanceImageAsyncHandler;
@@ -154,9 +172,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAndroidInstancesScreenshotResponse> CreateAndroidInstancesScreenshotOutcome;
                 typedef std::future<CreateAndroidInstancesScreenshotOutcome> CreateAndroidInstancesScreenshotOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::CreateAndroidInstancesScreenshotRequest&, CreateAndroidInstancesScreenshotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAndroidInstancesScreenshotAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCosCredentialResponse> CreateCosCredentialOutcome;
+                typedef std::future<CreateCosCredentialOutcome> CreateCosCredentialOutcomeCallable;
+                typedef std::function<void(const GsClient*, const Model::CreateCosCredentialRequest&, CreateCosCredentialOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCosCredentialAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateSessionResponse> CreateSessionOutcome;
                 typedef std::future<CreateSessionOutcome> CreateSessionOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::CreateSessionRequest&, CreateSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSessionAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAndroidAppResponse> DeleteAndroidAppOutcome;
+                typedef std::future<DeleteAndroidAppOutcome> DeleteAndroidAppOutcomeCallable;
+                typedef std::function<void(const GsClient*, const Model::DeleteAndroidAppRequest&, DeleteAndroidAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAndroidAppAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAndroidAppVersionResponse> DeleteAndroidAppVersionOutcome;
+                typedef std::future<DeleteAndroidAppVersionOutcome> DeleteAndroidAppVersionOutcomeCallable;
+                typedef std::function<void(const GsClient*, const Model::DeleteAndroidAppVersionRequest&, DeleteAndroidAppVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAndroidAppVersionAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteAndroidInstanceImagesResponse> DeleteAndroidInstanceImagesOutcome;
                 typedef std::future<DeleteAndroidInstanceImagesOutcome> DeleteAndroidInstanceImagesOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::DeleteAndroidInstanceImagesRequest&, DeleteAndroidInstanceImagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAndroidInstanceImagesAsyncHandler;
@@ -193,6 +220,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::InstallAndroidInstancesAppResponse> InstallAndroidInstancesAppOutcome;
                 typedef std::future<InstallAndroidInstancesAppOutcome> InstallAndroidInstancesAppOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::InstallAndroidInstancesAppRequest&, InstallAndroidInstancesAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InstallAndroidInstancesAppAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAndroidAppResponse> ModifyAndroidAppOutcome;
+                typedef std::future<ModifyAndroidAppOutcome> ModifyAndroidAppOutcomeCallable;
+                typedef std::function<void(const GsClient*, const Model::ModifyAndroidAppRequest&, ModifyAndroidAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAndroidAppAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAndroidInstanceInformationResponse> ModifyAndroidInstanceInformationOutcome;
                 typedef std::future<ModifyAndroidInstanceInformationOutcome> ModifyAndroidInstanceInformationOutcomeCallable;
                 typedef std::function<void(const GsClient*, const Model::ModifyAndroidInstanceInformationRequest&, ModifyAndroidInstanceInformationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAndroidInstanceInformationAsyncHandler;
@@ -297,6 +327,24 @@ namespace TencentCloud
                 CopyAndroidInstanceOutcomeCallable CopyAndroidInstanceCallable(const Model::CopyAndroidInstanceRequest& request);
 
                 /**
+                 *创建安卓应用
+                 * @param req CreateAndroidAppRequest
+                 * @return CreateAndroidAppOutcome
+                 */
+                CreateAndroidAppOutcome CreateAndroidApp(const Model::CreateAndroidAppRequest &request);
+                void CreateAndroidAppAsync(const Model::CreateAndroidAppRequest& request, const CreateAndroidAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAndroidAppOutcomeCallable CreateAndroidAppCallable(const Model::CreateAndroidAppRequest& request);
+
+                /**
+                 *创建安卓应用版本
+                 * @param req CreateAndroidAppVersionRequest
+                 * @return CreateAndroidAppVersionOutcome
+                 */
+                CreateAndroidAppVersionOutcome CreateAndroidAppVersion(const Model::CreateAndroidAppVersionRequest &request);
+                void CreateAndroidAppVersionAsync(const Model::CreateAndroidAppVersionRequest& request, const CreateAndroidAppVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAndroidAppVersionOutcomeCallable CreateAndroidAppVersionCallable(const Model::CreateAndroidAppVersionRequest& request);
+
+                /**
                  *创建安卓实例镜像
                  * @param req CreateAndroidInstanceImageRequest
                  * @return CreateAndroidInstanceImageOutcome
@@ -351,6 +399,15 @@ namespace TencentCloud
                 CreateAndroidInstancesScreenshotOutcomeCallable CreateAndroidInstancesScreenshotCallable(const Model::CreateAndroidInstancesScreenshotRequest& request);
 
                 /**
+                 *用于创建 Cos 临时密钥
+                 * @param req CreateCosCredentialRequest
+                 * @return CreateCosCredentialOutcome
+                 */
+                CreateCosCredentialOutcome CreateCosCredential(const Model::CreateCosCredentialRequest &request);
+                void CreateCosCredentialAsync(const Model::CreateCosCredentialRequest& request, const CreateCosCredentialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCosCredentialOutcomeCallable CreateCosCredentialCallable(const Model::CreateCosCredentialRequest& request);
+
+                /**
                  *创建会话
                  * @param req CreateSessionRequest
                  * @return CreateSessionOutcome
@@ -358,6 +415,24 @@ namespace TencentCloud
                 CreateSessionOutcome CreateSession(const Model::CreateSessionRequest &request);
                 void CreateSessionAsync(const Model::CreateSessionRequest& request, const CreateSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateSessionOutcomeCallable CreateSessionCallable(const Model::CreateSessionRequest& request);
+
+                /**
+                 *删除安卓应用
+                 * @param req DeleteAndroidAppRequest
+                 * @return DeleteAndroidAppOutcome
+                 */
+                DeleteAndroidAppOutcome DeleteAndroidApp(const Model::DeleteAndroidAppRequest &request);
+                void DeleteAndroidAppAsync(const Model::DeleteAndroidAppRequest& request, const DeleteAndroidAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAndroidAppOutcomeCallable DeleteAndroidAppCallable(const Model::DeleteAndroidAppRequest& request);
+
+                /**
+                 *删除安卓应用版本
+                 * @param req DeleteAndroidAppVersionRequest
+                 * @return DeleteAndroidAppVersionOutcome
+                 */
+                DeleteAndroidAppVersionOutcome DeleteAndroidAppVersion(const Model::DeleteAndroidAppVersionRequest &request);
+                void DeleteAndroidAppVersionAsync(const Model::DeleteAndroidAppVersionRequest& request, const DeleteAndroidAppVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAndroidAppVersionOutcomeCallable DeleteAndroidAppVersionCallable(const Model::DeleteAndroidAppVersionRequest& request);
 
                 /**
                  *删除安卓实例镜像
@@ -466,6 +541,15 @@ namespace TencentCloud
                 InstallAndroidInstancesAppOutcome InstallAndroidInstancesApp(const Model::InstallAndroidInstancesAppRequest &request);
                 void InstallAndroidInstancesAppAsync(const Model::InstallAndroidInstancesAppRequest& request, const InstallAndroidInstancesAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 InstallAndroidInstancesAppOutcomeCallable InstallAndroidInstancesAppCallable(const Model::InstallAndroidInstancesAppRequest& request);
+
+                /**
+                 *修改安卓应用信息
+                 * @param req ModifyAndroidAppRequest
+                 * @return ModifyAndroidAppOutcome
+                 */
+                ModifyAndroidAppOutcome ModifyAndroidApp(const Model::ModifyAndroidAppRequest &request);
+                void ModifyAndroidAppAsync(const Model::ModifyAndroidAppRequest& request, const ModifyAndroidAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAndroidAppOutcomeCallable ModifyAndroidAppCallable(const Model::ModifyAndroidAppRequest& request);
 
                 /**
                  *修改安卓实例的信息

@@ -32,6 +32,7 @@
 #include <tencentcloud/tione/v20211111/model/CFSTurbo.h>
 #include <tencentcloud/tione/v20211111/model/LocalDisk.h>
 #include <tencentcloud/tione/v20211111/model/CBSConfig.h>
+#include <tencentcloud/tione/v20211111/model/HostPath.h>
 
 
 namespace TencentCloud
@@ -329,6 +330,27 @@ namespace TencentCloud
                      */
                     bool CBSSourceHasBeenSet() const;
 
+                    /**
+                     * 获取主机路径信息
+                     * @return HostPathSource 主机路径信息
+                     * 
+                     */
+                    HostPath GetHostPathSource() const;
+
+                    /**
+                     * 设置主机路径信息
+                     * @param _hostPathSource 主机路径信息
+                     * 
+                     */
+                    void SetHostPathSource(const HostPath& _hostPathSource);
+
+                    /**
+                     * 判断参数 HostPathSource 是否已赋值
+                     * @return HostPathSource 是否已赋值
+                     * 
+                     */
+                    bool HostPathSourceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -407,6 +429,12 @@ namespace TencentCloud
                      */
                     CBSConfig m_cBSSource;
                     bool m_cBSSourceHasBeenSet;
+
+                    /**
+                     * 主机路径信息
+                     */
+                    HostPath m_hostPathSource;
+                    bool m_hostPathSourceHasBeenSet;
 
                 };
             }

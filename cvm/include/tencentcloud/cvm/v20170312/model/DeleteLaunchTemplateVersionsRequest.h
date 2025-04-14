@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取启动模板ID。
-                     * @return LaunchTemplateId 启动模板ID。
+                     * 获取启动模板ID。可通过 [DescribeLaunchTemplates](https://cloud.tencent.com/document/api/213/66322) 接口返回值中的`LaunchTemplateId`获取。
+                     * @return LaunchTemplateId 启动模板ID。可通过 [DescribeLaunchTemplates](https://cloud.tencent.com/document/api/213/66322) 接口返回值中的`LaunchTemplateId`获取。
                      * 
                      */
                     std::string GetLaunchTemplateId() const;
 
                     /**
-                     * 设置启动模板ID。
-                     * @param _launchTemplateId 启动模板ID。
+                     * 设置启动模板ID。可通过 [DescribeLaunchTemplates](https://cloud.tencent.com/document/api/213/66322) 接口返回值中的`LaunchTemplateId`获取。
+                     * @param _launchTemplateId 启动模板ID。可通过 [DescribeLaunchTemplates](https://cloud.tencent.com/document/api/213/66322) 接口返回值中的`LaunchTemplateId`获取。
                      * 
                      */
                     void SetLaunchTemplateId(const std::string& _launchTemplateId);
@@ -64,15 +64,15 @@ namespace TencentCloud
                     bool LaunchTemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取实例启动模板版本列表。
-                     * @return LaunchTemplateVersions 实例启动模板版本列表。
+                     * 获取实例启动模板版本列表。可通过 [DescribeLaunchTemplateVersions](https://cloud.tencent.com/document/api/213/66323) 接口返回值中的`LaunchTemplateVersion`获取。
+                     * @return LaunchTemplateVersions 实例启动模板版本列表。可通过 [DescribeLaunchTemplateVersions](https://cloud.tencent.com/document/api/213/66323) 接口返回值中的`LaunchTemplateVersion`获取。
                      * 
                      */
                     std::vector<int64_t> GetLaunchTemplateVersions() const;
 
                     /**
-                     * 设置实例启动模板版本列表。
-                     * @param _launchTemplateVersions 实例启动模板版本列表。
+                     * 设置实例启动模板版本列表。可通过 [DescribeLaunchTemplateVersions](https://cloud.tencent.com/document/api/213/66323) 接口返回值中的`LaunchTemplateVersion`获取。
+                     * @param _launchTemplateVersions 实例启动模板版本列表。可通过 [DescribeLaunchTemplateVersions](https://cloud.tencent.com/document/api/213/66323) 接口返回值中的`LaunchTemplateVersion`获取。
                      * 
                      */
                     void SetLaunchTemplateVersions(const std::vector<int64_t>& _launchTemplateVersions);
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 启动模板ID。
+                     * 启动模板ID。可通过 [DescribeLaunchTemplates](https://cloud.tencent.com/document/api/213/66322) 接口返回值中的`LaunchTemplateId`获取。
                      */
                     std::string m_launchTemplateId;
                     bool m_launchTemplateIdHasBeenSet;
 
                     /**
-                     * 实例启动模板版本列表。
+                     * 实例启动模板版本列表。可通过 [DescribeLaunchTemplateVersions](https://cloud.tencent.com/document/api/213/66323) 接口返回值中的`LaunchTemplateVersion`获取。
                      */
                     std::vector<int64_t> m_launchTemplateVersions;
                     bool m_launchTemplateVersionsHasBeenSet;

@@ -12510,6 +12510,49 @@ VpcClient::LockCcnsOutcomeCallable VpcClient::LockCcnsCallable(const LockCcnsReq
     return task->get_future();
 }
 
+VpcClient::MigrateBandwidthPackageResourcesOutcome VpcClient::MigrateBandwidthPackageResources(const MigrateBandwidthPackageResourcesRequest &request)
+{
+    auto outcome = MakeRequest(request, "MigrateBandwidthPackageResources");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        MigrateBandwidthPackageResourcesResponse rsp = MigrateBandwidthPackageResourcesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return MigrateBandwidthPackageResourcesOutcome(rsp);
+        else
+            return MigrateBandwidthPackageResourcesOutcome(o.GetError());
+    }
+    else
+    {
+        return MigrateBandwidthPackageResourcesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::MigrateBandwidthPackageResourcesAsync(const MigrateBandwidthPackageResourcesRequest& request, const MigrateBandwidthPackageResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->MigrateBandwidthPackageResources(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::MigrateBandwidthPackageResourcesOutcomeCallable VpcClient::MigrateBandwidthPackageResourcesCallable(const MigrateBandwidthPackageResourcesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<MigrateBandwidthPackageResourcesOutcome()>>(
+        [this, request]()
+        {
+            return this->MigrateBandwidthPackageResources(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::MigrateNetworkInterfaceOutcome VpcClient::MigrateNetworkInterface(const MigrateNetworkInterfaceRequest &request)
 {
     auto outcome = MakeRequest(request, "MigrateNetworkInterface");

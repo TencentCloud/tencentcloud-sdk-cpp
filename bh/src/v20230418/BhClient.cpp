@@ -298,6 +298,49 @@ BhClient::BindDeviceResourceOutcomeCallable BhClient::BindDeviceResourceCallable
     return task->get_future();
 }
 
+BhClient::CreateAccessWhiteListRuleOutcome BhClient::CreateAccessWhiteListRule(const CreateAccessWhiteListRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAccessWhiteListRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAccessWhiteListRuleResponse rsp = CreateAccessWhiteListRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAccessWhiteListRuleOutcome(rsp);
+        else
+            return CreateAccessWhiteListRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAccessWhiteListRuleOutcome(outcome.GetError());
+    }
+}
+
+void BhClient::CreateAccessWhiteListRuleAsync(const CreateAccessWhiteListRuleRequest& request, const CreateAccessWhiteListRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAccessWhiteListRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BhClient::CreateAccessWhiteListRuleOutcomeCallable BhClient::CreateAccessWhiteListRuleCallable(const CreateAccessWhiteListRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAccessWhiteListRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAccessWhiteListRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 BhClient::CreateAclOutcome BhClient::CreateAcl(const CreateAclRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAcl");
@@ -721,6 +764,49 @@ BhClient::CreateUserGroupOutcomeCallable BhClient::CreateUserGroupCallable(const
         [this, request]()
         {
             return this->CreateUserGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BhClient::DeleteAccessWhiteListRulesOutcome BhClient::DeleteAccessWhiteListRules(const DeleteAccessWhiteListRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAccessWhiteListRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAccessWhiteListRulesResponse rsp = DeleteAccessWhiteListRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAccessWhiteListRulesOutcome(rsp);
+        else
+            return DeleteAccessWhiteListRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAccessWhiteListRulesOutcome(outcome.GetError());
+    }
+}
+
+void BhClient::DeleteAccessWhiteListRulesAsync(const DeleteAccessWhiteListRulesRequest& request, const DeleteAccessWhiteListRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteAccessWhiteListRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BhClient::DeleteAccessWhiteListRulesOutcomeCallable BhClient::DeleteAccessWhiteListRulesCallable(const DeleteAccessWhiteListRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteAccessWhiteListRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteAccessWhiteListRules(request);
         }
     );
 
@@ -1237,6 +1323,49 @@ BhClient::DeployResourceOutcomeCallable BhClient::DeployResourceCallable(const D
         [this, request]()
         {
             return this->DeployResource(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BhClient::DescribeAccessWhiteListRulesOutcome BhClient::DescribeAccessWhiteListRules(const DescribeAccessWhiteListRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAccessWhiteListRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAccessWhiteListRulesResponse rsp = DescribeAccessWhiteListRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAccessWhiteListRulesOutcome(rsp);
+        else
+            return DescribeAccessWhiteListRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAccessWhiteListRulesOutcome(outcome.GetError());
+    }
+}
+
+void BhClient::DescribeAccessWhiteListRulesAsync(const DescribeAccessWhiteListRulesRequest& request, const DescribeAccessWhiteListRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAccessWhiteListRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BhClient::DescribeAccessWhiteListRulesOutcomeCallable BhClient::DescribeAccessWhiteListRulesCallable(const DescribeAccessWhiteListRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAccessWhiteListRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAccessWhiteListRules(request);
         }
     );
 
@@ -2957,6 +3086,49 @@ BhClient::SearchSessionCommandOutcomeCallable BhClient::SearchSessionCommandCall
         [this, request]()
         {
             return this->SearchSessionCommand(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BhClient::SearchTaskResultOutcome BhClient::SearchTaskResult(const SearchTaskResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "SearchTaskResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SearchTaskResultResponse rsp = SearchTaskResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SearchTaskResultOutcome(rsp);
+        else
+            return SearchTaskResultOutcome(o.GetError());
+    }
+    else
+    {
+        return SearchTaskResultOutcome(outcome.GetError());
+    }
+}
+
+void BhClient::SearchTaskResultAsync(const SearchTaskResultRequest& request, const SearchTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SearchTaskResult(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BhClient::SearchTaskResultOutcomeCallable BhClient::SearchTaskResultCallable(const SearchTaskResultRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SearchTaskResultOutcome()>>(
+        [this, request]()
+        {
+            return this->SearchTaskResult(request);
         }
     );
 

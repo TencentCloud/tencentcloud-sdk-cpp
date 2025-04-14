@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/gwlb/v20240906/model/AssociationItem.h>
 #include <tencentcloud/gwlb/v20240906/model/TargetGroupHealthCheck.h>
+#include <tencentcloud/gwlb/v20240906/model/TagInfo.h>
 
 
 namespace TencentCloud
@@ -365,6 +366,27 @@ namespace TencentCloud
                      */
                     bool RegisteredInstancesCountHasBeenSet() const;
 
+                    /**
+                     * 获取目标组的标签。
+                     * @return Tag 目标组的标签。
+                     * 
+                     */
+                    std::vector<TagInfo> GetTag() const;
+
+                    /**
+                     * 设置目标组的标签。
+                     * @param _tag 目标组的标签。
+                     * 
+                     */
+                    void SetTag(const std::vector<TagInfo>& _tag);
+
+                    /**
+                     * 判断参数 Tag 是否已赋值
+                     * @return Tag 是否已赋值
+                     * 
+                     */
+                    bool TagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -455,6 +477,12 @@ namespace TencentCloud
                      */
                     int64_t m_registeredInstancesCount;
                     bool m_registeredInstancesCountHasBeenSet;
+
+                    /**
+                     * 目标组的标签。
+                     */
+                    std::vector<TagInfo> m_tag;
+                    bool m_tagHasBeenSet;
 
                 };
             }

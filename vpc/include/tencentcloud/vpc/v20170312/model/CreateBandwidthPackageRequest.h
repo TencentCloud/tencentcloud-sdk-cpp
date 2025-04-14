@@ -50,12 +50,14 @@ namespace TencentCloud
 <li>SINGLEISP_CMCC: 中国移动共享带宽包</li>
 <li>SINGLEISP_CTCC: 中国电信共享带宽包</li>
 <li>SINGLEISP_CUCC: 中国联通共享带宽包</li>
+注意：仅部分地域支持三网带宽包和精品BGP带宽包。
                      * @return NetworkType 带宽包类型, 默认值: BGP, 可选值:
 <li>BGP: 普通BGP共享带宽包</li>
 <li>HIGH_QUALITY_BGP: 精品BGP共享带宽包</li>
 <li>SINGLEISP_CMCC: 中国移动共享带宽包</li>
 <li>SINGLEISP_CTCC: 中国电信共享带宽包</li>
 <li>SINGLEISP_CUCC: 中国联通共享带宽包</li>
+注意：仅部分地域支持三网带宽包和精品BGP带宽包。
                      * 
                      */
                     std::string GetNetworkType() const;
@@ -67,12 +69,14 @@ namespace TencentCloud
 <li>SINGLEISP_CMCC: 中国移动共享带宽包</li>
 <li>SINGLEISP_CTCC: 中国电信共享带宽包</li>
 <li>SINGLEISP_CUCC: 中国联通共享带宽包</li>
+注意：仅部分地域支持三网带宽包和精品BGP带宽包。
                      * @param _networkType 带宽包类型, 默认值: BGP, 可选值:
 <li>BGP: 普通BGP共享带宽包</li>
 <li>HIGH_QUALITY_BGP: 精品BGP共享带宽包</li>
 <li>SINGLEISP_CMCC: 中国移动共享带宽包</li>
 <li>SINGLEISP_CTCC: 中国电信共享带宽包</li>
 <li>SINGLEISP_CUCC: 中国联通共享带宽包</li>
+注意：仅部分地域支持三网带宽包和精品BGP带宽包。
                      * 
                      */
                     void SetNetworkType(const std::string& _networkType);
@@ -86,20 +90,20 @@ namespace TencentCloud
 
                     /**
                      * 获取带宽包计费类型, 默认为: ENHANCED95_POSTPAID_BY_MONTH, 可选值:
-<li>TOP5_POSTPAID_BY_MONTH: 按月后付费TOP5计费</li>
-<li>PERCENT95_POSTPAID_BY_MONTH: 按月后付费月95计费</li>
-<li>FIXED_PREPAID_BY_MONTH: 包月预付费计费</li>
-<li>ENHANCED95_POSTPAID_BY_MONTH: 按月后付费增强型95计费</li>
-<li>PEAK_BANDWIDTH_POSTPAID_BY_DAY: 后付费日结按带宽计费</li>
-<li>PRIMARY_TRAFFIC_POSTPAID_BY_HOUR: 后付费按主流量计费</li>
+<li>ENHANCED95_POSTPAID_BY_MONTH: 后付费-增强型95计费</li>
+<li>PRIMARY_TRAFFIC_POSTPAID_BY_HOUR: 后付费-按主流量计费</li>
+<li>BANDWIDTH_POSTPAID_BY_DAY: 常规BGP-后付费-按带宽计费</li>
+<li>FIXED_PREPAID_BY_MONTH: 常规BGP-预付费</li>
+<li>PEAK_BANDWIDTH_POSTPAID_BY_DAY: 静态单线-后付费-按日结算</li>
+<li>TOP5_POSTPAID_BY_MONTH: 后付费-TOP5计费，如需使用，请提交工单申请</li>
 
                      * @return ChargeType 带宽包计费类型, 默认为: ENHANCED95_POSTPAID_BY_MONTH, 可选值:
-<li>TOP5_POSTPAID_BY_MONTH: 按月后付费TOP5计费</li>
-<li>PERCENT95_POSTPAID_BY_MONTH: 按月后付费月95计费</li>
-<li>FIXED_PREPAID_BY_MONTH: 包月预付费计费</li>
-<li>ENHANCED95_POSTPAID_BY_MONTH: 按月后付费增强型95计费</li>
-<li>PEAK_BANDWIDTH_POSTPAID_BY_DAY: 后付费日结按带宽计费</li>
-<li>PRIMARY_TRAFFIC_POSTPAID_BY_HOUR: 后付费按主流量计费</li>
+<li>ENHANCED95_POSTPAID_BY_MONTH: 后付费-增强型95计费</li>
+<li>PRIMARY_TRAFFIC_POSTPAID_BY_HOUR: 后付费-按主流量计费</li>
+<li>BANDWIDTH_POSTPAID_BY_DAY: 常规BGP-后付费-按带宽计费</li>
+<li>FIXED_PREPAID_BY_MONTH: 常规BGP-预付费</li>
+<li>PEAK_BANDWIDTH_POSTPAID_BY_DAY: 静态单线-后付费-按日结算</li>
+<li>TOP5_POSTPAID_BY_MONTH: 后付费-TOP5计费，如需使用，请提交工单申请</li>
 
                      * 
                      */
@@ -107,20 +111,20 @@ namespace TencentCloud
 
                     /**
                      * 设置带宽包计费类型, 默认为: ENHANCED95_POSTPAID_BY_MONTH, 可选值:
-<li>TOP5_POSTPAID_BY_MONTH: 按月后付费TOP5计费</li>
-<li>PERCENT95_POSTPAID_BY_MONTH: 按月后付费月95计费</li>
-<li>FIXED_PREPAID_BY_MONTH: 包月预付费计费</li>
-<li>ENHANCED95_POSTPAID_BY_MONTH: 按月后付费增强型95计费</li>
-<li>PEAK_BANDWIDTH_POSTPAID_BY_DAY: 后付费日结按带宽计费</li>
-<li>PRIMARY_TRAFFIC_POSTPAID_BY_HOUR: 后付费按主流量计费</li>
+<li>ENHANCED95_POSTPAID_BY_MONTH: 后付费-增强型95计费</li>
+<li>PRIMARY_TRAFFIC_POSTPAID_BY_HOUR: 后付费-按主流量计费</li>
+<li>BANDWIDTH_POSTPAID_BY_DAY: 常规BGP-后付费-按带宽计费</li>
+<li>FIXED_PREPAID_BY_MONTH: 常规BGP-预付费</li>
+<li>PEAK_BANDWIDTH_POSTPAID_BY_DAY: 静态单线-后付费-按日结算</li>
+<li>TOP5_POSTPAID_BY_MONTH: 后付费-TOP5计费，如需使用，请提交工单申请</li>
 
                      * @param _chargeType 带宽包计费类型, 默认为: ENHANCED95_POSTPAID_BY_MONTH, 可选值:
-<li>TOP5_POSTPAID_BY_MONTH: 按月后付费TOP5计费</li>
-<li>PERCENT95_POSTPAID_BY_MONTH: 按月后付费月95计费</li>
-<li>FIXED_PREPAID_BY_MONTH: 包月预付费计费</li>
-<li>ENHANCED95_POSTPAID_BY_MONTH: 按月后付费增强型95计费</li>
-<li>PEAK_BANDWIDTH_POSTPAID_BY_DAY: 后付费日结按带宽计费</li>
-<li>PRIMARY_TRAFFIC_POSTPAID_BY_HOUR: 后付费按主流量计费</li>
+<li>ENHANCED95_POSTPAID_BY_MONTH: 后付费-增强型95计费</li>
+<li>PRIMARY_TRAFFIC_POSTPAID_BY_HOUR: 后付费-按主流量计费</li>
+<li>BANDWIDTH_POSTPAID_BY_DAY: 常规BGP-后付费-按带宽计费</li>
+<li>FIXED_PREPAID_BY_MONTH: 常规BGP-预付费</li>
+<li>PEAK_BANDWIDTH_POSTPAID_BY_DAY: 静态单线-后付费-按日结算</li>
+<li>TOP5_POSTPAID_BY_MONTH: 后付费-TOP5计费，如需使用，请提交工单申请</li>
 
                      * 
                      */
@@ -134,15 +138,15 @@ namespace TencentCloud
                     bool ChargeTypeHasBeenSet() const;
 
                     /**
-                     * 获取带宽包名称。
-                     * @return BandwidthPackageName 带宽包名称。
+                     * 获取带宽包名称。名称长度小于60，只包含数字、字母和下划线。
+                     * @return BandwidthPackageName 带宽包名称。名称长度小于60，只包含数字、字母和下划线。
                      * 
                      */
                     std::string GetBandwidthPackageName() const;
 
                     /**
-                     * 设置带宽包名称。
-                     * @param _bandwidthPackageName 带宽包名称。
+                     * 设置带宽包名称。名称长度小于60，只包含数字、字母和下划线。
+                     * @param _bandwidthPackageName 带宽包名称。名称长度小于60，只包含数字、字母和下划线。
                      * 
                      */
                     void SetBandwidthPackageName(const std::string& _bandwidthPackageName);
@@ -155,15 +159,15 @@ namespace TencentCloud
                     bool BandwidthPackageNameHasBeenSet() const;
 
                     /**
-                     * 获取带宽包数量(传统账户类型只能填1), 标准账户类型取值范围为1~20。
-                     * @return BandwidthPackageCount 带宽包数量(传统账户类型只能填1), 标准账户类型取值范围为1~20。
+                     * 获取带宽包数量(传统账户类型只能填1), 标准账户类型取值范围为1~20。默认为1。
+                     * @return BandwidthPackageCount 带宽包数量(传统账户类型只能填1), 标准账户类型取值范围为1~20。默认为1。
                      * 
                      */
                     uint64_t GetBandwidthPackageCount() const;
 
                     /**
-                     * 设置带宽包数量(传统账户类型只能填1), 标准账户类型取值范围为1~20。
-                     * @param _bandwidthPackageCount 带宽包数量(传统账户类型只能填1), 标准账户类型取值范围为1~20。
+                     * 设置带宽包数量(传统账户类型只能填1), 标准账户类型取值范围为1~20。默认为1。
+                     * @param _bandwidthPackageCount 带宽包数量(传统账户类型只能填1), 标准账户类型取值范围为1~20。默认为1。
                      * 
                      */
                     void SetBandwidthPackageCount(const uint64_t& _bandwidthPackageCount);
@@ -176,15 +180,15 @@ namespace TencentCloud
                     bool BandwidthPackageCountHasBeenSet() const;
 
                     /**
-                     * 获取带宽包限速大小。单位：Mbps，-1表示不限速。不同计费类型的带宽包对应不同的带宽上下限。
-                     * @return InternetMaxBandwidth 带宽包限速大小。单位：Mbps，-1表示不限速。不同计费类型的带宽包对应不同的带宽上下限。
+                     * 获取带宽包限速大小。单位：Mbps，-1表示不限速。带宽包计费类型对应的带宽上下限可参考：[BandwidthRange](https://cloud.tencent.com/document/api/215/15824#BandwidthRange)
+                     * @return InternetMaxBandwidth 带宽包限速大小。单位：Mbps，-1表示不限速。带宽包计费类型对应的带宽上下限可参考：[BandwidthRange](https://cloud.tencent.com/document/api/215/15824#BandwidthRange)
                      * 
                      */
                     int64_t GetInternetMaxBandwidth() const;
 
                     /**
-                     * 设置带宽包限速大小。单位：Mbps，-1表示不限速。不同计费类型的带宽包对应不同的带宽上下限。
-                     * @param _internetMaxBandwidth 带宽包限速大小。单位：Mbps，-1表示不限速。不同计费类型的带宽包对应不同的带宽上下限。
+                     * 设置带宽包限速大小。单位：Mbps，-1表示不限速。带宽包计费类型对应的带宽上下限可参考：[BandwidthRange](https://cloud.tencent.com/document/api/215/15824#BandwidthRange)
+                     * @param _internetMaxBandwidth 带宽包限速大小。单位：Mbps，-1表示不限速。带宽包计费类型对应的带宽上下限可参考：[BandwidthRange](https://cloud.tencent.com/document/api/215/15824#BandwidthRange)
                      * 
                      */
                     void SetInternetMaxBandwidth(const int64_t& _internetMaxBandwidth);
@@ -239,15 +243,15 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取预付费包月带宽包的购买时长，单位: 月，取值范围: 1~60。
-                     * @return TimeSpan 预付费包月带宽包的购买时长，单位: 月，取值范围: 1~60。
+                     * 获取预付费包月带宽包的购买时长，单位: 月，取值范围: 1~60。预付费计费类型必传。
+                     * @return TimeSpan 预付费包月带宽包的购买时长，单位: 月，取值范围: 1~60。预付费计费类型必传。
                      * 
                      */
                     uint64_t GetTimeSpan() const;
 
                     /**
-                     * 设置预付费包月带宽包的购买时长，单位: 月，取值范围: 1~60。
-                     * @param _timeSpan 预付费包月带宽包的购买时长，单位: 月，取值范围: 1~60。
+                     * 设置预付费包月带宽包的购买时长，单位: 月，取值范围: 1~60。预付费计费类型必传。
+                     * @param _timeSpan 预付费包月带宽包的购买时长，单位: 月，取值范围: 1~60。预付费计费类型必传。
                      * 
                      */
                     void SetTimeSpan(const uint64_t& _timeSpan);
@@ -260,15 +264,15 @@ namespace TencentCloud
                     bool TimeSpanHasBeenSet() const;
 
                     /**
-                     * 获取网络出口，默认值：center_egress1
-                     * @return Egress 网络出口，默认值：center_egress1
+                     * 获取网络出口，默认值：center_egress1，其它可选值：center_egress2、center_egress3。
+                     * @return Egress 网络出口，默认值：center_egress1，其它可选值：center_egress2、center_egress3。
                      * 
                      */
                     std::string GetEgress() const;
 
                     /**
-                     * 设置网络出口，默认值：center_egress1
-                     * @param _egress 网络出口，默认值：center_egress1
+                     * 设置网络出口，默认值：center_egress1，其它可选值：center_egress2、center_egress3。
+                     * @param _egress 网络出口，默认值：center_egress1，其它可选值：center_egress2、center_egress3。
                      * 
                      */
                     void SetEgress(const std::string& _egress);
@@ -289,37 +293,38 @@ namespace TencentCloud
 <li>SINGLEISP_CMCC: 中国移动共享带宽包</li>
 <li>SINGLEISP_CTCC: 中国电信共享带宽包</li>
 <li>SINGLEISP_CUCC: 中国联通共享带宽包</li>
+注意：仅部分地域支持三网带宽包和精品BGP带宽包。
                      */
                     std::string m_networkType;
                     bool m_networkTypeHasBeenSet;
 
                     /**
                      * 带宽包计费类型, 默认为: ENHANCED95_POSTPAID_BY_MONTH, 可选值:
-<li>TOP5_POSTPAID_BY_MONTH: 按月后付费TOP5计费</li>
-<li>PERCENT95_POSTPAID_BY_MONTH: 按月后付费月95计费</li>
-<li>FIXED_PREPAID_BY_MONTH: 包月预付费计费</li>
-<li>ENHANCED95_POSTPAID_BY_MONTH: 按月后付费增强型95计费</li>
-<li>PEAK_BANDWIDTH_POSTPAID_BY_DAY: 后付费日结按带宽计费</li>
-<li>PRIMARY_TRAFFIC_POSTPAID_BY_HOUR: 后付费按主流量计费</li>
+<li>ENHANCED95_POSTPAID_BY_MONTH: 后付费-增强型95计费</li>
+<li>PRIMARY_TRAFFIC_POSTPAID_BY_HOUR: 后付费-按主流量计费</li>
+<li>BANDWIDTH_POSTPAID_BY_DAY: 常规BGP-后付费-按带宽计费</li>
+<li>FIXED_PREPAID_BY_MONTH: 常规BGP-预付费</li>
+<li>PEAK_BANDWIDTH_POSTPAID_BY_DAY: 静态单线-后付费-按日结算</li>
+<li>TOP5_POSTPAID_BY_MONTH: 后付费-TOP5计费，如需使用，请提交工单申请</li>
 
                      */
                     std::string m_chargeType;
                     bool m_chargeTypeHasBeenSet;
 
                     /**
-                     * 带宽包名称。
+                     * 带宽包名称。名称长度小于60，只包含数字、字母和下划线。
                      */
                     std::string m_bandwidthPackageName;
                     bool m_bandwidthPackageNameHasBeenSet;
 
                     /**
-                     * 带宽包数量(传统账户类型只能填1), 标准账户类型取值范围为1~20。
+                     * 带宽包数量(传统账户类型只能填1), 标准账户类型取值范围为1~20。默认为1。
                      */
                     uint64_t m_bandwidthPackageCount;
                     bool m_bandwidthPackageCountHasBeenSet;
 
                     /**
-                     * 带宽包限速大小。单位：Mbps，-1表示不限速。不同计费类型的带宽包对应不同的带宽上下限。
+                     * 带宽包限速大小。单位：Mbps，-1表示不限速。带宽包计费类型对应的带宽上下限可参考：[BandwidthRange](https://cloud.tencent.com/document/api/215/15824#BandwidthRange)
                      */
                     int64_t m_internetMaxBandwidth;
                     bool m_internetMaxBandwidthHasBeenSet;
@@ -337,13 +342,13 @@ namespace TencentCloud
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * 预付费包月带宽包的购买时长，单位: 月，取值范围: 1~60。
+                     * 预付费包月带宽包的购买时长，单位: 月，取值范围: 1~60。预付费计费类型必传。
                      */
                     uint64_t m_timeSpan;
                     bool m_timeSpanHasBeenSet;
 
                     /**
-                     * 网络出口，默认值：center_egress1
+                     * 网络出口，默认值：center_egress1，其它可选值：center_egress2、center_egress3。
                      */
                     std::string m_egress;
                     bool m_egressHasBeenSet;

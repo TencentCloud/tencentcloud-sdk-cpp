@@ -43,15 +43,15 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取需退还的云盘ID列表。
-                     * @return DiskIds 需退还的云盘ID列表。
+                     * 获取需退还的云盘ID列表，通过[DescribeDisks](/document/product/362/16315)接口查询。
+                     * @return DiskIds 需退还的云盘ID列表，通过[DescribeDisks](/document/product/362/16315)接口查询。
                      * 
                      */
                     std::vector<std::string> GetDiskIds() const;
 
                     /**
-                     * 设置需退还的云盘ID列表。
-                     * @param _diskIds 需退还的云盘ID列表。
+                     * 设置需退还的云盘ID列表，通过[DescribeDisks](/document/product/362/16315)接口查询。
+                     * @param _diskIds 需退还的云盘ID列表，通过[DescribeDisks](/document/product/362/16315)接口查询。
                      * 
                      */
                     void SetDiskIds(const std::vector<std::string>& _diskIds);
@@ -87,7 +87,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 需退还的云盘ID列表。
+                     * 需退还的云盘ID列表，通过[DescribeDisks](/document/product/362/16315)接口查询。
                      */
                     std::vector<std::string> m_diskIds;
                     bool m_diskIdsHasBeenSet;

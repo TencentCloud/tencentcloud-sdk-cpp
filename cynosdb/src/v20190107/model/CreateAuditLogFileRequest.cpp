@@ -29,7 +29,8 @@ CreateAuditLogFileRequest::CreateAuditLogFileRequest() :
     m_orderHasBeenSet(false),
     m_orderByHasBeenSet(false),
     m_filterHasBeenSet(false),
-    m_logFilterHasBeenSet(false)
+    m_logFilterHasBeenSet(false),
+    m_columnFilterHasBeenSet(false)
 {
 }
 
@@ -101,6 +102,19 @@ string CreateAuditLogFileRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_columnFilterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ColumnFilter";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_columnFilter.begin(); itr != m_columnFilter.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -222,6 +236,22 @@ void CreateAuditLogFileRequest::SetLogFilter(const vector<InstanceAuditLogFilter
 bool CreateAuditLogFileRequest::LogFilterHasBeenSet() const
 {
     return m_logFilterHasBeenSet;
+}
+
+vector<string> CreateAuditLogFileRequest::GetColumnFilter() const
+{
+    return m_columnFilter;
+}
+
+void CreateAuditLogFileRequest::SetColumnFilter(const vector<string>& _columnFilter)
+{
+    m_columnFilter = _columnFilter;
+    m_columnFilterHasBeenSet = true;
+}
+
+bool CreateAuditLogFileRequest::ColumnFilterHasBeenSet() const
+{
+    return m_columnFilterHasBeenSet;
 }
 
 

@@ -42,7 +42,88 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取环境ID；EnvId和ClusterId不能同时为空
+                     * @return EnvId 环境ID；EnvId和ClusterId不能同时为空
+                     * 
+                     */
+                    std::string GetEnvId() const;
+
+                    /**
+                     * 设置环境ID；EnvId和ClusterId不能同时为空
+                     * @param _envId 环境ID；EnvId和ClusterId不能同时为空
+                     * 
+                     */
+                    void SetEnvId(const std::string& _envId);
+
+                    /**
+                     * 判断参数 EnvId 是否已赋值
+                     * @return EnvId 是否已赋值
+                     * 
+                     */
+                    bool EnvIdHasBeenSet() const;
+
+                    /**
+                     * 获取集群ID；EnvId和ClusterId不能同时为空
+                     * @return ClusterId 集群ID；EnvId和ClusterId不能同时为空
+                     * 
+                     */
+                    std::string GetClusterId() const;
+
+                    /**
+                     * 设置集群ID；EnvId和ClusterId不能同时为空
+                     * @param _clusterId 集群ID；EnvId和ClusterId不能同时为空
+                     * 
+                     */
+                    void SetClusterId(const std::string& _clusterId);
+
+                    /**
+                     * 判断参数 ClusterId 是否已赋值
+                     * @return ClusterId 是否已赋值
+                     * 
+                     */
+                    bool ClusterIdHasBeenSet() const;
+
+                    /**
+                     * 获取过滤网关服务开关
+                     * @return FilterGwSwitch 过滤网关服务开关
+                     * 
+                     */
+                    bool GetFilterGwSwitch() const;
+
+                    /**
+                     * 设置过滤网关服务开关
+                     * @param _filterGwSwitch 过滤网关服务开关
+                     * 
+                     */
+                    void SetFilterGwSwitch(const bool& _filterGwSwitch);
+
+                    /**
+                     * 判断参数 FilterGwSwitch 是否已赋值
+                     * @return FilterGwSwitch 是否已赋值
+                     * 
+                     */
+                    bool FilterGwSwitchHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 环境ID；EnvId和ClusterId不能同时为空
+                     */
+                    std::string m_envId;
+                    bool m_envIdHasBeenSet;
+
+                    /**
+                     * 集群ID；EnvId和ClusterId不能同时为空
+                     */
+                    std::string m_clusterId;
+                    bool m_clusterIdHasBeenSet;
+
+                    /**
+                     * 过滤网关服务开关
+                     */
+                    bool m_filterGwSwitch;
+                    bool m_filterGwSwitchHasBeenSet;
 
                 };
             }
